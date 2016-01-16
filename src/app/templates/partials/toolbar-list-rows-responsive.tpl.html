@@ -11,13 +11,13 @@
         </label>
         <span class="pm_buttons">
             <a
-           
+
             class="fa fa-eye"
             pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
             ng-click="read()"
             ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
-           
+
             class="fa fa-eye-slash divider"
             pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}"
             ng-click="unread()"
@@ -25,35 +25,35 @@
         </span>
         <span class="pm_buttons">
             <a
-           
+
             class="fa fa-trash-o"
             ng-click="move('trash')"
             pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}"
             ng-hide="{{ 'secured.trash.**' | includedByState }}"
             ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
-           
+
             class="fa fa-inbox divider"
             ng-click="move('inbox')"
             pt-tooltip="{{ 'MOVE_TO_INBOX' | translate }}"
             ng-hide="{{ 'secured.inbox.**' | includedByState }}"
             ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
-           
+
             class="fa fa-archive divider"
             ng-click="move('archive')"
             pt-tooltip="{{ 'MOVE_TO_ARCHIVE' | translate }}"
             ng-hide="{{ 'secured.archive.**' | includedByState }}"
             ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
-           
+
             class="fa fa-ban divider"
             ng-click="move('spam')"
             pt-tooltip="{{ 'MARK_AS_SPAM' | translate }}"
             ng-hide="{{ 'secured.spam.**' | includedByState }}"
             ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a
-           
+
             class="fa fa-times-circle divider"
             ng-click="delete()"
             pt-tooltip="{{ 'DELETE' | translate }}"
@@ -111,7 +111,7 @@
                 </a>
             </span>
         </span>
-        <paginator page="page" total-items="conversationCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
+        <paginator ng-hide="idDefined()" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
     </div>
     <div class="clear"></div>
 </nav>

@@ -229,7 +229,7 @@ angular.module("proton.cache", [])
         var loc = getLocation(request);
         var context = tools.cacheContext(request);
 
-        request.PageSize = 100; // We don't call 50 conversations but 100 to improve user experience when he delete message and dislay quickly the next conversations
+        request.PageSize = request.PageSize || 100; // We don't call 50 conversations but 100 to improve user experience when he delete message and dislay quickly the next conversations
 
         Conversation.query(request).then(function(result) {
             var data = result.data;
@@ -274,7 +274,7 @@ angular.module("proton.cache", [])
         var loc = getLocation(request);
         var context = tools.cacheContext(request);
 
-        request.PageSize = 100; // We don't call 50 messages but 100 to improve user experience when he delete message and dislay quickly the next messages
+        request.PageSize = request.PageSize || 100; // We don't call 50 messages but 100 to improve user experience when he delete message and dislay quickly the next messages
 
         Message.query(request).$promise.then(function(result) {
             var messages = result.Messages;
@@ -910,14 +910,15 @@ angular.module("proton.cache", [])
 
     /**
      * Return previous ID of message specified
-     * @param {Object} conversation
+     * @param {String} conversationID
      * @param {String} type - 'next' or 'previous'
      * @return {Promise}
      */
-    api.more = function(conversation, type) {
+    api.more = function(conversationID, type) {
         var deferred = $q.defer();
         var loc = tools.currentLocation();
         var request = {PageSize: 1, Label: loc};
+        var conversation = api.getConversationCached(conversationID);
 
         if(type === 'previous') {
             request.End = conversation.Time;
@@ -926,20 +927,13 @@ angular.module("proton.cache", [])
         }
 
         queryConversations(request).then(function(conversation) {
-            deferred.resolve();
-            // if(angular.isArray(conversation) && conversation.length > 0) {
-            //     if(type === 'next') {
-            //         var first = _.first(conversation);
-            //
-            //         deferred.resolve(first.ID);
-            //     } else if(type === 'previous') {
-            //         var last = _.last(conversation);
-            //
-            //         deferred.resolve(last.ID);
-            //     }
-            // } else {
-            //     deferred.reject();
-            // }
+            if(angular.isArray(conversation)) {
+                var first = _.first(conversation);
+
+                deferred.resolve(first.ID);
+            } else {
+                deferred.reject();
+            }
         });
 
         return deferred.promise;

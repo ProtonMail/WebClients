@@ -286,28 +286,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
     };
 
-    /**
-     * Go to the next conversation
-     */
-    $scope.next = function() {
-        var current = $state.$current.name;
-
-        cache.more($scope.conversation, 'next').then(function(id) {
-            // $state.go(current, {id: id});
-        });
-    };
-
-    /**
-     * Go to the previous conversation
-     */
-    $scope.previous = function() {
-        var current = $state.$current.name;
-
-        cache.more($scope.conversation, 'previous').then(function(id) {
-            // $state.go(current, {id: id});
-        });
-    };
-
     // Call initialization
     $scope.initialization();
 });
