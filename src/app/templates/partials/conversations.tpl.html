@@ -34,9 +34,9 @@
             </tr>
         </table>
 
-        <div 
-        ng-repeat="conversation in conversations track by conversation.ID" 
-        class="message" 
+        <div
+        ng-repeat="conversation in conversations track by conversation.ID"
+        class="message"
         ng-click="click(conversation)"
         ng-enter="select($event, conversation)"
         ng-class="{
@@ -165,7 +165,7 @@
                     </p>
                 </article>
             </span>
-            <span class="size">{{ conversation.TotalSize | bytes }}</span><!-- refresh every hour -->
+            <span class="size">{{ conversation.TotalSize | bytes }}</span>
             <span class="hasAttachments">
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
             </span>
