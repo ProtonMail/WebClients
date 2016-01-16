@@ -227,7 +227,7 @@ angular.module("proton.cache", [])
     var queryConversations = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
 
         request.PageSize = request.PageSize || 100; // We don't call 50 conversations but 100 to improve user experience when he delete message and dislay quickly the next conversations
 
@@ -272,7 +272,7 @@ angular.module("proton.cache", [])
     var queryMessages = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
 
         request.PageSize = request.PageSize || 100; // We don't call 50 messages but 100 to improve user experience when he delete message and dislay quickly the next messages
 
@@ -378,7 +378,7 @@ angular.module("proton.cache", [])
     api.queryMessages = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
         var callApi = function() {
             deferred.resolve(queryMessages(request));
         };
@@ -444,10 +444,9 @@ angular.module("proton.cache", [])
      * @return {Promise}
      */
     api.queryConversations = function(request) {
-        console.log('api.queryConversations');
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
         var callApi = function() {
             // Need data from the server
             deferred.resolve(queryConversations(request));
@@ -917,7 +916,7 @@ angular.module("proton.cache", [])
     api.more = function(conversationID, type) {
         var deferred = $q.defer();
         var loc = tools.currentLocation();
-        var request = {PageSize: 3, Label: loc};
+        var request = {Label: loc};
         var conversation = api.getConversationCached(conversationID);
 
         if(type === 'previous') {
