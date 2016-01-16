@@ -29,6 +29,10 @@ body, html {
 			position: relative;
 			max-width: 100%;
 			box-sizing: border-box;
+			&:focus {
+				background: #e9e6f0 !important;
+				z-index: 5;
+			}
 			label {
 				padding: 0 15px;
 				text-align: center;
@@ -184,6 +188,10 @@ body, html {
 				height: 36px;
 				position: relative;
 				overflow: hidden;
+				color: #000;
+				.fa-paperclip {
+					display: none !important;
+				}
 				& > span {
 					display: inline-block;
 					overflow: hidden;
@@ -201,7 +209,7 @@ body, html {
 				}
 				.pm_labels {
 					position: absolute;
-					right: 0;
+					right: -10px;
 					top: 0;
 					margin: 0;
 					line-height: 18px;
@@ -355,6 +363,9 @@ body, html {
 			}
 			.subject {
 				overflow: initial !important;
+				.fa-paperclip {
+					display: block !important;
+				}
 			}
 			.fa-paperclip {
 				bottom: 0;
@@ -474,6 +485,7 @@ body, html {
 
 @media (max-width: $tablet-landscape) {
 	#pm_conversations.rows {
+		clear: both;
 		width: 100%;
 		.list {
 			.message {

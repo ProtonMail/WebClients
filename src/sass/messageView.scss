@@ -607,7 +607,11 @@
         position: relative;
         .sub {
             margin: 0;
-            margin-bottom: 2rem !important;
+        }
+    }
+    #pm_view article.message.open.hasImages {
+        .sub {
+            margin-bottom: 2rem;
         }
     }
     #pm_view article.showingImages.message.open {
@@ -693,10 +697,6 @@
     #pm_view article.message .sub {
         padding-left: 0;
         padding-right: 0;
-        .actions {
-            position: static;
-            float: right;
-        }
         .data {
             clear: both;
         }

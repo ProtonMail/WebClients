@@ -440,6 +440,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.attachmentsToggle = true;
 
         $scope.composerStyle();
+        $rootScope.$broadcast('composerModeChange');
 
         var cleanup = function( result ) {
             var index = message.Attachments.indexOf(tempPacket);

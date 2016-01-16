@@ -6,7 +6,7 @@
 
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <a title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox');">
+            <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox');">
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.inbox.**' | includedByState"></button>
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
@@ -98,8 +98,8 @@
                 <em style="width: {{ storagePercentage() }}%"></em>
             </div>
             <div class="storage">
-                <strong class="pull-right">{{ storageUsed() }}</strong>
-                <i class="fa fa-hdd-o"></i> {{ 'STORAGE' | translate }}:
+                <strong class="pull-right">{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}</strong>
+                <i class="fa fa-hdd-o" title="{{ 'STORAGE' | translate }}"></i>
             </div>
         </div>
         <a class="version" title="{{ dateVersion }}" target="_blank">

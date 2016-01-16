@@ -287,6 +287,8 @@ body.columns #pm_toolbar {
     body #pm_toolbar_responsive {
         border-bottom: 1px solid $border;
         padding: 14px 10px !important;
+        position: relative;
+        z-index: 11;
         .pm_checkbox {
             margin-right: 5px !important;
         }

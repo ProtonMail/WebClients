@@ -139,18 +139,6 @@ angular.module('proton', [
     }
 })
 
-/**
- * Load stripe script
- * https://stripe.com/docs/stripe.js
- */
-.run(function($window) {
-    var script = $window.document.createElement('script');
-
-    script.type= 'text/javascript';
-    script.src = 'https://js.stripe.com/v2/';
-    $window.document.body.appendChild(script);
-})
-
 // Set base url from grunt config
 .provider('url', function urlProvider() {
     var base;
@@ -342,11 +330,11 @@ angular.module('proton', [
                             return $http(rejection.config);
                         },
                         function() {
-                            $injector.get('authentication').logout(true);
+                            $injector.get('authentication').logout(true, false);
                         }
                     );
                 } else {
-                    $injector.get('authentication').logout(true);
+                    $injector.get('authentication').logout(true, false);
                 }
             }
 

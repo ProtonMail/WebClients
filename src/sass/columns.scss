@@ -84,6 +84,10 @@
 					color: #fff;
 					p {
 						color: #fff;
+						a {
+							color: #fff !important;
+							text-decoration: none;
+						}
 					}
 					span {
 						color: #fff;
@@ -109,6 +113,10 @@
 				header {
 					p {
 						color: #000;
+						a {
+							color: #000;
+							text-decoration: none;
+						}
 					}
 					span {
 						font-weight: 700;
@@ -132,10 +140,20 @@
 					}
 				}
 			}
+			&.read {
+				header p a {
+					color: #000;
+					text-decoration: none;
+				}
+			}
 			&.unread.active {
 				background-color: $alt;
 				header p {
 					color: #fff;
+					a {
+						color: #fff;
+						text-decoration: none;
+					}
 						span {
 						font-weight: 700;
 						&.time {

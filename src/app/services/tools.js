@@ -429,25 +429,10 @@ angular.module("proton.tools", ["proton.constants"])
 
     /**
      * Check if the request is in a cache context
-     * @param {Object} request
      * @return {Boolean}
      */
-    tools.cacheContext = function(request) {
-        if(angular.isDefined(request)) {
-            var page = angular.isDefined(request.Page);
-            var label = angular.isDefined(request.Label);
-            var size = angular.isDefined(request.PageSize);
-
-            if(Object.keys(request).length === 2) {
-                return page && label;
-            } else if(Object.keys(request).length === 3) {
-                return page && label && size;
-            } else {
-                return false;
-            }
-        } else {
-            return this.currentMailbox() !== 'search' && angular.isUndefined($stateParams.filter);
-        }
+    tools.cacheContext = function() {
+        return !$state.is('secured.search') && angular.isUndefined($stateParams.filter) && angular.isUndefined($stateParams.sort);
     };
 
     return tools;

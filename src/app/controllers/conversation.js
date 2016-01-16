@@ -57,6 +57,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 if(angular.isUndefined(current) && index === -1) {
                     // Add message
                     $scope.messages.push(message);
+
+                    // Display notification
+                    if(message.Type === 0) {
+                        notify({
+                            message: $translate.instant('NEW_MESSAGE'),
+                            classes: 'notification-success'
+                        });
+                    }
                 }
             });
 
@@ -276,28 +284,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.starred = function() {
         return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
-    };
-
-    /**
-     * Go to the next conversation
-     */
-    $scope.next = function() {
-        var current = $state.$current.name;
-
-        cache.more($scope.conversation, 'next').then(function(id) {
-            // $state.go(current, {id: id});
-        });
-    };
-
-    /**
-     * Go to the previous conversation
-     */
-    $scope.previous = function() {
-        var current = $state.$current.name;
-
-        cache.more($scope.conversation, 'previous').then(function(id) {
-            // $state.go(current, {id: id});
-        });
     };
 
     // Call initialization

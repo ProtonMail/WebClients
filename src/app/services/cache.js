@@ -227,7 +227,9 @@ angular.module("proton.cache", [])
     var queryConversations = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
+
+        request.PageSize = request.PageSize || 100; // We don't call 50 conversations but 100 to improve user experience when he delete message and dislay quickly the next conversations
 
         Conversation.query(request).then(function(result) {
             var data = result.data;
@@ -270,7 +272,9 @@ angular.module("proton.cache", [])
     var queryMessages = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
+
+        request.PageSize = request.PageSize || 100; // We don't call 50 messages but 100 to improve user experience when he delete message and dislay quickly the next messages
 
         Message.query(request).$promise.then(function(result) {
             var messages = result.Messages;
@@ -374,7 +378,7 @@ angular.module("proton.cache", [])
     api.queryMessages = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
         var callApi = function() {
             deferred.resolve(queryMessages(request));
         };
@@ -422,11 +426,7 @@ angular.module("proton.cache", [])
                 if(messages.length === number) {
                     deferred.resolve(messages);
                 } else {
-                    queryMessages(request).then(function(messages) {
-                        if(messages.length > 0) {
-                            api.callRefresh();
-                        }
-                    });
+                    callApi();
                 }
             } else {
                 callApi();
@@ -446,7 +446,7 @@ angular.module("proton.cache", [])
     api.queryConversations = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
         var callApi = function() {
             // Need data from the server
             deferred.resolve(queryConversations(request));
@@ -496,11 +496,7 @@ angular.module("proton.cache", [])
                 if(conversations.length === number) {
                     deferred.resolve(conversations);
                 } else {
-                    queryConversations(request).then(function(conversations) {
-                        if(conversations.length > 0) {
-                            api.callRefresh();
-                        }
-                    });
+                    callApi();
                 }
             } else {
                 callApi();
@@ -913,36 +909,34 @@ angular.module("proton.cache", [])
 
     /**
      * Return previous ID of message specified
-     * @param {Object} conversation
+     * @param {String} conversationID
      * @param {String} type - 'next' or 'previous'
      * @return {Promise}
      */
-    api.more = function(conversation, type) {
+    api.more = function(conversationID, type) {
         var deferred = $q.defer();
         var loc = tools.currentLocation();
-        var request = {PageSize: 1, Label: loc};
+        var request = {Label: loc};
+        var conversation = api.getConversationCached(conversationID);
 
         if(type === 'previous') {
             request.End = conversation.Time;
+            request.EndID = conversation.ID;
+            request.Desc = 1;
         } else {
             request.Begin = conversation.Time;
+            request.BeginID = conversation.ID;
+            request.Desc = 0;
         }
 
-        queryConversations(request).then(function(conversation) {
-            deferred.resolve();
-            // if(angular.isArray(conversation) && conversation.length > 0) {
-            //     if(type === 'next') {
-            //         var first = _.first(conversation);
-            //
-            //         deferred.resolve(first.ID);
-            //     } else if(type === 'previous') {
-            //         var last = _.last(conversation);
-            //
-            //         deferred.resolve(last.ID);
-            //     }
-            // } else {
-            //     deferred.reject();
-            // }
+        queryConversations(request).then(function(conversations) {
+            if(angular.isArray(conversations) && conversations.length > 0) {
+                var first = _.first(conversations);
+
+                deferred.resolve(first.ID);
+            } else {
+                deferred.reject();
+            }
         });
 
         return deferred.promise;

@@ -36,6 +36,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.initialization = function() {
         // Variables
         $scope.mailbox = tools.currentMailbox();
+        $scope.rowMode = authentication.user.ViewLayout === 1;
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
@@ -259,7 +260,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.refreshConversations = function() {
         var deferred = $q.defer();
         var request = $scope.getConversationsParameters($scope.mailbox);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
         var type = tools.typeList();
         var promise;
 
@@ -440,6 +441,30 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.idsSelected = function() {
         return _.map($scope.elementsSelected(), function(conversation) { return conversation.ID; });
+    };
+
+    /**
+     * Go to the next conversation
+     */
+    $scope.nextConversation = function() {
+        var current = $state.$current.name;
+        var id = $state.params.id;
+
+        cache.more(id, 'next').then(function(id) {
+            $state.go(current, {id: id});
+        });
+    };
+
+    /**
+     * Go to the previous conversation
+     */
+    $scope.previousConversation = function() {
+        var current = $state.$current.name;
+        var id = $state.params.id;
+
+        cache.more(id, 'previous').then(function(id) {
+            $state.go(current, {id: id});
+        });
     };
 
     /**

@@ -88,3 +88,10 @@
 		}
 	}
 }
+
+
+@media (max-width: $tablet-portrait) {
+	#attachmentArea {
+		padding: 1rem 10px 0;
+	}
+}

@@ -13,7 +13,9 @@
         vertical-align: middle;
         position: relative;
         form input {
-            width: 12rem !important;
+            max-width: 95%;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 

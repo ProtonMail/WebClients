@@ -22,9 +22,9 @@
             display: none;
         }
 		input[type="checkbox"]:checked + em {
-			height: 35px;
-			width: 35px;
-			line-height: 35px;
+			height: 35px !important;
+			width: 35px !important;
+			line-height: 35px !important;
 			text-align: center;
 			display: block;
 			position: absolute;
@@ -39,13 +39,13 @@
 
 @media (max-width: $mobile-landscape) {
     label.pm_checkbox {
-        height: 30px !important;
-        width: 30px !important;
-        min-width: 30px;
+        height: 35px !important;
+        width: 35px !important;
+        min-width: 35px;
 		input[type="checkbox"]:checked + em {
-			height: 30px;
-			width: 30px;
-			line-height: 30px;
+			height: 35px !important;
+			width: 35px !important;
+			line-height: 35px !important;
 		}
     }
 }
