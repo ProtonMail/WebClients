@@ -29,6 +29,10 @@ body, html {
 			position: relative;
 			max-width: 100%;
 			box-sizing: border-box;
+			&:focus {
+				background: #e9e6f0 !important;
+				z-index: 5;
+			}
 			label {
 				padding: 0 15px;
 				text-align: center;

@@ -34,7 +34,11 @@
             </tr>
         </table>
 
-        <div ng-repeat="conversation in conversations track by conversation.ID" class="message" ng-click="click(conversation)"
+        <div 
+        ng-repeat="conversation in conversations track by conversation.ID" 
+        class="message" 
+        ng-click="click(conversation)"
+        ng-enter="select($event, conversation)"
         ng-class="{
             unread: conversation.NumUnread > 0 || conversation.IsRead === 0,
             selected: conversation.Selected,
@@ -115,6 +119,8 @@
 
         <div
         class="message"
+        tabindex="{{ ($index + 1) }}"
+        ng-enter="select($event, conversation)"
         ng-repeat="conversation in conversations track by conversation.ID"
         ng-class="{
             unread: conversation.NumUnread > 0 || conversation.IsRead === 0,
