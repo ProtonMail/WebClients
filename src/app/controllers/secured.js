@@ -28,7 +28,7 @@ angular.module("proton.controllers.Secured", [])
 
     $rootScope.dateFormat = format;
     // Setting publishable key for Stripe
-    $window.Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
+    // $window.Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
 
     $scope.user = authentication.user;
     $rootScope.discarded = []; // Store ID of message discarded
