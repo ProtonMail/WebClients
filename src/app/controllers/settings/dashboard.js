@@ -6,6 +6,7 @@ angular.module("proton.controllers.Settings")
     $scope,
     $translate,
     $q,
+    $window,
     authentication,
     cardModal,
     confirmModal,
@@ -19,6 +20,19 @@ angular.module("proton.controllers.Settings")
     subscriptions,
     supportModal
 ) {
+    /**
+     * Load stripe script
+     * https://stripe.com/docs/stripe.js
+     */
+    var script = $window.document.createElement('script');
+
+    script.type= 'text/javascript';
+    script.src = 'https://js.stripe.com/v2/';
+    $window.document.body.appendChild(script);
+
+    // Setting publishable key for Stripe
+    $window.Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
+
     // Default values for organization and subscription
     $scope.organization = null;
 
