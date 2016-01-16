@@ -160,14 +160,15 @@ ng-class="{
         </div><!--/.data-->
         <p ng-if="message.ExpirationTime > 0" class="text-red exp-block">
             <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN' | translate }} <span time="{{ message.ExpirationTime }}"></span>
-        </p>        
+        </p>
         <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">
             <a ng-click="displayImages()"><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
-        </p>        
+        </p>
         <div class="clear"></div>
     </div>
     <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
     <div class="frame" ng-show="message.expand === true">
+        <loader-tag ng-if="message.decrypting === true"></loader-tag>
         <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
