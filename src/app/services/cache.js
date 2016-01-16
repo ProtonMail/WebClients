@@ -917,7 +917,7 @@ angular.module("proton.cache", [])
     api.more = function(conversationID, type) {
         var deferred = $q.defer();
         var loc = tools.currentLocation();
-        var request = {PageSize: 1, Label: loc};
+        var request = {PageSize: 3, Label: loc};
         var conversation = api.getConversationCached(conversationID);
 
         if(type === 'previous') {
@@ -925,11 +925,13 @@ angular.module("proton.cache", [])
             request.EndID = conversation.ID;
         } else {
             request.Begin = conversation.Time;
+            request.BeginID = conversation.ID;
+            request.Desc = 0;
         }
 
-        queryConversations(request).then(function(conversation) {
-            if(angular.isArray(conversation)) {
-                var first = _.first(conversation);
+        queryConversations(request).then(function(conversations) {
+            if(angular.isArray(conversations) && conversations.length > 0) {
+                var first = _.first(conversations);
 
                 deferred.resolve(first.ID);
             } else {
