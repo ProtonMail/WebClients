@@ -1294,7 +1294,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                                 events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
                                             }
 
-                                            events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {ID: result.Sent.ConversationID}}); // Tricks to force the download of the new conversation if it is
+                                            events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {ID: result.Sent.ConversationID, LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.sent]}}); // Tricks to force the download of the new conversation if it is
 
                                             cache.events(events); // Send events to the cache manager
                                             notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
