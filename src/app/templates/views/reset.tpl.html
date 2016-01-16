@@ -25,7 +25,7 @@
 
         <p class="alert alert-info">
         We've sent a verification code to your <strong>Recovery Email</strong>. Enter it below to continue.</p>
-        <form ng-submit="verifyResetCode(resetCodeForm)" name="resetCodeForm"  >
+        <form method="post" ng-submit="verifyResetCode(resetCodeForm)" name="resetCodeForm"  >
             <div class="form-group">
                 <label for="resetMbCode">Verification Code</label>
                 <input type="text" ng-model="account.resetMbCode" id="resetMbCode" class="form-control">
@@ -40,7 +40,7 @@
 
         <h1 class="text-center">{{ 'NEW_MAILBOX' | translate }}</h1>
 
-        <form ng-submit="resetMailbox(resetMBPW)" name="resetMBPW" novalidate  >
+        <form method="post" ng-submit="resetMailbox(resetMBPW)" name="resetMBPW" novalidate  >
 
             <div class="form-group">
                 <label for="password">{{ 'NEW_MAILBOX_PASSWORD' | translate }}</label>

@@ -9,7 +9,7 @@
             <!-- where does this go? -->
             <section ng-if="false" class="setting pm_form">
 
-                <form novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons"  >
+                <form method="post" novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons"  >
                     <legend>Message Buttons</legend>
                     <label for="composerMode" class="control-label">{{ 'READ_UNREAD_POSITION' | translate }}</label><br>
                     <div class="radio">
@@ -80,7 +80,7 @@
 
             <section class="setting pm_form full">
 
-                <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
+                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
                     <legend>Custom Theme</legend>
                     <div class="clearfix" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                         <p class="alert alert-info">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
@@ -92,7 +92,7 @@
                         <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
                     </div>
                 </form>
-                <form ng-submit="apiTest()" ng-if="false"  >
+                <form method="post" ng-submit="apiTest()" ng-if="false"  >
                     <button type="submit" class="btn btn-sm btn-warning">API Test</button>
                 </form>
 
