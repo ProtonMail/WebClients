@@ -13,6 +13,10 @@ body .cg-notify-message {
         background-color: $blue;
         border-color: $blue;
     }
+    &.notification-warning {
+        background-color: $yellow;
+        border-color: $yellow;
+    }
     &.notification-danger {
         background-color: #cc9393;
         border-color: #cc9393;
