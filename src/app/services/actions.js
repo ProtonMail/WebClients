@@ -817,7 +817,7 @@ angular.module('proton.actions', [])
                          labelIDs = labelIDs.concat(message.LabelIDs);
                      });
 
-                     // Remove one draft label
+                     // Remove one of the draft label
                      labelIDs.splice(labelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts), 1);
 
                     // Decrease the number of message
