@@ -917,27 +917,52 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var loc = tools.currentLocation();
         var request = {Label: loc};
-        var conversation = api.getConversationCached(conversationID);
+        var context = tools.cacheContext();
+        var callApi = function() {
+            queryConversations(request).then(function(conversations) {
+                if(angular.isArray(conversations) && conversations.length > 0) {
+                    var first = _.first(conversations);
 
-        if(type === 'previous') {
-            request.End = conversation.Time;
-            request.EndID = conversation.ID;
-            request.Desc = 1;
-        } else {
-            request.Begin = conversation.Time;
-            request.BeginID = conversation.ID;
-            request.Desc = 0;
-        }
+                    deferred.resolve(first.ID);
+                } else {
+                    deferred.reject();
+                }
+            });
+        };
 
-        queryConversations(request).then(function(conversations) {
-            if(angular.isArray(conversations) && conversations.length > 0) {
-                var first = _.first(conversations);
+        if (context === true) {
+            var conversations = _.filter(conversationsCached, function(conversation) {
+                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1 && angular.isDefined(api.getTime(conversation.ID, loc));
+            });
 
-                deferred.resolve(first.ID);
+            conversations = orderConversation(conversations, loc);
+
+            var index = _.findIndex(conversations, {ID: conversationID});
+
+            if (index !== -1) {
+                if (type === 'previous' && angular.isDefined(conversations[index + 1])) {
+                    deferred.resolve(conversations[index + 1].ID);
+                } else if (type === 'next' && angular.isDefined(conversations[index - 1])) {
+                    deferred.resolve(conversations[index - 1].ID);
+                } else {
+                    callApi();
+                }
             } else {
-                deferred.reject();
+                callApi();
             }
-        });
+        } else {
+            var conversation = api.getConversationCached(conversationID);
+
+            if (type === 'previous') {
+                request.End = conversation.Time;
+                request.EndID = conversation.ID;
+                request.Desc = 1;
+            } else if (type === 'next') {
+                request.Begin = conversation.Time;
+                request.BeginID = conversation.ID;
+                request.Desc = 0;
+            }
+        }
 
         return deferred.promise;
     };

@@ -432,7 +432,9 @@ angular.module("proton.tools", ["proton.constants"])
      * @return {Boolean}
      */
     tools.cacheContext = function() {
-        return !$state.is('secured.search') && angular.isUndefined($stateParams.filter) && angular.isUndefined($stateParams.sort);
+        var context = !$state.is('secured.search') && angular.isUndefined($stateParams.filter) && angular.isUndefined($stateParams.sort);
+
+        return context;
     };
 
     return tools;
