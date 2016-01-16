@@ -38,6 +38,7 @@ angular.module("proton.authentication", [
             } else {
                 // we need the old stuff for now
                 $log.debug('setAuthHeaders:2');
+                $http.defaults.headers.common["x-pm-session"] = undefined;
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
                 $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
             }
@@ -226,6 +227,9 @@ angular.module("proton.authentication", [
                         $log.debug('after',$http.defaults.headers.common['x-pm-session']);
                         $rootScope.doRefresh = true;
                     }
+                    else {
+                        return $q.reject(response.data.Error);
+                    }
                 },
                 function(err) {
                     $log.error(err);
@@ -402,7 +406,8 @@ angular.module("proton.authentication", [
          * Removes all connection data
          * @param {Boolean} redirect - Redirect at the end the user to the login page
          */
-        logout: function(redirect) {
+        logout: function(redirect, call_api) {
+            call_api = angular.isDefined(call_api) ? call_api : true;
             var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
             var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
             var process = function() {
@@ -415,7 +420,7 @@ angular.module("proton.authentication", [
 
             $rootScope.loggingOut = true;
 
-            if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
+            if( call_api && ( angular.isDefined(sessionToken) || angular.isDefined(uid) ) ) {
                 $http.delete(url.get() + "/auth").then(process, process);
             } else {
                 process();
@@ -423,6 +428,10 @@ angular.module("proton.authentication", [
         },
 
         clearData: function() {
+            // Reset $http server
+            $http.defaults.headers.common["x-pm-session"] = undefined;
+            $http.defaults.headers.common.Authorization = undefined;
+            $http.defaults.headers.common["x-pm-uid"] = undefined;
             // Completely clear sessionstorage
             window.sessionStorage.clear();
             // Delete data key

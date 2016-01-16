@@ -330,11 +330,11 @@ angular.module('proton', [
                             return $http(rejection.config);
                         },
                         function() {
-                            $injector.get('authentication').logout(true);
+                            $injector.get('authentication').logout(true, false);
                         }
                     );
                 } else {
-                    $injector.get('authentication').logout(true);
+                    $injector.get('authentication').logout(true, false);
                 }
             }
 
