@@ -226,7 +226,7 @@ angular.module("proton.cache", [])
         var loc = getLocation(request);
         var context = tools.cacheContext();
 
-        request.PageSize = request.PageSize || 100; // We don't call 50 conversations but 100 to improve user experience when he delete message and dislay quickly the next conversations
+        request.Limit = request.Limit || 100; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
 
         Conversation.query(request).then(function(result) {
             var data = result.data;
@@ -271,7 +271,7 @@ angular.module("proton.cache", [])
         var loc = getLocation(request);
         var context = tools.cacheContext();
 
-        request.PageSize = request.PageSize || 100; // We don't call 50 messages but 100 to improve user experience when he delete message and dislay quickly the next messages
+        request.Limit = request.Limit || 100; // We don't call 50 messages but 100 to improve user experience when he delete message and display quickly the next messages
 
         Message.query(request).$promise.then(function(result) {
             var messages = result.Messages;
@@ -382,8 +382,8 @@ angular.module("proton.cache", [])
 
         if(context) {
             var page = request.Page || 0;
-            var start = page * CONSTANTS.MESSAGES_PER_PAGE;
-            var end = start + CONSTANTS.MESSAGES_PER_PAGE;
+            var start = page * CONSTANTS.ELEMENTS_PER_PAGE;
+            var end = start + CONSTANTS.ELEMENTS_PER_PAGE;
             var total;
             var number;
             var mailbox = tools.currentMailbox();
@@ -406,13 +406,13 @@ angular.module("proton.cache", [])
                 if(total === 0) {
                     number = 0;
                 } else {
-                    if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
-                        number = CONSTANTS.MESSAGES_PER_PAGE;
+                    if((total % CONSTANTS.ELEMENTS_PER_PAGE) === 0) {
+                        number = CONSTANTS.ELEMENTS_PER_PAGE;
                     } else {
-                        if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
-                            number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                        if((Math.ceil(total / CONSTANTS.ELEMENTS_PER_PAGE) - 1) === page) {
+                            number = total % CONSTANTS.ELEMENTS_PER_PAGE;
                         } else {
-                            number = CONSTANTS.MESSAGES_PER_PAGE;
+                            number = CONSTANTS.ELEMENTS_PER_PAGE;
                         }
                     }
                 }
@@ -452,8 +452,8 @@ angular.module("proton.cache", [])
         // In cache context?
         if(context === true) {
             var page = request.Page || 0;
-            var start = page * CONSTANTS.MESSAGES_PER_PAGE;
-            var end = start + CONSTANTS.MESSAGES_PER_PAGE;
+            var start = page * CONSTANTS.ELEMENTS_PER_PAGE;
+            var end = start + CONSTANTS.ELEMENTS_PER_PAGE;
             var total;
             var number;
             var mailbox = tools.currentMailbox();
@@ -476,13 +476,13 @@ angular.module("proton.cache", [])
                 if(total === 0) {
                     number = 0;
                 } else {
-                    if((total % CONSTANTS.MESSAGES_PER_PAGE) === 0) {
-                        number = CONSTANTS.MESSAGES_PER_PAGE;
+                    if((total % CONSTANTS.ELEMENTS_PER_PAGE) === 0) {
+                        number = CONSTANTS.ELEMENTS_PER_PAGE;
                     } else {
-                        if((Math.ceil(total / CONSTANTS.MESSAGES_PER_PAGE) - 1) === page) {
-                            number = total % CONSTANTS.MESSAGES_PER_PAGE;
+                        if((Math.ceil(total / CONSTANTS.ELEMENTS_PER_PAGE) - 1) === page) {
+                            number = total % CONSTANTS.ELEMENTS_PER_PAGE;
                         } else {
-                            number = CONSTANTS.MESSAGES_PER_PAGE;
+                            number = CONSTANTS.ELEMENTS_PER_PAGE;
                         }
                     }
                 }

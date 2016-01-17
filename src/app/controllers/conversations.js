@@ -205,8 +205,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         function makeRange(element, index, array) {
-            if(index%CONSTANTS.MESSAGES_PER_PAGE === 0) {
-                ddp2.push((index+1) + ' - ' + (index+CONSTANTS.MESSAGES_PER_PAGE));
+            if(index%CONSTANTS.ELEMENTS_PER_PAGE === 0) {
+                ddp2.push((index+1) + ' - ' + (index+CONSTANTS.ELEMENTS_PER_PAGE));
                 makeRangeCounter++;
             }
         }

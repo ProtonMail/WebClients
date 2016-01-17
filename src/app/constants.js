@@ -26,7 +26,7 @@ angular.module('proton.constants', [])
     ENC_OUT_ENC_REPLY: 6, // encrypted for outside
     SAVE_TIMEOUT_TIME: 2000, // 2 seconds
     MAX_EXPIRATION_TIME: 672, // hours
-    MESSAGES_PER_PAGE: 50,
+    ELEMENTS_PER_PAGE: 50,
     COUNT_UNREAD_INTERVAL_TIME: 20000, // 20 seconds
     LOGIN_PW_MAX_LEN: 500,
     MAILBOX_IDENTIFIERS: {
