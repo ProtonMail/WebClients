@@ -104,7 +104,7 @@ angular.module("proton.controllers.Header", [])
                 /*
                 if (params.words === '$$bubble') {
                     notify({
-                        message: 'Bubble Mode Activated', 
+                        message: 'Bubble Mode Activated',
                         classes: 'notification-success'
                     });
                     $rootScope.themeBubble = true;
@@ -228,14 +228,6 @@ angular.module("proton.controllers.Header", [])
         }
         else {
             return '';
-        }
-    };
-
-    $scope.toggleLayoutMode = function() {
-        if($rootScope.layoutMode === 'rows') {
-            $rootScope.layoutMode = 'columns';
-        } else {
-            $rootScope.layoutMode = 'rows';
         }
     };
 });
