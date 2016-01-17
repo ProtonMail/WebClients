@@ -111,6 +111,9 @@
             padding: 10px 0;
             font-weight: 700;
             margin-bottom: -1rem;
+            position: absolute;
+            left: 40px;
+            bottom: 20px;
         }
         .display-image {
             display: block;
@@ -188,9 +191,6 @@
                     display: block;
                 } 
             }
-            .sub .labelRow {
-                display: block !important;
-            }
         }
         &.open {
             background: #fff;
@@ -202,16 +202,20 @@
             }
             & > header,
             .sub {
-                background: $read; 
-            }
-            .sub {
+                background: $read;
+                padding-bottom: 20px;
                 border-bottom: 1px solid $border;
+                .labelRow {
+                    display: block !important;
+                    padding-top: 25px !important;
+                }
             }
             header {
-                margin-bottom: -10px;
                 padding-top: 20px;
                 float: left;
                 width: 100%;
+                padding-bottom: 0 !important;
+                border-bottom-color: transparent; 
                 .fa-lock {
                     top: 10px;
                 }
@@ -377,14 +381,14 @@
     	}
         &.hasLabels {
             .sub {
-                padding-bottom: 20px;
+                // padding-bottom: 20px;
             }
         }
 		.sub {
             // margin-left: 40px;
             // margin-right: 40px;
             padding-left: 40px;
-            padding-right: 240px;
+            padding-right: 40px;
 			// padding-right: calc(175px - 40px);
 			position: relative;
 			color: #999;
@@ -396,7 +400,6 @@
             padding-bottom: 20px;
 			.data {
                 float: left;
-                width: 100%;
                 font-size: 90%;
                 .where {
                     display: inline-block;
@@ -405,11 +408,11 @@
             .labelRow {
                 clear: both;
                 float: left;
-                position: absolute;
-                bottom: 1rem;
-                right: 36px;
-                left: 40px;
+                width: 100%;
+                box-sizing: border-box;
+                padding-left: 140px;
                 display: none;
+                min-height: 40px;
                 .pm_labels {
                     float: right;
                     background: $read;
@@ -418,15 +421,14 @@
                     .pm_label {
                         background: $read;
                         box-shadow: 0 0 0 4px $read;
+                        margin-top: 4px;
                     }
                 }
             }            
     		.actions {
 				text-align: right;
 				padding: 0;
-				position: absolute;
-				right: 40px;
-				top: 10px;
+                float: right;
 				z-index: 12;
 				width: 215px;
 				.pm_buttons {
@@ -537,6 +539,9 @@
         }
     }
 
+    #pm_view article.message .toggleDetails {
+        left: 10px;
+    }
 
     #pm_view .labelRow {
         display: block !important;
@@ -577,6 +582,7 @@
     }
     #pm_view article.message {
         header {
+            padding-right: 10px;
             .history.fa-placeholder {
                 display: none;
             }
@@ -587,7 +593,6 @@
         }
         &.open {
             .sub .actions {
-                margin-right: -30px !important;
             }
         }
     }
@@ -595,11 +600,6 @@
         position: relative;
         .sub {
             margin: 0;
-        }
-    }
-    #pm_view article.message.open.hasImages {
-        .sub {
-            margin-bottom: 2rem;
         }
     }
     #pm_view article.showingImages.message.open {
@@ -655,7 +655,8 @@
         }
     }
     #pm_view article.message .sub .labelRow {
-        right: 6px;
+        right: 10px;
+        bottom: 16px;
         .pm_labels .pm_label {
             em {
                 display: block !important;
@@ -669,7 +670,6 @@
         width: initial !important;
     }
     #pm_view article.message .sub .labelRow {
-        position: static;
         clear: both;
         float: none;
         .pm_label {
@@ -705,11 +705,12 @@
 }
 
 @media (max-width:  $tablet-portrait) {
-    #pm_view article.message .sub {
-        padding-left: 0;
-        padding-right: 0;
-        .data {
-            clear: both;
+
+    #pm_view article.message {
+        .sub {
+            padding-left: 0;
+            padding-right: 0;
         }
     }
+
 }

@@ -20,10 +20,11 @@ It will conflict with email rendering if the selectors are not specific or neste
 
 #pm_rows,
 #pm_conversations {
-	.fa-paperclip,
+	article > header .fa-paperclip,
 	header .loc,
 	.meta .fa-star-o,
-	header .fa-lock {
+	article > header .fa-lock,
+	.meta .singleStar {
 		color: #aba7be;
 		display: inline-block;
 		text-align: center;

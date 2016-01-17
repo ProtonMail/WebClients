@@ -16,7 +16,7 @@ ng-class="{
 
         <span class="meta">
 
-            <div class="headerLabelRow" ng-show="message.labels().length > 0" ng-hide="toggleDetails === true && message.expand">
+            <div class="headerLabelRow" ng-show="message.labels().length > 0" ng-hide="message.expand">
                 <span class="pm_labels" ng-if="message.labels().length > 0">
                     <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
                         <em>{{ getLabel(labelID).Name }}</em>
