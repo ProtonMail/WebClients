@@ -118,6 +118,26 @@
 		right: 92px;
 		z-index: 10;
 	}
+	.pm_label:nth-child(10) {
+		right: 92px;
+		z-index: 11;
+	}
+	.pm_label:nth-child(11) {
+		right: 102px;
+		z-index: 12;
+	}
+	.pm_label:nth-child(12) {
+		right: 112px;
+		z-index: 13;
+	}
+	.pm_label:nth-child(13) {
+		right: 122px;
+		z-index: 14;
+	}
+	.pm_label:nth-child(14) {
+		right: 132px;
+		z-index: 15;
+	}	
 }
 
 @media (max-width: $tablet-landscape) {
