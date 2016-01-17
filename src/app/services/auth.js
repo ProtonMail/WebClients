@@ -5,6 +5,7 @@ angular.module("proton.authentication", [
 
 .factory('authentication', function(
     $http,
+    $location,
     $log,
     $q,
     $rootScope,
@@ -69,9 +70,14 @@ angular.module("proton.authentication", [
                                     if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
                                         var mailboxPassword = api.getPassword();
                                         var promises = [];
+                                        var hostRestricted = ['dev.protonmail.com', 'v3.protonmail.com']; // TODO remove that for the release
 
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
+
+                                        if (hostRestricted.indexOf($location.host()) !== -1) {
+                                            user.Role = 1;
+                                        }
 
                                         // All private keys are decrypted with the mailbox password and stored in a `keys` array
                                         _.each(user.Addresses, function(address) { // For each addresses
