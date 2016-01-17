@@ -11,6 +11,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $stateParams,
     $templateCache,
     $timeout,
+    $filter,
     $translate,
     authentication,
     CONFIG,
@@ -169,17 +170,7 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         labels: function() {
-            var labels = [];
-
-            _.each(this.LabelIDs, function(id) {
-                var label =  _.findWhere(authentication.user.Labels, {ID: id});
-
-                if(angular.isDefined(label)) {
-                    labels.push(label);
-                }
-            });
-
-            return labels;
+            return $filter('labels')(this.LabelIDs);
         },
 
         setMsgBody: function() {
