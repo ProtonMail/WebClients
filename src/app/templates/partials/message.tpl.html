@@ -9,11 +9,25 @@ ng-class="{
     'unread': message.IsRead === 0,
     'details': toggleDetails === true,
     'showingImages': showingMessages,
-    'hasImages': !!message.imagesHidden
+    'hasImages': !!message.imagesHidden,
+    'hasLabels': (message.labels().length > 0)
 }">
     <header ng-click="toggle()">
 
         <span class="meta">
+
+            <div class="headerLabelRow" ng-show="message.labels().length > 0 )" ng-hide="toggleDetails === true && message.expand">
+                <span class="pm_labels" ng-if="message.labels().length > 0">
+                    <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
+                        <em>{{ getLabel(labelID).Name }}</em>
+                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
+                        <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </span>
+                </span>                
+            </div>
+
             <i class="fa fa-paperclip" ng-show="( message.Attachments.length > 0 )"></i>
             <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
@@ -45,7 +59,10 @@ ng-class="{
         <i class="pm_tag" ng-show="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
         <span class="expiration" ng-show="message.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
     </header>
-    <div class="sub" ng-show="message.expand === true" ng-class="{ 'images': !!message.imagesHidden, 'expiring': (message.ExpirationTime > 0) }">
+    <div class="sub" ng-show="message.expand === true" ng-class="{ 
+    'images': !!message.imagesHidden, 
+    'expiring': (message.ExpirationTime > 0),
+    }">
         <div class="actions">
 
             <span class="pm_buttons">
@@ -150,26 +167,27 @@ ng-class="{
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails !== true">{{ 'SHOW_DETAILS' | translate }}</a>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
 
-            <div class="labelRow" ng-show="message.labels().length > 0">
-                <span class="pm_labels inline" ng-if="message.labels().length > 0">
-                    <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
-                        <em>{{ getLabel(labelID).Name }}</em>
-                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                        <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </span>
-                </span>                
-            </div>
-
         </div><!--/.data-->
-        <p ng-if="message.ExpirationTime > 0" class="text-red exp-block">
-            <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN' | translate }} <span time="{{ message.ExpirationTime }}"></span>
-        </p>        
-        <p ng-show="!!message.imagesHidden" class="display-image text-center pm_button">
-            <a ng-click="displayImages()"><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
-        </p>        
+
+
+        <div class="labelRow" ng-show="message.labels().length > 0">
+            <span class="pm_labels inline" ng-if="message.labels().length > 0">
+                <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
+                    <em>{{ getLabel(labelID).Name }}</em>
+                    <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
+                    <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </span>
+            </span>                
+        </div>       
         <div class="clear"></div>
+    </div>
+    <div ng-if="message.ExpirationTime > 0" class="text-red exp-block" ng-show="message.expand">
+        <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN' | translate }} <span time="{{ message.ExpirationTime }}"></span>
+    </div>        
+    <div ng-show="!!message.imagesHidden && message.expand" class="display-image text-center pm_button">
+        <a ng-click="displayImages()"><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
     </div>
     <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
     <div class="frame" ng-show="message.expand === true">
