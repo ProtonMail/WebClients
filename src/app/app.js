@@ -79,7 +79,6 @@ angular.module('proton', [
     'proton.tooltip',
     'proton.transformation',
     'proton.maxComposerHeight',
-    'proton.advSearch',
 
     // Filters
     'proton.filters',
