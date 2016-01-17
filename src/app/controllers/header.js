@@ -80,6 +80,7 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.sidebarToggle = function() {
+        console.log('sidebarToggle');
         $rootScope.$broadcast('sidebarMobileToggle');
     };
 
