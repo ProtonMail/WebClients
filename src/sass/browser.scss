@@ -21,3 +21,9 @@
         -webkit-overflow-scrolling: touch;
     }
 }
+
+.ua-edge {
+    .rows#pm_conversations .list .pm_checkbox input {
+        margin-top: 11px;
+    }
+}

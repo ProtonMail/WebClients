@@ -13,23 +13,18 @@ ng-class="{
 }">
     <header ng-click="toggle()">
 
-<span class="fa locks" ng-class="{
-'fa-lock': !!!(message.IsEncrypted == '0'),
-'text-purple': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6'),
-'fa-unlock-alt': !!(message.IsEncrypted == '0'),
-'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
-}" title="Stored Encrypted"></span>
-
         <span class="meta">
-            <i class="fa fa-paperclip" ng-show="message.HasAttachment === 1"></i>
-            <i class="fa fa-send" ng-show="sent() === true" pt-tooltip="{{ 'IN_SENT' | translate }}"></i>
-            <i class="fa fa-archive" ng-show="archive() === true" pt-tooltip="{{ 'IN_ARCHIVE' | translate }}"></i>
-            <i class="fa fa-file-text-o" ng-show="draft() === true" pt-tooltip="{{ 'IN_DRAFTS' | translate }}"></i>
-            <i class="fa fa-trash-o" ng-show="trash() === true" pt-tooltip="{{ 'IN_TRASH' | translate }}"></i>
-            <i class="fa fa-ban" ng-show="spam() === true" pt-tooltip="{{ 'IN_SPAM' | translate }}"></i>
+            <i class="fa fa-paperclip" ng-show="( message.Attachments.length > 0 )"></i>
             <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
+            <span class="fa locks" ng-class="{
+            'fa-lock': !!!(message.IsEncrypted == '0'),
+            'text-purple': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6'),
+            'fa-unlock-alt': !!(message.IsEncrypted == '0'),
+            'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
+            }" title="Stored Encrypted">
+            </span>            
             <span class="time" ng-hide="toggleDetails === true" time="{{ message.Time }}" filter="longReadableTime" interval="60000"></span>
             <span class="time" ng-show="toggleDetails === true">{{ message.Time * 1000 | date: 'medium' }}</span>
         </span>
@@ -42,30 +37,26 @@ ng-class="{
             <strong>{{ message.Sender | contact:'Name' }}</strong>
             <em ng-show="toggleDetails === true && message.expand" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
         </span>
+        <i class="fa loc fa-archive" ng-show="archive() === true" pt-tooltip="{{ 'IN_ARCHIVE' | translate }}"></i>
+        <i class="fa loc fa-trash-o" ng-show="trash() === true" pt-tooltip="{{ 'IN_TRASH' | translate }}"></i>
+        <i class="fa loc fa-ban" ng-show="spam() === true" pt-tooltip="{{ 'IN_SPAM' | translate }}"></i>
         <a ng-show="message.expand === true" class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
         <i class="pm_tag" ng-show="message.Type === 1">{{ 'DRAFT' | translate }}</i>
         <i class="pm_tag" ng-show="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
-        <span class="pm_labels" ng-if="message.labels().length > 0">
-            <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
-                <em>{{ getLabel(labelID).Name }}</em>
-                <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
-                    <i class="fa fa-times"></i>
-                </a>
-            </span>
-        </span>
-        <span class="addLabelButton pm_buttons" ng-class="{ open: DDopen }">
-            <a class="pm_trigger open-label pull-left addLabel" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown ng-click="DDopen = true; $event.stopPropagation();" ng-blur="DDopen = false">
-                <small><i class="fa fa-tag"></i> {{ 'ADD_LABEL' | translate }}</small>
-            </a>
-            <span class="pm_dropdown wide pull-left labelDD">
-                <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
-            </span>
-        </span><!-- this needs to re-be styled -->
         <span class="expiration" ng-show="message.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
     </header>
     <div class="sub" ng-show="message.expand === true" ng-class="{ 'images': !!message.imagesHidden, 'expiring': (message.ExpirationTime > 0) }">
         <div class="actions">
+
+            <span class="pm_buttons">
+                <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown ng-click="DDopen = true; $event.stopPropagation();" ng-blur="DDopen = false">
+                    <small><i class="fa fa-tag"></i></small>
+                </a>
+                <span class="pm_dropdown right wide pull-left">
+                    <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
+                </span>
+            </span>
+
             <span class="pm_buttons">
                 <a href="#" ng-click="reply(message)" pt-tooltip="{{ 'REPLY' | translate }}">
                     <i class="fa fa-mail-reply"></i>
@@ -114,6 +105,7 @@ ng-class="{
                     </a>
                 </span>
             </span>
+
         </div><!--/.actions-->
         <div class="data">
             <table>
@@ -157,6 +149,19 @@ ng-class="{
             </table>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails !== true">{{ 'SHOW_DETAILS' | translate }}</a>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
+
+            <div class="labelRow" ng-show="message.labels().length > 0">
+                <span class="pm_labels inline" ng-if="message.labels().length > 0">
+                    <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
+                        <em>{{ getLabel(labelID).Name }}</em>
+                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
+                        <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </span>
+                </span>                
+            </div>
+
         </div><!--/.data-->
         <p ng-if="message.ExpirationTime > 0" class="text-red exp-block">
             <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN' | translate }} <span time="{{ message.ExpirationTime }}"></span>

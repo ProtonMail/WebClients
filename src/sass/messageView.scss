@@ -122,8 +122,7 @@
             height: 2rem;
             line-height: 2rem;
             margin: 0;
-            background: $read;
-            box-shadow: 0 1px 0 $read;
+            background: #fff;
             z-index: 1;
             a {
                 display: block;
@@ -199,7 +198,7 @@
             .where {
                 display: inline-block;
             }
-            header,
+            & > header,
             .sub {
                 background: $read; 
             }
@@ -329,31 +328,24 @@
             font-size: 90%;
             position: relative;
             cursor: pointer;
-            .fa-lock {
-                opacity: .33;
-                position: absolute;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                line-height: 40px;
-                height: 40px;
-                width: 40px;
-                display: block;
-                font-size: 14px;
-                text-align: center;
-                &.text-purple {
-                    opacity: 1;
-                }
-                &.pgp {
-                    color: $pgp;
-                    opacity: 1;
-                }
-            }
             .addLabelButton {
                 display: none;
             }
             & > .meta {
                 float: right;
+                .fa-lock {
+                    width: 1.5rem;
+                    display: inline-block;
+                    font-size: 14px;
+                    text-align: center;
+                    &.text-purple {
+                        opacity: 1;
+                    }
+                    &.pgp {
+                        color: $pgp;
+                        opacity: 1;
+                    }
+                }                
             }
             .pm_labels {
                 top: 1px;
@@ -368,6 +360,7 @@
     			display: inline-block;
     			white-space: nowrap;
     			text-align: right;
+                width: 8rem;
     		}
             .history {
                 width: 25px;
@@ -408,10 +401,8 @@
     			width: 1.5rem;
     			line-height: 20px;
     			height: 20px;
+                text-align: center;
     		}
-    		.fa-star-o {
-				color: $gray;
-			}
 			.fa-star {
 			 	color: $orange;
 			}
@@ -421,6 +412,7 @@
             // margin-right: 40px;
             padding-left: 40px;
             padding-right: 185px;
+            padding-right: 40px;
 			// padding-right: calc(175px - 40px);
 			position: relative;
 			color: #999;
@@ -443,6 +435,20 @@
                 .where {
                     display: inline-block;
                 }
+                .labelRow {
+                    clear: both;
+                    float: left;
+                    width: 100%;
+                    padding-top: 1rem;
+                    .pm_labels {
+                        float: right;
+                        background: $read;
+                        .pm_label {
+                            background: $read;
+                            box-shadow: 0 0 0 4px $read;
+                        }
+                    }
+                }
 			}
     		.actions {
 				text-align: right;
@@ -450,12 +456,12 @@
 				position: absolute;
 				right: 40px;
 				top: 10px;
-				z-index: 2;
-				width: 145px;
+				z-index: 12;
+				width: 215px;
 				.pm_buttons {
                     background: #fff;
 					float: right;
-					margin: 0;
+					margin: 0 0 0 10px;
 				}
 			}
 			& > .fa-mail-forward,
