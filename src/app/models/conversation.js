@@ -10,6 +10,7 @@ angular.module("proton.models.conversations", [])
          * @param Page
          * @param PageSize
          * @param Label
+         * @param Limit
          * @param Desc
          * @param Keyword
          * @param To

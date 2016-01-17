@@ -1,7 +1,7 @@
 <nav id="pm_toolbar">
     <div class="main">
         <div class="pull-right">
-            <paginator ng-hide="idDefined() && rowMode === true" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
+            <paginator ng-hide="idDefined() && rowMode === true" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.ELEMENTS_PER_PAGE" change="selectPage" />
             <span class="pm_buttons" ng-show="idDefined() && rowMode === true">
                 <a ng-click="nextConversation(conversation)" pt-tooltip="{{ 'PREVIOUS' | translate }}">
                     <i class="fa fa-chevron-left"></i>
