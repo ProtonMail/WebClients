@@ -25,7 +25,7 @@ ng-class="{
                             <i class="fa fa-times"></i>
                         </a>
                     </span>
-                </span>                
+                </span>
             </div>
 
             <i class="fa fa-paperclip" ng-show="( message.Attachments.length > 0 )"></i>
@@ -38,7 +38,7 @@ ng-class="{
             'fa-unlock-alt': !!(message.IsEncrypted == '0'),
             'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
             }" title="Stored Encrypted">
-            </span>            
+            </span>
             <span class="time" ng-hide="toggleDetails === true" time="{{ message.Time }}" filter="longReadableTime" interval="60000"></span>
             <span class="time" ng-show="toggleDetails === true">{{ message.Time * 1000 | date: 'medium' }}</span>
         </span>
@@ -59,8 +59,8 @@ ng-class="{
         <i class="pm_tag" ng-show="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
         <span class="expiration" ng-show="message.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
     </header>
-    <div class="sub" ng-show="message.expand === true" ng-class="{ 
-    'images': !!message.imagesHidden, 
+    <div class="sub" ng-show="message.expand === true" ng-class="{
+    'images': !!message.imagesHidden,
     'expiring': (message.ExpirationTime > 0),
     }">
         <div class="actions">
@@ -177,13 +177,13 @@ ng-class="{
                         <i class="fa fa-times"></i>
                     </a>
                 </span>
-            </span>                
-        </div>       
+            </span>
+        </div>
         <div class="clear"></div>
     </div>
     <div ng-if="message.ExpirationTime > 0" class="text-red exp-block" ng-show="message.expand">
         <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN' | translate }} <span time="{{ message.ExpirationTime }}"></span>
-    </div>        
+    </div>
     <div ng-show="!!message.imagesHidden && message.expand" class="display-image text-center pm_button">
         <a ng-click="displayImages()"><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
     </div>
