@@ -325,7 +325,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         if(angular.isUndefined(message.ID)) {
                             if (angular.isUndefined(message.savePromise)) {
-                                $scope.save(message, false, false, false); // message, silently, forward, notification
+                                $scope.save(message, false, false, false); // message, forward, notification
                             }
 
                             message.savePromise.then(process);
@@ -545,7 +545,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             $scope.onAddFile(message);
             // forward case: we need to save to get the attachments
             if(save === true) {
-                $scope.save(message, true, true, false).then(function() { // message, silently, forward, notification
+                $scope.save(message, true, false).then(function() { // message, forward, notification
                     $scope.decryptAttachments(message);
                     $scope.composerStyle();
                 }, function(error) {
@@ -634,10 +634,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     };
 
-    $scope.editorStyle = function(message) {
-
-    };
-
     $scope.completedSignature = function(message) {
         if (angular.isUndefined(message.Body)) {
             var signature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>', {
@@ -647,10 +643,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             message.Body = ($(signature).text().length === 0 && $(signature).find('img').length === 0)? "" : "<br /><br />" + signature;
         }
-    };
-
-    $scope.composerIsSelected = function(message) {
-        return $scope.selected === message;
     };
 
     $scope.focusComposer = function(message) {
@@ -926,7 +918,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         message.timeoutSaving = $timeout(function() {
             if($scope.needToSave(message)) {
-                $scope.save(message, true, false, false); // message, silently, forward, notification
+                $scope.save(message, false, false, true); // message, forward, notification, autosaving
             }
         }, CONSTANTS.SAVE_TIMEOUT_TIME);
     };
@@ -985,11 +977,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     /**
      * Save the Message
      * @param {Resource} message - Message to save
-     * @param {Boolean} silently - Freeze the editor to avoid user interaction
      * @param {Boolean} forward - Forward case
      * @param {Boolean} notification - Add a notification when the saving is complete
+     * @param {Boolean} autosaving
      */
-    $scope.save = function(message, silently, forward, notification) {
+    $scope.save = function(message, forward, notification, autosaving) {
         // Variables
         var deferred = $q.defer();
         var parameters = {
@@ -999,7 +991,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         // Functions
         // Schedule this save after the in-progress one completes
         var nextSave = function(result) {
-            return $scope.save(message, silently, forward, notification);
+            return $scope.save(message, forward, notification);
         };
 
         if(angular.isDefined(message.timeoutSaving)) {
@@ -1011,6 +1003,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             deferred.resolve(message.savePromise);
         } else {
             message.saving = true;
+            message.autosaving = autosaving || false;
 
             if(angular.isUndefined(parameters.Message.Subject)) {
                 parameters.Message.Subject = '';
@@ -1109,31 +1102,37 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         }
 
                         message.saving = false;
+                        message.autosaving = false;
 
                         deferred.resolve(result);
                     } else if(angular.isDefined(result) && result.Code === 15033) {
                         // Case where the user delete draft in an other terminal
                         delete message.ID;
                         message.saving = false;
-                        deferred.resolve($scope.save(message, silently, forward, notification));
+                        message.autosaving = false;
+                        deferred.resolve($scope.save(message, forward, notification));
                     } else {
                         $log.error(result);
                         message.saving = false;
+                        message.autosaving = false;
                         deferred.reject(result);
                     }
                 }, function(error) {
                     message.saving = false;
+                    message.autosaving = false;
                     error.message = 'Error during the draft request';
                     deferred.reject(error);
                 });
             }, function(error) {
                 message.saving = false;
+                message.autosaving = false;
                 error.message = 'Error encrypting message';
                 deferred.reject(error);
             });
 
             message.savePromise = deferred.promise.finally(function() {
                 message.saving = false;
+                message.autosaving = false;
             });
 
             return deferred.promise;

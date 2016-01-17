@@ -222,7 +222,7 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         loading: function() {
-            return this.uploading || this.saving || this.sending || this.encrypting;
+            return this.uploading || (this.saving === true && this.autosaving === false) || this.sending || this.encrypting;
         },
 
         encryptBody: function(key) {
