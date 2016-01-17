@@ -351,29 +351,31 @@ angular.module("proton.controllers.Settings")
             var card = results[1];
 
             if(angular.isDefined(plan.data) && plan.data.Code === 1000) {
-                // Open payment modal
-                paymentModal.activate({
-                    params: {
-                        create: organization === true, // new?
-                        card: card,
-                        configuration: configuration,
-                        change: function(organization) {
-                            Payment.subscriptions().then(function(subscriptions) {
-                                if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-                                    $scope.subscription = subscriptions.data.Subscriptions[0];
-                                    $scope.currentCurrency = subscriptions.data.Subscriptions[0].Currency;
-                                    $scope.futureCurrency = subscriptions.data.Subscriptions[0].Currency;
-                                    $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
-                                    $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
-                                    $scope.organization = organization;
-                                }
-                            });
-                        },
-                        cancel: function() {
-                            paymentModal.deactivate();
+                if (plan.data.Sources.length > 0) {
+                    // Open payment modal
+                    paymentModal.activate({
+                        params: {
+                            create: organization === true, // new?
+                            card: card,
+                            configuration: configuration,
+                            change: function(organization) {
+                                Payment.subscriptions().then(function(subscriptions) {
+                                    if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
+                                        $scope.subscription = subscriptions.data.Subscriptions[0];
+                                        $scope.currentCurrency = subscriptions.data.Subscriptions[0].Currency;
+                                        $scope.futureCurrency = subscriptions.data.Subscriptions[0].Currency;
+                                        $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
+                                        $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
+                                        $scope.organization = organization;
+                                    }
+                                });
+                            },
+                            cancel: function() {
+                                paymentModal.deactivate();
+                            }
                         }
-                    }
-                });
+                    });
+                }
             } else if(angular.isDefined(plan.data) && plan.data.Error) {
                 notify({message: plan.data.Error, classes: 'notification-danger'});
             } else {
