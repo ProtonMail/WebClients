@@ -19,6 +19,7 @@ angular.module("proton.squire", [
 
             LINK_DEFAULT = IMAGE_DEFAULT = "";
             IFRAME_CLASS = 'angular-squire-iframe';
+            HEADER_CLASS = 'h4';
             editor = scope.editor = null;
             scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
 
@@ -186,11 +187,14 @@ angular.module("proton.squire", [
                     var p, ref;
 
                     p = editor.getPath();
+
                     if (/>A\b/.test(p) || editor.hasFormat('A')) {
                         element.find('.add-link').addClass('active');
                     } else {
                         element.find('.add-link').removeClass('active');
                     }
+
+                    menubar.attr("class", "squire-toolbar " + p.split("BODY")[1].replace(/>|\.|html|body|div/ig, ' ').replace(RegExp(HEADER_CLASS, 'g'), 'size').toLowerCase());
                 });
 
                 editor.alignRight = function() {
@@ -220,7 +224,7 @@ angular.module("proton.squire", [
 
             iframe = element.find('iframe.squireIframe');
             var iframeDoc = iframe.contentDocument || iframe.contentWindow && iframe.contentWindow.document;
-            menubar = element.find('.menu');
+            menubar = element.find('.squire-toolbar');
             loaded = false;
 
             // Check if browser is Webkit (Safari/Chrome) or Opera
