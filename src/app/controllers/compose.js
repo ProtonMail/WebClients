@@ -303,10 +303,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         dropzone.removeFile(file);
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
-                    } else if(totalSize >= (sizeLimit * 1024 * 1024)) {
+                    } else if(totalSize >= (sizeLimit * CONSTANTS>BASE_SIZE * CONSTANTS>BASE_SIZE)) {
                         dropzone.removeFile(file);
-                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.');
-                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/1024/1024)/10 + ' MB.', classes: 'notification-danger'});
+                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS>BASE_SIZE/CONSTANTS>BASE_SIZE)/10 + ' MB.');
+                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS>BASE_SIZE/CONSTANTS>BASE_SIZE)/10 + ' MB.', classes: 'notification-danger'});
                     } else {
                         if ( angular.isUndefined( message.queuedFiles ) ) {
                             message.queuedFiles = 0;
@@ -325,7 +325,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         if(angular.isUndefined(message.ID)) {
                             if (angular.isUndefined(message.savePromise)) {
-                                $scope.save(message, false, false, false); // message, silently, forward, notification
+                                $scope.save(message, false, false, false); // message, forward, notification
                             }
 
                             message.savePromise.then(process);
@@ -356,7 +356,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 error: function(event) {
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
-                    if(event.size > sizeLimit * 1024 * 1024) {
+                    if(event.size > sizeLimit * CONSTANTS>BASE_SIZE * CONSTANTS>BASE_SIZE) {
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
                     }
                 }
@@ -545,7 +545,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             $scope.onAddFile(message);
             // forward case: we need to save to get the attachments
             if(save === true) {
-                $scope.save(message, true, true, false).then(function() { // message, silently, forward, notification
+                $scope.save(message, true, false).then(function() { // message, forward, notification
                     $scope.decryptAttachments(message);
                     $scope.composerStyle();
                 }, function(error) {
@@ -634,10 +634,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     };
 
-    $scope.editorStyle = function(message) {
-
-    };
-
     $scope.completedSignature = function(message) {
         if (angular.isUndefined(message.Body)) {
             var signature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>', {
@@ -647,10 +643,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             message.Body = ($(signature).text().length === 0 && $(signature).find('img').length === 0)? "" : "<br /><br />" + signature;
         }
-    };
-
-    $scope.composerIsSelected = function(message) {
-        return $scope.selected === message;
     };
 
     $scope.focusComposer = function(message) {
@@ -926,7 +918,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         message.timeoutSaving = $timeout(function() {
             if($scope.needToSave(message)) {
-                $scope.save(message, true, false, false); // message, silently, forward, notification
+                $scope.save(message, false, false, true); // message, forward, notification, autosaving
             }
         }, CONSTANTS.SAVE_TIMEOUT_TIME);
     };
@@ -985,11 +977,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     /**
      * Save the Message
      * @param {Resource} message - Message to save
-     * @param {Boolean} silently - Freeze the editor to avoid user interaction
      * @param {Boolean} forward - Forward case
      * @param {Boolean} notification - Add a notification when the saving is complete
+     * @param {Boolean} autosaving
      */
-    $scope.save = function(message, silently, forward, notification) {
+    $scope.save = function(message, forward, notification, autosaving) {
         // Variables
         var deferred = $q.defer();
         var parameters = {
@@ -999,7 +991,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         // Functions
         // Schedule this save after the in-progress one completes
         var nextSave = function(result) {
-            return $scope.save(message, silently, forward, notification);
+            return $scope.save(message, forward, notification);
         };
 
         if(angular.isDefined(message.timeoutSaving)) {
@@ -1011,6 +1003,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             deferred.resolve(message.savePromise);
         } else {
             message.saving = true;
+            message.autosaving = autosaving || false;
 
             if(angular.isUndefined(parameters.Message.Subject)) {
                 parameters.Message.Subject = '';
@@ -1042,7 +1035,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             parameters.Message.AddressID = message.From.ID;
 
             // Encrypt message body with the first public key for the From address
-            message.encryptBody(authentication.user.PublicKey).then(function(result) {
+            message.encryptBody(message.From.Keys[0].PublicKey).then(function(result) {
                 var draftPromise;
                 var CREATE = 1;
                 var UPDATE = 2;
@@ -1109,31 +1102,37 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         }
 
                         message.saving = false;
+                        message.autosaving = false;
 
                         deferred.resolve(result);
                     } else if(angular.isDefined(result) && result.Code === 15033) {
                         // Case where the user delete draft in an other terminal
                         delete message.ID;
                         message.saving = false;
-                        deferred.resolve($scope.save(message, silently, forward, notification));
+                        message.autosaving = false;
+                        deferred.resolve($scope.save(message, forward, notification));
                     } else {
                         $log.error(result);
                         message.saving = false;
+                        message.autosaving = false;
                         deferred.reject(result);
                     }
                 }, function(error) {
                     message.saving = false;
+                    message.autosaving = false;
                     error.message = 'Error during the draft request';
                     deferred.reject(error);
                 });
             }, function(error) {
                 message.saving = false;
+                message.autosaving = false;
                 error.message = 'Error encrypting message';
                 deferred.reject(error);
             });
 
             message.savePromise = deferred.promise.finally(function() {
                 message.saving = false;
+                message.autosaving = false;
             });
 
             return deferred.promise;
@@ -1294,7 +1293,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                                 events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
                                             }
 
-                                            events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {ID: result.Sent.ConversationID}}); // Tricks to force the download of the new conversation if it is
+                                            events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {ID: result.Sent.ConversationID, LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.sent]}}); // Tricks to force the download of the new conversation if it is
 
                                             cache.events(events); // Send events to the cache manager
                                             notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user

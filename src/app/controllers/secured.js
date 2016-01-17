@@ -27,8 +27,6 @@ angular.module("proton.controllers.Secured", [])
     }
 
     $rootScope.dateFormat = format;
-    // Setting publishable key for Stripe
-    // $window.Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
 
     $scope.user = authentication.user;
     $rootScope.discarded = []; // Store ID of message discarded
@@ -46,10 +44,17 @@ angular.module("proton.controllers.Secured", [])
         {value: 'secured.invoices', label: $translate.instant('INVOICES')}
     ];
 
+    // Set the rows / columns mode
+    if (angular.isDefined(authentication.user.ViewLayout)) {
+        if (authentication.user.ViewLayout === 0) {
+            $rootScope.layoutMode = 'columns';
+        } else {
+            $rootScope.layoutMode = 'rows';
+        }
+    }
+
     // Set event ID
     eventManager.start(authentication.user.EventID);
-    // Preload conversations list (inbox and sent folder)
-    cache.preloadInboxAndSent();
     // Initialize counters for conversation (total and unread)
     cacheCounters.query();
 

@@ -18,6 +18,7 @@ angular.module("proton.authentication", [
     pmcw,
     url
 ) {
+    var keys = {}; // Store decrypted keys
 
     // PRIVATE FUNCTIONS
     var auth = {
@@ -38,6 +39,7 @@ angular.module("proton.authentication", [
             } else {
                 // we need the old stuff for now
                 $log.debug('setAuthHeaders:2');
+                $http.defaults.headers.common["x-pm-session"] = undefined;
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
                 $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
             }
@@ -65,20 +67,30 @@ angular.module("proton.authentication", [
                             ]).then(
                                 function(result) {
                                     if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
-                                        user.Role = 1; // Override Role value for the release
+                                        var mailboxPassword = api.getPassword();
+                                        var promises = [];
+
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
 
-                                        // Set the rows / columns mode
-                                        if (angular.isDefined(user.ViewLayout)) {
-                                            if (user.ViewLayout === 0) {
-                                                $rootScope.layoutMode = 'columns';
-                                            } else {
-                                                $rootScope.layoutMode = 'rows';
-                                            }
-                                        }
+                                        // All private keys are decrypted with the mailbox password and stored in a `keys` array
+                                        _.each(user.Addresses, function(address) { // For each addresses
+                                            _.each(address.Keys, function(key, index) { // For each keys
+                                                promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
+                                                    keys[address.ID] = keys[address.ID] || []; // Initialize array for the address
+                                                    keys[address.ID].push(package); // Add key package
+                                                }, function(error) {
+                                                    // If the primary (first) key for address does not decrypt, display error.
+                                                    if(index === 0) {
+                                                        // TODO display error
+                                                    }
+                                                }));
+                                            });
+                                        });
 
-                                        deferred.resolve(user);
+                                        $q.all(promises).then(function() {
+                                            deferred.resolve(user);
+                                        });
                                     } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
                                         deferred.reject({message: result[0].data.Error});
                                         api.logout(true);
@@ -155,6 +167,9 @@ angular.module("proton.authentication", [
             pmcw.setMailboxPassword(pwd);
         },
 
+        /**
+         * Return the mailbox password stored in the session storage
+         */
         getPassword: function() {
             var pwd = window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY];
 
@@ -208,9 +223,13 @@ angular.module("proton.authentication", [
             }.bind(this));
         },
 
-        getPrivateKeys: function() {
-            // authentication.user.
-            // TODO need Bart
+        /**
+         * Return the private keys available for a specific address ID
+         * @param {String} addressID
+         * @return {Array}
+         */
+        getPrivateKeys: function(addressID) {
+            return keys[addressID];
         },
 
         getRefreshCookie: function() {
@@ -225,6 +244,9 @@ angular.module("proton.authentication", [
                         window.sessionStorage.setItem(CONSTANTS.OAUTH_KEY+':SessionToken', pmcw.encode_base64(response.data.SessionToken));
                         $log.debug('after',$http.defaults.headers.common['x-pm-session']);
                         $rootScope.doRefresh = true;
+                    }
+                    else {
+                        return $q.reject(response.data.Error);
                     }
                 },
                 function(err) {
@@ -402,7 +424,8 @@ angular.module("proton.authentication", [
          * Removes all connection data
          * @param {Boolean} redirect - Redirect at the end the user to the login page
          */
-        logout: function(redirect) {
+        logout: function(redirect, call_api) {
+            call_api = angular.isDefined(call_api) ? call_api : true;
             var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
             var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
             var process = function() {
@@ -415,7 +438,7 @@ angular.module("proton.authentication", [
 
             $rootScope.loggingOut = true;
 
-            if(angular.isDefined(sessionToken) || angular.isDefined(uid)) {
+            if( call_api && ( angular.isDefined(sessionToken) || angular.isDefined(uid) ) ) {
                 $http.delete(url.get() + "/auth").then(process, process);
             } else {
                 process();
@@ -423,6 +446,10 @@ angular.module("proton.authentication", [
         },
 
         clearData: function() {
+            // Reset $http server
+            $http.defaults.headers.common["x-pm-session"] = undefined;
+            $http.defaults.headers.common.Authorization = undefined;
+            $http.defaults.headers.common["x-pm-uid"] = undefined;
             // Completely clear sessionstorage
             window.sessionStorage.clear();
             // Delete data key

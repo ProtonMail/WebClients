@@ -111,7 +111,7 @@
                 </a>
             </span>
         </span>
-        <paginator ng-hide="idDefined()" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
+        <paginator ng-hide="idDefined() && rowMode === true" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.MESSAGES_PER_PAGE" change="selectPage" />
     </div>
     <div class="clear"></div>
 </nav>

@@ -5,7 +5,7 @@
         <h2><i class="fa fa-user"></i>{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h2>
         <p ng-if="preInvited">For: <strong>{{ account.Username }}@protonmail.com</strong></p>
     </div>
-    <form ng-submit="saveContinue(step1)" name="step1" role="form" novalidate   class="pm_form">
+    <form method="post" ng-submit="saveContinue(step1)" name="step1" role="form" novalidate   class="pm_form">
         <p class="alert">
         Take back your privacy! Creating your free secure email account takes less than 2 minutes in most cases.
         </p>

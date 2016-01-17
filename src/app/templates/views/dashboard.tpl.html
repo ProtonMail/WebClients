@@ -145,7 +145,7 @@
 
             <section class="setting pm_form full" id="plans">
 
-                <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
+                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
                     <legend>{{ 'PLANS_AND_PRICES' | translate }}</legend>
                     <p class="alert alert-info" ng-show="subscription.Status === 'cancelled'">You are currently unsubscribed, your features will be disabled on {{ subscription.PeriodEnd * 1000 | date: 'medium' }}</p>
                     <header>

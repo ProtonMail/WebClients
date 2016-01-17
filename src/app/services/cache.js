@@ -158,20 +158,17 @@ angular.module("proton.cache", [])
     var manageTimes = function(conversationID) {
         if (angular.isDefined(conversationID)) {
             var conversation = api.getConversationCached(conversationID);
-            var messages = api.queryMessagesCached(conversationID);
+            var messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
 
             if (angular.isDefined(conversation) && messages.length > 0) {
-                // Order messages by Time
-                messages = _.sortBy(messages, 'Time');
-
                 _.each(conversation.LabelIDs, function(labelID) {
-                    // Get the last message with a specific label
+                    // Get the most recent message for a specific label
                     var message = _.chain(messages)
                         .filter(function(message) { return message.LabelIDs.indexOf(labelID) !== -1; })
-                        .last()
+                        .first()
                         .value();
 
-                    if(angular.isDefined(message)) {
+                    if (angular.isDefined(message) && angular.isDefined(message.Time)) {
                         storeTime(conversationID, labelID, message.Time);
                     }
                 });
@@ -227,7 +224,7 @@ angular.module("proton.cache", [])
     var queryConversations = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
 
         request.PageSize = request.PageSize || 100; // We don't call 50 conversations but 100 to improve user experience when he delete message and dislay quickly the next conversations
 
@@ -272,7 +269,7 @@ angular.module("proton.cache", [])
     var queryMessages = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
 
         request.PageSize = request.PageSize || 100; // We don't call 50 messages but 100 to improve user experience when he delete message and dislay quickly the next messages
 
@@ -378,7 +375,7 @@ angular.module("proton.cache", [])
     api.queryMessages = function(request) {
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
         var callApi = function() {
             deferred.resolve(queryMessages(request));
         };
@@ -444,10 +441,9 @@ angular.module("proton.cache", [])
      * @return {Promise}
      */
     api.queryConversations = function(request) {
-        console.log('api.queryConversations');
         var deferred = $q.defer();
         var loc = getLocation(request);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
         var callApi = function() {
             // Need data from the server
             deferred.resolve(queryConversations(request));
@@ -619,37 +615,6 @@ angular.module("proton.cache", [])
         });
 
         deferred.resolve();
-
-        return deferred.promise;
-    };
-
-    /**
-    * Preload conversations for inbox (first 2 pages) and sent (first page)
-    * @return {Promise}
-    */
-    api.preloadInboxAndSent = function() {
-        var mailbox = tools.currentMailbox();
-        var deferred = $q.defer();
-        var requestInbox;
-        var requestSent;
-
-        if(mailbox === 'inbox' && angular.isUndefined($stateParams.id)) {
-            requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 1};
-            requestSent = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.sent, Page: 0};
-        } else if(mailbox === 'sent' && angular.isUndefined($stateParams.id)) {
-            requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 0, PageSize: 100};
-            requestSent = {};
-        } else {
-            requestInbox = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.inbox, Page: 0, PageSize: 100};
-            requestSent = {Label: CONSTANTS.MAILBOX_IDENTIFIERS.sent, Page: 0};
-        }
-
-        $q.all({
-            inbox: queryConversations(requestInbox),
-            sent: queryConversations(requestSent)
-        }).then(function() {
-            deferred.resolve();
-        });
 
         return deferred.promise;
     };
@@ -882,7 +847,6 @@ angular.module("proton.cache", [])
      */
     api.reset = function() {
         api.clear();
-        api.preloadInboxAndSent();
     };
 
     /**
@@ -917,28 +881,53 @@ angular.module("proton.cache", [])
     api.more = function(conversationID, type) {
         var deferred = $q.defer();
         var loc = tools.currentLocation();
-        var request = {PageSize: 3, Label: loc};
-        var conversation = api.getConversationCached(conversationID);
+        var request = {Label: loc};
+        var context = tools.cacheContext();
+        var callApi = function() {
+            queryConversations(request).then(function(conversations) {
+                if(angular.isArray(conversations) && conversations.length > 0) {
+                    var first = _.first(conversations);
 
-        if(type === 'previous') {
-            request.End = conversation.Time;
-            request.EndID = conversation.ID;
-            request.Desc = 1;
-        } else {
-            request.Begin = conversation.Time;
-            request.BeginID = conversation.ID;
-            request.Desc = 0;
-        }
+                    deferred.resolve(first.ID);
+                } else {
+                    deferred.reject();
+                }
+            });
+        };
 
-        queryConversations(request).then(function(conversations) {
-            if(angular.isArray(conversations) && conversations.length > 0) {
-                var first = _.first(conversations);
+        if (context === true) {
+            var conversations = _.filter(conversationsCached, function(conversation) {
+                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1 && angular.isDefined(api.getTime(conversation.ID, loc));
+            });
 
-                deferred.resolve(first.ID);
+            conversations = orderConversation(conversations, loc);
+
+            var index = _.findIndex(conversations, {ID: conversationID});
+
+            if (index !== -1) {
+                if (type === 'previous' && angular.isDefined(conversations[index + 1])) {
+                    deferred.resolve(conversations[index + 1].ID);
+                } else if (type === 'next' && angular.isDefined(conversations[index - 1])) {
+                    deferred.resolve(conversations[index - 1].ID);
+                } else {
+                    callApi();
+                }
             } else {
-                deferred.reject();
+                callApi();
             }
-        });
+        } else {
+            var conversation = api.getConversationCached(conversationID);
+
+            if (type === 'previous') {
+                request.End = conversation.Time;
+                request.EndID = conversation.ID;
+                request.Desc = 1;
+            } else if (type === 'next') {
+                request.Begin = conversation.Time;
+                request.BeginID = conversation.ID;
+                request.Desc = 0;
+            }
+        }
 
         return deferred.promise;
     };

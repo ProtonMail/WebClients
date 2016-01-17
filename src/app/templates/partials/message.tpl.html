@@ -168,8 +168,6 @@ ng-class="{
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
 
         </div><!--/.data-->
-
-
         <div class="labelRow" ng-show="message.labels().length > 0">
             <span class="pm_labels inline" ng-if="message.labels().length > 0">
                 <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
@@ -191,6 +189,7 @@ ng-class="{
     </div>
     <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
     <div class="frame" ng-show="message.expand === true">
+        <loader-tag ng-if="message.decrypting === true"></loader-tag>
         <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>

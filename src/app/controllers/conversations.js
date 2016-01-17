@@ -260,7 +260,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.refreshConversations = function() {
         var deferred = $q.defer();
         var request = $scope.getConversationsParameters($scope.mailbox);
-        var context = tools.cacheContext(request);
+        var context = tools.cacheContext();
         var type = tools.typeList();
         var promise;
 

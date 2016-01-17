@@ -9,7 +9,7 @@
             <!-- where does this go? -->
             <section ng-if="false" class="setting pm_form">
 
-                <form novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons"  >
+                <form method="post" novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons"  >
                     <legend>Message Buttons</legend>
                     <label for="composerMode" class="control-label">{{ 'READ_UNREAD_POSITION' | translate }}</label><br>
                     <div class="radio">
@@ -37,7 +37,7 @@
                 <p><a href="#" target="_blank">Learn more about the composer</a></p>
                 <div class="radio col left">
                     <label>
-                        <input type="radio" ng-model="ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
+                        <input type="radio" ng-model="appearance.ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
                         <span>{{ 'POPUP' | translate }}</span>
                         <br />
                         <img src="assets/img/settings/pop.gif"  alt="Popup" />
@@ -45,7 +45,7 @@
                 </div>
                 <div class="radio col right">
                     <label>
-                        <input type="radio" ng-model="ComposerMode" value="1" ng-change="saveComposerMode(composerMode)" />
+                        <input type="radio" ng-model="appearance.ComposerMode" value="1" ng-change="saveComposerMode(composerMode)" />
                         <span>{{ 'MAXIMIZED' | translate }}</span>
                         <br />
                         <img src="assets/img/settings/max.gif" alt="Maximized" />
@@ -58,7 +58,7 @@
                 <p><a href="#" target="_blank">Learn more about the layout</a></p>
                 <div class="radio col left">
                     <label>
-                        <input type="radio" ng-model="LayoutMode" value="0" ng-change="saveLayoutMode(composerMode)" />
+                        <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />
                         <span>{{ 'COLUMN' | translate }}</span>
                         <br />
                         <img src="/assets/img/settings/col.gif" alt="Column" />
@@ -66,7 +66,7 @@
                 </div>
                 <div class="radio col right">
                     <label>
-                        <input type="radio" ng-model="LayoutMode" value="1" ng-change="saveLayoutMode(composerMode)" />
+                        <input type="radio" ng-model="appearance.ViewLayout" ng-value="1" ng-change="saveLayoutMode(composerMode)" />
                         <span>{{ 'ROW' | translate }}</span>
                         <br />
                         <img src="/assets/img/settings/row.gif" alt="Row" />
@@ -80,19 +80,19 @@
 
             <section class="setting pm_form full">
 
-                <form novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
+                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
                     <legend>Custom Theme</legend>
                     <div class="clearfix" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                         <p class="alert alert-info">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
                         <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
-                        <textarea class="code" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="cssTheme" maxlength="200000"></textarea>
+                        <textarea class="code" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="appearance.cssTheme" maxlength="200000"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="button" class="pm_button" ng-click="clearTheme()">{{ 'CLEAR' | translate }}</button>
                         <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
                     </div>
                 </form>
-                <form ng-submit="apiTest()" ng-if="false"  >
+                <form method="post" ng-submit="apiTest()" ng-if="false"  >
                     <button type="submit" class="btn btn-sm btn-warning">API Test</button>
                 </form>
 
@@ -104,7 +104,7 @@
                     {{ 'LOAD' }} Onyx Theme
                     </button>
                 </p>
-                
+
             </section>
         </div>
     </div>

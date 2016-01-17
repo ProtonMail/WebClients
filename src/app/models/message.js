@@ -222,20 +222,29 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         loading: function() {
-            return this.uploading || this.saving || this.sending || this.encrypting;
+            return this.uploading || (this.saving === true && this.autosaving === false) || this.sending || this.encrypting;
         },
 
         encryptBody: function(key) {
             return pmcw.encryptMessage(this.Body, key);
         },
 
+        /**
+         * Decrypt the body
+         * @return {Promise}
+         */
         decryptBody: function() {
             var deferred = $q.defer();
+            var keys = authentication.getPrivateKeys(this.AddressID);
 
-            authentication.getPrivateKey().then(function(key) {
-                pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
-                    deferred.resolve(result);
-                });
+            this.decrypting = true;
+
+            pmcw.decryptMessageRSA(this.Body, keys, this.Time).then(function(result) {
+                this.decrypting = false;
+                deferred.resolve(result);
+            }.bind(this), function(error) {
+                this.decrypting = false;
+                deferred.reject(error);
             }.bind(this));
 
             return deferred.promise;
@@ -330,26 +339,16 @@ angular.module("proton.models.message", ["proton.constants"])
             var deferred = $q.defer();
 
             if (this.isDraft() || this.IsEncrypted > 0) {
-                if (angular.isUndefined(this.DecryptedBody) && this.decrypting !== true) {
-                    this.decrypting = true;
-
+                if (angular.isUndefined(this.DecryptedBody)) {
                     try {
-                        authentication.getPrivateKey().then(
-                            function(key) {
-                                pmcw.decryptMessageRSA(this.Body, key, this.Time).then(function(result) {
-                                    this.DecryptedBody = result;
-                                    this.failedDecryption = false;
-                                    deferred.resolve(result);
-                                }.bind(this), function(err) {
-                                    this.failedDecryption = true;
-                                    deferred.reject(err);
-                                }.bind(this));
-                            }.bind(this),
-                            function(err) {
-                                this.failedDecryption = true;
-                                deferred.reject(err);
-                            }.bind(this)
-                        );
+                        this.decryptBody().then(function(result) {
+                            this.DecryptedBody = result;
+                            this.failedDecryption = false;
+                            deferred.resolve(result);
+                        }.bind(this), function(err) {
+                            this.failedDecryption = true;
+                            deferred.reject(err);
+                        }.bind(this));
                     } catch (err) {
                         this.failedDecryption = true;
                         deferred.reject(err);
@@ -361,8 +360,6 @@ angular.module("proton.models.message", ["proton.constants"])
             } else {
                 deferred.resolve(this.Body);
             }
-
-            this.decrypting = false;
 
             return deferred.promise;
         },

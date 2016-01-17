@@ -39,8 +39,9 @@ angular.module("proton.filters",[])
 
 .filter("capitalize", function() {
     return function(value) {
-        if (value !== null) {
-            return angular.uppercase(value.substring(0, 1)) + angular.lowercase(value).substring(1);
+
+        if (value) {
+            return angular.uppercase(value).substring(0, 1) + angular.lowercase(value).substring(1);
         } else {
             return value;
         }
@@ -262,11 +263,11 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter("humanSize", function () {
+.filter("humanSize", function (CONSTANTS) {
     return function (input, withoutUnit) {
         var bytes;
         var unit = "";
-        var kb = 1000;
+        var kb = CONSTANTS.BASE_SIZE;
         var mb = kb*kb;
         var gb = mb*kb;
 
