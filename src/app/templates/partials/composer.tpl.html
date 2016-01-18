@@ -304,7 +304,6 @@
                     </button>
                     <button class="pm_button primary" ng-disabled="message.loading() || message !== selected" ng-click="send(message)">
                         <i class="fa" ng-class="{'fa-send': !!!message.loading()}"></i>
-                        {{ message.loading() }}
                         <span ng-hide="message.loading()">{{ 'SEND' | translate }}</span>
                         <span ng-show="message.sending === true">{{ 'SENDING' | translate }}</span>
                         <span ng-show="message.encrypting === true">{{ 'ENCRYPTING' | translate }}</span>
