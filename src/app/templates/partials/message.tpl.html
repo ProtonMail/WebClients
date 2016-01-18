@@ -5,6 +5,7 @@ id="message{{ $index }}"
 ng-class="{
     'last': $last,
     'open': message.expand,
+    'closed': !message.expand,
     'read': message.IsRead === 1,
     'unread': message.IsRead === 0,
     'details': toggleDetails === true,

@@ -7,6 +7,7 @@ body, html {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	clear: both;
 
 	.list {
 		max-height: $maxHeight;
@@ -547,6 +548,34 @@ body, html {
 						display: inline-block;
 					}
 				}
+			}
+		}
+	}
+}
+
+@media (max-width: $mobile-landscape) {
+	body.rows {
+		#pm_view {
+			article.message.closed {
+				header {
+					height: 60px;
+					.time {
+						position: absolute;
+						left: 10px;
+						bottom: 10px;
+						text-align: left;
+					}
+				}
+				.headerLabelRow {
+					position: absolute;
+					right: 10px;
+					bottom: 10px;
+					display: block !important;
+					.labelClose {
+						display: none !important;
+						padding-right: .35rem;
+					}
+				}				
 			}
 		}
 	}

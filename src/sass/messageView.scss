@@ -271,6 +271,7 @@
             left: 0;
             top: 0;
             text-decoration: none;
+            cursor: pointer;
 		}
         &.unread {
             span.person {
@@ -410,7 +411,7 @@
                 float: left;
                 width: 100%;
                 box-sizing: border-box;
-                padding-left: 140px;
+                padding-left: 100px;
                 display: none;
                 min-height: 40px;
                 .pm_labels {
@@ -430,7 +431,7 @@
 				padding: 0;
                 float: right;
 				z-index: 12;
-				width: 215px;
+				width: 200px;
 				.pm_buttons {
                     background: #fff;
 					float: right;
@@ -547,11 +548,14 @@
         display: block !important;
     }
 
-    #pm_view .headerLabelRow {
+    #pm_view .closed .headerLabelRow {
+        display: block;
+    }
+    #pm_view .open .headerLabelRow {
         display: none;
     }
 
-    #pm_view .message .pm_labels .pm_label {
+    #pm_view .message.open .pm_labels .pm_label {
         padding-right: 20px;
         position: relative !important;
         right: 0 !important;
@@ -574,6 +578,16 @@
                 font-size: 12px !important;
             }
         }
+    }
+
+    #pm_view .message.closed .pm_labels .pm_label {
+        position: absolute !important;
+    }
+
+    #pm_view .message.closed .headerLabelRow {
+        right: 5px !important;
+        display: block !important;
+        top: 32px !important;
     }
 
     #pm_rows #pm_view article.message header {
