@@ -389,7 +389,7 @@
 				padding-left: 15px;
 				padding-right: 15px;
 				.labelRow {
-					margin-bottom: -4px;
+					margin-bottom: 4px;
 					.pm_labels {
 						margin-right: -4px;
 					}
@@ -456,7 +456,13 @@
 					display: none;
 				}
 				.meta {
-					float: left;
+					position: absolute;
+					right: 15px;
+					top: 20px;
+					text-align: right;
+					.time {
+						position: static;
+					}
 				}
 			}
 			#attachmentArea {

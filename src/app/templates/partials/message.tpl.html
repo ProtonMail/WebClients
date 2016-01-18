@@ -169,7 +169,7 @@ ng-class="{
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
 
         </div><!--/.data-->
-        <div class="labelRow" ng-show="message.labels().length > 0">
+        <div class="labelRow" ng-if="message.labels().length > 0">
             <span class="pm_labels inline" ng-if="message.labels().length > 0">
                 <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
                     <em>{{ getLabel(labelID).Name }}</em>

@@ -7,8 +7,6 @@ body, html {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	clear: both;
-
 	.list {
 		max-height: $maxHeight;
 		padding: 0;

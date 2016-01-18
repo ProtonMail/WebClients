@@ -30,11 +30,19 @@
 		width: 100%;
 		padding: 0;
 	}
-    &.columns {
-        article.message.hasLabels.details .sub {
-            padding-bottom: 40px;
-        }
+    
+    article.message.open .sub {
+        padding-bottom: 40px !important;
     }
+
+    article.message.open.hasLabels .sub {
+        padding-bottom: 0 !important;
+    }
+
+    article.message.hasLabels.details .sub {
+        padding-bottom: 0px !important;
+    }
+    
     & > header {
     	display: block;
 		min-height: 35px;
@@ -590,6 +598,10 @@
         top: 32px !important;
     }
 
+    body.rows .headerLabelRow {
+        display: none !important;
+    }
+
     #pm_rows #pm_view article.message header {
         padding-right: 0;
         padding-left: 0;
@@ -690,8 +702,8 @@
             margin-bottom: 4px;
         }
     }
-    #pm_view article.message .sub .labelRow .pm_labels {
-        top: 5px;
+    #pm_view article.message.open .sub .labelRow .pm_labels {
+        top: -15px;
         right: -4px;
     }
 }
