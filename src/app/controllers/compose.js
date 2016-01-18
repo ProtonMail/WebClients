@@ -1134,9 +1134,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 message.saving = false;
                 message.autosaving = false;
             });
-
-            return deferred.promise;
         }
+        return deferred.promise;
     };
 
     /**
