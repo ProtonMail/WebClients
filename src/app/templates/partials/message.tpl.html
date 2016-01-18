@@ -67,15 +67,6 @@ ng-class="{
         <div class="actions">
 
             <span class="pm_buttons">
-                <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown ng-click="DDopen = true; $event.stopPropagation();" ng-blur="DDopen = false">
-                    <small><i class="fa fa-tag"></i></small>
-                </a>
-                <span class="pm_dropdown right wide pull-left">
-                    <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
-                </span>
-            </span>
-
-            <span class="pm_buttons">
                 <a href="#" ng-click="reply(message)" pt-tooltip="{{ 'REPLY' | translate }}">
                     <i class="fa fa-mail-reply"></i>
                 </a>
@@ -121,6 +112,15 @@ ng-class="{
                     <a ng-click="print()">
                         <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
                     </a>
+                </span>
+            </span>
+
+            <span class="pm_buttons">
+                <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown ng-click="DDopen = true; $event.stopPropagation();" ng-blur="DDopen = false">
+                    <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
+                </a>
+                <span class="pm_dropdown right wide pull-left">
+                    <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
                 </span>
             </span>
 
