@@ -4,7 +4,8 @@ angular.module('proton.constants', [])
 // Constants definition
 //
 .constant('CONSTANTS', {
-    BASE_SIZE: 1024,
+    TIMEOUT: 30 * 1000, // timeout in milliseconds
+    BASE_SIZE: 1024, // define the base used for byte
     MAILBOX_PASSWORD_KEY: "proton:mailbox_pwd",
     OAUTH_KEY: "proton:oauth",
     EVENT_ID: "proton:eventid",

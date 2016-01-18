@@ -75,6 +75,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Conversation[mailbox](ids);
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -155,6 +156,7 @@ angular.module('proton.actions', [])
             });
 
             promise = $q.all(promises);
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 process();
@@ -195,6 +197,7 @@ angular.module('proton.actions', [])
 
             // Send conversation request
             promise = Conversation.star([element.ID]);
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -236,6 +239,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Conversation.unstar([element.ID]);
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -280,6 +284,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Conversation.read(ids);
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -325,6 +330,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Conversation.unread(ids);
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -365,6 +371,7 @@ angular.module('proton.actions', [])
 
             // Send the request
             promise = Conversation.delete(ids);
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -442,6 +449,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Message[mailbox]({IDs: ids}).$promise;
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -536,6 +544,7 @@ angular.module('proton.actions', [])
             });
 
             promise = $q.all(promises);
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 process();
@@ -570,6 +579,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Message.star({IDs: ids}).$promise;
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -611,6 +621,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Message.unstar({IDs: ids}).$promise;
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -664,6 +675,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Message.read({IDs: ids}).$promise;
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 // Send cache events
@@ -718,6 +730,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Message.unread({IDs: ids}).$promise;
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -770,6 +783,7 @@ angular.module('proton.actions', [])
             });
 
             promise = Message.delete({IDs: ids}).$promise;
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
@@ -829,6 +843,7 @@ angular.module('proton.actions', [])
 
             // Send request
             promise = Message.delete({IDs: [message.ID]}).$promise;
+            cache.addToDispatcher(promise);
 
             if(context === true) {
                 cache.events(events);
