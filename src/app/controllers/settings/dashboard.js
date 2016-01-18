@@ -23,8 +23,8 @@ angular.module("proton.controllers.Settings")
     CONSTANTS
 ) {
     // Setting publishable key for Stripe
-    var setPublishableKey = function() {
-        $window.Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
+    var setPublishableKeyForStripe = function() {
+        $window.Stripe.setPublishableKey(CONSTANTS.STRIPE_API_KEY);
     };
     /**
     * Load stripe script
@@ -40,12 +40,12 @@ angular.module("proton.controllers.Settings")
         script.onreadystatechange = function() {
             if ( script.readyState === "loaded" || script.readyState === "complete" ) {
                 script.onreadystatechange = null;
-                setPublishableKey();
+                setPublishableKeyForStripe();
             }
         };
     } else { // Others
         script.onload = function() {
-            setPublishableKey();
+            setPublishableKeyForStripe();
         };
     }
 
