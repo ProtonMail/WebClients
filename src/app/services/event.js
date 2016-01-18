@@ -72,7 +72,7 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageUser: function(user) {
 				if(angular.isDefined(user)) {
-					var hostRestricted = ['dev.protonmail.com', 'v3.protonmail.com']; // TODO remove that for the release
+					var hostRestricted = ['v3.protonmail.com']; // TODO remove that for the release
 
 					if (hostRestricted.indexOf($location.host()) !== -1) {
 						user.Role = 1;

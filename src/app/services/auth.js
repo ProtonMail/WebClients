@@ -70,7 +70,7 @@ angular.module("proton.authentication", [
                                     if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
                                         var mailboxPassword = api.getPassword();
                                         var promises = [];
-                                        var hostRestricted = ['dev.protonmail.com', 'v3.protonmail.com']; // TODO remove that for the release
+                                        var hostRestricted = ['v3.protonmail.com']; // TODO remove that for the release
 
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
