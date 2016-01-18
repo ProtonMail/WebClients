@@ -1281,6 +1281,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             deferred.reject(new Error(result.Error));
                                         } else {
                                             var events = [];
+                                            var messages = cache.queryMessagesCached(result.Sent.ConversationID);
+                                            var conversation = cache.getConversationCached(result.Sent.ConversationID);
+                                            var labelIDs = (angular.isDefined(conversation)) ? conversation.LabelIDs : [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+                                            var numMessages = (angular.isDefined(conversation)) ? (conversation.NumMessages + 1) : 1;
 
                                             message.sending = false; // Change status
                                             result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
@@ -1293,7 +1297,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                                 events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
                                             }
 
-                                            events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {ID: result.Sent.ConversationID, LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.sent]}}); // Tricks to force the download of the new conversation if it is
+                                            events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {
+                                                NumMessages: numMessages,
+                                                Recipients: result.Sent.Recipients,
+                                                Senders: result.Sent.Senders,
+                                                Subject: result.Sent.Subject,
+                                                ID: result.Sent.ConversationID,
+                                                LabelIDs: labelIDs
+                                            }});
 
                                             cache.events(events); // Send events to the cache manager
                                             notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
