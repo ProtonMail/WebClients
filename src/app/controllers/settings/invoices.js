@@ -5,6 +5,7 @@ angular.module("proton.controllers.Settings")
     $scope,
     $translate,
     $state,
+    $q,
     networkActivityTracker,
     notify,
     Payment
@@ -13,6 +14,8 @@ angular.module("proton.controllers.Settings")
     var YEAR_2016 = moment({year: 2017, millisecond: 1}).unix();
 
     $rootScope.pageName = $translate.instant('INVOICES');
+    $scope.organizationInvoices = [];
+    $scope.userInvoices = [];
     $scope.years = [
         {label: $translate.instant('ALL'), value: undefined},
         {label: '2015', value: YEAR_2015},
@@ -24,9 +27,9 @@ angular.module("proton.controllers.Settings")
      */
     $scope.initialize = function() {
         // Initial select
-        $scope.range = _.findWhere($scope.years, {value: YEAR_2015});
+        $scope.range = _.findWhere($scope.years, {value: YEAR_2016});
         // Load invoices
-        $scope.loadInvoices(YEAR_2015);
+        $scope.loadInvoices(YEAR_2016);
     };
 
     /**
@@ -34,28 +37,25 @@ angular.module("proton.controllers.Settings")
      * @param {Integer} timestamp
      */
     $scope.loadInvoices = function(timestamp) {
-        var promise = Payment.organization(timestamp);
-        var month = 60 * 60 * 24 * 30; // Time for a month in second
+        var promises = [];
 
-        promise.then(function(result) {
-            if(angular.isDefined(result.data)) {
-                if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                    $scope.invoices = result.data.Payments;
-
-                    _.each($scope.invoices, function(invoice) {
-                        if(parseInt((invoice.Payment.PeriodEnd - invoice.Payment.PeriodStart) / month) === 1) {
-                            invoice.Payment.BillingCycle = 12;
-                        } else {
-                            invoice.Payment.BillingCycle = 1;
-                        }
-                    });
-                } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
-                }
+        promises.push(Payment.organization(timestamp).then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                $scope.organizationInvoices = result.data.Payments;
+            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
             }
-        });
+        }));
 
-        networkActivityTracker.track(promise);
+        promises.push(Payment.user(timestamp).then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                $scope.userInvoices = result.data.Payments;
+            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
+            }
+        }));
+
+        networkActivityTracker.track($q.all(promises));
     };
 
     /**

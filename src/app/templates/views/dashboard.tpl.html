@@ -132,22 +132,18 @@
                                 </strong>
                             </td>
                             <td class="text-right">
-                                <a ng-click="card()" pt-tooltip="{{ 'PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
+                                <a href="#" ng-click="card()" pt-tooltip="{{ 'PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
                             </td>
                         </tr>
                     </table>
                 </div>
             </section>
-
         </div>
 
         <div class="row">
-
             <section class="setting pm_form full" id="plans">
-
                 <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
                     <legend>{{ 'PLANS_AND_PRICES' | translate }}</legend>
-                    <p class="alert alert-info" ng-show="subscription.Status === 'cancelled'">You are currently unsubscribed, your features will be disabled on {{ subscription.PeriodEnd * 1000 | date: 'medium' }}</p>
                     <header>
                         <a href="#" class="pm_button link pull-right">Learn how to manage your ProtonMail plan.</a>
                         <div class="group" ng-show="organization === null">
@@ -364,7 +360,7 @@
                             <ul class="features">
                                 <li>
                                     <i class="fa fa-check"></i>
-                                    <strong>{{ 'UP_TO_1000000_MB_STORAGE' | translate }}</strong>
+                                    <strong>{{ 'UP_TO_1000_GB_STORAGE' | translate }}</strong>
                                 </li>
                                 <li>
                                     <i class="fa fa-check"></i>

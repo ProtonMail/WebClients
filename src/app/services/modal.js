@@ -445,7 +445,18 @@ angular.module("proton.modals", [])
 })
 
 // Payment modal
-.factory('paymentModal', function(notify, pmModal, Organization, $translate, $window, Payment, authentication) {
+.factory('paymentModal', function(
+    notify,
+    pmModal,
+    Organization,
+    $translate,
+    $log,
+    $window,
+    Payment,
+    authentication,
+    pmcw,
+    CONSTANTS
+) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
@@ -460,8 +471,11 @@ angular.module("proton.modals", [])
             this.cvc = '';
             this.cardTypeIcon = 'fa-credit-card';
             this.config = params.configuration;
+            this.recovery = '';
+            this.create = params.create;
+            this.base = CONSTANTS.BASE_SIZE;
 
-            if(params.card.data.Code === 1000) {
+            if(params.card.data.Code === 1000 && params.card.data.Sources.length > 0) {
                 var card = _.first(params.card.data.Sources);
 
                 this.source = card.ExternalSourceID;
@@ -557,15 +571,58 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             this.submit = function() {
-                // Change status
+                var next = function() {
+                    if(this.change === true) {
+                        generateStripeToken();
+                    } else {
+                        saveOrganization();
+                    }
+                }.bind(this);
+
+                // Change process status true to disable input fields
                 this.process = true;
 
-                if(this.change === true) {
-                    generateStripeToken();
+                if (params.create === true) {
+                    // if (this.recovery.length > 0) {
+                        var oldMailPwd = authentication.getPassword();
+                        // var newMailPwd = this.recovery;
+
+                        pmcw.generateKeysRSA('pm_org_admin', oldMailPwd).then(
+                            function(response) {
+                                var privateKey = response.privateKeyArmored;
+                                // TODO We keep this code if Andy decide to come back to the recovery field
+                                // var backupPrivateKey = pmcw.getNewEncPrivateKey(privateKey, oldMailPwd, newMailPwd);
+
+                                // if (backupPrivateKey === -1) {
+                                //     notify({message: $translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'), classes: 'notification-danger'});
+                                //     this.process = false;
+                                // } else if (Error.prototype.isPrototypeOf(backupPrivateKey)) {
+                                //     // Error messages from OpenPGP.js
+                                //     notify({message: backupPrivateKey.message, classes: 'notification-danger'});
+                                //     this.process = false;
+                                // } else {
+                                    this.config.Organization.PrivateKey = privateKey;
+                                    this.config.Organization.BackupPrivateKey = privateKey;
+                                    next();
+                                // }
+                            }.bind(this),
+                            function(error) {
+                                $log.error(error);
+                                notify({message: 'Error during the generation of new keys for pm_org_admin', classes: 'notification-danger'});
+                                this.process = false;
+                            }.bind(this)
+                        );
+                    // } else {
+                    //     notify({message: 'You need to enter a recovery organization password', classes: 'notification-danger'});
+                    //     this.process = false;
+                    //     return false;
+                    // }
                 } else {
-                    saveOrganization();
+                    next();
                 }
-            };
+
+
+            }.bind(this);
 
             /**
              * Close payment modal
@@ -574,13 +631,6 @@ angular.module("proton.modals", [])
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
-            };
-
-            /**
-             * Toggle
-             */
-            this.toggle = function() {
-
             };
         }
     });

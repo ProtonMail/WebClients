@@ -52,6 +52,23 @@ angular.module("proton.models.payments", [])
                 params: {
                     Time: timestamp,
                     Limit: limit
+                },
+                transformResponse: function(data, headersGetter, status) {
+                    data = angular.fromJson(data);
+
+                    if(angular.isDefined(data) && data.Code === 1000) {
+                        var month = 60 * 60 * 24 * 30; // Time for a month in second
+
+                        _.each(data.Payments, function(invoice) {
+                            if(parseInt((invoice.PeriodEnd - invoice.PeriodStart) / month) === 1) {
+                                invoice.BillingCycle = 12;
+                            } else {
+                                invoice.BillingCycle = 1;
+                            }
+                        });
+                    }
+
+                    return data;
                 }
             });
         },
@@ -65,6 +82,23 @@ angular.module("proton.models.payments", [])
                 params: {
                     Time: timestamp,
                     Limit: limit
+                },
+                transformResponse: function(data, headersGetter, status) {
+                    data = angular.fromJson(data);
+
+                    if(angular.isDefined(data) && data.Code === 1000) {
+                        var month = 60 * 60 * 24 * 30; // Time for a month in second
+
+                        _.each(data.Payments, function(invoice) {
+                            if(parseInt((invoice.PeriodEnd - invoice.PeriodStart) / month) === 1) {
+                                invoice.BillingCycle = 12;
+                            } else {
+                                invoice.BillingCycle = 1;
+                            }
+                        });
+                    }
+
+                    return data;
                 }
             });
         },
@@ -86,9 +120,6 @@ angular.module("proton.models.payments", [])
          */
         change: function(Obj) {
             return $http.put(url.get() + '/payments/sources', Obj);
-        },
-        delete: function(params) {
-            return $http.delete(url.get() + '/payments/subscriptions', {params: params});
         }
     };
 });
