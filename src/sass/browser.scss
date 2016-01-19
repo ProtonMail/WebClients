@@ -34,3 +34,11 @@
         overflow: auto !important;
     }
 }
+
+.ua-windows_nt {
+    &.ua-firefox {
+        .columns#pm_conversations .list div.message aside label {
+            top: -9px;
+        }
+    }
+}
