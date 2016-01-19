@@ -13,7 +13,7 @@ angular.module("proton.controllers.Settings")
     Setting
 ) {
     $scope.logs = [];
-    $scope.currentLogPage = 1;
+    $scope.currentLogPage = 0;
     $scope.logItemsPerPage = 20;
     $scope.doLogging = authentication.user.LogAuth;
     $scope.disabledText = $translate.instant('DISABLE');
@@ -22,23 +22,13 @@ angular.module("proton.controllers.Settings")
         $scope.currentLogPage = page;
     };
 
-    $scope.paginate = function(value) {
-        var begin, end, index;
-
-        begin = ($scope.currentLogPage - 1) * $scope.logItemsPerPage;
-        end = begin + $scope.logItemsPerPage;
-        index = $scope.logs.indexOf(value);
-
-        return (begin <= index && index < end);
-    };
-
     $scope.initLogs = function() {
         networkActivityTracker.track(
             Logs.getLogs().then(
                 function(response) {
                     $scope.logs = _.sortBy(response.data.Logs, 'Time').reverse();
                     $scope.logCount = $scope.logs.length;
-                    $scope.currentLogPage = 1;
+                    $scope.currentLogPage = 0;
                 },
                 function(error) {
                     notify({message: 'Error during the initialization of logs', classes: 'notification-danger'});
