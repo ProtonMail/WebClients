@@ -49,10 +49,10 @@ ng-submit="login()"
         <a class="pm_button primary pull-right" ng-click="login()" ng-class="{disabled: networkActivity.loading()}">{{ 'LOGIN' | translate }}</a>
     </div>
 
-    <div class="clearfix">
-        <a href="pm_button link" src="v2.protonmail.com">{{ 'ACCESS_TO_V2' | translate }}</a>
-    </div>
-
     <input type="hidden" id="hashed_pw" name="hashed_pw" />
 
 </form>
+
+<div class="clearfix text-center">
+    <a class="pm_button link" style="color: #fff; text-transform: none;" href="https://v2.protonmail.com/login" target="_self">{{ 'ACCESS_TO_V2' | translate }}</a>
+</div>

@@ -743,9 +743,10 @@
         }
     }
     .settings {
-        padding: 0 25px;
+        padding: 0 25px 2rem 25px;
         margin-right: 0;
         clear: both;
+        box-sizing: border-box;
         .pm_buttons .fa.fa-angle-down {
             padding: 0 .5rem;
         }
