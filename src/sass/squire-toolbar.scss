@@ -14,6 +14,16 @@
 	border: 1px solid $border;
 	background-color: $read;
 	border-width: 0 0 1px 0;
+	&.b li.bold a,
+	&.i li.italic a,
+	&.u li.underline a,
+	&.li li.ulist a,
+	&.ol li.olist a,
+	&.align-left li.aleft a,
+	&.align-center li.acenter a,
+	&.align-right li.aright a {
+		background: rgba(0,0,0,.1);
+	}
 	li {
 		display: block;
 		-webkit-flex-grow: 1;
