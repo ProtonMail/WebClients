@@ -87,7 +87,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         var message = {
             "type": "pm_captcha",
             "language": "en",
-            "key": "6LcePAATAAAAAGPRWgx90814DTjgt5sXnNbV5WaW", 
+            "key": "6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn", 
         };
 
         // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
