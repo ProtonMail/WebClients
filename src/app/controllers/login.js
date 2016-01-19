@@ -59,8 +59,8 @@ angular.module("proton.controllers.Auth", [
         }
 
         notify({
-            message: 'Welcome to ProtonMail 3.0. Please use \'Report Bug\' to send feedback.', 
-            classes: 'notification-success',
+            message: 'Welcome to ProtonMail 3.0. Please use \'Report Bug\' to send feedback.',
+            classes: 'notification-info',
             duration: 20000
         });
     };
