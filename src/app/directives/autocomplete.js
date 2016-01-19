@@ -262,7 +262,7 @@ angular.module('proton.autocomplete', [])
     };
 })
 
-.directive('autosize', function() {
+.directive('autosize', function($timeout) {
     return {
         require: 'ngModel',
         link: function(scope, element, attrs, ctrl) {
@@ -290,7 +290,7 @@ angular.module('proton.autocomplete', [])
                 span.css('display', '');
 
                 try {
-                    element.css('width', span.prop('offsetWidth') + 'px');
+                    element.css('width',(span.prop('offsetWidth') + 13) + 'px');
                 }
                 finally {
                     span.css('display', 'none');
