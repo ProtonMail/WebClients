@@ -26,7 +26,6 @@ angular.module("proton.transformation", [])
             var quotes = [
                 '.protonmail_quote:first',
                 '.gmail_quote:first',
-                '.gmail_signature:first',
                 '.yahoo_quoted:first',
                 '#isForwardContent:first',
                 '#isReplyContent:first',
@@ -60,7 +59,7 @@ angular.module("proton.transformation", [])
                                             var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
                                             var amountScrolled = $('#pm_thread').scrollTop();
                                             var value = element.offset().top + amountScrolled - headerOffset;
-                                            
+
                                             $('#pm_thread').animate({
                                                 scrollTop: (value - 40)
                                             }, 200, function() {

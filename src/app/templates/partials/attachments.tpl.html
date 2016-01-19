@@ -1,10 +1,10 @@
-<div ng-if="message.Attachments.length > 0" id="attachmentArea">
+<div ng-if="message.NumAttachments > 0" id="attachmentArea">
     <header>
         <span class="title">
-            <i class="fa fa-paperclip"></i> 
-            {{ message.Attachments.length }}
-            <span ng-hide="message.Attachments.length === 1">{{ 'ATTACHMENTS' | translate }} </span>
-            <span ng-show="message.Attachments.length === 1">{{ 'ATTACHMENT' | translate }} </span>
+            <i class="fa fa-paperclip"></i>
+            {{ message.NumAttachments }}
+            <span ng-hide="message.NumAttachments === 1">{{ 'ATTACHMENTS' | translate }} </span>
+            <span ng-show="message.NumAttachments === 1">{{ 'ATTACHMENT' | translate }} </span>
             ({{ message.sizeAttachments() | humanSize }})
         </span>
         <em></em>

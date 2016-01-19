@@ -289,7 +289,6 @@ angular.module("proton.cache", [])
                 $rootScope.Total = result.Total;
 
                 _.each(messages, function(message) {
-                    message.NumAttachments = message.HasAttachment;
                     message.Senders = [message.Sender];
                     message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
                 });

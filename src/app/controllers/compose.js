@@ -140,7 +140,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var current = _.findWhere($scope.messages, {ID: message.ID});
         var mess = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
 
-        if(mess.Attachments && mess.Attachments.length > 0) {
+        if(mess.NumAttachments > 0) {
             mess.attachmentsToggle = true;
         } else {
             mess.attachmentsToggle = false;
@@ -1056,6 +1056,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     if(angular.isDefined(result) && result.Code === 1000) {
                         var events = [];
                         var conversation = cache.getConversationCached(result.Message.ConversationID);
+                        var labelIDs = (angular.isDefined(conversation)) ? _.uniq(conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)) : [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
+                        var numMessages = (angular.isDefined(conversation)) ? (conversation.NumMessages + 1) : 1;
 
                         message.ID = result.Message.ID;
                         message.IsRead = result.Message.IsRead;
@@ -1064,11 +1066,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         if(forward === true && result.Message.Attachments.length > 0) {
                             message.Attachments = result.Message.Attachments;
                             message.attachmentsToggle = true;
-                        }
-
-                        if(angular.isArray(result.Message.Attachments)) {
-                            result.Message.HasAttachment = (result.Message.Attachments.length > 0)?1:0;
-                            result.Message.NumAttachments = result.Message.Attachments.length;
                         }
 
                         result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
@@ -1080,19 +1077,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
 
                         // Generate conversation event
-                        if(angular.isDefined(conversation)) {
-                            if(actionType === CREATE) {
-                                conversation.NumMessages++;
-                            }
-
-                            if(angular.isArray(result.Message.Attachments)) {
-                                conversation.NumAttachments = result.Message.Attachments.length;
-                            }
-
-                            conversation.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
-
-                            events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-                        }
+                        events.push({Action: 3, ID: result.Message.ConversationID, Conversation: {
+                            NumAttachments: result.Message.Attachments.length,
+                            NumMessages: numMessages,
+                            Recipients: result.Message.Recipients,
+                            Senders: result.Message.Senders,
+                            Subject: result.Message.Subject,
+                            ID: result.Message.ConversationID,
+                            LabelIDs: labelIDs
+                        }});
 
                         // Send events
                         cache.events(events);
@@ -1282,14 +1275,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             var events = [];
                                             var messages = cache.queryMessagesCached(result.Sent.ConversationID);
                                             var conversation = cache.getConversationCached(result.Sent.ConversationID);
-                                            var labelIDs = (angular.isDefined(conversation)) ? conversation.LabelIDs : [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+                                            var labelIDs = (angular.isDefined(conversation)) ? _.uniq(conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent)) : [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
                                             var numMessages = (angular.isDefined(conversation)) ? (conversation.NumMessages + 1) : 1;
 
                                             message.sending = false; // Change status
                                             result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
                                             result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                            result.Sent.HasAttachment = (result.Sent.Attachments.length > 0)?1:0;
-                                            result.Sent.NumAttachments = result.Sent.Attachments.length;
                                             events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
 
                                             if(result.Parent) {
