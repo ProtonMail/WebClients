@@ -456,9 +456,9 @@ angular.module("proton.modals", [])
              */
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit();
+                    params.submit(this.password);
                 }
-            };
+            }.bind(this);
 
             /**
              * Close modal
