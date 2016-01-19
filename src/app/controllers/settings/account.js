@@ -126,7 +126,7 @@ angular.module("proton.controllers.Settings")
     $scope.saveMailboxPassword = function(form) {
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
-        var newEncPrivateKey = pmcrypto.getNewEncPrivateKey(authentication.user.EncPrivateKey, oldMailPwd, newMailPwd);
+        var newEncPrivateKey = pmcw.getNewEncPrivateKey(authentication.user.EncPrivateKey, oldMailPwd, newMailPwd);
         var currentLoginPassword = $scope.currentLoginPassword;
 
         if (newEncPrivateKey === -1) {

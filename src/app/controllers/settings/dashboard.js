@@ -7,6 +7,7 @@ angular.module("proton.controllers.Settings")
     $translate,
     $q,
     $window,
+    eventManager,
     authentication,
     cardModal,
     confirmModal,
@@ -18,11 +19,12 @@ angular.module("proton.controllers.Settings")
     paymentModal,
     pmcw,
     subscriptions,
-    supportModal
+    supportModal,
+    CONSTANTS
 ) {
     // Setting publishable key for Stripe
-    var setPublishableKey = function() {
-        $window.Stripe.setPublishableKey('pk_test_xL4IzbxNCD9Chu98oxQVjYFe'); // TODO it's not the final key
+    var setPublishableKeyForStripe = function() {
+        $window.Stripe.setPublishableKey(CONSTANTS.STRIPE_API_KEY);
     };
     /**
     * Load stripe script
@@ -38,12 +40,12 @@ angular.module("proton.controllers.Settings")
         script.onreadystatechange = function() {
             if ( script.readyState === "loaded" || script.readyState === "complete" ) {
                 script.onreadystatechange = null;
-                setPublishableKey();
+                setPublishableKeyForStripe();
             }
         };
     } else { // Others
         script.onload = function() {
-            setPublishableKey();
+            setPublishableKeyForStripe();
         };
     }
 
@@ -71,36 +73,36 @@ angular.module("proton.controllers.Settings")
 
     // Options
     $scope.spacePlusOptions = [
-        {label: '5.000 MB', value: 5000 * 1000 * 1000, index: 0},
-        {label: '6.000 MB', value: 6000 * 1000 * 1000, index: 1},
-        {label: '7.000 MB', value: 7000 * 1000 * 1000, index: 2},
-        {label: '8.000 MB', value: 8000 * 1000 * 1000, index: 3},
-        {label: '9.000 MB', value: 9000 * 1000 * 1000, index: 4},
-        {label: '10.000 MB', value: 10000 * 1000 * 1000, index: 5},
-        {label: '11.000 MB', value: 11000 * 1000 * 1000, index: 6},
-        {label: '12.000 MB', value: 12000 * 1000 * 1000, index: 7},
-        {label: '13.000 MB', value: 13000 * 1000 * 1000, index: 8},
-        {label: '14.000 MB', value: 14000 * 1000 * 1000, index: 9},
-        {label: '15.000 MB', value: 15000 * 1000 * 1000, index: 10},
-        {label: '16.000 MB', value: 16000 * 1000 * 1000, index: 11},
-        {label: '17.000 MB', value: 17000 * 1000 * 1000, index: 12},
-        {label: '18.000 MB', value: 18000 * 1000 * 1000, index: 13},
-        {label: '19.000 MB', value: 19000 * 1000 * 1000, index: 14},
-        {label: '20.000 MB', value: 20000 * 1000 * 1000, index: 15}
+        {label: '5 GB', value: 5 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 0},
+        {label: '6 GB', value: 6 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 1},
+        {label: '7 GB', value: 7 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 2},
+        {label: '8 GB', value: 8 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 3},
+        {label: '9 GB', value: 9 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 4},
+        {label: '10 GB', value: 10 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 5},
+        {label: '11 GB', value: 11 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 6},
+        {label: '12 GB', value: 12 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 7},
+        {label: '13 GB', value: 13 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 8},
+        {label: '14 GB', value: 14 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 9},
+        {label: '15 GB', value: 15 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 10},
+        {label: '16 GB', value: 16 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 11},
+        {label: '17 GB', value: 17 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 12},
+        {label: '18 GB', value: 18 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 13},
+        {label: '19 GB', value: 19 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 14},
+        {label: '20 GB', value: 20 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 15}
     ];
 
     $scope.spaceBusinessOptions = [
-        {label: '10.000 MB', value: 10000 * 1000 * 1000, index: 0},
-        {label: '11.000 MB', value: 11000 * 1000 * 1000, index: 1},
-        {label: '12.000 MB', value: 12000 * 1000 * 1000, index: 2},
-        {label: '13.000 MB', value: 13000 * 1000 * 1000, index: 3},
-        {label: '14.000 MB', value: 14000 * 1000 * 1000, index: 4},
-        {label: '15.000 MB', value: 15000 * 1000 * 1000, index: 5},
-        {label: '16.000 MB', value: 16000 * 1000 * 1000, index: 6},
-        {label: '17.000 MB', value: 17000 * 1000 * 1000, index: 7},
-        {label: '18.000 MB', value: 18000 * 1000 * 1000, index: 8},
-        {label: '19.000 MB', value: 19000 * 1000 * 1000, index: 9},
-        {label: '20.000 MB', value: 20000 * 1000 * 1000, index: 10}
+        {label: '10 GB', value: 10 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 0},
+        {label: '11 GB', value: 11 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 1},
+        {label: '12 GB', value: 12 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 2},
+        {label: '13 GB', value: 13 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 3},
+        {label: '14 GB', value: 14 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 4},
+        {label: '15 GB', value: 15 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 5},
+        {label: '16 GB', value: 16 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 6},
+        {label: '17 GB', value: 17 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 7},
+        {label: '18 GB', value: 18 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 8},
+        {label: '19 GB', value: 19 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 9},
+        {label: '20 GB', value: 20 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 10}
     ];
 
     $scope.domainPlusOptions = [
@@ -242,8 +244,8 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-    * Open a modal to confirm to switch to the free plan
-    */
+     * Open a modal to confirm to switch to the free plan
+     */
     $scope.free = function() {
         var title = $translate.instant('FREE_PLAN');
         var message = $translate.instant("Are you sure to come back to the Free Plan?");
@@ -253,18 +255,24 @@ angular.module("proton.controllers.Settings")
                 title: title,
                 message: message,
                 confirm: function() {
-                    Payment.delete({ExternalSubscriptionID: $scope.subscription.ExternalSubscriptionID}).then(function(result) {
+                    Organization.delete({ExternalSubscriptionID: $scope.subscription.ExternalSubscriptionID}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             confirmModal.deactivate();
-                            notify({message: 'You are currently unsubscribed, your features will be disabled on ' + $filter('date')($scope.subscription.PeriodEnd * 1000, 'medium'), classes: 'notification-success'});
+                            notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBE'), classes: 'notification-success'});
+                            $scope.organization = null;
+                            eventManager.call();
                             _.extend($scope.subscription, result.data.Subscriptions[0]);
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
                             notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
                         }
-                    }, function(error) {
-                        notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
+                    }, function(result) {
+                        if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
+                        }
                     });
                 },
                 cancel: function() {
@@ -302,7 +310,7 @@ angular.module("proton.controllers.Settings")
             case 'plus':
             future = {
                 Plan: name,
-                Use2FA: false,
+                Use2FA: 0,
                 MaxDomains: $scope.domainPlus.value,
                 MaxMembers: 1,
                 MaxAddresses: $scope.addressPlus.value,
@@ -312,7 +320,7 @@ angular.module("proton.controllers.Settings")
             case 'business':
             future = {
                 Plan: name,
-                Use2FA: false,
+                Use2FA: 0,
                 MaxDomains: $scope.domainBusiness.value,
                 MaxMembers: $scope.memberBusiness.value,
                 MaxAddresses: $scope.addressBusiness.value,
@@ -324,10 +332,6 @@ angular.module("proton.controllers.Settings")
         }
 
         configuration = {
-            Organization: {
-                DisplayName: ($scope.organization) ? $scope.organization.DisplayName : authentication.user.DisplayName,
-                EncToken: pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateKeyAES()))
-            },
             Subscription: {
                 Amount: $scope.amount(name),
                 Currency: $scope.futureCurrency,
@@ -343,39 +347,41 @@ angular.module("proton.controllers.Settings")
         };
 
         promises.push(Payment.plan(configuration));
-        promises.push(Payment.sources());
+        promises.push(Payment.sources()); // Return the credit card
 
         // Check configuration choosed
         networkActivityTracker.track($q.all(promises).then(function(results) {
             var plan = results[0];
             var card = results[1];
 
-            if(angular.isDefined(plan.data) && plan.data.Code === 1000) {
-                if (plan.data.Sources.length > 0) {
-                    // Open payment modal
-                    paymentModal.activate({
-                        params: {
-                            create: organization === true, // new?
-                            card: card,
-                            configuration: configuration,
-                            change: function(organization) {
-                                Payment.subscriptions().then(function(subscriptions) {
-                                    if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-                                        $scope.subscription = subscriptions.data.Subscriptions[0];
-                                        $scope.currentCurrency = subscriptions.data.Subscriptions[0].Currency;
-                                        $scope.futureCurrency = subscriptions.data.Subscriptions[0].Currency;
-                                        $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
-                                        $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
-                                        $scope.organization = organization;
-                                    }
-                                });
-                            },
-                            cancel: function() {
-                                paymentModal.deactivate();
-                            }
+            if(angular.isDefined(plan.data) && plan.data.Code === 1000 && angular.isDefined(card.data) && card.data.Code === 1000) {
+                configuration.Organization = {
+                    DisplayName: ($scope.organization) ? $scope.organization.DisplayName : authentication.user.DisplayName
+                };
+                // Open payment modal
+                paymentModal.activate({
+                    params: {
+                        create: organization === true, // new?
+                        card: card,
+                        configuration: configuration,
+                        change: function(organization) {
+                            Payment.subscriptions().then(function(subscriptions) {
+                                if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
+                                    $scope.subscription = subscriptions.data.Subscriptions[0];
+                                    $scope.currentCurrency = subscriptions.data.Subscriptions[0].Currency;
+                                    $scope.futureCurrency = subscriptions.data.Subscriptions[0].Currency;
+                                    $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
+                                    $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
+                                    $scope.organization = organization;
+                                    eventManager.call();
+                                }
+                            });
+                        },
+                        cancel: function() {
+                            paymentModal.deactivate();
                         }
-                    });
-                }
+                    }
+                });
             } else if(angular.isDefined(plan.data) && plan.data.Error) {
                 notify({message: plan.data.Error, classes: 'notification-danger'});
             } else {

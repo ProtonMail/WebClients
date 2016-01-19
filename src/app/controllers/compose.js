@@ -920,7 +920,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             if($scope.needToSave(message)) {
                 $scope.save(message, false, false, true); // message, forward, notification, autosaving
             }
-        }, CONSTANTS.SAVE_TIMEOUT_TIME);
+        }, CONSTANTS.SAVE_TIMEOUT_TIME); // 3 seconds
     };
 
     $scope.validate = function(message) {
@@ -1134,9 +1134,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 message.saving = false;
                 message.autosaving = false;
             });
-
-            return deferred.promise;
         }
+        return deferred.promise;
     };
 
     /**
