@@ -114,6 +114,7 @@
 					p {
 						color: #000;
 						a {
+							font-weight: 700;
 							color: #000;
 							text-decoration: none;
 						}
@@ -152,9 +153,10 @@
 					color: #fff;
 					a {
 						color: #fff;
+						font-weight: 700;
 						text-decoration: none;
 					}
-						span {
+					span {
 						font-weight: 700;
 						&.time {
 							font-weight: 400;
