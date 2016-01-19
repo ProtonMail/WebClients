@@ -335,6 +335,11 @@ angular.module('proton', [
                 } else {
                     $injector.get('authentication').logout(true, false);
                 }
+            } else if (rejection.status === 504) { // Time-out
+                notification = $injector.get('notify')({
+                    message: 'Please retry.',
+                    classes: 'notification-danger'
+                });
             }
 
             return $q.reject(rejection);
