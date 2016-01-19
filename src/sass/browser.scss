@@ -27,3 +27,10 @@
         margin-top: 11px;
     }
 }
+
+.ua-ios {
+    #pm_captcha {
+        -webkit-overflow-scrolling: touch;
+        overflow: auto !important;
+    }
+}

@@ -134,8 +134,7 @@
                 <em class="num" ng-if="!preInvited">5</em>
                 {{ 'Anti-Spam' | translate }}
             </label>
-            <iframe scrolling="no" id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
-            <p>&nbsp;</p>
+            <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
         </div><!--/.wrapper-->
         <div class="checkbox" ng-show="false">
             <label for="optIn" class="optIn">
@@ -148,7 +147,6 @@
                 type="checkbox" /> Keep me updated about new features such as mobile apps.
             </label>
         </div>      
-        <p>&nbsp;</p>
         <button
         tabindex="8"
         type="submit"
