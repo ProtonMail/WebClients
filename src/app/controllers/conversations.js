@@ -326,6 +326,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         return time;
     };
 
+    $scope.size = function(element) {
+        if (angular.isDefined(element.TotalSize)) {
+            return element.TotalSize;
+        } else if (angular.isDefined(element.Size)) {
+            return element.Size;
+        }
+    };
+
     /**
      * Return style to color tag label
      * @param {String} id - label id

@@ -162,7 +162,7 @@
                     </p>
                 </article>
             </a>
-            <span class="size">{{ conversation.TotalSize | bytes }}</span>
+            <span class="size">{{ size(conversation)| bytes }}</span>
             <span class="hasAttachments">
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
             </span>
