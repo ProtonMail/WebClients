@@ -13,7 +13,6 @@ angular.module("proton.controllers.Settings")
     Setting
 ) {
     $scope.logs = [];
-    $scope.currentLogPage = 0;
     $scope.logItemsPerPage = 20;
     $scope.doLogging = authentication.user.LogAuth;
     $scope.disabledText = $translate.instant('DISABLE');
@@ -28,7 +27,7 @@ angular.module("proton.controllers.Settings")
                 function(response) {
                     $scope.logs = _.sortBy(response.data.Logs, 'Time').reverse();
                     $scope.logCount = $scope.logs.length;
-                    $scope.currentLogPage = 0;
+                    $scope.currentLogPage = 1;
                 },
                 function(error) {
                     notify({message: 'Error during the initialization of logs', classes: 'notification-danger'});

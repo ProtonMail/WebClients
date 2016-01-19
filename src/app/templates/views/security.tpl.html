@@ -52,7 +52,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="log in logs | limitTo: logItemsPerPage: currentLogPage * logItemsPerPage" ng-class="{ 'danger': (log.Event == 0) }">
+                                    <tr ng-repeat="log in logs | limitTo: logItemsPerPage: (currentLogPage - 1) * logItemsPerPage" ng-class="{ 'danger': (log.Event == 0) }">
                                         <td scope="row">
                                             <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle text-red"></i> {{ 'LOGIN_FAILED' | translate }}</span>
                                             <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i> {{ 'LOGIN_SUCCESS' | translate }}</span>
