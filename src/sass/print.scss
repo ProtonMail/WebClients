@@ -16,4 +16,15 @@
 			}
 		}
 	}
+	.pm_button,
+	.pm_buttons,
+	.sidebar,
+	#pm_header,
+	#pm_toolbar_responsive {
+		display: none !important;
+		visibility: hidden !important;
+	}
+	* {
+		overflow: initial !important;
+	}
 }

@@ -777,9 +777,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Print current message
      */
     $scope.print = function() {
-        var url = $state.href('secured.print', { id: $scope.message.ID });
 
-        window.open(url, '_blank');
+        if ($('html').hasClass('ua-windows_nt')) {
+            window.print();
+        }
+        else {
+            var url = $state.href('secured.print', { id: $scope.message.ID });
+            window.open(url, '_blank');
+        }
     };
 
     /**
