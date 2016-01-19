@@ -5,27 +5,7 @@
     <div class="settings" pt-height>
 
         <div class="row">
-
-            <section class="setting pm_form full">
-
-                <form method="post">
-                    <legend>{{ 'KEY_EXPORT' | translate }}</legend>
-                    <p>Download your Public Key for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
-
-                    <p class="alert alert-info" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
-
-                    <p>
-                        <button ng-click="exportPublicKey($event)" class="pm_button" ng-disabled="isSafari">
-                            <i class="fa fa-key"></i> <strong>{{ 'DOWNLOAD_PUBLICKEY' | translate }}</strong>
-                        </button>
-                    </p>
-
-                    <p>&nbsp;</p>
-
-                </form>
-
-            </section>
-
+            
             <section class="setting pm_form full">
 
                 <form method="post">

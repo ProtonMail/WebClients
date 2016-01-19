@@ -1,6 +1,8 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings pm_form" pt-height>
+        <p class="alert alert-info" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
+        <p>Download your Public Key for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
         <legend>{{ 'ACCOUNT' | translate }}</legend>
         <table class="pm_table">
             <thead>
@@ -22,8 +24,12 @@
                     </td>
                     <td>
                         <div ng-repeat="key in address.Keys">
-                            <a href="#" ng-click="download(key.PublicKey, 'public')"><i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}</a>
-                            <a href="#" ng-click="download(key.PrivateKey, 'private')"><i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}</a>
+                            <a href="#" ng-click="download(key.PublicKey, 'public')" ng-disabled="isSafari">
+                                <i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}
+                            </a>
+                            <a href="#" ng-click="download(key.PrivateKey, 'private')" ng-disabled="isSafari">
+                                <i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}
+                            </a>
                         </div>
                         <div>
                             <a href="#" ng-click="generate(address)">{{ 'GENERATE' | translate }}</a>
@@ -35,6 +41,6 @@
         <legend>{{ 'CUSTOM_DOMAINS' | translate }}</legend>
 
         <legend>{{ 'ADDRESSES' | translate }}</legend>
-        
+
     </div>
 </div>

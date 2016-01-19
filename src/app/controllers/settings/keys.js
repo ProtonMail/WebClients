@@ -1,6 +1,7 @@
 angular.module("proton.controllers.Settings")
 
 .controller('KeysController', function($log, $scope, authentication, pmcw, generateModal) {
+    $scope.isSafari = jQuery.browser.name === 'safari';
     $scope.addresses = authentication.user.Addresses;
     console.log($scope.addresses);
 

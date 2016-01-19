@@ -15,7 +15,6 @@ angular.module("proton.controllers.Settings")
     $scope.logs = [];
     $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;
-    $scope.isSafari = jQuery.browser.name === 'safari';
     $scope.doLogging = authentication.user.LogAuth;
     $scope.disabledText = $translate.instant('DISABLE');
 
