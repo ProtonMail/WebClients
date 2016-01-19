@@ -59,7 +59,7 @@ angular.module("proton.controllers.Auth", [
         }
 
         notify({
-            message: 'This is a preview of ProtonMail 3.0. Report feedback and bugs using the "Report Bug" link.', 
+            message: 'Welcome to ProtonMail 3.0. Please use \'Report Bug\' to send feedback.', 
             classes: 'notification-success',
             duration: 20000
         });
