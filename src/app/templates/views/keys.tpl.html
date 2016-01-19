@@ -1,7 +1,40 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-    <div class="settings" pt-height>
-        <h1>Keys</h1>
-        <p>Warning: Do not change encryption key settings unless you know what you are doing. Misconfiguration may cause your emails to become unreadable. For more information, please visit our Knowledge Base</p>
+    <div class="settings pm_form" pt-height>
+        <legend>{{ 'ACCOUNT' | translate }}</legend>
+        <table class="pm_table">
+            <thead>
+                <tr>
+                    <th>{{ 'EMAIL' | translate }}</th>
+                    <th>{{ 'STATUS' | translate }}</th>
+                    <th>{{ 'KEYS' | translate }}</th>
+                    <th>{{ 'ACTIONS' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="address in addresses">
+                    <td>{{ address.Email }}</td>
+                    <td>{{ address.Status }}</td>
+                    <td>
+                        <div ng-repeat="key in address.Keys">
+
+                        </div>
+                    </td>
+                    <td>
+                        <div ng-repeat="key in address.Keys">
+                            <a href="#" ng-click="download(key.PublicKey, 'public')"><i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}</a>
+                            <a href="#" ng-click="download(key.PrivateKey, 'private')"><i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}</a>
+                        </div>
+                        <div>
+                            <a href="#" ng-click="generate(address)">{{ 'GENERATE' | translate }}</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <legend>{{ 'CUSTOM_DOMAINS' | translate }}</legend>
+
+        <legend>{{ 'ADDRESSES' | translate }}</legend>
+        
     </div>
 </div>
