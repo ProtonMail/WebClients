@@ -353,10 +353,17 @@ angular.module("proton.controllers.Settings")
         networkActivityTracker.track($q.all(promises).then(function(results) {
             var plan = results[0];
             var card = results[1];
+            var organizationName = '';
+
+            if($scope.organization) {
+                organizationName = $scope.organization.DisplayName;
+            } else if (name === 'plus') {
+                organizationName = $translate.instant('MY_ORGANIZATION');
+            }
 
             if(angular.isDefined(plan.data) && plan.data.Code === 1000 && angular.isDefined(card.data) && card.data.Code === 1000) {
                 configuration.Organization = {
-                    DisplayName: ($scope.organization) ? $scope.organization.DisplayName : authentication.user.DisplayName
+                    DisplayName: organizationName
                 };
                 // Open payment modal
                 paymentModal.activate({
