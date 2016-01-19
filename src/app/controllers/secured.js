@@ -63,6 +63,7 @@ angular.module("proton.controllers.Secured", [])
 
     // ===================================
     // FEEDBACK FORM (TEMPORARY - REMOVE ON SUNDAY / MONDAY)
+    /*
     $timeout( function() {
 
         now = new Date();
@@ -82,6 +83,7 @@ angular.module("proton.controllers.Secured", [])
             });
         }
     }, 1 * 60 * 1000); // 2 mins
+    */
     // END FEEDBACK
     // ===================================
 
