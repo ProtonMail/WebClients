@@ -64,7 +64,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             var origin = event.origin || event.originalEvent.origin; 
 
             // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
-            if (origin !== 'http://localhost:9000') { 
+            if (origin !== 'https://secure.protonmail.com') { 
                 return;
             }
 
@@ -93,7 +93,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
         window.captchaSendMessage = function() {
             iframe = document.getElementById('pm_captcha');
-            iframe.contentWindow.postMessage(message, 'http://localhost:9000');
+            iframe.contentWindow.postMessage(message, 'https://secure.protonmail.com');
         };
 
     };
