@@ -168,7 +168,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
 
-        if(message.editor === editor) {
+        if(angular.isDefined(message) && message.editor === editor) {
             $scope.focusComposer(message);
         }
 
