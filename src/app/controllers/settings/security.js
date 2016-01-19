@@ -13,23 +13,12 @@ angular.module("proton.controllers.Settings")
     Setting
 ) {
     $scope.logs = [];
-    $scope.currentLogPage = 1;
     $scope.logItemsPerPage = 20;
     $scope.doLogging = authentication.user.LogAuth;
     $scope.disabledText = $translate.instant('DISABLE');
 
     $scope.loadLogs = function (page) {
         $scope.currentLogPage = page;
-    };
-
-    $scope.paginate = function(value) {
-        var begin, end, index;
-
-        begin = ($scope.currentLogPage - 1) * $scope.logItemsPerPage;
-        end = begin + $scope.logItemsPerPage;
-        index = $scope.logs.indexOf(value);
-
-        return (begin <= index && index < end);
     };
 
     $scope.initLogs = function() {
