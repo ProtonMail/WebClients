@@ -187,7 +187,6 @@ ng-class="{
     <div ng-show="!!message.imagesHidden && message.expand" class="display-image text-center pm_button">
         <a ng-click="displayImages()"><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
     </div>
-    <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
     <div class="frame" ng-show="message.expand === true">
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
         <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote></div>
@@ -198,4 +197,5 @@ ng-class="{
         </div>
         <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     </div>
+    <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
 </article>
