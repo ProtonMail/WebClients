@@ -1283,7 +1283,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
                                             events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
 
-                                            if(result.Parent) {
+                                            if (result.Parent) {
                                                 events.push({Action:3, ID: result.Parent.ID, Message: result.Parent});
                                             }
 
