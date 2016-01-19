@@ -154,22 +154,25 @@ angular.module("proton.squire", [
                     updateModel(scope.ngModel);
                 }
 
-                editor.addEventListener("input", function() {
+                editor.addEventListener('input', function() {
                     var html = editor.getHTML();
 
                     updateModel(html);
                 });
 
-                editor.addEventListener("focus", function() {
+                editor.addEventListener('focus', function() {
                     element.addClass('focus').triggerHandler('focus');
                     $rootScope.$broadcast('editorFocussed', element, editor);
                 });
 
-                editor.addEventListener('startPaste', function(event) {
-                    event.string = DOMPurify.sanitize(event.string);
+                editor.addEventListener('willPaste', function(event) {
+                    var div = document.createElement('div');
+
+                    div.appendChild(event.fragment);
+                    event.fragment = DOMPurify.sanitize(div.innerHTML, {RETURN_DOM_FRAGMENT: true});
                 });
 
-                editor.addEventListener("blur", function() {
+                editor.addEventListener('blur', function() {
                     element.removeClass('focus').triggerHandler('blur');
 
                     if (ngModel.$pristine && !ngModel.$isEmpty(ngModel.$viewValue)) {
