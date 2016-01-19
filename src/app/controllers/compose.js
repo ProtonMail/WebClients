@@ -1056,6 +1056,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     if(angular.isDefined(result) && result.Code === 1000) {
                         var events = [];
                         var conversation = cache.getConversationCached(result.Message.ConversationID);
+                        var labelIDs = (angular.isDefined(conversation)) ? _.uniq(conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts)) : [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
+                        var numMessages = (angular.isDefined(conversation)) ? (conversation.NumMessages + 1) : 1;
 
                         message.ID = result.Message.ID;
                         message.IsRead = result.Message.IsRead;
@@ -1075,19 +1077,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
 
                         // Generate conversation event
-                        if(angular.isDefined(conversation)) {
-                            if(actionType === CREATE) {
-                                conversation.NumMessages++;
-                            }
-
-                            if(angular.isArray(result.Message.Attachments)) {
-                                conversation.NumAttachments = result.Message.Attachments.length;
-                            }
-
-                            conversation.LabelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.drafts];
-
-                            events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-                        }
+                        events.push({Action: 3, ID: result.Message.ConversationID, Conversation: {
+                            NumAttachments: result.Message.Attachments.length,
+                            NumMessages: numMessages,
+                            Recipients: result.Message.Recipients,
+                            Senders: result.Message.Senders,
+                            Subject: result.Message.Subject,
+                            ID: result.Message.ConversationID,
+                            LabelIDs: labelIDs
+                        }});
 
                         // Send events
                         cache.events(events);
@@ -1277,7 +1275,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             var events = [];
                                             var messages = cache.queryMessagesCached(result.Sent.ConversationID);
                                             var conversation = cache.getConversationCached(result.Sent.ConversationID);
-                                            var labelIDs = (angular.isDefined(conversation)) ? conversation.LabelIDs : [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+                                            var labelIDs = (angular.isDefined(conversation)) ? _.uniq(conversation.LabelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent)) : [CONSTANTS.MAILBOX_IDENTIFIERS.sent];
                                             var numMessages = (angular.isDefined(conversation)) ? (conversation.NumMessages + 1) : 1;
 
                                             message.sending = false; // Change status
