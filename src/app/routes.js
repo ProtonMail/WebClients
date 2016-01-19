@@ -102,34 +102,6 @@ angular.module('proton.routes', [
         }
     })
 
-    // DISBALED FOR NOW :)
-    .state('signup', {
-        url: '/signup',
-        views: {
-            'main@': {
-                controller: 'SignupController',
-                templateUrl: 'templates/layout/auth.tpl.html'
-            },
-            'panel@signup': {
-                templateUrl: 'templates/views/sign-up.tpl.html' // this doesnt exist.
-            }
-        },
-        onEnter: function($rootScope, $state) {
-
-            // This to enables anyone to create an account.
-            // Disable or remove to activate Waiting List
-            $rootScope.allowedNewAccount = true;
-            $rootScope.allowedNewAccount = false;
-
-            if ($rootScope.allowedNewAccount!==true) {
-                $state.go('login');
-            }
-            else {
-                $state.go('step1');
-            }
-        }
-    })
-
     .state('pre-invite', {
         url: '/pre-invite/:user/:token',
         views: {
@@ -176,11 +148,24 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/step1.tpl.html'
             }
         },
-        onEnter: function($rootScope, $state, $log) {
-            // This is how we currently prevent direct sign ups. Remove this to let open the flood gates.
-            if ($rootScope.allowedNewAccount!==true) {
-                $state.go('login');
-            }
+        onEnter: function($rootScope, $state, $log, $http, url) {
+
+            $http.get( url.get() + '/users/direct' )
+            .then(
+                function( response ) {
+
+                    if ( response.data && response.status === 200 ) {
+
+                        if ( response.data.Direct!==1 ) {
+                            window.location.href = '/invite';
+                        }
+
+                    }
+                    else {
+                        $state.go('login');
+                    }
+                }
+            );
         }
     })
 

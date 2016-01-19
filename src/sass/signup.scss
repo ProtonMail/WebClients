@@ -1,4 +1,14 @@
 #step1 {
+    iframe#pm_captcha {
+        outline: none;
+        border: none;
+        width: 100%;
+        margin-top: 1rem;
+        position: relative;
+        left: -8px;
+        height: 120px;
+        overflow: hidden;
+    }
     .signUp {
         display: none;
     }

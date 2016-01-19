@@ -11,6 +11,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     $q,
     $timeout,
     $http,
+    $window,
     CONSTANTS,
     authentication,
     networkActivityTracker,
@@ -48,6 +49,63 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             $scope.readOnlyUsername = true;
         }
 
+        // Captcha
+        $scope.captcha_token =     false;
+        window.addEventListener("message", captchaReceiveMessage, false);
+
+        // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
+        function captchaReceiveMessage(event) {
+
+            if ( typeof event.origin === "undefined" && typeof event.originalEvent.origin === "undefined" ) {
+                return;
+            }
+
+            // For Chrome, the origin property is in the event.originalEvent object.
+            var origin = event.origin || event.originalEvent.origin; 
+
+            // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
+            if (origin !== 'http://localhost:9000') { 
+                return;
+            }
+
+            var data = event.data;
+            if ( data.type === "pm_captcha" ) {
+                $scope.captcha_token = data.token;
+                $scope.$apply();
+
+                console.log($scope.captcha_token);
+                // $('#result').text( data.token );
+            }
+            if ( data.type === "pm_height" ) {
+                console.log(event.data.height);
+                $('#pm_captcha').height(event.data.height + 40);
+                // $('#result').text( data.token );
+            }            
+        }
+
+        // Change this to our recaptcha key, configurable in Angular?
+        var message = {
+            "type": "pm_captcha",
+            "language": "en",
+            "key": "6LcePAATAAAAAGPRWgx90814DTjgt5sXnNbV5WaW", 
+        };
+
+        // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
+        window.captchaSendMessage = function() {
+            iframe = document.getElementById('pm_captcha');
+            iframe.contentWindow.postMessage(message, 'http://localhost:9000');
+        };
+
+    };
+
+    $scope.notificationEmailValidation = function() {
+        // return true;
+        if ($scope.account.notificationEmail.length > 0) {
+            return !!!tools.validEmail($scope.account.notificationEmail);
+        }
+        else {
+            return true;
+        }
     };
 
     // ---------------------------------------------------
