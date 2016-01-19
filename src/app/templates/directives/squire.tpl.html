@@ -1,55 +1,55 @@
 <div class='angular-squire'>
     <div class='editor-container'>
         <ul class="squire-toolbar menu">
-            <li>
+            <li class="bold">
                 <a href="#" pt-tooltip="{{ 'BOLD' | translate }}" ng-click="action('bold')">
                     <i class="fa fa-bold"></i>
                 </a>
             </li>
-            <li>
+            <li class="italic">
                 <a href="#" pt-tooltip="{{ 'ITALIC' | translate }}" ng-click="action('italic')">
                     <i class="fa fa-italic"></i>
                 </a>
             </li>
-            <li>
+            <li class="underline">
                 <a href="#" pt-tooltip="{{ 'UNDERLINE' | translate }}" ng-click="action('underline')">
                     <i class="fa fa-underline"></i>
                 </a>
             </li>
             <li class="separator"></li>
-            <li>
+            <li class="ulist">
                 <a href="#" pt-tooltip="{{ 'UNORDERED_LIST' | translate }}" ng-click="action('makeUnorderedList')">
                     <i class="fa fa-list-ul"></i>
                 </a>
             </li>
-            <li>
+            <li class="olist">
                 <a href="#" pt-tooltip="{{ 'ORDERED_LIST' | translate }}" ng-click="action('makeOrderedList')">
                     <i class="fa fa-list-ol"></i>
                 </a>
             </li>
             <li class="separator"></li>
-            <li>
+            <li class="aleft">
                 <a href="#" pt-tooltip="{{ 'ALIGN_LEFT' | translate }}" ng-click="action('alignLeft')">
                     <i class="fa fa-align-left"></i>
                 </a>
             </li>
-            <li>
+            <li class="acenter">
                 <a href="#" pt-tooltip="{{ 'ALIGN_CENTER' | translate }}" ng-click="action('alignCenter')">
                     <i class="fa fa-align-center"></i>
                 </a>
             </li>
-            <li>
+            <li class="aright">
                 <a href="#" pt-tooltip="{{ 'ALIGN_RIGHT' | translate }}" ng-click="action('alignRight')">
                     <i class="fa fa-align-right"></i>
                 </a>
             </li>
             <li class="separator"></li>
-            <li>
+            <li class="link">
                 <a href="#" pt-tooltip="{{ 'INSERT_LINK' | translate }}" ng-init="insertLink = false" ng-click="insertLink = !insertLink; insertImage = false;">
                     <i class="fa fa-link"></i>
                 </a>
             </li>
-            <li>
+            <li class="image">
                 <a href="#" ng-disabled="isPlain()" pt-tooltip="{{ 'INSERT_IMAGE' | translate }}" ng-init="insertImage = false" ng-click="insertImage = !insertImage; insertLink = false;">
                     <i class="fa fa-image"></i>
                 </a>
