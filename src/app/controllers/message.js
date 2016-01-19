@@ -47,7 +47,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.message.CCList = message.CCList;
             $scope.message.ConversationID = message.ConversationID;
             $scope.message.ExpirationTime = message.ExpirationTime;
-            $scope.message.HasAttachment = message.HasAttachment;
             $scope.message.ID = message.ID;
             $scope.message.IsEncrypted = message.IsEncrypted;
             $scope.message.IsForwarded = message.IsForwarded;
@@ -176,7 +175,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.openComposer = function(id) {
         cache.getMessage(id).then(function(message) {
             var copy = angular.copy(message);
-        
+
             copy.decryptBody().then(function(content) {
                 copy.Body = content;
                 $rootScope.$broadcast('loadMessage', copy);

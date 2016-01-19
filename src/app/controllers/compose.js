@@ -140,7 +140,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var current = _.findWhere($scope.messages, {ID: message.ID});
         var mess = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
 
-        if(mess.Attachments && mess.Attachments.length > 0) {
+        if(mess.NumAttachments > 0) {
             mess.attachmentsToggle = true;
         } else {
             mess.attachmentsToggle = false;
@@ -1066,11 +1066,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             message.attachmentsToggle = true;
                         }
 
-                        if(angular.isArray(result.Message.Attachments)) {
-                            result.Message.HasAttachment = (result.Message.Attachments.length > 0)?1:0;
-                            result.Message.NumAttachments = result.Message.Attachments.length;
-                        }
-
                         result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
                         result.Message.Recipients = _.uniq(result.Message.ToList.concat(result.Message.CCList).concat(result.Message.BCCList)); // The back-end doesn't return Recipients
 
@@ -1288,8 +1283,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             message.sending = false; // Change status
                                             result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
                                             result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                            result.Sent.HasAttachment = (result.Sent.Attachments.length > 0)?1:0;
-                                            result.Sent.NumAttachments = result.Sent.Attachments.length;
                                             events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
 
                                             if(result.Parent) {

@@ -29,7 +29,7 @@ ng-class="{
                 </span>
             </div>
 
-            <i class="fa fa-paperclip" ng-show="( message.Attachments.length > 0 )"></i>
+            <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
             <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
