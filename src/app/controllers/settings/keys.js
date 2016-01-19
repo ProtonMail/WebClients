@@ -31,7 +31,18 @@ angular.module("proton.controllers.Settings")
         generateModal.activate({
             params: {
                 submit: function(password) {
-                    generateModal.deactivate();
+                    pmcw.generateKeysRSA(address.ID, password).then(
+                        function(result) {
+                            var publicKeyArmored = result.publicKeyArmored;
+                            var privateKeyArmored = result.privateKeyArmored;
+                            
+                            generateModal.deactivate();
+                        },
+                        function(error) {
+                            $log.error(error);
+                            generateModal.deactivate();
+                        }
+                    );
                 },
                 cancel: function() {
                     generateModal.deactivate();
