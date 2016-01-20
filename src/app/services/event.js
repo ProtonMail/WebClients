@@ -142,6 +142,7 @@ angular.module("proton.event", ["proton.constants"])
 						if ( !$cookies.get( cookie_name ) ) {
 							notify({
 								message: message,
+							    templateUrl: 'templates/notifications/cross.tpl.html',
 								duration: '0'
 							});
 
