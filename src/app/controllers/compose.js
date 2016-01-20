@@ -1320,7 +1320,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         }
                                     }, function(error) {
                                         message.sending = false;
-                                        error.message = 'Error during the sending';
+                                        error.message = 'There was a problem period, please retry';
                                         deferred.reject(error);
                                     });
                                 }
