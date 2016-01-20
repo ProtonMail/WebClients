@@ -424,7 +424,7 @@ angular.module('proton.actions', [])
                 events.push({Action: 3, ID: id, Message: {
                     ID: id,
                     Selected: false,
-                    LabelIDsAddeds: labelIDsAdded,
+                    LabelIDsAdded: labelIDsAdded,
                     LabelIDsRemoved: labelIDsRemoved
                 }});
             });
