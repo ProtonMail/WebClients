@@ -418,11 +418,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.decryptAttachment = function(attachment, $event) {
         $event.preventDefault();
 
-        var target = ($($event.target).is('a')) ? $event.target : $($event.target).parent();
-        var link = angular.element(target);
+        var link = angular.element($event.currentTarget);
         var href = link.attr('href');
 
-        if(href !== undefined && href.search(/^data.*/)!==-1) {
+        if(angular.isDefined(href) && href.search(/^data.*/)!==-1) {
             alert("Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As.");
             return false;
         }
@@ -455,12 +454,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 // decode key packets
                 var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
                 // get user's pk
-                var key = authentication.getPrivateKey().then(
-                    function(pk) {
+                var key = authentication.getPrivateKey().then(function(pk) {
                         // decrypt session key from keypackets
                         return pmcw.decryptSessionKey(keyPackets, pk);
-                    }
-                );
+                });
 
                 // when we have the session key and attachment:
                 $q.all({
