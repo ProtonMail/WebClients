@@ -232,7 +232,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.scrollToMessage = function(ID) {
         $timeout.cancel(scrollPromise);
         var index = _.findIndex($scope.messages, {ID: ID});
-        var id = '#message' + index; // TODO improve it for the search case
+        var id = '#message' + index;
 
         scrollPromise = $timeout(function() {
             var element = angular.element(id);
@@ -241,6 +241,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
                 var amountScrolled = $('#pm_thread').scrollTop();
                 var value = element.offset().top + amountScrolled - headerOffset;
+                var margin = 80;
+
+                if (index > 0) {
+                    value -= margin;
+                }
 
                 $('#pm_thread').animate({
                     scrollTop: value
