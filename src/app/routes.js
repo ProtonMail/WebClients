@@ -498,6 +498,14 @@ angular.module('proton.routes', [
                 controller: 'OutsideController',
                 templateUrl: 'templates/views/outside.reply.tpl.html'
             }
+        },
+        onEnter: function($translate) {
+            window.onbeforeunload = function() {
+                return $translate.instant('MESSAGE_LEAVE_WARNING');
+            };
+        },
+        onExit: function() {
+            window.onbeforeunload = undefined;
         }
     })
 
