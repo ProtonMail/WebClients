@@ -129,12 +129,15 @@
             <div ng-show="step1.notificationEmail.$error.email">
                 <p class="alert alert-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
             </div>
-            <label for="password">
-                <em class="num" ng-if="preInvited">4</em>
-                <em class="num" ng-if="!preInvited">5</em>
-                {{ 'Anti-Spam' | translate }}
-            </label>
-            <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
+            <div ng-if="!preInvited">
+                <label for="password">
+                    <em class="num" ng-if="preInvited">4</em>
+                    <em class="num" ng-if="!preInvited">5</em>
+                    {{ 'Anti-Spam' | translate }}
+                </label>
+                <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
+            </div>
+            <p ng-if="preInvited">&nbsp;</p>
         </div><!--/.wrapper-->
         <div class="checkbox" ng-show="false">
             <label for="optIn" class="optIn">
@@ -146,12 +149,12 @@
                 ng-model="account.optIn"
                 type="checkbox" /> Keep me updated about new features such as mobile apps.
             </label>
-        </div>      
+        </div>
         <button
         tabindex="8"
         type="submit"
         class="pm_button primary large"
-        ng-class="{ disabled: (networkActivity.loading() || !step1.$valid || captcha_token === false) }">{{ 'COMPLETE_SETUP' | translate }}</button>
+        ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid || ( (captcha_token === false) && !preInvited ) ) }">{{ 'COMPLETE_SETUP' | translate }}</button>
         <p>&nbsp;</p>
         <p><a ui-sref="login">Already have an account?</a></p>
     </form>
