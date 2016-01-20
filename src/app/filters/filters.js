@@ -37,6 +37,16 @@ angular.module("proton.filters",[])
     };
 })
 
+.filter('reverse', function() {
+    return function(value) {
+        if(angular.isArray(value)) {
+            return value.reverse();
+        } else {
+            return [];
+        }
+    };
+})
+
 .filter("capitalize", function() {
     return function(value) {
 
