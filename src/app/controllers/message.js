@@ -415,7 +415,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         action.unreadMessage(ids);
     };
 
-    $scope.decryptAttachment = function(attachment, $event) {
+    $scope.decryptAttachment = function(message, attachment, $event) {
         $event.preventDefault();
 
         var link = angular.element($event.currentTarget);
@@ -446,7 +446,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     data: attachmentStored.data,
                     Name: attachmentStored.name,
                     MIMEType: attachment.MIMEType,
-                    el: target,
+                    el: link,
                 });
                 attachment.decrypting = false;
                 $scope.$apply();
@@ -454,10 +454,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 // decode key packets
                 var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
                 // get user's pk
-                var key = authentication.getPrivateKey().then(function(pk) {
-                        // decrypt session key from keypackets
-                        return pmcw.decryptSessionKey(keyPackets, pk);
-                });
+                var pk = authentication.getPrivateKeys(message.AddressID);
+                var key = pmcw.decryptSessionKey(keyPackets, pk);
 
                 // when we have the session key and attachment:
                 $q.all({
@@ -489,7 +487,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                                     data: decryptedAtt.data,
                                     Name: decryptedAtt.filename,
                                     MIMEType: attachment.MIMEType,
-                                    el: target,
+                                    el: link,
                                 });
                                 attachment.decrypting = false;
                                 attachment.decrypted = true;
