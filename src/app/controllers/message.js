@@ -418,7 +418,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.decryptAttachment = function(attachment, $event) {
         $event.preventDefault();
 
-        var link = angular.element($event.target);
+        var target = ($($event.target).is('a')) ? $event.target : $($event.target).parent();
+        var link = angular.element(target);
         var href = link.attr('href');
 
         if(href !== undefined && href.search(/^data.*/)!==-1) {
@@ -446,7 +447,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     data: attachmentStored.data,
                     Name: attachmentStored.name,
                     MIMEType: attachment.MIMEType,
-                    el: $event.target,
+                    el: target,
                 });
                 attachment.decrypting = false;
                 $scope.$apply();
@@ -491,7 +492,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                                     data: decryptedAtt.data,
                                     Name: decryptedAtt.filename,
                                     MIMEType: attachment.MIMEType,
-                                    el: $event.target,
+                                    el: target,
                                 });
                                 attachment.decrypting = false;
                                 attachment.decrypted = true;
