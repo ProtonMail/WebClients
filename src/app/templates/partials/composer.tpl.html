@@ -306,6 +306,7 @@
                         <i class="fa" ng-class="{'fa-send': !!!message.loading()}"></i>
                         <span ng-hide="message.loading()">{{ 'SEND' | translate }}</span>
                         <span ng-show="message.sending === true">{{ 'SENDING' | translate }}</span>
+                        <span ng-show="message.uploading > 0">{{ 'UPLOADING' | translate }}</span>
                         <span ng-show="message.encrypting === true">{{ 'ENCRYPTING' | translate }}</span>
                         <span ng-show="message.saving === true && message.autosaving === false">{{ 'SAVING' | translate }}</span>
                     </button>
