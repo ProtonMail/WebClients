@@ -62,6 +62,8 @@ angular.module("proton.cache", [])
     var updateMessage = function(message) {
         var current = _.findWhere(messagesCached, {ID: message.ID});
 
+        message = new Message(message);
+
         if(angular.isDefined(current)) {
             manageCounters(current, message, 'message');
 
