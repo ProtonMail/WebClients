@@ -415,7 +415,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         action.unreadMessage(ids);
     };
 
-    $scope.decryptAttachment = function(message, attachment, $event) {
+    $scope.decryptAttachment = function(attachment, $event, message) {
         $event.preventDefault();
 
         var link = angular.element($event.currentTarget);
