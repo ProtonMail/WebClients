@@ -1320,7 +1320,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         }
                                     }, function(error) {
                                         message.sending = false;
-                                        error.message = 'Error during the sending';
+                                        error.message = 'There was a problem sending your message. Please try again.';
                                         deferred.reject(error);
                                     });
                                 }
@@ -1336,7 +1336,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         }
                     }, function(error) {
                         message.encrypting = false;
-                        error.message = 'Error during the getting of the public key';
+                        error.message = 'Error getting the public key';
                         deferred.reject(error);
                     });
                 }, function(error) {
