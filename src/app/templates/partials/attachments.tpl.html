@@ -10,7 +10,7 @@
         <em></em>
     </header>
     <section>
-        <a ng-repeat="attachment in message.Attachments" class="pm_button" ng-class="{ 'disabled': attachment.decrypting }" data-download-text="{{ 'DOWNLOAD' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment(message, attachment, $event)">
+        <a ng-repeat="attachment in message.Attachments" class="pm_button" ng-class="{ 'disabled': attachment.decrypting }" data-download-text="{{ 'DOWNLOAD' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment(attachment, $event, message)">
             <i class="fa fa-file-o"></i>
             <i class="fa fa-archive-o"      ng-show="attachment.MIMEType.indexOf('zip')            !== -1"></i>
             <i class="fa fa-audio-o"        ng-show="attachment.MIMEType.indexOf('mp3')            !== -1"></i>

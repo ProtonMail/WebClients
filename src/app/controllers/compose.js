@@ -238,6 +238,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         // $(window).off('mouseover', onMouseOver);
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
+        window.onbeforeunload = undefined;
     });
 
     // Function used for dragover listener on the dropzones

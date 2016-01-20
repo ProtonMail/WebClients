@@ -79,6 +79,7 @@ angular.module('proton', [
     'proton.tooltip',
     'proton.transformation',
     'proton.maxComposerHeight',
+    'proton.drag',
 
     // Filters
     'proton.filters',
