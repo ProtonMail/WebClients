@@ -27,6 +27,15 @@ ng-class="{
                         </a>
                     </span>
                 </span>
+                <span class="pm_labels reverse" ng-if="message.labels().length > 0">
+                    <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
+                        <em>{{ getLabel(labelID).Name }}</em>
+                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
+                        <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </span>
+                </span>
             </div>
             <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
             <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
@@ -170,6 +179,15 @@ ng-class="{
         </div><!--/.data-->
         <div class="labelRow" ng-if="message.labels().length > 0">
             <span class="pm_labels inline" ng-if="message.labels().length > 0">
+                <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
+                    <em>{{ getLabel(labelID).Name }}</em>
+                    <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
+                    <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </span>
+            </span>
+            <span class="pm_labels reverse inline" ng-if="message.labels().length > 0">
                 <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
                     <em>{{ getLabel(labelID).Name }}</em>
                     <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
