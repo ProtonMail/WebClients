@@ -150,22 +150,24 @@ angular.module('proton.routes', [
         },
         onEnter: function($rootScope, $state, $log, $http, url) {
 
-            $http.get( url.get() + '/users/direct' )
-            .then(
-                function( response ) {
+            if (!$rootScope.preInvited) {
+                $http.get( url.get() + '/users/direct' )
+                .then(
+                    function( response ) {
 
-                    if ( response.data && response.status === 200 ) {
+                        if ( response.data && response.status === 200 ) {
 
-                        if ( response.data.Direct!==1 ) {
-                            window.location.href = '/invite';
+                            if ( response.data.Direct!==1 ) {
+                                window.location.href = '/invite';
+                            }
+
                         }
-
+                        else {
+                            $state.go('login');
+                        }
                     }
-                    else {
-                        $state.go('login');
-                    }
-                }
-            );
+                );
+            }
         }
     })
 
