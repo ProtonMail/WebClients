@@ -348,6 +348,19 @@ body, html {
 				}
 				margin-left: 0;
 			}
+			article {
+				.pm_labels {
+					position: absolute;
+					right: 10px;
+					bottom: 10px;
+					display: block;
+					margin: 0;
+					top: initial !important;
+					.subject {
+						display: none;
+					}
+				}
+			}
 			.size {
 				display: none;
 			}

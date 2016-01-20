@@ -76,7 +76,11 @@
 		&:hover {
 			// background-color: $light;
 			z-index: 99 !important;
+			max-width: initial !important;
 		}
+	}
+	.pm_label:last-child {
+		max-width: initial !important;
 	}
 	.pm_label:nth-child(0) {
 		right: 0;
@@ -157,5 +161,21 @@
 			    text-align: center;
 			}
 		}
+	}
+}
+
+
+@media (max-width: $mobile-landscape) {
+	.pm_label:nth-child(5),
+	.pm_label:nth-child(6),
+	.pm_label:nth-child(7),
+	.pm_label:nth-child(8),
+	.pm_label:nth-child(9),
+	.pm_label:nth-child(10),
+	.pm_label:nth-child(11),
+	.pm_label:nth-child(12),
+	.pm_label:nth-child(13),
+	.pm_label:nth-child(14) {
+		display: none !important;
 	}
 }
