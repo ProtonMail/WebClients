@@ -28,7 +28,7 @@ ng-class="{
                     </span>
                 </span>
                 <span class="pm_labels reverse" ng-if="message.labels().length > 0">
-                    <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
+                    <span ng-repeat="labelID in message.LabelIDs | labels | reverse" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
                         <em>{{ getLabel(labelID).Name }}</em>
                         <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
                         <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
@@ -188,7 +188,7 @@ ng-class="{
                 </span>
             </span>
             <span class="pm_labels reverse inline" ng-if="message.labels().length > 0">
-                <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
+                <span ng-repeat="labelID in message.LabelIDs | labels | reverse" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
                     <em>{{ getLabel(labelID).Name }}</em>
                     <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
                     <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">

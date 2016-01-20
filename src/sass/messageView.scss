@@ -217,7 +217,10 @@
                     display: block !important;
                     padding-top: 25px !important;
                     padding-bottom: 1rem;
-                }
+                    .pm_labels.reverse {
+                        display: none !important;
+                    }
+                }                
             }
             header {
                 padding-top: 20px;
@@ -332,6 +335,10 @@
                 top: 1px;
                 background: $read;
                 float: left;
+                display: none;
+                &.reverse {
+                    display: block !important;
+                }
                 .pm_label {
                     box-shadow: 0 0 0 4px $read;
                     background: $read;
