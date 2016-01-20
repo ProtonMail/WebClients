@@ -11,6 +11,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $translate,
     $filter,
     $window,
+    $cookies,
     action,
     CONSTANTS,
     Conversation,
@@ -22,6 +23,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     cache,
     preloadConversation,
     confirmModal,
+    Setting,
     cacheCounters,
     networkActivityTracker,
     notify,
@@ -563,6 +565,83 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             id: null, // remove ID
             page: null // remove page (= 0)
         });
+    };
+
+
+    $scope.notifyUsersLayoutToggle = function() {
+        // Show users that they can toggle layouts
+        if (authentication.user.ViewLayout === 0) {
+
+            if (!$cookies.get('feature_layoutToggle') && $window.outerWidth > 1024) {
+
+                var now = new Date(),
+                exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
+
+                $cookies.put('feature_layoutToggle', 'true', {
+                    expires: exp
+                });
+                notify({
+                    message: 'You can now change between Column and Row modes.',
+                    duration: 14000
+                });
+                $scope.showTip = true;
+                $timeout( function() {
+                    $scope.showTip = false;
+                }, 140000);
+            }
+
+        }
+    };
+
+    $scope.notifyUsersLayoutToggle();
+    $(window).on('resize', $scope.notifyUsersLayoutToggle);
+
+    // Let users change the col/row modes.
+    $scope.toggleLayout = function() {
+
+        $scope.showTip = false;
+
+        var currLayout = authentication.user.ViewLayout;
+        var newLayout = (!currLayout ? 1 : 0);
+
+        var apply = function(value) {
+            authentication.user.ViewLayout = value;
+
+            if(value === 0) {
+                console.log('$rootScope.layoutMode: set columns');
+                $rootScope.layoutMode = 'columns';
+            } else {
+                console.log('$rootScope.layoutMode: set rows');
+                $rootScope.layoutMode = 'rows';
+            }
+        };
+
+        var error = function(error) {
+            $log.error(error);
+            notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
+            apply(currLayout);
+        };
+
+        apply(newLayout);
+
+        networkActivityTracker.track(
+            Setting.setViewlayout({
+                "ViewLayout": newLayout
+            }).$promise.then(
+                function(response) {
+                    if(response.Code === 1000) {
+                        notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
+                    } else if (response.Error) {
+                        error(response.Error);
+                    } else {
+                        error();
+                    }
+                },
+                function(error) {
+                    error(error);
+                }
+            )
+        );
     };
 
     /**

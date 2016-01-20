@@ -56,6 +56,21 @@ body.columns #pm_toolbar {
     z-index: 55;
     height: 55px;
     box-shadow: 0 1px 0 $border;
+    #layoutTip {
+        position: absolute;
+        right: -.5rem;
+        top: -.75rem;
+        display: block;
+        pointer-events: none;
+        .fa {
+            font-size: 1.5rem;
+            color: $red;
+            -webkit-animation-delay: 2s;
+                    animation-delay: 2s;
+            -webkit-animation-iteration-count: infinite;
+                    animation-iteration-count: infinite;
+        }
+    }
     .messageActions {
         float: right;
     }
