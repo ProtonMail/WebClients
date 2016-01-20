@@ -65,23 +65,17 @@ angular.module("proton.filters",[])
 .filter('labels', function(authentication) {
     return function(labels) {
         var labelsFiltered = [];
-        var currentLabels = _.map(authentication.user.Labels, function(label) {
-            return label.ID;
-        });
+        var userLabels = _.chain(authentication.user.Labels)
+            .sortBy('Order')
+            .value();
 
-        _.each(labels, function(label) {
-            var value;
+        for (var i = 0; i < userLabels.length; i++) {
+            var labelObject = userLabels[i];
 
-            if(angular.isObject(label)) {
-                value = label.ID;
-            } else if(angular.isString(label)) {
-                value = label;
+            if (labels.indexOf(labelObject.ID) !== -1) {
+                labelsFiltered.push(labelObject.ID);
             }
-
-            if(currentLabels.indexOf(value) !== -1) {
-                labelsFiltered.push(label);
-            }
-        });
+        }
 
         return labelsFiltered;
     };
