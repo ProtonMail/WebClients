@@ -121,7 +121,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.mobileResponsive = function() {
-        if ($window.outerWidth < 1024) {
+        if ($window.outerWidth < 1025) {
             $rootScope.layoutMode = 'rows';
         }
         else {
