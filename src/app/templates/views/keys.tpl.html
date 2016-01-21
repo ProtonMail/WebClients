@@ -2,42 +2,52 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings pm_form" pt-height>
         <p class="alert alert-info" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
-        <p>Download your Public Key for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
+        <p class="alert alert-info">Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
+        <p>&nbsp;</p>
         <legend>{{ 'ACCOUNT' | translate }}</legend>
-        <table class="pm_table">
-            <thead>
-                <tr>
-                    <th>{{ 'EMAIL' | translate }}</th>
-                    <th>{{ 'STATUS' | translate }}</th>
-                    <th>{{ 'KEYS' | translate }}</th>
-                    <th>{{ 'ACTIONS' | translate }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="address in addresses">
-                    <td>{{ address.Email }}</td>
-                    <td>{{ address.Status }}</td>
-                    <td>
-                        <div ng-repeat="key in address.Keys">
 
-                        </div>
-                    </td>
-                    <td>
-                        <div ng-repeat="key in address.Keys">
-                            <a href="#" ng-click="download(key.PublicKey, 'public')" ng-disabled="isSafari">
+        <div ng-repeat="address in addresses" class="keyAddresses">
+            <header>
+                <span class="pm_badge pull-right success" ng-show="address.Status===1"><i class="fa fa-check"></i> Enabled</span>
+                <span class="pm_badge pull-right" ng-show="address.Status!==1" pt-tooltip="{{ 'THIS_ADDRESS_IS_DISABLED' | translate }}">Disabled</span>
+                <h4>{{ address.Email }}</h4>
+            </header>
+            <table class="pm_table thick bordered">
+                <thead>
+                    <tr>
+                        <th>{{ 'PRIMARY' | translate }}</th>
+                        <th>{{ 'FINGERPRINT' | translate }}</th>
+                        <th class="text-right">{{ 'DOWNLOAD' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="key in address.Keys">
+                        <td>
+                            <input type="radio" name="mykey">
+                        </td>
+                        <td><code>as90d8as09d8as09d8</code></td>
+                        <td class="text-right">
+                            <a class="pm_button" href="#" ng-click="download(key.PublicKey, 'public')" ng-disabled="isSafari">
                                 <i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}
                             </a>
-                            <a href="#" ng-click="download(key.PrivateKey, 'private')" ng-disabled="isSafari">
+                            <a class="pm_button" href="#" ng-click="download(key.PrivateKey, 'private')" ng-disabled="isSafari">
                                 <i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}
                             </a>
-                        </div>
-                        <div>
-                            <a href="#" ng-click="generate(address)">{{ 'GENERATE' | translate }}</a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-right">
+                <a class="pm_button link" href="#" ng-click="generate(address)">
+                    <i class="fa fa-plus"></i> 
+                    {{ 'GENERATE_NEW_KEY' | translate }}
+                </a>
+            </p>
+            <p>&nbsp;</p>
+        </div>
+
+        <hr>
+
         <legend>{{ 'CUSTOM_DOMAINS' | translate }}</legend>
 
         <legend>{{ 'ADDRESSES' | translate }}</legend>

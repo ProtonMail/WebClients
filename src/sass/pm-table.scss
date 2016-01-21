@@ -26,6 +26,12 @@
             border-width: 0 0 1px 0;
         }
     }
+    &.thick {
+        th,
+        td {
+            padding: .5rem 1rem;
+        }
+    }
     &.bordered {
         border: 1px solid $border;
     }
