@@ -657,8 +657,13 @@
 				float: left;
 				width: 100%;
 			}
-			footer {
-				position: relative;
+			& > footer {
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				z-index: 99;
+				right: 0;
+				height: auto !important;
 			}
 		}
 		.composer.tall section .angular-squire-wrapper iframe {
