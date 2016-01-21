@@ -34,6 +34,7 @@ angular.module("proton.transformation", [])
                 '#origbody:first',
                 '#reply139content:first',
                 '#oriMsgHtmlSeperator:first',
+                '#OLK_SRC_BODY_SECTION:first',
                 'blockquote[type="cite"]:first'
             ];
             var stopObserving = attributes.$observe('ngBindHtml', function(interpolatedValue) {
