@@ -20,7 +20,7 @@ angular.module("proton.labels", [])
                     var messages = scope.getMessages();
 
                     scope.alsoArchive = false;
-                    scope.labels = $filter('labels')(angular.copy(authentication.user.Labels));
+                    scope.labels = angular.copy(authentication.user.Labels);
 
                     _.each(messages, function(message) {
                         messagesLabel = messagesLabel.concat(_.map(message.LabelIDs, function(id) {
