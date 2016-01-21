@@ -387,6 +387,28 @@ angular.module("proton.cache", [])
         return $q.all(dispatcher);
     };
 
+    api.empty = function(mailbox) {
+        var loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+        var needToBeRemoved = [];
+        var i = 0;
+
+        for (i = 0; i < conversationsCached.length; i++) {
+            var conversation = sCached[i];
+
+            if (angular.isDefined(conversation) && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc)) {
+                needToBeRemoved.push(i);
+            }
+        }
+
+        for (i = 0; i < needToBeRemoved.length; i++) {
+            var index = needToBeRemoved[i];
+
+            conversationsCached.splice(index, 1);
+        }
+
+        api.callRefresh();
+    };
+
     /**
      * Return time for a specific conversation and location
      * @return {Integer}

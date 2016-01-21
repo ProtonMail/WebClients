@@ -168,6 +168,8 @@ angular.module("proton.controllers.Auth", [
 
                         $state.go('login.unlock');
                         return;
+                    } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Code) && result.data.Code === 5003) {
+                        // Nothing
                     } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                         // TODO: This might be buggy
 	                	var error  = (angular.isDefined(result.data.ErrorDescription) && result.data.ErrorDescription.length) ? result.data.ErrorDescription : result.data.Error;
