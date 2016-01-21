@@ -33,7 +33,7 @@ angular.module("proton.transformation", [])
                 '#origbody:first',
                 '#reply139content:first',
                 '#oriMsgHtmlSeperator:first',
-                'blockquote:first'
+                'blockquote[type="cite"]:first'
             ];
             var stopObserving = attributes.$observe('ngBindHtml', function(interpolatedValue) {
                 $timeout(function() {
@@ -74,7 +74,7 @@ angular.module("proton.transformation", [])
                         angular.element(blockquote).before(button);
                         // Hide blockquote part
                         angular.element(blockquote).hide();
-                        // Stop searching of blockquote
+                        // Stop searching of blockquotes
                         stopObserving();
                     }
                 }, 0, false);
