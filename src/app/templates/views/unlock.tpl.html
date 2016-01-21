@@ -35,7 +35,7 @@ ng-submit="unlock()"
 
         <div class="clearfix">
             <a ui-sref="reset" class="login-support pm_button link pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
-            <a class="pm_button primary pull-right" ng-click="unlock()" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</a>
+            <button class="pm_button primary pull-right" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</button>
         </div>
 
     </div>
