@@ -35,6 +35,13 @@
     }
 }
 
+.ua-firefox.ua-desktop-linux {
+    .pm_buttons a,
+    .pm_button {
+        overflow: hidden;
+    }
+}
+
 .ua-windows_nt {
     &.ua-firefox {
         .columns#pm_conversations .list div.message aside label {
