@@ -10,8 +10,15 @@ angular.module("proton.labels", [])
             saveLabels: '=save'
         },
         link: function(scope, element, attrs) {
-            $('.open-label').click(function() {
+            var dropdown = angular.element(element).closest('.pm_buttons').find('.open-label');
+            var onClick = function() {
                 scope.open();
+            };
+
+            dropdown.bind('click', onClick);
+
+            scope.$on('$destroy', function() {
+                dropdown.unbind('click', onClick);
             });
 
             scope.open = function() {
