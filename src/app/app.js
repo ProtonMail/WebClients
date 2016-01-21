@@ -219,7 +219,7 @@ angular.module('proton', [
     $rootScope.showWelcome = true;
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
-    $rootScope.updateMessage = false;
+    //$rootScope.updateMessage = false;
     $rootScope.showSidebar = false;
     $rootScope.themeJason = false;
     $rootScope.isLoggedIn = authentication.isLoggedIn();
@@ -260,6 +260,7 @@ angular.module('proton', [
 //
 .factory('authHttpResponseInterceptor', function($q, $injector, $rootScope) {
     var notification = false;
+    var upgrade_notification = false;
 
     return {
         response: function(response) {
@@ -272,14 +273,17 @@ angular.module('proton', [
             if (angular.isDefined(response.data) && angular.isDefined(response.data.Code)) {
                 // app update needd
                 if (response.data.Code === 5003) {
-                    if ($rootScope.updateMessage===false) {
-                        $rootScope.updateMessage = true;
-                        $injector.get('notify')({
+//                    if ($rootScope.updateMessage===false) {
+//                        $rootScope.updateMessage = true;
+                        if ( upgrade_notification ) {
+                            upgrade_notification.close();
+                        }
+                        upgrade_notification = $injector.get('notify')({
                             classes: 'notification-info noclose',
                             message: 'A new version of ProtonMail is available. Please refresh this page and then logout and log back in to automatically update.',
                             duration: '0'
                         });
-                    }
+//
                 }
                 else if(response.data.Code === 5004) {
                     $injector.get('notify')({
