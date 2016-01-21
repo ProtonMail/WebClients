@@ -572,17 +572,18 @@ angular.module("proton.authentication", [
      */
     $rootScope.openReportModal = function() {
         var username = (authentication.user && angular.isDefined(authentication.user.Name)) ? authentication.user.Name : '';
+        var email = (authentication.user && angular.isArray(authentication.user.Addresses)) ? authentication.user.Addresses[0].Email : '';
         var form = {
-            OS:             tools.getOs(),
-            OSVersion:      '',
-            Browser:         tools.getBrowser(),
-            BrowserVersion:  tools.getBrowserVersion(),
-            Client:         'Angular',
-            ClientVersion:  CONFIG.app_version,
-            Title:          '[Angular] Bug [' + $state.$current.name + ']',
-            Description:    '',
-            Username:        username,
-            Email:          ''
+            OS: tools.getOs(),
+            OSVersion: '',
+            Browser: tools.getBrowser(),
+            BrowserVersion: tools.getBrowserVersion(),
+            Client: 'Angular',
+            ClientVersion: CONFIG.app_version,
+            Title: '[Angular] Bug [' + $state.$current.name + ']',
+            Description: '',
+            Username: username,
+            Email: email
         };
 
         takeScreenshot().then(function() {
