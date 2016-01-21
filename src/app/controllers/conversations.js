@@ -894,8 +894,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                         }
 
                         promise.then(function(result) {
-                            // Call event log manager to refresh the datas (conversations, messages, counters)
-                            eventManager.call();
+                            // Call to empty cache conversation
+                            action.empty(mailbox);
                             // Close modal
                             confirmModal.deactivate();
                             // Notify user

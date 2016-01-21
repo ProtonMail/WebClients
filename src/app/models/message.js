@@ -112,7 +112,7 @@ angular.module("proton.models.message", ["proton.constants"])
             emptyTrash: {
                 method: 'delete',
                 url: url.get() + '/messages/trash'
-            },
+            }
         }
     );
 
