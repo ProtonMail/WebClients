@@ -92,7 +92,8 @@ angular.module("proton.controllers.Auth", [
     };
 
     $scope.login = function() {
-        $('input').blur();
+        angular.element('input').blur();
+        angular.element('#pm_login').attr({action:'/*'});
         clearErrors();
 
         // Check username and password
