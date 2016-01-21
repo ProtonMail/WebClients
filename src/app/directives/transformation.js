@@ -33,14 +33,11 @@ angular.module("proton.transformation", [])
                 '#origbody:first',
                 '#reply139content:first',
                 '#oriMsgHtmlSeperator:first',
-                'blockquote[type="cite"]:first'
+                'blockquote:first'
             ];
             var stopObserving = attributes.$observe('ngBindHtml', function(interpolatedValue) {
                 $timeout(function() {
-                    var blockquote;
-                    var blockquotes = jQuery(element).find(quotes.join(', ')).first(); // Reduce the set of matched elements to the first in the set.
-
-                    blockquote = _.first(blockquotes);
+                    var blockquote = jQuery(element).find(quotes.join(', ')).first(); // Reduce the set of matched elements to the first in the set.
 
                     if(angular.isDefined(blockquote)) {
                         var button = angular.element('<button/>', {
@@ -77,7 +74,7 @@ angular.module("proton.transformation", [])
                         angular.element(blockquote).before(button);
                         // Hide blockquote part
                         angular.element(blockquote).hide();
-                        // Stop searching of blockquotes
+                        // Stop searching of blockquote
                         stopObserving();
                     }
                 }, 0, false);
