@@ -773,7 +773,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Print current message
      */
     $scope.print = function() {
-
         if ($('html').hasClass('ua-windows_nt')) {
             window.print();
         }
