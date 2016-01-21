@@ -30,6 +30,10 @@ body, html {
 			box-sizing: border-box;
 			.pm_labels {
 				top: -4px;
+				display: none;
+				&.reverse {
+					display: block;
+				}
 			}
 			&:focus {
 				background: #e9e6f0 !important;
