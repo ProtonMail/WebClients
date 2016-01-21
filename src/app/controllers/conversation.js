@@ -241,10 +241,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
                 var amountScrolled = $('#pm_thread').scrollTop();
                 var value = element.offset().top + amountScrolled - headerOffset;
-                var margin = 80;
 
-                if (index > 0) {
-                    value -= margin;
+                if (index === 0) {
+                    // Do nothing
+                } else if (index === 1) {
+                    value -= 30;
+                } else if (index > 1) {
+                    value -= 80;
                 }
 
                 $('#pm_thread').animate({
