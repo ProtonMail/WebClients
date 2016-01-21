@@ -27,12 +27,14 @@ angular.module("proton.transformation", [])
                 '.protonmail_quote:first',
                 '.gmail_quote:first',
                 '.yahoo_quoted:first',
+                '.WordSection1:first',
                 '#isForwardContent:first',
                 '#isReplyContent:first',
                 '#mailcontent:first',
                 '#origbody:first',
                 '#reply139content:first',
                 '#oriMsgHtmlSeperator:first',
+                '#OLK_SRC_BODY_SECTION:first',
                 'blockquote[type="cite"]:first'
             ];
             var stopObserving = attributes.$observe('ngBindHtml', function(interpolatedValue) {
