@@ -27,6 +27,7 @@ angular.module("proton.transformation", [])
                 '.protonmail_quote:first',
                 '.gmail_quote:first',
                 '.yahoo_quoted:first',
+                '.WordSection1:first',
                 '#isForwardContent:first',
                 '#isReplyContent:first',
                 '#mailcontent:first',
