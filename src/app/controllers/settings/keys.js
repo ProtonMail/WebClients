@@ -1,6 +1,17 @@
 angular.module("proton.controllers.Settings")
 
-.controller('KeysController', function($log, $scope, $translate, authentication, pmcw, generateModal, confirmModal, Key, notify) {
+.controller('KeysController', function(
+    $log,
+    $scope,
+    $translate,
+    authentication,
+    confirmModal,
+    generateModal,
+    Key,
+    networkActivityTracker, 
+    notify,
+    pmcw
+) {
     // Detect if the current browser is Safari to disable / hide download action
     $scope.isSafari = jQuery.browser.name === 'safari';
     $scope.addresses = authentication.user.Addresses;
