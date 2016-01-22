@@ -10,7 +10,7 @@ if (typeof module !== 'undefined' && module.exports) {
     /* jshint ignore:start */
     Promise = require('es6-promise').Promise;
     /* jshint ignore:end */
-    openpgp = require('./lib/openpgp.min.js');
+    openpgp = require('./openpgp.min.js');
     openpgp.config.integrity_protect = true;
     openpgp.config.useNative = true;
 }
@@ -59,7 +59,7 @@ var pmcrypto = (function() {
 
     // Backwards-compatible decrypt RSA message function
     function decryptMessageRSA(encMessage, prKey, messageTime) {
-        // console.log('decryptMessageRSA');
+
         return new Promise(function(resolve, reject) {
 
             if (encMessage === undefined || encMessage === '') {
@@ -379,7 +379,7 @@ var pmcrypto = (function() {
                 return reject(new Error('Missing private key passcode'));
             }
 
-            keys = getKeys(prKey);
+            var keys = getKeys(prKey);
             if (keys instanceof Error) return reject(keys);
 
             if (keys[0].decrypt(prKeyPassCode)) {
@@ -392,6 +392,47 @@ var pmcrypto = (function() {
         var hashed = arrayToBinaryString(window.openpgp.crypto.hash.sha512(binaryStringToArray(password)));
         hashed = btoa(hashed);
         return hashed;
+    }
+
+    function splitFile( encMessage ) {
+
+        return new Promise(function(resolve, reject) {
+
+            var msg;
+            if (Uint8Array.prototype.isPrototypeOf(encMessage)) {
+                msg = openpgp.message.read(encMessage);
+            } else {
+                msg = openpgp.message.readArmored(encMessage.trim());
+            }
+
+            var keyFilter = function(packet) {
+                return packet.tag != openpgp.enums.packet.symmetricallyEncrypted && packet.tag != openpgp.enums.packet.symEncryptedIntegrityProtected;
+            };
+
+            var obj = {
+                keys: msg.packets.filter(keyFilter).write(),
+                data: msg.packets.filterByTag(openpgp.enums.packet.symmetricallyEncrypted, openpgp.enums.packet.symEncryptedIntegrityProtected).write()
+            };
+            resolve(obj);
+        });
+    }
+
+    function keyInfo( prKey ) {
+
+        return new Promise(function(resolve, reject) {
+
+            var keys = getKeys(prKey);
+            if (keys instanceof Error) return reject(keys);
+
+            var obj = {
+                publicKeyArmored: keys[0].toPublic().armor(),
+                fingerprint: keys[0].primaryKey.getFingerprint(),
+                userIds: keys[0].getUserIds(),
+                bitSize: keys[0].primaryKey.getBitSize(),
+                created: keys[0].primaryKey.created
+            };
+            resolve(obj);
+        }); 
     }
 
     function binaryStringToArray(str) {
@@ -447,7 +488,13 @@ var pmcrypto = (function() {
         //Typed array/binary string conversions
         arrayToBinaryString: arrayToBinaryString,
         binaryStringToArray: binaryStringToArray,
-        concatArrays: openpgp.util.concatUint8Array
+        concatArrays: openpgp.util.concatUint8Array,
+
+        // Split existing encrypted file into data and non-data parts
+        splitFile: splitFile,
+
+        // Dump key information
+        keyInfo: keyInfo
     };
 
     return obj;
