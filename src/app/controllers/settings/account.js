@@ -166,12 +166,10 @@ angular.module("proton.controllers.Settings")
     $scope.saveDisplayName = function(form) {
         var displayName = $scope.displayName;
 
-        // to avoid basic name spoofing such as "Security <secutity@protonmail.ch>, "
+        // To avoid basic name spoofing such as "Security <secutity@protonmail.ch>, "
         if ( (displayName.indexOf("<") > -1) || (displayName.indexOf(">") > -1) || (displayName.indexOf("@") > -1) ) {
             notify({message: "Invalid Display Name. '<', '>', '@' are not allowed.", classes: 'notification-danger'});
-        }
-        else {
-
+        } else {
             networkActivityTracker.track(
                 Setting.display({
                     "DisplayName": displayName
@@ -188,7 +186,6 @@ angular.module("proton.controllers.Settings")
                     $log.error(error);
                 })
             );
-
         }
     };
 
