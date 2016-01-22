@@ -15,6 +15,7 @@ angular.module('proton.controllers.Settings')
     notify,
     pmcw,
     Setting,
+    Organization,
     tools,
     User
 ) {
@@ -128,36 +129,91 @@ angular.module('proton.controllers.Settings')
     $scope.saveMailboxPassword = function(form) {
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
-        var currentLoginPassword = $scope.currentLoginPassword;
         var copyAddresses = angular.copy(authentication.user.Addresses);
         var promises = [];
 
-        _.each(authentication.user.Addresses, function(address) {
-            var keys = authentication.getPrivateKeys(address.ID); // Get package decrypted during the first launch
-
-            _.each(keys, function(key) { // Loop around keys
-                promises.push(pmcw.encryptPrivateKey(key, newMailPwd).then(function(privateKey) {
-                    return {ID: key.ID, PrivateKey: privateKey};
-                }));
-            });
-        });
-
-        $q.all(promises).then(function(keys) {
-            networkActivityTracker.track(Key.private({Keys: keys}).then(function(result) {
-                console.log(result);
+        // If the current user is an admin, we need to change the organization private key
+        if (authentication.user.Role === 2) {
+            // Get organization key
+            Organization.getKey().then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-                    $scope.oldMailboxPassword = '';
-                    $scope.newMailboxPassword = '';
-                    $scope.confirmMailboxPassword = '';
-                    $scope.currentLoginPassword = '';
-                    authentication.savePassword(newMailPwd);
-                    notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
-                } else if(result.data && result.data.Error) {
-                    notify({message: result.Error, classes: 'notification-danger'});
+                    var encryptPrivateKey = result.data.PrivateKey;
+
+                    // Decrypt organization private key with the old mailbox password (current)
+                    pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd).then(function(package) {
+                        // Encrypt private key with the new mailbox password
+                        pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
+                            // Send request to the back-end to update the organization private key
+                            Organization.updateKey({
+                                PrivateKey: privateKey
+                            }).then(function(result) {
+                                if (result.data && result.data.Code === 1000) {
+                                    notify({message: 'Organization password changed', classes: 'notification-success'});
+                                } else if (result.data && result.data.Error) {
+                                    notify({message: result.data.Error, classes: 'notification-danger'});
+                                } else {
+                                    notify({message: 'Error during the organization update key request', classes: 'notification-danger'});
+                                }
+                            });
+                        });
+                    });
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
+                    notify({message: 'Error during the organization get key request', classes: 'notification-danger'});
                 }
-            }));
+            }, function(error) {
+                $log.error(error);
+                notify({message: 'Error during the organization get key request', classes: 'notification-danger'});
+            });
+        }
+
+        // Instead of grab keys from the cache, we call the back-end, just to make sure everything is up to date
+        User.get(authentication.user.ID).$promise.then(function(result) {
+            if (result.Code === 1000) {
+                _.each(result.User.Addresses, function(address) {
+                    _.each(address.Keys, function(key) {
+                        // Decrypt private key with the old mailbox password
+                        promises.push(pmcw.decryptPrivateKey(key.PrivateKey, oldMailPwd).then(function(package) {
+                            // Encrypt the key with the new mailbox password
+                            return pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
+                                return {ID: key.ID, PrivateKey: privateKey};
+                            }, function(error) {
+                                $log.error(error);
+                            });
+                        }, function(error) {
+                            $log.error(error);
+                        }));
+                    });
+                });
+
+                // When all promises are done, we can send the new keys to the back-end
+                $q.all(promises).then(function(keys) {
+                    Key.private({Keys: keys}).then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            $scope.oldMailboxPassword = '';
+                            $scope.newMailboxPassword = '';
+                            $scope.confirmMailboxPassword = '';
+                            authentication.savePassword(newMailPwd);
+                            notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
+                        } else if(result.data && result.data.Error) {
+                            notify({message: result.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
+                        }
+                    });
+                }, function(error) {
+                    $log.error(error);
+                });
+            } else if (result.Error) {
+                notify({message: result.Error, classes: 'notification-danger'});
+            } else {
+                notify({message: 'Error during the user get request', classes: 'notification-danger'});
+            }
+        }, function(errors) {
+            _.each(errors, function(error) {
+                notify({message: error, classes: 'notification-danger'});
+            });
         });
     };
 

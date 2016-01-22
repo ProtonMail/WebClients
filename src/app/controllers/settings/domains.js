@@ -159,6 +159,7 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Delete address
+     * @param {Object} address
      * @param {Object} domain
      */
     $scope.deleteAddress = function(address, domain) {
@@ -257,7 +258,7 @@ angular.module("proton.controllers.Settings")
                                     break;
                                 case 1:
                                     notify({
-                                        message: $translate.instant('HAS_CODE_BUT_WRONG'), 
+                                        message: $translate.instant('HAS_CODE_BUT_WRONG'),
                                         classes: 'notification-danger',
                                         duration: 30000
                                     });

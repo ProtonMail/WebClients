@@ -114,15 +114,7 @@
 
             <section class="setting pm_form pull-right">
                 <legend>{{ 'MAILBOX_PASSWORD' | translate }}</legend>
-                <form method="post" ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate  >
-                    <div class="clearfix">
-                        <div class="col left">
-                            <label for="currentLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
-                        </div>
-                        <div class="col right">
-                            <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder="{{ 'CURRENT_LOGIN_PASSWORD' | translate }}" required="" />
-                        </div>
-                    </div>
+                <form method="post" ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
                             <label for="oldMailboxPassword">{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}</label>
