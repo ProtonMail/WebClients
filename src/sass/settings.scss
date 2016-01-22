@@ -44,12 +44,24 @@
 }
 #settingsDomains {
     .pm_table {
+        &.domains {
+            .pm_button {
+                i.fa {
+                    font-size: 16px;
+                    text-align: left;
+                    width: auto !important
+                }
+            }
+        }
+        .verifyButton {
+            width: 8rem;
+        }
         tr {
             td.domain {
                 width: auto;
             }
             th.status {
-                width: 30rem;
+                width: 34rem;
             }
             th {
                 padding-right: 0;
@@ -59,7 +71,7 @@
                 &.text-right {
                     text-align: right !important;
                     padding-right: 1rem;
-                    width: 6.5rem;
+                    width: 12rem;
                 }
             }
             td {
@@ -106,7 +118,7 @@
                 }
                 &.text-right {
                     padding-right: 1rem;
-                    .pm_button {
+                    .pm_button.round {
                         width: 36px;
                         margin-left: .5rem;
                     }

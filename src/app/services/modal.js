@@ -733,13 +733,16 @@ angular.module("proton.modals", [])
             // Variables
             this.domain = params.domain;
             this.step = params.step;
+            this.members = params.members;
+            this.member = params.members[0];
+
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.address);
+                    params.submit(this.address, this.member);
                 }
             };
 
@@ -861,6 +864,12 @@ angular.module("proton.modals", [])
             this.submit = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.submit();
+                }
+            };
+            this.next = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                    params.next();
                 }
             };
             this.close = function() {

@@ -7,12 +7,23 @@
                 <h4 class="modal-title">3. {{ 'ADDRESS' | translate }}</h4>
             </div>
             <div class="modal-body pm_form">
-                <p>Add an address to <strong>{{ ctrl.domain.DomainName }}</strong>.</p>
+                <p class="alert alert-info">Add an address to <strong>{{ ctrl.domain.DomainName }}</strong>.</p>
+                <div class="pm_grid" ng-show="ctrl.member.length > 1">
+                    <div class="col-12">
+                        <label>Choose the member who will own this address:</label>
+                        <span class="pm_select">
+                            <select ng-model="ctrl.member" ng-options="member.NickName for member in ctrl.members"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </div>
+                </div>
                 <div class="pm_grid">
                     <div class="col-1-2">
+                        <label>Choose an address:</label>
                         <input type="text" ng-model="ctrl.address" placeholder="Address" />
                     </div>
                     <div class="col-1-2">
+                        <label>&nbsp;</label>
                         <input type="text" value="@{{ ctrl.domain.DomainName }}" readonly class="noBorder" />
                     </div>
                 </div>

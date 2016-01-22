@@ -28,6 +28,7 @@ angular.module("proton.controllers.Settings")
     $scope.organization = organization.data.Organization;
     $scope.domains = domains.data.Domains;
     $scope.members = members.data.Members;
+    $scope.addressMemberID = $scope.members[0];
 
     // Listeners
     $scope.$on('domain', function(event, domain) {
@@ -255,7 +256,11 @@ angular.module("proton.controllers.Settings")
                                     notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                                     break;
                                 case 1:
-                                    notify({message: $translate.instant('HAS_CODE_BUT_WRONG'), classes: 'notification-danger'});
+                                    notify({
+                                        message: $translate.instant('HAS_CODE_BUT_WRONG'), 
+                                        classes: 'notification-danger',
+                                        duration: 30000
+                                    });
                                     break;
                                 case 2:
                                     notify({message: $translate.instant('DOMAIN_VERIFIED'), classes: 'notification-success'});
@@ -276,6 +281,9 @@ angular.module("proton.controllers.Settings")
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
                 },
+                next: function() {
+                    $scope.addAddress(domain);
+                },
                 close: function() {
                     verificationModal.deactivate();
                 }
@@ -293,12 +301,13 @@ angular.module("proton.controllers.Settings")
             params: {
                 step: 3,
                 domain: domain,
-                submit: function(address) {
+                members: $scope.members,
+                submit: function(address, member) {
                     networkActivityTracker.track(
                         Address.create({
                             Local: address, // local part
-                            Domain: domain.DomainName, // either you custom domain or a protonmail domain
-                            UserID: '' // UserID of the User who should own this address
+                            Domain: domain.DomainName,
+                            MemberID: member.MemberID // either you custom domain or a protonmail domain
                         })
                     ).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
