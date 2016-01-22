@@ -1,6 +1,6 @@
-angular.module("proton.models.keys", [])
+angular.module('proton.models.keys', [])
 
-.factory("Key", function($http, $q, url) {
+.factory('Key', function($http, $q, url) {
     return {
         /**
          * Create a new key

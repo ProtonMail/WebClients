@@ -1,4 +1,4 @@
-angular.module("proton.controllers.Settings")
+angular.module('proton.controllers.Settings')
 
 .controller('AccountController', function(
     $log,
@@ -9,6 +9,7 @@ angular.module("proton.controllers.Settings")
     authentication,
     confirmModal,
     deleteAccountModal,
+    Key,
     networkActivityTracker,
     notify,
     pmcw,
@@ -126,41 +127,66 @@ angular.module("proton.controllers.Settings")
     $scope.saveMailboxPassword = function(form) {
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
-        var newEncPrivateKey = pmcw.getNewEncPrivateKey(authentication.user.EncPrivateKey, oldMailPwd, newMailPwd);
         var currentLoginPassword = $scope.currentLoginPassword;
+        var copyAddresses = angular.copy(authentication.user.Addresses);
+        var promises;
 
-        if (newEncPrivateKey === -1) {
-            notify({message: $translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'), classes: 'notification-danger'});
-        } else if ( Error.prototype.isPrototypeOf(newEncPrivateKey) ) {
-            // Error messages from OpenPGP.js
-            notify({message: newEncPrivateKey.message, classes: 'notification-danger'});
-        } else {
-            networkActivityTracker.track(
-                User.keys({
-                    "Password": currentLoginPassword,
-                    "PublicKey": authentication.user.PublicKey,
-                    "PrivateKey": newEncPrivateKey
-                }).$promise.then(function(result) {
-                    if(result.Code === 1000) {
-                        notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
-                        $scope.oldMailboxPassword = '';
-                        $scope.newMailboxPassword = '';
-                        $scope.confirmMailboxPassword = '';
-                        $scope.currentLoginPassword = '';
-                        authentication.user.EncPrivateKey = newEncPrivateKey;
-                        authentication.savePassword(newMailPwd);
-                        form.$setUntouched();
-                    } else if(result.Error) {
-                        notify({message: result.Error, classes: 'notification-danger'});
-                    } else {
-                        notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
-                    }
-                }, function(error) {
-                    notify({message: 'Error during the mailbox password request', classes: 'notification-danger'});
-                    $log.error(error);
-                })
-            );
-        }
+        _.each(authentication.user.Addresses, function(address) {
+            var keys = authentication.getPrivateKeys(address.ID); // decrypted
+
+            _.each(keys, function(key) {
+                var encryptedPrivateKey = pmcw.encryptedPrivateKey(key); // TODO I need a function (maybe a Promise) to get the encryptedPrivateKey
+                var newEncryptedPrivateKey = pmcw.getNewEncPrivateKey(encryptedPrivateKey, oldMailPwd, newMailPwd);
+
+                pmcw.decryptPrivateKey(newEncryptedPrivateKey, newMailPwd).then(function(package) {
+                    api.storeKey(address.ID, package);
+                });
+            });
+        });
+
+        $q.all(promises).then(function() {
+
+        });
+
+        // if (newEncPrivateKey === -1) {
+        //     notify({message: $translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'), classes: 'notification-danger'});
+        // } else if ( Error.prototype.isPrototypeOf(newEncPrivateKey) ) {
+        //     // Error messages from OpenPGP.js
+        //     notify({message: newEncPrivateKey.message, classes: 'notification-danger'});
+        // } else {
+
+
+            // promise = Keys.private({
+            //     Password: currentLoginPassword,
+            //     Keys: []
+            // });
+
+            // User.keys({
+            //     "Password": currentLoginPassword,
+            //     "PublicKey": authentication.user.PublicKey,
+            //     "PrivateKey": newEncPrivateKey
+            // }).$promise.then(function(result) {
+            //     if(result.Code === 1000) {
+            //         notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
+            //         $scope.oldMailboxPassword = '';
+            //         $scope.newMailboxPassword = '';
+            //         $scope.confirmMailboxPassword = '';
+            //         $scope.currentLoginPassword = '';
+            //         authentication.user.EncPrivateKey = newEncPrivateKey;
+            //         authentication.savePassword(newMailPwd);
+            //         form.$setUntouched();
+            //     } else if(result.Error) {
+            //         notify({message: result.Error, classes: 'notification-danger'});
+            //     } else {
+            //         notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
+            //     }
+            // }, function(error) {
+            //     notify({message: 'Error during the mailbox password request', classes: 'notification-danger'});
+            //     $log.error(error);
+            // });
+
+            //networkActivityTracker.track(promise);
+        //}
     };
 
     $scope.saveDisplayName = function(form) {
