@@ -340,6 +340,35 @@ var pmcrypto = (function() {
         });
     }
 
+    function encryptPrivateKey(prKey, prKeyPassCode) {
+
+        return new Promise(function(resolve, reject) {
+
+            if ( Object.prototype.toString.call(prKeyPassCode) != '[object String]' 
+                || prKeyPassCode === '' ) {
+                return reject(new Error('Missing private key passcode'));
+            }
+
+            if( !openpgp.key.Key.prototype.isPrototypeOf(prKey) ) {
+                return reject(new Error('Not a Key object'));
+            }
+
+            if( !prKey.isPrivate() ) {
+                return reject(new Error('Not a private key'));
+            }
+
+            if( prKey.primaryKey === null 
+                || prKey.subKeys === null 
+                || prKey.subKeys.length === 0 ) {
+                return reject(new Error('Missing primary key or subkey'));
+            }
+
+            prKey.primaryKey.encrypt(prKeyPassCode);
+            prKey.subKeys[0].subKey.encrypt(prKeyPassCode);
+            resolve(prKey.armor());
+        });
+    }
+
     function decryptPrivateKey(prKey, prKeyPassCode) {
 
         return new Promise(function(resolve, reject) {
@@ -363,27 +392,6 @@ var pmcrypto = (function() {
         var hashed = arrayToBinaryString(window.openpgp.crypto.hash.sha512(binaryStringToArray(password)));
         hashed = btoa(hashed);
         return hashed;
-    }
-
-    function getNewEncPrivateKey(prKey, oldMailPwd, newMailPwd) {
-
-        if (prKey === undefined) {
-            return new Error('Missing private key.');
-        } else if (oldMailPwd === undefined) {
-            return new Error('Missing old Mailbox Password.');
-        } else if (newMailPwd === undefined) {
-            return new Error('Missing new Mailbox Password.');
-        }
-        var _prKey = openpgp.key.readArmored(prKey).keys[0];
-        if (_prKey === undefined) {
-            return new Error('Cannot read private key.');
-        }
-        var ok = _prKey.decrypt(oldMailPwd);
-        if (ok) {
-            _prKey.primaryKey.encrypt(newMailPwd);
-            _prKey.subKeys[0].subKey.encrypt(newMailPwd);
-            return _prKey.armor();
-        } else return -1;
     }
 
     function binaryStringToArray(str) {
@@ -417,7 +425,8 @@ var pmcrypto = (function() {
         // Encrypted attachments syntactic sugar
         encryptFile: encryptFile,
 
-        // Decrypt private key
+        // Private key
+        encryptPrivateKey: encryptPrivateKey,
         decryptPrivateKey: decryptPrivateKey,
 
         // Session key manipulation
@@ -438,10 +447,7 @@ var pmcrypto = (function() {
         //Typed array/binary string conversions
         arrayToBinaryString: arrayToBinaryString,
         binaryStringToArray: binaryStringToArray,
-        concatArrays: openpgp.util.concatUint8Array,
-
-        // Settings page
-        getNewEncPrivateKey: getNewEncPrivateKey
+        concatArrays: openpgp.util.concatUint8Array
     };
 
     return obj;

@@ -135,12 +135,9 @@ angular.module('proton.controllers.Settings')
             var keys = authentication.getPrivateKeys(address.ID); // decrypted
 
             _.each(keys, function(key) {
-                var encryptedPrivateKey = pmcw.encryptedPrivateKey(key); // TODO I need a function (maybe a Promise) to get the encryptedPrivateKey
-                var newEncryptedPrivateKey = pmcw.getNewEncPrivateKey(encryptedPrivateKey, oldMailPwd, newMailPwd);
+                var encryptedPrivateKey = pmcw.encryptPrivateKey(key, newMailPwd);
 
-                pmcw.decryptPrivateKey(newEncryptedPrivateKey, newMailPwd).then(function(package) {
-                    api.storeKey(address.ID, package);
-                });
+                // You'll need the KeyID for each key too, probably need to change how you store the keys to add the additional info
             });
         });
 
