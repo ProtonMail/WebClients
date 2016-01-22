@@ -68,6 +68,29 @@ angular.module("proton.controllers.Settings")
         });
     };
 
+    $scope.primary = function(address, key) {
+        var order = [];
+        var from = address.Keys.indexOf(key);
+        var to = 0;
+
+        _.each(address.Keys, function(element, i) { order.push(i + 1); });
+
+        order.splice(to, 0, order.splice(from, 1)[0]);
+
+        networkActivityTracker.track(Key.order({
+            AddressID: address.ID,
+            Order: order
+        }).then(function(result) {
+            if (result.data && result.data.Code === 1000) {
+                address.Keys.splice(to, 0, address.Keys.splice(from, 1)[0]);
+            } else {
+                notify({message: result.data.Error, classes: 'notification-danger'});
+            }
+        }, function(error) {
+            notify({message: error, classes: 'notification-danger'});
+        }));
+    };
+
     /**
      * Move up
      */

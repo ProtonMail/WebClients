@@ -15,6 +15,7 @@
             <table class="pm_table thick bordered">
                 <thead>
                     <tr>
+                        <th style="width: 10px;">&nbsp;</th>
                         <th>{{ 'FINGERPRINT' | translate }}</th>
                         <th>{{ 'DATE' | translate }}</th>
                         <th class="text-right">{{ 'ACTIONS' | translate }}</th>
@@ -22,13 +23,17 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="key in address.Keys">
-                        <td><code>{{ key.fingerprint }}</code></td>
+                        <td class="text-center">
+                            <i class="fa fa-star-o" ng-show="$first"></i>
+                        </td>
+                        <td>
+                            <code>{{ key.fingerprint }}</code>
+                        </td>
                         <td>{{ key.created | utcReadableTime }}</td>
                         <td class="text-right">
+                            <button class="pm_button" ng-click="primary(address, key)" ng-hide="$first"><i class="fa fa-star-o"></i> {{ 'MAKE_PRIMARY' | translate }}</button>
                             <button class="pm_button" ng-click="download(key.PublicKey, 'public')" ng-disabled="isSafari"><i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}</button>
                             <button class="pm_button" ng-click="download(key.PrivateKey, 'private')" ng-disabled="isSafari"><i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}</button>
-                            <button class="pm_button" ng-click="up(address, key)" ng-disabled="$first">{{ 'UP' | translate }}</button>
-                            <button class="pm_button" ng-click="down(address, key)" ng-disabled="$last">{{ 'DOWN' | translate }}</button>
                             <button class="pm_button" ng-click="delete(address, key)" ng-disabled="address.Keys.length === 1"><i class="fa fa-trash-o"></i> {{ 'DELETE' | translate }}</button>
                         </td>
                     </tr>
