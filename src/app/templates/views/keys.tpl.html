@@ -32,8 +32,8 @@
                         <td>{{ key.created | utcReadableTime }}</td>
                         <td class="text-right">
                             <button class="pm_button" ng-click="primary(address, key)" ng-hide="$first"><i class="fa fa-star-o"></i> {{ 'MAKE_PRIMARY' | translate }}</button>
-                            <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-disabled="isSafari"><i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}</button>
-                            <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-disabled="isSafari"><i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}</button>
+                            <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari"><i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}</button>
+                            <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari"><i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}</button>
                             <button class="pm_button" ng-click="delete(address, key)" ng-disabled="address.Keys.length === 1"><i class="fa fa-trash-o"></i> {{ 'DELETE' | translate }}</button>
                         </td>
                     </tr>
