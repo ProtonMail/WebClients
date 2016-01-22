@@ -20,8 +20,6 @@ angular.module("proton.authentication", [
     url
 ) {
     var keys = {}; // Store decrypted keys
-
-    // PRIVATE FUNCTIONS
     var auth = {
         headersSet: false,
         // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
@@ -82,8 +80,7 @@ angular.module("proton.authentication", [
                                         _.each(user.Addresses, function(address) { // For each addresses
                                             _.each(address.Keys, function(key, index) { // For each keys
                                                 promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
-                                                    keys[address.ID] = keys[address.ID] || []; // Initialize array for the address
-                                                    keys[address.ID].push(package); // Add key package
+                                                    api.storeKey(address.ID, package);
                                                 }, function(error) {
                                                     // If the primary (first) key for address does not decrypt, display error.
                                                     if(index === 0) {
@@ -235,6 +232,14 @@ angular.module("proton.authentication", [
          */
         getPrivateKeys: function(addressID) {
             return keys[addressID];
+        },
+
+        /**
+         * Store package
+         */
+        storeKey: function(addressID, package) {
+            keys[addressID] = keys[addressID] || []; // Initialize array for the address
+            keys[addressID].push(package); // Add key package
         },
 
         getRefreshCookie: function() {
