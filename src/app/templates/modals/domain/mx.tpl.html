@@ -10,7 +10,13 @@
 
                 <p>Before you can receive emails for your domains at ProtonMail, you need to add the following <kbd>MX</kbd> record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-mx-record">{{ 'LEARN_HOW' | translate }}</a></p>
 
+                <p>Add this MX record:</p>
                 <textarea readonly>mail.protonmail.ch</textarea>
+
+                <div ng-show="ctrl.domain.MxState">
+                    <p>Your current MX record:</p>
+                    <textarea readonly>{{ ctrl.domain.MxRecord }}</textarea>
+                </div>
 
                 <p><strong>{{ 'IMPORTANT' | translate }}</strong>: <em>The domain must be in the READY state and you should create all addresses in Step 2 before modifying your MX record.</em></p>
 

@@ -42,11 +42,11 @@ ng-class="{
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
             <span class="fa locks" ng-class="{
-            'fa-lock': !!!(message.IsEncrypted == '0'),
-            'text-purple': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6'),
-            'fa-unlock-alt': !!(message.IsEncrypted == '0'),
-            'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
-            }" title="Stored Encrypted">
+                'fa-lock': !!!(message.IsEncrypted == '0'),
+                'text-purple': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6'),
+                'fa-unlock-alt': !!(message.IsEncrypted == '0'),
+                'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
+            }" title="{{ message.encryptionType() }}">
             </span>
             <span class="time" ng-hide="toggleDetails === true" time="{{ message.Time }}" filter="longReadableTime" interval="60000"></span>
             <span class="time" ng-show="toggleDetails === true">{{ message.Time * 1000 | date: 'medium' }}</span>
