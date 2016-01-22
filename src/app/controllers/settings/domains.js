@@ -324,6 +324,11 @@ angular.module("proton.controllers.Settings")
                         notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
                     });
                 },
+                next: function() {
+                    // show the newly added address
+                    alert('todo!');
+                    addressModal.deactivate();
+                },
                 cancel: function() {
                     addressModal.deactivate();
                 }

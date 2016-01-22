@@ -725,7 +725,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('addressModal', function(pmModal, $rootScope) {
+.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/address.tpl.html',
@@ -735,15 +735,40 @@ angular.module("proton.modals", [])
             this.step = params.step;
             this.members = params.members;
             this.member = params.members[0];
+            this.address = '';
 
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
             // Functions
-            this.submit = function() {
-                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.address, this.member);
-                }
+            this.add = function() {
+
+                networkActivityTracker.track(
+                    Address.create({
+                        Local: this.address, // local part
+                        Domain: this.domain.DomainName,
+                        MemberID: this.member.MemberID // either you custom domain or a protonmail domain
+                    })
+                ).then(function(result) {
+                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                        notify({message: $translate.instant('DOMAIN_ADDED'), classes: 'notification-success'});
+
+                        this.domain.Addresses.push(result.data.Address);
+
+                    } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
+                        notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
+                    } else if(angular.isDefined(result.data) && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    } else {
+                        notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                    }
+                }.bind(this), function(error) {
+                    notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                });
+
+            };
+            this.next = function() {
+                params.next();
             };
 
             this.cancel = function() {
