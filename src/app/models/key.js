@@ -33,8 +33,8 @@ angular.module('proton.models.keys', [])
          * @param {Object} params
          * @return {Promise}
          */
-        private: function(keyID, params) {
-            return $http.put(url.get() + '/keys/' + keyID + '/private', params);
+        private: function(params) {
+            return $http.put(url.get() + '/keys/private', params);
         },
         /**
          * Delete key

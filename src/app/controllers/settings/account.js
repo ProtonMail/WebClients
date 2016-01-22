@@ -6,6 +6,7 @@ angular.module('proton.controllers.Settings')
     $scope,
     $timeout,
     $translate,
+    $q,
     authentication,
     confirmModal,
     deleteAccountModal,
@@ -129,61 +130,35 @@ angular.module('proton.controllers.Settings')
         var newMailPwd = $scope.newMailboxPassword;
         var currentLoginPassword = $scope.currentLoginPassword;
         var copyAddresses = angular.copy(authentication.user.Addresses);
-        var promises;
+        var promises = [];
 
         _.each(authentication.user.Addresses, function(address) {
-            var keys = authentication.getPrivateKeys(address.ID); // decrypted
+            var keys = authentication.getPrivateKeys(address.ID); // Get package decrypted during the first launch
 
-            _.each(keys, function(key) {
-                var encryptedPrivateKey = pmcw.encryptPrivateKey(key, newMailPwd);
-
-                // You'll need the KeyID for each key too, probably need to change how you store the keys to add the additional info
+            _.each(keys, function(key) { // Loop around keys
+                promises.push(pmcw.encryptPrivateKey(key, newMailPwd).then(function(privateKey) {
+                    return {ID: key.ID, PrivateKey: privateKey};
+                }));
             });
         });
 
-        $q.all(promises).then(function() {
-
+        $q.all(promises).then(function(keys) {
+            networkActivityTracker.track(Key.private({Keys: keys}).then(function(result) {
+                console.log(result);
+                if (result.data && result.data.Code === 1000) {
+                    $scope.oldMailboxPassword = '';
+                    $scope.newMailboxPassword = '';
+                    $scope.confirmMailboxPassword = '';
+                    $scope.currentLoginPassword = '';
+                    authentication.savePassword(newMailPwd);
+                    notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
+                } else if(result.data && result.data.Error) {
+                    notify({message: result.Error, classes: 'notification-danger'});
+                } else {
+                    notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
+                }
+            }));
         });
-
-        // if (newEncPrivateKey === -1) {
-        //     notify({message: $translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'), classes: 'notification-danger'});
-        // } else if ( Error.prototype.isPrototypeOf(newEncPrivateKey) ) {
-        //     // Error messages from OpenPGP.js
-        //     notify({message: newEncPrivateKey.message, classes: 'notification-danger'});
-        // } else {
-
-
-            // promise = Keys.private({
-            //     Password: currentLoginPassword,
-            //     Keys: []
-            // });
-
-            // User.keys({
-            //     "Password": currentLoginPassword,
-            //     "PublicKey": authentication.user.PublicKey,
-            //     "PrivateKey": newEncPrivateKey
-            // }).$promise.then(function(result) {
-            //     if(result.Code === 1000) {
-            //         notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
-            //         $scope.oldMailboxPassword = '';
-            //         $scope.newMailboxPassword = '';
-            //         $scope.confirmMailboxPassword = '';
-            //         $scope.currentLoginPassword = '';
-            //         authentication.user.EncPrivateKey = newEncPrivateKey;
-            //         authentication.savePassword(newMailPwd);
-            //         form.$setUntouched();
-            //     } else if(result.Error) {
-            //         notify({message: result.Error, classes: 'notification-danger'});
-            //     } else {
-            //         notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
-            //     }
-            // }, function(error) {
-            //     notify({message: 'Error during the mailbox password request', classes: 'notification-danger'});
-            //     $log.error(error);
-            // });
-
-            //networkActivityTracker.track(promise);
-        //}
     };
 
     $scope.saveDisplayName = function(form) {

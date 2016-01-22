@@ -80,7 +80,7 @@ angular.module("proton.authentication", [
                                         _.each(user.Addresses, function(address) { // For each addresses
                                             _.each(address.Keys, function(key, index) { // For each keys
                                                 promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
-                                                    api.storeKey(address.ID, package);
+                                                    api.storeKey(address.ID, key.ID, package);
                                                 }, function(error) {
                                                     // If the primary (first) key for address does not decrypt, display error.
                                                     if(index === 0) {
@@ -237,7 +237,8 @@ angular.module("proton.authentication", [
         /**
          * Store package
          */
-        storeKey: function(addressID, package) {
+        storeKey: function(addressID, keyID, package) {
+            package.ID = keyID; // Add the keyID inside the package
             keys[addressID] = keys[addressID] || []; // Initialize array for the address
             keys[addressID].push(package); // Add key package
         },

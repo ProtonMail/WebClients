@@ -140,7 +140,7 @@ angular.module("proton.controllers.Settings")
                                 // Decrypt private key with the mailbox password
                                 pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) {  // Decrypt private key with the mailbox password
                                     // Store the package decrypted
-                                    authentication.storeKey(address.ID, package);
+                                    authentication.storeKey(address.ID, key.ID, package);
                                     // Close the confirm modal
                                     confirmModal.deactivate();
                                 }, function(error) {
