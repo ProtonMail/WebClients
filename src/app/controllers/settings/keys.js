@@ -8,7 +8,7 @@ angular.module("proton.controllers.Settings")
     confirmModal,
     generateModal,
     Key,
-    networkActivityTracker, 
+    networkActivityTracker,
     notify,
     pmcw
 ) {
@@ -30,11 +30,12 @@ angular.module("proton.controllers.Settings")
     /**
      * Download key
      * @param {String} key
+     * @param {String} email
      * @param {String} type - 'public' or 'private'
      */
-    $scope.download = function(key, type) {
+    $scope.download = function(key, email, type) {
         var blob = new Blob([key], { type: 'data:text/plain;charset=utf-8;' });
-        var filename = type + 'key.txt';
+        var filename = type + 'key.' + email + '.txt';
 
         try {
             saveAs(blob, filename);
