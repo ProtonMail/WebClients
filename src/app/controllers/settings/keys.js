@@ -8,7 +8,7 @@ angular.module("proton.controllers.Settings")
     // Add information for each key
     _.each($scope.addresses, function(address) {
         _.each(address.Keys, function(key) {
-            pmcw.keyInfo(key.PublicKey).then(function(info) {
+            pmcw.keyInfo(key.PrivateKey).then(function(info) {
                 key.created = info.created;
                 key.bitSize = info.bitSize; // We don't use this data currently
                 key.fingerprint = info.fingerprint;
