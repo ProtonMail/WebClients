@@ -92,58 +92,6 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Move up
-     */
-    $scope.up = function(address, key) {
-        var order = [];
-        var from = address.Keys.indexOf(key);
-        var to = from - 1;
-
-        _.each(address.Keys, function(element, i) { order.push(i + 1); });
-
-        order.splice(to, 0, order.splice(from, 1)[0]);
-
-        Key.order({
-            AddressID: address.ID,
-            Order: order
-        }).then(function(result) {
-            if (result.data && result.data.Code === 1000) {
-                address.Keys.splice(to, 0, address.Keys.splice(from, 1)[0]);
-            } else {
-                notify({message: result.data.Error, classes: 'notification-danger'});
-            }
-        }, function(error) {
-            notify({message: error, classes: 'notification-danger'});
-        });
-    };
-
-    /**
-     * Move down
-     */
-    $scope.down = function(address, key) {
-        var order = [];
-        var from = address.Keys.indexOf(key);
-        var to = from + 1;
-
-        _.each(address.Keys, function(element, i) { order.push(i + 1); });
-
-        order.splice(to, 0, order.splice(from, 1)[0]);
-
-        Key.order({
-            AddressID: address.ID,
-            Order: order
-        }).then(function(result) {
-            if (result.data && result.data.Code === 1000) {
-                address.Keys.splice(to, 0, address.Keys.splice(from, 1)[0]);
-            } else {
-                notify({message: result.data.Error, classes: 'notification-danger'});
-            }
-        }, function(error) {
-            notify({message: error, classes: 'notification-danger'});
-        });
-    };
-
-    /**
      * Generate an other key pair
      * @param {Object} address
      */
