@@ -112,7 +112,7 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
+                            <button class="pm_button primary" ng-disabled="loginForm.$valid === false" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
                 </form>
@@ -155,7 +155,7 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
+                            <button class="pm_button primary" ng-disabled="mailboxForm.$valid === false" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
                     <div class="clearfix">
