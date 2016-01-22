@@ -133,6 +133,11 @@ angular.module('proton.controllers.Settings')
         var copyAddresses = angular.copy(authentication.user.Addresses);
         var promises = [];
 
+        if (newMailPwd !== confMailPwd) {
+            notify({message: 'Confirm mailbox password is wrong', classes: 'notification-danger'});
+            return false;
+        }
+
         // If the current user is an admin, we need to change the organization private key
         if (authentication.user.Role === 2) {
             // Get organization key
