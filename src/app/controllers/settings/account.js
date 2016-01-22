@@ -102,11 +102,20 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveLoginPassword = function(form) {
+        var oldLoginPwd = $scope.oldLoginPassword;
+        var newLoginPwd = $scope.newLoginPassword;
+        var confLoginPwd = $scope.confirmLoginPassword;
+
+        if (newLoginPwd !== confLoginPwd) {
+            notify({message: 'Confirm login password is wrong', classes: 'notification-danger'});
+            return false;
+        }
+
         networkActivityTracker.track(
             Setting.password({
-                OldPassword: $scope.oldLoginPassword,
-                OldHashedPassword: pmcw.getHashedPassword($scope.oldLoginPassword),
-                NewPassword: $scope.newLoginPassword
+                OldPassword: oldLoginPwd,
+                OldHashedPassword: pmcw.getHashedPassword(oldLoginPwd),
+                NewPassword: newLoginPwd
             }).$promise.then(function(result) {
                 if(result.Code === 1000) {
                     notify({message: $translate.instant('LOGIN_PASSWORD_UPDATED'), classes: 'notification-success'});

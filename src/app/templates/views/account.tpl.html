@@ -32,7 +32,7 @@
                             <label for="noticeePassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="password" autocomplete="off" placeholder="Current Login Password" required ng-model="noticeePassword" id="noticeePassword">
+                            <input type="password" autocomplete="off" placeholder="Current Login Password" required ng-model="noticeePassword" id="noticeePassword" />
                         </div>
                     </div>
                     <div class="clearfix">
@@ -83,7 +83,10 @@
                             <label for="oldLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder="Current Login Password" required="" />
+                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder="Current Login Password" required />
+                            <div ng-messages="loginForm.oldLoginPassword.$error" class="text-red" ng-if="loginForm.oldLoginPassword.$touched">
+                                <p ng-message="required">Current login password is empty</p>
+                            </div>
                         </div>
                     </div>
                     <div class="clearfix">
@@ -91,15 +94,18 @@
                             <label for="newLoginPassword">{{ 'NEW_LOGIN_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder="New Login Password" required="" />
+                            <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder="New Login Password" required />
+                            <div ng-messages="loginForm.newLoginPassword.$error" class="text-red" ng-if="loginForm.newLoginPassword.$touched">
+                                <p ng-message="required">New login password is empty</p>
+                            </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required="" class="margin" />
-                            <div ng-show="loginForm.$submitted || loginForm.confirmLoginPassword.$touched">
-                                <span class="text-red" ng-show="newLoginPassword !== confirmLoginPassword">Passwords do not match.</span>
+                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required class="margin" />
+                            <div ng-messages="loginForm.confirmLoginPassword.$error" class="text-red" ng-if="loginForm.confirmLoginPassword.$touched">
+                                <p ng-message="required">Confirm login password is empty</p>
                             </div>
                         </div>
                     </div>
