@@ -133,6 +133,11 @@ angular.module('proton.controllers.Settings')
         var copyAddresses = angular.copy(authentication.user.Addresses);
         var promises = [];
 
+        if (oldMailPwd !== authentication.getPassword()) {
+            notify({message: 'Current mailbox password is wrong', classes: 'notification-danger'});
+            return false;
+        }
+
         if (newMailPwd !== confMailPwd) {
             notify({message: 'Confirm mailbox password is wrong', classes: 'notification-danger'});
             return false;
