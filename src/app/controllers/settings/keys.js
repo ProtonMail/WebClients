@@ -1,9 +1,20 @@
 angular.module("proton.controllers.Settings")
 
 .controller('KeysController', function($log, $scope, $translate, authentication, pmcw, generateModal, confirmModal, Key, notify) {
+    // Detect if the current browser is Safari to disable / hide download action
     $scope.isSafari = jQuery.browser.name === 'safari';
     $scope.addresses = authentication.user.Addresses;
-    console.log($scope.addresses);
+
+    // Add information for each key
+    _.each($scope.addresses, function(address) {
+        _.each(address.Keys, function(key) {
+            pmcw.keyInfo(key.PrivateKey).then(function(info) {
+                key.created = info.created;
+                key.bitSize = info.bitSize; // We don't use this data currently
+                key.fingerprint = info.fingerprint;
+            });
+        });
+    });
 
     /**
      * Download key
@@ -57,19 +68,16 @@ angular.module("proton.controllers.Settings")
         });
     };
 
-    /**
-     * Move up
-     */
-    $scope.up = function(address, key) {
+    $scope.primary = function(address, key) {
         var order = [];
         var from = address.Keys.indexOf(key);
-        var to = from - 1;
+        var to = 0;
 
         _.each(address.Keys, function(element, i) { order.push(i + 1); });
 
         order.splice(to, 0, order.splice(from, 1)[0]);
 
-        Key.order({
+        networkActivityTracker.track(Key.order({
             AddressID: address.ID,
             Order: order
         }).then(function(result) {
@@ -80,33 +88,7 @@ angular.module("proton.controllers.Settings")
             }
         }, function(error) {
             notify({message: error, classes: 'notification-danger'});
-        });
-    };
-
-    /**
-     * Move down
-     */
-    $scope.down = function(address, key) {
-        var order = [];
-        var from = address.Keys.indexOf(key);
-        var to = from + 1;
-
-        _.each(address.Keys, function(element, i) { order.push(i + 1); });
-
-        order.splice(to, 0, order.splice(from, 1)[0]);
-
-        Key.order({
-            AddressID: address.ID,
-            Order: order
-        }).then(function(result) {
-            if (result.data && result.data.Code === 1000) {
-                address.Keys.splice(to, 0, address.Keys.splice(from, 1)[0]);
-            } else {
-                notify({message: result.data.Error, classes: 'notification-danger'});
-            }
-        }, function(error) {
-            notify({message: error, classes: 'notification-danger'});
-        });
+        }));
     };
 
     /**
@@ -140,7 +122,7 @@ angular.module("proton.controllers.Settings")
                                 // Decrypt private key with the mailbox password
                                 pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) {  // Decrypt private key with the mailbox password
                                     // Store the package decrypted
-                                    authentication.storeKey(address.ID, package);
+                                    authentication.storeKey(address.ID, key.ID, package);
                                     // Close the confirm modal
                                     confirmModal.deactivate();
                                 }, function(error) {

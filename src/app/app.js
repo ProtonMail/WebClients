@@ -1,7 +1,9 @@
 angular.module('proton', [
+    'as.sortable',
     'cgNotify',
     'ngCookies',
     'ngIcal',
+    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
@@ -10,7 +12,6 @@ angular.module('proton', [
     'pikaday',
     'SmoothScrollbar',
     'ui.router',
-    'as.sortable',
 
     // Constant
     'proton.constants',

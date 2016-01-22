@@ -10,7 +10,7 @@ if (typeof module !== 'undefined' && module.exports) {
     /* jshint ignore:start */
     Promise = require('es6-promise').Promise;
     /* jshint ignore:end */
-    openpgp = require('./lib/openpgp.min.js');
+    openpgp = require('./openpgp.min.js');
     openpgp.config.integrity_protect = true;
     openpgp.config.useNative = true;
 }
@@ -59,7 +59,7 @@ var pmcrypto = (function() {
 
     // Backwards-compatible decrypt RSA message function
     function decryptMessageRSA(encMessage, prKey, messageTime) {
-        // console.log('decryptMessageRSA');
+
         return new Promise(function(resolve, reject) {
 
             if (encMessage === undefined || encMessage === '') {
@@ -340,6 +340,35 @@ var pmcrypto = (function() {
         });
     }
 
+    function encryptPrivateKey(prKey, prKeyPassCode) {
+
+        return new Promise(function(resolve, reject) {
+
+            if ( Object.prototype.toString.call(prKeyPassCode) != '[object String]' 
+                || prKeyPassCode === '' ) {
+                return reject(new Error('Missing private key passcode'));
+            }
+
+            if( !openpgp.key.Key.prototype.isPrototypeOf(prKey) ) {
+                return reject(new Error('Not a Key object'));
+            }
+
+            if( !prKey.isPrivate() ) {
+                return reject(new Error('Not a private key'));
+            }
+
+            if( prKey.primaryKey === null 
+                || prKey.subKeys === null 
+                || prKey.subKeys.length === 0 ) {
+                return reject(new Error('Missing primary key or subkey'));
+            }
+
+            prKey.primaryKey.encrypt(prKeyPassCode);
+            prKey.subKeys[0].subKey.encrypt(prKeyPassCode);
+            resolve(prKey.armor());
+        });
+    }
+
     function decryptPrivateKey(prKey, prKeyPassCode) {
 
         return new Promise(function(resolve, reject) {
@@ -350,7 +379,7 @@ var pmcrypto = (function() {
                 return reject(new Error('Missing private key passcode'));
             }
 
-            keys = getKeys(prKey);
+            var keys = getKeys(prKey);
             if (keys instanceof Error) return reject(keys);
 
             if (keys[0].decrypt(prKeyPassCode)) {
@@ -365,25 +394,45 @@ var pmcrypto = (function() {
         return hashed;
     }
 
-    function getNewEncPrivateKey(prKey, oldMailPwd, newMailPwd) {
+    function splitFile( encMessage ) {
 
-        if (prKey === undefined) {
-            return new Error('Missing private key.');
-        } else if (oldMailPwd === undefined) {
-            return new Error('Missing old Mailbox Password.');
-        } else if (newMailPwd === undefined) {
-            return new Error('Missing new Mailbox Password.');
-        }
-        var _prKey = openpgp.key.readArmored(prKey).keys[0];
-        if (_prKey === undefined) {
-            return new Error('Cannot read private key.');
-        }
-        var ok = _prKey.decrypt(oldMailPwd);
-        if (ok) {
-            _prKey.primaryKey.encrypt(newMailPwd);
-            _prKey.subKeys[0].subKey.encrypt(newMailPwd);
-            return _prKey.armor();
-        } else return -1;
+        return new Promise(function(resolve, reject) {
+
+            var msg;
+            if (Uint8Array.prototype.isPrototypeOf(encMessage)) {
+                msg = openpgp.message.read(encMessage);
+            } else {
+                msg = openpgp.message.readArmored(encMessage.trim());
+            }
+
+            var keyFilter = function(packet) {
+                return packet.tag != openpgp.enums.packet.symmetricallyEncrypted && packet.tag != openpgp.enums.packet.symEncryptedIntegrityProtected;
+            };
+
+            var obj = {
+                keys: msg.packets.filter(keyFilter).write(),
+                data: msg.packets.filterByTag(openpgp.enums.packet.symmetricallyEncrypted, openpgp.enums.packet.symEncryptedIntegrityProtected).write()
+            };
+            resolve(obj);
+        });
+    }
+
+    function keyInfo( prKey ) {
+
+        return new Promise(function(resolve, reject) {
+
+            var keys = getKeys(prKey);
+            if (keys instanceof Error) return reject(keys);
+
+            var obj = {
+                publicKeyArmored: keys[0].toPublic().armor(),
+                fingerprint: keys[0].primaryKey.getFingerprint(),
+                userIds: keys[0].getUserIds(),
+                bitSize: keys[0].primaryKey.getBitSize(),
+                created: keys[0].primaryKey.created
+            };
+            resolve(obj);
+        }); 
     }
 
     function binaryStringToArray(str) {
@@ -417,7 +466,8 @@ var pmcrypto = (function() {
         // Encrypted attachments syntactic sugar
         encryptFile: encryptFile,
 
-        // Decrypt private key
+        // Private key
+        encryptPrivateKey: encryptPrivateKey,
         decryptPrivateKey: decryptPrivateKey,
 
         // Session key manipulation
@@ -440,8 +490,11 @@ var pmcrypto = (function() {
         binaryStringToArray: binaryStringToArray,
         concatArrays: openpgp.util.concatUint8Array,
 
-        // Settings page
-        getNewEncPrivateKey: getNewEncPrivateKey
+        // Split existing encrypted file into data and non-data parts
+        splitFile: splitFile,
+
+        // Dump key information
+        keyInfo: keyInfo
     };
 
     return obj;
