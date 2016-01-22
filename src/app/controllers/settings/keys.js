@@ -14,6 +14,9 @@ angular.module("proton.controllers.Settings")
 ) {
     // Detect if the current browser is Safari to disable / hide download action
     $scope.isSafari = jQuery.browser.name === 'safari';
+    $scope.isPrivate = authentication.user.Private === 1;
+    $scope.isNonPrivate = authentication.user.Private === 0;
+    // Store addresses in the controller
     $scope.addresses = authentication.user.Addresses;
 
     // Add information for each key
