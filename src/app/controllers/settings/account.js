@@ -148,14 +148,18 @@ angular.module('proton.controllers.Settings')
                                 PrivateKey: privateKey
                             }).then(function(result) {
                                 if (result.data && result.data.Code === 1000) {
-                                    notify({message: 'Organization password changed', classes: 'notification-success'});
+                                    notify({message: 'Organization Password Updated', classes: 'notification-success'});
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
                                     notify({message: 'Error during the organization update key request', classes: 'notification-danger'});
                                 }
                             });
+                        }, function(error) {
+                            notify({message: error, classes: 'notification-danger'});
                         });
+                    }, function(error) {
+                        notify({message: error, classes: 'notification-danger'});
                     });
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
@@ -163,7 +167,6 @@ angular.module('proton.controllers.Settings')
                     notify({message: 'Error during the organization get key request', classes: 'notification-danger'});
                 }
             }, function(error) {
-                $log.error(error);
                 notify({message: 'Error during the organization get key request', classes: 'notification-danger'});
             });
         }
@@ -179,16 +182,17 @@ angular.module('proton.controllers.Settings')
                             return pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
                                 return {ID: key.ID, PrivateKey: privateKey};
                             }, function(error) {
-                                $log.error(error);
+                                return Promise.reject(error);
                             });
                         }, function(error) {
-                            $log.error(error);
+                            return Promise.reject(error);
                         }));
                     });
                 });
 
                 // When all promises are done, we can send the new keys to the back-end
                 $q.all(promises).then(function(keys) {
+
                     Key.private({Keys: keys}).then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             $scope.oldMailboxPassword = '';
@@ -203,7 +207,7 @@ angular.module('proton.controllers.Settings')
                         }
                     });
                 }, function(error) {
-                    $log.error(error);
+                    notify({message: error, classes: 'notification-danger'});
                 });
             } else if (result.Error) {
                 notify({message: result.Error, classes: 'notification-danger'});
