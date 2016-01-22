@@ -1,9 +1,20 @@
 angular.module("proton.controllers.Settings")
 
 .controller('KeysController', function($log, $scope, $translate, authentication, pmcw, generateModal, confirmModal, Key, notify) {
+    // Detect if the current browser is Safari to disable / hide download action
     $scope.isSafari = jQuery.browser.name === 'safari';
     $scope.addresses = authentication.user.Addresses;
-    console.log($scope.addresses);
+
+    // Add information for each key
+    _.each($scope.addresses, function(address) {
+        _.each(address.Keys, function(key) {
+            pmcw.keyInfo(key.PublicKey).then(function(info) {
+                key.created = info.created;
+                key.bitSize = info.bitSize; // We don't use this data currently
+                key.fingerprint = info.fingerprint;
+            });
+        });
+    });
 
     /**
      * Download key

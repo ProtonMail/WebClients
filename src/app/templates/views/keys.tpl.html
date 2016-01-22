@@ -22,8 +22,8 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="key in address.Keys">
-                        <td><code>{{ $index }}</code></td>
-                        <td>{{ key.Date }}</td>
+                        <td><code>{{ key.fingerprint }}</code></td>
+                        <td>{{ key.created | utcReadableTime }}</td>
                         <td class="text-right">
                             <button class="pm_button" ng-click="download(key.PublicKey, 'public')" ng-disabled="isSafari"><i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}</button>
                             <button class="pm_button" ng-click="download(key.PrivateKey, 'private')" ng-disabled="isSafari"><i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}</button>
