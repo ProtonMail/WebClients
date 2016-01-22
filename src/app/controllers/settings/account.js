@@ -129,6 +129,7 @@ angular.module('proton.controllers.Settings')
     $scope.saveMailboxPassword = function(form) {
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
+        var confMailPwd = $scope.confirmMailboxPassword;
         var copyAddresses = angular.copy(authentication.user.Addresses);
         var promises = [];
 
@@ -198,6 +199,7 @@ angular.module('proton.controllers.Settings')
                             $scope.oldMailboxPassword = '';
                             $scope.newMailboxPassword = '';
                             $scope.confirmMailboxPassword = '';
+                            form.$setUntouched();
                             authentication.savePassword(newMailPwd);
                             notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
                         } else if(result.data && result.data.Error) {

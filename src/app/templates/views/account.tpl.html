@@ -121,6 +121,9 @@
                         </div>
                         <div class="col right">
                             <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" placeholder="Current Mailbox Password" required="" />
+                            <div ng-messages="mailboxForm.oldMailboxPassword.$error" class="text-red" ng-if="mailboxForm.oldMailboxPassword.$touched">
+                                <p ng-message="required">Current mailbox password empty</p>
+                            </div>
                         </div>
                     </div>
                     <div class="clearfix">
@@ -129,12 +132,18 @@
                         </div>
                         <div class="col right">
                             <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder="New Mailbox Password" required="" />
+                            <div ng-messages="mailboxForm.newMailboxPassword.$error" class="text-red" ng-if="mailboxForm.newMailboxPassword.$touched">
+                                <p ng-message="required">New mailbox password empty</p>
+                            </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
                             <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="Confirm New Mailbox Password" class="margin" required="" />
+                            <div ng-messages="mailboxForm.confirmMailboxPassword.$error" class="text-red" ng-if="mailboxForm.confirmMailboxPassword.$touched">
+                                <p ng-message="required">Confirm mailbox password empty</p>
+                            </div>
                         </div>
                     </div>
                     <div class="clearfix">
