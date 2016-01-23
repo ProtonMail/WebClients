@@ -1,4 +1,8 @@
-<section class="pm_opensans sidebar" ng-controller="SidebarController" ng-sidebar-height>
+<section 
+class="pm_opensans sidebar" 
+ng-controller="SidebarController" 
+ng-sidebar-height 
+ng-hide="tabletMode || mobileMode">
 
     <a class="compose pm_button primary" ng-click="compose()">
         <i class="fa fa-pencil"></i> {{ 'COMPOSE' | translate }}

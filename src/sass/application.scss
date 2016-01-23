@@ -46,9 +46,10 @@
 @import "feedback.scss";
 @import "keys.scss";
 
-@import "layout/conversation.scss";
-@import "layout/conversation-list.scss";
-
+@import "layout/conversation-layout.scss";
+@import "layout/conversations-columns.scss";
+@import "layout/conversations-rows.scss";
+@import "layout/conversation-view.scss";
 
 @import "print.scss";
 

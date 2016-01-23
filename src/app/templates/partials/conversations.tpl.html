@@ -3,41 +3,13 @@
 <ng-include src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include>
 <!--# Toolbars -->
 
-<!--# Loop through each conversation in the list -->
+<ng-include 
+ng-if="layoutMode==='columns'" 
+src="'templates/partials/conversation-list-columns.tpl.html'"></ng-include>
 
-<div id="conversation-list">
-    <div
-    ng-repeat="conversation in conversations track by conversation.ID"
-    class="conversation"
-    ng-click="click(conversation)"
-    ng-class="{
-        selected: conversation.Selected,
-        active: active(conversation),
-        read: conversation.NumUnread === 0 || conversation.IsRead === 1
-    }">
-        <div class="selection">
-            <input type="checkbox">
-        </div>
-        <div class="row top">
-            <h4 class="subject">{{ conversation.Subject }}</h4>
-            <span class="meta">
-                <i class="fa fa-paperclip"></i>
-                <a class="fa fa-star-o" href="#"></a>
-                <em class="time">11:40 am</em>
-            </span>
-        </div>
-        <div class="row bottom">
-            <span class="sender">maxmustermann@protonmail.com</span>
-            <span class="pm_labels">
-                <label>IMPORTANT</label>
-                <label class="closed">PRIVATE</label>
-                <label class="closed">FACEBOOK</label>
-                <label class="closed">NAGIOS</label>
-                <label class="closed">JIRA</label>
-                <label class="closed">CRASHLYTICS</label>
-            </span>
-        </div>
-    </div>
-</div>
+<ng-include 
+ng-if="layoutMode==='rows'" 
+ng-hide="idDefined() === true" 
+src="'templates/partials/conversation-list-rows.tpl.html'"></ng-include>
 
 <div id="conversation-view" ui-view="view" ng-if="idDefined() === true && numberElementChecked === 0"></div>

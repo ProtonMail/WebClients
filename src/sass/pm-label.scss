@@ -1,10 +1,11 @@
 .pm_labels {
+	padding-top: 2px;
 	label {
 	    border-radius: 2px;
 	    border: 1px solid $gray;
 	    color: $gray;
-	    padding: 2px 6px;
-	    font-size: .8rem;
+	    padding: 0 .4rem;
+	    font-size: .5rem;
 	    font-style: normal;
 	    text-transform: uppercase;
 	    white-space: nowrap;
@@ -12,11 +13,29 @@
 	    max-width: 8rem;
 	    text-overflow: ellipsis;
 	    overflow: hidden;
-	    line-height: 20px;
-	    height: 20px;
+	    line-height: 14px;
+	    height: 16px;
+	    box-sizing: border-box;
 	    display: inline-block;
+	    -webkit-transition: max-width .25s ease;
+	       -moz-transition: max-width .25s ease;
+	        -ms-transition: max-width .25s ease;
+	         -o-transition: max-width .25s ease;
+	            transition: max-width .25s ease;
 	    &.closed {
-	    	max-width: 2rem;
+	    	max-width: .5rem;
+	    	border-left-width: 0;
+	    	padding: 0;
+	    	overflow: hidden;
+	    	line-height: 999rem;
+	    	border-radius: 0 2px 2px 0;
+	    	&:hover {
+	    		max-width: 8rem;
+	    		line-height: 14px;
+	    		padding: 0 .4rem;
+	    		border-left-width: 1px;
+	    		border: 1px solid $gray;
+	    	}
 	    }
 	}
 }

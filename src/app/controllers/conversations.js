@@ -62,6 +62,35 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
     };
 
+    // MODE CHANGE
+    $rootScope.desktopMode = false;
+    $rootScope.tabletMode = false;
+    $rootScope.mobileMode = false;
+
+    $scope.changeMode = function(mode) {
+        $rootScope.desktopMode = false;
+        $rootScope.tabletMode = false;
+        $rootScope.mobileMode = false;
+
+        console.log(mode);
+
+        switch(mode) {
+            case 'desktop':
+                $rootScope.desktopMode = true;
+                break;
+            case 'tablet':
+                $rootScope.tabletMode = true;
+                break;
+            case 'mobile':
+                $rootScope.mobileMode = true;
+                break;
+            default:
+            return;
+        }
+
+        console.log($rootScope.desktopMode, $rootScope.tabletMode, $rootScope.mobileMode);
+    };
+
     $scope.watchElements = function() {
         if(angular.isDefined(unbindWatcherElements)) {
             unbindWatcherElements();
