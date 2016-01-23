@@ -82,28 +82,21 @@ angular.module("proton.controllers.Settings")
             5. add dkim
             6. add dmarc
         */
-        if (domain.DomainName) {
-            if ((domain.VerifyState !== 2)) {
-                $scope.verification(domain);
-            } else {
-                if (true) { // TODO check if address exists
-                    $scope.addAddress(domain);
-                }
-                else {
-                    if (domain.MxState !== 3) {
-                        $scope.mx(domain);
-                    } else {
-                        if ((domain.SpfState !== 3)) {
-                            $scope.spf(domain);
-                        } else {
-                            // ...
-                        }
-                    }
-                }
-            }
-        } else {
+        if (!domain.DomainName) {
             // show first step
             $scope.addDomain();
+        } else if ((domain.VerifyState !== 2)) {
+            $scope.verification(domain);
+        } else if (domain.Addresses.length === 0) {
+            $scope.addAddress(domain);
+        } else if (domain.MxState !== 3) {
+            $scope.mx(domain);
+        } else if (domain.SpfState !== 3) {
+            $scope.spf(domain);
+        } else if (domain.DkimState !== 4) {
+            $scope.dkim(domain);
+        } else if (domain.DmarcState !== 3) {
+            $scope.dmarc(domain);
         }
     };
 
@@ -303,7 +296,7 @@ angular.module("proton.controllers.Settings")
                 step: 3,
                 domain: domain,
                 members: $scope.members,
-                submit: function(address, member) {
+                add: function(address, member) {
                     networkActivityTracker.track(
                         Address.create({
                             Local: address, // local part
@@ -312,8 +305,10 @@ angular.module("proton.controllers.Settings")
                         })
                     ).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('DOMAIN_ADDED'), classes: 'notification-success'});
-                            $scope.refreshStatus();
+                            notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
+                            domain.Addresses.push(result.data.Address);
+                            addressModal.deactivate();
+                            $scope.addAddress(domain);
                         } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
                             notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
                         } else if(angular.isDefined(result.data) && result.data.Error) {
@@ -326,9 +321,8 @@ angular.module("proton.controllers.Settings")
                     });
                 },
                 next: function() {
-                    // show the newly added address
-                    alert('todo!');
                     addressModal.deactivate();
+                    $scope.dmarc(domain);
                 },
                 cancel: function() {
                     addressModal.deactivate();
