@@ -35,7 +35,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     $scope.hideMobileSidebar = function() {
-        console.log('hideMobileSidebar');
         $rootScope.$broadcast('sidebarMobileToggle');
     };
 
