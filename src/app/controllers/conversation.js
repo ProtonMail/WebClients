@@ -26,7 +26,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.currentState = $state.$current.name;
     $scope.scrolled = false;
     $scope.conversation = conversation;
-    $scope.showTrashed = false;
+    $scope.showTrashed = $state.is('secured.trash.view') ? true : false;
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
 
