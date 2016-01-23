@@ -38,7 +38,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.initialization = function() {
         // Variables
         $scope.mailbox = tools.currentMailbox();
-        $scope.rowMode = authentication.user.ViewLayout === 1;
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
@@ -123,8 +122,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.mobileResponsive = function() {
         if ($window.outerWidth < 1025) {
             $rootScope.layoutMode = 'rows';
-        }
-        else {
+        } else {
             var layout = (authentication.user.ViewLayout === 0) ? 'columns' : 'rows';
             $rootScope.layoutMode = layout;
         }
