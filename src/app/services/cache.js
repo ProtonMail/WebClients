@@ -782,9 +782,9 @@ angular.module("proton.cache", [])
     api.flagConversation = function(event) {
         var deferred = $q.defer();
         var current = _.findWhere(conversationsCached, {ID: event.ID});
+        var conversation = {};
 
         if(angular.isDefined(current)) {
-            var conversation = {};
             var index = conversationsCached.indexOf(current);
 
             _.extend(conversation, current);
@@ -800,10 +800,12 @@ angular.module("proton.cache", [])
                 conversation.LabelIDs = _.uniq(conversation.LabelIDs.concat(event.Conversation.LabelIDsAdded));
                 delete conversation.LabelIDsAdded;
             }
-
-            // Update conversation cached
-            updateConversation(conversation);
+        } else {
+            conversation = event.Conversation;
         }
+
+        // Update conversation cached
+        updateConversation(conversation);
 
         deferred.resolve();
 
