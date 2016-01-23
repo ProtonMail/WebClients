@@ -212,8 +212,20 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
 
-        loading: function() {
-            return this.uploading > 0 || (this.saving === true && this.autosaving === false) || this.sending || this.encrypting;
+        allowSend: function() {
+            return this.uploading > 0 || this.allowOthers();
+        },
+
+        allowSave: function() {
+            return this.allowSend();
+        },
+
+        allowDiscard: function() {
+            return this.allowSend();
+        },
+
+        allowOthers: function() {
+            return (this.saving === true && this.autosaving === false) || this.sending || this.encrypting;
         },
 
         encryptBody: function(key) {
