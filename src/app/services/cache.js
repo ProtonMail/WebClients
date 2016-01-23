@@ -86,7 +86,7 @@ angular.module("proton.cache", [])
 
         if(angular.isDefined(current)) {
             var index = conversationsCached.indexOf(current);
-            var labelIDs = current.LabelIDs || [];
+            var labelIDs = conversation.LabelIDs || current.LabelIDs || [];
 
             if(angular.isArray(conversation.LabelIDsRemoved)) {
                 labelIDs = _.difference(labelIDs, conversation.LabelIDsRemoved);

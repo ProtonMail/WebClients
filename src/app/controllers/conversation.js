@@ -26,64 +26,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.currentState = $state.$current.name;
     $scope.scrolled = false;
     $scope.conversation = conversation;
+    $scope.showTrashed = false;
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
-        var conversation = cache.getConversationCached($stateParams.id);
-        var messages = cache.queryMessagesCached($stateParams.id);
-        var loc = tools.currentLocation();
-
-        if(angular.isDefined(conversation)) {
-            var labels = conversation.LabelIDs;
-
-            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
-                _.extend($scope.conversation, conversation);
-            } else {
-                return $scope.back();
-            }
-        } else {
-            return $scope.back();
-        }
-
-        if(angular.isDefined(messages)) {
-            messages = _.sortBy(messages, 'Time');
-
-            _.each(messages, function(message) {
-                var current = _.findWhere($scope.messages, {ID: message.ID});
-                var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
-
-                if(angular.isUndefined(current) && index === -1) {
-                    // Add message
-                    $scope.messages.push(message);
-
-                    // Display notification
-                    if(message.Type === 0) {
-                        notify({
-                            message: $translate.instant('NEW_MESSAGE'),
-                            classes: 'notification-success'
-                        });
-                    }
-                }
-            });
-
-            _.each($scope.messages, function(message) {
-                var current = _.findWhere(messages, {ID: message.ID});
-
-                if(angular.isUndefined(current)) {
-                    var index = $scope.messages.indexOf(current);
-                    // Delete message
-                    $scope.messages.splice(index, 1);
-                }
-            });
-
-            if($scope.messages.length === 0) {
-                $scope.back();
-            }
-        } else {
-            $scope.back();
-        }
+        $scope.refreshConversation();
     });
 
     $scope.$on('$destroy', function(event) {
@@ -109,7 +58,15 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
             if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
                 var messages = cache.queryMessagesCached($scope.conversation.ID);
+
+                // Sort by time
                 messages = _.sortBy(messages, 'Time');
+
+                // Remove trashed message
+                if ($scope.showTrashed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
+                }
+
                 var latest = _.last(messages);
 
                 if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
@@ -167,6 +124,84 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         $state.go("secured." + $scope.mailbox, {
             id: null // remove ID
         });
+    };
+
+    $scope.refreshConversation = function() {
+        var conversation = cache.getConversationCached($stateParams.id);
+        var messages = cache.queryMessagesCached($stateParams.id);
+        var loc = tools.currentLocation();
+
+        if(angular.isDefined(conversation)) {
+            var labels = conversation.LabelIDs;
+
+            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
+                _.extend($scope.conversation, conversation);
+            } else {
+                return $scope.back();
+            }
+        } else {
+            return $scope.back();
+        }
+
+        if(angular.isDefined(messages)) {
+            // Sort by time
+            messages = _.sortBy(messages, 'Time');
+
+            // Remove trashed message
+            if ($scope.showTrashed === false) {
+                messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; }); // Remove trashed message
+            }
+
+            _.each(messages, function(message) {
+                var current = _.findWhere($scope.messages, {ID: message.ID});
+                var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
+
+                if(angular.isUndefined(current) && index === -1) {
+                    // Add message
+                    $scope.messages.push(message);
+
+                    // Display notification
+                    if(message.Type === 0) {
+                        notify({
+                            message: $translate.instant('NEW_MESSAGE'),
+                            classes: 'notification-success'
+                        });
+                    }
+                }
+            });
+
+            _.each($scope.messages, function(message) {
+                var current = _.findWhere(messages, {ID: message.ID});
+
+                if(angular.isUndefined(current)) {
+                    var index = $scope.messages.indexOf(current);
+                    // Delete message
+                    $scope.messages.splice(index, 1);
+                }
+            });
+
+            if($scope.messages.length === 0) {
+                $scope.back();
+            }
+        } else {
+            $scope.back();
+        }
+    };
+
+    /**
+     * Return if there are trashed message inside this conversation
+     * @return {Boolean}
+     */
+    $scope.trashed = function() {
+        return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
+    };
+
+    /**
+     * Toggle trashed messages
+     */
+    $scope.toggleTrashed = function() {
+        $scope.showTrashed = !$scope.showTrashed;
+        $scope.refreshConversation();
     };
 
     /**

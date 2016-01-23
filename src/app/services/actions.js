@@ -392,14 +392,13 @@ angular.module('proton.actions', [])
             // Generate cache events
             _.each(ids, function(id) {
                 var message = cache.getMessageCached(id);
+                var labelIDs = message.LabelIDs || [];
                 var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
                 var inInbox = mailbox === 'inbox';
                 var labelIDsRemoved = _.reject(message.LabelIDs, function(labelID) {
                     // Remove starred and labels
                     return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
                 });
-
-                conversationIDs.push(message.ConversationID);
 
                 if(inInbox === true) {
                     var index;
@@ -419,37 +418,53 @@ angular.module('proton.actions', [])
                     }
                 }
 
+                if (angular.isArray(labelIDsRemoved)) {
+                    labelIDs = _.difference(labelIDs, labelIDsRemoved);
+                }
+
+                if (angular.isArray(labelIDsAdded)) {
+                    labelIDs = _.uniq(labelIDs.concat(labelIDsAdded));
+                }
+
                 events.push({Action: 3, ID: id, Message: {
                     ID: id,
+                    ConversationID: message.ConversationID,
                     Selected: false,
-                    LabelIDsAdded: labelIDsAdded,
-                    LabelIDsRemoved: labelIDsRemoved
+                    LabelIDs: labelIDs
                 }});
             });
 
-            _.each(conversationIDs, function(conversationID) {
-                var conversation = cache.getConversationCached(conversationID);
-                var messages = cache.queryMessagesCached(conversationID);
-                var labelIDs = [];
+            _.each(events, function(event) {
+                var conversation = cache.getConversationCached(event.Message.ConversationID);
+                var messages = cache.queryMessagesCached(event.Message.ConversationID);
 
-                _.each(messages, function(message) {
-                    labelIDs = labelIDs.concat(message.LabelIDs);
-                });
+                if (angular.isDefined(conversation) && angular.isArray(messages)) {
+                    var labelIDs = [];
 
-                labelIDs.splice(_.findIndex(labelIDs, function(labelID) { return ['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1; }), 1); // Remove current location
-                labelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]); // Add new location
+                    _.each(messages, function(message) {
+                        var found = _.find(events, function(event) {
+                            return message.ID === event.Message.ID;
+                        });
 
-                events.push({Action: 3, ID: conversationID, Conversation: {
-                    ID: conversationID,
-                    LabelIDs: _.uniq(labelIDs)
-                }});
+                        if (angular.isDefined(found)) {
+                            labelIDs = labelIDs.concat(found.Message.LabelIDs);
+                        } else {
+                            labelIDs = labelIDs.concat(message.LabelIDs);
+                        }
+                    });
+
+                    events.push({Action: 3, ID: conversation.ID, Conversation: {
+                        ID: conversation.ID,
+                        LabelIDs: _.uniq(labelIDs)
+                    }});
+                }
             });
 
             // Send request
             promise = Message[mailbox]({IDs: ids}).$promise;
             cache.addToDispatcher(promise);
 
-            if(context === true) {
+            if (context === true) {
                 cache.events(events);
             } else {
                 promise.then(function() {
