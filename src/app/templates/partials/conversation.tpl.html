@@ -8,7 +8,7 @@
         <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
         <span ng-bind="conversation.Subject"></span>
     </h1>
-    <p ng-show="trashed()">
+    <p ng-show="trashed()" ng-hide="'secured.trash.**' | includedByState">
         This conversation contains trashed messages.
         <a href="#" ng-click="toggleTrashed()">
             <span ng-show="showTrashed === true">Hide trashed messages</span>
