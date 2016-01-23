@@ -192,7 +192,7 @@ angular.module('proton.controllers.Settings')
         }
 
         // Instead of grab keys from the cache, we call the back-end, just to make sure everything is up to date
-        User.get(authentication.user.ID).$promise.then(function(result) {
+        networkActivityTracker.track(User.get(authentication.user.ID).$promise.then(function(result) {
             if (result.Code === 1000) {
                 _.each(result.User.Addresses, function(address) {
                     _.each(address.Keys, function(key) {
@@ -211,9 +211,8 @@ angular.module('proton.controllers.Settings')
                 });
 
                 // When all promises are done, we can send the new keys to the back-end
-                $q.all(promises).then(function(keys) {
-
-                    Key.private({Keys: keys}).then(function(result) {
+                return $q.all(promises).then(function(keys) {
+                    return Key.private({Keys: keys}).then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             $scope.oldMailboxPassword = '';
                             $scope.newMailboxPassword = '';
@@ -239,7 +238,7 @@ angular.module('proton.controllers.Settings')
             _.each(errors, function(error) {
                 notify({message: error, classes: 'notification-danger'});
             });
-        });
+        }));
     };
 
     $scope.saveDisplayName = function(form) {
