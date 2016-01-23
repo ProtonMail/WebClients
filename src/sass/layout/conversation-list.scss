@@ -1,0 +1,24 @@
+#conversation-list {
+    width: 500px;
+    width: 40%;
+    float: left;
+    height: calc(100% - 56px);
+    overflow-y: auto;
+    overflow-x: hidden; 
+}
+
+#conversation-view {
+    width: calc(100% - 500px);
+    width: 60%;
+    float: left;
+    overflow-x: auto;
+    height: calc(100% - 56px);
+    overflow-y: auto;
+    overflow-x: hidden; 
+}
+
+#pm_sidebar {
+    height: 600px !important;
+    float: left;
+    overflow: hidden;
+}
