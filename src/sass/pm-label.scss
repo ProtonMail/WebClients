@@ -1,1 +1,22 @@
-.pm_labels {}
+.pm_labels {
+	label {
+	    border-radius: 2px;
+	    border: 1px solid $gray;
+	    color: $gray;
+	    padding: 2px 6px;
+	    font-size: .8rem;
+	    font-style: normal;
+	    text-transform: uppercase;
+	    white-space: nowrap;
+	    font-weight: bold;
+	    max-width: 8rem;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    line-height: 20px;
+	    height: 20px;
+	    display: inline-block;
+	    &.closed {
+	    	max-width: 2rem;
+	    }
+	}
+}
