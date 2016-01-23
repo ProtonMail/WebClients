@@ -805,17 +805,21 @@ angular.module("proton.cache", [])
     api.events = function(events, fromBackend) {
         var deferred = $q.defer();
         var promises = [];
+        var dirty;
 
         if(fromBackend === true) {
             console.log('events from the back-end', events);
+            dirty = false;
         } else {
             console.log('events from the front-end', events);
+            dirty = true;
         }
 
         _.each(events, function(event) {
             if(event.Action === DELETE) { // Can be for message or conversation
                 promises.push(api.delete(event));
             } else if(angular.isDefined(event.Message)) { // Manage message action
+                // event.Message.dirty = dirty;
                 switch (event.Action) {
                     case CREATE:
                         promises.push(api.createMessage(event));
@@ -830,6 +834,7 @@ angular.module("proton.cache", [])
                         break;
                 }
             } else if(angular.isDefined(event.Conversation)) { // Manage conversation action
+                // event.Conversation.dirty = dirty;
                 switch (event.Action) {
                     case CREATE:
                         promises.push(api.createConversation(event));
