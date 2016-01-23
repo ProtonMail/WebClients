@@ -129,13 +129,6 @@ angular.module('proton.actions', [])
                     toRemove.push(current);
                 }
 
-                var element = {
-                    ID: conversationID,
-                    Selected: false,
-                    LabelIDsAdded: toApply,
-                    LabelIDsRemoved: toRemove
-                };
-
                 _.each(messages, function(message) {
                     events.push({Action: 3, ID: message.ID, Message: {
                         ID: message.ID,
@@ -144,7 +137,12 @@ angular.module('proton.actions', [])
                     }});
                 });
 
-                events.push({Action: 3, ID: conversationID, Conversation: element});
+                events.push({Action: 3, ID: conversationID, Conversation: {
+                    ID: conversationID,
+                    Selected: false,
+                    LabelIDsAdded: toApply,
+                    LabelIDsRemoved: toRemove
+                }});
 
                 _.each(toApply, function(labelID) {
                     promises.push(Conversation.labels(labelID, ADD, ids));

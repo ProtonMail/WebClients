@@ -85,9 +85,22 @@ angular.module("proton.cache", [])
         var current = _.findWhere(conversationsCached, {ID: conversation.ID});
 
         if(angular.isDefined(current)) {
-            manageCounters(current, conversation, 'conversation');
-
             var index = conversationsCached.indexOf(current);
+            var labelIDs = current.LabelIDs || [];
+
+            if(angular.isArray(conversation.LabelIDsRemoved)) {
+                labelIDs = _.difference(labelIDs, conversation.LabelIDsRemoved);
+                delete conversation.LabelIDsRemoved;
+            }
+
+            if(angular.isArray(conversation.LabelIDsAdded)) {
+                labelIDs = _.uniq(labelIDs.concat(conversation.LabelIDsAdded));
+                delete conversation.LabelIDsAdded;
+            }
+
+            conversation.LabelIDs = labelIDs;
+
+            manageCounters(current, conversation, 'conversation');
 
             _.extend(conversationsCached[index], conversation);
         } else {
@@ -705,27 +718,7 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var current = _.findWhere(conversationsCached, {ID: event.ID});
 
-        if(angular.isDefined(current)) {
-            updateConversation(event.Conversation);
-        } else {
-            // NOTE When we send a message to yourself, the LabelIDs parameter is undefined
-            // Probably a back-end bug
-            if(angular.isUndefined(event.Conversation.LabelIDs)) {
-                var messages = api.queryMessagesCached(event.Conversation.ID);
-                var labelIDs = [];
-
-                _.each(messages, function(message) {
-                    labelIDs = labelIDs.concat(message.LabelIDs);
-                });
-
-                event.Conversation.LabelIDs = _.uniq(labelIDs);
-            }
-
-            updateConversation(event.Conversation);
-        }
-
-        // Manage time
-        manageTimes(event.ID);
+        updateConversation(event.Conversation);
 
         deferred.resolve();
 
@@ -781,29 +774,9 @@ angular.module("proton.cache", [])
      */
     api.flagConversation = function(event) {
         var deferred = $q.defer();
-        var current = _.findWhere(conversationsCached, {ID: event.ID});
 
-        if(angular.isDefined(current)) {
-            var conversation = {};
-            var index = conversationsCached.indexOf(current);
-
-            _.extend(conversation, current);
-            _.extend(conversation, event.Conversation);
-
-            // Manage labels
-            if(angular.isDefined(event.Conversation.LabelIDsRemoved)) {
-                conversation.LabelIDs = _.difference(conversation.LabelIDs, event.Conversation.LabelIDsRemoved);
-                delete conversation.LabelIDsRemoved;
-            }
-
-            if(angular.isDefined(event.Conversation.LabelIDsAdded)) {
-                conversation.LabelIDs = _.uniq(conversation.LabelIDs.concat(event.Conversation.LabelIDsAdded));
-                delete conversation.LabelIDsAdded;
-            }
-
-            // Update conversation cached
-            updateConversation(conversation);
-        }
+        // Update conversation cached
+        updateConversation(event.Conversation);
 
         deferred.resolve();
 
@@ -815,7 +788,6 @@ angular.module("proton.cache", [])
      */
     api.updateConversation = function(event) {
         var deferred = $q.defer();
-        var current = _.findWhere(conversationsCached, {ID: event.ID});
 
         updateConversation(event.Conversation);
 
@@ -833,17 +805,21 @@ angular.module("proton.cache", [])
     api.events = function(events, fromBackend) {
         var deferred = $q.defer();
         var promises = [];
+        var dirty;
 
         if(fromBackend === true) {
             console.log('events from the back-end', events);
+            dirty = false;
         } else {
             console.log('events from the front-end', events);
+            dirty = true;
         }
 
         _.each(events, function(event) {
             if(event.Action === DELETE) { // Can be for message or conversation
                 promises.push(api.delete(event));
             } else if(angular.isDefined(event.Message)) { // Manage message action
+                // event.Message.dirty = dirty;
                 switch (event.Action) {
                     case CREATE:
                         promises.push(api.createMessage(event));
@@ -858,6 +834,7 @@ angular.module("proton.cache", [])
                         break;
                 }
             } else if(angular.isDefined(event.Conversation)) { // Manage conversation action
+                // event.Conversation.dirty = dirty;
                 switch (event.Action) {
                     case CREATE:
                         promises.push(api.createConversation(event));
