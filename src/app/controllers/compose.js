@@ -1057,15 +1057,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     if(angular.isDefined(result) && result.Code === 1000) {
                         var events = [];
                         var conversation = cache.getConversationCached(result.Message.ConversationID);
+                        var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
                         var numMessages;
-                        var numUnread;
 
                         if (actionType === CREATE) {
                             numMessages = angular.isDefined(conversation) ? (conversation.NumMessages + 1) : 1;
-                            numUnread = 0;
                         } else if (actionType === UPDATE) {
                             numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
-                            numUnread = 0;
                         }
 
                         message.ID = result.Message.ID;
