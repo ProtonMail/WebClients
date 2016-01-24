@@ -164,13 +164,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             // Sort by time
             messages = _.sortBy(messages, 'Time');
 
-            _.each(messages, function(message) {
+            _.each(messages, function(message, index) {
                 var current = _.findWhere($scope.messages, {ID: message.ID});
-                var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
+                var discard = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
 
-                if(angular.isUndefined(current) && index === -1) {
+                if(angular.isUndefined(current) && discard === -1) {
                     // Add message
-                    $scope.messages.push(message);
+                    $scope.messages.splice(index, 0, message);
 
                     // Display notification
                     if(message.Type === 0 && $scope.showTrashed === false && $scope.showNonTrashed === false) {
