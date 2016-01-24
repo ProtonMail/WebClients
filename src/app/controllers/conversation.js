@@ -26,7 +26,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.currentState = $state.$current.name;
     $scope.scrolled = false;
     $scope.conversation = conversation;
-    $scope.showTrashed = $state.is('secured.trash.view') ? true : false;
+    $scope.showTrashed = false;
+    $scope.showNonTrashed = false;
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
 
@@ -63,8 +64,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 messages = _.sortBy(messages, 'Time');
 
                 // Remove trashed message
-                if ($scope.showTrashed === false) {
+                if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
+                }
+
+                // Remove non trashed message
+                if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
                 }
 
                 var latest = _.last(messages);
@@ -148,8 +154,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             messages = _.sortBy(messages, 'Time');
 
             // Remove trashed message
-            if ($scope.showTrashed === false) {
-                messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; }); // Remove trashed message
+            if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
+                messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
+            }
+
+            // Remove non trashed message
+            if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
+                messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
             }
 
             _.each(messages, function(message) {
@@ -197,10 +208,26 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     };
 
     /**
+     * Return if there are non trashed message inside this conversation
+     * @return {Boolean}
+     */
+    $scope.nonTrashed = function() {
+        return $scope.conversation.LabelIDs !== [CONSTANTS.MAILBOX_IDENTIFIERS.trash];
+    };
+
+    /**
      * Toggle trashed messages
      */
     $scope.toggleTrashed = function() {
         $scope.showTrashed = !$scope.showTrashed;
+        $scope.refreshConversation();
+    };
+
+    /**
+     * Toggle non trashed messages
+     */
+    $scope.toggleNonTrashed = function() {
+        $scope.showNonTrashed = !$scope.showNonTrashed;
         $scope.refreshConversation();
     };
 
