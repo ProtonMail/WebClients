@@ -301,7 +301,7 @@ angular.module("proton.controllers.Settings")
                         Address.create({
                             Local: address, // local part
                             Domain: domain.DomainName,
-                            MemberID: member.MemberID // either you custom domain or a protonmail domain
+                            MemberID: member.ID // either you custom domain or a protonmail domain
                         })
                     ).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {

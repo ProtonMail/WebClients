@@ -108,12 +108,9 @@
                 </legend>
                 <div class="border-panel margin-bottom" ng-repeat="domain in domains" ng-show="domains.length > 0">
                     <p>
-                        <button type="button" pt-tooltip="{{ 'TOGGLE' | translate }}" ng-show="domain.State === 1" class="pm_button round pull-right" ng-click="domain.expand = !!!domain.expand" ng-init="domain.expand = true">
-                            <i class="fa" ng-class="{'fa-angle-up': domain.expand === true, 'fa-angle-down': domain.expand === false}"></i>
-                        </button>
                         <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
-                    <div ng-show="domain.expand === true && domain.State === 1">
+                    <div ng-show="domain.State === 1">
                         <p>
                             <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
                             <a ui-sref="secured.members" class="pm_button">{{ 'ADD_USER' | translate }}</a>
