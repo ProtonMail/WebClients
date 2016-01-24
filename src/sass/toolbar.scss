@@ -1,347 +1,65 @@
-// Single Message View
-#pm_view.rows #pm_toolbar {
-    margin-left: 0;
-    margin-right: 25px;
-    padding: 10px;
-    height: initial !important;
-    float: left;
-    width: 100%;
-}
-body.rows #pm_toolbar {
-    padding-right: 15px;
-    background: #fff;Ï
-    .pm_buttons {
-        margin: 0 10px 0 0;
-        .pm_buttons {
-            margin-left: 0;
-            border-left: 1px solid $border !important;
-        }
-    }
-    .back {
-        margin-left: 1rem;
-    }
-    .messageActions {
-        .pm_buttons {
-            margin: 0 0 0 10px;
-        }
-    }
-    .main > label {
-        padding-left: 15px;
-    }
-}
-
-body.columns #pm_toolbar {
-    padding-right: 10px;
-    padding-left: 10px;
-    margin-left: 0;
-    .pm_buttons.back {
-        overflow: hidden;
-        width: 5px;
-        visibility: hidden;
-    }
-    .main > label {
-        margin-left: 15px;
-    }
-}
-
-// Hide Responsive toolbar by default
-#pm_toolbar_responsive {
-    display: none;
-}
-
-#pm_toolbar {
-    padding: 10px 0;
+#pm_toolbar-desktop {
+    height: 54px;
     box-sizing: border-box;
-    position: relative;
-    z-index: 55;
-    height: 55px;
-    box-shadow: 0 1px 0 $border;
-    #layoutTip {
-        position: absolute;
-        right: -.5rem;
-        top: -.75rem;
-        display: block;
-        pointer-events: none;
-        .fa {
-            font-size: 1.5rem;
-            color: $red;
-            -webkit-animation-delay: 2s;
-                    animation-delay: 2s;
-            -webkit-animation-iteration-count: infinite;
-                    animation-iteration-count: infinite;
-        }
-    }
-    .messageActions {
-        float: right;
-    }
-    .pull-right {
-        float: right;
-    }
-    .pull-left {
+    padding: 0 10px;
+    border-bottom: 1px solid $border;
+    .pm_checkbox {
         float: left;
-    }
-    .main {
-        & > label {
-            float: left;
-            display: block;
-            line-height: 35px;
-            height: 35px;
-            padding: 0 10px 0 0;
-            input {
-                margin-left: 0;
-            }
-        }
-    }
-}
-
-
-@media (max-width: $tablet-landscape) {
-    #pm_toolbar {
-        display: none;
-    }
-    #pm_toolbar_responsive {
         display: block;
+        height: 54px;
+        line-height: 54px;
+        margin: 0;
+    }
+    & > .pm_buttons {
         float: none;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 12px 10px;
+        display: inline-block;
+        margin: 9px 0 0 0;
+    }
+    & > .pull-right {
+        margin: 9px 0 0 0;
+    }
+}
+
+#pm_toolbar-tablet {
+    height: 54px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-bottom: 1px solid $border;
+    .pm_checkbox {
         float: left;
-        .messageActions {
-            .nav {
-                margin-left: 10px;
-            }
-            a {
-                strong {
-                    display: none;
-                }
-            }
-        }
-        .main {
-            float: left;
-            padding-left: 0;
-            padding-left: 0;
-            position: relative;
-            .pm_buttons {
-                height: 45px;
-                margin: 0 0 0 6px !important;
-                &.back {
-                    margin-left: 0 !important;
-                }
-                a {
-                    height: 45px;
-                    line-height: 45px;
-                    padding: 0 20px;
-                    &.createLabel {
-                        padding: 0 !important;
-                        background: transparent !important;
-                        i.fa {
-                            width: 30px;
-                            text-align: left;
-                            float: left;
-                        }
-                    }
-                }
-                .pm_buttons {
-                    margin: 0;
-                }
-            }
-            .pm_checkbox {
-                margin-top: -2px;
-                float: left;
-            }
-        }
-        .secondary {
-            padding: 0;
-            float: right;
-            .pm_buttons {
-                height: 45px;
-                margin: 0 0 0 5px;
-                a {
-                    height: 45px;
-                    line-height: 45px;
-                    padding: 0 20px;
-                }
-                margin: 0 0 0 6px;
-                .pm_buttons {
-                    margin: 0;
-                }
-            }
-            .pm_dropdown {
-                left: auto;
-                right: -1px;
-            }
-        }
+        display: block;
+        height: 54px;
+        line-height: 54px;
+        margin: 0;
     }
-    body #pm_view #pm_toolbar .main {
-        display: none;
+    & > .pm_buttons {
+        float: none;
+        display: inline-block;
+        margin: 9px 0 0 0;
     }
-    body #pm_view #pm_toolbar .messageActions a strong {
-        display: none;
-    }
-    body #pm_view #pm_toolbar_responsive {
-        padding: 12px 10px;
+    & > .pull-right {
+        margin: 9px 0 0 0;
     }
 }
 
-@media (max-width: $tablet-portrait) {
-    #pm_toolbar_responsive {
-        .main {
-            .pm_checkbox {
-                // margin-left: 10px !important;
-            }
-        }
+#pm_toolbar-mobile {
+    height: 54px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-bottom: 1px solid $border;
+    .pm_checkbox {
+        float: left;
+        display: block;
+        height: 54px;
+        line-height: 54px;
+        margin: 0;
     }
-}
-
-// @media (max-width: $mobile-landscape) {
-//     #pm_toolbar_responsive {
-//         padding: 12px 10px;
-//         & > .pm_buttons {
-//             display: none;
-//         }
-//         .pm_buttons a {
-//             padding: 0 10px;
-//         }
-//         .main {
-//             .pm_checkbox {
-//                 margin-left: 0 !important;
-//             }
-//             .pm_buttons {
-//                 margin: 0 0 0 5px !important;
-//                 a {
-//                     padding: 0 10px;
-//                 }
-//             }
-//         }
-//         .secondary {
-//             padding: 0;
-//             float: right;
-//             .pm_buttons {
-//                 margin: 0 0 0 5px;
-//                 a {
-//                     padding: 0 10px;
-//                 }
-//             }
-//         }
-//     }
-//     body #pm_view {
-//         padding: 0 !important;
-//         & > header h1 {
-//             padding-left: 10px;
-//         }
-//     }
-// }
-
-
-@media (max-width: $tablet-portrait) {
-    #pm_toolbar_responsive {
-        .main {
-            .pm_buttons {
-                height: 40px;
-                a {
-                    height: 40px;
-                    line-height: 40px;
-                    padding: 0 15px;
-                }
-            }
-        }
-        .secondary {
-            .pm_buttons {
-                height: 40px;
-                a {
-                    height: 40px;
-                    line-height: 40px;
-                    padding: 0 15px;
-                }
-            }
-        }
+    & > .pm_buttons {
+        float: none;
+        display: inline-block;
+        margin: 9px 0 0 0;
     }
-}
-
-
-@media (max-width: $mobile-medium) {
-    #pm_toolbar_responsive {
-        .main {
-            .pm_buttons {
-                height: 40px;
-                a {
-                    height: 40px;
-                    line-height: 40px;
-                    padding: 0 12px;
-                }
-            }
-        }
-        .secondary {
-            .pm_buttons {
-                height: 40px;
-                a {
-                    height: 40px;
-                    line-height: 40px;
-                    padding: 0 12px;
-                }
-            }
-        }
-    }
-}
-
-
-
-
-
-
-@media (max-width: $mobile-landscape) {
-    body #pm_view #pm_toolbar_responsive {
-        height: 65px !important;
-        margin: 0 !important;
-        width: 100% !important;
-        padding: 10px !important;
-        .pm_buttons a {
-            padding: 0 11px;
-        }
-    }
-    body #pm_toolbar_responsive {
-        border-bottom: 1px solid $border;
-        padding: 14px 10px !important;
-        position: relative;
-        z-index: 11;
-        .pm_checkbox {
-            margin-right: 5px !important;
-        }
-        .main {
-            display: none;
-        }
-        .main,
-        .secondary {
-            display: block;
-            .pm_buttons {
-                a.fa-angle-down {
-                    padding: 0 3px;
-                }
-            }
-        }
-        .secondary {
-            margin-right: 0 !important;
-            .pm_buttons {
-                .pm_buttons {
-                    display: none;
-                }
-            }
-        }
-        .main {
-            .pm_buttons a {
-            display: none;
-                &:first-child {
-                    display: block;
-                }
-            }
-        }
-        .messageActions {
-            .pm_buttons {
-                margin: 0 0 0 5px;
-                strong {
-                    display: none;
-                }
-            }
-        }
+    & > .pull-right {
+        margin: 9px 0 0 0;
     }
 }

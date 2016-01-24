@@ -7,28 +7,40 @@
         active: active(conversation),
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
-        <input type="checkbox">
+        <input 
+        type="checkbox" 
+        ng-model="conversation.Selected" 
+        ng-click="$event.stopPropagation();select($event, conversation)" />
         <a 
         class="fa" 
         ng-click="$event.stopPropagation();toggleStar(conversation)"
         ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></a>
-        <span class="senders">
-            <span ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in senders(conversation)" title="{{ contact.Address }}">
+        <span 
+        class="senders"
+        ng-click="click(conversation)">
+            <span 
+            ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" 
+            ng-repeat="contact in senders(conversation)" 
+            title="{{ contact.Address }}">
                 {{ contact.Name || contact.Address }}<span ng-hide="$last">, </span>
             </span>
         </span>
-        <h4 class="subject" ng-click="click(conversation)">{{ conversation.Subject }}</h4>
-        <span class="pm_labels">
-            <label 
-            ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5" 
-            title="{{ getLabel(labelID).Name }}" 
-            class="pm_label" 
-            ng-class="{ 'closed': !$first }" 
-            ng-style="getStyleLabel(labelID)" 
-            ng-show="getLabel(labelID).Name" 
-            ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
-            </label>
-        </span>
+        <div 
+        class="subject" 
+        ng-click="click(conversation)">
+            <h4>{{ conversation.Subject }}</h4>
+            <span class="pm_labels">
+                <label 
+                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5" 
+                title="{{ getLabel(labelID).Name }}" 
+                class="pm_label" 
+                ng-class="{ 'closed': !$first }" 
+                ng-style="getStyleLabel(labelID)" 
+                ng-show="getLabel(labelID).Name" 
+                ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
+                </label>
+            </span>
+        </div>
         <span class="size">{{ size(conversation)| bytes }}</span>
         <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
         <em class="time">{{ time(conversation) | readableTime }}</em>

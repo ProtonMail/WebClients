@@ -1,42 +1,73 @@
 #conversation-list-columns,
 #conversation-list-rows,
 #pm_sidebar .sidebar {
-    height: calc(100% - 56px) !important; 
+    height: calc(100% - 55px); 
     overflow-y: auto;
     overflow-x: hidden; 
-}
-
-#conversation-list-columns {
-    width: 500px;
-    width: 40%;
-    float: left;
 }
 
 #conversation-list-rows {
     clear: both;
 }
 
-#conversation-view-columns {
-    width: calc(100% - 500px);
-    width: 60%;
-    float: left;
-    overflow-x: auto;
-    height: calc(100% - 56px);
-    overflow-y: auto;
-    overflow-x: hidden;
+// DESKTOP
+body.desktopMode {
+    #conversation-list-columns {
+        width: 500px;
+        width: 40%;
+        float: left;
+    }
+    #conversation-view,
+    #pm_latest {
+        width: calc(100% - 500px);
+        width: 60%;
+        float: left;
+        overflow-x: auto;
+        height: calc(100% - 55px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #pm_main {
+        height: calc(100% - 60px);
+        float: left;
+        width: calc(100% - 190px);
+    }
+    &, #body {
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
-
 // TABLET
-@media (max-width: $tablet-landscape) {
+body.tabletMode {
+    #conversation-list-columns {
+        width: 500px;
+        width: 40%;
+        float: left;
+    }
+    #conversation-view,
+    #pm_latest {
+        width: calc(100% - 500px);
+        width: 60%;
+        float: left;
+        overflow-x: auto;
+        height: calc(100% - 55px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+// MOBILE
+body.mobileMode {
     #pm_main,
     #conversation-list-rows {
         width: 100% !important;
     }
 }
-body.tabletMode {
-    #pm_main,
-    #conversation-list-rows {
-        width: 100% !important;
+
+// ROWS
+body.rows {
+    #conversation-view {
+        width: 100%;
     }
 }

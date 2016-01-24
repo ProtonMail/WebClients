@@ -2,17 +2,21 @@
     <div
     ng-repeat="conversation in conversations track by conversation.ID"
     class="conversation"
-    ng-click="click(conversation)"
     ng-class="{
         selected: conversation.Selected,
         active: active(conversation),
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
         <div class="selection">
-            <input type="checkbox">
+            <input 
+            type="checkbox" 
+            ng-model="conversation.Selected" 
+            ng-click="$event.stopPropagation();select($event, conversation)" />
         </div>
         <div class="row top">
-            <h4 class="subject">{{ conversation.Subject }}</h4>
+            <h4 
+            class="subject" 
+            ng-click="click(conversation)">{{ conversation.Subject }}</h4>
             <span class="meta">
                 <i class="fa fa-paperclip"></i>
                 <a class="fa fa-star-o" href="#"></a>
@@ -20,8 +24,13 @@
             </span>
         </div>
         <div class="row bottom">
-            <span class="senders">
-                <span ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in senders(conversation)" title="{{ contact.Address }}">
+            <span 
+            class="senders"
+            ng-click="click(conversation)">
+                <span 
+                ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" 
+                ng-repeat="contact in senders(conversation)" 
+                title="{{ contact.Address }}">
                     {{ contact.Name || contact.Address }}<span ng-hide="$last">, </span>
                 </span>
             </span>

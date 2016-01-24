@@ -1,12 +1,8 @@
 html.protonmail {
-	&,
-	body,
-	#body {
-	    height: 100%;
-	    overflow: hidden;
-	}
+	height: 100%;
 	body {
 		background: $secondary;
+		height: 100%;
 		&.secure {
 			background: $white;
 		}
@@ -14,12 +10,16 @@ html.protonmail {
 			overflow-y: initial;
 			-webkit-overflow-scrolling: touch;
 		}
+		&.rows,
+		&.columns.tabletMode {
+			#body {
+				height: 100%;
+				#pm_main {
+					height: calc(100% - 60px - 1px);
+				}
+			}
+		}
 	}
-	#pm_main {
-	    height: calc(100% - 60px);
-	    float: left;
-	    width: calc(100% - 190px);
-	}	
 	.clear {
 		clear: both;
 	}

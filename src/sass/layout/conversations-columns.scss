@@ -1,7 +1,7 @@
 #conversation-list-columns {
     .conversation {
         height: 60px;
-        box-shadow: inset 0 1px 0 $border;
+        box-shadow: inset 0 -1px 0 $border;
         .selection {
             float: left;
             height: 30px;
@@ -32,18 +32,28 @@
                 height: 20px;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                width: calc(100% - 150px);
                 float: left;
                 white-space: nowrap;
                 font-size: 1em;
+                cursor: pointer;
+                color: #000;
+            }
+            .meta,
+            .pm_labels {
+                width: 8rem;
+            }
+            h4,
+            .senders, {
+                width: calc(100% - 10rem);
             }
             .meta {
                 display: block;
-                width: 130px;
                 float: right;
                 .fa-star,
-                .fa-star-o {
+                .fa-star-o,
+                .fa-paperclip {
                     text-decoration: none;
+                    width: 1rem;
                 }
                 .fa-star-o {
                     color: $gray-light;
@@ -54,19 +64,20 @@
                 em.time {
                     float: right;
                     text-align: right;
-                    width: 100px;
+                    width: 5rem;
                     font-style: normal;
+                    font-size: .9em;
                 }
             }
             .senders {
-                width: calc(100% - 190px);
                 float: left;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                font-weight: 700;
+                font-size: .9em;
             }
             .pm_labels {
-                width: 160px;
                 display: block;
                 float: right;
                 overflow: hidden;
@@ -80,6 +91,10 @@
         }
         &.read {
             background: $read;
+            h4 {
+                color: $gray;
+                font-weight: normal;
+            }
         }
     }
 }

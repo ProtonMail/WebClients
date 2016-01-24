@@ -2,12 +2,24 @@
     <div class="main">
         <div class="pull-right">
             <span class="pm_buttons">
-                <a ng-click="changeMode('desktop')" href="#" class="fa fa-desktop"></a>
-                <a ng-click="changeMode('tablet')" href="#" class="fa fa-tablet divider"></a>
-                <a ng-click="changeMode('mobile')" href="#" class="fa fa-mobile divider"></a>
+                <a 
+                ng-class="{ 'active': desktopMode }" 
+                ng-click="changeMode('desktop')" 
+                href="#" 
+                class="fa fa-desktop"></a>
+                <a 
+                ng-class="{ 'active': tabletMode }" 
+                ng-click="changeMode('tablet')" 
+                href="#" 
+                class="fa fa-tablet divider"></a>
+                <a 
+                ng-class="{ 'active': mobileMode }" 
+                ng-click="changeMode('mobile')" 
+                href="#" 
+                class="fa fa-mobile divider"></a>
             </span>
             <span class="pm_buttons layout">
-                <a href="#" pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}" ng-click="toggleLayout()"><i class="fa fa-columns" ng-class="{ 'fa-rotate-90': layoutMode === 'columns' }"></i></a>
+                <a href="#" pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}" ng-click="toggleLayout()"><i class="fa fa-columns" ng-class="{ 'fa-rotate-270': layoutMode === 'columns' }"></i></a>
                 <span id="layoutTip" ng-show="showTip"> 
                     <i class="fa fa fa-bullseye animated pulse" pt-tooltip="Click to change layout" ng-show="showTip"></i>
                 </span>

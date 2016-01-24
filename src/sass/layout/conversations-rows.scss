@@ -48,15 +48,28 @@
         }
         .subject {
             width: calc(84% - 19rem);
-            color: #000;
             cursor: pointer;
-            font-size: 1em;
-        }
-        .pm_labels {
-            label {}
+            h4 {
+                line-height: 40px;
+                height: 40px;
+                margin: 0;
+                font-size: 1em;
+                color: #000;
+                display: inline-block;
+            }
+            .pm_labels {
+                float: right;
+                label {
+                    margin-left: 2px;
+                }
+            }
         }
         .fa-paperclip {
             width: 1rem;
+            visibility: hidden;
+            &.show {
+                visibility: visible;
+            }
         }
         .size {
             width: 5.5rem;
@@ -73,8 +86,10 @@
         &.read {
             background: $read;
             .subject {
-                font-weight: normal;
-                color: $gray;
+                h4 {
+                    font-weight: normal;
+                    color: $gray;
+                }
             }
         }
     }

@@ -62,11 +62,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
     };
 
-    // MODE CHANGE
-    $rootScope.desktopMode = false;
-    $rootScope.tabletMode = false;
-    $rootScope.mobileMode = false;
-
+    // MODE CHANGE / NEW / PANDA
     $scope.changeMode = function(mode) {
         $rootScope.desktopMode = false;
         $rootScope.tabletMode = false;
