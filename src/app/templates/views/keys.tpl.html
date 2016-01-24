@@ -8,11 +8,17 @@
 
         <div ng-repeat="address in addresses" class="keyAddresses">
             <header>
-                <span class="pm_badge pull-right success" ng-show="address.Status===1"><i class="fa fa-check"></i> Enabled</span>
-                <span class="pm_badge pull-right" ng-show="address.Status!==1" pt-tooltip="{{ 'THIS_ADDRESS_IS_DISABLED' | translate }}">Disabled</span>
-                <h4>{{ address.Email }}</h4>
+                <span class="pm_badge pull-right success" ng-show="address.Status === 1"><i class="fa fa-check"></i> Enabled</span>
+                <span class="pm_badge pull-right error" ng-hide="address.Status === 1" pt-tooltip="{{ 'THIS_ADDRESS_IS_DISABLED' | translate }}">Disabled</span>
+                <h4>{{ ::address.Email }}</h4>
+                <p>
+                    <button class="pm_button" ng-click="generate(address)" ng-disabled="address.Keys > 10">
+                        <i class="fa fa-key"></i>
+                        {{ 'GENERATE_NEW_KEY_PAIR' | translate }}
+                    </button>
+                </p>
             </header>
-            <table class="pm_table thick bordered">
+            <table class="pm_table thick bordered" ng-show="address.Keys.length > 0">
                 <thead>
                     <tr>
                         <th style="width: 10px;">&nbsp;</th>
@@ -24,14 +30,14 @@
                 <tbody>
                     <tr ng-repeat="key in address.Keys">
                         <td class="text-center">
-                            <i class="fa fa-star-o" ng-show="$first"></i>
+                            <i class="fa fa-arrow-up" ng-show="$first"></i>
                         </td>
                         <td>
                             <code>{{ key.fingerprint }}</code>
                         </td>
                         <td>{{ key.created | utcReadableTime }}</td>
                         <td class="text-right">
-                            <button class="pm_button" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate"><i class="fa fa-star-o"></i> {{ 'MAKE_PRIMARY' | translate }}</button>
+                            <button class="pm_button" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate"><i class="fa fa-arrow-up"></i> {{ 'MAKE_PRIMARY' | translate }}</button>
                             <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari"><i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}</button>
                             <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari"><i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}</button>
                             <button class="pm_button" ng-click="delete(address, key)" ng-hide="address.Keys.length === 1 || isNonPrivate"><i class="fa fa-trash-o"></i> {{ 'DELETE' | translate }}</button>
@@ -39,20 +45,7 @@
                     </tr>
                 </tbody>
             </table>
-            <p class="text-right">
-                <button class="pm_button" ng-click="generate(address)" ng-disabled="address.Keys > 10">
-                    <i class="fa fa-plus"></i>
-                    {{ 'GENERATE_NEW_KEY' | translate }}
-                </button>
-            </p>
             <p>&nbsp;</p>
         </div>
-
-        <hr>
-
-        <legend>{{ 'CUSTOM_DOMAINS' | translate }}</legend>
-
-        <legend>{{ 'ADDRESSES' | translate }}</legend>
-
     </div>
 </div>
