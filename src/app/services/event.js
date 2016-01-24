@@ -135,22 +135,24 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageNotices: function(notices) {
 				if(angular.isDefined(notices) && notices.length > 0) {
-					for(var i = 0; i < notices.length; i++) {
+					// 2 week expiration
+					var now = new Date();
+					var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 14);
+					var onClose = function(cookie_name) {
+						$cookies.put(cookie_name, 'true', { expires: expires });
+					};
+
+					for (var i = 0; i < notices.length; i++) {
 						var message = notices[i];
 						var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
 
-						if ( !$cookies.get( cookie_name ) ) {
+						if (!$cookies.get(cookie_name)) {
 							notify({
 								message: message,
 							    templateUrl: 'templates/notifications/cross.tpl.html',
-								duration: '0'
+								duration: '0',
+								onClose: onClose(cookie_name)
 							});
-
-							// 2 week expiration
-							var now = new Date();
-							var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate()+14);
-
-							$cookies.put(cookie_name, 'true', { expires: expires });
 						}
 					}
 				}
