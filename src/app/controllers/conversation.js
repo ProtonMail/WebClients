@@ -61,9 +61,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
                 var messages = cache.queryMessagesCached($scope.conversation.ID);
 
-                // Sort by time
-                messages = _.sortBy(messages, 'Time');
-
                 // Remove trashed message
                 if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
@@ -73,6 +70,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
                 }
+
+                // Sort by time
+                messages = _.sortBy(messages, 'Time');
 
                 var latest = _.last(messages);
 
@@ -151,9 +151,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         }
 
         if(angular.isDefined(messages)) {
-            // Sort by time
-            messages = _.sortBy(messages, 'Time');
-
             // Remove trashed message
             if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                 messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
@@ -163,6 +160,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
                 messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
             }
+
+            // Sort by time
+            messages = _.sortBy(messages, 'Time');
 
             _.each(messages, function(message) {
                 var current = _.findWhere($scope.messages, {ID: message.ID});
