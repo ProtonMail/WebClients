@@ -1,0 +1,89 @@
+<form method="post" class="searchForm" ng-submit="searchAdvanced()" ng-if="!isContactsView()" ng-class="{ 'adv': advancedSearch }" adv-search>
+    <fieldset>
+        <button  type="button" class="advanced" ng-click="openSearchModal();" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
+            <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
+        </button>
+        <input type="search" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" ng-enter="searchMessages()" class="query" />
+        <button type="submit" ng-show="advancedSearch !== true">
+            <i class="fa fa-search"></i>
+        </button>
+        <button type="button" id="closeAdvSearch" ng-show="advancedSearch === true" ng-click="closeSearchModal()">
+            <i class="fa fa-times"></i>
+        </button>
+    </fieldset>
+    <div class="pm_form pm_grid" id="advancedSearchDropdown" ng-show="advancedSearch === true">
+        <div class="wrap">
+            <div class="row">
+                <div class="col-1-2">
+                    <label for="search_keywords">{{ 'KEYWORDS' | translate }}</label>
+                    <input id="search_keywords" type="text" placeholder="{{ 'KEYWORDS' | translate }}" ng-model="params.searchMessageInput" />
+                </div>
+                <div class="col-1-2">
+                    <label for="search_folder">{{ 'LOCATION' | translate }}</label>
+                    <span class="pm_select">
+                        <select id="search_folder">
+                            <optgroup label="Default">
+                                <option value="-1" selected="selected">{{ 'ALL' | translate }}</option>
+                            </optgroup>
+                            <optgroup label="{{ 'FOLDERS' | translate }}">
+                                <option ng-repeat="(key, value) in folders" value="{{ value }}">{{ key | capitalize }}</option>
+                            </optgroup>
+                            <optgroup label="{{ 'LABELS' | translate }}">
+                                <option ng-repeat="label in labels" value="{{ label.ID }}">{{ label.Name }}</option>
+                            </optgroup>
+                        </select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="col-1-2">
+                    <label for="search_sender">{{ 'SENDER' | translate }}</label>
+                    <input type="text" id="search_sender" ng-model="ctrl.from" placeholder="{{ 'FROM' | translate }}">
+                </div>
+                <div class="col-1-2">
+                    <label for="search_recipient">{{ 'RECIPIENT' | translate }}</label>
+                    <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="{{ 'TO' | translate }}">
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="col-1-2">
+                    <label for="search_start">{{ 'START_DATE' | translate }}</label>
+                    <span class="input-icon">
+                        <em class="fa fa-calendar"></em>
+                        <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.start" id="search_start" on-select="setMin()" class="ng-isolate-scope">
+                    </span>
+                </div>
+                <div class="col-1-2">
+                    <label for="search_end">{{ 'END_DATE' | translate }}</label>
+                    <span class="input-icon">
+                        <em class="fa fa-calendar"></em>
+                        <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.end" id="search_end" on-select="setMax()" class="ng-isolate-scope">
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1-2">
+                    <label>{{ 'ATTACHMENTS' | translate }}</label>
+                    <div class="radio">
+                        <label for="attachments_all">
+                            <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2"> {{ 'ALL' | translate }}
+                        </label>
+                        <label for="attachments_yes">
+                            <input id="attachments_yes" type="radio" ng-model="ctrl.attachments" value="1"> {{ 'YES' | translate }}
+                        </label>
+                        <label for="attachments_no">
+                            <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0"> {{ 'NO' | translate }}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-1-2">
+                    <label>&nbsp;</label>
+                    <button type="submit" class="pm_button primary pull-right">
+                        <i class="fa fa-search"></i> {{ 'SEARCH' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

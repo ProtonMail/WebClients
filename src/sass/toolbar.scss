@@ -25,6 +25,10 @@
     box-sizing: border-box;
     padding: 0 10px;
     border-bottom: 1px solid $border;
+    .pm_buttons a,
+    .pm_button {
+        padding: 0 20px;
+    }
     .pm_checkbox {
         float: left;
         display: block;

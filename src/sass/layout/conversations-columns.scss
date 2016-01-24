@@ -45,6 +45,7 @@
             h4,
             .senders, {
                 width: calc(100% - 10rem);
+                cursor: pointer;
             }
             .meta {
                 display: block;

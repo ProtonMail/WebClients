@@ -1,0 +1,20 @@
+<header id="pm_header-tablet" class="pm_opensans" ng-controller="HeaderController">
+    <a href="#" class="logoMobile" ng-click="sidebarToggle();">
+        <i class="fa fa-bars"></i>
+    </a>
+    <a href="#" class="compose" ng-click="compose();">
+        <i class="fa fa-pencil"></i> <span>Compose</span>
+    </a>
+    <a href="#" class="searchBtn" ng-click="openSearchModal();">
+        <i class="fa fa-search"></i>
+    </a>
+    <ng-include src="'templates/partials/searchForm.tpl.html'"></ng-include>
+    <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
+        <fieldset>
+            <input type="search" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
+            <button type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </fieldset>
+    </form>
+</header>
