@@ -30,6 +30,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.showNonTrashed = false;
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
+    $scope.inTrash = $state.is('secured.trash.view');
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
@@ -172,7 +173,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     $scope.messages.push(message);
 
                     // Display notification
-                    if(message.Type === 0) {
+                    if(message.Type === 0 && $scope.showTrashed === false && $scope.showNonTrashed === false) {
                         notify({
                             message: $translate.instant('NEW_MESSAGE'),
                             classes: 'notification-success'
