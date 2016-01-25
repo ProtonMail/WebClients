@@ -162,7 +162,18 @@ angular.module('proton', [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
-.run(function(CONSTANTS) {
+.run(function(
+    $document,
+    $rootScope,
+    $state,
+    $timeout,
+    $window,
+    authentication,
+    CONSTANTS,
+    networkActivityTracker,
+    notify,
+    tools
+) {
     // This function clears junk from session storage. Should not be needed forever
     try {
         var whitelist = [
@@ -193,19 +204,7 @@ angular.module('proton', [
     catch(err) {
         // Do nothing, session storage support checked for elsewhere
     }
-})
 
-.run(function(
-    $document,
-    $rootScope,
-    $state,
-    $timeout,
-    $window,
-    authentication,
-    networkActivityTracker,
-    notify,
-    tools
-) {
     angular.element($window).bind('load', function() {
         if (window.location.hash==='#spin') {
             $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
@@ -370,6 +369,10 @@ angular.module('proton', [
     $httpProvider.defaults.headers.get.Pragma = 'no-cache';
 })
 .run(function($rootScope, $location, $state, authentication, $log, $timeout, networkActivityTracker) {
+    // Console messages
+    $log.info('Find a security bug? security@protonmail.com');
+    $log.info('We\'re hiring! https://protonmail.com/pages/join-us.html');
+
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 
         networkActivityTracker.clear();
@@ -435,13 +438,7 @@ angular.module('proton', [
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
     });
-})
 
-//
-// Rejection manager
-//
-
-.run(function($rootScope, $state, $log) {
     $rootScope.$on("$routeChangeError", function(event, current, previous, rejection) {
         $log.error(rejection);
         $state.go("support.message", {
@@ -452,15 +449,6 @@ angular.module('proton', [
             }
         });
     });
-})
-
-//
-// Console messages
-//
-
-.run(function($log) {
-    $log.info('Find a security bug? security@protonmail.com');
-    $log.info('We\'re hiring! https://protonmail.com/pages/join-us.html');
 })
 
 //
