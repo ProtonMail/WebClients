@@ -94,3 +94,18 @@
         }
     }
 }
+
+// TABLET
+body.tabletMode {
+    #conversation-list-rows {
+        .conversation {
+            height: 50px;
+            line-height: 50px;
+            & > *,
+            .subject h4 {
+                height: 50px;
+                line-height: 50px;
+            }
+        }
+    }
+}

@@ -317,88 +317,89 @@ section.sidebar {
     }
 }
 
-@media (max-width: $tablet-landscape) {
-    body.secure #pm_background {
-        position: fixed;
-        z-index: 8;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        background: rgba(0,0,0,.4);
-        width: 100%;
-        display: none;
-        &.tablet {
-            display: block;
-        }
-    }
-    body.secure section.sidebar {
-        display: none;
-    }
-    body section#pm_sidebarMobile {
-        position: fixed;
-        left: -$sidebarMobWidth;
-        top: 0;
-        bottom: 0;
-        z-index: 99;
-        opacity: 0;
-        display: block;
-        background: #fff;
-        box-shadow: 0 1px 2px rgba(0,0,0,.25);
-        transition: left .5s linear, opacity .25s;
-        overflow: auto;
-        &.show {
-            left: 0;
-            opacity: 1;
-            transition: left .15s ease-out, opacity .15s;
-        }
-        .userDisplay {
-            float: left;
-            clear: both;
-            height: 3em;
-            margin: 1rem 0;
-            font-size: 11px;
-            line-height: 1.5em;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            em {
-                color: #7a7982;
-                font-style: normal;
-                float: left;
-                clear: both;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                width: ($sidebarMobWidth - 40);
-            }
-            strong {
-                color: #fff;
-                float: left;
-                clear: both;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                width: ($sidebarMobWidth - 40);
-            }
-        }
-        .menu {
-            clear: both;
-        }
-    }
-}
 
-@media (max-width: $mobile-landscape) {
-    body.secure section.sidebar,
-    body.secure #pm_background {
-        // display: none !important;
-    }
-    body.secure section#pm_sidebarMobile {
-        height: 100%;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        div.labels {
-            margin: 0 -25px 30px -25px !important;
-        }
-    }
-}
+// @media (max-width: $tablet-landscape) {
+//     body.secure #pm_background {
+//         position: fixed;
+//         z-index: 8;
+//         left: 0;
+//         top: 0;
+//         bottom: 0;
+//         right: 0;
+//         background: rgba(0,0,0,.4);
+//         width: 100%;
+//         display: none;
+//         &.tablet {
+//             display: block;
+//         }
+//     }
+//     body.secure section.sidebar {
+//         display: none;
+//     }
+//     body section#pm_sidebarMobile {
+//         position: fixed;
+//         left: -$sidebarMobWidth;
+//         top: 0;
+//         bottom: 0;
+//         z-index: 99;
+//         opacity: 0;
+//         display: block;
+//         background: #fff;
+//         box-shadow: 0 1px 2px rgba(0,0,0,.25);
+//         transition: left .5s linear, opacity .25s;
+//         overflow: auto;
+//         &.show {
+//             left: 0;
+//             opacity: 1;
+//             transition: left .15s ease-out, opacity .15s;
+//         }
+//         .userDisplay {
+//             float: left;
+//             clear: both;
+//             height: 3em;
+//             margin: 1rem 0;
+//             font-size: 11px;
+//             line-height: 1.5em;
+//             white-space: nowrap;
+//             overflow: hidden;
+//             text-overflow: ellipsis;
+//             em {
+//                 color: #7a7982;
+//                 font-style: normal;
+//                 float: left;
+//                 clear: both;
+//                 white-space: nowrap;
+//                 overflow: hidden;
+//                 text-overflow: ellipsis;
+//                 width: ($sidebarMobWidth - 40);
+//             }
+//             strong {
+//                 color: #fff;
+//                 float: left;
+//                 clear: both;
+//                 white-space: nowrap;
+//                 overflow: hidden;
+//                 text-overflow: ellipsis;
+//                 width: ($sidebarMobWidth - 40);
+//             }
+//         }
+//         .menu {
+//             clear: both;
+//         }
+//     }
+// }
+
+// @media (max-width: $mobile-landscape) {
+//     body.secure section.sidebar,
+//     body.secure #pm_background {
+//         // display: none !important;
+//     }
+//     body.secure section#pm_sidebarMobile {
+//         height: 100%;
+//         overflow-y: auto;
+//         -webkit-overflow-scrolling: touch;
+//         div.labels {
+//             margin: 0 -25px 30px -25px !important;
+//         }
+//     }
+// }

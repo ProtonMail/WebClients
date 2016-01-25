@@ -148,13 +148,29 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.mobileResponsive = function() {
-        if ($('body').outerWidth() < 1025) {
-            $rootScope.layoutMode = 'rows';
+        var bodyWidth = $('body').outerWidth();
+        if ( bodyWidth > CONSTANTS.DESKTOP_BREAKPOINT ) {
+            $rootScope.desktopMode = true;
+            $rootScope.tabletMode = false;
+            $rootScope.mobileMode = false;
+        }
+        else if ( bodyWidth > CONSTANTS.TABLET_BREAKPOINT ) {
+            $rootScope.desktopMode = false;
+            $rootScope.tabletMode = true;
+            $rootScope.mobileMode = false;
         }
         else {
-            var layout = (authentication.user.ViewLayout === 0) ? 'columns' : 'rows';
-            $rootScope.layoutMode = layout;
+            $rootScope.desktopMode = false;
+            $rootScope.tabletMode = false;
+            $rootScope.mobileMode = true;
         }
+        // if ($('body').outerWidth() < 1025) {
+        //     $rootScope.layoutMode = 'rows';
+        // }
+        // else {
+        //     var layout = (authentication.user.ViewLayout === 0) ? 'columns' : 'rows';
+        //     $rootScope.layoutMode = layout;
+        // }
     };
 
     $scope.startWatchingEvent = function() {

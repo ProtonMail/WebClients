@@ -1,8 +1,54 @@
-.pm_checkbox {
-	input[type="checkbox"] {
-		margin: 13px 10px 0 0;
+// DESKTOP
+body.desktopMode {
+	.pm_checkbox {
+		input[type="checkbox"] {
+			margin: 13px 10px 0 0;
+		}
+		em {
+			display: none;
+		}
 	}
-	em {
-		display: none;
+}
+
+// TABLET
+body.tabletMode {
+	#body {
+		#pm_main{
+			input[type="checkbox"] {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				width: 28px;
+				min-width: 28px;
+				height: 28px;
+				min-height: 28px;
+				border: 1px solid $border;
+				border-radius: 2px;
+				cursor: pointer;
+				top: 10px;
+				&:checked:before {
+					font-family: 'FontAwesome';
+					content: "\f00c";
+					height: 28px;
+					line-height: 28px;
+					width: 28px;
+					text-align: center;
+					display: block;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+// MOBILE
+body.mobileMode {
+	.pm_checkbox {
+		input[type="checkbox"] {
+			margin: 13px 10px 0 0;
+		}
+		em {
+			display: none;
+		}
 	}
 }
