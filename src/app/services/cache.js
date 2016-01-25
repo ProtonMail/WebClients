@@ -406,7 +406,7 @@ angular.module("proton.cache", [])
         var i = 0;
 
         for (i = 0; i < conversationsCached.length; i++) {
-            var conversation = sCached[i];
+            var conversation = conversationsCached[i];
 
             if (angular.isDefined(conversation) && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc)) {
                 needToBeRemoved.push(i);
