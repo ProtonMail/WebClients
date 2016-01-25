@@ -11,6 +11,7 @@ ng-if="mobileMode  === true"
 src="'templates/partials/toolbar-mobile.tpl.html'"></ng-include>
 
 
+<div id="wrapper">
 
 <ng-include 
 ng-if="layoutMode==='columns'" 
@@ -33,3 +34,5 @@ src="'templates/partials/conversation-placeholder.tpl.html'"
 id="pm_view" 
 class="columns" 
 ng-if="!idDefined() && layoutMode==='columns'"></div>
+
+</div>

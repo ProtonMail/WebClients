@@ -1,5 +1,15 @@
 <nav id="pm_toolbar-desktop">
 
+    <span 
+    class="pm_buttons back" 
+    ng-if="idDefined() &&  layoutMode === 'rows'">
+        <a 
+        ng-click="back()" 
+        pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">
+            <i class="fa fa-long-arrow-left"></i>
+        </a>
+    </span>
+    
     <label 
     class="pm_checkbox" 
     ng-if="!idDefined() || layoutMode === 'columns'">
@@ -83,16 +93,6 @@
             <i class="fa fa-chevron-right"></i>
         </a>
     </span> 
-
-    <span 
-    class="pm_buttons back" 
-    ng-if="idDefined() &&  layoutMode === 'rows'">
-        <a 
-        ng-click="back()" 
-        pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">
-            <i class="fa fa-long-arrow-left"></i>
-        </a>
-    </span>
 
     <span 
     class="pm_buttons" 

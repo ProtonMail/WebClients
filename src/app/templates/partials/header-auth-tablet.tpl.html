@@ -5,9 +5,6 @@
     <a href="#" class="compose" ng-click="compose();">
         <i class="fa fa-pencil"></i> <span>Compose</span>
     </a>
-    <a href="#" class="searchBtn" ng-click="openSearchModal();">
-        <i class="fa fa-search"></i>
-    </a>
     <ng-include src="'templates/partials/searchForm.tpl.html'"></ng-include>
     <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
         <fieldset>

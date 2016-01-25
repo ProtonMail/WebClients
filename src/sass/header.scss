@@ -202,22 +202,27 @@ header#pm_header-desktop {
 }
 
 header#pm_header-tablet { 
+	height: 70px;
+	line-height: 70px;
+	background: $alt;
+	font-size: 14px;
+	position: relative;
+	z-index: 2;	
 	.compose {
 		display: block;
-		height: 35px;
-        line-height: 35px;
+		height: 50px;
+        line-height: 50px;
         border-radius: 2px;
         background-color: $primary;
         text-align: center;
         color: $white;
         text-transform: uppercase;
         text-decoration: none;
-        margin-bottom: 15px;
         font-size: 12px;
         padding-right: .5rem;
         width: 135px;
         float: right;
-        margin: 13px 10px;
+        margin: 10px;
         &:hover {
             background-color: #7e82b4;
         }
@@ -231,8 +236,30 @@ header#pm_header-tablet {
 		position: relative;
 		top: 13px;
 		max-width: 32%;
-		input.query {
-			width: 50%;
+		top: 10px;
+		height: 50px;
+		fieldset {
+			height: 50px;
+			line-height: 50px;
+			input.query {
+				width: 50%;
+			}
+			button .fa,
+			button[type="submit"],
+			button[type="button"],
+			input.query {
+				height: 50px;
+				line-height: 50px;
+			}
+			button[type="submit"],
+			button[type="button"],
+			button .fa {
+				width: 50px;
+			}
+			input.query {
+				left: 50px;
+				width: 75%;
+			}
 		}
 	}
 	ul.navigation {

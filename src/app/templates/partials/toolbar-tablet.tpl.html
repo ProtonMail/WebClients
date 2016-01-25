@@ -13,6 +13,16 @@
     </label>
 
     <span 
+    class="pm_buttons back" 
+    ng-if="idDefined() &&  layoutMode === 'rows'">
+        <a 
+        ng-click="back()" 
+        pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">
+            <i class="fa fa-long-arrow-left"></i>
+        </a>
+    </span>
+
+    <span 
     class="pm_buttons" 
     ng-class="{ disabled: numberElementSelected === 0 }">
         <a 
@@ -66,32 +76,6 @@
         ng-show="{{ 'secured.spam.**' | includedByState }}" 
         ng-class="{ disabled: numberElementSelected === 0 }" 
         class="fa fa-check divider"></a>
-    </span>
-    
-    <span 
-    class="pm_buttons" 
-    ng-show="idDefined() && rowMode === true">
-        <a 
-        ng-click="nextConversation(conversation)" 
-        pt-tooltip="{{ 'PREVIOUS' | translate }}">
-            <i class="fa fa-chevron-left"></i>
-        </a>
-        <a 
-        ng-click="previousConversation(conversation)" 
-        class="divider" 
-        pt-tooltip="{{ 'NEXT' | translate }}">
-            <i class="fa fa-chevron-right"></i>
-        </a>
-    </span> 
-
-    <span 
-    class="pm_buttons back" 
-    ng-if="idDefined() &&  layoutMode === 'rows'">
-        <a 
-        ng-click="back()" 
-        pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">
-            <i class="fa fa-long-arrow-left"></i>
-        </a>
     </span>
 
     <span 
@@ -250,6 +234,22 @@
         total-items="conversationCount()" 
         items-per-page="CONSTANTS.ELEMENTS_PER_PAGE" 
         change="selectPage" />
+
+        <span 
+        class="pm_buttons" 
+        ng-show="idDefined() && rowMode === true">
+            <a 
+            ng-click="nextConversation(conversation)" 
+            pt-tooltip="{{ 'PREVIOUS' | translate }}">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            <a 
+            ng-click="previousConversation(conversation)" 
+            class="divider" 
+            pt-tooltip="{{ 'NEXT' | translate }}">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </span>         
 
     </div>
 

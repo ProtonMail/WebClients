@@ -1,10 +1,10 @@
-#conversation-list-columns,
-#conversation-list-rows,
-#pm_sidebar .sidebar {
-    height: calc(100% - 55px); 
-    overflow-y: auto;
-    overflow-x: hidden; 
-}
+// #conversation-list-columns,
+// #conversation-list-rows,
+// #pm_sidebar .sidebar {
+//     height: calc(100% - 55px); 
+//     overflow-y: auto;
+//     overflow-x: hidden; 
+// }
 
 #conversation-list-rows {
     clear: both;
@@ -16,14 +16,19 @@ body.desktopMode {
         width: 500px;
         width: 40%;
         float: left;
+        height: 100%;
     }
     #conversation-view,
     #pm_latest {
         width: calc(100% - 500px);
         width: 60%;
         float: left;
-        overflow-x: auto;
-        height: calc(100% - 55px);
+        height: 100%;
+    }
+    #conversation-list-columns,
+    #conversation-list-rows,
+    #conversation-view,
+    #pm_latest {
         overflow-y: auto;
         overflow-x: hidden;
     }
@@ -31,6 +36,9 @@ body.desktopMode {
         height: calc(100% - 60px);
         float: left;
         width: calc(100% - 190px);
+    }
+    #wrapper {
+        height: calc(100% - 55px);
     }
     &, #body {
         height: 100%;
@@ -40,6 +48,20 @@ body.desktopMode {
 
 // TABLET
 body.tabletMode {
+    &, #body {
+        height: 100%;
+        overflow: hidden;
+    }
+    #pm_main {
+        float: left;
+        width: 100%;
+        height: calc(100% - 60px);
+    }
+    #wrapper {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
     #conversation-list-columns {
         width: 500px;
         width: 40%;
@@ -50,10 +72,17 @@ body.tabletMode {
         width: calc(100% - 500px);
         width: 60%;
         float: left;
-        overflow-x: auto;
-        height: calc(100% - 55px);
+    }
+    #wrapper {
+        height: calc(100% - 79px);
+    }
+    #conversation-list-columns,
+    #conversation-list-rows,
+    #conversation-view,
+    #pm_latest {
         overflow-y: auto;
         overflow-x: hidden;
+        height: 100%;
     }
 }
 

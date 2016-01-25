@@ -3,7 +3,7 @@
 
 var _ = require("lodash"),
 util = require("util");
-var appVersion = '3.0.1';
+var appVersion = '3.0.2';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
@@ -14,7 +14,7 @@ var API_TARGETS = {
     prod: "https://protonmail.com/api",
     dev: "https://dev.protonmail.com/api",
     v2: "https://v2.protonmail.com/api",
-    build: "/api"
+    build: "/api" 
 };
 
 module.exports = function(grunt) {
