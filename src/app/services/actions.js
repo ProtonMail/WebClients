@@ -825,9 +825,6 @@ angular.module('proton.actions', [])
             var conversation = cache.getConversationCached(message.ConversationID);
             var promise;
 
-            // Store ID of message discarded
-            $rootScope.discarded.push(message.ID);
-
             // Generate message event to delete the message
             events.push({Action: 0, ID: message.ID});
 

@@ -8,14 +8,14 @@
         <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
         <span ng-bind="conversation.Subject"></span>
     </h1>
-    <p ng-show="nonTrashed()" ng-if="inTrash === true">
+    <p ng-show="nonTrashed() && inTrash === true">
         This conversation contains non trashed messages.
         <a href="#" ng-click="toggleNonTrashed()">
             <span ng-show="showNonTrashed === true">Hide non trashed messages</span>
             <span ng-hide="showNonTrashed === true">Show non trashed messages</span>
         </a>
     </p>
-    <p ng-show="trashed()" ng-if="inTrash === false">
+    <p ng-show="trashed() && inTrash === false">
         This conversation contains trashed messages.
         <a href="#" ng-click="toggleTrashed()">
             <span ng-show="showTrashed === true">Hide trashed messages</span>

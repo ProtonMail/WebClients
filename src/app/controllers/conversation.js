@@ -150,7 +150,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             return $scope.back();
         }
 
-        if(angular.isDefined(messages)) {
+        if(angular.isArray(messages) && messages.length > 0) {
+            var toAdd = [];
+            var toRemove = [];
+            var index, message, found, ref;
+            var find = function(messages, ID) {
+                return _.find(messages, function(m) { return m.ID === ID; });
+            };
+
             // Remove trashed message
             if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                 messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
@@ -164,36 +171,42 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             // Sort by time
             messages = _.sortBy(messages, 'Time');
 
-            _.each(messages, function(message, index) {
-                var current = _.findWhere($scope.messages, {ID: message.ID});
-                var discard = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
+            for (index = 0; index < messages.length; index++) {
+                found = find($scope.messages, messages[index].ID);
 
-                if(angular.isUndefined(current) && discard === -1) {
-                    // Add message
-                    $scope.messages.splice(index, 0, message);
-
-                    // Display notification
-                    if(message.Type === 0 && $scope.showTrashed === false && $scope.showNonTrashed === false) {
-                        notify({
-                            message: $translate.instant('NEW_MESSAGE'),
-                            classes: 'notification-success'
-                        });
-                    }
+                if (angular.isUndefined(found)) {
+                    toAdd.push({index: index, message: messages[index]});
                 }
-            });
+            }
 
-            _.each($scope.messages, function(message) {
-                var current = _.findWhere(messages, {ID: message.ID});
+            for (index = 0; index < toAdd.length; index++) {
+                ref = toAdd[index];
 
-                if(angular.isUndefined(current)) {
-                    var index = $scope.messages.indexOf(current);
-                    // Delete message
-                    $scope.messages.splice(index, 1);
+                // Insert new message
+                $scope.messages.splice(ref.index, 0, ref.message);
+
+                // Display notification
+                if(ref.message.Type === 0 && $scope.showTrashed === false && $scope.showNonTrashed === false) {
+                    notify({
+                        message: $translate.instant('NEW_MESSAGE'),
+                        classes: 'notification-success'
+                    });
                 }
-            });
+            }
 
-            if($scope.messages.length === 0) {
-                $scope.back();
+            for (index = 0; index < $scope.messages.length; index++) {
+                found = find(messages, $scope.messages[index].ID);
+
+                if (angular.isUndefined(found)) {
+                    toRemove.push({index: index});
+                }
+            }
+
+            for (index = toRemove.length - 1; index >= 0; index--) {
+                ref = toRemove[index];
+
+                // Remove message deleted
+                $scope.messages.splice(ref.index, 1);
             }
         } else {
             $scope.back();
@@ -213,7 +226,15 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.nonTrashed = function() {
-        return $scope.conversation.LabelIDs !== [CONSTANTS.MAILBOX_IDENTIFIERS.trash];
+        var result = false;
+
+        _.each($scope.conversation.LabelIDs, function(labelID) {
+            if (labelID.length === 1 && labelID !== CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
+                result = true;
+            }
+        });
+
+        return result;
     };
 
     /**
