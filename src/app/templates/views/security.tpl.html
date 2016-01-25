@@ -56,7 +56,7 @@
                                         <td scope="row">
                                             <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle text-red"></i> {{ 'LOGIN_FAILED' | translate }}</span>
                                             <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i> {{ 'LOGIN_SUCCESS' | translate }}</span>
-                                            <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i> {{ 'LOGOUT' | translate }}</span>
+                                            <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i> {{ 'LOG_OUT' | translate }}</span>
                                         </td>
                                         <td>
                                             {{ log.Time * 1000 | date : 'medium' }}
