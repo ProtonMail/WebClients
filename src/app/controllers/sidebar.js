@@ -25,6 +25,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     // Variables
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
+    var timeoutRefresh;
     $scope.labels = authentication.user.Labels;
     $scope.appVersion = CONFIG.app_version;
     $scope.dateVersion = CONFIG.date_version;
@@ -96,14 +97,23 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
         // Start to spin icon on the view
         $scope.spinMe = true;
-        // Get the latest event
-        eventManager.call().then(function() {
-            $scope.spinMe = false;
-            // Clear cache for the current mailbox
-            cache.empty(mailbox);
-        }, function() {
-            $scope.spinMe = false;
-        });
+
+        // Cancel
+        if (angular.isDefined(timeoutRefresh)) {
+            $timeout.cancel(timeoutRefresh);
+        }
+
+        // Debounce
+        timeoutRefresh = $timeout(function() {
+            // Get the latest event
+            eventManager.call().then(function() {
+                $scope.spinMe = false;
+                // Clear cache for the current mailbox
+                cache.empty(mailbox);
+            }, function() {
+                $scope.spinMe = false;
+            });
+        }, 500);
     };
 
     /**
