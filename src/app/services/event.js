@@ -213,7 +213,11 @@ angular.module("proton.event", ["proton.constants"])
 				}
 			},
 			call: function() {
-				eventModel.interval();
+				return eventModel.get().then(function (result) {
+					if (result.data && result.data.Code === 1000) {
+						eventModel.manage(result.data);
+					}
+				});
 			},
 			stop: function () {
 				if (angular.isDefined(eventModel.promiseCancel)) {

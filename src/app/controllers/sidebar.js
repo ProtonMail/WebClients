@@ -89,29 +89,21 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     /**
-     * Animates the inbox refresh icon
-     */
-    $scope.spinIcon = function() {
-        // Start to spin icon on the view
-        $scope.spinMe = true;
-        $timeout(function() {
-            // Stop spin icon
-            $scope.spinMe = false;
-        }, 510);
-    };
-
-    /**
      * Send request to get the last event, empty the cache for the current mailbox and then refresh the content automatically
      */
     $scope.lastEvent = function() {
         var mailbox = tools.currentMailbox();
 
-        // Spin icon
-        $scope.spinIcon();
+        // Start to spin icon on the view
+        $scope.spinMe = true;
         // Get the latest event
-        eventManager.call();
-        // Clear cache for the current mailbox
-        cache.empty(mailbox);
+        eventManager.call().then(function() {
+            $scope.spinMe = false;
+            // Clear cache for the current mailbox
+            cache.empty(mailbox);
+        }, function() {
+            $scope.spinMe = false;
+        });
     };
 
     /**

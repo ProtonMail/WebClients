@@ -895,7 +895,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
                         promise.then(function(result) {
                             // Call to empty cache conversation
-                            action.empty(mailbox);
+                            cache.empty(mailbox);
                             // Close modal
                             confirmModal.deactivate();
                             // Notify user
