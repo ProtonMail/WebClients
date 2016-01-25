@@ -60,6 +60,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $rootScope.$watch('layoutMode', function() {
             $scope.toolbarOffset();
         });
+
+        $timeout( $scope.mobileResponsive, 240);
     };
 
     // MODE CHANGE / NEW / PANDA
@@ -146,7 +148,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.mobileResponsive = function() {
-        if ($window.outerWidth < 1025) {
+        if ($('body').outerWidth() < 1025) {
             $rootScope.layoutMode = 'rows';
         }
         else {
