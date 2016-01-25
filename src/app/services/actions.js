@@ -113,44 +113,47 @@ angular.module('proton.actions', [])
             _.each(ids, function(conversationID) {
                 var conversation = cache.getConversationCached(conversationID);
                 var messages = cache.queryMessagesCached(conversationID);
-                var toApply = _.map(_.filter(labels, function(label) {
-                    return label.Selected === true && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) === -1;
-                }), function(label) {
-                    return label.ID;
-                }) || [];
-                var toRemove = _.map(_.filter(labels, function(label) {
-                    return label.Selected === false && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) !== -1;
-                }), function(label) {
-                    return label.ID;
-                }) || [];
 
-                if(alsoArchive === true) {
-                    toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                    toRemove.push(current);
-                }
+                if (angular.isDefined(conversation) && angular.isArray(messages)) {
+                    var toApply = _.map(_.filter(labels, function(label) {
+                        return label.Selected === true && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) === -1;
+                    }), function(label) {
+                        return label.ID;
+                    }) || [];
+                    var toRemove = _.map(_.filter(labels, function(label) {
+                        return label.Selected === false && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) !== -1;
+                    }), function(label) {
+                        return label.ID;
+                    }) || [];
 
-                _.each(messages, function(message) {
-                    events.push({Action: 3, ID: message.ID, Message: {
-                        ID: message.ID,
+                    if(alsoArchive === true) {
+                        toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                        toRemove.push(current);
+                    }
+
+                    _.each(messages, function(message) {
+                        events.push({Action: 3, ID: message.ID, Message: {
+                            ID: message.ID,
+                            LabelIDsAdded: toApply,
+                            LabelIDsRemoved: toRemove
+                        }});
+                    });
+
+                    events.push({Action: 3, ID: conversationID, Conversation: {
+                        ID: conversationID,
+                        Selected: false,
                         LabelIDsAdded: toApply,
                         LabelIDsRemoved: toRemove
                     }});
-                });
 
-                events.push({Action: 3, ID: conversationID, Conversation: {
-                    ID: conversationID,
-                    Selected: false,
-                    LabelIDsAdded: toApply,
-                    LabelIDsRemoved: toRemove
-                }});
+                    _.each(toApply, function(labelID) {
+                        promises.push(Conversation.labels(labelID, ADD, ids));
+                    });
 
-                _.each(toApply, function(labelID) {
-                    promises.push(Conversation.labels(labelID, ADD, ids));
-                });
-
-                _.each(toRemove, function(labelID) {
-                    promises.push(Conversation.labels(labelID, REMOVE, ids));
-                });
+                    _.each(toRemove, function(labelID) {
+                        promises.push(Conversation.labels(labelID, REMOVE, ids));
+                    });
+                }
             });
 
             promise = $q.all(promises);
@@ -520,7 +523,6 @@ angular.module('proton.actions', [])
             };
 
             _.each(messages, function(message) {
-
                 var toApply = _.map(_.filter(labels, function(label) {
                     return label.Selected === true && angular.isArray(message.LabelIDs) && message.LabelIDs.indexOf(label.ID) === -1;
                 }), function(label) {

@@ -179,11 +179,13 @@ angular.module("proton.cache", [])
             var conversation = api.getConversationCached(conversationID);
             var messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
 
-            if (angular.isDefined(conversation) && messages.length > 0) {
+            if (angular.isDefined(conversation) && angular.isArray(conversation.LabelIDs) && messages.length > 0) {
                 _.each(conversation.LabelIDs, function(labelID) {
                     // Get the most recent message for a specific label
                     var message = _.chain(messages)
-                        .filter(function(message) { return message.LabelIDs.indexOf(labelID) !== -1; })
+                        .filter(function(message) {
+                            return angular.isArray(message.LabelIDs) && message.LabelIDs.indexOf(labelID) !== -1;
+                        })
                         .first()
                         .value();
 
