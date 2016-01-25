@@ -124,15 +124,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     };
 
-    /**
-     * Back to conversation / message list
-     */
-    $scope.back = function() {
-        $state.go("secured." + $scope.mailbox, {
-            id: null // remove ID
-        });
-    };
-
     $scope.refreshConversation = function() {
         var conversation = cache.getConversationCached($stateParams.id);
         var messages = cache.queryMessagesCached($stateParams.id);

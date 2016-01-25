@@ -562,8 +562,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.back = function() {
         $state.go("secured." + $scope.mailbox, {
-            id: null, // remove ID
-            page: null // remove page (= 0)
+            id: null // remove ID
         });
     };
 
