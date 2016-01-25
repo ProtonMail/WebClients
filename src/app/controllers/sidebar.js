@@ -10,6 +10,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $timeout,
     $translate,
     authentication,
+    cache,
     CONFIG,
     CONSTANTS,
     eventManager,
@@ -91,18 +92,26 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * Animates the inbox refresh icon
      */
     $scope.spinIcon = function() {
+        // Start to spin icon on the view
         $scope.spinMe = true;
         $timeout(function() {
+            // Stop spin icon
             $scope.spinMe = false;
         }, 510);
     };
 
     /**
-     * Send request to get the last event
+     * Send request to get the last event, empty the cache for the current mailbox and then refresh the content automatically
      */
     $scope.lastEvent = function() {
+        var mailbox = tools.currentMailbox();
+
+        // Spin icon
         $scope.spinIcon();
+        // Get the latest event
         eventManager.call();
+        // Clear cache for the current mailbox
+        cache.empty(mailbox);
     };
 
     /**
