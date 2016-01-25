@@ -365,6 +365,9 @@
     		padding-left: 0;
     	}
     }
+    body.columns #pm_conversations {
+    	clear: both;
+    }
 }
 
 @media (max-width: $mobile-landscape) {

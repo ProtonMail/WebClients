@@ -59,6 +59,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $rootScope.$watch('layoutMode', function() {
             $scope.toolbarOffset();
         });
+
+        $timeout( $scope.mobileResponsive, 240);
     };
 
     $scope.watchElements = function() {
@@ -120,7 +122,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.mobileResponsive = function() {
-        if ($window.outerWidth < 1025) {
+        if ($('body').outerWidth() < 1024) {
             $rootScope.layoutMode = 'rows';
         } else {
             var layout = (authentication.user.ViewLayout === 0) ? 'columns' : 'rows';
