@@ -42,6 +42,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     // Listeners
     $scope.$on('createLabel', function(event) { $scope.createLabel(); });
+    $scope.$on('$destroy', function(event) {
+        $timeout.cancel(timeoutRefresh);
+    });
 
     /**
      * Open modal to create a new label
@@ -99,9 +102,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         $scope.spinMe = true;
 
         // Cancel
-        if (angular.isDefined(timeoutRefresh)) {
-            $timeout.cancel(timeoutRefresh);
-        }
+        $timeout.cancel(timeoutRefresh);
 
         // Debounce
         timeoutRefresh = $timeout(function() {
