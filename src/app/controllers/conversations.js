@@ -21,7 +21,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Label,
     authentication,
     cache,
-    preloadConversation,
     confirmModal,
     Setting,
     cacheCounters,
