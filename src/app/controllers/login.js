@@ -18,7 +18,8 @@ angular.module("proton.controllers.Auth", [
     networkActivityTracker,
     notify,
     loginModal,
-    pmcw
+    pmcw,
+    tools
 ) {
     $rootScope.pageName = "Login";
     $rootScope.app_version = CONFIG.app_version;
@@ -63,6 +64,14 @@ angular.module("proton.controllers.Auth", [
             classes: 'notification-info',
             duration: 20000
         });
+
+        if (tools.hasSessionStorage() === false) {
+            notify({
+                message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.',
+                classes: 'notification-danger',
+                duration: '0'
+            });
+        }
     };
 
     /**
