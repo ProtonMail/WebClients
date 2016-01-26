@@ -278,7 +278,8 @@ angular.module("proton.authentication", [
                 GrantType: "refresh_token",
                 RefreshToken: $rootScope.TemporaryAccessData.RefreshToken,
                 RedirectURI: "https://protonmail.com",
-                State: this.randomString(24)
+                State: this.randomString(24),
+                Scope: "full" // 'full' or 'reset'
             })
             .then(
                 function(response) {
