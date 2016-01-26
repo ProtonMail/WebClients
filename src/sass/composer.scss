@@ -87,6 +87,8 @@
 					.angular-squire-wrapper {
 						float: left;
 						width: 100%;
+						overflow: auto;
+						-webkit-overflow-scrolling: touch;
 						iframe {
 							position: relative;
 							z-index: 4;
