@@ -28,10 +28,10 @@
     "angular-sanitize": "~1.4.8",
     "angular-smooth-scrollbar": "~2.1.0",
     "angular-touch": "~1.4.8",
-    "angular-translate-loader-static-files": "~2.8.1",
-    "angular-translate-storage-cookie": "~2.8.1",
-    "angular-translate-storage-local": "~2.8.1",
-    "angular-translate": "~2.8.1",
+    "angular-translate-loader-static-files": "~2.9.0",
+    "angular-translate-storage-cookie": "~2.9.0",
+    "angular-translate-storage-local": "~2.9.0",
+    "angular-translate": "~2.9.0",
     "angular-ui-router": "~0.2.15",
     "angular": "~1.4.8",
     "autofill-event": "~1.0.0",
@@ -63,6 +63,6 @@
     "vcard": "https://github.com/ProtonMail/vcard.git#master"
   },
   "resolutions": {
-    "angular": ">= 1.0.8"
+    "angular": "1.4.9"
   }
 }

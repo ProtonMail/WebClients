@@ -37,7 +37,6 @@ module.exports = {
       "vendor/autofill-event/src/autofill-event.js",
       "vendor/angular-cookies/angular-cookies.js",
       "vendor/angular-resource/angular-resource.js",
-      "vendor/angular-messages/angular-messages.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-touch/angular-touch.js",
@@ -65,7 +64,8 @@ module.exports = {
       "vendor/ical.js/build/ical.js",
       "vendor/angular-ical/dist/js/angular-ical.js",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
-      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js"
+      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js",
+      "vendor/angular-messages/angular-messages.js"
     ],
     bootstrap_components: [
       "affix",
