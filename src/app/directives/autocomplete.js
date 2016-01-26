@@ -108,14 +108,8 @@ angular.module('proton.autocomplete', [])
             };
 
             var createNewInput = function() {
-                $timeout(function() {
-                    scope.params.newValue = '';
-                    scope.onChange();
-                });
-
-                $timeout(function() {
-                    angular.element(element).find('input.new-value-email').focus();
-                });
+                scope.params.newValue = '';
+                scope.onChange();
             };
 
             // Functions
