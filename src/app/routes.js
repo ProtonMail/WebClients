@@ -148,25 +148,29 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/step1.tpl.html'
             }
         },
-        onEnter: function($rootScope, $state, $log, $http, url) {
+        resolve: {
+            direct: function($http, $q, $state, $rootScope, url) {
+                var deferred = $q.defer();
 
-            if (!$rootScope.preInvited) {
-                $http.get( url.get() + '/users/direct' )
-                .then(
-                    function( response ) {
-
-                        if ( response.data && response.status === 200 ) {
-
-                            if ( response.data.Direct!==1 ) {
+                if (!$rootScope.preInvited) {
+                    $http.get(url.get() + '/users/direct').then(function(result) {
+                        if (response.data && response.status === 200) {
+                            if (response.data.Direct === 1) {
+                                deferred.resolve();
+                            } else {
                                 window.location.href = '/invite';
+                                deferred.reject();
                             }
-
-                        }
-                        else {
+                        } else {
                             $state.go('login');
+                            deferred.reject();
                         }
-                    }
-                );
+                    });
+                } else {
+                    deferred.resolve();
+                }
+
+                return deferred.promise;
             }
         }
     })
