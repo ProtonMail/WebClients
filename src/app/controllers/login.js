@@ -59,11 +59,13 @@ angular.module("proton.controllers.Auth", [
             $scope.getLoginHelp();
         }
 
-        notify({
-            message: 'Welcome to ProtonMail 3.0. Please use \'Report Bug\' to send feedback.',
-            classes: 'notification-info',
-            duration: 20000
-        });
+        if ($state.is('login') === true) {
+            notify({
+                message: 'Welcome to ProtonMail 3.0. Please use \'Report Bug\' to send feedback.',
+                classes: 'notification-info',
+                duration: 20000
+            });
+        }
 
         if (tools.hasSessionStorage() === false) {
             notify({
