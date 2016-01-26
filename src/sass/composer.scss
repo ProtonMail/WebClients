@@ -662,6 +662,16 @@
 				right: 0;
 				height: auto !important;
 			}
+			.options {
+				padding-bottom: 4rem;
+				bottom: initial !important;
+				.pm_select {
+					margin: 0 0 0 .5rem;
+				}
+				.text-center {
+					font-size: .9em;
+				}
+			}
 		}
 		.composer.tall section .angular-squire-wrapper iframe {
 			height: 620px !important;
