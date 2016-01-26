@@ -616,7 +616,7 @@ angular.module("proton.cache", [])
     api.getConversation = function(conversationId) {
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
-        var messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
+        var messages = this.queryMessagesCached(conversationId); // messages are ordered by -Time
 
         if(angular.isDefined(conversation) && conversation.loaded === true && angular.isArray(messages) && messages.length > 0) {
             deferred.resolve(conversation);
