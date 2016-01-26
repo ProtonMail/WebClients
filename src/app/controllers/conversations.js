@@ -59,7 +59,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.toolbarOffset();
         });
 
-        $timeout( $scope.mobileResponsive, 240);
+        $timeout( $scope.mobileResponsive, 600);
     };
 
     $scope.watchElements = function() {
@@ -131,6 +131,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.startWatchingEvent = function() {
         angular.element($window).bind('resize', $scope.mobileResponsive);
+        angular.element($window).bind('orientationchange', $scope.mobileResponsive);
 
         $scope.$on('refreshConversations', function() {
             $scope.refreshConversations();
@@ -153,6 +154,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.stopWatchingEvent = function() {
         angular.element($window).unbind('resize', $scope.mobileResponsive);
+        angular.element($window).unbind('orientationchange', $scope.mobileResponsive);
     };
 
     $scope.actionsDelayed = function() {
