@@ -516,11 +516,11 @@ angular.module('proton', [
  * Detect if the user use safari private mode
  */
 .run(function(notify, tools) {
-    if(tools.hasSessionStorage() === false) {
+    if (tools.hasSessionStorage() === false) {
         notify({
             message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.',
             classes: 'notification-danger',
-            duration: 0
+            duration: '0'
         });
     }
 })
