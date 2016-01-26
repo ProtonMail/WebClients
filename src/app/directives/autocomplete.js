@@ -145,12 +145,13 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onMouseDown = function(event) {
-                scope.onClick(event);
-            };
+                var target = angular.element(event.target);
+                var input = angular.element(element).find('.new-value-email');
 
-            scope.onClick = function(event) {
-                if(event.target === element[0].firstElementChild) {
-                    createNewInput();
+                if (target !== input) {
+                    $timeout(function() {
+                        input.focus();
+                    });
                 }
             };
 
