@@ -141,8 +141,8 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.breakImages = function(html) {
-        html = html.replace(/ src='/g, " data-src='");
-        html = html.replace(/ src="/g, " data-src=\"");
+        html = html.replace(/\ssrc='/g, " data-src='");
+        html = html.replace(/\ssrc="/g, " data-src=\"");
         html = html.replace(/xlink:href=/g, "data-xlink:href=");
         html = html.replace(/poster=/g, " data-poster=");
         html = html.replace(/background=/g, " data-background=");
