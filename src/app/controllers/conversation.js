@@ -218,9 +218,17 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.nonTrashed = function() {
         var result = false;
+        var locations = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.starred,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive
+        ];
 
         _.each($scope.conversation.LabelIDs, function(labelID) {
-            if (labelID.length === 1 && labelID !== CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
+            if (locations.indexOf(labelID) !== -1) {
                 result = true;
             }
         });
