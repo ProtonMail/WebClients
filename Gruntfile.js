@@ -3,7 +3,7 @@
 
 var _ = require("lodash"),
 util = require("util");
-var appVersion = '3.0.3';
+var appVersion = '3.0.4';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
         .map(function(host, target) {
             return host.replace("?", grunt.option(target));
         })
-        .first() || API_TARGETS.dev;
+        .first() || API_TARGETS.build;
     }
 
     function rewriteIndexMiddleware(connect, options) {
