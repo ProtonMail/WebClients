@@ -748,6 +748,14 @@
 				width: 100%;
 				position: absolute !important;
 			}
+			footer {
+				.pm_button span {
+					display: none;
+				}
+				.pm_button.primary span {
+					display: block;
+				}
+			}
 		}
 	}
 }
