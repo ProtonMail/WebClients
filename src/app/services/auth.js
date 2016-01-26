@@ -702,6 +702,8 @@ angular.module("proton.authentication", [
     $rootScope.logout = function() {
         eventManager.stop();
         cache.clear();
+        delete $rootScope.creds;
+        delete $rootScope.tempUser;
         $state.go('login');
     };
 });

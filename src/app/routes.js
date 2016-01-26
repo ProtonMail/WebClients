@@ -537,8 +537,10 @@ angular.module('proton.routes', [
                 }
             }
         },
-        onEnter: function(authentication) {
+        onEnter: function($rootScope, authentication) {
             // This will redirect to a login step if necessary
+            delete $rootScope.creds;
+            delete $rootScope.tempUser;
             authentication.redirectIfNecessary();
         }
     })
