@@ -350,6 +350,7 @@ angular.module("proton.cache", [])
                 var messages = data.Messages;
                 var message = _.max(messages, function(message){ return message.Time; });
 
+                _.each(messages, function(message) { message.loaded = true; });
                 conversation.loaded = true;
                 conversation.Time = message.Time;
                 storeConversations([conversation]);
@@ -615,8 +616,9 @@ angular.module("proton.cache", [])
     api.getConversation = function(conversationId) {
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
+        var messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
 
-        if(angular.isDefined(conversation) && conversation.loaded === true) {
+        if(angular.isDefined(conversation) && conversation.loaded === true && angular.isArray(messages) && messages.length > 0) {
             deferred.resolve(conversation);
         } else {
             deferred.resolve(getConversation(conversationId));
