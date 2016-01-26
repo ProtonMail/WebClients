@@ -86,7 +86,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                         // Or the last message
                         $rootScope.targetID = _.last(messages).ID;
                     }
-                } else if(angular.isDefined($rootScope.targetID)) {
+                } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
                     // Do nothing, target initialized by click
                 } else {
                     // If the latest message is read, we open it

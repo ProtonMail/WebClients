@@ -153,7 +153,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
-        preloadConversation.reset();
         angular.element($window).unbind('resize', $scope.mobileResponsive);
     };
 
