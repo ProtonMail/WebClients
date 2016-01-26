@@ -213,7 +213,7 @@
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
-                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" max-composer-height></squire>
+                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" ng-hide="isOver === true" max-composer-height></squire>
                 </div>
             </section>
             <div
