@@ -405,20 +405,13 @@ angular.module("proton.cache", [])
     api.empty = function(mailbox) {
         var loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
         var needToBeRemoved = [];
-        var i = 0;
 
-        for (i = 0; i < conversationsCached.length; i++) {
-            var conversation = conversationsCached[i];
+        for (var index = conversationsCached.length - 1; index >= 0; index--) {
+            var conversation = conversationsCached[index];
 
             if (angular.isDefined(conversation) && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1) {
-                needToBeRemoved.push(i);
+                conversationsCached.splice(index, 1);
             }
-        }
-
-        for (i = 0; i < needToBeRemoved.length; i++) {
-            var index = needToBeRemoved[i];
-
-            conversationsCached.splice(index, 1);
         }
 
         api.callRefresh();
