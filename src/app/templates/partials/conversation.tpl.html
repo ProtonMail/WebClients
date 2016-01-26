@@ -4,7 +4,24 @@
             <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
         </a>
     </span>
-    <h1 ng-bind=" ( conversation.NumMessages > 1 ) ? '(' + conversation.NumMessages + ') ' + conversation.Subject : conversation.Subject"></h1>
+    <h1>
+        <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+        <span ng-bind="conversation.Subject"></span>
+    </h1>
+    <p ng-show="nonTrashed() && inTrash === true">
+        This conversation contains non-trashed messages.
+        <a href="#" ng-click="toggleNonTrashed()">
+            <span ng-show="showNonTrashed === true">Hide non trashed messages</span>
+            <span ng-hide="showNonTrashed === true">Show non trashed messages</span>
+        </a>
+    </p>
+    <p ng-show="trashed() && inTrash === false">
+        This conversation contains trashed messages.
+        <a href="#" ng-click="toggleTrashed()">
+            <span ng-show="showTrashed === true">Hide trashed messages</span>
+            <span ng-hide="showTrashed === true">Show trashed messages</span>
+        </a>
+    </p>
 </header>
 <div id="pm_thread">
     <ng-include src="'templates/partials/message.tpl.html'" ng-repeat="message in messages track by message.ID"></ng-include>

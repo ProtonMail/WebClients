@@ -29,7 +29,6 @@ angular.module("proton.controllers.Secured", [])
     $rootScope.dateFormat = format;
 
     $scope.user = authentication.user;
-    $rootScope.discarded = []; // Store ID of message discarded
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
     $scope.settingsRoutes = [

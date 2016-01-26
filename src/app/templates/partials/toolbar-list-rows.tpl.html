@@ -23,16 +23,16 @@
                 <span id="layoutTip" ng-show="showTip"> 
                     <i class="fa fa fa-bullseye animated pulse" pt-tooltip="Click to change layout" ng-show="showTip"></i>
                 </span>
-            </span>        
-            <paginator ng-hide="idDefined() && rowMode === true" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.ELEMENTS_PER_PAGE" change="selectPage" />
-            <span class="pm_buttons" ng-show="idDefined() && rowMode === true">
+            </span>
+            <paginator ng-hide="idDefined() && layoutMode === 'rows'" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.ELEMENTS_PER_PAGE" change="selectPage" />
+            <span class="pm_buttons" ng-show="idDefined() && layoutMode === 'rows'">
                 <a ng-click="nextConversation(conversation)" pt-tooltip="{{ 'PREVIOUS' | translate }}">
                     <i class="fa fa-chevron-left"></i>
                 </a>
                 <a ng-click="previousConversation(conversation)" class="divider" pt-tooltip="{{ 'NEXT' | translate }}">
                     <i class="fa fa-chevron-right"></i>
                 </a>
-            </span> 
+            </span>
         </div>
         <span class="pm_buttons back" ng-if="idDefined() &&  layoutMode === 'rows'">
             <a ng-click="back()" pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">

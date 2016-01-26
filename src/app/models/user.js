@@ -20,6 +20,10 @@ angular.module("proton.models.user", [])
                 url: url.get() + '/users/:token'
             },
             // GET
+            get: {
+                method: 'get',
+                url: url.get() + '/users'
+            },
             pubkeys: {
                 method: 'get',
                 url: url.get() + '/users/pubkeys/:emails'

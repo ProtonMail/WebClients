@@ -38,7 +38,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.initialization = function() {
         // Variables
         $scope.mailbox = tools.currentMailbox();
-        $scope.rowMode = authentication.user.ViewLayout === 1;
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
@@ -605,8 +604,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.back = function() {
         $state.go("secured." + $scope.mailbox, {
-            id: null, // remove ID
-            page: null // remove page (= 0)
+            id: null // remove ID
         });
     };
 
@@ -938,7 +936,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
                         promise.then(function(result) {
                             // Call to empty cache conversation
-                            action.empty(mailbox);
+                            cache.empty(mailbox);
                             // Close modal
                             confirmModal.deactivate();
                             // Notify user
