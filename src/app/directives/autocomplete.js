@@ -137,7 +137,7 @@ angular.module('proton.autocomplete', [])
                         scope.params.newValue = '';
                         scope.onChange();
                     }
-                }, 50);
+                }, 100);
             };
 
             scope.onRemove = function(index) {
