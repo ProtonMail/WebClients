@@ -32,6 +32,10 @@ angular.module("proton.models.user", [])
                 method: 'get',
                 url: url.get() + '/users/available/:username'
             },
+            direct: {
+                method: 'get',
+                url: url.get() + '/users/direct'
+            },
             // PUT
             keys: {
                 method: 'put',

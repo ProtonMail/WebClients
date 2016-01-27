@@ -149,13 +149,13 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
-            direct: function($http, $q, $state, $rootScope, url) {
+            direct: function($http, $q, $state, $rootScope, url, User) {
                 var deferred = $q.defer();
 
                 if (!$rootScope.preInvited) {
-                    $http.get(url.get() + '/users/direct').then(function(result) {
-                        if (response.data && response.status === 200) {
-                            if (response.data.Direct === 1) {
+                    User.direct().$promise.then(function(data) {
+                        if (data && data.Code === 1000) {
+                            if (data.Direct === 1) {
                                 deferred.resolve();
                             } else {
                                 window.location.href = '/invite';
