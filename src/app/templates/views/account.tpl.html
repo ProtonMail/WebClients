@@ -123,6 +123,17 @@
                 <form method="post" ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
+                            <label for="currentLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder="Current Login Password" required="" />
+                            <div ng-messages="mailboxForm.currentLoginPassword.$error" class="text-red" ng-if="mailboxForm.currentLoginPassword.$touched">
+                                <p ng-message="required">Current login password is empty</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col left">
                             <label for="oldMailboxPassword">{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">

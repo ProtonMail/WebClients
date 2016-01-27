@@ -136,6 +136,7 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveMailboxPassword = function(form) {
+        var loginPwd = $scope.currentLoginPassword;
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
         var confMailPwd = $scope.confirmMailboxPassword;
@@ -202,9 +203,11 @@ angular.module('proton.controllers.Settings')
                             return pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
                                 return {ID: key.ID, PrivateKey: privateKey};
                             }, function(error) {
+                                $log.error(error);
                                 return Promise.reject(error);
                             });
                         }, function(error) {
+                            $log.error(error);
                             return Promise.reject(error);
                         }));
                     });
@@ -212,8 +215,12 @@ angular.module('proton.controllers.Settings')
 
                 // When all promises are done, we can send the new keys to the back-end
                 return $q.all(promises).then(function(keys) {
-                    return Key.private({Keys: keys}).then(function(result) {
+                    return Key.private({
+                        Password: loginPwd,
+                        Keys: keys
+                    }).then(function(result) {
                         if (result.data && result.data.Code === 1000) {
+                            $scope.currentLoginPassword = '';
                             $scope.oldMailboxPassword = '';
                             $scope.newMailboxPassword = '';
                             $scope.confirmMailboxPassword = '';
@@ -227,9 +234,11 @@ angular.module('proton.controllers.Settings')
                         }
                     });
                 }, function(error) {
+                    $log.error(error);
                     notify({message: error, classes: 'notification-danger'});
                 });
             } else if (result.Error) {
+                $log.error(result.Error);
                 notify({message: result.Error, classes: 'notification-danger'});
             } else {
                 notify({message: 'Error during the user get request', classes: 'notification-danger'});
