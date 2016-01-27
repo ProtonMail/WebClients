@@ -113,7 +113,7 @@ angular.module('proton.controllers.Settings')
 
         networkActivityTracker.track(
             Setting.password({
-                OldPassword: oldLoginPwd,
+                Password: oldLoginPwd,
                 OldHashedPassword: pmcw.getHashedPassword(oldLoginPwd),
                 NewPassword: newLoginPwd
             }).$promise.then(function(result) {
