@@ -1,4 +1,4 @@
-<section id="pm_latest" ng-show="showWelcome === true">
+<div id="pm_latest" ng-show="showWelcome === true" ng-if="!idDefined() && !mobileMode">
     <header>Welcome, {{ user.DisplayName }}</header>
     <p>You have {{ numberElementUnread }} unread conversations.</p>
     <section id="storageStatus">
@@ -37,9 +37,9 @@
             </section>
         </div>
     </div>
-</section>
+</div>
 
-<section id="pm_placeholder" ng-show="showWelcome === false">
+<div id="pm_placeholder" ng-show="showWelcome === false" ng-if="!idDefined() && !mobileMode">
     <i class="fa fa-check-square"></i>
     <h2>{{ numberElementChecked }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
     <span class="pm_buttons" ng-show="numberElementChecked > 0">
@@ -47,4 +47,4 @@
             <strong>{{ 'DESELECT_ALL' | translate }}</strong>
         </a>
     </span>
-</section>
+</div>

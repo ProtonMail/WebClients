@@ -1,94 +1,97 @@
-#conversation-list-rows {
-    .conversation {
-        height: 40px;
-        line-height: 40px;
-        padding: 0;
-        box-shadow: inset 0 -1px 0 $border;
-
-        & > * {
-            display: inline-block;
+// DESKTOP
+body.desktopMode {
+    #conversation-list-rows {
+        .conversation {
             height: 40px;
             line-height: 40px;
+            padding: 0;
+            box-shadow: inset 0 -1px 0 $border;
 
-            // debuging:
-            // box-shadow: inset 0 0 1px red;
-
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            box-sizing: border-box;
-        }
-
-        .senders,
-        .size,
-        .time {
-            font-size: .9em;
-        }
-
-        input[type="checkbox"] {
-            margin: 0 10px;
-            float: left;
-            position: relative;
-            top: 1px;
-        }
-        .fa-star-o {
-            color: $gray-light;
-            text-decoration: none;
-            width: 1rem;
-            cursor: pointer;
-        }
-        .fa-star {
-            color: $yellow;
-            text-decoration: none;
-            width: 1rem;
-            cursor: pointer;
-        }
-        .senders {
-            width: 16%;
-        }
-        .subject {
-            width: calc(84% - 19rem);
-            cursor: pointer;
-            h4 {
-                line-height: 40px;
-                height: 40px;
-                margin: 0;
-                font-size: 1em;
-                color: #000;
+            & > * {
                 display: inline-block;
+                height: 40px;
+                line-height: 40px;
+
+                // debuging:
+                // box-shadow: inset 0 0 1px red;
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                box-sizing: border-box;
             }
-            .pm_labels {
-                float: right;
-                label {
-                    margin-left: 2px;
+
+            .senders,
+            .size,
+            .time {
+                font-size: .9em;
+            }
+
+            input[type="checkbox"] {
+                margin: 0 10px;
+                float: left;
+                position: relative;
+                top: 1px;
+            }
+            .fa-star-o {
+                color: $gray-light;
+                text-decoration: none;
+                width: 1rem;
+                cursor: pointer;
+            }
+            .fa-star {
+                color: $yellow;
+                text-decoration: none;
+                width: 1rem;
+                cursor: pointer;
+            }
+            .senders {
+                width: 16%;
+            }
+            .subject {
+                width: calc(84% - 19rem);
+                cursor: pointer;
+                h4 {
+                    line-height: 40px;
+                    height: 40px;
+                    margin: 0;
+                    font-size: 1em;
+                    color: #000;
+                    display: inline-block;
+                }
+                .pm_labels {
+                    float: right;
+                    label {
+                        margin-left: 2px;
+                    }
                 }
             }
-        }
-        .fa-paperclip {
-            width: 1rem;
-            visibility: hidden;
-            &.show {
-                visibility: visible;
+            .fa-paperclip {
+                width: 1rem;
+                visibility: hidden;
+                &.show {
+                    visibility: visible;
+                }
             }
-        }
-        .size {
-            width: 5.5rem;
-        }
-        em.time {
-            float: right;
-            text-align: right;
-            width: 7rem;
-            font-style: normal;
-            position: relative;
-            top: 1px;
-            padding-right: 2rem;
-        }
-        &.read {
-            background: $read;
-            .subject {
-                h4 {
-                    font-weight: normal;
-                    color: $gray;
+            .size {
+                width: 5.5rem;
+            }
+            em.time {
+                float: right;
+                text-align: right;
+                width: 7rem;
+                font-style: normal;
+                position: relative;
+                top: 1px;
+                padding-right: 2rem;
+            }
+            &.read {
+                background: $read;
+                .subject {
+                    h4 {
+                        font-weight: normal;
+                        color: $gray;
+                    }
                 }
             }
         }
@@ -97,6 +100,21 @@
 
 // TABLET
 body.tabletMode {
+    #conversation-list-rows {
+        .conversation {
+            height: 50px;
+            line-height: 50px;
+            & > *,
+            .subject h4 {
+                height: 50px;
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+// MOBILE
+body.mobileMode {
     #conversation-list-rows {
         .conversation {
             height: 50px;

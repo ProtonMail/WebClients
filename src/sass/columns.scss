@@ -348,12 +348,3 @@
 		-webkit-overflow-scrolling: touch;
 	}
 }
-
-@media (min-width: $wide) {
-	#pm_conversations {
-		.list {
-			width: 620px;
-			min-width: 620px;
-		}
-	}
-}

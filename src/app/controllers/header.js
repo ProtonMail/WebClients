@@ -6,6 +6,7 @@ angular.module("proton.controllers.Header", [])
     $scope,
     $state,
     $stateParams,
+    $location,
     notify,
     CONSTANTS,
     authentication,
@@ -21,6 +22,17 @@ angular.module("proton.controllers.Header", [])
     $scope.ctrl.attachments = 2;
     $scope.advancedSearch = false;
     $scope.starred = 2;
+
+    // used for tablet header
+    $scope.path = $location.path();
+    $scope.path = $scope.path.replace(/\//g, "");
+    if ($scope.path === 'label') {
+        // TODO: PANDA: get label name. for now make it empty.
+        $scope.path = '';
+    }
+    else if ($rootScope.idDefined()) {
+        $scope.path = '';
+    }
 
     $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
     delete $scope.folders.search;

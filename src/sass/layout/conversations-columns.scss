@@ -1,108 +1,120 @@
 // DEFAULT / ALL
-#conversation-list-columns {
-    .conversation {
-        height: 60px;
-        box-shadow: inset 0 -1px 0 $border;
-        .selection {
-            float: left;
-            height: 30px;
-            line-height: 20px;
-            box-sizing: border-box;
-            padding: 10px 0 0 10px; 
-            width: 30px;
-            input[type="checkbox"] {
-                margin: 0;
-            }
+.conversation {
+    height: 60px;
+    box-shadow: inset 0 -1px 0 $border;
+    overflow: hidden;
+    .selection {
+        float: left;
+        height: 30px;
+        line-height: 20px;
+        box-sizing: border-box;
+        padding: 10px 0 0 10px; 
+        width: 30px;
+        input[type="checkbox"] {
+            margin: 0;
         }
-        .row {
-            padding: 0 10px;
-            line-height: 10px;
-            height: 30px;
+    }
+    .row {
+        padding: 0 10px;
+        line-height: 10px;
+        height: 30px;
+        line-height: 20px;
+        box-sizing: border-box;
+        &.top {
+            padding-top: 10px;
+        }
+        &.bottom {
+            padding-bottom: 10px;
+            padding-left: 30px;
+        }
+        h4 {
+            display: block;
             line-height: 20px;
-            box-sizing: border-box;
-            &.top {
-                padding-top: 10px;
+            height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            float: left;
+            white-space: nowrap;
+            font-size: 1em;
+            cursor: pointer;
+            color: #000;
+        }
+        .meta,
+        .pm_labels {
+            width: 8rem;
+        }
+        h4,
+        .senders, {
+            width: calc(100% - 10rem);
+            cursor: pointer;
+        }
+        .meta {
+            display: block;
+            float: right;
+            .fa-star,
+            .fa-star-o,
+            .fa-paperclip {
+                text-decoration: none;
+                width: 1rem;
             }
-            &.bottom {
-                padding-bottom: 10px;
-                padding-left: 30px;
+            .fa-star-o {
+                color: $gray-light;
             }
-            h4 {
-                display: block;
-                line-height: 20px;
-                height: 20px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                float: left;
-                white-space: nowrap;
-                font-size: 1em;
-                cursor: pointer;
-                color: #000;
+            .fa-star {
+                color: $yellow;
             }
-            .meta,
-            .pm_labels {
-                width: 8rem;
-            }
-            h4,
-            .senders, {
-                width: calc(100% - 10rem);
-                cursor: pointer;
-            }
-            .meta {
-                display: block;
+            em.time {
                 float: right;
-                .fa-star,
-                .fa-star-o,
-                .fa-paperclip {
-                    text-decoration: none;
-                    width: 1rem;
-                }
-                .fa-star-o {
-                    color: $gray-light;
-                }
-                .fa-star {
-                    color: $yellow;
-                }
-                em.time {
-                    float: right;
-                    text-align: right;
-                    width: 5rem;
-                    font-style: normal;
-                    font-size: .9em;
-                }
-            }
-            .senders {
-                float: left;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                font-weight: 700;
+                text-align: right;
+                width: 5rem;
+                font-style: normal;
                 font-size: .9em;
             }
-            .pm_labels {
-                display: block;
-                float: right;
-                overflow: hidden;
-                white-space: nowrap;
-                height: 16px;
-                text-align: right;
-                label {
-                    margin-left: .25rem;
-                }
+        }
+        .senders {
+            float: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 700;
+            font-size: .9em;
+        }
+        .pm_labels {
+            display: block;
+            float: right;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 16px;
+            text-align: right;
+            label {
+                margin-left: .25rem;
             }
         }
-        &.read {
-            background: $read;
-            h4 {
-                color: $gray;
-                font-weight: normal;
-            }
+    }
+    &.read {
+        background: $read;
+        h4 {
+            color: $gray;
+            font-weight: normal;
         }
     }
 }
 
 // TABLET
 body.tabletMode {
+    #conversation-list-columns {
+        .selection {
+            width: 50px;
+            padding-top: 15px;
+        }
+        .row.bottom {
+            padding-left: 50px;
+        }
+    }
+}
+
+// MOBILE
+body.mobileMode {
     #conversation-list-columns {
         .selection {
             width: 50px;
