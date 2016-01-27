@@ -17,6 +17,7 @@ angular.module('proton.autocomplete', [])
             var DOWN_KEY = 40;
             var ESC_KEY = 27;
             var SPACE_KEY = 32;
+            var timeoutSubmit;
 
             // Variables
             scope.params = {
@@ -83,7 +84,6 @@ angular.module('proton.autocomplete', [])
                     var match = block.match(regexEmail);
 
                     if (match !== null) {
-                        console.log(match);
                         var email = clean(match[0]);
                         var label = clean(block.split(email)[0]);
                         var contact = {
@@ -124,18 +124,20 @@ angular.module('proton.autocomplete', [])
             * Submit a new address
             */
             scope.onSubmit = function() {
-                if(scope.params.selected !== null) {
-                    scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
-                } else if(scope.params.newValue.length > 0) {
-                    var emails = getEmails(scope.params.newValue);
+                timeoutSubmit = $timeout(function() {
+                    if(scope.params.selected !== null) {
+                        scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
+                    } else if(scope.params.newValue.length > 0) {
+                        var emails = getEmails(scope.params.newValue);
 
-                    if(emails.length > 0) {
-                        scope.emails = _.union(scope.emails, emails);
+                        if(emails.length > 0) {
+                            scope.emails = _.union(scope.emails, emails);
+                        }
+
+                        scope.params.newValue = '';
+                        scope.onChange();
                     }
-
-                    scope.params.newValue = '';
-                    scope.onChange();
-                }
+                }, 50);
             };
 
             scope.onRemove = function(index) {
@@ -147,6 +149,8 @@ angular.module('proton.autocomplete', [])
             scope.onClick = function(event) {
                 var target = angular.element(event.target);
                 var input = angular.element(element).find('.new-value-email');
+
+                $timeout.cancel(timeoutSubmit);
 
                 if (target !== input) {
                     event.preventDefault();
