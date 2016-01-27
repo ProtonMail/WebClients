@@ -154,7 +154,7 @@ angular.module('proton.routes', [
 
                 if (!$rootScope.preInvited) {
                     $http.get(url.get() + '/users/direct').then(function(result) {
-                        if (result.data && result.status === 200) {
+                        if (result.status === 200 && result.data && result.data.Code === 1000) {
                             if (result.data.Direct === 1) {
                                 deferred.resolve();
                             } else {
