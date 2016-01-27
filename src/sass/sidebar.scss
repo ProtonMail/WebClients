@@ -41,7 +41,7 @@ section.sidebar {
     min-width: $sidebarWidth;
     box-sizing: border-box;
     float: left;
-    min-height: 100%;
+    min-height: calc(100% - 54px);
     #labelSettings {
         margin-bottom: 0;
     }

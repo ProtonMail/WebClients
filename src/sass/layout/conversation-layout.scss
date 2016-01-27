@@ -17,6 +17,8 @@ body.desktopMode {
         width: 40%;
         float: left;
         height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
     #conversation-view,
     #pm_latest {
@@ -24,12 +26,11 @@ body.desktopMode {
         width: 60%;
         float: left;
         height: 100%;
-    }
-    #conversation-list-columns,
-    #conversation-list-rows,
-    #conversation-view,
-    #pm_latest {
         overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #conversation-list-rows {
+        overflow-y: hidden;
         overflow-x: hidden;
     }
     #pm_main {
@@ -38,7 +39,8 @@ body.desktopMode {
         width: calc(100% - 190px);
     }
     #wrapper {
-        height: calc(100% - 55px);
+        height: calc(100% - 54px);
+        overflow: auto;
     }
     &, #body {
         height: 100%;
