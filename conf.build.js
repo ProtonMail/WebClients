@@ -60,7 +60,6 @@ module.exports = {
       "vendor/mellt/javascript/common-passwords.js",
       "vendor/html2canvas/build/html2canvas.js",
       "vendor/svg4everybody/dist/svg4everybody.js",
-      "vendor/fastclick/lib/fastclick.js",
       "vendor/ical.js/build/ical.js",
       "vendor/angular-ical/dist/js/angular-ical.js",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
