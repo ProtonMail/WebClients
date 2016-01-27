@@ -154,8 +154,8 @@ angular.module('proton.routes', [
 
                 if (!$rootScope.preInvited) {
                     $http.get(url.get() + '/users/direct').then(function(result) {
-                        if (response.data && response.status === 200) {
-                            if (response.data.Direct === 1) {
+                        if (result.data && result.status === 200) {
+                            if (result.data.Direct === 1) {
                                 deferred.resolve();
                             } else {
                                 window.location.href = '/invite';
