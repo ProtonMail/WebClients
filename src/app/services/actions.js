@@ -99,7 +99,6 @@ angular.module('proton.actions', [])
             var promises = [];
             var promise;
             var events = [];
-            var current = tools.currentLocation();
             var process = function() {
                 cache.events(events);
 
@@ -114,6 +113,7 @@ angular.module('proton.actions', [])
 
                 if (angular.isArray(messages) && messages.length > 0) {
                     _.each(messages, function(message) {
+                        var current;
                         var toApplyMessage = _.chain(labels)
                             .filter(function(label) {
                                 return label.Selected === true;
@@ -121,7 +121,7 @@ angular.module('proton.actions', [])
                             .map(function(label) {
                                 return label.ID;
                             })
-                            .value();
+                            .value() || [];
 
                         var toRemoveMessage = _.chain(labels)
                             .filter(function(label) {
@@ -130,8 +130,22 @@ angular.module('proton.actions', [])
                             .map(function(label) {
                                 return label.ID;
                             })
-                            .value();
+                            .value() || [];
 
+                        message.LabelIDs = message.LabelIDs || [];
+
+                        _.each(message.LabelIDs, function(labelID) {
+                            if ([
+                                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.archive
+                            ].indexOf(labelID) !== -1) {
+                                current = labelID;
+                            }
+                        });
 
                         if (alsoArchive === true) {
                             toApplyMessage.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
@@ -147,6 +161,7 @@ angular.module('proton.actions', [])
                 }
 
                 if (angular.isDefined(conversation)) {
+                    var current = tools.currentLocation();
                     var toApplyConversation = _.chain(labels)
                         .filter(function(label) { return label.Selected === true; })
                         .map(function(label) { return label.ID; })
