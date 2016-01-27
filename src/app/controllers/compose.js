@@ -539,6 +539,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
 
+        $scope.isOver = false;
+
         // This timeout is really important to load the structure of Squire
         $timeout(function() {
             $rootScope.$broadcast('squireHeightChanged');

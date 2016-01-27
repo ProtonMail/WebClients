@@ -247,10 +247,6 @@ angular.module('proton', [
     // SVG Polyfill for Edge
     svg4everybody();
 
-    // FastClick polyfill for mobile devices
-    // https://github.com/ftlabs/fastclick
-    FastClick.attach(document.body);
-
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
         if(newVal) {
@@ -527,19 +523,6 @@ angular.module('proton', [
         "notes":"http://protonmail.dev/blog/",
         "date":"17 Apr. 2015"
     };
-})
-
-/**
- * Detect if the user use safari private mode
- */
-.run(function(notify, tools) {
-    if(tools.hasSessionStorage() === false) {
-        notify({
-            message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.',
-            classes: 'notification-danger',
-            duration: 0
-        });
-    }
 })
 
 //

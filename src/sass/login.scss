@@ -42,6 +42,9 @@ body#eo-unlock {
 #pm_login,
 body#reset {
 	text-transform: uppercase;
+	#signUpProcess li {
+		text-align: left;
+	}
 	h4 {
 		line-height: 3em;
 		font-weight: 600;

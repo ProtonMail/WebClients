@@ -87,6 +87,8 @@
 					.angular-squire-wrapper {
 						float: left;
 						width: 100%;
+						overflow: auto;
+						-webkit-overflow-scrolling: touch;
 						iframe {
 							position: relative;
 							z-index: 4;
@@ -624,9 +626,6 @@
 
 @media (max-width: $tablet-landscape) {
 	#pm_composer .composer {
-		footer .pm_button span {
-			display: none !important;
-		}
 		&.maximized {
 			left: 20px;
 		}
@@ -665,6 +664,16 @@
 				right: 0;
 				height: auto !important;
 			}
+			.options {
+				padding-bottom: 4rem;
+				bottom: initial !important;
+				.pm_select {
+					margin: 0 0 0 .5rem;
+				}
+				.text-center {
+					font-size: .9em;
+				}
+			}
 		}
 		.composer.tall section .angular-squire-wrapper iframe {
 			height: 620px !important;
@@ -673,7 +682,7 @@
 			height: 670px !important;
 		}
 		footer .pm_button {
-			padding: 0 10px;
+			padding: 0 10px !important;
 			span {
 				display: none;
 			}
@@ -737,9 +746,17 @@
 			&.maximized {
 				left: 0;
 				right: 0;
-				top:0;
+				top:0 !important;
 				width: 100%;
 				position: absolute !important;
+			}
+			footer {
+				.pm_button span {
+					display: none;
+				}
+				.pm_button.primary span {
+					display: block;
+				}
 			}
 		}
 	}

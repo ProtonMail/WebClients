@@ -97,6 +97,10 @@ header#pm_header-desktop {
 			float: left;
 			p {
 				margin: 0;
+				display: block;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 				a {
 					color: $primary;
 					padding: 0;

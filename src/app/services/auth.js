@@ -333,8 +333,7 @@ angular.module("proton.authentication", [
                         ClientSecret: CONFIG.clientSecret,
                         GrantType: "password",
                         RedirectURI: "https://protonmail.com",
-                        State: this.randomString(24),
-                        Scope: "full" // 'full' or 'reset'
+                        State: this.randomString(24)
                     })
                 ).then(
                     function(resp) {

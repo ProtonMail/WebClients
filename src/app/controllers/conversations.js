@@ -21,7 +21,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Label,
     authentication,
     cache,
-    preloadConversation,
     confirmModal,
     Setting,
     cacheCounters,
@@ -60,7 +59,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.toolbarOffset();
         });
 
-        $timeout( $scope.mobileResponsive, 240);
+        $timeout( $scope.mobileResponsive, 600);
     };
 
     // MODE CHANGE / NEW / PANDA
@@ -174,6 +173,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.startWatchingEvent = function() {
         angular.element($window).bind('resize', $scope.mobileResponsive);
+        angular.element($window).bind('orientationchange', $scope.mobileResponsive);
 
         $scope.$on('refreshConversations', function() {
             $scope.refreshConversations();
@@ -195,8 +195,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
-        preloadConversation.reset();
         angular.element($window).unbind('resize', $scope.mobileResponsive);
+        angular.element($window).unbind('orientationchange', $scope.mobileResponsive);
     };
 
     $scope.actionsDelayed = function() {
@@ -934,17 +934,24 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                             promise = Message.emptyTrash().$promise;
                         }
 
-                        promise.then(function(result) {
-                            // Call to empty cache conversation
-                            cache.empty(mailbox);
-                            // Close modal
-                            confirmModal.deactivate();
-                            // Notify user
-                            notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
-                        }, function(error) {
-                            notify({message: 'Error during the empty request', classes: 'notification-danger'});
-                            $log.error(error);
-                        });
+
+
+                        networkActivityTracker.track(
+                            promise.then(
+                                function(result) {
+                                    // Call to empty cache conversation
+                                    cache.empty(mailbox);
+                                    // Close modal
+                                    confirmModal.deactivate();
+                                    // Notify user
+                                    notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
+                                }, 
+                                function(error) {
+                                    notify({message: 'Error during the empty request', classes: 'notification-danger'});
+                                    $log.error(error);
+                                }
+                            )
+                        );
                     },
                     cancel: function() {
                         confirmModal.deactivate();

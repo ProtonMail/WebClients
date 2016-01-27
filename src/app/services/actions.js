@@ -23,7 +23,7 @@ angular.module('proton.actions', [])
             var current = tools.currentLocation();
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
-            var inInbox = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1;
+            var toInbox = mailbox === 'inbox';
             var labelIDsRemoved = _.reject([current], function(labelID) {
                 // Remove starred and labels
                 return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
@@ -31,44 +31,42 @@ angular.module('proton.actions', [])
 
             // Generate cache events
             _.each(ids, function(id) {
+                var messages = cache.queryMessagesCached(id);
                 var element = {
                     ID: id,
                     Selected: false,
                     LabelIDsRemoved: labelIDsRemoved, // Remove current location
                     LabelIDsAdded: labelIDsAdded // Add new location
                 };
-                var messages = cache.queryMessagesCached(element.ID);
 
-                if(messages.length > 0) {
-                    _.each(messages, function(message) {
-                        var copyLabelIDsAdded = labelIDsAdded;
-                        var copyLabelIDsRemoved = labelIDsRemoved;
+                _.each(messages, function(message) {
+                    var copyLabelIDsAdded = angular.copy(labelIDsAdded);
+                    var copyLabelIDsRemoved = angular.copy(labelIDsRemoved);
 
-                        if(inInbox === true) {
-                            var index;
+                    if(toInbox === true) {
+                        var index;
 
-                            if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
-                                index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+                        if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
+                            index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
 
-                                copyLabelIDsAdded.splice(index, 1);
-                                copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
-                            } else if(message.Type === 2) { // This message is sent, if you move it to trash and back, it will go back to sent
-                                index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+                            copyLabelIDsAdded.splice(index, 1);
+                            copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
+                        } else if(message.Type === 2) { // This message is sent, if you move it to trash and back, it will go back to sent
+                            index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
 
-                                copyLabelIDsAdded.splice(index, 1);
-                                copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                            } else if(message.Type === 3) { // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
-                                copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                            }
+                            copyLabelIDsAdded.splice(index, 1);
+                            copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
+                        } else if(message.Type === 3) { // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
+                            copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
                         }
+                    }
 
-                        events.push({Action: 3, ID: message.ID, Message: {
-                            ID: message.ID,
-                            LabelIDsRemoved: copyLabelIDsRemoved, // Remove current location
-                            LabelIDsAdded: copyLabelIDsAdded // Add new location
-                        }});
-                    });
-                }
+                    events.push({Action: 3, ID: message.ID, Message: {
+                        ID: message.ID,
+                        LabelIDsRemoved: copyLabelIDsRemoved, // Remove current location
+                        LabelIDsAdded: copyLabelIDsAdded // Add new location
+                    }});
+                });
 
                 events.push({Action: 3, ID: element.ID, Conversation: element});
             });

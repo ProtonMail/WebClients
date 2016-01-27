@@ -86,7 +86,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                         // Or the last message
                         $rootScope.targetID = _.last(messages).ID;
                     }
-                } else if(angular.isDefined($rootScope.targetID)) {
+                } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
                     // Do nothing, target initialized by click
                 } else {
                     // If the latest message is read, we open it
@@ -218,9 +218,17 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.nonTrashed = function() {
         var result = false;
+        var locations = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.starred,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive
+        ];
 
         _.each($scope.conversation.LabelIDs, function(labelID) {
-            if (labelID.length === 1 && labelID !== CONSTANTS.MAILBOX_IDENTIFIERS.trash) {
+            if (locations.indexOf(labelID) !== -1) {
                 result = true;
             }
         });

@@ -84,16 +84,16 @@ angular.module("proton.cache", [])
     var updateConversation = function(conversation) {
         var current = _.findWhere(conversationsCached, {ID: conversation.ID});
 
-        if(angular.isDefined(current)) {
+        if (angular.isDefined(current)) {
             var index = conversationsCached.indexOf(current);
             var labelIDs = conversation.LabelIDs || current.LabelIDs || [];
 
-            if(angular.isArray(conversation.LabelIDsRemoved)) {
+            if (angular.isArray(conversation.LabelIDsRemoved)) {
                 labelIDs = _.difference(labelIDs, conversation.LabelIDsRemoved);
                 delete conversation.LabelIDsRemoved;
             }
 
-            if(angular.isArray(conversation.LabelIDsAdded)) {
+            if (angular.isArray(conversation.LabelIDsAdded)) {
                 labelIDs = _.uniq(labelIDs.concat(conversation.LabelIDsAdded));
                 delete conversation.LabelIDsAdded;
             }
@@ -259,6 +259,7 @@ angular.module("proton.cache", [])
 
                     // Store time value
                     _.each(data.Conversations, function(conversation) {
+                        conversation.loaded = true;
                         storeTime(conversation.ID, loc, conversation.Time);
                     });
 
@@ -306,6 +307,7 @@ angular.module("proton.cache", [])
                 $rootScope.Total = result.Total;
 
                 _.each(messages, function(message) {
+                    message.loaded = true;
                     message.Senders = [message.Sender];
                     message.Recipients = _.uniq([].concat(message.ToList || []).concat(message.CCList || []).concat(message.BCCList || []));
                 });
@@ -348,7 +350,8 @@ angular.module("proton.cache", [])
                 var messages = data.Messages;
                 var message = _.max(messages, function(message){ return message.Time; });
 
-                conversation.preloaded = true;
+                _.each(messages, function(message) { message.loaded = true; });
+                conversation.loaded = true;
                 conversation.Time = message.Time;
                 storeConversations([conversation]);
                 storeMessages(messages);
@@ -371,7 +374,7 @@ angular.module("proton.cache", [])
 
         Message.get({ id: id }).$promise.then(function(message) {
             message = new Message(message);
-            message.preloaded = true;
+            message.loaded = true;
             storeMessages([message]);
             deferred.resolve(message);
         });
@@ -613,28 +616,15 @@ angular.module("proton.cache", [])
     api.getConversation = function(conversationId) {
         var deferred = $q.defer();
         var conversation = _.findWhere(conversationsCached, {ID: conversationId});
+        var messages = this.queryMessagesCached(conversationId); // messages are ordered by -Time
 
-        if(angular.isDefined(conversation) && conversation.preloaded === true) {
+        if(angular.isDefined(conversation) && conversation.loaded === true && angular.isArray(messages) && messages.length > 0) {
             deferred.resolve(conversation);
         } else {
             deferred.resolve(getConversation(conversationId));
         }
 
         return deferred.promise;
-    };
-
-    /**
-     * Accessible method to preload a specific conversation
-     */
-    api.preloadConversation = function(id) {
-        return getConversation(id);
-    };
-
-    /**
-     * Preload message and store it
-     */
-    api.preloadMessage = function(id) {
-        return getMessage(id);
     };
 
     /**
@@ -713,9 +703,15 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var current = _.findWhere(conversationsCached, {ID: event.ID});
 
-        updateConversation(event.Conversation);
-
-        deferred.resolve();
+        if (angular.isDefined(current) && current.loaded === true) {
+            updateConversation(event.Conversation);
+            deferred.resolve();
+        } else {
+            getConversation(event.ID).then(function(conversation) {
+                updateConversation(conversation);
+                deferred.resolve();
+            });
+        }
 
         return deferred.promise;
     };
@@ -728,6 +724,8 @@ angular.module("proton.cache", [])
     api.updateFlagMessage = function(event) {
         var deferred = $q.defer();
         var current = _.findWhere(messagesCached, {ID: event.ID});
+
+        event.Message.ID = event.Message.ID || event.ID;
 
         // Present in the current cache?
         if(angular.isDefined(current)) {
@@ -763,30 +761,23 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Update flag conversation cached
-     * @param {Object} event
-     * @return {Promise}
-     */
-    api.flagConversation = function(event) {
-        var deferred = $q.defer();
-
-        // Update conversation cached
-        updateConversation(event.Conversation);
-
-        deferred.resolve();
-
-        return deferred.promise;
-    };
-
-    /**
      * Update a conversation
      */
-    api.updateConversation = function(event) {
+    api.updateFlagConversation = function(event) {
         var deferred = $q.defer();
+        var current = _.find(conversationsCached, {ID: event.ID});
 
-        updateConversation(event.Conversation);
+        event.Conversation.ID = event.Conversation.ID || event.ID;
 
-        deferred.resolve();
+        if (angular.isDefined(current) && current.loaded === true) {
+            updateConversation(event.Conversation);
+            deferred.resolve();
+        } else {
+            getConversation(event.ID).then(function(conversation) {
+                updateConversation(conversation);
+                deferred.resolve();
+            });
+        }
 
         return deferred.promise;
     };
@@ -835,10 +826,10 @@ angular.module("proton.cache", [])
                         promises.push(api.createConversation(event));
                         break;
                     case UPDATE_DRAFT:
-                        promises.push(api.updateConversation(event));
+                        promises.push(api.updateFlagConversation(event));
                         break;
                     case UPDATE_FLAGS:
-                        promises.push(api.flagConversation(event));
+                        promises.push(api.updateFlagConversation(event));
                         break;
                     default:
                         break;
@@ -1116,79 +1107,6 @@ angular.module("proton.cache", [])
     api.unreadConversation = function(loc) {
         return counters[loc] && counters[loc].conversation && counters[loc].conversation.unread;
     };
-
-    return api;
-})
-
-.factory('preloadConversation', function(
-    $interval,
-    cache
-) {
-    var api = {};
-    var queue = [];
-    var interval = 5000; // 15 seconds // TODO set 15 seconds for the release
-
-    /**
-    * Set current conversations viewed
-    * @param {Array} conversations
-    */
-    api.set = function(conversations) {
-        api.reset();
-        api.add(conversations); // Add unread conversations to the queue
-    };
-
-    /**
-    * Reset current queue
-    */
-    api.reset = function() {
-        queue = [];
-    };
-
-    /**
-    * Add unread conversations to the queue
-    * @param {Array} conversations
-    */
-    api.add = function(conversations) {
-        // Add only unread conversations to the queue
-        // Filter by conversation where the Body is undefined
-        queue = _.union(queue, _.where(conversations, { preloaded: undefined }));
-    };
-
-    /**
-    * Preload conversations present in the queue
-    */
-    api.preload = function() {
-        // Get the first conversation in the queue
-        var element  = _.first(queue);
-
-        if(angular.isDefined(element)) {
-            var promise;
-
-            if(angular.isDefined(element.ConversationID)) {
-                promise = cache.preloadMessage(element.ID);
-            } else {
-                // Preload the first conversation
-                promise = cache.preloadConversation(element.ID);
-            }
-
-            promise.then(function() {
-                // Remove the first element in the queue
-                queue = _.without(queue, element);
-            });
-        }
-    };
-
-    /**
-    * Loop around conversations present in the queue to preload the Body
-    */
-    api.loop = function() {
-        var looping = $interval(function() {
-            api.preload();
-        }, interval);
-    };
-
-    // NOTE Andy said: "We preload nothing, that's too expensive for the back-end"
-    // api.loop(); // Start looping
 
     return api;
 })

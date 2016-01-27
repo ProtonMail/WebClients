@@ -6,7 +6,7 @@
                 <strong>{{ 'ADD_LABEL' | translate }}</strong>
             </button>
         </p><!--/.form-group-->
-        <p class="alert alert-info" ng-show="labels.length === 0">You have no labels, you can add label with the above button "ADD LABEL".</p>
+        <p class="alert alert-info" ng-show="labels.length === 0"><i class="fa fa-arrow-up"></i> You have no labels, you can add label with the above button "ADD LABEL".</p>
         <div class="pm_sort" ng-show="labels.length > 0">
             <ul data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
                 <li ng-repeat="label in labels" as-sortable-item="">
