@@ -7,7 +7,6 @@ angular.module('proton', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
     'pascalprecht.translate',
     'pikaday',
     'SmoothScrollbar',
