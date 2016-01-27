@@ -144,7 +144,7 @@ angular.module('proton.autocomplete', [])
                 scope.onChange();
             };
 
-            scope.onMouseDown = function(event) {
+            scope.onClick = function(event) {
                 var target = angular.element(event.target);
                 var input = angular.element(element).find('.new-value-email');
 

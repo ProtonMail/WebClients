@@ -1,5 +1,5 @@
 <div class="container-email">
-    <div class="input-email" ng-mousedown="onMouseDown($event)">
+    <div class="input-email" ng-click="onClick($event)">
         <span ng-repeat="email in emails" class="email">
             <span class="label-email" title="{{ email | contact }}">
                 <span ng-bind="email | contact: 'Name'"></span>
@@ -14,7 +14,7 @@
     </div>
     <ul class="autocomplete-email" ng-show="params.contactsFiltered.length > 0">
         <li ng-repeat="email in params.contactsFiltered">
-            <a ng-mousedown="onAddEmail(email)" ng-class="{'selected': $index === params.selected}" ng-bind="email | contact"></a>
+            <a ng-click="onAddEmail(email)" ng-class="{'selected': $index === params.selected}" ng-bind="email | contact"></a>
         </li>
     </ul>
 </div>
