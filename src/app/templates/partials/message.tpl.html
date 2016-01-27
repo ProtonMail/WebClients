@@ -86,10 +86,10 @@ ng-class="{
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown wide right">
-                    <a ng-click="move('inbox')" ng-hide="'secured.inbox.**' | includedByState">
+                    <a ng-click="move('inbox')">
                         <i class="fa fa-inbox"></i> {{ 'MOVE_TO_INBOX' | translate }}
                     </a>
-                    <a ng-click="move('trash')" ng-hide="'secured.trash.**' | includedByState">
+                    <a ng-click="move('trash')">
                         <i class="fa fa-trash-o"></i> {{ 'MOVE_TO_TRASH' | translate }}
                     </a>
                     <a ng-click="unread()">
