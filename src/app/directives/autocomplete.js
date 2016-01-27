@@ -149,6 +149,7 @@ angular.module('proton.autocomplete', [])
                 var input = angular.element(element).find('.new-value-email');
 
                 if (target !== input) {
+                    event.preventDefault();
                     $timeout(function() {
                         input.focus();
                     });
