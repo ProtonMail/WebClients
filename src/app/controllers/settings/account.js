@@ -209,13 +209,20 @@ angular.module('proton.controllers.Settings')
                             });
                         }, function(error) {
                             $log.error(error);
-                            return Promise.reject(error);
+                            return Promise.resolve(0);
                         }));
                     });
                 });
 
                 // When all promises are done, we can send the new keys to the back-end
                 return $q.all(promises).then(function(keys) {
+
+                    keys = keys.filter(function(obj) { return obj !== 0; });
+
+                    if (keys.length === 0) {
+                        notify({message: 'No keys to update', classes: 'notification-danger'});
+                    }
+
                     return Key.private({
                         Password: loginPwd,
                         Keys: keys
