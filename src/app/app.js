@@ -206,6 +206,9 @@ angular.module('proton', [
     tools
 ) {
     angular.element($window).bind('load', function() {
+        // Enable FastClick
+        FastClick.attach(document.body);
+
         if (window.location.hash==='#spin') {
             $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
         }
