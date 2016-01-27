@@ -165,11 +165,12 @@ angular.module('proton.controllers.Settings')
                         // Encrypt private key with the new mailbox password
                         pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
                             // Send request to the back-end to update the organization private key
-                            Organization.updateKey({
+                            Organization.private({
+                                Password: loginPwd,
                                 PrivateKey: privateKey
                             }).then(function(result) {
                                 if (result.data && result.data.Code === 1000) {
-                                    notify({message: 'Organization Password Updated', classes: 'notification-success'});
+                                    // No message
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
@@ -180,7 +181,7 @@ angular.module('proton.controllers.Settings')
                             notify({message: error, classes: 'notification-danger'});
                         });
                     }, function(error) {
-                        notify({message: error, classes: 'notification-danger'});
+                        notify({message: 'Unable to decrypt and update organization key', classes: 'notification-danger'});
                     });
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});

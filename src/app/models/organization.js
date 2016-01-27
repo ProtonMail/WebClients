@@ -33,8 +33,8 @@ angular.module("proton.models.organization", [])
         /**
          * Update private key for the organization
          */
-        updateKey: function(Obj) {
-            return $http.put(url.get() + '/organizations/keys', Obj);
+        private: function(Obj) {
+            return $http.put(url.get() + '/organizations/keys/private', Obj);
         },
         /**
          * Update group in a way that requires a payment.
