@@ -14,8 +14,8 @@ angular.module("proton.cache", [])
     tools
 ) {
     var api = {};
-    var messagesCached = [];
-    var conversationsCached = [];
+    var messagesCached = []; // In this array we store the messages cached
+    var conversationsCached = []; // In this array we store the conversations cached
     var dispatcher = [];
     var timeCached = {};
     var DELETE = 0;
@@ -257,10 +257,9 @@ angular.module("proton.cache", [])
                     // Set total value in rootScope
                     $rootScope.Total = data.Total;
 
-                    // Store time value
                     _.each(data.Conversations, function(conversation) {
-                        conversation.loaded = true;
-                        storeTime(conversation.ID, loc, conversation.Time);
+                        conversation.loaded = true; // Mark this conversation as loaded
+                        storeTime(conversation.ID, loc, conversation.Time); // Store time value
                     });
 
                     // Only for cache context
