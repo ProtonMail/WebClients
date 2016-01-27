@@ -23,7 +23,7 @@ angular.module('proton.actions', [])
             var current = tools.currentLocation();
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
-            var inInbox = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1;
+            var toInbox = mailbox === 'inbox';
             var labelIDsRemoved = _.reject([current], function(labelID) {
                 // Remove starred and labels
                 return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
@@ -41,10 +41,10 @@ angular.module('proton.actions', [])
 
                 if(messages.length > 0) {
                     _.each(messages, function(message) {
-                        var copyLabelIDsAdded = labelIDsAdded;
-                        var copyLabelIDsRemoved = labelIDsRemoved;
+                        var copyLabelIDsAdded = angular.copy(labelIDsAdded);
+                        var copyLabelIDsRemoved = angular.copy(labelIDsRemoved);
 
-                        if(inInbox === true) {
+                        if(toInbox === true) {
                             var index;
 
                             if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
