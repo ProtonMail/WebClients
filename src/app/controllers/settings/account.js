@@ -228,7 +228,7 @@ angular.module('proton.controllers.Settings')
                             authentication.savePassword(newMailPwd);
                             notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
                         } else if(result.data && result.data.Error) {
-                            notify({message: result.Error, classes: 'notification-danger'});
+                            notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
                             notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
                         }
