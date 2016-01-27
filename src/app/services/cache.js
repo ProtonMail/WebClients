@@ -14,8 +14,8 @@ angular.module("proton.cache", [])
     tools
 ) {
     var api = {};
-    var messagesCached = [];
-    var conversationsCached = [];
+    var messagesCached = []; // In this array we store the messages cached
+    var conversationsCached = []; // In this array we store the conversations cached
     var dispatcher = [];
     var timeCached = {};
     var DELETE = 0;
@@ -257,10 +257,9 @@ angular.module("proton.cache", [])
                     // Set total value in rootScope
                     $rootScope.Total = data.Total;
 
-                    // Store time value
                     _.each(data.Conversations, function(conversation) {
-                        conversation.loaded = true;
-                        storeTime(conversation.ID, loc, conversation.Time);
+                        conversation.loaded = true; // Mark this conversation as loaded
+                        storeTime(conversation.ID, loc, conversation.Time); // Store time value
                     });
 
                     // Only for cache context
@@ -615,13 +614,18 @@ angular.module("proton.cache", [])
      */
     api.getConversation = function(conversationId) {
         var deferred = $q.defer();
-        var conversation = _.findWhere(conversationsCached, {ID: conversationId});
-        var messages = this.queryMessagesCached(conversationId); // messages are ordered by -Time
 
-        if(angular.isDefined(conversation) && conversation.loaded === true && angular.isArray(messages) && messages.length > 0) {
-            deferred.resolve(conversation);
+        if (angular.isDefined(conversationId)) {
+            var conversation = _.findWhere(conversationsCached, {ID: conversationId});
+            var messages = this.queryMessagesCached(conversationId); // messages are ordered by -Time
+
+            if(angular.isDefined(conversation) && conversation.loaded === true && angular.isArray(messages) && messages.length === conversation.NumMessages) {
+                deferred.resolve(conversation);
+            } else {
+                deferred.resolve(getConversation(conversationId));
+            }
         } else {
-            deferred.resolve(getConversation(conversationId));
+            deferred.reject();
         }
 
         return deferred.promise;
@@ -686,7 +690,7 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var messages = [event.Message];
 
-        // Insert new message in the cache
+        // Insert the new message in the cache
         updateMessage(event.Message);
 
         deferred.resolve();
@@ -701,17 +705,25 @@ angular.module("proton.cache", [])
      */
     api.createConversation = function(event) {
         var deferred = $q.defer();
-        var current = _.findWhere(conversationsCached, {ID: event.ID});
 
-        if (angular.isDefined(current) && current.loaded === true) {
-            updateConversation(event.Conversation);
-            deferred.resolve();
-        } else {
-            getConversation(event.ID).then(function(conversation) {
-                updateConversation(conversation);
-                deferred.resolve();
-            });
-        }
+        // Insert the new conversation in the cache without download
+        updateConversation(event.Conversation);
+        deferred.resolve();
+
+        return deferred.promise;
+    };
+
+    /**
+     * Update draft conversation
+     * @param {Object}
+     * @return {Promise}
+     */
+    api.updateDraftConversation = function(event) {
+        var deferred = $q.defer();
+
+        // Insert the new conversation in the cache without download
+        updateConversation(event.Conversation);
+        deferred.resolve();
 
         return deferred.promise;
     };
@@ -724,8 +736,6 @@ angular.module("proton.cache", [])
     api.updateFlagMessage = function(event) {
         var deferred = $q.defer();
         var current = _.findWhere(messagesCached, {ID: event.ID});
-
-        event.Message.ID = event.Message.ID || event.ID;
 
         // Present in the current cache?
         if(angular.isDefined(current)) {
@@ -767,8 +777,6 @@ angular.module("proton.cache", [])
         var deferred = $q.defer();
         var current = _.find(conversationsCached, {ID: event.ID});
 
-        event.Conversation.ID = event.Conversation.ID || event.ID;
-
         if (angular.isDefined(current) && current.loaded === true) {
             updateConversation(event.Conversation);
             deferred.resolve();
@@ -805,7 +813,8 @@ angular.module("proton.cache", [])
             if(event.Action === DELETE) { // Can be for message or conversation
                 promises.push(api.delete(event));
             } else if(angular.isDefined(event.Message)) { // Manage message action
-                // event.Message.dirty = dirty;
+                event.Message.ID = event.Message.ID || event.ID;
+
                 switch (event.Action) {
                     case CREATE:
                         promises.push(api.createMessage(event));
@@ -820,13 +829,14 @@ angular.module("proton.cache", [])
                         break;
                 }
             } else if(angular.isDefined(event.Conversation)) { // Manage conversation action
-                // event.Conversation.dirty = dirty;
+                event.Conversation.ID = event.Conversation.ID || event.ID;
+
                 switch (event.Action) {
                     case CREATE:
                         promises.push(api.createConversation(event));
                         break;
                     case UPDATE_DRAFT:
-                        promises.push(api.updateFlagConversation(event));
+                        promises.push(api.updateDraftConversation(event));
                         break;
                     case UPDATE_FLAGS:
                         promises.push(api.updateFlagConversation(event));

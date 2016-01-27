@@ -27,7 +27,6 @@
     "angular-route": "~1.4.8",
     "angular-sanitize": "~1.4.8",
     "angular-smooth-scrollbar": "~2.1.0",
-    "angular-touch": "~1.4.8",
     "angular-translate-loader-static-files": "~2.9.0",
     "angular-translate-storage-cookie": "~2.9.0",
     "angular-translate-storage-local": "~2.9.0",
@@ -41,6 +40,7 @@
     "DOMPurify": "dompurify#~0.7.3",
     "dropzone": "~4.2.0",
     "es6-promise": "~3.0.2",
+    "fastclick": "~1.0.6"
     "html2canvas": "~0.4.1",
     "ical.js": "~1.1.2",
     "jquery-ui": "~1.11.4",
@@ -59,7 +59,7 @@
     "svg4everybody": "~2.0.0",
     "underscore.string": "~2.3.3",
     "underscore": "~1.8.3",
-    "vcard": "https://github.com/ProtonMail/vcard.git#master"
+    "vcard": "https://github.com/ProtonMail/vcard.git#master",
   },
   "resolutions": {
     "angular": "1.4.9"

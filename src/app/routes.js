@@ -862,14 +862,7 @@ angular.module('proton.routes', [
             controller: 'ConversationController',
             resolve: {
                 conversation: function($stateParams, cache, networkActivityTracker) {
-                    if(angular.isDefined($stateParams.id)) {
-                        return networkActivityTracker.track(cache.getConversation($stateParams.id));
-                    } else {
-                        return true;
-                    }
-                },
-                loc: function($stateParams) {
-                    return $stateParams.id;
+                    return networkActivityTracker.track(cache.getConversation($stateParams.id));
                 }
             }
         };

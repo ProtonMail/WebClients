@@ -137,27 +137,13 @@ angular.module('proton.autocomplete', [])
                         scope.params.newValue = '';
                         scope.onChange();
                     }
-                }, 50);
+                }, 100);
             };
 
             scope.onRemove = function(index) {
                 scope.emails.splice(index, 1);
                 scope.params.newValue = '';
                 scope.onChange();
-            };
-
-            scope.onClick = function(event) {
-                var target = angular.element(event.target);
-                var input = angular.element(element).find('.new-value-email');
-
-                $timeout.cancel(timeoutSubmit);
-
-                if (target !== input) {
-                    event.preventDefault();
-                    $timeout(function() {
-                        input.focus();
-                    });
-                }
             };
 
             scope.onAddEmail = function(email) {

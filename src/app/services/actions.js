@@ -99,7 +99,6 @@ angular.module('proton.actions', [])
             var promises = [];
             var promise;
             var events = [];
-            var current = tools.currentLocation();
             var process = function() {
                 cache.events(events);
 
@@ -112,43 +111,84 @@ angular.module('proton.actions', [])
                 var conversation = cache.getConversationCached(conversationID);
                 var messages = cache.queryMessagesCached(conversationID);
 
-                if (angular.isDefined(conversation) && angular.isArray(messages)) {
-                    var toApply = _.map(_.filter(labels, function(label) {
-                        return label.Selected === true && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) === -1;
-                    }), function(label) {
-                        return label.ID;
-                    }) || [];
-                    var toRemove = _.map(_.filter(labels, function(label) {
-                        return label.Selected === false && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) !== -1;
-                    }), function(label) {
-                        return label.ID;
-                    }) || [];
-
-                    if(alsoArchive === true) {
-                        toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                        toRemove.push(current);
-                    }
-
+                if (angular.isArray(messages) && messages.length > 0) {
                     _.each(messages, function(message) {
+                        var current;
+                        var toApplyMessage = _.chain(labels)
+                            .filter(function(label) {
+                                return label.Selected === true;
+                            })
+                            .map(function(label) {
+                                return label.ID;
+                            })
+                            .value() || [];
+
+                        var toRemoveMessage = _.chain(labels)
+                            .filter(function(label) {
+                                return label.Selected === false;
+                            })
+                            .map(function(label) {
+                                return label.ID;
+                            })
+                            .value() || [];
+
+                        message.LabelIDs = message.LabelIDs || [];
+
+                        _.each(message.LabelIDs, function(labelID) {
+                            if ([
+                                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.archive
+                            ].indexOf(labelID) !== -1) {
+                                current = labelID;
+                            }
+                        });
+
+                        if (alsoArchive === true) {
+                            toApplyMessage.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                            toRemoveMessage.push(current);
+                        }
+
                         events.push({Action: 3, ID: message.ID, Message: {
                             ID: message.ID,
-                            LabelIDsAdded: toApply,
-                            LabelIDsRemoved: toRemove
+                            LabelIDsAdded: toApplyMessage,
+                            LabelIDsRemoved: toRemoveMessage
                         }});
                     });
+                }
+
+                if (angular.isDefined(conversation)) {
+                    var current = tools.currentLocation();
+                    var toApplyConversation = _.chain(labels)
+                        .filter(function(label) { return label.Selected === true; })
+                        .map(function(label) { return label.ID; })
+                        .value() || [];
+
+                    var toRemoveConversation = _.chain(labels)
+                        .filter(function(label) { return label.Selected === false; })
+                        .map(function(label) { return label.ID; })
+                        .value() || [];
+
+                    if (alsoArchive === true) {
+                        toApplyConversation.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                        toRemoveConversation.push(current);
+                    }
 
                     events.push({Action: 3, ID: conversationID, Conversation: {
                         ID: conversationID,
                         Selected: false,
-                        LabelIDsAdded: toApply,
-                        LabelIDsRemoved: toRemove
+                        LabelIDsAdded: toApplyConversation,
+                        LabelIDsRemoved: toRemoveConversation
                     }});
 
-                    _.each(toApply, function(labelID) {
+                    _.each(toApplyConversation, function(labelID) {
                         promises.push(Conversation.labels(labelID, ADD, ids));
                     });
 
-                    _.each(toRemove, function(labelID) {
+                    _.each(toRemoveConversation, function(labelID) {
                         promises.push(Conversation.labels(labelID, REMOVE, ids));
                     });
                 }
