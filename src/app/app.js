@@ -232,7 +232,7 @@ angular.module('proton', [
 
     // FastClick polyfill for mobile devices
     // https://github.com/ftlabs/fastclick
-    FastClick.attach(document.body);
+    // FastClick.attach(document.body);
 
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
