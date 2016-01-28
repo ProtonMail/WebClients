@@ -131,7 +131,7 @@ angular.module("proton.dropdown", [])
             scope.pages = [];
 
             var disable = function() {
-                scope.disableMain = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page || scope.totalItems === 0; // Main
+                scope.disableMain = Math.ceil(scope.totalItems / scope.itemsPerPage) === 1 || scope.totalItems === 0; // Main
                 scope.disableP = scope.page === 1 || scope.totalItems === 0; // Previous
                 scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page || scope.totalItems === 0; // Next
             };
