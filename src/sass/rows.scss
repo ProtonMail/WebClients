@@ -315,11 +315,15 @@ body, html {
 				height: 25px;
 				overflow: hidden;
 			}
+			article,
+			.hasAttachments {
+				display: none;
+			}
 			.fa-square-o,
 			.fa-check-square {
 				display: block;
 				position: absolute;
-				left: 10px;
+				left: 15px;
 				top: 14px;
 				height: 35px !important;
 				line-height: 35px !important;
@@ -329,7 +333,7 @@ body, html {
 				color: $gray;
 			}
 			.fa-check-square {
-				left: 5px;
+				left: 10px;
 			}
 			&.unread {
 				margin: 0;
@@ -540,6 +544,7 @@ body, html {
 			.message {
 				height: 60px !important;
 				line-height: initial !important;
+				padding-left: 75px !important;
 				& > *,
 				.subject > span {
 					height: auto !important;
@@ -550,7 +555,8 @@ body, html {
 					max-width: 100%;
 				}
 				.star {
-					display: none;
+					top: 30px !important;
+					left: 40px !important;
 				}
 				label {
 					height: 28px !important;
