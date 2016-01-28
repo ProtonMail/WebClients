@@ -107,18 +107,14 @@ angular.module('proton.autocomplete', [])
                 return string.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, "<strong>$1</strong>");
             };
 
-            var createNewInput = function() {
-                scope.params.newValue = '';
-                scope.onChange();
-            };
-
             // Functions
             /**
             * Function called at the initialization of this directive
             */
             scope.initialization = function() {
                 scope.emails = scope.emails || [];
-                createNewInput();
+                scope.params.newValue = '';
+                scope.onChange();
             };
             /**
             * Submit a new address
@@ -191,58 +187,58 @@ angular.module('proton.autocomplete', [])
             scope.onKeyDown = function(event, email) {
                 switch (event.keyCode) {
                     case BACKSPACE_KEY:
-                    var value = scope.params.newValue;
-                    var emails = scope.emails;
+                        var value = scope.params.newValue;
+                        var emails = scope.emails;
 
-                    if(value.length === 0 && emails.length > 0) {
-                        this.onRemove(emails.length - 1);
-                    }
-                    break;
+                        if(value.length === 0 && emails.length > 0) {
+                            this.onRemove(emails.length - 1);
+                        }
+                        break;
                     case DOWN_KEY:
                     case UP_KEY:
                     case TAB_KEY:
                     case ENTER_KEY:
-                    event.preventDefault();
-                    event.stopPropagation();
-                    break;
+                        event.preventDefault();
+                        event.stopPropagation();
+                        break;
                     default:
-                    break;
+                        break;
                 }
             };
 
             scope.onKeyUp = function(event, email) {
                 switch (event.keyCode) {
                     case ENTER_KEY:
-                    scope.onSubmit();
-                    break;
-                    case TAB_KEY:
-                    if(scope.params.newValue.length > 0) {
                         scope.onSubmit();
-                    } else {
-                        // Focus next input (autocomplete or subject)
-                        angular.element(element).parent().nextAll('.row:visible:first').find('input').focus();
-                    }
-                    break;
-                    case DOWN_KEY:
-                    if(scope.params.contactsFiltered.length > 0) {
-                        if(scope.params.selected === null) {
-                            scope.params.selected = 0;
-                        } else if(scope.params.contactsFiltered.length > 0 && scope.params.selected < scope.params.contactsFiltered.length - 1) {
-                            scope.params.selected++;
-                        }
-                    }
-                    break;
-                    case UP_KEY:
-                    if(scope.params.contactsFiltered.length > 0) {
-                        if(scope.params.selected > 1) {
-                            scope.params.selected--;
+                        break;
+                    case TAB_KEY:
+                        if(scope.params.newValue.length > 0) {
+                            scope.onSubmit();
                         } else {
-                            scope.params.selected = 0;
+                            // Focus next input (autocomplete or subject)
+                            angular.element(element).parent().nextAll('.row:visible:first').find('input').focus();
                         }
-                    }
-                    break;
+                        break;
+                    case DOWN_KEY:
+                        if(scope.params.contactsFiltered.length > 0) {
+                            if(scope.params.selected === null) {
+                                scope.params.selected = 0;
+                            } else if(scope.params.contactsFiltered.length > 0 && scope.params.selected < scope.params.contactsFiltered.length - 1) {
+                                scope.params.selected++;
+                            }
+                        }
+                        break;
+                    case UP_KEY:
+                        if(scope.params.contactsFiltered.length > 0) {
+                            if(scope.params.selected > 1) {
+                                scope.params.selected--;
+                            } else {
+                                scope.params.selected = 0;
+                            }
+                        }
+                        break;
                     default:
-                    break;
+                        break;
                 }
             };
             // Initialization
