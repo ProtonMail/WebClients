@@ -6,6 +6,8 @@ angular.module("proton.controllers.Settings")
     $translate,
     authentication,
     confirmModal,
+    User,
+    eventManager,
     reactivateModal,
     Key,
     networkActivityTracker,
@@ -18,17 +20,6 @@ angular.module("proton.controllers.Settings")
     $scope.isNonPrivate = authentication.user.Private === 0;
     // Store addresses in the controller
     $scope.addresses = authentication.user.Addresses;
-
-    // Add information for each key
-    _.each($scope.addresses, function(address) {
-        _.each(address.Keys, function(key) {
-            pmcw.keyInfo(key.PrivateKey).then(function(info) {
-                key.created = info.created;
-                key.bitSize = info.bitSize; // We don't use this data currently
-                key.fingerprint = info.fingerprint;
-            });
-        });
-    });
 
     /**
      * Download key
@@ -65,6 +56,8 @@ angular.module("proton.controllers.Settings")
                     Key.delete(key.ID).then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             address.Keys.splice(index, 1);
+                            // Call event log manager to be sure
+                            eventManager.call();
                             notify({message: $translate.instant('KEY_DELETED'), classes: 'notification-success'});
                             confirmModal.deactivate();
                         } else {
@@ -101,6 +94,8 @@ angular.module("proton.controllers.Settings")
         }).then(function(result) {
             if (result.data && result.data.Code === 1000) {
                 address.Keys.splice(to, 0, address.Keys.splice(from, 1)[0]);
+                // Call event log manager to be sure
+                eventManager.call();
             } else {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             }
@@ -133,10 +128,8 @@ angular.module("proton.controllers.Settings")
                                 }]
                             }).then(function(result) {
                                 if (result.data && result.data.Code === 1000) {
-                                    // Mark key as decrypted
-                                    key.decrypted = true;
-                                    // Store the package decrypted
-                                    authentication.storeKey(address.ID, key.ID, package);
+                                    // Call event log manager
+                                    eventManager.call();
                                     // Close the modal
                                     reactivateModal.deactivate();
                                 } else if (result.data && result.data.Error) {
@@ -184,27 +177,17 @@ angular.module("proton.controllers.Settings")
                             PrivateKey: privateKeyArmored
                         }).then(function(result) {
                             if (result.data && result.data.Code === 1000) {
-                                var key = result.data.Key;
-
-                                // Add the new key who become the first key
-                                address.Keys.unshift(key);
-
-                                // Decrypt private key with the mailbox password
-                                pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) {  // Decrypt private key with the mailbox password
-                                    // Store the package decrypted
-                                    authentication.storeKey(address.ID, key.ID, package);
-                                    // Close the confirm modal
-                                    confirmModal.deactivate();
-                                }, function(error) {
-                                    notify({message: error, classes: 'notification-danger'});
-                                    confirmModal.deactivate();
-                                });
-                            } else {
+                                // Call event log manager
+                                eventManager.call();
+                                // Close the confirm modal
+                                confirmModal.deactivate();
+                            } else if (result.data && result.data.Error) {
                                 notify({message: result.data.Error, classes: 'notification-danger'});
                                 confirmModal.deactivate();
+                            } else {
+                                notify({message: 'Error during create key request', classes: 'notification-danger'});
                             }
                         }, function(error) {
-                            notify({message: error, classes: 'notification-danger'});
                             confirmModal.deactivate();
                         });
                     }, function(error) {
@@ -217,5 +200,9 @@ angular.module("proton.controllers.Settings")
                 }
             }
         });
+    };
+
+    $scope.lock = function() {
+        User.lock();
     };
 });
