@@ -146,6 +146,7 @@ section.sidebar {
     #sidebarLabels {
         position: relative;
         overflow: auto;
+        height: calc(100% - 355px);
     }
     div.labels {
         font-size: 14px;
