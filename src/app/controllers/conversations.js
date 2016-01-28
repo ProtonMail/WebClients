@@ -121,7 +121,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.mobileResponsive = function() {
-        if ($('body').outerWidth() < 1024) {
+        if ($('body').outerWidth() < 1030) {
             $rootScope.layoutMode = 'rows';
         } else {
             var layout = (authentication.user.ViewLayout === 0) ? 'columns' : 'rows';
@@ -571,7 +571,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // Show users that they can toggle layouts
         if (authentication.user.ViewLayout === 0) {
 
-            if (!$cookies.get('feature_layoutToggle') && $window.outerWidth > 1024) {
+            if (!$cookies.get('feature_layoutToggle') && $window.outerWidth > 1030) {
 
                 var now = new Date(),
                 exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
