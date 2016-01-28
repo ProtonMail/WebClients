@@ -29,7 +29,6 @@ angular.module('proton.models.keys', [])
         },
         /**
          * Update private key only, use for password updates
-         * @param {String} keyID
          * @param {Object} params
          * @return {Promise}
          */

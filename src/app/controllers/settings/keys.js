@@ -6,7 +6,7 @@ angular.module("proton.controllers.Settings")
     $translate,
     authentication,
     confirmModal,
-    generateModal,
+    reactivateModal,
     Key,
     networkActivityTracker,
     notify,
@@ -83,6 +83,9 @@ angular.module("proton.controllers.Settings")
         });
     };
 
+    /**
+     * Mark key as primary (move this one to the top of the list)
+     */
     $scope.primary = function(address, key) {
         var order = [];
         var from = address.Keys.indexOf(key);
@@ -104,6 +107,56 @@ angular.module("proton.controllers.Settings")
         }, function(error) {
             notify({message: error, classes: 'notification-danger'});
         }));
+    };
+
+    /**
+     * Open modal to reactivate key pair
+     * @param {Object} address
+     * @param {Object} key
+     */
+    $scope.reactivate = function(address, key) {
+        var mailboxPassword = authentication.getPassword();
+
+        reactivateModal.activate({
+            params: {
+                submit: function(loginPassword, keyPassword) {
+                    // Try to decrypt private key with the key password specified
+                    pmcw.decryptPrivateKey(key.PrivateKey, keyPassword).then(function(package) {
+                        // Encrypt private key with the current mailbox password
+                        pmcw.encryptPrivateKey(package, mailboxPassword).then(function(privateKey) {
+                            // Update private key
+                            Key.private({
+                                Password: loginPassword,
+                                Keys: [{
+                                    ID: key.ID,
+                                    PrivateKey: privateKey
+                                }]
+                            }).then(function(result) {
+                                if (result.data && result.data.Code === 1000) {
+                                    // Mark key as decrypted
+                                    key.decrypted = true;
+                                    // Store the package decrypted
+                                    authentication.storeKey(address.ID, key.ID, package);
+                                    // Close the modal
+                                    reactivateModal.deactivate();
+                                } else {
+                                    notify({message: '', classes: 'notification-danger'});
+                                }
+                            }, function(error) {
+                                notify({message: '', classes: 'notification-danger'});
+                            });
+                        }, function() {
+                            notify({message: '', classes: 'notification-danger'});
+                        });
+                    }, function() {
+                        notify({message: '', classes: 'notification-danger'});
+                    });
+                },
+                cancel: function() {
+                    reactivateModal.deactivate();
+                }
+            }
+        });
     };
 
     /**

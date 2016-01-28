@@ -444,19 +444,20 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('generateModal', function(pmModal) {
+.factory('reactivateModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/generate.tpl.html',
+        templateUrl: 'templates/modals/reactivate.tpl.html',
         controller: function(params) {
-            this.password = '';
+            this.loginPassword = '';
+            this.keyPassword = '';
 
             /**
              * Submit password
              */
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.password);
+                    params.submit(this.loginPassword, this.keyPassword);
                 }
             }.bind(this);
 
