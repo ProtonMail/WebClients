@@ -35,6 +35,10 @@ body, html {
 					display: block;
 				}
 			}
+			.fa-square-o,
+			.fa-check-square {
+				display: none;
+			}
 			&:focus {
 				background: #e9e6f0 !important;
 				z-index: 5;
@@ -311,9 +315,9 @@ body, html {
 				height: 25px;
 				overflow: hidden;
 			}
-			.pm_checkbox,
 			.fa-square-o,
 			.fa-check-square {
+				display: block;
 				position: absolute;
 				left: 10px;
 				top: 14px;
