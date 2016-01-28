@@ -11,7 +11,7 @@
                 <span class="pm_badge pull-right success" ng-show="address.Status === 1"><i class="fa fa-check"></i> Enabled</span>
                 <span class="pm_badge pull-right error" ng-hide="address.Status === 1" pt-tooltip="{{ 'THIS_ADDRESS_IS_DISABLED' | translate }}">Disabled</span>
                 <h4>{{ ::address.Email }}</h4>
-                <p>
+                <p ng-hide="isNonPrivate === true">
                     <button class="pm_button" ng-click="generate(address)" ng-disabled="address.Keys > 10">
                         <i class="fa fa-key"></i>
                         {{ 'GENERATE_NEW_KEY_PAIR' | translate }}
