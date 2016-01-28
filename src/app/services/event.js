@@ -87,6 +87,11 @@ angular.module("proton.event", ["proton.constants"])
 							pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
 								key.decrypted = true; // We mark this key as decrypted
 								authentication.storeKey(address.ID, key.ID, package); // We store the package to the current service
+								pmcw.keyInfo(key.PrivateKey).then(function(info) {
+									key.created = info.created; // Creation date
+									key.bitSize = info.bitSize; // We don't use this data currently
+									key.fingerprint = info.fingerprint; // Fingerprint
+								});
 							}, function(error) {
 								key.decrypted = false; // This key is not decrypted
 								// If the primary (first) key for address does not decrypt, display error.
