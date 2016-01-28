@@ -10,6 +10,16 @@
         line-height: 54px;
         margin: 0;
     }
+    .pm_checkbox,
+    .fa-square-o,
+    .fa-check-square {
+        margin-top: -2px;
+        float: left;
+    }
+    .fa-square-o,
+    .fa-check-square {
+        margin: 8px 5px 0 5px;
+    }
     & > .pm_buttons {
         float: none;
         display: inline-block;

@@ -5,10 +5,16 @@
                 <i class="fa fa-long-arrow-left"></i>
             </a>
         </span>
-        <label class="pm_checkbox" ng-if="!idDefined()">
-            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
-            <em class="fa fa-check"></em>
-        </label>
+        <a 
+        ng-disabled="numberElement === 0" 
+        pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}"
+        ng-if="!idDefined()" 
+        ng-click="toggleAllSelected()" 
+        class="fa fa-square-o" 
+        ng-class="{ 
+            'fa-square-o': !allSelected(),
+            'fa-check-square': allSelected()
+        }"></a>
         <span class="pm_buttons">
             <a
 
