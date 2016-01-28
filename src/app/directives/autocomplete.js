@@ -143,6 +143,7 @@ angular.module('proton.autocomplete', [])
             scope.onRemove = function(index) {
                 scope.emails.splice(index, 1);
                 scope.params.newValue = '';
+                angular.element(element).find('.new-value-email').focus();
                 scope.onChange();
             };
 
