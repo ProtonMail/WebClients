@@ -149,6 +149,8 @@ angular.module('proton.autocomplete', [])
             scope.onAddEmail = function(email) {
                 var index = scope.emails.indexOf(email);
 
+                $timeout.cancel(timeoutSubmit);
+
                 if(index === -1) {
                     scope.emails.push(email);
                     scope.params.newValue = '';
