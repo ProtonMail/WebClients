@@ -40,6 +40,14 @@ angular.module("proton.models.user", [])
             keys: {
                 method: 'put',
                 url: url.get() + '/users/keys'
+            },
+            lock: {
+                method: 'put',
+                url: url.get() + '/users/lock'
+            },
+            unlock: {
+                method: 'put',
+                url: url.get() + '/users/unlock'
             }
         }
     );
