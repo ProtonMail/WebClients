@@ -104,6 +104,9 @@ body.tabletMode {
         .conversation {
             height: 50px;
             line-height: 50px;
+            & > div {
+                display: inline-block;
+            }
             & > *,
             .subject h4 {
                 height: 50px;
