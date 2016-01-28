@@ -52,3 +52,12 @@
         }
     }
 }
+
+input:invalid, 
+input:-moz-ui-invalid {
+    border:0;
+    outline:none;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+}
