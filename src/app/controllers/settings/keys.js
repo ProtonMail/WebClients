@@ -139,17 +139,19 @@ angular.module("proton.controllers.Settings")
                                     authentication.storeKey(address.ID, key.ID, package);
                                     // Close the modal
                                     reactivateModal.deactivate();
+                                } else if (result.data && result.data.Error) {
+                                    notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: '', classes: 'notification-danger'});
+                                    notify({message: 'Error during the update key request', classes: 'notification-danger'});
                                 }
                             }, function(error) {
-                                notify({message: '', classes: 'notification-danger'});
+                                notify({message: 'Error during the update key request', classes: 'notification-danger'});
                             });
-                        }, function() {
-                            notify({message: '', classes: 'notification-danger'});
+                        }, function(error) {
+                            notify({message: 'Error during the encryption phase', classes: 'notification-danger'});
                         });
-                    }, function() {
-                        notify({message: '', classes: 'notification-danger'});
+                    }, function(error) {
+                        notify({message: 'Wrong key pair password', classes: 'notification-danger'});
                     });
                 },
                 cancel: function() {
