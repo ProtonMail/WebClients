@@ -9,43 +9,23 @@
 
 @media (max-width: $tablet-landscape) {
     label.pm_checkbox {
-        display: inline-block;
-        height: 35px !important;
-        width: 35px !important;
-        min-width: 35px;
-        border: 1px solid $border;
-        border-radius: 2px;
-        margin: 0 !important;
-        position: relative;
-        top: 4px;
-        input[type="checkbox"] {
-            display: none;
-        }
-		input[type="checkbox"]:checked + em {
-			height: 35px !important;
-			width: 35px !important;
-			line-height: 35px !important;
-			text-align: center;
-			display: block;
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-		}
+    	display: none !important;
+    }
+    .fa-square-o,
+    .fa-check-square,
+    .fa-check-square-o {
+    	font-size: 2rem;
+    	-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+    	border: none;
+    	background: transparent;
     }
 }
 
 
 @media (max-width: $mobile-landscape) {
     label.pm_checkbox {
-        height: 35px !important;
-        width: 35px !important;
-        min-width: 35px;
-		input[type="checkbox"]:checked + em {
-			height: 35px !important;
-			width: 35px !important;
-			line-height: 35px !important;
-		}
+        display: none !important;
     }
 }

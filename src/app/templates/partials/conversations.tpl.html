@@ -52,6 +52,14 @@
                     <input type="checkbox" ng-model="conversation.Selected" />
                     <em class="fa fa-check"></em>
                 </label>
+                <button 
+                ng-click="select($event, conversation)" 
+                class="fa fa-square-o" 
+                ng-show="!conversation.selected"></button>
+                <button 
+                ng-click="select($event, conversation)" 
+                class="fa fa-check-square-o" 
+                ng-show="conversation.selected"></button>
             </aside>
             <header>
                 <p>
@@ -136,9 +144,19 @@
         }">
             <span class="expiration" ng-if="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
             <label class="pm_checkbox">
-                <input type="checkbox" ng-model="conversation.Selected" ng-click="$event.stopPropagation();select($event, conversation)" />
+                <input 
+                type="checkbox" 
+                ng-model="conversation.Selected" 
+                ng-click="$event.stopPropagation();select($event, conversation)" />
                 <em class="fa fa-check"></em>
             </label>
+            <button 
+            ng-click="conversation.Selected=!conversation.Selected" 
+            class="fa fa-square-o" 
+            ng-class="{ 
+                'fa-square-o': !conversation.Selected,
+                'fa-check-square': conversation.Selected
+            }"></button>
             <span class="star" ng-click="$event.stopPropagation();toggleStar(conversation)">
                 <a class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
                     <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>

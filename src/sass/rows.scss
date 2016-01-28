@@ -311,7 +311,9 @@ body, html {
 				height: 25px;
 				overflow: hidden;
 			}
-			.pm_checkbox {
+			.pm_checkbox,
+			.fa-square-o,
+			.fa-check-square {
 				position: absolute;
 				left: 10px;
 				top: 14px;
@@ -320,6 +322,10 @@ body, html {
 				width: 35px !important;
 				z-index: 6;
 				cursor: pointer;
+				color: $gray;
+			}
+			.fa-check-square {
+				left: 5px;
 			}
 			&.unread {
 				margin: 0;
