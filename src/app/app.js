@@ -9,7 +9,7 @@ angular.module('proton', [
     'ngSanitize',
     'pascalprecht.translate',
     'pikaday',
-    'SmoothScrollbar',
+    // 'SmoothScrollbar',
     'ui.router',
 
     // Constant
@@ -214,7 +214,7 @@ angular.module('proton', [
         }
     });
 
-    // Less than 1024 / Tablet Mode
+    // Less than 1030 / Tablet Mode
     $rootScope.$on('sidebarMobileToggle', function() {
         $rootScope.showSidebar = !$rootScope.showSidebar;
     });

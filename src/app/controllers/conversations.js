@@ -162,7 +162,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $rootScope.tabletMode = false;
             $rootScope.mobileMode = true;
         }
-        // if ($('body').outerWidth() < 1025) {
+        // if ($('body').outerWidth() < 1030) {
         //     $rootScope.layoutMode = 'rows';
         // }
         // else {
@@ -613,7 +613,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // Show users that they can toggle layouts
         if (authentication.user.ViewLayout === 0) {
 
-            if (!$cookies.get('feature_layoutToggle') && $window.outerWidth > 1024) {
+            if (!$cookies.get('feature_layoutToggle') && $window.outerWidth > 1030) {
 
                 var now = new Date(),
                 exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());

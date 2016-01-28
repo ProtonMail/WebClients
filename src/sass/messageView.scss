@@ -295,6 +295,15 @@
             .contact strong {
                 font-weight: 700;
             }
+            header {
+                .pm_labels {
+                    background: #fff;
+                    .pm_label {
+                        box-shadow: 0 0 0 4px #fff;
+                        background: #fff;
+                    }
+                }
+            }
         }
         &.read {
             span.person {

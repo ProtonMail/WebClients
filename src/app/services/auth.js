@@ -80,11 +80,14 @@ angular.module("proton.authentication", [
                                         _.each(user.Addresses, function(address) { // For each addresses
                                             _.each(address.Keys, function(key, index) { // For each keys
                                                 promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
-                                                    api.storeKey(address.ID, key.ID, package);
+                                                    key.decrypted = true; // We mark this key as decrypted
+                                                    api.storeKey(address.ID, key.ID, package); // We store the package to the current service
                                                 }, function(error) {
+                                                    key.decrypted = false; // This key is not decrypted
                                                     // If the primary (first) key for address does not decrypt, display error.
                                                     if(index === 0) {
-                                                        // TODO display error
+                                                        address.disabled = true; // This address cannot be used
+                                                        notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
                                                     }
                                                 }));
                                             });

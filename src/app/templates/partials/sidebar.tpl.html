@@ -74,6 +74,7 @@ ng-hide="tabletMode || mobileMode">
         </li>
     </ul>
 
+<!--     
     <scrollbar name="scrollbarName" ng-label-height>
         <div id="sidebarLabels">
             <div class="labels">
@@ -88,7 +89,22 @@ ng-hide="tabletMode || mobileMode">
                 </ul>
             </div>
         </div>
-    </scrollbar>
+    </scrollbar> 
+-->
+
+    <div id="sidebarLabels">
+        <div class="labels">
+            <ul>
+                <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
+                    <a ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}" class="btn">
+                        <i class="fa fa-tag" ng-style="color(label)"></i>
+                        <span>{{ label.Name }}</span>
+                        <em ng-bind="unread('label', label.ID)"></em>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <div class="footer">
         <div class="wrap">
