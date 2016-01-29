@@ -96,11 +96,11 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="border-panel margin-bottom" ng-show="domains.length === 0">
+                <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
-                        <i class="fa fa-exclamation-triangle text-red"></i> <strong>{{ 'NO_CUSTOM_DOMAIN_FOUND' | translate }}</strong>
+                        <strong>{{ 'NO_CUSTOM_DOMAIN_FOUND' | translate }}</strong>
                     </p>
-                    <p>Please add first a custom domain to configure addresses.</p>
+                    <p>Click on 'ADD CUSTOM DOMAIN' button to add it.</p>
                 </div>
             </section>
             <p>&nbsp;</p>
@@ -147,9 +147,9 @@
                         </table>
                     </div>
                 </div>
-                <div class="border-panel margin-bottom" ng-show="domains.length === 0">
+                <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
-                        <i class="fa fa-exclamation-triangle text-red"></i> <strong>{{ 'NO_CUSTOM_DOMAIN_FOUND' | translate }}</strong>
+                        <strong>{{ 'NO_CUSTOM_DOMAIN_FOUND' | translate }}</strong>
                     </p>
                     <p>Please add first a custom domain to configure addresses.</p>
                 </div>
