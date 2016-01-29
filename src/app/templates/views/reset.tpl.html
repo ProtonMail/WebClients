@@ -38,30 +38,29 @@
 
     <div class="panel-body" ng-show="showForm && !process.generatingKeys">
 
-        <h1 class="text-center">{{ 'NEW_MAILBOX' | translate }}</h1>
+        <h1 class="text-center">{{ 'RESET_MAILBOX' | translate }}</h1>
+        <br>
 
         <form method="post" ng-submit="resetMailbox(resetMBPW)" name="resetMBPW" novalidate  >
 
-            <div class="form-group">
-                <label for="password">{{ 'NEW_MAILBOX_PASSWORD' | translate }}</label>
-                <input id="password" name="password" ng-model="account.mailboxPassword" tabindex="1" type="password" class="form-control"  placeholder="Password" autofocus="" required="" />
-                <div ng-show="resetMBPW.$submitted || resetMBPW.password.$touched">
-                    <p ng-show="resetMBPW.password.$error.required" class="text-danger">Mailbox password is required.</p>
-                </div>
+            <div class="form-group margin">
+                <input id="password" name="password" ng-model="account.mailboxPassword" tabindex="1" type="password" class="form-control"  placeholder="{{ 'NEW_MAILBOX_PASSWORD' | translate }}" autofocus="" required="" />
             </div>
 
-            <div class="form-group">
-                <label for="passwordc">Confirm New Mailbox Password</label>
-                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" class="form-control"  placeholder="Password" required="" ng-enter="finish(resetMBPW)" />
+            <div class="form-group margin">
+                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" class="form-control"  placeholder="{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}" required="" ng-enter="finish(resetMBPW)" />
                 <div ng-show="resetMBPW.$submitted || resetMBPW.passwordc.$touched">
                     <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>
                 </div>
             </div>
+
+            <p class="text-center alert alert-danger">Keep this password safe - it cannot be recovered.</p>
+
             <button type="submit" class="pm_button primary btn-block btn-lg" title="Reset my Mailbox" ng-class="{disabled: networkActivity.loading()}">Finish</button>
 
         </form>
 
-        <h6 class="text-center">Keep this password safe - it cannot be recovered.</h6>
+        <p></p>
 
         <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
 
