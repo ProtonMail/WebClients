@@ -35,7 +35,7 @@ angular.module('proton.constants', [])
     HD_BREAKPOINT: 1920,
     DESKTOP_BREAKPOINT: 1200,
     ROW_BREAKPOINT: 960,
-    MOBILE_BREAKPOINT: 700,
+    MOBILE_BREAKPOINT: 800,
     MAILBOX_IDENTIFIERS: {
         inbox: '0',
         drafts: '1',

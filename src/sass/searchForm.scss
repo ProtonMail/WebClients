@@ -6,8 +6,8 @@ form.searchForm {
 	margin: 13px 0;
 	border-radius: 35px;
 	color: #fff;
-	width: 440px;
-	max-width: 28%;
+	width: calc(100% - 700px);
+	max-width: 35%;
 	margin-left: 10px;
 	box-sizing: border-box;
 	position: relative;
