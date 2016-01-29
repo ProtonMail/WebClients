@@ -4,90 +4,34 @@ body {
 		input[type="checkbox"] {
 			margin: 13px 10px 0 0;
 		}
-		em {
-			display: none;
-		}
 	}
+	.fa-square-o,
+    .fa-check-square {
+		display: none !important;
+	} 
 }
 
 // MOBILE
 body.mobileMode {
 	#body {
 		#pm_main{
-			label.pm_checkbox {
+			label.pm_checkbox,
+			input[type="checkbox"] {
 		    	display: none !important;
 		    }
 		    .fa-square-o,
-		    .fa-check-square,
-		    .fa-check-square-o {
+		    .fa-check-square {
+		    	display: inline-block !important;
 		    	font-size: 2rem;
 		    	-webkit-appearance: none;
 				-moz-appearance: none;
 				appearance: none;
 		    	border: none;
 		    	background: transparent;
+		    	text-decoration: none;
+		    	color: $alt;
+		    	width: 2rem;
 		    }
-			input[type="checkbox"] {
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
-				width: 28px;
-				min-width: 28px;
-				height: 28px;
-				min-height: 28px;
-				border: 1px solid $border;
-				border-radius: 2px;
-				cursor: pointer;
-				top: 10px;
-				box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 0 2px 0 $gray;
-				&:checked:before {
-					font-family: 'FontAwesome';
-					content: "\f00c";
-					height: 28px;
-					line-height: 28px;
-					width: 28px;
-					text-align: center;
-					display: block;
-					font-size: 18px;
-					box-shadow: 0 0 2px 0 $gray;
-				}
-			}
-		}
-	}
-}
-
-// MOBILE
-body.mobileMode {
-		#body {
-		#pm_main {
-			label.pm_checkbox {
-		        display: none !important;
-		    }
-			input[type="checkbox"] {
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
-				width: 28px;
-				min-width: 28px;
-				height: 28px;
-				min-height: 28px;
-				border: 1px solid $border;
-				border-radius: 2px;
-				cursor: pointer;
-				top: 10px;
-				box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 0 2px 0 $gray;
-				&:checked:before {
-					font-family: 'FontAwesome';
-					content: "\f00c";
-					height: 28px;
-					line-height: 28px;
-					width: 28px;
-					text-align: center;
-					display: block;
-					font-size: 18px;
-					box-shadow: 0 0 2px 0 $gray;
-				}
-			}
 		}
 	}
 }

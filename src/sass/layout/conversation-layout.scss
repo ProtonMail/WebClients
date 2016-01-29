@@ -56,8 +56,11 @@ body.mobileMode {
     }
     #pm_main {
         float: left;
-        width: 100%;
         height: calc(100% - 60px);
+    }
+    #pm_main,
+    #conversation-list-rows {
+        width: 100%;
     }
     #wrapper {
         clear: both;
@@ -65,12 +68,11 @@ body.mobileMode {
         width: 100%;
     }
     #conversation-list-columns {
-        width: 500px;
-        width: 40%;
+        width: 100%;
         float: left;
+        clear: both;
     }
     #conversation-view {
-        width: calc(100% - 500px);
         width: 60%;
         float: left;
     }
@@ -78,7 +80,6 @@ body.mobileMode {
         height: calc(100% - 75px);
     }
     #pm_view {
-        width: calc(100% - 500px);
         width: 60%;
         float: left;
         height: 100%;
@@ -91,17 +92,6 @@ body.mobileMode {
         overflow-y: auto;
         overflow-x: hidden;
         height: 100%;
-    }
-}
-
-// MOBILE
-body.mobileMode {
-    #pm_main,
-    #conversation-list-rows {
-        width: 100% !important;
-    }
-    #conversation-list-columns {
-        clear: both;
     }
 }
 

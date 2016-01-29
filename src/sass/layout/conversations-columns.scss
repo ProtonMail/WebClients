@@ -112,16 +112,3 @@ body.mobileMode {
         }
     }
 }
-
-// MOBILE
-body.mobileMode {
-    #conversation-list-columns {
-        .selection {
-            width: 50px;
-            padding-top: 15px;
-        }
-        .row.bottom {
-            padding-left: 50px;
-        }
-    }
-}

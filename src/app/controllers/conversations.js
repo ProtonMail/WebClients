@@ -144,18 +144,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.mobileResponsive = function() {
         var bodyWidth = $('body').outerWidth();
 
-        // Force Rows
-        if ( bodyWidth <= CONSTANTS.ROW_BREAKPOINT ) {
-            if ($rootScope.layoutMode!=='rows') {
-                notify({
-                    message: 'Switched to Rows Activated', 
-                    classes: 'notification-info',
-                    duration: 2000
-                });
-                $rootScope.layoutMode = 'rows';
-            }
-        }
-
         // Force Mobile
         if ( bodyWidth > CONSTANTS.MOBILE_BREAKPOINT ) {
             if ($rootScope.mobileMode===true) {

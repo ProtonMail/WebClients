@@ -1,4 +1,4 @@
-<div id="conversation-list-columns" ng-if="!(idDefined() && mobileMode)">
+<div id="conversation-list-columns" ng-if="rowMode!==true">
     <div
     ng-repeat="conversation in conversations track by conversation.ID"
     class="conversation"
@@ -12,6 +12,7 @@
             type="checkbox" 
             ng-model="conversation.Selected" 
             ng-click="$event.stopPropagation();select($event, conversation)" />
+            <a href="#" ng-click="conversation.Selected = !conversation.Selected;select($event, conversation);" class="fa" ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a>
         </div>
         <div class="row top">
             <h4 

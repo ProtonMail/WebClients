@@ -75,6 +75,8 @@ body {
             }
             .size {
                 width: 5.5rem;
+                text-align: right;
+                padding-right: 1rem;
             }
             em.time {
                 float: right;
@@ -112,20 +114,9 @@ body.mobileMode {
                 height: 50px;
                 line-height: 50px;
             }
-        }
-    }
-}
-
-// MOBILE
-body.mobileMode {
-    #conversation-list-rows {
-        .conversation {
-            height: 50px;
-            line-height: 50px;
-            & > *,
-            .subject h4 {
-                height: 50px;
-                line-height: 50px;
+            .fa-square-o,
+            .fa-check-square {
+                margin: 0 0 0 10px;
             }
         }
     }
