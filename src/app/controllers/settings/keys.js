@@ -66,8 +66,10 @@ angular.module("proton.controllers.Settings")
                             address.Keys.splice(index, 1);
                             // Call event log manager to be sure
                             notify({message: $translate.instant('KEY_DELETED'), classes: 'notification-success'});
+                            // Close the modal
                             confirmModal.deactivate();
-                            return eventManager.call();
+                            // Call the event log manager
+                            eventManager.call();
                         } else if (result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         }
@@ -95,7 +97,6 @@ angular.module("proton.controllers.Settings")
         var to = 0;
 
         _.each(address.Keys, function(element, i) { order.push(i + 1); });
-
         order.splice(to, 0, order.splice(from, 1)[0]);
 
         networkActivityTracker.track(Key.order({
@@ -104,7 +105,7 @@ angular.module("proton.controllers.Settings")
         }).then(function(result) {
             if (result.data && result.data.Code === 1000) {
                 // Call event log manager to be sure
-                return eventManager.call();
+                eventManager.call();
             } else {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             }
@@ -129,11 +130,11 @@ angular.module("proton.controllers.Settings")
             params: {
                 submit: function(loginPassword, keyPassword) {
                     // Try to decrypt private key with the key password specified
-                    networkActivityTracker.track(pmcw.decryptPrivateKey(key.PrivateKey, keyPassword).then(function(package) {
+                    pmcw.decryptPrivateKey(key.PrivateKey, keyPassword).then(function(package) {
                         // Encrypt private key with the current mailbox password
-                        return pmcw.encryptPrivateKey(package, mailboxPassword).then(function(privateKey) {
+                        pmcw.encryptPrivateKey(package, mailboxPassword).then(function(privateKey) {
                             // Update private key
-                            return Key.private({
+                            networkActivityTracker.track(Key.private({
                                 Password: loginPassword,
                                 Keys: [{
                                     ID: key.ID,
@@ -144,7 +145,7 @@ angular.module("proton.controllers.Settings")
                                     // Close the modal
                                     reactivateModal.deactivate();
                                     // Call event log manager
-                                    return eventManager.call();
+                                    eventManager.call();
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
@@ -157,13 +158,13 @@ angular.module("proton.controllers.Settings")
                                 } else {
                                     notify({message: 'Error during the update key request', classes: 'notification-danger'});
                                 }
-                            });
+                            }));
                         }, function(error) {
                             notify({message: 'Error during the encryption phase', classes: 'notification-danger'});
                         });
                     }, function(error) {
                         notify({message: 'Wrong key pair password', classes: 'notification-danger'});
-                    }));
+                    });
                 },
                 cancel: function() {
                     reactivateModal.deactivate();
@@ -186,11 +187,11 @@ angular.module("proton.controllers.Settings")
                 title: title,
                 message: message,
                 confirm: function() {
-                    networkActivityTracker.track(pmcw.generateKeysRSA(address.Email, mailboxPassword).then(function(result) {
+                    pmcw.generateKeysRSA(address.Email, mailboxPassword).then(function(result) {
                         var publicKeyArmored = result.publicKeyArmored;
                         var privateKeyArmored = result.privateKeyArmored;
 
-                        return Key.create({
+                        networkActivityTracker.track(Key.create({
                             AddressID: address.ID,
                             PrivateKey: privateKeyArmored
                         }).then(function(result) {
@@ -198,10 +199,9 @@ angular.module("proton.controllers.Settings")
                                 // Close the confirm modal
                                 confirmModal.deactivate();
                                 // Call event log manager
-                                return eventManager.call();
+                                eventManager.call();
                             } else if (result.data && result.data.Error) {
                                 notify({message: result.data.Error, classes: 'notification-danger'});
-                                confirmModal.deactivate();
                             } else {
                                 notify({message: 'Error during create key request', classes: 'notification-danger'});
                             }
@@ -212,11 +212,11 @@ angular.module("proton.controllers.Settings")
                             } else {
                                 notify({message: 'Error during the create key request', classes: 'notification-danger'});
                             }
-                        });
+                        }));
                     }, function(error) {
                         notify({message: error, classes: 'notification-danger'});
                         confirmModal.deactivate();
-                    }));
+                    });
                 },
                 cancel: function() {
                     confirmModal.deactivate();
