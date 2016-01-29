@@ -82,28 +82,21 @@ angular.module("proton.controllers.Settings")
             5. add dkim
             6. add dmarc
         */
-        if (domain.DomainName) {
-            if ((domain.VerifyState !== 2)) {
-                $scope.verification(domain);
-            } else {
-                if (true) { // TODO check if address exists
-                    $scope.addAddress(domain);
-                }
-                else {
-                    if (domain.MxState !== 3) {
-                        $scope.mx(domain);
-                    } else {
-                        if ((domain.SpfState !== 3)) {
-                            $scope.spf(domain);
-                        } else {
-                            // ...
-                        }
-                    }
-                }
-            }
-        } else {
+        if (!domain.DomainName) {
             // show first step
             $scope.addDomain();
+        } else if ((domain.VerifyState !== 2)) {
+            $scope.verification(domain);
+        } else if (domain.Addresses.length === 0) {
+            $scope.addAddress(domain);
+        } else if (domain.MxState !== 3) {
+            $scope.mx(domain);
+        } else if (domain.SpfState !== 3) {
+            $scope.spf(domain);
+        } else if (domain.DkimState !== 4) {
+            $scope.dkim(domain);
+        } else if (domain.DmarcState !== 3) {
+            $scope.dmarc(domain);
         }
     };
 
@@ -147,7 +140,11 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        if (error.data && error.data.Code === 403) {
+                            confirmModal.deactivate();
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        }
                     }));
                 },
                 cancel: function() {
@@ -170,7 +167,7 @@ angular.module("proton.controllers.Settings")
                 title: $translate.instant('DELETE_ADDRESS'),
                 message: $translate.instant('Are you sure you want to delete this address?'),
                 confirm: function() {
-                    networkActivityTracker.track(Address.delete(address.AddressID).then(function(result) {
+                    networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('ADDRESS_DELETED'), classes: 'notification-success'});
                             domain.Addresses.splice(index, 1); // Remove address in interface
@@ -181,7 +178,11 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        if (error.data && error.data.Code === 403) {
+                            confirmModal.deactivate();
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        }
                     }));
                 },
                 cancel: function() {
@@ -212,7 +213,11 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
+                        if (error.data && error.data.Code === 403) {
+                            // Do nothing
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
+                        }
                     }));
                 },
                 cancel: function() {
@@ -303,17 +308,19 @@ angular.module("proton.controllers.Settings")
                 step: 3,
                 domain: domain,
                 members: $scope.members,
-                submit: function(address, member) {
+                add: function(address, member) {
                     networkActivityTracker.track(
                         Address.create({
                             Local: address, // local part
                             Domain: domain.DomainName,
-                            MemberID: member.MemberID // either you custom domain or a protonmail domain
+                            MemberID: member.ID // either you custom domain or a protonmail domain
                         })
                     ).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('DOMAIN_ADDED'), classes: 'notification-success'});
-                            $scope.refreshStatus();
+                            notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
+                            domain.Addresses.push(result.data.Address);
+                            addressModal.deactivate();
+                            $scope.addAddress(domain);
                         } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
                             notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
                         } else if(angular.isDefined(result.data) && result.data.Error) {
@@ -322,13 +329,16 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                        if (error.data && error.data.Code === 403) {
+                            // Do nothing
+                        } else {
+                            notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                        }
                     });
                 },
                 next: function() {
-                    // show the newly added address
-                    alert('todo!');
                     addressModal.deactivate();
+                    $scope.dmarc(domain);
                 },
                 cancel: function() {
                     addressModal.deactivate();
@@ -565,7 +575,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.initMember = function(address) {
         _.each($scope.members, function(member) {
-            var found = _.findWhere(member.Addresses, {ID: address.AddressID});
+            var found = _.findWhere(member.Addresses, {ID: address.ID});
 
             if(angular.isDefined(found)) {
                 address.select = member;

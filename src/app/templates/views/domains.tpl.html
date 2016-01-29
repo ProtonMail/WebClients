@@ -9,9 +9,9 @@
                     <span class="pull-right">{{ organization.UsedDomains }}/{{ organization.MaxDomains }} {{ 'DOMAINS_USED' | translate }}. <a ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
                     {{ 'DOMAINS' | translate }}
                 </legend>
-                <p class="alert alert-info" ng-show="organization.UsedDomains >= organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
-                <p>
-                    <button ng-class="{ 'disabled': organization.UsedDomains >= organization.MaxDomains }" type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
+                <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
+                <p class="clearfix">
+                    <button ng-hide="organization.UsedDomains === organization.MaxDomains" type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
                     <button type="button" class="pm_button pull-right" ng-click="refreshStatus()">
                         <i class="fa fa-refresh"></i> {{ 'REFRESH_DOMAIN_STATUS' | translate }}
                     </button>
@@ -35,60 +35,54 @@
                             </td>
                             <td class="status">
                                 <button ng-show="domain.VerifyState === 2" type="button" class="verifyButton progress pm_button success" ng-click="verification(domain)">
-                                <i class="fa fa-check"></i> {{ 'VERIFED' | translate }}
+                                    <i class="fa fa-check"></i> {{ 'VERIFED' | translate }}
                                 </button>
                                 <button ng-show="domain.VerifyState === 1" type="button" class="verifyButton progress pm_button error" ng-click="verification(domain)">
-                                <i class="fa fa-warning"></i> {{ 'UNVERIFED' | translate }}
+                                    <i class="fa fa-warning"></i> {{ 'UNVERIFED' | translate }}
                                 </button>
-                                <!-- TODO: change logic to use address routes -->
-                                <button type="button" class="progress pm_button" ng-click="addAddress(domain)"
-                                ng-class="{
-                                'disabled': (domain.VerifyState === 1),
-                                'success': domain.Addresses.length > 0
-                                }">
-                                    <kbd>{{ domain.Addresses.length }}</kbd> Addresses
+                                <button type="button" class="progress pm_button" ng-click="verification(domain)" ng-class="{
+                                    'success': domain.VerifyState === 2,
+                                    'error': domain.VerifyState === 1
+                                }">{{ 'VERIFICATION' | translate }}</button>
+                                <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-disabled="domain.VerifyState === 1" ng-class="{'success': domain.Addresses.length > 0}">
+                                    <kbd>{{ domain.Addresses.length }}</kbd> {{ 'ADDRESSES' | translate }}
                                 </button>
-                                <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-class="{
-                                'disabled': (domain.VerifyState === 1),
-                                'success': domain.MxState === 3,
-                                'error': domain.MxState === 2 || domain.MxState === 1
+                                <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-disabled="domain.VerifyState === 1" ng-class="{
+                                    'success': domain.MxState === 3,
+                                    'error': domain.MxState === 2 || domain.MxState === 1
                                 }">
-                                <i class="fa" ng-hide="(domain.MxState === 0)" ng-class="{
-                                'fa-check': (domain.MxState === 3),
-                                'fa-times': (domain.MxState === 1 || domain.MxState === 2)
-                                }"></i> MX
+                                    <i class="fa" ng-hide="(domain.MxState === 0)" ng-class="{
+                                        'fa-check': (domain.MxState === 3),
+                                        'fa-times': (domain.MxState === 1 || domain.MxState === 2)
+                                    }"></i> MX
                                 </button>
-                                <button type="button" class="progress pm_button" ng-click="spf(domain)" ng-class="{
-                                'disabled': (domain.VerifyState === 1),
-                                'success': domain.SpfState === 3,
-                                'error': domain.SpfState === 2 || domain.SpfState === 1
+                                <button type="button" class="progress pm_button" ng-disabled="domain.VerifyState === 1" ng-click="spf(domain)" ng-class="{
+                                    'success': domain.SpfState === 3,
+                                    'error': domain.SpfState === 2 || domain.SpfState === 1
                                 }">
-                                <i class="fa" ng-hide="(domain.SpfState === 0)" ng-class="{
-                                'fa-check': (domain.SpfState === 3),
-                                'fa-times': (domain.SpfState === 1 || domain.SpfState === 2)
-                                }"></i> SPF
+                                    <i class="fa" ng-hide="(domain.SpfState === 0)" ng-class="{
+                                        'fa-check': (domain.SpfState === 3),
+                                        'fa-times': (domain.SpfState === 1 || domain.SpfState === 2)
+                                    }"></i> SPF
                                 </button>
-                                <button type="button" class="progress pm_button" ng-click="dkim(domain)" ng-class="{
-                                'disabled': (domain.VerifyState === 1),
-                                'success': domain.DkimState === 4,
-                                'error': domain.DkimState === 3 || domain.DkimState === 2 || domain.DkimState === 1
+                                <button type="button" class="progress pm_button" ng-disabled="domain.VerifyState === 1" ng-click="dkim(domain)" ng-class="{
+                                    'success': domain.DkimState === 4 || domain.DkimState === 5,
+                                    'error': domain.DkimState === 3 || domain.DkimState === 2 || domain.DkimState === 1
                                 }">
-                                <i class="fa" ng-hide="(domain.DkimState === 0)" ng-class="{
-                                'disabled': (domain.VerifyState === 1),
-                                'fa-check': (domain.DkimState === 4),
-                                'fa-times': (domain.DkimState === 1 || domain.DkimState === 2 || domain.DkimState === 3),
-                                'fa-minus-circle': (domain.DkimState === 5)
-                                }"></i> DKIM
+                                    <i class="fa" ng-hide="(domain.DkimState === 0)" ng-class="{
+                                        'fa-check': (domain.DkimState === 4),
+                                        'fa-times': (domain.DkimState === 1 || domain.DkimState === 2 || domain.DkimState === 3),
+                                        'fa-minus-circle': (domain.DkimState === 5)
+                                    }"></i> DKIM
                                 </button>
-                                <button type="button" class="progress pm_button" ng-click="dmarc(domain)" ng-class="{
-                                'disabled': (domain.VerifyState === 1),
-                                'success': domain.DmarcState === 3,
-                                'error': domain.DmarcState === 2 || domain.DmarcState === 1
+                                <button type="button" class="progress pm_button" ng-click="dmarc(domain)" ng-disabled="domain.VerifyState === 1" ng-class="{
+                                    'success': domain.DmarcState === 3,
+                                    'error': domain.DmarcState === 2 || domain.DmarcState === 1
                                 }">
-                                <i class="fa" ng-hide="(domain.DmarcState === 0)" ng-class="{
-                                'fa-check': (domain.DmarcState === 3),
-                                'fa-times': (domain.DmarcState === 1 || domain.DmarcState === 2)
-                                }"></i> DMARC
+                                    <i class="fa" ng-hide="(domain.DmarcState === 0)" ng-class="{
+                                        'fa-check': (domain.DmarcState === 3),
+                                        'fa-times': (domain.DmarcState === 1 || domain.DmarcState === 2)
+                                    }"></i> DMARC
                                 </button>
                             </td>
                             <td class="text-right">
@@ -102,11 +96,11 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="border-panel margin-bottom" ng-show="domains.length === 0">
+                <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
-                        <i class="fa fa-exclamation-triangle text-red"></i> <strong>{{ 'NO_CUSTOM_DOMAIN_FOUND' | translate }}</strong>
+                        <strong>{{ 'NO_CUSTOM_DOMAIN_FOUND' | translate }}</strong>
                     </p>
-                    <p>Please add first a custom domain to configure addresses.</p>
+                    <p>Click on 'ADD CUSTOM DOMAIN' button to add it.</p>
                 </div>
             </section>
             <p>&nbsp;</p>
@@ -117,12 +111,9 @@
                 </legend>
                 <div class="border-panel margin-bottom" ng-repeat="domain in domains" ng-show="domains.length > 0">
                     <p>
-                        <button type="button" pt-tooltip="{{ 'TOGGLE' | translate }}" ng-show="domain.State === 1" class="pm_button round pull-right" ng-click="domain.expand = !!!domain.expand" ng-init="domain.expand = true">
-                            <i class="fa" ng-class="{'fa-angle-up': domain.expand === true, 'fa-angle-down': domain.expand === false}"></i>
-                        </button>
                         <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
-                    <div ng-show="domain.expand === true && domain.State === 1">
+                    <div ng-show="domain.State === 1">
                         <p>
                             <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
                             <a ui-sref="secured.members" class="pm_button">{{ 'ADD_USER' | translate }}</a>
@@ -156,9 +147,9 @@
                         </table>
                     </div>
                 </div>
-                <div class="border-panel margin-bottom" ng-show="domains.length === 0">
+                <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
-                        <i class="fa fa-exclamation-triangle text-red"></i> <strong>{{ 'NO_CUSTOM_DOMAIN_FOUND' | translate }}</strong>
+                        <strong>{{ 'NO_CUSTOM_DOMAIN_FOUND' | translate }}</strong>
                     </p>
                     <p>Please add first a custom domain to configure addresses.</p>
                 </div>
