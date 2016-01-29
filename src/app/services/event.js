@@ -76,6 +76,13 @@ angular.module("proton.event", ["proton.constants"])
 				if(angular.isDefined(user)) {
 					var mailboxPassword = authentication.getPassword();
 					var promises = [];
+					var keyInfo = function(key) {
+						return pmcw.keyInfo(key.PrivateKey).then(function(info) {
+							key.created = info.created; // Creation date
+							key.bitSize = info.bitSize; // We don't use this data currently
+							key.fingerprint = info.fingerprint; // Fingerprint
+						});
+					};
 
 					// TODO remove this part for the release
 					if (CONSTANTS.HOSTS_ALLOWED.indexOf($location.host()) === -1) {
@@ -87,13 +94,10 @@ angular.module("proton.event", ["proton.constants"])
 							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
 								key.decrypted = true; // We mark this key as decrypted
 								authentication.storeKey(address.ID, key.ID, package); // We store the package to the current service
-								return pmcw.keyInfo(key.PrivateKey).then(function(info) {
-									key.created = info.created; // Creation date
-									key.bitSize = info.bitSize; // We don't use this data currently
-									key.fingerprint = info.fingerprint; // Fingerprint
-								});
+								keyInfo(key);
 							}, function(error) {
 								key.decrypted = false; // This key is not decrypted
+								keyInfo(key);
 								// If the primary (first) key for address does not decrypt, display error.
 								if(index === 0) {
 									address.disabled = true; // This address cannot be used
@@ -104,9 +108,9 @@ angular.module("proton.event", ["proton.constants"])
 					});
 
 					$q.all(promises).then(function() {
-						authentication.user = angular.merge({}, authentication.user, user);
+						angular.merge(authentication.user, user);
 					}, function() {
-						authentication.user = angular.merge({}, authentication.user, user);
+						angular.merge(authentication.user, user);
 					});
 				}
 			},
