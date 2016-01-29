@@ -154,6 +154,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 });
             }
             $rootScope.mobileMode = false;
+            if (authentication.user.ViewLayout===0 && $rootScope.rowMode) {
+                $rootScope.rowMode = false;
+                $rootScope.layoutMode = 'columns';
+            }
+            else if (authentication.user.ViewLayout===1) {
+                $rootScope.rowMode = true;
+                $rootScope.layoutMode = 'rows';
+            }
         }
         else if ( bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT ) {
             if ($rootScope.mobileMode===false) {
@@ -164,6 +172,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 });
             }
             $rootScope.mobileMode = true;
+            $rootScope.rowMode = false;
+            $rootScope.layoutMode = 'columns';
         }
     };
 
