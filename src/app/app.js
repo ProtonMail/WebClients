@@ -342,17 +342,22 @@ angular.module('proton', [
                 var loginPasswordModal = $injector.get('loginPasswordModal');
                 var User = $injector.get('User');
                 var notify = $injector.get('notify');
+                var eventManager = $injector.get('eventManager');
 
                 // Open the open to enter login password because this request require lock scope
                 loginPasswordModal.activate({
                     params: {
                         submit: function(loginPassword) {
+                            // Send request to unlock the current session for administrator privileges
                             User.unlock({Password: loginPassword}).$promise.then(function(data) {
                                 if (data.Code === 1000) {
                                     // Close the modal
                                     loginPasswordModal.deactivate();
                                     // Resend request now
-                                    return $http(rejection.config);
+                                    return $http(rejection.config).then(function() {
+                                        // Call event log manager
+                                        return eventManager.call();
+                                    });
                                 } else if (data.Error) {
                                     notify({message: data.Error, classes: 'notification-danger'});
                                 }
