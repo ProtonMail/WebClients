@@ -136,6 +136,10 @@ angular.module('proton.autocomplete', [])
                 }, 100);
             };
 
+            scope.onBlur = function(event) {
+                scope.params.newValue = '';
+            };
+
             scope.onRemove = function(index) {
                 scope.emails.splice(index, 1);
                 scope.params.newValue = '';
