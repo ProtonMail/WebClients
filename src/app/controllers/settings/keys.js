@@ -55,6 +55,7 @@ angular.module("proton.controllers.Settings")
         var message = $translate.instant('CONFIRM_DELETE_KEY');
         var index = address.Keys.indexOf(key);
 
+
         confirmModal.activate({
             params: {
                 title: title,
@@ -74,11 +75,7 @@ angular.module("proton.controllers.Settings")
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        if (error.data && error.data.Code === 403) {
-                            confirmModal.deactivate();
-                        } else {
-                            notify({message: 'Error during delete request', classes: 'notification-danger'});
-                        }
+                        notify({message: 'Error during delete request', classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -110,11 +107,7 @@ angular.module("proton.controllers.Settings")
                 notify({message: result.data.Error, classes: 'notification-danger'});
             }
         }, function(error) {
-            if (error.data && error.data.Code === 403) {
-                // Do nothing
-            } else {
-                notify({message: 'Error during key order request', classes: 'notification-danger'});
-            }
+            notify({message: 'Error during key order request', classes: 'notification-danger'});
         }));
     };
 
@@ -152,12 +145,7 @@ angular.module("proton.controllers.Settings")
                                     notify({message: 'Error during the update key request', classes: 'notification-danger'});
                                 }
                             }, function(error) {
-                                if (error.data && error.data.Code === 403) {
-                                    // Close the modal
-                                    reactivateModal.deactivate();
-                                } else {
-                                    notify({message: 'Error during the update key request', classes: 'notification-danger'});
-                                }
+                                notify({message: 'Error during the update key request', classes: 'notification-danger'});
                             }));
                         }, function(error) {
                             notify({message: 'Error during the encryption phase', classes: 'notification-danger'});
@@ -206,12 +194,7 @@ angular.module("proton.controllers.Settings")
                                 notify({message: 'Error during create key request', classes: 'notification-danger'});
                             }
                         }, function(error) {
-                            if (error.data && error.data.Code === 403) {
-                                // Close the modal
-                                confirmModal.deactivate();
-                            } else {
-                                notify({message: 'Error during the create key request', classes: 'notification-danger'});
-                            }
+                            notify({message: 'Error during the create key request', classes: 'notification-danger'});
                         }));
                     }, function(error) {
                         notify({message: error, classes: 'notification-danger'});

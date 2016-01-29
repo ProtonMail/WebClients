@@ -11,6 +11,14 @@ angular.module('proton.models.keys', [])
             return $http.post(url.get() + '/keys', params);
         },
         /**
+         * Install a new key for each address
+         * @param {Object} params
+         * @return {Promise}
+         */
+        reset: function(params) {
+            return $http.post(url.get() + '/keys/reset', params);
+        },
+        /**
          * Update key priority
          * @param {Object} params
          * @return {Promise}

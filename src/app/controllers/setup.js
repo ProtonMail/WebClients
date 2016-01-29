@@ -17,6 +17,7 @@ angular.module("proton.controllers.Setup", [
     networkActivityTracker,
     User,
     Reset,
+    Key,
     pmcw,
     tools,
     notify,
@@ -31,6 +32,7 @@ angular.module("proton.controllers.Setup", [
         $scope.compatibility =      tools.isCompatible();
         $scope.resetMailboxToken =  $rootScope.resetMailboxToken;
         $scope.account = [];
+        $scope.addresses = [];
 
         $scope.process = {};
         $scope.process.generatingKeys =     false;
@@ -60,31 +62,37 @@ angular.module("proton.controllers.Setup", [
      * @param mbpw {String}
      * @return {Promise}
      */
-    $scope.generateKeys = function(email, mbpw) {
+    $scope.generateKeys = function(mbpw) {
         var deferred = $q.defer();
+        var promises = [];
+
         $scope.process.genNewKeys = true;
-        if (!email) {
-            deferred.reject( new Error('generateKeys: Missing email') );
-            $scope.process.genNewKeys = false;
-        }
-        else if (!mbpw) {
+
+        if (!mbpw) {
             deferred.reject( new Error('generateKeys: Missing mbpw') );
             $scope.process.genNewKeys = false;
         }
         else {
-            pmcw.generateKeysRSA(email, mbpw).then(
-                function(response) {
-                    $scope.account.PublicKey = response.publicKeyArmored;
-                    $scope.account.PrivateKey = response.privateKeyArmored;
-                    deferred.resolve(response);
-                },
-                function(err) {
-                    $scope.process.genNewKeys = false;
-                    $log.error(err);
-                    $scope.error = err;
-                    deferred.reject(err);
-                }
-            );
+            _.each($scope.addresses, function(address) {
+                promises.push(
+                    pmcw.generateKeysRSA(address.Email, mbpw).then(
+                        function(response) {
+                            address.PublicKey = response.publicKeyArmored;
+                            address.PrivateKey = response.privateKeyArmored;
+                        },
+                        function(err) {
+                            $scope.process.genNewKeys = false;
+                            $log.error(err);
+                            $scope.error = err;
+                            deferred.reject(err);
+                        }
+                    )
+                );
+            });
+
+            $q.all(promises).then(function() {
+                deferred.resolve();
+            });
         }
 
         return deferred.promise;
@@ -108,7 +116,7 @@ angular.module("proton.controllers.Setup", [
                 return;
             }
             networkActivityTracker.track(
-                $scope.generateKeys($rootScope.tempUser.username + '@protonmail.com', $scope.account.mailboxPassword)
+                $scope.generateKeys($scope.account.mailboxPassword)
                 .then( $scope.newMailbox )
                 .then( $scope.resetMailboxTokenResponse )
                 .then( $scope.doLogUserIn )
@@ -229,6 +237,7 @@ angular.module("proton.controllers.Setup", [
                             message: 'Invalid Verification Code.'
                         });
                     } else {
+                        $scope.addresses = response.data.Addresses;
                         $scope.resetMailboxToken = $scope.account.resetMbCode;
                         $scope.showForm = true;
                         $scope.showEmailMessage = false;
@@ -249,8 +258,7 @@ angular.module("proton.controllers.Setup", [
      * Initialized in the view. Setups stuff. Depends on if user has recovery email set.
      */
     $scope.resetMailboxInit = function() {
-
-        if(angular.isDefined(token) && angular.isDefined(token.data)) {
+        if (angular.isDefined(token) && angular.isDefined(token.data)) {
             $http.defaults.headers.common.Authorization = "Bearer " + token.data.AccessToken;
             $http.defaults.headers.common["x-pm-uid"] = token.data.Uid;
         }
@@ -298,18 +306,26 @@ angular.module("proton.controllers.Setup", [
      */
     $scope.newMailbox = function() {
         var resetMBtoken;
+
         if ($rootScope.resetMailboxToken!==undefined) {
             resetMBtoken = $rootScope.resetMailboxToken;
         }
+
         if ($scope.resetMailboxToken!==undefined) {
             resetMBtoken = $scope.resetMailboxToken;
         }
+
         var params = {
-            "PublicKey": $scope.account.PublicKey,
-            "PrivateKey": $scope.account.PrivateKey,
-            "Token": resetMBtoken
+            Token: resetMBtoken,
+            Keys: _.map($scope.addresses, function(address) {
+                return {
+                    AddressID: address.ID,
+                    PrivateKey: address.PrivateKey
+                };
+            })
         };
-        return Reset.resetMailbox(params); // Not to be confused with this local function. Its for the Reset model!
+
+        return Key.reset(params); // Not to be confused with this local function. Its for the Reset model!
     };
 
      /**
