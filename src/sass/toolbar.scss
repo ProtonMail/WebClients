@@ -121,6 +121,9 @@ body.columns #pm_toolbar {
             padding-left: 0;
             padding-left: 0;
             position: relative;
+            .fa-check-square {
+                margin-right: 3px !important;
+            }
             .pm_buttons {
                 height: 45px;
                 margin: 0 0 0 6px !important;
