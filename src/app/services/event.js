@@ -1,20 +1,22 @@
 angular.module("proton.event", ["proton.constants"])
 	.service("eventManager", function (
+		$cookies,
+		$location,
+		$log,
+		$rootScope,
+		$state,
+		$stateParams,
 		$timeout,
 		$window,
-		$state,
-		$location,
-		$rootScope,
-		$stateParams,
-		$cookies,
-		$log,
+		$q,
 		authentication,
 		cache,
 		cacheCounters,
-		Contact,
 		CONSTANTS,
+		Contact,
 		Events,
-		notify
+		notify,
+		pmcw
 	) {
 
 		function getRandomInt(min, max) {
@@ -72,11 +74,40 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageUser: function(user) {
 				if(angular.isDefined(user)) {
+					var mailboxPassword = authentication.getPassword();
+					var promises = [];
+
+					// TODO remove this part for the release
 					if (CONSTANTS.HOSTS_ALLOWED.indexOf($location.host()) === -1) {
 						user.Role = 1;
 					}
 
-					authentication.user = angular.merge(authentication.user, user);
+					_.each(user.Addresses, function(address) {
+						_.each(address.Keys, function(key, index) {
+							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
+								key.decrypted = true; // We mark this key as decrypted
+								authentication.storeKey(address.ID, key.ID, package); // We store the package to the current service
+								return pmcw.keyInfo(key.PrivateKey).then(function(info) {
+									key.created = info.created; // Creation date
+									key.bitSize = info.bitSize; // We don't use this data currently
+									key.fingerprint = info.fingerprint; // Fingerprint
+								});
+							}, function(error) {
+								key.decrypted = false; // This key is not decrypted
+								// If the primary (first) key for address does not decrypt, display error.
+								if(index === 0) {
+									address.disabled = true; // This address cannot be used
+									notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
+								}
+							}));
+						});
+					});
+
+					$q.all(promises).then(function() {
+						angular.extend(authentication.user, user);
+					}, function() {
+						angular.extend(authentication.user, user);
+					});
 				}
 			},
 			manageMessageCounts: function(counts) {
@@ -213,7 +244,11 @@ angular.module("proton.event", ["proton.constants"])
 				}
 			},
 			call: function() {
-				eventModel.interval();
+				return eventModel.get().then(function (result) {
+					if (result.data && result.data.Code === 1000) {
+						eventModel.manage(result.data);
+					}
+				});
 			},
 			stop: function () {
 				if (angular.isDefined(eventModel.promiseCancel)) {

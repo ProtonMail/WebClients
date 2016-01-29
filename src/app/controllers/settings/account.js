@@ -113,7 +113,7 @@ angular.module('proton.controllers.Settings')
 
         networkActivityTracker.track(
             Setting.password({
-                OldPassword: oldLoginPwd,
+                Password: oldLoginPwd,
                 OldHashedPassword: pmcw.getHashedPassword(oldLoginPwd),
                 NewPassword: newLoginPwd
             }).$promise.then(function(result) {
@@ -136,6 +136,7 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveMailboxPassword = function(form) {
+        var loginPwd = $scope.currentLoginPassword;
         var oldMailPwd = $scope.oldMailboxPassword;
         var newMailPwd = $scope.newMailboxPassword;
         var confMailPwd = $scope.confirmMailboxPassword;
@@ -164,11 +165,12 @@ angular.module('proton.controllers.Settings')
                         // Encrypt private key with the new mailbox password
                         pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
                             // Send request to the back-end to update the organization private key
-                            Organization.updateKey({
+                            Organization.private({
+                                Password: loginPwd,
                                 PrivateKey: privateKey
                             }).then(function(result) {
                                 if (result.data && result.data.Code === 1000) {
-                                    notify({message: 'Organization Password Updated', classes: 'notification-success'});
+                                    // No message
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
@@ -179,7 +181,7 @@ angular.module('proton.controllers.Settings')
                             notify({message: error, classes: 'notification-danger'});
                         });
                     }, function(error) {
-                        notify({message: error, classes: 'notification-danger'});
+                        notify({message: 'Unable to decrypt and update organization key', classes: 'notification-danger'});
                     });
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
@@ -202,18 +204,31 @@ angular.module('proton.controllers.Settings')
                             return pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
                                 return {ID: key.ID, PrivateKey: privateKey};
                             }, function(error) {
+                                $log.error(error);
                                 return Promise.reject(error);
                             });
                         }, function(error) {
-                            return Promise.reject(error);
+                            $log.error(error);
+                            return Promise.resolve(0);
                         }));
                     });
                 });
 
                 // When all promises are done, we can send the new keys to the back-end
                 return $q.all(promises).then(function(keys) {
-                    return Key.private({Keys: keys}).then(function(result) {
+
+                    keys = keys.filter(function(obj) { return obj !== 0; });
+
+                    if (keys.length === 0) {
+                        notify({message: 'No keys to update', classes: 'notification-danger'});
+                    }
+
+                    return Key.private({
+                        Password: loginPwd,
+                        Keys: keys
+                    }).then(function(result) {
                         if (result.data && result.data.Code === 1000) {
+                            $scope.currentLoginPassword = '';
                             $scope.oldMailboxPassword = '';
                             $scope.newMailboxPassword = '';
                             $scope.confirmMailboxPassword = '';
@@ -221,15 +236,17 @@ angular.module('proton.controllers.Settings')
                             authentication.savePassword(newMailPwd);
                             notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
                         } else if(result.data && result.data.Error) {
-                            notify({message: result.Error, classes: 'notification-danger'});
+                            notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
                             notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
                         }
                     });
                 }, function(error) {
+                    $log.error(error);
                     notify({message: error, classes: 'notification-danger'});
                 });
             } else if (result.Error) {
+                $log.error(result.Error);
                 notify({message: result.Error, classes: 'notification-danger'});
             } else {
                 notify({message: 'Error during the user get request', classes: 'notification-danger'});
@@ -253,10 +270,12 @@ angular.module('proton.controllers.Settings')
                     "DisplayName": displayName
                 }).$promise.then(function(response) {
                     if(response.Code === 1000) {
-                        notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
+                        // We replace the value stored
                         authentication.user.DisplayName = displayName;
-                        $scope.displayName = displayName;
+                        notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
                     } else if(angular.isDefined(response.Error)) {
+                        // We restore the old value
+                        $scope.displayName = authentication.user.DisplayName;
                         notify({message: response.Error, classes: 'notification-danger'});
                     }
                 }, function(error) {

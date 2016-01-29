@@ -10,6 +10,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $timeout,
     $translate,
     authentication,
+    cache,
     CONFIG,
     CONSTANTS,
     eventManager,
@@ -24,6 +25,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     // Variables
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
+    var timeoutRefresh;
     $scope.labels = authentication.user.Labels;
     $scope.appVersion = CONFIG.app_version;
     $scope.dateVersion = CONFIG.date_version;
@@ -40,6 +42,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     // Listeners
     $scope.$on('createLabel', function(event) { $scope.createLabel(); });
+    $scope.$on('$destroy', function(event) {
+        $timeout.cancel(timeoutRefresh);
+    });
 
     /**
      * Open modal to create a new label
@@ -88,21 +93,28 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     /**
-     * Animates the inbox refresh icon
-     */
-    $scope.spinIcon = function() {
-        $scope.spinMe = true;
-        $timeout(function() {
-            $scope.spinMe = false;
-        }, 510);
-    };
-
-    /**
-     * Send request to get the last event
+     * Send request to get the last event, empty the cache for the current mailbox and then refresh the content automatically
      */
     $scope.lastEvent = function() {
-        $scope.spinIcon();
-        eventManager.call();
+        var mailbox = tools.currentMailbox();
+
+        // Start to spin icon on the view
+        $scope.spinMe = true;
+
+        // Cancel
+        $timeout.cancel(timeoutRefresh);
+
+        // Debounce
+        timeoutRefresh = $timeout(function() {
+            // Get the latest event
+            eventManager.call().then(function() {
+                $scope.spinMe = false;
+                // Clear cache for the current mailbox
+                cache.empty(mailbox);
+            }, function() {
+                $scope.spinMe = false;
+            });
+        }, 500);
     };
 
     /**

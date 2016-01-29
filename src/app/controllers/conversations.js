@@ -21,7 +21,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Label,
     authentication,
     cache,
-    preloadConversation,
     confirmModal,
     Setting,
     cacheCounters,
@@ -59,6 +58,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $rootScope.$watch('layoutMode', function() {
             $scope.toolbarOffset();
         });
+
+        $timeout( $scope.mobileResponsive, 600);
     };
 
     $scope.watchElements = function() {
@@ -120,7 +121,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.mobileResponsive = function() {
-        if ($window.outerWidth < 1025) {
+        if ($('body').outerWidth() < 1030) {
             $rootScope.layoutMode = 'rows';
         } else {
             var layout = (authentication.user.ViewLayout === 0) ? 'columns' : 'rows';
@@ -130,6 +131,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.startWatchingEvent = function() {
         angular.element($window).bind('resize', $scope.mobileResponsive);
+        angular.element($window).bind('orientationchange', $scope.mobileResponsive);
 
         $scope.$on('refreshConversations', function() {
             $scope.refreshConversations();
@@ -151,8 +153,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
-        preloadConversation.reset();
         angular.element($window).unbind('resize', $scope.mobileResponsive);
+        angular.element($window).unbind('orientationchange', $scope.mobileResponsive);
     };
 
     $scope.actionsDelayed = function() {
@@ -560,8 +562,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.back = function() {
         $state.go("secured." + $scope.mailbox, {
-            id: null, // remove ID
-            page: null // remove page (= 0)
+            id: null // remove ID
         });
     };
 
@@ -570,7 +571,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // Show users that they can toggle layouts
         if (authentication.user.ViewLayout === 0) {
 
-            if (!$cookies.get('feature_layoutToggle') && $window.outerWidth > 1024) {
+            if (!$cookies.get('feature_layoutToggle') && $window.outerWidth > 1030) {
 
                 var now = new Date(),
                 exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
@@ -891,17 +892,24 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                             promise = Message.emptyTrash().$promise;
                         }
 
-                        promise.then(function(result) {
-                            // Call to empty cache conversation
-                            action.empty(mailbox);
-                            // Close modal
-                            confirmModal.deactivate();
-                            // Notify user
-                            notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
-                        }, function(error) {
-                            notify({message: 'Error during the empty request', classes: 'notification-danger'});
-                            $log.error(error);
-                        });
+
+
+                        networkActivityTracker.track(
+                            promise.then(
+                                function(result) {
+                                    // Call to empty cache conversation
+                                    cache.empty(mailbox);
+                                    // Close modal
+                                    confirmModal.deactivate();
+                                    // Notify user
+                                    notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
+                                }, 
+                                function(error) {
+                                    notify({message: 'Error during the empty request', classes: 'notification-danger'});
+                                    $log.error(error);
+                                }
+                            )
+                        );
                     },
                     cancel: function() {
                         confirmModal.deactivate();

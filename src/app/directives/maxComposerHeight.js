@@ -30,7 +30,7 @@ angular.module('proton.maxComposerHeight', [])
                 //     parent.find('.attachmentArea:visible').outerHeight()
                 // );
 
-                angular.element(element).find('iframe').css({
+                angular.element(element).find('iframe, .angular-squire-wrapper').css({
                     height: height
                 });
             };

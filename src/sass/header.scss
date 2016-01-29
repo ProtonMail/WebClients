@@ -245,6 +245,10 @@ header#pm_header {
 			float: left;
 			p {
 				margin: 0;
+				display: block;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 				a {
 					color: $primary;
 					padding: 0;
@@ -469,6 +473,25 @@ header#pm_header {
 			width: auto;
 			max-width: none;
 			border: none;
+			&.adv {
+				display: block;
+				fieldset {
+					border-radius: 0;
+					button[type="button"] {
+						display: none;
+					}
+				}
+				#advancedSearchDropdown {
+					box-shadow: none;
+					label {
+					    height: 2rem;
+					    line-height: 2rem;
+					    width: auto;
+					    text-align: left;
+					    position: static;
+					}
+				}
+			}
 			label {
 				position: absolute;
 				z-index: 1;

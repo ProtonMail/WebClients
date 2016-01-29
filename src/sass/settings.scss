@@ -759,6 +759,14 @@
         margin-right: 0;
         clear: both;
         box-sizing: border-box;
+        .pm_sort ul li .label {
+            white-space: nowrap;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 60%;
+            line-height: 1rem;
+        }
         .pm_buttons .fa.fa-angle-down {
             padding: 0 .5rem;
         }

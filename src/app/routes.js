@@ -148,25 +148,29 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/step1.tpl.html'
             }
         },
-        onEnter: function($rootScope, $state, $log, $http, url) {
+        resolve: {
+            direct: function($http, $q, $state, $rootScope, url, User) {
+                var deferred = $q.defer();
 
-            if (!$rootScope.preInvited) {
-                $http.get( url.get() + '/users/direct' )
-                .then(
-                    function( response ) {
-
-                        if ( response.data && response.status === 200 ) {
-
-                            if ( response.data.Direct!==1 ) {
+                if (!$rootScope.preInvited) {
+                    User.direct().$promise.then(function(data) {
+                        if (data && data.Code === 1000) {
+                            if (data.Direct === 1) {
+                                deferred.resolve();
+                            } else {
                                 window.location.href = '/invite';
+                                deferred.reject();
                             }
-
-                        }
-                        else {
+                        } else {
                             $state.go('login');
+                            deferred.reject();
                         }
-                    }
-                );
+                    });
+                } else {
+                    deferred.resolve();
+                }
+
+                return deferred.promise;
             }
         }
     })
@@ -537,8 +541,10 @@ angular.module('proton.routes', [
                 }
             }
         },
-        onEnter: function(authentication) {
+        onEnter: function($rootScope, authentication) {
             // This will redirect to a login step if necessary
+            delete $rootScope.creds;
+            delete $rootScope.tempUser;
             authentication.redirectIfNecessary();
         }
     })
@@ -856,14 +862,7 @@ angular.module('proton.routes', [
             controller: 'ConversationController',
             resolve: {
                 conversation: function($stateParams, cache, networkActivityTracker) {
-                    if(angular.isDefined($stateParams.id)) {
-                        return networkActivityTracker.track(cache.getConversation($stateParams.id));
-                    } else {
-                        return true;
-                    }
-                },
-                loc: function($stateParams) {
-                    return $stateParams.id;
+                    return networkActivityTracker.track(cache.getConversation($stateParams.id));
                 }
             }
         };

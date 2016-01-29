@@ -79,46 +79,40 @@ angular.module("proton.squire", [
                 return scope.data.image && scope.data.image !== IMAGE_DEFAULT;
             };
 
-            scope.popoverHide = function(e, name) {
-                var linkElement = angular.element(e.currentTarget);
+            scope.popoverHide = function(event, name) {
+                var linkElement = angular.element(event.currentTarget);
                 var hide = function() {
-                    angular.element(e.target).closest(".popover-visible").removeClass("popover-visible");
+                    element.find('.squire-popover.' + name).hide();
+
                     if (name) {
                         return scope.action(name);
                     }
                 };
 
-                if (e.keyCode) {
-                    if (e.keyCode === 13) {
+                if (event.keyCode) {
+                    if (event.keyCode === 13) {
                         return hide();
                     }
                 } else {
                     return hide();
                 }
-                linkElement.removeClass('open');
             };
 
-            scope.popoverShow = function(e) {
-                var linkElement, popover, liElement;
-                linkElement = angular.element(e.currentTarget);
-                liElement = angular.element(linkElement).parent();
-                if (angular.element(e.target).closest(".squire-popover").length) {
-                    return;
-                }
-                if (linkElement.hasClass("popover-visible")) {
-                    return;
-                }
-                linkElement.addClass("popover-visible");
-                if (/>A\b/.test(editor.getPath()) || editor.hasFormat('A')) {
-                    scope.data.link = getLinkAtCursor();
+            scope.popoverShow = function(e, name) {
+                if (element.find('.squire-popover.' + name).is(':visible')) {
+                    element.find('.squire-popover.' + name).hide();
                 } else {
-                    scope.data.link = LINK_DEFAULT;
+                    element.find('.squire-popover').hide();
+
+                    if (/>A\b/.test(editor.getPath()) || editor.hasFormat('A')) {
+                        scope.data.link = getLinkAtCursor();
+                    } else {
+                        scope.data.link = LINK_DEFAULT;
+                    }
+
+                    element.find('.squire-popover.' + name).show();
+                    element.find('.squire-popover.' + name).find('input').focus().end();
                 }
-                popover = element.find(".squire-popover").find("input").focus().end();
-                popover.css({
-                    left: -1 * (popover.width() / 2) + liElement.width() / 2
-                });
-                linkElement.addClass('open');
             };
 
             updateStylesToMatch = function(doc) {

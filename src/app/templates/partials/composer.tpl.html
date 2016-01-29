@@ -204,7 +204,7 @@
                     <autocomplete emails="message.BCCList" />
                 </div>
                 <div class="row subjectRow">
-                    <input type="text" title="{{ 'SUBJECT' | translate }}" class="subject" placeholder="{{ 'SUBJECT' | translate }}" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'default blur', debounce: { 'default': 200, 'blur': 0 }}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+                    <input type="text" title="{{ 'SUBJECT' | translate }}" class="subject" placeholder="{{ 'SUBJECT' | translate }}" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
             </div>
             <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" max-composer-height>
@@ -213,7 +213,7 @@
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
-                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" max-composer-height></squire>
+                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" ng-hide="isOver === true" max-composer-height></squire>
                 </div>
             </section>
             <div
@@ -242,7 +242,6 @@
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button
                 class="pm_button btn-add-attachment"
-                ng-hide="isAppleDevice"
                 ng-disabled="message.allowOthers() || message !== selected"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',

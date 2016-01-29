@@ -30,6 +30,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.showNonTrashed = false;
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
+    $scope.inTrash = $state.is('secured.trash.view');
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
@@ -60,9 +61,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
                 var messages = cache.queryMessagesCached($scope.conversation.ID);
 
-                // Sort by time
-                messages = _.sortBy(messages, 'Time');
-
                 // Remove trashed message
                 if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
@@ -72,6 +70,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
                 }
+
+                // Sort by time
+                messages = _.sortBy(messages, 'Time');
 
                 var latest = _.last(messages);
 
@@ -85,7 +86,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                         // Or the last message
                         $rootScope.targetID = _.last(messages).ID;
                     }
-                } else if(angular.isDefined($rootScope.targetID)) {
+                } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
                     // Do nothing, target initialized by click
                 } else {
                     // If the latest message is read, we open it
@@ -123,15 +124,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     };
 
-    /**
-     * Back to conversation / message list
-     */
-    $scope.back = function() {
-        $state.go("secured." + $scope.mailbox, {
-            id: null // remove ID
-        });
-    };
-
     $scope.refreshConversation = function() {
         var conversation = cache.getConversationCached($stateParams.id);
         var messages = cache.queryMessagesCached($stateParams.id);
@@ -149,9 +141,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             return $scope.back();
         }
 
-        if(angular.isDefined(messages)) {
-            // Sort by time
-            messages = _.sortBy(messages, 'Time');
+        if(angular.isArray(messages) && messages.length > 0) {
+            var toAdd = [];
+            var toRemove = [];
+            var index, message, found, ref;
+            var find = function(messages, ID) {
+                return _.find(messages, function(m) { return m.ID === ID; });
+            };
 
             // Remove trashed message
             if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
@@ -163,36 +159,45 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
             }
 
-            _.each(messages, function(message) {
-                var current = _.findWhere($scope.messages, {ID: message.ID});
-                var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
+            // Sort by time
+            messages = _.sortBy(messages, 'Time');
 
-                if(angular.isUndefined(current) && index === -1) {
-                    // Add message
-                    $scope.messages.push(message);
+            for (index = 0; index < messages.length; index++) {
+                found = find($scope.messages, messages[index].ID);
 
-                    // Display notification
-                    if(message.Type === 0) {
-                        notify({
-                            message: $translate.instant('NEW_MESSAGE'),
-                            classes: 'notification-success'
-                        });
-                    }
+                if (angular.isUndefined(found)) {
+                    toAdd.push({index: index, message: messages[index]});
                 }
-            });
+            }
 
-            _.each($scope.messages, function(message) {
-                var current = _.findWhere(messages, {ID: message.ID});
+            for (index = 0; index < toAdd.length; index++) {
+                ref = toAdd[index];
 
-                if(angular.isUndefined(current)) {
-                    var index = $scope.messages.indexOf(current);
-                    // Delete message
-                    $scope.messages.splice(index, 1);
+                // Insert new message
+                $scope.messages.splice(ref.index, 0, ref.message);
+
+                // Display notification
+                if(ref.message.Type === 0 && $scope.showTrashed === false && $scope.showNonTrashed === false) {
+                    notify({
+                        message: $translate.instant('NEW_MESSAGE'),
+                        classes: 'notification-success'
+                    });
                 }
-            });
+            }
 
-            if($scope.messages.length === 0) {
-                $scope.back();
+            for (index = 0; index < $scope.messages.length; index++) {
+                found = find(messages, $scope.messages[index].ID);
+
+                if (angular.isUndefined(found)) {
+                    toRemove.push({index: index});
+                }
+            }
+
+            for (index = toRemove.length - 1; index >= 0; index--) {
+                ref = toRemove[index];
+
+                // Remove message deleted
+                $scope.messages.splice(ref.index, 1);
             }
         } else {
             $scope.back();
@@ -212,7 +217,23 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.nonTrashed = function() {
-        return $scope.conversation.LabelIDs !== [CONSTANTS.MAILBOX_IDENTIFIERS.trash];
+        var result = false;
+        var locations = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.starred,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive
+        ];
+
+        _.each($scope.conversation.LabelIDs, function(labelID) {
+            if (locations.indexOf(labelID) !== -1) {
+                result = true;
+            }
+        });
+
+        return result;
     };
 
     /**

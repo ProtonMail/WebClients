@@ -33,14 +33,13 @@ module.exports = {
     js: [
       "vendor/jquery/dist/jquery.js",
       "vendor/jquery-ui/jquery-ui.js",
+      "vendor/fastclick/lib/fastclick.js",
       "vendor/angular/angular.js",
       "vendor/autofill-event/src/autofill-event.js",
       "vendor/angular-cookies/angular-cookies.js",
       "vendor/angular-resource/angular-resource.js",
-      "vendor/angular-messages/angular-messages.js",
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-sanitize/angular-sanitize.js",
-      "vendor/angular-touch/angular-touch.js",
       "vendor/angular-route/angular-route.js",
       "vendor/moment/moment.js",
       "vendor/underscore/underscore.js",
@@ -61,11 +60,11 @@ module.exports = {
       "vendor/mellt/javascript/common-passwords.js",
       "vendor/html2canvas/build/html2canvas.js",
       "vendor/svg4everybody/dist/svg4everybody.js",
-      "vendor/fastclick/lib/fastclick.js",
       "vendor/ical.js/build/ical.js",
       "vendor/angular-ical/dist/js/angular-ical.js",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
-      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js"
+      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js",
+      "vendor/angular-messages/angular-messages.js"
     ],
     bootstrap_components: [
       "affix",

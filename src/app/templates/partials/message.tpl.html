@@ -14,9 +14,7 @@ ng-class="{
     'hasLabels': (message.labels().length > 0)
 }">
     <header ng-click="toggle()">
-
         <span class="meta">
-
             <div class="headerLabelRow" ng-show="message.labels().length > 0" ng-hide="message.expand">
                 <span class="pm_labels" ng-if="message.labels().length > 0">
                     <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
@@ -37,7 +35,7 @@ ng-class="{
                     </span>
                 </span>
             </div>
-            <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
+            <i class="fa fa-paperclip" ng-if="message.NumAttachments > 0"></i>
             <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
@@ -52,21 +50,21 @@ ng-class="{
             <span class="time" ng-show="toggleDetails === true">{{ message.Time * 1000 | date: 'medium' }}</span>
         </span>
         <i class="history fa fa-placeholder" ng-hide="message.IsReplied === 1 || message.IsRepliedAll === 1 || message.IsForwarded === 1"></i>
-        <i class="history fa fa-reply" ng-show="message.IsReplied === 1"></i>
-        <i class="history fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
-        <i class="history fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
+        <i class="history fa fa-reply" ng-if="message.IsReplied === 1"></i>
+        <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
+        <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
         <span class="where">{{ 'FROM' | translate }}: </span>
         <span class="contact">
             <strong>{{ message.Sender | contact:'Name' }}</strong>
             <em ng-show="toggleDetails === true && message.expand" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
         </span>
-        <i class="fa loc fa-archive" ng-show="archive() === true" pt-tooltip="{{ 'IN_ARCHIVE' | translate }}"></i>
-        <i class="fa loc fa-trash-o" ng-show="trash() === true" pt-tooltip="{{ 'IN_TRASH' | translate }}"></i>
-        <i class="fa loc fa-ban" ng-show="spam() === true" pt-tooltip="{{ 'IN_SPAM' | translate }}"></i>
+        <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip="{{ 'IN_ARCHIVE' | translate }}"></i>
+        <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip="{{ 'IN_TRASH' | translate }}"></i>
+        <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip="{{ 'IN_SPAM' | translate }}"></i>
         <a ng-show="message.expand === true" class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-        <i class="pm_tag" ng-show="message.Type === 1">{{ 'DRAFT' | translate }}</i>
-        <i class="pm_tag" ng-show="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
-        <span class="expiration" ng-show="message.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
+        <i class="pm_tag" ng-if="message.Type === 1">{{ 'DRAFT' | translate }}</i>
+        <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
+        <span class="expiration" ng-if="message.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
     </header>
     <div class="sub" ng-show="message.expand === true" ng-class="{
     'images': !!message.imagesHidden,
@@ -88,10 +86,10 @@ ng-class="{
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <span class="pm_dropdown wide right">
-                    <a ng-click="move('inbox')" ng-hide="'secured.inbox.**' | includedByState">
+                    <a ng-click="move('inbox')">
                         <i class="fa fa-inbox"></i> {{ 'MOVE_TO_INBOX' | translate }}
                     </a>
-                    <a ng-click="move('trash')" ng-hide="'secured.trash.**' | includedByState">
+                    <a ng-click="move('trash')">
                         <i class="fa fa-trash-o"></i> {{ 'MOVE_TO_TRASH' | translate }}
                     </a>
                     <a ng-click="unread()">
@@ -100,7 +98,7 @@ ng-class="{
                     <a ng-click="move('spam')" ng-hide="'secured.spam.**' | includedByState">
                         <i class="fa fa-ban"></i> {{ 'MARK_AS_SPAM' | translate }}
                     </a>
-                    <a ng-click="delete()" ng-show="'secured.trash.**' | includedByState">
+                    <a ng-click="delete()" ng-if="'secured.trash.**' | includedByState">
                         <i class="fa fa-times"></i> {{ 'DELETE' | translate }}
                     </a>
                     <a ng-click="togglePlainHtml()">
@@ -173,7 +171,7 @@ ng-class="{
                 </tr>
                 <tr></tr>
             </table>
-            <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails !== true">{{ 'SHOW_DETAILS' | translate }}</a>
+            <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-hide="toggleDetails == true">{{ 'SHOW_DETAILS' | translate }}</a>
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
 
         </div><!--/.data-->

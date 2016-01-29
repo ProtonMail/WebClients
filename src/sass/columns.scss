@@ -191,6 +191,10 @@
 			.pm_checkbox input {
 				margin: 0;
 			}
+			.fa-square-o,
+			.fa-check-square {
+				display: none;
+			}
 			&.selected {
 				margin: 0;
 				z-index: 2;
@@ -364,6 +368,9 @@
     	.main > label {
     		padding-left: 0;
     	}
+    }
+    body.columns #pm_conversations {
+    	clear: both;
     }
 }
 
