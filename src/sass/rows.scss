@@ -545,6 +545,12 @@ body, html {
 				height: 60px !important;
 				line-height: initial !important;
 				padding-left: 75px !important;
+				&.selected {
+					padding-left: 70px !important;
+					.star {
+						left: 35px !important;
+					}
+				}
 				& > *,
 				.subject > span {
 					height: auto !important;
