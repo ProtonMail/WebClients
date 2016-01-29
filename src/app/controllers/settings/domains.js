@@ -140,11 +140,7 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        if (error.data && error.data.Code === 403) {
-                            confirmModal.deactivate();
-                        } else {
-                            notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
-                        }
+                        notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -178,11 +174,7 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        if (error.data && error.data.Code === 403) {
-                            confirmModal.deactivate();
-                        } else {
-                            notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
-                        }
+                        notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -213,11 +205,7 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        if (error.data && error.data.Code === 403) {
-                            // Do nothing
-                        } else {
-                            notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
-                        }
+                        notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -329,11 +317,7 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        if (error.data && error.data.Code === 403) {
-                            // Do nothing
-                        } else {
-                            notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
-                        }
+                        notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
                     });
                 },
                 next: function() {

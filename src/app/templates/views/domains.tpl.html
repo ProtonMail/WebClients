@@ -45,7 +45,7 @@
                                     'error': domain.VerifyState === 1
                                 }">{{ 'VERIFICATION' | translate }}</button>
                                 <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-disabled="domain.VerifyState === 1" ng-class="{'success': domain.Addresses.length > 0}">
-                                    <kbd>{{ domain.Addresses.length }}</kbd> {{ 'ADDRESSES' | translate }}
+                                    <kbd ng-show="domain.Addresses.length > 0">{{ domain.Addresses.length }}</kbd> {{ 'ADDRESSES' | translate }}
                                 </button>
                                 <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-disabled="domain.VerifyState === 1" ng-class="{
                                     'success': domain.MxState === 3,
