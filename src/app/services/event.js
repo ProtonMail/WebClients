@@ -104,9 +104,9 @@ angular.module("proton.event", ["proton.constants"])
 					});
 
 					$q.all(promises).then(function() {
-						angular.extend(authentication.user, user);
+						angular.extend({}, authentication.user, user);
 					}, function() {
-						angular.extend(authentication.user, user);
+						angular.extend({}, authentication.user, user);
 					});
 				}
 			},
