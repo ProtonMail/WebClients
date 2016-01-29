@@ -220,21 +220,7 @@ angular.module('proton', [
     });
 
     // Setup default modes... CHANGEME / PANDA / TODO
-    if ( $(window).outerWidth() > 1024 ) {
-        $rootScope.desktopMode = true;
-        $rootScope.tabletMode = false;
-        $rootScope.mobileMode = false;
-    }
-    else if ( $(window).outerWidth()  < 600 ) {
-        $rootScope.desktopMode = false;
-        $rootScope.tabletMode = false;
-        $rootScope.mobileMode = true;   
-    }
-    else {
-        $rootScope.desktopMode = false;
-        $rootScope.tabletMode = true;
-        $rootScope.mobileMode = false;
-    }
+    $rootScope.mobileMode = false;
 
     $rootScope.showWelcome = true;
     $rootScope.browser = tools.getBrowser();

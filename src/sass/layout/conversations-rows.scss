@@ -1,5 +1,5 @@
-// DESKTOP
-body.desktopMode {
+// REGULAR
+body {
     #conversation-list-rows {
         .conversation {
             height: 40px;
@@ -98,8 +98,8 @@ body.desktopMode {
     }
 }
 
-// TABLET
-body.tabletMode {
+// MOBILE
+body.mobileMode {
     #conversation-list-rows {
         .conversation {
             height: 50px;

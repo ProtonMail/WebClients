@@ -64,18 +64,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     // MODE CHANGE / NEW / PANDA
     $scope.changeMode = function(mode) {
-        $rootScope.desktopMode = false;
-        $rootScope.tabletMode = false;
         $rootScope.mobileMode = false;
-
-        console.log(mode);
 
         switch(mode) {
             case 'desktop':
                 $rootScope.desktopMode = true;
                 break;
             case 'tablet':
-                $rootScope.tabletMode = true;
+                $rootScope.mobileMode = true;
                 break;
             case 'mobile':
                 $rootScope.mobileMode = true;
@@ -84,7 +80,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             return;
         }
 
-        console.log($rootScope.desktopMode, $rootScope.tabletMode, $rootScope.mobileMode);
+        console.log($rootScope.desktopMode, $rootScope.mobileMode, $rootScope.mobileMode);
     };
 
     $scope.watchElements = function() {
@@ -147,19 +143,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.mobileResponsive = function() {
         var bodyWidth = $('body').outerWidth();
-        if ( bodyWidth > CONSTANTS.REGULAR_BREAKPOINT ) {
-            if ($rootScope.desktopMode!==true) {
-                notify({
-                    message: 'Desktop Mode Activated', 
-                    classes: 'notification-info',
-                    duration: 2000
-                });
-            }
-            $rootScope.desktopMode = true;
-            $rootScope.tabletMode = false;
-            $rootScope.mobileMode = false;
-        }
-        else if ( bodyWidth > CONSTANTS.ROW_BREAKPOINT ) {
+        if ( bodyWidth > CONSTANTS.ROW_BREAKPOINT ) {
             if ($rootScope.layoutMode!=='rows') {
                 notify({
                     message: 'Switched to Rows Activated', 
@@ -167,32 +151,25 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     duration: 2000
                 });
             }
-            $rootScope.desktopMode = false;
-            $rootScope.tabletMode = true;
-            $rootScope.mobileMode = false;
         }
-        else if ( bodyWidth > CONSTANTS.TABLET_BREAKPOINT ) {
-            if ($rootScope.tabletMode!==true) {
+        else if ( bodyWidth > CONSTANTS.MOBILE_BREAKPOINT ) {
+            if ($rootScope.mobileMode===true) {
                 notify({
-                    message: 'Tablet Mode Activated', 
+                    message: 'Regular Mode Activated', 
                     classes: 'notification-info',
                     duration: 2000
                 });
             }
-            $rootScope.desktopMode = false;
-            $rootScope.tabletMode = true;
             $rootScope.mobileMode = false;
         }
-        else {
-            if ($rootScope.mobileMode!==true) {
+        else if ( bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT ) {
+            if ($rootScope.mobileMode===false) {
                 notify({
                     message: 'Mobile Mode Activated', 
                     classes: 'notification-info',
                     duration: 2000
                 });
             }
-            $rootScope.desktopMode = false;
-            $rootScope.tabletMode = false;
             $rootScope.mobileMode = true;
         }
     };

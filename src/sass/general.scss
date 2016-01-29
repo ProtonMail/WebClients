@@ -11,7 +11,7 @@ html.protonmail {
 			-webkit-overflow-scrolling: touch;
 		}
 		&.rows,
-		&.columns.tabletMode {
+		&.columns.mobileMode {
 			#body {
 				height: 100%;
 				#pm_main {

@@ -1,5 +1,5 @@
-// DESKTOP
-body.desktopMode {
+// REGULAR
+body {
 	.pm_checkbox {
 		input[type="checkbox"] {
 			margin: 13px 10px 0 0;
@@ -10,8 +10,8 @@ body.desktopMode {
 	}
 }
 
-// TABLET
-body.tabletMode {
+// MOBILE
+body.mobileMode {
 	#body {
 		#pm_main{
 			label.pm_checkbox {

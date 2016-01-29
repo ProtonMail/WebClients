@@ -10,8 +10,8 @@
     clear: both;
 }
 
-// DESKTOP
-body.desktopMode {
+// REGULAR
+body {
     #conversation-list-columns {
         width: 500px;
         width: 40%;
@@ -48,8 +48,8 @@ body.desktopMode {
     }
 }
 
-// TABLET
-body.tabletMode {
+// MOBILE
+body.mobileMode {
     &, #body {
         height: 100%;
         overflow: hidden;

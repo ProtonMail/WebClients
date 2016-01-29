@@ -34,7 +34,7 @@ angular.module('proton.constants', [])
     LOGIN_PW_MAX_LEN: 500,
     HD_BREAKPOINT: 1920,
     DESKTOP_BREAKPOINT: 1200,
-    TABLET_BREAKPOINT: 960,
+    ROW_BREAKPOINT: 960,
     MOBILE_BREAKPOINT: 700,
     MAILBOX_IDENTIFIERS: {
         inbox: '0',

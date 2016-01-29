@@ -1,5 +1,5 @@
 // DESKTOP
-body.desktopMode {
+body {
     section.sidebar {
         display: block;
         padding: 0 20px 15px 20px;
@@ -288,8 +288,7 @@ body.desktopMode {
     }
 }
 
-// TABLET
-body.tabletMode,
+// MOBILE
 body.mobileMode {
     section.sidebar {
         position: fixed;
