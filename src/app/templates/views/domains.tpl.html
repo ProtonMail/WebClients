@@ -40,9 +40,12 @@
                                 <button ng-show="domain.VerifyState === 1" type="button" class="verifyButton progress pm_button error" ng-click="verification(domain)">
                                     <i class="fa fa-warning"></i> {{ 'UNVERIFED' | translate }}
                                 </button>
-                                <!-- TODO: change logic to use address routes -->
+                                <button type="button" class="progress pm_button" ng-click="verification(domain)" ng-class="{
+                                    'success': domain.VerifyState === 2,
+                                    'error': domain.VerifyState === 1
+                                }">{{ 'VERIFICATION' | translate }}</button>
                                 <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-disabled="domain.VerifyState === 1" ng-class="{'success': domain.Addresses.length > 0}">
-                                    <kbd>{{ domain.Addresses.length }}</kbd> Addresses
+                                    <kbd>{{ domain.Addresses.length }}</kbd> {{ 'ADDRESSES' | translate }}
                                 </button>
                                 <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-disabled="domain.VerifyState === 1" ng-class="{
                                     'success': domain.MxState === 3,
