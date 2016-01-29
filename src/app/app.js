@@ -343,6 +343,7 @@ angular.module('proton', [
                 var User = $injector.get('User');
                 var notify = $injector.get('notify');
                 var eventManager = $injector.get('eventManager');
+                var deferred = $q.defer();
 
                 // Open the open to enter login password because this request require lock scope
                 loginPasswordModal.activate({
@@ -354,20 +355,21 @@ angular.module('proton', [
                                     // Close the modal
                                     loginPasswordModal.deactivate();
                                     // Resend request now
-                                    return $http(rejection.config).then(function() {
-                                        // Call event log manager
-                                        return eventManager.call();
-                                    });
+                                    deferred.resolve($http(rejection.config));
                                 } else if (data.Error) {
                                     notify({message: data.Error, classes: 'notification-danger'});
+                                    deferred.reject();
                                 }
                             });
                         },
                         cancel: function() {
                             loginPasswordModal.deactivate();
+                            deferred.reject();
                         }
                     }
                 });
+
+                return deferred.promise;
             } else if (rejection.status === 504) { // Time-out
                 notification = $injector.get('notify')({
                     message: 'Please retry.',
