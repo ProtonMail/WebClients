@@ -21,7 +21,7 @@ angular.module("proton.controllers.Settings")
     // Store addresses in the controller
     $scope.addresses = authentication.user.Addresses;
 
-    // Establish a link between $scope.addresses and the a service value
+    // Establish a link between Addresses and the a service value
     $scope.$watch(function () { return authentication.user.Addresses; }, function (newVal, oldVal) {
         if (angular.isDefined(newVal)) {
             $scope.addresses = authentication.user.Addresses;
