@@ -21,6 +21,13 @@ angular.module("proton.controllers.Settings")
     // Store addresses in the controller
     $scope.addresses = authentication.user.Addresses;
 
+    // Establish a link between $scope.addresses and the a service value
+    $scope.$watch(function () { return authentication.user.Addresses; }, function (newVal, oldVal) {
+        if (angular.isDefined(newVal)) {
+            $scope.addresses = authentication.user.Addresses;
+        }
+    });
+
     /**
      * Download key
      * @param {String} key
@@ -53,21 +60,24 @@ angular.module("proton.controllers.Settings")
                 title: title,
                 message: message,
                 confirm: function() {
-                    Key.delete(key.ID).then(function(result) {
+                    networkActivityTracker.track(Key.delete(key.ID).then(function(result) {
                         if (result.data && result.data.Code === 1000) {
+                            // Delete key in the UI
                             address.Keys.splice(index, 1);
                             // Call event log manager to be sure
-                            eventManager.call();
                             notify({message: $translate.instant('KEY_DELETED'), classes: 'notification-success'});
                             confirmModal.deactivate();
-                        } else {
+                            return eventManager.call();
+                        } else if (result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
-                            confirmModal.deactivate();
                         }
                     }, function(error) {
-                        notify({message: error, classes: 'notification-danger'});
-                        confirmModal.deactivate();
-                    });
+                        if (error.data && error.data.Code === 403) {
+                            confirmModal.deactivate();
+                        } else {
+                            notify({message: 'Error during delete request', classes: 'notification-danger'});
+                        }
+                    }));
                 },
                 cancel: function() {
                     confirmModal.deactivate();
@@ -93,14 +103,17 @@ angular.module("proton.controllers.Settings")
             Order: order
         }).then(function(result) {
             if (result.data && result.data.Code === 1000) {
-                address.Keys.splice(to, 0, address.Keys.splice(from, 1)[0]);
                 // Call event log manager to be sure
-                eventManager.call();
+                return eventManager.call();
             } else {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: error, classes: 'notification-danger'});
+            if (error.data && error.data.Code === 403) {
+                // Do nothing
+            } else {
+                notify({message: 'Error during key order request', classes: 'notification-danger'});
+            }
         }));
     };
 
@@ -116,11 +129,11 @@ angular.module("proton.controllers.Settings")
             params: {
                 submit: function(loginPassword, keyPassword) {
                     // Try to decrypt private key with the key password specified
-                    pmcw.decryptPrivateKey(key.PrivateKey, keyPassword).then(function(package) {
+                    networkActivityTracker.track(pmcw.decryptPrivateKey(key.PrivateKey, keyPassword).then(function(package) {
                         // Encrypt private key with the current mailbox password
-                        pmcw.encryptPrivateKey(package, mailboxPassword).then(function(privateKey) {
+                        return pmcw.encryptPrivateKey(package, mailboxPassword).then(function(privateKey) {
                             // Update private key
-                            Key.private({
+                            return Key.private({
                                 Password: loginPassword,
                                 Keys: [{
                                     ID: key.ID,
@@ -128,24 +141,29 @@ angular.module("proton.controllers.Settings")
                                 }]
                             }).then(function(result) {
                                 if (result.data && result.data.Code === 1000) {
-                                    // Call event log manager
-                                    eventManager.call();
                                     // Close the modal
                                     reactivateModal.deactivate();
+                                    // Call event log manager
+                                    return eventManager.call();
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
                                     notify({message: 'Error during the update key request', classes: 'notification-danger'});
                                 }
                             }, function(error) {
-                                notify({message: 'Error during the update key request', classes: 'notification-danger'});
+                                if (error.data && error.data.Code === 403) {
+                                    // Close the modal
+                                    reactivateModal.deactivate();
+                                } else {
+                                    notify({message: 'Error during the update key request', classes: 'notification-danger'});
+                                }
                             });
                         }, function(error) {
                             notify({message: 'Error during the encryption phase', classes: 'notification-danger'});
                         });
                     }, function(error) {
                         notify({message: 'Wrong key pair password', classes: 'notification-danger'});
-                    });
+                    }));
                 },
                 cancel: function() {
                     reactivateModal.deactivate();
@@ -168,19 +186,19 @@ angular.module("proton.controllers.Settings")
                 title: title,
                 message: message,
                 confirm: function() {
-                    pmcw.generateKeysRSA(address.Email, mailboxPassword).then(function(result) {
+                    networkActivityTracker.track(pmcw.generateKeysRSA(address.Email, mailboxPassword).then(function(result) {
                         var publicKeyArmored = result.publicKeyArmored;
                         var privateKeyArmored = result.privateKeyArmored;
 
-                        Key.create({
+                        return Key.create({
                             AddressID: address.ID,
                             PrivateKey: privateKeyArmored
                         }).then(function(result) {
                             if (result.data && result.data.Code === 1000) {
-                                // Call event log manager
-                                eventManager.call();
                                 // Close the confirm modal
                                 confirmModal.deactivate();
+                                // Call event log manager
+                                return eventManager.call();
                             } else if (result.data && result.data.Error) {
                                 notify({message: result.data.Error, classes: 'notification-danger'});
                                 confirmModal.deactivate();
@@ -188,21 +206,22 @@ angular.module("proton.controllers.Settings")
                                 notify({message: 'Error during create key request', classes: 'notification-danger'});
                             }
                         }, function(error) {
-                            confirmModal.deactivate();
+                            if (error.data && error.data.Code === 403) {
+                                // Close the modal
+                                confirmModal.deactivate();
+                            } else {
+                                notify({message: 'Error during the create key request', classes: 'notification-danger'});
+                            }
                         });
                     }, function(error) {
                         notify({message: error, classes: 'notification-danger'});
                         confirmModal.deactivate();
-                    });
+                    }));
                 },
                 cancel: function() {
                     confirmModal.deactivate();
                 }
             }
         });
-    };
-
-    $scope.lock = function() {
-        User.lock();
     };
 });
