@@ -270,10 +270,12 @@ angular.module('proton.controllers.Settings')
                     "DisplayName": displayName
                 }).$promise.then(function(response) {
                     if(response.Code === 1000) {
-                        notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
+                        // We replace the value stored
                         authentication.user.DisplayName = displayName;
-                        $scope.displayName = displayName;
+                        notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
                     } else if(angular.isDefined(response.Error)) {
+                        // We restore the old value
+                        $scope.displayName = authentication.user.DisplayName;
                         notify({message: response.Error, classes: 'notification-danger'});
                     }
                 }, function(error) {

@@ -15,6 +15,9 @@ html.protonmail body.activeComposer {
     bottom: 0;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    &.important {
+        z-index: 99999;
+    }
     &.small {
         .modal-dialog {
             width: 30rem;
@@ -35,7 +38,7 @@ html.protonmail body.activeComposer {
                     overflow: auto;
                     height: 200px;
                 }
-            }            
+            }
         }
     }
     .modal-overlay {
@@ -84,7 +87,7 @@ html.protonmail body.activeComposer {
             bottom: 0;
             right: 0;
             background-color: $white;
-        }        
+        }
         .modal-content {
             position: absolute;
             left: 0;
@@ -147,9 +150,9 @@ html.protonmail body.activeComposer {
                         overflow: auto;
                         height: 200px;
                     }
-                }            
+                }
             }
-        }        
+        }
         .modal-dialog {
             position: absolute;
             z-index: 2;
@@ -177,7 +180,7 @@ html.protonmail body.activeComposer {
 
             .modal-footer {
                 padding: ($modalMargin / 4) ($modalMargin / 2);
-            }        
+            }
             .modal-content {
                 .modal-header {
                     padding: ($modalMargin / 2) ($modalMargin / 2) ($modalMargin / 4) ($modalMargin / 2);
@@ -190,7 +193,7 @@ html.protonmail body.activeComposer {
             }
 
         }
-    }  
+    }
 }
 
 
@@ -202,8 +205,8 @@ html.protonmail body.activeComposer {
                 bottom: initial !important;
                 margin-left: 0;
                 left: 0;
-                top: 0;          
+                top: 0;
             }
-        } 
+        }
     }
 }
