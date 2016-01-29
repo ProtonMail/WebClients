@@ -216,21 +216,19 @@ angular.module("proton.controllers.Setup", [
             $scope.account.resetMbCode.length === 0
         ) {
             notify('Verification Code required');
-        }
-        else {
+        } else {
             Reset.validateResetToken({
                 username: $rootScope.tempUser.username,
                 token: $scope.account.resetMbCode
             })
             .then(
                 function(response) {
-                    if (response.data.Code!==1000) {
+                    if (response.data.Code !== 1000) {
                         notify({
                             classes: 'notification-danger',
                             message: 'Invalid Verification Code.'
                         });
-                    }
-                    else {
+                    } else {
                         $scope.resetMailboxToken = $scope.account.resetMbCode;
                         $scope.showForm = true;
                         $scope.showEmailMessage = false;
