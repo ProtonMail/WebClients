@@ -133,10 +133,6 @@ angular.module('proton.autocomplete', [])
                 }
             };
 
-            scope.onBlur = function(event) {
-                scope.params.newValue = '';
-            };
-
             scope.onRemove = function(index) {
                 scope.emails.splice(index, 1);
                 scope.params.newValue = '';
@@ -150,6 +146,7 @@ angular.module('proton.autocomplete', [])
                 if(index === -1) {
                     scope.emails.push(email);
                     scope.params.newValue = '';
+                    angular.element(element).find('.new-value-email').focus();
                     scope.onChange();
                 }
             };
