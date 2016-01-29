@@ -264,7 +264,7 @@ angular.module('proton', [
     return {
         response: function(response) {
             // Close notification if Internet wake up
-            if(notification) {
+            if (notification) {
                 notification.close();
                 notification = false;
             }
@@ -272,17 +272,15 @@ angular.module('proton', [
             if (angular.isDefined(response.data) && angular.isDefined(response.data.Code)) {
                 // app update needd
                 if (response.data.Code === 5003) {
-//                    if ($rootScope.updateMessage===false) {
-//                        $rootScope.updateMessage = true;
-                        if ( upgrade_notification ) {
-                            upgrade_notification.close();
-                        }
-                        upgrade_notification = $injector.get('notify')({
-                            classes: 'notification-info noclose',
-                            message: 'A new version of ProtonMail is available. Please refresh this page and then logout and log back in to automatically update.',
-                            duration: '0'
-                        });
-//
+                    if ( upgrade_notification ) {
+                        upgrade_notification.close();
+                    }
+
+                    upgrade_notification = $injector.get('notify')({
+                        classes: 'notification-info noclose',
+                        message: 'A new version of ProtonMail is available. Please refresh this page and then logout and log back in to automatically update.',
+                        duration: '0'
+                    });
                 }
                 else if(response.data.Code === 5004) {
                     $injector.get('notify')({
@@ -339,6 +337,37 @@ angular.module('proton', [
                 } else {
                     $injector.get('authentication').logout(true, false);
                 }
+            } else if (rejection.status === 403) {
+                var $http = $injector.get('$http');
+                var loginPasswordModal = $injector.get('loginPasswordModal');
+                var User = $injector.get('User');
+                var notify = $injector.get('notify');
+                var eventManager = $injector.get('eventManager');
+
+                // Open the open to enter login password because this request require lock scope
+                loginPasswordModal.activate({
+                    params: {
+                        submit: function(loginPassword) {
+                            // Send request to unlock the current session for administrator privileges
+                            User.unlock({Password: loginPassword}).$promise.then(function(data) {
+                                if (data.Code === 1000) {
+                                    // Close the modal
+                                    loginPasswordModal.deactivate();
+                                    // Resend request now
+                                    return $http(rejection.config).then(function() {
+                                        // Call event log manager
+                                        return eventManager.call();
+                                    });
+                                } else if (data.Error) {
+                                    notify({message: data.Error, classes: 'notification-danger'});
+                                }
+                            });
+                        },
+                        cancel: function() {
+                            loginPasswordModal.deactivate();
+                        }
+                    }
+                });
             } else if (rejection.status === 504) { // Time-out
                 notification = $injector.get('notify')({
                     message: 'Please retry.',
@@ -350,6 +379,7 @@ angular.module('proton', [
         }
     };
 })
+
 .config(function($httpProvider, CONFIG) {
     //Http Intercpetor to check auth failures for xhr requests
     $httpProvider.interceptors.push('authHttpResponseInterceptor');

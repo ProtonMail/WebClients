@@ -66,8 +66,8 @@ angular.module("proton.authentication", [
                             ]).then(
                                 function(result) {
                                     if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
-                                        var mailboxPassword = api.getPassword();
                                         var promises = [];
+                                        var mailboxPassword = api.getPassword();
 
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
@@ -77,23 +77,31 @@ angular.module("proton.authentication", [
                                         }
 
                                         // All private keys are decrypted with the mailbox password and stored in a `keys` array
-                                        _.each(user.Addresses, function(address) { // For each addresses
-                                            _.each(address.Keys, function(key, index) { // For each keys
-                                                promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
-                                                    key.decrypted = true; // We mark this key as decrypted
-                                                    api.storeKey(address.ID, key.ID, package); // We store the package to the current service
-                                                }, function(error) {
-                                                    key.decrypted = false; // This key is not decrypted
-                                                    // If the primary (first) key for address does not decrypt, display error.
-                                                    if(index === 0) {
-                                                        address.disabled = true; // This address cannot be used
-                                                        notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
-                                                    }
-                                                }));
-                                            });
-                                        });
+                                        _.each(user.Addresses, function(address) {
+                    						_.each(address.Keys, function(key, index) {
+                    							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
+                    								key.decrypted = true; // We mark this key as decrypted
+                    								api.storeKey(address.ID, key.ID, package); // We store the package to the current service
+
+                                                    return pmcw.keyInfo(key.PrivateKey).then(function(info) {
+                    									key.created = info.created; // Creation date
+                    									key.bitSize = info.bitSize; // We don't use this data currently
+                    									key.fingerprint = info.fingerprint; // Fingerprint
+                    								});
+                    							}, function(error) {
+                    								key.decrypted = false; // This key is not decrypted
+                    								// If the primary (first) key for address does not decrypt, display error.
+                    								if(index === 0) {
+                    									address.disabled = true; // This address cannot be used
+                    									notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
+                    								}
+                    							}));
+                    						});
+                    					});
 
                                         $q.all(promises).then(function() {
+                                            deferred.resolve(user);
+                                        }, function() {
                                             deferred.resolve(user);
                                         });
                                     } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
