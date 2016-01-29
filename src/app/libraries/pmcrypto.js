@@ -131,9 +131,12 @@ var pmcrypto = (function() {
         if (data !== undefined) return decode_utf8(decode_base64(data));
     }
 
-    function generateKeysRSA(user, password) {
+    function generateKeysRSA(user, password, numBits) {
+
+        numBits = (typeof numBits !== 'undefined') ? numBits : 2048;
+
         return openpgp.generateKeyPair({
-            numBits: 2048,
+            numBits: numBits,
             userId: user,
             passphrase: password
         });
