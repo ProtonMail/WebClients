@@ -1,10 +1,6 @@
 <ng-include 
-ng-if="desktopMode === true" 
+ng-if="mobileMode === false" 
 src="'templates/partials/toolbar-desktop.tpl.html'"></ng-include>
-
-<ng-include 
-ng-if="tabletMode  === true" 
-src="'templates/partials/toolbar-tablet.tpl.html'"></ng-include>
 
 <ng-include 
 ng-if="mobileMode  === true" 

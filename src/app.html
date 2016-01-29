@@ -50,14 +50,12 @@
     light: ('support.reset-password'|isState) || ('step1'|isState) || ('pre-invite'|isState),
     scroll: ('step1'|isState) || ('secured.print'|isState),
     modalOpen: modalOpen,
-    desktopMode: desktopMode,
-    tabletMode: tabletMode,
     mobileMode: mobileMode
 }">
 
 <div 
 id="pm_background" 
-ng-hide="tabletMode || mobileMode" 
+ng-hide="mobileMode" 
 ng-class="{ 'tablet': showSidebar }" 
 ng-click="showSidebar = false" 
 ng-hide="printMode"></div>

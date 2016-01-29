@@ -1,11 +1,8 @@
 <ng-include 
-ng-if="desktopMode  === true" 
+ng-if="mobileMode === false" 
 src="'templates/partials/header-auth-desktop.tpl.html'"></ng-include>
 <ng-include 
-ng-if="tabletMode  === true" 
-src="'templates/partials/header-auth-tablet.tpl.html'"></ng-include>
-<ng-include 
-ng-if="mobileMode  === true" 
+ng-if="mobileMode === true" 
 src="'templates/partials/header-auth-mobile.tpl.html'"></ng-include>
 
 <ng-include src="'templates/partials/sidebar.tpl.html'" id="pm_sidebar"></ng-include>

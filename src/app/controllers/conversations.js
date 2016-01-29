@@ -147,7 +147,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     $scope.mobileResponsive = function() {
         var bodyWidth = $('body').outerWidth();
-        if ( bodyWidth > CONSTANTS.DESKTOP_BREAKPOINT ) {
+        if ( bodyWidth > CONSTANTS.REGULAR_BREAKPOINT ) {
             if ($rootScope.desktopMode!==true) {
                 notify({
                     message: 'Desktop Mode Activated', 
@@ -157,6 +157,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
             $rootScope.desktopMode = true;
             $rootScope.tabletMode = false;
+            $rootScope.mobileMode = false;
+        }
+        else if ( bodyWidth > CONSTANTS.ROW_BREAKPOINT ) {
+            if ($rootScope.layoutMode!=='rows') {
+                notify({
+                    message: 'Switched to Rows Activated', 
+                    classes: 'notification-info',
+                    duration: 2000
+                });
+            }
+            $rootScope.desktopMode = false;
+            $rootScope.tabletMode = true;
             $rootScope.mobileMode = false;
         }
         else if ( bodyWidth > CONSTANTS.TABLET_BREAKPOINT ) {

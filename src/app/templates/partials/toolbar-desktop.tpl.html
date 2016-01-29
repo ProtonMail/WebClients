@@ -195,17 +195,11 @@
 
         <span class="pm_buttons">
             <a 
-            ng-class="{ 'active': desktopMode }" 
+            ng-class="{ 'active': !mobileMode }" 
             ng-click="changeMode('desktop')" 
             href="#" 
-            ng-disabled="desktopMode === true"
+            ng-disabled="mobileMode === false"
             class="fa fa-desktop"></a>
-            <a 
-            ng-class="{ 'active': tabletMode }" 
-            ng-click="changeMode('tablet')" 
-            href="#" 
-            ng-disabled="tabletMode === true"
-            class="fa fa-tablet divider"></a>
             <a 
             ng-class="{ 'active': mobileMode }" 
             ng-click="changeMode('mobile')" 
