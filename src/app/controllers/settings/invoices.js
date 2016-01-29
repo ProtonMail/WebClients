@@ -63,7 +63,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} invoice
      */
     $scope.display = function(invoice) {
-        var url = $state.href('secured.invoice', { time: invoice.Payment.Time });
+        var url = $state.href('secured.invoice', { time: invoice.Time });
 
         window.open(url, '_blank');
     };
