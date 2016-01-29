@@ -68,6 +68,13 @@ angular.module("proton.authentication", [
                                     if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
                                         var promises = [];
                                         var mailboxPassword = api.getPassword();
+                                        var keyInfo = function(key) {
+                                            return pmcw.keyInfo(key.PrivateKey).then(function(info) {
+                                                key.created = info.created; // Creation date
+                                                key.bitSize = info.bitSize; // We don't use this data currently
+                                                key.fingerprint = info.fingerprint; // Fingerprint
+                                            });
+                                        };
 
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
@@ -82,14 +89,10 @@ angular.module("proton.authentication", [
                     							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
                     								key.decrypted = true; // We mark this key as decrypted
                     								api.storeKey(address.ID, key.ID, package); // We store the package to the current service
-
-                                                    return pmcw.keyInfo(key.PrivateKey).then(function(info) {
-                    									key.created = info.created; // Creation date
-                    									key.bitSize = info.bitSize; // We don't use this data currently
-                    									key.fingerprint = info.fingerprint; // Fingerprint
-                    								});
+                                                    keyInfo(key);
                     							}, function(error) {
                     								key.decrypted = false; // This key is not decrypted
+                                                    keyInfo(key);
                     								// If the primary (first) key for address does not decrypt, display error.
                     								if(index === 0) {
                     									address.disabled = true; // This address cannot be used

@@ -1,33 +1,26 @@
 <div class="pm_panel pm_form alt">
 
-    <div class="panel-body" ng-hide="(showForm || showEmailMessage || process.generatingKeys)">
+    <form method="post" class="panel-body" ng-hide="(showForm || showEmailMessage || process.generatingKeys)" ng-submit="resetMailboxInit()">
         <h1 class="text-center">{{ 'WARNING' | translate }}!</h1>
-
         <p>If you forget your Mailbox Password, you can reset your account but...</p>
-
         <p class="alert alert-danger">ALL OF YOUR DATA WILL BE LOST FOREVER!</p>
-
         <p>To continue, type "<kbd>DANGER</kbd>" below:</p>
         <p>
-
             <input type="text" class="form-control" ng-model="danger" placeholder="Enter the word 'DANGER' here.">
         </p>
         <a ui-sref="login.unlock" class="pm_button pull-left link">{{ 'CANCEL' | translate }}</a>
-        <button ng-class="{ 'disabled': danger!=='DANGER' }" class="pm_button pull-right primary" title="Reset my Mailbox" ng-click="resetMailboxInit()">
+        <button type="submit" ng-class="{ 'disabled': danger!=='DANGER' }" class="pm_button pull-right primary" title="Reset my Mailbox">
             <span ng-if="user.NotificationEmail !== ''">{{ 'RESET' | translate }}</span>
             <span ng-if="user.NotificationEmail === ''">{{ 'RESET_NOW' | translate }}</span>
         </button>
-    </div>
-
+    </form>
 
     <div class="panel-body" ng-show="showEmailMessage && !process.generatingKeys">
         <h1 class="text-center">Check Your Email</h1>
-
-        <p class="alert alert-info">
-        We've sent a verification code to your <strong>Recovery Email</strong>. Enter it below to continue.</p>
-        <form method="post" ng-submit="verifyResetCode(resetCodeForm)" name="resetCodeForm"  >
+        <p class="alert alert-info">We've sent a verification code to your <strong>Recovery Email</strong>. Enter it below to continue.</p>
+        <form method="post" ng-submit="verifyResetCode(resetCodeForm)" name="resetCodeForm">
             <div class="margin">
-                <label for="resetMbCode">Verification Code</label>
+                <label class="text-left" for="resetMbCode">Verification Code</label>
                 <input type="text" ng-model="account.resetMbCode" id="resetMbCode" class="form-control">
             </div>
             <div class="margin text-right">
@@ -71,21 +64,21 @@
         <div class="panel-heading">
             <h1 class="text-center">Creating New Mailbox</h1>
         </div>
-        <div class="panel-body">   
+        <div class="panel-body">
         <ol>
             <li ng-class="{ 'done': process.generatingKeys }">
-                <i ng-hide="process.generatingKeys" class="fa fa-square-o"></i> 
-                <i ng-show="process.generatingKeys" class="fa fa-check-square"></i> 
+                <i ng-hide="process.generatingKeys" class="fa fa-square-o"></i>
+                <i ng-show="process.generatingKeys" class="fa fa-check-square"></i>
                 Generating Keys
             </li>
             <li ng-class="{ 'done': process.savingKeys }">
-                <i ng-hide="process.savingKeys" class="fa fa-square-o"></i> 
-                <i ng-show="process.savingKeys" class="fa fa-check-square"></i> 
+                <i ng-hide="process.savingKeys" class="fa fa-square-o"></i>
+                <i ng-show="process.savingKeys" class="fa fa-check-square"></i>
                 Saving Encrypted Keys
             </li>
             <li ng-class="{ 'done': process.redirecting }">
-                <i ng-hide="process.redirecting" class="fa fa-square-o"></i> 
-                <i ng-show="process.redirecting" class="fa fa-check-square"></i> 
+                <i ng-hide="process.redirecting" class="fa fa-square-o"></i>
+                <i ng-show="process.redirecting" class="fa fa-check-square"></i>
                 Redirecting
             </li>
         </ol>
