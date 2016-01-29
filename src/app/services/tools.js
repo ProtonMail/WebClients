@@ -166,8 +166,7 @@ angular.module("proton.tools", ["proton.constants"])
      * Detect if the content is type of HTML
      */
     tools.isHtml = function(content) {
-        content = content.trim();
-        return content.length === 0 && angular.isArray(content.match(/<(\w+)((?:\s+\w+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/));
+        return angular.isArray(content.match(/<(\w+)((?:\s+\w+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/));
     };
 
     // Squire does this funny thing where it takes style tags, i.e.
