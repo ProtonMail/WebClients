@@ -62,19 +62,12 @@ body.mobileMode {
     #conversation-list-rows {
         width: 100%;
     }
-    #wrapper {
-        clear: both;
-        float: left;
-        width: 100%;
-    }
-    #conversation-list-columns {
-        width: 100%;
-        float: left;
-        clear: both;
-    }
+    #wrapper,
+    #conversation-list-columns,
     #conversation-view {
-        width: 60%;
+        clear: both;
         float: left;
+        width: 100%;
     }
     #wrapper {
         height: calc(100% - 75px);

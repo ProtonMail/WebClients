@@ -79,6 +79,25 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     });
 
+    // Get all recipients
+    $scope.recipients = function() {
+        var recipients = [];
+
+        if ($scope.message.ToList) {
+            recipients = recipients.concat($scope.message.ToList);
+        }
+
+        if ($scope.message.CCList) {
+            recipients = recipients.concat($scope.message.CCList);
+        }
+
+        if ($scope.message.BCCList) {
+            recipients = recipients.concat($scope.message.BCCList);
+        }
+
+        return recipients;
+    };
+
     /**
      * Toggle message in conversation view
      */

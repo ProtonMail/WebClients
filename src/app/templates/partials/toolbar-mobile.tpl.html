@@ -14,7 +14,7 @@
 
     <span 
     class="pm_buttons back" 
-    ng-if="idDefined() &&  layoutMode === 'rows'">
+    ng-if="idDefined() && (layoutMode === 'rows' || mobileMode)">
         <a 
         ng-click="back()" 
         pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">

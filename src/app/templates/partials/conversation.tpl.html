@@ -1,27 +1,33 @@
 <header id="conversationHeader">
     <span class="pm_buttons starButton">
-        <a ng-click="toggleStar(conversation)" pt-tooltip="{{ 'STAR_CONVERSATION' | translate }}">
-            <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
+        <a 
+        ng-click="toggleStar(conversation)" 
+        pt-tooltip="{{ 'STAR_CONVERSATION' | translate }}"
+        class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}">
         </a>
     </span>
     <h1>
         <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
         <span ng-bind="conversation.Subject"></span>
     </h1>
-    <p ng-show="nonTrashed() && inTrash === true">
-        This conversation contains non-trashed messages.
-        <a href="#" ng-click="toggleNonTrashed()">
-            <span ng-show="showNonTrashed === true">Hide non trashed messages</span>
-            <span ng-hide="showNonTrashed === true">Show non trashed messages</span>
-        </a>
-    </p>
-    <p ng-show="trashed() && inTrash === false">
-        This conversation contains trashed messages.
-        <a href="#" ng-click="toggleTrashed()">
-            <span ng-show="showTrashed === true">Hide trashed messages</span>
-            <span ng-hide="showTrashed === true">Show trashed messages</span>
-        </a>
-    </p>
+    <div ng-show="nonTrashed() && inTrash === true">
+        T<p>
+            his conversation contains non-trashed messages.
+            <a href="#" ng-click="toggleNonTrashed()">
+                <span ng-show="showNonTrashed === true">Hide non trashed messages</span>
+                <span ng-hide="showNonTrashed === true">Show non trashed messages</span>
+            </a>
+        </p>
+    </div>
+    <div ng-show="trashed() && inTrash === false">
+        <p>
+            This conversation contains trashed messages.
+            <a href="#" ng-click="toggleTrashed()">
+                <span ng-show="showTrashed === true">Hide trashed messages</span>
+                <span ng-hide="showTrashed === true">Show trashed messages</span>
+            </a>
+        </p>
+    </div>
 </header>
 <div id="pm_thread">
     <ng-include src="'templates/partials/message.tpl.html'" ng-repeat="message in messages track by message.ID"></ng-include>
