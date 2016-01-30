@@ -7,21 +7,19 @@
             </div>
             <div class="modal-body">
                 <div class="pm_form">
-                    <label class="larger">{{ 'NICKNAME' | translate }}</label>
                     <div class="pm_grid">
                         <div class="col-1-3">
                             <label>{{ 'NICKNAME' | translate }}</label>
                         </div>
                         <div class="col-1-2">
-                            <input type="text" class="margin" placeholder="Choose a Login password">
+                            <input autofocus type="text" class="margin" placeholder="Choose a Login password">
                         </div>
                     </div>
                 </div>
                 <div class="pm_form">
-                    <label class="larger">Create a Login Password</label>
                     <div class="pm_grid">
                         <div class="col-1-3">
-                            <label>Login Password</label>
+                            <label>{{ 'LOGIN_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col-1-2">
                             <input type="text" class="margin" placeholder="Choose a Login password">
@@ -30,28 +28,26 @@
                     </div>
                 </div>
                 <div class="pm_form">
-                    <label class="larger">Create a MailBox Password</label>
                     <div class="pm_grid">
                         <div class="col-1-3">
-                            <label>Mailbox Password</label>
+                            <label>{{ 'USER_STORAGE' | translate }}</label>
                         </div>
                         <div class="col-1-2">
-                            <input type="text" class="margin" placeholder="Choose a Mailbox password">
-                            <input type="text" class="margin" placeholder="Confirm a Mailbox password">
+                            <input type="text" class="margin" placeholder="Storage as MB (Mega Byte)">
+                            <p class="alert alert-info">
+                                Your Organization has <strong>{{ (ctrl.organization.MaxSpace - ctrl.organization.UsedSpace) | humanSize }} left</strong>.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="pm_form">
-                    <label class="larger">Set User Storage</label>
                     <div class="pm_grid">
                         <div class="col-1-3">
-                            <label>Storage Amount</label>
+                            <label>{{ 'PRIVATE_USER' | translate }}</label>
                         </div>
                         <div class="col-1-2">
-                            <input type="text" class="margin" placeholder="Storage as MB (Mega Byte)">
-                            <p>
-                                <i class="fa fa-info-circle"></i> Your Organization has <strong>{{ (ctrl.organization.MaxSpace - ctrl.organization.UsedSpace) | humanSize }} left</strong>.
-                            </p>
+                            <input type="checkbox" /> Consider this user as private
+                            <p class="alert alert-info">A user private can manage keys.</p>
                         </div>
                     </div>
                 </div>
