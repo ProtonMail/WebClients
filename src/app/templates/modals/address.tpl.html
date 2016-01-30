@@ -17,10 +17,10 @@
                         </span>
                     </div>
                 </div>
-                <div class="pm_grid">
+                <form class="pm_grid" method="post" ng-submit="ctrl.add()">
                     <div class="col-1-3">
                         <label>Choose an address:</label>
-                        <input type="text" ng-model="ctrl.address" placeholder="Address" />
+                        <input autofocus type="text" ng-model="ctrl.address" placeholder="Address" />
                     </div>
                     <div class="col-1-3">
                         <label>&nbsp;</label>
@@ -28,9 +28,9 @@
                     </div>
                     <div class="col-1-3">
                         <label>&nbsp;</label>
-                        <button type="button" class="pm_button primary" ng-click="ctrl.add()">{{ 'ADD' | translate }}</button>
+                        <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
                     </div>
-                </div>
+                </form>
 
                 <div ng-show="ctrl.domain.Addresses.length > 0">
                     <p>&nbsp;</p>
