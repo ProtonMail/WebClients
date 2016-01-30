@@ -148,9 +148,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if ( bodyWidth > CONSTANTS.MOBILE_BREAKPOINT ) {
             if ($rootScope.mobileMode===true) {
                 notify({
-                    message: 'Regular Mode Activated', 
-                    classes: 'notification-info',
-                    duration: 2000
+                    message: '<i class="fa fa-desktop"></i>', 
+                    classes: 'notification-info bottom-right',
+                    duration: 1000
                 });
             }
             $rootScope.mobileMode = false;
@@ -166,9 +166,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         else if ( bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT ) {
             if ($rootScope.mobileMode===false) {
                 notify({
-                    message: 'Mobile Mode Activated', 
-                    classes: 'notification-info',
-                    duration: 2000
+                    message: '<i class="fa fa-mobile"></i>', 
+                    classes: 'notification-info bottom-right',
+                    duration: 1000
                 });
             }
             $rootScope.mobileMode = true;
@@ -178,7 +178,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.startWatchingEvent = function() {
-        angular.element($window).bind('resize', $scope.mobileResponsive);
+        angular.element($window).bind('resize', $window._.debounce(function() {
+            $scope.mobileResponsive();
+        }, 30));
         angular.element($window).bind('orientationchange', $scope.mobileResponsive);
 
         $scope.$on('refreshConversations', function() {

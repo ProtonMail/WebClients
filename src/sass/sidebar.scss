@@ -290,95 +290,97 @@ body {
 
 // MOBILE
 body.mobileMode {
-    section.sidebar {
-        position: fixed;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 999;
-        display: block;
-        padding: 2rem 2rem;
-        width: ($sidebarWidth * 1.5);
-        min-width: ($sidebarWidth * 1.5);
-        box-sizing: border-box;
-        background: $secondary;
-        height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-        .logo {
+    #pm_sidebar {
+        section.sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 999;
             display: block;
-            padding-top: 5px;
-        }
-        .pm_button.round {
-            background: rgba(255,255,255,.1);
-            border-color: transparent;
-            .fa {
-                color: #fff;
-            }
-        }
-        .userDisplay {
-            display: block;
-            padding: 1rem 0;
-            font-size: .9em;
-            font-style: normal;
-            em, strong {
+            padding: 2rem 2rem;
+            width: ($sidebarWidth * 1.5);
+            min-width: ($sidebarWidth * 1.5);
+            box-sizing: border-box;
+            background: $secondary;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            .logo {
                 display: block;
-                color: #fff;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                font-style: normal;
+                padding-top: 5px;
             }
-        }
-        ul.menu {
-            display: block;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            li {
-                button {
+            .pm_button.round {
+                background: rgba(255,255,255,.1);
+                border-color: transparent;
+                .fa {
                     color: #fff;
-                    text-decoration: none;
-                    line-height: 3rem;
-                    height: 3rem;
+                }
+            }
+            .userDisplay {
+                display: block;
+                padding: 1rem 0;
+                font-size: .9em;
+                font-style: normal;
+                em, strong {
                     display: block;
-                    padding: 0;
-                    margin: 0;
-                    border: none;
-                    background: transparent;
-                    font-size: 1em;
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    appearance: none;
-                    width: 100%;
-                    text-align: left;
-                    .fa {
-                        width: 1.5rem;
-                        color: rgba(255,255,255,.35);
-                        height: 3rem;
+                    color: #fff;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-style: normal;
+                }
+            }
+            ul.menu {
+                display: block;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    button {
+                        color: #fff;
+                        text-decoration: none;
                         line-height: 3rem;
-                        display: inline-block;
-                        float: left;
-                    }
-                    span {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        display: inline-block;
                         height: 3rem;
-                        line-height: 3rem;
-                        float: left;
-                        max-width: 80%;
-                    }
-                    em {
-                        font-style: normal;
-                        font-weight: 400;
-                        color: rgba(255,255,255,.35);
-                        height: 3rem;
-                        line-height: 3rem;
-                        display: inline-block;
-                        float: left;
-                        padding-left: 1rem;
+                        display: block;
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                        background: transparent;
+                        font-size: 1em;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        width: 100%;
+                        text-align: left;
+                        .fa {
+                            width: 1.5rem;
+                            color: rgba(255,255,255,.35);
+                            height: 3rem;
+                            line-height: 3rem;
+                            display: inline-block;
+                            float: left;
+                        }
+                        span {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: inline-block;
+                            height: 3rem;
+                            line-height: 3rem;
+                            float: left;
+                            max-width: 80%;
+                        }
+                        em {
+                            font-style: normal;
+                            font-weight: 400;
+                            color: rgba(255,255,255,.35);
+                            height: 3rem;
+                            line-height: 3rem;
+                            display: inline-block;
+                            float: left;
+                            padding-left: 1rem;
+                        }
                     }
                 }
             }

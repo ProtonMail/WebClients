@@ -90,6 +90,9 @@
     body section.sidebar ul.menu li a {
         font-size: .9em;
     }
+    body section.sidebar ul.menu li a em {
+        display: none;
+    }
 }
 
 @media (max-width: 800px) {

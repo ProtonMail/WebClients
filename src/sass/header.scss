@@ -1,3 +1,22 @@
+// UNAUTHORIZED
+header#pm_header {
+	height: $headerHeight;
+	line-height: $headerHeight;
+	background: $secondary;
+	font-size: 12px;
+	position: relative;
+	z-index: 2;
+	a {
+		color: #fff;
+		text-decoration: none;
+		padding: 0 25px;
+		b {
+			font-weight: normal;
+		}
+	}
+}
+
+// REGULAR 
 header#pm_header-desktop {
 	height: $headerHeight;
 	line-height: $headerHeight;

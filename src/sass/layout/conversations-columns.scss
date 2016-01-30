@@ -43,10 +43,16 @@
         .pm_labels {
             width: 8rem;
         }
-        h4,
-        .senders, {
+        h4 {
             width: calc(100% - 10rem);
             cursor: pointer;
+        }
+        .senders {
+            width: calc(100% - 10rem);
+            cursor: pointer;
+        }
+        .senders.full {
+            width: 100%;
         }
         .meta {
             display: block;
@@ -111,6 +117,17 @@ body.mobileMode {
         }
         .row.bottom {
             padding-left: 50px;
+        }
+    }
+    .conversation {
+        .row {
+            h4 {
+                width: calc(100% - 11.5rem);
+            }
+            .senders.full {
+                width: calc(100% - 10rem);
+                cursor: pointer;
+            }
         }
     }
 }
