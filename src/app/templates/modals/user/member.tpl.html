@@ -7,6 +7,17 @@
             </div>
             <div class="modal-body">
                 <div class="pm_form">
+                    <label class="larger">{{ 'NICKNAME' | translate }}</label>
+                    <div class="pm_grid">
+                        <div class="col-1-3">
+                            <label>{{ 'NICKNAME' | translate }}</label>
+                        </div>
+                        <div class="col-1-2">
+                            <input type="text" class="margin" placeholder="Choose a Login password">
+                        </div>
+                    </div>
+                </div>
+                <div class="pm_form">
                     <label class="larger">Create a Login Password</label>
                     <div class="pm_grid">
                         <div class="col-1-3">
@@ -38,7 +49,9 @@
                         </div>
                         <div class="col-1-2">
                             <input type="text" class="margin" placeholder="Storage as MB (Mega Byte)">
-                            <p><i class="fa fa-info-circle"></i> Your Organization has <strong>6481 MB left</strong>.</p>
+                            <p>
+                                <i class="fa fa-info-circle"></i> Your Organization has <strong>{{ (ctrl.organization.MaxSpace - ctrl.organization.UsedSpace) | humanSize }} left</strong>.
+                            </p>
                         </div>
                     </div>
                 </div>

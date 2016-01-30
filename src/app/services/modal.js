@@ -693,7 +693,8 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/user/modal.tpl.html',
         controller: function(params) {
             // Variables
-            this.step = 'address';
+            this.step = 'member';
+            this.organization = params.organization;
 
             // Functions
             this.submit = function() {
