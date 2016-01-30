@@ -4,8 +4,8 @@
         <p class="alert alert-info" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
         <p class="alert alert-info">Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
         <p>&nbsp;</p>
-        <legend>{{ 'ACCOUNT' | translate }}</legend>
-        <button type="button" class="pm_button error" ng-click="lock()">Lock</button>
+        <legend>{{ 'ADDRESSES' | translate }}</legend>
+        <!-- <button type="button" class="pm_button error" ng-click="lock()">Lock</button> -->
         <div ng-repeat="address in addresses | orderBy: 'Send'" class="keyAddresses">
             <header>
                 <span class="pm_badge pull-right success" ng-show="address.Status === 1"><i class="fa fa-check"></i> Enabled</span>

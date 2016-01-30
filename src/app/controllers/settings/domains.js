@@ -194,7 +194,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_DELETED'), classes: 'notification-success'});
                             $scope.domains.splice(index, 1); // Remove domain in interface
-                            eventManager.call();
+                            eventManager.call(); // Call event log manager
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
@@ -229,7 +229,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('ADDRESS_DELETED'), classes: 'notification-success'});
                             domain.Addresses.splice(index, 1); // Remove address in interface
-                            eventManager.call();
+                            eventManager.call(); // Call event log manager
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
@@ -259,7 +259,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_CREATED'), classes: 'notification-success'});
                             $scope.domains.push(result.data.Domain);
-                            eventManager.call();
+                            eventManager.call(); // Call event log manager
                             domainModal.deactivate();
                             // open the next step
                             $scope.verification(result.data.Domain);
@@ -365,6 +365,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
                             domain.Addresses.push(result.data.Address);
+                            eventManager.call(); // Call event log manager
                             addressModal.deactivate();
                             $scope.addAddress(domain);
                         } else if(angular.isDefined(result.data) && result.data.Code === 31006) {

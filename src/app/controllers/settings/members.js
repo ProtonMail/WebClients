@@ -220,9 +220,13 @@ angular.module("proton.controllers.Settings")
         storageModal.activate({
             params: {
                 member: member,
-                submit: function() {
-                    // TODO
-                    storageModal.deactivate();
+                submit: function(member) {
+                    networkActivityTracker.track(Member.quota(member.ID, member.UsedSpace).then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            notify({message: $translate.instant('QUOTA_UPDATED'), classes: 'notification-success'});
+                            storageModal.deactivate();
+                        }
+                    }));
                 },
                 cancel: function() {
                     storageModal.deactivate();
