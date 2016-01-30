@@ -164,6 +164,37 @@ angular.module("proton.event", ["proton.constants"])
 					authentication.user.UsedSpace = storage;
 				}
 			},
+			manageMembers: function(members) {
+				if (angular.isDefined(members)) {
+					_.each(members, function(member) {
+						if (member.Action === DELETE) {
+							$rootScope.broadcast('deleteMember', member.ID);
+						} else if (member.Action === CREATE) {
+							$rootScope.broadcast('createMember', member.ID, member.Member);
+						} else if (member.Action === UPDATE) {
+							$rootScope.broadcast('updateMember', member.ID, member.Member);
+						}
+					});
+				}
+			},
+			manageDomains: function(domains) {
+				if (angular.isDefined(domains)) {
+					_.each(domains, function(domain) {
+						if (domain.Action === DELETE) {
+							$rootScope.broadcast('deleteDomain', domain.ID);
+						} else if (domain.Action === CREATE) {
+							$rootScope.broadcast('createDomain', domain.ID, domain.Domain);
+						} else if (domain.Action === UPDATE) {
+							$rootScope.broadcast('updateDomain', domain.ID, domain.Domain);
+						}
+					});
+				}
+			},
+			manageOrganization: function(organization) {
+				if (angular.isDefined(organization)) {
+					$rootScope.broadcast('organizationChange', organization);
+				}
+			},
 			manageID: function(id) {
 				this.ID = id;
 				window.sessionStorage[CONSTANTS.EVENT_ID] = id;
@@ -211,6 +242,9 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageMessageCounts(data.MessageCounts);
 					this.manageConversationCounts(data.ConversationCounts);
 					this.manageStorage(data.UsedSpace);
+					this.manageDomains(data.Domains);
+					this.manageMembers(data.Members);
+					this.manageOrganization(data.Organization);
 					this.manageID(data.EventID);
 				}
 				this.manageNotices(data.Notices);
