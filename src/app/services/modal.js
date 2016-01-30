@@ -860,12 +860,24 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('storageModal', function(pmModal) {
+.factory('storageModal', function(pmModal, CONSTANTS, $filter) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/storage.tpl.html',
         controller: function(params) {
             this.member = params.member;
+            this.member.UsedSpaceNum = $filter('humanSize')(params.member.UsedSpace, true);
+            this.units = [
+                {
+                    'label': 'MB',
+                    'value': CONSTANTS.BASE_SIZE
+                },
+                {
+                    'label': 'GB',
+                    'value': (CONSTANTS.BASE_SIZE)*(CONSTANTS.BASE_SIZE)
+                }
+            ];
+            this.unit = this.units[0];
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
