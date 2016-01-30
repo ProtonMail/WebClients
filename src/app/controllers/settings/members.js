@@ -22,6 +22,39 @@ angular.module("proton.controllers.Settings")
         {label: $translate.instant('SUB'), value: SUB}
     ];
 
+    // Listeners
+    $scope.$on('organizationChange', function(event, organization) {
+        $scope.organization = organization;
+    });
+
+    $scope.$on('deleteMember', function(event, memberId) {
+        var index = _.findIndex($scope.members, {ID: memberId});
+
+        if (index !== -1) {
+            $scope.members.splice(index, 1);
+        }
+    });
+
+    $scope.$on('createMember', function(event, memberId, member) {
+        var index = _.findIndex($scope.members, {ID: memberId});
+
+        if (index === -1) {
+            $scope.members.push(member);
+        } else {
+            $scope.members[index] = member;
+        }
+    });
+
+    $scope.$on('updateMember', function(event, memberId, member) {
+        var index = _.findIndex($scope.members, {ID: memberId});
+
+        if (index === -1) {
+            $scope.members.push(member);
+        } else {
+            $scope.members[index] = member;
+        }
+    });
+
     $scope.initialization = function() {
         if(organization.data.Code === 1000) {
             $scope.organization = organization.data.Organization;
