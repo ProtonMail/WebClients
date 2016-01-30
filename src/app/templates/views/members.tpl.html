@@ -87,7 +87,7 @@
 		                    </td>
 		                    <td class="storage">{{ member.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ member.MaxSpace | humanSize }} {{ 'USED' | translate }} <a href="#" ng-click="manageStorage(member)" class="fa fa-edit pm_button link"></a></td>
 		                    <td class="addresses">
-                                <div ng-repeat="address in member.Addresses | orderBy: 'Send'">
+                                <div ng-repeat="address in member.Addresses | orderBy: 'Send'" ng-hide="address.Status === 0">
                                     {{ address.Email }} <small ng-show="address.Send === 1"><strong>(DEFAULT)</strong></small>
                                     <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip="{{ 'UNLINK_ADDRESS' | translate }}"><i class="fa fa-chain-broken pm_button link"></i></a>
                                 </div>

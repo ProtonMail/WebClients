@@ -5,11 +5,13 @@ angular.module("proton.controllers.Settings")
     $scope,
     $translate,
     confirmModal,
+    Address,
     Member,
     members,
     organization,
     Organization,
     storageModal,
+    domains,
     userModal,
     notify
 ) {
@@ -27,6 +29,34 @@ angular.module("proton.controllers.Settings")
         $scope.organization = organization;
     });
 
+    $scope.$on('deleteDomain', function(event, domainId) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index !== -1) {
+            $scope.domains.splice(index, 1);
+        }
+    });
+
+    $scope.$on('createDomain', function(event, domainId, domain) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            _.extend($scope.domains[index], domain);
+        }
+    });
+
+    $scope.$on('updateDomain', function(event, domainId, domain) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            _.extend($scope.domains[index], domain);
+        }
+    });
+
     $scope.$on('deleteMember', function(event, memberId) {
         var index = _.findIndex($scope.members, {ID: memberId});
 
@@ -41,7 +71,7 @@ angular.module("proton.controllers.Settings")
         if (index === -1) {
             $scope.members.push(member);
         } else {
-            $scope.members[index] = member;
+            _.extend($scope.members[index], member);
         }
     });
 
@@ -51,32 +81,22 @@ angular.module("proton.controllers.Settings")
         if (index === -1) {
             $scope.members.push(member);
         } else {
-            $scope.members[index] = member;
+            _.extend($scope.members[index], member);
         }
     });
 
     $scope.initialization = function() {
-        if(organization.data.Code === 1000) {
+        if (organization.data && organization.data.Code === 1000) {
             $scope.organization = organization.data.Organization;
         }
 
-        if(members.data.Code === 1000) {
+        if (members.data && members.data.Code === 1000) {
             $scope.members = members.data.Members;
         }
-    };
 
-    $scope.addressesOf = function(member) {
-        var addresses = [];
-
-        _.each(member.AddressIDs, function(addressID) {
-            var address = _.findWhere($scope.addresses, {AddressID: addressID});
-
-            if(angular.isDefined(address)) {
-                addresses.push(address);
-            }
-        });
-
-        return addresses;
+        if (domains.data && domains.data.Code === 1000) {
+            $scope.domains = domains.data.Domains;
+        }
     };
 
     /**
@@ -143,8 +163,13 @@ angular.module("proton.controllers.Settings")
                 title: title,
                 message: message,
                 confirm: function() {
-                    // TODO
-                    confirmModal.deactivate();
+                    Address.disable(address.ID).then(function(result) {
+                        if (result.data && result.data) {
+                            address.Status = 0;
+                            confirmModal.deactivate();
+                            notify({message: $translate.instant('ADDRESS_DISABLED'), classes: 'notification-success'});
+                        }
+                    });
                 },
                 cancel: function() {
                     confirmModal.deactivate();
@@ -241,6 +266,7 @@ angular.module("proton.controllers.Settings")
     $scope.openUserModal = function() {
         userModal.activate({
             params: {
+                organization: $scope.organization,
                 submit: function(datas) {
                     // TODO
                     userModal.deactivate();
