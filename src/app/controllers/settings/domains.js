@@ -14,6 +14,7 @@ angular.module("proton.controllers.Settings")
     Domain,
     domainModal,
     domains,
+    eventManager,
     Member,
     members,
     mxModal,
@@ -193,6 +194,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_DELETED'), classes: 'notification-success'});
                             $scope.domains.splice(index, 1); // Remove domain in interface
+                            eventManager.call();
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
@@ -227,6 +229,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('ADDRESS_DELETED'), classes: 'notification-success'});
                             domain.Addresses.splice(index, 1); // Remove address in interface
+                            eventManager.call();
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
@@ -256,6 +259,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_CREATED'), classes: 'notification-success'});
                             $scope.domains.push(result.data.Domain);
+                            eventManager.call();
                             domainModal.deactivate();
                             // open the next step
                             $scope.verification(result.data.Domain);
@@ -280,13 +284,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.refreshStatus = function(domains) {
-        networkActivityTracker.track(Domain.query().then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                $scope.domains = result.data.Domains;
-            } else {
-                notify({message: $translate.instant('ERROR_WITH_DOMAIN'), classes: 'notification-danger'});
-            }
-        }));
+        networkActivityTracker.track(eventManager.call());
     };
 
     /**
@@ -396,8 +394,6 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.mx = function(domain) {
-        var index = $scope.domains.indexOf(domain);
-
         mxModal.activate({
             params: {
                 domain: domain,
@@ -416,6 +412,8 @@ angular.module("proton.controllers.Settings")
                                     notify({message: $translate.instant('PRIORITY_IS_WRONG'), classes: 'notification-danger'});
                                     break;
                                 case 3:
+                                    var index = $scope.domains.indexOf(domain);
+
                                     notify({message: $translate.instant('MX_VERIFIED'), classes: 'notification-success'});
                                     $scope.domains[index] = result.data.Domain;
                                     // open the next step
@@ -448,8 +446,6 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.spf = function(domain) {
-        var index = $scope.domains.indexOf(domain);
-
         spfModal.activate({
             params: {
                 domain: domain,
@@ -468,6 +464,8 @@ angular.module("proton.controllers.Settings")
                                     notify({message: $translate.instant('DETECTED_RECORD_BUT_WRONG'), classes: 'notification-danger'});
                                     break;
                                 case 3:
+                                    var index = $scope.domains.indexOf(domain);
+
                                     notify({message: $translate.instant('SPF_VERIFIED'), classes: 'notification-success'});
                                     $scope.domains[index] = result.data.Domain;
                                     // open the next step
