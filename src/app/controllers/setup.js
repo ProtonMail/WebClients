@@ -282,8 +282,32 @@ angular.module("proton.controllers.Setup", [
             else {
                 if (response.data.Token) {
                     $scope.resetMailboxToken = response.data.Token;
-                    $scope.showForm = true;
-                    deferred.resolve(200);
+                    Reset.validateResetToken({
+                        username: $rootScope.tempUser.username,
+                        token: response.data.Token // $scope.account.resetMbCode
+                    })
+                    .then(
+                        function(response) {
+                            if (response.data.Code !== 1000) {
+                                notify({
+                                    classes: 'notification-danger',
+                                    message: 'Invalid Verification Code.'
+                                });
+                            } else {
+                                $scope.addresses = response.data.Addresses;
+                                $scope.showForm = true;
+                                $scope.showEmailMessage = false;
+                                deferred.resolve(200);
+                            }
+                        },
+                        function(err) {
+                            $log.error(err);
+                            notify({
+                                classes: 'notification-danger',
+                                message: 'Unable to verify Reset Token.'
+                            });
+                        }
+                    );
                 }
                 else {
                     $scope.showEmailMessage = true;
