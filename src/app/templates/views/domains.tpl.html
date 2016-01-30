@@ -140,7 +140,7 @@
                                         <button type="button" class="pm_button round" ng-show="address.Status === 1" ng-click="disableAddress(address)" pt-tooltip="{{ 'DISABLE_ADDRESS' | translate }}">
                                             <i class="fa fa-chain-broken"></i>
                                         </button>
-                                        <button type="button" class="pm_button round" ng-click="deleteAddress(address, domain)" pt-tooltip="{{ 'DELETE' | translate }}">
+                                        <button type="button" class="pm_button round" ng-disabled="address.Status === 1" ng-click="deleteAddress(address, domain)" pt-tooltip="{{ 'DELETE' | translate }}">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

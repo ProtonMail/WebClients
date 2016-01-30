@@ -307,7 +307,6 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_CREATED'), classes: 'notification-success'});
                             $scope.domains.push(result.data.Domain);
-                            $scope.initSelects();
                             eventManager.call(); // Call event log manager
                             domainModal.deactivate();
                             // open the next step
