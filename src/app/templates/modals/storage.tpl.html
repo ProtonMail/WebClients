@@ -10,16 +10,14 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla egestas suscipit.</p>
                 <div class="pm_form">
                     <label>
-                        Storage: 
-                        <input type="text" class="inline" ng-model="ctrl.member.UsedSpaceNum" /> 
+                        Storage:
+                        <input type="text" class="inline" ng-model="ctrl.member.UsedSpace" />
                         <span class="pm_select inline mini">
-                            <select 
-                            ng-model="ctrl.unit" 
-                            ng-options="unit.label for unit in ctrl.units"></select>
+                            <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>
                     </label>
-                    <div><strong>User will have {{ ctrl.member.UsedSpaceNum | humanSize }} out of {{ ctrl.member.MaxSpace | humanSize }}.</strong></div>
+                    <div><strong>User will have {{ ctrl.member.UsedSpace * ctrl.unit.value | humanSize }} out of {{ ctrl.member.MaxSpace | humanSize }}.</strong></div>
                 </div>
             </div>
         </div>

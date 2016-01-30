@@ -1,19 +1,13 @@
 <div id="pm_settings">
-
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-
     <div class="settings" pt-height>
-
         <div class="row">
-
             <section class="setting pm_form full">
-
                 <form method="post">
                     <legend>{{ 'AUTHENTICATION_LOGS' | translate }}</legend>
-
                         <div class="pull-right" id="logActions" ng-hide="doLogging == 0">
                             <a class="pm_button pull-left" ng-click="clearLogs()">
-                                <i class="fa fa-times"></i> <strong>{{ 'CLEAR_LOGS' | translate }}</strong>
+                                <i class="fa fa-trash-o"></i> <strong>{{ 'WIPE' | translate }}</strong>
                             </a>
                             <a class="pm_button pull-left" ng-click="downloadLogs()">
                                 <i class="fa fa-download"></i> <strong>{{ 'DOWNLOAD_LOGS' | translate }}</strong>
@@ -22,11 +16,9 @@
                                 <paginator page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs" />
                             </span>
                         </div>
-
                         <a class="pm_button pull-left" id="logRefresh" ng-class="{ 'disabled': doLogging == 0 }" ng-click="initLogs()">
                             <i class="fa fa-rotate-right"></i>
                         </a>
-
                         <div class="pm_buttons pull-left">
                             <a ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">
                                 <strong>{{ disabledText }}</strong>
@@ -38,11 +30,8 @@
                                 <strong>{{ 'ADVANCED_LOGGING' | translate }}</strong>
                             </a>
                         </div>
-
                         <div id="logArea" ng-show="doLogging != 0" class="clear">
-
                             <p class="alert alert-info" ng-show="logs.length<1">No logs yet.</p>
-
                             <table class="pm_table" id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
                                 <thead>
                                     <tr>
@@ -58,9 +47,7 @@
                                             <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i> {{ 'LOGIN_SUCCESS' | translate }}</span>
                                             <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i> {{ 'LOG_OUT' | translate }}</span>
                                         </td>
-                                        <td>
-                                            {{ log.Time * 1000 | date : 'medium' }}
-                                        </td>
+                                        <td>{{ log.Time * 1000 | date : 'medium' }}</td>
                                         <td ng-show="doLogging == 2" class="text-right">
                                             <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>
                                             <kbd ng-show="log.IP===''">--</kbd>
@@ -68,12 +55,8 @@
                                     </tr>
                                 </tbody>
                             </table>
-
                         </div>
                 </form>
-
             </section>
-
     </div><!--/.settings-->
-
 </div><!--/#pm_settings-->

@@ -713,22 +713,6 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
-
-            this.next = function() {
-                if (this.step && this.step === 'address') {
-                    // do validation
-
-                    // next step
-                    this.step = 'password';
-                }
-                else if (this.step && this.step === 'password') {
-                    // do validation
-
-                    // next step
-                    this.step = 'thanks';
-
-                }
-            };
         }
     });
 })
@@ -870,16 +854,16 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/storage.tpl.html',
         controller: function(params) {
+            // Variables
             this.member = params.member;
-            this.member.UsedSpaceNum = $filter('humanSize')(params.member.UsedSpace, true);
             this.units = [
                 {
-                    'label': 'MB',
-                    'value': CONSTANTS.BASE_SIZE
+                    label: 'MB',
+                    value: CONSTANTS.BASE_SIZE
                 },
                 {
-                    'label': 'GB',
-                    'value': (CONSTANTS.BASE_SIZE)*(CONSTANTS.BASE_SIZE)
+                    label: 'GB',
+                    value: CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE
                 }
             ];
             this.unit = this.units[0];
