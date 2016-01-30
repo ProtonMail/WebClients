@@ -695,6 +695,11 @@ angular.module("proton.modals", [])
             // Variables
             this.step = 'member';
             this.organization = params.organization;
+            this.nickname = '';
+            this.loginPassword = '';
+            this.confirmPassword = '';
+            this.quota = 0;
+            this.private = true;
 
             // Functions
             this.submit = function() {
