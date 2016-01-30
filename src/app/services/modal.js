@@ -849,21 +849,24 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('storageModal', function(pmModal, CONSTANTS, $filter) {
+.factory('storageModal', function(pmModal, CONSTANTS) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/storage.tpl.html',
         controller: function(params) {
             // Variables
+            var base = CONSTANTS.BASE_SIZE;
+
             this.member = params.member;
+            this.value = params.member.UsedSpace / base / base;
             this.units = [
                 {
                     label: 'MB',
-                    value: CONSTANTS.BASE_SIZE
+                    value: base * base
                 },
                 {
                     label: 'GB',
-                    value: CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE
+                    value: base * base * base
                 }
             ];
             this.unit = this.units[0];

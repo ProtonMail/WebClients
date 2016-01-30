@@ -11,13 +11,13 @@
                 <div class="pm_form">
                     <label>
                         Storage:
-                        <input type="text" class="inline" ng-model="ctrl.member.UsedSpace" />
+                        <input type="text" class="inline" ng-model="ctrl.value" required />
                         <span class="pm_select inline mini">
                             <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>
                     </label>
-                    <div><strong>User will have {{ ctrl.member.UsedSpace * ctrl.unit.value | humanSize }} out of {{ ctrl.member.MaxSpace | humanSize }}.</strong></div>
+                    <div><strong>User will have {{ ctrl.value * ctrl.unit.value | humanSize }} out of {{ ctrl.member.MaxSpace | humanSize }}.</strong></div>
                 </div>
             </div>
         </div>
