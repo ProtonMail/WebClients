@@ -868,7 +868,7 @@ angular.module("proton.modals", [])
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit();
+                    params.submit(this.member);
                 }
             };
 

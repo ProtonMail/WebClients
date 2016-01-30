@@ -17,6 +17,7 @@ angular.module('proton.autocomplete', [])
             var DOWN_KEY = 40;
             var ESC_KEY = 27;
             var SPACE_KEY = 32;
+            var timeoutBlur;
 
             // Variables
             scope.params = {
@@ -133,6 +134,12 @@ angular.module('proton.autocomplete', [])
                 }
             };
 
+            scope.onBlur = function() {
+                timeoutBlur = $timeout(function() {
+                    scope.onSubmit();
+                }, 200);
+            };
+
             scope.onRemove = function(index) {
                 scope.emails.splice(index, 1);
                 scope.params.newValue = '';
@@ -142,6 +149,8 @@ angular.module('proton.autocomplete', [])
 
             scope.onAddEmail = function(email) {
                 var index = scope.emails.indexOf(email);
+
+                $timeout.cancel(timeoutBlur);
 
                 if(index === -1) {
                     scope.emails.push(email);
