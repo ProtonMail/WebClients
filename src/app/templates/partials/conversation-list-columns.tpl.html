@@ -12,7 +12,10 @@
             type="checkbox" 
             ng-model="conversation.Selected" 
             ng-click="$event.stopPropagation();select($event, conversation)" />
-            <a href="#" ng-click="conversation.Selected = !conversation.Selected;select($event, conversation);" class="fa" ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a>
+            <a 
+            ng-click="conversation.Selected = !conversation.Selected;select($event, conversation);" 
+            class="fa" 
+            ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a>
         </div>
         <div class="row top">
             <h4 
@@ -20,7 +23,10 @@
             ng-click="click(conversation)">{{ conversation.Subject }}</h4>
             <span class="meta">
                 <i class="fa fa-paperclip"></i>
-                <a class="fa fa-star-o" href="#"></a>
+                <a 
+                class="fa" 
+                ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}" 
+                ng-click="$event.stopPropagation();toggleStar(conversation)"></a>
                 <em class="time">{{ time(conversation) | readableTime }}</em>
             </span>
         </div>

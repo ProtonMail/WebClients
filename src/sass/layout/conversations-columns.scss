@@ -59,9 +59,11 @@
             }
             .fa-star-o {
                 color: $gray-light;
+                cursor: pointer;
             }
             .fa-star {
                 color: $yellow;
+                cursor: pointer;
             }
             em.time {
                 float: right;
@@ -84,7 +86,7 @@
             float: right;
             overflow: hidden;
             white-space: nowrap;
-            height: 16px;
+            height: 18px;
             text-align: right;
             label {
                 margin-left: .25rem;

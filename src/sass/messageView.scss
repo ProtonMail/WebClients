@@ -36,7 +36,7 @@
     .message {
         border: 1px solid $border;
         border-radius: 2px;
-        margin: 0 10px 5px;
+        margin: 0 10px 10px;
         box-sizing: border-box;
         clear: both;
         & > div.summary,
@@ -217,12 +217,20 @@
             clear: both;
             text-align: center;
             font-size: .9em;
-            border-bottom: 1px solid $border;
             border-top: 1px solid $border;
             cursor: pointer;
         }
         .frame {
-            padding: 10px;
+            padding: 1rem 10px;
+            border-top: 1px solid $border;
+            .email {
+                .pm_button.more {
+                    line-height: 1rem;
+                    height: 1rem;
+                    background: $read;
+                    margin-bottom: 1rem;
+                }
+            }
         }
     }
 }

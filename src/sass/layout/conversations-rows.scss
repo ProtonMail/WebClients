@@ -61,6 +61,8 @@ body {
                 }
                 .pm_labels {
                     float: right;
+                    position: relative;
+                    top: 4px;
                     label {
                         margin-left: 2px;
                     }

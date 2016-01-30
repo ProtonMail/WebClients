@@ -2,7 +2,7 @@
 // #conversation-list-rows,
 // #pm_sidebar .sidebar {
 //     height: calc(100% - 55px); 
-//     overflow-y: auto;
+//     overflow-y: scroll;
 //     overflow-x: hidden; 
 // }
 
@@ -17,7 +17,7 @@ body {
         width: 40%;
         float: left;
         height: 100%;
-        overflow-y: auto;
+        overflow-y: scroll;
         overflow-x: hidden;
     }
     #conversation-view,
@@ -76,7 +76,7 @@ body.mobileMode {
         width: 60%;
         float: left;
         height: 100%;
-        overflow-y: auto;
+        overflow-y: scroll;
         overflow-x: hidden;
     }
     #conversation-list-columns,
