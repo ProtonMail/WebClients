@@ -66,6 +66,66 @@ angular.module("proton.controllers.Settings")
         $scope.dmarc(domain);
     });
 
+    $scope.$on('organizationChange', function(event, organization) {
+        $scope.organization = organization;
+    });
+
+    $scope.$on('deleteDomain', function(event, domainId) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index !== -1) {
+            $scope.domains.splice(index, 1);
+        }
+    });
+
+    $scope.$on('createDomain', function(event, domainId, domain) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            $scope.domains[index] = domain;
+        }
+    });
+
+    $scope.$on('updateDomain', function(event, domainId, domain) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            $scope.domains[index] = domain;
+        }
+    });
+
+    $scope.$on('deleteMember', function(event, memberId) {
+        var index = _.findIndex($scope.members, {ID: memberId});
+
+        if (index !== -1) {
+            $scope.members.splice(index, 1);
+        }
+    });
+
+    $scope.$on('createMember', function(event, memberId, member) {
+        var index = _.findIndex($scope.members, {ID: memberId});
+
+        if (index === -1) {
+            $scope.members.push(member);
+        } else {
+            $scope.members[index] = member;
+        }
+    });
+
+    $scope.$on('updateMember', function(event, memberId, member) {
+        var index = _.findIndex($scope.members, {ID: memberId});
+
+        if (index === -1) {
+            $scope.members.push(member);
+        } else {
+            $scope.members[index] = member;
+        }
+    });
+
     /**
      * Open modal process to add a custom domain.
      * @param {Object} domain
