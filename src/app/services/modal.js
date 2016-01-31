@@ -695,6 +695,11 @@ angular.module("proton.modals", [])
             // Variables
             this.step = 'member';
             this.organization = params.organization;
+            this.nickname = '';
+            this.loginPassword = '';
+            this.confirmPassword = '';
+            this.quota = 0;
+            this.private = true;
 
             // Functions
             this.submit = function() {
@@ -706,22 +711,6 @@ angular.module("proton.modals", [])
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
-                }
-            };
-
-            this.next = function() {
-                if (this.step && this.step === 'address') {
-                    // do validation
-
-                    // next step
-                    this.step = 'password';
-                }
-                else if (this.step && this.step === 'password') {
-                    // do validation
-
-                    // next step
-                    this.step = 'thanks';
-
                 }
             };
         }
@@ -860,21 +849,25 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('storageModal', function(pmModal, CONSTANTS, $filter) {
+.factory('storageModal', function(pmModal, CONSTANTS) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/storage.tpl.html',
         controller: function(params) {
+            // Variables
+            var base = CONSTANTS.BASE_SIZE;
+
+            this.organization = params.organization;
             this.member = params.member;
-            this.member.UsedSpaceNum = $filter('humanSize')(params.member.UsedSpace, true);
+            this.value = params.member.MaxSpace / base / base;
             this.units = [
                 {
-                    'label': 'MB',
-                    'value': CONSTANTS.BASE_SIZE
+                    label: 'MB',
+                    value: base * base
                 },
                 {
-                    'label': 'GB',
-                    'value': (CONSTANTS.BASE_SIZE)*(CONSTANTS.BASE_SIZE)
+                    label: 'GB',
+                    value: base * base * base
                 }
             ];
             this.unit = this.units[0];

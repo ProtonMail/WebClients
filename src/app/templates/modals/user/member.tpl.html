@@ -3,7 +3,7 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <form method="post" class="modal-content" ng-submit="submit()">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'ADD_A_NEW_USER' | translate }}</h4>
+                <h4 class="modal-title">{{ 'ADD_USER' | translate }}</h4>
             </div>
             <div class="modal-body">
                 <div class="pm_form">
@@ -12,7 +12,7 @@
                             <label>{{ 'NICKNAME' | translate }}</label>
                         </div>
                         <div class="col-1-2">
-                            <input autofocus type="text" class="margin" placeholder="Choose a Login password">
+                            <input autofocus type="text" ng-model="ctrl.nickname" class="margin" placeholder="Choose a Nickname">
                         </div>
                     </div>
                 </div>
@@ -22,8 +22,8 @@
                             <label>{{ 'LOGIN_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col-1-2">
-                            <input type="text" class="margin" placeholder="Choose a Login password">
-                            <input type="text" class="margin" placeholder="Confirm a Login password">
+                            <input type="text" ng-model="ctrl.loginPassword" class="margin" placeholder="Choose a Login password">
+                            <input type="text" ng-model="ctrl.confirmPassword" class="margin" placeholder="Confirm a Login password">
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                             <label>{{ 'USER_STORAGE' | translate }}</label>
                         </div>
                         <div class="col-1-2">
-                            <input type="text" class="margin" placeholder="Storage as MB (Mega Byte)">
+                            <input type="text" ng-model="ctrl.quota" class="margin" placeholder="Storage as MB (Mega Byte)">
                             <p class="alert alert-info">
                                 Your Organization has <strong>{{ (ctrl.organization.MaxSpace - ctrl.organization.UsedSpace) | humanSize }} left</strong>.
                             </p>
@@ -46,17 +46,18 @@
                             <label>{{ 'PRIVATE_USER' | translate }}</label>
                         </div>
                         <div class="col-1-2">
-                            <input type="checkbox" /> Consider this user as private
-                            <p class="alert alert-info">A user private can manage keys.</p>
+                            <label>
+                                <input type="checkbox" ng-model="ctrl.private" /> {{ 'CREATE_PRIVATE_USER' | translate }}
+                            </label>
+                            <p class="alert alert-info">Organization administrators cannot access the messages of private users.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
-        <div class="modal-footer text-right">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary" ng-click="ctrl.next()">{{ 'SUBMIT' | translate }}</button>
-        </div>
+            <div class="modal-footer text-right">
+                <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+                <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+            </div>
         </form>
     </div>
 </div>
