@@ -32,6 +32,7 @@ body {
     #conversation-list-rows {
         overflow-y: hidden;
         overflow-x: hidden;
+        height: 100%;
     }
     #pm_main {
         height: calc(100% - 60px);
