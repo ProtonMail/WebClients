@@ -780,12 +780,16 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/domain.tpl.html',
         controller: function(params) {
-            this.name =  (params.domain && params.domain.DomainName) ? params.domain.DomainName : '';
+            // Variables
             this.step = params.step;
+            this.domain = params.domain;
+            this.name = '';
+
+            // Functions
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            // Functions
+
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
                     params.submit(this.name);

@@ -298,10 +298,11 @@ angular.module("proton.controllers.Settings")
     /**
      * Open modal process to add a custom domain
      */
-    $scope.addDomain = function() {
+    $scope.addDomain = function(domain) {
         domainModal.activate({
             params: {
                 step: 1,
+                domain: domain,
                 submit: function(name) {
                     networkActivityTracker.track(Domain.create({Name: name}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {

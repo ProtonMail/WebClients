@@ -8,7 +8,8 @@
             </div>
             <div class="modal-body pm_form">
                 <p>Add a domain that you own to your ProtonMail account.</p>
-                <input type="text" autofocus ng-model="ctrl.name" placeholder="{{ 'DOMAIN_NAME' | translate }}" />
+                <input ng-hide="ctrl.domain" type="text" autofocus ng-model="ctrl.name" placeholder="{{ 'DOMAIN_NAME' | translate }}" />
+                <textarea rows="1" ng-show="ctrl.domain" readonly ng-bind="::ctrl.domain.DomainName"></textarea>
             </div>
         </div>
         <div class="modal-footer text-right">
