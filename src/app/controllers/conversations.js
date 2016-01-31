@@ -663,6 +663,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 console.log('$rootScope.layoutMode: set rows');
                 $rootScope.layoutMode = 'rows';
             }
+            $scope.mobileResponsive();
         };
 
         var error = function(error) {
@@ -679,7 +680,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }).$promise.then(
                 function(response) {
                     if(response.Code === 1000) {
-                        notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
+                        notify({
+                            message: $translate.instant('LAYOUT_SAVED'), 
+                            classes: 'notification-success'
+                        });
+                        $scope.mobileResponsive();
                     } else if (response.Error) {
                         error(response.Error);
                     } else {
