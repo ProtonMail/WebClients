@@ -62,25 +62,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $timeout( $scope.mobileResponsive, 600);
     };
 
-    // MODE CHANGE / NEW / PANDA
-    $scope.changeMode = function(mode) {
-        $rootScope.mobileMode = false;
-
-        switch(mode) {
-            case 'desktop':
-                $rootScope.desktopMode = true;
-                break;
-            case 'tablet':
-                $rootScope.mobileMode = true;
-                break;
-            case 'mobile':
-                $rootScope.mobileMode = true;
-                break;
-            default:
-            return;
-        }
-
-        console.log($rootScope.desktopMode, $rootScope.mobileMode, $rootScope.mobileMode);
+    $scope.changeMode = function() {
+        $rootScope.mobileMode = !$rootScope.mobileMode;
     };
 
     $scope.watchElements = function() {

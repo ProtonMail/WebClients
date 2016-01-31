@@ -193,48 +193,26 @@
 
     <div class="pull-right">
 
-        <span class="pm_buttons">
+        <span class="pm_buttons layout">
             <a 
-            ng-class="{ 'active': !mobileMode }" 
-            ng-click="changeMode('desktop')" 
+            ng-click="changeMode()" 
             href="#" 
-            ng-disabled="mobileMode === false"
-            class="fa fa-desktop"></a>
-            <a 
-            ng-class="{ 'active': mobileMode }" 
-            ng-click="changeMode('mobile')" 
-            href="#" 
-            ng-disabled="mobileMode === true"
-            class="fa fa-mobile divider"></a>
+            class="fa">
+                <i class="fa" ng-class="{ 'fa-desktop': mobileMode }"></i>
+                <i class="fa" ng-class="{ 'fa-mobile': !mobileMode }"></i>
+            </a>
         </span>
 
         <span 
         class="pm_buttons layout">
             <a 
             href="#" 
-            pt-tooltip="{{ 'COLUMN_MODE' | translate }}" 
-            ng-click="toggleLayout()"
-            ng-disabled="layoutMode === 'columns'"
-            ng-class="{ 'active': layoutMode === 'columns' }">
-                <i class="fa fa-columns"></i>
-            </a>
-            <a 
-            href="#" 
-            pt-tooltip="{{ 'ROW_MODE' | translate }}" 
-            ng-click="toggleLayout()"
-            class="divider"
-            ng-disabled="layoutMode === 'rows'"
-            ng-class="{ 'active': layoutMode === 'rows' }">
-                <i class="fa fa-columns fa-rotate-270"></i>
-            </a>
-            <span 
-            id="layoutTip" 
-            ng-show="showTip"> 
+            pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}" 
+            ng-click="toggleLayout()">
                 <i 
-                class="fa fa fa-bullseye animated pulse" 
-                pt-tooltip="Click to change layout" 
-                ng-show="showTip"></i>
-            </span>
+                class="fa fa-columns" 
+                ng-class="{ 'fa-rotate-270': layoutMode === 'columns' }"></i>
+            </a>
         </span>
 
         <paginator 

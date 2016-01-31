@@ -14,10 +14,13 @@
                 class="fa fa-mobile divider"></a>
             </span>
             <span class="pm_buttons layout">
-                <a href="#" pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}" ng-click="toggleLayout()"><i class="fa fa-columns" ng-class="{ 'fa-rotate-270': layoutMode === 'columns' }"></i></a>
-                <span id="layoutTip" ng-show="showTip"> 
-                    <i class="fa fa fa-bullseye animated pulse" pt-tooltip="Click to change layout" ng-show="showTip"></i>
-                </span>
+                <a 
+                ng-click="changeMode()" 
+                href="#" 
+                class="fa">
+                    <i class="fa" ng-class="{ 'fa-desktop': mobileMode }"></i>
+                    <i class="fa" ng-class="{ 'fa-mobile': !mobileMode }"></i>
+                </a>
             </span>
             <paginator ng-hide="idDefined() && layoutMode === 'rows'" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.ELEMENTS_PER_PAGE" change="selectPage" />
             <span class="pm_buttons" ng-show="idDefined() && layoutMode === 'rows'">
