@@ -428,7 +428,7 @@ angular.module("proton.controllers.Settings")
                 },
                 next: function() {
                     addressModal.deactivate();
-                    $scope.dmarc(domain);
+                    $scope.mx(domain);
                 },
                 cancel: function() {
                     addressModal.deactivate();
