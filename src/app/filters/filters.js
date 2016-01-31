@@ -141,6 +141,18 @@ angular.module("proton.filters",[])
     };
 })
 
+.filter('messageTime', function() {
+    return function(time) {
+        var m = moment.unix(time);
+
+        if (m.isSame(moment(), 'day')) {
+            return m.format('h:mm a') + ' (' + m.fromNow() + ')';
+        } else {
+            return m.format('D/MM/YYYY h:mm a') + ' (' + m.fromNow() + ')';
+        } 
+    };
+})
+
 .filter('readableTime', function() {
     return function(time) {
         var m = moment.unix(time);
