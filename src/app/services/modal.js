@@ -857,8 +857,9 @@ angular.module("proton.modals", [])
             // Variables
             var base = CONSTANTS.BASE_SIZE;
 
+            this.organization = params.organization;
             this.member = params.member;
-            this.value = params.member.UsedSpace / base / base;
+            this.value = params.member.MaxSpace / base / base;
             this.units = [
                 {
                     label: 'MB',
