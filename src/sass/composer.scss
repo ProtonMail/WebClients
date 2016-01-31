@@ -233,7 +233,7 @@
 			box-sizing: border-box;
 			margin: 0;
 			section {
-				height: initial !important;
+				height: calc(100% - 130px) !important;
 			    overflow: initial !important;
 			}
 			header, footer {
@@ -244,6 +244,9 @@
 			}
 			.meta .row select {
 				width: 100%;
+			}
+			.composeEditor {
+				height: 100%;
 			}
 		}
 		.options {
