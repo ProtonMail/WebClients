@@ -1,4 +1,7 @@
 <div id="conversation-list-rows">
+
+    <ng-include src="'templates/partials/no-results.tpl.html'"></ng-include>
+    
     <div
     ng-repeat="conversation in conversations track by conversation.ID"
     class="conversation"
