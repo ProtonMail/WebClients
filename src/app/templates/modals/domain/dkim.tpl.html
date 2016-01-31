@@ -7,7 +7,7 @@
                 <h4 class="modal-title">5. DKIM</h4>
             </div>
             <div class="modal-body pm_form">
-                <p>To avoid emails from your domain going into Spam, we recommend adding a DKIM record. Please add the following <kbd>TXT</kbd> record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/messages-in-spam">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>To avoid emails from your domain going into Spam, we recommend adding a DKIM record. Please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/messages-in-spam">{{ 'LEARN_MORE' | translate }}</a></p>
                 <textarea readonly>{{ ctrl.domain.DkimPublicKey}}</textarea>
                 <div ng-hide="ctrl.domain.DkimState === 0 || ctrl.domain.DkimState === 4 || ctrl.domain.DkimState === 5">
                     <p>The current DKIM record for {{ ctrl.domain.domain }} is:</p>
