@@ -37,6 +37,12 @@ angular.module("proton.filters",[])
     };
 })
 
+.filter('enabled', function() {
+    return function(addresses) {
+        return _.where(addresses, {Status: 1});
+    };
+})
+
 .filter('reverse', function() {
     return function(value) {
         if(angular.isArray(value)) {
