@@ -201,23 +201,6 @@ angular.module("proton.filters",[])
 
 // unused
 .filter('purify', function($sce) {
-    // var dirty = $sce.trustAsHtml(value);
-    // var config = {
-    //     ALLOWED_TAGS: ['a', 'img', 'p', 'div', 'table', 'tr', 'td', 'tbody', 'thead'],
-    //     ALLOWED_ATTR: ['style', 'href'],
-    //     // KEEP_CONTENT: false, // remove content from non-white-listed nodes too
-    //     // RETURN_DOM: false // return a document object instead of a string
-    // };
-    // return function(value) {
-    //     return dirty;
-    //     // return DOMPurify.sanitize(dirty);
-    // };
-    // var c = {
-    //     ALLOWED_TAGS: ['b', 'q'],
-    //     ALLOWED_ATTR: ['style']
-    // };
-    // getTrustedHtml
-    // trustAsHtml
     return function(value) {
         return $sce.trustAsHtml(value);
     };
