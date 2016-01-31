@@ -695,6 +695,11 @@ angular.module("proton.modals", [])
             // Variables
             this.step = 'member';
             this.organization = params.organization;
+            this.nickname = '';
+            this.loginPassword = '';
+            this.confirmPassword = '';
+            this.quota = 0;
+            this.private = true;
 
             // Functions
             this.submit = function() {
@@ -706,22 +711,6 @@ angular.module("proton.modals", [])
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
-                }
-            };
-
-            this.next = function() {
-                if (this.step && this.step === 'address') {
-                    // do validation
-
-                    // next step
-                    this.step = 'password';
-                }
-                else if (this.step && this.step === 'password') {
-                    // do validation
-
-                    // next step
-                    this.step = 'thanks';
-
                 }
             };
         }
@@ -860,12 +849,28 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('storageModal', function(pmModal) {
+.factory('storageModal', function(pmModal, CONSTANTS) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/storage.tpl.html',
         controller: function(params) {
+            // Variables
+            var base = CONSTANTS.BASE_SIZE;
+
+            this.organization = params.organization;
             this.member = params.member;
+            this.value = params.member.MaxSpace / base / base;
+            this.units = [
+                {
+                    label: 'MB',
+                    value: base * base
+                },
+                {
+                    label: 'GB',
+                    value: base * base * base
+                }
+            ];
+            this.unit = this.units[0];
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {

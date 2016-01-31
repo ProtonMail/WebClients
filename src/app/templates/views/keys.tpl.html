@@ -9,7 +9,7 @@
         <div ng-repeat="address in addresses | orderBy: 'Send'" class="keyAddresses">
             <header>
                 <span class="pm_badge pull-right success" ng-show="address.Status === 1"><i class="fa fa-check"></i> Enabled</span>
-                <span class="pm_badge pull-right error" ng-hide="address.Status === 1" pt-tooltip="{{ 'THIS_ADDRESS_IS_DISABLED' | translate }}">Disabled</span>
+                <span class="pm_badge pull-right error" ng-hide="address.Status === 1">Disabled</span>
                 <h4>{{ address.Email }}</h4>
                 <p ng-hide="isNonPrivate === true">
                     <button class="pm_button" ng-click="generate(address)" ng-disabled="address.Keys > 10">

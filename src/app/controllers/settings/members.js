@@ -245,6 +245,7 @@ angular.module("proton.controllers.Settings")
         storageModal.activate({
             params: {
                 member: member,
+                organization: $scope.organization,
                 submit: function(member) {
                     networkActivityTracker.track(Member.quota(member.ID, member.UsedSpace).then(function(result) {
                         if (result.data && result.data.Code === 1000) {

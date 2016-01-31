@@ -7,14 +7,22 @@
             </div>
             <div class="modal-body">
                 <strong>{{ 'SET_USER_STORAGE' | translate }}</strong>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla egestas suscipit. Etiam dignissim lectus nisl, luctus malesuada nulla ullamcorper id. Suspendisse tellus leo, dictum at consectetur eget, efficitur eu erat.</p>
-                <div>
-                    <input type="number" ng-model="ctrl.member.UsedSpace" /> {{ ctrl.member.MaxSpace }}
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla egestas suscipit.</p>
+                <div class="pm_form">
+                    <label>
+                        Storage:
+                        <input type="text" class="inline" ng-model="ctrl.value" required />
+                        <span class="pm_select inline mini">
+                            <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </label>
+                    <div><strong>User will have {{ ctrl.value * ctrl.unit.value | humanSize }} out of {{ ctrl.organization.MaxSpace | humanSize }}.</strong></div>
                 </div>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+            <button type="button" class="pm_button pull-left" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
             <button type="submit" class="pm_button primary">{{ 'APPLY' | translate }}</button>
         </div>
     </form>
