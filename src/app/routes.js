@@ -660,13 +660,24 @@ angular.module('proton.routes', [
         views: {
             'main@': {
                 templateUrl: 'templates/views/invoice.print.tpl.html',
-                controller: function($scope, invoice) {
+                controller: function($scope, invoice, $timeout, user, Organization) {
                     $scope.invoice = invoice;
+                    $scope.user = user;
+                    
+                    Organization.get(invoice.OrganizationID).then( 
+                        function(result) {
+                            console.log(result);
+                            if (result.data && result.data.Code===1000) {
+                                $scope.organization = result.data.Organization;
+                                $timeout( function() {
+                                    window.print();
+                                }, 200);
+                            }
+                        },
+                        function(result) {
 
-                    // Print current invoice
-                    $scope.print = function() {
-                        window.print();
-                    };
+                        }
+                    );
                 },
             }
         }
