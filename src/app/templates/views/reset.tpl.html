@@ -6,10 +6,10 @@
         <p class="alert alert-danger">ALL OF YOUR DATA WILL BE LOST FOREVER!</p>
         <p>To continue, type "<kbd>DANGER</kbd>" below:</p>
         <p>
-            <input type="text" class="form-control" ng-model="danger" placeholder="Enter the word 'DANGER' here.">
+            <input type="text" class="form-control" ng-model="process.danger" placeholder="Enter the word 'DANGER' here.">
         </p>
         <a ui-sref="login.unlock" class="pm_button pull-left link">{{ 'CANCEL' | translate }}</a>
-        <button type="submit" ng-class="{ 'disabled': danger!=='DANGER' }" class="pm_button pull-right primary" title="Reset my Mailbox">
+        <button type="submit" ng-class="{ 'disabled': process.danger !== 'DANGER' }" class="pm_button pull-right primary" title="Reset my Mailbox">
             <span ng-if="user.NotificationEmail !== ''">{{ 'RESET' | translate }}</span>
             <span ng-if="user.NotificationEmail === ''">{{ 'RESET_NOW' | translate }}</span>
         </button>

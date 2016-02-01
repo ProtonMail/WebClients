@@ -35,6 +35,7 @@ angular.module("proton.controllers.Setup", [
         $scope.addresses = [];
 
         $scope.process = {};
+        $scope.process.danger = '';
         $scope.process.generatingKeys =     false;
         $scope.process.savingKeys =         false;
         $scope.process.redirecting =        false;
@@ -258,6 +259,11 @@ angular.module("proton.controllers.Setup", [
      * Initialized in the view. Setups stuff. Depends on if user has recovery email set.
      */
     $scope.resetMailboxInit = function() {
+        if ($scope.process.danger !== 'DANGER') {
+            notify({message: 'Invalid value', classes: 'notification-danger'});
+            return false;
+        }
+
         if (angular.isDefined(token) && angular.isDefined(token.data)) {
             $http.defaults.headers.common.Authorization = "Bearer " + token.data.AccessToken;
             $http.defaults.headers.common["x-pm-uid"] = token.data.Uid;
