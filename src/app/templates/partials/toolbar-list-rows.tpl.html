@@ -25,9 +25,13 @@
         <label class="pm_checkbox" ng-if="!idDefined() || layoutMode === 'columns'">
             <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </label>
-        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
+        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }" ng-show="messageButtons === 0">
             <a class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a class="fa fa-eye-slash divider" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+        </span>
+        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }" ng-show="messageButtons === 1">
+            <a class="fa fa-eye-slash" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+            <a class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
         </span>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
             <a pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-click="move('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-trash-o"></a>

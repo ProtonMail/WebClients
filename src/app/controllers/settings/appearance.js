@@ -16,7 +16,8 @@ angular.module("proton.controllers.Settings")
         selectedLanguage: 'English',
         cssTheme: authentication.user.Theme,
         ComposerMode: authentication.user.ComposerMode,
-        ViewLayout: authentication.user.ViewLayout
+        ViewLayout: authentication.user.ViewLayout,
+        MessageButtons: authentication.user.MessageButtons
     };
 
     $scope.enableThemeOnyx = function() {
@@ -145,5 +146,22 @@ angular.module("proton.controllers.Settings")
         //         $log.error(response);
         //     })
         // );
+    };
+
+    $scope.saveButtonsPosition = function(form) {
+        networkActivityTracker.track(
+            Setting.setMessageStyle({ MessageButtons: $scope.appearance.MessageButtons }).$promise.then(function(response) {
+                if (response.Code === 1000) {
+                    authentication.user.MessageButtons = $scope.appearance.MessageButtons;
+                    notify({message: $translate.instant('BUTTONS_POSITION_SAVED'), classes: 'notification-success'});
+                } else if (response.Error) {
+                    notify({message: response.Error, classes: 'notification-danger'});
+                } else {
+                    $log.error(response);
+                }
+            }, function(error) {
+                $log.error(error);
+            })
+        );
     };
 });
