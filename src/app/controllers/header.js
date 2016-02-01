@@ -60,17 +60,6 @@ angular.module("proton.controllers.Header", [])
         });
     }
 
-    /* TEMPORARY */
-    $scope.testToggleLayout = function() {
-        if ($rootScope.layoutMode === 'rows') {
-            $rootScope.layoutMode = 'columns';
-        }
-        else {
-            $rootScope.layoutMode = 'rows';
-        }
-    };
-    /* END TEMPORARY */
-
     /**
      * Call event to open new composer
      */

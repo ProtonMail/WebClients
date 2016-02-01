@@ -62,10 +62,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $timeout( $scope.mobileResponsive, 600);
     };
 
-    $scope.changeMode = function() {
-        $rootScope.mobileMode = !$rootScope.mobileMode;
-    };
-
     $scope.watchElements = function() {
         if(angular.isDefined(unbindWatcherElements)) {
             unbindWatcherElements();
@@ -629,56 +625,58 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $(window).on('resize', $scope.notifyUsersLayoutToggle);
 
     // Let users change the col/row modes.
-    $scope.toggleLayout = function() {
+    $scope.changeLayout = function(mode) {
 
         $scope.showTip = false;
+        var newLayout;
 
-        var currLayout = authentication.user.ViewLayout;
-        var newLayout = (!currLayout ? 1 : 0);
-
-        var apply = function(value) {
-            authentication.user.ViewLayout = value;
-
-            if(value === 0) {
-                console.log('$rootScope.layoutMode: set columns');
-                $rootScope.layoutMode = 'columns';
-            } else {
-                console.log('$rootScope.layoutMode: set rows');
-                $rootScope.layoutMode = 'rows';
-            }
-            $scope.mobileResponsive();
-        };
+        if (mode === 'rows' && $rootScope.layoutMode!=='rows') {
+            newLayout = 1;
+        }
+        else if (mode === 'columns' && $rootScope.layoutMode!=='columns') {
+            newLayout = 0;
+        }
+        else if (mode === 'mobile') {
+            $rootScope.mobileMode = true;
+        }
 
         var error = function(error) {
             $log.error(error);
             notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
-            apply(currLayout);
         };
 
-        apply(newLayout);
-
-        networkActivityTracker.track(
-            Setting.setViewlayout({
-                "ViewLayout": newLayout
-            }).$promise.then(
-                function(response) {
-                    if(response.Code === 1000) {
-                        notify({
-                            message: $translate.instant('LAYOUT_SAVED'), 
-                            classes: 'notification-success'
-                        });
-                        $scope.mobileResponsive();
-                    } else if (response.Error) {
-                        error(response.Error);
-                    } else {
-                        error();
+        if ( 
+            (mode === 'columns' && $rootScope.layoutMode!=='columns') || 
+            (mode === 'rows' && $rootScope.layoutMode!=='rows') 
+        ) {
+            networkActivityTracker.track(
+                Setting.setViewlayout({
+                    "ViewLayout": newLayout
+                }).$promise.then(
+                    function(response) {
+                        if(response.Code === 1000) {
+                            notify({
+                                message: $translate.instant('LAYOUT_SAVED'), 
+                                classes: 'notification-success'
+                            });
+                            $rootScope.mobileMode = false;
+                            $rootScope.layoutMode = mode;
+                            $scope.mobileResponsive();
+                        } else if (response.Error) {
+                            error(response.Error);
+                        } else {
+                            error();
+                        }
+                    },
+                    function(error) {
+                        error(error);
                     }
-                },
-                function(error) {
-                    error(error);
-                }
-            )
-        );
+                )
+            );
+        }
+
+        angular.element('#pm_toolbar-desktop a').tooltip('hide');
+
     };
 
     /**

@@ -223,6 +223,8 @@
         .frame {
             padding: 1rem 10px;
             border-top: 1px solid $border;
+            overflow: auto;
+            zoom: 1;
             .email {
                 .pm_button.more {
                     line-height: 1rem;

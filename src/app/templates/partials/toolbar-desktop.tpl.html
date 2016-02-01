@@ -193,25 +193,30 @@
 
     <div class="pull-right">
 
-        <span class="pm_buttons layout">
-            <a 
-            ng-click="changeMode()" 
-            href="#" 
-            class="fa">
-                <i class="fa" ng-class="{ 'fa-desktop': mobileMode }"></i>
-                <i class="fa" ng-class="{ 'fa-mobile': !mobileMode }"></i>
-            </a>
-        </span>
-
         <span 
         class="pm_buttons layout">
             <a 
             href="#" 
             pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}" 
-            ng-click="toggleLayout()">
-                <i 
-                class="fa fa-columns" 
-                ng-class="{ 'fa-rotate-270': layoutMode === 'columns' }"></i>
+            ng-class="{ 'active': mobileMode }"
+            ng-click="changeLayout('mobile')">
+                <i class="fa fa-mobile"></i>
+            </a>
+            <a 
+            href="#" 
+            pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}" 
+            class="divider" 
+            ng-class="{ 'active': layoutMode === 'columns' }"
+            ng-click="changeLayout('columns')">
+                <i class="fa fa-columns"></i>
+            </a>
+            <a 
+            href="#" 
+            pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}" 
+            class="divider" 
+            ng-class="{ 'active': layoutMode === 'rows' }"
+            ng-click="changeLayout('rows')">
+                <i class="fa fa-columns fa-rotate-270"></i>
             </a>
         </span>
 
