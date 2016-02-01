@@ -10,6 +10,7 @@
         active: active(conversation),
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
+        <div class="selected-bar"></div>
         <input 
         type="checkbox" 
         ng-model="conversation.Selected" 

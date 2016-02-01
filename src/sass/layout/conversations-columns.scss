@@ -3,6 +3,16 @@
     height: 60px;
     box-shadow: inset 0 -1px 0 $border;
     overflow: hidden;
+    position: relative;
+    .selected-bar {
+        background: $primary;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+    }
     .selection {
         float: left;
         height: 30px;
@@ -110,6 +120,23 @@
         h4 {
             color: $gray;
             font-weight: normal;
+        }
+    }
+    &.active {
+        background: $active;
+        color: $white;
+        h4 {
+            color: $white;
+        }
+    }
+    &.selected {
+        .selected-bar {
+            width: 5px;
+            -webkit-transition: width .25s ease;
+               -moz-transition: width .25s ease;
+                -ms-transition: width .25s ease;
+                 -o-transition: width .25s ease;
+                    transition: width .25s ease;
         }
     }
 }
