@@ -525,6 +525,7 @@ angular.module("proton.modals", [])
             this.recovery = '';
             this.create = params.create;
             this.base = CONSTANTS.BASE_SIZE;
+            this.coupon = '';
 
             if(params.card.data.Code === 1000 && params.card.data.Sources.length > 0) {
                 var card = _.first(params.card.data.Sources);
