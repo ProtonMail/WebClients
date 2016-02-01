@@ -16,12 +16,20 @@
                 <p>This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-mx-record">{{ 'LEARN_MORE' | translate }}</a></p>
 
                 <p>Add this MX record:</p>
-                <textarea readonly>mail.protonmail.ch</textarea>
+                <table class="pm_table record">
+                    <tr>
+                        <th style="width:3rem">Host</th>
+                        <th style="width:4rem">Priority</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td><code>@</code></td>
+                        <td><code>10 *</code></td>
+                        <td><code>mail.protonmail.ch</code></td>
+                    </tr>
+                </table>
 
-                <div ng-show="ctrl.domain.MxState">
-                    <p>Your current MX record:</p>
-                    <textarea readonly>{{ ctrl.domain.MxRecord }}</textarea>
-                </div>
+                <p class="alert alert-info">Delete any other MX records or make sure ProtonMail's Priority is the lowest number.</p>
 
                 <p class="alert alert-info">If <strong>{{ ctrl.domain.DomainName }}</strong> is actively receiving emails, create all used email addresses in Step 3 before changing MX record to ensure a smooth transition.</p>
 

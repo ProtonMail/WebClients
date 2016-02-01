@@ -101,6 +101,8 @@ html.protonmail body.activeComposer {
                 left: 0;
                 top: 0;
                 right: 0;
+                background: $white;
+                z-index: 2;
             }
             .modal-body {
                 padding: ($modalMargin / 2) $modalMargin;
