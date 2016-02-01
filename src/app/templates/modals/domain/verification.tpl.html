@@ -20,7 +20,7 @@
                 </div>
                 <div>
                     <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/verify-your-domain">{{ 'LEARN_MORE' | translate }}</a></p>
-                    <textarea ng-bind="ctrl.domain.VerifyCode" readonly></textarea>
+                    <textarea ng-bind="ctrl.domain.VerifyCode" rows="1" readonly></textarea>
                     <p class="alert alert-info">It can take up to an hour for changes to DNS records to propagate.</p>
                 </div>
             </div>
