@@ -82,20 +82,19 @@
                     <legend>{{ 'TOOLBAR' | translate }}</legend>
                     <p>{{ 'READ_UNREAD_POSITION' | translate }}</p>
                     <label for="">
-                        <input type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
-                        <span ng-click="appearance.MessageButtons=0" class="pm_buttons">
+                        <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
+                        <span ng-click="appearance.MessageButtons=0; saveButtonsPosition(buttonsForm)" class="pm_buttons">
                             <a class="dead" href="#"><i class="fa fa fa-eye"></i></a>
                             <a href="#" class="dead divider"><i class="fa fa fa-eye-slash"></i></a>
                         </span>
                     </label>
                     <label for="">
-                        <input type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
-                        <span ng-click="appearance.MessageButtons=1" class="pm_buttons">
+                        <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
+                        <span ng-click="appearance.MessageButtons=1; saveButtonsPosition(buttonsForm)" class="pm_buttons">
                             <a class="dead" href="#"><i class="fa fa fa-eye-slash"></i></a>
                             <a href="#" class="dead divider"><i class="fa fa fa-eye"></i></a>
                         </span>
                     </label>
-                    <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
                 </form>
             </section>
         </div>
