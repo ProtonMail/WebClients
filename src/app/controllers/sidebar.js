@@ -108,10 +108,13 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         timeoutRefresh = $timeout(function() {
             // Get the latest event
             eventManager.call().then(function() {
-                $scope.spinMe = false;
                 // Clear cache for the current mailbox
                 cache.empty(mailbox);
-            }, function() {
+                // Stop spin icon
+                $scope.spinMe = false;
+            }, function(error) {
+                $log.error(error);
+                // Stop spin icon
                 $scope.spinMe = false;
             });
         }, 500);

@@ -7,7 +7,6 @@
                 <h4 class="modal-title">3. {{ 'ADD_AN_ADDRESS' | translate }}</h4>
             </div>
             <div class="modal-body pm_form">
-                <p class="alert alert-info">Add an address to <strong>{{ ctrl.domain.DomainName }}</strong>.</p>
                 <div class="pm_grid" ng-show="ctrl.members.length > 1">
                     <div class="col-12">
                         <label>Choose the member who will own this address:</label>
@@ -19,7 +18,7 @@
                 </div>
                 <form class="pm_grid" method="post" ng-submit="ctrl.add()">
                     <div class="col-1-3">
-                        <label>Choose an address:</label>
+                        <label>Add addresses for <strong>{{ ctrl.domain.DomainName }}</strong>:</label>
                         <input autofocus type="text" ng-model="ctrl.address" placeholder="Address" />
                     </div>
                     <div class="col-1-3">

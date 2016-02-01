@@ -166,7 +166,7 @@ angular.module("proton.controllers.Secured", [])
                 value = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
                 break;
             case 'label':
-                value = cacheCounters.unreadConversation($stateParams.label);
+                value = cacheCounters.unreadConversation($state.params.label);
                 break;
             default:
                 value = cacheCounters.unreadConversation(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
@@ -200,7 +200,13 @@ angular.module("proton.controllers.Secured", [])
                 name = unread + $translate.instant('TRASH');
                 break;
             case 'label':
-                name = $translate.instant('LABEL');
+                var label = _.findWhere(authentication.user.Labels, {ID: $state.params.label});
+
+                if (angular.isDefined(label)) {
+                    name = label.Name;
+                } else {
+                    name = $translate.instant('LABEL');
+                }
                 break;
             case 'contacts':
                 name = $translate.instant('CONTACTS');

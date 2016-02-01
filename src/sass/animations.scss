@@ -33,21 +33,21 @@ $spinnerSize: 10rem;
     }
 }
 
-@-webkit-keyframes fadeIn { 
-    from { 
-        opacity:0; 
-    } 
-    to { 
-        opacity:1; 
-    } 
+@-webkit-keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }
-@keyframes fadeIn { 
-    from { 
-        opacity:0; 
-    } 
-    to { 
-        opacity:1; 
-    } 
+@keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }
 
 .pm_fadeIn {
@@ -99,7 +99,7 @@ Inpiration from 'esjay'
     -webkit-mask:  url(/assets/img/valence.svg) no-repeat 50% 50%;
     mask: url(/assets/img/valence.svg) no-repeat 50% 50%;
     -webkit-mask-size: cover;
-    mask-size: cover; 
+    mask-size: cover;
 }
 .spinner.large {
     top: 2rem;
@@ -118,7 +118,7 @@ Inpiration from 'esjay'
         perspective: $spinnerWidth;
         background-size: $spinnerWidth $spinnerWidth;
         background-color: $white;
-    }   
+    }
 }
 
 .spinner1 {
@@ -168,8 +168,6 @@ Inpiration from 'esjay'
 .spinMe {
     -webkit-animation: spin .5s infinite linear;
     animation: spin .5s infinite linear;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
 }
 
 @-moz-keyframes spin {
