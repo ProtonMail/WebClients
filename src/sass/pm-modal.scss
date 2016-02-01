@@ -15,6 +15,15 @@ html.protonmail body.activeComposer {
     bottom: 0;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    &.domains {
+        .modal-dialog {
+            .modal-content {
+                .modal-body {
+                    top: 150px;
+                }
+            }
+        }
+    }
     &.important {
         z-index: 99999;
     }
@@ -63,13 +72,6 @@ html.protonmail body.activeComposer {
         margin-left: -28rem;
         border: 5px solid $primary;
         box-sizing: border-box;
-        &.domains {
-            .modal-content {
-                .modal-body {
-                    top: 150px;
-                }
-            }
-        }
         .close {
             position: absolute;
             right: -5px;
