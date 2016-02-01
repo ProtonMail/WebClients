@@ -22,7 +22,7 @@ angular.module("proton.height", [])
         };
 
         // Listen resize window
-        angular.element($window).bind('resize', setHeight);
+        angular.element($window).bind('resize', $window._.debounce(setHeight));
 
         scope.$on('$stateChangeSuccess', function() {
             setHeight();
