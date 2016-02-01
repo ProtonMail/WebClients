@@ -79,9 +79,33 @@
         <div class="row">
 
             <section class="setting pm_form full">
+                <form method="post" novalidate ng-submit="saveButtonsPosition(buttonsForm)" name="buttonsForm">
+                    <legend>{{ 'TOOLBAR' | translate }}</legend>
+                    <p>{{ 'READ_UNREAD_POSITION' | translate }}</p>
+                    <div class="radio col left">
+                        <label for="">
+                            <input type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
+                            <span class="pm_buttons">
+                                <a href="#"><i class="fa fa fa-eye"></i></a>
+                                <a href="#" class="divider"><i class="fa fa fa-eye-slash"></i></a>
+                            </span>
+                        </label>
+                    <div class="radio col right">
+                        <label for="">
+                            <input type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
+                            <span class="pm_buttons">
+                                <a href="#"><i class="fa fa fa-eye-slash"></i></a>
+                                <a href="#" class="divider"><i class="fa fa fa-eye"></i></a>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="clearfix">
+                        <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
+                    </div>
+                </form>
 
-                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
-                    <legend>Custom Theme</legend>
+                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
+                    <legend>{{ 'CUSTOM_THEME' | translate }}</legend>
                     <div class="clearfix" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                         <p class="alert alert-info">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
                         <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
@@ -92,10 +116,6 @@
                         <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
                     </div>
                 </form>
-                <form method="post" ng-submit="apiTest()" ng-if="false"  >
-                    <button type="submit" class="btn btn-sm btn-warning">API Test</button>
-                </form>
-
 
                 <legend>Additional Themes (Experimental)</legend>
                 <p class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> Loading themes will override your current theme!</p>
