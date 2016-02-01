@@ -12,7 +12,7 @@ angular.module('proton.constants', [])
     OAUTH_KEY: "proton:oauth",
     EVENT_ID: "proton:eventid",
     ATTACHMENT_SIZE_LIMIT: 15, // MB
-    ATTACHMENT_NUMBER_LIMIT: 20,
+    ATTACHMENT_NUMBER_LIMIT: 100,
     MAX_TITLE_LENGTH: 255,
     MAX_NUMBER_COMPOSER: 3,
     NUMBER_OF_MESSAGES_PRELOADING: 5,
