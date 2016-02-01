@@ -44,7 +44,7 @@ angular.module("proton.controllers.Secured", [])
     ];
 
     // Set the rows / columns mode
-    if (angular.isDefined(authentication.user.ViewLayout)) {
+    if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
         if (authentication.user.ViewLayout === 0) {
             $rootScope.layoutMode = 'columns';
         } else {
