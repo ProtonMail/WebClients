@@ -23,7 +23,10 @@
         <div class="row top">
             <h4 
             class="subject" 
-            ng-click="click(conversation)">{{ conversation.Subject }}</h4>
+            ng-click="click(conversation)">
+                <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+                {{ conversation.Subject }}
+            </h4>
             <span class="meta">
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
                 <a 

@@ -32,7 +32,10 @@
         <div 
         class="subject" 
         ng-click="click(conversation)">
-            <h4>{{ conversation.Subject }}</h4>
+            <h4>
+                <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+                {{ conversation.Subject }}
+            </h4>
             <span class="pm_labels">
                 <label 
                 ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5" 
