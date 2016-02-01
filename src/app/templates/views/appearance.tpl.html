@@ -24,9 +24,9 @@
                             <img src="assets/img/2.png">
                         </label>
                     </div>
-                    <div class="clearfix">
-                        <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
-                    </div>
+                    <button class="btn btn-sm btn-primary" type="submit">
+                        {{ 'SAVE' | translate }}
+                    </button>
                 </form>
 
             </section>
@@ -77,32 +77,32 @@
         </div>
 
         <div class="row">
-
-            <section class="setting pm_form full">
-                <form method="post" novalidate ng-submit="saveButtonsPosition(buttonsForm)" name="buttonsForm">
+            <section class="settig pm_form full">
+                <form method="post" class="toolbar-button-options" novalidate ng-submit="saveButtonsPosition(buttonsForm)" name="buttonsForm">
                     <legend>{{ 'TOOLBAR' | translate }}</legend>
                     <p>{{ 'READ_UNREAD_POSITION' | translate }}</p>
-                    <div class="radio col left">
-                        <label for="">
-                            <input type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
-                            <span class="pm_buttons">
-                                <a href="#"><i class="fa fa fa-eye"></i></a>
-                                <a href="#" class="divider"><i class="fa fa fa-eye-slash"></i></a>
-                            </span>
-                        </label>
-                    <div class="radio col right">
-                        <label for="">
-                            <input type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
-                            <span class="pm_buttons">
-                                <a href="#"><i class="fa fa fa-eye-slash"></i></a>
-                                <a href="#" class="divider"><i class="fa fa fa-eye"></i></a>
-                            </span>
-                        </label>
-                    </div>
-                    <div class="clearfix">
-                        <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
-                    </div>
+                    <label for="">
+                        <input type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
+                        <span ng-click="appearance.MessageButtons=0" class="pm_buttons">
+                            <a class="dead" href="#"><i class="fa fa fa-eye"></i></a>
+                            <a href="#" class="dead divider"><i class="fa fa fa-eye-slash"></i></a>
+                        </span>
+                    </label>
+                    <label for="">
+                        <input type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
+                        <span ng-click="appearance.MessageButtons=1" class="pm_buttons">
+                            <a class="dead" href="#"><i class="fa fa fa-eye-slash"></i></a>
+                            <a href="#" class="dead divider"><i class="fa fa fa-eye"></i></a>
+                        </span>
+                    </label>
+                    <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
                 </form>
+            </section>
+        </div>
+
+        <div class="row">
+
+            <section class="setting pm_form full">
 
                 <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
                     <legend>{{ 'CUSTOM_THEME' | translate }}</legend>
