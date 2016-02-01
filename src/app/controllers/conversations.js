@@ -661,6 +661,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                             });
                             $rootScope.mobileMode = false;
                             $rootScope.layoutMode = mode;
+                            authentication.user.ViewLayout = newLayout;
                             $scope.mobileResponsive();
                         } else if (response.Error) {
                             error(response.Error);
