@@ -25,7 +25,7 @@
             class="subject" 
             ng-click="click(conversation)">{{ conversation.Subject }}</h4>
             <span class="meta">
-                <i class="fa fa-paperclip"></i>
+                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
                 <a 
                 class="fa" 
                 ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}" 

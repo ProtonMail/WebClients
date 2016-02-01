@@ -63,6 +63,12 @@
                 text-decoration: none;
                 width: 1rem;
             }
+            .fa-paperclip {
+                visibility: hidden;
+                &.show {
+                    visibility: visible;
+                }
+            }
             .fa-star-o {
                 color: $gray-light;
                 cursor: pointer;
