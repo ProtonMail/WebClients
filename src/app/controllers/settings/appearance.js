@@ -149,7 +149,6 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveButtonsPosition = function(form) {
-
         if ($scope.appearance.MessageButtons !== authentication.user.MessageButtons) {
             networkActivityTracker.track(
                 Setting.setMessageStyle({ MessageButtons: $scope.appearance.MessageButtons }).$promise.then(function(response) {

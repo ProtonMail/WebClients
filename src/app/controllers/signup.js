@@ -38,6 +38,9 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.getUserInfo =        false;
         $scope.finishCreation =     false;
 
+        $scope.domains = [{label: 'protonmail.com', value: 'protonmail.com'}, {label: 'protonmail.ch', value: 'protonmail.ch'}];
+        $scope.domain = $scope.domains[0];
+
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
 
         $scope.account = [];
@@ -61,10 +64,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             }
 
             // For Chrome, the origin property is in the event.originalEvent object.
-            var origin = event.origin || event.originalEvent.origin; 
+            var origin = event.origin || event.originalEvent.origin;
 
             // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
-            if (origin !== 'https://secure.protonmail.com') { 
+            if (origin !== 'https://secure.protonmail.com') {
                 return;
             }
 
@@ -80,14 +83,14 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 console.log(event.data.height);
                 $('#pm_captcha').height(event.data.height + 40);
                 // $('#result').text( data.token );
-            }            
+            }
         }
 
         // Change this to our recaptcha key, configurable in Angular?
         var message = {
             "type": "pm_captcha",
             "language": "en",
-            "key": "6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn", 
+            "key": "6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn",
         };
 
         // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
@@ -263,7 +266,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         else if ($scope.account.mailboxPassword!==undefined) {
             mbpw = $scope.account.mailboxPassword;
         }
-        return $scope.generateKeys($scope.account.Username + '@protonmail.com', mbpw);
+        console.log('domain', $scope.domain);
+        return $scope.generateKeys($scope.account.Username + '@' + $scope.domain.value, mbpw);
     };
 
     $scope.doCreateUser = function() {
@@ -283,10 +287,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 "redirect_uri": "https://protonmail.com",
                 "state": "random_string",
                 "Username": $scope.account.Username,
-
                 "Password": $scope.account.loginPassword,
-                // "Password": null,
-
                 "Email": $scope.account.notificationEmail,
                 "News": !!($scope.account.optIn),
                 "PublicKey": $scope.account.PublicKey,
