@@ -27,16 +27,19 @@
                     ng-readonly="readOnlyUsername"
                     id="Username"
                     class="dead"
-                    ng-class="{ 
+                    ng-class="{
                         'success':goodUsername,
                         'error':badUsername
                     }"
                     ng-change="checkAvailability(true)"
                     ng-model-options="{ debounce: 600 }"
-                    pt-tooltip="You can switch to protonmail.ch after account creation."
                     pt-placement="bottom">
-                    <em class="usernameDomain">@protonmail.com</em>
-                    <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em> 
+                    <em class="usernameDomain">@</em>
+                    <span class="pm_select inline bigger">
+                        <select class="selectDomain" ng-model="domain" ng-options="domain.label for domain in domains"></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                    <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em>
                 </div>
             </div>
             <div ng-show="goodUsername">
@@ -168,7 +171,7 @@
                 <div class="spinner1"></div>
                 <div class="spinner2"></div>
                 <div class="spinner3"></div>
-                
+
             </div>
         </div>
         <h2 class="text-center" ng-show="!signupError">Creating Account</h2>
