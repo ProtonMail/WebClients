@@ -63,6 +63,13 @@ html.protonmail body.activeComposer {
         margin-left: -28rem;
         border: 5px solid $primary;
         box-sizing: border-box;
+        &.domains {
+            .modal-content {
+                .modal-body {
+                    top: 150px;
+                }
+            }
+        }
         .close {
             position: absolute;
             right: -5px;
