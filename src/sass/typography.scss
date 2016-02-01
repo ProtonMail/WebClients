@@ -49,10 +49,13 @@ body .pm_form textarea[readonly] {
 code {
 	display: inline-block;
 	font-family: monospace;
-	background: rgba(0,0,0,.04);
-	color: #333;
-	padding: 0 .3rem;
+	color: #000;
+	font-style: 1rem;
 	border-radius: 2px;
+	line-height: 2rem;
+	max-width: 100%;
+	white-space: nowrap;
+	overflow: auto;
 }
 
 p a {
