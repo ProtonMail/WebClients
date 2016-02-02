@@ -43,11 +43,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             {label: 'protonmail.ch', value: 'protonmail.ch'},
             {label: 'protonmail.blue', value: 'protonmail.blue'} // TODO should be removed for the release
         ];
-        $scope.domain = $scope.domains[0];
 
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
 
         $scope.account = [];
+        $scope.account.domain = $scope.domains[0];
 
         // Prepoppulate the username if from an invite link
         // and mark as read only
@@ -270,8 +270,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         else if ($scope.account.mailboxPassword!==undefined) {
             mbpw = $scope.account.mailboxPassword;
         }
-        console.log('domain', $scope.domain);
-        return $scope.generateKeys($scope.account.Username + '@' + $scope.domain.value, mbpw);
+        return $scope.generateKeys($scope.account.Username + '@' + $scope.account.domain.value, mbpw);
     };
 
     $scope.doCreateUser = function() {
@@ -281,7 +280,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         var params = {
             'Username': $scope.account.Username,
             'Password': $scope.account.loginPassword,
-            'Domain': $scope.domain.value,
+            'Domain': $scope.account.domain.value,
             'Email': $scope.account.notificationEmail,
             'News': !!($scope.account.optIn),
             'PrivateKey': $scope.account.PrivateKey
