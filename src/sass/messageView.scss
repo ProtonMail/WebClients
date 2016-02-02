@@ -95,6 +95,12 @@
                 }
             }
         }
+        &.unread > div.summary {
+            background: $white;
+            .meta .contact strong {
+                font-weight: 700;
+            }
+        }
         & > div.summary {
             height: 40px;
             line-height: 40px;
