@@ -14,7 +14,8 @@
         </div>
         <div class="modal-footer text-right">
             <button type="button" class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary" ng-disabled="networkActivity.loading()">{{ 'NEXT' | translate }}</button>
+            <button type="submit" class="pm_button primary" ng-hide="ctrl.domain.DomainName" ng-disabled="networkActivity.loading()">{{ 'NEXT' | translate }}</button>
+            <button type="button" class="pm_button primary" ng-show="ctrl.domain.DomainName" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>

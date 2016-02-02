@@ -803,6 +803,12 @@ angular.module("proton.modals", [])
                 }
             };
 
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
+                }
+            };
+
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
