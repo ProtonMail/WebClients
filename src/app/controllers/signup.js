@@ -14,6 +14,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     $window,
     CONSTANTS,
     authentication,
+    domains,
     networkActivityTracker,
     User,
     Reset,
@@ -37,18 +38,16 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.mailboxLogin =       false;
         $scope.getUserInfo =        false;
         $scope.finishCreation =     false;
+        $scope.domains = [];
 
-        $scope.domains = [
-            {label: 'protonmail.com', value: 'protonmail.com'},
-            {label: 'protonmail.ch', value: 'protonmail.ch'},
-            {label: 'protonmail.blue', value: 'protonmail.blue'} // TODO should be removed for the release
-        ];
+        _.each(domains, function(domain) {
+            $scope.domains.push({label: domain, value: domain});
+        });
 
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
 
         $scope.account = [];
         $scope.account.domain = $scope.domains[0];
-
         // Prepoppulate the username if from an invite link
         // and mark as read only
         if ($rootScope.username!==undefined) {
@@ -221,30 +220,22 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             User.available({ username: $scope.account.Username }).$promise
             .then(
                 function(response) {
-                    if (response.data) {
-                        var error_message = (response.data.Error) ? response.data.Error : (response.statusText) ? response.statusText : 'Error.';
-                        $('#Username').focus();
-                        deferred.reject(error_message);
-                    }
-                    else if (parseInt(response.Available)===0) {
+                    if (response.Available === 0) {
                         if ( manual === true ) {
                             $scope.badUsername = true;
                             $scope.checkingUsername = false;
                             deferred.resolve(200);
-                        }
-                        else {
+                        } else {
                             $('#Username').focus();
                             deferred.reject('Username already taken.');
                             $log.debug('username taken');
                         }
-                    }
-                    else {
+                    } else {
                         if ( manual === true ) {
                             $scope.goodUsername = true;
                             $scope.checkingUsername = false;
                             deferred.resolve(200);
-                        }
-                        else {
+                        } else {
                             $scope.creating = true;
                             $rootScope.$broadcast('creating');
                             $scope.checkingUsername = false;
