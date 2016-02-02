@@ -271,42 +271,40 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.doCreateUser = function() {
-        $log.debug('doCreateUser', $rootScope.inviteToken);
-        if ($rootScope.inviteToken===undefined) {
-            notify({
-                message: "Invalid or missing invite token."
-            });
-            return;
+        $log.debug('doCreateUser: inviteToken', $rootScope.inviteToken);
+        $log.debug('doCreateUser: captcha_token', $rootScope.captcha_token);
+
+        var params = {
+            'Username': $scope.account.Username,
+            'Password': $scope.account.loginPassword,
+            'Domain': $scope.domain.value,
+            'Email': $scope.account.notificationEmail,
+            'News': !!($scope.account.optIn),
+            'PrivateKey': $scope.account.PrivateKey
+        };
+
+        if (angular.isDefined($rootScope.inviteToken)) {
+            params.Token = $rootScope.inviteToken;
+            params.TokenType = 'invite';
+        } else if (angular.isDefined($scope.captcha_token)) {
+            params.Token = $scope.captcha_token;
+            params.TokenType = 'recaptcha';
         }
-        else {
-            var params = {
-                "response_type": "token",
-                "client_id": "demoapp",
-                "client_secret": "demopass",
-                "grant_type": "password",
-                "redirect_uri": "https://protonmail.com",
-                "state": "random_string",
-                "Username": $scope.account.Username,
-                "Password": $scope.account.loginPassword,
-                "Email": $scope.account.notificationEmail,
-                "News": !!($scope.account.optIn),
-                "PublicKey": $scope.account.PublicKey,
-                "PrivateKey": $scope.account.PrivateKey,
-                "token": $rootScope.inviteToken // this needs to be from their email in the future. will be captcha when we remove the waiting list
-            };
-            if ($rootScope.tempUser===undefined) {
-                $rootScope.tempUser = [];
+
+        if ($rootScope.tempUser===undefined) {
+            $rootScope.tempUser = [];
+        }
+
+        $rootScope.tempUser.username = $scope.account.Username;
+        $rootScope.tempUser.password = $scope.account.loginPassword;
+
+        return User.create(params).$promise.then( function(response) {
+            $log.debug(response);
+            if (response.Code===1000) {
+                $scope.createUser  = true;
             }
-            $rootScope.tempUser.username = $scope.account.Username;
-            $rootScope.tempUser.password = $scope.account.loginPassword;
-            return User.create(params).$promise.then( function(response) {
-                $log.debug(response);
-                if (response.Code===1000) {
-                    $scope.createUser  = true;
-                }
-                return response;
-            });
-        }
+            return response;
+        });
     };
 
     $scope.doLogUserIn = function(response) {
