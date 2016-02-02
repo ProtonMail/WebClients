@@ -34,7 +34,7 @@ body {
         overflow-x: hidden;
     }
     #conversation-list-rows {
-        overflow-y: hidden;
+        overflow-y: scroll;
         overflow-x: hidden;
         height: 100%;
     }
