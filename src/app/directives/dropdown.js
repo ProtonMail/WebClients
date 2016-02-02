@@ -1,11 +1,10 @@
-angular.module("proton.dropdown", [])
+angular.module('proton.dropdown', [])
 
 .directive('dropdown', function ($timeout) {
     return function (scope, element, attrs) {
         var animationDuration = 50;
         var timer;
-
-        element.bind("click", function (event) {
+        var click = function(event) {
             if (element.hasClass('active')) {
                 hideDropdown(element);
             } else {
@@ -13,29 +12,29 @@ angular.module("proton.dropdown", [])
             }
 
             return false;
+        };
+        var mouseenter = function() {
+            $timeout.cancel(timer);
+        };
+        var mouseleave = function() {
+            timer = $timeout(function () {
+                hideDropdown(element);
+            }, 1000);
+        };
+
+        element.bind('click', click);
+
+        scope.$on('$destroy', function() {
+            element.unbind('click', click);
+            $timeout.cancel(timer);
+            element.parent().find('.pm_dropdown').unbind('mouseleave', mouseleave).unbind('mouseenter', mouseenter);
+            element.unbind('mouseleave', mouseleave).unbind('mouseenter', mouseenter);
         });
 
         // If there are no touch events, we can make use of mouse events
         if (!Modernizr.touchevents) {
-            element.parent().find('.pm_dropdown')
-            .bind('mouseleave', function() {
-                timer = $timeout(function () {
-                    hideDropdown(element);
-                }, 400);
-            })
-            .bind('mouseenter', function() {
-                $timeout.cancel(timer);
-            });
-
-            element
-            .bind('mouseleave', function() {
-                timer = $timeout(function () {
-                    hideDropdown(element);
-                }, 400);
-            })
-            .bind('mouseenter', function() {
-                $timeout.cancel(timer);
-            });
+            element.parent().find('.pm_dropdown').bind('mouseleave', mouseleave).bind('mouseenter', mouseenter);
+            element.bind('mouseleave', mouseleave).bind('mouseenter', mouseenter);
         }
 
         function showDropdown(element) {
@@ -44,19 +43,7 @@ angular.module("proton.dropdown", [])
             var next = element.next();
 
             element.addClass('active');
-
-            dropdown
-            .stop(1,1)
-            .css('opacity', 0);
-
-            dropdown = (next.hasClass('pm_dropdown')) ? next : dropdown;
-
-            dropdown
-            .slideDown(animationDuration)
-            .animate(
-                { opacity: 1 },
-                { queue: false, duration: animationDuration }
-            );
+            dropdown.show();
         }
 
         function hideDropdown(element) {
@@ -65,21 +52,8 @@ angular.module("proton.dropdown", [])
             var next = element.next();
 
             element.removeClass('active');
-
-            dropdown
-            .stop(1,1)
-            .css('opacity', 1);
-
-            dropdown = (next.hasClass('pm_dropdown')) ? next : dropdown;
-
-            dropdown
-            .slideUp( (animationDuration*2) )
-            .animate(
-                { opacity: 0 },
-                { queue: false, duration: (animationDuration*2) }
-            );
+            dropdown.hide();
         }
-
     };
 })
 
