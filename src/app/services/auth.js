@@ -478,6 +478,8 @@ angular.module("proton.authentication", [
             window.sessionStorage.clear();
             // Delete data key
             delete auth.data;
+            // Clean keys
+            keys = {};
             auth.headersSet = false;
             // Remove all user information
             this.user = null;
@@ -716,7 +718,6 @@ angular.module("proton.authentication", [
     $rootScope.logout = function() {
         eventManager.stop();
         cache.clear();
-        delete authentication.user;
         delete $rootScope.creds;
         delete $rootScope.tempUser;
         $state.go('login');

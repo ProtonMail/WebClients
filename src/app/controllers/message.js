@@ -291,11 +291,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.message.expand = true;
 
         // Mark message as read
-        if($scope.message.IsRead === 0) {
+        if ($scope.message.IsRead === 0) {
             $scope.read();
         }
 
-        if(angular.isUndefined($scope.message.decryptedBody)) {
+        if (angular.isUndefined($scope.message.decryptedBody)) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
                     // NOTE Plain text detection doesn't work. Check #1701
