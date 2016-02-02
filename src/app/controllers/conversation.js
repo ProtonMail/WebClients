@@ -74,47 +74,51 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             // Sort by time
             messages = _.sortBy(messages, 'Time');
 
-            var latest = _.last(messages);
+            if (messages.length > 0) {
+                var latest = _.last(messages);
 
-            if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
-                var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
+                if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
+                    var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
-                if(sents.length > 0) {
-                    // We try to open the last sent message
-                    $rootScope.targetID = _.last(sents).ID;
+                    if(sents.length > 0) {
+                        // We try to open the last sent message
+                        $rootScope.targetID = _.last(sents).ID;
+                    } else {
+                        // Or the last message
+                        $rootScope.targetID = _.last(messages).ID;
+                    }
+                } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
+                    // Do nothing, target initialized by click
                 } else {
-                    // Or the last message
-                    $rootScope.targetID = _.last(messages).ID;
-                }
-            } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
-                // Do nothing, target initialized by click
-            } else {
-                // If the latest message is read, we open it
-                if(latest.IsRead === 1) {
-                    $rootScope.targetID = latest.ID;
-                } else {
-                    // Else we open the first message unread beginning to the end list
-                    var loop = true;
-                    var index = messages.length - 1;
+                    // If the latest message is read, we open it
+                    if(latest.IsRead === 1) {
+                        $rootScope.targetID = latest.ID;
+                    } else {
+                        // Else we open the first message unread beginning to the end list
+                        var loop = true;
+                        var index = messages.length - 1;
 
-                    while(loop === true && index > 0) {
-                        index--;
+                        while(loop === true && index > 0) {
+                            index--;
 
-                        if(messages[index].IsRead === 1) { // Is read
-                            loop = false;
-                            index++;
+                            if(messages[index].IsRead === 1) { // Is read
+                                loop = false;
+                                index++;
+                            }
                         }
-                    }
 
-                    if (loop === true) { // No message read found
-                        index = 0;
-                    }
+                        if (loop === true) { // No message read found
+                            index = 0;
+                        }
 
-                    $rootScope.targetID = messages[index].ID;
+                        $rootScope.targetID = messages[index].ID;
+                    }
                 }
-            }
 
-            $scope.messages = messages;
+                $scope.messages = messages;
+            } else {
+                $scope.back();
+            }
         } else {
             $scope.back();
         }
