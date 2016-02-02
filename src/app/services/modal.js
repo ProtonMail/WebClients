@@ -571,6 +571,9 @@ angular.module("proton.modals", [])
                 }.bind(this));
             }.bind(this);
 
+            /**
+             * Generate token with Stripe library
+             */
             var generateStripeToken = function() {
                 if($window.Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
@@ -600,6 +603,9 @@ angular.module("proton.modals", [])
                 }, stripeResponseHandler);
             }.bind(this);
 
+            /**
+             * Callback called by the Stripe library when the token is generated
+             */
             var stripeResponseHandler = function(status, response) {
                 if(status === 200) {
                     // Add data from Stripe
@@ -794,6 +800,12 @@ angular.module("proton.modals", [])
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
                     params.submit(this.name);
+                }
+            };
+
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
                 }
             };
 

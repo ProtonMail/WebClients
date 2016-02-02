@@ -14,6 +14,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     $window,
     CONSTANTS,
     authentication,
+    domains,
     networkActivityTracker,
     User,
     Reset,
@@ -37,11 +38,16 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.mailboxLogin =       false;
         $scope.getUserInfo =        false;
         $scope.finishCreation =     false;
+        $scope.domains = [];
+
+        _.each(domains, function(domain) {
+            $scope.domains.push({label: domain, value: domain});
+        });
 
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
 
         $scope.account = [];
-
+        $scope.account.domain = $scope.domains[0];
         // Prepoppulate the username if from an invite link
         // and mark as read only
         if ($rootScope.username!==undefined) {
@@ -61,10 +67,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             }
 
             // For Chrome, the origin property is in the event.originalEvent object.
-            var origin = event.origin || event.originalEvent.origin; 
+            var origin = event.origin || event.originalEvent.origin;
 
             // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
-            if (origin !== 'https://secure.protonmail.com') { 
+            if (origin !== 'https://secure.protonmail.com') {
                 return;
             }
 
@@ -80,14 +86,14 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 console.log(event.data.height);
                 $('#pm_captcha').height(event.data.height + 40);
                 // $('#result').text( data.token );
-            }            
+            }
         }
 
         // Change this to our recaptcha key, configurable in Angular?
         var message = {
             "type": "pm_captcha",
             "language": "en",
-            "key": "6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn", 
+            "key": "6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn",
         };
 
         // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
@@ -214,30 +220,22 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             User.available({ username: $scope.account.Username }).$promise
             .then(
                 function(response) {
-                    if (response.data) {
-                        var error_message = (response.data.Error) ? response.data.Error : (response.statusText) ? response.statusText : 'Error.';
-                        $('#Username').focus();
-                        deferred.reject(error_message);
-                    }
-                    else if (parseInt(response.Available)===0) {
+                    if (response.Available === 0) {
                         if ( manual === true ) {
                             $scope.badUsername = true;
                             $scope.checkingUsername = false;
                             deferred.resolve(200);
-                        }
-                        else {
+                        } else {
                             $('#Username').focus();
                             deferred.reject('Username already taken.');
                             $log.debug('username taken');
                         }
-                    }
-                    else {
+                    } else {
                         if ( manual === true ) {
                             $scope.goodUsername = true;
                             $scope.checkingUsername = false;
                             deferred.resolve(200);
-                        }
-                        else {
+                        } else {
                             $scope.creating = true;
                             $rootScope.$broadcast('creating');
                             $scope.checkingUsername = false;
@@ -263,49 +261,44 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         else if ($scope.account.mailboxPassword!==undefined) {
             mbpw = $scope.account.mailboxPassword;
         }
-        return $scope.generateKeys($scope.account.Username + '@protonmail.com', mbpw);
+        return $scope.generateKeys($scope.account.Username + '@' + $scope.account.domain.value, mbpw);
     };
 
     $scope.doCreateUser = function() {
-        $log.debug('doCreateUser', $rootScope.inviteToken);
-        if ($rootScope.inviteToken===undefined) {
-            notify({
-                message: "Invalid or missing invite token."
-            });
-            return;
+        $log.debug('doCreateUser: inviteToken', $rootScope.inviteToken);
+        $log.debug('doCreateUser: captcha_token', $rootScope.captcha_token);
+
+        var params = {
+            'Username': $scope.account.Username,
+            'Password': $scope.account.loginPassword,
+            'Domain': $scope.account.domain.value,
+            'Email': $scope.account.notificationEmail,
+            'News': !!($scope.account.optIn),
+            'PrivateKey': $scope.account.PrivateKey
+        };
+
+        if (angular.isDefined($rootScope.inviteToken)) {
+            params.Token = $rootScope.inviteToken;
+            params.TokenType = 'invite';
+        } else if (angular.isDefined($scope.captcha_token)) {
+            params.Token = $scope.captcha_token;
+            params.TokenType = 'recaptcha';
         }
-        else {
-            var params = {
-                "response_type": "token",
-                "client_id": "demoapp",
-                "client_secret": "demopass",
-                "grant_type": "password",
-                "redirect_uri": "https://protonmail.com",
-                "state": "random_string",
-                "Username": $scope.account.Username,
 
-                "Password": $scope.account.loginPassword,
-                // "Password": null,
+        if ($rootScope.tempUser===undefined) {
+            $rootScope.tempUser = [];
+        }
 
-                "Email": $scope.account.notificationEmail,
-                "News": !!($scope.account.optIn),
-                "PublicKey": $scope.account.PublicKey,
-                "PrivateKey": $scope.account.PrivateKey,
-                "token": $rootScope.inviteToken // this needs to be from their email in the future. will be captcha when we remove the waiting list
-            };
-            if ($rootScope.tempUser===undefined) {
-                $rootScope.tempUser = [];
+        $rootScope.tempUser.username = $scope.account.Username;
+        $rootScope.tempUser.password = $scope.account.loginPassword;
+
+        return User.create(params).$promise.then( function(response) {
+            $log.debug(response);
+            if (response.Code===1000) {
+                $scope.createUser  = true;
             }
-            $rootScope.tempUser.username = $scope.account.Username;
-            $rootScope.tempUser.password = $scope.account.loginPassword;
-            return User.create(params).$promise.then( function(response) {
-                $log.debug(response);
-                if (response.Code===1000) {
-                    $scope.createUser  = true;
-                }
-                return response;
-            });
-        }
+            return response;
+        });
     };
 
     $scope.doLogUserIn = function(response) {

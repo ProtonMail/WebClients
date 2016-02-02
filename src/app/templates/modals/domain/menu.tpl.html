@@ -1,7 +1,8 @@
 <ul class="domainMenu pm_tabs">
     <li ng-class="{ 'active': ctrl.step === 1 }">
         <a class="pm_button" ng-class="{
-            'dead': ctrl.step === 1
+            'dead': ctrl.step === 1,
+            'disabled': !ctrl.domain.DomainName
         }" ng-click="ctrl.open('domain')">1.<br>DOMAIN</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 2 }">

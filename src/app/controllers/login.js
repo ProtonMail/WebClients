@@ -121,7 +121,7 @@ angular.module("proton.controllers.Auth", [
         }
 
         // Transform to lowercase and remove the domain
-        $scope.username = $scope.username.toLowerCase().split('@')[0];
+        $scope.username = $scope.username.toLowerCase();
 
         // Custom validation
         try {

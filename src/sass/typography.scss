@@ -47,12 +47,13 @@ body .pm_form textarea[readonly] {
 }
 
 code {
-	display: inline-block;
+	display: inline;
 	font-family: monospace;
-	background: rgba(0,0,0,.04);
-	color: #333;
-	padding: 0 .3rem;
+	color: #000;
 	border-radius: 2px;
+	line-height: 1rem;
+	max-width: 100%;
+	overflow: auto;
 }
 
 p a {

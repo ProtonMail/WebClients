@@ -7,6 +7,11 @@
     }
 }
 
+.pm_form .toolbar-button-options label {
+    display: inline-block;
+    padding-right: 2rem;
+    cursor: pointer;
+}
 #addUserModal .pm_buttons a {
     height: 31px;
     line-height: 31px;
@@ -61,7 +66,7 @@
                 width: auto;
             }
             th.status {
-                width: 34rem;
+                width: 38rem;
             }
             th {
                 padding-right: 0;
@@ -71,7 +76,7 @@
                 &.text-right {
                     text-align: right !important;
                     padding-right: 1rem;
-                    width: 12rem;
+                    width: 7rem;
                 }
             }
             td {
@@ -99,7 +104,6 @@
                     }
                     span {
                         display: inline;
-                        display: none;
                     }
                     &.dead {}
                 }
