@@ -101,17 +101,16 @@ angular.module("proton.controllers.Header", [])
             params.words = $scope.params.searchMessageInput;
 
             if (params.words.substring(0,2) === '$$') {
-                /*
-                if (params.words === '$$bubble') {
-                    notify({
-                        message: 'Bubble Mode Activated',
-                        classes: 'notification-success'
-                    });
-                    $rootScope.themeBubble = true;
-                    params.words = '';
+                
+                if (params.words === '$$tourStart') {
+                    $rootScope.tourStart();
                     return;
                 }
-                */
+                if (params.words === '$$tourEnd') {
+                    $rootScope.tourEnd();
+                    return;
+                }
+                
             }
 
             $state.go('secured.search', params);

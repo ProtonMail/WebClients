@@ -1,6 +1,6 @@
 <section class="pm_opensans sidebar" ng-controller="SidebarController" ng-sidebar-height>
 
-    <a class="compose pm_button primary" ng-click="compose()">
+    <a class="compose pm_button primary" ng-click="compose()" pt-tooltip="This is a thing with stuff!" pt-placement="right" data-tour>
         <i class="fa fa-pencil"></i> {{ 'COMPOSE' | translate }}
     </a>
 
@@ -64,7 +64,7 @@
 
     <ul class="menu" id="labelSettings">
         <li>
-            <a ui-sref="secured.labels">
+            <a ui-sref="secured.labels" pt-tooltip="This is a thing with stuff!" pt-placement="right" data-tour>
                 <i class="fa fa-cog"></i>
                 <span>{{ 'LABEL_SETTINGS' | translate }}</span>
             </a>

@@ -232,6 +232,15 @@ angular.module('proton', [
     // SVG Polyfill for Edge
     svg4everybody();
 
+    // Intro / Tour
+    $rootScope.tourStart = function() {
+        $('*[data-tour]').tooltip('show');
+        $('.tooltip:visible').addClass('tour animated rubberBand');
+    };
+    $rootScope.tourEnd = function() {
+        $('*[data-tour]').tooltip('hide');
+    };
+
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
         if(newVal) {
