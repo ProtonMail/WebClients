@@ -57,67 +57,64 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
         if (angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
+            var messages = cache.queryMessagesCached($scope.conversation.ID);
 
-            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
-                var messages = cache.queryMessagesCached($scope.conversation.ID);
-
+            if($state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
                 // Remove trashed message
-                if ($state.is('secured.search.view') === false && $state.is('secured.trash.view') === false && $scope.showTrashed === false) {
+                if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
                 }
 
                 // Remove non trashed message
-                if ($state.is('secured.search.view') === false && $state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
+                if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
                 }
-
-                // Sort by time
-                messages = _.sortBy(messages, 'Time');
-
-                var latest = _.last(messages);
-
-                if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
-                    var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
-
-                    if(sents.length > 0) {
-                        // We try to open the last sent message
-                        $rootScope.targetID = _.last(sents).ID;
-                    } else {
-                        // Or the last message
-                        $rootScope.targetID = _.last(messages).ID;
-                    }
-                } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
-                    // Do nothing, target initialized by click
-                } else {
-                    // If the latest message is read, we open it
-                    if(latest.IsRead === 1) {
-                        $rootScope.targetID = latest.ID;
-                    } else {
-                        // Else we open the first message unread beginning to the end list
-                        var loop = true;
-                        var index = messages.length - 1;
-
-                        while(loop === true && index > 0) {
-                            index--;
-
-                            if(messages[index].IsRead === 1) { // Is read
-                                loop = false;
-                                index++;
-                            }
-                        }
-
-                        if (loop === true) { // No message read found
-                            index = 0;
-                        }
-
-                        $rootScope.targetID = messages[index].ID;
-                    }
-                }
-
-                $scope.messages = messages;
-            } else {
-                $scope.back();
             }
+
+            // Sort by time
+            messages = _.sortBy(messages, 'Time');
+
+            var latest = _.last(messages);
+
+            if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
+                var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
+
+                if(sents.length > 0) {
+                    // We try to open the last sent message
+                    $rootScope.targetID = _.last(sents).ID;
+                } else {
+                    // Or the last message
+                    $rootScope.targetID = _.last(messages).ID;
+                }
+            } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
+                // Do nothing, target initialized by click
+            } else {
+                // If the latest message is read, we open it
+                if(latest.IsRead === 1) {
+                    $rootScope.targetID = latest.ID;
+                } else {
+                    // Else we open the first message unread beginning to the end list
+                    var loop = true;
+                    var index = messages.length - 1;
+
+                    while(loop === true && index > 0) {
+                        index--;
+
+                        if(messages[index].IsRead === 1) { // Is read
+                            loop = false;
+                            index++;
+                        }
+                    }
+
+                    if (loop === true) { // No message read found
+                        index = 0;
+                    }
+
+                    $rootScope.targetID = messages[index].ID;
+                }
+            }
+
+            $scope.messages = messages;
         } else {
             $scope.back();
         }
