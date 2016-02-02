@@ -580,7 +580,6 @@ angular.module("proton.cache", [])
      * @param {String} conversationId
      */
     api.queryMessagesCached = function(conversationId) {
-        var mailbox = tools.currentMailbox();
         var messages = _.where(messagesCached, {ConversationID: conversationId});
 
         messages = orderMessage(messages);

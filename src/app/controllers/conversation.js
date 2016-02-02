@@ -55,19 +55,19 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.initialization = function() {
         var loc = tools.currentLocation();
 
-        if(angular.isDefined(conversation)) {
+        if (angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
 
             if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
                 var messages = cache.queryMessagesCached($scope.conversation.ID);
 
                 // Remove trashed message
-                if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
+                if ($state.is('secured.search.view') === false && $state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
                 }
 
                 // Remove non trashed message
-                if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
+                if ($state.is('secured.search.view') === false && $state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
                 }
 
@@ -121,7 +121,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         } else {
             $scope.back();
         }
-
     };
 
     $scope.refreshConversation = function() {
