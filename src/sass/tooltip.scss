@@ -100,38 +100,3 @@
 	border-width: 0 5px 5px;
 	border-bottom-color: darken($secondary, 5%);
 }
-
-
-
-
-
-
-.tooltip.tour {
-	.tooltip-inner  {
-		background-color: $tour;
-	}
-	&.top .tooltip-arrow {
-		border-top-color: $tour;
-	}
-	&.top-left .tooltip-arrow {
-		border-top-color: $tour;
-	}
-	&.top-right .tooltip-arrow {
-		border-top-color: $tour;
-	}
-	&.right .tooltip-arrow {
-		border-right-color: $tour;
-	}
-	&.left .tooltip-arrow {
-		border-left-color: $tour;
-	}
-	&.bottom .tooltip-arrow {
-		border-bottom-color: $tour; 
-	}
-	&.bottom-left .tooltip-arrow {
-		border-bottom-color: $tour;
-	}
-	&.bottom-right .tooltip-arrow {
-		border-bottom-color: $tour;
-	}
-}
