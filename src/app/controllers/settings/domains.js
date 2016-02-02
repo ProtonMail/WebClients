@@ -321,6 +321,10 @@ angular.module("proton.controllers.Settings")
                         notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
                     }));
                 },
+                next: function() {
+                    domainModal.deactivate();
+                    $scope.verification(domain);
+                },
                 cancel: function() {
                     domainModal.deactivate();
                 }

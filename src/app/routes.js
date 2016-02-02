@@ -149,6 +149,21 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
+            domains: function($q, Domain) {
+                var deferred = $q.defer();
+
+                Domain.available().then(function(result) {
+                    if (result.data && angular.isArray(result.data.Domains)) {
+                        deferred.resolve(result.data.Domains);
+                    } else {
+                        deferred.reject();
+                    }
+                }, function() {
+                    deferred.reject();
+                });
+
+                return deferred.promise;
+            },
             direct: function($http, $q, $state, $rootScope, url, User) {
                 var deferred = $q.defer();
 
@@ -663,8 +678,8 @@ angular.module('proton.routes', [
                 controller: function($scope, invoice, $timeout, user, Organization) {
                     $scope.invoice = invoice;
                     $scope.user = user;
-                    
-                    Organization.get(invoice.OrganizationID).then( 
+
+                    Organization.get(invoice.OrganizationID).then(
                         function(result) {
                             console.log(result);
                             if (result.data && result.data.Code===1000) {
