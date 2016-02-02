@@ -38,7 +38,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.getUserInfo =        false;
         $scope.finishCreation =     false;
 
-        $scope.domains = [{label: 'protonmail.com', value: 'protonmail.com'}, {label: 'protonmail.ch', value: 'protonmail.ch'}];
+        $scope.domains = [
+            {label: 'protonmail.com', value: 'protonmail.com'},
+            {label: 'protonmail.ch', value: 'protonmail.ch'},
+            {label: 'protonmail.blue', value: 'protonmail.blue'} // TODO should be removed for the release
+        ];
         $scope.domain = $scope.domains[0];
 
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
