@@ -38,7 +38,7 @@
                                     'success': domain.VerifyState === 2,
                                     'error': domain.VerifyState === 1
                                 }">{{ 'VERIFICATION' | translate }}</button>
-                                <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-disabled="domain.State !== 1" ng-class="{'success': domain.Addresses.length > 0}">
+                                <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-disabled="domain.State !== 1" ng-class="{'success': domain.State === 1 && domain.Addresses.length > 0}">
                                     <span ng-show="domain.Addresses.length > 0">{{ domain.Addresses.length }}</span> {{ 'ADDRESSES' | translate }}
                                 </button>
                                 <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-disabled="domain.State !== 1" ng-class="{
