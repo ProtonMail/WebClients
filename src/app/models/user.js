@@ -32,13 +32,6 @@ angular.module("proton.models.user", [])
                 method: 'get',
                 url: url.get() + '/users/available/:username'
             },
-            /**
-             * Return the list of domains available during the signing process
-             */
-            domains: {
-                method: 'get',
-                url: url.get() + '/users/available'
-            },
             direct: {
                 method: 'get',
                 url: url.get() + '/users/direct'
