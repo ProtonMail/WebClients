@@ -655,11 +655,12 @@ angular.module("proton.cache", [])
     */
     api.delete = function(event) {
         var deferred = $q.defer();
+        var indexMessage = _.findIndex(messagesCached, {ID: event.ID});
 
         // Delete message
-        messagesCached.splice(_.findIndex(messagesCached, function(message) {
-            return message.ID === event.ID;
-        }), 1);
+        if (indexMessage !== -1) {
+            messagesCached.splice(indexMessage, 1);
+        }
 
         // Delete conversation
         conversationsCached = _.reject(conversationsCached, function(conversation) {

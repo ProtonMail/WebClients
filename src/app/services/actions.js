@@ -868,7 +868,6 @@ angular.module('proton.actions', [])
             // Generate message event to delete the message
             events.push({Action: 0, ID: message.ID});
 
-            // Generate conversation event
             if(angular.isDefined(conversation)) {
                 if(conversation.NumMessages === 1) {
                     // Delete conversation
@@ -886,7 +885,8 @@ angular.module('proton.actions', [])
 
                     // Decrease the number of message
                     conversation.NumMessages--;
-                    conversation.LabelIDs = _.uniq(labelIDs);
+
+                    // Generate conversation event
                     events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                 }
             }
