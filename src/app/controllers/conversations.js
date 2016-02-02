@@ -143,13 +143,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         }
         else if ( bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT ) {
-            if ($rootScope.mobileMode===false) {
-                notify({
-                    message: '<i class="fa fa-mobile"></i>', 
-                    classes: 'notification-info bottom-right',
-                    duration: 1000
-                });
-            }
             $rootScope.mobileMode = true;
             $rootScope.rowMode = false;
             $rootScope.layoutMode = 'columns';
