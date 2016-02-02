@@ -21,7 +21,10 @@
 	.sidebar,
 	#pm_header,
 	#pm_toolbar_responsive,
-	#pm_list
+	#pm_list,
+	#pm_toolbar,
+	#pm_background,
+	#pm_view article.closed
 	 {
 		display: none !important;
 		visibility: hidden !important;

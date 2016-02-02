@@ -149,10 +149,10 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
-            domains: function($q, Domain) {
+            domains: function($q, User) {
                 var deferred = $q.defer();
 
-                Domain.available().then(function(result) {
+                User.domains().then(function(result) {
                     if (result.data && angular.isArray(result.data.Domains)) {
                         deferred.resolve(result.data.Domains);
                     } else {
