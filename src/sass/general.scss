@@ -10,8 +10,7 @@ html.protonmail {
 			overflow-y: initial;
 			-webkit-overflow-scrolling: touch;
 		}
-		&.rows,
-		&.columns.mobileMode {
+		&.mobileMode {
 			#body {
 				height: 100%;
 				#pm_main {

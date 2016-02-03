@@ -128,7 +128,7 @@ body#reset {
 	}
 }
 
-@media (max-width: $mobile-landscape) {
+body.mobileMode {
 	#pm_login {
 		input[type="text"],
 		input[type="password"] {

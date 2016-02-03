@@ -140,7 +140,7 @@ html.protonmail body.activeComposer {
 }
 
 
-@media (max-width: $tablet-landscape) {
+body.mobileMode {
 
     .pm_modal {
         &.small {
@@ -210,7 +210,7 @@ html.protonmail body.activeComposer {
 }
 
 
-@media (max-width: $mobile-landscape) {
+body.mobileMode {
     .pm_modal {
         &.small {
             .modal-dialog {

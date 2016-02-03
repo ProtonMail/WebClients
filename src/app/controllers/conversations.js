@@ -46,7 +46,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.selectedOrder = $stateParams.sort || "-date";
         $scope.page = parseInt($stateParams.page || 1);
         $scope.startWatchingEvent();
-        $scope.mobileResponsive();
         $scope.refreshConversations().then(function() {
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
@@ -54,12 +53,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $log.error(error);
         });
 
-        $scope.toolbarOffset();
-        $rootScope.$watch('layoutMode', function() {
-            $scope.toolbarOffset();
-        });
-
-        $timeout( $scope.mobileResponsive, 600);
     };
 
     $scope.watchElements = function() {
@@ -107,53 +100,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
     };
 
-    $scope.toolbarOffset = function() {
-        // This function calculates the width of the scrollbars (OS dependant) and tries to style the toolbar accordingly
-        function getScrollBarWidth () {
-            var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
-
-            widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
-            $outer.remove();
-
-            return 100 - widthWithScroll;
-        }
-        $('#pm_conversations #pm_toolbar').css('right', getScrollBarWidth());
-    };
-
-    $scope.mobileResponsive = function() {
-        var bodyWidth = $('body').outerWidth();
-
-        // Force Mobile
-        if ( bodyWidth > CONSTANTS.MOBILE_BREAKPOINT ) {
-            if ($rootScope.mobileMode===true) {
-                notify({
-                    message: '<i class="fa fa-desktop"></i>', 
-                    classes: 'notification-info bottom-right',
-                    duration: 1000
-                });
-            }
-            $rootScope.mobileMode = false;
-            if (authentication.user.ViewLayout===0 && $rootScope.rowMode) {
-                $rootScope.rowMode = false;
-                $rootScope.layoutMode = 'columns';
-            }
-            else if (authentication.user.ViewLayout===1) {
-                $rootScope.rowMode = true;
-                $rootScope.layoutMode = 'rows';
-            }
-        }
-        else if ( bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT ) {
-            $rootScope.mobileMode = true;
-            $rootScope.rowMode = false;
-            $rootScope.layoutMode = 'columns';
-        }
-    };
-
     $scope.startWatchingEvent = function() {
-        angular.element($window).bind('resize', $window._.debounce(function() {
-            $scope.mobileResponsive();
-        }, 30));
-        angular.element($window).bind('orientationchange', $scope.mobileResponsive);
 
         $scope.$on('refreshConversations', function() {
             $scope.refreshConversations();
@@ -175,8 +122,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
-        angular.element($window).unbind('resize', $scope.mobileResponsive);
-        angular.element($window).unbind('orientationchange', $scope.mobileResponsive);
+        angular.element($window).unbind('resize', $rootScope.mobileResponsive);
+        angular.element($window).unbind('orientationchange', $rootScope.mobileResponsive);
     };
 
     $scope.actionsDelayed = function() {
@@ -655,7 +602,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                             $rootScope.mobileMode = false;
                             $rootScope.layoutMode = mode;
                             authentication.user.ViewLayout = newLayout;
-                            $scope.mobileResponsive();
+                            $rootScope.mobileResponsive();
                         } else if (response.Error) {
                             error(response.Error);
                         } else {

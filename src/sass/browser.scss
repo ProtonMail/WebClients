@@ -22,11 +22,7 @@
     }
 }
 
-.ua-edge {
-    .rows#pm_conversations .list .pm_checkbox input {
-        margin-top: 11px;
-    }
-}
+.ua-edge {}
 
 .ua-ios {
     #pm_captcha {
@@ -44,9 +40,6 @@
 
 .ua-windows_nt {
     &.ua-firefox {
-        .columns#pm_conversations .list div.message aside label {
-            top: -9px;
-        }
         #pm_composer .composer .pm_button {
             line-height: 26px;
         }

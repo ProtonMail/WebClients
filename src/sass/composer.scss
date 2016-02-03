@@ -627,7 +627,7 @@
 	}
 }
 
-@media (max-width: $tablet-landscape) {
+body.mobileMode {
 	#pm_composer .composer {
 		&.maximized {
 			left: 20px;
