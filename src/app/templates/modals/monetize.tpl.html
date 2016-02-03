@@ -9,10 +9,17 @@
                 <h1>Help us to enhance ProtonMail</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sapiente maiores quisquam soluta, nesciunt! Dolorum, modi, eligendi. Maiores est, delectus, laudantium sint architecto, suscipit eaque voluptate quidem debitis optio necessitatibus!</p>
                 <form novalidate ng-submit="ctrl.donate()" class="pm_form">
-                    <p>
-                        <button class="pm_button" ng-repeat="amount in ctrl.amounts" ng-click="ctrl.amount = amount" ng-class="{'active': amount === ctrl.amount}">{{ amount | currency: ctrl.currency }}</button>
-                        <input type="text" placeholder="Other amount" ng-modal="ctrl.amount" />
-                    </p>
+                    <div>
+                        <span class="pm_buttons">
+                            <a href="#" ng-repeat="currency in ctrl.currencies" type="button" ng-click="ctrl.currency = currency" ng-class="{'active': currency === ctrl.currency, 'divider': $first === false}">{{ currency }}</a>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="pm_buttons">
+                            <a href="#" ng-repeat="amount in ctrl.amounts" type="button" ng-click="ctrl.amount = amount" ng-class="{'active': amount === ctrl.amount, 'divider': $first === false}">{{ amount | currency: ctrl.currency }}</a>
+                        </span>
+                        <input type="text" placeholder="Other amount" ng-model="ctrl.amount" />
+                    </div>
                     <p>
                         <button class="pm_button primary" type="submit">{{ 'DONATE' | translate }}</button>
                     </p>
@@ -23,7 +30,7 @@
                     </a>
                 </p>
                 <p>
-                    <button class="pm_button primary" ng-click="upgrade()">{{ 'UPGRADE' | translate }}</button>
+                    <button class="pm_button primary" type="button" ng-click="upgrade()">{{ 'UPGRADE' | translate }}</button>
                 </p>
             </div>
         </div>

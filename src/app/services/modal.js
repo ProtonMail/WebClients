@@ -1101,8 +1101,9 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/monetize.tpl.html',
         controller: function(params) {
             this.amounts = [5, 10, 25, 50, 100];
-            this.amount = 25;
-            this.currency = 'EUR';
+            this.currencies = ['EUR', 'USD', 'CHF'];
+            this.amount = 25; // default value for the amount
+            this.currency = 'EUR'; // default currency
 
             this.donate = function() {
                 if (angular.isDefined(params.donate) && angular.isFunction(params.donate)) {
