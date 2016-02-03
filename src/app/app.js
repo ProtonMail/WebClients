@@ -234,7 +234,8 @@ angular.module('proton', [
 
     // Intro / Tour
     $rootScope.tourStart = function() {
-        
+
+        $rootScope.step1 = true;        
         $rootScope.tourActive = true; // used for body class and CSS.
 
         $('#tour-jason').tooltip({
@@ -247,9 +248,13 @@ angular.module('proton', [
             placement: "top"
         });
 
-        $('#tour-jason, #tour-fromage').tooltip('show');
-        $('.tooltip:visible').addClass('tour animated rubberBand');
+        $timeout( function() {
+            $('#tour-jason, #tour-fromage').tooltip('show');
+            $('.tooltip:visible').addClass('tour animated rubberBand');
+        }, 1000);
+
     };
+    
     $rootScope.tourEnd = function() {
         $rootScope.tourActive = false;
         $('#tour-jason, #tour-fromage').tooltip('hide');
