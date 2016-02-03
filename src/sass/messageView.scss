@@ -54,6 +54,7 @@
         }
         &.open {
             & > div.summary {
+                margin-bottom: -.5rem;
                 .meta {
                     .contact {
                         strong {
@@ -70,22 +71,18 @@
                         em {
                             display: inline-block;
                         }
-                    }
-                }
-            }
-            & > div.details {
-                table {
-                    tr {
-                        td {
-                            .contact {
-                                display: block;
-                            }
+                        span {
+                            width: 3rem;
+                            text-align: left;
+                            display: inline-block;
+                            float: left;
                         }
                     }
                 }
             }
             .labelz {
-                padding: 0 10px 10px;
+                padding: 10px 0 0;
+                line-height: 16px;
                 background: $read;
                 float: left;
                 width: 100%;
@@ -146,6 +143,9 @@
                     em {
                         display: none;
                     }
+                    span {
+                        color: $gray-medium;
+                    }
                 }
             }
             .location {
@@ -165,7 +165,7 @@
                     position: relative;
                     top: 3px;
                     label {
-                        margin-left: 2px;
+                        margin-left: .25rem;
                     }
                 }
             }
@@ -179,25 +179,39 @@
                     background: #fff;
                 }
             }
-            table.recipients-details {
+            .recipients-details {
                 font-size: .9em;
-                tr {
-                    td {
-                        vertical-align: top;
-                        .where {
-                            font-weight: normal;
-                            display: block;
-                            width: 2rem;
-                        }
-                        .contact {
-                            strong {
-                                font-weight: normal;
-                            }
-                            em {
-                                font-style: italic;
-                                color: $gray-medium;
-                            }
-                        }
+                line-height: 20px;
+                width: 100%;
+                .where,
+                .from {
+                    font-weight: normal;
+                    display: inline-block;
+                    width: 3rem;
+                    float: left;
+                    color: $gray-medium;
+                }
+                .contact {
+                    strong {
+                        font-weight: normal;
+                    }
+                    em {
+                        font-style: italic;
+                        color: $gray-medium;
+                    }
+                }
+                ul {
+                    display: inline-block;
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    line-height: 20px;
+                    li {
+                        display: block;
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                        line-height: 20px;
                     }
                 }
             }
@@ -206,15 +220,24 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                padding-bottom: 10px;
+                line-height: 20px;
                 strong {
-                    display: block;
-                    float: left;
-                    width: 2rem;
+                    display: inline-block;
                     color: $gray-medium;
                     font-weight: normal;
+                    display: inline-block;
                 }
                 font-size: .9em;
+                .from {
+                    width: 3rem;
+                    color: $gray-medium;
+                }
+            }
+            .action-row {
+                padding: 10px 0;
+                clear: both;
+                float: left;
+                width: 100%;
             }
         }
         .toggleDetails {
@@ -321,16 +344,10 @@ body.mobileMode {
                 }
             }
             & > div.details {
-                table {
-                    tr {
-                        td {
-                            .contact {
-                                em {
-                                    display: block;
-                                    padding-bottom: .5rem;
-                                }
-                            }
-                        }
+                .contact {
+                    em {
+                        display: block;
+                        padding-bottom: .5rem;
                     }
                 }
             }

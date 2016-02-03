@@ -28,6 +28,13 @@ body {
         float: left;
         overflow: hidden;
     }
+
+    &.rows {
+        #conversation-view,
+        #pm_view {
+            width: 100%;
+        }
+    }
     #pm_thread {
         height: 100%;
         overflow-y: auto;

@@ -8,7 +8,8 @@
     ng-class="{
         selected: conversation.Selected,
         active: active(conversation),
-        read: conversation.NumUnread === 0 || conversation.IsRead === 1
+        read: conversation.NumUnread === 0 || conversation.IsRead === 1,
+        hasLabels: (conversation.LabelIDs | labels).length > 0
     }">
         <div class="selected-bar"></div>
         <div class="selection">

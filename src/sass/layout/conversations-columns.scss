@@ -58,7 +58,6 @@
             cursor: pointer;
         }
         .senders {
-            width: calc(100% - 10rem);
             cursor: pointer;
         }
         .senders.full {
@@ -110,8 +109,14 @@
             white-space: nowrap;
             height: 18px;
             text-align: right;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 100%;
+            z-index: 2;
             label {
                 margin-left: .25rem;
+                background: $white;
             }
         }
     }
@@ -121,12 +126,22 @@
             color: $gray;
             font-weight: normal;
         }
+        .pm_labels {
+            label {
+                background: $read;
+            }
+        }
     }
     &.active {
         background: $active;
         color: $white;
         h4 {
             color: $white;
+        }
+        .pm_labels {
+            label {
+                background: $active;
+            }
         }
     }
     &.selected {
@@ -137,6 +152,11 @@
                 -ms-transition: width .25s ease;
                  -o-transition: width .25s ease;
                     transition: width .25s ease;
+        }
+    }
+    &.hasLabels {
+        .row .senders {
+            width: 50%;
         }
     }
 }
