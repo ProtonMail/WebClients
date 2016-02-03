@@ -31,7 +31,9 @@
                 <tbody>
                     <tr ng-repeat="key in address.Keys">
                         <td class="text-center">
-                            <i class="fa fa-arrow-up" ng-show="$first"></i>
+                            <a href="#" pt-tooltip="TODO">
+                                <i class="fa fa-arrow-up" ng-show="$first"></i>
+                            </a>
                         </td>
                         <td>
                             <span class="pm_badge" ng-class="{'success': key.decrypted === true}">{{ key.fingerprint }}</span>
