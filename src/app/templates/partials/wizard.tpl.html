@@ -5,33 +5,26 @@
         {{ 'CLOSE_THIS_WIZARD' | translate }}
     </a>
 
-    <div class="step" ng-show="step1">
+    <div class="step" ng-show="tourStep === 1">
         <h1 class="badge animated tada">01</h1>
+        <h2 class="title animated fadeIn">Welcome to personal and secure Inbox</h2>
+        <div class="body animated fadeIn">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+        </div>
+    </div>
+
+    <div class="step" ng-show="tourStep === 2">
+        <h1 class="badge animated tada">02</h1>
         <h2 class="title animated fadeIn">Change Layout</h2>
         <div class="body animated fadeIn">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>You can change the appearance of your mailbox by clicking <em>settings</em> <strong>(1)</strong> <span class="fa fa-arrow"></span> <em>appearance</em> <strong>(2)</strong>. Here you will find options to switch between the current column layout and a classic row layout. You can akso add your own CSS to bring in your very own styles or use one of our prebuilt themes.</p>
         </div>
     </div>
 
-    <div class="step" ng-show="step2">
-        <h1 class="badge animated tada">02</h1>
-        <h2 class="title animated fadeIn">Manage Labels</h2>
-        <div class="body animated fadeIn">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-    </div>
-
-    <div class="step" ng-show="step3">
+    <div class="step" ng-show="tourStep === 3">
         <h1 class="badge animated tada">03</h1>
         <h2 class="title animated fadeIn">Help &amp; Support</h2>
         <div class="body animated fadeIn">
@@ -44,19 +37,35 @@
         </div>
     </div>
 
+    <div class="step" ng-show="tourStep === 4">
+        <h1 class="badge animated tada">04</h1>
+        <h2 class="title animated fadeIn">Change Layout</h2>
+        <div class="body animated fadeIn">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
     <div class="navigation">
-        <a href="#" class="next pm_button primary">
+        <a href="#" class="next pm_button primary" ng-click="tourNext()">
             {{ 'OKAY_NEXT_TIP' | translate }}
         </a>
         <ul class="pagination">
-            <li class="active">
-                <a href="#" ng-click="step1 = true; step2 = false; step3 = false;"></a>
+            <li ng-class="{ 'active': tourStep === 1 }">
+                <a href="#" ng-click="tourGo('1')"></a>
             </li>
-            <li>
-                <a href="#" ng-click="step1 = false; step2 = true; step3 = false;"></a>
+            <li ng-class="{ 'active': tourStep === 2 }">
+                <a href="#" ng-click="tourGo('2')"></a>
             </li>
-            <li>
-                <a href="#" ng-click="step1 = false; step2 = false; step3 = true;"></a>
+            <li ng-class="{ 'active': tourStep === 3 }">
+                <a href="#" ng-click="tourGo('3')"></a>
+            </li>
+            <li ng-class="{ 'active': tourStep === 4 }">
+                <a href="#" ng-click="tourGo('4')"></a>
             </li>
         </ul>
     </div>
