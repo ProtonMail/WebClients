@@ -257,11 +257,11 @@ angular.module("proton.controllers.Settings")
                 confirm: function() {
                     Organization.delete({ExternalSubscriptionID: $scope.subscription.ExternalSubscriptionID}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            $scope.organization = null;
+                            _.extend($scope.subscription, result.data.Subscriptions[0]);
+                            eventManager.call();
                             confirmModal.deactivate();
                             notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBE'), classes: 'notification-success'});
-                            $scope.organization = null;
-                            eventManager.call();
-                            _.extend($scope.subscription, result.data.Subscriptions[0]);
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
@@ -308,27 +308,27 @@ angular.module("proton.controllers.Settings")
 
         switch (name) {
             case 'plus':
-            future = {
-                Plan: name,
-                Use2FA: 0,
-                MaxDomains: $scope.domainPlus.value,
-                MaxMembers: 1,
-                MaxAddresses: $scope.addressPlus.value,
-                MaxSpace: $scope.spacePlus.value
-            };
-            break;
+                future = {
+                    Plan: name,
+                    Use2FA: 0,
+                    MaxDomains: $scope.domainPlus.value,
+                    MaxMembers: 1,
+                    MaxAddresses: $scope.addressPlus.value,
+                    MaxSpace: $scope.spacePlus.value
+                };
+                break;
             case 'business':
-            future = {
-                Plan: name,
-                Use2FA: 0,
-                MaxDomains: $scope.domainBusiness.value,
-                MaxMembers: $scope.memberBusiness.value,
-                MaxAddresses: $scope.addressBusiness.value,
-                MaxSpace: $scope.spaceBusiness.value
-            };
-            break;
+                future = {
+                    Plan: name,
+                    Use2FA: 0,
+                    MaxDomains: $scope.domainBusiness.value,
+                    MaxMembers: $scope.memberBusiness.value,
+                    MaxAddresses: $scope.addressBusiness.value,
+                    MaxSpace: $scope.spaceBusiness.value
+                };
+                break;
             default:
-            break;
+                break;
         }
 
         configuration = {
@@ -346,10 +346,9 @@ angular.module("proton.controllers.Settings")
             }
         };
 
-        promises.push(Payment.plan(configuration));
+        promises.push(Payment.plan(configuration)); // Check the configuration choosed
         promises.push(Payment.sources()); // Return the credit card
 
-        // Check configuration choosed
         networkActivityTracker.track($q.all(promises).then(function(results) {
             var plan = results[0];
             var card = results[1];
@@ -361,14 +360,14 @@ angular.module("proton.controllers.Settings")
                 organizationName = $translate.instant('MY_ORGANIZATION');
             }
 
-            if(angular.isDefined(plan.data) && plan.data.Code === 1000 && angular.isDefined(card.data) && card.data.Code === 1000) {
+            if (angular.isDefined(plan.data) && plan.data.Code === 1000 && angular.isDefined(card.data) && card.data.Code === 1000) {
                 configuration.Organization = {
                     DisplayName: organizationName
                 };
                 // Open payment modal
                 paymentModal.activate({
                     params: {
-                        create: organization === true, // new?
+                        create: organization === true, // new organization?
                         card: card,
                         configuration: configuration,
                         change: function(organization) {
