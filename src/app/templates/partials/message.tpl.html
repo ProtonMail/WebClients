@@ -53,7 +53,7 @@ ng-class="{
             </span>
         </div>
         <div class="time">
-            <i class="fa fa-paperclip" ng-if="message.NumAttachments > 0"></i>
+            <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
             <span>{{ message.Time | localReadableTime }}</span>
         </div>
         <div class="status">

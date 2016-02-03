@@ -49,7 +49,7 @@
         </b>
     </p>
 
-    <p ng-if="message.NumAttachments > 0">
+    <p ng-show="message.NumAttachments > 0">
         <span>
             {{message.NumAttachments}}
             <i ng-hide="message.NumAttachments === 1">{{ 'ATTACHMENTS' | translate }} </i>

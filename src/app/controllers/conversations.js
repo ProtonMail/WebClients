@@ -933,7 +933,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                                     confirmModal.deactivate();
                                     // Notify user
                                     notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
-                                }, 
+                                },
                                 function(error) {
                                     notify({message: 'Error during the empty request', classes: 'notification-danger'});
                                     $log.error(error);

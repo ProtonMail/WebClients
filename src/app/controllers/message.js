@@ -213,12 +213,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @param {Boolean} scroll
      */
     $scope.initialization = function(scroll) {
-        if($rootScope.printMode === true) {
+        if ($rootScope.printMode === true) {
             networkActivityTracker.track(cache.getMessage($stateParams.id).then(function(message) {
                 $scope.message = message;
                 $scope.initView();
             }));
-        } else if($rootScope.targetID === $scope.message.ID) {
+        } else if ($rootScope.targetID === $scope.message.ID) {
             $scope.initView(scroll);
         }
     };
@@ -310,11 +310,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.message.expand = true;
 
         // Mark message as read
-        if($scope.message.IsRead === 0) {
+        if ($scope.message.IsRead === 0) {
             $scope.read();
         }
 
-        if(angular.isUndefined($scope.message.decryptedBody)) {
+        if (angular.isUndefined($scope.message.decryptedBody)) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
                     // NOTE Plain text detection doesn't work. Check #1701
@@ -354,17 +354,17 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         $(this).unbind("error").addClass("pm_broken");
                     });
 
-                    if($rootScope.printMode === true) {
+                    if ($rootScope.printMode === true) {
                         $timeout(function() {
                             $window.print();
                         }, 1000);
                     }
 
-                    if($rootScope.targetID === $scope.message.ID) {
+                    if ($rootScope.targetID === $scope.message.ID) {
                         $rootScope.$broadcast('targetLoaded');
                     }
 
-                    if(scroll === true) {
+                    if (scroll === true) {
                         $scope.scrollToMe();
                     }
                 };
@@ -825,5 +825,5 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
-    $scope.initialization();
+    $scope.initialization(true);
 });

@@ -137,6 +137,36 @@ angular.module('proton.routes', [
         }
     })
 
+    .state('invite', {
+        url: '/invite',
+        resolve: {
+            direct: function($http, $q, $state, $rootScope, url, User) {
+                var deferred = $q.defer();
+
+                if (!$rootScope.preInvited) {
+                    User.direct().$promise.then(function(data) {
+                        if (data && data.Code === 1000) {
+                            if (data.Direct === 1) {
+                                $state.go('step1');
+                                deferred.resolve();
+                            } else {
+                                window.location.href = 'https://protonmail.com/invite';
+                                deferred.reject();
+                            }
+                        } else {
+                            $state.go('login');
+                            deferred.reject();
+                        }
+                    });
+                } else {
+                    deferred.resolve();
+                }
+
+                return deferred.promise;
+            }
+        }
+    })
+
     .state('step1', {
         url: '/create/new',
         views: {
@@ -149,10 +179,10 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
-            domains: function($q, User) {
+            domains: function($q, Domain) {
                 var deferred = $q.defer();
 
-                User.domains().then(function(result) {
+                Domain.available().then(function(result) {
                     if (result.data && angular.isArray(result.data.Domains)) {
                         deferred.resolve(result.data.Domains);
                     } else {
@@ -173,7 +203,7 @@ angular.module('proton.routes', [
                             if (data.Direct === 1) {
                                 deferred.resolve();
                             } else {
-                                window.location.href = '/invite';
+                                window.location.href = 'https://protonmail.com/invite';
                                 deferred.reject();
                             }
                         } else {
