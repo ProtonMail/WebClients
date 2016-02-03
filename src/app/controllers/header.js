@@ -100,19 +100,6 @@ angular.module("proton.controllers.Header", [])
 
             params.words = $scope.params.searchMessageInput;
 
-            if (params.words.substring(0,2) === '$$') {
-                
-                if (params.words === '$$tourStart') {
-                    $rootScope.tourStart();
-                    return;
-                }
-                if (params.words === '$$tourEnd') {
-                    $rootScope.tourEnd();
-                    return;
-                }
-                
-            }
-
             $state.go('secured.search', params);
         } else {
             $state.go('secured.inbox');

@@ -81,6 +81,7 @@ angular.module('proton', [
     'proton.transformation',
     'proton.maxComposerHeight',
     'proton.drag',
+    'proton.wizard',
 
     // Filters
     'proton.filters',
@@ -231,86 +232,6 @@ angular.module('proton', [
 
     // SVG Polyfill for Edge
     svg4everybody();
-
-    // Intro / Tour
-    $rootScope.tourStart = function() {
-        $rootScope.tourActive = true; // used for body class and CSS.
-        $rootScope.tourGo('1');
-    };
-
-    $rootScope.tourEnd = function() {
-        $rootScope.tourActive = false;
-        $('.tooltip').tooltip('hide');
-    };
-
-    $rootScope.tourNext = function() {
-        if ($rootScope.tourStep === 4) {
-            $rootScope.tourEnd();
-        }
-        else {
-            $rootScope.tourStep = Number($rootScope.tourStep + 1);
-        }
-    };
-
-    $rootScope.tourGo = function(step) {
-        
-        $rootScope.tourStep = 0;
-
-        $('.tooltip').tooltip('hide');
-
-        if (step==='1') {
-            $rootScope.tourStep = 1;
-        }
-
-        if (step==='2') {
-            $rootScope.tourStep = 2;
-            $('#tour-jason').tooltip({
-                title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                placement: "right"
-            });
-            $('#tour-fromage').tooltip({
-                title: "Lorem ipsum dolor sit amet",
-                placement: "top"
-            });
-            $timeout( function() {
-                $('#tour-jason, #tour-fromage').tooltip('show');
-                $('.tooltip:visible').addClass('tour animated rubberBand');
-            }, 600);            
-        }
-
-        if (step==='3') {
-            $rootScope.tourStep = 3;
-            $('#tour-jason').tooltip({
-                title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                placement: "right"
-            });
-            $('#tour-fromage').tooltip({
-                title: "Lorem ipsum dolor sit amet",
-                placement: "top"
-            });
-            $timeout( function() {
-                $('#tour-jason, #tour-fromage').tooltip('show');
-                $('.tooltip:visible').addClass('tour animated rubberBand');
-            }, 600);
-        }
-
-        if (step==='4') {
-            $rootScope.tourStep = 4;
-            $('#tour-jason').tooltip({
-                title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                placement: "right"
-            });
-            $('#tour-fromage').tooltip({
-                title: "Lorem ipsum dolor sit amet",
-                placement: "top"
-            });
-            $timeout( function() {
-                $('#tour-jason, #tour-fromage').tooltip('show');
-                $('.tooltip:visible').addClass('tour animated rubberBand');
-            }, 600);
-        }
-
-    };
 
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {

@@ -1,7 +1,6 @@
-<div id="pm_wizard" ng-show="tourActive===true">
-
-    <a ng-click="tourEnd()" class="close">
-        <i class="fa fa-times"></i> 
+<div id="pm_wizard" ng-show="tourActive === true">
+    <a href="#" ng-click="tourEnd()" class="close">
+        <i class="fa fa-times"></i>
         {{ 'CLOSE_THIS_WIZARD' | translate }}
     </a>
 
@@ -56,18 +55,17 @@
         </a>
         <ul class="pagination">
             <li ng-class="{ 'active': tourStep === 1 }">
-                <a href="#" ng-click="tourGo('1')"></a>
+                <a href="#" ng-click="tourGo(1)"></a>
             </li>
             <li ng-class="{ 'active': tourStep === 2 }">
-                <a href="#" ng-click="tourGo('2')"></a>
+                <a href="#" ng-click="tourGo(2)"></a>
             </li>
             <li ng-class="{ 'active': tourStep === 3 }">
-                <a href="#" ng-click="tourGo('3')"></a>
+                <a href="#" ng-click="tourGo(3)"></a>
             </li>
             <li ng-class="{ 'active': tourStep === 4 }">
-                <a href="#" ng-click="tourGo('4')"></a>
+                <a href="#" ng-click="tourGo(4)"></a>
             </li>
         </ul>
     </div>
-
 </div>
