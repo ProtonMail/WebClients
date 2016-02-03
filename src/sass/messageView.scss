@@ -63,7 +63,16 @@
                 }
             }
         }
-        &.details {
+        &.details.open {
+            & > div.summary {
+                .meta {
+                    .contact {
+                        em {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
             & > div.details {
                 table {
                     tr {
@@ -122,10 +131,20 @@
                 display: inline-block;
                 margin-left: .5rem;
             }
+            .time {
+                .fa-paperclip {
+                    display: inline-block;
+                    width: 1rem;
+                    text-align: left;
+                }
+            }
             .meta {
                 .contact {
                     strong {
                         font-weight: normal;
+                    }
+                    em {
+                        display: none;
                     }
                 }
             }
