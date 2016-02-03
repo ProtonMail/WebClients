@@ -2,11 +2,10 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings pm_form" pt-height>
         <p>&nbsp;</p>
-        <span class="pm_select">
+        <span class="pm_select inline">
             <select ng-model="range" ng-options="option.label for option in years" ng-change="loadInvoices(range.value)"></select>
             <i class="fa fa-angle-down"></i>
         </span>
-        <p>&nbsp;</p>
         <legend>{{ 'ORGANIZATION_HISTORY' | translate }}</legend>
         <table class="pm_table hidden-xs">
             <thead>
