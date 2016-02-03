@@ -55,12 +55,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.initialization = function() {
         var loc = tools.currentLocation();
 
-        if(angular.isDefined(conversation)) {
+        if (angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
+            var messages = cache.queryMessagesCached($scope.conversation.ID);
 
-            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
-                var messages = cache.queryMessagesCached($scope.conversation.ID);
-
+            if($state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
                 // Remove trashed message
                 if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
@@ -70,10 +69,12 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
                 }
+            }
 
-                // Sort by time
-                messages = _.sortBy(messages, 'Time');
+            // Sort by time
+            messages = _.sortBy(messages, 'Time');
 
+            if (messages.length > 0) {
                 var latest = _.last(messages);
 
                 if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
@@ -121,7 +122,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         } else {
             $scope.back();
         }
-
     };
 
     $scope.refreshConversation = function() {

@@ -123,10 +123,12 @@ angular.module("proton.controllers.Header", [])
         var parameters = {};
 
         parameters.words = $scope.params.searchMessageInput;
-        parameters.from = $scope.params.from;
-        parameters.to = $scope.to;
-        parameters.subject = $scope.subject;
+        parameters.from = $scope.ctrl.from;
+        parameters.to = $scope.ctrl.to;
+        parameters.subject = $scope.ctrl.subject;
         parameters.attachments = parseInt($scope.ctrl.attachments);
+
+        console.log(parameters);
 
         if(parseInt($('#search_folder').val()) !== -1) {
             parameters.label = $('#search_folder').val();

@@ -17,8 +17,8 @@ angular.module("proton.models.domains", [])
             return $http.get(url.get() + '/domains');
         },
         /**
-         * Return the list of domains available during the signing process
-         */
+        * Return the list of domains available during the signing process
+        */
         available: function() {
             return $http.get(url.get() + '/domains/available');
         },
