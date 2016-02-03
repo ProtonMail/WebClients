@@ -1,4 +1,5 @@
 #pm_contacts {
+
 	.pm_table {
 		td {
 			vertical-align: middle;
@@ -29,6 +30,9 @@
 }
 
 body.mobileMode {
+	&#secured-contacts #pm_main {
+		overflow: auto;
+	}
 	#pm_contacts {
 		.pm_table {
 			tr {
