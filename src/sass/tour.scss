@@ -42,3 +42,24 @@ body.tourActive {
 		z-index: 5;
 	}
 }
+
+#pm_wizard {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 150px;
+	background: $white;
+	z-index: 9999;
+	box-shadow: 0 -1rem 1rem rgba(0,0,0,.1);
+	a.close {}
+	.badge {}
+	.title {}
+	.body {}
+	.navigation {
+		.next {}
+		.pagination {
+			.active {}
+		}
+	}
+}
