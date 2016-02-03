@@ -1093,4 +1093,34 @@ angular.module("proton.modals", [])
             };
         }
     });
+})
+
+.factory('monetizeModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/monetize.tpl.html',
+        controller: function(params) {
+            this.amounts = [5, 10, 25, 50, 100];
+            this.amount = 25;
+            this.currency = 'EUR';
+
+            this.donate = function() {
+                if (angular.isDefined(params.donate) && angular.isFunction(params.donate)) {
+                    params.donate();
+                }
+            };
+
+            this.upgrade = function() {
+                if (angular.isDefined(params.upgrade) && angular.isFunction(params.upgrade)) {
+                    params.upgrade();
+                }
+            };
+
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
 });

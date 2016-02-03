@@ -1,0 +1,36 @@
+<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header" ng-show="ctrl.title">
+                <h4 class="modal-title">{{ctrl.title}}</h4>
+            </div>
+            <div class="modal-body text-center">
+                <h1>Help us to enhance ProtonMail</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sapiente maiores quisquam soluta, nesciunt! Dolorum, modi, eligendi. Maiores est, delectus, laudantium sint architecto, suscipit eaque voluptate quidem debitis optio necessitatibus!</p>
+                <form novalidate ng-submit="ctrl.donate()" class="pm_form">
+                    <p>
+                        <button class="pm_button" ng-repeat="amount in ctrl.amounts" ng-click="ctrl.amount = amount" ng-class="{'active': amount === ctrl.amount}">{{ amount | currency: ctrl.currency }}</button>
+                        <input type="text" placeholder="Other amount" ng-modal="ctrl.amount" />
+                    </p>
+                    <p>
+                        <button class="pm_button primary" type="submit">{{ 'DONATE' | translate }}</button>
+                    </p>
+                </form>
+                <p>
+                    <a href="#" ng-click="upgrade()">
+                        <img src="http://redpandanetwork.org/blog/wp-content/uploads/2014/06/GiantPandaEatingBamboo.jpg" alt="PANDA" />
+                    </a>
+                </p>
+                <p>
+                    <button class="pm_button primary" ng-click="upgrade()">{{ 'UPGRADE' | translate }}</button>
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            Thank you for your help!
+            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+        </div>
+    </div>
+    <div class="modal-overlay" ng-click="ctrl.close()"></div>
+</div>

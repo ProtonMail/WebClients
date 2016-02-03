@@ -1,6 +1,6 @@
 angular.module('proton.wizard', [])
 
-.directive('wizard', function($rootScope, $timeout) {
+.directive('wizard', function($rootScope, $timeout, monetizeModal) {
     return {
         restrict: 'E',
         replace: true,
@@ -81,6 +81,21 @@ angular.module('proton.wizard', [])
                             $('#tour-jason, #tour-fromage').tooltip('show');
                             $('.tooltip:visible').addClass('tour animated rubberBand');
                         }, 600);
+                        break;
+                    case 5:
+                        monetizeModal.activate({
+                            params: {
+                                donate: function() {
+                                    monetizeModal.deactivate();
+                                },
+                                upgrade: function() {
+                                    monetizeModal.deactivate();
+                                },
+                                close: function() {
+                                    monetizeModal.deactivate();
+                                }
+                            }
+                        });
                         break;
                     default:
                         break;
