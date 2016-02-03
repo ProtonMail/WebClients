@@ -240,7 +240,7 @@ angular.module('proton', [
 
     $rootScope.tourEnd = function() {
         $rootScope.tourActive = false;
-        $('#tour-jason, #tour-fromage').tooltip('hide');
+        $('.tooltip').tooltip('hide');
     };
 
     $rootScope.tourNext = function() {
