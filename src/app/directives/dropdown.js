@@ -1,59 +1,51 @@
 angular.module('proton.dropdown', [])
 
-.directive('dropdown', function ($timeout) {
+.directive('dropdown', function ($timeout, $document) {
     return function (scope, element, attrs) {
-        var animationDuration = 50;
-        var timer;
+        // Functions
         var click = function(event) {
             if (element.hasClass('active')) {
-                hideDropdown(element);
+                hideDropdown();
             } else {
-                showDropdown(element);
+                showDropdown();
             }
 
             return false;
         };
-        var mouseenter = function() {
-            $timeout.cancel(timer);
-        };
-        var mouseleave = function() {
-            timer = $timeout(function () {
-                hideDropdown(element);
-            }, 1000);
+
+        var outside = function(event) {
+            if (element !== event.target && !element[0].contains(event.target)) {
+                hideDropdown();
+            }
         };
 
-        element.bind('click', click);
-
-        scope.$on('$destroy', function() {
-            element.unbind('click', click);
-            $timeout.cancel(timer);
-            element.parent().find('.pm_dropdown').unbind('mouseleave', mouseleave).unbind('mouseenter', mouseenter);
-            element.unbind('mouseleave', mouseleave).unbind('mouseenter', mouseenter);
-        });
-
-        // If there are no touch events, we can make use of mouse events
-        if (!Modernizr.touchevents) {
-            element.parent().find('.pm_dropdown').bind('mouseleave', mouseleave).bind('mouseenter', mouseenter);
-            element.bind('mouseleave', mouseleave).bind('mouseenter', mouseenter);
-        }
-
-        function showDropdown(element) {
+        var showDropdown = function() {
             var parent = element.parent();
             var dropdown = parent.find('.pm_dropdown');
             var next = element.next();
 
             element.addClass('active');
             dropdown.show();
-        }
+            $document.on('click', outside);
+        };
 
-        function hideDropdown(element) {
+        var hideDropdown = function() {
             var parent = element.parent();
             var dropdown = parent.find('.pm_dropdown');
             var next = element.next();
 
             element.removeClass('active');
             dropdown.hide();
-        }
+            $document.off('click', outside);
+        };
+
+        // Listeners
+        element.on('click', click);
+
+        scope.$on('$destroy', function() {
+            element.off('click', click);
+            $document.off('click', outside);
+        });
     };
 })
 
