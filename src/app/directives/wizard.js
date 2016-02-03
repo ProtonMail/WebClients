@@ -83,10 +83,15 @@ angular.module('proton.wizard', [])
                         }, 600);
                         break;
                     case 5:
+                        // Hide the wizard
+                        $rootScope.tourActive = true;
+                        // Open monetize modal
                         monetizeModal.activate({
                             params: {
                                 donate: function(amount, currency) {
+                                    // Close monetize modal
                                     monetizeModal.deactivate();
+                                    // Open donate modal
                                     donateModal.activate({
                                         params: {
                                             amount: amount,
@@ -98,10 +103,13 @@ angular.module('proton.wizard', [])
                                     });
                                 },
                                 upgrade: function() {
+                                    // Close monetize modal
                                     monetizeModal.deactivate();
+                                    // Go to the dashboard page
                                     $state.go('secured.dashboard');
                                 },
                                 close: function() {
+                                    // Close monetize modal
                                     monetizeModal.deactivate();
                                 }
                             }
