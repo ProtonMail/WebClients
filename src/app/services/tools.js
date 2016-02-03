@@ -1,6 +1,37 @@
 angular.module("proton.tools", ["proton.constants"])
-.factory("tools", function($log, $state, $stateParams, $compile, $templateCache, $q, CONSTANTS) {
+.factory("tools", function($log, $state, $stateParams, $compile, $templateCache, $q, $window, CONSTANTS) {
     var tools = {};
+    var setPublishableKeyForStripe = function() {
+        $window.Stripe.setPublishableKey(CONSTANTS.STRIPE_API_KEY);
+    };
+
+    /**
+     * Load stripe script https://stripe.com/docs/stripe.js
+     */
+    tools.loadStripe = function() {
+        // First, we check if Stripe JS is already loaded
+        if (angular.isUndefined($window.Stripe)) {
+            var script = $window.document.createElement('script');
+
+            script.type= 'text/javascript';
+            script.src = 'https://js.stripe.com/v2/';
+            $window.document.body.appendChild(script);
+
+
+            if(script.readyState) { // IE
+                script.onreadystatechange = function() {
+                    if ( script.readyState === "loaded" || script.readyState === "complete" ) {
+                        script.onreadystatechange = null;
+                        setPublishableKeyForStripe();
+                    }
+                };
+            } else { // Others
+                script.onload = function() {
+                    setPublishableKeyForStripe();
+                };
+            }
+        }
+    };
 
     tools.hasSessionStorage = function() {
         var mod = 'modernizr';

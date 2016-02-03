@@ -1,6 +1,6 @@
 angular.module('proton.wizard', [])
 
-.directive('wizard', function($rootScope, $timeout, $state, monetizeModal) {
+.directive('wizard', function($rootScope, $timeout, $state, monetizeModal, donateModal) {
     return {
         restrict: 'E',
         replace: true,
@@ -85,9 +85,17 @@ angular.module('proton.wizard', [])
                     case 5:
                         monetizeModal.activate({
                             params: {
-                                donate: function() {
-                                    // TODO donate !!!
+                                donate: function(amount, currency) {
                                     monetizeModal.deactivate();
+                                    donateModal.activate({
+                                        params: {
+                                            amount: amount,
+                                            currency: currency,
+                                            close: function() {
+                                                donateModal.deactivate();
+                                            }
+                                        }
+                                    });
                                 },
                                 upgrade: function() {
                                     monetizeModal.deactivate();
