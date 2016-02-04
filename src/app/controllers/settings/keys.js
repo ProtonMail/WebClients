@@ -12,6 +12,7 @@ angular.module("proton.controllers.Settings")
     Key,
     networkActivityTracker,
     notify,
+    generateModal,
     pmcw
 ) {
     // Detect if the current browser is Safari to disable / hide download action
@@ -165,45 +166,12 @@ angular.module("proton.controllers.Settings")
      * Generate an other key pair
      * @param {Object} address
      */
-    $scope.generate = function(address, numBits) {
-        var title = $translate.instant('GENERATE_KEY');
-        var message = $translate.instant('CONFIRM_GENERATE_KEY');
-        var mailboxPassword = authentication.getPassword();
-
-        confirmModal.activate({
+    $scope.generate = function(address) {
+        generateModal.activate({
             params: {
-                title: title,
-                message: message,
-                confirm: function() {
-                    pmcw.generateKeysRSA(address.Email, mailboxPassword, numBits)
-                    .then(function(result) {
-                        var publicKeyArmored = result.publicKeyArmored;
-                        var privateKeyArmored = result.privateKeyArmored;
-
-                        networkActivityTracker.track(Key.create({
-                            AddressID: address.ID,
-                            PrivateKey: privateKeyArmored
-                        }).then(function(result) {
-                            if (result.data && result.data.Code === 1000) {
-                                // Close the confirm modal
-                                confirmModal.deactivate();
-                                // Call event log manager
-                                eventManager.call();
-                            } else if (result.data && result.data.Error) {
-                                notify({message: result.data.Error, classes: 'notification-danger'});
-                            } else {
-                                notify({message: 'Error during create key request', classes: 'notification-danger'});
-                            }
-                        }, function(error) {
-                            notify({message: 'Error during the create key request', classes: 'notification-danger'});
-                        }));
-                    }, function(error) {
-                        notify({message: error, classes: 'notification-danger'});
-                        confirmModal.deactivate();
-                    });
-                },
+                address: address,
                 cancel: function() {
-                    confirmModal.deactivate();
+                    generateModal.deactivate();
                 }
             }
         });

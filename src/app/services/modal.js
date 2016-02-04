@@ -1071,6 +1071,54 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/generate.tpl.html',
+        controller: function(params) {
+            // Variables
+            var mailboxPassword = authentication.getPassword();
+
+            // Parameters
+            this.address = params.address;
+            this.sizes = [{label: '2048', value: 2048}, {label: '4096', value: 4096}];
+            this.size = this.sizes[0];
+
+            // Functions
+            this.submit = function() {
+                pmcw.generateKeysRSA(this.address.Email, mailboxPassword, this.size.value)
+                .then(function(result) {
+                    var publicKeyArmored = result.publicKeyArmored;
+                    var privateKeyArmored = result.privateKeyArmored;
+
+                    networkActivityTracker.track(Key.create({
+                        AddressID: this.address.ID,
+                        PrivateKey: privateKeyArmored
+                    }).then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            this.cancel();
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: 'Error during create key request', classes: 'notification-danger'});
+                        }
+                    }.bind(this), function(error) {
+                        notify({message: 'Error during the create key request', classes: 'notification-danger'});
+                    }));
+                }.bind(this), function(error) {
+                    notify({message: error, classes: 'notification-danger'});
+                });
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
+})
+
 // Modal to delete account
 .factory('deleteAccountModal', function(pmModal) {
     return pmModal({
