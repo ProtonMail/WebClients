@@ -116,7 +116,12 @@
             text-align: right;
             font-size: .9em;
             cursor: pointer;
+            position: relative;
             .pull-left {
+                position: absolute;
+                left: 10px;
+                top: 0;
+                z-index: 1;
                 .meta,
                 .location {
                     float: left;
@@ -127,8 +132,24 @@
             .status {
                 display: inline-block;
                 margin-left: .5rem;
+                position: relative;
+                z-index: 2;
+                background: $read;
             }
             .time {
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: -1rem;
+                    width: 1rem;
+                    height: 25px;
+                    top: 0;
+                    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, $read 100%);
+                    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,$read 100%);
+                    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,$read 100%);
+
+                }
                 .fa-paperclip {
                     display: inline-block;
                     width: 1rem;
@@ -163,7 +184,7 @@
             .labels {
                 .pm_labels {
                     position: relative;
-                    top: 3px;
+                    top: 5px;
                     label {
                         margin-left: .25rem;
                     }
@@ -174,6 +195,8 @@
             background: $read;
             padding: 0 10px 10px;
             clear: both;
+            position: relative;
+            z-index: 3;
             .pm_buttons {
                 a {
                     background: #fff;
@@ -294,11 +317,14 @@ body.mobileMode {
                 height: 60px;
                 line-height: 25px;
                 position: relative;
+                .pull-left {
+                    position: static;
+                }
                 .meta {
                     position: absolute;
                     left: 10px;
                     top: 5px;
-                    max-width: 45%;
+                    max-width: initial;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -306,6 +332,9 @@ body.mobileMode {
                     .contact {
                         strong {
                             font-weight: normal;
+                        }
+                        .from {
+                            display: none;
                         }
                     }
                 }
@@ -328,9 +357,13 @@ body.mobileMode {
                     top: 5px;
                     background: $read;
                     max-width: 45%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    span {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: block;
+                        width: 100%;
+                    }
                 }
                 .status {
                     position: absolute;
@@ -353,6 +386,7 @@ body.mobileMode {
             }
             &.details {
                 & > div.summary {
+                    margin-bottom: 0;
                     .meta {
                         position: static;
                         left: initial;
