@@ -59,8 +59,6 @@ body {
                     text-overflow: ellipsis;
                     overflow: hidden;
                     color: lighten(#dadae5, 5%);
-                    font-size: .8rem;
-                    max-width: 65%;
                     &:hover {
                         color: $white;
                     }
@@ -197,6 +195,7 @@ body {
                         text-overflow: ellipsis;
                         padding: 0;
                         font-size: .8rem;
+                        max-width: 100%;
                         &:hover {
                             color: $white;
                         }
