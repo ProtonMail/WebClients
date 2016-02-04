@@ -19,6 +19,10 @@ angular.module("proton.models.user", [])
                 method: 'post',
                 url: url.get() + '/users/:token'
             },
+            code :{
+                method: 'post',
+                url: url.get() + '/users/code'
+            },
             // GET
             get: {
                 method: 'get',
