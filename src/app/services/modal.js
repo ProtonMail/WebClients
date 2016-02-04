@@ -195,24 +195,6 @@ angular.module("proton.modals", [])
     });
 })
 
-// contact modal
-.factory('wizardModal', function(pmModal) {
-    return pmModal({
-        controller: function(params, $timeout) {
-            this.version = params.version;
-            this.title = params.title;
-
-            this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
-            };
-        },
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/wizard.tpl.html'
-    });
-})
-
 // label modal
 .factory('labelModal', function(pmModal) {
     return pmModal({
