@@ -1315,7 +1315,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             $timeout(function() {
                                                 $rootScope.targetID = result.Sent.ID; // Define target ID
                                                 $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
-                                            }, 100);
+                                            }, 500);
 
                                             deferred.resolve(result); // Resolve finally the promise
                                         }

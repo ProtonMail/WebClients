@@ -42,13 +42,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         delete $rootScope.targetID;
     });
 
-    $scope.$on('targetLoaded', function(event) {
-        if ($scope.scrolled === false) {
-            $scope.scrolled = true;
-            $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
-        }
-    });
-
     /**
      * Method call at the initialization of this controller
      */
