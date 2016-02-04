@@ -2,6 +2,7 @@
     position: relative;
     padding-right: 1rem;
     padding-left: 1rem;
+    border-bottom: 1px solid $border;
     .singleStar {
         position: absolute;
         right: 15px;
@@ -106,6 +107,7 @@
     	width: 100%;
         // opacity: 0;
         clear: both;
+        padding-top: .5rem;
     }
     article.message {
     	clear: both;
@@ -294,6 +296,15 @@
             }
             .contact strong {
                 font-weight: 700;
+            }
+            header {
+                .pm_labels {
+                    background: #fff;
+                    .pm_label {
+                        box-shadow: 0 0 0 4px #fff;
+                        background: #fff;
+                    }
+                }
             }
         }
         &.read {

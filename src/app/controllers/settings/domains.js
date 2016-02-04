@@ -14,6 +14,7 @@ angular.module("proton.controllers.Settings")
     Domain,
     domainModal,
     domains,
+    eventManager,
     Member,
     members,
     mxModal,
@@ -28,6 +29,7 @@ angular.module("proton.controllers.Settings")
     $scope.organization = organization.data.Organization;
     $scope.domains = domains.data.Domains;
     $scope.members = members.data.Members;
+    $scope.addressMemberID = $scope.members[0];
 
     // Listeners
     $scope.$on('domain', function(event, domain) {
@@ -65,6 +67,66 @@ angular.module("proton.controllers.Settings")
         $scope.dmarc(domain);
     });
 
+    $scope.$on('organizationChange', function(event, organization) {
+        $scope.organization = organization;
+    });
+
+    $scope.$on('deleteDomain', function(event, domainId) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index !== -1) {
+            $scope.domains.splice(index, 1);
+        }
+    });
+
+    $scope.$on('createDomain', function(event, domainId, domain) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            _.extend($scope.domains[index], domain);
+        }
+    });
+
+    $scope.$on('updateDomain', function(event, domainId, domain) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            _.extend($scope.domains[index], domain);
+        }
+    });
+
+    $scope.$on('deleteMember', function(event, memberId) {
+        var index = _.findIndex($scope.members, {ID: memberId});
+
+        if (index !== -1) {
+            $scope.members.splice(index, 1);
+        }
+    });
+
+    $scope.$on('createMember', function(event, memberId, member) {
+        var index = _.findIndex($scope.members, {ID: memberId});
+
+        if (index === -1) {
+            $scope.members.push(member);
+        } else {
+            _.extend($scope.members[index], member);
+        }
+    });
+
+    $scope.$on('updateMember', function(event, memberId, member) {
+        var index = _.findIndex($scope.members, {ID: memberId});
+
+        if (index === -1) {
+            $scope.members.push(member);
+        } else {
+            _.extend($scope.members[index], member);
+        }
+    });
+
     /**
      * Open modal process to add a custom domain.
      * @param {Object} domain
@@ -81,28 +143,21 @@ angular.module("proton.controllers.Settings")
             5. add dkim
             6. add dmarc
         */
-        if (domain.DomainName) {
-            if ((domain.VerifyState !== 2)) {
-                $scope.verification(domain);
-            } else {
-                if (true) { // TODO check if address exists
-                    $scope.addAddress(domain);
-                }
-                else {
-                    if (domain.MxState !== 3) {
-                        $scope.mx(domain);
-                    } else {
-                        if ((domain.SpfState !== 3)) {
-                            $scope.spf(domain);
-                        } else {
-                            // ...
-                        }
-                    }
-                }
-            }
-        } else {
+        if (!domain.DomainName) {
             // show first step
             $scope.addDomain();
+        } else if ((domain.VerifyState !== 2)) {
+            $scope.verification(domain);
+        } else if (domain.Addresses.length === 0) {
+            $scope.addAddress(domain);
+        } else if (domain.MxState !== 3) {
+            $scope.mx(domain);
+        } else if (domain.SpfState !== 3) {
+            $scope.spf(domain);
+        } else if (domain.DkimState !== 4) {
+            $scope.dkim(domain);
+        } else if (domain.DmarcState !== 3) {
+            $scope.dmarc(domain);
         }
     };
 
@@ -139,6 +194,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_DELETED'), classes: 'notification-success'});
                             $scope.domains.splice(index, 1); // Remove domain in interface
+                            eventManager.call(); // Call event log manager
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
@@ -158,6 +214,7 @@ angular.module("proton.controllers.Settings")
 
     /**
      * Delete address
+     * @param {Object} address
      * @param {Object} domain
      */
     $scope.deleteAddress = function(address, domain) {
@@ -168,10 +225,11 @@ angular.module("proton.controllers.Settings")
                 title: $translate.instant('DELETE_ADDRESS'),
                 message: $translate.instant('Are you sure you want to delete this address?'),
                 confirm: function() {
-                    networkActivityTracker.track(Address.delete(address.AddressID).then(function(result) {
+                    networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('ADDRESS_DELETED'), classes: 'notification-success'});
                             domain.Addresses.splice(index, 1); // Remove address in interface
+                            eventManager.call(); // Call event log manager
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
@@ -190,17 +248,67 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Open a modal to enable an address
+     */
+    $scope.enableAddress = function(address) {
+        networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
+            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                notify({message: $translate.instant('ADDRESS_ENABLED'), classes: 'notification-success'});
+                address.Status = 1;
+            } else if(angular.isDefined(result.data) && result.data.Error) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
+            } else {
+                notify({message: $translate.instant('ERROR_DURING_ENABLE'), classes: 'notification-danger'});
+            }
+        }, function(error) {
+            notify({message: $translate.instant('ERROR_DURING_ENABLE'), classes: 'notification-danger'});
+        }));
+    };
+
+    /**
+     * Open a modal to disable an address
+     */
+    $scope.disableAddress = function(address) {
+        confirmModal.activate({
+            params: {
+                title: $translate.instant('DISABLE_ADDRESS'),
+                message: $translate.instant('Are you sure you want to disable this address?'),
+                confirm: function() {
+                    networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            notify({message: $translate.instant('ADDRESS_DISABLED'), classes: 'notification-success'});
+                            address.Status = 0;
+                            confirmModal.deactivate();
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_DISABLE'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('ERROR_DURING_DISABLE'), classes: 'notification-danger'});
+                    }));
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
      * Open modal process to add a custom domain
      */
-    $scope.addDomain = function() {
+    $scope.addDomain = function(domain) {
         domainModal.activate({
             params: {
                 step: 1,
+                domain: domain,
                 submit: function(name) {
                     networkActivityTracker.track(Domain.create({Name: name}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             notify({message: $translate.instant('DOMAIN_CREATED'), classes: 'notification-success'});
                             $scope.domains.push(result.data.Domain);
+                            eventManager.call(); // Call event log manager
                             domainModal.deactivate();
                             // open the next step
                             $scope.verification(result.data.Domain);
@@ -212,6 +320,10 @@ angular.module("proton.controllers.Settings")
                     }, function(error) {
                         notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
                     }));
+                },
+                next: function() {
+                    domainModal.deactivate();
+                    $scope.verification(domain);
                 },
                 cancel: function() {
                     domainModal.deactivate();
@@ -225,13 +337,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.refreshStatus = function(domains) {
-        networkActivityTracker.track(Domain.query().then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                $scope.domains = result.data.Domains;
-            } else {
-                notify({message: $translate.instant('ERROR_WITH_DOMAIN'), classes: 'notification-danger'});
-            }
-        }));
+        networkActivityTracker.track(eventManager.call());
     };
 
     /**
@@ -255,7 +361,11 @@ angular.module("proton.controllers.Settings")
                                     notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                                     break;
                                 case 1:
-                                    notify({message: $translate.instant('HAS_CODE_BUT_WRONG'), classes: 'notification-danger'});
+                                    notify({
+                                        message: $translate.instant('HAS_CODE_BUT_WRONG'),
+                                        classes: 'notification-danger',
+                                        duration: 30000
+                                    });
                                     break;
                                 case 2:
                                     notify({message: $translate.instant('DOMAIN_VERIFIED'), classes: 'notification-success'});
@@ -276,6 +386,9 @@ angular.module("proton.controllers.Settings")
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
                 },
+                next: function() {
+                    $scope.addAddress(domain);
+                },
                 close: function() {
                     verificationModal.deactivate();
                 }
@@ -293,17 +406,19 @@ angular.module("proton.controllers.Settings")
             params: {
                 step: 3,
                 domain: domain,
-                submit: function(address) {
+                members: $scope.members,
+                add: function(address, member) {
                     networkActivityTracker.track(
                         Address.create({
                             Local: address, // local part
-                            Domain: domain.DomainName, // either you custom domain or a protonmail domain
-                            UserID: '' // UserID of the User who should own this address
+                            Domain: domain.DomainName,
+                            MemberID: member.ID // either you custom domain or a protonmail domain
                         })
                     ).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('DOMAIN_ADDED'), classes: 'notification-success'});
-                            $scope.refreshStatus();
+                            notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
+                            domain.Addresses.push(result.data.Address);
+                            eventManager.call(); // Call event log manager
                         } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
                             notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
                         } else if(angular.isDefined(result.data) && result.data.Error) {
@@ -314,6 +429,10 @@ angular.module("proton.controllers.Settings")
                     }, function(error) {
                         notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
                     });
+                },
+                next: function() {
+                    addressModal.deactivate();
+                    $scope.mx(domain);
                 },
                 cancel: function() {
                     addressModal.deactivate();
@@ -327,8 +446,6 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.mx = function(domain) {
-        var index = $scope.domains.indexOf(domain);
-
         mxModal.activate({
             params: {
                 domain: domain,
@@ -347,6 +464,8 @@ angular.module("proton.controllers.Settings")
                                     notify({message: $translate.instant('PRIORITY_IS_WRONG'), classes: 'notification-danger'});
                                     break;
                                 case 3:
+                                    var index = $scope.domains.indexOf(domain);
+
                                     notify({message: $translate.instant('MX_VERIFIED'), classes: 'notification-success'});
                                     $scope.domains[index] = result.data.Domain;
                                     // open the next step
@@ -379,8 +498,6 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.spf = function(domain) {
-        var index = $scope.domains.indexOf(domain);
-
         spfModal.activate({
             params: {
                 domain: domain,
@@ -399,6 +516,8 @@ angular.module("proton.controllers.Settings")
                                     notify({message: $translate.instant('DETECTED_RECORD_BUT_WRONG'), classes: 'notification-danger'});
                                     break;
                                 case 3:
+                                    var index = $scope.domains.indexOf(domain);
+
                                     notify({message: $translate.instant('SPF_VERIFIED'), classes: 'notification-success'});
                                     $scope.domains[index] = result.data.Domain;
                                     // open the next step
@@ -545,17 +664,16 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Initialize user model value (select)
-     * @param {Object} address
+     * Return member Object for a specific memberId
+     * @param {String} memberId
+     * @return {Object} member
      */
-    $scope.initMember = function(address) {
-        _.each($scope.members, function(member) {
-            var found = _.findWhere(member.Addresses, {ID: address.AddressID});
+    $scope.member = function(memberId) {
+        var member = _.findWhere($scope.members, {ID: memberId});
 
-            if(angular.isDefined(found)) {
-                address.select = member;
-            }
-        });
+        if (angular.isDefined(member)) {
+            return member;
+        }
     };
 
     /**

@@ -1,16 +1,16 @@
 angular.module('proton', [
+    'as.sortable',
     'cgNotify',
     'ngCookies',
     'ngIcal',
+    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
     'pascalprecht.translate',
     'pikaday',
-    'SmoothScrollbar',
+    // 'SmoothScrollbar',
     'ui.router',
-    'as.sortable',
 
     // Constant
     'proton.constants',
@@ -23,25 +23,26 @@ angular.module('proton', [
     'proton.routes',
 
     // Models
-    'proton.models',
-    'proton.models.label',
-    'proton.models.message',
-    'proton.models.contact',
-    'proton.models.user',
-    'proton.models.reset',
-    'proton.models.bug',
-    'proton.models.setting',
-    'proton.models.attachment',
-    'proton.models.eo',
-    'proton.models.logs',
-    'proton.models.events',
-    'proton.models.payments',
-    'proton.models.organization',
-    'proton.models.members',
-    'proton.models.memberKeys',
+    'proton.models.keys',
     'proton.models.addresses',
-    'proton.models.domains',
+    'proton.models.attachment',
+    'proton.models.bug',
+    'proton.models.contact',
     'proton.models.conversations',
+    'proton.models.domains',
+    'proton.models.eo',
+    'proton.models.events',
+    'proton.models.label',
+    'proton.models.logs',
+    'proton.models.memberKeys',
+    'proton.models.members',
+    'proton.models.message',
+    'proton.models.organization',
+    'proton.models.payments',
+    'proton.models.reset',
+    'proton.models.setting',
+    'proton.models.user',
+    'proton.models',
 
     // Config
     'proton.config',
@@ -205,21 +206,23 @@ angular.module('proton', [
     tools
 ) {
     angular.element($window).bind('load', function() {
+        // Enable FastClick
+        FastClick.attach(document.body);
+
         if (window.location.hash==='#spin') {
             $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
         }
     });
 
-    // Less than 1024 / Tablet Mode
+    // Less than 1030 / Tablet Mode
     $rootScope.$on('sidebarMobileToggle', function() {
-        console.log('sidebarMobileToggle');
         $rootScope.showSidebar = !$rootScope.showSidebar;
     });
 
     $rootScope.showWelcome = true;
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
-    $rootScope.updateMessage = false;
+    //$rootScope.updateMessage = false;
     $rootScope.showSidebar = false;
     $rootScope.themeJason = false;
     $rootScope.isLoggedIn = authentication.isLoggedIn();
@@ -228,10 +231,6 @@ angular.module('proton', [
 
     // SVG Polyfill for Edge
     svg4everybody();
-
-    // FastClick polyfill for mobile devices
-    // https://github.com/ftlabs/fastclick
-    FastClick.attach(document.body);
 
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
@@ -260,11 +259,12 @@ angular.module('proton', [
 //
 .factory('authHttpResponseInterceptor', function($q, $injector, $rootScope) {
     var notification = false;
+    var upgrade_notification = false;
 
     return {
         response: function(response) {
             // Close notification if Internet wake up
-            if(notification) {
+            if (notification) {
                 notification.close();
                 notification = false;
             }
@@ -272,14 +272,15 @@ angular.module('proton', [
             if (angular.isDefined(response.data) && angular.isDefined(response.data.Code)) {
                 // app update needd
                 if (response.data.Code === 5003) {
-                    if ($rootScope.updateMessage===false) {
-                        $rootScope.updateMessage = true;
-                        $injector.get('notify')({
-                            classes: 'notification-info noclose',
-                            message: 'A new version of ProtonMail is available. Please refresh this page and then logout and log back in to automatically update.',
-                            duration: '0'
-                        });
+                    if ( upgrade_notification ) {
+                        upgrade_notification.close();
                     }
+
+                    upgrade_notification = $injector.get('notify')({
+                        classes: 'notification-info noclose',
+                        message: 'A new version of ProtonMail is available. Please refresh this page and then logout and log back in to automatically update.',
+                        duration: '0'
+                    });
                 }
                 else if(response.data.Code === 5004) {
                     $injector.get('notify')({
@@ -336,6 +337,39 @@ angular.module('proton', [
                 } else {
                     $injector.get('authentication').logout(true, false);
                 }
+            } else if (rejection.status === 403) {
+                var $http = $injector.get('$http');
+                var loginPasswordModal = $injector.get('loginPasswordModal');
+                var User = $injector.get('User');
+                var notify = $injector.get('notify');
+                var eventManager = $injector.get('eventManager');
+                var deferred = $q.defer();
+
+                // Open the open to enter login password because this request require lock scope
+                loginPasswordModal.activate({
+                    params: {
+                        submit: function(loginPassword) {
+                            // Send request to unlock the current session for administrator privileges
+                            User.unlock({Password: loginPassword}).$promise.then(function(data) {
+                                if (data.Code === 1000) {
+                                    // Close the modal
+                                    loginPasswordModal.deactivate();
+                                    // Resend request now
+                                    deferred.resolve($http(rejection.config));
+                                } else if (data.Error) {
+                                    notify({message: data.Error, classes: 'notification-danger'});
+                                    deferred.reject();
+                                }
+                            });
+                        },
+                        cancel: function() {
+                            loginPasswordModal.deactivate();
+                            deferred.reject();
+                        }
+                    }
+                });
+
+                return deferred.promise;
             } else if (rejection.status === 504) { // Time-out
                 notification = $injector.get('notify')({
                     message: 'Please retry.',
@@ -347,6 +381,7 @@ angular.module('proton', [
         }
     };
 })
+
 .config(function($httpProvider, CONFIG) {
     //Http Intercpetor to check auth failures for xhr requests
     $httpProvider.interceptors.push('authHttpResponseInterceptor');
@@ -505,19 +540,6 @@ angular.module('proton', [
         "notes":"http://protonmail.dev/blog/",
         "date":"17 Apr. 2015"
     };
-})
-
-/**
- * Detect if the user use safari private mode
- */
-.run(function(notify, tools) {
-    if(tools.hasSessionStorage() === false) {
-        notify({
-            message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.',
-            classes: 'notification-danger',
-            duration: 0
-        });
-    }
 })
 
 //

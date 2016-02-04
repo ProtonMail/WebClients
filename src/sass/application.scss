@@ -1,9 +1,6 @@
 // global variables
 @import "variables";
 
-// other themes
-@import "high-contrast.scss";
-
 // Fonts
 @import "fonts.scss";
 
@@ -44,6 +41,7 @@
 @import "latest.scss";
 @import "autocomplete.scss";
 @import "feedback.scss";
+@import "keys.scss";
 
 @import "print.scss";
 
@@ -63,6 +61,7 @@
 @import "pm-grid.scss";
 @import "pm-range.scss";
 @import "pm-tag.scss";
+@import "pm-badge.scss";
 
 // Directives
 @import "pt-height.scss";

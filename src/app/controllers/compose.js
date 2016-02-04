@@ -539,6 +539,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
 
+        $scope.isOver = false;
+
         // This timeout is really important to load the structure of Squire
         $timeout(function() {
             $rootScope.$broadcast('squireHeightChanged');
@@ -1057,7 +1059,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     if(angular.isDefined(result) && result.Code === 1000) {
                         var events = [];
                         var conversation = cache.getConversationCached(result.Message.ConversationID);
-                        var labelIDs = angular.isDefined(conversation) ? conversation.LabelIDs : [];
+                        var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
                         var numMessages;
 
                         if (actionType === CREATE) {
@@ -1083,17 +1085,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         // Update draft in message list
                         events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
 
-                        labelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
-
                         // Generate conversation event
                         events.push({Action: 3, ID: result.Message.ConversationID, Conversation: {
                             NumAttachments: result.Message.Attachments.length,
                             NumMessages: numMessages,
+                            NumUnread: numUnread,
                             Recipients: result.Message.Recipients,
                             Senders: result.Message.Senders,
                             Subject: result.Message.Subject,
                             ID: result.Message.ConversationID,
-                            LabelIDs: _.uniq(labelIDs)
+                            LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
                         }});
 
                         // Send events
@@ -1284,8 +1285,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             var events = [];
                                             var messages = cache.queryMessagesCached(result.Sent.ConversationID);
                                             var conversation = cache.getConversationCached(result.Sent.ConversationID);
-                                            var labelIDs = angular.isDefined(conversation) ? conversation.LabelIDs : [];
                                             var numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
+                                            var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
 
                                             message.sending = false; // Change status
                                             result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
@@ -1296,15 +1297,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                                 events.push({Action: 3, ID: result.Parent.ID, Message: result.Parent});
                                             }
 
-                                            labelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-
                                             events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {
                                                 NumMessages: numMessages,
+                                                NumUnread: numUnread,
                                                 Recipients: result.Sent.Recipients,
                                                 Senders: result.Sent.Senders,
                                                 Subject: result.Sent.Subject,
                                                 ID: result.Sent.ConversationID,
-                                                LabelIDs: _.uniq(labelIDs)
+                                                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.sent],
+                                                LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
                                             }});
 
                                             cache.events(events); // Send events to the cache manager
@@ -1314,7 +1315,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             $timeout(function() {
                                                 $rootScope.targetID = result.Sent.ID; // Define target ID
                                                 $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
-                                            }, 100);
+                                            }, 500);
 
                                             deferred.resolve(result); // Resolve finally the promise
                                         }

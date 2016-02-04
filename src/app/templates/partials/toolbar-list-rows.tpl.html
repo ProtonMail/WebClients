@@ -3,19 +3,19 @@
         <div class="pull-right">
             <span class="pm_buttons layout">
                 <a href="#" pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}" ng-click="toggleLayout()"><i class="fa fa-columns" ng-class="{ 'fa-rotate-90': layoutMode === 'columns' }"></i></a>
-                <span id="layoutTip" ng-show="showTip"> 
-                    <i class="fa fa fa-bullseye animated pulse" pt-tooltip="Click to change layout" ng-show="showTip"></i>
+                <span id="layoutTip" ng-show="showTip">
+                    <i class="fa fa-bullseye animated pulse" pt-tooltip="Click to change layout" ng-show="showTip"></i>
                 </span>
-            </span>        
-            <paginator ng-hide="idDefined() && rowMode === true" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.ELEMENTS_PER_PAGE" change="selectPage" />
-            <span class="pm_buttons" ng-show="idDefined() && rowMode === true">
+            </span>
+            <paginator ng-hide="idDefined() && layoutMode === 'rows'" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.ELEMENTS_PER_PAGE" change="selectPage" />
+            <span class="pm_buttons" ng-show="idDefined() && layoutMode === 'rows'">
                 <a ng-click="nextConversation(conversation)" pt-tooltip="{{ 'PREVIOUS' | translate }}">
                     <i class="fa fa-chevron-left"></i>
                 </a>
                 <a ng-click="previousConversation(conversation)" class="divider" pt-tooltip="{{ 'NEXT' | translate }}">
                     <i class="fa fa-chevron-right"></i>
                 </a>
-            </span> 
+            </span>
         </div>
         <span class="pm_buttons back" ng-if="idDefined() &&  layoutMode === 'rows'">
             <a ng-click="back()" pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">
@@ -25,9 +25,13 @@
         <label class="pm_checkbox" ng-if="!idDefined() || layoutMode === 'columns'">
             <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
         </label>
-        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
+        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }" ng-show="messageButtons === 0">
             <a class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
             <a class="fa fa-eye-slash divider" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+        </span>
+        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }" ng-show="messageButtons === 1">
+            <a class="fa fa-eye-slash" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+            <a class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
         </span>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
             <a pt-tooltip="{{ 'MOVE_TO_TRASH' | translate }}" ng-click="move('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-trash-o"></a>
@@ -84,7 +88,7 @@
                 <a ng-click="orderBy('date')">
                     <i class="fa fa-history"></i> {{ 'DATE' | translate }}: {{ 'OLD_TO_NEW' | translate }}
                 </a>
-                <a pt-tooltip="{{ 'SHOW_ALL' | translate }}" ng-click="clearFilter()">
+                <a ng-click="clearFilter()">
                     <i class="fa fa-list"></i> {{ 'SHOW_ALL' | translate }}
                 </a>
                 <a ng-click="filterBy('unread')">

@@ -26,6 +26,12 @@
             border-width: 0 0 1px 0;
         }
     }
+    &.thick {
+        th,
+        td {
+            padding: .5rem 1rem;
+        }
+    }
     &.bordered {
         border: 1px solid $border;
     }
@@ -60,7 +66,7 @@
             color: $primary;
             text-decoration: none;
             text-transform: uppercase;
-        }        
+        }
     }
     th, td {
         line-height: $rowHeight;
@@ -76,6 +82,9 @@
             margin: 0;
             height: 36px;
             line-height: 36px;
+            &.link {
+                text-decoration: none;
+            }
             &.round {
                 width: 36px;
             }
@@ -98,10 +107,8 @@
             width: 300px;
         }
         span {
-            width: 300px;
             overflow: hidden;
             text-overflow: ellipsis;
-            display: block;
             white-space: nowrap;
             max-width: 100%;
         }

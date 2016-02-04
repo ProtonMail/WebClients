@@ -24,9 +24,9 @@
                             <img src="assets/img/2.png">
                         </label>
                     </div>
-                    <div class="clearfix">
-                        <button class="btn btn-sm btn-primary" type="submit">{{ 'SAVE' | translate }}</button>
-                    </div>
+                    <button class="btn btn-sm btn-primary" type="submit">
+                        {{ 'SAVE' | translate }}
+                    </button>
                 </form>
 
             </section>
@@ -77,11 +77,34 @@
         </div>
 
         <div class="row">
+            <section class="settig pm_form full">
+                <form method="post" class="toolbar-button-options" novalidate ng-submit="saveButtonsPosition(buttonsForm)" name="buttonsForm">
+                    <legend>{{ 'TOOLBAR' | translate }}</legend>
+                    <p>{{ 'READ_UNREAD_POSITION' | translate }}</p>
+                    <label for="">
+                        <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
+                        <span ng-click="appearance.MessageButtons = 0; saveButtonsPosition(buttonsForm)" class="pm_buttons">
+                            <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
+                            <a href="#" class="dead divider"><i class="fa fa fa-eye-slash"></i></a>
+                        </span>
+                    </label>
+                    <label for="">
+                        <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
+                        <span ng-click="appearance.MessageButtons = 1; saveButtonsPosition(buttonsForm)" class="pm_buttons">
+                            <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
+                            <a href="#" class="dead divider"><i class="fa fa fa-eye"></i></a>
+                        </span>
+                    </label>
+                </form>
+            </section>
+        </div>
+
+        <div class="row">
 
             <section class="setting pm_form full">
 
-                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
-                    <legend>Custom Theme</legend>
+                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
+                    <legend>{{ 'CUSTOM_THEME' | translate }}</legend>
                     <div class="clearfix" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                         <p class="alert alert-info">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
                         <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
@@ -92,10 +115,6 @@
                         <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
                     </div>
                 </form>
-                <form method="post" ng-submit="apiTest()" ng-if="false"  >
-                    <button type="submit" class="btn btn-sm btn-warning">API Test</button>
-                </form>
-
 
                 <legend>Additional Themes (Experimental)</legend>
                 <p class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> Loading themes will override your current theme!</p>

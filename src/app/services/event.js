@@ -1,20 +1,22 @@
 angular.module("proton.event", ["proton.constants"])
 	.service("eventManager", function (
+		$cookies,
+		$location,
+		$log,
+		$rootScope,
+		$state,
+		$stateParams,
 		$timeout,
 		$window,
-		$state,
-		$location,
-		$rootScope,
-		$stateParams,
-		$cookies,
-		$log,
+		$q,
 		authentication,
 		cache,
 		cacheCounters,
-		Contact,
 		CONSTANTS,
+		Contact,
 		Events,
-		notify
+		notify,
+		pmcw
 	) {
 
 		function getRandomInt(min, max) {
@@ -72,11 +74,44 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageUser: function(user) {
 				if(angular.isDefined(user)) {
+					var mailboxPassword = authentication.getPassword();
+					var promises = [];
+					var keyInfo = function(key) {
+						return pmcw.keyInfo(key.PrivateKey).then(function(info) {
+							key.created = info.created; // Creation date
+							key.bitSize = info.bitSize; // We don't use this data currently
+							key.fingerprint = info.fingerprint; // Fingerprint
+						});
+					};
+
+					// TODO remove this part for the release
 					if (CONSTANTS.HOSTS_ALLOWED.indexOf($location.host()) === -1) {
 						user.Role = 1;
 					}
 
-					authentication.user = angular.merge(authentication.user, user);
+					_.each(user.Addresses, function(address) {
+						_.each(address.Keys, function(key, index) {
+							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
+								key.decrypted = true; // We mark this key as decrypted
+								authentication.storeKey(address.ID, key.ID, package); // We store the package to the current service
+								keyInfo(key);
+							}, function(error) {
+								key.decrypted = false; // This key is not decrypted
+								keyInfo(key);
+								// If the primary (first) key for address does not decrypt, display error.
+								if(index === 0) {
+									address.disabled = true; // This address cannot be used
+									notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
+								}
+							}));
+						});
+					});
+
+					$q.all(promises).then(function() {
+						angular.merge(authentication.user, user);
+					}, function() {
+						angular.merge(authentication.user, user);
+					});
 				}
 			},
 			manageMessageCounts: function(counts) {
@@ -129,28 +164,61 @@ angular.module("proton.event", ["proton.constants"])
 					authentication.user.UsedSpace = storage;
 				}
 			},
+			manageMembers: function(members) {
+				if (angular.isDefined(members)) {
+					_.each(members, function(member) {
+						if (member.Action === DELETE) {
+							$rootScope.$broadcast('deleteMember', member.ID);
+						} else if (member.Action === CREATE) {
+							$rootScope.$broadcast('createMember', member.ID, member.Member);
+						} else if (member.Action === UPDATE) {
+							$rootScope.$broadcast('updateMember', member.ID, member.Member);
+						}
+					});
+				}
+			},
+			manageDomains: function(domains) {
+				if (angular.isDefined(domains)) {
+					_.each(domains, function(domain) {
+						if (domain.Action === DELETE) {
+							$rootScope.$broadcast('deleteDomain', domain.ID);
+						} else if (domain.Action === CREATE) {
+							$rootScope.$broadcast('createDomain', domain.ID, domain.Domain);
+						} else if (domain.Action === UPDATE) {
+							$rootScope.$broadcast('updateDomain', domain.ID, domain.Domain);
+						}
+					});
+				}
+			},
+			manageOrganization: function(organization) {
+				if (angular.isDefined(organization)) {
+					$rootScope.$broadcast('organizationChange', organization);
+				}
+			},
 			manageID: function(id) {
 				this.ID = id;
 				window.sessionStorage[CONSTANTS.EVENT_ID] = id;
 			},
 			manageNotices: function(notices) {
 				if(angular.isDefined(notices) && notices.length > 0) {
-					for(var i = 0; i < notices.length; i++) {
+					// 2 week expiration
+					var now = new Date();
+					var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 14);
+					var onClose = function(cookie_name) {
+						$cookies.put(cookie_name, 'true', { expires: expires });
+					};
+
+					for (var i = 0; i < notices.length; i++) {
 						var message = notices[i];
 						var cookie_name = 'NOTICE-'+openpgp.util.hexidump(openpgp.crypto.hash.md5(openpgp.util.str2Uint8Array(message)));
 
-						if ( !$cookies.get( cookie_name ) ) {
+						if (!$cookies.get(cookie_name)) {
 							notify({
 								message: message,
 							    templateUrl: 'templates/notifications/cross.tpl.html',
-								duration: '0'
+								duration: '0',
+								onClose: onClose(cookie_name)
 							});
-
-							// 2 week expiration
-							var now = new Date();
-							var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate()+14);
-
-							$cookies.put(cookie_name, 'true', { expires: expires });
 						}
 					}
 				}
@@ -174,6 +242,9 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageMessageCounts(data.MessageCounts);
 					this.manageConversationCounts(data.ConversationCounts);
 					this.manageStorage(data.UsedSpace);
+					this.manageDomains(data.Domains);
+					this.manageMembers(data.Members);
+					this.manageOrganization(data.Organization);
 					this.manageID(data.EventID);
 				}
 				this.manageNotices(data.Notices);
@@ -211,7 +282,11 @@ angular.module("proton.event", ["proton.constants"])
 				}
 			},
 			call: function() {
-				eventModel.interval();
+				return eventModel.get().then(function (result) {
+					if (result.data && result.data.Code === 1000) {
+						eventModel.manage(result.data);
+					}
+				});
 			},
 			stop: function () {
 				if (angular.isDefined(eventModel.promiseCancel)) {

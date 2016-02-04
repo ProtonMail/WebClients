@@ -23,7 +23,7 @@ angular.module('proton.actions', [])
             var current = tools.currentLocation();
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
-            var inInbox = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1;
+            var toInbox = mailbox === 'inbox';
             var labelIDsRemoved = _.reject([current], function(labelID) {
                 // Remove starred and labels
                 return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
@@ -31,44 +31,42 @@ angular.module('proton.actions', [])
 
             // Generate cache events
             _.each(ids, function(id) {
+                var messages = cache.queryMessagesCached(id);
                 var element = {
                     ID: id,
                     Selected: false,
                     LabelIDsRemoved: labelIDsRemoved, // Remove current location
                     LabelIDsAdded: labelIDsAdded // Add new location
                 };
-                var messages = cache.queryMessagesCached(element.ID);
 
-                if(messages.length > 0) {
-                    _.each(messages, function(message) {
-                        var copyLabelIDsAdded = labelIDsAdded;
-                        var copyLabelIDsRemoved = labelIDsRemoved;
+                _.each(messages, function(message) {
+                    var copyLabelIDsAdded = angular.copy(labelIDsAdded);
+                    var copyLabelIDsRemoved = angular.copy(labelIDsRemoved);
 
-                        if(inInbox === true) {
-                            var index;
+                    if(toInbox === true) {
+                        var index;
 
-                            if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
-                                index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+                        if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
+                            index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
 
-                                copyLabelIDsAdded.splice(index, 1);
-                                copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
-                            } else if(message.Type === 2) { // This message is sent, if you move it to trash and back, it will go back to sent
-                                index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+                            copyLabelIDsAdded.splice(index, 1);
+                            copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
+                        } else if(message.Type === 2) { // This message is sent, if you move it to trash and back, it will go back to sent
+                            index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
 
-                                copyLabelIDsAdded.splice(index, 1);
-                                copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                            } else if(message.Type === 3) { // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
-                                copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                            }
+                            copyLabelIDsAdded.splice(index, 1);
+                            copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
+                        } else if(message.Type === 3) { // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
+                            copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
                         }
+                    }
 
-                        events.push({Action: 3, ID: message.ID, Message: {
-                            ID: message.ID,
-                            LabelIDsRemoved: copyLabelIDsRemoved, // Remove current location
-                            LabelIDsAdded: copyLabelIDsAdded // Add new location
-                        }});
-                    });
-                }
+                    events.push({Action: 3, ID: message.ID, Message: {
+                        ID: message.ID,
+                        LabelIDsRemoved: copyLabelIDsRemoved, // Remove current location
+                        LabelIDsAdded: copyLabelIDsAdded // Add new location
+                    }});
+                });
 
                 events.push({Action: 3, ID: element.ID, Conversation: element});
             });
@@ -101,7 +99,6 @@ angular.module('proton.actions', [])
             var promises = [];
             var promise;
             var events = [];
-            var current = tools.currentLocation();
             var process = function() {
                 cache.events(events);
 
@@ -113,46 +110,88 @@ angular.module('proton.actions', [])
             _.each(ids, function(conversationID) {
                 var conversation = cache.getConversationCached(conversationID);
                 var messages = cache.queryMessagesCached(conversationID);
-                var toApply = _.map(_.filter(labels, function(label) {
-                    return label.Selected === true && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) === -1;
-                }), function(label) {
-                    return label.ID;
-                }) || [];
-                var toRemove = _.map(_.filter(labels, function(label) {
-                    return label.Selected === false && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(label.ID) !== -1;
-                }), function(label) {
-                    return label.ID;
-                }) || [];
 
-                if(alsoArchive === true) {
-                    toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                    toRemove.push(current);
+                if (angular.isArray(messages) && messages.length > 0) {
+                    _.each(messages, function(message) {
+                        var current;
+                        var toApplyMessage = _.chain(labels)
+                            .filter(function(label) {
+                                return label.Selected === true;
+                            })
+                            .map(function(label) {
+                                return label.ID;
+                            })
+                            .value() || [];
+
+                        var toRemoveMessage = _.chain(labels)
+                            .filter(function(label) {
+                                return label.Selected === false;
+                            })
+                            .map(function(label) {
+                                return label.ID;
+                            })
+                            .value() || [];
+
+                        message.LabelIDs = message.LabelIDs || [];
+
+                        _.each(message.LabelIDs, function(labelID) {
+                            if ([
+                                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                                CONSTANTS.MAILBOX_IDENTIFIERS.archive
+                            ].indexOf(labelID) !== -1) {
+                                current = labelID;
+                            }
+                        });
+
+                        if (alsoArchive === true) {
+                            toApplyMessage.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                            toRemoveMessage.push(current);
+                        }
+
+                        events.push({Action: 3, ID: message.ID, Message: {
+                            ID: message.ID,
+                            LabelIDsAdded: toApplyMessage,
+                            LabelIDsRemoved: toRemoveMessage
+                        }});
+                    });
                 }
 
-                var element = {
-                    ID: conversationID,
-                    Selected: false,
-                    LabelIDsAdded: toApply,
-                    LabelIDsRemoved: toRemove
-                };
+                if (angular.isDefined(conversation)) {
+                    var current = tools.currentLocation();
+                    var toApplyConversation = _.chain(labels)
+                        .filter(function(label) { return label.Selected === true; })
+                        .map(function(label) { return label.ID; })
+                        .value() || [];
 
-                _.each(messages, function(message) {
-                    events.push({Action: 3, ID: message.ID, Message: {
-                        ID: message.ID,
-                        LabelIDsAdded: toApply,
-                        LabelIDsRemoved: toRemove
+                    var toRemoveConversation = _.chain(labels)
+                        .filter(function(label) { return label.Selected === false; })
+                        .map(function(label) { return label.ID; })
+                        .value() || [];
+
+                    if (alsoArchive === true) {
+                        toApplyConversation.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                        toRemoveConversation.push(current);
+                    }
+
+                    events.push({Action: 3, ID: conversationID, Conversation: {
+                        ID: conversationID,
+                        Selected: false,
+                        LabelIDsAdded: toApplyConversation,
+                        LabelIDsRemoved: toRemoveConversation
                     }});
-                });
 
-                events.push({Action: 3, ID: conversationID, Conversation: element});
+                    _.each(toApplyConversation, function(labelID) {
+                        promises.push(Conversation.labels(labelID, ADD, ids));
+                    });
 
-                _.each(toApply, function(labelID) {
-                    promises.push(Conversation.labels(labelID, ADD, ids));
-                });
-
-                _.each(toRemove, function(labelID) {
-                    promises.push(Conversation.labels(labelID, REMOVE, ids));
-                });
+                    _.each(toRemoveConversation, function(labelID) {
+                        promises.push(Conversation.labels(labelID, REMOVE, ids));
+                    });
+                }
             });
 
             promise = $q.all(promises);
@@ -394,14 +433,13 @@ angular.module('proton.actions', [])
             // Generate cache events
             _.each(ids, function(id) {
                 var message = cache.getMessageCached(id);
+                var labelIDs = message.LabelIDs || [];
                 var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
                 var inInbox = mailbox === 'inbox';
                 var labelIDsRemoved = _.reject(message.LabelIDs, function(labelID) {
                     // Remove starred and labels
                     return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
                 });
-
-                conversationIDs.push(message.ConversationID);
 
                 if(inInbox === true) {
                     var index;
@@ -421,37 +459,53 @@ angular.module('proton.actions', [])
                     }
                 }
 
+                if (angular.isArray(labelIDsRemoved)) {
+                    labelIDs = _.difference(labelIDs, labelIDsRemoved);
+                }
+
+                if (angular.isArray(labelIDsAdded)) {
+                    labelIDs = _.uniq(labelIDs.concat(labelIDsAdded));
+                }
+
                 events.push({Action: 3, ID: id, Message: {
                     ID: id,
+                    ConversationID: message.ConversationID,
                     Selected: false,
-                    LabelIDsAdded: labelIDsAdded,
-                    LabelIDsRemoved: labelIDsRemoved
+                    LabelIDs: labelIDs
                 }});
             });
 
-            _.each(conversationIDs, function(conversationID) {
-                var conversation = cache.getConversationCached(conversationID);
-                var messages = cache.queryMessagesCached(conversationID);
-                var labelIDs = [];
+            _.each(events, function(event) {
+                var conversation = cache.getConversationCached(event.Message.ConversationID);
+                var messages = cache.queryMessagesCached(event.Message.ConversationID);
 
-                _.each(messages, function(message) {
-                    labelIDs = labelIDs.concat(message.LabelIDs);
-                });
+                if (angular.isDefined(conversation) && angular.isArray(messages)) {
+                    var labelIDs = [];
 
-                labelIDs.splice(_.findIndex(labelIDs, function(labelID) { return ['0', '1', '2', '3', '4', '6'].indexOf(labelID) !== -1; }), 1); // Remove current location
-                labelIDs.push(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]); // Add new location
+                    _.each(messages, function(message) {
+                        var found = _.find(events, function(event) {
+                            return message.ID === event.Message.ID;
+                        });
 
-                events.push({Action: 3, ID: conversationID, Conversation: {
-                    ID: conversationID,
-                    LabelIDs: _.uniq(labelIDs)
-                }});
+                        if (angular.isDefined(found)) {
+                            labelIDs = labelIDs.concat(found.Message.LabelIDs);
+                        } else {
+                            labelIDs = labelIDs.concat(message.LabelIDs);
+                        }
+                    });
+
+                    events.push({Action: 3, ID: conversation.ID, Conversation: {
+                        ID: conversation.ID,
+                        LabelIDs: _.uniq(labelIDs)
+                    }});
+                }
             });
 
             // Send request
             promise = Message[mailbox]({IDs: ids}).$promise;
             cache.addToDispatcher(promise);
 
-            if(context === true) {
+            if (context === true) {
                 cache.events(events);
             } else {
                 promise.then(function() {
@@ -507,7 +561,6 @@ angular.module('proton.actions', [])
             };
 
             _.each(messages, function(message) {
-
                 var toApply = _.map(_.filter(labels, function(label) {
                     return label.Selected === true && angular.isArray(message.LabelIDs) && message.LabelIDs.indexOf(label.ID) === -1;
                 }), function(label) {
@@ -812,13 +865,9 @@ angular.module('proton.actions', [])
             var conversation = cache.getConversationCached(message.ConversationID);
             var promise;
 
-            // Store ID of message discarded
-            $rootScope.discarded.push(message.ID);
-
             // Generate message event to delete the message
             events.push({Action: 0, ID: message.ID});
 
-            // Generate conversation event
             if(angular.isDefined(conversation)) {
                 if(conversation.NumMessages === 1) {
                     // Delete conversation
@@ -836,7 +885,8 @@ angular.module('proton.actions', [])
 
                     // Decrease the number of message
                     conversation.NumMessages--;
-                    conversation.LabelIDs = _.uniq(labelIDs);
+
+                    // Generate conversation event
                     events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
                 }
             }

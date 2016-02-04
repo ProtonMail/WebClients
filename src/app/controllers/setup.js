@@ -17,6 +17,7 @@ angular.module("proton.controllers.Setup", [
     networkActivityTracker,
     User,
     Reset,
+    Key,
     pmcw,
     tools,
     notify,
@@ -31,8 +32,10 @@ angular.module("proton.controllers.Setup", [
         $scope.compatibility =      tools.isCompatible();
         $scope.resetMailboxToken =  $rootScope.resetMailboxToken;
         $scope.account = [];
+        $scope.addresses = [];
 
         $scope.process = {};
+        $scope.process.danger = '';
         $scope.process.generatingKeys =     false;
         $scope.process.savingKeys =         false;
         $scope.process.redirecting =        false;
@@ -60,31 +63,37 @@ angular.module("proton.controllers.Setup", [
      * @param mbpw {String}
      * @return {Promise}
      */
-    $scope.generateKeys = function(email, mbpw) {
+    $scope.generateKeys = function(mbpw) {
         var deferred = $q.defer();
+        var promises = [];
+
         $scope.process.genNewKeys = true;
-        if (!email) {
-            deferred.reject( new Error('generateKeys: Missing email') );
-            $scope.process.genNewKeys = false;
-        }
-        else if (!mbpw) {
+
+        if (!mbpw) {
             deferred.reject( new Error('generateKeys: Missing mbpw') );
             $scope.process.genNewKeys = false;
         }
         else {
-            pmcw.generateKeysRSA(email, mbpw).then(
-                function(response) {
-                    $scope.account.PublicKey = response.publicKeyArmored;
-                    $scope.account.PrivateKey = response.privateKeyArmored;
-                    deferred.resolve(response);
-                },
-                function(err) {
-                    $scope.process.genNewKeys = false;
-                    $log.error(err);
-                    $scope.error = err;
-                    deferred.reject(err);
-                }
-            );
+            _.each($scope.addresses, function(address) {
+                promises.push(
+                    pmcw.generateKeysRSA(address.Email, mbpw).then(
+                        function(response) {
+                            address.PublicKey = response.publicKeyArmored;
+                            address.PrivateKey = response.privateKeyArmored;
+                        },
+                        function(err) {
+                            $scope.process.genNewKeys = false;
+                            $log.error(err);
+                            $scope.error = err;
+                            deferred.reject(err);
+                        }
+                    )
+                );
+            });
+
+            $q.all(promises).then(function() {
+                deferred.resolve();
+            });
         }
 
         return deferred.promise;
@@ -108,7 +117,7 @@ angular.module("proton.controllers.Setup", [
                 return;
             }
             networkActivityTracker.track(
-                $scope.generateKeys($rootScope.tempUser.username + '@protonmail.com', $scope.account.mailboxPassword)
+                $scope.generateKeys($scope.account.mailboxPassword)
                 .then( $scope.newMailbox )
                 .then( $scope.resetMailboxTokenResponse )
                 .then( $scope.doLogUserIn )
@@ -184,6 +193,9 @@ angular.module("proton.controllers.Setup", [
                         $scope.process.redirecting = true;
                         $rootScope.isLoggedIn = true;
                         window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
+                        $rootScope.isLoggedIn = authentication.isLoggedIn();
+                        $rootScope.isLocked = authentication.isLocked();
+                        $rootScope.isSecure = authentication.isSecured();
                         $state.go("secured.inbox");
                     },
                     function(err) {
@@ -213,21 +225,20 @@ angular.module("proton.controllers.Setup", [
             $scope.account.resetMbCode.length === 0
         ) {
             notify('Verification Code required');
-        }
-        else {
+        } else {
             Reset.validateResetToken({
                 username: $rootScope.tempUser.username,
                 token: $scope.account.resetMbCode
             })
             .then(
                 function(response) {
-                    if (response.data.Code!==1000) {
+                    if (response.data.Code !== 1000) {
                         notify({
                             classes: 'notification-danger',
                             message: 'Invalid Verification Code.'
                         });
-                    }
-                    else {
+                    } else {
+                        $scope.addresses = response.data.Addresses;
                         $scope.resetMailboxToken = $scope.account.resetMbCode;
                         $scope.showForm = true;
                         $scope.showEmailMessage = false;
@@ -248,8 +259,12 @@ angular.module("proton.controllers.Setup", [
      * Initialized in the view. Setups stuff. Depends on if user has recovery email set.
      */
     $scope.resetMailboxInit = function() {
+        if ($scope.process.danger !== 'DANGER') {
+            notify({message: 'Invalid value', classes: 'notification-danger'});
+            return false;
+        }
 
-        if(angular.isDefined(token) && angular.isDefined(token.data)) {
+        if (angular.isDefined(token) && angular.isDefined(token.data)) {
             $http.defaults.headers.common.Authorization = "Bearer " + token.data.AccessToken;
             $http.defaults.headers.common["x-pm-uid"] = token.data.Uid;
         }
@@ -273,8 +288,32 @@ angular.module("proton.controllers.Setup", [
             else {
                 if (response.data.Token) {
                     $scope.resetMailboxToken = response.data.Token;
-                    $scope.showForm = true;
-                    deferred.resolve(200);
+                    Reset.validateResetToken({
+                        username: $rootScope.tempUser.username,
+                        token: response.data.Token // $scope.account.resetMbCode
+                    })
+                    .then(
+                        function(response) {
+                            if (response.data.Code !== 1000) {
+                                notify({
+                                    classes: 'notification-danger',
+                                    message: 'Invalid Verification Code.'
+                                });
+                            } else {
+                                $scope.addresses = response.data.Addresses;
+                                $scope.showForm = true;
+                                $scope.showEmailMessage = false;
+                                deferred.resolve(200);
+                            }
+                        },
+                        function(err) {
+                            $log.error(err);
+                            notify({
+                                classes: 'notification-danger',
+                                message: 'Unable to verify Reset Token.'
+                            });
+                        }
+                    );
                 }
                 else {
                     $scope.showEmailMessage = true;
@@ -297,18 +336,26 @@ angular.module("proton.controllers.Setup", [
      */
     $scope.newMailbox = function() {
         var resetMBtoken;
+
         if ($rootScope.resetMailboxToken!==undefined) {
             resetMBtoken = $rootScope.resetMailboxToken;
         }
+
         if ($scope.resetMailboxToken!==undefined) {
             resetMBtoken = $scope.resetMailboxToken;
         }
+
         var params = {
-            "PublicKey": $scope.account.PublicKey,
-            "PrivateKey": $scope.account.PrivateKey,
-            "Token": resetMBtoken
+            Token: resetMBtoken,
+            Keys: _.map($scope.addresses, function(address) {
+                return {
+                    AddressID: address.ID,
+                    PrivateKey: address.PrivateKey
+                };
+            })
         };
-        return Reset.resetMailbox(params); // Not to be confused with this local function. Its for the Reset model!
+
+        return Key.reset(params); // Not to be confused with this local function. Its for the Reset model!
     };
 
      /**

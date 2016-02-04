@@ -21,29 +21,32 @@
                     type="text"
                     ng-model="account.Username"
                     name="Username"
-                    tabindex="1"
-                    placeholder="CHOOSE USERNAME"
+                    autofocus=""
+                    placeholder="{{ 'CHOOSE_USERNAME' | translate }}"
                     required
                     ng-readonly="readOnlyUsername"
                     id="Username"
                     class="dead"
-                    ng-class="{ 
+                    ng-class="{
                         'success':goodUsername,
                         'error':badUsername
                     }"
                     ng-change="checkAvailability(true)"
-                    ng-model-options="{ debounce: 600 }"
-                    pt-tooltip="You can switch to protonmail.ch after account creation."
+                    ng-model-options="{ debounce: 1000 }"
                     pt-placement="bottom">
-                    <em class="usernameDomain">@protonmail.com</em>
-                    <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em> 
+                    <em class="usernameDomain">@</em>
+                    <span class="pm_select inline bigger">
+                        <select class="selectDomain" ng-model="account.domain" ng-options="domain.label for domain in domains"></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                    <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em>
                 </div>
             </div>
             <div ng-show="goodUsername">
-                <p class="alert alert-success animated tada"><i class="fa fa-check"></i> Email available!</p>
+                <p class="alert alert-success"><i class="fa fa-check"></i> Email available!</p>
             </div>
             <div ng-show="badUsername">
-                <p class="alert alert-danger animated shake"><i class="fa fa-times"></i> Email already taken.</p>
+                <p class="alert alert-danger"><i class="fa fa-times"></i> Email already taken.</p>
             </div>
             <label for="password">
                 <em class="num" ng-if="preInvited">1</em>
@@ -55,10 +58,9 @@
             id="password"
             name="password"
             ng-model="account.loginPassword"
-            tabindex="2"
             type="password"
             class="form-control margin"
-            placeholder="CHOOSE A LOGIN PASSWORD"
+            placeholder="{{ 'CHOOSE_A_LOGIN_PASSWORD' | translate }}"
             maxlength="{{ maxPW }}"
             required />
             <div ng-show="step1.$submitted || step1.password.$touched">
@@ -68,10 +70,9 @@
             id="passwordc"
             name="passwordc"
             ng-model="account.loginPasswordConfirm"
-            tabindex="3"
             type="password"
             class="form-control"
-            placeholder="CONFIRM LOGIN PASSWORD"
+            placeholder="{{ 'CONFIRM_LOGIN_PASSWORD' | translate }}"
             required
             validator="account.loginPassword !== account.loginPasswordConfirm" />
             <div ng-show="step1.$submitted || step1.passwordc.$touched">
@@ -87,10 +88,9 @@
             id="MBpassword"
             name="MBpassword"
             ng-model="account.mailboxPassword"
-            tabindex="4"
             type="password"
             class="form-control margin"
-            placeholder="CHOOSE A MAILBOX PASSWORD"
+            placeholder="{{ 'CHOOSE_A_MAILBOX_PASSWORD' | translate }}"
             required />
             <div ng-show="step1.$submitted || step1.MBpassword.$touched">
                 <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="alert alert-danger">Mailbox password is required.</p>
@@ -99,16 +99,16 @@
             id="MBpasswordc"
             name="MBpasswordc"
             ng-model="account.mailboxPasswordConfirm"
-            tabindex="5"
             type="password"
             class="form-control"
             ng-class="{disabled: networkActivity.loading()}"
-            placeholder="CONFIRM MAILBOX PASSWORD"
+            placeholder="{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}"
             required
             ng-enter="finish(step1)" />
             <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
                 <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
             </div>
+            <p class="alert alert-warning">Warning: If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
             <label for="notificationEmail">
                 <em class="num" ng-if="preInvited">3</em>
                 <em class="num" ng-if="!preInvited">4</em>
@@ -119,7 +119,6 @@
             id="notificationEmail"
             name="notificationEmail"
             ng-model="account.notificationEmail"
-            tabindex="6"
             type="email"
             class="form-control"
             placeholder="Recovery {{ 'EMAIL' | translate }}"
@@ -142,7 +141,6 @@
         <div class="checkbox" ng-show="false">
             <label for="optIn" class="optIn">
                 <input
-                tabindex="7"
                 id="optIn"
                 name="optIn"
                 ng-init="account.optIn = true"
@@ -151,7 +149,6 @@
             </label>
         </div>
         <button
-        tabindex="8"
         type="submit"
         class="pm_button primary large"
         ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid || ( (captcha_token === false) && !preInvited ) ) }">{{ 'COMPLETE_SETUP' | translate }}</button>
@@ -168,7 +165,7 @@
                 <div class="spinner1"></div>
                 <div class="spinner2"></div>
                 <div class="spinner3"></div>
-                
+
             </div>
         </div>
         <h2 class="text-center" ng-show="!signupError">Creating Account</h2>
@@ -209,5 +206,5 @@
     </div>
 </div>
 <div id="pm_footer" class="static">
-    <p>&copy; 2015 ProtonMail.com - Made globally, hosted in Switzerland.</p>
+    <p>&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland.</p>
 </div>

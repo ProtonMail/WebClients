@@ -138,18 +138,22 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Method called to display message content
-     * @param {Boolean} scroll
      * @return {Promise}
      */
-    $scope.initView = function(scroll) {
+    $scope.initView = function() {
         var deferred = $q.defer();
         var process = function() {
             // Display content
-            $scope.displayContent(scroll);
+            $scope.displayContent();
         };
 
         // If the message is a draft
-        if($scope.message.Type === 1) {
+        if ($scope.message.Type === 1) {
+            if ($state.is('secured.drafts.view') === true) {
+                // Open the message in composer if it's a draft
+                $scope.openComposer($scope.message.ID);
+            }
+
             deferred.resolve();
         } else {
             // Display content
@@ -191,16 +195,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Method called at the initialization of this controller
-     * @param {Boolean} scroll
      */
-    $scope.initialization = function(scroll) {
-        if($rootScope.printMode === true) {
+    $scope.initialization = function() {
+        if ($rootScope.printMode === true) {
             networkActivityTracker.track(cache.getMessage($stateParams.id).then(function(message) {
                 $scope.message = message;
                 $scope.initView();
             }));
-        } else if($rootScope.targetID === $scope.message.ID) {
-            $scope.initView(scroll);
+        } else if ($rootScope.targetID === $scope.message.ID) {
+            $scope.initView();
         }
     };
 
@@ -278,7 +281,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} print
      */
-    $scope.displayContent = function(scroll) {
+    $scope.displayContent = function() {
         var whitelist = ['notify@protonmail.com'];
 
         if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
@@ -291,11 +294,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.message.expand = true;
 
         // Mark message as read
-        if($scope.message.IsRead === 0) {
+        if ($scope.message.IsRead === 0) {
             $scope.read();
         }
 
-        if(angular.isUndefined($scope.message.decryptedBody)) {
+        if (angular.isUndefined($scope.message.decryptedBody)) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
                     // NOTE Plain text detection doesn't work. Check #1701
@@ -335,17 +338,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         $(this).unbind("error").addClass("pm_broken");
                     });
 
-                    if($rootScope.printMode === true) {
+                    if ($rootScope.printMode === true) {
                         $timeout(function() {
                             $window.print();
                         }, 1000);
-                    }
-
-                    if($rootScope.targetID === $scope.message.ID) {
-                        $rootScope.$broadcast('targetLoaded');
-                    }
-
-                    if(scroll === true) {
+                    } else {
                         $scope.scrollToMe();
                     }
                 };
@@ -388,7 +385,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 //TODO error reporter?
                 $log.error(err);
             });
-        } else if(scroll === true) {
+        } else {
             $scope.scrollToMe();
         }
     };
@@ -411,8 +408,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var ids = [$scope.message.ID];
 
         $scope.message.expand = false;
-
         action.unreadMessage(ids);
+        $scope.back();
     };
 
     $scope.decryptAttachment = function(attachment, $event, message) {
@@ -773,8 +770,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Print current message
      */
     $scope.print = function() {
-
-        if ($('html').hasClass('ua-windows_nt')) {
+        if (angular.element('html').hasClass('ua-windows_nt')) {
             window.print();
         }
         else {

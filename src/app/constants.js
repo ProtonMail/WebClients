@@ -7,12 +7,12 @@ angular.module('proton.constants', [])
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte
     STRIPE_API_KEY: 'pk_test_xL4IzbxNCD9Chu98oxQVjYFe', // TODO it's not the final key
-    HOSTS_ALLOWED: ['localhost', 'dev.protonmail.com'],
+    HOSTS_ALLOWED: ['localhost', 'dev.protonmail.com', 'protonmail.blue'],
     MAILBOX_PASSWORD_KEY: "proton:mailbox_pwd",
     OAUTH_KEY: "proton:oauth",
     EVENT_ID: "proton:eventid",
     ATTACHMENT_SIZE_LIMIT: 15, // MB
-    ATTACHMENT_NUMBER_LIMIT: 20,
+    ATTACHMENT_NUMBER_LIMIT: 100,
     MAX_TITLE_LENGTH: 255,
     MAX_NUMBER_COMPOSER: 3,
     NUMBER_OF_MESSAGES_PRELOADING: 5,
@@ -22,7 +22,7 @@ angular.module('proton.constants', [])
     ENC_OUT_ENC: 3, // encrypted for outside
     ENC_OUT_PLAIN: 4, // sent plain but stored enc
     ENC_STORED_ENC: 5, // such as draft
-    INTERVAL_EVENT_TIMER: 30000, // time between querying the event log
+    INTERVAL_EVENT_TIMER: 30 * 1000, // time between querying the event log (every 30 seconds)
     TIMEOUT_PRELOAD_MESSAGE: 500, // milliseconds
     UPLOAD_GRADIENT_DARK: '147, 145, 209', // dark rgb color for upload progress bar
     UPLOAD_GRADIENT_LIGHT: '255, 255, 255', // light rgb color for upload progress bar

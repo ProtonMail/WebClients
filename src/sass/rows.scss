@@ -35,6 +35,10 @@ body, html {
 					display: block;
 				}
 			}
+			.fa-square-o,
+			.fa-check-square {
+				display: none;
+			}
 			&:focus {
 				background: #e9e6f0 !important;
 				z-index: 5;
@@ -311,15 +315,25 @@ body, html {
 				height: 25px;
 				overflow: hidden;
 			}
-			.pm_checkbox {
+			article,
+			.hasAttachments {
+				display: none;
+			}
+			.fa-square-o,
+			.fa-check-square {
+				display: block;
 				position: absolute;
-				left: 10px;
+				left: 15px;
 				top: 14px;
 				height: 35px !important;
 				line-height: 35px !important;
 				width: 35px !important;
 				z-index: 6;
 				cursor: pointer;
+				color: $gray;
+			}
+			.fa-check-square {
+				left: 10px;
 			}
 			&.unread {
 				margin: 0;
@@ -530,6 +544,13 @@ body, html {
 			.message {
 				height: 60px !important;
 				line-height: initial !important;
+				padding-left: 75px !important;
+				&.selected {
+					padding-left: 70px !important;
+					.star {
+						left: 35px !important;
+					}
+				}
 				& > *,
 				.subject > span {
 					height: auto !important;
@@ -540,7 +561,8 @@ body, html {
 					max-width: 100%;
 				}
 				.star {
-					display: none;
+					top: 30px !important;
+					left: 40px !important;
 				}
 				label {
 					height: 28px !important;

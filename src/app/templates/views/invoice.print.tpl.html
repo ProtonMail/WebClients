@@ -1,5 +1,94 @@
-<h1>Invoice</h1>
-<button ng-click="print()">{{ 'PRINT' | translate }}</button>
-<pre>
-    {{ invoice | json }}
-</pre>
+<style type="text/css">
+@media all {
+	#invoice {
+		padding: 2rem;
+	}
+	table {
+	    border-collapse: collapse;
+	    table-layout: fixed;
+	    width: 100%;
+	    border: 1px solid #ccc;
+	    margin-bottom: 2rem;
+	}
+	td, th {
+		vertical-align: top;
+		text-align: left;
+		border-bottom: 1px solid #ccc;
+		padding: 10px;
+	}
+	th {
+		width: 7rem;
+	}
+	h1, h2, h3, h4, h5 {
+		margin-bottom: 1rem;
+	}
+	.pull-right {
+		float: right;
+	}
+	tr.total {
+		border-top: 2px solid #666;
+		border-bottom: 2px solid #666;
+	}
+}
+</style>
+
+<div id="invoice">
+
+	<p>
+	<strong>ProtonMail</strong><br>
+	Proton Technologies AG<br>
+	Chemin du Pré-Fleuri, 3 <br>
+	CH-1228 Plan-les-Ouates, Genève, Switzerland <br>
+	VAT: CHE-354.686.492 MWST
+	</p>
+
+	<p>&nbsp;</p>
+
+	<!-- <pre>{{ organization }}</pre> -->
+
+	<h1>Invoice #123456678</h1>
+
+	<table>
+		<tr>
+			<th>User</th>
+			<td>{{ user.Name }}</td>
+		</tr>
+		<tr>
+			<th>Organization</th>
+			<td>{{ organization.DisplayName }}</td>
+		</tr>
+		<tr>
+			<th>Domains</th>
+			<td>{{ organization.MaxDomains }}</td>
+		</tr>
+		<tr>
+			<th>Space</th>
+			<td>{{ organization.MaxSpace | humanSize }}</td>
+		</tr>
+		<tr>
+			<th>Members</th>
+			<td>{{ organization.MaxMembers }}</td>
+		</tr>
+		<tr>
+			<th>Price</th>
+			<td>{{ invoice.Amount | currency:invoice.Currency }}</td>
+		</tr>
+		<tr>
+			<th>Time</th>
+			<td>{{ invoice.PeriodStart | localReadableTime }} &nbsp; - &nbsp; {{ invoice.PeriodEnd | localReadableTime }}</td>
+		</tr>
+		<tr>
+			<th>Billing Cycle</th>
+			<td>
+				{{ invoice.BillingCycle }} 
+				<span ng-show="invoice.BillingCycle < 12">Month</span>
+				<span ng-show="invoice.BillingCycle >= 12">Year</span>
+			</td>
+		</tr>
+		<tr class="total">
+			<th>Amount Due</th>
+			<th>{{ invoice.Amount | currency:invoice.Currency }}</th>
+		</tr>
+	</table>
+
+</div>

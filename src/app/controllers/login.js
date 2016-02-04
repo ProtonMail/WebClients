@@ -18,7 +18,8 @@ angular.module("proton.controllers.Auth", [
     networkActivityTracker,
     notify,
     loginModal,
-    pmcw
+    pmcw,
+    tools
 ) {
     $rootScope.pageName = "Login";
     $rootScope.app_version = CONFIG.app_version;
@@ -58,11 +59,21 @@ angular.module("proton.controllers.Auth", [
             $scope.getLoginHelp();
         }
 
-        notify({
-            message: 'Welcome to ProtonMail 3.0. Please use \'Report Bug\' to send feedback.',
-            classes: 'notification-info',
-            duration: 20000
-        });
+        if ($state.is('login') === true) {
+            notify({
+                message: 'Welcome to ProtonMail 3.0. Please use \'Report Bug\' to send feedback.',
+                classes: 'notification-info',
+                duration: 20000
+            });
+        }
+
+        if (tools.hasSessionStorage() === false) {
+            notify({
+                message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.',
+                classes: 'notification-danger',
+                duration: '0'
+            });
+        }
     };
 
     /**
@@ -111,7 +122,7 @@ angular.module("proton.controllers.Auth", [
         }
 
         // Transform to lowercase and remove the domain
-        $scope.username = $scope.username.toLowerCase().split('@')[0];
+        $scope.username = $scope.username.toLowerCase();
 
         // Custom validation
         try {
@@ -169,6 +180,8 @@ angular.module("proton.controllers.Auth", [
 
                         $state.go('login.unlock');
                         return;
+                    } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Code) && result.data.Code === 5003) {
+                        // Nothing
                     } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                         // TODO: This might be buggy
 	                	var error  = (angular.isDefined(result.data.ErrorDescription) && result.data.ErrorDescription.length) ? result.data.ErrorDescription : result.data.Error;

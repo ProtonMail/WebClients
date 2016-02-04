@@ -1,85 +1,51 @@
-angular.module("proton.dropdown", [])
+angular.module('proton.dropdown', [])
 
-.directive('dropdown', function ($timeout) {
+.directive('dropdown', function ($timeout, $document) {
     return function (scope, element, attrs) {
-        var animationDuration = 50;
-        var timer;
-
-        element.bind("click", function (event) {
+        // Functions
+        var click = function(event) {
             if (element.hasClass('active')) {
-                hideDropdown(element);
+                hideDropdown();
             } else {
-                showDropdown(element);
+                showDropdown();
             }
 
             return false;
-        });
+        };
 
-        // If there are no touch events, we can make use of mouse events
-        if (!Modernizr.touchevents) {
-            element.parent().find('.pm_dropdown')
-            .bind('mouseleave', function() {
-                timer = $timeout(function () {
-                    hideDropdown(element);
-                }, 400);
-            })
-            .bind('mouseenter', function() {
-                $timeout.cancel(timer);
-            });
+        var outside = function(event) {
+            if (element !== event.target && !element[0].contains(event.target)) {
+                hideDropdown();
+            }
+        };
 
-            element
-            .bind('mouseleave', function() {
-                timer = $timeout(function () {
-                    hideDropdown(element);
-                }, 400);
-            })
-            .bind('mouseenter', function() {
-                $timeout.cancel(timer);
-            });
-        }
-
-        function showDropdown(element) {
+        var showDropdown = function() {
             var parent = element.parent();
             var dropdown = parent.find('.pm_dropdown');
             var next = element.next();
 
             element.addClass('active');
+            dropdown.show();
+            $document.on('click', outside);
+        };
 
-            dropdown
-            .stop(1,1)
-            .css('opacity', 0);
-
-            dropdown = (next.hasClass('pm_dropdown')) ? next : dropdown;
-
-            dropdown
-            .slideDown(animationDuration)
-            .animate(
-                { opacity: 1 },
-                { queue: false, duration: animationDuration }
-            );
-        }
-
-        function hideDropdown(element) {
+        var hideDropdown = function() {
             var parent = element.parent();
             var dropdown = parent.find('.pm_dropdown');
             var next = element.next();
 
             element.removeClass('active');
+            dropdown.hide();
+            $document.off('click', outside);
+        };
 
-            dropdown
-            .stop(1,1)
-            .css('opacity', 1);
+        // Listeners
+        element.on('click', click);
 
-            dropdown = (next.hasClass('pm_dropdown')) ? next : dropdown;
-
-            dropdown
-            .slideUp( (animationDuration*2) )
-            .animate(
-                { opacity: 0 },
-                { queue: false, duration: (animationDuration*2) }
-            );
-        }
-
+        scope.$on('$destroy', function() {
+            element.off('click', click);
+            $document.off('click', outside);
+        });
     };
 })
 
@@ -131,7 +97,7 @@ angular.module("proton.dropdown", [])
             scope.pages = [];
 
             var disable = function() {
-                scope.disableMain = scope.page === 1 || scope.totalItems === 0; // Main
+                scope.disableMain = Math.ceil(scope.totalItems / scope.itemsPerPage) === 1 || scope.totalItems === 0; // Main
                 scope.disableP = scope.page === 1 || scope.totalItems === 0; // Previous
                 scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page || scope.totalItems === 0; // Next
             };

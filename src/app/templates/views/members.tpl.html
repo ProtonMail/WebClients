@@ -61,7 +61,8 @@
             <section class="setting pm_form full">
                 <legend>{{ 'USERS' | translate }}</legend>
                 <p>
-                    <button type="button" class="pm_button primary" ng-click="openUserModal()">{{ 'ADD_A_NEW_USER'| translate }}</button>
+                    <button type="button" class="pm_button primary" ng-click="openUserModal()">{{ 'ADD_USER'| translate }}</button>
+                    <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_USER' | translate }}</a>
                 </p>
                 <table class="pm_table hidden-xs" id="userTable">
 		            <thead>
@@ -87,7 +88,7 @@
 		                    </td>
 		                    <td class="storage">{{ member.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ member.MaxSpace | humanSize }} {{ 'USED' | translate }} <a href="#" ng-click="manageStorage(member)" class="fa fa-edit pm_button link"></a></td>
 		                    <td class="addresses">
-                                <div ng-repeat="address in member.Addresses | orderBy: 'Send'">
+                                <div ng-repeat="address in member.Addresses | orderBy: 'Send'" ng-hide="address.Status === 0">
                                     {{ address.Email }} <small ng-show="address.Send === 1"><strong>(DEFAULT)</strong></small>
                                     <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip="{{ 'UNLINK_ADDRESS' | translate }}"><i class="fa fa-chain-broken pm_button link"></i></a>
                                 </div>

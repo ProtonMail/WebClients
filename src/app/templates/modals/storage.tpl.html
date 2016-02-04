@@ -1,19 +1,30 @@
-<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
-    <div class="modal-dialog">
+<div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
+    <form class="modal-dialog" ng-submit="ctrl.submit()">
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">{{ 'MANAGE_STORAGE' | translate }}</h4>
             </div>
             <div class="modal-body">
-                <strong>Jason Derulo</strong>
-                <p>Jason Joel Desrouleaux alias Jason ou Jason Derulo né le 21 septembre 1989 à Miami aux États-unis est un auteur-compositeur-interprète, danseur, chorégraphe, acteur et producteur exécutif.</p>
+                <strong>{{ 'SET_USER_STORAGE' | translate }}</strong>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla egestas suscipit.</p>
+                <div class="pm_form">
+                    <label>
+                        Storage:
+                        <input type="text" class="inline" ng-model="ctrl.value" required />
+                        <span class="pm_select inline mini">
+                            <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </label>
+                    <div><strong>User will have {{ ctrl.value * ctrl.unit.value | humanSize }} out of {{ ctrl.organization.MaxSpace | humanSize }}.</strong></div>
+                </div>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()">{{ 'APPLY' | translate }}</button>
+            <button type="button" class="pm_button pull-left" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+            <button type="submit" class="pm_button primary">{{ 'APPLY' | translate }}</button>
         </div>
-    </div>
+    </form>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
 </div>

@@ -1,28 +1,37 @@
-<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
+<div class="pm_modal {{ctrl.class}} domains" role="dialog" style="display: block;">
     <div class="modal-dialog">
         <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
+                <span ng-show="ctrl.domain.SpfState === 0" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
+                <span ng-show="ctrl.domain.SpfState === 1 || ctrl.domain.SpfState === 2" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
+                <span ng-show="ctrl.domain.SpfState === 3" class="pull-right pm_badge success">{{ 'GOOD!' | translate }}</span>
                 <h4 class="modal-title">4. {{ 'SPF' | translate }}</h4>
             </div>
             <div class="modal-body pm_form">
+                <p>SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-spf-record">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>Please add the following SPF Record:</p>
+                <table class="pm_table record">
+                    <tr>
+                        <th style="width:3rem">Host</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td><code>@</code></td>
+                        <td><code>v=spf1 include:_spf.protonmail.ch a mx ~all</code></td>
+                    </tr>
+                </table>
 
-                <p>To avoid emails from your domain going into Spam, we recommend adding a SPF record. Please add the following <kbd>TXT</kbd> record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-spf-record">{{ 'LEARN_HOW' | translate }}</a></p>
-                <p>Please use the following SPF record:</p>
-                <textarea readonly>_spf.protonmail.ch a max ~all</textarea>
                 <div ng-show="ctrl.domain.SpfRecord">
                     <p>The current SPF record for {{ ctrl.domain.domain }} is:</p>
-                    <!-- <pre>{{ currentSpf }}</pre> -->
                     <textarea readonly>{{ ctrl.domain.SpfRecord }}</textarea>
                 </div>
-                <p>If your domain already has an SPF record, you just need to add <kbd>_spf.protonmail.ch</kbd> to the existing record. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-spf-record">{{ 'LEARN_HOW' | translate }}</a></p>
+                <p>If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-spf-record">{{ 'LEARN_MORE' | translate }}</a></p>
             </div>
-
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.close()">{{ 'CANCEL' | translate }}</button>
-            <button class="pm_button primary" ng-click="ctrl.submit()">{{ 'NEXT' | translate }}</button>
+            <button class="pm_button primary" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.close()"></div>

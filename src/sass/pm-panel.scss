@@ -37,8 +37,11 @@ body.light {
 	}
 }
 
-#support-reset-password .wrap {
-	width: $panel;
-	margin: 2rem auto;
-	box-sizing: border-box
+#support-reset-password,
+#support-message {
+	.wrap {
+		width: $panel;
+		margin: 2rem auto;
+		box-sizing: border-box;
+	}
 }

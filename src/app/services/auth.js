@@ -20,8 +20,6 @@ angular.module("proton.authentication", [
     url
 ) {
     var keys = {}; // Store decrypted keys
-
-    // PRIVATE FUNCTIONS
     var auth = {
         headersSet: false,
         // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
@@ -68,8 +66,15 @@ angular.module("proton.authentication", [
                             ]).then(
                                 function(result) {
                                     if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
-                                        var mailboxPassword = api.getPassword();
                                         var promises = [];
+                                        var mailboxPassword = api.getPassword();
+                                        var keyInfo = function(key) {
+                                            return pmcw.keyInfo(key.PrivateKey).then(function(info) {
+                                                key.created = info.created; // Creation date
+                                                key.bitSize = info.bitSize; // We don't use this data currently
+                                                key.fingerprint = info.fingerprint; // Fingerprint
+                                            });
+                                        };
 
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
@@ -79,21 +84,27 @@ angular.module("proton.authentication", [
                                         }
 
                                         // All private keys are decrypted with the mailbox password and stored in a `keys` array
-                                        _.each(user.Addresses, function(address) { // For each addresses
-                                            _.each(address.Keys, function(key, index) { // For each keys
-                                                promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
-                                                    keys[address.ID] = keys[address.ID] || []; // Initialize array for the address
-                                                    keys[address.ID].push(package); // Add key package
-                                                }, function(error) {
-                                                    // If the primary (first) key for address does not decrypt, display error.
-                                                    if(index === 0) {
-                                                        // TODO display error
-                                                    }
-                                                }));
-                                            });
-                                        });
+                                        _.each(user.Addresses, function(address) {
+                    						_.each(address.Keys, function(key, index) {
+                    							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
+                    								key.decrypted = true; // We mark this key as decrypted
+                    								api.storeKey(address.ID, key.ID, package); // We store the package to the current service
+                                                    keyInfo(key);
+                    							}, function(error) {
+                    								key.decrypted = false; // This key is not decrypted
+                                                    keyInfo(key);
+                    								// If the primary (first) key for address does not decrypt, display error.
+                    								if(index === 0) {
+                    									address.disabled = true; // This address cannot be used
+                    									notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
+                    								}
+                    							}));
+                    						});
+                    					});
 
                                         $q.all(promises).then(function() {
+                                            deferred.resolve(user);
+                                        }, function() {
                                             deferred.resolve(user);
                                         });
                                     } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
@@ -162,6 +173,9 @@ angular.module("proton.authentication", [
                 auth.data = {
                     SessionToken: pmcw.decode_base64(session)
                 };
+
+                // If session token set, we probably have a refresh token, try to refresh
+                $rootScope.doRefresh = true;
             }
         },
 
@@ -235,6 +249,15 @@ angular.module("proton.authentication", [
          */
         getPrivateKeys: function(addressID) {
             return keys[addressID];
+        },
+
+        /**
+         * Store package
+         */
+        storeKey: function(addressID, keyID, package) {
+            package.ID = keyID; // Add the keyID inside the package
+            keys[addressID] = keys[addressID] || []; // Initialize array for the address
+            keys[addressID].push(package); // Add key package
         },
 
         getRefreshCookie: function() {
@@ -327,8 +350,7 @@ angular.module("proton.authentication", [
                         ClientSecret: CONFIG.clientSecret,
                         GrantType: "password",
                         RedirectURI: "https://protonmail.com",
-                        State: this.randomString(24),
-                        Scope: "full" // 'full' or 'reset'
+                        State: this.randomString(24)
                     })
                 ).then(
                     function(resp) {
@@ -459,6 +481,8 @@ angular.module("proton.authentication", [
             window.sessionStorage.clear();
             // Delete data key
             delete auth.data;
+            // Clean keys
+            keys = {};
             auth.headersSet = false;
             // Remove all user information
             this.user = null;
@@ -697,6 +721,8 @@ angular.module("proton.authentication", [
     $rootScope.logout = function() {
         eventManager.stop();
         cache.clear();
+        delete $rootScope.creds;
+        delete $rootScope.tempUser;
         $state.go('login');
     };
 });

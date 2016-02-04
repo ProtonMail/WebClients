@@ -137,6 +137,36 @@ angular.module('proton.routes', [
         }
     })
 
+    .state('invite', {
+        url: '/invite',
+        resolve: {
+            direct: function($http, $q, $state, $rootScope, url, User) {
+                var deferred = $q.defer();
+
+                if (!$rootScope.preInvited) {
+                    User.direct().$promise.then(function(data) {
+                        if (data && data.Code === 1000) {
+                            if (data.Direct === 1) {
+                                $state.go('step1');
+                                deferred.resolve();
+                            } else {
+                                window.location.href = 'https://protonmail.com/invite';
+                                deferred.reject();
+                            }
+                        } else {
+                            $state.go('login');
+                            deferred.reject();
+                        }
+                    });
+                } else {
+                    deferred.resolve();
+                }
+
+                return deferred.promise;
+            }
+        }
+    })
+
     .state('step1', {
         url: '/create/new',
         views: {
@@ -148,25 +178,44 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/step1.tpl.html'
             }
         },
-        onEnter: function($rootScope, $state, $log, $http, url) {
+        resolve: {
+            domains: function($q, Domain) {
+                var deferred = $q.defer();
 
-            if (!$rootScope.preInvited) {
-                $http.get( url.get() + '/users/direct' )
-                .then(
-                    function( response ) {
-
-                        if ( response.data && response.status === 200 ) {
-
-                            if ( response.data.Direct!==1 ) {
-                                window.location.href = '/invite';
-                            }
-
-                        }
-                        else {
-                            $state.go('login');
-                        }
+                Domain.available().then(function(result) {
+                    if (result.data && angular.isArray(result.data.Domains)) {
+                        deferred.resolve(result.data.Domains);
+                    } else {
+                        deferred.reject();
                     }
-                );
+                }, function() {
+                    deferred.reject();
+                });
+
+                return deferred.promise;
+            },
+            direct: function($http, $q, $state, $rootScope, url, User) {
+                var deferred = $q.defer();
+
+                if (!$rootScope.preInvited) {
+                    User.direct().$promise.then(function(data) {
+                        if (data && data.Code === 1000) {
+                            if (data.Direct === 1) {
+                                deferred.resolve();
+                            } else {
+                                window.location.href = 'https://protonmail.com/invite';
+                                deferred.reject();
+                            }
+                        } else {
+                            $state.go('login');
+                            deferred.reject();
+                        }
+                    });
+                } else {
+                    deferred.resolve();
+                }
+
+                return deferred.promise;
             }
         }
     })
@@ -537,8 +586,10 @@ angular.module('proton.routes', [
                 }
             }
         },
-        onEnter: function(authentication) {
+        onEnter: function($rootScope, authentication) {
             // This will redirect to a login step if necessary
+            delete $rootScope.creds;
+            delete $rootScope.tempUser;
             authentication.redirectIfNecessary();
         }
     })
@@ -654,13 +705,24 @@ angular.module('proton.routes', [
         views: {
             'main@': {
                 templateUrl: 'templates/views/invoice.print.tpl.html',
-                controller: function($scope, invoice) {
+                controller: function($scope, invoice, $timeout, user, Organization) {
                     $scope.invoice = invoice;
+                    $scope.user = user;
 
-                    // Print current invoice
-                    $scope.print = function() {
-                        window.print();
-                    };
+                    Organization.get(invoice.OrganizationID).then(
+                        function(result) {
+                            console.log(result);
+                            if (result.data && result.data.Code===1000) {
+                                $scope.organization = result.data.Organization;
+                                $timeout( function() {
+                                    window.print();
+                                }, 200);
+                            }
+                        },
+                        function(result) {
+
+                        }
+                    );
                 },
             }
         }
@@ -768,6 +830,9 @@ angular.module('proton.routes', [
             },
             members: function(Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
+            },
+            domains: function(Domain, networkActivityTracker) {
+                return networkActivityTracker.track(Domain.query());
             }
         },
         views: {
@@ -856,14 +921,7 @@ angular.module('proton.routes', [
             controller: 'ConversationController',
             resolve: {
                 conversation: function($stateParams, cache, networkActivityTracker) {
-                    if(angular.isDefined($stateParams.id)) {
-                        return networkActivityTracker.track(cache.getConversation($stateParams.id));
-                    } else {
-                        return true;
-                    }
-                },
-                loc: function($stateParams) {
-                    return $stateParams.id;
+                    return networkActivityTracker.track(cache.getConversation($stateParams.id));
                 }
             }
         };

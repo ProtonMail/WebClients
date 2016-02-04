@@ -17,12 +17,24 @@ angular.module("proton.models.organization", [])
         get: function() {
             return $http.get(url.get() + '/organizations');
         },
+        /**
+         *
+         */
+        getKey: function() {
+            return $http.get(url.get() + '/organizations/keys');
+        },
         // PUT
         /**
          * Update group in a way that doesn't require a payment (name, billing cycle, tokens).
          */
         update: function(Obj) {
             return $http.put(url.get() + '/organizations', Obj);
+        },
+        /**
+         * Update private key for the organization
+         */
+        private: function(Obj) {
+            return $http.put(url.get() + '/organizations/keys/private', Obj);
         },
         /**
          * Update group in a way that requires a payment.

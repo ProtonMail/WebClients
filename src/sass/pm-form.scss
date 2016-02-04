@@ -33,16 +33,28 @@
        color: #aaaabf;
     }
 
-    .help {
-        color: $gray-light;
-    }
-
     .pm_select {
         position: relative;
         margin-bottom: 1rem;
         display: block;
         border: 1px solid $border;
         border-radius: 2px;
+        &.inline {
+            display: inline-block;
+            select {
+                width: 8rem;
+            }
+        }
+        &.bigger {
+            select {
+                width: 9rem;
+            }
+        }
+        &.mini {
+            select {
+                width: 4rem;
+            }
+        }
         select::-ms-expand {
             display: none;
         }
@@ -121,6 +133,7 @@
     }
 
     input[type="text"],
+    input[type="number"],
     input[type="password"],
     input[type="email"],
     input[type="search"],
@@ -129,6 +142,7 @@
     }
 
     input[type="text"],
+    input[type="number"],
     input[type="password"],
     input[type="email"],
     input[type="search"],
@@ -145,8 +159,12 @@
         position: relative;
         resize: none;
         -webkit-appearance: none;
-           -moz-appearance: none;
-                appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &.inline {
+            display: inline-block;
+            width: 8rem;
+        }
         &:hover {
             border-color: $border;
         }
@@ -176,6 +194,7 @@
         }
     }
     input[type="text"],
+    input[type="number"],
     input[type="password"],
     input[type="email"],
     input[type="search"],

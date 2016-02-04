@@ -29,7 +29,6 @@ angular.module("proton.controllers.Secured", [])
     $rootScope.dateFormat = format;
 
     $scope.user = authentication.user;
-    $rootScope.discarded = []; // Store ID of message discarded
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
     $scope.settingsRoutes = [
@@ -92,7 +91,7 @@ angular.module("proton.controllers.Secured", [])
      * @return {String} "12.5"
      */
     $scope.storagePercentage = function() {
-        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
+        if (authentication.user && authentication.user.UsedSpace && authentication.user.MaxSpace) {
             return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
         } else {
             // TODO: error, undefined variables
@@ -167,7 +166,7 @@ angular.module("proton.controllers.Secured", [])
                 value = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
                 break;
             case 'label':
-                value = cacheCounters.unreadConversation($stateParams.label);
+                value = cacheCounters.unreadConversation($state.params.label);
                 break;
             default:
                 value = cacheCounters.unreadConversation(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
@@ -201,7 +200,13 @@ angular.module("proton.controllers.Secured", [])
                 name = unread + $translate.instant('TRASH');
                 break;
             case 'label':
-                name = $translate.instant('LABEL');
+                var label = _.findWhere(authentication.user.Labels, {ID: $state.params.label});
+
+                if (angular.isDefined(label)) {
+                    name = label.Name;
+                } else {
+                    name = $translate.instant('LABEL');
+                }
                 break;
             case 'contacts':
                 name = $translate.instant('CONTACTS');

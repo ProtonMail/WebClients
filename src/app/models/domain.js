@@ -17,6 +17,12 @@ angular.module("proton.models.domains", [])
             return $http.get(url.get() + '/domains');
         },
         /**
+        * Return the list of domains available during the signing process
+        */
+        available: function() {
+            return $http.get(url.get() + '/domains/available');
+        },
+        /**
          * Get domain info: domain name, list of addresses and associated users (AddressID, Email, DisplayName, UserID, User.DisplayName), verification status for MX, SPF, DKIM
          */
         get: function(id) {

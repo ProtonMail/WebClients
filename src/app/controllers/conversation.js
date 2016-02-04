@@ -26,76 +26,20 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.currentState = $state.$current.name;
     $scope.scrolled = false;
     $scope.conversation = conversation;
+    $scope.showTrashed = false;
+    $scope.showNonTrashed = false;
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
+    $scope.inTrash = $state.is('secured.trash.view');
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
-        var conversation = cache.getConversationCached($stateParams.id);
-        var messages = cache.queryMessagesCached($stateParams.id);
-        var loc = tools.currentLocation();
-
-        if(angular.isDefined(conversation)) {
-            var labels = conversation.LabelIDs;
-
-            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
-                _.extend($scope.conversation, conversation);
-            } else {
-                return $scope.back();
-            }
-        } else {
-            return $scope.back();
-        }
-
-        if(angular.isDefined(messages)) {
-            messages = _.sortBy(messages, 'Time');
-
-            _.each(messages, function(message) {
-                var current = _.findWhere($scope.messages, {ID: message.ID});
-                var index = $rootScope.discarded.indexOf(message.ID); // Check if the message is not discarded
-
-                if(angular.isUndefined(current) && index === -1) {
-                    // Add message
-                    $scope.messages.push(message);
-
-                    // Display notification
-                    if(message.Type === 0) {
-                        notify({
-                            message: $translate.instant('NEW_MESSAGE'),
-                            classes: 'notification-success'
-                        });
-                    }
-                }
-            });
-
-            _.each($scope.messages, function(message) {
-                var current = _.findWhere(messages, {ID: message.ID});
-
-                if(angular.isUndefined(current)) {
-                    var index = $scope.messages.indexOf(current);
-                    // Delete message
-                    $scope.messages.splice(index, 1);
-                }
-            });
-
-            if($scope.messages.length === 0) {
-                $scope.back();
-            }
-        } else {
-            $scope.back();
-        }
+        $scope.refreshConversation();
     });
 
     $scope.$on('$destroy', function(event) {
         $timeout.cancel(scrollPromise);
         delete $rootScope.targetID;
-    });
-
-    $scope.$on('targetLoaded', function(event) {
-        if ($scope.scrolled === false) {
-            $scope.scrolled = true;
-            $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
-        }
     });
 
     /**
@@ -104,12 +48,26 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.initialization = function() {
         var loc = tools.currentLocation();
 
-        if(angular.isDefined(conversation)) {
+        if (angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
+            var messages = cache.queryMessagesCached($scope.conversation.ID);
 
-            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
-                var messages = cache.queryMessagesCached($scope.conversation.ID);
-                messages = _.sortBy(messages, 'Time');
+            if($state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
+                // Remove trashed message
+                if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
+                }
+
+                // Remove non trashed message
+                if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
+                }
+            }
+
+            // Sort by time
+            messages = _.sortBy(messages, 'Time');
+
+            if (messages.length > 0) {
                 var latest = _.last(messages);
 
                 if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
@@ -122,7 +80,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                         // Or the last message
                         $rootScope.targetID = _.last(messages).ID;
                     }
-                } else if(angular.isDefined($rootScope.targetID)) {
+                } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
                     // Do nothing, target initialized by click
                 } else {
                     // If the latest message is read, we open it
@@ -157,16 +115,134 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         } else {
             $scope.back();
         }
+    };
 
+    $scope.refreshConversation = function() {
+        var conversation = cache.getConversationCached($stateParams.id);
+        var messages = cache.queryMessagesCached($stateParams.id);
+        var loc = tools.currentLocation();
+
+        if(angular.isDefined(conversation)) {
+            var labels = conversation.LabelIDs;
+
+            if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
+                _.extend($scope.conversation, conversation);
+            } else {
+                return $scope.back();
+            }
+        } else {
+            return $scope.back();
+        }
+
+        if(angular.isArray(messages) && messages.length > 0) {
+            var toAdd = [];
+            var toRemove = [];
+            var index, message, found, ref;
+            var find = function(messages, ID) {
+                return _.find(messages, function(m) { return m.ID === ID; });
+            };
+
+            // Remove trashed message
+            if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
+                messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
+            }
+
+            // Remove non trashed message
+            if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
+                messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
+            }
+
+            // Sort by time
+            messages = _.sortBy(messages, 'Time');
+
+            for (index = 0; index < messages.length; index++) {
+                found = find($scope.messages, messages[index].ID);
+
+                if (angular.isUndefined(found)) {
+                    toAdd.push({index: index, message: messages[index]});
+                }
+            }
+
+            for (index = 0; index < toAdd.length; index++) {
+                ref = toAdd[index];
+
+                // Insert new message
+                $scope.messages.splice(ref.index, 0, ref.message);
+
+                // Display notification
+                if(ref.message.Type === 0 && $scope.showTrashed === false && $scope.showNonTrashed === false) {
+                    notify({
+                        message: $translate.instant('NEW_MESSAGE'),
+                        classes: 'notification-success'
+                    });
+                }
+            }
+
+            for (index = 0; index < $scope.messages.length; index++) {
+                found = find(messages, $scope.messages[index].ID);
+
+                if (angular.isUndefined(found)) {
+                    toRemove.push({index: index});
+                }
+            }
+
+            for (index = toRemove.length - 1; index >= 0; index--) {
+                ref = toRemove[index];
+
+                // Remove message deleted
+                $scope.messages.splice(ref.index, 1);
+            }
+        } else {
+            $scope.back();
+        }
     };
 
     /**
-     * Back to conversation / message list
+     * Return if there are trashed message inside this conversation
+     * @return {Boolean}
      */
-    $scope.back = function() {
-        $state.go("secured." + $scope.mailbox, {
-            id: null // remove ID
+    $scope.trashed = function() {
+        return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
+    };
+
+    /**
+     * Return if there are non trashed message inside this conversation
+     * @return {Boolean}
+     */
+    $scope.nonTrashed = function() {
+        var result = false;
+        var locations = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.starred,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive
+        ];
+
+        _.each($scope.conversation.LabelIDs, function(labelID) {
+            if (locations.indexOf(labelID) !== -1) {
+                result = true;
+            }
         });
+
+        return result;
+    };
+
+    /**
+     * Toggle trashed messages
+     */
+    $scope.toggleTrashed = function() {
+        $scope.showTrashed = !$scope.showTrashed;
+        $scope.refreshConversation();
+    };
+
+    /**
+     * Toggle non trashed messages
+     */
+    $scope.toggleNonTrashed = function() {
+        $scope.showNonTrashed = !$scope.showNonTrashed;
+        $scope.refreshConversation();
     };
 
     /**

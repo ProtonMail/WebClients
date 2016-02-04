@@ -176,7 +176,7 @@
             <div class="meta">
                 <div class="row fromRow">
                     <label>{{ 'FROM' | translate }}</label>
-                    <select ng-model="message.From" ng-options="address.Email for address in user.Addresses" title="{{ 'FROM' | translate }}"></select>
+                    <select ng-model="message.From" ng-options="address.Email for address in user.Addresses | orderBy: 'Send' | enabled" title="{{ 'FROM' | translate }}"></select>
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
                     </button>
@@ -204,7 +204,7 @@
                     <autocomplete emails="message.BCCList" />
                 </div>
                 <div class="row subjectRow">
-                    <input type="text" title="{{ 'SUBJECT' | translate }}" class="subject" placeholder="{{ 'SUBJECT' | translate }}" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'default blur', debounce: { 'default': 200, 'blur': 0 }}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+                    <input type="text" title="{{ 'SUBJECT' | translate }}" class="subject" placeholder="{{ 'SUBJECT' | translate }}" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
             </div>
             <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" max-composer-height>
@@ -213,7 +213,7 @@
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
-                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" max-composer-height></squire>
+                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" ng-hide="isOver === true" max-composer-height></squire>
                 </div>
             </section>
             <div
@@ -226,10 +226,10 @@
                 ng-repeat="attachment in message.Attachments"
                 ng-init="initAttachment(attachment, $index)">
                     <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
-                    <a ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
+                    <a ng-show="!!attachment.upallowOthers" class="preview-close" ng-click="cancelAttachment(attachment, message)">
                         <i class="fa fa-times"></i>
                     </a>
-                    <a ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)">
+                    <a ng-show="!!!attachment.upallowOthers" class="preview-close" ng-click="removeAttachment(attachment, message)">
                         <i class="fa fa-times"></i>
                     </a>
                 </span>
@@ -242,11 +242,10 @@
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button
                 class="pm_button btn-add-attachment"
-                ng-disabled="isAppleDevice"
+                ng-disabled="message.allowOthers() || message !== selected"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',
-                    'primary': message.Attachments && message.Attachments.length > 0,
-                    'dead': message.loading()
+                    'primary': message.Attachments && message.Attachments.length > 0
                 }"
                 pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
                 pt-placement="top"
@@ -258,9 +257,9 @@
                 class="pm_button"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'encrypt',
-                    'primary': message.IsEncrypted === 1,
-                    'dead': message.loading()
+                    'primary': message.IsEncrypted === 1
                 }"
+                ng-disabled="message.allowOthers() || message !== selected"
                 pt-placement="top"
                 pt-tooltip="{{ 'ENCRYPTION' | translate }}"
                 ng-click="togglePanel(message, 'encrypt')">
@@ -271,9 +270,9 @@
                 class="pm_button"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'expiration',
-                    'primary': message.ExpirationTime > 0,
-                    'dead': message.loading()
+                    'primary': message.ExpirationTime > 0
                 }"
+                ng-disabled="message.allowOthers() || message !== selected"
                 pt-placement="top"
                 pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
                 ng-click="togglePanel(message, 'expiration')">
@@ -286,7 +285,7 @@
                 <div class="pull-right">
                     <button
                     class="pm_button"
-                    ng-class="{ 'dead': message.loading() || message !== selected }"
+                    ng-disabled="message.allowDiscard()"
                     ng-click="close(message, true, false)"
                     pt-tooltip="{{ 'DELETE_THE_DRAFT' | translate }}"
                     pt-placement="top">
@@ -295,18 +294,17 @@
                     </button>
                     <button
                     class="pm_button"
-                    ng-class="{ 'dead': message.loading() || message !== selected }"
+                    ng-disabled="message.allowSave() || message !== selected"
                     ng-click="save(message, false, true)"
                     pt-tooltip="{{ 'SAVE' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true"> {{ 'SAVE' | translate }}</span>
                     </button>
-                    <button class="pm_button primary" ng-disabled="message.loading() || message !== selected" ng-click="send(message)">
-                        <i class="fa" ng-class="{'fa-send': !!!message.loading()}"></i>
-                        <span ng-hide="message.loading()">{{ 'SEND' | translate }}</span>
-                        <span ng-show="message.sending === true">{{ 'SENDING' | translate }}</span>
+                    <button class="pm_button primary" ng-disabled="message.allowSend() || message !== selected" ng-click="send(message)">
+                        <span ng-hide="message.allowSend()">{{ 'SEND' | translate }}</span>
                         <span ng-show="message.uploading > 0">{{ 'UPLOADING' | translate }}</span>
+                        <span ng-show="message.sending === true">{{ 'SENDING' | translate }}</span>
                         <span ng-show="message.encrypting === true">{{ 'ENCRYPTING' | translate }}</span>
                         <span ng-show="message.saving === true && message.autosaving === false">{{ 'SAVING' | translate }}</span>
                     </button>

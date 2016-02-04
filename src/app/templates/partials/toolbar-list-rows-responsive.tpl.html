@@ -5,23 +5,23 @@
                 <i class="fa fa-long-arrow-left"></i>
             </a>
         </span>
-        <label class="pm_checkbox" ng-if="!idDefined()">
-            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
-            <em class="fa fa-check"></em>
-        </label>
-        <span class="pm_buttons">
-            <a
-
-            class="fa fa-eye"
-            pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
-            ng-click="read()"
-            ng-class="{ disabled: numberElementSelected === 0 }"></a>
-            <a
-
-            class="fa fa-eye-slash divider"
-            pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}"
-            ng-click="unread()"
-            ng-class="{ disabled: numberElementSelected === 0 }"></a>
+        <a
+        ng-disabled="numberElement === 0"
+        pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}"
+        ng-if="!idDefined()"
+        ng-click="toggleAllSelected()"
+        class="fa fa-square-o"
+        ng-class="{
+            'fa-square-o': !allSelected(),
+            'fa-check-square': allSelected()
+        }"></a>
+        <span class="pm_buttons" ng-show="messageButtons === 0">
+            <a href="#" class="fa fa-eye" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+            <a href="#" class="fa fa-eye-slash divider" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+        </span>
+        <span class="pm_buttons" ng-show="messageButtons === 1">
+            <a href="#" class="fa fa-eye-slash" pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+            <a href="#" class="fa fa-eye divider" pt-tooltip="{{ 'MARK_AS_READ' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
         </span>
         <span class="pm_buttons">
             <a
@@ -111,7 +111,7 @@
                 </a>
             </span>
         </span>
-        <paginator ng-hide="idDefined() && rowMode === true" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.ELEMENTS_PER_PAGE" change="selectPage" />
+        <paginator ng-hide="idDefined() && layoutMode === 'rows'" page="page" total-items="conversationCount()" items-per-page="CONSTANTS.ELEMENTS_PER_PAGE" change="selectPage" />
     </div>
     <div class="clear"></div>
 </nav>

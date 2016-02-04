@@ -49,6 +49,11 @@ body .pm_form textarea[readonly] {
 code {
 	display: inline;
 	font-family: monospace;
+	color: #000;
+	border-radius: 2px;
+	line-height: 1rem;
+	max-width: 100%;
+	overflow: auto;
 }
 
 p a {

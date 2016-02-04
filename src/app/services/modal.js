@@ -444,19 +444,42 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('generateModal', function(pmModal) {
+.factory('loginPasswordModal', function(pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/generate.tpl.html',
+        templateUrl: 'templates/modals/loginPassword.tpl.html',
         controller: function(params) {
-            this.password = '';
+            this.loginPassword = '';
+
+            this.submit = function() {
+                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
+                    params.submit(this.loginPassword);
+                }
+            }.bind(this);
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
+})
+
+.factory('reactivateModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/reactivate.tpl.html',
+        controller: function(params) {
+            this.loginPassword = '';
+            this.keyPassword = '';
 
             /**
              * Submit password
              */
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.password);
+                    params.submit(this.loginPassword, this.keyPassword);
                 }
             }.bind(this);
 
@@ -502,6 +525,7 @@ angular.module("proton.modals", [])
             this.recovery = '';
             this.create = params.create;
             this.base = CONSTANTS.BASE_SIZE;
+            this.coupon = '';
 
             if(params.card.data.Code === 1000 && params.card.data.Sources.length > 0) {
                 var card = _.first(params.card.data.Sources);
@@ -547,6 +571,9 @@ angular.module("proton.modals", [])
                 }.bind(this));
             }.bind(this);
 
+            /**
+             * Generate token with Stripe library
+             */
             var generateStripeToken = function() {
                 if($window.Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
@@ -576,6 +603,9 @@ angular.module("proton.modals", [])
                 }, stripeResponseHandler);
             }.bind(this);
 
+            /**
+             * Callback called by the Stripe library when the token is generated
+             */
             var stripeResponseHandler = function(status, response) {
                 if(status === 200) {
                     // Add data from Stripe
@@ -670,7 +700,13 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/user/modal.tpl.html',
         controller: function(params) {
             // Variables
-            this.step = 'address';
+            this.step = 'member';
+            this.organization = params.organization;
+            this.nickname = '';
+            this.loginPassword = '';
+            this.confirmPassword = '';
+            this.quota = 0;
+            this.private = true;
 
             // Functions
             this.submit = function() {
@@ -682,22 +718,6 @@ angular.module("proton.modals", [])
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
-                }
-            };
-
-            this.next = function() {
-                if (this.step && this.step === 'address') {
-                    // do validation
-
-                    // next step
-                    this.step = 'password';
-                }
-                else if (this.step && this.step === 'password') {
-                    // do validation
-
-                    // next step
-                    this.step = 'thanks';
-
                 }
             };
         }
@@ -725,7 +745,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('addressModal', function(pmModal, $rootScope) {
+.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/address.tpl.html',
@@ -733,13 +753,23 @@ angular.module("proton.modals", [])
             // Variables
             this.domain = params.domain;
             this.step = params.step;
+            this.members = params.members;
+            this.member = params.members[0];
+            this.address = '';
+
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
             // Functions
-            this.submit = function() {
-                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.address);
+            this.add = function() {
+                if (angular.isDefined(params.add) && angular.isFunction(params.add)) {
+                    params.add(this.address, this.member);
+                }
+            };
+
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
                 }
             };
 
@@ -757,15 +787,25 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/domain.tpl.html',
         controller: function(params) {
-            this.name =  (params.domain && params.domain.DomainName) ? params.domain.DomainName : '';
+            // Variables
             this.step = params.step;
+            this.domain = params.domain;
+            this.name = '';
+
+            // Functions
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            // Functions
+
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
                     params.submit(this.name);
+                }
+            };
+
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
                 }
             };
 
@@ -826,16 +866,32 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('storageModal', function(pmModal) {
+.factory('storageModal', function(pmModal, CONSTANTS) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/storage.tpl.html',
         controller: function(params) {
+            // Variables
+            var base = CONSTANTS.BASE_SIZE;
+
+            this.organization = params.organization;
             this.member = params.member;
+            this.value = params.member.MaxSpace / base / base;
+            this.units = [
+                {
+                    label: 'MB',
+                    value: base * base
+                },
+                {
+                    label: 'GB',
+                    value: base * base * base
+                }
+            ];
+            this.unit = this.units[0];
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit();
+                    params.submit(this.member);
                 }
             };
 
@@ -861,6 +917,12 @@ angular.module("proton.modals", [])
             this.submit = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.submit();
+                }
+            };
+            this.next = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                    params.next();
                 }
             };
             this.close = function() {
