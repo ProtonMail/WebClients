@@ -12,9 +12,13 @@
                 <span class="pm_badge pull-right error" ng-hide="address.Status === 1">Disabled</span>
                 <h4>{{ address.Email }}</h4>
                 <p ng-hide="isNonPrivate === true">
-                    <button class="pm_button" ng-click="generate(address)" ng-disabled="address.Keys > 10">
+                    <button class="pm_button" ng-click="generate(address, 2048)" ng-disabled="address.Keys > 10">
                         <i class="fa fa-key"></i>
-                        {{ 'GENERATE_NEW_KEY_PAIR' | translate }}
+                        {{ 'GENERATE_NEW_KEY_PAIR' | translate }} 2048
+                    </button>
+                    <button class="pm_button" ng-click="generate(address, 4096)" ng-disabled="address.Keys > 10">
+                        <i class="fa fa-key"></i>
+                        {{ 'GENERATE_NEW_KEY_PAIR' | translate }} 4096
                     </button>
                 </p>
             </header>

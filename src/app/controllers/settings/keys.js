@@ -165,7 +165,7 @@ angular.module("proton.controllers.Settings")
      * Generate an other key pair
      * @param {Object} address
      */
-    $scope.generate = function(address) {
+    $scope.generate = function(address, numBits) {
         var title = $translate.instant('GENERATE_KEY');
         var message = $translate.instant('CONFIRM_GENERATE_KEY');
         var mailboxPassword = authentication.getPassword();
@@ -175,7 +175,7 @@ angular.module("proton.controllers.Settings")
                 title: title,
                 message: message,
                 confirm: function() {
-                    pmcw.generateKeysRSA(address.Email, mailboxPassword).then(function(result) {
+                    networkActivityTracker.track(pmcw.generateKeysRSA(address.Email, mailboxPassword, numBits).then(function(result) {
                         var publicKeyArmored = result.publicKeyArmored;
                         var privateKeyArmored = result.privateKeyArmored;
 
@@ -199,7 +199,7 @@ angular.module("proton.controllers.Settings")
                     }, function(error) {
                         notify({message: error, classes: 'notification-danger'});
                         confirmModal.deactivate();
-                    });
+                    }));
                 },
                 cancel: function() {
                     confirmModal.deactivate();
