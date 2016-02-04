@@ -108,6 +108,7 @@
             <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
                 <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
             </div>
+            <p class="alert alert-warning">Warning: If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
             <label for="notificationEmail">
                 <em class="num" ng-if="preInvited">3</em>
                 <em class="num" ng-if="!preInvited">4</em>
