@@ -64,7 +64,8 @@ module.exports = {
       "vendor/angular-ical/dist/js/angular-ical.js",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
       "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js",
-      "vendor/angular-messages/angular-messages.js"
+      "vendor/angular-messages/angular-messages.js",
+      "vendor/svgeezy/svgeezy.js"
     ],
     bootstrap_components: [
       "affix",

@@ -28,6 +28,12 @@
         float: none;
         display: inline-block;
     }
+    .layout a img {
+        display: block;
+        height: 16px;
+        position: relative;
+        top: 8px;
+    }
 }
 
 #pm_toolbar-mobile {

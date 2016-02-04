@@ -236,6 +236,7 @@ angular.module('proton', [
 
     // SVG Polyfill for Edge
     svg4everybody();
+    svgeezy.init(false, 'png');
 
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
