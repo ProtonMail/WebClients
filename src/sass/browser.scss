@@ -17,7 +17,7 @@
         }
     }
     body.scroll {
-        overflow-y: auto !important; 
+        overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
     }
 }
@@ -53,7 +53,14 @@
     }
 }
 
-input:invalid, 
+.ua-firefox {
+    .pm_button,
+    .pm_buttons a {
+        overflow: hidden;
+    }
+}
+
+input:invalid,
 input:-moz-ui-invalid {
     border:0;
     outline:none;
