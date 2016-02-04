@@ -103,7 +103,8 @@ angular.module("proton.controllers.Auth", [
     };
 
     $scope.login = function() {
-        $('input').blur();
+        angular.element('input').blur();
+        angular.element('#pm_login').attr({action:'/*'});
         clearErrors();
 
         // Check username and password
@@ -261,17 +262,6 @@ angular.module("proton.controllers.Auth", [
                 }
             )
         );
-    };
-
-    $scope.keypress = function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            if ($state.is("login.unlock")) {
-                $scope.unlock();
-            } else {
-                $scope.login();
-            }
-        }
     };
 
     $scope.selectPassword = function() {
