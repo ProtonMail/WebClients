@@ -24,6 +24,7 @@ angular.module("proton.event", ["proton.constants"])
 		    return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
+		var generation = []; // Store Address ID that need generation of key pair
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
@@ -93,14 +94,18 @@ angular.module("proton.event", ["proton.constants"])
 
 					_.each(user.Addresses, function(address) {
 						if (address.Keys.length === 0 && privateUser === true) {
-							generateModal.activate({
-								params: {
-									address: address,
-									cancel: function() {
-										generateModal.deactivate();
+							if (generation.indexOf(address.ID) === -1) {
+								generation.push(address.ID);
+								generateModal.activate({
+									params: {
+										address: address,
+										cancel: function() {
+											generateModal.deactivate();
+											generation.splice(generation.indexOf(address.ID), 1);
+										}
 									}
-								}
-							});
+								});
+							}
 						} else {
 							_.each(address.Keys, function(key, index) {
 								promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
