@@ -27,6 +27,9 @@ html.protonmail body.activeComposer {
         }
     }
     &.important {
+        z-index: 99998;
+    }
+    &.very-important {
         z-index: 99999;
     }
     &.small {
