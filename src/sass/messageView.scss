@@ -143,7 +143,7 @@
                     position: absolute;
                     left: -1rem;
                     width: 1rem;
-                    height: 25px;
+                    height: 30px;
                     top: 0;
                     background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, $read 100%);
                     background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,$read 100%);
@@ -171,7 +171,7 @@
             }
             .location {
                 .loc {
-                    color: $gray-light;
+                    color: $tags;
                 }
             }
             .status {

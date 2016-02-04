@@ -10,7 +10,7 @@ $toggleWidth: 		8rem;
 $short: 			700px;
 $panel:				400px;
 $pm_loading: 		50px;
-$maxHeight: auto; // was 40rem
+$maxHeight: 		auto; // was 40rem
 $box-shadow:		1px 1px 3px rgba(0, 0, 0, 0.33), 0 0 2px rgba(0, 0, 0, 0.33);
 
 // Theme Colors
@@ -30,7 +30,7 @@ $dark:				#4d4c5d;
 $blue: 				#95bbcf;
 $green:				#aecf96;
 $red:				#C18183;
-$yellow:			#cfcd95;
+$yellow:			#dfdf19;
 $read:				#edeff2;
 $alt:				#838897;
 $alt-light:			lighten($alt, 5%);
@@ -38,6 +38,7 @@ $exp:				#ec6446;
 $text:				#222;
 $pgp:				#090;
 $active:			#828895;
+$tags:				#d4d7dc;
 
 // Desktop 
 $desktop:			1200px;
