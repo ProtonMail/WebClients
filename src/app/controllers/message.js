@@ -411,8 +411,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var ids = [$scope.message.ID];
 
         $scope.message.expand = false;
-
         action.unreadMessage(ids);
+        $scope.back();
     };
 
     $scope.decryptAttachment = function(attachment, $event, message) {
