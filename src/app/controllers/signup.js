@@ -29,7 +29,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         // Variables
         $scope.tools    = tools;
         $scope.compatibility = tools.isCompatible();
-
         $scope.creating =           false;
         $scope.genNewKeys =         false;
         $scope.createUser =         false;
@@ -38,6 +37,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.mailboxLogin =       false;
         $scope.getUserInfo =        false;
         $scope.finishCreation =     false;
+        $scope.verificationSent = false;
         $scope.domains = [];
 
         _.each(domains, function(domain) {
@@ -112,6 +112,22 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         else {
             return true;
         }
+    };
+
+    $scope.sendVerificationCode = function() {
+        User.code({
+            Username: $scope.account.Username,
+            Type: 'email',
+            Destination: {
+                Address: $scope.account.emailVerification
+            }
+        }).$promise.then(function(response) {
+            if (response.Code === 1000) {
+                $scope.verificationSent = true;
+            } else if (response.Error) {
+                notify({message: response.Error, classes: 'notification-danger'});
+            }
+        });
     };
 
     // ---------------------------------------------------

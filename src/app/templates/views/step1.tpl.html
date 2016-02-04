@@ -108,7 +108,7 @@
             <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
                 <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
             </div>
-            <p class="alert alert-warning">Warning: If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
+            <p class="alert alert-warning">If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
             <label for="notificationEmail">
                 <em class="num" ng-if="preInvited">3</em>
                 <em class="num" ng-if="!preInvited">4</em>
@@ -129,12 +129,37 @@
                 <p class="alert alert-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
             </div>
             <div ng-if="!preInvited">
-                <label for="password">
+                <label>
                     <em class="num" ng-if="preInvited">4</em>
                     <em class="num" ng-if="!preInvited">5</em>
-                    {{ 'Anti-Spam' | translate }}
+                    {{ 'PROOVE_YOUR_HUMANITY' | translate }}
                 </label>
-                <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
+                <div class="pm_grid">
+                    <div class="col-1-2">
+                        <label>
+                            <input type="radio" ng-model="verificator" value="email" /> {{ 'BY_EMAIL' | translate }}
+                        </label>
+                    </div>
+                    <div class="col-1-2">
+                        <label>
+                            <input type="radio" ng-model="verificator" value="recaptcha" /> reCAPTCHA by Google
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="verificator === 'email'">
+                    <p>
+                        <input type="text" ng-model="account.emailVerification" placeholder="{{ 'EMAIL_VERIFICATION' | translate }}" />
+                    </p>
+                    <div class="pm_grid">
+                        <div class="col-1-3">
+                            <button type="button" class="pm_button primary" ng-click="sendVerificationCode()">{{ 'SEND' | translate }}</button>
+                        </div>
+                        <div class="col-2-3" ng-show="verificationSent === true">
+                            <input  class="bigger" type="text" ng-model="account.codeVerification" placeholder="{{ 'CODE_VERIFICATION' | translate }}" />
+                        </div>
+                    </div>
+                </div>
+                <iframe ng-if="verificator === 'recaptcha'" id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
             </div>
             <p ng-if="preInvited">&nbsp;</p>
         </div><!--/.wrapper-->

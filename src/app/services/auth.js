@@ -288,8 +288,7 @@ angular.module("proton.authentication", [
 
             $log.debug('setAuthCookie');
 
-            $http.post(url.get() + "/auth/cookies",
-            {
+            $http.post(url.get() + "/auth/cookies", {
                 ResponseType: "token",
                 ClientID: CONFIG.clientID,
                 GrantType: "refresh_token",
@@ -302,7 +301,7 @@ angular.module("proton.authentication", [
                     $log.debug(response);
 
                     if (response.data.Code === 1000) {
-                        $log.debug('/auth/cookies:',response);
+                        $log.debug('/auth/cookies:', response);
                         $log.debug('/auth/cookies1: resolved');
                         $rootScope.domoArigato = true;
                         // forget the old headers, set the new ones
@@ -324,9 +323,14 @@ angular.module("proton.authentication", [
                         $log.error('setAuthCookie1', response);
                     }
                 },
-                function(err) {
-                    $log.error('setAuthCookie2', err);
-                    deferred.reject({message: "Error setting authentication cookies."});
+                function(error) {
+                    $log.error('setAuthCookie2', error);
+
+                    if (response.data && response.data.Error) {
+                        deferred.reject({message: response.data.Error});
+                    } else {
+                        deferred.reject({message: "Error setting authentication cookies."});
+                    }
                 }
             );
 
