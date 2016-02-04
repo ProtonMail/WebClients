@@ -3,13 +3,13 @@
     <div class="text-center header">
         <img src="/assets/img/logo-dark.png" height="20"><br>
         <h2><i class="fa fa-user"></i>{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h2>
-        <div class="margin pm_form" ng-if="preInvited">
+        <p class="pm_form" ng-if="preInvited">
             For: <strong>{{ account.Username }}@</strong>
             <span class="pm_select inline bigger">
                 <select class="selectDomain" ng-model="account.domain" ng-options="domain.label for domain in domains"></select>
                 <i class="fa fa-angle-down"></i>
             </span>
-        </div>
+        </p>
     </div>
     <form method="post" ng-submit="saveContinue(step1)" name="step1" role="form" novalidate class="pm_form">
         <p class="alert">
