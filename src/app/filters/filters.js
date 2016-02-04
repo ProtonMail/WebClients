@@ -81,6 +81,9 @@ angular.module("proton.filters",[])
 .filter('labels', function(authentication) {
     return function(labels) {
         var labelsFiltered = [];
+        if( !authentication.user ) {
+            return [];
+        }
         var userLabels = _.chain(authentication.user.Labels)
             .sortBy('Order')
             .value();
