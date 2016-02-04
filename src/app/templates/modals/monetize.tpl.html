@@ -6,30 +6,27 @@
                 <h4 class="modal-title">Help us to enhance ProtonMail</h4>
             </div>
             <div class="modal-body text-center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sapiente maiores quisquam soluta, nesciunt! Dolorum, modi, eligendi. Maiores est, delectus, laudantium sint architecto, suscipit eaque voluptate quidem debitis optio necessitatibus!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sapiente maiores quisquam soluta, nesciunt! Dolorum, modi, eligendi.</p>
                 <form novalidate ng-submit="ctrl.donate()" class="pm_form">
-                    <div>
-                        <span class="pm_buttons">
-                            <a href="#" ng-repeat="currency in ctrl.currencies" type="button" ng-click="ctrl.currency = currency" ng-class="{'active': currency === ctrl.currency, 'divider': $first === false}">{{ currency }}</a>
-                        </span>
+                    <div class="text-center">
+                        <p>
+                            <span class="pm_buttons inline">
+                                <a href="#" ng-repeat="currency in ctrl.currencies" type="button" ng-click="ctrl.currency = currency" ng-class="{'active': currency === ctrl.currency, 'divider': $first === false}">{{ currency }}</a>
+                            </span>
+                        </p>
                     </div>
-                    <div>
-                        <span class="pm_buttons">
+                    <div class="text-center donationOptions">
+                        <span class="pm_buttons pull-left">
                             <a href="#" ng-repeat="amount in ctrl.amounts" type="button" ng-click="ctrl.amount = amount" ng-class="{'active': amount === ctrl.amount, 'divider': $first === false}">{{ amount | currency: ctrl.currency }}</a>
                         </span>
-                        <input type="text" placeholder="Other amount" ng-model="ctrl.amount" />
+                        <input type="text" placeholder="Other amount" class="pull-left mini" ng-model="ctrl.amount" />
+                        <button class="pm_button primary pull-right" type="submit">{{ 'DONATE' | translate }}</button>
                     </div>
-                    <p>
-                        <button class="pm_button primary" type="submit">{{ 'DONATE' | translate }}</button>
-                    </p>
                 </form>
                 <p>
                     <a href="#" ng-click="upgrade()">
                         <img src="http://redpandanetwork.org/blog/wp-content/uploads/2014/06/GiantPandaEatingBamboo.jpg" alt="PANDA" />
                     </a>
-                </p>
-                <p>
-                    <button class="pm_button primary" type="button" ng-click="upgrade()">{{ 'UPGRADE' | translate }}</button>
                 </p>
             </div>
         </div>

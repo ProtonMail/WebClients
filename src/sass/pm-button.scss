@@ -22,6 +22,7 @@
     &:focus {
         background-color: lighten($border, 2%);
         outline: none;
+        box-shadow: inset 1px 1px 2px #dbdde1;
     }
     &.large {
         line-height: 50px;
@@ -133,6 +134,10 @@
     text-align: center;
     margin: 0 10px 0 0;
     position: relative;
+    &.inline {
+        display: inline-block;
+        float: none;
+    }
     .disabled,
     [disabled] {
         pointer-events: none;
@@ -180,6 +185,7 @@
         &:active,
         &.active {
             background: lighten($border, 5%) !important;
+            box-shadow: inset 1px 1px 2px #dbdde1;
         }
         &.secondary {
             // white background

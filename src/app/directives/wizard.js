@@ -84,7 +84,7 @@ angular.module('proton.wizard', [])
                         break;
                     case 5:
                         // Hide the wizard
-                        $rootScope.tourActive = true;
+                        scope.tourEnd();
                         // Open monetize modal
                         monetizeModal.activate({
                             params: {
