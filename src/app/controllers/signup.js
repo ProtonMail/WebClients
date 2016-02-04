@@ -199,27 +199,24 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
     /* manual means the fucntion was called outside of the automated chained functions. it will be set to true if triggered manually */
     $scope.checkAvailability = function( manual ) {
-
         var deferred = $q.defer();
 
         $log.debug('checkAvailability');
 
         // reset
-        $scope.goodUsername = undefined;
-        $scope.badUsername = undefined;
+        $scope.goodUsername = false;
+        $scope.badUsername = false;
         $scope.checkingUsername = true;
 
         // user came from pre-invite so we can not check if it exists
-        if ($rootScope.allowedNewAccount===true && manual !== true ) {
+        if ($rootScope.allowedNewAccount === true && manual !== true) {
             $scope.creating = true;
-            $rootScope.$broadcast('creating');
             $scope.checkingUsername = false;
             deferred.resolve(200);
-        }
-        else {
-            User.available({ username: $scope.account.Username }).$promise
-            .then(
-                function(response) {
+        } else {
+            if ($scope.account.Username.length > 0) {
+                User.available({ username: $scope.account.Username }).$promise
+                .then(function(response) {
                     if (response.Available === 0) {
                         if ( manual === true ) {
                             $scope.badUsername = true;
@@ -237,16 +234,13 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                             deferred.resolve(200);
                         } else {
                             $scope.creating = true;
-                            $rootScope.$broadcast('creating');
                             $scope.checkingUsername = false;
                             deferred.resolve(200);
                         }
                     }
-                }
-            );
+                });
+            }
         }
-
-        // $scope.checkingUsername = false;
 
         return deferred.promise;
     };

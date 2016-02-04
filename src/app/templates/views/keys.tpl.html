@@ -22,16 +22,18 @@
                 <thead>
                     <tr>
                         <th style="width: 10px;">&nbsp;</th>
-                        <th>{{ 'FINGERPRINT' | translate }}</th>
+                        <th>{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
                         <th>{{ 'DATE' | translate }}</th>
-                        <th>{{ 'BIT_SIZE' | translate }}</th>
+                        <th>{{ 'BIT_SIZE' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
                         <th class="text-right">{{ 'ACTIONS' | translate }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="key in address.Keys">
                         <td class="text-center">
-                            <i class="fa fa-arrow-up" ng-show="$first"></i>
+                            <a href="#" pt-tooltip="TODO">
+                                <i class="fa fa-arrow-up" ng-show="$first"></i>
+                            </a>
                         </td>
                         <td>
                             <span class="pm_badge" ng-class="{'success': key.decrypted === true}">{{ key.fingerprint }}</span>

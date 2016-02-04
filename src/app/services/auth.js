@@ -173,6 +173,9 @@ angular.module("proton.authentication", [
                 auth.data = {
                     SessionToken: pmcw.decode_base64(session)
                 };
+
+                // If session token set, we probably have a refresh token, try to refresh
+                $rootScope.doRefresh = true;
             }
         },
 

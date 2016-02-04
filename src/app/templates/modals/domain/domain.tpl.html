@@ -4,6 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
+                <span ng-show="ctrl.domain.DomainName" class="pull-right pm_badge success">{{ 'SET!' | translate }}</span>
                 <h4 class="modal-title">1. {{ 'DOMAIN' | translate }}</h4>
             </div>
             <div class="modal-body pm_form">
