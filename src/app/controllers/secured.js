@@ -91,7 +91,7 @@ angular.module("proton.controllers.Secured", [])
      * @return {String} "12.5"
      */
     $scope.storagePercentage = function() {
-        if (authentication.user.UsedSpace && authentication.user.MaxSpace) {
+        if (authentication.user && authentication.user.UsedSpace && authentication.user.MaxSpace) {
             return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
         } else {
             // TODO: error, undefined variables
