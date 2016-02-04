@@ -171,6 +171,7 @@ angular.module("proton.controllers.Settings")
             params: {
                 address: address,
                 cancel: function() {
+                    eventManager.call();
                     generateModal.deactivate();
                 }
             }
