@@ -147,6 +147,7 @@ section.sidebar {
         position: relative;
         overflow: auto;
         height: calc(100% - 355px);
+        float: left;
     }
     div.labels {
         font-size: 14px;
@@ -225,6 +226,7 @@ section.sidebar {
                     text-overflow: ellipsis;
                     padding: 0;
                     font-size: .8rem;
+                    max-width: 65%;
                     &:hover {
                         color: $white;
                     }

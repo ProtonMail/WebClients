@@ -49,7 +49,7 @@ angular.module('proton.wizard', [])
                         });
                         $timeout( function() {
                             $('#tour-jason, #tour-fromage').tooltip('show');
-                            $('.tooltip:visible').addClass('tour animated rubberBand');
+                            $('.tooltip:visible').addClass('tour rubberBand');
                         }, 600);
                         break;
                     case 3:
@@ -64,7 +64,7 @@ angular.module('proton.wizard', [])
                         });
                         $timeout( function() {
                             $('#tour-jason, #tour-fromage').tooltip('show');
-                            $('.tooltip:visible').addClass('tour animated rubberBand');
+                            $('.tooltip:visible').addClass('tour rubberBand');
                         }, 600);
                         break;
                     case 4:
@@ -79,7 +79,7 @@ angular.module('proton.wizard', [])
                         });
                         $timeout( function() {
                             $('#tour-jason, #tour-fromage').tooltip('show');
-                            $('.tooltip:visible').addClass('tour animated rubberBand');
+                            $('.tooltip:visible').addClass('tour rubberBand');
                         }, 600);
                         break;
                     case 5:
