@@ -60,6 +60,10 @@ angular.module("proton.controllers.Header", [])
         });
     }
 
+    $scope.tour = function() {
+        $rootScope.$broadcast('tourStart');    
+    };
+
     /**
      * Call event to open new composer
      */
@@ -100,20 +104,6 @@ angular.module("proton.controllers.Header", [])
             var params = $scope.resetSearchParameters();
 
             params.words = $scope.params.searchMessageInput;
-
-            if (params.words.substring(0,2) === '$$') {
-                /*
-                if (params.words === '$$bubble') {
-                    notify({
-                        message: 'Bubble Mode Activated',
-                        classes: 'notification-success'
-                    });
-                    $rootScope.themeBubble = true;
-                    params.words = '';
-                    return;
-                }
-                */
-            }
 
             $state.go('secured.search', params);
         } else {

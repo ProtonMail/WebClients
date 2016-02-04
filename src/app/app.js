@@ -81,6 +81,7 @@ angular.module('proton', [
     'proton.transformation',
     'proton.maxComposerHeight',
     'proton.drag',
+    'proton.wizard',
 
     // Filters
     'proton.filters',

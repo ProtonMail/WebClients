@@ -1,0 +1,39 @@
+<div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Help us to enhance ProtonMail</h4>
+            </div>
+            <div class="modal-body text-center">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium sapiente maiores quisquam soluta, nesciunt! Dolorum, modi, eligendi.</p>
+                <form novalidate ng-submit="ctrl.donate()" class="pm_form">
+                    <div class="text-center">
+                        <p>
+                            <span class="pm_buttons inline">
+                                <a href="#" ng-repeat="currency in ctrl.currencies" type="button" ng-click="ctrl.currency = currency" ng-class="{'active': currency === ctrl.currency, 'divider': $first === false}">{{ currency }}</a>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="text-center donationOptions">
+                        <span class="pm_buttons pull-left">
+                            <a href="#" ng-repeat="amount in ctrl.amounts" type="button" ng-click="ctrl.amount = amount" ng-class="{'active': amount === ctrl.amount, 'divider': $first === false}">{{ amount | currency: ctrl.currency }}</a>
+                        </span>
+                        <input type="text" placeholder="Other amount" class="pull-left mini" ng-model="ctrl.amount" />
+                        <button class="pm_button primary pull-right" type="submit">{{ 'DONATE' | translate }}</button>
+                    </div>
+                </form>
+                <p>
+                    <a href="#" ng-click="upgrade()">
+                        <img src="http://redpandanetwork.org/blog/wp-content/uploads/2014/06/GiantPandaEatingBamboo.jpg" alt="PANDA" />
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            Thank you for your help!
+            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+        </div>
+    </div>
+    <div class="modal-overlay" ng-click="ctrl.close()"></div>
+</div>
