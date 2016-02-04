@@ -1,13 +1,4 @@
-<form method="post"
-id="pm_login"
-class="pm_panel alt pm_form"
-novalidate
-ng-keypress="keypress($event)"
-role="form"
-autocomplete="on"
-ng-submit="login()"
-novalidate
->
+<form method="post" id="pm_login" class="pm_panel alt pm_form" novalidate role="form" autocomplete="on" ng-submit="login()">
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
@@ -19,6 +10,7 @@ novalidate
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
     <input
+    autofocus
     autocapitalize="off"
     autocorrect="off"
     type="text"
@@ -26,8 +18,8 @@ novalidate
     tabindex="1"
     id="username"
     name="username"
-    placeholder="USERNAME"
-    class="margin focus"
+    placeholder="{{ 'USERNAME' | translate }}"
+    class="margin"
     required="" />
 
     <input
@@ -41,7 +33,7 @@ novalidate
     name="password"
     class="margin"
     required=""
-    placeholder="PASSWORD" />
+    placeholder="{{ 'PASSWORD' | translate }}" />
 
     <div class="clearfix">
         <a class="pm_button link pull-left" ng-click="getLoginHelp()">{{'NEED_HELP?' | translate }}</a>

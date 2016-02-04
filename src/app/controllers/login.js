@@ -264,17 +264,6 @@ angular.module("proton.controllers.Auth", [
         );
     };
 
-    $scope.keypress = function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            if ($state.is("login.unlock")) {
-                $scope.unlock();
-            } else {
-                $scope.login();
-            }
-        }
-    };
-
     $scope.selectPassword = function() {
         var input = $('#password');
 
