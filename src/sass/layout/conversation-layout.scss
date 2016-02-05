@@ -25,8 +25,11 @@ body {
         width: 60%;
         height: 100%;
         float: left;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        overflow: hidden;
+        &.latest {
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
     }
 
     &.rows {
