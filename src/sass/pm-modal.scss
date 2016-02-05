@@ -58,10 +58,10 @@ $modalMargin: 2rem;
         z-index: 2;
         background: $white;
         left: 50%;
-        width: 56rem;
+        width: 48rem;
         margin-top: 3rem;
         margin-bottom: 3rem;
-        margin-left: -28rem;
+        margin-left: -24rem;
         border: 5px solid $primary;
         box-sizing: border-box;
         .close {
@@ -130,14 +130,6 @@ body.mobileMode {
                 margin-left: -25%;
                 left: 50%;
                 top: 2rem;
-                .modal-content {
-                    .modal-header {
-                        padding: ($modalMargin/4) ($modalMargin/2);
-                    }
-                    .modal-body {
-                        padding: 0 ($modalMargin/2);
-                    }
-                }
             }
         }
         .modal-dialog {
@@ -147,7 +139,6 @@ body.mobileMode {
             left: 0;
             right: 0;
             top: 0;
-            bottom: 0;
             width: 100%;
             margin: 0;
             box-sizing: border-box;
@@ -164,19 +155,6 @@ body.mobileMode {
             .modal-content {
                 top: 3rem;
             }
-
-            .modal-footer {
-                padding: ($modalMargin/4) ($modalMargin/2);
-            }
-            .modal-content {
-                .modal-header {
-                    padding: ($modalMargin/2) ($modalMargin/2) ($modalMargin/4) ($modalMargin/2);
-                }
-                .modal-body {
-                    padding: ($modalMargin/4) ($modalMargin/2);
-                }
-            }
-
         }
     }
 }
