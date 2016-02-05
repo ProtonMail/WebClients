@@ -60,7 +60,6 @@
         <div class="row">
             <section class="setting pm_form full">
                 <legend>{{ 'USERS' | translate }}</legend>
-                <p ng-hide="checkDomains()" class="alert alert-info">Please add and verify a domain before adding addresses.</p>
                 <p ng-show="checkDomains()">
                     <button type="button" class="pm_button primary" ng-click="openUserModal()">{{ 'ADD_USER'| translate }}</button>
                     <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_USER' | translate }}</a>
@@ -93,7 +92,7 @@
                                     {{ address.Email }} <small ng-show="address.Send === 1"><strong>(DEFAULT)</strong></small>
                                     <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip="{{ 'UNLINK_ADDRESS' | translate }}"><i class="fa fa-chain-broken pm_button link"></i></a>
                                 </div>
-                                <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_ADDRESS' | translate }}</button>
+                                <a ui-sref="secured.domains" class="pm_button" ng-show="checkDomains()">{{ 'ADD_ADDRESS' | translate }}</button>
                             </td>
 		                    <td class="actions">
 			                    <div ng-hide="member.Private === 1">

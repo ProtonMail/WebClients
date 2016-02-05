@@ -9,11 +9,13 @@ angular.module("proton.controllers.Settings")
     Member,
     members,
     organization,
+    eventManager,
     Organization,
     storageModal,
     domains,
     userModal,
-    notify
+    notify,
+    networkActivityTracker
 ) {
     var MASTER = 2;
     var SUB = 1;
@@ -267,8 +269,9 @@ angular.module("proton.controllers.Settings")
                 submit: function(member) {
                     networkActivityTracker.track(Member.quota(member.ID, member.UsedSpace).then(function(result) {
                         if (result.data && result.data.Code === 1000) {
-                            notify({message: $translate.instant('QUOTA_UPDATED'), classes: 'notification-success'});
+                            eventManager.call();
                             storageModal.deactivate();
+                            notify({message: $translate.instant('QUOTA_UPDATED'), classes: 'notification-success'});
                         }
                     }));
                 },
