@@ -67,8 +67,8 @@ angular.module("proton.controllers.Settings")
     $scope.plusPrice = {1: 5, 12: 47};
     $scope.businessPrice = {1: 10, 12: 97};
     $scope.spacePrice = {1: 1, 12: 9.99};
-    $scope.domainPrice = {1: 2, 12: 9.99};
-    $scope.addressPrice = {1: 2, 12: 9.99};
+    $scope.domainPrice = {1: 2, 12: 19.99};
+    $scope.addressPrice = {1: 2, 12: 19.99};
     $scope.memberPrice = {1: 5, 12: 49.99};
 
     // Options
