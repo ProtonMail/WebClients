@@ -22,6 +22,9 @@ $modalMargin: 2rem;
         }
     }
     &.important {
+        z-index: 99998;
+    }
+    &.very-important {
         z-index: 99999;
     }
     &.small {
