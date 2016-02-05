@@ -11,6 +11,7 @@ angular.module("proton.event", ["proton.constants"])
 		$q,
 		authentication,
 		cache,
+		generateModal,
 		cacheCounters,
 		CONSTANTS,
 		Contact,
@@ -23,6 +24,7 @@ angular.module("proton.event", ["proton.constants"])
 		    return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
+		var generation = []; // Store Address ID that need generation of key pair
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
@@ -76,6 +78,7 @@ angular.module("proton.event", ["proton.constants"])
 				if(angular.isDefined(user)) {
 					var mailboxPassword = authentication.getPassword();
 					var promises = [];
+					var privateUser = user.Private === 1;
 					var keyInfo = function(key) {
 						return pmcw.keyInfo(key.PrivateKey).then(function(info) {
 							key.created = info.created; // Creation date
@@ -90,21 +93,36 @@ angular.module("proton.event", ["proton.constants"])
 					}
 
 					_.each(user.Addresses, function(address) {
-						_.each(address.Keys, function(key, index) {
-							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
-								key.decrypted = true; // We mark this key as decrypted
-								authentication.storeKey(address.ID, key.ID, package); // We store the package to the current service
-								keyInfo(key);
-							}, function(error) {
-								key.decrypted = false; // This key is not decrypted
-								keyInfo(key);
-								// If the primary (first) key for address does not decrypt, display error.
-								if(index === 0) {
-									address.disabled = true; // This address cannot be used
-									notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
-								}
-							}));
-						});
+						if (address.Keys.length === 0 && privateUser === true) {
+							if (generation.indexOf(address.ID) === -1) {
+								generation.push(address.ID);
+								generateModal.activate({
+									params: {
+										address: address,
+										cancel: function() {
+											generateModal.deactivate();
+											generation.splice(generation.indexOf(address.ID), 1);
+										}
+									}
+								});
+							}
+						} else {
+							_.each(address.Keys, function(key, index) {
+								promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
+									key.decrypted = true; // We mark this key as decrypted
+									authentication.storeKey(address.ID, key.ID, package); // We store the package to the current service
+									keyInfo(key);
+								}, function(error) {
+									key.decrypted = false; // This key is not decrypted
+									keyInfo(key);
+									// If the primary (first) key for address does not decrypt, display error.
+									if(index === 0) {
+										address.disabled = true; // This address cannot be used
+										notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
+									}
+								}));
+							});
+						}
 					});
 
 					$q.all(promises).then(function() {

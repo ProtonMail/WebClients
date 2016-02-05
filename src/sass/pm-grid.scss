@@ -7,10 +7,17 @@ $pad: 20px;
 		box-sizing: border-box;
 	}
 
+	&.pad {
+		padding: $pad 0 $pad $pad;
+		[class*='col-']:last-of-type {
+			padding-right: $pad;
+		}
+	}
+
 	&:after {
 		content: "";
 		display: table;
-		clear: both; 
+		clear: both;
 	}
 
 	[class*='col-'] {
@@ -20,7 +27,7 @@ $pad: 20px;
 			padding-right: 0;
 		}
 	}
-	
+
 	.col-1-8 {
 		width: 12.5%;
 	}
@@ -51,14 +58,12 @@ $pad: 20px;
 	.col-7-8 {
 		width: 87.5%;
 	}
-
-}
-
-.pm_grid-pad {
-	padding: $pad 0 $pad $pad;
-	[class*='col-']:last-of-type {
-		padding-right: $pad;
+	.col-1-1,
+	.col-8-8,
+	{
+		width: 100%;
 	}
+
 }
 
 @media (max-width: $tablet-landscape) {

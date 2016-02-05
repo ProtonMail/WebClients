@@ -1,0 +1,57 @@
+<div class="modal-content pm_form">
+    <div class="modal-header">
+        <h4 class="modal-title">{{ 'ADD_USER' | translate }}</h4>
+    </div>
+    <div class="modal-body">
+        <div class="pm_grid">
+            <div class="col-1-3">
+                <label>Select Domain</label>
+            </div>
+            <div class="col-2-3">
+                <span class="pm_select inline">
+                    <select ng-model="ctrl.domain" ng-options="domain.DomainName for domain in ctrl.domains"></select>
+                    <i class="fa fa-angle-down"></i>
+                </span>
+                for <strong>{{ ctrl.name }}</strong>
+            </div>
+        </div>
+
+        <form class="pm_grid" method="post" ng-submit="ctrl.add()" novalidate>
+            <div class="col-1-3">
+                <label>Add an address</label>
+            </div>
+            <div class="col-1-3">
+                <input type="text" ng-model="ctrl.address" placeholder="Address" />
+            </div>
+            <div class="col-1-3">
+                <strong>@{{ ctrl.domain.DomainName }}</strong>
+                <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
+            </div>
+        </form>
+        <div class="pm_grid">
+            <div class="col-1-3">
+                <label>Addresses added</label>
+            </div>
+            <div class="col-2-3">
+                <table class="pm_table pm_form bordered">
+                    <thead>
+                        <tr>
+                            <th>{{ 'ADDRESSES' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="address in ctrl.domain.Addresses">
+                            <td>
+                                <strong>{{ address.Email }}</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer text-right">
+    <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+    <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+</div>
