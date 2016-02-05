@@ -528,8 +528,8 @@ angular.module('proton', [
 //
 
 .run(function($log) {
-    $log.info('Find a security bug? security@protonmail.com');
-    $log.info('We\'re hiring! https://protonmail.com/pages/join-us.html');
+    $log.info('Find a security bug? security@protonmail.ch');
+    $log.info('We\'re hiring! https://protonmail.com/careers');
 })
 
 //
