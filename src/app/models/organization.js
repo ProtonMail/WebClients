@@ -47,7 +47,22 @@ angular.module("proton.models.organization", [])
          * Delete the group.
          */
         delete: function() {
-            return $http.delete(url.get() + '/organizations');
+            return $http.delete(url.get() + '/organizations', {
+                transformResponse: function(data, headersGetter, status) {
+                    data = angular.fromJson(data);
+
+                    if (angular.isArray(data.Subscriptions) && data.Subscriptions.length > 0) {
+                        data.Subscription = {
+                            Plan: 'free',
+                            BillingCycle: 1,
+                            Amount: 0,
+                            Currency: 'CHF'
+                        };
+                    }
+
+                    return data;
+                }
+            });
         }
     };
 });
