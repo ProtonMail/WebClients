@@ -100,6 +100,24 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * We check if domains are verified
+     * @return {Boolean}
+     */
+    $scope.checkDomains = function() {
+        var verified = false;
+
+        if (angular.isArray($scope.domains)) {
+            _.each($scope.domains, function(domain) {
+                if (domain.State === 1) {
+                    verified = true;
+                }
+            });
+        }
+
+        return verified;
+    };
+
+    /**
      * Initialize select value with role user
      */
     $scope.initRole = function(member) {
@@ -268,6 +286,7 @@ angular.module("proton.controllers.Settings")
         userModal.activate({
             params: {
                 organization: $scope.organization,
+                domains: $scope.domains,
                 submit: function(datas) {
                     // TODO
                     userModal.deactivate();

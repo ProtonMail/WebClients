@@ -676,19 +676,30 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('userModal', function(pmModal) {
+.factory('userModal', function(pmModal, CONSTANTS) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/user/modal.tpl.html',
         controller: function(params) {
             // Variables
+            var base = CONSTANTS.BASE_SIZE;
+
+            // Parameters
             this.step = 'member';
             this.organization = params.organization;
+            this.domains = params.domains;
+            this.domain = params.domains[0];
             this.nickname = '';
             this.loginPassword = '';
             this.confirmPassword = '';
+            this.address = '';
             this.quota = 0;
-            this.private = true;
+            this.units = [
+                {label: 'MB', value: base * base},
+                {label: 'GB', value: base * base * base}
+            ];
+            this.unit = this.units[0];
+            this.private = false; // Uncheck by default
 
             // Functions
             this.submit = function() {
@@ -697,10 +708,18 @@ angular.module("proton.modals", [])
                 }
             };
 
+            this.next = function() {
+                this.step = 'address';
+            }.bind(this);
+
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
+            };
+
+            this.add = function() {
+
             };
         }
     });
@@ -730,7 +749,7 @@ angular.module("proton.modals", [])
 .factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/address.tpl.html',
+        templateUrl: 'templates/modals/domain/address.tpl.html',
         controller: function(params) {
             // Variables
             this.domain = params.domain;
@@ -742,6 +761,7 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
+            
             // Functions
             this.add = function() {
                 if (angular.isDefined(params.add) && angular.isFunction(params.add)) {
