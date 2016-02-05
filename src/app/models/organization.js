@@ -52,12 +52,11 @@ angular.module("proton.models.organization", [])
                     data = angular.fromJson(data);
 
                     if (angular.isArray(data.Subscriptions) && data.Subscriptions.length > 0) {
-                        data.Subscription = {
-                            Plan: 'free',
-                            BillingCycle: 1,
-                            Amount: 0,
-                            Currency: 'CHF'
-                        };
+                        data.Subscription = data.Subscriptions[0];
+                        data.Subscription.Plan = 'free';
+                        data.Subscription.BillingCycle = 1;
+                        data.Subscription.Amount = 0;
+                        data.Subscription.Currency = 'CHF';
                     }
 
                     return data;
