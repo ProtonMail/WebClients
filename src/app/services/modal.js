@@ -889,10 +889,11 @@ angular.module("proton.modals", [])
                 }
             ];
             this.unit = this.units[0];
+
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.member);
+                    params.submit(this.value * this.unit.value);
                 }
             };
 
