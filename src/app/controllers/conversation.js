@@ -65,7 +65,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             }
 
             // Sort by time
-            messages = _.sortBy(messages, 'Time');
+            messages = cache.orderMessage(messages).reverse();
 
             if (messages.length > 0) {
                 var latest = _.last(messages);
@@ -155,7 +155,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             }
 
             // Sort by time
-            messages = _.sortBy(messages, 'Time');
+            messages = cache.orderMessage(messages).reverse();
 
             for (index = 0; index < messages.length; index++) {
                 found = find($scope.messages, messages[index].ID);
