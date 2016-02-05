@@ -109,7 +109,7 @@
             </div>
         </div>
 
-        <div ng-if="verificator === 'email'" class="pm_form">
+        <div ng-show="verificator === 'email'" class="pm_form">
             <div class="pm_grid" ng-show="verificationSent !== true">
                 <div class="col-2-3">
                     <input type="text" ng-model="account.emailVerification" placeholder="{{ 'EMAIL_VERIFICATION' | translate }}" />
