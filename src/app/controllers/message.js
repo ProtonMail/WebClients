@@ -669,7 +669,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             base.Action = 0;
             base.Subject = ($scope.message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? $scope.message.Subject : re_prefix + ' ' + $scope.message.Subject;
 
-            if($scope.message.Type === 2) {
+            if($scope.message.Type === 2 || $scope.message.Type === 3) {
                 base.ToList = $scope.message.ToList;
             } else {
                 base.ToList = [$scope.message.ReplyTo];
@@ -678,7 +678,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             base.Action = 1;
             base.Subject = ($scope.message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? $scope.message.Subject : re_prefix + ' ' + $scope.message.Subject;
 
-            if($scope.message.Type === 2) {
+            if($scope.message.Type === 2 || $scope.message.Type === 3) {
                 base.ToList = $scope.message.ToList;
                 base.CCList = $scope.message.CCList;
                 base.BCCList = $scope.message.BCCList;

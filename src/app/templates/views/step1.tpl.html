@@ -2,45 +2,35 @@
 <div class="pm_panel wide" ng-hide="creating">
     <div class="text-center header">
         <img src="/assets/img/logo-dark.png" height="20"><br>
-        <h2><i class="fa fa-user"></i>{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h2>
-        <p ng-if="preInvited">For: <strong>{{ account.Username }}@protonmail.com</strong></p>
+        <h2>
+            <i class="fa fa-user"></i>
+            {{ 'CREATE_YOUR_ACCOUNT' | translate }}
+        </h2>
     </div>
-    <form method="post" ng-submit="saveContinue(step1)" name="step1" role="form" novalidate   class="pm_form">
+    <form method="post" ng-submit="saveContinue(step1)" name="step1" role="form" novalidate class="pm_form">
         <p class="alert">
         Take back your privacy! Creating your free secure email account takes less than 2 minutes in most cases.
         </p>
         <div class="wrapper">
-            <div ng-if="!preInvited">
-                <label for="Username">
-                    <em class="num" ng-if="!preInvited">1</em>
-                    {{ 'USERNAME' | translate | capitalize }}
-                </label>
-                <div class="usernameWrap">
-                    <p class="help">This will be your email address.</p>
-                    <input
-                    type="text"
-                    ng-model="account.Username"
-                    name="Username"
-                    autofocus=""
-                    placeholder="{{ 'CHOOSE_USERNAME' | translate }}"
-                    required
-                    ng-readonly="readOnlyUsername"
-                    id="Username"
-                    class="dead"
-                    ng-class="{
-                        'success':goodUsername,
-                        'error':badUsername
-                    }"
-                    ng-change="checkAvailability(true)"
-                    ng-model-options="{ debounce: 1000 }"
-                    pt-placement="bottom">
-                    <em class="usernameDomain">@</em>
-                    <span class="pm_select inline bigger">
-                        <select class="selectDomain" ng-model="account.domain" ng-options="domain.label for domain in domains"></select>
-                        <i class="fa fa-angle-down"></i>
-                    </span>
-                    <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em>
-                </div>
+            <label for="Username">
+                <em class="num">1</em>
+                {{ 'USERNAME_AND_DOMAIN' | translate }}
+            </label>
+            <div class="usernameWrap">
+                <p class="help">This will be your email address.</p>
+                <strong ng-show="readOnlyUsername" ng-bind="account.Username"></strong>
+                <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder="{{ 'CHOOSE_USERNAME' | translate }}" required
+                id="Username" class="dead" ng-change="checkAvailability(true)" ng-model-options="{ debounce: 1000 }"
+                ng-class="{
+                    'success':goodUsername,
+                    'error':badUsername
+                }">
+                <em class="usernameDomain">@</em>
+                <span class="pm_select inline bigger">
+                    <select class="selectDomain" ng-model="account.domain" ng-options="domain.label for domain in domains"></select>
+                    <i class="fa fa-angle-down"></i>
+                </span>
+                <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em>
             </div>
             <div ng-show="goodUsername">
                 <p class="alert alert-success"><i class="fa fa-check"></i> Email available!</p>
@@ -49,89 +39,44 @@
                 <p class="alert alert-danger"><i class="fa fa-times"></i> Email already taken.</p>
             </div>
             <label for="password">
-                <em class="num" ng-if="preInvited">1</em>
-                <em class="num" ng-if="!preInvited">2</em>
+                <em class="num">2</em>
                 {{ 'LOGIN_PASSWORD' | translate }}
             </label>
             <p class="help">This is used to log you into our system.</p>
-            <input
-            id="password"
-            name="password"
-            ng-model="account.loginPassword"
-            type="password"
-            class="form-control margin"
-            placeholder="{{ 'CHOOSE_A_LOGIN_PASSWORD' | translate }}"
-            maxlength="{{ maxPW }}"
-            required />
+            <input id="password" name="password" ng-model="account.loginPassword" type="password" class="form-control margin" placeholder="{{ 'CHOOSE_A_LOGIN_PASSWORD' | translate }}" maxlength="{{ maxPW }}" required />
             <div ng-show="step1.$submitted || step1.password.$touched">
                 <p ng-show="step1.$submitted && step1.password.$error.required" class="alert alert-danger">Login password is required.</p>
             </div>
-            <input
-            id="passwordc"
-            name="passwordc"
-            ng-model="account.loginPasswordConfirm"
-            type="password"
-            class="form-control"
-            placeholder="{{ 'CONFIRM_LOGIN_PASSWORD' | translate }}"
-            required
-            validator="account.loginPassword !== account.loginPasswordConfirm" />
+            <input id="passwordc" name="passwordc" ng-model="account.loginPasswordConfirm" type="password" class="form-control" placeholder="{{ 'CONFIRM_LOGIN_PASSWORD' | translate }}" required validator="account.loginPassword !== account.loginPasswordConfirm" />
             <div ng-show="step1.$submitted || step1.passwordc.$touched">
                 <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="alert alert-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
             </div>
             <label for="password">
-                <em class="num" ng-if="preInvited">2</em>
-                <em class="num" ng-if="!preInvited">3</em>
+                <em class="num">3</em>
                 {{ 'MAILBOX_PASSWORD' | translate }}
             </label>
             <p class="help">This is used to encrypt and decrypt your messages. This is private and only you know it.</p>
-            <input
-            id="MBpassword"
-            name="MBpassword"
-            ng-model="account.mailboxPassword"
-            type="password"
-            class="form-control margin"
-            placeholder="{{ 'CHOOSE_A_MAILBOX_PASSWORD' | translate }}"
-            required />
+            <input id="MBpassword" name="MBpassword" ng-model="account.mailboxPassword" type="password" class="form-control margin" placeholder="{{ 'CHOOSE_A_MAILBOX_PASSWORD' | translate }}" required />
             <div ng-show="step1.$submitted || step1.MBpassword.$touched">
                 <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="alert alert-danger">Mailbox password is required.</p>
             </div>
-            <input
-            id="MBpasswordc"
-            name="MBpasswordc"
-            ng-model="account.mailboxPasswordConfirm"
-            type="password"
-            class="form-control"
-            ng-class="{disabled: networkActivity.loading()}"
-            placeholder="{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}"
-            required
-            ng-enter="finish(step1)" />
+            <input id="MBpasswordc" name="MBpasswordc" ng-model="account.mailboxPasswordConfirm" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}" placeholder="{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}" required />
             <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
                 <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
             </div>
             <p class="alert alert-warning">If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
             <label for="notificationEmail">
-                <em class="num" ng-if="preInvited">3</em>
-                <em class="num" ng-if="!preInvited">4</em>
+                <em class="num">4</em>
                 Recovery Email (Optional)
             </label>
             <p class="help">This is used to recover your account if you get locked out or forget your login password.</p>
-            <input
-            id="notificationEmail"
-            name="notificationEmail"
-            ng-model="account.notificationEmail"
-            type="email"
-            class="form-control"
-            placeholder="Recovery {{ 'EMAIL' | translate }}"
-            validator="notificationEmailValidation()"
-            ng-required="false"
-            ng-enter="saveContinue(step1)" />
+            <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" type="email" class="form-control" placeholder="{{ 'RECOVERY_EMAIL' | translate }}" validator="notificationEmailValidation()" ng-required="false" />
             <div ng-show="step1.notificationEmail.$error.email">
                 <p class="alert alert-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
             </div>
             <div ng-if="!preInvited">
-                <label>
-                    <em class="num" ng-if="preInvited">4</em>
-                    <em class="num" ng-if="!preInvited">5</em>
+                <label for="password">
+                    <em class="num">5</em>
                     {{ 'PROOVE_YOUR_HUMANITY' | translate }}
                 </label>
                 <div class="pm_grid">
@@ -165,17 +110,10 @@
         </div><!--/.wrapper-->
         <div class="checkbox" ng-show="false">
             <label for="optIn" class="optIn">
-                <input
-                id="optIn"
-                name="optIn"
-                ng-init="account.optIn = true"
-                ng-model="account.optIn"
-                type="checkbox" /> Keep me updated about new features such as mobile apps.
+                <input id="optIn" name="optIn" ng-init="account.optIn = true" ng-model="account.optIn" type="checkbox" /> Keep me updated about new features such as mobile apps.
             </label>
         </div>
-        <button
-        type="submit"
-        class="pm_button primary large"
+        <button type="submit" class="pm_button primary large"
         ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid || ( (captcha_token === false) && !preInvited ) ) }">{{ 'COMPLETE_SETUP' | translate }}</button>
         <p>&nbsp;</p>
         <p><a ui-sref="login">Already have an account?</a></p>
@@ -184,15 +122,7 @@
 
 <div class="pm_panel wide" ng-show="creating" id="signUpProcess">
     <div class="text-center header">
-        <img src="/assets/img/logo-dark.png" height="20"><br>
-        <div id="robotLoader" ng-show="creating && !signupError">
-            <div class="spinner large">
-                <div class="spinner1"></div>
-                <div class="spinner2"></div>
-                <div class="spinner3"></div>
-
-            </div>
-        </div>
+        <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" ng-show="creating && !signupError" />
         <h2 class="text-center" ng-show="!signupError">Creating Account</h2>
         <h2 class="text-center" ng-show="signupError">Sign Up Failed</h2>
     </div>

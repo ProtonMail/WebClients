@@ -1,18 +1,24 @@
-<div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
-    <form method="post" class="modal-dialog" ng-submit="ctrl.submit()">
+<div class="pm_modal small important {{ctrl.class}}" role="dialog" style="display: block;">
+    <form method="post" class="modal-dialog" ng-submit="ctrl.submit()" novalidate="">
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Generate a new key pair</h4>
             </div>
             <div class="modal-body pm_form">
-                <p>Enter a password to generate a new key pair:</p>
-                <input type="password" ng-model="ctrl.password" placeholder="Password" />
+                <p class="alert alert-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ut sunt aut tenetur, ea in cumque incidunt aliquid.</p>
+                <div>
+                    <label>{{ 'BIT_SIZE' | translate }}:</label>
+                    <span class="pm_select inline">
+                        <select ng-model="ctrl.size" ng-options="size.label for size in ctrl.sizes"></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                </div>
             </div>
         </div>
         <div class="modal-footer text-right">
             <button class="pm_button pull-left" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="button" class="pm_button primary" ng-click="ctrl.submit()">{{ 'SUBMIT' | translate }}</button>
+            <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>

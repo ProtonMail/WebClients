@@ -268,7 +268,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             Attachments: [],
             IsEncrypted: 0,
             Body: message.Body,
-            From: authentication.user.Addresses[0]
+            From: $filter('filter')($filter('orderBy')(authentication.user.Addresses, 'Send'), {Status: 1})[0]
         });
     };
 

@@ -1,12 +1,4 @@
-<form method="post"
-id="pm_login"
-class="pm_panel alt pm_form"
-novalidate
-ng-keypress="keypress($event)"
-role="form"
-autocomplete="on"
-ng-submit="login()"
->
+<form method="post" id="pm_login" class="pm_panel alt pm_form" novalidate role="form" autocomplete="on" ng-submit="login()">
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
@@ -18,35 +10,34 @@ ng-submit="login()"
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
     <input
-    autocomplete="on"
+    autofocus
     autocapitalize="off"
     autocorrect="off"
     type="text"
     ng-model="username"
     tabindex="1"
     id="username"
-    name="Username"
-    placeholder="USERNAME"
-    class="margin focus"
+    name="username"
+    placeholder="{{ 'USERNAME' | translate }}"
+    class="margin"
     required="" />
 
     <input
     maxlength="{{ ::maxPW }}"
-    autocomplete="on"
     autocapitalize="off"
     autocorrect="off"
     type="password"
     ng-model="password"
     tabindex="2"
     id="password"
-    name="Password"
+    name="password"
     class="margin"
     required=""
-    placeholder="PASSWORD" />
+    placeholder="{{ 'PASSWORD' | translate }}" />
 
     <div class="clearfix">
         <a class="pm_button link pull-left" ng-click="getLoginHelp()">{{'NEED_HELP?' | translate }}</a>
-        <a class="pm_button primary pull-right" ng-click="login()" ng-class="{disabled: networkActivity.loading()}">{{ 'LOGIN' | translate }}</a>
+        <button id="login_btn" ng-click="login()" type="submit" class="pm_button primary pull-right" ng-class="{disabled: networkActivity.loading()}">{{ 'LOGIN' | translate }}</button>
     </div>
 
     <input type="hidden" id="hashed_pw" name="hashed_pw" />

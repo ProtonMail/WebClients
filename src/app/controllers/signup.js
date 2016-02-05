@@ -21,25 +21,24 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     pmcw,
     notify
 ) {
-    // var mellt = new Mellt();
-
     $scope.initialization = function() {
 
         $log.debug('Signup:initialization');
         // Variables
         $scope.tools    = tools;
         $scope.compatibility = tools.isCompatible();
-        $scope.creating =           false;
-        $scope.genNewKeys =         false;
-        $scope.createUser =         false;
-        $scope.logUserIn =          false;
+        $scope.creating = false;
+        $scope.genNewKeys = false;
+        $scope.createUser = false;
+        $scope.logUserIn = false;
         $scope.decryptAccessToken = false;
-        $scope.mailboxLogin =       false;
-        $scope.getUserInfo =        false;
-        $scope.finishCreation =     false;
+        $scope.mailboxLogin = false;
+        $scope.getUserInfo = false;
+        $scope.finishCreation = false;
         $scope.verificationSent = false;
         $scope.domains = [];
 
+        // Populate the domains <select>
         _.each(domains, function(domain) {
             $scope.domains.push({label: domain, value: domain});
         });
@@ -47,21 +46,24 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
 
         $scope.account = [];
+
+        // Select the first domain
         $scope.account.domain = $scope.domains[0];
-        // Prepoppulate the username if from an invite link
-        // and mark as read only
-        if ($rootScope.username!==undefined) {
+
+        // Prepoppulate the username if from an invite link and mark as read only
+        if (angular.isDefined($rootScope.username)) {
             $scope.account.Username = $rootScope.username;
             $scope.readOnlyUsername = true;
+        } else {
+            $scope.readOnlyUsername = false;
         }
 
         // Captcha
-        $scope.captcha_token =     false;
+        $scope.captcha_token = false;
         window.addEventListener("message", captchaReceiveMessage, false);
 
         // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
         function captchaReceiveMessage(event) {
-
             if ( typeof event.origin === "undefined" && typeof event.originalEvent.origin === "undefined" ) {
                 return;
             }

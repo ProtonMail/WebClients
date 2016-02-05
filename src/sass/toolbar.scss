@@ -47,6 +47,9 @@ body.columns #pm_toolbar {
 // Hide Responsive toolbar by default
 #pm_toolbar_responsive {
     display: none;
+    .pm_buttons.mobile {
+        display: none;
+    }
 }
 
 #pm_toolbar {
@@ -202,46 +205,6 @@ body.columns #pm_toolbar {
     }
 }
 
-// @media (max-width: $mobile-landscape) {
-//     #pm_toolbar_responsive {
-//         padding: 12px 10px;
-//         & > .pm_buttons {
-//             display: none;
-//         }
-//         .pm_buttons a {
-//             padding: 0 10px;
-//         }
-//         .main {
-//             .pm_checkbox {
-//                 margin-left: 0 !important;
-//             }
-//             .pm_buttons {
-//                 margin: 0 0 0 5px !important;
-//                 a {
-//                     padding: 0 10px;
-//                 }
-//             }
-//         }
-//         .secondary {
-//             padding: 0;
-//             float: right;
-//             .pm_buttons {
-//                 margin: 0 0 0 5px;
-//                 a {
-//                     padding: 0 10px;
-//                 }
-//             }
-//         }
-//     }
-//     body #pm_view {
-//         padding: 0 !important;
-//         & > header h1 {
-//             padding-left: 10px;
-//         }
-//     }
-// }
-
-
 @media (max-width: $tablet-portrait) {
     #pm_toolbar_responsive {
         .main {
@@ -250,7 +213,7 @@ body.columns #pm_toolbar {
                 a {
                     height: 40px;
                     line-height: 40px;
-                    padding: 0 15px;
+                    padding: 0 14px;
                 }
             }
         }
@@ -260,7 +223,7 @@ body.columns #pm_toolbar {
                 a {
                     height: 40px;
                     line-height: 40px;
-                    padding: 0 15px;
+                    padding: 0 14px;
                 }
             }
         }
@@ -316,9 +279,6 @@ body.columns #pm_toolbar {
         .pm_checkbox {
             margin-right: 5px !important;
         }
-        .main {
-            display: none;
-        }
         .main,
         .secondary {
             display: block;
@@ -336,14 +296,14 @@ body.columns #pm_toolbar {
                 }
             }
         }
-        .main {
-            .pm_buttons a {
-            display: none;
-                &:first-child {
-                    display: block;
-                }
-            }
+        .main > .pm_buttons.mobile {
+            display: block;
         }
+
+        .main .pm_buttons.desktop {
+            display: none;
+        }
+
         .messageActions {
             .pm_buttons {
                 margin: 0 0 0 5px;
