@@ -90,7 +90,7 @@
 </div>
 
 <div class="pm_panel wide" ng-show="humanityTest && !creating">
-    <div ng-if="!preInvited" class="wrapper">
+    <div ng-show="!preInvited" class="wrapper">
         <label for="password">
             <em class="num">5</em>
             {{ 'PROOVE_YOUR_HUMANITY' | translate }} <span>({{ 'FINAL_STEP' | translate }})</span>
@@ -110,7 +110,7 @@
         </div>
 
         <div ng-show="verificator === 'email'" class="pm_form">
-            <div class="pm_grid" ng-show="verificationSent !== true">
+            <div class="pm_grid" ng-show="signup.verificationSent !== true">
                 <div class="col-2-3">
                     <input type="text" ng-model="account.emailVerification" placeholder="{{ 'EMAIL_VERIFICATION' | translate }}" />
                 </div>
@@ -121,13 +121,13 @@
                 </div>
             </div>
 
-            <div class="pm_grid" ng-show="verificationSent === true">
+            <div class="pm_grid" ng-show="signup.verificationSent === true">
                 <p class="alert alert-success"><strong>Verification Code</strong> sent. Please check your email and enter the code below:</p>
-                <div class="margin" ng-show="verificationSent === true">
+                <div class="margin" ng-show="signup.verificationSent === true">
                     <input  class="bigger" type="text" ng-model="account.codeVerification" placeholder="{{ 'CODE_VERIFICATION' | translate }}" />
                 </div>
                 <div class="col-1-2">
-                    <button type="button" class="pm_button link" ng-click="verificationSent = false">
+                    <button type="button" class="pm_button link" ng-click="signup.verificationSent = false">
                         {{ 'SEND_NEW_CODE' | translate }}
                     </button>
                 </div>

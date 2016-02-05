@@ -35,7 +35,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.mailboxLogin = false;
         $scope.getUserInfo = false;
         $scope.finishCreation = false;
-        $scope.verificationSent = false;
+
+        $scope.signup = {};
+        
+        $scope.signup.verificationSent = false;
         $scope.generating = false;
         $scope.domains = [];
 
@@ -126,9 +129,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 Address: $scope.account.emailVerification
             }
         }).$promise.then(function(response) {
+            console.log(response);
             if (response.Code === 1000) {
-                $scope.verificationSent = true;
-                $scope.apply();
+                $scope.signup.verificationSent = true;
+                console.log('???');
+                console.log($scope.signup.verificationSent);
             } else if (response.Error) {
                 notify({message: response.Error, classes: 'notification-danger'});
             }
