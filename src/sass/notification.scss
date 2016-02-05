@@ -5,6 +5,7 @@ body .cg-notify-message {
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
     box-shadow: none;
     padding: .5rem 1rem;
+    z-index: 9999999 !important;
     &.notification-success {
         background-color: $green;
         border-color: $green;
