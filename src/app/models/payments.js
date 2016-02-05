@@ -40,7 +40,23 @@ angular.module("proton.models.payments", [])
          * @return {Promise}
          */
         subscriptions: function() {
-            return $http.get(url.get() + '/payments/subscriptions');
+            return $http.get(url.get() + '/payments/subscriptions', {
+                transformResponse: function(data, headersGetter, status) {
+                    data = angular.fromJson(data);
+
+                    if (angular.isArray(data.Subscriptions) && data.Subscriptions.length > 0) {
+                        data.Subscription = data.Subscriptions[0];
+
+                        if (data.Subscription.Plan === 'free') {
+                            data.Subscription.BillingCycle = 1;
+                            data.Subscription.Amount = 0;
+                            data.Subscription.Currency = 'CHF';
+                        }
+                    }
+
+                    return data;
+                }
+            });
         },
         /**
          *  Get payments corresponding to the given user.

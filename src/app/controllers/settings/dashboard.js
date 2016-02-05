@@ -67,8 +67,8 @@ angular.module("proton.controllers.Settings")
     $scope.plusPrice = {1: 5, 12: 47};
     $scope.businessPrice = {1: 10, 12: 97};
     $scope.spacePrice = {1: 1, 12: 9.99};
-    $scope.domainPrice = {1: 2, 12: 9.99};
-    $scope.addressPrice = {1: 2, 12: 9.99};
+    $scope.domainPrice = {1: 2, 12: 19.99};
+    $scope.addressPrice = {1: 2, 12: 19.99};
     $scope.memberPrice = {1: 5, 12: 49.99};
 
     // Options
@@ -191,15 +191,15 @@ angular.module("proton.controllers.Settings")
         }
 
         if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-            $scope.subscription = subscriptions.data.Subscriptions[0];
-            $scope.currentCurrency = subscriptions.data.Subscriptions[0].Currency;
-            $scope.futureCurrency = subscriptions.data.Subscriptions[0].Currency;
-            $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
-            $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
+            $scope.subscription = subscriptions.data.Subscription;
+            $scope.currentCurrency = subscriptions.data.Subscription.Currency;
+            $scope.futureCurrency = subscriptions.data.Subscription.Currency;
+            $scope.currentBillingCycle = subscriptions.data.Subscription.BillingCycle;
+            $scope.futureBillingCycle = subscriptions.data.Subscription.BillingCycle;
 
             if($scope.current) {
-                $scope.current.Plan = subscriptions.data.Subscriptions[0].Plan;
-                $scope.future.Plan = subscriptions.data.Subscriptions[0].Plan;
+                $scope.current.Plan = subscriptions.data.Subscription.Plan;
+                $scope.future.Plan = subscriptions.data.Subscription.Plan;
             }
         }
     };
@@ -258,7 +258,7 @@ angular.module("proton.controllers.Settings")
                     Organization.delete({ExternalSubscriptionID: $scope.subscription.ExternalSubscriptionID}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             $scope.organization = null;
-                            _.extend($scope.subscription, result.data.Subscriptions[0]);
+                            _.extend($scope.subscription, result.data.Subscription);
                             eventManager.call();
                             confirmModal.deactivate();
                             notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBE'), classes: 'notification-success'});
@@ -373,11 +373,11 @@ angular.module("proton.controllers.Settings")
                         change: function(organization) {
                             Payment.subscriptions().then(function(subscriptions) {
                                 if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-                                    $scope.subscription = subscriptions.data.Subscriptions[0];
-                                    $scope.currentCurrency = subscriptions.data.Subscriptions[0].Currency;
-                                    $scope.futureCurrency = subscriptions.data.Subscriptions[0].Currency;
-                                    $scope.currentBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
-                                    $scope.futureBillingCycle = subscriptions.data.Subscriptions[0].BillingCycle;
+                                    $scope.subscription = subscriptions.data.Subscription;
+                                    $scope.currentCurrency = subscriptions.data.Subscription.Currency;
+                                    $scope.futureCurrency = subscriptions.data.Subscription.Currency;
+                                    $scope.currentBillingCycle = subscriptions.data.Subscription.BillingCycle;
+                                    $scope.futureBillingCycle = subscriptions.data.Subscription.BillingCycle;
                                     $scope.organization = organization;
                                     eventManager.call();
                                 }

@@ -9,11 +9,13 @@ angular.module("proton.controllers.Settings")
     Member,
     members,
     organization,
+    eventManager,
     Organization,
     storageModal,
     domains,
     userModal,
-    notify
+    notify,
+    networkActivityTracker
 ) {
     var MASTER = 2;
     var SUB = 1;
@@ -264,12 +266,19 @@ angular.module("proton.controllers.Settings")
             params: {
                 member: member,
                 organization: $scope.organization,
-                submit: function(member) {
-                    networkActivityTracker.track(Member.quota(member.ID, member.UsedSpace).then(function(result) {
+                submit: function(space) {
+                    networkActivityTracker.track(Member.quota(member.ID, space).then(function(result) {
                         if (result.data && result.data.Code === 1000) {
-                            notify({message: $translate.instant('QUOTA_UPDATED'), classes: 'notification-success'});
+                            eventManager.call();
                             storageModal.deactivate();
+                            notify({message: $translate.instant('QUOTA_UPDATED'), classes: 'notification-success'});
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: 'Error during the quota request', classes: 'notification-danger'});
                         }
+                    }, function(error) {
+                        notify({message: 'Error during the quota request', classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {

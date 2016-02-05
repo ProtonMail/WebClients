@@ -21,7 +21,7 @@
         <form method="post" ng-submit="verifyResetCode(resetCodeForm)" name="resetCodeForm">
             <div class="margin">
                 <label class="text-left" for="resetMbCode">Verification Code</label>
-                <input type="text" ng-model="account.resetMbCode" id="resetMbCode" class="form-control">
+                <input type="text" ng-model="account.resetMbCode" id="resetMbCode" />
             </div>
             <div class="margin text-right">
                 <button type="submit" class="pm_button primary">Reset Mailbox</button>
@@ -34,28 +34,20 @@
         <h1 class="text-center">{{ 'RESET_MAILBOX' | translate }}</h1>
         <br>
 
-        <form method="post" ng-submit="resetMailbox(resetMBPW)" name="resetMBPW" novalidate  >
-
-            <div class="form-group margin">
-                <input id="password" name="password" ng-model="account.mailboxPassword" tabindex="1" type="password" class="form-control"  placeholder="{{ 'NEW_MAILBOX_PASSWORD' | translate }}" autofocus="" required="" />
+        <form method="post" ng-submit="resetMailbox(resetMBPW)" name="resetMBPW" novalidate>
+            <div class="margin">
+                <input id="password" name="password" ng-model="account.mailboxPassword" tabindex="1" type="password" placeholder="{{ 'NEW_MAILBOX_PASSWORD' | translate }}" autofocus="" required="" />
             </div>
-
-            <div class="form-group margin">
-                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" class="form-control"  placeholder="{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}" required="" ng-enter="finish(resetMBPW)" />
-                <div ng-show="resetMBPW.$submitted || resetMBPW.passwordc.$touched">
-                    <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="text-danger">Passwords don't match.</p>
-                </div>
+            <div class="margin">
+                <input id="passwordc" name="passwordc" ng-model="account.mailboxPasswordConfirm" tabindex="2" type="password" placeholder="{{ 'CONFIRM_MAILBOX_PASSWORD' | translate }}" required="" />
             </div>
-
             <p class="text-center alert alert-danger">Keep this password safe - it cannot be recovered.</p>
-
-            <button type="submit" class="pm_button primary btn-block btn-lg" title="Reset my Mailbox" ng-class="{disabled: networkActivity.loading()}">Finish</button>
-
+            <button type="submit" class="pm_button primary" title="Reset My Mailbox" ng-disabled="resetMBPW.$valid === false || networkActivity.loading()">Finish</button>
         </form>
 
         <p></p>
 
-        <a ui-sref="login.unlock" class="btn left btn-link">{{ 'CANCEL' | translate }}</a>
+        <a ui-sref="login.unlock" class="left">{{ 'CANCEL' | translate }}</a>
 
     </div>
 
