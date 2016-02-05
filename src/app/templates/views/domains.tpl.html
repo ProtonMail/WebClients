@@ -103,7 +103,7 @@
                     <span class="pull-right">{{ organization.UsedAddresses }}/{{ organization.MaxAddresses }} {{ 'ADDRESSES_USED' | translate }}. <a ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
                     {{ 'ADDRESSES' | translate }}
                 </legend>
-                <div class="border-panel margin-bottom" ng-repeat="domain in domains" ng-show="domains.length > 0">
+                <div class="margin-bottom" ng-repeat="domain in domains">
                     <p>
                         <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
@@ -116,17 +116,18 @@
                             <thead>
                                 <tr>
                                     <th>{{ 'ADDRESS' | translate }}</th>
-                                    <th>{{ 'NICKNAME' | translate }}</th>
-                                    <th>{{ 'STATUS' | translate }}</th>
+                                    <th ng-show="false">{{ 'NICKNAME' | translate }}</th>
+                                    <th style="width: 5rem">{{ 'STATUS' | translate }}</th>
                                     <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="address in domain.Addresses">
+                                <tr ng-repeat="address in domain.Addresses" ng-class="{ 'disabled': address.Status === 0 }">
                                     <td>
-                                        <strong>{{ address.Email }}</strong>
+                                        <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
+                                        <span ng-show="address.Status === 0">{{ address.Email }}</span>
                                     </td>
-                                    <td>
+                                    <td ng-show="false">
                                         <strong>{{ member(address.MemberID).NickName }}</strong>
                                     </td>
                                     <td>
@@ -140,7 +141,7 @@
                                         <button type="button" class="pm_button round" ng-show="address.Status === 1" ng-click="disableAddress(address)" pt-tooltip="{{ 'DISABLE_ADDRESS' | translate }}">
                                             <i class="fa fa-chain-broken"></i>
                                         </button>
-                                        <button type="button" class="pm_button round" ng-disabled="address.Status === 1" ng-click="deleteAddress(address, domain)" pt-tooltip="{{ 'DELETE' | translate }}">
+                                        <button type="button" class="pm_button round" ng-hide="address.Status === 1" ng-click="deleteAddress(address, domain)" pt-tooltip="{{ 'DELETE' | translate }}">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

@@ -110,6 +110,10 @@ $modalMargin: 2rem;
                 line-height: 36px;
                 font-weight: 400;
                 color: $text;
+                em {
+                    font-style: normal;
+                    color: $gray-light;
+                }
             }
             .clearfix {
                 padding: 5px;

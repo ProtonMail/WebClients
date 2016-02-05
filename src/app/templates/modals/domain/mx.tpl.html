@@ -7,23 +7,25 @@
                 <span ng-show="ctrl.domain.MxState === 0" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
                 <span ng-show="ctrl.domain.MxState === 1 || ctrl.domain.MxState === 2" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
                 <span ng-show="ctrl.domain.MxState === 3" class="pull-right pm_badge success">{{ 'GOOD!' | translate }}</span>
-                <h4 class="modal-title">4. {{ 'MX_RECORD' | translate }}</h4>
+                <h4 class="modal-title">4. {{ 'MX_RECORD' | translate }} <em>(Required)</em></h4>
             </div>
             <div class="modal-body pm_form">
                 <p>Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to the DNS of <strong>{{ ctrl.domain.DomainName }}</strong>.</p>
                 <p>This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-mx-record">{{ 'LEARN_MORE' | translate }}</a></p>
 
-                <p>Add this MX record:</p>
+                <p>Please add the following MX record:</p>
                 <table class="pm_table record">
                     <tr>
+                        <th style="width:3rem">Type</th>
                         <th style="width:3rem">Host</th>
-                        <th style="width:4rem">Priority</th>
                         <th>Value</th>
+                        <th style="width:4rem">Priority</th>
                     </tr>
                     <tr>
+                        <td><code>MX</code></td>
                         <td><code>@</code></td>
-                        <td><code>10 *</code></td>
                         <td><code>mail.protonmail.ch</code></td>
+                        <td><code>10</code></td>
                     </tr>
                 </table>
 
@@ -31,12 +33,12 @@
 
                 <p class="alert alert-info">If <strong>{{ ctrl.domain.DomainName }}</strong> is actively receiving emails, create all used email addresses in Step 3 before changing MX record to ensure a smooth transition.</p>
 
-                <p class="alert alert-info">Note, it could take up to an hour after updating your DNS record before verification succeeds.</p>
             </div>
 
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button primary" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button ng-show="ctrl.domain.MxState!==3" class="pm_button primary" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button ng-show="ctrl.domain.MxState===3" class="pm_button primary" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.close()"></div>

@@ -8,16 +8,19 @@
                 <span ng-show="ctrl.domain.DkimState === 1 || ctrl.domain.DkimState === 2 || ctrl.domain.DkimState === 3" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
                 <span ng-show="ctrl.domain.DkimState === 4" class="pull-right pm_badge success">{{ 'ON!' | translate }}</span>
                 <span ng-show="ctrl.domain.DkimState === 5" class="pull-right pm_badge success">{{ 'OFF!' | translate }}</span>
-                <h4 class="modal-title">6. DKIM</h4>
+                <h4 class="modal-title">6. DKIM <em>(Optional)</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p>ProtonMail supports DKIM signing for custom domains! To protect your outgoing emails with DKIM authentication, please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/messages-in-spam">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>ProtonMail supports DKIM signing for custom domains! This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/messages-in-spam">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>Please add the follow TXT record:</p>
                 <table class="pm_table record">
                     <tr>
+                        <th style="width:3rem">Type</th>
                         <th style="width:12rem">Host</th>
                         <th>Value</th>
                     </tr>
                     <tr>
+                        <td><code>TXT</code></td>
                         <td><code>protonmail._domainkey</code></td>
                         <td><code>{{ ctrl.domain.DkimPublicKey}}</code></td>
                     </tr>
