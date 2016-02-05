@@ -37,7 +37,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.finishCreation = false;
 
         $scope.signup = {};
-        
+
         $scope.signup.verificationSent = false;
         $scope.generating = false;
         $scope.domains = [];
@@ -129,11 +129,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 Address: $scope.account.emailVerification
             }
         }).$promise.then(function(response) {
-            console.log(response);
             if (response.Code === 1000) {
                 $scope.signup.verificationSent = true;
-                console.log('???');
-                console.log($scope.signup.verificationSent);
             } else if (response.Error) {
                 notify({message: response.Error, classes: 'notification-danger'});
             }
