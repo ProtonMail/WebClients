@@ -1,6 +1,10 @@
 // An example configuration file.
 exports.config = {
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+    seleniumAddress: 'http://localhost:4444/wd/hub', // Where to talk to the Selenium Server instance that is running on your machine. This can be verified by checking the logs in the terminal window that is running the server.
+    getPageTimeout: 60000, // Time to wait for the page to load
+    allScriptsTimeout: 500000, // Time to wait for page to synchronize. More information on timeouts can be found in Protractor’s
+    baseUrl: 'http://localhost:8080', // Main URL to hit for testing. This is helpful if there is only one, root URL.
+    framework: 'jasmine', // Where you specify the type of framework to use with Protractor
 
     // Capabilities to be passed to the webdriver instance.
     multiCapabilities: [
@@ -20,23 +24,17 @@ exports.config = {
         sleep: 2000
     },
 
-    baseUrl: 'http://localhost:8080',
-
     // Spec patterns are relative to the current working directly when
     // protractor is called.
-    specs: [
-        'test/e2e/login/login.spec.js',
-        'test/e2e/unlock/unlock.spec.js',
-        'test/e2e/contact/contact.spec.js'
-    ],
+    specs: ['test/e2e/**/*.spec.js'],
 
-    onPrepare: function() {
-
-    },
-
-    // Options to be passed to Jasmine-node.
-    jasmineNodeOpts: {
-        showColors: true,
-        defaultTimeoutInterval: 30000
+    // Alternatively, suites may be used. When run without a command line
+    // parameter, all suites will run. If run with --suite=smoke or
+    // --suite=smoke,full only the patterns matched by the specified suites will
+    // run.
+    suites: {
+        login: 'test/e2e/login/login.spec.js',
+        unlock: 'test/e2e/unlock/unlock.spec.js',
+        contact: 'test/e2e/contact/contact.spec.js',
     }
 };
