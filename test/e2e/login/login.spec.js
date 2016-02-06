@@ -38,9 +38,18 @@ describe('Login tests', function() {
 
     it('should wrong login', function() {
         loginPage.login(browser.params.login, 'panda');
+        expect(browser.getCurrentUrl()).toContain('/login');
     });
 
     it('should log in', function() {
-        loginPage.login(browser.params.login, browser.params.password);
+        loginPage.login(browser.params.login, browser.params.password1);
+        browser.wait(function() {
+            return browser.getCurrentUrl().then(function(url) {
+                return url.indexOf('/login/unlock') !== -1;
+            });
+        }, 10000)
+        .then(function(result) {
+            expect(result).toBe(true);
+        });
     });
 });

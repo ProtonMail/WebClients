@@ -21,8 +21,7 @@ var LoginPage = function() {
     this.login = function(log, pass) {
         username.sendKeys(log);
         password.sendKeys(pass);
-        loginButton.click();
-        browser.waitForAngular();
+        return loginButton.click();
     };
 
     this.openHelp = function() {
