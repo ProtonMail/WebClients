@@ -38,7 +38,7 @@ describe('Proton Mail App', function() {
         unlockButton.click();
     });
 
-    it('should switch to drafts folder', function() {
+    it('should go to dashboard', function() {
         // var draftsButton;
         // var buttons = element.all(by.css('#topMenu .list-group-item .btn'));
         //
