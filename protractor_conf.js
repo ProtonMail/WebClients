@@ -36,5 +36,6 @@ exports.config = {
         login: 'test/e2e/login/login.spec.js',
         unlock: 'test/e2e/unlock/unlock.spec.js',
         contact: 'test/e2e/contact/contact.spec.js',
+        dashboard: 'test/e2e/dashboard/dashboard.spec.js',
     }
 };
