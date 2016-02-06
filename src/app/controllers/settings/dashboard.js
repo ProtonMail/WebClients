@@ -137,7 +137,11 @@ angular.module("proton.controllers.Settings")
         {label: '15', value: 15, index: 2},
         {label: '20', value: 20, index: 3},
         {label: '25', value: 25, index: 4},
-        {label: '30', value: 30, index: 5}
+        {label: '30', value: 30, index: 5},
+        {label: '35', value: 35, index: 6},
+        {label: '40', value: 40, index: 7},
+        {label: '45', value: 45, index: 7},
+        {label: '50', value: 50, index: 8}
     ];
 
     $scope.addressBusinessOptions = [
@@ -146,7 +150,11 @@ angular.module("proton.controllers.Settings")
         {label: '15', value: 15, index: 2},
         {label: '20', value: 20, index: 3},
         {label: '25', value: 25, index: 4},
-        {label: '30', value: 30, index: 5}
+        {label: '30', value: 30, index: 5},
+        {label: '35', value: 35, index: 6},
+        {label: '40', value: 40, index: 7},
+        {label: '45', value: 45, index: 7},
+        {label: '50', value: 50, index: 8}
     ];
 
     $scope.memberBusinessOptions = [
