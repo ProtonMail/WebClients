@@ -1,12 +1,10 @@
 describe('Proton Mail App', function() {
-
-    var ptor = protractor.getInstance();
     var timeToSleep = 2000; // 2 sec
 
-    ptor.get('http://localhost:8080/login');
+    browser.get('http://localhost:8080/login');
 
     beforeEach(function() {
-        ptor.sleep(timeToSleep);
+        browser.sleep(timeToSleep);
     });
 
     it('should log in', function() {
@@ -18,9 +16,9 @@ describe('Proton Mail App', function() {
         expect(passwordInput).toBeDefined();
         expect(loginButton).toBeDefined();
 
-        usernameInput.sendKeys('richard');
+        usernameInput.sendKeys('qatest1');
         // TODO test input value
-        passwordInput.sendKeys('richard');
+        passwordInput.sendKeys('qatest1');
         // TODO test input value
         loginButton.click();
     });
@@ -32,7 +30,7 @@ describe('Proton Mail App', function() {
         expect(passwordInput).toBeDefined();
         expect(unlockButton).toBeDefined();
 
-        passwordInput.sendKeys('richard');
+        passwordInput.sendKeys('qatest1');
         // TODO test input value
         unlockButton.click();
     });
