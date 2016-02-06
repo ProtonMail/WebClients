@@ -43,8 +43,12 @@
         #pm_composer .composer .pm_button {
             line-height: 26px;
         }
-        .pm_button {
-            line-height: 100%;
+        .pm_button,
+        .pm_buttons a {
+            line-height: 35px;;
+        }
+        #pm_sidebar section.sidebar .pm_button.round {
+            line-height: 30px;
         }
     }
 }
@@ -53,6 +57,9 @@
     .pm_button,
     .pm_buttons a {
         overflow: hidden;
+    }
+    body section.sidebar a.compose {
+        line-height: 40px;
     }
     header#pm_header .pull-right {
         height: 61px;

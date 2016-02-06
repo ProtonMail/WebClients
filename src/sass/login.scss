@@ -9,7 +9,7 @@ body#login-unlock {
 	background: $dark;
 	p.text-center {
 		margin: 0 0 2rem 0;
-		font-size: 14px		
+		font-size: 14px
 	}
 	#pm_loader {
 		display: none;
@@ -66,7 +66,7 @@ body#reset {
 	input[type="email"] {
 		border-color: #dfdfdf;
 		background: rgba(255,255,255,.1);
-		color: #dfdfdf;
+		color: $white;
 		line-height: 38px;
 		height: 38px;
 		&:active,
@@ -82,16 +82,16 @@ body#reset {
 	}
 
 	:-moz-placeholder {
-	   color: $white; 
+	   color: $white;
 	}
 
-	::-moz-placeholder { 
-	   color: $white;  
+	::-moz-placeholder {
+	   color: $white;
 	}
 
-	:-ms-input-placeholder {  
-	   color: $white;  
-	}	
+	:-ms-input-placeholder {
+	   color: $white;
+	}
 }
 
 #pm_footer {
