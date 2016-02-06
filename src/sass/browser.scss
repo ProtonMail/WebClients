@@ -58,6 +58,16 @@
     .pm_buttons a {
         overflow: hidden;
     }
+    header#pm_header .pull-right {
+        height: 61px;
+        overflow: hidden;
+        a {
+            float: left;
+        }
+        .pm_button.primary {
+            margin-top: 14px;
+        }
+    }
 }
 
 input:invalid,
