@@ -414,6 +414,8 @@ angular.module("proton.cache", [])
                 if (a.Order > b.Order) {
                     return 1;
                 }
+
+                return 0;
             }).reverse();
         } else {
             return [];
@@ -443,6 +445,8 @@ angular.module("proton.cache", [])
                 if (a.Order > b.Order) {
                     return 1;
                 }
+
+                return 0;
             }).reverse();
         } else {
             return [];
