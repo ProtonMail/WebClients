@@ -79,22 +79,6 @@
     </span>
 
     <span
-    class="pm_buttons"
-    ng-show="idDefined() && rowMode === true">
-        <a
-        ng-click="nextConversation(conversation)"
-        pt-tooltip="{{ 'PREVIOUS' | translate }}">
-            <i class="fa fa-chevron-left"></i>
-        </a>
-        <a
-        ng-click="previousConversation(conversation)"
-        class="divider"
-        pt-tooltip="{{ 'NEXT' | translate }}">
-            <i class="fa fa-chevron-right"></i>
-        </a>
-    </span>
-
-    <span
     id="tour-label-dropdown"
     class="pm_buttons"
     ng-class="{ disabled: numberElementSelected === 0 }">
@@ -193,7 +177,7 @@
         </span>
     </span>
 
-    <div class="pull-right">
+    <div class="pull-right actionz">
 
         <span
         class="pm_buttons layout" id="tour-layout">
@@ -219,6 +203,22 @@
             ng-class="{ 'active': layoutMode === 'rows' }"
             ng-click="changeLayout('rows')">
                 <img src="/assets/img/rowview.svg" />
+            </a>
+        </span>
+
+        <span
+        class="pm_buttons"
+        ng-show="idDefined() && rowMode === true">
+            <a
+            ng-click="nextConversation(conversation)"
+            pt-tooltip="{{ 'PREVIOUS' | translate }}">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            <a
+            ng-click="previousConversation(conversation)"
+            class="divider"
+            pt-tooltip="{{ 'NEXT' | translate }}">
+                <i class="fa fa-chevron-right"></i>
             </a>
         </span>
 

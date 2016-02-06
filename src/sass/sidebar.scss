@@ -314,6 +314,9 @@ body.mobileMode {
             .pm_button.round {
                 background: rgba(255,255,255,.1);
                 border-color: transparent;
+                float: left;
+                text-align: center;
+                display: block;
                 .fa {
                     color: #fff;
                 }

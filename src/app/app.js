@@ -289,8 +289,6 @@ angular.module('proton', [
 
     $rootScope.mobileResponsive();
 
-    $timeout( $rootScope.mobileResponsive, 300);
-
 })
 
 //
@@ -503,6 +501,9 @@ angular.module('proton', [
         }
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
+
+        $rootScope.mobileResponsive();
+
     });
 })
 
