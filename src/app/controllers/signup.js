@@ -112,11 +112,9 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.notificationEmailValidation = function() {
-        // return true;
         if ($scope.account.notificationEmail.length > 0) {
             return !!!tools.validEmail($scope.account.notificationEmail);
-        }
-        else {
+        } else {
             return true;
         }
     };

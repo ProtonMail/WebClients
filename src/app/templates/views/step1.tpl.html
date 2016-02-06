@@ -1,17 +1,13 @@
 <p>&nbsp;</p>
 <div class="pm_panel wide" ng-hide="creating || genNewKeys || humanityTest">
     <div class="text-center header">
-        <img src="/assets/img/logo-dark.png" height="20"><br>
-        <h2>
-            <i class="fa fa-user"></i>
-            {{ 'CREATE_YOUR_ACCOUNT' | translate }}
-        </h2>
+        <img src="/assets/img/logo-dark.png" height="20" /><br>
+        <h2><i class="fa fa-user"></i></h2>
+        <h2>{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h2>
     </div>
     <form method="post" ng-submit="saveContinue(step1)" name="step1" role="form" novalidate class="pm_form">
-        <p class="alert">
-        Take back your privacy! Creating your free secure email account takes less than 2 minutes in most cases.
-        </p>
         <div class="wrapper margin">
+            <p class="alert alert-info">Take back your privacy! Creating your free secure email account takes less than 2 minutes in most cases.</p>
             <label for="Username">
                 <em class="num">1</em>
                 {{ 'USERNAME_AND_DOMAIN' | translate }}
@@ -64,7 +60,7 @@
             <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
                 <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
             </div>
-            <p class="alert alert-warning">If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
+            <p class="alert alert-info">If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
             <label for="notificationEmail">
                 <em class="num">4</em>
                 Recovery Email (Optional)
@@ -93,7 +89,7 @@
     <div ng-show="!preInvited" class="wrapper">
         <label for="password">
             <em class="num">5</em>
-            {{ 'PROOVE_YOUR_HUMANITY' | translate }} <span>({{ 'FINAL_STEP' | translate }})</span>
+            {{ 'PROOVE_YOUR_HUMANITY' | translate }}
         </label>
         <p class="help">To help fight spammers, please verify you are human. You can verify via email or solve a reCaptcha:</p>
         <div class="pm_grid">
@@ -104,7 +100,7 @@
             </div>
             <div class="col-1-2">
                 <label>
-                    <input type="radio" ng-model="verificator" value="recaptcha" /> reCAPTCHA by Google
+                    <input type="radio" ng-model="verificator" value="recaptcha" /> reCAPTCHA
                 </label>
             </div>
         </div>
