@@ -41,7 +41,8 @@
 
 <section id="pm_placeholder" ng-show="showWelcome === false">
     <i class="fa fa-check-square"></i>
-    <h2>{{ numberElementChecked }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
+    <h2 ng-show="numberElementChecked === 1">{{ numberElementChecked }} {{ 'CONVERSATION_SELECTED' | translate }}</h2>
+    <h2 ng-show="numberElementChecked > 1">{{ numberElementChecked }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
     <span class="pm_buttons" ng-show="numberElementChecked > 0">
         <a ng-click="deselectAll()">
             <strong>{{ 'DESELECT_ALL' | translate }}</strong>
