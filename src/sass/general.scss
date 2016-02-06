@@ -9,6 +9,7 @@ html.protonmail {
 		&.scroll {
 			overflow-y: initial;
 			-webkit-overflow-scrolling: touch;
+			height: initial !important;
 		}
 		&.mobileMode {
 			#body {

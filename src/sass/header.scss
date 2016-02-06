@@ -89,11 +89,6 @@ header#pm_header-desktop {
 	        }
 		}
 	}
-	.help {
-		color: #000 !important;
-		margin: 1rem 0;
-		text-transform: none;
-	}
 	ul.navigation {
 		display: block;
 		float: right;
@@ -102,6 +97,7 @@ header#pm_header-desktop {
 		li {
 			display: block;
 			float: left;
+			position: relative;
 			p {
 				margin: 0;
 				display: block;
@@ -117,6 +113,7 @@ header#pm_header-desktop {
 				    height: auto;
 				    line-height: initial !important;
 				    float: none;
+					position: relative;
 				}
 			}
 			&:hover {
@@ -129,6 +126,14 @@ header#pm_header-desktop {
 						}
 					}
 				}
+			}
+			.help {
+				color: #000 !important;
+				margin: 0;
+				text-transform: none;
+				float: none;
+				display: block;
+				float: none;
 			}
 			.pm_dropdown {
 				a {

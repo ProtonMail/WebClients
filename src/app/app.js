@@ -278,6 +278,7 @@ angular.module('proton', [
             $rootScope.mobileMode = true;
             $rootScope.rowMode = false;
             $rootScope.layoutMode = 'columns';
+            $rootScope.$broadcast('tourEnd');
         }
     };
 

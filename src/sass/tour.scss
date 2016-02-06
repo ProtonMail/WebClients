@@ -1,11 +1,6 @@
 .tooltip.tour {
 	.tooltip-inner  {
 		background-color: $tour;
-		white-space: initial !important;
-		min-width: 300px;
-		word-break: normal;
-		padding: 10px 15px;
-		line-height: 1.2rem;
 		box-shadow: 0 1px 1px rgba(0,0,0,.1);
 	}
 	&.top .tooltip-arrow {
@@ -24,7 +19,7 @@
 		border-left-color: $tour;
 	}
 	&.bottom .tooltip-arrow {
-		border-bottom-color: $tour; 
+		border-bottom-color: $tour;
 	}
 	&.bottom-left .tooltip-arrow {
 		border-bottom-color: $tour;
@@ -120,10 +115,14 @@ body.tourActive {
 				}
 			}
 		}
-	}		
+	}
 	.step {
 		.title {}
-		.body {}
+		.body {
+			strong {
+				color: $tour;
+			}
+		}
 	}
 }
 

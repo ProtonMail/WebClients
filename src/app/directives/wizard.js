@@ -1,6 +1,6 @@
 angular.module('proton.wizard', [])
 
-.directive('wizard', function($rootScope, $timeout, $state, monetizeModal, donateModal) {
+.directive('wizard', function($rootScope, $timeout, $state, monetizeModal, donateModal, $window) {
     return {
         restrict: 'E',
         replace: true,
@@ -10,9 +10,30 @@ angular.module('proton.wizard', [])
                 scope.tourStart();
             });
 
+            scope.$on('tourEnd', function(event) {
+                scope.tourEnd();
+            });
+
+            scope.tourHotkeys = function(event) {
+                if (event.keyCode===37) {
+                    scope.tourPrev();
+                }
+                else if (event.keyCode===39) {
+                    scope.tourNext();
+                }
+            };
+
             scope.tourStart = function() {
+
+                $rootScope.welcome = false;
                 $rootScope.tourActive = true; // used for body class and CSS.
                 scope.tourGo(1);
+                $timeout(function() {
+                    var element = $window.document.getElementById("pm_wizard");
+                    if(element) {
+                        element.focus();
+                    }
+                });
             };
 
             scope.tourEnd = function() {
@@ -21,17 +42,27 @@ angular.module('proton.wizard', [])
             };
 
             scope.tourNext = function() {
-                if (scope.tourStep === 4) {
+                if (scope.tourStep === 5) {
                     scope.tourEnd();
                 } else {
                     scope.tourStep = Number(scope.tourStep + 1);
+                    scope.tourGo(scope.tourStep);
+                }
+            };
+
+            scope.tourPrev = function() {
+                if (scope.tourStep === 1) {
+                    return;
+                } else {
+                    scope.tourStep = Number(scope.tourStep - 1);
+                    scope.tourGo(scope.tourStep);
                 }
             };
 
             scope.tourGo = function(step) {
                 scope.tourStep = 0;
 
-                $('.tooltip').tooltip('hide');
+                $('.tooltip').tooltip('hide').tooltip('destroy');
 
                 switch (step) {
                     case 1:
@@ -39,48 +70,49 @@ angular.module('proton.wizard', [])
                         break;
                     case 2:
                         scope.tourStep = 2;
-                        $('#tour-jason').tooltip({
-                            title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            placement: "right"
+                        $('#tour-layout').tooltip({
+                            title: "1",
+                            placement: "left",
+                            trigger: "manual"
                         });
-                        $('#tour-fromage').tooltip({
-                            title: "Lorem ipsum dolor sit amet",
-                            placement: "top"
+                        $('#tour-settings').tooltip({
+                            title: "2",
+                            placement: "left",
+                            trigger: "manual"
                         });
                         $timeout( function() {
-                            $('#tour-jason, #tour-fromage').tooltip('show');
-                            $('.tooltip:visible').addClass('tour rubberBand');
-                        }, 600);
+                            $('#tour-layout, #tour-settings').tooltip('show');
+                            $('.tooltip:visible').addClass('tour');
+                        });
                         break;
                     case 3:
                         scope.tourStep = 3;
-                        $('#tour-jason').tooltip({
-                            title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            placement: "right"
+                        $('#tour-label-dropdown').tooltip({
+                            title: "1",
+                            placement: "bottom",
+                            trigger: "manual"
                         });
-                        $('#tour-fromage').tooltip({
-                            title: "Lorem ipsum dolor sit amet",
-                            placement: "top"
+                        $('#tour-label-settings').tooltip({
+                            title: "2",
+                            placement: "right",
+                            trigger: "manual"
                         });
                         $timeout( function() {
-                            $('#tour-jason, #tour-fromage').tooltip('show');
-                            $('.tooltip:visible').addClass('tour rubberBand');
-                        }, 600);
+                            $('#tour-label-dropdown, #tour-label-settings').tooltip('show');
+                            $('.tooltip:visible').addClass('tour');
+                        });
                         break;
                     case 4:
                         scope.tourStep = 4;
-                        $('#tour-jason').tooltip({
-                            title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            placement: "right"
-                        });
-                        $('#tour-fromage').tooltip({
-                            title: "Lorem ipsum dolor sit amet",
-                            placement: "top"
+                        $('#tour-support').tooltip({
+                            title: "1",
+                            placement: "left",
+                            trigger: "manual"
                         });
                         $timeout( function() {
-                            $('#tour-jason, #tour-fromage').tooltip('show');
-                            $('.tooltip:visible').addClass('tour rubberBand');
-                        }, 600);
+                            $('#tour-support').tooltip('show');
+                            $('.tooltip:visible').addClass('tour');
+                        });
                         break;
                     case 5:
                         // Hide the wizard
