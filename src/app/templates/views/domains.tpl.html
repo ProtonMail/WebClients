@@ -16,6 +16,7 @@
                         <i class="fa fa-refresh"></i> {{ 'REFRESH_DOMAIN_STATUS' | translate }}
                     </button>
                 </p>
+                <p>&nbsp;</p>
                 <table class="pm_table bordered domains" ng-show="domains.length > 0">
                     <thead>
                         <tr>
@@ -135,13 +136,13 @@
                                         <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
                                     </td>
                                     <td class="text-right">
-                                        <button type="button" class="pm_button round" ng-show="address.Status === 0" ng-click="enableAddress(address)" pt-tooltip="{{ 'ENABLE_ADDRESS' | translate }}">
+                                        <button type="button" class="pm_button round" ng-show="address.Status === 0" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">
                                             <i class="fa fa-link"></i>
                                         </button>
-                                        <button type="button" class="pm_button round" ng-show="address.Status === 1" ng-click="disableAddress(address)" pt-tooltip="{{ 'DISABLE_ADDRESS' | translate }}">
+                                        <button type="button" class="pm_button round" ng-show="address.Status === 1" ng-click="disableAddress(address)" title="{{ 'DISABLE_ADDRESS' | translate }}">
                                             <i class="fa fa-chain-broken"></i>
                                         </button>
-                                        <button type="button" class="pm_button round" ng-hide="address.Status === 1" ng-click="deleteAddress(address, domain)" pt-tooltip="{{ 'DELETE' | translate }}">
+                                            <button type="button" class="pm_button round" ng-hide="address.Status === 1" ng-click="deleteAddress(address, domain)" title="{{ 'DELETE' | translate }}">
                                             <i class="fa fa-trash-o"></i>
                                         </button>
                                     </td>

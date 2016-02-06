@@ -13,20 +13,11 @@
 
         <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-        <input
-        autofocus
-        autocapitalize="off"
-        autocorrect="off"
-        class="margin"
-        type="password"
-        id="password"
-        name="MailboxPassword"
-        ng-model="mailboxPassword"
-        placeholder="MAILBOX PASSWORD" />
+        <input autofocus autocapitalize="off" autocorrect="off" class="margin" type="password" id="password" name="MailboxPassword" ng-model="mailboxPassword" placeholder="MAILBOX PASSWORD" />
 
         <div class="clearfix">
             <a ui-sref="reset" class="login-support pm_button link pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
-            <button class="pm_button primary pull-right" type="submit" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</button>
+            <button id="unlock_btn" class="pm_button primary pull-right" type="submit" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</button>
         </div>
 
     </div>

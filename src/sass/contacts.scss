@@ -34,18 +34,41 @@ body.mobileMode {
 		overflow: auto;
 	}
 	#pm_contacts {
+		padding: 0;
+		#pm_toolbar {
+			padding: 10px !important;
+			display: block !important;
+			height: auto;
+			.pm_button[disabled] {
+				display: none;
+			}
+		}
 		.pm_table {
 			tr {
 				margin: 0;
+			}
+			td span {
+				line-height: 50px;
+			}
+			th.checkbox {
+				width: 4rem;
+				label {
+					width: 4rem;
+					text-align: center;
+					box-sizing: border-box;
+				}
+			}
+			td.name {
+				font-weight: bold;
 			}
 			td.text-right {
 				padding: .5rem 0;
 			}
 			td.actions {
+				text-align: left !important;
 				span {
 					width: 100%;
 					.pm_button.round {
-						float: left;
 						margin-right: 1rem;
 					}
 				}

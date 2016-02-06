@@ -44,8 +44,8 @@ angular.module("proton.controllers.Settings")
     $scope.plusPrice = {1: 5, 12: 47};
     $scope.businessPrice = {1: 10, 12: 97};
     $scope.spacePrice = {1: 1, 12: 9.99};
-    $scope.domainPrice = {1: 2, 12: 9.99};
-    $scope.addressPrice = {1: 2, 12: 9.99};
+    $scope.domainPrice = {1: 2, 12: 19.98};
+    $scope.addressPrice = {1: 2, 12: 19.98};
     $scope.memberPrice = {1: 5, 12: 49.99};
 
     // Options
@@ -215,9 +215,10 @@ angular.module("proton.controllers.Settings")
     /**
     * Prepare amount for the request
     * @param {String} name
+    * @return {Integer}
     */
     $scope.amount = function(name) {
-        return $scope.total(name) * 100;
+        return parseFloat($scope.total(name) * 100);
     };
 
     /**
@@ -225,7 +226,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.free = function() {
         var title = $translate.instant('FREE_PLAN');
-        var message = $translate.instant("Are you sure to come back to the Free Plan?");
+        var message = $translate.instant('CONFIRM_FREE_PLAN?');
 
         confirmModal.activate({
             params: {
@@ -344,7 +345,7 @@ angular.module("proton.controllers.Settings")
                 // Open payment modal
                 paymentModal.activate({
                     params: {
-                        create: organization === true, // new organization?
+                        create: $scope.organization === null, // new organization?
                         card: card,
                         configuration: configuration,
                         change: function(organization) {

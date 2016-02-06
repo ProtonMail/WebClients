@@ -3,10 +3,15 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Generate a new key pair</h4>
+                <h4 class="modal-title">
+                    [Address Added]<br>
+                    [Generate a new key pair]
+                </h4>
             </div>
             <div class="modal-body pm_form">
-                <p class="alert alert-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ut sunt aut tenetur, ea in cumque incidunt aliquid.</p>
+                <p class="alert alert-info">
+                    [Your address has been added but before you can send or receive emails you need to generate a new key pair. Learn more]<br>
+                </p>
                 <div>
                     <label>{{ 'BIT_SIZE' | translate }}:</label>
                     <span class="pm_select inline">
@@ -17,8 +22,13 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+            <button class="pm_button pull-left" ng-click="ctrl.cancel()">
+                {{ 'CANCEL' | translate }}
+            </button>
+            <button type="submit" class="pm_button primary">
+                [ Generate New Keys ]
+                {{ 'SUBMIT' | translate }}
+            </button>
         </div>
     </form>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>

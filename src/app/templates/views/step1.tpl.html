@@ -1,5 +1,5 @@
 <p>&nbsp;</p>
-<div class="pm_panel wide" ng-hide="creating">
+<div class="pm_panel wide" ng-hide="creating || genNewKeys || humanityTest">
     <div class="text-center header">
         <img src="/assets/img/logo-dark.png" height="20"><br>
         <h2>
@@ -11,7 +11,7 @@
         <p class="alert">
         Take back your privacy! Creating your free secure email account takes less than 2 minutes in most cases.
         </p>
-        <div class="wrapper">
+        <div class="wrapper margin">
             <label for="Username">
                 <em class="num">1</em>
                 {{ 'USERNAME_AND_DOMAIN' | translate }}
@@ -64,7 +64,7 @@
             <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
                 <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger">{{ 'PASSWORDS_DONT_MATCH' | translate }}.</p>
             </div>
-            <p class="alert alert-warning">Warning: If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
+            <p class="alert alert-warning">If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
             <label for="notificationEmail">
                 <em class="num">4</em>
                 Recovery Email (Optional)
@@ -74,13 +74,6 @@
             <div ng-show="step1.notificationEmail.$error.email">
                 <p class="alert alert-danger">{{ 'INVALID_EMAIL' | translate }}l.</p>
             </div>
-            <div ng-if="!preInvited">
-                <label for="password">
-                    <em class="num">5</em>
-                    {{ 'Anti-Spam' | translate }}
-                </label>
-                <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
-            </div>
             <p ng-if="preInvited">&nbsp;</p>
         </div><!--/.wrapper-->
         <div class="checkbox" ng-show="false">
@@ -88,11 +81,79 @@
                 <input id="optIn" name="optIn" ng-init="account.optIn = true" ng-model="account.optIn" type="checkbox" /> Keep me updated about new features such as mobile apps.
             </label>
         </div>
+        <br>
         <button type="submit" class="pm_button primary large"
-        ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid || ( (captcha_token === false) && !preInvited ) ) }">{{ 'COMPLETE_SETUP' | translate }}</button>
+        ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid ) } ">{{ 'CREATE_ACCOUNT' | translate }}</button>
         <p>&nbsp;</p>
         <p><a ui-sref="login">Already have an account?</a></p>
     </form>
+</div>
+
+<div class="pm_panel wide" ng-show="humanityTest && !creating">
+    <div ng-show="!preInvited" class="wrapper">
+        <label for="password">
+            <em class="num">5</em>
+            {{ 'PROOVE_YOUR_HUMANITY' | translate }} <span>({{ 'FINAL_STEP' | translate }})</span>
+        </label>
+        <p class="help">To help fight spammers, please verify you are human. You can verify via email or solve a reCaptcha:</p>
+        <div class="pm_grid">
+            <div class="col-1-2">
+                <label>
+                    <input type="radio" ng-model="verificator" value="email" /> {{ 'BY_EMAIL' | translate }}
+                </label>
+            </div>
+            <div class="col-1-2">
+                <label>
+                    <input type="radio" ng-model="verificator" value="recaptcha" /> reCAPTCHA by Google
+                </label>
+            </div>
+        </div>
+
+        <div ng-show="verificator === 'email'" class="pm_form">
+            <div class="pm_grid" ng-show="signup.verificationSent !== true">
+                <div class="col-2-3">
+                    <input type="text" ng-model="account.emailVerification" placeholder="{{ 'EMAIL_VERIFICATION' | translate }}" />
+                </div>
+                <div class="col-1-3">
+                    <button type="button" class="pm_button primary" ng-click="sendVerificationCode()">
+                        {{ 'SEND' | translate }}
+                    </button>
+                </div>
+            </div>
+
+            <div class="pm_grid" ng-show="signup.verificationSent === true">
+                <p class="alert alert-success"><strong>Verification Code</strong> sent. Please check your email and enter the code below:</p>
+                <div class="margin" ng-show="signup.verificationSent === true">
+                    <input  class="bigger" type="text" ng-model="account.codeVerification" placeholder="{{ 'CODE_VERIFICATION' | translate }}" />
+                </div>
+                <div class="col-1-2">
+                    <button type="button" class="pm_button link" ng-click="signup.verificationSent = false">
+                        {{ 'SEND_NEW_CODE' | translate }}
+                    </button>
+                </div>
+                <div class="col-1-2 text-right">
+                    <button type="button" class="pm_button primary" ng-click="createAccount()" ng-disabled="account.codeVerification===''">
+                        {{ 'COMPLETE_SETUP' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <iframe ng-if="verificator === 'recaptcha'" id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
+
+        <div ng-show="goodCaptcha" class="text-right">
+            <button type="button" class="pm_button primary" ng-click="createAccount()" ng-disabled="account.codeVerification===''">
+                {{ 'COMPLETE_SETUP' | translate }}
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="pm_panel wide" ng-show="genNewKeys">
+    <div class="text-center header">
+        <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" />
+        <h2 class="text-center" ng-show="!signupError">Generating Keys...</h2>
+    </div>
+    <p class="alert">This can take a few seconds or a few minutes depending on your device.</p>
 </div>
 
 <div class="pm_panel wide" ng-show="creating" id="signUpProcess">
@@ -104,9 +165,9 @@
     <p class="alert alert-danger" ng-show="signupError">An error occured while trying to create your account. To see common problems and solutions <a target="_blank" href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/">click here</a>.</p>
     <div class="wrapper text-left">
         <ol id="creationList">
-            <li ng-class="{ 'done': genNewKeys }">
-                <i ng-class="{ 'show': genNewKeys }" class="fa fa-check"></i>
-                Generating Encryption Keys
+            <li class="done">
+                <i class="show fa fa-check"></i>
+                Encryption Keys
             </li>
             <li ng-class="{ 'done': createUser }">
                 <i ng-class="{ 'show': createUser }" class="fa fa-check"></i>

@@ -27,7 +27,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         // Variables
         $scope.tools    = tools;
         $scope.compatibility = tools.isCompatible();
-
         $scope.creating = false;
         $scope.genNewKeys = false;
         $scope.createUser = false;
@@ -36,6 +35,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.mailboxLogin = false;
         $scope.getUserInfo = false;
         $scope.finishCreation = false;
+
+        $scope.signup = {};
+
+        $scope.signup.verificationSent = false;
+        $scope.generating = false;
         $scope.domains = [];
 
         // Populate the domains <select>
@@ -79,6 +83,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             var data = event.data;
             if ( data.type === "pm_captcha" ) {
                 $scope.captcha_token = data.token;
+                $scope.goodCaptcha = true;
                 $scope.$apply();
 
                 console.log($scope.captcha_token);
@@ -116,6 +121,22 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         }
     };
 
+    $scope.sendVerificationCode = function() {
+        User.code({
+            Username: $scope.account.Username,
+            Type: 'email',
+            Destination: {
+                Address: $scope.account.emailVerification
+            }
+        }).$promise.then(function(response) {
+            if (response.Code === 1000) {
+                $scope.signup.verificationSent = true;
+            } else if (response.Error) {
+                notify({message: response.Error, classes: 'notification-danger'});
+            }
+        });
+    };
+
     // ---------------------------------------------------
     // ---------------------------------------------------
     // Creation Functions
@@ -124,6 +145,32 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
     $scope.start = function() {
         $state.go('step1');
+    };
+
+    $scope.createAccount = function() {
+
+        $scope.creating = true;
+
+        $scope.doCreateUser()
+        .then( $scope.doLogUserIn )
+        .then( $scope.doDecryptAccessToken )
+        .then( $scope.doMailboxLogin )
+        .then( $scope.doGetUserInfo )
+        .then( $scope.finishRedirect )
+        .catch( function(err) {
+            var msg = err;
+            if (typeof msg !== "string") {
+                msg = err.toString();
+            }
+            if (typeof msg !== "string") {
+                msg = "Something went wrong";
+            }
+            notify({
+                classes: 'notification-danger',
+                message: msg
+            });
+            $scope.signupError= true;
+        });
     };
 
     $scope.saveContinue = function(form) {
@@ -140,26 +187,22 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             networkActivityTracker.track(
                 $scope.checkAvailability()
                 .then( $scope.generateNewKeys )
-                .then( $scope.doCreateUser )
-                .then( $scope.doLogUserIn )
-                .then( $scope.doDecryptAccessToken )
-                .then( $scope.doMailboxLogin )
-                .then( $scope.doGetUserInfo )
-                .then( $scope.finishRedirect )
-                .catch( function(err) {
-                    var msg = err;
-                    if (typeof msg !== "string") {
-                        msg = err.toString();
+                .then(
+                    function() {
+                        $timeout( function() {
+                            $scope.genNewKeys = false;
+                            if ($rootScope.preInvited) {
+                                $scope.createAccount();
+                            }
+                            else {
+                                $scope.humanityTest = true;
+                            }
+                        }, 2000);
+                    },
+                    function() {
+
                     }
-                    if (typeof msg !== "string") {
-                        msg = "Something went wrong";
-                    }
-                    notify({
-                        classes: 'notification-danger',
-                        message: msg
-                    });
-                    $scope.signupError= true;
-                })
+                )
             );
         }
     };
@@ -212,7 +255,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
         // user came from pre-invite so we can not check if it exists
         if ($rootScope.allowedNewAccount === true && manual !== true) {
-            $scope.creating = true;
             $scope.checkingUsername = false;
             deferred.resolve(200);
         } else {
@@ -235,7 +277,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                             $scope.checkingUsername = false;
                             deferred.resolve(200);
                         } else {
-                            $scope.creating = true;
                             $scope.checkingUsername = false;
                             deferred.resolve(200);
                         }
@@ -261,6 +302,9 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.doCreateUser = function() {
+
+        $log.debug('doCreateUser: $scope.account.codeVerification', $scope.account.codeVerification);
+
         $log.debug('doCreateUser: inviteToken', $rootScope.inviteToken);
         $log.debug('doCreateUser: captcha_token', $rootScope.captcha_token);
 
@@ -274,16 +318,24 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         };
 
         if (angular.isDefined($rootScope.inviteToken)) {
+            $log.debug($scope.inviteToken);
             params.Token = $rootScope.inviteToken;
             params.TokenType = 'invite';
-        } else if (angular.isDefined($scope.captcha_token)) {
+        } else if (angular.isDefined($scope.captcha_token) && $scope.captcha_token!==false) {
+            $log.debug($scope.captcha_token);
             params.Token = $scope.captcha_token;
             params.TokenType = 'recaptcha';
+        }
+        else {
+            params.Token = $scope.account.codeVerification;
+            params.TokenType = 'email';
         }
 
         if ($rootScope.tempUser===undefined) {
             $rootScope.tempUser = [];
         }
+
+        $log.debug(params);
 
         $rootScope.tempUser.username = $scope.account.Username;
         $rootScope.tempUser.password = $scope.account.loginPassword;

@@ -110,12 +110,15 @@ angular.module("proton.controllers.Setup", [
                 $rootScope.resetMailboxToken===undefined &&
                 $scope.resetMailboxToken===undefined
             ) {
-                notify({
-                    classes: "notification-danger",
-                    message: 'Missing reset token.'
-                });
+                notify({message: 'Missing reset token.', classes: 'notification-danger'});
                 return;
             }
+
+            if ($scope.account.mailboxPassword !== $scope.account.mailboxPasswordConfirm) {
+                notify({message: 'Confirmation password don\'t match.', classes: 'notification-danger'});
+                return;
+            }
+
             networkActivityTracker.track(
                 $scope.generateKeys($scope.account.mailboxPassword)
                 .then( $scope.newMailbox )
