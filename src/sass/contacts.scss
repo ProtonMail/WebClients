@@ -17,6 +17,10 @@
 		#pm_toolbar {
 			padding: 10px !important;
 			display: block !important;
+			height: auto;
+			.pm_button[disabled] {
+				display: none;
+			}
 		}
 		.pm_table {
 			tr {
@@ -33,14 +37,17 @@
 					box-sizing: border-box;
 				}
 			}
+			td.name {
+				font-weight: bold;
+			}
 			td.text-right {
 				padding: .5rem 0;
 			}
 			td.actions {
+				text-align: left !important;
 				span {
 					width: 100%;
 					.pm_button.round {
-						float: left;
 						margin-right: 1rem;
 					}
 				}
