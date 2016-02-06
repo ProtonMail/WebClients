@@ -54,6 +54,12 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         // Select the first domain
         $scope.account.domain = $scope.domains[0];
 
+        // Initialize verification code
+        $scope.account.codeVerification = '';
+
+        // Initialize captcha token
+        $scope.account.captcha_token = false;
+
         // Prepoppulate the username if from an invite link and mark as read only
         if (angular.isDefined($rootScope.username)) {
             $scope.account.Username = $rootScope.username;
@@ -63,7 +69,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         }
 
         // Captcha
-        $scope.captcha_token = false;
         window.addEventListener("message", captchaReceiveMessage, false);
 
         // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
@@ -81,18 +86,14 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             }
 
             var data = event.data;
-            if ( data.type === "pm_captcha" ) {
-                $scope.captcha_token = data.token;
-                $scope.goodCaptcha = true;
-                $scope.$apply();
 
-                console.log($scope.captcha_token);
-                // $('#result').text( data.token );
+            if ( data.type === "pm_captcha" ) {
+                $scope.account.captcha_token = data.token;
+                $scope.$apply();
             }
+
             if ( data.type === "pm_height" ) {
-                console.log(event.data.height);
                 $('#pm_captcha').height(event.data.height + 40);
-                // $('#result').text( data.token );
             }
         }
 
@@ -304,7 +305,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $log.debug('doCreateUser: $scope.account.codeVerification', $scope.account.codeVerification);
 
         $log.debug('doCreateUser: inviteToken', $rootScope.inviteToken);
-        $log.debug('doCreateUser: captcha_token', $rootScope.captcha_token);
+        $log.debug('doCreateUser: captcha_token', $scope.account.captcha_token);
 
         var params = {
             'Username': $scope.account.Username,
@@ -319,9 +320,9 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             $log.debug($scope.inviteToken);
             params.Token = $rootScope.inviteToken;
             params.TokenType = 'invite';
-        } else if (angular.isDefined($scope.captcha_token) && $scope.captcha_token!==false) {
-            $log.debug($scope.captcha_token);
-            params.Token = $scope.captcha_token;
+        } else if (angular.isDefined($scope.account.captcha_token) && $scope.account.captcha_token!==false) {
+            $log.debug($scope.account.captcha_token);
+            params.Token = $scope.account.captcha_token;
             params.TokenType = 'recaptcha';
         }
         else {

@@ -1,9 +1,13 @@
 <p>&nbsp;</p>
 <div class="pm_panel wide" ng-hide="creating || genNewKeys || humanityTest">
     <div class="text-center header">
-        <img src="/assets/img/logo-dark.png" height="20" /><br>
-        <h2><i class="fa fa-user"></i></h2>
-        <h2>{{ 'CREATE_YOUR_ACCOUNT' | translate }}</h2>
+        <div>
+            <img src="/assets/img/logo-dark.png" height="20" />
+        </div>
+        <h2>
+            <i class="fa fa-user"></i>
+            {{ 'CREATE_YOUR_ACCOUNT' | translate }}
+        </h2>
     </div>
     <form method="post" ng-submit="saveContinue(step1)" name="step1" role="form" novalidate class="pm_form">
         <div class="wrapper margin">
@@ -118,26 +122,27 @@
             </div>
 
             <div class="pm_grid" ng-show="signup.verificationSent === true">
-                <p class="alert alert-success"><strong>Verification Code</strong> sent. Please check your email and enter the code below:</p>
+                <p class="alert alert-success">
+                    <strong>Verification Code Sent</strong><br />
+                    Please check <strong>{{ account.emailVerification }}</strong> and enter the code below:
+                </p>
                 <div class="margin" ng-show="signup.verificationSent === true">
-                    <input  class="bigger" type="text" ng-model="account.codeVerification" placeholder="{{ 'CODE_VERIFICATION' | translate }}" />
+                    <input class="bigger" type="text" ng-model="account.codeVerification" placeholder="{{ 'CODE_VERIFICATION' | translate }}" />
                 </div>
                 <div class="col-1-2">
                     <button type="button" class="pm_button link" ng-click="signup.verificationSent = false">
                         {{ 'SEND_NEW_CODE' | translate }}
                     </button>
                 </div>
-                <div class="col-1-2 text-right">
-                    <button type="button" class="pm_button primary" ng-click="createAccount()" ng-disabled="account.codeVerification===''">
-                        {{ 'COMPLETE_SETUP' | translate }}
-                    </button>
-                </div>
             </div>
         </div>
-        <iframe ng-if="verificator === 'recaptcha'" id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
 
-        <div ng-show="goodCaptcha" class="text-right">
-            <button type="button" class="pm_button primary" ng-click="createAccount()" ng-disabled="account.codeVerification===''">
+        <div ng-if="verificator === 'recaptcha'">
+            <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="pm_button primary large" ng-click="createAccount()" ng-disabled="account.codeVerification === '' && account.captcha_token === false">
                 {{ 'COMPLETE_SETUP' | translate }}
             </button>
         </div>
