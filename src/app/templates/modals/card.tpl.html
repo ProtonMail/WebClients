@@ -4,10 +4,10 @@
             <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">{{ 'PAYMENT_INFORMATION' | translate }}</h4>
+                    <h4 class="modal-title">{{ 'PAYMENT_DETAILS' | translate }}</h4>
                 </div>
                 <div class="modal-body pm_form">
-                    <p>You can change your credit card information.</p>
+                    <p>Update your credit card information.</p>
                     <div class="pm_grid">
                         <div class="col-1-1">
                             <div class="input-icon margin">
@@ -15,7 +15,7 @@
                                 <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" />
                             </div>
                             <div class="input-icon margin">
-                                <i class="fa {{ ctrl.cardTypeIcon }}"></i>
+                                <card-icon number="ctrl.number"></card-icon>
                                 <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
                             </div>
                             <div class="pm_grid margin">
