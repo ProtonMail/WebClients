@@ -502,7 +502,9 @@ angular.module('proton', [
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
 
-        $rootScope.mobileResponsive();
+        $timeout( function() {
+            $rootScope.mobileResponsive();
+        }, 30);
 
     });
 })
