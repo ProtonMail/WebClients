@@ -82,6 +82,7 @@ angular.module('proton', [
     'proton.maxComposerHeight',
     'proton.drag',
     'proton.wizard',
+    'proton.card',
 
     // Filters
     'proton.filters',
@@ -241,7 +242,7 @@ angular.module('proton', [
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
         if(newVal) {
-            $document.find("title").text(newVal + ' - ProtonMail');
+            $document.find("title").text(newVal + ' | ProtonMail');
         } else {
             $document.find("title").text('ProtonMail');
         }
