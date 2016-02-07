@@ -1079,36 +1079,55 @@ angular.module("proton.modals", [])
         controller: function(params) {
             // Variables
             var mailboxPassword = authentication.getPassword();
+            var promises = [];
+            var DIRTY = 0;
+            var ENCRYPTING = 1;
+            var ENCRYPTED = 2;
+            var SAVED = 3;
+            var ERROR = 4;
 
             // Parameters
-            this.address = params.address;
+            this.addresses = params.addresses;
+            _.each(this.addresses, function(address) { address.state = DIRTY; });
             this.sizes = [{label: '2048', value: 2048}, {label: '4096', value: 4096}];
             this.size = this.sizes[0];
 
             // Functions
             this.submit = function() {
-                pmcw.generateKeysRSA(this.address.Email, mailboxPassword, this.size.value)
-                .then(function(result) {
-                    var publicKeyArmored = result.publicKeyArmored;
-                    var privateKeyArmored = result.privateKeyArmored;
+                _.each(this.addresses, function(address) {
+                    address.state = ENCRYPTING;
+                    promises.push(pmcw.generateKeysRSA(
+                        address.Email,
+                        mailboxPassword,
+                        this.size.value
+                    ).then(function(result) {
+                        address.state = ENCRYPTED;
+                        // var publicKeyArmored = result.publicKeyArmored; not used
+                        var privateKeyArmored = result.privateKeyArmored;
 
-                    networkActivityTracker.track(Key.create({
-                        AddressID: this.address.ID,
-                        PrivateKey: privateKeyArmored
-                    }).then(function(result) {
-                        if (result.data && result.data.Code === 1000) {
-                            this.cancel();
-                        } else if (result.data && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: 'Error during create key request', classes: 'notification-danger'});
-                        }
+                        Key.create({
+                            AddressID: address.ID,
+                            PrivateKey: privateKeyArmored
+                        }).then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+                                address.state = SAVED;
+                                this.cancel();
+                            } else if (result.data && result.data.Error) {
+                                address.state = ERROR;
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            } else {
+                                address.state = ERROR;
+                                notify({message: 'Error during create key request', classes: 'notification-danger'});
+                            }
+                        }.bind(this), function(error) {
+                            address.state = ERROR;
+                            notify({message: 'Error during the create key request', classes: 'notification-danger'});
+                        });
                     }.bind(this), function(error) {
-                        notify({message: 'Error during the create key request', classes: 'notification-danger'});
+                        address.state = ERROR;
+                        notify({message: error, classes: 'notification-danger'});
                     }));
-                }.bind(this), function(error) {
-                    notify({message: error, classes: 'notification-danger'});
-                });
+                }.bind(this));
             };
 
             this.cancel = function() {

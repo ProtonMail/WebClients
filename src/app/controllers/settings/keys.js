@@ -169,7 +169,7 @@ angular.module("proton.controllers.Settings")
     $scope.generate = function(address) {
         generateModal.activate({
             params: {
-                address: address,
+                addresses: [address],
                 cancel: function() {
                     eventManager.call();
                     generateModal.deactivate();
