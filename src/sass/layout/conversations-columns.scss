@@ -167,6 +167,9 @@ body.mobileMode {
         .selection {
             width: 50px;
             padding-top: 15px;
+            height: 60px;
+            position: relative;
+            z-index: 99;
         }
         .row.bottom {
             padding-left: 50px;

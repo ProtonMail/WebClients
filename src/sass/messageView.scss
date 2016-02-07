@@ -19,7 +19,7 @@
             display: inline-block;
             width: calc(100% - 4.5rem);
             padding: 0 10px;
-        }        
+        }
         .starButton {
             border: none;
             margin-right: 0;
@@ -107,6 +107,14 @@
             .meta .contact strong {
                 font-weight: 700;
             }
+            .time,
+            .status,
+            .labels {
+                background: #fff !important;
+            }
+            .time::after {
+                background: #fff !important;
+            }
         }
         & > div.summary {
             height: 40px;
@@ -144,7 +152,7 @@
                     position: absolute;
                     left: -1rem;
                     width: 1rem;
-                    height: 30px;
+                    height: 25px;
                     top: 0;
                     background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, $read 100%);
                     background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,$read 100%);

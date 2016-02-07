@@ -12,10 +12,21 @@ html.protonmail {
 			height: initial !important;
 		}
 		&.mobileMode {
+			&.locked {
+				overflow: initial !important;
+			}
 			#body {
 				height: 100%;
+				overflow: initial !important;
 				#pm_main {
 					height: calc(100% - 60px - 1px);
+				}
+			}
+			#secured-account {
+				#body {
+					#pm_main {
+						overflow: auto;
+					}
 				}
 			}
 		}

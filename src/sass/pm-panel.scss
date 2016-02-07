@@ -23,10 +23,10 @@
 	}
 }
 
-body.light { 
+body.light {
 	.pm_panel {
 		background: $white;
-		color: $gray;		
+		color: $gray;
 	}
 }
 
@@ -34,6 +34,7 @@ body.mobileMode {
 	.pm_panel {
 		width: 100%;
 		padding: 20px !important;
+		margin-top: 2rem;
 	}
 }
 

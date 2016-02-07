@@ -169,6 +169,7 @@ body.mobileMode {
 
 body.mobileMode {
     .pm_modal {
+        overflow: initial;
         &.small {
             .modal-dialog {
                 width: 100%;
