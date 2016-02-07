@@ -31,7 +31,7 @@ angular.module('proton.card', [])
                                     value = visa;
                                     break;
                                 case 'MasterCard':
-                                    value = visa;
+                                    value = mastercard;
                                     break;
                                 case 'American Express':
                                     value = americanExpress;
