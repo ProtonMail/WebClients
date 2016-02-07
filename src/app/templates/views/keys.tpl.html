@@ -8,15 +8,15 @@
         <!-- <button type="button" class="pm_button error" ng-click="lock()">Lock</button> -->
         <div ng-repeat="address in addresses | orderBy: 'Send'" class="keyAddresses">
             <header>
-                <span class="pm_badge pull-right success" ng-show="address.Status === 1">Enabled</span>
-                <span class="pm_badge pull-right error" ng-hide="address.Status === 1">Disabled</span>
-                <h4>{{ address.Email }}</h4>
-                <p ng-hide="isNonPrivate === true">
-                    <button class="pm_button" ng-click="generate(address)" ng-disabled="address.Keys > 10">
+                <div class="margin">
+                    <button class="pm_button pull-right" ng-click="generate(address)" ng-hide="isNonPrivate === true" ng-disabled="address.Keys > 10">
                         <i class="fa fa-key"></i>
                         {{ 'GENERATE_NEW_KEY_PAIR' | translate }}
                     </button>
-                </p>
+                    <strong>{{ address.Email }}</strong>
+                    <span class="pm_badge success" ng-show="address.Status === 1">Enabled</span>
+                    <span class="pm_badge error" ng-hide="address.Status === 1">Disabled</span>
+                </div>
             </header>
             <table class="pm_table thick bordered" ng-show="address.Keys.length > 0">
                 <thead>
