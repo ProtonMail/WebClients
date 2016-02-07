@@ -121,7 +121,6 @@ header#pm_header-desktop {
 					color: #000 !important;
 					a.help {
 						color: #000 !important;
-						text-align: left;
 						i {
 							color: #000 !important;
 						}
@@ -140,9 +139,14 @@ header#pm_header-desktop {
 				a {
 					border-top: initial !important;
 					color: $primary;
+					width: 100%;
 					i {
 						display: inline-block;
+						color: #000;
 					}
+				}
+				a.help {
+					text-align: left;
 				}
 			}
 			a {
