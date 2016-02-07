@@ -629,6 +629,8 @@
 
 body.mobileMode {
 	&.activeComposer {
+		overflow: initial !important;
+		height: initial !important;
 		header#pm_header-mobile,
 		#pm_main {
 			display: none !important;
@@ -645,20 +647,30 @@ body.mobileMode {
 		.composer {
 			display: block;
 			height: 100% !important;
+			// min-height: 800px !important;
 			top: 0;
 			left: 0 !important;
 			right: 0 !important;
+			position: static !important;
+			padding-bottom: 0 !important;
 			&.maximized {
 				left: 20px;
 			}
-			footer .pm_button {
-				span {
-					display: none !important
-				}
-				&.primary {
-					padding: 0;
+			.meta .row select {
+				width: calc(100% - 4.5rem);
+				box-sizing: border-box;
+			}
+			footer {
+				position: static !important;
+				.pm_button {
 					span {
-						display: block !important;
+						display: none !important
+					}
+					&.primary {
+						padding: 0;
+						span {
+							display: block !important;
+						}
 					}
 				}
 			}
@@ -681,6 +693,7 @@ body.mobileMode {
 				height: calc(100% - 145px) !important;
 				.composeEditor {
 					height: 100% !important;
+					// min-height: 600px !important;
 					.angular-squire {
 						height: 100% !important;
 						.editor-container {
@@ -689,6 +702,7 @@ body.mobileMode {
 								height: calc(100% - 33px) !important;
 								iframe {
 									height: 100% !important;
+									min-height: 300px !important;
 								}
 							}
 						}

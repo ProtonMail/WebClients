@@ -22,12 +22,8 @@ html.protonmail {
 					height: calc(100% - 60px - 1px);
 				}
 			}
-			#secured-account {
-				#body {
-					#pm_main {
-						overflow: auto;
-					}
-				}
+			&#secured-account {
+				overflow: initial !important;
 			}
 		}
 	}
