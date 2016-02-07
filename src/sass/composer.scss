@@ -628,6 +628,12 @@
 }
 
 body.mobileMode {
+	&.activeComposer {
+		header#pm_header-mobile,
+		#pm_main {
+			display: none !important;
+		}
+	}
 	#pm_composer {
 		height: 100% !important;
 		min-height: initial !important;
@@ -639,11 +645,40 @@ body.mobileMode {
 		.composer {
 			display: block;
 			height: 100% !important;
+			top: 0;
+			left: 0 !important;
+			right: 0 !important;
 			&.maximized {
 				left: 20px;
 			}
+			footer .pm_button {
+				span {
+					display: none !important
+				}
+				&.primary {
+					padding: 0;
+					span {
+						display: block !important;
+					}
+				}
+			}
+			&.expandRecipients {
+				section {
+					height: calc(100% - 215px) !important;
+				}
+			}
+			&.hasAttachment {
+				section {
+					height: calc(100% - 240px) !important;
+				}
+			}
+			&.hasAttachment.expandRecipients {
+				section {
+					height: calc(100% - 245px) !important;
+				}
+			}
 			section {
-				height: calc(100% - 180px) !important;
+				height: calc(100% - 145px) !important;
 				.composeEditor {
 					height: 100% !important;
 					.angular-squire {
@@ -678,136 +713,6 @@ body.mobileMode {
 						line-height: 3rem;
 						width: 3rem;
 					}
-				}
-			}
-		}
-	}
-}
-
-@media screen and (max-width: $mobile-landscape) {
-	.activeComposer {
-		#pm_composer {
-			display: block;
-		}
-		header#pm_header-mobile {
-			display: none;
-		}
-	}
-	#pm_composer {
-		position: relative;
-		display: none;
-		float: left;
-		width: 100%;
-		.composer.maximized {
-			position: static;
-			margin: 0;
-			padding: 0;
-			float: none;
-			opacity: 1;
-			width: 100% !important;
-			.meta {
-				display: block;
-				float: left;
-				width: 100%;
-			}
-			& > footer {
-				position: fixed;
-				left: 0;
-				bottom: 0;
-				z-index: 99;
-				right: 0;
-				height: auto !important;
-			}
-			.options {
-				padding-bottom: 4rem;
-				bottom: initial !important;
-				.pm_select {
-					margin: 0 0 0 .5rem;
-				}
-				.text-center {
-					font-size: .9em;
-				}
-			}
-		}
-		.composer.tall section .angular-squire-wrapper iframe {
-			height: 620px !important;
-		}
-		.composer.tall section {
-			height: 670px !important;
-		}
-		footer .pm_button {
-			padding: 0 10px !important;
-			span {
-				display: none;
-			}
-			&.primary {
-				span {
-					display: block;
-				}
-			}
-		}
-	}
-	html.protonmail {
-	    overflow: auto !important;
-	    -webkit-overflow-scrolling: touch;
-		body.modalOpen,
-		body.activeComposer {
-		    overflow: auto !important;
-		    -webkit-overflow-scrolling: touch;
-		}
-	}
-	body.maximizedComposer {
-		#pm_main,
-		#pm_header,
-		#pm_sidebar {
-			display: none;
-		}
-	}
-}
-
-
-@media (max-height: 700px) and (max-width: $tablet-landscape) {
-	#pm_composer {
-		.composer {
-			header {
-				.pm_button.maximize-button {
-					// display: none;
-				}
-			}
-			&.maximized {
-				left: 2%;
-				right: 2%;
-				top: 80px;
-				width: 96%;
-			}
-		}
-	}
-}
-
-@media (max-height: 500px) {
-	html.protonmail, html.protonmail body {
-	    height: initial !important;
-	}
-	#pm_composer {
-		.composer {
-			header {
-				.pm_button.maximize-button {
-					// display: none;
-				}
-			}
-			&.maximized {
-				left: 0;
-				right: 0;
-				top:0 !important;
-				width: 100%;
-				position: absolute !important;
-			}
-			footer {
-				.pm_button span {
-					display: none;
-				}
-				.pm_button.primary span {
-					display: block;
 				}
 			}
 		}
