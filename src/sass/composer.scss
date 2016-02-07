@@ -244,6 +244,7 @@
 			}
 			.meta .row select {
 				width: 100%;
+				width: 82%;
 			}
 			.composeEditor {
 				height: 100%;
@@ -628,116 +629,9 @@
 }
 
 body.mobileMode {
-<<<<<<< HEAD
-	&.activeComposer {
-		overflow: initial !important;
-		height: initial !important;
-		header#pm_header-mobile,
-		#pm_main {
-			display: none !important;
-		}
-	}
-=======
->>>>>>> parent of 32c9471... composer rework with calc
-	#pm_composer {
-		height: 100% !important;
-		min-height: initial !important;
-		& > div,
-		& > div > * {
-			height: 100% !important;
-			display: block;
-		}
-		.composer {
-			display: block;
-			height: 100% !important;
-<<<<<<< HEAD
-			// min-height: 800px !important;
-			top: 0;
-			left: 0 !important;
-			right: 0 !important;
-			position: static !important;
-			padding-bottom: 0 !important;
-			&.maximized {
-				left: 20px;
-			}
-			.meta .row select {
-				width: calc(100% - 4.5rem);
-				box-sizing: border-box;
-			}
-			footer {
-				position: static !important;
-				.pm_button {
-					span {
-						display: none !important
-					}
-					&.primary {
-						padding: 0;
-						span {
-							display: block !important;
-						}
-					}
-				}
-			}
-			&.expandRecipients {
-				section {
-					height: calc(100% - 215px) !important;
-				}
-			}
-			&.hasAttachment {
-				section {
-					height: calc(100% - 240px) !important;
-				}
-			}
-			&.hasAttachment.expandRecipients {
-				section {
-					height: calc(100% - 245px) !important;
-				}
-			}
-=======
-			&.maximized {
-				left: 20px;
-			}
->>>>>>> parent of 32c9471... composer rework with calc
-			section {
-				height: calc(100% - 180px) !important;
-				.composeEditor {
-					height: 100% !important;
-					// min-height: 600px !important;
-					.angular-squire {
-						height: 100% !important;
-						.editor-container {
-							height: 100% !important;
-							.angular-squire-wrapper {
-								height: calc(100% - 33px) !important;
-								iframe {
-									height: 100% !important;
-									min-height: 200px !important;
-								}
-							}
-						}
-					}
-				}
-			}
-			header {
-				height: 3rem;
-				line-height: 3rem;
-				& > span {
-					height: 3rem;
-					line-height: 3rem;
-					.maximize-button,
-					.minimize-button {
-						display: none;
-					}
-					&.subject {
-						width: calc(100% - 3rem);
-					}
-					.pm_button {
-						height: 3rem;
-						line-height: 3rem;
-						width: 3rem;
-					}
-				}
-			}
+	#pm_composer .composer {
+		&.maximized {
+			left: 20px;
 		}
 	}
 }
@@ -747,15 +641,13 @@ body.mobileMode {
 		#pm_composer {
 			display: block;
 		}
-		header#pm_header-mobile {
-			display: none;
-		}
 	}
 	#pm_composer {
 		position: relative;
 		display: none;
 		float: left;
 		width: 100%;
+		min-height: 700px;
 		.composer.maximized {
 			position: static;
 			margin: 0;
@@ -812,6 +704,8 @@ body.mobileMode {
 		body.activeComposer {
 		    overflow: auto !important;
 		    -webkit-overflow-scrolling: touch;
+		    height: 700px;
+		    min-height: 700px;
 		}
 	}
 	body.maximizedComposer {

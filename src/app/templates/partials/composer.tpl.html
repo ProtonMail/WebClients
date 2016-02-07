@@ -1,6 +1,7 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" novalidate>
         <div
+        ng-squire-height
         class="composer animate"
         id="uid{{message.uid}}"
         ng-repeat="message in messages"
@@ -206,13 +207,13 @@
                     <input type="text" title="{{ 'SUBJECT' | translate }}" class="subject" placeholder="{{ 'SUBJECT' | translate }}" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
             </div>
-            <section ng-if="!message.minimized" ng-form="composeForm{{$index}}">
+            <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" max-composer-height>
                 <div class="composeEditor">
                     <div
                     class="dropzone composer-dropzone"
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
-                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" ng-hide="isOver === true"></squire>
+                    <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" ng-hide="isOver === true" max-composer-height></squire>
                 </div>
             </section>
             <div
