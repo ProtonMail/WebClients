@@ -8,44 +8,45 @@
         <!-- <button type="button" class="pm_button error" ng-click="lock()">Lock</button> -->
         <div ng-repeat="address in addresses | orderBy: 'Send'" class="keyAddresses">
             <header>
-                <span class="pm_badge pull-right success" ng-show="address.Status === 1"><i class="fa fa-check"></i> Enabled</span>
-                <span class="pm_badge pull-right error" ng-hide="address.Status === 1">Disabled</span>
-                <h4>{{ address.Email }}</h4>
-                <p ng-hide="isNonPrivate === true">
-                    <button class="pm_button" ng-click="generate(address)" ng-disabled="address.Keys > 10">
+                <div class="margin">
+                    <button class="pm_button pull-right" ng-click="generate(address)" ng-hide="isNonPrivate === true" ng-disabled="address.Keys > 10">
                         <i class="fa fa-key"></i>
                         {{ 'GENERATE_NEW_KEY_PAIR' | translate }}
                     </button>
-                </p>
+                    <strong>{{ address.Email }}</strong>
+                    <span class="pm_badge success" ng-show="address.Status === 1">Enabled</span>
+                    <span class="pm_badge error" ng-hide="address.Status === 1">Disabled</span>
+                </div>
             </header>
             <table class="pm_table thick bordered" ng-show="address.Keys.length > 0">
                 <thead>
                     <tr>
-                        <th style="width: 10px;">&nbsp;</th>
+                        <th>{{ 'STATUS' | translate }}</th>
                         <th>{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
-                        <th>{{ 'DATE' | translate }}</th>
-                        <th>{{ 'BIT_SIZE' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
+                        <th>{{ 'KEY_SIZE' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
+                        <th>{{ 'KEY_DOWNLOAD' | translate }}</th>
                         <th class="text-right">{{ 'ACTIONS' | translate }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="key in address.Keys">
-                        <td class="text-center">
-                            <a href="#" pt-tooltip="TODO">
-                                <i class="fa fa-arrow-up" ng-show="$first"></i>
-                            </a>
+                        <td>
+                            <span class="pm_badge primary" ng-show="$first">{{ 'PRIMARY' | translate }}</span>
+                            <span class="pm_badge success" ng-show="key.decrypted === true">{{ 'ENABLED' | translate }}</span>
+                            <span class="pm_badge error" ng-hide="key.decrypted === true">{{ 'DISABLED' | translate }}</span>
                         </td>
                         <td>
-                            <span class="pm_badge" ng-class="{'success': key.decrypted === true}">{{ key.fingerprint }}</span>
+                            <code title="{{ key.created | date }}">{{ key.fingerprint }}</code>
                         </td>
-                        <td>{{ key.created | date }}</td>
-                        <td>{{ key.bitSize }}</td>
+                        <td>{{ key.bitSize }} {{ 'BIT' | translate }}</td>
+                        <td>
+                            <button class="pm_button link" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari">{{ 'PUBLIC_KEY' | translate }}</button>
+                            <button class="pm_button link" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari">{{ 'PRIVATE_KEY' | translate }}</button>
+                        </td>
                         <td class="text-right">
-                            <button class="pm_button link" ng-click="reactivate(address, key)" ng-show="key.decrypted === false"><i class="fa fa-refresh"></i> {{ 'REACTIVATE' | translate }}</button>
-                            <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false"><i class="fa fa-arrow-up"></i> {{ 'MAKE_PRIMARY' | translate }}</button>
-                            <button class="pm_button link" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari"><i class="fa fa-key"></i> {{ 'PUBLIC_KEY' | translate }}</button>
-                            <button class="pm_button link" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari"><i class="fa fa-key"></i> {{ 'PRIVATE_KEY' | translate }}</button>
-                            <button class="pm_button link" ng-click="delete(address, key)" ng-hide="address.Keys.length === 1 || isNonPrivate"><i class="fa fa-trash-o"></i> {{ 'DELETE' | translate }}</button>
+                            <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false">{{ 'MAKE_PRIMARY' | translate }}</button>
+                            <button class="pm_button link" ng-click="enable(address, key)" ng-show="key.decrypted === false">{{ 'ENABLE' | translate }}</button>
+                            <button class="pm_button link" ng-click="delete(address, key)" ng-hide="address.Keys.length === 1 || isNonPrivate">{{ 'DELETE' | translate }}</button>
                         </td>
                     </tr>
                 </tbody>
