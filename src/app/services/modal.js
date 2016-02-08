@@ -1087,13 +1087,17 @@ angular.module("proton.modals", [])
             var ERROR = 4;
 
             // Parameters
+            this.process = false;
             this.addresses = params.addresses;
+            this.title = params.title;
+            this.message = params.message;
             _.each(this.addresses, function(address) { address.state = DIRTY; });
-            this.sizes = [{label: '2048', value: 2048}, {label: '4096', value: 4096}];
+            this.sizes = [{label: 'normal strength encryption (2048)', value: 2048}, {label: 'high strength encryption (4096)', value: 4096}];
             this.size = this.sizes[0];
 
             // Functions
             this.submit = function() {
+                this.process = true;
                 _.each(this.addresses, function(address) {
                     address.state = ENCRYPTING;
                     promises.push(pmcw.generateKeysRSA(

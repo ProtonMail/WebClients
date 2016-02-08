@@ -3,22 +3,20 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">
-                    [Address Added]<br>
-                    [Generate a new key pair]
-                </h4>
+                <h4 class="modal-title">{{ ctrl.title }}</h4>
             </div>
-            <div class="modal-body pm_form">
-                <p class="alert alert-info">
-                    [Your address has been added but before you can send or receive emails you need to generate a new key pair. <a href="">Learn more</a>]<br>
-                </p>
-                <div class="margin">
-                    <span>{{ 'BIT_SIZE' | translate }}:</label>
-                    <span class="pm_select inline">
-                        <select ng-model="ctrl.size" ng-options="size.label for size in ctrl.sizes"></select>
-                        <i class="fa fa-angle-down"></i>
-                    </span>
+            <div class="modal-body pm_form" ng-hide="ctrl.process === true">
+                <p ng-show="ctrl.message">{{ ctrl.message }}</p>
+                <div class="pm_grid">
+                    <div class="col-1-2">
+                        <span class="pm_select">
+                            <select ng-model="ctrl.size" ng-options="size.label for size in ctrl.sizes"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </div>
+                    <div class="col-1-2"></div>
                 </div>
+                <p class="alert alert-info" ng-show="ctrl.size.value === 4096">Selecting this option may crash or freeze your browser, it is only recommended for high performance computers. Not recommended for tablet and mobile devices</p>
                 <table class="pm_table">
                     <thead>
                         <tr>
@@ -34,14 +32,19 @@
                     </tbody>
                 </table>
             </div>
+            <div class="modal-body" ng-show="ctrl.process === true">
+                <p>&nbsp;</p>
+                <p>We are now generating encryption keys for your account, this may take several minutes and temporarily freeze your browser.</p>
+                <p>&nbsp;</p>
+                <loader-tag></loader-tag>
+            </div>
         </div>
         <div class="modal-footer text-right">
             <button class="pm_button pull-left" ng-click="ctrl.cancel()">
                 {{ 'CANCEL' | translate }}
             </button>
             <button type="submit" class="pm_button primary">
-                [ Generate New Keys ]
-                {{ 'SUBMIT' | translate }}
+                {{ 'GENERATE_KEYS' | translate }}
             </button>
         </div>
     </form>
