@@ -20,31 +20,36 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{ 'STORAGE' }}</td>
+                            <td>{{ 'STORAGE' | translate }}</td>
                             <td class="text-center">{{ ctrl.config.Cart.Next.MaxSpace / ctrl.base / ctrl.base / ctrl.base }} GB</td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>{{ 'DOMAINS' }}</td>
+                            <td>{{ 'DOMAINS' | translate }}</td>
                             <td class="text-center">{{ ctrl.config.Cart.Next.MaxDomains }}</td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>{{ 'ADDRESSES' }}</td>
+                            <td>{{ 'ADDRESSES' | translate }}</td>
                             <td class="text-center">{{ ctrl.config.Cart.Next.MaxAddresses }}</td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>{{ 'USERS' }}</td>
+                            <td>{{ 'USERS' | translate }}</td>
                             <td class="text-center">{{ ctrl.config.Cart.Next.MaxMembers }}</td>
                             <td></td>
+                        </tr>
+                        <tr ng-show="ctrl.coupon">
+                            <td>{{ 'COUPON' | translate }}</td>
+                            <td class="text-center">1</td>
+                            <td>-{{ ctrl.coupon / 100 | number: 2 | currency: ctrl.config.Subscription.Currency }}</td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.config.Subscription.BillingCycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.config.Subscription.BillingCycle === 12">{{ 'PER_YEAR' | translate }}</small>
                             </td>
                             <td>
-                                <strong>{{ ctrl.config.Subscription.Amount / 100 | number: 2 | currency: ctrl.config.Subscription.Currency }}</strong>
+                                <strong>{{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -91,12 +96,14 @@
                     <div class="col-2-3">
                         <div class="input-icon">
                             <i class="fa fa-tag"></i>
-                            <input type="text" ng-model="ctrl.config.Coupon" placeholder="Coupon" />
+                            <input type="text" ng-model="ctrl.config.Coupon" placeholder="{{ 'COUPON' | translate }}" />
                         </div>
                     </div>
-                    <div class="col-1-3"></div>
+                    <div class="col-1-3">
+                        <button class="pm_button" ng-click="ctrl.apply()">{{ 'APPLY' | translate }}</button>
+                    </div>
                 </div>
-                <p>Your credit card will be automatically charged on a {{ ctrl.config.Subscription.Amount / 100 | number: 2 | currency: ctrl.config.Subscription.Currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
+                <p>Your credit card will be automatically charged on a {{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>

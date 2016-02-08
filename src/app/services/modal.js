@@ -507,6 +507,7 @@ angular.module("proton.modals", [])
             this.recovery = '';
             this.create = params.create;
             this.base = CONSTANTS.BASE_SIZE;
+            this.coupon = false;
 
             if(params.card.data.Code === 1000 && params.card.data.Sources.length > 0) {
                 var card = _.first(params.card.data.Sources);
@@ -661,6 +662,27 @@ angular.module("proton.modals", [])
 
 
             }.bind(this);
+
+            /**
+             * Apply the coupon field
+             */
+            this.apply = function() {
+                Payment.coupon(this.config.Coupon).then(function(result) {
+                    // if (result.data && result.data.Code === 1000) {
+                        this.coupon = result.data.Modifier.AmountOff;
+                    //}
+                }.bind(this));
+            };
+
+            this.total = function() {
+                var value = this.config.Subscription.Amount - this.coupon;
+
+                if (value > 0) {
+                    return value / 100;
+                } else {
+                    return 0;
+                }
+            };
 
             /**
              * Close payment modal
