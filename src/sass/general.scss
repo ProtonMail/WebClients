@@ -9,13 +9,21 @@ html.protonmail {
 		&.scroll {
 			overflow-y: initial;
 			-webkit-overflow-scrolling: touch;
+			height: initial !important;
 		}
 		&.mobileMode {
+			&.locked {
+				overflow: initial !important;
+			}
 			#body {
 				height: 100%;
+				overflow: initial !important;
 				#pm_main {
 					height: calc(100% - 60px - 1px);
 				}
+			}
+			&#secured-account {
+				overflow: initial !important;
 			}
 		}
 	}

@@ -4,9 +4,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
-                <h4 class="modal-title">3. {{ 'ADD_AN_ADDRESS' | translate }}</h4>
+                <h4 class="modal-title">3. {{ 'ADDRESSES' | translate }} <em>(Required)</em></h4>
             </div>
             <div class="modal-body pm_form">
+                <p>To send and receive email with <strong>{{ ctrl.domain.DomainName }}</strong>, please add all addresses:</p>
                 <div class="pm_grid" ng-show="ctrl.members.length > 1">
                     <div class="col-12">
                         <label>Choose the member who will own this address:</label>
@@ -23,9 +24,9 @@
                     </div>
                     <div class="col-1-3">
                         <label>&nbsp;</label>
-                        <input type="text" value="@{{ ctrl.domain.DomainName }}" readonly class="noBorder" />
+                        <strong>@{{ ctrl.domain.DomainName }}</strong>
                     </div>
-                    <div class="col-1-3">
+                    <div class="col-1-3 text-right">
                         <label>&nbsp;</label>
                         <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
                     </div>

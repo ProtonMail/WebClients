@@ -16,17 +16,17 @@ header#pm_header {
 	}
 }
 
-// REGULAR 
+// REGULAR
 header#pm_header-desktop {
 	height: $headerHeight;
 	line-height: $headerHeight;
 	background: $alt;
 	font-size: 12px;
 	position: relative;
-	z-index: 2;
+	z-index: 101;
 	i, b {
 		font-style: normal;
-		font-weight: normal; 
+		font-weight: normal;
 	}
 	a.logo {
 		display: inline-block;
@@ -89,11 +89,6 @@ header#pm_header-desktop {
 	        }
 		}
 	}
-	.help {
-		color: #000 !important;
-		margin: 1rem 0;
-		text-transform: none;
-	}
 	ul.navigation {
 		display: block;
 		float: right;
@@ -102,6 +97,7 @@ header#pm_header-desktop {
 		li {
 			display: block;
 			float: left;
+			position: relative;
 			p {
 				margin: 0;
 				display: block;
@@ -117,6 +113,7 @@ header#pm_header-desktop {
 				    height: auto;
 				    line-height: initial !important;
 				    float: none;
+					position: relative;
 				}
 			}
 			&:hover {
@@ -130,13 +127,26 @@ header#pm_header-desktop {
 					}
 				}
 			}
+			.help {
+				color: #000 !important;
+				margin: 0;
+				text-transform: none;
+				float: none;
+				display: block;
+				float: none;
+			}
 			.pm_dropdown {
 				a {
 					border-top: initial !important;
 					color: $primary;
+					width: 100%;
 					i {
 						display: inline-block;
+						color: #000;
 					}
+				}
+				a.help {
+					text-align: left;
 				}
 			}
 			a {
@@ -212,13 +222,13 @@ header#pm_header-desktop {
 	}
 }
 
-header#pm_header-tablet { 
+header#pm_header-tablet {
 	height: 70px;
 	line-height: 70px;
 	background: $alt;
 	font-size: 14px;
 	position: relative;
-	z-index: 2;	
+	z-index: 2;
 	.compose {
 		display: block;
 		height: 50px;
@@ -307,13 +317,13 @@ header#pm_header-mobile {
 		float: left;
 		max-width: 3rem;
 		min-width: 3rem;
-		width: auto;	
+		width: auto;
 		height: 70px;
 		line-height: 70px;
 		box-sizing: border-box;
 		padding: 0 10px;
 		margin: 0;
-		text-align: center;	
+		text-align: center;
 		display: inline-block;
 		color: #fff;
 		img {

@@ -111,35 +111,6 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Return a list of messages reordered by Time
-     * @param {Array} messages
-     * @return {Array} don't miss this array is reversed
-     */
-    var orderMessage = function(messages) {
-        if(angular.isArray(messages)) {
-            return _.sortBy(messages, 'Time').reverse();
-        } else {
-            return [];
-        }
-    };
-
-    /**
-     * Return a list of conversations reordered by Time for a specific location
-     * @param {Array} conversations
-     * @param {String} loc
-     * @return {Array} don't miss this array is reversed
-     */
-    var orderConversation = function(conversations, loc) {
-        if(angular.isArray(conversations)) {
-            return _.sortBy(conversations, function(conversation) {
-                return api.getTime(conversation.ID, loc);
-            }).reverse();
-        } else {
-            return [];
-        }
-    };
-
-    /**
      * Return a vector to calculate the counters
      * @param {Object} element - element to analyse (conversation or message)
      * @param {Boolean} unread - true if unread case
@@ -270,7 +241,7 @@ angular.module("proton.cache", [])
                         // Store conversations
                         storeConversations(data.Conversations);
                         // Return conversations ordered
-                        deferred.resolve(orderConversation(data.Conversations, loc));
+                        deferred.resolve(api.orderConversation(data.Conversations, loc));
                     } else {
                         deferred.resolve(data.Conversations);
                     }
@@ -319,7 +290,7 @@ angular.module("proton.cache", [])
                     // Set total value in cache
                     cacheCounters.updateMessage(loc, result.Total);
                     // Return messages ordered
-                    deferred.resolve(orderMessage(messages));
+                    deferred.resolve(api.orderMessage(messages));
                 } else {
                     deferred.resolve(messages);
                 }
@@ -420,6 +391,69 @@ angular.module("proton.cache", [])
     };
 
     /**
+     * Return a list of conversations reordered by Time for a specific location
+     * @param {Array} conversations
+     * @param {String} loc
+     * @return {Array} don't miss this array is reversed
+     */
+    api.orderConversation = function(conversations, loc) {
+        if (angular.isArray(conversations)) {
+            return conversations.sort(function(a, b) {
+                if (api.getTime(a.ID, loc) < api.getTime(b.ID, loc)) {
+                    return -1;
+                }
+
+                if (api.getTime(a.ID, loc) > api.getTime(b.ID, loc)) {
+                    return 1;
+                }
+
+                if (a.Order < b.Order) {
+                    return -1;
+                }
+
+                if (a.Order > b.Order) {
+                    return 1;
+                }
+
+                return 0;
+            }).reverse();
+        } else {
+            return [];
+        }
+    };
+
+    /**
+     * Return a list of messages reordered by Time
+     * @param {Array} messages
+     * @return {Array} don't miss this array is reversed
+     */
+    api.orderMessage = function(messages) {
+        if (angular.isArray(messages)) {
+            return messages.sort(function(a, b) {
+                if (a.Time < b.Time) {
+                    return -1;
+                }
+
+                if (a.Time > b.Time) {
+                    return 1;
+                }
+
+                if (a.Order < b.Order) {
+                    return -1;
+                }
+
+                if (a.Order > b.Order) {
+                    return 1;
+                }
+
+                return 0;
+            }).reverse();
+        } else {
+            return [];
+        }
+    };
+
+    /**
      * Return time for a specific conversation and location
      * @return {Integer}
      */
@@ -461,7 +495,7 @@ angular.module("proton.cache", [])
                 return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(loc) !== -1;
             });
 
-            messages = orderMessage(messages);
+            messages = api.orderMessage(messages);
 
             switch(mailbox) {
                 case 'label':
@@ -531,7 +565,7 @@ angular.module("proton.cache", [])
                 return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1 && angular.isDefined(api.getTime(conversation.ID, loc));
             });
 
-            conversations = orderConversation(conversations, loc);
+            conversations = api.orderConversation(conversations, loc);
 
             switch(mailbox) {
                 case 'label':
@@ -582,7 +616,7 @@ angular.module("proton.cache", [])
     api.queryMessagesCached = function(conversationId) {
         var messages = _.where(messagesCached, {ConversationID: conversationId});
 
-        messages = orderMessage(messages);
+        messages = api.orderMessage(messages);
 
         return angular.copy(messages);
     };
@@ -937,7 +971,7 @@ angular.module("proton.cache", [])
                 return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1 && angular.isDefined(api.getTime(conversation.ID, loc));
             });
 
-            conversations = orderConversation(conversations, loc);
+            conversations = api.orderConversation(conversations, loc);
 
             var index = _.findIndex(conversations, {ID: conversationID});
 

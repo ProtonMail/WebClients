@@ -82,6 +82,7 @@ angular.module('proton', [
     'proton.maxComposerHeight',
     'proton.drag',
     'proton.wizard',
+    'proton.card',
 
     // Filters
     'proton.filters',
@@ -102,7 +103,6 @@ angular.module('proton', [
     'proton.controllers.Signup',
     'proton.controllers.Support',
     'proton.controllers.Upgrade',
-    'proton.controllers.Wizard',
 
     // Translations
     'proton.translations'
@@ -242,7 +242,7 @@ angular.module('proton', [
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
         if(newVal) {
-            $document.find("title").text(newVal + ' - ProtonMail');
+            $document.find("title").text(newVal + ' | ProtonMail');
         } else {
             $document.find("title").text('ProtonMail');
         }
@@ -279,6 +279,7 @@ angular.module('proton', [
             $rootScope.mobileMode = true;
             $rootScope.rowMode = false;
             $rootScope.layoutMode = 'columns';
+            $rootScope.$broadcast('tourEnd');
         }
     };
 
@@ -288,8 +289,6 @@ angular.module('proton', [
     angular.element($window).bind('orientationchange', $rootScope.mobileResponsive());
 
     $rootScope.mobileResponsive();
-
-    $timeout( $rootScope.mobileResponsive, 300);
 
 })
 
@@ -503,6 +502,11 @@ angular.module('proton', [
         }
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
+
+        $timeout( function() {
+            $rootScope.mobileResponsive();
+        }, 30);
+
     });
 })
 
@@ -528,8 +532,8 @@ angular.module('proton', [
 //
 
 .run(function($log) {
-    $log.info('Find a security bug? security@protonmail.com');
-    $log.info('We\'re hiring! https://protonmail.com/pages/join-us.html');
+    $log.info('Find a security bug? security@protonmail.ch');
+    $log.info('We\'re hiring! https://protonmail.com/careers');
 })
 
 //

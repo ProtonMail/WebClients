@@ -50,6 +50,7 @@
     & > .pull-right {
     margin-top: 0;
     }
+
     .pm_checkbox {
         float: left;
         margin-right: 10px;
@@ -57,5 +58,15 @@
         input[type="checkbox"] {
             margin: 0;
         }
+    }
+    .pm_buttons {
+        position: static;
+    }
+    .pm_dropdown {
+        left: 0 !important;
+        right: 0 !important;
+        top: 134px;
+        width: 100%;
+        z-index: 888;
     }
 }

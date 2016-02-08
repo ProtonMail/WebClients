@@ -8,7 +8,7 @@ body {
 	.fa-square-o,
     .fa-check-square {
 		display: none !important;
-	} 
+	}
 }
 
 // MOBILE
@@ -19,6 +19,9 @@ body.mobileMode {
 			input[type="checkbox"] {
 		    	display: none !important;
 		    }
+			.labelDropdown input[type="checkbox"] {
+				display: inline-block !important;
+			}
 		    .fa-square-o,
 		    .fa-check-square {
 		    	display: inline-block !important;

@@ -29,62 +29,32 @@ We are still in Beta and will have a more refined build process, installation in
 
 We are very open to bug reports via Issues as well as Pull Requests.
 
-### Todo
+### End to end testing for AngularJS
 
-* [ ] Add member (for back-end)
-* [ ] View credit card (for back-end)
-* [ ] Edit credit card (for back-end)
-* [ ] Add address (for back-end)
-* [ ] Download invoice (for back-end)
-* [ ] Subscribe for a plan (for for back-end)
-* [ ] Think about hover style (for design)
-* [ ] Drag and drop element (conversation and message)
-* [ ] Prepare storage modal (**Jason**) -> storageModal
-* [ ] Prepare support modal (**Jason**) -> supportModal
-
-### QA
-
-* [x] star from conversations
-* [x] star from conversation
-* [x] star from message
-* [x] unstar from conversations
-* [x] unstar from conversation
-* [x] unstar from message
-* [ ] read from conversations (Bug)
-* [ ] read from message
-* [ ] unread from conversations
-* [ ] unread from message
-* [x] apply labels from conversations
-* [x] apply labels from message
-* [ ] save draft message
-* [ ] discard draft message
-* [ ] send message
-* [ ] move message
-* [ ] move conversation
-* [x] search messages
-* [x] next page of conversations
-* [ ] next page of messages
-* [ ] print message
-* [ ] message expired
-
-#### Read from conversation (Bug)
+Installation:
 
 ```
-Row view
-Click a message that is unread
-The counter remains unchanged in the sidebar
-Click back in the toolbar
-The counter remains unchanged in the sidebar
-The message is still unread
-5 seconds later, the counter in the sidebar and message are marked read
+npm install -g protractor
+webdriver-manager update
 ```
 
-### Bugs
+Start up a Selenium Server:
 
-* [ ] Move all elements, the main checkbox stay checked (for **Richard**)
-* [ ] Next / previous conversation (for **Richard**)
-* [ ] Next / previous conversations on search (for **Richard**)
-* [ ] Upload large file (more than 2 mb) (for **Jason**)
+```
+webdriver-manager start
+```
+
+Run tests:
+
+```
+protractor protractor_conf.js
+```
+
+Run a scenario:
+
+```
+protractor protractor_conf.js --suite=login
+```
 
 ### License
 

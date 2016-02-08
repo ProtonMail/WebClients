@@ -195,24 +195,6 @@ angular.module("proton.modals", [])
     });
 })
 
-// contact modal
-.factory('wizardModal', function(pmModal) {
-    return pmModal({
-        controller: function(params, $timeout) {
-            this.version = params.version;
-            this.title = params.title;
-
-            this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
-            };
-        },
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/wizard.tpl.html'
-    });
-})
-
 // label modal
 .factory('labelModal', function(pmModal) {
     return pmModal({
@@ -525,7 +507,6 @@ angular.module("proton.modals", [])
             this.recovery = '';
             this.create = params.create;
             this.base = CONSTANTS.BASE_SIZE;
-            this.coupon = '';
 
             if(params.card.data.Code === 1000 && params.card.data.Sources.length > 0) {
                 var card = _.first(params.card.data.Sources);
@@ -555,18 +536,17 @@ angular.module("proton.modals", [])
 
                 promise.then(function(result) {
                     if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        this.process = false;
                         this.step = 'thanks';
                         params.change(result.data.Organization);
                     } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                        this.process = false;
+                        this.step = 'payment';
                         notify({message: result.data.Error, classes: 'notification-danger'});
                     } else {
-                        this.process = false;
+                        this.step = 'payment';
                         notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
                     }
                 }.bind(this), function(error) {
-                    this.process = false;
+                    this.step = 'payment';
                     // TODO notify
                 }.bind(this));
             }.bind(this);
@@ -577,19 +557,19 @@ angular.module("proton.modals", [])
             var generateStripeToken = function() {
                 if($window.Stripe.card.validateCardNumber(this.number) === false) {
                     notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
-                    this.process = false;
+                    this.step = 'payment';
                     return false;
                 }
 
                 if($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
                     notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
-                    this.process = false;
+                    this.step = 'payment';
                     return false;
                 }
 
                 if($window.Stripe.card.validateCVC(this.cvc) === false) {
                     notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
-                    this.process = false;
+                    this.step = 'payment';
                     return false;
                 }
 
@@ -622,9 +602,9 @@ angular.module("proton.modals", [])
                     saveOrganization();
                 } else if(angular.isDefined(response.error)) {
                     notify({message: response.error.message, classes: 'notification-danger'});
-                    this.process = false;
+                    this.step = 'payment';
                 } else {
-                    this.process = false;
+                    this.step = 'payment';
                 }
             }.bind(this);
 
@@ -638,7 +618,7 @@ angular.module("proton.modals", [])
                 }.bind(this);
 
                 // Change process status true to disable input fields
-                this.process = true;
+                this.step = 'process';
 
                 if (params.create === true) {
                     // if (this.recovery.length > 0) {
@@ -653,11 +633,11 @@ angular.module("proton.modals", [])
 
                                 // if (backupPrivateKey === -1) {
                                 //     notify({message: $translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'), classes: 'notification-danger'});
-                                //     this.process = false;
+                                //     this.step = 'payment';
                                 // } else if (Error.prototype.isPrototypeOf(backupPrivateKey)) {
                                 //     // Error messages from OpenPGP.js
                                 //     notify({message: backupPrivateKey.message, classes: 'notification-danger'});
-                                //     this.process = false;
+                                //     this.step = 'payment';
                                 // } else {
                                     this.config.Organization.PrivateKey = privateKey;
                                     this.config.Organization.BackupPrivateKey = privateKey;
@@ -667,12 +647,12 @@ angular.module("proton.modals", [])
                             function(error) {
                                 $log.error(error);
                                 notify({message: 'Error during the generation of new keys for pm_org_admin', classes: 'notification-danger'});
-                                this.process = false;
+                                this.step = 'payment';
                             }.bind(this)
                         );
                     // } else {
                     //     notify({message: 'You need to enter a recovery organization password', classes: 'notification-danger'});
-                    //     this.process = false;
+                    //     this.step = 'payment';
                     //     return false;
                     // }
                 } else {
@@ -694,19 +674,30 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('userModal', function(pmModal) {
+.factory('userModal', function(pmModal, CONSTANTS) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/user/modal.tpl.html',
         controller: function(params) {
             // Variables
+            var base = CONSTANTS.BASE_SIZE;
+
+            // Parameters
             this.step = 'member';
             this.organization = params.organization;
+            this.domains = params.domains;
+            this.domain = params.domains[0];
             this.nickname = '';
             this.loginPassword = '';
             this.confirmPassword = '';
+            this.address = '';
             this.quota = 0;
-            this.private = true;
+            this.units = [
+                {label: 'MB', value: base * base},
+                {label: 'GB', value: base * base * base}
+            ];
+            this.unit = this.units[0];
+            this.private = false; // Uncheck by default
 
             // Functions
             this.submit = function() {
@@ -715,10 +706,18 @@ angular.module("proton.modals", [])
                 }
             };
 
+            this.next = function() {
+                this.step = 'address';
+            }.bind(this);
+
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
+            };
+
+            this.add = function() {
+
             };
         }
     });
@@ -748,7 +747,7 @@ angular.module("proton.modals", [])
 .factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, $translate) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/address.tpl.html',
+        templateUrl: 'templates/modals/domain/address.tpl.html',
         controller: function(params) {
             // Variables
             this.domain = params.domain;
@@ -760,6 +759,7 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
+
             // Functions
             this.add = function() {
                 if (angular.isDefined(params.add) && angular.isFunction(params.add)) {
@@ -888,10 +888,11 @@ angular.module("proton.modals", [])
                 }
             ];
             this.unit = this.units[0];
+
             // Functions
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.member);
+                    params.submit(this.value * this.unit.value);
                 }
             };
 
@@ -1062,6 +1063,54 @@ angular.module("proton.modals", [])
             // Variables
 
             // Functions
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
+})
+
+.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/generate.tpl.html',
+        controller: function(params) {
+            // Variables
+            var mailboxPassword = authentication.getPassword();
+
+            // Parameters
+            this.address = params.address;
+            this.sizes = [{label: '2048', value: 2048}, {label: '4096', value: 4096}];
+            this.size = this.sizes[0];
+
+            // Functions
+            this.submit = function() {
+                pmcw.generateKeysRSA(this.address.Email, mailboxPassword, this.size.value)
+                .then(function(result) {
+                    var publicKeyArmored = result.publicKeyArmored;
+                    var privateKeyArmored = result.privateKeyArmored;
+
+                    networkActivityTracker.track(Key.create({
+                        AddressID: this.address.ID,
+                        PrivateKey: privateKeyArmored
+                    }).then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            this.cancel();
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: 'Error during create key request', classes: 'notification-danger'});
+                        }
+                    }.bind(this), function(error) {
+                        notify({message: 'Error during the create key request', classes: 'notification-danger'});
+                    }));
+                }.bind(this), function(error) {
+                    notify({message: error, classes: 'notification-danger'});
+                });
+            };
+
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();

@@ -53,6 +53,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $log.error(error);
         });
 
+        console.log($rootScope);
+
+        $rootScope.$on('stateChangeSuccess', function(event) {
+            if ($rootScope.welcome===true) {
+                $rootScope.$broadcast('tourStart');
+            }
+        });
+
     };
 
     $scope.watchElements = function() {
@@ -585,9 +593,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
         };
 
-        if ( 
-            (mode === 'columns' && $rootScope.layoutMode!=='columns') || 
-            (mode === 'rows' && $rootScope.layoutMode!=='rows') 
+        if (
+            (mode === 'columns' && $rootScope.layoutMode!=='columns') ||
+            (mode === 'rows' && $rootScope.layoutMode!=='rows')
         ) {
             networkActivityTracker.track(
                 Setting.setViewlayout({
@@ -596,7 +604,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     function(response) {
                         if(response.Code === 1000) {
                             notify({
-                                message: $translate.instant('LAYOUT_SAVED'), 
+                                message: $translate.instant('LAYOUT_SAVED'),
                                 classes: 'notification-success'
                             });
                             $rootScope.mobileMode = false;

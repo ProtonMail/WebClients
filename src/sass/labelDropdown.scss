@@ -5,7 +5,7 @@
 		.fa {
 			width: 30px;
 			float: left;
-			text-align: left; 
+			text-align: left;
 			display: block;
 		}
 	}
@@ -38,7 +38,7 @@
 		input {
 			float: left;
 			padding: 0;
-			border: none;			
+			border: none;
 			border-bottom: 1px solid $border;
 			margin: 0 0 1rem 0;
 			height: 25px;
@@ -100,5 +100,21 @@
 	}
 	button {
 		display: block;
-	}	
+	}
+}
+
+.mobileMode {
+	.labelDropdown {
+		.wrapper {
+			padding-right: 0;
+			li {
+				padding: 0 15px;
+				border: 1px solid $border;
+				margin-bottom: 5px;
+				input {
+					right: 15px;
+				}
+			}
+		}
+	}
 }

@@ -268,7 +268,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             Attachments: [],
             IsEncrypted: 0,
             Body: message.Body,
-            From: authentication.user.Addresses[0]
+            From: $filter('filter')($filter('orderBy')(authentication.user.Addresses, 'Send'), {Status: 1})[0]
         });
     };
 
@@ -1315,7 +1315,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             $timeout(function() {
                                                 $rootScope.targetID = result.Sent.ID; // Define target ID
                                                 $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
-                                            }, 100);
+                                            }, 500);
 
                                             deferred.resolve(result); // Resolve finally the promise
                                         }

@@ -7,17 +7,12 @@
                 <span ng-show="ctrl.domain.VerifyState === 0" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
                 <span ng-show="ctrl.domain.VerifyState === 1" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
                 <span ng-show="ctrl.domain.VerifyState === 2" class="pull-right pm_badge success">{{ 'GOOD!' | translate }}</span>
-                <h4 class="modal-title">2. {{ 'VERIFY' | translate }}</h4>
+                <h4 class="modal-title">2. {{ 'VERIFY' | translate }} <em>(Required)</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <div ng-show="ctrl.domain.VerifyState === 2">
-                    <p class="alert alert-success">
-                        <i class="fa fa-check-circle-o"></i>
-                        <strong>{{ ctrl.domain.DomainName }}</strong> is verified!
-                    </p>
-                </div>
                 <div>
-                    <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/verify-your-domain">{{ 'LEARN_MORE' | translate }}</a></p>
+                    <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following code into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/verify-your-domain">{{ 'LEARN_MORE' | translate }}</a></p>
+                    <p>Please add the following TXT record:</p>
                     <table class="pm_table record">
                         <tr>
                             <th style="width:3rem">Type</th>

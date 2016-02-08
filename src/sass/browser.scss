@@ -17,7 +17,7 @@
         }
     }
     body.scroll {
-        overflow-y: auto !important; 
+        overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
     }
 }
@@ -43,13 +43,37 @@
         #pm_composer .composer .pm_button {
             line-height: 26px;
         }
-        .pm_button {
-            line-height: 100%;
+        .pm_button,
+        .pm_buttons a {
+            line-height: 35px;;
+        }
+        #pm_sidebar section.sidebar .pm_button.round {
+            line-height: 30px;
         }
     }
 }
 
-input:invalid, 
+.ua-firefox {
+    .pm_button,
+    .pm_buttons a {
+        overflow: hidden;
+    }
+    body section.sidebar a.compose {
+        line-height: 40px;
+    }
+    header#pm_header .pull-right {
+        height: 61px;
+        overflow: hidden;
+        a {
+            float: left;
+        }
+        .pm_button.primary {
+            margin-top: 14px;
+        }
+    }
+}
+
+input:invalid,
 input:-moz-ui-invalid {
     border:0;
     outline:none;

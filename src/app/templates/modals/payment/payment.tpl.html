@@ -3,10 +3,12 @@
         <h4 class="modal-title">{{ 'PAYMENT' | translate }}</h4>
     </div>
     <div class="modal-body pm_form">
-        <div class="pm_grid" ng-hide="ctrl.process === true">
+        <div class="pm_grid">
             <div class="col-1-1">
                 <p class="alert alert-info">You’re upgrading to the {{ ctrl.config.Cart.Next.Plan | capitalize }} plan. Once we successfully process payment, we’ll immediately upgrade your account. Thanks for choosing to become a paying customer!</p>
             </div>
+        </div>
+        <div class="pm_grid">
             <div class="col-1-2">
                 <table class="pm_table">
                     <thead>
@@ -51,58 +53,63 @@
             <div class="col-1-2">
                 <div class="input-icon margin" ng-show="ctrl.config.Cart.Next.Plan === 'business'">
                     <i class="fa fa-briefcase"></i>
-                    <input type="text" ng-disabled="ctrl.process === true" ng-model="ctrl.config.Organization.DisplayName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" />
+                    <input type="text" ng-model="ctrl.config.Organization.DisplayName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" />
                 </div>
                 <!-- <div class="input-icon margin" ng-show="ctrl.create === true">
                     <i class="fa fa-life-ring"></i>
-                    <input type="password" ng-disabled="ctrl.process === true" ng-model="ctrl.recovery" placeholder="{{ 'ORGANIZATION_RECOVERY_PASSWORD' | translate }}" />
+                    <input type="password" ng-model="ctrl.recovery" placeholder="{{ 'ORGANIZATION_RECOVERY_PASSWORD' | translate }}" />
                 </div> -->
                 <div class="input-icon margin">
                     <i class="fa fa-user"></i>
-                    <input type="text" ng-disabled="ctrl.process === true" ng-model="ctrl.fullname" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" />
+                    <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" />
                 </div>
                 <div class="input-icon margin">
                     <i class="fa {{ ctrl.cardTypeIcon }}"></i>
-                    <input type="text" ng-disabled="ctrl.process === true" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
+                    <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
                 </div>
                 <div class="pm_grid margin">
                     <div class="col-1-3">
                         <div class="input-icon">
                             <i class="fa fa-calendar-o"></i>
-                            <input type="text" ng-disabled="ctrl.process === true" maxlength="2" autocomplete="off" ng-model="ctrl.month" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" required />
+                            <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" required />
                         </div>
                     </div>
                     <div class="col-1-3">
                         <div class="input-icon">
                             <i class="fa fa-calendar-o"></i>
-                            <input type="text" ng-disabled="ctrl.process === true" maxlength="4" autocomplete="off" ng-model="ctrl.year" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" required />
+                            <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" required />
                         </div>
                     </div>
                     <div class="col-1-3">
                         <div class="input-icon">
                             <i class="fa fa-lock"></i>
-                            <input type="text" ng-disabled="ctrl.process === true" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="CVC" pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" required />
+                            <input
+                            type="text"
+                            maxlength="4"
+                            autocomplete="off"
+                            ng-model="ctrl.cvc"
+                            ng-change="ctrl.change = true"
+                            ng-model-options="{updateOn: 'blur'}"
+                            placeholder="CVC"
+                            pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" required />
                         </div>
                     </div>
                 </div>
-                <div class="pm_grid margin">
-                    <div class="col-1-3">
-                        <i class="fa fa-tag"></i>
-                        <input type="text" ng-disabled="ctrl.process === true" maxlength="10" autocomplete="off" ng-model="ctrl.coupon" placeholder="{{ 'COUPON' | translate }}" />
+                <div class="pm_grid">
+                    <div class="col-2-3">
+                        <div class="input-icon">
+                            <i class="fa fa-tag"></i>
+                            <input type="text" ng-model="ctrl.config.Coupon" placeholder="{{ 'COUPON' | translate }}" />
+                        </div>
                     </div>
+                    <div class="col-1-3"></div>
                 </div>
                 <p>Your credit card will be automatically charged on a {{ ctrl.config.Subscription.Amount / 100 | number: 2 | currency: ctrl.config.Subscription.Currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
             </div>
         </div>
-        <div ng-show="ctrl.process === true">
-            <p>&nbsp;</p>
-            <p>Your account type is being updated, this may take up to 30 seconds.</p>
-            <p>&nbsp;</p>
-            <loader-tag></loader-tag>
-        </div>
     </div>
 </div>
-<div class="modal-footer text-right" ng-hide="ctrl.process === true">
-    <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true">{{ 'CANCEL' | translate }}</button>
-    <button type="button" class="pm_button primary" ng-click="ctrl.submit()" ng-disabled="ctrl.process === true">{{ 'SUBMIT' | translate }}</button>
+<div class="modal-footer text-right">
+    <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+    <button type="button" class="pm_button primary" ng-click="ctrl.submit()">{{ 'SUBMIT' | translate }}</button>
 </div>

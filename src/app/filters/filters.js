@@ -37,12 +37,6 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('enabled', function() {
-    return function(addresses) {
-        return _.where(addresses, {Status: 1});
-    };
-})
-
 .filter('reverse', function() {
     return function(value) {
         if(angular.isArray(value)) {
@@ -152,7 +146,7 @@ angular.module("proton.filters",[])
             return m.format('h:mm a') + ' (' + m.fromNow() + ')';
         } else {
             return m.format('D/MM/YYYY h:mm a') + ' (' + m.fromNow() + ')';
-        } 
+        }
     };
 })
 

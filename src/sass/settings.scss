@@ -738,6 +738,8 @@
         width: 100%;
         background: $alt;
         li {
+            height: 41px;
+            line-height: 41px;
             a.pm_button {
                 border-color: $alt;
                 background: $alt-light;
@@ -769,7 +771,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             width: 60%;
-            line-height: 1rem;
+            line-height: .9em;
         }
         .pm_buttons .fa.fa-angle-down {
             padding: 0 .5rem;

@@ -1,11 +1,4 @@
-<form method="post"
-id="pm_login"
-class="pm_panel pm_form alt"
-novalidate
-role="form"
-autocomplete="on"
-ng-submit="unlock()"
- >
+<form method="post" id="pm_login" class="pm_panel pm_form alt" novalidate role="form" autocomplete="on" ng-submit="unlock()">
 
     <div ng-hide="domoArigato">
 
@@ -20,27 +13,16 @@ ng-submit="unlock()"
 
         <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-        <input
-        autocomplete="on"
-        autocapitalize="off"
-        autocorrect="off"
-        class="margin focus"
-        type="password"
-        ng-keypress="keypress($event)"
-        id="password"
-        name="MailboxPassword"
-        ng-model="mailboxPassword"
-        placeholder="MAILBOX PASSWORD"
-        value="" />
+        <input autofocus autocapitalize="off" autocorrect="off" class="margin" type="password" id="password" name="MailboxPassword" ng-model="mailboxPassword" placeholder="MAILBOX PASSWORD" />
 
         <div class="clearfix">
             <a ui-sref="reset" class="login-support pm_button link pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
-            <a class="pm_button primary pull-right" ng-click="unlock()" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</a>
+            <button id="unlock_btn" class="pm_button primary pull-right" type="submit" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</button>
         </div>
 
     </div>
 
-    <div id="robotLoader" ng-show="domoArigato">
+    <div ng-show="domoArigato">
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
         <img src="/assets/img/decrypt.gif" class="loader">
         <p>DECRYPTING...</p>

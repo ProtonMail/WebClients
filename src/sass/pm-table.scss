@@ -140,6 +140,13 @@
         border-bottom: 1px solid $border;
         color: $gray;
     }
+    tr {
+        &.disabled {
+            td {
+                color: $gray-medium;
+            }
+        }
+    }
 }
 
 

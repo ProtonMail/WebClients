@@ -277,13 +277,13 @@ body {
                     background-color: $primary;
                 }
             }
-            a.version {
-                letter-spacing: 2px;
-                text-decoration: none;
-                color: #6e6f80;
-                &:hover {
-                    color: #fff;
-                }
+        }
+        a.version {
+            letter-spacing: 0px;
+            text-decoration: none;
+            color: #6e6f80;
+            &:hover {
+                color: #fff;
             }
         }
     }
@@ -315,7 +315,11 @@ body.mobileMode {
                 background: rgba(255,255,255,.1);
                 border-color: transparent;
                 .fa {
+                    float: left;
+                    text-align: center;
+                    display: block;
                     color: #fff;
+                    width: 100%;
                 }
             }
             .userDisplay {
@@ -338,7 +342,7 @@ body.mobileMode {
                 margin: 0;
                 padding: 0;
                 li {
-                    button {
+                    button { 
                         color: #fff;
                         text-decoration: none;
                         line-height: 3rem;

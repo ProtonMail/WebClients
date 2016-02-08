@@ -1,9 +1,9 @@
 // #conversation-list-columns,
 // #conversation-list-rows,
 // #pm_sidebar .sidebar {
-//     height: calc(100% - 55px); 
+//     height: calc(100% - 55px);
 //     overflow-y: scroll;
-//     overflow-x: hidden; 
+//     overflow-x: hidden;
 // }
 
 #conversation-list-rows {
@@ -22,11 +22,14 @@ body {
     }
     #conversation-view,
     #pm_view {
-        width: calc(100% - 500px);
         width: 60%;
         height: 100%;
         float: left;
         overflow: hidden;
+        &.latest {
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
     }
 
     &.rows {

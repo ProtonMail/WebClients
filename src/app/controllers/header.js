@@ -10,7 +10,6 @@ angular.module("proton.controllers.Header", [])
     notify,
     CONSTANTS,
     authentication,
-    wizardModal,
     searchModal
 ) {
     $scope.params = {
@@ -48,20 +47,8 @@ angular.module("proton.controllers.Header", [])
         }
     });
 
-    function openWizardModal(title, version) {
-        wizardModal.activate({
-            params: {
-                title: title,
-                version: version,
-                cancel: function() {
-                    wizardModal.deactivate();
-                }
-            }
-        });
-    }
-
     $scope.tour = function() {
-        $rootScope.$broadcast('tourStart');    
+        $rootScope.$broadcast('tourStart');
     };
 
     /**
@@ -186,10 +173,6 @@ angular.module("proton.controllers.Header", [])
 
     $scope.openNewMessage = function() {
         $rootScope.$broadcast('newMessage');
-    };
-
-    $scope.openWizard = function() {
-        openWizardModal('ProtonMail Wizard', 'startWizard');
     };
 
     $scope.displayName = function() {

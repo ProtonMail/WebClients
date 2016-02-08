@@ -42,13 +42,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         delete $rootScope.targetID;
     });
 
-    $scope.$on('targetLoaded', function(event) {
-        if ($scope.scrolled === false) {
-            $scope.scrolled = true;
-            $scope.scrollToMessage($rootScope.targetID); // Scroll to the target
-        }
-    });
-
     /**
      * Method call at the initialization of this controller
      */
@@ -59,7 +52,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             var labels = conversation.LabelIDs;
             var messages = cache.queryMessagesCached($scope.conversation.ID);
 
-            if($state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
+            if($state.is('secured.starred.view') === false && $state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
                 // Remove trashed message
                 if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
@@ -72,7 +65,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             }
 
             // Sort by time
-            messages = _.sortBy(messages, 'Time');
+            messages = cache.orderMessage(messages).reverse();
 
             if (messages.length > 0) {
                 var latest = _.last(messages);
@@ -149,18 +142,20 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 return _.find(messages, function(m) { return m.ID === ID; });
             };
 
-            // Remove trashed message
-            if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
-                messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
-            }
+            if($state.is('secured.starred.view') === false && $state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
+                // Remove trashed message
+                if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
+                }
 
-            // Remove non trashed message
-            if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
-                messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
+                // Remove non trashed message
+                if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
+                }
             }
 
             // Sort by time
-            messages = _.sortBy(messages, 'Time');
+            messages = cache.orderMessage(messages).reverse();
 
             for (index = 0; index < messages.length; index++) {
                 found = find($scope.messages, messages[index].ID);

@@ -1,5 +1,5 @@
 <header id="pm_header-desktop" class="pm_opensans" ng-controller="HeaderController">
-    <a href="#" class="logo" ui-sref="secured.inbox" ng-click="tour()">
+    <a href="#" class="logo" ui-sref="welcome">
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" />
     </a>
     <ng-include src="'templates/partials/searchForm.tpl.html'"></ng-include>
@@ -13,7 +13,7 @@
     </form>
     <ul class="navigation">
         <li>
-            <a href="#" ng-click="openReportModal()">
+            <a id="tour-support" href="#" ng-click="openReportModal()">
                 <em><i class="fa fa-bug"></i></em>
                 <strong>{{ 'REPORT_BUG' | translate }}</strong>
             </a>
@@ -25,11 +25,11 @@
             </a>
         </li>
         <li ng-class="{'active': activeSettings()}">
-            <a ui-sref="secured.dashboard" ng-show="user.Role === 0 || user.Role === 2">
+            <a id="tour-settings" ui-sref="secured.dashboard" ng-show="user.Role === 0 || user.Role === 2">
                 <em><i class="fa fa-cogs"></i></em>
                 <strong>{{ 'SETTINGS' | translate }}</strong>
             </a>
-            <a ui-sref="secured.account" ng-show="user.Role === 1">
+            <a id="tour-settings" ui-sref="secured.account" ng-show="user.Role === 1">
                 <em><i class="fa fa-cogs"></i></em>
                 <strong>{{ 'SETTINGS' | translate }}</strong>
             </a>
@@ -43,9 +43,14 @@
                 <span class="pm_dropdown wide right">
                     <p><strong>{{ user.DisplayName }}</strong></p>
                     <p><b>{{ user.Addresses[0].Email }}</b></p>
+                    <br>
+                    <a class="help" ng-click="tour()">
+                        <i class="fa fa-magic"></i> {{ 'TUTORIAL' | translate }}
+                    </a>
                     <a class="help" href="https://protonmail.com/support">
                         <i class="fa fa-life-ring"></i> {{ 'HELP_AND_ANSWERS' | translate }}
                     </a>
+                    <br>
                     <a ng-click="logout();" class="pm_button primary">
                     {{ 'LOGOUT' | translate }}
                     </a>

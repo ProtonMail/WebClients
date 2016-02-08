@@ -1,4 +1,4 @@
-<div id="pm_wizard" ng-show="tourActive === true">
+<div id="pm_wizard" ng-show="tourActive === true" tabindex="0" ng-keydown="tourHotkeys($event)">
     <a href="#" ng-click="tourEnd()" class="close">
         <i class="fa fa-times"></i>
         {{ 'CLOSE_THIS_WIZARD' | translate }}
@@ -6,46 +6,33 @@
 
     <div class="step" ng-show="tourStep === 1">
         <h1 class="badge tada">01</h1>
-        <h2 class="title fadeIn">Welcome to personal and secure Inbox</h2>
+        <h2 class="title fadeIn">Welcome to your new encrypted email account</h2>
         <div class="body fadeIn">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.</p>
+            <p>This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it from the Settings page.</p>
         </div>
     </div>
 
     <div class="step" ng-show="tourStep === 2">
         <h1 class="badge tada">02</h1>
-        <h2 class="title fadeIn">Change Layout</h2>
+        <h2 class="title fadeIn">Personalize Your Layout</h2>
         <div class="body fadeIn">
-            <p>You can change the appearance of your mailbox by clicking <em>settings</em> <strong>(1)</strong> <span class="fa fa-arrow"></span> <em>appearance</em> <strong>(2)</strong>. Here you will find options to switch between the current column layout and a classic row layout. You can akso add your own CSS to bring in your very own styles or use one of our prebuilt themes.</p>
+            <p>ProtonMail allows you to fully customize your inbox experience. By clicking <strong>(1)</strong> you can quickly switch between three possible layouts. You can set a default layout, set your composer style, adjust button layouts, and even switch themes under <em>Settings</em> --> <em>Appearance</em> <strong>(2)</strong></p>
         </div>
     </div>
 
     <div class="step" ng-show="tourStep === 3">
         <h1 class="badge tada">03</h1>
-        <h2 class="title fadeIn">Help &amp; Support</h2>
+        <h2 class="title fadeIn">Manage your email with labels</h2>
         <div class="body fadeIn">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Labels are a powerful tool to manage your inbox. You can add and remove labels from selected emails by clicking the the Label button <strong>(1)</strong>. You can also add, delete, and edit labels by clicking on <em>Label Settings</em> <strong>(2)</strong>.</p>
         </div>
     </div>
 
     <div class="step" ng-show="tourStep === 4">
         <h1 class="badge tada">04</h1>
-        <h2 class="title fadeIn">Change Layout</h2>
+        <h2 class="title fadeIn">Help and Support</h2>
         <div class="body fadeIn">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>If you have questions or need help, please visit our support page to find troubleshooting guides and contact our support team. If you find a bug in ProtonMail, please let us know! You can send us a bug report by clicking <em>Report Bugs</em> <strong>(1)</strong></p>
         </div>
     </div>
 

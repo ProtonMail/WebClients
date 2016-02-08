@@ -18,7 +18,7 @@
         height: 30px;
         line-height: 20px;
         box-sizing: border-box;
-        padding: 10px 0 0 10px; 
+        padding: 10px 0 0 10px;
         width: 30px;
         input[type="checkbox"] {
             margin: 0;
@@ -167,6 +167,9 @@ body.mobileMode {
         .selection {
             width: 50px;
             padding-top: 15px;
+            height: 60px;
+            position: relative;
+            z-index: 99;
         }
         .row.bottom {
             padding-left: 50px;
@@ -175,7 +178,7 @@ body.mobileMode {
     .conversation {
         .row {
             h4 {
-                width: calc(100% - 11.5rem);
+                width: calc(100% - 11rem);
             }
             .senders.full {
                 width: calc(100% - 10rem);
