@@ -668,9 +668,10 @@ angular.module("proton.modals", [])
              */
             this.apply = function() {
                 Payment.coupon(this.config.Coupon).then(function(result) {
-                    // if (result.data && result.data.Code === 1000) {
+                    if (result.data && result.data.Code === 1000) {
+                        // Apply coupon off
                         this.coupon = result.data.Modifier.AmountOff;
-                    //}
+                    }
                 }.bind(this));
             };
 
