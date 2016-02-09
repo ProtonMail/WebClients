@@ -52,6 +52,7 @@ body {
             .subject {
                 width: calc(84% - 19rem);
                 cursor: pointer;
+                position: relative;
                 h4 {
                     line-height: 40px;
                     height: 40px;
@@ -62,8 +63,11 @@ body {
                 }
                 .pm_labels {
                     float: right;
-                    position: relative;
+                    position: absolute;;
                     top: 4px;
+                    right: 0;
+                    background: $white;
+                    height: 30px;
                     label {
                         margin-left: .25rem;
                     }
@@ -96,6 +100,9 @@ body {
                     h4 {
                         font-weight: normal;
                         color: $gray;
+                    }
+                    .pm_labels {
+                        background: $read;
                     }
                 }
             }

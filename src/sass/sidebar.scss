@@ -176,12 +176,9 @@ body {
                         a {
                             padding: 0 20px;
                             margin: 0 -20px;
-                            background-color: $read;
-                            border-color: #efefef;
-                            color: #669;
-                            i.fa {
-                                color: #669;
-                            }
+                            background-color: transparent;
+                            border-color: transparent;
+                            color: $white;
                         }
                     }
                     a {
@@ -342,7 +339,7 @@ body.mobileMode {
                 margin: 0;
                 padding: 0;
                 li {
-                    button { 
+                    button {
                         color: #fff;
                         text-decoration: none;
                         line-height: 3rem;

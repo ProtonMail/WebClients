@@ -55,8 +55,9 @@
             width: 8rem;
         }
         h4 {
-            width: calc(100% - 10rem);
+            width: calc(100% - 9rem);
             cursor: pointer;
+            margin-right: -1rem;
         }
         .senders {
             cursor: pointer;
@@ -132,6 +133,7 @@
         .pm_labels {
             label {
                 background: $read;
+                box-shadow: .25rem 0 0 .25rem $read;
             }
         }
     }
@@ -160,6 +162,14 @@
     &.hasLabels {
         .row .senders {
             width: 90%;
+        }
+    }
+    &.hasAttachments {
+        .row {
+            h4 {
+                width: calc(100% - 10rem);
+                cursor: pointer;
+            }
         }
     }
 }

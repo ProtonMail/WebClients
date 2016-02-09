@@ -47,7 +47,7 @@
 		-ms-transition: max-width .25s ease;
 		-o-transition: max-width .25s ease;
         transition: max-width .25s ease;
-		box-shadow: .25rem 0 0 .25rem $read;
+		box-shadow: .25rem 0 0 .25rem $white;
 	    &.closed {
 	    	max-width: .5rem;
 	    	border-left-width: 0;
