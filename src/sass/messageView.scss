@@ -98,6 +98,7 @@
                     float: left;
                     label {
                         margin-right: .5rem;
+                        box-shadow: .25rem 0 0 .25rem $read;
                     }
                 }
             }
@@ -114,6 +115,13 @@
             }
             .time::after {
                 background: #fff !important;
+            }
+            .label {
+                .pm_labels {
+                    label {
+                        box-shadow: .25rem 0 0 .25rem $white;
+                    }
+                }
             }
         }
         & > div.summary {
@@ -196,6 +204,7 @@
                     top: 5px;
                     label {
                         margin-left: .25rem;
+                        box-shadow: .25rem 0 0 .25rem $read;
                     }
                 }
             }

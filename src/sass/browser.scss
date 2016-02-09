@@ -84,9 +84,18 @@ input:-moz-ui-invalid {
 
 
 .ua-safari {
-    .conversation .pm_labels label:first-child,
-    .conversation .pm_labels label:hover {
-        position: relative;
-        top: -6px;
+    .conversation .pm_labels label {
+        &:first-child,
+        &:hover {
+            position: relative;
+            top: -6px;
+        }
+    }
+    #conversation-view .summary .pm_labels label{
+        &:first-child,
+        :hover {
+            position: relative;
+            top: -6px;
+        }
     }
 }

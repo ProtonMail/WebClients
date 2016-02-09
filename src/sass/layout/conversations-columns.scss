@@ -146,6 +146,7 @@
         .pm_labels {
             label {
                 background: $active;
+                box-shadow: .25rem 0 0 .25rem $active;
             }
         }
     }
