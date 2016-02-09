@@ -102,6 +102,8 @@
             text-overflow: ellipsis;
             font-weight: 700;
             font-size: .9em;
+            position: relative;
+            top: 1px;
         }
         .pm_labels {
             display: block;
@@ -157,7 +159,7 @@
     }
     &.hasLabels {
         .row .senders {
-            width: 50%;
+            width: 90%;
         }
     }
 }
