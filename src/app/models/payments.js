@@ -140,8 +140,8 @@ angular.module("proton.models.payments", [])
         /**
          * Apply coupon
          */
-         coupon: function(coupon) {
-             return $http.get(url.get() + '/payments/coupon/' + coupon);
+         coupon: function(coupon, billingCycle) {
+             return $http.get(url.get() + '/payments/coupon/' + billingCycle + '/' + coupon);
          }
     };
 });

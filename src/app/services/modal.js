@@ -667,7 +667,7 @@ angular.module("proton.modals", [])
              * Apply the coupon field
              */
             this.apply = function() {
-                Payment.coupon(this.config.Coupon).then(function(result) {
+                Payment.coupon(this.config.Coupon, this.config.Subscription.BillingCycle).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         // Apply coupon off
                         this.coupon = result.data.Modifier.AmountOff;
