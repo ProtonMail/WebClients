@@ -43,6 +43,7 @@ body {
         overflow-y: auto;
         overflow-x: hidden;
         padding-top: 1rem;
+        box-sizing: border-box;
     }
     #conversation-list-rows {
         overflow-y: scroll;

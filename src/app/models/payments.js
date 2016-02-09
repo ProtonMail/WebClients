@@ -136,6 +136,12 @@ angular.module("proton.models.payments", [])
          */
         change: function(Obj) {
             return $http.put(url.get() + '/payments/sources', Obj);
-        }
+        },
+        /**
+         * Apply coupon
+         */
+         coupon: function(coupon) {
+             return $http.get(url.get() + '/payments/coupon/' + coupon);
+         }
     };
 });

@@ -8,6 +8,10 @@
     line-height: 1.5rem;
     height: 1.5rem;
     margin: .25rem 0;
+    &.primary {
+        background-color: $primary;
+        color: $white;
+    }
     &.success {
         background: $green;
         color: $white;

@@ -117,7 +117,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} address
      * @param {Object} key
      */
-    $scope.reactivate = function(address, key) {
+    $scope.enable = function(address, key) {
         var mailboxPassword = authentication.getPassword();
 
         reactivateModal.activate({
@@ -169,7 +169,9 @@ angular.module("proton.controllers.Settings")
     $scope.generate = function(address) {
         generateModal.activate({
             params: {
-                address: address,
+                title: $translate.instant('GENERATE_KEY_PAIR'),
+                message: 'bla bla bla', // TODO need text
+                addresses: [address],
                 cancel: function() {
                     eventManager.call();
                     generateModal.deactivate();

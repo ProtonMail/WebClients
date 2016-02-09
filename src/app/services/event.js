@@ -24,7 +24,6 @@ angular.module("proton.event", ["proton.constants"])
 		    return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
-		var generation = []; // Store Address ID that need generation of key pair
 		var DELETE = 0;
 		var CREATE = 1;
 		var UPDATE = 2;
@@ -78,6 +77,7 @@ angular.module("proton.event", ["proton.constants"])
 				if(angular.isDefined(user)) {
 					var mailboxPassword = authentication.getPassword();
 					var promises = [];
+					var dirtyAddresses = [];
 					var privateUser = user.Private === 1;
 					var keyInfo = function(key) {
 						return pmcw.keyInfo(key.PrivateKey).then(function(info) {
@@ -94,18 +94,7 @@ angular.module("proton.event", ["proton.constants"])
 
 					_.each(user.Addresses, function(address) {
 						if (address.Keys.length === 0 && privateUser === true) {
-							if (generation.indexOf(address.ID) === -1) {
-								generation.push(address.ID);
-								generateModal.activate({
-									params: {
-										address: address,
-										cancel: function() {
-											generateModal.deactivate();
-											generation.splice(generation.indexOf(address.ID), 1);
-										}
-									}
-								});
-							}
+							dirtyAddresses.push(address);
 						} else {
 							_.each(address.Keys, function(key, index) {
 								promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
@@ -124,6 +113,17 @@ angular.module("proton.event", ["proton.constants"])
 							});
 						}
 					});
+
+					if (dirtyAddresses.length > 0 && generateModal.active() === false) {
+						generateModal.activate({
+							params: {
+								addresses: dirtyAddresses,
+								cancel: function() {
+									generateModal.deactivate();
+								}
+							}
+						});
+					}
 
 					$q.all(promises).then(function() {
 						angular.merge(authentication.user, user);

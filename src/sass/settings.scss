@@ -62,6 +62,10 @@
             width: 8rem;
         }
         tr {
+            &.error td {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
             td.domain {
                 width: auto;
             }
