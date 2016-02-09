@@ -92,8 +92,7 @@ input:-moz-ui-invalid {
         }
     }
     #conversation-view .summary .pm_labels label{
-        &:first-child,
-        :hover {
+        &:first-child {
             position: relative;
             top: -6px;
         }
