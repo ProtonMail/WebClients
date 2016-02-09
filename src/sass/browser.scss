@@ -81,3 +81,12 @@ input:-moz-ui-invalid {
     -moz-box-shadow:none;
     -webkit-box-shadow:none;
 }
+
+
+.ua-safari {
+    .conversation .pm_labels label:first-child,
+    .conversation .pm_labels label:hover {
+        position: relative;
+        top: -6px;
+    }
+}
