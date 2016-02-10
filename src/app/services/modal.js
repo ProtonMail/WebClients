@@ -355,7 +355,7 @@ angular.module("proton.modals", [])
             this.month = params.card.ExpMonth;
             this.year = params.card.ExpYear;
             this.cvc = '•••';
-            this.zip =
+            this.zip = params.card.ZIP;
             this.countries = [
                 {value: 'AD', label: 'Andorra'},
                 {value: 'AE',  label: 'United Arab Emirates'},
@@ -437,7 +437,7 @@ angular.module("proton.modals", [])
                 {value: 'TR',  label: 'Turkey'},
                 {value: 'VG',  label: 'Virgin Islands, British'}
             ];
-            this.country = this.countries[0];
+            this.country = _.findWhere(this.countries, {value: params.Country});
             this.change = false;
             // Functions
             this.submit = function() {
@@ -513,7 +513,6 @@ angular.module("proton.modals", [])
                     exp_year: this.year,
                     address_country: this.country.value,
                     address_zip: this.zip
-
                 }, stripeResponseHandler);
             };
 
@@ -596,12 +595,14 @@ angular.module("proton.modals", [])
         controller: function(params) {
             // Variables
             this.process = false;
+            this.change = false;
             this.step = 'payment';
             this.number = '';
             this.fullname = '';
             this.month = '';
             this.year = '';
             this.cvc = '';
+            this.zip = '';
             this.cardTypeIcon = 'fa-credit-card';
             this.config = params.configuration;
             this.recovery = '';
@@ -692,15 +693,15 @@ angular.module("proton.modals", [])
             this.country = this.countries[0];
 
             if(angular.isDefined(params.card)) {
-                this.source = card.ExternalSourceID;
-                this.number = '•••• •••• •••• ' + card.Last4;
-                this.fullname = card.Name;
-                this.month = card.ExpMonth;
-                this.year = card.ExpYear;
+                this.source = params.card.ExternalSourceID;
+                this.number = '•••• •••• •••• ' + params.card.Last4;
+                this.fullname = params.card.Name;
+                this.month = params.card.ExpMonth;
+                this.year = params.card.ExpYear;
                 this.cvc = '•••';
                 this.change = false;
-            } else {
-                this.change = true;
+                this.country = _.findWhere(this.countries, {value: params.card.Country});
+                this.zip = params.card.ZIP;
             }
 
             // Functions

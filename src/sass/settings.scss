@@ -269,7 +269,8 @@
             .plan {
                 box-sizing: border-box;
                 border: 1px solid $border;
-                margin-bottom: 2rem;
+                margin-top: 2rem;
+                position: relative;
                 header {
                     position: absolute;
                     left: -1px;
@@ -347,7 +348,7 @@
                     display: block;
                     list-style-type: none;
                     margin: 0;
-                    padding: 20px;
+                    padding: 20px 10px;
                     background: $light;
                     li {
                         display: block;

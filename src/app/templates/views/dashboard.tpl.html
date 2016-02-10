@@ -142,7 +142,7 @@
 
         <div class="row">
             <section class="setting pm_form full" id="plans">
-                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow"  >
+                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
                     <legend>{{ 'PLANS_AND_PRICES' | translate }}</legend>
                     <header>
                         <a href="https://protonmail.com/support/knowledge-base/manage-your-plan" class="pm_button link pull-right">Learn how to manage your ProtonMail plan.</a>
@@ -157,16 +157,48 @@
                         <div class="group">
                             <label>{{ 'BILLING' | translate }}</label>
                             <div class="pm_buttons">
-                                <a ng-click="futureBillingCycle = 1" ng-class="{'active': futureBillingCycle === 1}">
-                                {{ 'MONTHLY' | translate }}
+                                <a href="#" ng-click="futureBillingCycle = 1" ng-class="{'active': futureBillingCycle === 1}">
+                                    {{ 'MONTHLY' | translate }}
                                 </a>
-                                <a ng-click="futureBillingCycle = 12" ng-class="{'active': futureBillingCycle === 12}" class="divider">
-                                {{ 'YEARLY' | translate }}
+                                <a href="#" ng-click="futureBillingCycle = 12" ng-class="{'active': futureBillingCycle === 12}" class="divider">
+                                    {{ 'YEARLY' | translate }} <small class="text-green">{{ 'SAVE_20%' | translate }}</small>
                                 </a>
                             </div>
                         </div>
                     </header>
                     <div class="pm_grid plans">
+                        <div class="col-1-4">
+                            <div class="plan" ng-class="{'selected': subscription.Plan === 'free'}">
+                                <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
+                                <h3>
+                                    ProtonMail
+                                    <strong>Free</strong>
+                                </h3>
+                                <ul class="features">
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>500 MB</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>1 {{ 'ADDRESS' | translate }}</strong>
+                                    </li>
+                                </ul>
+                                <div class="price">&nbsp;</div>
+                                <div class="action">
+                                    <button ng-click="free()" ng-disabled="subscription.Plan === 'free'" class="pm_button primary">
+                                        <strong>{{ 'CHOOSE_PLAN' | translate }}</strong>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-1-4">
                             <div class="plan" ng-class="{'selected': subscription.Plan === 'plus'}">
                                 <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
@@ -182,7 +214,7 @@
                                             <select ng-model="spacePlus" ng-options="option.label for option in spacePlusOptions"></select>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
-                                        <strong>{{ 'STORAGE' | translate }}</strong>
+                                        <strong></strong>
                                         <span class="cost" ng-show="(spacePrice[futureBillingCycle] * spacePlus.index) > 0">
                                             <strong>+ {{ spacePrice[futureBillingCycle] * spacePlus.index | number: 2 | currency: futureCurrency }}</strong>
                                         </span>
@@ -236,9 +268,9 @@
                                     </span>
                                 </div>
                                 <div class="action">
-                                    <a href="#" ng-click="choose('plus')" class="pm_button primary">
-                                        <strong>{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
-                                    </a>
+                                    <button ng-click="choose('plus')" class="pm_button primary">
+                                        <strong>{{ 'CHOOSE_PLAN' | translate }}</strong>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -287,9 +319,9 @@
                                     </span>
                                 </div>
                                 <div class="action">
-                                    <a href="#" ng-click="choose('visionary')" class="pm_button primary">
-                                        <strong>{{ 'VISIONARY_PLAN_SETTINGS' | translate }}</strong>
-                                    </a>
+                                    <button ng-click="choose('visionary')" class="pm_button primary">
+                                        <strong>{{ 'CHOOSE_PLAN' | translate }}</strong>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -300,7 +332,9 @@
                                     ProtonMail
                                     <strong>Business</strong>
                                 </h3>
-                                <p class="text-center">{{ 'COMING_SOON' | translate }}</p>
+                                <p class="text-center">
+                                    <strong class="text-purple">{{ 'COMING_SOON' | translate }}</strong>
+                                </p>
                                 <!-- <ul class="features">
                                     <li>
                                         <i class="fa fa-check"></i>
@@ -376,7 +410,7 @@
                                 </div> -->
                             </div>
                         </div>
-                        <div class="col-1-4">
+                        <!-- <div class="col-1-4">
                             <div class="plan" ng-class="{'selected': subscription.Plan === 'enterprise'}">
                                 <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                                 <h3>
@@ -384,7 +418,7 @@
                                     <strong>Enterprise</strong>
                                 </h3>
                                 <p class="text-center">{{ 'COMING_SOON' | translate }}</p>
-                                <!-- <ul class="features">
+                                <ul class="features">
                                     <li>
                                         <i class="fa fa-check"></i>
                                         <strong>{{ 'UP_TO_1000_GB_STORAGE' | translate }}</strong>
@@ -417,14 +451,11 @@
                                     <a href="#" ng-click="enterprise()" class="pm_button primary">
                                         <strong>{{ 'CONTACT_OUR_SALES_TEAM' | translate }}</strong>
                                     </a>
-                                </div> -->
+                                </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </form>
-                <p ng-hide="subscription.Plan === 'free'">
-                    <a href="" ng-click="free()" pt-tooltip="{{ 'SWITCH_TO_THE_FREE_PLAN' | translate }}">{{ 'FREE_PLAN' | translate }}</a>
-                </p>
             </section>
         </div>
     </div>
