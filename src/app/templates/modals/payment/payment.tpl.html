@@ -100,6 +100,7 @@
                         </div>
                     </div>
                 </div>
+                <p>&nbsp;</p>
                 <div class="pm_grid">
                     <div class="col-2-3">
                         <div class="input-icon">
@@ -108,7 +109,7 @@
                         </div>
                     </div>
                     <div class="col-1-3">
-                        <button class="pm_button" ng-click="ctrl.apply()">{{ 'APPLY' | translate }}</button>
+                        <button class="pm_button primary" ng-click="ctrl.apply()">{{ 'APPLY' | translate }}</button>
                     </div>
                 </div>
                 <p>Your credit card will be automatically charged on a {{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
