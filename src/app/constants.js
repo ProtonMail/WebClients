@@ -7,7 +7,7 @@ angular.module('proton.constants', [])
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte
     STRIPE_API_KEY: 'pk_test_xL4IzbxNCD9Chu98oxQVjYFe', // TODO it's not the final key
-    HOSTS_ALLOWED: ['localhost', 'dev.protonmail.com', 'protonmail.blue'],
+    HOSTS_ALLOWED: ['localhost', 'dev.protonmail.com', 'protonmail.blue', 'dev2.protonmail.com'],
     MAILBOX_PASSWORD_KEY: "proton:mailbox_pwd",
     OAUTH_KEY: "proton:oauth",
     EVENT_ID: "proton:eventid",
