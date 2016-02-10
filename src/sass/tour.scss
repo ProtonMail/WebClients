@@ -1,0 +1,133 @@
+.tooltip.tour {
+	.tooltip-inner  {
+		background-color: $tour;
+		box-shadow: 0 1px 1px rgba(0,0,0,.1);
+	}
+	&.top .tooltip-arrow {
+		border-top-color: $tour;
+	}
+	&.top-left .tooltip-arrow {
+		border-top-color: $tour;
+	}
+	&.top-right .tooltip-arrow {
+		border-top-color: $tour;
+	}
+	&.right .tooltip-arrow {
+		border-right-color: $tour;
+	}
+	&.left .tooltip-arrow {
+		border-left-color: $tour;
+	}
+	&.bottom .tooltip-arrow {
+		border-bottom-color: $tour;
+	}
+	&.bottom-left .tooltip-arrow {
+		border-bottom-color: $tour;
+	}
+	&.bottom-right .tooltip-arrow {
+		border-bottom-color: $tour;
+	}
+}
+
+body.tourActive {
+	section.sidebar ul.menu li a {
+		overflow: visible;
+	}
+	header#pm_header {
+		z-index: 5;
+	}
+}
+
+#pm_wizard {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 9999;
+	box-shadow: 0 -1rem 1rem rgba(0,0,0,.1);
+	box-sizing: border-box;
+	width: 100%;
+	background: $white;
+	padding: 2rem 14rem 2rem 8rem;
+	a.close {
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 0 1rem;
+		line-height: 2rem;
+		cursor: pointer;
+		color: $primary;
+		text-decoration: none;
+		font-size: .8em;
+	}
+	.badge {
+		font-size: 2rem;
+		color: $gray-light;
+		border: 1px solid $border;
+		border-radius: 4rem;
+		text-align: center;
+		line-height: 4rem;
+		width: 4rem;
+		display: block;
+		height: 4rem;
+		position: absolute;
+		left: 2rem;
+		font-weight: normal;
+		top: 3rem;
+	}
+	.navigation {
+		position: absolute;
+		right: 2rem;
+		top: 3.5rem;
+		width: 10rem;
+		display: block;
+		text-align: center;
+		.next {}
+		.pagination {
+			display: block;
+			list-style-type: none;
+			margin: 0;
+			padding: 1rem 0;
+			text-align: center;
+			li {
+				display: inline-block;
+				list-style-type: none;
+				margin: 0 1px;
+				padding: 0;
+				height: 12px;
+				width: 12px;
+				border-radius: 12px;
+				&.active {
+					a {
+						background: $primary;
+					}
+				}
+				a {
+					display: block;
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					height: 12px;
+					width: 12px;
+					border-radius: 12px;
+					background: $border;
+				}
+			}
+		}
+	}
+	.step {
+		.title {}
+		.body {
+			strong {
+				color: $tour;
+			}
+		}
+	}
+}
+
+.donationOptions {
+	width: 26rem;
+	height: 40px;
+	margin: auto;
+}

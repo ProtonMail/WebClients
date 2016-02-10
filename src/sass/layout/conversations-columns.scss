@@ -1,0 +1,203 @@
+// DEFAULT / ALL
+.conversation {
+    height: 60px;
+    box-shadow: inset 0 -1px 0 $border;
+    overflow: hidden;
+    position: relative;
+    .selected-bar {
+        background: $primary;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+    }
+    .selection {
+        float: left;
+        height: 30px;
+        line-height: 20px;
+        box-sizing: border-box;
+        padding: 10px 0 0 10px;
+        width: 30px;
+        input[type="checkbox"] {
+            margin: 0;
+        }
+    }
+    .row {
+        padding: 0 10px;
+        line-height: 10px;
+        height: 30px;
+        line-height: 20px;
+        box-sizing: border-box;
+        &.top {
+            padding-top: 10px;
+        }
+        &.bottom {
+            padding-bottom: 10px;
+            padding-left: 30px;
+            cursor: pointer;
+        }
+        h4 {
+            display: block;
+            line-height: 20px;
+            height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            float: left;
+            white-space: nowrap;
+            font-size: 1em;
+            cursor: pointer;
+            color: #000;
+        }
+        .meta,
+        .pm_labels {
+            width: 8rem;
+        }
+        h4 {
+            width: calc(100% - 9rem);
+            cursor: pointer;
+            margin-right: -1rem;
+        }
+        .senders {
+            cursor: pointer;
+        }
+        .senders.full {
+            width: 100%;
+        }
+        .meta {
+            display: block;
+            float: right;
+            .fa-star,
+            .fa-star-o,
+            .fa-paperclip {
+                text-decoration: none;
+                width: 1rem;
+            }
+            .fa-paperclip {
+                visibility: hidden;
+                &.show {
+                    visibility: visible;
+                }
+            }
+            .fa-star-o {
+                color: $gray-light;
+                cursor: pointer;
+            }
+            .fa-star {
+                color: $yellow;
+                cursor: pointer;
+            }
+            em.time {
+                float: right;
+                text-align: right;
+                width: 5rem;
+                font-style: normal;
+                font-size: .9em;
+            }
+        }
+        .senders {
+            float: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 700;
+            font-size: .9em;
+            position: relative;
+            top: 1px;
+        }
+        .pm_labels {
+            display: block;
+            float: right;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 18px;
+            text-align: right;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 100%;
+            z-index: 2;
+            label {
+                margin-left: .25rem;
+                background: $white;
+            }
+        }
+    }
+    &.read {
+        background: $read;
+        h4 {
+            color: $gray;
+            font-weight: normal;
+        }
+        .pm_labels {
+            label {
+                background: $read;
+                box-shadow: .25rem 0 0 .25rem $read;
+            }
+        }
+    }
+    &.active {
+        background: $active;
+        color: $white;
+        h4 {
+            color: $white;
+        }
+        .pm_labels {
+            label {
+                background: $active;
+                box-shadow: .25rem 0 0 .25rem $active;
+            }
+        }
+    }
+    &.selected {
+        .selected-bar {
+            width: 5px;
+            -webkit-transition: width .25s ease;
+               -moz-transition: width .25s ease;
+                -ms-transition: width .25s ease;
+                 -o-transition: width .25s ease;
+                    transition: width .25s ease;
+        }
+    }
+    &.hasLabels {
+        .row .senders {
+            width: 90%;
+        }
+    }
+    &.hasAttachments {
+        .row {
+            h4 {
+                width: calc(100% - 10rem);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// MOBILE
+body.mobileMode {
+    #conversation-list-columns {
+        .selection {
+            width: 50px;
+            padding-top: 15px;
+            height: 60px;
+            position: relative;
+            z-index: 99;
+        }
+        .row.bottom {
+            padding-left: 50px;
+        }
+    }
+    .conversation {
+        .row {
+            h4 {
+                width: calc(100% - 11rem);
+            }
+            .senders.full {
+                width: calc(100% - 10rem);
+                cursor: pointer;
+            }
+        }
+    }
+}

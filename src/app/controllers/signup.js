@@ -393,6 +393,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 .then(
                     function(resp) {
                         $log.debug('setAuthCookie:resp'+resp);
+                        $rootScope.isLoggedIn = authentication.isLoggedIn();
+                        $rootScope.isLocked = authentication.isLocked();
+                        $rootScope.isSecure = authentication.isSecured();
+                        $rootScope.welcome = true;
                         window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
                         $state.go("secured.inbox");
                     }
@@ -411,15 +415,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $log.debug('finishRedirect');
         var deferred = $q.defer();
         $scope.finishCreation = true;
+        $rootScope.welcome = true;
         window.sessionStorage.setItem(
             CONSTANTS.MAILBOX_PASSWORD_KEY,
             pmcw.encode_utf8_base64($scope.account.mailboxPassword)
         );
-        // delete $rootScope.tempUser;
-        // TODO: not all promises are resolved, so we simply refresh.
-        $timeout( function() {
-            window.location = '/inbox';
-        }, 100);
         deferred.resolve(200);
         return deferred.promise;
     };

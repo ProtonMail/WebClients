@@ -1,0 +1,107 @@
+// #conversation-list-columns,
+// #conversation-list-rows,
+// #pm_sidebar .sidebar {
+//     height: calc(100% - 55px);
+//     overflow-y: scroll;
+//     overflow-x: hidden;
+// }
+
+#conversation-list-rows {
+    clear: both;
+}
+
+// REGULAR
+body {
+    #conversation-list-columns {
+        width: 500px;
+        width: 40%;
+        float: left;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    #conversation-view,
+    #pm_view {
+        width: 60%;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+        &.latest {
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+    }
+
+    &.rows {
+        #conversation-view,
+        #pm_view {
+            width: 100%;
+        }
+    }
+    #pm_thread {
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-top: 1rem;
+        box-sizing: border-box;
+    }
+    #conversation-list-rows {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 100%;
+    }
+    #pm_main {
+        height: calc(100% - 60px);
+        float: left;
+        width: calc(100% - 190px);
+    }
+    #wrapper {
+        height: calc(100% - 54px);
+        overflow: auto;
+        clear: both;
+    }
+    &, #body {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+// MOBILE
+body.mobileMode {
+    &, #body {
+        height: 100%;
+        overflow: hidden;
+    }
+    #pm_main {
+        float: left;
+        height: calc(100% - 60px);
+    }
+    #pm_main,
+    #conversation-list-rows {
+        width: 100%;
+    }
+    #wrapper,
+    #conversation-list-columns,
+    #conversation-view {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+    #wrapper {
+        height: calc(100% - 75px);
+    }
+    #pm_view {
+        width: 60%;
+        float: left;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    #conversation-list-columns,
+    #conversation-list-rows,
+    #conversation-view {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+    }
+}

@@ -103,7 +103,7 @@
     }
 }
 
-@media (max-width: $mobile-landscape) {
+body.mobileMode {
     #step1 {
         .wrapper {
             padding: 0;

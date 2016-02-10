@@ -1,0 +1,62 @@
+<div id="conversation-list-rows">
+
+    <ng-include src="'templates/partials/no-results.tpl.html'"></ng-include>
+    
+    <div
+    ng-repeat="conversation in conversations track by conversation.ID"
+    class="conversation"
+    ng-class="{
+        selected: conversation.Selected,
+        active: active(conversation),
+        read: conversation.NumUnread === 0 || conversation.IsRead === 1
+    }">
+        <div class="selected-bar"></div>
+        <input 
+        type="checkbox" 
+        ng-model="conversation.Selected" 
+        ng-click="$event.stopPropagation();select($event, conversation)" />
+        <a href="#" ng-click="conversation.Selected = !conversation.Selected;select($event, conversation);" class="fa" ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a>
+        <a 
+        class="fa" 
+        ng-click="$event.stopPropagation();toggleStar(conversation)"
+        ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></a>
+        <span 
+        class="senders"
+        ng-click="click(conversation)">
+            <span 
+            ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" 
+            ng-repeat="contact in senders(conversation)" 
+            title="{{ contact.Address }}">
+                {{ contact.Name || contact.Address }}<span ng-hide="$last">, </span>
+            </span>
+            <span 
+            ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" 
+            ng-repeat="contact in recipients(conversation)" 
+            title="{{ contact.Address }}">
+                {{ contact.Name || contact.Address }}<span ng-hide="$last">, </span>
+            </span>
+        </span>
+        <div 
+        class="subject" 
+        ng-click="click(conversation)">
+            <h4>
+                <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
+                {{ conversation.Subject }}
+            </h4>
+            <span class="pm_labels">
+                <label 
+                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5" 
+                title="{{ getLabel(labelID).Name }}" 
+                class="pm_label" 
+                ng-class="{ 'closed': !$first }" 
+                ng-style="getStyleLabel(labelID)" 
+                ng-show="getLabel(labelID).Name" 
+                ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
+                </label>
+            </span>
+        </div>
+        <span class="size">{{ size(conversation)| bytes }}</span>
+        <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
+        <em class="time">{{ time(conversation) | readableTime }}</em>
+    </div>
+</div>

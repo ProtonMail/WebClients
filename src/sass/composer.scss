@@ -244,6 +244,7 @@
 			}
 			.meta .row select {
 				width: 100%;
+				width: 82%;
 			}
 			.composeEditor {
 				height: 100%;
@@ -338,7 +339,7 @@
 			.subject {
 				float: left;
 				width: 22rem;
-				max-width: 80%;
+				max-width: 70%;
 				display: inline-block;
 				color: $white;
 				overflow: hidden;
@@ -627,7 +628,7 @@
 	}
 }
 
-@media (max-width: $tablet-landscape) {
+body.mobileMode {
 	#pm_composer .composer {
 		&.maximized {
 			left: 20px;

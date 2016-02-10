@@ -5,7 +5,7 @@
 		overflow-y: scroll; // always show scrollbar
 	}
 }
-@media (max-width: $tablet-landscape) {
+body.mobileMode {
 	*[pt-height] {
 		overflow: initial !important;
 		height: initial !important;

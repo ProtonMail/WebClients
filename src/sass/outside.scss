@@ -210,7 +210,7 @@ body#eo-reply {
 	}
 }
 
-@media (max-width: $tablet-landscape) {
+body.mobileMode {
 	.reportBug {
 		display: none;
 	}
@@ -290,7 +290,7 @@ body#eo-reply {
 }
 
 
-@media (max-width: $mobile-landscape) {
+body.mobileMode {
 	.outside {
 		padding: 0;
 	}

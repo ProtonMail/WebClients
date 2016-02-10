@@ -10,7 +10,7 @@ $toggleWidth: 		8rem;
 $short: 			700px;
 $panel:				400px;
 $pm_loading: 		50px;
-$maxHeight: auto; // was 40rem
+$maxHeight: 		auto; // was 40rem
 $box-shadow:		1px 1px 3px rgba(0, 0, 0, 0.33), 0 0 2px rgba(0, 0, 0, 0.33);
 
 // Theme Colors
@@ -19,33 +19,35 @@ $secondary: 		#505061;
 $secondary-alt:		#6e6f80;
 $alert-info: 		#e6e6f2;
 $readBubble: 		#a8d24c;
-$border: 			#e3e5ec;
+$border: 			darken(#e3e5ec, 5%);
 $light: 			#f4f4f4;
 $orange:			#e7d360;
 $white: 			#fff;
 $gray: 				#555;
+$gray-medium: 		#8c8c8c;
 $gray-light: 		#ccc;
 $dark:				#4d4c5d;
 $blue: 				#95bbcf;
 $green:				#aecf96;
 $red:				#C18183;
-$yellow:			#cfcd95;
+$yellow:			#dfdf19;
 $read:				#edeff2;
 $alt:				#838897;
 $alt-light:			lighten($alt, 5%);
 $exp:				#ec6446;
 $text:				#222;
 $pgp:				#090;
+$active:			#828895;
+$tags:				#d4d7dc;
+$tour:				#34cc69;
 
 // Desktop 
-$wide:				1400px;
 $desktop:			1200px;
 
-// Tablet
+// MOBILE
 $tablet-landscape:	1030px;
 $tablet-portrait:	800px;
 
 // Mobile
 $mobile-landscape: 	640px;
-$mobile-medium:		500px;
-$mobile-portrait: 	400px;
+

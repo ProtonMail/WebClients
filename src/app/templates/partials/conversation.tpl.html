@@ -1,7 +1,9 @@
 <header id="conversationHeader">
     <span class="pm_buttons starButton">
-        <a ng-click="toggleStar(conversation)" pt-tooltip="{{ 'STAR_CONVERSATION' | translate }}">
-            <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
+        <a 
+        ng-click="toggleStar(conversation)" 
+        pt-tooltip="{{ 'STAR_CONVERSATION' | translate }}"
+        class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}">
         </a>
     </span>
     <h1>

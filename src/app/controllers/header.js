@@ -6,6 +6,7 @@ angular.module("proton.controllers.Header", [])
     $scope,
     $state,
     $stateParams,
+    $location,
     notify,
     CONSTANTS,
     authentication,
@@ -21,6 +22,17 @@ angular.module("proton.controllers.Header", [])
     $scope.advancedSearch = false;
     $scope.starred = 2;
 
+    // used for tablet header
+    $scope.path = $location.path();
+    $scope.path = $scope.path.replace(/\//g, "");
+    if ($scope.path === 'label') {
+        // TODO: PANDA: get label name. for now make it empty.
+        $scope.path = '';
+    }
+    else if ($rootScope.idDefined()) {
+        $scope.path = '';
+    }
+
     $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
     delete $scope.folders.search;
     delete $scope.folders.label;
@@ -35,16 +47,9 @@ angular.module("proton.controllers.Header", [])
         }
     });
 
-    /* TEMPORARY */
-    $scope.testToggleLayout = function() {
-        if ($rootScope.layoutMode === 'rows') {
-            $rootScope.layoutMode = 'columns';
-        }
-        else {
-            $rootScope.layoutMode = 'rows';
-        }
+    $scope.tour = function() {
+        $rootScope.$broadcast('tourStart');
     };
-    /* END TEMPORARY */
 
     /**
      * Call event to open new composer
@@ -86,20 +91,6 @@ angular.module("proton.controllers.Header", [])
             var params = $scope.resetSearchParameters();
 
             params.words = $scope.params.searchMessageInput;
-
-            if (params.words.substring(0,2) === '$$') {
-                /*
-                if (params.words === '$$bubble') {
-                    notify({
-                        message: 'Bubble Mode Activated',
-                        classes: 'notification-success'
-                    });
-                    $rootScope.themeBubble = true;
-                    params.words = '';
-                    return;
-                }
-                */
-            }
 
             $state.go('secured.search', params);
         } else {

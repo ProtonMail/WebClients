@@ -1,17 +1,38 @@
 #pm_contacts {
-	padding: 0 25px;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	.wrap {
-		-webkit-flex-grow: 1;
-		    -ms-flex-positive: 1;
-		        flex-grow: 1;
+
+	.pm_table {
+		td {
+			vertical-align: middle;
+			label {
+				padding-left: 10px;
+			}
+			line-height: 40px;
+			span {
+				line-height: 40px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: block;
+				width: 100%;
+				display: block;
+			}
+		}
+		td.name {
+			width: initial;
+			min-width: initial;
+		}
+		td.actions {
+			padding: 10px;
+		}
+		th.name {
+			width: initial;
+		}
 	}
-	.tableWrapper {}
 }
 
-@media (max-width: $tablet-landscape) {
+body.mobileMode {
+	&#secured-contacts #pm_main {
+		overflow: auto;
+	}
 	#pm_contacts {
 		padding: 0;
 		#pm_toolbar {
@@ -51,6 +72,12 @@
 						margin-right: 1rem;
 					}
 				}
+			}
+		}
+		.pm_toolbar {
+			.compose,
+			.delete {
+				display: none;
 			}
 		}
 	}

@@ -1,181 +1,68 @@
-.locTag {
-	// ...
-}
 .pm_labels {
-	position: relative;
-	height: 18px;
-	z-index: 3;
-	overflow: visible !important;
-	background: $white;
-	box-sizing: border-box;
-	&:before {
-		content: "";
-		position: absolute;
-		left: -2rem;
-		top: 0;
-		height: 18px;
-		width: 2rem;
-		display: block;
-	}
-	&:hover {
-		// background-color: $light;
-	}
 	&.inline {
-		position: relative;
-		display: inline-block;
-		min-width: auto;
-		&:before {
-			content: none;
-			display: none;
-		}
-		.pm_label {
-			position: static;
-			display: inline-block;
-			float: left;
-			margin: 0 5px 0 0;
-			line-height: 12px;
-			max-width: initial;
-			i {
-				display: none;
-			}
-		}
-	}
-	.pm_label {
-		position: absolute;
-		bottom: 0;
-		top: 0;
-		left: auto;
-		background: $white;
-		box-shadow: 0 0 0 4px #fff;
-		height: 16px;
-		line-height: 12px;
-		border-radius: 3px;
-		font-size: 8px;
-		text-transform: uppercase;
-		border: 2px solid $gray;
-		border-color: #66c;
-		color: #66c;
-		padding: 0 .35rem;
-		float: right;
-		margin-left: 5px;
-		font-weight: bold;
-		box-sizing: border-box;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		max-width: 3rem;
-		i, em {
-			font-style: normal;
-		}
-		i {
-			display: none !important;
-		}
-		.fa {
-			font-size: 14px;
-		}
-		&:hover {
-			// background-color: $light;
-			z-index: 99 !important;
-			max-width: initial !important;
+		label {
+			padding-right: 1.25rem;
+		    height: 16px;
+		    line-height: 12px;
+		    .close {
+	    		color: $gray;
+	    		font-size: 10px;
+	    		position: absolute;
+	    		left: 0;
+	    		top: 0;
+	    		right: 0;
+	    		bottom: 0;
+	    		height: 12px;
+	    		line-height: 12px;
+	    		width: 100%;
+	    		display: block;
+	    		box-sizing: border-box;
+	    		text-align: right;
+	    		padding-right: .25rem;
+	    		z-index: 2;
+	    		cursor: pointer;
+	    	}
 		}
 	}
-	.pm_label:last-child {
-		max-width: initial !important;
-	}
-	.pm_label:nth-child(0) {
-		right: 0;
-		z-index: 1;
-	}
-	.pm_label:nth-child(1) {
-		right: 12px;
-		z-index: 2;
-	}
-	.pm_label:nth-child(2) {
-		right: 22px;
-		z-index: 3;
-	}
-	.pm_label:nth-child(3) {
-		right: 32px;
-		z-index: 4;
-	}
-	.pm_label:nth-child(4) {
-		right: 42px;
-		z-index: 5;
-	}
-	.pm_label:nth-child(5) {
-		right: 52px;
-		z-index: 6;
-	}
-	.pm_label:nth-child(6) {
-		right: 62px;
-		z-index: 7;
-	}
-	.pm_label:nth-child(7) {
-		right: 72px;
-		z-index: 8;
-	}
-	.pm_label:nth-child(8) {
-		right: 82px;
-		z-index: 9;
-	}
-	.pm_label:nth-child(9) {
-		right: 92px;
-		z-index: 10;
-	}
-	.pm_label:nth-child(10) {
-		right: 92px;
-		z-index: 11;
-	}
-	.pm_label:nth-child(11) {
-		right: 102px;
-		z-index: 12;
-	}
-	.pm_label:nth-child(12) {
-		right: 112px;
-		z-index: 13;
-	}
-	.pm_label:nth-child(13) {
-		right: 122px;
-		z-index: 14;
-	}
-	.pm_label:nth-child(14) {
-		right: 132px;
-		z-index: 15;
-	}	
-}
-
-@media (max-width: $tablet-landscape) {
-	.pm_labels {
-		min-width: initial;
-		width: initial;
-		.pm_label {
-			position: static !important;
-			i, em {
-				font-style: normal;
-			}
-			em {
-				display: none;
-			}
-			i {
-				display: block !important;
-			    text-align: center;
-			}
-		}
-	}
-}
-
-
-@media (max-width: $mobile-landscape) {
-	.pm_label:nth-child(5),
-	.pm_label:nth-child(6),
-	.pm_label:nth-child(7),
-	.pm_label:nth-child(8),
-	.pm_label:nth-child(9),
-	.pm_label:nth-child(10),
-	.pm_label:nth-child(11),
-	.pm_label:nth-child(12),
-	.pm_label:nth-child(13),
-	.pm_label:nth-child(14) {
-		display: none !important;
+	label {
+	    border-radius: 3px;
+	    border: 2px solid $gray;
+	    color: $gray;
+	    padding: 0 .4rem;
+	    font-size: .5rem;
+	    font-style: normal;
+	    text-transform: uppercase;
+	    white-space: nowrap;
+	    font-weight: bold;
+	    max-width: 8rem;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    line-height: 14px;
+	    height: 18px;
+	    box-sizing: border-box;
+	    display: inline-block;
+	    position: relative;
+	    -webkit-transition: max-width .25s ease;
+		-moz-transition: max-width .25s ease;
+		-ms-transition: max-width .25s ease;
+		-o-transition: max-width .25s ease;
+        transition: max-width .25s ease;
+		box-shadow: .25rem 0 0 .25rem $white;
+	    &.closed {
+	    	max-width: .5rem;
+	    	border-left-width: 0;
+	    	padding: 0;
+	    	overflow: hidden;
+	    	line-height: 999rem;
+	    	border-radius: 0 3px 3px 0;
+	    	&:hover {
+	    		max-width: 8rem;
+	    		line-height: 14px;
+	    		padding: 0 .4rem;
+	    		border-left-width: 2px;
+	    		border: 2px solid $gray;
+	    		border-radius: 3px;
+	    	}
+	    }
 	}
 }

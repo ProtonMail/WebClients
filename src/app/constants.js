@@ -32,6 +32,10 @@ angular.module('proton.constants', [])
     ELEMENTS_PER_PAGE: 50,
     COUNT_UNREAD_INTERVAL_TIME: 20000, // 20 seconds
     LOGIN_PW_MAX_LEN: 500,
+    HD_BREAKPOINT: 1920,
+    DESKTOP_BREAKPOINT: 1200,
+    ROW_BREAKPOINT: 960,
+    MOBILE_BREAKPOINT: 800,
     MAILBOX_IDENTIFIERS: {
         inbox: '0',
         drafts: '1',

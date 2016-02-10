@@ -22,6 +22,7 @@
     &:focus {
         background-color: lighten($border, 2%);
         outline: none;
+        box-shadow: inset 1px 1px 2px rgba(0,0,0,.25);
     }
     &.large {
         line-height: 50px;
@@ -61,7 +62,7 @@
         width: 30px;
         box-sizing: border-box;
         text-align: center;
-        border: 1px solid #ddd;
+        border: 1px solid $border;
         border-radius: 30px;
         padding: 0;
         .fa {
@@ -133,6 +134,10 @@
     text-align: center;
     margin: 0 10px 0 0;
     position: relative;
+    &.inline {
+        display: inline-block;
+        float: none;
+    }
     .disabled,
     [disabled] {
         pointer-events: none;
@@ -180,6 +185,7 @@
         &:active,
         &.active {
             background: lighten($border, 5%) !important;
+            box-shadow: inset 1px 1px 2px #dbdde1;
         }
         &.secondary {
             // white background
@@ -219,5 +225,12 @@
         .divider {
             border-left: 1px solid #fff;
         }
+    }
+}
+
+
+body.mobileMode {
+    .pm_buttons {
+        margin: 0 5px 0 0;
     }
 }

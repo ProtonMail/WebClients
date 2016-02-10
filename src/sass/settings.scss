@@ -62,6 +62,10 @@
             width: 8rem;
         }
         tr {
+            &.error td {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
             td.domain {
                 width: auto;
             }
@@ -570,7 +574,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             width: 60%;
-            line-height: 1rem;
+            line-height: .9em;
         }
         .pm_buttons .fa.fa-angle-down {
             padding: 0 .5rem;
@@ -717,7 +721,7 @@
     }
 }
 
-@media (max-width: $tablet-landscape) {
+body.mobileMode {
     #pm_settings {
 
         .settings .row .setting {
@@ -862,7 +866,7 @@
     }
 }
 
-@media (max-width: $mobile-landscape) {
+body.mobileMode {
 
     #settingsAppearance.row {
         .setting {
@@ -1034,35 +1038,33 @@
     }
 }
 
-@media (max-width: $tablet-portrait) {
-    body {
-        #pm_settings {
-            #settingsDomains {
-                .pm_table {
-                    tbody {
-                        tr {
-                            td {
-                                display: block;
-                                width: 100%;
-                                .pm_button {
-                                    text-align: left;
-                                    padding-left: 1rem;
-                                    width: 10rem;
-                                    strong {
-                                        display: inline;
-                                    }
-                                    span {
-                                        float: none;
-                                    }
+body.mobileMode {
+    #pm_settings {
+        #settingsDomains {
+            .pm_table {
+                tbody {
+                    tr {
+                        td {
+                            display: block;
+                            width: 100%;
+                            .pm_button {
+                                text-align: left;
+                                padding-left: 1rem;
+                                width: 10rem;
+                                strong {
+                                    display: inline;
+                                }
+                                span {
+                                    float: none;
                                 }
                             }
-                            td.text-right {
-                                text-align: left !important;
-                                .pm_button {
-                                    width: 36px !important;
-                                    text-align: center !important;
-                                    padding: 0 !important;
-                                }
+                        }
+                        td.text-right {
+                            text-align: left !important;
+                            .pm_button {
+                                width: 36px !important;
+                                text-align: center !important;
+                                padding: 0 !important;
                             }
                         }
                     }

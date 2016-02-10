@@ -7,26 +7,24 @@
                 <span ng-show="ctrl.domain.SpfState === 0" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
                 <span ng-show="ctrl.domain.SpfState === 1 || ctrl.domain.SpfState === 2" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
                 <span ng-show="ctrl.domain.SpfState === 3" class="pull-right pm_badge success">{{ 'GOOD!' | translate }}</span>
-                <h4 class="modal-title">4. {{ 'SPF' | translate }}</h4>
+                <h4 class="modal-title">5. {{ 'SPF' | translate }} <em>(Recommended)</em></h4>
             </div>
             <div class="modal-body pm_form">
                 <p>SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-spf-record">{{ 'LEARN_MORE' | translate }}</a></p>
-                <p>Please add the following SPF Record:</p>
+                <p>Please add the following TXT record:</p>
                 <table class="pm_table record">
                     <tr>
+                        <th style="width:3rem">Type</th>
                         <th style="width:3rem">Host</th>
                         <th>Value</th>
                     </tr>
                     <tr>
+                        <td><code>TXT</code></td>
                         <td><code>@</code></td>
                         <td><code>v=spf1 include:_spf.protonmail.ch a mx ~all</code></td>
                     </tr>
                 </table>
 
-                <div ng-show="ctrl.domain.SpfRecord">
-                    <p>The current SPF record for {{ ctrl.domain.domain }} is:</p>
-                    <textarea readonly>{{ ctrl.domain.SpfRecord }}</textarea>
-                </div>
                 <p>If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-spf-record">{{ 'LEARN_MORE' | translate }}</a></p>
             </div>
         </div>
