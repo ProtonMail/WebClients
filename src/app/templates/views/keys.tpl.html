@@ -18,35 +18,35 @@
                     <span class="pm_badge error" ng-hide="address.Status === 1">Disabled</span>
                 </div>
             </header>
-            <table class="pm_table thick bordered" ng-show="address.Keys.length > 0">
+            <table class="pm_table thick bordered" ng-show="address.Keys.length > 0" id="keys-addressTable">
                 <thead>
                     <tr>
-                        <th>{{ 'STATUS' | translate }}</th>
-                        <th>{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
-                        <th>{{ 'KEY_SIZE' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
-                        <th>{{ 'KEY_DOWNLOAD' | translate }}</th>
-                        <th class="text-right">{{ 'ACTIONS' | translate }}</th>
+                        <th style="width: 8.5rem">{{ 'STATUS' | translate }}</th>
+                        <th style="width: 22rem">{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
+                        <th style="width: 5.5rem">{{ 'KEY_SIZE' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
+                        <th>{{ 'DOWNLOAD' | translate }}</th>
+                        <th style="width: 10.5rem" class="text-right">{{ 'ACTIONS' | translate }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="key in address.Keys">
                         <td>
+                            <span ng-show="key.decrypted === true"><i class="fa fa-check"></i></span>
+                            <span ng-hide="key.decrypted === true"><i class="fa fa-times-circle"></i></span>
                             <span class="pm_badge primary" ng-show="$first">{{ 'PRIMARY' | translate }}</span>
-                            <span class="pm_badge success" ng-show="key.decrypted === true">{{ 'ENABLED' | translate }}</span>
-                            <span class="pm_badge error" ng-hide="key.decrypted === true">{{ 'DISABLED' | translate }}</span>
                         </td>
                         <td>
                             <code title="{{ key.created | date }}">{{ key.fingerprint }}</code>
                         </td>
                         <td>{{ key.bitSize }} {{ 'BIT' | translate }}</td>
                         <td>
-                            <button class="pm_button link" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari">{{ 'PUBLIC_KEY' | translate }}</button>
+                            <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari">{{ 'PUBLIC_KEY' | translate }}</button>
                             <button class="pm_button link" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari">{{ 'PRIVATE_KEY' | translate }}</button>
                         </td>
                         <td class="text-right">
                             <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false">{{ 'MAKE_PRIMARY' | translate }}</button>
                             <button class="pm_button link" ng-click="enable(address, key)" ng-show="key.decrypted === false">{{ 'ENABLE' | translate }}</button>
-                            <button class="pm_button link" ng-click="delete(address, key)" ng-hide="address.Keys.length === 1 || isNonPrivate">{{ 'DELETE' | translate }}</button>
+                            <button class="pm_button link" ng-click="delete(address, key)" ng-hide="address.Keys.length === 1 || isNonPrivate"><i class="fa fa-trash-o"></i></button>
                         </td>
                     </tr>
                 </tbody>

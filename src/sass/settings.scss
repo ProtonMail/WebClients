@@ -497,10 +497,8 @@
                 }
                 h3,
                 .price {
-                    line-height: 70px;
-                    height: 70px;
                     display: block;
-                    padding: 0 30px;
+                    padding: 20px 30px;
                     color: $primary;
                     font-weight: 400;
                     strong {
@@ -775,6 +773,24 @@
         }
         .pm_buttons .fa.fa-angle-down {
             padding: 0 .5rem;
+        }
+        #keys-addressTable {
+            td {
+                background: transparent;
+                span {
+                    float: left;
+                    margin-right: 1rem;
+                }
+                .fa {
+                    font-size: 1.25rem;
+                }
+                .fa-times-circle {
+                    color: $red;
+                }
+                .fa-check {
+                    color: $gray;
+                }
+            }
         }
         &#labelContainer {
             .fa-tag {
