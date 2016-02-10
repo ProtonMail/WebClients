@@ -1,195 +1,35 @@
-<ng-include src="'templates/partials/toolbar-list-rows.tpl.html'"></ng-include>
-<ng-include src="'templates/partials/toolbar-list-rows-responsive.tpl.html'"></ng-include>
+<ng-include
+ng-if="mobileMode === false"
+src="'templates/partials/toolbar-desktop.tpl.html'"></ng-include>
 
-<section id="pm_conversations" ng-class="{'rows': layoutMode === 'rows', 'columns': layoutMode === 'columns'}">
+<ng-include
+ng-if="mobileMode  === true"
+src="'templates/partials/toolbar-mobile.tpl.html'"></ng-include>
 
-    <div ng-if="layoutMode === 'columns'" id="pm_list" pt-height class="list">
 
-        <table ng-if="conversations.length === 0" id="nothingToSeeHere">
-            <tr>
-                <td>
-                    <i class="fa" ng-class="{
-                        'fa-inbox': mailbox === 'inbox',
-                        'fa-file-text-o': mailbox === 'drafts',
-                        'fa-sign-out': mailbox === 'sent',
-                        'fa-trash-o': mailbox === 'trash',
-                        'fa-ban': mailbox === 'spam',
-                        'fa-star-o': mailbox === 'starred',
-                        'fa-archive': mailbox === 'archive',
-                        'fa-search': mailbox === 'search',
-                        'fa-tag': mailbox === 'label'
-                    }"></i>
-                    <span ng-show="mailbox === 'inbox'">{{ 'INBOX' | translate }}</span>
-                    <span ng-show="mailbox === 'drafts'">{{ 'DRAFTS' | translate }}</span>
-                    <span ng-show="mailbox === 'sent'">{{ 'SENT' | translate }}</span>
-                    <span ng-show="mailbox === 'trash'">{{ 'TRASH' | translate }}</span>
-                    <span ng-show="mailbox === 'spam'">{{ 'SPAM' | translate }}</span>
-                    <span ng-show="mailbox === 'starred'">{{ 'STAR' | translate }}</span>
-                    <span ng-show="mailbox === 'archive'">{{ 'ARCHIVE' | translate }}</span>
-                    <span ng-show="mailbox === 'search'">{{ 'SEARCH' | translate }}</span>
-                    <span ng-show="mailbox === 'label'">{{ 'LABEL' | translate }}</span>
-                    <h3 ng-show="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'">{{ 'NO_MESSAGES' | translate }}</h3>
-                    <h3 ng-hide="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'">{{ 'NO_CONVERSATIONS' | translate }}</h3>
-                </td>
-            </tr>
-        </table>
+<div id="wrapper">
 
-        <div
-        ng-repeat="conversation in conversations track by conversation.ID"
-        class="message"
-        ng-click="click(conversation)"
-        ng-class="{
-            unread: conversation.NumUnread > 0 || conversation.IsRead === 0,
-            selected: conversation.Selected,
-            active: active(conversation),
-            starred: starred(conversation),
-            attachments: conversation.NumAttachments > 0,
-            read: conversation.NumUnread === 0 || conversation.IsRead === 1
-        }">
-            <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-            <aside>
-                <label class="pm_checkbox" ng-click="$event.stopPropagation();select($event, conversation)">
-                    <input type="checkbox" ng-model="conversation.Selected" />
-                    <em class="fa fa-check"></em>
-                </label>
-                <a href="#" ng-click="conversation.Selected = !conversation.Selected;select($event, conversation);" class="fa" ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a>
-            </aside>
-            <header>
-                <p>
-                    <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-                    <a href="#" title="{{ conversation.Subject }}" ng-click="click(conversation)">
-                        <i class="fa fa-reply" ng-show="conversation.IsReplied === 1"></i>
-                        <i class="fa fa-reply-all" ng-show="conversation.IsRepliedAll === 1"></i>
-                        <i class="fa fa-mail-forward" ng-show="conversation.IsForwarded === 1"></i>
-                        {{ conversation.Subject }}
-                    </a>
-                    <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
-                    <a ng-click="$event.stopPropagation();toggleStar(conversation)" class="starLink" title="{{ 'STAR_CONVERSATION' | translate }}">
-                        <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
-                    </a>
-                    <span class="time">{{ time(conversation) | readableTime }}</span>
-                </p>
-            </header>
-            <article>
-                <p class="pm_labels">
-                    <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
-                        <em>{{ getLabel(labelID).Name }}</em>
-                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                    </a>
-                </p>
-                <p class="pm_labels reverse">
-                    <a ng-repeat="labelID in conversation.LabelIDs | labels | reverse" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
-                        <em>{{ getLabel(labelID).Name }}</em>
-                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                    </a>
-                </p>
-                <strong ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in senders(conversation)" title="{{ contact.Address }}">
-                    {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
-                </strong>
-                <strong ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in recipients(conversation)" title="{{ contact.Address }}">
-                    {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
-                </strong>
-                <location-tag class="locTag"></location-tag>
-            </article>
-        </div>
-    </div>
+	<ng-include
+	ng-if="layoutMode==='columns' && !( idDefined() && mobileMode )"
+	src="'templates/partials/conversation-list-columns.tpl.html'"></ng-include>
 
-    <div ng-if="layoutMode === 'rows' && !idDefined()" id="pm_list" pt-height class="list">
-        <table ng-if="conversations.length === 0" id="nothingToSeeHere">
-            <tr>
-                <td>
-                    <i class="fa" ng-class="{
-                        'fa-inbox': mailbox === 'inbox',
-                        'fa-file-text-o': mailbox === 'drafts',
-                        'fa-sign-out': mailbox === 'sent',
-                        'fa-trash-o': mailbox === 'trash',
-                        'fa-ban': mailbox === 'spam',
-                        'fa-star-o': mailbox === 'starred',
-                        'fa-archive': mailbox === 'archive',
-                        'fa-search': mailbox === 'search',
-                        'fa-tag': mailbox === 'label'
-                    }"></i>
-                    <span ng-show="mailbox === 'inbox'">{{ 'INBOX' | translate }}</span>
-                    <span ng-show="mailbox === 'drafts'">{{ 'DRAFTS' | translate }}</span>
-                    <span ng-show="mailbox === 'sent'">{{ 'SENT' | translate }}</span>
-                    <span ng-show="mailbox === 'trash'">{{ 'TRASH' | translate }}</span>
-                    <span ng-show="mailbox === 'spam'">{{ 'SPAM' | translate }}</span>
-                    <span ng-show="mailbox === 'starred'">{{ 'STAR' | translate }}</span>
-                    <span ng-show="mailbox === 'archive'">{{ 'ARCHIVE' | translate }}</span>
-                    <span ng-show="mailbox === 'search'">{{ 'SEARCH' | translate }}</span>
-                    <span ng-show="mailbox === 'label'">{{ 'LABEL' | translate }}</span>
-                    <h3 ng-show="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'">{{ 'NO_MESSAGES' | translate }}</h3>
-                    <h3 ng-hide="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'">{{ 'NO_CONVERSATIONS' | translate }}</h3>
-                </td>
-            </tr>
-        </table>
+	<ng-include
+	ng-if="layoutMode==='rows'"
+	ng-hide="idDefined() === true"
+	src="'templates/partials/conversation-list-rows.tpl.html'"></ng-include>
 
-        <div
-        class="message"
-        ng-repeat="conversation in conversations track by conversation.ID"
-        ng-class="{
-            unread: conversation.NumUnread > 0 || conversation.IsRead === 0,
-            selected: conversation.Selected,
-            active: active(conversation),
-            starred: starred(conversation),
-            attachments: conversation.NumAttachments > 0,
-            read: conversation.NumUnread === 0 || conversation.IsRead === 1
-        }">
-            <span class="expiration" ng-if="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-            <label class="pm_checkbox">
-                <input
-                type="checkbox"
-                ng-model="conversation.Selected"
-                ng-click="$event.stopPropagation();select($event, conversation)" />
-                <em class="fa fa-check"></em>
-            </label>
-            <a href="#" ng-click="conversation.Selected = !conversation.Selected;select($event, conversation)" class="fa" ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a>
-            <span class="star" ng-click="$event.stopPropagation();toggleStar(conversation)">
-                <a class="starLink" title="{{ 'STAR_MESSAGE' | translate }}">
-                    <i class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></i>
-                </a>
-            </span>
-            <span class="sender" ng-click="click(conversation)">
-                <span class="number" ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-                <span ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in senders(conversation)">
-                    {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
-                </span>
-                <span ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-repeat="contact in recipients(conversation)">
-                    {{ contact.Name || contact.Address }}<b ng-hide="$last">, </b>
-                </span>
-            </span>
-            <span class="placeholderSpan"><span>&nbsp;</span></span>
-            <a href="#" class="subject" ng-click="click(conversation)" tabindex="{{ ($index + 1) }}">
-                <span title="{{ conversation.Subject }}">
-                    {{ conversation.Subject }}
-                    <location-tag class="locTag"></location-tag>
-                </span>
-                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
-                <article>
-                    <p class="pm_labels" ng-if="(conversation.LabelIDs | labels).length > 0">
-                        <a ng-repeat="labelID in conversation.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
-                            <em>{{ getLabel(labelID).Name }}</em>
-                            <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                        </a>
-                    </p>
-                    <p class="pm_labels reverse" ng-if="(conversation.LabelIDs | labels).length > 0">
-                        <a ng-repeat="labelID in conversation.LabelIDs | labels | reverse" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getStyleLabel(labelID)" ng-show="getLabel(labelID).Name" ng-click="$event.stopPropagation();goToLabel(labelID)">
-                            <em>{{ getLabel(labelID).Name }}</em>
-                            <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                        </a>
-                    </p>
-                </article>
-            </a>
-            <span class="size">{{ size(conversation)| bytes }}</span>
-            <span class="hasAttachments">
-                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
-            </span>
-            <span class="time">{{ time(conversation) | readableTime }}</span>
-        </div>
-    </div>
+	<div
+	id="conversation-view"
+	ui-view="view"
+	ng-hide="layoutMode==='rows' && !idDefined()"
+	ng-if="idDefined() === true && numberElementChecked === 0"></div>
 
-    <div id="pm_view" ng-class="{'rows': layoutMode === 'rows', 'columns': layoutMode === 'columns'}" ui-view="view" ng-if="idDefined() === true && numberElementChecked === 0"></div>
+	<div
+	ng-include
+	src="'templates/partials/conversation-placeholder.tpl.html'"
+	id="pm_view"
+	class="columns"
+	ng-class="{ 'latest': !idDefined() }"
+	ng-if="!idDefined() && layoutMode==='columns'&& !mobileMode"></div>
 
-    <div ng-if="layoutMode === 'columns' && (numberElementChecked > 0 || idDefined() === false)" ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns"></div>
-
-</section>
+</div>

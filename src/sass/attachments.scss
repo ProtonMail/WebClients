@@ -1,6 +1,6 @@
 #attachmentArea {
 	position: relative;
-	padding: 1rem 40px 0;
+	padding: 0 10px;
 	background: #fff;
 	border-top: 1px solid $border;
 	header {
@@ -10,6 +10,7 @@
 		box-sizing: border-box;
 		padding: 0 !important;
 		margin-bottom: 0 !important;
+		border-bottom: none !important;
 	}
 	.title {
 		position: relative;
@@ -62,7 +63,6 @@
 		// overflow: auto;
 		// height: 82px;
 		position: relative;
-		padding-bottom: 1rem;
 		.pm_button {
 			// max-width: 8rem;
 			// width: 8rem;
@@ -70,7 +70,7 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
-			margin: 5px 5px 0 0;
+			margin: 0 10px 10px 0;
 			color: $gray;
 			background: #fff;
 			padding-left: 3rem;
@@ -80,6 +80,7 @@
 			line-height: 40px;
 			background-color: $light;
 			max-width: 100%;
+			float: left;
 			strong {
 				text-transform: initial;
 				display: block;
@@ -129,12 +130,5 @@
 				margin-right: 8rem;
 			}
 		}
-	}
-}
-
-
-@media (max-width: $tablet-portrait) {
-	#attachmentArea {
-		padding: 1rem 10px 0;
 	}
 }

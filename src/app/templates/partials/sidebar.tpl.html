@@ -1,4 +1,7 @@
-<section class="pm_opensans sidebar" ng-controller="SidebarController" ng-sidebar-height>
+<section
+class="pm_opensans sidebar"
+ng-controller="SidebarController"
+ng-hide="mobileMode || !sidebarMode">
 
     <a class="compose pm_button primary" ng-click="compose()">
         <i class="fa fa-pencil"></i> {{ 'COMPOSE' | translate }}
@@ -66,12 +69,12 @@
         <li>
             <a ui-sref="secured.labels">
                 <i class="fa fa-cog"></i>
-                <span>{{ 'LABEL_SETTINGS' | translate }}</span>
+                <span id="tour-label-settings">{{ 'LABEL_SETTINGS' | translate }}</span>
             </a>
         </li>
     </ul>
 
-<!--     
+<!--
     <scrollbar name="scrollbarName" ng-label-height>
         <div id="sidebarLabels">
             <div class="labels">
@@ -86,7 +89,7 @@
                 </ul>
             </div>
         </div>
-    </scrollbar> 
+    </scrollbar>
 -->
 
     <div id="sidebarLabels">

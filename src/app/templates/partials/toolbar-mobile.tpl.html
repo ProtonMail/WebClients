@@ -1,0 +1,131 @@
+<nav id="pm_toolbar-mobile" class="pm_toolbar">
+
+    <label
+    class="pm_checkbox"
+    ng-if="!idDefined() || layoutMode === 'columns'">
+        <input
+        type="checkbox"
+        name="selectAll"
+        ng-checked="allSelected()"
+        ng-click="toggleAllSelected()"
+        ng-disabled="numberElement === 0"
+        pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
+    </label>
+
+    <span
+    class="pm_buttons back"
+    ng-if="idDefined() && (layoutMode === 'rows' || mobileMode)">
+        <a
+        ng-click="back()"
+        pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">
+            <i class="fa fa-long-arrow-left"></i>
+        </a>
+    </span>
+
+    <span
+    class="pm_buttons"
+    ng-class="{ disabled: numberElementSelected === 0 }">
+        <a class="pm_trigger" dropdown ng-disabled="numberElementSelected === 0">
+            <em><i class="fa fa-eye-slash"></i>
+            <i class="fa fa-angle-down"></i></em>
+        </a>
+        <span class="pm_dropdown wide">
+            <a ng-click="unread()">
+                <i class="fa fa-eye-slash"></i>
+                {{ 'MARK_AS_UNREAD' | translate }}
+            </a>
+            <a ng-click="read()">
+                <i class="fa fa-eye"></i>
+                {{ 'MARK_AS_READ' | translate }}
+            </a>
+        </span>
+    </span>
+
+    <span
+    class="pm_buttons"
+    ng-class="{ disabled: numberElementSelected === 0 }">
+        <a class="pm_trigger" dropdown ng-disabled="numberElementSelected === 0">
+            <em><i class="fa fa-trash-o"></i>
+            <i class="fa fa-angle-down"></i></em>
+        </a>
+        <span class="pm_dropdown wide">
+            <a
+            ng-click="move('trash')"
+            ng-hide="{{ 'secured.trash.**' | includedByState }}"
+            ng-class="{ disabled: numberElementSelected === 0 }">
+                <i class="fa fa-trash-o"></i>
+                {{ 'MOVE_TO_TRASH' | translate }}
+            </a>
+            <a
+            ng-click="move('inbox')"
+            ng-hide="{{ ('secured.inbox.**' | includedByState) || ('secured.spam.**' | includedByState) }}"
+            ng-class="{ disabled: numberElementSelected === 0 }">
+                <i class="fa fa-inbox"></i>
+                {{ 'MOVE_TO_INBOX' | translate }}
+            </a>
+            <a
+            ng-click="move('archive')"
+            ng-hide="{{ 'secured.archive.**' | includedByState }}"
+            ng-class="{ disabled: numberElementSelected === 0 }">
+                <i class="fa fa-archive"></i>
+                {{ 'MOVE_TO_ARCHIVE' | translate }}
+            </a>
+            <a
+            ng-click="move('spam')"
+            ng-hide="{{ 'secured.spam.**' | includedByState }}"
+            ng-class="{ disabled: numberElementSelected === 0 }">
+                <i class="fa fa-ban"></i>
+                {{ 'MOVE_TO_SPAM' | translate }}
+            </a>
+            <a
+            ng-click="delete()"
+            ng-show="{{ 'secured.trash.**' | includedByState }}"
+            ng-class="{ disabled: numberElementSelected === 0 }">
+                <i class="fa fa-times-circle-o"></i>
+                {{ 'DELETE' | translate }}
+            </a>
+            <a
+            ng-click="move('inbox')"
+            ng-show="{{ 'secured.spam.**' | includedByState }}"
+            ng-class="{ disabled: numberElementSelected === 0 }">
+                <i class="fa fa-check"></i>
+                {{ 'NOT_SPAM' | translate }}
+            </a>
+        </span>
+    </span>
+
+    <span
+    class="pm_buttons"
+    ng-class="{ disabled: numberElementSelected === 0 }">
+        <a
+        class="pm_trigger open-label"
+        dropdown
+        ng-class="{ disabled: numberElementSelected === 0 }"
+        pt-tooltip="{{ 'LABELS' | translate }}">
+            <i class="fa fa-tag"></i>
+            <i class="fa fa-angle-down"></i>
+        </a>
+        <span class="pm_dropdown wide labelDD right">
+            <dropdown-labels messages="elementsSelected" save="saveLabels"></dropdown-labels>
+        </span>
+    </span>
+
+    <div class="pull-right">
+
+        <span class="pm_buttons">
+            <a
+            ng-click="nextConversation(conversation)"
+            pt-tooltip="{{ 'PREVIOUS' | translate }}">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            <a
+            ng-click="previousConversation(conversation)"
+            class="divider"
+            pt-tooltip="{{ 'NEXT' | translate }}">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </span>
+
+    </div>
+
+</nav>

@@ -1,4 +1,4 @@
-<nav id="pm_toolbar">
+<nav id="pm_toolbar" class="pm_toolbar">
     <div class="pull-right">
         <span class="pull-right" ng-show="contacts.length > 0">
             <paginator page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
@@ -16,10 +16,10 @@
     <button class="pm_button primary" type="button" ng-click="addContact()">
         <i class="fa fa-plus"></i> <strong>{{ 'ADD_CONTACT' | translate }}</strong>
     </button>
-    <button class="pm_button" type="button" ng-click="deleteContacts()" ng-disabled="contactsSelected().length === 0">
+    <button class="delete pm_button" type="button" ng-click="deleteContacts()" ng-disabled="contactsSelected().length === 0">
         <i class="fa fa-trash-o"></i> <strong>{{ 'DELETE_CONTACT' | translate }}</strong>
     </button>
-    <button class="pm_button" type="button" ng-click="composeContacts()" ng-disabled="contactsSelected().length === 0">
+    <button class="compose pm_button" type="button" ng-click="composeContacts()" ng-disabled="contactsSelected().length === 0">
         <i class="fa fa-edit"></i> <strong>{{ 'COMPOSE' | translate }}</strong>
     </button
 </nav>

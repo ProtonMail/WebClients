@@ -41,7 +41,7 @@
             <a pt-tooltip="{{ 'DELETE' | translate }}" ng-click="delete()" ng-show="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-times-circle-o divider"></a>
             <a pt-tooltip="{{ 'NOT_SPAM' | translate }}" ng-click="move('inbox')" ng-show="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-check divider"></a>
         </span>
-        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
+        <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }" id="tour-fromage">
             <a class="pm_trigger open-label" dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
                 <i class="fa fa-tag"></i>
                 <i class="fa fa-angle-down"></i>

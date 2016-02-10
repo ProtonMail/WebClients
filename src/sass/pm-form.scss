@@ -59,8 +59,8 @@
         }
         select {
             margin: 0;
-            height: 30px;
-            line-height: 30px;
+            height: 33px;
+            line-height: 33px;
             padding-left: 10px;
             position: relative;
             z-index: 3;
@@ -78,8 +78,8 @@
             display: block;
             top: 0;
             bottom: 0;
-            height: 30px;
-            line-height: 30px;
+            height: 33px;
+            line-height: 33px;
             z-index: 1;
         }
     }
@@ -123,7 +123,7 @@
             display: block;
             line-height: 32px;
             height: 32px;
-            color: #ccc;
+            color: $gray-light;
             text-align: center;
             width: 2rem;
             color: $primary;
@@ -137,7 +137,29 @@
     input[type="email"],
     input[type="search"],
     select {
-        height: 32px;
+        height: 35px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"],
+    input[type="search"] {
+        &.inline {
+            display: inline-block;
+            width: 8rem;
+        }
+        &.bigger {
+            width: 9rem;
+        }
+        &.mini {
+            width: 5rem;
+        }
+    }
+
+    select:active,
+    select:focus {
+        box-shadow: 0 0 0 1px $primary;
     }
 
     input[type="text"],
@@ -147,7 +169,7 @@
     input[type="search"],
     select,
     textarea {
-        line-height: $inputHeight;
+        line-height: 35px;
         border: 1px solid #e1e1ef;
         box-sizing: border-box;
         color: $text;
@@ -221,7 +243,7 @@
         margin-bottom: 10px;
     }
     label {
-        line-height: $inputHeight;
+        line-height: 35px;
         display: block;
         &.larger {
             margin: 0 0 1rem 0;

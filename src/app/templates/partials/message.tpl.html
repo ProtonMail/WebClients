@@ -1,3 +1,5 @@
+<!-- <pre>{{ message }}</pre> -->
+
 <article
 class="message"
 ng-controller="MessageController"
@@ -11,31 +13,51 @@ ng-class="{
     'details': toggleDetails === true,
     'showingImages': showingMessages,
     'hasImages': !!message.imagesHidden,
-    'hasLabels': (message.labels().length > 0)
+    'hasLabels': (message.LabelIDs | labels).length > 0
 }">
-    <header ng-click="toggle()">
-        <span class="meta">
-            <div class="headerLabelRow" ng-show="message.labels().length > 0" ng-hide="message.expand">
-                <span class="pm_labels" ng-if="message.labels().length > 0">
-                    <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
-                        <em>{{ getLabel(labelID).Name }}</em>
-                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                        <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </span>
-                </span>
-                <span class="pm_labels reverse" ng-if="message.labels().length > 0">
-                    <span ng-repeat="labelID in message.LabelIDs | labels | reverse" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
-                        <em>{{ getLabel(labelID).Name }}</em>
-                        <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                        <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </span>
+
+    <div class="summary" ng-click="toggle()">
+        <div class="pull-left">
+            <div class="meta">
+                <i class="history fa fa-reply" ng-if="message.IsReplied === 1"></i>
+                <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
+                <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
+                <span class="contact">
+                    <span class="from" ng-show="message.expand">{{ 'FROM' | translate }}: </span>
+                    <strong>{{ message.Sender | contact:'Name' }}</strong>
+                    <em ng-click="$event.stopPropagation();">
+                        {{ message.Sender | contact:'Address' }}
+                        <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                    </em>
                 </span>
             </div>
+            <div class="location" ng-hide="toggleDetails === true">
+                <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip="{{ 'IN_ARCHIVE' | translate }}"></i>
+                <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip="{{ 'IN_TRASH' | translate }}"></i>
+                <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip="{{ 'IN_SPAM' | translate }}"></i>
+                <i class="pm_tag" ng-if="message.Type === 1">{{ 'DRAFT' | translate }}</i>
+                <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
+            </div>
+        </div>
+        <div class="labels" ng-hide="toggleDetails === true">
+            <span class="pm_labels">
+                <label
+                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5"
+                title="{{ getLabel(labelID).Name }}"
+                class="pm_label"
+                ng-class="{ 'closed': !$first }"
+                ng-style="getStyleLabel(labelID)"
+                ng-show="getLabel(labelID).Name"
+                ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
+                </label>
+            </span>
+        </div>
+        <div class="time">
             <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
+            <span ng-show="toggleDetails === true">{{ message.Time | localReadableTime }}</span>
+            <span ng-show="toggleDetails !== true">{{ message.Time | readableTime }}</span>
+        </div>
+        <div class="status">
             <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
                 <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
             </a>
@@ -46,164 +68,161 @@ ng-class="{
                 'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
             }" title="{{ message.encryptionType() }}">
             </span>
-            <span class="time" ng-hide="toggleDetails === true" time="{{ message.Time }}" filter="longReadableTime" interval="60000"></span>
-            <span class="time" ng-show="toggleDetails === true">{{ message.Time * 1000 | date: 'medium' }}</span>
-        </span>
-        <i class="history fa fa-placeholder" ng-hide="message.IsReplied === 1 || message.IsRepliedAll === 1 || message.IsForwarded === 1"></i>
-        <i class="history fa fa-reply" ng-if="message.IsReplied === 1"></i>
-        <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
-        <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
-        <span class="where">{{ 'FROM' | translate }}: </span>
-        <span class="contact">
-            <strong>{{ message.Sender | contact:'Name' }}</strong>
-            <em ng-show="toggleDetails === true && message.expand" ng-click="$event.stopPropagation();">{{ message.Sender | contact:'Address' }}</em>
-        </span>
-        <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip="{{ 'IN_ARCHIVE' | translate }}"></i>
-        <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip="{{ 'IN_TRASH' | translate }}"></i>
-        <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip="{{ 'IN_SPAM' | translate }}"></i>
-        <a ng-show="message.expand === true" class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender);" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-        <i class="pm_tag" ng-if="message.Type === 1">{{ 'DRAFT' | translate }}</i>
-        <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
-        <span class="expiration" ng-if="message.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-    </header>
-    <div class="sub" ng-show="message.expand === true" ng-class="{
-    'images': !!message.imagesHidden,
-    'expiring': (message.ExpirationTime > 0),
-    }">
-        <div class="actions">
+        </div>
+    </div>
 
-            <span class="pm_buttons">
-                <a href="#" ng-click="reply(message)" pt-tooltip="{{ 'REPLY' | translate }}">
-                    <i class="fa fa-mail-reply"></i>
-                </a>
-                <a class="divider" ng-click="replyAll(message)" pt-tooltip="{{ 'REPLY_ALL' | translate }}">
-                    <i class="fa fa-mail-reply-all"></i>
-                </a>
-                <a class="divider" ng-click="forward(message)" pt-tooltip="{{ 'FORWARD' | translate }}">
-                    <i class="fa fa-mail-forward"></i>
-                </a>
-                <a href="#" class="divider pm_trigger" dropdown pt-tooltip="{{ 'MORE' | translate }}">
-                    <i class="fa fa-angle-down"></i>
-                </a>
-                <span class="pm_dropdown wide right">
-                    <a ng-click="move('inbox')">
-                        <i class="fa fa-inbox"></i> {{ 'MOVE_TO_INBOX' | translate }}
-                    </a>
-                    <a ng-click="move('trash')">
-                        <i class="fa fa-trash-o"></i> {{ 'MOVE_TO_TRASH' | translate }}
-                    </a>
-                    <a ng-click="unread()">
-                        <i class="fa fa-eye-slash"></i> {{ 'MARK_AS_UNREAD' | translate }}
-                    </a>
-                    <a ng-click="move('spam')" ng-hide="'secured.spam.**' | includedByState">
-                        <i class="fa fa-ban"></i> {{ 'MARK_AS_SPAM' | translate }}
-                    </a>
-                    <a ng-click="delete()" ng-if="'secured.trash.**' | includedByState">
-                        <i class="fa fa-times"></i> {{ 'DELETE' | translate }}
-                    </a>
-                    <a ng-click="togglePlainHtml()">
-                        <span ng-show="message.viewMode === 'html'">
-                            <i class="fa fa-file-text-o"></i> {{ 'VIEW_SOURCE' | translate }}
-                        </span>
-                        <span ng-show="message.viewMode === 'plain'">
-                            <i class="fa fa-file-photo-o"></i> {{ 'VIEW_HTML' | translate }}
-                        </span>
-                    </a>
-                    <a ng-click="viewPgp()" ng-if="message.IsEncrypted !== 0">
-                        <i class="fa fa-code"></i> {{ 'VIEW_HEADERS' | translate }}
-                    </a>
-                    <a ng-click="viewPgp()" ng-if="message.IsEncrypted === 0">
-                        <i class="fa fa-code"></i> {{ 'VIEW_ORIGINAL' | translate }}
-                    </a>
-                    <a ng-click="print()">
-                        <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
-                    </a>
-                </span>
-            </span>
+    <div class="details" ng-show="message.expand">
 
-            <span class="pm_buttons">
-                <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown>
-                    <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
-                </a>
-                <span class="pm_dropdown right wide pull-left">
-                    <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
-                </span>
-            </span>
-
-        </div><!--/.actions-->
-        <div class="data">
-            <table>
-                <tr ng-if="message.ToList.length" class="toGroup" ng-show="message.expand === true">
-                    <td>
-                        <span class="where">{{ 'TO' | translate }}: </span>
-                    </td>
-                    <td>
-                        <span class="contact" ng-repeat="email in ::message.ToList">
-                            <strong>{{ email | contact:'Name' }}</strong>
-                            <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true">
-                    <td>
-                        <span class="where">{{ 'CC' | translate }}: </span>
-                    </td>
-                    <td>
-                       <span class="contact" ng-repeat="email in ::message.CCList">
-                            <strong>{{ email | contact:'Name' }}</strong>
-                            <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
-                    <td>
-                        <span class="where">{{ 'BCC' | translate }}: </span>
-                    </td>
-                    <td>
-                       <span class="contact" ng-repeat="email in ::message.BCCList">
-                            <strong>{{ email | contact:'Name' }}</strong>
-                            <em ng-show="toggleDetails === true">{{ email | contact:'Address' }}</em>
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr></tr>
-            </table>
-            <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-hide="toggleDetails == true">{{ 'SHOW_DETAILS' | translate }}</a>
-            <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails" ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</a>
-
-        </div><!--/.data-->
-        <div class="labelRow" ng-if="message.labels().length > 0">
-            <span class="pm_labels inline" ng-if="message.labels().length > 0">
-                <span ng-repeat="labelID in message.LabelIDs | labels" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
-                    <em>{{ getLabel(labelID).Name }}</em>
-                    <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                    <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </span>
-            </span>
-            <span class="pm_labels reverse inline" ng-if="message.labels().length > 0">
-                <span ng-repeat="labelID in message.LabelIDs | labels | reverse" title="{{ getLabel(labelID).Name }}" class="pm_label" ng-style="getColorLabel(labelID)" ng-click="goToLabel(labelID)">
-                    <em>{{ getLabel(labelID).Name }}</em>
-                    <i>{{ getLabel(labelID).Name | limitTo: 3 }}</i>
-                    <a ng-click="detachLabel(labelID); $event.stopPropagation();" class="labelClose">
-                        <i class="fa fa-times"></i>
-                    </a>
-                </span>
+        <div class="recipients-summary" ng-hide="toggleDetails === true">
+            <strong>{{ 'TO' | translate }}: </strong>
+            <span ng-repeat="email in recipients()">
+                {{ email | contact:'Name' }}<span ng-hide="$last">, </span>
             </span>
         </div>
-        <div class="clear"></div>
+
+        <div class="recipients-details" ng-show="toggleDetails === true">
+            <div ng-if="message.ToList.length" class="toGroup">
+                <span class="from">
+                    <span class="where">{{ 'TO' | translate }}: </span>
+                </span>
+                <ul>
+                    <li class="contact" ng-repeat="email in ::message.ToList">
+                        <strong>{{ email | contact:'Name' }}</strong>
+                        <em ng-show="toggleDetails === true">
+                            {{ email | contact:'Address' }}
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        </em>
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true">
+                <span class="from">
+                    <span class="where">{{ 'CC' | translate }}: </span>
+                </span>
+                <ul>
+                   <li class="contact" ng-repeat="email in ::message.CCList">
+                        <strong>{{ email | contact:'Name' }}</strong>
+                        <em ng-show="toggleDetails === true">
+                            {{ email | contact:'Address' }}
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        </em>
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
+                <span class="from">
+                    <span class="where">{{ 'BCC' | translate }}: </span>
+                </span>
+                <ul>
+                   <li class="contact" ng-repeat="email in ::message.BCCList">
+                        <strong>{{ email | contact:'Name' }}</strong>
+                        <em ng-show="toggleDetails === true">
+                            {{ email | contact:'Address' }}
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
+                        </em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="labelz" ng-show="toggleDetails === true && ((conversation.LabelIDs | labels).length > 0)">
+            <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip="{{ 'IN_ARCHIVE' | translate }}"></i>
+            <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip="{{ 'IN_TRASH' | translate }}"></i>
+            <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip="{{ 'IN_SPAM' | translate }}"></i>
+            <i class="pm_tag" ng-if="message.Type === 1">{{ 'DRAFT' | translate }}</i>
+            <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
+            <span class="pm_labels inline">
+                <label
+                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5"
+                title="{{ getLabel(labelID).Name }}"
+                class="pm_label"
+                ng-style="getStyleLabel(labelID)"
+                ng-click="detachLabel(labelID); $event.stopPropagation();"
+                ng-show="getLabel(labelID).Name">
+                    {{ getLabel(labelID).Name }} <a class="close fa fa-times"></a>
+                </label>
+            </span>
+        </div>
+
+        <div class="action-row">
+
+            <div class="actions pull-right">
+                <span class="pm_buttons">
+                    <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown>
+                        <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
+                    </a>
+                    <span class="pm_dropdown right wide pull-left">
+                        <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
+                    </span>
+                </span>
+                <span class="pm_buttons">
+                    <a href="#" ng-click="reply(message)" pt-tooltip="{{ 'REPLY' | translate }}">
+                        <i class="fa fa-mail-reply"></i>
+                    </a>
+                    <a class="divider" ng-click="replyAll(message)" pt-tooltip="{{ 'REPLY_ALL' | translate }}">
+                        <i class="fa fa-mail-reply-all"></i>
+                    </a>
+                    <a class="divider" ng-click="forward(message)" pt-tooltip="{{ 'FORWARD' | translate }}">
+                        <i class="fa fa-mail-forward"></i>
+                    </a>
+                    <a href="#" class="divider pm_trigger" dropdown pt-tooltip="{{ 'MORE' | translate }}">
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <span class="pm_dropdown wide right">
+                        <a ng-click="move('inbox')">
+                            <i class="fa fa-inbox"></i> {{ 'MOVE_TO_INBOX' | translate }}
+                        </a>
+                        <a ng-click="move('trash')">
+                            <i class="fa fa-trash-o"></i> {{ 'MOVE_TO_TRASH' | translate }}
+                        </a>
+                        <a ng-click="unread()">
+                            <i class="fa fa-eye-slash"></i> {{ 'MARK_AS_UNREAD' | translate }}
+                        </a>
+                        <a ng-click="move('spam')" ng-hide="'secured.spam.**' | includedByState">
+                            <i class="fa fa-ban"></i> {{ 'MARK_AS_SPAM' | translate }}
+                        </a>
+                        <a ng-click="delete()" ng-if="'secured.trash.**' | includedByState">
+                            <i class="fa fa-times"></i> {{ 'DELETE' | translate }}
+                        </a>
+                        <a ng-click="togglePlainHtml()">
+                            <span ng-show="message.viewMode === 'html'">
+                                <i class="fa fa-file-text-o"></i> {{ 'VIEW_SOURCE' | translate }}
+                            </span>
+                            <span ng-show="message.viewMode === 'plain'">
+                                <i class="fa fa-file-photo-o"></i> {{ 'VIEW_HTML' | translate }}
+                            </span>
+                        </a>
+                        <a ng-click="viewPgp()" ng-if="message.IsEncrypted !== 0">
+                            <i class="fa fa-code"></i> {{ 'VIEW_HEADERS' | translate }}
+                        </a>
+                        <a ng-click="viewPgp()" ng-if="message.IsEncrypted === 0">
+                            <i class="fa fa-code"></i> {{ 'VIEW_ORIGINAL' | translate }}
+                        </a>
+                        <a ng-click="print()">
+                            <i class="fa fa-print"></i> {{ 'PRINT' | translate }}
+                        </a>
+                    </span>
+                </span>
+            </div>
+
+            <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails">
+                <span ng-show="toggleDetails !== true">{{ 'SHOW_DETAILS' | translate }}</span>
+                <span ng-show="toggleDetails === true">{{ 'HIDE_DETAILS' | translate }}</span>
+            </a>
+
+        </div>
+
     </div>
-    <div ng-if="message.ExpirationTime > 0" class="text-red exp-block" ng-show="message.expand">
+
+    <div ng-if="message.ExpirationTime > 0" class="expiration" ng-show="message.expand">
         <i class="fa fa-clock-o"></i> {{ 'THIS_MESSAGE_WILL_EXPIRE_IN' | translate }} <span time="{{ message.ExpirationTime }}"></span>
     </div>
-    <div ng-show="!!message.imagesHidden && message.expand" class="display-image text-center pm_button">
-        <a ng-click="displayImages()"><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
+
+    <div ng-show="!!message.imagesHidden && message.expand" class="showImages" ng-click="displayImages()">
+        <a><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
     </div>
-    <div class="frame" ng-show="message.expand === true">
+
+    <div class="frame" ng-show="message.expand">
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
         <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
@@ -213,5 +232,9 @@ ng-class="{
         </div>
         <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     </div>
-    <ng-include src="'templates/partials/attachments.tpl.html'" ng-show="message.expand === true"></ng-include>
+
+    <ng-include ng-show="message.expand" src="'templates/partials/attachments.tpl.html'"></ng-include>
+
+    <div class="clear"></div>
+
 </article>

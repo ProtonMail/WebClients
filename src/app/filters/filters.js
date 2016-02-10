@@ -150,6 +150,8 @@ angular.module("proton.filters",[])
     };
 })
 
+
+// Jan 17, 2016
 .filter('readableTime', function() {
     return function(time) {
         var m = moment.unix(time);
@@ -162,6 +164,7 @@ angular.module("proton.filters",[])
     };
 })
 
+// January 17, 2016 8:48 PM
 .filter('utcReadableTime', function() {
     return function(time) {
         var m = moment.unix(time);
@@ -170,6 +173,7 @@ angular.module("proton.filters",[])
     };
 })
 
+// January 17, 2016 12:48 pm
 .filter('localReadableTime', function() {
     return function(time) {
         var m = moment.unix(time);
@@ -178,6 +182,7 @@ angular.module("proton.filters",[])
     };
 })
 
+// 1/17/2016 12:48 PM
 .filter('longReadableTime', function() {
     return function(time) {
         var m = moment.unix(time);

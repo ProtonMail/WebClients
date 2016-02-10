@@ -44,22 +44,28 @@
     unlock:isLocked,
     secure:isSecure,
     blank:!!isBlank,
-    rows: (layoutMode==='rows'),
-    columns: (layoutMode==='columns'),
     activeComposer:activeComposer,
     maximizedComposer:maximizedComposer,
     light: ('support.reset-password'|isState) || ('step1'|isState) || ('pre-invite'|isState) || ('support.message'|isState),
     scroll: ('step1'|isState) || ('secured.print'|isState),
     modalOpen: modalOpen,
+    mobileMode: mobileMode,
+    rows: (layoutMode==='rows'),
+    tourActive: tourActive,
     themeJason: themeJason
 }">
 
-<div id="pm_background" ng-class="{ 'tablet': showSidebar }" ng-click="showSidebar = false" ng-hide="printMode"></div>
+<div
+id="pm_background"
+ng-hide="mobileMode"
+ng-class="{ 'tablet': showSidebar }"
+ng-click="showSidebar = false"
+ng-hide="printMode"></div>
 
 <div id="pm_slow">Loading ProtonMail...</div>
 <div id="pm_slow2" style="display:none;">Loading Message...</div>
 <div id="loading_pm">
-    <noscript style="padding: 2rem; display:block; text-align: center;">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
+    <noscript style="padding: 2rem; display:block; text-align: center; color: #fff">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
 </div>
 
 <div id="pm_loading" ng-class="{ 'show': networkActivity.loading() || loggingOut }">
@@ -84,6 +90,29 @@
     else {
         document.getElementById('pm_slow').style.display = 'block';
         document.getElementById('pm_slow2').style.display = 'none';
+    }
+
+    // required features check
+    function is_good_prng_available() {
+        if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
+            return true;
+        } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    if (navigator.cookieEnabled===false) {
+        alert('Cookies are required to use ProtonMail. Please enable cookies in your browser.');
+        window.location = "https://protonmail.com/compatibility";
+    }
+    if(typeof Storage === "undefined") {
+        alert('sessionStorage is required to use ProtonMail. Please enable sessionStorage in your browser.');
+        window.location = "https://protonmail.com/compatibility";
+    }
+    if (is_good_prng_available()===false) {
+        alert('A browser that has a Psudeo Random Number Generator is required to use ProtonMail. Please update your browser.');
+        window.location = "https://protonmail.com/compatibility";
     }
 </script>
 </body>

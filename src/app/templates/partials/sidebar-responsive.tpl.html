@@ -1,7 +1,12 @@
-<section id="pm_sidebarMobile" class="pm_opensans sidebar" ng-controller="SidebarController" ng-class="{ 'show': showSidebar }">
-    <a href="#" class="pm_button round pull-right" ng-click="hideMobileSidebar()">
+<section 
+id="pm_sidebarMobile" 
+ng-if="showSidebar && mobileMode" 
+class="pm_opensans sidebar" 
+ng-controller="SidebarController" 
+ng-class="{ 'show': showSidebar }">
+    <button class="pm_button round pull-right" ng-click="hideMobileSidebar()">
         <i class="fa fa-times"></i>
-    </a>
+    </button>
     <a class="logo">
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" />
     </a>
@@ -11,85 +16,85 @@
     </span>
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox')">
+            <button title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox')">
                 <i class="fa fa-inbox"></i>
                 <span>{{ 'INBOX' | translate }}</span>
                 <em ng-bind="unread('inbox')"></em>
-            </a>
+            </button>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
-            <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts')">
+            <button title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts')">
                 <i class="fa fa-file-text-o"></i>
                 <span>{{ 'DRAFTS' | translate }}</span>
                 <em ng-bind="unread('drafts')"></em>
-            </a>
+            </button>
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
-            <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent')">
+            <button title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent')">
                 <i class="fa fa-send"></i>
                 <span>{{ 'SENT' | translate }}</span>
-            </a>
+            </button>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
-            <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred')">
+            <button title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred')">
                 <i class="fa fa-star-o"></i>
                 <span>{{ 'STARRED' | translate }}</span>
                 <em ng-bind="unread('starred')"></em>
-            </a>
+            </button>
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
-            <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive')">
+            <button title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive')">
                 <i class="fa fa-archive"></i>
                 <span>{{ 'ARCHIVE' | translate }}</span>
                 <em ng-bind="unread('archive')"></em>
-            </a>
+            </button>
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
-            <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam')">
+            <button title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam')">
                 <i class="fa fa-ban"></i>
                 <span>{{ 'SPAM' | translate }}</span>
                 <em ng-bind="unread('spam')"></em>
-            </a>
+            </button>
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
-            <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash')">
+            <button title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash')">
                 <i class="fa fa-trash-o"></i>
                 <span>{{ 'TRASH' | translate }}</span>
                 <em ng-bind="unread('trash')"></em>
-            </a>
+            </button>
         </li>
         <li class="divider"></li>
         <li ng-class="{ active: ('secured.contacts.**' | includedByState) }">
-            <a href="#" title="{{ 'CONTACTS' | translate }}" ui-sref='secured.contacts' ng-click="hideMobileSidebar()">
+            <button title="{{ 'CONTACTS' | translate }}" ui-sref='secured.contacts' ng-click="hideMobileSidebar()">
                 <i class="fa fa-users"></i>
                 <span>{{ 'CONTACTS' | translate }}</span>
-            </a>
+            </button>
         </li>
         <li ng-class="{ active: ('secured.account.**' | includedByState) }">
-            <a href="#" title="{{ 'SETTINGS' | translate }}" ui-sref='secured.account' ng-click="hideMobileSidebar()">
+            <button title="{{ 'SETTINGS' | translate }}" ui-sref='secured.account' ng-click="hideMobileSidebar()">
                 <i class="fa fa-cogs"></i>
                 <span>{{ 'SETTINGS' | translate }}</span>
-            </a>
+            </button>
         </li>
         <li>
-            <a href="#" ng-click="openReportModal(); hideMobileSidebar();">
+            <button ng-click="openReportModal(); hideMobileSidebar();">
                 <i class="fa fa-bug"></i>
                 <span>{{ 'REPORT_BUG' | translate }}</span>
-            </a>
+            </button>
         </li>
         <li>
-            <a href="#" ng-click="logout(); hideMobileSidebar();">
+            <button ng-click="logout(); hideMobileSidebar();">
                 <i class="fa fa-power-off"></i>
                 <span>{{ 'LOG_OUT' | translate }}</span>
-            </a>
+            </button>
         </li>
         <li class="divider"></li>
-        <li ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
-            <a ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}">
+        <li class="label" ng-repeat="label in labels | orderBy: 'Order'" ng-class="{'active': activeLabel(label)}">
+            <button ui-sref="secured.label({label: '{{label.ID}}' })" title="{{ label.Name }}">
                 <i class="fa fa-tag" ng-style="color(label)"></i>
                 <span>{{ label.Name }}</span>
                 <em ng-bind="unread('label', label.ID)"></em>
-            </a>
+            </button>
         </li>
     </ul>
 </section>

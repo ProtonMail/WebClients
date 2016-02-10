@@ -66,7 +66,7 @@ $pad: 20px;
 
 }
 
-@media (max-width: $tablet-landscape) {
+body.mobileMode {
 	.pm_grid {
 		[class*='col-'] {
 			float: left;

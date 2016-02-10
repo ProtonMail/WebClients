@@ -22,11 +22,7 @@
     }
 }
 
-.ua-edge {
-    .rows#pm_conversations .list .pm_checkbox input {
-        margin-top: 11px;
-    }
-}
+.ua-edge {}
 
 .ua-ios {
     #pm_captcha {
@@ -44,11 +40,15 @@
 
 .ua-windows_nt {
     &.ua-firefox {
-        .columns#pm_conversations .list div.message aside label {
-            top: -9px;
-        }
         #pm_composer .composer .pm_button {
             line-height: 26px;
+        }
+        .pm_button,
+        .pm_buttons a {
+            line-height: 35px;;
+        }
+        #pm_sidebar section.sidebar .pm_button.round {
+            line-height: 30px;
         }
     }
 }
@@ -57,6 +57,9 @@
     .pm_button,
     .pm_buttons a {
         overflow: hidden;
+    }
+    body section.sidebar a.compose {
+        line-height: 40px;
     }
     header#pm_header .pull-right {
         height: 61px;
@@ -77,4 +80,21 @@ input:-moz-ui-invalid {
     box-shadow:none;
     -moz-box-shadow:none;
     -webkit-box-shadow:none;
+}
+
+
+.ua-safari {
+    .conversation .pm_labels label {
+        &:first-child,
+        &:hover {
+            position: relative;
+            top: -6px;
+        }
+    }
+    #conversation-view .summary .pm_labels label{
+        &:first-child {
+            position: relative;
+            top: -6px;
+        }
+    }
 }

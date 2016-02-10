@@ -18,4 +18,22 @@ body .cg-notify-message {
         background-color: #cc9393;
         border-color: #cc9393;
     }
+    &.bottom-right {
+        right: 2rem !important;
+        bottom: 1rem !important;
+        top: initial !important;
+        left: initial !important;
+    }
+}
+
+@media (max-width: 800px) {
+    html body .cg-notify-message {
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important; 
+        margin: 0 !important;
+        box-sizing: border-box;
+        border-radius: 0 !important;
+        top: 0 !important;
+    }
 }

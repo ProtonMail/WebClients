@@ -46,7 +46,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.selectedOrder = $stateParams.sort || "-date";
         $scope.page = parseInt($stateParams.page || 1);
         $scope.startWatchingEvent();
-        $scope.mobileResponsive();
         $scope.refreshConversations().then(function() {
             $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
@@ -54,12 +53,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $log.error(error);
         });
 
-        $scope.toolbarOffset();
-        $rootScope.$watch('layoutMode', function() {
-            $scope.toolbarOffset();
+        console.log($rootScope);
+
+        $rootScope.$on('stateChangeSuccess', function(event) {
+            if ($rootScope.welcome===true) {
+                $rootScope.$broadcast('tourStart');
+            }
         });
 
-        $timeout( $scope.mobileResponsive, 600);
     };
 
     $scope.watchElements = function() {
@@ -107,31 +108,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
     };
 
-    $scope.toolbarOffset = function() {
-        // This function calculates the width of the scrollbars (OS dependant) and tries to style the toolbar accordingly
-        function getScrollBarWidth () {
-            var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
-
-            widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
-            $outer.remove();
-
-            return 100 - widthWithScroll;
-        }
-        $('#pm_conversations #pm_toolbar').css('right', getScrollBarWidth());
-    };
-
-    $scope.mobileResponsive = function() {
-        if ($('body').outerWidth() < 1030) {
-            $rootScope.layoutMode = 'rows';
-        } else {
-            var layout = (authentication.user.ViewLayout === 0) ? 'columns' : 'rows';
-            $rootScope.layoutMode = layout;
-        }
-    };
-
     $scope.startWatchingEvent = function() {
-        angular.element($window).bind('resize', $scope.mobileResponsive);
-        angular.element($window).bind('orientationchange', $scope.mobileResponsive);
 
         $scope.$on('refreshConversations', function() {
             $scope.refreshConversations();
@@ -153,8 +130,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
-        angular.element($window).unbind('resize', $scope.mobileResponsive);
-        angular.element($window).unbind('orientationchange', $scope.mobileResponsive);
+        angular.element($window).unbind('resize', $rootScope.mobileResponsive);
+        angular.element($window).unbind('orientationchange', $rootScope.mobileResponsive);
     };
 
     $scope.actionsDelayed = function() {
@@ -596,51 +573,59 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $(window).on('resize', $scope.notifyUsersLayoutToggle);
 
     // Let users change the col/row modes.
-    $scope.toggleLayout = function() {
+    $scope.changeLayout = function(mode) {
 
         $scope.showTip = false;
+        var newLayout;
 
-        var currLayout = authentication.user.ViewLayout;
-        var newLayout = (!currLayout ? 1 : 0);
-
-        var apply = function(value) {
-            authentication.user.ViewLayout = value;
-
-            if(value === 0) {
-                console.log('$rootScope.layoutMode: set columns');
-                $rootScope.layoutMode = 'columns';
-            } else {
-                console.log('$rootScope.layoutMode: set rows');
-                $rootScope.layoutMode = 'rows';
-            }
-        };
+        if (mode === 'rows' && $rootScope.layoutMode!=='rows') {
+            newLayout = 1;
+        }
+        else if (mode === 'columns' && $rootScope.layoutMode!=='columns') {
+            newLayout = 0;
+        }
+        else if (mode === 'mobile') {
+            $rootScope.mobileMode = true;
+        }
 
         var error = function(error) {
             $log.error(error);
             notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
-            apply(currLayout);
         };
 
-        apply(newLayout);
-
-        networkActivityTracker.track(
-            Setting.setViewlayout({
-                "ViewLayout": newLayout
-            }).$promise.then(
-                function(response) {
-                    if(response.Code === 1000) {
-                        notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
-                    } else if (response.Error) {
-                        error(response.Error);
-                    } else {
-                        error();
+        if (
+            (mode === 'columns' && $rootScope.layoutMode!=='columns') ||
+            (mode === 'rows' && $rootScope.layoutMode!=='rows')
+        ) {
+            networkActivityTracker.track(
+                Setting.setViewlayout({
+                    "ViewLayout": newLayout
+                }).$promise.then(
+                    function(response) {
+                        if(response.Code === 1000) {
+                            notify({
+                                message: $translate.instant('LAYOUT_SAVED'),
+                                classes: 'notification-success'
+                            });
+                            $rootScope.mobileMode = false;
+                            $rootScope.layoutMode = mode;
+                            authentication.user.ViewLayout = newLayout;
+                            $rootScope.mobileResponsive();
+                        } else if (response.Error) {
+                            error(response.Error);
+                        } else {
+                            error();
+                        }
+                    },
+                    function(error) {
+                        error(error);
                     }
-                },
-                function(error) {
-                    error(error);
-                }
-            )
-        );
+                )
+            );
+        }
+
+        angular.element('#pm_toolbar-desktop a').tooltip('hide');
+
     };
 
     /**

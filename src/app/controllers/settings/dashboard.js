@@ -20,34 +20,11 @@ angular.module("proton.controllers.Settings")
     pmcw,
     subscriptions,
     supportModal,
-    CONSTANTS
+    CONSTANTS,
+    tools
 ) {
-    // Setting publishable key for Stripe
-    var setPublishableKeyForStripe = function() {
-        $window.Stripe.setPublishableKey(CONSTANTS.STRIPE_API_KEY);
-    };
-    /**
-    * Load stripe script
-    * https://stripe.com/docs/stripe.js
-    */
-    var script = $window.document.createElement('script');
-
-    script.type= 'text/javascript';
-    script.src = 'https://js.stripe.com/v2/';
-    $window.document.body.appendChild(script);
-
-    if(script.readyState) { // IE
-        script.onreadystatechange = function() {
-            if ( script.readyState === "loaded" || script.readyState === "complete" ) {
-                script.onreadystatechange = null;
-                setPublishableKeyForStripe();
-            }
-        };
-    } else { // Others
-        script.onload = function() {
-            setPublishableKeyForStripe();
-        };
-    }
+    // Load stripe JS
+    tools.loadStripe();
 
     // Default values for organization and subscription
     $scope.organization = null;

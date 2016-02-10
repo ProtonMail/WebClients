@@ -140,10 +140,17 @@
         border-bottom: 1px solid $border;
         color: $gray;
     }
+    tr {
+        &.disabled {
+            td {
+                color: $gray-medium;
+            }
+        }
+    }
 }
 
 
-@media (max-width: $mobile-landscape) {
+body.mobileMode {
     .pm_table {
         thead {
             display: none;

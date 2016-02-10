@@ -1,4 +1,11 @@
-<ng-include src="'templates/partials/header-auth.tpl.html'"></ng-include>
+<ng-include 
+ng-if="mobileMode === false" 
+src="'templates/partials/header-auth-desktop.tpl.html'"></ng-include>
+
+<ng-include 
+ng-if="mobileMode === true" 
+src="'templates/partials/header-auth-mobile.tpl.html'"></ng-include>
+
 <ng-include src="'templates/partials/sidebar.tpl.html'" id="pm_sidebar"></ng-include>
 
 <div id="pm_main" ui-view="content"></div>
@@ -6,4 +13,5 @@
 <!-- Composer controller -->
 <ng-include src="'templates/partials/composer.tpl.html'" id="pm_composer"></ng-include>
 
-<!-- <ng-include src="'templates/partials/safari.attachment.warning.tpl.html'"></ng-include> -->
+<!-- Wizard directive -->
+<wizard></wizard>

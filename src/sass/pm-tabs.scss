@@ -27,7 +27,7 @@
     }
 }
 
-@media (max-width: $mobile-landscape) {
+body.mobileMode {
     .pm_tabs {
         li {
             a {

@@ -1,6 +1,6 @@
 .pm_tag {
     font-style: normal;
-    background: $border;
+    background: $gray-light;
     padding: 0 .35rem;
     display: inline-block;
     margin: 0 .5rem;
@@ -8,5 +8,5 @@
     line-height: 18px;
     height: 18px;
     font-size: 10px;
-    color: $gray !important;
+    color: $text !important;
 }

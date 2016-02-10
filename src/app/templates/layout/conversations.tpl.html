@@ -1,5 +1,5 @@
-<!-- column mode -->
-<section ui-view="list">
+<!-- column mode: conversation list -->
+<section ui-view="list" class="column-mode">
     <toolbar></toolbar>
     <conversation-list></conversation-list>
     <conversation ui-view="view"></conversation>
@@ -15,6 +15,6 @@
 <section ui-view="list">
     <toolbar></toolbar>
     <conversation ui-view="view"></conversation>
-    <div id="pm_view" ui-view="view" ng-if="idDefined()"></div>
+    <div id="pm_view" ui-view="view" ng-if="idDefined() && !mobileMode"></div>
     <div ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns" ng-if="!idDefined()"></div>
 </section>

@@ -81,6 +81,7 @@ angular.module('proton', [
     'proton.transformation',
     'proton.maxComposerHeight',
     'proton.drag',
+    'proton.wizard',
     'proton.card',
 
     // Filters
@@ -202,6 +203,7 @@ angular.module('proton', [
     $window,
     authentication,
     networkActivityTracker,
+    CONSTANTS,
     notify,
     tools
 ) {
@@ -219,6 +221,10 @@ angular.module('proton', [
         $rootScope.showSidebar = !$rootScope.showSidebar;
     });
 
+    // Setup default modes... CHANGEME / PANDA / TODO
+    $rootScope.mobileMode = false;
+    $rootScope.sidebarMode = true;
+
     $rootScope.showWelcome = true;
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
@@ -231,6 +237,7 @@ angular.module('proton', [
 
     // SVG Polyfill for Edge
     svg4everybody();
+    svgeezy.init(false, 'png');
 
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
@@ -252,6 +259,37 @@ angular.module('proton', [
         position: 'center',
         maximumOpen: 5
     });
+
+    $rootScope.mobileResponsive = function() {
+        var bodyWidth = $('body').outerWidth();
+
+        // Force Mobile
+        if ( bodyWidth > CONSTANTS.MOBILE_BREAKPOINT ) {
+            $rootScope.mobileMode = false;
+            if (authentication.user && authentication.user.ViewLayout===0 && $rootScope.rowMode) {
+                $rootScope.rowMode = false;
+                $rootScope.layoutMode = 'columns';
+            }
+            else if (authentication.user && authentication.user.ViewLayout===1) {
+                $rootScope.rowMode = true;
+                $rootScope.layoutMode = 'rows';
+            }
+        }
+        else if ( bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT ) {
+            $rootScope.mobileMode = true;
+            $rootScope.rowMode = false;
+            $rootScope.layoutMode = 'columns';
+            $rootScope.$broadcast('tourEnd');
+        }
+    };
+
+    angular.element($window).bind('resize', $window._.debounce(function() {
+        $rootScope.mobileResponsive();
+    }, 30));
+    angular.element($window).bind('orientationchange', $rootScope.mobileResponsive());
+
+    $rootScope.mobileResponsive();
+
 })
 
 //
@@ -464,6 +502,11 @@ angular.module('proton', [
         }
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
+
+        $timeout( function() {
+            $rootScope.mobileResponsive();
+        }, 30);
+
     });
 })
 
@@ -489,8 +532,8 @@ angular.module('proton', [
 //
 
 .run(function($log) {
-    $log.info('Find a security bug? security@protonmail.com');
-    $log.info('We\'re hiring! https://protonmail.com/pages/join-us.html');
+    $log.info('Find a security bug? security@protonmail.ch');
+    $log.info('We\'re hiring! https://protonmail.com/careers');
 })
 
 //

@@ -1,6 +1,6 @@
-<section id="pm_latest" ng-show="showWelcome === true" pt-height>
+<div id="pm_latest" ng-show="showWelcome === true" ng-if="!idDefined() && !mobileMode">
     <header>Welcome, {{ user.DisplayName }}</header>
-    <p>You have {{ numberElementUnread }} unread conversations.</p>
+    <p class="text-center">You have <strong>{{ numberElementUnread }}</strong> unread conversations.</p>
     <section id="storageStatus">
     	<div class="wrap">
             <div class="storageArea">
@@ -37,9 +37,9 @@
             </section>
         </div>
     </div>
-</section>
+</div>
 
-<section id="pm_placeholder" ng-show="showWelcome === false">
+<div id="pm_placeholder" ng-show="showWelcome === false" ng-if="!idDefined() && !mobileMode">
     <i class="fa fa-check-square"></i>
     <h2 ng-show="numberElementChecked === 1">{{ numberElementChecked }} {{ 'CONVERSATION_SELECTED' | translate }}</h2>
     <h2 ng-show="numberElementChecked > 1">{{ numberElementChecked }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
@@ -48,4 +48,4 @@
             <strong>{{ 'DESELECT_ALL' | translate }}</strong>
         </a>
     </span>
-</section>
+</div>

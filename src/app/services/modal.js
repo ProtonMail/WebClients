@@ -1402,4 +1402,126 @@ angular.module("proton.modals", [])
             };
         }
     });
+})
+
+.factory('donateModal', function(pmModal, Payment, notify, tools, $translate) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/donate.tpl.html',
+        controller: function(params) {
+            // Load Stripe library
+            tools.loadStripe();
+            // Variables
+            this.text = params.message || 'Donate to ProtonMail';
+            this.amount = params.amount || 25;
+            this.currencies = [
+                {label: 'USD', value: 'USD'},
+                {label: 'EUR', value: 'EUR'},
+                {label: 'CHF', value: 'CHF'}
+            ];
+            this.currency = this.currencies[0];
+            this.number = '';
+            this.month = '';
+            this.year = '';
+            this.cvc = '';
+            this.fullname = '';
+
+            if (angular.isDefined(params.currency)) {
+                var index = _.findIndex(this.currencies, {value: params.currency});
+
+                if (index !== -1) {
+                    this.currency = this.currencies[index];
+                }
+            }
+
+            // Functions
+            var check = function() {
+                if ($window.Stripe.card.validateCardNumber(this.number) === false) {
+                    throw new Error($translate.instant('CARD_NUMER_INVALID'));
+                }
+
+                if ($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
+                    throw new Error($translate.instant('EXPIRY_INVALID'));
+                }
+
+                if ($window.Stripe.card.validateCVC(this.cvc) === false) {
+                    throw new Error($translate.instant('CVC_INVALID'));
+                }
+            };
+
+            this.donate = function() {
+                var now = moment().unix();
+
+                try {
+                    check();
+                    Payment.donate({
+                        Donation: {
+                            Amount: this.amount * 100,
+                            Currency: this.currency.value,
+                            Time: now,
+                            ExternalProvider: 'Stripe'
+                        },
+                        Source: {
+                            Object: 'card',
+                            Number: this.number,
+                            ExpMonth: this.month,
+                            ExpYear: this.year,
+                            CVC: this.cvc,
+                            Name: this.fullname
+                        }
+                    })
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            this.close();
+                        } else if (result.data && result.data.Error) {
+                            throw new Error(result.data.Error);
+                        } else {
+                            throw new Error($translate.instant('ERROR_DURING_DONATION_REQUEST'));
+                        }
+                    }.bind(this));
+                } catch (error) {
+                    notify({message: error, classes: 'notification-danger'});
+                } finally {
+
+                }
+            };
+
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
+})
+
+.factory('monetizeModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/monetize.tpl.html',
+        controller: function(params) {
+            this.amounts = [5, 10, 25, 50, 100];
+            this.currencies = ['EUR', 'USD', 'CHF'];
+            this.amount = 25; // default value for the amount
+            this.currency = 'USD'; // default currency
+
+            this.donate = function() {
+                if (angular.isDefined(params.donate) && angular.isFunction(params.donate)) {
+                    params.donate();
+                }
+            };
+
+            this.upgrade = function() {
+                if (angular.isDefined(params.upgrade) && angular.isFunction(params.upgrade)) {
+                    params.upgrade();
+                }
+            };
+
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    params.close();
+                }
+            };
+        }
+    });
 });
