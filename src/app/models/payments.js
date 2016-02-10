@@ -150,8 +150,8 @@ angular.module("proton.models.payments", [])
         /**
          * Apply coupon
          */
-         coupon: function(coupon, billingCycle) {
-             return $http.get(url.get() + '/payments/coupon/' + billingCycle + '/' + coupon);
+         coupons: function(coupon, params) {
+             return $http.get(url.get() + '/payments/coupons/' + coupon, params);
          },
          /**
           * return the public key to encrypt the credit card information formatted
