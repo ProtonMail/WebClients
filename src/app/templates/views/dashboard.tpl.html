@@ -166,232 +166,258 @@
                             </div>
                         </div>
                     </header>
-                    <div class="plans vertical">
-                        <div class="plan" ng-class="{'selected': subscription.Plan === 'basic'}" ng-if="false">
-                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
-                            <h3>
-                                ProtonMail
-                                <strong>Basic</strong>
-                            </h3>
-                            <div class="details">
+                    <div class="pm_grid plans">
+                        <div class="col-1-4">
+                            <div class="plan" ng-class="{'selected': subscription.Plan === 'plus'}">
+                                <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
+                                <h3>
+                                    ProtonMail
+                                    <strong>Plus</strong>
+                                </h3>
                                 <ul class="features">
                                     <li>
                                         <i class="fa fa-check"></i>
-                                        <strong>1000 MB Storage</strong>
+                                        <i class="fa fa-times"></i>
+                                        <span class="pm_select">
+                                            <select ng-model="spacePlus" ng-options="option.label for option in spacePlusOptions"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                        <strong>{{ 'STORAGE' | translate }}</strong>
+                                        <span class="cost" ng-show="(spacePrice[futureBillingCycle] * spacePlus.index) > 0">
+                                            <strong>+ {{ spacePrice[futureBillingCycle] * spacePlus.index | number: 2 | currency: futureCurrency }}</strong>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <span class="pm_select">
+                                            <select ng-model="domainPlus" ng-options="option.label for option in domainPlusOptions"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                        <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                        <span class="cost" ng-show="(domainPrice[futureBillingCycle] * domainPlus.index) > 0">
+                                            <strong>+ {{ domainPrice[futureBillingCycle] * domainPlus.index | number: 2 | currency: futureCurrency }}</strong>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <span class="pm_select">
+                                            <select ng-model="addressPlus" ng-options="option.label for option in addressPlusOptions"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                        <strong> {{ 'ADDRESSES' | translate }}</strong>
+                                        <span class="cost" ng-show="(addressPrice[futureBillingCycle] * addressPlus.index) > 0">
+                                            <strong>+ {{ addressPrice[futureBillingCycle] * addressPlus.index | number: 2 | currency: futureCurrency }}</strong>
+                                        </span>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'USER_MASTER_SUB' | translate }}</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'DEDICATED_ACCOUNT_MANAGER' | translate }}</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
                                     </li>
                                 </ul>
-                                <table class="pm_table plain">
-                                    <tr>
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="price">
-                                <strong>Total:</strong> <span>{{ 'FREE' | translate }}</span>
-                            </div>
-                            <div class="action" ng-class="{'white': subscription.Plan === 'basic'}">
-                                <a href="#">
-                                    <strong>{{ 'BASIC_PLAN_SETTINGS' | translate }}</strong>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="plan" ng-class="{'selected': subscription.Plan === 'plus'}">
-                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
-                            <h3>
-                                ProtonMail
-                                <strong>Plus</strong>
-                            </h3>
-                            <ul class="features">
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <span class="pm_select">
-                                        <select ng-model="spacePlus" ng-options="option.label for option in spacePlusOptions"></select>
-                                        <i class="fa fa-angle-down"></i>
+                                <div class="price">
+                                    <strong>{{ 'TOTAL' | translate }}:</strong>
+                                    <span>
+                                        {{ total('plus') | number: 2 | currency: futureCurrency }}
+                                        <span ng-show="futureBillingCycle === 1">{{ 'PER_MONTH' | translate }}</span>
+                                        <span ng-show="futureBillingCycle === 12">{{ 'PER_YEAR' | translate }}</span>
                                     </span>
-                                    <strong>{{ 'STORAGE' | translate }}</strong>
-                                    <span class="cost" ng-show="(spacePrice[futureBillingCycle] * spacePlus.index) > 0">
-                                        <strong>+ {{ spacePrice[futureBillingCycle] * spacePlus.index | number: 2 | currency: futureCurrency }}</strong>
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <span class="pm_select">
-                                        <select ng-model="domainPlus" ng-options="option.label for option in domainPlusOptions"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                    <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
-                                    <span class="cost" ng-show="(domainPrice[futureBillingCycle] * domainPlus.index) > 0">
-                                        <strong>+ {{ domainPrice[futureBillingCycle] * domainPlus.index | number: 2 | currency: futureCurrency }}</strong>
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <span class="pm_select">
-                                        <select ng-model="addressPlus" ng-options="option.label for option in addressPlusOptions"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                    <strong> {{ 'ADDRESSES' | translate }}</strong>
-                                    <span class="cost" ng-show="(addressPrice[futureBillingCycle] * addressPlus.index) > 0">
-                                        <strong>+ {{ addressPrice[futureBillingCycle] * addressPlus.index | number: 2 | currency: futureCurrency }}</strong>
-                                    </span>
-                                </li>
-                                <li class="disabled">
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>{{ 'USER_MASTER_SUB' | translate }}</strong>
-                                </li>
-                                <li class="disabled">
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>{{ 'DEDICATED_ACCOUNT_MANAGER' | translate }}</strong>
-                                </li>
-                                <li class="disabled">
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
-                                </li>
-                            </ul>
-                            <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong>
-                                <span>
-                                    {{ total('plus') | number: 2 | currency: futureCurrency }}
-                                    <span ng-show="futureBillingCycle === 1">{{ 'PER_MONTH' | translate }}</span>
-                                    <span ng-show="futureBillingCycle === 12">{{ 'PER_YEAR' | translate }}</span>
-                                </span>
-                            </div>
-                            <div class="action">
-                                <a href="#" ng-click="choose('plus')" class="pm_button primary">
-                                    <strong>{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
-                                </a>
+                                </div>
+                                <div class="action">
+                                    <a href="#" ng-click="choose('plus')" class="pm_button primary">
+                                        <strong>{{ 'PLUS_PLAN_SETTINGS' | translate }}</strong>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="plan middle" ng-class="{'selected': subscription.Plan === 'business'}">
-                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
-                            <h3>
-                                ProtonMail
-                                <strong>Business</strong>
+                        <div class="col-1-4">
+                            <div class="plan" ng-class="{'selected': subscription.Plan === 'plus'}">
+                                <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
+                                <h3>
+                                    ProtonMail
+                                    <strong>Visionary</strong>
+                                </h3>
+                                <ul class="features">
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>20 GB {{ 'STORAGE' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>10 {{ 'CUSTOM_DOMAINS' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>50 {{ 'ADDRESSES' | translate }}</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'USER_MASTER_SUB' | translate }}</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'DEDICATED_ACCOUNT_MANAGER' | translate }}</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
+                                    </li>
+                                </ul>
+                                <div class="price">
+                                    <strong>{{ 'TOTAL' | translate }}:</strong>
+                                    <span>
+                                        {{ total('visionary') | number: 2 | currency: futureCurrency }}
+                                        <span ng-show="futureBillingCycle === 1">{{ 'PER_MONTH' | translate }}</span>
+                                        <span ng-show="futureBillingCycle === 12">{{ 'PER_YEAR' | translate }}</span>
+                                    </span>
+                                </div>
+                                <div class="action">
+                                    <a href="#" ng-click="choose('visionary')" class="pm_button primary">
+                                        <strong>{{ 'VISIONARY_PLAN_SETTINGS' | translate }}</strong>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1-4">
+                            <div class="plan" ng-class="{'selected': subscription.Plan === 'business'}">
+                                <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
+                                <h3>
+                                    ProtonMail
+                                    <strong>Business</strong>
+                                </h3>
                                 <small>{{ 'COMING_SOON' | translate }}</small>
-                            </h3>
-                            <ul class="features">
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <span class="pm_select">
-                                        <select ng-model="spaceBusiness" ng-options="option.label for option in spaceBusinessOptions"></select>
-                                        <i class="fa fa-angle-down"></i>
+                                <ul class="features">
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <span class="pm_select">
+                                            <select ng-model="spaceBusiness" ng-options="option.label for option in spaceBusinessOptions"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                        <strong>{{ 'STORAGE' | translate }}</strong>
+                                        <span class="cost" ng-show="spaceBusiness.index > 0">
+                                            <strong>+ {{ spacePrice[futureBillingCycle] * spaceBusiness.index | number: 2 | currency: futureCurrency }}</strong>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <span class="pm_select">
+                                            <select ng-model="domainBusiness" ng-options="option.label for option in domainBusinessOptions"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                        <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                        <span class="cost" ng-show="domainBusiness.index > 0">
+                                            <strong>+ {{ domainPrice[futureBillingCycle] * domainBusiness.index | number: 2 | currency: futureCurrency }}</strong>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <span class="pm_select">
+                                            <select ng-model="addressBusiness" ng-options="option.label for option in addressBusinessOptions"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                        <strong> {{ 'ADDRESSES' | translate }}</strong>
+                                        <span class="cost" ng-show="addressBusiness.index > 0">
+                                            <strong>+ {{ addressPrice[futureBillingCycle] * addressBusiness.index | number: 2 | currency: futureCurrency }}</strong>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <span class="pm_select">
+                                            <select ng-model="memberBusiness" ng-options="option.label for option in memberBusinessOptions"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                        <strong>{{ 'USER_MASTER_SUB' | translate }}</strong>
+                                        <span class="cost" ng-show="memberBusiness.index > 0">
+                                            <strong>+ {{ memberPrice[futureBillingCycle] * memberBusiness.index | number: 2 | currency: futureCurrency }}</strong>
+                                        </span>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'DEDICATED_ACCOUNT_MANAGER' | translate }}</strong>
+                                    </li>
+                                    <li class="disabled">
+                                        <i class="fa fa-check"></i>
+                                        <i class="fa fa-times"></i>
+                                        <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
+                                    </li>
+                                </ul>
+                                <div class="price">
+                                    <strong>{{ 'TOTAL' | translate }}:</strong>
+                                    <span>
+                                        {{ total('business') | number: 2 | currency: futureCurrency }}
+                                        <span ng-show="futureBillingCycle === 1">{{ 'PER_MONTH' | translate }}</span>
+                                        <span ng-show="futureBillingCycle === 12">{{ 'PER_YEAR' | translate }}</span>
                                     </span>
-                                    <strong>{{ 'STORAGE' | translate }}</strong>
-                                    <span class="cost" ng-show="spaceBusiness.index > 0">
-                                        <strong>+ {{ spacePrice[futureBillingCycle] * spaceBusiness.index | number: 2 | currency: futureCurrency }}</strong>
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <span class="pm_select">
-                                        <select ng-model="domainBusiness" ng-options="option.label for option in domainBusinessOptions"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                    <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
-                                    <span class="cost" ng-show="domainBusiness.index > 0">
-                                        <strong>+ {{ domainPrice[futureBillingCycle] * domainBusiness.index | number: 2 | currency: futureCurrency }}</strong>
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <span class="pm_select">
-                                        <select ng-model="addressBusiness" ng-options="option.label for option in addressBusinessOptions"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                    <strong> {{ 'ADDRESSES' | translate }}</strong>
-                                    <span class="cost" ng-show="addressBusiness.index > 0">
-                                        <strong>+ {{ addressPrice[futureBillingCycle] * addressBusiness.index | number: 2 | currency: futureCurrency }}</strong>
-                                    </span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <span class="pm_select">
-                                        <select ng-model="memberBusiness" ng-options="option.label for option in memberBusinessOptions"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                    <strong>{{ 'USER_MASTER_SUB' | translate }}</strong>
-                                    <span class="cost" ng-show="memberBusiness.index > 0">
-                                        <strong>+ {{ memberPrice[futureBillingCycle] * memberBusiness.index | number: 2 | currency: futureCurrency }}</strong>
-                                    </span>
-                                </li>
-                                <li class="disabled">
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>{{ 'DEDICATED_ACCOUNT_MANAGER' | translate }}</strong>
-                                </li>
-                                <li class="disabled">
-                                    <i class="fa fa-check"></i>
-                                    <i class="fa fa-times"></i>
-                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
-                                </li>
-                            </ul>
-                            <div class="price">
-                                <strong>{{ 'TOTAL' | translate }}:</strong>
-                                <span>
-                                    {{ total('business') | number: 2 | currency: futureCurrency }}
-                                    <span ng-show="futureBillingCycle === 1">{{ 'PER_MONTH' | translate }}</span>
-                                    <span ng-show="futureBillingCycle === 12">{{ 'PER_YEAR' | translate }}</span>
-                                </span>
-                            </div>
-                            <div class="action">
-                                <a href="#" ng-click="choose('business')" class="pm_button primary">
-                                    <strong>{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
-                                </a>
+                                </div>
+                                <div class="action">
+                                    <a href="#" ng-click="choose('business')" class="pm_button primary">
+                                        <strong>{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="plan" ng-class="{'selected': subscription.Plan === 'enterprise'}">
-                            <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
-                            <h3>
-                                ProtonMail
-                                <strong>Enterprise</strong>
+                        <div class="col-1-4">
+                            <div class="plan" ng-class="{'selected': subscription.Plan === 'enterprise'}">
+                                <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
+                                <h3>
+                                    ProtonMail
+                                    <strong>Enterprise</strong>
+                                </h3>
                                 <small>{{ 'COMING_SOON' | translate }}</small>
-                            </h3>
-                            <ul class="features">
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'UP_TO_1000_GB_STORAGE' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'UP_TO_50_CUSTOM_DOMAINS' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'UP_TO_10000_ADDRESSES' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'UP_TO_1000_USERS' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'DEDICATED_ACCOUNT_MANAGER' | translate }}</strong>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check"></i>
-                                    <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
-                                </li>
-                            </ul>
-                            <div class="price text-center">
-                                {{ 'CONTACT_US_FOR_MORE_INFORMATION' | translate }}
-                            </div>
-                            <div class="action">
-                                <a href="#" ng-click="enterprise()" class="pm_button primary">
-                                    <strong>{{ 'CONTACT_OUR_SALES_TEAM' | translate }}</strong>
-                                </a>
+                                <ul class="features">
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>{{ 'UP_TO_1000_GB_STORAGE' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>{{ 'UP_TO_50_CUSTOM_DOMAINS' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>{{ 'UP_TO_10000_ADDRESSES' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>{{ 'UP_TO_1000_USERS' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>{{ 'DEDICATED_ACCOUNT_MANAGER' | translate }}</strong>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                        <strong>{{ 'PRIORITY_CUSTOMER_SUPPORT' | translate }}</strong>
+                                    </li>
+                                </ul>
+                                <div class="price text-center">
+                                    {{ 'CONTACT_US_FOR_MORE_INFORMATION' | translate }}
+                                </div>
+                                <div class="action">
+                                    <a href="#" ng-click="enterprise()" class="pm_button primary">
+                                        <strong>{{ 'CONTACT_OUR_SALES_TEAM' | translate }}</strong>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

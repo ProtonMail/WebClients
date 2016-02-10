@@ -66,6 +66,7 @@ angular.module("proton.controllers.Settings")
     // Prices
     $scope.plusPrice = {1: 5, 12: 47};
     $scope.businessPrice = {1: 10, 12: 97};
+    $scope.visionaryPrice = {1: 30, 12: 299.99};
     $scope.spacePrice = {1: 1, 12: 9.99};
     $scope.domainPrice = {1: 2, 12: 19.98};
     $scope.addressPrice = {1: 2, 12: 19.98};
@@ -238,6 +239,8 @@ angular.module("proton.controllers.Settings")
             total += $scope.domainBusiness.index * $scope.domainPrice[$scope.futureBillingCycle];
             total += $scope.addressBusiness.index * $scope.addressPrice[$scope.futureBillingCycle];
             total += $scope.memberBusiness.index * $scope.memberPrice[$scope.futureBillingCycle];
+        } else if (name === 'visionary') {
+            total += $scope.visionaryPrice[$scope.futureBillingCycle];
         }
 
         return total;
@@ -334,6 +337,16 @@ angular.module("proton.controllers.Settings")
                     MaxMembers: $scope.memberBusiness.value,
                     MaxAddresses: $scope.addressBusiness.value,
                     MaxSpace: $scope.spaceBusiness.value
+                };
+                break;
+            case 'visionary':
+                future = {
+                    Plan: name,
+                    Use2FA: 0,
+                    MaxDomains: 10,
+                    MaxMembers: 1,
+                    MaxAddresses: 50,
+                    MaxSpace: 21474836480
                 };
                 break;
             default:
