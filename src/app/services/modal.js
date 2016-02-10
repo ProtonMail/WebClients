@@ -341,7 +341,7 @@ angular.module("proton.modals", [])
 })
 
 // Card modal
-.factory('cardModal', function(pmModal, Payment, notify, $translate, $window) {
+.factory('cardModal', function(pmModal, Payment, notify, pmcw, $translate, $window) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -355,6 +355,89 @@ angular.module("proton.modals", [])
             this.month = params.card.ExpMonth;
             this.year = params.card.ExpYear;
             this.cvc = '•••';
+            this.zip =
+            this.countries = [
+                {value: 'AD', label: 'Andorra'},
+                {value: 'AE',  label: 'United Arab Emirates'},
+                {value: 'AL',  label: 'Albania'},
+                {value: 'AO',  label: 'Angola'},
+                {value: 'AT',  label: 'Austria'},
+                {value: 'AZ',  label: 'Azerbaijan'},
+                {value: 'BA',  label: 'Bosnia and Herzegovina'},
+                {value: 'BE',  label: 'Belgium'},
+                {value: 'BF',  label: 'Burkina Faso'},
+                {value: 'BG',  label: 'Bulgaria'},
+                {value: 'BH',  label: 'Bahrain'},
+                {value: 'BI',  label: 'Burundi'},
+                {value: 'BJ',  label: 'Benin'},
+                {value: 'BR',  label: 'Brazil'},
+                {value: 'CH',  label: 'Switzerland'},
+                {value: 'CI',  label: 'Ivory Coast'},
+                {value: 'CM',  label: 'Cameroon'},
+                {value: 'CR',  label: 'Costa Rica'},
+                {value: 'CV',  label: 'Cape Verde'},
+                {value: 'CY',  label: 'Cyprus'},
+                {value: 'CZ',  label: 'Czech Republic'},
+                {value: 'DE',  label: 'Germany'},
+                {value: 'DK',  label: 'Denmark'},
+                {value: 'DO',  label: 'Dominican Republic'},
+                {value: 'DZ',  label: 'Algeria'},
+                {value: 'EE',  label: 'Estonia'},
+                {value: 'ES',  label: 'Spain'},
+                {value: 'FI',  label: 'Finland'},
+                {value: 'FO',  label: 'Faroe Islands'},
+                {value: 'FR',  label: 'France'},
+                {value: 'GB',  label: 'United Kingdom'},
+                {value: 'GE',  label: 'Georgia'},
+                {value: 'GI',  label: 'Gibraltar'},
+                {value: 'GL',  label: 'Greenland['},
+                {value: 'GR',  label: 'Greece'},
+                {value: 'GT',  label: 'Guatemala'},
+                {value: 'HR',  label: 'Croatia'},
+                {value: 'HU',  label: 'Hungary'},
+                {value: 'IE',  label: 'Ireland'},
+                {value: 'IL',  label: 'Israel'},
+                {value: 'IR',  label: 'Iran'},
+                {value: 'IS',  label: 'Iceland'},
+                {value: 'IT',  label: 'Italy'},
+                {value: 'JO',  label: 'Jordan'},
+                {value: 'KW',  label: 'Kuwait'},
+                {value: 'KZ',  label: 'Kazakhstan'},
+                {value: 'LB',  label: 'Lebanon'},
+                {value: 'LI',  label: 'Liechtenstein'},
+                {value: 'LT',  label: 'Lithuania'},
+                {value: 'LU',  label: 'Luxembourg'},
+                {value: 'LV',  label: 'Latvia'},
+                {value: 'MC',  label: 'Monaco'},
+                {value: 'MD',  label: 'Moldova'},
+                {value: 'ME',  label: 'Montenegro'},
+                {value: 'MG',  label: 'Madagascar'},
+                {value: 'MK',  label: 'Macedonia'},
+                {value: 'ML',  label: 'Mali'},
+                {value: 'MR',  label: 'Mauritania'},
+                {value: 'MT',  label: 'Malta'},
+                {value: 'MU',  label: 'Mauritius'},
+                {value: 'MZ',  label: 'Mozambique'},
+                {value: 'NL',  label: 'Netherlands'},
+                {value: 'NO',  label: 'Norway'},
+                {value: 'PK',  label: 'Pakistan'},
+                {value: 'PL',  label: 'Poland'},
+                {value: 'PS',  label: 'Palestinian'},
+                {value: 'PT',  label: 'Portugal'},
+                {value: 'QA',  label: 'Qatar'},
+                {value: 'RO',  label: 'Romania'},
+                {value: 'RS',  label: 'Serbia'},
+                {value: 'SA',  label: 'Saudi Arabia'},
+                {value: 'SE',  label: 'Sweden'},
+                {value: 'SI',  label: 'Slovenia'},
+                {value: 'SK',  label: 'Slovakia'},
+                {value: 'SM',  label: 'San Marino'},
+                {value: 'SN',  label: 'Senegal'},
+                {value: 'TN',  label: 'Tunisia'},
+                {value: 'TR',  label: 'Turkey'},
+                {value: 'VG',  label: 'Virgin Islands, British'}
+            ];
+            this.country = this.countries[0];
             this.change = false;
             // Functions
             this.submit = function() {
@@ -362,27 +445,41 @@ angular.module("proton.modals", [])
 
                 var stripeResponseHandler = function(status, response) {
                     if(status === 200) {
-                        // Send request to change credit card
-                        Payment.change({
+                        pmcw.encryptMessage(angular.toJson({
                             Source: {
-                                Object: 'token',
-                                Token: response.id,
-                                ExternalSourceID: params.card.ExternalSourceID
+                                Object: 'card',
+                                Number: this.number,
+                                ExpMonth: this.month,
+                                ExpYear: this.year,
+                                CVC: this.cvc,
+                                Name: this.fullname,
+                                Country: this.country.value,
+                                ZIP: this.zip
                             }
-                        }).then(function(result) {
-                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                                notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
-                                params.cancel();
-                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                                this.process = false;
-                                notify({message: result.data.Error, classes: 'notification-danger'});
-                            } else {
+                        }), params.key).then(function(metadata) {
+                            // Send request to change credit card
+                            Payment.change({
+                                Source: {
+                                    Metadata: metadata,
+                                    Object: 'token',
+                                    Token: response.id,
+                                    ExternalSourceID: params.card.ExternalSourceID
+                                }
+                            }).then(function(result) {
+                                if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                    notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
+                                    params.cancel();
+                                } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                                    this.process = false;
+                                    notify({message: result.data.Error, classes: 'notification-danger'});
+                                } else {
+                                    this.process = false;
+                                    notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
+                                }
+                            }.bind(this), function(error) {
                                 this.process = false;
                                 notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
-                            }
-                        }.bind(this), function(error) {
-                            this.process = false;
-                            notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
+                            }.bind(this));
                         }.bind(this));
                     } else if(angular.isDefined(response.error)) {
                         notify({message: response.error.message, classes: 'notification-danger'});
@@ -413,7 +510,10 @@ angular.module("proton.modals", [])
                     number: this.number,
                     cvc: this.cvc,
                     exp_month: this.month,
-                    exp_year: this.year
+                    exp_year: this.year,
+                    address_country: this.country.value,
+                    address_zip: this.zip
+
                 }, stripeResponseHandler);
             };
 
@@ -508,10 +608,90 @@ angular.module("proton.modals", [])
             this.create = params.create;
             this.base = CONSTANTS.BASE_SIZE;
             this.coupon = false;
+            this.countries = [
+                {value: 'AD', label: 'Andorra'},
+                {value: 'AE',  label: 'United Arab Emirates'},
+                {value: 'AL',  label: 'Albania'},
+                {value: 'AO',  label: 'Angola'},
+                {value: 'AT',  label: 'Austria'},
+                {value: 'AZ',  label: 'Azerbaijan'},
+                {value: 'BA',  label: 'Bosnia and Herzegovina'},
+                {value: 'BE',  label: 'Belgium'},
+                {value: 'BF',  label: 'Burkina Faso'},
+                {value: 'BG',  label: 'Bulgaria'},
+                {value: 'BH',  label: 'Bahrain'},
+                {value: 'BI',  label: 'Burundi'},
+                {value: 'BJ',  label: 'Benin'},
+                {value: 'BR',  label: 'Brazil'},
+                {value: 'CH',  label: 'Switzerland'},
+                {value: 'CI',  label: 'Ivory Coast'},
+                {value: 'CM',  label: 'Cameroon'},
+                {value: 'CR',  label: 'Costa Rica'},
+                {value: 'CV',  label: 'Cape Verde'},
+                {value: 'CY',  label: 'Cyprus'},
+                {value: 'CZ',  label: 'Czech Republic'},
+                {value: 'DE',  label: 'Germany'},
+                {value: 'DK',  label: 'Denmark'},
+                {value: 'DO',  label: 'Dominican Republic'},
+                {value: 'DZ',  label: 'Algeria'},
+                {value: 'EE',  label: 'Estonia'},
+                {value: 'ES',  label: 'Spain'},
+                {value: 'FI',  label: 'Finland'},
+                {value: 'FO',  label: 'Faroe Islands'},
+                {value: 'FR',  label: 'France'},
+                {value: 'GB',  label: 'United Kingdom'},
+                {value: 'GE',  label: 'Georgia'},
+                {value: 'GI',  label: 'Gibraltar'},
+                {value: 'GL',  label: 'Greenland['},
+                {value: 'GR',  label: 'Greece'},
+                {value: 'GT',  label: 'Guatemala'},
+                {value: 'HR',  label: 'Croatia'},
+                {value: 'HU',  label: 'Hungary'},
+                {value: 'IE',  label: 'Ireland'},
+                {value: 'IL',  label: 'Israel'},
+                {value: 'IR',  label: 'Iran'},
+                {value: 'IS',  label: 'Iceland'},
+                {value: 'IT',  label: 'Italy'},
+                {value: 'JO',  label: 'Jordan'},
+                {value: 'KW',  label: 'Kuwait'},
+                {value: 'KZ',  label: 'Kazakhstan'},
+                {value: 'LB',  label: 'Lebanon'},
+                {value: 'LI',  label: 'Liechtenstein'},
+                {value: 'LT',  label: 'Lithuania'},
+                {value: 'LU',  label: 'Luxembourg'},
+                {value: 'LV',  label: 'Latvia'},
+                {value: 'MC',  label: 'Monaco'},
+                {value: 'MD',  label: 'Moldova'},
+                {value: 'ME',  label: 'Montenegro'},
+                {value: 'MG',  label: 'Madagascar'},
+                {value: 'MK',  label: 'Macedonia'},
+                {value: 'ML',  label: 'Mali'},
+                {value: 'MR',  label: 'Mauritania'},
+                {value: 'MT',  label: 'Malta'},
+                {value: 'MU',  label: 'Mauritius'},
+                {value: 'MZ',  label: 'Mozambique'},
+                {value: 'NL',  label: 'Netherlands'},
+                {value: 'NO',  label: 'Norway'},
+                {value: 'PK',  label: 'Pakistan'},
+                {value: 'PL',  label: 'Poland'},
+                {value: 'PS',  label: 'Palestinian'},
+                {value: 'PT',  label: 'Portugal'},
+                {value: 'QA',  label: 'Qatar'},
+                {value: 'RO',  label: 'Romania'},
+                {value: 'RS',  label: 'Serbia'},
+                {value: 'SA',  label: 'Saudi Arabia'},
+                {value: 'SE',  label: 'Sweden'},
+                {value: 'SI',  label: 'Slovenia'},
+                {value: 'SK',  label: 'Slovakia'},
+                {value: 'SM',  label: 'San Marino'},
+                {value: 'SN',  label: 'Senegal'},
+                {value: 'TN',  label: 'Tunisia'},
+                {value: 'TR',  label: 'Turkey'},
+                {value: 'VG',  label: 'Virgin Islands, British'}
+            ];
+            this.country = this.countries[0];
 
-            if(params.card.data.Code === 1000 && params.card.data.Sources.length > 0) {
-                var card = _.first(params.card.data.Sources);
-
+            if(angular.isDefined(params.card)) {
                 this.source = card.ExternalSourceID;
                 this.number = '•••• •••• •••• ' + card.Last4;
                 this.fullname = card.Name;
@@ -553,6 +733,32 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             /**
+             * Encrypt metadata with public key
+             */
+            var encryptMetadata = function() {
+                var deferred = $q.defer();
+                var data = {
+                    Source: {
+                        Object: 'card',
+                        Number: this.number,
+                        ExpMonth: this.month,
+                        ExpYear: this.year,
+                        CVC: this.cvc,
+                        Name: this.fullname,
+                        Country: this.country.value,
+                        ZIP: this.zip
+                    }
+                };
+
+                pmcw.encryptMessage(angular.toJson(data), params.key).then(function(result) {
+                    this.config.Source.Metadata = result;
+                    deferred.resolve();
+                }.bind(this));
+
+                return deferred.promise;
+            };
+
+            /**
              * Generate token with Stripe library
              */
             var generateStripeToken = function() {
@@ -580,7 +786,9 @@ angular.module("proton.modals", [])
                     number: this.number,
                     cvc: this.cvc,
                     exp_month: this.month,
-                    exp_year: this.year
+                    exp_year: this.year,
+                    address_country: this.country.value,
+                    address_zip: this.zip
                 }, stripeResponseHandler);
             }.bind(this);
 
@@ -599,8 +807,11 @@ angular.module("proton.modals", [])
                         this.config.Source.ExternalSourceID = this.source;
                     }
 
-                    // Send request to subscribe
-                    saveOrganization();
+                    // Encrypt metadata
+                    encryptMetadata().then(function() {
+                        // Send request to subscribe
+                        saveOrganization();
+                    });
                 } else if(angular.isDefined(response.error)) {
                     notify({message: response.error.message, classes: 'notification-danger'});
                     this.step = 'payment';

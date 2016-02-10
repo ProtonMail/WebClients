@@ -68,6 +68,17 @@
                     <i class="fa fa-user"></i>
                     <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" />
                 </div>
+                <div class="pm_grid margin">
+                    <div class="col-2-3">
+                        <span class="pm_select">
+                            <select ng-model="ctrl.country" ng-change="ctrl.change = true" ng-options="country.label for country in ctrl.countries"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </div>
+                    <div class="col-1-3">
+                        <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'ZIP' | translate }}" required />
+                    </div>
+                </div>
                 <div class="input-icon margin">
                     <i class="fa {{ ctrl.cardTypeIcon }}"></i>
                     <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'CARD_NUMBER' | translate }}" required />

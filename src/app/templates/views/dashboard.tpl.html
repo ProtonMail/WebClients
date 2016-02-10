@@ -194,7 +194,7 @@
                                             <select ng-model="domainPlus" ng-options="option.label for option in domainPlusOptions"></select>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
-                                        <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                        <strong> {{ 'DOMAINS' | translate }}</strong>
                                         <span class="cost" ng-show="(domainPrice[futureBillingCycle] * domainPlus.index) > 0">
                                             <strong>+ {{ domainPrice[futureBillingCycle] * domainPlus.index | number: 2 | currency: futureCurrency }}</strong>
                                         </span>
@@ -243,7 +243,7 @@
                             </div>
                         </div>
                         <div class="col-1-4">
-                            <div class="plan" ng-class="{'selected': subscription.Plan === 'plus'}">
+                            <div class="plan" ng-class="{'selected': subscription.Plan === 'visionary'}">
                                 <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                                 <h3>
                                     ProtonMail
@@ -256,7 +256,7 @@
                                     </li>
                                     <li>
                                         <i class="fa fa-check"></i>
-                                        <strong>10 {{ 'CUSTOM_DOMAINS' | translate }}</strong>
+                                        <strong>10 {{ 'DOMAINS' | translate }}</strong>
                                     </li>
                                     <li>
                                         <i class="fa fa-check"></i>
@@ -300,8 +300,8 @@
                                     ProtonMail
                                     <strong>Business</strong>
                                 </h3>
-                                <small>{{ 'COMING_SOON' | translate }}</small>
-                                <ul class="features">
+                                <p class="text-center">{{ 'COMING_SOON' | translate }}</p>
+                                <!-- <ul class="features">
                                     <li>
                                         <i class="fa fa-check"></i>
                                         <i class="fa fa-times"></i>
@@ -321,7 +321,7 @@
                                             <select ng-model="domainBusiness" ng-options="option.label for option in domainBusinessOptions"></select>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
-                                        <strong> {{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                        <strong> {{ 'DOMAINS' | translate }}</strong>
                                         <span class="cost" ng-show="domainBusiness.index > 0">
                                             <strong>+ {{ domainPrice[futureBillingCycle] * domainBusiness.index | number: 2 | currency: futureCurrency }}</strong>
                                         </span>
@@ -373,7 +373,7 @@
                                     <a href="#" ng-click="choose('business')" class="pm_button primary">
                                         <strong>{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="col-1-4">
@@ -383,15 +383,15 @@
                                     ProtonMail
                                     <strong>Enterprise</strong>
                                 </h3>
-                                <small>{{ 'COMING_SOON' | translate }}</small>
-                                <ul class="features">
+                                <p class="text-center">{{ 'COMING_SOON' | translate }}</p>
+                                <!-- <ul class="features">
                                     <li>
                                         <i class="fa fa-check"></i>
                                         <strong>{{ 'UP_TO_1000_GB_STORAGE' | translate }}</strong>
                                     </li>
                                     <li>
                                         <i class="fa fa-check"></i>
-                                        <strong>{{ 'UP_TO_50_CUSTOM_DOMAINS' | translate }}</strong>
+                                        <strong>{{ 'UP_TO_50_DOMAINS' | translate }}</strong>
                                     </li>
                                     <li>
                                         <i class="fa fa-check"></i>
@@ -417,7 +417,7 @@
                                     <a href="#" ng-click="enterprise()" class="pm_button primary">
                                         <strong>{{ 'CONTACT_OUR_SALES_TEAM' | translate }}</strong>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

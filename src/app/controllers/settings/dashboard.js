@@ -370,10 +370,12 @@ angular.module("proton.controllers.Settings")
 
         promises.push(Payment.plan(configuration)); // Check the configuration choosed
         promises.push(Payment.sources()); // Return the credit card
+        promises.push(Payment.keys()); // Return public key to encrypt metadata
 
         networkActivityTracker.track($q.all(promises).then(function(results) {
             var plan = results[0];
             var card = results[1];
+            var key = results[2];
             var organizationName = '';
 
             if($scope.organization) {
@@ -382,7 +384,7 @@ angular.module("proton.controllers.Settings")
                 organizationName = $translate.instant('MY_ORGANIZATION');
             }
 
-            if (angular.isDefined(plan.data) && plan.data.Code === 1000 && angular.isDefined(card.data) && card.data.Code === 1000) {
+            if (angular.isDefined(plan.data) && plan.data.Code === 1000 && angular.isDefined(card.data) && key.data.Code === 1000 && angular.isDefined(key.data) && key.data.Code === 1000) {
                 configuration.Organization = {
                     DisplayName: organizationName
                 };
@@ -390,7 +392,8 @@ angular.module("proton.controllers.Settings")
                 paymentModal.activate({
                     params: {
                         create: $scope.organization === null, // new organization?
-                        card: card,
+                        card: card.data.Source,
+                        key: key.data.Key,
                         configuration: configuration,
                         change: function(organization) {
                             Payment.subscriptions().then(function(subscriptions) {
@@ -442,25 +445,19 @@ angular.module("proton.controllers.Settings")
     * Open modal with payment information
     */
     $scope.card = function() {
-        networkActivityTracker.track(Payment.sources().then(function(result) {
-            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                // Array of credit card information
-                var cards = result.data.Sources;
-
-                cardModal.activate({
-                    params: {
-                        card: _.first(cards),
-                        cancel: function() {
-                            cardModal.deactivate();
-                        }
+        $q.all({source: Payment.sources(), key: Payment.keys()}).then(function(result) {
+            cardModal.activate({
+                params: {
+                    card: result.source.data.Source,
+                    key: result.key.data.Key,
+                    cancel: function() {
+                        cardModal.deactivate();
                     }
-                });
-            } else {
-                notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-            }
+                }
+            });
         }, function(error) {
             notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-        }));
+        });
     };
 
     // Call initialization

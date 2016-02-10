@@ -102,7 +102,7 @@ angular.module("proton.models.payments", [])
                 transformResponse: function(data, headersGetter, status) {
                     data = angular.fromJson(data);
 
-                    if(angular.isDefined(data) && data.Code === 1000) {
+                    if (angular.isDefined(data) && data.Code === 1000) {
                         var month = 60 * 60 * 24 * 30; // Time for a month in second
 
                         _.each(data.Payments, function(invoice) {
@@ -128,7 +128,17 @@ angular.module("proton.models.payments", [])
          * Get current payment information from Stripe
          */
         sources: function() {
-            return $http.get(url.get() + '/payments/sources');
+            return $http.get(url.get() + '/payments/sources', {
+                transformResponse: function(data, headersGetter, status) {
+                    data = angular.fromJson(data);
+
+                    if (angular.isDefined(data) && data.Code === 1000) {
+                        data.Source = data.Sources[0];
+                    }
+
+                    return data;
+                }
+            });
         },
         /**
          * Send a new credit card information
@@ -142,6 +152,12 @@ angular.module("proton.models.payments", [])
          */
          coupon: function(coupon, billingCycle) {
              return $http.get(url.get() + '/payments/coupon/' + billingCycle + '/' + coupon);
+         },
+         /**
+          * return the public key to encrypt the credit card information formatted
+          */
+         keys: function() {
+             return $http.get(url.get() + '/payments/keys');
          }
     };
 });
