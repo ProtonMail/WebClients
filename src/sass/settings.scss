@@ -567,10 +567,10 @@
         .pm_sort ul li .label {
             white-space: nowrap;
             display: inline-block;
-            overflow: hidden;
+            overflow: visible;
             text-overflow: ellipsis;
             width: 60%;
-            line-height: 1rem;
+            line-height: .9em;
         }
         .pm_buttons .fa.fa-angle-down {
             padding: 0 .5rem;
