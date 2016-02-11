@@ -42,7 +42,7 @@ ng-class="{
         <div class="labels" ng-hide="toggleDetails === true">
             <span class="pm_labels">
                 <label
-                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5"
+                ng-repeat="labelID in message.LabelIDs | labels | limitTo: 5"
                 title="{{ getLabel(labelID).Name }}"
                 class="pm_label"
                 ng-class="{ 'closed': !$first }"
@@ -133,7 +133,7 @@ ng-class="{
             <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
             <span class="pm_labels inline">
                 <label
-                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5"
+                ng-repeat="labelID in message.LabelIDs | labels | limitTo: 5"
                 title="{{ getLabel(labelID).Name }}"
                 class="pm_label"
                 ng-style="getStyleLabel(labelID)"
