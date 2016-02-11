@@ -30,8 +30,8 @@ angular.module("proton.controllers.Settings")
     $scope.organization = null;
 
     // Initialize default currency
-    $scope.currentCurrency = 'CHF';
-    $scope.futureCurrency = 'CHF';
+    $scope.currentCurrency = 'USD';
+    $scope.futureCurrency = 'USD';
 
     // Initialize default billing cycle
     $scope.currentBillingCycle = 1;
