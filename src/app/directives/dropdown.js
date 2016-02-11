@@ -1,12 +1,15 @@
 angular.module('proton.dropdown', [])
 
-.directive('dropdown', function ($timeout, $document) {
+.directive('dropdown', function ($timeout, $document, $rootScope) {
     return function (scope, element, attrs) {
         // Functions
         var click = function(event) {
             if (element.hasClass('active')) {
                 hideDropdown();
             } else {
+                // Close all dropdowns
+                $rootScope.$broadcast('closeDropdown');
+                // Open only this one
                 showDropdown();
             }
 
