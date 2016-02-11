@@ -24,7 +24,7 @@ ng-class="{
                 <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
                 <span class="contact">
                     <span class="from" ng-show="message.expand">{{ 'FROM' | translate }}: </span>
-                    <strong>{{ message.Sender | contact:'Name' }}</strong>
+                    <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name' }}</strong>
                     <em ng-click="$event.stopPropagation();">
                         {{ message.Sender | contact:'Address' }}
                         <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
@@ -75,7 +75,7 @@ ng-class="{
 
         <div class="recipients-summary" ng-hide="toggleDetails === true">
             <strong>{{ 'TO' | translate }}: </strong>
-            <span ng-repeat="email in recipients()">
+            <span ng-repeat="email in recipients()" title="{{ email | contact:'Address' }}">
                 {{ email | contact:'Name' }}<span ng-hide="$last">, </span>
             </span>
         </div>
@@ -86,8 +86,8 @@ ng-class="{
                     <span class="where">{{ 'TO' | translate }}: </span>
                 </span>
                 <ul>
-                    <li class="contact" ng-repeat="email in ::message.ToList">
-                        <strong>{{ email | contact:'Name' }}</strong>
+                    <li class="contact" ng-repeat="email in message.ToList">
+                        <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
                         <em ng-show="toggleDetails === true">
                             {{ email | contact:'Address' }}
                             <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
@@ -100,8 +100,8 @@ ng-class="{
                     <span class="where">{{ 'CC' | translate }}: </span>
                 </span>
                 <ul>
-                   <li class="contact" ng-repeat="email in ::message.CCList">
-                        <strong>{{ email | contact:'Name' }}</strong>
+                   <li class="contact" ng-repeat="email in message.CCList">
+                        <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
                         <em ng-show="toggleDetails === true">
                             {{ email | contact:'Address' }}
                             <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
@@ -114,8 +114,8 @@ ng-class="{
                     <span class="where">{{ 'BCC' | translate }}: </span>
                 </span>
                 <ul>
-                   <li class="contact" ng-repeat="email in ::message.BCCList">
-                        <strong>{{ email | contact:'Name' }}</strong>
+                   <li class="contact" ng-repeat="email in message.BCCList">
+                        <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
                         <em ng-show="toggleDetails === true">
                             {{ email | contact:'Address' }}
                             <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
@@ -225,7 +225,7 @@ ng-class="{
     <div class="frame" ng-show="message.expand">
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
         <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote></div>
-        <div class="alert alert-danger clearfix" role="alert" ng-if="::message.failedDecryption">
+        <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
             <strong>Decryption error</strong>
             <br> Decryption of this message's content failed.
