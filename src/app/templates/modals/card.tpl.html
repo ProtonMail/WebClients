@@ -17,7 +17,7 @@
                             <div class="pm_grid margin">
                                 <div class="col-2-3">
                                     <span class="pm_select">
-                                        <select ng-model="ctrl.country" ng-change="ctrl.change = true" ng-options="country.label for country in ctrl.countries"></select>
+                                        <select ng-model="ctrl.country" ng-change="ctrl.change = true" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                 </div>
