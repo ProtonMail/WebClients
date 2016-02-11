@@ -20,17 +20,29 @@ angular.module('proton.actions', [])
         moveConversation: function(ids, mailbox) {
             var context = tools.cacheContext();
             var events = [];
-            var current = tools.currentLocation();
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
             var toInbox = mailbox === 'inbox';
-            var labelIDsRemoved = _.reject([current], function(labelID) {
-                // Remove starred and labels
-                return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
-            });
 
             // Generate cache events
             _.each(ids, function(id) {
+                var conversation = cache.getConversationCached(id);
+                var current;
+
+                _.each(conversation.LabelIDs, function(labelID) {
+                    if ([
+                        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.archive
+                    ].indexOf(labelID) !== -1) {
+                        current = labelID;
+                    }
+                });
+
+                var labelIDsRemoved = [current];
                 var messages = cache.queryMessagesCached(id);
                 var element = {
                     ID: id,
