@@ -1,4 +1,4 @@
-<div id="pm_contacts" pt-height>
+<div id="pm_contacts">
 
     <div class="wrap">
 
@@ -7,62 +7,63 @@
         <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length === 0">You have no contacts, you can add contact with the above button "ADD CONTACT".</p>
         <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length > 0">No results for "{{ params.searchContactInput }}" in your contacts.</p>
 
-        <table ng-if="contacts.length > 0" class="pm_table">
-
-            <thead>
-                <tr>
-                    <th class="hidden-xs checkbox"></th>
-                    <th class="name">
-                        <span>
-                            <a ng-click="setSortBy('Name')">{{ 'NAME' | translate }}</a>
-                            <a ng-click="setSortBy('Name')" ng-show="sortBy === 'Name'">
+        <div class="contactWrapper">
+            <table ng-if="contacts.length > 0" class="pm_table">
+                <thead>
+                    <tr>
+                        <th class="hidden-xs checkbox"></th>
+                        <th class="name">
+                            <span>
+                                <a ng-click="setSortBy('Name')">{{ 'NAME' | translate }}</a>
+                                <a ng-click="setSortBy('Name')" ng-show="sortBy === 'Name'">
+                                    <i class="fa fa-caret-up"></i>
+                                </a>
+                                <a ng-click="setSortBy('Name')" ng-show="sortBy === '-Name'">
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                            </span>
+                        </th>
+                        <th class="email">
+                            <a ng-click="setSortBy('Email')">{{ 'EMAIL' | translate }}</a>
+                            <a ng-click="setSortBy('Email')" ng-show="sortBy === 'Email'">
                                 <i class="fa fa-caret-up"></i>
                             </a>
-                            <a ng-click="setSortBy('Name')" ng-show="sortBy === '-Name'">
+                            <a ng-click="setSortBy('Email')" ng-show="sortBy === '-Email'">
                                 <i class="fa fa-caret-down"></i>
                             </a>
-                        </span>
-                    </th>
-                    <th class="email">
-                        <a ng-click="setSortBy('Email')">{{ 'EMAIL' | translate }}</a>
-                        <a ng-click="setSortBy('Email')" ng-show="sortBy === 'Email'">
-                            <i class="fa fa-caret-up"></i>
-                        </a>
-                        <a ng-click="setSortBy('Email')" ng-show="sortBy === '-Email'">
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </th>
-                    <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="contact in contacts">
-                    <td class="text-center hidden-xs checkbox">
-                        <label>
-                            <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
-                        </label>
-                    </td>
-                    <td class="name">
-                        <span title="{{ contact.Name }}">{{ contact.Name }}</span>
-                    </td>
-                    <td class="text-muted email">
-                        <span title="contact.Email">{{ contact.Email }}</span>
-                    </td>
-                    <td class="text-right actions">
-                        <span>
-                            <a class="pm_button round" pt-tooltip="{{ 'EDIT' | translate }}" ng-click="editContact(contact)">
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <a class="pm_button round" pt-tooltip="{{ 'COMPOSE' | translate }}" class="divider" ng-click="sendMessageTo(contact)">
-                                <i class="fa fa-envelope-o"></i>
-                            </a>
-                            <a class="pm_button round" pt-tooltip="{{ 'DELETE' | translate }}" class="divider" ng-click="deleteContacts(contact)">
-                                <i class="fa fa-trash-o"></i>
-                            </a>
-                        </span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        </th>
+                        <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in contacts">
+                        <td class="text-center hidden-xs checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
+                            </label>
+                        </td>
+                        <td class="name">
+                            <span title="{{ contact.Name }}">{{ contact.Name }}</span>
+                        </td>
+                        <td class="text-muted email">
+                            <span title="contact.Email">{{ contact.Email }}</span>
+                        </td>
+                        <td class="text-right actions">
+                            <span>
+                                <a class="pm_button round" pt-tooltip="{{ 'EDIT' | translate }}" ng-click="editContact(contact)">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a class="pm_button round" pt-tooltip="{{ 'COMPOSE' | translate }}" class="divider" ng-click="sendMessageTo(contact)">
+                                    <i class="fa fa-envelope-o"></i>
+                                </a>
+                                <a class="pm_button round" pt-tooltip="{{ 'DELETE' | translate }}" class="divider" ng-click="deleteContacts(contact)">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

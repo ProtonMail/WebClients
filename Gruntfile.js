@@ -455,7 +455,7 @@ module.exports = function(grunt) {
 
         cacheBust: {
             options: {
-                deleteOriginals: true,
+                deleteOriginals: false,
                 ignorePatterns: [
                     'openpgp.min.js'
                 ]

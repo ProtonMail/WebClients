@@ -1,3 +1,17 @@
+#pm_contacts {
+    height: 100%;
+    .wrap {
+        height: 100%;
+        .contactWrapper {
+            overflow: auto;
+            clear: both;
+            height: calc( 100% - 55px );
+            table {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
 #settingsAppearance.row {
     .setting {
         .radio.col {
@@ -371,6 +385,7 @@
                             height: 25px;
                             line-height: 25px;
                             margin: 0 .5rem;
+                            width: 6rem;
                             select {
                                 padding-right: 2rem;
                                 height: 25px;

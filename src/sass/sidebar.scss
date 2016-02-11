@@ -229,8 +229,8 @@ body {
             font-size: 10px;
             padding-top: 10px;
             .wrap {
-                padding: 5px 10px 0;
-                margin-bottom: 1rem;
+                padding: 5px 0 0;
+                margin: 0 -10px 1rem;
             }
             div.link {
                 a {
@@ -243,7 +243,7 @@ body {
                 }
             }
             div.storage {
-                color: #bbb;
+                padding: 0 20px;
                 strong {
                     color: $primary
                 }
@@ -262,10 +262,10 @@ body {
             .bar {
                 height: 1px;
                 background-color: rgba(255,255,255,.1);
-                width: 100%;
+                width: 80%;
                 display: block;
                 position: relative;
-                margin: .5rem 0;
+                margin: .5rem auto;
                 em {
                     display: block;
                     position: absolute;
