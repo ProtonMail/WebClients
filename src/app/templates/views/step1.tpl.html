@@ -17,7 +17,7 @@
                 {{ 'USERNAME_AND_DOMAIN' | translate }}
             </label>
             <div class="usernameWrap">
-                <p class="help">This will be your email address.</p>
+                <p class="help">This will be your email address. Select the drop down to choose your domain.</p>
                 <strong ng-show="readOnlyUsername" ng-bind="account.Username"></strong>
                 <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder="{{ 'CHOOSE_USERNAME' | translate }}" required
                 id="Username" class="dead" ng-change="checkAvailability(true)" ng-model-options="{ debounce: 1000 }"
