@@ -41,7 +41,7 @@ angular.module("proton.controllers.Settings")
     $scope.current = null;
 
     // Prices
-    $scope.plusPrice = {1: 5, 12: 47};
+    $scope.plusPrice = {1: 5, 12: 49.99};
     $scope.businessPrice = {1: 10, 12: 97};
     $scope.visionaryPrice = {1: 30, 12: 299.99};
     $scope.spacePrice = {1: 1, 12: 9.99};
