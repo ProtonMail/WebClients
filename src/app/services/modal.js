@@ -504,6 +504,7 @@ angular.module("proton.modals", [])
     $translate,
     $log,
     $window,
+    $q,
     Payment,
     authentication,
     pmcw,
@@ -598,7 +599,7 @@ angular.module("proton.modals", [])
                 }.bind(this));
 
                 return deferred.promise;
-            };
+            }.bind(this);
 
             /**
              * Generate token with Stripe library

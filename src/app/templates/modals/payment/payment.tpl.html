@@ -5,7 +5,7 @@
     <div class="modal-body pm_form">
         <div class="pm_grid">
             <div class="col-1-1">
-                <p class="alert alert-info">You’re upgrading to the {{ ctrl.config.Cart.Next.Plan | capitalize }} plan. Once we successfully process payment, we’ll immediately upgrade your account. Thanks for choosing to become a paying customer!</p>
+                <p class="alert alert-info">You’re upgrading to the <strong>{{ ctrl.config.Cart.Next.Plan | capitalize }} plan</strong>. Once we successfully process payment, we’ll immediately upgrade your account. Thanks for choosing to become a paying customer!</p>
             </div>
         </div>
         <div class="pm_grid">
@@ -54,6 +54,10 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="pm_buttons">
+                    <a href="#" ng-click="ctrl.config.Subscription.BillingCycle = 1" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 1}">{{ 'MONTHLY' | translate }}</a>
+                    <a href="#" ng-click="ctrl.config.Subscription.BillingCycle = 12" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 12}" class="divider">{{ 'YEARLY' | translate }} <small class="text-green">{{ 'SAVE_20%' | translate }}</small></a>
+                </div>
             </div>
             <div class="col-1-2">
                 <div class="input-icon margin" ng-show="ctrl.config.Cart.Next.Plan === 'business'">
@@ -76,7 +80,7 @@
                         </span>
                     </div>
                     <div class="col-1-3">
-                        <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'ZIP' | translate }}" required />
+                        <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'ZIP' | translate }}" pt-tooltip="{{ 'ZIP_CODE' | translate }}"  required />
                     </div>
                 </div>
                 <div class="input-icon margin">

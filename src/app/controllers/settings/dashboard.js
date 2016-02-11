@@ -357,7 +357,7 @@ angular.module("proton.controllers.Settings")
 
             if($scope.organization) {
                 organizationName = $scope.organization.DisplayName;
-            } else if (name === 'plus') {
+            } else if (name === 'plus' || name === 'visionary') {
                 organizationName = $translate.instant('MY_ORGANIZATION');
             }
 
