@@ -42,6 +42,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         if(angular.isDefined(message)) {
             $scope.message.AddressID = message.AddressID;
+            $scope.message.Attachments = message.Attachments;
             $scope.message.BCCList = message.BCCList;
             $scope.message.Body = message.Body;
             $scope.message.CCList = message.CCList;
