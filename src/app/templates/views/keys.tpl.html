@@ -41,7 +41,7 @@
                         <td>{{ key.bitSize }} {{ 'BIT' | translate }}</td>
                         <td>
                             <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari">{{ 'PUBLIC_KEY' | translate }}</button>
-                            <button class="pm_button link" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari">{{ 'PRIVATE_KEY' | translate }}</button>
+                            <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari">{{ 'PRIVATE_KEY' | translate }}</button>
                         </td>
                         <td class="text-right">
                             <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false">{{ 'MAKE_PRIMARY' | translate }}</button>
