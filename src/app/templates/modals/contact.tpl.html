@@ -41,9 +41,9 @@
                     </div> -->
                 </div>
             </div>
-            <div class="modal-footer text-right">
-                <a class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
-                <button type="submit" class="pm_button primary" ng-disabled="contactForm.$invalid" ng-class="{disabled: networkActivity.loading()}">
+            <div class="modal-footer">
+                <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+                <button type="submit" class="pm_button primary pull-right" ng-disabled="contactForm.$invalid" ng-class="{disabled: networkActivity.loading()}">
                     <span ng-hide="networkActivity.loading()">{{ 'SAVE' | translate }}</span>
                     <span ng-show="networkActivity.loading()">{{ 'SAVING' | translate }}</span>
                 </button>

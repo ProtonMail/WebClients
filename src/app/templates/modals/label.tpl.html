@@ -30,9 +30,9 @@
                 </div>
             </div>
         </div>
-        <div class="modal-footer text-right">
-            <a class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()">{{ 'CANCEL' | translate }}</a>
-            <button type="button" ng-click="ctrl.create()" class="pm_button primary" ng-disabled="networkActivity.loading()">
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()">{{ 'CANCEL' | translate }}</button>
+            <button type="button" ng-click="ctrl.create()" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()">
                 <span ng-hide="networkActivity.loading()">{{ 'SAVE' | translate }}</span>
                 <span ng-show="networkActivity.loading()">{{ 'SAVING' | translate }}</span>
             </button>
