@@ -1,8 +1,8 @@
-<section 
-id="pm_sidebarMobile" 
-ng-if="showSidebar && mobileMode" 
-class="pm_opensans sidebar" 
-ng-controller="SidebarController" 
+<section
+id="pm_sidebarMobile"
+ng-if="showSidebar && mobileMode"
+class="pm_opensans sidebar"
+ng-controller="SidebarController"
 ng-class="{ 'show': showSidebar }">
     <button class="pm_button round pull-right" ng-click="hideMobileSidebar()">
         <i class="fa fa-times"></i>
@@ -33,6 +33,7 @@ ng-class="{ 'show': showSidebar }">
             <button title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent')">
                 <i class="fa fa-send"></i>
                 <span>{{ 'SENT' | translate }}</span>
+                <em ng-bind="unread('sent')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
