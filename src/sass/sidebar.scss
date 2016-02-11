@@ -1,16 +1,21 @@
 // DESKTOP
 body {
+    #pm_sidebar {
+        float: left;
+        height: 100%;
+        display: block;
+    }
     section.sidebar {
         display: block;
         padding: 0 20px 15px 20px;
-        padding-bottom: 130px !important;
         width: $sidebarWidth;
         min-width: $sidebarWidth;
         box-sizing: border-box;
         float: left;
-        min-height: calc(100% - 61px);
+        height: calc(100% - 61px);
         background: $secondary;
         position: relative;
+        overflow: auto;
         #labelSettings {
             margin-bottom: 0;
         }
@@ -117,6 +122,8 @@ body {
         #sidebarLabels {
             position: relative;
             overflow: auto;
+            height: calc(100% - 480px);
+            min-height: 75px;
         }
         div.labels {
             font-size: 14px;
@@ -221,10 +228,6 @@ body {
             text-align: center;
             font-size: 10px;
             padding-top: 10px;
-            position: absolute;
-            left: 15px;
-            right: 15px;
-            bottom: 10px;
             .wrap {
                 padding: 5px 10px 0;
                 margin-bottom: 1rem;
