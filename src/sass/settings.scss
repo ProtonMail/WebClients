@@ -266,6 +266,9 @@
     }
     #plans {
         .plans {
+            .col-1-4 {
+                padding-right: 10px;
+            }
             .plan {
                 box-sizing: border-box;
                 border: 1px solid $border;
