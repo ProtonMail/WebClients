@@ -36,8 +36,8 @@
                                 <thead>
                                     <tr>
                                         <th>{{ 'EVENT' | translate }}</th>
-                                        <th>{{ 'TIME' | translate }}</th>
-                                        <th ng-show="doLogging == 2" class="text-right">IP</th>
+                                        <th style="width:12rem" class="text-right">{{ 'TIME' | translate }}</th>
+                                        <th style="width:12rem" ng-show="doLogging == 2" class="text-right">IP</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -47,11 +47,11 @@
                                             <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i> {{ 'LOGIN_SUCCESS' | translate }}</span>
                                             <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i> {{ 'LOG_OUT' | translate }}</span>
                                         </td>
-                                        <td>{{ log.Time * 1000 | date : 'medium' }}</td>
                                         <td ng-show="doLogging == 2" class="text-right">
                                             <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>
                                             <kbd ng-show="log.IP===''">--</kbd>
                                         </td>
+                                        <td class="text-right">{{ log.Time * 1000 | date : 'medium' }}</td>
                                     </tr>
                                 </tbody>
                             </table>

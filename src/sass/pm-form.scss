@@ -36,7 +36,7 @@
     .pm_select {
         position: relative;
         display: block;
-        border: 1px solid $border;
+        box-shadow: 0 0 0 1px $border;
         border-radius: 2px;
         &.inline {
             display: inline-block;

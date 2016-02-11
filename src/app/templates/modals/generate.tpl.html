@@ -21,13 +21,13 @@
                     <thead>
                         <tr>
                             <th>{{ 'ADDRESS' | translate }}</th>
-                            <th>{{ 'STATUS' | translate }}</th>
+                            <th style="width: 10rem" class="text-right">{{ 'STATUS' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="address in ctrl.addresses | orderBy: 'Send'">
                             <td>{{ address.Email }}</td>
-                            <td>
+                            <td class="text-right">
                                 <span ng-show="address.state === 0" class="pm_badge">{{ 'QUEUED' | translate }}</span>
                                 <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'GENERATING' | translate }}</span>
                                 <span ng-show="address.state === 2" class="pm_badge success">{{ 'DONE' | translate }}</span>

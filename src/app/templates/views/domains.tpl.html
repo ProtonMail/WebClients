@@ -6,7 +6,7 @@
         <div class="row" id="settingsDomains">
             <section class="setting pm_form full">
                 <legend>
-                    <span class="pull-right">{{ organization.UsedDomains }}/{{ organization.MaxDomains }} {{ 'DOMAINS_USED' | translate }}. <a ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
+                    <span class="pull-right">{{ organization.UsedDomains }} / {{ organization.MaxDomains }} {{ 'DOMAINS_USED' | translate }}. <a ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
                     {{ 'DOMAINS' | translate }}
                 </legend>
                 <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
@@ -109,7 +109,7 @@
             <p>&nbsp;</p>
             <section class="setting pm_form full">
                 <legend>
-                    <span class="pull-right">{{ organization.UsedAddresses }}/{{ organization.MaxAddresses }} {{ 'ADDRESSES_USED' | translate }}. <a ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
+                    <span class="pull-right">{{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} {{ 'ADDRESSES_USED' | translate }}. <a ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
                     {{ 'ADDRESSES' | translate }}
                 </legend>
                 <div class="margin-bottom" ng-repeat="domain in domains">

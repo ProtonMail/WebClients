@@ -575,10 +575,10 @@
         .pm_sort ul li .label {
             white-space: nowrap;
             display: inline-block;
-            overflow: visible;
+            overflow: hidden;
             text-overflow: ellipsis;
             width: 60%;
-            line-height: .9em;
+            line-height: 32px;
         }
         .pm_buttons .fa.fa-angle-down {
             padding: 0 .5rem;
@@ -677,7 +677,7 @@
                         bottom: 0;
                     }
                     .fa-ellipsis-v {
-                        line-height: 2rem;
+                        line-height: 32px;
                         float: left;
                         margin-right: .5rem;
                     }
@@ -695,6 +695,7 @@
                         height: 10rem;
                         border: 1px solid $border;
                         border-top-width: 0;
+                        box-sizing: border-box;
                     }
                 }
                 .radio {
