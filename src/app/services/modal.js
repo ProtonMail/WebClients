@@ -1168,9 +1168,10 @@ angular.module("proton.modals", [])
             // Variables
             var mailboxPassword = authentication.getPassword();
             var promises = [];
-            var DIRTY = 0;
-            var ENCRYPTING = 1;
-            var ENCRYPTED = 2;
+            // "Queued", "Generating" with some sort of spinner, and "Done". "Saved" and "Error"
+            var QUEUED = 0;
+            var GENERATING = 1;
+            var DONE = 2;
             var SAVED = 3;
             var ERROR = 4;
 
@@ -1179,7 +1180,7 @@ angular.module("proton.modals", [])
             this.addresses = params.addresses;
             this.title = params.title;
             this.message = params.message;
-            _.each(this.addresses, function(address) { address.state = DIRTY; });
+            _.each(this.addresses, function(address) { address.state = QUEUED; });
             this.sizes = [{label: 'normal strength encryption (2048)', value: 2048}, {label: 'high strength encryption (4096)', value: 4096}];
             this.size = this.sizes[0];
 
@@ -1187,13 +1188,13 @@ angular.module("proton.modals", [])
             this.submit = function() {
                 this.process = true;
                 _.each(this.addresses, function(address) {
-                    address.state = ENCRYPTING;
+                    address.state = GENERATING;
                     promises.push(pmcw.generateKeysRSA(
                         address.Email,
                         mailboxPassword,
                         this.size.value
                     ).then(function(result) {
-                        address.state = ENCRYPTED;
+                        address.state = DONE;
                         // var publicKeyArmored = result.publicKeyArmored; not used
                         var privateKeyArmored = result.privateKeyArmored;
 
