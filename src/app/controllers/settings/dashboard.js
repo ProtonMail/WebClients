@@ -372,6 +372,16 @@ angular.module("proton.controllers.Settings")
                         card: card.data.Source,
                         key: key.data.Key,
                         configuration: configuration,
+                        monthly: function() {
+                            paymentModal.deactivate();
+                            $scope.futureBillingCycle = 1;
+                            $scope.choose(name);
+                        },
+                        yearly: function() {
+                            paymentModal.deactivate();
+                            $scope.futureBillingCycle = 12;
+                            $scope.choose(name);
+                        },
                         change: function(organization) {
                             Payment.subscriptions().then(function(subscriptions) {
                                 if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {

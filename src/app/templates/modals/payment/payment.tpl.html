@@ -55,8 +55,8 @@
                     </tbody>
                 </table>
                 <div class="pm_buttons">
-                    <a href="#" ng-click="ctrl.config.Subscription.BillingCycle = 1" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 1}">{{ 'MONTHLY' | translate }}</a>
-                    <a href="#" ng-click="ctrl.config.Subscription.BillingCycle = 12" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 12}" class="divider">{{ 'YEARLY' | translate }} <small class="text-green">{{ 'SAVE_20%' | translate }}</small></a>
+                    <a href="#" ng-click="ctrl.monthly()" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 1}">{{ 'MONTHLY' | translate }}</a>
+                    <a href="#" ng-click="ctrl.yearly()" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 12}" class="divider">{{ 'YEARLY' | translate }} <small class="text-green">{{ 'SAVE_20%' | translate }}</small></a>
                 </div>
             </div>
             <div class="col-1-2">

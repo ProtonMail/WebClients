@@ -742,6 +742,14 @@ angular.module("proton.modals", [])
                 }
             };
 
+            this.monthly = function() {
+                params.monthly();
+            };
+
+            this.yearly = function() {
+                params.yearly();
+            };
+
             /**
              * Close payment modal
              */
