@@ -28,11 +28,11 @@
                         <tr ng-repeat="address in ctrl.addresses | orderBy: 'Send'">
                             <td>{{ address.Email }}</td>
                             <td>
-                                <span ng-show="address.state === 0">{{ 'QUEUED' | translate }}</span>
-                                <span ng-show="address.state === 1"><i class="fa fa-spinner fa-spin"></i> {{ 'GENERATING' | translate }}</span>
-                                <span ng-show="address.state === 2">{{ 'DONE' | translate }}</span>
-                                <span ng-show="address.state === 3" class="text-green">{{ 'SAVED' | translate }}</span>
-                                <span ng-show="address.state === 4" class="text-error">{{ 'ERROR' | translate }}</span>
+                                <span ng-show="address.state === 0" class="pm_badge">{{ 'QUEUED' | translate }}</span>
+                                <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'GENERATING' | translate }}</span>
+                                <span ng-show="address.state === 2" class="pm_badge success">{{ 'DONE' | translate }}</span>
+                                <span ng-show="address.state === 3" class="pm_badge success">{{ 'SAVED' | translate }}</span>
+                                <span ng-show="address.state === 4" class="pm_badge error">{{ 'ERROR' | translate }}</span>
                             </td>
                         </tr>
                     </tbody>
