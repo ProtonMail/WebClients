@@ -1,7 +1,7 @@
 <div id="conversation-list-rows">
 
     <ng-include src="'templates/partials/no-results.tpl.html'"></ng-include>
-    
+
     <div
     ng-repeat="conversation in conversations track by conversation.ID"
     class="conversation"
@@ -11,46 +11,52 @@
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
         <div class="selected-bar"></div>
-        <input 
-        type="checkbox" 
-        ng-model="conversation.Selected" 
+        <input
+        type="checkbox"
+        ng-model="conversation.Selected"
         ng-click="$event.stopPropagation();select($event, conversation)" />
         <a href="#" ng-click="conversation.Selected = !conversation.Selected;select($event, conversation);" class="fa" ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a>
-        <a 
-        class="fa" 
+        <a
+        class="fa"
         ng-click="$event.stopPropagation();toggleStar(conversation)"
         ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></a>
-        <span 
+        <span
         class="senders"
         ng-click="click(conversation)">
-            <span 
-            ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" 
-            ng-repeat="contact in senders(conversation)" 
+            <span
+            ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+            ng-repeat="contact in senders(conversation)"
             title="{{ contact.Address }}">
                 {{ contact.Name || contact.Address }}<span ng-hide="$last">, </span>
             </span>
-            <span 
-            ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)" 
-            ng-repeat="contact in recipients(conversation)" 
+            <span
+            ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+            ng-repeat="contact in recipients(conversation)"
             title="{{ contact.Address }}">
                 {{ contact.Name || contact.Address }}<span ng-hide="$last">, </span>
             </span>
         </span>
-        <div 
-        class="subject" 
+        <div
+        class="subject"
         ng-click="click(conversation)">
+            <span class="location fa fa-inbox" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('0') > -1"></span>
+            <span class="location fa fa-file-text-o" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('1') > -1"></span>
+            <span class="location fa fa-send" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('2') > -1"></span>
+            <span class="location fa fa-trash-o" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('3') > -1"></span>
+            <span class="location fa fa-archive" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('6') > -1"></span>
+            <span class="location fa fa-ban" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('4') > -1"></span>
             <h4>
                 <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 {{ conversation.Subject }}
             </h4>
             <span class="pm_labels">
-                <label 
-                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5" 
-                title="{{ getLabel(labelID).Name }}" 
-                class="pm_label" 
-                ng-class="{ 'closed': !$first }" 
-                ng-style="getStyleLabel(labelID)" 
-                ng-show="getLabel(labelID).Name" 
+                <label
+                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5"
+                title="{{ getLabel(labelID).Name }}"
+                class="pm_label"
+                ng-class="{ 'closed': !$first }"
+                ng-style="getStyleLabel(labelID)"
+                ng-show="getLabel(labelID).Name"
                 ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
                 </label>
             </span>

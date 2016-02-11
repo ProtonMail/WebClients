@@ -27,6 +27,12 @@
             <h4
             class="subject"
             ng-click="click(conversation)">
+                <span class="location fa fa-inbox" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('0') > -1"></span>
+                <span class="location fa fa-file-text-o" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('1') > -1"></span>
+                <span class="location fa fa-send" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('2') > -1"></span>
+                <span class="location fa fa-trash-o" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('3') > -1"></span>
+                <span class="location fa fa-archive" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('6') > -1"></span>
+                <span class="location fa fa-ban" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('4') > -1"></span>
                 <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 {{ conversation.Subject }}
             </h4>
@@ -69,6 +75,7 @@
                 ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
                 </label>
             </span>
+
         </div>
     </div>
 </div>

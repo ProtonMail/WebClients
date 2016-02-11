@@ -32,6 +32,13 @@
         box-sizing: border-box;
         &.top {
             padding-top: 10px;
+            .location {
+                width: 1.25rem;
+                float: left;
+                height: 20px;
+                line-height: 20px;
+                color: rgba(0,0,0,.35);
+            }
         }
         &.bottom {
             padding-bottom: 10px;

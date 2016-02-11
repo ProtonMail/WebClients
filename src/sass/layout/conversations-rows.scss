@@ -61,6 +61,13 @@ body {
                     color: #000;
                     display: inline-block;
                 }
+                .location {
+                    width: 1.25rem;
+                    float: left;
+                    height: 40px;
+                    line-height: 40px;
+                    color: rgba(0,0,0,.35);
+                }
                 .pm_labels {
                     float: right;
                     position: absolute;;
