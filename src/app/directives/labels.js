@@ -63,7 +63,7 @@ angular.module("proton.labels", [])
             };
 
             scope.close = function() {
-                $('.pm_dropdown').hide();
+                $rootScope.$broadcast('closeDropdown');
             };
 
             scope.labelsSelected = function() {

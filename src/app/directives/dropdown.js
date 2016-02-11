@@ -42,9 +42,13 @@ angular.module('proton.dropdown', [])
         // Listeners
         element.on('click', click);
 
+        scope.$on('closeDropdown', function(event) {
+            hideDropdown();
+        });
+
         scope.$on('$destroy', function() {
             element.off('click', click);
-            $document.off('click', outside);
+            hideDropdown();
         });
     };
 })
