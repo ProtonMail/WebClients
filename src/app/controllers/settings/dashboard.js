@@ -42,11 +42,11 @@ angular.module("proton.controllers.Settings")
 
     // Prices
     $scope.plusPrice = {1: 5, 12: 49.99};
-    $scope.businessPrice = {1: 10, 12: 97};
+    $scope.businessPrice = {1: 10, 12: 99.99};
     $scope.visionaryPrice = {1: 30, 12: 299.99};
     $scope.spacePrice = {1: 1, 12: 9.99};
-    $scope.domainPrice = {1: 2, 12: 19.98};
-    $scope.addressPrice = {1: 2, 12: 19.98};
+    $scope.domainPrice = {1: 2, 12: 19.99};
+    $scope.addressPrice = {1: 1, 12: 9.99};
     $scope.memberPrice = {1: 5, 12: 49.99};
 
     // Options
