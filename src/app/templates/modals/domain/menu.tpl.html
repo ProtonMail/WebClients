@@ -2,43 +2,43 @@
     <li ng-class="{ 'active': ctrl.step === 1 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 1,
-            'xdisabled': !ctrl.domain.DomainName
+            'disabled': !ctrl.domain.DomainName
         }" ng-click="ctrl.open('domain')">1.<br>DOMAIN</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 2 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 2,
-            'xdisabled': !ctrl.domain.DomainName
+            'disabled': !ctrl.domain.DomainName
         }" ng-click="ctrl.open('verification')">2.<br>VERIFY</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 3 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 3,
-            'xdisabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
+            'disabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
         }" ng-click="ctrl.open('address')">3.<br>ADDRESSES</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 4 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 4,
-            'xdisabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
+            'disabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
         }" ng-click="ctrl.open('mx')">4.<br>MX</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 5 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 5,
-            'xdisabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
+            'disabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
         }" ng-click="ctrl.open('spf')">5.<br>SPF</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 6 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 6,
-            'xdisabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
+            'disabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
         }" ng-click="ctrl.open('dkim')">6.<br>DKIM</a>
     </li>
     <li ng-class="{ 'active': ctrl.step === 7 }">
         <a class="pm_button" ng-class="{
             'dead': ctrl.step === 7,
-            'xdisabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
+            'disabled': ctrl.domain.State === 0 || !ctrl.domain.DomainName
         }" ng-click="ctrl.open('dmarc')">7.<br>DMARC</a>
     </li>
 </ul>
