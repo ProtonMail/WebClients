@@ -7,7 +7,7 @@
                 <span ng-show="ctrl.domain.MxState === 0" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
                 <span ng-show="ctrl.domain.MxState === 1 || ctrl.domain.MxState === 2" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
                 <span ng-show="ctrl.domain.MxState === 3" class="pull-right pm_badge success">{{ 'GOOD!' | translate }}</span>
-                <h4 class="modal-title">4. {{ 'MX_RECORD' | translate }} <em>(Required)</em></h4>
+                <h4 class="modal-title">4. {{ 'MX_RECORD' | translate }} <em>({{ 'REQUIRED' | translate }})</em></h4>
             </div>
             <div class="modal-body pm_form">
                 <p>Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to the DNS of <strong>{{ ctrl.domain.DomainName }}</strong>.</p>
@@ -37,8 +37,8 @@
 
         </div>
         <div class="modal-footer text-right">
-            <button ng-show="ctrl.domain.MxState!==3" class="pm_button primary" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
-            <button ng-show="ctrl.domain.MxState===3" class="pm_button primary" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
+            <button ng-show="ctrl.domain.MxState !== 3" class="pm_button primary" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button ng-show="ctrl.domain.MxState === 3" class="pm_button primary" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.close()"></div>
