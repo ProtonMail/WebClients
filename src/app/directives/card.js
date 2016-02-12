@@ -18,7 +18,7 @@ angular.module('proton.card', [])
             scope.class = card;
 
             scope.$watch('number', function (newValue, oldValue) {
-                var value = card;
+                scope.class = card;
 
                 // New value defined?
                 if (angular.isDefined(newValue)) {
@@ -26,36 +26,32 @@ angular.module('proton.card', [])
                     .then(function(type) {
                         switch (type) {
                             case 'Visa':
-                            value = visa;
+                            scope.class = visa;
                             break;
                             case 'MasterCard':
-                            value = mastercard;
+                            scope.class = mastercard;
                             break;
                             case 'American Express':
-                            value = americanExpress;
+                            scope.class = americanExpress;
                             break;
                             case 'Discover':
-                            value = discover;
+                            scope.class = discover;
                             break;
                             case 'Diners Club':
-                            value = dinersClub;
+                            scope.class = dinersClub;
                             break;
                             case 'JCB':
-                            value = jcb;
+                            scope.class = jcb;
                             break;
                             case 'Unknown':
-                            value = card;
+                            scope.class = card;
                             break;
                             default:
-                            value = card;
+                            scope.class = card;
                             break;
                         }
-
-                        scope.class = value;
                     });
                 }
-
-                scope.class = value;
             });
         }
     };

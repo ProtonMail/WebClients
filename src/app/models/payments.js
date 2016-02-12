@@ -2,6 +2,7 @@ angular.module("proton.models.payments", [])
 
 .factory("Payment", function($http, $q, $translate, CONSTANTS, url) {
     var stripeProxy;
+    // Return the instance of Stripe Proxy
     var proxy = function() {
         if (angular.isUndefined(stripeProxy)) {
             stripeProxy = new StripeProxy(CONSTANTS.STRIPE_ORIGIN, CONSTANTS.STRIPE_API_KEY);
