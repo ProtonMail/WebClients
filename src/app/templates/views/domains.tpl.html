@@ -10,13 +10,10 @@
                     {{ 'DOMAINS' | translate }}
                 </legend>
                 <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
-                <p class="clearfix">
+                <div class="margin">
                     <button ng-hide="organization.UsedDomains === organization.MaxDomains" type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
-                    <button type="button" class="pm_button pull-right" ng-click="refreshStatus()">
-                        <i class="fa fa-refresh"></i> {{ 'REFRESH_DOMAIN_STATUS' | translate }}
-                    </button>
-                </p>
-                <p>&nbsp;</p>
+                    <button type="button" class="pm_button" ng-click="refreshStatus()"><i class="fa fa-refresh"></i> {{ 'REFRESH_DOMAIN_STATUS' | translate }}</button>
+                </div>
                 <table class="pm_table bordered domains" ng-show="domains.length > 0">
                     <thead>
                         <tr>

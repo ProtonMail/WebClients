@@ -337,7 +337,11 @@ angular.module("proton.controllers.Settings")
      * @param {Object} domain
      */
     $scope.refreshStatus = function(domains) {
-        networkActivityTracker.track(eventManager.call());
+        networkActivityTracker.track(Domain.query().then(function(result) {
+            if (result.data && result.data.Code === 1000) {
+                $scope.organization = result.data.Organization;
+            }
+        }));
     };
 
     /**
