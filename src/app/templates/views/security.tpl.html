@@ -30,6 +30,12 @@
                         <a class="pm_button pull-left" id="logRefresh" ng-hide="doLogging === 0" ng-click="initLogs()">
                             <i class="fa fa-rotate-right"></i>
                         </a>
+                        <div class="clear" ng-show="doLogging == 0">
+                            <p>&nbsp;</p>
+                            <p class="alert">
+                                You can enable authentication logging to see who and when your account is accessed. We will record the IP address that accesses the account and the time, as well as failed attempts.
+                            </p>
+                        </div>
                         <div id="logArea" ng-show="doLogging != 0" class="clear">
                             <p class="alert alert-info" ng-show="logs.length<1">No logs yet.</p>
                             <table class="pm_table" id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
