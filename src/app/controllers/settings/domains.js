@@ -483,6 +483,11 @@ angular.module("proton.controllers.Settings")
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
                 },
+                next: function() {
+                    mxModal.deactivate();
+                    $scope.spf(domain);
+
+                },
                 submit: function() {
                     mxModal.deactivate();
                 },

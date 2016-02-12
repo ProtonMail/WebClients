@@ -1052,6 +1052,11 @@ angular.module("proton.modals", [])
                     params.submit();
                 }
             };
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
+                }
+            };
             this.close = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
                     params.close();
@@ -1176,7 +1181,7 @@ angular.module("proton.modals", [])
             // Functions
             this.submit = function() {
                 var numBits = (this.size === true) ? 4096 : 2048;
-                
+
                 this.process = true;
                 _.each(this.addresses, function(address) {
                     address.state = GENERATING;
