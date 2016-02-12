@@ -5,7 +5,6 @@
         <p class="alert alert-info">Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
         <p>&nbsp;</p>
         <legend>{{ 'ADDRESSES' | translate }}</legend>
-        <!-- <button type="button" class="pm_button error" ng-click="lock()">Lock</button> -->
         <div ng-repeat="address in addresses | orderBy: 'Send'" class="keyAddresses">
             <header>
                 <div class="margin">
