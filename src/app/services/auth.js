@@ -604,6 +604,8 @@ angular.module("proton.authentication", [
         var form = {
             OS: tools.getOs(),
             OSVersion: '',
+            DisplayMode: $rootScope.layoutMode,
+            Resolution: window.innerHeight + ' x ' + window.innerWidth ,
             Browser: tools.getBrowser(),
             BrowserVersion: tools.getBrowserVersion(),
             Client: 'Angular',
