@@ -341,7 +341,7 @@ angular.module("proton.modals", [])
 })
 
 // Card modal
-.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, $translate, $window) {
+.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, $translate, $q, CONSTANTS) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -357,83 +357,128 @@ angular.module("proton.modals", [])
             this.cvc = '•••';
             this.zip = params.card.ZIP;
             this.countries = tools.countries;
-            this.country = _.findWhere(this.countries, {value: params.Country});
+            this.country = _.findWhere(this.countries, {value: params.card.Country});
             this.change = false;
+            this.proxy = new StripeProxy(CONSTANTS.STRIPE_ORIGIN, CONSTANTS.STRIPE_API_KEY);
             // Functions
             this.submit = function() {
                 this.process = true;
 
-                var stripeResponseHandler = function(status, response) {
-                    if(status === 200) {
-                        pmcw.encryptMessage(angular.toJson({
+                var stripeResponseHandler = function(response) {
+                    pmcw.encryptMessage(angular.toJson({
+                        Source: {
+                            Object: 'card',
+                            Number: this.number,
+                            ExpMonth: this.month,
+                            ExpYear: this.year,
+                            CVC: this.cvc,
+                            Name: this.fullname,
+                            Country: this.country.value,
+                            ZIP: this.zip
+                        }
+                    }), params.key).then(function(metadata) {
+                        // Send request to change credit card
+                        Payment.change({
                             Source: {
-                                Object: 'card',
-                                Number: this.number,
-                                ExpMonth: this.month,
-                                ExpYear: this.year,
-                                CVC: this.cvc,
-                                Name: this.fullname,
-                                Country: this.country.value,
-                                ZIP: this.zip
+                                Metadata: metadata,
+                                Object: 'token',
+                                Token: response.id,
+                                ExternalSourceID: params.card.ExternalSourceID
                             }
-                        }), params.key).then(function(metadata) {
-                            // Send request to change credit card
-                            Payment.change({
-                                Source: {
-                                    Metadata: metadata,
-                                    Object: 'token',
-                                    Token: response.id,
-                                    ExternalSourceID: params.card.ExternalSourceID
-                                }
-                            }).then(function(result) {
-                                if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                                    notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
-                                    params.cancel();
-                                } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                                    this.process = false;
-                                    notify({message: result.data.Error, classes: 'notification-danger'});
-                                } else {
-                                    this.process = false;
-                                    notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
-                                }
-                            }.bind(this), function(error) {
+                        }).then(function(result) {
+                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
+                                params.cancel();
+                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                                this.process = false;
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            } else {
                                 this.process = false;
                                 notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
-                            }.bind(this));
+                            }
+                        }.bind(this), function(error) {
+                            this.process = false;
+                            notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
                         }.bind(this));
-                    } else if(angular.isDefined(response.error)) {
-                        notify({message: response.error.message, classes: 'notification-danger'});
-                        this.process = false;
-                    }
+                    }.bind(this));
                 }.bind(this);
 
-                if($window.Stripe.card.validateCardNumber(this.number) === false) {
-                    notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
-                    this.process = false;
-                    return false;
-                }
+                var validateCardNumber = function() {
+                    var deferred = $q.defer();
 
-                if($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
-                    notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
-                    this.process = false;
-                    return false;
-                }
+                    this.proxy.callSync('Stripe.card.validateCardNumber', this.number)
+                    .then(function(result) {
+                        if (result === false) {
+                            deferred.reject(new Error($translate.instant('CARD_NUMER_INVALID')));
+                        } else {
+                            deferred.resolve();
+                        }
+                    }.bind(this));
 
-                if($window.Stripe.card.validateCVC(this.cvc) === false) {
-                    notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
-                    this.process = false;
-                    return false;
-                }
+                    return deferred.promise;
+                }.bind(this);
 
-                $window.Stripe.card.createToken({
-                    name: this.fullname,
-                    number: this.number,
-                    cvc: this.cvc,
-                    exp_month: this.month,
-                    exp_year: this.year,
-                    address_country: this.country.value,
-                    address_zip: this.zip
-                }, stripeResponseHandler);
+                var validateExpiry = function() {
+                    var deferred = $q.defer();
+
+                    this.proxy.callSync('Stripe.card.validateExpiry', this.month, this.year)
+                    .then(function(result) {
+                        if (result === false) {
+                            deferred.reject(new Error($translate.instant('EXPIRY_INVALID')));
+                        } else {
+                            deferred.resolve();
+                        }
+                    }.bind(this));
+
+                    return deferred.promise;
+                }.bind(this);
+
+                var validateCVC = function() {
+                    var deferred = $q.defer();
+
+                    this.proxy.callSync('Stripe.card.validateCVC', this.cvc)
+                    .then(function(result) {
+                        if (result === false) {
+                            deferred.reject(new Error($translate.instant('CVC_INVALID')));
+                        } else {
+                            deferred.resolve();
+                        }
+                    }.bind(this));
+
+                    return deferred.promise;
+                }.bind(this);
+
+                var createToken = function() {
+                    var deferred = $q.defer();
+
+                    this.proxy.callAsync('Stripe.card.createToken', {
+                        name: this.fullname,
+                        number: this.number,
+                        cvc: this.cvc,
+                        exp_month: this.month,
+                        exp_year: this.year,
+                        address_country: this.country.value,
+                        address_zip: this.zip
+                    })
+                    .then(function(result) {
+                        if (angular.isDefined(result.error)) {
+                            deferred.reject(result.error);
+                        } else {
+                            stripeResponseHandler(result);
+                        }
+                    });
+
+                    return deferred.promise;
+                }.bind(this);
+
+                validateCardNumber()
+                .then(validateExpiry)
+                .then(validateCVC)
+                .then(createToken)
+                .catch(function(error) {
+                    notify({message: error, classes: 'notification-danger'});
+                    this.process = false;
+                }.bind(this));
             };
 
             this.cancel = function() {
