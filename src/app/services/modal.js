@@ -341,7 +341,7 @@ angular.module("proton.modals", [])
 })
 
 // Card modal
-.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, $translate, $window) {
+.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, $translate, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -357,83 +357,84 @@ angular.module("proton.modals", [])
             this.cvc = '•••';
             this.zip = params.card.ZIP;
             this.countries = tools.countries;
-            this.country = _.findWhere(this.countries, {value: params.Country});
+            this.country = _.findWhere(this.countries, {value: params.card.Country});
             this.change = false;
             // Functions
             this.submit = function() {
                 this.process = true;
 
-                var stripeResponseHandler = function(status, response) {
-                    if(status === 200) {
-                        pmcw.encryptMessage(angular.toJson({
+                var stripeResponseHandler = function(response) {
+                    pmcw.encryptMessage(angular.toJson({
+                        Source: {
+                            Object: 'card',
+                            Number: this.number,
+                            ExpMonth: this.month,
+                            ExpYear: this.year,
+                            CVC: this.cvc,
+                            Name: this.fullname,
+                            Country: this.country.value,
+                            ZIP: this.zip
+                        }
+                    }), params.key).then(function(metadata) {
+                        // Send request to change credit card
+                        Payment.change({
                             Source: {
-                                Object: 'card',
-                                Number: this.number,
-                                ExpMonth: this.month,
-                                ExpYear: this.year,
-                                CVC: this.cvc,
-                                Name: this.fullname,
-                                Country: this.country.value,
-                                ZIP: this.zip
+                                Metadata: metadata,
+                                Object: 'token',
+                                Token: response.id,
+                                ExternalSourceID: params.card.ExternalSourceID
                             }
-                        }), params.key).then(function(metadata) {
-                            // Send request to change credit card
-                            Payment.change({
-                                Source: {
-                                    Metadata: metadata,
-                                    Object: 'token',
-                                    Token: response.id,
-                                    ExternalSourceID: params.card.ExternalSourceID
-                                }
-                            }).then(function(result) {
-                                if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                                    notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
-                                    params.cancel();
-                                } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                                    this.process = false;
-                                    notify({message: result.data.Error, classes: 'notification-danger'});
-                                } else {
-                                    this.process = false;
-                                    notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
-                                }
-                            }.bind(this), function(error) {
+                        }).then(function(result) {
+                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
+                                params.cancel();
+                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                                this.process = false;
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            } else {
                                 this.process = false;
                                 notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
-                            }.bind(this));
+                            }
+                        }.bind(this), function(error) {
+                            this.process = false;
+                            notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
                         }.bind(this));
-                    } else if(angular.isDefined(response.error)) {
-                        notify({message: response.error.message, classes: 'notification-danger'});
-                        this.process = false;
-                    }
+                    }.bind(this));
                 }.bind(this);
 
-                if($window.Stripe.card.validateCardNumber(this.number) === false) {
-                    notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
-                    this.process = false;
-                    return false;
-                }
+                var validateCardNumber = function() {
+                    return Payment.validateCardNumber(this.number);
+                }.bind(this);
 
-                if($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
-                    notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
-                    this.process = false;
-                    return false;
-                }
+                var validateExpiry = function() {
+                    return Payment.validateExpiry(this.month, this.year);
+                }.bind(this);
 
-                if($window.Stripe.card.validateCVC(this.cvc) === false) {
-                    notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
-                    this.process = false;
-                    return false;
-                }
+                var validateCVC = function() {
+                    return Payment.validateCVC(this.cvc);
+                }.bind(this);
 
-                $window.Stripe.card.createToken({
-                    name: this.fullname,
-                    number: this.number,
-                    cvc: this.cvc,
-                    exp_month: this.month,
-                    exp_year: this.year,
-                    address_country: this.country.value,
-                    address_zip: this.zip
-                }, stripeResponseHandler);
+                var createToken = function() {
+                    return Payment.createToken({
+                        name: this.fullname,
+                        number: this.number,
+                        cvc: this.cvc,
+                        exp_month: this.month,
+                        exp_year: this.year,
+                        address_country: this.country.value,
+                        address_zip: this.zip
+                    });
+                }.bind(this);
+
+                validateCardNumber()
+                .then(validateExpiry)
+                .then(validateCVC)
+                .then(createToken)
+                .then(stripeResponseHandler)
+                .catch(function(error) {
+                    notify({message: error, classes: 'notification-danger'});
+                    this.process = false;
+                }.bind(this));
             };
 
             this.cancel = function() {
@@ -601,30 +602,20 @@ angular.module("proton.modals", [])
                 return deferred.promise;
             }.bind(this);
 
-            /**
-             * Generate token with Stripe library
-             */
-            var generateStripeToken = function() {
-                if($window.Stripe.card.validateCardNumber(this.number) === false) {
-                    notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
-                    this.step = 'payment';
-                    return false;
-                }
+            var validateCardNumber = function() {
+                return Payment.validateCardNumber(this.number);
+            };
 
-                if($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
-                    notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
-                    this.step = 'payment';
-                    return false;
-                }
+            var validateExpiry = function() {
+                return Payment.validateExpiry(this.month, this.year);
+            };
 
-                if($window.Stripe.card.validateCVC(this.cvc) === false) {
-                    notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
-                    this.step = 'payment';
-                    return false;
-                }
+            var validateCVC = function() {
+                return Payment.validateCVC(this.cvc);
+            };
 
-                // Generate token with Stripe Api
-                $window.Stripe.card.createToken({
+            var createToken = function() {
+                return Payment.createToken({
                     name: this.fullname,
                     number: this.number,
                     cvc: this.cvc,
@@ -632,41 +623,42 @@ angular.module("proton.modals", [])
                     exp_year: this.year,
                     address_country: this.country.value,
                     address_zip: this.zip
-                }, stripeResponseHandler);
+                });
             }.bind(this);
 
             /**
              * Callback called by the Stripe library when the token is generated
              */
-            var stripeResponseHandler = function(status, response) {
-                if(status === 200) {
-                    // Add data from Stripe
-                    this.config.Source = {
-                        Object: 'token',
-                        Token: response.id
-                    };
+            var stripeResponseHandler = function(response) {
+                // Add data from Stripe
+                this.config.Source = {
+                    Object: 'token',
+                    Token: response.id
+                };
 
-                    if(angular.isDefined(this.source)) {
-                        this.config.Source.ExternalSourceID = this.source;
-                    }
-
-                    // Encrypt metadata
-                    encryptMetadata().then(function() {
-                        // Send request to subscribe
-                        saveOrganization();
-                    });
-                } else if(angular.isDefined(response.error)) {
-                    notify({message: response.error.message, classes: 'notification-danger'});
-                    this.step = 'payment';
-                } else {
-                    this.step = 'payment';
+                if(angular.isDefined(this.source)) {
+                    this.config.Source.ExternalSourceID = this.source;
                 }
+
+                // Encrypt metadata
+                encryptMetadata().then(function() {
+                    // Send request to subscribe
+                    saveOrganization();
+                });
             }.bind(this);
 
             this.submit = function() {
                 var next = function() {
                     if(this.change === true) {
-                        generateStripeToken();
+                        validateCardNumber()
+                        .then(validateExpiry)
+                        .then(validateCVC)
+                        .then(createToken)
+                        .then(stripeResponseHandler)
+                        .catch(function(error) {
+                            notify({message: error, classes: 'notification-danger'});
+                            this.step = 'payment';
+                        }.bind(this));
                     } else {
                         saveOrganization();
                     }
@@ -713,8 +705,6 @@ angular.module("proton.modals", [])
                 } else {
                     next();
                 }
-
-
             }.bind(this);
 
             /**
@@ -1181,18 +1171,19 @@ angular.module("proton.modals", [])
             this.title = params.title;
             this.message = params.message;
             _.each(this.addresses, function(address) { address.state = QUEUED; });
-            this.sizes = [{label: 'normal strength encryption (2048)', value: 2048}, {label: 'high strength encryption (4096)', value: 4096}];
-            this.size = this.sizes[0];
+            this.size = false;
 
             // Functions
             this.submit = function() {
+                var numBits = (this.size === true) ? 4096 : 2048;
+                
                 this.process = true;
                 _.each(this.addresses, function(address) {
                     address.state = GENERATING;
                     promises.push(pmcw.generateKeysRSA(
                         address.Email,
                         mailboxPassword,
-                        this.size.value
+                        numBits
                     ).then(function(result) {
                         address.state = DONE;
                         // var publicKeyArmored = result.publicKeyArmored; not used
@@ -1256,13 +1247,11 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('donateModal', function(pmModal, Payment, notify, tools, $translate) {
+.factory('donateModal', function(pmModal, Payment, notify, tools, $translate, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/donate.tpl.html',
         controller: function(params) {
-            // Load Stripe library
-            tools.loadStripe();
             // Variables
             this.text = params.message || 'Donate to ProtonMail';
             this.amount = params.amount || 25;
@@ -1287,55 +1276,63 @@ angular.module("proton.modals", [])
             }
 
             // Functions
-            var check = function() {
-                if ($window.Stripe.card.validateCardNumber(this.number) === false) {
-                    throw new Error($translate.instant('CARD_NUMER_INVALID'));
+            var validateCardNumber = function() {
+                return Payment.validateCardNumber(this.number);
+            };
+
+            var validateExpiry = function() {
+                return Payment.validateExpiry(this.month, this.year);
+            };
+
+            var validateCVC = function() {
+                return Payment.validateCVC(this.cvc);
+            };
+
+            var sendDonation = function() {
+                var now = moment().unix();
+
+                return Payment.donate({
+                    Donation: {
+                        Amount: this.amount * 100,
+                        Currency: this.currency.value,
+                        Time: now,
+                        ExternalProvider: 'Stripe'
+                    },
+                    Source: {
+                        Object: 'card',
+                        Number: this.number,
+                        ExpMonth: this.month,
+                        ExpYear: this.year,
+                        CVC: this.cvc,
+                        Name: this.fullname
+                    }
+                });
+            };
+
+            var closeModal = function() {
+                var deferred = $q.defer();
+
+                if (result.data && result.data.Code === 1000) {
+                    deferred.resolve();
+                    this.close();
+                } else if (result.data && result.data.Error) {
+                    deferred.reject(new Error(result.data.Error));
+                } else {
+                    deferred.resolve(new Error($translate.instant('ERROR_DURING_DONATION_REQUEST')));
                 }
 
-                if ($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
-                    throw new Error($translate.instant('EXPIRY_INVALID'));
-                }
-
-                if ($window.Stripe.card.validateCVC(this.cvc) === false) {
-                    throw new Error($translate.instant('CVC_INVALID'));
-                }
+                return deferred.promise;
             };
 
             this.donate = function() {
-                var now = moment().unix();
-
-                try {
-                    check();
-                    Payment.donate({
-                        Donation: {
-                            Amount: this.amount * 100,
-                            Currency: this.currency.value,
-                            Time: now,
-                            ExternalProvider: 'Stripe'
-                        },
-                        Source: {
-                            Object: 'card',
-                            Number: this.number,
-                            ExpMonth: this.month,
-                            ExpYear: this.year,
-                            CVC: this.cvc,
-                            Name: this.fullname
-                        }
-                    })
-                    .then(function(result) {
-                        if (result.data && result.data.Code === 1000) {
-                            this.close();
-                        } else if (result.data && result.data.Error) {
-                            throw new Error(result.data.Error);
-                        } else {
-                            throw new Error($translate.instant('ERROR_DURING_DONATION_REQUEST'));
-                        }
-                    }.bind(this));
-                } catch (error) {
+                validateCardNumber()
+                .then(validateExpiry)
+                .then(validateCVC)
+                .then(sendDonation)
+                .then(closeModal)
+                .catch(function(error) {
                     notify({message: error, classes: 'notification-danger'});
-                } finally {
-
-                }
+                });
             };
 
             this.close = function() {
@@ -1371,61 +1368,6 @@ angular.module("proton.modals", [])
 
             this.close = function() {
                 if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
-            };
-        }
-    });
-})
-
-
-.factory('stripeExampleModal', function(pmModal) {
-    return pmModal({
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/stripeExample.tpl.html',
-        controller: function(params) {
-
-            // instantiate StripeProxy wrapper libary made by Bart
-            // make sure to start Sandboxed repo locally first
-            // Replace window.location.origin with "https://secure.protonmail.com" for production
-            this.proxy = new StripeProxy("http://localhost:9000", "pk_test_xL4IzbxNCD9Chu98oxQVjYFe");
-
-            console.log(this.proxy);
-
-            // example data
-            this.exampleCardInfo = {
-              number: '4242424242424242',
-              cvc: '123',
-              exp_month: 12,
-              exp_year: 2017
-            };
-
-            // async call to stripe
-            this.chargeCard = function() {
-                console.log('chargeCard');
-                this.proxy.callAsync("Stripe.card.createToken", this.exampleCardInfo)
-                .then(function(result) {
-                    alert('Async response from Stripe!');
-                    alert(result.id);
-                });
-            };
-
-            // sync call to stripe
-            this.validateCard = function() {
-                console.log('validateCard');
-                this.proxy.callSync("Stripe.bankAccount.validateRoutingNumber", 'mistake', 'US')
-                .then(function(result) {
-                    alert('Sync response from Stripe!');
-                    if (result===false) {
-                        alert("Validation failed");
-                    }
-                });
-            };
-
-            this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    this.proxy.cleanup();
-                    console.log('cleanup');
                     params.close();
                 }
             };

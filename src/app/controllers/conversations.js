@@ -53,9 +53,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $log.error(error);
         });
 
-        console.log($rootScope);
-
-        $rootScope.$on('stateChangeSuccess', function(event) {
+        $scope.$on('stateChangeSuccess', function(event) {
             if ($rootScope.welcome===true) {
                 $rootScope.$broadcast('tourStart');
             }

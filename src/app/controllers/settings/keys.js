@@ -179,8 +179,4 @@ angular.module("proton.controllers.Settings")
             }
         });
     };
-
-    $scope.lock = function() {
-        User.lock();
-    };
 });

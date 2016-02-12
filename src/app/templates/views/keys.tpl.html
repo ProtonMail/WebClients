@@ -1,57 +1,57 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings pm_form" pt-height>
-        <p class="alert alert-info" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
-        <p class="alert alert-info">Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
-        <p>&nbsp;</p>
-        <legend>{{ 'ADDRESSES' | translate }}</legend>
-        <!-- <button type="button" class="pm_button error" ng-click="lock()">Lock</button> -->
-        <div ng-repeat="address in addresses | orderBy: 'Send'" class="keyAddresses">
-            <header>
-                <div class="margin">
-                    <button class="pm_button pull-right" ng-click="generate(address)" ng-hide="isNonPrivate === true" ng-disabled="address.Keys > 10">
-                        <i class="fa fa-key"></i>
-                        {{ 'GENERATE_NEW_KEY_PAIR' | translate }}
-                    </button>
-                    <strong>{{ address.Email }}</strong>
-                    <span class="pm_badge success" ng-show="address.Status === 1">Enabled</span>
-                    <span class="pm_badge error" ng-hide="address.Status === 1">Disabled</span>
-                </div>
-            </header>
-            <table class="pm_table thick bordered" ng-show="address.Keys.length > 0" id="keys-addressTable">
-                <thead>
-                    <tr>
-                        <th style="width: 8.5rem">{{ 'STATUS' | translate }}</th>
-                        <th style="width: 22rem">{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
-                        <th style="width: 5.5rem">{{ 'KEY_SIZE' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
-                        <th>{{ 'DOWNLOAD' | translate }}</th>
-                        <th style="width: 10.5rem" class="text-right">{{ 'ACTIONS' | translate }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="key in address.Keys">
-                        <td>
-                            <span ng-show="key.decrypted === true"><i class="fa fa-check"></i></span>
-                            <span ng-hide="key.decrypted === true"><i class="fa fa-times-circle"></i></span>
-                            <span class="pm_badge primary" ng-show="$first">{{ 'PRIMARY' | translate }}</span>
-                        </td>
-                        <td>
-                            <code title="{{ key.created | date }}">{{ key.fingerprint }}</code>
-                        </td>
-                        <td>{{ key.bitSize }} {{ 'BIT' | translate }}</td>
-                        <td>
-                            <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari">{{ 'PUBLIC_KEY' | translate }}</button>
-                            <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari">{{ 'PRIVATE_KEY' | translate }}</button>
-                        </td>
-                        <td class="text-right">
-                            <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false">{{ 'MAKE_PRIMARY' | translate }}</button>
-                            <button class="pm_button link" ng-click="enable(address, key)" ng-show="key.decrypted === false">{{ 'ENABLE' | translate }}</button>
-                            <button class="pm_button link" ng-click="delete(address, key)" ng-hide="address.Keys.length === 1 || isNonPrivate"><i class="fa fa-trash-o"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>&nbsp;</p>
+        <div class="row">
+            <legend>{{ 'ADDRESSES' | translate }}</legend>
+            <p class="alert alert-warning" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
+            <p class="alert alert-info">Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
+            <div ng-repeat="address in addresses | orderBy: 'Send'">
+                <header>
+                    <div class="margin">
+                        <button class="pm_button pull-right" ng-click="generate(address)" ng-hide="isNonPrivate === true" ng-disabled="address.Keys > 10">
+                            <i class="fa fa-key"></i>
+                            {{ 'GENERATE_NEW_KEY_PAIR' | translate }}
+                        </button>
+                        <strong>{{ address.Email }}</strong>
+                        <span class="pm_badge success" ng-show="address.Status === 1">Enabled</span>
+                        <span class="pm_badge error" ng-hide="address.Status === 1">Disabled</span>
+                    </div>
+                </header>
+                <table class="pm_table thick bordered" ng-show="address.Keys.length > 0" id="keys-addressTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 8.5rem">{{ 'STATUS' | translate }}</th>
+                            <th style="width: 8rem">{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
+                            <th style="width: 5.5rem">{{ 'KEY_SIZE' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
+                            <th>{{ 'DOWNLOAD' | translate }}</th>
+                            <th style="width: 10.5rem" class="text-right">{{ 'ACTIONS' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="key in address.Keys">
+                            <td>
+                                <span ng-show="key.decrypted === true"><i class="fa fa-check"></i></span>
+                                <span ng-hide="key.decrypted === true"><i class="fa fa-times-circle"></i></span>
+                                <span class="pm_badge primary" ng-show="$first">{{ 'PRIMARY' | translate }}</span>
+                            </td>
+                            <td>
+                                <code pt-tooltip="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 8 }}...</code>
+                            </td>
+                            <td>{{ key.bitSize }} {{ 'BIT' | translate }}</td>
+                            <td>
+                                <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari">{{ 'PUBLIC_KEY' | translate }}</button>
+                                <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari">{{ 'PRIVATE_KEY' | translate }}</button>
+                            </td>
+                            <td class="text-right">
+                                <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false">{{ 'MAKE_PRIMARY' | translate }}</button>
+                                <button class="pm_button link" ng-click="enable(address, key)" ng-show="key.decrypted === false">{{ 'ENABLE' | translate }}</button>
+                                <button class="pm_button link" ng-click="delete(address, key)" ng-hide="address.Keys.length === 1 || isNonPrivate"><i class="fa fa-trash-o"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p ng-hide="$last">&nbsp;</p>
+            </div>
         </div>
     </div>
 </div>

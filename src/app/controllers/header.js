@@ -10,7 +10,8 @@ angular.module("proton.controllers.Header", [])
     notify,
     CONSTANTS,
     authentication,
-    searchModal
+    searchModal,
+    tools
 ) {
     $scope.params = {
         searchMessageInput: $stateParams.words || '',
@@ -22,30 +23,37 @@ angular.module("proton.controllers.Header", [])
     $scope.advancedSearch = false;
     $scope.starred = 2;
 
-    // used for tablet header
-    $scope.path = $location.path();
-    $scope.path = $scope.path.replace(/\//g, "");
-    if ($scope.path === 'label') {
-        // TODO: PANDA: get label name. for now make it empty.
-        $scope.path = '';
-    }
-    else if ($rootScope.idDefined()) {
-        $scope.path = '';
-    }
-
     $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
     delete $scope.folders.search;
     delete $scope.folders.label;
+
+    var setPath = function() {
+        var mailbox = tools.currentMailbox();
+
+        if (mailbox === 'label') {
+            var label = _.findWhere(authentication.user.Labels, {ID: $stateParams.label});
+
+            if (angular.isDefined(label)) {
+                mailbox = label.Name;
+            }
+        }
+
+        $scope.path = mailbox;
+    };
 
     $scope.$on('openSearchModal', function(event, value) {
         $scope.openSearchModal(value);
     });
 
     $scope.$on('$stateChangeSuccess', function(event) {
+        setPath();
+
         if($state.is('secured.search') === false) {
             $scope.params.searchMessageInput = '';
         }
     });
+
+    setPath();
 
     $scope.tour = function() {
         $rootScope.$broadcast('tourStart');
