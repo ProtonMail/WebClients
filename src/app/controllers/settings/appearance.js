@@ -160,9 +160,11 @@ angular.module("proton.controllers.Settings")
                     if (response.Code === 1000) {
                         authentication.user.MessageButtons = $scope.appearance.MessageButtons;
                         notify({message: $translate.instant('BUTTONS_POSITION_SAVED'), classes: 'notification-success'});
-                    } else if (response.Error) {
+                    }
+                    else if (response.Error) {
                         notify({message: response.Error, classes: 'notification-danger'});
-                    } else {
+                    }
+                    else {
                         $log.error(response);
                     }
                 }, function(error) {

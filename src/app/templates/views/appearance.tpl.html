@@ -83,14 +83,14 @@
                     <p>{{ 'READ_UNREAD_POSITION' | translate }}</p>
                     <label for="">
                         <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
-                        <span ng-click="appearance.MessageButtons = 0; saveButtonsPosition(buttonsForm)" class="pm_buttons">
+                        <span ng-click="appearance.MessageButtons = 0; saveButtonsPosition(buttonsForm)" class="pm_buttons" pt-tooltip="{{ 'MARK_READ_UNREAD' | translate }}">
                             <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
                             <a href="#" class="dead divider"><i class="fa fa fa-eye-slash"></i></a>
                         </span>
                     </label>
                     <label for="">
                         <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
-                        <span ng-click="appearance.MessageButtons = 1; saveButtonsPosition(buttonsForm)" class="pm_buttons">
+                        <span ng-click="appearance.MessageButtons = 1; saveButtonsPosition(buttonsForm)" class="pm_buttons" pt-tooltip="{{ 'MARK_UNREAD_READ' | translate }}">
                             <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
                             <a href="#" class="dead divider"><i class="fa fa fa-eye"></i></a>
                         </span>

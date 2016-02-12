@@ -23,6 +23,7 @@
     </label>
 
     <span
+     ng-show="messageButtons === 1"
     class="pm_buttons"
     ng-class="{ disabled: numberElementSelected === 0 }">
         <a
@@ -34,6 +35,22 @@
         class="fa fa-eye divider"
         pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
         ng-click="read()"
+        ng-class="{ disabled: numberElementSelected === 0 }"></a>
+    </span>
+
+    <span
+     ng-show="messageButtons === 0"
+    class="pm_buttons"
+    ng-class="{ disabled: numberElementSelected === 0 }">
+        <a
+        class="fa fa-eye"
+        pt-tooltip="{{ 'MARK_AS_READ' | translate }}"
+        ng-click="read()"
+        ng-class="{ disabled: numberElementSelected === 0 }"></a>
+        <a
+        class="fa fa-eye-slash divider"
+        pt-tooltip="{{ 'MARK_AS_UNREAD' | translate }}"
+        ng-click="unread()"
         ng-class="{ disabled: numberElementSelected === 0 }"></a>
     </span>
 
