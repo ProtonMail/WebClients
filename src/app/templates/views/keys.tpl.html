@@ -35,7 +35,7 @@
                                 <span class="pm_badge primary" ng-show="$first">{{ 'PRIMARY' | translate }}</span>
                             </td>
                             <td>
-                                <code pt-tooltip="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 4 }}...</code>
+                                <code pt-tooltip="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 8 }}...</code>
                             </td>
                             <td>{{ key.bitSize }} {{ 'BIT' | translate }}</td>
                             <td>
