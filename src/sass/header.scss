@@ -162,6 +162,9 @@ header#pm_header-desktop {
 				box-sizing: border-box;
 				border-top: 10px solid transparent;
 				transition: color .25s ease, border .25s ease;
+				&:active {
+					box-shadow: none;
+				}
 				.fa {
 					display: block;
 					height: 20px;
