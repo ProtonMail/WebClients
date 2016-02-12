@@ -9,14 +9,14 @@
                 <h4 class="modal-title">7. DMARC <em>({{ 'RECOMMENDED' | translate }})</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p>If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if SPF and DKIM checks failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. <a target="_blank" href="https://protonmail.com/support/knowledge-base/message-in-spam-dmarc">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. <a target="_blank" href="https://protonmail.com/support/knowledge-base/message-in-spam-dmarc">{{ 'LEARN_MORE' | translate }}</a></p>
                 <p>Typical DMARC record:</p>
 
                 <table class="pm_table record">
                     <tr>
-                        <th style="width:3rem">Type</th>
-                        <th style="width:4rem">Host</th>
-                        <th>Value</th>
+                        <th style="width:3rem">{{ 'TYPE' | translate }}</th>
+                        <th style="width:4rem">{{ 'HOST_NAME' | translate }}</th>
+                        <th>{{ 'VALUE_DATA_POINTS_TO' | translate }}</th>
                     </tr>
                     <tr>
                         <td><code>TXT</code></td>
@@ -24,11 +24,6 @@
                         <td><code>v=DMARC1; p=none; rua=mailto:address@yourdomain.com</code></td>
                     </tr>
                 </table>
-
-                <div ng-show="dmarc">
-                    <p>The current DMARC record for {{ ctrl.domain.domain }} is:</p>
-                    <textarea style="height: 12rem" readonly>{{ dmarc }}</textarea>
-                </div>
 
                 <p class="alert alert-info"><strong>p=none</strong> is report only mode so no effect on email delivery</p>
                 <p class="alert alert-info"><strong>address@yourdomain.com</strong> is where you will receive DMARC reports from other email services</p>

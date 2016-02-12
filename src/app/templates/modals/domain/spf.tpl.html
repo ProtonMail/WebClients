@@ -14,14 +14,14 @@
                 <p>Please add the following TXT record:</p>
                 <table class="pm_table record">
                     <tr>
-                        <th style="width:3rem">Type</th>
-                        <th style="width:3rem">Host</th>
-                        <th>Value</th>
+                        <th style="width:3rem">{{ 'TYPE' | translate }}</th>
+                        <th style="width:3rem">{{ 'HOST_NAME' | translate }}</th>
+                        <th>{{ 'VALUE_DATA_POINTS_TO' | translate }}</th>
                     </tr>
                     <tr>
                         <td><code>TXT</code></td>
                         <td><code>@</code></td>
-                        <td><code>v=spf1 include:_spf.protonmail.ch a mx ~all</code></td>
+                        <td><code>v=spf1 include:_spf.protonmail.ch mx ~all</code></td>
                     </tr>
                 </table>
 
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button primary" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button class="pm_button primary" ng-click="ctrl.close()">{{ 'NEXT' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.close()"></div>

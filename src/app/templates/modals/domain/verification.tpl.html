@@ -15,9 +15,9 @@
                     <p>Please add the following TXT record:</p>
                     <table class="pm_table record">
                         <tr>
-                            <th style="width:3rem">Type</th>
-                            <th style="width:3rem">Host</th>
-                            <th>Value</th>
+                            <th style="width:3rem">{{ 'TYPE' | translate }}</th>
+                            <th style="width:3rem">{{ 'HOST_NAME' | translate }}</th>
+                            <th>{{ 'VALUE_DATA_POINTS_TO' | translate }}</th>
                         </tr>
                         <tr>
                             <td><code>TXT</code></td>
@@ -25,7 +25,7 @@
                             <td><code>{{ ctrl.domain.VerifyCode }}</code></td>
                         </tr>
                     </table>
-                    <p class="alert alert-info">It can take up to an hour for changes to DNS records to propagate.</p>
+                    <p class="alert alert-info">{{ 'DNS_PROPAGATE_MESSAGE' | translate }}</p>
                 </div>
             </div>
         </div>
