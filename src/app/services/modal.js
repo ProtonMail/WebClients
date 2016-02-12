@@ -1376,4 +1376,59 @@ angular.module("proton.modals", [])
             };
         }
     });
+})
+
+
+.factory('stripeExampleModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/stripeExample.tpl.html',
+        controller: function(params) {
+
+            // instantiate StripeProxy wrapper libary made by Bart
+            // make sure to start Sandboxed repo locally first
+            // Replace window.location.origin with "https://secure.protonmail.com" for production
+            this.proxy = new StripeProxy("http://localhost:9000", "pk_test_xL4IzbxNCD9Chu98oxQVjYFe");
+
+            console.log(this.proxy);
+
+            // example data
+            this.exampleCardInfo = {
+              number: '4242424242424242',
+              cvc: '123',
+              exp_month: 12,
+              exp_year: 2017
+            };
+
+            // async call to stripe
+            this.chargeCard = function() {
+                console.log('chargeCard');
+                this.proxy.callAsync("Stripe.card.createToken", this.exampleCardInfo)
+                .then(function(result) {
+                    alert('Async response from Stripe!');
+                    alert(result.id);
+                });
+            };
+
+            // sync call to stripe
+            this.validateCard = function() {
+                console.log('validateCard');
+                this.proxy.callSync("Stripe.bankAccount.validateRoutingNumber", 'mistake', 'US')
+                .then(function(result) {
+                    alert('Sync response from Stripe!');
+                    if (result===false) {
+                        alert("Validation failed");
+                    }
+                });
+            };
+
+            this.close = function() {
+                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
+                    this.proxy.cleanup();
+                    console.log('cleanup');
+                    params.close();
+                }
+            };
+        }
+    });
 });

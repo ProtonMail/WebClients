@@ -10,7 +10,8 @@ angular.module("proton.controllers.Settings")
     Logs,
     networkActivityTracker,
     notify,
-    Setting
+    Setting,
+    stripeExampleModal
 ) {
     $scope.logs = [];
     $scope.logItemsPerPage = 20;
@@ -137,4 +138,13 @@ angular.module("proton.controllers.Settings")
 
         saveAs(blob, filename);
     };
+
+    stripeExampleModal.activate({
+        params: {
+            close: function() {
+                stripeExampleModal.deactivate();
+            }
+        }
+    });
+
 });
