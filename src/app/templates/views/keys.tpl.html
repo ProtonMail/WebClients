@@ -22,7 +22,7 @@
                 <thead>
                     <tr>
                         <th style="width: 8.5rem">{{ 'STATUS' | translate }}</th>
-                        <th style="width: 22rem">{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
+                        <th style="width: 8rem">{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
                         <th style="width: 5.5rem">{{ 'KEY_SIZE' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
                         <th>{{ 'DOWNLOAD' | translate }}</th>
                         <th style="width: 10.5rem" class="text-right">{{ 'ACTIONS' | translate }}</th>
@@ -36,7 +36,7 @@
                             <span class="pm_badge primary" ng-show="$first">{{ 'PRIMARY' | translate }}</span>
                         </td>
                         <td>
-                            <code title="{{ key.created | date }}">{{ key.fingerprint }}</code>
+                            <code title="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 4 }}...</code>
                         </td>
                         <td>{{ key.bitSize }} {{ 'BIT' | translate }}</td>
                         <td>
