@@ -1,6 +1,6 @@
 angular.module('proton.card', [])
 
-.directive('cardIcon', function ($window) {
+.directive('cardIcon', function (Payment) {
     return {
         restrict: 'E',
         replace: true,
@@ -20,40 +20,39 @@ angular.module('proton.card', [])
             scope.$watch('number', function (newValue, oldValue) {
                 var value = card;
 
-                // Stripe defined?
-                if (angular.isDefined($window.Stripe)) {
-                    // New value defined?
-                    if (angular.isDefined(newValue)) {
-                        // Valid card number
-                        if ($window.Stripe.card.validateCardNumber(newValue)) {
-                            switch ($window.Stripe.card.cardType(newValue)) {
-                                case 'Visa':
-                                    value = visa;
-                                    break;
-                                case 'MasterCard':
-                                    value = mastercard;
-                                    break;
-                                case 'American Express':
-                                    value = americanExpress;
-                                    break;
-                                case 'Discover':
-                                    value = discover;
-                                    break;
-                                case 'Diners Club':
-                                    value = dinersClub;
-                                    break;
-                                case 'JCB':
-                                    value = jcb;
-                                    break;
-                                case 'Unknown':
-                                    value = card;
-                                    break;
-                                default:
-                                    value = card;
-                                    break;
-                            }
+                // New value defined?
+                if (angular.isDefined(newValue)) {
+                    Payment.cardType(newValue)
+                    .then(function(type) {
+                        switch (type) {
+                            case 'Visa':
+                            value = visa;
+                            break;
+                            case 'MasterCard':
+                            value = mastercard;
+                            break;
+                            case 'American Express':
+                            value = americanExpress;
+                            break;
+                            case 'Discover':
+                            value = discover;
+                            break;
+                            case 'Diners Club':
+                            value = dinersClub;
+                            break;
+                            case 'JCB':
+                            value = jcb;
+                            break;
+                            case 'Unknown':
+                            value = card;
+                            break;
+                            default:
+                            value = card;
+                            break;
                         }
-                    }
+
+                        scope.class = value;
+                    });
                 }
 
                 scope.class = value;

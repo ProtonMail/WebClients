@@ -1246,13 +1246,11 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('donateModal', function(pmModal, Payment, notify, tools, $translate) {
+.factory('donateModal', function(pmModal, Payment, notify, tools, $translate, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/donate.tpl.html',
         controller: function(params) {
-            // Load Stripe library
-            tools.loadStripe();
             // Variables
             this.text = params.message || 'Donate to ProtonMail';
             this.amount = params.amount || 25;
@@ -1277,55 +1275,63 @@ angular.module("proton.modals", [])
             }
 
             // Functions
-            var check = function() {
-                if ($window.Stripe.card.validateCardNumber(this.number) === false) {
-                    throw new Error($translate.instant('CARD_NUMER_INVALID'));
+            var validateCardNumber = function() {
+                return Payment.validateCardNumber(this.number);
+            };
+
+            var validateExpiry = function() {
+                return Payment.validateExpiry(this.month, this.year);
+            };
+
+            var validateCVC = function() {
+                return Payment.validateCVC(this.cvc);
+            };
+
+            var sendDonation = function() {
+                var now = moment().unix();
+
+                return Payment.donate({
+                    Donation: {
+                        Amount: this.amount * 100,
+                        Currency: this.currency.value,
+                        Time: now,
+                        ExternalProvider: 'Stripe'
+                    },
+                    Source: {
+                        Object: 'card',
+                        Number: this.number,
+                        ExpMonth: this.month,
+                        ExpYear: this.year,
+                        CVC: this.cvc,
+                        Name: this.fullname
+                    }
+                });
+            };
+
+            var closeModal = function() {
+                var deferred = $q.defer();
+
+                if (result.data && result.data.Code === 1000) {
+                    deferred.resolve();
+                    this.close();
+                } else if (result.data && result.data.Error) {
+                    deferred.reject(new Error(result.data.Error));
+                } else {
+                    deferred.resolve(new Error($translate.instant('ERROR_DURING_DONATION_REQUEST')));
                 }
 
-                if ($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
-                    throw new Error($translate.instant('EXPIRY_INVALID'));
-                }
-
-                if ($window.Stripe.card.validateCVC(this.cvc) === false) {
-                    throw new Error($translate.instant('CVC_INVALID'));
-                }
+                return deferred.promise;
             };
 
             this.donate = function() {
-                var now = moment().unix();
-
-                try {
-                    check();
-                    Payment.donate({
-                        Donation: {
-                            Amount: this.amount * 100,
-                            Currency: this.currency.value,
-                            Time: now,
-                            ExternalProvider: 'Stripe'
-                        },
-                        Source: {
-                            Object: 'card',
-                            Number: this.number,
-                            ExpMonth: this.month,
-                            ExpYear: this.year,
-                            CVC: this.cvc,
-                            Name: this.fullname
-                        }
-                    })
-                    .then(function(result) {
-                        if (result.data && result.data.Code === 1000) {
-                            this.close();
-                        } else if (result.data && result.data.Error) {
-                            throw new Error(result.data.Error);
-                        } else {
-                            throw new Error($translate.instant('ERROR_DURING_DONATION_REQUEST'));
-                        }
-                    }.bind(this));
-                } catch (error) {
+                validateCardNumber()
+                .then(validateExpiry)
+                .then(validateCVC)
+                .then(sendDonation)
+                .then(closeModal)
+                .catch(function(error) {
                     notify({message: error, classes: 'notification-danger'});
-                } finally {
-
-                }
+                });
             };
 
             this.close = function() {

@@ -23,9 +23,6 @@ angular.module("proton.controllers.Settings")
     CONSTANTS,
     tools
 ) {
-    // Load stripe JS
-    tools.loadStripe();
-
     // Default values for organization and subscription
     $scope.organization = null;
 
