@@ -1,7 +1,7 @@
 <header id="conversationHeader">
     <span class="pm_buttons starButton">
-        <a 
-        ng-click="toggleStar(conversation)" 
+        <a
+        ng-click="toggleStar(conversation)"
         pt-tooltip="{{ 'STAR_CONVERSATION' | translate }}"
         class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}">
         </a>
@@ -10,15 +10,15 @@
         <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
         <span ng-bind="conversation.Subject"></span>
     </h1>
-    <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)">
-        <p ng-show="nonTrashed() && inTrash === true">
+    <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
+        <p ng-show="nonTrashed() && inTrash === true" class="alert">
             This conversation contains non-trashed messages.
             <a href="#" ng-click="toggleNonTrashed()">
                 <span ng-show="showNonTrashed === true">Hide non trashed messages</span>
                 <span ng-hide="showNonTrashed === true">Show non trashed messages</span>
             </a>
         </p>
-        <p ng-show="trashed() && inTrash === false">
+        <p ng-show="trashed() && inTrash === false" class="alert">
             This conversation contains trashed messages.
             <a href="#" ng-click="toggleTrashed()">
                 <span ng-show="showTrashed === true">Hide trashed messages</span>

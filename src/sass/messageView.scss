@@ -20,6 +20,12 @@
             width: calc(100% - 4.5rem);
             padding: 0 10px;
         }
+        .containsMessage {
+            padding: 10px 10px 0;
+            p {
+                margin: 0;
+            }
+        }
         .starButton {
             border: none;
             margin-right: 0;
