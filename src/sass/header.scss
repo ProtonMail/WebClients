@@ -311,7 +311,7 @@ header#pm_header-mobile {
 	background: $alt;
 	font-size: 14px;
 	position: relative;
-	z-index: 2;
+	z-index: 999;
 	a.logoMobile {
 		font-size: 1rem;
 		float: left;
@@ -339,16 +339,18 @@ header#pm_header-mobile {
 		display: inline-block;
 		float: right;
 		color: #fff;
-		max-width: 3rem;
-		min-width: 3rem;
+		max-width: 4rem;
+		min-width: 4rem;
+		text-align: center;
 		width: auto;
 	}
 	a.compose {
 		background: transparent;
 		float: right;
 		color: #fff;
-		max-width: 3rem;
-		min-width: 3rem;
+		max-width: 4rem;
+		min-width: 4rem;
+		text-align: center;
 		width: auto;
 		&:hover {
 			background: transparent;

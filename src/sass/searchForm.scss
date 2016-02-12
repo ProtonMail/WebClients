@@ -23,7 +23,7 @@ form.searchForm {
 			}
 			input.query {
 				visibility: hidden;
-			}	
+			}
 		}
 	}
 	fieldset {
@@ -147,5 +147,19 @@ form.searchForm {
 	}
 	a {
 		display: none;
+	}
+}
+
+body.mobileMode {
+	form.searchForm {
+		position: static;
+		& > fieldset {
+			display: none;
+		}
+		#advancedSearchDropdown {
+			top: 35px;
+			box-shadow: none;
+			border-radius: none;
+		}
 	}
 }
