@@ -10,7 +10,7 @@
                 <div class="pm_grid">
                     <div class="col-1-2">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="ctrl.size" />  Use 4096-bit keys (Default: 2048-bit)
+                            <input type="checkbox" ng-model="ctrl.size" ng-disabled="ctrl.process === true" />  Use 4096-bit keys (Default: 2048-bit)
                         </label>
                     </div>
                     <div class="col-1-2"></div>
@@ -45,10 +45,10 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()">
+            <button class="pm_button pull-left" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true">
                 {{ 'CANCEL' | translate }}
             </button>
-            <button type="submit" class="pm_button primary">
+            <button type="submit" class="pm_button primary" ng-disabled="ctrl.process === true">
                 {{ 'GENERATE_KEYS' | translate }}
             </button>
         </div>
