@@ -63,9 +63,9 @@
                                 </label>
                             </div>
                             <p>
-                                <a 
-                                href="https://protonmail.com/blog/notification-emails/" 
-                                target="_blank" 
+                                <a
+                                href="https://protonmail.com/blog/notification-emails/"
+                                target="_blank"
                                 class="pm_button link">
                                     {{ 'HOW_DOES_THIS_WORK?' | translate }}
                                 </a>
@@ -178,9 +178,9 @@
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
                             <p>
-                                <a 
-                                href="https://protonmail.com/support/knowledge-base/resetting-mailbox-password/" 
-                                target="_blank pull-left" 
+                                <a
+                                href="https://protonmail.com/support/knowledge-base/resetting-mailbox-password/"
+                                target="_blank pull-left"
                                 class="pm_button link pull-left">
                                     {{ 'HOW_DOES_THIS_WORK?' | translate }}
                                 </a>
@@ -202,10 +202,17 @@
                     </div>
                     <div class="col right">
                         <div class="pm_sort">
-                            <ul data-as-sortable="aliasDragControlListeners" data-ng-model="aliases">
+                            <ul data-as-sortable="aliasDragControlListeners" data-ng-model="aliases" ng-show="aliases.length > 1">
                                 <li ng-repeat="alias in aliases" as-sortable-item="">
                                     <div as-sortable-item-handle="">
                                         <i class="fa fa-ellipsis-v"></i>
+                                        {{ alias.Email }} <i ng-show="$index == 0" class="pull-right fa fa-check"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul data-ng-model="aliases" ng-show="aliases.length < 2">
+                                <li ng-repeat="alias in aliases">
+                                    <div>
                                         {{ alias.Email }} <i ng-show="$index == 0" class="pull-right fa fa-check"></i>
                                     </div>
                                 </li>
@@ -235,9 +242,9 @@
                             </label>
                         </div>
                         <p>
-                            <a 
-                            href="https://protonmail.com/support/knowledge-base/autosave-contact-list" 
-                            target="_blank" 
+                            <a
+                            href="https://protonmail.com/support/knowledge-base/autosave-contact-list"
+                            target="_blank"
                             class="pm_button link">
                                 {{ 'HOW_DOES_THIS_WORK?' | translate }}
                             </a>
@@ -279,9 +286,9 @@
                                 </label>
                             </div>
                             <p>
-                                <a 
-                                target="_blank" 
-                                href="https://protonmail.com/support/knowledge-base/images-by-default/" 
+                                <a
+                                target="_blank"
+                                href="https://protonmail.com/support/knowledge-base/images-by-default/"
                                 class="pm_button link">
                                     {{ 'HOW_DOES_THIS_WORK?' | translate }}
                                 </a>

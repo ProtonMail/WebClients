@@ -33,6 +33,9 @@
             font-size: .9em;
         }
     }
+    body section.sidebar a.version span {
+        display: none;
+    }
     form.searchForm {
         width: calc(100% - 600px);
     }
@@ -93,28 +96,31 @@
     body section.sidebar ul.menu li a em {
         display: none;
     }
+    body section.sidebar #sidebarLabels {
+        height: calc(100% - 550px);
+    }
 }
 
 @media (max-width: 800px) {
-    
+
 }
 
 @media (max-width: 700px) {
-    
+
 }
 
 @media (max-width: 600px) {
-    
+
 }
 
 @media (max-width: 500px) {
-    
+
 }
 
 @media (max-width: 400px) {
-    
+
 }
 
 @media (max-width: 300px) {
-    
+
 }
