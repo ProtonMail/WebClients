@@ -1171,18 +1171,19 @@ angular.module("proton.modals", [])
             this.title = params.title;
             this.message = params.message;
             _.each(this.addresses, function(address) { address.state = QUEUED; });
-            this.sizes = [{label: 'normal strength encryption (2048)', value: 2048}, {label: 'high strength encryption (4096)', value: 4096}];
-            this.size = this.sizes[0];
+            this.size = false;
 
             // Functions
             this.submit = function() {
+                var numBits = (this.size === true) ? 4096 : 2048;
+                
                 this.process = true;
                 _.each(this.addresses, function(address) {
                     address.state = GENERATING;
                     promises.push(pmcw.generateKeysRSA(
                         address.Email,
                         mailboxPassword,
-                        this.size.value
+                        numBits
                     ).then(function(result) {
                         address.state = DONE;
                         // var publicKeyArmored = result.publicKeyArmored; not used
