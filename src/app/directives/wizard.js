@@ -7,7 +7,10 @@ angular.module('proton.wizard', [])
         templateUrl: 'templates/partials/wizard.tpl.html',
         link: function(scope, element, attrs) {
             scope.$on('tourStart', function(event) {
-                scope.tourStart();
+                $state.go('secured.inbox');
+                $timeout( function() {
+                    scope.tourStart();
+                }, 2000);
             });
 
             scope.$on('tourEnd', function(event) {
