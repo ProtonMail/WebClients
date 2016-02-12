@@ -1,6 +1,8 @@
 angular.module("proton.models.payments", [])
 
-.factory("Payment", function($http, url) {
+.factory("Payment", function($http, $q, $translate, CONSTANTS, url) {
+    var proxy = new StripeProxy(CONSTANTS.STRIPE_ORIGIN, CONSTANTS.STRIPE_API_KEY);
+
     return {
         /**
          * Donate for perks. Does not require authentication.
@@ -158,6 +160,62 @@ angular.module("proton.models.payments", [])
           */
          keys: function() {
              return $http.get(url.get() + '/payments/keys');
+         },
+         validateCardNumber: function(number) {
+             var deferred = $q.defer();
+
+             proxy.callSync('Stripe.card.validateCardNumber', number)
+             .then(function(result) {
+                 if (result === false) {
+                     deferred.reject(new Error($translate.instant('CARD_NUMER_INVALID')));
+                 } else {
+                     deferred.resolve();
+                 }
+             });
+
+             return deferred.promise;
+         },
+         validateExpiry: function(month, year) {
+             var deferred = $q.defer();
+
+             proxy.callSync('Stripe.card.validateExpiry', month, year)
+             .then(function(result) {
+                 if (result === false) {
+                     deferred.reject(new Error($translate.instant('EXPIRY_INVALID')));
+                 } else {
+                     deferred.resolve();
+                 }
+             });
+
+             return deferred.promise;
+         },
+         validateCVC: function(cvc) {
+             var deferred = $q.defer();
+
+             proxy.callSync('Stripe.card.validateCVC', cvc)
+             .then(function(result) {
+                 if (result === false) {
+                     deferred.reject(new Error($translate.instant('CVC_INVALID')));
+                 } else {
+                     deferred.resolve();
+                 }
+             });
+
+             return deferred.promise;
+         },
+         createToken: function(params) {
+             var deferred = $q.defer();
+
+             proxy.callAsync('Stripe.card.createToken', params)
+             .then(function(result) {
+                 if (angular.isDefined(result.error)) {
+                     deferred.reject(result.error);
+                 } else {
+                     deferred.resolve(result);
+                 }
+             });
+
+             return deferred.promise;
          }
     };
 });

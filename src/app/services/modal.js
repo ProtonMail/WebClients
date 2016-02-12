@@ -341,7 +341,7 @@ angular.module("proton.modals", [])
 })
 
 // Card modal
-.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, $translate, $q, CONSTANTS) {
+.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, $translate, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -359,7 +359,6 @@ angular.module("proton.modals", [])
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: params.card.Country});
             this.change = false;
-            this.proxy = new StripeProxy(CONSTANTS.STRIPE_ORIGIN, CONSTANTS.STRIPE_API_KEY);
             // Functions
             this.submit = function() {
                 this.process = true;
@@ -404,54 +403,19 @@ angular.module("proton.modals", [])
                 }.bind(this);
 
                 var validateCardNumber = function() {
-                    var deferred = $q.defer();
-
-                    this.proxy.callSync('Stripe.card.validateCardNumber', this.number)
-                    .then(function(result) {
-                        if (result === false) {
-                            deferred.reject(new Error($translate.instant('CARD_NUMER_INVALID')));
-                        } else {
-                            deferred.resolve();
-                        }
-                    }.bind(this));
-
-                    return deferred.promise;
+                    return Payment.validateCardNumber(this.number);
                 }.bind(this);
 
                 var validateExpiry = function() {
-                    var deferred = $q.defer();
-
-                    this.proxy.callSync('Stripe.card.validateExpiry', this.month, this.year)
-                    .then(function(result) {
-                        if (result === false) {
-                            deferred.reject(new Error($translate.instant('EXPIRY_INVALID')));
-                        } else {
-                            deferred.resolve();
-                        }
-                    }.bind(this));
-
-                    return deferred.promise;
+                    return Payment.validateExpiry(this.month, this.year);
                 }.bind(this);
 
                 var validateCVC = function() {
-                    var deferred = $q.defer();
-
-                    this.proxy.callSync('Stripe.card.validateCVC', this.cvc)
-                    .then(function(result) {
-                        if (result === false) {
-                            deferred.reject(new Error($translate.instant('CVC_INVALID')));
-                        } else {
-                            deferred.resolve();
-                        }
-                    }.bind(this));
-
-                    return deferred.promise;
+                    return Payment.validateCVC(this.cvc);
                 }.bind(this);
 
                 var createToken = function() {
-                    var deferred = $q.defer();
-
-                    this.proxy.callAsync('Stripe.card.createToken', {
+                    return Payment.createToken({
                         name: this.fullname,
                         number: this.number,
                         cvc: this.cvc,
@@ -459,22 +423,14 @@ angular.module("proton.modals", [])
                         exp_year: this.year,
                         address_country: this.country.value,
                         address_zip: this.zip
-                    })
-                    .then(function(result) {
-                        if (angular.isDefined(result.error)) {
-                            deferred.reject(result.error);
-                        } else {
-                            stripeResponseHandler(result);
-                        }
                     });
-
-                    return deferred.promise;
                 }.bind(this);
 
                 validateCardNumber()
                 .then(validateExpiry)
                 .then(validateCVC)
                 .then(createToken)
+                .then(stripeResponseHandler)
                 .catch(function(error) {
                     notify({message: error, classes: 'notification-danger'});
                     this.process = false;
@@ -646,30 +602,20 @@ angular.module("proton.modals", [])
                 return deferred.promise;
             }.bind(this);
 
-            /**
-             * Generate token with Stripe library
-             */
-            var generateStripeToken = function() {
-                if($window.Stripe.card.validateCardNumber(this.number) === false) {
-                    notify({message: $translate.instant('CARD_NUMER_INVALID'), classes: 'notification-danger'});
-                    this.step = 'payment';
-                    return false;
-                }
+            var validateCardNumber = function() {
+                return Payment.validateCardNumber(this.number);
+            };
 
-                if($window.Stripe.card.validateExpiry(this.month, this.year) === false) {
-                    notify({message: $translate.instant('EXPIRY_INVALID'), classes: 'notification-danger'});
-                    this.step = 'payment';
-                    return false;
-                }
+            var validateExpiry = function() {
+                return Payment.validateExpiry(this.month, this.year);
+            };
 
-                if($window.Stripe.card.validateCVC(this.cvc) === false) {
-                    notify({message: $translate.instant('CVC_INVALID'), classes: 'notification-danger'});
-                    this.step = 'payment';
-                    return false;
-                }
+            var validateCVC = function() {
+                return Payment.validateCVC(this.cvc);
+            };
 
-                // Generate token with Stripe Api
-                $window.Stripe.card.createToken({
+            var createToken = function() {
+                return Payment.createToken({
                     name: this.fullname,
                     number: this.number,
                     cvc: this.cvc,
@@ -677,41 +623,42 @@ angular.module("proton.modals", [])
                     exp_year: this.year,
                     address_country: this.country.value,
                     address_zip: this.zip
-                }, stripeResponseHandler);
+                });
             }.bind(this);
 
             /**
              * Callback called by the Stripe library when the token is generated
              */
-            var stripeResponseHandler = function(status, response) {
-                if(status === 200) {
-                    // Add data from Stripe
-                    this.config.Source = {
-                        Object: 'token',
-                        Token: response.id
-                    };
+            var stripeResponseHandler = function(response) {
+                // Add data from Stripe
+                this.config.Source = {
+                    Object: 'token',
+                    Token: response.id
+                };
 
-                    if(angular.isDefined(this.source)) {
-                        this.config.Source.ExternalSourceID = this.source;
-                    }
-
-                    // Encrypt metadata
-                    encryptMetadata().then(function() {
-                        // Send request to subscribe
-                        saveOrganization();
-                    });
-                } else if(angular.isDefined(response.error)) {
-                    notify({message: response.error.message, classes: 'notification-danger'});
-                    this.step = 'payment';
-                } else {
-                    this.step = 'payment';
+                if(angular.isDefined(this.source)) {
+                    this.config.Source.ExternalSourceID = this.source;
                 }
+
+                // Encrypt metadata
+                encryptMetadata().then(function() {
+                    // Send request to subscribe
+                    saveOrganization();
+                });
             }.bind(this);
 
             this.submit = function() {
                 var next = function() {
                     if(this.change === true) {
-                        generateStripeToken();
+                        validateCardNumber()
+                        .then(validateExpiry)
+                        .then(validateCVC)
+                        .then(createToken)
+                        .then(stripeResponseHandler)
+                        .catch(function(error) {
+                            notify({message: error, classes: 'notification-danger'});
+                            this.step = 'payment';
+                        }.bind(this));
                     } else {
                         saveOrganization();
                     }
@@ -758,8 +705,6 @@ angular.module("proton.modals", [])
                 } else {
                     next();
                 }
-
-
             }.bind(this);
 
             /**
