@@ -1,9 +1,9 @@
-
 var StripeProxy = function( origin, key ) {
     this.origin = origin;
     this.key = key;
 
     var iframe = document.createElement('iframe');
+
     iframe.className = 'stripe_proxy';
     iframe.style = 'display:block; visibility:hidden; width:0; height:0; border:0; border:none;';
     iframe.sandbox = 'allow-scripts allow-same-origin';
@@ -14,7 +14,7 @@ var StripeProxy = function( origin, key ) {
         };
     });
 
-    iframe.src = this.origin+'/stripe.html';
+    iframe.src = this.origin + '/stripe.html';
     document.body.appendChild(iframe);
 
     this.iframe = iframe;
@@ -22,14 +22,18 @@ var StripeProxy = function( origin, key ) {
 
 StripeProxy.prototype.callSync = function( ) {
     var args = Array.prototype.slice.call(arguments);
+
     args.unshift(true);
-    return this.call_.apply(this,args);
+
+    return this.call_.apply(this, args);
 };
 
 StripeProxy.prototype.callAsync = function( ) {
     var args = Array.prototype.slice.call(arguments);
+
     args.unshift(false);
-    return this.call_.apply(this,args);
+
+    return this.call_.apply(this, args);
 };
 
 StripeProxy.prototype.call_ = function( sync ) {
@@ -39,8 +43,8 @@ StripeProxy.prototype.call_ = function( sync ) {
     }
 
     var currDate = new Date();
-    var requestID = currDate.getTime()+"_"+parseInt(Math.random() * 1000000);
-    var args = Array.prototype.slice.call(arguments,1);
+    var requestID = currDate.getTime() + '_' + parseInt(Math.random() * 1000000);
+    var args = Array.prototype.slice.call(arguments, 1);
 
     if( !args.length ) {
         return Promise.reject('Must at least provide Stripe function name');
@@ -55,11 +59,13 @@ StripeProxy.prototype.call_ = function( sync ) {
             var receiveMessage = function(event)
             {
                 var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+
                 if (origin !== destOrigin) {
                     return;
                 }
 
                 var data = event.data;
+
                 if ( data.requestID === requestID ) {
                     window.removeEventListener("message", receiveMessage, false);
                     resolve(data.response);
