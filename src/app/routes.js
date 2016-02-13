@@ -590,9 +590,6 @@ angular.module('proton.routes', [
             // This will redirect to a login step if necessary
             delete $rootScope.creds;
             delete $rootScope.tempUser;
-            if ($rootScope.welcome===true) {
-                $rootScope.$broadcast('tourStart');
-            }
             authentication.redirectIfNecessary();
         }
     })
