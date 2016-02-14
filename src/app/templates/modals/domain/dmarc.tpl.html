@@ -29,9 +29,10 @@
                 <p class="alert alert-info"><strong>address@yourdomain.com</strong> is where you will receive DMARC reports from other email services</p>
             </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.verify()">{{ 'VERIFY' | translate }}</button>
-            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.close()">{{ 'FINISH' | translate }}</button>
+        <div class="modal-footer clearfix">
+            <button type="button" ng-hide="ctrl.domain.DmarcState === 3" class="pm_button primary pull-right" ng-click="ctrl.verify()">{{ 'VERIFY' | translate }}</button>
+            <button type="button" ng-show="ctrl.domain.DmarcState === 3" class="pm_button primary pull-right" ng-click="ctrl.close()">{{ 'FINISH' | translate }}</button>
+            <button type="button" ng-hide="ctrl.domain.DmarcState === 3" class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.close()"></div>
