@@ -673,6 +673,16 @@ angular.module('proton.routes', [
         }
     })
 
+    .state('secured.aliases', {
+        url: '/aliases',
+        views: {
+            'content@secured': {
+                templateUrl: 'templates/views/aliases.tpl.html',
+                controller: 'AliasController'
+            }
+        }
+    })
+
     .state('secured.invoice', {
         url: '/invoice/:time',
         onEnter: function($rootScope) {

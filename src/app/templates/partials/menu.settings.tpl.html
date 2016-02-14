@@ -26,6 +26,9 @@
     <li role="presentation" ng-show="user.Role === 2" ng-class="{'active': ('secured.keys' | includedByState)}">
         <a class="pm_button" ui-sref="secured.keys">{{ 'KEYS' | translate }}</a>
     </li>
+    <li role="presentation" ng-show="user.Role === 0 || user.Role === 2" ng-class="{'active': ('secured.aliases' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.aliases">{{ 'ALIASES' | translate }}</a>
+    </li>
 </ul>
 
 <div class="pm_form" id="settingsSelect">
