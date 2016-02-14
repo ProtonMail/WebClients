@@ -339,7 +339,7 @@ angular.module("proton.controllers.Settings")
     $scope.refreshStatus = function(domains) {
         networkActivityTracker.track(Domain.query().then(function(result) {
             if (result.data && result.data.Code === 1000) {
-                $scope.organization = result.data.Organization;
+                $scope.domains = result.data.Domains;
             }
         }));
     };
