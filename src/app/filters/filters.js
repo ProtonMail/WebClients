@@ -145,7 +145,7 @@ angular.module("proton.filters",[])
         if (m.isSame(moment(), 'day')) {
             return m.format('h:mm a') + ' (' + m.fromNow() + ')';
         } else {
-            return m.format('D/MM/YYYY h:mm a') + ' (' + m.fromNow() + ')';
+            return m.format('D/MM/YYYY') + ' (' + m.fromNow() + ')';
         }
     };
 })
