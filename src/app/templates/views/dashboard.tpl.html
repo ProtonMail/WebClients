@@ -214,7 +214,7 @@
                                             <select ng-model="spacePlus" ng-options="option.label for option in spacePlusOptions"></select>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
-                                        <strong></strong>
+                                        <strong> {{ 'STORAGE' | translate }}</strong>
                                         <span class="cost" ng-show="(spacePrice[futureBillingCycle] * spacePlus.index) > 0">
                                             <strong>+ {{ spacePrice[futureBillingCycle] * spacePlus.index | number: 2 | currency: futureCurrency }}</strong>
                                         </span>
