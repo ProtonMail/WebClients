@@ -122,7 +122,7 @@
                             <thead>
                                 <tr>
                                     <th>{{ 'ADDRESS' | translate }}</th>
-                                    <th ng-show="false">{{ 'NICKNAME' | translate }}</th>
+                                    <!-- <th>{{ 'NICKNAME' | translate }}</th> -->
                                     <th style="width: 5rem">{{ 'STATUS' | translate }}</th>
                                     <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
                                 </tr>
@@ -133,9 +133,9 @@
                                         <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
                                         <span ng-show="address.Status === 0">{{ address.Email }}</span>
                                     </td>
-                                    <td ng-show="false">
+                                    <!-- <td>
                                         <strong>{{ member(address.MemberID).NickName }}</strong>
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
                                         <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
