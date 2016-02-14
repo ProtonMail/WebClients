@@ -128,7 +128,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="address in domain.Addresses" ng-class="{ 'disabled': address.Status === 0 }">
+                                <tr ng-repeat="address in domain.Addresses" ng-class="{'disabled': address.Status === 0}">
                                     <td>
                                         <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
                                         <span ng-show="address.Status === 0">{{ address.Email }}</span>
