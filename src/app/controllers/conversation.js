@@ -170,14 +170,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
                 // Insert new message
                 $scope.messages.splice(ref.index, 0, ref.message);
-
-                // Display notification
-                if(ref.message.Type === 0 && $scope.showTrashed === false && $scope.showNonTrashed === false) {
-                    notify({
-                        message: $translate.instant('NEW_MESSAGE'),
-                        classes: 'notification-success'
-                    });
-                }
             }
 
             for (index = 0; index < $scope.messages.length; index++) {
