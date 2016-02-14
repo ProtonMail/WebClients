@@ -45,6 +45,7 @@
     "ical.js": "~1.1.2",
     "jquery-ui": "~1.11.4",
     "jquery": "~2.2.0",
+    "jquery.payment": "~1.3.2",
     "mellt": "~0.1.0",
     "modernizr": "~3.3.0",
     "moment": "~2.11.1",
@@ -57,14 +58,12 @@
     "smooth-scrollbar": "~1.3.2",
     "Squire": "https://github.com/neilj/Squire.git#master",
     "svg4everybody": "~2.0.0",
+    "svgeezy": "^1.0.0",
     "underscore.string": "~2.3.3",
     "underscore": "~1.8.3",
     "vcard": "https://github.com/ProtonMail/vcard.git#master"
   },
   "resolutions": {
     "angular": "1.4.9"
-  },
-  "devDependencies": {
-    "svgeezy": "^1.0.0"
   }
 }
