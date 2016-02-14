@@ -27,8 +27,10 @@
                 </table>
             </div>
         </div>
-        <div class="modal-footer text-right">
-            <button type="button" class="pm_button primary" ng-click="ctrl.submit()">{{ 'NEXT' | translate }}</button>
+        <div class="modal-footer">
+            <button class="pm_button primary pull-right" ng-show="ctrl.domain.DkimState === 4 || ctrl.domain.DkimState === 5" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
+            <button class="pm_button primary pull-right" ng-hide="ctrl.domain.DkimState === 4 || ctrl.domain.DkimState === 5" ng-click="ctrl.verify()">{{ 'VERIFY' | translate }}</button>
+            <button class="pm_button" ng-hide="ctrl.domain.DkimState === 4 || ctrl.domain.DkimState === 5" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.close()"></div>

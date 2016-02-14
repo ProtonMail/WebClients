@@ -544,8 +544,9 @@ angular.module("proton.controllers.Settings")
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
                 },
-                submit: function() {
+                next: function() {
                     spfModal.deactivate();
+                    $scope.dkim(domain);
                 },
                 close: function() {
                     spfModal.deactivate();
@@ -599,8 +600,9 @@ angular.module("proton.controllers.Settings")
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
                 },
-                submit: function() {
+                next: function() {
                     dkimModal.deactivate();
+                    $scope.dmarc(domain);
                 },
                 close: function() {
                     dkimModal.deactivate();
@@ -636,6 +638,7 @@ angular.module("proton.controllers.Settings")
                                 case 3:
                                     notify({message: $translate.instant('DMARC_VERIFIED'), classes: 'notification-danger'});
                                     $scope.domains[index] = result.data.Domain;
+                                    dmarcModal.deactivate();
                                     break;
                                 default:
                                     break;
@@ -648,9 +651,6 @@ angular.module("proton.controllers.Settings")
                     }, function(error) {
                         notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
                     }));
-                },
-                submit: function() {
-                    dmarcModal.deactivate();
                 },
                 close: function() {
                     dmarcModal.deactivate();

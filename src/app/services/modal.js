@@ -1023,9 +1023,14 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.submit = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.submit();
+            this.verify = function() {
+                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
+                    params.verify();
+                }
+            };
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
                 }
             };
             this.close = function() {
@@ -1047,9 +1052,9 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.submit = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.submit();
+            this.verify = function() {
+                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
+                    params.verify();
                 }
             };
             this.next = function() {
@@ -1076,9 +1081,14 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.submit = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.submit();
+            this.verify = function() {
+                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
+                    params.verify();
+                }
+            };
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
                 }
             };
             this.close = function() {
@@ -1100,9 +1110,9 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.submit = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.submit();
+            this.verify = function() {
+                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
+                    params.verify();
                 }
             };
             this.close = function() {
