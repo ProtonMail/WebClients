@@ -139,7 +139,7 @@
                                     <td>
                                         <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
                                         <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
-                                        <span class="pm_badge error" ng-show="address.Status === 2">{{ 'NEED_KEY_GENERATION' | translate }}</span>
+                                        <span class="pm_badge error" ng-show="address.Status === 2">{{ 'DISABLED' | translate }}</span>
                                     </td>
                                     <td class="text-right">
                                         <button type="button" class="pm_button link" ng-show="address.Status === 0" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">{{ 'ENABLE' | translate }}</button>
