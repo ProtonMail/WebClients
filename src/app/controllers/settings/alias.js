@@ -1,20 +1,26 @@
 angular.module('proton.controllers.Settings')
 
 .controller('AliasController', function(
-    $log,
+    $q,
     $rootScope,
     $scope,
-    $timeout,
     $translate,
-    $q,
     authentication,
+    Domain,
+    domains,
+    eventManager,
     networkActivityTracker,
     notify,
-    pmcw,
-    Setting
+    aliasModal
 ) {
 
     $scope.aliases = authentication.user.Addresses;
+    $scope.domains = [];
+
+    // Populate the domains <select>
+    _.each(domains, function(domain) {
+        $scope.domains.push({label: domain, value: domain});
+    });
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
@@ -29,6 +35,18 @@ angular.module('proton.controllers.Settings')
           });
           $scope.saveAliases(aliasOrder);
         }
+    };
+
+    $scope.add = function() {
+        console.log($scope.domains);
+        aliasModal.activate({
+            params: {
+                domains: $scope.domains,
+                cancel: function() {
+                    aliasModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.saveAliases = function(aliasOrder) {
