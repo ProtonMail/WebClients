@@ -221,10 +221,8 @@ angular.module('proton', [
         $rootScope.showSidebar = !$rootScope.showSidebar;
     });
 
-    // Setup default modes... CHANGEME / PANDA / TODO
     $rootScope.mobileMode = false;
     $rootScope.sidebarMode = true;
-
     $rootScope.showWelcome = true;
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
