@@ -43,12 +43,18 @@
         #pm_composer .composer .pm_button {
             line-height: 26px;
         }
-        .pm_button,
-        .pm_buttons a {
-            line-height: 35px;;
+        .pm_buttons a,
+        .pm_button {
+            line-height: 30px;
         }
         #pm_sidebar section.sidebar .pm_button.round {
             line-height: 30px;
+        }
+        .pm_table th,
+        .pm_table td {
+            .pm_button.round {
+                line-height: 34px;
+            }
         }
     }
 }
