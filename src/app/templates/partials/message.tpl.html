@@ -42,14 +42,14 @@ ng-class="{
         <div class="labels" ng-hide="toggleDetails === true">
             <span class="pm_labels">
                 <label
-                ng-repeat="labelID in message.LabelIDs | labels | limitTo: 5"
+                ng-repeat="labelID in message.LabelIDs | labels | limitTo: 4"
                 title="{{ getLabel(labelID).Name }}"
                 class="pm_label"
                 ng-class="{ 'closed': !$first }"
                 ng-style="getStyleLabel(labelID)"
                 ng-show="getLabel(labelID).Name"
                 ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
-                </label>
+            </label><label class="pm_label closed more" ng-show="(message.LabelIDs | labels).length > 4" pt-tooltip="+{{ (message.LabelIDs | labels).length - 4 }} {{ 'MORE_LABELS' | translate}}">&hellip;</label>
             </span>
         </div>
         <div class="time">
@@ -133,7 +133,7 @@ ng-class="{
             <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3">{{ 'SENT' | translate }}</i>
             <span class="pm_labels inline">
                 <label
-                ng-repeat="labelID in message.LabelIDs | labels | limitTo: 5"
+                ng-repeat="labelID in message.LabelIDs | labels"
                 title="{{ getLabel(labelID).Name }}"
                 class="pm_label"
                 ng-style="getStyleLabel(labelID)"

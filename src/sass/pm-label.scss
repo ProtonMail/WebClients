@@ -64,5 +64,22 @@
 	    		border-radius: 3px;
 	    	}
 	    }
+		&.more {
+			line-height: 8px;
+			font-size: .9rem;
+			border-color: rgba(0,0,0,.35);
+			color: rgba(0,0,0,.35);
+			max-width: 17px;
+			width: 17px;
+			text-align: left;
+			padding: 0;
+			&:hover {
+				text-align: center;
+				width: 1.5rem;
+				max-width: 1.5rem;
+				line-height: 8px;
+				padding: 0;
+			}
+		}
 	}
 }
