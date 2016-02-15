@@ -6,8 +6,6 @@ angular.module('proton.constants', [])
 .constant('CONSTANTS', {
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte
-    STRIPE_API_KEY: 'pk_test_xL4IzbxNCD9Chu98oxQVjYFe', // TODO it's not the final key
-    STRIPE_ORIGIN: 'http://localhost:9000', // TODO Replace window.location.origin with "https://secure.protonmail.com" for production
     HOSTS_ALLOWED: ['localhost', 'dev.protonmail.com', 'protonmail.blue', 'dev2.protonmail.com'],
     MAILBOX_PASSWORD_KEY: "proton:mailbox_pwd",
     OAUTH_KEY: "proton:oauth",

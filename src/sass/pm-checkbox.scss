@@ -5,9 +5,11 @@ body {
 			margin: 13px 10px 0 0;
 		}
 	}
-	.fa-square-o,
-    .fa-check-square {
-		display: none !important;
+	.conversation {
+		.fa-square-o,
+		.fa-check-square {
+			display: none !important;
+		}
 	}
 }
 

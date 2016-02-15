@@ -10,9 +10,9 @@
                     {{ 'DOMAINS' | translate }}
                 </legend>
                 <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
-                <div class="margin clearfix">
+                <div class="margin">
                     <button ng-hide="organization.UsedDomains === organization.MaxDomains" type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
-                    <button type="button" class="pm_button pull-right primary" ng-click="refreshStatus()"><i class="fa fa-refresh"></i> {{ 'REFRESH_DOMAIN_STATUS' | translate }}</button>
+                    <button type="button" class="pm_button" ng-click="refreshStatus()">{{ 'REFRESH_DOMAIN_STATUS' | translate }}</button>
                 </div>
                 <table class="pm_table bordered domains" ng-show="domains.length > 0">
                     <thead>
@@ -116,40 +116,36 @@
                     <div ng-show="domain.State === 1">
                         <p>
                             <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
-                            <a ui-sref="secured.members" class="pm_button">{{ 'ADD_USER' | translate }}</a>
+                            <!-- <a ui-sref="secured.members" class="pm_button">{{ 'ADD_USER' | translate }}</a> -->
                         </p>
                         <table class="pm_table pm_form bordered" ng-show="domain.Addresses.length > 0">
                             <thead>
                                 <tr>
                                     <th>{{ 'ADDRESS' | translate }}</th>
-                                    <th ng-show="false">{{ 'NICKNAME' | translate }}</th>
-                                    <th style="width: 5rem">{{ 'STATUS' | translate }}</th>
+                                    <!-- <th>{{ 'NICKNAME' | translate }}</th> -->
+                                    <th>{{ 'STATUS' | translate }}</th>
                                     <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="address in domain.Addresses" ng-class="{ 'disabled': address.Status === 0 }">
+                                <tr ng-repeat="address in domain.Addresses" ng-class="{'disabled': address.Status === 0 || address.Status === 2}">
                                     <td>
                                         <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
-                                        <span ng-show="address.Status === 0">{{ address.Email }}</span>
+                                        <span ng-show="address.Status === 0 || address.Status === 2">{{ address.Email }}</span>
                                     </td>
-                                    <td ng-show="false">
+                                    <!-- <td>
                                         <strong>{{ member(address.MemberID).NickName }}</strong>
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
                                         <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
+                                        <span class="pm_badge error" ng-show="address.Status === 2">{{ 'DISABLED' | translate }}</span>
                                     </td>
                                     <td class="text-right">
-                                        <button type="button" class="pm_button round" ng-show="address.Status === 0" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">
-                                            <i class="fa fa-link"></i>
-                                        </button>
-                                        <button type="button" class="pm_button round" ng-show="address.Status === 1" ng-click="disableAddress(address)" title="{{ 'DISABLE_ADDRESS' | translate }}">
-                                            <i class="fa fa-chain-broken"></i>
-                                        </button>
-                                            <button type="button" class="pm_button round" ng-hide="address.Status === 1" ng-click="deleteAddress(address, domain)" title="{{ 'DELETE' | translate }}">
-                                            <i class="fa fa-trash-o"></i>
-                                        </button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 0" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">{{ 'ENABLE' | translate }}</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 1" ng-click="disableAddress(address)" title="{{ 'DISABLE_ADDRESS' | translate }}">{{ 'DISABLE' | translate }}</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 2" ng-click="generate(address)" title="{{ 'GENERATE_KEY_PAIR' | translate }}">{{ 'GENERATE' | translate }}</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 0" ng-click="deleteAddress(address, domain)" title="{{ 'DELETE_ADDRESS' | translate }}">{{ 'DELETE' | translate }}</button>
                                     </td>
                                 </tr>
                             </tbody>

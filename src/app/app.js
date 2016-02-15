@@ -221,10 +221,8 @@ angular.module('proton', [
         $rootScope.showSidebar = !$rootScope.showSidebar;
     });
 
-    // Setup default modes... CHANGEME / PANDA / TODO
     $rootScope.mobileMode = false;
     $rootScope.sidebarMode = true;
-
     $rootScope.showWelcome = true;
     $rootScope.browser = tools.getBrowser();
     $rootScope.terminal = false;
@@ -238,6 +236,11 @@ angular.module('proton', [
     // SVG Polyfill for Edge
     svg4everybody();
     svgeezy.init(false, 'png');
+
+    // Set new relative time thresholds
+    moment.relativeTimeThreshold('s', 59); // s	seconds	least number of seconds to be considered a minute
+    moment.relativeTimeThreshold('m', 59); // m	minutes	least number of minutes to be considered an hour
+    moment.relativeTimeThreshold('h', 23); // h	hours	least number of hours to be considered a day
 
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {

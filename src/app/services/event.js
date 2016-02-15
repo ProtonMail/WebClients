@@ -117,6 +117,8 @@ angular.module("proton.event", ["proton.constants"])
 					if (dirtyAddresses.length > 0 && generateModal.active() === false) {
 						generateModal.activate({
 							params: {
+								title: 'Bla bla bla', // TODO need text
+				                message: 'Bla bla bla', // TODO need text
 								addresses: dirtyAddresses,
 								cancel: function() {
 									generateModal.deactivate();

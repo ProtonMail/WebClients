@@ -26,24 +26,31 @@
                         <label>&nbsp;</label>
                         <input value="@{{ ctrl.domain.DomainName }}" type="text" readonly class="noBorder">
                     </div>
-                    <div class="col-1-3 text-right">
+                    <div class="col-1-3">
                         <label>&nbsp;</label>
                         <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
                     </div>
                 </form>
 
                 <div ng-show="ctrl.domain.Addresses.length > 0">
-                    <p>&nbsp;</p>
+                    <p><strong>{{ 'ADDED_ADDRESSES' | translate }}</strong></p>
                     <table class="pm_table pm_form bordered">
                         <thead>
                             <tr>
-                                <th>{{ 'ADDED_ADDRESSES' | translate }}</th>
+                                <th>{{ 'ADDRESS' | translate }}</th>
+                                <th>{{ 'STATUS' | translate }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="address in ctrl.domain.Addresses">
+                            <tr ng-repeat="address in ctrl.domain.Addresses" ng-class="{'disabled': address.Status === 0 || address.Status === 2}">
                                 <td>
-                                    <strong>{{ address.Email }}</strong>
+                                    <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
+                                    <span ng-show="address.Status === 0 || address.Status === 2">{{ address.Email }}</span>
+                                </td>
+                                <td>
+                                    <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
+                                    <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
+                                    <span class="pm_badge error" ng-show="address.Status === 2">{{ 'DISABLED' | translate }}</span>
                                 </td>
                             </tr>
                         </tbody>

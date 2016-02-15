@@ -28,8 +28,10 @@
                 <p>If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-spf-record">{{ 'LEARN_MORE' | translate }}</a></p>
             </div>
         </div>
-        <div class="modal-footer text-right">
-            <button class="pm_button primary" ng-click="ctrl.close()">{{ 'NEXT' | translate }}</button>
+        <div class="modal-footer">
+            <button class="pm_button primary pull-right" ng-show="ctrl.domain.SpfState === 3" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
+            <button class="pm_button primary pull-right" ng-hide="ctrl.domain.SpfState === 3" ng-click="ctrl.verify()">{{ 'VERIFY' | translate }}</button>
+            <button class="pm_button" ng-hide="ctrl.domain.SpfState === 3" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.close()"></div>

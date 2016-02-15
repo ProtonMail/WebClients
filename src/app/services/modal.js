@@ -363,8 +363,34 @@ angular.module("proton.modals", [])
             this.submit = function() {
                 this.process = true;
 
-                var stripeResponseHandler = function(response) {
-                    pmcw.encryptMessage(angular.toJson({
+                var sendRequest = function(metadata) {
+                    var deferred = $q.defer();
+
+                    // Send request to change credit card
+                    Payment.change({
+                        Source: {
+                            Metadata: metadata,
+                            ExternalSourceID: params.card.ExternalSourceID
+                        }
+                    }).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
+                            deferred.resolve();
+                            params.cancel();
+                        } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                            deferred.reject(new Error(result.data.Error));
+                        } else {
+                            deferred.reject(new Error($translate.instant('ERROR_DURING_CARD_REQUEST')));
+                        }
+                    }.bind(this), function(error) {
+                        deferred.reject(new Error($translate.instant('ERROR_DURING_CARD_REQUEST')));
+                    }.bind(this));
+
+                    return deferred.promise;
+                }.bind(this);
+
+                var encryptMetadata = function() {
+                    return pmcw.encryptMessage(angular.toJson({
                         Source: {
                             Object: 'card',
                             Number: this.number,
@@ -375,31 +401,7 @@ angular.module("proton.modals", [])
                             Country: this.country.value,
                             ZIP: this.zip
                         }
-                    }), params.key).then(function(metadata) {
-                        // Send request to change credit card
-                        Payment.change({
-                            Source: {
-                                Metadata: metadata,
-                                Object: 'token',
-                                Token: response.id,
-                                ExternalSourceID: params.card.ExternalSourceID
-                            }
-                        }).then(function(result) {
-                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                                notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
-                                params.cancel();
-                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                                this.process = false;
-                                notify({message: result.data.Error, classes: 'notification-danger'});
-                            } else {
-                                this.process = false;
-                                notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
-                            }
-                        }.bind(this), function(error) {
-                            this.process = false;
-                            notify({message: $translate.instant('ERROR_DURING_CARD_REQUEST'), classes: 'notification-danger'});
-                        }.bind(this));
-                    }.bind(this));
+                    }), params.key);
                 }.bind(this);
 
                 var validateCardNumber = function() {
@@ -414,23 +416,11 @@ angular.module("proton.modals", [])
                     return Payment.validateCVC(this.cvc);
                 }.bind(this);
 
-                var createToken = function() {
-                    return Payment.createToken({
-                        name: this.fullname,
-                        number: this.number,
-                        cvc: this.cvc,
-                        exp_month: this.month,
-                        exp_year: this.year,
-                        address_country: this.country.value,
-                        address_zip: this.zip
-                    });
-                }.bind(this);
-
                 validateCardNumber()
                 .then(validateExpiry)
                 .then(validateCVC)
-                .then(createToken)
-                .then(stripeResponseHandler)
+                .then(encryptMetadata)
+                .then(sendRequest)
                 .catch(function(error) {
                     notify({message: error, classes: 'notification-danger'});
                     this.process = false;
@@ -528,6 +518,7 @@ angular.module("proton.modals", [])
             this.zip = '';
             this.cardTypeIcon = 'fa-credit-card';
             this.config = params.configuration;
+            this.config.Source = {};
             this.recovery = '';
             this.create = params.create;
             this.base = CONSTANTS.BASE_SIZE;
@@ -594,10 +585,13 @@ angular.module("proton.modals", [])
                     }
                 };
 
-                pmcw.encryptMessage(angular.toJson(data), params.key).then(function(result) {
+                pmcw.encryptMessage(angular.toJson(data), params.key)
+                .then(function(result) {
                     this.config.Source.Metadata = result;
                     deferred.resolve();
-                }.bind(this));
+                }.bind(this), function(error) {
+                    deferred.reject(error);
+                });
 
                 return deferred.promise;
             }.bind(this);
@@ -614,37 +608,13 @@ angular.module("proton.modals", [])
                 return Payment.validateCVC(this.cvc);
             };
 
-            var createToken = function() {
-                return Payment.createToken({
-                    name: this.fullname,
-                    number: this.number,
-                    cvc: this.cvc,
-                    exp_month: this.month,
-                    exp_year: this.year,
-                    address_country: this.country.value,
-                    address_zip: this.zip
-                });
-            }.bind(this);
-
-            /**
-             * Callback called by the Stripe library when the token is generated
-             */
-            var stripeResponseHandler = function(response) {
-                // Add data from Stripe
-                this.config.Source = {
-                    Object: 'token',
-                    Token: response.id
-                };
-
+            var sendRequest = function(response) {
                 if(angular.isDefined(this.source)) {
                     this.config.Source.ExternalSourceID = this.source;
                 }
 
-                // Encrypt metadata
-                encryptMetadata().then(function() {
-                    // Send request to subscribe
-                    saveOrganization();
-                });
+                // Send request to subscribe
+                saveOrganization();
             }.bind(this);
 
             this.submit = function() {
@@ -653,8 +623,8 @@ angular.module("proton.modals", [])
                         validateCardNumber()
                         .then(validateExpiry)
                         .then(validateCVC)
-                        .then(createToken)
-                        .then(stripeResponseHandler)
+                        .then(encryptMetadata)
+                        .then(sendRequest)
                         .catch(function(error) {
                             notify({message: error, classes: 'notification-danger'});
                             this.step = 'payment';
@@ -1023,9 +993,14 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.submit = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.submit();
+            this.verify = function() {
+                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
+                    params.verify();
+                }
+            };
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
                 }
             };
             this.close = function() {
@@ -1047,9 +1022,9 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.submit = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.submit();
+            this.verify = function() {
+                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
+                    params.verify();
                 }
             };
             this.next = function() {
@@ -1076,9 +1051,14 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.submit = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.submit();
+            this.verify = function() {
+                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
+                    params.verify();
+                }
+            };
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
                 }
             };
             this.close = function() {
@@ -1100,9 +1080,9 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.submit = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.submit();
+            this.verify = function() {
+                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
+                    params.verify();
                 }
             };
             this.close = function() {

@@ -18,6 +18,7 @@ angular.module('proton.autocomplete', [])
             var ESC_KEY = 27;
             var SPACE_KEY = 32;
             var timeoutBlur;
+            var timeoutChange;
 
             // Variables
             scope.params = {
@@ -169,24 +170,27 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onChange = function() {
-                var contacts = _.map(authentication.user.Contacts, function(contact) {
-                    return { Name: contact.Name, Address: contact.Email };
-                });
-                var byName = $filter('filter')(contacts, {Name: scope.params.newValue});
-                var byAddress = $filter('filter')(contacts, {Address: scope.params.newValue});
-                var list = $filter('limitTo')(_.union(byName, byAddress), 10); // We limit the number of contact by 10
+                $timeout.cancel(timeoutChange);
+                timeoutChange = $timeout(function() {
+                    var contacts = _.map(authentication.user.Contacts, function(contact) {
+                        return { Name: contact.Name, Address: contact.Email };
+                    });
+                    var byName = $filter('filter')(contacts, {Name: scope.params.newValue});
+                    var byAddress = $filter('filter')(contacts, {Address: scope.params.newValue});
+                    var list = $filter('limitTo')(_.union(byName, byAddress), 10); // We limit the number of contact by 10
 
-                if(scope.params.newValue.length > 0) {
-                    scope.params.contactsFiltered = list;
-                } else {
-                    scope.params.contactsFiltered = [];
-                }
+                    if(scope.params.newValue.length > 0) {
+                        scope.params.contactsFiltered = list;
+                    } else {
+                        scope.params.contactsFiltered = [];
+                    }
 
-                if(scope.params.contactsFiltered.length > 0) {
-                    scope.onOpen();
-                } else {
-                    scope.onClose();
-                }
+                    if(scope.params.contactsFiltered.length > 0) {
+                        scope.onOpen();
+                    } else {
+                        scope.onClose();
+                    }
+                }, 250);
             };
 
             scope.onKeyDown = function(event, email) {

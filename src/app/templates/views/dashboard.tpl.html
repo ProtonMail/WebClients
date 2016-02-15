@@ -167,7 +167,7 @@
                         </div>
                     </header>
                     <div class="pm_grid plans">
-                        <div class="col-1-4">
+                        <div class="col-1-3">
                             <div class="plan" ng-class="{'selected': subscription.Plan === 'free'}">
                                 <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                                 <h3>
@@ -199,7 +199,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-1-4">
+                        <div class="col-1-3">
                             <div class="plan" ng-class="{'selected': subscription.Plan === 'plus'}">
                                 <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                                 <h3>
@@ -214,7 +214,7 @@
                                             <select ng-model="spacePlus" ng-options="option.label for option in spacePlusOptions"></select>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
-                                        <strong></strong>
+                                        <strong> {{ 'STORAGE' | translate }}</strong>
                                         <span class="cost" ng-show="(spacePrice[futureBillingCycle] * spacePlus.index) > 0">
                                             <strong>+ {{ spacePrice[futureBillingCycle] * spacePlus.index | number: 2 | currency: futureCurrency }}</strong>
                                         </span>
@@ -274,7 +274,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-1-4">
+                        <div class="col-1-3">
                             <div class="plan" ng-class="{'selected': subscription.Plan === 'visionary'}">
                                 <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                                 <h3>
@@ -325,17 +325,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-1-4">
+                        <!-- <div class="col-1-4">
                             <div class="plan" ng-class="{'selected': subscription.Plan === 'business'}">
                                 <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                                 <h3>
                                     ProtonMail
                                     <strong>Business</strong>
                                 </h3>
-                                <p class="text-center">
-                                    <strong class="text-purple">{{ 'COMING_SOON' | translate }}</strong>
-                                </p>
-                                <!-- <ul class="features">
+                                <ul class="features">
                                     <li>
                                         <i class="fa fa-check"></i>
                                         <i class="fa fa-times"></i>
@@ -407,9 +404,9 @@
                                     <a href="#" ng-click="choose('business')" class="pm_button primary">
                                         <strong>{{ 'BUSINESS_PLAN_SETTINGS' | translate }}</strong>
                                     </a>
-                                </div> -->
+                                </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- <div class="col-1-4">
                             <div class="plan" ng-class="{'selected': subscription.Plan === 'enterprise'}">
                                 <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>

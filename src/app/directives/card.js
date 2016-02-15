@@ -25,30 +25,42 @@ angular.module('proton.card', [])
                     Payment.cardType(newValue)
                     .then(function(type) {
                         switch (type) {
-                            case 'Visa':
-                            scope.class = visa;
-                            break;
-                            case 'MasterCard':
-                            scope.class = mastercard;
-                            break;
-                            case 'American Express':
-                            scope.class = americanExpress;
-                            break;
-                            case 'Discover':
-                            scope.class = discover;
-                            break;
-                            case 'Diners Club':
-                            scope.class = dinersClub;
-                            break;
-                            case 'JCB':
-                            scope.class = jcb;
-                            break;
-                            case 'Unknown':
-                            scope.class = card;
-                            break;
+                            case 'visa':
+                                scope.class = visa;
+                                break;
+                            case 'visaelectron':
+                                scope.class = card;
+                                break;
+                            case 'mastercard':
+                                scope.class = mastercard;
+                                break;
+                            case 'maestro':
+                                scope.class = card;
+                                break;
+                            case 'forbrugsforeningen':
+                                scope.class = card;
+                                break;
+                            case 'dankort':
+                                scope.class = card;
+                                break;
+                            case 'amex':
+                                scope.class = americanExpress;
+                                break;
+                            case 'discover':
+                                scope.class = discover;
+                                break;
+                            case 'dinersclub':
+                                scope.class = dinersClub;
+                                break;
+                            case 'jcb':
+                                scope.class = jcb;
+                                break;
+                            case 'unionpay':
+                                scope.class = card;
+                                break;
                             default:
-                            scope.class = card;
-                            break;
+                                scope.class = card;
+                                break;
                         }
                     });
                 }

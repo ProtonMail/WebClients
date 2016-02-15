@@ -76,11 +76,11 @@
             </div>
             <p ng-if="preInvited">&nbsp;</p>
         </div><!--/.wrapper-->
-        <div class="checkbox" ng-show="false">
+        <!-- <div class="checkbox">
             <label for="optIn" class="optIn">
                 <input id="optIn" name="optIn" ng-init="account.optIn = true" ng-model="account.optIn" type="checkbox" /> Keep me updated about new features such as mobile apps.
             </label>
-        </div>
+        </div> -->
         <br>
         <button type="submit" class="pm_button primary large"
         ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid ) } ">{{ 'CREATE_ACCOUNT' | translate }}</button>

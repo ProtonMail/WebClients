@@ -33,6 +33,7 @@ module.exports = {
     js: [
       "vendor/jquery/dist/jquery.js",
       "vendor/jquery-ui/jquery-ui.js",
+      "vendor/jquery.payment/lib/jquery.payment.js",
       "vendor/fastclick/lib/fastclick.js",
       "vendor/angular/angular.js",
       "vendor/autofill-event/src/autofill-event.js",

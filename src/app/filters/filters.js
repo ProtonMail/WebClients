@@ -145,7 +145,7 @@ angular.module("proton.filters",[])
         if (m.isSame(moment(), 'day')) {
             return m.format('h:mm a') + ' (' + m.fromNow() + ')';
         } else {
-            return m.format('D/MM/YYYY h:mm a') + ' (' + m.fromNow() + ')';
+            return m.format('D/MM/YYYY') + ' (' + m.fromNow() + ')';
         }
     };
 })
@@ -270,46 +270,43 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter("humanSize", function (CONSTANTS) {
+.filter('humanSize', function (CONSTANTS) {
     return function (input, withoutUnit) {
+        input = 0;
         var bytes;
-        var unit = "";
+        var unit = '';
         var kb = CONSTANTS.BASE_SIZE;
-        var mb = kb*kb;
-        var gb = mb*kb;
+        var mb = kb * kb;
+        var gb = mb * kb;
 
         if (_.isNumber(input)) {
             bytes = input;
-        }
-        else if (_.isNaN(bytes = parseInt(input))) {
+        } else if (_.isNaN(bytes = parseInt(input))) {
             bytes = 0;
         }
 
         if (bytes < mb) {
             if (!!!withoutUnit) {
-                unit = " KB";
+                unit = ' KB';
             }
             return (bytes/kb).toFixed(1) + unit;
-        }
-        else if (bytes < gb) {
+        } else if (bytes < gb) {
             if (!!!withoutUnit) {
-                unit = " MB";
+                unit = ' MB';
             }
             return (bytes/kb/kb).toFixed(2) + unit;
-        }
-        else {
+        } else {
             if (!!!withoutUnit) {
-                unit = " GB";
+                unit = ' GB';
             }
             return (bytes/kb/kb/kb).toFixed(2) + unit;
         }
-
     };
 })
 
 .filter('bytes', function() {
 	return function(bytes, precision) {
-		if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) {
+		if (isNaN(parseFloat(bytes)) || !isFinite(bytes) || bytes === 0) {
             return '-';
         } else {
             var kb = 1000;

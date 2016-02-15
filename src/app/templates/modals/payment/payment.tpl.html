@@ -127,7 +127,7 @@
                         <button class="pm_button primary" ng-click="ctrl.apply()">{{ 'APPLY' | translate }}</button>
                     </div>
                 </div>
-                <p>Your credit card will be automatically charged on a {{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }} basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
+                <p>Your credit card will be automatically charged on a {{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }} <span ng-show="ctrl.config.Subscription.BillingCycle === 1">{{ 'MONTHLY' | translate }}</span><span ng-show="ctrl.config.Subscription.BillingCycle === 12">{{ 'YEARLY' | translate }}</span> basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>
