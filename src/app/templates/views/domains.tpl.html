@@ -123,7 +123,7 @@
                                 <tr>
                                     <th>{{ 'ADDRESS' | translate }}</th>
                                     <!-- <th>{{ 'NICKNAME' | translate }}</th> -->
-                                    <th style="width: 5rem">{{ 'STATUS' | translate }}</th>
+                                    <th>{{ 'STATUS' | translate }}</th>
                                     <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
                                 </tr>
                             </thead>
@@ -139,18 +139,13 @@
                                     <td>
                                         <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
                                         <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
-                                        <span class="pm_badge error" ng-show="address.Status === 2">{{ 'ERROR' | translate }}</span>
+                                        <span class="pm_badge error" ng-show="address.Status === 2">{{ 'NEED_KEY_GENERATION' | translate }}</span>
                                     </td>
                                     <td class="text-right">
-                                        <button type="button" class="pm_button round" ng-show="address.Status === 0" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">
-                                            <i class="fa fa-link"></i>
-                                        </button>
-                                        <button type="button" class="pm_button round" ng-show="address.Status === 1" ng-click="disableAddress(address)" title="{{ 'DISABLE_ADDRESS' | translate }}">
-                                            <i class="fa fa-chain-broken"></i>
-                                        </button>
-                                            <button type="button" class="pm_button round" ng-hide="address.Status === 1" ng-click="deleteAddress(address, domain)" title="{{ 'DELETE' | translate }}">
-                                            <i class="fa fa-trash-o"></i>
-                                        </button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 0" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">{{ 'ENABLE' | translate }}</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 1" ng-click="disableAddress(address)" title="{{ 'DISABLE_ADDRESS' | translate }}">{{ 'DISABLE' | translate }}</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 2" ng-click="generate(address)" title="{{ 'GENERATE_KEY_PAIR' | translate }}">{{ 'GENERATE' | translate }}</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 0" ng-click="deleteAddress(address, domain)" title="{{ 'DELETE_ADDRESS' | translate }}">{{ 'DELETE' | translate }}</button>
                                     </td>
                                 </tr>
                             </tbody>

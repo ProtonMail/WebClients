@@ -15,6 +15,7 @@ angular.module("proton.controllers.Settings")
     domainModal,
     domains,
     eventManager,
+    generateModal,
     Member,
     members,
     mxModal,
@@ -207,6 +208,23 @@ angular.module("proton.controllers.Settings")
                 },
                 cancel: function() {
                     confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Open modal to generate key pair
+     */
+    $scope.generate = function(address) {
+        generateModal.activate({
+            params: {
+                title: $translate.instant('GENERATE_KEY_PAIR'),
+                message: 'bla bla bla', // TODO need text
+                addresses: [address],
+                cancel: function() {
+                    eventManager.call();
+                    generateModal.deactivate();
                 }
             }
         });
@@ -423,6 +441,8 @@ angular.module("proton.controllers.Settings")
                             notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
                             domain.Addresses.push(result.data.Address);
                             eventManager.call(); // Call event log manager
+                            addressModal.deactivate();
+                            $scope.addAddress(domain);
                         } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
                             notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
                         } else if(angular.isDefined(result.data) && result.data.Error) {

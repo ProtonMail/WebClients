@@ -26,7 +26,7 @@
                         <label>&nbsp;</label>
                         <input value="@{{ ctrl.domain.DomainName }}" type="text" readonly class="noBorder">
                     </div>
-                    <div class="col-1-3 text-right">
+                    <div class="col-1-3">
                         <label>&nbsp;</label>
                         <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
                     </div>
@@ -42,14 +42,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="address in ctrl.domain.Addresses" ng-class="{'disabled': address.Status === 0}">
+                            <tr ng-repeat="address in ctrl.domain.Addresses" ng-class="{'disabled': address.Status === 0 || address.Status === 2}">
                                 <td>
                                     <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
-                                    <span ng-show="address.Status === 0">{{ address.Email }}</span>
+                                    <span ng-show="address.Status === 0 || address.Status === 2">{{ address.Email }}</span>
                                 </td>
                                 <td>
-                                    <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
                                     <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
+                                    <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
+                                    <span class="pm_badge error" ng-show="address.Status === 2">{{ 'NEED_KEY_GENERATION' | translate }}</span>
                                 </td>
                             </tr>
                         </tbody>
