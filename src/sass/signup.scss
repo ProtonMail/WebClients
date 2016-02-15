@@ -8,6 +8,7 @@
         left: -8px;
         height: 120px;
         overflow: hidden;
+        z-index: 5;
     }
     .signUp {
         display: none;
@@ -16,6 +17,18 @@
         margin-bottom: 2rem;
         img {
             margin: 1rem 0;
+        }
+    }
+    #recaptchaFrame {
+        position: relative;
+        .loading {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 2rem;
+            text-align: center;
+            z-index: 1;
+            display: block;
         }
     }
     h2 {
@@ -120,6 +133,7 @@ body.mobileMode {
         }
         .pm_panel{
             margin: 0;
+            padding-top: 3rem !important;
             form {
                 .pm_button.primary {
                     width: 100%;
