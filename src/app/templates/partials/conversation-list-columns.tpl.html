@@ -69,7 +69,7 @@
                 ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5"
                 title="{{ getLabel(labelID).Name }}"
                 class="pm_label"
-                ng-class="{ 'closed': !$first }"
+                ng-class="{ 'closed': !$first, 'single': ($first && $last) }"
                 ng-style="getStyleLabel(labelID)"
                 ng-show="getLabel(labelID).Name"
                 ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}

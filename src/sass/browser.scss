@@ -90,6 +90,9 @@ input:-moz-ui-invalid {
             position: relative;
             top: -6px;
         }
+        &.single {
+            top: -3px;
+        }
     }
     #conversation-view .summary .pm_labels label{
         &:first-child {

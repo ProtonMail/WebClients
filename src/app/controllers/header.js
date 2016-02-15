@@ -37,8 +37,10 @@ angular.module("proton.controllers.Header", [])
                 mailbox = label.Name;
             }
         }
-
         $scope.path = mailbox;
+        if ($scope.path===false) {
+            $scope.path = '';
+        }
     };
 
     $scope.$on('openSearchModal', function(event, value) {
