@@ -3,7 +3,7 @@
         <span class="pull-right" ng-show="contacts.length > 0">
             <paginator page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
         </span>
-        <a class="pm_button" ng-click="deleteAllContacts()">
+        <a class="pm_button deleteAll" ng-click="deleteAllContacts()">
             <i class="fa fa-ban"></i> <strong>{{ 'DELETE_ALL_CONTACTS' | translate }}</strong>
         </a>
         <a class="pm_button" ng-click="downloadContacts()">
