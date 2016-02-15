@@ -106,7 +106,10 @@ input:-moz-ui-invalid {
     #conversation-view .message > div.summary .labels .pm_labels label.more {
         top: -7px;
     }
-    #conversation-list-columns .pm_labels label.more {
-        top: -7px;
+    #conversation-list-columns,
+    #conversation-list-rows {
+        .pm_labels label.more {
+            top: -7px;
+        }
     }
 }

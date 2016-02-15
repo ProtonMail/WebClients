@@ -160,6 +160,10 @@ body.mobileMode {
 			top: 35px;
 			box-shadow: none;
 			border-radius: none;
+			.wrap {
+				border-radius: 0;
+				border-bottom: 1px solid $border;
+			}
 		}
 	}
 }
