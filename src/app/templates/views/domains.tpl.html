@@ -128,10 +128,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="address in domain.Addresses" ng-class="{'disabled': address.Status === 0}">
+                                <tr ng-repeat="address in domain.Addresses" ng-class="{'disabled': address.Status === 0 || address.Status === 2}">
                                     <td>
                                         <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
-                                        <span ng-show="address.Status === 0">{{ address.Email }}</span>
+                                        <span ng-show="address.Status === 0 || address.Status === 2">{{ address.Email }}</span>
                                     </td>
                                     <!-- <td>
                                         <strong>{{ member(address.MemberID).NickName }}</strong>
@@ -139,6 +139,7 @@
                                     <td>
                                         <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
                                         <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
+                                        <span class="pm_badge error" ng-show="address.Status === 2">{{ 'ERROR' | translate }}</span>
                                     </td>
                                     <td class="text-right">
                                         <button type="button" class="pm_button round" ng-show="address.Status === 0" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">
