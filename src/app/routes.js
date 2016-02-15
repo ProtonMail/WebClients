@@ -673,8 +673,8 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('secured.aliases', {
-        url: '/aliases',
+    .state('secured.addresses', {
+        url: '/addresses',
         resolve: {
             domains: function($q, Domain) {
                 var deferred = $q.defer();
@@ -694,8 +694,8 @@ angular.module('proton.routes', [
         },
         views: {
             'content@secured': {
-                templateUrl: 'templates/views/aliases.tpl.html',
-                controller: 'AliasController'
+                templateUrl: 'templates/views/addresses.tpl.html',
+                controller: 'AddressesController'
             }
         }
     })

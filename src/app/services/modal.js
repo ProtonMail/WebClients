@@ -1360,34 +1360,30 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('aliasModal', function(pmModal, User, notify, tools, $translate, $q, $log) {
+.factory('aliasModal', function(pmModal, User, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/alias.tpl.html',
         controller: function(params) {
-
             // Variables
             this.alias = {};
-            this.alias.local = "";
+            this.alias.local = '';
 
             this.domains = params.domains;
             this.alias.domain = this.domains[0];
             this.goodUsername = false;
             this.badUsername = false;
-            this.checkingUsername = true;
+            this.checkingUsername = false;
 
             // Functions
             this.add = function() {
-                console.log(this.alias.domains);
-                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.form);
+                if (angular.isDefined(params.add) && angular.isFunction(params.add)) {
+                    params.add(this.form);
                 }
-            };
+            }.bind(this);
 
-            this.checkAvailability = function( manual ) {
+            this.checkAvailability = function(manual) {
                 var deferred = $q.defer();
-
-                $log.debug('checkAvailability');
 
                 // reset
                 this.goodUsername = false;
@@ -1400,15 +1396,13 @@ angular.module("proton.modals", [])
                         if (response.Available === 0) {
                                 this.badUsername = true;
                                 this.checkingUsername = false;
-                                $log.debug('username taken');
                                 deferred.reject("Username unavailable.");
                         } else {
-                            $log.debug('username avail');
                             this.goodUsername = true;
                             this.checkingUsername = false;
                             deferred.resolve(200);
                         }
-                    });
+                    }.bind(this));
                 }
 
                 return deferred.promise;

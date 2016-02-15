@@ -6,30 +6,11 @@
                 <h3 class="modal-title">{{ 'ADD_NEW_ALIAS' | translate }}</h3>
             </div>
             <div class="modal-body pm_form">
-
-    <pre>
-        {{ ctrl.goodUsername }}
-        {{ ctrl.badUsername }}
-        {{ ctrl.checkingUsername }}
-    </pre>
                 <label>{{ 'CHOOSE_ALIAS' | translate }}</label>
                 <div class="usernameWrap">
                     <p class="help">This will be a new address you can send and recieve emails with.</p>
                     <div class="clearfix">
-                        <input
-                        type="text"
-                        ng-model="ctrl.alias.local"
-                        name="Username"
-                        autofocus
-                        placeholder="{{ 'ALIAS' | translate }}"
-                        required
-                        class="inline"
-                        ng-change="ctrl.checkAvailability(true)"
-                        ng-model-options="{ debounce: 1000 }"
-                        ng-class="{
-                            'success':goodUsername,
-                            'error':badUsername
-                        }">
+                        <input type="text" class="inline" ng-model="ctrl.alias.local" autofocus placeholder="{{ 'ALIAS' | translate }}" required ng-change="ctrl.checkAvailability(true)" ng-model-options="{ debounce: 500 }" ng-class="{'success':goodUsername, 'error':badUsername}" />
                         <em class="usernameDomain">@</em>
                         <span class="pm_select inline bigger">
                             <select class="selectDomain" ng-model="ctrl.alias.domain" ng-options="domain.label for domain in ctrl.domains"></select>
@@ -44,15 +25,12 @@
                         <p class="alert alert-danger"><i class="fa fa-times"></i> Email already taken.</p>
                     </div>
                 </div>
-
-                <p class="alert">
-                    Aliases can never be deleted (only disabled). This means that once you create an alias it will always count towards your alias limit. <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank">Learn more about aliases here.</a>
-                </p>
+                <p class="alert alert-info">Aliases can never be deleted (only disabled). This means that once you create an alias it will always count towards your alias limit. <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank">Learn more about aliases here.</a></p>
             </div>
         </div>
-        <div class="modal-footer text-right">
-            <a class="pm_button pull-left" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
-            <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="ctrl.add()" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.add()" ng-disabled="networkActivity.loading()">{{ 'SUBMIT' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
