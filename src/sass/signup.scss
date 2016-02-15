@@ -104,7 +104,10 @@
 }
 
 body.mobileMode {
-    #step1 {
+    &#step1 {
+        .container-fluid .row > div > p {
+            display: none;
+        }
         .wrapper {
             padding: 0;
             label {
@@ -116,6 +119,7 @@ body.mobileMode {
             }
         }
         .pm_panel{
+            margin: 0;
             form {
                 .pm_button.primary {
                     width: 100%;
