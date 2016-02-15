@@ -285,25 +285,24 @@ angular.module("proton.filters",[])
             bytes = 0;
         }
 
-        if (bytes < mb) {
+        if (bytes === 0) {
+            return '0 KB';
+        } else if (bytes < mb) {
             if (!!!withoutUnit) {
-                unit = " KB";
+                unit = ' KB';
             }
             return (bytes/kb).toFixed(1) + unit;
-        }
-        else if (bytes < gb) {
+        } else if (bytes < gb) {
             if (!!!withoutUnit) {
-                unit = " MB";
+                unit = ' MB';
             }
             return (bytes/kb/kb).toFixed(2) + unit;
-        }
-        else {
+        } else {
             if (!!!withoutUnit) {
-                unit = " GB";
+                unit = ' GB';
             }
             return (bytes/kb/kb/kb).toFixed(2) + unit;
         }
-
     };
 })
 
