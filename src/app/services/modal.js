@@ -1380,7 +1380,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('aliasModal', function(pmModal) {
+.factory('aliasModal', function(pmModal, User, notify, tools, $translate, $q, $log) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/alias.tpl.html',
@@ -1389,8 +1389,12 @@ angular.module("proton.modals", [])
             // Variables
             this.alias = {};
             this.alias.local = "";
-            
+
             this.domains = params.domains;
+            this.alias.domain = this.domains[0];
+            this.goodUsername = false;
+            this.badUsername = false;
+            this.checkingUsername = true;
 
             // Functions
             this.add = function() {
@@ -1398,6 +1402,36 @@ angular.module("proton.modals", [])
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
                     params.submit(this.form);
                 }
+            };
+
+            this.checkAvailability = function( manual ) {
+                var deferred = $q.defer();
+
+                $log.debug('checkAvailability');
+
+                // reset
+                this.goodUsername = false;
+                this.badUsername = false;
+                this.checkingUsername = false;
+
+                if (this.alias.local.length > 0) {
+                    User.available({ username: this.alias.local }).$promise
+                    .then(function(response) {
+                        if (response.Available === 0) {
+                                this.badUsername = true;
+                                this.checkingUsername = false;
+                                $log.debug('username taken');
+                                deferred.reject("Username unavailable.");
+                        } else {
+                            $log.debug('username avail');
+                            this.goodUsername = true;
+                            this.checkingUsername = false;
+                            deferred.resolve(200);
+                        }
+                    });
+                }
+
+                return deferred.promise;
             };
 
             this.cancel = function() {
