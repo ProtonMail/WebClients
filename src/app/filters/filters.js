@@ -270,7 +270,7 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter("humanSize", function (CONSTANTS) {
+.filter('humanSize', function (CONSTANTS) {
     return function (input, withoutUnit) {
         input = 0;
         var bytes;
@@ -285,9 +285,7 @@ angular.module("proton.filters",[])
             bytes = 0;
         }
 
-        if (bytes === 0) {
-            return '0 KB';
-        } else if (bytes < mb) {
+        if (bytes < mb) {
             if (!!!withoutUnit) {
                 unit = ' KB';
             }
