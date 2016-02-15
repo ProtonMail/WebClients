@@ -66,14 +66,14 @@
 
             <span class="pm_labels">
                 <label
-                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 5"
+                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 4"
                 title="{{ getLabel(labelID).Name }}"
                 class="pm_label"
-                ng-class="{ 'closed': !$first }"
+                ng-class="{ 'closed': !$first, 'single': ($first && $last) }"
                 ng-style="getStyleLabel(labelID)"
                 ng-show="getLabel(labelID).Name"
                 ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
-                </label>
+                </label><label class="pm_label closed more" ng-show="(conversation.LabelIDs | labels).length > 4" pt-tooltip="+{{ (conversation.LabelIDs | labels).length - 4 }} {{ 'MORE_LABELS' | translate}}">&hellip;</label>
             </span>
 
         </div>

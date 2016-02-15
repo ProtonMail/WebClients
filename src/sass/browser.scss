@@ -90,11 +90,23 @@ input:-moz-ui-invalid {
             position: relative;
             top: -6px;
         }
+        &.single {
+            top: -3px !important;
+        }
     }
     #conversation-view .summary .pm_labels label{
         &:first-child {
             position: relative;
             top: -6px;
         }
+    }
+    #conversation-view .message > div.summary .labels .pm_labels label:hover {
+        top: -6px;
+    }
+    #conversation-view .message > div.summary .labels .pm_labels label.more {
+        top: -7px;
+    }
+    #conversation-list-columns .pm_labels label.more {
+        top: -7px;
     }
 }
