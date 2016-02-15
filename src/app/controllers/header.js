@@ -28,7 +28,7 @@ angular.module("proton.controllers.Header", [])
     delete $scope.folders.label;
 
     var setPath = function() {
-        var mailbox = tools.currentMailbox();
+        var mailbox = $state.$current.name.replace('secured.', '').replace('.view', '');
 
         if (mailbox === 'label') {
             var label = _.findWhere(authentication.user.Labels, {ID: $stateParams.label});
@@ -37,10 +37,8 @@ angular.module("proton.controllers.Header", [])
                 mailbox = label.Name;
             }
         }
+
         $scope.path = mailbox;
-        if ($scope.path===false) {
-            $scope.path = '';
-        }
     };
 
     $scope.$on('openSearchModal', function(event, value) {
