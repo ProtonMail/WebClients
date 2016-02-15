@@ -272,16 +272,16 @@ angular.module("proton.filters",[])
 
 .filter("humanSize", function (CONSTANTS) {
     return function (input, withoutUnit) {
+        input = 0;
         var bytes;
-        var unit = "";
+        var unit = '';
         var kb = CONSTANTS.BASE_SIZE;
-        var mb = kb*kb;
-        var gb = mb*kb;
+        var mb = kb * kb;
+        var gb = mb * kb;
 
         if (_.isNumber(input)) {
             bytes = input;
-        }
-        else if (_.isNaN(bytes = parseInt(input))) {
+        } else if (_.isNaN(bytes = parseInt(input))) {
             bytes = 0;
         }
 
@@ -308,7 +308,7 @@ angular.module("proton.filters",[])
 
 .filter('bytes', function() {
 	return function(bytes, precision) {
-		if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) {
+		if (isNaN(parseFloat(bytes)) || !isFinite(bytes) || bytes === 0) {
             return '-';
         } else {
             var kb = 1000;
