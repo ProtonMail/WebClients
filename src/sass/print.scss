@@ -1,4 +1,5 @@
 @media print {
+
 	#secured-print {
 		* {
 			word-break: break-word;
@@ -16,12 +17,20 @@
 			}
 		}
 	}
+
+	#body #conversation-view,
+	#pm_view {
+		width: 100% !important;
+	}
+
 	.pm_button,
 	.pm_buttons,
 	.sidebar,
 	.pm_toolbar,
 	#pm_header,
 	#pm_list,
+	#conversation-list-columns,
+	#pm_header-desktop,
 	#pm_background,
 	#pm_view article.closed
 	 {
