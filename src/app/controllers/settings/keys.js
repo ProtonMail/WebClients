@@ -19,13 +19,18 @@ angular.module("proton.controllers.Settings")
     $scope.isSafari = jQuery.browser.name === 'safari';
     $scope.isPrivate = authentication.user.Private === 1;
     $scope.isNonPrivate = authentication.user.Private === 0;
-    // Store addresses in the controller
-    $scope.addresses = authentication.user.Addresses;
-
+    // Original PM addresses
+    $scope.PMAddresses = _.where(authentication.user.Addresses, {Mailbox: 1});
+    // PM aliases
+    $scope.PMAliases = _.where(authentication.user.Addresses, {Mailbox: 2});
+    // Custom addresses
+    $scope.customAddresses = _.where(authentication.user.Addresses, {Mailbox: 3});
     // Establish a link between Addresses and the a service value
     $scope.$watch(function () { return authentication.user.Addresses; }, function (newVal, oldVal) {
         if (angular.isDefined(newVal)) {
-            $scope.addresses = authentication.user.Addresses;
+            $scope.PMAddresses = _.where(authentication.user.Addresses, {Mailbox: 1});
+            $scope.PMAliases = _.where(authentication.user.Addresses, {Mailbox: 2});
+            $scope.customAddresses = _.where(authentication.user.Addresses, {Mailbox: 3});
         }
     });
 

@@ -266,7 +266,7 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Open a modal to enable an address
+     * Enable an address
      */
     $scope.enableAddress = function(address) {
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {

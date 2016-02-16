@@ -587,13 +587,18 @@
         margin-right: 0;
         clear: both;
         box-sizing: border-box;
-        .pm_sort ul li .label {
-            white-space: nowrap;
-            display: inline-block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 60%;
-            line-height: 32px;
+        .pm_sort ul li {
+            .pm_button.link {
+                width: 5.5rem;
+            }
+            .label {
+                white-space: nowrap;
+                display: inline-block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 60%;
+                line-height: 32px;
+            }
         }
         .pm_buttons .fa.fa-angle-down {
             padding: 0 .5rem;

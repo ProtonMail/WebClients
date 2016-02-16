@@ -673,6 +673,33 @@ angular.module('proton.routes', [
         }
     })
 
+    .state('secured.addresses', {
+        url: '/addresses',
+        resolve: {
+            domains: function($q, Domain) {
+                var deferred = $q.defer();
+
+                Domain.available().then(function(result) {
+                    if (result.data && angular.isArray(result.data.Domains)) {
+                        deferred.resolve(result.data.Domains);
+                    } else {
+                        deferred.reject();
+                    }
+                }, function() {
+                    deferred.reject();
+                });
+
+                return deferred.promise;
+            }
+        },
+        views: {
+            'content@secured': {
+                templateUrl: 'templates/views/addresses.tpl.html',
+                controller: 'AddressesController'
+            }
+        }
+    })
+
     .state('secured.invoice', {
         url: '/invoice/:time',
         onEnter: function($rootScope) {

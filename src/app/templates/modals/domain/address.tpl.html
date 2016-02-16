@@ -42,15 +42,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="address in ctrl.domain.Addresses" ng-class="{'disabled': address.Status === 0 || address.Status === 2}">
+                            <tr ng-repeat="address in ctrl.domain.Addresses" ng-class="{'disabled': address.Status === 0}">
                                 <td>
                                     <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
-                                    <span ng-show="address.Status === 0 || address.Status === 2">{{ address.Email }}</span>
+                                    <span ng-show="address.Status === 0">{{ address.Email }}</span>
                                 </td>
                                 <td>
                                     <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
                                     <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
-                                    <span class="pm_badge error" ng-show="address.Status === 2">{{ 'DISABLED' | translate }}</span>
                                 </td>
                             </tr>
                         </tbody>
