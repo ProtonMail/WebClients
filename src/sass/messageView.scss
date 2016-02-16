@@ -386,8 +386,8 @@ body.mobileMode {
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
-                        display: block;
-                        width: 100%;
+                        display: inline-block;
+                        float: right
                     }
                 }
                 .status {
