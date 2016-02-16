@@ -122,7 +122,7 @@ angular.module("proton.filters",[])
     return function(amount, currency) {
         var result;
 
-        switch(currency) {
+        switch(currency.toUpperCase()) {
             case 'EUR':
                 result = amount + ' €';
                 break;

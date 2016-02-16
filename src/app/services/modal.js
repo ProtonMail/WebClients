@@ -516,15 +516,12 @@ angular.module("proton.modals", [])
             this.year = '';
             this.cvc = '';
             this.zip = '';
-            this.cardTypeIcon = 'fa-credit-card';
-            this.config = params.configuration;
-            this.config.Source = {};
-            this.recovery = '';
             this.create = params.create;
             this.base = CONSTANTS.BASE_SIZE;
             this.coupon = false;
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: 'US'});
+            this.plans = params.plans;
 
             if(angular.isDefined(params.card)) {
                 this.source = params.card.ExternalSourceID;
@@ -693,21 +690,13 @@ angular.module("proton.modals", [])
             };
 
             this.total = function() {
-                var value = this.config.Subscription.Amount - this.coupon;
+                var total = 0;
 
-                if (value > 0) {
-                    return value / 100;
-                } else {
-                    return 0;
-                }
-            };
+                _.each(this.plans, function(plan) {
+                    total += plan.Amount * plan.quantity;
+                }.bind(this));
 
-            this.monthly = function() {
-                params.monthly();
-            };
-
-            this.yearly = function() {
-                params.yearly();
+                return total;
             };
 
             /**

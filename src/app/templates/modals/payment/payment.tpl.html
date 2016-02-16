@@ -19,45 +19,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>{{ 'STORAGE' | translate }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxSpace / ctrl.base / ctrl.base / ctrl.base }} GB</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>{{ 'DOMAINS' | translate }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxDomains }}</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>{{ 'ADDRESSES' | translate }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxAddresses }}</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>{{ 'USERS' | translate }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxMembers }}</td>
-                            <td></td>
-                        </tr>
-                        <tr ng-show="ctrl.coupon">
-                            <td>{{ 'COUPON' | translate }}</td>
-                            <td class="text-center">1</td>
-                            <td>-{{ ctrl.coupon / 100 | number: 2 | currency: ctrl.config.Subscription.Currency }}</td>
+                        <tr ng-repeat="plan in ctrl.plans">
+                            <td>{{ plan.Title }}</td>
+                            <td class="text-center">{{ plan.quantity }}</td>
+                            <td>
+                                <strong>{{ plan.quantity * plan.Amount / 100 | currency: plan.Currency }}</strong>
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.config.Subscription.BillingCycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.config.Subscription.BillingCycle === 12">{{ 'PER_YEAR' | translate }}</small>
+                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.plans[0].Cycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.plans[0].Cycle === 12">{{ 'PER_YEAR' | translate }}</small>
                             </td>
                             <td>
-                                <strong>{{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }}</strong>
+                                <strong>{{ ctrl.total() / 100 | currency: ctrl.plans[0].Currency }}</strong>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="pm_buttons">
-                    <a href="#" ng-click="ctrl.monthly()" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 1}">{{ 'MONTHLY' | translate }}</a>
-                    <a href="#" ng-click="ctrl.yearly()" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 12}" class="divider">{{ 'YEARLY' | translate }} <small class="text-green">{{ 'SAVE_20%' | translate }}</small></a>
-                </div>
             </div>
             <div class="col-1-2">
                 <div class="input-icon margin" ng-show="ctrl.config.Cart.Next.Plan === 'business'">
@@ -127,7 +105,7 @@
                         <button class="pm_button primary" ng-click="ctrl.apply()">{{ 'APPLY' | translate }}</button>
                     </div>
                 </div>
-                <p>Your credit card will be automatically charged on a {{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }} <span ng-show="ctrl.config.Subscription.BillingCycle === 1">{{ 'MONTHLY' | translate }}</span><span ng-show="ctrl.config.Subscription.BillingCycle === 12">{{ 'YEARLY' | translate }}</span> basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
+                <p>Your credit card will be automatically charged on a {{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }} <span ng-show="ctrl.plans[0].Cycle === 1">{{ 'MONTHLY' | translate }}</span><span ng-show="ctrl.plans[0].Cycle === 12">{{ 'YEARLY' | translate }}</span> basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>

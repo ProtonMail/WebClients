@@ -13,177 +13,113 @@ angular.module("proton.controllers.Settings")
     confirmModal,
     networkActivityTracker,
     notify,
-    organization,
     Organization,
+    organization,
     Payment,
     paymentModal,
+    plans,
     pmcw,
-    subscriptions,
+    subscription,
     supportModal,
     CONSTANTS,
     tools
 ) {
-    // Default values for organization and subscription
-    $scope.organization = null;
-
-    // Initialize default currency
-    $scope.currentCurrency = 'USD';
-    $scope.futureCurrency = 'USD';
-
-    // Initialize default billing cycle
-    $scope.currentBillingCycle = 1;
-    $scope.futureBillingCycle = 1;
-
-    // Initialize default values for the current object
-    $scope.current = null;
-
-    // Prices
-    $scope.plusPrice = {1: 5, 12: 49.99};
-    $scope.businessPrice = {1: 10, 12: 99.99};
-    $scope.visionaryPrice = {1: 30, 12: 299.99};
-    $scope.spacePrice = {1: 1, 12: 9.99};
-    $scope.domainPrice = {1: 2, 12: 19.99};
-    $scope.addressPrice = {1: 1, 12: 9.99};
-    $scope.memberPrice = {1: 5, 12: 49.99};
+    // Initialize variables
+    $scope.subscription = {};
+    $scope.plans = [];
 
     // Options
-    $scope.spacePlusOptions = [
-        {label: '5 GB', value: 5 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 0},
-        {label: '6 GB', value: 6 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 1},
-        {label: '7 GB', value: 7 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 2},
-        {label: '8 GB', value: 8 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 3},
-        {label: '9 GB', value: 9 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 4},
-        {label: '10 GB', value: 10 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 5},
-        {label: '11 GB', value: 11 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 6},
-        {label: '12 GB', value: 12 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 7},
-        {label: '13 GB', value: 13 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 8},
-        {label: '14 GB', value: 14 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 9},
-        {label: '15 GB', value: 15 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 10},
-        {label: '16 GB', value: 16 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 11},
-        {label: '17 GB', value: 17 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 12},
-        {label: '18 GB', value: 18 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 13},
-        {label: '19 GB', value: 19 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 14},
-        {label: '20 GB', value: 20 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 15}
+    $scope.spaceOptions = [
+        {label: '5 GB', index: 0, value: 5 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '6 GB', index: 1, value: 6 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '7 GB', index: 2, value: 7 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '8 GB', index: 3, value: 8 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '9 GB', index: 4, value: 9 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '10 GB', index: 5, value: 10 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '11 GB', index: 6, value: 11 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '12 GB', index: 7, value: 12 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '13 GB', index: 8, value: 13 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '14 GB', index: 9, value: 14 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '15 GB', index: 10, value: 15 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '16 GB', index: 11, value: 16 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '17 GB', index: 12, value: 17 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '18 GB', index: 13, value: 18 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '19 GB', index: 14, value: 19 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '20 GB', index: 15, value: 20 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE}
     ];
 
-    $scope.spaceBusinessOptions = [
-        {label: '10 GB', value: 10 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 0},
-        {label: '11 GB', value: 11 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 1},
-        {label: '12 GB', value: 12 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 2},
-        {label: '13 GB', value: 13 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 3},
-        {label: '14 GB', value: 14 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 4},
-        {label: '15 GB', value: 15 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 5},
-        {label: '16 GB', value: 16 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 6},
-        {label: '17 GB', value: 17 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 7},
-        {label: '18 GB', value: 18 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 8},
-        {label: '19 GB', value: 19 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 9},
-        {label: '20 GB', value: 20 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE, index: 10}
+    $scope.domainOptions = [
+        {label: '1', index: 0, value: 1},
+        {label: '2', index: 1, value: 2},
+        {label: '3', index: 2, value: 3},
+        {label: '4', index: 3, value: 4},
+        {label: '5', index: 4, value: 5},
+        {label: '6', index: 5, value: 6},
+        {label: '7', index: 6, value: 7},
+        {label: '8', index: 7, value: 8},
+        {label: '9', index: 8, value: 9},
+        {label: '10', index: 9, value: 10}
     ];
 
-    $scope.domainPlusOptions = [
-        {label: '1', value: 1, index: 0},
-        {label: '2', value: 2, index: 1},
-        {label: '3', value: 3, index: 2},
-        {label: '4', value: 4, index: 3},
-        {label: '5', value: 5, index: 4},
-        {label: '6', value: 6, index: 5},
-        {label: '7', value: 7, index: 6},
-        {label: '8', value: 8, index: 7},
-        {label: '9', value: 9, index: 8},
-        {label: '10', value: 10, index: 9}
+    $scope.addressOptions = [
+        {label: '5', index: 0, value: 5},
+        {label: '10', index: 1, value: 10},
+        {label: '15', index: 2, value: 15},
+        {label: '20', index: 3, value: 20},
+        {label: '25', index: 4, value: 25},
+        {label: '30', index: 5, value: 30},
+        {label: '35', index: 6, value: 35},
+        {label: '40', index: 7, value: 40},
+        {label: '45', index: 8, value: 45},
+        {label: '50', index: 9, value: 50}
     ];
 
-    $scope.domainBusinessOptions = [
-        {label: '1', value: 1, index: 0},
-        {label: '2', value: 2, index: 1},
-        {label: '3', value: 3, index: 2},
-        {label: '4', value: 4, index: 3},
-        {label: '5', value: 5, index: 4},
-        {label: '6', value: 6, index: 5},
-        {label: '7', value: 7, index: 6},
-        {label: '8', value: 8, index: 7},
-        {label: '9', value: 9, index: 8},
-        {label: '10', value: 10, index: 9}
+    $scope.memberOptions = [
+        {label: '2', index: 0, value: 2},
+        {label: '3', index: 1, value: 3},
+        {label: '4', index: 2, value: 4},
+        {label: '5', index: 3, value: 5},
+        {label: '6', index: 4, value: 6},
+        {label: '7', index: 5, value: 7},
+        {label: '8', index: 6, value: 8},
+        {label: '9', index: 7, value: 9},
+        {label: '10', index: 8, value: 10}
     ];
-
-    $scope.addressPlusOptions = [
-        {label: '5', value: 5, index: 0},
-        {label: '10', value: 10, index: 1},
-        {label: '15', value: 15, index: 2},
-        {label: '20', value: 20, index: 3},
-        {label: '25', value: 25, index: 4},
-        {label: '30', value: 30, index: 5},
-        {label: '35', value: 35, index: 6},
-        {label: '40', value: 40, index: 7},
-        {label: '45', value: 45, index: 8},
-        {label: '50', value: 50, index: 9}
-    ];
-
-    $scope.addressBusinessOptions = [
-        {label: '5', value: 5, index: 0},
-        {label: '10', value: 10, index: 1},
-        {label: '15', value: 15, index: 2},
-        {label: '20', value: 20, index: 3},
-        {label: '25', value: 25, index: 4},
-        {label: '30', value: 30, index: 5},
-        {label: '35', value: 35, index: 6},
-        {label: '40', value: 40, index: 7},
-        {label: '45', value: 45, index: 8},
-        {label: '50', value: 50, index: 9}
-    ];
-
-    $scope.memberBusinessOptions = [
-        {label: '2', value: 2, index: 0},
-        {label: '3', value: 3, index: 1},
-        {label: '4', value: 4, index: 2},
-        {label: '5', value: 5, index: 3},
-        {label: '6', value: 6, index: 4},
-        {label: '7', value: 7, index: 5},
-        {label: '8', value: 8, index: 6},
-        {label: '9', value: 9, index: 7},
-        {label: '10', value: 10, index: 8}
-    ];
-
-    // Set default values for selects
-    $scope.spacePlus = $scope.spacePlusOptions[0];
-    $scope.spaceBusiness = $scope.spaceBusinessOptions[0];
-    $scope.domainPlus = $scope.domainPlusOptions[0];
-    $scope.domainBusiness = $scope.domainBusinessOptions[0];
-    $scope.addressPlus = $scope.addressPlusOptions[0];
-    $scope.addressBusiness = $scope.addressBusinessOptions[0];
-    $scope.memberBusiness = $scope.memberBusinessOptions[0];
 
     /**
     * Method called at the initialization of this controller
     */
-    $scope.initialization = function() {
-        if(angular.isDefined(organization.data) && organization.data.Code === 1000) {
-            $scope.organization = organization.data.Organization;
-            $scope.current = _.pick(organization.data.Organization, 'Use2FA', 'MaxDomains', 'MaxMembers', 'MaxAddresses', 'MaxSpace');
-            $scope.future = _.pick(organization.data.Organization, 'Use2FA', 'MaxDomains', 'MaxMembers', 'MaxAddresses', 'MaxSpace');
-            $scope.spacePlus = _.findWhere($scope.spacePlusOptions, {value: $scope.organization.MaxSpace});
-            $scope.domainPlus = _.findWhere($scope.domainPlusOptions, {value: $scope.organization.MaxDomains});
-            $scope.domainBusiness = _.findWhere($scope.domainBusinessOptions, {value: $scope.organization.MaxDomains});
-            $scope.addressPlus = _.findWhere($scope.addressPlusOptions, {value: $scope.organization.MaxAddresses});
-            $scope.addressBusiness = _.findWhere($scope.addressBusinessOptions, {value: $scope.organization.MaxAddresses});
-
-            if($scope.organization.MaxMembers > 1) {
-                $scope.spaceBusiness = _.findWhere($scope.spaceBusinessOptions, {value: $scope.organization.MaxSpace});
-                $scope.memberBusiness = _.findWhere($scope.memberBusinessOptions, {value: $scope.organization.MaxMembers});
-            }
+    $scope.initialization = function(subscription, plans, organization) {
+        if (angular.isDefined(subscription)) {
+            _.extend($scope.subscription, subscription);
+            $scope.currentCycle = $scope.subscription.Cycle;
+            $scope.currentCurrency = $scope.subscription.Currency;
         }
 
-        if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-            $scope.subscription = subscriptions.data.Subscription;
-            $scope.currentCurrency = subscriptions.data.Subscription.Currency;
-            $scope.futureCurrency = subscriptions.data.Subscription.Currency;
-            $scope.currentBillingCycle = subscriptions.data.Subscription.BillingCycle;
-            $scope.futureBillingCycle = subscriptions.data.Subscription.BillingCycle;
+        if (angular.isDefined(plans)) {
+            var spaceOption = _.findWhere($scope.spaceOptions, {value: $scope.subscription.MaxSpace}) || $scope.spaceOptions[0];
+            var domainOption = _.findWhere($scope.domainOptions, {value: $scope.subscription.MaxDomains}) || $scope.domainOptions[0];
+            var addressOption = _.findWhere($scope.addressOptions, {value: $scope.subscription.MaxAddresses}) || $scope.addressOptions[0];
+            var memberOption = _.findWhere($scope.memberOptions, {value: $scope.subscription.MaxMembers}) || $scope.memberOptions[0];
 
-            if($scope.current) {
-                $scope.current.Plan = subscriptions.data.Subscription.Plan;
-                $scope.future.Plan = subscriptions.data.Subscription.Plan;
-            }
+            $scope.plans = plans;
+            $scope.spaceAddon = _.findWhere(plans, {Name: '1gb'});
+            $scope.domainAddon = _.findWhere(plans, {Name: '1domain'});
+            $scope.addressAddon = _.findWhere(plans, {Name: '5address'});
+            $scope.memberAddon = _.findWhere(plans, {Name: '1member'});
+
+            _.each($scope.plans, function(plan) {
+                if (plan.editable === true) {
+                    plan.Space = spaceOption;
+                    plan.Domain = domainOption;
+                    plan.Address = addressOption;
+                    plan.Member = memberOption;
+                }
+            });
+        }
+
+        if (angular.isDefined(organization)) {
+            $scope.organization = organization;
         }
     };
 
@@ -192,29 +128,39 @@ angular.module("proton.controllers.Settings")
     * @return {String} "12.5"
     */
     $scope.percentage = function() {
-        return Math.round(100 * $scope.organization.UsedSpace / $scope.organization.MaxSpace);
+        // return Math.round(100 * $scope.organization.UsedSpace / $scope.organization.MaxSpace);
+    };
+
+    /**
+     * Count the number of type in the current subscription
+     * @param {String} type
+     */
+    $scope.count = function(type) {
+        var count = 0;
+
+        if ($scope.subscription.Plans) {
+            _.each($scope.subscription.Plans, function(plan) {
+                count += plan[type];
+            });
+        }
+
+        return count;
     };
 
     /**
     * Return the amount of each plan
     * @param {String} name
     */
-    $scope.total = function(name) {
+    $scope.total = function(plan) {
         var total = 0;
 
-        if(name === 'plus') {
-            total += $scope.plusPrice[$scope.futureBillingCycle];
-            total += $scope.spacePlus.index * $scope.spacePrice[$scope.futureBillingCycle];
-            total += $scope.domainPlus.index * $scope.domainPrice[$scope.futureBillingCycle];
-            total += $scope.addressPlus.index * $scope.addressPrice[$scope.futureBillingCycle];
-        } else if(name === 'business') {
-            total += $scope.businessPrice[$scope.futureBillingCycle];
-            total += $scope.spaceBusiness.index * $scope.spacePrice[$scope.futureBillingCycle];
-            total += $scope.domainBusiness.index * $scope.domainPrice[$scope.futureBillingCycle];
-            total += $scope.addressBusiness.index * $scope.addressPrice[$scope.futureBillingCycle];
-            total += $scope.memberBusiness.index * $scope.memberPrice[$scope.futureBillingCycle];
-        } else if (name === 'visionary') {
-            total += $scope.visionaryPrice[$scope.futureBillingCycle];
+        total += plan.Amount;
+
+        if (plan.editable === true) {
+            total += plan.Space.index * $scope.spaceAddon.Amount;
+            total += plan.Domain.index * $scope.domainAddon.Amount;
+            total += plan.Address.index * $scope.addressAddon.Amount;
+            total += plan.Member.index * $scope.memberAddon.Amount;
         }
 
         return total;
@@ -227,6 +173,34 @@ angular.module("proton.controllers.Settings")
     */
     $scope.amount = function(name) {
         return parseFloat($scope.total(name) * 100);
+    };
+
+    $scope.changeCurrency = function(currency) {
+        var deferred = $q.defer();
+
+        Payment.plans(currency, $scope.currentCycle)
+        .then(function(result) {
+            $scope.initialization({Currency: currency}, result.data.Plans);
+            deferred.resolve();
+        });
+
+        networkActivityTracker.track(deferred.promise);
+
+        return deferred.promise;
+    };
+
+    $scope.changeCycle = function(cycle) {
+        var deferred = $q.defer();
+
+        Payment.plans($scope.currentCurrency, cycle)
+        .then(function(result) {
+            $scope.initialization({Cycle: cycle}, result.data.Plans);
+            deferred.resolve();
+        });
+
+        networkActivityTracker.track(deferred.promise);
+
+        return deferred.promise;
     };
 
     /**
@@ -283,128 +257,93 @@ angular.module("proton.controllers.Settings")
 
     /**
     * Open modal to pay the plan configured
-    * @param {String} name ('plus' or 'business')
+    * @param {Object} plan
     */
-    $scope.choose = function(name) {
-        var now = moment().unix();
-        var current = $scope.current;
-        var promises = [];
-        var future;
-        var configuration;
+    $scope.choose = function(plan) {
+        if (plan.Name === 'free') {
+            $scope.free();
+        } else {
+            var promises = [];
+            var planIDs = [plan.ID];
+            var plans = [plan];
+            var i;
 
-        switch (name) {
-            case 'plus':
-                future = {
-                    Plan: name,
-                    Use2FA: 0,
-                    MaxDomains: $scope.domainPlus.value,
-                    MaxMembers: 1,
-                    MaxAddresses: $scope.addressPlus.value,
-                    MaxSpace: $scope.spacePlus.value
-                };
-                break;
-            case 'business':
-                future = {
-                    Plan: name,
-                    Use2FA: 0,
-                    MaxDomains: $scope.domainBusiness.value,
-                    MaxMembers: $scope.memberBusiness.value,
-                    MaxAddresses: $scope.addressBusiness.value,
-                    MaxSpace: $scope.spaceBusiness.value
-                };
-                break;
-            case 'visionary':
-                future = {
-                    Plan: name,
-                    Use2FA: 0,
-                    MaxDomains: 10,
-                    MaxMembers: 1,
-                    MaxAddresses: 50,
-                    MaxSpace: 21474836480
-                };
-                break;
-            default:
-                break;
-        }
+            plan.quantity = 1;
+            $scope.spaceAddon.quantity = plan.Space.index;
+            $scope.addressAddon.quantity = plan.Address.index;
+            $scope.domainAddon.quantity = plan.Domain.index;
+            $scope.memberAddon.quantity = plan.Member.index;
 
-        configuration = {
-            Subscription: {
-                Amount: $scope.amount(name),
-                Currency: $scope.futureCurrency,
-                BillingCycle: $scope.futureBillingCycle,
-                Time: now,
-                PeriodStart: now,
-                ExternalProvider: 'Stripe'
-            },
-            Cart: {
-                Previous: current,
-                Next: future
-            }
-        };
-
-        promises.push(Payment.plan(configuration)); // Check the configuration choosed
-        promises.push(Payment.sources()); // Return the credit card
-        promises.push(Payment.keys()); // Return public key to encrypt metadata
-
-        networkActivityTracker.track($q.all(promises).then(function(results) {
-            var plan = results[0];
-            var card = results[1];
-            var key = results[2];
-            var organizationName = '';
-
-            if($scope.organization) {
-                organizationName = $scope.organization.DisplayName;
-            } else if (name === 'plus' || name === 'visionary') {
-                organizationName = $translate.instant('MY_ORGANIZATION');
+            if (plan.Space.index > 0) {
+                plans.push($scope.spaceAddon);
             }
 
-            if (angular.isDefined(plan.data) && plan.data.Code === 1000 && angular.isDefined(card.data) && key.data.Code === 1000 && angular.isDefined(key.data) && key.data.Code === 1000) {
-                configuration.Organization = {
-                    DisplayName: organizationName
-                };
-                // Open payment modal
+            if (plan.Address.index > 0) {
+                plans.push($scope.addressAddon);
+            }
+
+            if (plan.Domain.index > 0) {
+                plans.push($scope.domainAddon);
+            }
+
+            if (plan.Member.index > 0) {
+                plans.push($scope.memberAddon);
+            }
+
+            for (i = 0; i < plan.Space.index; i++) {
+                planIDs.push($scope.spaceAddon.ID);
+            }
+
+            for (i = 0; i < plan.Address.index; i++) {
+                planIDs.push($scope.addressAddon.ID);
+            }
+
+            for (i = 0; i < plan.Domain.index; i++) {
+                planIDs.push($scope.domainAddon.ID);
+            }
+
+            for (i = 0; i < plan.Member.index; i++) {
+                planIDs.push($scope.memberAddon.ID);
+            }
+
+            // Return the credit card
+            // promises.push(Payment.sources());
+            // Return public key to encrypt metadata
+            // promises.push(Payment.keys());
+            // Valid plan
+            // promises.push(Payment.valid({
+            //     Currency : $scope.currentCurrency,
+            //     Cycle : $scope.currentCycle,
+            //     CouponCode : '',
+            //     PlanIDs: planIDs
+            // }));
+
+            networkActivityTracker.track($q.all(promises)
+            .then(function(results) {
+                // var card = results[0];
+                // var key = results[1];
+                // var valid = results[2];
+                //
+                // if (card.data && card.data.Code === 1000 && key.data && key.data.Code === 1000 && valid.data && valid.data.Code === 1000) {
+                //
+                // }
+
                 paymentModal.activate({
                     params: {
-                        create: $scope.organization === null, // new organization?
-                        card: card.data.Source,
-                        key: key.data.Key,
-                        configuration: configuration,
-                        monthly: function() {
-                            paymentModal.deactivate();
-                            $scope.futureBillingCycle = 1;
-                            $scope.choose(name);
-                        },
-                        yearly: function() {
-                            paymentModal.deactivate();
-                            $scope.futureBillingCycle = 12;
-                            $scope.choose(name);
-                        },
-                        change: function(organization) {
-                            Payment.subscriptions().then(function(subscriptions) {
-                                if(angular.isDefined(subscriptions.data) && subscriptions.data.Code === 1000) {
-                                    $scope.subscription = subscriptions.data.Subscription;
-                                    $scope.currentCurrency = subscriptions.data.Subscription.Currency;
-                                    $scope.futureCurrency = subscriptions.data.Subscription.Currency;
-                                    $scope.currentBillingCycle = subscriptions.data.Subscription.BillingCycle;
-                                    $scope.futureBillingCycle = subscriptions.data.Subscription.BillingCycle;
-                                    $scope.organization = organization;
-                                    eventManager.call();
-                                }
-                            });
+                        plans: plans,
+                        // card: card.data.Source,
+                        // key: key.data.Key,
+                        // valid: valid.data,
+                        change: function(subscription, organization) {
+                            $scope.initialization(subscription, undefined, organization);
                         },
                         cancel: function() {
                             paymentModal.deactivate();
                         }
                     }
                 });
-            } else if(angular.isDefined(plan.data) && plan.data.Error) {
-                notify({message: plan.data.Error, classes: 'notification-danger'});
-            } else {
-                notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
-            }
-        }, function() {
-            notify({message: $translate.instant('ERROR_TO_CHECK_CONFIGURATION'), classes: 'notification-danger'});
-        }));
+            }));
+        }
     };
 
     /**
@@ -445,5 +384,5 @@ angular.module("proton.controllers.Settings")
     };
 
     // Call initialization
-    $scope.initialization();
+    $scope.initialization(subscription.data.Subscription, plans.data.Plans, organization.data.Organization);
 });

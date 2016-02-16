@@ -36,27 +36,114 @@ angular.module("proton.models.payments", [])
             return $http.get(url.get() + '/payments/status');
         },
         /**
-        * Call Stripe to get some information
-        * @return {Promise}
-        */
-        subscriptions: function() {
-            return $http.get(url.get() + '/payments/subscriptions', {
+         * Get plans available to user
+         */
+        plans: function(currency, cycle) {
+            return $http.get(url.get() + '/payments/plans', {
+                params: {
+                    Currency: currency,
+                    Cycle: cycle
+                },
                 transformResponse: function(data, headersGetter, status) {
                     data = angular.fromJson(data);
 
-                    if (angular.isArray(data.Subscriptions) && data.Subscriptions.length > 0) {
-                        data.Subscription = data.Subscriptions[0];
+                    if(angular.isDefined(data) && data.Code === 1000) {
+                        // Add free plan
+                        data.Plans.unshift({
+                            Type: 1,
+                            Name: 'free',
+                            Title: 'ProtonMail Free',
+                            Amount: 0,
+                            MaxDomains: 0,
+                            MaxAddresses: 1,
+                            MaxSpace: 5368709120,
+                            MaxMembers: 1,
+                            TwoFactor: 0
+                        });
 
-                        if (data.Subscription.Plan === 'free') {
-                            data.Subscription.BillingCycle = 1;
-                            data.Subscription.Amount = 0;
-                            data.Subscription.Currency = 'CHF';
-                        }
+                        _.each(data.Plans, function(plan) {
+                            switch (plan.Name) {
+                                case 'free':
+                                    plan.editable = false;
+                                    plan.display = true;
+                                    break;
+                                case 'plus':
+                                    plan.editable = true;
+                                    plan.display = true;
+                                    break;
+                                case 'business':
+                                    plan.editable = true;
+                                    plan.display = false;
+                                    break;
+                                case 'visionary':
+                                    plan.editable = false;
+                                    plan.display = true;
+                                    break;
+                                default:
+                                    break;
+                            }
+                        });
                     }
 
                     return data;
                 }
             });
+        },
+        /**
+        * Get current subscription
+        * @return {Promise}
+        */
+        subscription: function() {
+            return $http.get(url.get() + '/payments/subscription', {
+                transformResponse: function(data, headersGetter, status) {
+                    data = angular.fromJson(data);
+
+                    if (angular.isDefined(data) && data.Code === 1000) {
+                        data.Subscription.Name = _.findWhere(data.Subscription.Plans, {Type: 1}).Name;
+                        data.Subscription.Title = _.findWhere(data.Subscription.Plans, {Type: 1}).Title;
+                    }
+
+                    if (angular.isDefined(data) && data.Code === 22110) {
+                        data.Code = 1000;
+                        data.Subscription = {
+                            Name: 'free',
+                            Title: 'ProtonMail Free',
+                            MaxDomains: 0,
+                            MaxAddresses: 1,
+                            MaxSpace: 5368709120, // 500 MB
+                            MaxMembers: 1,
+                            Cycle: 1,
+                            Currency: 'USD'
+                        };
+                    }
+
+                    return data;
+                }
+            });
+        },
+        /**
+         * Validate a subscription
+         */
+        valid: function(params) {
+            return $http.post(url.get() + '/payments/subscription/check', params);
+        },
+        /**
+         * Create a subscription
+         */
+        create: function(params) {
+            return $http.post(url.get() + '/payments/subscription', params);
+        },
+        /**
+         * Update subscription, lockedPUT
+         */
+        update: function(params) {
+            return $http.put(url.get() + '/payments/subscription', params);
+        },
+        /**
+         * Delete current subscription, locked
+         */
+        delete: function() {
+            return $http.delete(url.get() + '/payments/subscription');
         },
         /**
         *  Get payments corresponding to the given user.
