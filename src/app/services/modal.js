@@ -358,13 +358,24 @@ angular.module("proton.modals", [])
             this.zip = params.card.ZIP;
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: params.card.Country});
-            this.change = false;
+            this.cardChange = false;
             // Functions
             this.submit = function() {
                 this.process = true;
 
                 var sendRequest = function(metadata) {
                     var deferred = $q.defer();
+
+                    // {
+                    //     Object: 'card',
+                    //     Number: this.number,
+                    //     ExpMonth: this.month,
+                    //     ExpYear: this.year,
+                    //     CVC: this.cvc,
+                    //     Name: this.fullname,
+                    //     Country: this.country.value,
+                    //     ZIP: this.zip
+                    // }
 
                     // Send request to change credit card
                     Payment.change({
@@ -387,21 +398,6 @@ angular.module("proton.modals", [])
                     }.bind(this));
 
                     return deferred.promise;
-                }.bind(this);
-
-                var encryptMetadata = function() {
-                    return pmcw.encryptMessage(angular.toJson({
-                        Source: {
-                            Object: 'card',
-                            Number: this.number,
-                            ExpMonth: this.month,
-                            ExpYear: this.year,
-                            CVC: this.cvc,
-                            Name: this.fullname,
-                            Country: this.country.value,
-                            ZIP: this.zip
-                        }
-                    }), params.key);
                 }.bind(this);
 
                 var validateCardNumber = function() {
@@ -508,7 +504,8 @@ angular.module("proton.modals", [])
         controller: function(params) {
             // Variables
             this.process = false;
-            this.change = false;
+            this.cardChange = true;
+            this.displayCoupon = false;
             this.step = 'payment';
             this.number = '';
             this.fullname = '';
@@ -518,10 +515,12 @@ angular.module("proton.modals", [])
             this.zip = '';
             this.create = params.create;
             this.base = CONSTANTS.BASE_SIZE;
-            this.coupon = false;
+            this.coupon = '';
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: 'US'});
             this.plans = params.plans;
+            this.currency = authentication.user.Currency;
+            this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
 
             if(angular.isDefined(params.card)) {
                 this.source = params.card.ExternalSourceID;
@@ -530,165 +529,147 @@ angular.module("proton.modals", [])
                 this.month = params.card.ExpMonth;
                 this.year = params.card.ExpYear;
                 this.cvc = '•••';
-                this.change = false;
+                this.cardChange = false;
                 this.country = _.findWhere(this.countries, {value: params.card.Country});
                 this.zip = params.card.ZIP;
             }
 
             // Functions
-            var saveOrganization = function() {
-                var promise;
+            /**
+             * Generate key for the organization
+             */
+            var organizationKey = function() {
+                var deferred = $q.defer();
 
-                if(params.create === true) {
-                    // Create
-                    promise = Organization.create(this.config);
+                if (params.create === true) {
+                    var mailboxPassword = authentication.getPassword();
+
+                    pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
+                    .then(function(response) {
+                        var privateKey = response.privateKeyArmored;
+
+                        deferred.resolve({
+                            OrganizationName: this.organizationName,
+                            PrivateKey: privateKey,
+                            BackupPrivateKey: privateKey
+                        });
+                    }.bind(this), function(error) {
+                        deferred.reject(new Error('Error during the generation of new keys for pm_org_admin'));
+                    });
                 } else {
-                    // Update
-                    promise = Organization.update(this.config);
+                    deferred.resolve();
                 }
 
-                promise.then(function(result) {
-                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        this.step = 'thanks';
-                        params.change(result.data.Organization);
-                    } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                        this.step = 'payment';
-                        notify({message: result.data.Error, classes: 'notification-danger'});
-                    } else {
-                        this.step = 'payment';
-                        notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
-                    }
-                }.bind(this), function(error) {
-                    this.step = 'payment';
-                    // TODO notify
-                }.bind(this));
-            }.bind(this);
-
+                return deferred.promise;
+            };
             /**
-             * Encrypt metadata with public key
+             * Create an organization
              */
-            var encryptMetadata = function() {
+            var createOrganization = function(parameters) {
                 var deferred = $q.defer();
-                var data = {
-                    Source: {
-                        Object: 'card',
-                        Number: this.number,
-                        ExpMonth: this.month,
-                        ExpYear: this.year,
-                        CVC: this.cvc,
-                        Name: this.fullname,
-                        Country: this.country.value,
-                        ZIP: this.zip
-                    }
-                };
 
-                pmcw.encryptMessage(angular.toJson(data), params.key)
-                .then(function(result) {
-                    this.config.Source.Metadata = result;
+                if (params.create === true) {
+                    Organization.update(parameters)
+                    .then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            deferred.resolve(result);
+                        } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                            deferred.reject(new Error(result.data.Error));
+                        } else {
+                            deferred.reject(new Error($translate.instant('ERROR_DURING_ORGANIZATION_REQUEST')));
+                        }
+                    }.bind(this), function(error) {
+                        deferred.reject(new Error($translate.instant('ERROR_DURING_ORGANIZATION_REQUEST')));
+                    });
+                } else {
                     deferred.resolve();
-                }.bind(this), function(error) {
-                    deferred.reject(error);
-                });
+                }
 
                 return deferred.promise;
             }.bind(this);
 
             var validateCardNumber = function() {
-                return Payment.validateCardNumber(this.number);
-            };
+                if (this.cardChange === true) {
+                    return Payment.validateCardNumber(this.number);
+                } else {
+                    return Promise.resolve();
+                }
+            }.bind(this);
 
             var validateExpiry = function() {
-                return Payment.validateExpiry(this.month, this.year);
-            };
+                if (this.cardChange === true) {
+                    return Payment.validateExpiry(this.month, this.year);
+                } else {
+                    return Promise.resolve();
+                }
+            }.bind(this);
 
             var validateCVC = function() {
-                return Payment.validateCVC(this.cvc);
-            };
+                if (this.cardChange === true) {
+                    return Payment.validateCVC(this.cvc);
+                } else {
+                    return Promise.resolve();
+                }
+            }.bind(this);
 
-            var sendRequest = function(response) {
-                if(angular.isDefined(this.source)) {
-                    this.config.Source.ExternalSourceID = this.source;
+            var subscribe = function() {
+                var deferred = $q.defer();
+
+                if (this.cardChange === true) {
+                    // {
+                    //     Object: 'card',
+                    //     Number: this.number,
+                    //     ExpMonth: this.month,
+                    //     ExpYear: this.year,
+                    //     CVC: this.cvc,
+                    //     Name: this.fullname,
+                    //     Country: this.country.value,
+                    //     ZIP: this.zip
+                    // }
+                } else {
+                    deferred.resolve();
                 }
 
-                // Send request to subscribe
-                saveOrganization();
+                return deferred.promise;
+            }.bind(this);
+
+            var finish = function() {
+                this.process = 'thanks';
+                params.change(subscription, organization);
             }.bind(this);
 
             this.submit = function() {
-                var next = function() {
-                    if(this.change === true) {
-                        validateCardNumber()
-                        .then(validateExpiry)
-                        .then(validateCVC)
-                        .then(encryptMetadata)
-                        .then(sendRequest)
-                        .catch(function(error) {
-                            notify({message: error, classes: 'notification-danger'});
-                            this.step = 'payment';
-                        }.bind(this));
-                    } else {
-                        saveOrganization();
-                    }
-                }.bind(this);
-
                 // Change process status true to disable input fields
                 this.step = 'process';
 
-                if (params.create === true) {
-                    // if (this.recovery.length > 0) {
-                        var oldMailPwd = authentication.getPassword();
-                        // var newMailPwd = this.recovery;
-
-                        pmcw.generateKeysRSA('pm_org_admin', oldMailPwd).then(
-                            function(response) {
-                                var privateKey = response.privateKeyArmored;
-                                // TODO We keep this code if Andy decide to come back to the recovery field
-                                // var backupPrivateKey = pmcw.getNewEncPrivateKey(privateKey, oldMailPwd, newMailPwd);
-
-                                // if (backupPrivateKey === -1) {
-                                //     notify({message: $translate.instant('WRONG_CURRENT_MAILBOX_PASSWORD'), classes: 'notification-danger'});
-                                //     this.step = 'payment';
-                                // } else if (Error.prototype.isPrototypeOf(backupPrivateKey)) {
-                                //     // Error messages from OpenPGP.js
-                                //     notify({message: backupPrivateKey.message, classes: 'notification-danger'});
-                                //     this.step = 'payment';
-                                // } else {
-                                    this.config.Organization.PrivateKey = privateKey;
-                                    this.config.Organization.BackupPrivateKey = privateKey;
-                                    next();
-                                // }
-                            }.bind(this),
-                            function(error) {
-                                $log.error(error);
-                                notify({message: 'Error during the generation of new keys for pm_org_admin', classes: 'notification-danger'});
-                                this.step = 'payment';
-                            }.bind(this)
-                        );
-                    // } else {
-                    //     notify({message: 'You need to enter a recovery organization password', classes: 'notification-danger'});
-                    //     this.step = 'payment';
-                    //     return false;
-                    // }
-                } else {
-                    next();
-                }
+                validateCardNumber()
+                .then(validateExpiry)
+                .then(validateCVC)
+                .then(subscribe)
+                .then(organizationKey)
+                .then(createOrganization)
+                .then(finish)
+                .catch(function(error) {
+                    notify({message: error, classes: 'notification-danger'});
+                    this.step = 'payment';
+                }.bind(this));
             }.bind(this);
 
             /**
              * Apply the coupon field
              */
             this.apply = function() {
-                Payment.coupons(this.config.Coupon, {
-                    BillingCycle: this.config.Subscription.BillingCycle,
-                    Currency: this.config.Subscription.Currency
-                }).then(function(result) {
+                Payment.coupons(this.coupon).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         // Apply coupon off
-                        this.coupon = result.data.Modifier.AmountOff;
+                        // TODO
                     }
                 }.bind(this));
             };
 
+            /**
+             * Return the total for the subscription set
+             */
             this.total = function() {
                 var total = 0;
 

@@ -328,6 +328,10 @@ angular.module("proton.controllers.Settings")
                 //
                 // }
 
+                plans.push({Title: $translate.instant('CREDIT'), discount: true, Amount: -300, quantity: 1, Currency: $scope.currentCurrency});
+                plans.push({Title: $translate.instant('PRORATION'), discount: true, Amount: -300, quantity: 1, Currency: $scope.currentCurrency});
+                plans.push({Title: $translate.instant('COUPON'), discount: true, Amount: -300, quantity: 1, Currency: $scope.currentCurrency});
+
                 paymentModal.activate({
                     params: {
                         plans: plans,
