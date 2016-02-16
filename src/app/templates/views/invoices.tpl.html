@@ -2,7 +2,7 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings pm_form" pt-height>
         <p>&nbsp;</p>
-        <span class="pm_select inline">
+        <span class="pm_select inline pull-right">
             <select ng-model="range" ng-options="option.label for option in years" ng-change="loadInvoices(range.value)"></select>
             <i class="fa fa-angle-down"></i>
         </span>

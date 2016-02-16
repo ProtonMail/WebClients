@@ -8,14 +8,20 @@
             <div class="modal-body pm_form" ng-hide="ctrl.process === true">
                 <p ng-show="ctrl.message">{{ ctrl.message }}</p>
                 <div class="pm_grid">
-                    <div class="col-1-2">
+                    <div class="col-1-2 text-center">
                         <label class="checkbox">
-                            <input type="checkbox" ng-model="ctrl.size" ng-disabled="ctrl.process === true" />  Use 4096-bit keys (Default: 2048-bit)
+                            <input type="radio" ng-model="ctrl.size" value="false" ng-disabled="ctrl.process === true" />
+                            <strong>High Security</strong> (2048-bit)
                         </label>
                     </div>
-                    <div class="col-1-2"></div>
+                    <div class="col-1-2 text-center">
+                        <label class="checkbox">
+                            <input type="radio" ng-model="ctrl.size" value="true" ng-disabled="ctrl.process === true" />
+                            <strong>Extreme Security</strong> (4096-bit)
+                        </label>
+                    </div>
                 </div>
-                <p class="alert alert-info" ng-show="ctrl.size === true">Selecting this option may crash or freeze your browser, it is only recommended for high performance computers. Not recommended for tablet and mobile devices</p>
+                <p class="alert alert-info" ng-show="ctrl.size === true">Selecting this option may crash or freeze your browser, it is only recommended for high performance computers. Not recommended for tablet and mobile devices.</p>
                 <table class="pm_table">
                     <thead>
                         <tr>

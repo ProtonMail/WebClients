@@ -3,6 +3,9 @@ html.protonmail {
 	body {
 		background: $secondary;
 		height: 100%;
+		.mobileOnly {
+			display: none;
+		}
 		&.secure {
 			background: $white;
 		}
@@ -21,9 +24,6 @@ html.protonmail {
 				#pm_main {
 					height: calc(100% - 70px);
 				}
-			}
-			&#secured-account {
-				overflow: initial !important;
 			}
 		}
 	}
