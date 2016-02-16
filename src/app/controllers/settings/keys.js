@@ -20,17 +20,17 @@ angular.module("proton.controllers.Settings")
     $scope.isPrivate = authentication.user.Private === 1;
     $scope.isNonPrivate = authentication.user.Private === 0;
     // Original PM addresses
-    $scope.PMAddresses = _.where(authentication.user.Addresses, {Mailbox: 1});
+    $scope.PMAddresses = _.where(authentication.user.Addresses, {Type: 1});
     // PM aliases
-    $scope.PMAliases = _.where(authentication.user.Addresses, {Mailbox: 2});
+    $scope.PMAliases = _.where(authentication.user.Addresses, {Type: 2});
     // Custom addresses
-    $scope.customAddresses = _.where(authentication.user.Addresses, {Mailbox: 3});
+    $scope.customAddresses = _.where(authentication.user.Addresses, {Type: 3});
     // Establish a link between Addresses and the a service value
     $scope.$watch(function () { return authentication.user.Addresses; }, function (newVal, oldVal) {
         if (angular.isDefined(newVal)) {
-            $scope.PMAddresses = _.where(authentication.user.Addresses, {Mailbox: 1});
-            $scope.PMAliases = _.where(authentication.user.Addresses, {Mailbox: 2});
-            $scope.customAddresses = _.where(authentication.user.Addresses, {Mailbox: 3});
+            $scope.PMAddresses = _.where(authentication.user.Addresses, {Type: 1});
+            $scope.PMAliases = _.where(authentication.user.Addresses, {Type: 2});
+            $scope.customAddresses = _.where(authentication.user.Addresses, {Type: 3});
         }
     });
 
