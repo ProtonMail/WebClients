@@ -176,7 +176,7 @@
             <div class="meta">
                 <div class="row fromRow">
                     <label>{{ 'FROM' | translate }}</label>
-                    <select ng-model="message.From" ng-options="address.Email for address in user.Addresses | filter: {Status: 1} | orderBy: 'Send'" title="{{ 'FROM' | translate }}"></select>
+                    <select ng-model="message.From" ng-options="address.Email for address in user.Addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" title="{{ 'FROM' | translate }}"></select>
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
                     </button>
