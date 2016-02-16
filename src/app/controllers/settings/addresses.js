@@ -17,8 +17,8 @@ angular.module('proton.controllers.Settings')
     Setting
 ) {
 
-    $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1});
-    $scope.disabledAddresses = _.where(authentication.user.Addresses, {Status: 0});
+    $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
+    $scope.disabledAddresses = _.without(authentication.user.Addresses, $scope.activeAddresses);
     $scope.domains = [];
 
     // Populate the domains <select>
