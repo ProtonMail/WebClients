@@ -55,10 +55,6 @@ angular.module("proton.controllers.Header", [])
 
     setPath();
 
-    $scope.tour = function() {
-        $rootScope.$broadcast('tourStart');
-    };
-
     /**
      * Call event to open new composer
      */

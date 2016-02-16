@@ -22,7 +22,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     authentication,
     cache,
     confirmModal,
-    welcomeModal,
     Setting,
     cacheCounters,
     networkActivityTracker,
@@ -896,21 +895,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             });
         }
     };
-
-    welcomeModal.activate({
-        params: {
-            title: "asdasdad",
-            message: "1231231",
-            cancel: function() {
-                welcomeModal.deactivate();
-            },
-            next: function() {
-                // TODO: save stuff first
-                $rootScope.$broadcast('tourStart');
-                welcomeModal.deactivate();
-            }
-        }
-    });
 
     // Call initialization
     $scope.initialization();

@@ -1,39 +1,56 @@
 angular.module('proton.wizard', [])
 
-.directive('wizard', function($rootScope, $timeout, $state, monetizeModal, donateModal, $window) {
+.directive('wizard', function($rootScope, $timeout, $state, welcomeModal, monetizeModal, donateModal, $window) {
     return {
         restrict: 'E',
         replace: true,
         templateUrl: 'templates/partials/wizard.tpl.html',
         link: function(scope, element, attrs) {
+            // Initialization
+            $timeout(function() {
+                if ($rootScope.welcome === true) {
+                    $rootScope.welcome = false;
+                    welcomeModal.activate({
+                        params: {
+                            cancel: function() {
+                                welcomeModal.deactivate();
+                            },
+                            next: function(displayName, recoveryEmail) {
+                                welcomeModal.deactivate();
+                                scope.tourStart();
+                            }
+                        }
+                    });
+                }
+            }, 0);
+
+            // Listeners
             scope.$on('tourStart', function(event) {
-                $state.go('secured.inbox');
-                $timeout( function() {
-                    scope.tourStart();
-                }, 2000);
+                scope.tourStart();
             });
 
             scope.$on('tourEnd', function(event) {
                 scope.tourEnd();
             });
 
+            // Functions
             scope.tourHotkeys = function(event) {
-                if (event.keyCode===37) {
+                if (event.keyCode === 37) {
                     scope.tourPrev();
                 }
-                else if (event.keyCode===39) {
+                else if (event.keyCode === 39) {
                     scope.tourNext();
                 }
             };
 
             scope.tourStart = function() {
-
-                $rootScope.welcome = false;
+                $state.go('secured.inbox');
                 $rootScope.tourActive = true; // used for body class and CSS.
                 scope.tourGo(1);
                 $timeout(function() {
                     var element = $window.document.getElementById("pm_wizard");
-                    if(element) {
+
+                    if (element) {
                         element.focus();
                     }
                 });
