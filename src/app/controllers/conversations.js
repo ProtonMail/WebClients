@@ -654,6 +654,17 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.saveLabels(labels, true);
     };
 
+    // Used for mobile
+    $scope.next = function() {
+        $scope.goToPage( $scope.page + 1 );
+    };
+
+    $scope.previous = function() {
+        if ( $scope.page > 1 ) {
+            $scope.goToPage( $scope.page - 1 );
+        }
+    };
+
     /**
      * Switch to an other page
      * @param {Integer} page
