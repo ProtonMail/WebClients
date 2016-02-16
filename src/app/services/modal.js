@@ -1156,7 +1156,7 @@ angular.module("proton.modals", [])
             this.title = params.title;
             this.message = params.message;
             _.each(this.addresses, function(address) { address.state = QUEUED; });
-            this.size = false;
+            this.size = 2048;
 
             // Functions
             this.submit = function() {
