@@ -1156,7 +1156,7 @@ angular.module("proton.modals", [])
             this.title = params.title;
             this.message = params.message;
             _.each(this.addresses, function(address) { address.state = QUEUED; });
-            this.size = false;
+            this.size = 2048;
 
             // Functions
             this.submit = function() {
@@ -1413,6 +1413,43 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
+        }
+    });
+})
+
+.factory('welcomeModal', function(pmModal, Setting, authentication, networkActivityTracker, $q) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/welcome.tpl.html',
+        controller: function(params) {
+            this.displayName = authentication.user.DisplayName;
+            this.recoveryEmail = authentication.user.NotificationEmail;
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+
+            this.next = function() {
+                var promises = [];
+
+                if (this.displayName.length > 0) {
+                    promises.push(Setting.display({'DisplayName': this.displayName}).$promise);
+                    authentication.user.DisplayName = this.displayName;
+                }
+
+                if (this.recoveryEmail.length > 0) {
+                    promises.push(Setting.noticeEmail({'Password': password, 'NotificationEmail': this.recoveryEmail}).$promise);
+                    authentication.user.NotificationEmail = this.recoveryEmail;
+                }
+
+                networkActivityTracker.track($q.all(promises).then(function() {
+                    if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                        params.next(this.displayName, this.recoveryEmail);
+                    }
+                }.bind(this)));
+            }.bind(this);
         }
     });
 });

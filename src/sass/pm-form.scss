@@ -250,6 +250,9 @@
             font-size: 1.2rem;
             line-height: 135%;
         }
+        &.inline {
+            display: inline-block;
+        }
     }
     .col {
         display: block;

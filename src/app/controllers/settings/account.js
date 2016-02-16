@@ -42,8 +42,8 @@ angular.module('proton.controllers.Settings')
         } else {
             networkActivityTracker.track(
                 Setting.noticeEmail({
-                    "Password": $scope.noticeePassword,
-                    "NotificationEmail": $scope.notificationEmail
+                    'Password': $scope.noticeePassword,
+                    'NotificationEmail': $scope.notificationEmail
                 }).$promise
                 .then(
                     function(response) {
@@ -246,28 +246,28 @@ angular.module('proton.controllers.Settings')
         var displayName = $scope.displayName;
 
         // To avoid basic name spoofing such as "Security <secutity@protonmail.ch>, "
-        if ( (displayName.indexOf("<") > -1) || (displayName.indexOf(">") > -1) || (displayName.indexOf("@") > -1) ) {
-            notify({message: "Invalid Display Name. '<', '>', '@' are not allowed.", classes: 'notification-danger'});
-        } else {
+        // if ( (displayName.indexOf("<") > -1) || (displayName.indexOf(">") > -1) || (displayName.indexOf("@") > -1) ) {
+        //     notify({message: "Invalid Display Name. '<', '>', '@' are not allowed.", classes: 'notification-danger'});
+        // } else {
             networkActivityTracker.track(
-                Setting.display({
-                    "DisplayName": displayName
-                }).$promise.then(function(response) {
-                    if(response.Code === 1000) {
+                Setting.display({'DisplayName': displayName}).$promise.then(function(response) {
+                    if (response.Code === 1000) {
                         // We replace the value stored
                         authentication.user.DisplayName = displayName;
                         notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
-                    } else if(angular.isDefined(response.Error)) {
+                    } else if (angular.isDefined(response.Error)) {
                         // We restore the old value
                         $scope.displayName = authentication.user.DisplayName;
                         notify({message: response.Error, classes: 'notification-danger'});
+                    } else {
+                        notify({message: 'Error during the display name request', classes: 'notification-danger'});
                     }
                 }, function(error) {
                     notify({message: 'Error during the display name request', classes: 'notification-danger'});
                     $log.error(error);
                 })
             );
-        }
+        // }
     };
 
     $scope.saveSignature = function(form) {

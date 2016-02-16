@@ -18,8 +18,8 @@ angular.module("proton.controllers.Settings")
     $scope.userInvoices = [];
     $scope.years = [
         {label: $translate.instant('ALL'), value: undefined},
-        {label: '2015', value: YEAR_2015},
-        {label: '2016', value: YEAR_2016}
+        {label: '2016', value: YEAR_2016},
+        {label: '2015', value: YEAR_2015}
     ];
 
     /**

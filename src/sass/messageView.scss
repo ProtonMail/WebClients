@@ -381,6 +381,7 @@ body.mobileMode {
                     top: 5px;
                     background: $read;
                     max-width: 45%;
+                    min-width: 150px;
                     span {
                         white-space: nowrap;
                         overflow: hidden;

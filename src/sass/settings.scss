@@ -646,7 +646,7 @@
             }
         }
         .row {
-            padding: 2rem 0 0;
+            padding: 2rem 0 1rem;
             -webkit-flex-grow: 1;
                 -ms-flex-positive: 1;
                     flex-grow: 1;
@@ -1064,6 +1064,19 @@ body.mobileMode {
 }
 
 body.mobileMode {
+    &#secured-invoices,
+    &#secured-keys,
+    &#secured-members,
+    &#secured-domains,
+    &#secured-appearance,
+    &#secured-security,
+    &#secured-labels,
+    &#secured-dashboard,
+    &#secured-account {
+        overflow: initial;
+    }
+}
+body.mobileMode {
     #pm_settings {
         #settingsDomains {
             .pm_table {
@@ -1091,6 +1104,31 @@ body.mobileMode {
                                 text-align: center !important;
                                 padding: 0 !important;
                             }
+                        }
+                    }
+                }
+            }
+        }
+        .settings {
+            table.pm_table {
+                border: none;
+                tr {
+                    border: 1px solid $border;
+                    display: block;
+                    margin-bottom: 2rem;
+                    padding: 0;
+                    td {
+                        display: block;
+                        height: 3.25rem !important;
+                        border-bottom: 1px solid $border;
+                        &.text-right {
+                            text-align: left;
+                        }
+                        code {
+                            display: none;
+                        }
+                        code.mobileOnly {
+                            display: block;
                         }
                     }
                 }

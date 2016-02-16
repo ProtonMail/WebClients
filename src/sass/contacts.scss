@@ -42,6 +42,25 @@ body.mobileMode {
 			.pm_button[disabled] {
 				display: none;
 			}
+			.pm_button {
+				strong {
+					display: none;
+				}
+			}
+			.pm_button.deleteAll {
+				display: none;
+			}
+			.pm_button.primary {
+				strong {
+					display: inline;
+				}
+			}
+			.pm_buttons {
+				margin-left: 10px;
+				.page {
+					display: none;
+				}
+			}
 		}
 		.pm_table {
 			tr {

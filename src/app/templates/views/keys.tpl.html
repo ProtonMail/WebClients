@@ -116,11 +116,11 @@
                 <table class="pm_table thick bordered" ng-show="address.Keys.length > 0" id="keys-addressTable">
                     <thead>
                         <tr>
-                            <th style="width: 8.5rem">{{ 'STATUS' | translate }}</th>
-                            <th style="width: 8rem">{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
+                            <th style="width: 7rem">{{ 'STATUS' | translate }}</th>
+                            <th>{{ 'FINGERPRINT' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
                             <th style="width: 5.5rem">{{ 'KEY_SIZE' | translate }} <a href="#" pt-tooltip="TODO"><i class="fa fa-info-circle"></i></a></th>
-                            <th>{{ 'DOWNLOAD' | translate }}</th>
-                            <th style="width: 10.5rem" class="text-right">{{ 'ACTIONS' | translate }}</th>
+                            <th style="width: 13.5rem">{{ 'DOWNLOAD' | translate }}</th>
+                            <th style="width: 10rem" class="text-right">{{ 'ACTIONS' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -131,7 +131,8 @@
                                 <span class="pm_badge primary" ng-show="$first">{{ 'PRIMARY' | translate }}</span>
                             </td>
                             <td>
-                                <code pt-tooltip="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 8 }}...</code>
+                                <code pt-tooltip="{{ key.fingerprint }} ({{ key.created | date }})">{{ key.fingerprint | limitTo: 8 }}&hellip;</code>
+                                <code class="mobileOnly" pt-tooltip="{{ key.fingerprint }} ({{ key.created | date }})">{{ key.fingerprint }}</code>
                             </td>
                             <td>{{ key.bitSize }} {{ 'BIT' | translate }}</td>
                             <td>

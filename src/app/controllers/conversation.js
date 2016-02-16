@@ -366,4 +366,5 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     // Call initialization
     $scope.initialization();
+
 });

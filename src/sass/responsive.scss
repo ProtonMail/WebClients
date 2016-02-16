@@ -24,6 +24,32 @@
     body section.sidebar ul.menu li a {
         font-size: .9em;
     }
+    #pm_settings .settings thead {
+        display: none;
+    }
+    #pm_settings .settings {
+        table {
+            border: none;
+            tr {
+                border: 1px solid $border;
+                display: block;
+                margin-bottom: 2rem;
+                td {
+                    display: block;
+                    height: 2.25rem;
+                    &.text-right {
+                        text-align: left;
+                    }
+                    code {
+                        display: none;
+                    }
+                    code.mobileOnly {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 1000px) {
