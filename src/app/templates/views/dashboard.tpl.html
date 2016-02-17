@@ -4,7 +4,7 @@
         <div class="row">
             <section class="pm_form">
                 <div class="pm_grid">
-                    <div class="col-1-2">
+                    <div class="col-1-2" ng-hide="organization === null">
                         <legend>{{ 'OVERVIEW' | translate }}</legend>
                         <div class="well">
                             <table class="pm_table plain">
@@ -136,37 +136,37 @@
                                         <select ng-model="plan.Domain" ng-options="option.label for option in domainOptions"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
-                                    <strong ng-show="plan.editable === false">{{ plan.MaxDomains }}</strong> <strong>{{ 'CUSTOM_DOMAIN' | translate }}</strong>
+                                    <strong ng-show="plan.editable === false && plan.MaxDomains > 0">{{ plan.MaxDomains }}</strong> <strong>{{ 'CUSTOM_DOMAINS' | translate }}</strong>
                                     <span class="cost" ng-show="plan.Domain.index * domainAddon.Amount">
                                         <strong>+{{ plan.Domain.index * domainAddon.Amount / 100 | currency: plan.Currency }}</strong>
                                     </span>
                                 </li>
-                                <li>
+                                <li ng-class="{disabled: plan.MaxAddresses === 0}">
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
                                     <span class="pm_select" ng-show="plan.editable === true">
                                         <select ng-model="plan.Address" ng-options="option.label for option in addressOptions"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
-                                    <strong ng-show="plan.editable === false">{{ plan.MaxAddresses }}</strong> <stong>{{ 'ADDRESS' | translate }}</strong>
+                                    <strong ng-show="plan.editable === false && plan.MaxAddresses > 0">{{ plan.MaxAddresses }}</strong> <strong>{{ 'ADDRESSES' | translate }}</strong>
                                     <span class="cost" ng-show="plan.Address.index * addressAddon.Amount">
                                         <strong>+{{ plan.Address.index * addressAddon.Amount / 100 | currency: plan.Currency }}</strong>
                                     </span>
                                 </li>
-                                <li>
+                                <li ng-class="{disabled: plan.Name === 'free'}">
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
-                                    <strong>{{ plan.sending }}</strong>
+                                    <strong>{{ 'UNLIMITED_SENDING' | translate }}</strong>
                                 </li>
-                                <li>
+                                <li ng-class="{disabled: plan.Name === 'free'}">
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
-                                    <strong>{{ plan.labels }}</strong>
+                                    <strong>{{ 'UNLIMITED_LABELS' | translate }}</strong>
                                 </li>
-                                <li>
+                                <li ng-class="{disabled: plan.Name === 'free'}">
                                     <i class="fa fa-check"></i>
                                     <i class="fa fa-times"></i>
-                                    <strong>{{ plan.support }}</strong>
+                                    <strong>{{ 'PRIORITY_SUPPORT' | translate }}</strong>
                                 </li>
                             </ul>
                             <div class="price">

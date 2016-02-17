@@ -54,7 +54,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-1-2">
+            <div class="col-1-2" ng-hide="ctrl.valid.AmountDue === 0">
                 <!-- <div class="input-icon margin">
                     <i class="fa fa-briefcase"></i>
                     <input type="text" ng-model="ctrl.organizationName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" />
