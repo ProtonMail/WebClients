@@ -1,15 +1,4 @@
-.ua-chrome {
-
-    // ::-webkit-scrollbar {
-    //     background: rgba(0,0,0,.1);
-    // }
-
-    // ::-webkit-scrollbar-thumb {
-    //     background: rgba(255,255,255,.1);
-    // }
-
-}
-
+// All versions of IE
 .ua-ie {
     #pm_header {
         .pm_dropdown {
@@ -24,6 +13,7 @@
 
 .ua-edge {}
 
+// All iOS devices
 .ua-ios {
     #pm_captcha {
         -webkit-overflow-scrolling: touch;
@@ -31,6 +21,7 @@
     }
 }
 
+// Firefox Linux
 .ua-firefox.ua-desktop-linux {
     .pm_buttons a,
     .pm_button {
@@ -38,7 +29,8 @@
     }
 }
 
-.ua-windows_nt {
+// All Windows, Firefox
+.ua-windows_nt.ua-firefox {
     &.ua-firefox {
         #pm_composer .composer .pm_button {
             line-height: 26px;
@@ -58,6 +50,14 @@
                 top: 8px;
             }
         }
+    }
+}
+
+// Windows 7, IE 11
+.ua-windows_nt-6.ua-ie-11-0 {
+    #pm_settings #plans .plans .plan .features li .pm_select select {
+        position: relative;
+        top: 6px;
     }
 }
 
