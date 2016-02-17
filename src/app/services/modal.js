@@ -1250,6 +1250,9 @@ angular.module("proton.modals", [])
             this.year = '';
             this.cvc = '';
             this.fullname = '';
+            this.countries = tools.countries;
+            this.country = _.findWhere(this.countries, {value: 'US'});
+            this.zip = '';
 
             if (angular.isDefined(params.currency)) {
                 var index = _.findIndex(this.currencies, {value: params.currency});
@@ -1273,27 +1276,25 @@ angular.module("proton.modals", [])
             };
 
             var sendDonation = function() {
-                var now = moment().unix();
-
                 return Payment.donate({
-                    Donation: {
-                        Amount: this.amount * 100,
-                        Currency: this.currency.value,
-                        Time: now,
-                        ExternalProvider: 'Stripe'
-                    },
-                    Source: {
-                        Object: 'card',
-                        Number: this.number,
-                        ExpMonth: this.month,
-                        ExpYear: this.year,
-                        CVC: this.cvc,
-                        Name: this.fullname
-                    }
+                    Amount: this.amount * 100, // Don't be afraid
+                    Currency: this.currency.value,
+                    Payment : {
+                       Type: 'card',
+                       Details: {
+                           Number: this.number,
+                           ExpMonth: this.month,
+                           ExpYear: this.year,
+                           CVC: this.cvc,
+                           Name: this.fullname,
+                           Country: this.country.value,
+                           ZIP: this.zip
+                       }
+                   }
                 });
-            };
+            }.bind(this);
 
-            var closeModal = function() {
+            var finish = function(result) {
                 var deferred = $q.defer();
 
                 if (result.data && result.data.Code === 1000) {
@@ -1306,14 +1307,14 @@ angular.module("proton.modals", [])
                 }
 
                 return deferred.promise;
-            };
+            }.bind(this);
 
             this.donate = function() {
                 validateCardNumber()
                 .then(validateCardExpiry)
                 .then(validateCardCVC)
                 .then(sendDonation)
-                .then(closeModal)
+                .then(finish)
                 .catch(function(error) {
                     notify({message: error, classes: 'notification-danger'});
                 });
