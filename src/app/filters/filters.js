@@ -130,7 +130,11 @@ angular.module("proton.filters",[])
                 result = amount + ' CHF';
                 break;
             case 'USD':
-                result = '$' + amount;
+                if (amount < 0) {
+                    result = '-$' + Math.abs(amount); // Transform negative number to positive
+                } else {
+                    result = '$' + amount;
+                }
                 break;
             default:
                 break;
