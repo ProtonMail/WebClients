@@ -580,7 +580,7 @@ angular.module("proton.modals", [])
                 var deferred = $q.defer();
 
                 if (params.create === true) {
-                    Organization.update(parameters)
+                    Organization.create(parameters)
                     .then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             deferred.resolve(result);
