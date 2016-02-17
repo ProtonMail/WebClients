@@ -43,11 +43,13 @@ angular.module('proton.controllers.Settings')
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
         orderChanged: function() {
-          aliasOrder = [];
-          _.forEach($scope.aliases, function(d,i) {
-            aliasOrder[i] = d.Send;
-          });
-          $scope.saveAliases(aliasOrder);
+            var aliasOrder = [];
+
+            _.forEach($scope.aliases, function(d, i) {
+                aliasOrder[i] = d.Send;
+            });
+
+            $scope.saveAliases(aliasOrder);
         }
     };
 
@@ -57,8 +59,8 @@ angular.module('proton.controllers.Settings')
     $scope.enable = function(address) {
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                eventManager.call();
                 notify({message: $translate.instant('ADDRESS_ENABLED'), classes: 'notification-success'});
-                address.Status = 1;
             } else if(angular.isDefined(result.data) && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
@@ -80,8 +82,8 @@ angular.module('proton.controllers.Settings')
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            eventManager.call();
                             notify({message: $translate.instant('ADDRESS_DISABLED'), classes: 'notification-success'});
-                            address.Status = 0;
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
@@ -127,6 +129,7 @@ angular.module('proton.controllers.Settings')
             Setting.addressOrder({
                 'Order': aliasOrder
             }).$promise.then(function(response) {
+                eventManager.call();
                 notify({message: $translate.instant('ALIASES_SAVED'), classes: 'notification-success'});
             }, function(error) {
                 notify({message: 'Error during the aliases request', classes : 'notification-danger'});
