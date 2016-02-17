@@ -123,6 +123,14 @@ angular.module("proton.controllers.Settings")
         }
     };
 
+    $scope.refreshSubscription = function() {
+        networkActivityTracker.track(Payment.subscription().then(function(result) {
+            if (result.data && result.data.Code === 1000) {
+                $scope.initialization(result.data.Subscription);
+            }
+        }));
+    };
+
     /**
     * Returns a string for the storage bar
     * @return {String} "12.5"
@@ -215,25 +223,50 @@ angular.module("proton.controllers.Settings")
                 title: title,
                 message: message,
                 confirm: function() {
-                    Organization.delete({ExternalSubscriptionID: $scope.subscription.ExternalSubscriptionID}).then(function(result) {
-                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            $scope.organization = null;
-                            _.extend($scope.subscription, result.data.Subscription);
-                            eventManager.call();
-                            confirmModal.deactivate();
+                    var deleteOrganization = function() {
+                        var deferred = $q.defer();
+
+                        Organization.delete()
+                        .then(function(result) {
+                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                deferred.resolve();
+                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                                deferred.reject(new Error(result.data.Error));
+                            } else {
+                                deferred.reject(new Error($translate.instant('ERROR_DURING_ORGANIZATION_REQUEST')));
+                            }
+                        });
+
+                        return deferred.promise;
+                    };
+
+                    var unsubscribe = function() {
+                        var deferred = $q.defer();
+
+                        Payment.delete()
+                        .then(function(result) {
+                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                deferred.resolve();
+                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                                deferred.reject(new Error(result.data.Error));
+                            } else {
+                                deferred.reject(new Error($translate.instant('ERROR_DURING_PAYMENT_REQUEST')));
+                            }
+                        });
+
+                        return deferred.promise;
+                    };
+
+                    networkActivityTracker.track(
+                        unsubscribe()
+                        .then(function() {
                             notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBE'), classes: 'notification-success'});
-                        } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
-                        }
-                    }, function(result) {
-                        if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: $translate.instant('ERROR_DURING_ORGANIZATION_REQUEST'), classes: 'notification-danger'});
-                        }
-                    });
+                        })
+                        .catch(function(error) {
+                            notify({message: error, classes: 'notification-danger'});
+                            confirmModal.deactivate();
+                        })
+                    );
                 },
                 cancel: function() {
                     confirmModal.deactivate();
@@ -350,8 +383,8 @@ angular.module("proton.controllers.Settings")
                         valid: valid.data,
                         methods: methods.data.PaymentMethods,
                         change: function(subscription) {
+                            $scope.refreshSubscription();
                             paymentModal.deactivate();
-                            $scope.initialization(subscription);
                         },
                         cancel: function() {
                             paymentModal.deactivate();
