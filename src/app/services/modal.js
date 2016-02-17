@@ -523,6 +523,7 @@ angular.module("proton.modals", [])
             this.cvc = '';
             this.zip = '';
             this.create = params.create;
+            this.valid = params.valid;
             this.base = CONSTANTS.BASE_SIZE;
             this.coupon = '';
             this.countries = tools.countries;
@@ -694,18 +695,19 @@ angular.module("proton.modals", [])
                 }.bind(this));
             }.bind(this);
 
-            /**
-             * Return the total for the subscription set
-             */
-            this.total = function() {
-                var total = 0;
-
-                _.each(this.plans, function(plan) {
-                    total += plan.Amount * plan.quantity;
+            this.apply = function() {
+                Payment.valid({
+                    Currency : params.plans[0].Currency,
+                    Cycle : params.plans[0].Cycle,
+                    CouponCode : this.coupon,
+                    PlanIDs: params.planIDs
+                })
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        this.valid = result.data;
+                    }
                 }.bind(this));
-
-                return total;
-            };
+            }.bind(this);
 
             /**
              * Close payment modal

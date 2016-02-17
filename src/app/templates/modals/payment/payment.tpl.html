@@ -14,20 +14,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="plan in ctrl.plans">
+                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
+                            <td>{{ plan.Title }}</td>
+                            <td class="text-center"></td>
+                            <td class="text-right">
+                                <strong>{{ plan.Amount / 100 | currency: plan.Currency }}</strong>
+                            </td>
+                        </tr>
+                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 0}">
                             <td>{{ plan.Title }}</td>
                             <td class="text-center">{{ plan.quantity }}</td>
                             <td class="text-right">
-                                <strong ng-class="{'text-green': plan.discount === true}">{{ plan.quantity * plan.Amount / 100 | currency: plan.Currency }}</strong>
+                                <strong>{{ plan.quantity * plan.Amount / 100 | currency: plan.Currency }}</strong>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.plans[0].Cycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.plans[0].Cycle === 12">{{ 'PER_YEAR' | translate }}</small>
+                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.valid.Cycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.valid.Cycle === 12">{{ 'PER_YEAR' | translate }}</small>
                             </td>
                             <td class="text-right">
-                                <strong>{{ ctrl.total() / 100 | currency: ctrl.plans[0].Currency }}</strong>
+                                <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
                             </td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'PRORATION' | translate }}</td>
+                            <td></td>
+                            <td>{{ ctrl.valid.Proration }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ 'COUPON_APPLIED' | translate }}</td>
+                            <td></td>
+                            <td>{{ ctrl.valid.CouponDiscount }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -88,6 +105,9 @@
                             <i class="fa fa-tag"></i>
                             <input type="text" ng-model="ctrl.coupon" placeholder="{{ 'COUPON' | translate }}" />
                         </div>
+                    </div>
+                    <div class="col-1-3">
+                        <button type="button" ng-click="ctrl.apply()">{{ 'APPLY' | translate }}</button>
                     </div>
                 </div>
                 <p>By clicking submit, you agree to our <a href="https://protonmail.com/terms-and-conditions" target="_blank">Terms and Conditions</a>.</p>

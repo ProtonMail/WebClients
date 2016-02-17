@@ -174,7 +174,7 @@
                                     <strong>{{ 'TOTAL' | translate }}:</strong>
                                     <span ng-show="plan.Amount === 0">{{ 'FREE' | translate }}</span>
                                     <span ng-show="plan.Amount > 0">{{ total(plan) / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }} {{ 'PER_MONTH' | translate }}</span>
-                                    <span ng-show="plan.Cycle === 12" class="text-gray">({{ 'BILLED' | translate }} {{ total(plan) / 100 | currency: plan.Currency }} {{ 'PER_YEAR' | translate }})</span>
+                                    <small ng-show="plan.Cycle === 12" class="text-gray">({{ 'BILLED' | translate }} {{ total(plan) / 100 | currency: plan.Currency }} {{ 'PER_YEAR' | translate }})</small>
                                 </div>
                             </div>
                             <div class="action">

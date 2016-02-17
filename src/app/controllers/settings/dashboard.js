@@ -362,38 +362,26 @@ angular.module("proton.controllers.Settings")
                 if (methods.data && methods.data.Code === 1000 && valid.data && valid.data.Code === 1000) {
                     // Check amount first
                     if ($scope.total(plan) === valid.data.Amount) {
-                        if (valid.data.Credit) {
-                            plans.push({Title: $translate.instant('CREDIT'), discount: true, Amount: valid.data.Credit, quantity: 1, Currency: $scope.currentCurrency});
-                        }
-
-                        if (valid.data.Proration) {
-                            plans.push({Title: $translate.instant('PRORATION'), discount: true, Amount: valid.data.Proration, quantity: 1, Currency: $scope.currentCurrency});
-                        }
-
-                        if (valid.data.CouponDiscount) {
-                            plans.push({Title: $translate.instant('COUPON'), discount: true, Amount: valid.data.CouponDiscount, quantity: 1, Currency: $scope.currentCurrency, Coupon: valid.data.Coupon});
-                        }
+                        paymentModal.activate({
+                            params: {
+                                create: $scope.organization === null,
+                                plans: plans,
+                                planIDs: planIDs,
+                                valid: valid.data,
+                                methods: methods.data.PaymentMethods,
+                                change: function(subscription) {
+                                    $scope.refreshSubscription();
+                                    paymentModal.deactivate();
+                                },
+                                cancel: function() {
+                                    paymentModal.deactivate();
+                                }
+                            }
+                        });
                     } else {
-                        $log.error('Amount is different');
+                        notify({message: $translate.instant('AMOUNT_IS_DIFFERENT'), classes: 'notification-danger'});
                     }
                 }
-
-                paymentModal.activate({
-                    params: {
-                        create: $scope.organization === null,
-                        plans: plans,
-                        planIDs: planIDs,
-                        valid: valid.data,
-                        methods: methods.data.PaymentMethods,
-                        change: function(subscription) {
-                            $scope.refreshSubscription();
-                            paymentModal.deactivate();
-                        },
-                        cancel: function() {
-                            paymentModal.deactivate();
-                        }
-                    }
-                });
             }));
         }
     };

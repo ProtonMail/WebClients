@@ -23,7 +23,7 @@
                                 <li ng-repeat="address in activeAddresses" as-sortable-item="">
                                     <div as-sortable-item-handle="">
                                         <i class="fa fa-ellipsis-v"></i>
-                                        <button class="pm_button pull-right link" ng-click="disable(address)">{{ 'DISABLE' | translate }}</button>
+                                        <button class="pm_button pull-right link" ng-show="address.Type === 2 || address.Type === 3" ng-click="disable(address)">{{ 'DISABLE' | translate }}</button>
                                         <strong>{{ address.Email }}</strong>
                                     </div>
                                 </li>
@@ -38,7 +38,7 @@
                             <ul>
                                 <li ng-repeat="address in disabledAddresses">
                                     <div>
-                                        <button class="pm_button pull-right link" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
+                                        <button class="pm_button pull-right link" ng-show="address.Type === 2 || address.Type === 3" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
                                         <span>{{ address.Email }}</span>
                                     </div>
                                 </li>
