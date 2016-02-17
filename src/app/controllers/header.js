@@ -62,6 +62,10 @@ angular.module("proton.controllers.Header", [])
         $rootScope.$broadcast('newMessage');
     };
 
+    $scope.tour = function() {
+        $rootScope.$broadcast('tourStart');
+    };
+
     $scope.openSearchModal = function() {
         console.log('search?', $scope.advancedSearch);
         $scope.labels = authentication.user.Labels;
