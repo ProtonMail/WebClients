@@ -207,8 +207,8 @@ angular.module("proton.controllers.Settings")
      * Open a modal to confirm to switch to the free plan
      */
     $scope.free = function() {
-        var title = $translate.instant('FREE_PLAN');
-        var message = $translate.instant('CONFIRM_FREE_PLAN?');
+        var title = $translate.instant('CONFIRM_DOWNGRADE');
+        var message = 'This will downgrade your account to a free account.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.';
 
         confirmModal.activate({
             params: {
@@ -269,41 +269,44 @@ angular.module("proton.controllers.Settings")
             var i;
 
             plan.quantity = 1;
-            $scope.spaceAddon.quantity = plan.Space.index;
-            $scope.addressAddon.quantity = plan.Address.index;
-            $scope.domainAddon.quantity = plan.Domain.index;
-            $scope.memberAddon.quantity = plan.Member.index;
 
-            if (plan.Space.index > 0) {
-                plans.push($scope.spaceAddon);
-            }
+            if (plan.Name === 'plus' || plan.Name === 'business') {
+                $scope.spaceAddon.quantity = plan.Space.index;
+                $scope.addressAddon.quantity = plan.Address.index;
+                $scope.domainAddon.quantity = plan.Domain.index;
+                $scope.memberAddon.quantity = plan.Member.index;
 
-            if (plan.Address.index > 0) {
-                plans.push($scope.addressAddon);
-            }
+                if (plan.Space.index > 0) {
+                    plans.push($scope.spaceAddon);
+                }
 
-            if (plan.Domain.index > 0) {
-                plans.push($scope.domainAddon);
-            }
+                if (plan.Address.index > 0) {
+                    plans.push($scope.addressAddon);
+                }
 
-            if (plan.Member.index > 0) {
-                plans.push($scope.memberAddon);
-            }
+                if (plan.Domain.index > 0) {
+                    plans.push($scope.domainAddon);
+                }
 
-            for (i = 0; i < plan.Space.index; i++) {
-                planIDs.push($scope.spaceAddon.ID);
-            }
+                if (plan.Member.index > 0) {
+                    plans.push($scope.memberAddon);
+                }
 
-            for (i = 0; i < plan.Address.index; i++) {
-                planIDs.push($scope.addressAddon.ID);
-            }
+                for (i = 0; i < plan.Space.index; i++) {
+                    planIDs.push($scope.spaceAddon.ID);
+                }
 
-            for (i = 0; i < plan.Domain.index; i++) {
-                planIDs.push($scope.domainAddon.ID);
-            }
+                for (i = 0; i < plan.Address.index; i++) {
+                    planIDs.push($scope.addressAddon.ID);
+                }
 
-            for (i = 0; i < plan.Member.index; i++) {
-                planIDs.push($scope.memberAddon.ID);
+                for (i = 0; i < plan.Domain.index; i++) {
+                    planIDs.push($scope.domainAddon.ID);
+                }
+
+                for (i = 0; i < plan.Member.index; i++) {
+                    planIDs.push($scope.memberAddon.ID);
+                }
             }
 
             // Get payment methods
@@ -346,8 +349,9 @@ angular.module("proton.controllers.Settings")
                         planIDs: planIDs,
                         valid: valid.data,
                         methods: methods.data.PaymentMethods,
-                        change: function(subscription, organization) {
-                            $scope.initialization(subscription, undefined, organization);
+                        change: function(subscription) {
+                            paymentModal.deactivate();
+                            $scope.initialization(subscription);
                         },
                         cancel: function() {
                             paymentModal.deactivate();

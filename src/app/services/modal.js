@@ -662,7 +662,7 @@ angular.module("proton.modals", [])
                     PlanIDs: params.planIDs
                 }).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
-                        deferred.resolve();
+                        deferred.resolve(result.data.Subscription);
                     } else if (result.data && resultdata.Error) {
                         deferred.reject(new Error(result.data.Error));
                     }
@@ -671,9 +671,9 @@ angular.module("proton.modals", [])
                 return deferred.promise;
             }.bind(this);
 
-            var finish = function() {
+            var finish = function(subscription) {
                 this.process = 'thanks';
-                params.change(subscription, organization);
+                params.change(subscription);
             }.bind(this);
 
             this.submit = function() {
