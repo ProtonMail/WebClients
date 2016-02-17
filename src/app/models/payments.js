@@ -10,13 +10,6 @@ angular.module("proton.models.payments", [])
             return $http.post(url.get() + '/payments/donate', Obj);
         },
         /**
-        * Subscription for a service given a subscription set up as Order JSON above.
-        * @param {Object} Obj
-        */
-        subscribe: function(Obj) {
-            return $http.post(url.get() + '/payments/subscribe', Obj);
-        },
-        /**
         * Cancel given subscription.
         * @param {Object} Obj
         */
@@ -127,17 +120,20 @@ angular.module("proton.models.payments", [])
         valid: function(params) {
             return $http.post(url.get() + '/payments/subscription/check', params);
         },
+        updateMethod: function(params) {
+            return $http.post(url.get() + '/payments/methods', params);
+        },
+        /**
+         * Get payment methods in priority order
+         */
+        methods: function() {
+            return $http.get(url.get() + '/payments/methods');
+        },
         /**
          * Create a subscription
          */
-        create: function(params) {
+        subscribe: function(params) {
             return $http.post(url.get() + '/payments/subscription', params);
-        },
-        /**
-         * Update subscription, lockedPUT
-         */
-        update: function(params) {
-            return $http.put(url.get() + '/payments/subscription', params);
         },
         /**
          * Delete current subscription, locked
@@ -264,10 +260,10 @@ angular.module("proton.models.payments", [])
 
             return deferred.promise;
         },
-        validateExpiry: function(month, year) {
+        validateCardExpiry: function(month, year) {
             var deferred = $q.defer();
 
-            if ($.payment.validateExpiry(month, year) === false) {
+            if ($.payment.validateCardExpiry(month, year) === false) {
                 deferred.reject(new Error($translate.instant('EXPIRY_INVALID')));
             } else {
                 deferred.resolve();
@@ -275,10 +271,10 @@ angular.module("proton.models.payments", [])
 
             return deferred.promise;
         },
-        validateCVC: function(cvc) {
+        validateCardCVC: function(cvc) {
             var deferred = $q.defer();
 
-            if ($.payment.validateCVC(cvc)) {
+            if ($.payment.validateCardCVC(cvc) === false) {
                 deferred.reject(new Error($translate.instant('CVC_INVALID')));
             } else {
                 deferred.resolve();

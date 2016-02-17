@@ -1,143 +1,70 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings" pt-height>
-        <pre>{{ plans | json }}</pre>
-        <pre>{{ subscription | json }}</pre>
         <div class="row">
-            <section class="setting pm_form" ng-if="organization !== null">
-                <legend>{{ 'OVERVIEW' | translate }}</legend>
-                <div class="well">
-                    <table class="pm_table plain" id="tableOverview">
-                        <tr>
-                            <th>{{ 'ORGANIZATION' | translate }}:</th>
-                            <td>
-                                <strong>{{ organization.DisplayName }}</strong>
-                            </td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'DOMAINS' | translate }}:</th>
-                            <td>
-                                <strong>{{ organization.UsedDomains }} {{ 'OF' | translate }} {{ organization.MaxDomains }} {{ 'USED' | translate }}</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>
-                                    <a ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'ADDRESSES' | translate }}:</th>
-                            <td>
-                                <strong>{{ organization.UsedAddresses }} {{ 'OF' | translate }} {{ organization.MaxAddresses }} {{ 'USED' | translate }}</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>
-                                    <a ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'USERS' | translate }}:</th>
-                            <td>
-                                <strong>{{ organization.UsedMembers }} {{ 'OF' | translate }} {{ organization.MaxMembers }} {{ 'USED' | translate }}</strong>
-                            </td>
-                            <td class='text-right'>
-                                <span>
-                                    <a ui-sref="secured.members">{{ 'MANAGE' | translate }}</a>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'STORAGE' | translate }}:</th>
-                            <td>
-                                <strong>{{ percentage() }}% {{ 'USED' | translate }}</strong>
-                            </td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr class="storage">
-                            <td>&nbsp;</td>
-                            <td colspan="2" rowspan="2">
-                                <div class="usage">
-                                    <em class="used">{{ organization.UsedSpace | humanSize }}</em>
-                                    <em class="bar">
-                                        <div class="amount" style="width: {{ percentage() }}%"></div>
-                                    </em>
-                                    <em class="total">{{ organization.MaxSpace | humanSize }}</em>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            <section class="setting pm_form pull-right" ng-if="subscription.Name !== 'free'">
-                <legend>{{ 'CURRENT_SUBSCRIPTION' | translate }}</legend>
-                <div class="well">
-                    <table class="pm_table plain" id="tableSubscription">
-                        <tr>
-                            <th>{{ 'PLAN' | translate }}: </th>
-                            <td colspan="2">
-                                <strong>{{ subscription.Name | capitalize }} {{ 'PLAN' | translate }}</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'DOMAINS' | translate }}:</th>
-                            <td colspan="2">
-                                <strong>{{ organization.MaxDomains }}</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'ADDRESSES' | translate }}:</th>
-                            <td colspan="2">
-                                <strong>{{ organization.MaxAddresses }}</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'STORAGE' | translate }}:</th>
-                            <td colspan="2">
-                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'USERS' | translate }}:</th>
-                            <td colspan="2">
-                                <strong>{{ organization.MaxMembers }}</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'PRICE' | translate }}: </th>
-                            <td colspan="2">
-                                <strong>{{ subscription.Amount / 100 | currency: subscription.Currency }}</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'BILLING' | translate }}:</th>
-                            <td colspan="2">
-                                <strong ng-show="currentBillingCycle === 1">{{ 'MONTHLY' | translate }}</strong>
-                                <strong ng-show="currentBillingCycle === 12">{{ 'YEARLY' | translate }}</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'DURATION' | translate }}:</th>
-                            <td colspan="2">
-                                <strong>{{ subscription.PeriodStart * 1000 | date }} - {{ subscription.PeriodEnd * 1000 | date }}</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'PAYMENT' | translate }}:</th>
-                            <td>
-                                <strong>
-                                    <i class="fa fa-credit-card"></i> {{ 'CREDIT_CARD' | translate }}
-                                </strong>
-                            </td>
-                            <td class="text-right">
-                                <a href="#" ng-click="card()" pt-tooltip="{{ 'PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
-                            </td>
-                        </tr>
-                    </table>
+            <section class="pm_form" ng-hide="subscription.Name === 'free'">
+                <legend>{{ 'CURRENT_SUBSCRIPTION' | translate }}: {{ subscription.Name | capitalize }} {{ 'PLAN' | translate }}</legend>
+                <div class="pm_grid">
+                    <div class="col-1-2">
+                        <table class="pm_table plain">
+                            <tr>
+                                <th>{{ 'CUSTOM_DOMAINS' | translate }}:</th>
+                                <td>
+                                    <strong>{{ count('MaxDomains') }}</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'ADDRESSES' | translate }}:</th>
+                                <td>
+                                    <strong>{{ count('MaxAddresses') }}</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'STORAGE' | translate }}:</th>
+                                <td>
+                                    <strong>{{ count('MaxSpace') | humanSize }}</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'USERS' | translate }}:</th>
+                                <td>
+                                    <strong>{{ count('MaxMembers') }}</strong>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-1-2">
+                        <table class="pm_table plain">
+                            <tr>
+                                <th>{{ 'PRICE' | translate }}:</th>
+                                <td>
+                                    <strong>{{ subscription.Amount / 100 | currency: subscription.Currency }}</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'BILLING_CYCLE' | translate }}:</th>
+                                <td>
+                                    <strong ng-show="subscription.Cycle === 1">{{ 'MONTHLY' | translate }}</strong>
+                                    <strong ng-show="subscription.Cycle === 12">{{ 'YEARLY' | translate }}</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'DURATION' | translate }}:</th>
+                                <td>
+                                    <strong>{{ subscription.PeriodStart * 1000 | date }} - {{ subscription.PeriodEnd * 1000 | date }}</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>{{ 'PAYMENT' | translate }}:</th>
+                                <td>
+                                    <strong>
+                                        <i class="fa fa-credit-card"></i> {{ 'CREDIT_CARD' | translate }}
+                                    </strong>
+                                    &nbsp;<a href="#" ng-click="card()" pt-tooltip="{{ 'PAYMENT_INFORMATION' | translate }}">{{ 'EDIT' | translate }}</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </section>
         </div>

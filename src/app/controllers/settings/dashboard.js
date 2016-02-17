@@ -306,38 +306,46 @@ angular.module("proton.controllers.Settings")
                 planIDs.push($scope.memberAddon.ID);
             }
 
-            // Return the credit card
-            // promises.push(Payment.sources());
-            // Return public key to encrypt metadata
-            // promises.push(Payment.keys());
+            // Get payment methods
+            promises.push(Payment.methods());
             // Valid plan
-            // promises.push(Payment.valid({
-            //     Currency : $scope.currentCurrency,
-            //     Cycle : $scope.currentCycle,
-            //     CouponCode : '',
-            //     PlanIDs: planIDs
-            // }));
+            promises.push(Payment.valid({
+                Currency : $scope.currentCurrency,
+                Cycle : $scope.currentCycle,
+                CouponCode : '',
+                PlanIDs: planIDs
+            }));
 
             networkActivityTracker.track($q.all(promises)
             .then(function(results) {
-                // var card = results[0];
-                // var key = results[1];
-                // var valid = results[2];
-                //
-                // if (card.data && card.data.Code === 1000 && key.data && key.data.Code === 1000 && valid.data && valid.data.Code === 1000) {
-                //
-                // }
+                var methods = results[0];
+                var valid = results[1];
 
-                plans.push({Title: $translate.instant('CREDIT'), discount: true, Amount: -300, quantity: 1, Currency: $scope.currentCurrency});
-                plans.push({Title: $translate.instant('PRORATION'), discount: true, Amount: -300, quantity: 1, Currency: $scope.currentCurrency});
-                plans.push({Title: $translate.instant('COUPON'), discount: true, Amount: -300, quantity: 1, Currency: $scope.currentCurrency});
+                if (methods.data && methods.data.Code === 1000 && valid.data && valid.data.Code === 1000) {
+                    // Check amount first
+                    if ($scope.total(plan) === valid.data.Amount) {
+                        if (valid.data.Credit) {
+                            plans.push({Title: $translate.instant('CREDIT'), discount: true, Amount: valid.data.Credit, quantity: 1, Currency: $scope.currentCurrency});
+                        }
+
+                        if (valid.data.Proration) {
+                            plans.push({Title: $translate.instant('PRORATION'), discount: true, Amount: valid.data.Proration, quantity: 1, Currency: $scope.currentCurrency});
+                        }
+
+                        if (valid.data.CouponDiscount) {
+                            plans.push({Title: $translate.instant('COUPON'), discount: true, Amount: valid.data.CouponDiscount, quantity: 1, Currency: $scope.currentCurrency, Coupon: valid.data.Coupon});
+                        }
+                    } else {
+                        $log.error('Amount is different');
+                    }
+                }
 
                 paymentModal.activate({
                     params: {
                         plans: plans,
-                        // card: card.data.Source,
-                        // key: key.data.Key,
-                        // valid: valid.data,
+                        planIDs: planIDs,
+                        valid: valid.data,
+                        methods: methods.data.PaymentMethods,
                         change: function(subscription, organization) {
                             $scope.initialization(subscription, undefined, organization);
                         },
@@ -372,11 +380,10 @@ angular.module("proton.controllers.Settings")
     * Open modal with payment information
     */
     $scope.card = function() {
-        $q.all({source: Payment.sources(), key: Payment.keys()}).then(function(result) {
+        Payment.methods().then(function(result) {
             cardModal.activate({
                 params: {
-                    card: result.source.data.Source,
-                    key: result.key.data.Key,
+                    methods: result.data.PaymentMethods,
                     cancel: function() {
                         cardModal.deactivate();
                     }

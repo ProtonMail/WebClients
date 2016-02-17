@@ -347,76 +347,85 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/card.tpl.html',
         controller: function(params) {
             // Variables
+            var card = params.methods[0].Details;
+
             this.cardTypeIcon = 'fa-credit-card';
-            this.status = params.card.Status;
-            this.brand = params.card.Brand;
-            this.number = '•••• •••• •••• ' + params.card.Last4;
-            this.fullname = params.card.Name;
-            this.month = params.card.ExpMonth;
-            this.year = params.card.ExpYear;
+            this.number = '•••• •••• •••• ' + card.Last4;
+            this.fullname = card.Name;
+            this.month = card.ExpMonth;
+            this.year = card.ExpYear;
             this.cvc = '•••';
-            this.zip = params.card.ZIP;
+            this.zip = card.ZIP;
             this.countries = tools.countries;
-            this.country = _.findWhere(this.countries, {value: params.card.Country});
+            this.country = _.findWhere(this.countries, {value: card.Country});
             this.cardChange = false;
+            this.process = true;
             // Functions
+            var validateCardNumber = function() {
+                if (this.cardChange === true) {
+                    return Payment.validateCardNumber(this.number);
+                } else {
+                    return Promise.resolve();
+                }
+            }.bind(this);
+
+            var validateCardExpiry = function() {
+                if (this.cardChange === true) {
+                    return Payment.validateCardExpiry(this.month, this.year);
+                } else {
+                    return Promise.resolve();
+                }
+            }.bind(this);
+
+            var validateCardCVC = function() {
+                if (this.cardChange === true) {
+                    return Payment.validateCardCVC(this.cvc);
+                } else {
+                    return Promise.resolve();
+                }
+            }.bind(this);
+
+            var method = function() {
+                var deferred = $q.defer();
+
+                if (this.cardChange === true) {
+                    Payment.updateMethod({
+                        Type: 'card',
+                        Details: {
+                            Number: this.number,
+                            ExpMonth: this.month,
+                            ExpYear: this.year,
+                            CVC: this.cvc,
+                            Name: this.fullname,
+                            Country: this.country.value,
+                            ZIP: this.zip
+                        }
+                    }).then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            deferred.resolve(result.data.PaymentMethod);
+                        } else if (result.data && result.data.Error) {
+                            deferred.reject(new Error(result.data.Error));
+                        }
+                    });
+                } else {
+                    deferred.resolve();
+                }
+
+                return deferred.promise;
+            }.bind(this);
+
+            var finish = function(method) {
+                params.cancel(method);
+            };
+
             this.submit = function() {
                 this.process = true;
 
-                var sendRequest = function(metadata) {
-                    var deferred = $q.defer();
-
-                    // {
-                    //     Object: 'card',
-                    //     Number: this.number,
-                    //     ExpMonth: this.month,
-                    //     ExpYear: this.year,
-                    //     CVC: this.cvc,
-                    //     Name: this.fullname,
-                    //     Country: this.country.value,
-                    //     ZIP: this.zip
-                    // }
-
-                    // Send request to change credit card
-                    Payment.change({
-                        Source: {
-                            Metadata: metadata,
-                            ExternalSourceID: params.card.ExternalSourceID
-                        }
-                    }).then(function(result) {
-                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('CREDIT_CARD_CHANGED'), classes: 'notification-success'});
-                            deferred.resolve();
-                            params.cancel();
-                        } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                            deferred.reject(new Error(result.data.Error));
-                        } else {
-                            deferred.reject(new Error($translate.instant('ERROR_DURING_CARD_REQUEST')));
-                        }
-                    }.bind(this), function(error) {
-                        deferred.reject(new Error($translate.instant('ERROR_DURING_CARD_REQUEST')));
-                    }.bind(this));
-
-                    return deferred.promise;
-                }.bind(this);
-
-                var validateCardNumber = function() {
-                    return Payment.validateCardNumber(this.number);
-                }.bind(this);
-
-                var validateExpiry = function() {
-                    return Payment.validateExpiry(this.month, this.year);
-                }.bind(this);
-
-                var validateCVC = function() {
-                    return Payment.validateCVC(this.cvc);
-                }.bind(this);
-
                 validateCardNumber()
-                .then(validateExpiry)
-                .then(validateCVC)
-                .then(encryptMetadata)
-                .then(sendRequest)
+                .then(validateCardExpiry)
+                .then(validateCardCVC)
+                .then(method)
+                .then(finish)
                 .catch(function(error) {
                     notify({message: error, classes: 'notification-danger'});
                     this.process = false;
@@ -519,19 +528,20 @@ angular.module("proton.modals", [])
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: 'US'});
             this.plans = params.plans;
-            this.currency = authentication.user.Currency;
             this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
 
-            if(angular.isDefined(params.card)) {
-                this.source = params.card.ExternalSourceID;
-                this.number = '•••• •••• •••• ' + params.card.Last4;
-                this.fullname = params.card.Name;
-                this.month = params.card.ExpMonth;
-                this.year = params.card.ExpYear;
+            if(params.methods.length > 0) {
+                var card = params.methods[0];
+
+                this.methodID = card.ID;
+                this.number = '•••• •••• •••• ' + card.Details.Last4;
+                this.fullname = card.Details.Name;
+                this.month = card.Details.ExpMonth;
+                this.year = card.Details.ExpYear;
                 this.cvc = '•••';
                 this.cardChange = false;
-                this.country = _.findWhere(this.countries, {value: params.card.Country});
-                this.zip = params.card.ZIP;
+                this.country = _.findWhere(this.countries, {value: card.Details.Country});
+                this.zip = card.Details.ZIP;
             }
 
             // Functions
@@ -596,39 +606,67 @@ angular.module("proton.modals", [])
                 }
             }.bind(this);
 
-            var validateExpiry = function() {
+            var validateCardExpiry = function() {
                 if (this.cardChange === true) {
-                    return Payment.validateExpiry(this.month, this.year);
+                    return Payment.validateCardExpiry(this.month, this.year);
                 } else {
                     return Promise.resolve();
                 }
             }.bind(this);
 
-            var validateCVC = function() {
+            var validateCardCVC = function() {
                 if (this.cardChange === true) {
-                    return Payment.validateCVC(this.cvc);
+                    return Payment.validateCardCVC(this.cvc);
                 } else {
                     return Promise.resolve();
                 }
             }.bind(this);
 
-            var subscribe = function() {
+            var method = function() {
                 var deferred = $q.defer();
 
                 if (this.cardChange === true) {
-                    // {
-                    //     Object: 'card',
-                    //     Number: this.number,
-                    //     ExpMonth: this.month,
-                    //     ExpYear: this.year,
-                    //     CVC: this.cvc,
-                    //     Name: this.fullname,
-                    //     Country: this.country.value,
-                    //     ZIP: this.zip
-                    // }
+                    Payment.updateMethod({
+                        Type: 'card',
+                        Details: {
+                            Number: this.number,
+                            ExpMonth: this.month,
+                            ExpYear: this.year,
+                            CVC: this.cvc,
+                            Name: this.fullname,
+                            Country: this.country.value,
+                            ZIP: this.zip
+                        }
+                    }).then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            deferred.resolve(result.data.PaymentMethod.ID);
+                        } else if (result.data && result.data.Error) {
+                            deferred.reject(new Error(result.data.Error));
+                        }
+                    });
                 } else {
-                    deferred.resolve();
+                    deferred.resolve(this.methodID);
                 }
+
+                return deferred.promise;
+            }.bind(this);
+
+            var subscribe = function(methodID) {
+                var deferred = $q.defer();
+
+                Payment.subscribe({
+                    Amount : params.valid.AmountDue,
+                    Currency : params.valid.Currency,
+                    PaymentMethodID : methodID,
+                    CouponCode : this.coupon,
+                    PlanIDs: params.planIDs
+                }).then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        deferred.resolve();
+                    } else if (result.data && resultdata.Error) {
+                        deferred.reject(new Error(result.data.Error));
+                    }
+                });
 
                 return deferred.promise;
             }.bind(this);
@@ -643,8 +681,9 @@ angular.module("proton.modals", [])
                 this.step = 'process';
 
                 validateCardNumber()
-                .then(validateExpiry)
-                .then(validateCVC)
+                .then(validateCardExpiry)
+                .then(validateCardCVC)
+                .then(method)
                 .then(subscribe)
                 .then(organizationKey)
                 .then(createOrganization)
@@ -654,18 +693,6 @@ angular.module("proton.modals", [])
                     this.step = 'payment';
                 }.bind(this));
             }.bind(this);
-
-            /**
-             * Apply the coupon field
-             */
-            this.apply = function() {
-                Payment.coupons(this.coupon).then(function(result) {
-                    if (result.data && result.data.Code === 1000) {
-                        // Apply coupon off
-                        // TODO
-                    }
-                }.bind(this));
-            };
 
             /**
              * Return the total for the subscription set
@@ -1235,12 +1262,12 @@ angular.module("proton.modals", [])
                 return Payment.validateCardNumber(this.number);
             };
 
-            var validateExpiry = function() {
-                return Payment.validateExpiry(this.month, this.year);
+            var validateCardExpiry = function() {
+                return Payment.validateCardExpiry(this.month, this.year);
             };
 
-            var validateCVC = function() {
-                return Payment.validateCVC(this.cvc);
+            var validateCardCVC = function() {
+                return Payment.validateCardCVC(this.cvc);
             };
 
             var sendDonation = function() {
@@ -1281,8 +1308,8 @@ angular.module("proton.modals", [])
 
             this.donate = function() {
                 validateCardNumber()
-                .then(validateExpiry)
-                .then(validateCVC)
+                .then(validateCardExpiry)
+                .then(validateCardCVC)
                 .then(sendDonation)
                 .then(closeModal)
                 .catch(function(error) {

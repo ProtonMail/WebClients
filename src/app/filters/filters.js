@@ -122,7 +122,7 @@ angular.module("proton.filters",[])
     return function(amount, currency) {
         var result;
 
-        switch(currency.toUpperCase()) {
+        switch(currency) {
             case 'EUR':
                 result = amount + ' €';
                 break;
@@ -131,6 +131,8 @@ angular.module("proton.filters",[])
                 break;
             case 'USD':
                 result = '$' + amount;
+                break;
+            default:
                 break;
         }
 
@@ -272,7 +274,6 @@ angular.module("proton.filters",[])
 
 .filter('humanSize', function (CONSTANTS) {
     return function (input, withoutUnit) {
-        input = 0;
         var bytes;
         var unit = '';
         var kb = CONSTANTS.BASE_SIZE;
