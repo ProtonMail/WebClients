@@ -6,12 +6,8 @@
                 <form method="post">
                     <legend>{{ 'AUTHENTICATION_LOGS' | translate }}</legend>
                         <div class="pull-right" id="logActions" ng-hide="doLogging === 0">
-                            <a class="pm_button pull-left" ng-click="clearLogs()">
-                                <i class="fa fa-trash-o"></i> <strong>{{ 'WIPE' | translate }}</strong>
-                            </a>
-                            <a class="pm_button pull-left" ng-click="downloadLogs()">
-                                <i class="fa fa-download"></i> <strong>{{ 'DOWNLOAD_LOGS' | translate }}</strong>
-                            </a>
+                            <button class="pm_button pull-left" ng-click="clearLogs()">{{ 'WIPE' | translate }}</button>
+                            <button class="pm_button pull-left" ng-click="downloadLogs()">{{ 'DOWNLOAD_LOGS' | translate }}</button>
                             <span ng-show="(logCount > logItemsPerPage)">
                                 <paginator page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs" />
                             </span>

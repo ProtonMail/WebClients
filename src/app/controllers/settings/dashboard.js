@@ -380,7 +380,7 @@ angular.module("proton.controllers.Settings")
     * Open modal with payment information
     */
     $scope.card = function() {
-        Payment.methods().then(function(result) {
+        networkActivityTracker.track(Payment.methods().then(function(result) {
             cardModal.activate({
                 params: {
                     methods: result.data.PaymentMethods,
@@ -391,7 +391,7 @@ angular.module("proton.controllers.Settings")
             });
         }, function(error) {
             notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-        });
+        }));
     };
 
     // Call initialization
