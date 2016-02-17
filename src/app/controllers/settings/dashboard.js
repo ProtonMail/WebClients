@@ -380,6 +380,7 @@ angular.module("proton.controllers.Settings")
 
                 paymentModal.activate({
                     params: {
+                        create: $scope.organization === null,
                         plans: plans,
                         planIDs: planIDs,
                         valid: valid.data,
