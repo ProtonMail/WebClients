@@ -15,8 +15,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
-                            <td>{{ plan.Title }}</td>
-                            <td class="text-center"></td>
+                            <td colspan="2">{{ plan.Title }}</td>
                             <td class="text-right">
                                 <strong>{{ plan.Amount / 100 | currency: plan.Currency }}</strong>
                             </td>
@@ -36,15 +35,21 @@
                                 <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
                             </td>
                         </tr>
-                        <tr>
-                            <td>{{ 'PRORATION' | translate }}</td>
-                            <td></td>
-                            <td>{{ ctrl.valid.Proration }}</td>
+                        <tr ng-show="ctrl.valid.Proration !== 0">
+                            <td colspan="2">{{ 'PRORATION' | translate }}</td>
+                            <td><strong>{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
-                        <tr>
-                            <td>{{ 'COUPON_APPLIED' | translate }}</td>
-                            <td></td>
-                            <td>{{ ctrl.valid.CouponDiscount }}</td>
+                        <tr ng-show="ctrl.valid.CouponDiscount !== 0">
+                            <td colspan="2">{{ 'COUPON_APPLIED' | translate }}</td>
+                            <td><strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                        </tr>
+                        <tr ng-show="ctrl.valid.Credit !== 0">
+                            <td colspan="2">{{ 'CREDIT_APPLIED' | translate }}</td>
+                            <td><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                        </tr>
+                        <tr ng-show="ctrl.valid.Proration !== 0 || ctrl.valid.CouponDiscount !== 0 || ctrl.valid.Credit !== 0">
+                            <td colspan="2">{{ 'AMOUNT_DUE' | translate }}</td>
+                            <td><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                     </tbody>
                 </table>
