@@ -359,7 +359,7 @@ angular.module("proton.modals", [])
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: card.Country});
             this.cardChange = false;
-            this.process = true;
+            this.process = false;
             // Functions
             var validateCardNumber = function() {
                 if (this.cardChange === true) {
