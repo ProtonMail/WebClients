@@ -1150,16 +1150,16 @@ angular.module("proton.modals", [])
             var ERROR = 4;
 
             // Parameters
+            this.size = 2048;
             this.process = false;
-            this.addresses = params.addresses;
             this.title = params.title;
+            this.addresses = params.addresses;
             this.message = params.message;
             _.each(this.addresses, function(address) { address.state = QUEUED; });
-            this.size = 2048;
 
             // Functions
             this.submit = function() {
-                var numBits = (this.size === true) ? 4096 : 2048;
+                var numBits = this.size;
 
                 this.process = true;
                 _.each(this.addresses, function(address) {
@@ -1179,7 +1179,6 @@ angular.module("proton.modals", [])
                         }).then(function(result) {
                             if (result.data && result.data.Code === 1000) {
                                 address.state = SAVED;
-                                this.cancel();
                             } else if (result.data && result.data.Error) {
                                 address.state = ERROR;
                                 notify({message: result.data.Error, classes: 'notification-danger'});
@@ -1196,12 +1195,15 @@ angular.module("proton.modals", [])
                         notify({message: error, classes: 'notification-danger'});
                     }));
                 }.bind(this));
+
+                $q.all(promises)
+                .then(function() {
+                    params.cancel();
+                }.bind(this));
             };
 
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.cancel();
             };
         }
     });
@@ -1360,7 +1362,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('aliasModal', function(pmModal, User, $q) {
+.factory('aliasModal', function(pmModal, User, Address, $q, networkActivityTracker) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/alias.tpl.html',
@@ -1385,7 +1387,7 @@ angular.module("proton.modals", [])
                     })
                     .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
-                            this.cancel();
+                            params.add(result.data.Address);
                         }
                     }.bind(this))
                 );

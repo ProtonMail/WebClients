@@ -23,6 +23,14 @@ angular.module('proton.controllers.Settings')
     $scope.domains = [];
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
 
+    // Establish a link between Addresses and the a service value
+    $scope.$watch(function () { return authentication.user.Addresses; }, function (newVal, oldVal) {
+        if (angular.isDefined(newVal)) {
+            $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
+            $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
+        }
+    });
+
     // Populate the domains <select>
     _.each(domains, function(domain) {
         $scope.domains.push({label: domain, value: domain});
@@ -100,6 +108,10 @@ angular.module('proton.controllers.Settings')
                         params: {
                             members: result.data.Members,
                             domains: $scope.domains,
+                            add: function(address) {
+                                eventManager.call();
+                                aliasModal.deactivate();
+                            },
                             cancel: function() {
                                 aliasModal.deactivate();
                             }
@@ -122,5 +134,4 @@ angular.module('proton.controllers.Settings')
             })
         );
     };
-
 });
