@@ -149,6 +149,9 @@ header#pm_header-desktop {
 					text-align: left;
 				}
 			}
+			span > a {
+				border-top: 10px solid transparent;
+			}
 			a {
 				height: $headerHeight;
 				padding-bottom: 10px;
@@ -160,7 +163,6 @@ header#pm_header-desktop {
 				text-decoration: none;
 				color: lighten(#c1c7d8, 10%);
 				box-sizing: border-box;
-				border-top: 10px solid transparent;
 				transition: color .25s ease, border .25s ease;
 				&:active,
 				&.active {
