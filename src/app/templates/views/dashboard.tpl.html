@@ -36,7 +36,7 @@
                                 <tr>
                                     <th>{{ 'STORAGE' | translate }}:</th>
                                     <td>
-                                        <strong>{{ organization.UsedSpace }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }} {{ 'USED' | translate }}</strong>
+                                        <strong>{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }} {{ 'USED' | translate }}</strong>
                                     </td>
                                     <td class="text-right actions">
                                         <a href="#">{{ 'MANAGE' | translate }}</a>
