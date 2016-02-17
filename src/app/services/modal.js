@@ -512,7 +512,6 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
             // Variables
-            this.credit = authentication.user.Credit;
             this.process = false;
             this.cardChange = true;
             this.displayCoupon = false;
