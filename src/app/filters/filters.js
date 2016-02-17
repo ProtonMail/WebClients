@@ -132,6 +132,8 @@ angular.module("proton.filters",[])
             case 'USD':
                 result = '$' + amount;
                 break;
+            default:
+                break;
         }
 
         return result;
@@ -272,7 +274,6 @@ angular.module("proton.filters",[])
 
 .filter('humanSize', function (CONSTANTS) {
     return function (input, withoutUnit) {
-        input = 0;
         var bytes;
         var unit = '';
         var kb = CONSTANTS.BASE_SIZE;

@@ -738,7 +738,6 @@ angular.module('proton.routes', [
 
                     Organization.get(invoice.OrganizationID).then(
                         function(result) {
-                            console.log(result);
                             if (result.data && result.data.Code===1000) {
                                 $scope.organization = result.data.Organization;
                                 $timeout( function() {
@@ -815,15 +814,18 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            organization: function(user, Organization, networkActivityTracker) {
-                if(user.Role === 2) {
+            organization: function(user, Organization, networkActivityTracker, CONSTANTS) {
+                if(user.Role === CONSTANTS.PAID_ADMIN) {
                     return networkActivityTracker.track(Organization.get());
                 } else {
-                    return true;
+                    return {data:{Organization: null}};
                 }
             },
-            subscriptions: function(user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.subscriptions());
+            plans: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.plans());
+            },
+            subscription: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.subscription());
             }
         },
         views: {

@@ -5,7 +5,7 @@
     <div class="modal-body pm_form">
         <div class="pm_grid">
             <div class="col-1-1">
-                <p class="alert alert-info">You’re upgrading to the <strong>{{ ctrl.config.Cart.Next.Plan | capitalize }} plan</strong>. Once we successfully process payment, we’ll immediately upgrade your account. Thanks for choosing to become a paying customer!</p>
+                <p class="alert alert-info">You’re upgrading to the <strong>{{ ctrl.plans[0].Name | capitalize }} plan</strong>. Once we successfully process payment, we’ll immediately upgrade your account. Thanks for choosing to become a paying customer!</p>
             </div>
         </div>
         <div class="pm_grid">
@@ -19,115 +19,83 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>{{ 'STORAGE' | translate }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxSpace / ctrl.base / ctrl.base / ctrl.base }} GB</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>{{ 'DOMAINS' | translate }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxDomains }}</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>{{ 'ADDRESSES' | translate }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxAddresses }}</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>{{ 'USERS' | translate }}</td>
-                            <td class="text-center">{{ ctrl.config.Cart.Next.MaxMembers }}</td>
-                            <td></td>
-                        </tr>
-                        <tr ng-show="ctrl.coupon">
-                            <td>{{ 'COUPON' | translate }}</td>
-                            <td class="text-center">1</td>
-                            <td>-{{ ctrl.coupon / 100 | number: 2 | currency: ctrl.config.Subscription.Currency }}</td>
+                        <tr ng-repeat="plan in ctrl.plans">
+                            <td>{{ plan.Title }}</td>
+                            <td class="text-center">{{ plan.quantity }}</td>
+                            <td>
+                                <strong ng-class="{'text-green': plan.discount === true}">{{ plan.quantity * plan.Amount / 100 | currency: plan.Currency }}</strong>
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.config.Subscription.BillingCycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.config.Subscription.BillingCycle === 12">{{ 'PER_YEAR' | translate }}</small>
+                                <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.plans[0].Cycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.plans[0].Cycle === 12">{{ 'PER_YEAR' | translate }}</small>
                             </td>
                             <td>
-                                <strong>{{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }}</strong>
+                                <strong>{{ ctrl.total() / 100 | currency: ctrl.plans[0].Currency }}</strong>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="pm_buttons">
-                    <a href="#" ng-click="ctrl.monthly()" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 1}">{{ 'MONTHLY' | translate }}</a>
-                    <a href="#" ng-click="ctrl.yearly()" ng-class="{'active': ctrl.config.Subscription.BillingCycle === 12}" class="divider">{{ 'YEARLY' | translate }} <small class="text-green">{{ 'SAVE_20%' | translate }}</small></a>
-                </div>
             </div>
             <div class="col-1-2">
-                <div class="input-icon margin" ng-show="ctrl.config.Cart.Next.Plan === 'business'">
+                <!-- <div class="input-icon margin">
                     <i class="fa fa-briefcase"></i>
-                    <input type="text" ng-model="ctrl.config.Organization.DisplayName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" />
-                </div>
-                <!-- <div class="input-icon margin" ng-show="ctrl.create === true">
-                    <i class="fa fa-life-ring"></i>
-                    <input type="password" ng-model="ctrl.recovery" placeholder="{{ 'ORGANIZATION_RECOVERY_PASSWORD' | translate }}" />
+                    <input type="text" ng-model="ctrl.organizationName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" />
                 </div> -->
                 <div class="input-icon margin">
                     <i class="fa fa-user"></i>
-                    <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" />
+                    <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" pt-tooltip="{{ 'FULLNAME' | translate }}" />
                 </div>
                 <div class="pm_grid margin">
                     <div class="col-2-3">
-                        <span class="pm_select">
-                            <select ng-model="ctrl.country" ng-change="ctrl.change = true" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
+                        <span class="pm_select" pt-tooltip="{{ 'COUNTRY' | translate }}">
+                            <select ng-model="ctrl.country" ng-change="ctrl.cardChange = true" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>
                     </div>
                     <div class="col-1-3">
-                        <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'ZIP' | translate }}" pt-tooltip="{{ 'ZIP_CODE' | translate }}"  required />
+                        <div class="input-icon">
+                            <i class="fa fa-location-arrow"></i>
+                            <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'ZIP' | translate }}" pt-tooltip="{{ 'ZIP_CODE' | translate }}" required />
+                        </div>
                     </div>
                 </div>
                 <div class="input-icon margin">
                     <i class="fa {{ ctrl.cardTypeIcon }}"></i>
-                    <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
+                    <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'CARD_NUMBER' | translate }}" pt-tooltip="{{ 'CARD_NUMBER' | translate }}" required />
                 </div>
                 <div class="pm_grid margin">
                     <div class="col-1-3">
                         <div class="input-icon">
                             <i class="fa fa-calendar-o"></i>
-                            <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" required />
+                            <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" required />
                         </div>
                     </div>
                     <div class="col-1-3">
                         <div class="input-icon">
                             <i class="fa fa-calendar-o"></i>
-                            <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" ng-change="ctrl.change = true" ng-model-options="{updateOn: 'blur'}" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" required />
+                            <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" required />
                         </div>
                     </div>
                     <div class="col-1-3">
                         <div class="input-icon">
                             <i class="fa fa-lock"></i>
-                            <input
-                            type="text"
-                            maxlength="4"
-                            autocomplete="off"
-                            ng-model="ctrl.cvc"
-                            ng-change="ctrl.change = true"
-                            ng-model-options="{updateOn: 'blur'}"
-                            placeholder="CVC"
-                            pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" required />
+                            <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="CVC" pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" required />
                         </div>
                     </div>
                 </div>
-                <p>&nbsp;</p>
-                <div class="pm_grid">
+                <p ng-show="ctrl.displayCoupon === false">
+                    <a href="#" ng-click="ctrl.displayCoupon = true">{{ 'ADD_COUPON'}}</a>
+                </p>
+                <div class="pm_grid" ng-show="ctrl.displayCoupon === true">
                     <div class="col-2-3">
                         <div class="input-icon">
                             <i class="fa fa-tag"></i>
-                            <input type="text" ng-model="ctrl.config.Coupon" placeholder="{{ 'COUPON' | translate }}" />
+                            <input type="text" ng-model="ctrl.coupon" placeholder="{{ 'COUPON' | translate }}" />
                         </div>
                     </div>
-                    <div class="col-1-3">
-                        <button class="pm_button primary" ng-click="ctrl.apply()">{{ 'APPLY' | translate }}</button>
-                    </div>
                 </div>
-                <p>Your credit card will be automatically charged on a {{ ctrl.total() | number: 2 | currency: ctrl.config.Subscription.Currency }} <span ng-show="ctrl.config.Subscription.BillingCycle === 1">{{ 'MONTHLY' | translate }}</span><span ng-show="ctrl.config.Subscription.BillingCycle === 12">{{ 'YEARLY' | translate }}</span> basis. By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
+                <p>By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>

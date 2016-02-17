@@ -117,7 +117,7 @@ angular.module("proton.event", ["proton.constants"])
 					if (dirtyAddresses.length > 0 && generateModal.active() === false) {
 						generateModal.activate({
 							params: {
-								title: 'Finish setting up your Addresses', // TODO need text
+								title: 'Setting up your Addresses', // TODO need text
 				                message: 'Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', // TODO need text
 								addresses: dirtyAddresses,
 								cancel: function() {
