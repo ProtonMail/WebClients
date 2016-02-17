@@ -44,22 +44,25 @@
                 </div> -->
                 <div class="input-icon margin">
                     <i class="fa fa-user"></i>
-                    <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" />
+                    <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" pt-tooltip="{{ 'FULLNAME' | translate }}" />
                 </div>
                 <div class="pm_grid margin">
                     <div class="col-2-3">
-                        <span class="pm_select">
+                        <span class="pm_select" pt-tooltip="{{ 'COUNTRY' | translate }}">
                             <select ng-model="ctrl.country" ng-change="ctrl.cardChange = true" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>
                     </div>
                     <div class="col-1-3">
-                        <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'ZIP' | translate }}" pt-tooltip="{{ 'ZIP_CODE' | translate }}"  required />
+                        <div class="input-icon">
+                            <i class="fa fa-location-arrow"></i>
+                            <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'ZIP' | translate }}" pt-tooltip="{{ 'ZIP_CODE' | translate }}" required />
+                        </div>
                     </div>
                 </div>
                 <div class="input-icon margin">
                     <i class="fa {{ ctrl.cardTypeIcon }}"></i>
-                    <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
+                    <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'CARD_NUMBER' | translate }}" pt-tooltip="{{ 'CARD_NUMBER' | translate }}" required />
                 </div>
                 <div class="pm_grid margin">
                     <div class="col-1-3">
