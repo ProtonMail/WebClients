@@ -37,19 +37,19 @@
                         </tr>
                         <tr ng-show="ctrl.valid.Proration !== 0">
                             <td colspan="2">{{ 'PRORATION' | translate }}</td>
-                            <td><strong>{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td class="text-right text-green"><strong>{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                         <tr ng-show="ctrl.valid.CouponDiscount !== 0">
                             <td colspan="2">{{ 'COUPON_APPLIED' | translate }}</td>
-                            <td><strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td class="text-right text-green"><strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                         <tr ng-show="ctrl.valid.Credit !== 0">
                             <td colspan="2">{{ 'CREDIT_APPLIED' | translate }}</td>
-                            <td><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td class="text-right text-green"><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                         <tr ng-show="ctrl.valid.Proration !== 0 || ctrl.valid.CouponDiscount !== 0 || ctrl.valid.Credit !== 0">
-                            <td colspan="2">{{ 'AMOUNT_DUE' | translate }}</td>
-                            <td><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td colspan="2"><strong>{{ 'AMOUNT_DUE' | translate }}</strong></td>
+                            <td class="text-right"><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                     </tbody>
                 </table>
