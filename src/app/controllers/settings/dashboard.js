@@ -260,6 +260,8 @@ angular.module("proton.controllers.Settings")
                     networkActivityTracker.track(
                         unsubscribe()
                         .then(function() {
+                            $scope.refreshSubscription();
+                            confirmModal.deactivate();
                             notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBE'), classes: 'notification-success'});
                         })
                         .catch(function(error) {

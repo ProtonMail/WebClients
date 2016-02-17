@@ -49,7 +49,7 @@ angular.module("proton.models.payments", [])
                             Amount: 0,
                             MaxDomains: 0,
                             MaxAddresses: 1,
-                            MaxSpace: 5368709120,
+                            MaxSpace: 500 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE,
                             MaxMembers: 1,
                             TwoFactor: 0
                         });
@@ -59,18 +59,30 @@ angular.module("proton.models.payments", [])
                                 case 'free':
                                     plan.editable = false;
                                     plan.display = true;
+                                    plan.sending = 'Limited Sending';
+                                    plan.labels = 'Limited Labels';
+                                    plan.support = 'Limited Support';
                                     break;
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
+                                    plan.sending = 'Unlimited Sending';
+                                    plan.labels = 'Unlimited Labels';
+                                    plan.support = 'Unlimited Support';
                                     break;
                                 case 'business':
                                     plan.editable = true;
                                     plan.display = false;
+                                    plan.sending = 'Unlimited Sending';
+                                    plan.labels = 'Unlimited Labels';
+                                    plan.support = 'Unlimited Support';
                                     break;
                                 case 'visionary':
                                     plan.editable = false;
                                     plan.display = true;
+                                    plan.sending = 'Unlimited Sending';
+                                    plan.labels = 'Unlimited Labels';
+                                    plan.support = 'Unlimited Support';
                                     break;
                                 default:
                                     break;

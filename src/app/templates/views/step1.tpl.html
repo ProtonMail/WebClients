@@ -76,14 +76,8 @@
             </div>
             <p ng-if="preInvited">&nbsp;</p>
         </div><!--/.wrapper-->
-        <!-- <div class="checkbox">
-            <label for="optIn" class="optIn">
-                <input id="optIn" name="optIn" ng-init="account.optIn = true" ng-model="account.optIn" type="checkbox" /> Keep me updated about new features such as mobile apps.
-            </label>
-        </div> -->
-        <br>
-        <button type="submit" class="pm_button primary large"
-        ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid ) } ">{{ 'CREATE_ACCOUNT' | translate }}</button>
+        <p>By clicking Create Account, you agree to abide by ProtonMail's <a href="https://protonmail.com/terms-and-conditions" target="_blank">Terms and Conditions</a>.</p>
+        <button type="submit" class="pm_button primary large" ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid ) } ">{{ 'CREATE_ACCOUNT' | translate }}</button>
         <p>&nbsp;</p>
         <p><a ui-sref="login">Already have an account?</a></p>
     </form>

@@ -58,6 +58,14 @@ angular.module("proton.filters",[])
     };
 })
 
+.filter('fixed', function() {
+    return function(input, number) {
+        number = number || 2;
+
+        return input.toFixed(2);
+    };
+})
+
 .filter('number', function () {
     return function (input, places) {
         if (isNaN(input)) {

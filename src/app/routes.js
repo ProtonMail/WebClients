@@ -676,7 +676,7 @@ angular.module('proton.routes', [
     .state('secured.addresses', {
         url: '/addresses',
         resolve: {
-            domains: function($q, Domain) {
+            domains: function($q, Domain, networkActivityTracker) {
                 var deferred = $q.defer();
 
                 Domain.available().then(function(result) {
@@ -688,6 +688,8 @@ angular.module('proton.routes', [
                 }, function() {
                     deferred.reject();
                 });
+
+                networkActivityTracker.track(deferred.promise);
 
                 return deferred.promise;
             }
@@ -815,7 +817,7 @@ angular.module('proton.routes', [
                 return deferred.promise;
             },
             organization: function(user, Organization, networkActivityTracker, CONSTANTS) {
-                if(user.Role === CONSTANTS.PAID_ADMIN) {
+                if (user.Role === CONSTANTS.PAID_ADMIN) {
                     return networkActivityTracker.track(Organization.get());
                 } else {
                     return {data:{Organization: null}};

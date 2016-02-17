@@ -4,25 +4,20 @@
     </div>
     <div class="modal-body pm_form">
         <div class="pm_grid">
-            <div class="col-1-1">
-                <p class="alert alert-info">You’re upgrading to the <strong>{{ ctrl.plans[0].Name | capitalize }} plan</strong>. Once we successfully process payment, we’ll immediately upgrade your account. Thanks for choosing to become a paying customer!</p>
-            </div>
-        </div>
-        <div class="pm_grid">
             <div class="col-1-2">
                 <table class="pm_table">
                     <thead>
                         <tr>
                             <th>{{ 'DESCRIPTION' | translate }}</th>
                             <th>{{ 'QUANTITY' | translate }}</th>
-                            <th>{{ 'PRICE' | translate }}</th>
+                            <th class="text-right">{{ 'PRICE' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="plan in ctrl.plans">
                             <td>{{ plan.Title }}</td>
                             <td class="text-center">{{ plan.quantity }}</td>
-                            <td>
+                            <td class="text-right">
                                 <strong ng-class="{'text-green': plan.discount === true}">{{ plan.quantity * plan.Amount / 100 | currency: plan.Currency }}</strong>
                             </td>
                         </tr>
@@ -30,7 +25,7 @@
                             <td colspan="2">
                                 <strong>{{ 'TOTAL' | translate }}</strong> <small ng-show="ctrl.plans[0].Cycle === 1">{{ 'PER_MONTH' | translate }}</small><small ng-show="ctrl.plans[0].Cycle === 12">{{ 'PER_YEAR' | translate }}</small>
                             </td>
-                            <td>
+                            <td class="text-right">
                                 <strong>{{ ctrl.total() / 100 | currency: ctrl.plans[0].Currency }}</strong>
                             </td>
                         </tr>
@@ -95,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-                <p>By clicking submit, you agree to our <a href="" target="_blank">Terms and Conditions</a>.</p>
+                <p>By clicking submit, you agree to our <a href="https://protonmail.com/terms-and-conditions" target="_blank">Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>
