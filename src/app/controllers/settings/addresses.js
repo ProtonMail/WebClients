@@ -6,20 +6,22 @@ angular.module('proton.controllers.Settings')
     $scope,
     $translate,
     Address,
+    aliasModal,
     authentication,
     confirmModal,
+    CONSTANTS,
     Domain,
     domains,
     eventManager,
+    Member,
     networkActivityTracker,
     notify,
-    aliasModal,
     Setting
 ) {
-
     $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
     $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     $scope.domains = [];
+    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
 
     // Populate the domains <select>
     _.each(domains, function(domain) {
@@ -90,15 +92,22 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.add = function() {
-        console.log($scope.domains);
-        aliasModal.activate({
-            params: {
-                domains: $scope.domains,
-                cancel: function() {
-                    aliasModal.deactivate();
+        networkActivityTracker.track(
+            Member.query()
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    aliasModal.activate({
+                        params: {
+                            members: result.data.Members,
+                            domains: $scope.domains,
+                            cancel: function() {
+                                aliasModal.deactivate();
+                            }
+                        }
+                    });
                 }
-            }
-        });
+            })
+        );
     };
 
     $scope.saveAliases = function(aliasOrder) {

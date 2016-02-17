@@ -1366,20 +1366,29 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/alias.tpl.html',
         controller: function(params) {
             // Variables
-            this.alias = {};
-            this.alias.local = '';
-
+            this.local = '';
+            this.members = params.members;
+            this.member = params.members[0];
             this.domains = params.domains;
-            this.alias.domain = this.domains[0];
+            this.domain = this.domains[0];
             this.goodUsername = false;
             this.badUsername = false;
             this.checkingUsername = false;
 
             // Functions
             this.add = function() {
-                if (angular.isDefined(params.add) && angular.isFunction(params.add)) {
-                    params.add(this.form);
-                }
+                networkActivityTracker.track(
+                    Address.create({
+                        Local: this.local,
+                        Domain: this.domain.value,
+                        MemberID: this.member.ID
+                    })
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            this.cancel();
+                        }
+                    }.bind(this))
+                );
             }.bind(this);
 
             this.checkAvailability = function(manual) {
@@ -1390,13 +1399,13 @@ angular.module("proton.modals", [])
                 this.badUsername = false;
                 this.checkingUsername = false;
 
-                if (this.alias.local.length > 0) {
-                    User.available({ username: this.alias.local }).$promise
+                if (this.local.length > 0) {
+                    User.available({ username: this.local }).$promise
                     .then(function(response) {
                         if (response.Available === 0) {
-                                this.badUsername = true;
-                                this.checkingUsername = false;
-                                deferred.reject("Username unavailable.");
+                            this.badUsername = true;
+                            this.checkingUsername = false;
+                            deferred.reject("Username unavailable.");
                         } else {
                             this.goodUsername = true;
                             this.checkingUsername = false;
@@ -1406,7 +1415,7 @@ angular.module("proton.modals", [])
                 }
 
                 return deferred.promise;
-            };
+            }.bind(this);
 
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {

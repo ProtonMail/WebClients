@@ -8,7 +8,7 @@
 
             <section class="setting full pm_form">
                 <legend>{{ 'ADDRESSES' | translate }}</legend>
-                <div class="margin">
+                <div class="margin" ng-show="isAdmin === true">
                     <button type="button" class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</button>
                     <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>
                 </div>
@@ -16,7 +16,7 @@
                     <div>
                         <label>
                             <span class="help-block pull-right"><small><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</small></span>
-                            {{ 'ACTIVE_ADDRESSES' | translate }}
+                            <strong>{{ 'ACTIVE_ADDRESSES' | translate }}</strong>
                         </label>
                         <div class="pm_sort">
                             <ul data-as-sortable="aliasDragControlListeners" data-ng-model="activeAddresses">
@@ -32,7 +32,9 @@
 
                         <p></p>
 
-                        <label>{{ 'DISABLED_ADDRESSES' | translate }}</label>
+                        <label>
+                            <strong>{{ 'DISABLED_ADDRESSES' | translate }}</strong>
+                        </label>
 
                         <div class="pm_sort">
                             <ul>
