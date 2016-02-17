@@ -21,7 +21,7 @@
                                         <strong>{{ organization.UsedDomains }} {{ 'OF' | translate }} {{ organization.MaxDomains }} {{ 'USED' | translate }}</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a href="#">{{ 'MANAGE' | translate }}</a>
+                                        <a ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -30,7 +30,7 @@
                                         <strong>{{ organization.UsedAddresses }} {{ 'OF' | translate }} {{ organization.MaxAddresses }} {{ 'USED' | translate }}</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a href="#">{{ 'MANAGE' | translate }}</a>
+                                        <a ui-sref="secured.addresses">{{ 'MANAGE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -38,9 +38,7 @@
                                     <td>
                                         <strong>{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }} {{ 'USED' | translate }}</strong>
                                     </td>
-                                    <td class="text-right actions">
-                                        <a href="#">{{ 'MANAGE' | translate }}</a>
-                                    </td>
+                                    <td class="text-right actions"></td>
                                 </tr>
                             </table>
                         </div>
