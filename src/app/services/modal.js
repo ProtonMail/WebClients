@@ -560,7 +560,7 @@ angular.module("proton.modals", [])
                         var privateKey = response.privateKeyArmored;
 
                         deferred.resolve({
-                            OrganizationName: this.organizationName,
+                            DisplayName: this.organizationName,
                             PrivateKey: privateKey,
                             BackupPrivateKey: privateKey
                         });
@@ -572,7 +572,7 @@ angular.module("proton.modals", [])
                 }
 
                 return deferred.promise;
-            };
+            }.bind(this);
             /**
              * Create an organization
              */
