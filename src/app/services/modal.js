@@ -1267,17 +1267,17 @@ angular.module("proton.modals", [])
             // Functions
             var validateCardNumber = function() {
                 return Payment.validateCardNumber(this.number);
-            };
+            }.bind(this);
 
             var validateCardExpiry = function() {
                 return Payment.validateCardExpiry(this.month, this.year);
-            };
+            }.bind(this);
 
             var validateCardCVC = function() {
                 return Payment.validateCardCVC(this.cvc);
-            };
+            }.bind(this);
 
-            var sendDonation = function() {
+            var donatation = function() {
                 return Payment.donate({
                     Amount: this.amount * 100, // Don't be afraid
                     Currency: this.currency.value,
@@ -1315,7 +1315,7 @@ angular.module("proton.modals", [])
                 validateCardNumber()
                 .then(validateCardExpiry)
                 .then(validateCardCVC)
-                .then(sendDonation)
+                .then(donatation)
                 .then(finish)
                 .catch(function(error) {
                     notify({message: error, classes: 'notification-danger'});
@@ -1342,21 +1342,15 @@ angular.module("proton.modals", [])
             this.currency = 'USD'; // default currency
 
             this.donate = function() {
-                if (angular.isDefined(params.donate) && angular.isFunction(params.donate)) {
-                    params.donate();
-                }
-            };
+                params.donate(this.amount, this.currency);
+            }.bind(this);
 
             this.upgrade = function() {
-                if (angular.isDefined(params.upgrade) && angular.isFunction(params.upgrade)) {
-                    params.upgrade();
-                }
+                params.upgrade();
             };
 
             this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
+                params.close();
             };
         }
     });
