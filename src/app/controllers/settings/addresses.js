@@ -40,13 +40,14 @@ angular.module('proton.controllers.Settings')
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
         orderChanged: function() {
-            var aliasOrder = [];
+            var addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
+            var order = [];
 
-            _.forEach($scope.aliases, function(d, i) {
-                aliasOrder[i] = d.Send;
+            _.forEach(addresses, function(address, index) {
+                order[index] = address.Send;
             });
 
-            $scope.saveAliases(aliasOrder);
+            $scope.saveOrder(order);
         }
     };
 
@@ -121,15 +122,21 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.saveAliases = function(aliasOrder) {
+    $scope.saveOrder = function(order) {
         networkActivityTracker.track(
             Setting.addressOrder({
-                'Order': aliasOrder
+                'Order': order
             }).$promise.then(function(response) {
-                eventManager.call();
-                notify({message: $translate.instant('ALIASES_SAVED'), classes: 'notification-success'});
+                if (response.Code === 1000) {
+                    eventManager.call();
+                    notify({message: $translate.instant('ORDER_SAVED'), classes: 'notification-success'});
+                } else if (response.Error) {
+                    notify({message: response.Error, classes: 'notification-danger'});
+                } else {
+                    notify({message: 'Error during the order request', classes : 'notification-danger'});
+                }
             }, function(error) {
-                notify({message: 'Error during the aliases request', classes : 'notification-danger'});
+                notify({message: 'Error during the order request', classes : 'notification-danger'});
                 $log.error(error);
             })
         );
