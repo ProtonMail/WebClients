@@ -123,12 +123,18 @@ angular.module("proton.controllers.Settings")
         }
     };
 
-    $scope.refreshSubscription = function() {
-        networkActivityTracker.track(Payment.subscription().then(function(result) {
-            if (result.data && result.data.Code === 1000) {
-                $scope.initialization(result.data.Subscription);
-            }
-        }));
+    $scope.refresh = function() {
+        var promises = {
+            subscription: Payment.subscription(),
+            organization: Organization.get()
+        };
+
+        networkActivityTracker.track(
+            $q.all(promises)
+            .then(function(result) {
+                $scope.initialization(result.subscription.data.Subscription, undefined, result.organization.data.Organization);
+            })
+        );
     };
 
     /**
@@ -257,16 +263,18 @@ angular.module("proton.controllers.Settings")
                         return deferred.promise;
                     };
 
+                    var finish = function() {
+                        $scope.refresh();
+                        confirmModal.deactivate();
+                        notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBE'), classes: 'notification-success'});
+                    };
+
                     networkActivityTracker.track(
-                        unsubscribe()
-                        .then(function() {
-                            $scope.refreshSubscription();
-                            confirmModal.deactivate();
-                            notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBE'), classes: 'notification-success'});
-                        })
+                        deleteOrganization()
+                        .then(unsubscribe)
+                        .then(finish)
                         .catch(function(error) {
                             notify({message: error, classes: 'notification-danger'});
-                            confirmModal.deactivate();
                         })
                     );
                 },
@@ -370,7 +378,7 @@ angular.module("proton.controllers.Settings")
                                 valid: valid.data,
                                 methods: methods.data.PaymentMethods,
                                 change: function(subscription) {
-                                    $scope.refreshSubscription();
+                                    $scope.refresh();
                                     paymentModal.deactivate();
                                 },
                                 cancel: function() {

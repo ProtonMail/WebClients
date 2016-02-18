@@ -359,7 +359,7 @@ angular.module("proton.modals", [])
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: card.Country});
             this.cardChange = false;
-            this.process = true;
+            this.process = false;
             // Functions
             var validateCardNumber = function() {
                 if (this.cardChange === true) {
@@ -560,7 +560,7 @@ angular.module("proton.modals", [])
                         var privateKey = response.privateKeyArmored;
 
                         deferred.resolve({
-                            OrganizationName: this.organizationName,
+                            DisplayName: this.organizationName,
                             PrivateKey: privateKey,
                             BackupPrivateKey: privateKey
                         });
@@ -572,7 +572,7 @@ angular.module("proton.modals", [])
                 }
 
                 return deferred.promise;
-            };
+            }.bind(this);
             /**
              * Create an organization
              */
@@ -580,7 +580,7 @@ angular.module("proton.modals", [])
                 var deferred = $q.defer();
 
                 if (params.create === true) {
-                    Organization.update(parameters)
+                    Organization.create(parameters)
                     .then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             deferred.resolve(result);
@@ -1267,17 +1267,17 @@ angular.module("proton.modals", [])
             // Functions
             var validateCardNumber = function() {
                 return Payment.validateCardNumber(this.number);
-            };
+            }.bind(this);
 
             var validateCardExpiry = function() {
                 return Payment.validateCardExpiry(this.month, this.year);
-            };
+            }.bind(this);
 
             var validateCardCVC = function() {
                 return Payment.validateCardCVC(this.cvc);
-            };
+            }.bind(this);
 
-            var sendDonation = function() {
+            var donatation = function() {
                 return Payment.donate({
                     Amount: this.amount * 100, // Don't be afraid
                     Currency: this.currency.value,
@@ -1315,7 +1315,7 @@ angular.module("proton.modals", [])
                 validateCardNumber()
                 .then(validateCardExpiry)
                 .then(validateCardCVC)
-                .then(sendDonation)
+                .then(donatation)
                 .then(finish)
                 .catch(function(error) {
                     notify({message: error, classes: 'notification-danger'});
@@ -1342,21 +1342,15 @@ angular.module("proton.modals", [])
             this.currency = 'USD'; // default currency
 
             this.donate = function() {
-                if (angular.isDefined(params.donate) && angular.isFunction(params.donate)) {
-                    params.donate();
-                }
-            };
+                params.donate(this.amount, this.currency);
+            }.bind(this);
 
             this.upgrade = function() {
-                if (angular.isDefined(params.upgrade) && angular.isFunction(params.upgrade)) {
-                    params.upgrade();
-                }
+                params.upgrade();
             };
 
             this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
+                params.close();
             };
         }
     });

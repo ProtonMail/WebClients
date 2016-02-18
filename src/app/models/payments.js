@@ -123,6 +123,9 @@ angular.module("proton.models.payments", [])
         updateMethod: function(params) {
             return $http.post(url.get() + '/payments/methods', params);
         },
+        deleteMethod: function(id) {
+            return $http.delete(url.get() + '/payments/methods/' + id);
+        },
         /**
          * Get payment methods in priority order
          */
