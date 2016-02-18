@@ -277,7 +277,7 @@ angular.module("proton.controllers.Settings")
                     var finish = function() {
                         $scope.refresh();
                         confirmModal.deactivate();
-                        notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBE'), classes: 'notification-success'});
+                        notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED'), classes: 'notification-success'});
                     };
 
                     networkActivityTracker.track(
