@@ -1136,3 +1136,39 @@ body.mobileMode {
         }
     }
 }
+
+#paymentsModal {
+
+    th.qty {
+        width: 5rem;
+    }
+
+    th.price {
+        width: 6rem;
+    }
+
+    th.qty,
+    td.qty {
+        padding: 0;
+    }
+
+    th.desc,
+    td.desc {
+        padding-right: 0;
+    }
+
+    th.price,
+    td.price {
+        padding-left: 0;
+    }
+
+    .disabled {
+        input,
+        select {
+            cursor: default;
+            pointer-events: none;
+            background-color: $read;
+        }
+    }
+
+}
