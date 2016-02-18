@@ -9,6 +9,7 @@ angular.module("proton.controllers.Header", [])
     $location,
     notify,
     CONSTANTS,
+    CONFIG,
     authentication,
     searchModal,
     tools
@@ -17,6 +18,8 @@ angular.module("proton.controllers.Header", [])
         searchMessageInput: $stateParams.words || '',
         searchContactInput: ''
     };
+
+    $scope.appVersion = CONFIG.app_version;
 
     $scope.ctrl = {};
     $scope.ctrl.attachments = 2;
