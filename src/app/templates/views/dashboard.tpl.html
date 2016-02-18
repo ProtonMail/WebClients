@@ -176,8 +176,14 @@
                                 </div>
                             </div>
                             <div class="action">
-                                <button type="button" ng-click="choose(plan)" class="pm_button primary">
+                                <button type="button" ng-click="choose(plan)" class="pm_button primary" ng-hide="plan.Name === subscription.Name">
                                     <strong>{{ 'CHOOSE_PLAN' | translate }}</strong>
+                                </button>
+                                <button type="button" ng-click="choose(plan)" class="pm_button primary" ng-show="plan.Name === subscription.Name && subscription.Name !== 'free'">
+                                    <strong>{{ 'UPDATE_PLAN' | translate }}</strong>
+                                </button>
+                                <button type="button" ng-click="choose(plan)" class="pm_button dead" ng-show="plan.Name === subscription.Name && subscription.Name === 'free'">
+                                    <strong>{{ 'YOUR_CURRENT_PLAN' | translate }}</strong>
                                 </button>
                             </div>
                         </div>
