@@ -1,7 +1,7 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings" pt-height>
-        <div class="row">
+        <div class="row" ng-hide="organization === null && subscription.Name === 'free'">
             <section class="pm_form">
                 <div class="pm_grid">
                     <div class="col-1-2" ng-hide="organization === null">
@@ -182,7 +182,7 @@
                                 <button type="button" ng-click="choose(plan)" class="pm_button primary" ng-show="plan.Name === subscription.Name && subscription.Name !== 'free'">
                                     <strong>{{ 'UPDATE_PLAN' | translate }}</strong>
                                 </button>
-                                <button type="button" class="pm_button" ng-show="plan.Name === subscription.Name && subscription.Name === 'free'">
+                                <button type="button" class="pm_button dead" ng-show="plan.Name === subscription.Name && subscription.Name === 'free'">
                                     <strong>{{ 'YOUR_CURRENT_PLAN' | translate }}</strong>
                                 </button>
                             </div>
