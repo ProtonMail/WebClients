@@ -61,11 +61,11 @@
                 </div> -->
                 <div ng-hide="ctrl.valid.AmountDue === 0">
                     <div class="margin">
-                        <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" pt-tooltip="{{ 'FULLNAME' | translate }}" />
+                        <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" />
                     </div>
                     <div class="pm_grid margin">
                         <div class="col-2-3">
-                            <span class="pm_select" pt-tooltip="{{ 'COUNTRY' | translate }}">
+                            <span class="pm_select">
                                 <select ng-model="ctrl.country" ng-change="ctrl.cardChange = true" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
                                 <i class="fa fa-angle-down"></i>
                             </span>
@@ -112,7 +112,7 @@
         </div>
     </div>
 </div>
-<div class="modal-footer text-right">
+<div class="modal-footer">
     <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-    <button type="button" class="pm_button primary" ng-click="ctrl.submit()">{{ 'SUBMIT' | translate }}</button>
+    <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()">{{ 'SUBMIT' | translate }}</button>
 </div>

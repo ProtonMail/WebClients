@@ -204,6 +204,7 @@ angular.module("proton.controllers.Settings")
         Payment.plans(currency, $scope.currentCycle)
         .then(function(result) {
             $scope.initialization(undefined, result.data.Plans);
+            $scope.currentCurrency = currency;
             deferred.resolve();
         });
 
@@ -218,6 +219,7 @@ angular.module("proton.controllers.Settings")
         Payment.plans($scope.currentCurrency, cycle)
         .then(function(result) {
             $scope.initialization(undefined, result.data.Plans);
+            $scope.currentCycle = cycle;
             deferred.resolve();
         });
 

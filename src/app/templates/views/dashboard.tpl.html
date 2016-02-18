@@ -122,7 +122,7 @@
                                     </span>
                                     <strong ng-show="plan.editable === false">{{ plan.MaxSpace | humanSize }}</strong> <strong>{{ 'STORAGE' | translate }}</strong>
                                     <span class="cost" ng-show="plan.Space.index * spaceAddon.Amount">
-                                        <strong>+{{ plan.Space.index * spaceAddon.Amount / 100 | currency: plan.Currency }}</strong>
+                                        <strong>+{{ plan.Space.index * spaceAddon.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li ng-class="{disabled: plan.MaxDomains === 0}">
@@ -134,7 +134,7 @@
                                     </span>
                                     <strong ng-show="plan.editable === false && plan.MaxDomains > 0">{{ plan.MaxDomains }}</strong> <strong>{{ 'CUSTOM_DOMAINS' | translate }}</strong>
                                     <span class="cost" ng-show="plan.Domain.index * domainAddon.Amount">
-                                        <strong>+{{ plan.Domain.index * domainAddon.Amount / 100 | currency: plan.Currency }}</strong>
+                                        <strong>+{{ plan.Domain.index * domainAddon.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li ng-class="{disabled: plan.MaxAddresses === 0}">
@@ -146,7 +146,7 @@
                                     </span>
                                     <strong ng-show="plan.editable === false && plan.MaxAddresses > 0">{{ plan.MaxAddresses }}</strong> <strong>{{ 'ADDRESSES' | translate }}</strong>
                                     <span class="cost" ng-show="plan.Address.index * addressAddon.Amount">
-                                        <strong>+{{ plan.Address.index * addressAddon.Amount / 100 | currency: plan.Currency }}</strong>
+                                        <strong>+{{ plan.Address.index * addressAddon.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                     </span>
                                 </li>
                                 <li ng-class="{disabled: plan.Name === 'free'}">
@@ -172,7 +172,7 @@
                                     <span class="text-purple" ng-show="plan.Amount > 0">{{ total(plan) / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }} {{ 'PER_MONTH' | translate }}</span>
                                 </div>
                                 <div ng-show="plan.Cycle === 12">
-                                    <small class="text-gray">({{ 'BILLED' | translate }} {{ total(plan) / 100 | currency: plan.Currency }} {{ 'PER_YEAR' | translate }})</small>
+                                    <small class="text-gray">{{ 'BILLED' | translate }} {{ total(plan) / 100 | currency: plan.Currency }} {{ 'PER_YEAR' | translate }}</small>
                                 </div>
                             </div>
                             <div class="action">
