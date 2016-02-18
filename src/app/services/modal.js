@@ -1367,7 +1367,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('aliasModal', function(pmModal, User, Address, $q, networkActivityTracker) {
+.factory('aliasModal', function(pmModal, Address, networkActivityTracker, notify) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/alias.tpl.html',
@@ -1375,12 +1375,9 @@ angular.module("proton.modals", [])
             // Variables
             this.local = '';
             this.members = params.members;
-            this.member = params.members[0];
+            this.member = params.members[0]; // TODO in the future we should add a select to choose a member
             this.domains = params.domains;
             this.domain = this.domains[0];
-            this.goodUsername = false;
-            this.badUsername = false;
-            this.checkingUsername = false;
 
             // Functions
             this.add = function() {
@@ -1393,41 +1390,15 @@ angular.module("proton.modals", [])
                     .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             params.add(result.data.Address);
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
                         }
                     }.bind(this))
                 );
             }.bind(this);
 
-            this.checkAvailability = function(manual) {
-                var deferred = $q.defer();
-
-                // reset
-                this.goodUsername = false;
-                this.badUsername = false;
-                this.checkingUsername = false;
-
-                if (this.local.length > 0) {
-                    User.available({ username: this.local }).$promise
-                    .then(function(response) {
-                        if (response.Available === 0) {
-                            this.badUsername = true;
-                            this.checkingUsername = false;
-                            deferred.reject("Username unavailable.");
-                        } else {
-                            this.goodUsername = true;
-                            this.checkingUsername = false;
-                            deferred.resolve(200);
-                        }
-                    }.bind(this));
-                }
-
-                return deferred.promise;
-            }.bind(this);
-
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.cancel();
             };
         }
     });
