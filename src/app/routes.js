@@ -817,11 +817,7 @@ angular.module('proton.routes', [
                 return deferred.promise;
             },
             organization: function(user, Organization, networkActivityTracker, CONSTANTS) {
-                if (user.Role === CONSTANTS.PAID_ADMIN) {
-                    return networkActivityTracker.track(Organization.get());
-                } else {
-                    return {data:{Organization: null}};
-                }
+                return networkActivityTracker.track(Organization.get());
             },
             plans: function(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.plans());
