@@ -64,7 +64,8 @@ angular.module("proton.authentication", [
                             // Hacky fix for missing organizations
                             var dummy = $q.resolve();
                             if ( user.Role === 0 && user.Subscribed === 1 ) {
-                                dummy = pmcw.generateKeysRSA('pm_org_admin', this.getPassword())
+                                var mailboxPassword =pmcw.decode_utf8_base64(window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY]);
+                                dummy = pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
                                         .then(function(response) {
                                             var privateKey = response.privateKeyArmored;
 
