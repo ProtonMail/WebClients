@@ -126,7 +126,8 @@ angular.module("proton.controllers.Settings")
     $scope.refresh = function() {
         var promises = {
             subscription: Payment.subscription(),
-            organization: Organization.get()
+            organization: Organization.get(),
+            event: eventManager.call()
         };
 
         networkActivityTracker.track(
