@@ -12,6 +12,7 @@
         hasLabels: (conversation.LabelIDs | labels).length > 0,
         hasAttachments: (conversation.NumAttachments > 0)
     }">
+        <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
         <div class="selected-bar"></div>
         <div class="selection">
             <input

@@ -149,7 +149,8 @@ header#pm_header-desktop {
 					text-align: left;
 				}
 			}
-			span > a {
+			span > a,
+			& > a {
 				border-top: 10px solid transparent;
 			}
 			a {

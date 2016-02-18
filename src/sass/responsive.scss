@@ -28,10 +28,12 @@
         display: none;
     }
     #pm_settings .settings {
+        .col-1-2 {
+            width: 100%;
+        }
         table {
             border: none;
             tr {
-                border: 1px solid $border;
                 display: block;
                 margin-bottom: 2rem;
                 td {

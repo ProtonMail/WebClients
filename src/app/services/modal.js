@@ -600,7 +600,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardNumber = function() {
-                if (this.cardChange === true) {
+                if (this.cardChange === true && this.valid.AmountDue > 0) {
                     return Payment.validateCardNumber(this.number);
                 } else {
                     return Promise.resolve();
@@ -608,7 +608,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardExpiry = function() {
-                if (this.cardChange === true) {
+                if (this.cardChange === true && this.valid.AmountDue > 0) {
                     return Payment.validateCardExpiry(this.month, this.year);
                 } else {
                     return Promise.resolve();
@@ -616,7 +616,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardCVC = function() {
-                if (this.cardChange === true) {
+                if (this.cardChange === true && this.valid.AmountDue > 0) {
                     return Payment.validateCardCVC(this.cvc);
                 } else {
                     return Promise.resolve();
@@ -626,7 +626,7 @@ angular.module("proton.modals", [])
             var method = function() {
                 var deferred = $q.defer();
 
-                if (this.cardChange === true) {
+                if (this.cardChange === true && this.valid.AmountDue > 0) {
                     Payment.updateMethod({
                         Type: 'card',
                         Details: {
@@ -656,7 +656,7 @@ angular.module("proton.modals", [])
                 var deferred = $q.defer();
 
                 Payment.subscribe({
-                    Amount : params.valid.AmountDue,
+                    Amount : this.valid.AmountDue,
                     Currency : params.valid.Currency,
                     PaymentMethodID : methodID,
                     CouponCode : this.coupon,
@@ -664,7 +664,7 @@ angular.module("proton.modals", [])
                 }).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         deferred.resolve();
-                    } else if (result.data && resultdata.Error) {
+                    } else if (result.data && result.data.Error) {
                         deferred.reject(new Error(result.data.Error));
                     }
                 });
@@ -705,10 +705,17 @@ angular.module("proton.modals", [])
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
-                            notify($translate.instant('COUPON_INVALID'));
+                            notify({
+                                message: $translate.instant('COUPON_INVALID'),
+                                classes: 'notification-danger'
+                            });
                         } else {
-                            this.valid = result.data;
+                            notify({
+                                message: $translate.instant('COUPON_ACCEPTED'),
+                                classes: 'notification-success'
+                            });
                         }
+                        this.valid = result.data;
                     }
                 }.bind(this));
             }.bind(this);
