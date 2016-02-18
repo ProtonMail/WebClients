@@ -56,13 +56,32 @@ angular.module("proton.authentication", [
                     if(angular.isDefined(result.data) && result.data.Code === 1000) {
                         var user = result.data.User;
 
-                        if (!user.EncPrivateKey) {
+                        if (!user.EncPrivateKey) { // Need to check something else, this is going away
                             deferred.reject({message: 'Error with EncPrivateKey'});
                             api.logout(true);
                         } else {
+
+                            // Hacky fix for missing organizations
+                            var dummy = $q.resolve();
+                            if ( user.Role === 0 && user.Subscribed === 1 ) {
+                                dummy = pmcw.generateKeysRSA('pm_org_admin', this.getPassword())
+                                        .then(function(response) {
+                                            var privateKey = response.privateKeyArmored;
+
+                                            return {
+                                                DisplayName: 'My Organization',
+                                                PrivateKey: privateKey,
+                                                BackupPrivateKey: privateKey
+                                            };})
+                                        .then(function(params) {
+                                            return $http.post(url.get() + "/organizations", params);
+                                            });
+                            }
+
                             $q.all([
                                 $http.get(url.get() + "/contacts"),
-                                $http.get(url.get() + "/labels")
+                                $http.get(url.get() + "/labels"),
+                                dummy
                             ]).then(
                                 function(result) {
                                     if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
