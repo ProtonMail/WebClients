@@ -15,7 +15,18 @@ angular.module("proton.models.organization", [])
          * @param {Object}
          */
         get: function() {
-            return $http.get(url.get() + '/organizations');
+            return $http.get(url.get() + '/organizations', {
+                transformResponse: function(data, headersGetter, status) {
+                    data = angular.fromJson(data);
+
+                    if (data.Code === 21001) {
+                        data.Code = 1000;
+                        data.Organization = null;
+                    }
+
+                    return data;
+                }
+            });
         },
         /**
          *
