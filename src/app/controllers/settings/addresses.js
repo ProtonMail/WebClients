@@ -23,12 +23,9 @@ angular.module('proton.controllers.Settings')
     $scope.domains = [];
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
 
-    // Establish a link between Addresses and the a service value
-    $scope.$watch(function () { return authentication.user.Addresses; }, function (newVal, oldVal) {
-        if (angular.isDefined(newVal)) {
-            $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
-            $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
-        }
+    $scope.$on('updateUser', function(event) {
+        $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
+        $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     });
 
     // Populate the domains <select>

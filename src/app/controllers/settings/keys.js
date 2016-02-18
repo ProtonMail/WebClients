@@ -25,13 +25,11 @@ angular.module("proton.controllers.Settings")
     $scope.PMAliases = _.where(authentication.user.Addresses, {Type: 2});
     // Custom addresses
     $scope.customAddresses = _.where(authentication.user.Addresses, {Type: 3});
-    // Establish a link between Addresses and the a service value
-    $scope.$watch(function () { return authentication.user.Addresses; }, function (newVal, oldVal) {
-        if (angular.isDefined(newVal)) {
-            $scope.PMAddresses = _.where(authentication.user.Addresses, {Type: 1});
-            $scope.PMAliases = _.where(authentication.user.Addresses, {Type: 2});
-            $scope.customAddresses = _.where(authentication.user.Addresses, {Type: 3});
-        }
+    
+    $scope.$on('updateUser', function(event) {
+        $scope.PMAddresses = _.where(authentication.user.Addresses, {Type: 1});
+        $scope.PMAliases = _.where(authentication.user.Addresses, {Type: 2});
+        $scope.customAddresses = _.where(authentication.user.Addresses, {Type: 3});
     });
 
     /**

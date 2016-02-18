@@ -129,6 +129,7 @@ angular.module("proton.event", ["proton.constants"])
 
 					$q.all(promises).then(function() {
 						angular.merge(authentication.user, user);
+						$rootScope.$broadcast('updateUser');
 					}, function() {
 						angular.merge(authentication.user, user);
 					});
