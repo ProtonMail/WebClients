@@ -194,7 +194,8 @@
             }
             .location {
                 .loc {
-                    color: $tags;
+                    color: rgba(0,0,0,.5);
+                    margin-left: .25rem;
                 }
             }
             .status {

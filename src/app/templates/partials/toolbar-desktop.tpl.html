@@ -201,14 +201,6 @@
             <a
             href="#"
             pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}"
-            ng-class="{ 'active': mobileMode }"
-            ng-click="changeLayout('mobile')">
-                <i class="fa fa-mobile"></i>
-            </a>
-            <a
-            href="#"
-            pt-tooltip="{{ 'CHANGE_LAYOUT' | translate }}"
-            class="divider"
             ng-class="{ 'active': layoutMode === 'columns' }"
             ng-click="changeLayout('columns')">
                 <img src="/assets/img/columnview.svg" />
