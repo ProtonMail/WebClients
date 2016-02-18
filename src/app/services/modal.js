@@ -704,7 +704,11 @@ angular.module("proton.modals", [])
                 })
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
-                        this.valid = result.data;
+                        if (result.data.CouponDiscount === 0) {
+                            notify($translate.instant('COUPON_INVALID'));
+                        } else {
+                            this.valid = result.data;
+                        }
                     }
                 }.bind(this));
             }.bind(this);
