@@ -305,6 +305,9 @@
                     line-height: 2rem;
                     display: none;
                 }
+                &:hover {
+                    border-color: $primary;
+                }
                 &.selected {
                     border-color: $primary;
                     header {
@@ -322,7 +325,6 @@
                 .price {
                     display: block;
                     padding: 20px 30px;
-                    color: $primary;
                     font-weight: 400;
                     strong {
                         font-weight: 700;
@@ -393,7 +395,7 @@
                             margin: 0 .5rem;
                             width: 4.75rem;
                             select {
-                                padding-right: 2rem;
+                                padding-right: 1rem;
                                 height: 25px;
                                 line-height: 25px;
                             }

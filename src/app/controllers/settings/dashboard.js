@@ -27,6 +27,8 @@ angular.module("proton.controllers.Settings")
     // Initialize variables
     $scope.subscription = {};
     $scope.plans = [];
+    $scope.credit = authentication.user.Credit;
+    $scope.currency = authentication.user.Currency;
 
     // Options
     $scope.spaceOptions = [
@@ -85,6 +87,12 @@ angular.module("proton.controllers.Settings")
         {label: '9', index: 7, value: 9},
         {label: '10', index: 8, value: 10}
     ];
+
+    // Listeners
+    $scope.$on('updateUser', function(event) {
+        $scope.credit = authentication.user.Credit;
+        $scope.currency = authentication.user.Currency;
+    });
 
     /**
     * Method called at the initialization of this controller
@@ -195,7 +203,7 @@ angular.module("proton.controllers.Settings")
 
         Payment.plans(currency, $scope.currentCycle)
         .then(function(result) {
-            $scope.initialization({Currency: currency}, result.data.Plans);
+            $scope.initialization(undefined, result.data.Plans);
             deferred.resolve();
         });
 
@@ -209,7 +217,7 @@ angular.module("proton.controllers.Settings")
 
         Payment.plans($scope.currentCurrency, cycle)
         .then(function(result) {
-            $scope.initialization({Cycle: cycle}, result.data.Plans);
+            $scope.initialization(undefined, result.data.Plans);
             deferred.resolve();
         });
 

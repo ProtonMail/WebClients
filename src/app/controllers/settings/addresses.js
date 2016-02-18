@@ -129,7 +129,7 @@ angular.module('proton.controllers.Settings')
             }).$promise.then(function(response) {
                 if (response.Code === 1000) {
                     eventManager.call();
-                    notify({message: $translate.instant('ORDER_SAVED'), classes: 'notification-success'});
+                    notify({message: $translate.instant('ADDRESS_ORDER_SAVED'), classes: 'notification-success'});
                 } else if (response.Error) {
                     notify({message: response.Error, classes: 'notification-danger'});
                 } else {
