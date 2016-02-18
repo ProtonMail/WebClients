@@ -47,7 +47,7 @@ body .pm_form textarea[readonly] {
 }
 
 code {
-	display: inline;
+	display: inline-block;
 	font-family: monospace;
 	color: #000;
 	border-radius: 2px;
@@ -55,6 +55,7 @@ code {
 	max-width: 100%;
 	overflow: auto;
 	word-break: break-all;
+	white-space: normal;
 }
 
 p a {
