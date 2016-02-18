@@ -38,7 +38,7 @@
             <span class="pm_buttons">
                 <a class="pm_trigger" dropdown>
                     <em><i class="fa fa-user"></i> <i class="fa fa-angle-down"></i></em>
-                    <strong>{{ user.DisplayName }}</strong>
+                    <strong>{{ user.DisplayName || user.Addresses[0].Email }}</strong>
                 </a>
                 <span class="pm_dropdown wide right">
                     <p><strong>{{ user.DisplayName }}</strong></p>
