@@ -372,3 +372,9 @@ header#pm_header-mobile {
 		text-transform: capitalize;
 	}
 }
+
+.mobileMode.activeComposer {
+	header#pm_header-mobile {
+		display: none;
+	}
+}
