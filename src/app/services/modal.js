@@ -600,7 +600,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardNumber = function() {
-                if (this.cardChange === true) {
+                if (this.cardChange === true && this.valid.AmountDue > 0) {
                     return Payment.validateCardNumber(this.number);
                 } else {
                     return Promise.resolve();
@@ -608,7 +608,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardExpiry = function() {
-                if (this.cardChange === true) {
+                if (this.cardChange === true && this.valid.AmountDue > 0) {
                     return Payment.validateCardExpiry(this.month, this.year);
                 } else {
                     return Promise.resolve();
@@ -616,7 +616,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardCVC = function() {
-                if (this.cardChange === true) {
+                if (this.cardChange === true && this.valid.AmountDue > 0) {
                     return Payment.validateCardCVC(this.cvc);
                 } else {
                     return Promise.resolve();
@@ -626,7 +626,7 @@ angular.module("proton.modals", [])
             var method = function() {
                 var deferred = $q.defer();
 
-                if (this.cardChange === true) {
+                if (this.cardChange === true && this.valid.AmountDue > 0) {
                     Payment.updateMethod({
                         Type: 'card',
                         Details: {
@@ -656,7 +656,7 @@ angular.module("proton.modals", [])
                 var deferred = $q.defer();
 
                 Payment.subscribe({
-                    Amount : params.valid.AmountDue,
+                    Amount : this.valid.AmountDue,
                     Currency : params.valid.Currency,
                     PaymentMethodID : methodID,
                     CouponCode : this.coupon,
@@ -664,7 +664,7 @@ angular.module("proton.modals", [])
                 }).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         deferred.resolve();
-                    } else if (result.data && resultdata.Error) {
+                    } else if (result.data && result.data.Error) {
                         deferred.reject(new Error(result.data.Error));
                     }
                 });
@@ -676,6 +676,20 @@ angular.module("proton.modals", [])
                 this.process = 'thanks';
                 params.change();
             }.bind(this);
+
+            /**
+             * Change cycle to monthly
+             */
+            this.monthly = function() {
+                params.monthly();
+            };
+
+            /**
+             * Change cycle to yearly
+             */
+            this.yearly = function() {
+                params.yearly();
+            };
 
             this.submit = function() {
                 // Change process status true to disable input fields
@@ -697,18 +711,25 @@ angular.module("proton.modals", [])
 
             this.apply = function() {
                 Payment.valid({
-                    Currency : params.plans[0].Currency,
-                    Cycle : params.plans[0].Cycle,
+                    Currency : this.valid.Currency,
+                    Cycle : this.valid.Cycle,
                     CouponCode : this.coupon,
                     PlanIDs: params.planIDs
                 })
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
-                            notify($translate.instant('COUPON_INVALID'));
+                            notify({
+                                message: $translate.instant('COUPON_INVALID'),
+                                classes: 'notification-danger'
+                            });
                         } else {
-                            this.valid = result.data;
+                            notify({
+                                message: $translate.instant('COUPON_ACCEPTED'),
+                                classes: 'notification-success'
+                            });
                         }
+                        this.valid = result.data;
                     }
                 }.bind(this));
             }.bind(this);
@@ -997,19 +1018,13 @@ angular.module("proton.modals", [])
                 $rootScope.$broadcast(name, params.domain);
             };
             this.verify = function() {
-                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
-                    params.verify();
-                }
+                params.verify();
             };
             this.next = function() {
-                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                    params.next();
-                }
+                params.next();
             };
             this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
+                params.close();
             };
         }
     });
@@ -1138,7 +1153,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify) {
+.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/generate.tpl.html',
@@ -1360,7 +1375,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('aliasModal', function(pmModal, User, Address, $q, networkActivityTracker) {
+.factory('aliasModal', function(pmModal, Address, networkActivityTracker, notify) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/alias.tpl.html',
@@ -1368,12 +1383,9 @@ angular.module("proton.modals", [])
             // Variables
             this.local = '';
             this.members = params.members;
-            this.member = params.members[0];
+            this.member = params.members[0]; // TODO in the future we should add a select to choose a member
             this.domains = params.domains;
             this.domain = this.domains[0];
-            this.goodUsername = false;
-            this.badUsername = false;
-            this.checkingUsername = false;
 
             // Functions
             this.add = function() {
@@ -1386,41 +1398,15 @@ angular.module("proton.modals", [])
                     .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             params.add(result.data.Address);
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
                         }
                     }.bind(this))
                 );
             }.bind(this);
 
-            this.checkAvailability = function(manual) {
-                var deferred = $q.defer();
-
-                // reset
-                this.goodUsername = false;
-                this.badUsername = false;
-                this.checkingUsername = false;
-
-                if (this.local.length > 0) {
-                    User.available({ username: this.local }).$promise
-                    .then(function(response) {
-                        if (response.Available === 0) {
-                            this.badUsername = true;
-                            this.checkingUsername = false;
-                            deferred.reject("Username unavailable.");
-                        } else {
-                            this.goodUsername = true;
-                            this.checkingUsername = false;
-                            deferred.resolve(200);
-                        }
-                    }.bind(this));
-                }
-
-                return deferred.promise;
-            }.bind(this);
-
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.cancel();
             };
         }
     });

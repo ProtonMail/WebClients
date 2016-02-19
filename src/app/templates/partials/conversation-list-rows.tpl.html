@@ -10,6 +10,7 @@
         active: active(conversation),
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
+        <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
         <div class="selected-bar"></div>
         <input
         type="checkbox"

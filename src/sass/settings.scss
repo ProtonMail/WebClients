@@ -305,6 +305,9 @@
                     line-height: 2rem;
                     display: none;
                 }
+                &:hover {
+                    border-color: $primary;
+                }
                 &.selected {
                     border-color: $primary;
                     header {
@@ -322,7 +325,6 @@
                 .price {
                     display: block;
                     padding: 20px 30px;
-                    color: $primary;
                     font-weight: 400;
                     strong {
                         font-weight: 700;
@@ -367,14 +369,20 @@
                     margin: 0;
                     padding: 20px 10px;
                     background: $light;
+                    float: left;
+                    width: 100%;
+                    clear: both;
                     li {
                         display: block;
+                        clear: both;
                         list-style-type: none;
                         margin: 0;
                         padding: 0 10px;
                         line-height: 2.5rem;
-                        height: 2.5rem;
+                        min-height: 2.5rem;
                         border-bottom: 1px solid $border;
+                        float: left;
+                        width: 100%;
                         strong {
                             font-weight: 400;
                         }
@@ -385,9 +393,9 @@
                             height: 25px;
                             line-height: 25px;
                             margin: 0 .5rem;
-                            width: 6rem;
+                            width: 4.75rem;
                             select {
-                                padding-right: 2rem;
+                                padding-right: 1rem;
                                 height: 25px;
                                 line-height: 25px;
                             }
@@ -489,12 +497,10 @@
                 .price {
                     border-top: 1px solid $border;
                     font-weight: 700;
+                    clear: both;
                     strong {
                         color: #000;
                         margin-right: .5rem;
-                    }
-                    small {
-                        font-size: 1rem;
                     }
                 }
                 .action {
@@ -588,9 +594,6 @@
         clear: both;
         box-sizing: border-box;
         .pm_sort ul li {
-            .pm_button.link {
-                width: 5.5rem;
-            }
             .label {
                 white-space: nowrap;
                 display: inline-block;
@@ -783,6 +786,21 @@ body.mobileMode {
 
         .settings {
             padding: 0 10px;
+            .pm_sort ul {
+                border-right: 1rem solid $border;
+                margin-bottom: 1rem;
+                li {
+                    padding-right: 0;
+                    .label {
+                        max-width: 80px;
+                    }
+                    .pull-right {
+                        .pm_button {
+                            width: initial;
+                        }
+                    }
+                }
+            }
         }
         .pm_tabs {
             padding-left: 10px;
@@ -999,6 +1017,11 @@ body.mobileMode {
                 width: 100%;
                 box-sizing: border-box;
                 border: 0;
+                &.pm_form.bordered {
+                    tr td.text-right {
+                        float: right;
+                    }
+                }
                 thead,
                 tbody {
                     display: block;
@@ -1080,6 +1103,11 @@ body.mobileMode {
     #pm_settings {
         #settingsDomains {
             .pm_table {
+                &.pm_form.bordered {
+                    tr td.text-right {
+                        float: none;
+                    }
+                }
                 tbody {
                     tr {
                         td {
@@ -1095,6 +1123,9 @@ body.mobileMode {
                                 span {
                                     float: none;
                                 }
+                            }
+                            span {
+                                float: none !important;
                             }
                         }
                         td.text-right {
@@ -1119,7 +1150,7 @@ body.mobileMode {
                     padding: 0;
                     td {
                         display: block;
-                        height: 3.25rem !important;
+                        height: auto !important;
                         border-bottom: 1px solid $border;
                         &.text-right {
                             text-align: left;
@@ -1134,5 +1165,49 @@ body.mobileMode {
                 }
             }
         }
+    }
+}
+
+#paymentsModal {
+
+    th.qty {
+        width: 5rem;
+    }
+
+    th.price {
+        width: 6rem;
+    }
+
+    th.qty,
+    td.qty {
+        padding: 0;
+    }
+
+    th.desc,
+    td.desc {
+        padding-right: 0;
+    }
+
+    th.price,
+    td.price {
+        padding-left: 0;
+    }
+
+    .disabled {
+        input,
+        select {
+            cursor: default;
+            pointer-events: none;
+            background-color: $read;
+        }
+    }
+
+}
+
+
+body.mobileMode {
+    #settingsDomains,
+    #settingsAddresses {
+        display: none;
     }
 }

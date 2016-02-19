@@ -1,5 +1,5 @@
 <div class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
-    <div class="modal-dialog">
+    <form class="modal-dialog" ng-submit="ctrl.add()" novalidate>
         <button type="button" ng-click="ctrl.cancel()" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
@@ -10,19 +10,12 @@
                 <div class="usernameWrap">
                     <p class="help">This will be a new address you can send and recieve emails with.</p>
                     <div class="clearfix">
-                        <input type="text" class="inline" ng-model="ctrl.local" autofocus placeholder="{{ 'ADDRESS' | translate }}" required ng-change="ctrl.checkAvailability(true)" ng-model-options="{ debounce: 500 }" ng-class="{'success':goodUsername, 'error':badUsername}" />
+                        <input type="text" class="inline" ng-model="ctrl.local" autofocus placeholder="{{ 'ADDRESS' | translate }}" required />
                         <em class="usernameDomain">@</em>
                         <span class="pm_select inline bigger">
                             <select class="selectDomain" ng-model="ctrl.domain" ng-options="domain.label for domain in ctrl.domains"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>
-                        <em class="fa fa-spin fa-spinner" ng-show="ctrl.checkingUsername"></em>
-                    </div>
-                    <div ng-show="ctrl.goodUsername">
-                        <p class="alert alert-success"><i class="fa fa-check"></i> Email available!</p>
-                    </div>
-                    <div ng-show="ctrl.badUsername">
-                        <p class="alert alert-danger"><i class="fa fa-times"></i> Email already taken.</p>
                     </div>
                 </div>
                 <p class="alert alert-info">ProtonMail address can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank">Learn more about addresses here.</a></p>
@@ -30,8 +23,8 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.add()" ng-disabled="networkActivity.loading()">{{ 'SUBMIT' | translate }}</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()">{{ 'SUBMIT' | translate }}</button>
         </div>
-    </div>
-    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
+    </form>
+    <div class="modal-overlay"></div>
 </div>

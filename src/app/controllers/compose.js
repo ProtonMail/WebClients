@@ -128,7 +128,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     });
 
     $scope.$on('newMessage', function() {
-        if($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) {
+        if(
+            ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) ||
+            ($scope.messages.length === 1 && $rootScope.mobileMode === true)
+        ) {
             notify({message: $translate.instant('MAXIMUM_COMPOSER_REACHED'), classes: 'notification-danger'});
         } else {
             var message = new Message();

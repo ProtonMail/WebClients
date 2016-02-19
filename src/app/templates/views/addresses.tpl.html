@@ -4,35 +4,37 @@
 
     <div class="settings" pt-height>
 
-        <div class="row">
+        <p class="alert alert-info mobileOnly">This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
+
+        <div class="row" id="settingsAddresses">
 
             <section class="setting full pm_form">
                 <legend>{{ 'ADDRESSES' | translate }}</legend>
                 <div class="margin" ng-show="isAdmin === true">
-                    <button type="button" class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</button>
+                    <a class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</a>
                     <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>
                 </div>
                 <div class="clearfix">
                     <div>
                         <label>
-                            <span class="help-block pull-right"><small><i class="fa fa-info-circle"></i> You can drag and drop aliases to order them.</small></span>
+                            <span class="help-block pull-right"><small><i class="fa fa-info-circle"></i> You can drag and drop addresses to order them.</small></span>
                             <strong>{{ 'ACTIVE_ADDRESSES' | translate }}</strong>
                         </label>
                         <div class="pm_sort">
                             <ul data-as-sortable="aliasDragControlListeners" data-ng-model="activeAddresses">
                                 <li ng-repeat="address in activeAddresses" as-sortable-item="">
-                                    <div as-sortable-item-handle="">
+                                    <span as-sortable-item-handle="">
                                         <i class="fa fa-ellipsis-v"></i>
                                         <button class="pm_button pull-right link" ng-show="address.Type === 2 || address.Type === 3" ng-click="disable(address)">{{ 'DISABLE' | translate }}</button>
-                                        <strong>{{ address.Email }}</strong>
-                                    </div>
+                                        <strong>{{ address.Email }}</strong> <span class="pm_badge primary" ng-show="$first">{{ 'MAIN' | translate }}</span>
+                                    </span>
                                 </li>
                             </ul>
                         </div>
 
                         <p></p>
 
-                        <label>
+                        <label ng-show="disabledAddresses.length > 0">
                             <strong>{{ 'DISABLED_ADDRESSES' | translate }}</strong>
                         </label>
 
@@ -40,8 +42,9 @@
                             <ul>
                                 <li ng-repeat="address in disabledAddresses">
                                     <div>
-                                        <button class="pm_button pull-right link" ng-show="address.Type === 2 || address.Type === 3" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
-                                        <span>{{ address.Email }}</span>
+                                        <button type="button" class="pm_button pull-right link" ng-show="address.Keys.length === 0" ng-click="generate(address)">{{ 'GENERATE_KEYS' | translate }}</button>
+                                        <button type="button" class="pm_button pull-right link" ng-show="address.Type === 2 || address.Type === 3" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
+                                        <span>{{ address.Email }}</span> <span class="pm_badge error" ng-show="address.Keys.length === 0">{{ 'MISSING_KEYS' | translate }}</span>
                                     </div>
                                 </li>
                             </ul>

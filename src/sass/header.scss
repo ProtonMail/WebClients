@@ -149,7 +149,8 @@ header#pm_header-desktop {
 					text-align: left;
 				}
 			}
-			span > a {
+			span > a,
+			& > a {
 				border-top: 10px solid transparent;
 			}
 			a {
@@ -369,5 +370,11 @@ header#pm_header-mobile {
 		font-size: 16px;
 		color: #fff;
 		text-transform: capitalize;
+	}
+}
+
+.mobileMode.activeComposer {
+	header#pm_header-mobile {
+		display: none;
 	}
 }

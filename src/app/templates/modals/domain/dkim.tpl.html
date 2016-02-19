@@ -11,7 +11,7 @@
                 <h4 class="modal-title">6. DKIM <em>({{ 'RECOMMENDED' | translate }})</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p>ProtonMail supports DKIM signing for custom domains! To protect <strong>{{ ctrl.domain.DomainName }}</strong> with DKIM authentication, please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/messages-in-spam">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>ProtonMail supports DKIM signing for custom domains! To protect <strong>{{ ctrl.domain.DomainName }}</strong> with DKIM authentication, please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
                 <p>Please add the follow TXT record:</p>
                 <table class="pm_table record">
                     <tr>
@@ -33,5 +33,5 @@
             <button class="pm_button" ng-hide="ctrl.domain.DkimState === 4 || ctrl.domain.DkimState === 5" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
         </div>
     </div>
-    <div class="modal-overlay" ng-click="ctrl.close()"></div>
+    <div class="modal-overlay"></div>
 </div>

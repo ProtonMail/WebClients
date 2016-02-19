@@ -11,17 +11,17 @@
                     <div class="col-1-2 text-center">
                         <label class="checkbox">
                             <input type="radio" ng-model="ctrl.size" value="2048" ng-disabled="ctrl.process === true" />
-                            <strong>High Security</strong> (2048-bit)
+                            <strong>{{ 'HIGH_SECURITY' | translate }}</strong> (2048-bit)
                         </label>
                     </div>
                     <div class="col-1-2 text-center">
                         <label class="checkbox">
                             <input type="radio" ng-model="ctrl.size" value="4096" ng-disabled="ctrl.process === true" />
-                            <strong>Extreme Security</strong> (4096-bit)
+                            <strong>{{ 'HIGHEST_SECURITY' | translate }}</strong> (4096-bit)
                         </label>
                     </div>
                 </div>
-                <p class="alert alert-info" ng-show="ctrl.size === true">Selecting this option may crash or freeze your browser, it is only recommended for high performance computers. Not recommended for tablet and mobile devices.</p>
+                <p class="alert alert-info" ng-show="ctrl.size === '4096'">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
                 <table class="pm_table">
                     <thead>
                         <tr>
@@ -55,14 +55,10 @@
                 <loader-tag></loader-tag>
             </div>
         </div>
-        <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true">
-                {{ 'CANCEL' | translate }}
-            </button>
-            <button type="submit" class="pm_button primary" ng-disabled="ctrl.process === true">
-                {{ 'GENERATE_KEYS' | translate }}
-            </button>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true">{{ 'CANCEL' | translate }}</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process === true">{{ 'GENERATE_KEYS' | translate }}</button>
         </div>
     </form>
-    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
+    <div class="modal-overlay"></div>
 </div>

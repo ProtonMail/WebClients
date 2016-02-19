@@ -27,6 +27,8 @@ angular.module("proton.controllers.Settings")
     // Initialize variables
     $scope.subscription = {};
     $scope.plans = [];
+    $scope.credit = authentication.user.Credit;
+    $scope.currency = authentication.user.Currency;
 
     // Options
     $scope.spaceOptions = [
@@ -86,6 +88,12 @@ angular.module("proton.controllers.Settings")
         {label: '10', index: 8, value: 10}
     ];
 
+    // Listeners
+    $scope.$on('updateUser', function(event) {
+        $scope.credit = authentication.user.Credit;
+        $scope.currency = authentication.user.Currency;
+    });
+
     /**
     * Method called at the initialization of this controller
     */
@@ -126,7 +134,8 @@ angular.module("proton.controllers.Settings")
     $scope.refresh = function() {
         var promises = {
             subscription: Payment.subscription(),
-            organization: Organization.get()
+            organization: Organization.get(),
+            event: eventManager.call()
         };
 
         networkActivityTracker.track(
@@ -194,7 +203,8 @@ angular.module("proton.controllers.Settings")
 
         Payment.plans(currency, $scope.currentCycle)
         .then(function(result) {
-            $scope.initialization({Currency: currency}, result.data.Plans);
+            $scope.initialization(undefined, result.data.Plans);
+            $scope.currentCurrency = currency;
             deferred.resolve();
         });
 
@@ -208,7 +218,8 @@ angular.module("proton.controllers.Settings")
 
         Payment.plans($scope.currentCurrency, cycle)
         .then(function(result) {
-            $scope.initialization({Cycle: cycle}, result.data.Plans);
+            $scope.initialization(undefined, result.data.Plans);
+            $scope.currentCycle = cycle;
             deferred.resolve();
         });
 
@@ -266,7 +277,7 @@ angular.module("proton.controllers.Settings")
                     var finish = function() {
                         $scope.refresh();
                         confirmModal.deactivate();
-                        notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBE'), classes: 'notification-success'});
+                        notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED'), classes: 'notification-success'});
                     };
 
                     networkActivityTracker.track(
@@ -306,6 +317,7 @@ angular.module("proton.controllers.Settings")
         if (plan.Name === 'free') {
             $scope.free();
         } else {
+            var name = plan.Name;
             var promises = [];
             var planIDs = [plan.ID];
             var plans = [plan];
@@ -377,6 +389,20 @@ angular.module("proton.controllers.Settings")
                                 planIDs: planIDs,
                                 valid: valid.data,
                                 methods: methods.data.PaymentMethods,
+                                monthly: function() {
+                                    paymentModal.deactivate();
+                                    $scope.changeCycle(1)
+                                    .then(function() {
+                                        $scope.choose(_.findWhere($scope.plans, {Name: name}));
+                                    });
+                                },
+                                yearly: function() {
+                                    paymentModal.deactivate();
+                                    $scope.changeCycle(12)
+                                    .then(function() {
+                                        $scope.choose(_.findWhere($scope.plans, {Name: name}));
+                                    });
+                                },
                                 change: function(subscription) {
                                     $scope.refresh();
                                     paymentModal.deactivate();

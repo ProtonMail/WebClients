@@ -2,23 +2,21 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings" pt-height id="labelContainer">
         <p>
-            <button type="button" class="pm_button primary" ng-click="createLabel()">
-                <strong>{{ 'ADD_LABEL' | translate }}</strong>
-            </button>
+            <button type="button" class="pm_button primary" ng-click="createLabel()">{{ 'ADD_LABEL' | translate }}</button>
         </p><!--/.form-group-->
         <p class="alert alert-info" ng-show="labels.length === 0"><i class="fa fa-arrow-up"></i> You have no labels, you can add label with the above button "ADD LABEL".</p>
         <div class="pm_sort" ng-show="labels.length > 0">
             <ul data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
                 <li ng-repeat="label in labels | orderBy: 'Order'" as-sortable-item="">
-                    <div as-sortable-item-handle="">
+                    <span as-sortable-item-handle="">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-tag" ng-style="{ 'color': label.Color }"></i>
                         <span class="label label-pm">{{ label.Name }}</span>
-                        <div class="pull-right">
+                        <span class="pull-right">
                             <button type="button" class="pm_button link" ng-click="editLabel(label)">{{ 'EDIT' | translate }}</button>
                             <button type="button" class="pm_button link" ng-click="deleteLabel(label)">{{ 'DELETE' | translate }}</button>
-                        </div><!--/.pull-right-->
-                    </div>
+                        </span><!--/.pull-right-->
+                    </span>
                 </li>
             </ul>
         </div><!--/.pm_sort-->

@@ -13,6 +13,7 @@ angular.module('proton.controllers.Settings')
     Domain,
     domains,
     eventManager,
+    generateModal,
     Member,
     networkActivityTracker,
     notify,
@@ -23,12 +24,9 @@ angular.module('proton.controllers.Settings')
     $scope.domains = [];
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
 
-    // Establish a link between Addresses and the a service value
-    $scope.$watch(function () { return authentication.user.Addresses; }, function (newVal, oldVal) {
-        if (angular.isDefined(newVal)) {
-            $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
-            $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
-        }
+    $scope.$on('updateUser', function(event) {
+        $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
+        $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     });
 
     // Populate the domains <select>
@@ -43,13 +41,14 @@ angular.module('proton.controllers.Settings')
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
         orderChanged: function() {
-            var aliasOrder = [];
+            var addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
+            var order = [];
 
-            _.forEach($scope.aliases, function(d, i) {
-                aliasOrder[i] = d.Send;
+            _.forEach(addresses, function(address, index) {
+                order[index] = address.Send;
             });
 
-            $scope.saveAliases(aliasOrder);
+            $scope.saveOrder(order);
         }
     };
 
@@ -101,6 +100,24 @@ angular.module('proton.controllers.Settings')
         });
     };
 
+    /**
+     * Open modal to fix keys
+     * @param {Object} address
+     */
+    $scope.generate = function(address) {
+        generateModal.activate({
+            params: {
+                title: $translate.instant('GENERATE_KEY_PAIR'),
+                message: 'bla bla bla', // TODO need text
+                addresses: [address],
+                cancel: function() {
+                    eventManager.call();
+                    generateModal.deactivate();
+                }
+            }
+        });
+    };
+
     $scope.add = function() {
         networkActivityTracker.track(
             Member.query()
@@ -124,15 +141,21 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.saveAliases = function(aliasOrder) {
+    $scope.saveOrder = function(order) {
         networkActivityTracker.track(
             Setting.addressOrder({
-                'Order': aliasOrder
+                'Order': order
             }).$promise.then(function(response) {
-                eventManager.call();
-                notify({message: $translate.instant('ALIASES_SAVED'), classes: 'notification-success'});
+                if (response.Code === 1000) {
+                    eventManager.call();
+                    notify({message: $translate.instant('ADDRESS_ORDER_SAVED'), classes: 'notification-success'});
+                } else if (response.Error) {
+                    notify({message: response.Error, classes: 'notification-danger'});
+                } else {
+                    notify({message: 'Error during the order request', classes : 'notification-danger'});
+                }
             }, function(error) {
-                notify({message: 'Error during the aliases request', classes : 'notification-danger'});
+                notify({message: 'Error during the order request', classes : 'notification-danger'});
                 $log.error(error);
             })
         );

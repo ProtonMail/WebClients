@@ -61,8 +61,11 @@ body {
         clear: both;
     }
     &, #body {
-        height: 100%;
+        min-height: 100%;
+    }
+    &.secure, &.secure #body {
         overflow: hidden;
+        height: 100%;
     }
 }
 

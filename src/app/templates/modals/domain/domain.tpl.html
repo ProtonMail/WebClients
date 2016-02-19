@@ -8,7 +8,7 @@
                 <h4 class="modal-title">1. {{ 'DOMAIN' | translate }}</h4>
             </div>
             <div class="modal-body pm_form">
-                <p>Add a domain that you own to your ProtonMail account.</p>
+                <p>Add a domain that you own to your ProtonMail account. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/">{{ 'LEARN_MORE' | translate }}</a></p>
                 <input ng-hide="ctrl.domain" type="text" autofocus ng-model="ctrl.name" placeholder="{{ 'DOMAIN_NAME' | translate }}" />
                 <textarea rows="1" ng-show="ctrl.domain" readonly ng-bind="::ctrl.domain.DomainName"></textarea>
             </div>
@@ -19,5 +19,5 @@
             <button type="button" class="pm_button primary" ng-show="ctrl.domain.DomainName" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
         </div>
     </form>
-    <div class="modal-overlay" ng-click="ctrl.cancel()"></div>
+    <div class="modal-overlay"></div>
 </div>

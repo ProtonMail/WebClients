@@ -3,7 +3,11 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
     <div class="settings" pt-height>
+
+        <p class="alert alert-info mobileOnly">This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
+
         <div class="row" id="settingsDomains">
+
             <section class="setting pm_form full">
                 <legend>
                     <span class="pull-right">{{ organization.UsedDomains }} / {{ organization.MaxDomains }} {{ 'DOMAINS_USED' | translate }}. <a ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
@@ -26,8 +30,10 @@
                         <tr ng-class="{ 'error': domain.State === 0 }">
                             <td class="domain">
                                 <strong>
-                                    <i ng-show="domain.State === 1" class="fa fa-check text-green"></i>
-                                    <i ng-show="domain.State === 0" class="fa fa-exclamation-triangle text-red"></i>
+                                    <i class="fa" ng-class="{
+                                        'fa-check text-green': domain.State === 1 && domain.Addresses.length > 0 && domain.MxState === 3,
+                                        'fa-exclamation-triangle text-red': domain.State === 0 || domain.Addresses.length === 0 || domain.MxState === 1 || domain.MxState === 2
+                                    }"></i>
                                     {{ domain.DomainName }}
                                 </strong>
                             </td>
@@ -123,8 +129,8 @@
                                 <tr>
                                     <th>{{ 'ADDRESS' | translate }}</th>
                                     <!-- <th>{{ 'NICKNAME' | translate }}</th> -->
-                                    <th>{{ 'STATUS' | translate }}</th>
-                                    <th class="text-right actions">{{ 'ACTIONS' | translate }}</th>
+                                    <th style="width: 6rem">{{ 'STATUS' | translate }}</th>
+                                    <th class="text-right actions" style="width: 6rem">{{ 'ACTIONS' | translate }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -141,10 +147,10 @@
                                         <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
                                     </td>
                                     <td class="text-right">
-                                        <button type="button" class="pm_button link" ng-show="address.Type === 2 || address.Type === 3" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">{{ 'ENABLE' | translate }}</button>
-                                        <button type="button" class="pm_button link" ng-show="address.Type === 2 || address.Type === 3" ng-click="disableAddress(address)" title="{{ 'DISABLE_ADDRESS' | translate }}">{{ 'DISABLE' | translate }}</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status !== 1" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">{{ 'ENABLE' | translate }}</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 1 && (address.Type === 2 || address.Type === 3)" ng-click="disableAddress(address)" title="{{ 'DISABLE_ADDRESS' | translate }}">{{ 'DISABLE' | translate }}</button>
                                         <button type="button" class="pm_button link" ng-show="address.Keys.length === 0" ng-click="generate(address)" title="{{ 'GENERATE_KEY_PAIR' | translate }}">{{ 'GENERATE' | translate }}</button>
-                                        <button type="button" class="pm_button link" ng-show="address.Type === 3" ng-click="deleteAddress(address, domain)" title="{{ 'DELETE_ADDRESS' | translate }}">{{ 'DELETE' | translate }}</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type !== 0" ng-click="deleteAddress(address, domain)" title="{{ 'DELETE_ADDRESS' | translate }}">{{ 'DELETE' | translate }}</button>
                                     </td>
                                 </tr>
                             </tbody>

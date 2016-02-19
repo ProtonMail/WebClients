@@ -13,15 +13,9 @@
                             </span>
                         </div>
                         <div class="pm_buttons pull-left">
-                            <a ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">
-                                <strong>{{ disabledText }}</strong>
-                            </a>
-                            <a ng-class="{'active': doLogging === 1}" class="divider" ng-click="setLogging(1)">
-                                <strong>{{ 'BASIC_LOGGING' | translate }}</strong>
-                            </a>
-                            <a ng-class="{'active': doLogging === 2}" class="divider" ng-click="setLogging(2)">
-                                <strong>{{ 'ADVANCED_LOGGING' | translate }}</strong>
-                            </a>
+                            <a ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">{{ disabledText }}</a>
+                            <a ng-class="{'active': doLogging === 1}" class="divider" ng-click="setLogging(1)">{{ 'BASIC_LOGGING' | translate }}</a>
+                            <a ng-class="{'active': doLogging === 2}" class="divider" ng-click="setLogging(2)">{{ 'ADVANCED_LOGGING' | translate }}</a>
                         </div>
                         <a class="pm_button pull-left" id="logRefresh" ng-hide="doLogging === 0" ng-click="initLogs()">
                             <i class="fa fa-rotate-right"></i>

@@ -17,18 +17,6 @@ angular.module("proton.models.payments", [])
             return $http.post(url.get() + '/payments/unsubscribe', Obj);
         },
         /**
-        * Check the plan configured by the user to see if it's correct
-        */
-        plan: function(configuration) {
-            return $http.post(url.get() + '/payments/plan', configuration);
-        },
-        /**
-        * Get subscription information like plan configuration, billing cycle, period end etc. Returns a JSON.
-        */
-        status: function() {
-            return $http.get(url.get() + '/payments/status');
-        },
-        /**
          * Get plans available to user
          */
         plans: function(currency, cycle) {
@@ -203,47 +191,6 @@ angular.module("proton.models.payments", [])
                     return data;
                 }
             });
-        },
-        /**
-        * Get payments corresponding to the given group.
-        */
-        group: function() {
-            return $http.get(url.get() + '/payments/group');
-        },
-        /**
-        * Get current payment information from Stripe
-        */
-        sources: function() {
-            return $http.get(url.get() + '/payments/sources', {
-                transformResponse: function(data, headersGetter, status) {
-                    data = angular.fromJson(data);
-
-                    if (angular.isDefined(data) && data.Code === 1000) {
-                        data.Source = data.Sources[0];
-                    }
-
-                    return data;
-                }
-            });
-        },
-        /**
-        * Send a new credit card information
-        * @param {Object} Obj
-        */
-        change: function(Obj) {
-            return $http.put(url.get() + '/payments/sources', Obj);
-        },
-        /**
-        * Apply coupon
-        */
-        coupons: function(coupon, params) {
-            return $http.get(url.get() + '/payments/coupons/' + coupon, params);
-        },
-        /**
-        * return the public key to encrypt the credit card information formatted
-        */
-        keys: function() {
-            return $http.get(url.get() + '/payments/keys');
         },
         cardType: function(number) {
             var deferred = $q.defer();

@@ -509,6 +509,7 @@ angular.module('proton', [
 
         $timeout( function() {
             $rootScope.mobileResponsive();
+            $rootScope.showSidebar = false;
         }, 30);
 
     });

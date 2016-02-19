@@ -133,9 +133,7 @@
 
     <div class="secondary">
         <span class="pm_buttons">
-            <a class="pm_trigger" dropdown>
-                <strong><small>More</small></strong> <i class="fa fa-angle-down"></i>
-            </a>
+            <a class="pm_trigger" dropdown><small>{{ 'MORE' | translate }}</small> <i class="fa fa-angle-down"></i></a>
             <span class="pm_dropdown wider">
                 <a ng-click="empty('drafts')" ng-show="{{ 'secured.drafts.**' | includedByState }}">
                     <i class="fa fa-times-circle-o"></i> {{ 'EMPTY_DRAFTS' | translate }}

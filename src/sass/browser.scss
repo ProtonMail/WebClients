@@ -29,6 +29,13 @@
     }
 }
 
+// All Windows
+.ua-windows_nt {
+    .pm_modal .usernameWrap .pm_select {
+        position: relative;
+        top: 11px;
+    }
+}
 // All Windows, Firefox
 .ua-windows_nt.ua-firefox {
     &.ua-firefox {

@@ -1,5 +1,5 @@
 <header id="pm_header-desktop" class="pm_opensans" ng-controller="HeaderController">
-    <a href="#" class="logo" ui-sref="welcome">
+    <a href="#" class="logo" ui-sref="secured.inbox">
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" />
     </a>
     <ng-include src="'templates/partials/searchForm.tpl.html'"></ng-include>
@@ -38,7 +38,7 @@
             <span class="pm_buttons">
                 <a class="pm_trigger" dropdown>
                     <em><i class="fa fa-user"></i> <i class="fa fa-angle-down"></i></em>
-                    <strong>{{ user.DisplayName }}</strong>
+                    <strong>{{ user.DisplayName || user.Addresses[0].Email }}</strong>
                 </a>
                 <span class="pm_dropdown wide right">
                     <p><strong>{{ user.DisplayName }}</strong></p>

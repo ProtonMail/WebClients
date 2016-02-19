@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body pm_form">
                 <div>
-                    <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following code into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/verify-your-domain">{{ 'LEARN_MORE' | translate }}</a></p>
+                    <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following code into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/dns-records/">{{ 'LEARN_MORE' | translate }}</a></p>
                     <p>Please add the following TXT record:</p>
                     <table class="pm_table record">
                         <tr>
@@ -34,5 +34,5 @@
             <button ng-show="ctrl.domain.VerifyState===2" class="pm_button primary" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
         </div>
     </div>
-    <div class="modal-overlay" ng-click="ctrl.close()"></div>
+    <div class="modal-overlay"></div>
 </div>

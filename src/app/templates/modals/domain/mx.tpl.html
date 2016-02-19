@@ -10,8 +10,8 @@
                 <h4 class="modal-title">4. {{ 'MX_RECORD' | translate }} <em>({{ 'REQUIRED' | translate }})</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p>Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to the DNS of <strong>{{ ctrl.domain.DomainName }}</strong>.</p>
-                <p>This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-mx-record">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to the DNS of <strong>{{ ctrl.domain.DomainName }}</strong>. DNS changes could take several hours to take effect.</p>
+                <p>This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/dns-records/">{{ 'LEARN_MORE' | translate }}</a></p>
 
                 <p>Please add the following MX record:</p>
                 <table class="pm_table record">
@@ -42,5 +42,5 @@
             <button ng-hide="ctrl.domain.MxState === 3" class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
         </div>
     </div>
-    <div class="modal-overlay" ng-click="ctrl.close()"></div>
+    <div class="modal-overlay"></div>
 </div>
