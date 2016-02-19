@@ -10,7 +10,7 @@
                 <h4 class="modal-title">5. {{ 'SPF' | translate }} <em>(Recommended)</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p>SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-spf-record">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
                 <p>Please add the following TXT record:</p>
                 <table class="pm_table record">
                     <tr>
@@ -25,7 +25,7 @@
                     </tr>
                 </table>
 
-                <p>If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains-spf-record">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
             </div>
         </div>
         <div class="modal-footer">
