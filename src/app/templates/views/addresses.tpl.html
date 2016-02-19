@@ -9,7 +9,7 @@
             <section class="setting full pm_form">
                 <legend>{{ 'ADDRESSES' | translate }}</legend>
                 <div class="margin" ng-show="isAdmin === true">
-                    <button type="button" class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</button>
+                    <a class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</a>
                     <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>
                 </div>
                 <div class="clearfix">
