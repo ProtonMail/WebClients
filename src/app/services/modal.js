@@ -1153,7 +1153,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q) {
+.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q, eventManager) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/generate.tpl.html',
@@ -1217,6 +1217,7 @@ angular.module("proton.modals", [])
 
                 $q.all(promises)
                 .then(function() {
+                    eventManager.call();
                     params.cancel();
                 }.bind(this));
             };
