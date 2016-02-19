@@ -1205,3 +1205,11 @@ body.mobileMode {
     }
 
 }
+
+
+body.mobileMode {
+    #settingsDomains,
+    #settingsAddresses {
+        display: none;
+    }
+}

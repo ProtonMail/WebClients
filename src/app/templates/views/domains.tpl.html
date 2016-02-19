@@ -3,7 +3,11 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
     <div class="settings" pt-height>
+
+        <p class="alert alert-info mobileOnly">This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
+
         <div class="row" id="settingsDomains">
+
             <section class="setting pm_form full">
                 <legend>
                     <span class="pull-right">{{ organization.UsedDomains }} / {{ organization.MaxDomains }} {{ 'DOMAINS_USED' | translate }}. <a ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>

@@ -17,6 +17,9 @@ html.protonmail {
 		&.mobileMode {
 			height: initial;
 			overflow: initial !important;
+			.mobileOnly {
+				display: block;
+			}
 			&.locked {
 				overflow: initial !important;
 			}

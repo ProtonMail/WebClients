@@ -33,14 +33,15 @@
 
 <div class="pm_form" id="settingsSelect">
 
-    <a class="pm_button" ng-show="user.Role === 0 || user.Role === 2" ui-sref="secured.dashboard">{{ 'DASHBOARD' | translate }}</a>
-    <a class="pm_button" ui-sref="secured.account">{{ 'ACCOUNT' | translate }}</a>
-    <a class="pm_button" ui-sref="secured.labels">{{ 'LABELS' | translate }}</a>
-    <a class="pm_button" ui-sref="secured.security">{{ 'SECURITY' | translate }}</a>
-    <a class="pm_button" ui-sref="secured.appearance">{{ 'APPEARANCE' | translate }}</a>
-    <a class="pm_button" ng-show="user.Role === 2" ui-sref="secured.domains">{{ 'DOMAINS' | translate }}</a>
-    <a class="pm_button" ng-show="user.Role === 2" ui-sref="secured.members">{{ 'USERS' | translate }}</a>
-    <a class="pm_button" ng-show="user.Role === 2" ui-sref="secured.invoices">{{ 'INVOICES' | translate }}</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.dashboard' | includedByState) }"  ng-show="user.Role === 0 || user.Role === 2" ui-sref="secured.dashboard">{{ 'DASHBOARD' | translate }}</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.account' | includedByState) }"  ui-sref="secured.account">{{ 'ACCOUNT' | translate }}</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.labels' | includedByState) }"  ui-sref="secured.labels">{{ 'LABELS' | translate }}</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.security' | includedByState) }"  ui-sref="secured.security">{{ 'SECURITY' | translate }}</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.appearance' | includedByState) }"  ui-sref="secured.appearance">{{ 'APPEARANCE' | translate }}</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.domains' | includedByState) }"  ng-show="user.Role === 2" ui-sref="secured.domains">{{ 'DOMAINS' | translate }}</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.addresses' | includedByState) }"  ui-sref="secured.addresses">{{ 'ADDRESSES' | translate }}</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.members' | includedByState) }"  ng-show="user.Role === 2" ui-sref="secured.members">{{ 'USERS' | translate }}</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.invoices' | includedByState) }"  ng-show="user.Role === 2" ui-sref="secured.invoices">{{ 'INVOICES' | translate }}</a>
 
 <!--     <span class="pm_select">
         <select ng-model="currentSettingRoute" ng-init="initSettingRoute()" ng-options="route.label for route in settingsRoutes" ng-change="goTo(currentSettingRoute.value)"></select>
