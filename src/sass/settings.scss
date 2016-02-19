@@ -1019,6 +1019,11 @@ body.mobileMode {
                 width: 100%;
                 box-sizing: border-box;
                 border: 0;
+                &.pm_form.bordered {
+                    tr td.text-right {
+                        float: right;
+                    }
+                }
                 thead,
                 tbody {
                     display: block;
@@ -1100,6 +1105,11 @@ body.mobileMode {
     #pm_settings {
         #settingsDomains {
             .pm_table {
+                &.pm_form.bordered {
+                    tr td.text-right {
+                        float: none;
+                    }
+                }
                 tbody {
                     tr {
                         td {
@@ -1115,6 +1125,9 @@ body.mobileMode {
                                 span {
                                     float: none;
                                 }
+                            }
+                            span {
+                                float: none !important;
                             }
                         }
                         td.text-right {
@@ -1139,7 +1152,7 @@ body.mobileMode {
                     padding: 0;
                     td {
                         display: block;
-                        height: 3.25rem !important;
+                        height: auto !important;
                         border-bottom: 1px solid $border;
                         &.text-right {
                             text-align: left;
