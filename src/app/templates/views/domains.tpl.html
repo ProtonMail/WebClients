@@ -31,7 +31,7 @@
                             <td class="domain">
                                 <strong>
                                     <i class="fa" ng-class="{
-                                        'fa-check text-green': domain.State === 1 && domain.Addresses.length > 0 && domain.MxState === 3
+                                        'fa-check text-green': domain.State === 1 && domain.Addresses.length > 0 && domain.MxState === 3,
                                         'fa-exclamation-triangle text-red': domain.State === 0 || domain.Addresses.length === 0 || domain.MxState === 1 || domain.MxState === 2
                                     }"></i>
                                     {{ domain.DomainName }}
