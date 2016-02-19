@@ -1153,7 +1153,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q, eventManager) {
+.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/generate.tpl.html',

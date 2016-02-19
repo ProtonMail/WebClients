@@ -25,7 +25,7 @@ angular.module("proton.controllers.Settings")
     $scope.PMAliases = _.where(authentication.user.Addresses, {Type: 2});
     // Custom addresses
     $scope.customAddresses = _.where(authentication.user.Addresses, {Type: 3});
-    
+
     $scope.$on('updateUser', function(event) {
         $scope.PMAddresses = _.where(authentication.user.Addresses, {Type: 1});
         $scope.PMAliases = _.where(authentication.user.Addresses, {Type: 2});
