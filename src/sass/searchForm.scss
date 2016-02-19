@@ -19,7 +19,7 @@ form.searchForm {
 			button[type="submit"],
 			#closeAdvSearch {
 				border-radius: 0 1rem 0 0;
-				background: #777c8a;
+				background: transparent;
 			}
 			input.query {
 				visibility: hidden;
@@ -28,7 +28,7 @@ form.searchForm {
 	}
 	fieldset {
 		position: relative;
-		background-color: #777c8a;
+		background: rgba(255,255,255,.25);;
 		z-index: 5;
 		display: block;
 		line-height: 35px;
@@ -53,13 +53,13 @@ form.searchForm {
 			display: block;
 			width: 35px;
 			color: #fff;
-			background-color: $alt-light;
+			background-color: transparent;
 			border-radius: 35px 0 0 35px;
 			cursor: pointer;
 			transition: background-color .25s ease;
 			float: left;
 			&:hover {
-				background: lighten($alt-light, 5%);
+				background: $alt-light;
 			}
 		}
 		button[type="submit"],
