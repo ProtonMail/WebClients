@@ -30,6 +30,7 @@
             border: none;
             margin-right: 0;
             float: right;
+            box-shadow: none;
             a {
                 background: transparent !important;
                 line-height: 33px;
@@ -37,6 +38,7 @@
                 padding: 0 10px;
                 display: block;
                 font-size: 1.5rem;
+                box-shadow: none;
             }
         }
     }

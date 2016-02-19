@@ -51,11 +51,16 @@ code {
 	font-family: monospace;
 	color: #000;
 	border-radius: 2px;
-	line-height: 1rem;
 	max-width: 100%;
+	line-height: 1.35rem;
 	overflow: auto;
 	word-break: break-all;
 	white-space: normal;
+	padding: 0 .5rem;
+	background-color: rgba(0,0,0,.06);
+}
+p code {
+	display: inline;
 }
 
 p a {

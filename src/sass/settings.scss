@@ -367,7 +367,7 @@
                     display: block;
                     list-style-type: none;
                     margin: 0;
-                    padding: 20px 10px;
+                    padding: 0;
                     background: $light;
                     float: left;
                     width: 100%;
@@ -383,6 +383,7 @@
                         border-bottom: 1px solid $border;
                         float: left;
                         width: 100%;
+                        box-sizing: border-box;
                         strong {
                             font-weight: 400;
                         }
@@ -565,19 +566,20 @@
         box-sizing: border-box;
         width: 100%;
         background: $alt;
+        overflow: hidden;
         li {
             height: 41px;
             line-height: 41px;
             a.pm_button {
                 border-color: $alt;
-                background: $alt-light;
+                background: $secondary;
                 color: #fff;
                 border-bottom: none;
                 padding: 0 1rem;
                 height: 41px;
                 line-height: 41px;
                 &:hover {
-                    background: lighten($alt-light, 5%);
+                    background: lighten($secondary, 5%);
                 }
             }
         }
