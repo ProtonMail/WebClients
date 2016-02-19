@@ -647,7 +647,6 @@ body.mobileMode {
 		display: none;
 		float: left;
 		width: 100%;
-		min-height: 700px;
 		.composer.maximized {
 			position: static;
 			margin: 0;
@@ -680,10 +679,10 @@ body.mobileMode {
 			}
 		}
 		.composer.tall section .angular-squire-wrapper iframe {
-			height: 620px !important;
+			height: 620px;
 		}
 		.composer.tall section {
-			height: 670px !important;
+			height: 320px;
 		}
 		footer .pm_button {
 			padding: 0 10px !important;
@@ -732,36 +731,6 @@ body.mobileMode {
 				right: 2%;
 				top: 80px;
 				width: 96%;
-			}
-		}
-	}
-}
-
-@media (max-height: 500px) {
-	html.protonmail, html.protonmail body {
-	    height: initial !important;
-	}
-	#pm_composer {
-		.composer {
-			header {
-				.pm_button.maximize-button {
-					// display: none;
-				}
-			}
-			&.maximized {
-				left: 0;
-				right: 0;
-				top:0 !important;
-				width: 100%;
-				position: absolute !important;
-			}
-			footer {
-				.pm_button span {
-					display: none;
-				}
-				.pm_button.primary span {
-					display: block;
-				}
 			}
 		}
 	}
