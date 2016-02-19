@@ -26,7 +26,7 @@
                                     <span as-sortable-item-handle="">
                                         <i class="fa fa-ellipsis-v"></i>
                                         <button class="pm_button pull-right link" ng-show="address.Type === 2 || address.Type === 3" ng-click="disable(address)">{{ 'DISABLE' | translate }}</button>
-                                        <strong>{{ address.Email }}</strong>
+                                        <strong>{{ address.Email }}</strong> <span class="pm_badge primary" ng-show="$first">{{ 'MAIN' | translate }}</span>
                                     </span>
                                 </li>
                             </ul>
