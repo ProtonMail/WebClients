@@ -15,14 +15,16 @@ html.protonmail {
 			height: initial !important;
 		}
 		&.mobileMode {
+			height: initial;
+			overflow: initial !important;
 			&.locked {
 				overflow: initial !important;
 			}
 			#body {
-				height: 100%;
+				height: initial;
 				overflow: initial !important;
 				#pm_main {
-					height: calc(100% - 70px);
+					height: initial;
 				}
 			}
 		}
