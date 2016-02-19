@@ -30,8 +30,10 @@
                         <tr ng-class="{ 'error': domain.State === 0 }">
                             <td class="domain">
                                 <strong>
-                                    <i ng-show="domain.State === 1" class="fa fa-check text-green"></i>
-                                    <i ng-show="domain.State === 0" class="fa fa-exclamation-triangle text-red"></i>
+                                    <i class="fa" ng-class="{
+                                        'fa-check text-green': domain.State === 1 && domain.Addresses.length > 0 && domain.MxState === 3
+                                        'fa-exclamation-triangle text-red': domain.State === 0 || domain.Addresses.length === 0 || domain.MxState === 1 || domain.MxState === 2
+                                    }"></i>
                                     {{ domain.DomainName }}
                                 </strong>
                             </td>
