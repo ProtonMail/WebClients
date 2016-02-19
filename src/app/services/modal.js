@@ -677,6 +677,20 @@ angular.module("proton.modals", [])
                 params.change();
             }.bind(this);
 
+            /**
+             * Change cycle to monthly
+             */
+            this.monthly = function() {
+                params.monthly();
+            };
+
+            /**
+             * Change cycle to yearly
+             */
+            this.yearly = function() {
+                params.yearly();
+            };
+
             this.submit = function() {
                 // Change process status true to disable input fields
                 this.step = 'process';
@@ -697,8 +711,8 @@ angular.module("proton.modals", [])
 
             this.apply = function() {
                 Payment.valid({
-                    Currency : params.plans[0].Currency,
-                    Cycle : params.plans[0].Cycle,
+                    Currency : this.valid.Currency,
+                    Cycle : this.valid.Cycle,
                     CouponCode : this.coupon,
                     PlanIDs: params.planIDs
                 })

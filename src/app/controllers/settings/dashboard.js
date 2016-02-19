@@ -317,6 +317,7 @@ angular.module("proton.controllers.Settings")
         if (plan.Name === 'free') {
             $scope.free();
         } else {
+            var name = plan.Name;
             var promises = [];
             var planIDs = [plan.ID];
             var plans = [plan];
@@ -388,6 +389,20 @@ angular.module("proton.controllers.Settings")
                                 planIDs: planIDs,
                                 valid: valid.data,
                                 methods: methods.data.PaymentMethods,
+                                monthly: function() {
+                                    paymentModal.deactivate();
+                                    $scope.changeCycle(1)
+                                    .then(function() {
+                                        $scope.choose(_.findWhere($scope.plans, {Name: name}));
+                                    });
+                                },
+                                yearly: function() {
+                                    paymentModal.deactivate();
+                                    $scope.changeCycle(12)
+                                    .then(function() {
+                                        $scope.choose(_.findWhere($scope.plans, {Name: name}));
+                                    });
+                                },
                                 change: function(subscription) {
                                     $scope.refresh();
                                     paymentModal.deactivate();

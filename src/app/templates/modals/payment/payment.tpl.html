@@ -53,6 +53,10 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="pm_buttons">
+                    <a href="#" ng-click="ctrl.monthly()" ng-class="{'active': ctrl.valid.Cycle === 1}">{{ 'MONTHLY' | translate }}</a>
+                    <a href="#" ng-click="ctrl.yearly()" ng-class="{'active': ctrl.valid.Cycle === 12}" class="divider">{{ 'YEARLY' | translate }} <strong class="text-green">{{ 'SAVE_~20%' | translate }}</strong></a>
+                </div>
             </div>
             <div class="col-1-2">
                 <!-- <div class="input-icon margin">
