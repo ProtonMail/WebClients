@@ -13,6 +13,7 @@ angular.module('proton.controllers.Settings')
     Domain,
     domains,
     eventManager,
+    generateModal,
     Member,
     networkActivityTracker,
     notify,
@@ -94,6 +95,24 @@ angular.module('proton.controllers.Settings')
                 },
                 cancel: function() {
                     confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Open modal to fix keys
+     * @param {Object} address
+     */
+    $scope.generate = function(address) {
+        generateModal.activate({
+            params: {
+                title: $translate.instant('GENERATE_KEY_PAIR'),
+                message: 'bla bla bla', // TODO need text
+                addresses: [address],
+                cancel: function() {
+                    eventManager.call();
+                    generateModal.deactivate();
                 }
             }
         });
