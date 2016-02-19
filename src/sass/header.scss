@@ -165,6 +165,7 @@ header#pm_header-desktop {
 				color: lighten(#c1c7d8, 10%);
 				box-sizing: border-box;
 				transition: color .25s ease, border .25s ease;
+				box-shadow: none;
 				&:active,
 				&.active {
 					box-shadow: none;

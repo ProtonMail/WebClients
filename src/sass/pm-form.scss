@@ -170,7 +170,7 @@
     select,
     textarea {
         line-height: 35px;
-        border: 1px solid #e1e1ef;
+        border: 1px solid $border;
         box-sizing: border-box;
         color: $text;
         display: block;
@@ -182,6 +182,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
         &.inline {
             display: inline-block;
             width: 8rem;
@@ -197,7 +198,7 @@
         &[disabled],
         &.disabled {
             color: #bbb;
-            border-color: $border;
+            border-color: lighten($border, 5%);
             background: #fcfcfc;
             pointer-events: none;
         }
