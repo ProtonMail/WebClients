@@ -1217,7 +1217,6 @@ angular.module("proton.modals", [])
 
                 $q.all(promises)
                 .then(function() {
-                    eventManager.call();
                     params.cancel();
                 }.bind(this));
             };

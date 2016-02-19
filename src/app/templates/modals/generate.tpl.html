@@ -55,13 +55,9 @@
                 <loader-tag></loader-tag>
             </div>
         </div>
-        <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true">
-                {{ 'CANCEL' | translate }}
-            </button>
-            <button type="submit" class="pm_button primary" ng-disabled="ctrl.process === true">
-                {{ 'GENERATE_KEYS' | translate }}
-            </button>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true">{{ 'CANCEL' | translate }}</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process === true">{{ 'GENERATE_KEYS' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
