@@ -9,7 +9,7 @@ angular.module('proton.maxComposerHeight', [])
                 var parent = angular.element(element).closest('.composer');
 
                 // Set to zero
-                angular.element(element).find('iframe').css({ height: 0 });
+                angular.element(element).find('iframe, .angular-squire-wrapper').css({ height: 0 });
 
                 var height = parent.outerHeight();
 
@@ -29,6 +29,10 @@ angular.module('proton.maxComposerHeight', [])
                 //     parent.find('.attachmentBar:visible').outerHeight(),
                 //     parent.find('.attachmentArea:visible').outerHeight()
                 // );
+
+                height = (height < 200) ? 200 : height;
+
+                console.log(height);
 
                 angular.element(element).find('iframe, .angular-squire-wrapper').css({
                     height: height
