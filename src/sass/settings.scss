@@ -572,14 +572,16 @@
             line-height: 41px;
             a.pm_button {
                 border-color: $alt;
-                background: $secondary;
-                color: #fff;
+                background: rgba(255,255,255,.8);
+                color: $btn;
                 border-bottom: none;
                 padding: 0 1rem;
                 height: 41px;
                 line-height: 41px;
+                position: relative;
+                top: 1px;
                 &:hover {
-                    background: lighten($secondary, 5%);
+                    background: rgba(255,255,255,.85);
                 }
             }
         }
@@ -587,6 +589,7 @@
             a.pm_button {
                 background: #fff !important;
                 color: $primary;
+                top: 0;
             }
         }
     }

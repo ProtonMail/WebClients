@@ -1,6 +1,6 @@
 .pm_button {
     text-decoration: none;
-    color: #838897;
+    color: $btn;
     padding: 0 10px;
     height: 35px;
     line-height: 35px;
@@ -176,7 +176,7 @@
     }
     a {
         text-decoration: none;
-        color: #838897;
+        color: $btn;
         padding: 0 10px;
         height: 33px;
         line-height: 33px;
