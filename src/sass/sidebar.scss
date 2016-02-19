@@ -126,6 +126,7 @@ body {
             position: relative;
             overflow: auto;
             height: calc(100% - 360px);
+            min-height: 50px; // 2 labels
         }
         div.labels {
             font-size: 14px;
@@ -390,6 +391,18 @@ body.mobileMode {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (max-height: 500px) {
+    #pm_sidebar {
+        height: 100%;
+        section.sidebar {
+            overflow: auto;
+            #sidebarLabels {
+                height: initial;
             }
         }
     }
