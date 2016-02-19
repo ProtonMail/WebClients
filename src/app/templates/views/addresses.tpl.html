@@ -21,11 +21,11 @@
                         <div class="pm_sort">
                             <ul data-as-sortable="aliasDragControlListeners" data-ng-model="activeAddresses">
                                 <li ng-repeat="address in activeAddresses" as-sortable-item="">
-                                    <div as-sortable-item-handle="">
+                                    <span as-sortable-item-handle="">
                                         <i class="fa fa-ellipsis-v"></i>
                                         <button class="pm_button pull-right link" ng-show="address.Type === 2 || address.Type === 3" ng-click="disable(address)">{{ 'DISABLE' | translate }}</button>
                                         <strong>{{ address.Email }}</strong>
-                                    </div>
+                                    </span>
                                 </li>
                             </ul>
                         </div>

@@ -789,6 +789,20 @@ body.mobileMode {
 
         .settings {
             padding: 0 10px;
+            .pm_sort ul {
+                border-right: 1rem solid $border;
+                li {
+                    padding-right: 0;
+                    .label {
+                        max-width: 80px;
+                    }
+                    .pull-right {
+                        .pm_button {
+                            width: initial;
+                        }
+                    }
+                }
+            }
         }
         .pm_tabs {
             padding-left: 10px;
