@@ -201,7 +201,7 @@ header#pm_header-desktop {
 			}
 			&.active,
 			&:hover {
-				a {
+				& > a {
 					border-top-color: #505061 !important;
 					color: #fff !important;
 					.fa {

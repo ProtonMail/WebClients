@@ -14,7 +14,7 @@ $maxHeight: 		auto; // was 40rem
 $box-shadow:		1px 1px 3px rgba(0, 0, 0, 0.33), 0 0 2px rgba(0, 0, 0, 0.33);
 
 // Theme Colors
-$primary: 			darken(#9397cd, 5%);
+$primary: 			#9397cd;
 $secondary: 		#505061;
 $secondary-alt:		#6e6f80;
 $alert-info: 		#e6e6f2;
@@ -32,7 +32,7 @@ $green:				#aecf96;
 $red:				#C18183;
 $yellow:			#dfdf19;
 $read:				#edeff2;
-$alt:				#838897;
+$alt:				#6a6f7c;
 $alt-light:			lighten($alt, 5%);
 $exp:				#ec6446;
 $text:				#222;
@@ -41,7 +41,7 @@ $active:			#828895;
 $tags:				#d4d7dc;
 $tour:				#34cc69;
 
-// Desktop 
+// Desktop
 $desktop:			1200px;
 
 // MOBILE
@@ -50,4 +50,3 @@ $tablet-portrait:	800px;
 
 // Mobile
 $mobile-landscape: 	640px;
-

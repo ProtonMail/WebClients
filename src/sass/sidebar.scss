@@ -1,3 +1,6 @@
+// This is the modification to the sidebar menu to solve the scrolling issue. Set to 0 to undo.
+$sidebarReduction: 6px;
+
 // DESKTOP
 body {
     #pm_sidebar {
@@ -15,12 +18,12 @@ body {
         height: calc(100% - 61px);
         background: $secondary;
         position: relative;
-        overflow: auto;
+        overflow: hidden;
         #labelSettings {
             margin-bottom: 0;
         }
         a.compose {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 12px;
             padding: 0 0 0 25px;
             width: 100%;
@@ -40,10 +43,10 @@ body {
             display: block;
             list-style-type: none;
             font-size: 14px;
-            margin: 0 -20px 20px -20px;
+            margin: 0 -20px 10px -20px;
             li {
-                height: ($sidebarRowHeight);
-                line-height: ($sidebarRowHeight );
+                height: ($sidebarRowHeight - $sidebarReduction);
+                line-height: ($sidebarRowHeight - $sidebarReduction);
                 display: block;
                 &.divider {
                     height: 1px;
@@ -53,8 +56,8 @@ body {
                 }
                 a {
                     text-decoration: none;
-                    height: ($sidebarRowHeight - 2);
-                    line-height: ($sidebarRowHeight - 2);
+                    height: ($sidebarRowHeight - 2 - $sidebarReduction);
+                    line-height: ($sidebarRowHeight - 2 - $sidebarReduction);
                     display: block;
                     border-bottom: 1px solid transparent;
                     border-top: 1px solid transparent;
@@ -68,8 +71,8 @@ body {
                         color: $white;
                     }
                     i.fa {
-                        height: $sidebarRowHeight;
-                        line-height: $sidebarRowHeight;
+                        height: ($sidebarRowHeight - $sidebarReduction);
+                        line-height: ($sidebarRowHeight - $sidebarReduction);
                         display: block;
                         float: left;
                         width: 25px;
@@ -79,8 +82,8 @@ body {
                     .fa-repeat {
                         float: right;
                         display: block;
-                        line-height: ($sidebarRowHeight - 4);
-                        height: ($sidebarRowHeight - 4);
+                        line-height: ($sidebarRowHeight - 4 - $sidebarReduction);
+                        height: ($sidebarRowHeight - 4 - $sidebarReduction);
                         margin-right: 15px;
                         position: absolute;
                         right: 0;
@@ -122,6 +125,8 @@ body {
         #sidebarLabels {
             position: relative;
             overflow: auto;
+            height: calc(100% - 360px);
+            min-height: 50px; // 2 labels
         }
         div.labels {
             font-size: 14px;
@@ -227,7 +232,7 @@ body {
             font-size: 10px;
             padding-top: 10px;
             .wrap {
-                padding: 5px 0 0;
+                padding: 0;
                 margin: 0 -10px 1rem;
             }
             div.link {
@@ -260,7 +265,7 @@ body {
             .bar {
                 height: 1px;
                 background-color: rgba(255,255,255,.1);
-                width: 80%;
+                width: 90%;
                 display: block;
                 position: relative;
                 margin: .5rem auto;
@@ -386,6 +391,18 @@ body.mobileMode {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (max-height: 500px) {
+    #pm_sidebar {
+        height: 100%;
+        section.sidebar {
+            overflow: auto;
+            #sidebarLabels {
+                height: initial;
             }
         }
     }
