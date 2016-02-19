@@ -42,7 +42,7 @@
                             <ul>
                                 <li ng-repeat="address in disabledAddresses">
                                     <div>
-                                        <button type="button" class="pm_button pull-right link" ng-show="address.Keys.length === 0" ng-click="generate(address)">{{ 'GENERATE_MISSING_KEYS' | translate }}</button>
+                                        <button type="button" class="pm_button pull-right link" ng-show="address.Keys.length === 0" ng-click="generate(address)">{{ 'GENERATE_KEYS' | translate }}</button>
                                         <button type="button" class="pm_button pull-right link" ng-show="address.Type === 2 || address.Type === 3" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
                                         <span>{{ address.Email }}</span> <span class="pm_badge error" ng-show="address.Keys.length === 0">{{ 'MISSING_KEYS' | translate }}</span>
                                     </div>
