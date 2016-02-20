@@ -702,6 +702,21 @@ angular.module('proton.routes', [
         }
     })
 
+    .state('secured.methods', {
+        url: '/methods',
+        views: {
+            'content@secured': {
+                templateUrl: 'templates/views/methods.tpl.html',
+                controller: 'MethodsController'
+            }
+        },
+        resolve: {
+            methods: function(Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.methods());
+            }
+        }
+    })
+
     .state('secured.invoice', {
         url: '/invoice/:time',
         onEnter: function($rootScope) {

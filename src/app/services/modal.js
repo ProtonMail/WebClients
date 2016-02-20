@@ -347,19 +347,30 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/card.tpl.html',
         controller: function(params) {
             // Variables
-            var card = params.methods[0].Details;
-
-            this.cardTypeIcon = 'fa-credit-card';
-            this.number = '•••• •••• •••• ' + card.Last4;
-            this.fullname = card.Name;
-            this.month = card.ExpMonth;
-            this.year = card.ExpYear;
-            this.cvc = '•••';
-            this.zip = card.ZIP;
             this.countries = tools.countries;
-            this.country = _.findWhere(this.countries, {value: card.Country});
             this.cardChange = false;
             this.process = false;
+
+            if (angular.isDefined(params.method)) {
+                this.text = 'Update your credit card information.';
+                this.number = '•••• •••• •••• ' + method.Details.Last4;
+                this.fullname = method.Details.Name;
+                this.month = method.Details.ExpMonth;
+                this.year = method.Details.ExpYear;
+                this.cvc = '•••';
+                this.zip = method.Details.ZIP;
+                this.country = _.findWhere(this.countries, {value: method.Details.Country});
+            } else {
+                this.text = 'Add a credit card.';
+                this.number = '';
+                this.fullname = '';
+                this.month = '';
+                this.year = '';
+                this.cvc = '';
+                this.zip = '';
+                this.country = _.findWhere(this.countries, {value: 'US'});
+            }
+
             // Functions
             var validateCardNumber = function() {
                 if (this.cardChange === true) {
