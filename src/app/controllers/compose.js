@@ -31,6 +31,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     var timeoutStyle;
     var dropzone;
 
+    $scope.addresses = authentication.user.Addresses;
     $scope.messages = [];
     $scope.isOver = false;
     $scope.queuedSave = false;
@@ -95,6 +96,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             $rootScope.activeComposer = false;
             window.onbeforeunload = undefined;
         }
+    });
+
+    $scope.$on('updateUser', function(event) {
+        $scope.addresses = authentication.user.Addresses;
     });
 
     $scope.$on('onDrag', function() {
