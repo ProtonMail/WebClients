@@ -105,10 +105,10 @@ angular.module("proton.controllers.Settings")
         }
 
         if (angular.isDefined(plans)) {
-            var spaceOption = _.findWhere($scope.spaceOptions, {value: $scope.subscription.MaxSpace}) || $scope.spaceOptions[0];
-            var domainOption = _.findWhere($scope.domainOptions, {value: $scope.subscription.MaxDomains}) || $scope.domainOptions[0];
-            var addressOption = _.findWhere($scope.addressOptions, {value: $scope.subscription.MaxAddresses}) || $scope.addressOptions[0];
-            var memberOption = _.findWhere($scope.memberOptions, {value: $scope.subscription.MaxMembers}) || $scope.memberOptions[0];
+            var spaceOption = _.findWhere($scope.spaceOptions, {value: $scope.count('MaxSpace')}) || $scope.spaceOptions[0];
+            var domainOption = _.findWhere($scope.domainOptions, {value: $scope.count('MaxDomains')}) || $scope.domainOptions[0];
+            var addressOption = _.findWhere($scope.addressOptions, {value: $scope.count('MaxAddresses')}) || $scope.addressOptions[0];
+            var memberOption = _.findWhere($scope.memberOptions, {value: $scope.count('MaxMembers')}) || $scope.memberOptions[0];
 
             $scope.plans = plans;
             $scope.spaceAddon = _.findWhere(plans, {Name: '1gb'});
