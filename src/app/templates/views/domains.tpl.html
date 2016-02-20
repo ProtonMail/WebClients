@@ -124,11 +124,11 @@
                             <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
                             <!-- <a ui-sref="secured.members" class="pm_button">{{ 'ADD_USER' | translate }}</a> -->
                         </p>
+                        <p class="alert alert-info">Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
                         <table class="pm_table pm_form bordered" ng-show="domain.Addresses.length > 0">
                             <thead>
                                 <tr>
                                     <th>{{ 'ADDRESS' | translate }}</th>
-                                    <!-- <th>{{ 'NICKNAME' | translate }}</th> -->
                                     <th style="width: 6rem">{{ 'STATUS' | translate }}</th>
                                     <th class="text-right actions" style="width: 10rem">{{ 'ACTIONS' | translate }}</th>
                                 </tr>
@@ -139,9 +139,6 @@
                                         <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
                                         <span ng-show="address.Status === 0">{{ address.Email }}</span>
                                     </td>
-                                    <!-- <td>
-                                        <strong>{{ member(address.MemberID).NickName }}</strong>
-                                    </td> -->
                                     <td>
                                         <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
                                         <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
