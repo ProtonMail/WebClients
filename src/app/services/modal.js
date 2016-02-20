@@ -353,13 +353,13 @@ angular.module("proton.modals", [])
 
             if (angular.isDefined(params.method)) {
                 this.text = 'Update your credit card information.';
-                this.number = '•••• •••• •••• ' + method.Details.Last4;
-                this.fullname = method.Details.Name;
-                this.month = method.Details.ExpMonth;
-                this.year = method.Details.ExpYear;
+                this.number = '•••• •••• •••• ' + params.method.Details.Last4;
+                this.fullname = params.method.Details.Name;
+                this.month = params.method.Details.ExpMonth;
+                this.year = params.method.Details.ExpYear;
                 this.cvc = '•••';
-                this.zip = method.Details.ZIP;
-                this.country = _.findWhere(this.countries, {value: method.Details.Country});
+                this.zip = params.method.Details.ZIP;
+                this.country = _.findWhere(this.countries, {value: params.method.Details.Country});
             } else {
                 this.text = 'Add a credit card.';
                 this.number = '';
