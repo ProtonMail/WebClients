@@ -562,7 +562,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.onAddFile = function(message) {
-        $('#uid' + message.uid + ' .btn-add-attachment').click(function() {
+        $('#uid' + message.uid + ' .btn-add-attachment').on('click touchstart', function() {
             if(angular.isUndefined(message.ID)) {
                 // We need to save to get an ID
                     $scope.addFile(message);
