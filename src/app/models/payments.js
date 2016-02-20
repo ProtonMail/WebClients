@@ -33,7 +33,7 @@ angular.module("proton.models.payments", [])
                         data.Plans.unshift({
                             Type: 1,
                             Name: 'free',
-                            Title: 'ProtonMail Free',
+                            Title: 'Free',
                             Amount: 0,
                             MaxDomains: 0,
                             MaxAddresses: 0,
