@@ -171,6 +171,22 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Calculate price for a specific type in the current subscription
+     * @param {String} name
+     */
+    $scope.price = function(name) {
+        var price = 0;
+
+        if ($scope.subscription.Plans) {
+            _.each(_.where($scope.subscription.Plans, {Type: 0, Name: name}) , function(plan) {
+                price += plan.Amount;
+            });
+        }
+
+        return price;
+    };
+
+    /**
     * Return the amount of each plan
     * @param {String} name
     */

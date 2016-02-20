@@ -53,6 +53,21 @@
                                     <td class="text-right actions">{{ plan.Amount / 100 | currency: plan.Currency }}</td>
                                 </tr>
                                 <tr>
+                                    <th></th>
+                                    <td><strong>{{ 'STORAGE' | translate }}</strong></td>
+                                    <td class="text-right actions">{{ price('1gb') / 100 | currency: subscription.Currency }}</td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td><strong>{{ 'DOMAINS' | translate }}</strong></td>
+                                    <td class="text-right actions">{{ price('1domain') / 100 | currency: subscription.Currency }}</td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td><strong>{{ 'ADDRESSES' | translate }}</strong></td>
+                                    <td class="text-right actions">{{ price('5address') / 100 | currency: subscription.Currency }}</td>
+                                </tr>
+                                <tr>
                                     <th>{{ 'TOTAL_PRICE' | translate }}:</th>
                                     <td>
                                         <strong ng-show="subscription.Cycle === 1">{{ 'MONTHLY' | translate }}</strong>
