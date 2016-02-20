@@ -112,7 +112,14 @@
                         <div class="plan" ng-class="{'active': plan.Name === subscription.Name, 'selected': PANDA }">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
                             <aside>{{ 'SELECTED_PLAN' | translate }}</aside>
-                            <h3 class="text-center">{{ plan.Title }} <span class="text-purple">{{ plan.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</span></h3>
+                            <h3 class="text-center">
+                                {{ plan.Title }}
+                                <span class="text-purple">{{ plan.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</span>
+                                <br><br>
+                                <button type="button" ng-click="choose(plan)" class="pm_button primary" ng-hide="plan.Name === subscription.Name">{{ 'CHOOSE_PLAN' | translate }}</button>
+                                <button type="button" ng-click="choose(plan)" class="pm_button primary" ng-show="plan.Name === subscription.Name && subscription.Name !== 'free'">{{ 'UPDATE_PLAN' | translate }}</button>
+                                <button type="button" class="pm_button link dead" ng-show="plan.Name === subscription.Name && subscription.Name === 'free'">{{ 'YOUR_CURRENT_PLAN' | translate }}</button>
+                            </h3>
                             <ul class="features">
                                 <li>
                                     <i class="fa fa-check"></i>
