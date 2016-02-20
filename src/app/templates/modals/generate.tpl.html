@@ -25,17 +25,12 @@
                 <table class="pm_table">
                     <thead>
                         <tr>
-                            <th>{{ 'FINGERPRINT' | translate }}</th>
                             <th>{{ 'ADDRESS' | translate }}</th>
                             <th style="width: 10rem" class="text-right">{{ 'STATUS' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="address in ctrl.addresses | orderBy: 'Send'">
-                            <td>
-                                <span ng-show="address.state === 1">{{ 'GENERATING' | translate }}</span>
-                                <code ng-show="address.fingerprint">{{ address.fingerprint | limitTo: 8 }}...</code>
-                            </td>
                             <td>{{ address.Email }}</td>
                             <td class="text-right">
                                 <span ng-show="address.state === 0" class="pm_badge">{{ 'QUEUED' | translate }}</span>
