@@ -415,6 +415,10 @@ angular.module("proton.controllers.Settings")
                     } else {
                         notify({message: $translate.instant('AMOUNT_IS_DIFFERENT'), classes: 'notification-danger'});
                     }
+                } else if (methods.data && methods.data.Error) {
+                    notify({message: methods.data.Error, classes: 'notification-danger'});
+                } else if (valid.data && valid.data.Error) {
+                    notify({message: valid.data.Error, classes: 'notification-danger'});
                 }
             }));
         }
