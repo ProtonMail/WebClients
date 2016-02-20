@@ -575,25 +575,28 @@
         }
     }
     .pm_tabs {
-        padding: 3px 10px 0;
+        padding: 0 9px;
         display: block;
         box-sizing: border-box;
         width: 100%;
         background: $alt;
         overflow: hidden;
         li {
-            height: 41px;
-            line-height: 41px;
+            height: 40px;
+            line-height: 40px;
             a.pm_button {
                 border-color: $alt;
                 background: rgba(255,255,255,.8);
                 color: $btn;
                 border-bottom: none;
                 padding: 0 1rem;
-                height: 41px;
-                line-height: 41px;
+                height: 40px;
+                line-height: 40px;
+                box-sizing: border-box;
+                overflow: hidden;
                 position: relative;
-                top: 1px;
+                float: left;
+                border-bottom: 1px solid $alt;
                 &:hover {
                     background: rgba(255,255,255,.85);
                 }
@@ -603,7 +606,7 @@
             a.pm_button {
                 background: #fff !important;
                 color: $primary;
-                top: 0;
+                border-bottom-color: #fff;
             }
         }
     }
