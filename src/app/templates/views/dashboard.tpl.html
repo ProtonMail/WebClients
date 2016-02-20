@@ -52,11 +52,6 @@
                                     <td><strong>{{ plan.Title }}</strong></td>
                                     <td class="text-right actions">{{ plan.Amount / 100 | currency: plan.Currency }}</td>
                                 </tr>
-                                <tr ng-repeat="plan in subscription.Plans | filter: {Type: 0}">
-                                    <th><span ng-show="$first">{{ 'ADDONS' | translate }}:</span></th>
-                                    <td><strong>{{ plan.Title }}</strong></td>
-                                    <td class="text-right">+{{ plan.Amount / 100 | currency: plan.Currency }}</td>
-                                </tr>
                                 <tr>
                                     <th>{{ 'TOTAL_PRICE' | translate }}:</th>
                                     <td>
