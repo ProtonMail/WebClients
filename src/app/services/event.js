@@ -121,11 +121,7 @@ angular.module("proton.event", ["proton.constants"])
 				                message: 'Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', // TODO need text
 								addresses: dirtyAddresses,
 								cancel: function() {
-									// PANDA CRITICAL.
-									// Needed this fake fix so I can test...
-									if (typeof eventManager !== "undefined") {
-										eventManager.call();
-									}
+									api.call();
 									generateModal.deactivate();
 								}
 							}
