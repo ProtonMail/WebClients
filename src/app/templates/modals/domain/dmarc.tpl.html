@@ -6,11 +6,11 @@
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
                 <span ng-show="ctrl.domain.DmarcState === 0 || ctrl.domain.DmarcState === 1 || ctrl.domain.DmarcState === 2" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
                 <span ng-show="ctrl.domain.DmarcState === 3" class="pull-right pm_badge success">{{ 'SET!' | translate }}</span>
-                <h4 class="modal-title">7. DMARC <em>({{ 'OPTIONAL' | translate }})</em></h4>
+                <h4 class="modal-title">7. DMARC <em>({{ 'OPTIONAL_ADVANCED' | translate }})</em></h4>
             </div>
             <div class="modal-body pm_form">
                 <p>If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
-                <p>Typical DMARC record:</p>
+                <p>Typical DMARC record. Note, you MUST change this before adding it to your DNS.</p>
 
                 <table class="pm_table record">
                     <tr>
