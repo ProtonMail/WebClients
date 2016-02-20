@@ -288,7 +288,8 @@
                 border: 1px solid $border;
                 margin-top: 2rem;
                 position: relative;
-                header {
+                header,
+                aside {
                     position: absolute;
                     left: -1px;
                     right: -1px;
@@ -305,10 +306,17 @@
                     line-height: 2rem;
                     display: none;
                 }
-                &:hover {
-                    border-color: $primary;
+                aside {
+                    background: $green;
+                    border: 1px solid $green;
                 }
                 &.selected {
+                    border-color: $green;
+                    aside {
+                        display: block;
+                    }
+                }
+                &.active {
                     border-color: $primary;
                     header {
                         display: block;
@@ -502,6 +510,12 @@
                     strong {
                         color: #000;
                         margin-right: .5rem;
+                    }
+                    em {
+                        font-weight: normal;
+                        font-style: normal;
+                        line-height: 2rem;
+                        font-size: 90%;
                     }
                 }
                 .action {
@@ -1065,7 +1079,10 @@ body.mobileMode {
                     }
                     .features {
                         font-size: 80%;
-                        white-space: nowrap;
+                        word-wrap: break-word;
+                        .fa {
+                            display: none !important;
+                        }
                     }
                     .details {
                         .feat {

@@ -109,8 +109,9 @@
                 </header>
                 <div class="pm_grid plans">
                     <div class="col-1-3" ng-repeat="plan in plans | filter: {Type: 1} | orderBy: 'Amount'" ng-show="plan.display === true">
-                        <div class="plan" ng-class="{'selected': plan.Name === subscription.Name}">
+                        <div class="plan" ng-class="{'active': plan.Name === subscription.Name, 'selected': PANDA }">
                             <header>{{ 'YOUR_CURRENT_PLAN' | translate }}</header>
+                            <aside>{{ 'SELECTED_PLAN' | translate }}</aside>
                             <h3 class="text-center">{{ plan.Title }} <span class="text-purple">{{ plan.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</span></h3>
                             <ul class="features">
                                 <li>
@@ -170,6 +171,8 @@
                                     <strong>{{ 'TOTAL' | translate }}:</strong>
                                     <span class="text-purple" ng-show="plan.Amount === 0">{{ 'FREE' | translate }}</span>
                                     <span class="text-purple" ng-show="plan.Amount > 0">{{ total(plan) / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }} {{ 'PER_MONTH' | translate }}</span>
+                                    <br>
+                                    <em>(Pay yearly and save 20%.)</em>
                                 </div>
                                 <div ng-show="plan.Cycle === 12">
                                     <small class="text-gray">{{ 'BILLED' | translate }} {{ total(plan) / 100 | currency: plan.Currency }} {{ 'PER_YEAR' | translate }}</small>
