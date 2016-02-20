@@ -9,7 +9,7 @@
                         <div class="well">
                             <table class="pm_table plain">
                                 <tr>
-                                    <th>{{ 'USERNAME' | translate }}:</th>
+                                    <th style="width:7rem">{{ 'USERNAME' | translate }}:</th>
                                     <td>
                                         <strong>{{ user.DisplayName }}</strong>
                                     </td>
@@ -18,7 +18,7 @@
                                 <tr>
                                     <th>{{ 'CUSTOM_DOMAINS' | translate }}:</th>
                                     <td>
-                                        <strong>{{ organization.UsedDomains }} {{ 'OF' | translate }} {{ organization.MaxDomains }} {{ 'USED' | translate }}</strong>
+                                        <strong>{{ organization.UsedDomains }} {{ 'OF' | translate }} {{ organization.MaxDomains }}</strong>
                                     </td>
                                     <td class="text-right actions">
                                         <a ui-sref="secured.domains">{{ 'MANAGE' | translate }}</a>
@@ -27,7 +27,7 @@
                                 <tr>
                                     <th>{{ 'ADDRESSES' | translate }}:</th>
                                     <td>
-                                        <strong>{{ organization.UsedAddresses }} {{ 'OF' | translate }} {{ organization.MaxAddresses }} {{ 'USED' | translate }}</strong>
+                                        <strong>{{ organization.UsedAddresses }} {{ 'OF' | translate }} {{ organization.MaxAddresses }}</strong>
                                     </td>
                                     <td class="text-right actions">
                                         <a ui-sref="secured.addresses">{{ 'MANAGE' | translate }}</a>
@@ -36,7 +36,7 @@
                                 <tr>
                                     <th>{{ 'STORAGE' | translate }}:</th>
                                     <td>
-                                        <strong>{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }} {{ 'USED' | translate }}</strong>
+                                        <strong>{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }}</strong>
                                     </td>
                                     <td class="text-right actions"></td>
                                 </tr>
@@ -48,7 +48,7 @@
                         <div class="well">
                             <table class="pm_table plain">
                                 <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
-                                    <th>{{ 'PLAN' | translate }}:</th>
+                                    <th style="width:7rem">{{ 'PLAN' | translate }}:</th>
                                     <td><strong>{{ plan.Title }}</strong></td>
                                     <td class="text-right actions">{{ plan.Amount / 100 | currency: plan.Currency }}</td>
                                 </tr>
@@ -100,7 +100,7 @@
             <section class="setting pm_form full" id="plans">
                 <legend>{{ 'PLANS' | translate }}</legend>
                 <header>
-                    <a href="https://protonmail.com/support/knowledge-base/paid-plans/" class="pm_button link pull-right">Learn About ProtonMail Plans</a>
+                    <a href="https://protonmail.com/support/knowledge-base/paid-plans/" target="_blank" class="pm_button link pull-right">Learn About ProtonMail Plans</a>
                     <div class="group">
                         <label>{{ 'CURRENCY' | translate }}</label>
                         <div class="pm_buttons">
