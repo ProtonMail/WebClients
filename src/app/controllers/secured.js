@@ -2,23 +2,25 @@ angular.module("proton.controllers.Secured", [])
 
 .controller("SecuredController", function(
     $cookies,
-    $scope,
     $rootScope,
+    $scope,
     $state,
     $stateParams,
     $timeout,
     $translate,
     $window,
     authentication,
+    cache,
+    cacheCounters,
+    CONSTANTS,
     eventManager,
     feedbackModal,
-    cacheCounters,
-    cache,
-    CONSTANTS,
+    generateModal,
     tools
 ) {
     var format;
     var language = window.navigator.userLanguage || window.navigator.language;
+    var dirtyAddresses = [];
 
     if(language === 'en-US') {
         format = 'MM/DD/YYYY';
@@ -59,6 +61,26 @@ angular.module("proton.controllers.Secured", [])
 
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
+
+    _.each(authentication.user.Addresses, function(address) {
+        if (address.Keys.length === 0 && authentication.user.Private === 1) {
+            dirtyAddresses.push(address);
+        }
+    });
+
+    if (dirtyAddresses.length > 0 && generateModal.active() === false) {
+        generateModal.activate({
+            params: {
+                title: 'Setting up your Addresses',
+                message: 'Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', // TODO need text
+                addresses: dirtyAddresses,
+                cancel: function() {
+                    eventManager.call();
+                    generateModal.deactivate();
+                }
+            }
+        });
+    }
 
     // ===================================
     // FEEDBACK FORM (TEMPORARY - REMOVE ON SUNDAY / MONDAY)
