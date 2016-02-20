@@ -42,6 +42,9 @@
         #pm_composer .composer .pm_button {
             line-height: 26px;
         }
+        .pm_button.primary.compose {
+            line-height: 40px;
+        }
         .pm_buttons a,
         .pm_button {
             line-height: 30px;
@@ -62,7 +65,7 @@
 
 // Windows 7, IE 11
 .ua-windows_nt-6.ua-ie-11-0 {
-    #pm_settings #plans .plans .plan .features li .pm_select select {
+    #pm_settings #plans .plans .plan .features li .pm_select {
         position: relative;
         top: 6px;
     }
