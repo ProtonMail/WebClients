@@ -174,8 +174,8 @@
                                     <span class="text-purple" ng-show="plan.Amount === 0">{{ 'FREE' | translate }}</span>
                                     <span class="text-purple" ng-show="plan.Amount > 0">{{ total(plan) / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }} {{ 'PER_MONTH' | translate }}</span>
                                 </div>
-                                <div ng-hide="plan.Name === 'free'">
-                                    <em >(Pay yearly and save 20%.)</em>
+                                <div>
+                                    &nbsp;<em ng-hide="plan.Name === 'free'">(Pay yearly and save 20%.)</em>
                                 </div>
                                 <div ng-show="plan.Cycle === 12">
                                     <small class="text-gray">{{ 'BILLED' | translate }} {{ total(plan) / 100 | currency: plan.Currency }} {{ 'PER_YEAR' | translate }}</small>
