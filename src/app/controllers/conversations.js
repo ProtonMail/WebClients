@@ -535,39 +535,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
     };
 
-
-    $scope.notifyUsersLayoutToggle = function() {
-        // Show users that they can toggle layouts
-        if (authentication.user.ViewLayout === 0) {
-
-            if (!$cookies.get('feature_layoutToggle') && $window.outerWidth > 1030) {
-
-                var now = new Date(),
-                exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
-
-                $cookies.put('feature_layoutToggle', 'true', {
-                    expires: exp
-                });
-                notify({
-                    message: 'You can now change between Column and Row modes.',
-                    duration: 14000
-                });
-                $scope.showTip = true;
-                $timeout( function() {
-                    $scope.showTip = false;
-                }, 140000);
-            }
-
-        }
-    };
-
-    $scope.notifyUsersLayoutToggle();
-    $(window).on('resize', $scope.notifyUsersLayoutToggle);
-
     // Let users change the col/row modes.
     $scope.changeLayout = function(mode) {
 
-        $scope.showTip = false;
         var newLayout;
 
         if (mode === 'rows' && $rootScope.layoutMode!=='rows') {
