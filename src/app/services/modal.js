@@ -713,8 +713,6 @@ angular.module("proton.modals", [])
                 var count = 0;
                 var plans = _.filter(params.plans, function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; });
 
-                console.log('count', plans);
-
                 _.each(plans, function(plan) {
                     count += plan[type];
                 });
@@ -1269,7 +1267,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('donateModal', function(pmModal, Payment, notify, tools, $translate, $q) {
+.factory('donateModal', function(authentication, pmModal, Payment, notify, tools, $translate, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/donate.tpl.html',
@@ -1282,7 +1280,7 @@ angular.module("proton.modals", [])
                 {label: 'EUR', value: 'EUR'},
                 {label: 'CHF', value: 'CHF'}
             ];
-            this.currency = this.currencies[0];
+            this.currency = _.findWhere(this.currencies, {value: authentication.user.Currency});
             this.number = '';
             this.month = '';
             this.year = '';
@@ -1293,11 +1291,7 @@ angular.module("proton.modals", [])
             this.zip = '';
 
             if (angular.isDefined(params.currency)) {
-                var index = _.findIndex(this.currencies, {value: params.currency});
-
-                if (index !== -1) {
-                    this.currency = this.currencies[index];
-                }
+                this.currency = _.findWhere(this.currencies, {value: params.currency});
             }
 
             // Functions
@@ -1367,7 +1361,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('monetizeModal', function(pmModal) {
+.factory('monetizeModal', function(pmModal, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/monetize.tpl.html',
@@ -1375,7 +1369,7 @@ angular.module("proton.modals", [])
             this.amounts = [5, 10, 25, 50, 100];
             this.currencies = ['EUR', 'USD', 'CHF'];
             this.amount = 25; // default value for the amount
-            this.currency = 'USD'; // default currency
+            this.currency = authentication.user.Currency; // default currency
 
             this.donate = function() {
                 params.donate(this.amount, this.currency);
