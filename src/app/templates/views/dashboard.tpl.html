@@ -209,7 +209,7 @@
                                 </div>
                             </div>
                             <div class="action">
-                                <button type="button" ng-click="choose(plan)" class="pm_button" ng-class="{dead: plan.Name === subscription.Name, primary: plan.Name !== subscription.Name}">
+                                <button type="button" ng-click="choose(plan)" class="pm_button" ng-class="{primary: plan.Name !== subscription.Name}">
                                     <span ng-show="plan.Name === subscription.Name">{{ 'UPDATE_PLAN' | translate }}</span>
                                     <span ng-show="plan.Name !== subscription.Name">{{ 'SUBSCRIBE_TO' | translate }} {{ plan.Name }}</span>
                                 </button>
