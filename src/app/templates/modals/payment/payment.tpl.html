@@ -58,9 +58,9 @@
                             <td class="desc">{{ 'CREDIT' | translate }}</td>
                             <td class="text-green price text-right"><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
-                        <tr ng-show="ctrl.valid.Proration !== 0 || ctrl.valid.CouponDiscount !== 0 || ctrl.valid.Credit !== 0">
+                        <tr>
                             <td class="desc"><strong>{{ 'AMOUNT_DUE' | translate }}</strong></td>
-                            <td class="price text-right"><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td class="price text-right"><strong>{{ (ctrl.valid.AmountDue || ctrl.valid.Amount) / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                     </tbody>
                 </table>

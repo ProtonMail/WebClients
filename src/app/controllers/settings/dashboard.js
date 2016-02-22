@@ -30,7 +30,6 @@ angular.module("proton.controllers.Settings")
     $scope.subscription = {};
     $scope.monthlyPlans = [];
     $scope.yearlyPlans = [];
-    $scope.credit = authentication.user.Credit;
 
     // Options
     $scope.spaceOptions = [
@@ -88,7 +87,11 @@ angular.module("proton.controllers.Settings")
 
     // Listeners
     $scope.$on('updateUser', function(event) {
-        $scope.credit = authentication.user.Credit;
+        $scope.user = {
+            credit: authentication.user.Credit,
+            usedSpace: authentication.user.UsedSpace,
+            maxSpace: authentication.user.MaxSpace
+        };
     });
 
     /**
