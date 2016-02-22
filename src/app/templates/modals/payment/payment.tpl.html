@@ -16,7 +16,7 @@
                         <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
                             <td class="desc">{{ plan.Title }} {{ 'PLAN' | translate }}</td>
                             <td class="price text-right">
-                                <strong>{{ plan.Amount / 100 | currency: plan.Currency }}</strong>
+                                <strong>{{ ctrl.valid.Amount / 100 | currency: plan.Currency }}</strong>
                             </td>
                         </tr>
                         <tr ng-repeat="plan in ctrl.plans | filter: {Type: 0, Name: '1gb'}">
