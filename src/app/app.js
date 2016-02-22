@@ -217,8 +217,14 @@ angular.module('proton', [
     });
 
     // Less than 1030 / Tablet Mode
-    $rootScope.$on('sidebarMobileToggle', function() {
-        $rootScope.showSidebar = !$rootScope.showSidebar;
+    // can pass in show (true/false) to explicity show/hide
+    $rootScope.$on('sidebarMobileToggle', function(event, show) {
+        if (typeof show !== "undefined") {
+            $rootScope.showSidebar = show;
+        }
+        else {
+            $rootScope.showSidebar = !$rootScope.showSidebar;
+        }
     });
 
     $rootScope.mobileMode = false;

@@ -23,6 +23,12 @@ html.protonmail {
 			&.locked {
 				overflow: initial !important;
 			}
+			&.mobileSidebarActive {
+				overflow: hidden !important;
+				#pm_main {
+					display: none;
+				}
+			}
 			#body {
 				height: initial;
 				overflow: initial !important;
