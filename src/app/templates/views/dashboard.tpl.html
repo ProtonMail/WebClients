@@ -78,7 +78,7 @@
                                 <tr ng-show="credit > 0">
                                     <th>{{ 'AVAILABLE_CREDIT' | translate }}:</th>
                                     <td></td>
-                                    <td class="text-right actions">{{ credit | currency: currency }}</td>
+                                    <td class="text-right actions">{{ credit / 100 | currency: currency }}</td>
                                 </tr>
                                 <tr>
                                     <th>{{ 'PAYMENT' | translate }}:</th>
