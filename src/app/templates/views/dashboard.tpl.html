@@ -97,7 +97,7 @@
                     </div>
                     <div class="col-1-2 text-center" ng-show="subscription.Name === 'free'">
                         <img src="http://www.wwf.be/_media/panda_02_770723.jpg" alt="panda" style="width: 100%" />
-                        <button type="button" class="pm_button primary" ng-click="">{{ 'DONATE' | translate }}</button>
+                        <a ui-sref="https://protonmail.com/donate" target="_blank" class="pm_button primary">{{ 'DONATE' | translate }}</a>
                     </div>
                 </div>
             </section>
@@ -234,7 +234,7 @@
                                         </div>
                                     </div>
                                     <div class="action">
-                                        <button type="button" ng-click="choose(plan)" class="pm_button" ng-class="{dead: plan.Name === subscription.Name, primary: plan.Name !== subscription.Name}">
+                                        <button type="button" ng-click="choose(plan)" class="pm_button" ng-class="{primary: plan.Name !== subscription.Name}">
                                             <span ng-show="plan.Name === subscription.Name">{{ 'ALREADY_SUBSCRIBED' | translate }}</span>
                                             <span ng-show="plan.Name !== subscription.Name">{{ 'SUBSCRIBE_TO' | translate }} {{ plan.Name }}</span>
                                             <span ng-show="false">{{ 'UPDATE_PLAN' | translate }}</span>
