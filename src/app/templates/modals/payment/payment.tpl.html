@@ -5,7 +5,7 @@
     <div class="modal-body pm_form">
         <div class="pm_grid">
             <div class="col-1-2">
-                <table class="pm_table">
+                <table class="pm_table margin">
                     <thead>
                         <tr>
                             <th class="desc">{{ 'PLAN' | translate }}</th>
@@ -64,10 +64,14 @@
                         </tr>
                     </tbody>
                 </table>
-                <p class="text-center" ng-show="ctrl.valid.Cycle === 1">
-                    <strong class="text-green">Save 20% with the annual plan!</strong><br /><br />
-                    <button type="button" class="pm_button primary" ng-click="ctrl.yearly()">{{ 'PAY_YEARLY' | translate }}</button>
-                </p>
+                <div class="text-center alert alert-info" ng-show="ctrl.valid.Cycle === 1">
+                    <div>
+                        <strong class="text-green">Save 20% with the annual plan!</strong>
+                    </div>
+                    <div>
+                        <button type="button" class="pm_button primary" ng-click="ctrl.yearly()">{{ 'PAY_YEARLY' | translate }}</button>
+                    </div>
+                </div>
             </div>
             <div class="col-1-2">
                 <!-- <div class="input-icon margin">

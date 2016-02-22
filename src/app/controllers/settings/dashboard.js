@@ -340,15 +340,15 @@ angular.module("proton.controllers.Settings")
 
             if (plan.Name === 'plus' || plan.Name === 'business') {
                 for (i = 0; i < $scope.selects.plus.space.index; i++) {
-                    planIDs.push($scope.addons[plan.Cycle].space.ID);
+                    planIDs.push($scope.addons[$scope.configuration.cycle].space.ID);
                 }
 
                 for (i = 0; i < $scope.selects.plus.domain.index; i++) {
-                    planIDs.push($scope.addons[plan.Cycle].domain.ID);
+                    planIDs.push($scope.addons[$scope.configuration.cycle].domain.ID);
                 }
 
                 for (i = 0; i < $scope.selects.plus.address.index; i++) {
-                    planIDs.push($scope.addons[plan.Cycle].address.ID);
+                    planIDs.push($scope.addons[$scope.configuration.cycle].address.ID);
                 }
             }
 
@@ -356,8 +356,8 @@ angular.module("proton.controllers.Settings")
             promises.push(Payment.methods());
             // Valid plan
             promises.push(Payment.valid({
-                Currency : plan.Currency,
-                Cycle : plan.Cycle,
+                Currency : $scope.configuration.currency,
+                Cycle : $scope.configuration.cycle,
                 CouponCode : '',
                 PlanIDs: planIDs
             }));

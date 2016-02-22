@@ -711,7 +711,11 @@ angular.module("proton.modals", [])
 
             this.count = function(type) {
                 var count = 0;
-                var plans = _.filter(params.plans, function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; });
+                var plans = [];
+
+                _.each(params.planIDs, function(planID) {
+                    plans.push(_.findWhere(params.plans, {ID: planID}));
+                });
 
                 _.each(plans, function(plan) {
                     count += plan[type];
