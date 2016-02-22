@@ -37,13 +37,22 @@
                 </div>
                 <div class="pm_grid margin">
                     <div class="col-1-3">
-                        <input type="text" ng-model="ctrl.month" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" maxlength="2" required />
+                        <div class="input-icon">
+                            <i class="fa fa-calendar"></i>
+                            <input type="text" ng-model="ctrl.month" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" maxlength="2" required />
+                        </div>
                     </div>
                     <div class="col-1-3">
-                        <input type="text" ng-model="ctrl.year" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" maxlength="4" required />
+                        <div class="input-icon">
+                            <i class="fa fa-calendar"></i>
+                            <input type="text" ng-model="ctrl.year" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" maxlength="4" required />
+                        </div>
                     </div>
                     <div class="col-1-3">
-                        <input type="text" ng-model="ctrl.cvc" placeholder="CVC" pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" maxlength="4" required />
+                        <div class="input-icon">
+                            <i class="fa fa-lock"></i>
+                            <input type="text" ng-model="ctrl.cvc" placeholder="CVC" pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" maxlength="4" required />
+                        </div>
                     </div>
                 </div>
             </div>
