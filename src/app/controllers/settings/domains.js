@@ -380,7 +380,7 @@ angular.module("proton.controllers.Settings")
                             // 0 is default, 1 is has code but wrong, 2 is good
                             switch (result.data.Domain.VerifyState) {
                                 case 0:
-                                    notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                                    notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                                     break;
                                 case 1:
                                     notify({
@@ -402,10 +402,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                     }));
                 },
                 next: function() {
@@ -501,10 +501,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                     }));
                 },
                 next: function() {
@@ -558,10 +558,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                     }));
                 },
                 next: function() {
@@ -614,10 +614,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                     }));
                 },
                 next: function() {
@@ -666,10 +666,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_FAILED'), classes: 'notification-danger'});
+                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
                     }));
                 },
                 close: function() {
