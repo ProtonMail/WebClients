@@ -19,14 +19,14 @@
                                 <strong>{{ ctrl.valid.Amount / 100 | currency: plan.Currency }}</strong>
                             </td>
                         </tr>
-                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 0, Name: '1gb'}">
+                        <tr>
                             <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxSpace') | humanSize }} {{ 'STORAGE' | translate }}</td>
                         </tr>
-                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 0, Name: '1domain'}">
+                        <tr>
                             <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxDomains') }} {{ 'CUSTOM_DOMAINS' | translate }}</td>
                         </tr>
-                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 0, Name: '5address'}">
-                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxAddresses') * 5 }} {{ 'ADDRESSES' | translate }}</td>
+                        <tr>
+                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxAddresses') }} {{ 'ADDRESSES' | translate }}</td>
                         </tr>
                         <tr ng-show="ctrl.valid.Cycle === 1">
                             <td class="desc">
