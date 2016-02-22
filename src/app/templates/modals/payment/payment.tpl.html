@@ -60,7 +60,7 @@
                         </tr>
                         <tr>
                             <td class="desc"><strong>{{ 'AMOUNT_DUE' | translate }}</strong></td>
-                            <td class="price text-right"><strong>{{ (ctrl.valid.AmountDue || ctrl.valid.Amount) / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td class="price text-right"><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                     </tbody>
                 </table>
