@@ -8,54 +8,82 @@
                 <table class="pm_table">
                     <thead>
                         <tr>
-                            <th class="desc">{{ 'DESCRIPTION' | translate }}</th>
-                            <th class="price text-right">{{ 'PRICE' | translate }}</th>
+                            <th class="desc">{{ 'PLAN' | translate }}</th>
+                            <th class="price">{{ 'PRICE' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
-                            <td class="desc">{{ plan.Title }}</td>
-                            <td class="text-right price">
+                            <td class="desc">{{ plan.Title }} {{ 'PLAN' | translate }}</td>
+                            <td class="price text-right">
                                 <strong>{{ plan.Amount / 100 | currency: plan.Currency }}</strong>
                             </td>
                         </tr>
-                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 0}">
-                            <td class="desc">{{ plan.Name }} {{ 'ADDON' | translate }}</td>
-                            <td class="text-right price">
-                                <strong>{{ plan.quantity * plan.Amount / 100 | currency: plan.Currency }}</strong>
+                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 0, Name: '1gb'}">
+                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxSpace') | humanSize }} {{ 'STORAGE' | translate }}</td>
+                        </tr>
+                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 0, Name: '1domain'}">
+                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxDomains') }} {{ 'CUSTOM_DOMAINS' | translate }}</td>
+                        </tr>
+                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 0, Name: '5address'}">
+                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxAddresses') * 5 }} {{ 'ADDRESSES' | translate }}</td>
+                        </tr>
+                        <tr ng-show="ctrl.valid.Cycle === 1">
+                            <td class="desc">
+                                <strong>{{ 'TOTAL_PER_MONTH' | translate }} (incl. taxes)</strong>
+                            </td>
+                            <td class="price text-right">
+                                <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
                             </td>
                         </tr>
-                        <tr>
+                        <tr ng-show="ctrl.valid.Cycle === 12">
                             <td class="desc">
-                                <strong>{{ 'TOTAL' | translate }}</strong>
-                                <small ng-show="ctrl.valid.Cycle === 1">{{ 'PER_MONTH' | translate }}</small>
-                                <small ng-show="ctrl.valid.Cycle === 12">{{ 'PER_YEAR' | translate }}</small>
+                                <strong>{{ 'TOTAL_PER_MONTH' | translate }} (incl. taxes)</strong><br>
+                                <strong>{{ 'TOTAL_PER_YEAR' | translate }} (incl. taxes)</strong>
                             </td>
-                            <td class="text-right price">
+                            <td class="price text-right">
+                                <strong>{{ ctrl.count('Amount') / 100 / 12 | fixed: 2 | currency: ctrl.valid.Currency }}</strong><br>
                                 <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
                             </td>
                         </tr>
                         <tr ng-show="ctrl.valid.Proration !== 0">
                             <td class="desc">{{ 'PRORATION' | translate }}</td>
-                            <td class="text-right text-green price"><strong>{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td class="text-green price text-right"><strong>{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                         <tr ng-show="ctrl.valid.CouponDiscount !== 0">
                             <td class="desc">{{ 'COUPON' | translate }}</td>
-                            <td class="text-right text-green price"><strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td class="text-green price text-right"><strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                         <tr ng-show="ctrl.valid.Credit !== 0">
                             <td class="desc">{{ 'CREDIT' | translate }}</td>
-                            <td class="text-right text-green price"><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td class="text-green price text-right"><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                         <tr ng-show="ctrl.valid.Proration !== 0 || ctrl.valid.CouponDiscount !== 0 || ctrl.valid.Credit !== 0">
                             <td class="desc"><strong>{{ 'AMOUNT_DUE' | translate }}</strong></td>
-                            <td class="text-right price"><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            <td class="price text-right"><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="pm_buttons">
-                    <a href="#" ng-click="ctrl.monthly()" ng-class="{'active': ctrl.valid.Cycle === 1}">{{ 'MONTHLY' | translate }}</a>
-                    <a href="#" ng-click="ctrl.yearly()" ng-class="{'active': ctrl.valid.Cycle === 12}" class="divider">{{ 'YEARLY' | translate }} <strong class="text-green">{{ 'SAVE_~20%' | translate }}</strong></a>
+                <div class="well" ng-show="ctrl.valid.Cycle === 1">
+                    <legend class="text-green">Save 20% with the annual plan!</legend>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>New cost per month</td>
+                                <td class="text-right">
+                                    <strong></strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong></strong>
+                                </td>
+                                <td class="text-right">
+                                    <button type="button" class="pm_button primary" ng-click="ctrl.yearly()">{{ 'PAY_YEARLY' | translate }}</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="col-1-2">
@@ -84,10 +112,16 @@
                     </div>
                     <div class="pm_grid margin">
                         <div class="col-1-3">
-                            <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" required />
+                            <div class="input-icon">
+                                <i class="fa fa-calendar"></i>
+                                <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" required />
+                            </div>
                         </div>
                         <div class="col-1-3">
-                            <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" required />
+                            <div class="input-icon">
+                                <i class="fa fa-calendar"></i>
+                                <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" required />
+                            </div>
                         </div>
                         <div class="col-1-3">
                             <div class="input-icon">

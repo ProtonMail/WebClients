@@ -32,6 +32,8 @@ angular.module("proton.models.payments", [])
                         // Add free plan
                         data.Plans.unshift({
                             Type: 1,
+                            Cycle: cycle,
+                            Currency: currency,
                             Name: 'free',
                             Title: 'Free',
                             Amount: 0,

@@ -539,7 +539,10 @@ angular.module("proton.modals", [])
             this.coupon = '';
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: 'US'});
-            this.plans = params.plans;
+            this.plans = _.chain(params.plans)
+                .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
+                .uniq()
+                .value();
             this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
 
             if(params.methods.length > 0) {
@@ -688,20 +691,6 @@ angular.module("proton.modals", [])
                 params.change();
             }.bind(this);
 
-            /**
-             * Change cycle to monthly
-             */
-            this.monthly = function() {
-                params.monthly();
-            };
-
-            /**
-             * Change cycle to yearly
-             */
-            this.yearly = function() {
-                params.yearly();
-            };
-
             this.submit = function() {
                 // Change process status true to disable input fields
                 this.step = 'process';
@@ -719,6 +708,24 @@ angular.module("proton.modals", [])
                     this.step = 'payment';
                 }.bind(this));
             }.bind(this);
+
+            this.count = function(type) {
+
+                var count = 0;
+                var plans = _.chain(params.plans)
+                    .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
+                    .value();
+
+                _.each(plans, function(plan) {
+                    count += plan[type];
+                });
+
+                return count;
+            };
+
+            this.yearly = function() {
+                params.yearly();
+            };
 
             this.apply = function() {
                 Payment.valid({
