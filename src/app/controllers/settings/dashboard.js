@@ -105,23 +105,25 @@ angular.module("proton.controllers.Settings")
         }
 
         if (angular.isDefined(plans)) {
-            var spaceOption = _.findWhere($scope.spaceOptions, {value: $scope.count('MaxSpace')}) || $scope.spaceOptions[0];
-            var domainOption = _.findWhere($scope.domainOptions, {value: $scope.count('MaxDomains')}) || $scope.domainOptions[0];
-            var addressOption = _.findWhere($scope.addressOptions, {value: $scope.count('MaxAddresses')}) || $scope.addressOptions[0];
-            var memberOption = _.findWhere($scope.memberOptions, {value: $scope.count('MaxMembers')}) || $scope.memberOptions[0];
-
             $scope.plans = plans;
-            $scope.spaceAddon = _.findWhere(plans, {Name: '1gb'});
-            $scope.domainAddon = _.findWhere(plans, {Name: '1domain'});
-            $scope.addressAddon = _.findWhere(plans, {Name: '5address'});
-            $scope.memberAddon = _.findWhere(plans, {Name: '1member'});
+            $scope.spaceAddon = _.findWhere($scope.plans, {Name: '1gb'});
+            $scope.domainAddon = _.findWhere($scope.plans, {Name: '1domain'});
+            $scope.addressAddon = _.findWhere($scope.plans, {Name: '5address'});
+            $scope.memberAddon = _.findWhere($scope.plans, {Name: '1member'});
 
             _.each($scope.plans, function(plan) {
                 if (plan.editable === true) {
-                    plan.Space = spaceOption;
-                    plan.Domain = domainOption;
-                    plan.Address = addressOption;
-                    plan.Member = memberOption;
+                    if ($scope.subscription.Plan === 'Plus' || $scope.subscription.Plan === 'Business') {
+                        plan.Space = _.findWhere($scope.spaceOptions, {value: $scope.count('MaxSpace')}) || $scope.spaceOptions[0];
+                        plan.Domain = _.findWhere($scope.domainOptions, {value: $scope.count('MaxDomains')}) || $scope.domainOptions[0];
+                        plan.Address = _.findWhere($scope.addressOptions, {value: $scope.count('MaxAddresses')}) || $scope.addressOptions[0];
+                        plan.Member = _.findWhere($scope.memberOptions, {value: $scope.count('MaxMembers')}) || $scope.memberOptions[0];
+                    } else {
+                        plan.Space = $scope.spaceOptions[0];
+                        plan.Domain = $scope.domainOptions[0];
+                        plan.Address = $scope.addressOptions[0];
+                        plan.Member = $scope.memberOptions[0];
+                    }
                 }
             });
         }
