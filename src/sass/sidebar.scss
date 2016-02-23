@@ -303,8 +303,8 @@ body.mobileMode {
             z-index: 999;
             display: block;
             padding: 2rem 2rem;
-            width: ($sidebarWidth * 1.5);
-            min-width: ($sidebarWidth * 1.5);
+            width: 100%;
+            min-width: 100%;
             box-sizing: border-box;
             background: $secondary;
             height: 100%;
