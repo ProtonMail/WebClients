@@ -241,6 +241,39 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Return the text button for a specific plan
+     * @param {Object} plan
+     * @return {string} text
+     */
+    $scope.text = function(plan) {
+        var text;
+
+        if (plan.Name === 'free') {
+            if ($scope.subscription.Name === plan.Name) {
+                text = 'Already Subscribed';
+            } else {
+                text = 'Downgrade To Free';
+            }
+        } else if (plan.Name === 'plus') {
+            if ($scope.subscription.Name === plan.Name) {
+                text = 'Update Plus Plan';
+            } else if ($scope.subscription.Name === 'free') {
+                text = 'Update To Plus';
+            } else if ($scope.subscription.Name === 'visionary') {
+                text = 'Downgrade To Plus';
+            }
+        } else if (plan.Name === 'visionary') {
+            if ($scope.subscription.Name === plan.Name) {
+                text = 'Update Visionary Plan';
+            } else {
+                text = 'Update To Visionary';
+            }
+        }
+
+         return text;
+    };
+
+    /**
      * Open a modal to confirm to switch to the free plan
      */
     $scope.free = function() {
