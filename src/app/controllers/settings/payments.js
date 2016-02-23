@@ -3,6 +3,7 @@ angular.module('proton.controllers.Settings')
 .controller('PaymentsController', function(
     $scope,
     $translate,
+    authentication,
     cardModal,
     confirmModal,
     methods,
@@ -11,6 +12,7 @@ angular.module('proton.controllers.Settings')
     Payment
 ) {
     $scope.methods = methods.data.PaymentMethods;
+    $scope.subscribed = authentication.user.Subscribed === 1;
 
     $scope.refresh = function() {
         networkActivityTracker.track(Payment.methods()
@@ -28,7 +30,9 @@ angular.module('proton.controllers.Settings')
                     cardModal.deactivate();
 
                     if (angular.isDefined(method)) {
-                        $scope.methods.push(method);
+                        // Add the new method to the top of the methods list
+                        // Because this new payment method is marked as default
+                        $scope.methods.unshift(method);
                     }
                 }
             }
