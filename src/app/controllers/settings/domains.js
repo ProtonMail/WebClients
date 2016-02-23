@@ -217,6 +217,28 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Check if this address is owned by the current user
+     * @param {Object} address
+     * @return {Boolean}
+     */
+    $scope.owned = function(address) {
+        var found = _.findWhere(authentication.user.Addresses, {ID: address.ID});
+
+        return angular.isDefined(found);
+    };
+
+    /**
+     * Check if this address is owned by a private member
+     * @param {Object} address
+     * @return {Boolean}
+     */
+    $scope.privated = function(address) {
+        var member = _.findWhere($scope.members, {ID: address.MemberID});
+
+        return member.Private === 1;
+    };
+
+    /**
      * Open modal to generate key pair
      */
     $scope.generate = function(address) {
