@@ -221,7 +221,10 @@
                                         </div>
                                     </div>
                                     <div class="action">
-                                        <button type="button" ng-click="choose(plan)" class="pm_button" ng-class="{primary: plan.Name !== subscription.Name}">{{ text(plan) }}</button>
+                                        <button type="button" ng-click="choose(plan)" class="pm_button" ng-class="{
+                                            primary: plan.Name !== subscription.Name,
+                                            dead: plan.Name === subscription.Name && subscription.Name === 'free'
+                                        }">{{ text(plan) }}</button>
                                     </div>
                                 </footer>
                             </div>
