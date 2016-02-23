@@ -219,7 +219,9 @@ ng-class="{
     </div>
 
     <div ng-show="!!message.imagesHidden && message.expand" class="showImages" ng-click="displayImages()">
-        <a><i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}</a>
+        <a href="#">
+            <i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}
+        </a>
     </div>
 
     <div class="frame" ng-show="message.expand">
