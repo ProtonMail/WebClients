@@ -202,6 +202,9 @@
             background: #fcfcfc;
             pointer-events: none;
         }
+        &[readonly] {
+            box-shadow: none;
+        }
         &.success {
             color: darken(#aecf96, 10%);
             border-color: #aecf96;
