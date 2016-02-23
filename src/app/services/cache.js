@@ -727,6 +727,34 @@ angular.module("proton.cache", [])
         // Insert the new message in the cache
         updateMessage(event.Message);
 
+        // Let's check if the browser supports notifications
+        if (!("Notification" in window)) {
+            alert("This browser does not support desktop notification");
+        }
+
+        // Let's check whether notification permissions have already been granted
+        else if (Notification.permission === "granted") {
+            // If it's okay let's create a notification
+            var notification = new Notification('New Email', {
+                body: event.Message.Subject,
+                icon: 'https://protonmail.com/images/stripeLogo.png'
+            });
+
+            notification.onclick=function() {
+                $state.go('secured.inbox.view', { id: event.Message.ConversationID });
+            };
+        }
+
+        // Otherwise, we need to ask the user for permission
+        else if (Notification.permission !== 'denied') {
+            Notification.requestPermission(function (permission) {
+                // If the user accepts, let's create a notification
+                if (permission === "granted") {
+                    var notification = new Notification("Notifications Enabled!");
+                }
+            });
+        }
+
         deferred.resolve();
 
         return deferred.promise;
