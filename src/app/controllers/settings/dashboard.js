@@ -256,7 +256,7 @@ angular.module("proton.controllers.Settings")
             }
         } else if (plan.Name === 'plus') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Update Plus Plan';
+                text = 'Update Plus';
             } else if ($scope.subscription.Name === 'free') {
                 text = 'Update To Plus';
             } else if ($scope.subscription.Name === 'visionary') {
@@ -264,7 +264,7 @@ angular.module("proton.controllers.Settings")
             }
         } else if (plan.Name === 'visionary') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Update Visionary Plan';
+                text = 'Update Visionary';
             } else {
                 text = 'Update To Visionary';
             }
