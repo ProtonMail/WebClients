@@ -7,6 +7,7 @@ angular.module("proton.controllers.Settings")
     $translate,
     Address,
     addressModal,
+    authentication,
     buyDomainModal,
     confirmModal,
     CONSTANTS,

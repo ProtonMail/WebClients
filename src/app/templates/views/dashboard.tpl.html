@@ -51,7 +51,7 @@
                         <div class="well">
                             <table class="pm_table plain">
                                 <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
-                                    <th style="width:7rem">{{ 'PLAN' | translate }}:</th>
+                                    <th>{{ 'PLAN' | translate }}:</th>
                                     <td><strong>{{ plan.Title }}</strong></td>
                                     <td class="text-right actions">{{ plan.Amount / 100 | currency: plan.Currency }}</td>
                                 </tr>
