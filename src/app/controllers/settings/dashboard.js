@@ -107,7 +107,7 @@ angular.module("proton.controllers.Settings")
             $scope.configuration.cycle = subscription.Cycle;
             $scope.configuration.currency = subscription.Currency;
 
-            if ($scope.subscription.Plan === 'Plus' || $scope.subscription.Plan === 'Business') {
+            if ($scope.subscription.Name === 'plus' || $scope.subscription.Name === 'business') {
                 $scope.selects.plus.space = _.findWhere($scope.spaceOptions, {value: $scope.count('MaxSpace')});
                 $scope.selects.plus.domain = _.findWhere($scope.domainOptions, {value: $scope.count('MaxDomains')});
                 $scope.selects.plus.address = _.findWhere($scope.addressOptions, {value: $scope.count('MaxAddresses')});
@@ -141,16 +141,14 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.refresh = function() {
-        var promises = {
-            subscription: Payment.subscription(),
-            organization: Organization.get(),
-            event: eventManager.call()
-        };
-
         networkActivityTracker.track(
-            $q.all(promises)
+            $q.all({
+                subscription: Payment.subscription(),
+                organization: Organization.get(),
+                event: eventManager.call()
+            })
             .then(function(result) {
-                $scope.initialization(result.subscription.data.Subscription, undefined, result.organization.data.Organization);
+                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.organization.data.Organization);
             })
         );
     };
