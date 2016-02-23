@@ -1,3 +1,14 @@
+#pm_settings {
+    .donate {
+        .well {
+            position: relative;
+            box-shadow: inset 0 0 1rem 8rem #f2f2f2;
+            font-size: 1.3rem;
+            line-height: 1.4em;
+        }
+    }
+}
+
 #plans {
     &.pm_form {
         label {
@@ -181,6 +192,13 @@
     #plans .plan {
         .cycle .text-right {
             text-align: left;
+        }
+    }
+    #pm_settings {
+        .donate {
+            .well {
+                padding: 1rem;
+            }
         }
     }
 }

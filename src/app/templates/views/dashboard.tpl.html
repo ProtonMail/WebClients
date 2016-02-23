@@ -95,9 +95,17 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-1-2 text-center" ng-show="subscription.Name === 'free'">
-                        <img src="http://www.wwf.be/_media/panda_02_770723.jpg" alt="panda" style="width: 100%" />
-                        <a ui-sref="https://protonmail.com/donate" target="_blank" class="pm_button primary">{{ 'DONATE' | translate }}</a>
+                    <div class="col-1-2 donate" ng-show="subscription.Name === 'free'">
+                        <legend>{{ 'DONATE' | translate }}</legend>
+                        <div class="well text-center">
+                            <p>Upgrading to a paid account is the best way to support ProtonMail, but you can also donate any amount.</p>
+                            <p><strong>Your donation helps us support more users and continue to develop ProtonMail as free and open source software.</strong></p>
+                            <p>
+                                <a href="https://protonmail.com/donate" target="_blank" class="pm_button primary">
+                                {{ 'DONATE' | translate }}
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
