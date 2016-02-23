@@ -49,16 +49,16 @@ angular.module("proton.models.payments", [])
                                 case 'free':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = '150 Messages per day';
-                                    plan.labels = '20 Labels';
-                                    plan.support = 'Limited Support';
+                                    plan.sending = '150 ' + $translate.instant('MESSAGES_PER_DAY');
+                                    plan.labels = '20 ' + $translate.instant('LABELS');
+                                    plan.support = $translate.instant('LIMITED_SUPPORT');
                                     break;
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
-                                    plan.sending = '2000 Messages per day';
-                                    plan.labels = 'Unlimited Labels';
-                                    plan.support = 'Priority Support';
+                                    plan.sending = $translate.instant('UNLIMITED_SENDING');
+                                    plan.labels = $translate.instant('UNLIMITED_LABELS');
+                                    plan.support = $translate.instant('PRIORITY_SUPPORT');
                                     break;
                                 case 'business':
                                     plan.editable = true;
@@ -70,9 +70,9 @@ angular.module("proton.models.payments", [])
                                 case 'visionary':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = 'Unlimited Sending';
-                                    plan.labels = 'Unlimited Labels';
-                                    plan.support = 'Priority Support';
+                                    plan.sending = $translate.instant('UNLIMITED_SENDING');
+                                    plan.labels = $translate.instant('UNLIMITED_LABELS');
+                                    plan.support = $translate.instant('PRIORITY_SUPPORT');
                                     break;
                                 default:
                                     break;
