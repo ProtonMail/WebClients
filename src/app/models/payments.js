@@ -38,7 +38,7 @@ angular.module("proton.models.payments", [])
                             Title: 'Free',
                             Amount: 0,
                             MaxDomains: 0,
-                            MaxAddresses: 0,
+                            MaxAddresses: 1,
                             MaxSpace: 500 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE,
                             MaxMembers: 0,
                             TwoFactor: 0
@@ -49,18 +49,30 @@ angular.module("proton.models.payments", [])
                                 case 'free':
                                     plan.editable = false;
                                     plan.display = true;
+                                    plan.sending = '150 Messages per day';
+                                    plan.labels = '20 Labels';
+                                    plan.support = 'Limited Support';
                                     break;
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
+                                    plan.sending = '2000 Messages per day';
+                                    plan.labels = 'Unlimited Labels';
+                                    plan.support = 'Priority Support';
                                     break;
                                 case 'business':
                                     plan.editable = true;
                                     plan.display = false;
+                                    plan.sending = '???';
+                                    plan.labels = '???';
+                                    plan.support = '???';
                                     break;
                                 case 'visionary':
                                     plan.editable = false;
                                     plan.display = true;
+                                    plan.sending = 'Unlimited Sending';
+                                    plan.labels = 'Unlimited Labels';
+                                    plan.support = 'Priority Support';
                                     break;
                                 default:
                                     break;

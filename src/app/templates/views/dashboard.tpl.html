@@ -152,7 +152,7 @@
                                             </span>
                                         </li>
                                         <li ng-class="{disabled: plan.MaxDomains === 0}">
-                                            <i class="fa fa-check"></i>
+                                            <i class="fa fa-times" ng-show="plan.Name === 'free'"></i>
                                             <span class="pm_select inline" ng-show="plan.editable === true">
                                                 <select ng-model="selects.plus.domain" ng-options="option.label for option in domainOptions"></select>
                                                 <i class="fa fa-angle-down"></i>
@@ -163,9 +163,8 @@
                                                 <span>+{{ selects.plus.domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</span>
                                             </span>
                                         </li>
-                                        <li ng-class="{disabled: plan.MaxAddresses === 0}">
-                                            <i class="fa fa-check" ng-show="plan.Name !== 'free'"></i>
-                                            <i class="fa fa-times" ng-show="plan.Name === 'free'"></i>
+                                        <li>
+                                            <i class="fa fa-check"></i>
                                             <span class="pm_select inline" ng-show="plan.editable === true">
                                                 <select ng-model="selects.plus.address" ng-options="option.label for option in addressOptions"></select>
                                                 <i class="fa fa-angle-down"></i>
@@ -176,20 +175,17 @@
                                                 <span>+{{ selects.plus.address.index * addons[plan.Cycle].address.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</span>
                                             </span>
                                         </li>
-                                        <li ng-class="{disabled: plan.Name === 'free'}">
-                                            <i class="fa fa-check" ng-show="plan.Name !== 'free'"></i>
-                                            <i class="fa fa-times" ng-show="plan.Name === 'free'"></i>
-                                            <span>{{ 'UNLIMITED_SENDING' | translate }}</span>
+                                        <li>
+                                            <i class="fa fa-check"></i>
+                                            <span>{{ plan.sending }}</span>
                                         </li>
-                                        <li ng-class="{disabled: plan.Name === 'free'}">
-                                            <i class="fa fa-check" ng-show="plan.Name !== 'free'"></i>
-                                            <i class="fa fa-times" ng-show="plan.Name === 'free'"></i>
-                                            <span>{{ 'UNLIMITED_LABELS' | translate }}</span>
+                                        <li>
+                                            <i class="fa fa-check"></i>
+                                            <span>{{ plan.labels }}</span>
                                         </li>
-                                        <li ng-class="{disabled: plan.Name === 'free'}">
-                                            <i class="fa fa-check" ng-show="plan.Name !== 'free'"></i>
-                                            <i class="fa fa-times" ng-show="plan.Name === 'free'"></i>
-                                            <span>{{ 'PRIORITY_SUPPORT' | translate }}</span>
+                                        <li>
+                                            <i class="fa fa-check"></i>
+                                            <span>{{ plan.support }}</span>
                                         </li>
                                     </ul>
                                 </section>
