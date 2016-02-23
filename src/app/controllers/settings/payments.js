@@ -3,6 +3,7 @@ angular.module('proton.controllers.Settings')
 .controller('PaymentsController', function(
     $scope,
     $translate,
+    authentication,
     cardModal,
     confirmModal,
     methods,
@@ -11,6 +12,7 @@ angular.module('proton.controllers.Settings')
     Payment
 ) {
     $scope.methods = methods.data.PaymentMethods;
+    $scope.subscribed = authentication.user.Subscribed === 1;
 
     $scope.refresh = function() {
         networkActivityTracker.track(Payment.methods()
