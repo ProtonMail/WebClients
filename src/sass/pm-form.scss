@@ -67,6 +67,7 @@
             background: transparent;
             border: none;
             width: 100%;
+            max-width: 100%;
             min-width: 3rem;
             -webkit-appearance: none;
                -moz-appearance: none;
@@ -74,8 +75,9 @@
         }
         .fa {
             position: absolute;
-            right: 10px;
+            right: 0;
             display: block;
+            text-align: center;
             top: 0;
             bottom: 0;
             height: 33px;
@@ -126,7 +128,6 @@
             color: $gray-light;
             text-align: center;
             width: 2rem;
-            color: $primary;
             z-index: 2;
         }
     }

@@ -27,31 +27,6 @@
     #pm_settings .settings thead {
         display: none;
     }
-    #pm_settings .settings {
-        .col-1-2 {
-            width: 100%;
-        }
-        table {
-            border: none;
-            tr {
-                display: block;
-                margin-bottom: 2rem;
-                td {
-                    display: block;
-                    height: 2.25rem;
-                    &.text-right {
-                        text-align: left;
-                    }
-                    code {
-                        display: none;
-                    }
-                    code.mobileOnly {
-                        display: block;
-                    }
-                }
-            }
-        }
-    }
 }
 
 @media (max-width: 1000px) {

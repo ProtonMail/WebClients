@@ -1,6 +1,6 @@
 angular.module("proton.models.payments", [])
 
-.factory("Payment", function($http, $q, $translate, CONSTANTS, url) {
+.factory("Payment", function($http, $q, $translate, authentication, CONSTANTS, url) {
     return {
         /**
         * Donate for perks. Does not require authentication.
@@ -32,6 +32,8 @@ angular.module("proton.models.payments", [])
                         // Add free plan
                         data.Plans.unshift({
                             Type: 1,
+                            Cycle: cycle,
+                            Currency: currency,
                             Name: 'free',
                             Title: 'Free',
                             Amount: 0,
@@ -94,7 +96,7 @@ angular.module("proton.models.payments", [])
                             MaxSpace: 5368709120, // 500 MB
                             MaxMembers: 1,
                             Cycle: 1,
-                            Currency: 'USD'
+                            Currency: authentication.user.Currency
                         };
                     }
 

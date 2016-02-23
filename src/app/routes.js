@@ -834,8 +834,13 @@ angular.module('proton.routes', [
             organization: function(user, Organization, networkActivityTracker, CONSTANTS) {
                 return networkActivityTracker.track(Organization.get());
             },
-            plans: function(user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.plans());
+            // Return yearly plans
+            yearly: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.plans(user.Currency, 12));
+            },
+            // Return monthly plans
+            monthly: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.plans(user.Currency, 1));
             },
             subscription: function(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.subscription());
