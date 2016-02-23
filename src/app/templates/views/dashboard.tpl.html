@@ -147,21 +147,18 @@
                                             </span>
                                             <span ng-show="plan.editable === false">{{ plan.MaxSpace | humanSize }}</span>
                                             <span>{{ 'STORAGE' | translate }}</span>
-                                            <span class="cost" ng-show="selects.plus.space.index * addons[plan.Cycle].space.Amount && plan.editable === true">
-                                                <span>+{{ selects.plus.space.index * addons[plan.Cycle].space.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</span>
-                                            </span>
+                                            <strong class="cost pull-right" ng-show="selects.plus.space.index * addons[plan.Cycle].space.Amount && plan.editable === true">+{{ selects.plus.space.index * addons[plan.Cycle].space.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                         </li>
                                         <li ng-class="{disabled: plan.MaxDomains === 0}">
-                                            <i class="fa fa-times" ng-show="plan.Name === 'free'"></i>
+                                            <i class="fa fa-times" ng-show="plan.MaxDomains === 0"></i>
+                                            <i class="fa fa-check" ng-show="plan.MaxDomains > 0"></i>
                                             <span class="pm_select inline" ng-show="plan.editable === true">
                                                 <select ng-model="selects.plus.domain" ng-options="option.label for option in domainOptions"></select>
                                                 <i class="fa fa-angle-down"></i>
                                             </span>
                                             <span ng-show="plan.editable === false && plan.MaxDomains > 0">{{ plan.MaxDomains }}</span>
                                             <span>{{ 'CUSTOM_DOMAINS' | translate }}</span>
-                                            <span class="cost" ng-show="selects.plus.domain.index * addons[plan.Cycle].domain.Amount && plan.editable === true">
-                                                <span>+{{ selects.plus.domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</span>
-                                            </span>
+                                            <strong class="cost pull-right" ng-show="selects.plus.domain.index * addons[plan.Cycle].domain.Amount && plan.editable === true">+{{ selects.plus.domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                         </li>
                                         <li>
                                             <i class="fa fa-check"></i>
@@ -171,9 +168,7 @@
                                             </span>
                                             <span ng-show="plan.editable === false && plan.MaxAddresses > 0">{{ plan.MaxAddresses }}</span>
                                             <span>{{ 'ADDRESSES' | translate }}</span>
-                                            <span class="cost" ng-show="selects.plus.address.index * addons[plan.Cycle].address.Amount && plan.editable === true">
-                                                <span>+{{ selects.plus.address.index * addons[plan.Cycle].address.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</span>
-                                            </span>
+                                            <strong class="cost pull-right" ng-show="selects.plus.address.index * addons[plan.Cycle].address.Amount && plan.editable === true">+{{ selects.plus.address.index * addons[plan.Cycle].address.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                         </li>
                                         <li>
                                             <i class="fa fa-check"></i>
@@ -191,7 +186,7 @@
                                 </section>
                                 <footer>
                                     <div class="cycle text-center" ng-show="plan.Name === 'free'">
-                                        <strong>{{ 'FOREVER_FREE' | translate }}</strong>
+                                        <strong>{{ 'FREE' | translate }}</strong>
                                     </div>
                                     <div class="cycle pm_grid monthly" ng-hide="plan.Name === 'free'">
                                         <div class="col-1-2">
@@ -202,7 +197,7 @@
                                         <div class="col-1-2 text-right">
                                             <div>
                                                 <strong>{{ total(plan, 1) / 100 | fixed: 2 | currency: plan.Currency }}</strong>
-                                                <span>{{ 'MONTHLY' | translate }}</span>
+                                                <span>/{{ 'MONTH' | translate }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -218,7 +213,7 @@
                                         <div class="col-1-2 text-right">
                                             <div>
                                                 <strong>{{ total(plan, 12) / 100 / 12 | fixed: 2 | currency: plan.Currency }}</strong>
-                                                <span>{{ 'MONTHLY' | translate }}</span>
+                                                <span>/{{ 'MONTH' | translate }}</span>
                                             </div>
                                             <div>
                                                 <small>Billed as {{ total(plan, 12) / 100 | fixed: 2 | currency: plan.Currency }} per year</small>
