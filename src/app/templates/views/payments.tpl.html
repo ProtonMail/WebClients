@@ -11,15 +11,15 @@
                     <thead>
                         <tr>
                             <th>{{ 'NUMBER' | translate }}</th>
+                            <th>{{ 'EXPIRATION' | translate }}</th>
                             <th>{{ 'TYPE' | translate }}</th>
                             <th>{{ 'ACTIONS' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="method in methods">
-                            <td>
-                                <strong>**** **** **** {{ method.Details.Last4 }}</strong>
-                            </td>
+                            <td>**** **** **** {{ method.Details.Last4 }}</td>
+                            <td>{{ method.Details.ExpMonth }}/{{ method.Details.ExpYear }}</td>
                             <td>
                                 <span class="pm_badge">{{ method.Type }}</span>
                                 <span ng-show="$first" class="pm_badge">{{ 'DEFAULT' | translate }}</span>
