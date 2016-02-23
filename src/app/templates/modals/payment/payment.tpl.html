@@ -28,21 +28,12 @@
                         <tr>
                             <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxAddresses') }} {{ 'ADDRESSES' | translate }}</td>
                         </tr>
-                        <tr ng-show="ctrl.valid.Cycle === 1">
+                        <tr>
                             <td class="desc">
-                                <strong>{{ 'TOTAL_PER_MONTH' | translate }} (incl. taxes)</strong>
+                                <strong ng-show="ctrl.valid.Cycle === 1">{{ 'TOTAL_PER_MONTH' | translate }} (incl. taxes)</strong>
+                                <strong ng-show="ctrl.valid.Cycle === 12">{{ 'TOTAL_PER_YEAR' | translate }} (incl. taxes)</strong>
                             </td>
                             <td class="price text-right">
-                                <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
-                            </td>
-                        </tr>
-                        <tr ng-show="ctrl.valid.Cycle === 12">
-                            <td class="desc">
-                                <strong>{{ 'TOTAL_PER_MONTH' | translate }} (incl. taxes)</strong><br>
-                                <strong>{{ 'TOTAL_PER_YEAR' | translate }} (incl. taxes)</strong>
-                            </td>
-                            <td class="price text-right">
-                                <strong>{{ ctrl.count('Amount') / 100 / 12 | fixed: 2 | currency: ctrl.valid.Currency }}</strong><br>
                                 <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
                             </td>
                         </tr>

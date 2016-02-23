@@ -120,13 +120,9 @@
                 <div class="pm_grid no-margin plans">
                     <div ng-repeat="plan in plans | filter: {Type: 1, Cycle: configuration.cycle}: true | orderBy: 'Amount'">
                         <div
-                        ng-class="{
-                            'col-1-5' : plan.Name === 'free',
-                            'col-2-5' : (plan.Name === 'plus') || (plan.Name === 'visionary')
-                        }"
                         ng-show="plan.display === true">
                             <div
-                            class="plan"
+                            class="plan col-1-3"
                             ng-class="{
                                 'free' : plan.Name === 'free',
                                 'plus' : plan.Name === 'plus',
@@ -134,7 +130,7 @@
                                 'business' : plan.Name === 'business'
                             }">
                                 <header ng-show="plan.Name === 'free'"></header>
-                                <header ng-show="plan.Name === 'plus'">{{ 'PEOPLE_S_CHOICE' | translate }}</header>
+                                <header ng-show="plan.Name === 'plus'"></header>
                                 <header ng-show="plan.Name === 'visionary'">{{ 'BEST_VALUE' | translate }}</header>
                                 <header ng-show="plan.Name === 'business'"></header>
                                 <section>
@@ -202,9 +198,6 @@
                                         <strong>{{ 'FOREVER_FREE' | translate }}</strong>
                                     </div>
                                     <div class="cycle pm_grid monthly" ng-hide="plan.Name === 'free'">
-                                        <span class="discount">
-                                            <span>20%</span>
-                                        </span>
                                         <div class="col-1-2">
                                             <label>
                                                 <input type="radio" ng-model="configuration.cycle" ng-value="1" /> {{ 'PAY_MONTHLY' | translate }}
@@ -218,6 +211,9 @@
                                         </div>
                                     </div>
                                     <div class="cycle pm_grid" ng-hide="plan.Name === 'free'">
+                                        <span class="discount">
+                                            <span>-20%</span>
+                                        </span>
                                         <div class="col-1-2">
                                             <label>
                                                 <input type="radio" ng-model="configuration.cycle" ng-value="12" /> {{ 'PAY_YEARLY' | translate }}
