@@ -702,12 +702,12 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('secured.methods', {
-        url: '/methods',
+    .state('secured.payments', {
+        url: '/payments',
         views: {
             'content@secured': {
-                templateUrl: 'templates/views/methods.tpl.html',
-                controller: 'MethodsController'
+                templateUrl: 'templates/views/payments.tpl.html',
+                controller: 'PaymentsController'
             }
         },
         resolve: {

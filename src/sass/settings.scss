@@ -418,16 +418,6 @@
                     background: $border !important;
                     box-sizing: border-box;
                 }
-                .pm_table {
-                    td {
-                        strong {
-                            display: block;
-                        }
-                        small strong {
-                            display: inline-block;
-                        }
-                    }
-                }
                 .as-sortable-dragging {
                     border: 1px solid $border;
                     line-height: 2rem;
@@ -813,7 +803,7 @@ body.mobileMode {
     th.price,
     td.price {
         padding-left: 0;
-        width: 50px;
+        width: 65px;
     }
 
     .disabled {

@@ -412,24 +412,6 @@ angular.module("proton.controllers.Settings")
         }
     };
 
-    /**
-    * Open modal with payment information
-    */
-    $scope.card = function() {
-        networkActivityTracker.track(Payment.methods().then(function(result) {
-            cardModal.activate({
-                params: {
-                    methods: result.data.PaymentMethods,
-                    cancel: function() {
-                        cardModal.deactivate();
-                    }
-                }
-            });
-        }, function(error) {
-            notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-        }));
-    };
-
     // Call initialization
     $scope.initialization(subscription.data.Subscription, monthly.data.Plans, yearly.data.Plans, organization.data.Organization);
 });

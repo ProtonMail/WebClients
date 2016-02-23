@@ -426,7 +426,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var finish = function(method) {
-                params.cancel(method);
+                params.close(method);
             };
 
             this.submit = function() {
@@ -444,9 +444,7 @@ angular.module("proton.modals", [])
             };
 
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.close();
             };
         }
     });

@@ -123,6 +123,12 @@ angular.module("proton.models.payments", [])
             return $http.get(url.get() + '/payments/methods');
         },
         /**
+         * First will be charged for subscriptionsPOST
+         */
+        order: function(params) {
+            return $http.post(url.get() + '/payments/methods/order');
+        },
+        /**
          * Create a subscription
          */
         subscribe: function(params) {
