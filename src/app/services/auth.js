@@ -99,6 +99,7 @@ angular.module("proton.authentication", [
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
 
+                                        // TODO remove this part for the release
                                         if (CONSTANTS.HOSTS_ALLOWED.indexOf($location.host()) === -1) {
                                             user.Role = 1;
                                         }
