@@ -78,10 +78,10 @@
                                     </td>
                                     <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                 </tr>
-                                <tr ng-show="credit > 0">
+                                <tr ng-show="user.credit > 0">
                                     <th>{{ 'AVAILABLE_CREDIT' | translate }}:</th>
                                     <td></td>
-                                    <td class="text-right actions">{{ credit / 100 | currency: subscription.Currency }}</td>
+                                    <td class="text-right actions">{{ user.credit / 100 | currency: subscription.Currency }}</td>
                                 </tr>
                                 <tr>
                                     <th>{{ 'PAYMENT' | translate }}:</th>
