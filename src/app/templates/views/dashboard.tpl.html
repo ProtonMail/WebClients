@@ -11,7 +11,7 @@
                                 <tr>
                                     <th>{{ 'USERNAME' | translate }}:</th>
                                     <td>
-                                        <strong>{{ username }}</strong>
+                                        <strong>{{ user.Name }}</strong>
                                     </td>
                                     <td class="text-right actions"></td>
                                 </tr>
@@ -41,7 +41,7 @@
                                     <th>{{ 'STORAGE' | translate }}:</th>
                                     <td>
                                         <strong ng-show="organization">{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }}</strong>
-                                        <strong ng-show="organization === null">{{ usedSpace | humanSize }} {{ 'OF' | translate }} {{ maxSpace | humanSize }}</strong>
+                                        <strong ng-show="organization === null">{{ user.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ user.MaxSpace | humanSize }}</strong>
                                     </td>
                                     <td class="text-right actions"></td>
                                 </tr>
@@ -77,10 +77,10 @@
                                     </td>
                                     <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                 </tr>
-                                <tr ng-show="credit > 0">
+                                <tr ng-show="user.Credit > 0">
                                     <th>{{ 'AVAILABLE_CREDIT' | translate }}:</th>
                                     <td></td>
-                                    <td class="text-right actions">{{ credit / 100 | currency: subscription.Currency }}</td>
+                                    <td class="text-right actions">{{ user.Credit / 100 | currency: subscription.Currency }}</td>
                                 </tr>
                                 <tr>
                                     <th>{{ 'PAYMENT' | translate }}:</th>

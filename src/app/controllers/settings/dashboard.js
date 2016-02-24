@@ -31,10 +31,6 @@ angular.module("proton.controllers.Settings")
     // Initialize variables
     $scope.configuration = {};
     $scope.subscription = {};
-    $scope.username = authentication.user.Name;
-    $scope.credit = authentication.user.Credit;
-    $scope.usedSpace = authentication.user.UsedSpace;
-    $scope.maxSpace = authentication.user.MaxSpace;
 
     // Options
     $scope.spaceOptions = [
@@ -89,14 +85,6 @@ angular.module("proton.controllers.Settings")
             address: $scope.addressOptions[0]
         }
     };
-
-    // Listeners
-    $scope.$on('updateUser', function(event) {
-        $scope.username = authentication.user.Name;
-        $scope.credit = authentication.user.Credit;
-        $scope.usedSpace = authentication.user.UsedSpace;
-        $scope.maxSpace = authentication.user.MaxSpace;
-    });
 
     /**
      * Method called at the initialization of this controller
