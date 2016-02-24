@@ -76,16 +76,27 @@
         }
         &.details.open {
             & > div.summary {
+                height: 60px;
                 .meta {
                     .contact {
-                        em {
-                            display: inline-block;
-                        }
-                        span {
+                        float: left;
+                        display: block;
+                        span.from {
                             width: 3rem;
                             text-align: left;
-                            display: inline-block;
+                            display: block;
                             float: left;
+                        }
+                        strong {
+                            display: block;
+                            float: left;
+                        }
+                        em {
+                            display: block;
+                            clear: both;
+                            float: left;
+                            margin: -.5rem 0 0 3rem;
+                            line-height: 1rem;
                         }
                     }
                 }
