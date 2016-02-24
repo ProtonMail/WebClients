@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button type="button" class="pm_button" ng-disabled="networkActivity.loading()" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+            <button type="button" class="pm_button" ng-disabled="networkActivity.loading()" ng-click="ctrl.cancel()">{{ 'CLOSE' | translate }}</button>
             <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.domain.DomainName" ng-disabled="networkActivity.loading()">{{ 'NEXT' | translate }}</button>
             <button type="button" class="pm_button primary pull-right" ng-show="ctrl.domain.DomainName" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
         </div>

@@ -32,8 +32,6 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
                 if(angular.isObject(error)) { // Error Object
                     var message;
 
-                    $log.error(error);
-
                     if(angular.isDefined(error.message)) {
                         message = error.message;
                     } else if(angular.isDefined(error.Error)) {

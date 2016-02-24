@@ -37,9 +37,8 @@
 
         </div>
         <div class="modal-footer clearfix">
-            <button ng-show="ctrl.domain.MxState === 3" class="pm_button primary pull-right" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
-            <button ng-hide="ctrl.domain.MxState === 3" class="pm_button primary pull-right" ng-click="ctrl.verify()">{{ 'VERIFY' | translate }}</button>
-            <button ng-hide="ctrl.domain.MxState === 3" class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button class="pm_button primary pull-right" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
+            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
             <div class="clear"></div>
         </div>
     </div>
