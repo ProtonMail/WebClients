@@ -23,7 +23,10 @@
                             <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxSpace') | humanSize }} {{ 'STORAGE' | translate }}</td>
                         </tr>
                         <tr>
-                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxDomains') }} {{ 'CUSTOM_DOMAINS' | translate }}</td>
+                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxDomains') }}
+                                <span ng-show="ctrl.count('MaxDomains') === 1">{{ 'CUSTOM_DOMAIN' | translate }}</span>
+                                <span ng-show="ctrl.count('MaxDomains') > 1">{{ 'CUSTOM_DOMAINS' | translate }}</span>
+                            </td>
                         </tr>
                         <tr>
                             <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxAddresses') }} {{ 'ADDRESSES' | translate }}</td>

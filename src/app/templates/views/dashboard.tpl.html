@@ -170,7 +170,8 @@
                                                 <i class="fa fa-angle-down"></i>
                                             </span>
                                             <span ng-show="plan.editable === false && plan.MaxDomains > 0">{{ plan.MaxDomains }}</span>
-                                            <span>{{ 'CUSTOM_DOMAINS' | translate }}</span>
+                                            <span ng-show="plan.MaxDomains === 1">{{ 'CUSTOM_DOMAIN' | translate }}</span> 
+                                            <span ng-show="plan.MaxDomains > 1">{{ 'CUSTOM_DOMAINS' | translate }}</span>
                                             <strong class="cost pull-right" ng-show="selects.plus.domain.index * addons[plan.Cycle].domain.Amount && plan.editable === true">+{{ selects.plus.domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                             <span class="clear"></span>
                                         </li>
