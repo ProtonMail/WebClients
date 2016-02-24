@@ -53,7 +53,7 @@
                                 <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
                                     <th>{{ 'PLAN' | translate }}:</th>
                                     <td><strong>{{ plan.Title }}</strong></td>
-                                    <td class="text-right actions">{{ plan.Amount / 100 | currency: plan.Currency }}</td>
+                                    <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                 </tr>
                                 <tr>
                                     <th></th>
