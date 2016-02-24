@@ -736,15 +736,10 @@ angular.module("proton.modals", [])
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
-                            notify({
-                                message: $translate.instant('COUPON_INVALID'),
-                                classes: 'notification-danger'
-                            });
+                            notify({message: $translate.instant('COUPON_INVALID'), classes: 'notification-danger'});
+                            this.coupon = '';
                         } else {
-                            notify({
-                                message: $translate.instant('COUPON_ACCEPTED'),
-                                classes: 'notification-success'
-                            });
+                            notify({message: $translate.instant('COUPON_ACCEPTED'), classes: 'notification-success'});
                         }
                         this.valid = result.data;
                     }
