@@ -1122,6 +1122,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         message.saving = false;
                         message.autosaving = false;
                         deferred.resolve($scope.save(message, forward, notification));
+                    } else if(angular.isDefined(result) && result.Error) {
+                        // Errors from backend
+                        message.saving = false;
+                        message.autosaving = false;
+                        notify({message: result.Error, classes: 'notification-danger'});
+                        deferred.resolve(result);
                     } else {
                         $log.error(result);
                         message.saving = false;
