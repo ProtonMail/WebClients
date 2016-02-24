@@ -1046,7 +1046,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             parameters.Message.AddressID = message.From.ID;
 
             // Encrypt message body with the first public key for the From address
-            message.encryptBody(message.From.Keys[0].PublicKey).then(function(result) {
+            message.encryptBody(message.From.Keys[0].PublicKey)
+            .then(function(result) {
                 var draftPromise;
                 var CREATE = 1;
                 var UPDATE = 2;
@@ -1063,7 +1064,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 }
 
                 // Save draft before to send
-                draftPromise.then(function(result) {
+                draftPromise
+                .then(function(result) {
                     if(angular.isDefined(result) && result.Code === 1000) {
                         var events = [];
                         var conversation = cache.getConversationCached(result.Message.ConversationID);
@@ -1116,20 +1118,18 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         message.autosaving = false;
 
                         deferred.resolve(result);
-                    } else if(angular.isDefined(result) && result.Code === 15033) {
+                    } else if (angular.isDefined(result) && result.Code === 15033) {
                         // Case where the user delete draft in an other terminal
                         delete message.ID;
                         message.saving = false;
                         message.autosaving = false;
                         deferred.resolve($scope.save(message, forward, notification));
-                    } else if(angular.isDefined(result) && result.Error) {
+                    } else if (angular.isDefined(result) && result.Error) {
                         // Errors from backend
                         message.saving = false;
                         message.autosaving = false;
-                        notify({message: result.Error, classes: 'notification-danger'});
-                        deferred.reject(result);
+                        deferred.reject(result.Error);
                     } else {
-                        $log.error(result);
                         message.saving = false;
                         message.autosaving = false;
                         deferred.reject(result);
@@ -1152,6 +1152,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 message.autosaving = false;
             });
         }
+
+        if (autosaving === false) {
+            networkActivityTracker.track(deferred.promise);
+        }
+
         return deferred.promise;
     };
 
@@ -1204,7 +1209,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var validate = $scope.validate(message);
 
         if(validate) {
-            $scope.save(message, false).then(function() {
+            $scope.save(message, false, false, false)
+            .then(function() {
                 $scope.checkSubject(message).then(function() {
                     message.encrypting = true;
                     var parameters = {};
