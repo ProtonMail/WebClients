@@ -8,7 +8,6 @@ angular.module("proton.controllers.Settings")
     Address,
     addressModal,
     authentication,
-    buyDomainModal,
     confirmModal,
     CONSTANTS,
     dkimModal,
@@ -163,23 +162,6 @@ angular.module("proton.controllers.Settings")
         } else if (domain.DmarcState !== 3) {
             $scope.dmarc(domain);
         }
-    };
-
-    /**
-     * Open modal process to buy a new domain
-     */
-    $scope.buyDomain = function() {
-        buyDomainModal.activate({
-            params: {
-                submit: function(datas) {
-                    console.log(datas);
-                    buyDomainModal.deactivate();
-                },
-                cancel: function() {
-                    buyDomainModal.deactivate();
-                }
-            }
-        });
     };
 
     /**
