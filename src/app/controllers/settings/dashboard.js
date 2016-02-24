@@ -31,7 +31,7 @@ angular.module("proton.controllers.Settings")
     // Initialize variables
     $scope.configuration = {};
     $scope.subscription = {};
-    $scope.displayName = authentication.user.DisplayName;
+    $scope.username = authentication.user.Name;
     $scope.credit = authentication.user.Credit;
     $scope.usedSpace = authentication.user.UsedSpace;
     $scope.maxSpace = authentication.user.MaxSpace;
@@ -92,7 +92,7 @@ angular.module("proton.controllers.Settings")
 
     // Listeners
     $scope.$on('updateUser', function(event) {
-        $scope.displayName = authentication.user.DisplayName;
+        $scope.username = authentication.user.Name;
         $scope.credit = authentication.user.Credit;
         $scope.usedSpace = authentication.user.UsedSpace;
         $scope.maxSpace = authentication.user.MaxSpace;
