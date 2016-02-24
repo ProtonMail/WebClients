@@ -39,11 +39,15 @@
                                 </tr>
                                 <tr>
                                     <th>{{ 'STORAGE' | translate }}:</th>
-                                    <td>
+                                    <td colspan="2">
                                         <strong ng-show="organization">{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }}</strong>
                                         <strong ng-show="organization === null">{{ user.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ user.MaxSpace | humanSize }}</strong>
+                                        <br>
+                                        <div class="bar">
+                                            <em ng-show="organization" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></em>
+                                            <em ng-show="organization === null" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></em>
+                                        </div>
                                     </td>
-                                    <td class="text-right actions"></td>
                                 </tr>
                             </table>
                         </div>

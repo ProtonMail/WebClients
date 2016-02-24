@@ -1,4 +1,22 @@
 #pm_settings {
+    .bar {
+        height: 2px;
+        background-color: rgba(0,0,0,.1);
+        width: 100%;
+        display: block;
+        position: relative;
+        margin: .5rem auto;
+        em {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            height: 2px;
+            z-index: 2;
+            background-color: $primary;
+        }
+    }
     .donate {
         .well {
             position: relative;
@@ -29,8 +47,8 @@
         .plan {
             header {
                 background: $secondary;
-                height: 35px;
-                line-height: 35px;
+                height: 30px;
+                line-height: 30px;
                 text-align: center;
                 letter-spacing: 1px;
                 text-transform: uppercase;
@@ -87,8 +105,8 @@
                             display: block;
                         }
                         &.tall {
-                            line-height: 45px;
-                            min-height: 45px;
+                            line-height: 55px;
+                            min-height: 55px;
                         }
                     }
                 }
@@ -163,12 +181,16 @@
             }
             &.plus {
                 margin: 0 -1px;
-                header,
-                h3 span {
-                    color: $light-green;
+                h3 {
+                    box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+                    span {
+                        color: $light-green;
+                    }
+                }
+                header {
+                    background: $white;
                 }
                 section {
-                    box-shadow: 0 0 1rem 1rem rgba(0,0,0,.1);
                     position: relative;
                     z-index: 1;
                 }
@@ -195,6 +217,12 @@
         }
         section ul li .pm_select.inline {
             width: 4rem;
+        }
+        &.free {
+            footer .cycle {
+                line-height: 164px;
+                height: 184px;
+            }
         }
     }
 }
