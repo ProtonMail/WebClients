@@ -87,11 +87,6 @@ angular.module("proton.event", ["proton.constants"])
 						});
 					};
 
-					// TODO remove this part for the release
-					if (CONSTANTS.HOSTS_ALLOWED.indexOf($location.host()) === -1) {
-						user.Role = 1;
-					}
-
 					_.each(user.Addresses, function(address) {
 						if (address.Keys.length === 0 && privateUser === true) {
 							dirtyAddresses.push(address);
