@@ -485,21 +485,18 @@ angular.module('proton.routes', [
                 var password = pmcw.decode_utf8_base64(window.sessionStorage['proton:encrypted_password']);
 
                 Eo.message(decrypted_token, token_id)
-                .then(
-                    function(result) {
-                        var message = result.data.Message;
-                        message.publicKey = result.data.PublicKey;
-                        pmcw.decryptMessageRSA(message.Body, password, message.Time)
-                        .then(
-                            function(body) {
-                                message.Body = '<br /><br /><blockquote>' + body + '</blockquote>';
-                                message.Attachments = [];
-                                message.replyMessage = true;
-                                deferred.resolve(new Message(message));
-                            })
-                        ;
-                    }
-                );
+                .then(function(result) {
+                    var message = result.data.Message;
+
+                    message.publicKey = result.data.PublicKey; // The sender’s public key
+                    pmcw.decryptMessageRSA(message.Body, password, message.Time)
+                    .then(function(body) {
+                        message.Body = '<br /><br /><blockquote>' + body + '</blockquote>';
+                        message.Attachments = [];
+                        message.replyMessage = true;
+                        deferred.resolve(new Message(message));
+                    });
+                });
 
                 return deferred.promise;
             }

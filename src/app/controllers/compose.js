@@ -751,19 +751,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     };
 
-    $scope.selectFile = function(message, files) {
-        _.defaults(message, {
-            Attachments: []
-        });
-
-        message.Attachments.push.apply(
-            message.Attachments,
-            _.map(files, function(file) {
-                return attachments.load(file);
-            })
-        );
-    };
-
     $scope.attToggle = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
         $rootScope.$broadcast('composerModeChange');
