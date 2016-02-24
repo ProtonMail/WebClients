@@ -117,8 +117,7 @@ angular.module('proton.routes', [
             $http.post( url.get() + '/users/' + $stateParams.token + '/check', { Username: $stateParams.user } )
             .then(
                 function( response ) {
-                    if (response.data.Valid===1) {
-
+                    if (response.data.Valid === 1) {
                         $rootScope.allowedNewAccount = true;
                         $rootScope.inviteToken = $stateParams.token;
                         $rootScope.preInvited = true;
@@ -216,43 +215,6 @@ angular.module('proton.routes', [
                 }
 
                 return deferred.promise;
-            }
-        }
-    })
-
-    .state('step2', {
-        url: '/create/mbpw',
-        views: {
-            'main@': {
-                controller: 'SignupController',
-                templateUrl: 'templates/layout/auth.tpl.html'
-            },
-            'panel@step2': {
-                templateUrl: 'templates/views/step2.tpl.html'
-            }
-        },
-        onEnter: function(authentication, $state, $rootScope, $log) {
-            if ($rootScope.allowedNewAccount!==true) {
-                $state.go('login');
-            }
-            if (authentication.isLoggedIn()) {
-                $rootScope.isLoggedIn = true;
-                return authentication.fetchUserInfo().then(
-                function() {
-                    $rootScope.user = authentication.user;
-                    $rootScope.pubKey = authentication.user.PublicKey;
-                    $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
-                    if ($rootScope.pubKey === 'to be modified') {
-                        return;
-                    } else {
-                        $state.go('login.unlock');
-                        return;
-                    }
-                });
-            } else {
-                $log.debug('step2.onEnter:1');
-                $state.go('login');
-                return;
             }
         }
     })

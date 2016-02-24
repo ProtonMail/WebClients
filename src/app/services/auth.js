@@ -569,10 +569,8 @@ angular.module("proton.authentication", [
                     }
 
                     $rootScope.isLoggedIn = true;
-                    // Why are we setting this in two places?
                     $rootScope.user = user;
                     this.user = user;
-                    this.user.Theme = user.Theme;
 
                     return user;
                 }.bind(this),
