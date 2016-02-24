@@ -11,7 +11,7 @@
                                 <tr>
                                     <th>{{ 'USERNAME' | translate }}:</th>
                                     <td>
-                                        <strong>{{ user.displayName }}</strong>
+                                        <strong>{{ displayName }}</strong>
                                     </td>
                                     <td class="text-right actions"></td>
                                 </tr>
@@ -39,7 +39,7 @@
                                     <th>{{ 'STORAGE' | translate }}:</th>
                                     <td>
                                         <strong ng-show="organization">{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }}</strong>
-                                        <strong ng-show="organization === null">{{ user.usedSpace | humanSize }} {{ 'OF' | translate }} {{ user.maxSpace | humanSize }}</strong>
+                                        <strong ng-show="organization === null">{{ usedSpace | humanSize }} {{ 'OF' | translate }} {{ maxSpace | humanSize }}</strong>
                                     </td>
                                     <td class="text-right actions"></td>
                                 </tr>
@@ -78,15 +78,16 @@
                                     </td>
                                     <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                 </tr>
-                                <tr ng-show="user.credit > 0">
+                                <tr ng-show="credit > 0">
                                     <th>{{ 'AVAILABLE_CREDIT' | translate }}:</th>
                                     <td></td>
-                                    <td class="text-right actions">{{ user.credit / 100 | currency: subscription.Currency }}</td>
+                                    <td class="text-right actions">{{ credit / 100 | currency: subscription.Currency }}</td>
                                 </tr>
                                 <tr>
                                     <th>{{ 'PAYMENT' | translate }}:</th>
                                     <td>
-                                        <strong>{{ 'CREDIT_CARD' | translate }}</strong>
+                                        <strong ng-show="methods.length === 0">{{ 'NONE' | translate }}</strong>
+                                        <strong ng-show="methods.length > 0">{{ 'CREDIT_CARD' | translate }}</strong>
                                     </td>
                                     <td class="text-right actions">
                                         <a ui-sref="secured.payments" pt-tooltip="{{ 'PAYMENT_METHOD' | translate }}">{{ 'EDIT' | translate }}</a>

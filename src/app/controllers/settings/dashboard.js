@@ -17,6 +17,7 @@ angular.module("proton.controllers.Settings")
     organization,
     Payment,
     paymentModal,
+    methods,
     monthly,
     pmcw,
     subscription,
@@ -28,8 +29,10 @@ angular.module("proton.controllers.Settings")
     // Initialize variables
     $scope.configuration = {};
     $scope.subscription = {};
-    $scope.monthlyPlans = [];
-    $scope.yearlyPlans = [];
+    $scope.displayName = authentication.user.DisplayName;
+    $scope.credit = authentication.user.Credit;
+    $scope.usedSpace = authentication.user.UsedSpace;
+    $scope.maxSpace = authentication.user.MaxSpace;
 
     // Options
     $scope.spaceOptions = [
@@ -87,12 +90,10 @@ angular.module("proton.controllers.Settings")
 
     // Listeners
     $scope.$on('updateUser', function(event) {
-        $scope.user = {
-            displayName: authentication.user.DisplayName,
-            credit: authentication.user.Credit,
-            usedSpace: authentication.user.UsedSpace,
-            maxSpace: authentication.user.MaxSpace
-        };
+        $scope.displayName = authentication.user.DisplayName;
+        $scope.credit = authentication.user.Credit;
+        $scope.usedSpace = authentication.user.UsedSpace;
+        $scope.maxSpace = authentication.user.MaxSpace;
     });
 
     /**
@@ -102,7 +103,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} yearly
      * @param {Object} organization
      */
-    $scope.initialization = function(subscription, monthly, yearly, organization) {
+    $scope.initialization = function(subscription, monthly, yearly, organization, methods) {
         if (angular.isDefined(subscription)) {
             _.extend($scope.subscription, subscription);
             $scope.configuration.cycle = subscription.Cycle;
@@ -139,6 +140,10 @@ angular.module("proton.controllers.Settings")
         if (angular.isDefined(organization)) {
             $scope.organization = organization;
         }
+
+        if (angular.isDefined(methods)) {
+            $scope.methods = methods;
+        }
     };
 
     $scope.refresh = function() {
@@ -146,10 +151,11 @@ angular.module("proton.controllers.Settings")
             $q.all({
                 subscription: Payment.subscription(),
                 organization: Organization.get(),
+                methods: Payment.methods(),
                 event: eventManager.call()
             })
             .then(function(result) {
-                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.organization.data.Organization);
+                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.organization.data.Organization, result.methods.data.PaymentMethods);
             })
         );
     };
@@ -447,5 +453,5 @@ angular.module("proton.controllers.Settings")
     };
 
     // Call initialization
-    $scope.initialization(subscription.data.Subscription, monthly.data.Plans, yearly.data.Plans, organization.data.Organization);
+    $scope.initialization(subscription.data.Subscription, monthly.data.Plans, yearly.data.Plans, organization.data.Organization, methods.data.PaymentMethods);
 });

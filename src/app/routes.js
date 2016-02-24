@@ -844,6 +844,9 @@ angular.module('proton.routes', [
             },
             subscription: function(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.subscription());
+            },
+            methods: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.methods());
             }
         },
         views: {
