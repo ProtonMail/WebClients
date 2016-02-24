@@ -69,7 +69,7 @@ angular.module('proton.controllers.Settings')
         }).then(function(result) {
             if (result.data && result.data.Code === 1000) {
                 $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
-                notify({message: $translate.instant('PAYMENT_METHOD_UPDATED'), classes: 'notification-danger'});
+                notify({message: $translate.instant('PAYMENT_METHOD_UPDATED'), classes: 'notification-success'});
             } else if (result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
@@ -94,7 +94,7 @@ angular.module('proton.controllers.Settings')
                         if (result.data && result.data.Code === 1000) {
                             confirmModal.deactivate();
                             $scope.methods.splice($scope.methods.indexOf(method), 1);
-                            notify({message: $translate.instant('PAYMENT_METHOD_DELETED'), classes: 'notification-danger'});
+                            notify({message: $translate.instant('PAYMENT_METHOD_DELETED'), classes: 'notification-success'});
                         }
                     });
                 },
