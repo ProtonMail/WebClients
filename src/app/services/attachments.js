@@ -48,16 +48,17 @@ angular.module("proton.attachments", [
 
             return q.promise;
         },
-        upload: function(packets, MessageID, tempPacket) {
+        upload: function(packets, message, tempPacket) {
             var deferred = $q.defer();
             var data = new FormData();
             var xhr = new XMLHttpRequest();
-            var sessionKeyPromise = this.getSessionKey(packets.keys);
+            var keys = authentication.getPrivateKeys(message.From.ID);
+            var sessionKeyPromise = pmcw.decryptSessionKey(packets.keys, keys);
             var attachmentData = {};
             var that = this;
 
             data.append('Filename', packets.Filename);
-            data.append('MessageID', MessageID);
+            data.append('MessageID', message.ID);
             data.append('MIMEType', packets.MIMEType);
             data.append('KeyPackets', new Blob([packets.keys]));
             data.append('DataPacket', new Blob([packets.data]));
@@ -129,11 +130,6 @@ angular.module("proton.attachments", [
 
             return deferred.promise;
         },
-        getSessionKey:function(keypacket) {
-            return authentication.getPrivateKey().then(function (key) {
-                return pmcw.decryptSessionKey(keypacket,key);
-            });
-        },
         get: function(id) {
             return $http
                 .get(url.get() + "/attachments/" + id, {responseType: "arraybuffer"})
@@ -150,7 +146,7 @@ angular.module("proton.attachments", [
             $(elem).css({'background' : '-ms-linear-gradient(left,     rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 1) ' + 0 + '%)'});
             $(elem).css({'background' : 'linear-gradient(left,         rgba(' + CONSTANTS.UPLOAD_GRADIENT_DARK + ', 1) ' + progress + '%, rgba(' + CONSTANTS.UPLOAD_GRADIENT_LIGHT + ', 1) ' + 0 + '%)'});
         },
-        decrypt: function(attachment) {
+        decrypt: function(attachment, keys) {
             var deferred = $q.defer();
             var promise = this.get(attachment.ID, attachment.Name); // get enc attachment
 
@@ -166,11 +162,8 @@ angular.module("proton.attachments", [
                 } else {
                     // decode key packets
                     var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-                    // get user's pk
-                    var key = authentication.getPrivateKey().then(function(pk) {
-                        // decrypt session key from keypackets
-                        return pmcw.decryptSessionKey(keyPackets, pk);
-                    });
+                    // decrypt session key from keypackets
+                    var key = pmcw.decryptSessionKey(keyPackets, keys);
 
                     // when we have the session key and attachment:
                     $q.all({

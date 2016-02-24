@@ -386,37 +386,41 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.decryptAttachments = function(message) {
         var removeAttachments = [];
+        var promises = [];
 
         if(message.Attachments && message.Attachments.length > 0) {
+
+            var keys = authentication.getPrivateKeys(message.From.ID);
+
             _.each(message.Attachments, function(attachment) {
+
                 try {
                     // decode key packets
                     var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-                    // get user's pk
-                    var key = authentication.getPrivateKey().then(function(pk) {
-                        // decrypt session key from keypackets
-                        pmcw.decryptSessionKey(keyPackets, pk).then(function(sessionKey) {
-                            attachment.sessionKey = sessionKey;
-                        }, function(error) {
-                            notify({message: 'Error during decryption of the session key', classes: 'notification-danger'});
-                            $log.error(error);
-                        });
+
+                    var promise = pmcw.decryptSessionKey(keyPackets, keys).then(function(sessionKey) {
+                        attachment.sessionKey = sessionKey;
                     }, function(error) {
-                        notify({message: 'Error during decryption of the private key', classes: 'notification-danger'});
+                        notify({message: 'Error during decryption of the session key', classes: 'notification-danger'});
                         $log.error(error);
+                        removeAttachments.push(attachment);
                     });
+
+                    promises.push(promise);
                 } catch(error) {
                     removeAttachments.push(attachment);
                 }
             });
         }
 
-        if(removeAttachments.length > 0) {
-            _.each(removeAttachments, function(attachment) {
-                notify({classes: 'notification-danger', message: 'Decryption of attachment ' + attachment.Name + ' failed. It has been removed from this draft.'});
-                $scope.removeAttachment(attachment, message);
-            });
-        }
+        $q.all(promises).finally(function() {
+            if(removeAttachments.length > 0) {
+                _.each(removeAttachments, function(attachment) {
+                    notify({classes: 'notification-danger', message: 'Decryption of attachment ' + attachment.Name + ' failed. It has been removed from this draft.'});
+                    $scope.removeAttachment(attachment, message);
+                });
+            }
+        });
     };
 
     $scope.initAttachment = function(tempPacket, index) {
@@ -467,7 +471,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         return attachments.load(file, message.From.Keys[0].PublicKey).then(
             function(packets) {
-                return attachments.upload(packets, message.ID, tempPacket).then(
+                return attachments.upload(packets, message, tempPacket).then(
                     function(result) {
                         cleanup( result );
                     },
