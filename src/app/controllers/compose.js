@@ -465,7 +465,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             onResize();
         };
 
-        return attachments.load(file).then(
+        return attachments.load(file,message.From.Keys[0].PublicKey).then(
             function(packets) {
                 return attachments.upload(packets, message.ID, tempPacket).then(
                     function(result) {

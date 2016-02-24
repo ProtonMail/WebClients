@@ -23,10 +23,6 @@ angular.module("proton.attachments", [
             var fileObject = {};
             var reader = new FileReader();
 
-            if(angular.isUndefined(key)) {
-                key = authentication.user.PublicKey;
-            }
-
             if (!file) {
                 q.reject(new TypeError("You did not provide a file"));
             }
