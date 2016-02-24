@@ -465,7 +465,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             onResize();
         };
 
-        return attachments.load(file).then(
+        return attachments.load(file, message.From.Keys[0].PublicKey).then(
             function(packets) {
                 return attachments.upload(packets, message.ID, tempPacket).then(
                     function(result) {
@@ -749,19 +749,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             $scope.saveOld(message);
         }
-    };
-
-    $scope.selectFile = function(message, files) {
-        _.defaults(message, {
-            Attachments: []
-        });
-
-        message.Attachments.push.apply(
-            message.Attachments,
-            _.map(files, function(file) {
-                return attachments.load(file);
-            })
-        );
     };
 
     $scope.attToggle = function(message) {

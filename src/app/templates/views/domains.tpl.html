@@ -140,13 +140,13 @@
                                         <span ng-show="address.Status === 0">{{ address.Email }}</span>
                                     </td>
                                     <td>
-                                        <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
-                                        <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
+                                        <span class="pm_badge success" ng-show="address.Status === 1 && (address.Type === 2 || address.Type === 3)">{{ 'ENABLED' | translate }}</span>
+                                        <span class="pm_badge error" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3)">{{ 'DISABLED' | translate }}</span>
                                     </td>
                                     <td class="text-right">
                                         <button type="button" class="pm_button link" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3)" ng-click="enableAddress(address)" title="{{ 'ENABLE_ADDRESS' | translate }}">{{ 'ENABLE' | translate }}</button>
                                         <button type="button" class="pm_button link" ng-show="address.Status === 1 && (address.Type === 2 || address.Type === 3)" ng-click="disableAddress(address)" title="{{ 'DISABLE_ADDRESS' | translate }}">{{ 'DISABLE' | translate }}</button>
-                                        <button type="button" class="pm_button link" ng-show="address.Keys.length === 0 && (owned(address) === true || privated(address) === false)" ng-click="generate(address)" title="{{ 'GENERATE_KEY_PAIR' | translate }}">{{ 'GENERATE' | translate }}</button>
+                                        <!-- <button type="button" class="pm_button link" ng-show="address.Keys.length === 0 && (owned(address) === true || privated(address) === false)" ng-click="generate(address)" title="{{ 'GENERATE_KEY_PAIR' | translate }}">{{ 'GENERATE' | translate }}</button> -->
                                         <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3" ng-click="deleteAddress(address, domain)" title="{{ 'DELETE_ADDRESS' | translate }}">{{ 'DELETE' | translate }}</button>
                                     </td>
                                 </tr>
