@@ -254,20 +254,18 @@
         	position: absolute;
         	left: 0;
         	right: 0;
-        	top: 40px;
-        	bottom: 52px;
+        	top: 30px;
+        	bottom: 0;
         	padding: 2rem 10px;
         	box-sizing: border-box;
         	z-index: 99;
         	background: #fafafa;
         	display: none;
-        	margin: 1rem;
-        	box-shadow: 2px 2px 2px rgba(0,0,0,.2), 0 0 2px rgba(0,0,0,.2);
         	-webkit-transition: opacity .25s linear;
-        	   -moz-transition: opacity .25s linear;
-        	    -ms-transition: opacity .25s linear;
-        	     -o-transition: opacity .25s linear;
-        	        transition: opacity .25s linear;
+			-moz-transition: opacity .25s linear;
+			-ms-transition: opacity .25s linear;
+			-o-transition: opacity .25s linear;
+			transition: opacity .25s linear;
         	&.show {
         		display: block;
         	}
