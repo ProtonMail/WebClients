@@ -1170,7 +1170,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q) {
+.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/generate.tpl.html',
@@ -1193,7 +1193,7 @@ angular.module("proton.modals", [])
             _.each(this.addresses, function(address) { address.state = QUEUED; });
 
             // Listeners
-            this.$on('updateUser', function(event) {
+            $rootScope.$on('updateUser', function(event) {
                 var dirtyAddresses = [];
 
                 _.each(authentication.user.Addresses, function(address) {

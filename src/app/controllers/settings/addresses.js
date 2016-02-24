@@ -109,7 +109,7 @@ angular.module('proton.controllers.Settings')
         generateModal.activate({
             params: {
                 title: $translate.instant('GENERATE_KEY_PAIR'),
-                message: 'bla bla bla', // TODO need text
+                message: '', // TODO need text
                 addresses: [address],
                 cancel: function() {
                     eventManager.call();
