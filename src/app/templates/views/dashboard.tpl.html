@@ -147,7 +147,7 @@
                                         <span>{{ plan.Title }}</span>
                                     </h3>
                                     <ul class="features">
-                                        <li>
+                                        <li class="tall">
                                             <i class="fa fa-check"></i>
                                             <span class="pm_select inline" ng-show="plan.editable === true">
                                                 <select ng-model="selects.plus.space" ng-options="option.label for option in spaceOptions"></select>
@@ -158,7 +158,7 @@
                                             <strong class="cost pull-right" ng-show="selects.plus.space.index * addons[plan.Cycle].space.Amount && plan.editable === true">+{{ selects.plus.space.index * addons[plan.Cycle].space.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                             <span class="clear"></span>
                                         </li>
-                                        <li ng-class="{disabled: plan.MaxDomains === 0}">
+                                        <li ng-class="{disabled: plan.MaxDomains === 0}" class="tall">
                                             <i class="fa fa-times" ng-show="plan.MaxDomains === 0"></i>
                                             <i class="fa fa-check" ng-show="plan.MaxDomains > 0"></i>
                                             <span class="pm_select inline" ng-show="plan.editable === true">
@@ -170,7 +170,7 @@
                                             <strong class="cost pull-right" ng-show="selects.plus.domain.index * addons[plan.Cycle].domain.Amount && plan.editable === true">+{{ selects.plus.domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                             <span class="clear"></span>
                                         </li>
-                                        <li>
+                                        <li class="tall">
                                             <i class="fa fa-check"></i>
                                             <span class="pm_select inline" ng-show="plan.editable === true">
                                                 <select ng-model="selects.plus.address" ng-options="option.label for option in addressOptions"></select>

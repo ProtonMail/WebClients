@@ -69,8 +69,8 @@
                 ul {
                     li {
                         padding: 0 10px;
-                        line-height: 60px;
-                        min-height: 60px;
+                        line-height: 35px;
+                        min-height: 35px;
                         border-bottom: 1px solid $border;
                         &.disabled {
                             color: $gray-medium;
@@ -86,6 +86,10 @@
                         span.clear {
                             display: block;
                         }
+                        &.tall {
+                            line-height: 45px;
+                            min-height: 45px;
+                        }
                     }
                 }
             }
@@ -95,7 +99,7 @@
                 z-index: 2;
                 border-top: none;
                 .cycle {
-                    min-height: 70px;
+                    min-height: 50px;
                     box-sizing: border-box;
                     margin-bottom: 0;
                     border-bottom: 1px solid $border;
@@ -129,7 +133,7 @@
                     }
                     label {
                         color: $text;
-                        line-height: 50px;
+                        line-height: 30px;
                         font-size: 90%;
                     }
                     strong {
@@ -139,7 +143,7 @@
                     }
                     &.monthly {
                         .text-right {
-                            line-height: 50px;
+                            line-height: 30px;
                         }
                     }
                 }
@@ -153,8 +157,8 @@
                     visibility: hidden;
                 }
                 footer .cycle {
-                    line-height: 140px;
-                    height: 140px;
+                    line-height: 102px;
+                    height: 122px;
                 }
             }
             &.plus {
