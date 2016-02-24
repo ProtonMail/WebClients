@@ -156,6 +156,7 @@
                                             <span ng-show="plan.editable === false">{{ plan.MaxSpace | humanSize }}</span>
                                             <span>{{ 'STORAGE' | translate }}</span>
                                             <strong class="cost pull-right" ng-show="selects.plus.space.index * addons[plan.Cycle].space.Amount && plan.editable === true">+{{ selects.plus.space.index * addons[plan.Cycle].space.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
+                                            <span class="clear"></span>
                                         </li>
                                         <li ng-class="{disabled: plan.MaxDomains === 0}">
                                             <i class="fa fa-times" ng-show="plan.MaxDomains === 0"></i>
@@ -167,6 +168,7 @@
                                             <span ng-show="plan.editable === false && plan.MaxDomains > 0">{{ plan.MaxDomains }}</span>
                                             <span>{{ 'CUSTOM_DOMAINS' | translate }}</span>
                                             <strong class="cost pull-right" ng-show="selects.plus.domain.index * addons[plan.Cycle].domain.Amount && plan.editable === true">+{{ selects.plus.domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
+                                            <span class="clear"></span>
                                         </li>
                                         <li>
                                             <i class="fa fa-check"></i>
@@ -177,6 +179,7 @@
                                             <span ng-show="plan.editable === false && plan.MaxAddresses > 0">{{ plan.MaxAddresses }}</span>
                                             <span>{{ 'ADDRESSES' | translate }}</span>
                                             <strong class="cost pull-right" ng-show="selects.plus.address.index * addons[plan.Cycle].address.Amount && plan.editable === true">+{{ selects.plus.address.index * addons[plan.Cycle].address.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
+                                            <span class="clear"></span>
                                         </li>
                                         <li>
                                             <i class="fa fa-check"></i>
