@@ -442,6 +442,7 @@ angular.module("proton.controllers.Settings")
                 },
                 cancel: function() {
                     addressModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -461,11 +462,9 @@ angular.module("proton.controllers.Settings")
                     $scope.spf(domain);
 
                 },
-                submit: function() {
-                    mxModal.deactivate();
-                },
                 close: function() {
                     mxModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -486,6 +485,7 @@ angular.module("proton.controllers.Settings")
                 },
                 close: function() {
                     spfModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -508,6 +508,7 @@ angular.module("proton.controllers.Settings")
                 },
                 close: function() {
                     dkimModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -529,6 +530,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             $scope.domains[index] = result.data.Domain;
                             dmarcModal.deactivate();
+                            eventManager.call();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
@@ -540,6 +542,7 @@ angular.module("proton.controllers.Settings")
                 },
                 close: function() {
                     dmarcModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
