@@ -57,18 +57,15 @@
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td><strong>{{ 'STORAGE' | translate }}</strong></td>
-                                    <td class="text-right actions">{{ price('1gb') / 100 | currency: subscription.Currency }}</td>
+                                    <td colspan="2"><strong>{{ count('MaxSpace') | humanSize }} {{ 'STORAGE' | translate }}</strong></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td><strong>{{ 'DOMAINS' | translate }}</strong></td>
-                                    <td class="text-right actions">{{ price('1domain') / 100 | currency: subscription.Currency }}</td>
+                                    <td colspan="2"><strong>{{ count('MaxDomains') }} {{ 'DOMAINS' | translate }}</strong></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td><strong>{{ 'ADDRESSES' | translate }}</strong></td>
-                                    <td class="text-right actions">{{ price('5address') / 100 | currency: subscription.Currency }}</td>
+                                    <td colspan="2"><strong> {{ count('MaxAddresses') }} {{ 'ADDRESSES' | translate }}</strong></td>
                                 </tr>
                                 <tr>
                                     <th>{{ 'TOTAL_PRICE' | translate }}:</th>
