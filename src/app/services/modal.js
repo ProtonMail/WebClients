@@ -846,21 +846,15 @@ angular.module("proton.modals", [])
 
             // Functions
             this.add = function() {
-                if (angular.isDefined(params.add) && angular.isFunction(params.add)) {
-                    params.add(this.address, this.member);
-                }
+                params.add(this.address, this.member);
             };
 
             this.next = function() {
-                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                    params.next();
-                }
+                params.next();
             };
 
             this.close = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.cancel();
             };
         }
     });
