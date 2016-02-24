@@ -436,37 +436,13 @@ angular.module("proton.controllers.Settings")
                 step: 3,
                 domain: domain,
                 members: $scope.members,
-                add: function(address, member) {
-                    networkActivityTracker.track(
-                        Address.create({
-                            Local: address, // local part
-                            Domain: domain.DomainName,
-                            MemberID: member.ID // either you custom domain or a protonmail domain
-                        })
-                    ).then(function(result) {
-                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
-                            domain.Addresses.push(result.data.Address);
-                            eventManager.call(); // Call event log manager
-                            addressModal.deactivate();
-                            $scope.addAddress(domain);
-                        } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
-                            notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
-                        } else if(angular.isDefined(result.data) && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
-                        }
-                    }, function(error) {
-                        notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
-                    });
-                },
                 next: function() {
                     addressModal.deactivate();
                     $scope.mx(domain);
                 },
                 cancel: function() {
                     addressModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -486,11 +462,9 @@ angular.module("proton.controllers.Settings")
                     $scope.spf(domain);
 
                 },
-                submit: function() {
-                    mxModal.deactivate();
-                },
                 close: function() {
                     mxModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -511,6 +485,7 @@ angular.module("proton.controllers.Settings")
                 },
                 close: function() {
                     spfModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -533,6 +508,7 @@ angular.module("proton.controllers.Settings")
                 },
                 close: function() {
                     dkimModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -554,6 +530,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             $scope.domains[index] = result.data.Domain;
                             dmarcModal.deactivate();
+                            eventManager.call();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
@@ -565,6 +542,7 @@ angular.module("proton.controllers.Settings")
                 },
                 close: function() {
                     dmarcModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
