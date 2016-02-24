@@ -1178,7 +1178,6 @@ angular.module("proton.modals", [])
             // Variables
             var mailboxPassword = authentication.getPassword();
             var promises = [];
-            // "Queued", "Generating" with some sort of spinner, and "Done". "Saved" and "Error"
             var QUEUED = 0;
             var GENERATING = 1;
             var DONE = 2;
@@ -1192,6 +1191,21 @@ angular.module("proton.modals", [])
             this.addresses = params.addresses;
             this.message = params.message;
             _.each(this.addresses, function(address) { address.state = QUEUED; });
+
+            // Listeners
+            this.$on('updateUser', function(event) {
+                var dirtyAddresses = [];
+
+                _.each(authentication.user.Addresses, function(address) {
+                    if (address.Keys.length === 0 && authentication.user.Private === 1) {
+                        dirtyAddresses.push(address);
+                    }
+                });
+
+                if (dirtyAddresses.length === 0) {
+                    params.cancel();
+                }
+            }.bind(this));
 
             // Functions
             this.submit = function() {
