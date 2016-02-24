@@ -846,8 +846,27 @@ angular.module("proton.modals", [])
 
             // Functions
             this.add = function() {
-                params.add(this.address, this.member);
-            };
+                networkActivityTracker.track(
+                    Address.create({
+                        Local: this.address, // local part
+                        Domain: this.domain.DomainName,
+                        MemberID: this.member.ID // either you custom domain or a protonmail domain
+                    })
+                ).then(function(result) {
+                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                        notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
+                        this.domain.Addresses.push(result.data.Address);
+                    } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
+                        notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
+                    } else if(angular.isDefined(result.data) && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    } else {
+                        notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                    }
+                }.bind(this), function(error) {
+                    notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                });
+            }.bind(this);
 
             this.next = function() {
                 params.next();
