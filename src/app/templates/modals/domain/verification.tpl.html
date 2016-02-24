@@ -31,7 +31,8 @@
         </div>
         <div class="modal-footer clearfix">
             <button ng-show="ctrl.domain.VerifyState === 0 || ctrl.domain.VerifyState === 1" class="pm_button primary pull-right" ng-click="ctrl.submit()">{{ 'VERIFY' | translate }}</button>
-            <button ng-show="ctrl.domain.VerifyState === 2" class="pm_button primary pull-right" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
+            <button ng-show="ctrl.domain.State > 0" class="pm_button primary pull-right" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
+            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

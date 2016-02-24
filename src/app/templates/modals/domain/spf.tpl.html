@@ -29,10 +29,8 @@
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button class="pm_button primary pull-right" ng-show="ctrl.domain.SpfState === 3" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
-            <button class="pm_button primary pull-right" ng-hide="ctrl.domain.SpfState === 3" ng-click="ctrl.verify()">{{ 'VERIFY' | translate }}</button>
-            <button class="pm_button" ng-hide="ctrl.domain.SpfState === 3" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
-            <div class="clear"></div>
+            <button class="pm_button primary pull-right" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
+            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

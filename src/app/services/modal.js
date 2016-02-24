@@ -857,7 +857,7 @@ angular.module("proton.modals", [])
                 }
             };
 
-            this.cancel = function() {
+            this.close = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
@@ -1029,9 +1029,6 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.verify = function() {
-                params.verify();
-            };
             this.next = function() {
                 params.next();
             };
@@ -1052,20 +1049,11 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.verify = function() {
-                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
-                    params.verify();
-                }
-            };
             this.next = function() {
-                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                    params.next();
-                }
+                params.next();
             };
             this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
+                params.close();
             };
         }
     });
@@ -1081,20 +1069,11 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.verify = function() {
-                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
-                    params.verify();
-                }
-            };
             this.next = function() {
-                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                    params.next();
-                }
+                params.next();
             };
             this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
+                params.close();
             };
         }
     });
@@ -1111,14 +1090,10 @@ angular.module("proton.modals", [])
                 $rootScope.$broadcast(name, params.domain);
             };
             this.verify = function() {
-                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
-                    params.verify();
-                }
+                params.verify();
             };
             this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
+                params.close();
             };
         }
     });
