@@ -828,7 +828,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, $translate) {
+.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, $translate, eventManager) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/address.tpl.html',
@@ -856,6 +856,7 @@ angular.module("proton.modals", [])
                     if(angular.isDefined(result.data) && result.data.Code === 1000) {
                         notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
                         this.domain.Addresses.push(result.data.Address);
+                        eventManager.call();
                     } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
                         notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
                     } else if(angular.isDefined(result.data) && result.data.Error) {
