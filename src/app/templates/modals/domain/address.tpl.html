@@ -17,17 +17,17 @@
                         </span>
                     </div>
                 </div>
-                <form class="pm_grid" method="post" ng-submit="ctrl.add()">
+                <form method="post" ng-submit="ctrl.add()">
                     <p>Add addresses for <strong>{{ ctrl.domain.DomainName }}</strong>:</p>
-                    <div class="col-1-3">
-                        <input autofocus type="text" ng-model="ctrl.address" placeholder="Address" />
+                    <div class="pm_grid margin">
+                        <div class="col-1-3">
+                            <input autofocus type="text" ng-model="ctrl.address" placeholder="Address" />
+                        </div>
+                        <div class="col-2-3">
+                            <input value="@{{ ctrl.domain.DomainName }}" type="text" readonly class="noBorder">
+                        </div>
                     </div>
-                    <div class="col-1-3">
-                        <input value="@{{ ctrl.domain.DomainName }}" type="text" readonly class="noBorder">
-                    </div>
-                    <div class="col-1-3">
-                        <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
-                    </div>
+                    <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
                 </form>
 
                 <div ng-show="ctrl.domain.Addresses.length > 0">
