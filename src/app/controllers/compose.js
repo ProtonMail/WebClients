@@ -1127,7 +1127,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         message.saving = false;
                         message.autosaving = false;
                         notify({message: result.Error, classes: 'notification-danger'});
-                        deferred.resolve(result);
+                        deferred.reject(result);
                     } else {
                         $log.error(result);
                         message.saving = false;
