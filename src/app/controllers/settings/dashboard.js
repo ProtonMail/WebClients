@@ -88,6 +88,7 @@ angular.module("proton.controllers.Settings")
     // Listeners
     $scope.$on('updateUser', function(event) {
         $scope.user = {
+            displayName: authentication.user.DisplayName,
             credit: authentication.user.Credit,
             usedSpace: authentication.user.UsedSpace,
             maxSpace: authentication.user.MaxSpace

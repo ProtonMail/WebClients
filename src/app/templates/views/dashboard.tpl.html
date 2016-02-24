@@ -11,7 +11,7 @@
                                 <tr>
                                     <th>{{ 'USERNAME' | translate }}:</th>
                                     <td>
-                                        <strong>{{ user.DisplayName }}</strong>
+                                        <strong>{{ user.displayName }}</strong>
                                     </td>
                                     <td class="text-right actions"></td>
                                 </tr>
@@ -39,7 +39,7 @@
                                     <th>{{ 'STORAGE' | translate }}:</th>
                                     <td>
                                         <strong ng-show="organization">{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }}</strong>
-                                        <strong ng-show="organization === null">{{ user.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ user.MaxSpace | humanSize }}</strong>
+                                        <strong ng-show="organization === null">{{ user.usedSpace | humanSize }} {{ 'OF' | translate }} {{ user.maxSpace | humanSize }}</strong>
                                     </td>
                                     <td class="text-right actions"></td>
                                 </tr>
