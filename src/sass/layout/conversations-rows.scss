@@ -83,6 +83,10 @@ body {
                     font-size: 1em;
                     color: #000;
                     display: inline-block;
+                    float: left;
+                    max-width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
                 .location {
                     width: 1.25rem;
