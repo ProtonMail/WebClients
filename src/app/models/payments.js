@@ -56,9 +56,9 @@ angular.module("proton.models.payments", [])
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
-                                    plan.sending = $translate.instant('UNLIMITED_SENDING');
-                                    plan.labels = $translate.instant('UNLIMITED_LABELS');
-                                    plan.support = $translate.instant('PRIORITY_SUPPORT');
+                                    plan.sending = '1000 ' + $translate.instant('MESSAGES_PER_DAY');
+                                    plan.labels = '200 ' + $translate.instant('LABELS');
+                                    plan.support = $translate.instant('SUPPORT');
                                     break;
                                 case 'business':
                                     plan.editable = true;
