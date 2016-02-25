@@ -107,7 +107,7 @@ angular.module("proton.models.payments", [])
                             MaxAddresses: 1,
                             MaxSpace: 5368709120, // 500 MB
                             MaxMembers: 1,
-                            Cycle: 1,
+                            Cycle: 12,
                             Currency: authentication.user.Currency
                         };
                     }
