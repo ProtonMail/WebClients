@@ -1312,6 +1312,8 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var donatation = function() {
+                var year = (this.year.length === 2) ? '20' + this.year : this.year;
+
                 return Payment.donate({
                     Amount: this.amount * 100, // Don't be afraid
                     Currency: this.currency.value,
@@ -1320,7 +1322,7 @@ angular.module("proton.modals", [])
                        Details: {
                            Number: this.number,
                            ExpMonth: this.month,
-                           ExpYear: this.year,
+                           ExpYear: year,
                            CVC: this.cvc,
                            Name: this.fullname,
                            Country: this.country.value,
