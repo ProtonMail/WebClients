@@ -146,7 +146,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.$on('loadMessage', function(event, message, save) {
         var current = _.findWhere($scope.messages, {ID: message.ID});
-        var mess = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
+        var mess = new Message(_.pick(message, 'ID', 'AddressID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
 
         if(mess.NumAttachments > 0) {
             mess.attachmentsToggle = true;
@@ -267,6 +267,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     // Functions
     $scope.setDefaults = function(message) {
+        var enabled_addresses = $filter('filter')($filter('orderBy')(authentication.user.Addresses, 'Send'), {Status: 1});
+        var sender = enabled_addresses[0];
+
+        console.log(message);
+
+        if( angular.isDefined(message.AddressID) ) {
+            var original_address = $filter('filter')(enabled_addresses, {ID: message.AddressID});
+            console.log(original_address);
+            if ( original_address.length ) {
+                sender = original_address[0];
+            }
+        }
+
         _.defaults(message, {
             ToList: [],
             CCList: [],
@@ -276,7 +289,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             Attachments: [],
             IsEncrypted: 0,
             Body: message.Body,
-            From: $filter('filter')($filter('orderBy')(authentication.user.Addresses, 'Send'), {Status: 1})[0]
+            From: sender
         });
     };
 
