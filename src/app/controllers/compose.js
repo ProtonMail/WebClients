@@ -267,16 +267,17 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     // Functions
     $scope.setDefaults = function(message) {
-        var enabled_addresses = $filter('filter')($filter('orderBy')(authentication.user.Addresses, 'Send'), {Status: 1});
-        var sender = enabled_addresses[0];
+        var enabledAddresses = _.chain(authentication.user.Addresses)
+            .where({Status: 1})
+            .sortBy('Send')
+            .value();
+        var sender = enabledAddresses[0];
 
-        console.log(message);
+        if (angular.isDefined(message.AddressID)) {
+            var originalAddress = _.findWhere(enabledAddresses, {ID: message.AddressID});
 
-        if( angular.isDefined(message.AddressID) ) {
-            var original_address = $filter('filter')(enabled_addresses, {ID: message.AddressID});
-            console.log(original_address);
-            if ( original_address.length ) {
-                sender = original_address[0];
+            if (angular.isDefined(originalAddress)) {
+                sender = originalAddress;
             }
         }
 
