@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"save(message, false, false, true)\">": "0\" ng-change=\"save(message, false, false, true)\">",
     "ABSOLUTE_SECURITY": "Absolute Security",
     "ACCESS_TO_V2": "Having trouble? Use the old version (v2)",
     "ACCOUNT": "Account",
@@ -542,11 +541,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "You have successfully unsubscribed",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "Your new features are now available",
     "ZIP": "Zip",
-    "ZIP_CODE": "Zip Code",
-    "{{ 'DELETE' | translate }}": "{{ 'DELETE' | translate }}",
-    "{{ 'DISABLE' | translate }}": "{{ 'DISABLE' | translate }}",
-    "{{ 'EDIT' | translate }}": "{{ 'EDIT' | translate }}",
-    "{{ 'ENABLE' | translate }}": "{{ 'ENABLE' | translate }}",
-    "{{ 'GENERATE' | translate }}": "{{ 'GENERATE' | translate }}",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}"
+    "ZIP_CODE": "Zip Code"
 }
