@@ -43,9 +43,9 @@
                 <span class="pm_dropdown wide right">
                     <p><strong>{{ user.DisplayName }}</strong></p>
                     <p><b>{{ user.Addresses[0].Email }}</b></p>
-                    <!-- <a href="#" class="help" ng-click="tour()">
+                    <a href="#" class="help" ng-click="tour()" ng-if="wizardEnabled === true">
                         <i class="fa fa-magic"></i> {{ 'TUTORIAL' | translate }}
-                    </a> -->
+                    </a>
                     <a class="help" target="_blank" href="https://protonmail.com/support">
                         <i class="fa fa-life-ring"></i> {{ 'HELP_AND_ANSWERS' | translate }}
                     </a>
