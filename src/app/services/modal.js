@@ -400,12 +400,14 @@ angular.module("proton.modals", [])
                 var deferred = $q.defer();
 
                 if (this.cardChange === true) {
+                    var year = (this.year.length === 2) ? '20' + this.year : this.year;
+
                     Payment.updateMethod({
                         Type: 'card',
                         Details: {
                             Number: this.number,
                             ExpMonth: this.month,
-                            ExpYear: this.year,
+                            ExpYear: year,
                             CVC: this.cvc,
                             Name: this.fullname,
                             Country: this.country.value,
@@ -639,12 +641,14 @@ angular.module("proton.modals", [])
                 var deferred = $q.defer();
 
                 if (this.cardChange === true && this.valid.AmountDue > 0) {
+                    var year = (this.year.length === 2) ? '20' + this.year : this.year;
+
                     Payment.updateMethod({
                         Type: 'card',
                         Details: {
                             Number: this.number,
                             ExpMonth: this.month,
-                            ExpYear: this.year,
+                            ExpYear: year,
                             CVC: this.cvc,
                             Name: this.fullname,
                             Country: this.country.value,
