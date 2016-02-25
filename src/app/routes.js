@@ -551,12 +551,6 @@ angular.module('proton.routes', [
             delete $rootScope.creds;
             delete $rootScope.tempUser;
             authentication.redirectIfNecessary();
-
-            if ($rootScope.firstTime && CONSTANTS.WIZARD_ENABLED === true) {
-                $timeout( function() {
-                    $rootScope.$broadcast('tourStart');
-                }, 1);
-            }
         }
     })
 

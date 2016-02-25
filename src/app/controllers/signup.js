@@ -396,9 +396,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                         $rootScope.isLoggedIn = authentication.isLoggedIn();
                         $rootScope.isLocked = authentication.isLocked();
                         $rootScope.isSecure = authentication.isSecured();
-                        $rootScope.firstTime = true;
                         window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
-                        // $rootScope.welcome = true; // Display welcome modal
+                        if (CONSTANTS.WIZARD_ENABLED === true) {
+                            $rootScope.welcome = true; // Display welcome modal
+                        }
                         $state.go("secured.inbox");
                     }
                 );
