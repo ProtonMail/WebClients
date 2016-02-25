@@ -176,10 +176,15 @@
             <div class="meta">
                 <div class="row fromRow">
                     <label>{{ 'FROM' | translate }}</label>
-                    <select ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" title="{{ 'FROM' | translate }}" ng-disabled="message.Attachments.length > 0"></select>
+                    <select
+                    ng-model="message.From"
+                    ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'"
+                    title="{{ 'FROM' | translate }}"
+                    ng-disabled="message.Attachments.length > 0"></select>
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
                     </button>
+                    <span class="overlay" ng-show="message.Attachments.length > 0" pt-tooltip="Remove Attachments to change your From address."></span>
                 </div>
                 <div class="row placeholder" ng-click="focusTo(message)" ng-hide="message.fields === true">
                     <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0">{{ 'RECIPIENTS' | translate }}</label>
