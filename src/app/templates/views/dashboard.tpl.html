@@ -59,7 +59,10 @@
                                 <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
                                     <th>{{ 'PLAN' | translate }}:</th>
                                     <td><strong>{{ plan.Title }}</strong></td>
-                                    <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
+                                    <td class="text-right actions">
+                                        <span ng-show="subscription.Cycle === 1">{{ subscription.Amount / 100 | currency: subscription.Currency }}</span>
+                                        <span ng-show="subscription.Cycle === 12">{{ subscription.Amount / 100 / 12 | currency: subscription.Currency }}/mo</span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th></th>
@@ -77,12 +80,12 @@
                                     <th>{{ 'TOTAL_PRICE' | translate }}:</th>
                                     <td>
                                         <strong ng-show="subscription.Cycle === 1">{{ 'MONTHLY' | translate }}</strong>
-                                        <strong ng-show="subscription.Cycle === 12">{{ 'YEARLY' | translate }}</strong>
+                                        <strong ng-show="subscription.Cycle === 12">{{ 'ANNUALY' | translate }}</strong>
                                     </td>
                                     <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                 </tr>
                                 <tr ng-show="user.Credit > 0">
-                                    <th>{{ 'AVAILABLE_CREDIT' | translate }}:</th>
+                                    <th>{{ 'CREDIT' | translate }}:</th>
                                     <td></td>
                                     <td class="text-right actions">{{ user.Credit / 100 | currency: subscription.Currency }}</td>
                                 </tr>
@@ -223,7 +226,7 @@
                                         </span>
                                         <div class="col-1-2">
                                             <label>
-                                                <input type="radio" ng-model="configuration.cycle" ng-value="12" /> {{ 'PAY_YEARLY' | translate }}
+                                                <input type="radio" ng-model="configuration.cycle" ng-value="12" /> {{ 'PAY_ANNUALY' | translate }}
                                             </label>
                                         </div>
                                         <div class="col-1-2 text-right">

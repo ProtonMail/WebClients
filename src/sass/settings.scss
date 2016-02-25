@@ -808,6 +808,10 @@ body.mobileMode {
     th.desc,
     td.desc {
         padding-right: 0;
+        .space {
+            width: 20px;
+            display: inline-block;
+        }
     }
 
     th.price,

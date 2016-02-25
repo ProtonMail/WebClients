@@ -14,22 +14,16 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
-                            <td class="desc">{{ plan.Title }} {{ 'PLAN' | translate }}</td>
+                            <td class="desc">
+                                <div>{{ plan.Title }} {{ 'PLAN' | translate }}</div>
+                                <div><span class="space"></span>{{ ctrl.count('MaxSpace') | humanSize }} {{ 'STORAGE' | translate }}</div>
+                                <div><span class="space"></span>{{ ctrl.count('MaxDomains') }} <span ng-show="ctrl.count('MaxDomains') === 1">{{ 'CUSTOM_DOMAIN' | translate }}</span><span ng-show="ctrl.count('MaxDomains') > 1">{{ 'CUSTOM_DOMAINS' | translate }}</span></div>
+                                <div><span class="space"></span>{{ ctrl.count('MaxAddresses') }} {{ 'ADDRESSES' | translate }}</div>
+                            </td>
                             <td class="price text-right">
-                                <strong>{{ ctrl.valid.Amount / 100 | currency: plan.Currency }}</strong>
+                                <strong ng-show="ctrl.valid.Cycle === 1">{{ ctrl.valid.Amount / 100 | currency: plan.Currency }}</strong>
+                                <strong ng-show="ctrl.valid.Cycle === 12">{{ ctrl.valid.Amount / 100 / 12 | currency: plan.Currency }}/mo</strong>
                             </td>
-                        </tr>
-                        <tr>
-                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxSpace') | humanSize }} {{ 'STORAGE' | translate }}</td>
-                        </tr>
-                        <tr>
-                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxDomains') }}
-                                <span ng-show="ctrl.count('MaxDomains') === 1">{{ 'CUSTOM_DOMAIN' | translate }}</span>
-                                <span ng-show="ctrl.count('MaxDomains') > 1">{{ 'CUSTOM_DOMAINS' | translate }}</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="desc" colspan="2">{{ 'WITH' | translate }} {{ ctrl.count('MaxAddresses') }} {{ 'ADDRESSES' | translate }}</td>
                         </tr>
                         <tr>
                             <td class="desc">
@@ -63,7 +57,7 @@
                         <strong class="text-green">Save 20% with the annual plan!</strong>
                     </p>
                     <p>
-                        <button type="button" class="pm_button primary" ng-click="ctrl.yearly()">{{ 'PAY_YEARLY' | translate }}</button>
+                        <button type="button" class="pm_button primary" ng-click="ctrl.yearly()">{{ 'PAY_ANNUALY' | translate }}</button>
                     </p>
                 </div>
             </div>
