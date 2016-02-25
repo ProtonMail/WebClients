@@ -216,6 +216,7 @@ angular.module("proton.controllers.Outside", [
                         KeyPackets: new Blob([packets.keys]),
                         DataPacket: new Blob([packets.data])
                     });
+                    message.NumAttachments = message.Attachments.length;
                 }, function(error) {
                     message.uploading = false;
                     $scope.resetFile();

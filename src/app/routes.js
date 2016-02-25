@@ -493,6 +493,7 @@ angular.module('proton.routes', [
                     .then(function(body) {
                         message.Body = '<br /><br /><blockquote>' + body + '</blockquote>';
                         message.Attachments = [];
+                        message.NumAttachments = 0;
                         message.replyMessage = true;
                         deferred.resolve(new Message(message));
                     });
