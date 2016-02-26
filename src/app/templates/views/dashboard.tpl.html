@@ -22,7 +22,7 @@
                                         <strong ng-show="organization === null">0</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a ui-sref="secured.domains" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a class="pm_button link" ui-sref="secured.domains" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -32,7 +32,7 @@
                                         <strong ng-show="organization === null">1</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a ui-sref="secured.addresses" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a class="pm_button link" ui-sref="secured.addresses" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -94,7 +94,7 @@
                                         <strong ng-show="methods.length > 0">{{ 'CREDIT_CARD' | translate }}</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a ui-sref="secured.payments" pt-tooltip="{{ 'PAYMENT_METHOD' | translate }}">{{ 'EDIT' | translate }}</a>
+                                        <a class="pm_button link" ui-sref="secured.payments">{{ 'MANAGE' | translate }}</a>
                                     </td>
                                 </tr>
                             </table>
