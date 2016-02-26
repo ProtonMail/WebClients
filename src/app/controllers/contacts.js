@@ -327,7 +327,7 @@ angular.module("proton.controllers.Contacts", [
         dropzoneModal.activate({
             params: {
                 title: $translate.instant('UPLOAD_CONTACTS'),
-                message: 'Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class="pull-right" href="https://protonmail.com/blog/exporting-contacts" target="_blank">Need help?</a>',
+                message: 'Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class="pull-right" href="https://protonmail.com/support/knowledge-base/adding-contacts/" target="_blank">Need help?</a>',
                 import: function(files) {
                     var contactArray = [];
                     var extension = '';
