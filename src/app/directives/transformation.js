@@ -4,15 +4,13 @@ angular.module("proton.transformation", [])
     return {
         restrict: 'A',
         link: function(scope, element, attributes) {
-            var stopObserving = attributes.$observe('ngBindHtml', function(interpolatedValue) {
+            attributes.$observe('ngBindHtml', function(interpolatedValue) {
                 $timeout(function() {
                     var links = angular.element(element).find('a[href^=http]');
 
                     if(links.length > 0) {
                         links.attr('target','_blank').attr('rel', 'noreferrer');
                     }
-
-                    stopObserving();
                 }, 0, false);
             });
         }
