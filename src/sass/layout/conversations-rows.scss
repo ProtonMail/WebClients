@@ -139,6 +139,11 @@ body {
                     }
                 }
             }
+            &.hasLabels {
+                .subject h4 {
+                    max-width: 80%;
+                }
+            }
         }
     }
 }
