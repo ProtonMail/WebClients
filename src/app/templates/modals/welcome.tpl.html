@@ -3,7 +3,7 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">Welcome to ProtonMail</h3>
+                <h3 class="modal-title text-center">Welcome to ProtonMail</h3>
             </div>
             <div class="modal-body">
                 <p class="text-center">You now have a fully encrypted email account that uses PGP. Below are optional yet recommended settings to customize your account. You can always find these on your Settings page.</p><br />
@@ -15,15 +15,6 @@
                         <div class="col-1-2">
                             <input id="displayName" type="text" name="displayName" ng-model="ctrl.displayName" placeholder="{{ 'DISPLAY_NAME' | translate }}" />
                             <p class="help-block"><small>This is the "From" name that people will see in your emails.</small></p>
-                        </div>
-                    </div>
-                    <div class="pm_grid">
-                        <div class="col-1-2">
-                            <label for="recoveryEmail">{{ 'ADD_RECOVERY_EMAIL' | translate }}<br /><em>*Optional</em></label>
-                        </div>
-                        <div class="col-1-2">
-                            <input id="recoveryEmail" type="email" name="recoveryEmail" ng-model="ctrl.recoveryEmail" placeholder="{{ 'RECOVERY_EMAIL' | translate }}" />
-                            <p class="help-block"><small>If you ever forget your login password we can send you a reset link to recover your account. <strong>(Recommended)</strong></small></p>
                         </div>
                     </div>
                 </section>
