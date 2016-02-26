@@ -309,65 +309,6 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('support.confirm-new-password', {
-        url: '/confirm-new-password/:token',
-        onEnter: function($stateParams, $state, Reset) {
-            var token = $stateParams.token;
-
-            // Check if reset token is valid
-            Reset.validateResetToken({
-                token: token
-            }).then(
-                function(response) {
-                    // console.log(response.data);
-                    if (response.data.Error) {
-                        $state.go('support.message', {
-                            data: {
-                                title: response.data.Error,
-                                content: response.data.Error,
-                                type: 'alert-danger'
-                            }
-                        });
-                    }
-                },
-                function() {
-                    $state.go('support.message', {
-                        data: {
-                            title: 'Reset Error',
-                            content: 'Sorry, we are unable to reset your password right now. Please try the link again in a few minutes.',
-                            type: 'alert-danger'
-                        }
-                    });
-                }
-            );
-        },
-        views: {
-            'panel@support': {
-                templateUrl: 'templates/views/confirm-new-password.tpl.html'
-            }
-        }
-    })
-
-    // Deprecated?
-    .state('support.reset-mailbox', {
-        url: '/reset-mailbox/:token',
-        onEnter: function($stateParams, $state, $rootScope, authentication) {
-            $rootScope.resetMailboxToken = $stateParams.token;
-            if (!!!authentication.isLoggedIn()) {
-                event.preventDefault();
-                $state.go('login');
-            }
-            else {
-                $state.go('reset');
-            }
-        },
-        views: {
-            'panel@support': {
-                templateUrl: 'templates/views/confirm-new-password.tpl.html'
-            }
-        }
-    })
-
     // -------------------------------------------
     // ENCRYPTION OUTSIDE
     // -------------------------------------------
