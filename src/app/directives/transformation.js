@@ -4,7 +4,7 @@ angular.module("proton.transformation", [])
     return {
         restrict: 'A',
         link: function(scope, element, attributes) {
-            attributes.$observe('ngBindHtml', function(interpolatedValue) {
+            scope.$watch(attributes.ngBindHtml, function(newValue, oldValue) {
                 $timeout(function() {
                     var links = angular.element(element).find('a[href^=http]');
 
@@ -35,7 +35,7 @@ angular.module("proton.transformation", [])
                 '#OLK_SRC_BODY_SECTION:first',
                 'blockquote[type="cite"]:first'
             ].join(', ');
-            var stopObserving = attributes.$observe('ngBindHtml', function(interpolatedValue) {
+            var stopObserving = scope.$watch(attributes.ngBindHtml, function(newValue, oldValue) {
                 $timeout(function() {
                     var blockquote = jQuery(element).find(quotes).first(); // Reduce the set of matched elements to the first in the set.
                     var parent = angular.element(blockquote).parent().clone(); // Clone the parent of the current blockquote
