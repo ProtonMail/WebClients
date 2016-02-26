@@ -80,7 +80,7 @@
                                     <th>{{ 'TOTAL_PRICE' | translate }}:</th>
                                     <td>
                                         <strong ng-show="subscription.Cycle === 1">{{ 'MONTHLY' | translate }}</strong>
-                                        <strong ng-show="subscription.Cycle === 12">{{ 'ANNUALY' | translate }}</strong>
+                                        <strong ng-show="subscription.Cycle === 12">{{ 'ANNUALLY' | translate }}</strong>
                                     </td>
                                     <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                 </tr>
@@ -226,7 +226,7 @@
                                         </span>
                                         <div class="col-1-2">
                                             <label>
-                                                <input type="radio" ng-model="configuration.cycle" ng-value="12" /> {{ 'PAY_ANNUALY' | translate }}
+                                                <input type="radio" ng-model="configuration.cycle" ng-value="12" /> {{ 'PAY_ANNUALLY' | translate }}
                                             </label>
                                         </div>
                                         <div class="col-1-2 text-right">
