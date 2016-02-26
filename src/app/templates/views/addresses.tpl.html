@@ -23,11 +23,11 @@
                         </label>
                         <div class="pm_sort">
                             <ul data-as-sortable="aliasDragControlListeners" data-ng-model="activeAddresses">
-                                <li ng-repeat="address in activeAddresses" as-sortable-item="">
+                                <li ng-repeat="address in activeAddresses" as-sortable-item="" ng-class="{'highlight': address.Type === 1}">
                                     <span as-sortable-item-handle="">
                                         <i class="fa fa-ellipsis-v"></i>
                                         <button class="pm_button pull-right link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="disable(address)">{{ 'DISABLE' | translate }}</button>
-                                        <span ng-class="{bold: address.Type === 1}">{{ address.Email }}</span> <span class="pm_badge primary" ng-show="$first">{{ 'MAIN' | translate }}</span>
+                                        <span>{{ address.Email }}</span> <span class="pm_badge primary" ng-show="$first">{{ 'MAIN' | translate }}</span>
                                     </span>
                                 </li>
                             </ul>
@@ -41,12 +41,12 @@
 
                         <div class="pm_sort">
                             <ul>
-                                <li ng-repeat="address in disabledAddresses">
+                                <li ng-repeat="address in disabledAddresses" ng-class="{'highlight': address.Type === 1}">
                                     <div>
                                         <button type="button" class="pm_button pull-right link" ng-show="address.Keys.length === 0" ng-click="generate(address)">{{ 'GENERATE_MISSING_KEYS' | translate }}</button>
                                         <button type="button" class="pm_button pull-right link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
                                         <button type="button" class="pm_button pull-right link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="delete(address)">{{ 'DELETE' | translate }}</button>
-                                        <span ng-class="{bold: address.Type === 1}">{{ address.Email }}</span> <span class="pm_badge error" ng-show="address.Keys.length === 0">{{ 'MISSING_KEYS' | translate }}</span>
+                                        <span>{{ address.Email }}</span> <span class="pm_badge error" ng-show="address.Keys.length === 0">{{ 'MISSING_KEYS' | translate }}</span>
                                     </div>
                                 </li>
                             </ul>
