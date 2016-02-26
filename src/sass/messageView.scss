@@ -78,6 +78,10 @@
             & > div.summary {
                 height: 60px;
                 .meta {
+                    .history {
+                        float: left;
+                        margin: 5px .5rem 0 0;
+                    }
                     .contact {
                         float: left;
                         display: block;
