@@ -95,6 +95,9 @@ angular.module('proton.controllers.Settings')
                             confirmModal.deactivate();
                             $scope.methods.splice($scope.methods.indexOf(method), 1);
                             notify({message: $translate.instant('PAYMENT_METHOD_DELETED'), classes: 'notification-success'});
+                        } else if (result.data && result.data.Error) {
+                            confirmModal.deactivate();
+                            notify({message: result.data.Error, classes: 'notification-danger'});
                         }
                     });
                 },

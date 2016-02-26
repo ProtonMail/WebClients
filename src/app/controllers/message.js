@@ -292,16 +292,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.displayImages = function() {
         $scope.message.toggleImages();
-        $scope.message.decryptedBody = undefined; // Reset decrypted body
         $scope.showingMessages = true;
-        $scope.displayContent();
+        $scope.displayContent(true);
     };
 
     /**
      * Decrypt the content of the current message and store it in 'message.decryptedBody'
-     * @param {Boolean} print
+     * @param {Boolean} force
      */
-    $scope.displayContent = function() {
+    $scope.displayContent = function(force) {
         var whitelist = ['notify@protonmail.com'];
 
         if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
@@ -318,7 +317,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.read();
         }
 
-        if (angular.isUndefined($scope.message.decryptedBody)) {
+        if (angular.isUndefined($scope.message.decryptedBody) || force === true) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
                     // NOTE Plain text detection doesn't work. Check #1701
@@ -790,13 +789,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Print current message
      */
     $scope.print = function() {
-        if (angular.element('html').hasClass('ua-windows_nt')) {
-            window.print();
-        }
-        else {
-            var url = $state.href('secured.print', { id: $scope.message.ID });
-            window.open(url, '_blank');
-        }
+        var url = $state.href('secured.print', { id: $scope.message.ID });
+
+        window.open(url, '_blank');
     };
 
     /**

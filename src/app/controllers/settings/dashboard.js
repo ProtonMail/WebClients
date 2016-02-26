@@ -1,9 +1,7 @@
 angular.module("proton.controllers.Settings")
 
 .controller('DashboardController', function(
-    $anchorScroll,
     $filter,
-    $location,
     $rootScope,
     $scope,
     $translate,
@@ -156,17 +154,6 @@ angular.module("proton.controllers.Settings")
     */
     $scope.percentage = function() {
         // return Math.round(100 * $scope.organization.UsedSpace / $scope.organization.MaxSpace);
-    };
-
-    /**
-     * Scroll to the plans columns
-     */
-    $scope.scrollToPlans = function() {
-        // set the location.hash to the id of the element you wish to scroll to.
-        $location.hash('plans');
-
-        // call $anchorScroll()
-        $anchorScroll();
     };
 
     /**

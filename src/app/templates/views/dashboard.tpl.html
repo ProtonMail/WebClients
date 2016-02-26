@@ -22,8 +22,7 @@
                                         <strong ng-show="organization === null">0</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a href="#" ng-click="scrollToPlans()" ng-show="subscription.Name === 'free'">{{ 'UPGRADE' | translate }}</a>
-                                        <a ui-sref="secured.domains" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a class="pm_button link" ui-sref="secured.domains" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -33,8 +32,7 @@
                                         <strong ng-show="organization === null">1</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a href="#" ng-click="scrollToPlans()" ng-show="subscription.Name === 'free'">{{ 'UPGRADE' | translate }}</a>
-                                        <a ui-sref="secured.addresses" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a class="pm_button link" ui-sref="secured.addresses" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -80,7 +78,7 @@
                                     <th>{{ 'TOTAL_PRICE' | translate }}:</th>
                                     <td>
                                         <strong ng-show="subscription.Cycle === 1">{{ 'MONTHLY' | translate }}</strong>
-                                        <strong ng-show="subscription.Cycle === 12">{{ 'ANNUALY' | translate }}</strong>
+                                        <strong ng-show="subscription.Cycle === 12">{{ 'ANNUALLY' | translate }}</strong>
                                     </td>
                                     <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                 </tr>
@@ -96,7 +94,7 @@
                                         <strong ng-show="methods.length > 0">{{ 'CREDIT_CARD' | translate }}</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a ui-sref="secured.payments" pt-tooltip="{{ 'PAYMENT_METHOD' | translate }}">{{ 'EDIT' | translate }}</a>
+                                        <a class="pm_button link" ui-sref="secured.payments">{{ 'MANAGE' | translate }}</a>
                                     </td>
                                 </tr>
                             </table>
@@ -173,8 +171,7 @@
                                                 <i class="fa fa-angle-down"></i>
                                             </span>
                                             <span ng-show="plan.editable === false && plan.MaxDomains > 0">{{ plan.MaxDomains }}</span>
-                                            <span ng-show="plan.MaxDomains === 1">{{ 'CUSTOM_DOMAIN' | translate }}</span>
-                                            <span ng-show="plan.MaxDomains !== 1">{{ 'CUSTOM_DOMAINS' | translate }}</span>
+                                            <span>{{ 'CUSTOM_DOMAINS' | translate }}</span>
                                             <strong class="cost pull-right" ng-show="selects.plus.domain.index * addons[plan.Cycle].domain.Amount && plan.editable === true">+{{ selects.plus.domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                             <span class="clear"></span>
                                         </li>
@@ -226,7 +223,7 @@
                                         </span>
                                         <div class="col-1-2">
                                             <label>
-                                                <input type="radio" ng-model="configuration.cycle" ng-value="12" /> {{ 'PAY_ANNUALY' | translate }}
+                                                <input type="radio" ng-model="configuration.cycle" ng-value="12" /> {{ 'PAY_ANNUALLY' | translate }}
                                             </label>
                                         </div>
                                         <div class="col-1-2 text-right">

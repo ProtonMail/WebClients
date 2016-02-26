@@ -58,8 +58,12 @@
         background-color: transparent;
         border-color: transparent;
         color: $primary;
-        text-decoration: underline;
         box-shadow: none;
+        &:active,
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+        }
     }
     &.round {
         display: inline-block;
