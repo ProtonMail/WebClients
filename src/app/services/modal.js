@@ -1211,31 +1211,41 @@ angular.module("proton.modals", [])
                         // var publicKeyArmored = result.publicKeyArmored; not used
                         var privateKeyArmored = result.privateKeyArmored;
 
-                        Key.create({
+                        return Key.create({
                             AddressID: address.ID,
                             PrivateKey: privateKeyArmored
                         }).then(function(result) {
                             if (result.data && result.data.Code === 1000) {
                                 address.state = SAVED;
+
+                                return $q.resolve();
                             } else if (result.data && result.data.Error) {
                                 address.state = ERROR;
                                 notify({message: result.data.Error, classes: 'notification-danger'});
+
+                                return $q.reject();
                             } else {
                                 address.state = ERROR;
                                 notify({message: 'Error during create key request', classes: 'notification-danger'});
+
+                                return $q.reject();
                             }
                         }.bind(this), function(error) {
                             address.state = ERROR;
                             notify({message: 'Error during the create key request', classes: 'notification-danger'});
+
+                            return $q.reject();
                         });
                     }.bind(this), function(error) {
                         address.state = ERROR;
                         notify({message: error, classes: 'notification-danger'});
+
+                        return $q.reject();
                     }));
                 }.bind(this));
 
                 $q.all(promises)
-                .then(function() {
+                .finally(function() {
                     params.cancel();
                 }.bind(this));
             };
