@@ -14,7 +14,7 @@
                     <a class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</a>
                     <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>
                 </div>
-                <p class="alert alert-info"><strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. <a href=" https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank">Learn more about addresses here</a>.</p>
+                <p class="alert alert-info"><strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted. <a href=" https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank">Learn more about addresses here</a>.</p>
                 <div class="clearfix">
                     <div>
                         <label>
@@ -27,7 +27,7 @@
                                     <span as-sortable-item-handle="">
                                         <i class="fa fa-ellipsis-v"></i>
                                         <button class="pm_button pull-right link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="disable(address)">{{ 'DISABLE' | translate }}</button>
-                                        {{ address.Email }} <span class="pm_badge primary" ng-show="$first">{{ 'MAIN' | translate }}</span>
+                                        <span ng-class="{bold: address.Type === 1}">{{ address.Email }}</span> <span class="pm_badge primary" ng-show="$first">{{ 'MAIN' | translate }}</span>
                                     </span>
                                 </li>
                             </ul>
@@ -45,7 +45,8 @@
                                     <div>
                                         <button type="button" class="pm_button pull-right link" ng-show="address.Keys.length === 0" ng-click="generate(address)">{{ 'GENERATE_MISSING_KEYS' | translate }}</button>
                                         <button type="button" class="pm_button pull-right link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
-                                        <span>{{ address.Email }}</span> <span class="pm_badge error" ng-show="address.Keys.length === 0">{{ 'MISSING_KEYS' | translate }}</span>
+                                        <button type="button" class="pm_button pull-right link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="delete(address)">{{ 'DELETE' | translate }}</button>
+                                        <span ng-class="{bold: address.Type === 1}">{{ address.Email }}</span> <span class="pm_badge error" ng-show="address.Keys.length === 0">{{ 'MISSING_KEYS' | translate }}</span>
                                     </div>
                                 </li>
                             </ul>
