@@ -1445,7 +1445,6 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/welcome.tpl.html',
         controller: function(params) {
             this.displayName = authentication.user.DisplayName;
-            this.recoveryEmail = authentication.user.NotificationEmail;
 
             this.cancel = function() {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
@@ -1461,14 +1460,9 @@ angular.module("proton.modals", [])
                     authentication.user.DisplayName = this.displayName;
                 }
 
-                if (this.recoveryEmail.length > 0) {
-                    promises.push(Setting.noticeEmail({'Password': password, 'NotificationEmail': this.recoveryEmail}).$promise);
-                    authentication.user.NotificationEmail = this.recoveryEmail;
-                }
-
                 networkActivityTracker.track($q.all(promises).then(function() {
                     if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                        params.next(this.displayName, this.recoveryEmail);
+                        params.next(this.displayName);
                     }
                 }.bind(this)));
             }.bind(this);
