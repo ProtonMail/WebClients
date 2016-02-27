@@ -39,10 +39,9 @@
                 </span>
             </li>
         </ul>
-        <p class="display-image text-center pm_button" ng-show="!!imagesHidden" id="showImages">
-            <a ng-click="toggleImages()">
-                <span ng-show="!!imagesHidden">{{ 'SHOW_IMAGES' | translate }}</span>
-                <span ng-hide="!!imagesHidden">{{ 'HIDE_IMAGES' | translate }}</span>
+        <p class="display-image text-center pm_button" ng-show="!!message.imagesHidden" id="showImages">
+            <a href="#" ng-click="toggleImages()">
+                <i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}
             </a>
         </p>
     </div>

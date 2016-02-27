@@ -38,6 +38,7 @@ angular.module('proton.constants', [])
     DESKTOP_BREAKPOINT: 1200,
     ROW_BREAKPOINT: 960,
     MOBILE_BREAKPOINT: 800,
+    WIZARD_ENABLED: false, // true / false
     MAILBOX_IDENTIFIERS: {
         inbox: '0',
         drafts: '1',

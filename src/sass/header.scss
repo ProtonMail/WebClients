@@ -34,6 +34,8 @@ header#pm_header-desktop {
 		width: $sidebarWidth;
 		text-align: center;
 		background-color: $secondary;
+		height: 61px;
+		overflow: hidden;
 		img {
 			display: inline-block;
 			margin: auto;
@@ -271,7 +273,8 @@ header#pm_header-tablet {
 			height: 50px;
 			line-height: 50px;
 			input.query {
-				width: 50%;
+				left: 50px;
+				width: 75%;
 			}
 			button .fa,
 			button[type="submit"],
@@ -284,10 +287,6 @@ header#pm_header-tablet {
 			button[type="button"],
 			button .fa {
 				width: 50px;
-			}
-			input.query {
-				left: 50px;
-				width: 75%;
 			}
 		}
 	}

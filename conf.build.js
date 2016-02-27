@@ -20,7 +20,7 @@ module.exports = {
     sass: ["src/sass/application.scss"]
   },
   external_files: {
-    openpgp: ["openpgp.worker.min.js", "openpgp.min.js"]
+    openpgp: ["openpgp.worker.min.js", "openpgp.min.js", "manifest.json"]
   },
   test_files: {
     js: [

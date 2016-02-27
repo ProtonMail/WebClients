@@ -165,7 +165,9 @@ angular.module('proton.controllers.Settings')
                             notify({message: error, classes: 'notification-danger'});
                         });
                     }, function(error) {
-                        notify({message: 'Unable to decrypt and update organization key', classes: 'notification-danger'});
+                        // TODO We don't display the error for 3.1, but it should be enable after
+                        // https://github.com/ProtonMail/Angular/issues/2434
+                        // notify({message: 'Unable to decrypt and update organization key', classes: 'notification-danger'});
                     });
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});

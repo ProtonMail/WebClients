@@ -99,10 +99,6 @@ angular.module("proton.authentication", [
                                         user.Contacts = result[0].data.Contacts;
                                         user.Labels = result[1].data.Labels;
 
-                                        if (CONSTANTS.HOSTS_ALLOWED.indexOf($location.host()) === -1) {
-                                            user.Role = 1;
-                                        }
-
                                         // All private keys are decrypted with the mailbox password and stored in a `keys` array
                                         _.each(user.Addresses, function(address) {
                     						_.each(address.Keys, function(key, index) {
@@ -573,10 +569,8 @@ angular.module("proton.authentication", [
                     }
 
                     $rootScope.isLoggedIn = true;
-                    // Why are we setting this in two places?
                     $rootScope.user = user;
                     this.user = user;
-                    this.user.Theme = user.Theme;
 
                     return user;
                 }.bind(this),

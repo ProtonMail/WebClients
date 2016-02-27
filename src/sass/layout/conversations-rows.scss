@@ -45,10 +45,9 @@ body {
                 }
             }
 
-            .senders,
             .size,
             .time {
-                font-size: .8em;
+                font-size: .9em;
             }
 
             input[type="checkbox"] {
@@ -84,6 +83,9 @@ body {
                     font-size: 1em;
                     color: #000;
                     display: inline-block;
+                    max-width: 90%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
                 .location {
                     width: 1.25rem;
@@ -135,6 +137,11 @@ body {
                     .pm_labels {
                         background: $read;
                     }
+                }
+            }
+            &.hasLabels {
+                .subject h4 {
+                    max-width: 80%;
                 }
             }
         }

@@ -400,12 +400,14 @@ angular.module("proton.modals", [])
                 var deferred = $q.defer();
 
                 if (this.cardChange === true) {
+                    var year = (this.year.length === 2) ? '20' + this.year : this.year;
+
                     Payment.updateMethod({
                         Type: 'card',
                         Details: {
                             Number: this.number,
                             ExpMonth: this.month,
-                            ExpYear: this.year,
+                            ExpYear: year,
                             CVC: this.cvc,
                             Name: this.fullname,
                             Country: this.country.value,
@@ -426,7 +428,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var finish = function(method) {
-                params.cancel(method);
+                params.close(method);
             };
 
             this.submit = function() {
@@ -444,9 +446,7 @@ angular.module("proton.modals", [])
             };
 
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.close();
             };
         }
     });
@@ -539,7 +539,10 @@ angular.module("proton.modals", [])
             this.coupon = '';
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: 'US'});
-            this.plans = params.plans;
+            this.plans = _.chain(params.plans)
+                .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
+                .uniq()
+                .value();
             this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
 
             if(params.methods.length > 0) {
@@ -638,12 +641,14 @@ angular.module("proton.modals", [])
                 var deferred = $q.defer();
 
                 if (this.cardChange === true && this.valid.AmountDue > 0) {
+                    var year = (this.year.length === 2) ? '20' + this.year : this.year;
+
                     Payment.updateMethod({
                         Type: 'card',
                         Details: {
                             Number: this.number,
                             ExpMonth: this.month,
-                            ExpYear: this.year,
+                            ExpYear: year,
                             CVC: this.cvc,
                             Name: this.fullname,
                             Country: this.country.value,
@@ -688,20 +693,6 @@ angular.module("proton.modals", [])
                 params.change();
             }.bind(this);
 
-            /**
-             * Change cycle to monthly
-             */
-            this.monthly = function() {
-                params.monthly();
-            };
-
-            /**
-             * Change cycle to yearly
-             */
-            this.yearly = function() {
-                params.yearly();
-            };
-
             this.submit = function() {
                 // Change process status true to disable input fields
                 this.step = 'process';
@@ -720,6 +711,25 @@ angular.module("proton.modals", [])
                 }.bind(this));
             }.bind(this);
 
+            this.count = function(type) {
+                var count = 0;
+                var plans = [];
+
+                _.each(params.planIDs, function(planID) {
+                    plans.push(_.findWhere(params.plans, {ID: planID}));
+                });
+
+                _.each(plans, function(plan) {
+                    count += plan[type];
+                });
+
+                return count;
+            };
+
+            this.yearly = function() {
+                params.yearly();
+            };
+
             this.apply = function() {
                 Payment.valid({
                     Currency : this.valid.Currency,
@@ -730,15 +740,10 @@ angular.module("proton.modals", [])
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
-                            notify({
-                                message: $translate.instant('COUPON_INVALID'),
-                                classes: 'notification-danger'
-                            });
+                            notify({message: $translate.instant('COUPON_INVALID'), classes: 'notification-danger'});
+                            this.coupon = '';
                         } else {
-                            notify({
-                                message: $translate.instant('COUPON_ACCEPTED'),
-                                classes: 'notification-success'
-                            });
+                            notify({message: $translate.instant('COUPON_ACCEPTED'), classes: 'notification-success'});
                         }
                         this.valid = result.data;
                     }
@@ -827,7 +832,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, $translate) {
+.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, $translate, eventManager) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/address.tpl.html',
@@ -845,21 +850,35 @@ angular.module("proton.modals", [])
 
             // Functions
             this.add = function() {
-                if (angular.isDefined(params.add) && angular.isFunction(params.add)) {
-                    params.add(this.address, this.member);
-                }
-            };
+                networkActivityTracker.track(
+                    Address.create({
+                        Local: this.address, // local part
+                        Domain: this.domain.DomainName,
+                        MemberID: this.member.ID // either you custom domain or a protonmail domain
+                    })
+                ).then(function(result) {
+                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                        notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
+                        this.domain.Addresses.push(result.data.Address);
+                        eventManager.call();
+                    } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
+                        notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
+                    } else if(angular.isDefined(result.data) && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    } else {
+                        notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                    }
+                }.bind(this), function(error) {
+                    notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                });
+            }.bind(this);
 
             this.next = function() {
-                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                    params.next();
-                }
+                params.next();
             };
 
-            this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+            this.close = function() {
+                params.cancel();
             };
         }
     });
@@ -1028,9 +1047,6 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.verify = function() {
-                params.verify();
-            };
             this.next = function() {
                 params.next();
             };
@@ -1051,20 +1067,11 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.verify = function() {
-                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
-                    params.verify();
-                }
-            };
             this.next = function() {
-                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                    params.next();
-                }
+                params.next();
             };
             this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
+                params.close();
             };
         }
     });
@@ -1080,20 +1087,11 @@ angular.module("proton.modals", [])
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
             };
-            this.verify = function() {
-                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
-                    params.verify();
-                }
-            };
             this.next = function() {
-                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                    params.next();
-                }
+                params.next();
             };
             this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
+                params.close();
             };
         }
     });
@@ -1110,14 +1108,10 @@ angular.module("proton.modals", [])
                 $rootScope.$broadcast(name, params.domain);
             };
             this.verify = function() {
-                if (angular.isDefined(params.verify) && angular.isFunction(params.verify)) {
-                    params.verify();
-                }
+                params.verify();
             };
             this.close = function() {
-                if (angular.isDefined(params.close) && angular.isFunction(params.close)) {
-                    params.close();
-                }
+                params.close();
             };
         }
     });
@@ -1164,7 +1158,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q) {
+.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/generate.tpl.html',
@@ -1172,7 +1166,6 @@ angular.module("proton.modals", [])
             // Variables
             var mailboxPassword = authentication.getPassword();
             var promises = [];
-            // "Queued", "Generating" with some sort of spinner, and "Done". "Saved" and "Error"
             var QUEUED = 0;
             var GENERATING = 1;
             var DONE = 2;
@@ -1186,6 +1179,21 @@ angular.module("proton.modals", [])
             this.addresses = params.addresses;
             this.message = params.message;
             _.each(this.addresses, function(address) { address.state = QUEUED; });
+
+            // Listeners
+            $rootScope.$on('updateUser', function(event) {
+                var dirtyAddresses = [];
+
+                _.each(authentication.user.Addresses, function(address) {
+                    if (address.Keys.length === 0 && authentication.user.Private === 1) {
+                        dirtyAddresses.push(address);
+                    }
+                });
+
+                if (dirtyAddresses.length === 0) {
+                    params.cancel();
+                }
+            }.bind(this));
 
             // Functions
             this.submit = function() {
@@ -1203,31 +1211,41 @@ angular.module("proton.modals", [])
                         // var publicKeyArmored = result.publicKeyArmored; not used
                         var privateKeyArmored = result.privateKeyArmored;
 
-                        Key.create({
+                        return Key.create({
                             AddressID: address.ID,
                             PrivateKey: privateKeyArmored
                         }).then(function(result) {
                             if (result.data && result.data.Code === 1000) {
                                 address.state = SAVED;
+
+                                return $q.resolve();
                             } else if (result.data && result.data.Error) {
                                 address.state = ERROR;
                                 notify({message: result.data.Error, classes: 'notification-danger'});
+
+                                return $q.reject();
                             } else {
                                 address.state = ERROR;
                                 notify({message: 'Error during create key request', classes: 'notification-danger'});
+
+                                return $q.reject();
                             }
                         }.bind(this), function(error) {
                             address.state = ERROR;
                             notify({message: 'Error during the create key request', classes: 'notification-danger'});
+
+                            return $q.reject();
                         });
                     }.bind(this), function(error) {
                         address.state = ERROR;
                         notify({message: error, classes: 'notification-danger'});
+
+                        return $q.reject();
                     }));
                 }.bind(this));
 
                 $q.all(promises)
-                .then(function() {
+                .finally(function() {
                     params.cancel();
                 }.bind(this));
             };
@@ -1263,7 +1281,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('donateModal', function(pmModal, Payment, notify, tools, $translate, $q) {
+.factory('donateModal', function(authentication, pmModal, Payment, notify, tools, $translate, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/donate.tpl.html',
@@ -1276,7 +1294,7 @@ angular.module("proton.modals", [])
                 {label: 'EUR', value: 'EUR'},
                 {label: 'CHF', value: 'CHF'}
             ];
-            this.currency = this.currencies[0];
+            this.currency = _.findWhere(this.currencies, {value: authentication.user.Currency});
             this.number = '';
             this.month = '';
             this.year = '';
@@ -1287,11 +1305,7 @@ angular.module("proton.modals", [])
             this.zip = '';
 
             if (angular.isDefined(params.currency)) {
-                var index = _.findIndex(this.currencies, {value: params.currency});
-
-                if (index !== -1) {
-                    this.currency = this.currencies[index];
-                }
+                this.currency = _.findWhere(this.currencies, {value: params.currency});
             }
 
             // Functions
@@ -1308,6 +1322,8 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var donatation = function() {
+                var year = (this.year.length === 2) ? '20' + this.year : this.year;
+
                 return Payment.donate({
                     Amount: this.amount * 100, // Don't be afraid
                     Currency: this.currency.value,
@@ -1316,7 +1332,7 @@ angular.module("proton.modals", [])
                        Details: {
                            Number: this.number,
                            ExpMonth: this.month,
-                           ExpYear: this.year,
+                           ExpYear: year,
                            CVC: this.cvc,
                            Name: this.fullname,
                            Country: this.country.value,
@@ -1361,7 +1377,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('monetizeModal', function(pmModal) {
+.factory('monetizeModal', function(pmModal, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/monetize.tpl.html',
@@ -1369,7 +1385,7 @@ angular.module("proton.modals", [])
             this.amounts = [5, 10, 25, 50, 100];
             this.currencies = ['EUR', 'USD', 'CHF'];
             this.amount = 25; // default value for the amount
-            this.currency = 'USD'; // default currency
+            this.currency = authentication.user.Currency; // default currency
 
             this.donate = function() {
                 params.donate(this.amount, this.currency);

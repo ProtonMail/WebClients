@@ -4,22 +4,22 @@
             <paginator page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
         </span>
         <a class="pm_button deleteAll" ng-click="deleteAllContacts()">
-            <i class="fa fa-ban"></i> <strong>{{ 'DELETE_ALL_CONTACTS' | translate }}</strong>
+            <i class="fa fa-ban"></i> {{ 'DELETE_ALL_CONTACTS' | translate }}
         </a>
         <a class="pm_button" ng-click="downloadContacts()">
-            <i class="fa fa-download"></i> <strong>{{ 'DOWNLOAD_CONTACTS' | translate }}</strong>
+            <i class="fa fa-download"></i> {{ 'DOWNLOAD_CONTACTS' | translate }}
         </a>
         <a class="pm_button" ng-click="uploadContacts()">
-            <i class="fa fa-upload"></i> <strong>{{ 'UPLOAD_CONTACTS' | translate }}</strong>
+            <i class="fa fa-upload"></i> {{ 'UPLOAD_CONTACTS' | translate }}
         </a>
     </div>
     <button class="pm_button primary" type="button" ng-click="addContact()">
-        <i class="fa fa-plus"></i> <strong>{{ 'ADD_CONTACT' | translate }}</strong>
+        <i class="fa fa-plus"></i> {{ 'ADD_CONTACT' | translate }}
     </button>
     <button class="delete pm_button" type="button" ng-click="deleteContacts()" ng-disabled="contactsSelected().length === 0">
-        <i class="fa fa-trash-o"></i> <strong>{{ 'DELETE_CONTACT' | translate }}</strong>
+        <i class="fa fa-trash-o"></i> {{ 'DELETE_CONTACT' | translate }}
     </button>
     <button class="compose pm_button" type="button" ng-click="composeContacts()" ng-disabled="contactsSelected().length === 0">
-        <i class="fa fa-edit"></i> <strong>{{ 'COMPOSE' | translate }}</strong>
+        <i class="fa fa-edit"></i> {{ 'COMPOSE' | translate }}
     </button
 </nav>

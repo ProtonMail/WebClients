@@ -146,7 +146,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.$on('loadMessage', function(event, message, save) {
         var current = _.findWhere($scope.messages, {ID: message.ID});
-        var mess = new Message(_.pick(message, 'ID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
+        var mess = new Message(_.pick(message, 'ID', 'AddressID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
 
         if(mess.NumAttachments > 0) {
             mess.attachmentsToggle = true;
@@ -267,6 +267,20 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     // Functions
     $scope.setDefaults = function(message) {
+        var enabledAddresses = _.chain(authentication.user.Addresses)
+            .where({Status: 1})
+            .sortBy('Send')
+            .value();
+        var sender = enabledAddresses[0];
+
+        if (angular.isDefined(message.AddressID)) {
+            var originalAddress = _.findWhere(enabledAddresses, {ID: message.AddressID});
+
+            if (angular.isDefined(originalAddress)) {
+                sender = originalAddress;
+            }
+        }
+
         _.defaults(message, {
             ToList: [],
             CCList: [],
@@ -276,7 +290,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             Attachments: [],
             IsEncrypted: 0,
             Body: message.Body,
-            From: $filter('filter')($filter('orderBy')(authentication.user.Addresses, 'Send'), {Status: 1})[0]
+            From: sender
         });
     };
 
@@ -386,37 +400,41 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.decryptAttachments = function(message) {
         var removeAttachments = [];
+        var promises = [];
 
         if(message.Attachments && message.Attachments.length > 0) {
+
+            var keys = authentication.getPrivateKeys(message.From.ID);
+
             _.each(message.Attachments, function(attachment) {
+
                 try {
                     // decode key packets
                     var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-                    // get user's pk
-                    var key = authentication.getPrivateKey().then(function(pk) {
-                        // decrypt session key from keypackets
-                        pmcw.decryptSessionKey(keyPackets, pk).then(function(sessionKey) {
-                            attachment.sessionKey = sessionKey;
-                        }, function(error) {
-                            notify({message: 'Error during decryption of the session key', classes: 'notification-danger'});
-                            $log.error(error);
-                        });
+
+                    var promise = pmcw.decryptSessionKey(keyPackets, keys).then(function(sessionKey) {
+                        attachment.sessionKey = sessionKey;
                     }, function(error) {
-                        notify({message: 'Error during decryption of the private key', classes: 'notification-danger'});
+                        notify({message: 'Error during decryption of the session key', classes: 'notification-danger'});
                         $log.error(error);
+                        removeAttachments.push(attachment);
                     });
+
+                    promises.push(promise);
                 } catch(error) {
                     removeAttachments.push(attachment);
                 }
             });
         }
 
-        if(removeAttachments.length > 0) {
-            _.each(removeAttachments, function(attachment) {
-                notify({classes: 'notification-danger', message: 'Decryption of attachment ' + attachment.Name + ' failed. It has been removed from this draft.'});
-                $scope.removeAttachment(attachment, message);
-            });
-        }
+        $q.all(promises).finally(function() {
+            if(removeAttachments.length > 0) {
+                _.each(removeAttachments, function(attachment) {
+                    notify({classes: 'notification-danger', message: 'Decryption of attachment ' + attachment.Name + ' failed. It has been removed from this draft.'});
+                    $scope.removeAttachment(attachment, message);
+                });
+            }
+        });
     };
 
     $scope.initAttachment = function(tempPacket, index) {
@@ -465,9 +483,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             onResize();
         };
 
-        return attachments.load(file).then(
+        return attachments.load(file, message.From.Keys[0].PublicKey).then(
             function(packets) {
-                return attachments.upload(packets, message.ID, tempPacket).then(
+                return attachments.upload(packets, message, tempPacket).then(
                     function(result) {
                         cleanup( result );
                     },
@@ -749,19 +767,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             $scope.saveOld(message);
         }
-    };
-
-    $scope.selectFile = function(message, files) {
-        _.defaults(message, {
-            Attachments: []
-        });
-
-        message.Attachments.push.apply(
-            message.Attachments,
-            _.map(files, function(file) {
-                return attachments.load(file);
-            })
-        );
     };
 
     $scope.attToggle = function(message) {
@@ -1046,7 +1051,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             parameters.Message.AddressID = message.From.ID;
 
             // Encrypt message body with the first public key for the From address
-            message.encryptBody(message.From.Keys[0].PublicKey).then(function(result) {
+            message.encryptBody(message.From.Keys[0].PublicKey)
+            .then(function(result) {
                 var draftPromise;
                 var CREATE = 1;
                 var UPDATE = 2;
@@ -1063,7 +1069,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 }
 
                 // Save draft before to send
-                draftPromise.then(function(result) {
+                draftPromise
+                .then(function(result) {
                     if(angular.isDefined(result) && result.Code === 1000) {
                         var events = [];
                         var conversation = cache.getConversationCached(result.Message.ConversationID);
@@ -1116,14 +1123,18 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         message.autosaving = false;
 
                         deferred.resolve(result);
-                    } else if(angular.isDefined(result) && result.Code === 15033) {
+                    } else if (angular.isDefined(result) && result.Code === 15033) {
                         // Case where the user delete draft in an other terminal
                         delete message.ID;
                         message.saving = false;
                         message.autosaving = false;
                         deferred.resolve($scope.save(message, forward, notification));
+                    } else if (angular.isDefined(result) && result.Error) {
+                        // Errors from backend
+                        message.saving = false;
+                        message.autosaving = false;
+                        deferred.reject(result.Error);
                     } else {
-                        $log.error(result);
                         message.saving = false;
                         message.autosaving = false;
                         deferred.reject(result);
@@ -1146,6 +1157,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 message.autosaving = false;
             });
         }
+
+        if (autosaving === false) {
+            networkActivityTracker.track(deferred.promise);
+        }
+
         return deferred.promise;
     };
 
@@ -1198,7 +1214,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var validate = $scope.validate(message);
 
         if(validate) {
-            $scope.save(message, false).then(function() {
+            $scope.save(message, false, false, false)
+            .then(function() {
                 $scope.checkSubject(message).then(function() {
                     message.encrypting = true;
                     var parameters = {};

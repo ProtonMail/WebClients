@@ -1,0 +1,39 @@
+<div id="pm_settings">
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+    <div class="settings" pt-height>
+        <div class="row">
+            <section class="setting full pm_form">
+                <legend>{{ 'PAYMENT_METHODS' | translate }}</legend>
+                <div class="margin">
+                    <button type="button" class="pm_button primary" ng-click="add()">{{ 'ADD_CREDIT_CARD' | translate }}</button>
+                </div>
+                <p class="alert alert-info" ng-show="methods.length === 0"><i class="fa fa-arrow-up"></i> You have no saved payment methods, you can add a payment method by clicking "ADD CREDIT CARD".</p>
+                <table class="pm_table" ng-show="methods.length > 0">
+                    <thead>
+                        <tr>
+                            <th>{{ 'NUMBER' | translate }}</th>
+                            <th>{{ 'EXPIRATION' | translate }}</th>
+                            <th>{{ 'TYPE' | translate }}</th>
+                            <th>{{ 'ACTIONS' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="method in methods">
+                            <td>**** **** **** {{ method.Details.Last4 }}</td>
+                            <td>{{ method.Details.ExpMonth }}/{{ method.Details.ExpYear }}</td>
+                            <td>
+                                <span class="pm_badge">{{ method.Type }}</span>
+                                <span ng-show="$first" class="pm_badge">{{ 'DEFAULT' | translate }}</span>
+                            </td>
+                            <td>
+                                <button type="button" class="pm_button link" ng-hide="$first === true" ng-click="default(method)">{{ 'MAKE_DEFAULT' | translate }}</button>
+                                <button type="button" class="pm_button link" ng-click="edit(method)">{{ 'EDIT' | translate }}</button>
+                                <button type="button" class="pm_button link" ng-click="delete(method)">{{ 'DELETE' | translate }}</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</div>

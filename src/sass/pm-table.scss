@@ -61,11 +61,6 @@
         td strong {
             font-weight: 700;
         }
-        a {
-            color: $primary;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
     }
     th, td {
         line-height: $rowHeight;
@@ -81,9 +76,6 @@
             margin: 0;
             height: 36px;
             line-height: 36px;
-            &.link {
-                text-decoration: none;
-            }
             &.round {
                 width: 36px;
             }

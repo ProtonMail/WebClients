@@ -23,6 +23,7 @@ angular.module('proton.controllers.Settings')
     $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     $scope.domains = [];
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
+    $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
 
     $scope.$on('updateUser', function(event) {
         $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
@@ -108,7 +109,7 @@ angular.module('proton.controllers.Settings')
         generateModal.activate({
             params: {
                 title: $translate.instant('GENERATE_KEY_PAIR'),
-                message: 'bla bla bla', // TODO need text
+                message: '', // TODO need text
                 addresses: [address],
                 cancel: function() {
                     eventManager.call();

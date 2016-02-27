@@ -21,6 +21,7 @@ angular.module("proton.controllers.Header", [])
 
     $scope.appVersion = CONFIG.app_version;
 
+    $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
     $scope.ctrl = {};
     $scope.ctrl.attachments = 2;
     $scope.advancedSearch = false;

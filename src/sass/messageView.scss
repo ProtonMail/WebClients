@@ -76,16 +76,31 @@
         }
         &.details.open {
             & > div.summary {
+                height: 60px;
                 .meta {
+                    .history {
+                        float: left;
+                        margin: 5px .5rem 0 0;
+                    }
                     .contact {
-                        em {
-                            display: inline-block;
-                        }
-                        span {
+                        float: left;
+                        display: block;
+                        span.from {
                             width: 3rem;
                             text-align: left;
-                            display: inline-block;
+                            display: block;
                             float: left;
+                        }
+                        strong {
+                            display: block;
+                            float: left;
+                        }
+                        em {
+                            display: block;
+                            clear: both;
+                            float: left;
+                            margin: -.5rem 0 0 3rem;
+                            line-height: 1rem;
                         }
                     }
                 }
@@ -106,7 +121,7 @@
                 .pm_labels {
                     float: left;
                     label {
-                        margin-right: .5rem;
+                        margin: 0 .5rem 3px 0;
                         box-shadow: .25rem 0 0 .25rem $read;
                     }
                 }
@@ -211,7 +226,7 @@
             .labels {
                 .pm_labels {
                     position: relative;
-                    top: 5px;
+                    top: 4px;
                     label {
                         margin-left: .25rem;
                         box-shadow: .25rem 0 0 .25rem $read;
@@ -234,11 +249,13 @@
                 font-size: .9em;
                 line-height: 20px;
                 width: 100%;
+                .from {
+                    padding-right: .5rem;
+                }
                 .where,
                 .from {
                     font-weight: normal;
                     display: inline-block;
-                    width: 3rem;
                     float: left;
                     color: $gray-medium;
                 }
@@ -370,6 +387,7 @@ body.mobileMode {
                     position: absolute;
                     left: 10px;
                     bottom: 5px;
+                    z-index: 5;
                     .pm_tag {
                         margin: 0;
                     }
@@ -378,6 +396,7 @@ body.mobileMode {
                     position: absolute;
                     right: 50px;
                     bottom: 5px;
+                    z-index: 5;
                 }
                 .time {
                     position: absolute;
@@ -406,6 +425,11 @@ body.mobileMode {
                 }
             }
             & > div.details {
+                & > .recipients-summary {
+                    position: relative;
+                    top: -19px;
+                    max-width: 85%;
+                }
                 .contact {
                     em {
                         display: block;
@@ -429,10 +453,29 @@ body.mobileMode {
                             em {
                                 position: absolute;
                                 left: 10px;
-                                bottom: 5px;
+                                bottom: 10px;
                                 color: $gray-medium;
                             }
                         }
+                    }
+                }
+                &.open > div.summary {
+                    .meta {
+                        margin-top: 5px;
+                        .contact {
+                            strong {
+                                position: static;
+                            }
+                        }
+                    }
+                }
+            }
+            &.sent,
+            &.draft {
+                div.details {
+                    & > .recipients-summary {
+                        padding-left: 2.25rem;
+                        box-sizing: border-box;
                     }
                 }
             }

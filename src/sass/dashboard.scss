@@ -1,0 +1,260 @@
+#pm_settings {
+    .bar {
+        height: 2px;
+        background-color: rgba(0,0,0,.1);
+        width: 100%;
+        display: block;
+        position: relative;
+        margin: .5rem auto;
+        em {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            height: 2px;
+            z-index: 2;
+            background-color: $primary;
+        }
+    }
+    .donate {
+        .well {
+            position: relative;
+            box-shadow: inset 0 0 3rem #e5e5e5;
+            font-size: 1.1rem;
+            line-height: 1.4em;
+        }
+    }
+}
+
+#plans {
+    &.pm_form {
+        label {
+            margin-right: 1rem
+        }
+    }
+    .pm_grid {
+        margin: auto;
+    }
+    & > header {
+        padding-bottom: 1rem;
+        display: block;
+        float: left;
+        width: 100%;
+    }
+    .plans {
+        clear: both;
+        .plan {
+            header {
+                background: $secondary;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: $white;
+                position: relative;
+                z-index: 2;
+            }
+            h3 {
+                background: $primary;
+                color: $white;
+                padding: 20px 0;
+                margin: -1px -1px 0;
+                img {
+                    display: block;
+                    margin: auto;
+                    width: 120px;
+                }
+                span {
+                    display: block;
+                    margin: auto;
+                    width: 120px;
+                    text-align: right;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                }
+            }
+            section {
+                border: 1px solid $border;
+                border-bottom: none;
+                ul, li {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                }
+                ul {
+                    li {
+                        padding: 0 10px;
+                        line-height: 35px;
+                        min-height: 35px;
+                        border-bottom: 1px solid $border;
+                        &.disabled {
+                            color: $gray-medium;
+                            text-decoration: line-through;
+                        }
+                        .fa {
+                            display: inline-block;width: 1.25rem;
+                        }
+                        .pm_select.inline {
+                            width: 4.5rem;
+                            margin-right: 10px;
+                        }
+                        span.clear {
+                            display: block;
+                        }
+                        &.tall {
+                            line-height: 55px;
+                            min-height: 55px;
+                        }
+                    }
+                }
+            }
+            footer {
+                border: 1px solid $border;
+                position: relative;
+                z-index: 2;
+                border-top: none;
+                .cycle {
+                    min-height: 50px;
+                    box-sizing: border-box;
+                    margin-bottom: 0;
+                    border-bottom: 1px solid $border;
+                    padding: 10px 2rem 10px 1rem;
+                    color: $gray-medium;
+                    position: relative;
+                    .discount {
+                        position: absolute;
+                        z-index: 5;
+                        right: 0;
+                        top: 0px;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 3rem 3rem 0;
+                        border-color: transparent $green transparent transparent;
+                        color: $white;
+                        overflow: visible;
+                        span {
+                            -webkit-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                            position: absolute;
+                            width: 100%;
+                            display: block;
+                            font-weight: 700;
+                            font-size: 90%;
+                            text-align: center;
+                            top: -.25rem;
+                            right: -1.5rem;
+                        }
+                    }
+                    label {
+                        color: $text;
+                        line-height: 30px;
+                        font-size: 90%;
+                    }
+                    strong {
+                        font-size: 1.1rem;
+                        color: $primary;
+                        margin-right: .5rem;
+                    }
+                    &.monthly {
+                        .text-right {
+                            line-height: 30px;
+                        }
+                    }
+                }
+                .action {
+                    padding: 1rem 10px;
+                    text-align: center;
+                }
+            }
+            &.free {
+                header {
+                    visibility: hidden;
+                }
+                footer .cycle {
+                    line-height: 102px;
+                    height: 122px;
+                }
+            }
+            &.plus {
+                margin: 0 -1px;
+                h3 {
+                    box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+                    span {
+                        color: $light-green;
+                    }
+                }
+                header {
+                    background: $white;
+                }
+                section {
+                    position: relative;
+                    z-index: 1;
+                }
+                footer {
+                    background: $white;
+                }
+            }
+            &.visionary {
+                header,
+                h3 span {
+                    color: $light-blue;
+                }
+            }
+        }
+    }
+}
+
+// 1200
+@media (max-width: $desktop) {
+    #plans .plans .plan {
+        font-size: 85%;
+        .pm_button {
+            font-size: 85%;
+        }
+        section ul li .pm_select.inline {
+            width: 4rem;
+        }
+        &.free {
+            footer .cycle {
+                line-height: 164px;
+                height: 184px;
+            }
+        }
+    }
+}
+
+// 1000
+@media (max-width: $desktop) {
+    #plans .plans .plan {
+        font-size: 10px;
+        .pm_button {
+            font-size: 11px;
+        }
+        .cycle .col-1-2 {
+            width: 100%;
+            &.text-right {
+                text-align: left;
+            }
+        }
+    }
+}
+
+// 800
+.mobileMode {
+    #plans .plan {
+        .cycle .text-right {
+            text-align: left;
+        }
+    }
+    #pm_settings {
+        .donate {
+            .well {
+                padding: 1rem;
+            }
+        }
+    }
+}

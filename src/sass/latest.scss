@@ -44,6 +44,19 @@
 			width: 100%;
 			height: auto;
 		}
+		.latest-upgrade {
+			display: block;
+			position: relative;
+			cursor: pointer;
+			button {
+				position: absolute;
+				left: 50%;
+				width: 10rem;
+				display: block;
+				margin-left: -5rem;
+				bottom: 2rem;
+			}
+		}
 	}
     .link {
     	padding-bottom: 1rem;

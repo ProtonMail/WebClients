@@ -17,18 +17,18 @@ angular.module("proton.controllers.Settings")
     organization,
     Payment,
     paymentModal,
-    plans,
+    methods,
+    monthly,
     pmcw,
     subscription,
     supportModal,
     CONSTANTS,
-    tools
+    tools,
+    yearly
 ) {
     // Initialize variables
+    $scope.configuration = {};
     $scope.subscription = {};
-    $scope.plans = [];
-    $scope.credit = authentication.user.Credit;
-    $scope.currency = authentication.user.Currency;
 
     // Options
     $scope.spaceOptions = [
@@ -76,74 +76,74 @@ angular.module("proton.controllers.Settings")
         {label: '50', index: 9, value: 50}
     ];
 
-    $scope.memberOptions = [
-        {label: '2', index: 0, value: 2},
-        {label: '3', index: 1, value: 3},
-        {label: '4', index: 2, value: 4},
-        {label: '5', index: 3, value: 5},
-        {label: '6', index: 4, value: 6},
-        {label: '7', index: 5, value: 7},
-        {label: '8', index: 6, value: 8},
-        {label: '9', index: 7, value: 9},
-        {label: '10', index: 8, value: 10}
-    ];
-
-    // Listeners
-    $scope.$on('updateUser', function(event) {
-        $scope.credit = authentication.user.Credit;
-        $scope.currency = authentication.user.Currency;
-    });
+    $scope.selects = {
+        plus: {
+            space: $scope.spaceOptions[0],
+            domain: $scope.domainOptions[0],
+            address: $scope.addressOptions[0]
+        }
+    };
 
     /**
-    * Method called at the initialization of this controller
-    */
-    $scope.initialization = function(subscription, plans, organization) {
+     * Method called at the initialization of this controller
+     * @param {Object} subscription
+     * @param {Object} monthly
+     * @param {Object} yearly
+     * @param {Object} organization
+     */
+    $scope.initialization = function(subscription, monthly, yearly, organization, methods) {
         if (angular.isDefined(subscription)) {
             _.extend($scope.subscription, subscription);
-            $scope.currentCycle = $scope.subscription.Cycle;
-            $scope.currentCurrency = $scope.subscription.Currency;
+            $scope.configuration.cycle = subscription.Cycle;
+            $scope.configuration.currency = subscription.Currency;
+
+            if ($scope.subscription.Name === 'plus' || $scope.subscription.Name === 'business') {
+                $scope.selects.plus.space = _.findWhere($scope.spaceOptions, {value: $scope.count('MaxSpace')});
+                $scope.selects.plus.domain = _.findWhere($scope.domainOptions, {value: $scope.count('MaxDomains')});
+                $scope.selects.plus.address = _.findWhere($scope.addressOptions, {value: $scope.count('MaxAddresses')});
+            } else {
+                $scope.selects.plus.space = $scope.spaceOptions[0];
+                $scope.selects.plus.domain = $scope.domainOptions[0];
+                $scope.selects.plus.address = $scope.addressOptions[0];
+            }
         }
 
-        if (angular.isDefined(plans)) {
-            $scope.plans = plans;
-            $scope.spaceAddon = _.findWhere($scope.plans, {Name: '1gb'});
-            $scope.domainAddon = _.findWhere($scope.plans, {Name: '1domain'});
-            $scope.addressAddon = _.findWhere($scope.plans, {Name: '5address'});
-            $scope.memberAddon = _.findWhere($scope.plans, {Name: '1member'});
-
-            _.each($scope.plans, function(plan) {
-                if (plan.editable === true) {
-                    if ($scope.subscription.Plan === 'Plus' || $scope.subscription.Plan === 'Business') {
-                        plan.Space = _.findWhere($scope.spaceOptions, {value: $scope.count('MaxSpace')}) || $scope.spaceOptions[0];
-                        plan.Domain = _.findWhere($scope.domainOptions, {value: $scope.count('MaxDomains')}) || $scope.domainOptions[0];
-                        plan.Address = _.findWhere($scope.addressOptions, {value: $scope.count('MaxAddresses')}) || $scope.addressOptions[0];
-                        plan.Member = _.findWhere($scope.memberOptions, {value: $scope.count('MaxMembers')}) || $scope.memberOptions[0];
-                    } else {
-                        plan.Space = $scope.spaceOptions[0];
-                        plan.Domain = $scope.domainOptions[0];
-                        plan.Address = $scope.addressOptions[0];
-                        plan.Member = $scope.memberOptions[0];
-                    }
+        if (angular.isDefined(monthly) && angular.isDefined(yearly)) {
+            $scope.plans = monthly.concat(yearly);
+            $scope.addons = {
+                1: {
+                    space: _.findWhere(monthly, {Name: '1gb'}),
+                    domain: _.findWhere(monthly, {Name: '1domain'}),
+                    address: _.findWhere(monthly, {Name: '5address'})
+                },
+                12: {
+                    space: _.findWhere(yearly, {Name: '1gb'}),
+                    domain: _.findWhere(yearly, {Name: '1domain'}),
+                    address: _.findWhere(yearly, {Name: '5address'})
                 }
-            });
+            };
+
         }
 
         if (angular.isDefined(organization)) {
             $scope.organization = organization;
         }
+
+        if (angular.isDefined(methods)) {
+            $scope.methods = methods;
+        }
     };
 
     $scope.refresh = function() {
-        var promises = {
-            subscription: Payment.subscription(),
-            organization: Organization.get(),
-            event: eventManager.call()
-        };
-
         networkActivityTracker.track(
-            $q.all(promises)
+            $q.all({
+                subscription: Payment.subscription(),
+                organization: Organization.get(),
+                methods: Payment.methods(),
+                event: eventManager.call()
+            })
             .then(function(result) {
-                $scope.initialization(result.subscription.data.Subscription, undefined, result.organization.data.Organization);
+                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.organization.data.Organization, result.methods.data.PaymentMethods);
             })
         );
     };
@@ -191,59 +191,81 @@ angular.module("proton.controllers.Settings")
     /**
     * Return the amount of each plan
     * @param {String} name
+    * @param {Integer} cycle
     */
-    $scope.total = function(plan) {
+    $scope.total = function(plan, cycle) {
         var total = 0;
 
+        // Base price for this plan
+        plan = _.findWhere($scope.plans, {Name: plan.Name, Cycle: cycle});
         total += plan.Amount;
 
+        // Add addons
         if (plan.editable === true) {
-            total += plan.Space.index * $scope.spaceAddon.Amount;
-            total += plan.Domain.index * $scope.domainAddon.Amount;
-            total += plan.Address.index * $scope.addressAddon.Amount;
-            total += plan.Member.index * $scope.memberAddon.Amount;
+            total += $scope.selects.plus.space.index * $scope.addons[cycle].space.Amount;
+            total += $scope.selects.plus.domain.index * $scope.addons[cycle].domain.Amount;
+            total += $scope.selects.plus.address.index * $scope.addons[cycle].address.Amount;
         }
 
         return total;
     };
 
     /**
-    * Prepare amount for the request
-    * @param {String} name
-    * @return {Integer}
-    */
-    $scope.amount = function(name) {
-        return parseFloat($scope.total(name) * 100);
-    };
-
+     * Change current currency
+     */
     $scope.changeCurrency = function(currency) {
-        var deferred = $q.defer();
-
-        Payment.plans(currency, $scope.currentCycle)
+        var promise = $q.all({
+            monthly: Payment.plans(currency, 1),
+            yearly: Payment.plans(currency, 12)
+        })
         .then(function(result) {
-            $scope.initialization(undefined, result.data.Plans);
-            $scope.currentCurrency = currency;
-            deferred.resolve();
+            $scope.configuration.currency = currency;
+            $scope.initialization(undefined, result.monthly.data.Plans, result.yearly.data.Plans);
         });
 
-        networkActivityTracker.track(deferred.promise);
+        networkActivityTracker.track(promise);
 
-        return deferred.promise;
+        return promise;
     };
 
+    /**
+     * Change current cycle
+     */
     $scope.changeCycle = function(cycle) {
-        var deferred = $q.defer();
+        $scope.configuration.cycle = cycle;
+    };
 
-        Payment.plans($scope.currentCurrency, cycle)
-        .then(function(result) {
-            $scope.initialization(undefined, result.data.Plans);
-            $scope.currentCycle = cycle;
-            deferred.resolve();
-        });
+    /**
+     * Return the text button for a specific plan
+     * @param {Object} plan
+     * @return {string} text
+     */
+    $scope.text = function(plan) {
+        var text;
 
-        networkActivityTracker.track(deferred.promise);
+        if (plan.Name === 'free') {
+            if ($scope.subscription.Name === plan.Name) {
+                text = 'Already Subscribed';
+            } else {
+                text = 'Downgrade To Free';
+            }
+        } else if (plan.Name === 'plus') {
+            if ($scope.subscription.Name === plan.Name) {
+                text = 'Update Plus';
+            } else if ($scope.subscription.Name === 'free') {
+                text = 'Upgrade To Plus';
+            } else if ($scope.subscription.Name === 'visionary') {
+                text = 'Downgrade To Plus';
+            }
+        } else if (plan.Name === 'visionary') {
+            if ($scope.subscription.Name === plan.Name) {
+                text = 'Update Visionary';
+            } else {
+                text = 'Upgrade To Visionary';
+            }
+        }
 
-        return deferred.promise;
+         return text;
     };
 
     /**
@@ -251,7 +273,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.free = function() {
         var title = $translate.instant('CONFIRM_DOWNGRADE');
-        var message = 'This will downgrade your account to a free account.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.';
+        var message = 'This will downgrade your account to a free account.<br /><br />Please disable all additional addresses prior to downgrading your account. You can manage that inside the addresses tab.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.';
 
         confirmModal.activate({
             params: {
@@ -338,47 +360,21 @@ angular.module("proton.controllers.Settings")
             var name = plan.Name;
             var promises = [];
             var planIDs = [plan.ID];
-            var plans = [plan];
             var i;
 
             plan.quantity = 1;
 
             if (plan.Name === 'plus' || plan.Name === 'business') {
-                $scope.spaceAddon.quantity = plan.Space.index;
-                $scope.addressAddon.quantity = plan.Address.index;
-                $scope.domainAddon.quantity = plan.Domain.index;
-                $scope.memberAddon.quantity = plan.Member.index;
-
-                if (plan.Space.index > 0) {
-                    plans.push($scope.spaceAddon);
+                for (i = 0; i < $scope.selects.plus.space.index; i++) {
+                    planIDs.push($scope.addons[$scope.configuration.cycle].space.ID);
                 }
 
-                if (plan.Address.index > 0) {
-                    plans.push($scope.addressAddon);
+                for (i = 0; i < $scope.selects.plus.domain.index; i++) {
+                    planIDs.push($scope.addons[$scope.configuration.cycle].domain.ID);
                 }
 
-                if (plan.Domain.index > 0) {
-                    plans.push($scope.domainAddon);
-                }
-
-                if (plan.Member.index > 0) {
-                    plans.push($scope.memberAddon);
-                }
-
-                for (i = 0; i < plan.Space.index; i++) {
-                    planIDs.push($scope.spaceAddon.ID);
-                }
-
-                for (i = 0; i < plan.Address.index; i++) {
-                    planIDs.push($scope.addressAddon.ID);
-                }
-
-                for (i = 0; i < plan.Domain.index; i++) {
-                    planIDs.push($scope.domainAddon.ID);
-                }
-
-                for (i = 0; i < plan.Member.index; i++) {
-                    planIDs.push($scope.memberAddon.ID);
+                for (i = 0; i < $scope.selects.plus.address.index; i++) {
+                    planIDs.push($scope.addons[$scope.configuration.cycle].address.ID);
                 }
             }
 
@@ -386,8 +382,8 @@ angular.module("proton.controllers.Settings")
             promises.push(Payment.methods());
             // Valid plan
             promises.push(Payment.valid({
-                Currency : $scope.currentCurrency,
-                Cycle : $scope.currentCycle,
+                Currency : $scope.configuration.currency,
+                Cycle : $scope.configuration.cycle,
                 CouponCode : '',
                 PlanIDs: planIDs
             }));
@@ -399,31 +395,22 @@ angular.module("proton.controllers.Settings")
 
                 if (methods.data && methods.data.Code === 1000 && valid.data && valid.data.Code === 1000) {
                     // Check amount first
-                    if ($scope.total(plan) === valid.data.Amount) {
+                    if ($scope.total(plan, plan.Cycle) === valid.data.Amount) {
                         paymentModal.activate({
                             params: {
                                 create: $scope.organization === null,
-                                plans: plans,
                                 planIDs: planIDs,
+                                plans: $scope.plans,
                                 valid: valid.data,
                                 methods: methods.data.PaymentMethods,
-                                monthly: function() {
-                                    paymentModal.deactivate();
-                                    $scope.changeCycle(1)
-                                    .then(function() {
-                                        $scope.choose(_.findWhere($scope.plans, {Name: name}));
-                                    });
-                                },
-                                yearly: function() {
-                                    paymentModal.deactivate();
-                                    $scope.changeCycle(12)
-                                    .then(function() {
-                                        $scope.choose(_.findWhere($scope.plans, {Name: name}));
-                                    });
-                                },
                                 change: function(subscription) {
                                     $scope.refresh();
                                     paymentModal.deactivate();
+                                },
+                                yearly: function() {
+                                    paymentModal.deactivate();
+                                    $scope.changeCycle(12);
+                                    $scope.choose(_.findWhere($scope.plans, {Name: name, Cycle: 12}));
                                 },
                                 cancel: function() {
                                     paymentModal.deactivate();
@@ -453,31 +440,6 @@ angular.module("proton.controllers.Settings")
         }
     };
 
-    /**
-    * Method called when the quantity selector change
-    */
-    $scope.changeQuantity = function(element) {
-        element.quantity = element.select.value;
-    };
-
-    /**
-    * Open modal with payment information
-    */
-    $scope.card = function() {
-        networkActivityTracker.track(Payment.methods().then(function(result) {
-            cardModal.activate({
-                params: {
-                    methods: result.data.PaymentMethods,
-                    cancel: function() {
-                        cardModal.deactivate();
-                    }
-                }
-            });
-        }, function(error) {
-            notify({message: $translate.instant('ERROR_TO_DISPLAY_CARD'), classes: 'notification-danger'});
-        }));
-    };
-
     // Call initialization
-    $scope.initialization(subscription.data.Subscription, plans.data.Plans, organization.data.Organization);
+    $scope.initialization(subscription.data.Subscription, monthly.data.Plans, yearly.data.Plans, organization.data.Organization, methods.data.PaymentMethods);
 });

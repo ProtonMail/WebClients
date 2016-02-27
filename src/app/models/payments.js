@@ -1,6 +1,6 @@
 angular.module("proton.models.payments", [])
 
-.factory("Payment", function($http, $q, $translate, CONSTANTS, url) {
+.factory("Payment", function($http, $q, $translate, authentication, CONSTANTS, url) {
     return {
         /**
         * Donate for perks. Does not require authentication.
@@ -32,11 +32,13 @@ angular.module("proton.models.payments", [])
                         // Add free plan
                         data.Plans.unshift({
                             Type: 1,
+                            Cycle: cycle,
+                            Currency: currency,
                             Name: 'free',
                             Title: 'Free',
                             Amount: 0,
                             MaxDomains: 0,
-                            MaxAddresses: 0,
+                            MaxAddresses: 1,
                             MaxSpace: 500 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE,
                             MaxMembers: 0,
                             TwoFactor: 0
@@ -47,18 +49,30 @@ angular.module("proton.models.payments", [])
                                 case 'free':
                                     plan.editable = false;
                                     plan.display = true;
+                                    plan.sending = '150 ' + $translate.instant('MESSAGES_PER_DAY');
+                                    plan.labels = '20 ' + $translate.instant('LABELS');
+                                    plan.support = $translate.instant('LIMITED_SUPPORT');
                                     break;
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
+                                    plan.sending = '1000 ' + $translate.instant('MESSAGES_PER_DAY');
+                                    plan.labels = '200 ' + $translate.instant('LABELS');
+                                    plan.support = $translate.instant('SUPPORT');
                                     break;
                                 case 'business':
                                     plan.editable = true;
                                     plan.display = false;
+                                    plan.sending = '???';
+                                    plan.labels = '???';
+                                    plan.support = '???';
                                     break;
                                 case 'visionary':
                                     plan.editable = false;
                                     plan.display = true;
+                                    plan.sending = $translate.instant('UNLIMITED_SENDING');
+                                    plan.labels = $translate.instant('UNLIMITED_LABELS');
+                                    plan.support = $translate.instant('PRIORITY_SUPPORT');
                                     break;
                                 default:
                                     break;
@@ -93,8 +107,8 @@ angular.module("proton.models.payments", [])
                             MaxAddresses: 1,
                             MaxSpace: 5368709120, // 500 MB
                             MaxMembers: 1,
-                            Cycle: 1,
-                            Currency: 'USD'
+                            Cycle: 12,
+                            Currency: authentication.user.Currency
                         };
                     }
 
@@ -119,6 +133,12 @@ angular.module("proton.models.payments", [])
          */
         methods: function() {
             return $http.get(url.get() + '/payments/methods');
+        },
+        /**
+         * First will be charged for subscriptionsPOST
+         */
+        order: function(params) {
+            return $http.post(url.get() + '/payments/methods/order');
         },
         /**
          * Create a subscription

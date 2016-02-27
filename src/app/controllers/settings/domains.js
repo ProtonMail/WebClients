@@ -7,8 +7,9 @@ angular.module("proton.controllers.Settings")
     $translate,
     Address,
     addressModal,
-    buyDomainModal,
+    authentication,
     confirmModal,
+    CONSTANTS,
     dkimModal,
     dmarcModal,
     Domain,
@@ -31,6 +32,7 @@ angular.module("proton.controllers.Settings")
     $scope.domains = domains.data.Domains;
     $scope.members = members.data.Members;
     $scope.addressMemberID = $scope.members[0];
+    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
 
     // Listeners
     $scope.$on('domain', function(event, domain) {
@@ -163,23 +165,6 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Open modal process to buy a new domain
-     */
-    $scope.buyDomain = function() {
-        buyDomainModal.activate({
-            params: {
-                submit: function(datas) {
-                    console.log(datas);
-                    buyDomainModal.deactivate();
-                },
-                cancel: function() {
-                    buyDomainModal.deactivate();
-                }
-            }
-        });
-    };
-
-    /**
      * Delete domain
      * @param {Object} domain
      */
@@ -214,13 +199,35 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
+     * Check if this address is owned by the current user
+     * @param {Object} address
+     * @return {Boolean}
+     */
+    $scope.owned = function(address) {
+        var found = _.findWhere(authentication.user.Addresses, {ID: address.ID});
+
+        return angular.isDefined(found);
+    };
+
+    /**
+     * Check if this address is owned by a private member
+     * @param {Object} address
+     * @return {Boolean}
+     */
+    $scope.privated = function(address) {
+        var member = _.findWhere($scope.members, {ID: address.MemberID});
+
+        return member.Private === 1;
+    };
+
+    /**
      * Open modal to generate key pair
      */
     $scope.generate = function(address) {
         generateModal.activate({
             params: {
                 title: $translate.instant('GENERATE_KEY_PAIR'),
-                message: 'bla bla bla', // TODO need text
+                message: '', // TODO need text
                 addresses: [address],
                 cancel: function() {
                     eventManager.call();
@@ -429,37 +436,13 @@ angular.module("proton.controllers.Settings")
                 step: 3,
                 domain: domain,
                 members: $scope.members,
-                add: function(address, member) {
-                    networkActivityTracker.track(
-                        Address.create({
-                            Local: address, // local part
-                            Domain: domain.DomainName,
-                            MemberID: member.ID // either you custom domain or a protonmail domain
-                        })
-                    ).then(function(result) {
-                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
-                            domain.Addresses.push(result.data.Address);
-                            eventManager.call(); // Call event log manager
-                            addressModal.deactivate();
-                            $scope.addAddress(domain);
-                        } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
-                            notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
-                        } else if(angular.isDefined(result.data) && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
-                        }
-                    }, function(error) {
-                        notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
-                    });
-                },
                 next: function() {
                     addressModal.deactivate();
                     $scope.mx(domain);
                 },
                 cancel: function() {
                     addressModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -474,49 +457,14 @@ angular.module("proton.controllers.Settings")
             params: {
                 domain: domain,
                 step: 4,
-                verify: function() {
-                    networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
-                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            // check verification code
-                            // 0 is default, 1 and 2 has us but priority is wrong, 3 is good
-                            switch (result.data.Domain.MxState) {
-                                case 0:
-                                    notify({message: $translate.instant('MX_NOT_FOUND'), classes: 'notification-danger'});
-                                    break;
-                                case 1:
-                                case 2:
-                                    notify({message: $translate.instant('PRIORITY_IS_WRONG'), classes: 'notification-danger'});
-                                    break;
-                                case 3:
-                                    var index = $scope.domains.indexOf(domain);
-
-                                    notify({message: $translate.instant('MX_VERIFIED'), classes: 'notification-success'});
-                                    $scope.domains[index] = result.data.Domain;
-                                    // open the next step
-                                    $scope.spf(result.data.Domain);
-                                    break;
-                                default:
-                                    break;
-                            }
-                        } else if(angular.isDefined(result.data) && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
-                        }
-                    }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
-                    }));
-                },
                 next: function() {
                     mxModal.deactivate();
                     $scope.spf(domain);
 
                 },
-                submit: function() {
-                    mxModal.deactivate();
-                },
                 close: function() {
                     mxModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -531,45 +479,13 @@ angular.module("proton.controllers.Settings")
             params: {
                 domain: domain,
                 step: 5,
-                verify: function() {
-                    networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
-                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            // check verification code
-                            // 0 is default, 1 and 2 means detected a record but wrong, 3 is good
-                            switch (result.data.Domain.SpfState) {
-                                case 0:
-                                    notify({message: $translate.instant('SPF_NOT_FOUND'), classes: 'notification-danger'});
-                                    break;
-                                case 1:
-                                case 2:
-                                    notify({message: $translate.instant('DETECTED_RECORD_BUT_WRONG'), classes: 'notification-danger'});
-                                    break;
-                                case 3:
-                                    var index = $scope.domains.indexOf(domain);
-
-                                    notify({message: $translate.instant('SPF_VERIFIED'), classes: 'notification-success'});
-                                    $scope.domains[index] = result.data.Domain;
-                                    // open the next step
-                                    $scope.dkim(result.data.Domain);
-                                    break;
-                                default:
-                                    break;
-                            }
-                        } else if(angular.isDefined(result.data) && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
-                        }
-                    }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
-                    }));
-                },
                 next: function() {
                     spfModal.deactivate();
                     $scope.dkim(domain);
                 },
                 close: function() {
                     spfModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -586,46 +502,13 @@ angular.module("proton.controllers.Settings")
             params: {
                 domain: domain,
                 step: 6,
-                verify: function() {
-                    networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
-                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            // check dkim code
-                            // 0 is default, 1 and 2 means detected record but wrong, 3 means key is wrong, 4 is good
-                            switch (result.data.Domain.DkimState) {
-                                case 0:
-                                    notify({message: $translate.instant('DKIM_NOT_FOUND'), classes: 'notification-danger'});
-                                    break;
-                                case 1:
-                                case 2:
-                                    notify({message: $translate.instant('DETECTED_RECORD_BUT_WRONG'), classes: 'notification-danger'});
-                                    break;
-                                case 3:
-                                    notify({message: $translate.instant('KEY_IS_WRONG'), classes: 'notification-danger'});
-                                    break;
-                                case 4:
-                                    notify({message: $translate.instant('DKIM_VERIFIED'), classes: 'notification-success'});
-                                    $scope.domains[index] = result.data.Domain;
-                                    // open the next step
-                                    $scope.dmarc(result.data.Domain);
-                                    break;
-                                default:
-                                    break;
-                            }
-                        } else if(angular.isDefined(result.data) && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
-                        }
-                    }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
-                    }));
-                },
                 next: function() {
                     dkimModal.deactivate();
                     $scope.dmarc(domain);
                 },
                 close: function() {
                     dkimModal.deactivate();
+                    eventManager.call();
                 }
             }
         });
@@ -645,24 +528,9 @@ angular.module("proton.controllers.Settings")
                 verify: function() {
                     networkActivityTracker.track(Domain.get(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            // check dmarc code
-                            // 0 is default, 1 and 2 means detected record but wrong, 3 is good
-                            switch (result.data.Domain.DmarcState) {
-                                case 0:
-                                    notify({message: $translate.instant('DMARC_NOT_FOUND'), classes: 'notification-danger'});
-                                    break;
-                                case 1:
-                                case 2:
-                                    notify({message: $translate.instant('DETECTED_RECORD_BUT_WRONG'), classes: 'notification-danger'});
-                                    break;
-                                case 3:
-                                    notify({message: $translate.instant('DMARC_VERIFIED'), classes: 'notification-danger'});
-                                    $scope.domains[index] = result.data.Domain;
-                                    dmarcModal.deactivate();
-                                    break;
-                                default:
-                                    break;
-                            }
+                            $scope.domains[index] = result.data.Domain;
+                            dmarcModal.deactivate();
+                            eventManager.call();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
@@ -674,6 +542,7 @@ angular.module("proton.controllers.Settings")
                 },
                 close: function() {
                     dmarcModal.deactivate();
+                    eventManager.call();
                 }
             }
         });

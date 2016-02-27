@@ -25,14 +25,12 @@
                     </tr>
                 </table>
 
-                <p>If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p class="alert alert-info">If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. Do not create multiple SPF records.</p>
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button class="pm_button primary pull-right" ng-show="ctrl.domain.SpfState === 3" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
-            <button class="pm_button primary pull-right" ng-hide="ctrl.domain.SpfState === 3" ng-click="ctrl.verify()">{{ 'VERIFY' | translate }}</button>
-            <button class="pm_button" ng-hide="ctrl.domain.SpfState === 3" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
-            <div class="clear"></div>
+            <button class="pm_button primary pull-right" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
+            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

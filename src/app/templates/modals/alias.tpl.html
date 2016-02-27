@@ -8,11 +8,11 @@
             <div class="modal-body pm_form">
                 <label>{{ 'CHOOSE_ADDRESS' | translate }}</label>
                 <div class="usernameWrap">
-                    <p class="help">This will be a new address you can send and recieve emails with.</p>
+                    <p class="help">This will be a new address you can send and receive emails with.</p>
                     <div class="clearfix">
-                        <input type="text" class="inline" ng-model="ctrl.local" autofocus placeholder="{{ 'ADDRESS' | translate }}" required />
-                        <em class="usernameDomain">@</em>
-                        <span class="pm_select inline bigger">
+                        <input type="text" class="pull-left inline" ng-model="ctrl.local" autofocus placeholder="{{ 'ADDRESS' | translate }}" required />
+                        <em class="pull-left usernameDomain">&nbsp;&nbsp;@&nbsp;&nbsp;</em>
+                        <span class="pull-left pm_select inline bigger">
                             <select class="selectDomain" ng-model="ctrl.domain" ng-options="domain.label for domain in ctrl.domains"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>

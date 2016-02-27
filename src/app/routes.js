@@ -117,8 +117,7 @@ angular.module('proton.routes', [
             $http.post( url.get() + '/users/' + $stateParams.token + '/check', { Username: $stateParams.user } )
             .then(
                 function( response ) {
-                    if (response.data.Valid===1) {
-
+                    if (response.data.Valid === 1) {
                         $rootScope.allowedNewAccount = true;
                         $rootScope.inviteToken = $stateParams.token;
                         $rootScope.preInvited = true;
@@ -216,43 +215,6 @@ angular.module('proton.routes', [
                 }
 
                 return deferred.promise;
-            }
-        }
-    })
-
-    .state('step2', {
-        url: '/create/mbpw',
-        views: {
-            'main@': {
-                controller: 'SignupController',
-                templateUrl: 'templates/layout/auth.tpl.html'
-            },
-            'panel@step2': {
-                templateUrl: 'templates/views/step2.tpl.html'
-            }
-        },
-        onEnter: function(authentication, $state, $rootScope, $log) {
-            if ($rootScope.allowedNewAccount!==true) {
-                $state.go('login');
-            }
-            if (authentication.isLoggedIn()) {
-                $rootScope.isLoggedIn = true;
-                return authentication.fetchUserInfo().then(
-                function() {
-                    $rootScope.user = authentication.user;
-                    $rootScope.pubKey = authentication.user.PublicKey;
-                    $rootScope.user.DisplayName = authentication.user.addresses[0].Email;
-                    if ($rootScope.pubKey === 'to be modified') {
-                        return;
-                    } else {
-                        $state.go('login.unlock');
-                        return;
-                    }
-                });
-            } else {
-                $log.debug('step2.onEnter:1');
-                $state.go('login');
-                return;
             }
         }
     })
@@ -523,21 +485,19 @@ angular.module('proton.routes', [
                 var password = pmcw.decode_utf8_base64(window.sessionStorage['proton:encrypted_password']);
 
                 Eo.message(decrypted_token, token_id)
-                .then(
-                    function(result) {
-                        var message = result.data.Message;
-                        message.publicKey = result.data.PublicKey;
-                        pmcw.decryptMessageRSA(message.Body, password, message.Time)
-                        .then(
-                            function(body) {
-                                message.Body = '<br /><br /><blockquote>' + body + '</blockquote>';
-                                message.Attachments = [];
-                                message.replyMessage = true;
-                                deferred.resolve(new Message(message));
-                            })
-                        ;
-                    }
-                );
+                .then(function(result) {
+                    var message = result.data.Message;
+
+                    message.publicKey = result.data.PublicKey; // The sender’s public key
+                    pmcw.decryptMessageRSA(message.Body, password, message.Time)
+                    .then(function(body) {
+                        message.Body = '<br /><br /><blockquote>' + body + '</blockquote>';
+                        message.Attachments = [];
+                        message.NumAttachments = 0;
+                        message.replyMessage = true;
+                        deferred.resolve(new Message(message));
+                    });
+                });
 
                 return deferred.promise;
             }
@@ -586,7 +546,7 @@ angular.module('proton.routes', [
                 }
             }
         },
-        onEnter: function($rootScope, authentication) {
+        onEnter: function($rootScope, authentication, $timeout, CONSTANTS) {
             // This will redirect to a login step if necessary
             delete $rootScope.creds;
             delete $rootScope.tempUser;
@@ -702,12 +662,12 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('secured.methods', {
-        url: '/methods',
+    .state('secured.payments', {
+        url: '/payments',
         views: {
             'content@secured': {
-                templateUrl: 'templates/views/methods.tpl.html',
-                controller: 'MethodsController'
+                templateUrl: 'templates/views/payments.tpl.html',
+                controller: 'PaymentsController'
             }
         },
         resolve: {
@@ -834,11 +794,19 @@ angular.module('proton.routes', [
             organization: function(user, Organization, networkActivityTracker, CONSTANTS) {
                 return networkActivityTracker.track(Organization.get());
             },
-            plans: function(user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.plans());
+            // Return yearly plans
+            yearly: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.plans(user.Currency, 12));
+            },
+            // Return monthly plans
+            monthly: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.plans(user.Currency, 1));
             },
             subscription: function(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.subscription());
+            },
+            methods: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.methods());
             }
         },
         views: {
