@@ -734,15 +734,21 @@ angular.module("proton.cache", [])
 
         // Let's check whether notification permissions have already been granted
         else if (Notification.permission === "granted") {
-            // If it's okay let's create a notification
-            var notification = new Notification('New Email', {
-                body: event.Message.Subject,
-                icon: 'https://protonmail.com/images/stripeLogo.png'
-            });
 
-            notification.onclick=function() {
-                $state.go('secured.inbox.view', { id: event.Message.ConversationID });
-            };
+            // Show a notification if its a new message to our inbox. will need to change once filters are done
+            if (event.Message.Location === 0) {
+
+                // If it's okay let's create a notification
+                var notification = new Notification('New Email', {
+                    body: event.Message.Subject,
+                    icon: 'https://protonmail.com/images/stripeLogo.png'
+                });
+
+                notification.onclick=function() {
+                    $state.go('secured.inbox.view', { id: event.Message.ConversationID });
+                };
+                
+            }
         }
 
         // Otherwise, we need to ask the user for permission
