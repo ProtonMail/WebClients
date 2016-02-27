@@ -211,8 +211,8 @@ angular.module('proton', [
         // Enable FastClick
         FastClick.attach(document.body);
 
-        if (window.location.hash==='#spin') {
-            $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
+        if (window.location.hash==='#spin-me-right-round') {
+            $('body').append('<style>body > div * {-webkit-animation: spin 10s ease-in-out infinite;-moz-animation: spin 10s ease-in-out infinite;}</style>');
         }
     });
 

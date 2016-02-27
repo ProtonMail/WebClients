@@ -219,6 +219,7 @@ angular.module('proton.routes', [
         }
     })
 
+    // Reset Mailbox Password
     .state('reset', {
         url: '/reset',
         views: {
@@ -227,7 +228,7 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/layout/auth.tpl.html'
             },
             'panel@reset': {
-                templateUrl: 'templates/views/reset.tpl.html'
+                templateUrl: 'templates/views/reset-mailbox-password.tpl.html'
             }
         },
         resolve: {
@@ -283,6 +284,7 @@ angular.module('proton.routes', [
         }
     })
 
+    // Generic Message View Template
     .state('support.message', {
         params: {
             data: null
@@ -300,70 +302,12 @@ angular.module('proton.routes', [
         }
     })
 
+    // Reset Login Password
     .state('support.reset-password', {
         url: '/reset-login-password',
         views: {
             'panel@support': {
-                templateUrl: 'templates/views/reset-password.tpl.html'
-            }
-        }
-    })
-
-    .state('support.confirm-new-password', {
-        url: '/confirm-new-password/:token',
-        onEnter: function($stateParams, $state, Reset) {
-            var token = $stateParams.token;
-
-            // Check if reset token is valid
-            Reset.validateResetToken({
-                token: token
-            }).then(
-                function(response) {
-                    // console.log(response.data);
-                    if (response.data.Error) {
-                        $state.go('support.message', {
-                            data: {
-                                title: response.data.Error,
-                                content: response.data.Error,
-                                type: 'alert-danger'
-                            }
-                        });
-                    }
-                },
-                function() {
-                    $state.go('support.message', {
-                        data: {
-                            title: 'Reset Error',
-                            content: 'Sorry, we are unable to reset your password right now. Please try the link again in a few minutes.',
-                            type: 'alert-danger'
-                        }
-                    });
-                }
-            );
-        },
-        views: {
-            'panel@support': {
-                templateUrl: 'templates/views/confirm-new-password.tpl.html'
-            }
-        }
-    })
-
-    // Deprecated?
-    .state('support.reset-mailbox', {
-        url: '/reset-mailbox/:token',
-        onEnter: function($stateParams, $state, $rootScope, authentication) {
-            $rootScope.resetMailboxToken = $stateParams.token;
-            if (!!!authentication.isLoggedIn()) {
-                event.preventDefault();
-                $state.go('login');
-            }
-            else {
-                $state.go('reset');
-            }
-        },
-        views: {
-            'panel@support': {
-                templateUrl: 'templates/views/confirm-new-password.tpl.html'
+                templateUrl: 'templates/views/reset-login-password.tpl.html'
             }
         }
     })
