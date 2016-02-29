@@ -17,6 +17,9 @@
 			position: relative;
 			background: $white;
 			height: 32px;
+			&.highlight {
+				background-color: $purple-light;
+			}
 			.fa.fa-ellipsis-v {
 				margin-right: .5rem;
 				color: $gray-light;

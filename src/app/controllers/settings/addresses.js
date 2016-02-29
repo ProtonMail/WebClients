@@ -54,7 +54,19 @@ angular.module('proton.controllers.Settings')
     };
 
     /**
+     * Return domain value for a specific address
+     * @param {Object} address
+     * @return {String} domain
+     */
+    $scope.getDomain = function(address) {
+        var email = address.Email.split('@');
+
+        return email[1];
+    };
+
+    /**
      * Enable an address
+     * @param {Object} address
      */
     $scope.enable = function(address) {
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
@@ -92,6 +104,39 @@ angular.module('proton.controllers.Settings')
                         }
                     }, function(error) {
                         notify({message: $translate.instant('ERROR_DURING_DISABLE'), classes: 'notification-danger'});
+                    }));
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Delete address
+     * @param {Object} address
+     */
+    $scope.delete = function(address) {
+        var index = $scope.disabledAddresses.indexOf(address);
+
+        confirmModal.activate({
+            params: {
+                title: $translate.instant('DELETE_ADDRESS'),
+                message: $translate.instant('Are you sure you want to delete this address?'),
+                confirm: function() {
+                    networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            notify({message: $translate.instant('ADDRESS_DELETED'), classes: 'notification-success'});
+                            $scope.disabledAddresses.splice(index, 1); // Remove address in UI
+                            confirmModal.deactivate();
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
