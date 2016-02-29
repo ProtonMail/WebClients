@@ -34,10 +34,27 @@
                     </tbody>
                 </table>
             </section>
-            <!-- <section class="setting full pm_form">
+            <!-- <section class="setting full pm_form" ng-show="">
                 <legend>{{ 'INVOICES' | translate }}</legend>
                 <table class="pm_table">
-
+                    <thead>
+                        <tr>
+                            <th>{{ 'DATE' | translate }}</th>
+                            <th>{{ 'NAME' | translate }}</th>
+                            <th>{{ 'AMOUNT' | translate }}</th>
+                            <th>{{ 'ACTIONS' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="invoice in invoices">
+                            <td>{{ invoice.CreateTime | date }}</td>
+                            <td>{{ invoice.ID }} NAME</td>
+                            <td>{{ AmountDue | currency: invoice.Currency }}</td>
+                            <td>
+                                <button class="pm_button link" ng-click="download(invoice)">{{ 'DOWNLOAD' | translate }}</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </section> -->
         </div>

@@ -83,7 +83,6 @@ angular.module("proton.controllers.Header", [])
     };
 
     $scope.openSearchModal = function() {
-        console.log('search?', $scope.advancedSearch);
         $scope.labels = authentication.user.Labels;
         $scope.advancedSearch = !$scope.advancedSearch;
     };
