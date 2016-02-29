@@ -25,7 +25,11 @@ angular.module("proton.controllers.Header", [])
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
     $scope.addresses = [];
     $scope.addresses.push({Email: $translate.instant('ALL'), ID: undefined, Send: 0, Receive: 1, Status: 1}); // Add ALL option
-    $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
+
+    if (authentication.user) {
+        $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
+    }
+
     $scope.ctrl = {};
     $scope.ctrl.attachments = 2;
     $scope.ctrl.address = $scope.addresses[0]; // Select ALL
@@ -65,7 +69,11 @@ angular.module("proton.controllers.Header", [])
     $scope.$on('updateUser', function(event) {
         $scope.addresses = [];
         $scope.addresses.push({Email: $translate.instant('ALL'), ID: undefined});
-        $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
+
+        if (authentication.user) {
+            $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
+        }
+
         $scope.ctrl.address = $scope.addresses[0];
     });
 
