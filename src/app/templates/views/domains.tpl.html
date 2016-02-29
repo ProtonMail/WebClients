@@ -44,10 +44,10 @@
                                 }">
                                     <i class="fa fa-warning" ng-show="(domain.VerifyState === 1)"></i>
                                     {{ 'VERIFICATION' | translate }}</button>
-                                <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-disabled="domain.State !== 1" ng-class="{'success': domain.State === 1 && domain.Addresses.length > 0}">
+                                <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-disabled="domain.State === 0" ng-class="{'success': domain.State === 1 && domain.Addresses.length > 0}">
                                     <span ng-show="domain.Addresses.length > 0">{{ domain.Addresses.length }}</span> {{ 'ADDRESSES' | translate }}
                                 </button>
-                                <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-disabled="domain.State !== 1" ng-class="{
+                                <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-disabled="domain.State === 0" ng-class="{
                                     'success': domain.MxState === 3,
                                     'error': domain.MxState === 2 || domain.MxState === 1
                                 }">
@@ -56,7 +56,7 @@
                                         'fa-warning': (domain.MxState === 1 || domain.MxState === 2)
                                     }"></i> MX
                                 </button>
-                                <button type="button" class="progress pm_button" ng-disabled="domain.State !== 1" ng-click="spf(domain)" ng-class="{
+                                <button type="button" class="progress pm_button" ng-disabled="domain.State === 0" ng-click="spf(domain)" ng-class="{
                                     'success': domain.SpfState === 3,
                                     'error': domain.SpfState === 2 || domain.SpfState === 1
                                 }">
@@ -65,7 +65,7 @@
                                         'fa-warning': (domain.SpfState === 1 || domain.SpfState === 2)
                                     }"></i> SPF
                                 </button>
-                                <button type="button" class="progress pm_button" ng-disabled="domain.State !== 1" ng-click="dkim(domain)" ng-class="{
+                                <button type="button" class="progress pm_button" ng-disabled="domain.State === 0" ng-click="dkim(domain)" ng-class="{
                                     'success': domain.DkimState === 4 || domain.DkimState === 5,
                                     'error': domain.DkimState === 3 || domain.DkimState === 2 || domain.DkimState === 1
                                 }">
@@ -75,7 +75,7 @@
                                         'fa-minus-circle': (domain.DkimState === 5)
                                     }"></i> DKIM
                                 </button>
-                                <button type="button" class="progress pm_button" ng-click="dmarc(domain)" ng-disabled="domain.State !== 1" ng-class="{
+                                <button type="button" class="progress pm_button" ng-click="dmarc(domain)" ng-disabled="domain.State === 0" ng-class="{
                                     'success': domain.DmarcState === 3,
                                     'error': domain.DmarcState === 2 || domain.DmarcState === 1
                                 }">

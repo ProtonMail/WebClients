@@ -83,8 +83,7 @@ body {
                     font-size: 1em;
                     color: #000;
                     display: inline-block;
-                    float: left;
-                    max-width: 100%; 
+                    max-width: 90%;
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
@@ -138,6 +137,11 @@ body {
                     .pm_labels {
                         background: $read;
                     }
+                }
+            }
+            &.hasLabels {
+                .subject h4 {
+                    max-width: 80%;
                 }
             }
         }

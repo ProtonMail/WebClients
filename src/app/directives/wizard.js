@@ -15,7 +15,7 @@ angular.module('proton.wizard', [])
                             cancel: function() {
                                 welcomeModal.deactivate();
                             },
-                            next: function(displayName, recoveryEmail) {
+                            next: function(displayName) {
                                 welcomeModal.deactivate();
                                 scope.tourStart();
                             }
