@@ -6,7 +6,7 @@ angular.module('proton.controllers.Settings')
     authentication,
     cardModal,
     confirmModal,
-    invoices,
+    // invoices,
     methods,
     notify,
     networkActivityTracker,

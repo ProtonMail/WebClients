@@ -32,7 +32,8 @@
                         <input type="text" minlength="3" maxlength="9" ng-model="ctrl.zip"  placeholder="{{ 'ZIP' | translate }}" required />
                     </div>
                 </div>
-                <div class="margin">
+                <div class="margin input-icon">
+                    <card-icon number="ctrl.number"></card-icon>
                     <input type="text" ng-model="ctrl.number" placeholder="{{ 'CARD_NUMBER' | translate }}" maxlength="20" required />
                 </div>
                 <div class="pm_grid margin">
@@ -58,7 +59,7 @@
             </div>
         </div>
         <div class="modal-footer text-center">
-            <button type="submit" class="pm_button primary large">{{ 'DONATE' | translate }}</button>
+            <button type="submit" class="pm_button primary">{{ 'DONATE' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
