@@ -1,16 +1,17 @@
 angular.module("proton.controllers.Header", [])
 
 .controller("HeaderController", function(
+    $location,
     $log,
     $rootScope,
     $scope,
     $state,
     $stateParams,
-    $location,
-    notify,
-    CONSTANTS,
-    CONFIG,
+    $translate,
     authentication,
+    CONFIG,
+    CONSTANTS,
+    notify,
     searchModal,
     tools
 ) {
@@ -22,11 +23,14 @@ angular.module("proton.controllers.Header", [])
     $scope.appVersion = CONFIG.app_version;
 
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
+    $scope.addresses = [];
+    $scope.addresses.push({Email: $translate.instant('ALL'), ID: undefined, Send: 0, Receive: 1, Status: 1}); // Add ALL option
+    $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
     $scope.ctrl = {};
     $scope.ctrl.attachments = 2;
+    $scope.ctrl.address = $scope.addresses[0]; // Select ALL
     $scope.advancedSearch = false;
     $scope.starred = 2;
-
     $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
     delete $scope.folders.search;
     delete $scope.folders.label;
@@ -45,6 +49,7 @@ angular.module("proton.controllers.Header", [])
         $scope.path = mailbox;
     };
 
+    // Listeners
     $scope.$on('openSearchModal', function(event, value) {
         $scope.openSearchModal(value);
     });
@@ -55,6 +60,13 @@ angular.module("proton.controllers.Header", [])
         if($state.is('secured.search') === false) {
             $scope.params.searchMessageInput = '';
         }
+    });
+
+    $scope.$on('updateUser', function(event) {
+        $scope.addresses = [];
+        $scope.addresses.push({Email: $translate.instant('ALL'), ID: undefined});
+        $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
+        $scope.ctrl.address = $scope.addresses[0];
     });
 
     setPath();
@@ -120,7 +132,9 @@ angular.module("proton.controllers.Header", [])
         parameters.subject = $scope.ctrl.subject;
         parameters.attachments = parseInt($scope.ctrl.attachments);
 
-        console.log(parameters);
+        if (angular.isDefined($scope.ctrl.address.ID)) {
+            parameters.address = $scope.ctrl.address.ID;
+        }
 
         if(parseInt($('#search_folder').val()) !== -1) {
             parameters.label = $('#search_folder').val();
@@ -171,7 +185,7 @@ angular.module("proton.controllers.Header", [])
 
     $scope.activeSettings = function() {
         var route = $state.$current.name.replace('secured.', '');
-        var settings = ['dashboard', 'account', 'labels', 'security', 'appearance', 'invoices', 'domains', 'users'];
+        var settings = ['dashboard', 'account', 'labels', 'security', 'appearance', 'domains', 'addresses', 'users', 'payments', 'keys'];
 
         return settings.indexOf(route) !== -1;
     };
@@ -208,14 +222,13 @@ angular.module("proton.controllers.Header", [])
     $scope.email = function() {
         if (authentication.user) {
             var address = _.findWhere(authentication.user.Addresses, {Send: 1});
+
             if (address) {
                 return address.Email;
-            }
-            else {
+            } else {
                 return '';
             }
-        }
-        else {
+        } else {
             return '';
         }
     };

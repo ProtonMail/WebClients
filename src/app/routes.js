@@ -7,6 +7,7 @@ angular.module('proton.routes', [
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
     var conversationParameters = function() {
       var parameters = [
+        'address',
         'page',
         'filter',
         'sort',

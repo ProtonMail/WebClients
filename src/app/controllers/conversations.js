@@ -209,6 +209,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         if (mailbox === 'search') {
+            params.Address = $stateParams.address;
             params.Label = $stateParams.label;
             params.Keyword = $stateParams.words;
             params.To = $stateParams.to;

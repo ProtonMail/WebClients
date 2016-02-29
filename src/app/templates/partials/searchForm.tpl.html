@@ -64,6 +64,13 @@
             </div>
             <div class="row">
                 <div class="col-1-2">
+                    <label for="search_address">{{ 'ADDRESS' | translate }}</label>
+                    <span class="pm_select">
+                        <select id="search_address" ng-model="ctrl.address" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'"></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                </div>
+                <div class="col-1-2">
                     <label>{{ 'ATTACHMENTS' | translate }}</label>
                     <div class="radio">
                         <label for="attachments_all">
@@ -77,9 +84,11 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-1-2">
-                    <label>&nbsp;</label>
-                    <button type="submit" class="pm_button primary pull-right">
+            </div>
+            <div class="row">
+                <div class="col-1-2">&nbsp;</div>
+                <div class="col-1-2 text-right">
+                    <button type="submit" class="pm_button primary">
                         <i class="fa fa-search"></i> {{ 'SEARCH' | translate }}
                     </button>
                 </div>
