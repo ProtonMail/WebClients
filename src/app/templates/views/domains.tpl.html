@@ -129,6 +129,7 @@
                             <thead>
                                 <tr>
                                     <th>{{ 'ADDRESS' | translate }}</th>
+                                    <th>{{ 'STATUS' | translate }}</th>
                                     <th class="text-right actions" style="width: 10rem">{{ 'ACTIONS' | translate }}</th>
                                 </tr>
                             </thead>
@@ -137,6 +138,11 @@
                                     <td>
                                         <strong ng-show="address.Status === 1">{{ address.Email }}</strong>
                                         <span ng-show="address.Status === 0">{{ address.Email }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="pm_badge warning" ng-show="address.Keys.length === 0">{{ 'MISSING_KEYS' | translate }}</span>
+                                        <span class="pm_badge success" ng-show="address.Keys.length > 0 && address.Status === 1">{{ 'ENABLED' | translate }}</span>
+                                        <span class="pm_badge error" ng-show="address.Keys.length > 0 && address.Status === 0">{{ 'DISABLED' | translate }}</span>
                                     </td>
                                     <td class="text-right">
                                         <a class="pm_button link" ui-sref="secured.addresses">{{ 'MANAGE' | translate }}</a>
