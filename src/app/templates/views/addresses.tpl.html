@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="col-1-3 text-right">
                                     <button type="button" class="pm_button link" ng-show="address.Keys.length === 0" ng-click="generate(address)">{{ 'GENERATE_MISSING_KEYS' | translate }}</button>
-                                    <button type="button" class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Keys.length > 0 && (address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
                                     <button type="button" class="pm_button link" ng-show="address.Type === 3 && isAdmin === true" ng-click="delete(address)">{{ 'DELETE' | translate }}</button>
                                 </div>
                             </div>
