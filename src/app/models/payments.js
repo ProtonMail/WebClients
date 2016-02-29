@@ -17,6 +17,14 @@ angular.module("proton.models.payments", [])
             return $http.post(url.get() + '/payments/unsubscribe', Obj);
         },
         /**
+         * Get invoices in reverse time order
+         * @param {Object} params
+         * @return {Promise}
+         */
+        invoices: function(params) {
+            return $http.get(url.get() + '/payments/invoices', {params: params});
+        },
+        /**
          * Get plans available to user
          */
         plans: function(currency, cycle) {
