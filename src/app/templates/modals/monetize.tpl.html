@@ -29,23 +29,19 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="upsell">
                         <h3>Support ProtonMail by Upgrading to a Paid Account</h3>
-                        <div class="upsell">
-                            <h4>5&euro;/month or 48&euro;/year</h4>
-                            <ul>
-                                <li>Support for Custom Domains and Aliases</li>
-                                <li>5GB Storage (instead of 500MB)</li>
-                                <li>Higher message sending limits</li>
-                                <li>Priority Customer Support</li>
-                            </ul>
-                            <a href="#" ng-click="ctrl.upgrade()">
-                                <img src="/assets/img/upgrade.jpg" alt="Upgrade your Account" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="text-center">
+                        <h4>5&euro; <span>/month</span> or 48&euro; <span>/year</span></h4>
+                        <ul>
+                            <li>Support for Custom Domains and Aliases</li>
+                            <li>5GB Storage (instead of 500MB)</li>
+                            <li>Higher message sending limits</li>
+                            <li>Priority Customer Support</li>
+                        </ul>
                         <button type="button" class="pm_button primary" ng-click="ctrl.upgrade()">{{ 'UPGRADE' | translate }}</button>
+                        <a href="#" ng-click="ctrl.upgrade()">
+                            <img src="/assets/img/onboarding-upselling-background.jpg" alt="Upgrade your Account" />
+                        </a>
                     </div>
                 </form>
             </div>

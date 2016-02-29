@@ -137,11 +137,31 @@ body.tourActive {
 	.modal-dialog .modal-content {
 		.upsell {
 			position: relative;
-			height: 14rem;
+			height: 24rem;
+			float: left;
+			width: 100%;
+			h3, h4, ul {
+				display: block;
+				position: relative;
+				z-index: 8;
+			}
 			h4 {
 				color: $primary;
 				font-weight: 700;
-				font-size: 1.1rem;
+				font-size: 1.2rem;
+				padding: 2rem 1rem 0 2rem;
+				span {
+					font-weight: normal;
+				}
+			}
+			ul {
+				color: $white;
+				padding: 0 3rem;
+			}
+			button {
+				position: relative;
+				z-index: 5;
+				left: 3rem;
 			}
 			& > a {
 				position: absolute;
