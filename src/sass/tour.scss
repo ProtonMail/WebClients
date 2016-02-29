@@ -132,3 +132,22 @@ body.tourActive {
 		margin: auto;
 	}
 }
+
+.monetize {
+	.modal-dialog .modal-content {
+		.upsell {
+			position: relative;
+			height: 14rem;
+			h4 {
+				color: $primary;
+				font-weight: 700;
+				font-size: 1.1rem;
+			}
+			& > a {
+				position: absolute;
+				right: 0;
+				top: 3rem;
+			}
+		}
+	}
+}

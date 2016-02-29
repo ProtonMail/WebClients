@@ -107,8 +107,10 @@ angular.module('proton.wizard', [])
             };
 
             scope.tourNext = function() {
-                scope.tourStep = Number(scope.tourStep + 1);
-                scope.tourGo(scope.tourStep);
+                if (scope.tourStep !== 4) {
+                    scope.tourStep = Number(scope.tourStep + 1);
+                    scope.tourGo(scope.tourStep);
+                }
             };
 
             scope.tourPrev = function() {
