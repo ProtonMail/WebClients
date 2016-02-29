@@ -54,7 +54,19 @@ angular.module('proton.controllers.Settings')
     };
 
     /**
+     * Return domain value for a specific address
+     * @param {Object} address
+     * @return {String} domain
+     */
+    $scope.getDomain = function(address) {
+        var email = address.Email.split('@');
+
+        return email[1];
+    };
+
+    /**
      * Enable an address
+     * @param {Object} address
      */
     $scope.enable = function(address) {
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
