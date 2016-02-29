@@ -22,7 +22,8 @@
                                         <strong ng-show="organization === null">0</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a class="pm_button link" ui-sref="secured.domains" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a ui-sref="secured.domains" class="pm_button link" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()">{{ 'UPGRADE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -32,7 +33,8 @@
                                         <strong ng-show="organization === null">1</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a class="pm_button link" ui-sref="secured.addresses" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a ui-sref="secured.addresses" class="pm_button link" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()">{{ 'UPGRADE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>

@@ -727,6 +727,9 @@ angular.module('proton.routes', [
 
     .state('secured.dashboard', {
         url: '/dashboard',
+        params: {
+            scroll: null
+        },
         resolve: {
             access: function(user, $q) {
                 var deferred = $q.defer();

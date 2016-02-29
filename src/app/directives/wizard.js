@@ -6,21 +6,66 @@ angular.module('proton.wizard', [])
         replace: true,
         templateUrl: 'templates/partials/wizard.tpl.html',
         link: function(scope, element, attrs) {
+            var donate = function() {
+                donateModal.activate({
+                    params: {
+                        amount: amount,
+                        currency: currency,
+                        close: function() {
+                            // Close donate modal
+                            donateModal.deactivate();
+                            // Start tour
+                            scope.tourStart();
+                        }
+                    }
+                });
+            };
+
+            var monetize = function() {
+                monetizeModal.activate({
+                    params: {
+                        donate: function(amount, currency) {
+                            // Close monetize modal
+                            monetizeModal.deactivate();
+                            // Open donate modal
+                            donate(amount, currency);
+                        },
+                        upgrade: function() {
+                            // Close monetize modal
+                            monetizeModal.deactivate();
+                            // Go to the dashboard page
+                            $state.go('secured.dashboard', {scroll: true});
+                        },
+                        close: function() {
+                            // Close monetize modal
+                            monetizeModal.deactivate();
+                            // Start tour
+                            scope.tourStart();
+                        }
+                    }
+                });
+            };
+
+            var welcome = function() {
+                welcomeModal.activate({
+                    params: {
+                        cancel: function() {
+                            welcomeModal.deactivate();
+                        },
+                        next: function(displayName) {
+                            welcomeModal.deactivate();
+                            // Open monetize modal
+                            monetize();
+                        }
+                    }
+                });
+            };
+
             // Initialization
             $timeout(function() {
                 if ($rootScope.welcome === true) {
                     $rootScope.welcome = false;
-                    welcomeModal.activate({
-                        params: {
-                            cancel: function() {
-                                welcomeModal.deactivate();
-                            },
-                            next: function(displayName) {
-                                welcomeModal.deactivate();
-                                scope.tourStart();
-                            }
-                        }
-                    });
+                    welcome();
                 }
             }, 0);
 
@@ -62,12 +107,8 @@ angular.module('proton.wizard', [])
             };
 
             scope.tourNext = function() {
-                if (scope.tourStep === 5) {
-                    scope.tourEnd();
-                } else {
-                    scope.tourStep = Number(scope.tourStep + 1);
-                    scope.tourGo(scope.tourStep);
-                }
+                scope.tourStep = Number(scope.tourStep + 1);
+                scope.tourGo(scope.tourStep);
             };
 
             scope.tourPrev = function() {
@@ -132,39 +173,6 @@ angular.module('proton.wizard', [])
                         $timeout( function() {
                             $('#tour-support').tooltip('show');
                             $('.tooltip:visible').addClass('tour');
-                        });
-                        break;
-                    case 5:
-                        // Hide the wizard
-                        scope.tourEnd();
-                        // Open monetize modal
-                        monetizeModal.activate({
-                            params: {
-                                donate: function(amount, currency) {
-                                    // Close monetize modal
-                                    monetizeModal.deactivate();
-                                    // Open donate modal
-                                    donateModal.activate({
-                                        params: {
-                                            amount: amount,
-                                            currency: currency,
-                                            close: function() {
-                                                donateModal.deactivate();
-                                            }
-                                        }
-                                    });
-                                },
-                                upgrade: function() {
-                                    // Close monetize modal
-                                    monetizeModal.deactivate();
-                                    // Go to the dashboard page
-                                    $state.go('secured.dashboard');
-                                },
-                                close: function() {
-                                    // Close monetize modal
-                                    monetizeModal.deactivate();
-                                }
-                            }
                         });
                         break;
                     default:

@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="modal-footer text-center">
-            <button type="submit" class="pm_button primary">{{ 'DONATE' | translate }}</button>
+            <button type="submit" ng-disabled="ctrl.process === true" class="pm_button primary">{{ 'DONATE' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

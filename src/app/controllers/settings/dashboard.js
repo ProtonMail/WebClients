@@ -4,6 +4,7 @@ angular.module("proton.controllers.Settings")
     $filter,
     $rootScope,
     $scope,
+    $stateParams,
     $translate,
     $q,
     $window,
@@ -132,6 +133,19 @@ angular.module("proton.controllers.Settings")
         if (angular.isDefined(methods)) {
             $scope.methods = methods;
         }
+
+        if ($stateParams.scroll === true) {
+            $scope.scrollToPlans();
+        }
+    };
+
+    /**
+     * Scroll to the plans section
+     */
+    $scope.scrollToPlans = function() {
+        $('.settings').animate({
+            scrollTop: $("#plans").offset().top
+        }, 1000);
     };
 
     $scope.refresh = function() {

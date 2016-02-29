@@ -1281,12 +1281,13 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('donateModal', function(authentication, pmModal, Payment, notify, tools, $translate, $q) {
+.factory('donateModal', function(authentication, pmModal, Payment, notify, tools, networkActivityTracker, $translate, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/donate.tpl.html',
         controller: function(params) {
             // Variables
+            this.process = false;
             this.text = params.message || 'Donate to ProtonMail';
             this.amount = params.amount || 25;
             this.currencies = [
@@ -1324,6 +1325,8 @@ angular.module("proton.modals", [])
             var donatation = function() {
                 var year = (this.year.length === 2) ? '20' + this.year : this.year;
 
+                this.process = true;
+
                 return Payment.donate({
                     Amount: this.amount * 100, // Don't be afraid
                     Currency: this.currency.value,
@@ -1339,14 +1342,17 @@ angular.module("proton.modals", [])
                            ZIP: this.zip
                        }
                    }
-                });
+               });
             }.bind(this);
 
             var finish = function(result) {
                 var deferred = $q.defer();
 
+                this.process = false;
+
                 if (result.data && result.data.Code === 1000) {
                     deferred.resolve();
+                    notify({message: 'Your support is essential to keeping ProtonMail running. Thank you for supporting internet privacy!', classes: 'notification-success'});
                     this.close();
                 } else if (result.data && result.data.Error) {
                     deferred.reject(new Error(result.data.Error));
@@ -1358,7 +1364,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             this.donate = function() {
-                validateCardNumber()
+                var promise = validateCardNumber()
                 .then(validateCardExpiry)
                 .then(validateCardCVC)
                 .then(donatation)
@@ -1366,6 +1372,8 @@ angular.module("proton.modals", [])
                 .catch(function(error) {
                     notify({message: error, classes: 'notification-danger'});
                 });
+
+                networkActivityTracker.track(promise);
             };
 
             this.close = function() {
@@ -1397,7 +1405,7 @@ angular.module("proton.modals", [])
             ];
 
             this.donate = function() {
-                params.donate(this.amount, this.currency.value);
+                params.donate(this.amount.value, this.currency.value);
             }.bind(this);
 
             this.upgrade = function() {
