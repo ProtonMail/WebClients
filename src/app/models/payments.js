@@ -25,6 +25,12 @@ angular.module("proton.models.payments", [])
             return $http.get(url.get() + '/payments/invoices', {params: params});
         },
         /**
+         * Get an invoice as pdf
+         */
+        invoice: function(id) {
+            return $http.get(url.get() + '/payments/invoice/' + id);
+        },
+        /**
          * Get plans available to user
          */
         plans: function(currency, cycle) {

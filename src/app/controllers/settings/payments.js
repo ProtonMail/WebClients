@@ -110,4 +110,15 @@ angular.module('proton.controllers.Settings')
             }
         });
     };
+
+    /**
+     * Download invoice
+     */
+    $scope.download = function(invoice) {
+        Payment.invoice(invoice.ID)
+        .then(function(pdfFileContent) {
+            // Open a new tab with the pdf content
+            window.open('data:application/pdf,' + pdfFileContent, '_blank');
+        });
+    };
 });
