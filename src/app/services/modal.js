@@ -1382,13 +1382,22 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/monetize.tpl.html',
         controller: function(params) {
-            this.amounts = [5, 10, 25, 50, 100];
-            this.currencies = ['EUR', 'USD', 'CHF'];
-            this.amount = 25; // default value for the amount
-            this.currency = authentication.user.Currency; // default currency
+            this.currencies = [
+                {label: 'USD', value: 'USD'},
+                {label: 'EUR', value: 'EUR'},
+                {label: 'CHF', value: 'CHF'}
+            ];
+            this.currency = _.findWhere(this.currencies, {value: authentication.user.Currency});
+            this.amounts = [
+                {label: '5', value: 5},
+                {label: '10', value: 10},
+                {label: '25', value: 25},
+                {label: '50', value: 50},
+                {label: '100', value: 100}
+            ];
 
             this.donate = function() {
-                params.donate(this.amount, this.currency);
+                params.donate(this.amount, this.currency.value);
             }.bind(this);
 
             this.upgrade = function() {
