@@ -6,7 +6,7 @@ angular.module('proton.controllers.Settings')
     authentication,
     cardModal,
     confirmModal,
-    // invoices,
+    invoices,
     methods,
     notify,
     networkActivityTracker,
@@ -14,8 +14,8 @@ angular.module('proton.controllers.Settings')
 ) {
     $scope.methods = methods.data.PaymentMethods;
     $scope.subscribed = authentication.user.Subscribed === 1;
-    // $scope.invoices = invoices.data.Invoices;
-    // $scope.total = invoices.data.Total;
+    $scope.invoices = invoices.data.Invoices;
+    $scope.total = invoices.data.Total;
 
     $scope.refresh = function() {
         networkActivityTracker.track(Payment.methods()

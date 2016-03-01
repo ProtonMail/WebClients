@@ -34,29 +34,44 @@
                     </tbody>
                 </table>
             </section>
-            <!-- <section class="setting full pm_form">
+            <section class="setting full pm_form">
                 <legend>{{ 'INVOICES' | translate }}</legend>
-                <table class="pm_table">
+                <table class="pm_table" ng-show="invoices.length > 0">
                     <thead>
                         <tr>
-                            <th>{{ 'NAME' | translate }}</th>
-                            <th>{{ 'DATE' | translate }}</th>
-                            <th>{{ 'AMOUNT' | translate }}</th>
+                            <th>{{ 'ID' | translate }}</th>
+                            <th>{{ 'TYPE' | translate }}</th>
+                            <th>{{ 'STATUS' | translate }}</th>
+                            <th>{{ 'CREATE_TIME' }}</th>
                             <th>{{ 'ACTIONS' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="invoice in invoices">
-                            <td><strong>{{ invoice.ID }}</strong> <span class="pm_badge">{{ invoice.Type }}</span></td>
-                            <td>{{ invoice.CreateTime | date }}</td>
-                            <td>{{ AmountDue | currency: invoice.Currency }}</td>
                             <td>
+                                <span class="bold">{{ invoice.ID }}</span>
+                                <span ng-show="invoice.State === 0">({{ invoice.AmountDue | currency: invoice.Currency }})</span>
+                                <span ng-show="invoice.State === 1">({{ invoice.AmountCharged | currency: invoice.Currency }})</span>
+                            </td>
+                            <td>
+                                <span class="pm_badge" ng-show="invoice.Type === 0">{{ 'BASIC' | translate }}</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 1">{{ 'SUBSCRIPTION' | translate }}</span>
+                            </td>
+                            <td>
+                                <span class="pm_badge error" ng-show="invoice.State === 0">{{ 'UNPAID' | translate }}</span>
+                                <span class="pm_badge success" ng-show="invoice.State === 1">{{ 'PAID' | translate }}</span>
+                                <span class="pm_badge" ng-show="invoice.State === 2">{{ 'VOID' | translate }}</span>
+                                <span class="pm_badge" ng-show="invoice.State === 3">{{ 'BILLED' | translate }}</span>
+                            </td>
+                            <td>{{ invoice.CreateTime | readableTime }}</td>
+                            <td>
+                                <button class="pm_button link" ng-click="pay(invoice)" ng-show="invoice.State === 0">{{ 'PAY' | translate }}</button>
                                 <button class="pm_button link" ng-click="download(invoice)">{{ 'DOWNLOAD' | translate }}</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-            </section> -->
+            </section>
         </div>
     </div>
 </div>
