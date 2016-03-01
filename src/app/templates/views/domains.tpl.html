@@ -135,9 +135,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="address in domain.Addresses" ng-class="{'disabled': address.Status === 0}">
-                                    <td>
-                                        <strong>{{ address.Email }}</strong>
-                                    </td>
+                                    <td>{{ address.Email }}</td>
                                     <td>
                                         <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1">{{ 'ENABLED' | translate }}</span>
                                         <span class="pm_badge error" ng-show="address.Status === 0 || address.Receive === 0">{{ 'DISABLED' | translate }}</span>

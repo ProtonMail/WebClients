@@ -60,6 +60,33 @@ angular.module('proton.controllers.Settings')
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     });
 
+    $scope.$on('deleteDomain', function(event, domainId) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index !== -1) {
+            $scope.domains.splice(index, 1);
+        }
+    });
+
+    $scope.$on('createDomain', function(event, domainId, domain) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            _.extend($scope.domains[index], domain);
+        }
+    });
+
+    $scope.$on('updateDomain', function(event, domainId, domain) {
+        var index = _.findIndex($scope.domains, {ID: domainId});
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            _.extend($scope.domains[index], domain);
+        }
+    });
 
     /**
      * Return domain value for a specific address
