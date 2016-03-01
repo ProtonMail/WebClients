@@ -7,7 +7,8 @@
             </div>
             <div class="modal-body">
                 <form novalidate ng-submit="ctrl.donate()" class="pm_form">
-                    <p>{{ 'DONATE_TO_PROTONMAIL' | translate }}</p>
+                    <p>ProtonMail is open source software that protects your privacy and doesn't have ads. Your support is essential for keeping the service running.</p>
+                    <h4>{{ 'DONATE_TO_PROTONMAIL' | translate }}</h4>
                     <div class="margin">
                         <button type="button" class="pm_button" style="margin-right: 10px;" ng-repeat="amount in ctrl.amounts" ng-click="ctrl.amount = amount.value" ng-class="{'success': amount.value === ctrl.amount}">{{ amount.label | currency: ctrl.currency.value }}</button>
                     </div>
