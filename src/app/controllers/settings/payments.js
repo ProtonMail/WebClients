@@ -3,8 +3,10 @@ angular.module('proton.controllers.Settings')
 .controller('PaymentsController', function(
     $scope,
     $translate,
+    $q,
     authentication,
     cardModal,
+    payModal,
     confirmModal,
     invoices,
     methods,
@@ -113,14 +115,51 @@ angular.module('proton.controllers.Settings')
 
     /**
      * Download invoice
+     * @param {Object} invoice
      */
     $scope.download = function(invoice) {
-        Payment.invoice(invoice.ID)
-        .then(function(result) {
-            var filename = 'ProtonMail invoice ' + invoice.ID;
-            var blob = new Blob([result.data], { type: 'application/pdf' });
+        networkActivityTracker.track(
+            Payment.invoice(invoice.ID)
+            .then(function(result) {
+                var filename = 'ProtonMail invoice ' + invoice.ID + '.pdf';
+                var blob = new Blob([result.data], { type: 'application/pdf' });
 
-            saveAs(blob, filename);
-        });
+                saveAs(blob, filename);
+            })
+        );
     };
+
+    /**
+     * Open a modal to pay invoice
+     * @param {Object} invoice
+     */
+     $scope.pay = function(invoice) {
+         var promises = {
+             methods: Payment.methods(),
+             check: Payment.check(invoice.ID)
+         };
+
+         networkActivityTracker.track($q.all(promises)
+         .then(function(result) {
+             payModal.activate({
+                 params: {
+                     invoice: invoice,
+                     methods: result.methods.data.PaymentMethods,
+                     currency: result.check.data.Currency,
+                     amount: result.check.data.Amount,
+                     credit: result.check.data.Credit,
+                     amountDue: result.check.data.AmountDue,
+                     close: function(result) {
+                         payModal.deactivate();
+
+                         if (result === true) {
+                            // Set invoice state to PAID
+                            invoice.State = 1;
+                         }
+                     }
+                 }
+             });
+
+         }));
+     };
 });

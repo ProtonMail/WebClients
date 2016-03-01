@@ -36,14 +36,15 @@
             </section>
             <section class="setting full pm_form">
                 <legend>{{ 'INVOICES' | translate }}</legend>
+                <p class="alert alert-info" ng-show="invoices.length === 0">You have no invoices.</p>
                 <table class="pm_table" ng-show="invoices.length > 0">
                     <thead>
                         <tr>
-                            <th>{{ 'ID' | translate }}</th>
+                            <th>{{ 'INVOICE' | translate }}</th>
                             <th>{{ 'TYPE' | translate }}</th>
                             <th>{{ 'STATUS' | translate }}</th>
                             <th>{{ 'CREATE_TIME' }}</th>
-                            <th>{{ 'ACTIONS' | translate }}</th>
+                            <th class="text-right">{{ 'ACTIONS' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,7 +65,7 @@
                                 <span class="pm_badge" ng-show="invoice.State === 3">{{ 'BILLED' | translate }}</span>
                             </td>
                             <td>{{ invoice.CreateTime | readableTime }}</td>
-                            <td>
+                            <td class="text-right">
                                 <button class="pm_button link" ng-click="pay(invoice)" ng-show="invoice.State === 0">{{ 'PAY' | translate }}</button>
                                 <button class="pm_button link" ng-click="download(invoice)">{{ 'DOWNLOAD' | translate }}</button>
                             </td>

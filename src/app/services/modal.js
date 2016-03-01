@@ -503,6 +503,39 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('payModal', function(pmModal, Payment) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/pay.tpl.html',
+        controller: function(params) {
+            // Variables
+            this.amount = params.amount;
+            this.amountDue = params.amountDue;
+            this.credit = params.credit;
+            this.currency = params.currency;
+            this.methods = params.methods;
+            this.method = this.methods[0];
+
+            // Functions
+            this.submit = function() {
+                Payment.pay(params.invoice.ID, {
+                    Amount: params.amountDue,
+                    Currency: params.currency,
+                    PaymentMethodID: this.method.ID
+                }).then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        params.close(true);
+                    }
+                });
+            }.bind(this);
+
+            this.cancel = function() {
+                params.close();
+            };
+        }
+    });
+})
+
 // Payment modal
 .factory('paymentModal', function(
     notify,

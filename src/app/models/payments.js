@@ -31,6 +31,21 @@ angular.module("proton.models.payments", [])
             return $http.get(url.get() + '/payments/invoices/' + id);
         },
         /**
+         * Return information to pay invoice unpaid
+         */
+         check: function(id) {
+             return $http.get(url.get() + '/payments/invoices/' + id + '/check');
+         },
+         /**
+          * Pay an unpaid invoice
+          * @param {String} id
+          * @param {Object} params
+          * @return {Promise}
+          */
+         pay: function(id, params) {
+            return $http.post(url.get() + '/payments/invoices/' + id, params);
+         },
+        /**
          * Get plans available to user
          */
         plans: function(currency, cycle) {
