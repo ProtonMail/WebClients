@@ -116,9 +116,11 @@ angular.module('proton.controllers.Settings')
      */
     $scope.download = function(invoice) {
         Payment.invoice(invoice.ID)
-        .then(function(pdfFileContent) {
-            // Open a new tab with the pdf content
-            window.open('data:application/pdf,' + pdfFileContent, '_blank');
+        .then(function(result) {
+            var filename = 'ProtonMail invoice ' + invoice.ID;
+            var blob = new Blob([result.data], { type: 'application/pdf' });
+
+            saveAs(blob, filename);
         });
     };
 });
