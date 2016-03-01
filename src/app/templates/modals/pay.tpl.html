@@ -10,24 +10,28 @@
                     <tbody>
                         <tr>
                             <th>{{ 'AMOUNT' | translate }}</th>
-                            <td>{{ ctrl.amount | currency: ctrl.currency }}</td>
+                            <td>{{ ctrl.amount / 100 | currency: ctrl.currency }}</td>
                         </tr>
                         <tr ng-show="ctrl.credit">
                             <th>{{ 'CREDIT' | translate }}</th>
-                            <td>{{ ctrl.credit | currency: ctrl.currency }}</td>
+                            <td>{{ ctrl.credit / 100 | currency: ctrl.currency }}</td>
                         </tr>
                         <tr>
                             <th>{{ 'AMOUNT_DUE' | translate }}</th>
-                            <td>{{ ctrl.amountDue | currency: ctrl.currency }}</td>
+                            <td>{{ ctrl.amountDue / 100 | currency: ctrl.currency }}</td>
                         </tr>
                     </tbody>
                 </table>
-                <p>Select your payment method</p>
-                <div>
+                <div ng-if="ctrl.method">
+                    <p>Select your payment method</p>
                     <span class="pm_select">
                         <select ng-model="ctrl.method" ng-options="method.Details.Last4 for method in ctrl.methods"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
+                </div>
+                <div ng-if="!ctrl.method">
+                    <p class="alert alert-info">No payment methods. Add one below:</p>
+                    <p class="text-center"><a href="#" ng-click="ctrl.add()">{{ 'ADD_CREDIT_CARD' | translate }}</a></p>
                 </div>
             </div>
         </div>
