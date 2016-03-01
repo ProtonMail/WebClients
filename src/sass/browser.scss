@@ -65,6 +65,9 @@
     #conversation-view .message > div.summary {
         line-height: 34px;
     }
+    .pm_table th .pm_button, .pm_table td .pm_button {
+        line-height: 30px;
+    }
 }
 
 // All Windows, Firefox
