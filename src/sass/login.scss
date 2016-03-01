@@ -90,9 +90,15 @@ body#reset {
 	   color: $white;
 	}
 
-	:-ms-input-placeholder {
-	   color: $white;
-	}
+	input:-ms-input-placeholder {
+       color: $white;
+    }
+    ::-ms-input-placeholder {
+       color: $white;
+    }
+    :-ms-input-placeholder {
+       color: $white;
+    }
 }
 
 #pm_footer {

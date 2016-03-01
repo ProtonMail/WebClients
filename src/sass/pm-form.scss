@@ -29,6 +29,12 @@
        color: #aaaabf;
     }
 
+    input:-ms-input-placeholder {
+       color: #aaaabf;
+    }
+    ::-ms-input-placeholder {
+       color: #aaaabf;
+    }
     :-ms-input-placeholder {
        color: #aaaabf;
     }
