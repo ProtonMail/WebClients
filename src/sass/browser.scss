@@ -9,6 +9,9 @@
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
     }
+    #pm_composer .composer {
+        border: 1px solid $border;
+    }
 }
 
 .ua-edge {}
@@ -31,7 +34,7 @@
 
 // All Windows
 .ua-windows_nt {
-    
+
 }
 // All Windows, Firefox
 .ua-windows_nt.ua-firefox {
