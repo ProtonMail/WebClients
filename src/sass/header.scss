@@ -6,6 +6,9 @@ header#pm_header {
 	font-size: 12px;
 	position: relative;
 	z-index: 2;
+	overflow: hidden;
+	height: 61px;
+	line-height: 61px;
 	a {
 		color: #fff;
 		text-decoration: none;
