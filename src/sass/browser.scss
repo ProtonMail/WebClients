@@ -47,6 +47,24 @@
     #pm_composer .composer .pm_button {
         line-height: ($composerRowHeight - 6);
     }
+    form.searchForm fieldset button,
+    form.searchForm fieldset button .fa {
+        line-height: 26px;
+    }
+    .pm_labels label,
+    .pm_labels label.closed:hover {
+        line-height: 8px;
+    }
+    .pm_tag {
+        line-height: 14px;
+    }
+    .pm_labels.inline label {
+        height: 18px;
+        line-height: 8px;
+    }
+    #conversation-view .message > div.summary {
+        line-height: 34px;
+    }
 }
 
 // All Windows, Firefox
