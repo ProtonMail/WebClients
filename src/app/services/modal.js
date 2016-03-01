@@ -1429,6 +1429,7 @@ angular.module("proton.modals", [])
                 {label: 'CHF', value: 'CHF'}
             ];
             this.currency = _.findWhere(this.currencies, {value: authentication.user.Currency});
+            this.amount = 25; // default value for the amount
             this.amounts = [
                 {label: '5', value: 5},
                 {label: '10', value: 10},
