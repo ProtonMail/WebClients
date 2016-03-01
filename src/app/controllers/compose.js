@@ -1338,7 +1338,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             $scope.close(message, false, false); // Close the composer window
 
                                             $timeout(function() {
-                                                $rootScope.targetID = result.Sent.ID; // Define target ID
+                                                $stateParams.message = result.Sent.ID; // Define target ID
                                                 $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
                                             }, 500);
 

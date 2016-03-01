@@ -222,7 +222,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 $scope.message = message;
                 $scope.initView();
             }));
-        } else if ($rootScope.targetID === $scope.message.ID) {
+        } else if ($stateParams.message === $scope.message.ID) {
             $scope.initView();
         }
     };

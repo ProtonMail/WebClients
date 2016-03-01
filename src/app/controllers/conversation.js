@@ -39,7 +39,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     $scope.$on('$destroy', function(event) {
         $timeout.cancel(scrollPromise);
-        delete $rootScope.targetID;
     });
 
     /**
@@ -75,17 +74,17 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
                     if(sents.length > 0) {
                         // We try to open the last sent message
-                        $rootScope.targetID = _.last(sents).ID;
+                        $state.go('.', {message: _.last(sents).ID});
                     } else {
                         // Or the last message
-                        $rootScope.targetID = _.last(messages).ID;
+                        $state.go('.', {message: _.last(messages).ID});
                     }
-                } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
+                } else if ($state.is('secured.search.view') || $state.is('secured.drafts.view')) {
                     // Do nothing, target initialized by click
                 } else {
                     // If the latest message is read, we open it
                     if(latest.IsRead === 1) {
-                        $rootScope.targetID = latest.ID;
+                        $state.go('.', {message: latest.ID});
                     } else {
                         // Else we open the first message unread beginning to the end list
                         var loop = true;
@@ -104,7 +103,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                             index = 0;
                         }
 
-                        $rootScope.targetID = messages[index].ID;
+                        $state.go('.', {message: messages[index].ID});
                     }
                 }
 

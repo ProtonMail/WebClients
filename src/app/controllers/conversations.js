@@ -747,7 +747,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.click = function(element) {
         var type = tools.typeList();
-        var id;
+        var params = {};
 
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
@@ -755,16 +755,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.unselectAllElements();
         // Open conversation
         if(type === 'conversation') {
-            id = element.ID;
+            params.id = element.ID;
         } else if (type === 'message') {
-            id = element.ConversationID;
-            $rootScope.targetID = element.ID;
+            params.id = element.ConversationID;
+            params.message = element.ID;
         }
 
-        $state.go('secured.' + $scope.mailbox + '.view', { id: id });
+        $state.go('secured.' + $scope.mailbox + '.view', params);
 
-        if(id === $state.params.id) {
-            $rootScope.$broadcast('initMessage', element.ID, true);
+        if(params.id === $stateParams.id) {
+            $rootScope.$broadcast('initMessage', params.message, true);
         }
     };
 
