@@ -40,9 +40,7 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="address in ctrl.domain.Addresses" ng-class="{'disabled': address.Status === 0}">
-                                <td>
-                                    <strong>{{ address.Email }}</strong>
-                                </td>
+                                <td>{{ address.Email }}</td>
                             </tr>
                         </tbody>
                     </table>
