@@ -28,7 +28,7 @@ angular.module("proton.models.payments", [])
          * Get an invoice as pdf
          */
         invoice: function(id) {
-            return $http.get(url.get() + '/payments/invoices/' + id);
+            return $http.get(url.get() + '/payments/invoices/' + id, {responseType: "arraybuffer"});
         },
         /**
          * Return information to pay invoice unpaid
