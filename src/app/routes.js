@@ -581,6 +581,9 @@ angular.module('proton.routes', [
     .state('secured.addresses', {
         url: '/addresses',
         resolve: {
+            organization: function(user, Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.get());
+            },
             domains: function($q, Domain, networkActivityTracker) {
                 var deferred = $q.defer();
 
@@ -742,7 +745,7 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            organization: function(user, Organization, networkActivityTracker, CONSTANTS) {
+            organization: function(user, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
             },
             // Return yearly plans

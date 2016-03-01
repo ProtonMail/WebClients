@@ -9,7 +9,10 @@
         <div class="row" id="settingsAddresses">
 
             <section class="setting full pm_form">
-                <legend>{{ 'ADDRESSES' | translate }}</legend>
+                <legend>
+                    <span class="pull-right" ng-show="organization">{{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} {{ 'ADDRESSES_USED' | translate }}. <a ui-sref="secured.dashboard">{{ 'UPGRADE_YOUR_PLAN' | translate }}</a></span>
+                    {{ 'ADDRESSES' | translate }}
+                </legend>
                 <div class="margin" ng-show="isAdmin === true">
                     <a class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</a>
                     <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>

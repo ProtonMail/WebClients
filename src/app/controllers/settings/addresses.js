@@ -17,6 +17,7 @@ angular.module('proton.controllers.Settings')
     Member,
     networkActivityTracker,
     notify,
+    organization,
     Setting
 ) {
     $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
@@ -24,11 +25,6 @@ angular.module('proton.controllers.Settings')
     $scope.domains = [];
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
-
-    $scope.$on('updateUser', function(event) {
-        $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
-        $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
-    });
 
     // Populate the domains <select>
     _.each(domains, function(domain) {
@@ -52,6 +48,18 @@ angular.module('proton.controllers.Settings')
             $scope.saveOrder(order);
         }
     };
+
+    // Set organization
+    if (organization.data.Organization) {
+        $scope.organization = organization.data.Organization;
+    }
+
+    // Listeners
+    $scope.$on('updateUser', function(event) {
+        $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
+        $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
+    });
+
 
     /**
      * Return domain value for a specific address
