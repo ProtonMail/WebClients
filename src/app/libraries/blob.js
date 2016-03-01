@@ -4,7 +4,7 @@
  *
  * By Eli Grey, http://eligrey.com
  * By Devin Samarin, https://github.com/dsamarin
- * License: X11/MIT
+ * License: MIT
  *   See https://github.com/eligrey/Blob.js/blob/master/LICENSE.md
  */
 
