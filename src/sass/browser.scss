@@ -36,14 +36,24 @@
 .ua-windows_nt {
 
 }
+
+.ua-firefox {
+    .pm_button.primary.compose {
+        line-height: 35px;
+    }
+    .pm_button {
+        line-height: 30px;
+    }
+    #pm_composer .composer .pm_button {
+        line-height: ($composerRowHeight - 6);
+    }
+}
+
 // All Windows, Firefox
 .ua-windows_nt.ua-firefox {
     &.ua-firefox {
         #pm_composer .composer .pm_button {
             line-height: 26px;
-        }
-        .pm_button.primary.compose {
-            line-height: 35px;
         }
         .pm_buttons a,
         .pm_button {
