@@ -51,8 +51,8 @@
                         <tr ng-repeat="invoice in invoices">
                             <td>
                                 <span class="bold">{{ invoice.ID }}</span>
-                                <span ng-show="invoice.State === 0">({{ invoice.AmountDue | currency: invoice.Currency }})</span>
-                                <span ng-show="invoice.State === 1">({{ invoice.AmountCharged | currency: invoice.Currency }})</span>
+                                <span ng-show="invoice.State === 0">({{ invoice.AmountDue / 100 | currency: invoice.Currency }})</span>
+                                <span ng-show="invoice.State === 1">({{ invoice.AmountCharged / 100 | currency: invoice.Currency }})</span>
                             </td>
                             <td>
                                 <span class="pm_badge" ng-show="invoice.Type === 0">{{ 'OTHER' | translate }}</span>
