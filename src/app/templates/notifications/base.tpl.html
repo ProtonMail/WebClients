@@ -8,7 +8,6 @@ $position === 'right' ? 'cg-notify-message-right' : '']"
 ng-style="{'margin-left': $centerMargin}">
 
     <div ng-show="!$messageTemplate" ng-class="{ 'animated bounceIn' : $classes==='notification-success' }">
-    	<i class="fa fa-check" ng-show="$classes==='notification-success'"></i>
     	<span ng-bind-html="$message"></span>
     </div>
 
