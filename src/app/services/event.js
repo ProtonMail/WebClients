@@ -131,15 +131,35 @@ angular.module("proton.event", ["proton.constants"])
 					$q.all(promises).finally(function() {
 						// Merge user parameters
 						_.each(Object.keys(user), function(key) {
-							if (angular.isArray(key)) {
-								_.union(authentication.user[key], user[key]);
+							if (key === 'Addresses') {
+								_.each(user.Addresses, function(address) {
+									var index = _.findIndex(authentication.user.Addresses, {ID: address.ID});
+
+									if (index === -1) {
+										authentication.user.Addresses.push(address);
+									} else {
+										angular.extend(authentication.user.Addresses[index], address);
+									}
+								});
+
+								var index = authentication.user.Addresses.length;
+
+								while(index--) {
+									var address = authentication.user.Addresses[index];
+									var found = _.findWhere(user.Addresses, {ID: address.ID});
+
+									if (angular.isUndefined(found)) {
+										authentication.user.Addresses.splice(index, 1);
+									}
+								}
 							} else {
-								authentication.user[key] = user[key];
+								angular.extend(authentication.user[key], user[key]);
 							}
 						});
 
 						$rootScope.user = authentication.user;
 						$rootScope.$broadcast('updateUser');
+						console.log(authentication.user.Addresses);
 					});
 				}
 			},

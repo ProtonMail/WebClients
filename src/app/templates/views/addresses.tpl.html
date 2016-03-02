@@ -14,8 +14,8 @@
                     {{ 'ADDRESSES' | translate }}
                 </legend>
                 <div class="margin" ng-show="isAdmin === true">
-                    <a class="pm_button primary" ng-click="add()"><i class="fa fa-plus"></i> {{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</a>
-                    <a ui-sref="secured.domains" class="pm_button"><i class="fa fa-plus"></i> {{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>
+                    <a class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</a>
+                    <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>
                 </div>
                 <p class="alert alert-info">Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted. <a href=" https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank">Learn more about addresses here</a>.</p>
                 <label>
@@ -24,7 +24,7 @@
                 </label>
                 <div class="pm_sort">
                     <ul data-as-sortable="aliasDragControlListeners" data-ng-model="activeAddresses">
-                        <li ng-repeat="address in activeAddresses" as-sortable-item="" ng-class="{'highlight': address.Type === 1}">
+                        <li ng-repeat="address in activeAddresses | orderBy: 'Send'" as-sortable-item="" ng-class="{'highlight': address.Type === 1}">
                             <div as-sortable-item-handle="" class="pm_grid">
                                 <div class="col-1-3">
                                     <i class="fa fa-ellipsis-v"></i>
