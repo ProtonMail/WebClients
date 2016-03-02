@@ -192,7 +192,7 @@ angular.module("proton.filters",[])
     return function(time) {
         var m = moment.unix(time);
 
-        return m.format('LL h:mm a');
+        return m.format('LL h:mm A');
     };
 })
 
