@@ -137,13 +137,6 @@ angular.module("proton.modals", [])
     });
 })
 
-// Advance search modal
-.factory('searchModal', function(pmModal, authentication, CONSTANTS) {
-    return pmModal({
-        templateUrl: 'templates/modals/advanceSearch.tpl.html'
-    });
-})
-
 // login help modal
 .factory('loginModal', function(pmModal) {
     return pmModal({
