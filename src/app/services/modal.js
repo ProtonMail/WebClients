@@ -126,17 +126,10 @@ angular.module("proton.modals", [])
         controller: function(params) {
             this.title = params.title;
             this.message = params.message;
-
-            if(angular.isDefined(params.alert)) {
-                this.alert = params.alert;
-            } else {
-                this.alert = 'alert-info';
-            }
+            this.alert = params.alert || 'alert-info';
 
             this.ok = function() {
-                if (angular.isDefined(params.ok) && angular.isFunction(params.ok)) {
-                    params.ok();
-                }
+                params.ok();
             };
         },
         controllerAs: 'ctrl',
