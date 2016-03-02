@@ -14,8 +14,8 @@
                     {{ 'ADDRESSES' | translate }}
                 </legend>
                 <div class="margin" ng-show="isAdmin === true">
-                    <a class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</a>
-                    <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>
+                    <a class="pm_button primary" ng-click="add()"><i class="fa fa-plus"></i> {{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</a>
+                    <a ui-sref="secured.domains" class="pm_button"><i class="fa fa-plus"></i> {{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>
                 </div>
                 <p class="alert alert-info">Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted. <a href=" https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank">Learn more about addresses here</a>.</p>
                 <label>
@@ -45,7 +45,7 @@
                 <p></p>
 
                 <label ng-show="disabledAddresses.length > 0">
-                    <strong>{{ 'DISABLED_ADDRESSES' | translate }}</strong>
+                    <strong>{{ 'INACTIVE_ADDRESSES' | translate }}</strong>
                 </label>
 
                 <div class="pm_sort">
@@ -56,13 +56,14 @@
                                     {{ address.Email }}
                                 </div>
                                 <div class="col-1-3">
-                                    <span class="pm_badge error">{{ 'DISABLED' | translate }}</span>
-                                    <span class="pm_badge warning" ng-show="address.Keys.length === 0">{{ 'MISSING_KEYS' | translate }}</span>
+                                    <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
+                                    <span class="pm_badge warning" ng-show="address.HasKeys === 0">{{ 'MISSING_KEYS' | translate }}</span>
                                 </div>
                                 <div class="col-1-3 text-right">
-                                    <button type="button" class="pm_button link" ng-show="address.Keys.length === 0" ng-click="generate(address)">{{ 'GENERATE_MISSING_KEYS' | translate }}</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Keys.length > 0 && (address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Type === 3 && isAdmin === true" ng-click="delete(address)">{{ 'DELETE' | translate }}</button>
+                                    <button type="button" class="pm_button link" ng-show="address.HasKeys === 0 && address.Status === 1" ng-click="generate(address)">{{ 'GENERATE_MISSING_KEYS' | translate }}</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type === 3 && isAdmin === true" ng-click="disable(address)">{{ 'DISABLE' | translate }}</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3 && isAdmin === true" ng-click="delete(address)">{{ 'DELETE' | translate }}</button>
                                 </div>
                             </div>
                         </li>

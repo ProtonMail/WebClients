@@ -15,7 +15,7 @@
                 </legend>
                 <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
                 <div class="margin">
-                    <button ng-hide="organization.UsedDomains === organization.MaxDomains" type="button" class="pm_button primary" ng-click="addDomain()">{{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
+                    <button ng-hide="organization.UsedDomains === organization.MaxDomains" type="button" class="pm_button primary" ng-click="addDomain()"><i class="fa fa-plus"></i> {{ 'ADD_CUSTOM_DOMAIN' | translate }}</button>
                     <button type="button" class="pm_button" ng-click="refreshStatus()">{{ 'REFRESH_DOMAIN_STATUS' | translate }}</button>
                 </div>
                 <table class="pm_table bordered domains" ng-show="domains.length > 0">
@@ -138,7 +138,8 @@
                                     <td>{{ address.Email }}</td>
                                     <td>
                                         <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1">{{ 'ENABLED' | translate }}</span>
-                                        <span class="pm_badge error" ng-show="address.Status === 0 || address.Receive === 0">{{ 'DISABLED' | translate }}</span>
+                                        <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
+                                        <span class="pm_badge warning" ng-show="address.HasKeys === 0">{{ 'MISSING_KEYS' | translate }}</span>
                                     </td>
                                     <td class="text-right">
                                         <a class="pm_button link" ui-sref="secured.addresses">{{ 'MANAGE' | translate }}</a>
