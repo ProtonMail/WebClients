@@ -1224,7 +1224,7 @@ angular.module("proton.modals", [])
                 if (dirtyAddresses.length === 0) {
                     params.cancel();
                 }
-            }.bind(this));
+            });
 
             // Functions
             this.submit = function() {
