@@ -12,7 +12,6 @@ angular.module("proton.controllers.Header", [])
     CONFIG,
     CONSTANTS,
     notify,
-    searchModal,
     tools
 ) {
     $scope.params = {
