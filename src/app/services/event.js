@@ -129,7 +129,15 @@ angular.module("proton.event", ["proton.constants"])
 					}
 
 					$q.all(promises).finally(function() {
-						angular.merge(authentication.user, user);
+						// Merge user parameters
+						_.each(Object.keys(user), function(key) {
+							if (angular.isArray(key)) {
+								_.union(authentication.user[key], user[key]);
+							} else {
+								authentication.user[key] = user[key];
+							}
+						});
+
 						$rootScope.user = authentication.user;
 						$rootScope.$broadcast('updateUser');
 					});
