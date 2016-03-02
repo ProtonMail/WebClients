@@ -278,7 +278,7 @@ module.exports = function(grunt) {
                     banner: "<%= meta.banner %>"
                 },
                 files: {
-                    '<%= compile_dir %>/assets/app.js': ['<%= build_dir %>/vendor/*.js', '<%= build_dir %>/src/app/**/*.js']
+                    '<%= compile_dir %>/assets/app.js': ['<%= vendor_files.js %>', '<%= build_dir %>/src/app/**/*.js']
                 },
                 nonull: true
             }
@@ -515,7 +515,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('deploy', [
         'clean:dist', // clean dist directory
-        // 'shell:setup_dist',
+        'shell:setup_dist',
         'ngconstant:prod', // set prod variables
         'build',
         'copy:compile_assets', // copy
@@ -526,8 +526,8 @@ module.exports = function(grunt) {
         'copy:compile_external', // copy openpgp
         'index:compile', // index CSS and JS
         'cacheBust', // bust CSS and JS
-        // 'shell:push',
-        // 'wait:push'
+        'shell:push',
+        'wait:push'
     ]);
 
     grunt.registerTask('build', [
