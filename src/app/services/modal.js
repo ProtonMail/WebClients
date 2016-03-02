@@ -1209,7 +1209,7 @@ angular.module("proton.modals", [])
                 var dirtyAddresses = [];
 
                 _.each(authentication.user.Addresses, function(address) {
-                    if (address.Keys.length === 0 && authentication.user.Private === 1) {
+                    if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
                         dirtyAddresses.push(address);
                     }
                 });

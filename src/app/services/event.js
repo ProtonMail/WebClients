@@ -91,7 +91,7 @@ angular.module("proton.event", ["proton.constants"])
 					};
 
 					_.each(user.Addresses, function(address) {
-						if (address.Keys.length === 0 && privateUser === true) {
+						if (address.Keys.length === 0 && address.Status === 1 && privateUser === true) {
 							dirtyAddresses.push(address);
 						} else {
 							_.each(address.Keys, function(key, index) {

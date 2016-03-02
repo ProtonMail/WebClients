@@ -63,7 +63,7 @@ angular.module("proton.controllers.Secured", [])
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 
     _.each(authentication.user.Addresses, function(address) {
-        if (address.Keys.length === 0 && authentication.user.Private === 1) {
+        if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
             dirtyAddresses.push(address);
         }
     });
