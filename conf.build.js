@@ -44,8 +44,8 @@ module.exports = {
       "vendor/angular-route/angular-route.js",
       "vendor/moment/moment.js",
       "vendor/underscore/underscore.js",
-      "vendor/DOMPurify/dist/purify.min.js",
-      "vendor/papaparse/papaparse.min.js",
+      "vendor/DOMPurify/src/purify.js",
+      "vendor/papaparse/papaparse.js",
       "vendor/ng-sortable/dist/ng-sortable.js",
       "vendor/angular-notify/dist/angular-notify.js",
       "vendor/pikaday/pikaday.js",
@@ -90,11 +90,7 @@ module.exports = {
 
     sass_include_dirs: [
       "vendor/bourbon/dist",
-//      "vendor/font-awesome/scss",
       "vendor/bootstrap-sass-official/assets/stylesheets"
-    ],
-    assets: [
-//      "vendor/font-awesome/fonts"
     ]
   }),
 

@@ -147,23 +147,6 @@ module.exports = function(grunt) {
             ],
             dist: [
                 "<%= compile_dir %>"
-            ],
-            after: [
-                "<%= build_dir %>/_footer.html",
-                "<%= build_dir %>/_nav.html",
-                "<%= build_dir %>/about.html",
-                "<%= build_dir %>/faq.html",
-                "<%= build_dir %>/invite.html",
-                "<%= build_dir %>/careers.html",
-                "<%= build_dir %>/media.html",
-                "<%= build_dir %>/perks.html",
-                "<%= build_dir %>/press.html",
-                "<%= build_dir %>/privacy-policy.html",
-                "<%= build_dir %>/security-details.html",
-                "<%= build_dir %>/technical-details.html",
-                "<%= build_dir %>/terms-and-conditions.html",
-                "<%= build_dir %>/why-protonmail.html",
-                "<%= build_dir %>/privacy-policy.html"
             ]
         },
 
@@ -208,31 +191,13 @@ module.exports = function(grunt) {
                     expand: true
                 }]
             },
-            build_vendor_assets: {
-                files: [{
-                    src: ["<%= vendor_files.assets %>"],
-                    dest: "<%= build_dir %>/assets/",
-                    cwd: ".",
-                    expand: true,
-                    flatten: true,
-                    nonull: true
-                }]
-            },
-            build_fonts: {
-                files: [{
-                    src: ["**"],
-                    dest: "<%= build_dir %>/fonts",
-                    cwd: "./src/assets/fonts",
-                    expand: true
-                }]
-            },
             build_appjs: {
                 files: [{
                     src: ["<%= app_files.js %>"],
-                    dest: "<%= build_dir %>/",
+                    dest: "<%= build_dir %>",
                     cwd: ".",
-                    expand: true,
-                    nonull: true
+                    filter: 'isFile',
+                    expand: true
                 }]
             },
             build_vendorjs: {
@@ -253,24 +218,6 @@ module.exports = function(grunt) {
                     expand: true
                 }]
             },
-            compile_fonts: {
-                files: [{
-                    src: ["**"],
-                    dest: "<%= compile_dir %>/fonts",
-                    cwd: "./src/assets/fonts",
-                    expand: true
-                }]
-            },
-            deploy: {
-                files: [{
-                    src: [".htaccess"],
-                    filter: "isFile",
-                    expand: true,
-                    dest: "./<%= compile_dir %>/",
-                    cwd: "./src",
-                    nonull: true
-                }]
-            },
             build_external: {
                 files: [{
                     src: ["<%= external_files.openpgp %>"],
@@ -285,16 +232,26 @@ module.exports = function(grunt) {
                     nonull: true
                 }]
             },
-            htaccess: {
+            build_htaccess: {
                 files: [{
                     src: [".htaccess"],
                     filter: "isFile",
                     expand: true,
-                    dest: "./<%= build_dir %>/",
+                    dest: "<%= build_dir %>",
                     cwd: "./src",
                     nonull: true
                 }]
-            }
+            },
+            compile_htaccess: {
+                files: [{
+                    src: [".htaccess"],
+                    filter: "isFile",
+                    expand: true,
+                    dest: "<%= compile_dir %>",
+                    cwd: "./src",
+                    nonull: true
+                }]
+            },
         },
 
         sass: {
@@ -310,24 +267,18 @@ module.exports = function(grunt) {
 
         concat: {
             build_css: {
-                src: [
-                    "<%= vendor_files.css %>",
-                    "<%= build_dir %>/assets/application.css"
-                ],
-                dest: "<%= build_dir %>/assets/application.css",
+                files: {
+                    '<%= build_dir %>/assets/vendor.css': ['<%= vendor_files.css %>']
+                },
                 nonull: true
             },
             compile_js: {
                 options: {
+                    sourceMap: true,
                     banner: "<%= meta.banner %>"
                 },
                 files: {
-                    "<%= compile_dir %>/assets/app.js": [
-                        "<%= build_dir %>/src/**/*.js",
-                        "<%= html2js.app.dest %>",
-                        "<%= html2js.common.dest %>",
-                    ],
-                    "<%= compile_dir %>/assets/vendor.js": ["<%= vendor_files.included_js %>"]
+                    '<%= compile_dir %>/assets/app.js': ['<%= build_dir %>/vendor/*.js', '<%= build_dir %>/src/app/**/*.js']
                 },
                 nonull: true
             }
@@ -346,7 +297,7 @@ module.exports = function(grunt) {
                     base: "src/app"
                 },
                 src: ["<%= app_files.atpl %>"],
-                dest: "<%= build_dir %>/templates-app.js"
+                dest: "<%= build_dir %>/src/app/templates/templates-app.js"
             },
 
             common: {
@@ -354,18 +305,7 @@ module.exports = function(grunt) {
                     base: "src/common"
                 },
                 src: ["<%= app_files.ctpl %>"],
-                dest: "<%= build_dir %>/templates-common.js"
-            }
-        },
-
-        testconfig: {
-            unit: {
-                src: [
-                    "<%= vendor_files.included_js %>",
-                    "<%= html2js.app.dest %>",
-                    "<%= html2js.common.dest %>",
-                    "<%= test_files.js %>"
-                ]
+                dest: "<%= build_dir %>/src/app/templates/templates-common.js"
             }
         },
 
@@ -384,9 +324,7 @@ module.exports = function(grunt) {
             },
             compile: {
                 files: [{
-                    src: ["<%= app_files.js %>"],
-                    cwd: "<%= build_dir %>",
-                    dest: "<%= build_dir %>",
+                    src: ['<%= build_dir %>/js/*.js'],
                     expand: true
                 }]
             }
@@ -407,7 +345,9 @@ module.exports = function(grunt) {
         uglify: {
             options: {
                 mangle: false,
-                sourceMap: false,
+                sourceMap: true,
+                sourceMapIncludeSources : true,
+                sourceMapIn : '<%= compile_dir %>/assets/app.js.map',
                 preserveComments: false,
                 report: 'min'
             },
@@ -416,8 +356,7 @@ module.exports = function(grunt) {
                     banner: "<%= meta.banner %>"
                 },
                 files: {
-                    "<%= compile_dir %>/assets/app.js": "<%= compile_dir %>/assets/app.js",
-                    "<%= compile_dir %>/assets/vendor.js": "<%= compile_dir %>/assets/vendor.js"
+                    '<%= compile_dir %>/assets/app.js': '<%= compile_dir %>/assets/app.js'
                 }
             }
         },
@@ -427,15 +366,13 @@ module.exports = function(grunt) {
                 apiUrl: apiUrl()
             },
             build: {
-                dir: "<%= build_dir %>",
+                dir: '<%= build_dir %>',
                 src: [
-                    "<%= html2js.common.dest %>",
-                    "<%= html2js.app.dest %>",
-                    "<%= build_dir %>/openpgp.min.js",
-                    "<%= build_dir %>/pmcrypto.js",
-                    "<%= build_dir %>/src/**/*.js",
-                    "<%= vendor_files.included_js %>",
-                    "<%= build_dir %>/assets/application.css"
+                    '<%= build_dir %>/openpgp.min.js',
+                    '<%= build_dir %>/pmcrypto.js',
+                    '<%= build_dir %>/src/**/*.js',
+                    '<%= vendor_files.included_js %>',
+                    '<%= build_dir %>/assets/application.css'
                 ],
                 deployment: false
             },
@@ -443,11 +380,10 @@ module.exports = function(grunt) {
             compile: {
                 dir: "<%= compile_dir %>",
                 src: [
-                    "<%= compile_dir %>/assets/vendor.js",
                     "<%= compile_dir %>/openpgp.min.js",
                     "<%= compile_dir %>/pmcrypto.js",
                     "<%= compile_dir %>/assets/app.js",
-                    "<%= cssmin.compile.dest %>"
+                    "<%= compile_dir %>/assets/app.css"
                 ],
                 deployment: true
             }
@@ -455,7 +391,7 @@ module.exports = function(grunt) {
 
         cacheBust: {
             options: {
-                deleteOriginals: false,
+                deleteOriginals: true,
                 ignorePatterns: [
                     'openpgp.min.js'
                 ]
@@ -483,7 +419,7 @@ module.exports = function(grunt) {
                 files: [
                     "src/sass/**/*.scss"
                 ],
-                tasks: ["sass:build", "concat:build_css"]
+                tasks: ["sass:build"]
             },
 
             css: {
@@ -561,67 +497,50 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-ng-constant');
 
-    grunt.renameTask("watch", "delta");
+    grunt.renameTask('watch', 'delta');
 
-    grunt.registerTask("watch", [
-        "notify_hooks",
-        "ngconstant:dev",
-        "build",
-        "jshint",
-        "connect:watch",
-        "delta"
+    grunt.registerTask('watch', [
+        'notify_hooks',
+        'ngconstant:dev',
+        'build',
+        'jshint',
+        'connect:watch',
+        'delta'
     ]);
 
-    grunt.registerTask("extract", [
-        "i18nextract"
+    // Extract translate keys from HTML and JS files
+    grunt.registerTask('extract', [
+        'i18nextract'
     ]);
 
-    grunt.registerTask("build", [
-        "clean:build",
-        "jshint",
-        "html2js",
-        "sass:build",
-        "concat:build_css",
-        "copy:build_app_assets",
-        "copy:build_vendor_assets",
-        "copy:build_appjs",
-        "copy:build_vendorjs",
-        "copy:build_external",
-        "copy:build_fonts",
-        "index:build",
-        "testconfig",
-        "clean:after"
+    grunt.registerTask('deploy', [
+        'clean:dist', // clean dist directory
+        // 'shell:setup_dist',
+        'ngconstant:prod', // set prod variables
+        'build',
+        'copy:compile_assets', // copy
+        'copy:compile_htaccess', // copy htaccess file
+        'cssmin', // minify CSS
+        'concat:compile_js', // concat JS
+        'uglify', // minify JS
+        'copy:compile_external', // copy openpgp
+        'index:compile', // index CSS and JS
+        'cacheBust', // bust CSS and JS
+        // 'shell:push',
+        // 'wait:push'
     ]);
 
-    grunt.registerTask("compile", [
-        "ngconstant:prod",
-        "build",
-        "copy:compile_assets",
-        "copy:compile_fonts",
-        "ngAnnotate",
-        "cssmin",
-        "concat:compile_js",
-        "uglify",
-        "copy:compile_external",
-        "index:compile",
-        "cacheBust",
-        "connect:compile"
+    grunt.registerTask('build', [
+        'clean:build',
+        'html2js',
+        'sass:build',
+        'concat:build_css',
+        'copy:build_app_assets',
+        'copy:build_appjs',
+        'copy:build_vendorjs',
+        'copy:build_external',
+        'copy:build_htaccess',
+        'ngAnnotate',
+        'index:build'
     ]);
-
-    grunt.registerTask("deploy", [
-        "clean:dist",
-        "shell:setup_dist",
-        "compile",
-        "copy:deploy",
-        "copy:htaccess",
-        "clean:after",
-        "shell:push",
-        "wait:push"
-    ]);
-
-
-    grunt.registerTask("bower", [
-        "shell:bower"
-    ]);
-
 };
