@@ -57,8 +57,6 @@ module.exports = {
       "vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
       "vendor/angular-translate-storage-local/angular-translate-storage-local.js",
       "vendor/vcard/src/vcard.js",
-      "vendor/mellt/javascript/Mellt.js",
-      "vendor/mellt/javascript/common-passwords.js",
       "vendor/html2canvas/build/html2canvas.js",
       "vendor/svg4everybody/dist/svg4everybody.js",
       "vendor/ical.js/build/ical.js",
