@@ -515,8 +515,13 @@ angular.module("proton.modals", [])
             this.currency = params.currency;
             this.methods = params.methods;
             this.method = this.methods[0];
+            this.invoice = params.invoice;
 
             // Functions
+            this.label = function(method) {
+                return '•••• •••• •••• ' + method.Details.Last4;
+            };
+
             this.submit = function() {
                 Payment.pay(params.invoice.ID, {
                     Amount: params.amountDue,

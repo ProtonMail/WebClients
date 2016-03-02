@@ -141,25 +141,28 @@ angular.module('proton.controllers.Settings')
 
          networkActivityTracker.track($q.all(promises)
          .then(function(result) {
-             payModal.activate({
-                 params: {
-                     invoice: invoice,
-                     methods: result.methods.data.PaymentMethods,
-                     currency: result.check.data.Currency,
-                     amount: result.check.data.Amount,
-                     credit: result.check.data.Credit,
-                     amountDue: result.check.data.AmountDue,
-                     close: function(result) {
-                         payModal.deactivate();
+             if (result.methods.data.PaymentMethods.length === 0 && authentication.user.Credit < result.check.data.AmountDue) {
+                 notify({message: 'Please add a payment method first', classes: 'notification-danger'});
+             } else {
+                 payModal.activate({
+                     params: {
+                         invoice: invoice,
+                         methods: result.methods.data.PaymentMethods,
+                         currency: result.check.data.Currency,
+                         amount: result.check.data.Amount,
+                         credit: result.check.data.Credit,
+                         amountDue: result.check.data.AmountDue,
+                         close: function(result) {
+                             payModal.deactivate();
 
-                         if (result === true) {
-                            // Set invoice state to PAID
-                            invoice.State = 1;
+                             if (result === true) {
+                                 // Set invoice state to PAID
+                                 invoice.State = 1;
+                             }
                          }
                      }
-                 }
-             });
-
+                 });
+             }
          }));
      };
 });

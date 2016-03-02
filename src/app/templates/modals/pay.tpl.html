@@ -3,7 +3,7 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'PAY' | translate }}</h4>
+                <h4 class="modal-title">{{ 'PAY_INVOICE' | translate }} {{ ctrl.invoice.ID }}</h4>
             </div>
             <div class="modal-body pm_form">
                 <table class="pm_table">
@@ -12,7 +12,7 @@
                             <th>{{ 'AMOUNT' | translate }}</th>
                             <td>{{ ctrl.amount / 100 | currency: ctrl.currency }}</td>
                         </tr>
-                        <tr ng-show="ctrl.credit">
+                        <tr ng-show="ctrl.credit !== 0">
                             <th>{{ 'CREDIT' | translate }}</th>
                             <td>{{ ctrl.credit / 100 | currency: ctrl.currency }}</td>
                         </tr>
@@ -22,22 +22,19 @@
                         </tr>
                     </tbody>
                 </table>
-                <div ng-if="ctrl.method">
+                <div ng-show="ctrl.amountDue > 0">
                     <p>Select your payment method</p>
                     <span class="pm_select">
-                        <select ng-model="ctrl.method" ng-options="method.Details.Last4 for method in ctrl.methods"></select>
+                        <select ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
-                </div>
-                <div ng-if="!ctrl.method">
-                    <p class="alert alert-info">No payment methods. Add one below:</p>
-                    <p class="text-center"><a href="#" ng-click="ctrl.add()">{{ 'ADD_CREDIT_CARD' | translate }}</a></p>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary pull-right">{{ 'SUBMIT' | translate }}</button>
+            <button type="submit" class="pm_button primary pull-right" ng-show="ctrl.amountDue > 0">{{ 'SUBMIT' | translate }}</button>
+            <button type="submit" class="pm_button primary pull-right" ng-show="ctrl.amountDue <= 0">{{ 'APPLY_CREDITS' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
