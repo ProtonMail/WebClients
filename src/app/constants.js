@@ -16,7 +16,8 @@ angular.module('proton.constants', [])
     ATTACHMENT_NUMBER_LIMIT: 100,
     MAX_TITLE_LENGTH: 255,
     MAX_NUMBER_COMPOSER: 3,
-    NUMBER_OF_MESSAGES_PRELOADING: 5,
+    MESSAGE_LIMIT: 100,
+    CONVERSATION_LIMIT: 100,
     ENC_NONE: 0,
     ENC_INTERNAL: 1, // all within ProtonMail
     ENC_EXTERNAL: 2, // encrypted from outside

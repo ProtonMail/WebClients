@@ -218,7 +218,7 @@ angular.module("proton.cache", [])
         var loc = getLocation(request);
         var context = tools.cacheContext();
 
-        request.Limit = request.Limit || 100; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
+        request.Limit = request.Limit || CONSTANTS.CONVERSATION_LIMIT; // We don't call 50 conversations but 100 to improve user experience when he delete message and display quickly the next conversations
 
         api.getDispatcher().then(function() {
             Conversation.query(request).then(function(result) {
@@ -241,9 +241,9 @@ angular.module("proton.cache", [])
                         // Store conversations
                         storeConversations(data.Conversations);
                         // Return conversations ordered
-                        deferred.resolve(api.orderConversation(data.Conversations, loc));
+                        deferred.resolve(api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc));
                     } else {
-                        deferred.resolve(data.Conversations);
+                        deferred.resolve(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
                     }
                 } else {
                     deferred.reject();
@@ -268,7 +268,7 @@ angular.module("proton.cache", [])
         var loc = getLocation(request);
         var context = tools.cacheContext();
 
-        request.Limit = request.Limit || 100; // We don't call 50 messages but 100 to improve user experience when he delete message and display quickly the next messages
+        request.Limit = request.Limit || CONSTANTS.MESSAGE_LIMIT; // We don't call 50 messages but 100 to improve user experience when he delete message and display quickly the next messages
 
         api.getDispatcher().then(function() {
             Message.query(request).$promise.then(function(result) {
@@ -290,9 +290,9 @@ angular.module("proton.cache", [])
                     // Set total value in cache
                     cacheCounters.updateMessage(loc, result.Total);
                     // Return messages ordered
-                    deferred.resolve(api.orderMessage(messages));
+                    deferred.resolve(api.orderMessage(messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE)));
                 } else {
-                    deferred.resolve(messages);
+                    deferred.resolve(messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
                 }
 
                 api.clearDispatcher();
