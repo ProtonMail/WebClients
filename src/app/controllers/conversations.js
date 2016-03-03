@@ -639,12 +639,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     /**
      * Switch to an other page
      * @param {Integer} page
-     * @param {Boolean} scrollToBottom
      */
-    $scope.goToPage = function(page, scrollToBottom) {
+    $scope.goToPage = function(page) {
         var route = 'secured.' + $scope.mailbox;
 
-        $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllElements();
         $scope.page = page;
 

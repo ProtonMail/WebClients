@@ -499,18 +499,6 @@ angular.module('proton', [
 
         $rootScope.toState = toState.name.replace(".", "-");
 
-        if($rootScope.scrollToBottom === true) {
-            if($("#pm_list")) {
-                $timeout(function() {
-                    $('#content').animate({
-                        scrollTop: $("#pm_list").offset().top
-                    }, 1);
-                }, 100);
-            }
-
-            $rootScope.scrollToBottom = false;
-        }
-
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
 
         $timeout( function() {
