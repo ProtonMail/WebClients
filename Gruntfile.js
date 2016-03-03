@@ -390,14 +390,13 @@ module.exports = function(grunt) {
         cacheBust: {
             options: {
                 deleteOriginals: true,
-                ignorePatterns: [
-                    'openpgp.min.js'
-                ]
+                baseDir: '<%= compile_dir %>/'
             },
             assets: {
-                files: [{
-                    src: ['<%= compile_dir %>/app.html']
-                }]
+                options: {
+                    assets: ['assets/app.css', 'assets/app.js']
+                },
+                src: ['<%= compile_dir %>/app.html']
             }
         },
 
