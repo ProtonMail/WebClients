@@ -307,25 +307,24 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             var element = angular.element(id);
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
-                var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
+                var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').outerHeight();
                 var amountScrolled = $('#pm_thread').scrollTop();
-                var value = element.offset().top + amountScrolled - headerOffset;
+                var paddingTop = parseInt($('#pm_thread').css('padding-top').replace('px', ''));
+                var value = element.offset().top + amountScrolled - headerOffset - paddingTop;
 
                 if (index === 0) {
                     // Do nothing
                 } else if (index === 1) {
-                    value -= 30;
+                    value -= 15;
                 } else if (index > 1) {
-                    value -= 80;
+                    value -= 68;
                 }
+
+                console.log(value);
 
                 $('#pm_thread').animate({
                     scrollTop: value
-                }, 200, function() {
-                    $(this).animate({
-                        opacity: 1
-                    }, 200);
-                });
+                }, 200);
             }
         }, 100);
     };
