@@ -23,25 +23,11 @@ angular.module('proton.actions', [])
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
             var toInbox = mailbox === 'inbox';
+            var current = tools.currentLocation();
 
             // Generate cache events
             _.each(ids, function(id) {
                 var conversation = cache.getConversationCached(id);
-                var current;
-
-                _.each(conversation.LabelIDs, function(labelID) {
-                    if ([
-                        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.archive
-                    ].indexOf(labelID) !== -1) {
-                        current = labelID;
-                    }
-                });
-
                 var labelIDsRemoved = [current];
                 var messages = cache.queryMessagesCached(id);
                 var element = {
@@ -140,7 +126,7 @@ angular.module('proton.actions', [])
 
                 if (angular.isArray(messages) && messages.length > 0) {
                     _.each(messages, function(message) {
-                        var current;
+                        var current = tools.currentLocation();
                         var toApplyMessage = _.chain(labels)
                             .filter(function(label) {
                                 return label.Selected === true;
@@ -160,19 +146,6 @@ angular.module('proton.actions', [])
                             .value() || [];
 
                         message.LabelIDs = message.LabelIDs || [];
-
-                        _.each(message.LabelIDs, function(labelID) {
-                            if ([
-                                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.archive
-                            ].indexOf(labelID) !== -1) {
-                                current = labelID;
-                            }
-                        });
 
                         if (alsoArchive === true) {
                             toApplyMessage.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
