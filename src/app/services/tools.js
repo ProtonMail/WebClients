@@ -399,13 +399,10 @@ angular.module("proton.tools", ["proton.constants"])
         var mailbox = tools.currentMailbox();
         var loc; // Don't choose location
 
-        switch(mailbox) {
-            case 'label':
-                loc = $stateParams.label;
-                break;
-            default:
-                loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-                break;
+        if (mailbox === 'label') {
+            loc = $stateParams.label;
+        } else {
+            loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
         }
 
         return loc;
