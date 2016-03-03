@@ -370,7 +370,8 @@ module.exports = function(grunt) {
                     '<%= build_dir %>/pmcrypto.js',
                     '<%= build_dir %>/src/**/*.js',
                     '<%= vendor_files.included_js %>',
-                    '<%= build_dir %>/assets/application.css'
+                    '<%= build_dir %>/assets/application.css',
+                    '<%= build_dir %>/assets/vendor.css'
                 ],
                 deployment: false
             },
