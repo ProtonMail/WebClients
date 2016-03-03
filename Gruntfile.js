@@ -18,50 +18,20 @@ var API_TARGETS = {
 };
 
 module.exports = function(grunt) {
+    var serveStatic = require('serve-static');
+
     grunt.loadTasks("tasks");
     require("load-grunt-tasks")(grunt);
 
-    // Extract API URL from command-line options.
-    //
-    // Each target in API_TARGETS can be enabled by passing the target name as a
-    // command-line option ('--staging').
-    //
-    // '?'s in a target's hostname are replaced with the command-line option's
-    // value. For example, '--target=google.com' results in an API URL of
-    // 'google.com'.
-    //
-    // Specifying multiple target command-line options results in undefined
-    // behavior.
     function apiUrl() {
-        return _(API_TARGETS)
-        .pick(function(host, target) {
-            return grunt.option(target);
-        })
-        .map(function(host, target) {
-            return host.replace("?", grunt.option(target));
-        })
-        .first() || API_TARGETS.build;
-    }
+        var api = API_TARGETS.build;
+        var option = grunt.option('api');
 
-    function rewriteIndexMiddleware(connect, options) {
-        // options.base is normalized to an array by grunt-contrib-connect
-        if (options.base.length !== 1) {
-            grunt.fail.fatal("must specify exactly one base");
+        if(option && API_TARGETS[option]) {
+            api = API_TARGETS[option];
         }
-        var base = options.base[0];
-        return [
-            connect.static(base),
-            function(req, res, next) {
-                // no file found; send app.html
-                var file = base + "/app.html";
-                if (grunt.file.exists(file)) {
-                    require("fs").createReadStream(file).pipe(res);
-                    return;
-                }
-                res.statusCode(404);
-                res.end();
-            }
-        ];
+
+        return api;
     }
 
     // Expose each supported browser as a command-line option
@@ -162,9 +132,26 @@ module.exports = function(grunt) {
 
         connect: {
             options: {
-                hostname: "*",
-                middleware: rewriteIndexMiddleware,
-                port: 8080
+                hostname: '*',
+                open: true,
+                port: 8080,
+                middleware: function(connect, options, middlewares) {
+                    var base = options.base[0];
+
+                    return [
+                        serveStatic(base),
+                        function(req, res, next) {
+                            // no file found; send app.html
+                            var file = base + "/app.html";
+                            if (grunt.file.exists(file)) {
+                                require("fs").createReadStream(file).pipe(res);
+                                return;
+                            }
+                            res.statusCode(404);
+                            res.end();
+                        }
+                    ];
+                }
             },
 
             compile: {
@@ -175,8 +162,8 @@ module.exports = function(grunt) {
 
             watch: {
                 options: {
-                    base: "<%= build_dir %>",
-                    livereload: 40093
+                    livereload: 40093,
+                    base: "<%= build_dir %>"
                 }
             },
 
@@ -337,7 +324,7 @@ module.exports = function(grunt) {
                 eqeqeq: true, // This options prohibits the use of == and != in favor of === and !==.
                 eqnull: true,
                 expr: true,
-                latedef: true,
+                // latedef: true,
                 onevar: true,
                 noarg: true,
                 node: true,

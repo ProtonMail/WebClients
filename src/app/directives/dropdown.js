@@ -3,25 +3,6 @@ angular.module('proton.dropdown', [])
 .directive('dropdown', function ($timeout, $document, $rootScope) {
     return function (scope, element, attrs) {
         // Functions
-        var click = function(event) {
-            if (element.hasClass('active')) {
-                hideDropdown();
-            } else {
-                // Close all dropdowns
-                $rootScope.$broadcast('closeDropdown');
-                // Open only this one
-                showDropdown();
-            }
-
-            return false;
-        };
-
-        var outside = function(event) {
-            if (element !== event.target && !element[0].contains(event.target)) {
-                hideDropdown();
-            }
-        };
-
         var showDropdown = function() {
             var parent = element.parent();
             var dropdown = parent.find('.pm_dropdown');
@@ -40,6 +21,25 @@ angular.module('proton.dropdown', [])
             element.removeClass('active');
             dropdown.hide();
             $document.off('click', outside);
+        };
+
+        var outside = function(event) {
+            if (element !== event.target && !element[0].contains(event.target)) {
+                hideDropdown();
+            }
+        };
+
+        var click = function(event) {
+            if (element.hasClass('active')) {
+                hideDropdown();
+            } else {
+                // Close all dropdowns
+                $rootScope.$broadcast('closeDropdown');
+                // Open only this one
+                showDropdown();
+            }
+
+            return false;
         };
 
         // Listeners
