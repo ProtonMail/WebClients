@@ -320,8 +320,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     value -= 68;
                 }
 
-                console.log(value);
-
                 $('#pm_thread').animate({
                     scrollTop: value
                 }, 200);

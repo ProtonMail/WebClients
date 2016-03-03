@@ -335,7 +335,18 @@ module.exports = function(grunt) {
             options: {
                 curly: true, // This option requires you to always put curly braces around blocks in loops and conditionals.
                 eqeqeq: true, // This options prohibits the use of == and != in favor of === and !==.
+                eqnull: true,
+                expr: true,
+                latedef: true,
+                onevar: true,
+                noarg: true,
+                node: true,
+                trailing: true,
+                // undef: true,
+                // unused: true,
                 globals: {
+                    angular: true,
+                    pmcrypto: true,
                     _: true,
                     jQuery: true
                 }
@@ -518,7 +529,7 @@ module.exports = function(grunt) {
         'shell:setup_dist',
         'ngconstant:prod', // set prod variables
         'build',
-        'copy:compile_assets', // copy
+        'copy:compile_assets', // copy assets
         'copy:compile_htaccess', // copy htaccess file
         'cssmin', // minify CSS
         'concat:compile_js', // concat JS
@@ -526,7 +537,7 @@ module.exports = function(grunt) {
         'copy:compile_external', // copy openpgp
         'index:compile', // index CSS and JS
         'cacheBust', // bust CSS and JS
-        'shell:push',
+        'shell:push', // push code to deploy branch
         'wait:push'
     ]);
 
