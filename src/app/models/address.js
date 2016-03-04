@@ -13,6 +13,17 @@ angular.module("proton.models.addresses", [])
         },
         // PUT
         /**
+         * Edit address
+         * @param {String} addressID
+         * @return {Promise}
+         */
+        edit: function(addressID, DisplayName, Signature) {
+            return $http.put(url.get() + '/addresses/' + addressID, {
+                DisplayName: DisplayName,
+                Signature: Signature
+            });
+        },
+        /**
          * Enable address
          * @param {String} addressID
          * @return {Promise}

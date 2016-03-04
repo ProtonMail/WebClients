@@ -1481,6 +1481,30 @@ angular.module("proton.modals", [])
     });
 })
 
+// edit address modal
+.factory('editAddressModal', function(pmModal) {
+    return pmModal({
+        controller: function(params) {
+            this.title = params.title;
+            this.address = params.address;
+
+            this.confirm = function() {
+                if (angular.isDefined(params.confirm) && angular.isFunction(params.confirm)) {
+                    params.confirm();
+                }
+            };
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        },
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/editAddress.tpl.html'
+    });
+})
+
 .factory('welcomeModal', function(pmModal, Setting, authentication, networkActivityTracker, $q) {
     return pmModal({
         controllerAs: 'ctrl',

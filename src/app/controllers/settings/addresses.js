@@ -9,6 +9,7 @@ angular.module('proton.controllers.Settings')
     aliasModal,
     authentication,
     confirmModal,
+    editAddressModal,
     CONSTANTS,
     Domain,
     domains,
@@ -143,6 +144,40 @@ angular.module('proton.controllers.Settings')
                 },
                 cancel: function() {
                     confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Open a modal to disable an address
+     */
+    $scope.edit = function(address) {
+        editAddressModal.activate({
+            params: {
+                title: $translate.instant('EDIT_ADDRESS'),
+                address: address,
+                confirm: function() {
+                    if (address.addressMeta === 'false') {
+                        address.DisplayName = null;
+                        address.Signature = null;
+                    }
+                    networkActivityTracker.track(Address.edit(address.ID, address.DisplayName, address.Signature).then(function(result) {
+                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                            eventManager.call();
+                            notify({message: $translate.instant('ADDRESS_UPDATED'), classes: 'notification-success'});
+                            editAddressModal.deactivate();
+                        } else if(angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: $translate.instant('ERROR_DURING_UPDATED'), classes: 'notification-danger'});
+                        }
+                    }, function(error) {
+                        notify({message: $translate.instant('ERROR_DURING_UPDATED'), classes: 'notification-danger'});
+                    }));
+                },
+                cancel: function() {
+                    editAddressModal.deactivate();
                 }
             }
         });

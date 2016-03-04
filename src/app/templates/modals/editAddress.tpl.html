@@ -1,0 +1,35 @@
+<div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header" ng-show="ctrl.title">
+                <h4 class="modal-title">{{ctrl.title}}</h4>
+            </div>
+            <div class="modal-body">
+                <p class="alert alert-info"><strong>{{ ctrl.address.Email }}</strong></p>
+                <div><label><input type="radio" ng-model="ctrl.address.addressMeta" value="false"> <strong>Default</strong> DisplayName &amp; Signature</label></div>
+                <div><label><input type="radio" ng-model="ctrl.address.addressMeta" value="true"> <strong>Custom</strong> DisplayName &amp; Signature</label></div>
+                <form method="post" ng-submit="ctrl.confirm(addressForm)" name="addressForm" novalidate class="pm_form" ng-show="ctrl.address.addressMeta === 'true'">
+                    <p></p>
+                    <section class="setting">
+                        <label>{{ 'DISPLAY_NAME' | translate }}</label>
+                        <div class="margin" ng-class="{'has-error': addressForm.ctrl.address.DisplayName.$error.required}">
+                            <input type="text" name="displayName" ng-model="ctrl.address.DisplayName" />
+                        </div>
+                    </section>
+                    <section class="setting pm_form">
+                        <label>{{ 'SIGNATURE' | translate }}</label>
+                        <div class="margin" ng-class="{'has-error': addressForm.ctrl.address.Signature.$error.required}">
+                            <squire name="signature" class="form-control no-resize" ng-model="ctrl.address.Signature"></squire>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            <button class="pm_button pull-left" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()">{{ 'CONFIRM' | translate }}</button>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+</div>
