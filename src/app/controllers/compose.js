@@ -317,7 +317,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                     $scope.isOver = false;
 
-                    var dropzone = this;
+                    dropzone = this;
 
                     var total_num = angular.isDefined(message.Attachments) ? message.Attachments.length : 0;
                     total_num += angular.isDefined(message.queuedFiles) ? message.queuedFiles : 0;
@@ -453,6 +453,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.cancelAttachment = function(attachment, message) {
         // Cancel the request
         attachment.cancel(); // Also remove the attachment in the UI
+        // FIXME Reload message/attachments from the server when this happens.
+        // A late cancel might succeed on the back-end but not be reflected on the front-end
+        // Need to be careful if there are currently-uploading attachments, an do autosave first
     };
 
     $scope.addAttachment = function(file, message) {
