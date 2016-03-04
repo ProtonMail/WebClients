@@ -1430,7 +1430,7 @@ angular.module("proton.modals", [])
             ];
 
             this.donate = function() {
-                params.donate(this.amount.value, this.currency.value);
+                params.donate(this.amount, this.currency.value);
             }.bind(this);
 
             this.upgrade = function() {

@@ -6,7 +6,7 @@ angular.module('proton.wizard', [])
         replace: true,
         templateUrl: 'templates/partials/wizard.tpl.html',
         link: function(scope, element, attrs) {
-            var donate = function() {
+            var donate = function(amount, currency) {
                 donateModal.activate({
                     params: {
                         amount: amount,
