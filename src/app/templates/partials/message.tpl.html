@@ -78,7 +78,7 @@ ng-class="{
         <div class="recipients-summary" ng-hide="toggleDetails === true">
             <strong>{{ 'TO' | translate }}: </strong>
             <span ng-repeat="email in recipients()" title="{{ email | contact:'Address' }}">
-                {{ email | contact:'Name' }}<span ng-hide="$last">, </span>
+                {{ email | contact: 'Name':true }}<span ng-hide="$last">, </span>
             </span>
         </div>
 
