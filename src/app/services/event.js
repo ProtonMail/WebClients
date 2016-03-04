@@ -279,8 +279,9 @@ angular.module("proton.event", ["proton.constants"])
 						eventModel.manageID(response.data.EventID);
 					});
 				} else if (data.Refresh === 1) {
-					cache.reset();
 					eventModel.manageID(data.EventID);
+					cache.reset();
+					cache.callRefresh();
 				} else if (data.Reload === 1) {
 					$window.location.reload();
 				} else if (this.isDifferent(data.EventID)) {
@@ -296,6 +297,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageOrganization(data.Organization);
 					this.manageID(data.EventID);
 				}
+
 				this.manageNotices(data.Notices);
 				cache.expiration();
 			},
