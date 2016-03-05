@@ -668,7 +668,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.completedSignature = function(message) {
         if (angular.isUndefined(message.Body)) {
-            var signature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>', {
+            var signature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>', {
                 ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style', 'input', 'form']
             });
@@ -992,6 +992,36 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         return true;
     };
+
+    /**
+     * Update the signature
+     * @param {Resource} message - Message to save
+     */
+    $scope.updateSignature = function(message) {
+
+        // update signature
+
+        // ==============================
+        // start unfinished code (PANDA):
+        var currentBody = message.Body;
+        var jQueryObject = $(currentBody);
+        var sig = jQueryObject.find(".protonmail_signature_block");
+
+        console.log(jQueryObject);
+        console.log(sig);
+
+        if (sig.length > 0) {
+            jQueryObject.find("div")[0].innerHTML = message.From.Signature;
+            message.Body = jQueryObject.html();
+        }
+        // end unfinished code (PANDA):
+        // ==============================
+
+        // save when DOM is updated
+        $scope.save(message, false, false, true);
+
+    };
+
 
     /**
      * Save the Message
