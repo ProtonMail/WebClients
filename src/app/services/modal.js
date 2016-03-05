@@ -1488,6 +1488,8 @@ angular.module("proton.modals", [])
             this.title = params.title;
             this.address = params.address;
 
+            // TODO Initialize address.addressMeta
+
             this.confirm = function() {
                 if (angular.isDefined(params.confirm) && angular.isFunction(params.confirm)) {
                     params.confirm();

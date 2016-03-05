@@ -7,9 +7,17 @@
             </div>
             <div class="modal-body">
                 <p class="alert alert-info"><strong>{{ ctrl.address.Email }}</strong></p>
-                <div><label><input type="radio" ng-model="ctrl.address.addressMeta" value="false"> <strong>Default</strong> DisplayName &amp; Signature</label></div>
-                <div><label><input type="radio" ng-model="ctrl.address.addressMeta" value="true"> <strong>Custom</strong> DisplayName &amp; Signature</label></div>
-                <form method="post" ng-submit="ctrl.confirm(addressForm)" name="addressForm" novalidate class="pm_form" ng-show="ctrl.address.addressMeta === 'true'">
+                <div>
+                    <label>
+                        <input type="radio" ng-model="ctrl.address.addressMeta" ng-value="false"> <strong>Default</strong> DisplayName &amp; Signature
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" ng-model="ctrl.address.addressMeta" ng-value="true"> <strong>Custom</strong> DisplayName &amp; Signature
+                    </label>
+                </div>
+                <form method="post" ng-submit="ctrl.confirm(addressForm)" name="addressForm" novalidate class="pm_form" ng-show="ctrl.address.addressMeta === true">
                     <p></p>
                     <section class="setting">
                         <label>{{ 'DISPLAY_NAME' | translate }}</label>

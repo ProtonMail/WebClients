@@ -150,7 +150,7 @@ angular.module('proton.controllers.Settings')
     };
 
     /**
-     * Open a modal to disable an address
+     * Open a modal to edit an address
      */
     $scope.edit = function(address) {
         editAddressModal.activate({
@@ -162,7 +162,9 @@ angular.module('proton.controllers.Settings')
                         address.DisplayName = null;
                         address.Signature = null;
                     }
-                    networkActivityTracker.track(Address.edit(address.ID, address.DisplayName, address.Signature).then(function(result) {
+
+                    networkActivityTracker.track(Address.edit(address.ID, {DisplayName: address.DisplayName, Signature: address.Signature})
+                    .then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             eventManager.call();
                             notify({message: $translate.instant('ADDRESS_UPDATED'), classes: 'notification-success'});

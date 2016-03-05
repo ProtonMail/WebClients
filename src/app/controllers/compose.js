@@ -998,10 +998,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Resource} message - Message to save
      */
     $scope.updateSignature = function(message) {
-
         // update signature
-
-
 
         // ==============================
         // start unfinished code (PANDA):
@@ -1018,11 +1015,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         // end unfinished code (PANDA):
         // ==============================
 
-
-
         // save when DOM is updated
         $scope.save(message, false, false, true);
-
     };
 
 
