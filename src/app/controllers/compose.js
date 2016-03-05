@@ -1001,21 +1001,24 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // update signature
 
+
+
         // ==============================
         // start unfinished code (PANDA):
-        var currentBody = message.Body;
-        var jQueryObject = $(currentBody);
-        var sig = jQueryObject.find(".protonmail_signature_block");
+        var currentBody = $.parseHTML(message.Body);
+        var tempDom = $('<div>').append(currentBody);
+        var sig = tempDom.find(".protonmail_signature_block").html();
 
-        console.log(jQueryObject);
         console.log(sig);
 
-        if (sig.length > 0) {
-            jQueryObject.find("div")[0].innerHTML = message.From.Signature;
-            message.Body = jQueryObject.html();
+        if (sig && sig.length > 0) {
+            tempDom.find(".protonmail_signature_block").html(message.From.Signature);
+            message.Body = tempDom.html();
         }
         // end unfinished code (PANDA):
         // ==============================
+
+
 
         // save when DOM is updated
         $scope.save(message, false, false, true);
