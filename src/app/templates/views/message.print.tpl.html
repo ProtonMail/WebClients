@@ -25,7 +25,7 @@
 
     <p>
         <span>{{ 'FROM' | translate }}: </span>
-        <b>{{ message.Sender.Name || message.Sender.Address }}</b>
+        <b>{{ message.Sender.Name }} {{ message.Sender.Address }}</b>
     </p>
 
     <p ng-if="message.ToList.length">
