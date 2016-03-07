@@ -144,7 +144,7 @@ angular.module("proton.event", ["proton.constants"])
 
 								var index = authentication.user.Addresses.length;
 
-								while(index--) {
+								while (index--) {
 									var address = authentication.user.Addresses[index];
 									var found = _.findWhere(user.Addresses, {ID: address.ID});
 
@@ -153,13 +153,12 @@ angular.module("proton.event", ["proton.constants"])
 									}
 								}
 							} else {
-								angular.extend(authentication.user[key], user[key]);
+								authentication.user[key] = user[key];
 							}
 						});
 
-						$rootScope.user = authentication.user;
+						angular.extend($rootScope.user, authentication.user);
 						$rootScope.$broadcast('updateUser');
-						console.log(authentication.user.Addresses);
 					});
 				}
 			},
