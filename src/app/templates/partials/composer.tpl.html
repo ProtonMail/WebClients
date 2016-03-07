@@ -241,8 +241,8 @@
                 {{ message.Attachments.length }} {{ 'FILES_ATTACHED' | translate }} ({{ getAttachmentsSize(message) | humanSize }})
             </aside>
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
-                <button
-                class="pm_button btn-add-attachment"
+                <button class="pm_button"
+                ng-click="addFile(message)"
                 ng-disabled="message.allowOthers() || message !== selected"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',
