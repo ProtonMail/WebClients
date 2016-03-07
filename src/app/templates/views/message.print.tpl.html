@@ -19,7 +19,7 @@
             <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
             <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
             <i class="fa fa-lock"></i>
-            <b>{{ message.Time | longReadableTime }}</b>
+            <b>{{ message.Time | localReadableTime }}</b>
         </span>
     </p>
 
