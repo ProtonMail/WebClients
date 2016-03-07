@@ -73,7 +73,7 @@ ng-class="{
         </div>
     </div>
 
-    <div class="details" ng-show="message.expand">
+    <div class="details" ng-show="message.expand" ng-class="{ 'open': message.labelDropdownOpen }">
 
         <div class="recipients-summary" ng-hide="toggleDetails === true">
             <strong>{{ 'TO' | translate }}: </strong>
@@ -150,7 +150,7 @@ ng-class="{
 
             <div class="actions pull-right">
                 <span class="pm_buttons">
-                    <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown>
+                    <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown ng-click="message.labelDropdownOpen = !message.labelDropdownOpen">
                         <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
                     </a>
                     <span class="pm_dropdown right wide pull-left">
