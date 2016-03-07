@@ -117,9 +117,9 @@
                 </legend>
                 <div class="margin-bottom" ng-repeat="domain in domains">
                     <p>
-                        <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
+                        <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1 || domain.State === 2, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
-                    <div ng-show="domain.State === 1">
+                    <div ng-show="domain.State === 1 || domain.State === 2">
                         <p>
                             <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
                             <!-- <a ui-sref="secured.members" class="pm_button">{{ 'ADD_USER' | translate }}</a> -->
