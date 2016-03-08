@@ -16,7 +16,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     attachments,
     authentication,
     cache,
-    confirmModal,//
+    confirmModal,
     CONSTANTS,
     Contact,
     Message,
