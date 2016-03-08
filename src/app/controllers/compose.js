@@ -16,7 +16,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     attachments,
     authentication,
     cache,
-    confirmModal,
+    confirmModal,//
     CONSTANTS,
     Contact,
     Message,
@@ -211,7 +211,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     function handleDragLeave(event) {
         dragTimer = $timeout(function() {
             $scope.isOver = false;
-        }, 25);
+        }, 100);
      }
 
      function handleDrop(event) {
@@ -524,6 +524,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.initMessage = function(message, save) {
+        $scope.isOver = false;
+
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
             $rootScope.maximizedComposer = true;
