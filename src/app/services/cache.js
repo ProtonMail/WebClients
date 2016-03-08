@@ -905,18 +905,12 @@ angular.module("proton.cache", [])
     };
 
     /**
-     * Clear cache and hash
-     */
-    api.clear = function() {
-        conversationsCached = [];
-        messagesCached = [];
-    };
-
-    /**
      * Reset cache and hash then preload inbox and sent
      */
     api.reset = function() {
-        api.clear();
+        conversationsCached = [];
+        messagesCached = [];
+        cacheCounters.reset();
     };
 
     /**
@@ -1149,6 +1143,10 @@ angular.module("proton.cache", [])
     */
     api.unreadConversation = function(loc) {
         return counters[loc] && counters[loc].conversation && counters[loc].conversation.unread;
+    };
+
+    api.reset = function() {
+        counters = {};
     };
 
     return api;
