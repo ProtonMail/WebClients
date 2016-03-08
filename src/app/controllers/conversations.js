@@ -100,6 +100,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
     };
 
+    /**
+     * Return if we can display the placeholder or not
+     * @param {Boolean}
+     */
+    $scope.placeholder = function() {
+        return $rootScope.layoutMode === 'columns' && ($rootScope.idDefined() === false || ($rootScope.idDefined() === true && $rootScope.numberElementChecked > 0));
+    };
+
     $scope.startWatchingEvent = function() {
 
         $scope.$on('refreshConversations', function() {

@@ -4,5 +4,5 @@
 	<ng-include ng-if="layoutMode === 'columns' && !( idDefined() && mobileMode )" src="'templates/partials/conversation-list-columns.tpl.html'"></ng-include>
 	<ng-include ng-if="layoutMode === 'rows'" ng-hide="idDefined() === true" src="'templates/partials/conversation-list-rows.tpl.html'"></ng-include>
 	<div id="conversation-view" ui-view="view" ng-hide="layoutMode==='rows' && !idDefined()" ng-if="idDefined() === true && numberElementChecked === 0"></div>
-	<ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns" ng-class="{ 'latest': !idDefined() }" ng-if="layoutMode === 'columns' && !mobileMode"></ng-include>
+	<ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns" ng-class="{ 'latest': !idDefined() }" ng-if="placeholder()"></ng-include>
 </div>
