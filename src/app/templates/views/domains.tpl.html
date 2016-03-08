@@ -139,7 +139,6 @@
                                     <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1">{{ 'ENABLED' | translate }}</span>
                                     <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
                                     <span class="pm_badge warning" ng-show="address.HasKeys === 0">{{ 'MISSING_KEYS' | translate }}</span>
-                                    <span class="pm_badge warning" ng-show="addrress.DomainID === null">{{ 'ORPHAN' | translate }}</span>
                                 </td>
                                 <td class="text-right">
                                     <a class="pm_button link" ui-sref="secured.addresses">{{ 'MANAGE' | translate }}</a>
