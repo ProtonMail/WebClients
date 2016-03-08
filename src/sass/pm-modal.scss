@@ -89,6 +89,7 @@ $modalMargin: 2rem;
             background: $white;
             .modal-header {
                 padding: ($modalMargin/2) $modalMargin;
+                line-height: 36px;
             }
             .modal-body {
                 padding: ($modalMargin/2) $modalMargin;

@@ -547,6 +547,7 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
             // Variables
+            this.paymentChoices = 'card';
             this.process = false;
             this.cardChange = true;
             this.displayCoupon = false;
@@ -773,6 +774,32 @@ angular.module("proton.modals", [])
                     }
                 }.bind(this));
             }.bind(this);
+
+            /**
+             * PayPal Init
+             */
+            this.paypalInit = function() {
+                Payment.paypalInit({
+                    Amount : this.valid.AmountDue,
+                    Currency : this.valid.Currency // Only USD allowed for now
+                }).then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        if (result.data.ApprovalURL) {
+                            this.ApprovalURL = result.data.ApprovalURL;
+                        }
+                    }
+                }.bind(this));
+            };
+
+            /**
+             * Handler for changing payment method radio button values
+             */
+            this.changePaymentMethod = function() {
+                if (this.paymentChoices === 'paypal') {
+                    this.paypalInit();
+                }
+            };
+
 
             /**
              * Close payment modal

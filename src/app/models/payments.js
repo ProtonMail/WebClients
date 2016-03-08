@@ -45,6 +45,14 @@ angular.module("proton.models.payments", [])
          pay: function(id, params) {
             return $http.post(url.get() + '/payments/invoices/' + id, params);
          },
+
+         /**
+          * Create Paypal Payment
+          */
+         paypalInit: function(params) {
+             return $http.post(url.get() + '/payments/paypal', params);
+         },
+
         /**
          * Get plans available to user
          */
