@@ -119,35 +119,34 @@
                     <p>
                         <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1 || domain.State === 2, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
-                    <div ng-show="domain.State === 1 || domain.State === 2">
-                        <p>
-                            <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
-                            <!-- <a ui-sref="secured.members" class="pm_button">{{ 'ADD_USER' | translate }}</a> -->
-                        </p>
-                        <p class="alert alert-info">Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
-                        <table class="pm_table pm_form bordered" ng-show="domain.Addresses.length > 0">
-                            <thead>
-                                <tr>
-                                    <th>{{ 'ADDRESS' | translate }}</th>
-                                    <th>{{ 'STATUS' | translate }}</th>
-                                    <th class="text-right actions" style="width: 10rem">{{ 'ACTIONS' | translate }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="address in domain.Addresses | orderBy: 'Send'" ng-class="{'disabled': address.Status === 0}">
-                                    <td>{{ address.Email }}</td>
-                                    <td>
-                                        <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1">{{ 'ENABLED' | translate }}</span>
-                                        <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
-                                        <span class="pm_badge warning" ng-show="address.HasKeys === 0">{{ 'MISSING_KEYS' | translate }}</span>
-                                    </td>
-                                    <td class="text-right">
-                                        <a class="pm_button link" ui-sref="secured.addresses">{{ 'MANAGE' | translate }}</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <p>
+                        <button type="button" class="pm_button primary" ng-click="addAddress(domain)">{{ 'ADD_ADDRESS' | translate }}</button>
+                        <!-- <a ui-sref="secured.members" class="pm_button">{{ 'ADD_USER' | translate }}</a> -->
+                    </p>
+                    <p class="alert alert-info">Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
+                    <table class="pm_table pm_form bordered" ng-show="domain.Addresses.length > 0">
+                        <thead>
+                            <tr>
+                                <th>{{ 'ADDRESS' | translate }}</th>
+                                <th>{{ 'STATUS' | translate }}</th>
+                                <th class="text-right actions" style="width: 10rem">{{ 'ACTIONS' | translate }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="address in domain.Addresses | orderBy: 'Send'" ng-class="{'disabled': address.Status === 0}">
+                                <td>{{ address.Email }}</td>
+                                <td>
+                                    <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1">{{ 'ENABLED' | translate }}</span>
+                                    <span class="pm_badge error" ng-show="address.Status === 0">{{ 'DISABLED' | translate }}</span>
+                                    <span class="pm_badge warning" ng-show="address.HasKeys === 0">{{ 'MISSING_KEYS' | translate }}</span>
+                                    <span class="pm_badge warning" ng-show="addrress.DomainID === null">{{ 'ORPHAN' | translate }}</span>
+                                </td>
+                                <td class="text-right">
+                                    <a class="pm_button link" ui-sref="secured.addresses">{{ 'MANAGE' | translate }}</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
