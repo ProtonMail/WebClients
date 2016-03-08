@@ -278,7 +278,9 @@ angular.module("proton.event", ["proton.constants"])
 						eventModel.manageID(response.data.EventID);
 					});
 				} else if (data.Refresh === 1) {
-					$window.location.reload();
+					eventModel.manageID(data.EventID);
+					cache.reset();
+					cache.callRefresh();
 				} else if (data.Reload === 1) {
 					$window.location.reload();
 				} else if (this.isDifferent(data.EventID)) {
