@@ -210,7 +210,10 @@
             </div>
             <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" max-composer-height>
                 <div class="composeEditor">
-                    <div class="dropzone composer-dropzone" dropzone="dropzoneConfig(message)" ng-show="isOver === true && message.focussed === true"></div>
+                    <div
+                    class="dropzone composer-dropzone"
+                    dropzone="dropzoneConfig(message)"
+                    ng-show="isOver && message.focussed && !preventDropbox"></div>
                     <squire ng-model="message.Body" ng-click="attHide(message); hideFields(message);" ng-hide="isOver === true" max-composer-height></squire>
                 </div>
             </section>

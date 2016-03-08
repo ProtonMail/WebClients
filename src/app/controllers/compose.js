@@ -30,12 +30,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     var promiseComposerStyle;
     var timeoutStyle;
     var dropzone;
-    var dragTimer;
 
     $scope.addresses = authentication.user.Addresses;
     $scope.messages = [];
     $scope.isOver = false;
     $scope.queuedSave = false;
+    $scope.preventDropbox = false;
     $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
     $scope.isAppleDevice = navigator.userAgent.match(/(iPod|iPhone|iPad)/); // Determine if user navigated from Apple device
@@ -100,6 +100,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.$on('updateUser', function(event) {
         $scope.addresses = authentication.user.Addresses;
+    });
+
+    $scope.$on('onDrag', function() {
+        _.each($scope.messages, function(message) {
+            $scope.togglePanel(message, 'attachments');
+        });
     });
 
     // When the user delete a conversation and a message is a part of this conversation
@@ -191,53 +197,53 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     }
 
-    function handleDragStart(event) {
+    function onDragOver(event) {
+        event.preventDefault();
+        $interval.cancel($scope.intervalComposer);
+        $interval.cancel($scope.intervalDropzone);
 
-    }
-
-    function handleDragEnter(event) {
-    }
-
-    function handleDragOver(event) {
-        var dt = event.originalEvent.dataTransfer;
-
-        if (dt.types !== null && (dt.types.indexOf ? dt.types.indexOf('Files') !== -1 : dt.types.contains('application/x-moz-file'))) {
-            $scope.isOver = true;
-            $timeout.cancel(dragTimer);
-            $scope.$apply();
-        }
-    }
-
-    function handleDragLeave(event) {
-        dragTimer = $timeout(function() {
+        $scope.intervalComposer = $interval(function() {
             $scope.isOver = false;
+            $interval.cancel($scope.intervalComposer);
         }, 100);
-     }
 
-     function handleDrop(event) {
-        // this / e.target is current target element.
-        if (event.stopPropagation) {
-            event.stopPropagation(); // stops the browser from redirecting.
+        if ($scope.isOver === false) {
+            $scope.isOver = true;
         }
+    }
 
-        return false;
-     }
+    function onDragEnter(event) {
+        $scope.isOver = true;
+        $scope.$apply();
+    }
 
-    $(document).on('resize', onResize);
-    $(document).on('orientationchange', onOrientationChange);
-    $(document).on('dragstart', handleDragStart);
-    $(document).on('dragenter', handleDragEnter);
-    $(document).on('dragover', handleDragOver);
-    $(document).on('dragend', handleDragLeave);
-    $(document).on('drop', handleDrop);
+    function onDragStart(event) {
+        $scope.preventDropbox = true;
+    }
+
+    function onMouseOver(event) {
+        if($scope.isOver === true) {
+            $scope.isOver = false;
+        }
+    }
+
+    function onDragEnd(event) {
+        event.preventDefault();
+        $scope.preventDropbox = false;
+        $scope.isOver = false;
+    }
+
+    $(window).on('resize', onResize);
+    $(window).on('orientationchange', onOrientationChange);
+    $(window).on('dragover', onDragOver);
+    $(window).on('dragstart', onDragStart);
+    $(window).on('dragend', onDragEnd);
+    // $(window).on('mouseover', onMouseOver);
 
     $scope.$on('$destroy', function() {
-        $(document).off('resize', onResize);
-        $(document).off('dragstart', handleDragStart);
-        $(document).off('dragenter', handleDragEnter);
-        $(document).off('dragover', handleDragOver);
-        $(document).off('dragend', handleDragLeave);
-        $(document).off('drop', handleDrop);
+        $(window).off('resize', onResize);
+        $(window).off('dragover', onDragOver);
+        // $(window).off('mouseover', onMouseOver);
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
         window.onbeforeunload = undefined;
@@ -246,6 +252,17 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     // Function used for dragover listener on the dropzones
     var dragover = function(e) {
         e.preventDefault();
+        $interval.cancel($scope.intervalComposer);
+        $interval.cancel($scope.intervalDropzone);
+
+        $scope.intervalDropzone = $interval(function() {
+            $scope.isOver = false;
+            $interval.cancel($scope.intervalDropzone);
+        }, 100);
+
+        if ($scope.isOver === false) {
+            $scope.isOver = true;
+        }
     };
 
     // Functions
@@ -297,6 +314,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                     totalSize += angular.isDefined(message.queuedFilesSize) ? message.queuedFilesSize : 0;
                     totalSize += file.size;
+
+                    $scope.isOver = false;
 
                     dropzone = this;
 
@@ -524,8 +543,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.initMessage = function(message, save) {
-        $scope.isOver = false;
-
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
             $rootScope.maximizedComposer = true;
@@ -550,6 +567,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $scope.completedSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
+
+        $scope.isOver = false;
 
         // This timeout is really important to load the structure of Squire
         $timeout(function() {
@@ -729,6 +748,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('input', function() {
                 $scope.saveLater(message);
             });
+
+            message.editor.addEventListener('dragstart', onDragStart);
+            message.editor.addEventListener('dragend', onDragEnd);
+            message.editor.addEventListener('dragenter', onDragEnter);
+            message.editor.addEventListener('dragover', onDragOver);
 
             dropzone.addEventListener('dragover', dragover);
 
@@ -1384,6 +1408,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.editor.removeEventListener('input', function() {
             $scope.saveLater(message);
         });
+
+        message.editor.removeEventListener('dragenter', onDragEnter);
+        message.editor.removeEventListener('dragover', onDragOver);
+        message.editor.removeEventListener('dragstart', onDragStart);
+        message.editor.removeEventListener('dragend', onDragEnd);
 
         // We need to manage step by step the dropzone in the case where the composer is collapsed
         if(angular.isDefined(dropzones) && angular.isDefined(_.first(dropzones))) {
