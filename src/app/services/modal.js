@@ -1314,6 +1314,7 @@ angular.module("proton.modals", [])
             this.process = false;
             this.text = params.message || 'Donate to ProtonMail';
             this.amount = params.amount || 25;
+            this.methods = [];
             this.currencies = [
                 {label: 'USD', value: 'USD'},
                 {label: 'EUR', value: 'EUR'},
@@ -1331,6 +1332,11 @@ angular.module("proton.modals", [])
 
             if (angular.isDefined(params.currency)) {
                 this.currency = _.findWhere(this.currencies, {value: params.currency});
+            }
+
+            if (angular.isDefined(params.methods) && params.methods.length > 0) {
+                this.methods = params.methods;
+                this.method = this.methods[0];
             }
 
             // Functions
@@ -1369,6 +1375,16 @@ angular.module("proton.modals", [])
                });
             }.bind(this);
 
+            var donatationWithMethod = function() {
+                this.process = true;
+
+                return Payment.donate({
+                    Amount: this.amount * 100, // Don't be afraid
+                    Currency: this.currency.value,
+                    PaymentMethodID: this.method.ID
+                });
+            }.bind(this);
+
             var finish = function(result) {
                 var deferred = $q.defer();
 
@@ -1387,15 +1403,29 @@ angular.module("proton.modals", [])
                 return deferred.promise;
             }.bind(this);
 
+            this.label = function(method) {
+                return '•••• •••• •••• ' + method.Details.Last4;
+            };
+
             this.donate = function() {
-                var promise = validateCardNumber()
-                .then(validateCardExpiry)
-                .then(validateCardCVC)
-                .then(donatation)
-                .then(finish)
-                .catch(function(error) {
-                    notify({message: error, classes: 'notification-danger'});
-                });
+                var promise;
+
+                if (this.methods.length > 0) {
+                    promise = donatationWithMethod()
+                    .then(finish)
+                    .catch(function(error) {
+                        notify({message: error, classes: 'notification-danger'});
+                    });
+                } else {
+                    promise = validateCardNumber()
+                    .then(validateCardExpiry)
+                    .then(validateCardCVC)
+                    .then(donatation)
+                    .then(finish)
+                    .catch(function(error) {
+                        notify({message: error, classes: 'notification-danger'});
+                    });
+                }
 
                 networkActivityTracker.track(promise);
             };

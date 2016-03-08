@@ -12,6 +12,7 @@ angular.module("proton.controllers.Settings")
     authentication,
     cardModal,
     confirmModal,
+    donateModal,
     networkActivityTracker,
     notify,
     Organization,
@@ -280,6 +281,29 @@ angular.module("proton.controllers.Settings")
         }
 
          return text;
+    };
+
+    /**
+     * Open donate modal
+     */
+    $scope.donate = function() {
+        networkActivityTracker.track(
+            Payment.methods()
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    donateModal.activate({
+                        params: {
+                            amount: 25,
+                            methods: result.data.PaymentMethods,
+                            close: function(donate) {
+                                // Close donate modal
+                                donateModal.deactivate();
+                            }
+                        }
+                    });
+                }
+            })
+        );
     };
 
     /**
