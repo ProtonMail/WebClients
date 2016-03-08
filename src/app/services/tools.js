@@ -14,6 +14,10 @@ angular.module("proton.tools", ["proton.constants"])
         }
     };
 
+    tools.hasCookie = function() {
+        return navigator.cookieEnabled;
+    };
+
     tools.getBrowser = function() {
         return $.browser.name;
     };
