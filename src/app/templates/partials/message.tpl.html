@@ -57,7 +57,7 @@ ng-class="{
         <div class="time">
             <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
             <span ng-show="toggleDetails === true">{{ message.Time | localReadableTime }}</span>
-            <span ng-show="toggleDetails !== true">{{ message.Time | messageTime }}</span>
+            <span ng-show="toggleDetails !== true" time="{{ message.Time }}" filter="messageTime" interval="30000"></span>
         </div>
         <div class="status">
             <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
