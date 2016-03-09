@@ -36,8 +36,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         hoverClass: 'drop-hover'
     };
 
-    $scope.sidebarStorage = $filter('humanSize')(authentication.user.UsedSpace) + ' / ' + $filter('humanSize')(authentication.user.MaxSpace);
-
     $scope.hideMobileSidebar = function() {
         $rootScope.$broadcast('sidebarMobileToggle', false);
     };
