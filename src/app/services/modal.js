@@ -495,6 +495,7 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/pay.tpl.html',
         controller: function(params) {
             // Variables
+            this.choice = 'card';
             this.amount = params.amount;
             this.amountDue = params.amountDue;
             this.credit = params.credit;
@@ -570,9 +571,9 @@ angular.module("proton.modals", [])
                 .value();
             this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
 
-            if(params.methods.length > 0) {
+            if (params.methods.length > 0) {
                 this.methods = params.methods;
-                this.method = params.methods[0];
+                this.method = this.methods[0];
             }
 
             // Functions
