@@ -801,7 +801,7 @@ angular.module("proton.modals", [])
             this.initPaypal = function() {
                 this.paypalNetworkError = false;
 
-                Payment.initPaypal({
+                Payment.paypal({
                     Amount : this.valid.AmountDue,
                     Currency : this.valid.Currency // Only USD allowed for now
                 }).then(function(result) {
