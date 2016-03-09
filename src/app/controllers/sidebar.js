@@ -36,6 +36,8 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         hoverClass: 'drop-hover'
     };
 
+    $scope.appVersion = CONFIG.app_version;
+
     $scope.hideMobileSidebar = function() {
         $rootScope.$broadcast('sidebarMobileToggle', false);
     };
