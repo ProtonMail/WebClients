@@ -713,6 +713,29 @@ angular.module("proton.modals", [])
                 return deferred.promise;
             }.bind(this);
 
+            var chargePaypal = function(paypalObject) {
+                var deferred = $q.defer();
+
+                Payment.subscribe({
+                    Amount : this.valid.AmountDue,
+                    Currency : params.valid.Currency,
+                    Payment : {
+                        Type: 'paypal',
+                        Details: paypalObject
+                    },
+                    CouponCode : this.coupon,
+                    PlanIDs: params.planIDs
+                }).then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        deferred.resolve();
+                    } else if (result.data && result.data.Error) {
+                        deferred.reject(new Error(result.data.Error));
+                    }
+                });
+
+                return deferred.promise;
+            }.bind(this);
+
             var finish = function(subscription) {
                 this.process = 'thanks';
                 params.change();
@@ -817,19 +840,31 @@ angular.module("proton.modals", [])
 
                 var data = event.data;
 
-                // PANDA - this is where you do the separate API flow:
-                // use the data object (line 818 above) to find the paypal data
-                // send an API call to charge the user
-                // close the modal?
+                // we need to capitalize some stuff
+                if (data.payerID && data.paymentID) {
+                    data.PayerID = data.payerID;
+                    data.PaymentID = data.paymentID;
+
+                    // delete unused
+                    delete data.payerID;
+                    delete data.paymentID;
+                }
 
 
-                // console.log(this);
+                this.step = 'process';
 
+                chargePaypal(data)
+                .then(organizationKey)
+                .then(createOrganization)
+                .then(finish)
+                .catch(function(error) {
+                    notify({message: error, classes: 'notification-danger'});
+                    this.step = 'payment';
+                }.bind(this));
 
                 this.childWindow.close();
                 window.removeEventListener('message', this.receivePaypalMessage, false);
 
-                // console.log(data);
 
             }.bind(this);
 
