@@ -132,6 +132,7 @@
                             <i class="fa fa-spin fa-spinner"></i> Loading...
                         </p>
                         <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">Error connecting to PayPal. <a href="#" ng-click="ctrl.initPaypal()">Click here</a> to try again.</p>
+                        <p class="alert alert-info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
                         <a href="#" ng-show="ctrl.approvalURL" ng-click="ctrl.openPaypalTab()">
                             <img src="/assets/img/settings/paypal.png" />
                         </a>
