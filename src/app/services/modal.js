@@ -806,11 +806,10 @@ angular.module("proton.modals", [])
                 }
             };
 
-            console.log('derp');
-
             this.receivePaypalMessage = function(event) {
 
-                console.log(event);
+                // console.log(event);
+
                 var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
                 if (origin !== 'https://secure.protonmail.com') {
                     return;
@@ -818,12 +817,20 @@ angular.module("proton.modals", [])
 
                 var data = event.data;
 
-                console.log(this);
+                // PANDA - this is where you do the separate API flow:
+                // use the data object (line 818 above) to find the paypal data
+                // send an API call to charge the user
+                // close the modal?
+
+
+                // console.log(this);
+
 
                 this.childWindow.close();
                 window.removeEventListener('message', this.receivePaypalMessage, false);
 
-                console.log(data);
+                // console.log(data);
+
             }.bind(this);
 
             /**
