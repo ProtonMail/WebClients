@@ -82,7 +82,6 @@ module.exports = {
       "vendor/angular-notify/dist/angular-notify.css",
       "vendor/pikaday/css/pikaday.css",
       "vendor/dropzone/dist/dropzone.css",
-      "vendor/open-sans-fontface/open-sans.css",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.css"
     ],
 
