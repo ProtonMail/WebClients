@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"save(message, false, false, true)\">": "",
     "ABSOLUTE_SECURITY": "",
     "ACCESS_TO_V2": "",
     "ACCOUNT": "",
@@ -377,6 +376,7 @@
     "ORGANIZATION_NAME": "",
     "ORGANIZATION_STORAGE": "",
     "ORGANIZATION_UPDATED": "",
+    "ORPHAN": "",
     "OS_VERSION": "",
     "OTHER": "",
     "OVERVIEW": "",
@@ -396,6 +396,7 @@
     "PAYMENT_METHOD_UPDATED": "",
     "PAYMENT_METHODS": "",
     "PAYMENTS": "",
+    "PAYPAL": "",
     "PHONE": "",
     "PLAN": "",
     "PLAN_SUBSCRIPTION": "",
@@ -550,6 +551,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "",
     "ZIP": "",
-    "ZIP_CODE": "",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": ""
+    "ZIP_CODE": ""
 }

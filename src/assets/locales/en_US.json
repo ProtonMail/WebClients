@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"save(message, false, false, true)\">": "0\" ng-change=\"save(message, false, false, true)\">",
     "ABSOLUTE_SECURITY": "Absolute Security",
     "ACCESS_TO_V2": "Having trouble? Use the old version (v2)",
     "ACCOUNT": "Account",
@@ -377,6 +376,7 @@
     "ORGANIZATION_NAME": "Organization Name",
     "ORGANIZATION_STORAGE": "Organization Storge",
     "ORGANIZATION_UPDATED": "Organization Updated",
+    "ORPHAN": "ORPHAN",
     "OS_VERSION": "OS Version",
     "OTHER": "Other",
     "OVERVIEW": "Overview",
@@ -396,6 +396,7 @@
     "PAYMENT_METHOD_UPDATED": "Payment Method Updated",
     "PAYMENT_METHODS": "Payment Methods",
     "PAYMENTS": "Payments",
+    "PAYPAL": "PayPal",
     "PHONE": "Phone",
     "PLAN": "Plan",
     "PLAN_SUBSCRIPTION": "Plan Subscription",
@@ -487,7 +488,7 @@
     "SUB": "Sub",
     "SUBJECT": "Subject",
     "SUBMIT": "Submit",
-    "SUBSCRIPTION": "SUBSCRIPTION",
+    "SUBSCRIPTION": "Subscription",
     "SUPPORT": "Support",
     "TERMS_AND_CONDITIONS": "Terms and Conditions",
     "THANK_YOU_FOR_YOUR_SUBSCRIPTION": "Thank you for your subscription",
@@ -550,6 +551,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "You have successfully unsubscribed",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "Your new features are now available",
     "ZIP": "Zip",
-    "ZIP_CODE": "Zip Code",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}"
+    "ZIP_CODE": "Zip Code"
 }
