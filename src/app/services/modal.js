@@ -547,7 +547,6 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
             // Variables
-            this.paymentChoices = 'card';
             this.process = false;
             this.cardChange = true;
             this.displayCoupon = false;
@@ -774,67 +773,6 @@ angular.module("proton.modals", [])
                     }
                 }.bind(this));
             }.bind(this);
-
-            /**
-             * PayPal Init
-             */
-            this.initPaypal = function() {
-                this.paypalNetworkError = false;
-                Payment.initPaypal({
-                    Amount : this.valid.AmountDue,
-                    Currency : this.valid.Currency // Only USD allowed for now
-                }).then(function(result) {
-                    if (result.data && result.data.Code === 1000) {
-                        if (result.data.ApprovalURL) {
-                            this.ApprovalURL = result.data.ApprovalURL;
-                        }
-                    }
-                    else if (result.data.Code === 22802) {
-                        this.paypalNetworkError = true;
-                    }
-                }.bind(this));
-            };
-
-            /**
-             * Open Paypal website in a new tab
-             */
-            this.childWindow = null;
-            this.openPaypalTab = function() {
-                if (this.ApprovalURL) {
-                    this.childWindow = window.open(this.ApprovalURL, "PayPal");
-                    window.addEventListener("message", this.receivePaypalMessage, false);
-                }
-            };
-
-            console.log('derp');
-
-            this.receivePaypalMessage = function(event) {
-
-                console.log(event);
-                var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
-                if (origin !== 'https://secure.protonmail.com') {
-                    return;
-                }
-
-                var data = event.data;
-
-                console.log(this);
-
-                this.childWindow.close();
-                window.removeEventListener('message', this.receivePaypalMessage, false);
-
-                console.log(data);
-            }.bind(this);
-
-            /**
-             * Handler for changing payment method radio button values
-             */
-            this.changePaymentMethod = function() {
-                if (this.paymentChoices === 'paypal') {
-                    this.initPaypal();
-                }
-            };
-
 
             /**
              * Close payment modal
