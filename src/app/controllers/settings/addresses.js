@@ -54,6 +54,10 @@ angular.module('proton.controllers.Settings')
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     });
 
+    $scope.$on('organizationChange', function(event, organization) {
+        $scope.organization = organization;
+    });
+
     /**
      * Return domain value for a specific address
      * @param {Object} address
