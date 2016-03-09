@@ -547,11 +547,10 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
             // Variables
-            this.paymentChoices = 'card';
-            this.process = false;
-            this.cardChange = true;
+            this.choice = 'card';
             this.displayCoupon = false;
             this.step = 'payment';
+            this.methods = [];
             this.number = '';
             this.fullname = '';
             this.month = '';
@@ -562,6 +561,7 @@ angular.module("proton.modals", [])
             this.valid = params.valid;
             this.base = CONSTANTS.BASE_SIZE;
             this.coupon = '';
+            this.childWindow = null;
             this.countries = tools.countries;
             this.country = _.findWhere(this.countries, {value: 'US'});
             this.plans = _.chain(params.plans)
@@ -571,17 +571,8 @@ angular.module("proton.modals", [])
             this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
 
             if(params.methods.length > 0) {
-                var card = params.methods[0];
-
-                this.methodID = card.ID;
-                this.number = '•••• •••• •••• ' + card.Details.Last4;
-                this.fullname = card.Details.Name;
-                this.month = card.Details.ExpMonth;
-                this.year = card.Details.ExpYear;
-                this.cvc = '•••';
-                this.cardChange = false;
-                this.country = _.findWhere(this.countries, {value: card.Details.Country});
-                this.zip = card.Details.ZIP;
+                this.methods = params.methods;
+                this.method = params.methods[0];
             }
 
             // Functions
@@ -639,7 +630,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardNumber = function() {
-                if (this.cardChange === true && this.valid.AmountDue > 0) {
+                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
                     return Payment.validateCardNumber(this.number);
                 } else {
                     return Promise.resolve();
@@ -647,7 +638,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardExpiry = function() {
-                if (this.cardChange === true && this.valid.AmountDue > 0) {
+                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
                     return Payment.validateCardExpiry(this.month, this.year);
                 } else {
                     return Promise.resolve();
@@ -655,7 +646,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardCVC = function() {
-                if (this.cardChange === true && this.valid.AmountDue > 0) {
+                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
                     return Payment.validateCardCVC(this.cvc);
                 } else {
                     return Promise.resolve();
@@ -665,9 +656,10 @@ angular.module("proton.modals", [])
             var method = function() {
                 var deferred = $q.defer();
 
-                if (this.cardChange === true && this.valid.AmountDue > 0) {
+                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
                     var year = (this.year.length === 2) ? '20' + this.year : this.year;
 
+                    // Add payment method
                     Payment.updateMethod({
                         Type: 'card',
                         Details: {
@@ -687,7 +679,7 @@ angular.module("proton.modals", [])
                         }
                     });
                 } else {
-                    deferred.resolve(this.methodID);
+                    deferred.resolve(this.method.ID);
                 }
 
                 return deferred.promise;
@@ -719,12 +711,12 @@ angular.module("proton.modals", [])
                 Payment.subscribe({
                     Amount : this.valid.AmountDue,
                     Currency : params.valid.Currency,
+                    CouponCode : this.coupon,
+                    PlanIDs: params.planIDs,
                     Payment : {
                         Type: 'paypal',
                         Details: paypalObject
-                    },
-                    CouponCode : this.coupon,
-                    PlanIDs: params.planIDs
+                    }
                 }).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         deferred.resolve();
@@ -737,9 +729,13 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var finish = function(subscription) {
-                this.process = 'thanks';
+                this.step = 'thanks';
                 params.change();
             }.bind(this);
+
+            this.label = function(method) {
+                return '•••• •••• •••• ' + method.Details.Last4;
+            };
 
             this.submit = function() {
                 // Change process status true to disable input fields
@@ -803,37 +799,34 @@ angular.module("proton.modals", [])
              */
             this.initPaypal = function() {
                 this.paypalNetworkError = false;
+
                 Payment.initPaypal({
                     Amount : this.valid.AmountDue,
                     Currency : this.valid.Currency // Only USD allowed for now
                 }).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.ApprovalURL) {
-                            this.ApprovalURL = result.data.ApprovalURL;
+                            this.approvalURL = result.data.ApprovalURL;
                         }
-                    }
-                    else if (result.data.Code === 22802) {
+                    } else if (result.data.Code === 22802) {
                         this.paypalNetworkError = true;
+                    } else if (result.data && result.data.Error){
+                        notify({message: result.data.Error, classes: 'notification-danger'});
                     }
                 }.bind(this));
-            };
+            }.bind(this);
 
             /**
              * Open Paypal website in a new tab
              */
-            this.childWindow = null;
             this.openPaypalTab = function() {
-                if (this.ApprovalURL) {
-                    this.childWindow = window.open(this.ApprovalURL, "PayPal");
-                    window.addEventListener("message", this.receivePaypalMessage, false);
-                }
+                this.childWindow = window.open(this.approvalURL, 'PayPal');
+                window.addEventListener('message', this.receivePaypalMessage, false);
             };
 
             this.receivePaypalMessage = function(event) {
-
-                // console.log(event);
-
                 var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+
                 if (origin !== 'https://secure.protonmail.com') {
                     return;
                 }
@@ -850,7 +843,6 @@ angular.module("proton.modals", [])
                     delete data.paymentID;
                 }
 
-
                 this.step = 'process';
 
                 chargePaypal(data)
@@ -864,19 +856,7 @@ angular.module("proton.modals", [])
 
                 this.childWindow.close();
                 window.removeEventListener('message', this.receivePaypalMessage, false);
-
-
             }.bind(this);
-
-            /**
-             * Handler for changing payment method radio button values
-             */
-            this.changePaymentMethod = function() {
-                if (this.paymentChoices === 'paypal') {
-                    this.initPaypal();
-                }
-            };
-
 
             /**
              * Close payment modal
