@@ -20,7 +20,7 @@ angular.module('proton.controllers.Settings')
     organization,
     Setting
 ) {
-    $scope.activeAddresses = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').value();
+    $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
     $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     $scope.domains = [];
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
@@ -41,8 +41,9 @@ angular.module('proton.controllers.Settings')
             var addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
             var order = [];
 
-            _.forEach(addresses, function(address, index) {
+            _.each(addresses, function(address, index) {
                 order[index] = address.Send;
+                address.Send = index + 1;
             });
 
             $scope.saveOrder(order);
@@ -56,7 +57,7 @@ angular.module('proton.controllers.Settings')
 
     // Listeners
     $scope.$on('updateUser', function(event) {
-        $scope.activeAddresses = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').value();
+        $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     });
 
@@ -228,7 +229,6 @@ angular.module('proton.controllers.Settings')
                 'Order': order
             }).$promise.then(function(response) {
                 if (response.Code === 1000) {
-                    eventManager.call();
                     notify({message: $translate.instant('ADDRESS_ORDER_SAVED'), classes: 'notification-success'});
                 } else if (response.Error) {
                     notify({message: response.Error, classes: 'notification-danger'});
