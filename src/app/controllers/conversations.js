@@ -75,7 +75,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         width = $('#timeWidthTest').outerWidth();
 
         // add 10% for safety
-        width = width * 1.1;
+        width = width * 1;
 
         // round up to a whole integer
         width = Math.ceil(width);
