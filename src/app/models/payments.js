@@ -49,7 +49,7 @@ angular.module("proton.models.payments", [])
          /**
           * Create Paypal Payment
           */
-         paypalInit: function(params) {
+         initPaypal: function(params) {
              return $http.post(url.get() + '/payments/paypal', params);
          },
 
