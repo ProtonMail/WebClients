@@ -1,14 +1,16 @@
 <div class="modal-content">
     <div class="modal-header">
+        <pre>{{ ctrl.valid.Currency }}</pre>
         <div class="choices radio pull-right">
             <label>
                 <input type="radio" ng-model="ctrl.paymentChoices" ng-value="'card'" name="choices" ng-change="ctrl.changePaymentMethod()">
                 {{ 'CREDIT_CARD' | translate }} &nbsp; &nbsp;
             </label>
-            <label>
-                 &nbsp; &nbsp;
-                <input type="radio" ng-model="ctrl.paymentChoices" ng-value="'paypal'" name="choices" ng-change="ctrl.changePaymentMethod()">
-                {{ 'PAYPAL' | translate }}
+            <label pt-tooltip="Change your currency to USD to use PayPal." ng-show="ctrl.valid.Currency !== 'USD'" class="strike-through text-gray">
+                &nbsp; &nbsp;{{ 'PAYPAL' | translate }}
+            </label>
+            <label ng-show="ctrl.valid.Currency === 'USD'">
+                &nbsp; &nbsp;<input type="radio" ng-model="ctrl.paymentChoices" ng-value="'paypal'" name="choices" ng-change="ctrl.changePaymentMethod()">{{ 'PAYPAL' | translate }}
             </label>
         </div>
         <h4 class="modal-title">{{ 'PAYMENT' | translate }}</h4>

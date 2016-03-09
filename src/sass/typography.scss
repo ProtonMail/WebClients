@@ -100,3 +100,7 @@ body .pm_form textarea[readonly] {
 	word-break: break-all;
 	min-height: initial !important;
 }
+.strike-through,
+.line-through {
+	text-decoration: line-through;
+}
