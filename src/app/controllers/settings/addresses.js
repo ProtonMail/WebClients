@@ -20,7 +20,7 @@ angular.module('proton.controllers.Settings')
     organization,
     Setting
 ) {
-    $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
+    $scope.activeAddresses = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').value();
     $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     $scope.domains = [];
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
@@ -56,7 +56,7 @@ angular.module('proton.controllers.Settings')
 
     // Listeners
     $scope.$on('updateUser', function(event) {
-        $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
+        $scope.activeAddresses = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').value();
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     });
 
