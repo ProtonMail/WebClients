@@ -1483,7 +1483,12 @@ angular.module("proton.modals", [])
             this.local = '';
             this.members = params.members;
             this.member = params.members[0]; // TODO in the future we should add a select to choose a member
-            this.domains = params.domains;
+            this.domains = [];
+
+            _.each(params.domains, function(domain) {
+                this.domains.push({label: domain, value: domain});
+            }.bind(this));
+
             this.domain = this.domains[0];
 
             // Functions

@@ -11,7 +11,6 @@ angular.module('proton.controllers.Settings')
     confirmModal,
     CONSTANTS,
     Domain,
-    domains,
     eventManager,
     generateModal,
     Member,
@@ -22,14 +21,8 @@ angular.module('proton.controllers.Settings')
 ) {
     $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
     $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
-    $scope.domains = [];
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
-
-    // Populate the domains <select>
-    _.each(domains, function(domain) {
-        $scope.domains.push({label: domain, value: domain});
-    });
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
@@ -59,34 +52,6 @@ angular.module('proton.controllers.Settings')
     $scope.$on('updateUser', function(event) {
         $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
-    });
-
-    $scope.$on('deleteDomain', function(event, domainId) {
-        var index = _.findIndex($scope.domains, {ID: domainId});
-
-        if (index !== -1) {
-            $scope.domains.splice(index, 1);
-        }
-    });
-
-    $scope.$on('createDomain', function(event, domainId, domain) {
-        var index = _.findIndex($scope.domains, {ID: domainId});
-
-        if (index === -1) {
-            $scope.domains.push(domain);
-        } else {
-            _.extend($scope.domains[index], domain);
-        }
-    });
-
-    $scope.$on('updateDomain', function(event, domainId, domain) {
-        var index = _.findIndex($scope.domains, {ID: domainId});
-
-        if (index === -1) {
-            $scope.domains.push(domain);
-        } else {
-            _.extend($scope.domains[index], domain);
-        }
     });
 
     /**
@@ -202,23 +167,24 @@ angular.module('proton.controllers.Settings')
 
     $scope.add = function() {
         networkActivityTracker.track(
-            Member.query()
+            $q.all({
+                members: Member.query(),
+                domains: Domain.available()
+            })
             .then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    aliasModal.activate({
-                        params: {
-                            members: result.data.Members,
-                            domains: $scope.domains,
-                            add: function(address) {
-                                eventManager.call();
-                                aliasModal.deactivate();
-                            },
-                            cancel: function() {
-                                aliasModal.deactivate();
-                            }
+                aliasModal.activate({
+                    params: {
+                        members: result.members.data.Members,
+                        domains: result.domains.data.Domains,
+                        add: function(address) {
+                            eventManager.call();
+                            aliasModal.deactivate();
+                        },
+                        cancel: function() {
+                            aliasModal.deactivate();
                         }
-                    });
-                }
+                    }
+                });
             })
         );
     };

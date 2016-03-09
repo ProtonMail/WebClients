@@ -7,17 +7,15 @@
             </div>
             <div class="modal-body pm_form">
                 <label>{{ 'CHOOSE_ADDRESS' | translate }}</label>
-                <div class="usernameWrap">
-                    <p class="help">This will be a new address you can send and receive emails with.</p>
-                    <div class="clearfix">
-                        <input type="text" class="pull-left inline" ng-model="ctrl.local" autofocus placeholder="{{ 'ADDRESS' | translate }}" required />
-                        <em class="pull-left usernameDomain">&nbsp;&nbsp;@&nbsp;&nbsp;</em>
-                        <span class="pull-left pm_select inline bigger">
-                            <select class="selectDomain" ng-model="ctrl.domain" ng-options="domain.label for domain in ctrl.domains"></select>
-                            <i class="fa fa-angle-down"></i>
-                        </span>
-                    </div>
+                <div class="clearfix">
+                    <input type="text" class="inline" ng-model="ctrl.local" autofocus placeholder="{{ 'ADDRESS' | translate }}" required />
+                    <em class="inline">&nbsp;&nbsp;@&nbsp;&nbsp;</em>
+                    <span class="pm_select inline bigger">
+                        <select class="selectDomain" ng-model="ctrl.domain" ng-options="domain.label for domain in ctrl.domains"></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
                 </div>
+                <p class="help"><small><i class="fa fa-info-circle"></i> This will be a new address you can send and receive emails with.</small></p>
                 <p class="alert alert-info">ProtonMail address can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank">Learn more about addresses here.</a></p>
             </div>
         </div>

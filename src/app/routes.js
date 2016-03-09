@@ -583,23 +583,6 @@ angular.module('proton.routes', [
         resolve: {
             organization: function(user, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
-            },
-            domains: function($q, Domain, networkActivityTracker) {
-                var deferred = $q.defer();
-
-                Domain.available().then(function(result) {
-                    if (result.data && angular.isArray(result.data.Domains)) {
-                        deferred.resolve(result.data.Domains);
-                    } else {
-                        deferred.reject();
-                    }
-                }, function() {
-                    deferred.reject();
-                });
-
-                networkActivityTracker.track(deferred.promise);
-
-                return deferred.promise;
             }
         },
         views: {
