@@ -41,8 +41,9 @@ angular.module('proton.controllers.Settings')
             var addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
             var order = [];
 
-            _.forEach(addresses, function(address, index) {
+            _.each(addresses, function(address, index) {
                 order[index] = address.Send;
+                address.Send = index + 1;
             });
 
             $scope.saveOrder(order);
@@ -228,7 +229,6 @@ angular.module('proton.controllers.Settings')
                 'Order': order
             }).$promise.then(function(response) {
                 if (response.Code === 1000) {
-                    eventManager.call();
                     notify({message: $translate.instant('ADDRESS_ORDER_SAVED'), classes: 'notification-success'});
                 } else if (response.Error) {
                     notify({message: response.Error, classes: 'notification-danger'});

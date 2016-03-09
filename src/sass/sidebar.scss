@@ -125,7 +125,7 @@ body {
         #sidebarLabels {
             position: relative;
             overflow: auto;
-            height: calc(100% - 360px);
+            height: calc(100% - 400px);
             min-height: 50px; // 2 labels
         }
         div.labels {
@@ -246,7 +246,7 @@ body {
                 }
             }
             div.storage {
-                padding: 0 20px;
+                padding: 0;
                 strong {
                     color: $primary
                 }
