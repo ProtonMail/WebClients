@@ -70,11 +70,14 @@
                             </label>
                         </div>
                         <div class="col-1-2">
-                            <label pt-tooltip="Only USD currency is supported with PayPal.">
+                            <label>
                                 <input type="radio" ng-model="ctrl.choice" value="paypal" name="choices" ng-change="ctrl.initPaypal()" ng-disabled="ctrl.valid.Currency !== 'USD'"> {{ 'PAYPAL' | translate }}
                             </label>
                         </div>
                     </div>
+                    <p ng-show="ctrl.valid.Currency !== 'USD'">
+                        <small><i class="fa fa-info-circle"></i> Only USD currency is supported with PayPal.</small>
+                    </p>
                     <div ng-show="ctrl.choice === 'card'">
                         <div ng-show="ctrl.methods.length > 0" class="margin">
                             <label for="paymentMethod" class="margin">Select your payment method</label>
