@@ -517,6 +517,8 @@ angular.module("proton.modals", [])
                 }).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         params.close(true);
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
                     }
                 });
             }.bind(this);
@@ -524,6 +526,62 @@ angular.module("proton.modals", [])
             this.cancel = function() {
                 params.close();
             };
+
+            this.initPaypal = function() {
+                Payment.paypal({
+                    Amount : params.AmountDue,
+                    Currency : params.Currency
+                }).then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        this.approvalURL = result.data.ApprovalURL;
+                    } else if (result.data && result.data.Error){
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    }
+                }.bind(this));
+            }.bind(this);
+
+            this.openPaypalTab = function() {
+                this.childWindow = window.open(this.approvalURL, 'PayPal');
+                window.addEventListener('message', this.receivePaypalMessage, false);
+            };
+
+            this.receivePaypalMessage = function(event) {
+                var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+
+                if (origin !== 'https://secure.protonmail.com') {
+                    return;
+                }
+
+                var paypalObject = event.data;
+
+                // we need to capitalize some stuff
+                if (paypalObject.payerID && paypalObject.paymentID) {
+                    paypalObject.PayerID = paypalObject.payerID;
+                    paypalObject.PaymentID = paypalObject.paymentID;
+
+                    // delete unused
+                    delete paypalObject.payerID;
+                    delete paypalObject.paymentID;
+                }
+
+                Payment.pay(params.invoice.ID, {
+                    Amount: params.amountDue,
+                    Currency: params.currency,
+                    Payment : {
+                        Type: 'paypal',
+                        Details: paypalObject
+                    }
+                }).then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        params.close(true);
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    }
+                });
+
+                this.childWindow.close();
+                window.removeEventListener('message', this.receivePaypalMessage, false);
+            }.bind(this);
         }
     });
 })
@@ -795,9 +853,6 @@ angular.module("proton.modals", [])
                 }.bind(this));
             }.bind(this);
 
-            /**
-             * PayPal Init
-             */
             this.initPaypal = function() {
                 this.paypalNetworkError = false;
 
@@ -832,21 +887,21 @@ angular.module("proton.modals", [])
                     return;
                 }
 
-                var data = event.data;
+                var paypalObject = event.data;
 
                 // we need to capitalize some stuff
-                if (data.payerID && data.paymentID) {
-                    data.PayerID = data.payerID;
-                    data.PaymentID = data.paymentID;
+                if (paypalObject.payerID && paypalObject.paymentID) {
+                    paypalObject.PayerID = paypalObject.payerID;
+                    paypalObject.PaymentID = paypalObject.paymentID;
 
                     // delete unused
-                    delete data.payerID;
-                    delete data.paymentID;
+                    delete paypalObject.payerID;
+                    delete paypalObject.paymentID;
                 }
 
                 this.step = 'process';
 
-                chargePaypal(data)
+                chargePaypal(paypalObject)
                 .then(organizationKey)
                 .then(createOrganization)
                 .then(finish)

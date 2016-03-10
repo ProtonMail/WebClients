@@ -129,7 +129,7 @@
                     </div>
                     <div ng-show="ctrl.choice === 'paypal'">
                         <p ng-show="!ctrl.approvalURL && ctrl.paypalNetworkError !== true">
-                            <i class="fa fa-spin fa-spinner"></i> Loading...
+                            <i class="fa fa-spin fa-spinner"></i> {{ 'LOADING' | translate }}...
                         </p>
                         <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">Error connecting to PayPal. <a href="#" ng-click="ctrl.initPaypal()">Click here</a> to try again.</p>
                         <p class="alert alert-info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>

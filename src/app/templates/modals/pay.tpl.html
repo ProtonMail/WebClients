@@ -23,18 +23,40 @@
                     </tbody>
                 </table>
                 <div ng-show="ctrl.amountDue > 0">
-                    <label for="paymentMethod" class="margin">Select your payment method</label>
-                    <span class="pm_select">
-                        <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
-                        <i class="fa fa-angle-down"></i>
-                    </span>
+                    <div class="margin pm_grid" ng-show="ctrl.currency === 'USD'">
+                        <div class="col-1-2">
+                            <label>
+                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices"> {{ 'CREDIT_CARD' | translate }}
+                            </label>
+                        </div>
+                        <div class="col-1-2">
+                            <label>
+                                <input type="radio" ng-model="ctrl.choice" value="paypal" name="choices" ng-change="ctrl.initPaypal()"> {{ 'PAYPAL' | translate }}
+                            </label>
+                        </div>
+                    </div>
+                    <div ng-show="ctrl.choice === 'card'">
+                        <label for="paymentMethod" class="margin">Select your payment method</label>
+                        <span class="pm_select">
+                            <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </div>
+                    <div ng-show="ctrl.choice === 'paypal'">
+                        <p ng-show="!ctrl.approvalURL">
+                            <i class="fa fa-spin fa-spinner"></i> {{ 'LOADING' | translate }}...
+                        </p>
+                        <p class="alert alert-info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
+                        <a href="#" ng-show="ctrl.approvalURL" ng-click="ctrl.openPaypalTab()">
+                            <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary pull-right" ng-show="ctrl.amountDue > 0">{{ 'SUBMIT' | translate }}</button>
-            <button type="submit" class="pm_button primary pull-right" ng-show="ctrl.amountDue <= 0">{{ 'APPLY_CREDITS' | translate }}</button>
+            <button type="submit" class="pm_button primary pull-right">{{ 'SUBMIT' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
