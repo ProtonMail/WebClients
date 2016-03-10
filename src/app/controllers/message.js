@@ -725,6 +725,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 }
             });
 
+            if (angular.isUndefined(found)) {
+                found = address;
+            }
+
             base.From = found;
         }
 
