@@ -1,13 +1,10 @@
 ProtonMail Web Client
 =======
 
-#### [https://protonmail.ch](https://protonmail.ch)
+Official AngularJS web client for the ProtonMail secure email service. ProtonMail also makes use of OpenPGPjs as our message crytography is PGP compliant. To view the open source email encryption libraries ProtonMail uses, please click here.
 
-Official AngularJS web client for ProtonMail users.
 
-[![Circle CI](https://circleci.com/gh/ProtonMail/Angular.png)](https://circleci.com/gh/ProtonMail/Angular)
-[![Dependency Status](https://david-dm.org/ProtonMail/Angular.png)](https://david-dm.org/ProtonMail/Angular)
-[![devDependency Status](https://david-dm.org/ProtonMail/Angular/dev-status.png)](https://david-dm.org/ProtonMail/Angular#info=devDependencies)
+[OpenPGPjs](https://github.com/openpgpjs/openpgpjs)
 
 ### Basic Installation
 
@@ -58,7 +55,7 @@ protractor protractor_conf.js --suite=login
 
 ### License
 
-Copyright (c) 2013-2015
+Copyright (c) 2013-2016
 
 Proton Technologies A.G. (Switzerland)
 
