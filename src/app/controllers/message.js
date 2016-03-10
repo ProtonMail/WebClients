@@ -680,15 +680,13 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         base.ParentID = $scope.message.ID;
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
 
-        if(angular.isDefined($scope.message.AddressID)) {
-            base.From = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});
-        }
+        console.log($scope.message);
 
         if (action === 'reply') {
             base.Action = 0;
             base.Subject = ($scope.message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? $scope.message.Subject : re_prefix + ' ' + $scope.message.Subject;
 
-            if($scope.message.Type === 2 || $scope.message.Type === 3) {
+            if ($scope.message.Type === 2 || $scope.message.Type === 3) {
                 base.ToList = $scope.message.ToList;
             } else {
                 base.ToList = [$scope.message.ReplyTo];
@@ -714,6 +712,20 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             base.Action = 2;
             base.ToList = [];
             base.Subject = ($scope.message.Subject.toLowerCase().substring(0, fw_length) === fw_prefix.toLowerCase()) ? $scope.message.Subject : fw_prefix + ' ' + $scope.message.Subject;
+        }
+
+        if (angular.isDefined($scope.message.AddressID)) {
+            var recipients = base.ToList.concat(base.CCList).concat(base.BCCList);
+            var address = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});
+            var found = _.findWhere(recipients, {Address: address.Email});
+
+            _.each(_.sortBy(authentication.user.Addresses, 'Send'), function(address) {
+                if (angular.isUndefined(found)) {
+                    found = _.findWhere(recipients, {Address: address.Email});
+                }
+            });
+
+            base.From = found;
         }
 
         return base;
