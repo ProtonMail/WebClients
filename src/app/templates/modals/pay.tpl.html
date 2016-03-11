@@ -47,16 +47,18 @@
                             <i class="fa fa-spin fa-spinner"></i> {{ 'LOADING' | translate }}...
                         </p>
                         <p class="alert alert-info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
-                        <a href="#" ng-show="ctrl.approvalURL" ng-click="ctrl.openPaypalTab()">
-                            <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
-                        </a>
+                        <div class="text-center">
+                            <a href="#" ng-show="ctrl.approvalURL" ng-click="ctrl.openPaypalTab()">
+                                <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary pull-right">{{ 'SUBMIT' | translate }}</button>
+            <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.choice === 'paypal'">{{ 'SUBMIT' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
