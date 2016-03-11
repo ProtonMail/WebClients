@@ -57,32 +57,20 @@
                         <strong>Save 20% with the annual plan!</strong>
                     </p>
                     <p>
-                        <button type="button" class="pm_button primary" ng-click="ctrl.yearly()">{{ 'PAY_ANNUALLY' | translate }}</button>
+                        <button type="button" class="pm_button primary" ng-click="ctrl.switch(12)">{{ 'PAY_ANNUALLY' | translate }}</button>
                     </p>
                 </div>
             </div>
             <div class="col-1-2">
                 <div ng-hide="ctrl.valid.AmountDue === 0">
-                    <div class="margin pm_grid">
-                        <div class="col-1-2">
-                            <label>
-                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices"> {{ 'CREDIT_CARD' | translate }}
-                            </label>
-                        </div>
-                        <div class="col-1-2">
-                            <label>
-                                <input type="radio" ng-model="ctrl.choice" value="paypal" name="choices" ng-change="ctrl.initPaypal()" ng-disabled="ctrl.valid.Currency !== 'USD'"> {{ 'PAYPAL' | translate }}
-                            </label>
-                        </div>
-                    </div>
-                    <p ng-show="ctrl.valid.Currency !== 'USD'">
-                        <small><i class="fa fa-info-circle"></i> Only USD currency is supported with PayPal.</small>
-                    </p>
-                    <div ng-show="ctrl.choice === 'card'">
-                        <div ng-show="ctrl.methods.length > 0" class="margin">
-                            <label for="paymentMethod" class="margin">Select your payment method</label>
+                    <span class="pm_select margin">
+                        <select id="paymentMethod" ng-model="ctrl.choice" ng-options="choice.label for choice in ctrl.choices" ng-change="ctrl.changeChoice()"></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                    <div ng-show="ctrl.choice.value === 'card'">
+                        <div ng-show="ctrl.methods.length > 0" class="margin pm_grid">
                             <span class="pm_select">
-                                <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
+                                <select id="creditCard" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
                                 <i class="fa fa-angle-down"></i>
                             </span>
                         </div>
@@ -127,15 +115,20 @@
                             </div>
                         </div>
                     </div>
-                    <div ng-show="ctrl.choice === 'paypal'">
+                    <div ng-show="ctrl.choice.value === 'paypal'">
                         <p ng-show="!ctrl.approvalURL && ctrl.paypalNetworkError !== true">
                             <i class="fa fa-spin fa-spinner"></i> {{ 'LOADING' | translate }}...
                         </p>
                         <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">Error connecting to PayPal. <a href="#" ng-click="ctrl.initPaypal()">Click here</a> to try again.</p>
                         <p class="alert alert-info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
-                        <a href="#" ng-show="ctrl.approvalURL" ng-click="ctrl.openPaypalTab()">
-                            <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
-                        </a>
+                        <p class="text-center">
+                            <a href="#" ng-show="ctrl.approvalURL" ng-click="ctrl.openPaypalTab()">
+                                <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
+                            </a>
+                        </p>
+                    </div>
+                    <div ng-show="ctrl.choice.value === 'bitcoin'">
+                        <p class="alert alert-info">To pay via Bitcoin or Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions</p>
                     </div>
                     <hr />
                 </div>
@@ -160,5 +153,5 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-    <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()" ng-show="ctrl.choice === 'card'">{{ 'SUBMIT' | translate }}</button>
+    <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()" ng-show="ctrl.choice.value === 'card'">{{ 'SUBMIT' | translate }}</button>
 </div>

@@ -606,7 +606,12 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
             // Variables
-            this.choice = 'card';
+            this.choices = [
+                {value: 'card', label: $translate.instant('CREDIT_CARD')},
+                {value: 'paypal', label: 'PayPal'},
+                {value: 'bitcoin', label: 'Bitcoin'}
+            ];
+            this.choice = this.choices[0];
             this.displayCoupon = false;
             this.step = 'payment';
             this.methods = [];
@@ -628,11 +633,6 @@ angular.module("proton.modals", [])
                 .uniq()
                 .value();
             this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
-
-            if (params.methods.length > 0) {
-                this.methods = params.methods;
-                this.method = this.methods[0];
-            }
 
             // Functions
             /**
@@ -792,6 +792,18 @@ angular.module("proton.modals", [])
                 params.change();
             }.bind(this);
 
+            this.initialization = function() {
+                if (params.methods.length > 0) {
+                    this.methods = params.methods;
+                    this.method = this.methods[0];
+                }
+
+                if (angular.isDefined(params.choice)) {
+                    this.choice = _.findWhere(this.choices, {value: params.choice});
+                    this.changeChoice();
+                }
+            };
+
             this.label = function(method) {
                 return '•••• •••• •••• ' + method.Details.Last4;
             };
@@ -829,8 +841,8 @@ angular.module("proton.modals", [])
                 return count;
             };
 
-            this.yearly = function() {
-                params.yearly();
+            this.switch = function(cycle, currency) {
+                params.switch(cycle, currency);
             };
 
             this.apply = function() {
@@ -852,6 +864,16 @@ angular.module("proton.modals", [])
                     }
                 }.bind(this));
             }.bind(this);
+
+            this.changeChoice = function() {
+                if (this.choice.value === 'paypal') {
+                    if (this.valid.Currency === 'USD' && this.valid.Cycle === 12) {
+                        this.initPaypal();
+                    } else {
+                        this.switch(12, 'USD');
+                    }
+                }
+            };
 
             this.initPaypal = function() {
                 this.paypalNetworkError = false;
@@ -922,6 +944,8 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
+
+            this.initialization();
         }
     });
 })
