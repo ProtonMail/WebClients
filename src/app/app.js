@@ -576,14 +576,10 @@ angular.module('proton', [
     $logProvider.debugEnabled(debugInfo);
 })
 
-.run(function($rootScope) {
+.run(function($rootScope, CONFIG) {
+    $rootScope.app_version = CONFIG.app_version;
+    $rootScope.date_version = CONFIG.date_version;
     $rootScope.isFileSaverSupported = !!(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob);
-    // Set build config
-    $rootScope.build = {
-        "version":"2.0",
-        "notes":"http://protonmail.dev/blog/",
-        "date":"17 Apr. 2015"
-    };
 })
 
 //
