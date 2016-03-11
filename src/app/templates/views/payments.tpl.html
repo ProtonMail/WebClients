@@ -69,7 +69,7 @@
                             </td>
                             <td>{{ invoice.CreateTime | readableTime }}</td>
                             <td class="text-right">
-                                <button class="pm_button link" ng-click="pay(invoice)">{{ 'PAY' | translate }}</button>
+                                <button class="pm_button link" ng-click="pay(invoice)" ng-show="invoice.State === 0">{{ 'PAY' | translate }}</button>
                                 <button class="pm_button link" ng-click="download(invoice)">{{ 'DOWNLOAD' | translate }}</button>
                             </td>
                         </tr>
