@@ -1,9 +1,5 @@
 angular.module("proton.controllers.Message", ["proton.constants"])
-.directive('message', function() {
-    return {
-        templateUrl: 'templates/partials/message.tpl.html'
-    };
-})
+
 .controller("MessageController", function(
     $compile,
     $filter,

@@ -28,5 +28,5 @@
     </div>
 </header>
 <div id="pm_thread" pt-height>
-    <message ng-repeat="message in messages track by message.ID"></message>
+    <ng-include src="'templates/partials/message.tpl.html'" ng-repeat="message in messages track by message.ID"></ng-include>
 </div>
