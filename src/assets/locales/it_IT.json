@@ -7,6 +7,7 @@
     "ADD": "",
     "ADD_ADDRESS": "",
     "ADD_CONTACT": "",
+    "ADD_COUPON": "",
     "ADD_CREDIT_CARD": "",
     "ADD_CUSTOM_DOMAIN": "",
     "ADD_CUSTOM_DOMAIN_ADDRESS": "",
@@ -396,7 +397,6 @@
     "PAYMENT_METHOD_UPDATED": "",
     "PAYMENT_METHODS": "",
     "PAYMENTS": "",
-    "PAYPAL": "",
     "PHONE": "",
     "PLAN": "",
     "PLAN_SUBSCRIPTION": "",
@@ -551,5 +551,6 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "",
     "ZIP": "",
-    "ZIP_CODE": ""
+    "ZIP_CODE": "",
+    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": ""
 }
