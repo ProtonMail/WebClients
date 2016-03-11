@@ -54,7 +54,7 @@
                 </table>
                 <div class="text-center alert alert-info" ng-show="ctrl.valid.Cycle === 1">
                     <p>
-                        <strong class="text-green">Save 20% with the annual plan!</strong>
+                        <strong>Save 20% with the annual plan!</strong>
                     </p>
                     <p>
                         <button type="button" class="pm_button primary" ng-click="ctrl.yearly()">{{ 'PAY_ANNUALLY' | translate }}</button>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
                 <p ng-show="ctrl.displayCoupon === false">
-                    <a href="#" ng-click="ctrl.displayCoupon = true">{{ 'ADD_COUPON'}}</a>
+                    <a href="#" ng-click="ctrl.displayCoupon = true">{{ 'ADD_COUPON' | translate }}</a>
                 </p>
                 <div class="pm_grid" ng-show="ctrl.displayCoupon === true">
                     <div class="col-2-3">

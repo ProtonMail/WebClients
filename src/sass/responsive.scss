@@ -36,6 +36,9 @@
             font-size: .9em;
         }
     }
+    #pm_settings .pm_tabs li a.pm_button {
+        padding: 0 .5rem;
+    }
     body section.sidebar a.version span {
         display: none;
     }
@@ -99,9 +102,7 @@
     body section.sidebar ul.menu li a em {
         display: none;
     }
-    body section.sidebar #sidebarLabels {
-        height: calc(100% - 550px);
-    }
+
 }
 
 @media (max-width: 800px) {

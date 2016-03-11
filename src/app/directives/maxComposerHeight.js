@@ -32,8 +32,6 @@ angular.module('proton.maxComposerHeight', [])
 
                 height = (height < 200) ? 200 : height;
 
-                console.log(height);
-
                 angular.element(element).find('iframe, .angular-squire-wrapper').css({
                     height: height
                 });

@@ -37,6 +37,15 @@
 
 }
 
+.ua-mac_os_x.ua_firefox,
+.ua-windows_nt-6-1.ua_firefox {
+    .pm_labels label,
+    .pm_labels label.closed:hover {
+        line-height: 8px;
+    }
+}
+
+// All Firefox
 .ua-firefox {
     .pm_button.primary.compose {
         line-height: 35px;
@@ -50,10 +59,6 @@
     form.searchForm fieldset button,
     form.searchForm fieldset button .fa {
         line-height: 32px;
-    }
-    .pm_labels label,
-    .pm_labels label.closed:hover {
-        line-height: 8px;
     }
     .pm_tag {
         line-height: 14px;

@@ -42,7 +42,7 @@ module.exports = {
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
-      "vendor/moment/moment.js",
+      "vendor/moment/min/moment-with-locales.js",
       "vendor/underscore/underscore.js",
       "vendor/DOMPurify/src/purify.js",
       "vendor/papaparse/papaparse.js",
@@ -82,7 +82,6 @@ module.exports = {
       "vendor/angular-notify/dist/angular-notify.css",
       "vendor/pikaday/css/pikaday.css",
       "vendor/dropzone/dist/dropzone.css",
-      "vendor/open-sans-fontface/open-sans.css",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.css"
     ],
 

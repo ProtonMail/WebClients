@@ -165,6 +165,7 @@ angular.module('proton', [
 .run(function(CONSTANTS) {
     // This function clears junk from session storage. Should not be needed forever
     try {
+        var locale = window.navigator.userLanguage || window.navigator.language;
         var whitelist = [
             CONSTANTS.EVENT_ID,
             CONSTANTS.MAILBOX_PASSWORD_KEY,
@@ -185,6 +186,7 @@ angular.module('proton', [
         }
 
         window.sessionStorage.clear();
+        moment.locale(locale);
 
         for (var key in data) {
             window.sessionStorage.setItem(key, data[key]);

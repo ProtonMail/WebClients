@@ -157,9 +157,9 @@ angular.module("proton.filters",[])
         var m = moment.unix(time);
 
         if (m.isSame(moment(), 'day')) {
-            return m.format('h:mm a') + ' (' + m.fromNow() + ')';
+            return m.format('LT') + ' (' + m.fromNow() + ')';
         } else {
-            return m.format('D/MM/YYYY') + ' (' + m.fromNow() + ')';
+            return m.format('L') + ' (' + m.fromNow() + ')';
         }
     };
 })

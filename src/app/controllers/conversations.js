@@ -52,6 +52,46 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }, function(error) {
             $log.error(error);
         });
+        $scope.setTimeWidths();
+
+    };
+
+    $scope.setTimeWidths = function() {
+
+        // Dec 28, 2888 - longest possible width
+        var time = '29000668525';
+
+        // initalize to zero
+        var width = 0;
+
+         // convert timestamp to readabile, LOCALIZED time format
+        time = $filter('readableTime')(time);
+
+        // append to DOM:
+        $('body').append('<div id="timeWidthTest" style="position:absolute;left:0;top:0;z-index:1;visibility:hidden">');
+        $('#timeWidthTest').text(time);
+
+        // get the width
+        width = $('#timeWidthTest').outerWidth();
+
+        // add 10% for safety
+        width = width * 1;
+
+        // round up to a whole integer
+        width = Math.ceil(width);
+
+        // if width isnt zero, we're probably good
+        if (width > 0) {
+
+            // lets set some CSS to update our time elements
+            var style = "<style>.conversation .row .meta em.time { width: "+ width +"px !important; } .conversation .row .meta, .conversation .row .pm_labels { width: "+ (width+40) +"px !important;} .conversation .row h4 { width: calc(100% - "+ (width+45) +"px) !important; }</style>";
+
+            // inject CSS into DOM
+            $('body').append(style);
+
+        }
+
+        $('#timeWidthTest').remove();
 
     };
 
@@ -98,6 +138,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
             return recipients;
         }
+    };
+
+    /**
+     * Return if we can display the placeholder or not
+     * @param {Boolean}
+     */
+    $scope.placeholder = function() {
+        return $rootScope.layoutMode === 'columns' && ($rootScope.idDefined() === false || ($rootScope.idDefined() === true && $rootScope.numberElementChecked > 0));
     };
 
     $scope.startWatchingEvent = function() {

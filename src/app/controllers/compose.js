@@ -574,7 +574,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $timeout(function() {
             $rootScope.$broadcast('squireHeightChanged');
             $scope.composerStyle();
-            $scope.onAddFile(message);
             // forward case: we need to save to get the attachments
             if(save === true) {
                 $scope.save(message, true, false).then(function() { // message, forward, notification
@@ -583,17 +582,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 }, function(error) {
                     $log.error(error);
                 });
-            }
-        });
-    };
-
-    $scope.onAddFile = function(message) {
-        $('#uid' + message.uid + ' .btn-add-attachment').on('click touchstart', function() {
-            if(angular.isUndefined(message.ID)) {
-                // We need to save to get an ID
-                    $scope.addFile(message);
-            } else {
-                $scope.addFile(message);
             }
         });
     };

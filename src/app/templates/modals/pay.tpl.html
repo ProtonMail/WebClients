@@ -23,9 +23,9 @@
                     </tbody>
                 </table>
                 <div ng-show="ctrl.amountDue > 0">
-                    <p>Select your payment method</p>
+                    <label for="paymentMethod" class="margin">Select your payment method</label>
                     <span class="pm_select">
-                        <select ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
+                        <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>

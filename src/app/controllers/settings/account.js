@@ -18,7 +18,7 @@ angular.module('proton.controllers.Settings')
     Organization,
     tools,
     User
-) {
+) {    
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;

@@ -59,9 +59,19 @@ angular.module("proton.controllers.Auth", [
             $scope.getLoginHelp();
         }
 
+        // Detect if the current browser have session storage enable
         if (tools.hasSessionStorage() === false) {
             notify({
-                message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.',
+                message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.',
+                classes: 'notification-danger',
+                duration: '0'
+            });
+        }
+
+        // Detect if the current browser have cookie enable
+        if (tools.hasCookie() === false) {
+            notify({
+                message: 'Cookie are disabled.\nPlease activate it and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.',
                 classes: 'notification-danger',
                 duration: '0'
             });

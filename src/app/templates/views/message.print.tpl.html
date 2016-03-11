@@ -19,13 +19,13 @@
             <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
             <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
             <i class="fa fa-lock"></i>
-            <b>{{ message.Time | longReadableTime }}</b>
+            <b>{{ message.Time | localReadableTime }}</b>
         </span>
     </p>
 
     <p>
         <span>{{ 'FROM' | translate }}: </span>
-        <b>{{ message.Sender.Name || message.Sender.Address }}</b>
+        <b>{{ message.Sender.Name }} {{ message.Sender.Address }}</b>
     </p>
 
     <p ng-if="message.ToList.length">
