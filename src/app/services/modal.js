@@ -489,7 +489,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('payModal', function(pmModal, Payment) {
+.factory('payModal', function(pmModal, Payment, notify) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/pay.tpl.html',
