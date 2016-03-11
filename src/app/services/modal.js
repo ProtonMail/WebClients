@@ -529,8 +529,8 @@ angular.module("proton.modals", [])
 
             this.initPaypal = function() {
                 Payment.paypal({
-                    Amount : params.AmountDue,
-                    Currency : params.Currency
+                    Amount: params.amountDue,
+                    Currency: params.currency
                 }).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         this.approvalURL = result.data.ApprovalURL;
