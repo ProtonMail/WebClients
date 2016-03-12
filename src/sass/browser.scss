@@ -57,6 +57,9 @@
         line-height: normal;
     }
     #pm_composer .composer .pm_button {
+        line-height: ($composerRowHeight - 6);
+    }
+    #pm_composer .composer footer .pm_button {
         line-height: normal;
     }
     form.searchForm fieldset button,
