@@ -34,7 +34,10 @@
 
 // All Windows
 .ua-windows_nt {
-
+    .columns .conversation .selection input[type="checkbox"] {
+        position: relative;
+        top: 2px;
+    }
 }
 
 .ua-mac_os_x.ua_firefox,
