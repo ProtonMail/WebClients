@@ -44,7 +44,7 @@ module.exports = {
       "vendor/angular-route/angular-route.js",
       "vendor/moment/min/moment-with-locales.js",
       "vendor/underscore/underscore.js",
-      "vendor/DOMPurify/src/purify.js",
+      "vendor/dompurify/src/purify.js",
       "vendor/papaparse/papaparse.js",
       "vendor/ng-sortable/dist/ng-sortable.js",
       "vendor/angular-notify/dist/angular-notify.js",
