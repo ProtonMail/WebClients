@@ -54,7 +54,7 @@
         line-height: 35px;
     }
     .pm_button {
-        line-height: 30px;
+        line-height: normal;
     }
     #pm_composer .composer .pm_button {
         line-height: ($composerRowHeight - 6);
@@ -82,11 +82,11 @@
 .ua-windows_nt.ua-firefox {
     &.ua-firefox {
         #pm_composer .composer .pm_button {
-            line-height: 26px;
+            line-height: normal;
         }
         .pm_buttons a,
         .pm_button {
-            line-height: 30px;
+            line-height: normal;
         }
         #pm_sidebar section.sidebar .pm_button.round {
             line-height: 30px;
