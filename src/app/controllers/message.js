@@ -680,8 +680,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         base.ParentID = $scope.message.ID;
         base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
 
-        console.log($scope.message);
-
         if (action === 'reply') {
             base.Action = 0;
             base.Subject = ($scope.message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? $scope.message.Subject : re_prefix + ' ' + $scope.message.Subject;
