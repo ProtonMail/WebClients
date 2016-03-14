@@ -34,7 +34,10 @@
 
 // All Windows
 .ua-windows_nt {
-
+    .columns .conversation .selection input[type="checkbox"] {
+        position: relative;
+        top: 2px;
+    }
 }
 
 .ua-mac_os_x.ua_firefox,
@@ -51,10 +54,13 @@
         line-height: 35px;
     }
     .pm_button {
-        line-height: 30px;
+        line-height: normal;
     }
     #pm_composer .composer .pm_button {
         line-height: ($composerRowHeight - 6);
+    }
+    #pm_composer .composer footer .pm_button {
+        line-height: normal;
     }
     form.searchForm fieldset button,
     form.searchForm fieldset button .fa {
@@ -79,11 +85,11 @@
 .ua-windows_nt.ua-firefox {
     &.ua-firefox {
         #pm_composer .composer .pm_button {
-            line-height: 26px;
+            line-height: -moz-block-height;
         }
         .pm_buttons a,
         .pm_button {
-            line-height: 30px;
+            line-height: -moz-block-height;
         }
         #pm_sidebar section.sidebar .pm_button.round {
             line-height: 30px;
