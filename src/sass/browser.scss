@@ -54,13 +54,13 @@
         line-height: 35px;
     }
     .pm_button {
-        line-height: normal;
+        line-height: -moz-block-height;
     }
     #pm_composer .composer .pm_button {
         line-height: ($composerRowHeight - 6);
     }
     #pm_composer .composer footer .pm_button {
-        line-height: normal;
+        line-height: -moz-block-height;
     }
     form.searchForm fieldset button,
     form.searchForm fieldset button .fa {
