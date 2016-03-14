@@ -659,26 +659,24 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     // Return Message object to build response or forward
+    // TODO refactor this function
     var buildMessage = function(action) {
         var base = new Message();
         var br = '<br />';
-        var contentSignature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
-        var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
+        var contentSignature;
+        var signature;
         var blockquoteStart = '<blockquote class="protonmail_quote" type="cite">';
         var originalMessage = '-------- Original Message --------<br />';
-        var subject = 'Subject: ' + $scope.message.Subject + '<br />';
+        var subject = 'Subject: ' + $scope.message.Subject + br;
         var time = 'Local Time: ' + $filter('localReadableTime')($scope.message.Time) + '<br />UTC Time: ' + $filter('utcReadableTime')($scope.message.Time) + '<br />';
-        var from = 'From: ' + $scope.message.Sender.Address + '<br />';
-        var to = 'To: ' + tools.contactsToString($scope.message.ToList) + '<br />';
-        var cc = ($scope.message.CCList.length > 0)?('CC: ' + tools.contactsToString($scope.message.CCList) + '<br />'):('');
+        var from = 'From: ' + $scope.message.Sender.Address + br;
+        var to = 'To: ' + tools.contactsToString($scope.message.ToList) + br;
+        var cc = ($scope.message.CCList.length > 0)?('CC: ' + tools.contactsToString($scope.message.CCList) + br):'';
         var blockquoteEnd = '</blockquote>';
         var re_prefix = $translate.instant('RE:');
         var fw_prefix = $translate.instant('FW:');
         var re_length = re_prefix.length;
         var fw_length = fw_prefix.length;
-
-        base.ParentID = $scope.message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
 
         if (action === 'reply') {
             base.Action = 0;
@@ -729,6 +727,20 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             base.From = found;
         }
+
+        contentSignature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(base.From.Signature) + '</div>', {
+            ADD_ATTR: ['target'],
+            FORBID_TAGS: ['style', 'input', 'form']
+        });
+
+        if ($(contentSignature).text().length === 0 && $(contentSignature).find('img').length === 0) {
+            signature = br + br;
+        } else {
+            signature = br + br + contentSignature + br + br;
+        }
+
+        base.ParentID = $scope.message.ID;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
 
         return base;
     };

@@ -564,7 +564,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.uploading = 0;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
-        $scope.completedSignature(message);
+        $scope.insertSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
 
@@ -654,14 +654,31 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     };
 
-    $scope.completedSignature = function(message) {
+    /**
+     * Insert signature in the message body
+     * @param {Object} message
+     */
+    $scope.insertSignature = function(message) {
         if (angular.isUndefined(message.Body)) {
-            var signature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>', {
+            var content;
+            var space = '<br /><br />';
+
+            if (message.From.Signature === null) {
+                content = authentication.user.Signature;
+            } else {
+                content = message.From.Signature;
+            }
+
+            var signature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(content) + '</div>', {
                 ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style', 'input', 'form']
             });
 
-            message.Body = ($(signature).text().length === 0 && $(signature).find('img').length === 0)? "" : "<br /><br />" + signature;
+            if ($(signature).text().length === 0 && $(signature).find('img').length === 0) {
+                message.Body = space;
+            } else {
+                message.Body = space + signature;
+            }
         }
     };
 
@@ -982,31 +999,27 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     /**
-     * Update the signature
+     * Call when the user change the FROM
      * @param {Resource} message - Message to save
      */
-    $scope.updateSignature = function(message) {
-        // update signature
-
-        // ==============================
-        // start unfinished code (PANDA):
+    $scope.changeFrom = function(message) {
         var currentBody = $.parseHTML(message.Body);
-        var tempDom = $('<div>').append(currentBody);
-        var sig = tempDom.find(".protonmail_signature_block").html();
+        var tempDOM = $('<div>').append(currentBody);
+        var signature = tempDOM.find('.protonmail_signature_block').first().html();
 
-        console.log(sig);
+        if (signature && signature.length > 0) {
+            if (message.From.Signature === null) {
+                tempDOM.find('.protonmail_signature_block').html(authentication.user.Signature);
+            } else {
+                tempDOM.find('.protonmail_signature_block').html(message.From.Signature);
+            }
 
-        if (sig && sig.length > 0) {
-            tempDom.find(".protonmail_signature_block").html(message.From.Signature);
-            message.Body = tempDom.html();
+            message.Body = tempDOM.html();
         }
-        // end unfinished code (PANDA):
-        // ==============================
 
         // save when DOM is updated
         $scope.save(message, false, false, true);
     };
-
 
     /**
      * Save the Message
