@@ -116,13 +116,16 @@
                         </div>
                     </div>
                     <div ng-show="ctrl.choice.value === 'paypal'">
-                        <p ng-show="!ctrl.approvalURL && ctrl.paypalNetworkError !== true">
+                        <p ng-show="!ctrl.approvalURL && ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false">
                             <i class="fa fa-spin fa-spinner"></i> {{ 'LOADING' | translate }}...
                         </p>
                         <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">Error connecting to PayPal. <a href="#" ng-click="ctrl.initPaypal()">Click here</a> to try again.</p>
-                        <p class="alert alert-info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
-                        <p class="text-center">
-                            <a href="#" ng-show="ctrl.approvalURL" ng-click="ctrl.openPaypalTab()">
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 1">We only accept PayPal for annual subscriptions, click here to switch to an annual subscription. <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 2">We only accept PayPal for annual subscriptions. PayPal is also only accepted for USD plans. Click here to switch to an annual USD subscription. <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 3">All PayPal orders are charged in USD, click here to change your subscription to USD. <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
+                        <p class="alert alert-info" ng-show="ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
+                        <p class="text-center" ng-show="ctrl.approvalURL">
+                            <a href="#" ng-click="ctrl.openPaypalTab()">
                                 <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
                             </a>
                         </p>

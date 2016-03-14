@@ -464,7 +464,6 @@ angular.module("proton.controllers.Settings")
                                     $scope.changeCurrency(currency)
                                     .then(function() {
                                         $scope.choose(_.findWhere($scope.plans, {Name: name, Cycle: cycle, Currency: currency}), 'paypal');
-                                        notify('All PayPal orders are charged in USD, we have switched your currency to USD');
                                     });
                                 },
                                 cancel: function() {

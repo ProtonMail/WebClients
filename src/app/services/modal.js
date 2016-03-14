@@ -611,6 +611,8 @@ angular.module("proton.modals", [])
                 {value: 'paypal', label: 'PayPal'},
                 {value: 'bitcoin', label: 'Bitcoin'}
             ];
+            this.paypalNetworkError = false;
+            this.paypalAccessError = false;
             this.choice = this.choices[0];
             this.displayCoupon = false;
             this.step = 'payment';
@@ -869,8 +871,12 @@ angular.module("proton.modals", [])
                 if (this.choice.value === 'paypal') {
                     if (this.valid.Currency === 'USD' && this.valid.Cycle === 12) {
                         this.initPaypal();
-                    } else {
-                        this.switch(12, 'USD');
+                    } else if (this.valid.Currency === 'USD' && this.valid.Cycle === 1) {
+                        this.paypalAccessError = 1; // We only accept PayPal for annual subscriptions, click here to switch to an annual subscription. [Change Subscription]
+                    } else if (this.valid.Currency !== 'USD' && this.valid.Cycle === 1) {
+                        this.paypalAccessError = 2; // We only accept PayPal for annual subscriptions. PayPal is also only accepted for USD plans. Click here to switch to an annual USD subscription. [Change Subscription]
+                    } else if (this.valid.Currency !== 'USD' && this.valid.Cycle === 12) {
+                        this.paypalAccessError = 3; // All PayPal orders are charged in USD, click here to change your subscription to USD. [Change Subscription]
                     }
                 }
             };
