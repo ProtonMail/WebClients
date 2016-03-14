@@ -9,7 +9,7 @@ angular.module('proton.controllers.Settings')
     aliasModal,
     authentication,
     confirmModal,
-    editAddressModal,
+    identityModal,
     CONSTANTS,
     Domain,
     eventManager,
@@ -122,34 +122,36 @@ angular.module('proton.controllers.Settings')
     /**
      * Open a modal to edit an address
      */
-    $scope.edit = function(address) {
-        editAddressModal.activate({
+    $scope.identity = function(address) {
+        identityModal.activate({
             params: {
                 title: $translate.instant('EDIT_ADDRESS'),
                 address: address,
-                confirm: function() {
-                    if (address.addressMeta === 'false') {
+                confirm: function(address) {
+                    if (address.custom === false) {
                         address.DisplayName = null;
                         address.Signature = null;
                     }
 
-                    networkActivityTracker.track(Address.edit(address.ID, {DisplayName: address.DisplayName, Signature: address.Signature})
-                    .then(function(result) {
-                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            eventManager.call();
-                            notify({message: $translate.instant('ADDRESS_UPDATED'), classes: 'notification-success'});
-                            editAddressModal.deactivate();
-                        } else if(angular.isDefined(result.data) && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: $translate.instant('ERROR_DURING_UPDATED'), classes: 'notification-danger'});
-                        }
-                    }, function(error) {
-                        notify({message: $translate.instant('ERROR_DURING_UPDATED'), classes: 'notification-danger'});
-                    }));
+                    networkActivityTracker.track(
+                        Address.edit(address.ID, {DisplayName: address.DisplayName, Signature: address.Signature})
+                        .then(function(result) {
+                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                eventManager.call();
+                                notify({message: $translate.instant('ADDRESS_UPDATED'), classes: 'notification-success'});
+                                identityModal.deactivate();
+                            } else if(angular.isDefined(result.data) && result.data.Error) {
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            } else {
+                                notify({message: $translate.instant('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+                            }
+                        }, function(error) {
+                            notify({message: $translate.instant('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+                        })
+                    );
                 },
                 cancel: function() {
-                    editAddressModal.deactivate();
+                    identityModal.deactivate();
                 }
             }
         });

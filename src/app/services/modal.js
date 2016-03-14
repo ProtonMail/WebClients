@@ -1687,28 +1687,24 @@ angular.module("proton.modals", [])
 })
 
 // edit address modal
-.factory('editAddressModal', function(pmModal) {
+.factory('identityModal', function(pmModal, authentication) {
     return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/identity.tpl.html',
         controller: function(params) {
-            this.title = params.title;
+            this.defaultDisplayName = authentication.user.DisplayName;
+            this.defaultSignature = authentication.user.Signature;
             this.address = params.address;
-
-            // TODO Initialize address.addressMeta
+            this.address.custom = this.address.DisplayName !== null && this.address.Signature !== null;
 
             this.confirm = function() {
-                if (angular.isDefined(params.confirm) && angular.isFunction(params.confirm)) {
-                    params.confirm();
-                }
+                params.confirm(this.address);
             };
 
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.cancel();
             };
-        },
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/editAddress.tpl.html'
+        }
     });
 })
 
