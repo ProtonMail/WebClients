@@ -280,7 +280,9 @@ angular.module("proton.event", ["proton.constants"])
 				} else if (data.Refresh === 1) {
 					eventModel.manageID(data.EventID);
 					cache.reset();
+					cacheCounters.reset();
 					cache.callRefresh();
+					cacheCounters.query();
 				} else if (data.Reload === 1) {
 					$window.location.reload();
 				} else if (this.isDifferent(data.EventID)) {

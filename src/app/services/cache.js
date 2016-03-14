@@ -910,7 +910,6 @@ angular.module("proton.cache", [])
     api.reset = function() {
         conversationsCached = [];
         messagesCached = [];
-        cacheCounters.reset();
     };
 
     /**
