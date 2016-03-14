@@ -177,6 +177,7 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    height: 100%;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
@@ -339,6 +340,8 @@
         margin-right: 0;
         clear: both;
         box-sizing: border-box;
+        height: calc(100% - 41px );
+        overflow: auto;
         .pm_sort ul li {
             .label {
                 white-space: nowrap;

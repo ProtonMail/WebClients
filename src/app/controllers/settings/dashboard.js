@@ -229,18 +229,25 @@ angular.module("proton.controllers.Settings")
      * Change current currency
      */
     $scope.changeCurrency = function(currency) {
-        var promise = $q.all({
-            monthly: Payment.plans(currency, 1),
-            yearly: Payment.plans(currency, 12)
-        })
-        .then(function(result) {
-            $scope.configuration.currency = currency;
-            $scope.initialization(undefined, result.monthly.data.Plans, result.yearly.data.Plans);
-        });
+        var deferred = $q.defer();
 
-        networkActivityTracker.track(promise);
+        if ($scope.configuration.Currency === currency) {
+            deferred.resolve();
+        } else {
+            $q.all({
+                monthly: Payment.plans(currency, 1),
+                yearly: Payment.plans(currency, 12)
+            })
+            .then(function(result) {
+                $scope.configuration.currency = currency;
+                $scope.initialization(undefined, result.monthly.data.Plans, result.yearly.data.Plans);
+                deferred.resolve();
+            });
 
-        return promise;
+            networkActivityTracker.track(deferred.promise);
+        }
+
+        return deferred.promise;
     };
 
     /**
@@ -391,7 +398,7 @@ angular.module("proton.controllers.Settings")
     * Open modal to pay the plan configured
     * @param {Object} plan
     */
-    $scope.choose = function(plan) {
+    $scope.choose = function(plan, choice) {
         if (plan.Name === 'free') {
             $scope.free();
         } else {
@@ -440,15 +447,24 @@ angular.module("proton.controllers.Settings")
                                 planIDs: planIDs,
                                 plans: $scope.plans,
                                 valid: valid.data,
+                                choice: choice,
                                 methods: methods.data.PaymentMethods,
                                 change: function(subscription) {
                                     $scope.refresh();
                                     paymentModal.deactivate();
                                 },
-                                yearly: function() {
+                                switch: function(cycle, currency) {
+                                    // Set default values
+                                    cycle = cycle || $scope.configuration.cycle;
+                                    currency = currency || $scope.configuration.currency;
+                                    // Close payment modal
                                     paymentModal.deactivate();
-                                    $scope.changeCycle(12);
-                                    $scope.choose(_.findWhere($scope.plans, {Name: name, Cycle: 12}));
+
+                                    $scope.changeCycle(cycle);
+                                    $scope.changeCurrency(currency)
+                                    .then(function() {
+                                        $scope.choose(_.findWhere($scope.plans, {Name: name, Cycle: cycle, Currency: currency}), 'paypal');
+                                    });
                                 },
                                 cancel: function() {
                                     paymentModal.deactivate();

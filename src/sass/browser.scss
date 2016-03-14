@@ -85,11 +85,11 @@
 .ua-windows_nt.ua-firefox {
     &.ua-firefox {
         #pm_composer .composer .pm_button {
-            line-height: normal;
+            line-height: -moz-block-height;
         }
         .pm_buttons a,
         .pm_button {
-            line-height: normal;
+            line-height: -moz-block-height;
         }
         #pm_sidebar section.sidebar .pm_button.round {
             line-height: 30px;

@@ -132,7 +132,7 @@
         </div>
 
         <div ng-if="verificator === 'recaptcha'" id="recaptchaFrame">
-            <span class="loading">Loading...</span>
+            <span class="loading">{{ 'LOADING' | translate }}...</span>
             <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
         </div>
 
