@@ -12,18 +12,6 @@
         </fieldset>
     </form>
     <ul class="navigation">
-        <li>
-            <a id="tour-support" href="#" ng-click="openReportModal()">
-                <em><i class="fa fa-bug"></i></em>
-                <strong>{{ 'REPORT_BUG' | translate }}</strong>
-            </a>
-        </li>
-        <li ui-sref-active="active">
-            <a ui-sref="secured.contacts">
-                <em><i class="fa fa-users"></i></em>
-                <strong>{{ 'CONTACTS' | translate }}</strong>
-            </a>
-        </li>
         <li ng-class="{'active': activeSettings()}">
             <a id="tour-settings" ui-sref="secured.dashboard" ng-show="user.Role === 0 || user.Role === 2">
                 <em><i class="fa fa-cogs"></i></em>
@@ -32,6 +20,18 @@
             <a id="tour-settings" ui-sref="secured.account" ng-show="user.Role === 1">
                 <em><i class="fa fa-cogs"></i></em>
                 <strong>{{ 'SETTINGS' | translate }}</strong>
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="secured.contacts">
+                <em><i class="fa fa-users"></i></em>
+                <strong>{{ 'CONTACTS' | translate }}</strong>
+            </a>
+        </li>
+        <li>
+            <a id="tour-support" href="#" ng-click="openReportModal()">
+                <em><i class="fa fa-bug"></i></em>
+                <strong>{{ 'REPORT_BUG' | translate }}</strong>
             </a>
         </li>
         <li>
