@@ -240,6 +240,26 @@ module.exports = function(grunt) {
                     nonull: true
                 }]
             },
+            compile_paypal: {
+                files: [{
+                    src: ["*"],
+                    filter: "isFile",
+                    expand: true,
+                    dest: "<%= compile_dir %>",
+                    cwd: "./src/paypal",
+                    nonull: true
+                }]
+            },
+            build_paypal: {
+                files: [{
+                    src: ["*"],
+                    filter: "isFile",
+                    expand: true,
+                    dest: "<%= build_dir %>",
+                    cwd: "./src/paypal",
+                    nonull: true
+                }]
+            },
         },
 
         sass: {
@@ -529,6 +549,7 @@ module.exports = function(grunt) {
         'index:compile', // index CSS and JS
         'cacheBust', // bust CSS and JS
         'shell:push', // push code to deploy branch
+        'copy:compile_paypal',
         'wait:push'
     ]);
 
@@ -542,6 +563,7 @@ module.exports = function(grunt) {
         'copy:build_vendorjs',
         'copy:build_external',
         'copy:build_htaccess',
+        'copy:build_paypal',
         'ngAnnotate',
         'index:build'
     ]);
