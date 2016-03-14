@@ -84,7 +84,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if (width > 0) {
 
             // lets set some CSS to update our time elements
-            var style = "<style>.conversation .row .meta em.time { width: "+ width +"px !important; } .conversation .row .meta, .conversation .row .pm_labels { width: "+ (width+40) +"px !important;} .conversation .row h4 { width: calc(100% - "+ (width+45) +"px) !important; }</style>";
+            var style = "<style>.conversation .row .meta em.time { width: "+ width +"px !important; } .conversation .row .meta { width: "+ (width+40) +"px !important;} .conversation .row h4 { width: calc(100% - "+ (width+45) +"px) !important; }</style>";
 
             // inject CSS into DOM
             $('body').append(style);
