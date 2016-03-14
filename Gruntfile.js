@@ -548,8 +548,8 @@ module.exports = function(grunt) {
         'copy:compile_external', // copy openpgp
         'index:compile', // index CSS and JS
         'cacheBust', // bust CSS and JS
-        'shell:push', // push code to deploy branch
         'copy:compile_paypal',
+        'shell:push', // push code to deploy branch
         'wait:push'
     ]);
 
