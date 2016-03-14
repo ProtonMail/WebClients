@@ -82,14 +82,14 @@ body {
                     .fa-repeat {
                         float: right;
                         display: block;
-                        line-height: ($sidebarRowHeight - 4 - $sidebarReduction);
-                        height: ($sidebarRowHeight - 4 - $sidebarReduction);
+                        line-height: 100%;
+                        height: ($sidebarRowHeight - 2 - $sidebarReduction);
                         margin-right: 15px;
                         position: absolute;
                         right: 0;
                         top: 0;
                         cursor: pointer;
-                        z-index: 4;
+                        z-index: 42;
                         background: transparent;
                         color: rgba(255,255,255,.35);
                         -webkit-appearance: none;

@@ -12,7 +12,7 @@ angular.module('proton.constants', [])
     FREE_USER: 0,
     PAID_MEMBER: 1,
     PAID_ADMIN: 2,
-    ATTACHMENT_SIZE_LIMIT: 15, // MB
+    ATTACHMENT_SIZE_LIMIT: 25, // MB
     ATTACHMENT_NUMBER_LIMIT: 100,
     MAX_TITLE_LENGTH: 255,
     MAX_NUMBER_COMPOSER: 3,

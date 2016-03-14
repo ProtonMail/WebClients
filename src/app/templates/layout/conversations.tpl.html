@@ -16,5 +16,5 @@
     <toolbar></toolbar>
     <conversation ui-view="view"></conversation>
     <div id="pm_view" ui-view="view" ng-if="idDefined() && !mobileMode"></div>
-    <div ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns" ng-if="!idDefined()"></div>
+    <div ng-include src="'templates/partials/conversation-placeholder.tpl.html'" id="pm_view" class="columns desktopOnly" ng-if="!idDefined()"></div>
 </section>
