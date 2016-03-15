@@ -9,6 +9,7 @@ angular.module('proton.controllers.Settings')
     aliasModal,
     authentication,
     confirmModal,
+    identityModal,
     CONSTANTS,
     Domain,
     eventManager,
@@ -23,12 +24,19 @@ angular.module('proton.controllers.Settings')
     $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
+    $scope.itemMoved = false;
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: '.pm_form',
         accept: function(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
+        },
+        dragStart: function() {
+            $scope.itemMoved = true;
+        },
+        dragEnd: function() {
+            $scope.itemMoved = false;
         },
         orderChanged: function() {
             var addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
@@ -50,8 +58,10 @@ angular.module('proton.controllers.Settings')
 
     // Listeners
     $scope.$on('updateUser', function(event) {
-        $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
-        $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
+        if ($scope.itemMoved === false) {
+            $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
+            $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
+        }
     });
 
     $scope.$on('organizationChange', function(event, organization) {
@@ -113,6 +123,44 @@ angular.module('proton.controllers.Settings')
                 },
                 cancel: function() {
                     confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Open a modal to edit an address
+     */
+    $scope.identity = function(address) {
+        identityModal.activate({
+            params: {
+                title: $translate.instant('EDIT_ADDRESS'),
+                address: address,
+                confirm: function(address) {
+                    if (address.custom === false) {
+                        address.DisplayName = null;
+                        address.Signature = null;
+                    }
+
+                    networkActivityTracker.track(
+                        Address.edit(address.ID, {DisplayName: address.DisplayName, Signature: address.Signature})
+                        .then(function(result) {
+                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                eventManager.call();
+                                notify({message: $translate.instant('ADDRESS_UPDATED'), classes: 'notification-success'});
+                                identityModal.deactivate();
+                            } else if(angular.isDefined(result.data) && result.data.Error) {
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            } else {
+                                notify({message: $translate.instant('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+                            }
+                        }, function(error) {
+                            notify({message: $translate.instant('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+                        })
+                    );
+                },
+                cancel: function() {
+                    identityModal.deactivate();
                 }
             }
         });
