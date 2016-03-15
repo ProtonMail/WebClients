@@ -53,6 +53,14 @@
     .pm_button.primary.compose {
         line-height: 35px;
     }
+    .pm_labels {
+        label {
+            line-height: -moz-block-height;
+            &.closed:hover {
+                line-height: -moz-block-height;
+            }
+        }
+    }
     .pm_button {
         line-height: -moz-block-height;
     }
