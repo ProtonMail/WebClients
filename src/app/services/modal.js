@@ -1697,6 +1697,30 @@ angular.module("proton.modals", [])
     });
 })
 
+// edit address modal
+.factory('identityModal', function(pmModal, authentication) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/identity.tpl.html',
+        controller: function(params) {
+            this.defaultDisplayName = authentication.user.DisplayName;
+            this.defaultSignature = authentication.user.Signature;
+            this.address = params.address;
+            this.address.DisplayName = this.address.DisplayName || authentication.user.DisplayName;
+            this.address.Signature = this.address.Signature || authentication.user.Signature;
+            this.address.custom = true;
+
+            this.confirm = function() {
+                params.confirm(this.address);
+            };
+
+            this.cancel = function() {
+                params.cancel();
+            };
+        }
+    });
+})
+
 .factory('welcomeModal', function(pmModal, Setting, authentication, networkActivityTracker, $q) {
     return pmModal({
         controllerAs: 'ctrl',

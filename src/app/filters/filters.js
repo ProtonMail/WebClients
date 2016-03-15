@@ -268,7 +268,7 @@ angular.module("proton.filters",[])
         } else if (parameter === 'Address') {
             return '<' + contact.Address + '>';
         } else if (parameter === 'Name') {
-            if (angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
+            if (angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0 && found.Name !== found.Email) {
                 return found.Name;
             } else if (angular.isDefined(contact.Name) && contact.Name.length > 0) {
                 return contact.Name;
