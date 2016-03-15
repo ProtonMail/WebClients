@@ -12,12 +12,14 @@
         </fieldset>
     </form>
     <ul class="navigation">
-        <li ng-class="{'active': activeSettings()}">
-            <a id="tour-settings" ui-sref="secured.dashboard" ng-show="user.Role === 0 || user.Role === 2">
-                <em><i class="fa fa-cogs"></i></em>
-                <strong>{{ 'SETTINGS' | translate }}</strong>
+        <li ui-sref-active="active">
+            <a ui-sref="secured.dashboard">
+                <em><i class="fa fa-arrow-up"></i></em>
+                <strong>{{ 'UPGRADE' | translate }}</strong>
             </a>
-            <a id="tour-settings" ui-sref="secured.account" ng-show="user.Role === 1">
+        </li>
+        <li ng-class="{'active': activeSettings()}">
+            <a id="tour-settings" ui-sref="secured.account">
                 <em><i class="fa fa-cogs"></i></em>
                 <strong>{{ 'SETTINGS' | translate }}</strong>
             </a>
@@ -54,7 +56,7 @@
                     {{ 'LOGOUT' | translate }}
                     </a>
                     <a href="https://protonmail.com/blog/protonmail-beta-v3-1-release-notes/" target="_blank" class="version" title="{{ dateVersion }}" target="_blank">
-                        <small>ProtonMail <span>BETA</span> {{ appVersion }}</small>
+                        <small>ProtonMail {{ appVersion }}</small>
                     </a>
                 </span>
             </span>
