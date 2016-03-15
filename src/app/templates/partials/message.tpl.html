@@ -73,7 +73,7 @@ ng-class="{
         </div>
     </div>
 
-    <div class="details" ng-show="message.expand" ng-class="{ 'open': message.labelDropdownOpen || message.moreDropdownOpen }">
+    <div class="details" ng-show="message.expand">
 
         <div class="recipients-summary" ng-hide="toggleDetails === true">
             <strong>{{ 'TO' | translate }}: </strong>
@@ -167,7 +167,7 @@ ng-class="{
                     <a class="divider" ng-click="forward(message)" pt-tooltip="{{ 'FORWARD' | translate }}">
                         <i class="fa fa-mail-forward"></i>
                     </a>
-                    <a href="#" class="divider pm_trigger" dropdown pt-tooltip="{{ 'MORE' | translate }}" ng-click="message.moreDropdownOpen = !message.moreDropdownOpen">
+                    <a href="#" class="divider pm_trigger" dropdown pt-tooltip="{{ 'MORE' | translate }}">
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <span class="pm_dropdown wide right">
