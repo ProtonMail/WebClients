@@ -55,6 +55,7 @@ $modalMargin: 2rem;
         bottom: 0;
         z-index: 1;
         background: rgba(0,0,0,.2);
+        pointer-events: none;
     }
     .modal-dialog {
         position: absolute;
