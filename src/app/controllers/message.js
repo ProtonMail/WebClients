@@ -449,10 +449,18 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         if (attachment.KeyPackets === undefined) {
             return att.then( function(result) {
-                $scope.downloadAttachment(attachment);
-                attachment.decrypting = false;
-                attachment.decrypted = true;
-                $scope.$apply();
+
+                $timeout(function(){
+                    $scope.downloadAttachment({
+                        data: result.data,
+                        Name: attachment.Name,
+                        MIMEType: attachment.MIMEType,
+                        el: link,
+                    });
+                    attachment.decrypting = false;
+                    attachment.decrypted = true;
+                });
+
             });
         } else {
             var attachmentStored = _.findWhere($scope.attachmentsStorage, {ID: attachment.ID});
@@ -479,6 +487,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     "key": key
                  }).then(
                     function(obj) {
+
                         // create new Uint8Array to store decryted attachment
                         var at = new Uint8Array(obj.attObject.data);
 
