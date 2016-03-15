@@ -605,12 +605,23 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
+
+            // IE11 doesn't support PayPal
+            if ($('html').hasClass('ua-ie-11-0')) {
+                this.choices = [
+                    {value: 'card', label: $translate.instant('CREDIT_CARD')},
+                    {value: 'bitcoin', label: 'Bitcoin'}
+                ];
+            }
+            else {
+                this.choices = [
+                    {value: 'card', label: $translate.instant('CREDIT_CARD')},
+                    {value: 'paypal', label: 'PayPal'},
+                    {value: 'bitcoin', label: 'Bitcoin'}
+                ];
+            }
+
             // Variables
-            this.choices = [
-                {value: 'card', label: $translate.instant('CREDIT_CARD')},
-                {value: 'paypal', label: 'PayPal'},
-                {value: 'bitcoin', label: 'Bitcoin'}
-            ];
             this.paypalNetworkError = false;
             this.paypalAccessError = false;
             this.choice = this.choices[0];
