@@ -50,9 +50,6 @@
 
 // All Firefox
 .ua-firefox {
-    .pm_button.primary.compose {
-        line-height: 35px;
-    }
     .pm_labels {
         label {
             line-height: -moz-block-height;
@@ -63,9 +60,6 @@
     }
     .pm_button {
         line-height: -moz-block-height;
-    }
-    #pm_composer .composer .pm_button {
-        line-height: ($composerRowHeight - 6);
     }
     #pm_composer .composer footer .pm_button {
         line-height: -moz-block-height;
@@ -125,9 +119,6 @@
     .pm_button,
     .pm_buttons a {
         overflow: hidden;
-    }
-    body section.sidebar a.compose {
-        line-height: 40px;
     }
     header#pm_header .pull-right {
         height: 61px;
