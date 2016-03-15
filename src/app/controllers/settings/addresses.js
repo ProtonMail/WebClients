@@ -24,12 +24,19 @@ angular.module('proton.controllers.Settings')
     $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
+    $scope.itemMoved = false;
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
         containment: '.pm_form',
         accept: function(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
+        },
+        dragStart: function() {
+            $scope.itemMoved = true;
+        },
+        dragEnd: function() {
+            $scope.itemMoved = false;
         },
         orderChanged: function() {
             var addresses = $scope.activeAddresses.concat($scope.disabledAddresses);
@@ -51,8 +58,10 @@ angular.module('proton.controllers.Settings')
 
     // Listeners
     $scope.$on('updateUser', function(event) {
-        $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
-        $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
+        if ($scope.itemMoved === false) {
+            $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
+            $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
+        }
     });
 
     $scope.$on('organizationChange', function(event, organization) {
