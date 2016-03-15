@@ -239,10 +239,6 @@
             padding: 0 10px 10px;
             clear: both;
             position: relative;
-            z-index: 3;
-            &.open {
-                z-index: 99;
-            }
             .pm_buttons {
                 a {
                     background: #fff;
