@@ -9,6 +9,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $stateParams,
     $timeout,
     $translate,
+    $filter,
     authentication,
     cache,
     CONFIG,
@@ -34,6 +35,8 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         activeClass: 'drop-active',
         hoverClass: 'drop-hover'
     };
+
+    $scope.appVersion = CONFIG.app_version;
 
     $scope.hideMobileSidebar = function() {
         $rootScope.$broadcast('sidebarMobileToggle', false);

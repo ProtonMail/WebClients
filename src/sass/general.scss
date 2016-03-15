@@ -81,7 +81,19 @@ html.protonmail {
 		padding: 15px;
 		border: 1px solid $border;
 	}
+	.margin-top {
+		margin-top: 10px;
+	}
+	.margin-right {
+		margin-right: 10px;
+	}
 	.margin-bottom {
-		margin-bottom: 15px;
+		margin-bottom: 10px;
+	}
+	.margin-left {
+		margin-left: 10px;
+	}
+	.dull {
+		opacity: .5;
 	}
 }

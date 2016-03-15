@@ -1,7 +1,7 @@
-<div id="pm_latest" ng-show="showWelcome === true" ng-if="!idDefined() && !mobileMode">
+<div id="pm_latest" ng-show="showWelcome === true">
     <header>Welcome, {{ user.DisplayName }}</header>
     <p class="text-center">You have <strong>{{ numberElementUnread }}</strong> unread conversations.</p>
-    <section id="storageStatus">
+    <section id="storageStatus" ng-show="user.UsedSpace > 0">
     	<div class="wrap">
             <div class="storageArea">
 	            <span class="current">{{ user.UsedSpace | humanSize }}</span>
@@ -9,9 +9,6 @@
 	                <em style="width: {{ storagePercentage() }}%"></em>
 	            </div>
 	            <span class="total">{{ user.MaxSpace | humanSize }}</span>
-            </div>
-			<div class="link">
-                <!-- <a ui-sref="secured.dashboard">{{ 'UPGRADE_STORAGE' | translate }}</a> -->
             </div>
             <span>You have used <strong>{{ storagePercentage() }}%</strong> of your current storage space.</span>
         </div>
@@ -40,9 +37,9 @@
     </div>
 </div>
 
-<div id="pm_placeholder" ng-show="showWelcome === false" ng-if="!idDefined() && !mobileMode">
+<div id="pm_placeholder" ng-show="showWelcome === false">
     <i class="fa fa-check-square"></i>
-    <h2 ng-show="numberElementChecked === 0 || numberElementChecked === 1">{{ numberElementChecked }} {{ 'CONVERSATION_SELECTED' | translate }}</h2>
-    <h2 ng-show="numberElementChecked > 1">{{ numberElementChecked }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
+    <h2 ng-show="numberElementChecked === 1">{{ numberElementChecked }} {{ 'CONVERSATION_SELECTED' | translate }}</h2>
+    <h2 ng-show="numberElementChecked === 0 || numberElementChecked > 1">{{ numberElementChecked }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
     <button class="pm_button" ng-show="numberElementChecked > 0" ng-click="deselectAll()">{{ 'DESELECT_ALL' | translate }}</button>
 </div>

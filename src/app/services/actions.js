@@ -23,26 +23,16 @@ angular.module('proton.actions', [])
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
             var toInbox = mailbox === 'inbox';
+            var current = tools.currentLocation();
+            var labelIDsRemoved = [];
+
+            if (tools.currentMailbox() !== 'label') {
+                labelIDsRemoved.push(current);
+            }
 
             // Generate cache events
             _.each(ids, function(id) {
                 var conversation = cache.getConversationCached(id);
-                var current;
-
-                _.each(conversation.LabelIDs, function(labelID) {
-                    if ([
-                        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                        CONSTANTS.MAILBOX_IDENTIFIERS.archive
-                    ].indexOf(labelID) !== -1) {
-                        current = labelID;
-                    }
-                });
-
-                var labelIDsRemoved = [current];
                 var messages = cache.queryMessagesCached(id);
                 var element = {
                     ID: id,
@@ -131,7 +121,10 @@ angular.module('proton.actions', [])
 
             if (alsoArchive === true) {
                 toApplyConversation.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                toRemoveConversation.push(current);
+
+                if (tools.currentMailbox() !== 'label') {
+                    toRemoveConversation.push(current);
+                }
             }
 
             _.each(ids, function(conversationID) {
@@ -140,7 +133,6 @@ angular.module('proton.actions', [])
 
                 if (angular.isArray(messages) && messages.length > 0) {
                     _.each(messages, function(message) {
-                        var current;
                         var toApplyMessage = _.chain(labels)
                             .filter(function(label) {
                                 return label.Selected === true;
@@ -161,22 +153,12 @@ angular.module('proton.actions', [])
 
                         message.LabelIDs = message.LabelIDs || [];
 
-                        _.each(message.LabelIDs, function(labelID) {
-                            if ([
-                                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                                CONSTANTS.MAILBOX_IDENTIFIERS.archive
-                            ].indexOf(labelID) !== -1) {
-                                current = labelID;
-                            }
-                        });
-
                         if (alsoArchive === true) {
                             toApplyMessage.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                            toRemoveMessage.push(current);
+
+                            if (tools.currentMailbox() !== 'label') {
+                                toRemoveMessage.push(current);
+                            }
                         }
 
                         events.push({Action: 3, ID: message.ID, Message: {
@@ -585,7 +567,10 @@ angular.module('proton.actions', [])
 
                 if(alsoArchive === true) {
                     toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                    toRemove.push(current);
+
+                    if (tools.currentMailbox() !== 'label') {
+                        toRemove.push(current);
+                    }
                 }
 
                 var element = {

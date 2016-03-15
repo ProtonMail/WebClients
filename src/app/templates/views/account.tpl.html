@@ -2,24 +2,35 @@
 
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
-    <div class="settings" pt-height>
+    <div class="settings">
 
         <div class="row">
 
             <section class="setting pm_form">
-                <legend class="margin-top">{{ 'DISPLAY_NAME' | translate }}</legend>
-                <form method="post" ng-submit="saveDisplayName(displayNameForm)" name="displayNameForm" novalidate  >
-                    <div class="col left">
-                        <label for="displayName">{{ 'DISPLAY_NAME' | translate }}</label>
+                <legend>{{ 'DEFAULT_IDENTITY' | translate }}</legend>
+                <form method="post" ng-submit="saveIdentity(displayNameForm)" name="displayNameForm" novalidate>
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="displayName">{{ 'DISPLAY_NAME' | translate }} <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank"><i class="fa fa-info-circle"></i></a></label>
+                        </div>
+                        <div class="col right">
+                            <input id="displayName" type="text" name="displayName" ng-model="displayName" />
+                        </div>
                     </div>
-                    <div class="col right">
-                        <input id="displayName" type="text" name="displayName" ng-model="displayName" />
-                        <p>
-                            <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank" class="pm_button link">
-                                {{ 'WHAT_IS_THE_DISPLAY_NAME?' | translate }}
-                            </a>
-                        </p>
-                        <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label for="signature">{{ 'SIGNATURE' | translate }}</label>
+                        </div>
+                        <div class="col right">
+                            <squire id="signature" name="signature" class="form-control no-resize" ng-model="signature"></squire>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col left">&nbsp;</div>
+                        <div class="col right">
+                            <a ui-sref="secured.addresses" class="pm_button link pull-right">Manage Identity for my Addresses</a>
+                            <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
+                        </div>
                     </div>
                 </form>
             </section>
@@ -223,22 +234,6 @@
                 </div>
             </section>
 
-            <section class="setting"></section>
-
-        </div><!--/.row-->
-
-        <div class="row">
-
-            <section class="setting pm_form">
-                <legend>{{ 'SIGNATURE' | translate }}</legend>
-                <form method="post" ng-submit="saveSignature(signatureForm)" name="signatureForm" novalidate  >
-                    <div class="margin" ng-class="{'has-error': signatureForm.signature.$error.required}">
-                        <squire id="signature" name="signature" class="form-control no-resize" ng-model="signature"></squire>
-                    </div>
-                    <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
-                </form>
-            </section>
-
             <section class="setting pm_form pull-right">
                 <legend>{{ 'EMAIL_IMAGES' | translate }}</legend>
                 <form method="post" novalidate ng-submit="saveShowImages(showImages)" name="showImages"  >
@@ -270,7 +265,7 @@
                 </form>
             </section>
 
-        </div>
+        </div><!--/.row-->
 
         <!-- RENABLE IT AFTER -->
         <!-- <div class="row">

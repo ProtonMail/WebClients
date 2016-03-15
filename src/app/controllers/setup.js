@@ -23,9 +23,6 @@ angular.module("proton.controllers.Setup", [
     notify,
     token
 ) {
-
-    // var mellt = new Mellt();
-
     $scope.initialization = function() {
         // Variables
         $scope.tools    =           tools;

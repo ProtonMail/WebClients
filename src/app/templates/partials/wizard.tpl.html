@@ -8,7 +8,7 @@
         <h1 class="badge tada">01</h1>
         <h2 class="title fadeIn">Welcome to your new encrypted email account</h2>
         <div class="body fadeIn">
-            <p>This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it from the Settings page.</p>
+            <p>This short tutorial will show you the main features of your new ProtonMail account. For more information, you can also check out the Welcome email we have sent you. If you ever want to view this tutorial again, you can access it by clicking your username in the upper right corner.</p>
         </div>
     </div>
 
@@ -16,7 +16,7 @@
         <h1 class="badge tada">02</h1>
         <h2 class="title fadeIn">Personalize Your Layout</h2>
         <div class="body fadeIn">
-            <p>ProtonMail allows you to fully customize your inbox experience. By clicking <strong>(1)</strong> you can quickly switch between three possible layouts. You can set a default layout, set your composer style, adjust button layouts, and even switch themes under <em>Settings</em> --> <em>Appearance</em> <strong>(2)</strong></p>
+            <p>ProtonMail allows you to fully customize your inbox experience. By clicking <strong>(1)</strong> you can quickly switch between two possible layouts. You can set a default layout, set your composer style, adjust button layouts, and even switch themes under <em>Settings</em> --> <em>Appearance</em> <strong>(2)</strong></p>
         </div>
     </div>
 
@@ -24,7 +24,7 @@
         <h1 class="badge tada">03</h1>
         <h2 class="title fadeIn">Manage your email with labels</h2>
         <div class="body fadeIn">
-            <p>Labels are a powerful tool to manage your inbox. You can add and remove labels from selected emails by clicking the the Label button <strong>(1)</strong>. You can also add, delete, and edit labels by clicking on <em>Label Settings</em> <strong>(2)</strong>.</p>
+            <p>Labels are a powerful tool to manage your inbox. You can add and remove labels from selected emails by clicking the Label button <strong>(1)</strong>. You can also add, delete, and edit labels by clicking on <em>Label Settings</em> <strong>(2)</strong>.</p>
         </div>
     </div>
 
@@ -32,14 +32,13 @@
         <h1 class="badge tada">04</h1>
         <h2 class="title fadeIn">Help and Support</h2>
         <div class="body fadeIn">
-            <p>If you have questions or need help, please visit our support page to find troubleshooting guides and contact our support team. If you find a bug in ProtonMail, please let us know! You can send us a bug report by clicking <em>Report Bugs</em> <strong>(1)</strong></p>
+            <p>If you have questions or need help, please visit <a href="https://protonmail.com/support" target="_blank">our support page</a> to find troubleshooting guides and contact our support team. If you find a bug in ProtonMail, please let us know! You can send us a bug report by clicking <em>Report Bugs</em> <strong>(1)</strong></p>
         </div>
     </div>
 
     <div class="navigation">
-        <a href="#" class="next pm_button primary" ng-click="tourNext()">
-            {{ 'OKAY_NEXT_TIP' | translate }}
-        </a>
+        <a href="#" class="next pm_button primary" ng-click="tourNext()" ng-show="tourStep < 4">{{ 'OKAY_NEXT_TIP' | translate }}</a>
+        <a href="#" class="next pm_button primary" ng-click="tourEnd()" ng-show="tourStep === 4">{{ 'FINISH' | translate }}</a>
         <ul class="pagination">
             <li ng-class="{ 'active': tourStep === 1 }">
                 <a href="#" ng-click="tourGo(1)"></a>
@@ -52,9 +51,6 @@
             </li>
             <li ng-class="{ 'active': tourStep === 4 }">
                 <a href="#" ng-click="tourGo(4)"></a>
-            </li>
-            <li ng-class="{ 'active': tourStep === 5 }">
-                <a href="#" ng-click="tourGo(5)"></a>
             </li>
         </ul>
     </div>

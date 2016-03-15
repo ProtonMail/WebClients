@@ -244,48 +244,27 @@ angular.module('proton.controllers.Settings')
         }));
     };
 
-    $scope.saveDisplayName = function(form) {
+    $scope.saveIdentity = function() {
         var displayName = $scope.displayName;
-
-        // To avoid basic name spoofing such as "Security <secutity@protonmail.ch>, "
-        // if ( (displayName.indexOf("<") > -1) || (displayName.indexOf(">") > -1) || (displayName.indexOf("@") > -1) ) {
-        //     notify({message: "Invalid Display Name. '<', '>', '@' are not allowed.", classes: 'notification-danger'});
-        // } else {
-            networkActivityTracker.track(
-                Setting.display({'DisplayName': displayName}).$promise.then(function(response) {
-                    if (response.Code === 1000) {
-                        // We replace the value stored
-                        authentication.user.DisplayName = displayName;
-                        notify({message: $translate.instant('DISPLAY_NAME_SAVED'), classes: 'notification-success'});
-                    } else if (angular.isDefined(response.Error)) {
-                        // We restore the old value
-                        $scope.displayName = authentication.user.DisplayName;
-                        notify({message: response.Error, classes: 'notification-danger'});
-                    } else {
-                        notify({message: 'Error during the display name request', classes: 'notification-danger'});
-                    }
-                }, function(error) {
-                    notify({message: 'Error during the display name request', classes: 'notification-danger'});
-                    $log.error(error);
-                })
-            );
-        // }
-    };
-
-    $scope.saveSignature = function(form) {
         var signature = $scope.signature;
 
-        signature = signature.replace(/\n/g, "<br />");
+        signature = signature.replace(/\n/g, '<br />');
 
         networkActivityTracker.track(
-            Setting.signature({
-                "Signature": signature
-            }).$promise.then(function(response) {
-                authentication.user.Signature = signature;
-                notify({message: $translate.instant('SIGNATURE_SAVED'), classes: 'notification-success'});
-            }, function(error) {
-                notify({message: 'Error during the signature request', classes : 'notification-danger'});
-                $log.error(error);
+            $q.all({
+                displayName: Setting.display({'DisplayName': displayName}).$promise,
+                signature: Setting.signature({'Signature': signature}).$promise
+            })
+            .then(function(result) {
+                if (result.displayName.Code === 1000 && result.signature.Code === 1000) {
+                    authentication.user.DisplayName = displayName;
+                    authentication.user.Signature = signature;
+                    notify({message: $translate.instant('IDENTITY_SAVED'), classes: 'notification-success'});
+                } else {
+                    notify({message: 'Error during the request', classes: 'notification-danger'});
+                }
+            }, function() {
+                notify({message: 'Error during the request', classes: 'notification-danger'});
             })
         );
     };

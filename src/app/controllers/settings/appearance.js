@@ -11,8 +11,8 @@ angular.module("proton.controllers.Settings")
     Setting,
     notify) {
     $scope.appearance = {
-        languages: ['English', 'French', 'German', 'Spanish', 'Italian'],
-        locales: {English: 'en_US', French: 'fr_FR', German: 'de_DE', Spanish: 'es_ES', Italian: 'it_IT'},
+        languages: ['English', 'French', 'German', 'Spanish', 'Italian', 'Dutch'],
+        locales: {English: 'en_US', French: 'fr_FR', German: 'de_DE', Spanish: 'es_ES', Italian: 'it_IT', Dutch: 'nl_NL'},
         selectedLanguage: 'English',
         cssTheme: authentication.user.Theme,
         ComposerMode: authentication.user.ComposerMode,

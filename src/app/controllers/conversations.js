@@ -52,6 +52,46 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }, function(error) {
             $log.error(error);
         });
+        $scope.setTimeWidths();
+
+    };
+
+    $scope.setTimeWidths = function() {
+
+        // Dec 28, 2888 - longest possible width
+        var time = '29000668525';
+
+        // initalize to zero
+        var width = 0;
+
+         // convert timestamp to readabile, LOCALIZED time format
+        time = $filter('readableTime')(time);
+
+        // append to DOM:
+        $('body').append('<div id="timeWidthTest" style="position:absolute;left:0;top:0;z-index:1;visibility:hidden">');
+        $('#timeWidthTest').text(time);
+
+        // get the width
+        width = $('#timeWidthTest').outerWidth();
+
+        // add 10% for safety
+        width = width * 1;
+
+        // round up to a whole integer
+        width = Math.ceil(width);
+
+        // if width isnt zero, we're probably good
+        if (width > 0) {
+
+            // lets set some CSS to update our time elements
+            var style = "<style>.conversation .row .meta em.time { width: "+ width +"px !important; } .conversation .row .meta { width: "+ (width+40) +"px !important;} .conversation .row h4 { width: calc(100% - "+ (width+45) +"px) !important; }</style>";
+
+            // inject CSS into DOM
+            $('body').append(style);
+
+        }
+
+        $('#timeWidthTest').remove();
 
     };
 
@@ -98,6 +138,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
             return recipients;
         }
+    };
+
+    /**
+     * Return if we can display the placeholder or not
+     * @param {Boolean}
+     */
+    $scope.placeholder = function() {
+        return $rootScope.layoutMode === 'columns' && ($rootScope.idDefined() === false || ($rootScope.idDefined() === true && $rootScope.numberElementChecked > 0));
     };
 
     $scope.startWatchingEvent = function() {
@@ -209,6 +257,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         if (mailbox === 'search') {
+            params.Address = $stateParams.address;
             params.Label = $stateParams.label;
             params.Keyword = $stateParams.words;
             params.To = $stateParams.to;
@@ -638,12 +687,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     /**
      * Switch to an other page
      * @param {Integer} page
-     * @param {Boolean} scrollToBottom
      */
-    $scope.goToPage = function(page, scrollToBottom) {
+    $scope.goToPage = function(page) {
         var route = 'secured.' + $scope.mailbox;
 
-        $rootScope.scrollToBottom = scrollToBottom === true;
         $scope.unselectAllElements();
         $scope.page = page;
 
@@ -746,7 +793,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.click = function(element) {
         var type = tools.typeList();
-        var id;
+        var params = {};
 
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
@@ -754,16 +801,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.unselectAllElements();
         // Open conversation
         if(type === 'conversation') {
-            id = element.ID;
+            params.id = element.ID;
         } else if (type === 'message') {
-            id = element.ConversationID;
-            $rootScope.targetID = element.ID;
+            params.id = element.ConversationID;
+            params.message = element.ID;
         }
 
-        $state.go('secured.' + $scope.mailbox + '.view', { id: id });
+        $state.go('secured.' + $scope.mailbox + '.view', params);
 
-        if(id === $state.params.id) {
-            $rootScope.$broadcast('initMessage', element.ID, true);
+        if(params.id === $stateParams.id) {
+            $rootScope.$broadcast('initMessage', params.message, true);
         }
     };
 

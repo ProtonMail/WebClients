@@ -3,9 +3,12 @@ angular.module('proton.controllers.Settings')
 .controller('PaymentsController', function(
     $scope,
     $translate,
+    $q,
     authentication,
     cardModal,
+    payModal,
     confirmModal,
+    invoices,
     methods,
     notify,
     networkActivityTracker,
@@ -13,6 +16,8 @@ angular.module('proton.controllers.Settings')
 ) {
     $scope.methods = methods.data.PaymentMethods;
     $scope.subscribed = authentication.user.Subscribed === 1;
+    $scope.invoices = invoices.data.Invoices;
+    $scope.total = invoices.data.Total;
 
     $scope.refresh = function() {
         networkActivityTracker.track(Payment.methods()
@@ -89,17 +94,19 @@ angular.module('proton.controllers.Settings')
                 title: title,
                 message: message,
                 confirm: function() {
-                    Payment.deleteMethod(method.ID)
-                    .then(function(result) {
-                        if (result.data && result.data.Code === 1000) {
-                            confirmModal.deactivate();
-                            $scope.methods.splice($scope.methods.indexOf(method), 1);
-                            notify({message: $translate.instant('PAYMENT_METHOD_DELETED'), classes: 'notification-success'});
-                        } else if (result.data && result.data.Error) {
-                            confirmModal.deactivate();
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        }
-                    });
+                    networkActivityTracker.track(
+                        Payment.deleteMethod(method.ID)
+                        .then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+                                confirmModal.deactivate();
+                                $scope.methods.splice($scope.methods.indexOf(method), 1);
+                                notify({message: $translate.instant('PAYMENT_METHOD_DELETED'), classes: 'notification-success'});
+                            } else if (result.data && result.data.Error) {
+                                confirmModal.deactivate();
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            }
+                        })
+                    );
                 },
                 cancel: function() {
                     confirmModal.deactivate();
@@ -107,4 +114,57 @@ angular.module('proton.controllers.Settings')
             }
         });
     };
+
+    /**
+     * Download invoice
+     * @param {Object} invoice
+     */
+    $scope.download = function(invoice) {
+        networkActivityTracker.track(
+            Payment.invoice(invoice.ID)
+            .then(function(result) {
+                var filename = 'ProtonMail Invoice ' + invoice.ID + '.pdf';
+                var blob = new Blob([result.data], { type: 'application/pdf' });
+
+                saveAs(blob, filename);
+            })
+        );
+    };
+
+    /**
+     * Open a modal to pay invoice
+     * @param {Object} invoice
+     */
+     $scope.pay = function(invoice) {
+         var promises = {
+             methods: Payment.methods(),
+             check: Payment.check(invoice.ID)
+         };
+
+         networkActivityTracker.track($q.all(promises)
+         .then(function(result) {
+             if (result.methods.data.PaymentMethods.length === 0 && authentication.user.Credit < result.check.data.AmountDue) {
+                 notify({message: 'Please add a payment method first', classes: 'notification-danger'});
+             } else {
+                 payModal.activate({
+                     params: {
+                         invoice: invoice,
+                         methods: result.methods.data.PaymentMethods,
+                         currency: result.check.data.Currency,
+                         amount: result.check.data.Amount,
+                         credit: result.check.data.Credit,
+                         amountDue: result.check.data.AmountDue,
+                         close: function(result) {
+                             payModal.deactivate();
+
+                             if (result === true) {
+                                 // Set invoice state to PAID
+                                 invoice.State = 1;
+                             }
+                         }
+                     }
+                 });
+             }
+         }));
+     };
 });

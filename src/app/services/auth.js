@@ -595,6 +595,7 @@ angular.module("proton.authentication", [
     Bug,
     bugModal,
     cache,
+    cacheCounters,
     CONFIG,
     eventManager,
     networkActivityTracker,
@@ -740,7 +741,8 @@ angular.module("proton.authentication", [
      */
     $rootScope.logout = function() {
         eventManager.stop();
-        cache.clear();
+        cache.reset();
+        cacheCounters.reset();
         delete $rootScope.creds;
         delete $rootScope.tempUser;
         $state.go('login');

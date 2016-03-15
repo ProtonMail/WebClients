@@ -3,6 +3,13 @@ angular.module("proton.models.label", [])
 .factory("Label", function($http, url) {
     var api = {
         /**
+         * Get labels
+         * @return {Promise}
+         */
+        query: function() {
+            return $http.get(url.get() + '/labels');
+        },
+        /**
          *  Apply labels
          * @param {String} labelID
          * @param {Array} messageIDs

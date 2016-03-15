@@ -39,7 +39,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
     $scope.$on('$destroy', function(event) {
         $timeout.cancel(scrollPromise);
-        delete $rootScope.targetID;
     });
 
     /**
@@ -75,17 +74,31 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
                     if(sents.length > 0) {
                         // We try to open the last sent message
-                        $rootScope.targetID = _.last(sents).ID;
+                        $state.go('.', {message: _.last(sents).ID});
                     } else {
                         // Or the last message
-                        $rootScope.targetID = _.last(messages).ID;
+                        $state.go('.', {message: _.last(messages).ID});
                     }
-                } else if ($state.is('secured.search.**') && $state.is('secured.drafts.**')) {
+                } else if ($state.is('secured.search.view') || $state.is('secured.drafts.view')) {
                     // Do nothing, target initialized by click
+                } else if ($state.is('secured.starred.view')) {
+                    // Select the last message starred
+                    var lastStarred = _.chain(messages).filter(function(message) {
+                        return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
+                    }).last().value();
+
+                    $state.go('.', {message: lastStarred.ID});
+                } else if ($state.is('secured.label.view')) {
+                    // Select the last message with this label
+                    var lastLabel = _.chain(messages).filter(function(message) {
+                        return message.LabelIDs.indexOf($stateParams.label) !== -1;
+                    }).last().value();
+
+                    $state.go('.', {message: lastLabel.ID});
                 } else {
                     // If the latest message is read, we open it
                     if(latest.IsRead === 1) {
-                        $rootScope.targetID = latest.ID;
+                        $state.go('.', {message: latest.ID});
                     } else {
                         // Else we open the first message unread beginning to the end list
                         var loop = true;
@@ -104,7 +117,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                             index = 0;
                         }
 
-                        $rootScope.targetID = messages[index].ID;
+                        $state.go('.', {message: messages[index].ID});
                     }
                 }
 
@@ -308,25 +321,22 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             var element = angular.element(id);
 
             if(angular.isElement(element) && angular.isDefined(element.offset())) {
-                var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
+                var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').outerHeight();
                 var amountScrolled = $('#pm_thread').scrollTop();
-                var value = element.offset().top + amountScrolled - headerOffset;
+                var paddingTop = parseInt($('#pm_thread').css('padding-top').replace('px', ''));
+                var value = element.offset().top + amountScrolled - headerOffset - paddingTop;
 
                 if (index === 0) {
                     // Do nothing
                 } else if (index === 1) {
-                    value -= 30;
+                    value -= 15;
                 } else if (index > 1) {
-                    value -= 80;
+                    value -= 68;
                 }
 
                 $('#pm_thread').animate({
                     scrollTop: value
-                }, 200, function() {
-                    $(this).animate({
-                        opacity: 1
-                    }, 200);
-                });
+                }, 200);
             }
         }, 100);
     };

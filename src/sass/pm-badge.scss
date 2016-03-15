@@ -9,7 +9,6 @@
     line-height: 1.5rem;
     height: 1.5rem;
     margin: .25rem 0;
-    font-weight: bold;
     text-transform: uppercase;
     &.primary {
         background-color: $primary;
@@ -19,5 +18,8 @@
     }
     &.error {
         background: $red;
+    }
+    &.warning {
+        background: $orange;
     }
 }

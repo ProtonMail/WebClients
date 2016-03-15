@@ -157,9 +157,9 @@ angular.module("proton.filters",[])
         var m = moment.unix(time);
 
         if (m.isSame(moment(), 'day')) {
-            return m.format('h:mm a') + ' (' + m.fromNow() + ')';
+            return m.format('LT') + ' (' + m.fromNow() + ')';
         } else {
-            return m.format('D/MM/YYYY') + ' (' + m.fromNow() + ')';
+            return m.format('L') + ' (' + m.fromNow() + ')';
         }
     };
 })
@@ -192,7 +192,7 @@ angular.module("proton.filters",[])
     return function(time) {
         var m = moment.unix(time);
 
-        return m.format('LL h:mm a');
+        return m.format('LL h:mm A');
     };
 })
 
@@ -256,26 +256,29 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('contact', function(authentication) {
-    return function(contact, parameter) {
+.filter('contact', function($translate, authentication) {
+    return function(contact, parameter, me) {
         var same = contact.Address === contact.Name;
         var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
         var found = _.findWhere(authentication.user.Contacts, {Email: contact.Address});
+        var myself = _.findWhere(authentication.user.Addresses, {Email: contact.Address});
 
-        if(parameter === 'Address') {
+        if (me === true && angular.isDefined(myself)) {
+            return $translate.instant('ME');
+        } else if (parameter === 'Address') {
             return '<' + contact.Address + '>';
-        } else if(parameter === 'Name') {
-            if(angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
+        } else if (parameter === 'Name') {
+            if (angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0 && found.Name !== found.Email) {
                 return found.Name;
-            } else if(angular.isDefined(contact.Name) && contact.Name.length > 0) {
+            } else if (angular.isDefined(contact.Name) && contact.Name.length > 0) {
                 return contact.Name;
             } else {
                 return contact.Address;
             }
         } else {
-            if(same || alone) {
+            if (same || alone) {
                 return contact.Address;
-            } else if(angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
+            } else if (angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
                 return found.Name + ' <' + contact.Address + '>';
             } else {
                 return contact.Name + ' <' + contact.Address + '>';

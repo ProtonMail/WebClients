@@ -317,7 +317,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                     $scope.isOver = false;
 
-                    var dropzone = this;
+                    dropzone = this;
 
                     var total_num = angular.isDefined(message.Attachments) ? message.Attachments.length : 0;
                     total_num += angular.isDefined(message.queuedFiles) ? message.queuedFiles : 0;
@@ -453,6 +453,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.cancelAttachment = function(attachment, message) {
         // Cancel the request
         attachment.cancel(); // Also remove the attachment in the UI
+        // FIXME Reload message/attachments from the server when this happens.
+        // A late cancel might succeed on the back-end but not be reflected on the front-end
+        // Need to be careful if there are currently-uploading attachments, an do autosave first
     };
 
     $scope.addAttachment = function(file, message) {
@@ -561,7 +564,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.uploading = 0;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
-        $scope.completedSignature(message);
+        $scope.insertSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
 
@@ -571,7 +574,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $timeout(function() {
             $rootScope.$broadcast('squireHeightChanged');
             $scope.composerStyle();
-            $scope.onAddFile(message);
             // forward case: we need to save to get the attachments
             if(save === true) {
                 $scope.save(message, true, false).then(function() { // message, forward, notification
@@ -580,17 +582,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 }, function(error) {
                     $log.error(error);
                 });
-            }
-        });
-    };
-
-    $scope.onAddFile = function(message) {
-        $('#uid' + message.uid + ' .btn-add-attachment').on('click touchstart', function() {
-            if(angular.isUndefined(message.ID)) {
-                // We need to save to get an ID
-                    $scope.addFile(message);
-            } else {
-                $scope.addFile(message);
             }
         });
     };
@@ -663,14 +654,31 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     };
 
-    $scope.completedSignature = function(message) {
+    /**
+     * Insert signature in the message body
+     * @param {Object} message
+     */
+    $scope.insertSignature = function(message) {
         if (angular.isUndefined(message.Body)) {
-            var signature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks(authentication.user.Signature) + '</div>', {
+            var content;
+            var space = '<br /><br />';
+
+            if (message.From.Signature === null) {
+                content = authentication.user.Signature;
+            } else {
+                content = message.From.Signature;
+            }
+
+            var signature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(content) + '</div>', {
                 ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style', 'input', 'form']
             });
 
-            message.Body = ($(signature).text().length === 0 && $(signature).find('img').length === 0)? "" : "<br /><br />" + signature;
+            if ($(signature).text().length === 0 && $(signature).find('img').length === 0) {
+                message.Body = space;
+            } else {
+                message.Body = space + signature;
+            }
         }
     };
 
@@ -988,6 +996,29 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         return true;
+    };
+
+    /**
+     * Call when the user change the FROM
+     * @param {Resource} message - Message to save
+     */
+    $scope.changeFrom = function(message) {
+        var currentBody = $.parseHTML(message.Body);
+        var tempDOM = $('<div>').append(currentBody);
+        var signature = tempDOM.find('.protonmail_signature_block').first().html();
+
+        if (signature && signature.length > 0) {
+            if (message.From.Signature === null) {
+                tempDOM.find('.protonmail_signature_block').html(authentication.user.Signature);
+            } else {
+                tempDOM.find('.protonmail_signature_block').html(message.From.Signature);
+            }
+
+            message.Body = tempDOM.html();
+        }
+
+        // save when DOM is updated
+        $scope.save(message, false, false, true);
     };
 
     /**
@@ -1338,7 +1369,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             $scope.close(message, false, false); // Close the composer window
 
                                             $timeout(function() {
-                                                $rootScope.targetID = result.Sent.ID; // Define target ID
+                                                $stateParams.message = result.Sent.ID; // Define target ID
                                                 $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
                                             }, 500);
 

@@ -176,7 +176,7 @@
             <div class="meta">
                 <div class="row fromRow">
                     <label>{{ 'FROM' | translate }}</label>
-                    <select ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" title="{{ 'FROM' | translate }}" ng-disabled="message.Attachments.length > 0" ng-change="save(message, false, false, true)"></select>
+                    <select ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" title="{{ 'FROM' | translate }}" ng-disabled="message.Attachments.length > 0" ng-change="changeFrom(message)"></select>
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
                     </button>
@@ -227,10 +227,10 @@
                 ng-repeat="attachment in message.Attachments"
                 ng-init="initAttachment(attachment, $index)">
                     <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
-                    <a ng-show="!!attachment.upallowOthers" class="preview-close" ng-click="cancelAttachment(attachment, message)">
+                    <a ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
                         <i class="fa fa-times"></i>
                     </a>
-                    <a ng-show="!!!attachment.upallowOthers" class="preview-close" ng-click="removeAttachment(attachment, message)">
+                    <a ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)">
                         <i class="fa fa-times"></i>
                     </a>
                 </span>
@@ -241,8 +241,8 @@
                 {{ message.Attachments.length }} {{ 'FILES_ATTACHED' | translate }} ({{ getAttachmentsSize(message) | humanSize }})
             </aside>
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
-                <button
-                class="pm_button btn-add-attachment"
+                <button class="pm_button"
+                ng-click="addFile(message)"
                 ng-disabled="message.allowOthers() || message !== selected"
                 ng-class="{
                     'active': message.displayPanel && message.panelName == 'attachments',

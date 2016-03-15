@@ -13,7 +13,7 @@
                 <div>
                     <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following code into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. <strong>Do not remove it even after successful verification</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/dns-records/">{{ 'LEARN_MORE' | translate }}</a></p>
                     <p>Please add the following TXT record:</p>
-                    <table class="pm_table record">
+                    <table class="pm_table record desktopOnly">
                         <tr>
                             <th style="width:3rem">{{ 'TYPE' | translate }}</th>
                             <th style="width:6.5rem">{{ 'HOST_NAME' | translate }}</th>
@@ -25,6 +25,22 @@
                             <td><code>{{ ctrl.domain.VerifyCode }}</code></td>
                         </tr>
                     </table>
+
+                    <div class="mobileOnly">
+                        <p>
+                            <strong>{{ 'TYPE' | translate }}</strong>:<br>
+                            <code>TXT</code>
+                        </p>
+                        <p>
+                            <strong>{{ 'HOST_NAME' | translate }}</strong>:<br>
+                            <code>@</code>
+                        </p>
+                        <p>
+                            <strong>{{ 'VALUE_DATA_POINTS_TO' | translate }}</strong>:<br>
+                            <code>{{ ctrl.domain.VerifyCode }}</code>
+                        </p>
+                    </div>
+
                     <p class="alert alert-info">{{ 'DNS_PROPAGATE_MESSAGE' | translate }}</p>
                 </div>
             </div>

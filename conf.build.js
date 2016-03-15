@@ -42,10 +42,10 @@ module.exports = {
       "vendor/angular-ui-router/release/angular-ui-router.js",
       "vendor/angular-sanitize/angular-sanitize.js",
       "vendor/angular-route/angular-route.js",
-      "vendor/moment/moment.js",
+      "vendor/moment/min/moment-with-locales.js",
       "vendor/underscore/underscore.js",
-      "vendor/DOMPurify/dist/purify.min.js",
-      "vendor/papaparse/papaparse.min.js",
+      "vendor/dompurify/src/purify.js",
+      "vendor/papaparse/papaparse.js",
       "vendor/ng-sortable/dist/ng-sortable.js",
       "vendor/angular-notify/dist/angular-notify.js",
       "vendor/pikaday/pikaday.js",
@@ -57,8 +57,6 @@ module.exports = {
       "vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
       "vendor/angular-translate-storage-local/angular-translate-storage-local.js",
       "vendor/vcard/src/vcard.js",
-      "vendor/mellt/javascript/Mellt.js",
-      "vendor/mellt/javascript/common-passwords.js",
       "vendor/html2canvas/build/html2canvas.js",
       "vendor/svg4everybody/dist/svg4everybody.js",
       "vendor/ical.js/build/ical.js",
@@ -84,17 +82,12 @@ module.exports = {
       "vendor/angular-notify/dist/angular-notify.css",
       "vendor/pikaday/css/pikaday.css",
       "vendor/dropzone/dist/dropzone.css",
-      "vendor/open-sans-fontface/open-sans.css",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.css"
     ],
 
     sass_include_dirs: [
       "vendor/bourbon/dist",
-//      "vendor/font-awesome/scss",
       "vendor/bootstrap-sass-official/assets/stylesheets"
-    ],
-    assets: [
-//      "vendor/font-awesome/fonts"
     ]
   }),
 

@@ -66,7 +66,7 @@ angular.module("proton.attachments", [
             attachmentData.filename = packets.Filename;
             attachmentData.Size = packets.FileSize;
             attachmentData.MIMEType = packets.MIMEType;
-            attachmentData.loading = true;
+            attachmentData.uploading = false;
 
             tempPacket.cancel = function() {
                 xhr.abort();
@@ -79,6 +79,7 @@ angular.module("proton.attachments", [
             };
 
             xhr.onload = function() {
+                tempPacket.uploading = false;
                 var response;
                 var validJSON;
 
@@ -97,7 +98,6 @@ angular.module("proton.attachments", [
                 if (statusCode !== 200) {
                     // Error with the request
                     notify({message: 'Unable to upload file. Please try again.', classes: 'notification-danger'}); // TODO translate
-                    attachmentData.loading = false;
                     deferred.reject(response);
                 } else if (response.Error !== undefined) {
                     if (validJSON) {
@@ -108,12 +108,10 @@ angular.module("proton.attachments", [
                         notify({message: $translate.instant('UNABLE_TO_UPLOAD'), classes: 'notification-danger'});
                         deferred.reject(response);
                     }
-                    attachmentData.loading = false;
                 } else {
                     attachmentData.AttachmentID = response.AttachmentID;
                     sessionKeyPromise.then(function(sessionKey) {
                         attachmentData.sessionKey = sessionKey;
-                        attachmentData.loading = false;
                         deferred.resolve(attachmentData);
                     });
                 }

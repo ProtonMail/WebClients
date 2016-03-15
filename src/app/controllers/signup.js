@@ -68,11 +68,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             $scope.readOnlyUsername = false;
         }
 
-        // Captcha
-        window.addEventListener("message", captchaReceiveMessage, false);
-
         // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
-        function captchaReceiveMessage(event) {
+        var captchaReceiveMessage = function(event) {
             if ( typeof event.origin === "undefined" && typeof event.originalEvent.origin === "undefined" ) {
                 return;
             }
@@ -95,7 +92,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             if ( data.type === "pm_height" ) {
                 $('#pm_captcha').height(event.data.height + 40);
             }
-        }
+        };
+
+        // Captcha
+        window.addEventListener("message", captchaReceiveMessage, false);
 
         // Change this to our recaptcha key, configurable in Angular?
         var message = {

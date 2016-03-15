@@ -26,7 +26,7 @@ ng-class="{
                 <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
                 <span class="contact">
                     <span class="from" ng-show="message.expand">{{ 'FROM' | translate }}: </span>
-                    <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name' }}</strong>
+                    <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name': true }}</strong>
                     <em ng-click="$event.stopPropagation();">
                         {{ message.Sender | contact:'Address' }}
                         <a class="fa fa-pencil compose" ng-click="sendMessageTo(message.Sender)" pt-tooltip="{{ 'COMPOSE_TO' | translate }}"></a>
@@ -57,7 +57,7 @@ ng-class="{
         <div class="time">
             <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
             <span ng-show="toggleDetails === true">{{ message.Time | localReadableTime }}</span>
-            <span ng-show="toggleDetails !== true">{{ message.Time | messageTime }}</span>
+            <span ng-show="toggleDetails !== true" time="{{ message.Time }}" filter="messageTime" interval="30000"></span>
         </div>
         <div class="status">
             <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
@@ -78,7 +78,7 @@ ng-class="{
         <div class="recipients-summary" ng-hide="toggleDetails === true">
             <strong>{{ 'TO' | translate }}: </strong>
             <span ng-repeat="email in recipients()" title="{{ email | contact:'Address' }}">
-                {{ email | contact:'Name' }}<span ng-hide="$last">, </span>
+                {{ email | contact: 'Name':true }}<span ng-hide="$last">, </span>
             </span>
         </div>
 
@@ -150,7 +150,7 @@ ng-class="{
 
             <div class="actions pull-right">
                 <span class="pm_buttons">
-                    <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown>
+                    <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown ng-click="message.labelDropdownOpen = !message.labelDropdownOpen">
                         <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
                     </a>
                     <span class="pm_dropdown right wide pull-left">

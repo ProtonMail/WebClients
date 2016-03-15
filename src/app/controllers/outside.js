@@ -33,10 +33,11 @@ angular.module("proton.controllers.Outside", [
 
     $scope.message = message;
 
-    if(message.displayMessage === true) {
+    if (message.displayMessage === true) {
         $timeout(function() {
             $scope.message.Body = $scope.clean($scope.message.Body);
-            $scope.containsImage = tools.containsImage($scope.message.Body);
+            $scope.message.imagesHidden = tools.containsImage($scope.message.Body);
+
             _.each($scope.message.Replies, function(reply) {
                 reply.Body = $scope.clean(reply.Body);
             });
@@ -59,7 +60,7 @@ angular.module("proton.controllers.Outside", [
     // start timer ago
     $scope.agoTimer = $interval(function() {
         // Redirect to unlock view if the message is expired
-        if($scope.isExpired()) {
+        if ($scope.isExpired()) {
             $state.go('eo.unlock', {tag: $stateParams.tag});
         }
     }, 1000);
@@ -160,7 +161,6 @@ angular.module("proton.controllers.Outside", [
         var content = angular.copy(body);
 
         content = tools.clearImageBody(content);
-        $scope.imagesHidden = true;
         content = DOMPurify.sanitize(content, {
             ADD_ATTR: ['target'],
             FORBID_TAGS: ['style', 'input', 'form']
@@ -174,12 +174,12 @@ angular.module("proton.controllers.Outside", [
     };
 
     $scope.toggleImages = function() {
-        if($scope.imagesHidden === true) {
+        if($scope.message.imagesHidden === true) {
             $scope.message.Body = tools.fixImages($scope.message.Body);
-            $scope.imagesHidden = false;
+            $scope.message.imagesHidden = false;
         } else {
             $scope.message.Body = tools.breakImages($scope.message.Body);
-            $scope.imagesHidden = true;
+            $scope.message.imagesHidden = true;
         }
     };
 

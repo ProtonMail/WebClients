@@ -239,7 +239,6 @@
             padding: 0 10px 10px;
             clear: both;
             position: relative;
-            z-index: 3;
             .pm_buttons {
                 a {
                     background: #fff;
@@ -342,11 +341,15 @@
             overflow: auto;
             zoom: 1;
             .email {
+                position: relative;
                 .pm_button.more {
                     line-height: 1rem;
                     height: 1rem;
                     background: $read;
                     margin-bottom: 1rem;
+                }
+                blockquote.protonmail_quote {
+                    position: relative;
                 }
             }
         }

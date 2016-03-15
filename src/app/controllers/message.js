@@ -222,7 +222,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 $scope.message = message;
                 $scope.initView();
             }));
-        } else if ($rootScope.targetID === $scope.message.ID) {
+        } else if ($stateParams.message === $scope.message.ID) {
             $scope.initView();
         }
     };
@@ -449,10 +449,18 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         if (attachment.KeyPackets === undefined) {
             return att.then( function(result) {
-                $scope.downloadAttachment(attachment);
-                attachment.decrypting = false;
-                attachment.decrypted = true;
-                $scope.$apply();
+
+                $timeout(function(){
+                    $scope.downloadAttachment({
+                        data: result.data,
+                        Name: attachment.Name,
+                        MIMEType: attachment.MIMEType,
+                        el: link,
+                    });
+                    attachment.decrypting = false;
+                    attachment.decrypted = true;
+                });
+
             });
         } else {
             var attachmentStored = _.findWhere($scope.attachmentsStorage, {ID: attachment.ID});
@@ -479,6 +487,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     "key": key
                  }).then(
                     function(obj) {
+
                         // create new Uint8Array to store decryted attachment
                         var at = new Uint8Array(obj.attObject.data);
 
@@ -659,36 +668,30 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     };
 
     // Return Message object to build response or forward
+    // TODO refactor this function
     var buildMessage = function(action) {
         var base = new Message();
         var br = '<br />';
-        var contentSignature = DOMPurify.sanitize('<div>' + tools.replaceLineBreaks($scope.user.Signature) + '</div>');
-        var signature = ($(contentSignature).text().length === 0)? '<br /><br />' : '<br /><br />' + contentSignature + '<br /><br />';
+        var contentSignature;
+        var signature;
         var blockquoteStart = '<blockquote class="protonmail_quote" type="cite">';
         var originalMessage = '-------- Original Message --------<br />';
-        var subject = 'Subject: ' + $scope.message.Subject + '<br />';
+        var subject = 'Subject: ' + $scope.message.Subject + br;
         var time = 'Local Time: ' + $filter('localReadableTime')($scope.message.Time) + '<br />UTC Time: ' + $filter('utcReadableTime')($scope.message.Time) + '<br />';
-        var from = 'From: ' + $scope.message.Sender.Address + '<br />';
-        var to = 'To: ' + tools.contactsToString($scope.message.ToList) + '<br />';
-        var cc = ($scope.message.CCList.length > 0)?('CC: ' + tools.contactsToString($scope.message.CCList) + '<br />'):('');
+        var from = 'From: ' + $scope.message.Sender.Address + br;
+        var to = 'To: ' + tools.contactsToString($scope.message.ToList) + br;
+        var cc = ($scope.message.CCList.length > 0)?('CC: ' + tools.contactsToString($scope.message.CCList) + br):'';
         var blockquoteEnd = '</blockquote>';
         var re_prefix = $translate.instant('RE:');
         var fw_prefix = $translate.instant('FW:');
         var re_length = re_prefix.length;
         var fw_length = fw_prefix.length;
 
-        base.ParentID = $scope.message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
-
-        if(angular.isDefined($scope.message.AddressID)) {
-            base.From = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});
-        }
-
         if (action === 'reply') {
             base.Action = 0;
             base.Subject = ($scope.message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? $scope.message.Subject : re_prefix + ' ' + $scope.message.Subject;
 
-            if($scope.message.Type === 2 || $scope.message.Type === 3) {
+            if ($scope.message.Type === 2 || $scope.message.Type === 3) {
                 base.ToList = $scope.message.ToList;
             } else {
                 base.ToList = [$scope.message.ReplyTo];
@@ -715,6 +718,38 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             base.ToList = [];
             base.Subject = ($scope.message.Subject.toLowerCase().substring(0, fw_length) === fw_prefix.toLowerCase()) ? $scope.message.Subject : fw_prefix + ' ' + $scope.message.Subject;
         }
+
+        if (angular.isDefined($scope.message.AddressID)) {
+            var recipients = base.ToList.concat(base.CCList).concat(base.BCCList);
+            var address = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});
+            var found = _.findWhere(recipients, {Address: address.Email});
+
+            _.each(_.sortBy(authentication.user.Addresses, 'Send'), function(address) {
+                if (angular.isUndefined(found)) {
+                    found = _.findWhere(recipients, {Address: address.Email});
+                }
+            });
+
+            if (angular.isUndefined(found)) {
+                found = address;
+            }
+
+            base.From = found;
+        }
+
+        contentSignature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(base.From.Signature) + '</div>', {
+            ADD_ATTR: ['target'],
+            FORBID_TAGS: ['style', 'input', 'form']
+        });
+
+        if ($(contentSignature).text().length === 0 && $(contentSignature).find('img').length === 0) {
+            signature = br + br;
+        } else {
+            signature = br + br + contentSignature + br + br;
+        }
+
+        base.ParentID = $scope.message.ID;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
 
         return base;
     };

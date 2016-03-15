@@ -18,47 +18,58 @@
                         </span>
                     </div>
                 </div>
-                <div class="margin">
-                    <input type="text" autofocus ng-model="ctrl.fullname" placeholder="{{ 'FULLNAME' | translate }}" required />
+                <div ng-show="ctrl.methods.length > 0">
+                    <label for="paymentMethod" class="margin">Select your payment method</label>
+                    <span class="pm_select">
+                        <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
                 </div>
-                <div class="pm_grid margin">
-                    <div class="col-2-3">
-                        <span class="pm_select">
-                            <select ng-model="ctrl.country" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
-                            <i class="fa fa-angle-down"></i>
-                        </span>
+                <div ng-hide="ctrl.methods.length > 0">
+                    <div class="margin">
+                        <input type="text" autofocus ng-model="ctrl.fullname" placeholder="{{ 'NAME_ON_CARD' | translate }}" required />
                     </div>
-                    <div class="col-1-3">
-                        <input type="text" minlength="3" maxlength="9" ng-model="ctrl.zip"  placeholder="{{ 'ZIP' | translate }}" required />
-                    </div>
-                </div>
-                <div class="margin">
-                    <input type="text" ng-model="ctrl.number" placeholder="{{ 'CARD_NUMBER' | translate }}" maxlength="20" required />
-                </div>
-                <div class="pm_grid margin">
-                    <div class="col-1-3">
-                        <div class="input-icon">
-                            <i class="fa fa-calendar"></i>
-                            <input type="text" ng-model="ctrl.month" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" maxlength="2" required />
+                    <div class="pm_grid margin">
+                        <div class="col-2-3">
+                            <span class="pm_select">
+                                <select ng-model="ctrl.country" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
+                                <i class="fa fa-angle-down"></i>
+                            </span>
+                        </div>
+                        <div class="col-1-3">
+                            <input type="text" minlength="3" maxlength="9" ng-model="ctrl.zip"  placeholder="{{ 'ZIP' | translate }}" required />
                         </div>
                     </div>
-                    <div class="col-1-3">
-                        <div class="input-icon">
-                            <i class="fa fa-calendar"></i>
-                            <input type="text" ng-model="ctrl.year" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" maxlength="4" required />
-                        </div>
+                    <div class="margin input-icon">
+                        <card-icon number="ctrl.number"></card-icon>
+                        <input type="text" ng-model="ctrl.number" placeholder="{{ 'CARD_NUMBER' | translate }}" maxlength="20" required />
                     </div>
-                    <div class="col-1-3">
-                        <div class="input-icon">
-                            <i class="fa fa-lock"></i>
-                            <input type="text" ng-model="ctrl.cvc" placeholder="CVC" pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" maxlength="4" required />
+                    <div class="pm_grid margin">
+                        <div class="col-1-3">
+                            <div class="input-icon">
+                                <i class="fa fa-calendar"></i>
+                                <input type="text" ng-model="ctrl.month" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" maxlength="2" required />
+                            </div>
+                        </div>
+                        <div class="col-1-3">
+                            <div class="input-icon">
+                                <i class="fa fa-calendar"></i>
+                                <input type="text" ng-model="ctrl.year" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" maxlength="4" required />
+                            </div>
+                        </div>
+                        <div class="col-1-3">
+                            <div class="input-icon">
+                                <i class="fa fa-lock"></i>
+                                <input type="text" ng-model="ctrl.cvc" placeholder="CVC" pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" maxlength="4" required />
+                            </div>
                         </div>
                     </div>
                 </div>
+                <p class="alert alert-info">It's also possible to donate with <a href="https://protonmail.com/donate" target="_blank">PayPal or Bitcoin</a>.</p>
             </div>
         </div>
-        <div class="modal-footer text-center">
-            <button type="submit" class="pm_button primary large">{{ 'DONATE' | translate }}</button>
+        <div class="modal-footer text-right">
+            <button type="submit" ng-disabled="ctrl.process === true" class="pm_button primary">{{ 'DONATE' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

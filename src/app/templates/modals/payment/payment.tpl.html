@@ -54,60 +54,96 @@
                 </table>
                 <div class="text-center alert alert-info" ng-show="ctrl.valid.Cycle === 1">
                     <p>
-                        <strong class="text-green">Save 20% with the annual plan!</strong>
+                        <strong>Save 20% with the annual plan!</strong>
                     </p>
                     <p>
-                        <button type="button" class="pm_button primary" ng-click="ctrl.yearly()">{{ 'PAY_ANNUALLY' | translate }}</button>
+                        <button type="button" class="pm_button primary" ng-click="ctrl.switch(12)">{{ 'PAY_ANNUALLY' | translate }}</button>
                     </p>
                 </div>
             </div>
             <div class="col-1-2">
-                <!-- <div class="input-icon margin">
-                    <i class="fa fa-briefcase"></i>
-                    <input type="text" ng-model="ctrl.organizationName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" />
-                </div> -->
                 <div ng-hide="ctrl.valid.AmountDue === 0">
-                    <div class="margin">
-                        <input type="text" ng-model="ctrl.fullname" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'FULLNAME' | translate }}" />
-                    </div>
                     <div class="pm_grid margin">
-                        <div class="col-2-3">
+                        <div class="col-1-2">
+                            <label for="paymentMethod">Payment Method:</label>
+                        </div>
+                        <div class="col-1-2">
                             <span class="pm_select">
-                                <select ng-model="ctrl.country" ng-change="ctrl.cardChange = true" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
+                                <select id="paymentMethod" ng-model="ctrl.choice" ng-options="choice.label for choice in ctrl.choices" ng-change="ctrl.changeChoice()"></select>
                                 <i class="fa fa-angle-down"></i>
                             </span>
                         </div>
-                        <div class="col-1-3">
-                            <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'ZIP_CODE' | translate }}" required />
+                    </div>
+                    <div ng-show="ctrl.choice.value === 'card'">
+                        <div ng-show="ctrl.methods.length > 0" class="margin pm_grid">
+                            <span class="pm_select">
+                                <select id="creditCard" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
+                                <i class="fa fa-angle-down"></i>
+                            </span>
                         </div>
-                    </div>
-                    <div class="input-icon margin">
-                        <card-icon number="ctrl.number"></card-icon>
-                        <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
-                    </div>
-                    <div class="pm_grid margin">
-                        <div class="col-1-3">
-                            <div class="input-icon">
-                                <i class="fa fa-calendar"></i>
-                                <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" required />
+                        <div ng-show="ctrl.methods.length === 0">
+                            <div class="margin">
+                                <input type="text" ng-model="ctrl.fullname" placeholder="{{ 'NAME_ON_CARD' | translate }}" />
+                            </div>
+                            <div class="pm_grid margin">
+                                <div class="col-2-3">
+                                    <span class="pm_select">
+                                        <select ng-model="ctrl.country" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </div>
+                                <div class="col-1-3">
+                                    <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" placeholder="{{ 'ZIP_CODE' | translate }}" required />
+                                </div>
+                            </div>
+                            <div class="input-icon margin">
+                                <card-icon number="ctrl.number"></card-icon>
+                                <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" placeholder="{{ 'CARD_NUMBER' | translate }}" required />
+                            </div>
+                            <div class="pm_grid margin">
+                                <div class="col-1-3">
+                                    <div class="input-icon">
+                                        <i class="fa fa-calendar"></i>
+                                        <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" placeholder="MM" pt-tooltip="{{ 'MONTH' | translate }}" required />
+                                    </div>
+                                </div>
+                                <div class="col-1-3">
+                                    <div class="input-icon">
+                                        <i class="fa fa-calendar"></i>
+                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" required />
+                                    </div>
+                                </div>
+                                <div class="col-1-3">
+                                    <div class="input-icon">
+                                        <i class="fa fa-lock"></i>
+                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" placeholder="CVC" pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" required />
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-1-3">
-                            <div class="input-icon">
-                                <i class="fa fa-calendar"></i>
-                                <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="YY" pt-tooltip="{{ 'YEAR' | translate }}" required />
-                            </div>
-                        </div>
-                        <div class="col-1-3">
-                            <div class="input-icon">
-                                <i class="fa fa-lock"></i>
-                                <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" placeholder="CVC" pt-tooltip="{{ 'CARD_VALIDATION_CODE' | translate }}" required />
-                            </div>
-                        </div>
                     </div>
+                    <div ng-show="ctrl.choice.value === 'paypal'">
+                        <p ng-show="!ctrl.approvalURL && ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false">
+                            <i class="fa fa-spin fa-spinner"></i> {{ 'LOADING' | translate }}...
+                        </p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">Error connecting to PayPal. <a href="#" ng-click="ctrl.initPaypal()">Click here</a> to try again.</p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 1">We only accept PayPal for annual subscriptions, click the link to switch to an annual subscription. <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 2">We only accept PayPal for annual subscriptions. PayPal is also only accepted for US Dollar plans. Click here to switch to an annual US Dollar subscription. <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 3">All PayPal orders are charged in US Dollar, click the link to change your subscription to US Dollar. <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
+                        <p class="alert alert-info" ng-show="ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
+                        <p class="text-center" ng-show="ctrl.approvalURL">
+                            <a href="#" ng-click="ctrl.openPaypalTab()">
+                                <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
+                            </a>
+                        </p>
+                    </div>
+                    <div ng-show="ctrl.choice.value === 'bitcoin'">
+                        <p class="alert alert-info">To pay via Bitcoin or Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions</p>
+                    </div>
+                    <hr />
                 </div>
                 <p ng-show="ctrl.displayCoupon === false">
-                    <a href="#" ng-click="ctrl.displayCoupon = true">{{ 'ADD_COUPON'}}</a>
+                    <a href="#" ng-click="ctrl.displayCoupon = true">{{ 'ADD_COUPON' | translate }}</a>
                 </p>
                 <div class="pm_grid" ng-show="ctrl.displayCoupon === true">
                     <div class="col-2-3">
@@ -127,5 +163,5 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-    <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()">{{ 'SUBMIT' | translate }}</button>
+    <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()" ng-show="ctrl.choice.value === 'card'">{{ 'SUBMIT' | translate }}</button>
 </div>

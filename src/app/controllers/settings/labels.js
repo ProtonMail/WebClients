@@ -12,7 +12,7 @@ angular.module("proton.controllers.Settings")
     networkActivityTracker,
     notify
 ) {
-    $scope.labels = authentication.user.Labels;
+    $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
 
     // Drag and Drop configuration
     $scope.labelsDragControlListeners = {
@@ -21,12 +21,14 @@ angular.module("proton.controllers.Settings")
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
         orderChanged: function() {
-          labelOrder = [];
-          _.forEach($scope.labels, function(d,i) {
-            labelOrder[i] = d.Order;
-            d.Order = i;
-          });
-          $scope.saveLabelOrder(labelOrder);
+            labelOrder = [];
+
+            _.each($scope.labels, function(label, index) {
+                labelOrder[index] = label.Order;
+                label.Order = index + 1;
+            });
+
+            $scope.saveLabelOrder(labelOrder);
         }
     };
 

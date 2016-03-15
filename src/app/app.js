@@ -165,6 +165,7 @@ angular.module('proton', [
 .run(function(CONSTANTS) {
     // This function clears junk from session storage. Should not be needed forever
     try {
+        var locale = window.navigator.userLanguage || window.navigator.language;
         var whitelist = [
             CONSTANTS.EVENT_ID,
             CONSTANTS.MAILBOX_PASSWORD_KEY,
@@ -185,6 +186,7 @@ angular.module('proton', [
         }
 
         window.sessionStorage.clear();
+        moment.locale(locale);
 
         for (var key in data) {
             window.sessionStorage.setItem(key, data[key]);
@@ -211,8 +213,8 @@ angular.module('proton', [
         // Enable FastClick
         FastClick.attach(document.body);
 
-        if (window.location.hash==='#spin') {
-            $('body').append('<style>.wrap, .btn{-webkit-animation: lateral 4s ease-in-out infinite;-moz-animation: lateral 4s ease-in-out infinite;}</style>');
+        if (window.location.hash==='#spin-me-right-round') {
+            $('body').append('<style>body > div * {-webkit-animation: spin 10s ease-in-out infinite;-moz-animation: spin 10s ease-in-out infinite;}</style>');
         }
     });
 
@@ -499,18 +501,6 @@ angular.module('proton', [
 
         $rootScope.toState = toState.name.replace(".", "-");
 
-        if($rootScope.scrollToBottom === true) {
-            if($("#pm_list")) {
-                $timeout(function() {
-                    $('#content').animate({
-                        scrollTop: $("#pm_list").offset().top
-                    }, 1);
-                }, 100);
-            }
-
-            $rootScope.scrollToBottom = false;
-        }
-
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
 
         $timeout( function() {
@@ -586,14 +576,10 @@ angular.module('proton', [
     $logProvider.debugEnabled(debugInfo);
 })
 
-.run(function($rootScope) {
+.run(function($rootScope, CONFIG) {
+    $rootScope.app_version = CONFIG.app_version;
+    $rootScope.date_version = CONFIG.date_version;
     $rootScope.isFileSaverSupported = !!(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob);
-    // Set build config
-    $rootScope.build = {
-        "version":"2.0",
-        "notes":"http://protonmail.dev/blog/",
-        "date":"17 Apr. 2015"
-    };
 })
 
 //

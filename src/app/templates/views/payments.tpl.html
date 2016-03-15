@@ -1,6 +1,6 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-    <div class="settings" pt-height>
+    <div class="settings">
         <div class="row">
             <section class="setting full pm_form">
                 <legend>{{ 'PAYMENT_METHODS' | translate }}</legend>
@@ -29,6 +29,48 @@
                                 <button type="button" class="pm_button link" ng-hide="$first === true" ng-click="default(method)">{{ 'MAKE_DEFAULT' | translate }}</button>
                                 <button type="button" class="pm_button link" ng-click="edit(method)">{{ 'EDIT' | translate }}</button>
                                 <button type="button" class="pm_button link" ng-click="delete(method)">{{ 'DELETE' | translate }}</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="setting full pm_form">
+                <legend>{{ 'INVOICES' | translate }}</legend>
+                <p class="alert alert-info" ng-show="invoices.length === 0">You have no invoices.</p>
+                <table class="pm_table" ng-show="invoices.length > 0">
+                    <thead>
+                        <tr>
+                            <th>{{ 'INVOICE' | translate }}</th>
+                            <th>{{ 'TYPE' | translate }}</th>
+                            <th>{{ 'STATUS' | translate }}</th>
+                            <th>{{ 'CREATE_TIME' | translate }}</th>
+                            <th class="text-right">{{ 'ACTIONS' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="invoice in invoices">
+                            <td>
+                                <span class="bold">{{ invoice.ID }}</span>
+                                <span ng-show="invoice.State === 0">({{ invoice.AmountDue / 100 | currency: invoice.Currency }})</span>
+                                <span ng-show="invoice.State === 1">({{ invoice.AmountCharged / 100 | currency: invoice.Currency }})</span>
+                            </td>
+                            <td>
+                                <span class="pm_badge" ng-show="invoice.Type === 0">{{ 'OTHER' | translate }}</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 1">{{ 'SUBSCRIPTION' | translate }}</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 2">{{ 'CANCELLATION' | translate }}</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 3">{{ 'CREDIT' | translate }}</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 4">{{ 'DONATION' | translate }}</span>
+                            </td>
+                            <td>
+                                <span class="pm_badge error" ng-show="invoice.State === 0">{{ 'UNPAID' | translate }}</span>
+                                <span class="pm_badge success" ng-show="invoice.State === 1">{{ 'PAID' | translate }}</span>
+                                <span class="pm_badge" ng-show="invoice.State === 2">{{ 'VOID' | translate }}</span>
+                                <span class="pm_badge" ng-show="invoice.State === 3">{{ 'BILLED' | translate }}</span>
+                            </td>
+                            <td>{{ invoice.CreateTime | readableTime }}</td>
+                            <td class="text-right">
+                                <button class="pm_button link" ng-click="pay(invoice)" ng-show="invoice.State === 0">{{ 'PAY' | translate }}</button>
+                                <button class="pm_button link" ng-click="download(invoice)">{{ 'DOWNLOAD' | translate }}</button>
                             </td>
                         </tr>
                     </tbody>

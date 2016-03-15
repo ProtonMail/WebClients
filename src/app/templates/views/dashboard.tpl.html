@@ -1,6 +1,6 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
-    <div class="settings" pt-height>
+    <div class="settings">
         <div class="row">
             <section class="pm_form">
                 <div class="pm_grid">
@@ -9,7 +9,7 @@
                         <div class="well">
                             <table class="pm_table plain">
                                 <tr>
-                                    <th>{{ 'USERNAME' | translate }}:</th>
+                                    <th style="width:6rem;">{{ 'USERNAME' | translate }}:</th>
                                     <td>
                                         <strong>{{ user.Name }}</strong>
                                     </td>
@@ -22,7 +22,8 @@
                                         <strong ng-show="organization === null">0</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a class="pm_button link" ui-sref="secured.domains" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a ui-sref="secured.domains" class="pm_button link" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()">{{ 'UPGRADE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -32,7 +33,8 @@
                                         <strong ng-show="organization === null">1</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a class="pm_button link" ui-sref="secured.addresses" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a ui-sref="secured.addresses" class="pm_button link" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
+                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()">{{ 'UPGRADE' | translate }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -106,9 +108,9 @@
                             <p>Upgrading to a paid account is the best way to support ProtonMail, but you can also donate any amount.</p>
                             <p><strong>Your donation helps us support more users and continue to develop ProtonMail as free and open source software.</strong></p>
                             <p>
-                                <a href="https://protonmail.com/donate" target="_blank" class="pm_button primary">
-                                {{ 'DONATE' | translate }}
-                                </a>
+                                <button class="pm_button primary" type="button" ng-click="donate()">
+                                    {{ 'DONATE' | translate }}
+                                </button>
                             </p>
                         </div>
                     </div>

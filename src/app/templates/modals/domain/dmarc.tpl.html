@@ -12,7 +12,7 @@
                 <p>If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
                 <p>Typical DMARC record. Note, you MUST change this before adding it to your DNS.</p>
 
-                <table class="pm_table record">
+                <table class="pm_table record desktopOnly">
                     <tr>
                         <th style="width:3rem">{{ 'TYPE' | translate }}</th>
                         <th style="width:6.5rem">{{ 'HOST_NAME' | translate }}</th>
@@ -24,6 +24,21 @@
                         <td><code>v=DMARC1; p=none; rua=mailto:address@yourdomain.com</code></td>
                     </tr>
                 </table>
+
+                <div class="mobileOnly">
+                    <p>
+                        <strong>{{ 'TYPE' | translate }}</strong>:<br>
+                        <code>TXT</code>
+                    </p>
+                    <p>
+                        <strong>{{ 'HOST_NAME' | translate }}</strong>:<br>
+                        <code>_dmarc</code>
+                    </p>
+                    <p>
+                        <strong>{{ 'VALUE_DATA_POINTS_TO' | translate }}</strong>:<br>
+                        <code>v=DMARC1; p=none; rua=mailto:address@yourdomain.com</code>
+                    </p>
+                </div>
 
                 <p class="alert alert-info"><strong>p=none</strong> is report only mode so no effect on email delivery</p>
                 <p class="alert alert-info"><strong>address@yourdomain.com</strong> is where you will receive DMARC reports from other email services</p>

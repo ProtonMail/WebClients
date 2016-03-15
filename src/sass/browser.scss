@@ -9,6 +9,9 @@
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
     }
+    #pm_composer .composer {
+        border: 1px solid $border;
+    }
 }
 
 .ua-edge {}
@@ -31,20 +34,70 @@
 
 // All Windows
 .ua-windows_nt {
-    
+    #conversation-list-columns .conversation .selection input[type="checkbox"] {
+        position: relative;
+        top: 2px;
+    }
 }
+
+.ua-mac_os_x.ua_firefox,
+.ua-windows_nt-6-1.ua_firefox {
+    .pm_labels label,
+    .pm_labels label.closed:hover {
+        line-height: 8px;
+    }
+}
+
+// All Firefox
+.ua-firefox {
+    .pm_button.primary.compose {
+        line-height: 35px;
+    }
+    .pm_labels {
+        label {
+            line-height: -moz-block-height;
+            &.closed:hover {
+                line-height: -moz-block-height;
+            }
+        }
+    }
+    .pm_button {
+        line-height: -moz-block-height;
+    }
+    #pm_composer .composer .pm_button {
+        line-height: ($composerRowHeight - 6);
+    }
+    #pm_composer .composer footer .pm_button {
+        line-height: -moz-block-height;
+    }
+    form.searchForm fieldset button,
+    form.searchForm fieldset button .fa {
+        line-height: 32px;
+    }
+    .pm_tag {
+        line-height: 14px;
+    }
+    .pm_labels.inline label {
+        height: 18px;
+        line-height: 8px;
+    }
+    #conversation-view .message > div.summary {
+        line-height: 34px;
+    }
+    .pm_table th .pm_button, .pm_table td .pm_button {
+        line-height: 30px;
+    }
+}
+
 // All Windows, Firefox
 .ua-windows_nt.ua-firefox {
     &.ua-firefox {
         #pm_composer .composer .pm_button {
-            line-height: 26px;
-        }
-        .pm_button.primary.compose {
-            line-height: 40px;
+            line-height: -moz-block-height;
         }
         .pm_buttons a,
         .pm_button {
-            line-height: 30px;
+            line-height: -moz-block-height;
         }
         #pm_sidebar section.sidebar .pm_button.round {
             line-height: 30px;

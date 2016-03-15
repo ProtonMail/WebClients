@@ -17,6 +17,44 @@ angular.module("proton.models.payments", [])
             return $http.post(url.get() + '/payments/unsubscribe', Obj);
         },
         /**
+         * Create Paypal Payment
+         * @param {Object} params
+         * @return {Promise}
+         */
+        paypal: function(params) {
+            return $http.post(url.get() + '/payments/paypal', params);
+        },
+        /**
+         * Get invoices in reverse time order
+         * @param {Object} params
+         * @return {Promise}
+         */
+        invoices: function(params) {
+            return $http.get(url.get() + '/payments/invoices', {params: params});
+        },
+        /**
+         * Get an invoice as pdf
+         */
+        invoice: function(id) {
+            return $http.get(url.get() + '/payments/invoices/' + id, {responseType: "arraybuffer"});
+        },
+        /**
+         * Return information to pay invoice unpaid
+         */
+         check: function(id) {
+             return $http.post(url.get() + '/payments/invoices/' + id + '/check');
+         },
+         /**
+          * Pay an unpaid invoice
+          * @param {String} id
+          * @param {Object} params
+          * @return {Promise}
+          */
+         pay: function(id, params) {
+            return $http.post(url.get() + '/payments/invoices/' + id, params);
+         },
+
+        /**
          * Get plans available to user
          */
         plans: function(currency, cycle) {
@@ -135,10 +173,10 @@ angular.module("proton.models.payments", [])
             return $http.get(url.get() + '/payments/methods');
         },
         /**
-         * First will be charged for subscriptionsPOST
+         * First will be charged for subscriptions
          */
         order: function(params) {
-            return $http.post(url.get() + '/payments/methods/order');
+            return $http.post(url.get() + '/payments/methods/order', params);
         },
         /**
          * Create a subscription
@@ -160,7 +198,7 @@ angular.module("proton.models.payments", [])
         user: function(timestamp, limit) {
             return $http.get(url.get() + '/payments/user', {
                 params: {
-                    Time: timestamp,
+                    Time: timestamp,//
                     Limit: limit
                 },
                 transformResponse: function(data, headersGetter, status) {

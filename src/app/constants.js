@@ -6,18 +6,18 @@ angular.module('proton.constants', [])
 .constant('CONSTANTS', {
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte
-    HOSTS_ALLOWED: ['localhost', 'dev.protonmail.com', 'protonmail.blue', 'dev2.protonmail.com'],
     MAILBOX_PASSWORD_KEY: "proton:mailbox_pwd",
     OAUTH_KEY: "proton:oauth",
     EVENT_ID: "proton:eventid",
     FREE_USER: 0,
     PAID_MEMBER: 1,
     PAID_ADMIN: 2,
-    ATTACHMENT_SIZE_LIMIT: 15, // MB
+    ATTACHMENT_SIZE_LIMIT: 25, // MB
     ATTACHMENT_NUMBER_LIMIT: 100,
     MAX_TITLE_LENGTH: 255,
     MAX_NUMBER_COMPOSER: 3,
-    NUMBER_OF_MESSAGES_PRELOADING: 5,
+    MESSAGE_LIMIT: 100,
+    CONVERSATION_LIMIT: 100,
     ENC_NONE: 0,
     ENC_INTERNAL: 1, // all within ProtonMail
     ENC_EXTERNAL: 2, // encrypted from outside
@@ -38,7 +38,7 @@ angular.module('proton.constants', [])
     DESKTOP_BREAKPOINT: 1200,
     ROW_BREAKPOINT: 960,
     MOBILE_BREAKPOINT: 800,
-    WIZARD_ENABLED: false, // true / false
+    WIZARD_ENABLED: true, // true / false
     MAILBOX_IDENTIFIERS: {
         inbox: '0',
         drafts: '1',

@@ -12,7 +12,7 @@
             <div class="modal-body pm_form">
                 <p>SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
                 <p>Please add the following TXT record. Note, DNS records can take several hours to update.</p>
-                <table class="pm_table record">
+                <table class="pm_table record desktopOnly">
                     <tr>
                         <th style="width:3rem">{{ 'TYPE' | translate }}</th>
                         <th style="width:6.5rem">{{ 'HOST_NAME' | translate }}</th>
@@ -24,6 +24,21 @@
                         <td><code>v=spf1 include:_spf.protonmail.ch mx ~all</code></td>
                     </tr>
                 </table>
+
+                <div class="mobileOnly">
+                    <p>
+                        <strong>{{ 'TYPE' | translate }}</strong>:<br>
+                        <code>TXT</code>
+                    </p>
+                    <p>
+                        <strong>{{ 'HOST_NAME' | translate }}</strong>:<br>
+                        <code>@</code>
+                    </p>
+                    <p>
+                        <strong>{{ 'VALUE_DATA_POINTS_TO' | translate }}</strong>:<br>
+                        <code>v=spf1 include:_spf.protonmail.ch mx ~all</code>
+                    </p>
+                </div>
 
                 <p class="alert alert-info">If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. Do not create multiple SPF records.</p>
             </div>

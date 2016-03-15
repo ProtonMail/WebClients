@@ -80,30 +80,35 @@ angular.module("proton.event", ["proton.constants"])
 					var dirtyAddresses = [];
 					var privateUser = user.Private === 1;
 					var keyInfo = function(key) {
-						return pmcw.keyInfo(key.PrivateKey).then(function(info) {
+						return pmcw.keyInfo(key.PrivateKey)
+						.then(function(info) {
 							key.created = info.created; // Creation date
 							key.bitSize = info.bitSize; // We don't use this data currently
 							key.fingerprint = info.fingerprint; // Fingerprint
+
+							return $q.resolve(key);
 						});
 					};
 
 					_.each(user.Addresses, function(address) {
-						if (address.Keys.length === 0 && privateUser === true) {
+						if (address.Keys.length === 0 && address.Status === 1 && privateUser === true) {
 							dirtyAddresses.push(address);
 						} else {
 							_.each(address.Keys, function(key, index) {
 								promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
 									key.decrypted = true; // We mark this key as decrypted
 									authentication.storeKey(address.ID, key.ID, package); // We store the package to the current service
-									keyInfo(key);
+
+									return keyInfo(key);
 								}, function(error) {
 									key.decrypted = false; // This key is not decrypted
-									keyInfo(key);
 									// If the primary (first) key for address does not decrypt, display error.
 									if(index === 0) {
 										address.disabled = true; // This address cannot be used
 										notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
 									}
+
+									return keyInfo(key);
 								}));
 							});
 						}
@@ -123,12 +128,37 @@ angular.module("proton.event", ["proton.constants"])
 						});
 					}
 
-					$q.all(promises).then(function() {
-						angular.merge(authentication.user, user);
-						$rootScope.user = authentication.user;
+					$q.all(promises).finally(function() {
+						// Merge user parameters
+						_.each(Object.keys(user), function(key) {
+							if (key === 'Addresses') {
+								_.each(user.Addresses, function(address) {
+									var index = _.findIndex(authentication.user.Addresses, {ID: address.ID});
+
+									if (index === -1) {
+										authentication.user.Addresses.push(address);
+									} else {
+										angular.extend(authentication.user.Addresses[index], address);
+									}
+								});
+
+								var index = authentication.user.Addresses.length;
+
+								while (index--) {
+									var address = authentication.user.Addresses[index];
+									var found = _.findWhere(user.Addresses, {ID: address.ID});
+
+									if (angular.isUndefined(found)) {
+										authentication.user.Addresses.splice(index, 1);
+									}
+								}
+							} else {
+								authentication.user[key] = user[key];
+							}
+						});
+
+						angular.extend($rootScope.user, authentication.user);
 						$rootScope.$broadcast('updateUser');
-					}, function() {
-						angular.merge(authentication.user, user);
 					});
 				}
 			},
@@ -248,8 +278,11 @@ angular.module("proton.event", ["proton.constants"])
 						eventModel.manageID(response.data.EventID);
 					});
 				} else if (data.Refresh === 1) {
-					cache.reset();
 					eventModel.manageID(data.EventID);
+					cache.reset();
+					cacheCounters.reset();
+					cache.callRefresh();
+					cacheCounters.query();
 				} else if (data.Reload === 1) {
 					$window.location.reload();
 				} else if (this.isDifferent(data.EventID)) {
@@ -265,6 +298,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageOrganization(data.Organization);
 					this.manageID(data.EventID);
 				}
+
 				this.manageNotices(data.Notices);
 				cache.expiration();
 			},

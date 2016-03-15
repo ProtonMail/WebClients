@@ -80,11 +80,14 @@
         text-align: initial;
         .usernameWrap {
             input {
-                width: 12rem;
+                width: 11rem;
                 display: inline-block;
             }
             em {
                 font-style: normal;
+                width: 2rem;
+                text-align: center;
+                line-height: 2rem;
             }
         }
         label {

@@ -7,6 +7,7 @@ angular.module('proton.routes', [
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
     var conversationParameters = function() {
       var parameters = [
+        'address',
         'page',
         'filter',
         'sort',
@@ -41,11 +42,12 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/login.tpl.html'
             }
         },
-        onEnter: function(authentication, eventManager, cache) {
+        onEnter: function(authentication, eventManager, cache, cacheCounters) {
             // Stop event manager request
             eventManager.stop();
             // Clear cache
-            cache.clear();
+            cache.reset();
+            cacheCounters.reset();
             // We automatically logout the user when he comes to login page
             authentication.logout(false);
         }
@@ -219,6 +221,7 @@ angular.module('proton.routes', [
         }
     })
 
+    // Reset Mailbox Password
     .state('reset', {
         url: '/reset',
         views: {
@@ -227,7 +230,7 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/layout/auth.tpl.html'
             },
             'panel@reset': {
-                templateUrl: 'templates/views/reset.tpl.html'
+                templateUrl: 'templates/views/reset-mailbox-password.tpl.html'
             }
         },
         resolve: {
@@ -283,6 +286,7 @@ angular.module('proton.routes', [
         }
     })
 
+    // Generic Message View Template
     .state('support.message', {
         params: {
             data: null
@@ -300,70 +304,12 @@ angular.module('proton.routes', [
         }
     })
 
+    // Reset Login Password
     .state('support.reset-password', {
         url: '/reset-login-password',
         views: {
             'panel@support': {
-                templateUrl: 'templates/views/reset-password.tpl.html'
-            }
-        }
-    })
-
-    .state('support.confirm-new-password', {
-        url: '/confirm-new-password/:token',
-        onEnter: function($stateParams, $state, Reset) {
-            var token = $stateParams.token;
-
-            // Check if reset token is valid
-            Reset.validateResetToken({
-                token: token
-            }).then(
-                function(response) {
-                    // console.log(response.data);
-                    if (response.data.Error) {
-                        $state.go('support.message', {
-                            data: {
-                                title: response.data.Error,
-                                content: response.data.Error,
-                                type: 'alert-danger'
-                            }
-                        });
-                    }
-                },
-                function() {
-                    $state.go('support.message', {
-                        data: {
-                            title: 'Reset Error',
-                            content: 'Sorry, we are unable to reset your password right now. Please try the link again in a few minutes.',
-                            type: 'alert-danger'
-                        }
-                    });
-                }
-            );
-        },
-        views: {
-            'panel@support': {
-                templateUrl: 'templates/views/confirm-new-password.tpl.html'
-            }
-        }
-    })
-
-    // Deprecated?
-    .state('support.reset-mailbox', {
-        url: '/reset-mailbox/:token',
-        onEnter: function($stateParams, $state, $rootScope, authentication) {
-            $rootScope.resetMailboxToken = $stateParams.token;
-            if (!!!authentication.isLoggedIn()) {
-                event.preventDefault();
-                $state.go('login');
-            }
-            else {
-                $state.go('reset');
-            }
-        },
-        views: {
-            'panel@support': {
-                templateUrl: 'templates/views/confirm-new-password.tpl.html'
+                templateUrl: 'templates/views/reset-login-password.tpl.html'
             }
         }
     })
@@ -636,22 +582,8 @@ angular.module('proton.routes', [
     .state('secured.addresses', {
         url: '/addresses',
         resolve: {
-            domains: function($q, Domain, networkActivityTracker) {
-                var deferred = $q.defer();
-
-                Domain.available().then(function(result) {
-                    if (result.data && angular.isArray(result.data.Domains)) {
-                        deferred.resolve(result.data.Domains);
-                    } else {
-                        deferred.reject();
-                    }
-                }, function() {
-                    deferred.reject();
-                });
-
-                networkActivityTracker.track(deferred.promise);
-
-                return deferred.promise;
+            organization: function(user, Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.get());
             }
         },
         views: {
@@ -671,6 +603,9 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
+            invoices: function(Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.invoices());
+            },
             methods: function(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
             }
@@ -779,6 +714,9 @@ angular.module('proton.routes', [
 
     .state('secured.dashboard', {
         url: '/dashboard',
+        params: {
+            scroll: null
+        },
         resolve: {
             access: function(user, $q) {
                 var deferred = $q.defer();
@@ -791,7 +729,7 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            organization: function(user, Organization, networkActivityTracker, CONSTANTS) {
+            organization: function(user, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
             },
             // Return yearly plans
@@ -887,32 +825,6 @@ angular.module('proton.routes', [
                 controller: 'DomainsController'
             }
         }
-    })
-
-    .state('secured.themeReset', {
-        url: '/theme-reset',
-        views: {
-            'content@secured': {
-                templateUrl: 'templates/views/theme-reset.tpl.html',
-                controller: 'SettingsController'
-            }
-        },
-        onEnter: function(Setting, user, $state) {
-            Setting.theme({
-              'Theme': ''
-            }).$promise.then(
-                function(response) {
-                    user.Theme = '';
-                    $state.go('secured.inbox');
-                    return;
-                },
-                function(response) {
-                    $state.go('secured.inbox');
-                    return;
-                }
-            );
-        }
-
     });
 
     _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id, box) {
@@ -946,6 +858,10 @@ angular.module('proton.routes', [
 
         $stateProvider.state(childState, {
             url: '/{id}',
+            params: {
+                id: null,
+                message: null
+            },
             views: view,
             onExit: function($rootScope) {
                 $rootScope.$broadcast('unactiveMessages');

@@ -11,6 +11,13 @@ $modalMargin: 2rem;
     bottom: 0;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    iframe {
+        width: 100%;
+    }
+    .angular-squire-wrapper {
+        border: 1px solid $border;
+        border-top: none;
+    }
     &.domains {
         .modal-dialog {
             .modal-content {
@@ -55,6 +62,7 @@ $modalMargin: 2rem;
         bottom: 0;
         z-index: 1;
         background: rgba(0,0,0,.2);
+        pointer-events: none;
     }
     .modal-dialog {
         position: absolute;

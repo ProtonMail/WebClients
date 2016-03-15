@@ -14,25 +14,12 @@ angular.module("proton.tools", ["proton.constants"])
         }
     };
 
+    tools.hasCookie = function() {
+        return navigator.cookieEnabled;
+    };
+
     tools.getBrowser = function() {
-        var browser;
-        var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-        // Opera 8.0+ (UA detection to detect Blink/v8-powered Opera)
-        var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
-        var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
-        // At least Safari 3+: "[object HTMLElementConstructor]"
-        var isChrome = !!window.chrome && !isOpera;              // Chrome 1+
-        var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
-        var isEdge = (/Edge\/12./i).test(navigator.userAgent);
-
-        if(isOpera) { browser = 'Opera'; }
-        if(isFirefox) { browser = 'Firefox'; }
-        if(isSafari) { browser = 'Safari'; }
-        if(isChrome) { browser = 'Chrome'; }
-        if(isIE) { browser = 'Internet Explorer'; }
-        if(isEdge) { browser = 'Edge'; }
-
-        return browser;
+        return $.browser.name;
     };
 
     tools.getBrowserVersion = function() {
@@ -399,13 +386,10 @@ angular.module("proton.tools", ["proton.constants"])
         var mailbox = tools.currentMailbox();
         var loc; // Don't choose location
 
-        switch(mailbox) {
-            case 'label':
-                loc = $stateParams.label;
-                break;
-            default:
-                loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-                break;
+        if (mailbox === 'label') {
+            loc = $stateParams.label;
+        } else {
+            loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
         }
 
         return loc;
