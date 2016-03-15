@@ -1706,7 +1706,7 @@ angular.module("proton.modals", [])
             this.defaultDisplayName = authentication.user.DisplayName;
             this.defaultSignature = authentication.user.Signature;
             this.address = params.address;
-            this.address.custom = this.address.DisplayName !== null && this.address.Signature !== null;
+            this.address.custom = true;
 
             this.confirm = function() {
                 params.confirm(this.address);
