@@ -607,13 +607,12 @@ angular.module("proton.modals", [])
         controller: function(params) {
 
             // IE11 doesn't support PayPal
-            if ($('html').hasClass('ua-ie-11-0')) {
+            if ($.browser.msie === true && $.browser.edge !== true) {
                 this.choices = [
                     {value: 'card', label: $translate.instant('CREDIT_CARD')},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
-            }
-            else {
+            } else {
                 this.choices = [
                     {value: 'card', label: $translate.instant('CREDIT_CARD')},
                     {value: 'paypal', label: 'PayPal'},
