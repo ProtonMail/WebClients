@@ -700,12 +700,8 @@ angular.module("proton.modals", [])
                 return deferred.promise;
             }.bind(this);
 
-            var cardPresent = function () {
-                return (this.number.length > 0 || this.fullname.length > 0 || this.month.length > 0 || this.year.length > 0 || this.cvc.length > 0 || this.zip.length > 0);
-            }.bind(this);
-
             var validateCardNumber = function() {
-                if (cardPresent() && this.valid.AmountDue > 0) {
+                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
                     return Payment.validateCardNumber(this.number);
                 } else {
                     return Promise.resolve();
@@ -713,7 +709,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardExpiry = function() {
-                if (cardPresent() && this.valid.AmountDue > 0) {
+                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
                     return Payment.validateCardExpiry(this.month, this.year);
                 } else {
                     return Promise.resolve();
@@ -721,7 +717,7 @@ angular.module("proton.modals", [])
             }.bind(this);
 
             var validateCardCVC = function() {
-                if (cardPresent() && this.valid.AmountDue > 0) {
+                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
                     return Payment.validateCardCVC(this.cvc);
                 } else {
                     return Promise.resolve();
@@ -731,7 +727,7 @@ angular.module("proton.modals", [])
             var method = function() {
                 var deferred = $q.defer();
 
-                if (cardPresent() && this.valid.AmountDue > 0) {
+                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
                     var year = (this.year.length === 2) ? '20' + this.year : this.year;
 
                     // Add payment method
