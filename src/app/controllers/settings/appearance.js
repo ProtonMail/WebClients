@@ -26,25 +26,33 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveTheme = function(form) {
+        var deferred = $q.defer();
+
         networkActivityTracker.track(
-            Setting.theme({
-                "Theme": $scope.appearance.cssTheme
-            }).$promise
+            Setting.theme({'Theme': $scope.appearance.cssTheme}).$promise
             .then(
                 function(response) {
                     if(response.Code === 1000) {
                         authentication.user.Theme = $scope.appearance.cssTheme;
                         notify({message: $translate.instant('THEME_SAVED'), classes: 'notification-success'});
+                        deferred.resolve();
                     } else if (response.Error) {
                         notify({message: response.Error, classes: 'notification-danger'});
+                        deferred.reject();
+                    } else {
+                        notify({message: 'Error during the request', classes: 'notification-danger'});
+                        deferred.reject();
                     }
                 },
                 function(error) {
                     notify({message: 'Error during the theme edition request', classes: 'notification-danger'});
                     $log.error(error);
+                    deferred.reject();
                 }
             )
         );
+
+        return deferred.promise;
     };
 
     $scope.toggleThemeJason = function() {
@@ -52,8 +60,14 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.clearTheme = function() {
+        // Reset the theme value
         $scope.appearance.cssTheme = '';
-        $scope.saveTheme();
+        // Save the theme
+        $scope.saveTheme()
+        .then(function() {
+            // Reload the page
+            $state.go($state.current, {}, {reload: true});
+        });
     };
 
     $scope.saveComposerMode = function(form) {
