@@ -727,7 +727,7 @@ angular.module("proton.modals", [])
             var method = function() {
                 var deferred = $q.defer();
 
-                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
+                if (this.methods.length === 0) {
                     var year = (this.year.length === 2) ? '20' + this.year : this.year;
 
                     // Add payment method
@@ -750,7 +750,11 @@ angular.module("proton.modals", [])
                         }
                     });
                 } else {
-                    deferred.resolve(this.method.ID);
+                    if (this.valid.AmountDue > 0) {
+                        deferred.resolve(this.method.ID);
+                    } else {
+                        deferred.resolve();
+                    }
                 }
 
                 return deferred.promise;
