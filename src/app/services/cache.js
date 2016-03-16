@@ -542,9 +542,10 @@ angular.module("proton.cache", [])
     /**
      * Return conversation list with request specified in cache or call api
      * @param {Object} request
+     * @param {Boolean} first
      * @return {Promise}
      */
-    api.queryConversations = function(request) {
+    api.queryConversations = function(request, first) {
         var deferred = $q.defer();
         var loc = getLocation(request);
         var context = tools.cacheContext();
@@ -554,7 +555,7 @@ angular.module("proton.cache", [])
         };
 
         // In cache context?
-        if(context === true) {
+        if (context === true && first === false) {
             var page = request.Page || 0;
             var start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             var end = start + CONSTANTS.ELEMENTS_PER_PAGE;
@@ -567,7 +568,7 @@ angular.module("proton.cache", [])
 
             conversations = api.orderConversation(conversations, loc);
 
-            switch(mailbox) {
+            switch (mailbox) {
                 case 'label':
                     total = cacheCounters.totalConversation($stateParams.label);
                     break;
