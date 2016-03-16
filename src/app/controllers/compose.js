@@ -314,9 +314,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                     totalSize += angular.isDefined(message.queuedFilesSize) ? message.queuedFilesSize : 0;
                     totalSize += file.size;
-
                     $scope.isOver = false;
-
                     dropzone = this;
 
                     var total_num = angular.isDefined(message.Attachments) ? message.Attachments.length : 0;

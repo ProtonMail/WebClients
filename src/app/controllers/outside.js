@@ -51,9 +51,14 @@ angular.module("proton.controllers.Outside", [
             var files = $('#inputFile')[0].files;
 
             for(var i = 0; i<files.length; i++) {
-                $scope.addAttachment(files[i]);
-            }
+                var file = files[i];
 
+                if (file.size > CONSTANTS.ATTACHMENT_SIZE_LIMIT * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE) {
+                    notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
+                } else {
+                    $scope.addAttachment(file);
+                }
+            }
         });
     }, 100);
 
