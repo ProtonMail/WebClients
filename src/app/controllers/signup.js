@@ -8,6 +8,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     $state,
     $stateParams,
     $translate,
+    $location,
     $q,
     $timeout,
     $http,
@@ -66,6 +67,14 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             $scope.readOnlyUsername = true;
         } else {
             $scope.readOnlyUsername = false;
+        }
+
+        $scope.URLparams = $location.search();
+        if ($scope.URLparams.u !== undefined) {
+            $scope.account.Username = $scope.URLparams.u;
+            $timeout( function() {
+                $scope.checkAvailability( true );
+            }, 200);
         }
 
         // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
