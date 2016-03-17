@@ -52,35 +52,34 @@ angular.module("proton.controllers.Contacts", [
 
     // Methods
     $scope.initialization = function() {
-        $scope.contacts = $scope.contactsFiltered();
+        $scope.updateContacts();
     };
 
     $scope.contactsFiltered = function(searching) {
         var contacts = authentication.user.Contacts;
-
-        function pagination(contacts) {
+        var pagination = function (contacts) {
             var begin, end;
 
             begin = ($scope.currentPage - 1) * $scope.numPerPage;
             end = begin + $scope.numPerPage;
 
             return contacts.slice(begin, end);
-        }
+        };
 
-        function orderBy(contacts) {
+        var orderBy = function(contacts) {
             var result = $filter('orderBy')(contacts, $scope.sortBy);
 
             $scope.totalItems = result.length;
 
             return result;
-        }
+        };
 
-        function search(contacts) {
+        var search = function(contacts) {
             var byName = $filter('filter')(contacts, {Name: $scope.params.searchContactInput});
             var byEmail = $filter('filter')(contacts, {Email: $scope.params.searchContactInput});
 
             return _.union(byName, byEmail);
-        }
+        };
 
         if (searching === true) {
             $scope.currentPage = 1;
