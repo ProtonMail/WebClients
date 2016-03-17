@@ -156,10 +156,10 @@ angular.module("proton.controllers.Contacts", [
 
         if (contactsSelected.length === 1) {
             title = $translate.instant('DELETE_CONTACT');
-            message = 'Are you sure you want to delete this contact?'; // TODO translate
+            message = 'Are you sure you want to delete this contact?';
         } else {
             title = $translate.instant('DELETE_CONTACTS');
-            message = 'Are you sure you want to delete the selected contacts?'; // TODO translate
+            message = 'Are you sure you want to delete the selected contacts?';
         }
 
         confirmModal.activate({
@@ -254,7 +254,7 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.onSelectContact = function(event, contact) {
-        if(!lastChecked) {
+        if (!lastChecked) {
             lastChecked = contact;
         } else {
             if (event.shiftKey) {
