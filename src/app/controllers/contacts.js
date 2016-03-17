@@ -32,7 +32,9 @@ angular.module("proton.controllers.Contacts", [
     $scope.sortBy = 'Name';
 
     // Listeners
-    $scope.$on('updateContacts', $scope.updateContacts);
+    $scope.$on('deleteContact', $scope.updateContacts);
+    $scope.$on('createContact', $scope.updateContacts);
+    $scope.$on('updateContact', $scope.updateContacts);
     $scope.$on('searchContacts', function(event, keyword) {
         $scope.params.searchContactInput = keyword;
         $scope.refreshContacts(true);
