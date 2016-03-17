@@ -1241,8 +1241,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.send = function(message) {
         var deferred = $q.defer();
         var validate = $scope.validate(message);
-
-        if(validate) {
+        
+        if (validate) {
             $scope.save(message, false, false, false)
             .then(function() {
                 $scope.checkSubject(message).then(function() {
