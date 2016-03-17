@@ -647,6 +647,19 @@ angular.module("proton.modals", [])
             this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
 
             // Functions
+
+            var initialization = function() {
+                if (params.methods.length > 0) {
+                    this.methods = params.methods;
+                    this.method = this.methods[0];
+                }
+
+                if (angular.isDefined(params.choice)) {
+                    this.choice = _.findWhere(this.choices, {value: params.choice});
+                    this.changeChoice();
+                }
+            };
+
             /**
              * Generate key for the organization
              */
@@ -806,18 +819,6 @@ angular.module("proton.modals", [])
                 params.change();
             }.bind(this);
 
-            this.initialization = function() {
-                if (params.methods.length > 0) {
-                    this.methods = params.methods;
-                    this.method = this.methods[0];
-                }
-
-                if (angular.isDefined(params.choice)) {
-                    this.choice = _.findWhere(this.choices, {value: params.choice});
-                    this.changeChoice();
-                }
-            };
-
             this.label = function(method) {
                 return '•••• •••• •••• ' + method.Details.Last4;
             };
@@ -963,7 +964,7 @@ angular.module("proton.modals", [])
                 }
             };
 
-            this.initialization();
+            initialization();
         }
     });
 })

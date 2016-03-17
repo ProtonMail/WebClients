@@ -182,12 +182,6 @@ angular.module("proton.controllers.Contacts", [
                         Contact.delete({
                             IDs : deletedIDs
                         }).then(function(response) {
-                            _.forEach(response.data.Responses, function(d, i) {
-                                if(d.Response.Code !== 1000) {
-                                    notify({message: deletedContacts[i].Email + ' ' + $translate.instant('NOT_DELETED'), classes: 'notification-danger'});
-                                    authentication.user.Contacts.push(deletedContacts[i]);
-                                }
-                            });
                             notify({message: $translate.instant('CONTACTS_DELETED'), classes: 'notification-success'});
                             confirmModal.deactivate();
                             eventManager.call();
