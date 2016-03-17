@@ -82,11 +82,11 @@ angular.module("proton.controllers.Contacts", [
             return _.union(byName, byEmail);
         }
 
-        if(searching === true) {
+        if (searching === true) {
             $scope.currentPage = 1;
         }
 
-        return pagination(orderBy(search(authentication.user.Contacts)));
+        return pagination(orderBy(search(contacts)));
     };
 
     $scope.updateContacts = function() {
@@ -134,12 +134,10 @@ angular.module("proton.controllers.Contacts", [
                 title: title,
                 message: message,
                 confirm: function() {
-                    authentication.user.Contacts = [];
-                    $scope.contacts = $scope.contactsFiltered();
-
                     networkActivityTracker.track(
                         Contact.clear().then(function(response) {
                             notify({message: $translate.instant('CONTACTS_DELETED'), classes: 'notification-success'});
+                            eventManager.call();
                         }, function(response) {
                             $log.error(response);
                         })

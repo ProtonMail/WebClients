@@ -6,6 +6,7 @@ angular.module("proton.controllers.Settings")
     $scope,
     $state,
     $translate,
+    $q,
     authentication,
     networkActivityTracker,
     Setting,
