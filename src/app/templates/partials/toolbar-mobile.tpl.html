@@ -94,14 +94,8 @@
         </span>
     </span>
 
-    <span
-    class="pm_buttons"
-    ng-class="{ disabled: numberElementSelected === 0 }">
-        <a
-        class="pm_trigger open-label"
-        dropdown
-        ng-class="{ disabled: numberElementSelected === 0 }"
-        pt-tooltip="{{ 'LABELS' | translate }}">
+    <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
+        <a href="#" class="pm_trigger open-label" dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
             <i class="fa fa-tag"></i>
             <i class="fa fa-angle-down"></i>
         </a>
@@ -113,31 +107,19 @@
     <div class="pull-right">
 
         <span class="pm_buttons" ng-show="idDefined()">
-            <a
-            ng-click="previousConversation(conversation)"
-            pt-tooltip="{{ 'PREVIOUS' | translate }}">
+            <a href="#" ng-click="nextConversation(conversation)">
                 <i class="fa fa-chevron-left"></i>
             </a>
-            <a
-            ng-click="nextConversation(conversation)"
-            class="divider"
-            pt-tooltip="{{ 'NEXT' | translate }}">
+            <a href="#" ng-click="previousConversation(conversation)" class="divider">
                 <i class="fa fa-chevron-right"></i>
             </a>
         </span>
 
         <span class="pm_buttons" ng-show="!idDefined()">
-            <a 
-            pt-tooltip="{{ 'PREVIOUS' | translate }}" 
-            ng-click="previous()" 
-            ng-class="{'disabled': (page<2)}">
+            <a href="#" ng-click="previous()" ng-class="{'disabled': (page<2)}">
                 <i class="fa fa-chevron-left"></i>
             </a>
-            <a 
-            class="divider" 
-            pt-tooltip="{{ 'NEXT' | translate }}" 
-            ng-click="next()" 
-            ng-class="{'disabled': disableN}">
+            <a href="#" class="divider" ng-click="next()" ng-class="{'disabled': disableN}">
                 <i class="fa fa-chevron-right"></i>
             </a>
         </span>
