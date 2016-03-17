@@ -808,6 +808,8 @@ angular.module("proton.modals", [])
                         deferred.resolve();
                     } else if (result.data && result.data.Error) {
                         deferred.reject(new Error(result.data.Error));
+                    } else {
+                        deferred.reject(new Error('Error connecting to PayPal.'));
                     }
                 });
 
