@@ -149,25 +149,13 @@ angular.module("proton.controllers.Settings")
     $scope.saveDefaultLanguage = function() {
         var lang = $scope.appearance.locale.key;
 
-        // Forcing a specific page to use HTTPS with angularjs
-        // $window.location.href = $location.absUrl().replace('http', 'https'); // TODO try it on prod
-
-        $translate.use(lang).then(function(result) {
-            notify($translate.instant('DEFAULT_LANGUAGE_CHANGED'));
+        Setting.setLanguage({Language: lang}).$promise
+        .then(function(response) {
+            $translate.use(lang)
+            .then(function(result) {
+                notify($translate.instant('DEFAULT_LANGUAGE_CHANGED'));
+            });
         });
-
-        // TODO uncomment when route for change language is working
-        // networkActivityTracker.track(
-        //     Setting.setLanguage({
-        //         "Language": lang
-        //     }).$promise.then(function(response) {
-        //         notify('Default Language Changed');
-        //         console.log(response);
-        //         $translate.use(lang);
-        //     }, function(response) {
-        //         $log.error(response);
-        //     })
-        // );
     };
 
     $scope.saveButtonsPosition = function(form) {
