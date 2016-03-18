@@ -11,6 +11,7 @@ angular.module("proton.controllers.Settings")
     Label,
     labelModal,
     networkActivityTracker,
+    cacheCounters,
     notify
 ) {
     $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
@@ -111,7 +112,8 @@ angular.module("proton.controllers.Settings")
                                     var index = $scope.labels.indexOf(label);
 
                                     notify({message: $translate.instant('LABEL_DELETED'), classes: 'notification-success'});
-                                    $scope.labels.splice(index, 1);
+                                    authentication.user.Labels.splice(index, 1);
+                                    $rootScope.$broadcast('deleteLabel', label.ID);
                                     confirmModal.deactivate();
                                 } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
                                     notify({message: data.Error, classes: 'notification-danger'});

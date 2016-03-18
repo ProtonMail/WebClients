@@ -271,8 +271,8 @@
         <div class="row">
             <section class="setting pm_form">
                 <legend>{{ 'DELETE_ACCOUNT' | translate }}</legend>
-                <p class="alert alert-info">You must transfer ownership or delete these organizations before you can delete your user.</p>
-                <button class="pm_button error" ng-click="deleteAccount()">{{ 'DELETE_YOUR_ACCOUNT' | translate }}</button>
+                <p ng-show="{{ user.Subscribed === 1 }}" class="alert alert-info">You must unsubscribe before deleting you account.</p>
+                <button ng-show="{{ user.Subscribed === 0 }}" class="pm_button error" ng-click="deleteAccount()">{{ 'DELETE_YOUR_ACCOUNT' | translate }}</button>
             </section>
         </div>
     </div>
