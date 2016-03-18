@@ -12,14 +12,22 @@ angular.module("proton.controllers.Settings")
     Setting,
     notify) {
     $scope.appearance = {
-        languages: ['English', 'French', 'German', 'Spanish', 'Italian', 'Dutch'],
-        locales: {English: 'en_US', French: 'fr_FR', German: 'de_DE', Spanish: 'es_ES', Italian: 'it_IT', Dutch: 'nl_NL'},
+        locales: [
+            {label: 'English', key: 'en_US'},
+            {label: 'French', key: 'fr_FR'},
+            {label: 'German', key: 'de_DE'},
+            {label: 'Spanish', key: 'es_ES'},
+            {label: 'Italian', key: 'it_IT'},
+            {label: 'Dutch', key: 'nl_NL'}
+        ],
         selectedLanguage: 'English',
         cssTheme: authentication.user.Theme,
         ComposerMode: authentication.user.ComposerMode,
         ViewLayout: authentication.user.ViewLayout,
         MessageButtons: authentication.user.MessageButtons
     };
+
+    $scope.appearance.locale = $scope.appearance.locales[0];
 
     $scope.loadThemeClassic = function() {
         $scope.appearance.cssTheme = "body .pm_button.primary,body .pm_button.success{text-shadow:none!important;color:#fff!important;border-color:transparent!important}.pm_button.link,body .pm_button.primary,body .pm_button.success{border-color:transparent!important}body,body .pm_opensans{font-family:'Lucida Grande',Verdana,Arial,sans-serif}body{font-size:14px}body .composer .meta .pm_button,body .composer header .pm_button,body .pm_buttons .pm_dropdown>a,body .pm_dropdown>a{background:0 0!important;box-shadow:none!important}body .pm_button,body .pm_buttons a{box-shadow:0 1px 1px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.1)!important}body .pm_button{background-image:-webkit-linear-gradient(#fff,#e6e6e6)!important;background-image:linear-gradient(#fff,#e6e6e6)!important;background:-moz-linear-gradient(#fff,#e6e6e6)!important}body .pm_button.primary{background:#7575a3!important;background-image:-webkit-linear-gradient(#7575a3,#669)!important;background-image:linear-gradient(#7575a3,#669)!important}body .pm_button.success{background:#93bf73!important;background-image:-webkit-linear-gradient(#93bf73 ,#aecf96)!important;background-image:linear-gradient(#93bf73 ,#aecf96)!important}body .pm_buttons a{background-image:-webkit-linear-gradient(#fff,#e6e6e6)!important;background-image:linear-gradient(#fff,#e6e6e6)!important;background:-moz-linear-gradient(#fff,#e6e6e6)!important}body #pm_composer .composer header,body body.secure section#pm_sidebarMobile,body header#pm_header .logo,body header#pm_header.no-auth,body html.protonmail body,body section.sidebar,header#pm_header-desktop a.logo{background:#333!important}body header#pm_header form.searchForm fieldset{background-color:#404040!important}body header#pm_header form.searchForm fieldset button[type=button]{background:#666!important}body header#pm_header ul.navigation li.active a,body header#pm_header ul.navigation li:hover a{border-top-color:#333!important}@media (max-width:400px){body header#pm_header form.searchForm{background:#333!important}}#pm_settings .pm_tabs,body #pm_conversations.columns .list div.message.active,body #pm_conversations.columns .list div.message.active article .pm_labels .pm_label,body #pm_conversations.columns .list div.message.active header span.time,body #pm_conversations.columns .list div.message.unread.active,body #pm_conversations.columns .list div.message.unread.active header span.time,body #pm_conversations.columns .list div.message.unread.active header span.time article .pm_labels .pm_label,body header#pm_header,body header#pm_header-desktop{background:#555!important}body #pm_conversations.columns .list div.message.unread.active header span.time article .pm_labels .pm_label{box-shadow:0 0 0 4px #555!important}body .pm_table th{color:#555!important}#pm_settings .pm_tabs li a.pm_button{color:#000!important}.pm_button.link{background-color:transparent!important;color:#8286c5;text-decoration:underline;box-shadow:none!important;background-image:none!important}";
@@ -138,9 +146,8 @@ angular.module("proton.controllers.Settings")
         );
     };
 
-    // Not used
     $scope.saveDefaultLanguage = function() {
-        var lang = $scope.appearance.locales[$scope.appearance.selectedLanguage];
+        var lang = $scope.appearance.locale.key;
 
         // Forcing a specific page to use HTTPS with angularjs
         // $window.location.href = $location.absUrl().replace('http', 'https'); // TODO try it on prod

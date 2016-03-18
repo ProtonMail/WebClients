@@ -77,7 +77,7 @@
         </div>
 
         <div class="row">
-            <section class="settig pm_form full">
+            <section class="setting pm_form">
                 <form method="post" class="toolbar-button-options" novalidate ng-submit="saveButtonsPosition(buttonsForm)" name="buttonsForm">
                     <legend>{{ 'TOOLBAR' | translate }}</legend>
                     <p>{{ 'READ_UNREAD_POSITION' | translate }}</p>
@@ -96,6 +96,13 @@
                         </span>
                     </label>
                 </form>
+            </section>
+            <section class="setting pm_form pull-right">
+                <legend>{{ 'INTERNATIONALIZATION' | translate }}</legend>
+                <label for="selectDefaultLanguage">Choose your default language.</label>
+                <span class="pm_select">
+                    <select id="selectDefaultLanguage" ng-model="appearance.locale" ng-options="locale.label for locale in appearance.locales" ng-change="saveDefaultLanguage()"></select>
+                </span>
             </section>
         </div>
 
