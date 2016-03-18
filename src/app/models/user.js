@@ -52,6 +52,10 @@ angular.module("proton.models.user", [])
             unlock: {
                 method: 'put',
                 url: url.get() + '/users/unlock'
+            },
+            delete: {
+                method: 'put',
+                url: url.get() + '/users/delete'
             }
         }
     );

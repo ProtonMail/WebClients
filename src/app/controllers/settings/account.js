@@ -8,6 +8,7 @@ angular.module('proton.controllers.Settings')
     $translate,
     $q,
     authentication,
+    Bug,
     confirmModal,
     deleteAccountModal,
     Key,
@@ -321,9 +322,33 @@ angular.module('proton.controllers.Settings')
     $scope.deleteAccount = function() {
         deleteAccountModal.activate({
             params: {
-                confirm: function() {
-                    // TODO call request
-                    deleteAccountModal.deactivate();
+                submit: function(password, feedback) {
+                    Bug.report({
+                        OS: '--',
+                        OSVersion: '--',
+                        Browser: '--',
+                        BrowserVersion: '--',
+                        BrowserExtensions: '--',
+                        Client: '--',
+                        ClientVersion: '--',
+                        Title: '[DELETION FEEDBACK]',
+                        Username: '--',
+                        Email: '--',
+                        Description: feedback
+                    }).then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            User.delete({Password: password}).$promise.then(function(response) {
+                                if (response && response.Code === 1000) {
+                                    deleteAccountModal.deactivate();
+                                    $rootScope.logout();
+                                } else if (response.Error) {
+                                    notify({message: response.Error, classes: 'notification-danger'});
+                                }
+                            });
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        }
+                    });
                 },
                 cancel: function() {
                     deleteAccountModal.deactivate();

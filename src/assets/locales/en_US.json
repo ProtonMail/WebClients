@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"changeFrom(message)\">": "0\" ng-change=\"changeFrom(message)\">",
     "ABSOLUTE_SECURITY": "Absolute Security",
     "ACCESS_TO_V2": "Having trouble? Use the old version (v2)",
     "ACCOUNT": "Account",
@@ -225,6 +224,7 @@
     "EXPIRY_INVALID": "Expiry Invalid",
     "EXTERNAL_MESSAGE_STORED_ENCRYPTED": "External Message Stored Encrypted",
     "FAQ": "FAQ",
+    "FEEDBACK": "Feedback",
     "FILES_ATTACHED": "Files Attached",
     "FILTER_LABEL": "Filter Labels",
     "FINGERPRINT": "Fingerprint",
@@ -526,7 +526,6 @@
     "USED": "Used",
     "USER_HISTORY": "User History",
     "USER_LOGIN": "User Login",
-    "USER_PASSWORD": "User Password",
     "USER_REMOVED": "User Removed",
     "USER_STORAGE": "User Storage",
     "USERNAME": "Username",
@@ -552,6 +551,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "You have successfully unsubscribed",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "Your new features are now available",
     "ZIP": "Zip",
-    "ZIP_CODE": "Zip Code",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}"
+    "ZIP_CODE": "Zip Code"
 }
