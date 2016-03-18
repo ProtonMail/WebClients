@@ -250,11 +250,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         return deferred.promise;
     };
 
-    /* manual means the fucntion was called outside of the automated chained functions. it will be set to true if triggered manually */
-    $scope.checkAvailability = function( manual ) {
+    /**
+     * @param {Boolean} manual - it means the fucntion was called outside of the automated chained functions. it will be set to true if triggered manually
+     */
+    $scope.checkAvailability = function(manual) {
         var deferred = $q.defer();
-
-        $log.debug('checkAvailability');
 
         // reset
         $scope.goodUsername = false;
@@ -269,24 +269,30 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             if ($scope.account.Username.length > 0) {
                 User.available({ username: $scope.account.Username }).$promise
                 .then(function(response) {
-                    if (response.Available === 0) {
-                        if ( manual === true ) {
-                            $scope.badUsername = true;
-                            $scope.checkingUsername = false;
-                            deferred.resolve(200);
-                        } else {
-                            $('#Username').focus();
-                            deferred.reject('Username already taken.');
-                            $log.debug('username taken');
-                        }
+                    if (response.Error) {
+                        $scope.badUsername = true;
+                        $scope.checkingUsername = false;
+                        $('#Username').focus();
+                        deferred.reject(response.Error);
                     } else {
-                        if ( manual === true ) {
-                            $scope.goodUsername = true;
-                            $scope.checkingUsername = false;
-                            deferred.resolve(200);
+                        if (response.Available === 0) {
+                            if ( manual === true ) {
+                                $scope.badUsername = true;
+                                $scope.checkingUsername = false;
+                                deferred.resolve(200);
+                            } else {
+                                $('#Username').focus();
+                                deferred.reject('Username already taken.');
+                            }
                         } else {
-                            $scope.checkingUsername = false;
-                            deferred.resolve(200);
+                            if ( manual === true ) {
+                                $scope.goodUsername = true;
+                                $scope.checkingUsername = false;
+                                deferred.resolve(200);
+                            } else {
+                                $scope.checkingUsername = false;
+                                deferred.resolve(200);
+                            }
                         }
                     }
                 });

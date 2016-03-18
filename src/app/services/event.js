@@ -281,7 +281,8 @@ angular.module("proton.event", ["proton.constants"])
 			manage: function (data) {
 				// Check if eventID is sent
 				if (data.Error) {
-					Events.getLatestID({}).then(function(response) {
+					Events.getLatestID({})
+					.then(function(response) {
 						eventModel.manageID(response.data.EventID);
 					});
 				} else if (data.Refresh === 1) {
