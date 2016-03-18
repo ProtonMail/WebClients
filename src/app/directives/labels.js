@@ -71,7 +71,7 @@ angular.module("proton.labels", [])
             };
 
             scope.createLabel = function() {
-                $rootScope.$broadcast('createLabel');
+                $rootScope.$broadcast('openCreateLabel');
             };
         }
     };

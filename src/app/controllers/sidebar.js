@@ -43,7 +43,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     // Listeners
-    $scope.$on('createLabel', function(event) { $scope.createLabel(); });
+    $scope.$on('openCreateLabel', function(event) { $scope.createLabel(); });
     $scope.$on('$destroy', function(event) {
         $timeout.cancel(timeoutRefresh);
     });
@@ -69,7 +69,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
                                 var data = result.data;
 
                                 if(angular.isDefined(data) && data.Code === 1000) {
-                                    authentication.user.Labels.push(data.Label);
+                                    eventManager.call();
                                     cacheCounters.add(data.Label.ID);
                                     notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
                                     labelModal.deactivate();

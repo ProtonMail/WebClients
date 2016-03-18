@@ -7,6 +7,7 @@ angular.module("proton.controllers.Settings")
     $log,
     authentication,
     confirmModal,
+    eventManager,
     Label,
     labelModal,
     networkActivityTracker,
@@ -32,8 +33,21 @@ angular.module("proton.controllers.Settings")
         }
     };
 
+    // Listeners
+    $scope.$on('deleteLabel', function(event, ID) {
+        $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
+    });
+
+    $scope.$on('createLabel', function(event, ID, label) {
+        $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
+    });
+
+    $scope.$on('updateLabel', function(event, ID, label) {
+        $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
+    });
+
     $scope.createLabel = function() {
-        $rootScope.$broadcast('createLabel');
+        $rootScope.$broadcast('openCreateLabel');
     };
 
     $scope.editLabel = function(label) {
@@ -94,20 +108,19 @@ angular.module("proton.controllers.Settings")
                                 var data = result.data;
 
                                 if(angular.isDefined(data) && data.Code === 1000) {
-                                    confirmModal.deactivate();
+                                    var index = $scope.labels.indexOf(label);
+
                                     notify({message: $translate.instant('LABEL_DELETED'), classes: 'notification-success'});
-                                    authentication.user.Labels.splice(authentication.user.Labels.indexOf(label), 1);
+                                    $scope.labels.splice(index, 1);
+                                    confirmModal.deactivate();
                                 } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
                                     notify({message: data.Error, classes: 'notification-danger'});
-                                    $log.error(data);
                                 } else {
                                     notify({message: $translate.instant('ERROR_DURING_THE_LABEL_REQUEST'), classes: 'notification-danger'});
-                                    $log.error(result);
                                 }
                             },
                             function(error) {
                                 notify({message: 'Error during the label deletion request ', classes: 'notification-danger'});
-                                $log.error(error);
                             }
                         )
                     );
@@ -122,7 +135,7 @@ angular.module("proton.controllers.Settings")
     $scope.saveLabelOrder = function(labelOrder) {
         networkActivityTracker.track(
             Label.order({
-                "Order": labelOrder
+                Order: labelOrder
             }).then(function(result) {
                 var data = result.data;
 
