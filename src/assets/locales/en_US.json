@@ -1,4 +1,5 @@
 {
+    "0\" ng-change=\"changeFrom(message)\">": "0\" ng-change=\"changeFrom(message)\">",
     "ABSOLUTE_SECURITY": "Absolute Security",
     "ACCESS_TO_V2": "Having trouble? Use the old version (v2)",
     "ACCOUNT": "Account",
@@ -355,7 +356,6 @@
     "NO_SUBJECT": "No Subject",
     "NO_SUBJECT_SEND_ANYWAY?": "No subject, send anyway?",
     "NONE": "None",
-    "NOT_DELETED": "Not Deleted",
     "NOT_SET": "Not Set",
     "NOT_SET_PROPERLY": "Not Set Properly",
     "NOT_SPAM": "Not Spam",
@@ -552,5 +552,6 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "You have successfully unsubscribed",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "Your new features are now available",
     "ZIP": "Zip",
-    "ZIP_CODE": "Zip Code"
+    "ZIP_CODE": "Zip Code",
+    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}"
 }
