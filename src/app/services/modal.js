@@ -250,19 +250,16 @@ angular.module("proton.modals", [])
 // dropzone modal
 .factory('dropzoneModal', function(pmModal) {
     return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/dropzone.tpl.html',
         controller: function(params, notify, $timeout) {
             var files = [];
             var fileCount = 0;
-            var idDropzone = 'dropzone';
-            var idSelectedFile = 'selectedFile';
             var extension;
             var self = this;
 
-            this.title = params.title;
-            this.message = params.message;
-
             function init() {
-                var drop = document.getElementById(idDropzone);
+                var drop = document.getElementById('dropzone');
 
                 drop.ondrop = function(e) {
                     e.preventDefault();
@@ -288,41 +285,35 @@ angular.module("proton.modals", [])
                     self.hover = false;
                 };
 
-                $('#' + idDropzone).on('click', function() {
-                    $('#' + idSelectedFile).trigger('click');
+                $('#dropzone').on('click', function() {
+                    $('#selectedFile').trigger('click');
                 });
 
-                $('#' + idSelectedFile).change(function(e) {
-                    extension = $('#' + idSelectedFile)[0].files[0].name.substr($('#' + idSelectedFile)[0].files[0].name.length - 4);
+                $('#selectedFile').change(function(e) {
+                    extension = $('#selectedFile')[0].files[0].name.substr($('#selectedFile')[0].files[0].name.length - 4);
 
                     if (extension !== '.csv' && extension !== '.vcf') {
                         notify('Invalid file type');
                     } else {
-                        files = $('#' + idSelectedFile)[0].files;
-                        self.fileDropped = $('#' + idSelectedFile)[0].files[0].name;
+                        files = $('#selectedFile')[0].files;
+                        self.fileDropped = $('#selectedFile')[0].files[0].name;
                         self.hover = false;
                     }
                 });
             }
 
             this.import = function() {
-                if (angular.isDefined(params.import) && angular.isFunction(params.import)) {
-                    params.import(files);
-                }
+                params.import(files);
             };
 
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.cancel();
             };
 
             $timeout(function() {
                 init();
-            }.bind(this), 100);
-        },
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/dropzone.tpl.html'
+            }, 100);
+        }
     });
 })
 
