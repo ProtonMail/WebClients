@@ -412,10 +412,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                         $rootScope.isLocked = authentication.isLocked();
                         $rootScope.isSecure = authentication.isSecured();
                         window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
-                        if (CONSTANTS.WIZARD_ENABLED === true) {
-                            $rootScope.welcome = true; // Display welcome modal
-                        }
-                        $state.go("secured.inbox");
                     }
                 );
             }
@@ -430,11 +426,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
     $scope.finishRedirect = function() {
         $log.debug('finishRedirect');
-        var deferred = $q.defer();
         $scope.finishCreation = true;
-        window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
-        deferred.resolve(200);
-        return deferred.promise;
+        if (CONSTANTS.WIZARD_ENABLED === true) {
+            $rootScope.welcome = true; // Display welcome modal
+        }
+        $state.go("secured.inbox");
     };
 
     $scope.initialization();

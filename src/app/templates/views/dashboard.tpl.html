@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </header>
-                <div class="pm_grid no-margin plans">
+                <div class="pm_grid no-padding plans">
                     <div ng-repeat="plan in plans | filter: {Type: 1, Cycle: configuration.cycle}: true | orderBy: 'Amount'">
                         <div
                         ng-show="plan.display === true">

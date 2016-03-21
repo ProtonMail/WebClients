@@ -6,6 +6,10 @@ Official AngularJS web client for the ProtonMail secure email service. ProtonMai
 
 [OpenPGPjs](https://github.com/openpgpjs/openpgpjs)
 
+### Translations
+
+We are starting a translation project to get ProtonMail localized and translated into as many languages as possible. To help with this effort, please visit the [translations repository](https://github.com/ProtonMail/translations).
+
 ### Basic Installation
 
 #### If you have node `0.12` installed locally

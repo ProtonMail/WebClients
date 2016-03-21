@@ -50,14 +50,14 @@
                 <div class="col-1-2">
                     <label for="search_start">{{ 'START_DATE' | translate }}</label>
                     <span class="input-icon">
-                        <em class="fa fa-calendar"></em>
+                        <em class="fa fa-calendar" ng-click="focusStart()"></em>
                         <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.start" id="search_start" on-select="setMin()" class="ng-isolate-scope">
                     </span>
                 </div>
                 <div class="col-1-2">
                     <label for="search_end">{{ 'END_DATE' | translate }}</label>
                     <span class="input-icon">
-                        <em class="fa fa-calendar"></em>
+                        <em class="fa fa-calendar" ng-click="focusEnd()"></em>
                         <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.end" id="search_end" on-select="setMax()" class="ng-isolate-scope">
                     </span>
                 </div>
