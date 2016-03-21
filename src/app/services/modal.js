@@ -649,7 +649,7 @@ angular.module("proton.modals", [])
                     this.choice = _.findWhere(this.choices, {value: params.choice});
                     this.changeChoice();
                 }
-            };
+            }.bind(this);
 
             /**
              * Generate key for the organization
