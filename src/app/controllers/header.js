@@ -160,6 +160,14 @@ angular.module("proton.controllers.Header", [])
         $scope.advancedSearch = false;
     };
 
+    $scope.focusStart = function() {
+        $('#search_start').trigger('click');
+    };
+
+    $scope.focusEnd = function() {
+        $('#search_end').trigger('click');
+    };
+
     $scope.setMin = function() {
         if($scope.ctrl.start.getDate() === null) {
             $scope.ctrl.start = null;
