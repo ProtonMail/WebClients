@@ -17,6 +17,11 @@ $pad: 20px;
 	.col-1-1,
 	.col-8-8 {
 		box-sizing: border-box;
+		&.truncate {
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 	}
 
 	&.pad {
