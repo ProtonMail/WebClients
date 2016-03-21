@@ -7,6 +7,8 @@
 
 #pm_toolbar-desktop {
     height: 56px;
+    position: relative;
+    z-index: 8;
     .pm_checkbox {
         float: left;
         display: block;
