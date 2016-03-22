@@ -47,6 +47,10 @@ angular.module("proton.controllers.Settings")
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
     });
 
+    $scope.$on('updateLabels', function(event) {
+        $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
+    });
+
     $scope.createLabel = function() {
         $rootScope.$broadcast('openCreateLabel');
     };

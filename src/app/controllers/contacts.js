@@ -45,6 +45,10 @@ angular.module("proton.controllers.Contacts", [
         $scope.updateContacts();
     });
 
+    $scope.$on('updateContacts', function(event) {
+        $scope.updateContacts();
+    });
+
     $scope.$on('searchContacts', function(event, keyword) {
         $scope.params.searchContactInput = keyword;
         $scope.refreshContacts(true);
