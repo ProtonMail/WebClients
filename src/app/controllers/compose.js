@@ -1071,9 +1071,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 parameters.Action = message.Action;
             }
 
-            if(angular.isDefined(message.ID)) {
+            if (angular.isDefined(message.ID)) {
                 parameters.id = message.ID;
             } else {
+                parameters.Message.IsRead = 1;
+            }
+
+            if (autosaving === false) {
                 parameters.Message.IsRead = 1;
             }
 
@@ -1241,7 +1245,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.send = function(message) {
         var deferred = $q.defer();
         var validate = $scope.validate(message);
-        
+
         if (validate) {
             $scope.save(message, false, false, false)
             .then(function() {
