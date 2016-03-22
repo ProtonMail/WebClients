@@ -429,12 +429,15 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('loginPasswordModal', function(pmModal) {
+.factory('loginPasswordModal', function($timeout, pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/loginPassword.tpl.html',
         controller: function(params) {
             this.loginPassword = '';
+            $timeout(function() {
+                $('#loginPassword').focus();
+            });
 
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
@@ -447,6 +450,7 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
+
         }
     });
 })
