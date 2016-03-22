@@ -188,6 +188,9 @@
 						cursor: pointer;
 						padding: 0 .5rem;
 					}
+					&.uploading {
+						background: $gray-light;
+					}
 				}
 			}
 		}
