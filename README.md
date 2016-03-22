@@ -1,7 +1,7 @@
 ProtonMail Web Client
 =======
 
-Official AngularJS web client for the ProtonMail secure email service. ProtonMail also makes use of OpenPGPjs as our message crytography is PGP compliant. To view the open source email encryption libraries ProtonMail uses, please click here.
+Official AngularJS web client for the [ProtonMail secure email service](https://protonmail.com). ProtonMail also makes use of OpenPGPjs as our message crytography is PGP compliant. To view the open source email encryption libraries ProtonMail uses, please click here.
 
 
 [OpenPGPjs](https://github.com/openpgpjs/openpgpjs)
