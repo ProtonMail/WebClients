@@ -84,7 +84,7 @@ angular.module("proton.event", ["proton.constants"])
 				}
 			},
 			manageUser: function(user) {
-				if(angular.isDefined(user)) {
+				if (angular.isDefined(user)) {
 					var mailboxPassword = authentication.getPassword();
 					var promises = [];
 					var dirtyAddresses = [];
@@ -294,6 +294,18 @@ angular.module("proton.event", ["proton.constants"])
 					cacheCounters.reset();
 					cache.callRefresh();
 					cacheCounters.query();
+					// Fetch labels data
+					Label.query().then(function(result) {
+						if (result.data && result.data.Code === 1000) {
+							authentication.user.Labels = result.data.Labels;
+						}
+					});
+					// Fetch contacts data
+					Contact.query().then(function(result) {
+						if (result.data && result.data.Code === 1000) {
+							authentication.user.Contacts = result.data.Contacts;
+						}
+					});
 				} else if (data.Reload === 1) {
 					$window.location.reload();
 				} else if (this.isDifferent(data.EventID)) {
