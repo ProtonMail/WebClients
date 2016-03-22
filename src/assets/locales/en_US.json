@@ -1,4 +1,5 @@
 {
+    "0\" ng-change=\"changeFrom(message)\">": "0\" ng-change=\"changeFrom(message)\">",
     "ABSOLUTE_SECURITY": "Absolute Security",
     "ACCESS_TO_V2": "Having trouble? Use the old version (v2)",
     "ACCOUNT": "Account",
@@ -245,7 +246,6 @@
     "GENERATING": "Generating",
     "GOOD!": "Good!",
     "HAS_CODE_BUT_WRONG": "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 1 hour for changes to take affect.",
-    "HAVE_A_QUESTION?": "Have A Question?",
     "HELP_AND_ANSWERS": "Help & Answers",
     "HIDE": "Hide",
     "HIDE_DETAILS": "Hide Details",
@@ -254,6 +254,7 @@
     "HOST_NAME": "Host / Name",
     "HOURS": "Hours",
     "HOW_DOES_THIS_WORK?": "How Does This Work?",
+    "I_HAVE_A_QUESTION": "I have a question",
     "IDENTITY": "Identity",
     "IDENTITY_SAVED": "Identity Saved",
     "IMAGE_PREFERENCES_UPDATED": "Image Preferences Updated",
@@ -437,6 +438,7 @@
     "REPLY": "Reply",
     "REPLY_ALL": "Reply All",
     "REPLY_SECURELY": "Reply Securely",
+    "REPORT_A_BUG": "Report a bug",
     "REPORT_BUG": "Report Bug",
     "REQUIRED": "Required",
     "RESET": "Reset",
@@ -551,5 +553,6 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "You have successfully unsubscribed",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "Your new features are now available",
     "ZIP": "Zip",
-    "ZIP_CODE": "Zip Code"
+    "ZIP_CODE": "Zip Code",
+    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}"
 }

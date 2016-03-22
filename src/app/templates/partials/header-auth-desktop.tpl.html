@@ -14,32 +14,38 @@
     <ul class="navigation">
         <li ui-sref-active="active">
             <a ui-sref="secured.dashboard">
-                <em><i class="fa fa-arrow-up"></i></em>
-                <strong>{{ 'UPGRADE' | translate }}</strong>
+                    <i class="fa fa-arrow-up"></i><br />
+                    <strong>{{ 'UPGRADE' | translate }}</strong>
             </a>
         </li>
         <li ng-class="{'active': activeSettings()}">
             <a id="tour-settings" ui-sref="secured.account">
-                <em><i class="fa fa-cogs"></i></em>
+                <i class="fa fa-cogs"></i><br />
                 <strong>{{ 'SETTINGS' | translate }}</strong>
             </a>
         </li>
         <li ui-sref-active="active">
             <a ui-sref="secured.contacts">
-                <em><i class="fa fa-users"></i></em>
+                <i class="fa fa-users"></i><br />
                 <strong>{{ 'CONTACTS' | translate }}</strong>
             </a>
         </li>
         <li>
-            <a id="tour-support" href="#" ng-click="openReportModal()">
-                <em><i class="fa fa-bug"></i></em>
-                <strong>{{ 'REPORT_BUG' | translate }}</strong>
-            </a>
+            <span class="pm_buttons">
+                <a id="tour-support" href="#" dropdown>
+                    <i class="fa fa-bug"></i> <i class="fa fa-angle-down"></i><br />
+                    <strong>{{ 'REPORT_BUG' | translate }}</strong>
+                </a>
+                <span class="pm_dropdown wide">
+                    <a href="https://protonmail.com/support" target="_blank" class="help"><i class="fa fa-question-circle"></i> {{ 'I_HAVE_A_QUESTION' | translate }}</a>
+                    <a href="#" ng-click="openReportModal()" class="help"><i class="fa fa-bug"></i> {{ 'REPORT_A_BUG' | translate }}</a>
+                </span>
+            </span>
         </li>
         <li>
             <span class="pm_buttons">
-                <a class="pm_trigger" dropdown>
-                    <em><i class="fa fa-user"></i> <i class="fa fa-angle-down"></i></em>
+                <a href="#" dropdown>
+                    <i class="fa fa-user"></i> <i class="fa fa-angle-down"></i><br />
                     <strong>{{ user.DisplayName || user.Addresses[0].Email }}</strong>
                 </a>
                 <span class="pm_dropdown wide right">
@@ -51,16 +57,14 @@
                     <a class="help" target="_blank" href="https://protonmail.com/support">
                         <i class="fa fa-life-ring"></i> {{ 'HELP_AND_ANSWERS' | translate }}
                     </a>
-                    <br>
-                    <a href="#" ng-click="logout();" class="pm_button primary">
-                    {{ 'LOGOUT' | translate }}
-                    </a>
+                    <br />
+                    <button type="button" ng-click="logout()" class="pm_button primary">{{ 'LOGOUT' | translate }}</button>
+                    <br />
                     <a href="https://protonmail.com/blog/protonmail-beta-v3-1-release-notes/" target="_blank" class="version" title="{{ dateVersion }}" target="_blank">
                         <small>ProtonMail {{ appVersion }}</small>
                     </a>
                 </span>
             </span>
-
         </li>
     </ul>
 </header>
