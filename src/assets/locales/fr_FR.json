@@ -1,4 +1,5 @@
 {
+    "0\" ng-change=\"changeFrom(message)\">": "",
     "ABSOLUTE_SECURITY": "Sécurité absolue",
     "ACCESS_TO_V2": "Utiliser l'ancienne version (v2)",
     "ACCOUNT": "Compte",
@@ -18,6 +19,8 @@
     "ADD_PROTONMAIL_ADDRESS": "Ajouter adresse ProtonMail",
     "ADD_USER": "Ajouter un utilisateur",
     "ADDED_ADDRESSES": "Adresses ajoutées",
+    "ADDITIONAL_THEMES": "",
+    "ADDITIONAL_THEMES_INFO": "",
     "ADDRESS": "Adresses",
     "ADDRESS_ADDED": "Adresse Ajoutées",
     "ADDRESS_CREATION_FAILED": "Echec de création d'adresse",
@@ -83,6 +86,7 @@
     "CHOOSE_A_LOGIN_PASSWORD": "Choisissez le mot de passe de login",
     "CHOOSE_A_MAILBOX_PASSWORD": "Choisissez le mot de passe de la MailBox",
     "CHOOSE_ADDRESS": "Choisissez une adresse",
+    "CHOOSE_LANG": "",
     "CHOOSE_USERNAME": "Choisissez un nom d'utilisateur",
     "CLEAR": "Nettoyer",
     "CLEAR_LOGS": "",
@@ -95,6 +99,7 @@
     "COMPOSE": "Composer",
     "COMPOSE_TO": "Écrire à",
     "COMPOSER": "Écrire",
+    "COMPOSER_INFO": "",
     "CONFIRM": "Confirmer",
     "CONFIRM_DELETE_KEY": "Confirmation suppression clé",
     "CONFIRM_DOWNGRADE": "Confirmation Downgrade",
@@ -133,6 +138,7 @@
     "CUSTOM_DOMAIN_ADDRESSES": "Adresse de domaine personnalisée",
     "CUSTOM_DOMAINS": "Domaines personalisés",
     "CUSTOM_THEME": "Thème personnalisé",
+    "CUSTOM_THEME_INFO": "",
     "CVC_INVALID": "CVC Invalide",
     "DAILY_EMAIL_NOTIFICATIONS": "Notification email journalière",
     "DASHBOARD": "Tableau de bord",
@@ -263,6 +269,7 @@
     "INBOX": "Boite De Reception",
     "INSERT_IMAGE": "Inserer Une Image",
     "INSERT_LINK": "Inserer Un Lien",
+    "INTERNATIONALIZATION": "",
     "INVALID_EMAIL": "Email Invalide",
     "INVALID_FILE_TYPE": "Type de fichier invalide",
     "INVOICE": "Facture",
@@ -283,6 +290,7 @@
     "LABELS": "Labels",
     "LARGE_TO_SMALL": "Grand à petit",
     "LAYOUT": "Disposition",
+    "LAYOUT_INFO": "",
     "LAYOUT_SAVED": "Disposition sauvegardée",
     "LEARN_MORE": "Apprendre plus",
     "LIMITED_SUPPORT": "Support limité",
@@ -551,5 +559,6 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "Désincription effectuée",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "Les nouvelles fonctionalités sont maintenant disponibles",
     "ZIP": "",
-    "ZIP_CODE": ""
+    "ZIP_CODE": "",
+    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": ""
 }
