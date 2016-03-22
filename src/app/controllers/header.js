@@ -1,6 +1,6 @@
-angular.module("proton.controllers.Header", [])
+angular.module('proton.controllers.Header', [])
 
-.controller("HeaderController", function(
+.controller('HeaderController', function(
     $location,
     $log,
     $rootScope,
@@ -14,21 +14,12 @@ angular.module("proton.controllers.Header", [])
     notify,
     tools
 ) {
-    $scope.params = {
-        searchMessageInput: $stateParams.words || '',
-        searchContactInput: ''
-    };
-
+    $scope.params = {};
     $scope.appVersion = CONFIG.app_version;
-
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
     $scope.addresses = [];
     $scope.addresses.push({Email: $translate.instant('ALL'), ID: undefined, Send: 0, Receive: 1, Status: 1}); // Add ALL option
-
-    if (authentication.user) {
-        $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
-    }
-
+    $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
     $scope.ctrl = {};
     $scope.ctrl.attachments = 2;
     $scope.ctrl.address = $scope.addresses[0]; // Select ALL
@@ -52,17 +43,90 @@ angular.module("proton.controllers.Header", [])
         $scope.path = mailbox;
     };
 
-    // Listeners
-    $scope.$on('openSearchModal', function(event, value) {
-        $scope.openSearchModal(value);
-    });
+    /**
+     * Return parameters from String
+     * @return {Object}
+     */
+    var extractParameters = function() {
+        var parameters = {};
+        var value = $scope.params.searchMessageInput;
+        var splitted = value.split(' ');
 
-    $scope.$on('$stateChangeSuccess', function(event) {
-        setPath();
+        for (var i = 0; i < splitted.length; i++) {
+            var part = splitted[i];
 
-        if($state.is('secured.search') === false) {
-            $scope.params.searchMessageInput = '';
+            if (part.indexOf('keyword:') !== -1) {
+                parameters.keyword = part.replace('keyword:', '');
+            }
+
+            if (part.indexOf('from:') !== -1) {
+                parameters.from = part.replace('from:', '');
+            }
+
+            if (part.indexOf('to:') !== -1) {
+                parameters.to = part.replace('to:', '');
+            }
+
+            if (part.indexOf('label:') !== -1) {
+                parameters.label = part.replace('label:', '');
+            }
         }
+
+        if (Object.keys(parameters).length === 0 && value.length > 0) {
+            parameters.keyword = value;
+        }
+
+        return parameters;
+    };
+
+    var resetParameters = function() {
+        return {
+            address: undefined,
+            page: undefined,
+            filter: undefined,
+            sort: undefined,
+            label: undefined,
+            from: undefined,
+            to: undefined,
+            subject: undefined,
+            keyword: undefined,
+            begin: undefined,
+            end: undefined,
+            attachments: undefined,
+            starred: undefined,
+            reload: undefined
+        };
+    };
+
+    /**
+     * Generate string from parameters set inside the URL
+     */
+    var generateSearchString = function() {
+        var result = '';
+
+        if (angular.isDefined($stateParams.keyword)) {
+            result += 'keyword:' + $stateParams.keyword + ' ';
+        }
+
+        if (angular.isDefined($stateParams.from)) {
+            result += 'from:' + $stateParams.from + ' ';
+        }
+
+        if (angular.isDefined($stateParams.to)) {
+            result += 'to:' + $stateParams.to + ' ';
+        }
+
+        if (angular.isDefined($stateParams.label)) {
+            result += 'label:' + $stateParams.label + ' ';
+        }
+
+        $scope.params.searchMessageInput = result;
+        $scope.params.searchContactInput = '';
+    };
+
+    // Listeners
+    $scope.$on('$stateChangeSuccess', function(event) {
+        $scope.initialization();
     });
 
     $scope.$on('updateUser', function(event) {
@@ -76,7 +140,10 @@ angular.module("proton.controllers.Header", [])
         $scope.ctrl.address = $scope.addresses[0];
     });
 
-    setPath();
+    $scope.initialization = function() {
+        setPath();
+        generateSearchString();
+    };
 
     /**
      * Call event to open new composer
@@ -89,71 +156,64 @@ angular.module("proton.controllers.Header", [])
         $rootScope.$broadcast('tourStart');
     };
 
+    $scope.toggleAdvancedSearch = function() {
+        if ($scope.advancedSearch === false) {
+            $scope.openSearchModal();
+        } else {
+            $scope.closeSearchModal();
+        }
+    };
+
     $scope.openSearchModal = function() {
+        var parameters = extractParameters();
+
         $scope.labels = authentication.user.Labels;
-        $scope.advancedSearch = !$scope.advancedSearch;
+        $scope.ctrl.keyword = parameters.keyword || '';
+        $scope.ctrl.from = parameters.from || '';
+        $scope.ctrl.to = parameters.to || '';
+
+        if (angular.isDefined(parameters.label)) {
+            $('#search_folder').val(parameters.label);
+        }
+
+        $scope.advancedSearch = true;
     };
 
     $scope.closeSearchModal = function() {
-        $scope.advancedSearch = !$scope.advancedSearch;
-    };
-
-    $scope.isContactsView = function() {
-        return $state.is('secured.contacts');
+        $scope.advancedSearch = false;
     };
 
     $scope.sidebarToggle = function() {
         $rootScope.$broadcast('sidebarMobileToggle');
     };
 
-    $scope.resetSearchParameters = function() {
-        var keys = Object.keys($stateParams);
-        var params = {};
-
-        _.each(keys, function(key) {
-            params[key] = undefined;
-        });
-
-        return params;
-    };
-
     $scope.searchMessages = function() {
-        if($scope.params.searchMessageInput.length > 0) {
-            var params = $scope.resetSearchParameters();
+        var parameters = resetParameters();
 
-            params.words = $scope.params.searchMessageInput;
-
-            $state.go('secured.search', params);
+        if ($scope.advancedSearch === false) {
+            angular.merge(parameters, extractParameters());
         } else {
-            $state.go('secured.inbox');
-        }
-    };
+            parameters.keyword = $scope.ctrl.keyword;
+            parameters.from = $scope.ctrl.from;
+            parameters.to = $scope.ctrl.to;
+            parameters.subject = $scope.ctrl.subject;
+            parameters.attachments = parseInt($scope.ctrl.attachments);
 
-    $scope.searchAdvanced = function() {
-        var parameters = {};
+            if (angular.isDefined($scope.ctrl.address.ID)) {
+                parameters.address = $scope.ctrl.address.ID;
+            }
 
-        parameters.words = $scope.params.searchMessageInput;
-        parameters.from = $scope.ctrl.from;
-        parameters.to = $scope.ctrl.to;
-        parameters.subject = $scope.ctrl.subject;
-        parameters.attachments = parseInt($scope.ctrl.attachments);
+            if(parseInt($('#search_folder').val()) !== -1) {
+                parameters.label = $('#search_folder').val();
+            }
 
-        if (angular.isDefined($scope.ctrl.address.ID)) {
-            parameters.address = $scope.ctrl.address.ID;
-        }
+            if($('#search_start').val().length > 0) {
+                parameters.begin = $scope.ctrl.start.getMoment().unix();
+            }
 
-        if(parseInt($('#search_folder').val()) !== -1) {
-            parameters.label = $('#search_folder').val();
-        } else {
-            parameters.label = null;
-        }
-
-        if($('#search_start').val().length > 0) {
-            parameters.begin = $scope.ctrl.start.getMoment().unix();
-        }
-
-        if($('#search_end').val().length > 0) {
-            parameters.end = $scope.ctrl.end.getMoment().unix();
+            if($('#search_end').val().length > 0) {
+                parameters.end = $scope.ctrl.end.getMoment().unix();
+            }
         }
 
         $state.go('secured.search', parameters);
@@ -246,4 +306,6 @@ angular.module("proton.controllers.Header", [])
             return '';
         }
     };
+
+    $scope.initialization();
 });

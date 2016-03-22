@@ -15,7 +15,7 @@ angular.module('proton.routes', [
         'from',
         'to',
         'subject',
-        'words',
+        'keyword',
         'begin',
         'end',
         'attachments',
