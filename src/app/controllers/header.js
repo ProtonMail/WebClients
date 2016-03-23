@@ -68,31 +68,34 @@ angular.module('proton.controllers.Header', [])
     var extractParameters = function() {
         var parameters = {};
         var value = $scope.params.searchMessageInput;
-        var splitted = value.split(' ');
+        var separators = [
+            {value: 'keyword:', key: 'keyword'},
+            {value: 'from:', key: 'from'},
+            {value: 'to:', key: 'to'},
+            {value: 'in:', key: 'label'}
+        ];
 
-        for (var i = 0; i < splitted.length; i++) {
-            var part = splitted[i];
+        _.each(separators, function(separator) {
+            var tmp = value.split(separator.value);
 
-            if (part.indexOf('keyword:') !== -1) {
-                parameters.keyword = part.replace('keyword:', '');
-            }
+            _.each(separators, function(sep) {
+                if (tmp[1] && tmp[1].indexOf(sep.value) !== -1) {
+                    tmp[1] = tmp[1].split(sep.value)[0];
+                }
+            });
 
-            if (part.indexOf('from:') !== -1) {
-                parameters.from = part.replace('from:', '');
-            }
+            if (tmp[1]) {
+                if (separator.key === 'label') {
+                    var folder = _.findWhere($scope.ctrl.folders, {label: tmp[1]});
 
-            if (part.indexOf('to:') !== -1) {
-                parameters.to = part.replace('to:', '');
-            }
-
-            if (part.indexOf('in:') !== -1) {
-                var folder = _.findWhere($scope.ctrl.folders, {label: part.replace('in:', '')});
-
-                if (angular.isDefined(folder)) {
-                    parameters.label = folder.value;
+                    if (angular.isDefined(folder)) {
+                        parameters.label = folder.value;
+                    }
+                } else {
+                    parameters[separator.key] = tmp[1];
                 }
             }
-        }
+        });
 
         if (Object.keys(parameters).length === 0 && value.length > 0) {
             parameters.keyword = value;
