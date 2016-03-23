@@ -203,11 +203,11 @@ angular.module('proton.controllers.Header', [])
         var parameters = resetParameters();
 
         if ($scope.advancedSearch === false) {
-            if ($scope.params.searchMessageInput.length === 0) {
-                $state.go('secured.inbox');
-            } else {
+            // if ($scope.params.searchMessageInput.length === 0) {
+            //     $state.go('secured.inbox');
+            // } else {
                 angular.merge(parameters, extractParameters());
-            }
+            // }
         } else {
             parameters.keyword = $scope.ctrl.keyword;
             parameters.from = $scope.ctrl.from;
