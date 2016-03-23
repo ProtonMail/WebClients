@@ -1,4 +1,5 @@
 {
+    "0\" ng-change=\"changeFrom(message)\">": "0\" ng-change=\"changeFrom(message)\">",
     "ABSOLUTE_SECURITY": "Absolute Security",
     "ACC_CREATION_ERR": "An error occured while trying to create your account. To see common problems and solutions <a target='_blank' href='https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/'>click here</a>.",
     "ACCESS_TO_V2": "Having trouble? Use the old version (v2)",
@@ -331,12 +332,14 @@
     "LOGIN_PASSWORD": "Login Password",
     "LOGIN_PASSWORD_UPDATED": "Login Password Updated",
     "LOGIN_PW_DEF": "This is used to log you into our system.",
+    "LOGIN_PW_REQ": "LOGIN_PW_REQ",
     "LOGIN_SUCCESS": "Login Success",
     "LOGOUT": "Logout",
     "LOGS_CLEARED": "Logs Cleared",
     "MAILBOX_PASSWORD": "Mailbox Password",
     "MAILBOX_PASSWORD_UPDATED": "Mailbox Password Updated",
     "MAILBOX_PW_DEF": "This is used to encrypt and decrypt your messages. This is private and only you know it.",
+    "MAILBOX_PW_REQ": "MAILBOX_PW_REQ",
     "MAILBOX_PW_WARNING": "If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.",
     "MAIN": "Main",
     "MAKE_DEFAULT": "Make Default",
@@ -476,8 +479,7 @@
     "RECOVERY_EMAIL": "Recovery Email",
     "RECOVERY_EMAIL_DEF": "This is used to recover your account if you get locked out or forget your login password.",
     "RECOVERY_EMAIL_INFO": "Also used to reset a forgotten password.",
-    "RECOVERY_INSTRUCTIONS": "We will send a code to your <abbr title='This is the optional email you used when first creating an account. This is the same as your Notification Email that is used for sending alerts about new messages.'>Recovery Email</abbr> to reset your
-    <abbr title='Your Login Password is the first password you enter to enter our secure system. The Mailbox password is your second password and is used to decrypt your messages.'>Login Password</abbr>.",
+    "RECOVERY_INSTRUCTIONS": "We will send a code to your <abbr title='This is the optional email you used when first creating an account. This is the same as your Notification Email that is used for sending alerts about new messages.'>Recovery Email</abbr> to reset your <abbr title='Your Login Password is the first password you enter to enter our secure system. The Mailbox password is your second password and is used to decrypt your messages.'>Login Password</abbr>.",
     "REDIRECTING": "Redirecting",
     "REFRESH": "Refresh",
     "REFRESH_DOMAIN_STATUS": "Refresh Domain Status",
@@ -618,5 +620,6 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "You have successfully unsubscribed",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "Your new features are now available",
     "ZIP": "Zip",
-    "ZIP_CODE": "Zip Code"
+    "ZIP_CODE": "Zip Code",
+    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}"
 }
