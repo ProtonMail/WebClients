@@ -201,14 +201,17 @@ angular.module('proton.controllers.Header', [])
 
     $scope.searchMessages = function() {
         var parameters = resetParameters();
+        var redirection;
 
         if ($scope.advancedSearch === false) {
-            // if ($scope.params.searchMessageInput.length === 0) {
-            //     $state.go('secured.inbox');
-            // } else {
+            if ($scope.params.searchMessageInput.length === 0) {
+                redirection = 'secured.inbox';
+            } else {
+                redirection = 'secured.search';
                 angular.merge(parameters, extractParameters());
-            // }
+            }
         } else {
+            redirection = 'secured.search';
             parameters.keyword = $scope.ctrl.keyword;
             parameters.from = $scope.ctrl.from;
             parameters.to = $scope.ctrl.to;
@@ -232,7 +235,7 @@ angular.module('proton.controllers.Header', [])
             }
         }
 
-        $state.go('secured.search', parameters);
+        $state.go(redirection, parameters);
         $scope.advancedSearch = false;
     };
 
