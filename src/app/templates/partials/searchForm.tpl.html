@@ -21,17 +21,7 @@
                 <div class="col-1-2">
                     <label for="search_folder">{{ 'LOCATION' | translate }}</label>
                     <span class="pm_select">
-                        <select id="search_folder">
-                            <optgroup label="Default">
-                                <option value="-1" selected="selected">{{ 'ALL' | translate }}</option>
-                            </optgroup>
-                            <optgroup label="{{ 'FOLDERS' | translate }}">
-                                <option ng-repeat="(key, value) in folders" value="{{ value }}">{{ key | capitalize }}</option>
-                            </optgroup>
-                            <optgroup label="{{ 'LABELS' | translate }}">
-                                <option ng-repeat="label in labels" value="{{ label.ID }}">{{ label.Name }}</option>
-                            </optgroup>
-                        </select>
+                        <select id="search_folder" ng-model="ctrl.folder" ng-options="folder.label group by folder.group for folder in ctrl.folders"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>

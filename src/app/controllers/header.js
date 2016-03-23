@@ -29,9 +29,23 @@ angular.module('proton.controllers.Header', [])
     $scope.ctrl.address = $scope.addresses[0]; // Select ALL
     $scope.advancedSearch = false;
     $scope.starred = 2;
-    $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
-    delete $scope.folders.search;
-    delete $scope.folders.label;
+
+    var addFolders = function() {
+        $scope.ctrl.folders = [];
+        $scope.ctrl.folders.push({value: -1, label: $translate.instant('ALL'), group: 'default'});
+
+        _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(value, key) {
+            if (key !== 'search' && key !== 'label') {
+                $scope.ctrl.folders.push({value: value, label: key, group: 'folder'});
+            }
+        });
+
+        _.each(authentication.user.Labels, function(label) {
+            $scope.ctrl.folders.push({value: label.ID, label: label.Name, group: 'label'});
+        });
+
+        $scope.ctrl.folder = $scope.ctrl.folder || $scope.ctrl.folders[0];
+    };
 
     var setPath = function() {
         var mailbox = $state.$current.name.replace('secured.', '').replace('.view', '');
@@ -72,7 +86,11 @@ angular.module('proton.controllers.Header', [])
             }
 
             if (part.indexOf('label:') !== -1) {
-                parameters.label = part.replace('label:', '');
+                var folder = _.findWhere($scope.ctrl.folders, {label: part.replace('label:', '')});
+
+                if (angular.isDefined(folder)) {
+                    parameters.label = folder.value;
+                }
             }
         }
 
@@ -129,7 +147,11 @@ angular.module('proton.controllers.Header', [])
         }
 
         if (angular.isDefined($stateParams.label)) {
-            result += 'label:' + $stateParams.label + ' ';
+            var folder = _.findWhere($scope.ctrl.folders, {value: $stateParams.label});
+
+            if (angular.isDefined(folder)) {
+                result += 'label:' + folder.label + ' ';
+            }
         }
 
         $scope.params.searchMessageInput = result;
@@ -153,6 +175,7 @@ angular.module('proton.controllers.Header', [])
     });
 
     $scope.initialization = function() {
+        addFolders();
         setPath();
         generateSearchString();
     };
@@ -183,11 +206,7 @@ angular.module('proton.controllers.Header', [])
         $scope.ctrl.keyword = parameters.keyword || '';
         $scope.ctrl.from = parameters.from || '';
         $scope.ctrl.to = parameters.to || '';
-
-        if (angular.isDefined(parameters.label)) {
-            $('#search_folder').val(parameters.label);
-        }
-
+        $scope.ctrl.folder = _.findWhere($scope.ctrl.folders, {value: parameters.label}) || $scope.ctrl.folders[0];
         $scope.advancedSearch = true;
     };
 
@@ -222,8 +241,8 @@ angular.module('proton.controllers.Header', [])
                 parameters.address = $scope.ctrl.address.ID;
             }
 
-            if(parseInt($('#search_folder').val()) !== -1) {
-                parameters.label = $('#search_folder').val();
+            if($scope.ctrl.folder.value !== -1) {
+                parameters.label = $scope.ctrl.folder.value;
             }
 
             if($('#search_start').val().length > 0) {
