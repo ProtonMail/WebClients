@@ -275,7 +275,7 @@ angular.module("proton.controllers.Settings")
             if ($scope.subscription.Name === plan.Name) {
                 text = $translate.instant('UPDATE_PLUS');
             } else if ($scope.subscription.Name === 'free') {
-                text = $translate.instant('UPDATE_TO_PLUS');
+                text = $translate.instant('UPGRADE_TO_PLUS');
             } else if ($scope.subscription.Name === 'visionary') {
                 text = $translate.instant('DOWNGRADE_TO_PLUS');
             }
