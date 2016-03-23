@@ -109,7 +109,11 @@ angular.module('proton.controllers.Header', [])
         var result = '';
 
         if (angular.isDefined($stateParams.keyword)) {
-            result += 'keyword:' + $stateParams.keyword + ' ';
+            if (angular.isUndefined($stateParams.from) && angular.isUndefined($stateParams.to) && angular.isUndefined($stateParams.label)) {
+                result += $stateParams.keyword + ' ';
+            } else {
+                result += 'keyword:' + $stateParams.keyword + ' ';
+            }
         }
 
         if (angular.isDefined($stateParams.from)) {
