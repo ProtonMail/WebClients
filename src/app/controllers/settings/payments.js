@@ -6,6 +6,7 @@ angular.module('proton.controllers.Settings')
     $q,
     authentication,
     cardModal,
+    customizeInvoiceModal,
     payModal,
     confirmModal,
     invoices,
@@ -110,6 +111,19 @@ angular.module('proton.controllers.Settings')
                 },
                 cancel: function() {
                     confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Open modal to customize invoice text
+     */
+    $scope.customize = function() {
+        customizeInvoiceModal.activate({
+            params: {
+                cancel: function() {
+                    customizeInvoiceModal.deactivate();
                 }
             }
         });

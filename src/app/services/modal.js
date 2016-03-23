@@ -1718,6 +1718,33 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('customizeInvoiceModal', function(pmModal, Setting, notify, authentication) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/customizeInvoice.tpl.html',
+        controller: function(params) {
+            this.text = authentication.user.InvoiceText || '';
+
+            this.submit = function() {
+                Setting.invoiceText({InvoiceText: this.text}).$promise
+                .then(function(response) {
+                    if (response.Code === 1000) {
+                        authentication.user.InvoiceText = this.text;
+                        notify({message: 'Invoice customized', classes: 'notification-success'});
+                        params.cancel();
+                    } else if (response.Error) {
+                        notify({message: response.Error, classes: 'notification-danger'});
+                    }
+                });
+            }.bind(this);
+
+            this.cancel = function() {
+                params.cancel();
+            };
+        }
+    });
+})
+
 .factory('welcomeModal', function(pmModal, Setting, authentication, networkActivityTracker, $q) {
     return pmModal({
         controllerAs: 'ctrl',

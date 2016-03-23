@@ -74,6 +74,10 @@ angular.module("proton.models.setting", [])
             apiTest: {
                 method: 'get',
                 url: url.get() + '/tests/error'
+            },
+            invoiceText: {
+                method: 'put',
+                url: url.get() + '/settings/invoicetext'
             }
         }
     );
