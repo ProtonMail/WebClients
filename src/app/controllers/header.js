@@ -85,8 +85,8 @@ angular.module('proton.controllers.Header', [])
                 parameters.to = part.replace('to:', '');
             }
 
-            if (part.indexOf('label:') !== -1) {
-                var folder = _.findWhere($scope.ctrl.folders, {label: part.replace('label:', '')});
+            if (part.indexOf('in:') !== -1) {
+                var folder = _.findWhere($scope.ctrl.folders, {label: part.replace('in:', '')});
 
                 if (angular.isDefined(folder)) {
                     parameters.label = folder.value;
@@ -150,7 +150,7 @@ angular.module('proton.controllers.Header', [])
             var folder = _.findWhere($scope.ctrl.folders, {value: $stateParams.label});
 
             if (angular.isDefined(folder)) {
-                result += 'label:' + folder.label + ' ';
+                result += 'in:' + folder.label + ' ';
             }
         }
 
