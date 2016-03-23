@@ -25,6 +25,7 @@
         <span
         class="senders"
         ng-click="click(conversation)">
+            &nbsp;
             <span
             ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
             ng-repeat="contact in senders(conversation)"
