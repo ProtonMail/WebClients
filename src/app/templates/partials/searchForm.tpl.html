@@ -3,7 +3,7 @@
         <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
             <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
         </button>
-        <input type="search" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
+        <input type="text" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
         <button type="submit" ng-show="advancedSearch !== true">
             <i class="fa fa-search"></i>
         </button>
