@@ -254,14 +254,14 @@ angular.module('proton.autocomplete', [])
 
 .directive('autosize', function() {
     return {
-        require: 'ngModel',
-        link: function(scope, element, attrs, ctrl) {
-            var span, resize;
+        link: function(scope, element, attrs) {
+            var span, resize, change, input;
 
+            input = angular.element(element);
             span = angular.element('<span></span>');
             span.css('display', 'none')
-            .css('visibility', 'hidden')
-            .css('width', 'auto');
+                .css('visibility', 'hidden')
+                .css('width', 'auto');
 
             element.parent().append(span);
 
@@ -287,16 +287,14 @@ angular.module('proton.autocomplete', [])
                 }
             };
 
-            ctrl.$parsers.unshift(function(value) {
-                resize(value);
+            change = function(event) {
+                resize(input.val());
+            };
 
-                return value;
-            });
+            input.bind('input', change);
 
-            ctrl.$formatters.unshift(function(value) {
-                resize(value);
-
-                return value;
+            scope.$on('$destroy', function() {
+                input.unbind('input', change);
             });
         }
     };
