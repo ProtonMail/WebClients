@@ -40,9 +40,11 @@ angular.module('proton.controllers.Header', [])
             }
         });
 
-        _.each(authentication.user.Labels, function(label) {
-            $scope.ctrl.folders.push({value: label.ID, label: label.Name, group: 'label'});
-        });
+        if (authentication.user) {
+            _.each(authentication.user.Labels, function(label) {
+                $scope.ctrl.folders.push({value: label.ID, label: label.Name, group: 'label'});
+            });    
+        }
 
         $scope.ctrl.folder = $scope.ctrl.folder || $scope.ctrl.folders[0];
     };
