@@ -16,6 +16,7 @@ angular.module("proton.event", ["proton.constants"])
 		CONSTANTS,
 		Contact,
 		Events,
+		Label,
 		notify,
 		pmcw
 	) {
@@ -298,12 +299,14 @@ angular.module("proton.event", ["proton.constants"])
 					Label.query().then(function(result) {
 						if (result.data && result.data.Code === 1000) {
 							authentication.user.Labels = result.data.Labels;
+							$rootScope.$broadcast('updateLabels');
 						}
 					});
 					// Fetch contacts data
 					Contact.query().then(function(result) {
 						if (result.data && result.data.Code === 1000) {
 							authentication.user.Contacts = result.data.Contacts;
+							$rootScope.$broadcast('updateContacts');
 						}
 					});
 				} else if (data.Reload === 1) {

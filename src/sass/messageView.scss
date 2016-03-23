@@ -178,6 +178,8 @@
                 background: $read;
             }
             .time {
+                position: relative;
+                padding-left: 1rem;
                 &::after {
                     content: "";
                     display: block;
@@ -195,6 +197,11 @@
                     display: inline-block;
                     width: 1rem;
                     text-align: left;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    line-height: 40px;
+                    height: 40px;
                 }
             }
             .meta {
@@ -408,12 +415,20 @@ body.mobileMode {
                     background: $read;
                     max-width: 45%;
                     min-width: 150px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                     span {
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         display: inline-block;
-                        float: right
+                        float: right;
+                        width: 100%;
+                    }
+                    .fa.fa-paperclip {
+                        height: 25px;
+                        line-height: 25px;
                     }
                 }
                 .status {

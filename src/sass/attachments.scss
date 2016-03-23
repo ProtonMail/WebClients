@@ -81,6 +81,16 @@
 			background-color: $light;
 			max-width: 100%;
 			float: left;
+			em {
+				height: 40px;
+				width: 2.5rem;
+				position: absolute;
+				z-index: 1;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				border-right: 1px solid $border;
+			}
 			strong {
 				text-transform: initial;
 				display: block;
@@ -112,10 +122,8 @@
 				width: 2.5rem;
 				height: 40px;
 				line-height: 40px;
-				border-right: 1px solid $border;
 				text-align: center;
 				font-size: 22px;
-				background-color: $light;
 				z-index: 2;
 				&.stuff {
 					opacity: 0;
