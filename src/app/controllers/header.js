@@ -83,6 +83,10 @@ angular.module('proton.controllers.Header', [])
         return parameters;
     };
 
+    /**
+     * Generate an special Object to reset $stateParams values
+     * @return {Object}
+     */
     var resetParameters = function() {
         return {
             address: undefined,
@@ -199,7 +203,11 @@ angular.module('proton.controllers.Header', [])
         var parameters = resetParameters();
 
         if ($scope.advancedSearch === false) {
-            angular.merge(parameters, extractParameters());
+            if ($scope.params.searchMessageInput.length === 0) {
+                $state.go('secured.inbox');
+            } else {
+                angular.merge(parameters, extractParameters());
+            }
         } else {
             parameters.keyword = $scope.ctrl.keyword;
             parameters.from = $scope.ctrl.from;
