@@ -1,6 +1,6 @@
-angular.module("proton.controllers.Header", [])
+angular.module('proton.controllers.Header', [])
 
-.controller("HeaderController", function(
+.controller('HeaderController', function(
     $location,
     $log,
     $rootScope,
@@ -14,18 +14,13 @@ angular.module("proton.controllers.Header", [])
     notify,
     tools
 ) {
-    $scope.params = {
-        searchMessageInput: $stateParams.words || '',
-        searchContactInput: ''
-    };
-
+    $scope.params = {};
     $scope.appVersion = CONFIG.app_version;
-
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
     $scope.addresses = [];
     $scope.addresses.push({Email: $translate.instant('ALL'), ID: undefined, Send: 0, Receive: 1, Status: 1}); // Add ALL option
 
-    if (authentication.user) {
+    if (authentication.user) { // This code is also executed on the login page, it explain this condition
         $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
     }
 
@@ -34,9 +29,23 @@ angular.module("proton.controllers.Header", [])
     $scope.ctrl.address = $scope.addresses[0]; // Select ALL
     $scope.advancedSearch = false;
     $scope.starred = 2;
-    $scope.folders = angular.copy(CONSTANTS.MAILBOX_IDENTIFIERS);
-    delete $scope.folders.search;
-    delete $scope.folders.label;
+
+    var addFolders = function() {
+        $scope.ctrl.folders = [];
+        $scope.ctrl.folders.push({value: -1, label: $translate.instant('ALL'), group: 'default'});
+
+        _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(value, key) {
+            if (key !== 'search' && key !== 'label') {
+                $scope.ctrl.folders.push({value: value, label: key, group: 'folder'});
+            }
+        });
+
+        _.each(authentication.user.Labels, function(label) {
+            $scope.ctrl.folders.push({value: label.ID, label: label.Name, group: 'label'});
+        });
+
+        $scope.ctrl.folder = $scope.ctrl.folder || $scope.ctrl.folders[0];
+    };
 
     var setPath = function() {
         var mailbox = $state.$current.name.replace('secured.', '').replace('.view', '');
@@ -52,17 +61,109 @@ angular.module("proton.controllers.Header", [])
         $scope.path = mailbox;
     };
 
-    // Listeners
-    $scope.$on('openSearchModal', function(event, value) {
-        $scope.openSearchModal(value);
-    });
+    /**
+     * Return parameters from String
+     * @return {Object}
+     */
+    var extractParameters = function() {
+        var parameters = {};
+        var value = $scope.params.searchMessageInput;
+        var separators = [
+            {value: 'keyword:', key: 'keyword'},
+            {value: 'from:', key: 'from'},
+            {value: 'to:', key: 'to'},
+            {value: 'in:', key: 'label'}
+        ];
 
-    $scope.$on('$stateChangeSuccess', function(event) {
-        setPath();
+        _.each(separators, function(separator) {
+            var tmp = value.split(separator.value);
 
-        if($state.is('secured.search') === false) {
-            $scope.params.searchMessageInput = '';
+            _.each(separators, function(sep) {
+                if (tmp[1] && tmp[1].indexOf(sep.value) !== -1) {
+                    tmp[1] = tmp[1].split(sep.value)[0];
+                }
+            });
+
+            if (tmp[1]) {
+                if (separator.key === 'label') {
+                    var folder = _.findWhere($scope.ctrl.folders, {label: tmp[1]});
+
+                    if (angular.isDefined(folder)) {
+                        parameters.label = folder.value;
+                    }
+                } else {
+                    parameters[separator.key] = tmp[1];
+                }
+            }
+        });
+
+        if (Object.keys(parameters).length === 0 && value.length > 0) {
+            parameters.keyword = value;
         }
+
+        return parameters;
+    };
+
+    /**
+     * Generate an special Object to reset $stateParams values
+     * @return {Object}
+     */
+    var resetParameters = function() {
+        return {
+            address: undefined,
+            page: undefined,
+            filter: undefined,
+            sort: undefined,
+            label: undefined,
+            from: undefined,
+            to: undefined,
+            subject: undefined,
+            keyword: undefined,
+            begin: undefined,
+            end: undefined,
+            attachments: undefined,
+            starred: undefined,
+            reload: undefined
+        };
+    };
+
+    /**
+     * Generate string from parameters set inside the URL
+     */
+    var generateSearchString = function() {
+        var result = '';
+
+        if (angular.isDefined($stateParams.keyword)) {
+            if (angular.isUndefined($stateParams.from) && angular.isUndefined($stateParams.to) && angular.isUndefined($stateParams.label)) {
+                result += $stateParams.keyword + ' ';
+            } else {
+                result += 'keyword:' + $stateParams.keyword + ' ';
+            }
+        }
+
+        if (angular.isDefined($stateParams.from)) {
+            result += 'from:' + $stateParams.from + ' ';
+        }
+
+        if (angular.isDefined($stateParams.to)) {
+            result += 'to:' + $stateParams.to + ' ';
+        }
+
+        if (angular.isDefined($stateParams.label)) {
+            var folder = _.findWhere($scope.ctrl.folders, {value: $stateParams.label});
+
+            if (angular.isDefined(folder)) {
+                result += 'in:' + folder.label + ' ';
+            }
+        }
+
+        $scope.params.searchMessageInput = result;
+        $scope.params.searchContactInput = '';
+    };
+
+    // Listeners
+    $scope.$on('$stateChangeSuccess', function(event) {
+        $scope.initialization();
     });
 
     $scope.$on('updateUser', function(event) {
@@ -76,7 +177,11 @@ angular.module("proton.controllers.Header", [])
         $scope.ctrl.address = $scope.addresses[0];
     });
 
-    setPath();
+    $scope.initialization = function() {
+        addFolders();
+        setPath();
+        generateSearchString();
+    };
 
     /**
      * Call event to open new composer
@@ -89,74 +194,70 @@ angular.module("proton.controllers.Header", [])
         $rootScope.$broadcast('tourStart');
     };
 
+    $scope.toggleAdvancedSearch = function() {
+        if ($scope.advancedSearch === false) {
+            $scope.openSearchModal();
+        } else {
+            $scope.closeSearchModal();
+        }
+    };
+
     $scope.openSearchModal = function() {
+        var parameters = extractParameters();
+
         $scope.labels = authentication.user.Labels;
-        $scope.advancedSearch = !$scope.advancedSearch;
+        $scope.ctrl.keyword = parameters.keyword || '';
+        $scope.ctrl.from = parameters.from || '';
+        $scope.ctrl.to = parameters.to || '';
+        $scope.ctrl.folder = _.findWhere($scope.ctrl.folders, {value: parameters.label}) || $scope.ctrl.folders[0];
+        $scope.advancedSearch = true;
     };
 
     $scope.closeSearchModal = function() {
-        $scope.advancedSearch = !$scope.advancedSearch;
-    };
-
-    $scope.isContactsView = function() {
-        return $state.is('secured.contacts');
+        $scope.advancedSearch = false;
     };
 
     $scope.sidebarToggle = function() {
         $rootScope.$broadcast('sidebarMobileToggle');
     };
 
-    $scope.resetSearchParameters = function() {
-        var keys = Object.keys($stateParams);
-        var params = {};
-
-        _.each(keys, function(key) {
-            params[key] = undefined;
-        });
-
-        return params;
-    };
-
     $scope.searchMessages = function() {
-        if($scope.params.searchMessageInput.length > 0) {
-            var params = $scope.resetSearchParameters();
+        var parameters = resetParameters();
+        var redirection;
 
-            params.words = $scope.params.searchMessageInput;
-
-            $state.go('secured.search', params);
+        if ($scope.advancedSearch === false) {
+            if ($scope.params.searchMessageInput.length === 0) {
+                redirection = 'secured.inbox';
+            } else {
+                redirection = 'secured.search';
+                angular.merge(parameters, extractParameters());
+            }
         } else {
-            $state.go('secured.inbox');
-        }
-    };
+            redirection = 'secured.search';
+            parameters.keyword = $scope.ctrl.keyword;
+            parameters.from = $scope.ctrl.from;
+            parameters.to = $scope.ctrl.to;
+            parameters.subject = $scope.ctrl.subject;
+            parameters.attachments = parseInt($scope.ctrl.attachments);
 
-    $scope.searchAdvanced = function() {
-        var parameters = {};
+            if (angular.isDefined($scope.ctrl.address.ID)) {
+                parameters.address = $scope.ctrl.address.ID;
+            }
 
-        parameters.words = $scope.params.searchMessageInput;
-        parameters.from = $scope.ctrl.from;
-        parameters.to = $scope.ctrl.to;
-        parameters.subject = $scope.ctrl.subject;
-        parameters.attachments = parseInt($scope.ctrl.attachments);
+            if($scope.ctrl.folder.value !== -1) {
+                parameters.label = $scope.ctrl.folder.value;
+            }
 
-        if (angular.isDefined($scope.ctrl.address.ID)) {
-            parameters.address = $scope.ctrl.address.ID;
-        }
+            if($('#search_start').val().length > 0) {
+                parameters.begin = $scope.ctrl.start.getMoment().unix();
+            }
 
-        if(parseInt($('#search_folder').val()) !== -1) {
-            parameters.label = $('#search_folder').val();
-        } else {
-            parameters.label = null;
-        }
-
-        if($('#search_start').val().length > 0) {
-            parameters.begin = $scope.ctrl.start.getMoment().unix();
+            if($('#search_end').val().length > 0) {
+                parameters.end = $scope.ctrl.end.getMoment().unix();
+            }
         }
 
-        if($('#search_end').val().length > 0) {
-            parameters.end = $scope.ctrl.end.getMoment().unix();
-        }
-
-        $state.go('secured.search', parameters);
+        $state.go(redirection, parameters);
         $scope.advancedSearch = false;
     };
 
@@ -246,4 +347,6 @@ angular.module("proton.controllers.Header", [])
             return '';
         }
     };
+
+    $scope.initialization();
 });

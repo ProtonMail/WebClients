@@ -2,8 +2,8 @@
     <a href="#" class="logo" ui-sref="secured.inbox">
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" />
     </a>
-    <ng-include src="'templates/partials/searchForm.tpl.html'"></ng-include>
-    <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
+    <ng-include src="'templates/partials/searchForm.tpl.html'" ng-if="!('secured.contacts' | includedByState)"></ng-include>
+    <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
         <fieldset>
             <input type="search" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
             <button type="submit">
