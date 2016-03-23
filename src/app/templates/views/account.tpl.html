@@ -65,12 +65,12 @@
                         <div class="col right">
                             <div class="radio">
                                 <label ng-click="saveDailyNotifications()">
-                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" value="1"> Enabled
+                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="1"> {{ 'ENABLED' | translate }}
                                 </label>
                             </div>
                             <div class="radio">
                                 <label ng-click="saveDailyNotifications()">
-                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" value="0"> Disabled
+                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="0"> {{ 'DISABLED' | translate }}
                                 </label>
                             </div>
                             <p>
@@ -214,12 +214,12 @@
                     <div class="col right">
                         <div class="radio">
                             <label>
-                                <input type="radio" ng-model="autosaveContacts" value="1" ng-change="saveAutosaveContacts()" /> {{ 'ENABLED' | translate }}
+                                <input type="radio" ng-model="autosaveContacts" ng-value="1" ng-change="saveAutosaveContacts()" /> {{ 'ENABLED' | translate }}
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" ng-model="autosaveContacts" value="0" ng-change="saveAutosaveContacts()" /> {{ 'DISABLED' | translate }}
+                                <input type="radio" ng-model="autosaveContacts" ng-value="0" ng-change="saveAutosaveContacts()" /> {{ 'DISABLED' | translate }}
                             </label>
                         </div>
                         <p>
@@ -244,12 +244,12 @@
                         <div class="col right">
                             <div class="radio">
                                 <label>
-                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" value="1" /> {{ 'AUTO' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="1" /> {{ 'AUTO' | translate }}
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" value="0" /> {{ 'MANUAL' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="0" /> {{ 'MANUAL' | translate }}
                                 </label>
                             </div>
                             <p>

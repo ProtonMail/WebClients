@@ -588,57 +588,40 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     // Let users change the col/row modes.
     $scope.changeLayout = function(mode) {
-
         var newLayout;
 
         if (mode === 'rows' && $rootScope.layoutMode!=='rows') {
             newLayout = 1;
-        }
-        else if (mode === 'columns' && $rootScope.layoutMode!=='columns') {
+        } else if (mode === 'columns' && $rootScope.layoutMode!=='columns') {
             newLayout = 0;
-        }
-        else if (mode === 'mobile') {
+        } else if (mode === 'mobile') {
             $rootScope.mobileMode = true;
         }
-
-        var error = function(error) {
-            $log.error(error);
-            notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
-        };
 
         if (
             (mode === 'columns' && $rootScope.layoutMode!=='columns') ||
             (mode === 'rows' && $rootScope.layoutMode!=='rows')
         ) {
             networkActivityTracker.track(
-                Setting.setViewlayout({
-                    "ViewLayout": newLayout
-                }).$promise.then(
-                    function(response) {
-                        if(response.Code === 1000) {
-                            notify({
-                                message: $translate.instant('LAYOUT_SAVED'),
-                                classes: 'notification-success'
-                            });
+                Setting.setViewlayout({ViewLayout: newLayout})
+                .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
                             $rootScope.mobileMode = false;
                             $rootScope.layoutMode = mode;
                             authentication.user.ViewLayout = newLayout;
                             $rootScope.mobileResponsive();
-                        } else if (response.Error) {
-                            error(response.Error);
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            error();
+                            notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
                         }
-                    },
-                    function(error) {
-                        error(error);
                     }
                 )
             );
         }
 
         angular.element('#pm_toolbar-desktop a').tooltip('hide');
-
     };
 
     /**

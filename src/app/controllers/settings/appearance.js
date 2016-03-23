@@ -30,34 +30,23 @@ angular.module("proton.controllers.Settings")
         var deferred = $q.defer();
 
         networkActivityTracker.track(
-            Setting.theme({'Theme': $scope.appearance.cssTheme}).$promise
-            .then(
-                function(response) {
-                    if(response.Code === 1000) {
-                        authentication.user.Theme = $scope.appearance.cssTheme;
-                        notify({message: $translate.instant('THEME_SAVED'), classes: 'notification-success'});
-                        deferred.resolve();
-                    } else if (response.Error) {
-                        notify({message: response.Error, classes: 'notification-danger'});
-                        deferred.reject();
-                    } else {
-                        notify({message: 'Error during the request', classes: 'notification-danger'});
-                        deferred.reject();
-                    }
-                },
-                function(error) {
-                    notify({message: 'Error during the theme edition request', classes: 'notification-danger'});
-                    $log.error(error);
+            Setting.theme({Theme: $scope.appearance.cssTheme})
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    authentication.user.Theme = $scope.appearance.cssTheme;
+                    notify({message: $translate.instant('THEME_SAVED'), classes: 'notification-success'});
+                    deferred.resolve();
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    deferred.reject();
+                } else {
+                    notify({message: 'Error during the request', classes: 'notification-danger'});
                     deferred.reject();
                 }
-            )
+            })
         );
 
         return deferred.promise;
-    };
-
-    $scope.toggleThemeJason = function() {
-        $rootScope.themeJason = !$rootScope.themeJason;
     };
 
     $scope.clearTheme = function() {
@@ -75,66 +64,38 @@ angular.module("proton.controllers.Settings")
         var value = parseInt($scope.appearance.ComposerMode);
 
         networkActivityTracker.track(
-            Setting.setComposerMode({
-                "ComposerMode": value
-            }).$promise.then(
-                function(response) {
-                    if(response.Code === 1000) {
-                        authentication.user.ComposerMode = value;
-                        notify({message: $translate.instant('MODE_SAVED'), classes: 'notification-success'});
-                    } else if (response.Error) {
-                        notify({message: response.Error, classes: 'notification-danger'});
-                    }
-                },
-                function(error) {
-                    notify({message: 'Error during the composer preference request', classes: 'notification-danger'});
-                    $log.error(error);
+            Setting.setComposerMode({ComposerMode: value})
+            .then(function(result) {
+                if(result.data && result.data.Code === 1000) {
+                    authentication.user.ComposerMode = value;
+                    notify({message: $translate.instant('MODE_SAVED'), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
                 }
-            )
+            })
         );
     };
 
     $scope.saveLayoutMode = function(form) {
         var value = $scope.appearance.ViewLayout;
-        var previous = authentication.user.ViewLayout;
-
-        var apply = function(value) {
-            authentication.user.ViewLayout = value;
-
-            if(value === 0) {
-                console.log('$rootScope.layoutMode: set columns');
-                $rootScope.layoutMode = 'columns';
-            } else {
-                console.log('$rootScope.layoutMode: set rows');
-                $rootScope.layoutMode = 'rows';
-            }
-        };
-
-        var error = function(error) {
-            $log.error(error);
-            notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
-            apply(previous);
-        };
-
-        apply(value);
 
         networkActivityTracker.track(
-            Setting.setViewlayout({
-                "ViewLayout": value
-            }).$promise.then(
-                function(response) {
-                    if(response.Code === 1000) {
-                        notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
-                    } else if (response.Error) {
-                        error(response.Error);
+            Setting.setViewlayout({ViewLayout: value})
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    authentication.user.ViewLayout = value;
+
+                    if (value === 0) {
+                        $rootScope.layoutMode = 'columns';
                     } else {
-                        error();
+                        $rootScope.layoutMode = 'rows';
                     }
-                },
-                function(error) {
-                    error(error);
+
+                    notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
                 }
-            )
+            })
         );
     };
 
@@ -164,23 +125,16 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.saveButtonsPosition = function(form) {
-        if ($scope.appearance.MessageButtons !== authentication.user.MessageButtons) {
-            networkActivityTracker.track(
-                Setting.setMessageStyle({ MessageButtons: $scope.appearance.MessageButtons }).$promise.then(function(response) {
-                    if (response.Code === 1000) {
-                        authentication.user.MessageButtons = $scope.appearance.MessageButtons;
-                        notify({message: $translate.instant('BUTTONS_POSITION_SAVED'), classes: 'notification-success'});
-                    }
-                    else if (response.Error) {
-                        notify({message: response.Error, classes: 'notification-danger'});
-                    }
-                    else {
-                        $log.error(response);
-                    }
-                }, function(error) {
-                    $log.error(error);
-                })
-            );
-        }
+        networkActivityTracker.track(
+            Setting.setMessageStyle({ MessageButtons: $scope.appearance.MessageButtons })
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    authentication.user.MessageButtons = $scope.appearance.MessageButtons;
+                    notify({message: $translate.instant('BUTTONS_POSITION_SAVED'), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                }
+            })
+        );
     };
 });

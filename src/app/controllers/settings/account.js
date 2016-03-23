@@ -35,53 +35,36 @@ angular.module('proton.controllers.Settings')
 
     $scope.saveNotification = function(form) {
         if (angular.isUndefined($scope.noticeePassword)) {
-            notify({
-                classes: "notification-danger",
-                message: "Enter your current login password."
-            });
+            notify({classes: "notification-danger", message: "Enter your current login password."});
             angular.element('#noticeePassword').focus();
         } else {
             networkActivityTracker.track(
-                Setting.noticeEmail({
-                    'Password': $scope.noticeePassword,
-                    'NotificationEmail': $scope.notificationEmail
-                }).$promise
-                .then(
-                    function(response) {
-                        if (response && response.Code === 1000) {
-                            $scope.noticeePassword = '';
-                            authentication.user.NotificationEmail = $scope.notificationEmail;
-                            notify({message: $translate.instant('NOTIFICATION_EMAIL_SAVED'), classes: 'notification-success'});
-                        } else if (response.Error) {
-                            notify({message: $translate.instant(response.Error), classes: 'notification-danger'});
-                        }
-                    },
-                    function(error) {
-                        notify({message: 'Error during the notification request', classes: 'notification-danger'});
-                        $log.error(error);
+                Setting.noticeEmail({Password: $scope.noticeePassword, NotificationEmail: $scope.notificationEmail})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        $scope.noticeePassword = '';
+                        authentication.user.NotificationEmail = $scope.notificationEmail;
+                        notify({message: $translate.instant('NOTIFICATION_EMAIL_SAVED'), classes: 'notification-success'});
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
                     }
-                )
+                })
             );
         }
     };
 
     $scope.saveDailyNotifications = function(form) {
-
-        var value = parseInt($scope.dailyNotifications);
-
-        if (value === parseInt(authentication.user.Notify) ) {
-            return;
-        }
+        var value = $scope.dailyNotifications;
 
         networkActivityTracker.track(
-          Setting.notify({
-              "Notify": +$scope.dailyNotifications
-          }).$promise.then(function(response) {
-              authentication.user.Notify = +$scope.dailyNotifications;
-              notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
-          }, function(error) {
-              notify({message: 'Error during the daily notification request', classes: 'notification-danger'});
-              $log.error(error);
+          Setting.notify({Notify: $scope.dailyNotifications})
+          .then(function(result) {
+              if (result.data && result.data.Code === 1000) {
+                  authentication.user.Notify = $scope.dailyNotifications;
+                  notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
+              } else if (result.data && result.data.Error) {
+                  notify({message: result.data.Error, classes: 'notification-danger'});
+              }
           })
         );
     };
@@ -101,15 +84,15 @@ angular.module('proton.controllers.Settings')
                 Password: oldLoginPwd,
                 OldHashedPassword: pmcw.getHashedPassword(oldLoginPwd),
                 NewPassword: newLoginPwd
-            }).$promise.then(function(result) {
-                if(result.Code === 1000) {
+            }).then(function(result) {
+                if (result.data && result.data.Code === 1000) {
                     notify({message: $translate.instant('LOGIN_PASSWORD_UPDATED'), classes: 'notification-success'});
                     $scope.oldLoginPassword = '';
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
                     form.$setUntouched();
-                } else if(result.Error) {
-                    notify({message: result.Error, classes: 'notification-danger'});
+                } else if(result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
                     notify({message: 'Login password invalid', classes: 'notification-danger'});
                 }
@@ -253,11 +236,11 @@ angular.module('proton.controllers.Settings')
 
         networkActivityTracker.track(
             $q.all({
-                displayName: Setting.display({'DisplayName': displayName}).$promise,
-                signature: Setting.signature({'Signature': signature}).$promise
+                displayName: Setting.display({DisplayName: displayName}),
+                signature: Setting.signature({Signature: signature})
             })
             .then(function(result) {
-                if (result.displayName.Code === 1000 && result.signature.Code === 1000) {
+                if (result.data.displayName.Code === 1000 && result.data.signature.Code === 1000) {
                     authentication.user.DisplayName = displayName;
                     authentication.user.Signature = signature;
                     notify({message: $translate.instant('IDENTITY_SAVED'), classes: 'notification-success'});
@@ -271,51 +254,22 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveAutosaveContacts = function(form) {
-
-        var value = parseInt($scope.autosaveContacts);
-
-        if (value === parseInt(authentication.user.autosaveContacts) ) {
-            return;
-        }
-
         networkActivityTracker.track(
-            Setting.autosave({
-                "AutoSaveContacts": +$scope.autosaveContacts
-            }).$promise.then(function(response) {
+            Setting.autosave({AutoSaveContacts: $scope.autosaveContacts})
+            .then(function(result) {
                 notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
-                authentication.user.AutoSaveContacts = +$scope.autosaveContacts;
-            }, function(error) {
-                notify({message: 'Error during the autosave contacts request', classes : 'notification-danger'});
-                $log.error(error);
+                authentication.user.AutoSaveContacts = $scope.autosaveContacts;
             })
         );
     };
 
     $scope.saveShowImages = function(form) {
-
-        var value = parseInt($scope.ShowImages);
-
-        if (value === parseInt(authentication.user.ShowImages) ) {
-            return;
-        }
-
         networkActivityTracker.track(
-            Setting.setShowImages({
-                "ShowImages": parseInt($scope.ShowImages)
-            }).$promise.then(
-                function(response) {
-                    if(response.Code === 1000) {
-                        authentication.user.ShowImages = $scope.ShowImages;
-                        notify({message: $translate.instant('IMAGE_PREFERENCES_UPDATED'), classes: 'notification-success'});
-                    } else if (response.Error) {
-                        notify({message: response.Error, classes: 'notification-danger'});
-                    }
-                },
-                function(error) {
-                    notify({message: 'Error during the email preference request', classes: 'notification-danger'});
-                    $log.error(error);
-                }
-            )
+            Setting.setShowImages({ShowImages: $scope.ShowImages})
+            .then(function(result) {
+                authentication.user.ShowImages = $scope.ShowImages;
+                notify({message: $translate.instant('IMAGE_PREFERENCES_UPDATED'), classes: 'notification-success'});
+            })
         );
     };
 

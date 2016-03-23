@@ -49,7 +49,7 @@ angular.module("proton.authentication", [
         fetchUserInfo: function(uid) {
             var deferred = $q.defer();
 
-            $http.get(url.get() + "/users", {
+            $http.get(url.get() + '/users', {
                 params: {
                     id: uid
                 }

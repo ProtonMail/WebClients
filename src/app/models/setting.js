@@ -1,84 +1,56 @@
-angular.module("proton.models.setting", [])
+angular.module('proton.models.setting', [])
 
-.factory("Setting", function($resource, $injector, url, authentication) {
-    return $resource(
-        url.get() + "/settings/:id",
-        authentication.params({ id: "@id" }),
-        {
-            password: {
-                method: 'put',
-                url: url.get() + '/settings/password'
-            },
-            noticeEmail: {
-                method: 'put',
-                url: url.get() + '/settings/noticeemail'
-            },
-            signature: {
-                method: 'put',
-                url: url.get() + '/settings/signature'
-            },
-            display: {
-                method: 'put',
-                url: url.get() + '/settings/display'
-            },
-            addressOrder: {
-                method: 'put',
-                url: url.get() + '/settings/addressorder'
-            },
-            theme: {
-                method: 'put',
-                url: url.get() + '/settings/theme'
-            },
-            notify: {
-                method: 'put',
-                url: url.get() + '/settings/notify'
-            },
-            autosave: {
-                method: 'put',
-                url: url.get() + '/settings/autosave'
-            },
-            setLanguage: {
-                method: 'put',
-                url: url.get() + '/settings/language'
-            },
-            setLogging: {
-                method: 'put',
-                url: url.get() + '/settings/logauth'
-            },
-            setComposerMode: {
-                method: 'put',
-                url: url.get() + '/settings/composermode'
-            },
-            setMessageStyle: {
-                method: 'put',
-                url: url.get() + '/settings/messagebuttons'
-            },
-            setShowImages: {
-                method: 'put',
-                url: url.get() + '/settings/showimages'
-            },
-            /**
-             * Update view layout flag
-             */
-            setViewlayout: {
-                method: 'put',
-                url: url.get() + '/settings/viewlayout'
-            },
-            /**
-             * Update view mode flag
-             */
-            setViewMode: {
-                method: 'put',
-                url: url.get() + '/settings/viewmode'
-            },
-            apiTest: {
-                method: 'get',
-                url: url.get() + '/tests/error'
-            },
-            invoiceText: {
-                method: 'put',
-                url: url.get() + '/settings/invoicetext'
-            }
+.factory('Setting', function($http, url) {
+    var Setting = {
+        password: function(params) {
+            return $http.put(url.get() + '/settings/password', params);
+        },
+        noticeEmail: function(params) {
+            return $http.put(url.get() + '/settings/noticeemail', params);
+        },
+        signature: function(params) {
+            return $http.put(url.get() + '/settings/signature', params);
+        },
+        display: function(params) {
+            return $http.put(url.get() + '/settings/display', params);
+        },
+        addressOrder: function(params) {
+            return $http.put(url.get() + '/settings/addressorder', params);
+        },
+        theme: function(params) {
+            return $http.put(url.get() + '/settings/theme', params);
+        },
+        notify: function(params) {
+            return $http.put(url.get() + '/settings/notify', params);
+        },
+        autosave: function(params) {
+            return $http.put(url.get() + '/settings/autosave', params);
+        },
+        setLanguage: function(params) {
+            return $http.put(url.get() + '/settings/language', params);
+        },
+        setLogging: function(params) {
+            return $http.put(url.get() + '/settings/logauth', params);
+        },
+        setComposerMode: function(params) {
+            return $http.put(url.get() + '/settings/composermode', params);
+        },
+        setMessageStyle: function(params) {
+            return $http.put(url.get() + '/settings/messagebuttons', params);
+        },
+        setShowImages: function(params) {
+            return $http.put(url.get() + '/settings/showimages', params);
+        },
+        setViewlayout: function(params) {
+            return $http.put(url.get() + '/settings/viewlayout', params);
+        },
+        setViewMode: function(params) {
+            return $http.put(url.get() + '/settings/viewmode', params);
+        },
+        invoiceText: function(params) {
+            return $http.put(url.get() + '/settings/invoicetext', params);
         }
-    );
+    };
+
+    return Setting;
 });
