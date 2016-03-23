@@ -19,7 +19,11 @@ angular.module('proton.controllers.Header', [])
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
     $scope.addresses = [];
     $scope.addresses.push({Email: $translate.instant('ALL'), ID: undefined, Send: 0, Receive: 1, Status: 1}); // Add ALL option
-    $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
+
+    if (authentication.user) { // This code is also executed on the login page, it explain this condition
+        $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
+    }
+
     $scope.ctrl = {};
     $scope.ctrl.attachments = 2;
     $scope.ctrl.address = $scope.addresses[0]; // Select ALL
