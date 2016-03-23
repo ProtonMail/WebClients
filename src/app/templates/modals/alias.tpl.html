@@ -8,8 +8,8 @@
             <div class="modal-body pm_form">
                 <label>{{ 'CHOOSE_ADDRESS' | translate }}</label>
                 <div class="clearfix">
-                    <input type="text" class="inline" ng-model="ctrl.local" autofocus placeholder="{{ 'ADDRESS' | translate }}" required />
-                    <em class="inline">&nbsp;&nbsp;@&nbsp;&nbsp;</em>
+                    <input type="text" class="inline pull-left" ng-model="ctrl.local" autofocus placeholder="{{ 'ADDRESS' | translate }}" required />
+                    <em class="inline pull-left">&nbsp;&nbsp;@&nbsp;&nbsp;</em>
                     <span class="pm_select inline bigger">
                         <select class="selectDomain" ng-model="ctrl.domain" ng-options="domain.label for domain in ctrl.domains"></select>
                         <i class="fa fa-angle-down"></i>
