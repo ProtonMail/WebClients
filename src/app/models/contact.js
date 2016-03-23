@@ -1,6 +1,6 @@
-angular.module("proton.models.contact", [])
+angular.module('proton.models.contact', [])
 
-.factory("Contact", function($http, url) {
+.factory('Contact', function($http, url) {
 
     var Contact = {
         query: function() {
