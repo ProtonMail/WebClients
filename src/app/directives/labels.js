@@ -6,7 +6,6 @@ angular.module("proton.labels", [])
     $rootScope,
     $filter,
     authentication,
-    eventManager,
     Label,
     networkActivityTracker,
     notify,
@@ -69,7 +68,7 @@ angular.module("proton.labels", [])
                     });
 
                     $timeout(function() {
-                        $('#searchLabels').focus();
+                        angular.element("[ng-model='searchLabels']").focus();
                     });
                 }
             };
@@ -95,6 +94,12 @@ angular.module("proton.labels", [])
 
             scope.toggle = function() {
                 scope.displayField = !scope.displayField;
+
+                if (scope.displayField === true) {
+                    $timeout(function() {
+                        angular.element("[ng-model='labelName']").focus();
+                    });
+                }
             };
 
             scope.create = function() {
@@ -113,7 +118,7 @@ angular.module("proton.labels", [])
                             if (result.data && result.data.Code === 1000) {
                                 var label = result.data.Label;
 
-                                eventManager.call();
+                                authentication.user.Labels.push(label);
                                 scope.labelName = '';
                                 scope.displayField = false;
                                 label.Selected = true;
