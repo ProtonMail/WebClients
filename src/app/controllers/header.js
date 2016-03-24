@@ -151,7 +151,8 @@ angular.module('proton.controllers.Header', [])
 
     // Listeners
     $scope.$on('$stateChangeSuccess', function(event) {
-        $scope.initialization();
+        addFolders();
+        generateSearchString();
     });
 
     $scope.$on('updateUser', function(event) {
