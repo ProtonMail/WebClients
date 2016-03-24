@@ -43,24 +43,10 @@ angular.module('proton.controllers.Header', [])
         if (authentication.user) {
             _.each(authentication.user.Labels, function(label) {
                 $scope.ctrl.folders.push({value: label.ID, label: label.Name, group: 'label'});
-            });    
+            });
         }
 
         $scope.ctrl.folder = $scope.ctrl.folder || $scope.ctrl.folders[0];
-    };
-
-    var setPath = function() {
-        var mailbox = $state.$current.name.replace('secured.', '').replace('.view', '');
-
-        if (mailbox === 'label') {
-            var label = _.findWhere(authentication.user.Labels, {ID: $stateParams.label});
-
-            if (angular.isDefined(label)) {
-                mailbox = label.Name;
-            }
-        }
-
-        $scope.path = mailbox;
     };
 
     /**
@@ -181,7 +167,6 @@ angular.module('proton.controllers.Header', [])
 
     $scope.initialization = function() {
         addFolders();
-        setPath();
         generateSearchString();
     };
 
