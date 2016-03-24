@@ -109,7 +109,7 @@ angular.module("proton.labels", [])
                                 label.Selected = true;
                                 scope.labels.push(label);
                             } else if (result.data && result.data.Error) {
-                                notify({message: data.Error, classes: 'notification-danger'});
+                                notify({message: result.data.Error, classes: 'notification-danger'});
                             }
                         })
                     );
