@@ -1255,9 +1255,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                     parameters.id = message.ID;
                     parameters.ExpirationTime = message.ExpirationTime;
-                    message.getPublicKeys(emails).then(function(result) {
-                        if(angular.isDefined(result) && result.Code === 1000) {
-                            var keys = result; // Save result in keys variables
+                    message.getPublicKeys(emails)
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            var keys = result.data; // Save result in keys variables
                             var outsiders = false; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
                             var promises = [];
 

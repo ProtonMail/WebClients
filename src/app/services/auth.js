@@ -19,7 +19,8 @@ angular.module("proton.authentication", [
     networkActivityTracker,
     notify,
     pmcw,
-    url
+    url,
+    User
 ) {
     var keys = {}; // Store decrypted keys
     var auth = {
@@ -30,7 +31,6 @@ angular.module("proton.authentication", [
             // API version
             if ( auth.data.SessionToken ) {
                 // we have a session token, so we can remove the old stuff
-                $log.debug('setAuthHeaders:1');
                 $http.defaults.headers.common["x-pm-session"] = auth.data.SessionToken;
                 $http.defaults.headers.common.Authorization = undefined;
                 $http.defaults.headers.common["x-pm-uid"] = undefined;
@@ -39,7 +39,6 @@ angular.module("proton.authentication", [
                 window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":RefreshToken");
             } else {
                 // we need the old stuff for now
-                $log.debug('setAuthHeaders:2');
                 $http.defaults.headers.common["x-pm-session"] = undefined;
                 $http.defaults.headers.common.Authorization = "Bearer " + auth.data.AccessToken;
                 $http.defaults.headers.common["x-pm-uid"] = auth.data.Uid;
@@ -49,114 +48,110 @@ angular.module("proton.authentication", [
         fetchUserInfo: function(uid) {
             var deferred = $q.defer();
 
-            $http.get(url.get() + '/users', {
-                params: {
-                    id: uid
-                }
-            }).then(
-                function(result) {
-                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        var user = result.data.User;
+            User.get().then(function(result) {
+                if (angular.isDefined(result.data) && result.data.Code === 1000) {
+                    var user = result.data.User;
 
-                        if (!user.EncPrivateKey) { // Need to check something else, this is going away
-                            deferred.reject({message: 'Error with EncPrivateKey'});
-                            api.logout(true);
-                        } else {
-                            // Hacky fix for missing organizations
-                            var generateOrganizationKey = $q.resolve();
+                    // user.Delinquent = 4;
 
-                            if (user.Role === 0 && user.Subscribed === 1) {
-                                var mailboxPassword = api.getPassword();
-
-                                generateOrganizationKey = pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
-                                .then(function(response) {
-                                    var privateKey = response.privateKeyArmored;
-
-                                    return {
-                                        DisplayName: 'My Organization',
-                                        PrivateKey: privateKey,
-                                        BackupPrivateKey: privateKey
-                                    };
-                                })
-                                .then(function(params) {
-                                    return $http.post(url.get() + "/organizations", params);
-                                });
-                            }
-
-                            $q.all([
-                                Contact.query(),
-                                Label.query(),
-                                generateOrganizationKey
-                            ]).then(
-                                function(result) {
-                                    if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
-                                        var promises = [];
-                                        var mailboxPassword = api.getPassword();
-                                        var keyInfo = function(key) {
-                                            return pmcw.keyInfo(key.PrivateKey).then(function(info) {
-                                                key.created = info.created; // Creation date
-                                                key.bitSize = info.bitSize; // We don't use this data currently
-                                                key.fingerprint = info.fingerprint; // Fingerprint
-                                            });
-                                        };
-
-                                        user.Contacts = result[0].data.Contacts;
-                                        user.Labels = result[1].data.Labels;
-
-                                        // All private keys are decrypted with the mailbox password and stored in a `keys` array
-                                        _.each(user.Addresses, function(address) {
-                    						_.each(address.Keys, function(key, index) {
-                    							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
-                    								key.decrypted = true; // We mark this key as decrypted
-                    								api.storeKey(address.ID, key.ID, package); // We store the package to the current service
-                                                    keyInfo(key);
-                    							}, function(error) {
-                    								key.decrypted = false; // This key is not decrypted
-                                                    keyInfo(key);
-                    								// If the primary (first) key for address does not decrypt, display error.
-                    								if(index === 0) {
-                    									address.disabled = true; // This address cannot be used
-                    									notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
-                    								}
-                    							}));
-                    						});
-                    					});
-
-                                        $q.all(promises).then(function() {
-                                            deferred.resolve(user);
-                                        }, function() {
-                                            deferred.resolve(user);
-                                        });
-                                    } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
-                                        deferred.reject({message: result[0].data.Error});
-                                        api.logout(true);
-                                    } else if(angular.isDefined(result[1].data) && result[1].data.Error) {
-                                        deferred.reject({message: result[1].data.Error});
-                                        api.logout(true);
-                                    } else {
-                                        deferred.reject({message: 'Error during label / contact request'});
-                                        api.logout(true);
-                                    }
-                                },
-                                function() {
-                                    deferred.reject({message: 'Sorry, but we were unable to fully log you in.'});
-                                    api.logout(true);
-                                }
-                            );
-                        }
-                    } else if(angular.isDefined(result.data) && result.data.Error) {
-                        deferred.reject({message: result.data.Error});
+                    if (!user.EncPrivateKey) { // Need to check something else, this is going away
+                        deferred.reject({message: 'Error with EncPrivateKey'});
                         api.logout(true);
                     } else {
-                        deferred.reject({message: 'Error during user request'});
-                        api.logout(true);
+                        // Hacky fix for missing organizations
+                        var generateOrganizationKey = $q.resolve();
+
+                        if (user.Role === 0 && user.Subscribed === 1) {
+                            var mailboxPassword = api.getPassword();
+
+                            generateOrganizationKey = pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
+                            .then(function(response) {
+                                var privateKey = response.privateKeyArmored;
+
+                                return {
+                                    DisplayName: 'My Organization',
+                                    PrivateKey: privateKey,
+                                    BackupPrivateKey: privateKey
+                                };
+                            })
+                            .then(function(params) {
+                                return $http.post(url.get() + "/organizations", params);
+                            });
+                        }
+
+                        $q.all([
+                            Contact.query(),
+                            Label.query(),
+                            generateOrganizationKey
+                        ]).then(
+                            function(result) {
+                                if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
+                                    var promises = [];
+                                    var mailboxPassword = api.getPassword();
+                                    var keyInfo = function(key) {
+                                        return pmcw.keyInfo(key.PrivateKey).then(function(info) {
+                                            key.created = info.created; // Creation date
+                                            key.bitSize = info.bitSize; // We don't use this data currently
+                                            key.fingerprint = info.fingerprint; // Fingerprint
+                                        });
+                                    };
+
+                                    user.Contacts = result[0].data.Contacts;
+                                    user.Labels = result[1].data.Labels;
+
+                                    // All private keys are decrypted with the mailbox password and stored in a `keys` array
+                                    _.each(user.Addresses, function(address) {
+                						_.each(address.Keys, function(key, index) {
+                							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
+                								key.decrypted = true; // We mark this key as decrypted
+                								api.storeKey(address.ID, key.ID, package); // We store the package to the current service
+                                                keyInfo(key);
+                							}, function(error) {
+                								key.decrypted = false; // This key is not decrypted
+                                                keyInfo(key);
+                								// If the primary (first) key for address does not decrypt, display error.
+                								if(index === 0) {
+                									address.disabled = true; // This address cannot be used
+                									notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
+                								}
+                							}));
+                						});
+                					});
+
+                                    $q.all(promises).then(function() {
+                                        deferred.resolve(user);
+                                    }, function() {
+                                        deferred.resolve(user);
+                                    });
+                                } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
+                                    deferred.reject({message: result[0].data.Error});
+                                    api.logout(true);
+                                } else if(angular.isDefined(result[1].data) && result[1].data.Error) {
+                                    deferred.reject({message: result[1].data.Error});
+                                    api.logout(true);
+                                } else {
+                                    deferred.reject({message: 'Error during label / contact request'});
+                                    api.logout(true);
+                                }
+                            },
+                            function() {
+                                deferred.reject({message: 'Sorry, but we were unable to fully log you in.'});
+                                api.logout(true);
+                            }
+                        );
                     }
-                },
-                function(err) {
-                    deferred.reject({message: 'Sorry, but we were unable to log you in.'});
+                } else if(angular.isDefined(result.data) && result.data.Error) {
+                    deferred.reject({message: result.data.Error});
+                    api.logout(true);
+                } else {
+                    deferred.reject({message: 'Error during user request'});
                     api.logout(true);
                 }
-            );
+            },
+            function(err) {
+                deferred.reject({message: 'Sorry, but we were unable to log you in.'});
+                api.logout(true);
+            });
 
             networkActivityTracker.track(deferred.promise);
 
