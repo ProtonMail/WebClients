@@ -209,8 +209,8 @@ angular.module("proton.modals", [])
             };
 
             $timeout(function() {
-                $('#labelName').focus();
-            }.bind(this), 100);
+                angular.element('#labelName').focus();
+            }, 100);
         },
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/label.tpl.html'

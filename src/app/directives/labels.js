@@ -69,7 +69,7 @@ angular.module("proton.labels", [])
 
                     $timeout(function() {
                         angular.element("[ng-model='searchLabels']").focus();
-                    });
+                    }, 100);
                 }
             };
 
@@ -98,7 +98,7 @@ angular.module("proton.labels", [])
                 if (scope.displayField === true) {
                     $timeout(function() {
                         angular.element("[ng-model='labelName']").focus();
-                    });
+                    }, 100);
                 }
             };
 
