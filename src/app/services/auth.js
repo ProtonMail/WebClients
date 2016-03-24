@@ -49,10 +49,8 @@ angular.module("proton.authentication", [
             var deferred = $q.defer();
 
             User.get().then(function(result) {
-                if (angular.isDefined(result.data) && result.data.Code === 1000) {
+                if (result.data && result.data.Code === 1000) {
                     var user = result.data.User;
-
-                    // user.Delinquent = 4;
 
                     if (!user.EncPrivateKey) { // Need to check something else, this is going away
                         deferred.reject({message: 'Error with EncPrivateKey'});
@@ -159,7 +157,6 @@ angular.module("proton.authentication", [
         },
 
         saveAuthData: function(data) {
-            $log.debug('saveAuthData');
             if ( data.SessionToken ) {
                 window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"] = pmcw.encode_base64(data.SessionToken);
                 auth.data = data;
