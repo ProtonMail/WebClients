@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div ng-show="ctrl.methods.length > 0">
-                    <label for="paymentMethod" class="margin">Select your payment method</label>
+                    <label for="paymentMethod" class="margin">{{ 'SELECT_PAYMENT_METHOD' | translate }}:</label>
                     <span class="pm_select">
                         <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
                         <i class="fa fa-angle-down"></i>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="alert alert-info">It's also possible to donate with <a href="https://protonmail.com/donate" target="_blank">PayPal or Bitcoin</a>.</p>
+                <p class="alert alert-info">{{ 'YOU_CAN_PAY_WITH_PAYPAL' | translate }}</p>
             </div>
         </div>
         <div class="modal-footer text-right">

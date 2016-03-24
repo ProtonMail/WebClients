@@ -10,7 +10,7 @@
                 <p ng-hide="ctrl.fileDropped" class="text-center dropzone" id="dropzone" ng-class="{'hover': hover}">
                     <br />
                     <br />
-                    Drop files here or click to upload
+                    {{ 'DROP_HERE' | translate }}
                 </p>
                 <p ng-show="ctrl.fileDropped" class="text-center bold" ng-bind="ctrl.fileDropped"></p>
                 <input id="selectedFile" type="file" style="display: none;" />
@@ -19,7 +19,7 @@
         <div class="modal-footer">
             <a class="pm_button link" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</a>
             <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.import()">{{ 'UPLOAD' | translate }}</button>
-        </div>        
+        </div>
     </div>
     <div class="modal-overlay"></div>
 </div>
