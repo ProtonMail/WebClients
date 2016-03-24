@@ -21,11 +21,21 @@ angular.module("proton.labels", [])
             saveLabels: '=save'
         },
         link: function(scope, element, attrs) {
+            // Variables
             var dropdown = angular.element(element).closest('.pm_buttons').find('.open-label');
+
+            // Functions
             var onClick = function() {
                 scope.open();
             };
 
+            var scrollDown = function() {
+                var list = angular.element(element).find('.list-group').first();
+
+                list.scrollTop = list.scrollHeight;
+            };
+
+            // Listeners
             dropdown.bind('click', onClick);
 
             scope.$on('$destroy', function() {
@@ -108,6 +118,7 @@ angular.module("proton.labels", [])
                                 scope.displayField = false;
                                 label.Selected = true;
                                 scope.labels.push(label);
+                                scrollDown();
                             } else if (result.data && result.data.Error) {
                                 notify({message: result.data.Error, classes: 'notification-danger'});
                             }

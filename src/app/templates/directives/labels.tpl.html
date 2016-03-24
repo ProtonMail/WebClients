@@ -23,9 +23,11 @@
         <label ng-show="labelsSelected().length > 0">
             <input type="checkbox" ng-model="alsoArchive" /> {{ 'ALSO_ARCHIVE' | translate }}
         </label>
-        <button class="createLabel pull-left pm_button" ng-click="toggle()" pt-tooltip="{{ 'ADD_NEW_LABEL' | translate }}">
-            <i class="fa fa-plus"></i>
-        </button>
-        <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary pull-right" ng-click="save()" ng-disabled="networkActivity.loading()">{{ 'APPLY' | translate }}</button>
+        <div class="clearfix">
+            <button class="createLabel pull-left pm_button" ng-click="toggle()" pt-tooltip="{{ 'ADD_NEW_LABEL' | translate }}">
+                <i class="fa fa-plus"></i>
+            </button>
+            <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary pull-right" ng-click="save()" ng-disabled="networkActivity.loading()">{{ 'APPLY' | translate }}</button>
+        </div>
     </div>
 </div>
