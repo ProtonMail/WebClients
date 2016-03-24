@@ -1,6 +1,6 @@
 angular.module("proton.labels", [])
 
-.directive('dropdownLabels', function ($timeout, $q, $rootScope, $filter, authentication) {
+.directive('dropdownLabels', function ($timeout, $q, $rootScope, $filter, authentication, Label) {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/labels.tpl.html',
@@ -21,11 +21,14 @@ angular.module("proton.labels", [])
                 dropdown.unbind('click', onClick);
             });
 
+
             scope.open = function() {
                 if(angular.isFunction(scope.getMessages) && angular.isFunction(scope.saveLabels)) {
                     var messagesLabel = [];
                     var messages = scope.getMessages();
 
+                    scope.labelName = '';
+                    scope.displayField = false;
                     scope.alsoArchive = false;
                     scope.labels = angular.copy(authentication.user.Labels);
 
@@ -70,8 +73,27 @@ angular.module("proton.labels", [])
                 return _.where(scope.labels, {Selected: true});
             };
 
-            scope.createLabel = function() {
-                $rootScope.$broadcast('openCreateLabel');
+            scope.toggle = function() {
+                scope.displayField = !scope.displayField;
+            };
+
+            scope.create = function() {
+                if (scope.labelName.length > 0) {
+                    networkActivityTracker.track(
+                        Label.create({
+                            Name: scope.labelName,       // required, cannot be same as an existing label
+                            Color: '#f66',           // required, must match default colors
+                            Display: 1
+                        })
+                        .then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+                                scope.displayField = false;
+                            }
+                        })
+                    );
+                } else {
+                    scope.displayField = false;
+                }
             };
         }
     };
