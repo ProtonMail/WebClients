@@ -182,41 +182,11 @@ angular.module("proton.modals", [])
 })
 
 // label modal
-.factory('labelModal', function(pmModal) {
+.factory('labelModal', function(pmModal, tools) {
     return pmModal({
         controller: function(params, $timeout) {
             this.title = params.title;
-            this.colors = [
-                '#7272a7',
-                '#8989ac',
-
-                '#cf5858',
-                '#cf7e7e',
-
-                '#c26cc7',
-                '#c793ca',
-
-                '#7569d1',
-                '#9b94d1',
-
-                '#69a9d1',
-                '#a8c4d5',
-
-                '#5ec7b7',
-                '#97c9c1',
-
-                '#72bb75',
-                '#9db99f',
-
-                '#c3d261',
-                '#c6cd97',
-
-                '#e6c04c',
-                '#e7d292',
-
-                '#e6984c',
-                '#dfb286'
-            ];
+            this.colors = tools.colors();
 
             if(angular.isDefined(params.label)) {
                 this.name = params.label.Name;

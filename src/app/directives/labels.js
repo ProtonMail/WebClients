@@ -1,6 +1,17 @@
 angular.module("proton.labels", [])
 
-.directive('dropdownLabels', function ($timeout, $q, $rootScope, $filter, authentication, Label) {
+.directive('dropdownLabels', function (
+    $timeout,
+    $q,
+    $rootScope,
+    $filter,
+    authentication,
+    eventManager,
+    Label,
+    networkActivityTracker,
+    notify,
+    tools
+) {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/labels.tpl.html',
@@ -21,9 +32,8 @@ angular.module("proton.labels", [])
                 dropdown.unbind('click', onClick);
             });
 
-
             scope.open = function() {
-                if(angular.isFunction(scope.getMessages) && angular.isFunction(scope.saveLabels)) {
+                if (angular.isFunction(scope.getMessages) && angular.isFunction(scope.saveLabels)) {
                     var messagesLabel = [];
                     var messages = scope.getMessages();
 
@@ -78,16 +88,28 @@ angular.module("proton.labels", [])
             };
 
             scope.create = function() {
+                var name = scope.labelName;
+                var colors = tools.colors();
+                var index = _.random(0, colors.length - 1);
+                var color = colors[index];
+
                 if (scope.labelName.length > 0) {
                     networkActivityTracker.track(
                         Label.create({
-                            Name: scope.labelName,       // required, cannot be same as an existing label
-                            Color: '#f66',           // required, must match default colors
+                            Name: name,
+                            Color: color,
                             Display: 1
-                        })
-                        .then(function(result) {
+                        }).then(function(result) {
                             if (result.data && result.data.Code === 1000) {
+                                var label = result.data.Label;
+
+                                eventManager.call();
+                                scope.labelName = '';
                                 scope.displayField = false;
+                                label.Selected = true;
+                                scope.labels.push(label);
+                            } else if (result.data && result.data.Error) {
+                                notify({message: data.Error, classes: 'notification-danger'});
                             }
                         })
                     );
