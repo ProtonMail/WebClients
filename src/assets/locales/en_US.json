@@ -496,6 +496,8 @@
     "PHONE": "Phone",
     "PLAN": "Plan",
     "PLAN_SUBSCRIPTION": "Plan Subscription",
+    "PLAN_UPGRADE_30SEC": "Your account is being updated, this may take up to 30 seconds.",
+    "PLAN_UPGRADING_MESSAGE": "You’re upgrading to the <strong>{{ ctrl.plans[0].Name | capitalize }} plan</strong>. Once we successfully process payment, we’ll immediately upgrade your account. Thanks for choosing to become a paying customer!",
     "PLANS_AND_PRICES": "Plans and Prices",
     "POPUP": "Popup",
     "PREFERENCE_SAVED": "Preference Saved",
