@@ -3,18 +3,18 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title text-center">Welcome to ProtonMail</h3>
+                <h3 class="modal-title text-center">{{ 'WELCOME_MODAL_TITLE' | translate }}</h3>
             </div>
             <div class="modal-body">
-                <p class="text-center">You now have an encrypted email account! Below are optional settings you can use to customize your account. You can always find these on your Settings page.</p><br />
+                <p class="text-center">{{ 'WELCOME_MODAL_INTRO' | translate }}</p><br />
                 <section class="pm_form">
                     <div class="pm_grid">
                         <div class="col-1-2">
-                            <label for="displayName">{{ 'CHOOSE_A_DISPLAY_NAME' | translate }}<br /><em>*Optional</em></label>
+                            <label for="displayName">{{ 'CHOOSE_A_DISPLAY_NAME' | translate }}<br /><em>*{{ 'OPTIONAL' | translate }}</em></label>Optional
                         </div>
                         <div class="col-1-2">
                             <input id="displayName" type="text" name="displayName" ng-model="ctrl.displayName" placeholder="{{ 'DISPLAY_NAME' | translate }}" />
-                            <p class="help-block"><small>This is the "From" name that people will see when you email them.</small></p>
+                            <p class="help-block"><small>{{ 'DISPLAY_NAME_INFO' | translate }}</small></p>
                         </div>
                     </div>
                 </section>
