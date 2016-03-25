@@ -49,12 +49,12 @@ angular.module("proton.controllers.Settings")
                         notify({message: response.Error, classes: 'notification-danger'});
                         deferred.reject();
                     } else {
-                        notify({message: 'Error during the request', classes: 'notification-danger'});
+                        notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
                         deferred.reject();
                     }
                 },
                 function(error) {
-                    notify({message: 'Error during the theme edition request', classes: 'notification-danger'});
+                    notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
                     $log.error(error);
                     deferred.reject();
                 }
@@ -95,7 +95,7 @@ angular.module("proton.controllers.Settings")
                     }
                 },
                 function(error) {
-                    notify({message: 'Error during the composer preference request', classes: 'notification-danger'});
+                    notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
                     $log.error(error);
                 }
             )
@@ -120,7 +120,7 @@ angular.module("proton.controllers.Settings")
 
         var error = function(error) {
             $log.error(error);
-            notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
+            notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
             apply(previous);
         };
 
