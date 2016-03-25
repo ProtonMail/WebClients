@@ -267,23 +267,23 @@ angular.module("proton.controllers.Settings")
 
         if (plan.Name === 'free') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Already Subscribed';
+                text = $translate.instant('ALREADY_SUBSCRIBED');
             } else {
-                text = 'Downgrade To Free';
+                text = $translate.instant('DOWNGRADE_TO_FREE');
             }
         } else if (plan.Name === 'plus') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Update Plus';
+                text = $translate.instant('UPDATE_PLUS');
             } else if ($scope.subscription.Name === 'free') {
-                text = 'Upgrade To Plus';
+                text = $translate.instant('UPGRADE_TO_PLUS');
             } else if ($scope.subscription.Name === 'visionary') {
-                text = 'Downgrade To Plus';
+                text = $translate.instant('DOWNGRADE_TO_PLUS');
             }
         } else if (plan.Name === 'visionary') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Update Visionary';
+                text = $translate.instant('UPDATE_VISIONARY');
             } else {
-                text = 'Upgrade To Visionary';
+                text = $translate.instant('UPGRADE_TO_VISIONARY');
             }
         }
 
@@ -317,8 +317,8 @@ angular.module("proton.controllers.Settings")
      * Open a modal to confirm to switch to the free plan
      */
     $scope.free = function() {
-        var title = $translate.instant('CONFIRM_DOWNGRADE');
-        var message = 'This will downgrade your account to a free account.<br /><br />Please disable all additional addresses prior to downgrading your account. You can manage that inside the addresses tab.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.';
+        var title = $translate.instant('CONFIRM_DOWNGRADE'); 
+        var message = $translate.instant('CONFIRM_DOWNGRADE_MESSAGE');
 
         confirmModal.activate({
             params: {
