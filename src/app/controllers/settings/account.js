@@ -36,7 +36,7 @@ angular.module('proton.controllers.Settings')
         if (angular.isUndefined($scope.noticeePassword)) {
             notify({
                 classes: "notification-danger",
-                message: "Enter your current login password."
+                message: "{{ 'ENTER_YOUR_LOGIN_PASSWORD' | translate }}"
             });
             angular.element('#noticeePassword').focus();
         } else {
@@ -56,7 +56,7 @@ angular.module('proton.controllers.Settings')
                         }
                     },
                     function(error) {
-                        notify({message: 'Error during the notification request', classes: 'notification-danger'});
+                        notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
                         $log.error(error);
                     }
                 )
@@ -79,7 +79,7 @@ angular.module('proton.controllers.Settings')
               authentication.user.Notify = +$scope.dailyNotifications;
               notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
           }, function(error) {
-              notify({message: 'Error during the daily notification request', classes: 'notification-danger'});
+              notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
               $log.error(error);
           })
         );
@@ -91,7 +91,7 @@ angular.module('proton.controllers.Settings')
         var confLoginPwd = $scope.confirmLoginPassword;
 
         if (newLoginPwd !== confLoginPwd) {
-            notify({message: 'Confirm login password is wrong', classes: 'notification-danger'});
+            notify({message: "{{ 'PASSWORDS_DONT_MATCH' | translate }}", classes: 'notification-danger'});
             return false;
         }
 
@@ -110,10 +110,10 @@ angular.module('proton.controllers.Settings')
                 } else if(result.Error) {
                     notify({message: result.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: 'Login password invalid', classes: 'notification-danger'});
+                    notify({message: "{{ 'INVALID_LOGIN_PASSWORD' | translate }}", classes: 'notification-danger'});
                 }
             }, function(error) {
-                notify({message: 'Error during the login password request', classes: 'notification-danger'});
+                notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
                 $log.error(error);
             })
         );
@@ -128,12 +128,12 @@ angular.module('proton.controllers.Settings')
         var promises = [];
 
         if (oldMailPwd !== authentication.getPassword()) {
-            notify({message: 'Current mailbox password is wrong', classes: 'notification-danger'});
+            notify({message: "{{ 'WRONG_MBPW' | translate }}", classes: 'notification-danger'});
             return false;
         }
 
         if (newMailPwd !== confMailPwd) {
-            notify({message: 'Confirm mailbox password is wrong', classes: 'notification-danger'});
+            notify({message: "{{ 'PASSWORDS_DONT_MATCH' | translate }}", classes: 'notification-danger'});
             return false;
         }
 
@@ -158,7 +158,7 @@ angular.module('proton.controllers.Settings')
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: 'Error during the organization update key request', classes: 'notification-danger'});
+                                    notify({message: "{{ 'ERROR_ORG_KEYS' | translate }}", classes: 'notification-danger'});
                                 }
                             });
                         }, function(error) {
@@ -172,10 +172,10 @@ angular.module('proton.controllers.Settings')
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: 'Error during the organization get key request', classes: 'notification-danger'});
+                    notify({message: "{{ 'ERROR_ORG_KEYS' | translate }}", classes: 'notification-danger'});
                 }
             }, function(error) {
-                notify({message: 'Error during the organization get key request', classes: 'notification-danger'});
+                notify({message: "{{ 'ERROR_ORG_KEYS' | translate }}", classes: 'notification-danger'});
             });
         }
 
@@ -206,7 +206,7 @@ angular.module('proton.controllers.Settings')
                     keys = keys.filter(function(obj) { return obj !== 0; });
 
                     if (keys.length === 0) {
-                        notify({message: 'No keys to update', classes: 'notification-danger'});
+                        notify({message: "{{ 'NO_KEYS' | translate }}", classes: 'notification-danger'});
                     }
 
                     return Key.private({
@@ -224,7 +224,7 @@ angular.module('proton.controllers.Settings')
                         } else if(result.data && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
+                            notify({message: "{{ 'WRONG_MBPW' | translate }}", classes: 'notification-danger'});
                         }
                     });
                 }, function(error) {
@@ -235,7 +235,7 @@ angular.module('proton.controllers.Settings')
                 $log.error(result.Error);
                 notify({message: result.Error, classes: 'notification-danger'});
             } else {
-                notify({message: 'Error during the user get request', classes: 'notification-danger'});
+                notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
             }
         }, function(errors) {
             _.each(errors, function(error) {
@@ -261,10 +261,10 @@ angular.module('proton.controllers.Settings')
                     authentication.user.Signature = signature;
                     notify({message: $translate.instant('IDENTITY_SAVED'), classes: 'notification-success'});
                 } else {
-                    notify({message: 'Error during the request', classes: 'notification-danger'});
+                    notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
                 }
             }, function() {
-                notify({message: 'Error during the request', classes: 'notification-danger'});
+                notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
             })
         );
     };
@@ -284,7 +284,7 @@ angular.module('proton.controllers.Settings')
                 notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
                 authentication.user.AutoSaveContacts = +$scope.autosaveContacts;
             }, function(error) {
-                notify({message: 'Error during the autosave contacts request', classes : 'notification-danger'});
+                notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes : 'notification-danger'});
                 $log.error(error);
             })
         );
@@ -311,7 +311,7 @@ angular.module('proton.controllers.Settings')
                     }
                 },
                 function(error) {
-                    notify({message: 'Error during the email preference request', classes: 'notification-danger'});
+                    notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
                     $log.error(error);
                 }
             )
