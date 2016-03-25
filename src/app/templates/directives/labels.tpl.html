@@ -17,7 +17,7 @@
                 </li>
             </ul>
         </div>
-        <form novalidate ng-submit="create()" ng-show="displayField === true">
+        <form novalidate ng-submit="create()" ng-show="displayField === true" class="pm_form">
             <input type="text" placeholder="{{ 'NAME' | translate }}" ng-model="labelName" />
         </form>
         <label ng-show="labelsSelected().length > 0">
