@@ -79,7 +79,7 @@ angular.module("proton.controllers.Settings")
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: 'Error during delete request', classes: 'notification-danger'});
+                        notify({message: 'ERROR_WHILE_SAVING', classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -111,7 +111,7 @@ angular.module("proton.controllers.Settings")
                 notify({message: result.data.Error, classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: 'Error during key order request', classes: 'notification-danger'});
+            notify({message: 'ERROR_WHILE_SAVING', classes: 'notification-danger'});
         }));
     };
 
@@ -146,16 +146,16 @@ angular.module("proton.controllers.Settings")
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: 'Error during the update key request', classes: 'notification-danger'});
+                                    notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
                                 }
                             }, function(error) {
-                                notify({message: 'Error during the update key request', classes: 'notification-danger'});
+                                notify({message: "{{ 'ERROR_WHILE_SAVING' | translate }}", classes: 'notification-danger'});
                             }));
                         }, function(error) {
-                            notify({message: 'Error during the encryption phase', classes: 'notification-danger'});
+                            notify({message: "{{ 'ERROR_WHILE_ENCRYPTING' | translate }}", classes: 'notification-danger'});
                         });
                     }, function(error) {
-                        notify({message: 'Wrong key pair password', classes: 'notification-danger'});
+                        notify({message: "{{ 'INVALID_KEY_PASSWORD' | translate }}", classes: 'notification-danger'});
                     });
                 },
                 cancel: function() {
