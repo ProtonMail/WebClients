@@ -16,7 +16,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     CONSTANTS,
     eventManager,
     Label,
-    labelModal,
     Message,
     cacheCounters,
     networkActivityTracker,
@@ -43,56 +42,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     // Listeners
-    $scope.$on('openCreateLabel', function(event) { $scope.createLabel(); });
     $scope.$on('$destroy', function(event) {
         $timeout.cancel(timeoutRefresh);
     });
-
-    /**
-     * Open modal to create a new label
-     */
-    $scope.createLabel = function() {
-        labelModal.activate({
-            params: {
-                title: $translate.instant('CREATE_NEW_LABEL'),
-                create: function(name, color) {
-                    // already exist?
-                    var exist = _.findWhere(authentication.user.Labels, {Name: name});
-
-                    if(angular.isUndefined(exist)) {
-                        networkActivityTracker.track(
-                            Label.create({
-                                Name: name,
-                                Color: color,
-                                Display: 1
-                            }).then(function(result) {
-                                var data = result.data;
-
-                                if(angular.isDefined(data) && data.Code === 1000) {
-                                    eventManager.call();
-                                    cacheCounters.add(data.Label.ID);
-                                    notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
-                                    labelModal.deactivate();
-                                } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
-                                    notify({message: data.Error, classes: 'notification-danger'});
-                                    $log.error(result);
-                                }
-                            }, function(error) {
-                                notify({message: 'Error during the label creation request', classes: 'notification-danger'});
-                                $log.error(error);
-                            })
-                        );
-                    } else {
-                        notify({message: $translate.instant('LABEL_NAME_ALREADY_EXISTS'), classes: 'notification-danger'});
-                        labelModal.deactivate();
-                    }
-                },
-                cancel: function() {
-                    labelModal.deactivate();
-                }
-            }
-        });
-    };
 
     /**
      * Send request to get the last event, empty the cache for the current mailbox and then refresh the content automatically

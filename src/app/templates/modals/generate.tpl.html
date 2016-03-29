@@ -21,7 +21,7 @@
                         </label>
                     </div>
                 </div>
-                <p class="alert alert-info" ng-show="ctrl.size === '4096'">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
+                <p class="alert alert-info" ng-show="ctrl.size === '4096'">{{ '4096_WARNING' | translate }}</p>
                 <table class="pm_table">
                     <thead>
                         <tr>
@@ -45,7 +45,7 @@
             </div>
             <div class="modal-body" ng-show="ctrl.process === true">
                 <p>&nbsp;</p>
-                <p>We are now generating encryption keys for your account, this may take several minutes and temporarily freeze your browser.</p>
+                <p>{{ 'GENERATING_KEYS_MESSAGE' | translate }}</p>
                 <p>&nbsp;</p>
                 <loader-tag></loader-tag>
             </div>

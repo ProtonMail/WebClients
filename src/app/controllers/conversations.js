@@ -17,7 +17,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Conversation,
     Message,
     eventManager,
-    expiration,
     Label,
     authentication,
     cache,
@@ -106,8 +105,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $rootScope.numberElementSelected = $scope.elementsSelected().length;
             $rootScope.numberElementChecked = $scope.elementsChecked().length;
             $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
-            // Manage expiration time
-            expiration.check(newValue);
         }, true);
     };
 

@@ -326,7 +326,6 @@ angular.module("proton.event", ["proton.constants"])
 				}
 
 				this.manageNotices(data.Notices);
-				cache.expiration();
 			},
 			interval: function() {
 				eventModel.get().then(function (result) {

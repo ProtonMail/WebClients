@@ -1,6 +1,6 @@
 <div id="pm_latest" ng-show="showWelcome === true">
-    <header>Welcome, {{ user.DisplayName }}</header>
-    <p class="text-center">You have <strong>{{ numberElementUnread }}</strong> unread conversations.</p>
+    <header>{{ 'WELCOME_GREETING' | translate }}</header>
+    <p class="text-center">{{ 'NUM_UNREAD_CONV | translate '}}</p>You have <strong>{{ numberElementUnread }}</strong> unread conversations.
     <section id="storageStatus" ng-show="user.UsedSpace > 0">
     	<div class="wrap">
             <div class="storageArea">
@@ -10,13 +10,13 @@
 	            </div>
 	            <span class="total">{{ user.MaxSpace | humanSize }}</span>
             </div>
-            <span>You have used <strong>{{ storagePercentage() }}%</strong> of your current storage space.</span>
+            <span>{{ 'STORAGE_USED_MESSAGE' | translate }}</span>
         </div>
     </section>
     <section>
         <a ui-sref="secured.dashboard" class="text-center latest-upgrade">
             <img src="/assets/img/latest/privacy.jpg">
-            <button type="button" class="pm_button primary">Upgrade Account</button>
+            <button type="button" class="pm_button primary">{{ 'UPGRADE_ACCOUNT' | translate }}</button>
         </a>
     </section>
     <div class="pm_grid">

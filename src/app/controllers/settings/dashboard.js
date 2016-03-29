@@ -317,8 +317,8 @@ angular.module("proton.controllers.Settings")
      * Open a modal to confirm to switch to the free plan
      */
     $scope.free = function() {
-        var title = $translate.instant('CONFIRM_DOWNGRADE');
-        var message = 'This will downgrade your account to a free account.<br /><br />Please disable all additional addresses prior to downgrading your account. You can manage that inside the addresses tab.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.';
+        var title = $translate.instant('CONFIRM_DOWNGRADE'); 
+        var message = $translate.instant('CONFIRM_DOWNGRADE_MESSAGE');
 
         confirmModal.activate({
             params: {
