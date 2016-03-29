@@ -139,6 +139,12 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
     };
 
+    $scope.initPhoneDropdown = function() {
+        $timeout( function() {
+            $(".phoneCountryCode").intlTelInput();
+        }, 100);    
+    };
+
     $scope.notificationEmailValidation = function() {
         if ($scope.account.notificationEmail.length > 0) {
             return !!!tools.validEmail($scope.account.notificationEmail);
@@ -153,6 +159,22 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             Type: 'email',
             Destination: {
                 Address: $scope.account.emailVerification
+            }
+        }).$promise.then(function(response) {
+            if (response.Code === 1000) {
+                $scope.signup.verificationSent = true;
+            } else if (response.Error) {
+                notify({message: response.Error, classes: 'notification-danger'});
+            }
+        });
+    };
+
+    $scope.sendSmsVerificationCode = function() {
+        User.code({
+            Username: $scope.account.Username,
+            Type: 'sms',
+            Destination: {
+                Phone: $scope.account.smsVerification
             }
         }).$promise.then(function(response) {
             if (response.Code === 1000) {
