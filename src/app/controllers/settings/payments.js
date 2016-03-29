@@ -137,7 +137,7 @@ angular.module('proton.controllers.Settings')
         networkActivityTracker.track(
             Payment.invoice(invoice.ID)
             .then(function(result) {
-                var filename = "ProtonMail {{ 'INVOICE' | translate }} " + invoice.ID + ".pdf";
+                var filename = "ProtonMail Invoice " + invoice.ID + ".pdf";
                 var blob = new Blob([result.data], { type: 'application/pdf' });
 
                 saveAs(blob, filename);
