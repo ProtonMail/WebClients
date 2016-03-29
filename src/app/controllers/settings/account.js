@@ -240,7 +240,7 @@ angular.module('proton.controllers.Settings')
                 signature: Setting.signature({Signature: signature})
             })
             .then(function(result) {
-                if (result.data.displayName.Code === 1000 && result.data.signature.Code === 1000) {
+                if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
                     authentication.user.DisplayName = displayName;
                     authentication.user.Signature = signature;
                     notify({message: $translate.instant('IDENTITY_SAVED'), classes: 'notification-success'});
