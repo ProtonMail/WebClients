@@ -860,7 +860,7 @@ angular.module('proton.routes', [
                     if (user.Delinquent < 3) {
                         deferred.resolve();
                     } else {
-                        notify({message: 'You are a delinquent', classes: 'notification-danger'});
+                        notify({message: 'You are in a delinquent state, your account is disabled due to non-payment.', classes: 'notification-danger'});
                         $state.go('secured.dashboard');
                         deferred.reject();
                     }
