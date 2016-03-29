@@ -6,35 +6,10 @@
 
         <div class="row" id="settingsAppearance">
 
-            <!-- where does this go? -->
-            <section ng-if="false" class="setting pm_form">
-
-                <form method="post" novalidate ng-submit="saveMessageButtons(messageButtons)" name="messageButtons"  >
-                    <legend>Message Buttons</legend>
-                    <label for="composerMode" class="control-label">{{ 'READ_UNREAD_POSITION' | translate }}</label><br>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" ng-model="MessageButtons" name="msgBtnMode" value="1">
-                            <img src="assets/img/1.png">
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" ng-model="MessageButtons" name="msgBtnMode" value="0">
-                            <img src="assets/img/2.png">
-                        </label>
-                    </div>
-                    <button class="btn btn-sm btn-primary" type="submit">
-                        {{ 'SAVE' | translate }}
-                    </button>
-                </form>
-
-            </section>
-
             <section class="setting pm_form">
                 <legend>{{ 'COMPOSER' | translate }}</legend>
-                <p>This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer.</p>
-                <p><a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank">Learn more about the composer</a></p>
+                <p>{{ 'COMPOSER_INFO' | translate }}</p>
+                <p><a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank">{{ 'LEARN_MORE' | translate }}</a></p>
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
@@ -54,8 +29,8 @@
             </section>
             <section class="setting pm_form pull-right">
                 <legend>{{ 'LAYOUT' | translate }}</legend>
-                <p>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</p>
-                <p><a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank">Learn more about the layout</a></p>
+                <p>{{ 'LAYOUT_INFO' | translate }}</p>
+                <p><a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank">{{ 'LEARN_MORE' | translate }}</a></p>
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />
@@ -77,7 +52,7 @@
         </div>
 
         <div class="row">
-            <section class="settig pm_form full">
+            <section class="setting pm_form">
                 <form method="post" class="toolbar-button-options" novalidate ng-submit="saveButtonsPosition(buttonsForm)" name="buttonsForm">
                     <legend>{{ 'TOOLBAR' | translate }}</legend>
                     <p>{{ 'READ_UNREAD_POSITION' | translate }}</p>
@@ -97,6 +72,13 @@
                     </label>
                 </form>
             </section>
+            <section class="setting pm_form pull-right">
+                <legend>{{ 'INTERNATIONALIZATION' | translate }}</legend>
+                <label for="selectDefaultLanguage">{{ 'CHOOSE_LANG' | translate }}</label>
+                <span class="pm_select">
+                    <select id="selectDefaultLanguage" ng-model="appearance.locale" ng-options="locale.label for locale in appearance.locales" ng-change="saveDefaultLanguage()"></select>
+                </span>
+            </section>
         </div>
 
         <div class="row">
@@ -106,7 +88,7 @@
                 <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
                     <legend>{{ 'CUSTOM_THEME' | translate }}</legend>
                     <div class="clearfix" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
-                        <p class="alert alert-info">Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
+                        <p class="alert alert-info">{{ 'CUSTOM_THEME_INFO' | translate }}</p>
                         <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
                         <textarea class="code" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="appearance.cssTheme" maxlength="200000"></textarea>
                     </div>
@@ -116,8 +98,8 @@
                     </div>
                 </form>
 
-                <legend>Additional Themes (Experimental)</legend>
-                <p class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> Loading themes will override your current theme!</p>
+                <legend>{{ 'ADDITIONAL_THEMES' | translate }}</legend>
+                <p class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> {{ 'ADDITIONAL_THEMES_INFO' | translate }}</p>
                 <p>
                     <button class="pm_button" ng-click="loadThemeClassic()">Load Classic Theme</button>
                     <button ng-if="false" class="pm_button" ng-click="enableThemeEdison()">Load Edison Theme</button>

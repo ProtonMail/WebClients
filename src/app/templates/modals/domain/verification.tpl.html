@@ -11,8 +11,7 @@
             </div>
             <div class="modal-body pm_form">
                 <div>
-                    <p>For security reasons, we need to verify that you are the owner of <strong>{{ ctrl.domain.DomainName }}</strong>. Please add the following code into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. <strong>Do not remove it even after successful verification</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/dns-records/">{{ 'LEARN_MORE' | translate }}</a></p>
-                    <p>Please add the following TXT record:</p>
+                    {{ 'VERIFICATION_INFO_1' | translate }}
                     <table class="pm_table record desktopOnly">
                         <tr>
                             <th style="width:3rem">{{ 'TYPE' | translate }}</th>

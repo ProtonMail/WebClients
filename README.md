@@ -5,7 +5,7 @@ Official AngularJS web client for the [ProtonMail secure email service](https://
 
 ### Translations
 
-We are starting a translation project to get ProtonMail localized and translated into as many languages as possible. To help with this effort, please visit the [translations repository](https://github.com/ProtonMail/translations).
+To assist with the ProtonMail Translation Project, please visit our dedicated translation repository: [translations repository](https://github.com/ProtonMail/translations).
 
 ### Basic Installation
 

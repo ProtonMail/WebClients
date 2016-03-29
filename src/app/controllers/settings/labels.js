@@ -51,8 +51,35 @@ angular.module("proton.controllers.Settings")
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
     });
 
+    /**
+     * Open modal to create a new label
+     */
     $scope.createLabel = function() {
-        $rootScope.$broadcast('openCreateLabel');
+        labelModal.activate({
+            params: {
+                title: $translate.instant('CREATE_NEW_LABEL'),
+                create: function(name, color) {
+                    networkActivityTracker.track(
+                        Label.create({
+                            Name: name,
+                            Color: color,
+                            Display: 1
+                        }).then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+                                eventManager.call();
+                                labelModal.deactivate();
+                                notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
+                            } else if (result.data && result.data.Error) {
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            }
+                        })
+                    );
+                },
+                cancel: function() {
+                    labelModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.editLabel = function(label) {
@@ -88,7 +115,7 @@ angular.module("proton.controllers.Settings")
                                 notify({message: $translate.instant('ERROR_DURING_THE_LABEL_REQUEST'), classes: 'notification-danger'});
                             }
                         }, function(error) {
-                            notify({message: 'Error during the label edition request', classes: 'notification-danger'});
+                            notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                             $log.error(error);
                         })
                     );
@@ -126,7 +153,7 @@ angular.module("proton.controllers.Settings")
                                 }
                             },
                             function(error) {
-                                notify({message: 'Error during the label deletion request ', classes: 'notification-danger'});
+                                notify({message: $translate.instant('ERROR_DURING_THE_LABEL_REQUEST'), classes: 'notification-danger'});
                             }
                         )
                     );
@@ -155,7 +182,7 @@ angular.module("proton.controllers.Settings")
                     $log.error(result);
                 }
             }, function(error) {
-                notify({message: 'Error during the label edition request ', classes: 'notification-danger'});
+                notify({message: $translate.instant('ERROR_DURING_THE_LABEL_REQUEST'), classes: 'notification-danger'});
                 $log.error(error);
             })
         );
@@ -180,7 +207,7 @@ angular.module("proton.controllers.Settings")
                 $log.error(result);
             }
         }, function(error) {
-            notify({message: 'Error during the label edition request ', classes: 'notification-danger'});
+            notify({message: $translate.instant('ERROR_DURING_THE_LABEL_REQUEST'), classes: 'notification-danger'});
             $log.error(error);
         });
     };
