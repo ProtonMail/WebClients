@@ -672,7 +672,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     var buildMessage = function(action) {
         var base = new Message();
         var br = '<br />';
-        var contentSignature;
+        var contentSignature = '';
         var signature;
         var blockquoteStart = '<blockquote class="protonmail_quote" type="cite">';
         var originalMessage = '-------- Original Message --------<br />';
@@ -724,23 +724,29 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             var address = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});
             var found = _.findWhere(recipients, {Address: address.Email});
 
-            _.each(_.sortBy(authentication.user.Addresses, 'Send'), function(address) {
-                if (angular.isUndefined(found)) {
-                    found = _.findWhere(recipients, {Address: address.Email});
-                }
-            });
-
-            if (angular.isUndefined(found)) {
+            if ($scope.message.Type === 2 || $scope.message.Type === 3) {
                 found = address;
+            } else {
+                _.each(_.sortBy(authentication.user.Addresses, 'Send'), function(address) {
+                    if (angular.isUndefined(found)) {
+                        found = _.findWhere(recipients, {Address: address.Email});
+                    }
+                });
+
+                if (angular.isUndefined(found)) {
+                    found = address;
+                }
             }
 
             base.From = found;
         }
 
-        contentSignature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(base.From.Signature) + '</div>', {
-            ADD_ATTR: ['target'],
-            FORBID_TAGS: ['style', 'input', 'form']
-        });
+        if (base.From.Signature) {
+            contentSignature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(base.From.Signature) + '</div>', {
+                ADD_ATTR: ['target'],
+                FORBID_TAGS: ['style', 'input', 'form']
+            });
+        }
 
         if ($(contentSignature).text().length === 0 && $(contentSignature).find('img').length === 0) {
             signature = br + br;

@@ -49,6 +49,6 @@ ng-if="tokenError !== true">
 id="pm_login"
 class="pm_panel alt pm_form error"
 ng-if="tokenError === true">
-    <h1 class="text-center">Error</h1>
-    <p>Sorry, this message does not exist or has already expired.</p>
+    <h1 class="text-center">{{ 'ERROR' | translate }}</h1>
+    <p>{{ 'EXPIRATION_ERROR' | translate }}</p>
 </form>

@@ -54,7 +54,7 @@
                 </table>
                 <div class="text-center alert alert-info" ng-show="ctrl.valid.Cycle === 1">
                     <p>
-                        <strong>Save 20% with the annual plan!</strong>
+                        <strong>{{ 'SAVE_20_YEARLY' | translate }}</strong>
                     </p>
                     <p>
                         <button type="button" class="pm_button primary" ng-click="ctrl.switch(12)">{{ 'PAY_ANNUALLY' | translate }}</button>
@@ -65,7 +65,7 @@
                 <div ng-hide="ctrl.valid.AmountDue === 0">
                     <div class="pm_grid margin">
                         <div class="col-1-2">
-                            <label for="paymentMethod">Payment Method:</label>
+                            <label for="paymentMethod">{{ 'SELECT_PAYMENT_METHOD' | translate }}:</label>
                         </div>
                         <div class="col-1-2">
                             <span class="pm_select">
@@ -126,11 +126,11 @@
                         <p ng-show="!ctrl.approvalURL && ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false">
                             <i class="fa fa-spin fa-spinner"></i> {{ 'LOADING' | translate }}...
                         </p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">Error connecting to PayPal. <a href="#" ng-click="ctrl.initPaypal()">Click here</a> to try again.</p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 1">We only accept PayPal for annual subscriptions, click the link to switch to an annual subscription. <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 2">We only accept PayPal for annual subscriptions. PayPal is also only accepted for US Dollar plans. Click here to switch to an annual US Dollar subscription. <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 3">All PayPal orders are charged in US Dollar, click the link to change your subscription to US Dollar. <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
-                        <p class="alert alert-info" ng-show="ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">{{ 'PAYPAL_CONNECTION_ERR' | translate }} <a href="#" ng-click="ctrl.initPaypal()">Click here</a> to try again.</p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 1">{{ 'PAYPAL_ONLY_ANNUAL' | translate }}<a href="#" ng-click="ctrl.switch(12, 'USD')">{{ 'CHANGE_SUBSCRIPTION' | translate }}</a></p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 2">{{ 'PAYPAL_ONLY_USD' | translate }} <a href="#" ng-click="ctrl.switch(12, 'USD')">{{ 'CHANGE_SUBSCRIPTION' | translate }}</a></p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 3">{{ 'PAYPAL_CHANGE_TO_USD' | translate }} <a href="#" ng-click="ctrl.switch(12, 'USD')">Change Subscription</a></p>
+                        <p class="alert alert-info" ng-show="ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false">{{ 'PAYPAL_LOGIN_MESSAGE' | translate }}</p>
                         <p class="text-center" ng-show="ctrl.approvalURL">
                             <a href="#" ng-click="ctrl.openPaypalTab()">
                                 <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
@@ -138,7 +138,7 @@
                         </p>
                     </div>
                     <div ng-show="ctrl.choice.value === 'bitcoin'">
-                        <p class="alert alert-info">To pay via Bitcoin or Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions</p>
+                        <p class="alert alert-info">{{ 'PAY_WITH_BITCOIN_INSTRUCTIONS' | translate }}</p>
                     </div>
                     <hr />
                 </div>
@@ -156,7 +156,7 @@
                         <button type="button" class="pm_button primary" ng-click="ctrl.apply()">{{ 'APPLY' | translate }}</button>
                     </div>
                 </div>
-                <p>By clicking submit, you agree to our <a href="https://protonmail.com/terms-and-conditions" target="_blank">Terms and Conditions</a>.</p>
+                <p>{{ 'TERMS_CONDITIONS_AGREEMENT' | translate }}</p>
             </div>
         </div>
     </div>

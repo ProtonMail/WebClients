@@ -2,8 +2,8 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings pm_form">
         <div class="row">
-            <p class="alert alert-warning" ng-show="isSafari">Safari doesn't support downloading of keys. We are working on a fix for this.</p>
-            <p class="alert alert-info">Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
+            <p class="alert alert-warning" ng-show="isSafari">{{ 'SAFARI_DOWNLOAD_KEY' | translate }}</p>
+            <p class="alert alert-info">{{ 'KEY_DOWNLOAD_INFO' | translate }}</p>
             <legend>{{ 'PROTONMAIL_ADDRESSES' | translate }}</legend>
             <div ng-repeat="address in PMAddresses | orderBy: 'Send'">
                 <header>
@@ -13,8 +13,8 @@
                             {{ 'GENERATE_NEW_KEY_PAIR' | translate }}
                         </button>
                         <strong>{{ address.Email }}</strong>
-                        <span class="pm_badge success" ng-show="address.Status === 1">Enabled</span>
-                        <span class="pm_badge error" ng-hide="address.Status === 1">Disabled</span>
+                        <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
+                        <span class="pm_badge error" ng-hide="address.Status === 1">{{ 'DISABLED' | translate }}</span>
                     </div>
                 </header>
                 <table class="pm_table thick bordered" ng-show="address.Keys.length > 0" id="keys-addressTable">
@@ -61,8 +61,8 @@
                             {{ 'GENERATE_NEW_KEY_PAIR' | translate }}
                         </button>
                         <strong>{{ address.Email }}</strong>
-                        <span class="pm_badge success" ng-show="address.Status === 1">Enabled</span>
-                        <span class="pm_badge error" ng-hide="address.Status === 1">Disabled</span>
+                        <span class="pm_badge success" ng-show="address.Status === 1">{{ 'ENABLED' | translate }}</span>
+                        <span class="pm_badge error" ng-hide="address.Status === 1">{{ 'DISABLED' | translate }}</span>
                     </div>
                 </header>
                 <table class="pm_table thick bordered" ng-show="address.Keys.length > 0" id="keys-addressTable">

@@ -3,17 +3,17 @@
         <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Feedback form</h4>
+                <h4 class="modal-title">{{ 'FEEDBACK_MODAL_TITLE' | translate }}</h4>
             </div>
             <div class="modal-body pm_form">
-                <p>What do you think of ProtonMail version 3.0?</p>
-                <textarea ng-model="ctrl.fdbckTxt" placeholder="Your thoughts..."></textarea>
-                <p class="alert alert-info"><strong>This will only be shown once.</strong> ProtonMail is a global effort. Your feedback is very important in our mission to make encryption available for everyone. Thank You!</p>
+                <p>{{ 'FEEDBACK_MODAL_MESSAGE' | translate }}</p>
+                <textarea ng-model="ctrl.fdbckTxt" placeholder="{{ 'FEEDBACK_PLACEHOLDER' | translate }}"></textarea>
+                <p class="alert alert-info">{{ 'FEEDBACK_MODAL_THANK_YOU' | translate }}</p>
             </div>
         </div>
         <div class="modal-footer text-right">
             <button class="pm_button pull-left" ng-click="ctrl.close()">Close</button>
-            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.submit()">Send Feedback</button>
+            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.submit()">{{ 'SEND_FEEDBACK' | translate }}</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

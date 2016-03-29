@@ -12,7 +12,7 @@
     </h1>
     <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
         <p ng-show="nonTrashed() && inTrash === true" class="alert">
-            This conversation contains non-trashed messages.
+            {{ 'CONVERSATION_TRASH_MESSAGES' | translate }}
             <a href="#" ng-click="toggleNonTrashed()">
                 <span ng-show="showNonTrashed === true">Hide non trashed messages</span>
                 <span ng-hide="showNonTrashed === true">Show non trashed messages</span>

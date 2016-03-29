@@ -5,7 +5,7 @@
     <div class="modal-body">
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>Select Domain</label>
+                <label>{{ 'SELECT_DOMAIN' | translate }}</label>
             </div>
             <div class="col-2-3">
                 <span class="pm_select inline">
@@ -18,7 +18,7 @@
 
         <form class="pm_grid" method="post" ng-submit="ctrl.add()" novalidate>
             <div class="col-1-3">
-                <label>Add an address</label>
+                <label>{{ 'ADD_ADDRESS'}}</label>
             </div>
             <div class="col-1-3">
                 <input type="text" ng-model="ctrl.address" placeholder="Address" />
@@ -30,7 +30,7 @@
         </form>
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>Addresses added</label>
+                <label>{{ 'ADDRESSES_ADDED' | translate }}</label>
             </div>
             <div class="col-2-3">
                 <table class="pm_table pm_form bordered">

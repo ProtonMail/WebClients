@@ -3,11 +3,11 @@
         <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Help us protect online privacy</h4>
+                <h4 class="modal-title">{{ 'DONATE_TITLE' | translate }}</h4>
             </div>
             <div class="modal-body">
                 <form novalidate ng-submit="ctrl.donate()" class="pm_form">
-                    <p>ProtonMail is open source software that protects your privacy and doesn't have ads. Your support is essential for keeping the service running.</p>
+                    <p>{{ 'DONATE_UPSELL' | translate }}</p>
                     <h4>{{ 'DONATE_TO_PROTONMAIL' | translate }}</h4>
                     <div class="margin">
                         <button type="button" class="pm_button" style="margin-right: 10px;" ng-repeat="amount in ctrl.amounts" ng-click="ctrl.amount = amount.value" ng-class="{'success': amount.value === ctrl.amount}">{{ amount.label | currency: ctrl.currency.value }}</button>
@@ -29,13 +29,13 @@
                         </div>
                     </div>
                     <div class="upsell">
-                        <h3>Support ProtonMail by Upgrading to a Paid Account</h3>
-                        <h4>5&euro; <span>/month</span> or 48&euro; <span>/year</span></h4>
+                        <h3>{{ 'UPGRADE_SUPPORT_TITLE' | translate }}</h3>
+                        <h4>5&euro; <span>{{ 'MONTH' | translate }}</span> / 48&euro; <span>{{ 'YEAR' | translate }}</span></h4>
                         <ul>
-                            <li>Support for Custom Domains and Aliases</li>
-                            <li>5GB Storage (instead of 500MB)</li>
-                            <li>Higher message sending limits</li>
-                            <li>Priority Customer Support</li>
+                            <li>{{ 'UPGRADE_FEATURE_CUSTOM_DOMAINS' | translate }}</li>
+                            <li>{{ 'UPGRADE_FEATURE_STORAGE' | translate }}</li>
+                            <li>{{ 'UPGRADE_FEATURE_SENDING_LIMITS' | translate }}</li>
+                            <li>{{ 'UPGRADE_FEATURE_CUSTOMER_SUPPORT' | translate }}</li>
                         </ul>
                         <button type="button" class="pm_button primary" ng-click="ctrl.upgrade()">{{ 'UPGRADE' | translate }}</button>
                         <a href="#" ng-click="ctrl.upgrade()">
