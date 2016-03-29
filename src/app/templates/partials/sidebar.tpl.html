@@ -29,6 +29,7 @@ ng-hide="mobileMode || !sidebarMode">
                 <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.sent.**' | includedByState"></button>
                 <i class="fa fa-send"></i>
                 <span>{{ 'SENT' | translate }}</span>
+                <em ng-bind="unread('sent')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
