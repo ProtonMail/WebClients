@@ -51,8 +51,35 @@ angular.module("proton.controllers.Settings")
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
     });
 
+    /**
+     * Open modal to create a new label
+     */
     $scope.createLabel = function() {
-        $rootScope.$broadcast('openCreateLabel');
+        labelModal.activate({
+            params: {
+                title: $translate.instant('CREATE_NEW_LABEL'),
+                create: function(name, color) {
+                    networkActivityTracker.track(
+                        Label.create({
+                            Name: name,
+                            Color: color,
+                            Display: 1
+                        }).then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+                                eventManager.call();
+                                labelModal.deactivate();
+                                notify({message: $translate.instant('LABEL_CREATED'), classes: 'notification-success'});
+                            } else if (result.data && result.data.Error) {
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            }
+                        })
+                    );
+                },
+                cancel: function() {
+                    labelModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.editLabel = function(label) {
