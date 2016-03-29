@@ -89,16 +89,21 @@
             <em class="num">5</em>
             {{ 'PROOVE_YOUR_HUMANITY' | translate }}
         </label>
-        <p class="help">To help fight spammers, please verify you are human. You can verify via email or solve a reCaptcha:</p>
+        <p class="help">To help fight spammers, please verify you are human. You can verify via email, text (sms), or solve a reCaptcha:</p>
         <div class="pm_grid">
-            <div class="col-1-2">
+            <div class="col-1-3" ng-show="showEmail">
                 <label>
-                    <input type="radio" ng-model="verificator" value="email" /> {{ 'BY_EMAIL' | translate }}
+                    <input type="radio" ng-model="verificator" value="email" /> {{ 'EMAIL' | translate }}
                 </label>
             </div>
-            <div class="col-1-2">
+            <div class="col-1-3" ng-show="showCaptcha">
                 <label>
-                    <input type="radio" ng-model="verificator" value="recaptcha" /> reCAPTCHA
+                    <input type="radio" ng-model="verificator" value="recaptcha" /> CAPTCHA
+                </label>
+            </div>
+            <div class="col-1-3" ng-show="showSms">
+                <label>
+                    <input type="radio" ng-model="verificator" value="sms" /> SMS
                 </label>
             </div>
         </div>
@@ -125,6 +130,33 @@
                 </div>
                 <div class="col-1-2">
                     <button type="button" class="pm_button link" ng-click="signup.verificationSent = false">
+                        {{ 'SEND_NEW_CODE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="verificator === 'sms'" id="smsVerification" class="pm_form">
+            <div class="pm_grid" ng-show="signup.smsVerificationSent !== true">
+                <div class="col-2-3">
+                    <input type="text" ng-model="account.emailVerification" placeholder="{{ 'EMAIL_VERIFICATION' | translate }}" />
+                </div>
+                <div class="col-1-3">
+                    <button type="button" class="pm_button primary" ng-click="sendVerificationCode()">
+                        {{ 'SEND' | translate }}
+                    </button>
+                </div>
+            </div>
+            <div class="pm_grid" ng-show="signup.smsVerificationSent === true">
+                <p class="alert alert-success">
+                    <strong>Verification Code Sent</strong><br />
+                    Please check <strong>{{ account.emailVerification }}</strong> and enter the code below:
+                </p>
+                <div class="margin" ng-show="signup.smsVerificationSent === true">
+                    <input class="bigger" type="text" ng-model="account.smsCodeVerification" placeholder="{{ 'CODE_VERIFICATION' | translate }}" />
+                </div>
+                <div class="col-1-2">
+                    <button type="button" class="pm_button link" ng-click="signup.smsVerificationSent = false">
                         {{ 'SEND_NEW_CODE' | translate }}
                     </button>
                 </div>

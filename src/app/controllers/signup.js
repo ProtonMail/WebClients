@@ -20,7 +20,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     User,
     Reset,
     pmcw,
-    notify
+    notify,
+    direct
 ) {
     $scope.initialization = function() {
 
@@ -42,6 +43,22 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.signup.verificationSent = false;
         $scope.generating = false;
         $scope.domains = [];
+
+        // direct comes from the resolve in route, sometimes
+        if (direct) {
+            // determine what activation methods to show
+            if (direct.VerifyMethods) {
+                if (direct.VerifyMethods.indexOf('email') !== -1) {
+                    $scope.showEmail = true;
+                }
+                if (direct.VerifyMethods.indexOf('recaptcha') !== -1) {
+                    $scope.showCaptcha = true;
+                }
+                if (direct.VerifyMethods.indexOf('sms') !== -1) {
+                    $scope.showSms = true;
+                }
+            }
+        }
 
         // Populate the domains <select>
         _.each(domains, function(domain) {
