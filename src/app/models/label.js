@@ -1,6 +1,6 @@
-angular.module("proton.models.label", [])
+angular.module('proton.models.label', [])
 
-.factory("Label", function($http, url) {
+.factory('Label', function($http, url) {
     var api = {
         /**
          * Get labels

@@ -9,8 +9,8 @@
                 <h4 class="modal-title">7. DMARC <em>({{ 'OPTIONAL_ADVANCED' | translate }})</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p>If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
-                <p>Typical DMARC record. Note, you MUST change this before adding it to your DNS.</p>
+                <p>If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. Feel free to ignore and skip DMARC unless you really want strict policies such as <strong>p=quarantine</strong> or <strong>p=reject</strong>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p>Here is a basic DMARC record that does nothing except email you reports.</p>
 
                 <table class="pm_table record desktopOnly">
                     <tr>
@@ -40,7 +40,7 @@
                     </p>
                 </div>
 
-                <p class="alert alert-info"><strong>p=none</strong> is report only mode so no effect on email delivery</p>
+                <p class="alert alert-info"><strong>p=none</strong> has no effect on email delivery.</p>
                 <p class="alert alert-info"><strong>address@yourdomain.com</strong> is where you will receive DMARC reports from other email services</p>
             </div>
         </div>

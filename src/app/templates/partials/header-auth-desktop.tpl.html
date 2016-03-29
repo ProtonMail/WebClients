@@ -2,8 +2,8 @@
     <a href="#" class="logo" ui-sref="secured.inbox">
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" />
     </a>
-    <ng-include src="'templates/partials/searchForm.tpl.html'"></ng-include>
-    <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="isContactsView()">
+    <ng-include src="'templates/partials/searchForm.tpl.html'" ng-if="!('secured.contacts' | includedByState)"></ng-include>
+    <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
         <fieldset>
             <input type="search" placeholder="{{ 'SEARCH_CONTACTS' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
             <button type="submit">
@@ -14,53 +14,71 @@
     <ul class="navigation">
         <li ui-sref-active="active">
             <a ui-sref="secured.dashboard">
-                <em><i class="fa fa-arrow-up"></i></em>
+                <span>
+                    <i class="fa fa-cubes"></i>
+                </span>
                 <strong>{{ 'UPGRADE' | translate }}</strong>
             </a>
         </li>
         <li ng-class="{'active': activeSettings()}">
             <a id="tour-settings" ui-sref="secured.account">
-                <em><i class="fa fa-cogs"></i></em>
+                <span>
+                    <i class="fa fa-cogs"></i>
+                </span>
                 <strong>{{ 'SETTINGS' | translate }}</strong>
             </a>
         </li>
         <li ui-sref-active="active">
             <a ui-sref="secured.contacts">
-                <em><i class="fa fa-users"></i></em>
+                <span>
+                    <i class="fa fa-users"></i>
+                </span>
                 <strong>{{ 'CONTACTS' | translate }}</strong>
             </a>
         </li>
-        <li>
-            <a id="tour-support" href="#" ng-click="openReportModal()">
-                <em><i class="fa fa-bug"></i></em>
+        <li class="pm_buttons">
+            <a class="pm_trigger" dropdown href="#" id="tour-support">
+                <span class="text-center">
+                    <i class="fa fa-life-ring"></i>
+                    <i class="fa fa-angle-down"></i>
+                </span>
                 <strong>{{ 'REPORT_BUG' | translate }}</strong>
             </a>
-        </li>
-        <li>
-            <span class="pm_buttons">
-                <a class="pm_trigger" dropdown>
-                    <em><i class="fa fa-user"></i> <i class="fa fa-angle-down"></i></em>
-                    <strong>{{ user.DisplayName || user.Addresses[0].Email }}</strong>
+            <span class="pm_dropdown wide right">
+                <a href="https://protonmail.com/support" target="_blank" class="help">
+                    <i class="fa fa-question-circle"></i> {{ 'I_HAVE_A_QUESTION' | translate }}
                 </a>
-                <span class="pm_dropdown wide right">
-                    <p><strong>{{ user.DisplayName }}</strong></p>
-                    <p><b>{{ user.Addresses[0].Email }}</b></p>
-                    <a href="#" class="help" ng-click="tour()" ng-if="wizardEnabled === true">
-                        <i class="fa fa-magic"></i> {{ 'TUTORIAL' | translate }}
-                    </a>
-                    <a class="help" target="_blank" href="https://protonmail.com/support">
-                        <i class="fa fa-life-ring"></i> {{ 'HELP_AND_ANSWERS' | translate }}
-                    </a>
-                    <br>
-                    <a href="#" ng-click="logout();" class="pm_button primary">
-                    {{ 'LOGOUT' | translate }}
-                    </a>
-                    <a href="https://protonmail.com/blog/protonmail-beta-v3-1-release-notes/" target="_blank" class="version" title="{{ dateVersion }}" target="_blank">
-                        <small>ProtonMail {{ appVersion }}</small>
-                    </a>
-                </span>
+                <a href="#" ng-click="openReportModal()" class="help">
+                    <i class="fa fa-bug"></i> {{ 'REPORT_A_BUG' | translate }}
+                </a>
             </span>
-
+        </li>
+        <li class="pm_buttons">
+            <a class="pm_trigger" dropdown href="#">
+                <span class="text-center">
+                    <i class="fa fa-user"></i>
+                    <i class="fa fa-angle-down"></i>
+                </span>
+                <strong>{{ user.DisplayName || user.Addresses[0].Email }}</strong>
+            </a>
+            <span class="pm_dropdown wide right">
+                <span class="user">
+                    <strong>{{ user.DisplayName }}</strong>
+                    <b>{{ user.Addresses[0].Email }}</b>
+                </span>
+                <a href="#" class="help" ng-click="tour()" ng-if="wizardEnabled === true">
+                    <i class="fa fa-magic"></i> {{ 'TUTORIAL' | translate }}
+                </a>
+                <a class="help" target="_blank" href="https://protonmail.com/support">
+                    <i class="fa fa-life-ring"></i> {{ 'HELP_AND_ANSWERS' | translate }}
+                </a>
+                <a href="#" ng-click="logout();" class="pm_button primary text-center">
+                    {{ 'LOGOUT' | translate }}
+                </a>
+                <a href="https://protonmail.com/blog/protonmail-beta-v3-1-release-notes/" target="_blank" class="version text-center" title="{{     dateVersion }}" target="_blank">
+                    <small>ProtonMail {{ appVersion }}</small>
+                </a>
+            </span>
         </li>
     </ul>
 </header>

@@ -228,7 +228,7 @@ ng-class="{
 
     <div class="frame" ng-show="message.expand">
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
-        <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote></div>
+        <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote scroll="true"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
             <strong>{{ 'DECRYPTION_ERROR' | translate }}</strong>

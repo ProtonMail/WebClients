@@ -40,7 +40,7 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.clearLogs = function() {
-        var title = $translate.instant('CLEAR_LOGS');
+        var title = $translate.instant('CLEAR');
         var message = 'Are you sure you want to clear all your logs?'; // TODO translate
 
         confirmModal.activate({
@@ -90,7 +90,7 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.setLogging = function(value) {
-        if(value === 0) {
+        if (value === 0) {
             confirmModal.activate({
                 params: {
                     message: 'This will delete all access logs, do you want to continue?', // TODO translate

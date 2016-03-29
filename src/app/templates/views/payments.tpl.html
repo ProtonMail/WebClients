@@ -19,7 +19,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="method in methods">
-                            <td>**** **** **** {{ method.Details.Last4 }}</td>
+                            <td>•••• •••• •••• {{ method.Details.Last4 }}</td>
                             <td>{{ method.Details.ExpMonth }}/{{ method.Details.ExpYear }}</td>
                             <td>
                                 <span class="pm_badge">{{ method.Type }}</span>
@@ -36,6 +36,9 @@
             </section>
             <section class="setting full pm_form">
                 <legend>{{ 'INVOICES' | translate }}</legend>
+                <div class="margin">
+                    <button type="button" class="pm_button" ng-click="customize()">{{ 'CUSTOMIZE' | translate }}</button>
+                </div>
                 <p class="alert alert-info" ng-show="invoices.length === 0">{{ 'NO_INVOICES' | translate }}</p>
                 <table class="pm_table" ng-show="invoices.length > 0">
                     <thead>

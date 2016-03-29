@@ -267,23 +267,23 @@ angular.module("proton.controllers.Settings")
 
         if (plan.Name === 'free') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Already Subscribed';
+                text = $translate.instant('ALREADY_SUBSCRIBED');
             } else {
-                text = 'Downgrade To Free';
+                text = $translate.instant('DOWNGRADE_TO_FREE');
             }
         } else if (plan.Name === 'plus') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Update Plus';
+                text = $translate.instant('UPDATE_PLUS');
             } else if ($scope.subscription.Name === 'free') {
-                text = 'Upgrade To Plus';
+                text = $translate.instant('UPGRADE_TO_PLUS');
             } else if ($scope.subscription.Name === 'visionary') {
-                text = 'Downgrade To Plus';
+                text = $translate.instant('DOWNGRADE_TO_PLUS');
             }
         } else if (plan.Name === 'visionary') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Update Visionary';
+                text = $translate.instant('UPDATE_VISIONARY');
             } else {
-                text = 'Upgrade To Visionary';
+                text = $translate.instant('UPGRADE_TO_VISIONARY');
             }
         }
 

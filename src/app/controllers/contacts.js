@@ -45,6 +45,10 @@ angular.module("proton.controllers.Contacts", [
         $scope.updateContacts();
     });
 
+    $scope.$on('updateContacts', function(event) {
+        $scope.updateContacts();
+    });
+
     $scope.$on('searchContacts', function(event, keyword) {
         $scope.params.searchContactInput = keyword;
         $scope.refreshContacts(true);
@@ -318,12 +322,11 @@ angular.module("proton.controllers.Contacts", [
     $scope.uploadContacts = function() {
         dropzoneModal.activate({
             params: {
-                title: $translate.instant('UPLOAD_CONTACTS'),
-                message: 'Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class="pull-right" href="https://protonmail.com/support/knowledge-base/adding-contacts/" target="_blank">Need help?</a>',
                 import: function(files) {
                     var contactArray = [];
                     var extension = '';
                     var reader = new FileReader();
+                    var importContacts;
 
                     if( angular.isUndefined(files) || files.length === 0 ) {
                         notify({message: $translate.instant('NO_FILE'), classes: 'notification-danger'}); //TODO translate
@@ -392,18 +395,17 @@ angular.module("proton.controllers.Contacts", [
 
                     importContacts = function(contactArray) {
                         networkActivityTracker.track(
-                            Contact.save({
-                                "Contacts": contactArray
-                            }).then(function(response) {
+                            Contact.save({Contacts: contactArray})
+                            .then(function(result) {
                                 var added = 0;
                                 var errors = [];
 
-                                _.forEach(response.data.Responses, function(d) {
-                                    if (d.Response.Contact) {
-                                        authentication.user.Contacts.push(d.Response.Contact);
+                                _.forEach(result.data.Responses, function(response) {
+                                    if (response.Response.Code === 1000) {
                                         added++;
-                                    } else if(angular.isDefined(d.Response.Error) && angular.isDefined(d.Response.Code)) {
-                                        errors[d.Response.Code] = d.Response.Error;
+                                        authentication.user.Contacts.push(response.Response.Contact);
+                                    } else if(angular.isDefined(response.Response.Error)) {
+                                        errors[response.Response.Code] = response.Response.Error;
                                     }
                                 });
 

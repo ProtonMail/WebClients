@@ -243,19 +243,15 @@ angular.module('proton.controllers.Settings')
 
     $scope.saveOrder = function(order) {
         networkActivityTracker.track(
-            Setting.addressOrder({
-                'Order': order
-            }).$promise.then(function(response) {
-                if (response.Code === 1000) {
+            Setting.addressOrder({Order: order})
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
                     notify({message: $translate.instant('ADDRESS_ORDER_SAVED'), classes: 'notification-success'});
-                } else if (response.Error) {
-                    notify({message: response.Error, classes: 'notification-danger'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
                     notify({message: 'Error during the order request', classes : 'notification-danger'});
                 }
-            }, function(error) {
-                notify({message: 'Error during the order request', classes : 'notification-danger'});
-                $log.error(error);
             })
         );
     };

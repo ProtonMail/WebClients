@@ -13,7 +13,9 @@ angular.module("proton.authentication", [
     $timeout,
     CONFIG,
     CONSTANTS,
+    Contact,
     errorReporter,
+    Label,
     networkActivityTracker,
     notify,
     pmcw,
@@ -47,7 +49,7 @@ angular.module("proton.authentication", [
         fetchUserInfo: function(uid) {
             var deferred = $q.defer();
 
-            $http.get(url.get() + "/users", {
+            $http.get(url.get() + '/users', {
                 params: {
                     id: uid
                 }
@@ -60,29 +62,31 @@ angular.module("proton.authentication", [
                             deferred.reject({message: 'Error with EncPrivateKey'});
                             api.logout(true);
                         } else {
-
                             // Hacky fix for missing organizations
-                            var dummy = $q.resolve();
-                            if ( user.Role === 0 && user.Subscribed === 1 ) {
-                                var mailboxPassword =pmcw.decode_utf8_base64(window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY]);
-                                dummy = pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
-                                        .then(function(response) {
-                                            var privateKey = response.privateKeyArmored;
+                            var generateOrganizationKey = $q.resolve();
 
-                                            return {
-                                                DisplayName: 'My Organization',
-                                                PrivateKey: privateKey,
-                                                BackupPrivateKey: privateKey
-                                            };})
-                                        .then(function(params) {
-                                            return $http.post(url.get() + "/organizations", params);
-                                            });
+                            if (user.Role === 0 && user.Subscribed === 1) {
+                                var mailboxPassword = api.getPassword();
+
+                                generateOrganizationKey = pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
+                                .then(function(response) {
+                                    var privateKey = response.privateKeyArmored;
+
+                                    return {
+                                        DisplayName: 'My Organization',
+                                        PrivateKey: privateKey,
+                                        BackupPrivateKey: privateKey
+                                    };
+                                })
+                                .then(function(params) {
+                                    return $http.post(url.get() + "/organizations", params);
+                                });
                             }
 
                             $q.all([
-                                $http.get(url.get() + "/contacts"),
-                                $http.get(url.get() + "/labels"),
-                                dummy
+                                Contact.query(),
+                                Label.query(),
+                                generateOrganizationKey
                             ]).then(
                                 function(result) {
                                     if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
@@ -206,9 +210,7 @@ angular.module("proton.authentication", [
          * Return the mailbox password stored in the session storage
          */
         getPassword: function() {
-            var pwd = window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY];
-
-            return pmcw.decode_utf8_base64(pwd);
+            return pmcw.decode_utf8_base64(window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY]);
         },
 
         randomString: function(length) {

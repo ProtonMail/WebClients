@@ -1004,16 +1004,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var currentBody = $.parseHTML(message.Body);
         var tempDOM = $('<div>').append(currentBody);
         var signature = tempDOM.find('.protonmail_signature_block').first().html();
+        var content = (message.From.Signature === null)?authentication.user.Signature:message.From.Signature;
 
         if (signature && signature.length > 0) {
-            if (message.From.Signature === null) {
-                tempDOM.find('.protonmail_signature_block').html(authentication.user.Signature);
-            } else {
-                tempDOM.find('.protonmail_signature_block').html(message.From.Signature);
-            }
-
-            message.Body = tempDOM.html();
+            tempDOM.find('.protonmail_signature_block').html(content);
+        } else {
+            tempDOM.append(content);
         }
+
+        message.Body = tempDOM.html();
 
         // save when DOM is updated
         $scope.save(message, false, false, true);
@@ -1071,9 +1070,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 parameters.Action = message.Action;
             }
 
-            if(angular.isDefined(message.ID)) {
+            if (angular.isDefined(message.ID)) {
                 parameters.id = message.ID;
             } else {
+                parameters.Message.IsRead = 1;
+            }
+
+            if (autosaving === false) {
                 parameters.Message.IsRead = 1;
             }
 
@@ -1241,7 +1244,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.send = function(message) {
         var deferred = $q.defer();
         var validate = $scope.validate(message);
-        
+
         if (validate) {
             $scope.save(message, false, false, false)
             .then(function() {

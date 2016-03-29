@@ -11,7 +11,7 @@
                 <form method="post" ng-submit="saveIdentity(displayNameForm)" name="displayNameForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="displayName">{{ 'DISPLAY_NAME' | translate }} <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank"><i class="fa fa-info-circle"></i></a></label>
+                            <label for="displayName">{{ 'DISPLAY_NAME' | translate }} <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank" class="text-purple"><i class="fa fa-info-circle"></i></a></label>
                         </div>
                         <div class="col right">
                             <input id="displayName" type="text" name="displayName" ng-model="displayName" />
@@ -28,7 +28,7 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <a ui-sref="secured.addresses" class="pm_button link pull-right">{{ 'LEARN_MORE' | translate }}</a>
+                            <a ui-sref="secured.addresses" class="pm_button link pull-right">{{ 'OTHER_IDENTITIES' | translate }}</a>
                             <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
                         </div>
                     </div>
@@ -65,12 +65,12 @@
                         <div class="col right">
                             <div class="radio">
                                 <label ng-click="saveDailyNotifications()">
-                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" value="1"> {{ 'ENABLED' | translate }}
+                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="1" /> {{ 'ENABLED' | translate }}
                                 </label>
                             </div>
                             <div class="radio">
                                 <label ng-click="saveDailyNotifications()">
-                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" value="0"> {{ 'DISABLED' | translate }}
+                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="0" /> {{ 'DISABLED' | translate }}
                                 </label>
                             </div>
                             <p>
@@ -214,12 +214,12 @@
                     <div class="col right">
                         <div class="radio">
                             <label>
-                                <input type="radio" ng-model="autosaveContacts" value="1" ng-change="saveAutosaveContacts()" /> {{ 'ENABLED' | translate }}
+                                <input type="radio" ng-model="autosaveContacts" ng-value="1" ng-change="saveAutosaveContacts()" /> {{ 'ENABLED' | translate }}
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" ng-model="autosaveContacts" value="0" ng-change="saveAutosaveContacts()" /> {{ 'DISABLED' | translate }}
+                                <input type="radio" ng-model="autosaveContacts" ng-value="0" ng-change="saveAutosaveContacts()" /> {{ 'DISABLED' | translate }}
                             </label>
                         </div>
                         <p>
@@ -244,12 +244,12 @@
                         <div class="col right">
                             <div class="radio">
                                 <label>
-                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" value="1" /> {{ 'AUTO' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="1" /> {{ 'AUTO' | translate }}
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" value="0" /> {{ 'MANUAL' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="0" /> {{ 'MANUAL' | translate }}
                                 </label>
                             </div>
                             <p>
@@ -267,13 +267,13 @@
 
         </div><!--/.row-->
 
-        <!-- RENABLE IT AFTER -->
-        <!-- <div class="row">
+
+        <div class="row">
             <section class="setting pm_form">
                 <legend>{{ 'DELETE_ACCOUNT' | translate }}</legend>
-                <p>You must transfer ownership or delete these organizations before you can delete your user.</p>
-                <button class="pm_button text-red" ng-click="deleteAccount()">{{ 'DELETE_YOUR_ACCOUNT' | translate }}</button>
+                <p ng-show="user.Subscribed === 1" class="alert alert-info"><i class="fa fa-info-circle"></i> You must unsubscribe before requesting deletion of your account.</p>
+                <button ng-show="user.Subscribed === 0" class="pm_button error" ng-click="deleteAccount()">{{ 'DELETE_YOUR_ACCOUNT' | translate }}</button>
             </section>
-        </div> -->
+        </div>
     </div>
 </div>
