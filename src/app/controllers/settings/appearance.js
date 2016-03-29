@@ -48,7 +48,7 @@ angular.module("proton.controllers.Settings")
                     notify({message: result.data.Error, classes: 'notification-danger'});
                     deferred.reject();
                 } else {
-                    notify({message: 'Error during the request', classes: 'notification-danger'});
+                    notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                     deferred.reject();
                 }
             })

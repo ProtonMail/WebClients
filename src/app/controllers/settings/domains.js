@@ -174,7 +174,7 @@ angular.module("proton.controllers.Settings")
         confirmModal.activate({
             params: {
                 title: $translate.instant('DELETE_DOMAIN'),
-                message: $translate.instant('Are you sure you want to delete this domain? This action will also delete addresses linked.'),
+                message: $translate.instant('DELETE_ADDRESS_CONFIRMATION'),
                 confirm: function() {
                     networkActivityTracker.track(Domain.delete(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -248,7 +248,7 @@ angular.module("proton.controllers.Settings")
         confirmModal.activate({
             params: {
                 title: $translate.instant('DELETE_ADDRESS'),
-                message: $translate.instant('Are you sure you want to delete this address?'),
+                message: $translate.instant('DELETE_ADDRESS_CONFIRMATION'),
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -297,7 +297,7 @@ angular.module("proton.controllers.Settings")
         confirmModal.activate({
             params: {
                 title: $translate.instant('DISABLE_ADDRESS'),
-                message: $translate.instant('Are you sure you want to disable this address?'),
+                message: $translate.instant('DISABLE_ADDRESS_CONFIRMATION'),
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
