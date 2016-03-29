@@ -141,8 +141,9 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
     $scope.initPhoneDropdown = function() {
         $timeout( function() {
+            $.fn.intlTelInput.loadUtils("/src/app/libraries/utils.js");
             $(".phoneCountryCode").intlTelInput();
-        }, 100);    
+        }, 100);
     };
 
     $scope.notificationEmailValidation = function() {
@@ -170,15 +171,17 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.sendSmsVerificationCode = function() {
+        $scope.smsSending = true;
         User.code({
             Username: $scope.account.Username,
             Type: 'sms',
             Destination: {
-                Phone: $scope.account.smsVerification
+                Phone: $('.phoneCountryCode').intlTelInput("getNumber")
             }
         }).$promise.then(function(response) {
+            $scope.smsSending = false;
             if (response.Code === 1000) {
-                $scope.signup.verificationSent = true;
+                $scope.signup.smsVerificationSent = true;
             } else if (response.Error) {
                 notify({message: response.Error, classes: 'notification-danger'});
             }
@@ -371,7 +374,12 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             'PrivateKey': $scope.account.PrivateKey
         };
 
+        console.log($scope.account.captcha_token);
+        console.log($scope.signup.smsVerificationSent);
+        console.log($scope.signup.verificationSent);
+
         if (angular.isDefined($rootScope.inviteToken)) {
+            console.log('a');
             $log.debug($scope.inviteToken);
             params.Token = $rootScope.inviteToken;
             params.TokenType = 'invite';
@@ -380,11 +388,14 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             params.Token = $scope.account.captcha_token;
             params.TokenType = 'recaptcha';
         }
-        else {
+        else if (angular.isDefined($scope.signup.smsVerificationSent) && $scope.signup.smsVerificationSent!==false) {
+            params.Token = $scope.account.smsCodeVerification;
+            params.TokenType = 'sms';
+        }
+        else if (angular.isDefined($scope.signup.verificationSent) && $scope.signup.verificationSent!==false) {
             params.Token = $scope.account.codeVerification;
             params.TokenType = 'email';
         }
-
         if ($rootScope.tempUser===undefined) {
             $rootScope.tempUser = [];
         }
