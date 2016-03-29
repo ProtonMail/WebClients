@@ -41,6 +41,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.signup = {};
 
         $scope.signup.verificationSent = false;
+        $scope.signup.smsVerificationSent = false;
         $scope.generating = false;
         $scope.domains = [];
 

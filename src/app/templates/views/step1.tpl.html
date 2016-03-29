@@ -139,10 +139,10 @@
         <div ng-if="verificator === 'sms'" id="smsVerification" class="pm_form">
             <div class="pm_grid" ng-show="signup.smsVerificationSent !== true">
                 <div class="col-2-3">
-                    <input type="text" ng-model="account.emailVerification" placeholder="{{ 'EMAIL_VERIFICATION' | translate }}" />
+                    <input type="text" ng-model="account.smsVerification" placeholder="{{ 'PHONE_NUMBER' | translate }}" />
                 </div>
                 <div class="col-1-3">
-                    <button type="button" class="pm_button primary" ng-click="sendVerificationCode()">
+                    <button type="button" class="pm_button primary" ng-click="sendSmsVerificationCode()">
                         {{ 'SEND' | translate }}
                     </button>
                 </div>
