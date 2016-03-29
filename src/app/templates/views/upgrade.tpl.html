@@ -3,7 +3,7 @@
         <h1 class="text-center no-margin-bottom">{{ 'ABSOLUTE_SECURITY' | translate }}</h1>
     </div>
     <div class="panel-body">
-        <p>Our secure email requires a modern web browser.</p>
+        <p>{{ 'UPGRADE_REQUIRED_INFO' | translate }}</p>
         <ul class="list-group">
             <li class="list-group-item" ng-class="{'list-group-item-danger': !sessionStorageCompatible()}">
                 <div class="row">
@@ -28,7 +28,7 @@
             </li>
         </ul>
         <div ng-show="!sessionStorageCompatible() || !prngCompatible()">
-            <p>Use one of these browsers for the best experience during Beta:</p>
+            <p>{{ 'UPGRADE_REC_BROWSERS' | translate }}</p>
             <p class="text-center">
                 <a target="_blank" href="http://www.mozilla.org/en-US/firefox/new/"><img src='assets/img/icons/browser_firefox.png' alt="Mozilla Firefox" height="40"></a>
     			<a target="_blank" href="http://www.google.com/intl/en/chrome/browser/"><img src='assets/img/icons/browser_chrome.png' alt="Google Chrome" height="40"></a>
@@ -38,8 +38,8 @@
             <table class="table">
 				<thead>
         	        <tr>
-                        <th>Browser</th>
-                        <th>Version</th>
+                        <th>{{ 'BROWSER' | translate }}</th>
+                        <th>{{ 'VERSION' | translate }}</th>
         	        </tr>
     		    </thead>
 				<tbody>

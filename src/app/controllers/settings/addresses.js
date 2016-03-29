@@ -105,7 +105,7 @@ angular.module('proton.controllers.Settings')
         confirmModal.activate({
             params: {
                 title: $translate.instant('DISABLE_ADDRESS'),
-                message: $translate.instant('Are you sure you want to disable this address?'),
+                message: $translate.instant('DISABLE_ADDRESS_CONFIRMATION'),
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -176,7 +176,7 @@ angular.module('proton.controllers.Settings')
         confirmModal.activate({
             params: {
                 title: $translate.instant('DELETE_ADDRESS'),
-                message: $translate.instant('Are you sure you want to delete this address?'),
+                message: $translate.instant('DELETE_ADDRESS_CONFIRMATION'),
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -250,7 +250,7 @@ angular.module('proton.controllers.Settings')
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: 'Error during the order request', classes : 'notification-danger'});
+                    notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes : 'notification-danger'});
                 }
             })
         );

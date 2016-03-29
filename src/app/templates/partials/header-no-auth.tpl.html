@@ -4,7 +4,7 @@
         	<i class="fa fa-bug"></i> <b>{{ 'REPORT_BUG' | translate }}</b>
         </a>
         <a class="signUp pm_button primary" ui-sref="step1" ng-if="!isLoggedIn">
-        	SIGN UP<b> FOR FREE</b>
+        	{{ 'SIGNUP_FOR_FREE' | translate }}
         </a>
         <a class="logOut pm_button primary" ng-click="logout()" ng-if="isLoggedIn">{{ 'LOG_OUT' | translate }}</a>
     </div>

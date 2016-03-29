@@ -4,8 +4,8 @@
 
         <div ng-include src="'templates/partials/toolbar-contacts.tpl.html'"></div>
 
-        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length === 0">You have no contacts, you can add contact with the above button "ADD CONTACT".</p>
-        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length > 0">No results for "{{ params.searchContactInput }}" in your contacts.</p>
+        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length === 0">{{ 'CONTACTS_NONE' | translate }}</p>
+        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length > 0">{{ 'CONTACTS_NO_RESULTS' | translate }}</p>
 
         <div class="contactWrapper">
             <table ng-if="contacts.length > 0" class="pm_table">
