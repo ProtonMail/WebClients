@@ -483,7 +483,7 @@ angular.module('proton.routes', [
         resolve: {
             // Contains also labels and contacts
             user: function(authentication, $log, $http, pmcw) {
-                if(angular.isObject(authentication.user)) {
+                if (angular.isObject(authentication.user)) {
                     return authentication.user;
                 } else {
                     if(angular.isDefined(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
@@ -853,6 +853,21 @@ angular.module('proton.routes', [
         $stateProvider.state(parentState, {
             url: '/' + box + '?' + conversationParameters(),
             views: list,
+            resolve: {
+                delinquent: function($q, $state, user, notify) {
+                    var deferred = $q.defer();
+
+                    if (user.Delinquent < 3) {
+                        deferred.resolve();
+                    } else {
+                        notify({message: 'You are a delinquent', classes: 'notification-danger'});
+                        $state.go('secured.dashboard');
+                        deferred.reject();
+                    }
+
+                    return deferred.promise;
+                }
+            },
             onExit: function($rootScope) {
                 $rootScope.showWelcome = false;
             }

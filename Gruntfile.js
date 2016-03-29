@@ -10,7 +10,7 @@ var clientID = 'Angular';
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
 var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
 var API_TARGETS = {
-    blue: "https://52.32.164.147/api",
+    blue: "https://52.36.229.13/api",
     prod: "https://mail.protonmail.com/api",
     dev: "https://dev.protonmail.com/api",
     v2: "https://v2.protonmail.com/api",

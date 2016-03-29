@@ -427,10 +427,16 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     $scope.finishRedirect = function() {
         $log.debug('finishRedirect');
         $scope.finishCreation = true;
+
         if (CONSTANTS.WIZARD_ENABLED === true) {
             $rootScope.welcome = true; // Display welcome modal
         }
-        $state.go("secured.inbox");
+
+        if (authentication.user.Delinquent < 3) {
+            $state.go('secured.inbox');
+        } else {
+            $state.go('secured.dashboard');
+        }
     };
 
     $scope.initialization();

@@ -31,6 +31,7 @@ angular.module("proton.controllers.Settings")
     // Initialize variables
     $scope.configuration = {};
     $scope.subscription = {};
+    $scope.delinquent = authentication.user.Delinquent >= 3;
 
     // Options
     $scope.spaceOptions = [
