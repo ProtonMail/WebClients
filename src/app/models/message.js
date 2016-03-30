@@ -325,7 +325,7 @@ angular.module("proton.models.message", ["proton.constants"])
         getPublicKeys: function(emails) {
             var base64 = pmcw.encode_base64(emails.join(','));
 
-            return User.pubkeys(emails);
+            return User.pubkeys(base64);
         },
 
         cleanKey: function(key) {
