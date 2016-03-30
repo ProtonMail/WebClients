@@ -19,6 +19,12 @@ angular.module('proton.controllers.Settings')
     $scope.subscribed = authentication.user.Subscribed === 1;
     $scope.invoices = invoices.data.Invoices;
     $scope.total = invoices.data.Total;
+    $scope.delinquent = authentication.user.Delinquent >= 3;
+
+    $scope.$on('updateUser', function(event) {
+        $scope.subscribed = authentication.user.Subscribed === 1;
+        $scope.delinquent = authentication.user.Delinquent >= 3;
+    });
 
     $scope.refresh = function() {
         networkActivityTracker.track(Payment.methods()
