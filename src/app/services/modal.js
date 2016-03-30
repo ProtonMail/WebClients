@@ -1696,14 +1696,14 @@ angular.module("proton.modals", [])
             this.text = authentication.user.InvoiceText || '';
 
             this.submit = function() {
-                Setting.invoiceText({InvoiceText: this.text}).$promise
-                .then(function(response) {
-                    if (response.Code === 1000) {
+                Setting.invoiceText({InvoiceText: this.text})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
                         authentication.user.InvoiceText = this.text;
                         notify({message: 'Invoice customized', classes: 'notification-success'});
                         params.cancel();
-                    } else if (response.Error) {
-                        notify({message: response.Error, classes: 'notification-danger'});
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
                     }
                 });
             }.bind(this);
@@ -1732,15 +1732,18 @@ angular.module("proton.modals", [])
                 var promises = [];
 
                 if (this.displayName.length > 0) {
-                    promises.push(Setting.display({'DisplayName': this.displayName}).$promise);
+                    promises.push(Setting.display({'DisplayName': this.displayName}));
                     authentication.user.DisplayName = this.displayName;
                 }
 
-                networkActivityTracker.track($q.all(promises).then(function() {
-                    if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                        params.next(this.displayName);
-                    }
-                }.bind(this)));
+                networkActivityTracker.track(
+                    $q.all(promises)
+                    .then(function() {
+                        if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                            params.next(this.displayName);
+                        }
+                    }.bind(this))
+                );
             }.bind(this);
         }
     });
