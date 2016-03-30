@@ -39,6 +39,7 @@
                 <div class="margin">
                     <button type="button" class="pm_button" ng-click="customize()">{{ 'CUSTOMIZE' | translate }}</button>
                 </div>
+                <p class="alert alert-danger" ng-show="delinquent === true" translate="DELINQUENT_NOTIFICATION"></p>
                 <p class="alert alert-info" ng-show="invoices.length === 0">{{ 'NO_INVOICES' | translate }}</p>
                 <table class="pm_table" ng-show="invoices.length > 0">
                     <thead>

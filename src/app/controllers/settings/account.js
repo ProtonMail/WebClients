@@ -164,9 +164,9 @@ angular.module('proton.controllers.Settings')
         }
 
         // Instead of grab keys from the cache, we call the back-end, just to make sure everything is up to date
-        networkActivityTracker.track(User.get(authentication.user.ID).$promise.then(function(result) {
-            if (result.Code === 1000) {
-                _.each(result.User.Addresses, function(address) {
+        networkActivityTracker.track(User.get().then(function(result) {
+            if (result.data.Code === 1000) {
+                _.each(result.data.User.Addresses, function(address) {
                     _.each(address.Keys, function(key) {
                         // Decrypt private key with the old mailbox password
                         promises.push(pmcw.decryptPrivateKey(key.PrivateKey, oldMailPwd).then(function(package) {
@@ -291,12 +291,13 @@ angular.module('proton.controllers.Settings')
                         Description: feedback
                     }).then(function(result) {
                         if (result.data && result.data.Code === 1000) {
-                            User.delete({Password: password}).$promise.then(function(response) {
-                                if (response && response.Code === 1000) {
+                            User.delete({Password: password})
+                            .then(function(result) {
+                                if (result.data && result.data.Code === 1000) {
                                     deleteAccountModal.deactivate();
                                     $rootScope.logout();
-                                } else if (response.Error) {
-                                    notify({message: response.Error, classes: 'notification-danger'});
+                                } else if (result.data && result.data.Error) {
+                                    notify({message: result.data.Error, classes: 'notification-danger'});
                                 }
                             });
                         } else if (result.data && result.data.Error) {

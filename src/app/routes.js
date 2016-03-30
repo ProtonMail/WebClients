@@ -145,9 +145,10 @@ angular.module('proton.routes', [
                 var deferred = $q.defer();
 
                 if (!$rootScope.preInvited) {
-                    User.direct().$promise.then(function(data) {
-                        if (data && data.Code === 1000) {
-                            if (data.Direct === 1) {
+                    User.direct()
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            if (result.data.Direct === 1) {
                                 $state.go('step1');
                                 deferred.resolve();
                             } else {
@@ -199,9 +200,10 @@ angular.module('proton.routes', [
                 var deferred = $q.defer();
 
                 if (!$rootScope.preInvited) {
-                    User.direct().$promise.then(function(data) {
-                        if (data && data.Code === 1000) {
-                            if (data.Direct === 1) {
+                    User.direct()
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            if (result.data.Direct === 1) {
                                 deferred.resolve();
                             } else {
                                 window.location.href = 'https://protonmail.com/invite';
@@ -481,7 +483,7 @@ angular.module('proton.routes', [
         resolve: {
             // Contains also labels and contacts
             user: function(authentication, $log, $http, pmcw) {
-                if(angular.isObject(authentication.user)) {
+                if (angular.isObject(authentication.user)) {
                     return authentication.user;
                 } else {
                     if(angular.isDefined(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
@@ -666,29 +668,6 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('secured.invoices', {
-        url: '/invoices',
-        resolve: {
-            access: function(user, $q) {
-                var deferred = $q.defer();
-
-                if(user.Role === 2) {
-                    deferred.resolve();
-                } else {
-                    deferred.reject();
-                }
-
-                return deferred.promise;
-            }
-        },
-        views: {
-            'content@secured': {
-                templateUrl: 'templates/views/invoices.tpl.html',
-                controller: 'InvoicesController'
-            }
-        }
-    })
-
     .state('secured.keys', {
         url: '/keys',
         resolve: {
@@ -851,6 +830,21 @@ angular.module('proton.routes', [
         $stateProvider.state(parentState, {
             url: '/' + box + '?' + conversationParameters(),
             views: list,
+            resolve: {
+                delinquent: function($q, $state, user, notify) {
+                    var deferred = $q.defer();
+
+                    if (user.Delinquent < 3) {
+                        deferred.resolve();
+                    } else {
+                        notify({message: $translate.instant('DELINQUENT_NOTIFICATION'), classes: 'notification-danger'});
+                        $state.go('secured.payments');
+                        deferred.reject();
+                    }
+
+                    return deferred.promise;
+                }
+            },
             onExit: function($rootScope) {
                 $rootScope.showWelcome = false;
             }

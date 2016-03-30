@@ -43,7 +43,7 @@ angular.module("proton.controllers.Secured", [])
         {value: 'secured.appearance', label: $translate.instant('APPEARANCE')},
         {value: 'secured.domains', label: $translate.instant('DOMAINS')},
         {value: 'secured.members', label: $translate.instant('USERS')},
-        {value: 'secured.invoices', label: $translate.instant('INVOICES')}
+        {value: 'secured.payments', label: $translate.instant('PAYMENTS')}
     ];
 
     // Set the rows / columns mode
