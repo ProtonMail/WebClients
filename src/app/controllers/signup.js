@@ -24,8 +24,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     direct
 ) {
     $scope.initialization = function() {
-
-        $log.debug('Signup:initialization');
         // Variables
         $scope.tools    = tools;
         $scope.compatibility = tools.isCompatible();
@@ -139,13 +137,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
     };
 
-    $scope.initPhoneDropdown = function() {
-        $timeout( function() {
-            $.fn.intlTelInput.loadUtils("/src/app/libraries/utils.js");
-            $(".phoneCountryCode").intlTelInput();
-        }, 100);
-    };
-
     $scope.notificationEmailValidation = function() {
         if ($scope.account.notificationEmail.length > 0) {
             return !!!tools.validEmail($scope.account.notificationEmail);
@@ -176,7 +167,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             Username: $scope.account.Username,
             Type: 'sms',
             Destination: {
-                Phone: $('.phoneCountryCode').intlTelInput("getNumber")
+                Phone: $scope.account.smsVerification
             }
         }).$promise.then(function(response) {
             $scope.smsSending = false;
