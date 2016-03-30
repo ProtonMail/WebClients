@@ -76,7 +76,7 @@
             </div>
             <p ng-if="preInvited">&nbsp;</p>
         </div><!--/.wrapper-->
-        <p>{{ 'TERMS_CONDITIONS_AGREEMENT' | translate }}</p>
+        <p translate="TERMS_CONDITIONS_AGREEMENT"></p>
         <button type="submit" class="pm_button primary large" ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid ) } ">{{ 'CREATE_ACCOUNT' | translate }}</button>
         <p>&nbsp;</p>
         <p><a ui-sref="login">{{ 'ALREADY_HAVE_ACC' | translate }}</a></p>
@@ -188,7 +188,7 @@
         <h2 class="text-center" ng-show="!signupError">{{ 'CREATING_ACC' | translate }}</h2>
         <h2 class="text-center" ng-show="signupError">{{ 'SIGNUP_FAILED' | translate }}</h2>
     </div>
-    <p class="alert alert-danger" ng-show="signupError">{{ 'ACC_CREATION_ERR' | translate }}</p>
+    <p class="alert alert-danger" ng-show="signupError" translate="ACC_CREATION_ERR"></p>
     <div class="wrapper text-left">
         <ol id="creationList">
             <li class="done">
@@ -223,5 +223,5 @@
     </div>
 </div>
 <div id="pm_footer" class="static">
-    <p>{{ 'COPYRIGHT' | translate }}</p>
+    <p translate="COPYRIGHT"></p>
 </div>

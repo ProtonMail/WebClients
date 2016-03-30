@@ -155,11 +155,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             Destination: {
                 Address: $scope.account.emailVerification
             }
-        }).$promise.then(function(response) {
-            if (response.Code === 1000) {
+        }).then(function(result) {
+            if (result.data && result.data.Code === 1000) {
                 $scope.signup.verificationSent = true;
-            } else if (response.Error) {
-                notify({message: response.Error, classes: 'notification-danger'});
+            } else if (result.data && result.data.Error) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
             }
         });
     };
@@ -304,15 +304,15 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             deferred.resolve(200);
         } else {
             if ($scope.account.Username.length > 0) {
-                User.available({ username: $scope.account.Username }).$promise
-                .then(function(response) {
-                    if (response.Error) {
+                User.available($scope.account.Username)
+                .then(function(result) {
+                    if (result.data && result.data.Error) {
                         $scope.badUsername = true;
                         $scope.checkingUsername = false;
                         $('#Username').focus();
-                        deferred.reject(response.Error);
-                    } else {
-                        if (response.Available === 0) {
+                        deferred.reject(result.data.Error);
+                    } else if (result.data && result.data.Code === 1000) {
+                        if (result.data.Available === 0) {
                             if ( manual === true ) {
                                 $scope.badUsername = true;
                                 $scope.checkingUsername = false;
@@ -399,12 +399,12 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $rootScope.tempUser.username = $scope.account.Username;
         $rootScope.tempUser.password = $scope.account.loginPassword;
 
-        return User.create(params).$promise.then( function(response) {
-            $log.debug(response);
-            if (response.Code===1000) {
+        return User.create(params).then( function(result) {
+            if (result.data && result.data.Code === 1000) {
                 $scope.createUser  = true;
             }
-            return response;
+
+            return result.data;
         });
     };
 
@@ -472,10 +472,16 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     $scope.finishRedirect = function() {
         $log.debug('finishRedirect');
         $scope.finishCreation = true;
+
         if (CONSTANTS.WIZARD_ENABLED === true) {
             $rootScope.welcome = true; // Display welcome modal
         }
-        $state.go("secured.inbox");
+
+        if (authentication.user.Delinquent < 3) {
+            $state.go('secured.inbox');
+        } else {
+            $state.go('secured.dashboard');
+        }
     };
 
     $scope.initialization();

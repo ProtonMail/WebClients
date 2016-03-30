@@ -17,7 +17,7 @@
                     <a class="pm_button primary" ng-click="add()">{{ 'ADD_PROTONMAIL_ADDRESS' | translate }}</a>
                     <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_CUSTOM_DOMAIN_ADDRESS' | translate }}</a>
                 </div>
-                <p class="alert alert-info">{{ 'CUSTOM_ADDRESS_INFO' | translate }}</p>
+                <p class="alert alert-info" translate="CUSTOM_ADDRESS_INFO"></p>
                 <label>
                     <span class="help-block pull-right"><small><i class="fa fa-info-circle"></i> {{ 'ADDRESS_DRAGDROP_INFO' | translate }}</small></span>
                     <strong>{{ 'ACTIVE_ADDRESSES' | translate }}</strong>
@@ -72,7 +72,7 @@
                         </li>
                     </ul>
                 </div>
-                <p class="alert alert-info" ng-show="isFree === true">{{ 'ADDRESS_LIMIT_UPSELL' | translate }}</p>
+                <p class="alert alert-info" ng-show="isFree === true" translate="ADDRESS_LIMIT_UPSELL"></p>
             </section>
 
         </div>

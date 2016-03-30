@@ -115,9 +115,7 @@ ng-hide="mobileMode || !sidebarMode">
                 </a>
             </div>
             <div class="storage text-center">
-                <strong title="{{ 'STORAGE' | translate }}">
-                    {{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}
-                </strong>
+                <strong title="{{ 'STORAGE' | translate }}" ng-bind="storageString()"></strong>
             </div>
             <div class="bar">
                 <em style="width: {{ storagePercentage() }}%"></em>

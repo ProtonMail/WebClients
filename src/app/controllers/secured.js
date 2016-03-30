@@ -2,6 +2,7 @@ angular.module("proton.controllers.Secured", [])
 
 .controller("SecuredController", function(
     $cookies,
+    $filter,
     $rootScope,
     $scope,
     $state,
@@ -42,7 +43,7 @@ angular.module("proton.controllers.Secured", [])
         {value: 'secured.appearance', label: $translate.instant('APPEARANCE')},
         {value: 'secured.domains', label: $translate.instant('DOMAINS')},
         {value: 'secured.members', label: $translate.instant('USERS')},
-        {value: 'secured.invoices', label: $translate.instant('INVOICES')}
+        {value: 'secured.payments', label: $translate.instant('PAYMENTS')}
     ];
 
     // Set the rows / columns mode
@@ -116,9 +117,12 @@ angular.module("proton.controllers.Secured", [])
         if (authentication.user && authentication.user.UsedSpace && authentication.user.MaxSpace) {
             return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
         } else {
-            // TODO: error, undefined variables
             return '';
         }
+    };
+
+    $scope.storageString = function() {
+        return $filter('humanSize')(authentication.user.UsedSpace) + ' / ' + $filter('humanSize')(authentication.user.UsedSpace);
     };
 
     /**

@@ -401,14 +401,15 @@ angular.module('proton', [
                     params: {
                         submit: function(loginPassword) {
                             // Send request to unlock the current session for administrator privileges
-                            User.unlock({Password: loginPassword}).$promise.then(function(data) {
-                                if (data.Code === 1000) {
+                            User.unlock({Password: loginPassword})
+                            .then(function(result) {
+                                if (result.data && result.data.Code === 1000) {
                                     // Close the modal
                                     loginPasswordModal.deactivate();
                                     // Resend request now
                                     deferred.resolve($http(rejection.config));
-                                } else if (data.Error) {
-                                    notify({message: data.Error, classes: 'notification-danger'});
+                                } else if (result.data && result.data.Error) {
+                                    notify({message: result.data.Error, classes: 'notification-danger'});
                                     deferred.reject();
                                 }
                             });

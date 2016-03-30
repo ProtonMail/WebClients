@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"changeFrom(message)\">": "",
     "4096_WARNING": "",
     "ABSOLUTE_SECURITY": "",
     "ACC_CREATION_ERR": "",
@@ -192,6 +191,7 @@
     "DELETE_PAYMENT_METHOD_CONFIRMATION": "",
     "DELETE_THE_DRAFT": "",
     "DELETE_YOUR_ACCOUNT": "",
+    "DELINQUENT_NOTIFICATION": "",
     "DESELECT_ALL": "",
     "DISABLE": "",
     "DISABLE_ADDRESS": "",
@@ -565,7 +565,8 @@
     "RESET_MAILBOX": "",
     "RESET_NOW": "",
     "RESET_PASSWORD": "",
-    "RESET_WARNING": "",
+    "RESET_WARNING_1": "",
+    "RESET_WARNING_2": "",
     "ROLE": "",
     "ROLE_UPDATED": "",
     "ROW": "",
@@ -705,7 +706,7 @@
     "VOID": "",
     "WARNING": "",
     "WEEKS": "",
-    "WELCOME_GREETING": "",
+    "WELCOME": "",
     "WELCOME_MODAL_INTRO": "",
     "WELCOME_MODAL_TITLE": "",
     "WELCOME_STEP_1_MESSAGE": "",
@@ -726,6 +727,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "",
     "ZIP": "",
-    "ZIP_CODE": "",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": ""
+    "ZIP_CODE": ""
 }
