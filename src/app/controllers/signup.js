@@ -172,12 +172,12 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             Destination: {
                 Phone: $scope.account.smsVerification
             }
-        }).$promise.then(function(response) {
+        }).then(function(result) {
             $scope.smsSending = false;
-            if (response.Code === 1000) {
+            if (result.data && result.data.Code === 1000) {
                 $scope.signup.smsVerificationSent = true;
-            } else if (response.Error) {
-                notify({message: response.Error, classes: 'notification-danger'});
+            } else if (result.data && result.data.Error) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
             }
         });
     };
