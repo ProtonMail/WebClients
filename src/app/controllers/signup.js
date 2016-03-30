@@ -66,7 +66,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
 
-        $scope.account = [];
+        $scope.account = {};
 
         // Select the first domain
         $scope.account.domain = $scope.domains[0];
@@ -76,6 +76,9 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
         // Initialize captcha token
         $scope.account.captcha_token = false;
+
+        // Initialize sms verification code
+        $scope.account.smsCodeVerification = '';
 
         // Prepoppulate the username if from an invite link and mark as read only
         if (angular.isDefined($rootScope.username)) {
