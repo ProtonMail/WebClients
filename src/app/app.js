@@ -61,6 +61,8 @@ angular.module('proton', [
 
     // Directives
     'proton.autocomplete',
+    'proton.card',
+    'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
     'proton.enter',
@@ -70,7 +72,9 @@ angular.module('proton', [
     'proton.labels',
     'proton.loaderTag',
     'proton.locationTag',
+    'proton.maxComposerHeight',
     'proton.move',
+    'proton.phone',
     'proton.responsiveComposer',
     'proton.sample',
     'proton.sidebarHeight',
@@ -79,10 +83,7 @@ angular.module('proton', [
     'proton.toggle',
     'proton.tooltip',
     'proton.transformation',
-    'proton.maxComposerHeight',
-    'proton.drag',
     'proton.wizard',
-    'proton.card',
 
     // Filters
     'proton.filters',
