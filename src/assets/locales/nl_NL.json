@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"changeFrom(message)\">": "",
     "4096_WARNING": "",
     "ABSOLUTE_SECURITY": "Absolute beveiliging",
     "ACC_CREATION_ERR": "",
@@ -566,7 +565,8 @@
     "RESET_MAILBOX": "Herstel postbus",
     "RESET_NOW": "Herstel nu",
     "RESET_PASSWORD": "Herstel wachtwoord",
-    "RESET_WARNING": "",
+    "RESET_WARNING_1": "",
+    "RESET_WARNING_2": "",
     "ROLE": "Rol",
     "ROLE_UPDATED": "Rol bijgewerkt",
     "ROW": "Rij",
@@ -705,7 +705,7 @@
     "VOID": "Void",
     "WARNING": "Waarschuwing",
     "WEEKS": "weken",
-    "WELCOME_GREETING": "",
+    "WELCOME": "",
     "WELCOME_MODAL_INTRO": "",
     "WELCOME_MODAL_TITLE": "",
     "WELCOME_STEP_1_MESSAGE": "",
@@ -726,6 +726,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "U hebt uw abonnement geannuleerd",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "De nieuwe functies zijn nu beschikbaar",
     "ZIP": "Postcode",
-    "ZIP_CODE": "Postcode",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": ""
+    "ZIP_CODE": "Postcode"
 }

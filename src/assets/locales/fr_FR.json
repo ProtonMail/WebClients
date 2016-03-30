@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"changeFrom(message)\">": "",
     "4096_WARNING": "",
     "ABSOLUTE_SECURITY": "Sécurité absolue",
     "ACC_CREATION_ERR": "",
@@ -566,7 +565,8 @@
     "RESET_MAILBOX": "Réinitialiser boite email",
     "RESET_NOW": "Réinitialiser maintenant",
     "RESET_PASSWORD": "Réinitialiser mot de passe",
-    "RESET_WARNING": "",
+    "RESET_WARNING_1": "",
+    "RESET_WARNING_2": "",
     "ROLE": "Rôle",
     "ROLE_UPDATED": "Rôle mis à jour",
     "ROW": "Ligne",
@@ -705,7 +705,7 @@
     "VOID": "Vide",
     "WARNING": "Attention",
     "WEEKS": "Semaines",
-    "WELCOME_GREETING": "",
+    "WELCOME": "",
     "WELCOME_MODAL_INTRO": "",
     "WELCOME_MODAL_TITLE": "",
     "WELCOME_STEP_1_MESSAGE": "",
@@ -726,6 +726,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "Désincription effectuée",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "Les nouvelles fonctionalités sont maintenant disponibles",
     "ZIP": "Zip",
-    "ZIP_CODE": "Code postal",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": ""
+    "ZIP_CODE": "Code postal"
 }
