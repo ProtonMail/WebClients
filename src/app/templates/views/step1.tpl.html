@@ -150,16 +150,13 @@
                     <strong>Verification Code Sent</strong><br />
                     Please check <strong>{{ account.smsVerification }}</strong> and enter the code below:
                 </p>
-                <div class="margin" ng-show="signup.smsVerificationSent === true">
-                    <input class="bigger" type="text" ng-model="account.smsCodeVerification" placeholder="{{ 'CODE_VERIFICATION' | translate }}" />
+                <div class="col-1-2" ng-show="signup.smsVerificationSent === true">
+                    <input type="text" ng-model="account.smsCodeVerification" placeholder="{{ 'CODE_VERIFICATION' | translate }}" />
                 </div>
                 <div class="col-1-2">
-                    <button type="button" class="pm_button link" ng-click="signup.smsVerificationSent = false">
-                        {{ 'SEND_NEW_CODE' | translate }}
-                    </button>
+                    <button type="button" class="pm_button link" ng-click="signup.smsVerificationSent = false">{{ 'SEND_NEW_CODE' | translate }}</button>
                 </div>
             </div>
-            <p>&nbsp;</p>
         </div>
 
         <div ng-if="verificator === 'recaptcha'" id="recaptchaFrame">
