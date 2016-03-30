@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"changeFrom(message)\">": "",
     "4096_WARNING": "",
     "ABSOLUTE_SECURITY": "Absolute Sicherheit",
     "ACC_CREATION_ERR": "",
@@ -354,11 +353,11 @@
     "LABEL_DELETED": "Etikett gelöscht",
     "LABEL_EDITED": "Etikett bearbeitet",
     "LABEL_NAME": "Etikettname",
-    "LABEL_NAME_ALREADY_EXISTS": "Etikettname bereits vergeben",
     "LABEL_ORDER_SAVED": "Etikettsortierung gesichert",
     "LABEL_SETTINGS": "Etiketteinstellungen",
     "LABELS": "Etiketten",
     "LABELS_NONE": "",
+    "LABELS_SAVED": "",
     "LARGE_TO_SMALL": "Größte oben",
     "LAYOUT": "Darstellung",
     "LAYOUT_INFO": "",
@@ -464,6 +463,7 @@
     "NOTES_ABOUT_CONTACT": "Notizen zum Kontakt",
     "NOTIFICATION_EMAIL_SAVED": "E-Mail-Adresse für Mitteilungen gesichert",
     "NOTIFICATIONS": "Mitteilungen",
+    "NUM_UNREAD_CONV": "",
     "NUMBER": "Anzahl",
     "NUMBER_OF_USER": "Anzahl Benutzer",
     "OF": "von",
@@ -565,7 +565,8 @@
     "RESET_MAILBOX": "Postfach zurücksetzen",
     "RESET_NOW": "Jetzt zurücksetzen",
     "RESET_PASSWORD": "Kennwort zurücksetzen",
-    "RESET_WARNING": "",
+    "RESET_WARNING_1": "",
+    "RESET_WARNING_2": "",
     "ROLE": "Rolle",
     "ROLE_UPDATED": "Rolle aktualisiert",
     "ROW": "Zeile",
@@ -704,7 +705,7 @@
     "VOID": "Void",
     "WARNING": "Warnung",
     "WEEKS": "Wochen",
-    "WELCOME_GREETING": "",
+    "WELCOME": "",
     "WELCOME_MODAL_INTRO": "",
     "WELCOME_MODAL_TITLE": "",
     "WELCOME_STEP_1_MESSAGE": "",
@@ -725,6 +726,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "Sie haben ihr Abonnement gekündigt",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "Die neuen Funktionen stehen Ihnen nun zur Verfügung",
     "ZIP": "Postleitzahl",
-    "ZIP_CODE": "Postleitzahl",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": ""
+    "ZIP_CODE": "Postleitzahl"
 }

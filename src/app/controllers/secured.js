@@ -2,6 +2,7 @@ angular.module("proton.controllers.Secured", [])
 
 .controller("SecuredController", function(
     $cookies,
+    $filter,
     $rootScope,
     $scope,
     $state,
@@ -116,9 +117,12 @@ angular.module("proton.controllers.Secured", [])
         if (authentication.user && authentication.user.UsedSpace && authentication.user.MaxSpace) {
             return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
         } else {
-            // TODO: error, undefined variables
             return '';
         }
+    };
+
+    $scope.storageString = function() {
+        return $filter('humanSize')(authentication.user.UsedSpace) + ' / ' + $filter('humanSize')(authentication.user.UsedSpace);
     };
 
     /**

@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"changeFrom(message)\">": "",
     "4096_WARNING": "",
     "ABSOLUTE_SECURITY": "",
     "ACC_CREATION_ERR": "",
@@ -354,11 +353,11 @@
     "LABEL_DELETED": "",
     "LABEL_EDITED": "",
     "LABEL_NAME": "",
-    "LABEL_NAME_ALREADY_EXISTS": "",
     "LABEL_ORDER_SAVED": "",
     "LABEL_SETTINGS": "",
     "LABELS": "",
     "LABELS_NONE": "",
+    "LABELS_SAVED": "",
     "LARGE_TO_SMALL": "",
     "LAYOUT": "",
     "LAYOUT_INFO": "",
@@ -464,6 +463,7 @@
     "NOTES_ABOUT_CONTACT": "",
     "NOTIFICATION_EMAIL_SAVED": "",
     "NOTIFICATIONS": "",
+    "NUM_UNREAD_CONV": "",
     "NUMBER": "",
     "NUMBER_OF_USER": "",
     "OF": "",
@@ -565,7 +565,8 @@
     "RESET_MAILBOX": "",
     "RESET_NOW": "",
     "RESET_PASSWORD": "",
-    "RESET_WARNING": "",
+    "RESET_WARNING_1": "",
+    "RESET_WARNING_2": "",
     "ROLE": "",
     "ROLE_UPDATED": "",
     "ROW": "",
@@ -704,7 +705,7 @@
     "VOID": "",
     "WARNING": "",
     "WEEKS": "",
-    "WELCOME_GREETING": "",
+    "WELCOME": "",
     "WELCOME_MODAL_INTRO": "",
     "WELCOME_MODAL_TITLE": "",
     "WELCOME_STEP_1_MESSAGE": "",
@@ -725,6 +726,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "",
     "ZIP": "",
-    "ZIP_CODE": "",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": ""
+    "ZIP_CODE": ""
 }

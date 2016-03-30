@@ -1,5 +1,4 @@
 {
-    "0\" ng-change=\"changeFrom(message)\">": "",
     "4096_WARNING": "",
     "ABSOLUTE_SECURITY": "Absolute beveiliging",
     "ACC_CREATION_ERR": "",
@@ -354,11 +353,11 @@
     "LABEL_DELETED": "Label verwijderd",
     "LABEL_EDITED": "Label gewijzigd",
     "LABEL_NAME": "Labelnaam",
-    "LABEL_NAME_ALREADY_EXISTS": "Labelnaam bestaat al",
     "LABEL_ORDER_SAVED": "Labelrangschikking bewaard",
     "LABEL_SETTINGS": "Labelinstellingen",
     "LABELS": "Labels",
     "LABELS_NONE": "",
+    "LABELS_SAVED": "",
     "LARGE_TO_SMALL": "Grootste bovenaan",
     "LAYOUT": "Lay-out",
     "LAYOUT_INFO": "",
@@ -464,6 +463,7 @@
     "NOTES_ABOUT_CONTACT": "Notitie bij contact",
     "NOTIFICATION_EMAIL_SAVED": "E-mailadres voor meldingen bewaard",
     "NOTIFICATIONS": "Meldingen",
+    "NUM_UNREAD_CONV": "",
     "NUMBER": "Aantal",
     "NUMBER_OF_USER": "Aantal gebruikers",
     "OF": "van",
@@ -565,7 +565,8 @@
     "RESET_MAILBOX": "Herstel postbus",
     "RESET_NOW": "Herstel nu",
     "RESET_PASSWORD": "Herstel wachtwoord",
-    "RESET_WARNING": "",
+    "RESET_WARNING_1": "",
+    "RESET_WARNING_2": "",
     "ROLE": "Rol",
     "ROLE_UPDATED": "Rol bijgewerkt",
     "ROW": "Rij",
@@ -704,7 +705,7 @@
     "VOID": "Void",
     "WARNING": "Waarschuwing",
     "WEEKS": "weken",
-    "WELCOME_GREETING": "",
+    "WELCOME": "",
     "WELCOME_MODAL_INTRO": "",
     "WELCOME_MODAL_TITLE": "",
     "WELCOME_STEP_1_MESSAGE": "",
@@ -725,6 +726,5 @@
     "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED": "U hebt uw abonnement geannuleerd",
     "YOUR_NEW_FEATURES_ARE_NOW_AVAILABLE": "De nieuwe functies zijn nu beschikbaar",
     "ZIP": "Postcode",
-    "ZIP_CODE": "Postcode",
-    "{{ user.UsedSpace | humanSize }} / {{ user.MaxSpace | humanSize }}": ""
+    "ZIP_CODE": "Postcode"
 }

@@ -1,6 +1,6 @@
 <div id="pm_latest" ng-show="showWelcome === true">
-    <header>{{ 'WELCOME_GREETING' | translate }}</header>
-    <p class="text-center">{{ 'NUM_UNREAD_CONV | translate '}}</p>You have <strong>{{ numberElementUnread }}</strong> unread conversations.
+    <header>{{ 'WELCOME' | translate }} {{ user.DisplayName }}</header>
+    <p class="text-center">{{ 'NUM_UNREAD_CONV' | translate }}</p>You have <strong>{{ numberElementUnread }}</strong> unread conversations.
     <section id="storageStatus" ng-show="user.UsedSpace > 0">
     	<div class="wrap">
             <div class="storageArea">
