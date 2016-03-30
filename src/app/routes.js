@@ -196,7 +196,7 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            direct: function($http, $q, $state, $rootScope, url, User) {
+            direct: function($q, $state, $rootScope, User) {
                 var deferred = $q.defer();
 
                 if (!$rootScope.preInvited) {

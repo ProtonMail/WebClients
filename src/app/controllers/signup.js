@@ -368,17 +368,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             'PrivateKey': $scope.account.PrivateKey
         };
 
-        console.log($scope.account.captcha_token);
-        console.log($scope.signup.smsVerificationSent);
-        console.log($scope.signup.verificationSent);
-
         if (angular.isDefined($rootScope.inviteToken)) {
-            console.log('a');
-            $log.debug($scope.inviteToken);
             params.Token = $rootScope.inviteToken;
             params.TokenType = 'invite';
         } else if (angular.isDefined($scope.account.captcha_token) && $scope.account.captcha_token!==false) {
-            $log.debug($scope.account.captcha_token);
             params.Token = $scope.account.captcha_token;
             params.TokenType = 'recaptcha';
         }
@@ -394,8 +387,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             $rootScope.tempUser = [];
         }
 
-        $log.debug(params);
-
         $rootScope.tempUser.username = $scope.account.Username;
         $rootScope.tempUser.password = $scope.account.loginPassword;
 
@@ -409,12 +400,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.doLogUserIn = function(response) {
-        $log.debug('doLogUserIn', response);
         if (response.Code && response.Code===1000) {
-            $log.debug(
-                $rootScope.tempUser.username,
-                $rootScope.tempUser.password
-            );
             $scope.logUserIn   = true;
             return authentication.loginWithCredentials({
                 Username: $rootScope.tempUser.username,
