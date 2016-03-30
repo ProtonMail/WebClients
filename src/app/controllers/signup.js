@@ -20,11 +20,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     User,
     Reset,
     pmcw,
-    notify
+    notify,
+    direct
 ) {
     $scope.initialization = function() {
-
-        $log.debug('Signup:initialization');
         // Variables
         $scope.tools    = tools;
         $scope.compatibility = tools.isCompatible();
@@ -40,8 +39,25 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.signup = {};
 
         $scope.signup.verificationSent = false;
+        $scope.signup.smsVerificationSent = false;
         $scope.generating = false;
         $scope.domains = [];
+
+        // direct comes from the resolve in route, sometimes
+        if (direct) {
+            // determine what activation methods to show
+            if (direct.VerifyMethods) {
+                if (direct.VerifyMethods.indexOf('email') !== -1) {
+                    $scope.showEmail = true;
+                }
+                if (direct.VerifyMethods.indexOf('recaptcha') !== -1) {
+                    $scope.showCaptcha = true;
+                }
+                if (direct.VerifyMethods.indexOf('sms') !== -1) {
+                    $scope.showSms = true;
+                }
+            }
+        }
 
         // Populate the domains <select>
         _.each(domains, function(domain) {
@@ -50,7 +66,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
 
-        $scope.account = [];
+        $scope.account = {};
 
         // Select the first domain
         $scope.account.domain = $scope.domains[0];
@@ -60,6 +76,9 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
         // Initialize captcha token
         $scope.account.captcha_token = false;
+
+        // Initialize sms verification code
+        $scope.account.smsCodeVerification = '';
 
         // Prepoppulate the username if from an invite link and mark as read only
         if (angular.isDefined($rootScope.username)) {
@@ -139,6 +158,24 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         }).then(function(result) {
             if (result.data && result.data.Code === 1000) {
                 $scope.signup.verificationSent = true;
+            } else if (result.data && result.data.Error) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
+            }
+        });
+    };
+
+    $scope.sendSmsVerificationCode = function() {
+        $scope.smsSending = true;
+        User.code({
+            Username: $scope.account.Username,
+            Type: 'sms',
+            Destination: {
+                Phone: $scope.account.smsVerification
+            }
+        }).then(function(result) {
+            $scope.smsSending = false;
+            if (result.data && result.data.Code === 1000) {
+                $scope.signup.smsVerificationSent = true;
             } else if (result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             }
@@ -332,24 +369,23 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         };
 
         if (angular.isDefined($rootScope.inviteToken)) {
-            $log.debug($scope.inviteToken);
             params.Token = $rootScope.inviteToken;
             params.TokenType = 'invite';
         } else if (angular.isDefined($scope.account.captcha_token) && $scope.account.captcha_token!==false) {
-            $log.debug($scope.account.captcha_token);
             params.Token = $scope.account.captcha_token;
             params.TokenType = 'recaptcha';
         }
-        else {
+        else if (angular.isDefined($scope.signup.smsVerificationSent) && $scope.signup.smsVerificationSent!==false) {
+            params.Token = $scope.account.smsCodeVerification;
+            params.TokenType = 'sms';
+        }
+        else if (angular.isDefined($scope.signup.verificationSent) && $scope.signup.verificationSent!==false) {
             params.Token = $scope.account.codeVerification;
             params.TokenType = 'email';
         }
-
         if ($rootScope.tempUser===undefined) {
             $rootScope.tempUser = [];
         }
-
-        $log.debug(params);
 
         $rootScope.tempUser.username = $scope.account.Username;
         $rootScope.tempUser.password = $scope.account.loginPassword;
@@ -364,12 +400,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.doLogUserIn = function(response) {
-        $log.debug('doLogUserIn', response);
         if (response.Code && response.Code===1000) {
-            $log.debug(
-                $rootScope.tempUser.username,
-                $rootScope.tempUser.password
-            );
             $scope.logUserIn   = true;
             return authentication.loginWithCredentials({
                 Username: $rootScope.tempUser.username,
