@@ -31,7 +31,6 @@ angular.module("proton.controllers.Settings")
     // Initialize variables
     $scope.configuration = {};
     $scope.subscription = {};
-    $scope.delinquent = authentication.user.Delinquent >= 3;
 
     // Options
     $scope.spaceOptions = [
@@ -318,7 +317,7 @@ angular.module("proton.controllers.Settings")
      * Open a modal to confirm to switch to the free plan
      */
     $scope.free = function() {
-        var title = $translate.instant('CONFIRM_DOWNGRADE'); 
+        var title = $translate.instant('CONFIRM_DOWNGRADE');
         var message = $translate.instant('CONFIRM_DOWNGRADE_MESSAGE');
 
         confirmModal.activate({

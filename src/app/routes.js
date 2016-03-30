@@ -668,29 +668,6 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('secured.invoices', {
-        url: '/invoices',
-        resolve: {
-            access: function(user, $q) {
-                var deferred = $q.defer();
-
-                if(user.Role === 2) {
-                    deferred.resolve();
-                } else {
-                    deferred.reject();
-                }
-
-                return deferred.promise;
-            }
-        },
-        views: {
-            'content@secured': {
-                templateUrl: 'templates/views/invoices.tpl.html',
-                controller: 'InvoicesController'
-            }
-        }
-    })
-
     .state('secured.keys', {
         url: '/keys',
         resolve: {
@@ -860,8 +837,8 @@ angular.module('proton.routes', [
                     if (user.Delinquent < 3) {
                         deferred.resolve();
                     } else {
-                        notify({message: 'You are in a delinquent state, your account is disabled due to non-payment. Please visit our <a href="https://protonmail.com/support/knowledge-base/delinquency/" target="_blank">knowledge base</a> for more information.', classes: 'notification-danger'});
-                        $state.go('secured.dashboard');
+                        notify({message: $translate.instant('DELINQUENT_NOTIFICATION'), classes: 'notification-danger'});
+                        $state.go('secured.payments');
                         deferred.reject();
                     }
 
