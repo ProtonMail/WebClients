@@ -1266,7 +1266,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                             _.each(emails, function(email) {
                                 // Inside user
-                                if(keys[email].length > 0) {
+                                if(keys && keys[email].length > 0) {
                                     var key = keys[email];
 
                                     // Encrypt content body in with the public key user

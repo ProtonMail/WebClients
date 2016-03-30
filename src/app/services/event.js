@@ -295,19 +295,10 @@ angular.module("proton.event", ["proton.constants"])
 					cacheCounters.reset();
 					cache.callRefresh();
 					cacheCounters.query();
-					// Fetch labels data
-					Label.query().then(function(result) {
-						if (result.data && result.data.Code === 1000) {
-							authentication.user.Labels = result.data.Labels;
-							$rootScope.$broadcast('updateLabels');
-						}
-					});
-					// Fetch contacts data
-					Contact.query().then(function(result) {
-						if (result.data && result.data.Code === 1000) {
-							authentication.user.Contacts = result.data.Contacts;
-							$rootScope.$broadcast('updateContacts');
-						}
+					authentication.fetchUserInfo().then(function() {
+						$rootScope.$broadcast('updateUser');
+						$rootScope.$broadcast('updateContacts');
+						$rootScope.$broadcast('updateLabels');
 					});
 				} else if (data.Reload === 1) {
 					$window.location.reload();
