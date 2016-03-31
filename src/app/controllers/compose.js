@@ -946,54 +946,61 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.validate = function(message) {
-        // set msgBody input element to editor content
-        message.setMsgBody();
+        var deferred = $q.defer();
 
-        // Check if there is an attachment uploading
-        if (message.uploading === true) {
-            notify({message: 'Wait for attachment to finish uploading or cancel upload.', classes: 'notification-danger'});
-            return false;
-        }
+        // We delay the validation to let the time for the autocomplete
+        $timeout(function() {
+            // set msgBody input element to editor content
+            message.setMsgBody();
 
-        // Check all emails to make sure they are valid
-        var invalidEmails = [];
-        var allEmails = _.map(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) { return email.Address.trim(); });
-
-        _.each(allEmails, function(email) {
-            if(!tools.validEmail(email)) {
-                invalidEmails.push(email);
+            // Check if there is an attachment uploading
+            if (message.uploading === true) {
+                deferred.reject('Wait for attachment to finish uploading or cancel upload.');
+                return false;
             }
-        });
 
-        if (invalidEmails.length > 0) {
-            notify({message: 'Invalid email(s): ' + invalidEmails.join(',') + '.', classes: 'notification-danger'});
-            return false;
-        }
+            // Check all emails to make sure they are valid
+            var invalidEmails = [];
+            var allEmails = _.map(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) { return email.Address.trim(); });
 
-        // MAX 25 to, cc, bcc
-        if ((message.ToList.length + message.BCCList.length + message.CCList.length) > 25) {
-            notify({message: 'The maximum number (25) of Recipients is 25.', classes: 'notification-danger'});
-            return false;
-        }
+            _.each(allEmails, function(email) {
+                if(!tools.validEmail(email)) {
+                    invalidEmails.push(email);
+                }
+            });
 
-        if (message.ToList.length === 0 && message.BCCList.length === 0 && message.CCList.length === 0) {
-            notify({message: 'Please enter at least one recipient.', classes: 'notification-danger'});
-            return false;
-        }
+            if (invalidEmails.length > 0) {
+                deferred.reject('Invalid email(s): ' + invalidEmails.join(',') + '.');
+                return false;
+            }
 
-        // Check title length
-        if (message.Subject && message.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
-            notify({message: 'The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.', classes: 'notification-danger'});
-            return false;
-        }
+            // MAX 25 to, cc, bcc
+            if ((message.ToList.length + message.BCCList.length + message.CCList.length) > 25) {
+                deferred.reject('The maximum number (25) of Recipients is 25.');
+                return false;
+            }
 
-        // Check body length
-        if (message.Body.length > 16000000) {
-            notify({message: 'The maximum length of the message body is 16,000,000 characters.', classes: 'notification-danger'});
-            return false;
-        }
+            if (message.ToList.length === 0 && message.BCCList.length === 0 && message.CCList.length === 0) {
+                deferred.reject('Please enter at least one recipient.');
+                return false;
+            }
 
-        return true;
+            // Check title length
+            if (message.Subject && message.Subject.length > CONSTANTS.MAX_TITLE_LENGTH) {
+                deferred.reject('The maximum length of the subject is ' + CONSTANTS.MAX_TITLE_LENGTH + '.');
+                return false;
+            }
+
+            // Check body length
+            if (message.Body.length > 16000000) {
+                deferred.reject('The maximum length of the message body is 16,000,000 characters.');
+                return false;
+            }
+
+            deferred.resolve();
+        }, 250);
+
+        return deferred.promise;
     };
 
     /**
@@ -1243,9 +1250,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.send = function(message) {
         var deferred = $q.defer();
-        var validate = $scope.validate(message);
-
-        if (validate) {
+        $scope.validate(message)
+        .then(function() {
             $scope.save(message, false, false, false)
             .then(function() {
                 $scope.checkSubject(message).then(function() {
@@ -1404,9 +1410,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }, function(error) {
                 deferred.reject(); // Don't add parameter in the rejection because $scope.save already do that.
             });
-        } else {
-            deferred.reject();
-        }
+        }, function(error) {
+            deferred.reject(error);
+        });
 
         networkActivityTracker.track(deferred.promise);
 

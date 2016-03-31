@@ -18,6 +18,7 @@ angular.module('proton.autocomplete', [])
             var ESC_KEY = 27;
             var SPACE_KEY = 32;
             var timeoutChange;
+            var timeoutBlur;
 
             // Variables
             scope.params = {
@@ -135,7 +136,10 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onBlur = function() {
-                scope.onSubmit();
+                $timeout.cancel(timeoutBlur);
+                timeoutBlur = $timeout(function() {
+                    scope.onSubmit();
+                }, 100);
             };
 
             scope.onRemove = function(index) {
