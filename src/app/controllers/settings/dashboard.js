@@ -16,7 +16,6 @@ angular.module("proton.controllers.Settings")
     networkActivityTracker,
     notify,
     Organization,
-    organization,
     Payment,
     paymentModal,
     methods,
@@ -91,9 +90,9 @@ angular.module("proton.controllers.Settings")
      * @param {Object} subscription
      * @param {Object} monthly
      * @param {Object} yearly
-     * @param {Object} organization
+     * @param {Array} methods
      */
-    $scope.initialization = function(subscription, monthly, yearly, organization, methods) {
+    $scope.initialization = function(subscription, monthly, yearly, methods) {
         if (angular.isDefined(subscription)) {
             _.extend($scope.subscription, subscription);
             $scope.configuration.cycle = subscription.Cycle;
@@ -127,10 +126,6 @@ angular.module("proton.controllers.Settings")
 
         }
 
-        if (angular.isDefined(organization)) {
-            $scope.organization = organization;
-        }
-
         if (angular.isDefined(methods)) {
             $scope.methods = methods;
         }
@@ -153,12 +148,11 @@ angular.module("proton.controllers.Settings")
         networkActivityTracker.track(
             $q.all({
                 subscription: Payment.subscription(),
-                organization: Organization.get(),
                 methods: Payment.methods(),
                 event: eventManager.call()
             })
             .then(function(result) {
-                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.organization.data.Organization, result.methods.data.PaymentMethods);
+                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.methods.data.PaymentMethods);
             })
         );
     };
@@ -495,5 +489,5 @@ angular.module("proton.controllers.Settings")
     };
 
     // Call initialization
-    $scope.initialization(subscription.data.Subscription, monthly.data.Plans, yearly.data.Plans, organization.data.Organization, methods.data.PaymentMethods);
+    $scope.initialization(subscription.data.Subscription, monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
 });

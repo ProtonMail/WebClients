@@ -22,13 +22,11 @@ angular.module("proton.controllers.Settings")
     mxModal,
     networkActivityTracker,
     notify,
-    organization,
     Organization,
     spfModal,
     verificationModal
 ) {
     // Variables
-    $scope.organization = organization.data.Organization;
     $scope.domains = domains.data.Domains;
     $scope.members = members.data.Members;
     $scope.addressMemberID = $scope.members[0];
@@ -68,10 +66,6 @@ angular.module("proton.controllers.Settings")
     $scope.$on('dmarc', function(event, domain) {
         $scope.closeModals();
         $scope.dmarc(domain);
-    });
-
-    $scope.$on('organizationChange', function(event, organization) {
-        $scope.organization = organization;
     });
 
     $scope.$on('deleteDomain', function(event, domainId) {

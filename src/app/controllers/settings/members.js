@@ -8,7 +8,6 @@ angular.module("proton.controllers.Settings")
     Address,
     Member,
     members,
-    organization,
     eventManager,
     Organization,
     storageModal,
@@ -27,10 +26,6 @@ angular.module("proton.controllers.Settings")
     ];
 
     // Listeners
-    $scope.$on('organizationChange', function(event, organization) {
-        $scope.organization = organization;
-    });
-
     $scope.$on('deleteDomain', function(event, domainId) {
         var index = _.findIndex($scope.domains, {ID: domainId});
 
@@ -88,10 +83,6 @@ angular.module("proton.controllers.Settings")
     });
 
     $scope.initialization = function() {
-        if (organization.data && organization.data.Code === 1000) {
-            $scope.organization = organization.data.Organization;
-        }
-
         if (members.data && members.data.Code === 1000) {
             $scope.members = members.data.Members;
         }

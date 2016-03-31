@@ -482,7 +482,7 @@ angular.module('proton.routes', [
         },
         resolve: {
             // Contains also labels and contacts
-            user: function(authentication, $log, $http, pmcw) {
+            user: function(authentication, $http, pmcw) {
                 if (angular.isObject(authentication.user)) {
                     return authentication.user;
                 } else {
@@ -492,6 +492,24 @@ angular.module('proton.routes', [
 
                     return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
                 }
+            },
+            organization: function($q, user, Organization) {
+                var deferred = $q.defer();
+
+                if (user.Role > 0) {
+                    Organization.get()
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            deferred.resolve(result.data.Organization);
+                        }
+                    });
+                } else {
+                    deferred.resolve({
+                        PlanName: 'free'
+                    });
+                }
+
+                return deferred.promise;
             }
         },
         onEnter: function($rootScope, authentication, $timeout, CONSTANTS) {
@@ -583,11 +601,6 @@ angular.module('proton.routes', [
 
     .state('secured.addresses', {
         url: '/addresses',
-        resolve: {
-            organization: function(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
-            }
-        },
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/addresses.tpl.html',
@@ -646,23 +659,12 @@ angular.module('proton.routes', [
         views: {
             'main@': {
                 templateUrl: 'templates/views/invoice.print.tpl.html',
-                controller: function($scope, invoice, $timeout, user, Organization) {
+                controller: function($scope, $timeout, invoice) {
                     $scope.invoice = invoice;
-                    $scope.user = user;
 
-                    Organization.get(invoice.OrganizationID).then(
-                        function(result) {
-                            if (result.data && result.data.Code===1000) {
-                                $scope.organization = result.data.Organization;
-                                $timeout( function() {
-                                    window.print();
-                                }, 200);
-                            }
-                        },
-                        function(result) {
-
-                        }
-                    );
+                    $timeout( function() {
+                        window.print();
+                    }, 200);
                 },
             }
         }
@@ -708,9 +710,6 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            organization: function(user, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
-            },
             // Return yearly plans
             yearly: function(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.plans(user.Currency, 12));
@@ -748,13 +747,6 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            organization: function(user, Organization, networkActivityTracker) {
-                if(user.Role === 2) {
-                    return networkActivityTracker.track(Organization.get());
-                } else {
-                    return true;
-                }
-            },
             members: function(Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
             },
@@ -783,13 +775,6 @@ angular.module('proton.routes', [
                 }
 
                 return deferred.promise;
-            },
-            organization: function(user, Organization, networkActivityTracker) {
-                if(user.Role === 2) {
-                    return networkActivityTracker.track(Organization.get());
-                } else {
-                    return true;
-                }
             },
             members: function(Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());

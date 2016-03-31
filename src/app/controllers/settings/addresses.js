@@ -17,7 +17,6 @@ angular.module('proton.controllers.Settings')
     Member,
     networkActivityTracker,
     notify,
-    organization,
     Setting
 ) {
     $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
@@ -51,21 +50,12 @@ angular.module('proton.controllers.Settings')
         }
     };
 
-    // Set organization
-    if (organization.data.Organization) {
-        $scope.organization = organization.data.Organization;
-    }
-
     // Listeners
     $scope.$on('updateUser', function(event) {
         if ($scope.itemMoved === false) {
             $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
             $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
         }
-    });
-
-    $scope.$on('organizationChange', function(event, organization) {
-        $scope.organization = organization;
     });
 
     /**

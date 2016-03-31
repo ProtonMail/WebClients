@@ -17,14 +17,15 @@ angular.module("proton.controllers.Secured", [])
     eventManager,
     feedbackModal,
     generateModal,
+    organization,
     tools
 ) {
     var dirtyAddresses = [];
 
-    $translate.use(authentication.user.Language);
     $scope.user = authentication.user;
-    $rootScope.isLoggedIn = true;
-    $rootScope.isLocked = false;
+    $scope.organization = organization;
+    $rootScope.isLoggedIn = true; // Shouldn't be there
+    $rootScope.isLocked = false; // Shouldn't be there
     $scope.settingsRoutes = [
         {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
         {value: 'secured.account', label: $translate.instant('ACCOUNT')},
@@ -37,6 +38,9 @@ angular.module("proton.controllers.Secured", [])
         {value: 'secured.payments', label: $translate.instant('PAYMENTS')}
     ];
 
+    // Set language used for the application
+    $translate.use(authentication.user.Language);
+
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
         if (authentication.user.ViewLayout === 0) {
@@ -48,6 +52,7 @@ angular.module("proton.controllers.Secured", [])
 
     // Set event ID
     eventManager.start(authentication.user.EventID);
+
     // Initialize counters for conversation (total and unread)
     cacheCounters.query();
 
@@ -56,6 +61,10 @@ angular.module("proton.controllers.Secured", [])
 
     $scope.$on('updateUser', function(event) {
         $translate.use(authentication.user.Language);
+    });
+
+    $scope.$on('organizationChange', function(event, organization) {
+        $scope.organization = organization;
     });
 
     _.each(authentication.user.Addresses, function(address) {
