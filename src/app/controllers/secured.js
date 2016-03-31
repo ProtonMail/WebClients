@@ -87,31 +87,11 @@ angular.module("proton.controllers.Secured", [])
         });
     }
 
-    // ===================================
-    // FEEDBACK FORM (TEMPORARY - REMOVE ON SUNDAY / MONDAY)
-    /*
-    $timeout( function() {
+    $scope.idDefined = function() {
+        var id = $stateParams.id;
 
-        now = new Date();
-        exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
-
-        if(!$cookies.get('v3_feedback')) {
-            $cookies.put('v3_feedback', 'true', {
-                'expires': exp
-            });
-            // Open feedback modal
-            feedbackModal.activate({
-                params: {
-                    close: function() {
-                        feedbackModal.deactivate();
-                    }
-                }
-            });
-        }
-    }, 1 * 60 * 1000); // 2 mins
-    */
-    // END FEEDBACK
-    // ===================================
+        return angular.isDefined(id) && id.length > 0;
+    };
 
     /**
      * Returns a string for the storage bar

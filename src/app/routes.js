@@ -816,7 +816,7 @@ angular.module('proton.routes', [
             url: '/' + box + '?' + conversationParameters(),
             views: list,
             resolve: {
-                delinquent: function($q, $state, user, notify) {
+                delinquent: function($q, $state, $translate, user, notify) {
                     var deferred = $q.defer();
 
                     if (user.Delinquent < 3) {
@@ -856,18 +856,4 @@ angular.module('proton.routes', [
     });
 
     $locationProvider.html5Mode(true);
-})
-
-.run(function($rootScope, $state, $stateParams) {
-    $rootScope.go = _.bind($state.go, $state);
-
-    $rootScope.idDefined = function() {
-        var id = $stateParams.id;
-
-        return angular.isDefined(id) && id.length > 0;
-    };
-
-    $rootScope.deselectAll = function() {
-        $rootScope.$broadcast('unselectAllElements');
-    };
 });

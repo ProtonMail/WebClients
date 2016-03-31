@@ -143,7 +143,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Boolean}
      */
     $scope.placeholder = function() {
-        return $rootScope.layoutMode === 'columns' && ($rootScope.idDefined() === false || ($rootScope.idDefined() === true && $rootScope.numberElementChecked > 0));
+        return $rootScope.layoutMode === 'columns' && ($scope.idDefined() === false || ($scope.idDefined() === true && $rootScope.numberElementChecked > 0));
     };
 
     $scope.startWatchingEvent = function() {

@@ -42,5 +42,5 @@
     <i class="fa fa-check-square"></i>
     <h2 ng-show="numberElementChecked === 1">{{ numberElementChecked }} {{ 'CONVERSATION_SELECTED' | translate }}</h2>
     <h2 ng-show="numberElementChecked === 0 || numberElementChecked > 1">{{ numberElementChecked }} {{ 'CONVERSATIONS_SELECTED' | translate }}</h2>
-    <button class="pm_button" ng-show="numberElementChecked > 0" ng-click="deselectAll()">{{ 'DESELECT_ALL' | translate }}</button>
+    <button class="pm_button" ng-show="numberElementChecked > 0" ng-click="unselectAllElements()">{{ 'DESELECT_ALL' | translate }}</button>
 </div>
