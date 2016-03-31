@@ -295,7 +295,8 @@ angular.module("proton.event", ["proton.constants"])
 					cacheCounters.reset();
 					cache.callRefresh();
 					cacheCounters.query();
-					authentication.fetchUserInfo().then(function() {
+					authentication.fetchUserInfo()
+					.then(function() {
 						$rootScope.$broadcast('updateUser');
 						$rootScope.$broadcast('updateContacts');
 						$rootScope.$broadcast('updateLabels');

@@ -19,17 +19,7 @@ angular.module("proton.controllers.Secured", [])
     generateModal,
     tools
 ) {
-    var format;
-    var language = window.navigator.userLanguage || window.navigator.language;
     var dirtyAddresses = [];
-
-    if(language === 'en-US') {
-        format = 'MM/DD/YYYY';
-    } else {
-        format = 'DD/MM/YYYY';
-    }
-
-    $rootScope.dateFormat = format;
 
     $scope.user = authentication.user;
     $rootScope.isLoggedIn = true;
