@@ -18,8 +18,8 @@
                                 <tr>
                                     <th>{{ 'DOMAINS' | translate }}:</th>
                                     <td>
-                                        <strong ng-show="organization">{{ organization.UsedDomains }} {{ 'OF' | translate }} {{ organization.MaxDomains }}</strong>
-                                        <strong ng-show="organization === null">0</strong>
+                                        <strong ng-hide="organization.PlanName === 'free'">{{ organization.UsedDomains }} {{ 'OF' | translate }} {{ organization.MaxDomains }}</strong>
+                                        <strong ng-show="organization.PlanName === 'free'">0</strong>
                                     </td>
                                     <td class="text-right actions">
                                         <a ui-sref="secured.domains" class="pm_button link" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
@@ -29,8 +29,8 @@
                                 <tr>
                                     <th>{{ 'ADDRESSES' | translate }}:</th>
                                     <td>
-                                        <strong ng-show="organization">{{ organization.UsedAddresses }} {{ 'OF' | translate }} {{ organization.MaxAddresses }}</strong>
-                                        <strong ng-show="organization === null">1</strong>
+                                        <strong ng-hide="organization.PlanName === 'free'">{{ organization.UsedAddresses }} {{ 'OF' | translate }} {{ organization.MaxAddresses }}</strong>
+                                        <strong ng-show="organization.PlanName === 'free'">1</strong>
                                     </td>
                                     <td class="text-right actions">
                                         <a ui-sref="secured.addresses" class="pm_button link" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
@@ -40,12 +40,12 @@
                                 <tr>
                                     <th>{{ 'STORAGE' | translate }}:</th>
                                     <td colspan="2">
-                                        <strong ng-show="organization">{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }}</strong>
-                                        <strong ng-show="organization === null">{{ user.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ user.MaxSpace | humanSize }}</strong>
+                                        <strong ng-hide="organization.PlanName === 'free'">{{ organization.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ organization.MaxSpace | humanSize }}</strong>
+                                        <strong ng-show="organization.PlanName === 'free'">{{ user.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ user.MaxSpace | humanSize }}</strong>
                                         <br>
                                         <div class="bar">
-                                            <em ng-show="organization" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></em>
-                                            <em ng-show="organization === null" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></em>
+                                            <em ng-hide="organization.PlanName === 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></em>
+                                            <em ng-show="organization.PlanName === 'free'" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></em>
                                         </div>
                                     </td>
                                 </tr>
