@@ -59,7 +59,7 @@ body#eo-reply {
 		}
 	}
 	#message-body {
-		margin: 0 -35px;
+		margin: 0;
 		.squire-toolbar {
 			border-top: 1px solid $border;
 			border-bottom: 1px solid $border;
@@ -96,7 +96,7 @@ body#eo-reply {
 	}
 	footer {
 		padding: 1rem 35px;
-		margin: 0 -35px -35px;
+		margin: 0;
 		border-top: 1px solid $border;
 		.pm_button {
 			text-transform: uppercase;
