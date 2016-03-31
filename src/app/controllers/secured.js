@@ -88,7 +88,7 @@ angular.module("proton.controllers.Secured", [])
     }
 
     $scope.idDefined = function() {
-        var id = $stateParams.id;
+        var id = $state.params.id;
 
         return angular.isDefined(id) && id.length > 0;
     };
