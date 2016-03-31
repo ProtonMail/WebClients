@@ -21,6 +21,7 @@ angular.module("proton.controllers.Secured", [])
 ) {
     var dirtyAddresses = [];
 
+    $translate.use(authentication.user.Language);
     $scope.user = authentication.user;
     $rootScope.isLoggedIn = true;
     $rootScope.isLocked = false;
@@ -52,6 +53,10 @@ angular.module("proton.controllers.Secured", [])
 
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
+
+    $scope.$on('updateUser', function(event) {
+        $translate.use(authentication.user.Language);
+    });
 
     _.each(authentication.user.Addresses, function(address) {
         if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
