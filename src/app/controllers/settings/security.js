@@ -40,7 +40,7 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.clearLogs = function() {
-        var title = $translate.instant('CLEAR_LOGS');
+        var title = $translate.instant('CLEAR');
         var message = $translate.instant('CLEAR_LOGS_CONFIRMATION');
 
         confirmModal.activate({
