@@ -8,8 +8,7 @@
 
             <section class="setting pm_form">
                 <legend>{{ 'COMPOSER' | translate }}</legend>
-                <p>{{ 'COMPOSER_INFO' | translate }}</p>
-                <p><a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p class="alert alert-info">{{ 'COMPOSER_INFO' | translate }} <a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank">{{ 'LEARN_MORE' | translate }}</a></p>
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
@@ -29,8 +28,7 @@
             </section>
             <section class="setting pm_form pull-right">
                 <legend>{{ 'LAYOUT' | translate }}</legend>
-                <p>{{ 'LAYOUT_INFO' | translate }}</p>
-                <p><a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p class="alert alert-info">{{ 'LAYOUT_INFO' | translate }} <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank">{{ 'LEARN_MORE' | translate }}</a></p>
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />
@@ -77,6 +75,7 @@
                 <label for="selectDefaultLanguage">{{ 'CHOOSE_LANG' | translate }}</label>
                 <span class="pm_select">
                     <select id="selectDefaultLanguage" ng-model="appearance.locale" ng-options="locale.label for locale in appearance.locales" ng-change="saveDefaultLanguage()"></select>
+                    <i class="fa fa-angle-down"></i>
                 </span>
             </section>
         </div>
@@ -87,9 +86,8 @@
 
                 <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
                     <legend>{{ 'CUSTOM_THEME' | translate }}</legend>
-                    <div class="clearfix" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
+                    <div class="margin" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                         <p class="alert alert-info">{{ 'CUSTOM_THEME_INFO' | translate }}</p>
-                        <label for="cssTheme" class="control-label">{{ 'CSS_THEME_CODE' | translate }}</label>
                         <textarea class="code" placeholder="{{ 'PASTE_THEME_CODE_HERE' | translate }}" id="cssTheme" name="cssTheme" ng-model="appearance.cssTheme" maxlength="200000"></textarea>
                     </div>
                     <div class="text-right">
