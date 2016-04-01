@@ -41,12 +41,12 @@ header#pm_header-desktop {
 		width: $sidebarWidth;
 		text-align: center;
 		background-color: $secondary;
-		height: 61px;
 		overflow: hidden;
 		img {
 			display: inline-block;
 			margin: auto;
 			vertical-align: middle;
+			width: 130px;
 		}
 	}
 	.pm_buttons {

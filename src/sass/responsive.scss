@@ -31,7 +31,6 @@
 
 @media (max-width: 1000px) {
     header#pm_header-desktop ul.navigation > li > a {
-        width: 90px;
         strong {
             font-size: .9em;
         }
@@ -53,9 +52,6 @@
     }
     body #pm_main {
         width: calc(100% - 150px);
-    }
-    header#pm_header-desktop a.logo img {
-        height: 18px;
     }
     body section.sidebar a.compose {
         padding-left: 0;
@@ -84,9 +80,6 @@
     }
     body #pm_main {
         width: calc(100% - 130px);
-    }
-    header#pm_header-desktop a.logo img {
-        height: 14px;
     }
     body section.sidebar a.compose {
         padding-left: 0;
