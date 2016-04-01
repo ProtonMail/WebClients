@@ -11,7 +11,7 @@
 	            </div>
 	            <span class="total">{{ user.MaxSpace | humanSize }}</span>
             </div>
-            <span>{{ 'STORAGE_USED_MESSAGE' | translate }}</span>
+            <span><strong>{{ storagePercentage() }}% </strong>{{ 'STORAGE_USED_MESSAGE' | translate }}</span>
         </div>
     </section>
     <section>
