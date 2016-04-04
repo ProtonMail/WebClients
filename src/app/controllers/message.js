@@ -34,8 +34,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.tools = tools;
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
-    $scope.CONSTANTS = CONSTANTS;
     $scope.attachmentsStorage = [];
+    $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
 
     $scope.$on('refreshMessage', function(event) {
         var message = cache.getMessageCached($scope.message.ID);

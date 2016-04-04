@@ -41,7 +41,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
         $scope.Math = window.Math;
-        $scope.CONSTANTS = CONSTANTS;
+        $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || "-date";
         $scope.page = parseInt($stateParams.page || 1);
