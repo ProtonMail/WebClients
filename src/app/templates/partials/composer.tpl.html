@@ -303,7 +303,7 @@
                         <span ng-show="message.maximized === true"> {{ 'SAVE' | translate }}</span>
                     </button>
                     <button class="pm_button primary" ng-disabled="message.allowSend() || message !== selected" ng-click="send(message)">
-                        <span ng-hide="message.allowSend()">{{ 'SEND' | translate }}</span>
+                        <span ng-hide="message.allowSend()" translate>Send</span>
                         <span ng-show="message.uploading > 0">{{ 'UPLOADING' | translate }}</span>
                         <span ng-show="message.sending === true">{{ 'SENDING' | translate }}</span>
                         <span ng-show="message.encrypting === true">{{ 'ENCRYPTING' | translate }}</span>

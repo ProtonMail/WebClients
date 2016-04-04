@@ -66,7 +66,7 @@
                                     <button class="pm_button link" ng-click="identity(address)">{{ 'IDENTITY' | translate }}</button>
                                     <button type="button" class="pm_button link" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)">{{ 'ENABLE' | translate }}</button>
                                     <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type === 3 && isAdmin === true" ng-click="disable(address)">{{ 'DISABLE' | translate }}</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3 && isAdmin === true" ng-click="delete(address)">{{ 'DELETE' | translate }}</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3 && isAdmin === true" ng-click="delete(address)" translate>Delete</button>
                                 </div>
                             </div>
                         </li>

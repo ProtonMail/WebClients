@@ -3,12 +3,12 @@
         <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'DONATE_TITLE' | translate }}</h4>
+                <h4 class="modal-title" translate>Help us protect online privacy</h4>
             </div>
             <div class="modal-body">
                 <form novalidate ng-submit="ctrl.donate()" class="pm_form">
-                    <p>{{ 'DONATE_UPSELL' | translate }}</p>
-                    <h4>{{ 'DONATE_TO_PROTONMAIL' | translate }}</h4>
+                    <p translate>ProtonMail is open source software that protects your privacy and doesn't have ads. Your support is essential for keeping the service running.</p>
+                    <h4 translate>Donate to ProtonMail</h4>
                     <div class="margin">
                         <button type="button" class="pm_button" style="margin-right: 10px;" ng-repeat="amount in ctrl.amounts" ng-click="ctrl.amount = amount.value" ng-class="{'success': amount.value === ctrl.amount}">{{ amount.label | currency: ctrl.currency.value }}</button>
                     </div>
@@ -24,29 +24,29 @@
                                 </span>
                             </div>
                             <div class="col-1-3">
-                                <button class="pm_button primary" type="submit">{{ 'DONATE' | translate }}</button>
+                                <button class="pm_button primary" type="submit" translate>Donate</button>
                             </div>
                         </div>
                     </div>
                     <div class="upsell">
-                        <h3>{{ 'UPGRADE_SUPPORT_TITLE' | translate }}</h3>
-                        <h4>5&euro; <span>{{ 'MONTH' | translate }}</span> / 48&euro; <span>{{ 'YEAR' | translate }}</span></h4>
+                        <h3 translate>Support ProtonMail by upgrading to a paid account</h3>
+                        <h4>5&euro; <span translate>Month</span> / 48&euro; <span translate>Year</span></h4>
                         <ul>
-                            <li>{{ 'UPGRADE_FEATURE_CUSTOM_DOMAINS' | translate }}</li>
-                            <li>{{ 'UPGRADE_FEATURE_STORAGE' | translate }}</li>
-                            <li>{{ 'UPGRADE_FEATURE_SENDING_LIMITS' | translate }}</li>
-                            <li>{{ 'UPGRADE_FEATURE_CUSTOMER_SUPPORT' | translate }}</li>
+                            <li translate>Support for custom domains and aliases</li>
+                            <li translate>5GB Storage (instead of 500MB)</li>
+                            <li translate>Higher message sending limits</li>
+                            <li translate>Priority customer support</li>
                         </ul>
-                        <button type="button" class="pm_button primary" ng-click="ctrl.upgrade()">{{ 'UPGRADE' | translate }}</button>
+                        <button type="button" class="pm_button primary" ng-click="ctrl.upgrade()" translate>Upgrade</button>
                         <a href="#" ng-click="ctrl.upgrade()">
-                            <img src="/assets/img/onboarding-upselling-background.jpg" alt="Upgrade your Account" />
+                            <img src="/assets/img/onboarding-upselling-background.jpg" alt="{{ 'Upgrade your account' | translate }}" />
                         </a>
                     </div>
                 </form>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button class="pm_button" ng-click="ctrl.close()" translate>Close</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

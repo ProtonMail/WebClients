@@ -54,7 +54,7 @@
             </div>
             <div class="row">
                 <div class="col-1-2">
-                    <label for="search_address">{{ 'ADDRESS' | translate }}</label>
+                    <label for="search_address" translate>Address</label>
                     <span class="pm_select">
                         <select id="search_address" ng-model="ctrl.address" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'"></select>
                         <i class="fa fa-angle-down"></i>

@@ -4,50 +4,50 @@
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
-                <span ng-show="ctrl.domain.DkimState === 0" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
-                <span ng-show="ctrl.domain.DkimState === 1 || ctrl.domain.DkimState === 2 || ctrl.domain.DkimState === 3" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
-                <span ng-show="ctrl.domain.DkimState === 4" class="pull-right pm_badge success">{{ 'ON!' | translate }}</span>
-                <span ng-show="ctrl.domain.DkimState === 5" class="pull-right pm_badge success">{{ 'OFF!' | translate }}</span>
-                <h4 class="modal-title">6. DKIM <em>({{ 'RECOMMENDED' | translate }})</em></h4>
+                <span ng-show="ctrl.domain.DkimState === 0" class="pull-right pm_badge error" translate>Not set</span>
+                <span ng-show="ctrl.domain.DkimState === 1 || ctrl.domain.DkimState === 2 || ctrl.domain.DkimState === 3" class="pull-right pm_badge error" translate>Not set properly</span>
+                <span ng-show="ctrl.domain.DkimState === 4" class="pull-right pm_badge success" translate>On</span>
+                <span ng-show="ctrl.domain.DkimState === 5" class="pull-right pm_badge success" translate>Off</span>
+                <h4 class="modal-title">6. DKIM <em translate>Recommended</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <div translate="DKIM_INFO_1"></div>
-                <div translate="DKIM_INFO_2"></div>
-                <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/'>{{ 'LEARN_MORE' | translate }}</a></p>
+                <p translate>ProtonMail supports DKIM signing for custom domains! To use DKIM authentication, please add the following TXT record into your DNS for this domain. This can typically be done in the control panel of your domain name registrar.</p>
+                <p translate>Please add the follow TXT record. Note, DNS records can take several hours to update.</p>
+                <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/' translate>Learn more</a></p>
                 <table class="pm_table record desktopOnly">
                     <tr>
-                        <th style="width:3rem">{{ 'TYPE' | translate }}</th>
-                        <th style="width:12.5rem">{{ 'HOST_NAME' | translate }}</th>
-                        <th>{{ 'VALUE_DATA_POINTS_TO' | translate }}</th>
+                        <th style="width:3rem" translate>Type</th>
+                        <th style="width:12.5rem" translate>Host name</th>
+                        <th translate>Value / Data / Points to</th>
                     </tr>
                     <tr>
                         <td><code>TXT</code></td>
                         <td><code>protonmail._domainkey</code></td>
-                        <td><code>{{ ctrl.domain.DkimPublicKey}}</code></td>
+                        <td><code>{{ ctrl.domain.DkimPublicKey }}</code></td>
                     </tr>
                 </table>
 
                 <div class="mobileOnly">
                     <p>
-                        <strong>{{ 'TYPE' | translate }}</strong>:<br>
+                        <strong translate>Type</strong>:<br>
                         <code>MX</code>
                     </p>
                     <p>
-                        <strong>{{ 'HOST_NAME' | translate }}</strong>:<br>
+                        <strong translate>Host name</strong>:<br>
                         <code>protonmail._domainkey</code>
                     </p>
                     <p>
-                        <strong>{{ 'VALUE_DATA_POINTS_TO' | translate }}</strong>:<br>
-                        <code>{{ ctrl.domain.DkimPublicKey}}</code>
+                        <strong translate>Value / Data / Points to</strong>:<br>
+                        <code>{{ ctrl.domain.DkimPublicKey }}</code>
                     </p>
                 </div>
 
-                <p class="alert alert-info" translate="DKIM_INFO_3"></p>
+                <p class="alert alert-info" translate>Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM</p>
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button class="pm_button primary pull-right" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
-            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button class="pm_button primary pull-right" ng-click="ctrl.next()" translate>Next</button>
+            <button class="pm_button" ng-click="ctrl.close()" translate>Close</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

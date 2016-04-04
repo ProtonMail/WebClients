@@ -3,18 +3,18 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'REACTIVATE_KEY_PAIR' | translate }}</h4>
+                <h4 class="modal-title" translate>Reactivate key pair</h4>
             </div>
             <div class="modal-body pm_form">
-                <p>{{ 'ENTER_YOUR_LOGIN_PASSWORD' | translate }}:</p>
+                <p translate>Enter your login password:</p>
                 <input type="password" ng-model="ctrl.loginPassword" placeholder="Login Password" />
-                <p>{{ 'ENTER_THE_KEY_PASSWORD' | translate }}:</p>
+                <p translate>Enter the Key password:</p>
                 <input type="password" ng-model="ctrl.keyPassword" placeholder="Key Password" />
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="button" class="pm_button primary" ng-click="ctrl.submit()">{{ 'SUBMIT' | translate }}</button>
+            <button class="pm_button pull-left" ng-click="ctrl.cancel()" translate>Cancel</button>
+            <button type="button" class="pm_button primary" ng-click="ctrl.submit()" translate>Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

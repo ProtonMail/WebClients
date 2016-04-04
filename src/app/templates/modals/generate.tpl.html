@@ -11,13 +11,13 @@
                     <div class="col-1-2 text-center">
                         <label class="checkbox">
                             <input type="radio" ng-model="ctrl.size" value="2048" ng-disabled="ctrl.process === true" />
-                            <strong>{{ 'HIGH_SECURITY' | translate }}</strong> (2048-bit)
+                            <strong translate>High security</strong> (2048-bit)
                         </label>
                     </div>
                     <div class="col-1-2 text-center">
                         <label class="checkbox">
                             <input type="radio" ng-model="ctrl.size" value="4096" ng-disabled="ctrl.process === true" />
-                            <strong>{{ 'HIGHEST_SECURITY' | translate }}</strong> (4096-bit)
+                            <strong translate>Highest security</strong> (4096-bit)
                         </label>
                     </div>
                 </div>
@@ -25,19 +25,19 @@
                 <table class="pm_table">
                     <thead>
                         <tr>
-                            <th>{{ 'ADDRESS' | translate }}</th>
-                            <th style="width: 10rem" class="text-right">{{ 'STATUS' | translate }}</th>
+                            <th translate>Address</th>
+                            <th style="width: 10rem" class="text-right" translate>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="address in ctrl.addresses | orderBy: 'Send'">
                             <td>{{ address.Email }}</td>
                             <td class="text-right">
-                                <span ng-show="address.state === 0" class="pm_badge">{{ 'QUEUED' | translate }}</span>
-                                <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'GENERATING' | translate }}</span>
-                                <span ng-show="address.state === 2" class="pm_badge success">{{ 'DONE' | translate }}</span>
-                                <span ng-show="address.state === 3" class="pm_badge success">{{ 'SAVED' | translate }}</span>
-                                <span ng-show="address.state === 4" class="pm_badge error">{{ 'ERROR' | translate }}</span>
+                                <span ng-show="address.state === 0" class="pm_badge" translate>Queued</span>
+                                <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'Generating' | translate }}</span>
+                                <span ng-show="address.state === 2" class="pm_badge success" translate>Done</span>
+                                <span ng-show="address.state === 3" class="pm_badge success" translate>SAVED</span>
+                                <span ng-show="address.state === 4" class="pm_badge error" translate>Error</span>
                             </td>
                         </tr>
                     </tbody>
@@ -45,14 +45,14 @@
             </div>
             <div class="modal-body" ng-show="ctrl.process === true">
                 <p>&nbsp;</p>
-                <p>{{ 'GENERATING_KEYS_MESSAGE' | translate }}</p>
+                <p translate>We are now generating encryption keys for your account, this may take several minutes and temporarily freeze your browser.</p>
                 <p>&nbsp;</p>
                 <loader-tag></loader-tag>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process === true">{{ 'GENERATE_KEYS' | translate }}</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate>Cancel</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process === true" translate>Generate keys</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

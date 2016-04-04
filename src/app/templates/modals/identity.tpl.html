@@ -3,31 +3,31 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'IDENTITY' | translate }}</h4>
+                <h4 class="modal-title" translate>Identity</h4>
             </div>
             <div class="modal-body pm_form">
                 <p class="alert alert-info"><strong>{{ ctrl.address.Email }}</strong></p>
                 <div class="pm_grid">
                     <div class="col-1-2">
                         <label>
-                            <input type="radio" ng-model="ctrl.address.custom" ng-value="false"> <strong>Default</strong>
+                            <input type="radio" ng-model="ctrl.address.custom" ng-value="false"> <strong translate>Default</strong>
                         </label>
                     </div>
                     <div class="col-1-2">
                         <label>
-                            <input type="radio" ng-model="ctrl.address.custom" ng-value="true"> <strong>Custom</strong>
+                            <input type="radio" ng-model="ctrl.address.custom" ng-value="true"> <strong translate>Custom</strong>
                         </label>
                     </div>
                 </div>
                 <div ng-show="ctrl.address.custom === true">
                     <section>
-                        <label>{{ 'DISPLAY_NAME' | translate }}</label>
+                        <label translate>Display name</label>
                         <div class="margin">
                             <input type="text" ng-model="ctrl.address.DisplayName" />
                         </div>
                     </section>
                     <section>
-                        <label>{{ 'SIGNATURE' | translate }}</label>
+                        <label translate>Signature</label>
                         <div class="margin">
                             <squire name="signature" ng-model="ctrl.address.Signature"></squire>
                         </div>
@@ -35,19 +35,19 @@
                 </div>
                 <div ng-show="ctrl.address.custom === false">
                     <section>
-                        <label>{{ 'DISPLAY_NAME' | translate }}</label>
+                        <label translate>Display name</label>
                         <div class="alert alert-info" ng-bind="ctrl.defaultDisplayName"></div>
                     </section>
                     <section>
-                        <label>{{ 'SIGNATURE' | translate }}</label>
+                        <label translate>Signature</label>
                         <div class="alert alert-info" ng-bind-html="ctrl.defaultSignature" style="overflow: auto;"></div>
                     </section>
                 </div>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()">{{ 'CONFIRM' | translate }}</button>
+            <button class="pm_button pull-left" ng-click="ctrl.cancel()" translate>Cancel</button>
+            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()" translate>Confirm</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

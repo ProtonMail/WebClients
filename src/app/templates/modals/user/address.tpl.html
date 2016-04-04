@@ -1,11 +1,11 @@
 <div class="modal-content pm_form">
     <div class="modal-header">
-        <h4 class="modal-title">{{ 'ADD_USER' | translate }}</h4>
+        <h4 class="modal-title" translate>Add user</h4>
     </div>
     <div class="modal-body">
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>{{ 'SELECT_DOMAIN' | translate }}</label>
+                <label translate>Select domain</label>
             </div>
             <div class="col-2-3">
                 <span class="pm_select inline">
@@ -18,25 +18,25 @@
 
         <form class="pm_grid" method="post" ng-submit="ctrl.add()" novalidate>
             <div class="col-1-3">
-                <label>{{ 'ADD_ADDRESS'}}</label>
+                <label translate>Add address</label>
             </div>
             <div class="col-1-3">
                 <input type="text" ng-model="ctrl.address" placeholder="Address" />
             </div>
             <div class="col-1-3">
                 <strong>@{{ ctrl.domain.DomainName }}</strong>
-                <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
+                <button type="submit" class="pm_button primary" translate>Add</button>
             </div>
         </form>
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>{{ 'ADDRESSES_ADDED' | translate }}</label>
+                <label translate>Addresses added</label>
             </div>
             <div class="col-2-3">
                 <table class="pm_table pm_form bordered">
                     <thead>
                         <tr>
-                            <th>{{ 'ADDRESSES' | translate }}</th>
+                            <th translate>Addresses</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,6 +52,6 @@
     </div>
 </div>
 <div class="modal-footer text-right">
-    <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-    <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+    <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
+    <button type="submit" class="pm_button primary" translate>Submit</button>
 </div>

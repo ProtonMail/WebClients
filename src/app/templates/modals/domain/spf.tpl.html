@@ -4,20 +4,20 @@
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
-                <span ng-show="ctrl.domain.SpfState === 0" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
-                <span ng-show="ctrl.domain.SpfState === 1 || ctrl.domain.SpfState === 2" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
-                <span ng-show="ctrl.domain.SpfState === 3" class="pull-right pm_badge success">{{ 'GOOD!' | translate }}</span>
-                <h4 class="modal-title">5. {{ 'SPF' | translate }} <em>({{ 'RECOMMENDED' | translate }})</em></h4>
+                <span ng-show="ctrl.domain.SpfState === 0" class="pull-right pm_badge error" translate>Not set</span>
+                <span ng-show="ctrl.domain.SpfState === 1 || ctrl.domain.SpfState === 2" class="pull-right pm_badge error" translate>Not set properly</span>
+                <span ng-show="ctrl.domain.SpfState === 3" class="pull-right pm_badge success" translate>Good</span>
+                <h4 class="modal-title">5. SPF <em translate>Recommended</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <div translate="SPF_INFO_1"></div>
-                <div translate="SPF_INFO_2"></div>
-                <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/'>{{ 'LEARN_MORE' | translate }}</a></p>
+                <p translate>SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.</p>
+                <p translate>Please add the following TXT record. Note, DNS records can take several hours to update.</p>
+                <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/' translate>Learn more</a></p>
                 <table class="pm_table record desktopOnly">
                     <tr>
-                        <th style="width:3rem">{{ 'TYPE' | translate }}</th>
-                        <th style="width:6.5rem">{{ 'HOST_NAME' | translate }}</th>
-                        <th>{{ 'VALUE_DATA_POINTS_TO' | translate }}</th>
+                        <th style="width:3rem" translate>Type</th>
+                        <th style="width:6.5rem" translate>Host name</th>
+                        <th translate>Value / Data / Points to</th>
                     </tr>
                     <tr>
                         <td><code>TXT</code></td>
@@ -28,24 +28,24 @@
 
                 <div class="mobileOnly">
                     <p>
-                        <strong>{{ 'TYPE' | translate }}</strong>:<br>
+                        <strong translate>Type</strong>:<br>
                         <code>TXT</code>
                     </p>
                     <p>
-                        <strong>{{ 'HOST_NAME' | translate }}</strong>:<br>
+                        <strong translate>Host name</strong>:<br>
                         <code>@</code>
                     </p>
                     <p>
-                        <strong>{{ 'VALUE_DATA_POINTS_TO' | translate }}</strong>:<br>
+                        <strong translate>Value / Data / Points to</strong>:<br>
                         <code>v=spf1 include:_spf.protonmail.ch mx ~all</code>
                     </p>
                 </div>
-                <p class="alert alert-info">{{ 'SPF_INFO_3' | translate }}</p>
+                <p class="alert alert-info" translate>If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. Do not create multiple SPF records.</p>
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button class="pm_button primary pull-right" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
-            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button class="pm_button primary pull-right" ng-click="ctrl.next()" translate>Next</button>
+            <button class="pm_button" ng-click="ctrl.close()" translate>Close</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

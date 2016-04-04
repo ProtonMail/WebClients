@@ -3,16 +3,16 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content pm_form">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'CUSTOMIZE_INVOICES' | translate }}</h4>
+                <h4 class="modal-title" translate>Customize invoices</h4>
             </div>
             <div class="modal-body">
-                <label for="customText">{{ 'CUSTOMIZE_INVOICES' | translate }}</label>
+                <label for="customText" translate>Customize invoices</label>
                 <textarea id="customText" ng-model="ctrl.text"></textarea>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()">{{ 'SUBMIT' | translate }}</button>
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()" translate>Submit</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

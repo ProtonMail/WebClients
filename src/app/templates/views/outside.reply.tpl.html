@@ -34,9 +34,9 @@
     <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
 
     <footer class="text-right">
-        <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()">{{ 'CANCEL' | translate }}</button>
+        <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()" translate>Cancel</button>
         <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'ATTACHMENTS' | translate }}"><i class="fa fa-paperclip"></i></button>
-        <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()">{{ 'SEND' | translate }}</button>
+        <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()" translate>Send</button>
     </footer>
 
     <input type="file" id="inputFile" multiple />

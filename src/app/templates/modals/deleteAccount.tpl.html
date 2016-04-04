@@ -3,27 +3,27 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content pm_form">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'DELETE_ACCOUNT' | translate }}</h4>
+                <h4 class="modal-title" translate>Delete account</h4>
             </div>
             <div class="modal-body">
-                <p class="alert alert-warning">
-                    <strong>WARNING: DELETION IS PERMANENT</strong><br />
-                    If you wish to delete in order to combine this account with another one, do NOT delete your account. You need to instead follow the procedure <a href="https://protonmail.com/support/knowledge-base/combine-accounts/" target="_blank">here</a>.
-                </p>
-                <div class="margin">
-                    <label>We are sorry to see you go!</label>
-                    <label>Please tell us why you are leaving:</label>
-                    <textarea ng-model="ctrl.feedback" placeholder="{{ 'FEEDBACK' | translate }}"></textarea>
+                <div class="alert alert-warning">
+                    <strong translate>WARNING: DELETION IS PERMANENT</strong><br />
+                    <p translate>If you wish to delete in order to combine this account with another one, do NOT delete your account. You need to instead follow the procedure <a href="https://protonmail.com/support/knowledge-base/combine-accounts/" target="_blank">here</a>.</p>
                 </div>
                 <div class="margin">
-                    <label>Enter your login password to confirm your identity:</label>
-                    <input type="password" ng-model="ctrl.password" placeholder="{{ 'LOGIN_PASSWORD' | translate }}"/>
+                    <label translate>We are sorry to see you go!</label>
+                    <label translate>Please tell us why you are leaving:</label>
+                    <textarea ng-model="ctrl.feedback" placeholder="{{ 'Feedback' | translate }}"></textarea>
+                </div>
+                <div class="margin">
+                    <label translate>Enter your login password to confirm your identity:</label>
+                    <input type="password" ng-model="ctrl.password" placeholder="{{ 'Login password' | translate }}"/>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button error pull-right" ng-click="ctrl.submit()">{{ 'DELETE' | translate }}</button>
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
+            <button type="button" class="pm_button error pull-right" ng-click="ctrl.submit()" translate>Delete</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

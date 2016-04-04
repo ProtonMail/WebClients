@@ -3,15 +3,15 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header" ng-show="ctrl.title">
-                <h4 class="modal-title">{{ctrl.title}}</h4>
+                <h4 class="modal-title">{{ ctrl.title }}</h4>
             </div>
             <div class="modal-body">
                 <div class="alert no-margin-bottom" ng-bind-html="ctrl.message"></div>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()">{{ 'CONFIRM' | translate }}</button>
+            <button class="pm_button pull-left" ng-click="ctrl.cancel()" translate>Cancel</button>
+            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()" translate>Confirm</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

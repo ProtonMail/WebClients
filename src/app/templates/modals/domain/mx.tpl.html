@@ -4,21 +4,21 @@
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
-                <span ng-show="ctrl.domain.MxState === 0" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
-                <span ng-show="ctrl.domain.MxState === 1 || ctrl.domain.MxState === 2" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
-                <span ng-show="ctrl.domain.MxState === 3" class="pull-right pm_badge success">{{ 'GOOD!' | translate }}</span>
-                <h4 class="modal-title">4. {{ 'MX_RECORD' | translate }} <em>({{ 'REQUIRED' | translate }})</em></h4>
+                <span ng-show="ctrl.domain.MxState === 0" class="pull-right pm_badge error" translate>Not set</span>
+                <span ng-show="ctrl.domain.MxState === 1 || ctrl.domain.MxState === 2" class="pull-right pm_badge error" translate>Not set properly</span>
+                <span ng-show="ctrl.domain.MxState === 3" class="pull-right pm_badge success" translate>Good</span>
+                <h4 class="modal-title">4. MX Record <em translate>Required</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <div translate="MX_INFO_1"></div>
-                <div translate="MX_INFO_2"></div>
-                <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/dns-records/'>{{ 'LEARN_MORE' | translate }}</a></p>
+                <p translate>Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to your DNS. This can typically be done in the control panel of your domain name registrar.</p>
+                <p translate>Please add the following MX record. Note, DNS records can take several hours to update.</p>
+                <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/dns-records/' translate>Learn more</a></p>
                 <table class="pm_table record desktopOnly">
                     <tr>
-                        <th style="width:3rem">{{ 'TYPE' | translate }}</th>
-                        <th style="width:6.5rem">{{ 'HOST_NAME' | translate }}</th>
-                        <th>{{ 'VALUE_DATA_POINTS_TO' | translate }}</th>
-                        <th style="width:4rem">{{ 'PRIORITY' | translate }}</th>
+                        <th style="width:3rem" translate>Type</th>
+                        <th style="width:6.5rem" translate>Host name</th>
+                        <th translate>Value / Data / Points to</th>
+                        <th style="width:4rem" translate>Priority</th>
                     </tr>
                     <tr>
                         <td><code>MX</code></td>
@@ -30,29 +30,30 @@
 
                 <div class="mobileOnly">
                     <p>
-                        <strong>{{ 'TYPE' | translate }}</strong>:<br>
+                        <strong translate>Type</strong>:<br>
                         <code>MX</code>
                     </p>
                     <p>
-                        <strong>{{ 'HOST_NAME' | translate }}</strong>:<br>
+                        <strong translate>Host name</strong>:<br>
                         <code>@</code>
                     </p>
                     <p>
-                        <strong>{{ 'VALUE_DATA_POINTS_TO' | translate }}</strong>:<br>
+                        <strong translate>Value / Data / Points to</strong>:<br>
                         <code>mail.protonmail.ch</code>
                     </p>
                     <p>
-                        <strong>{{ 'PRIORITY' | translate }}</strong>:<br>
+                        <strong translate>Priority</strong>:<br>
                         <code>10</code>
                     </p>
                 </div>
-                {{ 'MX_INFO_3' | translate }}
+                <p class="alert alert-info" translate>Delete any other MX records or make sure ProtonMail's Priority is the lowest number.</p>
+                <p class="alert alert-info" translate>If this domain is currently actively receiving emails, create all used email addresses in Step 3 before changing MX record to ensure a smooth transition.</p>
             </div>
 
         </div>
         <div class="modal-footer clearfix">
-            <button class="pm_button primary pull-right" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
-            <button class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button class="pm_button primary pull-right" ng-click="ctrl.next()" translate>Next</button>
+            <button class="pm_button" ng-click="ctrl.close()" translate>Close</button>
             <div class="clear"></div>
         </div>
     </div>

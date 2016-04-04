@@ -8,7 +8,7 @@
 
             <section class="setting pm_form">
                 <legend>{{ 'COMPOSER' | translate }}</legend>
-                <p class="alert alert-info">{{ 'COMPOSER_INFO' | translate }} <a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p class="alert alert-info">{{ 'COMPOSER_INFO' | translate }} <a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank" translate>Learn more</a></p>
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
@@ -28,7 +28,7 @@
             </section>
             <section class="setting pm_form pull-right">
                 <legend>{{ 'LAYOUT' | translate }}</legend>
-                <p class="alert alert-info">{{ 'LAYOUT_INFO' | translate }} <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank">{{ 'LEARN_MORE' | translate }}</a></p>
+                <p class="alert alert-info">{{ 'LAYOUT_INFO' | translate }} <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank" translate>Learn more</a></p>
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />
@@ -92,7 +92,7 @@
                     </div>
                     <div class="text-right">
                         <button type="button" class="pm_button" ng-click="clearTheme()">{{ 'CLEAR' | translate }}</button>
-                        <button type="submit" class="pm_button primary">{{ 'SAVE' | translate }}</button>
+                        <button type="submit" class="pm_button primary" translate>Save</button>
                     </div>
                 </form>
 

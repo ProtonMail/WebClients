@@ -27,15 +27,15 @@
                             <input value="@{{ ctrl.domain.DomainName }}" type="text" readonly class="noBorder">
                         </div>
                     </div>
-                    <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
+                    <button type="submit" class="pm_button primary" translate>Add</button>
                 </form>
 
                 <div ng-show="ctrl.domain.Addresses.length > 0">
-                    <p><strong>{{ 'ADDED_ADDRESSES' | translate }}</strong></p>
+                    <p><strong translate>Added addresses</strong></p>
                     <table class="pm_table pm_form bordered">
                         <thead>
                             <tr>
-                                <th>{{ 'ADDRESS' | translate }}</th>
+                                <th translate>Address</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,8 +49,8 @@
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.next()" ng-show="ctrl.domain.State > 0">{{ 'NEXT' | translate }}</button>
-            <button type="button" class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.next()" ng-show="ctrl.domain.State > 0" translate>Next</button>
+            <button type="button" class="pm_button" ng-click="ctrl.close()"  translate>Close</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

@@ -23,7 +23,7 @@
                                     </td>
                                     <td class="text-right actions">
                                         <a ui-sref="secured.domains" class="pm_button link" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
-                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()">{{ 'UPGRADE' | translate }}</a>
+                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate>Upgrade</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -34,7 +34,7 @@
                                     </td>
                                     <td class="text-right actions">
                                         <a ui-sref="secured.addresses" class="pm_button link" ng-hide="subscription.Name === 'free'">{{ 'MANAGE' | translate }}</a>
-                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()">{{ 'UPGRADE' | translate }}</a>
+                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate>Upgrade</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -122,7 +122,7 @@
             <section class="setting pm_form full" id="plans">
                 <legend>{{ 'PLANS_AND_PRICES ' | translate }}</legend>
                 <header>
-                    <a href="https://protonmail.com/support/knowledge-base/paid-plans/" target="_blank" class="pm_button link pull-right">{{ 'LEARN_MORE' | translate }}</a>
+                    <a href="https://protonmail.com/support/knowledge-base/paid-plans/" target="_blank" class="pm_button link pull-right" translate>Learn more</a>
                     <div class="group">
                         <label class="pull-left">{{ 'CURRENCY' | translate }}</label>
                         <div class="pm_buttons pull-left">
@@ -185,7 +185,7 @@
                                             </span>
                                             <span ng-show="plan.editable === false && plan.MaxAddresses > 0">{{ plan.MaxAddresses }}</span>
                                             <span ng-show="plan.MaxAddresses > 1">{{ 'ADDRESSES' | translate }}</span>
-                                            <span ng-show="plan.MaxAddresses === 1">{{ 'ADDRESS' | translate }}</span>
+                                            <span ng-show="plan.MaxAddresses === 1" translate>Address</span>
                                             <strong class="cost pull-right" ng-show="selects.plus.address.index * addons[plan.Cycle].address.Amount && plan.editable === true">+{{ selects.plus.address.index * addons[plan.Cycle].address.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                             <span class="clear"></span>
                                         </li>

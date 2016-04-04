@@ -4,18 +4,18 @@
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
-                <span ng-show="ctrl.domain.DmarcState === 0 || ctrl.domain.DmarcState === 1 || ctrl.domain.DmarcState === 2" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
-                <span ng-show="ctrl.domain.DmarcState === 3" class="pull-right pm_badge success">{{ 'SET!' | translate }}</span>
-                <h4 class="modal-title">7. DMARC <em>({{ 'OPTIONAL_ADVANCED' | translate }})</em></h4>
+                <span ng-show="ctrl.domain.DmarcState === 0 || ctrl.domain.DmarcState === 1 || ctrl.domain.DmarcState === 2" class="pull-right pm_badge error" translate>Not set</span>
+                <span ng-show="ctrl.domain.DmarcState === 3" class="pull-right pm_badge success" translate>Set</span>
+                <h4 class="modal-title">7. DMARC <em translate>Optional, advanced</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p>If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. Feel free to ignore and skip DMARC unless you really want strict policies such as <strong>p=quarantine</strong> or <strong>p=reject</strong>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
-                <p>Here is a basic DMARC record that does nothing except email you reports.</p>
+                <p translate>If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. Feel free to ignore and skip DMARC unless you really want strict policies such as <strong>p=quarantine</strong> or <strong>p=reject</strong>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/" translate>Learn more</a></p>
+                <p translate>Here is a basic DMARC record that does nothing except email you reports.</p>
                 <table class="pm_table record desktopOnly">
                     <tr>
-                        <th style="width:3rem">{{ 'TYPE' | translate }}</th>
-                        <th style="width:6.5rem">{{ 'HOST_NAME' | translate }}</th>
-                        <th>{{ 'VALUE_DATA_POINTS_TO' | translate }}</th>
+                        <th style="width:3rem" translate>Type</th>
+                        <th style="width:6.5rem" translate>Host name</th>
+                        <th translate>Value / Data / Points to</th>
                     </tr>
                     <tr>
                         <td><code>TXT</code></td>
@@ -26,15 +26,15 @@
 
                 <div class="mobileOnly">
                     <p>
-                        <strong>{{ 'TYPE' | translate }}</strong>:<br>
+                        <strong translate>Type</strong>:<br>
                         <code>TXT</code>
                     </p>
                     <p>
-                        <strong>{{ 'HOST_NAME' | translate }}</strong>:<br>
+                        <strong translate>Host name</strong>:<br>
                         <code>_dmarc</code>
                     </p>
                     <p>
-                        <strong>{{ 'VALUE_DATA_POINTS_TO' | translate }}</strong>:<br>
+                        <strong translate>Value / Data / Points to</strong>:<br>
                         <code>v=DMARC1; p=none; rua=mailto:address@yourdomain.com</code>
                     </p>
                 </div>
@@ -43,8 +43,8 @@
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.verify()">{{ 'FINISH' | translate }}</button>
-            <button type="button" class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.verify()" translate>Finish</button>
+            <button type="button" class="pm_button" ng-click="ctrl.close()" translate>Close</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

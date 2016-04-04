@@ -29,7 +29,7 @@
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
                             <a ui-sref="secured.addresses" class="pm_button link pull-right">{{ 'OTHER_IDENTITIES' | translate }}</a>
-                            <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
+                            <button class="pm_button primary" type="submit" translate>Save</button>
                         </div>
                     </div>
                 </form>
@@ -54,7 +54,7 @@
                             <input class="margin" type="email" id="notificationEmail" name="notificationEmail" placeholder="Notification/Recovery {{ 'EMAIL' | translate }}" ng-model="notificationEmail" />
                             <p class="help-block"><small><i class="fa fa-info-circle"></i> {{ 'RECOVERY_EMAIL_INFO' | translate }}</small></p>
 
-                            <button class="pm_button primary" type="submit">{{ 'SAVE' | translate }}</button>
+                            <button class="pm_button primary" type="submit" translate>Save</button>
                         </div>
                     </div>
                     <div class="clearfix">&nbsp;</div>
@@ -130,7 +130,7 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <button class="pm_button primary" ng-disabled="loginForm.$valid === false || networkActivity.loading()" type="submit">{{ 'SAVE' | translate }}</button>
+                            <button class="pm_button primary" ng-disabled="loginForm.$valid === false || networkActivity.loading()" type="submit" translate>Save</button>
                         </div>
                     </div>
                 </form>
@@ -186,7 +186,7 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <button class="pm_button primary" ng-disabled="mailboxForm.$valid === false || networkActivity.loading()" type="submit">{{ 'SAVE' | translate }}</button>
+                            <button class="pm_button primary" ng-disabled="mailboxForm.$valid === false || networkActivity.loading()" type="submit" translate>Save</button>
                         </div>
                     </div>
                     <div class="clearfix">

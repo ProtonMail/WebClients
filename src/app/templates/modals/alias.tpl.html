@@ -3,25 +3,25 @@
         <button type="button" ng-click="ctrl.cancel()" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">{{ 'ADD_NEW_PROTONMAIL_ADDRESS' | translate }}</h3>
+                <h3 class="modal-title" translate>Add new ProtonMail address</h3>
             </div>
             <div class="modal-body pm_form">
-                <label>{{ 'CHOOSE_ADDRESS' | translate }}</label>
+                <label translate>Choose address</label>
                 <div class="clearfix">
-                    <input type="text" class="inline pull-left" ng-model="ctrl.local" autofocus placeholder="{{ 'ADDRESS' | translate }}" required />
+                    <input type="text" class="inline pull-left" ng-model="ctrl.local" autofocus placeholder="{{ 'Address' | translate }}" required />
                     <em class="inline pull-left">&nbsp;&nbsp;@&nbsp;&nbsp;</em>
                     <span class="pm_select inline bigger">
                         <select class="selectDomain" ng-model="ctrl.domain" ng-options="domain.label for domain in ctrl.domains"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>
-                <p class="help"><small><i class="fa fa-info-circle"></i> {{ 'ALIAS_MODAL_MESSAGE_1' | translate }}</small></p>
-                <p class="alert alert-info">{{ 'ALIAS_MODAL_MESSAGE_2' | translate }}</p>
+                <p class="help"><small translate>This will be a new address you can send and receive emails with.</small></p>
+                <p class="alert alert-info" translate>ProtonMail address can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. <a href='https://protonmail.com/support/knowledge-base/aliases-within-protonmail/' target='_blank'>Learn more about addresses here.</a></p>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()">{{ 'SUBMIT' | translate }}</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate>Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
