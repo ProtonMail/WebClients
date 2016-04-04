@@ -9,6 +9,7 @@ angular.module("proton.controllers.Secured", [])
     $stateParams,
     $timeout,
     gettext,
+    gettextCatalog,
     $window,
     authentication,
     cache,
@@ -39,7 +40,8 @@ angular.module("proton.controllers.Secured", [])
     ];
 
     // Set language used for the application
-    gettext.use(authentication.user.Language);
+    // gettext.use(authentication.user.Language);
+    gettextCatalog.setCurrentLanguage(authentication.user.Language);
 
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
@@ -60,7 +62,8 @@ angular.module("proton.controllers.Secured", [])
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 
     $scope.$on('updateUser', function(event) {
-        gettext.use(authentication.user.Language);
+        // gettext.use(authentication.user.Language);
+        gettextCatalog.setCurrentLanguage(authentication.user.Language);
     });
 
     $scope.$on('organizationChange', function(event, organization) {
