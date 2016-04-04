@@ -96,11 +96,13 @@
                     </div>
                 </form>
 
-                <legend translate>Additional Themes (Experimental)</legend>
-                <p class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> {{ 'Loading themes will override your current theme!' | translate }}</p>
+                <legend translate>Additional themes (experimental)</legend>
+                <p class="alert alert-warning">
+                    <i class="fa fa-exclamation-triangle"></i> {{ 'Loading themes will override your current theme!' | translate }}
+                </p>
                 <p>
-                    <button class="pm_button" ng-click="loadThemeClassic()">Load Classic Theme</button>
-                    <button ng-if="false" class="pm_button" ng-click="enableThemeEdison()">Load Edison Theme</button>
+                    <button class="pm_button" ng-click="loadThemeClassic()" translate>Load classic theme</button>
+                    <button ng-if="false" class="pm_button" ng-click="enableThemeEdison()" translate>Load edison theme</button>
                 </p>
 
             </section>

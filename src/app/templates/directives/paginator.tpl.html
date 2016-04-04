@@ -8,7 +8,9 @@
             <i class="fa fa-angle-down"></i>
         </a>
         <span class="pm_dropdown right">
-            <a ng-repeat="p in pages" ng-click="select(p)" translate>Page {{ page }}</a>
+            <a ng-repeat="p in pages" ng-click="select(p)">
+                <em translate>Page</em> {{ page }}
+            </a>
         </span>
     </span>
     <a class="divider" pt-tooltip="{{ 'Next' | translate }}" ng-click="next()" ng-class="{'disabled': disableN}">

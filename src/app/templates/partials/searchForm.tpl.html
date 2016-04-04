@@ -1,9 +1,9 @@
 <form method="post" class="searchForm" ng-submit="searchMessages()" ng-class="{ 'adv': advancedSearch }" adv-search>
     <fieldset>
-        <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip="{{ 'Advanced Search' | translate }}" pt-placement="bottom">
+        <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip="{{ 'Advanced search' | translate }}" pt-placement="bottom">
             <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
         </button>
-        <input type="text" placeholder="{{ 'Search Messages' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
+        <input type="text" placeholder="{{ 'Search messages' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
         <button type="submit" ng-show="advancedSearch !== true">
             <i class="fa fa-search"></i>
         </button>

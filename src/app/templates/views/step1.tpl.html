@@ -19,7 +19,7 @@
             <div class="usernameWrap">
                 <p class="help" translate>This will be your email address. Select the drop down to choose your domain.</p>
                 <strong ng-show="readOnlyUsername" ng-bind="account.Username"></strong>
-                <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder="{{ 'Choose Username' | translate }}" required
+                <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder="{{ 'Choose username' | translate }}" required
                 id="Username" class="dead" ng-change="checkAvailability(true)" ng-model-options="{ debounce: 1000 }"
                 ng-class="{
                     'success':goodUsername,
@@ -43,17 +43,17 @@
                 {{ 'Login Password' | translate }}
             </label>
             <p class="help" translate>This is used to log you into our system.</p>
-            <input id="password" name="password" ng-model="account.loginPassword" type="password" class="form-control margin" placeholder="{{ 'Choose a Login Password' | translate }}" maxlength="{{ maxPW }}" required />
+            <input id="password" name="password" ng-model="account.loginPassword" type="password" class="form-control margin" placeholder="{{ 'Choose a login Password' | translate }}" maxlength="{{ maxPW }}" required />
             <div ng-show="step1.$submitted || step1.password.$touched">
                 <p ng-show="step1.$submitted && step1.password.$error.required" class="alert alert-danger" translate>Login password is required.</p>
             </div>
-            <input id="passwordc" name="passwordc" ng-model="account.loginPasswordConfirm" type="password" class="form-control" placeholder="{{ 'Confirm Login Password' | translate }}" required validator="account.loginPassword !== account.loginPasswordConfirm" />
+            <input id="passwordc" name="passwordc" ng-model="account.loginPasswordConfirm" type="password" class="form-control" placeholder="{{ 'Confirm login Password' | translate }}" required validator="account.loginPassword !== account.loginPasswordConfirm" />
             <div ng-show="step1.$submitted || step1.passwordc.$touched">
-                <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="alert alert-danger" translate>Passwords Don't Match.</p>
+                <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="alert alert-danger" translate>Passwords don't match.</p>
             </div>
             <label for="password">
                 <em class="num">3</em>
-                {{ 'Mailbox Password' | translate }}
+                {{ 'Mailbox password' | translate }}
             </label>
             <p class="help" translate>This is used to encrypt and decrypt your messages. This is private and only you know it.</p>
             <input id="MBpassword" name="MBpassword" ng-model="account.mailboxPassword" type="password" class="form-control margin" placeholder="{{ 'Choose a Mailbox Password' | translate }}" required />
@@ -97,7 +97,7 @@
         </div>
         <div ng-show="showCaptcha">
             <label>
-                <input type="radio" ng-model="verificator" value="recaptcha" /> CAPTCHA
+                <input type="radio" ng-model="verificator" value="recaptcha" /> reCaptcha
             </label>
         </div>
         <div ng-show="showSms">
@@ -123,11 +123,11 @@
             <div class="pm_grid" ng-show="signup.verificationSent === true">
                 <p class="alert alert-success" translate><strong>Verification Code Sent</strong><br />Please check your email and enter the code below:</p>
                 <div class="margin" ng-show="signup.verificationSent === true">
-                    <input class="bigger" type="text" ng-model="account.codeVerification" placeholder="{{ 'Code Verification' | translate }}" />
+                    <input class="bigger" type="text" ng-model="account.codeVerification" placeholder="{{ 'Code verification' | translate }}" />
                 </div>
                 <div class="col-1-2">
                     <button type="button" class="pm_button link" ng-click="signup.verificationSent = false">
-                        {{ 'Send New Code' | translate }}
+                        {{ 'Send new code' | translate }}
                     </button>
                 </div>
             </div>
@@ -136,7 +136,7 @@
 
         <div ng-if="verificator === 'sms'" id="smsVerification" class="pm_form">
             <p>&nbsp;</p>
-            <h3 translate>SMS Verification</h3>
+            <h3 translate>SMS verification</h3>
             <div class="pm_grid" ng-show="signup.smsVerificationSent !== true">
                 <div class="col-2-3">
                     <input type="text" phone class="phoneCountryCode" ng-model="account.smsVerification" />
@@ -147,28 +147,28 @@
             </div>
             <div class="pm_grid" ng-show="signup.smsVerificationSent === true">
                 <p class="alert alert-success">
-                    <strong>Verification Code Sent</strong><br />
+                    <strong>Verification code sent</strong><br />
                     Please check <strong>{{ account.smsVerification }}</strong> and enter the code below:
                 </p>
                 <div class="col-1-2" ng-show="signup.smsVerificationSent === true">
-                    <input type="text" ng-model="account.smsCodeVerification" placeholder="{{ 'Code Verification' | translate }}" />
+                    <input type="text" ng-model="account.smsCodeVerification" placeholder="{{ 'Code verification' | translate }}" />
                 </div>
                 <div class="col-1-2">
-                    <button type="button" class="pm_button link" ng-click="signup.smsVerificationSent = false" translate>Send New Code</button>
+                    <button type="button" class="pm_button link" ng-click="signup.smsVerificationSent = false" translate>Send new code</button>
                 </div>
             </div>
         </div>
 
         <div ng-if="verificator === 'recaptcha'" id="recaptchaFrame">
             <p>&nbsp;</p>
-            <h3 translate>reCaptcha Verification</h3>
+            <h3 translate>reCaptcha verification</h3>
             <span class="loading" translate>Loading...</span>
             <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
         </div>
 
         <div class="text-center">
             <button type="button" class="pm_button primary large" ng-click="createAccount()" ng-disabled="account.codeVerification === '' && account.captcha_token === false && account.smsCodeVerification === ''">
-                {{ 'Complete Setup' | translate }}
+                {{ 'Complete setup' | translate }}
             </button>
         </div>
     </div>
@@ -177,7 +177,7 @@
 <div class="pm_panel wide" ng-show="genNewKeys">
     <div class="text-center header">
         <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" />
-        <h2 class="text-center" ng-show="!signupError" translate>Generating Keys...</h2>
+        <h2 class="text-center" ng-show="!signupError" translate>Generating keys...</h2>
     </div>
     <p class="alert" translate>This can take a few seconds or a few minutes depending on your device.</p>
 </div>
@@ -185,31 +185,31 @@
 <div class="pm_panel wide" ng-show="creating" id="signUpProcess">
     <div class="text-center header">
         <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" ng-show="creating && !signupError" />
-        <h2 class="text-center" ng-show="!signupError" translate>Creating Account</h2>
-        <h2 class="text-center" ng-show="signupError" translate>Sign Up Failed</h2>
+        <h2 class="text-center" ng-show="!signupError" translate>Creating account</h2>
+        <h2 class="text-center" ng-show="signupError" translate>Sign up failed</h2>
     </div>
     <p class="alert alert-danger" ng-show="signupError" translate>An error occured while trying to create your account. To see common problems and solutions <a target='_blank' href='https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/'>click here</a>.</p>
     <div class="wrapper text-left">
         <ol id="creationList">
             <li class="done">
                 <i class="show fa fa-check"></i>
-                {{ 'Generating Keys' | translate }}
+                {{ 'Generating keys' | translate }}
             </li>
             <li ng-class="{ 'done': createUser }">
                 <i ng-class="{ 'show': createUser }" class="fa fa-check"></i>
-                {{ 'Creating New User' | translate }}
+                {{ 'Creating new user' | translate }}
             </li>
             <li ng-class="{ 'done': logUserIn }">
                 <i ng-class="{ 'show': logUserIn }" class="fa fa-check"></i>
-                {{ 'Verifying New Account' | translate }}
+                {{ 'Verifying new account' | translate }}
             </li>
             <li ng-class="{ 'done': decryptAccessToken }">
                 <i ng-class="{ 'show': decryptAccessToken }" class="fa fa-check"></i>
-                {{ 'Verifying Encryption Keys' | translate }}
+                {{ 'Verifying encryption keys' | translate }}
             </li>
             <li ng-class="{ 'done': mailboxLogin }">
                 <i ng-class="{ 'show': mailboxLogin }" class="fa fa-check"></i>
-                {{ 'Loading New Account' | translate }}
+                {{ 'Loading new account' | translate }}
             </li>
             <li ng-class="{ 'done': getUserInfo }">
                 <i ng-class="{ 'show': getUserInfo }" class="fa fa-check"></i>
@@ -223,5 +223,5 @@
     </div>
 </div>
 <div id="pm_footer" class="static">
-    <p translate="COPYRIGHT"></p>
+    <p translate>&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland.</p>
 </div>

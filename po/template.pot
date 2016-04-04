@@ -71,6 +71,10 @@ msgstr ""
 msgid "Add address"
 msgstr ""
 
+#: src/app/templates/modals/payment/payment.tpl.html:146
+msgid "Add coupon"
+msgstr ""
+
 #: src/app/templates/views/domains.tpl.html:18
 msgid "Add custom domain"
 msgstr ""
@@ -95,10 +99,6 @@ msgstr ""
 #: src/app/templates/views/members.tpl.html:64
 #: src/app/templates/views/members.tpl.html:65
 msgid "Add user"
-msgstr ""
-
-#: src/app/templates/modals/payment/payment.tpl.html:146
-msgid "ADD_COUPON"
 msgstr ""
 
 #: src/app/controllers/settings/payments.js:167
@@ -195,7 +195,7 @@ msgid "Advanced"
 msgstr ""
 
 #: src/app/templates/partials/searchForm.tpl.html:3
-msgid "Advanced Search"
+msgid "Advanced search"
 msgstr ""
 
 #: src/app/templates/directives/squire.tpl.html:37
@@ -223,6 +223,10 @@ msgstr ""
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:6
 msgid "ALL OF YOUR DATA WILL BE LOST FOREVER!"
+msgstr ""
+
+#: src/app/templates/modals/payment/payment.tpl.html:132
+msgid "All PayPal orders are charged in US Dollar, click the link to change your subscription to US Dollar."
 msgstr ""
 
 #: src/app/templates/modals/dropzone.tpl.html:9
@@ -411,6 +415,10 @@ msgstr ""
 msgid "BUTTONS_POSITION_SAVED"
 msgstr ""
 
+#: src/app/templates/modals/payment/payment.tpl.html:159
+msgid "By clicking Create Account, you agree to abide by ProtonMail's <a href=\"https://protonmail.com/terms-and-conditions\" target=\"_blank\">Terms and Conditions</a>."
+msgstr ""
+
 #: src/app/templates/modals/alias.tpl.html:23
 #: src/app/templates/modals/bug.tpl.html:78
 #: src/app/templates/modals/card.tpl.html:56
@@ -480,8 +488,12 @@ msgstr ""
 msgid "Change layout"
 msgstr ""
 
-#: src/app/templates/modals/payment/payment.tpl.html:130
 #: src/app/templates/modals/payment/payment.tpl.html:131
+#: src/app/templates/modals/payment/payment.tpl.html:132
+msgid "Change subscription"
+msgstr ""
+
+#: src/app/templates/modals/payment/payment.tpl.html:130
 msgid "CHANGE_SUBSCRIPTION"
 msgstr ""
 
@@ -746,12 +758,9 @@ msgstr ""
 msgid "COPYRIGHT"
 msgstr ""
 
+#: src/app/templates/modals/payment/payment.tpl.html:152
 #: src/app/templates/modals/payment/payment.tpl.html:42
 msgid "Coupon"
-msgstr ""
-
-#: src/app/templates/modals/payment/payment.tpl.html:152
-msgid "COUPON"
 msgstr ""
 
 #: src/app/services/modal.js:843
@@ -1391,6 +1400,10 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
+#: src/app/templates/modals/payment/payment.tpl.html:129
+msgid "Error connecting to PayPal."
+msgstr ""
+
 #: src/app/controllers/settings/domains.js:337
 #: src/app/controllers/settings/domains.js:340
 msgid "ERROR_DURING_CREATION"
@@ -1972,11 +1985,8 @@ msgid "Link URL"
 msgstr ""
 
 #: src/app/templates/modals/pay.tpl.html:47
-msgid "Loading"
-msgstr ""
-
 #: src/app/templates/modals/payment/payment.tpl.html:127
-msgid "LOADING"
+msgid "Loading"
 msgstr ""
 
 #: src/app/templates/views/step1.tpl.html:212
@@ -2626,10 +2636,6 @@ msgstr ""
 msgid "Pay monthly"
 msgstr ""
 
-#: src/app/templates/modals/payment/payment.tpl.html:141
-msgid "PAY_WITH_BITCOIN_INSTRUCTIONS"
-msgstr ""
-
 #: src/app/templates/modals/payment/payment.tpl.html:3
 #: src/app/templates/modals/payment/process.tpl.html:3
 msgid "Payment"
@@ -2662,26 +2668,6 @@ msgstr ""
 
 #: src/app/controllers/secured.js:38
 msgid "PAYMENTS"
-msgstr ""
-
-#: src/app/templates/modals/payment/payment.tpl.html:132
-msgid "PAYPAL_CHANGE_TO_USD"
-msgstr ""
-
-#: src/app/templates/modals/payment/payment.tpl.html:129
-msgid "PAYPAL_CONNECTION_ERR"
-msgstr ""
-
-#: src/app/templates/modals/payment/payment.tpl.html:133
-msgid "PAYPAL_LOGIN_MESSAGE"
-msgstr ""
-
-#: src/app/templates/modals/payment/payment.tpl.html:130
-msgid "PAYPAL_ONLY_ANNUAL"
-msgstr ""
-
-#: src/app/templates/modals/payment/payment.tpl.html:131
-msgid "PAYPAL_ONLY_USD"
 msgstr ""
 
 #: src/app/templates/partials/wizard.tpl.html:17
@@ -3040,7 +3026,7 @@ msgid "Search contacts"
 msgstr ""
 
 #: src/app/templates/partials/searchForm.tpl.html:6
-msgid "Search Messages"
+msgid "Search messages"
 msgstr ""
 
 #: src/app/filters/filters.js:33
@@ -3333,7 +3319,6 @@ msgstr ""
 msgid "Take back your privacy! Creating your free secure email account takes less than 2 minutes in most cases."
 msgstr ""
 
-#: src/app/templates/modals/payment/payment.tpl.html:159
 #: src/app/templates/views/step1.tpl.html:79
 msgid "TERMS_CONDITIONS_AGREEMENT"
 msgstr ""
@@ -3424,6 +3409,10 @@ msgstr ""
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:14
 #: src/app/templates/partials/safari.warning.tpl.html:14
 msgid "To download attachments in Safari:"
+msgstr ""
+
+#: src/app/templates/modals/payment/payment.tpl.html:141
+msgid "To pay via Bitcoin or Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions."
 msgstr ""
 
 #: src/app/templates/modals/domain/address.tpl.html:10
@@ -3747,6 +3736,14 @@ msgstr ""
 msgid "We are sorry to see you go!"
 msgstr ""
 
+#: src/app/templates/modals/payment/payment.tpl.html:130
+msgid "We only accept PayPal for annual subscriptions, click the link to switch to an annual subscription."
+msgstr ""
+
+#: src/app/templates/modals/payment/payment.tpl.html:131
+msgid "We only accept PayPal for annual subscriptions. PayPal is also only accepted for US Dollar plans. Click here to switch to an annual US Dollar subscription."
+msgstr ""
+
 #: src/app/templates/views/reset-login-password.tpl.html:2
 msgid "We will send a code to your <abbr title=\"This is the optional email you used when first creating an account. This is the same as your Notification Email that is used for sending alerts about new messages.'>Recovery Email</abbr> to reset your <abbr title='Your Login Password is the first password you enter to enter our secure system. The Mailbox password is your second password and is used to decrypt your messages.\">Login Password</abbr>."
 msgstr ""
@@ -3842,6 +3839,7 @@ msgid "You will be prompted to save the attachment."
 msgstr ""
 
 #: src/app/templates/modals/pay.tpl.html:49
+#: src/app/templates/modals/payment/payment.tpl.html:133
 msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
 msgstr ""
 
