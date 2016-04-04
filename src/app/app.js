@@ -159,7 +159,6 @@ angular.module('proton', [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
-<<<<<<< HEAD
 .run(function (gettextCatalog) {
     gettextCatalog.setCurrentLanguage('en_US'); // Corresponds au header 'Language' du fichier .po;
     gettextCatalog.debug = true;
