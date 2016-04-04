@@ -10,8 +10,8 @@
 
     <p>
         <span style="width:14rem" width="14rem">
-            <span ng-show=" message.Location != '2' ">Received: </span>
-            <span ng-show=" message.Location == '2' ">Sent: </span>
+            <span ng-show=" message.Location != '2' ">{{ 'RECEIVED' | translate }}: </span>
+            <span ng-show=" message.Location == '2' ">{{ 'SENT' | translate }}: </span>
         </span>
         <span>
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>

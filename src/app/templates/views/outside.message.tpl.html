@@ -1,6 +1,6 @@
 <div id="outsideMessageWrap">
     <div ng-if="true" id="expirationMessage">
-        Expiring in
+        {{ 'EXPIRING_IN' | translate }}
         <strong time="{{ message.ExpirationTime }}" interval="1000" filter="delay">
             <i class="fa fa-spin fa-circle-o-notch"></i>
         </strong>.
@@ -47,7 +47,7 @@
     </div>
     <div id="outsideMessage">
         <div id="message-body">
-            <div class="email" ng-bind-html="message.Body | purify" transform-links hide-first-blockquote></div>
+            <div class="email" ng-bind-html="message.Body | purify" transform-links hide-first-blockquote scroll="false"></div>
         </div>
     </div><!--/#outsideMessage-->
     <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>

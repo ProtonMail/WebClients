@@ -2,9 +2,9 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings" id="labelContainer">
         <p>
-            <button type="button" class="pm_button primary" ng-click="createLabel()">{{ 'ADD_LABEL' | translate }}</button>
+            <button type="button" class="pm_button primary" ng-click="createLabel()">{{ 'ADD' | translate }}</button>
         </p><!--/.form-group-->
-        <p class="alert alert-info" ng-show="labels.length === 0"><i class="fa fa-arrow-up"></i> You have no labels, you can add label with the above button "ADD LABEL".</p>
+        <p class="alert alert-info" ng-show="labels.length === 0"><i class="fa fa-arrow-up"></i> {{ 'LABELS_NONE' | translate }}</p>
         <div class="pm_sort" ng-show="labels.length > 0">
             <ul data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
                 <li ng-repeat="label in labels | orderBy: 'Order'" as-sortable-item="">

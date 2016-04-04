@@ -52,23 +52,25 @@ angular.module("proton.transformation", [])
                                 } else {
                                     angular.element(blockquote).show();
 
-                                    $timeout(function() {
-                                        var element = angular.element(blockquote);
+                                    if (attributes.scroll === true) {
+                                        $timeout(function() {
+                                            var element = angular.element(blockquote);
 
-                                        if(angular.isElement(element) && angular.isDefined(element.offset())) {
-                                            var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
-                                            var amountScrolled = $('#pm_thread').scrollTop();
-                                            var value = element.offset().top + amountScrolled - headerOffset;
+                                            if(angular.isElement(element) && angular.isDefined(element.offset())) {
+                                                var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').height();
+                                                var amountScrolled = $('#pm_thread').scrollTop();
+                                                var value = element.offset().top + amountScrolled - headerOffset;
 
-                                            $('#pm_thread').animate({
-                                                scrollTop: (value - 40)
-                                            }, 200, function() {
-                                                $(this).animate({
-                                                    opacity: 1
-                                                }, 200);
-                                            });
-                                        }
-                                    }, 100);
+                                                $('#pm_thread').animate({
+                                                    scrollTop: (value - 40)
+                                                }, 200, function() {
+                                                    $(this).animate({
+                                                        opacity: 1
+                                                    }, 200);
+                                                });
+                                            }
+                                        }, 100);
+                                    }
                                 }
                             }
                         });

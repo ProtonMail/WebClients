@@ -8,6 +8,7 @@ angular.module('proton.controllers.Settings')
     $translate,
     $q,
     authentication,
+    Bug,
     confirmModal,
     deleteAccountModal,
     Key,
@@ -34,53 +35,36 @@ angular.module('proton.controllers.Settings')
 
     $scope.saveNotification = function(form) {
         if (angular.isUndefined($scope.noticeePassword)) {
-            notify({
-                classes: "notification-danger",
-                message: "Enter your current login password."
-            });
+            notify({classes: "notification-danger", message: "Enter your current login password."});
             angular.element('#noticeePassword').focus();
         } else {
             networkActivityTracker.track(
-                Setting.noticeEmail({
-                    'Password': $scope.noticeePassword,
-                    'NotificationEmail': $scope.notificationEmail
-                }).$promise
-                .then(
-                    function(response) {
-                        if (response && response.Code === 1000) {
-                            $scope.noticeePassword = '';
-                            authentication.user.NotificationEmail = $scope.notificationEmail;
-                            notify({message: $translate.instant('NOTIFICATION_EMAIL_SAVED'), classes: 'notification-success'});
-                        } else if (response.Error) {
-                            notify({message: $translate.instant(response.Error), classes: 'notification-danger'});
-                        }
-                    },
-                    function(error) {
-                        notify({message: 'Error during the notification request', classes: 'notification-danger'});
-                        $log.error(error);
+                Setting.noticeEmail({Password: $scope.noticeePassword, NotificationEmail: $scope.notificationEmail})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        $scope.noticeePassword = '';
+                        authentication.user.NotificationEmail = $scope.notificationEmail;
+                        notify({message: $translate.instant('NOTIFICATION_EMAIL_SAVED'), classes: 'notification-success'});
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
                     }
-                )
+                })
             );
         }
     };
 
     $scope.saveDailyNotifications = function(form) {
-
-        var value = parseInt($scope.dailyNotifications);
-
-        if (value === parseInt(authentication.user.Notify) ) {
-            return;
-        }
+        var value = $scope.dailyNotifications;
 
         networkActivityTracker.track(
-          Setting.notify({
-              "Notify": +$scope.dailyNotifications
-          }).$promise.then(function(response) {
-              authentication.user.Notify = +$scope.dailyNotifications;
-              notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
-          }, function(error) {
-              notify({message: 'Error during the daily notification request', classes: 'notification-danger'});
-              $log.error(error);
+          Setting.notify({Notify: $scope.dailyNotifications})
+          .then(function(result) {
+              if (result.data && result.data.Code === 1000) {
+                  authentication.user.Notify = $scope.dailyNotifications;
+                  notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
+              } else if (result.data && result.data.Error) {
+                  notify({message: result.data.Error, classes: 'notification-danger'});
+              }
           })
         );
     };
@@ -91,7 +75,7 @@ angular.module('proton.controllers.Settings')
         var confLoginPwd = $scope.confirmLoginPassword;
 
         if (newLoginPwd !== confLoginPwd) {
-            notify({message: 'Confirm login password is wrong', classes: 'notification-danger'});
+            notify({message: $translate.instant('PASSWORDS_DONT_MATCH'), classes: 'notification-danger'});
             return false;
         }
 
@@ -100,20 +84,20 @@ angular.module('proton.controllers.Settings')
                 Password: oldLoginPwd,
                 OldHashedPassword: pmcw.getHashedPassword(oldLoginPwd),
                 NewPassword: newLoginPwd
-            }).$promise.then(function(result) {
-                if(result.Code === 1000) {
+            }).then(function(result) {
+                if (result.data && result.data.Code === 1000) {
                     notify({message: $translate.instant('LOGIN_PASSWORD_UPDATED'), classes: 'notification-success'});
                     $scope.oldLoginPassword = '';
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
                     form.$setUntouched();
-                } else if(result.Error) {
-                    notify({message: result.Error, classes: 'notification-danger'});
+                } else if(result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: 'Login password invalid', classes: 'notification-danger'});
+                    notify({message: $translate.instant('INVALID_LOGIN_PASSWORD'), classes: 'notification-danger'});
                 }
             }, function(error) {
-                notify({message: 'Error during the login password request', classes: 'notification-danger'});
+                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                 $log.error(error);
             })
         );
@@ -128,12 +112,12 @@ angular.module('proton.controllers.Settings')
         var promises = [];
 
         if (oldMailPwd !== authentication.getPassword()) {
-            notify({message: 'Current mailbox password is wrong', classes: 'notification-danger'});
+            notify({message: $translate.instant('WRONG_MBPW'), classes: 'notification-danger'});
             return false;
         }
 
         if (newMailPwd !== confMailPwd) {
-            notify({message: 'Confirm mailbox password is wrong', classes: 'notification-danger'});
+            notify({message: $translate.instant('PASSWORDS_DONT_MATCH'), classes: 'notification-danger'});
             return false;
         }
 
@@ -158,7 +142,7 @@ angular.module('proton.controllers.Settings')
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: 'Error during the organization update key request', classes: 'notification-danger'});
+                                    notify({message: $translate.instant('ERROR_ORG_KEYS'), classes: 'notification-danger'});
                                 }
                             });
                         }, function(error) {
@@ -172,17 +156,17 @@ angular.module('proton.controllers.Settings')
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: 'Error during the organization get key request', classes: 'notification-danger'});
+                    notify({message: $translate.instant('ERROR_ORG_KEYS'), classes: 'notification-danger'});
                 }
             }, function(error) {
-                notify({message: 'Error during the organization get key request', classes: 'notification-danger'});
+                notify({message: $translate.instant('ERROR_ORG_KEYS'), classes: 'notification-danger'});
             });
         }
 
         // Instead of grab keys from the cache, we call the back-end, just to make sure everything is up to date
-        networkActivityTracker.track(User.get(authentication.user.ID).$promise.then(function(result) {
-            if (result.Code === 1000) {
-                _.each(result.User.Addresses, function(address) {
+        networkActivityTracker.track(User.get().then(function(result) {
+            if (result.data.Code === 1000) {
+                _.each(result.data.User.Addresses, function(address) {
                     _.each(address.Keys, function(key) {
                         // Decrypt private key with the old mailbox password
                         promises.push(pmcw.decryptPrivateKey(key.PrivateKey, oldMailPwd).then(function(package) {
@@ -206,7 +190,7 @@ angular.module('proton.controllers.Settings')
                     keys = keys.filter(function(obj) { return obj !== 0; });
 
                     if (keys.length === 0) {
-                        notify({message: 'No keys to update', classes: 'notification-danger'});
+                        notify({message: $translate.instant('NO_KEYS'), classes: 'notification-danger'});
                     }
 
                     return Key.private({
@@ -224,7 +208,7 @@ angular.module('proton.controllers.Settings')
                         } else if(result.data && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: 'Mailbox password invalid', classes: 'notification-danger'});
+                            notify({message: $translate.instant('WRONG_MBPW'), classes: 'notification-danger'});
                         }
                     });
                 }, function(error) {
@@ -235,7 +219,7 @@ angular.module('proton.controllers.Settings')
                 $log.error(result.Error);
                 notify({message: result.Error, classes: 'notification-danger'});
             } else {
-                notify({message: 'Error during the user get request', classes: 'notification-danger'});
+                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
             }
         }, function(errors) {
             _.each(errors, function(error) {
@@ -252,78 +236,74 @@ angular.module('proton.controllers.Settings')
 
         networkActivityTracker.track(
             $q.all({
-                displayName: Setting.display({'DisplayName': displayName}).$promise,
-                signature: Setting.signature({'Signature': signature}).$promise
+                displayName: Setting.display({DisplayName: displayName}),
+                signature: Setting.signature({Signature: signature})
             })
             .then(function(result) {
-                if (result.displayName.Code === 1000 && result.signature.Code === 1000) {
+                if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
                     authentication.user.DisplayName = displayName;
                     authentication.user.Signature = signature;
                     notify({message: $translate.instant('IDENTITY_SAVED'), classes: 'notification-success'});
                 } else {
-                    notify({message: 'Error during the request', classes: 'notification-danger'});
+                    notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                 }
             }, function() {
-                notify({message: 'Error during the request', classes: 'notification-danger'});
+                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
             })
         );
     };
 
     $scope.saveAutosaveContacts = function(form) {
-
-        var value = parseInt($scope.autosaveContacts);
-
-        if (value === parseInt(authentication.user.autosaveContacts) ) {
-            return;
-        }
-
         networkActivityTracker.track(
-            Setting.autosave({
-                "AutoSaveContacts": +$scope.autosaveContacts
-            }).$promise.then(function(response) {
+            Setting.autosave({AutoSaveContacts: $scope.autosaveContacts})
+            .then(function(result) {
                 notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
-                authentication.user.AutoSaveContacts = +$scope.autosaveContacts;
-            }, function(error) {
-                notify({message: 'Error during the autosave contacts request', classes : 'notification-danger'});
-                $log.error(error);
+                authentication.user.AutoSaveContacts = $scope.autosaveContacts;
             })
         );
     };
 
     $scope.saveShowImages = function(form) {
-
-        var value = parseInt($scope.ShowImages);
-
-        if (value === parseInt(authentication.user.ShowImages) ) {
-            return;
-        }
-
         networkActivityTracker.track(
-            Setting.setShowImages({
-                "ShowImages": parseInt($scope.ShowImages)
-            }).$promise.then(
-                function(response) {
-                    if(response.Code === 1000) {
-                        authentication.user.ShowImages = $scope.ShowImages;
-                        notify({message: $translate.instant('IMAGE_PREFERENCES_UPDATED'), classes: 'notification-success'});
-                    } else if (response.Error) {
-                        notify({message: response.Error, classes: 'notification-danger'});
-                    }
-                },
-                function(error) {
-                    notify({message: 'Error during the email preference request', classes: 'notification-danger'});
-                    $log.error(error);
-                }
-            )
+            Setting.setShowImages({ShowImages: $scope.ShowImages})
+            .then(function(result) {
+                authentication.user.ShowImages = $scope.ShowImages;
+                notify({message: $translate.instant('IMAGE_PREFERENCES_UPDATED'), classes: 'notification-success'});
+            })
         );
     };
 
     $scope.deleteAccount = function() {
         deleteAccountModal.activate({
             params: {
-                confirm: function() {
-                    // TODO call request
-                    deleteAccountModal.deactivate();
+                submit: function(password, feedback) {
+                    Bug.report({
+                        OS: '--',
+                        OSVersion: '--',
+                        Browser: '--',
+                        BrowserVersion: '--',
+                        BrowserExtensions: '--',
+                        Client: '--',
+                        ClientVersion: '--',
+                        Title: '[DELETION FEEDBACK]',
+                        Username: '--',
+                        Email: '--',
+                        Description: feedback
+                    }).then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            User.delete({Password: password})
+                            .then(function(result) {
+                                if (result.data && result.data.Code === 1000) {
+                                    deleteAccountModal.deactivate();
+                                    $rootScope.logout();
+                                } else if (result.data && result.data.Error) {
+                                    notify({message: result.data.Error, classes: 'notification-danger'});
+                                }
+                            });
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        }
+                    });
                 },
                 cancel: function() {
                     deleteAccountModal.deactivate();

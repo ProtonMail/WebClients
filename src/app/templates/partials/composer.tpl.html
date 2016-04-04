@@ -70,7 +70,7 @@
             <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'encrypt' }">
                 <div ng-form="encryptForm" class="pm_form">
                     <div>
-                        <h3>Encrypt for non-ProtonMail users</h3>
+                        <h3>{{ ' ENC_OUTSIDE_TITLE' | translate }}</h3>
                         <a href="https://protonmail.com/support/knowledge-base/encrypt-for-outside-users/" target="_blank">
                             <i class="fa fa-info-circle"></i>
                         </a>
@@ -119,7 +119,7 @@
                     </div>
                     <div class="clear">
                         <p>
-                            <i class="help-block">Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
+                            <i class="help-block">{{ 'EXP_DURATION_INFO' | translate }}</i>
                         </p>
                     </div>
                     <footer class="text-right">
@@ -148,7 +148,7 @@
                     </a>
                 </div>
                 <p></p>
-                <p class="alert alert-info">This message will expire in:</p>
+                <p class="alert alert-info">{{ 'EXPIRING_IN_MESSAGE' | translate }}</p>
                 <div class="pm_form alert text-center" ng-init="initExpiration(message, params)">
                     <span class="pm_select">
                         <select ng-model="params.expirationWeeks" ng-change="setExpiration(message, params)" ng-options="option.label for option in weekOptions"></select>
@@ -176,7 +176,7 @@
             <div class="meta">
                 <div class="row fromRow">
                     <label>{{ 'FROM' | translate }}</label>
-                    <select ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" title="{{ 'FROM' | translate }}" ng-disabled="message.Attachments.length > 0" ng-change="changeFrom(message)"></select>
+                    <select ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0" ng-change="changeFrom(message)"></select>
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
                     </button>
@@ -225,6 +225,7 @@
                 class="preview-template pm_button"
                 id="attachment{{$index}}"
                 ng-repeat="attachment in message.Attachments"
+                ng-class="{ 'uploading': attachment.uploading }"
                 ng-init="initAttachment(attachment, $index)">
                     <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
                     <a ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">

@@ -17,8 +17,8 @@ angular.module('proton.autocomplete', [])
             var DOWN_KEY = 40;
             var ESC_KEY = 27;
             var SPACE_KEY = 32;
-            var timeoutBlur;
             var timeoutChange;
+            var timeoutBlur;
 
             // Variables
             scope.params = {
@@ -121,7 +121,7 @@ angular.module('proton.autocomplete', [])
             * Submit a new address
             */
             scope.onSubmit = function() {
-                if(scope.params.selected !== null) {
+                if (scope.params.selected !== null) {
                     scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
                 } else if(scope.params.newValue.length > 0) {
                     var emails = getEmails(scope.params.newValue);
@@ -136,9 +136,10 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onBlur = function() {
+                $timeout.cancel(timeoutBlur);
                 timeoutBlur = $timeout(function() {
                     scope.onSubmit();
-                }, 200);
+                }, 100);
             };
 
             scope.onRemove = function(index) {
@@ -151,10 +152,9 @@ angular.module('proton.autocomplete', [])
             scope.onAddEmail = function(email) {
                 var index = scope.emails.indexOf(email);
 
-                $timeout.cancel(timeoutBlur);
-
                 if(index === -1) {
                     scope.emails.push(email);
+                    scope.params.selected = null;
                     scope.params.newValue = '';
                     angular.element(element).find('.new-value-email').focus();
                     scope.onChange();
@@ -258,14 +258,14 @@ angular.module('proton.autocomplete', [])
 
 .directive('autosize', function() {
     return {
-        require: 'ngModel',
-        link: function(scope, element, attrs, ctrl) {
-            var span, resize;
+        link: function(scope, element, attrs) {
+            var span, resize, change, input;
 
+            input = angular.element(element);
             span = angular.element('<span></span>');
             span.css('display', 'none')
-            .css('visibility', 'hidden')
-            .css('width', 'auto');
+                .css('visibility', 'hidden')
+                .css('width', 'auto');
 
             element.parent().append(span);
 
@@ -291,16 +291,14 @@ angular.module('proton.autocomplete', [])
                 }
             };
 
-            ctrl.$parsers.unshift(function(value) {
-                resize(value);
+            change = function(event) {
+                resize(input.val());
+            };
 
-                return value;
-            });
+            input.bind('input', change);
 
-            ctrl.$formatters.unshift(function(value) {
-                resize(value);
-
-                return value;
+            scope.$on('$destroy', function() {
+                input.unbind('input', change);
             });
         }
     };

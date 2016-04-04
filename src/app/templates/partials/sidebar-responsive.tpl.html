@@ -71,6 +71,12 @@ ng-class="{ 'show': showSidebar }">
                 <span>{{ 'CONTACTS' | translate }}</span>
             </button>
         </li>
+        <li ng-class="{ active: ('secured.dashboard.**' | includedByState) }">
+            <button title="{{ 'UPGRADE' | translate }}" ui-sref='secured.account' ng-click="hideMobileSidebar()">
+                <i class="fa fa-arrow-up"></i>
+                <span>{{ 'UPGRADE' | translate }}</span>
+            </button>
+        </li>
         <li ng-class="{ active: ('secured.account.**' | includedByState) }">
             <button title="{{ 'SETTINGS' | translate }}" ui-sref='secured.account' ng-click="hideMobileSidebar()">
                 <i class="fa fa-cogs"></i>

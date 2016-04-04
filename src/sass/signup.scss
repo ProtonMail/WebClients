@@ -18,6 +18,9 @@
         img {
             margin: 1rem 0;
         }
+        h3 {
+            margin-bottom: 1rem;
+        }
     }
     #recaptchaFrame {
         position: relative;
@@ -25,7 +28,7 @@
             position: absolute;
             left: 0;
             right: 0;
-            top: 2rem;
+            top: 6rem;
             text-align: center;
             z-index: 1;
             display: block;
@@ -82,12 +85,14 @@
             input {
                 width: 11rem;
                 display: inline-block;
+                float: left;
             }
             em {
                 font-style: normal;
                 width: 2rem;
                 text-align: center;
                 line-height: 2rem;
+                float: left;
             }
         }
         label {

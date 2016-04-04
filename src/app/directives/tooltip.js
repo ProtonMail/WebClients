@@ -17,6 +17,7 @@ angular.module("proton.tooltip", [])
             element.attr('aria-label', title);
 
             $(element[0]).tooltip({
+                trigger : 'hover', // The default value for trigger is 'hover focus'
                 container: 'body',
                 placement: attrs.ptPlacement || 'top',
                 html: attrs.ptHtml || false

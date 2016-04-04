@@ -31,50 +31,57 @@ angular.module("proton.controllers.Outside", [
     var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
     var token_id = $stateParams.tag;
 
-    $scope.message = message;
+    $scope.initialization = function() {
+        if (message.displayMessage === true) {
+            message.Body = $scope.clean(message.Body);
+            message.imagesHidden = tools.containsImage(message.Body);
 
-    if (message.displayMessage === true) {
-        $timeout(function() {
-            $scope.message.Body = $scope.clean($scope.message.Body);
-            $scope.message.imagesHidden = tools.containsImage($scope.message.Body);
-
-            _.each($scope.message.Replies, function(reply) {
+            _.each(message.Replies, function(reply) {
                 reply.Body = $scope.clean(reply.Body);
             });
-        });
-    }
+        }
 
-    $timeout(function() {
+        $scope.message = message;
+
         $('#inputFile').change(function(event) {
             event.preventDefault();
 
             var files = $('#inputFile')[0].files;
 
-            for(var i = 0; i<files.length; i++) {
-                $scope.addAttachment(files[i]);
+            for (var i = 0; i<files.length; i++) {
+                var file = files[i];
+
+                if (file.size > CONSTANTS.ATTACHMENT_SIZE_LIMIT * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE) {
+                    notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
+                } else {
+                    $scope.addAttachment(file);
+                }
             }
-
         });
-    }, 100);
 
-    // start timer ago
-    $scope.agoTimer = $interval(function() {
-        // Redirect to unlock view if the message is expired
-        if ($scope.isExpired()) {
-            $state.go('eo.unlock', {tag: $stateParams.tag});
-        }
-    }, 1000);
+        // start timer ago
+        $scope.agoTimer = $interval(function() {
+            // Redirect to unlock view if the message is expired
+            if ($scope.isExpired()) {
+                $state.go('eo.unlock', {tag: $stateParams.tag});
+            }
+        }, 1000);
 
-    $scope.$on('$destroy', function() {
-        // cancel timer ago
-        $interval.cancel($scope.agoTimer);
-    });
+        $scope.$on('$destroy', function() {
+            // cancel timer ago
+            $interval.cancel($scope.agoTimer);
+        });
+    };
 
     /**
      * Determine if the message is expire
      */
     $scope.isExpired = function() {
-        return $scope.message.ExpirationTime < moment().unix();
+        if (angular.isDefined($scope.message)) {
+            return $scope.message.ExpirationTime < moment().unix();
+        } else {
+            return false;
+        }
     };
 
     /**
@@ -325,4 +332,6 @@ angular.module("proton.controllers.Outside", [
     $scope.removeAttachment = function(attachment) {
         $scope.message.Attachments = _.without(message.Attachments, attachment);
     };
+
+    $scope.initialization();
 });

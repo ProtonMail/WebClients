@@ -182,41 +182,11 @@ angular.module("proton.modals", [])
 })
 
 // label modal
-.factory('labelModal', function(pmModal) {
+.factory('labelModal', function(pmModal, tools) {
     return pmModal({
         controller: function(params, $timeout) {
             this.title = params.title;
-            this.colors = [
-                '#7272a7',
-                '#8989ac',
-
-                '#cf5858',
-                '#cf7e7e',
-
-                '#c26cc7',
-                '#c793ca',
-
-                '#7569d1',
-                '#9b94d1',
-
-                '#69a9d1',
-                '#a8c4d5',
-
-                '#5ec7b7',
-                '#97c9c1',
-
-                '#72bb75',
-                '#9db99f',
-
-                '#c3d261',
-                '#c6cd97',
-
-                '#e6c04c',
-                '#e7d292',
-
-                '#e6984c',
-                '#dfb286'
-            ];
+            this.colors = tools.colors();
 
             if(angular.isDefined(params.label)) {
                 this.name = params.label.Name;
@@ -239,8 +209,8 @@ angular.module("proton.modals", [])
             };
 
             $timeout(function() {
-                $('#labelName').focus();
-            }.bind(this), 100);
+                angular.element('#labelName').focus();
+            }, 100);
         },
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/label.tpl.html'
@@ -250,19 +220,16 @@ angular.module("proton.modals", [])
 // dropzone modal
 .factory('dropzoneModal', function(pmModal) {
     return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/dropzone.tpl.html',
         controller: function(params, notify, $timeout) {
             var files = [];
             var fileCount = 0;
-            var idDropzone = 'dropzone';
-            var idSelectedFile = 'selectedFile';
             var extension;
             var self = this;
 
-            this.title = params.title;
-            this.message = params.message;
-
             function init() {
-                var drop = document.getElementById(idDropzone);
+                var drop = document.getElementById('dropzone');
 
                 drop.ondrop = function(e) {
                     e.preventDefault();
@@ -288,41 +255,35 @@ angular.module("proton.modals", [])
                     self.hover = false;
                 };
 
-                $('#' + idDropzone).on('click', function() {
-                    $('#' + idSelectedFile).trigger('click');
+                $('#dropzone').on('click', function() {
+                    $('#selectedFile').trigger('click');
                 });
 
-                $('#' + idSelectedFile).change(function(e) {
-                    extension = $('#' + idSelectedFile)[0].files[0].name.substr($('#' + idSelectedFile)[0].files[0].name.length - 4);
+                $('#selectedFile').change(function(e) {
+                    extension = $('#selectedFile')[0].files[0].name.substr($('#selectedFile')[0].files[0].name.length - 4);
 
                     if (extension !== '.csv' && extension !== '.vcf') {
                         notify('Invalid file type');
                     } else {
-                        files = $('#' + idSelectedFile)[0].files;
-                        self.fileDropped = $('#' + idSelectedFile)[0].files[0].name;
+                        files = $('#selectedFile')[0].files;
+                        self.fileDropped = $('#selectedFile')[0].files[0].name;
                         self.hover = false;
                     }
                 });
             }
 
             this.import = function() {
-                if (angular.isDefined(params.import) && angular.isFunction(params.import)) {
-                    params.import(files);
-                }
+                params.import(files);
             };
 
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.cancel();
             };
 
             $timeout(function() {
                 init();
-            }.bind(this), 100);
-        },
-        controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/dropzone.tpl.html'
+            }, 100);
+        }
     });
 })
 
@@ -438,12 +399,15 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('loginPasswordModal', function(pmModal) {
+.factory('loginPasswordModal', function($timeout, pmModal) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/loginPassword.tpl.html',
         controller: function(params) {
             this.loginPassword = '';
+            $timeout(function() {
+                $('#loginPassword').focus();
+            });
 
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
@@ -456,6 +420,7 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
+
         }
     });
 })
@@ -607,13 +572,12 @@ angular.module("proton.modals", [])
         controller: function(params) {
 
             // IE11 doesn't support PayPal
-            if ($('html').hasClass('ua-ie-11-0')) {
+            if ($.browser.msie === true && $.browser.edge !== true) {
                 this.choices = [
                     {value: 'card', label: $translate.instant('CREDIT_CARD')},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
-            }
-            else {
+            } else {
                 this.choices = [
                     {value: 'card', label: $translate.instant('CREDIT_CARD')},
                     {value: 'paypal', label: 'PayPal'},
@@ -648,6 +612,19 @@ angular.module("proton.modals", [])
             this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
 
             // Functions
+
+            var initialization = function() {
+                if (params.methods.length > 0) {
+                    this.methods = params.methods;
+                    this.method = this.methods[0];
+                }
+
+                if (angular.isDefined(params.choice)) {
+                    this.choice = _.findWhere(this.choices, {value: params.choice});
+                    this.changeChoice();
+                }
+            }.bind(this);
+
             /**
              * Generate key for the organization
              */
@@ -750,8 +727,10 @@ angular.module("proton.modals", [])
                             deferred.reject(new Error(result.data.Error));
                         }
                     });
-                } else {
+                } else if (this.valid.AmountDue > 0) {
                     deferred.resolve(this.method.ID);
+                } else {
+                    deferred.resolve();
                 }
 
                 return deferred.promise;
@@ -794,6 +773,8 @@ angular.module("proton.modals", [])
                         deferred.resolve();
                     } else if (result.data && result.data.Error) {
                         deferred.reject(new Error(result.data.Error));
+                    } else {
+                        deferred.reject(new Error('Error connecting to PayPal.'));
                     }
                 });
 
@@ -804,18 +785,6 @@ angular.module("proton.modals", [])
                 this.step = 'thanks';
                 params.change();
             }.bind(this);
-
-            this.initialization = function() {
-                if (params.methods.length > 0) {
-                    this.methods = params.methods;
-                    this.method = this.methods[0];
-                }
-
-                if (angular.isDefined(params.choice)) {
-                    this.choice = _.findWhere(this.choices, {value: params.choice});
-                    this.changeChoice();
-                }
-            };
 
             this.label = function(method) {
                 return '•••• •••• •••• ' + method.Details.Last4;
@@ -962,7 +931,7 @@ angular.module("proton.modals", [])
                 }
             };
 
-            this.initialization();
+            initialization();
         }
     });
 })
@@ -1469,18 +1438,16 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/deleteAccount.tpl.html',
         controller: function(params) {
             // Variables
+            this.feedback = '';
+            this.password = '';
 
             // Functions
             this.submit = function() {
-                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit();
-                }
-            };
+                params.submit(this.password, this.feedback);
+            }.bind(this);
 
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.cancel();
             };
         }
     });
@@ -1721,6 +1688,33 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('customizeInvoiceModal', function(pmModal, Setting, notify, authentication) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/customizeInvoice.tpl.html',
+        controller: function(params) {
+            this.text = authentication.user.InvoiceText || '';
+
+            this.submit = function() {
+                Setting.invoiceText({InvoiceText: this.text})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        authentication.user.InvoiceText = this.text;
+                        notify({message: 'Invoice customized', classes: 'notification-success'});
+                        params.cancel();
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    }
+                });
+            }.bind(this);
+
+            this.cancel = function() {
+                params.cancel();
+            };
+        }
+    });
+})
+
 .factory('welcomeModal', function(pmModal, Setting, authentication, networkActivityTracker, $q) {
     return pmModal({
         controllerAs: 'ctrl',
@@ -1738,15 +1732,18 @@ angular.module("proton.modals", [])
                 var promises = [];
 
                 if (this.displayName.length > 0) {
-                    promises.push(Setting.display({'DisplayName': this.displayName}).$promise);
+                    promises.push(Setting.display({'DisplayName': this.displayName}));
                     authentication.user.DisplayName = this.displayName;
                 }
 
-                networkActivityTracker.track($q.all(promises).then(function() {
-                    if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
-                        params.next(this.displayName);
-                    }
-                }.bind(this)));
+                networkActivityTracker.track(
+                    $q.all(promises)
+                    .then(function() {
+                        if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                            params.next(this.displayName);
+                        }
+                    }.bind(this))
+                );
             }.bind(this);
         }
     });

@@ -2,6 +2,7 @@ angular.module("proton.controllers.Secured", [])
 
 .controller("SecuredController", function(
     $cookies,
+    $filter,
     $rootScope,
     $scope,
     $state,
@@ -16,23 +17,15 @@ angular.module("proton.controllers.Secured", [])
     eventManager,
     feedbackModal,
     generateModal,
+    organization,
     tools
 ) {
-    var format;
-    var language = window.navigator.userLanguage || window.navigator.language;
     var dirtyAddresses = [];
 
-    if(language === 'en-US') {
-        format = 'MM/DD/YYYY';
-    } else {
-        format = 'DD/MM/YYYY';
-    }
-
-    $rootScope.dateFormat = format;
-
     $scope.user = authentication.user;
-    $rootScope.isLoggedIn = true;
-    $rootScope.isLocked = false;
+    $scope.organization = organization;
+    $rootScope.isLoggedIn = true; // Shouldn't be there
+    $rootScope.isLocked = false; // Shouldn't be there
     $scope.settingsRoutes = [
         {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
         {value: 'secured.account', label: $translate.instant('ACCOUNT')},
@@ -42,8 +35,11 @@ angular.module("proton.controllers.Secured", [])
         {value: 'secured.appearance', label: $translate.instant('APPEARANCE')},
         {value: 'secured.domains', label: $translate.instant('DOMAINS')},
         {value: 'secured.members', label: $translate.instant('USERS')},
-        {value: 'secured.invoices', label: $translate.instant('INVOICES')}
+        {value: 'secured.payments', label: $translate.instant('PAYMENTS')}
     ];
+
+    // Set language used for the application
+    $translate.use(authentication.user.Language);
 
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
@@ -56,11 +52,20 @@ angular.module("proton.controllers.Secured", [])
 
     // Set event ID
     eventManager.start(authentication.user.EventID);
+
     // Initialize counters for conversation (total and unread)
     cacheCounters.query();
 
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
+
+    $scope.$on('updateUser', function(event) {
+        $translate.use(authentication.user.Language);
+    });
+
+    $scope.$on('organizationChange', function(event, organization) {
+        $scope.organization = organization;
+    });
 
     _.each(authentication.user.Addresses, function(address) {
         if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
@@ -82,31 +87,11 @@ angular.module("proton.controllers.Secured", [])
         });
     }
 
-    // ===================================
-    // FEEDBACK FORM (TEMPORARY - REMOVE ON SUNDAY / MONDAY)
-    /*
-    $timeout( function() {
+    $scope.idDefined = function() {
+        var id = $state.params.id;
 
-        now = new Date();
-        exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
-
-        if(!$cookies.get('v3_feedback')) {
-            $cookies.put('v3_feedback', 'true', {
-                'expires': exp
-            });
-            // Open feedback modal
-            feedbackModal.activate({
-                params: {
-                    close: function() {
-                        feedbackModal.deactivate();
-                    }
-                }
-            });
-        }
-    }, 1 * 60 * 1000); // 2 mins
-    */
-    // END FEEDBACK
-    // ===================================
+        return angular.isDefined(id) && id.length > 0;
+    };
 
     /**
      * Returns a string for the storage bar
@@ -116,9 +101,12 @@ angular.module("proton.controllers.Secured", [])
         if (authentication.user && authentication.user.UsedSpace && authentication.user.MaxSpace) {
             return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
         } else {
-            // TODO: error, undefined variables
             return '';
         }
+    };
+
+    $scope.storageString = function() {
+        return $filter('humanSize')(authentication.user.UsedSpace) + ' / ' + $filter('humanSize')(authentication.user.UsedSpace);
     };
 
     /**

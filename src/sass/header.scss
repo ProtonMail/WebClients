@@ -41,61 +41,19 @@ header#pm_header-desktop {
 		width: $sidebarWidth;
 		text-align: center;
 		background-color: $secondary;
-		height: 61px;
 		overflow: hidden;
 		img {
 			display: inline-block;
 			margin: auto;
 			vertical-align: middle;
+			width: 130px;
 		}
 	}
 	.pm_buttons {
 		border: none;
-		background: transparent !important;
-		padding: 0;
-		float: none;
-		height: initial;
-		line-height: initial;
-		float: left;
-		a {
+		& > a {
 			background: transparent !important;
 			border: none;
-			padding: 0;
-			.fa {
-				line-height: initial;
-			}
-		}
-		p {
-			text-align: left;
-		}
-		strong {
-			font-size: 12px;
-		    white-space: nowrap;
-		    text-overflow: ellipsis;
-		    width: 100%;
-		    overflow: hidden;
-		}
-		b {
-			font-size: 10px;
-		}
-		.pm_button.primary {
-		    background-color: #9397cd !important;
-		    border-color: #9397cd !important;
-		    color: #fff !important;
-		    margin: auto;
-		    display: block;
-		    width: 100%;
-		    border-top: none;
-		    &:hover {
-	            background-color: #7e82b4 !important;
-	            border-color: #7e82b4 !important;
-	        }
-	        &:active,
-	        &:focus {
-	            background-color: 66669a !important;
-	            border-color: 66669a !important;
-	            outline: none;
-	        }
 		}
 	}
 	ul.navigation {
@@ -103,124 +61,69 @@ header#pm_header-desktop {
 		float: right;
 		margin: 0;
 		padding: 0;
-		li {
+		& > li {
 			display: block;
 			float: left;
 			position: relative;
-			p {
-				margin: 0;
-				display: block;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				a {
-					color: $primary;
-					padding: 0;
-					margin: 0;
-				    display: inline-block;
-				    width: auto;
-				    height: auto;
-				    line-height: initial !important;
-				    float: none;
-					position: relative;
-				}
-			}
-			&:hover {
-				.pm_dropdown {
-					color: #000 !important;
-					a.help {
-						color: #000 !important;
-						i {
-							color: #000 !important;
-						}
-					}
-				}
-			}
-			.help {
-				color: #000 !important;
-				margin: 0;
-				text-transform: none;
-				float: none;
-				display: block;
-				float: none;
-			}
-			.pm_dropdown {
-				a {
-					border-top: initial !important;
-					color: $primary;
-					width: 100%;
-					i {
-						display: inline-block;
-						color: #000;
-					}
-				}
-				a.help {
-					text-align: left;
-				}
-			}
-			span > a,
+			height: 60px;
 			& > a {
-				border-top: 10px solid transparent;
-			}
-			a {
-				height: $headerHeight;
-				padding-bottom: 10px;
-				float: left;
 				display: block;
+				float: left;
+				color: #e0e3ec;
+				padding: 12px 1rem 8px;
 				width: 115px;
-				text-align: center;
-				text-transform: uppercase;
-				text-decoration: none;
-				color: lighten(#c1c7d8, 10%);
 				box-sizing: border-box;
-				transition: color .25s ease, border .25s ease;
+				text-decoration: none;
 				box-shadow: none;
-				&:active,
-				&.active {
-					box-shadow: none;
-				}
-				.fa {
+				height: 60px;
+				& > span {
 					display: block;
 					height: 20px;
 					line-height: 20px;
-					padding-top: 5px;
 					text-align: center;
-					color: lighten(#c1c7d8, 10%);
-					transition: color .25s ease, border .25s ease;
-				}
-				&.pm_trigger {
-					em {
-						float: left;
-						width: 100%;
-						display: block;
-						height: 25px;
-						.fa-user,
-						.fa-angle-down {
-							display: inline-block;
-						}
+					.fa {
+						display: inline-block;
+						height: 20px;
+						line-height: 20px;
 					}
 				}
-				strong {
+				& > strong {
 					display: block;
 					height: 20px;
 					line-height: 20px;
 					font-weight: normal;
-					color: lighten(#c1c7d8, 10%);
-					transition: color .25s ease, border .25s ease;
+					text-transform: uppercase;
+					text-align: center;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 			}
-			&.active,
-			&:hover {
-				& > a {
-					border-top-color: #505061 !important;
-					color: #fff !important;
-					.fa {
+			.pm_dropdown {
+				.user {
+					text-align: left;
+					line-height: 1rem;
+					margin-bottom: 1rem;
+					float: left;
+					display: block;
+					width: 100%;
+					strong,
+					b {
+						display: block;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+				}
+				.pm_button.primary {
+					margin-top: 1rem;
+					&:hover {
+						background: darken($primary, 5%) !important;
 						color: #fff !important;
 					}
-					strong {
-						font-weight: 400;
-						color: #fff;
-					}
+				}
+				.version {
+					margin-bottom: -15px;
 				}
 			}
 		}

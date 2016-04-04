@@ -1,11 +1,11 @@
-<span class="labelDropdown">
-    <span role="menu" ng-click="$event.stopPropagation()">
+<div class="labelDropdown">
+    <div role="menu" ng-click="$event.stopPropagation()">
         <p ng-show="labels.length === 0" class="alert alert-info">{{ 'NO_LABELS' | translate }}</p>
-        <span ng-show="labels.length > 1" class="margin labelSearch">
+        <div ng-show="labels.length > 1" class="margin labelSearch">
             <i class="fa fa-search"></i>
             <input type="search" id="searchLabels" placeholder="{{ 'FILTER_LABEL' | translate }}" ng-model="searchLabels" ng-minlength="1" />
-        </span>
-        <span class="wrapper">
+        </div>
+        <div class="wrapper">
             <ul class="list-group" ng-show="labels.length > 0">
                 <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
                     <label>
@@ -16,12 +16,25 @@
                     </label>
                 </li>
             </ul>
-        </span>
+        </div>
+        <form novalidate ng-submit="create()" ng-show="displayField === true" class="pm_form">
+            <div class="pm_grid no-padding">
+                <div class="col-2-3">
+                    <input type="text" placeholder="{{ 'NAME' | translate }}" ng-model="labelName" />
+                </div>
+                <div class="col-1-3 text-right">
+                    <button type="submit" class="pm_button">{{ 'OK' | translate }}</button>
+                </div>
+            </div>
+        </form>
         <label ng-show="labelsSelected().length > 0">
             <input type="checkbox" ng-model="alsoArchive" /> {{ 'ALSO_ARCHIVE' | translate }}
         </label>
-        <p></p>
-        <button class="createLabel fa fa-plus pull-left pm_button" ng-click="createLabel()" pt-tooltip="{{ 'ADD_NEW_LABEL' | translate }}"></button>
-        <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary pull-right" ng-click="save()" ng-disabled="networkActivity.loading()">{{ 'SAVE' | translate }}</button>
-    </span>
-</span>
+        <div class="clearfix">
+            <button class="createLabel pull-left pm_button" ng-click="toggle()" pt-tooltip="{{ 'ADD_NEW_LABEL' | translate }}">
+                <i class="fa fa-plus"></i>
+            </button>
+            <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary pull-right" ng-click="save()" ng-disabled="networkActivity.loading()">{{ 'APPLY' | translate }}</button>
+        </div>
+    </div>
+</div>

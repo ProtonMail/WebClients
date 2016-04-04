@@ -3,14 +3,14 @@
 
 var _ = require("lodash"),
 util = require("util");
-var appVersion = '3.1.3';
+var appVersion = '3.1.6';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
 var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
 var API_TARGETS = {
-    blue: "https://52.32.164.147/api",
+    blue: "https://52.36.229.13/api",
     prod: "https://mail.protonmail.com/api",
     dev: "https://dev.protonmail.com/api",
     v2: "https://v2.protonmail.com/api",
@@ -103,7 +103,6 @@ module.exports = function(grunt) {
             default_options: {
                 src: ["<%= app_files.js %>", "<%= app_files.atpl %>", "<%= app_files.ctpl %>", "<%= app_files.html %>"],
                 dest: "src/assets/locales",
-                lang: ['fr_FR', 'en_US', 'de_DE', 'it_IT', 'es_ES'],
                 lang: ['fr_FR', 'en_US', 'de_DE', 'it_IT', 'es_ES', 'nl_NL'],
                 defaultLang: "en_US",
                 prefix: "",

@@ -5,9 +5,9 @@
             <section class="setting full pm_form">
                 <legend>{{ 'PAYMENT_METHODS' | translate }}</legend>
                 <div class="margin">
-                    <button type="button" class="pm_button primary" ng-click="add()">{{ 'ADD_CREDIT_CARD' | translate }}</button>
+                    <button type="button" class="pm_button primary" ng-click="add()">{{ 'ADD' | translate }}</button>
                 </div>
-                <p class="alert alert-info" ng-show="methods.length === 0"><i class="fa fa-arrow-up"></i> You have no saved payment methods, you can add a payment method by clicking "ADD CREDIT CARD".</p>
+                <p class="alert alert-info" ng-show="methods.length === 0"><i class="fa fa-arrow-up"></i> {{ 'NO_METHODS' | translate }}</p>
                 <table class="pm_table" ng-show="methods.length > 0">
                     <thead>
                         <tr>
@@ -19,7 +19,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="method in methods">
-                            <td>**** **** **** {{ method.Details.Last4 }}</td>
+                            <td>•••• •••• •••• {{ method.Details.Last4 }}</td>
                             <td>{{ method.Details.ExpMonth }}/{{ method.Details.ExpYear }}</td>
                             <td>
                                 <span class="pm_badge">{{ method.Type }}</span>
@@ -36,7 +36,11 @@
             </section>
             <section class="setting full pm_form">
                 <legend>{{ 'INVOICES' | translate }}</legend>
-                <p class="alert alert-info" ng-show="invoices.length === 0">You have no invoices.</p>
+                <div class="margin">
+                    <button type="button" class="pm_button" ng-click="customize()">{{ 'CUSTOMIZE' | translate }}</button>
+                </div>
+                <p class="alert alert-danger" ng-show="delinquent === true" translate="DELINQUENT_NOTIFICATION"></p>
+                <p class="alert alert-info" ng-show="invoices.length === 0">{{ 'NO_INVOICES' | translate }}</p>
                 <table class="pm_table" ng-show="invoices.length > 0">
                     <thead>
                         <tr>

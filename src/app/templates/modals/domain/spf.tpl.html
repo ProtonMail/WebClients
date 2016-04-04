@@ -7,11 +7,12 @@
                 <span ng-show="ctrl.domain.SpfState === 0" class="pull-right pm_badge error">{{ 'NOT_SET' | translate }}</span>
                 <span ng-show="ctrl.domain.SpfState === 1 || ctrl.domain.SpfState === 2" class="pull-right pm_badge error">{{ 'NOT_SET_PROPERLY' | translate }}</span>
                 <span ng-show="ctrl.domain.SpfState === 3" class="pull-right pm_badge success">{{ 'GOOD!' | translate }}</span>
-                <h4 class="modal-title">5. {{ 'SPF' | translate }} <em>(Recommended)</em></h4>
+                <h4 class="modal-title">5. {{ 'SPF' | translate }} <em>({{ 'RECOMMENDED' | translate }})</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p>SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
-                <p>Please add the following TXT record. Note, DNS records can take several hours to update.</p>
+                <div translate="SPF_INFO_1"></div>
+                <div translate="SPF_INFO_2"></div>
+                <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/'>{{ 'LEARN_MORE' | translate }}</a></p>
                 <table class="pm_table record desktopOnly">
                     <tr>
                         <th style="width:3rem">{{ 'TYPE' | translate }}</th>
@@ -39,8 +40,7 @@
                         <code>v=spf1 include:_spf.protonmail.ch mx ~all</code>
                     </p>
                 </div>
-
-                <p class="alert alert-info">If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. Do not create multiple SPF records.</p>
+                <p class="alert alert-info">{{ 'SPF_INFO_3' | translate }}</p>
             </div>
         </div>
         <div class="modal-footer clearfix">

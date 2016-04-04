@@ -11,8 +11,9 @@
                 <h4 class="modal-title">6. DKIM <em>({{ 'RECOMMENDED' | translate }})</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p>ProtonMail supports DKIM signing for custom domains! To protect <strong>{{ ctrl.domain.DomainName }}</strong> with DKIM authentication, please add the following TXT record into the DNS for <strong>{{ ctrl.domain.DomainName }}</strong>. This can typically be done in the control panel of your domain name registrar. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/">{{ 'LEARN_MORE' | translate }}</a></p>
-                <p>Please add the follow TXT record. Note, DNS records can take several hours to update.</p>
+                <div translate="DKIM_INFO_1"></div>
+                <div translate="DKIM_INFO_2"></div>
+                <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/'>{{ 'LEARN_MORE' | translate }}</a></p>
                 <table class="pm_table record desktopOnly">
                     <tr>
                         <th style="width:3rem">{{ 'TYPE' | translate }}</th>
@@ -41,7 +42,7 @@
                     </p>
                 </div>
 
-                <p class="alert alert-info">Keep this record in your DNS for as long as you want to use DKIM. You can change its Value to <code>off</code> to disable DKIM</p>
+                <p class="alert alert-info" translate="DKIM_INFO_3"></p>
             </div>
         </div>
         <div class="modal-footer clearfix">

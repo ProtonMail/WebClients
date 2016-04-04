@@ -61,6 +61,8 @@ angular.module('proton', [
 
     // Directives
     'proton.autocomplete',
+    'proton.card',
+    'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
     'proton.enter',
@@ -70,7 +72,9 @@ angular.module('proton', [
     'proton.labels',
     'proton.loaderTag',
     'proton.locationTag',
+    'proton.maxComposerHeight',
     'proton.move',
+    'proton.phone',
     'proton.responsiveComposer',
     'proton.sample',
     'proton.sidebarHeight',
@@ -79,10 +83,7 @@ angular.module('proton', [
     'proton.toggle',
     'proton.tooltip',
     'proton.transformation',
-    'proton.maxComposerHeight',
-    'proton.drag',
     'proton.wizard',
-    'proton.card',
 
     // Filters
     'proton.filters',
@@ -162,31 +163,42 @@ angular.module('proton', [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
-.run(function(CONSTANTS) {
+.run(function(CONSTANTS, $translate) {
     // This function clears junk from session storage. Should not be needed forever
     try {
-        var locale = window.navigator.userLanguage || window.navigator.language;
+        var defaultLanguage = 'en';
+        var preferredLanguage = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage || defaultLanguage;
+        var locales = {
+            fr: 'fr_FR',
+            en: 'en_US',
+            de: 'de_DE',
+            es: 'es_ES',
+            it: 'it_IT'
+        };
         var whitelist = [
             CONSTANTS.EVENT_ID,
             CONSTANTS.MAILBOX_PASSWORD_KEY,
-            CONSTANTS.OAUTH_KEY+":SessionToken",
-            CONSTANTS.OAUTH_KEY + ":Uid",
-            CONSTANTS.OAUTH_KEY + ":AccessToken",
-            CONSTANTS.OAUTH_KEY + ":RefreshToken",
-            "proton:decrypted_token",
-            "proton:encrypted_password"
+            CONSTANTS.OAUTH_KEY + ':SessionToken',
+            CONSTANTS.OAUTH_KEY + ':Uid',
+            CONSTANTS.OAUTH_KEY + ':AccessToken',
+            CONSTANTS.OAUTH_KEY + ':RefreshToken',
+            'proton:decrypted_token',
+            'proton:encrypted_password'
         ];
 
         var data = {};
-        for( var i=0; i<whitelist.length; i++) {
+
+        for(var i = 0; i < whitelist.length; i++) {
             var item = window.sessionStorage.getItem(whitelist[i]);
+
             if( angular.isString(item) ) {
                 data[whitelist[i]] = item;
             }
         }
 
         window.sessionStorage.clear();
-        moment.locale(locale);
+        moment.locale(preferredLanguage);
+        $translate.use(locales[preferredLanguage] || defaultLanguage);
 
         for (var key in data) {
             window.sessionStorage.setItem(key, data[key]);
@@ -400,14 +412,15 @@ angular.module('proton', [
                     params: {
                         submit: function(loginPassword) {
                             // Send request to unlock the current session for administrator privileges
-                            User.unlock({Password: loginPassword}).$promise.then(function(data) {
-                                if (data.Code === 1000) {
+                            User.unlock({Password: loginPassword})
+                            .then(function(result) {
+                                if (result.data && result.data.Code === 1000) {
                                     // Close the modal
                                     loginPasswordModal.deactivate();
                                     // Resend request now
                                     deferred.resolve($http(rejection.config));
-                                } else if (data.Error) {
-                                    notify({message: data.Error, classes: 'notification-danger'});
+                                } else if (result.data && result.data.Error) {
+                                    notify({message: result.data.Error, classes: 'notification-danger'});
                                     deferred.reject();
                                 }
                             });

@@ -7,7 +7,7 @@ form.searchForm {
 	border-radius: 35px;
 	color: #fff;
 	width: calc(100% - 700px);
-	max-width: 35%;
+	max-width: 25%;
 	margin-left: 10px;
 	box-sizing: border-box;
 	position: relative;
@@ -31,7 +31,7 @@ form.searchForm {
 	}
 	fieldset {
 		position: relative;
-		background: rgba(255,255,255,.25);;
+		background: lighten($alt, 10%);
 		z-index: 5;
 		display: block;
 		line-height: 35px;
@@ -87,12 +87,12 @@ form.searchForm {
 			border: none;
 			padding: 0;
 			-webkit-appearance: none;
-			   -moz-appearance: none;
-			        appearance: none;
+			-moz-appearance: none;
+	        appearance: none;
 			position: relative;
 			border-radius: 0;
 			padding: 0 0 0 10px;
-			background: transparent;
+			background: lighten($alt, 10%);
 			color: #fff;
 			position: absolute;
 			left: 35px;

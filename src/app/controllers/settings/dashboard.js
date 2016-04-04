@@ -16,7 +16,6 @@ angular.module("proton.controllers.Settings")
     networkActivityTracker,
     notify,
     Organization,
-    organization,
     Payment,
     paymentModal,
     methods,
@@ -91,9 +90,9 @@ angular.module("proton.controllers.Settings")
      * @param {Object} subscription
      * @param {Object} monthly
      * @param {Object} yearly
-     * @param {Object} organization
+     * @param {Array} methods
      */
-    $scope.initialization = function(subscription, monthly, yearly, organization, methods) {
+    $scope.initialization = function(subscription, monthly, yearly, methods) {
         if (angular.isDefined(subscription)) {
             _.extend($scope.subscription, subscription);
             $scope.configuration.cycle = subscription.Cycle;
@@ -127,10 +126,6 @@ angular.module("proton.controllers.Settings")
 
         }
 
-        if (angular.isDefined(organization)) {
-            $scope.organization = organization;
-        }
-
         if (angular.isDefined(methods)) {
             $scope.methods = methods;
         }
@@ -153,12 +148,11 @@ angular.module("proton.controllers.Settings")
         networkActivityTracker.track(
             $q.all({
                 subscription: Payment.subscription(),
-                organization: Organization.get(),
                 methods: Payment.methods(),
                 event: eventManager.call()
             })
             .then(function(result) {
-                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.organization.data.Organization, result.methods.data.PaymentMethods);
+                $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.methods.data.PaymentMethods);
             })
         );
     };
@@ -267,23 +261,23 @@ angular.module("proton.controllers.Settings")
 
         if (plan.Name === 'free') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Already Subscribed';
+                text = $translate.instant('ALREADY_SUBSCRIBED');
             } else {
-                text = 'Downgrade To Free';
+                text = $translate.instant('DOWNGRADE_TO_FREE');
             }
         } else if (plan.Name === 'plus') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Update Plus';
+                text = $translate.instant('UPDATE_PLUS');
             } else if ($scope.subscription.Name === 'free') {
-                text = 'Upgrade To Plus';
+                text = $translate.instant('UPGRADE_TO_PLUS');
             } else if ($scope.subscription.Name === 'visionary') {
-                text = 'Downgrade To Plus';
+                text = $translate.instant('DOWNGRADE_TO_PLUS');
             }
         } else if (plan.Name === 'visionary') {
             if ($scope.subscription.Name === plan.Name) {
-                text = 'Update Visionary';
+                text = $translate.instant('UPDATE_VISIONARY');
             } else {
-                text = 'Upgrade To Visionary';
+                text = $translate.instant('UPGRADE_TO_VISIONARY');
             }
         }
 
@@ -318,7 +312,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.free = function() {
         var title = $translate.instant('CONFIRM_DOWNGRADE');
-        var message = 'This will downgrade your account to a free account.<br /><br />Please disable all additional addresses prior to downgrading your account. You can manage that inside the addresses tab.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.';
+        var message = $translate.instant('CONFIRM_DOWNGRADE_MESSAGE');
 
         confirmModal.activate({
             params: {
@@ -495,5 +489,5 @@ angular.module("proton.controllers.Settings")
     };
 
     // Call initialization
-    $scope.initialization(subscription.data.Subscription, monthly.data.Plans, yearly.data.Plans, organization.data.Organization, methods.data.PaymentMethods);
+    $scope.initialization(subscription.data.Subscription, monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
 });

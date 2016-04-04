@@ -1,6 +1,7 @@
-angular.module("proton.cache", [])
+angular.module('proton.cache', [])
 
-.service("cache", function(
+.service('cache', function(
+    $interval,
     $q,
     $rootScope,
     $state,
@@ -22,6 +23,11 @@ angular.module("proton.cache", [])
     var CREATE = 1;
     var UPDATE_DRAFT = 2;
     var UPDATE_FLAGS = 3;
+    var intervalExpiration;
+
+    $interval(function() {
+        api.expiration();
+    }, 1000, 0 , false);
 
     /**
     * Save conversations in conversationsCached and add loc in attribute
@@ -542,9 +548,10 @@ angular.module("proton.cache", [])
     /**
      * Return conversation list with request specified in cache or call api
      * @param {Object} request
+     * @param {Boolean} first
      * @return {Promise}
      */
-    api.queryConversations = function(request) {
+    api.queryConversations = function(request, first) {
         var deferred = $q.defer();
         var loc = getLocation(request);
         var context = tools.cacheContext();
@@ -554,7 +561,7 @@ angular.module("proton.cache", [])
         };
 
         // In cache context?
-        if(context === true) {
+        if (context === true && first === false) {
             var page = request.Page || 0;
             var start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             var end = start + CONSTANTS.ELEMENTS_PER_PAGE;
@@ -567,7 +574,7 @@ angular.module("proton.cache", [])
 
             conversations = api.orderConversation(conversations, loc);
 
-            switch(mailbox) {
+            switch (mailbox) {
                 case 'label':
                     total = cacheCounters.totalConversation($stateParams.label);
                     break;
@@ -950,7 +957,7 @@ angular.module("proton.cache", [])
      * Manage expiration time for messages in the cache
      */
     api.expiration = function() {
-        var now = Date.now() / 1000;
+        var now = moment().unix();
         var removed = 0;
 
         messagesCached = _.filter(messagesCached, function(message) {
@@ -1181,72 +1188,6 @@ angular.module("proton.cache", [])
     api.reset = function() {
         counters = {};
     };
-
-    return api;
-})
-
-.factory('expiration', function($interval, cache) {
-    var api = {};
-    var interval = 5000;
-    var need = false;
-    var elements = [];
-
-    /**
-     * Delete message if expired
-     */
-    var process = function() {
-        if(need === true) {
-            if(elements.length > 0) {
-                var messages = [];
-                var type = (angular.isDefined(_.first(elements).ConversationID))?'message':'conversation';
-
-                // Set messages
-                if(type === 'message') {
-                    messages = elements;
-                } else if(type === 'conversation') {
-                    messages = cache.queryMessagesCached(_.first(elements).ConversationID);
-                }
-
-                // Get elements expired
-                var elementsExpired = _.filter(messages, function(element) {
-                    return element.ExpirationTime < moment().unix();
-                });
-
-                if(elementsExpired.length > 0) {
-                    // Generate an event to delete message expired in the cache
-                    var events = [];
-
-                    _.each(elementsExpired, function(message) {
-                        events.push({Action: 0, ID: message.ID});
-                    });
-
-                    cache.events(events);
-                }
-            }
-
-            need = false;
-        }
-    };
-
-    /**
-     * Start to loop
-     */
-    var start = function() {
-        $interval(function() {
-            process();
-        }, interval);
-    };
-
-    /**
-     * Assign new elements
-     */
-    api.check = function(elements) {
-        elements = elements;
-        need = true;
-    };
-
-    // Start looping around conversations / messages
-    start();
 
     return api;
 });

@@ -17,7 +17,6 @@ angular.module('proton.controllers.Settings')
     Member,
     networkActivityTracker,
     notify,
-    organization,
     Setting
 ) {
     $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
@@ -51,21 +50,12 @@ angular.module('proton.controllers.Settings')
         }
     };
 
-    // Set organization
-    if (organization.data.Organization) {
-        $scope.organization = organization.data.Organization;
-    }
-
     // Listeners
     $scope.$on('updateUser', function(event) {
         if ($scope.itemMoved === false) {
             $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
             $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
         }
-    });
-
-    $scope.$on('organizationChange', function(event, organization) {
-        $scope.organization = organization;
     });
 
     /**
@@ -105,7 +95,7 @@ angular.module('proton.controllers.Settings')
         confirmModal.activate({
             params: {
                 title: $translate.instant('DISABLE_ADDRESS'),
-                message: $translate.instant('Are you sure you want to disable this address?'),
+                message: $translate.instant('DISABLE_ADDRESS_CONFIRMATION'),
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -176,7 +166,7 @@ angular.module('proton.controllers.Settings')
         confirmModal.activate({
             params: {
                 title: $translate.instant('DELETE_ADDRESS'),
-                message: $translate.instant('Are you sure you want to delete this address?'),
+                message: $translate.instant('DELETE_ADDRESS_CONFIRMATION'),
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -243,19 +233,15 @@ angular.module('proton.controllers.Settings')
 
     $scope.saveOrder = function(order) {
         networkActivityTracker.track(
-            Setting.addressOrder({
-                'Order': order
-            }).$promise.then(function(response) {
-                if (response.Code === 1000) {
+            Setting.addressOrder({Order: order})
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
                     notify({message: $translate.instant('ADDRESS_ORDER_SAVED'), classes: 'notification-success'});
-                } else if (response.Error) {
-                    notify({message: response.Error, classes: 'notification-danger'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: 'Error during the order request', classes : 'notification-danger'});
+                    notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes : 'notification-danger'});
                 }
-            }, function(error) {
-                notify({message: 'Error during the order request', classes : 'notification-danger'});
-                $log.error(error);
             })
         );
     };

@@ -19,6 +19,13 @@ $pad: 20px;
 		box-sizing: border-box;
 	}
 
+	&.truncate > div {
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
 	&.pad {
 		padding: $pad 0 $pad $pad;
 		[class*='col-']:last-of-type {
@@ -26,7 +33,7 @@ $pad: 20px;
 		}
 	}
 
-	&.no-margin {
+	&.no-padding {
 		padding: 0;
 		[class*='col-'] {
 			padding: 0;

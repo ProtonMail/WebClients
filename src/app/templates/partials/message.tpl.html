@@ -150,7 +150,7 @@ ng-class="{
 
             <div class="actions pull-right">
                 <span class="pm_buttons">
-                    <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD_LABEL' | translate }}" dropdown ng-click="message.labelDropdownOpen = !message.labelDropdownOpen">
+                    <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'ADD' | translate }}" dropdown ng-click="message.labelDropdownOpen = !message.labelDropdownOpen">
                         <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
                     </a>
                     <span class="pm_dropdown right wide pull-left">
@@ -228,11 +228,11 @@ ng-class="{
 
     <div class="frame" ng-show="message.expand">
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
-        <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote></div>
+        <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote scroll="true"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
-            <strong>Decryption error</strong>
-            <br> Decryption of this message's content failed.
+            <strong>{{ 'DECRYPTION_ERROR' | translate }}</strong>
+            <br> {{ 'DECRYPTION_ERROR_INFO' | translate }}
         </div>
         <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     </div>

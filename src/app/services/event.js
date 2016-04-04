@@ -16,6 +16,7 @@ angular.module("proton.event", ["proton.constants"])
 		CONSTANTS,
 		Contact,
 		Events,
+		Label,
 		notify,
 		pmcw
 	) {
@@ -37,22 +38,23 @@ angular.module("proton.event", ["proton.constants"])
 			manageLabels: function(labels) {
 				if (angular.isDefined(labels)) {
 					_.each(labels, function(label) {
-						var index;
+						var index = _.findIndex(authentication.user.Labels, {ID: label.ID});
 
 						if(label.Action === DELETE) {
-							index = _.findIndex(authentication.user.Labels, function(l) { return l.ID === label.ID; });
-
-							if(index !== -1) {
+							if (index !== -1) {
 								authentication.user.Labels.splice(index, 1);
+								$rootScope.$broadcast('deleteLabel', label.ID);
 							}
 						} else if(label.Action === CREATE) {
-							authentication.user.Labels.push(label.Label);
-							cacheCounters.add(label.Label.ID);
+							if (index === -1) {
+								authentication.user.Labels.push(label.Label);
+								cacheCounters.add(label.Label.ID);
+								$rootScope.$broadcast('createLabel', label.ID, label.Label);
+							}
 						} else if(label.Action === UPDATE) {
-							index = _.findIndex(authentication.user.Labels, function(l) { return l.ID === label.Label.ID; });
-
 							if(index !== -1) {
-								authentication.user.Labels[index] = _.extend(authentication.user.Labels[index], label.Label);
+								authentication.user.Labels[index] = label.Label;
+								$rootScope.$broadcast('updateLabel', label.ID, label.Label);
 							}
 						}
 					});
@@ -61,20 +63,29 @@ angular.module("proton.event", ["proton.constants"])
 			manageContacts: function(contacts) {
 				if (angular.isDefined(contacts)) {
 					_.each(contacts, function(contact) {
-						if(contact.Action === DELETE) {
-							authentication.user.Contacts = _.filter(authentication.user.Contacts, function(c) { return c.ID !== contact.ID; });
+						var index = _.findIndex(authentication.user.Contacts, {ID: contact.ID});
+
+						if (contact.Action === DELETE) {
+							if (index !== -1) {
+								authentication.user.Contacts.splice(index, 1);
+								$rootScope.$broadcast('deleteContact', contact.ID);
+							}
 						} else if(contact.Action === CREATE) {
-							authentication.user.Contacts.push(contact.Contact);
+							if (index === -1) {
+								authentication.user.Contacts.push(contact.Contact);
+								$rootScope.$broadcast('createContact', contact.ID, contact.Contact);
+							}
 						} else if (contact.Action === UPDATE) {
-							var index = _.findIndex(authentication.user.Contacts, function(c) { return c.ID === contact.Contact.ID; });
-							authentication.user.Contacts[index] = contact.Contact;
+							if (index !== -1) {
+								authentication.user.Contacts[index] = contact.Contact;
+								$rootScope.$broadcast('updateContact', contact.ID, contact.Contact);
+							}
 						}
-						$rootScope.$broadcast('updateContacts');
 					});
 				}
 			},
 			manageUser: function(user) {
-				if(angular.isDefined(user)) {
+				if (angular.isDefined(user)) {
 					var mailboxPassword = authentication.getPassword();
 					var promises = [];
 					var dirtyAddresses = [];
@@ -274,7 +285,8 @@ angular.module("proton.event", ["proton.constants"])
 			manage: function (data) {
 				// Check if eventID is sent
 				if (data.Error) {
-					Events.getLatestID({}).then(function(response) {
+					Events.getLatestID({})
+					.then(function(response) {
 						eventModel.manageID(response.data.EventID);
 					});
 				} else if (data.Refresh === 1) {
@@ -283,6 +295,12 @@ angular.module("proton.event", ["proton.constants"])
 					cacheCounters.reset();
 					cache.callRefresh();
 					cacheCounters.query();
+					authentication.fetchUserInfo()
+					.then(function() {
+						$rootScope.$broadcast('updateUser');
+						$rootScope.$broadcast('updateContacts');
+						$rootScope.$broadcast('updateLabels');
+					});
 				} else if (data.Reload === 1) {
 					$window.location.reload();
 				} else if (this.isDifferent(data.EventID)) {
@@ -300,7 +318,6 @@ angular.module("proton.event", ["proton.constants"])
 				}
 
 				this.manageNotices(data.Notices);
-				cache.expiration();
 			},
 			interval: function() {
 				eventModel.get().then(function (result) {

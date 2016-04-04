@@ -8,7 +8,7 @@ body#eo-message {
 		position: static;
 	}
 	#attachmentArea {
-		margin: 0 -35px -35px;
+		margin: 0;
 	}
 	.message-head {
 		padding-left: 35px;
@@ -20,7 +20,7 @@ body#eo-reply {
 	overflow: initial;
 	background: $dark;
 	#attachmentArea {
-		margin: 0 -35px;
+		margin: 0;
 	}
 	#pm_footer {
 		position: static;
@@ -59,7 +59,7 @@ body#eo-reply {
 		}
 	}
 	#message-body {
-		margin: 0 -35px;
+		margin: 0;
 		.squire-toolbar {
 			border-top: 1px solid $border;
 			border-bottom: 1px solid $border;
@@ -96,7 +96,7 @@ body#eo-reply {
 	}
 	footer {
 		padding: 1rem 35px;
-		margin: 0 -35px -35px;
+		margin: 0;
 		border-top: 1px solid $border;
 		.pm_button {
 			text-transform: uppercase;
@@ -116,13 +116,14 @@ body#eo-reply {
 		text-align: center;
 		color: #fff;
 		font-size: .9em;
-		margin: -35px -35px 0;
+		margin: 0;
 	}
 	#outsideMessageWrap {
-		padding: 15px 35px 35px;
+		padding: 0;
 		background-color: #fff;
 	}
 	#outsideMessage {
+		padding: 35px;
 		overflow: auto;
 		-webkit-overflow-scrolling: touch;
 	}
@@ -130,8 +131,7 @@ body#eo-reply {
 		padding: 20px 35px;
 		border-bottom: 1px solid $border;
 		margin-bottom: 10px;
-		margin-left: -35px;
-		margin-right: -35px;
+		box-sizing: border-box;
 		h1 {
 			line-height: 35px;
 			display: inline-block;
@@ -165,14 +165,14 @@ body#eo-reply {
 	       -moz-transition: padding .1s ease;
 	        -ms-transition: padding .1s ease;
 	         -o-transition: padding .1s ease;
-	            transition: padding .1s ease;        
+	            transition: padding .1s ease;
 		a {
 			color: $primary;
             display: block;
             width: 100%;
 			text-decoration: none;
             text-decoration: none;
-	        background-color: #fff !important;            
+	        background-color: #fff !important;
 		}
 		a:hover, a:focus {
 			text-decoration: underline;
@@ -183,14 +183,15 @@ body#eo-reply {
 	    }
 	}
 	.message-metadata {
-		margin-bottom: 2rem;
+		margin-bottom: 0;
 		padding-bottom: 1rem;
 		border-bottom: 1px solid $border;
 		position: relative;
-		margin-left: -35px;
-		margin-right: -35px;
 		padding-left: 35px;
 		padding-right: 35px;
+		ul.infos {
+			overflow: auto;
+		}
 		ul.infos,
 		ul.infos li {
 			display: block;
@@ -265,7 +266,7 @@ body.mobileMode {
 					}
 				}
 			}
-		}		
+		}
 	}
 	body#eo-message {
 		.message-head,

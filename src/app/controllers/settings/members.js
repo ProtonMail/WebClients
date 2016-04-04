@@ -8,7 +8,6 @@ angular.module("proton.controllers.Settings")
     Address,
     Member,
     members,
-    organization,
     eventManager,
     Organization,
     storageModal,
@@ -27,10 +26,6 @@ angular.module("proton.controllers.Settings")
     ];
 
     // Listeners
-    $scope.$on('organizationChange', function(event, organization) {
-        $scope.organization = organization;
-    });
-
     $scope.$on('deleteDomain', function(event, domainId) {
         var index = _.findIndex($scope.domains, {ID: domainId});
 
@@ -88,10 +83,6 @@ angular.module("proton.controllers.Settings")
     });
 
     $scope.initialization = function() {
-        if (organization.data && organization.data.Code === 1000) {
-            $scope.organization = organization.data.Organization;
-        }
-
         if (members.data && members.data.Code === 1000) {
             $scope.members = members.data.Members;
         }
@@ -176,7 +167,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.unlinkAddress = function(member, address) {
         var title = $translate.instant('UNLINK_ADDRESS');
-        var message = $translate.instant('Are you sure you want to unlink this address?');
+        var message = $translate.instant('UNLINK_ADDRESS_CONFIRMATION');
 
         confirmModal.activate({
             params: {
@@ -228,7 +219,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.remove = function(member) {
         var title = $translate.instant('REMOVE_MEMBER');
-        var message = $translate.instant('Are you sure you want to remove this user?');
+        var message = $translate.instant('REMOVE_MEMBER_CONFIRMATION');
         var index = $scope.members.indexOf(member);
 
         confirmModal.activate({
@@ -275,10 +266,10 @@ angular.module("proton.controllers.Settings")
                         } else if (result.data && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: 'Error during the quota request', classes: 'notification-danger'});
+                            notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: 'Error during the quota request', classes: 'notification-danger'});
+                        notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {

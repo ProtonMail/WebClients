@@ -32,7 +32,7 @@ angular.module("proton.controllers.Settings")
                     $scope.haveLogs = true;
                 },
                 function(error) {
-                    notify({message: 'Error during the initialization of logs', classes: 'notification-danger'});
+                    notify({message: $translate.instant('UNABLE_TO_LOAD_LOGS'), classes: 'notification-danger'});
                     $log.error(error);
                 }
             )
@@ -40,8 +40,8 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.clearLogs = function() {
-        var title = $translate.instant('CLEAR_LOGS');
-        var message = 'Are you sure you want to clear all your logs?'; // TODO translate
+        var title = $translate.instant('CLEAR');
+        var message = $translate.instant('CLEAR_LOGS_CONFIRMATION');
 
         confirmModal.activate({
             params: {
@@ -56,7 +56,7 @@ angular.module("proton.controllers.Settings")
                                 notify({message: $translate.instant('LOGS_CLEARED'), classes: 'notification-success'});
                             },
                             function(error) {
-                                notify({message: 'Error during the clear logs request', classes: 'notification-danger'});
+                                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                                 $log.error(error);
                             }
                         )
@@ -90,15 +90,15 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.setLogging = function(value) {
-        if(value === 0) {
+        if (value === 0) {
             confirmModal.activate({
                 params: {
-                    message: 'This will delete all access logs, do you want to continue?', // TODO translate
+                    message: $translate.instant('CLEAR_LOGS_CONFIRMATION'), // TODO translate
                     confirm: function() {
                         Setting.setLogging({LogAuth: 0});
                         $scope.doLogging = 0;
                         authentication.user.LogAuth = 0;
-                        notify({message: 'Logging Preference Updated', classes: 'notification-success'});
+                        notify({message: $translate.instant('LOG_SETTINGS_UPDATED'), classes: 'notification-success'});
                         confirmModal.deactivate();
                         $scope.disabledText = $translate.instant('DISABLED');
                     },
@@ -111,7 +111,7 @@ angular.module("proton.controllers.Settings")
             $scope.doLogging = value;
             authentication.user.LogAuth = value;
             Setting.setLogging({LogAuth: value});
-            notify({message: 'Logging Preference Updated', classes: 'notification-success'});
+            notify({message: $translate.instant('LOG_SETTINGS_UPDATED'), classes: 'notification-success'});
             $scope.disabledText = $translate.instant('DISABLE');
         }
     };

@@ -3,11 +3,13 @@ angular.module('proton.actions', [])
 .factory('action', function(
     $q,
     $rootScope,
+    $translate,
     tools,
     cache,
     Conversation,
     Message,
     networkActivityTracker,
+    notify,
     CONSTANTS
 ) {
     return {
@@ -104,6 +106,7 @@ angular.module('proton.actions', [])
             var current = tools.currentLocation();
             var process = function() {
                 cache.events(events);
+                notify({message: $translate.instant('LABELS_SAVED'), classes: 'notification-success'});
 
                 if(alsoArchive === true) {
                     Conversation.archive(ids); // Send request to archive conversations
@@ -546,6 +549,7 @@ angular.module('proton.actions', [])
                     });
 
                     cache.events(events2);
+                    notify({message: $translate.instant('LABELS_SAVED'), classes: 'notification-success'});
 
                     if(alsoArchive === true) {
                         Message.archive({IDs: ids}); // Send request to archive conversations

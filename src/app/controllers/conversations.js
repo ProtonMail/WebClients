@@ -17,7 +17,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Conversation,
     Message,
     eventManager,
-    expiration,
     Label,
     authentication,
     cache,
@@ -30,6 +29,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 ) {
     var lastChecked = null;
     var unbindWatcherElements;
+    var firstLoad = true; // Variable used to determine if it's the first load to force the cache to call back-end result
 
     /**
      * Method called at the initialization of this controller
@@ -84,7 +84,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if (width > 0) {
 
             // lets set some CSS to update our time elements
-            var style = "<style>.conversation .row .meta em.time { width: "+ width +"px !important; } .conversation .row .meta { width: "+ (width+40) +"px !important;} .conversation .row h4 { width: calc(100% - "+ (width+45) +"px) !important; }</style>";
+            var style = "<style>.conversation .row .meta em.time { width: "+ width +"px !important; } .conversation .row .meta { width: "+ (width+40) +"px !important;} .conversation .row h4 { width: calc(100% - "+ (width+75) +"px) !important; }</style>";
 
             // inject CSS into DOM
             $('body').append(style);
@@ -105,8 +105,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $rootScope.numberElementSelected = $scope.elementsSelected().length;
             $rootScope.numberElementChecked = $scope.elementsChecked().length;
             $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
-            // Manage expiration time
-            expiration.check(newValue);
         }, true);
     };
 
@@ -145,7 +143,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Boolean}
      */
     $scope.placeholder = function() {
-        return $rootScope.layoutMode === 'columns' && ($rootScope.idDefined() === false || ($rootScope.idDefined() === true && $rootScope.numberElementChecked > 0));
+        return $rootScope.layoutMode === 'columns' && ($scope.idDefined() === false || ($scope.idDefined() === true && $rootScope.numberElementChecked > 0));
     };
 
     $scope.startWatchingEvent = function() {
@@ -259,7 +257,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if (mailbox === 'search') {
             params.Address = $stateParams.address;
             params.Label = $stateParams.label;
-            params.Keyword = $stateParams.words;
+            params.Keyword = $stateParams.keyword;
             params.To = $stateParams.to;
             params.From = $stateParams.from;
             params.Subject = $stateParams.subject;
@@ -285,9 +283,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var promise;
 
         if(type === 'message') {
-            promise = cache.queryMessages(request);
+            promise = cache.queryMessages(request, firstLoad);
         } else if(type === 'conversation') {
-            promise = cache.queryConversations(request);
+            promise = cache.queryConversations(request, firstLoad);
         }
 
         promise.then(function(elements) {
@@ -295,6 +293,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
             $scope.conversations = elements;
             $scope.watchElements();
+            firstLoad = false;
 
             if($scope.conversations.length === 0 && page > 0) {
                 $scope.back();
@@ -586,57 +585,40 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     // Let users change the col/row modes.
     $scope.changeLayout = function(mode) {
-
         var newLayout;
 
         if (mode === 'rows' && $rootScope.layoutMode!=='rows') {
             newLayout = 1;
-        }
-        else if (mode === 'columns' && $rootScope.layoutMode!=='columns') {
+        } else if (mode === 'columns' && $rootScope.layoutMode!=='columns') {
             newLayout = 0;
-        }
-        else if (mode === 'mobile') {
+        } else if (mode === 'mobile') {
             $rootScope.mobileMode = true;
         }
-
-        var error = function(error) {
-            $log.error(error);
-            notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
-        };
 
         if (
             (mode === 'columns' && $rootScope.layoutMode!=='columns') ||
             (mode === 'rows' && $rootScope.layoutMode!=='rows')
         ) {
             networkActivityTracker.track(
-                Setting.setViewlayout({
-                    "ViewLayout": newLayout
-                }).$promise.then(
-                    function(response) {
-                        if(response.Code === 1000) {
-                            notify({
-                                message: $translate.instant('LAYOUT_SAVED'),
-                                classes: 'notification-success'
-                            });
+                Setting.setViewlayout({ViewLayout: newLayout})
+                .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
                             $rootScope.mobileMode = false;
                             $rootScope.layoutMode = mode;
                             authentication.user.ViewLayout = newLayout;
                             $rootScope.mobileResponsive();
-                        } else if (response.Error) {
-                            error(response.Error);
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            error();
+                            notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
                         }
-                    },
-                    function(error) {
-                        error(error);
                     }
                 )
             );
         }
 
         angular.element('#pm_toolbar-desktop a').tooltip('hide');
-
     };
 
     /**
