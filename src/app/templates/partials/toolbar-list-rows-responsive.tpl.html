@@ -112,39 +112,41 @@
 
     <div class="secondary">
         <span class="pm_buttons">
-            <a class="pm_trigger" dropdown><small translate>More</small> <i class="fa fa-angle-down"></i></a>
+            <a href="#" class="pm_trigger" dropdown>
+                <small translate>More</small> <i class="fa fa-angle-down"></i>
+            </a>
             <span class="pm_dropdown wider">
-                <a ng-click="empty('drafts')" ng-show="{{ 'secured.drafts.**' | includedByState }}">
+                <a href="#" ng-click="empty('drafts')" ng-show="{{ 'secured.drafts.**' | includedByState }}">
                     <i class="fa fa-times-circle-o"></i> {{ 'Empty drafts' | translate }}
                 </a>
-                <a ng-click="empty('spam')" ng-show="{{ 'secured.spam.**' | includedByState }}">
+                <a href="#" ng-click="empty('spam')" ng-show="{{ 'secured.spam.**' | includedByState }}">
                     <i class="fa fa-times-circle-o"></i> {{ 'Empty spam' | translate }}
                 </a>
-                <a ng-click="empty('trash')" ng-show="{{ 'secured.trash.**' | includedByState }}">
+                <a href="#" ng-click="empty('trash')" ng-show="{{ 'secured.trash.**' | includedByState }}">
                     <i class="fa fa-times-circle-o"></i> {{ 'Empty trash' | translate }}
                 </a>
-                <a ng-click="orderBy('subject')">
+                <a href="#" ng-click="orderBy('subject')">
                     <i class="fa fa-sort-alpha-asc"></i> {{ 'Subject' | translate }}: A-Z
                 </a>
-                <a ng-click="orderBy('-subject')">
+                <a href="#" ng-click="orderBy('-subject')">
                     <i class="fa fa-sort-alpha-desc"></i> {{ 'Subject' | translate }}: Z-A
                 </a>
-                <a ng-click="orderBy('from')">
+                <a href="#" ng-click="orderBy('from')">
                     <i class="fa fa-sort-alpha-asc"></i> {{ 'From' | translate }}: A-Z
                 </a>
-                <a ng-click="orderBy('-from')">
+                <a href="#" ng-click="orderBy('-from')">
                     <i class="fa fa-sort-alpha-asc"></i> {{ 'From' | translate }}: Z-A
                 </a>
-                <a ng-click="orderBy('size')">
+                <a href="#" ng-click="orderBy('size')">
                     <i class="fa fa-sort-amount-asc"></i> {{ 'Size' | translate }}: {{ 'Small to large' | translate }}
                 </a>
-                <a ng-click="orderBy('-size')">
+                <a href="#" ng-click="orderBy('-size')">
                     <i class="fa fa-sort-amount-desc"></i> {{ 'Size' | translate }}: {{ 'Large to small' | translate }}
                 </a>
-                <a ng-click="orderBy('-date')">
+                <a href="#" ng-click="orderBy('-date')">
                     <i class="fa fa-clock-o"></i> {{ 'Date' | translate }}: {{ 'New to old' | translate }}
                 </a>
-                <a ng-click="orderBy('date')">
+                <a href="#" ng-click="orderBy('date')">
                     <i class="fa fa-history"></i> {{ 'Date' | translate }}: {{ 'Old to new' | translate }}
                 </a>
             </span>

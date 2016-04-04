@@ -1,68 +1,22 @@
 <nav id="pm_toolbar-desktop" class="pm_toolbar">
-
-    <span
-    class="pm_buttons back"
-    ng-if="idDefined() &&  layoutMode === 'rows'">
-        <a
-        ng-click="back()"
-        pt-tooltip="{{ 'Back to list' | translate }}">
+    <span class="pm_buttons back" ng-if="idDefined() &&  layoutMode === 'rows'">
+        <a href="#" ng-click="back()" pt-tooltip="{{ 'Back to list' | translate }}">
             <i class="fa fa-long-arrow-left"></i>
         </a>
     </span>
-
-    <label
-    class="pm_checkbox"
-    ng-if="!idDefined() || layoutMode === 'columns'">
-        <input
-        type="checkbox"
-        name="selectAll"
-        ng-checked="allSelected()"
-        ng-click="toggleAllSelected()"
-        ng-disabled="numberElement === 0"
-        pt-tooltip="{{ 'Select all messages' | translate }}">
+    <label class="pm_checkbox" ng-if="!idDefined() || layoutMode === 'columns'">
+        <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip="{{ 'Select all messages' | translate }}">
     </label>
-
-    <span
-     ng-show="messageButtons === 1"
-    class="pm_buttons"
-    ng-class="{ disabled: numberElementSelected === 0 }">
-        <a
-        class="fa fa-eye-slash"
-        pt-tooltip="{{ 'Mark as unread' | translate }}"
-        ng-click="unread()"
-        ng-class="{ disabled: numberElementSelected === 0 }"></a>
-        <a
-        class="fa fa-eye divider"
-        pt-tooltip="{{ 'Mark as read' | translate }}"
-        ng-click="read()"
-        ng-class="{ disabled: numberElementSelected === 0 }"></a>
+    <span ng-show="messageButtons === 1" class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
+        <a href="#" class="fa fa-eye-slash" pt-tooltip="{{ 'Mark as unread' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+        <a href="#" class="fa fa-eye divider" pt-tooltip="{{ 'Mark as read' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
     </span>
-
-    <span
-     ng-show="messageButtons === 0"
-    class="pm_buttons"
-    ng-class="{ disabled: numberElementSelected === 0 }">
-        <a
-        class="fa fa-eye"
-        pt-tooltip="{{ 'Mark as read' | translate }}"
-        ng-click="read()"
-        ng-class="{ disabled: numberElementSelected === 0 }"></a>
-        <a
-        class="fa fa-eye-slash divider"
-        pt-tooltip="{{ 'Mark as unread' | translate }}"
-        ng-click="unread()"
-        ng-class="{ disabled: numberElementSelected === 0 }"></a>
+    <span ng-show="messageButtons === 0" class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
+        <a href="#" class="fa fa-eye" pt-tooltip="{{ 'Mark as read' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+        <a href="#" class="fa fa-eye-slash divider" pt-tooltip="{{ 'Mark as unread' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
     </span>
-
-    <span
-    class="pm_buttons"
-    ng-class="{ disabled: numberElementSelected === 0 }">
-        <a
-        pt-tooltip="{{ 'Move To Trash' | translate }}"
-        ng-click="move('trash')"
-        ng-hide="{{ 'secured.trash.**' | includedByState }}"
-        ng-class="{ disabled: numberElementSelected === 0 }"
-        class="fa fa-trash-o"></a>
+    <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
+        <a href="#" pt-tooltip="{{ 'Move to trash' | translate }}" ng-click="move('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-trash-o"></a>
         <a
         pt-tooltip="{{ 'Move To Inbox' | translate }}"
         ng-click="move('inbox')"
@@ -111,122 +65,70 @@
             <dropdown-labels messages="elementsSelected" save="saveLabels"></dropdown-labels>
         </span>
     </span>
-
     <span class="pm_buttons">
         <a class="pm_trigger" dropdown><small translate>More</small> <i class="fa fa-angle-down"></i></a>
         <span class="pm_dropdown wider">
-            <a
-            ng-click="empty('drafts')"
-            ng-show="{{ 'secured.drafts.**' | includedByState }}">
-                <i class="fa fa-times-circle-o"></i>
-                {{ 'Empty Drafts' | translate }}
+            <a href="#" ng-click="empty('drafts')" ng-show="{{ 'secured.drafts.**' | includedByState }}">
+                <i class="fa fa-times-circle-o"></i> {{ 'Empty drafts' | translate }}
             </a>
-            <a
-            ng-click="empty('spam')"
-            ng-show="{{ 'secured.spam.**' | includedByState }}">
-                <i class="fa fa-times-circle-o"></i>
-                {{ 'Empty Spam' | translate }}
+            <a href="#" ng-click="empty('spam')" ng-show="{{ 'secured.spam.**' | includedByState }}">
+                <i class="fa fa-times-circle-o"></i> {{ 'Empty spam' | translate }}
             </a>
-            <a
-            ng-click="empty('trash')"
-            ng-show="{{ 'secured.trash.**' | includedByState }}">
-                <i class="fa fa-times-circle-o"></i>
-                {{ 'Empty Trash' | translate }}
+            <a href="#" ng-click="empty('trash')" ng-show="{{ 'secured.trash.**' | includedByState }}">
+                <i class="fa fa-times-circle-o"></i> {{ 'Empty trash' | translate }}
             </a>
-            <a
-            ng-click="orderBy('subject')">
-                <i class="fa fa-sort-alpha-asc"></i>
-                {{ 'Subject' | translate }}: A-Z
+            <a href="#" ng-click="orderBy('subject')">
+                <i class="fa fa-sort-alpha-asc"></i> {{ 'Subject' | translate }}: A-Z
             </a>
-            <a
-            ng-click="orderBy('-subject')">
-                <i class="fa fa-sort-alpha-desc"></i>
-                {{ 'Subject' | translate }}: Z-A
+            <a href="#" ng-click="orderBy('-subject')">
+                <i class="fa fa-sort-alpha-desc"></i> {{ 'Subject' | translate }}: Z-A
             </a>
-            <a
-            ng-click="orderBy('from')">
-                <i class="fa fa-sort-alpha-asc"></i>
-                {{ 'From' | translate }}: A-Z
+            <a href="#" ng-click="orderBy('from')">
+                <i class="fa fa-sort-alpha-asc"></i> {{ 'From' | translate }}: A-Z
             </a>
-            <a
-            ng-click="orderBy('-from')">
-                <i class="fa fa-sort-alpha-asc"></i>
-                {{ 'From' | translate }}: Z-A
+            <a href="#" ng-click="orderBy('-from')">
+                <i class="fa fa-sort-alpha-asc"></i> {{ 'From' | translate }}: Z-A
             </a>
-            <a
-            ng-click="orderBy('size')">
-                <i class="fa fa-sort-amount-asc"></i>
-                {{ 'Size' | translate }}: {{ 'Small To Large' | translate }}
+            <a href="#" ng-click="orderBy('size')">
+                <i class="fa fa-sort-amount-asc"></i> {{ 'Size' | translate }}: {{ 'Small to large' | translate }}
             </a>
-            <a
-            ng-click="orderBy('-size')">
-                <i class="fa fa-sort-amount-desc"></i>
-                {{ 'Size' | translate }}: {{ 'Large To Small' | translate }}
+            <a href="#" ng-click="orderBy('-size')">
+                <i class="fa fa-sort-amount-desc"></i> {{ 'Size' | translate }}: {{ 'Large to small' | translate }}
             </a>
-            <a
-            ng-click="orderBy('-date')">
-                <i class="fa fa-clock-o"></i>
-                {{ 'Date' | translate }}: {{ 'New to old' | translate }}
+            <a href="#" ng-click="orderBy('-date')">
+                <i class="fa fa-clock-o"></i> {{ 'Date' | translate }}: {{ 'New to old' | translate }}
             </a>
-            <a
-            ng-click="orderBy('date')">
-                <i class="fa fa-history"></i>
-                {{ 'Date' | translate }}: {{ 'Old to new' | translate }}
+            <a href="#" ng-click="orderBy('date')">
+                <i class="fa fa-history"></i> {{ 'Date' | translate }}: {{ 'Old to new' | translate }}
             </a>
-            <a
-            pt-tooltip="{{ 'Show All' | translate }}"
-            ng-click="clearFilter()">
-                <i class="fa fa-list"></i>
-                {{ 'Show all' | translate }}
+            <a href="#" ng-click="clearFilter()" pt-tooltip="{{ 'Show all' | translate }}">
+                <i class="fa fa-list"></i> {{ 'Show all' | translate }}
             </a>
-            <a
-            ng-click="filterBy('unread')">
-                <i class="fa fa-eye-slash"></i>
-                {{ 'Show unread' | translate }}
+            <a href="#" ng-click="filterBy('unread')">
+                <i class="fa fa-eye-slash"></i> {{ 'Show unread' | translate }}
             </a>
-            <a
-            ng-click="filterBy('read')">
-                <i class="fa fa-eye"></i>
-                {{ 'Show read' | translate }}
+            <a href="#" ng-click="filterBy('read')">
+                <i class="fa fa-eye"></i> {{ 'Show read' | translate }}
             </a>
         </span>
     </span>
-
     <div class="pull-right action">
-
-        <span
-        class="pm_buttons layout" id="tour-layout">
-            <a
-            href="#"
-            pt-tooltip="{{ 'Change Layout' | translate }}"
-            ng-class="{ 'active': layoutMode === 'columns' }"
-            ng-click="changeLayout('columns')">
+        <span class="pm_buttons layout" id="tour-layout">
+            <a href="#" pt-tooltip="{{ 'Change layout' | translate }}" ng-class="{ 'active': layoutMode === 'columns' }" ng-click="changeLayout('columns')">
                 <img src="/assets/img/columnview.svg" />
             </a>
-            <a
-            href="#"
-            pt-tooltip="{{ 'Change Layout' | translate }}"
-            class="divider"
-            ng-class="{ 'active': layoutMode === 'rows' }"
-            ng-click="changeLayout('rows')">
+            <a href="#" pt-tooltip="{{ 'Change layout' | translate }}" class="divider" ng-class="{ 'active': layoutMode === 'rows' }" ng-click="changeLayout('rows')">
                 <img src="/assets/img/rowview.svg" />
             </a>
         </span>
-
         <span class="pm_buttons" ng-show="idDefined() && rowMode === true">
-            <a
-            ng-click="nextConversation(conversation)"
-            pt-tooltip="{{ 'Previous' | translate }}">
+            <a href="#" ng-click="nextConversation(conversation)" pt-tooltip="{{ 'Previous' | translate }}">
                 <i class="fa fa-chevron-left"></i>
             </a>
-            <a
-            ng-click="previousConversation(conversation)"
-            class="divider"
-            pt-tooltip="{{ 'Next' | translate }}">
+            <a href="#" ng-click="previousConversation(conversation)" class="divider" pt-tooltip="{{ 'Next' | translate }}">
                 <i class="fa fa-chevron-right"></i>
             </a>
         </span>
-
         <paginator ng-hide="idDefined() && rowMode === true" page="page" total-items="conversationCount()" items-per-page="elementPerPage" change="selectPage" />
     </div>
 </nav>
