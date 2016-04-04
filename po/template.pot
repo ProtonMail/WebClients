@@ -1756,18 +1756,27 @@ msgstr ""
 msgid "If you wish to delete in order to combine this account with another one, do NOT delete your account. You need to instead follow the procedure <a href=\"https://protonmail.com/support/knowledge-base/combine-accounts/\" target=\"_blank\">here</a>."
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:131
 #: src/app/templates/partials/message.tpl.html:37
+msgid "In archive"
+msgstr ""
+
+#: src/app/templates/partials/message.tpl.html:131
 msgid "In Archive"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:133
 #: src/app/templates/partials/message.tpl.html:39
+msgid "In spam"
+msgstr ""
+
+#: src/app/templates/partials/message.tpl.html:133
 msgid "In Spam"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:132
 #: src/app/templates/partials/message.tpl.html:38
+msgid "In trash"
+msgstr ""
+
+#: src/app/templates/partials/message.tpl.html:132
 msgid "In Trash"
 msgstr ""
 

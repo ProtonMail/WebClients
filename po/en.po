@@ -1535,7 +1535,7 @@ msgstr "Event"
 
 #: src/app/templates/partials/composer.tpl.html:56
 msgid "Exit fullscreen"
-msgstr ""
+msgstr "Exit fullscreen"
 
 #: src/app/templates/partials/composer.tpl.html:40
 msgid "Expand"
@@ -1744,7 +1744,7 @@ msgstr "Help"
 
 #: src/app/templates/partials/header-auth-desktop.tpl.html:75
 msgid "Help & answers"
-msgstr ""
+msgstr "Help & answers"
 
 #: src/app/templates/partials/wizard.tpl.html:33
 msgid "Help and support"
@@ -1840,6 +1840,11 @@ msgid ""
 "ProtonMail, please let us know! You can send us a bug report by clicking "
 "<em>Report bugs</em> <strong>(1)</strong>"
 msgstr ""
+"If you have questions or need help, please visit <a href=« https://"
+"protonmail.com/support » target=« _blank »>our support page</a> to find "
+"troubleshooting guides and contact our support team. If you find a bug in "
+"ProtonMail, please let us know! You can send us a bug report by clicking "
+"<em>Report bugs</em> <strong>(1)</strong>"
 
 #: src/app/templates/modals/domain/dmarc.tpl.html:12
 msgid ""
@@ -1891,18 +1896,27 @@ msgstr ""
 "href=« https://protonmail.com/support/knowledge-base/combine-accounts/«  "
 "target=« _blank »>here</a>."
 
-#: src/app/templates/partials/message.tpl.html:131
 #: src/app/templates/partials/message.tpl.html:37
+msgid "In archive"
+msgstr "In archive"
+
+#: src/app/templates/partials/message.tpl.html:131
 msgid "In Archive"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:133
 #: src/app/templates/partials/message.tpl.html:39
+msgid "In spam"
+msgstr "In spam"
+
+#: src/app/templates/partials/message.tpl.html:133
 msgid "In Spam"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:132
 #: src/app/templates/partials/message.tpl.html:38
+msgid "In trash"
+msgstr "In trash"
+
+#: src/app/templates/partials/message.tpl.html:132
 msgid "In Trash"
 msgstr ""
 
@@ -2060,6 +2074,10 @@ msgid ""
 "strong>. You can also add, delete, and edit labels by clicking on <em>Label "
 "settings</em> <strong>(2)</strong>."
 msgstr ""
+"Labels are a powerful tool to manage your inbox. You can add and remove "
+"labels from selected emails by clicking the Label button <strong>(1)</"
+"strong>. You can also add, delete, and edit labels by clicking on <em>Label "
+"settings</em> <strong>(2)</strong>."
 
 #: src/app/services/actions.js:109 src/app/services/actions.js:552
 msgid "LABELS_SAVED"
@@ -2624,7 +2642,7 @@ msgstr "On"
 
 #: src/app/templates/modals/bug.tpl.html:11
 msgid "Operating system"
-msgstr ""
+msgstr "Operating system"
 
 #: src/app/templates/modals/welcome.tpl.html:14
 #: src/app/templates/views/step1.tpl.html:70
@@ -3115,8 +3133,8 @@ msgstr ""
 
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:17
 #: src/app/templates/partials/safari.warning.tpl.html:17
-msgid "Right-click on your attachment and choose 'Download Linked File As...'"
-msgstr "Right-click on your attachment and choose ‘Download Linked File As…’"
+msgid "Right-click on your attachment and choose 'Download linked file as...'"
+msgstr "Right-click on your attachment and choose ‘Download linked file as…’"
 
 #: src/app/templates/views/members.tpl.html:71
 msgid "Role"
@@ -4164,6 +4182,11 @@ msgstr "Your thoughts..."
 #: src/app/templates/modals/payment/payment.tpl.html:96
 msgid "ZIP code"
 msgstr "ZIP code"
+
+#~ msgid ""
+#~ "Right-click on your attachment and choose 'Download Linked File As...'"
+#~ msgstr ""
+#~ "Right-click on your attachment and choose ‘Download Linked File As…’"
 
 #~ msgid ""
 #~ "If you have questions or need help, please visit <a href=\"https://"
