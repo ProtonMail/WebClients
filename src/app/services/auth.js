@@ -272,7 +272,7 @@ angular.module("proton.authentication", [
 
         getRefreshCookie: function() {
             $log.debug('getRefreshCookie');
-            return $http.post(url.get() + "/auth/refresh", {}).then(
+            return $http.post(url.get() + '/auth/refresh', {}).then(
                 function(response) {
                     $log.debug(response);
                     if (response.data.SessionToken!==undefined) {

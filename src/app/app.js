@@ -159,6 +159,7 @@ angular.module('proton', [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
+<<<<<<< HEAD
 .run(function (gettextCatalog) {
     gettextCatalog.setCurrentLanguage('en_US'); // Corresponds au header 'Language' du fichier .po;
     gettextCatalog.debug = true;
@@ -167,28 +168,38 @@ angular.module('proton', [
 .run(function(CONSTANTS) {
     // This function clears junk from session storage. Should not be needed forever
     try {
-        var locale = window.navigator.userLanguage || window.navigator.language;
+        var defaultLanguage = 'en';
+        var preferredLanguage = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage || defaultLanguage;
+        var locales = {
+            fr: 'fr_FR',
+            en: 'en_US',
+            de: 'de_DE',
+            es: 'es_ES',
+            it: 'it_IT'
+        };
         var whitelist = [
             CONSTANTS.EVENT_ID,
             CONSTANTS.MAILBOX_PASSWORD_KEY,
-            CONSTANTS.OAUTH_KEY+":SessionToken",
-            CONSTANTS.OAUTH_KEY + ":Uid",
-            CONSTANTS.OAUTH_KEY + ":AccessToken",
-            CONSTANTS.OAUTH_KEY + ":RefreshToken",
-            "proton:decrypted_token",
-            "proton:encrypted_password"
+            CONSTANTS.OAUTH_KEY + ':SessionToken',
+            CONSTANTS.OAUTH_KEY + ':Uid',
+            CONSTANTS.OAUTH_KEY + ':AccessToken',
+            CONSTANTS.OAUTH_KEY + ':RefreshToken',
+            'proton:decrypted_token',
+            'proton:encrypted_password'
         ];
 
         var data = {};
-        for( var i=0; i<whitelist.length; i++) {
+
+        for(var i = 0; i < whitelist.length; i++) {
             var item = window.sessionStorage.getItem(whitelist[i]);
+
             if( angular.isString(item) ) {
                 data[whitelist[i]] = item;
             }
         }
 
         window.sessionStorage.clear();
-        moment.locale(locale);
+        moment.locale(preferredLanguage);
 
         for (var key in data) {
             window.sessionStorage.setItem(key, data[key]);

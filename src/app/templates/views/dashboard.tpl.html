@@ -184,7 +184,8 @@
                                                 <i class="fa fa-angle-down"></i>
                                             </span>
                                             <span ng-show="plan.editable === false && plan.MaxAddresses > 0">{{ plan.MaxAddresses }}</span>
-                                            <span>{{ 'ADDRESSES' | translate }}</span>
+                                            <span ng-show="plan.MaxAddresses > 1">{{ 'ADDRESSES' | translate }}</span>
+                                            <span ng-show="plan.MaxAddresses === 1">{{ 'ADDRESS' | translate }}</span>
                                             <strong class="cost pull-right" ng-show="selects.plus.address.index * addons[plan.Cycle].address.Amount && plan.editable === true">+{{ selects.plus.address.index * addons[plan.Cycle].address.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                             <span class="clear"></span>
                                         </li>

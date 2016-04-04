@@ -43,7 +43,7 @@
                             <label for="noticeePassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="password" autocomplete="off" placeholder="Current Login Password" required ng-model="noticeePassword" id="noticeePassword" />
+                            <input type="password" autocomplete="off" placeholder="{{ 'CURRENT_LOGIN_PASSWORD' | translate }}" required ng-model="noticeePassword" id="noticeePassword" />
                         </div>
                     </div>
                     <div class="clearfix">
@@ -96,32 +96,34 @@
                 <form method="post" ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="oldLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
+                            <label for="oldLoginPassword">{{ 'CURRENT_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder="Current Login Password" required />
+                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder="{{ 'CURRENT_PASSWORD' | translate }}" required />
                             <div ng-messages="loginForm.oldLoginPassword.$error" class="text-red" ng-if="loginForm.oldLoginPassword.$touched">
-                                <p ng-message="required">{{ 'CURR_LOGIN_PASSWORD_EMPTY' | translate }}</p>
+                                <p ng-message="required">{{ 'FIELD_REQUIRED' | translate }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="newLoginPassword">{{ 'NEW_LOGIN_PASSWORD' | translate }}</label>
+                            <label for="newLoginPassword">{{ 'NEW_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder="New Login Password" required />
+                            <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder="{{ 'NEW_PASSWORD' | translate }}" required />
                             <div ng-messages="loginForm.newLoginPassword.$error" class="text-red" ng-if="loginForm.newLoginPassword.$touched">
-                                <p ng-message="required">{{ 'NEW_LOGIN_PASSWORD_EMPTY' | translate }}</p>
+                                <p ng-message="required">{{ 'FIELD_REQUIRED' | translate }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
-                        <div class="col left">&nbsp;</div>
+                        <div class="col left">
+                            <label>{{ 'CONFIRM_NEW_PASSWORD' | translate }}</label>
+                        </div>
                         <div class="col right">
-                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="Confirm New Login Password" required class="margin" />
+                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="{{ 'CONFIRM_NEW_PASSWORD' | translate }}" required class="margin" />
                             <div ng-messages="loginForm.confirmLoginPassword.$error" class="text-red" ng-if="loginForm.confirmLoginPassword.$touched">
-                                <p ng-message="required">{{ 'NEW_LOGIN_PASSWORD_EMPTY_CONFIRM' | translate }}</p>
+                                <p ng-message="required">{{ 'FIELD_REQUIRED' | translate }}</p>
                             </div>
                         </div>
                     </div>
@@ -142,9 +144,9 @@
                             <label for="currentLoginPassword">{{ 'CURRENT_LOGIN_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder="Current Login Password" required="" />
+                            <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder="{{ 'CURRENT_LOGIN_PASSWORD' | translate }}" required="" />
                             <div ng-messages="mailboxForm.currentLoginPassword.$error" class="text-red" ng-if="mailboxForm.currentLoginPassword.$touched">
-                                <p ng-message="required">{{ 'CURR_LOGIN_PASSWORD_EMPTY' | translate }}</p>
+                                <p ng-message="required">{{ 'FIELD_REQUIRED' | translate }}</p>
                             </div>
                         </div>
                     </div>
@@ -153,9 +155,9 @@
                             <label for="oldMailboxPassword">{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" placeholder="Current Mailbox Password" required="" />
+                            <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" placeholder="{{ 'CURRENT_MAILBOX_PASSWORD' | translate }}" required="" />
                             <div ng-messages="mailboxForm.oldMailboxPassword.$error" class="text-red" ng-if="mailboxForm.oldMailboxPassword.$touched">
-                                <p ng-message="required">{{ 'CURR_MAILBOX_PASSWORD_EMPTY' | translate }}</p>
+                                <p ng-message="required">{{ 'FIELD_REQUIRED' | translate }}</p>
                             </div>
                         </div>
                     </div>
@@ -164,18 +166,20 @@
                             <label for="newMailboxPassword">{{ 'NEW_MAILBOX_PASSWORD' | translate }}</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder="New Mailbox Password" required="" />
+                            <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder="{{ 'NEW_MAILBOX_PASSWORD' | translate }}" required="" />
                             <div ng-messages="mailboxForm.newMailboxPassword.$error" class="text-red" ng-if="mailboxForm.newMailboxPassword.$touched">
-                                <p ng-message="required">{{ 'NEW_LOGIN_PASSWORD_EMPTY' | translate }}</p>
+                                <p ng-message="required">{{ 'FIELD_REQUIRED' | translate }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
-                        <div class="col left">&nbsp;</div>
+                        <div class="col left">
+                            <label for="confirmMailboxPassword">{{ 'CONFIRM_NEW_MAILBOX_PASSWORD' | translate }}</label>
+                        </div>
                         <div class="col right">
-                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="Confirm New Mailbox Password" class="margin" required="" />
+                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="{{ 'CONFIRM_NEW_MAILBOX_PASSWORD' | translate }}" class="margin" required="" />
                             <div ng-messages="mailboxForm.confirmMailboxPassword.$error" class="text-red" ng-if="mailboxForm.confirmMailboxPassword.$touched">
-                                <p ng-message="required">{{ 'NEW_LOGIN_PASSWORD_EMPTY_CONFIRM' | translate }}</p>
+                                <p ng-message="required">{{ 'FIELD_REQUIRED' | translate }}</p>
                             </div>
                         </div>
                     </div>
@@ -271,7 +275,7 @@
         <div class="row">
             <section class="setting pm_form">
                 <legend>{{ 'DELETE_ACCOUNT' | translate }}</legend>
-                <p ng-show="user.Subscribed === 1" class="alert alert-info"><i class="fa fa-info-circle"></i> You must unsubscribe before requesting deletion of your account.</p>
+                <p ng-show="user.Subscribed === 1" class="alert alert-info"><i class="fa fa-info-circle"></i> {{ 'CONDITION_TO_UNSUBSCRIBE' | translate }}</p>
                 <button ng-show="user.Subscribed === 0" class="pm_button error" ng-click="deleteAccount()">{{ 'DELETE_YOUR_ACCOUNT' | translate }}</button>
             </section>
         </div>
