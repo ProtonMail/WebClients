@@ -29,7 +29,7 @@ ng-class="{
                     <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name': true }}</strong>
                     <em ng-click="$event.stopPropagation();">
                         {{ message.Sender | contact:'Address' }}
-                        <a class="fa fa-pencil compose" ng-click="sendMessageTo(message.Sender)" pt-tooltip="{{ 'Compose To' | translate }}"></a>
+                        <a class="fa fa-pencil compose" ng-click="sendMessageTo(message.Sender)" pt-tooltip="{{ 'Compose to' | translate }}"></a>
                     </em>
                 </span>
             </div>
@@ -92,7 +92,7 @@ ng-class="{
                         <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
                         <em ng-show="toggleDetails === true">
                             {{ email | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'Compose To' | translate }}"></a>
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'Compose to' | translate }}"></a>
                         </em>
                     </li>
                 </ul>
@@ -106,7 +106,7 @@ ng-class="{
                         <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
                         <em ng-show="toggleDetails === true">
                             {{ email | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'Compose To' | translate }}"></a>
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'Compose to' | translate }}"></a>
                         </em>
                     </li>
                 </ul>
@@ -120,7 +120,7 @@ ng-class="{
                         <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
                         <em ng-show="toggleDetails === true">
                             {{ email | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'Compose To' | translate }}"></a>
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'Compose to' | translate }}"></a>
                         </em>
                     </li>
                 </ul>

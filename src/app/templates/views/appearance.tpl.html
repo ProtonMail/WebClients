@@ -22,13 +22,13 @@
                         <input type="radio" ng-model="appearance.ComposerMode" value="1" ng-change="saveComposerMode(composerMode)" />
                         <span translate>Maximized</span>
                         <br />
-                        <img src="assets/img/settings/max.gif" alt="Maximized" />
+                        <img src="assets/img/settings/max.gif" alt="{{ 'Maximized' | translate }}" />
                     </label>
                 </div>
             </section>
             <section class="setting pm_form pull-right">
                 <legend translate>Layout</legend>
-                <p class="alert alert-info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts. <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank" translate>Learn more</a></p>
+                <p class="alert alert-info">{{ 'ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.' | translate }} <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank" translate>Learn more</a></p>
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />

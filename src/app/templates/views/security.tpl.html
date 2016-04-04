@@ -40,9 +40,9 @@
                                 <tbody>
                                     <tr ng-repeat="log in logs | limitTo: logItemsPerPage: (currentLogPage - 1) * logItemsPerPage" ng-class="{ 'danger': (log.Event == 0) }">
                                         <td scope="row">
-                                            <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle text-red"></i> {{ 'Login Failed' | translate }}</span>
-                                            <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i> {{ 'Login Success' | translate }}</span>
-                                            <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i> {{ 'Log Out' | translate }}</span>
+                                            <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle text-red"></i> {{ 'Login failed' | translate }}</span>
+                                            <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i> {{ 'Login success' | translate }}</span>
+                                            <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i> {{ 'Log out' | translate }}</span>
                                         </td>
                                         <td ng-show="doLogging == 2" class="text-right">
                                             <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>

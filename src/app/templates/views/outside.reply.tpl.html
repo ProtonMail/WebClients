@@ -16,7 +16,7 @@
             </li>
             <li>
                 <strong translate>To:</strong>
-                <b>{{message.Sender.Name}}</b> <em>&lt;{{message.Sender.Address}}&gt;</em>
+                <b>{{message.Sender.Name}}</b> <em>&lt;{{ message.Sender.Address }}&gt;</em>
             </li>
         </ul>
     </div>
@@ -25,7 +25,7 @@
         <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
-            <strong translate>Decryption Error</strong>
+            <strong translate>Decryption error</strong>
             <br> {{ 'Decryption of this message's encryption content failed.' | translate }}
         </div>
     </div>

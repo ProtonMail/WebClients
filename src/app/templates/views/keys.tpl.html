@@ -85,11 +85,11 @@
                             </td>
                             <td>{{ key.bitSize }} {{ 'Bit' | translate }}</td>
                             <td>
-                                <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari" translate>Public Key</button>
-                                <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari" translate>Private Key</button>
+                                <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari" translate>Public key</button>
+                                <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari" translate>Private key</button>
                             </td>
                             <td class="text-right">
-                                <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false" translate>Make Primary</button>
+                                <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false" translate>Make primary</button>
                                 <button class="pm_button link" ng-click="enable(address, key)" ng-show="key.decrypted === false" translate>Enable</button>
                                 <button class="pm_button link" ng-click="delete(address, key)" ng-hide="address.Keys.length === 1 || isNonPrivate"><i class="fa fa-trash-o"></i></button>
                             </td>
@@ -134,11 +134,11 @@
                             </td>
                             <td>{{ key.bitSize }} {{ 'Bit' | translate }}</td>
                             <td>
-                                <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari" translate>Public Key</button>
-                                <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari" translate>Private Key</button>
+                                <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari" translate>Public key</button>
+                                <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari" translate>Private key</button>
                             </td>
                             <td class="text-right">
-                                <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false" translate>Make Primary</button>
+                                <button class="pm_button link" ng-click="primary(address, key)" ng-hide="$first || isNonPrivate || key.decrypted === false" translate>Make primary</button>
                                 <button class="pm_button link" ng-click="enable(address, key)" ng-show="key.decrypted === false" translate>Enable</button>
                                 <button class="pm_button link" ng-click="delete(address, key)" ng-hide="address.Keys.length === 1 || isNonPrivate"><i class="fa fa-trash-o"></i></button>
                             </td>

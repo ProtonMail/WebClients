@@ -53,7 +53,7 @@
                     ng-show="!!message.maximized"
                     class="pm_button link maximize-button hidden-xs"
                     ng-click="normalize(message)"
-                    pt-tooltip="{{ 'Exit Fullscreen' | translate }}"
+                    pt-tooltip="{{ 'Exit fullscreen' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-compress"></i>
                     </a>
@@ -207,7 +207,7 @@
             <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0">
                 <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate>Hide</i>
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate>Show</i>
-                {{ message.Attachments.length }} {{ 'Files Attached' | translate }} ({{ getAttachmentsSize(message) | humanSize }})
+                {{ message.Attachments.length }} {{ 'Files attached' | translate }} ({{ getAttachmentsSize(message) | humanSize }})
             </aside>
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button class="pm_button"
@@ -242,7 +242,7 @@
                 }"
                 ng-disabled="message.allowOthers() || message !== selected"
                 pt-placement="top"
-                pt-tooltip="{{ 'Expiration Time' | translate }}"
+                pt-tooltip="{{ 'Expiration time' | translate }}"
                 ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i> <span ng-show="!!message.maximized" translate>Expiration</span>
                 </button>
@@ -250,7 +250,7 @@
                 {{ 'Saved at' | translate }} {{ message.Time | date : 'shortTime' }}
                 </span>
                 <div class="pull-right">
-                    <button class="pm_button" ng-disabled="message.allowDiscard()" ng-click="close(message, true, false)" pt-tooltip="{{ 'Delete Draft' | translate }}" pt-placement="top">
+                    <button class="pm_button" ng-disabled="message.allowDiscard()" ng-click="close(message, true, false)" pt-tooltip="{{ 'Delete draft' | translate }}" pt-placement="top">
                         <i class="fa fa-trash-o"></i> <span ng-show="!!message.maximized" translate>Discard</span>
                     </button>
                     <button class="pm_button" ng-disabled="message.allowSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip="{{ 'Save' | translate }}" pt-placement="top">
