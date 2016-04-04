@@ -4,7 +4,7 @@
 
     <div class="settings">
 
-        <p class="alert alert-info mobileOnly">{{ 'MOBILE_ONLY_INFO' | translate }}</p>
+        <p class="alert alert-info" ng-if="mobileMode">{{ 'MOBILE_ONLY_INFO' | translate }}</p>
 
         <div class="row" id="settingsAddresses">
 

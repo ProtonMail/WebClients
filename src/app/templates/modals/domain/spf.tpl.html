@@ -13,7 +13,7 @@
                 <div translate="SPF_INFO_1"></div>
                 <div translate="SPF_INFO_2"></div>
                 <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/'>{{ 'LEARN_MORE' | translate }}</a></p>
-                <table class="pm_table record desktopOnly">
+                <table class="pm_table record" ng-if="!mobileMode">
                     <tr>
                         <th style="width:3rem">{{ 'TYPE' | translate }}</th>
                         <th style="width:6.5rem">{{ 'HOST_NAME' | translate }}</th>

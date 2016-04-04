@@ -14,7 +14,7 @@
                 <div translate="DKIM_INFO_1"></div>
                 <div translate="DKIM_INFO_2"></div>
                 <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/'>{{ 'LEARN_MORE' | translate }}</a></p>
-                <table class="pm_table record desktopOnly">
+                <table class="pm_table record" ng-if="!mobileMode">
                     <tr>
                         <th style="width:3rem">{{ 'TYPE' | translate }}</th>
                         <th style="width:12.5rem">{{ 'HOST_NAME' | translate }}</th>
@@ -27,7 +27,7 @@
                     </tr>
                 </table>
 
-                <div class="mobileOnly">
+                <div ng-if="mobileMode">
                     <p>
                         <strong>{{ 'TYPE' | translate }}</strong>:<br>
                         <code>MX</code>

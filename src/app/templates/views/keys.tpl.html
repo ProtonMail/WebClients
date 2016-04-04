@@ -132,7 +132,7 @@
                             </td>
                             <td>
                                 <code pt-tooltip="{{ key.fingerprint }} ({{ key.created | date }})">{{ key.fingerprint | limitTo: 8 }}&hellip;</code>
-                                <code class="mobileOnly" pt-tooltip="{{ key.fingerprint }} ({{ key.created | date }})">{{ key.fingerprint }}</code>
+                                <code pt-tooltip="{{ key.fingerprint }} ({{ key.created | date }})" ng-if="mobileMode">{{ key.fingerprint }}</code>
                             </td>
                             <td>{{ key.bitSize }} {{ 'BIT' | translate }}</td>
                             <td>
