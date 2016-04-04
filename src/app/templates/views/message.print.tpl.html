@@ -10,8 +10,8 @@
 
     <p>
         <span style="width:14rem" width="14rem">
-            <span ng-show=" message.Location != '2' ">{{ 'RECEIVED' | translate }}: </span>
-            <span ng-show=" message.Location == '2' ">{{ 'SENT' | translate }}: </span>
+            <span ng-show=" message.Location != '2' " translate>Received: </span>
+            <span ng-show=" message.Location == '2' " translate>Sent: </span>
         </span>
         <span>
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
@@ -24,26 +24,26 @@
     </p>
 
     <p>
-        <span>{{ 'FROM' | translate }}: </span>
+        <span translate>From:</span>
         <b>{{ message.Sender.Name }} {{ message.Sender.Address }}</b>
     </p>
 
     <p ng-if="message.ToList.length">
-        <span>{{ 'TO' | translate }}: </span>
+        <span translate>To:</span>
         <b ng-repeat="email in ::message.ToList">
         {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
         </b>
     </p>
 
     <p ng-if="message.CCList.length">
-        <span>{{ 'CC' | translate }}: </span>
+        <span translate>CC:</span>
         <b ng-repeat="email in ::message.CCList">
         {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
         </b>
     </p>
 
     <p ng-if="message.BCCList.length">
-        <span>{{ 'BCC' | translate }}: </span>
+        <span translate>BCC:</span>
         <b ng-repeat="email in ::message.BCCList">
         {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
         </b>
@@ -51,15 +51,10 @@
 
     <p ng-show="message.NumAttachments > 0">
         <span>
-            {{message.NumAttachments}}
-            <i ng-hide="message.NumAttachments === 1">{{ 'ATTACHMENTS' | translate }} </i>
-            <i ng-show="message.NumAttachments === 1">{{ 'ATTACHMENT' | translate }} </i>
-            ({{ message.sizeAttachments() | humanSize }})
+            {{message.NumAttachments}} <i translate translate-n="message.NumAttachments" translate-plural="Attachments" translate>Attachment</i> ({{ message.sizeAttachments() | humanSize }})
         </span>
         <span>
-            <b
-            ng-repeat="attachment in message.Attachments"
-            class="pm_button">
+            <b ng-repeat="attachment in message.Attachments" class="pm_button">
                 <i class="fa fa-archive-o" ng-show="(attachment.MIMEType.indexOf('zip') != -1)"></i>
                 <i class="fa fa-audio-o" ng-show="(attachment.MIMEType.indexOf('mp3') != -1)"></i>
                 <i class="fa fa-code-o" ng-show="(attachment.MIMEType.indexOf('javascript') != -1)"></i>

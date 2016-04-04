@@ -46,47 +46,47 @@
 
 	<!-- <pre>{{ organization }}</pre> -->
 
-	<h1>{{ 'INVOICE' | translate }} #123456678</h1>
+	<h1 translate>Invoice #123456678</h1>
 
 	<table>
 		<tr>
-			<th>{{ 'USER' | translate }}</th>
+			<th translate>User</th>
 			<td>{{ user.Name }}</td>
 		</tr>
 		<tr>
-			<th>{{ 'ORGANIZATION' | translate }}</th>
+			<th translate>Organization</th>
 			<td>{{ organization.DisplayName }}</td>
 		</tr>
 		<tr>
-			<th>{{ 'DOMAINS' | translate }}</th>
+			<th translate>Domains</th>
 			<td>{{ organization.MaxDomains }}</td>
 		</tr>
 		<tr>
-			<th>{{ 'SPACE' | translate }}</th>
+			<th translate>Space</th>
 			<td>{{ organization.MaxSpace | humanSize }}</td>
 		</tr>
 		<tr>
-			<th>{{ 'MEMBERS' | translate }}</th>
+			<th translate>Members</th>
 			<td>{{ organization.MaxMembers }}</td>
 		</tr>
 		<tr>
-			<th>{{ 'PRICE' | translate }}</th>
+			<th translate>Price</th>
 			<td>{{ invoice.Amount | currency:invoice.Currency }}</td>
 		</tr>
 		<tr>
-			<th>{{ 'TIME' | translate }}</th>
+			<th translate>Time</th>
 			<td>{{ invoice.PeriodStart | localReadableTime }} &nbsp; - &nbsp; {{ invoice.PeriodEnd | localReadableTime }}</td>
 		</tr>
 		<tr>
-			<th>{{ 'BILLING_CYCLE' | translate }}</th>
+			<th translate>Billing cycle</th>
 			<td>
 				{{ invoice.BillingCycle }}
-				<span ng-show="invoice.BillingCycle < 12">{{ 'MONTH' | translate }}</span>
-				<span ng-show="invoice.BillingCycle >= 12">{{ 'YEAR' | translate }}</span>
+				<span ng-show="invoice.BillingCycle < 12" translate>Month</span>
+				<span ng-show="invoice.BillingCycle >= 12" translate>Year</span>
 			</td>
 		</tr>
 		<tr class="total">
-			<th>{{ 'AMOUNT_DUE' | translate }}</th>
+			<th translate>Amount due</th>
 			<th>{{ invoice.Amount | currency:invoice.Currency }}</th>
 		</tr>
 	</table>

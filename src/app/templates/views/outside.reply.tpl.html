@@ -11,12 +11,11 @@
         </div>
         <ul class="infos">
             <li>
-                <strong>{{ 'FROM' | translate }}:</strong>
+                <strong translate>From:</strong>
                 <b>{{ message.Recipient }}</b>
             </li>
             <li>
-                <strong>{{ 'TO' | translate }}:</strong>
-
+                <strong translate>To:</strong>
                 <b>{{message.Sender.Name}}</b> <em>&lt;{{message.Sender.Address}}&gt;</em>
             </li>
         </ul>
@@ -26,8 +25,8 @@
         <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
-            <strong>{{ 'DECRYPTION_ERROR' | translate }}</strong>
-            <br> {{ 'DECRYPTION_ERROR_INFO' | translate }}
+            <strong translate>Decryption Error</strong>
+            <br> {{ 'Decryption of this message's encryption content failed.' | translate }}
         </div>
     </div>
 
@@ -35,7 +34,7 @@
 
     <footer class="text-right">
         <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()" translate>Cancel</button>
-        <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'ATTACHMENTS' | translate }}"><i class="fa fa-paperclip"></i></button>
+        <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'Attachments' | translate }}"><i class="fa fa-paperclip"></i></button>
         <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()" translate>Send</button>
     </footer>
 
