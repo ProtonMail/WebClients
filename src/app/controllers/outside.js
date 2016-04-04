@@ -13,7 +13,7 @@ angular.module("proton.controllers.Outside", [
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettext,
     Attachment,
     CONSTANTS,
     Eo,
@@ -141,7 +141,7 @@ angular.module("proton.controllers.Outside", [
                 .then(
                     function(result) {
                         $state.go('eo.message', {tag: $stateParams.tag});
-                        notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
+                        notify({message: gettext('MESSAGE_SENT'), classes: 'notification-success'});
                         deferred.resolve(result);
                     },
                     function(error) {

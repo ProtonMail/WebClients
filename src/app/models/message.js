@@ -12,7 +12,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $templateCache,
     $timeout,
     $filter,
-    $translate,
+    gettext,
     authentication,
     CONFIG,
     CONSTANTS,
@@ -131,15 +131,15 @@ angular.module("proton.models.message", ["proton.constants"])
         },
         encryptionType: function() {
             var texts = [
-                $translate.instant('UNENCRYPTED_MESSAGE'),
-                $translate.instant('END_TO_END_ENCRYPTED_INTERNAL_MESSAGE'),
-                $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
-                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE'),
-                $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
-                $translate.instant('STORED_ENCRYPTED'),
-                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY'),
-                $translate.instant('ENCRYPTED_PGP'),
-                $translate.instant('ENCRYPTED_PGP_MIME'),
+                gettext('UNENCRYPTED_MESSAGE'),
+                gettext('END_TO_END_ENCRYPTED_INTERNAL_MESSAGE'),
+                gettext('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
+                gettext('END_TO_END_ENCRYPTED_FOR_OUTSIDE'),
+                gettext('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
+                gettext('STORED_ENCRYPTED'),
+                gettext('END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY'),
+                gettext('ENCRYPTED_PGP'),
+                gettext('ENCRYPTED_PGP_MIME'),
             ];
 
             return texts[this.IsEncrypted];

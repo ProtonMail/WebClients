@@ -1,6 +1,6 @@
 angular.module("proton.filters",[])
 
-.filter('delay', function ($translate) {
+.filter('delay', function (gettext) {
     return function (input) {
         // get the current moment
         var now = moment();
@@ -30,7 +30,7 @@ angular.module("proton.filters",[])
             seconds = Math.floor(moment.duration(ms).asSeconds());
 
             // concatonate the variables
-            return days + ' ' + $translate.instant('DAYS') + ' ' + hours + ' ' + $translate.instant('HOURS') + ' ' + minutes + ' ' + $translate.instant('MINUTES') + ' ' + seconds + ' ' + $translate.instant('SECONDS');
+            return days + ' ' + gettext('DAYS') + ' ' + hours + ' ' + gettext('HOURS') + ' ' + minutes + ' ' + gettext('MINUTES') + ' ' + seconds + ' ' + gettext('SECONDS');
         } else {
             return '';
         }
@@ -256,7 +256,7 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('contact', function($translate, authentication) {
+.filter('contact', function(gettext, authentication) {
     return function(contact, parameter, me) {
         var same = contact.Address === contact.Name;
         var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
@@ -264,7 +264,7 @@ angular.module("proton.filters",[])
         var myself = _.findWhere(authentication.user.Addresses, {Email: contact.Address});
 
         if (me === true && angular.isDefined(myself)) {
-            return $translate.instant('ME');
+            return gettext('ME');
         } else if (parameter === 'Address') {
             return '<' + contact.Address + '>';
         } else if (parameter === 'Name') {

@@ -3,7 +3,7 @@ angular.module("proton.controllers.Settings")
 .controller('KeysController', function(
     $log,
     $scope,
-    $translate,
+    gettext,
     authentication,
     confirmModal,
     User,
@@ -55,8 +55,8 @@ angular.module("proton.controllers.Settings")
      * Delete key
      */
     $scope.delete = function(address, key) {
-        var title = $translate.instant('DELETE_KEY');
-        var message = $translate.instant('CONFIRM_DELETE_KEY');
+        var title = gettext('DELETE_KEY');
+        var message = gettext('CONFIRM_DELETE_KEY');
         var index = address.Keys.indexOf(key);
 
 
@@ -70,7 +70,7 @@ angular.module("proton.controllers.Settings")
                             // Delete key in the UI
                             address.Keys.splice(index, 1);
                             // Call event log manager to be sure
-                            notify({message: $translate.instant('KEY_DELETED'), classes: 'notification-success'});
+                            notify({message: gettext('KEY_DELETED'), classes: 'notification-success'});
                             // Close the modal
                             confirmModal.deactivate();
                             // Call the event log manager
@@ -146,16 +146,16 @@ angular.module("proton.controllers.Settings")
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                                    notify({message: gettext('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                                 }
                             }, function(error) {
-                                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                                notify({message: gettext('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                             }));
                         }, function(error) {
-                            notify({message: $translate.instant('ERROR_WHILE_ENCRYPTING'), classes: 'notification-danger'});
+                            notify({message: gettext('ERROR_WHILE_ENCRYPTING'), classes: 'notification-danger'});
                         });
                     }, function(error) {
-                        notify({message: $translate.instant('INVALID_KEY_PASSWORD'), classes: 'notification-danger'});
+                        notify({message: gettext('INVALID_KEY_PASSWORD'), classes: 'notification-danger'});
                     });
                 },
                 cancel: function() {
@@ -172,7 +172,7 @@ angular.module("proton.controllers.Settings")
     $scope.generate = function(address) {
         generateModal.activate({
             params: {
-                title: $translate.instant('GENERATE_KEY_PAIR'),
+                title: gettext('GENERATE_KEY_PAIR'),
                 message: '', // TODO need text
                 addresses: [address],
                 cancel: function() {

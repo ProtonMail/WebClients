@@ -1,4 +1,5 @@
 angular.module('proton', [
+    'gettext',
     'as.sortable',
     'cgNotify',
     'ngCookies',
@@ -7,7 +8,6 @@ angular.module('proton', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'pascalprecht.translate',
     'pikaday',
     // 'SmoothScrollbar',
     'ui.router',
@@ -76,7 +76,6 @@ angular.module('proton', [
     'proton.move',
     'proton.phone',
     'proton.responsiveComposer',
-    'proton.sample',
     'proton.sidebarHeight',
     'proton.squire',
     'proton.time',
@@ -103,10 +102,7 @@ angular.module('proton', [
     'proton.controllers.Sidebar',
     'proton.controllers.Signup',
     'proton.controllers.Support',
-    'proton.controllers.Upgrade',
-
-    // Translations
-    'proton.translations'
+    'proton.controllers.Upgrade'
 ])
 
 /**
@@ -161,6 +157,11 @@ angular.module('proton', [
 
 .config(function(urlProvider, CONFIG) {
     urlProvider.setBaseUrl(CONFIG.apiUrl);
+})
+
+.run(function (gettextCatalog) {
+    gettextCatalog.setCurrentLanguage('en_US'); // Corresponds au header 'Language' du fichier .po;
+    gettextCatalog.debug = true;
 })
 
 .run(function(CONSTANTS) {

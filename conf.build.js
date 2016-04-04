@@ -52,10 +52,6 @@ module.exports = {
       "vendor/pikaday-angular/pikaday-angular.js",
       "vendor/Squire/build/squire.js",
       "vendor/dropzone/dist/dropzone.js",
-      "vendor/angular-translate/angular-translate.js",
-      "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
-      "vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
-      "vendor/angular-translate-storage-local/angular-translate-storage-local.js",
       "vendor/vcard/src/vcard.js",
       "vendor/html2canvas/build/html2canvas.js",
       "vendor/svg4everybody/dist/svg4everybody.js",
@@ -64,7 +60,8 @@ module.exports = {
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
       "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js",
       "vendor/angular-messages/angular-messages.js",
-      "vendor/svgeezy/svgeezy.js"
+      "vendor/svgeezy/svgeezy.js",
+      "vendor/angular-gettext/dist/angular-gettext.js"
     ],
     bootstrap_components: [
       "affix",

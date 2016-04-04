@@ -1,5 +1,5 @@
 <div>
-    <input type="search" placeholder="Filter" ng-model="filter" />
+    <input type="search" placeholder="{{ 'Filter' | translate }}" ng-model="filter" />
     <ul>
         <li ng-repeat="loc in locs | filter: {name: search}">
             <a ng-click="move(loc)">

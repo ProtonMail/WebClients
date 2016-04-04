@@ -4,7 +4,7 @@ angular.module("proton.controllers.Settings")
     $log,
     $rootScope,
     $scope,
-    $translate,
+    gettext,
     authentication,
     confirmModal,
     Logs,
@@ -15,7 +15,7 @@ angular.module("proton.controllers.Settings")
     $scope.logs = [];
     $scope.logItemsPerPage = 20;
     $scope.doLogging = authentication.user.LogAuth;
-    $scope.disabledText = $translate.instant('DISABLE');
+    $scope.disabledText = gettext('DISABLE');
     $scope.haveLogs = false;
 
     $scope.loadLogs = function (page) {
@@ -32,7 +32,7 @@ angular.module("proton.controllers.Settings")
                     $scope.haveLogs = true;
                 },
                 function(error) {
-                    notify({message: $translate.instant('UNABLE_TO_LOAD_LOGS'), classes: 'notification-danger'});
+                    notify({message: gettext('UNABLE_TO_LOAD_LOGS'), classes: 'notification-danger'});
                     $log.error(error);
                 }
             )
@@ -40,8 +40,8 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.clearLogs = function() {
-        var title = $translate.instant('CLEAR');
-        var message = $translate.instant('CLEAR_LOGS_CONFIRMATION');
+        var title = gettext('CLEAR');
+        var message = gettext('CLEAR_LOGS_CONFIRMATION');
 
         confirmModal.activate({
             params: {
@@ -53,10 +53,10 @@ angular.module("proton.controllers.Settings")
                             function(response) {
                                 $scope.logs = [];
                                 $scope.logCount = 0;
-                                notify({message: $translate.instant('LOGS_CLEARED'), classes: 'notification-success'});
+                                notify({message: gettext('LOGS_CLEARED'), classes: 'notification-success'});
                             },
                             function(error) {
-                                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                                notify({message: gettext('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
                                 $log.error(error);
                             }
                         )
@@ -93,14 +93,14 @@ angular.module("proton.controllers.Settings")
         if (value === 0) {
             confirmModal.activate({
                 params: {
-                    message: $translate.instant('CLEAR_LOGS_CONFIRMATION'), // TODO translate
+                    message: gettext('CLEAR_LOGS_CONFIRMATION'), // TODO translate
                     confirm: function() {
                         Setting.setLogging({LogAuth: 0});
                         $scope.doLogging = 0;
                         authentication.user.LogAuth = 0;
-                        notify({message: $translate.instant('LOG_SETTINGS_UPDATED'), classes: 'notification-success'});
+                        notify({message: gettext('LOG_SETTINGS_UPDATED'), classes: 'notification-success'});
                         confirmModal.deactivate();
-                        $scope.disabledText = $translate.instant('DISABLED');
+                        $scope.disabledText = gettext('DISABLED');
                     },
                     cancel: function() {
                         confirmModal.deactivate();
@@ -111,8 +111,8 @@ angular.module("proton.controllers.Settings")
             $scope.doLogging = value;
             authentication.user.LogAuth = value;
             Setting.setLogging({LogAuth: value});
-            notify({message: $translate.instant('LOG_SETTINGS_UPDATED'), classes: 'notification-success'});
-            $scope.disabledText = $translate.instant('DISABLE');
+            notify({message: gettext('LOG_SETTINGS_UPDATED'), classes: 'notification-success'});
+            $scope.disabledText = gettext('DISABLE');
         }
     };
 

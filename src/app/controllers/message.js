@@ -13,7 +13,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $stateParams,
     $templateCache,
     $timeout,
-    $translate,
+    gettext,
     $window,
     action,
     alertModal,
@@ -277,7 +277,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.openSafariWarning = function() {
         alertModal.activate({
             params: {
-                title: $translate.instant('DOWNLOAD_CONTACTS'),
+                title: gettext('DOWNLOAD_CONTACTS'),
                 alert: 'alert-warning',
                 message: 'Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', // TODO translate
                 ok: function() {
@@ -682,8 +682,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var to = 'To: ' + tools.contactsToString($scope.message.ToList) + br;
         var cc = ($scope.message.CCList.length > 0)?('CC: ' + tools.contactsToString($scope.message.CCList) + br):'';
         var blockquoteEnd = '</blockquote>';
-        var re_prefix = $translate.instant('RE:');
-        var fw_prefix = $translate.instant('FW:');
+        var re_prefix = gettext('RE:');
+        var fw_prefix = gettext('FW:');
         var re_length = re_prefix.length;
         var fw_length = fw_prefix.length;
 

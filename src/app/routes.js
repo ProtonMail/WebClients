@@ -456,9 +456,9 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/outside.reply.tpl.html'
             }
         },
-        onEnter: function($translate) {
+        onEnter: function(gettext) {
             window.onbeforeunload = function() {
-                return $translate.instant('MESSAGE_LEAVE_WARNING');
+                return gettext('MESSAGE_LEAVE_WARNING');
             };
         },
         onExit: function() {
@@ -816,13 +816,13 @@ angular.module('proton.routes', [
             url: '/' + box + '?' + conversationParameters(),
             views: list,
             resolve: {
-                delinquent: function($q, $state, $translate, user, notify) {
+                delinquent: function($q, $state, gettext, user, notify) {
                     var deferred = $q.defer();
 
                     if (user.Delinquent < 3) {
                         deferred.resolve();
                     } else {
-                        notify({message: $translate.instant('DELINQUENT_NOTIFICATION'), classes: 'notification-danger'});
+                        notify({message: gettext('DELINQUENT_NOTIFICATION'), classes: 'notification-danger'});
                         $state.go('secured.payments');
                         deferred.reject();
                     }

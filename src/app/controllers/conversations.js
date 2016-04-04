@@ -8,7 +8,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettext,
     $filter,
     $window,
     $cookies,
@@ -603,7 +603,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 Setting.setViewlayout({ViewLayout: newLayout})
                 .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
-                            notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
+                            notify({message: gettext('LAYOUT_SAVED'), classes: 'notification-success'});
                             $rootScope.mobileMode = false;
                             $rootScope.layoutMode = mode;
                             authentication.user.ViewLayout = newLayout;
@@ -861,8 +861,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} mailbox
      */
     $scope.empty = function(mailbox) {
-        var title = $translate.instant('CONFIRMATION');
-        var message = $translate.instant('ARE_YOU_SURE?') + ' ' + $translate.instant('THIS_CANNOT_BE_UNDONE.');
+        var title = gettext('CONFIRMATION');
+        var message = gettext('ARE_YOU_SURE?') + ' ' + gettext('THIS_CANNOT_BE_UNDONE.');
         var promise;
 
         if(['drafts', 'spam', 'trash'].indexOf(mailbox) !== -1) {
@@ -889,7 +889,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                                     // Close modal
                                     confirmModal.deactivate();
                                     // Notify user
-                                    notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
+                                    notify({message: gettext('FOLDER_EMPTIED'), classes: 'notification-success'});
                                 },
                                 function(error) {
                                     notify({message: 'Error during the empty request', classes: 'notification-danger'});

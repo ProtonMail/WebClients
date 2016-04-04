@@ -8,7 +8,7 @@ angular.module("proton.controllers.Secured", [])
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettext,
     $window,
     authentication,
     cache,
@@ -27,19 +27,19 @@ angular.module("proton.controllers.Secured", [])
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
     $scope.settingsRoutes = [
-        {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
-        {value: 'secured.account', label: $translate.instant('ACCOUNT')},
-        {value: 'secured.labels', label: $translate.instant('LABELS')},
-        {value: 'secured.security', label: $translate.instant('SECURITY')},
-        {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
-        {value: 'secured.appearance', label: $translate.instant('APPEARANCE')},
-        {value: 'secured.domains', label: $translate.instant('DOMAINS')},
-        {value: 'secured.members', label: $translate.instant('USERS')},
-        {value: 'secured.payments', label: $translate.instant('PAYMENTS')}
+        {value: 'secured.dashboard', label: gettext('DASHBOARD')},
+        {value: 'secured.account', label: gettext('ACCOUNT')},
+        {value: 'secured.labels', label: gettext('LABELS')},
+        {value: 'secured.security', label: gettext('SECURITY')},
+        {value: 'secured.dashboard', label: gettext('DASHBOARD')},
+        {value: 'secured.appearance', label: gettext('APPEARANCE')},
+        {value: 'secured.domains', label: gettext('DOMAINS')},
+        {value: 'secured.members', label: gettext('USERS')},
+        {value: 'secured.payments', label: gettext('PAYMENTS')}
     ];
 
     // Set language used for the application
-    $translate.use(authentication.user.Language);
+    gettext.use(authentication.user.Language);
 
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
@@ -60,7 +60,7 @@ angular.module("proton.controllers.Secured", [])
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 
     $scope.$on('updateUser', function(event) {
-        $translate.use(authentication.user.Language);
+        gettext.use(authentication.user.Language);
     });
 
     $scope.$on('organizationChange', function(event, organization) {
@@ -189,25 +189,25 @@ angular.module("proton.controllers.Secured", [])
 
         switch (state) {
             case 'inbox':
-                name = unread + $translate.instant('INBOX');
+                name = unread + gettext('INBOX');
                 break;
             case 'drafts':
-                name = unread + $translate.instant('DRAFTS');
+                name = unread + gettext('DRAFTS');
                 break;
             case 'sent':
-                name = unread + $translate.instant('SENT');
+                name = unread + gettext('SENT');
                 break;
             case 'starred':
-                name = unread + $translate.instant('STARRED');
+                name = unread + gettext('STARRED');
                 break;
             case 'archive':
-                name = unread + $translate.instant('ARCHIVE');
+                name = unread + gettext('ARCHIVE');
                 break;
             case 'spam':
-                name = unread + $translate.instant('SPAM');
+                name = unread + gettext('SPAM');
                 break;
             case 'trash':
-                name = unread + $translate.instant('TRASH');
+                name = unread + gettext('TRASH');
                 break;
             case 'label':
                 var label = _.findWhere(authentication.user.Labels, {ID: $state.params.label});
@@ -215,38 +215,38 @@ angular.module("proton.controllers.Secured", [])
                 if (angular.isDefined(label)) {
                     name = label.Name;
                 } else {
-                    name = $translate.instant('LABEL');
+                    name = gettext('LABEL');
                 }
                 break;
             case 'contacts':
-                name = $translate.instant('CONTACTS');
+                name = gettext('CONTACTS');
                 break;
             case 'dashboard':
-                name = $translate.instant('DASHBOARD');
+                name = gettext('DASHBOARD');
                 break;
             case 'account':
-                name = $translate.instant('ACCOUNT');
+                name = gettext('ACCOUNT');
                 break;
             case 'labels':
-                name = $translate.instant('LABELS');
+                name = gettext('LABELS');
                 break;
             case 'security':
-                name = $translate.instant('SECURITY');
+                name = gettext('SECURITY');
                 break;
             case 'appearance':
-                name = $translate.instant('APPEARANCE');
+                name = gettext('APPEARANCE');
                 break;
             case 'domains':
-                name = $translate.instant('DOMAINS');
+                name = gettext('DOMAINS');
                 break;
             case 'users':
-                name = $translate.instant('USERS');
+                name = gettext('USERS');
                 break;
             case 'invoices':
-                name = $translate.instant('INVOICES');
+                name = gettext('INVOICES');
                 break;
             case 'login':
-                name = $translate.instant('LOGIN');
+                name = gettext('LOGIN');
                 break;
             default:
                 name = '';

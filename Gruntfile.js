@@ -487,6 +487,25 @@ module.exports = function(grunt) {
                     delay: 3000
                 }
             }
+        },
+
+        nggettext_extract: {
+            pot: {
+                files: {
+                    'po/template.pot': ['<%= app_files.js %>', '<%= app_files.atpl %>', '<%= app_files.ctpl %>', '<%= app_files.html %>']
+                }
+            }
+        },
+
+        nggettext_compile: {
+            all: {
+                options: {
+                    module: 'proton'
+                },
+                files: {
+                    'src/app/translations.js': ['po/*.po']
+                }
+            }
         }
     };
 
@@ -494,9 +513,9 @@ module.exports = function(grunt) {
     grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
 
     // Load the grunt plugins
-    grunt.loadNpmTasks('grunt-angular-translate');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-ng-constant');
+    grunt.loadNpmTasks('grunt-angular-gettext');
 
     grunt.renameTask('watch', 'delta');
 
@@ -511,7 +530,7 @@ module.exports = function(grunt) {
 
     // Extract translate keys from HTML and JS files
     grunt.registerTask('extract', [
-        'i18nextract'
+        'nggettext_extract'
     ]);
 
     grunt.registerTask('deploy', [
@@ -533,6 +552,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'clean:build',
+        'nggettext_compile', // transform po file to translations.js
         'html2js',
         'sass:build',
         'concat:build_css',

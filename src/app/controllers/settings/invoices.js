@@ -3,7 +3,7 @@ angular.module("proton.controllers.Settings")
 .controller('InvoicesController', function(
     $rootScope,
     $scope,
-    $translate,
+    gettext,
     $state,
     $q,
     networkActivityTracker,
@@ -13,11 +13,11 @@ angular.module("proton.controllers.Settings")
     var YEAR_2015 = moment({year: 2016, millisecond: 1}).unix();
     var YEAR_2016 = moment({year: 2017, millisecond: 1}).unix();
 
-    $rootScope.pageName = $translate.instant('INVOICES');
+    $rootScope.pageName = gettext('INVOICES');
     $scope.organizationInvoices = [];
     $scope.userInvoices = [];
     $scope.years = [
-        {label: $translate.instant('ALL'), value: undefined},
+        {label: gettext('ALL'), value: undefined},
         {label: '2016', value: YEAR_2016},
         {label: '2015', value: YEAR_2015}
     ];
