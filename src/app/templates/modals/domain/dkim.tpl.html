@@ -14,7 +14,7 @@
                 <p translate>ProtonMail supports DKIM signing for custom domains! To use DKIM authentication, please add the following TXT record into your DNS for this domain. This can typically be done in the control panel of your domain name registrar.</p>
                 <p translate>Please add the follow TXT record. Note, DNS records can take several hours to update.</p>
                 <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/' translate>Learn more</a></p>
-                <table class="pm_table record desktopOnly">
+                <table class="pm_table record" ng-if="!mobileMode">
                     <tr>
                         <th style="width:3rem" translate>Type</th>
                         <th style="width:12.5rem" translate>Host name</th>
@@ -27,7 +27,7 @@
                     </tr>
                 </table>
 
-                <div class="mobileOnly">
+                <div ng-if="mobileMode">
                     <p>
                         <strong translate>Type</strong>:<br>
                         <code>MX</code>

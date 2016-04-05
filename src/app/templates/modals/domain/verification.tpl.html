@@ -14,7 +14,7 @@
                     <p translate>For security reasons, we need to verify that you are the owner of your domain. Please add the following code into your DNS. <strong>Do not remove it even after successful verification</strong>. This can typically be done in the control panel of your domain name registrar.</p>
                     <p translate>Please add the following TXT record:</p>
                     <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/dns-records/' translate>Learn more</a></p>
-                    <table class="pm_table record desktopOnly">
+                    <table class="pm_table record" ng-if="!mobileMode">
                         <tr>
                             <th style="width:3rem" translate>Type</th>
                             <th style="width:6.5rem" translate>Host name</th>
@@ -27,7 +27,7 @@
                         </tr>
                     </table>
 
-                    <div class="mobileOnly">
+                    <div ng-if="mobileMode">
                         <p>
                             <strong translate>Type</strong>:<br>
                             <code>TXT</code>

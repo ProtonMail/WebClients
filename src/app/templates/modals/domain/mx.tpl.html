@@ -13,7 +13,7 @@
                 <p translate>Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to your DNS. This can typically be done in the control panel of your domain name registrar.</p>
                 <p translate>Please add the following MX record. Note, DNS records can take several hours to update.</p>
                 <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/dns-records/' translate>Learn more</a></p>
-                <table class="pm_table record desktopOnly">
+                <table class="pm_table record" ng-if="!mobileMode">
                     <tr>
                         <th style="width:3rem" translate>Type</th>
                         <th style="width:6.5rem" translate>Host name</th>
@@ -28,7 +28,7 @@
                     </tr>
                 </table>
 
-                <div class="mobileOnly">
+                <div ng-if="mobileMode">
                     <p>
                         <strong translate>Type</strong>:<br>
                         <code>MX</code>
