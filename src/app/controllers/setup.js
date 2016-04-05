@@ -8,7 +8,7 @@ angular.module("proton.controllers.Setup", [
     $state,
     $stateParams,
     $log,
-    gettext,
+    gettextCatalog,
     $q,
     $timeout,
     $http,

@@ -7,7 +7,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     $rootScope,
     $state,
     $stateParams,
-    gettext,
+    gettextCatalog,
     $location,
     $q,
     $timeout,

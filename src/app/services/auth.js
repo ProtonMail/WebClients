@@ -584,7 +584,7 @@ angular.module("proton.authentication", [
     $q,
     $rootScope,
     $state,
-    gettext,
+    gettextCatalog,
     authentication,
     Bug,
     bugModal,
@@ -652,7 +652,7 @@ angular.module("proton.authentication", [
                 function(response) {
                     if(response.data.Code === 1000) {
                         deferred.resolve(response);
-                        notify({message: gettext('BUG_REPORTED'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('BUG_REPORTED'), classes: 'notification-success'});
                     } else if (angular.isDefined(response.data.Error)) {
                         response.message = response.data.Error;
                         deferred.reject(response);

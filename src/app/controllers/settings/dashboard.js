@@ -5,7 +5,7 @@ angular.module("proton.controllers.Settings")
     $rootScope,
     $scope,
     $stateParams,
-    gettext,
+    gettextCatalog,
     $q,
     $window,
     eventManager,
@@ -261,23 +261,23 @@ angular.module("proton.controllers.Settings")
 
         if (plan.Name === 'free') {
             if ($scope.subscription.Name === plan.Name) {
-                text = gettext('ALREADY_SUBSCRIBED');
+                text = gettextCatalog.getString('ALREADY_SUBSCRIBED');
             } else {
-                text = gettext('DOWNGRADE_TO_FREE');
+                text = gettextCatalog.getString('DOWNGRADE_TO_FREE');
             }
         } else if (plan.Name === 'plus') {
             if ($scope.subscription.Name === plan.Name) {
-                text = gettext('UPDATE_PLUS');
+                text = gettextCatalog.getString('UPDATE_PLUS');
             } else if ($scope.subscription.Name === 'free') {
-                text = gettext('UPGRADE_TO_PLUS');
+                text = gettextCatalog.getString('UPGRADE_TO_PLUS');
             } else if ($scope.subscription.Name === 'visionary') {
-                text = gettext('DOWNGRADE_TO_PLUS');
+                text = gettextCatalog.getString('DOWNGRADE_TO_PLUS');
             }
         } else if (plan.Name === 'visionary') {
             if ($scope.subscription.Name === plan.Name) {
-                text = gettext('UPDATE_VISIONARY');
+                text = gettextCatalog.getString('UPDATE_VISIONARY');
             } else {
-                text = gettext('UPGRADE_TO_VISIONARY');
+                text = gettextCatalog.getString('UPGRADE_TO_VISIONARY');
             }
         }
 
@@ -311,8 +311,8 @@ angular.module("proton.controllers.Settings")
      * Open a modal to confirm to switch to the free plan
      */
     $scope.free = function() {
-        var title = gettext('CONFIRM_DOWNGRADE');
-        var message = gettext('CONFIRM_DOWNGRADE_MESSAGE');
+        var title = gettextCatalog.getString('CONFIRM_DOWNGRADE');
+        var message = gettextCatalog.getString('CONFIRM_DOWNGRADE_MESSAGE');
 
         confirmModal.activate({
             params: {
@@ -329,7 +329,7 @@ angular.module("proton.controllers.Settings")
                             } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                                 deferred.reject(new Error(result.data.Error));
                             } else {
-                                deferred.reject(new Error(gettext('ERROR_DURING_ORGANIZATION_REQUEST')));
+                                deferred.reject(new Error(gettextCatalog.getString('ERROR_DURING_ORGANIZATION_REQUEST')));
                             }
                         });
 
@@ -346,7 +346,7 @@ angular.module("proton.controllers.Settings")
                             } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                                 deferred.reject(new Error(result.data.Error));
                             } else {
-                                deferred.reject(new Error(gettext('ERROR_DURING_PAYMENT_REQUEST')));
+                                deferred.reject(new Error(gettextCatalog.getString('ERROR_DURING_PAYMENT_REQUEST')));
                             }
                         });
 
@@ -356,7 +356,7 @@ angular.module("proton.controllers.Settings")
                     var finish = function() {
                         $scope.refresh();
                         confirmModal.deactivate();
-                        notify({message: gettext('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED'), classes: 'notification-success'});
                     };
 
                     networkActivityTracker.track(
@@ -466,7 +466,7 @@ angular.module("proton.controllers.Settings")
                             }
                         });
                     } else {
-                        notify({message: gettext('AMOUNT_IS_DIFFERENT'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('AMOUNT_IS_DIFFERENT'), classes: 'notification-danger'});
                     }
                 } else if (methods.data && methods.data.Error) {
                     notify({message: methods.data.Error, classes: 'notification-danger'});

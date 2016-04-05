@@ -458,7 +458,7 @@ angular.module('proton.routes', [
         },
         onEnter: function(gettext) {
             window.onbeforeunload = function() {
-                return gettext('MESSAGE_LEAVE_WARNING');
+                return gettextCatalog.getString('MESSAGE_LEAVE_WARNING');
             };
         },
         onExit: function() {
@@ -816,13 +816,13 @@ angular.module('proton.routes', [
             url: '/' + box + '?' + conversationParameters(),
             views: list,
             resolve: {
-                delinquent: function($q, $state, gettext, user, notify) {
+                delinquent: function($q, $state, gettextCatalog, user, notify) {
                     var deferred = $q.defer();
 
                     if (user.Delinquent < 3) {
                         deferred.resolve();
                     } else {
-                        notify({message: gettext('DELINQUENT_NOTIFICATION'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('DELINQUENT_NOTIFICATION'), classes: 'notification-danger'});
                         $state.go('secured.payments');
                         deferred.reject();
                     }

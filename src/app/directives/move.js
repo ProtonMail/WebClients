@@ -4,7 +4,7 @@ angular.module("proton.move", [])
     authentication,
     cache,
     tools,
-    gettext,
+    gettextCatalog,
     CONSTANTS
 ) {
     return {
@@ -18,10 +18,10 @@ angular.module("proton.move", [])
             scope.labels = [];
 
             // Add classic locations
-            scope.locs.push({ID: '0', name: gettext('INBOX')});
-            scope.locs.push({ID: '6', name: gettext('ARCHIVE')});
-            scope.locs.push({ID: '4', name: gettext('SPAM')});
-            scope.locs.push({ID: '3', name: gettext('TRASH')});
+            scope.locs.push({ID: '0', name: gettextCatalog.getString('INBOX')});
+            scope.locs.push({ID: '6', name: gettextCatalog.getString('ARCHIVE')});
+            scope.locs.push({ID: '4', name: gettextCatalog.getString('SPAM')});
+            scope.locs.push({ID: '3', name: gettextCatalog.getString('TRASH')});
 
             // Add labels
             _.each(authentication.user.Labels, function(label) {

@@ -4,7 +4,7 @@ angular.module('proton.controllers.Settings')
     $q,
     $rootScope,
     $scope,
-    gettext,
+    gettextCatalog,
     Address,
     aliasModal,
     authentication,
@@ -77,14 +77,14 @@ angular.module('proton.controllers.Settings')
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 eventManager.call();
-                notify({message: gettext('ADDRESS_ENABLED'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('ADDRESS_ENABLED'), classes: 'notification-success'});
             } else if(angular.isDefined(result.data) && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
-                notify({message: gettext('ERROR_DURING_ENABLE'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('ERROR_DURING_ENABLE'), classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: gettext('ERROR_DURING_ENABLE'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('ERROR_DURING_ENABLE'), classes: 'notification-danger'});
         }));
     };
 
@@ -94,21 +94,21 @@ angular.module('proton.controllers.Settings')
     $scope.disable = function(address) {
         confirmModal.activate({
             params: {
-                title: gettext('DISABLE_ADDRESS'),
-                message: gettext('DISABLE_ADDRESS_CONFIRMATION'),
+                title: gettextCatalog.getString('DISABLE_ADDRESS'),
+                message: gettextCatalog.getString('DISABLE_ADDRESS_CONFIRMATION'),
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             eventManager.call();
-                            notify({message: gettext('ADDRESS_DISABLED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('ADDRESS_DISABLED'), classes: 'notification-success'});
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettext('ERROR_DURING_DISABLE'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('ERROR_DURING_DISABLE'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettext('ERROR_DURING_DISABLE'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('ERROR_DURING_DISABLE'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -124,7 +124,7 @@ angular.module('proton.controllers.Settings')
     $scope.identity = function(address) {
         identityModal.activate({
             params: {
-                title: gettext('EDIT_ADDRESS'),
+                title: gettextCatalog.getString('EDIT_ADDRESS'),
                 address: address,
                 confirm: function(address) {
                     if (address.custom === false) {
@@ -137,15 +137,15 @@ angular.module('proton.controllers.Settings')
                         .then(function(result) {
                             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                                 eventManager.call();
-                                notify({message: gettext('ADDRESS_UPDATED'), classes: 'notification-success'});
+                                notify({message: gettextCatalog.getString('ADDRESS_UPDATED'), classes: 'notification-success'});
                                 identityModal.deactivate();
                             } else if(angular.isDefined(result.data) && result.data.Error) {
                                 notify({message: result.data.Error, classes: 'notification-danger'});
                             } else {
-                                notify({message: gettext('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+                                notify({message: gettextCatalog.getString('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
                             }
                         }, function(error) {
-                            notify({message: gettext('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
                         })
                     );
                 },
@@ -165,21 +165,21 @@ angular.module('proton.controllers.Settings')
 
         confirmModal.activate({
             params: {
-                title: gettext('DELETE_ADDRESS'),
-                message: gettext('DELETE_ADDRESS_CONFIRMATION'),
+                title: gettextCatalog.getString('DELETE_ADDRESS'),
+                message: gettextCatalog.getString('DELETE_ADDRESS_CONFIRMATION'),
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: gettext('ADDRESS_DELETED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('ADDRESS_DELETED'), classes: 'notification-success'});
                             $scope.disabledAddresses.splice(index, 1); // Remove address in UI
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettext('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettext('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('ERROR_DURING_DELETION'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -196,7 +196,7 @@ angular.module('proton.controllers.Settings')
     $scope.generate = function(address) {
         generateModal.activate({
             params: {
-                title: gettext('GENERATE_KEY_PAIR'),
+                title: gettextCatalog.getString('GENERATE_KEY_PAIR'),
                 message: '', // TODO need text
                 addresses: [address],
                 cancel: function() {
@@ -236,11 +236,11 @@ angular.module('proton.controllers.Settings')
             Setting.addressOrder({Order: order})
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-                    notify({message: gettext('ADDRESS_ORDER_SAVED'), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('ADDRESS_ORDER_SAVED'), classes: 'notification-success'});
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: gettext('ERROR_WHILE_SAVING'), classes : 'notification-danger'});
+                    notify({message: gettextCatalog.getString('ERROR_WHILE_SAVING'), classes : 'notification-danger'});
                 }
             })
         );

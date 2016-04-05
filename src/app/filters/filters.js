@@ -30,7 +30,7 @@ angular.module("proton.filters",[])
             seconds = Math.floor(moment.duration(ms).asSeconds());
 
             // concatonate the variables
-            return days + ' ' + gettext('DAYS') + ' ' + hours + ' ' + gettext('HOURS') + ' ' + minutes + ' ' + gettext('MINUTES') + ' ' + seconds + ' ' + gettext('SECONDS');
+            return days + ' ' + gettextCatalog.getString('DAYS') + ' ' + hours + ' ' + gettextCatalog.getString('HOURS') + ' ' + minutes + ' ' + gettextCatalog.getString('MINUTES') + ' ' + seconds + ' ' + gettextCatalog.getString('SECONDS');
         } else {
             return '';
         }
@@ -256,7 +256,7 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('contact', function(gettext, authentication) {
+.filter('contact', function(gettextCatalog, authentication) {
     return function(contact, parameter, me) {
         var same = contact.Address === contact.Name;
         var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
@@ -264,7 +264,7 @@ angular.module("proton.filters",[])
         var myself = _.findWhere(authentication.user.Addresses, {Email: contact.Address});
 
         if (me === true && angular.isDefined(myself)) {
-            return gettext('ME');
+            return gettextCatalog.getString('ME');
         } else if (parameter === 'Address') {
             return '<' + contact.Address + '>';
         } else if (parameter === 'Name') {

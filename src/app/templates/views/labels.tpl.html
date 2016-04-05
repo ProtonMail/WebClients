@@ -4,7 +4,7 @@
         <p>
             <button type="button" class="pm_button primary" ng-click="createLabel()" translate>Add</button>
         </p>
-        <p class="alert alert-info" ng-show="labels.length === 0"><i class="fa fa-arrow-up"></i> {{ 'You have no labels, you can add label with the above button 'ADD LABEL'.' | translate }}</p>
+        <p class="alert alert-info" ng-show="labels.length === 0" translate>You have no labels, you can add label with the above button 'ADD LABEL'.</p>
         <div class="pm_sort" ng-show="labels.length > 0">
             <ul data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
                 <li ng-repeat="label in labels | orderBy: 'Order'" as-sortable-item="">

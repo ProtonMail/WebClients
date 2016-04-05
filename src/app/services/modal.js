@@ -288,7 +288,7 @@ angular.module("proton.modals", [])
 })
 
 // Card modal
-.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, gettext, $q) {
+.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, gettextCatalog, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -556,7 +556,7 @@ angular.module("proton.modals", [])
     notify,
     pmModal,
     Organization,
-    gettext,
+    gettextCatalog,
     $log,
     $window,
     $q,
@@ -574,12 +574,12 @@ angular.module("proton.modals", [])
             // IE11 doesn't support PayPal
             if ($.browser.msie === true && $.browser.edge !== true) {
                 this.choices = [
-                    {value: 'card', label: gettext('CREDIT_CARD')},
+                    {value: 'card', label: gettextCatalog.getString('CREDIT_CARD')},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
             } else {
                 this.choices = [
-                    {value: 'card', label: gettext('CREDIT_CARD')},
+                    {value: 'card', label: gettextCatalog.getString('CREDIT_CARD')},
                     {value: 'paypal', label: 'PayPal'},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
@@ -609,7 +609,7 @@ angular.module("proton.modals", [])
                 .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
                 .uniq()
                 .value();
-            this.organizationName = gettext('MY_ORGANIZATION'); // TODO set this value for the business plan
+            this.organizationName = gettextCatalog.getString('MY_ORGANIZATION'); // TODO set this value for the business plan
 
             // Functions
 
@@ -666,10 +666,10 @@ angular.module("proton.modals", [])
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             deferred.reject(new Error(result.data.Error));
                         } else {
-                            deferred.reject(new Error(gettext('ERROR_DURING_ORGANIZATION_REQUEST')));
+                            deferred.reject(new Error(gettextCatalog.getString('ERROR_DURING_ORGANIZATION_REQUEST')));
                         }
                     }.bind(this), function(error) {
-                        deferred.reject(new Error(gettext('ERROR_DURING_ORGANIZATION_REQUEST')));
+                        deferred.reject(new Error(gettextCatalog.getString('ERROR_DURING_ORGANIZATION_REQUEST')));
                     });
                 } else {
                     deferred.resolve();
@@ -837,10 +837,10 @@ angular.module("proton.modals", [])
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
-                            notify({message: gettext('COUPON_INVALID'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('COUPON_INVALID'), classes: 'notification-danger'});
                             this.coupon = '';
                         } else {
-                            notify({message: gettext('COUPON_ACCEPTED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('COUPON_ACCEPTED'), classes: 'notification-success'});
                         }
                         this.valid = result.data;
                     }
@@ -1006,7 +1006,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, gettext, eventManager) {
+.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, gettextCatalog, eventManager) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/address.tpl.html',
@@ -1032,18 +1032,18 @@ angular.module("proton.modals", [])
                     })
                 ).then(function(result) {
                     if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        notify({message: gettext('ADDRESS_ADDED'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('ADDRESS_ADDED'), classes: 'notification-success'});
                         this.domain.Addresses.push(result.data.Address);
                         eventManager.call();
                     } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
-                        notify({message: gettext('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
                     } else if(angular.isDefined(result.data) && result.data.Error) {
                         notify({message: result.data.Error, classes: 'notification-danger'});
                     } else {
-                        notify({message: gettext('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
                     }
                 }.bind(this), function(error) {
-                    notify({message: gettext('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
                 });
             }.bind(this);
 
@@ -1453,7 +1453,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('donateModal', function(authentication, pmModal, Payment, notify, tools, networkActivityTracker, gettext, $q) {
+.factory('donateModal', function(authentication, pmModal, Payment, notify, tools, networkActivityTracker, gettextCatalog, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/donate.tpl.html',
@@ -1545,7 +1545,7 @@ angular.module("proton.modals", [])
                 } else if (result.data && result.data.Error) {
                     deferred.reject(new Error(result.data.Error));
                 } else {
-                    deferred.resolve(new Error(gettext('ERROR_DURING_DONATION_REQUEST')));
+                    deferred.resolve(new Error(gettextCatalog.getString('ERROR_DURING_DONATION_REQUEST')));
                 }
 
                 return deferred.promise;

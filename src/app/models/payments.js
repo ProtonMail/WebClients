@@ -1,6 +1,6 @@
 angular.module("proton.models.payments", [])
 
-.factory("Payment", function($http, $q, gettext, authentication, CONSTANTS, url) {
+.factory("Payment", function($http, $q, gettextCatalog, authentication, CONSTANTS, url) {
     return {
         /**
         * Donate for perks. Does not require authentication.
@@ -87,16 +87,16 @@ angular.module("proton.models.payments", [])
                                 case 'free':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = '150 ' + gettext('MESSAGES_PER_DAY');
-                                    plan.labels = '20 ' + gettext('LABELS');
-                                    plan.support = gettext('LIMITED_SUPPORT');
+                                    plan.sending = '150 ' + gettextCatalog.getString('MESSAGES_PER_DAY');
+                                    plan.labels = '20 ' + gettextCatalog.getString('LABELS');
+                                    plan.support = gettextCatalog.getString('LIMITED_SUPPORT');
                                     break;
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
-                                    plan.sending = '1000 ' + gettext('MESSAGES_PER_DAY');
-                                    plan.labels = '200 ' + gettext('LABELS');
-                                    plan.support = gettext('SUPPORT');
+                                    plan.sending = '1000 ' + gettextCatalog.getString('MESSAGES_PER_DAY');
+                                    plan.labels = '200 ' + gettextCatalog.getString('LABELS');
+                                    plan.support = gettextCatalog.getString('SUPPORT');
                                     break;
                                 case 'business':
                                     plan.editable = true;
@@ -108,9 +108,9 @@ angular.module("proton.models.payments", [])
                                 case 'visionary':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = gettext('UNLIMITED_SENDING');
-                                    plan.labels = gettext('UNLIMITED_LABELS');
-                                    plan.support = gettext('PRIORITY_SUPPORT');
+                                    plan.sending = gettextCatalog.getString('UNLIMITED_SENDING');
+                                    plan.labels = gettextCatalog.getString('UNLIMITED_LABELS');
+                                    plan.support = gettextCatalog.getString('PRIORITY_SUPPORT');
                                     break;
                                 default:
                                     break;
@@ -261,7 +261,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardNumber(number) === false) {
-                deferred.reject(new Error(gettext('CARD_NUMER_INVALID')));
+                deferred.reject(new Error(gettextCatalog.getString('CARD_NUMER_INVALID')));
             } else {
                 deferred.resolve();
             }
@@ -272,7 +272,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardExpiry(month, year) === false) {
-                deferred.reject(new Error(gettext('EXPIRY_INVALID')));
+                deferred.reject(new Error(gettextCatalog.getString('EXPIRY_INVALID')));
             } else {
                 deferred.resolve();
             }
@@ -283,7 +283,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardCVC(cvc) === false) {
-                deferred.reject(new Error(gettext('CVC_INVALID')));
+                deferred.reject(new Error(gettextCatalog.getString('CVC_INVALID')));
             } else {
                 deferred.resolve();
             }
