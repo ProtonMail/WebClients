@@ -540,6 +540,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'clean:build',
+        'nggettext_extract' // extract key inside JS and HTML files
         'nggettext_compile', // transform po file to translations.js
         'html2js',
         'sass:build',
