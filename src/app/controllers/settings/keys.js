@@ -55,8 +55,8 @@ angular.module("proton.controllers.Settings")
      * Delete key
      */
     $scope.delete = function(address, key) {
-        var title = gettextCatalog.getString('DELETE_KEY');
-        var message = gettextCatalog.getString('CONFIRM_DELETE_KEY');
+        var title = gettextCatalog.getString('Delete key');
+        var message = gettextCatalog.getString('Confirm delete key');
         var index = address.Keys.indexOf(key);
 
 
@@ -70,7 +70,7 @@ angular.module("proton.controllers.Settings")
                             // Delete key in the UI
                             address.Keys.splice(index, 1);
                             // Call event log manager to be sure
-                            notify({message: gettextCatalog.getString('KEY_DELETED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Key deleted'), classes: 'notification-success'});
                             // Close the modal
                             confirmModal.deactivate();
                             // Call the event log manager
@@ -146,16 +146,16 @@ angular.module("proton.controllers.Settings")
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: gettextCatalog.getString('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                                    notify({message: gettextCatalog.getString('Unable to save your changes, please try again.'), classes: 'notification-danger'});
                                 }
                             }, function(error) {
-                                notify({message: gettextCatalog.getString('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.'), classes: 'notification-danger'});
                             }));
                         }, function(error) {
-                            notify({message: gettextCatalog.getString('ERROR_WHILE_ENCRYPTING'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error while encrypting'), classes: 'notification-danger'});
                         });
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('INVALID_KEY_PASSWORD'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Invalid key password'), classes: 'notification-danger'});
                     });
                 },
                 cancel: function() {
@@ -172,7 +172,7 @@ angular.module("proton.controllers.Settings")
     $scope.generate = function(address) {
         generateModal.activate({
             params: {
-                title: gettextCatalog.getString('GENERATE_KEY_PAIR'),
+                title: gettextCatalog.getString('Generate key pair'),
                 message: '', // TODO need text
                 addresses: [address],
                 cancel: function() {

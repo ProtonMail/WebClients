@@ -603,7 +603,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 Setting.setViewlayout({ViewLayout: newLayout})
                 .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('LAYOUT_SAVED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Layout saved'), classes: 'notification-success'});
                             $rootScope.mobileMode = false;
                             $rootScope.layoutMode = mode;
                             authentication.user.ViewLayout = newLayout;
@@ -861,8 +861,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} mailbox
      */
     $scope.empty = function(mailbox) {
-        var title = gettextCatalog.getString('CONFIRMATION');
-        var message = gettextCatalog.getString('ARE_YOU_SURE?') + ' ' + gettextCatalog.getString('THIS_CANNOT_BE_UNDONE.');
+        var title = gettextCatalog.getString('Confirmation');
+        var message = gettextCatalog.getString('Are you sure?') + ' ' + gettextCatalog.getString('This cannot be undone.');
         var promise;
 
         if(['drafts', 'spam', 'trash'].indexOf(mailbox) !== -1) {
@@ -889,7 +889,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                                     // Close modal
                                     confirmModal.deactivate();
                                     // Notify user
-                                    notify({message: gettextCatalog.getString('FOLDER_EMPTIED'), classes: 'notification-success'});
+                                    notify({message: gettextCatalog.getString('Folder emptied'), classes: 'notification-success'});
                                 },
                                 function(error) {
                                     notify({message: 'Error during the empty request', classes: 'notification-danger'});

@@ -13,11 +13,11 @@ angular.module("proton.controllers.Settings")
     var YEAR_2015 = moment({year: 2016, millisecond: 1}).unix();
     var YEAR_2016 = moment({year: 2017, millisecond: 1}).unix();
 
-    $rootScope.pageName = gettextCatalog.getString('INVOICES');
+    $rootScope.pageName = gettextCatalog.getString('Invoices');
     $scope.organizationInvoices = [];
     $scope.userInvoices = [];
     $scope.years = [
-        {label: gettextCatalog.getString('ALL'), value: undefined},
+        {label: gettextCatalog.getString('All'), value: undefined},
         {label: '2016', value: YEAR_2016},
         {label: '2015', value: YEAR_2015}
     ];

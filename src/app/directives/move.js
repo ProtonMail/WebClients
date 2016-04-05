@@ -18,10 +18,10 @@ angular.module("proton.move", [])
             scope.labels = [];
 
             // Add classic locations
-            scope.locs.push({ID: '0', name: gettextCatalog.getString('INBOX')});
-            scope.locs.push({ID: '6', name: gettextCatalog.getString('ARCHIVE')});
-            scope.locs.push({ID: '4', name: gettextCatalog.getString('SPAM')});
-            scope.locs.push({ID: '3', name: gettextCatalog.getString('TRASH')});
+            scope.locs.push({ID: '0', name: gettextCatalog.getString('Inbox')});
+            scope.locs.push({ID: '6', name: gettextCatalog.getString('Archive')});
+            scope.locs.push({ID: '4', name: gettextCatalog.getString('Spam')});
+            scope.locs.push({ID: '3', name: gettextCatalog.getString('Trash')});
 
             // Add labels
             _.each(authentication.user.Labels, function(label) {

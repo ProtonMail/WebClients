@@ -87,16 +87,16 @@ angular.module("proton.models.payments", [])
                                 case 'free':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = '150 ' + gettextCatalog.getString('MESSAGES_PER_DAY');
-                                    plan.labels = '20 ' + gettextCatalog.getString('LABELS');
-                                    plan.support = gettextCatalog.getString('LIMITED_SUPPORT');
+                                    plan.sending = '150 ' + gettextCatalog.getString('Messages per day');
+                                    plan.labels = '20 ' + gettextCatalog.getString('Labels');
+                                    plan.support = gettextCatalog.getString('Limited support');
                                     break;
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
-                                    plan.sending = '1000 ' + gettextCatalog.getString('MESSAGES_PER_DAY');
-                                    plan.labels = '200 ' + gettextCatalog.getString('LABELS');
-                                    plan.support = gettextCatalog.getString('SUPPORT');
+                                    plan.sending = '1000 ' + gettextCatalog.getString('Messages per day');
+                                    plan.labels = '200 ' + gettextCatalog.getString('Labels');
+                                    plan.support = gettextCatalog.getString('Support');
                                     break;
                                 case 'business':
                                     plan.editable = true;
@@ -108,9 +108,9 @@ angular.module("proton.models.payments", [])
                                 case 'visionary':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = gettextCatalog.getString('UNLIMITED_SENDING');
-                                    plan.labels = gettextCatalog.getString('UNLIMITED_LABELS');
-                                    plan.support = gettextCatalog.getString('PRIORITY_SUPPORT');
+                                    plan.sending = gettextCatalog.getString('Unlimited sending');
+                                    plan.labels = gettextCatalog.getString('Unlimited labels');
+                                    plan.support = gettextCatalog.getString('Priority support');
                                     break;
                                 default:
                                     break;
@@ -261,7 +261,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardNumber(number) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('CARD_NUMER_INVALID')));
+                deferred.reject(new Error(gettextCatalog.getString('Card number invalid')));
             } else {
                 deferred.resolve();
             }
@@ -272,7 +272,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardExpiry(month, year) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('EXPIRY_INVALID')));
+                deferred.reject(new Error(gettextCatalog.getString('Expiry invalid')));
             } else {
                 deferred.resolve();
             }
@@ -283,7 +283,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardCVC(cvc) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('CVC_INVALID')));
+                deferred.reject(new Error(gettextCatalog.getString('CVC invalid')));
             } else {
                 deferred.resolve();
             }

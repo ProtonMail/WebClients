@@ -21,8 +21,8 @@ angular.module("proton.controllers.Settings")
     var NORMAL = 0;
 
     $scope.roles = [
-        {label: gettextCatalog.getString('MASTER'), value: MASTER},
-        {label: gettextCatalog.getString('SUB'), value: SUB}
+        {label: gettextCatalog.getString('Master'), value: MASTER},
+        {label: gettextCatalog.getString('Sub'), value: SUB}
     ];
 
     // Listeners
@@ -128,14 +128,14 @@ angular.module("proton.controllers.Settings")
     $scope.changeRole = function(member) {
         Member.role(member.ID, member.Role).then(function(result) { // TODO check request
             if(result.data && result.data.Code === 1000) {
-                notify({message: gettextCatalog.getString('ROLE_UPDATED'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Role updated'), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
-                notify({message: gettextCatalog.getString('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during updating'), classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: gettextCatalog.getString('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Error during updating'), classes: 'notification-danger'});
         });
     };
 
@@ -149,14 +149,14 @@ angular.module("proton.controllers.Settings")
             }
         }).then(function(result) { // TODO omit some parameters
             if(result.data && result.data.Code === 1000) {
-                notify({message: gettextCatalog.getString('ORGANIZATION_UPDATED'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Organization Updated'), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
-                notify({message: gettextCatalog.getString('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during updating'), classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: gettextCatalog.getString('ERROR_DURING_UPDATING'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Error during updating'), classes: 'notification-danger'});
         });
     };
 
@@ -166,8 +166,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} address
      */
     $scope.unlinkAddress = function(member, address) {
-        var title = gettextCatalog.getString('UNLINK_ADDRESS');
-        var message = gettextCatalog.getString('UNLINK_ADDRESS_CONFIRMATION');
+        var title = gettextCatalog.getString('Unlink address');
+        var message = gettextCatalog.getString('Are you sure you want to unlink this address?');
 
         confirmModal.activate({
             params: {
@@ -178,7 +178,7 @@ angular.module("proton.controllers.Settings")
                         if (result.data && result.data) {
                             address.Status = 0;
                             confirmModal.deactivate();
-                            notify({message: gettextCatalog.getString('ADDRESS_DISABLED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address disabled'), classes: 'notification-success'});
                         }
                     });
                 },
@@ -218,8 +218,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} member
      */
     $scope.remove = function(member) {
-        var title = gettextCatalog.getString('REMOVE_MEMBER');
-        var message = gettextCatalog.getString('REMOVE_MEMBER_CONFIRMATION');
+        var title = gettextCatalog.getString('Remove member');
+        var message = gettextCatalog.getString('Are you sure you want to remove this member?');
         var index = $scope.members.indexOf(member);
 
         confirmModal.activate({
@@ -231,14 +231,14 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             $scope.members.splice(index, 1); // Remove member in the members list
                             confirmModal.deactivate(); // Close the modal
-                            notify({message: gettextCatalog.getString('USER_REMOVED'), classes: 'notification-success'}); // Display notification
+                            notify({message: gettextCatalog.getString('Member removed'), classes: 'notification-success'}); // Display notification
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettextCatalog.getString('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during deletion'), classes: 'notification-danger'});
                         }
                     }, function() {
-                        notify({message: gettextCatalog.getString('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during deletion'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -262,14 +262,14 @@ angular.module("proton.controllers.Settings")
                         if (result.data && result.data.Code === 1000) {
                             eventManager.call();
                             storageModal.deactivate();
-                            notify({message: gettextCatalog.getString('QUOTA_UPDATED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Quota updated'), classes: 'notification-success'});
                         } else if (result.data && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettextCatalog.getString('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Unable to save your changes, please try again.'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {

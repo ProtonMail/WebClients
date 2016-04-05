@@ -90,7 +90,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if ($scope.messages.length > 0) {
             $rootScope.activeComposer = true;
             window.onbeforeunload = function() {
-                return gettextCatalog.getString('MESSAGE_LEAVE_WARNING');
+                return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.');
             };
         } else {
             $rootScope.activeComposer = false;
@@ -137,7 +137,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) ||
             ($scope.messages.length === 1 && $rootScope.mobileMode === true)
         ) {
-            notify({message: gettextCatalog.getString('MAXIMUM_COMPOSER_REACHED'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Maximum composer reached'), classes: 'notification-danger'});
         } else {
             var message = new Message();
             $scope.initMessage(message, false);
@@ -302,7 +302,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         return {
             options: {
                 addRemoveLinks: false,
-                dictDefaultMessage: gettextCatalog.getString('DROP_FILE_HERE_TO_UPLOAD'),
+                dictDefaultMessage: gettextCatalog.getString('Drop a file here to upload'),
                 url: "/file/post",
                 autoProcessQueue: false,
                 paramName: "file", // The name that will be used to transfer the file
@@ -551,7 +551,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.maximized = true;
             if ($scope.messages.length > 0) {
                 notify.closeAll();
-                notify({message: gettextCatalog.getString('MAXIMUM_COMPOSER_REACHED'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Maximum composer reached'), classes: 'notification-danger'});
                 return;
             }
         }
@@ -1155,7 +1155,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         cache.events(events);
 
                         if(notification === true) {
-                            notify({message: gettextCatalog.getString('MESSAGE_SAVED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Message saved'), classes: 'notification-success'});
                         }
 
                         message.saving = false;
@@ -1208,7 +1208,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * Return the subject title of the composer
      */
      $scope.subject = function(message) {
-        return message.Subject || gettextCatalog.getString('NEW_MESSAGE');
+        return message.Subject || gettextCatalog.getString('New message');
      };
 
     /**
@@ -1218,8 +1218,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.checkSubject = function(message) {
         var deferred = $q.defer();
-        var title = gettextCatalog.getString('NO_SUBJECT');
-        var text = gettextCatalog.getString('NO_SUBJECT_SEND_ANYWAY?');
+        var title = gettextCatalog.getString('No subject');
+        var text = gettextCatalog.getString('No subject, send anyway?');
 
         if(angular.isUndefined(message.Subject) || message.Subject.length === 0) {
             message.Subject = '';
@@ -1373,7 +1373,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             }});
 
                                             cache.events(events); // Send events to the cache manager
-                                            notify({message: gettextCatalog.getString('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
+                                            notify({message: gettextCatalog.getString('Message sent'), classes: 'notification-success'}); // Notify the user
                                             $scope.close(message, false, false); // Close the composer window
 
                                             $timeout(function() {
@@ -1519,7 +1519,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         action.discardMessage(message);
 
         // Notification
-        notify({message: gettextCatalog.getString('MESSAGE_DISCARDED'), classes: 'notification-success'});
+        notify({message: gettextCatalog.getString('Message discarded'), classes: 'notification-success'});
     };
 
     /**
@@ -1533,7 +1533,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(message.ToList.length > 0) {
             recipients = recipients.concat(_.map(message.ToList, function(contact, index) {
                 if(index === 0) {
-                    return gettextCatalog.getString('TO') + ': ' + $filter('contact')(contact, 'Name');
+                    return gettextCatalog.getString('To') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
                 }
