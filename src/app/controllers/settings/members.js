@@ -149,7 +149,7 @@ angular.module("proton.controllers.Settings")
             }
         }).then(function(result) { // TODO omit some parameters
             if(result.data && result.data.Code === 1000) {
-                notify({message: gettextCatalog.getString('Organization Updated'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Organization updated'), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {

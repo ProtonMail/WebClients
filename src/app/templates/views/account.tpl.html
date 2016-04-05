@@ -94,7 +94,7 @@
                             <label for="oldLoginPassword" translate>Current password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder="{{ 'CURRENT_PASSWORD' | translate }}" required />
+                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder="{{ 'Current password' | translate }}" required />
                             <div ng-messages="loginForm.oldLoginPassword.$error" class="text-red" ng-if="loginForm.oldLoginPassword.$touched">
                                 <p ng-message="required" translate>Field required</p>
                             </div>
@@ -116,7 +116,7 @@
                             <label translate>Confirm new password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="{{ 'CONFIRM_NEW_PASSWORD' | translate }}" required class="margin" />
+                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="{{ 'Confirm new password' | translate }}" required class="margin" />
                             <div ng-messages="loginForm.confirmLoginPassword.$error" class="text-red" ng-if="loginForm.confirmLoginPassword.$touched">
                                 <p ng-message="required" translate>Field required</p>
                             </div>

@@ -124,7 +124,7 @@ angular.module('proton.controllers.Settings')
     $scope.identity = function(address) {
         identityModal.activate({
             params: {
-                title: gettextCatalog.getString('Edit Address'),
+                title: gettextCatalog.getString('Edit address'),
                 address: address,
                 confirm: function(address) {
                     if (address.custom === false) {
@@ -165,7 +165,7 @@ angular.module('proton.controllers.Settings')
 
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete Address'),
+                title: gettextCatalog.getString('Delete address'),
                 message: gettextCatalog.getString('Are you sure you want to delete this address?'),
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {

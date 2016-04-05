@@ -24,14 +24,11 @@ msgstr ""
 msgid "Absolute security"
 msgstr ""
 
+#: src/app/controllers/secured.js:228
+#: src/app/controllers/secured.js:31
 #: src/app/templates/partials/menu.settings.tpl.html:30
 #: src/app/templates/partials/menu.settings.tpl.html:6
 msgid "Account"
-msgstr ""
-
-#: src/app/controllers/secured.js:231
-#: src/app/controllers/secured.js:32
-msgid "ACCOUNT"
 msgstr ""
 
 #: src/app/templates/views/contacts.tpl.html:35
@@ -83,6 +80,10 @@ msgstr ""
 msgid "Add custom domain address"
 msgstr ""
 
+#: src/app/controllers/contacts.js:203
+msgid "Add new contact"
+msgstr ""
+
 #: src/app/templates/directives/labels.tpl.html:34
 msgid "Add new label"
 msgstr ""
@@ -96,21 +97,10 @@ msgid "Add ProtonMail address"
 msgstr ""
 
 #: src/app/templates/modals/user/address.tpl.html:3
+#: src/app/templates/modals/user/member.tpl.html:3
 #: src/app/templates/views/members.tpl.html:64
 #: src/app/templates/views/members.tpl.html:65
 msgid "Add user"
-msgstr ""
-
-#: src/app/controllers/settings/payments.js:167
-msgid "ADD_METHOD_FIRST"
-msgstr ""
-
-#: src/app/controllers/contacts.js:203
-msgid "ADD_NEW_CONTACT"
-msgstr ""
-
-#: src/app/templates/modals/user/member.tpl.html:3
-msgid "ADD_USER"
 msgstr ""
 
 #: src/app/templates/modals/domain/address.tpl.html:34
@@ -133,36 +123,36 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: src/app/services/modal.js:1035
-msgid "ADDRESS_ADDED"
+msgid "Address added"
 msgstr ""
 
 #: src/app/services/modal.js:1043
 #: src/app/services/modal.js:1046
-msgid "ADDRESS_CREATION_FAILED"
+msgid "Address created failed"
 msgstr ""
 
 #: src/app/controllers/settings/addresses.js:173
 #: src/app/controllers/settings/domains.js:249
-msgid "ADDRESS_DELETED"
+msgid "Address deleted"
 msgstr ""
 
 #: src/app/controllers/settings/addresses.js:103
 #: src/app/controllers/settings/domains.js:298
 #: src/app/controllers/settings/members.js:181
-msgid "ADDRESS_DISABLED"
+msgid "Address disabled"
 msgstr ""
 
 #: src/app/controllers/settings/addresses.js:80
 #: src/app/controllers/settings/domains.js:275
-msgid "ADDRESS_ENABLED"
+msgid "Address enabled"
 msgstr ""
 
 #: src/app/controllers/settings/addresses.js:239
-msgid "ADDRESS_ORDER_SAVED"
+msgid "Address order saved"
 msgstr ""
 
 #: src/app/controllers/settings/addresses.js:140
-msgid "ADDRESS_UPDATED"
+msgid "Address updated"
 msgstr ""
 
 #: src/app/templates/modals/domain/address.tpl.html:7
@@ -210,15 +200,12 @@ msgstr ""
 msgid "Align right"
 msgstr ""
 
-#: src/app/templates/partials/searchForm.tpl.html:67
-msgid "All"
-msgstr ""
-
 #: src/app/controllers/header.js:160
 #: src/app/controllers/header.js:21
 #: src/app/controllers/header.js:35
 #: src/app/controllers/settings/invoices.js:20
-msgid "ALL"
+#: src/app/templates/partials/searchForm.tpl.html:67
+msgid "All"
 msgstr ""
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:6
@@ -235,10 +222,6 @@ msgstr ""
 
 #: src/app/templates/views/step1.tpl.html:82
 msgid "Already have an account?"
-msgstr ""
-
-#: src/app/controllers/settings/dashboard.js:264
-msgid "ALREADY_SUBSCRIBED"
 msgstr ""
 
 #: src/app/templates/directives/labels.tpl.html:31
@@ -260,10 +243,6 @@ msgstr ""
 msgid "Amount due"
 msgstr ""
 
-#: src/app/controllers/settings/dashboard.js:469
-msgid "AMOUNT_IS_DIFFERENT"
-msgstr ""
-
 #: src/app/templates/views/step1.tpl.html:191
 msgid "An error occured while trying to create your account. To see common problems and solutions <a target=\"_blank\" href=\"https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/\">click here</a>."
 msgstr ""
@@ -274,14 +253,11 @@ msgstr ""
 msgid "Annually"
 msgstr ""
 
+#: src/app/controllers/secured.js:237
+#: src/app/controllers/secured.js:35
 #: src/app/templates/partials/menu.settings.tpl.html:15
 #: src/app/templates/partials/menu.settings.tpl.html:33
 msgid "Appearance"
-msgstr ""
-
-#: src/app/controllers/secured.js:240
-#: src/app/controllers/secured.js:36
-msgid "APPEARANCE"
 msgstr ""
 
 #: src/app/templates/directives/labels.tpl.html:37
@@ -290,6 +266,8 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
+#: src/app/controllers/secured.js:204
+#: src/app/directives/move.js:22
 #: src/app/templates/directives/location-tag.tpl.html:7
 #: src/app/templates/partials/no-results.tpl.html:21
 #: src/app/templates/partials/sidebar-responsive.tpl.html:47
@@ -299,17 +277,44 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: src/app/controllers/secured.js:207
-#: src/app/directives/move.js:22
-msgid "ARCHIVE"
-msgstr ""
-
 #: src/app/templates/views/step1.tpl.html:90
 msgid "Are you human?"
 msgstr ""
 
+#: src/app/controllers/settings/security.js:44
+#: src/app/controllers/settings/security.js:96
+msgid "Are you sure you want to clear all your logs?"
+msgstr ""
+
+#: src/app/controllers/settings/addresses.js:169
+#: src/app/controllers/settings/domains.js:171
+#: src/app/controllers/settings/domains.js:245
+msgid "Are you sure you want to delete this address?"
+msgstr ""
+
+#: src/app/controllers/settings/labels.js:134
+msgid "Are you sure you want to delete this label?"
+msgstr ""
+
+#: src/app/controllers/settings/payments.js:97
+msgid "Are you sure you want to delete this payment method?"
+msgstr ""
+
+#: src/app/controllers/settings/addresses.js:98
+#: src/app/controllers/settings/domains.js:294
+msgid "Are you sure you want to disable this address?"
+msgstr ""
+
+#: src/app/controllers/settings/members.js:222
+msgid "Are you sure you want to remove this member?"
+msgstr ""
+
+#: src/app/controllers/settings/members.js:170
+msgid "Are you sure you want to unlink this address?"
+msgstr ""
+
 #: src/app/controllers/conversations.js:865
-msgid "ARE_YOU_SURE?"
+msgid "Are you sure?"
 msgstr ""
 
 #: src/app/templates/modals/bug.tpl.html:66
@@ -412,11 +417,17 @@ msgid "Bug reports are not end-to-end encrypted, please do not send any sensitiv
 msgstr ""
 
 #: src/app/controllers/settings/appearance.js:123
-msgid "BUTTONS_POSITION_SAVED"
+msgid "Buttons position saved"
 msgstr ""
 
 #: src/app/templates/modals/payment/payment.tpl.html:159
+#: src/app/templates/views/step1.tpl.html:79
 msgid "By clicking Create Account, you agree to abide by ProtonMail's <a href=\"https://protonmail.com/terms-and-conditions\" target=\"_blank\">Terms and Conditions</a>."
+msgstr ""
+
+#: src/app/controllers/compose.js:93
+#: src/app/routes.js:461
+msgid "By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on."
 msgstr ""
 
 #: src/app/templates/modals/alias.tpl.html:23
@@ -457,13 +468,13 @@ msgstr ""
 msgid "Card number"
 msgstr ""
 
+#: src/app/models/payments.js:264
+msgid "Card number invalid"
+msgstr ""
+
 #: src/app/templates/modals/donate.tpl.html:63
 #: src/app/templates/modals/payment/payment.tpl.html:119
 msgid "Card validation code"
-msgstr ""
-
-#: src/app/models/payments.js:264
-msgid "CARD_NUMER_INVALID"
 msgstr ""
 
 #: src/app/controllers/compose.js:1546
@@ -488,13 +499,10 @@ msgstr ""
 msgid "Change layout"
 msgstr ""
 
+#: src/app/templates/modals/payment/payment.tpl.html:130
 #: src/app/templates/modals/payment/payment.tpl.html:131
 #: src/app/templates/modals/payment/payment.tpl.html:132
 msgid "Change subscription"
-msgstr ""
-
-#: src/app/templates/modals/payment/payment.tpl.html:130
-msgid "CHANGE_SUBSCRIPTION"
 msgstr ""
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:19
@@ -533,17 +541,9 @@ msgstr ""
 msgid "Choose your prefered button order for marking messages as read / unread."
 msgstr ""
 
+#: src/app/controllers/settings/security.js:43
 #: src/app/templates/views/appearance.tpl.html:94
 msgid "Clear"
-msgstr ""
-
-#: src/app/controllers/settings/security.js:43
-msgid "CLEAR"
-msgstr ""
-
-#: src/app/controllers/settings/security.js:44
-#: src/app/controllers/settings/security.js:96
-msgid "CLEAR_LOGS_CONFIRMATION"
 msgstr ""
 
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:16
@@ -633,6 +633,10 @@ msgstr ""
 msgid "Compose"
 msgstr ""
 
+#: src/app/controllers/settings/appearance.js:74
+msgid "Compose mode saved"
+msgstr ""
+
 #: src/app/templates/partials/message.tpl.html:109
 #: src/app/templates/partials/message.tpl.html:123
 #: src/app/templates/partials/message.tpl.html:32
@@ -649,6 +653,7 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
+#: src/app/templates/modals/user/member.tpl.html:20
 #: src/app/templates/views/step1.tpl.html:50
 msgid "Confirm login password"
 msgstr ""
@@ -668,6 +673,7 @@ msgid "Confirm new mailbox password"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:116
+#: src/app/templates/views/account.tpl.html:119
 msgid "Confirm new password"
 msgstr ""
 
@@ -676,28 +682,24 @@ msgstr ""
 msgid "Confirm password"
 msgstr ""
 
-#: src/app/controllers/settings/dashboard.js:314
-msgid "CONFIRM_DOWNGRADE"
-msgstr ""
-
-#: src/app/controllers/settings/dashboard.js:315
-msgid "CONFIRM_DOWNGRADE_MESSAGE"
-msgstr ""
-
-#: src/app/templates/modals/user/member.tpl.html:20
-msgid "CONFIRM_LOGIN_PASSWORD"
-msgstr ""
-
-#: src/app/templates/views/account.tpl.html:119
-msgid "CONFIRM_NEW_PASSWORD"
-msgstr ""
-
 #: src/app/controllers/conversations.js:864
-msgid "CONFIRMATION"
+msgid "Confirmation"
+msgstr ""
+
+#: src/app/controllers/contacts.js:221
+msgid "Contact added"
+msgstr ""
+
+#: src/app/controllers/contacts.js:247
+msgid "Contact edited"
 msgstr ""
 
 #: src/app/templates/modals/contact.tpl.html:23
 msgid "Contact email"
+msgstr ""
+
+#: src/app/controllers/contacts.js:413
+msgid "Contact imported"
 msgstr ""
 
 #: src/app/templates/modals/contact.tpl.html:15
@@ -712,35 +714,20 @@ msgstr ""
 msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail.com</a> for critical security issues."
 msgstr ""
 
-#: src/app/controllers/contacts.js:221
-msgid "CONTACT_ADDED"
-msgstr ""
-
-#: src/app/controllers/contacts.js:247
-msgid "CONTACT_EDITED"
-msgstr ""
-
-#: src/app/controllers/contacts.js:413
-msgid "CONTACT_IMPORTED"
-msgstr ""
-
+#: src/app/controllers/secured.js:222
 #: src/app/templates/partials/header-auth-desktop.tpl.html:38
 #: src/app/templates/partials/sidebar-responsive.tpl.html:69
 #: src/app/templates/partials/sidebar-responsive.tpl.html:71
 msgid "Contacts"
 msgstr ""
 
-#: src/app/controllers/secured.js:225
-msgid "CONTACTS"
-msgstr ""
-
 #: src/app/controllers/contacts.js:142
 #: src/app/controllers/contacts.js:186
-msgid "CONTACTS_DELETED"
+msgid "Contacts deleted"
 msgstr ""
 
 #: src/app/controllers/contacts.js:415
-msgid "CONTACTS_IMPORTED"
+msgid "Contacts imported"
 msgstr ""
 
 #: src/app/templates/partials/conversation-placeholder.tpl.html:43
@@ -755,15 +742,19 @@ msgid "Coupon"
 msgstr ""
 
 #: src/app/services/modal.js:843
-msgid "COUPON_ACCEPTED"
+msgid "Coupon accepted"
 msgstr ""
 
 #: src/app/services/modal.js:840
-msgid "COUPON_INVALID"
+msgid "Coupon invalid"
 msgstr ""
 
 #: src/app/templates/views/step1.tpl.html:80
 msgid "Create account"
+msgstr ""
+
+#: src/app/controllers/settings/labels.js:60
+msgid "Create new label"
 msgstr ""
 
 #: src/app/templates/views/payments.tpl.html:50
@@ -772,10 +763,6 @@ msgstr ""
 
 #: src/app/templates/views/step1.tpl.html:9
 msgid "Create your account"
-msgstr ""
-
-#: src/app/controllers/settings/labels.js:60
-msgid "CREATE_NEW_LABEL"
 msgstr ""
 
 #: src/app/templates/views/step1.tpl.html:188
@@ -796,14 +783,11 @@ msgstr ""
 msgid "Credit"
 msgstr ""
 
+#: src/app/services/modal.js:577
+#: src/app/services/modal.js:582
 #: src/app/templates/modals/pay.tpl.html:29
 #: src/app/templates/views/dashboard.tpl.html:96
 msgid "Credit card"
-msgstr ""
-
-#: src/app/services/modal.js:577
-#: src/app/services/modal.js:582
-msgid "CREDIT_CARD"
 msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:88
@@ -827,15 +811,12 @@ msgid "Current mailbox password"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:94
+#: src/app/templates/views/account.tpl.html:97
 msgid "Current password"
 msgstr ""
 
 #: src/app/templates/views/domains.tpl.html:25
 msgid "Current status"
-msgstr ""
-
-#: src/app/templates/views/account.tpl.html:97
-msgid "CURRENT_PASSWORD"
 msgstr ""
 
 #: src/app/templates/modals/identity.tpl.html:18
@@ -865,10 +846,6 @@ msgstr ""
 msgid "Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources."
 msgstr ""
 
-#: src/app/templates/views/addresses.tpl.html:15
-msgid "CUSTOM_ADDRESS_INFO"
-msgstr ""
-
 #: src/app/templates/views/payments.tpl.html:40
 msgid "Customize"
 msgstr ""
@@ -879,22 +856,19 @@ msgid "Customize invoices"
 msgstr ""
 
 #: src/app/models/payments.js:286
-msgid "CVC_INVALID"
+msgid "CVC invalid"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:63
 msgid "Daily email notifications"
 msgstr ""
 
+#: src/app/controllers/secured.js:225
+#: src/app/controllers/secured.js:30
+#: src/app/controllers/secured.js:34
 #: src/app/templates/partials/menu.settings.tpl.html:29
 #: src/app/templates/partials/menu.settings.tpl.html:3
 msgid "Dashboard"
-msgstr ""
-
-#: src/app/controllers/secured.js:228
-#: src/app/controllers/secured.js:31
-#: src/app/controllers/secured.js:35
-msgid "DASHBOARD"
 msgstr ""
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:102
@@ -908,12 +882,9 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
+#: src/app/filters/filters.js:33
 #: src/app/templates/partials/composer.tpl.html:132
 msgid "Days"
-msgstr ""
-
-#: src/app/filters/filters.js:33
-msgid "DAYS"
 msgstr ""
 
 #: src/app/templates/views/outside.unlock.tpl.html:41
@@ -957,9 +928,11 @@ msgid "Default identity"
 msgstr ""
 
 #: src/app/controllers/settings/appearance.js:112
-msgid "DEFAULT_LANGUAGE_CHANGED"
+msgid "Default language changed"
 msgstr ""
 
+#: src/app/controllers/contacts.js:162
+#: src/app/controllers/contacts.js:165
 #: src/app/templates/modals/deleteAccount.tpl.html:25
 #: src/app/templates/partials/message.tpl.html:187
 #: src/app/templates/partials/toolbar-contacts.tpl.html:20
@@ -980,6 +953,12 @@ msgstr ""
 msgid "Delete account"
 msgstr ""
 
+#: src/app/controllers/settings/addresses.js:168
+#: src/app/controllers/settings/domains.js:244
+msgid "Delete address"
+msgstr ""
+
+#: src/app/controllers/contacts.js:132
 #: src/app/templates/partials/toolbar-contacts.tpl.html:7
 msgid "Delete all"
 msgstr ""
@@ -988,82 +967,43 @@ msgstr ""
 msgid "Delete any other MX records or make sure ProtonMail's Priority is the lowest number."
 msgstr ""
 
+#: src/app/controllers/settings/domains.js:170
+msgid "Delete domain"
+msgstr ""
+
 #: src/app/templates/partials/composer.tpl.html:253
 msgid "Delete draft"
+msgstr ""
+
+#: src/app/controllers/settings/labels.js:133
+msgid "Delete label"
+msgstr ""
+
+#: src/app/controllers/settings/payments.js:96
+msgid "Delete payment method"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:259
 msgid "Delete your account"
 msgstr ""
 
-#: src/app/controllers/settings/addresses.js:168
-#: src/app/controllers/settings/domains.js:244
-msgid "DELETE_ADDRESS"
-msgstr ""
-
-#: src/app/controllers/settings/addresses.js:169
-#: src/app/controllers/settings/domains.js:171
-#: src/app/controllers/settings/domains.js:245
-msgid "DELETE_ADDRESS_CONFIRMATION"
-msgstr ""
-
-#: src/app/controllers/contacts.js:132
-msgid "DELETE_ALL_CONTACTS"
-msgstr ""
-
-#: src/app/controllers/contacts.js:162
-msgid "DELETE_CONTACT"
-msgstr ""
-
-#: src/app/controllers/contacts.js:165
-msgid "DELETE_CONTACTS"
-msgstr ""
-
-#: src/app/controllers/settings/domains.js:170
-msgid "DELETE_DOMAIN"
-msgstr ""
-
-#: src/app/controllers/settings/labels.js:133
-msgid "DELETE_LABEL"
-msgstr ""
-
-#: src/app/controllers/settings/payments.js:96
-msgid "DELETE_PAYMENT_METHOD"
-msgstr ""
-
-#: src/app/controllers/settings/payments.js:97
-msgid "DELETE_PAYMENT_METHOD_CONFIRMATION"
-msgstr ""
-
-#: src/app/routes.js:825
-#: src/app/templates/views/payments.tpl.html:42
-msgid "DELINQUENT_NOTIFICATION"
-msgstr ""
-
 #: src/app/templates/partials/conversation-placeholder.tpl.html:44
 msgid "Deselect all"
 msgstr ""
 
+#: src/app/controllers/settings/security.js:115
+#: src/app/controllers/settings/security.js:18
 #: src/app/templates/views/addresses.tpl.html:33
 #: src/app/templates/views/addresses.tpl.html:57
 msgid "Disable"
 msgstr ""
 
-#: src/app/controllers/settings/security.js:115
-#: src/app/controllers/settings/security.js:18
-msgid "DISABLE"
-msgstr ""
-
 #: src/app/controllers/settings/addresses.js:97
 #: src/app/controllers/settings/domains.js:293
-msgid "DISABLE_ADDRESS"
+msgid "Disable address"
 msgstr ""
 
-#: src/app/controllers/settings/addresses.js:98
-#: src/app/controllers/settings/domains.js:294
-msgid "DISABLE_ADDRESS_CONFIRMATION"
-msgstr ""
-
+#: src/app/controllers/settings/security.js:103
 #: src/app/templates/views/account.tpl.html:216
 #: src/app/templates/views/account.tpl.html:73
 #: src/app/templates/views/addresses.tpl.html:49
@@ -1071,10 +1011,6 @@ msgstr ""
 #: src/app/templates/views/keys.tpl.html:16
 #: src/app/templates/views/keys.tpl.html:63
 msgid "Disabled"
-msgstr ""
-
-#: src/app/controllers/settings/security.js:103
-msgid "DISABLED"
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:254
@@ -1102,36 +1038,33 @@ msgstr ""
 msgid "Domain"
 msgstr ""
 
+#: src/app/controllers/settings/domains.js:328
+msgid "Domain created"
+msgstr ""
+
+#: src/app/controllers/settings/domains.js:175
+msgid "Domain deleted"
+msgstr ""
+
 #: src/app/templates/modals/domain/domain.tpl.html:12
 msgid "Domain name"
 msgstr ""
 
-#: src/app/controllers/settings/domains.js:328
-msgid "DOMAIN_CREATED"
-msgstr ""
-
-#: src/app/controllers/settings/domains.js:175
-msgid "DOMAIN_DELETED"
-msgstr ""
-
 #: src/app/services/modal.js:1039
-msgid "DOMAIN_NOT_FOUND"
+msgid "Domain not found"
 msgstr ""
 
 #: src/app/controllers/settings/domains.js:394
-msgid "DOMAIN_VERIFIED"
+msgid "Domain verified"
 msgstr ""
 
+#: src/app/controllers/secured.js:240
+#: src/app/controllers/secured.js:36
 #: src/app/templates/partials/menu.settings.tpl.html:18
 #: src/app/templates/views/dashboard.tpl.html:73
 #: src/app/templates/views/domains.tpl.html:14
 #: src/app/templates/views/invoice.print.tpl.html:61
 msgid "Domains"
-msgstr ""
-
-#: src/app/controllers/secured.js:243
-#: src/app/controllers/secured.js:37
-msgid "DOMAINS"
 msgstr ""
 
 #: src/app/templates/views/domains.tpl.html:13
@@ -1163,14 +1096,8 @@ msgstr ""
 msgid "Done"
 msgstr ""
 
-#: src/app/controllers/settings/dashboard.js:266
-msgid "DOWNGRADE_TO_FREE"
-msgstr ""
-
-#: src/app/controllers/settings/dashboard.js:274
-msgid "DOWNGRADE_TO_PLUS"
-msgstr ""
-
+#: src/app/controllers/contacts.js:444
+#: src/app/controllers/message.js:280
 #: src/app/templates/partials/attachments.tpl.html:12
 #: src/app/templates/partials/toolbar-contacts.tpl.html:10
 #: src/app/templates/views/keys.tpl.html:120
@@ -1185,11 +1112,6 @@ msgstr ""
 msgid "Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported."
 msgstr ""
 
-#: src/app/controllers/contacts.js:444
-#: src/app/controllers/message.js:280
-msgid "DOWNLOAD_CONTACTS"
-msgstr ""
-
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:9
 #: src/app/templates/partials/safari.warning.tpl.html:9
 msgid "Downloading"
@@ -1201,6 +1123,7 @@ msgstr ""
 msgid "Draft"
 msgstr ""
 
+#: src/app/controllers/secured.js:195
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:26
 #: src/app/templates/partials/sidebar-responsive.tpl.html:28
@@ -1209,38 +1132,31 @@ msgstr ""
 msgid "Drafts"
 msgstr ""
 
-#: src/app/controllers/secured.js:198
-msgid "DRAFTS"
+#: src/app/controllers/compose.js:305
+msgid "Drop a file here to upload"
 msgstr ""
 
 #: src/app/templates/modals/dropzone.tpl.html:13
 msgid "Drop here"
 msgstr ""
 
-#: src/app/controllers/compose.js:305
-msgid "DROP_FILE_HERE_TO_UPLOAD"
-msgstr ""
-
+#: src/app/controllers/contacts.js:238
 #: src/app/templates/views/contacts.tpl.html:53
 #: src/app/templates/views/labels.tpl.html:16
 #: src/app/templates/views/payments.tpl.html:30
 msgid "Edit"
 msgstr ""
 
+#: src/app/controllers/settings/addresses.js:127
+msgid "Edit address"
+msgstr ""
+
 #: src/app/templates/views/addresses.tpl.html:32
 msgid "Edit identity"
 msgstr ""
 
-#: src/app/controllers/settings/addresses.js:127
-msgid "EDIT_ADDRESS"
-msgstr ""
-
-#: src/app/controllers/contacts.js:238
-msgid "EDIT_CONTACT"
-msgstr ""
-
 #: src/app/controllers/settings/labels.js:91
-msgid "EDIT_LABEL"
+msgid "Edit label"
 msgstr ""
 
 #: src/app/templates/modals/contact.tpl.html:20
@@ -1316,14 +1232,6 @@ msgstr ""
 msgid "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set."
 msgstr ""
 
-#: src/app/models/message.js:141
-msgid "ENCRYPTED_PGP"
-msgstr ""
-
-#: src/app/models/message.js:142
-msgid "ENCRYPTED_PGP_MIME"
-msgstr ""
-
 #: src/app/templates/partials/composer.tpl.html:263
 msgid "Encrypting"
 msgstr ""
@@ -1338,19 +1246,27 @@ msgid "End date"
 msgstr ""
 
 #: src/app/models/message.js:137
-msgid "END_TO_END_ENCRYPTED_FOR_OUTSIDE"
+msgid "End to end encrypted for outside"
 msgstr ""
 
 #: src/app/models/message.js:140
-msgid "END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY"
+msgid "End to end encrypted for outside reply"
 msgstr ""
 
 #: src/app/models/message.js:135
-msgid "END_TO_END_ENCRYPTED_INTERNAL_MESSAGE"
+msgid "End to end encrypted internal message"
+msgstr ""
+
+#: src/app/models/message.js:141
+msgid "End to end encrypted using PGP"
+msgstr ""
+
+#: src/app/models/message.js:142
+msgid "End to end encrypted using PGP/MIME"
 msgstr ""
 
 #: src/app/controllers/settings/appearance.js:16
-msgid "ENGLISH"
+msgid "English"
 msgstr ""
 
 #: src/app/templates/views/members.tpl.html:112
@@ -1382,46 +1298,35 @@ msgstr ""
 
 #: src/app/controllers/settings/domains.js:337
 #: src/app/controllers/settings/domains.js:340
-msgid "ERROR_DURING_CREATION"
+msgid "Error during creation"
 msgstr ""
 
 #: src/app/controllers/settings/addresses.js:179
 #: src/app/controllers/settings/addresses.js:182
-#: src/app/controllers/settings/domains.js:182
-#: src/app/controllers/settings/domains.js:185
 #: src/app/controllers/settings/domains.js:256
 #: src/app/controllers/settings/domains.js:259
 #: src/app/controllers/settings/members.js:238
 #: src/app/controllers/settings/members.js:241
-msgid "ERROR_DURING_DELETION"
+msgid "Error during deletion"
+msgstr ""
+
+#: src/app/controllers/settings/domains.js:182
+#: src/app/controllers/settings/domains.js:185
+msgid "Error during Deletion"
 msgstr ""
 
 #: src/app/controllers/settings/addresses.js:108
 #: src/app/controllers/settings/addresses.js:111
 #: src/app/controllers/settings/domains.js:304
 #: src/app/controllers/settings/domains.js:307
-msgid "ERROR_DURING_DISABLE"
-msgstr ""
-
-#: src/app/services/modal.js:1548
-msgid "ERROR_DURING_DONATION_REQUEST"
+msgid "Error during disable request"
 msgstr ""
 
 #: src/app/controllers/settings/addresses.js:84
 #: src/app/controllers/settings/addresses.js:87
 #: src/app/controllers/settings/domains.js:280
 #: src/app/controllers/settings/domains.js:283
-msgid "ERROR_DURING_ENABLE"
-msgstr ""
-
-#: src/app/controllers/settings/dashboard.js:332
-#: src/app/services/modal.js:669
-#: src/app/services/modal.js:672
-msgid "ERROR_DURING_ORGANIZATION_REQUEST"
-msgstr ""
-
-#: src/app/controllers/settings/dashboard.js:349
-msgid "ERROR_DURING_PAYMENT_REQUEST"
+msgid "Error during enable request"
 msgstr ""
 
 #: src/app/controllers/settings/labels.js:115
@@ -1431,7 +1336,24 @@ msgstr ""
 #: src/app/controllers/settings/labels.js:185
 #: src/app/controllers/settings/labels.js:206
 #: src/app/controllers/settings/labels.js:210
-msgid "ERROR_DURING_THE_LABEL_REQUEST"
+msgid "Error during label request"
+msgstr ""
+
+#: src/app/services/modal.js:669
+#: src/app/services/modal.js:672
+msgid "Error during organization request"
+msgstr ""
+
+#: src/app/controllers/outside.js:154
+msgid "Error during the encryption"
+msgstr ""
+
+#: src/app/controllers/settings/security.js:35
+msgid "Error during the initialization of logs"
+msgstr ""
+
+#: src/app/controllers/outside.js:148
+msgid "Error during the reply process"
 msgstr ""
 
 #: src/app/controllers/settings/addresses.js:145
@@ -1440,18 +1362,11 @@ msgstr ""
 #: src/app/controllers/settings/members.js:138
 #: src/app/controllers/settings/members.js:156
 #: src/app/controllers/settings/members.js:159
-msgid "ERROR_DURING_UPDATING"
+msgid "Error during updating"
 msgstr ""
 
-#: src/app/controllers/settings/addresses.js:243
-#: src/app/controllers/settings/appearance.js:46
-#: src/app/controllers/settings/labels.js:118
-#: src/app/controllers/settings/members.js:269
-#: src/app/controllers/settings/members.js:272
-#: src/app/controllers/settings/payments.js:88
-#: src/app/controllers/settings/payments.js:91
-#: src/app/controllers/settings/security.js:59
-msgid "ERROR_WHILE_SAVING"
+#: src/app/services/modal.js:1548
+msgid "Error while processing donation."
 msgstr ""
 
 #: src/app/templates/views/invoices.tpl.html:16
@@ -1483,12 +1398,12 @@ msgid "Expiring in"
 msgstr ""
 
 #: src/app/models/payments.js:275
-msgid "EXPIRY_INVALID"
+msgid "Expiry invalid"
 msgstr ""
 
 #: src/app/models/message.js:136
 #: src/app/models/message.js:138
-msgid "EXTERNAL_MESSAGE_STORED_ENCRYPTED"
+msgid "External message stored encrypted"
 msgstr ""
 
 #: src/app/templates/modals/deleteAccount.tpl.html:16
@@ -1534,7 +1449,7 @@ msgid "Finish"
 msgstr ""
 
 #: src/app/controllers/conversations.js:892
-msgid "FOLDER_EMPTIED"
+msgid "Folder emptied"
 msgstr ""
 
 #: src/app/templates/modals/support.tpl.html:9
@@ -1567,7 +1482,7 @@ msgid "Free"
 msgstr ""
 
 #: src/app/controllers/settings/appearance.js:17
-msgid "FRENCH"
+msgid "French"
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:146
@@ -1593,7 +1508,12 @@ msgid "Fullscreen"
 msgstr ""
 
 #: src/app/controllers/message.js:686
-msgid "FW:"
+msgid "Fw:"
+msgstr ""
+
+#: src/app/controllers/settings/addresses.js:199
+#: src/app/controllers/settings/domains.js:223
+msgid "Generate key pair"
 msgstr ""
 
 #: src/app/templates/modals/generate.tpl.html:55
@@ -1611,11 +1531,6 @@ msgstr ""
 #: src/app/templates/views/keys.tpl.html:59
 #: src/app/templates/views/reset-mailbox-password.tpl.html:63
 msgid "Generate new key pair"
-msgstr ""
-
-#: src/app/controllers/settings/addresses.js:199
-#: src/app/controllers/settings/domains.js:223
-msgid "GENERATE_KEY_PAIR"
 msgstr ""
 
 #: src/app/templates/modals/generate.tpl.html:37
@@ -1638,10 +1553,6 @@ msgstr ""
 #: src/app/templates/modals/domain/spf.tpl.html:9
 #: src/app/templates/modals/domain/verification.tpl.html:9
 msgid "Good"
-msgstr ""
-
-#: src/app/controllers/settings/domains.js:388
-msgid "HAS_CODE_BUT_WRONG"
 msgstr ""
 
 #: src/app/templates/views/login.tpl.html:53
@@ -1705,12 +1616,9 @@ msgstr ""
 msgid "Host name"
 msgstr ""
 
+#: src/app/filters/filters.js:33
 #: src/app/templates/partials/composer.tpl.html:136
 msgid "Hours"
-msgstr ""
-
-#: src/app/filters/filters.js:33
-msgid "HOURS"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:191
@@ -1775,6 +1683,8 @@ msgstr ""
 msgid "Inactive addresses"
 msgstr ""
 
+#: src/app/controllers/secured.js:192
+#: src/app/directives/move.js:21
 #: src/app/templates/directives/location-tag.tpl.html:2
 #: src/app/templates/partials/header-auth-simple.tpl.html:8
 #: src/app/templates/partials/no-results.tpl.html:15
@@ -1783,11 +1693,6 @@ msgstr ""
 #: src/app/templates/partials/sidebar.tpl.html:12
 #: src/app/templates/partials/sidebar.tpl.html:9
 msgid "Inbox"
-msgstr ""
-
-#: src/app/controllers/secured.js:195
-#: src/app/directives/move.js:21
-msgid "INBOX"
 msgstr ""
 
 #: src/app/templates/directives/squire.tpl.html:53
@@ -1809,29 +1714,22 @@ msgstr ""
 msgid "Invalid email."
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:75
-msgid "Invalid recovery email."
+#: src/app/controllers/contacts.js:390
+msgid "Invalid file type"
 msgstr ""
 
-#: src/app/controllers/contacts.js:390
-msgid "INVALID_FILE_TYPE"
+#: src/app/templates/views/step1.tpl.html:75
+msgid "Invalid recovery email."
 msgstr ""
 
 #: src/app/templates/views/payments.tpl.html:47
 msgid "Invoice"
 msgstr ""
 
-#: src/app/templates/views/invoice.print.tpl.html:49
-msgid "Invoice #123456678"
-msgstr ""
-
+#: src/app/controllers/secured.js:246
+#: src/app/controllers/settings/invoices.js:16
 #: src/app/templates/views/payments.tpl.html:38
 msgid "Invoices"
-msgstr ""
-
-#: src/app/controllers/secured.js:249
-#: src/app/controllers/settings/invoices.js:16
-msgid "INVOICES"
 msgstr ""
 
 #: src/app/templates/modals/domain/verification.tpl.html:45
@@ -1865,39 +1763,40 @@ msgstr ""
 msgid "Keywords"
 msgstr ""
 
+#: src/app/controllers/secured.js:218
 #: src/app/templates/partials/no-results.tpl.html:23
 msgid "Label"
 msgstr ""
 
-#: src/app/controllers/secured.js:221
-msgid "LABEL"
+#: src/app/controllers/settings/labels.js:71
+msgid "Label created"
+msgstr ""
+
+#: src/app/controllers/settings/labels.js:145
+msgid "Label deleted"
+msgstr ""
+
+#: src/app/controllers/settings/labels.js:107
+#: src/app/controllers/settings/labels.js:201
+msgid "Label edited"
 msgstr ""
 
 #: src/app/templates/modals/label.tpl.html:14
 msgid "Label name"
 msgstr ""
 
+#: src/app/controllers/settings/labels.js:176
+msgid "Label order saved"
+msgstr ""
+
 #: src/app/templates/partials/sidebar.tpl.html:70
 msgid "Label settings"
 msgstr ""
 
-#: src/app/controllers/settings/labels.js:71
-msgid "LABEL_CREATED"
-msgstr ""
-
-#: src/app/controllers/settings/labels.js:145
-msgid "LABEL_DELETED"
-msgstr ""
-
-#: src/app/controllers/settings/labels.js:107
-#: src/app/controllers/settings/labels.js:201
-msgid "LABEL_EDITED"
-msgstr ""
-
-#: src/app/controllers/settings/labels.js:176
-msgid "LABEL_ORDER_SAVED"
-msgstr ""
-
+#: src/app/controllers/secured.js:231
+#: src/app/controllers/secured.js:32
+#: src/app/models/payments.js:91
+#: src/app/models/payments.js:98
 #: src/app/templates/partials/menu.settings.tpl.html:31
 #: src/app/templates/partials/menu.settings.tpl.html:9
 #: src/app/templates/partials/toolbar-desktop.tpl.html:60
@@ -1906,20 +1805,13 @@ msgstr ""
 msgid "Labels"
 msgstr ""
 
-#: src/app/controllers/secured.js:234
-#: src/app/controllers/secured.js:33
-#: src/app/models/payments.js:91
-#: src/app/models/payments.js:98
-msgid "LABELS"
-msgstr ""
-
 #: src/app/templates/partials/wizard.tpl.html:27
 msgid "Labels are a powerful tool to manage your inbox. You can add and remove labels from selected emails by clicking the Label button <strong>(1)</strong>. You can also add, delete, and edit labels by clicking on <em>Label settings</em> <strong>(2)</strong>."
 msgstr ""
 
 #: src/app/services/actions.js:109
 #: src/app/services/actions.js:552
-msgid "LABELS_SAVED"
+msgid "Labels saved"
 msgstr ""
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:96
@@ -1934,7 +1826,7 @@ msgstr ""
 
 #: src/app/controllers/conversations.js:606
 #: src/app/controllers/settings/appearance.js:97
-msgid "LAYOUT_SAVED"
+msgid "Layout saved"
 msgstr ""
 
 #: src/app/templates/modals/domain/dkim.tpl.html:16
@@ -1950,7 +1842,7 @@ msgid "Learn more"
 msgstr ""
 
 #: src/app/models/payments.js:92
-msgid "LIMITED_SUPPORT"
+msgid "Limited support"
 msgstr ""
 
 #: src/app/templates/directives/squire.tpl.html:62
@@ -1995,15 +1887,12 @@ msgstr ""
 
 #: src/app/controllers/settings/security.js:101
 #: src/app/controllers/settings/security.js:114
-msgid "LOG_SETTINGS_UPDATED"
+msgid "Logging preference updated"
 msgstr ""
 
+#: src/app/controllers/secured.js:249
 #: src/app/templates/views/login.tpl.html:39
 msgid "Login"
-msgstr ""
-
-#: src/app/controllers/secured.js:252
-msgid "LOGIN"
 msgstr ""
 
 #: src/app/templates/views/security.tpl.html:43
@@ -2013,6 +1902,8 @@ msgstr ""
 #: src/app/templates/modals/deleteAccount.tpl.html:20
 #: src/app/templates/modals/loginPassword.tpl.html:10
 #: src/app/templates/modals/reactivate.tpl.html:10
+#: src/app/templates/modals/user/member.tpl.html:16
+#: src/app/templates/modals/user/member.tpl.html:19
 #: src/app/templates/views/account.tpl.html:90
 #: src/app/templates/views/step1.tpl.html:43
 msgid "Login password"
@@ -2031,17 +1922,12 @@ msgstr ""
 msgid "Login success"
 msgstr ""
 
-#: src/app/templates/modals/user/member.tpl.html:16
-#: src/app/templates/modals/user/member.tpl.html:19
-msgid "LOGIN_PASSWORD"
-msgstr ""
-
 #: src/app/templates/partials/header-auth-desktop.tpl.html:77
 msgid "Logout"
 msgstr ""
 
 #: src/app/controllers/settings/security.js:56
-msgid "LOGS_CLEARED"
+msgid "Logs cleared"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:135
@@ -2069,7 +1955,7 @@ msgid "Make primary"
 msgstr ""
 
 #: src/app/templates/modals/user/member.tpl.html:44
-msgid "MAKE_USER_PRIVATE"
+msgid "Make user private"
 msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:25
@@ -2138,12 +2024,9 @@ msgstr ""
 msgid "Mark as unread / Mark as read"
 msgstr ""
 
+#: src/app/controllers/settings/members.js:24
 #: src/app/templates/views/members.tpl.html:83
 msgid "Master"
-msgstr ""
-
-#: src/app/controllers/settings/members.js:24
-msgid "MASTER"
 msgstr ""
 
 #: src/app/templates/views/appearance.tpl.html:23
@@ -2153,19 +2036,23 @@ msgstr ""
 
 #: src/app/controllers/compose.js:140
 #: src/app/controllers/compose.js:554
-msgid "MAXIMUM_COMPOSER_REACHED"
-msgstr ""
-
-#: src/app/templates/views/reset-mailbox-password.tpl.html:7
-msgid "MBPW_RESET_INSTRUCTIONS"
+msgid "Maximum composer reached"
 msgstr ""
 
 #: src/app/filters/filters.js:267
-msgid "ME"
+msgid "Me"
+msgstr ""
+
+#: src/app/controllers/settings/members.js:234
+msgid "Member removed"
 msgstr ""
 
 #: src/app/templates/views/invoice.print.tpl.html:69
 msgid "Members"
+msgstr ""
+
+#: src/app/controllers/compose.js:1522
+msgid "Message discarded"
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:81
@@ -2173,27 +2060,18 @@ msgstr ""
 msgid "Message password"
 msgstr ""
 
-#: src/app/controllers/compose.js:1522
-msgid "MESSAGE_DISCARDED"
-msgstr ""
-
-#: src/app/controllers/compose.js:93
-#: src/app/routes.js:461
-msgid "MESSAGE_LEAVE_WARNING"
-msgstr ""
-
 #: src/app/controllers/compose.js:1158
-msgid "MESSAGE_SAVED"
+msgid "Message saved"
 msgstr ""
 
 #: src/app/controllers/compose.js:1376
 #: src/app/controllers/outside.js:144
-msgid "MESSAGE_SENT"
+msgid "Message sent"
 msgstr ""
 
 #: src/app/models/payments.js:90
 #: src/app/models/payments.js:97
-msgid "MESSAGES_PER_DAY"
+msgid "Messages per day"
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:32
@@ -2201,16 +2079,12 @@ msgid "Minimize"
 msgstr ""
 
 #: src/app/filters/filters.js:33
-msgid "MINUTES"
+msgid "Minutes"
 msgstr ""
 
 #: src/app/templates/views/addresses.tpl.html:50
 #: src/app/templates/views/domains.tpl.html:141
 msgid "Missing keys"
-msgstr ""
-
-#: src/app/controllers/settings/appearance.js:74
-msgid "MODE_SAVED"
 msgstr ""
 
 #: src/app/templates/modals/card.tpl.html:35
@@ -2238,11 +2112,8 @@ msgstr ""
 
 #: src/app/templates/partials/conversation-list-columns.tpl.html:78
 #: src/app/templates/partials/conversation-list-rows.tpl.html:76
-msgid "More labels"
-msgstr ""
-
 #: src/app/templates/partials/message.tpl.html:54
-msgid "MORE_LABELS"
+msgid "More labels"
 msgstr ""
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:27
@@ -2277,23 +2148,20 @@ msgstr ""
 msgid "Move to trash"
 msgstr ""
 
-#: src/app/templates/views/dashboard.tpl.html:56
-msgid "My subscription"
+#: src/app/services/modal.js:612
+msgid "My organization"
 msgstr ""
 
-#: src/app/services/modal.js:612
-msgid "MY_ORGANIZATION"
+#: src/app/templates/views/dashboard.tpl.html:56
+msgid "My subscription"
 msgstr ""
 
 #: src/app/templates/directives/labels.tpl.html:23
 #: src/app/templates/modals/contact.tpl.html:12
 #: src/app/templates/modals/label.tpl.html:11
+#: src/app/templates/modals/user/member.tpl.html:8
 #: src/app/templates/views/contacts.tpl.html:17
 msgid "Name"
-msgstr ""
-
-#: src/app/templates/modals/user/member.tpl.html:8
-msgid "NAME"
 msgstr ""
 
 #: src/app/templates/modals/card.tpl.html:14
@@ -2318,6 +2186,10 @@ msgstr ""
 msgid "New mailbox password"
 msgstr ""
 
+#: src/app/controllers/compose.js:1211
+msgid "New message"
+msgstr ""
+
 #: src/app/templates/views/account.tpl.html:105
 #: src/app/templates/views/account.tpl.html:108
 msgid "New password"
@@ -2327,10 +2199,6 @@ msgstr ""
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:147
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:81
 msgid "New to old"
-msgstr ""
-
-#: src/app/controllers/compose.js:1211
-msgid "NEW_MESSAGE"
 msgstr ""
 
 #: src/app/templates/directives/paginator.tpl.html:16
@@ -2366,6 +2234,10 @@ msgstr ""
 msgid "No custom domain found"
 msgstr ""
 
+#: src/app/controllers/contacts.js:332
+msgid "No files were selected"
+msgstr ""
+
 #: src/app/templates/directives/labels.tpl.html:3
 msgid "No labels"
 msgstr ""
@@ -2382,16 +2254,16 @@ msgstr ""
 msgid "No results for this search in your contacts list."
 msgstr ""
 
-#: src/app/controllers/contacts.js:332
-msgid "NO_FILE"
-msgstr ""
-
 #: src/app/controllers/compose.js:1221
-msgid "NO_SUBJECT"
+msgid "No subject"
 msgstr ""
 
 #: src/app/controllers/compose.js:1222
-msgid "NO_SUBJECT_SEND_ANYWAY?"
+msgid "No subject, send anyway?"
+msgstr ""
+
+#: src/app/templates/views/addresses.tpl.html:15
+msgid "Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted. <a href=\"https://protonmail.com/support/knowledge-base/aliases-within-protonmail/\" target=\"_blank\">Learn more about addresses here</a>."
 msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:95
@@ -2484,13 +2356,13 @@ msgstr ""
 msgid "Ordered list"
 msgstr ""
 
-#: src/app/templates/modals/user/member.tpl.html:46
-msgid "ORG_ADMINS_CANT_ACCESS_MESSAGE"
-msgstr ""
-
 #: src/app/templates/views/invoice.print.tpl.html:57
 #: src/app/templates/views/members.tpl.html:8
 msgid "Organization"
+msgstr ""
+
+#: src/app/templates/modals/user/member.tpl.html:46
+msgid "Organization administrators cannot access the messages of private users."
 msgstr ""
 
 #: src/app/templates/views/invoices.tpl.html:11
@@ -2511,7 +2383,7 @@ msgid "Organization storage:"
 msgstr ""
 
 #: src/app/controllers/settings/members.js:152
-msgid "ORGANIZATION_UPDATED"
+msgid "Organization updated"
 msgstr ""
 
 #: src/app/templates/views/addresses.tpl.html:51
@@ -2601,29 +2473,26 @@ msgstr ""
 msgid "Payment details"
 msgstr ""
 
-#: src/app/templates/views/payments.tpl.html:6
-msgid "Payment methods"
-msgstr ""
-
 #: src/app/controllers/settings/payments.js:110
-msgid "PAYMENT_METHOD_DELETED"
+msgid "Payment method deleted"
 msgstr ""
 
 #: src/app/controllers/settings/payments.js:84
-msgid "PAYMENT_METHOD_UPDATED"
+msgid "Payment method updated"
+msgstr ""
+
+#: src/app/templates/views/payments.tpl.html:6
+msgid "Payment methods"
 msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:93
 msgid "Payment:"
 msgstr ""
 
+#: src/app/controllers/secured.js:38
 #: src/app/templates/partials/menu.settings.tpl.html:24
 #: src/app/templates/partials/menu.settings.tpl.html:34
 msgid "Payments"
-msgstr ""
-
-#: src/app/controllers/secured.js:39
-msgid "PAYMENTS"
 msgstr ""
 
 #: src/app/templates/partials/wizard.tpl.html:17
@@ -2646,6 +2515,10 @@ msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:120
 msgid "Plans and prices"
+msgstr ""
+
+#: src/app/controllers/settings/payments.js:167
+msgid "Please add a payment method first"
 msgstr ""
 
 #: src/app/templates/modals/domain/dkim.tpl.html:15
@@ -2721,7 +2594,7 @@ msgid "Priority customer support"
 msgstr ""
 
 #: src/app/models/payments.js:113
-msgid "PRIORITY_SUPPORT"
+msgid "Priority support"
 msgstr ""
 
 #: src/app/templates/views/keys.tpl.html:138
@@ -2731,7 +2604,7 @@ msgid "Private key"
 msgstr ""
 
 #: src/app/templates/modals/user/member.tpl.html:40
-msgid "PRIVATE_USER"
+msgid "Private user"
 msgstr ""
 
 #: src/app/templates/modals/payment/payment.tpl.html:38
@@ -2781,11 +2654,11 @@ msgid "Queued"
 msgstr ""
 
 #: src/app/controllers/settings/members.js:265
-msgid "QUOTA_UPDATED"
+msgid "Quota updated"
 msgstr ""
 
 #: src/app/controllers/message.js:685
-msgid "RE:"
+msgid "Re:"
 msgstr ""
 
 #: src/app/templates/modals/reactivate.tpl.html:6
@@ -2837,16 +2710,12 @@ msgstr ""
 msgid "Remove link"
 msgstr ""
 
+#: src/app/controllers/settings/members.js:221
+msgid "Remove member"
+msgstr ""
+
 #: src/app/templates/views/members.tpl.html:118
 msgid "Remove user"
-msgstr ""
-
-#: src/app/controllers/settings/members.js:221
-msgid "REMOVE_MEMBER"
-msgstr ""
-
-#: src/app/controllers/settings/members.js:222
-msgid "REMOVE_MEMBER_CONFIRMATION"
 msgstr ""
 
 #: src/app/templates/partials/message.tpl.html:161
@@ -2915,7 +2784,7 @@ msgid "Role"
 msgstr ""
 
 #: src/app/controllers/settings/members.js:131
-msgid "ROLE_UPDATED"
+msgid "Role updated"
 msgstr ""
 
 #: src/app/templates/views/appearance.tpl.html:43
@@ -2949,7 +2818,7 @@ msgid "Save 20% with the annual plan!"
 msgstr ""
 
 #: src/app/templates/modals/generate.tpl.html:39
-msgid "SAVED"
+msgid "Saved"
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:250
@@ -2978,17 +2847,14 @@ msgid "Search messages"
 msgstr ""
 
 #: src/app/filters/filters.js:33
-msgid "SECONDS"
+msgid "Seconds"
 msgstr ""
 
+#: src/app/controllers/secured.js:234
+#: src/app/controllers/secured.js:33
 #: src/app/templates/partials/menu.settings.tpl.html:12
 #: src/app/templates/partials/menu.settings.tpl.html:32
 msgid "Security"
-msgstr ""
-
-#: src/app/controllers/secured.js:237
-#: src/app/controllers/secured.js:34
-msgid "SECURITY"
 msgstr ""
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:8
@@ -3031,6 +2897,7 @@ msgstr ""
 msgid "Sending"
 msgstr ""
 
+#: src/app/controllers/secured.js:198
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/message.tpl.html:135
 #: src/app/templates/partials/message.tpl.html:41
@@ -3040,10 +2907,6 @@ msgstr ""
 #: src/app/templates/partials/sidebar.tpl.html:25
 #: src/app/templates/partials/sidebar.tpl.html:28
 msgid "Sent"
-msgstr ""
-
-#: src/app/controllers/secured.js:201
-msgid "SENT"
 msgstr ""
 
 #: src/app/templates/views/message.print.tpl.html:14
@@ -3087,6 +2950,10 @@ msgstr ""
 msgid "Show images"
 msgstr ""
 
+#: src/app/directives/transformation.js:47
+msgid "Show previous message"
+msgstr ""
+
 #: src/app/templates/partials/toolbar-desktop.tpl.html:111
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:93
 msgid "Show read"
@@ -3095,10 +2962,6 @@ msgstr ""
 #: src/app/templates/partials/toolbar-desktop.tpl.html:108
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:90
 msgid "Show unread"
-msgstr ""
-
-#: src/app/directives/transformation.js:47
-msgid "SHOW_PREVIOUS_MESSAGE"
 msgstr ""
 
 #: src/app/templates/views/step1.tpl.html:189
@@ -3143,6 +3006,8 @@ msgstr ""
 msgid "Space"
 msgstr ""
 
+#: src/app/controllers/secured.js:207
+#: src/app/directives/move.js:23
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
 #: src/app/templates/partials/sidebar-responsive.tpl.html:54
@@ -3150,11 +3015,6 @@ msgstr ""
 #: src/app/templates/partials/sidebar.tpl.html:49
 #: src/app/templates/partials/sidebar.tpl.html:52
 msgid "Spam"
-msgstr ""
-
-#: src/app/controllers/secured.js:210
-#: src/app/directives/move.js:23
-msgid "SPAM"
 msgstr ""
 
 #: src/app/templates/modals/domain/spf.tpl.html:13
@@ -3169,15 +3029,12 @@ msgstr ""
 msgid "Star conversation"
 msgstr ""
 
+#: src/app/controllers/secured.js:201
 #: src/app/templates/partials/sidebar-responsive.tpl.html:40
 #: src/app/templates/partials/sidebar-responsive.tpl.html:42
 #: src/app/templates/partials/sidebar.tpl.html:33
 #: src/app/templates/partials/sidebar.tpl.html:36
 msgid "Starred"
-msgstr ""
-
-#: src/app/controllers/secured.js:204
-msgid "STARRED"
 msgstr ""
 
 #: src/app/templates/partials/searchForm.tpl.html:41
@@ -3207,11 +3064,11 @@ msgid "Storage:"
 msgstr ""
 
 #: src/app/models/message.js:139
-msgid "STORED_ENCRYPTED"
+msgid "Stored encrypted"
 msgstr ""
 
 #: src/app/controllers/settings/members.js:25
-msgid "SUB"
+msgid "Sub"
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:176
@@ -3242,7 +3099,7 @@ msgid "Subscription"
 msgstr ""
 
 #: src/app/models/payments.js:99
-msgid "SUPPORT"
+msgid "Support"
 msgstr ""
 
 #: src/app/templates/modals/monetize.tpl.html:35
@@ -3261,20 +3118,20 @@ msgstr ""
 msgid "Take back your privacy! Creating your free secure email account takes less than 2 minutes in most cases."
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:79
-msgid "TERMS_CONDITIONS_AGREEMENT"
-msgstr ""
-
 #: src/app/templates/modals/payment/thanks.tpl.html:3
 msgid "Thank you for your subscription."
 msgstr ""
 
 #: src/app/controllers/settings/appearance.js:40
-msgid "THEME_SAVED"
+msgid "Theme saved"
 msgstr ""
 
 #: src/app/templates/views/step1.tpl.html:182
 msgid "This can take a few seconds or a few minutes depending on your device."
+msgstr ""
+
+#: src/app/controllers/conversations.js:865
+msgid "This cannot be undone."
 msgstr ""
 
 #: src/app/templates/partials/conversation.tpl.html:15
@@ -3325,27 +3182,24 @@ msgstr ""
 msgid "This will be your email address. Select the drop down to choose your domain."
 msgstr ""
 
-#: src/app/controllers/conversations.js:865
-msgid "THIS_CANNOT_BE_UNDONE."
-msgstr ""
-
 #: src/app/templates/views/invoice.print.tpl.html:77
 #: src/app/templates/views/security.tpl.html:37
 msgid "Time"
 msgstr ""
 
+#: src/app/controllers/compose.js:1536
 #: src/app/templates/partials/composer.tpl.html:161
 #: src/app/templates/partials/searchForm.tpl.html:36
 #: src/app/templates/views/outside.message.tpl.html:28
 msgid "To"
 msgstr ""
 
-#: src/app/controllers/compose.js:1536
-msgid "TO"
-msgstr ""
-
 #: src/app/templates/views/addresses.tpl.html:64
 msgid "To add more addresses to your account, or to use your own domain, upgrade your account."
+msgstr ""
+
+#: src/app/templates/views/reset-mailbox-password.tpl.html:7
+msgid "To continue, type '<kbd>DANGER</kbd>' below:"
 msgstr ""
 
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:14
@@ -3380,6 +3234,8 @@ msgstr ""
 msgid "Total price:"
 msgstr ""
 
+#: src/app/controllers/secured.js:210
+#: src/app/directives/move.js:24
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
 #: src/app/templates/partials/sidebar-responsive.tpl.html:61
@@ -3387,11 +3243,6 @@ msgstr ""
 #: src/app/templates/partials/sidebar.tpl.html:57
 #: src/app/templates/partials/sidebar.tpl.html:60
 msgid "Trash"
-msgstr ""
-
-#: src/app/controllers/secured.js:213
-#: src/app/directives/move.js:24
-msgid "TRASH"
 msgstr ""
 
 #: src/app/templates/partials/header-auth-desktop.tpl.html:72
@@ -3413,12 +3264,19 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: src/app/controllers/settings/security.js:35
-msgid "UNABLE_TO_LOAD_LOGS"
+#: src/app/controllers/settings/addresses.js:243
+#: src/app/controllers/settings/appearance.js:46
+#: src/app/controllers/settings/labels.js:118
+#: src/app/controllers/settings/members.js:269
+#: src/app/controllers/settings/members.js:272
+#: src/app/controllers/settings/payments.js:88
+#: src/app/controllers/settings/payments.js:91
+#: src/app/controllers/settings/security.js:59
+msgid "Unable to save your changes, please try again."
 msgstr ""
 
 #: src/app/services/attachments.js:108
-msgid "UNABLE_TO_UPLOAD"
+msgid "Unable to upload"
 msgstr ""
 
 #: src/app/templates/directives/squire.tpl.html:15
@@ -3426,27 +3284,20 @@ msgid "Underline"
 msgstr ""
 
 #: src/app/models/message.js:134
-msgid "UNENCRYPTED_MESSAGE"
+msgid "Unencrypted message"
 msgstr ""
 
 #: src/app/models/payments.js:112
-msgid "UNLIMITED_LABELS"
+msgid "Unlimited labels"
 msgstr ""
 
 #: src/app/models/payments.js:111
-msgid "UNLIMITED_SENDING"
-msgstr ""
-
-#: src/app/templates/views/members.tpl.html:96
-msgid "Unlink address"
+msgid "Unlimited sending"
 msgstr ""
 
 #: src/app/controllers/settings/members.js:169
-msgid "UNLINK_ADDRESS"
-msgstr ""
-
-#: src/app/controllers/settings/members.js:170
-msgid "UNLINK_ADDRESS_CONFIRMATION"
+#: src/app/templates/views/members.tpl.html:96
+msgid "Unlink address"
 msgstr ""
 
 #: src/app/templates/views/unlock.tpl.html:19
@@ -3463,14 +3314,6 @@ msgstr ""
 
 #: src/app/templates/directives/squire.tpl.html:65
 msgid "Update link"
-msgstr ""
-
-#: src/app/controllers/settings/dashboard.js:270
-msgid "UPDATE_PLUS"
-msgstr ""
-
-#: src/app/controllers/settings/dashboard.js:278
-msgid "UPDATE_VISIONARY"
 msgstr ""
 
 #: src/app/templates/modals/monetize.tpl.html:40
@@ -3500,14 +3343,6 @@ msgstr ""
 #: src/app/templates/views/domains.tpl.html:115
 #: src/app/templates/views/domains.tpl.html:13
 msgid "Upgrade your plan"
-msgstr ""
-
-#: src/app/controllers/settings/dashboard.js:272
-msgid "UPGRADE_TO_PLUS"
-msgstr ""
-
-#: src/app/controllers/settings/dashboard.js:280
-msgid "UPGRADE_TO_VISIONARY"
 msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:108
@@ -3549,12 +3384,8 @@ msgstr ""
 msgid "User login"
 msgstr ""
 
-#: src/app/controllers/settings/members.js:234
-msgid "USER_REMOVED"
-msgstr ""
-
 #: src/app/templates/modals/user/member.tpl.html:25
-msgid "USER_STORAGE"
+msgid "User storage"
 msgstr ""
 
 #: src/app/templates/views/login.tpl.html:20
@@ -3575,13 +3406,10 @@ msgstr ""
 msgid "Username:"
 msgstr ""
 
+#: src/app/controllers/secured.js:243
+#: src/app/controllers/secured.js:37
 #: src/app/templates/views/members.tpl.html:62
 msgid "Users"
-msgstr ""
-
-#: src/app/controllers/secured.js:246
-#: src/app/controllers/secured.js:38
-msgid "USERS"
 msgstr ""
 
 #: src/app/templates/modals/domain/dkim.tpl.html:21
@@ -3615,7 +3443,7 @@ msgstr ""
 #: src/app/controllers/settings/domains.js:409
 #: src/app/controllers/settings/domains.js:531
 #: src/app/controllers/settings/domains.js:534
-msgid "VERIFICATION_DID_NOT_SUCCEED"
+msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
 
 #: src/app/templates/modals/domain/menu.tpl.html:12
@@ -3728,6 +3556,10 @@ msgstr ""
 msgid "Wizard"
 msgstr ""
 
+#: src/app/controllers/settings/domains.js:388
+msgid "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 1 hour for changes to take affect."
+msgstr ""
+
 #: src/app/templates/modals/card.tpl.html:41
 #: src/app/templates/modals/donate.tpl.html:57
 #: src/app/templates/modals/monetize.tpl.html:33
@@ -3783,12 +3615,13 @@ msgstr ""
 msgid "You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue."
 msgstr ""
 
-#: src/app/controllers/settings/dashboard.js:359
-msgid "YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED"
-msgstr ""
-
 #: src/app/templates/modals/payment/process.tpl.html:7
 msgid "You're upgrading your account. Once we successfully process payment, we'll immediately upgrade your account. Thanks for choosing to become a paying customer!"
+msgstr ""
+
+#: src/app/routes.js:825
+#: src/app/templates/views/payments.tpl.html:42
+msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
 msgstr ""
 
 #: src/app/templates/modals/payment/process.tpl.html:9

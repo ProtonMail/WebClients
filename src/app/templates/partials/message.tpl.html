@@ -51,7 +51,7 @@ ng-class="{
                 ng-style="getStyleLabel(labelID)"
                 ng-show="getLabel(labelID).Name"
                 ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
-            </label><label class="pm_label closed more" ng-show="(message.LabelIDs | labels).length > 4" pt-tooltip="+{{ (message.LabelIDs | labels).length - 4 }} {{ 'MORE_LABELS' | translate}}">&hellip;</label>
+            </label><label class="pm_label closed more" ng-show="(message.LabelIDs | labels).length > 4" pt-tooltip="+{{ (message.LabelIDs | labels).length - 4 }} {{ 'More labels' | translate}}">&hellip;</label>
             </span>
         </div>
         <div class="time">

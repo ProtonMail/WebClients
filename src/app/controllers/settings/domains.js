@@ -272,7 +272,7 @@ angular.module("proton.controllers.Settings")
     $scope.enableAddress = function(address) {
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                notify({message: gettextCatalog.getString('Address Enabled'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Address enabled'), classes: 'notification-success'});
                 address.Status = 1;
             } else if(angular.isDefined(result.data) && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
@@ -290,7 +290,7 @@ angular.module("proton.controllers.Settings")
     $scope.disableAddress = function(address) {
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Disable Address'),
+                title: gettextCatalog.getString('Disable address'),
                 message: gettextCatalog.getString('Are you sure you want to disable this address?'),
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
@@ -325,7 +325,7 @@ angular.module("proton.controllers.Settings")
                 submit: function(name) {
                     networkActivityTracker.track(Domain.create({Name: name}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Domain Created'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Domain created'), classes: 'notification-success'});
                             $scope.domains.push(result.data.Domain);
                             eventManager.call(); // Call event log manager
                             domainModal.deactivate();
