@@ -18,19 +18,19 @@
     <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
         <a href="#" pt-tooltip="{{ 'Move to trash' | translate }}" ng-click="move('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-trash-o"></a>
         <a
-        pt-tooltip="{{ 'Move To Inbox' | translate }}"
+        pt-tooltip="{{ 'Move to inbox' | translate }}"
         ng-click="move('inbox')"
         ng-hide="{{ ('secured.inbox.**' | includedByState) || ('secured.spam.**' | includedByState) }}"
         ng-class="{ disabled: numberElementSelected === 0 }"
         class="fa fa-inbox divider"></a>
         <a
-        pt-tooltip="{{ 'Move To Archive' | translate }}"
+        pt-tooltip="{{ 'Move to archive' | translate }}"
         ng-click="move('archive')"
         ng-hide="{{ 'secured.archive.**' | includedByState }}"
         ng-class="{ disabled: numberElementSelected === 0 }"
         class="fa fa-archive divider"></a>
         <a
-        pt-tooltip="{{ 'Move To Spam' | translate }}"
+        pt-tooltip="{{ 'Move to spam' | translate }}"
         ng-click="move('spam')"
         ng-hide="{{ 'secured.spam.**' | includedByState }}"
         ng-class="{ disabled: numberElementSelected === 0 }"
@@ -42,7 +42,7 @@
         ng-class="{ disabled: numberElementSelected === 0 }"
         class="fa fa-times-circle-o divider"></a>
         <a
-        pt-tooltip="{{ 'Not Spam' | translate }}"
+        pt-tooltip="{{ 'Not spam' | translate }}"
         ng-click="move('inbox')"
         ng-show="{{ 'secured.spam.**' | includedByState }}"
         ng-class="{ disabled: numberElementSelected === 0 }"

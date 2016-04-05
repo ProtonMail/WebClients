@@ -128,9 +128,9 @@ ng-class="{
         </div>
 
         <div class="labelz" ng-show="toggleDetails === true && ((conversation.LabelIDs | labels).length > 0)">
-            <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip="{{ 'In Archive' | translate }}"></i>
-            <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip="{{ 'In Trash' | translate }}"></i>
-            <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip="{{ 'In Spam' | translate }}"></i>
+            <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip="{{ 'In archive' | translate }}"></i>
+            <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip="{{ 'In trash' | translate }}"></i>
+            <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip="{{ 'In spam' | translate }}"></i>
             <i class="pm_tag" ng-if="message.Type === 1" translate>Draft</i>
             <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3" translate>Sent</i>
             <span class="pm_labels inline">

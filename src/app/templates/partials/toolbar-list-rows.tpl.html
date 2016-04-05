@@ -20,7 +20,7 @@
             </a>
         </span>
         <label class="pm_checkbox" ng-if="!idDefined() || layoutMode === 'columns'">
-            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip="{{ 'Select All Messages' | translate }}">
+            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip="{{ 'Select all messages' | translate }}">
         </label>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }" ng-show="messageButtons === 0">
             <a class="fa fa-eye" pt-tooltip="{{ 'Mark as read' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>

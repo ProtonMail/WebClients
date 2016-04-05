@@ -29,8 +29,8 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: src/app/controllers/secured.js:228
-#: src/app/controllers/secured.js:31
+#: src/app/controllers/secured.js:231
+#: src/app/controllers/secured.js:32
 msgid "ACCOUNT"
 msgstr ""
 
@@ -279,8 +279,8 @@ msgstr ""
 msgid "Appearance"
 msgstr ""
 
-#: src/app/controllers/secured.js:237
-#: src/app/controllers/secured.js:35
+#: src/app/controllers/secured.js:240
+#: src/app/controllers/secured.js:36
 msgid "APPEARANCE"
 msgstr ""
 
@@ -299,7 +299,7 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: src/app/controllers/secured.js:204
+#: src/app/controllers/secured.js:207
 #: src/app/directives/move.js:22
 msgid "ARCHIVE"
 msgstr ""
@@ -730,7 +730,7 @@ msgstr ""
 msgid "Contacts"
 msgstr ""
 
-#: src/app/controllers/secured.js:222
+#: src/app/controllers/secured.js:225
 msgid "CONTACTS"
 msgstr ""
 
@@ -891,9 +891,9 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: src/app/controllers/secured.js:225
-#: src/app/controllers/secured.js:30
-#: src/app/controllers/secured.js:34
+#: src/app/controllers/secured.js:228
+#: src/app/controllers/secured.js:31
+#: src/app/controllers/secured.js:35
 msgid "DASHBOARD"
 msgstr ""
 
@@ -1129,8 +1129,8 @@ msgstr ""
 msgid "Domains"
 msgstr ""
 
-#: src/app/controllers/secured.js:240
-#: src/app/controllers/secured.js:36
+#: src/app/controllers/secured.js:243
+#: src/app/controllers/secured.js:37
 msgid "DOMAINS"
 msgstr ""
 
@@ -1209,7 +1209,7 @@ msgstr ""
 msgid "Drafts"
 msgstr ""
 
-#: src/app/controllers/secured.js:195
+#: src/app/controllers/secured.js:198
 msgid "DRAFTS"
 msgstr ""
 
@@ -1756,28 +1756,19 @@ msgstr ""
 msgid "If you wish to delete in order to combine this account with another one, do NOT delete your account. You need to instead follow the procedure <a href=\"https://protonmail.com/support/knowledge-base/combine-accounts/\" target=\"_blank\">here</a>."
 msgstr ""
 
+#: src/app/templates/partials/message.tpl.html:131
 #: src/app/templates/partials/message.tpl.html:37
 msgid "In archive"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:131
-msgid "In Archive"
-msgstr ""
-
+#: src/app/templates/partials/message.tpl.html:133
 #: src/app/templates/partials/message.tpl.html:39
 msgid "In spam"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:133
-msgid "In Spam"
-msgstr ""
-
+#: src/app/templates/partials/message.tpl.html:132
 #: src/app/templates/partials/message.tpl.html:38
 msgid "In trash"
-msgstr ""
-
-#: src/app/templates/partials/message.tpl.html:132
-msgid "In Trash"
 msgstr ""
 
 #: src/app/templates/views/addresses.tpl.html:41
@@ -1794,7 +1785,7 @@ msgstr ""
 msgid "Inbox"
 msgstr ""
 
-#: src/app/controllers/secured.js:192
+#: src/app/controllers/secured.js:195
 #: src/app/directives/move.js:21
 msgid "INBOX"
 msgstr ""
@@ -1838,7 +1829,7 @@ msgstr ""
 msgid "Invoices"
 msgstr ""
 
-#: src/app/controllers/secured.js:246
+#: src/app/controllers/secured.js:249
 #: src/app/controllers/settings/invoices.js:16
 msgid "INVOICES"
 msgstr ""
@@ -1878,7 +1869,7 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: src/app/controllers/secured.js:218
+#: src/app/controllers/secured.js:221
 msgid "LABEL"
 msgstr ""
 
@@ -1915,8 +1906,8 @@ msgstr ""
 msgid "Labels"
 msgstr ""
 
-#: src/app/controllers/secured.js:231
-#: src/app/controllers/secured.js:32
+#: src/app/controllers/secured.js:234
+#: src/app/controllers/secured.js:33
 #: src/app/models/payments.js:91
 #: src/app/models/payments.js:98
 msgid "LABELS"
@@ -2011,7 +2002,7 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: src/app/controllers/secured.js:249
+#: src/app/controllers/secured.js:252
 msgid "LOGIN"
 msgstr ""
 
@@ -2254,6 +2245,7 @@ msgstr ""
 msgid "MORE_LABELS"
 msgstr ""
 
+#: src/app/templates/partials/toolbar-desktop.tpl.html:27
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:101
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:45
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:36
@@ -2261,11 +2253,8 @@ msgstr ""
 msgid "Move to archive"
 msgstr ""
 
-#: src/app/templates/partials/toolbar-desktop.tpl.html:27
-msgid "Move To Archive"
-msgstr ""
-
 #: src/app/templates/partials/message.tpl.html:175
+#: src/app/templates/partials/toolbar-desktop.tpl.html:21
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:38
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:98
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:35
@@ -2273,17 +2262,10 @@ msgstr ""
 msgid "Move to inbox"
 msgstr ""
 
-#: src/app/templates/partials/toolbar-desktop.tpl.html:21
-msgid "Move To Inbox"
-msgstr ""
-
+#: src/app/templates/partials/toolbar-desktop.tpl.html:33
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:37
 #: src/app/templates/partials/toolbar-mobile.tpl.html:78
 msgid "Move to spam"
-msgstr ""
-
-#: src/app/templates/partials/toolbar-desktop.tpl.html:33
-msgid "Move To Spam"
 msgstr ""
 
 #: src/app/templates/partials/message.tpl.html:178
@@ -2431,13 +2413,10 @@ msgstr ""
 msgid "Not set properly"
 msgstr ""
 
+#: src/app/templates/partials/toolbar-desktop.tpl.html:45
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:39
 #: src/app/templates/partials/toolbar-mobile.tpl.html:92
 msgid "Not spam"
-msgstr ""
-
-#: src/app/templates/partials/toolbar-desktop.tpl.html:45
-msgid "Not Spam"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:54
@@ -2643,7 +2622,7 @@ msgstr ""
 msgid "Payments"
 msgstr ""
 
-#: src/app/controllers/secured.js:38
+#: src/app/controllers/secured.js:39
 msgid "PAYMENTS"
 msgstr ""
 
@@ -2658,7 +2637,7 @@ msgstr ""
 
 #: src/app/templates/views/invoices.tpl.html:27
 #: src/app/templates/views/invoices.tpl.html:55
-msgid "Plan Subscription"
+msgid "Plan subscription"
 msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:60
@@ -2836,12 +2815,9 @@ msgstr ""
 
 #: src/app/templates/views/account.tpl.html:51
 #: src/app/templates/views/reset-login-password.tpl.html:15
+#: src/app/templates/views/step1.tpl.html:70
 #: src/app/templates/views/step1.tpl.html:73
 msgid "Recovery email"
-msgstr ""
-
-#: src/app/templates/views/step1.tpl.html:70
-msgid "Recovery Email"
 msgstr ""
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:73
@@ -2926,7 +2902,7 @@ msgid "Reset now"
 msgstr ""
 
 #: src/app/templates/modals/loginHelp.tpl.html:10
-msgid "Reset Password"
+msgid "Reset password"
 msgstr ""
 
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:17
@@ -3010,19 +2986,16 @@ msgstr ""
 msgid "Security"
 msgstr ""
 
-#: src/app/controllers/secured.js:234
-#: src/app/controllers/secured.js:33
+#: src/app/controllers/secured.js:237
+#: src/app/controllers/secured.js:34
 msgid "SECURITY"
 msgstr ""
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:8
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:10
+#: src/app/templates/partials/toolbar-list-rows.tpl.html:23
 #: src/app/templates/partials/toolbar-mobile.tpl.html:12
 msgid "Select all messages"
-msgstr ""
-
-#: src/app/templates/partials/toolbar-list-rows.tpl.html:23
-msgid "Select All Messages"
 msgstr ""
 
 #: src/app/templates/modals/user/address.tpl.html:8
@@ -3069,7 +3042,7 @@ msgstr ""
 msgid "Sent"
 msgstr ""
 
-#: src/app/controllers/secured.js:198
+#: src/app/controllers/secured.js:201
 msgid "SENT"
 msgstr ""
 
@@ -3110,11 +3083,8 @@ msgstr ""
 
 #: src/app/templates/partials/message.tpl.html:225
 #: src/app/templates/views/account.tpl.html:231
-msgid "Show images"
-msgstr ""
-
 #: src/app/templates/views/outside.message.tpl.html:42
-msgid "Show Images"
+msgid "Show images"
 msgstr ""
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:111
@@ -3182,7 +3152,7 @@ msgstr ""
 msgid "Spam"
 msgstr ""
 
-#: src/app/controllers/secured.js:207
+#: src/app/controllers/secured.js:210
 #: src/app/directives/move.js:23
 msgid "SPAM"
 msgstr ""
@@ -3206,7 +3176,7 @@ msgstr ""
 msgid "Starred"
 msgstr ""
 
-#: src/app/controllers/secured.js:201
+#: src/app/controllers/secured.js:204
 msgid "STARRED"
 msgstr ""
 
@@ -3407,7 +3377,7 @@ msgid "Total per year (incl. taxes)"
 msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:80
-msgid "Total Price:"
+msgid "Total price:"
 msgstr ""
 
 #: src/app/templates/directives/location-tag.tpl.html:5
@@ -3419,7 +3389,7 @@ msgstr ""
 msgid "Trash"
 msgstr ""
 
-#: src/app/controllers/secured.js:210
+#: src/app/controllers/secured.js:213
 #: src/app/directives/move.js:24
 msgid "TRASH"
 msgstr ""
@@ -3527,12 +3497,9 @@ msgid "Upgrade your account"
 msgstr ""
 
 #: src/app/templates/views/addresses.tpl.html:8
-msgid "Upgrade your plan"
-msgstr ""
-
 #: src/app/templates/views/domains.tpl.html:115
 #: src/app/templates/views/domains.tpl.html:13
-msgid "Upgrade Your Plan"
+msgid "Upgrade your plan"
 msgstr ""
 
 #: src/app/controllers/settings/dashboard.js:272
@@ -3612,8 +3579,8 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: src/app/controllers/secured.js:243
-#: src/app/controllers/secured.js:37
+#: src/app/controllers/secured.js:246
+#: src/app/controllers/secured.js:38
 msgid "USERS"
 msgstr ""
 
@@ -3718,7 +3685,7 @@ msgid "We only accept PayPal for annual subscriptions. PayPal is also only accep
 msgstr ""
 
 #: src/app/templates/views/reset-login-password.tpl.html:2
-msgid "We will send a code to your <abbr title=\"This is the optional email you used when first creating an account. This is the same as your Notification Email that is used for sending alerts about new messages.'>Recovery Email</abbr> to reset your <abbr title='Your Login Password is the first password you enter to enter our secure system. The Mailbox password is your second password and is used to decrypt your messages.\">Login Password</abbr>."
+msgid "We will send a code to your <abbr title=\"This is the optional email you used when first creating an account. This is the same as your Notification Email that is used for sending alerts about new messages.'>Recovery email</abbr> to reset your <abbr title='Your Login Password is the first password you enter to enter our secure system. The Mailbox password is your second password and is used to decrypt your messages.\">Login Password</abbr>."
 msgstr ""
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:20

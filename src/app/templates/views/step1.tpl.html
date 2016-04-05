@@ -67,7 +67,7 @@
             <p class="alert alert-info" translate>If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
             <label for="notificationEmail">
                 <em class="num">4</em>
-                {{ 'Recovery Email' | translate }} ({{ 'Optional' | translate }})
+                {{ 'Recovery email' | translate }} ({{ 'Optional' | translate }})
             </label>
             <p class="help" translate>This is used to recover your account if you get locked out or forget your login password.</p>
             <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" type="email" class="form-control" placeholder="{{ 'Recovery email' | translate }}" validator="notificationEmailValidation()" ng-required="false" />

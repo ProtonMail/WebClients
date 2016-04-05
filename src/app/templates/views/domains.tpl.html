@@ -10,7 +10,7 @@
 
             <section class="setting pm_form full">
                 <legend>
-                    <span class="pull-right">{{ organization.UsedDomains }} / {{ organization.MaxDomains }} {{ 'Domains used' | translate }}. <a ui-sref="secured.dashboard" translate>Upgrade Your Plan</a></span>
+                    <span class="pull-right">{{ organization.UsedDomains }} / {{ organization.MaxDomains }} {{ 'Domains used' | translate }}. <a ui-sref="secured.dashboard" translate>Upgrade your plan</a></span>
                     {{ 'Domains' | translate }}
                 </legend>
                 <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
@@ -112,7 +112,7 @@
             <p>&nbsp;</p>
             <section class="setting pm_form full">
                 <legend>
-                    <span class="pull-right">{{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} {{ 'Addresses used' | translate }}. <a ui-sref="secured.dashboard" translate>Upgrade Your Plan</a></span>
+                    <span class="pull-right">{{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} {{ 'Addresses used' | translate }}. <a ui-sref="secured.dashboard" translate>Upgrade your plan</a></span>
                     {{ 'Custom domain addresses' | translate }}
                 </legend>
                 <div class="margin-bottom" ng-repeat="domain in domains">
