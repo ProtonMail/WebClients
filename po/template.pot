@@ -224,6 +224,10 @@ msgstr ""
 msgid "Already have an account?"
 msgstr ""
 
+#: src/app/controllers/settings/dashboard.js:264
+msgid "Already subscribed"
+msgstr ""
+
 #: src/app/templates/directives/labels.tpl.html:31
 msgid "Also archive"
 msgstr ""
@@ -241,6 +245,10 @@ msgstr ""
 #: src/app/templates/modals/payment/payment.tpl.html:50
 #: src/app/templates/views/invoice.print.tpl.html:89
 msgid "Amount due"
+msgstr ""
+
+#: src/app/controllers/settings/dashboard.js:469
+msgid "Amount is different"
 msgstr ""
 
 #: src/app/templates/views/step1.tpl.html:191
@@ -651,6 +659,10 @@ msgstr ""
 #: src/app/templates/modals/confirm.tpl.html:14
 #: src/app/templates/modals/identity.tpl.html:50
 msgid "Confirm"
+msgstr ""
+
+#: src/app/controllers/settings/dashboard.js:314
+msgid "Confirm downgrade"
 msgstr ""
 
 #: src/app/templates/modals/user/member.tpl.html:20
@@ -1096,6 +1108,14 @@ msgstr ""
 msgid "Done"
 msgstr ""
 
+#: src/app/controllers/settings/dashboard.js:266
+msgid "Downgrade to Free"
+msgstr ""
+
+#: src/app/controllers/settings/dashboard.js:274
+msgid "Downgrade to Plus"
+msgstr ""
+
 #: src/app/controllers/contacts.js:444
 #: src/app/controllers/message.js:280
 #: src/app/templates/partials/attachments.tpl.html:12
@@ -1339,6 +1359,7 @@ msgstr ""
 msgid "Error during label request"
 msgstr ""
 
+#: src/app/controllers/settings/dashboard.js:332
 #: src/app/services/modal.js:669
 #: src/app/services/modal.js:672
 msgid "Error during organization request"
@@ -1363,6 +1384,10 @@ msgstr ""
 #: src/app/controllers/settings/members.js:156
 #: src/app/controllers/settings/members.js:159
 msgid "Error during updating"
+msgstr ""
+
+#: src/app/controllers/settings/dashboard.js:349
+msgid "Error processing payment."
 msgstr ""
 
 #: src/app/services/modal.js:1548
@@ -3182,6 +3207,10 @@ msgstr ""
 msgid "This will be your email address. Select the drop down to choose your domain."
 msgstr ""
 
+#: src/app/controllers/settings/dashboard.js:315
+msgid "This will downgrade your account to a free account.<br /><br />Please disable all additional addresses prior to downgrading your account. You can manage that inside the addresses tab.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href=\"https://protonmail.com/donate\" target=\"_blank\">making a donation</a> so we can continue to offer the service for free."
+msgstr ""
+
 #: src/app/templates/views/invoice.print.tpl.html:77
 #: src/app/templates/views/security.tpl.html:37
 msgid "Time"
@@ -3316,6 +3345,14 @@ msgstr ""
 msgid "Update link"
 msgstr ""
 
+#: src/app/controllers/settings/dashboard.js:270
+msgid "Update Plus"
+msgstr ""
+
+#: src/app/controllers/settings/dashboard.js:278
+msgid "Update Visionary"
+msgstr ""
+
 #: src/app/templates/modals/monetize.tpl.html:40
 #: src/app/templates/partials/header-auth-desktop.tpl.html:22
 #: src/app/templates/partials/sidebar-responsive.tpl.html:75
@@ -3333,6 +3370,14 @@ msgstr ""
 
 #: src/app/templates/partials/sidebar.tpl.html:111
 msgid "Upgrade storage"
+msgstr ""
+
+#: src/app/controllers/settings/dashboard.js:272
+msgid "Upgrade to Plus"
+msgstr ""
+
+#: src/app/controllers/settings/dashboard.js:280
+msgid "Upgrade to Visionary"
 msgstr ""
 
 #: src/app/templates/modals/monetize.tpl.html:42
@@ -3595,6 +3640,10 @@ msgstr ""
 
 #: src/app/templates/views/payments.tpl.html:10
 msgid "You have no saved payment methods, you can add a payment method by clicking 'ADD'."
+msgstr ""
+
+#: src/app/controllers/settings/dashboard.js:359
+msgid "You have successfully unsubscribed"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:258

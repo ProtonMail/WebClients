@@ -250,6 +250,10 @@ msgstr ""
 msgid "Already have an account?"
 msgstr "Already have an account?"
 
+#: src/app/controllers/settings/dashboard.js:264
+msgid "Already subscribed"
+msgstr "Already subscribed"
+
 #: src/app/templates/directives/labels.tpl.html:31
 msgid "Also archive"
 msgstr "Also archive"
@@ -268,6 +272,10 @@ msgstr "Amount"
 #: src/app/templates/views/invoice.print.tpl.html:89
 msgid "Amount due"
 msgstr "Amount due"
+
+#: src/app/controllers/settings/dashboard.js:469
+msgid "Amount is different"
+msgstr "Amount is different"
 
 #: src/app/templates/views/step1.tpl.html:191
 msgid ""
@@ -708,6 +716,10 @@ msgstr "Composer"
 #: src/app/templates/modals/identity.tpl.html:50
 msgid "Confirm"
 msgstr "Confirm"
+
+#: src/app/controllers/settings/dashboard.js:314
+msgid "Confirm downgrade"
+msgstr "Confirm downgrade"
 
 #: src/app/templates/modals/user/member.tpl.html:20
 #: src/app/templates/views/step1.tpl.html:50
@@ -1166,6 +1178,14 @@ msgstr "Donation"
 msgid "Done"
 msgstr "Done"
 
+#: src/app/controllers/settings/dashboard.js:266
+msgid "Downgrade to Free"
+msgstr "Downgrade to Free"
+
+#: src/app/controllers/settings/dashboard.js:274
+msgid "Downgrade to Plus"
+msgstr "Downgrade to Plus"
+
 #: src/app/controllers/contacts.js:444 src/app/controllers/message.js:280
 #: src/app/templates/partials/attachments.tpl.html:12
 #: src/app/templates/partials/toolbar-contacts.tpl.html:10
@@ -1416,7 +1436,8 @@ msgstr "Error during enable request"
 msgid "Error during label request"
 msgstr "Error during label request"
 
-#: src/app/services/modal.js:669 src/app/services/modal.js:672
+#: src/app/controllers/settings/dashboard.js:332 src/app/services/modal.js:669
+#: src/app/services/modal.js:672
 msgid "Error during organization request"
 msgstr "Error during organization request"
 
@@ -1440,6 +1461,10 @@ msgstr "Error during the reply process"
 #: src/app/controllers/settings/members.js:159
 msgid "Error during updating"
 msgstr "Error during updating"
+
+#: src/app/controllers/settings/dashboard.js:349
+msgid "Error processing payment."
+msgstr "Error processing payment."
 
 #: src/app/services/modal.js:1548
 msgid "Error while processing donation."
@@ -3445,6 +3470,22 @@ msgid ""
 msgstr ""
 "This will be your email address. Select the drop down to choose your domain."
 
+#: src/app/controllers/settings/dashboard.js:315
+msgid ""
+"This will downgrade your account to a free account.<br /><br />Please "
+"disable all additional addresses prior to downgrading your account. You can "
+"manage that inside the addresses tab.<br /><br />ProtonMail is free software "
+"that is supported by donations and paid accounts. Please consider <a href="
+"\"https://protonmail.com/donate\" target=\"_blank\">making a donation</a> so "
+"we can continue to offer the service for free."
+msgstr ""
+"This will downgrade your account to a free account.<br /><br />Please "
+"disable all additional addresses prior to downgrading your account. You can "
+"manage that inside the addresses tab.<br /><br />ProtonMail is free software "
+"that is supported by donations and paid accounts. Please consider <a href="
+"\"https://protonmail.com/donate\" target=\"_blank\">making a donation</a> so "
+"we can continue to offer the service for free."
+
 #: src/app/templates/views/invoice.print.tpl.html:77
 #: src/app/templates/views/security.tpl.html:37
 msgid "Time"
@@ -3586,6 +3627,14 @@ msgstr "Unpaid"
 msgid "Update link"
 msgstr "Update link"
 
+#: src/app/controllers/settings/dashboard.js:270
+msgid "Update Plus"
+msgstr "Update Plus"
+
+#: src/app/controllers/settings/dashboard.js:278
+msgid "Update Visionary"
+msgstr "Update Visionary"
+
 #: src/app/templates/modals/monetize.tpl.html:40
 #: src/app/templates/partials/header-auth-desktop.tpl.html:22
 #: src/app/templates/partials/sidebar-responsive.tpl.html:75
@@ -3604,6 +3653,14 @@ msgstr "Upgrade account"
 #: src/app/templates/partials/sidebar.tpl.html:111
 msgid "Upgrade storage"
 msgstr "Upgrade storage"
+
+#: src/app/controllers/settings/dashboard.js:272
+msgid "Upgrade to Plus"
+msgstr "Upgrade to Plus"
+
+#: src/app/controllers/settings/dashboard.js:280
+msgid "Upgrade to Visionary"
+msgstr "Upgrade to Visionary"
 
 #: src/app/templates/modals/monetize.tpl.html:42
 msgid "Upgrade your account"
@@ -3923,6 +3980,10 @@ msgid ""
 msgstr ""
 "You have no saved payment methods, you can add a payment method by clicking "
 "‘ADD’."
+
+#: src/app/controllers/settings/dashboard.js:359
+msgid "You have successfully unsubscribed"
+msgstr "You have successfully unsubscribed"
 
 #: src/app/templates/views/account.tpl.html:258
 msgid "You must unsubscribe before requesting deletion of your account."
