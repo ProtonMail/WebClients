@@ -32,12 +32,8 @@
                 </span>
                 <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em>
             </div>
-            <div ng-show="goodUsername">
-                <p class="alert alert-success"><i class="fa fa-check"></i> {{ 'Email already taken.' | translate }}</p>
-            </div>
-            <div ng-show="badUsername">
-                <p class="alert alert-danger"><i class="fa fa-times"></i> {{ 'Email available!' | translate }}</p>
-            </div>
+            <p class="alert alert-danger" ng-show="badUsername" translate>Email already taken</p>
+            <p class="alert alert-success" ng-show="goodUsername" translate>Email available</p>
             <label for="password">
                 <em class="num">2</em>
                 {{ 'Login password' | translate }}
