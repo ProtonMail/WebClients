@@ -99,18 +99,6 @@ module.exports = function(grunt) {
             }
         },
 
-        i18nextract: {
-            default_options: {
-                src: ["<%= app_files.js %>", "<%= app_files.atpl %>", "<%= app_files.ctpl %>", "<%= app_files.html %>"],
-                dest: "src/assets/locales",
-                lang: ['fr_FR', 'en_US', 'de_DE', 'it_IT', 'es_ES', 'nl_NL'],
-                defaultLang: "en_US",
-                prefix: "",
-                suffix: ".json",
-                stringifyOptions: true // the output will be sort (case insensitive)
-            }
-        },
-
         clean: {
             build: [
                 "<%= build_dir %>"
