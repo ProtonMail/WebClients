@@ -454,7 +454,7 @@ msgstr ""
 #: src/app/templates/modals/card.tpl.html:56
 #: src/app/templates/modals/confirm.tpl.html:13
 #: src/app/templates/modals/contact.tpl.html:29
-#: src/app/templates/modals/customizeInvoice.tpl.html:15
+#: src/app/templates/modals/customizeInvoice.tpl.html:16
 #: src/app/templates/modals/deleteAccount.tpl.html:26
 #: src/app/templates/modals/dropzone.tpl.html:20
 #: src/app/templates/modals/generate.tpl.html:54
@@ -867,8 +867,8 @@ msgstr ""
 msgid "Customize"
 msgstr ""
 
+#: src/app/templates/modals/customizeInvoice.tpl.html:10
 #: src/app/templates/modals/customizeInvoice.tpl.html:6
-#: src/app/templates/modals/customizeInvoice.tpl.html:9
 msgid "Customize invoices"
 msgstr ""
 
@@ -1149,17 +1149,17 @@ msgstr ""
 msgid "Draft"
 msgstr ""
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:28
-#: src/app/templates/partials/sidebar.tpl.html:20
-msgctxt "Noun"
-msgid "Drafts"
-msgstr ""
-
 #: src/app/controllers/secured.js:195
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:26
 #: src/app/templates/partials/sidebar.tpl.html:17
+msgid "Drafts"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:28
+#: src/app/templates/partials/sidebar.tpl.html:20
+msgctxt "Noun"
 msgid "Drafts"
 msgstr ""
 
@@ -1298,6 +1298,10 @@ msgstr ""
 
 #: src/app/controllers/settings/appearance.js:16
 msgid "English"
+msgstr ""
+
+#: src/app/templates/modals/customizeInvoice.tpl.html:7
+msgid "Enter custom text that you want to appear on your invoice beneath the ProtonMail logo."
 msgstr ""
 
 #: src/app/templates/views/members.tpl.html:112
@@ -2938,13 +2942,6 @@ msgstr ""
 msgid "Sending"
 msgstr ""
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:35
-#: src/app/templates/partials/sidebar.tpl.html:28
-msgctxt "Noun"
-msgid "Sent"
-msgstr ""
-
 #: src/app/controllers/secured.js:198
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/message.tpl.html:135
@@ -2952,6 +2949,13 @@ msgstr ""
 #: src/app/templates/partials/no-results.tpl.html:17
 #: src/app/templates/partials/sidebar-responsive.tpl.html:33
 #: src/app/templates/partials/sidebar.tpl.html:25
+msgid "Sent"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:35
+#: src/app/templates/partials/sidebar.tpl.html:28
+msgctxt "Noun"
 msgid "Sent"
 msgstr ""
 
@@ -3052,19 +3056,19 @@ msgstr ""
 msgid "Space"
 msgstr ""
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:56
-#: src/app/templates/partials/sidebar.tpl.html:52
-msgctxt "Noun"
-msgid "Spam"
-msgstr ""
-
 #: src/app/controllers/secured.js:207
 #: src/app/directives/move.js:23
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
 #: src/app/templates/partials/sidebar-responsive.tpl.html:54
 #: src/app/templates/partials/sidebar.tpl.html:49
+msgid "Spam"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:56
+#: src/app/templates/partials/sidebar.tpl.html:52
+msgctxt "Noun"
 msgid "Spam"
 msgstr ""
 
@@ -3140,7 +3144,7 @@ msgstr ""
 #: src/app/templates/modals/alias.tpl.html:24
 #: src/app/templates/modals/bug.tpl.html:79
 #: src/app/templates/modals/card.tpl.html:57
-#: src/app/templates/modals/customizeInvoice.tpl.html:14
+#: src/app/templates/modals/customizeInvoice.tpl.html:15
 #: src/app/templates/modals/loginPassword.tpl.html:15
 #: src/app/templates/modals/organizationRecovery.tpl.html:15
 #: src/app/templates/modals/pay.tpl.html:61
@@ -3294,19 +3298,19 @@ msgstr ""
 msgid "Total price:"
 msgstr ""
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:63
+#: src/app/templates/partials/sidebar.tpl.html:60
+msgctxt "Noun"
+msgid "Trash"
+msgstr ""
+
 #: src/app/controllers/secured.js:210
 #: src/app/directives/move.js:24
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
 #: src/app/templates/partials/sidebar-responsive.tpl.html:61
 #: src/app/templates/partials/sidebar.tpl.html:57
-msgid "Trash"
-msgstr ""
-
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:63
-#: src/app/templates/partials/sidebar.tpl.html:60
-msgctxt "Noun"
 msgid "Trash"
 msgstr ""
 
