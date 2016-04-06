@@ -18,49 +18,49 @@ ng-class="{ 'show': showSidebar }">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
             <button title="{{ 'Inbox' | translate }}" ng-click="goTo('secured.inbox')">
                 <i class="fa fa-inbox"></i>
-                <span translate>Inbox</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Inbox</span>
                 <em ng-bind="unread('inbox')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
             <button title="{{ 'Drafts' | translate }}" ng-click="goTo('secured.drafts')">
                 <i class="fa fa-file-text-o"></i>
-                <span translate>Drafts</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Drafts</span>
                 <em ng-bind="unread('drafts')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
             <button title="{{ 'Sent' | translate }}" ng-click="goTo('secured.sent')">
                 <i class="fa fa-send"></i>
-                <span translate>Sent</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Sent</span>
                 <em ng-bind="unread('sent')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
             <button title="{{ 'Starred' | translate }}" ng-click="goTo('secured.starred')">
                 <i class="fa fa-star-o"></i>
-                <span translate>Starred</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Starred</span>
                 <em ng-bind="unread('starred')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
             <button title="{{ 'Archive' | translate }}" ng-click="goTo('secured.archive')">
                 <i class="fa fa-archive"></i>
-                <span translate>Archive</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Archive</span>
                 <em ng-bind="unread('archive')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
             <button title="{{ 'Spam' | translate }}" ng-click="goTo('secured.spam')">
                 <i class="fa fa-ban"></i>
-                <span translate>Spam</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Spam</span>
                 <em ng-bind="unread('spam')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
             <button title="{{ 'Trash' | translate }}" ng-click="goTo('secured.trash')">
                 <i class="fa fa-trash-o"></i>
-                <span translate>Trash</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Trash</span>
                 <em ng-bind="unread('trash')"></em>
             </button>
         </li>

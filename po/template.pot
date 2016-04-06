@@ -4,6 +4,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: src/app/templates/partials/conversation-placeholder.tpl.html:43
+msgid "{{ $count }} conversation selected"
+msgid_plural "{{ $count }} conversations selected"
+msgstr[0] ""
+msgstr[1] ""
+
 #: src/app/templates/views/step1.tpl.html:222
 msgid "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
 msgstr ""
@@ -84,7 +90,7 @@ msgstr ""
 msgid "Add new contact"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:34
+#: src/app/templates/directives/labels.tpl.html:39
 msgid "Add new label"
 msgstr ""
 
@@ -228,7 +234,7 @@ msgstr ""
 msgid "Already subscribed"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:31
+#: src/app/templates/directives/labels.tpl.html:23
 msgid "Also archive"
 msgstr ""
 
@@ -268,10 +274,17 @@ msgstr ""
 msgid "Appearance"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:37
+#: src/app/templates/directives/labels.tpl.html:42
 #: src/app/templates/modals/payment/payment.tpl.html:156
 #: src/app/templates/modals/storage.tpl.html:24
 msgid "Apply"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:49
+#: src/app/templates/partials/sidebar.tpl.html:44
+msgctxt "Noun"
+msgid "Archive"
 msgstr ""
 
 #: src/app/controllers/secured.js:204
@@ -279,9 +292,7 @@ msgstr ""
 #: src/app/templates/directives/location-tag.tpl.html:7
 #: src/app/templates/partials/no-results.tpl.html:21
 #: src/app/templates/partials/sidebar-responsive.tpl.html:47
-#: src/app/templates/partials/sidebar-responsive.tpl.html:49
 #: src/app/templates/partials/sidebar.tpl.html:41
-#: src/app/templates/partials/sidebar.tpl.html:44
 msgid "Archive"
 msgstr ""
 
@@ -742,12 +753,6 @@ msgstr ""
 msgid "Contacts imported"
 msgstr ""
 
-#: src/app/templates/partials/conversation-placeholder.tpl.html:43
-msgid "Conversation selected"
-msgid_plural "Conversations selected"
-msgstr[0] ""
-msgstr[1] ""
-
 #: src/app/templates/modals/payment/payment.tpl.html:152
 #: src/app/templates/modals/payment/payment.tpl.html:42
 msgid "Coupon"
@@ -1143,12 +1148,17 @@ msgstr ""
 msgid "Draft"
 msgstr ""
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:28
+#: src/app/templates/partials/sidebar.tpl.html:20
+msgctxt "Noun"
+msgid "Drafts"
+msgstr ""
+
 #: src/app/controllers/secured.js:195
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:26
-#: src/app/templates/partials/sidebar-responsive.tpl.html:28
 #: src/app/templates/partials/sidebar.tpl.html:17
-#: src/app/templates/partials/sidebar.tpl.html:20
 msgid "Drafts"
 msgstr ""
 
@@ -1714,9 +1724,14 @@ msgstr ""
 #: src/app/templates/partials/header-auth-simple.tpl.html:8
 #: src/app/templates/partials/no-results.tpl.html:15
 #: src/app/templates/partials/sidebar-responsive.tpl.html:19
+#: src/app/templates/partials/sidebar.tpl.html:9
+msgid "Inbox"
+msgstr ""
+
+#. Folder name
 #: src/app/templates/partials/sidebar-responsive.tpl.html:21
 #: src/app/templates/partials/sidebar.tpl.html:12
-#: src/app/templates/partials/sidebar.tpl.html:9
+msgctxt "Noun"
 msgid "Inbox"
 msgstr ""
 
@@ -2181,7 +2196,7 @@ msgstr ""
 msgid "My subscription"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:23
+#: src/app/templates/directives/labels.tpl.html:31
 #: src/app/templates/modals/contact.tpl.html:12
 #: src/app/templates/modals/label.tpl.html:11
 #: src/app/templates/modals/user/member.tpl.html:8
@@ -2349,7 +2364,7 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:26
+#: src/app/templates/directives/labels.tpl.html:34
 #: src/app/templates/modals/alert.tpl.html:13
 msgid "OK"
 msgstr ""
@@ -2922,15 +2937,20 @@ msgstr ""
 msgid "Sending"
 msgstr ""
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:35
+#: src/app/templates/partials/sidebar.tpl.html:28
+msgctxt "Noun"
+msgid "Sent"
+msgstr ""
+
 #: src/app/controllers/secured.js:198
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/message.tpl.html:135
 #: src/app/templates/partials/message.tpl.html:41
 #: src/app/templates/partials/no-results.tpl.html:17
 #: src/app/templates/partials/sidebar-responsive.tpl.html:33
-#: src/app/templates/partials/sidebar-responsive.tpl.html:35
 #: src/app/templates/partials/sidebar.tpl.html:25
-#: src/app/templates/partials/sidebar.tpl.html:28
 msgid "Sent"
 msgstr ""
 
@@ -3031,14 +3051,19 @@ msgstr ""
 msgid "Space"
 msgstr ""
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:56
+#: src/app/templates/partials/sidebar.tpl.html:52
+msgctxt "Noun"
+msgid "Spam"
+msgstr ""
+
 #: src/app/controllers/secured.js:207
 #: src/app/directives/move.js:23
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
 #: src/app/templates/partials/sidebar-responsive.tpl.html:54
-#: src/app/templates/partials/sidebar-responsive.tpl.html:56
 #: src/app/templates/partials/sidebar.tpl.html:49
-#: src/app/templates/partials/sidebar.tpl.html:52
 msgid "Spam"
 msgstr ""
 
@@ -3056,9 +3081,14 @@ msgstr ""
 
 #: src/app/controllers/secured.js:201
 #: src/app/templates/partials/sidebar-responsive.tpl.html:40
-#: src/app/templates/partials/sidebar-responsive.tpl.html:42
 #: src/app/templates/partials/sidebar.tpl.html:33
+msgid "Starred"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:42
 #: src/app/templates/partials/sidebar.tpl.html:36
+msgctxt "Noun"
 msgid "Starred"
 msgstr ""
 
@@ -3268,9 +3298,14 @@ msgstr ""
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
 #: src/app/templates/partials/sidebar-responsive.tpl.html:61
-#: src/app/templates/partials/sidebar-responsive.tpl.html:63
 #: src/app/templates/partials/sidebar.tpl.html:57
+msgid "Trash"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:63
 #: src/app/templates/partials/sidebar.tpl.html:60
+msgctxt "Noun"
 msgid "Trash"
 msgstr ""
 

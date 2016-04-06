@@ -9,7 +9,7 @@
             <a href="/inbox" title="{{ 'Inbox' | translate }}" ng-click="goTo('secured.inbox');">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.inbox.**' | includedByState"></button>
                 <i class="fa fa-inbox"></i>
-                <span translate>Inbox</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Inbox</span>
                 <em ng-bind="unread('inbox')"></em>
             </a>
         </li>
@@ -17,7 +17,7 @@
             <a href="/drafts" title="{{ 'Drafts' | translate }}" ng-click="goTo('secured.drafts')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.drafts.**' | includedByState"></button>
                 <i class="fa fa-file-text-o"></i>
-                <span translate>Drafts</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Drafts</span>
                 <em ng-bind="unread('drafts')"></em>
             </a>
         </li>
@@ -25,7 +25,7 @@
             <a href="/sent" title="{{ 'Sent' | translate }}" ng-click="goTo('secured.sent')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.sent.**' | includedByState"></button>
                 <i class="fa fa-send"></i>
-                <span translate>Sent</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Sent</span>
                 <em ng-bind="unread('sent')"></em>
             </a>
         </li>
@@ -33,7 +33,7 @@
             <a href="/starred" title="{{ 'Starred' | translate }}" ng-click="goTo('secured.starred')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.starred.**' | includedByState"></button>
                 <i class="fa fa-star-o"></i>
-                <span translate>Starred</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Starred</span>
                 <em ng-bind="unread('starred')"></em>
             </a>
         </li>
@@ -41,7 +41,7 @@
             <a href="/archive" title="{{ 'Archive' | translate }}" ng-click="goTo('secured.archive')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.archive.**' | includedByState"></button>
                 <i class="fa fa-archive"></i>
-                <span translate>Archive</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Archive</span>
                 <em ng-bind="unread('archive')"></em>
             </a>
         </li>
@@ -49,7 +49,7 @@
             <a href="/spam" title="{{ 'Spam' | translate }}" ng-click="goTo('secured.spam')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.spam.**' | includedByState"></button>
                 <i class="fa fa-ban"></i>
-                <span translate>Spam</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Spam</span>
                 <em ng-bind="unread('spam')"></em>
             </a>
         </li>
@@ -57,7 +57,7 @@
             <a href="/trash" title="{{ 'Trash' | translate }}" ng-click="goTo('secured.trash')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.trash.**' | includedByState"></button>
                 <i class="fa fa-trash-o"></i>
-                <span translate>Trash</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Trash</span>
                 <em ng-bind="unread('trash')"></em>
             </a>
         </li>

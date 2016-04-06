@@ -12,6 +12,12 @@ msgstr ""
 "X-Generator: Poedit 1.8.7\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: src/app/templates/partials/conversation-placeholder.tpl.html:43
+msgid "{{ $count }} conversation selected"
+msgid_plural "{{ $count }} conversations selected"
+msgstr[0] "{{ $count }} conversation selected"
+msgstr[1] "{{ $count }} conversations selected"
+
 #: src/app/templates/views/step1.tpl.html:222
 msgid "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
 msgstr "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
@@ -306,13 +312,18 @@ msgstr "Appearance"
 msgid "Apply"
 msgstr "Apply"
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:49
+#: src/app/templates/partials/sidebar.tpl.html:44
+msgctxt "Noun"
+msgid "Archive"
+msgstr "Archive"
+
 #: src/app/controllers/secured.js:204 src/app/directives/move.js:22
 #: src/app/templates/directives/location-tag.tpl.html:7
 #: src/app/templates/partials/no-results.tpl.html:21
 #: src/app/templates/partials/sidebar-responsive.tpl.html:47
-#: src/app/templates/partials/sidebar-responsive.tpl.html:49
 #: src/app/templates/partials/sidebar.tpl.html:41
-#: src/app/templates/partials/sidebar.tpl.html:44
 msgid "Archive"
 msgstr "Archive"
 
@@ -801,13 +812,6 @@ msgstr "Contacts deleted"
 msgid "Contacts imported"
 msgstr "Contacts imported"
 
-#: src/app/templates/partials/conversation-placeholder.tpl.html:43
-#, fuzzy
-msgid "Conversation selected"
-msgid_plural "Conversations selected"
-msgstr[0] "Conversation selected"
-msgstr[1] "Conversation selected"
-
 #: src/app/templates/modals/payment/payment.tpl.html:152
 #: src/app/templates/modals/payment/payment.tpl.html:42
 msgid "Coupon"
@@ -1216,12 +1220,17 @@ msgstr "Downloading"
 msgid "Draft"
 msgstr "Draft"
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:28
+#: src/app/templates/partials/sidebar.tpl.html:20
+msgctxt "Noun"
+msgid "Drafts"
+msgstr "Drafts"
+
 #: src/app/controllers/secured.js:195
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:26
-#: src/app/templates/partials/sidebar-responsive.tpl.html:28
 #: src/app/templates/partials/sidebar.tpl.html:17
-#: src/app/templates/partials/sidebar.tpl.html:20
 msgid "Drafts"
 msgstr "Drafts"
 
@@ -1856,9 +1865,14 @@ msgstr "Inactive addresses"
 #: src/app/templates/partials/header-auth-simple.tpl.html:8
 #: src/app/templates/partials/no-results.tpl.html:15
 #: src/app/templates/partials/sidebar-responsive.tpl.html:19
+#: src/app/templates/partials/sidebar.tpl.html:9
+msgid "Inbox"
+msgstr "Inbox"
+
+#. Folder name
 #: src/app/templates/partials/sidebar-responsive.tpl.html:21
 #: src/app/templates/partials/sidebar.tpl.html:12
-#: src/app/templates/partials/sidebar.tpl.html:9
+msgctxt "Noun"
 msgid "Inbox"
 msgstr "Inbox"
 
@@ -3144,15 +3158,20 @@ msgstr "Sender"
 msgid "Sending"
 msgstr "Sending"
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:35
+#: src/app/templates/partials/sidebar.tpl.html:28
+msgctxt "Noun"
+msgid "Sent"
+msgstr "Sent"
+
 #: src/app/controllers/secured.js:198
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/message.tpl.html:135
 #: src/app/templates/partials/message.tpl.html:41
 #: src/app/templates/partials/no-results.tpl.html:17
 #: src/app/templates/partials/sidebar-responsive.tpl.html:33
-#: src/app/templates/partials/sidebar-responsive.tpl.html:35
 #: src/app/templates/partials/sidebar.tpl.html:25
-#: src/app/templates/partials/sidebar.tpl.html:28
 msgid "Sent"
 msgstr "Sent"
 
@@ -3253,13 +3272,18 @@ msgstr "Sorry, this message does not exist or has already expired"
 msgid "Space"
 msgstr "Space"
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:56
+#: src/app/templates/partials/sidebar.tpl.html:52
+msgctxt "Noun"
+msgid "Spam"
+msgstr "Spam"
+
 #: src/app/controllers/secured.js:207 src/app/directives/move.js:23
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
 #: src/app/templates/partials/sidebar-responsive.tpl.html:54
-#: src/app/templates/partials/sidebar-responsive.tpl.html:56
 #: src/app/templates/partials/sidebar.tpl.html:49
-#: src/app/templates/partials/sidebar.tpl.html:52
 msgid "Spam"
 msgstr "Spam"
 
@@ -3285,9 +3309,14 @@ msgstr "Star conversation"
 
 #: src/app/controllers/secured.js:201
 #: src/app/templates/partials/sidebar-responsive.tpl.html:40
-#: src/app/templates/partials/sidebar-responsive.tpl.html:42
 #: src/app/templates/partials/sidebar.tpl.html:33
+msgid "Starred"
+msgstr "Starred"
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:42
 #: src/app/templates/partials/sidebar.tpl.html:36
+msgctxt "Noun"
 msgid "Starred"
 msgstr "Starred"
 
@@ -3550,9 +3579,14 @@ msgstr "Total price:"
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
 #: src/app/templates/partials/sidebar-responsive.tpl.html:61
-#: src/app/templates/partials/sidebar-responsive.tpl.html:63
 #: src/app/templates/partials/sidebar.tpl.html:57
+msgid "Trash"
+msgstr "Trash"
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:63
 #: src/app/templates/partials/sidebar.tpl.html:60
+msgctxt "Noun"
 msgid "Trash"
 msgstr "Trash"
 
@@ -4069,6 +4103,12 @@ msgstr "Your thoughts..."
 #: src/app/templates/modals/payment/payment.tpl.html:96
 msgid "ZIP code"
 msgstr "ZIP code"
+
+#, fuzzy
+#~ msgid "Conversation selected"
+#~ msgid_plural "Conversations selected"
+#~ msgstr[0] "Conversation selected"
+#~ msgstr[1] "Conversation selected"
 
 #~ msgid "Email already taken."
 #~ msgstr "Email already taken."
