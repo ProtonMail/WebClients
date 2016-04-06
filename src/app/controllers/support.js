@@ -38,7 +38,7 @@ angular.module("proton.controllers.Support", [
     /**
      * Validates the token and shows the last form
      * @param form {Form}
-     */     
+     */
     $scope.resetLoginPass = function(form) {
         if (
             angular.isUndefined($scope.params.resetLoginCode) ||
@@ -56,7 +56,7 @@ angular.module("proton.controllers.Support", [
                     username: $scope.params.username,
                     token: $scope.params.resetLoginCode
                 })
-                .then( 
+                .then(
                     function(response) {
                         if (response.data.Code!==1000) {
                             notify({
@@ -91,7 +91,7 @@ angular.module("proton.controllers.Support", [
     /**
      * Request a token to reset login pass. Some validation first.
      * Shows errors otherwise sets a flag to show a different form
-     */ 
+     */
     $scope.resetLostPassword = function(form) {
         if(form.$valid) {
             $scope.params.username = $scope.params.username.toLowerCase().split('@')[0];
@@ -100,27 +100,13 @@ angular.module("proton.controllers.Support", [
                     Username: $scope.params.username,
                     NotificationEmail: $scope.params.recoveryEmail
                 })
-                .then(
-                    function(response) {
-                        if (response.data.Code!==1000) {
-                            notify({
-                                classes: 'notification-danger',
-                                message: 'Wrong username or recovery email.'
-                            });
-                        }
-                        else {
-                            $scope.inputResetToken = true;
-                        }
-                    },
-                    function(err) {
-                        // TODO error handling?
-                        $log.error(err);
-                        notify({
-                            classes: 'notification-danger',
-                            message: 'Unable to reset password. Please try again in a few minutes.'
-                        });
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        $scope.inputResetToken = true;
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
                     }
-                )
+                })
             );
         }
         else {
@@ -135,7 +121,7 @@ angular.module("proton.controllers.Support", [
     /**
      * Saves new login pass. Shows success page.
      * @param form {Form}
-     */     
+     */
     $scope.confirmNewPassword = function(form) {
         if(form.$valid) {
                 networkActivityTracker.track(
