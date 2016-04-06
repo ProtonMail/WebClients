@@ -154,7 +154,7 @@ angular.module("proton.controllers.Contacts", [
         });
     };
 
-    $scope.deleteContacts = function(contact) {
+    $scope.deleteContact = function(contact) {
         var contactsSelected = contact ? [contact] : $scope.contactsSelected();
         var message, title;
 

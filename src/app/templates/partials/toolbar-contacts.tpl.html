@@ -16,7 +16,7 @@
     <button class="pm_button primary" type="button" ng-click="addContact()">
         <i class="fa fa-plus"></i> {{ 'Add' | translate }}
     </button>
-    <button class="delete pm_button" type="button" ng-click="deleteContacts()" ng-disabled="contactsSelected().length === 0">
+    <button class="delete pm_button" type="button" ng-click="deleteContact()" ng-disabled="contactsSelected().length === 0">
         <i class="fa fa-trash-o"></i> {{ 'Delete' | translate }}
     </button>
     <button class="compose pm_button" type="button" ng-click="composeContacts()" ng-disabled="contactsSelected().length === 0">

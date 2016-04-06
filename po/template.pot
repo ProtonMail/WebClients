@@ -90,7 +90,7 @@ msgstr ""
 msgid "Add new contact"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:39
+#: src/app/templates/directives/labels.tpl.html:34
 msgid "Add new label"
 msgstr ""
 
@@ -234,7 +234,7 @@ msgstr ""
 msgid "Already subscribed"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:23
+#: src/app/templates/directives/labels.tpl.html:31
 msgid "Also archive"
 msgstr ""
 
@@ -274,7 +274,7 @@ msgstr ""
 msgid "Appearance"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:42
+#: src/app/templates/directives/labels.tpl.html:37
 #: src/app/templates/modals/payment/payment.tpl.html:156
 #: src/app/templates/modals/storage.tpl.html:24
 msgid "Apply"
@@ -959,6 +959,7 @@ msgstr ""
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:38
 #: src/app/templates/partials/toolbar-mobile.tpl.html:85
 #: src/app/templates/views/addresses.tpl.html:58
+#: src/app/templates/views/contacts.tpl.html:53
 #: src/app/templates/views/domains.tpl.html:92
 #: src/app/templates/views/labels.tpl.html:17
 #: src/app/templates/views/payments.tpl.html:31
@@ -1171,7 +1172,7 @@ msgid "Drop here"
 msgstr ""
 
 #: src/app/controllers/contacts.js:238
-#: src/app/templates/views/contacts.tpl.html:53
+#: src/app/templates/views/contacts.tpl.html:52
 #: src/app/templates/views/labels.tpl.html:16
 #: src/app/templates/views/payments.tpl.html:30
 msgid "Edit"
@@ -2196,7 +2197,7 @@ msgstr ""
 msgid "My subscription"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:31
+#: src/app/templates/directives/labels.tpl.html:23
 #: src/app/templates/modals/contact.tpl.html:12
 #: src/app/templates/modals/label.tpl.html:11
 #: src/app/templates/modals/user/member.tpl.html:8
@@ -2364,7 +2365,7 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:34
+#: src/app/templates/directives/labels.tpl.html:26
 #: src/app/templates/modals/alert.tpl.html:13
 msgid "OK"
 msgstr ""

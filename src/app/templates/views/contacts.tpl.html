@@ -49,9 +49,8 @@
                             <span title="contact.Email">{{ contact.Email }}</span>
                         </td>
                         <td class="text-right actions">
-                            <span>
-                                <a href="#" class="pm_button" ng-click="editContact(contact)" translate>Edit</a>
-                            </span>
+                            <button type="button" class="pm_button" ng-click="editContact(contact)" translate>Edit</button>
+                            <button type="button" class="pm_button" ng-click="deleteContact(contact)" translate>Delete</button>
                         </td>
                     </tr>
                 </tbody>
