@@ -1,6 +1,6 @@
 angular.module("proton.filters",[])
 
-.filter('delay', function (gettext) {
+.filter('delay', function (gettextCatalog) {
     return function (input) {
         // get the current moment
         var now = moment();
