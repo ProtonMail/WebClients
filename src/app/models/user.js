@@ -12,7 +12,7 @@ angular.module('proton.models.user', [])
             return $http.get(url.get() + '/users');
         },
         pubkeys: function(emails) {
-            return $http.get(url.get() + '/users/pubkeys/' + emails);
+            return $http.get(url.get() + '/users/pubkeys/' + window.encodeURIComponent(emails));
         },
         available: function(username) {
             return $http.get(url.get() + '/users/available/' + username);
