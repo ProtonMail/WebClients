@@ -1,6 +1,6 @@
 angular.module('proton.autocomplete', [])
 .constant("regexEmail", /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/gi)
-.directive('autocomplete', function ($timeout, $filter, regexEmail, authentication) {
+.directive('autocomplete', function ($timeout, regexEmail, authentication) {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/autocomplete.tpl.html',
@@ -172,20 +172,29 @@ angular.module('proton.autocomplete', [])
             scope.onChange = function() {
                 $timeout.cancel(timeoutChange);
                 timeoutChange = $timeout(function() {
-                    var contacts = _.map(authentication.user.Contacts, function(contact) {
-                        return { Name: contact.Name, Address: contact.Email };
-                    });
-                    var byName = $filter('filter')(contacts, {Name: scope.params.newValue});
-                    var byAddress = $filter('filter')(contacts, {Address: scope.params.newValue});
-                    var list = $filter('limitTo')(_.union(byName, byAddress), 10); // We limit the number of contact by 10
+                    if (scope.params.newValue.length > 0) {
+                        var list = [];
+                        var contacts = _.map(authentication.user.Contacts, function(contact) {
+                            return { Name: contact.Name, Address: contact.Email };
+                        });
 
-                    if(scope.params.newValue.length > 0) {
+                        _.each(contacts, function(contact) {
+                            // We limit the number of contact by 10
+                            if (list.length <= 10) {
+                                if (contact.Name.startsWith(scope.params.newValue)) {
+                                    list.push(contact);
+                                } else if (contact.Address.startsWith(scope.params.newValue)) {
+                                    list.push(contact);
+                                }
+                            }
+                        });
+
                         scope.params.contactsFiltered = list;
                     } else {
                         scope.params.contactsFiltered = [];
                     }
 
-                    if(scope.params.contactsFiltered.length > 0) {
+                    if (scope.params.contactsFiltered.length > 0) {
                         scope.onOpen();
                     } else {
                         scope.onClose();
