@@ -204,7 +204,7 @@ angular.module('proton.routes', [
                     .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             if (result.data.Direct === 1) {
-                                deferred.resolve();
+                                deferred.resolve(result.data);
                             } else {
                                 window.location.href = 'https://protonmail.com/invite';
                                 deferred.reject();
