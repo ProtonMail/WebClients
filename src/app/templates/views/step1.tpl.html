@@ -19,8 +19,7 @@
             <div class="usernameWrap">
                 <p class="help">{{ 'CHOOSE_DOMAIN' | translate }}</p>
                 <strong ng-show="readOnlyUsername" ng-bind="account.Username"></strong>
-                <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder="{{ 'CHOOSE_USERNAME' | translate }}" required
-                id="Username" class="dead" ng-change="checkAvailability(true)" ng-model-options="{ debounce: 1000 }"
+                <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder="{{ 'CHOOSE_USERNAME' | translate }}" required id="Username" class="dead" ng-change="checkAvailability(true)" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }"
                 ng-class="{
                     'success':goodUsername,
                     'error':badUsername
