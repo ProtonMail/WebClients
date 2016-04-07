@@ -1,13 +1,13 @@
 <div class="pm_modal {{ctrl.class}} domains" role="dialog" style="display: block;">
     <div class="modal-dialog">
-        <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+        <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
-                <h4 class="modal-title">3. {{ 'ADDRESSES' | translate }} <em>({{ 'REQUIRED' | translate }})</em></h4>
+                <h4 class="modal-title">3. {{ 'Addresses' | translate }} <em>({{ 'Required' | translate }})</em></h4>
             </div>
             <div class="modal-body pm_form">
-                <p translate="ADDRESS_INFO_1"></p>
+                <p translate>To send and receive email with this domain, please add all addresses</p>
                 <div class="pm_grid" ng-show="ctrl.members.length > 1">
                     <div class="col-12">
                         <label>Choose the member who will own this address:</label>
@@ -27,15 +27,15 @@
                             <input value="@{{ ctrl.domain.DomainName }}" type="text" readonly class="noBorder">
                         </div>
                     </div>
-                    <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
+                    <button type="submit" class="pm_button primary" translate>Add</button>
                 </form>
 
                 <div ng-show="ctrl.domain.Addresses.length > 0">
-                    <p><strong>{{ 'ADDED_ADDRESSES' | translate }}</strong></p>
+                    <p><strong translate>Added addresses</strong></p>
                     <table class="pm_table pm_form bordered">
                         <thead>
                             <tr>
-                                <th>{{ 'ADDRESS' | translate }}</th>
+                                <th translate>Address</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,8 +49,8 @@
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.next()" ng-show="ctrl.domain.State > 0">{{ 'NEXT' | translate }}</button>
-            <button type="button" class="pm_button" ng-click="ctrl.close()">{{ 'CLOSE' | translate }}</button>
+            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.next()" ng-show="ctrl.domain.State > 0" translate>Next</button>
+            <button type="button" class="pm_button" ng-click="ctrl.close()"  translate>Close</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

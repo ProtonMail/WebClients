@@ -9,7 +9,7 @@
         ng-checked="allSelected()"
         ng-click="toggleAllSelected()"
         ng-disabled="numberElement === 0"
-        pt-tooltip="{{ 'SELECT_ALL_MESSAGES' | translate }}">
+        pt-tooltip="{{ 'Select all messages' | translate }}">
     </label>
 
     <span
@@ -17,7 +17,7 @@
     ng-if="idDefined() && (layoutMode === 'rows' || mobileMode)">
         <a
         ng-click="back()"
-        pt-tooltip="{{ 'BACK_TO_LIST' | translate }}">
+        pt-tooltip="{{ 'Back to list' | translate }}">
             <i class="fa fa-long-arrow-left"></i>
         </a>
     </span>
@@ -32,11 +32,11 @@
         <span class="pm_dropdown wide">
             <a ng-click="unread()">
                 <i class="fa fa-eye-slash"></i>
-                {{ 'MARK_AS_UNREAD' | translate }}
+                {{ 'Mark as unread' | translate }}
             </a>
             <a ng-click="read()">
                 <i class="fa fa-eye"></i>
-                {{ 'MARK_AS_READ' | translate }}
+                {{ 'Mark as read' | translate }}
             </a>
         </span>
     </span>
@@ -54,52 +54,52 @@
             ng-hide="{{ 'secured.trash.**' | includedByState }}"
             ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-trash-o"></i>
-                {{ 'MOVE_TO_TRASH' | translate }}
+                {{ 'Move to trash' | translate }}
             </a>
             <a
             ng-click="move('inbox')"
             ng-hide="{{ ('secured.inbox.**' | includedByState) || ('secured.spam.**' | includedByState) }}"
             ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-inbox"></i>
-                {{ 'MOVE_TO_INBOX' | translate }}
+                {{ 'Move to inbox' | translate }}
             </a>
             <a
             ng-click="move('archive')"
             ng-hide="{{ 'secured.archive.**' | includedByState }}"
             ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-archive"></i>
-                {{ 'MOVE_TO_ARCHIVE' | translate }}
+                {{ 'Move to archive' | translate }}
             </a>
             <a
             ng-click="move('spam')"
             ng-hide="{{ 'secured.spam.**' | includedByState }}"
             ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-ban"></i>
-                {{ 'MOVE_TO_SPAM' | translate }}
+                {{ 'Move to spam' | translate }}
             </a>
             <a
             ng-click="delete()"
             ng-show="{{ 'secured.trash.**' | includedByState }}"
             ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-times-circle-o"></i>
-                {{ 'DELETE' | translate }}
+                {{ 'Delete' | translate }}
             </a>
             <a
             ng-click="move('inbox')"
             ng-show="{{ 'secured.spam.**' | includedByState }}"
             ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-check"></i>
-                {{ 'NOT_SPAM' | translate }}
+                {{ 'Not spam' | translate }}
             </a>
         </span>
     </span>
 
     <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
-        <a href="#" class="pm_trigger open-label" dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip="{{ 'LABELS' | translate }}">
+        <a href="#" class="pm_trigger open-label" dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip="{{ 'Labels' | translate }}">
             <i class="fa fa-tag"></i>
             <i class="fa fa-angle-down"></i>
         </a>
-        <span class="pm_dropdown wide labelDD right">
+        <span class="pm_dropdown wide  right">
             <dropdown-labels messages="elementsSelected" save="saveLabels"></dropdown-labels>
         </span>
     </span>

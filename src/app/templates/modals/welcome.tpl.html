@@ -1,27 +1,28 @@
 <div class="pm_modal {{this.class}}" role="dialog" style="display: block;" id="welcomeModal">
     <form class="modal-dialog modal-sm" method="post" ng-submit="ctrl.next()" novalidate>
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title text-center">{{ 'WELCOME_MODAL_TITLE' | translate }}</h3>
+                <h3 class="modal-title text-center" translate>Welcome to ProtonMail</h3>
             </div>
             <div class="modal-body">
-                <p class="text-center">{{ 'WELCOME_MODAL_INTRO' | translate }}</p><br />
+                <p class="text-center" translate>You now have an encrypted email account! Below are optional settings you can use to customize your account. You can always find these on your Settings page.</p>
+                <br />
                 <section class="pm_form">
                     <div class="pm_grid">
                         <div class="col-1-2">
-                            <label for="displayName">{{ 'CHOOSE_A_DISPLAY_NAME' | translate }}<br /><em>*{{ 'OPTIONAL' | translate }}</em></label>Optional
+                            <label for="displayName">{{ 'Choose a display name' | translate }}<br /><em>*{{ 'Optional' | translate }}</em></label>
                         </div>
                         <div class="col-1-2">
-                            <input id="displayName" type="text" name="displayName" ng-model="ctrl.displayName" placeholder="{{ 'DISPLAY_NAME' | translate }}" />
-                            <p class="help-block"><small>{{ 'DISPLAY_NAME_INFO' | translate }}</small></p>
+                            <input id="displayName" type="text" name="displayName" ng-model="ctrl.displayName" placeholder="{{ 'Display name' | translate }}" />
+                            <p class="help-block"><small translate>This is the 'From' name that people will see when you email them.</small></p>
                         </div>
                     </div>
                 </section>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button type="submit" class="pm_button primary">{{ 'NEXT' | translate }}</a>
+            <button type="submit" class="pm_button primary" translate>Next</a>
         </div>
     </form>
     <div class="modal-overlay"></div>

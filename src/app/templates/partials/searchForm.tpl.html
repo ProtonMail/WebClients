@@ -1,9 +1,9 @@
 <form method="post" class="searchForm" ng-submit="searchMessages()" ng-class="{ 'adv': advancedSearch }" adv-search>
     <fieldset>
-        <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip="{{ 'ADVANCED_SEARCH' | translate }}" pt-placement="bottom">
+        <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip="{{ 'Advanced search' | translate }}" pt-placement="bottom">
             <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
         </button>
-        <input type="text" placeholder="{{ 'SEARCH_MESSAGES' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
+        <input type="text" placeholder="{{ 'Search messages' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
         <button type="submit" ng-show="advancedSearch !== true">
             <i class="fa fa-search"></i>
         </button>
@@ -15,11 +15,11 @@
         <div class="wrap">
             <div class="row">
                 <div class="col-1-2">
-                    <label for="search_keywords">{{ 'KEYWORDS' | translate }}</label>
-                    <input id="search_keywords" type="text" placeholder="{{ 'KEYWORDS' | translate }}" ng-model="ctrl.keyword" />
+                    <label for="search_keywords" translate>Keywords</label>
+                    <input id="search_keywords" type="text" placeholder="{{ 'Keywords' | translate }}" ng-model="ctrl.keyword" />
                 </div>
                 <div class="col-1-2">
-                    <label for="search_folder">{{ 'LOCATION' | translate }}</label>
+                    <label for="search_folder" translate>Location</label>
                     <span class="pm_select">
                         <select id="search_folder" ng-model="ctrl.folder" ng-options="folder.label group by folder.group for folder in ctrl.folders"></select>
                         <i class="fa fa-angle-down"></i>
@@ -28,24 +28,24 @@
             </div>
             <div class="row margin">
                 <div class="col-1-2">
-                    <label for="search_sender">{{ 'SENDER' | translate }}</label>
-                    <input type="text" id="search_sender" ng-model="ctrl.from" placeholder="{{ 'FROM' | translate }}">
+                    <label for="search_sender" translate>Sender</label>
+                    <input type="text" id="search_sender" ng-model="ctrl.from" placeholder="{{ 'From' | translate }}">
                 </div>
                 <div class="col-1-2">
-                    <label for="search_recipient">{{ 'RECIPIENT' | translate }}</label>
-                    <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="{{ 'TO' | translate }}">
+                    <label for="search_recipient" translate>Recipient</label>
+                    <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="{{ 'To' | translate }}">
                 </div>
             </div>
             <div class="row margin">
                 <div class="col-1-2">
-                    <label for="search_start">{{ 'START_DATE' | translate }}</label>
+                    <label for="search_start" translate>Start date</label>
                     <span class="input-icon">
                         <em class="fa fa-calendar" ng-click="focusStart()"></em>
                         <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.start" id="search_start" on-select="setMin()" class="ng-isolate-scope">
                     </span>
                 </div>
                 <div class="col-1-2">
-                    <label for="search_end">{{ 'END_DATE' | translate }}</label>
+                    <label for="search_end" translate>End date</label>
                     <span class="input-icon">
                         <em class="fa fa-calendar" ng-click="focusEnd()"></em>
                         <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.end" id="search_end" on-select="setMax()" class="ng-isolate-scope">
@@ -54,23 +54,23 @@
             </div>
             <div class="row">
                 <div class="col-1-2">
-                    <label for="search_address">{{ 'ADDRESS' | translate }}</label>
+                    <label for="search_address" translate>Address</label>
                     <span class="pm_select">
                         <select id="search_address" ng-model="ctrl.address" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>
                 <div class="col-1-2">
-                    <label>{{ 'ATTACHMENTS' | translate }}</label>
+                    <label translate>Attachments</label>
                     <div class="radio">
                         <label for="attachments_all">
-                            <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2"> {{ 'ALL' | translate }}
+                            <input id="attachments_all" type="radio" ng-model="ctrl.attachments" value="2"> {{ 'All' | translate }}
                         </label>
                         <label for="attachments_yes">
-                            <input id="attachments_yes" type="radio" ng-model="ctrl.attachments" value="1"> {{ 'YES' | translate }}
+                            <input id="attachments_yes" type="radio" ng-model="ctrl.attachments" value="1"> {{ 'Yes' | translate }}
                         </label>
                         <label for="attachments_no">
-                            <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0"> {{ 'NO' | translate }}
+                            <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0"> {{ 'No' | translate }}
                         </label>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                 <div class="col-1-2">&nbsp;</div>
                 <div class="col-1-2 text-right">
                     <button type="submit" class="pm_button primary">
-                        <i class="fa fa-search"></i> {{ 'SEARCH' | translate }}
+                        <i class="fa fa-search"></i> {{ 'Search' | translate }}
                     </button>
                 </div>
             </div>

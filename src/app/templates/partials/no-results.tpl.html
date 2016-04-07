@@ -12,17 +12,17 @@
                 'fa-search': mailbox === 'search',
                 'fa-tag': mailbox === 'label'
             }"></i>
-            <span ng-show="mailbox === 'inbox'">{{ 'INBOX' | translate }}</span>
-            <span ng-show="mailbox === 'drafts'">{{ 'DRAFTS' | translate }}</span>
-            <span ng-show="mailbox === 'sent'">{{ 'SENT' | translate }}</span>
-            <span ng-show="mailbox === 'trash'">{{ 'TRASH' | translate }}</span>
-            <span ng-show="mailbox === 'spam'">{{ 'SPAM' | translate }}</span>
-            <span ng-show="mailbox === 'starred'">{{ 'STAR' | translate }}</span>
-            <span ng-show="mailbox === 'archive'">{{ 'ARCHIVE' | translate }}</span>
-            <span ng-show="mailbox === 'search'">{{ 'SEARCH' | translate }}</span>
-            <span ng-show="mailbox === 'label'">{{ 'LABEL' | translate }}</span>
-            <h3 ng-show="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'">{{ 'NO_MESSAGES' | translate }}</h3>
-            <h3 ng-hide="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'">{{ 'NO_CONVERSATIONS' | translate }}</h3>
+            <span ng-show="mailbox === 'inbox'" translate>Inbox</span>
+            <span ng-show="mailbox === 'drafts'" translate>Drafts</span>
+            <span ng-show="mailbox === 'sent'" translate>Sent</span>
+            <span ng-show="mailbox === 'trash'" translate>Trash</span>
+            <span ng-show="mailbox === 'spam'" translate>Spam</span>
+            <span ng-show="mailbox === 'starred'" translate>Star</span>
+            <span ng-show="mailbox === 'archive'" translate>Archive</span>
+            <span ng-show="mailbox === 'search'" translate>Search</span>
+            <span ng-show="mailbox === 'label'" translate>Label</span>
+            <h3 ng-show="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'" translate>No messages</h3>
+            <h3 ng-hide="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'" translate>No conversations</h3>
         </td>
     </tr>
 </table>

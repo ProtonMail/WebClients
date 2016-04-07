@@ -204,7 +204,7 @@ angular.module('proton.routes', [
                     .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             if (result.data.Direct === 1) {
-                                deferred.resolve();
+                                deferred.resolve(result.data);
                             } else {
                                 window.location.href = 'https://protonmail.com/invite';
                                 deferred.reject();
@@ -456,9 +456,9 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/outside.reply.tpl.html'
             }
         },
-        onEnter: function($translate) {
+        onEnter: function(gettext) {
             window.onbeforeunload = function() {
-                return $translate.instant('MESSAGE_LEAVE_WARNING');
+                return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null, 'Default');
             };
         },
         onExit: function() {
@@ -816,13 +816,13 @@ angular.module('proton.routes', [
             url: '/' + box + '?' + conversationParameters(),
             views: list,
             resolve: {
-                delinquent: function($q, $state, $translate, user, notify) {
+                delinquent: function($q, $state, gettextCatalog, user, notify) {
                     var deferred = $q.defer();
 
                     if (user.Delinquent < 3) {
                         deferred.resolve();
                     } else {
-                        notify({message: $translate.instant('DELINQUENT_NOTIFICATION'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Error'), classes: 'notification-danger'});
                         $state.go('secured.payments');
                         deferred.reject();
                     }

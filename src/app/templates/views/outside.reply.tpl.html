@@ -11,13 +11,12 @@
         </div>
         <ul class="infos">
             <li>
-                <strong>{{ 'FROM' | translate }}:</strong>
+                <strong translate-context="Default" translate>From:</strong>
                 <b>{{ message.Recipient }}</b>
             </li>
             <li>
-                <strong>{{ 'TO' | translate }}:</strong>
-
-                <b>{{message.Sender.Name}}</b> <em>&lt;{{message.Sender.Address}}&gt;</em>
+                <strong translate-context="Default" translate>To:</strong>
+                <b>{{message.Sender.Name}}</b> <em>&lt;{{ message.Sender.Address }}&gt;</em>
             </li>
         </ul>
     </div>
@@ -26,17 +25,17 @@
         <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
-            <strong>{{ 'DECRYPTION_ERROR' | translate }}</strong>
-            <br> {{ 'DECRYPTION_ERROR_INFO' | translate }}
+            <strong translate-context="Default" translate>Decryption error</strong>
+            <div translate-context="Default" translate>Decryption of this message's encryption content failed.</div>
         </div>
     </div>
 
     <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
 
     <footer class="text-right">
-        <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()">{{ 'CANCEL' | translate }}</button>
-        <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'ATTACHMENTS' | translate }}"><i class="fa fa-paperclip"></i></button>
-        <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()">{{ 'SEND' | translate }}</button>
+        <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()" translate-context="Default" translate>Cancel</button>
+        <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'Attachments' | translate }}"><i class="fa fa-paperclip"></i></button>
+        <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()" translate-context="Default" translate>Send</button>
     </footer>
 
     <input type="file" id="inputFile" multiple />

@@ -8,7 +8,7 @@ angular.module("proton.controllers.Secured", [])
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettextCatalog,
     $window,
     authentication,
     cache,
@@ -27,19 +27,19 @@ angular.module("proton.controllers.Secured", [])
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
     $scope.settingsRoutes = [
-        {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
-        {value: 'secured.account', label: $translate.instant('ACCOUNT')},
-        {value: 'secured.labels', label: $translate.instant('LABELS')},
-        {value: 'secured.security', label: $translate.instant('SECURITY')},
-        {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
-        {value: 'secured.appearance', label: $translate.instant('APPEARANCE')},
-        {value: 'secured.domains', label: $translate.instant('DOMAINS')},
-        {value: 'secured.members', label: $translate.instant('USERS')},
-        {value: 'secured.payments', label: $translate.instant('PAYMENTS')}
+        {value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard', null, 'Default')},
+        {value: 'secured.account', label: gettextCatalog.getString('Account', null, 'Default')},
+        {value: 'secured.labels', label: gettextCatalog.getString('Labels', null, 'Default')},
+        {value: 'secured.security', label: gettextCatalog.getString('Security', null, 'Default')},
+        {value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard', null, 'Default')},
+        {value: 'secured.appearance', label: gettextCatalog.getString('Appearance', null, 'Default')},
+        {value: 'secured.domains', label: gettextCatalog.getString('Domains', null, 'Default')},
+        {value: 'secured.members', label: gettextCatalog.getString('Users', null, 'Default')},
+        {value: 'secured.payments', label: gettextCatalog.getString('Payments', null, 'Default')}
     ];
 
     // Set language used for the application
-    $translate.use(authentication.user.Language);
+    gettextCatalog.setCurrentLanguage(authentication.user.Language);
 
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
@@ -58,10 +58,6 @@ angular.module("proton.controllers.Secured", [])
 
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
-
-    $scope.$on('updateUser', function(event) {
-        $translate.use(authentication.user.Language);
-    });
 
     $scope.$on('organizationChange', function(event, organization) {
         $scope.organization = organization;
@@ -189,25 +185,25 @@ angular.module("proton.controllers.Secured", [])
 
         switch (state) {
             case 'inbox':
-                name = unread + $translate.instant('INBOX');
+                name = unread + gettextCatalog.getString('Inbox', null, 'Default');
                 break;
             case 'drafts':
-                name = unread + $translate.instant('DRAFTS');
+                name = unread + gettextCatalog.getString('Drafts', null, 'Default');
                 break;
             case 'sent':
-                name = unread + $translate.instant('SENT');
+                name = unread + gettextCatalog.getString('Sent', null, 'Default');
                 break;
             case 'starred':
-                name = unread + $translate.instant('STARRED');
+                name = unread + gettextCatalog.getString('Starred', null, 'Default');
                 break;
             case 'archive':
-                name = unread + $translate.instant('ARCHIVE');
+                name = unread + gettextCatalog.getString('Archive', null, 'Default');
                 break;
             case 'spam':
-                name = unread + $translate.instant('SPAM');
+                name = unread + gettextCatalog.getString('Spam', null, 'Default');
                 break;
             case 'trash':
-                name = unread + $translate.instant('TRASH');
+                name = unread + gettextCatalog.getString('Trash', null, 'Default');
                 break;
             case 'label':
                 var label = _.findWhere(authentication.user.Labels, {ID: $state.params.label});
@@ -215,38 +211,38 @@ angular.module("proton.controllers.Secured", [])
                 if (angular.isDefined(label)) {
                     name = label.Name;
                 } else {
-                    name = $translate.instant('LABEL');
+                    name = gettextCatalog.getString('Label', null, 'Default');
                 }
                 break;
             case 'contacts':
-                name = $translate.instant('CONTACTS');
+                name = gettextCatalog.getString('Contacts', null, 'Default');
                 break;
             case 'dashboard':
-                name = $translate.instant('DASHBOARD');
+                name = gettextCatalog.getString('Dashboard', null, 'Default');
                 break;
             case 'account':
-                name = $translate.instant('ACCOUNT');
+                name = gettextCatalog.getString('Account', null, 'Default');
                 break;
             case 'labels':
-                name = $translate.instant('LABELS');
+                name = gettextCatalog.getString('Labels', null, 'Default');
                 break;
             case 'security':
-                name = $translate.instant('SECURITY');
+                name = gettextCatalog.getString('Security', null, 'Default');
                 break;
             case 'appearance':
-                name = $translate.instant('APPEARANCE');
+                name = gettextCatalog.getString('Appearance', null, 'Default');
                 break;
             case 'domains':
-                name = $translate.instant('DOMAINS');
+                name = gettextCatalog.getString('Domains', null, 'Default');
                 break;
             case 'users':
-                name = $translate.instant('USERS');
+                name = gettextCatalog.getString('Users', null, 'Default');
                 break;
             case 'invoices':
-                name = $translate.instant('INVOICES');
+                name = gettextCatalog.getString('Invoices', null, 'Default');
                 break;
             case 'login':
-                name = $translate.instant('LOGIN');
+                name = gettextCatalog.getString('Login', null, 'Default');
                 break;
             default:
                 name = '';

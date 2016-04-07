@@ -14,6 +14,7 @@ angular.module("proton.controllers.Auth", [
     $location,
     CONSTANTS,
     CONFIG,
+    gettextCatalog,
     authentication,
     networkActivityTracker,
     notify,
@@ -21,7 +22,7 @@ angular.module("proton.controllers.Auth", [
     pmcw,
     tools
 ) {
-    $rootScope.pageName = "Login";
+    $rootScope.pageName = 'Login';
     $rootScope.tempUser = $rootScope.tempUser || [];
     $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
 
@@ -59,20 +60,12 @@ angular.module("proton.controllers.Auth", [
 
         // Detect if the current browser have session storage enable
         if (tools.hasSessionStorage() === false) {
-            notify({
-                message: 'You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.',
-                classes: 'notification-danger',
-                duration: '0'
-            });
+            notify({message: gettextCatalog.getString('You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0'});
         }
 
         // Detect if the current browser have cookie enable
         if (tools.hasCookie() === false) {
-            notify({
-                message: 'Cookie are disabled.\nPlease activate it and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.',
-                classes: 'notification-danger',
-                duration: '0'
-            });
+            notify({message: gettextCatalog.getString('Cookie are disabled.\nPlease activate it and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0'});
         }
     };
 
@@ -114,10 +107,7 @@ angular.module("proton.controllers.Auth", [
             $scope.username.length === 0 ||
             $scope.password.length === 0
         ) {
-            notify({
-                classes: 'notification-danger',
-                message: 'Please enter your username and password.'
-            });
+            notify({message: gettextCatalog.getString('Please enter your username and password.', null, 'Error'), classes: 'notification-danger'});
             return;
         }
 
@@ -127,17 +117,11 @@ angular.module("proton.controllers.Auth", [
         // Custom validation
         try {
             if (pmcw.encode_utf8($scope.password).length > CONSTANTS.LOGIN_PW_MAX_LEN) {
-                notify({
-                    classes: 'notification-danger',
-                    message: 'Passwords are limited to '+CONSTANTS.LOGIN_PW_MAX_LEN+' characters.'
-                });
+                notify({message: gettextCatalog.getString('Passwords are limited to ' + CONSTANTS.LOGIN_PW_MAX_LEN + ' characters.', null, 'Error'), classes: 'notification-danger'});
                 return;
             }
         } catch(err) {
-            notify({
-                classes: 'notification-danger',
-                message: err.message
-            });
+            notify({message: err.message, classes: 'notification-danger'});
             return;
         }
 
@@ -150,13 +134,8 @@ angular.module("proton.controllers.Auth", [
                 function(result) {
                     $log.debug('loginWithCredentials:result.data ', result);
                     if (angular.isDefined(result.data) && angular.isDefined(result.data.Code) && result.data.Code === 401) {
-
                         $scope.selectPassword();
-
-                        notify({
-                            classes: 'notification-danger',
-                            message: result.data.ErrorDescription
-                        });
+                        notify({message: result.data.ErrorDescription, classes: 'notification-danger'});
                     } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Code) && result.data.Code === 10002) {
                         var message;
 
@@ -166,10 +145,7 @@ angular.module("proton.controllers.Auth", [
                             message = "Your account has been disabled.";
                         }
                         // This account is disabled.
-                        notify({
-                            classes: 'notification-danger',
-                            message: message
-                        });
+                        notify({message: message, classes: 'notification-danger'});
                     } else if (angular.isDefined(result.data) && angular.isDefined(result.data.AccessToken)) {
                         // TODO: where is tempUser used?
                         $rootScope.isLoggedIn = true;
@@ -186,15 +162,9 @@ angular.module("proton.controllers.Auth", [
                         // TODO: This might be buggy
 	                	var error  = (angular.isDefined(result.data.ErrorDescription) && result.data.ErrorDescription.length) ? result.data.ErrorDescription : result.data.Error;
 
-                        notify({
-	                        classes: 'notification-danger',
-	                        message: error
-	                    });
+                        notify({message: error, classes: 'notification-danger'});
 	                } else {
-	                	notify({
-	                        classes: 'notification-danger',
-	                        message: 'Unable to log you in.'
-	                    });
+	                	notify({message: 'Unable to log you in.', classes: 'notification-danger'});
 	                }
                 },
                 function(result) {
@@ -202,11 +172,7 @@ angular.module("proton.controllers.Auth", [
                         result.message = 'Sorry, our login server is down. Please try again later.';
                     }
 
-                    notify({
-                        classes: 'notification-danger',
-                        message: result.message
-                    });
-
+                    notify({message: result.message, classes: 'notification-danger'});
                     $('input[name="Username"]').focus();
                 }
             )
@@ -242,11 +208,8 @@ angular.module("proton.controllers.Auth", [
                         },
                         function(err) {
                             $log.error('unlock', err);
-                            notify({
-                                classes: 'notification-danger',
-                                message: err.message
-                            });
-                            $( "[type=password]" ).focus();
+                            notify({message: err.message, classes: 'notification-danger'});
+                            $('[type=password]').focus();
                         }
                     );
                 },
@@ -256,10 +219,7 @@ angular.module("proton.controllers.Auth", [
                     // clear password for user
                     $scope.selectPassword();
 
-                    notify({
-                        classes: 'notification-danger',
-                        message: err.message
-                    });
+                    notify({message: err.message, classes: 'notification-danger'});
                 }
             )
         );

@@ -29,7 +29,7 @@
                     ng-show="!!!message.minimized"
                     class="pm_button link minimize-button hidden-xs"
                     ng-click="minimize(message)"
-                    pt-tooltip="{{ 'MINIMIZE' | translate }}"
+                    pt-tooltip="{{ 'Minimize' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-minus"></i>
                     </a>
@@ -37,7 +37,7 @@
                     ng-show="!!message.minimized"
                     class="pm_button link expand-button hidden-xs"
                     ng-click="unminimize(message)"
-                    pt-tooltip="{{ 'EXPAND' | translate }}"
+                    pt-tooltip="{{ 'Expand' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-minus"></i>
                     </a>
@@ -45,7 +45,7 @@
                     ng-show="!!!message.maximized"
                     class="pm_button link maximize-button hidden-xs hidden-sm"
                     ng-click="normalize(message);maximize(message)"
-                    pt-tooltip="{{ 'FULLSCREEN' | translate }}"
+                    pt-tooltip="{{ 'Fullscreen' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-expand"></i>
                     </a>
@@ -53,14 +53,14 @@
                     ng-show="!!message.maximized"
                     class="pm_button link maximize-button hidden-xs"
                     ng-click="normalize(message)"
-                    pt-tooltip="{{ 'EXIT_FULLSCREEN' | translate }}"
+                    pt-tooltip="{{ 'Exit fullscreen' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-compress"></i>
                     </a>
                     <a
                     class="pm_button link close-button"
                     ng-click="openCloseModal(message, true)"
-                    pt-tooltip="{{ 'CLOSE' | translate }}"
+                    pt-tooltip="{{ 'Close' | translate }}"
                     pt-placement="top">
                         <i class="fa fa-times"></i>
                     </a>
@@ -70,7 +70,7 @@
             <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'encrypt' }">
                 <div ng-form="encryptForm" class="pm_form">
                     <div>
-                        <h3>{{ ' ENC_OUTSIDE_TITLE' | translate }}</h3>
+                        <h3 translate>Encrypt for non-ProtonMail users</h3>
                         <a href="https://protonmail.com/support/knowledge-base/encrypt-for-outside-users/" target="_blank">
                             <i class="fa fa-info-circle"></i>
                         </a>
@@ -78,104 +78,72 @@
                     <p></p>
                     <div ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}" class="clearfix">
                         <div class="col left">
-                            <label class="text-muted">{{ 'MESSAGE_PASSWORD' | translate }}</label>
+                            <label class="text-muted" translate>Message password</label>
                         </div>
                         <div class="col right">
-                            <input
-                            type="password"
-                            autocomplete="off"
-                            name="outsidePw"
-                            ng-model="params.password"
-                            placeholder="Password"
-                            required="" />
+                            <input type="password" autocomplete="off" name="outsidePw" ng-model="params.password" placeholder="{{ 'Password' | translate }}" required="" />
                         </div>
                     </div>
                     <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}" class="clearfix">
                         <div class="col left">
-                            <label class="text-muted">{{ ' CONFIRM_MESSAGE_PASSWORD' | translate }}</label>
+                            <label class="text-muted" translate>Confirm message password</label>
                         </div>
                         <div class="col right">
-                            <input
-                            type="password"
-                            autocomplete="off"
-                            name="outsidePwConfirm"
-                            ng-model="params.confirm"
-                            placeholder="Confirm Password"
-                            required="" />
+                            <input type="password" autocomplete="off" name="outsidePwConfirm" ng-model="params.confirm" placeholder="{{ 'Confirm password' | translate }}" required="" />
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label class="text-muted">{{ 'PASSWORD_HINT' | translate }} ({{ 'OPTIONAL' | translate }})</label>
+                            <label class="text-muted" translate>Password hint (optional)</label>
                         </div>
                         <div class="col right">
-                            <input
-                            type="text"
-                            autocomplete="off"
-                            name="outsidePwHint"
-                            ng-model="params.hint"
-                            placeholder="Hint" />
+                            <input type="text" autocomplete="off" name="outsidePwHint" ng-model="params.hint" placeholder="{{ 'Hint' | translate }}" />
                         </div>
                     </div>
                     <div class="clear">
                         <p>
-                            <i class="help-block">{{ 'EXP_DURATION_INFO' | translate }}</i>
+                            <i class="help-block" translate>Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
                         </p>
                     </div>
                     <footer class="text-right">
-                        <button
-                        type="button"
-                        class="pm_button pull-left"
-                        ng-click="clearEncrypt(message, params, encryptForm);">
-                        {{ 'CANCEL' | translate }}
-                        </button>
-                        <button
-                        type="submit"
-                        class="pm_button primary"
-                        ng-click="setEncrypt(message, params)"
-                        ng-disabled="encryptForm.$invalid">
-                        {{ 'SET' | translate }}
-                        </button>
+                        <button type="button" class="pm_button pull-left" ng-click="clearEncrypt(message, params, encryptForm);" translate>Cancel</button>
+                        <button type="submit" class="pm_button primary" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid" translate>Set</button>
                     </footer>
                 </div>
             </div>
 
             <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'expiration' }">
                 <div>
-                    <h3>{{ 'EXPIRATION_TIME' | translate }}</h3>
+                    <h3 translate>Expiration time</h3>
                     <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">
                         <i class="fa fa-info-circle"></i>
                     </a>
                 </div>
                 <p></p>
-                <p class="alert alert-info">{{ 'EXPIRING_IN_MESSAGE' | translate }}</p>
+                <p class="alert alert-info" translate>This message will expire in:</p>
                 <div class="pm_form alert text-center" ng-init="initExpiration(message, params)">
                     <span class="pm_select">
                         <select ng-model="params.expirationWeeks" ng-change="setExpiration(message, params)" ng-options="option.label for option in weekOptions"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span> {{ 'WEEKS' | translate }}
+                    </span> {{ 'Weeks' | translate }}
                     <span class="pm_select">
                         <select ng-model="params.expirationDays" ng-change="setExpiration(message, params)" ng-options="option.label for option in dayOptions"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span> {{ 'DAYS' | translate }}
+                    </span> {{ 'Days' | translate }}
                     <span class="pm_select">
                         <select ng-model="params.expirationHours" ng-change="setExpiration(message, params)" ng-options="option.label for option in hourOptions"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span> {{ 'HOURS' | translate }}
+                    </span> {{ 'Hours' | translate }}
                 </div>
                 <footer class="text-right">
-                    <button type="button" class="pm_button pull-left" ng-click="clearExpiration(message)">
-                        {{ 'CANCEL' | translate }}
-                    </button>
-                    <button type="button" class="pm_button primary" ng-click="closePanel(message)">
-                        {{ 'SET' | translate }}
-                    </button>
+                    <button type="button" class="pm_button pull-left" ng-click="clearExpiration(message)" translate>Cancel</button>
+                    <button type="button" class="pm_button primary" ng-click="closePanel(message)" translate>Set</button>
                 </footer>
             </div>
 
             <div class="meta">
                 <div class="row fromRow">
-                    <label>{{ 'FROM' | translate }}</label>
+                    <label translate>From</label>
                     <select ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0" ng-change="changeFrom(message)"></select>
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
@@ -183,29 +151,29 @@
                     <span class="overlay" ng-show="message.Attachments.length > 0" pt-tooltip="Remove Attachments to change your From address."></span>
                 </div>
                 <div class="row placeholder" ng-click="focusTo(message)" ng-hide="message.fields === true">
-                    <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0">{{ 'RECIPIENTS' | translate }}</label>
+                    <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0" translate>Recipients</label>
                     <div>{{ recipients(message) }}</div>
-                    <button class="pm_button link pull-right" ng-click="$event.stopPropagation();toggleCcBcc(message);attHide(message);" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
+                    <button class="pm_button link pull-right" ng-click="$event.stopPropagation();toggleCcBcc(message);attHide(message);" pt-tooltip="{{ 'CC BCC' | translate }}" pt-placement="left">
                         <i class="fa fa-angle-down transition"></i>
                     </button>
                 </div>
                 <div class="row toRow" ng-show="message.fields === true">
-                    <label ng-click="focusNextInput($event)">{{ 'TO' | translate }}</label>
+                    <label ng-click="focusNextInput($event)" translate>To</label>
                     <autocomplete emails="message.ToList" />
-                    <button class="pm_button link pull-right" ng-click="toggleCcBcc(message);attHide(message);" pt-tooltip="{{ 'CC_BCC' | translate }}" pt-placement="left">
+                    <button class="pm_button link pull-right" ng-click="toggleCcBcc(message);attHide(message);" pt-tooltip="{{ 'CC BCC' | translate }}" pt-placement="left">
                         <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
                 <div class="row" ng-show="message.fields === true && message.ccbcc === true">
-                    <label ng-click="focusNextInput($event)">{{ 'CC' | translate }}</label>
+                    <label ng-click="focusNextInput($event)" translate>CC</label>
                     <autocomplete emails="message.CCList" />
                 </div>
                 <div class="row" ng-show="message.fields === true && message.ccbcc === true">
-                    <label ng-click="focusNextInput($event)">{{ 'BCC' | translate }}</label>
+                    <label ng-click="focusNextInput($event)" translate>BCC</label>
                     <autocomplete emails="message.BCCList" />
                 </div>
                 <div class="row subjectRow">
-                    <input type="text" title="{{ 'SUBJECT' | translate }}" class="subject" placeholder="{{ 'SUBJECT' | translate }}" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+                    <input type="text" title="{{ 'Subject' | translate }}" class="subject" placeholder="{{ 'Subject' | translate }}" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
             </div>
             <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" max-composer-height>
@@ -237,9 +205,9 @@
                 </span>
             </div>
             <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0">
-                <i class="pull-right" ng-if="(message.attachmentsToggle === true)">{{ 'HIDE' | translate }}</i>
-                <i class="pull-right" ng-if="!(message.attachmentsToggle === true)">{{ 'SHOW' | translate }}</i>
-                {{ message.Attachments.length }} {{ 'FILES_ATTACHED' | translate }} ({{ getAttachmentsSize(message) | humanSize }})
+                <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate>Hide</i>
+                <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate>Show</i>
+                {{ message.Attachments.length }} {{ 'Files attached' | translate }} ({{ getAttachmentsSize(message) | humanSize }})
             </aside>
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button class="pm_button"
@@ -249,7 +217,7 @@
                     'active': message.displayPanel && message.panelName == 'attachments',
                     'primary': message.Attachments && message.Attachments.length > 0
                 }"
-                pt-tooltip="{{ 'ATTACHMENTS' | translate }}"
+                pt-tooltip="{{ 'Attachments' | translate }}"
                 pt-placement="top"
                 >
                     <i class="fa fa-paperclip"></i>
@@ -262,10 +230,9 @@
                 }"
                 ng-disabled="message.allowOthers() || message !== selected"
                 pt-placement="top"
-                pt-tooltip="{{ 'ENCRYPTION' | translate }}"
+                pt-tooltip="{{ 'Encryption' | translate }}"
                 ng-click="togglePanel(message, 'encrypt')">
-                    <i class="fa fa-lock"></i>
-                    <span ng-show="!!message.maximized"> {{ 'ENCRYPTION' | translate }}</span>
+                    <i class="fa fa-lock"></i> <span ng-show="!!message.maximized" translate>Encryption</span>
                 </button>
                 <button
                 class="pm_button"
@@ -275,39 +242,26 @@
                 }"
                 ng-disabled="message.allowOthers() || message !== selected"
                 pt-placement="top"
-                pt-tooltip="{{ 'EXPIRATION_TIME' | translate }}"
+                pt-tooltip="{{ 'Expiration time' | translate }}"
                 ng-click="togglePanel(message, 'expiration')">
-                    <i class="fa fa-clock-o"></i>
-                    <span ng-show="!!message.maximized"> {{ 'EXPIRATION' | translate }}</span>
+                    <i class="fa fa-clock-o"></i> <span ng-show="!!message.maximized" translate>Expiration</span>
                 </button>
                 <span class="text-muted saveAt" ng-show="message.Time">
-                {{ 'SAVED_AT' | translate }} {{ message.Time | date : 'shortTime' }}
+                {{ 'Saved at' | translate }} {{ message.Time | date : 'shortTime' }}
                 </span>
                 <div class="pull-right">
-                    <button
-                    class="pm_button"
-                    ng-disabled="message.allowDiscard()"
-                    ng-click="close(message, true, false)"
-                    pt-tooltip="{{ 'DELETE_THE_DRAFT' | translate }}"
-                    pt-placement="top">
-                        <i class="fa fa-trash-o"></i>
-                        <span ng-show="!!message.maximized"> {{ 'DISCARD' | translate }}</span>
+                    <button class="pm_button" ng-disabled="message.allowDiscard()" ng-click="close(message, true, false)" pt-tooltip="{{ 'Delete draft' | translate }}" pt-placement="top">
+                        <i class="fa fa-trash-o"></i> <span ng-show="!!message.maximized" translate>Discard</span>
                     </button>
-                    <button
-                    class="pm_button"
-                    ng-disabled="message.allowSave() || message !== selected"
-                    ng-click="save(message, false, true, false)"
-                    pt-tooltip="{{ 'SAVE' | translate }}"
-                    pt-placement="top">
-                        <i class="fa fa-floppy-o"></i>
-                        <span ng-show="message.maximized === true"> {{ 'SAVE' | translate }}</span>
+                    <button class="pm_button" ng-disabled="message.allowSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip="{{ 'Save' | translate }}" pt-placement="top">
+                        <i class="fa fa-floppy-o"></i> <span ng-show="message.maximized === true" translate>Save</span>
                     </button>
                     <button class="pm_button primary" ng-disabled="message.allowSend() || message !== selected" ng-click="send(message)">
-                        <span ng-hide="message.allowSend()">{{ 'SEND' | translate }}</span>
-                        <span ng-show="message.uploading > 0">{{ 'UPLOADING' | translate }}</span>
-                        <span ng-show="message.sending === true">{{ 'SENDING' | translate }}</span>
-                        <span ng-show="message.encrypting === true">{{ 'ENCRYPTING' | translate }}</span>
-                        <span ng-show="message.saving === true && message.autosaving === false">{{ 'SAVING' | translate }}</span>
+                        <span ng-hide="message.allowSend()" translate>Send</span>
+                        <span ng-show="message.uploading > 0" translate>Uploading</span>
+                        <span ng-show="message.sending === true" translate>Sending</span>
+                        <span ng-show="message.encrypting === true" translate>Encrypting</span>
+                        <span ng-show="message.saving === true && message.autosaving === false" translate>Saving</span>
                     </button>
                 </div>
             </footer>

@@ -3,14 +3,13 @@
         <span class="title">
             <i class="fa fa-paperclip"></i>
             {{ message.NumAttachments }}
-            <span ng-hide="message.NumAttachments === 1">{{ 'ATTACHMENTS' | translate }} </span>
-            <span ng-show="message.NumAttachments === 1">{{ 'ATTACHMENT' | translate }} </span>
+            <span translate translate-n="message.NumAttachments" translate-plural="Attachments">Attachment</span>
             ({{ message.sizeAttachments() | humanSize }})
         </span>
         <em></em>
     </header>
     <section>
-        <a ng-repeat="attachment in message.Attachments" class="pm_button" ng-class="{ 'dead': attachment.decrypting || 'eo.reply' | includedByState }" data-download-text="{{ 'DOWNLOAD' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment(attachment, $event, message)">
+        <a ng-repeat="attachment in message.Attachments" class="pm_button" ng-class="{ 'dead': attachment.decrypting || 'eo.reply' | includedByState }" data-download-text="{{ 'Download' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment(attachment, $event, message)">
             <em></em>
             <i class="fa fa-file-o"         ng-show="!attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa fa-archive-o"      ng-show="attachment.MIMEType.indexOf('zip')            !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
@@ -23,8 +22,8 @@
             <i class="fa fa-powerpoint-o"   ng-show="attachment.MIMEType.indexOf('power')          !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa fa-word-o"         ng-show="attachment.MIMEType.indexOf('word')           !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa stuff" ng-class="{ 'fa-cog fa-spin': attachment.decrypting, 'fa-download': attachment.decrypted }"></i>
-            <strong>{{ attachment.Name }}</strong>
-            <span>{{ attachment.Size | humanSize }}</span>
+            <strong class="name">{{ attachment.Name }}</strong>
+            <span class="size">{{ attachment.Size | humanSize }}</span>
         </a>
         <div class="clear"></div>
     </section>

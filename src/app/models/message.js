@@ -12,7 +12,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $templateCache,
     $timeout,
     $filter,
-    $translate,
+    gettextCatalog,
     authentication,
     CONFIG,
     CONSTANTS,
@@ -131,15 +131,15 @@ angular.module("proton.models.message", ["proton.constants"])
         },
         encryptionType: function() {
             var texts = [
-                $translate.instant('UNENCRYPTED_MESSAGE'),
-                $translate.instant('END_TO_END_ENCRYPTED_INTERNAL_MESSAGE'),
-                $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
-                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE'),
-                $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
-                $translate.instant('STORED_ENCRYPTED'),
-                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY'),
-                $translate.instant('ENCRYPTED_PGP'),
-                $translate.instant('ENCRYPTED_PGP_MIME'),
+                gettextCatalog.getString('Unencrypted message', null, 'Default'),
+                gettextCatalog.getString('End to end encrypted internal message', null, 'Default'),
+                gettextCatalog.getString('External message stored encrypted', null, 'Default'),
+                gettextCatalog.getString('End to end encrypted for outside', null, 'Default'),
+                gettextCatalog.getString('External message stored encrypted', null, 'Default'),
+                gettextCatalog.getString('Stored encrypted', null, 'Default'),
+                gettextCatalog.getString('End to end encrypted for outside reply', null, 'Default'),
+                gettextCatalog.getString('End to end encrypted using PGP', null, 'Default'),
+                gettextCatalog.getString('End to end encrypted using PGP/MIME', null, 'Default'),
             ];
 
             return texts[this.IsEncrypted];

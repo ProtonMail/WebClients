@@ -8,14 +8,14 @@
                     <i class="fa fa-angle-down"></i>
                 </span>
             </div>
-            <legend>{{ 'ORGANIZATION_HISTORY' | translate }}</legend>
+            <legend translate-context="Default" translate>Organization history</legend>
             <table class="pm_table hidden-xs">
                 <thead>
                     <tr>
-                        <th class="date">{{ 'DATE' | translate }}</th>
-                        <th class="event">{{ 'EVENT' | translate }}</th>
-                        <th class="price">{{ 'PRICE' | translate }}</th>
-                        <th class="actions">{{ 'ACTIONS' | translate }}</th>
+                        <th class="date" translate-context="Default" translate>Date</th>
+                        <th class="event" translate-context="Default" translate>Event</th>
+                        <th class="price" translate-context="Default" translate>Price</th>
+                        <th class="actions" translate-context="Default" translate>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,26 +24,26 @@
                             {{ invoice.PeriodStart * 1000 | date : 'medium' }}
                         </td>
                         <td>
-                            {{ invoice.Cart.Next.Plan | capitalize }} {{ 'PLAN_SUBSCRIPTION' | translate }} (<small ng-show="invoice.BillingCycle === 1">{{ 'MONTHLY' | translate }}</small><small ng-show="invoice.BillingCycle === 12">{{ 'ANNUALLY' | translate }}</small>)
+                            {{ invoice.Cart.Next.Plan | capitalize }} <span translate-context="Default" translate>Plan subscription</span> (<small ng-show="invoice.BillingCycle === 1" translate-context="Default" translate>Monthly</small><small ng-show="invoice.BillingCycle === 12" translate-context="Default" translate>Annually</small>)
                         </td>
                         <td class="price">
                             {{ invoice.Amount / 100 | currency: invoice.Currency }}
                         </td>
                         <td class="actions">
-                            <button type="button" class="pm_button link" ng-click="display(invoice)">{{ 'DISPLAY_INVOICE' | translate }}</button>
+                            <button type="button" class="pm_button link" ng-click="display(invoice)" translate-context="Default" translate>Display invoice</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <p>&nbsp;</p>
-            <legend>{{ 'USER_HISTORY' | translate }}</legend>
+            <legend translate-context="Default" translate>User history</legend>
             <table class="pm_table hidden-xs">
                 <thead>
                     <tr>
-                        <th class="date">{{ 'DATE' | translate }}</th>
-                        <th class="event">{{ 'EVENT' | translate }}</th>
-                        <th class="price">{{ 'PRICE' | translate }}</th>
-                        <th class="actions">{{ 'ACTIONS' | translate }}</th>
+                        <th class="date" translate-context="Default" translate>Date</th>
+                        <th class="event" translate-context="Default" translate>Event</th>
+                        <th class="price" translate-context="Default" translate>Price</th>
+                        <th class="actions" translate-context="Default" translate>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,13 +52,13 @@
                             {{ invoice.PeriodStart * 1000 | date : 'medium' }}
                         </td>
                         <td>
-                            {{ invoice.Cart.Next.Plan | capitalize }} {{ 'PLAN_SUBSCRIPTION' | translate }} (<small ng-show="invoice.BillingCycle === 1">{{ 'MONTHLY' | translate }}</small><small ng-show="invoice.BillingCycle === 12">{{ 'ANNUALLY' | translate }}</small>)
+                            {{ invoice.Cart.Next.Plan | capitalize }} <span translate-context="Default" translate>Plan subscription</span> (<small ng-show="invoice.BillingCycle === 1" translate-context="Default" translate>Monthly</small><small ng-show="invoice.BillingCycle === 12" translate-context="Default" translate>Annually</small>)
                         </td>
                         <td class="price">
                             {{ invoice.Amount / 100 | currency: invoice.Currency }}
                         </td>
                         <td class="actions">
-                            <button type="button" class="pm_button link" ng-click="display(invoice)">{{ 'DISPLAY_INVOICE' | translate }}</button>
+                            <button type="button" class="pm_button link" ng-click="display(invoice)" translate-context="Default" translate>Display invoice</button>
                         </td>
                     </tr>
                 </tbody>

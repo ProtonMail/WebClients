@@ -8,7 +8,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettextCatalog,
     $filter,
     $window,
     $cookies,
@@ -41,7 +41,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
         $scope.Math = window.Math;
-        $scope.CONSTANTS = CONSTANTS;
+        $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || "-date";
         $scope.page = parseInt($stateParams.page || 1);
@@ -301,7 +301,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
             deferred.resolve(elements);
         }, function(error) {
-            notify({message: 'Error during quering conversations', classes: 'notification-danger'}); // TODO translate
+            notify({message: gettextCatalog.getString('Error during quering conversations', null, 'Error'), classes: 'notification-danger'});
             $log.error(error);
         });
 
@@ -603,7 +603,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 Setting.setViewlayout({ViewLayout: newLayout})
                 .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
-                            notify({message: $translate.instant('LAYOUT_SAVED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Layout saved', null, 'Default'), classes: 'notification-success'});
                             $rootScope.mobileMode = false;
                             $rootScope.layoutMode = mode;
                             authentication.user.ViewLayout = newLayout;
@@ -861,8 +861,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} mailbox
      */
     $scope.empty = function(mailbox) {
-        var title = $translate.instant('CONFIRMATION');
-        var message = $translate.instant('ARE_YOU_SURE?') + ' ' + $translate.instant('THIS_CANNOT_BE_UNDONE.');
+        var title = gettextCatalog.getString('Confirmation', null, 'Default');
+        var message = gettextCatalog.getString('Are you sure?') + ' ' + gettextCatalog.getString('This cannot be undone.', null, 'Default');
         var promise;
 
         if(['drafts', 'spam', 'trash'].indexOf(mailbox) !== -1) {
@@ -889,7 +889,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                                     // Close modal
                                     confirmModal.deactivate();
                                     // Notify user
-                                    notify({message: $translate.instant('FOLDER_EMPTIED'), classes: 'notification-success'});
+                                    notify({message: gettextCatalog.getString('Folder emptied', null, 'Default'), classes: 'notification-success'});
                                 },
                                 function(error) {
                                     notify({message: 'Error during the empty request', classes: 'notification-danger'});

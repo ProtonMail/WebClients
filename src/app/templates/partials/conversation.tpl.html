@@ -2,7 +2,7 @@
     <span class="pm_buttons starButton">
         <a
         ng-click="toggleStar(conversation)"
-        pt-tooltip="{{ 'STAR_CONVERSATION' | translate }}"
+        pt-tooltip="{{ 'Star conversation' | translate }}"
         class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}">
         </a>
     </span>
@@ -12,7 +12,7 @@
     </h1>
     <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
         <p ng-show="nonTrashed() && inTrash === true" class="alert">
-            {{ 'CONVERSATION_TRASH_MESSAGES' | translate }}
+            {{ 'This conversation contains non-trashed messages.' | translate }}
             <a href="#" ng-click="toggleNonTrashed()">
                 <span ng-show="showNonTrashed === true">Hide non trashed messages</span>
                 <span ng-hide="showNonTrashed === true">Show non trashed messages</span>

@@ -99,18 +99,6 @@ module.exports = function(grunt) {
             }
         },
 
-        i18nextract: {
-            default_options: {
-                src: ["<%= app_files.js %>", "<%= app_files.atpl %>", "<%= app_files.ctpl %>", "<%= app_files.html %>"],
-                dest: "src/assets/locales",
-                lang: ['fr_FR', 'en_US', 'de_DE', 'it_IT', 'es_ES', 'nl_NL'],
-                defaultLang: "en_US",
-                prefix: "",
-                suffix: ".json",
-                stringifyOptions: true // the output will be sort (case insensitive)
-            }
-        },
-
         clean: {
             build: [
                 "<%= build_dir %>"
@@ -285,14 +273,6 @@ module.exports = function(grunt) {
                 },
                 src: ["<%= app_files.atpl %>"],
                 dest: "<%= build_dir %>/src/app/templates/templates-app.js"
-            },
-
-            common: {
-                options: {
-                    base: "src/common"
-                },
-                src: ["<%= app_files.ctpl %>"],
-                dest: "<%= build_dir %>/src/app/templates/templates-common.js"
             }
         },
 
@@ -423,11 +403,6 @@ module.exports = function(grunt) {
                 files: ["<%= build_dir %>/assets/**/*.css"]
             },
 
-            tpls: {
-                files: ["<%= app_files.atpl %>", "<%= app_files.ctpl %>"],
-                tasks: ["html2js"]
-            },
-
             jssrc: {
                 files: ["<%= app_files.js %>"],
                 tasks: ["jshint", "copy:build_appjs", "index:build"]
@@ -487,6 +462,25 @@ module.exports = function(grunt) {
                     delay: 3000
                 }
             }
+        },
+
+        nggettext_extract: {
+            pot: {
+                files: {
+                    'po/template.pot': ['<%= app_files.js %>', '<%= app_files.atpl %>', '<%= app_files.html %>']
+                }
+            }
+        },
+
+        nggettext_compile: {
+            all: {
+                options: {
+                    module: 'proton'
+                },
+                files: {
+                    'src/app/translations.js': ['po/*.po']
+                }
+            }
         }
     };
 
@@ -494,9 +488,9 @@ module.exports = function(grunt) {
     grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
 
     // Load the grunt plugins
-    grunt.loadNpmTasks('grunt-angular-translate');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-ng-constant');
+    grunt.loadNpmTasks('grunt-angular-gettext');
 
     grunt.renameTask('watch', 'delta');
 
@@ -507,11 +501,6 @@ module.exports = function(grunt) {
         'jshint',
         'connect:watch',
         'delta'
-    ]);
-
-    // Extract translate keys from HTML and JS files
-    grunt.registerTask('extract', [
-        'i18nextract'
     ]);
 
     grunt.registerTask('deploy', [
@@ -533,6 +522,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'clean:build',
+        'nggettext_extract', // extract key inside JS and HTML files
+        'nggettext_compile', // transform po file to translations.js
         'html2js',
         'sass:build',
         'concat:build_css',

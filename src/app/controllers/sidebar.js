@@ -8,7 +8,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettextCatalog,
     $filter,
     authentication,
     cache,

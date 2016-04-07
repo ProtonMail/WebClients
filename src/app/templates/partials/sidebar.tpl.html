@@ -1,63 +1,63 @@
 <section class="pm_opensans sidebar" ng-controller="SidebarController" ng-hide="mobileMode || !sidebarMode">
 
     <a class="compose pm_button primary" ng-click="compose()">
-        <i class="fa fa-pencil"></i> {{ 'COMPOSE' | translate }}
+        <i class="fa fa-pencil"></i> {{ 'Compose' | translate }}
     </a>
 
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <a href="/inbox" title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox');">
-                <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.inbox.**' | includedByState"></button>
+            <a href="/inbox" title="{{ 'Inbox' | translate }}" ng-click="goTo('secured.inbox');">
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.inbox.**' | includedByState"></button>
                 <i class="fa fa-inbox"></i>
-                <span>{{ 'INBOX' | translate }}</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Inbox</span>
                 <em ng-bind="unread('inbox')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
-            <a href="/drafts" title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts')">
-                <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.drafts.**' | includedByState"></button>
+            <a href="/drafts" title="{{ 'Drafts' | translate }}" ng-click="goTo('secured.drafts')">
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.drafts.**' | includedByState"></button>
                 <i class="fa fa-file-text-o"></i>
-                <span>{{ 'DRAFTS' | translate }}</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Drafts</span>
                 <em ng-bind="unread('drafts')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
-            <a href="/sent" title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent')">
-                <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.sent.**' | includedByState"></button>
+            <a href="/sent" title="{{ 'Sent' | translate }}" ng-click="goTo('secured.sent')">
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.sent.**' | includedByState"></button>
                 <i class="fa fa-send"></i>
-                <span>{{ 'SENT' | translate }}</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Sent</span>
                 <em ng-bind="unread('sent')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
-            <a href="/starred" title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred')">
-                <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.starred.**' | includedByState"></button>
+            <a href="/starred" title="{{ 'Starred' | translate }}" ng-click="goTo('secured.starred')">
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.starred.**' | includedByState"></button>
                 <i class="fa fa-star-o"></i>
-                <span>{{ 'STARRED' | translate }}</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Starred</span>
                 <em ng-bind="unread('starred')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
-            <a href="/archive" title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive')">
-                <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.archive.**' | includedByState"></button>
+            <a href="/archive" title="{{ 'Archive' | translate }}" ng-click="goTo('secured.archive')">
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.archive.**' | includedByState"></button>
                 <i class="fa fa-archive"></i>
-                <span>{{ 'ARCHIVE' | translate }}</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Archive</span>
                 <em ng-bind="unread('archive')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
-            <a href="/spam" title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam')">
-                <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.spam.**' | includedByState"></button>
+            <a href="/spam" title="{{ 'Spam' | translate }}" ng-click="goTo('secured.spam')">
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.spam.**' | includedByState"></button>
                 <i class="fa fa-ban"></i>
-                <span>{{ 'SPAM' | translate }}</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Spam</span>
                 <em ng-bind="unread('spam')"></em>
             </a>
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
-            <a href="/trash" title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash')">
-                <button class="fa fa-repeat pull-right refresh" title="{{ 'REFRESH' | translate }}" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.trash.**' | includedByState"></button>
+            <a href="/trash" title="{{ 'Trash' | translate }}" ng-click="goTo('secured.trash')">
+                <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.trash.**' | includedByState"></button>
                 <i class="fa fa-trash-o"></i>
-                <span>{{ 'TRASH' | translate }}</span>
+                <span translate-context="Noun" translate-comment="Folder name" translate>Trash</span>
                 <em ng-bind="unread('trash')"></em>
             </a>
         </li>
@@ -67,7 +67,7 @@
         <li>
             <a ui-sref="secured.labels">
                 <i class="fa fa-cog"></i>
-                <span id="tour-label-settings">{{ 'LABEL_SETTINGS' | translate }}</span>
+                <span id="tour-label-settings" translate>Label settings</span>
             </a>
         </li>
     </ul>
@@ -108,11 +108,11 @@
         <div class="wrap">
             <div class="link" ng-show="user.Role === 0 || user.Role === 2">
                 <a ui-sref="secured.dashboard">
-                    {{ 'UPGRADE_STORAGE' | translate }}
+                    {{ 'Upgrade storage' | translate }}
                 </a>
             </div>
             <div class="storage text-center">
-                <strong title="{{ 'STORAGE' | translate }}" ng-bind="storageString()"></strong>
+                <strong title="{{ 'Storage' | translate }}" ng-bind="storageString()"></strong>
             </div>
             <div class="bar">
                 <em style="width: {{ storagePercentage() }}%"></em>

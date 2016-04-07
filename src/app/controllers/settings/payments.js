@@ -2,7 +2,7 @@ angular.module('proton.controllers.Settings')
 
 .controller('PaymentsController', function(
     $scope,
-    $translate,
+    gettextCatalog,
     $q,
     authentication,
     cardModal,
@@ -81,20 +81,20 @@ angular.module('proton.controllers.Settings')
         }).then(function(result) {
             if (result.data && result.data.Code === 1000) {
                 $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
-                notify({message: $translate.instant('PAYMENT_METHOD_UPDATED'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Payment method updated', null, 'Default'), classes: 'notification-success'});
             } else if (result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
-                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
         }));
     };
 
     $scope.delete = function(method) {
-        var title = $translate.instant('DELETE_PAYMENT_METHOD');
-        var message = $translate.instant('DELETE_PAYMENT_METHOD_CONFIRMATION');
+        var title = gettextCatalog.getString('Delete payment method', null, 'Default');
+        var message = gettextCatalog.getString('Are you sure you want to delete this payment method?', null, 'Default');
 
         confirmModal.activate({
             params: {
@@ -107,7 +107,7 @@ angular.module('proton.controllers.Settings')
                             if (result.data && result.data.Code === 1000) {
                                 confirmModal.deactivate();
                                 $scope.methods.splice($scope.methods.indexOf(method), 1);
-                                notify({message: $translate.instant('PAYMENT_METHOD_DELETED'), classes: 'notification-success'});
+                                notify({message: gettextCatalog.getString('Payment method deleted', null, 'Default'), classes: 'notification-success'});
                             } else if (result.data && result.data.Error) {
                                 confirmModal.deactivate();
                                 notify({message: result.data.Error, classes: 'notification-danger'});
@@ -164,7 +164,7 @@ angular.module('proton.controllers.Settings')
          networkActivityTracker.track($q.all(promises)
          .then(function(result) {
              if (result.methods.data.PaymentMethods.length === 0 && authentication.user.Credit < result.check.data.AmountDue) {
-                 notify({message: $translate.instant('ADD_METHOD_FIRST'), classes: 'notification-danger'});
+                 notify({message: gettextCatalog.getString('Please add a payment method first', null, 'Error'), classes: 'notification-danger'});
              } else {
                  payModal.activate({
                      params: {

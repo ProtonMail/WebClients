@@ -17,7 +17,7 @@ angular.module("proton.transformation", [])
     };
 })
 
-.directive('hideFirstBlockquote', function($timeout, $translate) {
+.directive('hideFirstBlockquote', function($timeout, gettext) {
     return {
         restrict: 'A',
         link: function(scope, element, attributes) {
@@ -44,7 +44,7 @@ angular.module("proton.transformation", [])
 
                     if (parent.text().replace(/\s+/g, '').length > 0) {
                         var button = angular.element('<button/>', {
-                            title: $translate.instant('SHOW_PREVIOUS_MESSAGE'),
+                            title: gettextCatalog.getString('Show previous message', null, 'Default'),
                             class: 'fa fa-ellipsis-h pm_button more',
                             click: function () {
                                 if(angular.element(blockquote).is(':visible')) {
