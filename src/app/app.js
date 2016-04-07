@@ -159,23 +159,17 @@ angular.module('proton', [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
-.run(function (gettextCatalog) {
-    gettextCatalog.setCurrentLanguage('en_US'); // Corresponds au header 'Language' du fichier .po;
-    gettextCatalog.debug = true;
+.run(function (CONFIG, gettextCatalog) {
+    var locale = window.navigator.userLanguage || window.navigator.language;
+
+    gettextCatalog.setCurrentLanguage('en_US');
+    gettextCatalog.debug = CONFIG.debug || false;
+    moment.locale(locale);
 })
 
 .run(function(CONSTANTS) {
     // This function clears junk from session storage. Should not be needed forever
     try {
-        var defaultLanguage = 'en';
-        var preferredLanguage = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage || defaultLanguage;
-        var locales = {
-            fr: 'fr_FR',
-            en: 'en_US',
-            de: 'de_DE',
-            es: 'es_ES',
-            it: 'it_IT'
-        };
         var whitelist = [
             CONSTANTS.EVENT_ID,
             CONSTANTS.MAILBOX_PASSWORD_KEY,
@@ -198,7 +192,6 @@ angular.module('proton', [
         }
 
         window.sessionStorage.clear();
-        moment.locale(preferredLanguage);
 
         for (var key in data) {
             window.sessionStorage.setItem(key, data[key]);

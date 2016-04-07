@@ -59,10 +59,6 @@ angular.module("proton.controllers.Secured", [])
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 
-    $scope.$on('updateUser', function(event) {
-        gettextCatalog.setCurrentLanguage(authentication.user.Language);
-    });
-
     $scope.$on('organizationChange', function(event, organization) {
         $scope.organization = organization;
     });

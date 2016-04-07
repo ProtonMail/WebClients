@@ -5,6 +5,7 @@ angular.module("proton.controllers.Settings")
     $rootScope,
     $scope,
     $state,
+    $window,
     gettextCatalog,
     $q,
     authentication,
@@ -107,10 +108,7 @@ angular.module("proton.controllers.Settings")
 
         Setting.setLanguage({Language: lang})
         .then(function(result) {
-            gettextCatalog.setCurrentLanguage(lang)
-            .then(function(result) {
-                notify(gettextCatalog.getString('Default language changed', null, 'Default'));
-            });
+            $window.location.reload();
         });
     };
 
