@@ -17,7 +17,6 @@ angular.module('proton', [
 
     // templates
     'templates-app',
-    'templates-common',
 
     // App
     'proton.routes',
