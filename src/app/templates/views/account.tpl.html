@@ -7,11 +7,11 @@
         <div class="row">
 
             <section class="setting pm_form">
-                <legend translate>Default identity</legend>
+                <legend translate-context="Default" translate>Default identity</legend>
                 <form method="post" ng-submit="saveIdentity(displayNameForm)" name="displayNameForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="displayName" translate>Display name <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank" class="text-purple"><i class="fa fa-info-circle"></i></a></label>
+                            <label for="displayName" translate-context="Default" translate>Display name <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank" class="text-purple"><i class="fa fa-info-circle"></i></a></label>
                         </div>
                         <div class="col right">
                             <input id="displayName" type="text" name="displayName" ng-model="displayName" />
@@ -19,7 +19,7 @@
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="signature" translate>Signature</label>
+                            <label for="signature" translate-context="Default" translate>Signature</label>
                         </div>
                         <div class="col right">
                             <squire id="signature" name="signature" class="form-control no-resize" ng-model="signature"></squire>
@@ -28,19 +28,19 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <a ui-sref="secured.addresses" class="pm_button link pull-right" translate>Others identities</a>
-                            <button class="pm_button primary" type="submit" translate>Save</button>
+                            <a ui-sref="secured.addresses" class="pm_button link pull-right" translate-context="Default" translate>Others identities</a>
+                            <button class="pm_button primary" type="submit" translate-context="Default" translate>Save</button>
                         </div>
                     </div>
                 </form>
             </section>
 
             <section class="setting pm_form pull-right">
-                <legend translate>Notifications</legend>
+                <legend translate-context="Default" translate>Notifications</legend>
                 <form method="post" name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate  >
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="noticeePassword" translate>Current login password</label>
+                            <label for="noticeePassword" translate-context="Default" translate>Current login password</label>
                         </div>
                         <div class="col right">
                             <input type="password" autocomplete="off" placeholder="{{ 'Current login password' | translate }}" required ng-model="noticeePassword" id="noticeePassword" />
@@ -48,19 +48,19 @@
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="notificationEmail" translate>Recovery email</label>
+                            <label for="notificationEmail" translate-context="Default" translate>Recovery email</label>
                         </div>
                         <div class="col right">
                             <input class="margin" type="email" id="notificationEmail" name="notificationEmail" placeholder="{{ 'Notification email' | translate }}" ng-model="notificationEmail" />
                             <p class="help-block"><small><i class="fa fa-info-circle"></i> {{ 'Also used to reset a forgotten password.' | translate }}</small></p>
 
-                            <button class="pm_button primary" type="submit" translate>Save</button>
+                            <button class="pm_button primary" type="submit" translate-context="Default" translate>Save</button>
                         </div>
                     </div>
                     <div class="clearfix">&nbsp;</div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label translate>Daily email notifications</label>
+                            <label translate-context="Default" translate>Daily email notifications</label>
                         </div>
                         <div class="col right">
                             <div class="radio">
@@ -74,11 +74,11 @@
                                 </label>
                             </div>
                             <p>
-                                <a href="https://protonmail.com/blog/notification-emails/" target="_blank" class="pm_button link" translate>How does this work?</a>
+                                <a href="https://protonmail.com/blog/notification-emails/" target="_blank" class="pm_button link" translate-context="Default" translate>How does this work?</a>
                             </p>
                         </div>
                     </div>
-                    <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger" translate>Invalid email.</p>
+                    <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger" translate-context="Default" translate>Invalid email.</p>
                 </form>
             </section>
 
@@ -87,108 +87,108 @@
         <div class="row">
 
             <section class="setting pm_form">
-                <legend translate>Login password</legend>
+                <legend translate-context="Default" translate>Login password</legend>
                 <form method="post" ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="oldLoginPassword" translate>Current password</label>
+                            <label for="oldLoginPassword" translate-context="Default" translate>Current password</label>
                         </div>
                         <div class="col right">
                             <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder="{{ 'Current password' | translate }}" required />
                             <div ng-messages="loginForm.oldLoginPassword.$error" class="text-red" ng-if="loginForm.oldLoginPassword.$touched">
-                                <p ng-message="required" translate>Field required</p>
+                                <p ng-message="required" translate-context="Default" translate>Field required</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="newLoginPassword" translate>New password</label>
+                            <label for="newLoginPassword" translate-context="Default" translate>New password</label>
                         </div>
                         <div class="col right">
                             <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder="{{ 'New password' | translate }}" required />
                             <div ng-messages="loginForm.newLoginPassword.$error" class="text-red" ng-if="loginForm.newLoginPassword.$touched">
-                                <p ng-message="required" translate>Field required</p>
+                                <p ng-message="required" translate-context="Default" translate>Field required</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label translate>Confirm new password</label>
+                            <label translate-context="Default" translate>Confirm new password</label>
                         </div>
                         <div class="col right">
                             <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder="{{ 'Confirm new password' | translate }}" required class="margin" />
                             <div ng-messages="loginForm.confirmLoginPassword.$error" class="text-red" ng-if="loginForm.confirmLoginPassword.$touched">
-                                <p ng-message="required" translate>Field required</p>
+                                <p ng-message="required" translate-context="Default" translate>Field required</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <button class="pm_button primary" ng-disabled="loginForm.$valid === false || networkActivity.loading()" type="submit" translate>Save</button>
+                            <button class="pm_button primary" ng-disabled="loginForm.$valid === false || networkActivity.loading()" type="submit" translate-context="Default" translate>Save</button>
                         </div>
                     </div>
                 </form>
             </section>
 
             <section class="setting pm_form pull-right">
-                <legend translate>Mailbox password</legend>
+                <legend translate-context="Default" translate>Mailbox password</legend>
                 <form method="post" ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="currentLoginPassword" translate>Current login password</label>
+                            <label for="currentLoginPassword" translate-context="Default" translate>Current login password</label>
                         </div>
                         <div class="col right">
                             <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder="{{ 'Current login password' | translate }}" required="" />
                             <div ng-messages="mailboxForm.currentLoginPassword.$error" class="text-red" ng-if="mailboxForm.currentLoginPassword.$touched">
-                                <p ng-message="required" translate>Field required</p>
+                                <p ng-message="required" translate-context="Default" translate>Field required</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="oldMailboxPassword" translate>Current mailbox password</label>
+                            <label for="oldMailboxPassword" translate-context="Default" translate>Current mailbox password</label>
                         </div>
                         <div class="col right">
                             <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" placeholder="{{ 'Current mailbox password' | translate }}" required="" />
                             <div ng-messages="mailboxForm.oldMailboxPassword.$error" class="text-red" ng-if="mailboxForm.oldMailboxPassword.$touched">
-                                <p ng-message="required" translate>Field required</p>
+                                <p ng-message="required" translate-context="Default" translate>Field required</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="newMailboxPassword" translate>New mailbox password</label>
+                            <label for="newMailboxPassword" translate-context="Default" translate>New mailbox password</label>
                         </div>
                         <div class="col right">
                             <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder="{{ 'New mailbox password' | translate }}" required="" />
                             <div ng-messages="mailboxForm.newMailboxPassword.$error" class="text-red" ng-if="mailboxForm.newMailboxPassword.$touched">
-                                <p ng-message="required" translate>Field required</p>
+                                <p ng-message="required" translate-context="Default" translate>Field required</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="confirmMailboxPassword" translate>Confirm new mailbox password</label>
+                            <label for="confirmMailboxPassword" translate-context="Default" translate>Confirm new mailbox password</label>
                         </div>
                         <div class="col right">
                             <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="{{ 'Confirm new mailbox password' | translate }}" class="margin" required="" />
                             <div ng-messages="mailboxForm.confirmMailboxPassword.$error" class="text-red" ng-if="mailboxForm.confirmMailboxPassword.$touched">
-                                <p ng-message="required" translate>Field required</p>
+                                <p ng-message="required" translate-context="Default" translate>Field required</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <button class="pm_button primary" ng-disabled="mailboxForm.$valid === false || networkActivity.loading()" type="submit" translate>Save</button>
+                            <button class="pm_button primary" ng-disabled="mailboxForm.$valid === false || networkActivity.loading()" type="submit" translate-context="Default" translate>Save</button>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
                             <p>
-                                <a href="https://protonmail.com/support/knowledge-base/resetting-mailbox-password/" target="_blank pull-left" class="pm_button link pull-left" translate>How does this work?</a>
+                                <a href="https://protonmail.com/support/knowledge-base/resetting-mailbox-password/" target="_blank pull-left" class="pm_button link pull-left" translate-context="Default" translate>How does this work?</a>
                             </p>
                         </div>
                     </div>
@@ -200,10 +200,10 @@
         <div class="row">
 
             <section class="setting pm_form">
-                <legend translate>Autosave contact list</legend>
+                <legend translate-context="Default" translate>Autosave contact list</legend>
                 <div class="clearfix">
                     <div class="col left">
-                        <label translate>Autosave contacts</label>
+                        <label translate-context="Default" translate>Autosave contacts</label>
                     </div>
                     <div class="col right">
                         <div class="radio">
@@ -224,11 +224,11 @@
             </section>
 
             <section class="setting pm_form pull-right">
-                <legend translate>Email images</legend>
+                <legend translate-context="Default" translate>Email images</legend>
                 <form method="post" novalidate ng-submit="saveShowImages(showImages)" name="showImages">
                     <div class="clearfix">
                         <div class="col left">
-                            <label class="control-label" translate>Show images</label>
+                            <label class="control-label" translate-context="Default" translate>Show images</label>
                         </div>
                         <div class="col right">
                             <div class="radio">
@@ -242,7 +242,7 @@
                                 </label>
                             </div>
                             <p>
-                                <a target="_blank" href="https://protonmail.com/support/knowledge-base/images-by-default/" class="pm_button link" translate>How does this work?</a>
+                                <a target="_blank" href="https://protonmail.com/support/knowledge-base/images-by-default/" class="pm_button link" translate-context="Default" translate>How does this work?</a>
                             </p>
                         </div>
                     </div>
@@ -254,9 +254,9 @@
 
         <div class="row">
             <section class="setting pm_form">
-                <legend translate>Delete account</legend>
-                <p ng-show="user.Subscribed === 1" class="alert alert-info"><i class="fa fa-info-circle"></i> {{ 'You must unsubscribe before requesting deletion of your account.' | translate }}</p>
-                <button ng-show="user.Subscribed === 0" class="pm_button error" ng-click="deleteAccount()" translate>Delete your account</button>
+                <legend translate-context="Default" translate>Delete account</legend>
+                <p ng-show="user.Subscribed === 1" class="alert alert-info"><i class="fa fa-info-circle"></i> <span translate-context="Default" translate>You must unsubscribe before requesting deletion of your account.</span></p>
+                <button ng-show="user.Subscribed === 0" class="pm_button error" ng-click="deleteAccount()" translate-context="Default" translate>Delete your account</button>
             </section>
         </div>
     </div>
