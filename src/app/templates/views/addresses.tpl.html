@@ -1,20 +1,20 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings">
-        <p class="alert alert-info" ng-if="mobileMode" translate-context="Default" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
+        <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
         <div class="row" id="settingsAddresses">
             <section class="setting full pm_form">
                 <legend>
-                    <span class="pull-right small" ng-show="organization">{{ organization.UsedAddresses }} / <span translate-context="Default" translate-comment="addresses page. how many addresses are in use" translate>{{ organization.MaxAddresses }} addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" translate-context="Default" translate>Upgrade your plan</a></span>
-                    <span translate-context="Default" translate>Addresses</span>
+                    <span class="pull-right small" ng-show="organization">{{ organization.UsedAddresses }} / <span translate-context="Default" translate-comment="addresses page. how many addresses are in use" translate>{{ organization.MaxAddresses }} addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" translate-context="Action" translate-comment="link to dashboard page" translate>Upgrade your plan</a></span>
+                    <span translate-context="Title" translate translate-comment="page heading">Addresses</span>
                 </legend>
                 <div class="margin" ng-show="isAdmin === true">
                     <a class="pm_button primary" ng-click="add()" translate-context="Action" translate-comment="addresses page" translate>Add ProtonMail address</a>
                     <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate-comment="addresses page" translate>Add custom domain address</a>
                 </div>
-                <p class="alert alert-info" translate-context="Default" translate>Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted. <a href='https://protonmail.com/support/knowledge-base/aliases-within-protonmail/' target='_blank'>Learn more about addresses here</a>.</p>
+                <p class="alert alert-info" translate-context="Info" translate translate-comment="informs the user about permanance of custom addresses">Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted. <a href='https://protonmail.com/support/knowledge-base/aliases-within-protonmail/' target='_blank'>Learn more about addresses here</a>.</p>
                 <label>
-                    <span class="help-block pull-right small"><small><i class="fa fa-info-circle"></i> <span translate-context="Default" translate>You can drag and drop addresses to order them.</span></small></span>
+                    <span class="help-block pull-right small"><small><i class="fa fa-info-circle"></i> <span translate-context="Info" translate>You can drag and drop addresses to order them.</span></small></span>
                     <strong translate-context="Title" translate-comment="heading for active addresses listing" translate>Active addresses</strong>
                 </label>
                 <div class="pm_sort">
@@ -29,8 +29,8 @@
                                     <span class="pm_badge primary" ng-show="$first" translate-context="Default" translate>Main</span>
                                 </div>
                                 <div class="col-1-3 text-right">
-                                    <button class="pm_button link" ng-click="identity(address)" translate-context="Default" translate>Edit identity</button>
-                                    <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="disable(address)" translate-context="Default" translate>Disable</button>
+                                    <button class="pm_button link" ng-click="identity(address)" translate-context="Action" translate>Edit identity</button>
+                                    <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="disable(address)" translate-context="Action" translate>Disable</button>
                                 </div>
                             </span>
                         </li>
@@ -38,7 +38,7 @@
                 </div>
                 <p></p>
                 <label ng-show="disabledAddresses.length > 0">
-                    <strong translate-context="Default" translate>Inactive addresses</strong>
+                    <strong translate-context="Title" translate>Inactive addresses</strong>
                 </label>
                 <div class="pm_sort">
                     <ul>
@@ -51,17 +51,17 @@
                                     <span class="pm_badge warning" ng-show="address.DomainID === null" translate-context="Default" translate>Orphan</span>
                                 </div>
                                 <div class="col-1-3 text-right">
-                                    <button type="button" class="pm_button link" ng-show="address.HasKeys === 0 && address.Status === 1" ng-click="generate(address)" translate-context="Default" translate>Generate missing keys</button>
-                                    <button class="pm_button link" ng-click="identity(address)" translate-context="Default" translate>Identity</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)" translate-context="Default" translate>Enable</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type === 3 && isAdmin === true" ng-click="disable(address)" translate-context="Default" translate>Disable</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3 && isAdmin === true" ng-click="delete(address)" translate-context="Default" translate>Delete</button>
+                                    <button type="button" class="pm_button link" ng-show="address.HasKeys === 0 && address.Status === 1" ng-click="generate(address)" translate-context="Action" translate>Generate missing keys</button>
+                                    <button class="pm_button link" ng-click="identity(address)" translate-context="Action" translate>Identity</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)" translate-context="Action" translate>Enable</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type === 3 && isAdmin === true" ng-click="disable(address)" translate-context="Action" translate>Disable</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3 && isAdmin === true" ng-click="delete(address)" translate-context="Action" translate>Delete</button>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <p class="alert alert-info" ng-show="isFree === true" translate-context="Default" translate>To add more addresses to your account, or to use your own domain, upgrade your account.</p>
+                <p class="alert alert-info" ng-show="isFree === true" translate-context="Info" translate>To add more addresses to your account, or to use your own domain, upgrade your account.</p>
             </section>
         </div>
     </div>
