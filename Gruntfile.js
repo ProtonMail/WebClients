@@ -516,11 +516,6 @@ module.exports = function(grunt) {
         'delta'
     ]);
 
-    // Extract translate keys from HTML and JS files
-    grunt.registerTask('extract', [
-        'nggettext_extract'
-    ]);
-
     grunt.registerTask('deploy', [
         'clean:dist', // clean dist directory
         'shell:setup_dist',
