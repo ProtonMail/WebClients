@@ -204,11 +204,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 copy.Body = content;
                 $rootScope.$broadcast('loadMessage', copy);
             }, function(error) {
-                notify({message: 'Error during the decryption of the message', classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during the decryption of the message', null, 'Error'), classes: 'notification-danger'});
                 $log.error(error); // TODO send to back-end
             });
         }, function(error) {
-            notify({message: 'Error during the getting message', classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Error during the getting message', null, 'Error'), classes: 'notification-danger'});
             $log.error(error); // TODO send to back-end
         });
     };
@@ -279,7 +279,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             params: {
                 title: gettextCatalog.getString('Download', null, 'Default'),
                 alert: 'alert-warning',
-                message: 'Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', // TODO translate
+                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'),
                 ok: function() {
                     alertModal.deactivate();
                 }

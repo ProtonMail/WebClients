@@ -822,7 +822,7 @@ angular.module('proton.routes', [
                     if (user.Delinquent < 3) {
                         deferred.resolve();
                     } else {
-                        notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Error'), classes: 'notification-danger'});
                         $state.go('secured.payments');
                         deferred.reject();
                     }

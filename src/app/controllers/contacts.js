@@ -130,7 +130,7 @@ angular.module("proton.controllers.Contacts", [
 
     $scope.deleteAllContacts = function() {
         var title = gettextCatalog.getString('Delete all', null, 'Default');
-        var message = 'Are you sure you want to delete all your contacts?'; // TODO translate
+        var message = gettextCatalog.getString('Are you sure you want to delete all your contacts?', null, 'Default');
 
         confirmModal.activate({
             params: {
@@ -204,7 +204,7 @@ angular.module("proton.controllers.Contacts", [
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match) {
-                notify("Contact exists for this email address"); // TODO translate
+                notify(gettextCatalog.getString('Contact exists for this email address', null, 'Default');
                 contactModal.deactivate();
             } else {
                 var newContact = {
@@ -329,7 +329,7 @@ angular.module("proton.controllers.Contacts", [
                     var importContacts;
 
                     if( angular.isUndefined(files) || files.length === 0 ) {
-                        notify({message: gettextCatalog.getString('No files were selected', null, 'Default'), classes: 'notification-danger'}); //TODO translate
+                        notify({message: gettextCatalog.getString('No files were selected', null, 'Error'), classes: 'notification-danger'}); //TODO translate
                         return;
                     }
 
@@ -387,7 +387,7 @@ angular.module("proton.controllers.Contacts", [
                                 }
                             });
                         } else {
-                            notify({message: gettextCatalog.getString('Invalid file type', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Invalid file type', null, 'Error'), classes: 'notification-danger'});
                         }
                     };
 
@@ -443,7 +443,7 @@ angular.module("proton.controllers.Contacts", [
             params: {
                 title: gettextCatalog.getString('Download', null, 'Default'),
                 alert: 'alert-warning',
-                message: 'Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', // TODO translate
+                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'), 
                 ok: function() {
                     alertModal.deactivate();
                 }

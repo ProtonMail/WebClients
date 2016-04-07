@@ -137,7 +137,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) ||
             ($scope.messages.length === 1 && $rootScope.mobileMode === true)
         ) {
-            notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Default'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger'});
         } else {
             var message = new Message();
             $scope.initMessage(message, false);
@@ -551,7 +551,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.maximized = true;
             if ($scope.messages.length > 0) {
                 notify.closeAll();
-                notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Default'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger'});
                 return;
             }
         }

@@ -18,7 +18,7 @@ angular.module("proton.controllers.Settings")
 
     // Drag and Drop configuration
     $scope.labelsDragControlListeners = {
-        containment: "#labelContainer",
+        containment: '#labelContainer',
         accept: function(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
@@ -112,10 +112,10 @@ angular.module("proton.controllers.Settings")
                             } else {
                                 label.Name = origName;
                                 label.Color = origColor;
-                                notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
+                                notify({message: gettextCatalog.getString('Error during label request', null, 'Error'), classes: 'notification-danger'});
                             }
                         }, function(error) {
-                            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
                             $log.error(error);
                         })
                     );
@@ -149,11 +149,11 @@ angular.module("proton.controllers.Settings")
                                 } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
                                     notify({message: data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
+                                    notify({message: gettextCatalog.getString('Error during label request', null, 'Error'), classes: 'notification-danger'});
                                 }
                             },
                             function(error) {
-                                notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
+                                notify({message: gettextCatalog.getString('Error during label request', null, 'Error'), classes: 'notification-danger'});
                             }
                         )
                     );
@@ -178,11 +178,11 @@ angular.module("proton.controllers.Settings")
                     notify({message: data.Error, classes: 'notification-danger'});
                     $log.error(result);
                 } else {
-                    notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Error during label request', null, 'Error'), classes: 'notification-danger'});
                     $log.error(result);
                 }
             }, function(error) {
-                notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during label request', null, 'Error'), classes: 'notification-danger'});
                 $log.error(error);
             })
         );
@@ -203,11 +203,11 @@ angular.module("proton.controllers.Settings")
                 notify({message: data.Error, classes: 'notification-danger'});
                 $log.error(result);
             } else {
-                notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during label request', null, 'Error'), classes: 'notification-danger'});
                 $log.error(result);
             }
         }, function(error) {
-            notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Error during label request', null, 'Error'), classes: 'notification-danger'});
             $log.error(error);
         });
     };

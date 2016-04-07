@@ -32,7 +32,7 @@ angular.module("proton.controllers.Settings")
                     $scope.haveLogs = true;
                 },
                 function(error) {
-                    notify({message: gettextCatalog.getString('Error during the initialization of logs', null, 'Default'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Error during the initialization of logs', null, 'Error'), classes: 'notification-danger'});
                     $log.error(error);
                 }
             )
@@ -56,7 +56,7 @@ angular.module("proton.controllers.Settings")
                                 notify({message: gettextCatalog.getString('Logs cleared', null, 'Default'), classes: 'notification-success'});
                             },
                             function(error) {
-                                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Default'), classes: 'notification-danger'});
+                                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
                                 $log.error(error);
                             }
                         )
@@ -93,7 +93,7 @@ angular.module("proton.controllers.Settings")
         if (value === 0) {
             confirmModal.activate({
                 params: {
-                    message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Default'), // TODO translate
+                    message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Default'),
                     confirm: function() {
                         Setting.setLogging({LogAuth: 0});
                         $scope.doLogging = 0;

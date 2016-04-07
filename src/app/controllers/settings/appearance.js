@@ -43,7 +43,7 @@ angular.module("proton.controllers.Settings")
                     notify({message: result.data.Error, classes: 'notification-danger'});
                     deferred.reject();
                 } else {
-                    notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Default'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
                     deferred.reject();
                 }
             })

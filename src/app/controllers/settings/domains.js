@@ -179,10 +179,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettextCatalog.getString('Error during Deletion', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during Deletion', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('Error during Deletion', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during Deletion', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -253,10 +253,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettextCatalog.getString('Error during deletion', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('Error during deletion', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -277,10 +277,10 @@ angular.module("proton.controllers.Settings")
             } else if(angular.isDefined(result.data) && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
-                notify({message: gettextCatalog.getString('Error during enable request', null, 'Default'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during enable request', null, 'Error'), classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: gettextCatalog.getString('Error during enable request', null, 'Default'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Error during enable request', null, 'Error'), classes: 'notification-danger'});
         }));
     };
 
@@ -301,10 +301,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettextCatalog.getString('Error during disable request', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during disable request', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('Error during disable request', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during disable request', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -334,10 +334,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettextCatalog.getString('Error during creation', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during creation', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('Error during creation', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during creation', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 next: function() {
@@ -381,14 +381,10 @@ angular.module("proton.controllers.Settings")
                             // 0 is default, 1 is has code but wrong, 2 is good
                             switch (result.data.Domain.VerifyState) {
                                 case 0:
-                                    notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Default'), classes: 'notification-danger'});
+                                    notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                                     break;
                                 case 1:
-                                    notify({
-                                        message: gettextCatalog.getString('Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 1 hour for changes to take affect.', null, 'Default'),
-                                        classes: 'notification-danger',
-                                        duration: 30000
-                                    });
+                                    notify({message: gettextCatalog.getString('Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 1 hour for changes to take affect.', null, 'Error'), classes: 'notification-danger', duration: 30000});
                                     break;
                                 case 2:
                                     notify({message: gettextCatalog.getString('Domain verified', null, 'Default'), classes: 'notification-success'});
@@ -403,10 +399,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 next: function() {
@@ -528,10 +524,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 close: function() {

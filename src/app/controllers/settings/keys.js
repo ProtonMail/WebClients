@@ -79,7 +79,7 @@ angular.module("proton.controllers.Settings")
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: 'ERROR_WHILE_SAVING', classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -111,7 +111,7 @@ angular.module("proton.controllers.Settings")
                 notify({message: result.data.Error, classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: 'ERROR_WHILE_SAVING', classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
         }));
     };
 
@@ -146,16 +146,16 @@ angular.module("proton.controllers.Settings")
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Default'), classes: 'notification-danger'});
+                                    notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
                                 }
                             }, function(error) {
-                                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Default'), classes: 'notification-danger'});
+                                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
                             }));
                         }, function(error) {
-                            notify({message: gettextCatalog.getString('Error while encrypting', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error while encrypting', null, 'Error'), classes: 'notification-danger'});
                         });
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('Invalid key password', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Invalid key password', null, 'Error'), classes: 'notification-danger'});
                     });
                 },
                 cancel: function() {

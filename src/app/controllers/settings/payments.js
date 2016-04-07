@@ -85,10 +85,10 @@ angular.module('proton.controllers.Settings')
             } else if (result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
-                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Default'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Default'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
         }));
     };
 
@@ -164,7 +164,7 @@ angular.module('proton.controllers.Settings')
          networkActivityTracker.track($q.all(promises)
          .then(function(result) {
              if (result.methods.data.PaymentMethods.length === 0 && authentication.user.Credit < result.check.data.AmountDue) {
-                 notify({message: gettextCatalog.getString('Please add a payment method first', null, 'Default'), classes: 'notification-danger'});
+                 notify({message: gettextCatalog.getString('Please add a payment method first', null, 'Error'), classes: 'notification-danger'});
              } else {
                  payModal.activate({
                      params: {

@@ -837,7 +837,7 @@ angular.module("proton.modals", [])
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
-                            notify({message: gettextCatalog.getString('Coupon invalid', null, 'Default'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Coupon invalid', null, 'Error'), classes: 'notification-danger'});
                             this.coupon = '';
                         } else {
                             notify({message: gettextCatalog.getString('Coupon accepted', null, 'Default'), classes: 'notification-success'});
@@ -1036,14 +1036,14 @@ angular.module("proton.modals", [])
                         this.domain.Addresses.push(result.data.Address);
                         eventManager.call();
                     } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
-                        notify({message: gettextCatalog.getString('Domain not found', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Domain not found', null, 'Error'), classes: 'notification-danger'});
                     } else if(angular.isDefined(result.data) && result.data.Error) {
                         notify({message: result.data.Error, classes: 'notification-danger'});
                     } else {
-                        notify({message: gettextCatalog.getString('Address created failed', null, 'Default'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Address created failed', null, 'Error'), classes: 'notification-danger'});
                     }
                 }.bind(this), function(error) {
-                    notify({message: gettextCatalog.getString('Address created failed', null, 'Default'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Address created failed', null, 'Error'), classes: 'notification-danger'});
                 });
             }.bind(this);
 

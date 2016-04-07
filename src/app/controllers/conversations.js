@@ -301,7 +301,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
             deferred.resolve(elements);
         }, function(error) {
-            notify({message: 'Error during quering conversations', classes: 'notification-danger'}); // TODO translate
+            notify({message: gettextCatalog.getString('Error during quering conversations', null, 'Error'), classes: 'notification-danger'});
             $log.error(error);
         });
 
