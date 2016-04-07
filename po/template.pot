@@ -94,12 +94,6 @@ msgctxt "Title"
 msgid "Absolute security"
 msgstr ""
 
-#: src/app/controllers/secured.js:224
-#: src/app/controllers/secured.js:31
-msgctxt "Default"
-msgid "Account"
-msgstr ""
-
 #. custom domain menu
 #. custom domain menu select dropdown
 #: src/app/templates/partials/menu.settings.tpl.html:30
@@ -108,8 +102,12 @@ msgctxt "Nav"
 msgid "Account"
 msgstr ""
 
-#. table heading
-#: src/app/templates/views/contacts.tpl.html:35
+#: src/app/controllers/secured.js:224
+#: src/app/controllers/secured.js:31
+msgctxt "Default"
+msgid "Account"
+msgstr ""
+
 #: src/app/templates/views/domains.tpl.html:132
 #: src/app/templates/views/domains.tpl.html:26
 #: src/app/templates/views/invoices.tpl.html:18
@@ -124,10 +122,20 @@ msgctxt "Default"
 msgid "Actions"
 msgstr ""
 
+#. table heading
+#: src/app/templates/views/contacts.tpl.html:35
+msgctxt "Title"
+msgid "Actions"
+msgstr ""
+
 #. heading for active addresses listing
 #: src/app/templates/views/addresses.tpl.html:18
 msgctxt "Title"
 msgid "Active addresses"
+msgstr ""
+
+#: src/app/templates/partials/message.tpl.html:153
+msgid "Add"
 msgstr ""
 
 #. button
@@ -138,10 +146,6 @@ msgstr ""
 #: src/app/templates/views/labels.tpl.html:5
 #: src/app/templates/views/payments.tpl.html:8
 msgctxt "Action"
-msgid "Add"
-msgstr ""
-
-#: src/app/templates/partials/message.tpl.html:153
 msgid "Add"
 msgstr ""
 
@@ -228,6 +232,12 @@ msgctxt "Title"
 msgid "Additional themes (experimental)"
 msgstr ""
 
+#. table heading for the domains page table listing of addresses
+#: src/app/templates/views/domains.tpl.html:130
+msgctxt "Title"
+msgid "Address"
+msgstr ""
+
 #: src/app/templates/modals/alias.tpl.html:11
 #: src/app/templates/modals/domain/address.tpl.html:38
 #: src/app/templates/modals/generate.tpl.html:28
@@ -237,12 +247,6 @@ msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] ""
 msgstr[1] ""
-
-#. table heading for the domains page table listing of addresses
-#: src/app/templates/views/domains.tpl.html:130
-msgctxt "Title"
-msgid "Address"
-msgstr ""
 
 #: src/app/services/modal.js:1035
 msgctxt "Default"
@@ -1288,6 +1292,7 @@ msgstr ""
 #. contacts toolbar menu option
 #: src/app/templates/partials/toolbar-contacts.tpl.html:20
 #: src/app/templates/views/addresses.tpl.html:58
+#: src/app/templates/views/contacts.tpl.html:53
 msgctxt "Action"
 msgid "Delete"
 msgstr ""
@@ -1305,7 +1310,6 @@ msgstr ""
 
 #: src/app/controllers/contacts.js:162
 #: src/app/controllers/contacts.js:165
-#: src/app/templates/views/contacts.tpl.html:53
 #: src/app/templates/views/labels.tpl.html:17
 #: src/app/templates/views/payments.tpl.html:31
 msgctxt "Default"
@@ -1488,15 +1492,15 @@ msgctxt "Default"
 msgid "Domains:"
 msgstr ""
 
-#: src/app/templates/modals/donate.tpl.html:6
-#: src/app/templates/modals/donate.tpl.html:72
-#: src/app/templates/modals/monetize.tpl.html:27
-msgid "Donate"
-msgstr ""
-
 #: src/app/templates/views/dashboard.tpl.html:106
 #: src/app/templates/views/dashboard.tpl.html:111
 msgctxt "Default"
+msgid "Donate"
+msgstr ""
+
+#: src/app/templates/modals/donate.tpl.html:6
+#: src/app/templates/modals/donate.tpl.html:72
+#: src/app/templates/modals/monetize.tpl.html:27
 msgid "Donate"
 msgstr ""
 
@@ -1524,6 +1528,10 @@ msgctxt "Default"
 msgid "Downgrade to Plus"
 msgstr ""
 
+#: src/app/templates/partials/attachments.tpl.html:9
+msgid "Download"
+msgstr ""
+
 #. contacts toolbar menu option
 #: src/app/templates/partials/toolbar-contacts.tpl.html:10
 msgctxt "Action"
@@ -1538,10 +1546,6 @@ msgstr ""
 #: src/app/templates/views/payments.tpl.html:77
 #: src/app/templates/views/security.tpl.html:10
 msgctxt "Default"
-msgid "Download"
-msgstr ""
-
-#: src/app/templates/partials/attachments.tpl.html:9
 msgid "Download"
 msgstr ""
 
@@ -1561,12 +1565,6 @@ msgstr ""
 msgid "Draft"
 msgstr ""
 
-#: src/app/templates/partials/no-results.tpl.html:16
-#: src/app/templates/partials/sidebar-responsive.tpl.html:26
-#: src/app/templates/partials/sidebar.tpl.html:17
-msgid "Drafts"
-msgstr ""
-
 #: src/app/controllers/secured.js:191
 msgctxt "Default"
 msgid "Drafts"
@@ -1579,6 +1577,12 @@ msgctxt "Noun"
 msgid "Drafts"
 msgstr ""
 
+#: src/app/templates/partials/no-results.tpl.html:16
+#: src/app/templates/partials/sidebar-responsive.tpl.html:26
+#: src/app/templates/partials/sidebar.tpl.html:17
+msgid "Drafts"
+msgstr ""
+
 #: src/app/controllers/compose.js:305
 msgctxt "Default"
 msgid "Drop a file here to upload"
@@ -1588,8 +1592,12 @@ msgstr ""
 msgid "Drop here"
 msgstr ""
 
-#: src/app/controllers/contacts.js:238
 #: src/app/templates/views/contacts.tpl.html:52
+msgctxt "Action"
+msgid "Edit"
+msgstr ""
+
+#: src/app/controllers/contacts.js:238
 #: src/app/templates/views/labels.tpl.html:16
 #: src/app/templates/views/payments.tpl.html:30
 msgctxt "Default"
@@ -1611,14 +1619,18 @@ msgctxt "Default"
 msgid "Edit label"
 msgstr ""
 
+#: src/app/templates/views/step1.tpl.html:85
+msgctxt "Default"
+msgid "Email"
+msgstr ""
+
 #: src/app/templates/modals/contact.tpl.html:20
 msgid "Email"
 msgstr ""
 
-#. table heading
+#. table heading / link to sort table
 #: src/app/templates/views/contacts.tpl.html:27
-#: src/app/templates/views/step1.tpl.html:85
-msgctxt "Default"
+msgctxt "Action"
 msgid "Email"
 msgstr ""
 
@@ -1672,15 +1684,15 @@ msgstr ""
 msgid "Empty trash"
 msgstr ""
 
+#: src/app/templates/views/addresses.tpl.html:56
+msgctxt "Action"
+msgid "Enable"
+msgstr ""
+
 #: src/app/templates/views/keys.tpl.html:142
 #: src/app/templates/views/keys.tpl.html:46
 #: src/app/templates/views/keys.tpl.html:93
 msgctxt "Default"
-msgid "Enable"
-msgstr ""
-
-#: src/app/templates/views/addresses.tpl.html:56
-msgctxt "Action"
 msgid "Enable"
 msgstr ""
 
@@ -1975,13 +1987,13 @@ msgctxt "Default"
 msgid "Fingerprint"
 msgstr ""
 
-#: src/app/templates/modals/domain/dmarc.tpl.html:46
-#: src/app/templates/partials/wizard.tpl.html:41
+#: src/app/templates/views/reset-mailbox-password.tpl.html:45
+msgctxt "Default"
 msgid "Finish"
 msgstr ""
 
-#: src/app/templates/views/reset-mailbox-password.tpl.html:45
-msgctxt "Default"
+#: src/app/templates/modals/domain/dmarc.tpl.html:46
+#: src/app/templates/partials/wizard.tpl.html:41
 msgid "Finish"
 msgstr ""
 
@@ -2021,11 +2033,6 @@ msgctxt "Default"
 msgid "Free"
 msgstr ""
 
-#: src/app/templates/views/outside.message.tpl.html:23
-msgctxt "Default"
-msgid "From"
-msgstr ""
-
 #: src/app/templates/partials/composer.tpl.html:146
 #: src/app/templates/partials/searchForm.tpl.html:32
 #: src/app/templates/partials/toolbar-desktop.tpl.html:87
@@ -2037,13 +2044,18 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-#: src/app/templates/views/message.print.tpl.html:27
-#: src/app/templates/views/outside.reply.tpl.html:14
+#: src/app/templates/views/outside.message.tpl.html:23
 msgctxt "Default"
-msgid "From:"
+msgid "From"
 msgstr ""
 
 #: src/app/templates/partials/message.tpl.html:28
+msgid "From:"
+msgstr ""
+
+#: src/app/templates/views/message.print.tpl.html:27
+#: src/app/templates/views/outside.reply.tpl.html:14
+msgctxt "Default"
 msgid "From:"
 msgstr ""
 
@@ -2062,13 +2074,13 @@ msgctxt "Default"
 msgid "Generate key pair"
 msgstr ""
 
-#: src/app/templates/modals/generate.tpl.html:55
-#: src/app/templates/views/members.tpl.html:107
+#: src/app/templates/views/members.tpl.html:108
+msgctxt "Default"
 msgid "Generate keys"
 msgstr ""
 
-#: src/app/templates/views/members.tpl.html:108
-msgctxt "Default"
+#: src/app/templates/modals/generate.tpl.html:55
+#: src/app/templates/views/members.tpl.html:107
 msgid "Generate keys"
 msgstr ""
 
@@ -2256,17 +2268,17 @@ msgctxt "Noun"
 msgid "Inbox"
 msgstr ""
 
-#: src/app/controllers/secured.js:188
-#: src/app/directives/move.js:21
-msgctxt "Default"
-msgid "Inbox"
-msgstr ""
-
 #: src/app/templates/directives/location-tag.tpl.html:2
 #: src/app/templates/partials/header-auth-simple.tpl.html:8
 #: src/app/templates/partials/no-results.tpl.html:15
 #: src/app/templates/partials/sidebar-responsive.tpl.html:19
 #: src/app/templates/partials/sidebar.tpl.html:9
+msgid "Inbox"
+msgstr ""
+
+#: src/app/controllers/secured.js:188
+#: src/app/directives/move.js:21
+msgctxt "Default"
 msgid "Inbox"
 msgstr ""
 
@@ -2432,6 +2444,12 @@ msgctxt "Default"
 msgid "Layout saved"
 msgstr ""
 
+#: src/app/templates/views/appearance.tpl.html:31
+#: src/app/templates/views/dashboard.tpl.html:122
+msgctxt "Default"
+msgid "Learn more"
+msgstr ""
+
 #: src/app/templates/modals/domain/dkim.tpl.html:16
 #: src/app/templates/modals/domain/dmarc.tpl.html:12
 #: src/app/templates/modals/domain/domain.tpl.html:11
@@ -2444,12 +2462,6 @@ msgstr ""
 #. learn more link
 #: src/app/templates/views/appearance.tpl.html:11
 msgctxt "Action"
-msgid "Learn more"
-msgstr ""
-
-#: src/app/templates/views/appearance.tpl.html:31
-#: src/app/templates/views/dashboard.tpl.html:122
-msgctxt "Default"
 msgid "Learn more"
 msgstr ""
 
@@ -2495,14 +2507,14 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: src/app/templates/partials/header-auth-simple.tpl.html:6
-#: src/app/templates/partials/header-no-auth.tpl.html:7
-#: src/app/templates/partials/sidebar-responsive.tpl.html:95
+#: src/app/templates/views/security.tpl.html:48
+msgctxt "Default"
 msgid "Log out"
 msgstr ""
 
-#: src/app/templates/views/security.tpl.html:48
-msgctxt "Default"
+#: src/app/templates/partials/header-auth-simple.tpl.html:6
+#: src/app/templates/partials/header-no-auth.tpl.html:7
+#: src/app/templates/partials/sidebar-responsive.tpl.html:95
 msgid "Log out"
 msgstr ""
 
@@ -2566,14 +2578,14 @@ msgctxt "Default"
 msgid "Logs cleared"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:47
-#: src/app/templates/views/unlock.tpl.html:15
-msgid "Mailbox password"
-msgstr ""
-
 #. form heading for changing mailbox password
 #: src/app/templates/views/account.tpl.html:135
 msgctxt "Title"
+msgid "Mailbox password"
+msgstr ""
+
+#: src/app/templates/views/step1.tpl.html:47
+#: src/app/templates/views/unlock.tpl.html:15
 msgid "Mailbox password"
 msgstr ""
 
@@ -2751,15 +2763,15 @@ msgctxt "Default"
 msgid "Missing keys"
 msgstr ""
 
+#: src/app/templates/views/invoice.print.tpl.html:84
+msgctxt "Default"
+msgid "Month"
+msgstr ""
+
 #: src/app/templates/modals/card.tpl.html:35
 #: src/app/templates/modals/donate.tpl.html:51
 #: src/app/templates/modals/monetize.tpl.html:33
 #: src/app/templates/modals/payment/payment.tpl.html:107
-msgid "Month"
-msgstr ""
-
-#: src/app/templates/views/invoice.print.tpl.html:84
-msgctxt "Default"
 msgid "Month"
 msgstr ""
 
@@ -2832,9 +2844,9 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#. table heading
+#. table heading / link to sort table
 #: src/app/templates/views/contacts.tpl.html:17
-msgctxt "Default"
+msgctxt "Action"
 msgid "Name"
 msgstr ""
 
@@ -2939,7 +2951,7 @@ msgid "No messages"
 msgstr ""
 
 #: src/app/templates/views/contacts.tpl.html:8
-msgctxt "Default"
+msgctxt "Info"
 msgid "No results for this search in your contacts list."
 msgstr ""
 
@@ -3093,12 +3105,12 @@ msgstr ""
 msgid "OS version"
 msgstr ""
 
-#: src/app/templates/views/payments.tpl.html:62
-msgctxt "Default"
+#: src/app/templates/modals/bug.tpl.html:22
 msgid "Other"
 msgstr ""
 
-#: src/app/templates/modals/bug.tpl.html:22
+#: src/app/templates/views/payments.tpl.html:62
+msgctxt "Default"
 msgid "Other"
 msgstr ""
 
@@ -3583,13 +3595,6 @@ msgctxt "Error"
 msgid "Safari doesn't support downloading of keys. We are working on a fix for this."
 msgstr ""
 
-#: src/app/templates/modals/contact.tpl.html:30
-#: src/app/templates/modals/label.tpl.html:35
-#: src/app/templates/partials/composer.tpl.html:256
-#: src/app/templates/partials/composer.tpl.html:257
-msgid "Save"
-msgstr ""
-
 #. save button for saving notification email
 #: src/app/templates/views/account.tpl.html:184
 #: src/app/templates/views/account.tpl.html:57
@@ -3603,6 +3608,13 @@ msgstr ""
 #: src/app/templates/views/account.tpl.html:32
 #: src/app/templates/views/appearance.tpl.html:95
 msgctxt "Action"
+msgid "Save"
+msgstr ""
+
+#: src/app/templates/modals/contact.tpl.html:30
+#: src/app/templates/modals/label.tpl.html:35
+#: src/app/templates/partials/composer.tpl.html:256
+#: src/app/templates/partials/composer.tpl.html:257
 msgid "Save"
 msgstr ""
 
@@ -3859,17 +3871,17 @@ msgctxt "Default"
 msgid "Spam"
 msgstr ""
 
-#: src/app/templates/directives/location-tag.tpl.html:6
-#: src/app/templates/partials/no-results.tpl.html:19
-#: src/app/templates/partials/sidebar-responsive.tpl.html:54
-#: src/app/templates/partials/sidebar.tpl.html:49
-msgid "Spam"
-msgstr ""
-
 #. Folder name
 #: src/app/templates/partials/sidebar-responsive.tpl.html:56
 #: src/app/templates/partials/sidebar.tpl.html:52
 msgctxt "Noun"
+msgid "Spam"
+msgstr ""
+
+#: src/app/templates/directives/location-tag.tpl.html:6
+#: src/app/templates/partials/no-results.tpl.html:19
+#: src/app/templates/partials/sidebar-responsive.tpl.html:54
+#: src/app/templates/partials/sidebar.tpl.html:49
 msgid "Spam"
 msgstr ""
 
@@ -4592,7 +4604,7 @@ msgid "You can enable authentication logging to see who and when your account is
 msgstr ""
 
 #: src/app/templates/views/contacts.tpl.html:7
-msgctxt "Default"
+msgctxt "Info"
 msgid "You have no contacts, you can add contact with the above button 'ADD CONTACT'."
 msgstr ""
 

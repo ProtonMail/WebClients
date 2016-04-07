@@ -4,8 +4,8 @@
 
         <div ng-include src="'templates/partials/toolbar-contacts.tpl.html'"></div>
 
-        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length === 0" translate-context="Default" translate>You have no contacts, you can add contact with the above button 'ADD CONTACT'.</p>
-        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length > 0" translate-context="Default" translate>No results for this search in your contacts list.</p>
+        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length === 0" translate-context="Info" translate>You have no contacts, you can add contact with the above button 'ADD CONTACT'.</p>
+        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length > 0" translate-context="Info" translate>No results for this search in your contacts list.</p>
 
         <div class="contactWrapper">
             <table ng-if="contacts.length > 0" class="pm_table">
@@ -14,7 +14,7 @@
                         <th class="hidden-xs checkbox"></th>
                         <th class="name">
                             <span>
-                                <a ng-click="setSortBy('Name')" translate-context="Default" translate-comment="table heading" translate>Name</a>
+                                <a ng-click="setSortBy('Name')" translate-context="Action" translate-comment="table heading / link to sort table" translate>Name</a>
                                 <a ng-click="setSortBy('Name')" ng-show="sortBy === 'Name'">
                                     <i class="fa fa-caret-up"></i>
                                 </a>
@@ -24,7 +24,7 @@
                             </span>
                         </th>
                         <th class="email">
-                            <a ng-click="setSortBy('Email')" translate-context="Default" translate-comment="table heading" translate>Email</a>
+                            <a ng-click="setSortBy('Email')" translate-context="Action" translate-comment="table heading / link to sort table" translate>Email</a>
                             <a ng-click="setSortBy('Email')" ng-show="sortBy === 'Email'">
                                 <i class="fa fa-caret-up"></i>
                             </a>
@@ -32,7 +32,7 @@
                                 <i class="fa fa-caret-down"></i>
                             </a>
                         </th>
-                        <th class="text-right actions" translate-context="Default" translate-comment="table heading" translate>Actions</th>
+                        <th class="text-right actions" translate-context="Title" translate-comment="table heading" translate>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,8 +49,8 @@
                             <span title="contact.Email">{{ contact.Email }}</span>
                         </td>
                         <td class="text-right actions">
-                            <button type="button" class="pm_button" ng-click="editContact(contact)" translate-context="Default" translate>Edit</button>
-                            <button type="button" class="pm_button" ng-click="deleteContact(contact)" translate-context="Default" translate>Delete</button>
+                            <button type="button" class="pm_button" ng-click="editContact(contact)" translate-context="Action" translate>Edit</button>
+                            <button type="button" class="pm_button" ng-click="deleteContact(contact)" translate-context="Action" translate>Delete</button>
                         </td>
                     </tr>
                 </tbody>
