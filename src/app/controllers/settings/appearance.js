@@ -14,8 +14,7 @@ angular.module("proton.controllers.Settings")
     notify) {
     $scope.appearance = {
         locales: [
-            {label: gettextCatalog.getString('English', null, 'Default'), key: 'en_US'},
-            {label: gettextCatalog.getString('French', null, 'Default'), key: 'fr_FR'}
+            {label: gettextCatalog.getString('English', null, 'Default'), key: 'en_US'}
         ],
         cssTheme: authentication.user.Theme,
         ComposerMode: authentication.user.ComposerMode,
