@@ -27,11 +27,11 @@
                             <input value="@{{ ctrl.domain.DomainName }}" type="text" readonly class="noBorder">
                         </div>
                     </div>
-                    <button type="submit" class="pm_button primary" translate>Add</button>
+                    <button type="submit" class="pm_button primary" translate-context="Action" translate-comment="button" translate>Add</button>
                 </form>
 
                 <div ng-show="ctrl.domain.Addresses.length > 0">
-                    <p><strong translate>Added addresses</strong></p>
+                    <p><strong translate translate-context="Title" translate-comment="added addesses table label / heading">Added addresses</strong></p>
                     <table class="pm_table pm_form bordered">
                         <thead>
                             <tr>

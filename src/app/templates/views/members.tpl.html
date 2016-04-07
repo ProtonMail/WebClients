@@ -95,7 +95,7 @@
                                     {{ address.Email }} <small ng-show="address.Send === 1"><strong translate-context="Default" translate>Default</strong></small>
                                     <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip="{{ 'Unlink address' | translate }}"><i class="fa fa-chain-broken pm_button link"></i></a>
                                 </div>
-                                <a ui-sref="secured.domains" class="pm_button" ng-show="checkDomains()" translate-context="Default" translate>Add address</button>
+                                <a ui-sref="secured.domains" class="pm_button" ng-show="checkDomains()" translate-context="Action" translate-comment="add address button on members page" translate>Add address</button>
                             </td>
 		                    <td class="actions">
 			                    <div ng-hide="member.Private === 1">

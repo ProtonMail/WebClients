@@ -200,7 +200,7 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.addContact = function() {
-        openContactModal(gettextCatalog.getString('Add new contact', null, 'Default'), '', '', function(name, email) {
+        openContactModal(gettextCatalog.getString('Add new contact', null, 'Action'), '', '', function(name, email) {
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match) {

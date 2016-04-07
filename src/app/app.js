@@ -164,6 +164,7 @@ angular.module('proton', [
     gettextCatalog.setCurrentLanguage('en_US');
     gettextCatalog.debug = CONFIG.debug || false;
     moment.locale(locale);
+
 })
 
 .run(function(CONSTANTS) {

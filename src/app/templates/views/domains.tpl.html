@@ -15,7 +15,7 @@
                 </legend>
                 <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
                 <div class="margin">
-                    <button ng-hide="organization.UsedDomains === organization.MaxDomains" type="button" class="pm_button primary" ng-click="addDomain()" translate-context="Default" translate>Add custom domain</button>
+                    <button ng-hide="organization.UsedDomains === organization.MaxDomains" type="button" class="pm_button primary" ng-click="addDomain()" translate-context="Action" translate-comment="button to add custom domains" translate>Add custom domain</button>
                     <button type="button" class="pm_button" ng-click="refreshStatus()" translate-context="Default" translate>Refresh domain status</button>
                 </div>
                 <table class="pm_table bordered domains" ng-show="domains.length > 0">
@@ -120,15 +120,15 @@
                         <i class="fa" ng-class="{'fa-check-circle-o text-green': domain.State === 1 || domain.State === 2, 'fa-exclamation-triangle text-red': domain.State === 0}"></i> <strong>{{ domain.DomainName }}</strong>
                     </p>
                     <p>
-                        <button type="button" class="pm_button primary" ng-click="addAddress(domain)" translate-context="Default" translate>Add address</button>
+                        <button type="button" class="pm_button primary" ng-click="addAddress(domain)" translate-context="Action" translate-comment="add address button on the domains page" translate>Add address</button>
                         <!-- <a ui-sref="secured.members" class="pm_button" translate-context="Default" translate>Add User</a> -->
                     </p>
                     <p class="alert alert-info">Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
                     <table class="pm_table pm_form bordered" ng-show="domain.Addresses.length > 0">
                         <thead>
                             <tr>
-                                <th translate-context="Default" translate>Address</th>
-                                <th translate-context="Default" translate>Status</th>
+                                <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Address</th>
+                                <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Status</th>
                                 <th class="text-right actions" style="width: 10rem" translate-context="Default" translate>Actions</th>
                             </tr>
                         </thead>
