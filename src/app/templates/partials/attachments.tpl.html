@@ -1,10 +1,7 @@
 <div ng-show="message.NumAttachments > 0" id="attachmentArea">
     <header>
         <span class="title">
-            <i class="fa fa-paperclip"></i>
-            {{ message.NumAttachments }}
-            <span translate translate-n="message.NumAttachments" translate-plural="Attachments">Attachment</span>
-            ({{ message.sizeAttachments() | humanSize }})
+            <i class="fa fa-paperclip"></i> {{ message.NumAttachments }} <span translate translate-n="message.NumAttachments" translate-plural="Attachments">Attachment</span> ({{ message.sizeAttachments() | humanSize }})
         </span>
         <em></em>
     </header>

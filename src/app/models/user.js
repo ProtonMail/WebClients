@@ -3,7 +3,7 @@ angular.module('proton.models.user', [])
 .factory('User', function($http, url) {
     var User = {
         create: function(params) {
-            return $http.post(url.get() + '/users/:token', params);
+            return $http.post(url.get() + '/users', params);
         },
         code: function(params) {
             return $http.post(url.get() + '/users/code', params);
