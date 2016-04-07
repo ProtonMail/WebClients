@@ -15,8 +15,7 @@ module.exports = {
     jsunit: ["src/**/*.spec.js"],
     jse2e: ["src/**/*.scenario.js"],
     atpl: ["src/app/**/*.tpl.html"],
-    ctpl: ["src/common/**/*.tpl.html"],
-    html: ["src/app.html", "src/admin.html", "src/static/**.html"],
+    html: ["src/app.html"],
     sass: ["src/sass/application.scss"]
   },
   external_files: {

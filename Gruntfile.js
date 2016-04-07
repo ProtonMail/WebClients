@@ -273,14 +273,6 @@ module.exports = function(grunt) {
                 },
                 src: ["<%= app_files.atpl %>"],
                 dest: "<%= build_dir %>/src/app/templates/templates-app.js"
-            },
-
-            common: {
-                options: {
-                    base: "src/common"
-                },
-                src: ["<%= app_files.ctpl %>"],
-                dest: "<%= build_dir %>/src/app/templates/templates-common.js"
             }
         },
 
@@ -411,11 +403,6 @@ module.exports = function(grunt) {
                 files: ["<%= build_dir %>/assets/**/*.css"]
             },
 
-            tpls: {
-                files: ["<%= app_files.atpl %>", "<%= app_files.ctpl %>"],
-                tasks: ["html2js"]
-            },
-
             jssrc: {
                 files: ["<%= app_files.js %>"],
                 tasks: ["jshint", "copy:build_appjs", "index:build"]
@@ -480,7 +467,7 @@ module.exports = function(grunt) {
         nggettext_extract: {
             pot: {
                 files: {
-                    'po/template.pot': ['<%= app_files.js %>', '<%= app_files.atpl %>', '<%= app_files.ctpl %>', '<%= app_files.html %>']
+                    'po/template.pot': ['<%= app_files.js %>', '<%= app_files.atpl %>', '<%= app_files.html %>']
                 }
             }
         },
