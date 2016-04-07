@@ -19,11 +19,10 @@
             <div class="usernameWrap">
                 <p class="help" translate>This will be your email address. Select the drop down to choose your domain.</p>
                 <strong ng-show="readOnlyUsername" ng-bind="account.Username"></strong>
-                <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder="{{ 'Choose username' | translate }}" required
-                id="Username" class="dead" ng-change="checkAvailability(true)" ng-model-options="{ debounce: 1000 }"
+                <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder="{{ 'Choose username' | translate }}" required id="Username" class="dead" ng-change="checkAvailability(true)" ng-model-options="{ debounce: 1000 }"
                 ng-class="{
-                    'success':goodUsername,
-                    'error':badUsername
+                    success: goodUsername,
+                    error: badUsername
                 }">
                 <em class="usernameDomain">@</em>
                 <span class="pm_select inline bigger">

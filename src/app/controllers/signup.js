@@ -303,7 +303,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             $scope.checkingUsername = false;
             deferred.resolve(200);
         } else {
-            if ($scope.account.Username.length > 0) {
+            if ($scope.account.Username && $scope.account.Username.length > 0) {
                 User.available($scope.account.Username)
                 .then(function(result) {
                     if (result.data && result.data.Error) {
@@ -333,6 +333,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                         }
                     }
                 });
+            } else {
+                $scope.checkingUsername = false;
             }
         }
 
