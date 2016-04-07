@@ -10,7 +10,7 @@ msgid_plural "{{ $count }} conversations selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/app/templates/views/step1.tpl.html:222
+#: src/app/templates/views/step1.tpl.html:217
 msgid "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
 msgstr ""
 
@@ -226,7 +226,7 @@ msgstr ""
 msgid "Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class=\"pull-right\" href=\"https://protonmail.com/support/knowledge-base/adding-contacts/\" target=\"_blank\">Need help?</a>"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:78
+#: src/app/templates/views/step1.tpl.html:73
 msgid "Already have an account?"
 msgstr ""
 
@@ -257,7 +257,7 @@ msgstr ""
 msgid "Amount is different"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:187
+#: src/app/templates/views/step1.tpl.html:182
 msgid "An error occured while trying to create your account. To see common problems and solutions <a target=\"_blank\" href=\"https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/\">click here</a>."
 msgstr ""
 
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:86
+#: src/app/templates/views/step1.tpl.html:81
 msgid "Are you human?"
 msgstr ""
 
@@ -440,7 +440,7 @@ msgid "Buttons position saved"
 msgstr ""
 
 #: src/app/templates/modals/payment/payment.tpl.html:159
-#: src/app/templates/views/step1.tpl.html:75
+#: src/app/templates/views/step1.tpl.html:70
 msgid "By clicking Create Account, you agree to abide by ProtonMail's <a href=\"https://protonmail.com/terms-and-conditions\" target=\"_blank\">Terms and Conditions</a>."
 msgstr ""
 
@@ -454,7 +454,7 @@ msgstr ""
 #: src/app/templates/modals/card.tpl.html:56
 #: src/app/templates/modals/confirm.tpl.html:13
 #: src/app/templates/modals/contact.tpl.html:29
-#: src/app/templates/modals/customizeInvoice.tpl.html:15
+#: src/app/templates/modals/customizeInvoice.tpl.html:16
 #: src/app/templates/modals/deleteAccount.tpl.html:26
 #: src/app/templates/modals/dropzone.tpl.html:20
 #: src/app/templates/modals/generate.tpl.html:54
@@ -536,20 +536,16 @@ msgstr ""
 msgid "Choose a display name"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:42
+#: src/app/templates/views/step1.tpl.html:37
 msgid "Choose a login password"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:55
+#: src/app/templates/views/step1.tpl.html:50
 msgid "Choose a mailbox password"
 msgstr ""
 
 #: src/app/templates/modals/alias.tpl.html:9
 msgid "Choose address"
-msgstr ""
-
-#: src/app/templates/views/step1.tpl.html:22
-msgid "Choose username"
 msgstr ""
 
 #: src/app/templates/views/appearance.tpl.html:75
@@ -558,6 +554,10 @@ msgstr ""
 
 #: src/app/templates/views/appearance.tpl.html:56
 msgid "Choose your prefered button order for marking messages as read / unread."
+msgstr ""
+
+#: src/app/templates/views/step1.tpl.html:22
+msgid "CHOOSE_USERNAME"
 msgstr ""
 
 #: src/app/controllers/settings/security.js:43
@@ -626,8 +626,8 @@ msgstr ""
 msgid "Close tutorial"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:122
-#: src/app/templates/views/step1.tpl.html:150
+#: src/app/templates/views/step1.tpl.html:117
+#: src/app/templates/views/step1.tpl.html:145
 msgid "Code verification"
 msgstr ""
 
@@ -643,7 +643,7 @@ msgstr ""
 msgid "Common login problems"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:167
+#: src/app/templates/views/step1.tpl.html:162
 msgid "Complete setup"
 msgstr ""
 
@@ -677,12 +677,12 @@ msgid "Confirm downgrade"
 msgstr ""
 
 #: src/app/templates/modals/user/member.tpl.html:20
-#: src/app/templates/views/step1.tpl.html:46
+#: src/app/templates/views/step1.tpl.html:41
 msgid "Confirm login password"
 msgstr ""
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:42
-#: src/app/templates/views/step1.tpl.html:59
+#: src/app/templates/views/step1.tpl.html:54
 msgid "Confirm mailbox password"
 msgstr ""
 
@@ -766,7 +766,7 @@ msgstr ""
 msgid "Coupon invalid"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:76
+#: src/app/templates/views/step1.tpl.html:71
 msgid "Create account"
 msgstr ""
 
@@ -782,7 +782,7 @@ msgstr ""
 msgid "Create your account"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:184
+#: src/app/templates/views/step1.tpl.html:179
 msgid "Creating account"
 msgstr ""
 
@@ -790,7 +790,7 @@ msgstr ""
 msgid "Creating new mailbox"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:196
+#: src/app/templates/views/step1.tpl.html:191
 msgid "Creating new user"
 msgstr ""
 
@@ -867,8 +867,8 @@ msgstr ""
 msgid "Customize"
 msgstr ""
 
+#: src/app/templates/modals/customizeInvoice.tpl.html:10
 #: src/app/templates/modals/customizeInvoice.tpl.html:6
-#: src/app/templates/modals/customizeInvoice.tpl.html:9
 msgid "Customize invoices"
 msgstr ""
 
@@ -1110,7 +1110,7 @@ msgid "Donation"
 msgstr ""
 
 #: src/app/templates/modals/generate.tpl.html:38
-#: src/app/templates/views/step1.tpl.html:212
+#: src/app/templates/views/step1.tpl.html:207
 msgid "Done"
 msgstr ""
 
@@ -1149,17 +1149,17 @@ msgstr ""
 msgid "Draft"
 msgstr ""
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:28
-#: src/app/templates/partials/sidebar.tpl.html:20
-msgctxt "Noun"
-msgid "Drafts"
-msgstr ""
-
 #: src/app/controllers/secured.js:195
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:26
 #: src/app/templates/partials/sidebar.tpl.html:17
+msgid "Drafts"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:28
+#: src/app/templates/partials/sidebar.tpl.html:20
+msgctxt "Noun"
 msgid "Drafts"
 msgstr ""
 
@@ -1192,7 +1192,7 @@ msgstr ""
 
 #: src/app/templates/modals/contact.tpl.html:20
 #: src/app/templates/views/contacts.tpl.html:27
-#: src/app/templates/views/step1.tpl.html:91
+#: src/app/templates/views/step1.tpl.html:86
 msgid "Email"
 msgstr ""
 
@@ -1200,11 +1200,11 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:35
+#: src/app/templates/views/step1.tpl.html:30
 msgid "Email already taken"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:36
+#: src/app/templates/views/step1.tpl.html:31
 msgid "Email available"
 msgstr ""
 
@@ -1216,8 +1216,8 @@ msgstr ""
 msgid "Email our aupport team"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:107
-#: src/app/templates/views/step1.tpl.html:110
+#: src/app/templates/views/step1.tpl.html:102
+#: src/app/templates/views/step1.tpl.html:105
 msgid "Email verification"
 msgstr ""
 
@@ -1298,6 +1298,10 @@ msgstr ""
 
 #: src/app/controllers/settings/appearance.js:16
 msgid "English"
+msgstr ""
+
+#: src/app/templates/modals/customizeInvoice.tpl.html:7
+msgid "Enter custom text that you want to appear on your invoice beneath the ProtonMail logo."
 msgstr ""
 
 #: src/app/templates/views/members.tpl.html:112
@@ -1577,11 +1581,11 @@ msgstr ""
 msgid "Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices."
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:192
+#: src/app/templates/views/step1.tpl.html:187
 msgid "Generating keys"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:176
+#: src/app/templates/views/step1.tpl.html:171
 msgid "Generating keys..."
 msgstr ""
 
@@ -1688,7 +1692,7 @@ msgstr ""
 msgid "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. Feel free to ignore and skip DMARC unless you really want strict policies such as <strong>p=quarantine</strong> or <strong>p=reject</strong>. <a target=\"_blank\" href=\"https://protonmail.com/support/knowledge-base/anti-spoofing/\" translate=\"\">Learn more</a>"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:63
+#: src/app/templates/views/step1.tpl.html:58
 msgid "If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you."
 msgstr ""
 
@@ -1759,7 +1763,7 @@ msgstr ""
 msgid "Invalid file type"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:71
+#: src/app/templates/views/step1.tpl.html:66
 msgid "Invalid recovery email."
 msgstr ""
 
@@ -1903,7 +1907,7 @@ msgstr ""
 msgid "Loading"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:208
+#: src/app/templates/views/step1.tpl.html:203
 msgid "Loading new account"
 msgstr ""
 
@@ -1911,7 +1915,7 @@ msgstr ""
 msgid "Loading themes will override your current theme!"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:161
+#: src/app/templates/views/step1.tpl.html:156
 msgid "Loading..."
 msgstr ""
 
@@ -1946,12 +1950,12 @@ msgstr ""
 #: src/app/templates/modals/user/member.tpl.html:16
 #: src/app/templates/modals/user/member.tpl.html:19
 #: src/app/templates/views/account.tpl.html:90
-#: src/app/templates/views/step1.tpl.html:39
+#: src/app/templates/views/step1.tpl.html:34
 msgid "Login password"
 msgstr ""
 
 #: src/app/templates/views/reset-login-password.tpl.html:38
-#: src/app/templates/views/step1.tpl.html:44
+#: src/app/templates/views/step1.tpl.html:39
 msgid "Login password is required."
 msgstr ""
 
@@ -1972,12 +1976,12 @@ msgid "Logs cleared"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:135
-#: src/app/templates/views/step1.tpl.html:52
+#: src/app/templates/views/step1.tpl.html:47
 #: src/app/templates/views/unlock.tpl.html:15
 msgid "Mailbox password"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:57
+#: src/app/templates/views/step1.tpl.html:52
 msgid "Mailbox password is required."
 msgstr ""
 
@@ -2385,7 +2389,7 @@ msgid "Operating system"
 msgstr ""
 
 #: src/app/templates/modals/welcome.tpl.html:14
-#: src/app/templates/views/step1.tpl.html:66
+#: src/app/templates/views/step1.tpl.html:61
 msgid "Optional"
 msgstr ""
 
@@ -2479,8 +2483,8 @@ msgstr ""
 msgid "Passwords don't match"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:48
-#: src/app/templates/views/step1.tpl.html:61
+#: src/app/templates/views/step1.tpl.html:43
+#: src/app/templates/views/step1.tpl.html:56
 msgid "Passwords don't match."
 msgstr ""
 
@@ -2578,7 +2582,7 @@ msgstr ""
 msgid "Please add the following TXT record. Note, DNS records can take several hours to update."
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:120
+#: src/app/templates/views/step1.tpl.html:115
 msgid "Please check your email and enter the code below:"
 msgstr ""
 
@@ -2706,7 +2710,7 @@ msgstr ""
 msgid "Reactivate key pair"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:160
+#: src/app/templates/views/step1.tpl.html:155
 msgid "reCaptcha verification"
 msgstr ""
 
@@ -2729,13 +2733,13 @@ msgstr ""
 
 #: src/app/templates/views/account.tpl.html:51
 #: src/app/templates/views/reset-login-password.tpl.html:15
-#: src/app/templates/views/step1.tpl.html:66
-#: src/app/templates/views/step1.tpl.html:69
+#: src/app/templates/views/step1.tpl.html:61
+#: src/app/templates/views/step1.tpl.html:64
 msgid "Recovery email"
 msgstr ""
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:73
-#: src/app/templates/views/step1.tpl.html:216
+#: src/app/templates/views/step1.tpl.html:211
 msgid "Redirecting"
 msgstr ""
 
@@ -2920,13 +2924,13 @@ msgstr ""
 #: src/app/templates/modals/feedback.tpl.html:16
 #: src/app/templates/partials/composer.tpl.html:260
 #: src/app/templates/views/outside.reply.tpl.html:38
-#: src/app/templates/views/step1.tpl.html:114
-#: src/app/templates/views/step1.tpl.html:141
+#: src/app/templates/views/step1.tpl.html:109
+#: src/app/templates/views/step1.tpl.html:136
 msgid "Send"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:126
-#: src/app/templates/views/step1.tpl.html:153
+#: src/app/templates/views/step1.tpl.html:121
+#: src/app/templates/views/step1.tpl.html:148
 msgid "Send new code"
 msgstr ""
 
@@ -2938,13 +2942,6 @@ msgstr ""
 msgid "Sending"
 msgstr ""
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:35
-#: src/app/templates/partials/sidebar.tpl.html:28
-msgctxt "Noun"
-msgid "Sent"
-msgstr ""
-
 #: src/app/controllers/secured.js:198
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/message.tpl.html:135
@@ -2952,6 +2949,13 @@ msgstr ""
 #: src/app/templates/partials/no-results.tpl.html:17
 #: src/app/templates/partials/sidebar-responsive.tpl.html:33
 #: src/app/templates/partials/sidebar.tpl.html:25
+msgid "Sent"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:35
+#: src/app/templates/partials/sidebar.tpl.html:28
+msgctxt "Noun"
 msgid "Sent"
 msgstr ""
 
@@ -3010,7 +3014,7 @@ msgstr ""
 msgid "Show unread"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:185
+#: src/app/templates/views/step1.tpl.html:180
 msgid "Sign up failed"
 msgstr ""
 
@@ -3040,7 +3044,7 @@ msgstr ""
 msgid "Small to large"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:135
+#: src/app/templates/views/step1.tpl.html:130
 msgid "SMS verification"
 msgstr ""
 
@@ -3052,19 +3056,19 @@ msgstr ""
 msgid "Space"
 msgstr ""
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:56
-#: src/app/templates/partials/sidebar.tpl.html:52
-msgctxt "Noun"
-msgid "Spam"
-msgstr ""
-
 #: src/app/controllers/secured.js:207
 #: src/app/directives/move.js:23
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
 #: src/app/templates/partials/sidebar-responsive.tpl.html:54
 #: src/app/templates/partials/sidebar.tpl.html:49
+msgid "Spam"
+msgstr ""
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:56
+#: src/app/templates/partials/sidebar.tpl.html:52
+msgctxt "Noun"
 msgid "Spam"
 msgstr ""
 
@@ -3140,7 +3144,7 @@ msgstr ""
 #: src/app/templates/modals/alias.tpl.html:24
 #: src/app/templates/modals/bug.tpl.html:79
 #: src/app/templates/modals/card.tpl.html:57
-#: src/app/templates/modals/customizeInvoice.tpl.html:14
+#: src/app/templates/modals/customizeInvoice.tpl.html:15
 #: src/app/templates/modals/loginPassword.tpl.html:15
 #: src/app/templates/modals/organizationRecovery.tpl.html:15
 #: src/app/templates/modals/pay.tpl.html:61
@@ -3182,7 +3186,7 @@ msgstr ""
 msgid "Theme saved"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:178
+#: src/app/templates/views/step1.tpl.html:173
 msgid "This can take a few seconds or a few minutes depending on your device."
 msgstr ""
 
@@ -3198,15 +3202,15 @@ msgstr ""
 msgid "This is the 'From' name that people will see when you email them."
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:54
+#: src/app/templates/views/step1.tpl.html:49
 msgid "This is used to encrypt and decrypt your messages. This is private and only you know it."
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:41
+#: src/app/templates/views/step1.tpl.html:36
 msgid "This is used to log you into our system."
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:68
+#: src/app/templates/views/step1.tpl.html:63
 msgid "This is used to recover your account if you get locked out or forget your login password."
 msgstr ""
 
@@ -3294,19 +3298,19 @@ msgstr ""
 msgid "Total price:"
 msgstr ""
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:63
+#: src/app/templates/partials/sidebar.tpl.html:60
+msgctxt "Noun"
+msgid "Trash"
+msgstr ""
+
 #: src/app/controllers/secured.js:210
 #: src/app/directives/move.js:24
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
 #: src/app/templates/partials/sidebar-responsive.tpl.html:61
 #: src/app/templates/partials/sidebar.tpl.html:57
-msgid "Trash"
-msgstr ""
-
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:63
-#: src/app/templates/partials/sidebar.tpl.html:60
-msgctxt "Noun"
 msgid "Trash"
 msgstr ""
 
@@ -3515,7 +3519,7 @@ msgstr ""
 msgid "Verification code"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:120
+#: src/app/templates/views/step1.tpl.html:115
 msgid "Verification code sent"
 msgstr ""
 
@@ -3533,7 +3537,7 @@ msgstr ""
 msgid "Verify"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:204
+#: src/app/templates/views/step1.tpl.html:199
 msgid "Verifying encryption keys"
 msgstr ""
 
@@ -3541,7 +3545,7 @@ msgstr ""
 msgid "Verifying invite link..."
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:200
+#: src/app/templates/views/step1.tpl.html:195
 msgid "Verifying new account"
 msgstr ""
 

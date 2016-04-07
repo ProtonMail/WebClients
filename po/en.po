@@ -504,7 +504,7 @@ msgstr ""
 #: src/app/templates/modals/card.tpl.html:56
 #: src/app/templates/modals/confirm.tpl.html:13
 #: src/app/templates/modals/contact.tpl.html:29
-#: src/app/templates/modals/customizeInvoice.tpl.html:15
+#: src/app/templates/modals/customizeInvoice.tpl.html:16
 #: src/app/templates/modals/deleteAccount.tpl.html:26
 #: src/app/templates/modals/dropzone.tpl.html:20
 #: src/app/templates/modals/generate.tpl.html:54
@@ -929,8 +929,8 @@ msgstr ""
 msgid "Customize"
 msgstr "Customize"
 
+#: src/app/templates/modals/customizeInvoice.tpl.html:10
 #: src/app/templates/modals/customizeInvoice.tpl.html:6
-#: src/app/templates/modals/customizeInvoice.tpl.html:9
 msgid "Customize invoices"
 msgstr "Customize invoices"
 
@@ -1019,6 +1019,7 @@ msgstr "Default language changed"
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:38
 #: src/app/templates/partials/toolbar-mobile.tpl.html:85
 #: src/app/templates/views/addresses.tpl.html:58
+#: src/app/templates/views/contacts.tpl.html:53
 #: src/app/templates/views/domains.tpl.html:92
 #: src/app/templates/views/labels.tpl.html:17
 #: src/app/templates/views/payments.tpl.html:31
@@ -1220,17 +1221,17 @@ msgstr "Downloading"
 msgid "Draft"
 msgstr "Draft"
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:28
-#: src/app/templates/partials/sidebar.tpl.html:20
-msgctxt "Noun"
-msgid "Drafts"
-msgstr "Drafts"
-
 #: src/app/controllers/secured.js:195
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:26
 #: src/app/templates/partials/sidebar.tpl.html:17
+msgid "Drafts"
+msgstr "Drafts"
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:28
+#: src/app/templates/partials/sidebar.tpl.html:20
+msgctxt "Noun"
 msgid "Drafts"
 msgstr "Drafts"
 
@@ -1243,7 +1244,7 @@ msgid "Drop here"
 msgstr "Drop here"
 
 #: src/app/controllers/contacts.js:238
-#: src/app/templates/views/contacts.tpl.html:53
+#: src/app/templates/views/contacts.tpl.html:52
 #: src/app/templates/views/labels.tpl.html:16
 #: src/app/templates/views/payments.tpl.html:30
 msgid "Edit"
@@ -1374,6 +1375,14 @@ msgstr "End to end encrypted using PGP/MIME"
 #: src/app/controllers/settings/appearance.js:16
 msgid "English"
 msgstr "English"
+
+#: src/app/templates/modals/customizeInvoice.tpl.html:7
+msgid ""
+"Enter custom text that you want to appear on your invoice beneath the "
+"ProtonMail logo."
+msgstr ""
+"Enter custom text that you want to appear on your invoice beneath the "
+"ProtonMail logo."
 
 #: src/app/templates/views/members.tpl.html:112
 #: src/app/templates/views/members.tpl.html:113
@@ -3158,13 +3167,6 @@ msgstr "Sender"
 msgid "Sending"
 msgstr "Sending"
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:35
-#: src/app/templates/partials/sidebar.tpl.html:28
-msgctxt "Noun"
-msgid "Sent"
-msgstr "Sent"
-
 #: src/app/controllers/secured.js:198
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/message.tpl.html:135
@@ -3172,6 +3174,13 @@ msgstr "Sent"
 #: src/app/templates/partials/no-results.tpl.html:17
 #: src/app/templates/partials/sidebar-responsive.tpl.html:33
 #: src/app/templates/partials/sidebar.tpl.html:25
+msgid "Sent"
+msgstr "Sent"
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:35
+#: src/app/templates/partials/sidebar.tpl.html:28
+msgctxt "Noun"
 msgid "Sent"
 msgstr "Sent"
 
@@ -3272,18 +3281,18 @@ msgstr "Sorry, this message does not exist or has already expired"
 msgid "Space"
 msgstr "Space"
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:56
-#: src/app/templates/partials/sidebar.tpl.html:52
-msgctxt "Noun"
-msgid "Spam"
-msgstr "Spam"
-
 #: src/app/controllers/secured.js:207 src/app/directives/move.js:23
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
 #: src/app/templates/partials/sidebar-responsive.tpl.html:54
 #: src/app/templates/partials/sidebar.tpl.html:49
+msgid "Spam"
+msgstr "Spam"
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:56
+#: src/app/templates/partials/sidebar.tpl.html:52
+msgctxt "Noun"
 msgid "Spam"
 msgstr "Spam"
 
@@ -3367,7 +3376,7 @@ msgstr "Subject"
 #: src/app/templates/modals/alias.tpl.html:24
 #: src/app/templates/modals/bug.tpl.html:79
 #: src/app/templates/modals/card.tpl.html:57
-#: src/app/templates/modals/customizeInvoice.tpl.html:14
+#: src/app/templates/modals/customizeInvoice.tpl.html:15
 #: src/app/templates/modals/loginPassword.tpl.html:15
 #: src/app/templates/modals/organizationRecovery.tpl.html:15
 #: src/app/templates/modals/pay.tpl.html:61
@@ -3575,18 +3584,18 @@ msgstr "Total per year (incl. taxes)"
 msgid "Total price:"
 msgstr "Total price:"
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:63
+#: src/app/templates/partials/sidebar.tpl.html:60
+msgctxt "Noun"
+msgid "Trash"
+msgstr "Trash"
+
 #: src/app/controllers/secured.js:210 src/app/directives/move.js:24
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
 #: src/app/templates/partials/sidebar-responsive.tpl.html:61
 #: src/app/templates/partials/sidebar.tpl.html:57
-msgid "Trash"
-msgstr "Trash"
-
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:63
-#: src/app/templates/partials/sidebar.tpl.html:60
-msgctxt "Noun"
 msgid "Trash"
 msgstr "Trash"
 
