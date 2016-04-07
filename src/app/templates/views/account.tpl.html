@@ -52,7 +52,7 @@
                         </div>
                         <div class="col right">
                             <input class="margin" type="email" id="notificationEmail" name="notificationEmail" placeholder="{{ 'Notification email' | translate }}" ng-model="notificationEmail" />
-                            <p class="help-block"><small><i class="fa fa-info-circle"></i> {{ 'Also used to reset a forgotten password.' | translate }}</small></p>
+                            <p class="help-block"><small><i class="fa fa-info-circle"></i> <span translate-context="Default" translate>Also used to reset a forgotten password.</span></small></p>
 
                             <button class="pm_button primary" type="submit" translate-context="Default" translate>Save</button>
                         </div>
@@ -65,12 +65,12 @@
                         <div class="col right">
                             <div class="radio">
                                 <label ng-click="saveDailyNotifications()">
-                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="1" /> {{ 'Enabled' | translate }}
+                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="1" /> <span translate>Enabled</span>
                                 </label>
                             </div>
                             <div class="radio">
                                 <label ng-click="saveDailyNotifications()">
-                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="0" /> {{ 'Disabled' | translate }}
+                                    <input type="radio" ng-model="dailyNotifications" name="dailyNotifications" ng-value="0" /> <span translate>Disabled</span>
                                 </label>
                             </div>
                             <p>
@@ -208,12 +208,12 @@
                     <div class="col right">
                         <div class="radio">
                             <label>
-                                <input type="radio" ng-model="autosaveContacts" ng-value="1" ng-change="saveAutosaveContacts()" /> {{ 'Enabled' | translate }}
+                                <input type="radio" ng-model="autosaveContacts" ng-value="1" ng-change="saveAutosaveContacts()" /> <span translate>Enabled</span>
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" ng-model="autosaveContacts" ng-value="0" ng-change="saveAutosaveContacts()" /> {{ 'Disabled' | translate }}
+                                <input type="radio" ng-model="autosaveContacts" ng-value="0" ng-change="saveAutosaveContacts()" /> <span translate>Disabled</span>
                             </label>
                         </div>
                         <p>
@@ -233,12 +233,12 @@
                         <div class="col right">
                             <div class="radio">
                                 <label>
-                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="1" /> {{ 'Auto' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="1" /> <span translate>Auto</span>
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="0" /> {{ 'Manual' | translate }}
+                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="0" /> <span translate>Manual</span>
                                 </label>
                             </div>
                             <p>
