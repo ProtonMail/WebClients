@@ -5,40 +5,40 @@
             <section class="pm_form">
                 <div class="pm_grid">
                     <div class="col-1-2">
-                        <legend translate-context="Default" translate>Overview</legend>
+                        <legend translate-context="title" translate>Overview</legend>
                         <div class="well">
                             <table class="pm_table plain">
                                 <tr>
-                                    <th translate-context="Default" translate>Username:</th>
+                                    <th translate-context="title" translate>Username:</th>
                                     <td>
                                         <strong>{{ user.Name }}</strong>
                                     </td>
                                     <td class="text-right actions"></td>
                                 </tr>
                                 <tr>
-                                    <th translate-context="Default" translate>Domains:</th>
+                                    <th translate-context="Title" translate>Domains:</th>
                                     <td>
                                         <strong ng-hide="organization.PlanName === 'free'" translate-context="Default" translate-comment="dashboard page. how many domains exist for an organization as well as the total number allowed." translate>{{ organization.UsedDomains }} of {{ organization.MaxDomains }}</strong>
                                         <strong ng-show="organization.PlanName === 'free'">0</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a ui-sref="secured.domains" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Default" translate>Manage</a>
-                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Default" translate>Upgrade</a>
+                                        <a ui-sref="secured.domains" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
+                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th translate-context="Default" translate>Addresses:</th>
+                                    <th translate-context="Title" translate>Addresses:</th>
                                     <td>
                                         <strong ng-hide="organization.PlanName === 'free'" translate-context="Default" translate-comment="dashboard page. how many addresses exist for an organization as well as the total number allowed." translate>{{ organization.UsedAddresses }} of {{ organization.MaxAddresses }}</strong>
                                         <strong ng-show="organization.PlanName === 'free'">1</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a ui-sref="secured.addresses" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Default" translate>Manage</a>
-                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Default" translate>Upgrade</a>
+                                        <a ui-sref="secured.addresses" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
+                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th translate-context="Default" translate>Storage:</th>
+                                    <th translate-context="Title" translate>Storage:</th>
                                     <td colspan="2">
                                         <strong ng-hide="organization.PlanName === 'free'" translate-context="Default" translate-comment="show used storage for an account" translate>{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | humanSize }}</strong>
                                         <strong ng-show="organization.PlanName === 'free'" translate-context="Default" translate-comment="show used storage for an account" translate>{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}</strong>
@@ -53,11 +53,11 @@
                         </div>
                     </div>
                     <div class="col-1-2" ng-hide="subscription.Name === 'free'">
-                        <legend translate-context="Default" translate>My subscription</legend>
+                        <legend translate-context="Title" translate>My subscription</legend>
                         <div class="well">
                             <table class="pm_table plain">
                                 <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
-                                    <th translate-context="Default" translate>Plan:</th>
+                                    <th translate-context="Title" translate>Plan:</th>
                                     <td><strong>{{ plan.Title }}</strong></td>
                                     <td class="text-right actions">
                                         <span ng-show="subscription.Cycle === 1">{{ subscription.Amount / 100 | currency: subscription.Currency }}</span>
@@ -66,37 +66,37 @@
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td colspan="2"><strong>{{ count('MaxSpace') | humanSize }} <span translate-context="Default" translate>Storage</span></strong></td>
+                                    <td colspan="2"><strong>{{ count('MaxSpace') | humanSize }} <span translate-context="Title" translate>Storage</span></strong></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td colspan="2"><strong>{{ count('MaxDomains') }} <span translate-context="Default" translate>Domains</span></strong></td>
+                                    <td colspan="2"><strong>{{ count('MaxDomains') }} <span translate-context="Title" translate>Domains</span></strong></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td colspan="2"><strong> {{ count('MaxAddresses') }} <span translate-context="Default" translate>Addresses</span></strong></td>
+                                    <td colspan="2"><strong> {{ count('MaxAddresses') }} <span translate-context="Title" translate>Addresses</span></strong></td>
                                 </tr>
                                 <tr>
-                                    <th translate-context="Default" translate>Total price:</th>
+                                    <th translate-context="Title" translate>Total price:</th>
                                     <td>
-                                        <strong ng-show="subscription.Cycle === 1" translate-context="Default" translate>Monthly</strong>
-                                        <strong ng-show="subscription.Cycle === 12" translate-context="Default" translate>Annually</strong>
+                                        <strong ng-show="subscription.Cycle === 1" translate-context="Title" translate>Monthly</strong>
+                                        <strong ng-show="subscription.Cycle === 12" translate-context="Title" translate>Annually</strong>
                                     </td>
                                     <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                 </tr>
                                 <tr ng-show="user.Credit > 0">
-                                    <th translate-context="Default" translate>Credit:</th>
+                                    <th translate-context="Title" translate>Credit:</th>
                                     <td></td>
                                     <td class="text-right actions">{{ user.Credit / 100 | currency: subscription.Currency }}</td>
                                 </tr>
                                 <tr>
-                                    <th translate-context="Default" translate>Payment:</th>
+                                    <th translate-context="Title" translate>Payment:</th>
                                     <td>
-                                        <strong ng-show="methods.length === 0" translate-context="Default" translate>None</strong>
-                                        <strong ng-show="methods.length > 0" translate-context="Default" translate>Credit card</strong>
+                                        <strong ng-show="methods.length === 0" translate-context="Title" translate>None</strong>
+                                        <strong ng-show="methods.length > 0" translate-context="Title" translate>Credit card</strong>
                                     </td>
                                     <td class="text-right actions">
-                                        <a class="pm_button link" ui-sref="secured.payments" translate-context="Default" translate>Manage</a>
+                                        <a class="pm_button link" ui-sref="secured.payments" translate-context="Action" translate>Manage</a>
                                     </td>
                                 </tr>
                             </table>
