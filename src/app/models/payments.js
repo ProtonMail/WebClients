@@ -261,7 +261,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardNumber(number) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('Card number invalid', null, 'Default')));
+                deferred.reject(new Error(gettextCatalog.getString('Card number invalid', null, 'Error')));
             } else {
                 deferred.resolve();
             }
@@ -272,7 +272,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardExpiry(month, year) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('Expiry invalid', null, 'Default')));
+                deferred.reject(new Error(gettextCatalog.getString('Expiration date invalid', null, 'Error')));
             } else {
                 deferred.resolve();
             }
@@ -283,7 +283,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardCVC(cvc) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('CVC invalid', null, 'Default')));
+                deferred.reject(new Error(gettextCatalog.getString('CVC invalid', null, 'Error')));
             } else {
                 deferred.resolve();
             }

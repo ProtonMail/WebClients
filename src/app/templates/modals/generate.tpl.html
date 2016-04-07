@@ -37,7 +37,7 @@
                                 <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'Generating' | translate }}</span>
                                 <span ng-show="address.state === 2" class="pm_badge success" translate>Done</span>
                                 <span ng-show="address.state === 3" class="pm_badge success" translate>Saved</span>
-                                <span ng-show="address.state === 4" class="pm_badge error" translate>Error</span>
+                                <span ng-show="address.state === 4" class="pm_badge error" translate translate-context="Error">Error</span>
                             </td>
                         </tr>
                     </tbody>

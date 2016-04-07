@@ -5,7 +5,7 @@
         <div class="row" id="settingsAddresses">
             <section class="setting full pm_form">
                 <legend>
-                    <span class="pull-right small" ng-show="organization">{{ organization.UsedAddresses }} / <span translate-context="Default" translate>{{ organization.MaxAddresses }} addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" translate-context="Default" translate>Upgrade your plan</a></span>
+                    <span class="pull-right small" ng-show="organization">{{ organization.UsedAddresses }} / <span translate-context="Default" translate-comment="addresses page. how many addresses are in use" translate>{{ organization.MaxAddresses }} addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" translate-context="Default" translate>Upgrade your plan</a></span>
                     <span translate-context="Default" translate>Addresses</span>
                 </legend>
                 <div class="margin" ng-show="isAdmin === true">

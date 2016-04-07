@@ -27,7 +27,7 @@
                 </span>
                 <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em>
             </div>
-            <p class="alert alert-danger" ng-show="badUsername" translate-context="Default" translate>Email already taken</p>
+            <p class="alert alert-danger" ng-show="badUsername" translate-context="Error" translate>Email already taken</p>
             <p class="alert alert-success" ng-show="goodUsername" translate-context="Default" translate>Email available</p>
             <label for="password">
                 <em class="num">2</em>
@@ -36,11 +36,11 @@
             <p class="help" translate-context="Default" translate>This is used to log you into our system.</p>
             <input id="password" name="password" ng-model="account.loginPassword" type="password" class="form-control margin" placeholder="{{ 'Choose a login password' | translate }}" maxlength="{{ maxPW }}" required />
             <div ng-show="step1.$submitted || step1.password.$touched">
-                <p ng-show="step1.$submitted && step1.password.$error.required" class="alert alert-danger" translate-context="Default" translate>Login password is required.</p>
+                <p ng-show="step1.$submitted && step1.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Login password is required.</p>
             </div>
             <input id="passwordc" name="passwordc" ng-model="account.loginPasswordConfirm" type="password" class="form-control" placeholder="{{ 'Confirm login password' | translate }}" required validator="account.loginPassword !== account.loginPasswordConfirm" />
             <div ng-show="step1.$submitted || step1.passwordc.$touched">
-                <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="alert alert-danger" translate-context="Default" translate>Passwords don't match.</p>
+                <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords don't match.</p>
             </div>
             <label for="password">
                 <em class="num">3</em>
@@ -49,11 +49,11 @@
             <p class="help" translate-context="Default" translate>This is used to encrypt and decrypt your messages. This is private and only you know it.</p>
             <input id="MBpassword" name="MBpassword" ng-model="account.mailboxPassword" type="password" class="form-control margin" placeholder="{{ 'Choose a mailbox password' | translate }}" required />
             <div ng-show="step1.$submitted || step1.MBpassword.$touched">
-                <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="alert alert-danger" translate-context="Default" translate>Mailbox password is required.</p>
+                <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="alert alert-danger" translate-context="Error" translate>Mailbox password is required.</p>
             </div>
             <input id="MBpasswordc" name="MBpasswordc" ng-model="account.mailboxPasswordConfirm" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}" placeholder="{{ 'Confirm mailbox password' | translate }}" required />
             <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
-                <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger" translate-context="Default" translate>Passwords don't match.</p>
+                <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords don't match.</p>
             </div>
             <p class="alert alert-info" translate-context="Default" translate>If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
             <label for="notificationEmail">
@@ -63,7 +63,7 @@
             <p class="help" translate-context="Default" translate>This is used to recover your account if you get locked out or forget your login password.</p>
             <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" type="email" class="form-control" placeholder="{{ 'Recovery email' | translate }}" validator="notificationEmailValidation()" ng-required="false" />
             <div ng-show="step1.notificationEmail.$error.email">
-                <p class="alert alert-danger" translate-context="Default" translate>Invalid recovery email.</p>
+                <p class="alert alert-danger" translate-context="Error" translate>Invalid recovery email.</p>
             </div>
             <p ng-if="preInvited">&nbsp;</p>
         </div><!--/.wrapper-->
@@ -177,9 +177,9 @@
     <div class="text-center header">
         <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" ng-show="creating && !signupError" />
         <h2 class="text-center" ng-show="!signupError" translate-context="Default" translate>Creating account</h2>
-        <h2 class="text-center" ng-show="signupError" translate-context="Default" translate>Sign up failed</h2>
+        <h2 class="text-center" ng-show="signupError" translate-context="Error" translate>Sign up failed</h2>
     </div>
-    <p class="alert alert-danger" ng-show="signupError" translate-context="Default" translate>An error occured while trying to create your account. To see common problems and solutions <a target='_blank' href='https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/'>click here</a>.</p>
+    <p class="alert alert-danger" ng-show="signupError" translate-context="Error" translate>An error occured while trying to create your account. To see common problems and solutions <a target='_blank' href='https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/'>click here</a>.</p>
     <div class="wrapper text-left">
         <ol id="creationList">
             <li class="done">

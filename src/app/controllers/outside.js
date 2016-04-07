@@ -145,13 +145,13 @@ angular.module("proton.controllers.Outside", [
                         deferred.resolve(result);
                     },
                     function(error) {
-                        error.message = gettextCatalog.getString('Error during the reply process', null, 'Default');
+                        error.message = gettextCatalog.getString('Error during the reply process', null, 'Error');
                         deferred.reject(error);
                     }
                 );
             },
             function(error) {
-                error.message = gettextCatalog.getString('Error during the encryption', null, 'Default');
+                error.message = gettextCatalog.getString('Error during the encryption', null, 'Error');
                 deferred.reject(error);
             }
         );

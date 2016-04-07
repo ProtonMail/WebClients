@@ -25,8 +25,8 @@
         <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
-            <strong translate-context="Default" translate>Decryption error</strong>
-            <div translate-context="Default" translate>Decryption of this message's encryption content failed.</div>
+            <strong translate-context="Error" translate>Decryption error</strong>
+            <div translate-context="Error" translate>Decryption of this message's encryption content failed.</div>
         </div>
     </div>
 

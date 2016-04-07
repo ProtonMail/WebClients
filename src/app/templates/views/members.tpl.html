@@ -28,7 +28,7 @@
 	                        	<tr>
 		                            <th width="7rem" translate-context="Default" translate>Number of users:</th>
 		                            <td>
-		                                <strong translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} Used</strong>
+		                                <strong translate-context="Default" translate-comment="members page. how many members exist for an organization as well as the total number allowed." translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} Used</strong>
 		                            </td>
 		                            <td class="text-right">
 		                            	<span>
@@ -88,7 +88,7 @@
 		                    </td>
 		                    <td class="storage">
                                 <a href="#" ng-click="manageStorage(member)" class="fa fa-edit pm_button link pull-right"></a>
-                                <span translate-context="Default" translate>{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used</span>
+                                <span translate-context="Default" translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used</span>
                             </td>
 		                    <td class="addresses">
                                 <div ng-repeat="address in member.Addresses | orderBy: 'Send'" ng-hide="address.Status === 0">

@@ -666,10 +666,10 @@ angular.module("proton.modals", [])
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             deferred.reject(new Error(result.data.Error));
                         } else {
-                            deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Default')));
+                            deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
                         }
                     }.bind(this), function(error) {
-                        deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Default')));
+                        deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
                     });
                 } else {
                     deferred.resolve();
@@ -1545,7 +1545,7 @@ angular.module("proton.modals", [])
                 } else if (result.data && result.data.Error) {
                     deferred.reject(new Error(result.data.Error));
                 } else {
-                    deferred.resolve(new Error(gettextCatalog.getString('Error while processing donation.', null, 'Default')));
+                    deferred.resolve(new Error(gettextCatalog.getString('Error while processing donation.', null, 'Error')));
                 }
 
                 return deferred.promise;

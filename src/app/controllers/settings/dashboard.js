@@ -329,7 +329,7 @@ angular.module("proton.controllers.Settings")
                             } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                                 deferred.reject(new Error(result.data.Error));
                             } else {
-                                deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Default')));
+                                deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
                             }
                         });
 
@@ -346,7 +346,7 @@ angular.module("proton.controllers.Settings")
                             } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                                 deferred.reject(new Error(result.data.Error));
                             } else {
-                                deferred.reject(new Error(gettextCatalog.getString('Error processing payment.', null, 'Default')));
+                                deferred.reject(new Error(gettextCatalog.getString('Error processing payment.', null, 'Error')));
                             }
                         });
 

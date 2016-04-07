@@ -232,7 +232,7 @@ ng-class="{
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
             <strong translate>Decryption error</strong>
-            <div translate>Decryption of this message's encryption content failed.</div>
+            <div translate translate-context="Error">Decryption of this message's encryption content failed.</div>
         </div>
         <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     </div>

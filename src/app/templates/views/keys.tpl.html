@@ -2,7 +2,7 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings pm_form">
         <div class="row">
-            <p class="alert alert-warning" ng-show="isSafari" translate-context="Default" translate>Safari doesn't support downloading of keys. We are working on a fix for this.</p>
+            <p class="alert alert-warning" ng-show="isSafari" translate-context="Error" translate>Safari doesn't support downloading of keys. We are working on a fix for this.</p>
             <p class="alert alert-info" translate-context="Default" translate>Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.</p>
             <legend translate-context="Default" translate>ProtonMail addresses</legend>
             <div ng-repeat="address in PMAddresses | orderBy: 'Send'">
@@ -36,7 +36,7 @@
                             <td>
                                 <code pt-tooltip="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 8 }}...</code>
                             </td>
-                            <td translate>{{ key.bitSize }} Bit</td>
+                            <td translate translate-context="Default" translate-comment="keys page to show the key size for an address">{{ key.bitSize }} Bit</td>
                             <td>
                                 <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari" translate-context="Default" translate>Public key</button>
                                 <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari" translate-context="Default" translate>Private key</button>
@@ -83,7 +83,7 @@
                             <td>
                                 <code pt-tooltip="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 8 }}...</code>
                             </td>
-                            <td translate>{{ key.bitSize }} Bit</td>
+                            <td translate translate-context="Default" translate-comment="keys page to show the key size for an address">{{ key.bitSize }} Bit</td>
                             <td>
                                 <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari" translate-context="Default" translate>Public key</button>
                                 <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari" translate-context="Default" translate>Private key</button>
@@ -132,7 +132,7 @@
                                 <code pt-tooltip="{{ key.fingerprint }} ({{ key.created | date }})">{{ key.fingerprint | limitTo: 8 }}&hellip;</code>
                                 <code pt-tooltip="{{ key.fingerprint }} ({{ key.created | date }})" ng-if="mobileMode">{{ key.fingerprint }}</code>
                             </td>
-                            <td translate>{{ key.bitSize }} Bit</td>
+                            <td translate translate-context="Default" translate-comment="keys page to show the key size for an address">{{ key.bitSize }} Bit</td>
                             <td>
                                 <button class="pm_button" ng-click="download(key.PublicKey, address.Email, 'public')" ng-hide="isSafari" translate-context="Default" translate>Public key</button>
                                 <button class="pm_button" ng-click="download(key.PrivateKey, address.Email, 'private')" ng-hide="isSafari" translate-context="Default" translate>Private key</button>

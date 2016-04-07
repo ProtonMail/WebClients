@@ -18,7 +18,7 @@
                                 <tr>
                                     <th translate-context="Default" translate>Domains:</th>
                                     <td>
-                                        <strong ng-hide="organization.PlanName === 'free'" translate>{{ organization.UsedDomains }} of {{ organization.MaxDomains }}</strong>
+                                        <strong ng-hide="organization.PlanName === 'free'" translate-context="Default" translate-comment="dashboard page. how many domains exist for an organization as well as the total number allowed." translate>{{ organization.UsedDomains }} of {{ organization.MaxDomains }}</strong>
                                         <strong ng-show="organization.PlanName === 'free'">0</strong>
                                     </td>
                                     <td class="text-right actions">
@@ -29,7 +29,7 @@
                                 <tr>
                                     <th translate-context="Default" translate>Addresses:</th>
                                     <td>
-                                        <strong ng-hide="organization.PlanName === 'free'" translate>{{ organization.UsedAddresses }} of {{ organization.MaxAddresses }}</strong>
+                                        <strong ng-hide="organization.PlanName === 'free'" translate-context="Default" translate-comment="dashboard page. how many addresses exist for an organization as well as the total number allowed." translate>{{ organization.UsedAddresses }} of {{ organization.MaxAddresses }}</strong>
                                         <strong ng-show="organization.PlanName === 'free'">1</strong>
                                     </td>
                                     <td class="text-right actions">
@@ -40,8 +40,8 @@
                                 <tr>
                                     <th translate-context="Default" translate>Storage:</th>
                                     <td colspan="2">
-                                        <strong ng-hide="organization.PlanName === 'free'" translate>{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | humanSize }}</strong>
-                                        <strong ng-show="organization.PlanName === 'free'" translate>{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}</strong>
+                                        <strong ng-hide="organization.PlanName === 'free'" translate-context="Default" translate-comment="show used storage for an account" translate>{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | humanSize }}</strong>
+                                        <strong ng-show="organization.PlanName === 'free'" translate-context="Default" translate-comment="show used storage for an account" translate>{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}</strong>
                                         <br>
                                         <div class="bar">
                                             <em ng-hide="organization.PlanName === 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></em>
