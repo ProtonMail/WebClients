@@ -574,12 +574,12 @@ angular.module("proton.modals", [])
             // IE11 doesn't support PayPal
             if ($.browser.msie === true && $.browser.edge !== true) {
                 this.choices = [
-                    {value: 'card', label: gettextCatalog.getString('Credit card')},
+                    {value: 'card', label: gettextCatalog.getString('Credit card', null, 'Default')},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
             } else {
                 this.choices = [
-                    {value: 'card', label: gettextCatalog.getString('Credit card')},
+                    {value: 'card', label: gettextCatalog.getString('Credit card', null, 'Default')},
                     {value: 'paypal', label: 'PayPal'},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
@@ -609,7 +609,7 @@ angular.module("proton.modals", [])
                 .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
                 .uniq()
                 .value();
-            this.organizationName = gettextCatalog.getString('My organization'); // TODO set this value for the business plan
+            this.organizationName = gettextCatalog.getString('My organization', null, 'Default'); // TODO set this value for the business plan
 
             // Functions
 
@@ -666,10 +666,10 @@ angular.module("proton.modals", [])
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             deferred.reject(new Error(result.data.Error));
                         } else {
-                            deferred.reject(new Error(gettextCatalog.getString('Error during organization request')));
+                            deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Default')));
                         }
                     }.bind(this), function(error) {
-                        deferred.reject(new Error(gettextCatalog.getString('Error during organization request')));
+                        deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Default')));
                     });
                 } else {
                     deferred.resolve();
@@ -837,10 +837,10 @@ angular.module("proton.modals", [])
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
-                            notify({message: gettextCatalog.getString('Coupon invalid'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Coupon invalid', null, 'Default'), classes: 'notification-danger'});
                             this.coupon = '';
                         } else {
-                            notify({message: gettextCatalog.getString('Coupon accepted'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Coupon accepted', null, 'Default'), classes: 'notification-success'});
                         }
                         this.valid = result.data;
                     }
@@ -1032,18 +1032,18 @@ angular.module("proton.modals", [])
                     })
                 ).then(function(result) {
                     if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        notify({message: gettextCatalog.getString('Address added'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Address added', null, 'Default'), classes: 'notification-success'});
                         this.domain.Addresses.push(result.data.Address);
                         eventManager.call();
                     } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
-                        notify({message: gettextCatalog.getString('Domain not found'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Domain not found', null, 'Default'), classes: 'notification-danger'});
                     } else if(angular.isDefined(result.data) && result.data.Error) {
                         notify({message: result.data.Error, classes: 'notification-danger'});
                     } else {
-                        notify({message: gettextCatalog.getString('Address created failed'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Address created failed', null, 'Default'), classes: 'notification-danger'});
                     }
                 }.bind(this), function(error) {
-                    notify({message: gettextCatalog.getString('Address created failed'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Address created failed', null, 'Default'), classes: 'notification-danger'});
                 });
             }.bind(this);
 
@@ -1545,7 +1545,7 @@ angular.module("proton.modals", [])
                 } else if (result.data && result.data.Error) {
                     deferred.reject(new Error(result.data.Error));
                 } else {
-                    deferred.resolve(new Error(gettextCatalog.getString('Error while processing donation.')));
+                    deferred.resolve(new Error(gettextCatalog.getString('Error while processing donation.', null, 'Default')));
                 }
 
                 return deferred.promise;

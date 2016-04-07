@@ -87,16 +87,16 @@ angular.module("proton.models.payments", [])
                                 case 'free':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = '150 ' + gettextCatalog.getString('Messages per day');
-                                    plan.labels = '20 ' + gettextCatalog.getString('Labels');
-                                    plan.support = gettextCatalog.getString('Limited support');
+                                    plan.sending = '150 ' + gettextCatalog.getString('Messages per day', null, 'Default');
+                                    plan.labels = '20 ' + gettextCatalog.getString('Labels', null, 'Default');
+                                    plan.support = gettextCatalog.getString('Limited support', null, 'Default');
                                     break;
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
-                                    plan.sending = '1000 ' + gettextCatalog.getString('Messages per day');
-                                    plan.labels = '200 ' + gettextCatalog.getString('Labels');
-                                    plan.support = gettextCatalog.getString('Support');
+                                    plan.sending = '1000 ' + gettextCatalog.getString('Messages per day', null, 'Default');
+                                    plan.labels = '200 ' + gettextCatalog.getString('Labels', null, 'Default');
+                                    plan.support = gettextCatalog.getString('Support', null, 'Default');
                                     break;
                                 case 'business':
                                     plan.editable = true;
@@ -108,9 +108,9 @@ angular.module("proton.models.payments", [])
                                 case 'visionary':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = gettextCatalog.getString('Unlimited sending');
-                                    plan.labels = gettextCatalog.getString('Unlimited labels');
-                                    plan.support = gettextCatalog.getString('Priority support');
+                                    plan.sending = gettextCatalog.getString('Unlimited sending', null, 'Default');
+                                    plan.labels = gettextCatalog.getString('Unlimited labels', null, 'Default');
+                                    plan.support = gettextCatalog.getString('Priority support', null, 'Default');
                                     break;
                                 default:
                                     break;
@@ -261,7 +261,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardNumber(number) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('Card number invalid')));
+                deferred.reject(new Error(gettextCatalog.getString('Card number invalid', null, 'Default')));
             } else {
                 deferred.resolve();
             }
@@ -272,7 +272,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardExpiry(month, year) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('Expiry invalid')));
+                deferred.reject(new Error(gettextCatalog.getString('Expiry invalid', null, 'Default')));
             } else {
                 deferred.resolve();
             }
@@ -283,7 +283,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardCVC(cvc) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('CVC invalid')));
+                deferred.reject(new Error(gettextCatalog.getString('CVC invalid', null, 'Default')));
             } else {
                 deferred.resolve();
             }

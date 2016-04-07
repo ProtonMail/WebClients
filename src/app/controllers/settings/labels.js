@@ -57,7 +57,7 @@ angular.module("proton.controllers.Settings")
     $scope.createLabel = function() {
         labelModal.activate({
             params: {
-                title: gettextCatalog.getString('Create new label'),
+                title: gettextCatalog.getString('Create new label', null, 'Default'),
                 create: function(name, color) {
                     networkActivityTracker.track(
                         Label.create({
@@ -68,7 +68,7 @@ angular.module("proton.controllers.Settings")
                             if (result.data && result.data.Code === 1000) {
                                 eventManager.call();
                                 labelModal.deactivate();
-                                notify({message: gettextCatalog.getString('Label created'), classes: 'notification-success'});
+                                notify({message: gettextCatalog.getString('Label created', null, 'Default'), classes: 'notification-success'});
                             } else if (result.data && result.data.Error) {
                                 notify({message: result.data.Error, classes: 'notification-danger'});
                             }
@@ -88,7 +88,7 @@ angular.module("proton.controllers.Settings")
 
         labelModal.activate({
             params: {
-                title: gettextCatalog.getString('Edit label'),
+                title: gettextCatalog.getString('Edit label', null, 'Default'),
                 label: label,
                 create: function(name, color) {
                     networkActivityTracker.track(
@@ -104,7 +104,7 @@ angular.module("proton.controllers.Settings")
                                 label.Color = data.Label.Color;
                                 label.Name = data.Label.Name;
                                 labelModal.deactivate();
-                                notify({message: gettextCatalog.getString('Label edited'), classes: 'notification-success'});
+                                notify({message: gettextCatalog.getString('Label edited', null, 'Default'), classes: 'notification-success'});
                             } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
                                 label.Name = origName;
                                 label.Color = origColor;
@@ -112,10 +112,10 @@ angular.module("proton.controllers.Settings")
                             } else {
                                 label.Name = origName;
                                 label.Color = origColor;
-                                notify({message: gettextCatalog.getString('Error during label request'), classes: 'notification-danger'});
+                                notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
                             }
                         }, function(error) {
-                            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Default'), classes: 'notification-danger'});
                             $log.error(error);
                         })
                     );
@@ -130,8 +130,8 @@ angular.module("proton.controllers.Settings")
     $scope.deleteLabel = function(label) {
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete label'),
-                message: gettextCatalog.getString('Are you sure you want to delete this label?'),
+                title: gettextCatalog.getString('Delete label', null, 'Default'),
+                message: gettextCatalog.getString('Are you sure you want to delete this label?', null, 'Default'),
                 confirm: function() {
                     networkActivityTracker.track(
                         Label.delete(label.ID)
@@ -142,18 +142,18 @@ angular.module("proton.controllers.Settings")
                                 if(angular.isDefined(data) && data.Code === 1000) {
                                     var index = $scope.labels.indexOf(label);
 
-                                    notify({message: gettextCatalog.getString('Label deleted'), classes: 'notification-success'});
+                                    notify({message: gettextCatalog.getString('Label deleted', null, 'Default'), classes: 'notification-success'});
                                     authentication.user.Labels.splice(index, 1);
                                     $rootScope.$broadcast('deleteLabel', label.ID);
                                     confirmModal.deactivate();
                                 } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
                                     notify({message: data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: gettextCatalog.getString('Error during label request'), classes: 'notification-danger'});
+                                    notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
                                 }
                             },
                             function(error) {
-                                notify({message: gettextCatalog.getString('Error during label request'), classes: 'notification-danger'});
+                                notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
                             }
                         )
                     );
@@ -173,16 +173,16 @@ angular.module("proton.controllers.Settings")
                 var data = result.data;
 
                 if (angular.isDefined(data) && data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Label order saved'), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('Label order saved', null, 'Default'), classes: 'notification-success'});
                 } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                     notify({message: data.Error, classes: 'notification-danger'});
                     $log.error(result);
                 } else {
-                    notify({message: gettextCatalog.getString('Error during label request'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
                     $log.error(result);
                 }
             }, function(error) {
-                notify({message: gettextCatalog.getString('Error during label request'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
                 $log.error(error);
             })
         );
@@ -198,16 +198,16 @@ angular.module("proton.controllers.Settings")
             var data = result.data;
 
             if (angular.isDefined(data) && data.Code === 1000) {
-                notify({message: gettextCatalog.getString('Label edited'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Label edited', null, 'Default'), classes: 'notification-success'});
             } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 notify({message: data.Error, classes: 'notification-danger'});
                 $log.error(result);
             } else {
-                notify({message: gettextCatalog.getString('Error during label request'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
                 $log.error(result);
             }
         }, function(error) {
-            notify({message: gettextCatalog.getString('Error during label request'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Error during label request', null, 'Default'), classes: 'notification-danger'});
             $log.error(error);
         });
     };

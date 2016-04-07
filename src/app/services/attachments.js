@@ -105,7 +105,7 @@ angular.module("proton.attachments", [
                         notify({message: response.Error, classes: 'notification-danger'});
                         deferred.reject(response);
                     } else {
-                        notify({message: gettextCatalog.getString('Unable to upload'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Unable to upload', null, 'Default'), classes: 'notification-danger'});
                         deferred.reject(response);
                     }
                 } else {

@@ -27,15 +27,15 @@ angular.module("proton.controllers.Secured", [])
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
     $scope.settingsRoutes = [
-        {value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard')},
-        {value: 'secured.account', label: gettextCatalog.getString('Account')},
-        {value: 'secured.labels', label: gettextCatalog.getString('Labels')},
-        {value: 'secured.security', label: gettextCatalog.getString('Security')},
-        {value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard')},
-        {value: 'secured.appearance', label: gettextCatalog.getString('Appearance')},
-        {value: 'secured.domains', label: gettextCatalog.getString('Domains')},
-        {value: 'secured.members', label: gettextCatalog.getString('Users')},
-        {value: 'secured.payments', label: gettextCatalog.getString('Payments')}
+        {value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard', null, 'Default')},
+        {value: 'secured.account', label: gettextCatalog.getString('Account', null, 'Default')},
+        {value: 'secured.labels', label: gettextCatalog.getString('Labels', null, 'Default')},
+        {value: 'secured.security', label: gettextCatalog.getString('Security', null, 'Default')},
+        {value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard', null, 'Default')},
+        {value: 'secured.appearance', label: gettextCatalog.getString('Appearance', null, 'Default')},
+        {value: 'secured.domains', label: gettextCatalog.getString('Domains', null, 'Default')},
+        {value: 'secured.members', label: gettextCatalog.getString('Users', null, 'Default')},
+        {value: 'secured.payments', label: gettextCatalog.getString('Payments', null, 'Default')}
     ];
 
     // Set language used for the application
@@ -189,25 +189,25 @@ angular.module("proton.controllers.Secured", [])
 
         switch (state) {
             case 'inbox':
-                name = unread + gettextCatalog.getString('Inbox');
+                name = unread + gettextCatalog.getString('Inbox', null, 'Default');
                 break;
             case 'drafts':
-                name = unread + gettextCatalog.getString('Drafts');
+                name = unread + gettextCatalog.getString('Drafts', null, 'Default');
                 break;
             case 'sent':
-                name = unread + gettextCatalog.getString('Sent');
+                name = unread + gettextCatalog.getString('Sent', null, 'Default');
                 break;
             case 'starred':
-                name = unread + gettextCatalog.getString('Starred');
+                name = unread + gettextCatalog.getString('Starred', null, 'Default');
                 break;
             case 'archive':
-                name = unread + gettextCatalog.getString('Archive');
+                name = unread + gettextCatalog.getString('Archive', null, 'Default');
                 break;
             case 'spam':
-                name = unread + gettextCatalog.getString('Spam');
+                name = unread + gettextCatalog.getString('Spam', null, 'Default');
                 break;
             case 'trash':
-                name = unread + gettextCatalog.getString('Trash');
+                name = unread + gettextCatalog.getString('Trash', null, 'Default');
                 break;
             case 'label':
                 var label = _.findWhere(authentication.user.Labels, {ID: $state.params.label});
@@ -215,38 +215,38 @@ angular.module("proton.controllers.Secured", [])
                 if (angular.isDefined(label)) {
                     name = label.Name;
                 } else {
-                    name = gettextCatalog.getString('Label');
+                    name = gettextCatalog.getString('Label', null, 'Default');
                 }
                 break;
             case 'contacts':
-                name = gettextCatalog.getString('Contacts');
+                name = gettextCatalog.getString('Contacts', null, 'Default');
                 break;
             case 'dashboard':
-                name = gettextCatalog.getString('Dashboard');
+                name = gettextCatalog.getString('Dashboard', null, 'Default');
                 break;
             case 'account':
-                name = gettextCatalog.getString('Account');
+                name = gettextCatalog.getString('Account', null, 'Default');
                 break;
             case 'labels':
-                name = gettextCatalog.getString('Labels');
+                name = gettextCatalog.getString('Labels', null, 'Default');
                 break;
             case 'security':
-                name = gettextCatalog.getString('Security');
+                name = gettextCatalog.getString('Security', null, 'Default');
                 break;
             case 'appearance':
-                name = gettextCatalog.getString('Appearance');
+                name = gettextCatalog.getString('Appearance', null, 'Default');
                 break;
             case 'domains':
-                name = gettextCatalog.getString('Domains');
+                name = gettextCatalog.getString('Domains', null, 'Default');
                 break;
             case 'users':
-                name = gettextCatalog.getString('Users');
+                name = gettextCatalog.getString('Users', null, 'Default');
                 break;
             case 'invoices':
-                name = gettextCatalog.getString('Invoices');
+                name = gettextCatalog.getString('Invoices', null, 'Default');
                 break;
             case 'login':
-                name = gettextCatalog.getString('Login');
+                name = gettextCatalog.getString('Login', null, 'Default');
                 break;
             default:
                 name = '';

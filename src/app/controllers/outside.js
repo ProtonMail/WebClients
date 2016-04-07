@@ -141,17 +141,17 @@ angular.module("proton.controllers.Outside", [
                 .then(
                     function(result) {
                         $state.go('eo.message', {tag: $stateParams.tag});
-                        notify({message: gettextCatalog.getString('Message sent'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Message sent', null, 'Default'), classes: 'notification-success'});
                         deferred.resolve(result);
                     },
                     function(error) {
-                        error.message = gettextCatalog.getString('Error during the reply process');
+                        error.message = gettextCatalog.getString('Error during the reply process', null, 'Default');
                         deferred.reject(error);
                     }
                 );
             },
             function(error) {
-                error.message = gettextCatalog.getString('Error during the encryption');
+                error.message = gettextCatalog.getString('Error during the encryption', null, 'Default');
                 deferred.reject(error);
             }
         );

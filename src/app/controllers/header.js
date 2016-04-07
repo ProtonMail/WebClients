@@ -18,7 +18,7 @@ angular.module('proton.controllers.Header', [])
     $scope.appVersion = CONFIG.app_version;
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
     $scope.addresses = [];
-    $scope.addresses.push({Email: gettextCatalog.getString('All'), ID: undefined, Send: 0, Receive: 1, Status: 1}); // Add ALL option
+    $scope.addresses.push({Email: gettextCatalog.getString('All', null, 'Default'), ID: undefined, Send: 0, Receive: 1, Status: 1}); // Add ALL option
 
     if (authentication.user) { // This code is also executed on the login page, it explain this condition
         $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
@@ -32,7 +32,7 @@ angular.module('proton.controllers.Header', [])
 
     var addFolders = function() {
         $scope.ctrl.folders = [];
-        $scope.ctrl.folders.push({value: -1, label: gettextCatalog.getString('All'), group: 'default'});
+        $scope.ctrl.folders.push({value: -1, label: gettextCatalog.getString('All', null, 'Default'), group: 'default'});
 
         _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(value, key) {
             if (key !== 'search' && key !== 'label') {
@@ -157,7 +157,7 @@ angular.module('proton.controllers.Header', [])
 
     $scope.$on('updateUser', function(event) {
         $scope.addresses = [];
-        $scope.addresses.push({Email: gettextCatalog.getString('All'), ID: undefined});
+        $scope.addresses.push({Email: gettextCatalog.getString('All', null, 'Default'), ID: undefined});
 
         if (authentication.user) {
             $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);

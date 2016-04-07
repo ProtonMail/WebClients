@@ -652,7 +652,7 @@ angular.module("proton.authentication", [
                 function(response) {
                     if(response.data.Code === 1000) {
                         deferred.resolve(response);
-                        notify({message: gettextCatalog.getString('Bug reported'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Bug reported', null, 'Default'), classes: 'notification-success'});
                     } else if (angular.isDefined(response.data.Error)) {
                         response.message = response.data.Error;
                         deferred.reject(response);
