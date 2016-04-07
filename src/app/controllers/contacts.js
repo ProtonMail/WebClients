@@ -204,7 +204,7 @@ angular.module("proton.controllers.Contacts", [
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match) {
-                notify(gettextCatalog.getString('Contact exists for this email address', null, 'Default');
+                notify({message: gettextCatalog.getString('Contact exists for this email address', null, 'Default'), classes: 'notification-danger'});
                 contactModal.deactivate();
             } else {
                 var newContact = {
@@ -443,7 +443,7 @@ angular.module("proton.controllers.Contacts", [
             params: {
                 title: gettextCatalog.getString('Download', null, 'Default'),
                 alert: 'alert-warning',
-                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'), 
+                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'),
                 ok: function() {
                     alertModal.deactivate();
                 }
