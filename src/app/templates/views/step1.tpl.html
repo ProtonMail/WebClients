@@ -28,7 +28,7 @@
                 <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em>
             </div>
             <p class="alert alert-danger" ng-show="badUsername" translate-context="Error" translate>Email already taken</p>
-            <p class="alert alert-success" ng-show="goodUsername" translate-context="Default" translate>Email available</p>
+            <p class="alert alert-success" ng-show="goodUsername"  translate>Email available</p>
             <label for="password">
                 <em class="num">2</em>
                 <span translate translate-context="Title">Login password</span>
@@ -82,7 +82,7 @@
         <p class="help">To help fight spammers, please verify you are human. You can verify via email, text (sms), or solve a reCaptcha:</p>
         <div ng-show="showEmail">
             <label>
-                <input type="radio" ng-model="verificator" value="email" /> <span translate translate-context="Default">Email</span>
+                <input type="radio" ng-model="verificator" value="email" /> <span translate >Email</span>
             </label>
         </div>
         <div ng-show="showCaptcha">
@@ -148,7 +148,7 @@
         <div ng-if="verificator === 'recaptcha'" id="recaptchaFrame">
             <p>&nbsp;</p>
             <h3 translate-context="Title" translate>reCaptcha verification</h3>
-            <span class="loading" translate-context="Default" translate>Loading...</span>
+            <span class="loading"  translate>Loading...</span>
             <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
         </div>
 
@@ -163,7 +163,7 @@
 <div class="pm_panel wide" ng-show="genNewKeys">
     <div class="text-center header">
         <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" />
-        <h2 class="text-center" ng-show="!signupError" translate-context="Default" translate>Generating keys...</h2>
+        <h2 class="text-center" ng-show="!signupError"  translate>Generating keys...</h2>
     </div>
     <p class="alert" translate-context="Info" translate>This can take a few seconds or a few minutes depending on your device.</p>
 </div>
@@ -171,7 +171,7 @@
 <div class="pm_panel wide" ng-show="creating" id="signUpProcess">
     <div class="text-center header">
         <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" ng-show="creating && !signupError" />
-        <h2 class="text-center" ng-show="!signupError" translate-context="Default" translate>Creating account</h2>
+        <h2 class="text-center" ng-show="!signupError"  translate>Creating account</h2>
         <h2 class="text-center" ng-show="signupError" translate-context="Error" translate>Sign up failed</h2>
     </div>
     <p class="alert alert-danger" ng-show="signupError" translate-context="Error" translate>An error occured while trying to create your account. To see common problems and solutions <a target='_blank' href='https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/'>click here</a>.</p>
@@ -179,35 +179,35 @@
         <ol id="creationList">
             <li class="done">
                 <i class="show fa fa-check"></i>
-                <span translate translate-context="Default">Generating keys</span>
+                <span translate >Generating keys</span>
             </li>
             <li ng-class="{ 'done': createUser }">
                 <i ng-class="{ 'show': createUser }" class="fa fa-check"></i>
-                <span translate translate-context="Default">Creating new user</span>
+                <span translate >Creating new user</span>
             </li>
             <li ng-class="{ 'done': logUserIn }">
                 <i ng-class="{ 'show': logUserIn }" class="fa fa-check"></i>
-                <span translate translate-context="Default">Verifying new account</span>
+                <span translate >Verifying new account</span>
             </li>
             <li ng-class="{ 'done': decryptAccessToken }">
                 <i ng-class="{ 'show': decryptAccessToken }" class="fa fa-check"></i>
-                <span translate translate-context="Default">Verifying encryption keys</span>
+                <span translate >Verifying encryption keys</span>
             </li>
             <li ng-class="{ 'done': mailboxLogin }">
                 <i ng-class="{ 'show': mailboxLogin }" class="fa fa-check"></i>
-                <span translate translate-context="Default">Loading new account</span>
+                <span translate >Loading new account</span>
             </li>
             <li ng-class="{ 'done': getUserInfo }">
                 <i ng-class="{ 'show': getUserInfo }" class="fa fa-check"></i>
-                <span translate translate-context="Default">Done</span>
+                <span translate >Done</span>
             </li>
             <li ng-class="{ 'done': finishCreation }">
                 <i ng-class="{ 'show': finishCreation }" class="fa fa-check"></i>
-                <span translate translate-context="Default">Redirecting</span>
+                <span translate >Redirecting</span>
             </li>
         </ol>
     </div>
 </div>
 <div id="pm_footer" class="static">
-    <p translate-context="Default" translate>&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland.</p>
+    <p  translate>&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland.</p>
 </div>

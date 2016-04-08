@@ -4,21 +4,21 @@
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
-                <span ng-show="ctrl.domain.VerifyState === 0" class="pull-right pm_badge error" translate>Not set</span>
-                <span ng-show="ctrl.domain.VerifyState === 1" class="pull-right pm_badge error" translate>Not set properly</span>
-                <span ng-show="ctrl.domain.VerifyState === 2" class="pull-right pm_badge success" translate>Good</span>
-                <h4 class="modal-title">2. {{ 'Verify' | translate }} <em translate>Required</em></h4>
+                <span ng-show="ctrl.domain.VerifyState === 0" class="pull-right pm_badge error" translate translate-comment="Verification status badge">Not set</span>
+                <span ng-show="ctrl.domain.VerifyState === 1" class="pull-right pm_badge error" translate translate-comment="Verification status badge">Not set properly</span>
+                <span ng-show="ctrl.domain.VerifyState === 2" class="pull-right pm_badge success" translate translate-comment="Verification status badge">Good</span>
+                <h4 class="modal-title">2. <span translate translate-context="Title">Verify</span> <em translate>Required</em></h4>
             </div>
             <div class="modal-body pm_form">
                 <div>
-                    <p translate>For security reasons, we need to verify that you are the owner of your domain. Please add the following code into your DNS. <strong>Do not remove it even after successful verification</strong>. This can typically be done in the control panel of your domain name registrar.</p>
-                    <p translate>Please add the following TXT record:</p>
-                    <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/dns-records/' translate>Learn more</a></p>
+                    <p translate translate-context="Info">For security reasons, we need to verify that you are the owner of your domain. Please add the following code into your DNS. <strong>Do not remove it even after successful verification</strong>. This can typically be done in the control panel of your domain name registrar.</p>
+                    <p translate translate-context="Info">Please add the following TXT record:</p>
+                    <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/dns-records/' translate translate-context="Action">Learn more</a></p>
                     <table class="pm_table record" ng-if="!mobileMode">
                         <tr>
-                            <th style="width:3rem" translate>Type</th>
-                            <th style="width:6.5rem" translate>Host name</th>
-                            <th translate>Value / Data / Points to</th>
+                            <th style="width:3rem" translate translate-context="Title">Type</th>
+                            <th style="width:6.5rem" translate translate-context="Title">Host name</th>
+                            <th translate translate-context="Title">Value / Data / Points to</th>
                         </tr>
                         <tr>
                             <td><code>TXT</code></td>
@@ -42,14 +42,14 @@
                         </p>
                     </div>
 
-                    <p class="alert alert-info" translate>It can take up to a day for DNS changes to update.</p>
+                    <p class="alert alert-info" translate translate-context="Info">It can take up to a day for DNS changes to update.</p>
                 </div>
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button ng-show="ctrl.domain.VerifyState === 0 || ctrl.domain.VerifyState === 1" class="pm_button primary pull-right" ng-click="ctrl.submit()" translate>Verify</button>
-            <button ng-show="ctrl.domain.State > 0" class="pm_button primary pull-right" ng-click="ctrl.next()" translate>Next</button>
-            <button class="pm_button" ng-click="ctrl.close()" translate>Close</button>
+            <button ng-show="ctrl.domain.VerifyState === 0 || ctrl.domain.VerifyState === 1" class="pm_button primary pull-right" ng-click="ctrl.submit()" translate translate-context="Action">Verify</button>
+            <button ng-show="ctrl.domain.State > 0" class="pm_button primary pull-right" ng-click="ctrl.next()" translate translate-context="Action">Next</button>
+            <button class="pm_button" ng-click="ctrl.close()" translate translate-context="Action">Close</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

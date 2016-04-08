@@ -7,7 +7,7 @@
         <div class="row">
 
             <section class="setting pm_form">
-                <legend translate-context="Default" translate translate-comment="Account page heading">Default identity</legend>
+                <legend  translate translate-comment="Account page heading">Default identity</legend>
                 <form method="post" ng-submit="saveIdentity(displayNameForm)" name="displayNameForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
@@ -36,7 +36,7 @@
             </section>
 
             <section class="setting pm_form pull-right">
-                <legend translate-context="Default" translate translate-comment="notifications heading on account page">Notifications</legend>
+                <legend  translate translate-comment="notifications heading on account page">Notifications</legend>
                 <form method="post" name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate  >
                     <div class="clearfix">
                         <div class="col left">
@@ -54,7 +54,7 @@
                             <input class="margin" type="email" id="notificationEmail" name="notificationEmail" placeholder="{{ 'Notification email' | translate }}" ng-model="notificationEmail" />
                             <p class="help-block"><small><i class="fa fa-info-circle"></i> <span translate-context="Info" translate>Also used to reset a forgotten password.</span></small></p>
 
-                            <button class="pm_button primary" type="submit" translate-context="Default" translate translate-comment="save button for saving notification email">Save</button>
+                            <button class="pm_button primary" type="submit"  translate translate-comment="save button for saving notification email">Save</button>
                         </div>
                     </div>
                     <div class="clearfix">&nbsp;</div>
@@ -163,25 +163,25 @@
                         <div class="col right">
                             <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder="{{ 'New mailbox password' | translate }}" required="" />
                             <div ng-messages="mailboxForm.newMailboxPassword.$error" class="text-red" ng-if="mailboxForm.newMailboxPassword.$touched">
-                                <p ng-message="required" translate-context="Default" Error>Field required</p>
+                                <p ng-message="required"  Error>Field required</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="confirmMailboxPassword" translate-context="Default" Title>Confirm new mailbox password</label>
+                            <label for="confirmMailboxPassword"  Title>Confirm new mailbox password</label>
                         </div>
                         <div class="col right">
                             <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder="{{ 'Confirm new mailbox password' | translate }}" class="margin" required="" />
                             <div ng-messages="mailboxForm.confirmMailboxPassword.$error" class="text-red" ng-if="mailboxForm.confirmMailboxPassword.$touched">
-                                <p ng-message="required" translate-context="Default" Error>Field required</p>
+                                <p ng-message="required"  Error>Field required</p>
                             </div>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <button class="pm_button primary" ng-disabled="mailboxForm.$valid === false || networkActivity.loading()" type="submit" translate-context="Default" translate>Save</button>
+                            <button class="pm_button primary" ng-disabled="mailboxForm.$valid === false || networkActivity.loading()" type="submit"  translate>Save</button>
                         </div>
                     </div>
                     <div class="clearfix">
@@ -209,13 +209,13 @@
                         <div class="radio">
                             <label>
                                 <input type="radio" ng-model="autosaveContacts" ng-value="1" ng-change="saveAutosaveContacts()" />
-                                <span translate-context="Default" translate translate-comment="form option">Enabled</span>
+                                <span  translate translate-comment="form option">Enabled</span>
                             </label>
                         </div>
                         <div class="radio">
                             <label>
                                 <input type="radio" ng-model="autosaveContacts" ng-value="0" ng-change="saveAutosaveContacts()" />
-                                <span translate-context="Default" translate translate-comment="form option">Disabled</span>
+                                <span  translate translate-comment="form option">Disabled</span>
                             </label>
                         </div>
                         <p>

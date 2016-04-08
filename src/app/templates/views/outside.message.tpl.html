@@ -1,6 +1,6 @@
 <div id="outsideMessageWrap">
     <div ng-if="true" id="expirationMessage">
-        <span translate-context="Default" translate>Expiring in</span>
+        <span  translate>Expiring in</span>
         <strong time="{{ message.ExpirationTime }}" interval="1000" filter="delay">
             <i class="fa fa-spin fa-circle-o-notch"></i>
         </strong>.
@@ -20,18 +20,18 @@
     <div class="message-metadata">
         <ul class="infos">
             <li>
-                <strong translate-comment="message metadata" translate-context="Default" translate>From</strong>
+                <strong translate-comment="message metadata"  translate>From</strong>
                 <b>{{ message.Sender.Name }}</b> &lt;{{ message.Sender.Address }}&gt;
                 <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified"></span>
             </li>
             <li ng-if="message.ToList.length > 0">
-                <strong translate-comment="message metadata" translate-context="Default" translate>To</strong>
+                <strong translate-comment="message metadata"  translate>To</strong>
                 <span ng-repeat="email in message.ToList">
                     <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
                 </span>
             </li>
             <li ng-if="message.CCList.length > 0">
-                <strong translate-comment="message metadata" translate-context="Default" translate>CC</strong>
+                <strong translate-comment="message metadata"  translate>CC</strong>
                 <span ng-repeat="email in message.CCList">
                     <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
                 </span>

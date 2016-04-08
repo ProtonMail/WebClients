@@ -81,8 +81,8 @@
 			<th translate-context="Title" translate-comment="invoice heading" translate>Billing cycle</th>
 			<td>
 				{{ invoice.BillingCycle }}
-				<span ng-show="invoice.BillingCycle < 12" translate-context="Default" translate translate-plural="Months">Month</span>
-				<span ng-show="invoice.BillingCycle >= 12" translate-context="Default" translate>Year</span>
+				<span ng-show="invoice.BillingCycle < 12"  translate translate-plural="Months">Month</span>
+				<span ng-show="invoice.BillingCycle >= 12"  translate>Year</span>
 			</td>
 		</tr>
 		<tr class="total">

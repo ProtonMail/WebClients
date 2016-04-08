@@ -12,7 +12,7 @@
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
-                        <span translate-context="Default" translate tranlate-comment="form option">Popup</span>
+                        <span  translate tranlate-comment="form option">Popup</span>
                         <br />
                         <img src="assets/img/settings/pop.gif"  alt="Popup" />
                     </label>
@@ -20,7 +20,7 @@
                 <div class="radio col right">
                     <label>
                         <input type="radio" ng-model="appearance.ComposerMode" value="1" ng-change="saveComposerMode(composerMode)" />
-                        <span translate-context="Default" translate translate-comment="form option">Maximized</span>
+                        <span  translate translate-comment="form option">Maximized</span>
                         <br />
                         <img src="assets/img/settings/max.gif" alt="{{ 'Maximized' | translate }}" />
                     </label>
@@ -28,11 +28,11 @@
             </section>
             <section class="setting pm_form pull-right">
                 <legend translate-context="Title" translate>Layout</legend>
-                <p class="alert alert-info"><span translate-context="Info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</span> <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank" translate-context="Default" translate>Learn more</a></p>
+                <p class="alert alert-info"><span translate-context="Info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</span> <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank"  translate>Learn more</a></p>
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />
-                        <span translate-context="Default" translate translate-comment="form option">Column</span>
+                        <span  translate translate-comment="form option">Column</span>
                         <br />
                         <img src="/assets/img/settings/col.gif" alt="Column" />
                     </label>
@@ -40,7 +40,7 @@
                 <div class="radio col right">
                     <label>
                         <input type="radio" ng-model="appearance.ViewLayout" ng-value="1" ng-change="saveLayoutMode(composerMode)" />
-                        <span translate-context="Default" translate translate-comment="form option">Row</span>
+                        <span  translate translate-comment="form option">Row</span>
                         <br />
                         <img src="/assets/img/settings/row.gif" alt="Row" />
                     </label>
@@ -72,7 +72,7 @@
             </section>
             <section class="setting pm_form pull-right">
                 <legend translate-context="Title" translate>Internationalization</legend>
-                <label for="selectDefaultLanguage" translate-context="Default" translate translate-comment="form option">Choose your default language.</label>
+                <label for="selectDefaultLanguage"  translate translate-comment="form option">Choose your default language.</label>
                 <span class="pm_select">
                     <select id="selectDefaultLanguage" ng-model="appearance.locale" ng-options="locale.label for locale in appearance.locales" ng-change="saveDefaultLanguage()"></select>
                     <i class="fa fa-angle-down"></i>

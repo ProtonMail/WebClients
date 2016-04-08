@@ -25,8 +25,8 @@
                             <p class="alert" translate translate-context="Info">You can enable authentication logging to see who and when your account is accessed. We will record the IP address that accesses the account and the time, as well as failed attempts.</p>
                         </div>
                         <div id="logArea" ng-show="doLogging != 0" class="clear">
-                            <p class="alert alert-info" ng-show="logs.length < 1 && haveLogs" translate-context="Default" translate>No logs yet.</p>
-                            <p class="alert alert-info" ng-show="!haveLogs && doLogging !== 0"><i class="fa fa-spin fa-spinner"></i translate-context="Default" translate>Fetching logs...</p>
+                            <p class="alert alert-info" ng-show="logs.length < 1 && haveLogs"  translate>No logs yet.</p>
+                            <p class="alert alert-info" ng-show="!haveLogs && doLogging !== 0"><i class="fa fa-spin fa-spinner"></i  translate>Fetching logs...</p>
                             <table class="pm_table" id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
                                 <thead>
                                     <tr>
@@ -42,10 +42,10 @@
                                                 <span translate-context="Error" translate-comment="authentication log record" translate>Login failed</span>
                                             </span>
                                             <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i>
-                                                <span translate-context="Default" translate>Login success</span>
+                                                <span  translate>Login success</span>
                                             </span>
                                             <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i>
-                                                <span translate-context="Default" translate>Log out</span>
+                                                <span  translate>Log out</span>
                                             </span>
                                         </td>
                                         <td ng-show="doLogging == 2" class="text-right">

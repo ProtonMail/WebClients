@@ -4,19 +4,19 @@
         <div class="modal-content">
             <div class="modal-header">
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
-                <span ng-show="ctrl.domain.DomainName" class="pull-right pm_badge success">{{ 'Set' | translate }}</span>
-                <h4 class="modal-title">1. {{ 'Domain' | translate }}</h4>
+                <span ng-show="ctrl.domain.DomainName" class="pull-right pm_badge success" translate>Set</span>
+                <h4 class="modal-title">1. <span translate>Domain</span></h4>
             </div>
             <div class="modal-body pm_form">
-                <p><span translate-context="Default" translate-comment="label for adding a new custom domain" translate>Add a domain that you own to your ProtonMail account.' | translate }}</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/" translate>Learn more</a></p>
+                <p><span translate-comment="label for adding a new custom domain" translate>Add a domain that you own to your ProtonMail account.</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/" translate translate-context="Action">Learn more</a></p>
                 <input ng-hide="ctrl.domain" type="text" autofocus ng-model="ctrl.name" placeholder="{{ 'Domain name' | translate }}" />
                 <textarea rows="1" ng-show="ctrl.domain" readonly ng-bind="::ctrl.domain.DomainName"></textarea>
             </div>
         </div>
         <div class="modal-footer clearfix">
-            <button type="button" class="pm_button" ng-disabled="networkActivity.loading()" ng-click="ctrl.cancel()" translate>Close</button>
-            <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.domain.DomainName" ng-disabled="networkActivity.loading()" translate>Next</button>
-            <button type="button" class="pm_button primary pull-right" ng-show="ctrl.domain.DomainName" ng-click="ctrl.next()" translate>Next</button>
+            <button type="button" class="pm_button" ng-disabled="networkActivity.loading()" ng-click="ctrl.cancel()" translate translate-context="Action">Close</button>
+            <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.domain.DomainName" ng-disabled="networkActivity.loading()" translate translate-context="Action">Next</button>
+            <button type="button" class="pm_button primary pull-right" ng-show="ctrl.domain.DomainName" ng-click="ctrl.next()" translate translate-context="Action">Next</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

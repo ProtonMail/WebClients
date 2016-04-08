@@ -104,7 +104,7 @@
                 </table>
                 <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
-                        <strong translate-context="Default" translate>No custom domain found</strong>
+                        <strong  translate>No custom domain found</strong>
                     </p>
                     <p>Click on 'ADD CUSTOM DOMAIN' button to add it.</p>
                 </div>
@@ -121,7 +121,7 @@
                     </p>
                     <p>
                         <button type="button" class="pm_button primary" ng-click="addAddress(domain)" translate-context="Action" translate-comment="add address button on the domains page" translate>Add address</button>
-                        <!-- <a ui-sref="secured.members" class="pm_button" translate-context="Default" translate>Add User</a> -->
+                        <!-- <a ui-sref="secured.members" class="pm_button"  translate>Add User</a> -->
                     </p>
                     <p class="alert alert-info">Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
                     <table class="pm_table pm_form bordered" ng-show="domain.Addresses.length > 0">
@@ -136,9 +136,9 @@
                             <tr ng-repeat="address in domain.Addresses | orderBy: 'Send'" ng-class="{'disabled': address.Status === 0}">
                                 <td>{{ address.Email }}</td>
                                 <td>
-                                    <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate-context="Default" translate>Enabled</span>
-                                    <span class="pm_badge error" ng-show="address.Status === 0" translate-context="Default" translate>Disabled</span>
-                                    <span class="pm_badge warning" ng-show="address.HasKeys === 0" translate-context="Default" translate>Missing keys</span>
+                                    <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1"  translate>Enabled</span>
+                                    <span class="pm_badge error" ng-show="address.Status === 0"  translate>Disabled</span>
+                                    <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate>Missing keys</span>
                                 </td>
                                 <td class="text-right">
                                     <a class="pm_button link" ui-sref="secured.addresses" translate-context="Action" translate>Manage</a>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="alert alert-info" ng-show="domains.length === 0">
                     <p>
-                        <strong translate-context="Default" translate>No custom domain found</strong>
+                        <strong  translate>No custom domain found</strong>
                     </p>
                     <p>Please add first a custom domain to configure addresses.</p>
                 </div>
