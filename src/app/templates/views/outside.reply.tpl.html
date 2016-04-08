@@ -11,11 +11,11 @@
         </div>
         <ul class="infos">
             <li>
-                <strong translate-context="Default" translate>From:</strong>
+                <strong translate-comment="message metadata" translate-context="Default" translate>From:</strong>
                 <b>{{ message.Recipient }}</b>
             </li>
             <li>
-                <strong translate-context="Default" translate>To:</strong>
+                <strong translate-comment="message metadata" translate-context="Default" translate>To:</strong>
                 <b>{{message.Sender.Name}}</b> <em>&lt;{{ message.Sender.Address }}&gt;</em>
             </li>
         </ul>
@@ -33,9 +33,9 @@
     <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
 
     <footer class="text-right">
-        <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()" translate-context="Default" translate>Cancel</button>
+        <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()" translate-context="Action" translate>Cancel</button>
         <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip="{{ 'Attachments' | translate }}"><i class="fa fa-paperclip"></i></button>
-        <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()" translate-context="Default" translate>Send</button>
+        <button class="pm_button primary" ng-disabled="networkActivity.loading()" ng-click="send()" translate-context="Action" translate>Send</button>
     </footer>
 
     <input type="file" id="inputFile" multiple />
