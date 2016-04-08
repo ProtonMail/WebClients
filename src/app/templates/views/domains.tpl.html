@@ -45,7 +45,7 @@
                                     <i class="fa fa-warning" ng-show="(domain.VerifyState === 1)"></i> <span translate>Verification</span>
                                 </button>
                                 <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-disabled="domain.State === 0" ng-class="{'success': domain.State === 1 && domain.Addresses.length > 0}">
-                                    <span ng-show="domain.Addresses.length > 0">{{ domain.Addresses.length }}</span> <span translate>Addresses</span>
+                                    <span ng-show="domain.Addresses.length > 0">{{ domain.Addresses.length }}</span> <span translate translate-context="Action">Addresses</span>
                                 </button>
                                 <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-disabled="domain.State === 0" ng-class="{
                                     'success': domain.MxState === 3,

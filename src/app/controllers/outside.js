@@ -141,7 +141,7 @@ angular.module("proton.controllers.Outside", [
                 .then(
                     function(result) {
                         $state.go('eo.message', {tag: $stateParams.tag});
-                        notify({message: gettextCatalog.getString('Message sent', null, 'Default'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'});
                         deferred.resolve(result);
                     },
                     function(error) {

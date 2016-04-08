@@ -30,7 +30,7 @@ angular.module("proton.filters",[])
             seconds = Math.floor(moment.duration(ms).asSeconds());
 
             // concatonate the variables
-            return days + ' ' + gettextCatalog.getString('Days') + ' ' + hours + ' ' + gettextCatalog.getString('Hours') + ' ' + minutes + ' ' + gettextCatalog.getString('Minutes') + ' ' + seconds + ' ' + gettextCatalog.getString('Seconds', null, 'Default');
+            return days + ' ' + gettextCatalog.getString('Days') + ' ' + hours + ' ' + gettextCatalog.getString('Hours') + ' ' + minutes + ' ' + gettextCatalog.getString('Minutes') + ' ' + seconds + ' ' + gettextCatalog.getString('Seconds', null);
         } else {
             return '';
         }
@@ -264,7 +264,7 @@ angular.module("proton.filters",[])
         var myself = _.findWhere(authentication.user.Addresses, {Email: contact.Address});
 
         if (me === true && angular.isDefined(myself)) {
-            return gettextCatalog.getString('Me', null, 'Default');
+            return gettextCatalog.getString('Me', null);
         } else if (parameter === 'Address') {
             return '<' + contact.Address + '>';
         } else if (parameter === 'Name') {

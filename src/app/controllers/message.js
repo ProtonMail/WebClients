@@ -277,7 +277,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.openSafariWarning = function() {
         alertModal.activate({
             params: {
-                title: gettextCatalog.getString('Download', null, 'Default'),
+                title: gettextCatalog.getString('Download', null),
                 alert: 'alert-warning',
                 message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'),
                 ok: function() {
@@ -682,8 +682,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var to = 'To: ' + tools.contactsToString($scope.message.ToList) + br;
         var cc = ($scope.message.CCList.length > 0)?('CC: ' + tools.contactsToString($scope.message.CCList) + br):'';
         var blockquoteEnd = '</blockquote>';
-        var re_prefix = gettextCatalog.getString('Re:', null, 'Default');
-        var fw_prefix = gettextCatalog.getString('Fw:', null, 'Default');
+        var re_prefix = gettextCatalog.getString('Re:', null);
+        var fw_prefix = gettextCatalog.getString('Fw:', null);
         var re_length = re_prefix.length;
         var fw_length = fw_prefix.length;
 

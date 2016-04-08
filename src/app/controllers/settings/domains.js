@@ -167,12 +167,12 @@ angular.module("proton.controllers.Settings")
 
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete domain', null, 'Default'),
-                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Default'),
+                title: gettextCatalog.getString('Delete domain', null),
+                message: gettextCatalog.getString('Are you sure you want to delete this address?', null),
                 confirm: function() {
                     networkActivityTracker.track(Domain.delete(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Domain deleted', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Domain deleted', null), classes: 'notification-success'});
                             $scope.domains.splice(index, 1); // Remove domain in interface
                             eventManager.call(); // Call event log manager
                             confirmModal.deactivate();
@@ -220,7 +220,7 @@ angular.module("proton.controllers.Settings")
     $scope.generate = function(address) {
         generateModal.activate({
             params: {
-                title: gettextCatalog.getString('Generate key pair', null, 'Default'),
+                title: gettextCatalog.getString('Generate key pair', null),
                 message: '', // TODO need text
                 addresses: [address],
                 cancel: function() {
@@ -241,12 +241,12 @@ angular.module("proton.controllers.Settings")
 
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete address', null, 'Default'),
-                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Default'),
+                title: gettextCatalog.getString('Delete address', null),
+                message: gettextCatalog.getString('Are you sure you want to delete this address?', null),
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Address deleted', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address deleted', null), classes: 'notification-success'});
                             domain.Addresses.splice(index, 1); // Remove address in interface
                             eventManager.call(); // Call event log manager
                             confirmModal.deactivate();
@@ -272,7 +272,7 @@ angular.module("proton.controllers.Settings")
     $scope.enableAddress = function(address) {
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                notify({message: gettextCatalog.getString('Address enabled', null, 'Default'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Address enabled', null), classes: 'notification-success'});
                 address.Status = 1;
             } else if(angular.isDefined(result.data) && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
@@ -290,12 +290,12 @@ angular.module("proton.controllers.Settings")
     $scope.disableAddress = function(address) {
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Disable address', null, 'Default'),
-                message: gettextCatalog.getString('Are you sure you want to disable this address?', null, 'Default'),
+                title: gettextCatalog.getString('Disable address', null),
+                message: gettextCatalog.getString('Are you sure you want to disable this address?', null),
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Address disabled', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address disabled', null), classes: 'notification-success'});
                             address.Status = 0;
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
@@ -325,7 +325,7 @@ angular.module("proton.controllers.Settings")
                 submit: function(name) {
                     networkActivityTracker.track(Domain.create({Name: name}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Domain created', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Domain created', null), classes: 'notification-success'});
                             $scope.domains.push(result.data.Domain);
                             eventManager.call(); // Call event log manager
                             domainModal.deactivate();
@@ -387,7 +387,7 @@ angular.module("proton.controllers.Settings")
                                     notify({message: gettextCatalog.getString('Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 1 hour for changes to take affect.', null, 'Error'), classes: 'notification-danger', duration: 30000});
                                     break;
                                 case 2:
-                                    notify({message: gettextCatalog.getString('Domain verified', null, 'Default'), classes: 'notification-success'});
+                                    notify({message: gettextCatalog.getString('Domain verified', null), classes: 'notification-success'});
                                     $scope.domains[index] = result.data.Domain;
                                     verificationModal.deactivate();
                                     // open the next step

@@ -81,7 +81,7 @@ angular.module('proton.controllers.Settings')
         }).then(function(result) {
             if (result.data && result.data.Code === 1000) {
                 $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
-                notify({message: gettextCatalog.getString('Payment method updated', null, 'Default'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Payment method updated', null), classes: 'notification-success'});
             } else if (result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
@@ -93,8 +93,8 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.delete = function(method) {
-        var title = gettextCatalog.getString('Delete payment method', null, 'Default');
-        var message = gettextCatalog.getString('Are you sure you want to delete this payment method?', null, 'Default');
+        var title = gettextCatalog.getString('Delete payment method', null);
+        var message = gettextCatalog.getString('Are you sure you want to delete this payment method?', null);
 
         confirmModal.activate({
             params: {
@@ -107,7 +107,7 @@ angular.module('proton.controllers.Settings')
                             if (result.data && result.data.Code === 1000) {
                                 confirmModal.deactivate();
                                 $scope.methods.splice($scope.methods.indexOf(method), 1);
-                                notify({message: gettextCatalog.getString('Payment method deleted', null, 'Default'), classes: 'notification-success'});
+                                notify({message: gettextCatalog.getString('Payment method deleted', null), classes: 'notification-success'});
                             } else if (result.data && result.data.Error) {
                                 confirmModal.deactivate();
                                 notify({message: result.data.Error, classes: 'notification-danger'});

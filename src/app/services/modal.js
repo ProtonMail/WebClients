@@ -574,12 +574,12 @@ angular.module("proton.modals", [])
             // IE11 doesn't support PayPal
             if ($.browser.msie === true && $.browser.edge !== true) {
                 this.choices = [
-                    {value: 'card', label: gettextCatalog.getString('Credit card', null, 'Default')},
+                    {value: 'card', label: gettextCatalog.getString('Credit card', null)},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
             } else {
                 this.choices = [
-                    {value: 'card', label: gettextCatalog.getString('Credit card', null, 'Default')},
+                    {value: 'card', label: gettextCatalog.getString('Credit card', null)},
                     {value: 'paypal', label: 'PayPal'},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
@@ -609,7 +609,7 @@ angular.module("proton.modals", [])
                 .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
                 .uniq()
                 .value();
-            this.organizationName = gettextCatalog.getString('My organization', null, 'Default'); // TODO set this value for the business plan
+            this.organizationName = gettextCatalog.getString('My organization', null); // TODO set this value for the business plan
 
             // Functions
 
@@ -840,7 +840,7 @@ angular.module("proton.modals", [])
                             notify({message: gettextCatalog.getString('Coupon invalid', null, 'Error'), classes: 'notification-danger'});
                             this.coupon = '';
                         } else {
-                            notify({message: gettextCatalog.getString('Coupon accepted', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Coupon accepted', null), classes: 'notification-success'});
                         }
                         this.valid = result.data;
                     }
@@ -1032,7 +1032,7 @@ angular.module("proton.modals", [])
                     })
                 ).then(function(result) {
                     if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        notify({message: gettextCatalog.getString('Address added', null, 'Default'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Address added', null), classes: 'notification-success'});
                         this.domain.Addresses.push(result.data.Address);
                         eventManager.call();
                     } else if(angular.isDefined(result.data) && result.data.Code === 31006) {

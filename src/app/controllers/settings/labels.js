@@ -57,7 +57,7 @@ angular.module("proton.controllers.Settings")
     $scope.createLabel = function() {
         labelModal.activate({
             params: {
-                title: gettextCatalog.getString('Create new label', null, 'Default'),
+                title: gettextCatalog.getString('Create new label', null),
                 create: function(name, color) {
                     networkActivityTracker.track(
                         Label.create({
@@ -68,7 +68,7 @@ angular.module("proton.controllers.Settings")
                             if (result.data && result.data.Code === 1000) {
                                 eventManager.call();
                                 labelModal.deactivate();
-                                notify({message: gettextCatalog.getString('Label created', null, 'Default'), classes: 'notification-success'});
+                                notify({message: gettextCatalog.getString('Label created', null), classes: 'notification-success'});
                             } else if (result.data && result.data.Error) {
                                 notify({message: result.data.Error, classes: 'notification-danger'});
                             }
@@ -88,7 +88,7 @@ angular.module("proton.controllers.Settings")
 
         labelModal.activate({
             params: {
-                title: gettextCatalog.getString('Edit label', null, 'Default'),
+                title: gettextCatalog.getString('Edit label', null),
                 label: label,
                 create: function(name, color) {
                     networkActivityTracker.track(
@@ -104,7 +104,7 @@ angular.module("proton.controllers.Settings")
                                 label.Color = data.Label.Color;
                                 label.Name = data.Label.Name;
                                 labelModal.deactivate();
-                                notify({message: gettextCatalog.getString('Label edited', null, 'Default'), classes: 'notification-success'});
+                                notify({message: gettextCatalog.getString('Label edited', null), classes: 'notification-success'});
                             } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
                                 label.Name = origName;
                                 label.Color = origColor;
@@ -130,8 +130,8 @@ angular.module("proton.controllers.Settings")
     $scope.deleteLabel = function(label) {
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete label', null, 'Default'),
-                message: gettextCatalog.getString('Are you sure you want to delete this label?', null, 'Default'),
+                title: gettextCatalog.getString('Delete label', null),
+                message: gettextCatalog.getString('Are you sure you want to delete this label?', null),
                 confirm: function() {
                     networkActivityTracker.track(
                         Label.delete(label.ID)
@@ -142,7 +142,7 @@ angular.module("proton.controllers.Settings")
                                 if(angular.isDefined(data) && data.Code === 1000) {
                                     var index = $scope.labels.indexOf(label);
 
-                                    notify({message: gettextCatalog.getString('Label deleted', null, 'Default'), classes: 'notification-success'});
+                                    notify({message: gettextCatalog.getString('Label deleted', null), classes: 'notification-success'});
                                     authentication.user.Labels.splice(index, 1);
                                     $rootScope.$broadcast('deleteLabel', label.ID);
                                     confirmModal.deactivate();
@@ -173,7 +173,7 @@ angular.module("proton.controllers.Settings")
                 var data = result.data;
 
                 if (angular.isDefined(data) && data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Label order saved', null, 'Default'), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('Label order saved', null), classes: 'notification-success'});
                 } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                     notify({message: data.Error, classes: 'notification-danger'});
                     $log.error(result);
@@ -198,7 +198,7 @@ angular.module("proton.controllers.Settings")
             var data = result.data;
 
             if (angular.isDefined(data) && data.Code === 1000) {
-                notify({message: gettextCatalog.getString('Label edited', null, 'Default'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Label edited', null), classes: 'notification-success'});
             } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 notify({message: data.Error, classes: 'notification-danger'});
                 $log.error(result);

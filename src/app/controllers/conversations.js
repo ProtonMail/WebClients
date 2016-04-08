@@ -603,7 +603,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 Setting.setViewlayout({ViewLayout: newLayout})
                 .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Layout saved', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success'});
                             $rootScope.mobileMode = false;
                             $rootScope.layoutMode = mode;
                             authentication.user.ViewLayout = newLayout;
@@ -861,8 +861,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} mailbox
      */
     $scope.empty = function(mailbox) {
-        var title = gettextCatalog.getString('Confirmation', null, 'Default');
-        var message = gettextCatalog.getString('Are you sure?') + ' ' + gettextCatalog.getString('This cannot be undone.', null, 'Default');
+        var title = gettextCatalog.getString('Confirmation', null);
+        var message = gettextCatalog.getString('Are you sure?') + ' ' + gettextCatalog.getString('This cannot be undone.', null);
         var promise;
 
         if(['drafts', 'spam', 'trash'].indexOf(mailbox) !== -1) {
@@ -889,7 +889,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                                     // Close modal
                                     confirmModal.deactivate();
                                     // Notify user
-                                    notify({message: gettextCatalog.getString('Folder emptied', null, 'Default'), classes: 'notification-success'});
+                                    notify({message: gettextCatalog.getString('Folder emptied', null), classes: 'notification-success'});
                                 },
                                 function(error) {
                                     notify({message: 'Error during the empty request', classes: 'notification-danger'});

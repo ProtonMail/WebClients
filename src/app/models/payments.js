@@ -87,16 +87,16 @@ angular.module("proton.models.payments", [])
                                 case 'free':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = '150 ' + gettextCatalog.getString('Messages per day', null, 'Default');
-                                    plan.labels = '20 ' + gettextCatalog.getString('Labels', null, 'Default');
-                                    plan.support = gettextCatalog.getString('Limited support', null, 'Default');
+                                    plan.sending = '150 ' + gettextCatalog.getString('Messages per day', null);
+                                    plan.labels = '20 ' + gettextCatalog.getString('Labels', null);
+                                    plan.support = gettextCatalog.getString('Limited support', null);
                                     break;
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
-                                    plan.sending = '1000 ' + gettextCatalog.getString('Messages per day', null, 'Default');
-                                    plan.labels = '200 ' + gettextCatalog.getString('Labels', null, 'Default');
-                                    plan.support = gettextCatalog.getString('Support', null, 'Default');
+                                    plan.sending = '1000 ' + gettextCatalog.getString('Messages per day', null);
+                                    plan.labels = '200 ' + gettextCatalog.getString('Labels', null);
+                                    plan.support = gettextCatalog.getString('Support', null);
                                     break;
                                 case 'business':
                                     plan.editable = true;
@@ -108,9 +108,9 @@ angular.module("proton.models.payments", [])
                                 case 'visionary':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = gettextCatalog.getString('Unlimited sending', null, 'Default');
-                                    plan.labels = gettextCatalog.getString('Unlimited labels', null, 'Default');
-                                    plan.support = gettextCatalog.getString('Priority support', null, 'Default');
+                                    plan.sending = gettextCatalog.getString('Unlimited sending', null);
+                                    plan.labels = gettextCatalog.getString('Unlimited labels', null);
+                                    plan.support = gettextCatalog.getString('Priority support', null);
                                     break;
                                 default:
                                     break;

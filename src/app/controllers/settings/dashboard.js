@@ -261,23 +261,23 @@ angular.module("proton.controllers.Settings")
 
         if (plan.Name === 'free') {
             if ($scope.subscription.Name === plan.Name) {
-                text = gettextCatalog.getString('Already subscribed', null, 'Default');
+                text = gettextCatalog.getString('Already subscribed', null);
             } else {
-                text = gettextCatalog.getString('Downgrade to Free', null, 'Default');
+                text = gettextCatalog.getString('Downgrade to Free', null);
             }
         } else if (plan.Name === 'plus') {
             if ($scope.subscription.Name === plan.Name) {
-                text = gettextCatalog.getString('Update Plus', null, 'Default');
+                text = gettextCatalog.getString('Update Plus', null);
             } else if ($scope.subscription.Name === 'free') {
-                text = gettextCatalog.getString('Upgrade to Plus', null, 'Default');
+                text = gettextCatalog.getString('Upgrade to Plus', null);
             } else if ($scope.subscription.Name === 'visionary') {
-                text = gettextCatalog.getString('Downgrade to Plus', null, 'Default');
+                text = gettextCatalog.getString('Downgrade to Plus', null);
             }
         } else if (plan.Name === 'visionary') {
             if ($scope.subscription.Name === plan.Name) {
-                text = gettextCatalog.getString('Update Visionary', null, 'Default');
+                text = gettextCatalog.getString('Update Visionary', null);
             } else {
-                text = gettextCatalog.getString('Upgrade to Visionary', null, 'Default');
+                text = gettextCatalog.getString('Upgrade to Visionary', null);
             }
         }
 
@@ -311,8 +311,8 @@ angular.module("proton.controllers.Settings")
      * Open a modal to confirm to switch to the free plan
      */
     $scope.free = function() {
-        var title = gettextCatalog.getString('Confirm downgrade', null, 'Default');
-        var message = gettextCatalog.getString('This will downgrade your account to a free account.<br /><br />Please disable all additional addresses prior to downgrading your account. You can manage that inside the addresses tab.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.', null, 'Default');
+        var title = gettextCatalog.getString('Confirm downgrade', null);
+        var message = gettextCatalog.getString('This will downgrade your account to a free account.<br /><br />Please disable all additional addresses prior to downgrading your account. You can manage that inside the addresses tab.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.', null);
 
         confirmModal.activate({
             params: {
@@ -356,7 +356,7 @@ angular.module("proton.controllers.Settings")
                     var finish = function() {
                         $scope.refresh();
                         confirmModal.deactivate();
-                        notify({message: gettextCatalog.getString('You have successfully unsubscribed', null, 'Default'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('You have successfully unsubscribed', null), classes: 'notification-success'});
                     };
 
                     networkActivityTracker.track(

@@ -129,8 +129,8 @@ angular.module("proton.controllers.Contacts", [
     }
 
     $scope.deleteAllContacts = function() {
-        var title = gettextCatalog.getString('Delete all', null, 'Default');
-        var message = gettextCatalog.getString('Are you sure you want to delete all your contacts?', null, 'Default');
+        var title = gettextCatalog.getString('Delete all', null);
+        var message = gettextCatalog.getString('Are you sure you want to delete all your contacts?', null);
 
         confirmModal.activate({
             params: {
@@ -139,7 +139,7 @@ angular.module("proton.controllers.Contacts", [
                 confirm: function() {
                     networkActivityTracker.track(
                         Contact.clear().then(function(response) {
-                            notify({message: gettextCatalog.getString('Contacts deleted', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Contacts deleted', null), classes: 'notification-success'});
                             eventManager.call();
                         }, function(response) {
                             $log.error(response);
@@ -159,10 +159,10 @@ angular.module("proton.controllers.Contacts", [
         var message, title;
 
         if (contactsSelected.length === 1) {
-            title = gettextCatalog.getString('Delete', null, 'Default');
+            title = gettextCatalog.getString('Delete', null);
             message = 'Are you sure you want to delete this contact?';
         } else {
-            title = gettextCatalog.getString('Delete', null, 'Default');
+            title = gettextCatalog.getString('Delete', null);
             message = 'Are you sure you want to delete the selected contacts?';
         }
 
@@ -183,7 +183,7 @@ angular.module("proton.controllers.Contacts", [
                         Contact.delete({
                             IDs : deletedIDs
                         }).then(function(response) {
-                            notify({message: gettextCatalog.getString('Contacts deleted', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Contacts deleted', null), classes: 'notification-success'});
                             confirmModal.deactivate();
                             eventManager.call();
                         }, function(error) {
@@ -204,7 +204,7 @@ angular.module("proton.controllers.Contacts", [
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match) {
-                notify({message: gettextCatalog.getString('Contact exists for this email address', null, 'Default'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Contact exists for this email address', null), classes: 'notification-danger'});
                 contactModal.deactivate();
             } else {
                 var newContact = {
@@ -218,7 +218,7 @@ angular.module("proton.controllers.Contacts", [
                         Contacts : contactList
                     }).then(function(response) {
                         if(response.data.Code === 1001) {
-                            notify({message: gettextCatalog.getString('Contact added', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Contact added', null), classes: 'notification-success'});
                             contactModal.deactivate();
                             eventManager.call();
                         } else {
@@ -235,7 +235,7 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.editContact = function(contact) {
-        openContactModal(gettextCatalog.getString('Edit', null, 'Default'), contact.Name, contact.Email, function(name, email) {
+        openContactModal(gettextCatalog.getString('Edit', null), contact.Name, contact.Email, function(name, email) {
             networkActivityTracker.track(
                 Contact.edit({
                     id: contact.ID,
@@ -244,7 +244,7 @@ angular.module("proton.controllers.Contacts", [
                 }).then(function(response) {
                     if(response.data.Code === 1000) {
                         contactModal.deactivate();
-                        notify({message: gettextCatalog.getString('Contact edited', null, 'Default'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Contact edited', null), classes: 'notification-success'});
                         eventManager.call();
                     } else {
                         notify({message: response.data.Error, classes: 'notification-danger'});
@@ -410,9 +410,9 @@ angular.module("proton.controllers.Contacts", [
                                 });
 
                                 if(added === 1) {
-                                    notify({message: added + ' ' + gettextCatalog.getString('Contact imported', null, 'Default'), classes: 'notification-success'});
+                                    notify({message: added + ' ' + gettextCatalog.getString('Contact imported', null), classes: 'notification-success'});
                                 } else if(added > 1) {
-                                    notify({message: added + ' ' + gettextCatalog.getString('Contacts imported', null, 'Default'), classes: 'notification-success'});
+                                    notify({message: added + ' ' + gettextCatalog.getString('Contacts imported', null), classes: 'notification-success'});
                                 }
 
                                 _.each(Object.keys(errors), function(key) {
@@ -441,7 +441,7 @@ angular.module("proton.controllers.Contacts", [
     $scope.openSafariWarning = function() {
         alertModal.activate({
             params: {
-                title: gettextCatalog.getString('Download', null, 'Default'),
+                title: gettextCatalog.getString('Download', null),
                 alert: 'alert-warning',
                 message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'),
                 ok: function() {

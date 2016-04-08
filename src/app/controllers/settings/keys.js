@@ -55,8 +55,8 @@ angular.module("proton.controllers.Settings")
      * Delete key
      */
     $scope.delete = function(address, key) {
-        var title = gettextCatalog.getString('Delete key', null, 'Default');
-        var message = gettextCatalog.getString('Confirm delete key', null, 'Default');
+        var title = gettextCatalog.getString('Delete key', null);
+        var message = gettextCatalog.getString('Confirm delete key', null);
         var index = address.Keys.indexOf(key);
 
 
@@ -70,7 +70,7 @@ angular.module("proton.controllers.Settings")
                             // Delete key in the UI
                             address.Keys.splice(index, 1);
                             // Call event log manager to be sure
-                            notify({message: gettextCatalog.getString('Key deleted', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Key deleted', null), classes: 'notification-success'});
                             // Close the modal
                             confirmModal.deactivate();
                             // Call the event log manager
@@ -172,7 +172,7 @@ angular.module("proton.controllers.Settings")
     $scope.generate = function(address) {
         generateModal.activate({
             params: {
-                title: gettextCatalog.getString('Generate key pair', null, 'Default'),
+                title: gettextCatalog.getString('Generate key pair', null),
                 message: '', // TODO need text
                 addresses: [address],
                 cancel: function() {

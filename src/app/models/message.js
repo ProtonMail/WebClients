@@ -131,15 +131,15 @@ angular.module("proton.models.message", ["proton.constants"])
         },
         encryptionType: function() {
             var texts = [
-                gettextCatalog.getString('Unencrypted message', null, 'Default'),
-                gettextCatalog.getString('End to end encrypted internal message', null, 'Default'),
-                gettextCatalog.getString('External message stored encrypted', null, 'Default'),
-                gettextCatalog.getString('End to end encrypted for outside', null, 'Default'),
-                gettextCatalog.getString('External message stored encrypted', null, 'Default'),
-                gettextCatalog.getString('Stored encrypted', null, 'Default'),
-                gettextCatalog.getString('End to end encrypted for outside reply', null, 'Default'),
-                gettextCatalog.getString('End to end encrypted using PGP', null, 'Default'),
-                gettextCatalog.getString('End to end encrypted using PGP/MIME', null, 'Default'),
+                gettextCatalog.getString('Unencrypted message', null),
+                gettextCatalog.getString('End to end encrypted internal message', null),
+                gettextCatalog.getString('External message stored encrypted', null),
+                gettextCatalog.getString('End to end encrypted for outside', null),
+                gettextCatalog.getString('External message stored encrypted', null),
+                gettextCatalog.getString('Stored encrypted', null),
+                gettextCatalog.getString('End to end encrypted for outside reply', null),
+                gettextCatalog.getString('End to end encrypted using PGP', null),
+                gettextCatalog.getString('End to end encrypted using PGP/MIME', null),
             ];
 
             return texts[this.IsEncrypted];
