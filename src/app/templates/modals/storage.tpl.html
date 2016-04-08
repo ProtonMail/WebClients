@@ -3,13 +3,13 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" translate>Manage storage</h4>
+                <h4 class="modal-title" translate translate-context="Title">Manage storage</h4>
             </div>
             <div class="modal-body">
                 <strong translate>Set user storage</strong>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla egestas suscipit.</p>
                 <div class="pm_form">
-                    <label translate>Storage</label>
+                    <label translate translate-context="Title">Storage</label>
                     <input type="text" class="inline" ng-model="ctrl.value" required />
                     <span class="pm_select inline mini">
                         <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
@@ -20,8 +20,8 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button type="button" class="pm_button pull-left" ng-click="ctrl.cancel()" translate>Cancel</button>
-            <button type="submit" class="pm_button primary" translate>Apply</button>
+            <button type="button" class="pm_button pull-left" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary" translate translate-context="Action">Apply</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

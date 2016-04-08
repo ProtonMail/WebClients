@@ -4,7 +4,7 @@
             <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" translate>Payment details</h4>
+                    <h4 class="modal-title" translate translate-context="Title">Payment details</h4>
                 </div>
                 <div class="modal-body pm_form">
                     <p>{{ ctrl.text }}</p>
@@ -53,8 +53,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate>Cancel</button>
-                <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process  === true || ctrl.cardChange === false" translate>Submit</button>
+                <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate translate-context="Action">Cancel</button>
+                <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process  === true || ctrl.cardChange === false" translate translate-context="Action">Submit</button>
             </div>
         </form>
     </div>

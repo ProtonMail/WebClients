@@ -3,10 +3,10 @@
         <button type="button" ng-click="ctrl.cancel()" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" translate-context="Action" translate-comment="heading for alias modal" translate>Add new ProtonMail address</h3>
+                <h3 class="modal-title" translate-context="Title" translate-comment="heading for alias modal" translate>Add new ProtonMail address</h3>
             </div>
             <div class="modal-body pm_form">
-                <label translate>Choose address</label>
+                <label translate translate-context="Title">Choose address</label>
                 <div class="clearfix">
                     <input type="text" class="inline pull-left" ng-model="ctrl.local" autofocus placeholder="{{ 'Address' | translate }}" required />
                     <em class="inline pull-left">&nbsp;&nbsp;@&nbsp;&nbsp;</em>
@@ -15,13 +15,13 @@
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>
-                <p class="help"><small translate>This will be a new address you can send and receive emails with.</small></p>
-                <p class="alert alert-info" translate>ProtonMail address can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. <a href='https://protonmail.com/support/knowledge-base/aliases-within-protonmail/' target='_blank'>Learn more about addresses here.</a></p>
+                <p class="help"><small translate translate-context="Info">This will be a new address you can send and receive emails with.</small></p>
+                <p class="alert alert-info" translate translate-context="Info">ProtonMail address can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. <a href='https://protonmail.com/support/knowledge-base/aliases-within-protonmail/' target='_blank'>Learn more about addresses here.</a></p>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
-            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate>Submit</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate translate-context="Action">Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

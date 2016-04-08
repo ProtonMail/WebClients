@@ -3,8 +3,8 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content pm_form">
             <div class="modal-header">
-                <h4 class="modal-title" translate>Customize invoices</h4>
-                <p translate>Enter custom text that you want to appear on your invoice beneath the ProtonMail logo.</p>
+                <h4 class="modal-title" translate translate-context="Title">Customize invoices</h4>
+                <p translate translate-context="Info">Enter custom text that you want to appear on your invoice beneath the ProtonMail logo.</p>
             </div>
             <div class="modal-body">
                 <label for="customText" translate>Customize invoices</label>
@@ -12,8 +12,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()" translate>Submit</button>
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
+            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()" translate translate-context="Action">Submit</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

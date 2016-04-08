@@ -3,7 +3,7 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" translate>Organization recovery password</h3>
+                <h3 class="modal-title" translate translate-context="Title">Organization recovery password</h3>
             </div>
             <div class="modal-body text-center">
                 <p translate>Please enter your organization recovery password:</p>
@@ -11,8 +11,8 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()" translate>Cancel</button>
-            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.submit()" translate>Submit</button>
+            <button class="pm_button pull-left" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.submit()" translate translate-context="Action">Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

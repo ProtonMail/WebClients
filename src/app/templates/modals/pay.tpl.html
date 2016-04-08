@@ -3,21 +3,21 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" translate>Pay invoice</h4>
+                <h4 class="modal-title" translate translate-context="Title">Pay invoice</h4>
             </div>
             <div class="modal-body pm_form">
                 <table class="pm_table">
                     <tbody>
                         <tr>
-                            <th translate>Amount</th>
+                            <th translate translate-context="Title">Amount</th>
                             <td>{{ ctrl.amount / 100 | currency: ctrl.currency }}</td>
                         </tr>
                         <tr ng-show="ctrl.credit !== 0">
-                            <th translate>Credit</th>
+                            <th translate translate-context="Title">Credit</th>
                             <td>{{ ctrl.credit / 100 | currency: ctrl.currency }}</td>
                         </tr>
                         <tr>
-                            <th translate>Amount due</th>
+                            <th translate translate-context="Title">Amount due</th>
                             <td>{{ ctrl.amountDue / 100 | currency: ctrl.currency }}</td>
                         </tr>
                     </tbody>
@@ -26,7 +26,7 @@
                     <div class="margin pm_grid" ng-show="ctrl.currency === 'USD'">
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices"> {{ 'Credit card' | translate }}
+                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices"> <span translate>Credit card</span>
                             </label>
                         </div>
                         <div class="col-1-2">
@@ -44,9 +44,9 @@
                     </div>
                     <div ng-show="ctrl.choice === 'paypal'">
                         <p ng-show="!ctrl.approvalURL">
-                            <i class="fa fa-spin fa-spinner"></i> {{ 'Loading' | translate }}...
+                            <i class="fa fa-spin fa-spinner"></i> <span translate>Loading...</span>
                         </p>
-                        <p class="alert alert-info" translate>You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
+                        <p class="alert alert-info" translate translate-context="Info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
                         <div class="text-center">
                             <a href="#" ng-show="ctrl.approvalURL" ng-click="ctrl.openPaypalTab()">
                                 <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
@@ -57,8 +57,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
-            <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.choice === 'paypal'" translate>Submit</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Info">Cancel</button>
+            <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.choice === 'paypal'" translate translate-context="Info">Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

@@ -3,10 +3,10 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" translate>Upload</h3>
+                <h3 class="modal-title" translate translate-context="Title">Upload</h3>
             </div>
             <div class="modal-body">
-                <p translate>Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class="pull-right" href="https://protonmail.com/support/knowledge-base/adding-contacts/" target="_blank">Need help?</a></p>
+                <p translate translate-context="Info">Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class="pull-right" href="https://protonmail.com/support/knowledge-base/adding-contacts/" target="_blank">Need help?</a></p>
                 <p ng-hide="ctrl.fileDropped" class="text-center dropzone" id="dropzone" ng-class="{'hover': hover}">
                     <br />
                     <br />
@@ -17,8 +17,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
-            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.import()" translate>Upload</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button type="button" class="pm_button primary pull-right" ng-click="ctrl.import()" translate translate-context="Action">Upload</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

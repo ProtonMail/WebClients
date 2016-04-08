@@ -3,7 +3,7 @@
         <button type="button" ng-click="ctrl.close()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" translate>Donate</h4>
+                <h4 class="modal-title" translate translate-context="Title">Donate</h4>
             </div>
             <div class="modal-body pm_form">
                 <p ng-bind="ctrl.text"></p>
@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div ng-show="ctrl.methods.length > 0">
-                    <label for="paymentMethod" class="margin">{{ 'Select payment method' | translate }}:</label>
+                    <label for="paymentMethod" class="margin" translate-context="Title">{{ 'Select payment method' | translate }}:</label>
                     <span class="pm_select">
                         <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
                         <i class="fa fa-angle-down"></i>
@@ -65,11 +65,11 @@
                         </div>
                     </div>
                 </div>
-                <p class="alert alert-info" translate>It's also possible to donate with <a href='https://protonmail.com/donate' target='_blank'>PayPal or Bitcoin</a>.</p>
+                <p class="alert alert-info" translate translate-context="Info">It's also possible to donate with <a href='https://protonmail.com/donate' target='_blank'>PayPal or Bitcoin</a>.</p>
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button type="submit" ng-disabled="ctrl.process === true" class="pm_button primary" translate>Donate</button>
+            <button type="submit" ng-disabled="ctrl.process === true" class="pm_button primary" translate translate-context="Action">Donate</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

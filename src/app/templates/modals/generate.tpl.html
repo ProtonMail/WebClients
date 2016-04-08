@@ -11,33 +11,33 @@
                     <div class="col-1-2 text-center">
                         <label class="checkbox">
                             <input type="radio" ng-model="ctrl.size" value="2048" ng-disabled="ctrl.process === true" />
-                            <strong translate>High security</strong> (2048-bit)
+                            <strong translate translate-context="Title" translate-comment="form option heading">High security</strong> (2048-bit)
                         </label>
                     </div>
                     <div class="col-1-2 text-center">
                         <label class="checkbox">
                             <input type="radio" ng-model="ctrl.size" value="4096" ng-disabled="ctrl.process === true" />
-                            <strong translate>Highest security</strong> (4096-bit)
+                            <strong translate translate-context="Title" translate-comment="form option heading">Highest security</strong> (4096-bit)
                         </label>
                     </div>
                 </div>
-                <p class="alert alert-info" ng-show="ctrl.size === '4096'" translate>Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
+                <p class="alert alert-info" ng-show="ctrl.size === '4096'" translate translate-context="Info">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
                 <table class="pm_table">
                     <thead>
                         <tr>
-                            <th translate>Address</th>
-                            <th style="width: 10rem" class="text-right" translate>Status</th>
+                            <th translate translate-context="Title" translate-comment="table heading">Address</th>
+                            <th style="width: 10rem" class="text-right" translate translate-context="Title" translate-comment="table heading">Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="address in ctrl.addresses | orderBy: 'Send'">
                             <td>{{ address.Email }}</td>
                             <td class="text-right">
-                                <span ng-show="address.state === 0" class="pm_badge" translate>Queued</span>
+                                <span ng-show="address.state === 0" class="pm_badge" translate translate-comment="key generation progrss">Queued</span>
                                 <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'Generating' | translate }}</span>
-                                <span ng-show="address.state === 2" class="pm_badge success" translate>Done</span>
-                                <span ng-show="address.state === 3" class="pm_badge success" translate>Saved</span>
-                                <span ng-show="address.state === 4" class="pm_badge error" translate translate-context="Error">Error</span>
+                                <span ng-show="address.state === 2" class="pm_badge success" translate translate-comment="key generation progrss">Done</span>
+                                <span ng-show="address.state === 3" class="pm_badge success" translate translate-comment="key generation progrss">Saved</span>
+                                <span ng-show="address.state === 4" class="pm_badge error" translate translate-context="Error" translate-comment="key generation progrss">Error</span>
                             </td>
                         </tr>
                     </tbody>
@@ -45,14 +45,14 @@
             </div>
             <div class="modal-body" ng-show="ctrl.process === true">
                 <p>&nbsp;</p>
-                <p translate>We are now generating encryption keys for your account, this may take several minutes and temporarily freeze your browser.</p>
+                <p translate translate-context="Info">We are now generating encryption keys for your account, this may take several minutes and temporarily freeze your browser.</p>
                 <p>&nbsp;</p>
                 <loader-tag></loader-tag>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate>Cancel</button>
-            <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process === true" translate>Generate keys</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process === true" translate translate-context="Action">Generate keys</button>
         </div>
     </form>
     <div class="modal-overlay"></div>
