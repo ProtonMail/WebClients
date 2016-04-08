@@ -1,6 +1,6 @@
 <div class="labelDropdown">
     <div role="menu" ng-click="$event.stopPropagation()">
-        <p ng-show="labels.length === 0" class="alert alert-info" translate>No labels</p>
+        <p ng-show="labels.length === 0" class="alert alert-info" translate translate-context="Info">No labels</p>
         <div ng-show="labels.length > 1" class="margin labelSearch">
             <i class="fa fa-search"></i>
             <input type="search" id="searchLabels" placeholder="{{ 'Filter labels' | translate }}" ng-model="searchLabels" ng-minlength="1" />
@@ -23,18 +23,19 @@
                     <input type="text" placeholder="{{ 'Name' | translate }}" ng-model="labelName" />
                 </div>
                 <div class="col-1-3 text-right">
-                    <button type="submit" class="pm_button" translate>OK</button>
+                    <button type="submit" class="pm_button" translate-context="Action" translate>OK</button>
                 </div>
             </div>
         </form>
         <label ng-show="labelsSelected().length > 0">
-            <input type="checkbox" ng-model="alsoArchive" /> {{ 'Also archive' | translate }}
+            <input type="checkbox" ng-model="alsoArchive" />
+            <span translate  translate-context="Default" translate-comment="Form checkbox option">Also archive</span>
         </label>
         <div class="clearfix">
             <button class="createLabel pull-left pm_button" ng-click="toggle()" pt-tooltip="{{ 'Add new label' | translate }}">
                 <i class="fa fa-plus"></i>
             </button>
-            <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary pull-right" ng-click="save()" ng-disabled="networkActivity.loading()" translate>Apply</button>
+            <button ng-show="labels.length > 0" tabindex="1" type="button" class="pm_button primary pull-right" ng-click="save()" ng-disabled="networkActivity.loading()" translate-context="Action" translate>Apply</button>
         </div>
     </div>
 </div>

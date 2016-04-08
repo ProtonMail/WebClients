@@ -61,8 +61,8 @@
                 <div class="panel">
                     <input type="text" autocomplete="off" placeholder="{{ 'Link URL' | translate }}" ng-model="data.link" ng-keydown="popoverHide($event, 'makeLink')" />
                 </div>
-                <button ng-show="canRemoveLink()" ng-click="popoverHide($event, 'removeLink')" translate>Remove link</button>
-                <button ng-show="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')" translate>Update link</button>
+                <button ng-show="canRemoveLink()" ng-click="popoverHide($event, 'removeLink')" translate-context="Action" translate>Remove link</button>
+                <button ng-show="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')" translate-context="Action" translate>Update link</button>
                 <button class="btn primary" ng-hide="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')" translate>Insert link</button>
             </div>
         </div>
@@ -72,7 +72,7 @@
                 <div class="panel">
                     <input type="text" autocomplete="off" placeholder="{{ 'URL to image' | translate }}" ng-model="data.image" ng-keydown="popoverHide($event, 'insertImage')" />
                 </div>
-                <button class="btn primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}" translate>Insert image</button>
+                <button class="btn primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert image</button>
             </div>
         </div>
         <div class='angular-squire-wrapper'>
