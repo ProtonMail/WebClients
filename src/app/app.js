@@ -81,6 +81,7 @@ angular.module('proton', [
     'proton.toggle',
     'proton.tooltip',
     'proton.transformation',
+    'proton.translate',
     'proton.wizard',
 
     // Filters
@@ -164,7 +165,6 @@ angular.module('proton', [
     gettextCatalog.setCurrentLanguage('en_US');
     gettextCatalog.debug = CONFIG.debug || false;
     moment.locale(locale);
-
 })
 
 .run(function(CONSTANTS) {
