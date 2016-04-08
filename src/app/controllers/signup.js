@@ -36,10 +36,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.getUserInfo = false;
         $scope.finishCreation = false;
 
-        $scope.signup = {};
+        $scope.signup = {
+            verificationSent: false,
+            smsVerificationSent: false
+        };
 
-        $scope.signup.verificationSent = false;
-        $scope.signup.smsVerificationSent = false;
         $scope.generating = false;
         $scope.domains = [];
 
@@ -204,12 +205,11 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         .then( $scope.finishRedirect )
         .catch( function(err) {
             var msg = err;
-            if (typeof msg !== "string") {
-                msg = err.toString();
+
+            if (typeof msg !== 'string') {
+                msg = gettextCatalog.getString('Something went wrong', null, 'Error');
             }
-            if (typeof msg !== "string") {
-                msg = "Something went wrong";
-            }
+
             notify({
                 classes: 'notification-danger',
                 message: msg
@@ -355,50 +355,49 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.doCreateUser = function() {
-
-        $log.debug('doCreateUser: $scope.account.codeVerification', $scope.account.codeVerification);
-
-        $log.debug('doCreateUser: inviteToken', $rootScope.inviteToken);
-        $log.debug('doCreateUser: captcha_token', $scope.account.captcha_token);
-
+        var deferred = $q.defer();
         var params = {
-            'Username': $scope.account.Username,
-            'Password': $scope.account.loginPassword,
-            'Domain': $scope.account.domain.value,
-            'Email': $scope.account.notificationEmail,
-            'News': !!($scope.account.optIn),
-            'PrivateKey': $scope.account.PrivateKey
+            Username: $scope.account.Username,
+            Password: $scope.account.loginPassword,
+            Domain: $scope.account.domain.value,
+            Email: $scope.account.notificationEmail,
+            News: !!($scope.account.optIn),
+            PrivateKey: $scope.account.PrivateKey
         };
 
         if (angular.isDefined($rootScope.inviteToken)) {
             params.Token = $rootScope.inviteToken;
             params.TokenType = 'invite';
-        } else if (angular.isDefined($scope.account.captcha_token) && $scope.account.captcha_token!==false) {
+        } else if (angular.isDefined($scope.account.captcha_token) && $scope.account.captcha_token !== false) {
             params.Token = $scope.account.captcha_token;
             params.TokenType = 'recaptcha';
-        }
-        else if (angular.isDefined($scope.signup.smsVerificationSent) && $scope.signup.smsVerificationSent!==false) {
+        } else if ($scope.signup.smsVerificationSent !== false) {
             params.Token = $scope.account.smsCodeVerification;
             params.TokenType = 'sms';
-        }
-        else if (angular.isDefined($scope.signup.verificationSent) && $scope.signup.verificationSent!==false) {
+        } else if ($scope.signup.verificationSent !== false) {
             params.Token = $scope.account.codeVerification;
             params.TokenType = 'email';
         }
-        if ($rootScope.tempUser===undefined) {
+
+        if ($rootScope.tempUser === undefined) {
             $rootScope.tempUser = [];
         }
 
         $rootScope.tempUser.username = $scope.account.Username;
         $rootScope.tempUser.password = $scope.account.loginPassword;
 
-        return User.create(params).then( function(result) {
+        User.create(params).then(function(result) {
             if (result.data && result.data.Code === 1000) {
                 $scope.createUser  = true;
+                deferred.resolve(result.data);
+            } else if (result.data && result.data.Error) {
+                deferred.reject(result.data.Error);
+            } else {
+                deferred.reject('Something went wrong');
             }
-
-            return result.data;
         });
+
+        return deferred.promise;
     };
 
     $scope.doLogUserIn = function(response) {
