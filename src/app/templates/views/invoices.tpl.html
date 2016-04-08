@@ -8,14 +8,14 @@
                     <i class="fa fa-angle-down"></i>
                 </span>
             </div>
-            <legend translate-context="Default" translate>Organization history</legend>
+            <legend translate-context="Title" translate>Organization history</legend>
             <table class="pm_table hidden-xs">
                 <thead>
                     <tr>
-                        <th class="date" translate-context="Default" translate>Date</th>
-                        <th class="event" translate-context="Default" translate>Event</th>
-                        <th class="price" translate-context="Default" translate>Price</th>
-                        <th class="actions" translate-context="Default" translate>Actions</th>
+                        <th class="date" translate-context="Title" translate>Date</th>
+                        <th class="event" translate-context="Title" translate>Event</th>
+                        <th class="price" translate-context="Title" translate>Price</th>
+                        <th class="actions" translate-context="Title" translate>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,20 +30,20 @@
                             {{ invoice.Amount / 100 | currency: invoice.Currency }}
                         </td>
                         <td class="actions">
-                            <button type="button" class="pm_button link" ng-click="display(invoice)" translate-context="Default" translate>Display invoice</button>
+                            <button type="button" class="pm_button link" ng-click="display(invoice)" translate-context="Action" translate-comment="displays invoice details as a PDF in new tab" translate>Display invoice</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <p>&nbsp;</p>
-            <legend translate-context="Default" translate>User history</legend>
+            <legend translate-context="Title" translate>User history</legend>
             <table class="pm_table hidden-xs">
                 <thead>
                     <tr>
-                        <th class="date" translate-context="Default" translate>Date</th>
-                        <th class="event" translate-context="Default" translate>Event</th>
-                        <th class="price" translate-context="Default" translate>Price</th>
-                        <th class="actions" translate-context="Default" translate>Actions</th>
+                        <th class="date" translate-context="Title" translate-comment="Table heading" translate>Date</th>
+                        <th class="event" translate-context="Title" translate-comment="Table heading" translate>Event</th>
+                        <th class="price" translate-context="Title" translate-comment="Table heading" translate>Price</th>
+                        <th class="actions" translate-context="Title" translate-comment="Table heading" translate>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,7 +58,7 @@
                             {{ invoice.Amount / 100 | currency: invoice.Currency }}
                         </td>
                         <td class="actions">
-                            <button type="button" class="pm_button link" ng-click="display(invoice)" translate-context="Default" translate>Display invoice</button>
+                            <button type="button" class="pm_button link" ng-click="display(invoice)" translate-context="Action" translate-comment="displays invoice details as a PDF in new tab" translate>Display invoice</button>
                         </td>
                     </tr>
                 </tbody>
