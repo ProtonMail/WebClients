@@ -786,6 +786,7 @@ msgstr "Card number invalid"
 msgid "Card validation code"
 msgstr "Card validation code"
 
+#. message metadata
 #: src/app/controllers/compose.js:1546
 #: src/app/templates/views/outside.message.tpl.html:34
 msgctxt "Default"
@@ -2178,6 +2179,7 @@ msgstr "Free"
 msgid "From"
 msgstr "From"
 
+#. message metadata
 #: src/app/templates/views/outside.message.tpl.html:23
 msgctxt "Default"
 msgid "From"
@@ -3811,9 +3813,9 @@ msgid "Reply all"
 msgstr "Reply all"
 
 #: src/app/templates/views/outside.message.tpl.html:11
-msgctxt "Default"
+msgctxt "Action"
 msgid "Reply securely"
-msgstr "Reply securely"
+msgstr ""
 
 #: src/app/templates/partials/header-auth-desktop.tpl.html:54
 msgid "Report a bug"
@@ -4092,8 +4094,9 @@ msgstr "Show details"
 msgid "Show images"
 msgstr "Show images"
 
+#. show images in an email button
 #: src/app/templates/views/outside.message.tpl.html:42
-msgctxt "Default"
+msgctxt "Action"
 msgid "Show images"
 msgstr "Show images"
 
@@ -4472,6 +4475,7 @@ msgctxt "Title"
 msgid "Time"
 msgstr "Time"
 
+#. message metadata
 #: src/app/controllers/compose.js:1536
 #: src/app/templates/views/outside.message.tpl.html:28
 msgctxt "Default"
@@ -5172,6 +5176,14 @@ msgstr "Your thoughts..."
 #: src/app/templates/modals/payment/payment.tpl.html:96
 msgid "ZIP code"
 msgstr "ZIP code"
+
+#~ msgctxt "Default"
+#~ msgid "Reply securely"
+#~ msgstr "Reply securely"
+
+#~ msgctxt "Default"
+#~ msgid "Show images"
+#~ msgstr "Show images"
 
 #~ msgctxt "Default"
 #~ msgid "Add user"

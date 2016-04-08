@@ -730,6 +730,7 @@ msgstr ""
 msgid "Card validation code"
 msgstr ""
 
+#. message metadata
 #: src/app/controllers/compose.js:1546
 #: src/app/templates/views/outside.message.tpl.html:34
 msgctxt "Default"
@@ -2077,6 +2078,7 @@ msgstr ""
 msgid "From"
 msgstr ""
 
+#. message metadata
 #: src/app/templates/views/outside.message.tpl.html:23
 msgctxt "Default"
 msgid "From"
@@ -3574,7 +3576,7 @@ msgid "Reply all"
 msgstr ""
 
 #: src/app/templates/views/outside.message.tpl.html:11
-msgctxt "Default"
+msgctxt "Action"
 msgid "Reply securely"
 msgstr ""
 
@@ -3851,8 +3853,9 @@ msgstr ""
 msgid "Show images"
 msgstr ""
 
+#. show images in an email button
 #: src/app/templates/views/outside.message.tpl.html:42
-msgctxt "Default"
+msgctxt "Action"
 msgid "Show images"
 msgstr ""
 
@@ -4182,6 +4185,7 @@ msgctxt "Title"
 msgid "Time"
 msgstr ""
 
+#. message metadata
 #: src/app/controllers/compose.js:1536
 #: src/app/templates/views/outside.message.tpl.html:28
 msgctxt "Default"
