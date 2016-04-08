@@ -1,27 +1,27 @@
 /* global -_ */
 /* jshint node: true, camelcase: false */
 
-var _ = require("lodash"),
-util = require("util");
-var appVersion = '3.1.6';
+var _ = require('lodash');
+var util = require('util');
+var appVersion = '3.1.7';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
-var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
+var BROWSERS = ['PhantomJS', 'Chrome', 'Firefox', 'Safari'];
 var API_TARGETS = {
-    blue: "https://52.36.229.13/api",
-    prod: "https://mail.protonmail.com/api",
-    dev: "https://dev.protonmail.com/api",
-    v2: "https://v2.protonmail.com/api",
-    build: "/api"
+    blue: 'https://52.36.229.13/api',
+    prod: 'https://mail.protonmail.com/api',
+    dev: 'https://dev.protonmail.com/api',
+    v2: 'https://v2.protonmail.com/api',
+    build: '/api'
 };
 
 module.exports = function(grunt) {
     var serveStatic = require('serve-static');
 
     grunt.loadTasks("tasks");
-    require("load-grunt-tasks")(grunt);
+    require('load-grunt-tasks')(grunt);
 
     function apiUrl() {
         var api = API_TARGETS.build;
@@ -43,10 +43,10 @@ module.exports = function(grunt) {
         return _.isEmpty(selected) ? [BROWSERS[0]] : selected;
     }
 
-    var userConfig = require("./conf.build.js");
+    var userConfig = require('./conf.build.js');
 
     var taskConfig = {
-        pkg: grunt.file.readJSON("package.json"),
+        pkg: grunt.file.readJSON('package.json'),
         meta: {
             banner: "/**\n" +
             " * <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today('yyyy-mm-dd HH:MM:ss') %>\n" +
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
             options: {
                 enabled: true,
                 max_jshint_notifications: 5, // maximum number of notifications from jshint output
-                title: "ProtonMail Angular", // defaults to the name in package.json, or will use project directory's name
+                title: 'ProtonMail Angular', // defaults to the name in package.json, or will use project directory's name
                 success: false, // whether successful grunt executions should be notified automatically
                 duration: 3 // the duration of notification in seconds, for `notify-send only
             }
@@ -304,13 +304,10 @@ module.exports = function(grunt) {
                 eqeqeq: true, // This options prohibits the use of == and != in favor of === and !==.
                 eqnull: true,
                 expr: true,
-                // latedef: true,
                 onevar: true,
                 noarg: true,
                 node: true,
                 trailing: true,
-                // undef: true,
-                // unused: true,
                 globals: {
                     angular: true,
                     pmcrypto: true,
@@ -486,11 +483,6 @@ module.exports = function(grunt) {
 
     // Project config
     grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
-
-    // Load the grunt plugins
-    grunt.loadNpmTasks('grunt-notify');
-    grunt.loadNpmTasks('grunt-ng-constant');
-    grunt.loadNpmTasks('grunt-angular-gettext');
 
     grunt.renameTask('watch', 'delta');
 
