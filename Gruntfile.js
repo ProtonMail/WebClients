@@ -20,7 +20,7 @@ var API_TARGETS = {
 module.exports = function(grunt) {
     var serveStatic = require('serve-static');
 
-    grunt.loadTasks("tasks");
+    grunt.loadTasks('tasks');
     require('load-grunt-tasks')(grunt);
 
     function apiUrl() {
@@ -108,16 +108,6 @@ module.exports = function(grunt) {
             ]
         },
 
-        forever: {
-            mock_server: {
-                options: {
-                    command: './node_modules/api-mock/bin/api-mock ./api/blueprint.md' + ' -p ' + (grunt.option('api-port') || '4003'),
-                    index: '',
-                    logDir: 'logs'
-                }
-            }
-        },
-
         connect: {
             options: {
                 hostname: '*',
@@ -130,9 +120,9 @@ module.exports = function(grunt) {
                         serveStatic(base),
                         function(req, res, next) {
                             // no file found; send app.html
-                            var file = base + "/app.html";
+                            var file = base + '/app.html';
                             if (grunt.file.exists(file)) {
-                                require("fs").createReadStream(file).pipe(res);
+                                require('fs').createReadStream(file).pipe(res);
                                 return;
                             }
                             res.statusCode(404);
@@ -144,17 +134,16 @@ module.exports = function(grunt) {
 
             compile: {
                 options: {
-                    base: "<%= compile_dir %>"
+                    base: '<%= compile_dir %>'
                 }
             },
 
             watch: {
                 options: {
                     livereload: 40093,
-                    base: "<%= build_dir %>"
+                    base: '<%= build_dir %>'
                 }
-            },
-
+            }
         },
 
         copy: {
@@ -398,6 +387,11 @@ module.exports = function(grunt) {
 
             css: {
                 files: ["<%= build_dir %>/assets/**/*.css"]
+            },
+
+            tpls: {
+                files: ["<%= app_files.atpl %>"],
+                tasks: ["html2js"]
             },
 
             jssrc: {

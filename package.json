@@ -39,7 +39,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "install": "bower install",
+    "postinstall": "bower install",
     "start": "grunt watch --api=dev"
   }
 }
