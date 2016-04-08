@@ -640,6 +640,7 @@ msgstr "BCC"
 msgid "BCC"
 msgstr "BCC"
 
+#. printed message info
 #: src/app/templates/views/message.print.tpl.html:46
 msgctxt "Default"
 msgid "BCC:"
@@ -800,6 +801,7 @@ msgstr "CC"
 msgid "CC BCC"
 msgstr "CC BCC"
 
+#. printed message info
 #: src/app/templates/views/message.print.tpl.html:39
 msgctxt "Default"
 msgid "CC:"
@@ -2181,6 +2183,7 @@ msgctxt "Default"
 msgid "From"
 msgstr "From"
 
+#. printed message info
 #: src/app/templates/views/message.print.tpl.html:27
 #: src/app/templates/views/outside.reply.tpl.html:14
 msgctxt "Default"
@@ -3739,6 +3742,7 @@ msgctxt "Title"
 msgid "reCaptcha verification"
 msgstr "reCaptcha verification"
 
+#. printed message info
 #: src/app/templates/views/message.print.tpl.html:13
 msgctxt "Default"
 msgid "Received:"
@@ -4047,6 +4051,7 @@ msgctxt "Default"
 msgid "Sent"
 msgstr "Sent"
 
+#. printed message info
 #: src/app/templates/views/message.print.tpl.html:14
 msgctxt "Default"
 msgid "Sent:"
@@ -4514,6 +4519,7 @@ msgstr "To send and receive email with this domain, please add all addresses"
 msgid "To:"
 msgstr "To:"
 
+#. printed message info
 #: src/app/templates/views/message.print.tpl.html:32
 #: src/app/templates/views/outside.reply.tpl.html:18
 msgctxt "Default"

@@ -10,8 +10,8 @@
 
     <p>
         <span style="width:14rem" width="14rem">
-            <span ng-show=" message.Location != '2' " translate-context="Default" translate>Received: </span>
-            <span ng-show=" message.Location == '2' " translate-context="Default" translate>Sent: </span>
+            <span ng-show=" message.Location != '2' " translate-context="Default" translate-comment="printed message info" translate>Received: </span>
+            <span ng-show=" message.Location == '2' " translate-context="Default" translate-comment="printed message info" translate>Sent: </span>
         </span>
         <span>
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
@@ -24,26 +24,26 @@
     </p>
 
     <p>
-        <span translate-context="Default" translate>From:</span>
+        <span translate-comment="printed message info" translate-context="Default" translate>From:</span>
         <b>{{ message.Sender.Name }} {{ message.Sender.Address }}</b>
     </p>
 
     <p ng-if="message.ToList.length">
-        <span translate-context="Default" translate>To:</span>
+        <span translate-comment="printed message info" translate-context="Default" translate>To:</span>
         <b ng-repeat="email in ::message.ToList">
         {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
         </b>
     </p>
 
     <p ng-if="message.CCList.length">
-        <span translate-context="Default" translate>CC:</span>
+        <span translate-comment="printed message info" translate-context="Default" translate>CC:</span>
         <b ng-repeat="email in ::message.CCList">
         {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
         </b>
     </p>
 
     <p ng-if="message.BCCList.length">
-        <span translate-context="Default" translate>BCC:</span>
+        <span translate-comment="printed message info" translate-context="Default" translate>BCC:</span>
         <b ng-repeat="email in ::message.BCCList">
         {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
         </b>
