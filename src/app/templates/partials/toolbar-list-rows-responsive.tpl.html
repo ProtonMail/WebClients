@@ -68,10 +68,10 @@
             </a>
             <span class="pm_dropdown wide ">
                 <a href="#" pt-tooltip="{{ 'Mark as unread' | translate }}" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }">
-                    <i class="fa fa-eye-slash"></i> {{ 'Mark as unread' | translate }}
+                    <i class="fa fa-eye-slash"></i> <span translate translate-context="Action">Mark as unread</span>
                 </a>
                 <a href="#" pt-tooltip="{{ 'Mark as read' | translate }}" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }">
-                    <i class="fa fa-eye"></i> {{ 'Mark as read' | translate }}
+                    <i class="fa fa-eye"></i> <span translate translate-context="Action">Mark as read</span>
                 </a>
             </span>
         </span>
@@ -92,19 +92,24 @@
             </a>
             <span class="pm_dropdown wide">
                 <a ng-click="move('trash')" ng-hide="{{ 'secured.trash.**' | includedByState }}">
-                    <i class="fa fa-trash-o"></i> {{ 'Move to trash' | translate }}
+                    <i class="fa fa-trash-o"></i>
+                    <span translate translate-context="Action">Move to trash</span>
                 </a>
                 <a ng-click="move('inbox')" ng-hide="{{ 'secured.inbox.**' | includedByState }}">
-                    <i class="fa fa-inbox"></i> {{ 'Move to inbox' | translate }}
+                    <i class="fa fa-inbox"></i>
+                    <span translate translate-context="Action">Move to inbox</span>
                 </a>
                 <a ng-click="move('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}">
-                    <i class="fa fa-archive"></i> {{ 'Move to archive' | translate }}
+                    <i class="fa fa-archive"></i>
+                    <span translate translate-context="Action">Move to archive</span>
                 </a>
                 <a ng-click="move('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}">
-                    <i class="fa fa-ban"></i> {{ 'Mark as spam' | translate }}
+                    <i class="fa fa-ban"></i>
+                    <span translate translate-context="Action">Mark as spam</span>
                 </a>
                 <a ng-click="delete()" ng-show="{{ ('secured.trash.**' | includedByState) || ('secured.spam.**' | includedByState) }}">
-                    <i class="fa fa-times-circle"></i> {{ 'Delete' | translate }}
+                    <i class="fa fa-times-circle"></i>
+                    <span translate translate-context="Action">Delete</span>
                 </a>
             </span>
         </span>
@@ -117,37 +122,32 @@
             </a>
             <span class="pm_dropdown wider">
                 <a href="#" ng-click="empty('drafts')" ng-show="{{ 'secured.drafts.**' | includedByState }}">
-                    <i class="fa fa-times-circle-o"></i> {{ 'Empty drafts' | translate }}
+                    <i class="fa fa-times-circle-o"></i>
+                    <span translate translate-context="Action">Empty drafts</span>
                 </a>
                 <a href="#" ng-click="empty('spam')" ng-show="{{ 'secured.spam.**' | includedByState }}">
-                    <i class="fa fa-times-circle-o"></i> {{ 'Empty spam' | translate }}
+                    <i class="fa fa-times-circle-o"></i>
+                    <span translate translate-context="Action">Empty spam</span>
                 </a>
                 <a href="#" ng-click="empty('trash')" ng-show="{{ 'secured.trash.**' | includedByState }}">
-                    <i class="fa fa-times-circle-o"></i> {{ 'Empty trash' | translate }}
-                </a>
-                <a href="#" ng-click="orderBy('subject')">
-                    <i class="fa fa-sort-alpha-asc"></i> {{ 'Subject' | translate }}: A-Z
-                </a>
-                <a href="#" ng-click="orderBy('-subject')">
-                    <i class="fa fa-sort-alpha-desc"></i> {{ 'Subject' | translate }}: Z-A
-                </a>
-                <a href="#" ng-click="orderBy('from')">
-                    <i class="fa fa-sort-alpha-asc"></i> {{ 'From' | translate }}: A-Z
-                </a>
-                <a href="#" ng-click="orderBy('-from')">
-                    <i class="fa fa-sort-alpha-asc"></i> {{ 'From' | translate }}: Z-A
+                    <i class="fa fa-times-circle-o"></i>
+                    <span translate translate-context="Action">Empty trash</span>
                 </a>
                 <a href="#" ng-click="orderBy('size')">
-                    <i class="fa fa-sort-amount-asc"></i> {{ 'Size' | translate }}: {{ 'Small to large' | translate }}
+                    <i class="fa fa-sort-amount-asc"></i>
+                    <span translate translate-context="Action">Size: Small to large</span>
                 </a>
                 <a href="#" ng-click="orderBy('-size')">
-                    <i class="fa fa-sort-amount-desc"></i> {{ 'Size' | translate }}: {{ 'Large to small' | translate }}
+                    <i class="fa fa-sort-amount-desc"></i>
+                    <span translate translate-context="Action">Size: Large to small</span>
                 </a>
                 <a href="#" ng-click="orderBy('-date')">
-                    <i class="fa fa-clock-o"></i> {{ 'Date' | translate }}: {{ 'New to old' | translate }}
+                    <i class="fa fa-clock-o"></i>
+                    <span translate translate-context="Action">Date: New to old</span>
                 </a>
                 <a href="#" ng-click="orderBy('date')">
-                    <i class="fa fa-history"></i> {{ 'Date' | translate }}: {{ 'Old to new' | translate }}
+                    <i class="fa fa-history"></i>
+                    <span translate translate-context="Action">Date: Old to new</span>
                 </a>
             </span>
         </span>

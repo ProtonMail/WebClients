@@ -51,7 +51,8 @@ ng-class="{
                 ng-style="getStyleLabel(labelID)"
                 ng-show="getLabel(labelID).Name"
                 ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
-            </label><label class="pm_label closed more" ng-show="(message.LabelIDs | labels).length > 4" pt-tooltip="+{{ (message.LabelIDs | labels).length - 4 }} {{ 'More labels' | translate}}">&hellip;</label>
+            </label>
+            <label class="pm_label closed more" ng-show="(message.LabelIDs | labels).length > 4" pt-tooltip="+{{ (message.LabelIDs | labels).length - 4 }} {{ 'More labels' | translate}}">&hellip;</label>
             </span>
         </div>
         <div class="time">
@@ -172,44 +173,54 @@ ng-class="{
                     </a>
                     <span class="pm_dropdown wide right">
                         <a ng-click="move('inbox')">
-                            <i class="fa fa-inbox"></i> {{ 'Move to inbox' | translate }}
+                            <i class="fa fa-inbox"></i>
+                            <span translate translate-context="Action">Move to inbox</span>
                         </a>
                         <a ng-click="move('trash')">
-                            <i class="fa fa-trash-o"></i> {{ 'Move to trash' | translate }}
+                            <i class="fa fa-trash-o"></i>
+                            <span translate translate-context="Action">Move to trash</span>
                         </a>
                         <a ng-click="unread()">
-                            <i class="fa fa-eye-slash"></i> {{ 'Mark as unread' | translate }}
+                            <i class="fa fa-eye-slash"></i>
+                            <span translate translate-context="Action">Mark as unread</span>
                         </a>
                         <a ng-click="move('spam')" ng-hide="'secured.spam.**' | includedByState">
-                            <i class="fa fa-ban"></i> {{ 'Mark as spam' | translate }}
+                            <i class="fa fa-ban"></i>
+                            <span translate translate-context="Action">Mark as spam</span>
                         </a>
                         <a ng-click="delete()" ng-if="'secured.trash.**' | includedByState">
-                            <i class="fa fa-times"></i> {{ 'Delete' | translate }}
+                            <i class="fa fa-times"></i>
+                            <span translate translate-context="Action">Delete</span>
                         </a>
                         <a ng-click="togglePlainHtml()">
                             <span ng-show="message.viewMode === 'html'">
-                                <i class="fa fa-file-text-o"></i> {{ 'View source code' | translate }}
+                                <i class="fa fa-file-text-o"></i>
+                                <span translate translate-context="Action">View source code</span>
                             </span>
                             <span ng-show="message.viewMode === 'plain'">
-                                <i class="fa fa-file-photo-o"></i> {{ 'View rendered HTML' | translate }}
+                                <i class="fa fa-file-photo-o"></i>
+                                <span translate translate-context="Action">View rendered HTML</span>
                             </span>
                         </a>
                         <a ng-click="viewPgp()" ng-if="message.IsEncrypted !== 0">
-                            <i class="fa fa-code"></i> {{ 'View headers' | translate }}
+                            <i class="fa fa-code"></i>
+                            <span translate translate-context="Action">View headers</span>
                         </a>
                         <a ng-click="viewPgp()" ng-if="message.IsEncrypted === 0">
-                            <i class="fa fa-code"></i> {{ 'View original' | translate }}
+                            <i class="fa fa-code"></i>
+                            <span translate translate-context="Action">View original</span>
                         </a>
                         <a ng-click="print()">
-                            <i class="fa fa-print"></i> {{ 'Print' | translate }}
+                            <i class="fa fa-print"></i>
+                            <span translate translate-context="Action">Print</span>
                         </a>
                     </span>
                 </span>
             </div>
 
             <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails">
-                <span ng-show="toggleDetails !== true" translate>Show details</span>
-                <span ng-show="toggleDetails === true" translate>Hide details</span>
+                <span ng-show="toggleDetails !== true" translate translate-context="Action">Show details</span>
+                <span ng-show="toggleDetails === true" translate translate-context="Action">Hide details</span>
             </a>
 
         </div>
@@ -217,12 +228,15 @@ ng-class="{
     </div>
 
     <div ng-if="message.ExpirationTime > 0" class="expiration" ng-show="message.expand">
-        <i class="fa fa-clock-o"></i> {{ 'This message will expire in' | translate }} <span time="{{ message.ExpirationTime }}"></span>
+        <i class="fa fa-clock-o"></i>
+        <span translate>This message will expire in</span>
+        <span time="{{ message.ExpirationTime }}"></span>
     </div>
 
     <div ng-show="!!message.imagesHidden && message.expand" class="showImages" ng-click="displayImages()">
         <a href="#">
-            <i class="fa fa-photo"></i> {{ 'Show images' | translate }}
+            <i class="fa fa-photo"></i>
+            <span translate translate-context="Action">Show images</span>
         </a>
     </div>
 

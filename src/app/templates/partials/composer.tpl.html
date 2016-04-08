@@ -70,7 +70,7 @@
             <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'encrypt' }">
                 <div ng-form="encryptForm" class="pm_form">
                     <div>
-                        <h3 translate>Encrypt for non-ProtonMail users</h3>
+                        <h3 translate translate-context="Title">Encrypt for non-ProtonMail users</h3>
                         <a href="https://protonmail.com/support/knowledge-base/encrypt-for-outside-users/" target="_blank">
                             <i class="fa fa-info-circle"></i>
                         </a>
@@ -78,7 +78,7 @@
                     <p></p>
                     <div ng-class="{'has-error': encryptForm.outsidePw.$touched && encryptForm.outsidePw.$error.required}" class="clearfix">
                         <div class="col left">
-                            <label class="text-muted" translate>Message password</label>
+                            <label class="text-muted" translate translate-context="Title">Message password</label>
                         </div>
                         <div class="col right">
                             <input type="password" autocomplete="off" name="outsidePw" ng-model="params.password" placeholder="{{ 'Password' | translate }}" required="" />
@@ -86,7 +86,7 @@
                     </div>
                     <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}" class="clearfix">
                         <div class="col left">
-                            <label class="text-muted" translate>Confirm message password</label>
+                            <label class="text-muted" translate translate-context="Title">Confirm message password</label>
                         </div>
                         <div class="col right">
                             <input type="password" autocomplete="off" name="outsidePwConfirm" ng-model="params.confirm" placeholder="{{ 'Confirm password' | translate }}" required="" />
@@ -94,7 +94,7 @@
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label class="text-muted" translate>Password hint (optional)</label>
+                            <label class="text-muted" translate translate-context="Title">Password hint (optional)</label>
                         </div>
                         <div class="col right">
                             <input type="text" autocomplete="off" name="outsidePwHint" ng-model="params.hint" placeholder="{{ 'Hint' | translate }}" />
@@ -102,19 +102,19 @@
                     </div>
                     <div class="clear">
                         <p>
-                            <i class="help-block" translate>Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
+                            <i class="help-block" translate translate-context="Info">Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set.</i>
                         </p>
                     </div>
                     <footer class="text-right">
-                        <button type="button" class="pm_button pull-left" ng-click="clearEncrypt(message, params, encryptForm);" translate>Cancel</button>
-                        <button type="submit" class="pm_button primary" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid" translate>Set</button>
+                        <button type="button" class="pm_button pull-left" ng-click="clearEncrypt(message, params, encryptForm);" translate translate-context="Action">Cancel</button>
+                        <button type="submit" class="pm_button primary" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid" translate translate-context="Action">Set</button>
                     </footer>
                 </div>
             </div>
 
             <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'expiration' }">
                 <div>
-                    <h3 translate>Expiration time</h3>
+                    <h3 translate translate-context="Title">Expiration time</h3>
                     <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">
                         <i class="fa fa-info-circle"></i>
                     </a>
@@ -125,25 +125,28 @@
                     <span class="pm_select">
                         <select ng-model="params.expirationWeeks" ng-change="setExpiration(message, params)" ng-options="option.label for option in weekOptions"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span> {{ 'Weeks' | translate }}
+                    </span>
+                    <span translate>Weeks</span>
                     <span class="pm_select">
                         <select ng-model="params.expirationDays" ng-change="setExpiration(message, params)" ng-options="option.label for option in dayOptions"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span> {{ 'Days' | translate }}
+                    </span>
+                    <span translate>Days</span>
                     <span class="pm_select">
                         <select ng-model="params.expirationHours" ng-change="setExpiration(message, params)" ng-options="option.label for option in hourOptions"></select>
                         <i class="fa fa-angle-down"></i>
-                    </span> {{ 'Hours' | translate }}
+                    </span>
+                    <span translate>Hours</span>
                 </div>
                 <footer class="text-right">
-                    <button type="button" class="pm_button pull-left" ng-click="clearExpiration(message)" translate>Cancel</button>
-                    <button type="button" class="pm_button primary" ng-click="closePanel(message)" translate>Set</button>
+                    <button type="button" class="pm_button pull-left" ng-click="clearExpiration(message)" translate translate-context="Action">Cancel</button>
+                    <button type="button" class="pm_button primary" ng-click="closePanel(message)" translate translate-context="Action">Set</button>
                 </footer>
             </div>
 
             <div class="meta">
                 <div class="row fromRow">
-                    <label translate>From</label>
+                    <label translate translate-context="Title">From</label>
                     <select ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0" ng-change="changeFrom(message)"></select>
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
@@ -151,25 +154,25 @@
                     <span class="overlay" ng-show="message.Attachments.length > 0" pt-tooltip="Remove Attachments to change your From address."></span>
                 </div>
                 <div class="row placeholder" ng-click="focusTo(message)" ng-hide="message.fields === true">
-                    <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0" translate>Recipients</label>
+                    <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0" translate translate-context="Title">Recipients</label>
                     <div>{{ recipients(message) }}</div>
                     <button class="pm_button link pull-right" ng-click="$event.stopPropagation();toggleCcBcc(message);attHide(message);" pt-tooltip="{{ 'CC BCC' | translate }}" pt-placement="left">
                         <i class="fa fa-angle-down transition"></i>
                     </button>
                 </div>
                 <div class="row toRow" ng-show="message.fields === true">
-                    <label ng-click="focusNextInput($event)" translate>To</label>
+                    <label ng-click="focusNextInput($event)" translate translate-context="Title">To</label>
                     <autocomplete emails="message.ToList" />
                     <button class="pm_button link pull-right" ng-click="toggleCcBcc(message);attHide(message);" pt-tooltip="{{ 'CC BCC' | translate }}" pt-placement="left">
                         <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
                 <div class="row" ng-show="message.fields === true && message.ccbcc === true">
-                    <label ng-click="focusNextInput($event)" translate>CC</label>
+                    <label ng-click="focusNextInput($event)" translate translate-context="Title">CC</label>
                     <autocomplete emails="message.CCList" />
                 </div>
                 <div class="row" ng-show="message.fields === true && message.ccbcc === true">
-                    <label ng-click="focusNextInput($event)" translate>BCC</label>
+                    <label ng-click="focusNextInput($event)" translate translate-context="Title">BCC</label>
                     <autocomplete emails="message.BCCList" />
                 </div>
                 <div class="row subjectRow">
@@ -205,9 +208,9 @@
                 </span>
             </div>
             <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0">
-                <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate>Hide</i>
-                <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate>Show</i>
-                {{ message.Attachments.length }} {{ 'Files attached' | translate }} ({{ getAttachmentsSize(message) | humanSize }})
+                <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate translate-context="Action">Hide</i>
+                <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
+                <span translate>{{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})</span>
             </aside>
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button class="pm_button"
@@ -246,22 +249,22 @@
                 ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i> <span ng-show="!!message.maximized" translate>Expiration</span>
                 </button>
-                <span class="text-muted saveAt" ng-show="message.Time">
-                {{ 'Saved at' | translate }} {{ message.Time | date : 'shortTime' }}
-                </span>
+                <span class="text-muted saveAt" ng-show="message.Time" translate>Saved at {{ message.Time | date : 'shortTime' }}</span>
                 <div class="pull-right">
                     <button class="pm_button" ng-disabled="message.allowDiscard()" ng-click="close(message, true, false)" pt-tooltip="{{ 'Delete draft' | translate }}" pt-placement="top">
-                        <i class="fa fa-trash-o"></i> <span ng-show="!!message.maximized" translate>Discard</span>
+                        <i class="fa fa-trash-o"></i>
+                        <span ng-show="!!message.maximized" translate translate-context="Action">Discard</span>
                     </button>
                     <button class="pm_button" ng-disabled="message.allowSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip="{{ 'Save' | translate }}" pt-placement="top">
-                        <i class="fa fa-floppy-o"></i> <span ng-show="message.maximized === true" translate>Save</span>
+                        <i class="fa fa-floppy-o"></i>
+                        <span ng-show="message.maximized === true" translate translate-context="Action">Save</span>
                     </button>
                     <button class="pm_button primary" ng-disabled="message.allowSend() || message !== selected" ng-click="send(message)">
-                        <span ng-hide="message.allowSend()" translate>Send</span>
-                        <span ng-show="message.uploading > 0" translate>Uploading</span>
-                        <span ng-show="message.sending === true" translate>Sending</span>
-                        <span ng-show="message.encrypting === true" translate>Encrypting</span>
-                        <span ng-show="message.saving === true && message.autosaving === false" translate>Saving</span>
+                        <span ng-hide="message.allowSend()" translate translate-context="Action">Send</span>
+                        <span ng-show="message.uploading > 0" translate translate-context="Action">Uploading</span>
+                        <span ng-show="message.sending === true" translate translate-context="Action">Sending</span>
+                        <span ng-show="message.encrypting === true" translate translate-context="Action">Encrypting</span>
+                        <span ng-show="message.saving === true && message.autosaving === false" translate translate-context="Action">Saving</span>
                     </button>
                 </div>
             </footer>

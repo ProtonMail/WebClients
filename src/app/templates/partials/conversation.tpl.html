@@ -12,14 +12,14 @@
     </h1>
     <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
         <p ng-show="nonTrashed() && inTrash === true" class="alert">
-            {{ 'This conversation contains non-trashed messages.' | translate }}
+            <span translate translate-context="Info">This conversation contains non-trashed messages.</span>
             <a href="#" ng-click="toggleNonTrashed()">
                 <span ng-show="showNonTrashed === true">Hide non trashed messages</span>
                 <span ng-hide="showNonTrashed === true">Show non trashed messages</span>
             </a>
         </p>
         <p ng-show="trashed() && inTrash === false" class="alert">
-            This conversation contains trashed messages.
+            <span translate translate-context="Info">This conversation contains trashed messages.</span>
             <a href="#" ng-click="toggleTrashed()">
                 <span ng-show="showTrashed === true">Hide trashed messages</span>
                 <span ng-hide="showTrashed === true">Show trashed messages</span>

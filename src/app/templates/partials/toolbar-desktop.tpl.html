@@ -69,46 +69,44 @@
         <a class="pm_trigger" dropdown><small translate>More</small> <i class="fa fa-angle-down"></i></a>
         <span class="pm_dropdown wider">
             <a href="#" ng-click="empty('drafts')" ng-show="{{ 'secured.drafts.**' | includedByState }}">
-                <i class="fa fa-times-circle-o"></i> {{ 'Empty drafts' | translate }}
+                <i class="fa fa-times-circle-o"></i>
+                <span translate translate-context="Action">Empty drafts</span>
             </a>
             <a href="#" ng-click="empty('spam')" ng-show="{{ 'secured.spam.**' | includedByState }}">
-                <i class="fa fa-times-circle-o"></i> {{ 'Empty spam' | translate }}
+                <i class="fa fa-times-circle-o"></i>
+                <span translate translate-context="Action">Empty spam</span>
             </a>
             <a href="#" ng-click="empty('trash')" ng-show="{{ 'secured.trash.**' | includedByState }}">
-                <i class="fa fa-times-circle-o"></i> {{ 'Empty trash' | translate }}
-            </a>
-            <a href="#" ng-click="orderBy('subject')">
-                <i class="fa fa-sort-alpha-asc"></i> {{ 'Subject' | translate }}: A-Z
-            </a>
-            <a href="#" ng-click="orderBy('-subject')">
-                <i class="fa fa-sort-alpha-desc"></i> {{ 'Subject' | translate }}: Z-A
-            </a>
-            <a href="#" ng-click="orderBy('from')">
-                <i class="fa fa-sort-alpha-asc"></i> {{ 'From' | translate }}: A-Z
-            </a>
-            <a href="#" ng-click="orderBy('-from')">
-                <i class="fa fa-sort-alpha-asc"></i> {{ 'From' | translate }}: Z-A
+                <i class="fa fa-times-circle-o"></i>
+                <span translate translate-context="Action">Empty trash</span>
             </a>
             <a href="#" ng-click="orderBy('size')">
-                <i class="fa fa-sort-amount-asc"></i> {{ 'Size' | translate }}: {{ 'Small to large' | translate }}
+                <i class="fa fa-sort-amount-asc"></i>
+                <span translate translate-context="Action">Size: Small to large</span>
             </a>
             <a href="#" ng-click="orderBy('-size')">
-                <i class="fa fa-sort-amount-desc"></i> {{ 'Size' | translate }}: {{ 'Large to small' | translate }}
+                <i class="fa fa-sort-amount-desc"></i>
+                <span translate translate-context="Action">Size: Large to small</span>
             </a>
             <a href="#" ng-click="orderBy('-date')">
-                <i class="fa fa-clock-o"></i> {{ 'Date' | translate }}: {{ 'New to old' | translate }}
+                <i class="fa fa-clock-o"></i>
+                <span translate translate-context="Action">Date: New to old</span>
             </a>
             <a href="#" ng-click="orderBy('date')">
-                <i class="fa fa-history"></i> {{ 'Date' | translate }}: {{ 'Old to new' | translate }}
+                <i class="fa fa-history"></i>
+                <span translate translate-context="Action">Date: Old to new</span>
             </a>
             <a href="#" ng-click="clearFilter()" pt-tooltip="{{ 'Show all' | translate }}">
-                <i class="fa fa-list"></i> {{ 'Show all' | translate }}
+                <i class="fa fa-list"></i>
+                <span translate translate-context="Action">Show all</span>
             </a>
             <a href="#" ng-click="filterBy('unread')">
-                <i class="fa fa-eye-slash"></i> {{ 'Show unread' | translate }}
+                <i class="fa fa-eye-slash"></i>
+                <span translate translate-context="Action">Show unread</span>
             </a>
             <a href="#" ng-click="filterBy('read')">
-                <i class="fa fa-eye"></i> {{ 'Show read' | translate }}
+                <i class="fa fa-eye"></i>
+                <span translate translate-context="Action">Show read</span>
             </a>
         </span>
     </span>
