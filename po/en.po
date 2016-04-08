@@ -3322,9 +3322,9 @@ msgid "Others identities"
 msgstr "Others identities"
 
 #: src/app/templates/views/upgrade.tpl.html:6
-msgctxt "Default"
+msgctxt "Info"
 msgid "Our secure email requires a modern web browser."
-msgstr "Our secure email requires a modern web browser."
+msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:8
 msgctxt "title"
@@ -4676,7 +4676,7 @@ msgid "URL to image"
 msgstr "URL to image"
 
 #: src/app/templates/views/upgrade.tpl.html:31
-msgctxt "Default"
+msgctxt "Info"
 msgid "Use one of these browsers for the best experience during Beta:"
 msgstr "Use one of these browsers for the best experience during Beta:"
 
@@ -5102,6 +5102,14 @@ msgstr "Your thoughts..."
 #: src/app/templates/modals/payment/payment.tpl.html:96
 msgid "ZIP code"
 msgstr "ZIP code"
+
+#~ msgctxt "Default"
+#~ msgid "Our secure email requires a modern web browser."
+#~ msgstr "Our secure email requires a modern web browser."
+
+#~ msgctxt "Default"
+#~ msgid "Use one of these browsers for the best experience during Beta:"
+#~ msgstr "Use one of these browsers for the best experience during Beta:"
 
 #~ msgctxt "Default"
 #~ msgid "Current status"
