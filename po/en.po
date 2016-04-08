@@ -3201,7 +3201,7 @@ msgstr "No files were selected"
 #: src/app/templates/directives/labels.tpl.html:3
 msgctxt "Info"
 msgid "No labels"
-msgstr ""
+msgstr "No labels"
 
 #: src/app/templates/views/security.tpl.html:28
 msgctxt "Default"
@@ -4895,6 +4895,7 @@ msgid "Verifying encryption keys"
 msgstr "Verifying encryption keys"
 
 #: src/app/templates/layout/pre.tpl.html:7
+msgctxt "Default"
 msgid "Verifying invite link..."
 msgstr "Verifying invite link…"
 
@@ -5223,6 +5224,9 @@ msgstr "Your thoughts..."
 #: src/app/templates/modals/payment/payment.tpl.html:96
 msgid "ZIP code"
 msgstr "ZIP code"
+
+#~ msgid "Verifying invite link..."
+#~ msgstr "Verifying invite link…"
 
 #~ msgid "Also archive"
 #~ msgstr "Also archive"
