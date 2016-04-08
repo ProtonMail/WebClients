@@ -5,19 +5,19 @@
     <div class="settings">
         <div class="row">
             <section class="setting pm_form full">
-                <legend translate-context="Default" translate>Organization</legend>
+                <legend translate-context="Title" translate>Organization</legend>
                 <div class="pm_grid">
 	            	<div class="col-1-2">
 		            	<form method="post" name="form_organization" ng-submit="saveOrganizationName()" novalidate="">
 	            			<div class="col left">
-	            				<label for="orgName" translate-context="Default" translate>Organization name</label>
+	            				<label for="orgName" translate-context="Title" translate>Organization name</label>
 	            			</div>
 	            			<div class="col right">
 	            				<div class="clearfix">
 		            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder="{{ 'Organization name' | translate }}" ng-minlength="0" ng-maxlength="100" required="" />
 	            				</div>
 			            		<p class="text-right clearfix">
-				            		<button class="pm_button primary" type="submit" translate-context="Default" translate>Save</button>
+				            		<button class="pm_button primary" type="submit" translate-context="Action" translate>Save</button>
 			            		</p>
 	            			</div>
 	            		</form>
@@ -26,31 +26,31 @@
 	                    <table class="pm_table plain" id="usersTable">
 	                        <tbody>
 	                        	<tr>
-		                            <th width="7rem" translate-context="Default" translate>Number of users:</th>
+		                            <th width="7rem" translate-context="Title" translate>Number of users:</th>
 		                            <td>
 		                                <strong translate-context="Default" translate-comment="members page. how many members exist for an organization as well as the total number allowed." translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} Used</strong>
 		                            </td>
 		                            <td class="text-right">
 		                            	<span>
-		                                    <a ui-sref="secured.dashboard" translate-context="Default" translate>Upgrade</a>
+		                                    <a ui-sref="secured.dashboard" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
 		                                </span>
 		                            </td>
 		                        </tr>
 		                        <tr>
-		                            <th translate-context="Default" translate>Organization storage:</th>
+		                            <th translate-context="Title" translate>Organization storage:</th>
 		                            <td>
 		                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
 		                            </td>
 		                            <td class="text-right">
 		                                <span>
-		                                    <a ui-sref="secured.dashboard" translate-context="Default" translate>Upgrade</a>
+		                                    <a ui-sref="secured.dashboard" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
 		                                </span>
 		                            </td>
 		                        </tr>
 		                    </tbody>
 	                    </table>
 	                    <p>
-		                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Default" translate>ProtonMail business accounts can create subaccounts which are used by other members of your organization.</span></small>
+		                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create subaccounts which are used by other members of your organization.</span></small>
 	                    </p>
 	            	</div>
 	            </div>
@@ -59,19 +59,19 @@
 
         <div class="row">
             <section class="setting pm_form full">
-                <legend translate-context="Default" translate>Users</legend>
+                <legend translate-context="Title" translate>Users</legend>
                 <p ng-show="checkDomains()">
-                    <button type="button" class="pm_button primary" ng-click="openUserModal()" translate-context="Default" translate>Add user</button>
-                    <a ui-sref="secured.domains" class="pm_button" translate-context="Default" translate>Add user</a>
+                    <button type="button" class="pm_button primary" ng-click="openUserModal()" translate-context="Action" translate>Add user</button>
+                    <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add domain</a>
                 </p>
                 <table class="pm_table hidden-xs" id="userTable">
 		            <thead>
 		                <tr>
-		                    <th class="username" translate-context="Default" translate>Username</th>
-		                    <th class="role" translate-context="Default" translate>Role</th>
-		                    <th class="storage" translate-context="Default" translate>Storage</th>
-		                    <th class="addresses" translate-context="Default" translate>Addresses</th>
-		                    <th class="actions" translate-context="Default" translate>Actions</th>
+		                    <th class="username" translate-context="Title" translate-comment="table heading" translate>Username</th>
+		                    <th class="role" translate-context="Title" translate-comment="table heading" translate>Role</th>
+		                    <th class="storage" translate-context="Title" translate-comment="table heading" translate>Storage</th>
+		                    <th class="addresses" translate-context="Title" translate-comment="table heading" translate>Addresses</th>
+		                    <th class="actions" translate-context="Title" translate-comment="table heading" translate>Actions</th>
 		                </tr>
 		            </thead>
 		            <tbody>
@@ -100,22 +100,22 @@
 		                    <td class="actions">
 			                    <div ng-hide="member.Private === 1">
 			                    	<button type="button" class="pm_button link" ng-click="managePasswords(member)" pt-tooltip="{{ 'Manage passwords'| translate }}">
-                                        <i class="fa fa-cog"></i> <span translate-context="Default" translate>Manage password</span>
+                                        <i class="fa fa-cog"></i> <span translate-context="Action" translate>Manage password</span>
                                     </button>
                                 </div>
 			                    <div ng-hide="member.Private === 1">
 			                    	<button type="button" class="pm_button link" ng-click="generateKeys(member)" pt-tooltip="{{ 'Generate keys'| translate }}">
-                                        <i class="fa fa-key"></i> <span translate-context="Default" translate>Generate keys</span>
+                                        <i class="fa fa-key"></i> <span translate-context="Action" translate>Generate keys</span>
                                     </button>
                                 </div>
 			                    <div ng-hide="member.Private === 1">
 			                    	<button type="button" class="pm_button link" ng-click="enterMailbox(member)" pt-tooltip="{{ 'Enter mailbox'| translate }}">
-                                        <i class="fa fa-inbox"></i> <span translate-context="Default" translate>Enter mailbox</span>
+                                        <i class="fa fa-inbox"></i> <span translate-context="Action" translate>Enter mailbox</span>
                                     </button>
                                 </div>
                                 <div>
                                     <button type="button" class="pm_button link" ng-click="remove(member)">
-                                        <i class="fa fa-trash-o"></i> <span translate-context="Default" translate>Remove user</span>
+                                        <i class="fa fa-trash-o"></i> <span translate-context="Action" translate>Remove user</span>
                                     </button>
                                 </div>
 							</td>
