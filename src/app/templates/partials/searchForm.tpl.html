@@ -1,9 +1,9 @@
 <form method="post" class="searchForm" ng-submit="searchMessages()" ng-class="{ 'adv': advancedSearch }" adv-search>
     <fieldset>
-        <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip="{{ 'Advanced search' | translate }}" pt-placement="bottom">
+        <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip-translate="Advanced search" pt-placement="bottom">
             <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
         </button>
-        <input type="text" placeholder="{{ 'Search messages' | translate }}" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
+        <input type="text" placeholder-translate="Search messages" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
         <button type="submit" ng-show="advancedSearch !== true">
             <i class="fa fa-search"></i>
         </button>
@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-1-2">
                     <label for="search_keywords" translate translate-context="Title">Keywords</label>
-                    <input id="search_keywords" type="text" placeholder="{{ 'Keywords' | translate }}" ng-model="ctrl.keyword" />
+                    <input id="search_keywords" type="text" placeholder-translate="Keywords" ng-model="ctrl.keyword" />
                 </div>
                 <div class="col-1-2">
                     <label for="search_folder" translate translate-context="Title">Location</label>
@@ -29,11 +29,11 @@
             <div class="row margin">
                 <div class="col-1-2">
                     <label for="search_sender" translate translate-context="Title">Sender</label>
-                    <input type="text" id="search_sender" ng-model="ctrl.from" placeholder="{{ 'From' | translate }}">
+                    <input type="text" id="search_sender" ng-model="ctrl.from" placeholder-translate="From">
                 </div>
                 <div class="col-1-2">
                     <label for="search_recipient" translate translate-context="Title">Recipient</label>
-                    <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder="{{ 'To' | translate }}">
+                    <input type="text" id="search_recipient" ng-model="ctrl.to" placeholder-translate="To">
                 </div>
             </div>
             <div class="row margin">
@@ -41,14 +41,14 @@
                     <label for="search_start" translate translate-context="Title">Start date</label>
                     <span class="input-icon">
                         <em class="fa fa-calendar" ng-click="focusStart()"></em>
-                        <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.start" id="search_start" on-select="setMin()" class="ng-isolate-scope">
+                        <input type="text" placeholder-translate="MM/DD/YYYY" pikaday="ctrl.start" id="search_start" on-select="setMin()" class="ng-isolate-scope">
                     </span>
                 </div>
                 <div class="col-1-2">
                     <label for="search_end" translate translate-context="Title">End date</label>
                     <span class="input-icon">
                         <em class="fa fa-calendar" ng-click="focusEnd()"></em>
-                        <input type="text" placeholder="MM/DD/YYYY" pikaday="ctrl.end" id="search_end" on-select="setMax()" class="ng-isolate-scope">
+                        <input type="text" placeholder-translate="MM/DD/YYYY" pikaday="ctrl.end" id="search_end" on-select="setMax()" class="ng-isolate-scope">
                     </span>
                 </div>
             </div>

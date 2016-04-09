@@ -10,8 +10,12 @@
 
             <section class="setting pm_form full">
                 <legend>
-                    <span class="pull-right small">{{ organization.UsedDomains }} / {{ organization.MaxDomains }} {{ 'Domains used' | translate }}. <a ui-sref="secured.dashboard" translate-context="Action" translate translate-comment="link to dashboard">Upgrade your plan</a></span>
-                    {{ 'Domains' | translate }}
+                    <span class="pull-right small">
+                        {{ organization.UsedDomains }} / {{ organization.MaxDomains }}
+                        <span translate>Domains used.</span>
+                        <a ui-sref="secured.dashboard" translate-context="Action" translate translate-comment="link to dashboard">Upgrade your plan</a>
+                    </span>
+                    <span translate>Domains</span>
                 </legend>
                 <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
                 <div class="margin">
@@ -86,10 +90,10 @@
                                 </button>
                             </td>
                             <td class="text-right">
-                                <button type="button" class="pm_button round" ng-click="wizard(domain)" pt-tooltip="{{ 'Wizard' | translate }}">
+                                <button type="button" class="pm_button round" ng-click="wizard(domain)" pt-tooltip-translate="Wizard">
                                     <i class="fa fa-magic"></i>
                                 </button>
-                                <button type="button" class="remove pm_button round" ng-click="deleteDomain(domain)" pt-tooltip="{{ 'Delete' | translate }}">
+                                <button type="button" class="remove pm_button round" ng-click="deleteDomain(domain)" pt-tooltip-translate="Delete">
                                     <i class="fa fa-trash-o"></i>
                                 </button>
                             </td>
@@ -112,8 +116,12 @@
             <p>&nbsp;</p>
             <section class="setting pm_form full">
                 <legend>
-                    <span class="pull-right small">{{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} {{ 'Addresses used' | translate }}. <a ui-sref="secured.dashboard" translate-comment="link to dashboard" translate-context="Action" translate>Upgrade your plan</a></span>
-                    {{ 'Custom domain addresses' | translate }}
+                    <span class="pull-right small">
+                        {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }}
+                        <span translate>Addresses used.</span>
+                        <a ui-sref="secured.dashboard" translate-comment="link to dashboard" translate-context="Action" translate>Upgrade your plan</a>
+                    </span>
+                    <span translate>Custom domain addresses</span>
                 </legend>
                 <div class="margin-bottom" ng-repeat="domain in domains">
                     <p>

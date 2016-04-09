@@ -15,8 +15,8 @@
                     <tbody>
                         <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
                             <td class="desc">
-                                <div>{{ plan.Title }} {{ 'Plan' | translate }}</div>
-                                <div><span class="space"></span>{{ ctrl.count('MaxSpace') | humanSize }} {{ 'Storage' | translate }}</div>
+                                <div>{{ plan.Title }} <span translate>Plan</span></div>
+                                <div><span class="space"></span>{{ ctrl.count('MaxSpace') | humanSize }} <span translate>Storage</span></div>
                                 <div><span class="space"></span>{{ ctrl.count('MaxDomains') }} <span translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span></div>
                                 <div><span class="space"></span>{{ ctrl.count('MaxAddresses') }} <span translate translate-context="Action">Addresses</span></div>
                             </td>
@@ -83,7 +83,7 @@
                         </div>
                         <div ng-show="ctrl.methods.length === 0">
                             <div class="margin">
-                                <input type="text" ng-model="ctrl.fullname" placeholder="{{ 'Name on card' | translate }}" />
+                                <input type="text" ng-model="ctrl.fullname" placeholder-translate="Name on card" />
                             </div>
                             <div class="pm_grid margin">
                                 <div class="col-2-3">
@@ -93,30 +93,30 @@
                                     </span>
                                 </div>
                                 <div class="col-1-3">
-                                    <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" placeholder="{{ 'ZIP code' | translate }}" required />
+                                    <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" placeholder-translate="ZIP code" required />
                                 </div>
                             </div>
                             <div class="input-icon margin">
                                 <card-icon number="ctrl.number"></card-icon>
-                                <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" placeholder="{{ 'Card number' | translate }}" required />
+                                <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" placeholder-translate="Card number'" required />
                             </div>
                             <div class="pm_grid margin">
                                 <div class="col-1-3">
                                     <div class="input-icon">
                                         <i class="fa fa-calendar"></i>
-                                        <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" placeholder="MM" pt-tooltip="{{ 'Month' | translate }}" required />
+                                        <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" placeholder-translate="MM" pt-tooltip-translate="Month" required />
                                     </div>
                                 </div>
                                 <div class="col-1-3">
                                     <div class="input-icon">
                                         <i class="fa fa-calendar"></i>
-                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" placeholder="YY" pt-tooltip="{{ 'Year' | translate }}" required />
+                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" placeholder-translate="YY" pt-tooltip-translate="Year" required />
                                     </div>
                                 </div>
                                 <div class="col-1-3">
                                     <div class="input-icon">
                                         <i class="fa fa-lock"></i>
-                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" placeholder="CVC" pt-tooltip="{{ 'Card validation code' | translate }}" required />
+                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" placeholder-translate="CVC" pt-tooltip-translate="Card validation code" required />
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +124,8 @@
                     </div>
                     <div ng-show="ctrl.choice.value === 'paypal'">
                         <p ng-show="!ctrl.approvalURL && ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false">
-                            <i class="fa fa-spin fa-spinner"></i> <span translate>Loading...</span>
+                            <i class="fa fa-spin fa-spinner"></i>
+                            <span translate>Loading...</span>
                         </p>
                         <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">
                             <span translate-context="Error" translate>Error connecting to PayPal.</span>
@@ -161,7 +162,7 @@
                     <div class="col-2-3">
                         <div class="input-icon">
                             <i class="fa fa-tag"></i>
-                            <input type="text" ng-model="ctrl.coupon" placeholder="{{ 'Coupon' | translate }}" />
+                            <input type="text" ng-model="ctrl.coupon" placeholder-translate="Coupon" />
                         </div>
                     </div>
                     <div class="col-1-3">

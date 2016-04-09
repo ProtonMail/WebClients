@@ -14,7 +14,7 @@
 	            			</div>
 	            			<div class="col right">
 	            				<div class="clearfix">
-		            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder="{{ 'Organization name' | translate }}" ng-minlength="0" ng-maxlength="100" required="" />
+		            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="{{ 'Organization name" ng-minlength="0" ng-maxlength="100" required="" />
 	            				</div>
 			            		<p class="text-right clearfix">
 				            		<button class="pm_button primary" type="submit" translate-context="Action" translate>Save</button>
@@ -93,23 +93,23 @@
 		                    <td class="addresses">
                                 <div ng-repeat="address in member.Addresses | orderBy: 'Send'" ng-hide="address.Status === 0">
                                     {{ address.Email }} <small ng-show="address.Send === 1"><strong  translate>Default</strong></small>
-                                    <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip="{{ 'Unlink address' | translate }}"><i class="fa fa-chain-broken pm_button link"></i></a>
+                                    <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip-translate="Unlink address"><i class="fa fa-chain-broken pm_button link"></i></a>
                                 </div>
                                 <a ui-sref="secured.domains" class="pm_button" ng-show="checkDomains()" translate-context="Action" translate-comment="add address button on members page" translate>Add address</button>
                             </td>
 		                    <td class="actions">
 			                    <div ng-hide="member.Private === 1">
-			                    	<button type="button" class="pm_button link" ng-click="managePasswords(member)" pt-tooltip="{{ 'Manage passwords'| translate }}">
+			                    	<button type="button" class="pm_button link" ng-click="managePasswords(member)" pt-tooltip-translate="Manage passwords">
                                         <i class="fa fa-cog"></i> <span translate-context="Action" translate>Manage password</span>
                                     </button>
                                 </div>
 			                    <div ng-hide="member.Private === 1">
-			                    	<button type="button" class="pm_button link" ng-click="generateKeys(member)" pt-tooltip="{{ 'Generate keys'| translate }}">
+			                    	<button type="button" class="pm_button link" ng-click="generateKeys(member)" pt-tooltip-translate="Generate keys">
                                         <i class="fa fa-key"></i> <span translate-context="Action" translate>Generate keys</span>
                                     </button>
                                 </div>
 			                    <div ng-hide="member.Private === 1">
-			                    	<button type="button" class="pm_button link" ng-click="enterMailbox(member)" pt-tooltip="{{ 'Enter mailbox'| translate }}">
+			                    	<button type="button" class="pm_button link" ng-click="enterMailbox(member)" pt-tooltip-translate="Enter mailbox">
                                         <i class="fa fa-inbox"></i> <span translate-context="Action" translate>Enter mailbox</span>
                                     </button>
                                 </div>

@@ -34,7 +34,7 @@
                                 <span class="pm_badge primary" ng-show="$first"  translate>Primary</span>
                             </td>
                             <td>
-                                <code pt-tooltip="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 8 }}...</code>
+                                <code pt-tooltip-translate="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 8 }}...</code>
                             </td>
                             <td translate  translate-comment="keys page to show the key size for an address">{{ key.bitSize }} Bit</td>
                             <td>
@@ -81,7 +81,7 @@
                                 <span class="pm_badge primary" ng-show="$first"  translate>Primary</span>
                             </td>
                             <td>
-                                <code pt-tooltip="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 8 }}...</code>
+                                <code pt-tooltip-translate="{{ key.created | date }} - {{ key.fingerprint }}">{{ key.fingerprint | limitTo: 8 }}...</code>
                             </td>
                             <td translate  translate-comment="keys page to show the key size for an address">{{ key.bitSize }} Bit</td>
                             <td>
@@ -129,8 +129,8 @@
                                 <span class="pm_badge primary" ng-show="$first"  translate>Primary</span>
                             </td>
                             <td>
-                                <code pt-tooltip="{{ key.fingerprint }} ({{ key.created | date }})">{{ key.fingerprint | limitTo: 8 }}&hellip;</code>
-                                <code pt-tooltip="{{ key.fingerprint }} ({{ key.created | date }})" ng-if="mobileMode">{{ key.fingerprint }}</code>
+                                <code pt-tooltip-translate="{{ key.fingerprint }} ({{ key.created | date }})">{{ key.fingerprint | limitTo: 8 }}&hellip;</code>
+                                <code pt-tooltip-translate="{{ key.fingerprint }} ({{ key.created | date }})" ng-if="mobileMode">{{ key.fingerprint }}</code>
                             </td>
                             <td translate  translate-comment="keys page to show the key size for an address">{{ key.bitSize }} Bit</td>
                             <td>

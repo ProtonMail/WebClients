@@ -7,7 +7,7 @@
     <ng-include src="'templates/partials/searchForm.tpl.html'" ng-if="!('secured.contacts' | includedByState)"></ng-include>
     <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
         <fieldset>
-            <input type="search" placeholder="{{ 'Search contacts' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
+            <input type="search" placeholder-translate="Search contacts" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
             <button type="submit">
                 <i class="fa fa-search"></i>
             </button>

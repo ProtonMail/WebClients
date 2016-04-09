@@ -22,7 +22,7 @@
                         <input type="radio" ng-model="appearance.ComposerMode" value="1" ng-change="saveComposerMode(composerMode)" />
                         <span  translate translate-comment="form option">Maximized</span>
                         <br />
-                        <img src="assets/img/settings/max.gif" alt="{{ 'Maximized' | translate }}" />
+                        <img src="assets/img/settings/max.gif" alt="{{ 'Maximized" />
                     </label>
                 </div>
             </section>
@@ -56,14 +56,14 @@
                     <p translate-context="Info" translate>Choose your prefered button order for marking messages as read / unread.</p>
                     <label for="">
                         <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
-                        <span ng-click="appearance.MessageButtons = 0; saveButtonsPosition(buttonsForm)" class="pm_buttons" pt-tooltip="{{ 'Mark as read / Mark as unread' | translate }}">
+                        <span ng-click="appearance.MessageButtons = 0; saveButtonsPosition(buttonsForm)" class="pm_buttons" pt-tooltip-translate="{{ 'Mark as read / Mark as unread">
                             <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
                             <a href="#" class="dead divider"><i class="fa fa fa-eye-slash"></i></a>
                         </span>
                     </label>
                     <label for="">
                         <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
-                        <span ng-click="appearance.MessageButtons = 1; saveButtonsPosition(buttonsForm)" class="pm_buttons" pt-tooltip="{{ 'Mark as unread / Mark as read' | translate }}">
+                        <span ng-click="appearance.MessageButtons = 1; saveButtonsPosition(buttonsForm)" class="pm_buttons" pt-tooltip-translate="{{ 'Mark as unread / Mark as read">
                             <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
                             <a href="#" class="dead divider"><i class="fa fa fa-eye"></i></a>
                         </span>
@@ -88,7 +88,7 @@
                     <legend translate-context="Title" translate>Custom theme</legend>
                     <div class="margin" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
                         <p class="alert alert-info" translate-context="Info" translate>Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
-                        <textarea class="code" placeholder="{{ 'Paste your CSS code here (limited to 200,000 characters)' | translate }}" id="cssTheme" name="cssTheme" ng-model="appearance.cssTheme" maxlength="200000"></textarea>
+                        <textarea class="code" placeholder-translate="Paste your CSS code here (limited to 200,000 characters)" id="cssTheme" name="cssTheme" ng-model="appearance.cssTheme" maxlength="200000"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="button" class="pm_button" ng-click="clearTheme()" translate-context="Action" translate>Clear</button>

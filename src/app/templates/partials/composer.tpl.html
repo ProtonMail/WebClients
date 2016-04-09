@@ -29,7 +29,7 @@
                     ng-show="!!!message.minimized"
                     class="pm_button link minimize-button hidden-xs"
                     ng-click="minimize(message)"
-                    pt-tooltip="{{ 'Minimize' | translate }}"
+                    pt-tooltip-translate="Minimize"
                     pt-placement="top">
                         <i class="fa fa-minus"></i>
                     </a>
@@ -37,7 +37,7 @@
                     ng-show="!!message.minimized"
                     class="pm_button link expand-button hidden-xs"
                     ng-click="unminimize(message)"
-                    pt-tooltip="{{ 'Expand' | translate }}"
+                    pt-tooltip-translate="Expand"
                     pt-placement="top">
                         <i class="fa fa-minus"></i>
                     </a>
@@ -45,7 +45,7 @@
                     ng-show="!!!message.maximized"
                     class="pm_button link maximize-button hidden-xs hidden-sm"
                     ng-click="normalize(message);maximize(message)"
-                    pt-tooltip="{{ 'Fullscreen' | translate }}"
+                    pt-tooltip-translate="Fullscreen"
                     pt-placement="top">
                         <i class="fa fa-expand"></i>
                     </a>
@@ -53,14 +53,14 @@
                     ng-show="!!message.maximized"
                     class="pm_button link maximize-button hidden-xs"
                     ng-click="normalize(message)"
-                    pt-tooltip="{{ 'Exit fullscreen' | translate }}"
+                    pt-tooltip-translate="Exit fullscreen"
                     pt-placement="top">
                         <i class="fa fa-compress"></i>
                     </a>
                     <a
                     class="pm_button link close-button"
                     ng-click="openCloseModal(message, true)"
-                    pt-tooltip="{{ 'Close' | translate }}"
+                    pt-tooltip-translate="Close"
                     pt-placement="top">
                         <i class="fa fa-times"></i>
                     </a>
@@ -81,7 +81,7 @@
                             <label class="text-muted" translate translate-context="Title">Message password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" autocomplete="off" name="outsidePw" ng-model="params.password" placeholder="{{ 'Password' | translate }}" required="" />
+                            <input type="password" autocomplete="off" name="outsidePw" ng-model="params.password" placeholder-translate="Password" required="" />
                         </div>
                     </div>
                     <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}" class="clearfix">
@@ -89,7 +89,7 @@
                             <label class="text-muted" translate translate-context="Title">Confirm message password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" autocomplete="off" name="outsidePwConfirm" ng-model="params.confirm" placeholder="{{ 'Confirm password' | translate }}" required="" />
+                            <input type="password" autocomplete="off" name="outsidePwConfirm" ng-model="params.confirm" placeholder-translate="Confirm password" required="" />
                         </div>
                     </div>
                     <div class="clearfix">
@@ -97,7 +97,7 @@
                             <label class="text-muted" translate translate-context="Title">Password hint (optional)</label>
                         </div>
                         <div class="col right">
-                            <input type="text" autocomplete="off" name="outsidePwHint" ng-model="params.hint" placeholder="{{ 'Hint' | translate }}" />
+                            <input type="text" autocomplete="off" name="outsidePwHint" ng-model="params.hint" placeholder-translate="Hint" />
                         </div>
                     </div>
                     <div class="clear">
@@ -151,19 +151,19 @@
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
                     </button>
-                    <span class="overlay" ng-show="message.Attachments.length > 0" pt-tooltip="Remove Attachments to change your From address."></span>
+                    <span class="overlay" ng-show="message.Attachments.length > 0" pt-tooltip-translate="Remove Attachments to change your From address."></span>
                 </div>
                 <div class="row placeholder" ng-click="focusTo(message)" ng-hide="message.fields === true">
                     <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0" translate translate-context="Title">Recipients</label>
                     <div>{{ recipients(message) }}</div>
-                    <button class="pm_button link pull-right" ng-click="$event.stopPropagation();toggleCcBcc(message);attHide(message);" pt-tooltip="{{ 'CC BCC' | translate }}" pt-placement="left">
+                    <button class="pm_button link pull-right" ng-click="$event.stopPropagation();toggleCcBcc(message);attHide(message);" pt-tooltip-translate="CC BCC" pt-placement="left">
                         <i class="fa fa-angle-down transition"></i>
                     </button>
                 </div>
                 <div class="row toRow" ng-show="message.fields === true">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">To</label>
                     <autocomplete emails="message.ToList" />
-                    <button class="pm_button link pull-right" ng-click="toggleCcBcc(message);attHide(message);" pt-tooltip="{{ 'CC BCC' | translate }}" pt-placement="left">
+                    <button class="pm_button link pull-right" ng-click="toggleCcBcc(message);attHide(message);" pt-tooltip-translate="CC BCC" pt-placement="left">
                         <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
@@ -176,7 +176,7 @@
                     <autocomplete emails="message.BCCList" />
                 </div>
                 <div class="row subjectRow">
-                    <input type="text" title="{{ 'Subject' | translate }}" class="subject" placeholder="{{ 'Subject' | translate }}" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+                    <input type="text" title="Subject" class="subject" placeholder-translate="Subject" ng-focus="hideFields(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
             </div>
             <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" max-composer-height>
@@ -220,7 +220,7 @@
                     'active': message.displayPanel && message.panelName == 'attachments',
                     'primary': message.Attachments && message.Attachments.length > 0
                 }"
-                pt-tooltip="{{ 'Attachments' | translate }}"
+                pt-tooltip-translate="Attachments"
                 pt-placement="top"
                 >
                     <i class="fa fa-paperclip"></i>
@@ -233,7 +233,7 @@
                 }"
                 ng-disabled="message.allowOthers() || message !== selected"
                 pt-placement="top"
-                pt-tooltip="{{ 'Encryption' | translate }}"
+                pt-tooltip-translate="Encryption"
                 ng-click="togglePanel(message, 'encrypt')">
                     <i class="fa fa-lock"></i> <span ng-show="!!message.maximized" translate>Encryption</span>
                 </button>
@@ -245,17 +245,17 @@
                 }"
                 ng-disabled="message.allowOthers() || message !== selected"
                 pt-placement="top"
-                pt-tooltip="{{ 'Expiration time' | translate }}"
+                pt-tooltip-translate="Expiration time"
                 ng-click="togglePanel(message, 'expiration')">
                     <i class="fa fa-clock-o"></i> <span ng-show="!!message.maximized" translate>Expiration</span>
                 </button>
                 <span class="text-muted saveAt" ng-show="message.Time" translate>Saved at {{ message.Time | date : 'shortTime' }}</span>
                 <div class="pull-right">
-                    <button class="pm_button" ng-disabled="message.allowDiscard()" ng-click="close(message, true, false)" pt-tooltip="{{ 'Delete draft' | translate }}" pt-placement="top">
+                    <button class="pm_button" ng-disabled="message.allowDiscard()" ng-click="close(message, true, false)" pt-tooltip-translate="Delete draft" pt-placement="top">
                         <i class="fa fa-trash-o"></i>
                         <span ng-show="!!message.maximized" translate translate-context="Action">Discard</span>
                     </button>
-                    <button class="pm_button" ng-disabled="message.allowSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip="{{ 'Save' | translate }}" pt-placement="top">
+                    <button class="pm_button" ng-disabled="message.allowSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip-translate="Save" pt-placement="top">
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true" translate translate-context="Action">Save</span>
                     </button>

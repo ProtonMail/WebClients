@@ -29,14 +29,14 @@ ng-class="{
                     <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name': true }}</strong>
                     <em ng-click="$event.stopPropagation();">
                         {{ message.Sender | contact:'Address' }}
-                        <a class="fa fa-pencil compose" ng-click="sendMessageTo(message.Sender)" pt-tooltip="{{ 'Compose to' | translate }}"></a>
+                        <a class="fa fa-pencil compose" ng-click="sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a>
                     </em>
                 </span>
             </div>
             <div class="location" ng-hide="toggleDetails === true">
-                <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip="{{ 'In archive' | translate }}"></i>
-                <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip="{{ 'In trash' | translate }}"></i>
-                <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip="{{ 'In spam' | translate }}"></i>
+                <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip-translate="In archive"></i>
+                <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip-translate="In trash"></i>
+                <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip-translate="In spam"></i>
                 <i class="pm_tag" ng-if="message.Type === 1" translate>Draft</i>
                 <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3" translate>Sent</i>
             </div>
@@ -52,7 +52,7 @@ ng-class="{
                 ng-show="getLabel(labelID).Name"
                 ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
             </label>
-            <label class="pm_label closed more" ng-show="(message.LabelIDs | labels).length > 4" pt-tooltip="+{{ (message.LabelIDs | labels).length - 4 }} {{ 'More labels' | translate}}">&hellip;</label>
+            <label class="pm_label closed more" ng-show="(message.LabelIDs | labels).length > 4" pt-tooltip-translate="+{{ (message.LabelIDs | labels).length - 4 }} More labels">&hellip;</label>
             </span>
         </div>
         <div class="time">
@@ -93,7 +93,7 @@ ng-class="{
                         <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
                         <em ng-show="toggleDetails === true">
                             {{ email | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'Compose to' | translate }}"></a>
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
                         </em>
                     </li>
                 </ul>
@@ -107,7 +107,7 @@ ng-class="{
                         <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
                         <em ng-show="toggleDetails === true">
                             {{ email | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'Compose to' | translate }}"></a>
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
                         </em>
                     </li>
                 </ul>
@@ -121,7 +121,7 @@ ng-class="{
                         <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
                         <em ng-show="toggleDetails === true">
                             {{ email | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip="{{ 'Compose to' | translate }}"></a>
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
                         </em>
                     </li>
                 </ul>
@@ -129,9 +129,9 @@ ng-class="{
         </div>
 
         <div class="labelz" ng-show="toggleDetails === true && ((conversation.LabelIDs | labels).length > 0)">
-            <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip="{{ 'In archive' | translate }}"></i>
-            <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip="{{ 'In trash' | translate }}"></i>
-            <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip="{{ 'In spam' | translate }}"></i>
+            <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip-translate="In archive"></i>
+            <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip-translate="In trash"></i>
+            <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip-translate="In spam"></i>
             <i class="pm_tag" ng-if="message.Type === 1" translate>Draft</i>
             <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3" translate>Sent</i>
             <span class="pm_labels inline">
@@ -151,7 +151,7 @@ ng-class="{
 
             <div class="actions pull-right">
                 <span class="pm_buttons">
-                    <a class="pm_trigger open-label pull-left" pt-tooltip="{{ 'Add' | translate }}" dropdown ng-click="message.labelDropdownOpen = !message.labelDropdownOpen">
+                    <a class="pm_trigger open-label pull-left" pt-tooltip-translate="Add" dropdown ng-click="message.labelDropdownOpen = !message.labelDropdownOpen">
                         <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
                     </a>
                     <span class="pm_dropdown right wide pull-left">
@@ -159,16 +159,16 @@ ng-class="{
                     </span>
                 </span>
                 <span class="pm_buttons">
-                    <a href="#" ng-click="reply(message)" pt-tooltip="{{ 'Reply' | translate }}">
+                    <a href="#" ng-click="reply(message)" pt-tooltip-translate="Reply">
                         <i class="fa fa-mail-reply"></i>
                     </a>
-                    <a class="divider" ng-click="replyAll(message)" pt-tooltip="{{ 'Reply all' | translate }}">
+                    <a class="divider" ng-click="replyAll(message)" pt-tooltip-translate="Reply all">
                         <i class="fa fa-mail-reply-all"></i>
                     </a>
-                    <a class="divider" ng-click="forward(message)" pt-tooltip="{{ 'Forward' | translate }}">
+                    <a class="divider" ng-click="forward(message)" pt-tooltip-translate="Forward">
                         <i class="fa fa-mail-forward"></i>
                     </a>
-                    <a href="#" class="divider pm_trigger" dropdown pt-tooltip="{{ 'More' | translate }}">
+                    <a href="#" class="divider pm_trigger" dropdown pt-tooltip-translate="More">
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <span class="pm_dropdown wide right">

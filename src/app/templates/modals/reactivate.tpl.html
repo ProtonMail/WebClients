@@ -1,15 +1,15 @@
 <div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
     <form method="post" class="modal-dialog" ng-submit="ctrl.submit()">
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" translate translate-context="Title">Reactivate key pair</h4>
             </div>
             <div class="modal-body pm_form">
                 <p translate>Enter your login password:</p>
-                <input type="password" ng-model="ctrl.loginPassword" placeholder="{{ 'Login password' | translate }}" />
+                <input type="password" ng-model="ctrl.loginPassword" placeholder-translate="Login password" />
                 <p translate>Enter the key password:</p>
-                <input type="password" ng-model="ctrl.keyPassword" placeholder="{{ Key password' | translate }}" />
+                <input type="password" ng-model="ctrl.keyPassword" placeholder-translate="Key password" />
             </div>
         </div>
         <div class="modal-footer text-right">

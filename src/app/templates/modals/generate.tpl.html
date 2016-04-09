@@ -1,6 +1,6 @@
 <div class="pm_modal important {{ctrl.class}}" role="dialog" style="display: block;">
     <form method="post" class="modal-dialog" ng-submit="ctrl.submit()" novalidate="">
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">{{ ctrl.title }}</h4>
@@ -34,7 +34,7 @@
                             <td>{{ address.Email }}</td>
                             <td class="text-right">
                                 <span ng-show="address.state === 0" class="pm_badge" translate translate-comment="key generation progrss">Queued</span>
-                                <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'Generating' | translate }}</span>
+                                <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'Generating</span>
                                 <span ng-show="address.state === 2" class="pm_badge success" translate translate-comment="key generation progrss">Done</span>
                                 <span ng-show="address.state === 3" class="pm_badge success" translate translate-comment="key generation progrss">Saved</span>
                                 <span ng-show="address.state === 4" class="pm_badge error" translate translate-context="Error" translate-comment="key generation progrss">Error</span>
