@@ -18,7 +18,7 @@
                                 <div>{{ plan.Title }} <span translate>Plan</span></div>
                                 <div><span class="space"></span>{{ ctrl.count('MaxSpace') | humanSize }} <span translate>Storage</span></div>
                                 <div><span class="space"></span>{{ ctrl.count('MaxDomains') }} <span translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span></div>
-                                <div><span class="space"></span>{{ ctrl.count('MaxAddresses') }} <span translate translate-context="Action">Addresses</span></div>
+                                <div><span class="space"></span>{{ ctrl.count('MaxAddresses') }} <span translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses">Address</span></div>
                             </td>
                             <td class="price text-right">
                                 <strong ng-show="ctrl.valid.Cycle === 1">{{ ctrl.valid.Amount / 100 | currency: plan.Currency }}</strong>

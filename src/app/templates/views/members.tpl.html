@@ -14,7 +14,7 @@
 	            			</div>
 	            			<div class="col right">
 	            				<div class="clearfix">
-		            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="{{ 'Organization name" ng-minlength="0" ng-maxlength="100" required="" />
+		            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="Organization name" ng-minlength="0" ng-maxlength="100" required="" />
 	            				</div>
 			            		<p class="text-right clearfix">
 				            		<button class="pm_button primary" type="submit" translate-context="Action" translate>Save</button>
@@ -62,7 +62,7 @@
                 <legend translate-context="Title" translate>Users</legend>
                 <p ng-show="checkDomains()">
                     <button type="button" class="pm_button primary" ng-click="openUserModal()" translate-context="Action" translate>Add user</button>
-                    <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add domain</a>
+                    <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add custom domain</a>
                 </p>
                 <table class="pm_table hidden-xs" id="userTable">
 		            <thead>

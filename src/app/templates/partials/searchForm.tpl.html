@@ -1,6 +1,6 @@
 <form method="post" class="searchForm" ng-submit="searchMessages()" ng-class="{ 'adv': advancedSearch }" adv-search>
     <fieldset>
-        <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip-translate="Advanced search" pt-placement="bottom">
+        <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip-translate-context="Action" pt-tooltip-translate="Advanced search" pt-placement="bottom">
             <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
         </button>
         <input type="text" placeholder-translate="Search messages" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
@@ -73,7 +73,7 @@
                         </label>
                         <label for="attachments_no">
                             <input id="attachments_no" type="radio" ng-model="ctrl.attachments" value="0">
-                            <span translate translate-comment="form option">'No</span>
+                            <span translate translate-comment="form option">No</span>
                         </label>
                     </div>
                 </div>

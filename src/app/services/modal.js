@@ -1040,10 +1040,10 @@ angular.module("proton.modals", [])
                     } else if(angular.isDefined(result.data) && result.data.Error) {
                         notify({message: result.data.Error, classes: 'notification-danger'});
                     } else {
-                        notify({message: gettextCatalog.getString('Address created failed', null, 'Error'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Address creation failed', null, 'Error'), classes: 'notification-danger'});
                     }
                 }.bind(this), function(error) {
-                    notify({message: gettextCatalog.getString('Address created failed', null, 'Error'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Address creation failed', null, 'Error'), classes: 'notification-danger'});
                 });
             }.bind(this);
 
