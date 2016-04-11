@@ -98,15 +98,6 @@ angular.module('proton.autocomplete', [])
                 return emails;
             };
 
-            /**
-            * Highlight value searched in the autocompletion
-            */
-            var highlight = function(string, word) {
-                var regex = new RegExp('(' + word + ')', 'gi');
-
-                return string.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, "<strong>$1</strong>");
-            };
-
             // Functions
             /**
             * Function called at the initialization of this directive
@@ -172,6 +163,7 @@ angular.module('proton.autocomplete', [])
                 $timeout.cancel(timeoutChange);
                 timeoutChange = $timeout(function() {
                     if (scope.params.newValue.length > 0) {
+                        var value = scope.params.newValue.toLowerCase();
                         var list = [];
                         var contacts = _.map(authentication.user.Contacts, function(contact) {
                             return { Name: contact.Name, Address: contact.Email };
@@ -180,9 +172,9 @@ angular.module('proton.autocomplete', [])
                         _.each(contacts, function(contact) {
                             // We limit the number of contact by 10
                             if (list.length <= 10) {
-                                if (contact.Name.startsWith(scope.params.newValue)) {
+                                if (contact.Name.toLowerCase().startsWith(value)) {
                                     list.push(contact);
-                                } else if (contact.Address.startsWith(scope.params.newValue)) {
+                                } else if (contact.Address.toLowerCase().startsWith(value)) {
                                     list.push(contact);
                                 }
                             }
