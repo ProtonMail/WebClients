@@ -10,12 +10,12 @@ body {
     }
     section.sidebar {
         display: block;
-        padding: 0 20px 15px 20px;
+        padding: 0 20px;
         width: $sidebarWidth;
         min-width: $sidebarWidth;
         box-sizing: border-box;
         float: left;
-        height: calc(100% - 61px);
+        height: calc(100% - 50px);
         background: $secondary;
         position: relative;
         overflow: hidden;

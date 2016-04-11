@@ -104,7 +104,7 @@ angular.module("proton.controllers.Secured", [])
     };
 
     $scope.storageString = function() {
-        return $filter('humanSize')(authentication.user.UsedSpace) + ' / ' + $filter('humanSize')(authentication.user.UsedSpace);
+        return $filter('humanSize')(authentication.user.UsedSpace) + ' / ' + $filter('humanSize')(authentication.user.MaxSpace);
     };
 
     /**
