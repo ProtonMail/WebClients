@@ -9,14 +9,14 @@
                         <div class="well">
                             <table class="pm_table plain">
                                 <tr>
-                                    <th translate-context="title" translate>Username:</th>
+                                    <th translate-context="title" translate>Username</th>
                                     <td>
                                         <strong>{{ user.Name }}</strong>
                                     </td>
                                     <td class="text-right actions"></td>
                                 </tr>
                                 <tr>
-                                    <th translate-context="Title" translate>Domains:</th>
+                                    <th translate-context="Title" translate>Domains</th>
                                     <td>
                                         <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many domains exist for an organization as well as the total number allowed." translate>{{ organization.UsedDomains }} of {{ organization.MaxDomains }}</strong>
                                         <strong ng-show="organization.PlanName === 'free'">0</strong>
@@ -38,7 +38,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th translate-context="Title" translate>Storage:</th>
+                                    <th translate-context="Title" translate>Storage</th>
                                     <td colspan="2">
                                         <strong ng-hide="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | humanSize }}</strong>
                                         <strong ng-show="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}</strong>
@@ -85,7 +85,7 @@
                                     <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
                                 </tr>
                                 <tr ng-show="user.Credit > 0">
-                                    <th translate-context="Title" translate>Credit:</th>
+                                    <th translate-context="Title" translate>Credit</th>
                                     <td></td>
                                     <td class="text-right actions">{{ user.Credit / 100 | currency: subscription.Currency }}</td>
                                 </tr>
@@ -103,12 +103,12 @@
                         </div>
                     </div>
                     <div class="col-1-2 donate" ng-show="subscription.Name === 'free'">
-                        <legend  translate>Donate</legend>
+                        <legend translate translate-context="Title">Donate</legend>
                         <div class="well text-center">
                             <p  translate>Upgrading to a paid account is the best way to support ProtonMail, but you can also donate any amount.</p>
                             <p><strong  translate>Your donation helps us support more users and continue to develop ProtonMail as free and open source software.</strong></p>
                             <p>
-                                <button class="pm_button primary" type="button" ng-click="donate()"  translate>Donate</button>
+                                <button class="pm_button primary" type="button" ng-click="donate()" translate translate-context="Action">Donate</button>
                             </p>
                         </div>
                     </div>

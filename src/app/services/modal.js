@@ -837,7 +837,7 @@ angular.module("proton.modals", [])
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
-                            notify({message: gettextCatalog.getString('Coupon invalid', null, 'Error'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Invalid coupon', null, 'Error'), classes: 'notification-danger'});
                             this.coupon = '';
                         } else {
                             notify({message: gettextCatalog.getString('Coupon accepted', null), classes: 'notification-success'});

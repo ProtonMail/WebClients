@@ -24,26 +24,26 @@
     </p>
 
     <p>
-        <span translate-comment="printed message info"  translate>From:</span>
+        <span translate-comment="printed message info"  translate>From</span>:
         <b>{{ message.Sender.Name }} {{ message.Sender.Address }}</b>
     </p>
 
     <p ng-if="message.ToList.length">
-        <span translate-comment="printed message info"  translate>To:</span>
+        <span translate-comment="printed message info"  translate>To</span>:
         <b ng-repeat="email in ::message.ToList">
         {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
         </b>
     </p>
 
     <p ng-if="message.CCList.length">
-        <span translate-comment="printed message info"  translate>CC:</span>
+        <span translate-comment="printed message info"  translate>CC</span>:
         <b ng-repeat="email in ::message.CCList">
         {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
         </b>
     </p>
 
     <p ng-if="message.BCCList.length">
-        <span translate-comment="printed message info"  translate>BCC:</span>
+        <span translate-comment="printed message info"  translate>BCC</span>:
         <b ng-repeat="email in ::message.BCCList">
         {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
         </b>

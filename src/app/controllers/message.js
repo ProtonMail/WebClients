@@ -277,9 +277,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.openSafariWarning = function() {
         alertModal.activate({
             params: {
-                title: gettextCatalog.getString('Download', null),
+                title: gettextCatalog.getString('Download', null, 'Title'),
                 alert: 'alert-warning',
-                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'),
+                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Info'),
                 ok: function() {
                     alertModal.deactivate();
                 }

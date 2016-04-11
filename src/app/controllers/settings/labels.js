@@ -130,8 +130,8 @@ angular.module("proton.controllers.Settings")
     $scope.deleteLabel = function(label) {
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete label', null),
-                message: gettextCatalog.getString('Are you sure you want to delete this label?', null),
+                title: gettextCatalog.getString('Delete label', null, 'Title'),
+                message: gettextCatalog.getString('Are you sure you want to delete this label?', null, 'Info'),
                 confirm: function() {
                     networkActivityTracker.track(
                         Label.delete(label.ID)

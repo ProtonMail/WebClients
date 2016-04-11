@@ -129,8 +129,8 @@ angular.module("proton.controllers.Contacts", [
     }
 
     $scope.deleteAllContacts = function() {
-        var title = gettextCatalog.getString('Delete all', null);
-        var message = gettextCatalog.getString('Are you sure you want to delete all your contacts?', null);
+        var title = gettextCatalog.getString('Delete all', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to delete all your contacts?', null, 'Info');
 
         confirmModal.activate({
             params: {
@@ -159,10 +159,10 @@ angular.module("proton.controllers.Contacts", [
         var message, title;
 
         if (contactsSelected.length === 1) {
-            title = gettextCatalog.getString('Delete', null);
+            title = gettextCatalog.getString('Delete', null, 'Title');
             message = 'Are you sure you want to delete this contact?';
         } else {
-            title = gettextCatalog.getString('Delete', null);
+            title = gettextCatalog.getString('Delete', null, 'Title');
             message = 'Are you sure you want to delete the selected contacts?';
         }
 
@@ -204,7 +204,7 @@ angular.module("proton.controllers.Contacts", [
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match) {
-                notify({message: gettextCatalog.getString('Contact exists for this email address', null), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('A contact already exists for this email address.', null), classes: 'notification-danger'});
                 contactModal.deactivate();
             } else {
                 var newContact = {
@@ -441,9 +441,9 @@ angular.module("proton.controllers.Contacts", [
     $scope.openSafariWarning = function() {
         alertModal.activate({
             params: {
-                title: gettextCatalog.getString('Download', null),
+                title: gettextCatalog.getString('Download', null, 'Title'),
                 alert: 'alert-warning',
-                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'),
+                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error', 'Info'),
                 ok: function() {
                     alertModal.deactivate();
                 }

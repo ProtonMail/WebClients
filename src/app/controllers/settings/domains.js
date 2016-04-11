@@ -167,8 +167,8 @@ angular.module("proton.controllers.Settings")
 
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete domain', null),
-                message: gettextCatalog.getString('Are you sure you want to delete this address?', null),
+                title: gettextCatalog.getString('Delete domain', null, 'Title'),
+                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
                 confirm: function() {
                     networkActivityTracker.track(Domain.delete(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
@@ -241,8 +241,8 @@ angular.module("proton.controllers.Settings")
 
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete address', null),
-                message: gettextCatalog.getString('Are you sure you want to delete this address?', null),
+                title: gettextCatalog.getString('Delete address', null, 'Title'),
+                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {

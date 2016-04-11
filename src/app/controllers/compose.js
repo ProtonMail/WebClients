@@ -302,7 +302,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         return {
             options: {
                 addRemoveLinks: false,
-                dictDefaultMessage: gettextCatalog.getString('Drop a file here to upload', null),
+                dictDefaultMessage: gettextCatalog.getString('Drop a file here to upload', null, 'Info'),
                 url: "/file/post",
                 autoProcessQueue: false,
                 paramName: "file", // The name that will be used to transfer the file

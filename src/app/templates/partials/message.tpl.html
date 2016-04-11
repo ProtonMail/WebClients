@@ -100,7 +100,7 @@ ng-class="{
             </div>
             <div ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true">
                 <span class="from">
-                    <span class="where" translate>CC: </span>
+                    <span class="where" translate>CC</span>:
                 </span>
                 <ul>
                    <li class="contact" ng-repeat="email in message.CCList">
@@ -114,7 +114,7 @@ ng-class="{
             </div>
             <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
                 <span class="from">
-                    <span class="where" translate>BCC: </span>
+                    <span class="where" translate>BCC</span>:
                 </span>
                 <ul>
                    <li class="contact" ng-repeat="email in message.BCCList">
@@ -245,7 +245,7 @@ ng-class="{
         <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote scroll="true"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
-            <strong translate>Decryption error</strong>
+            <strong translate translate-context="Error">Decryption error</strong>
             <div translate translate-context="Error">Decryption of this message's encryption content failed.</div>
         </div>
         <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>

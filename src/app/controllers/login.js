@@ -65,7 +65,7 @@ angular.module("proton.controllers.Auth", [
 
         // Detect if the current browser have cookie enable
         if (tools.hasCookie() === false) {
-            notify({message: gettextCatalog.getString('Cookie are disabled.\nPlease activate it and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0'});
+            notify({message: gettextCatalog.getString('Cookies are disabled.\nPlease activate it and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0'});
         }
     };
 

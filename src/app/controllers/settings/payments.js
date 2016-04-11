@@ -93,8 +93,8 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.delete = function(method) {
-        var title = gettextCatalog.getString('Delete payment method', null);
-        var message = gettextCatalog.getString('Are you sure you want to delete this payment method?', null);
+        var title = gettextCatalog.getString('Delete payment method', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to delete this payment method?', null, 'Info');
 
         confirmModal.activate({
             params: {

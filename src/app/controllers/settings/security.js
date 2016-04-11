@@ -15,7 +15,9 @@ angular.module("proton.controllers.Settings")
     $scope.logs = [];
     $scope.logItemsPerPage = 20;
     $scope.doLogging = authentication.user.LogAuth;
-    $scope.disabledText = gettextCatalog.getString('Disable', null);
+
+    /// logging page
+    $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
     $scope.haveLogs = false;
 
     $scope.loadLogs = function (page) {
@@ -40,8 +42,8 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.clearLogs = function() {
-        var title = gettextCatalog.getString('Clear', null);
-        var message = gettextCatalog.getString('Are you sure you want to clear all your logs?', null);
+        var title = gettextCatalog.getString('Clear', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info');
 
         confirmModal.activate({
             params: {
@@ -112,7 +114,9 @@ angular.module("proton.controllers.Settings")
             authentication.user.LogAuth = value;
             Setting.setLogging({LogAuth: value});
             notify({message: gettextCatalog.getString('Logging preference updated', null), classes: 'notification-success'});
-            $scope.disabledText = gettextCatalog.getString('Disable', null);
+
+            /// logging page
+            $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
         }
     };
 
