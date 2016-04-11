@@ -1,5 +1,5 @@
 angular.module("proton.controllers.Secured", [])
-
+.constant('regexEmail', /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/gi)
 .controller("SecuredController", function(
     $cookies,
     $filter,
@@ -62,6 +62,8 @@ angular.module("proton.controllers.Secured", [])
     $scope.$on('organizationChange', function(event, organization) {
         $scope.organization = organization;
     });
+
+    window.navigator.registerProtocolHandler('mailto', $state.href('secured.inbox', {}, {absolute: true}) + '?email=%s', 'ProtonMail');
 
     _.each(authentication.user.Addresses, function(address) {
         if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {

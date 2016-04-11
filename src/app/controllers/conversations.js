@@ -18,6 +18,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Message,
     eventManager,
     Label,
+    regexEmail,
     authentication,
     cache,
     confirmModal,
@@ -179,9 +180,34 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.goToPage();
         });
 
-        if($rootScope.scrollPosition) {
+        if ($rootScope.scrollPosition) {
             $('#content').scrollTop($rootScope.scrollPosition);
             $rootScope.scrollPosition = null;
+        }
+
+        if ($stateParams.email) {
+            var emails = $stateParams.email.match(regexEmail);
+
+            if (emails) {
+                var message = new Message();
+                var ToList = [];
+
+                ToList.push({
+                    Address: emails[0],
+                    Name: emails[0]
+                });
+
+                _.defaults(message, {
+                    ToList: ToList,
+                    CCList: [],
+                    BCCList: [],
+                    Subject: '',
+                    PasswordHint: '',
+                    Attachments: []
+                });
+
+                $rootScope.$broadcast('loadMessage', message);
+            }
         }
     };
 

@@ -1,5 +1,4 @@
 angular.module('proton.autocomplete', [])
-.constant("regexEmail", /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/gi)
 .directive('autocomplete', function ($timeout, regexEmail, authentication) {
     return {
         restrict: 'E',
