@@ -14,7 +14,7 @@
                         <span translate>{{ organization.UsedDomains }} / {{ organization.MaxDomains Domains used.</span>
                         <a ui-sref="secured.dashboard" translate-context="Action" translate translate-comment="link to dashboard">Upgrade your plan</a>
                     </span>
-                    <span translate>Domains</span>
+                    <span translate translate-context="Title">Domains</span>
                 </legend>
                 <p class="alert alert-info" ng-show="organization.UsedDomains === organization.MaxDomains">You have reached your custom domain limit. <a ui-sref="secured.dashboard">Click here</a> to upgrade your plan to add more.</p>
                 <div class="margin">
