@@ -450,7 +450,7 @@ msgctxt "Default"
 msgid "Are you sure you want to unlink this address?"
 msgstr ""
 
-#: src/app/controllers/conversations.js:865
+#: src/app/controllers/conversations.js:891
 msgid "Are you sure?"
 msgstr ""
 
@@ -878,7 +878,7 @@ msgstr ""
 msgid "Confirm password"
 msgstr ""
 
-#: src/app/controllers/conversations.js:864
+#: src/app/controllers/conversations.js:890
 msgctxt "Default"
 msgid "Confirmation"
 msgstr ""
@@ -1216,7 +1216,7 @@ msgstr ""
 #: src/app/controllers/contacts.js:162
 #: src/app/controllers/contacts.js:165
 #: src/app/templates/views/addresses.tpl.html:58
-#: src/app/templates/views/contacts.tpl.html:54
+#: src/app/templates/views/contacts.tpl.html:53
 #: src/app/templates/views/labels.tpl.html:17
 #: src/app/templates/views/payments.tpl.html:31
 msgctxt "Default"
@@ -1477,6 +1477,7 @@ msgid "Drop here"
 msgstr ""
 
 #: src/app/controllers/contacts.js:238
+#: src/app/templates/views/contacts.tpl.html:52
 #: src/app/templates/views/labels.tpl.html:16
 #: src/app/templates/views/payments.tpl.html:30
 msgctxt "Default"
@@ -1722,7 +1723,7 @@ msgctxt "Default"
 msgid "Error during organization request"
 msgstr ""
 
-#: src/app/controllers/conversations.js:304
+#: src/app/controllers/conversations.js:330
 msgctxt "Error"
 msgid "Error during quering conversations"
 msgstr ""
@@ -1865,7 +1866,7 @@ msgctxt "Default"
 msgid "Finish"
 msgstr ""
 
-#: src/app/controllers/conversations.js:892
+#: src/app/controllers/conversations.js:918
 msgctxt "Default"
 msgid "Folder emptied"
 msgstr ""
@@ -2297,7 +2298,7 @@ msgctxt "Default"
 msgid "Layout"
 msgstr ""
 
-#: src/app/controllers/conversations.js:606
+#: src/app/controllers/conversations.js:632
 #: src/app/controllers/settings/appearance.js:97
 msgctxt "Default"
 msgid "Layout saved"
@@ -3591,7 +3592,6 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: src/app/templates/partials/toolbar-desktop.tpl.html:104
 #: src/app/templates/partials/toolbar-desktop.tpl.html:105
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:87
 msgid "Show all"
@@ -3844,7 +3844,7 @@ msgctxt "Default"
 msgid "This can take a few seconds or a few minutes depending on your device."
 msgstr ""
 
-#: src/app/controllers/conversations.js:865
+#: src/app/controllers/conversations.js:891
 msgctxt "Default"
 msgid "This cannot be undone."
 msgstr ""
