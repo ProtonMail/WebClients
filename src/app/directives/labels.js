@@ -74,9 +74,11 @@ angular.module("proton.labels", [])
             };
 
             scope.color = function(label) {
-                return {
-                    color: label.Color
-                };
+                if (label && label.Color) {
+                    return { color: label.Color };
+                } else {
+                    return {};
+                }
             };
 
             scope.save = function() {
