@@ -3001,11 +3001,10 @@ msgstr "MM/DD/YYYY"
 #: src/app/templates/modals/monetize.tpl.html:33
 #: src/app/templates/modals/payment/payment.tpl.html:107
 #: src/app/templates/views/invoice.print.tpl.html:84
-#, fuzzy
 msgid "Month"
 msgid_plural "Months"
 msgstr[0] "Month"
-msgstr[1] "Month"
+msgstr[1] "Months"
 
 #: src/app/templates/views/invoices.tpl.html:27
 #: src/app/templates/views/invoices.tpl.html:55
@@ -3422,7 +3421,7 @@ msgstr "Our secure email requires a modern web browser."
 #: src/app/templates/views/dashboard.tpl.html:8
 msgctxt "Title"
 msgid "Overview"
-msgstr ""
+msgstr "Overview"
 
 #. current page dropdown in paginator
 #: src/app/templates/directives/paginator.tpl.html:12
@@ -4878,13 +4877,13 @@ msgstr "Value / Data / Points to"
 msgid "Verification"
 msgstr "Verification"
 
-#: src/app/templates/views/reset-login-password.tpl.html:26
-#: src/app/templates/views/reset-mailbox-password.tpl.html:23
-msgctxt "Title"
+#: src/app/templates/views/step1.tpl.html:118
 msgid "Verification code"
 msgstr "Verification code"
 
-#: src/app/templates/views/step1.tpl.html:118
+#: src/app/templates/views/reset-login-password.tpl.html:26
+#: src/app/templates/views/reset-mailbox-password.tpl.html:23
+msgctxt "Title"
 msgid "Verification code"
 msgstr "Verification code"
 
@@ -4902,11 +4901,6 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr "Verification did not succeed, please try again in an hour."
 
-#: src/app/templates/modals/domain/verification.tpl.html:50
-msgctxt "Action"
-msgid "Verify"
-msgstr "Verify"
-
 #: src/app/templates/modals/domain/menu.tpl.html:12
 msgctxt "Nav"
 msgid "Verify"
@@ -4914,6 +4908,11 @@ msgstr "Verify"
 
 #: src/app/templates/modals/domain/verification.tpl.html:10
 msgctxt "Title"
+msgid "Verify"
+msgstr "Verify"
+
+#: src/app/templates/modals/domain/verification.tpl.html:50
+msgctxt "Action"
 msgid "Verify"
 msgstr "Verify"
 
@@ -4963,6 +4962,7 @@ msgctxt "Title"
 msgid "Warning"
 msgstr "Warning"
 
+#. account deletion warning
 #: src/app/templates/modals/deleteAccount.tpl.html:10
 msgctxt "Info"
 msgid "WARNING: DELETION IS PERMANENT"
@@ -5019,6 +5019,7 @@ msgstr ""
 "enter to enter our secure system. The Mailbox password is your second "
 "password and is used to decrypt your messages.”>Login Password</abbr>."
 
+#: src/app/templates/views/reset-login-password.tpl.html:22
 #: src/app/templates/views/reset-mailbox-password.tpl.html:20
 msgctxt "Info"
 msgid ""
@@ -5027,15 +5028,6 @@ msgid ""
 msgstr ""
 "We’ve sent a verification code to your <strong>Recovery email</strong>. "
 "Enter it below to continue."
-
-#: src/app/templates/views/reset-login-password.tpl.html:22
-msgctxt "Info"
-msgid ""
-"We've sent a Verification Token to your Recovery Email. Please enter it "
-"below:"
-msgstr ""
-"We’ve sent a Verification Token to your Recovery Email. Please enter it "
-"below:"
 
 #: src/app/templates/partials/composer.tpl.html:107
 msgid "Weeks"
@@ -5263,6 +5255,14 @@ msgstr "YY"
 #: src/app/templates/modals/payment/payment.tpl.html:96
 msgid "ZIP code"
 msgstr "ZIP code"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "We've sent a Verification Token to your Recovery Email. Please enter it "
+#~ "below:"
+#~ msgstr ""
+#~ "We’ve sent a Verification Token to your Recovery Email. Please enter it "
+#~ "below:"
 
 #~ msgctxt "Default"
 #~ msgid "From"
