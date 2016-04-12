@@ -37,8 +37,8 @@
     </div>
 
     <div class="navigation">
-        <a href="#" class="next pm_button primary" ng-click="tourNext()" ng-show="tourStep < 4" translate>Next tip</a>
-        <a href="#" class="next pm_button primary" ng-click="tourEnd()" ng-show="tourStep === 4" translate>Finish</a>
+        <a href="#" class="next pm_button primary" ng-click="tourNext()" ng-show="tourStep < 4" translate translate-context="Action">Next tip</a>
+        <a href="#" class="next pm_button primary" ng-click="tourEnd()" ng-show="tourStep === 4" translate translate-context="Action">Finish</a>
         <ul class="pagination">
             <li ng-class="{ 'active': tourStep === 1 }">
                 <a href="#" ng-click="tourGo(1)"></a>
