@@ -23,7 +23,7 @@
                             <td>{{ method.Details.ExpMonth }}/{{ method.Details.ExpYear }}</td>
                             <td>
                                 <span class="pm_badge">{{ method.Type }}</span>
-                                <span ng-show="$first" class="pm_badge"  translate>Default</span>
+                                <span ng-show="$first" class="pm_badge" translate>Default</span>
                             </td>
                             <td>
                                 <button type="button" class="pm_button link" ng-hide="$first === true" ng-click="default(method)" translate-context="Action" translate>Make default</button>
@@ -59,17 +59,17 @@
                                 <span ng-show="invoice.State === 1">({{ invoice.AmountCharged / 100 | currency: invoice.Currency }})</span>
                             </td>
                             <td>
-                                <span class="pm_badge" ng-show="invoice.Type === 0" translate-comment="payment type badge"  translate>Other</span>
-                                <span class="pm_badge" ng-show="invoice.Type === 1" translate-comment="payment type badge"  translate>Subscription</span>
-                                <span class="pm_badge" ng-show="invoice.Type === 2" translate-comment="payment type badge"  translate>Cancellation</span>
-                                <span class="pm_badge" ng-show="invoice.Type === 3" translate-comment="payment type badge"  translate>Credit</span>
-                                <span class="pm_badge" ng-show="invoice.Type === 4" translate-comment="payment type badge"  translate>Donation</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 0" translate-comment="payment type badge" translate>Other</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 1" translate-comment="payment type badge" translate>Subscription</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 2" translate-comment="payment type badge" translate>Cancellation</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 3" translate-comment="payment type badge" translate>Credit</span>
+                                <span class="pm_badge" ng-show="invoice.Type === 4" translate-comment="payment type badge" translate>Donation</span>
                             </td>
                             <td>
-                                <span class="pm_badge error" ng-show="invoice.State === 0" translate-comment="payment status badge"  translate>Unpaid</span>
-                                <span class="pm_badge success" ng-show="invoice.State === 1" translate-comment="payment status badge"  translate>Paid</span>
-                                <span class="pm_badge" ng-show="invoice.State === 2" translate-comment="payment status badge"  translate>Void</span>
-                                <span class="pm_badge" ng-show="invoice.State === 3" translate-comment="payment status badge"  translate>Billed</span>
+                                <span class="pm_badge error" ng-show="invoice.State === 0" translate-comment="payment status badge" translate>Unpaid</span>
+                                <span class="pm_badge success" ng-show="invoice.State === 1" translate-comment="payment status badge" translate>Paid</span>
+                                <span class="pm_badge" ng-show="invoice.State === 2" translate-comment="payment status badge" translate>Void</span>
+                                <span class="pm_badge" ng-show="invoice.State === 3" translate-comment="payment status badge" translate>Billed</span>
                             </td>
                             <td>{{ invoice.CreateTime | readableTime }}</td>
                             <td class="text-right">

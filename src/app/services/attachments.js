@@ -96,7 +96,7 @@ angular.module('proton.attachments', ['proton.authentication'])
 
                 if (statusCode !== 200) {
                     // Error with the request
-                    notify({message: gettextCatalog.getString('Unable to upload file. Please try again.', null, 'Error'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error'), classes: 'notification-danger'});
                     deferred.reject(response);
                 } else if (response.Error !== undefined) {
                     if (validJSON) {
@@ -104,7 +104,7 @@ angular.module('proton.attachments', ['proton.authentication'])
                         notify({message: response.Error, classes: 'notification-danger'});
                         deferred.reject(response);
                     } else {
-                        notify({message: gettextCatalog.getString('Unable to upload', null, 'Error'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error'), classes: 'notification-danger'});
                         deferred.reject(response);
                     }
                 } else {

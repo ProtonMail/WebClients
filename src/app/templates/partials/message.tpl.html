@@ -77,7 +77,7 @@ ng-class="{
     <div class="details" ng-show="message.expand">
 
         <div class="recipients-summary" ng-hide="toggleDetails === true">
-            <strong translate>To: </strong>
+            <strong translate>To</strong>: 
             <span ng-repeat="email in recipients()" title="{{ email | contact:'Address' }}">
                 {{ email | contact: 'Name':true }}<span ng-hide="$last">, </span>
             </span>
@@ -86,7 +86,7 @@ ng-class="{
         <div class="recipients-details" ng-show="toggleDetails === true">
             <div ng-if="message.ToList.length" class="toGroup">
                 <span class="from">
-                    <span class="where" translate>To: </span>
+                    <span class="where" translate>To</span>:
                 </span>
                 <ul>
                     <li class="contact" ng-repeat="email in message.ToList">
