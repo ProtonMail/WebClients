@@ -4576,13 +4576,13 @@ msgstr ""
 msgid "Verification"
 msgstr ""
 
-#: src/app/templates/views/reset-login-password.tpl.html:26
-#: src/app/templates/views/reset-mailbox-password.tpl.html:23
-msgctxt "Title"
+#: src/app/templates/views/step1.tpl.html:118
 msgid "Verification code"
 msgstr ""
 
-#: src/app/templates/views/step1.tpl.html:118
+#: src/app/templates/views/reset-login-password.tpl.html:26
+#: src/app/templates/views/reset-mailbox-password.tpl.html:23
+msgctxt "Title"
 msgid "Verification code"
 msgstr ""
 
@@ -4600,11 +4600,6 @@ msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
 msgstr ""
 
-#: src/app/templates/modals/domain/verification.tpl.html:50
-msgctxt "Action"
-msgid "Verify"
-msgstr ""
-
 #: src/app/templates/modals/domain/menu.tpl.html:12
 msgctxt "Nav"
 msgid "Verify"
@@ -4612,6 +4607,11 @@ msgstr ""
 
 #: src/app/templates/modals/domain/verification.tpl.html:10
 msgctxt "Title"
+msgid "Verify"
+msgstr ""
+
+#: src/app/templates/modals/domain/verification.tpl.html:50
+msgctxt "Action"
 msgid "Verify"
 msgstr ""
 
@@ -4661,6 +4661,7 @@ msgctxt "Title"
 msgid "Warning"
 msgstr ""
 
+#. account deletion warning
 #: src/app/templates/modals/deleteAccount.tpl.html:10
 msgctxt "Info"
 msgid "WARNING: DELETION IS PERMANENT"
@@ -4691,14 +4692,10 @@ msgctxt "Info"
 msgid "We will send a code to your <abbr title=\"This is the optional email you used when first creating an account. This is the same as your Notification Email that is used for sending alerts about new messages.'>Recovery email</abbr> to reset your <abbr title='Your Login Password is the first password you enter to enter our secure system. The Mailbox password is your second password and is used to decrypt your messages.\">Login Password</abbr>."
 msgstr ""
 
+#: src/app/templates/views/reset-login-password.tpl.html:22
 #: src/app/templates/views/reset-mailbox-password.tpl.html:20
 msgctxt "Info"
 msgid "We've sent a verification code to your <strong>Recovery email</strong>. Enter it below to continue."
-msgstr ""
-
-#: src/app/templates/views/reset-login-password.tpl.html:22
-msgctxt "Info"
-msgid "We've sent a Verification Token to your Recovery Email. Please enter it below:"
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:107
