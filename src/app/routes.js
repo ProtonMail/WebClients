@@ -457,7 +457,7 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/outside.reply.tpl.html'
             }
         },
-        onEnter: function(gettext) {
+        onEnter: function(gettextCatalog) {
             window.onbeforeunload = function() {
                 return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
