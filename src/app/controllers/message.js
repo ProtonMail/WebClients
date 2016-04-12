@@ -279,7 +279,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             params: {
                 title: gettextCatalog.getString('Download', null, 'Title'),
                 alert: 'alert-warning',
-                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Info'),
+                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'),
                 ok: function() {
                     alertModal.deactivate();
                 }

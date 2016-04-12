@@ -25,43 +25,19 @@
             <header responsive-composer="message">
                 <span ng-click="normalize(message);" class="subject" ng-bind="subject(message)"></span>
                 <span class="actions text-right">
-                    <a
-                    ng-show="!!!message.minimized"
-                    class="pm_button link minimize-button hidden-xs"
-                    ng-click="minimize(message)"
-                    pt-tooltip-translate="Minimize"
-                    pt-placement="top">
+                    <a ng-show="!!!message.minimized" class="pm_button link minimize-button hidden-xs" ng-click="minimize(message)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Minimize" pt-placement="top">
                         <i class="fa fa-minus"></i>
                     </a>
-                    <a
-                    ng-show="!!message.minimized"
-                    class="pm_button link expand-button hidden-xs"
-                    ng-click="unminimize(message)"
-                    pt-tooltip-translate="Expand"
-                    pt-placement="top">
+                    <a ng-show="!!message.minimized" class="pm_button link expand-button hidden-xs" ng-click="unminimize(message)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Expand" pt-placement="top">
                         <i class="fa fa-minus"></i>
                     </a>
-                    <a
-                    ng-show="!!!message.maximized"
-                    class="pm_button link maximize-button hidden-xs hidden-sm"
-                    ng-click="normalize(message);maximize(message)"
-                    pt-tooltip-translate="Fullscreen"
-                    pt-placement="top">
+                    <a ng-show="!!!message.maximized" class="pm_button link maximize-button hidden-xs hidden-sm" ng-click="normalize(message);maximize(message)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Fullscreen" pt-placement="top">
                         <i class="fa fa-expand"></i>
                     </a>
-                    <a
-                    ng-show="!!message.maximized"
-                    class="pm_button link maximize-button hidden-xs"
-                    ng-click="normalize(message)"
-                    pt-tooltip-translate="Exit fullscreen"
-                    pt-placement="top">
+                    <a ng-show="!!message.maximized" class="pm_button link maximize-button hidden-xs" ng-click="normalize(message)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Exit fullscreen" pt-placement="top">
                         <i class="fa fa-compress"></i>
                     </a>
-                    <a
-                    class="pm_button link close-button"
-                    ng-click="openCloseModal(message, true)"
-                    pt-tooltip-translate="Close"
-                    pt-placement="top">
+                    <a class="pm_button link close-button" ng-click="openCloseModal(message, true)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Close" pt-placement="top">
                         <i class="fa fa-times"></i>
                     </a>
                 </span>
@@ -94,7 +70,9 @@
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label class="text-muted" translate translate-context="Title">Password hint (optional)</label>
+                            <label class="text-muted">
+                                <span translate translate-context="Title">Password hint</span> (<em>Optional</em>)
+                            </label>
                         </div>
                         <div class="col right">
                             <input type="text" autocomplete="off" name="outsidePwHint" ng-model="params.hint" placeholder-translate="Hint" />
@@ -259,7 +237,7 @@
                         <i class="fa fa-trash-o"></i>
                         <span ng-show="!!message.maximized" translate translate-context="Action">Discard</span>
                     </button>
-                    <button class="pm_button" ng-disabled="message.allowSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip-translate="Save" pt-placement="top">
+                    <button class="pm_button" ng-disabled="message.allowSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip-translate="Save" pt-placement="top" pt-tooltip-translate-context="Action">
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true" translate translate-context="Action">Save</span>
                     </button>

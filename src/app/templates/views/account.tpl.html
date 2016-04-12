@@ -31,7 +31,7 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <a ui-sref="secured.addresses" class="pm_button link pull-right" translate-context="Action" translate translate-comment="link to addresses page">Others identities</a>
+                            <a ui-sref="secured.addresses" class="pm_button link pull-right" translate-context="Action" translate translate-comment="link to addresses page">Other identities</a>
                             <button class="pm_button primary" type="submit" translate-context="Action" translate translate-comment="Save button for updating default identity on account page">Save</button>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                             <input class="margin" type="email" id="notificationEmail" name="notificationEmail" placeholder-translate="Notification email" ng-model="notificationEmail" />
                             <p class="help-block"><small><i class="fa fa-info-circle"></i> <span translate-context="Info" translate>Also used to reset a forgotten password.</span></small></p>
 
-                            <button class="pm_button primary" type="submit"  translate translate-comment="save button for saving notification email">Save</button>
+                            <button class="pm_button primary" type="submit" translate translate-context="Action" translate-comment="save button for saving notification email">Save</button>
                         </div>
                     </div>
                     <div class="clearfix">&nbsp;</div>
@@ -184,7 +184,7 @@
                     <div class="clearfix">
                         <div class="col left">&nbsp;</div>
                         <div class="col right">
-                            <button class="pm_button primary" ng-disabled="mailboxForm.$valid === false || networkActivity.loading()" type="submit"  translate>Save</button>
+                            <button class="pm_button primary" ng-disabled="mailboxForm.$valid === false || networkActivity.loading()" type="submit" translate translate-context="Action">Save</button>
                         </div>
                     </div>
                     <div class="clearfix">

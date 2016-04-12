@@ -218,7 +218,7 @@ angular.module("proton.controllers.Settings")
      * @param {Object} member
      */
     $scope.remove = function(member) {
-        var title = gettextCatalog.getString('Remove member', null);
+        var title = gettextCatalog.getString('Remove member', null, 'Title');
         var message = gettextCatalog.getString('Are you sure you want to remove this member?', null);
         var index = $scope.members.indexOf(member);
 

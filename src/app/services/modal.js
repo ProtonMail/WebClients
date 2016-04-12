@@ -609,7 +609,7 @@ angular.module("proton.modals", [])
                 .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
                 .uniq()
                 .value();
-            this.organizationName = gettextCatalog.getString('My organization', null); // TODO set this value for the business plan
+            this.organizationName = gettextCatalog.getString('My organization', null, 'Title'); // TODO set this value for the business plan
 
             // Functions
 

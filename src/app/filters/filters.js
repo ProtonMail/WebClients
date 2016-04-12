@@ -264,6 +264,7 @@ angular.module("proton.filters",[])
         var myself = _.findWhere(authentication.user.Addresses, {Email: contact.Address});
 
         if (me === true && angular.isDefined(myself)) {
+            /// if an email is sent to you, we replace the email with this string
             return gettextCatalog.getString('Me', null);
         } else if (parameter === 'Address') {
             return '<' + contact.Address + '>';

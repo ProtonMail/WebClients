@@ -6,7 +6,7 @@
             </span>
             <paginator ng-hide="idDefined() && layoutMode === 'rows'" page="page" total-items="conversationCount()" items-per-page="elementPerPage" change="selectPage" />
             <span class="pm_buttons" ng-show="idDefined() && layoutMode === 'rows'">
-                <a ng-click="nextConversation(conversation)" pt-tooltip-translate="Previous">
+                <a ng-click="nextConversation(conversation)" pt-tooltip-translate="Previous" pt-tooltip-translate-context="Action">
                     <i class="fa fa-chevron-left"></i>
                 </a>
                 <a ng-click="previousConversation(conversation)" class="divider" pt-tooltip-translate="Next">
@@ -20,7 +20,7 @@
             </a>
         </span>
         <label class="pm_checkbox" ng-if="!idDefined() || layoutMode === 'columns'">
-            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip-translate="Select all messages">
+            <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip-translate-context="Action" pt-tooltip-translate="Select all messages">
         </label>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }" ng-show="messageButtons === 0">
             <a class="fa fa-eye" pt-tooltip-translate="Mark as read" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate-context="Action"></a>
@@ -36,7 +36,7 @@
             <a pt-tooltip-translate="Move to archive" ng-click="move('archive')" ng-hide="{{ 'secured.archive.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-archive divider" pt-tooltip-translate-context="Action"></a>
             <a pt-tooltip-translate="Move to spam" ng-click="move('spam')" ng-hide="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-ban divider" pt-tooltip-translate-context="Action"></a>
             <a pt-tooltip-translate="Delete" ng-click="delete()" ng-show="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-times-circle-o divider" pt-tooltip-translate-context="Action"></a>
-            <a pt-tooltip-translate="Not spam" ng-click="move('inbox')" ng-show="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-check divider pt-tooltip-translate-context="Action""></a>
+            <a pt-tooltip-translate="Not spam" ng-click="move('inbox')" ng-show="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-check divider" pt-tooltip-translate-context="Action""></a>
         </span>
         <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }" id="tour-fromage">
             <a class="pm_trigger open-label" dropdown ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate="Labels">

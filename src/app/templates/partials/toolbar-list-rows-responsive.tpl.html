@@ -5,45 +5,24 @@
                 <i class="fa fa-long-arrow-left"></i>
             </a>
         </span>
-        <a
-        ng-disabled="numberElement === 0"
-        pt-tooltip-translate="Select all messages"
-        ng-if="!idDefined()"
-        ng-click="toggleAllSelected()"
-        class="fa fa-square-o"
-        ng-class="{
-            'fa-square-o': !allSelected(),
-            'fa-check-square': allSelected()
-        }"></a>
-        
+        <a ng-disabled="numberElement === 0" pt-tooltip-translate-context="Action" pt-tooltip-translate="Select all messages" ng-if="!idDefined()" ng-click="toggleAllSelected()" class="fa fa-square-o" ng-class="{'fa-square-o': !allSelected(),'fa-check-square': allSelected()}"></a>
+
         <span class="pm_buttons desktop" ng-show="messageButtons === 0">
-
-            <a href="#" class="fa fa-eye" pt-tooltip-translate="Mark as read" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
-
-            <a href="#" class="fa fa-eye-slash divider" pt-tooltip-translate="Mark as unread" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
-
+            <a href="#" class="fa fa-eye" pt-tooltip-translate="Mark as read" pt-tooltip-translate-context="Action" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+            <a href="#" class="fa fa-eye-slash divider" pt-tooltip-translate="Mark as unread" pt-tooltip-translate-context="Action" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
         </span>
 
         <span class="pm_buttons desktop" ng-show="messageButtons === 1">
-
-            <a href="#" class="fa fa-eye-slash" pt-tooltip-translate="Mark as unread" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
-
-            <a href="#" class="fa fa-eye divider" pt-tooltip-translate="Mark as read" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
-
+            <a href="#" class="fa fa-eye-slash" pt-tooltip-translate="Mark as unread" pt-tooltip-translate-context="Action" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
+            <a href="#" class="fa fa-eye divider" pt-tooltip-translate="Mark as read" pt-tooltip-translate-context="Action" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }"></a>
         </span>
 
         <span class="pm_buttons desktop">
-
             <a class="fa fa-trash-o" ng-click="move('trash')" pt-tooltip-translate-context="Action" pt-tooltip-translate="Move to trash" ng-hide="{{ 'secured.trash.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }"></a>
-
             <a class="fa fa-inbox divider" ng-click="move('inbox')" pt-tooltip-translate-context="Action" pt-tooltip-translate="Move to inbox" ng-hide="{{ 'secured.inbox.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }"></a>
-
             <a class="fa fa-archive divider" ng-click="move('archive')" pt-tooltip-translate-context="Action" pt-tooltip-translate="Move to archive" ng-hide="{{ 'secured.archive.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }"></a>
-
             <a class="fa fa-ban divider" ng-click="move('spam')" pt-tooltip-translate-context="Action" pt-tooltip-translate="Mark as spam" ng-hide="{{ 'secured.spam.**' | includedByState }}" ng-class="{ disabled: numberElementSelected === 0 }"></a>
-
             <a class="fa fa-times-circle divider" ng-click="delete()" pt-tooltip-translate-context="Action" pt-tooltip-translate="Delete" ng-show="{{ ('secured.trash.**' | includedByState) || ('secured.spam.**' | includedByState) }}" ng-class="{ disabled: numberElementSelected === 0 }"></a>
-
         </span>
 
         <span class="pm_buttons mobile">

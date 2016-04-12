@@ -44,7 +44,7 @@ angular.module("proton.transformation", [])
 
                     if (parent.text().replace(/\s+/g, '').length > 0) {
                         var button = angular.element('<button/>', {
-                            title: gettextCatalog.getString('Show previous message', null),
+                            title: gettextCatalog.getString('Show previous message', null, 'Title'),
                             class: 'fa fa-ellipsis-h pm_button more',
                             click: function () {
                                 if(angular.element(blockquote).is(':visible')) {

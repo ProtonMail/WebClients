@@ -1208,7 +1208,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * Return the subject title of the composer
      */
      $scope.subject = function(message) {
-        return message.Subject || gettextCatalog.getString('New message', null);
+        return message.Subject || gettextCatalog.getString('New message', null, 'Title');
      };
 
     /**
@@ -1218,8 +1218,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.checkSubject = function(message) {
         var deferred = $q.defer();
-        var title = gettextCatalog.getString('No subject', null);
-        var text = gettextCatalog.getString('No subject, send anyway?', null);
+        var title = gettextCatalog.getString('No subject', null, 'Title');
+        var text = gettextCatalog.getString('No subject, send anyway?', null, 'Info');
 
         if(angular.isUndefined(message.Subject) || message.Subject.length === 0) {
             message.Subject = '';

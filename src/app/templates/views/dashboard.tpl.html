@@ -90,7 +90,9 @@
                                     <td class="text-right actions">{{ user.Credit / 100 | currency: subscription.Currency }}</td>
                                 </tr>
                                 <tr>
-                                    <th translate-context="Title" translate>Payment:</th>
+                                    <th>
+                                        <span translate-context="Title" translate>Payment</span>:
+                                    </th>
                                     <td>
                                         <strong ng-show="methods.length === 0" translate-context="Title" translate>None</strong>
                                         <strong ng-show="methods.length > 0" translate-context="Title" translate>Credit card</strong>
@@ -157,7 +159,7 @@
                                                 <i class="fa fa-angle-down"></i>
                                             </span>
                                             <span ng-show="plan.editable === false">{{ plan.MaxSpace | humanSize }}</span>
-                                            <span  translate>Storage</span>
+                                            <span translate>Storage</span>
                                             <strong class="cost pull-right" ng-show="selects.plus.space.index * addons[plan.Cycle].space.Amount && plan.editable === true">+{{ selects.plus.space.index * addons[plan.Cycle].space.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                             <span class="clear"></span>
                                         </li>

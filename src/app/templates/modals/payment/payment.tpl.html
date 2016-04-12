@@ -15,7 +15,7 @@
                     <tbody>
                         <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
                             <td class="desc">
-                                <div>{{ plan.Title }} <span translate>Plan</span></div>
+                                <div>{{ plan.Title }} <span translate translate-context="Title">Plan</span></div>
                                 <div><span class="space"></span>{{ ctrl.count('MaxSpace') | humanSize }} <span translate>Storage</span></div>
                                 <div><span class="space"></span>{{ ctrl.count('MaxDomains') }} <span translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span></div>
                                 <div><span class="space"></span>{{ ctrl.count('MaxAddresses') }} <span translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses">Address</span></div>
