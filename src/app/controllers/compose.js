@@ -735,7 +735,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 $scope.focusTo(message);
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
-            } else {
+            } else if (message.editor) {
                 message.editor.focus();
             }
 
