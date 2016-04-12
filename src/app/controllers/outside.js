@@ -241,7 +241,12 @@ angular.module("proton.controllers.Outside", [
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
+
         $event.preventDefault();
+
+        if ($state.includes('eo.reply')) {
+            return;
+        }
 
         var link = angular.element($event.target);
         var href = link.attr('href');
