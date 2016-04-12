@@ -18,21 +18,21 @@
     "tests"
   ],
   "dependencies": {
-    "angular-cookies": "~1.4.8",
+    "angular-cookies": "~1.4.10",
     "angular-ical": "~1.1.0",
-    "angular-loader": "~1.4.8",
-    "angular-messages": "~1.4.8",
+    "angular-loader": "~1.4.10",
+    "angular-messages": "~1.4.10",
     "angular-notify": "https://github.com/EpokK/angular-notify.git#master",
-    "angular-resource": "~1.4.8",
-    "angular-route": "~1.4.8",
-    "angular-sanitize": "~1.4.8",
+    "angular-resource": "~1.4.10",
+    "angular-route": "~1.4.10",
+    "angular-sanitize": "~1.4.10",
     "angular-smooth-scrollbar": "~2.1.0",
     "angular-translate-loader-static-files": "~2.11.0",
     "angular-translate-storage-cookie": "~2.11.0",
     "angular-translate-storage-local": "~2.11.0",
     "angular-translate": "~2.11.0",
     "angular-ui-router": "~0.2.15",
-    "angular": "~1.4.8",
+    "angular": "~1.4.10",
     "autofill-event": "~1.0.0",
     "bootstrap-sass": "bootstrap-sass-official#~3.3.6",
     "bootstrap": "~3.3.6",
@@ -64,6 +64,6 @@
     "angular-gettext": "~2.2.1"
   },
   "resolutions": {
-    "angular": "1.4.9"
+    "angular": "1.4.10"
   }
 }
