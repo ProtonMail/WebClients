@@ -165,7 +165,7 @@
 <div class="pm_panel wide" ng-show="genNewKeys">
     <div class="text-center header">
         <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" />
-        <h2 class="text-center" ng-show="!signupError"  translate>Generating keys...</h2>
+        <h2 class="text-center" ng-show="!signupError" translate translate-text="Title">Generating keys...</h2>
     </div>
     <p class="alert" translate-context="Info" translate>This can take a few seconds or a few minutes depending on your device.</p>
 </div>
@@ -181,31 +181,31 @@
         <ol id="creationList">
             <li class="done">
                 <i class="show fa fa-check"></i>
-                <span translate >Generating keys</span>
+                <span translate>Generating keys</span>
             </li>
             <li ng-class="{ 'done': createUser }">
                 <i ng-class="{ 'show': createUser }" class="fa fa-check"></i>
-                <span translate >Creating new user</span>
+                <span translate>Creating new user</span>
             </li>
             <li ng-class="{ 'done': logUserIn }">
                 <i ng-class="{ 'show': logUserIn }" class="fa fa-check"></i>
-                <span translate >Verifying new account</span>
+                <span translate>Verifying new account</span>
             </li>
             <li ng-class="{ 'done': decryptAccessToken }">
                 <i ng-class="{ 'show': decryptAccessToken }" class="fa fa-check"></i>
-                <span translate >Verifying encryption keys</span>
+                <span translate>Verifying encryption keys</span>
             </li>
             <li ng-class="{ 'done': mailboxLogin }">
                 <i ng-class="{ 'show': mailboxLogin }" class="fa fa-check"></i>
-                <span translate >Loading new account</span>
+                <span translate>Loading new account</span>
             </li>
             <li ng-class="{ 'done': getUserInfo }">
                 <i ng-class="{ 'show': getUserInfo }" class="fa fa-check"></i>
-                <span translate >Done</span>
+                <span translate>Done</span>
             </li>
             <li ng-class="{ 'done': finishCreation }">
                 <i ng-class="{ 'show': finishCreation }" class="fa fa-check"></i>
-                <span translate >Redirecting</span>
+                <span translate>Redirecting</span>
             </li>
         </ol>
     </div>
