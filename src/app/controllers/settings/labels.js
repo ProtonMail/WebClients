@@ -57,7 +57,7 @@ angular.module("proton.controllers.Settings")
     $scope.createLabel = function() {
         labelModal.activate({
             params: {
-                title: gettextCatalog.getString('Create new label', null, 'Default'),
+                title: gettextCatalog.getString('Create new label', null, 'Title'),
                 create: function(name, color) {
                     networkActivityTracker.track(
                         Label.create({
@@ -88,7 +88,7 @@ angular.module("proton.controllers.Settings")
 
         labelModal.activate({
             params: {
-                title: gettextCatalog.getString('Edit label', null, 'Default'),
+                title: gettextCatalog.getString('Edit label', null, 'Title'),
                 label: label,
                 create: function(name, color) {
                     networkActivityTracker.track(
@@ -130,7 +130,7 @@ angular.module("proton.controllers.Settings")
     $scope.deleteLabel = function(label) {
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Delete label', null, 'Default'),
+                title: gettextCatalog.getString('Delete label', null, 'Title'),
                 message: gettextCatalog.getString('Are you sure you want to delete this label?', null, 'Default'),
                 confirm: function() {
                     networkActivityTracker.track(

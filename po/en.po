@@ -66,7 +66,7 @@ msgctxt "Default"
 msgid "/Month"
 msgstr "/Month"
 
-#: src/app/templates/views/step1.tpl.html:217
+#: src/app/templates/views/step1.tpl.html:220
 msgctxt "Default"
 msgid "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
 msgstr "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
@@ -100,13 +100,13 @@ msgctxt "Default"
 msgid "Absolute security"
 msgstr "Absolute security"
 
-#: src/app/templates/partials/menu.settings.tpl.html:30
-#: src/app/templates/partials/menu.settings.tpl.html:6
+#: src/app/controllers/secured.js:228 src/app/controllers/secured.js:31
+msgctxt "Default"
 msgid "Account"
 msgstr "Account"
 
-#: src/app/controllers/secured.js:224 src/app/controllers/secured.js:31
-msgctxt "Default"
+#: src/app/templates/partials/menu.settings.tpl.html:30
+#: src/app/templates/partials/menu.settings.tpl.html:6
 msgid "Account"
 msgstr "Account"
 
@@ -130,6 +130,12 @@ msgctxt "Default"
 msgid "Active addresses"
 msgstr "Active addresses"
 
+#: src/app/templates/views/labels.tpl.html:5
+#: src/app/templates/views/payments.tpl.html:8
+msgctxt "Default"
+msgid "Add"
+msgstr "Add"
+
 #: src/app/templates/modals/domain/address.tpl.html:30
 #: src/app/templates/modals/user/address.tpl.html:28
 #: src/app/templates/partials/message.tpl.html:153
@@ -137,23 +143,17 @@ msgstr "Active addresses"
 msgid "Add"
 msgstr "Add"
 
-#: src/app/templates/views/labels.tpl.html:5
-#: src/app/templates/views/payments.tpl.html:8
-msgctxt "Default"
-msgid "Add"
-msgstr "Add"
-
 #: src/app/templates/modals/domain/domain.tpl.html:11
 msgid "Add a domain that you own to your ProtonMail account."
 msgstr "Add a domain that you own to your ProtonMail account."
 
-#: src/app/templates/views/domains.tpl.html:123
-#: src/app/templates/views/members.tpl.html:98
-msgctxt "Default"
+#: src/app/templates/modals/user/address.tpl.html:21
 msgid "Add address"
 msgstr "Add address"
 
-#: src/app/templates/modals/user/address.tpl.html:21
+#: src/app/templates/views/domains.tpl.html:123
+#: src/app/templates/views/members.tpl.html:98
+msgctxt "Default"
 msgid "Add address"
 msgstr "Add address"
 
@@ -176,7 +176,7 @@ msgctxt "Default"
 msgid "Add new contact"
 msgstr "Add new contact"
 
-#: src/app/templates/directives/labels.tpl.html:34
+#: src/app/templates/directives/labels.tpl.html:43
 msgid "Add new label"
 msgstr "Add new label"
 
@@ -313,13 +313,13 @@ msgstr "Align left"
 msgid "Align right"
 msgstr "Align right"
 
-#: src/app/templates/partials/searchForm.tpl.html:67
-msgid "All"
-msgstr "All"
-
 #: src/app/controllers/header.js:160 src/app/controllers/header.js:21
 #: src/app/controllers/header.js:35 src/app/controllers/settings/invoices.js:20
 msgctxt "Default"
+msgid "All"
+msgstr "All"
+
+#: src/app/templates/partials/searchForm.tpl.html:67
 msgid "All"
 msgstr "All"
 
@@ -356,7 +356,7 @@ msgctxt "Default"
 msgid "Already subscribed"
 msgstr "Already subscribed"
 
-#: src/app/templates/directives/labels.tpl.html:31
+#: src/app/templates/directives/labels.tpl.html:36
 msgid "Also archive"
 msgstr "Also archive"
 
@@ -385,7 +385,7 @@ msgctxt "Error"
 msgid "Amount is different"
 msgstr "Amount is different"
 
-#: src/app/templates/views/step1.tpl.html:182
+#: src/app/templates/views/step1.tpl.html:185
 msgctxt "Default"
 msgid ""
 "An error occured while trying to create your account. To see common problems "
@@ -408,12 +408,12 @@ msgstr "Annually"
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/app/controllers/secured.js:233 src/app/controllers/secured.js:35
+#: src/app/controllers/secured.js:237 src/app/controllers/secured.js:35
 msgctxt "Default"
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/app/templates/directives/labels.tpl.html:37
+#: src/app/templates/directives/labels.tpl.html:46
 #: src/app/templates/modals/payment/payment.tpl.html:156
 #: src/app/templates/modals/storage.tpl.html:24
 msgid "Apply"
@@ -426,7 +426,7 @@ msgstr "Apply"
 msgid "Archive"
 msgstr "Archive"
 
-#: src/app/controllers/secured.js:200 src/app/directives/move.js:22
+#: src/app/controllers/secured.js:204 src/app/directives/move.js:22
 msgctxt "Default"
 msgid "Archive"
 msgstr "Archive"
@@ -486,7 +486,7 @@ msgctxt "Default"
 msgid "Are you sure you want to unlink this address?"
 msgstr "Are you sure you want to unlink this address?"
 
-#: src/app/controllers/conversations.js:865
+#: src/app/controllers/conversations.js:891
 msgid "Are you sure?"
 msgstr "Are you sure?"
 
@@ -501,7 +501,7 @@ msgid_plural "Attachments"
 msgstr[0] "Attachment"
 msgstr[1] "Attachments"
 
-#: src/app/templates/partials/attachments.tpl.html:6
+#: src/app/templates/partials/attachments.tpl.html:4
 msgid "Attachment"
 msgid_plural "Attachments"
 msgstr[0] "Attachment"
@@ -553,21 +553,21 @@ msgctxt "Default"
 msgid "Basic"
 msgstr "Basic"
 
+#: src/app/templates/partials/composer.tpl.html:172
+msgid "BCC"
+msgstr "BCC"
+
 #: src/app/controllers/compose.js:1556
 msgctxt "Default"
 msgid "BCC"
 msgstr "BCC"
 
-#: src/app/templates/partials/composer.tpl.html:172
-msgid "BCC"
-msgstr "BCC"
-
-#: src/app/templates/partials/message.tpl.html:116
+#: src/app/templates/views/message.print.tpl.html:46
+msgctxt "Default"
 msgid "BCC:"
 msgstr "BCC:"
 
-#: src/app/templates/views/message.print.tpl.html:46
-msgctxt "Default"
+#: src/app/templates/partials/message.tpl.html:116
 msgid "BCC:"
 msgstr "BCC:"
 
@@ -595,13 +595,13 @@ msgstr "Billing cycle"
 msgid "Bold"
 msgstr "Bold"
 
-#: src/app/templates/views/upgrade.tpl.html:41
-msgctxt "Default"
+#: src/app/templates/modals/bug.tpl.html:36
+#: src/app/templates/modals/bug.tpl.html:39
 msgid "Browser"
 msgstr "Browser"
 
-#: src/app/templates/modals/bug.tpl.html:36
-#: src/app/templates/modals/bug.tpl.html:39
+#: src/app/templates/views/upgrade.tpl.html:41
+msgctxt "Default"
 msgid "Browser"
 msgstr "Browser"
 
@@ -618,7 +618,7 @@ msgstr ""
 "Bug reports are not end-to-end encrypted, please do not send any sensitive "
 "information."
 
-#: src/app/controllers/settings/appearance.js:121
+#: src/app/controllers/settings/appearance.js:120
 msgctxt "Default"
 msgid "Buttons position saved"
 msgstr "Buttons position saved"
@@ -644,7 +644,7 @@ msgstr ""
 "\"https://protonmail.com/terms-and-conditions\" target=\"_blank\">Terms and "
 "Conditions</a>."
 
-#: src/app/controllers/compose.js:93 src/app/routes.js:461
+#: src/app/controllers/compose.js:93 src/app/routes.js:462
 msgctxt "Default"
 msgid ""
 "By leaving now, you will lose what you have written in this email. You can "
@@ -721,12 +721,12 @@ msgstr "CC"
 msgid "CC BCC"
 msgstr "CC BCC"
 
-#: src/app/templates/views/message.print.tpl.html:39
-msgctxt "Default"
+#: src/app/templates/partials/message.tpl.html:102
 msgid "CC:"
 msgstr "CC:"
 
-#: src/app/templates/partials/message.tpl.html:102
+#: src/app/templates/views/message.print.tpl.html:39
+msgctxt "Default"
 msgid "CC:"
 msgstr "CC:"
 
@@ -854,8 +854,8 @@ msgstr "Close"
 msgid "Close tutorial"
 msgstr "Close tutorial"
 
-#: src/app/templates/views/step1.tpl.html:117
-#: src/app/templates/views/step1.tpl.html:145
+#: src/app/templates/views/step1.tpl.html:120
+#: src/app/templates/views/step1.tpl.html:148
 msgid "Code verification"
 msgstr "Code verification"
 
@@ -872,7 +872,7 @@ msgstr "Column"
 msgid "Common login problems"
 msgstr "Common login problems"
 
-#: src/app/templates/views/step1.tpl.html:162
+#: src/app/templates/views/step1.tpl.html:165
 msgid "Complete setup"
 msgstr "Complete setup"
 
@@ -881,7 +881,7 @@ msgstr "Complete setup"
 msgid "Compose"
 msgstr "Compose"
 
-#: src/app/controllers/settings/appearance.js:75
+#: src/app/controllers/settings/appearance.js:74
 msgctxt "Default"
 msgid "Compose mode saved"
 msgstr "Compose mode saved"
@@ -931,12 +931,12 @@ msgstr "Confirm new mailbox password"
 msgid "Confirm new mailbox password"
 msgstr "Confirm new mailbox password"
 
-#: src/app/templates/views/account.tpl.html:119
+#: src/app/templates/views/account.tpl.html:116
+msgctxt "Default"
 msgid "Confirm new password"
 msgstr "Confirm new password"
 
-#: src/app/templates/views/account.tpl.html:116
-msgctxt "Default"
+#: src/app/templates/views/account.tpl.html:119
 msgid "Confirm new password"
 msgstr "Confirm new password"
 
@@ -945,7 +945,7 @@ msgstr "Confirm new password"
 msgid "Confirm password"
 msgstr "Confirm password"
 
-#: src/app/controllers/conversations.js:864
+#: src/app/controllers/conversations.js:890
 msgctxt "Default"
 msgid "Confirmation"
 msgstr "Confirmation"
@@ -996,7 +996,7 @@ msgstr ""
 msgid "Contacts"
 msgstr "Contacts"
 
-#: src/app/controllers/secured.js:218
+#: src/app/controllers/secured.js:222
 msgctxt "Default"
 msgid "Contacts"
 msgstr "Contacts"
@@ -1045,7 +1045,7 @@ msgid "Create account"
 msgstr "Create account"
 
 #: src/app/controllers/settings/labels.js:60
-msgctxt "Default"
+msgctxt "Title"
 msgid "Create new label"
 msgstr "Create new label"
 
@@ -1058,7 +1058,7 @@ msgstr "Create time"
 msgid "Create your account"
 msgstr "Create your account"
 
-#: src/app/templates/views/step1.tpl.html:179
+#: src/app/templates/views/step1.tpl.html:182
 msgctxt "Default"
 msgid "Creating account"
 msgstr "Creating account"
@@ -1068,7 +1068,7 @@ msgctxt "Default"
 msgid "Creating new mailbox"
 msgstr "Creating new mailbox"
 
-#: src/app/templates/views/step1.tpl.html:191
+#: src/app/templates/views/step1.tpl.html:194
 msgid "Creating new user"
 msgstr "Creating new user"
 
@@ -1102,32 +1102,32 @@ msgctxt "Default"
 msgid "Currency"
 msgstr "Currency"
 
+#: src/app/templates/views/account.tpl.html:142
+#: src/app/templates/views/account.tpl.html:46
+msgid "Current login password"
+msgstr "Current login password"
+
 #: src/app/templates/views/account.tpl.html:139
 #: src/app/templates/views/account.tpl.html:43
 msgctxt "Default"
 msgid "Current login password"
 msgstr "Current login password"
 
-#: src/app/templates/views/account.tpl.html:142
-#: src/app/templates/views/account.tpl.html:46
-msgid "Current login password"
-msgstr "Current login password"
-
-#: src/app/templates/views/account.tpl.html:153
-msgid "Current mailbox password"
-msgstr "Current mailbox password"
-
 #: src/app/templates/views/account.tpl.html:150
 msgctxt "Default"
 msgid "Current mailbox password"
 msgstr "Current mailbox password"
 
-#: src/app/templates/views/account.tpl.html:97
-msgid "Current password"
-msgstr "Current password"
+#: src/app/templates/views/account.tpl.html:153
+msgid "Current mailbox password"
+msgstr "Current mailbox password"
 
 #: src/app/templates/views/account.tpl.html:94
 msgctxt "Default"
+msgid "Current password"
+msgstr "Current password"
+
+#: src/app/templates/views/account.tpl.html:97
 msgid "Current password"
 msgstr "Current password"
 
@@ -1190,16 +1190,22 @@ msgctxt "Default"
 msgid "Daily email notifications"
 msgstr "Daily email notifications"
 
+#: src/app/controllers/secured.js:225 src/app/controllers/secured.js:30
+#: src/app/controllers/secured.js:34
+msgctxt "Default"
+msgid "Dashboard"
+msgstr "Dashboard"
+
 #: src/app/templates/partials/menu.settings.tpl.html:29
 #: src/app/templates/partials/menu.settings.tpl.html:3
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: src/app/controllers/secured.js:221 src/app/controllers/secured.js:30
-#: src/app/controllers/secured.js:34
+#: src/app/templates/views/invoices.tpl.html:15
+#: src/app/templates/views/invoices.tpl.html:43
 msgctxt "Default"
-msgid "Dashboard"
-msgstr "Dashboard"
+msgid "Date"
+msgstr "Date"
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:102
 #: src/app/templates/partials/toolbar-desktop.tpl.html:99
@@ -1207,12 +1213,6 @@ msgstr "Dashboard"
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:150
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:81
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:84
-msgid "Date"
-msgstr "Date"
-
-#: src/app/templates/views/invoices.tpl.html:15
-#: src/app/templates/views/invoices.tpl.html:43
-msgctxt "Default"
 msgid "Date"
 msgstr "Date"
 
@@ -1245,12 +1245,12 @@ msgctxt "Default"
 msgid "Decrypting..."
 msgstr "Decrypting..."
 
-#: src/app/templates/partials/message.tpl.html:234
+#: src/app/templates/views/outside.reply.tpl.html:28
+msgctxt "Default"
 msgid "Decryption error"
 msgstr "Decryption error"
 
-#: src/app/templates/views/outside.reply.tpl.html:28
-msgctxt "Default"
+#: src/app/templates/partials/message.tpl.html:234
 msgid "Decryption error"
 msgstr "Decryption error"
 
@@ -1314,12 +1314,12 @@ msgctxt "Default"
 msgid "Delete address"
 msgstr "Delete address"
 
-#: src/app/templates/partials/toolbar-contacts.tpl.html:7
+#: src/app/controllers/contacts.js:132
+msgctxt "Default"
 msgid "Delete all"
 msgstr "Delete all"
 
-#: src/app/controllers/contacts.js:132
-msgctxt "Default"
+#: src/app/templates/partials/toolbar-contacts.tpl.html:7
 msgid "Delete all"
 msgstr "Delete all"
 
@@ -1336,12 +1336,12 @@ msgctxt "Default"
 msgid "Delete domain"
 msgstr "Delete domain"
 
-#: src/app/templates/partials/composer.tpl.html:253
+#: src/app/templates/partials/composer.tpl.html:257
 msgid "Delete draft"
 msgstr "Delete draft"
 
 #: src/app/controllers/settings/labels.js:133
-msgctxt "Default"
+msgctxt "Title"
 msgid "Delete label"
 msgstr "Delete label"
 
@@ -1384,7 +1384,7 @@ msgctxt "Default"
 msgid "Disabled"
 msgstr "Disabled"
 
-#: src/app/templates/partials/composer.tpl.html:254
+#: src/app/templates/partials/composer.tpl.html:258
 msgid "Discard"
 msgstr "Discard"
 
@@ -1445,7 +1445,7 @@ msgctxt "Default"
 msgid "Domain verified"
 msgstr "Domain verified"
 
-#: src/app/controllers/secured.js:236 src/app/controllers/secured.js:36
+#: src/app/controllers/secured.js:240 src/app/controllers/secured.js:36
 #: src/app/templates/views/dashboard.tpl.html:73
 #: src/app/templates/views/invoice.print.tpl.html:61
 msgctxt "Default"
@@ -1488,7 +1488,7 @@ msgid "Donation"
 msgstr "Donation"
 
 #: src/app/templates/modals/generate.tpl.html:38
-#: src/app/templates/views/step1.tpl.html:207
+#: src/app/templates/views/step1.tpl.html:210
 msgid "Done"
 msgstr "Done"
 
@@ -1512,7 +1512,7 @@ msgctxt "Default"
 msgid "Download"
 msgstr "Download"
 
-#: src/app/templates/partials/attachments.tpl.html:12
+#: src/app/templates/partials/attachments.tpl.html:9
 #: src/app/templates/partials/toolbar-contacts.tpl.html:10
 msgid "Download"
 msgstr "Download"
@@ -1537,8 +1537,14 @@ msgstr "Downloading"
 msgid "Draft"
 msgstr "Draft"
 
-#: src/app/controllers/secured.js:191
+#: src/app/controllers/secured.js:195
 msgctxt "Default"
+msgid "Drafts"
+msgstr "Drafts"
+
+#: src/app/templates/partials/no-results.tpl.html:16
+#: src/app/templates/partials/sidebar-responsive.tpl.html:26
+#: src/app/templates/partials/sidebar.tpl.html:17
 msgid "Drafts"
 msgstr "Drafts"
 
@@ -1546,12 +1552,6 @@ msgstr "Drafts"
 #: src/app/templates/partials/sidebar-responsive.tpl.html:28
 #: src/app/templates/partials/sidebar.tpl.html:20
 msgctxt "Noun"
-msgid "Drafts"
-msgstr "Drafts"
-
-#: src/app/templates/partials/no-results.tpl.html:16
-#: src/app/templates/partials/sidebar-responsive.tpl.html:26
-#: src/app/templates/partials/sidebar.tpl.html:17
 msgid "Drafts"
 msgstr "Drafts"
 
@@ -1565,6 +1565,10 @@ msgid "Drop here"
 msgstr "Drop here"
 
 #: src/app/controllers/contacts.js:238
+msgctxt "Action"
+msgid "Edit"
+msgstr "Edit"
+
 #: src/app/templates/views/contacts.tpl.html:52
 #: src/app/templates/views/labels.tpl.html:16
 #: src/app/templates/views/payments.tpl.html:30
@@ -1573,7 +1577,7 @@ msgid "Edit"
 msgstr "Edit"
 
 #: src/app/controllers/settings/addresses.js:127
-msgctxt "Default"
+msgctxt "Title"
 msgid "Edit address"
 msgstr "Edit address"
 
@@ -1583,17 +1587,21 @@ msgid "Edit identity"
 msgstr "Edit identity"
 
 #: src/app/controllers/settings/labels.js:91
-msgctxt "Default"
+msgctxt "Title"
 msgid "Edit label"
 msgstr "Edit label"
 
-#: src/app/templates/modals/contact.tpl.html:20
-#: src/app/templates/views/step1.tpl.html:86
+#: src/app/templates/views/step1.tpl.html:87
+msgctxt "Title"
 msgid "Email"
 msgstr "Email"
 
 #: src/app/templates/views/contacts.tpl.html:27
 msgctxt "Default"
+msgid "Email"
+msgstr "Email"
+
+#: src/app/templates/modals/contact.tpl.html:20
 msgid "Email"
 msgstr "Email"
 
@@ -1617,15 +1625,15 @@ msgid "Email images"
 msgstr "Email images"
 
 #: src/app/templates/modals/loginHelp.tpl.html:19
-msgid "Email our aupport team"
+msgid "Email our support team"
 msgstr "Email our support team"
 
-#: src/app/templates/views/step1.tpl.html:102
-msgctxt "Default"
+#: src/app/templates/views/step1.tpl.html:108
 msgid "Email verification"
 msgstr "Email verification"
 
 #: src/app/templates/views/step1.tpl.html:105
+msgctxt "Title"
 msgid "Email verification"
 msgstr "Email verification"
 
@@ -1677,12 +1685,16 @@ msgstr ""
 "Encrypted messages to non-ProtonMail recipients will expire in 28 days "
 "unless a shorter expiration time is set."
 
-#: src/app/templates/partials/composer.tpl.html:263
+#: src/app/templates/partials/composer.tpl.html:267
 msgid "Encrypting"
 msgstr "Encrypting"
 
+#: src/app/templates/partials/composer.tpl.html:237
+msgctxt "Title"
+msgid "Encryption"
+msgstr "Encryption"
+
 #: src/app/templates/partials/composer.tpl.html:233
-#: src/app/templates/partials/composer.tpl.html:235
 msgid "Encryption"
 msgstr "Encryption"
 
@@ -1728,12 +1740,12 @@ msgstr ""
 "Enter custom text that you want to appear on your invoice beneath the "
 "ProtonMail logo."
 
-#: src/app/templates/views/members.tpl.html:113
-msgctxt "Default"
+#: src/app/templates/views/members.tpl.html:112
 msgid "Enter mailbox"
 msgstr "Enter mailbox"
 
-#: src/app/templates/views/members.tpl.html:112
+#: src/app/templates/views/members.tpl.html:113
+msgctxt "Default"
 msgid "Enter mailbox"
 msgstr "Enter mailbox"
 
@@ -1771,6 +1783,8 @@ msgstr "Error during creation"
 
 #: src/app/controllers/settings/addresses.js:179
 #: src/app/controllers/settings/addresses.js:182
+#: src/app/controllers/settings/domains.js:182
+#: src/app/controllers/settings/domains.js:185
 #: src/app/controllers/settings/domains.js:256
 #: src/app/controllers/settings/domains.js:259
 #: src/app/controllers/settings/members.js:238
@@ -1778,12 +1792,6 @@ msgstr "Error during creation"
 msgctxt "Error"
 msgid "Error during deletion"
 msgstr "Error during deletion"
-
-#: src/app/controllers/settings/domains.js:182
-#: src/app/controllers/settings/domains.js:185
-msgctxt "Error"
-msgid "Error during Deletion"
-msgstr "Error during Deletion"
 
 #: src/app/controllers/settings/addresses.js:108
 #: src/app/controllers/settings/addresses.js:111
@@ -1818,7 +1826,7 @@ msgctxt "Default"
 msgid "Error during organization request"
 msgstr "Error during organization request"
 
-#: src/app/controllers/conversations.js:304
+#: src/app/controllers/conversations.js:330
 msgctxt "Error"
 msgid "Error during quering conversations"
 msgstr "Error during quering conversations"
@@ -1883,17 +1891,17 @@ msgstr "Exit fullscreen"
 msgid "Expand"
 msgstr "Expand"
 
+#: src/app/templates/partials/composer.tpl.html:251
+msgctxt "Action"
+msgid "Expiration"
+msgstr "Expiration"
+
 #: src/app/templates/views/payments.tpl.html:15
 msgctxt "Default"
 msgid "Expiration"
 msgstr "Expiration"
 
-#: src/app/templates/partials/composer.tpl.html:247
-msgid "Expiration"
-msgstr "Expiration"
-
 #: src/app/templates/partials/composer.tpl.html:117
-#: src/app/templates/partials/composer.tpl.html:245
 msgid "Expiration time"
 msgstr "Expiration time"
 
@@ -1960,7 +1968,7 @@ msgctxt "Default"
 msgid "Finish"
 msgstr "Finish"
 
-#: src/app/controllers/conversations.js:892
+#: src/app/controllers/conversations.js:918
 msgctxt "Default"
 msgid "Folder emptied"
 msgstr "Folder emptied"
@@ -2008,10 +2016,10 @@ msgctxt "Default"
 msgid "Free"
 msgstr "Free"
 
-#: src/app/controllers/settings/appearance.js:18
+#: src/app/templates/views/outside.message.tpl.html:23
 msgctxt "Default"
-msgid "French"
-msgstr "French"
+msgid "From"
+msgstr "From"
 
 #: src/app/templates/partials/composer.tpl.html:146
 #: src/app/templates/partials/searchForm.tpl.html:32
@@ -2021,11 +2029,6 @@ msgstr "French"
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:138
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:69
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:72
-msgid "From"
-msgstr "From"
-
-#: src/app/templates/views/outside.message.tpl.html:23
-msgctxt "Default"
 msgid "From"
 msgstr "From"
 
@@ -2091,11 +2094,11 @@ msgstr ""
 "bit keys are only recommended for high performance computers - not "
 "recommended for tablet and mobile devices."
 
-#: src/app/templates/views/step1.tpl.html:187
+#: src/app/templates/views/step1.tpl.html:190
 msgid "Generating keys"
 msgstr "Generating keys"
 
-#: src/app/templates/views/step1.tpl.html:171
+#: src/app/templates/views/step1.tpl.html:174
 msgctxt "Default"
 msgid "Generating keys..."
 msgstr "Generating keys..."
@@ -2216,8 +2219,8 @@ msgid ""
 "ProtonMail, please let us know! You can send us a bug report by clicking "
 "<em>Report bugs</em> <strong>(1)</strong>"
 msgstr ""
-"If you have questions or need help, please visit <a href=« https://"
-"protonmail.com/support » target=« _blank »>our support page</a> to find "
+"If you have questions or need help, please visit <a href=\"https://"
+"protonmail.com/support\" target=\"_blank\">our support page</a> to find "
 "troubleshooting guides and contact our support team. If you find a bug in "
 "ProtonMail, please let us know! You can send us a bug report by clicking "
 "<em>Report bugs</em> <strong>(1)</strong>"
@@ -2293,6 +2296,13 @@ msgctxt "Default"
 msgid "Inactive addresses"
 msgstr "Inactive addresses"
 
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:21
+#: src/app/templates/partials/sidebar.tpl.html:12
+msgctxt "Noun"
+msgid "Inbox"
+msgstr "Inbox"
+
 #: src/app/templates/directives/location-tag.tpl.html:2
 #: src/app/templates/partials/header-auth-simple.tpl.html:8
 #: src/app/templates/partials/no-results.tpl.html:15
@@ -2301,14 +2311,7 @@ msgstr "Inactive addresses"
 msgid "Inbox"
 msgstr "Inbox"
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:21
-#: src/app/templates/partials/sidebar.tpl.html:12
-msgctxt "Noun"
-msgid "Inbox"
-msgstr "Inbox"
-
-#: src/app/controllers/secured.js:188 src/app/directives/move.js:21
+#: src/app/controllers/secured.js:192 src/app/directives/move.js:21
 msgctxt "Default"
 msgid "Inbox"
 msgstr "Inbox"
@@ -2349,7 +2352,7 @@ msgctxt "Default"
 msgid "Invoice"
 msgstr "Invoice"
 
-#: src/app/controllers/secured.js:242
+#: src/app/controllers/secured.js:246
 #: src/app/controllers/settings/invoices.js:16
 #: src/app/templates/views/payments.tpl.html:38
 msgctxt "Default"
@@ -2401,7 +2404,7 @@ msgstr "Keywords"
 msgid "Label"
 msgstr "Label"
 
-#: src/app/controllers/secured.js:214
+#: src/app/controllers/secured.js:218
 msgctxt "Default"
 msgid "Label"
 msgstr "Label"
@@ -2435,17 +2438,17 @@ msgstr "Label order saved"
 msgid "Label settings"
 msgstr "Label settings"
 
-#: src/app/controllers/secured.js:227 src/app/controllers/secured.js:32
-#: src/app/models/payments.js:91 src/app/models/payments.js:98
-msgctxt "Default"
-msgid "Labels"
-msgstr "Labels"
-
 #: src/app/templates/partials/menu.settings.tpl.html:31
 #: src/app/templates/partials/menu.settings.tpl.html:9
 #: src/app/templates/partials/toolbar-desktop.tpl.html:60
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:42
 #: src/app/templates/partials/toolbar-mobile.tpl.html:98
+msgid "Labels"
+msgstr "Labels"
+
+#: src/app/controllers/secured.js:231 src/app/controllers/secured.js:32
+#: src/app/models/payments.js:91 src/app/models/payments.js:98
+msgctxt "Default"
 msgid "Labels"
 msgstr "Labels"
 
@@ -2477,8 +2480,8 @@ msgctxt "Default"
 msgid "Layout"
 msgstr "Layout"
 
-#: src/app/controllers/conversations.js:606
-#: src/app/controllers/settings/appearance.js:98
+#: src/app/controllers/conversations.js:632
+#: src/app/controllers/settings/appearance.js:97
 msgctxt "Default"
 msgid "Layout saved"
 msgstr "Layout saved"
@@ -2523,7 +2526,7 @@ msgstr "Load edison theme"
 msgid "Loading"
 msgstr "Loading"
 
-#: src/app/templates/views/step1.tpl.html:203
+#: src/app/templates/views/step1.tpl.html:206
 msgid "Loading new account"
 msgstr "Loading new account"
 
@@ -2532,7 +2535,7 @@ msgctxt "Default"
 msgid "Loading themes will override your current theme!"
 msgstr "Loading themes will override your current theme!"
 
-#: src/app/templates/views/step1.tpl.html:156
+#: src/app/templates/views/step1.tpl.html:159
 msgctxt "Default"
 msgid "Loading..."
 msgstr "Loading..."
@@ -2558,7 +2561,7 @@ msgctxt "Default"
 msgid "Logging preference updated"
 msgstr "Logging preference updated"
 
-#: src/app/controllers/secured.js:245 src/app/templates/views/login.tpl.html:17
+#: src/app/controllers/secured.js:249 src/app/templates/views/login.tpl.html:17
 msgctxt "Default"
 msgid "Login"
 msgstr "Login"
@@ -2568,17 +2571,17 @@ msgctxt "Default"
 msgid "Login failed"
 msgstr "Login failed"
 
-#: src/app/templates/views/account.tpl.html:90
-msgctxt "Default"
-msgid "Login password"
-msgstr "Login password"
-
 #: src/app/templates/modals/deleteAccount.tpl.html:20
 #: src/app/templates/modals/loginPassword.tpl.html:10
 #: src/app/templates/modals/reactivate.tpl.html:10
 #: src/app/templates/modals/user/member.tpl.html:16
 #: src/app/templates/modals/user/member.tpl.html:19
 #: src/app/templates/views/step1.tpl.html:34
+msgid "Login password"
+msgstr "Login password"
+
+#: src/app/templates/views/account.tpl.html:90
+msgctxt "Default"
 msgid "Login password"
 msgstr "Login password"
 
@@ -2717,12 +2720,12 @@ msgctxt "Default"
 msgid "Master"
 msgstr "Master"
 
-#: src/app/templates/views/appearance.tpl.html:25
+#: src/app/templates/views/appearance.tpl.html:23
+msgctxt "Default"
 msgid "Maximized"
 msgstr "Maximized"
 
-#: src/app/templates/views/appearance.tpl.html:23
-msgctxt "Default"
+#: src/app/templates/views/appearance.tpl.html:25
 msgid "Maximized"
 msgstr "Maximized"
 
@@ -2785,15 +2788,17 @@ msgctxt "Default"
 msgid "Missing keys"
 msgstr "Missing keys"
 
-#: src/app/templates/views/invoice.print.tpl.html:84
-msgctxt "Default"
-msgid "Month"
-msgstr "Month"
-
 #: src/app/templates/modals/card.tpl.html:35
 #: src/app/templates/modals/donate.tpl.html:51
 #: src/app/templates/modals/monetize.tpl.html:33
 #: src/app/templates/modals/payment/payment.tpl.html:107
+#, fuzzy
+msgid "Month"
+msgstr "Month"
+
+#: src/app/templates/views/invoice.print.tpl.html:84
+#, fuzzy
+msgctxt "Default"
 msgid "Month"
 msgstr "Month"
 
@@ -3110,12 +3115,12 @@ msgctxt "Default"
 msgid "Organization history"
 msgstr "Organization history"
 
-#: src/app/templates/views/members.tpl.html:13
-msgctxt "Default"
+#: src/app/templates/views/members.tpl.html:17
 msgid "Organization name"
 msgstr "Organization name"
 
-#: src/app/templates/views/members.tpl.html:17
+#: src/app/templates/views/members.tpl.html:13
+msgctxt "Default"
 msgid "Organization name"
 msgstr "Organization name"
 
@@ -3257,13 +3262,13 @@ msgctxt "Default"
 msgid "Payment:"
 msgstr "Payment:"
 
-#: src/app/controllers/secured.js:38
-msgctxt "Default"
+#: src/app/templates/partials/menu.settings.tpl.html:24
+#: src/app/templates/partials/menu.settings.tpl.html:34
 msgid "Payments"
 msgstr "Payments"
 
-#: src/app/templates/partials/menu.settings.tpl.html:24
-#: src/app/templates/partials/menu.settings.tpl.html:34
+#: src/app/controllers/secured.js:38
+msgctxt "Default"
 msgid "Payments"
 msgstr "Payments"
 
@@ -3325,7 +3330,7 @@ msgstr ""
 "Please add the following TXT record. Note, DNS records can take several "
 "hours to update."
 
-#: src/app/templates/views/step1.tpl.html:115
+#: src/app/templates/views/step1.tpl.html:118
 msgctxt "Default"
 msgid "Please check your email and enter the code below:"
 msgstr "Please check your email and enter the code below:"
@@ -3512,7 +3517,12 @@ msgstr "Re:"
 msgid "Reactivate key pair"
 msgstr "Reactivate key pair"
 
-#: src/app/templates/views/step1.tpl.html:155
+#: src/app/templates/views/step1.tpl.html:93
+msgctxt "Title"
+msgid "reCaptcha"
+msgstr ""
+
+#: src/app/templates/views/step1.tpl.html:158
 msgctxt "Default"
 msgid "reCaptcha verification"
 msgstr "reCaptcha verification"
@@ -3535,14 +3545,14 @@ msgstr "Recipients"
 msgid "Recommended"
 msgstr "Recommended"
 
-#: src/app/templates/views/reset-login-password.tpl.html:15
-#: src/app/templates/views/step1.tpl.html:61
-#: src/app/templates/views/step1.tpl.html:64
+#: src/app/templates/views/account.tpl.html:51
+msgctxt "Default"
 msgid "Recovery email"
 msgstr "Recovery email"
 
-#: src/app/templates/views/account.tpl.html:51
-msgctxt "Default"
+#: src/app/templates/views/reset-login-password.tpl.html:15
+#: src/app/templates/views/step1.tpl.html:61
+#: src/app/templates/views/step1.tpl.html:64
 msgid "Recovery email"
 msgstr "Recovery email"
 
@@ -3551,7 +3561,7 @@ msgctxt "Default"
 msgid "Redirecting"
 msgstr "Redirecting"
 
-#: src/app/templates/views/step1.tpl.html:211
+#: src/app/templates/views/step1.tpl.html:214
 msgid "Redirecting"
 msgstr "Redirecting"
 
@@ -3680,13 +3690,6 @@ msgid ""
 msgstr ""
 "Safari doesn't support downloading of keys. We are working on a fix for this."
 
-#: src/app/templates/modals/contact.tpl.html:30
-#: src/app/templates/modals/label.tpl.html:35
-#: src/app/templates/partials/composer.tpl.html:256
-#: src/app/templates/partials/composer.tpl.html:257
-msgid "Save"
-msgstr "Save"
-
 #: src/app/templates/views/account.tpl.html:128
 #: src/app/templates/views/account.tpl.html:184
 #: src/app/templates/views/account.tpl.html:32
@@ -3694,6 +3697,13 @@ msgstr "Save"
 #: src/app/templates/views/appearance.tpl.html:95
 #: src/app/templates/views/members.tpl.html:20
 msgctxt "Default"
+msgid "Save"
+msgstr "Save"
+
+#: src/app/templates/modals/contact.tpl.html:30
+#: src/app/templates/modals/label.tpl.html:35
+#: src/app/templates/partials/composer.tpl.html:260
+#: src/app/templates/partials/composer.tpl.html:261
 msgid "Save"
 msgstr "Save"
 
@@ -3705,11 +3715,11 @@ msgstr "Save 20% with the annual plan!"
 msgid "Saved"
 msgstr "Saved"
 
-#: src/app/templates/partials/composer.tpl.html:250
+#: src/app/templates/partials/composer.tpl.html:254
 msgid "Saved at"
 msgstr "Saved at"
 
-#: src/app/templates/partials/composer.tpl.html:264
+#: src/app/templates/partials/composer.tpl.html:268
 msgid "Saving"
 msgstr "Saving"
 
@@ -3736,13 +3746,13 @@ msgctxt "Default"
 msgid "Seconds"
 msgstr "Seconds"
 
-#: src/app/controllers/secured.js:230 src/app/controllers/secured.js:33
-msgctxt "Default"
+#: src/app/templates/partials/menu.settings.tpl.html:12
+#: src/app/templates/partials/menu.settings.tpl.html:32
 msgid "Security"
 msgstr "Security"
 
-#: src/app/templates/partials/menu.settings.tpl.html:12
-#: src/app/templates/partials/menu.settings.tpl.html:32
+#: src/app/controllers/secured.js:234 src/app/controllers/secured.js:33
+msgctxt "Default"
 msgid "Security"
 msgstr "Security"
 
@@ -3766,23 +3776,23 @@ msgid "Select payment method:"
 msgstr "Select payment method:"
 
 #: src/app/templates/views/outside.reply.tpl.html:38
-#: src/app/templates/views/step1.tpl.html:136
+#: src/app/templates/views/step1.tpl.html:139
 msgctxt "Default"
 msgid "Send"
 msgstr "Send"
 
 #: src/app/templates/modals/feedback.tpl.html:16
-#: src/app/templates/partials/composer.tpl.html:260
-#: src/app/templates/views/step1.tpl.html:109
+#: src/app/templates/partials/composer.tpl.html:264
+#: src/app/templates/views/step1.tpl.html:112
 msgid "Send"
 msgstr "Send"
 
-#: src/app/templates/views/step1.tpl.html:148
-msgctxt "Default"
+#: src/app/templates/views/step1.tpl.html:124
 msgid "Send new code"
 msgstr "Send new code"
 
-#: src/app/templates/views/step1.tpl.html:121
+#: src/app/templates/views/step1.tpl.html:151
+msgctxt "Default"
 msgid "Send new code"
 msgstr "Send new code"
 
@@ -3790,7 +3800,7 @@ msgstr "Send new code"
 msgid "Sender"
 msgstr "Sender"
 
-#: src/app/templates/partials/composer.tpl.html:262
+#: src/app/templates/partials/composer.tpl.html:266
 msgid "Sending"
 msgstr "Sending"
 
@@ -3810,7 +3820,7 @@ msgstr "Sent"
 msgid "Sent"
 msgstr "Sent"
 
-#: src/app/controllers/secured.js:194
+#: src/app/controllers/secured.js:198
 msgctxt "Default"
 msgid "Sent"
 msgstr "Sent"
@@ -3841,7 +3851,6 @@ msgstr "Settings"
 msgid "Show"
 msgstr "Show"
 
-#: src/app/templates/partials/toolbar-desktop.tpl.html:104
 #: src/app/templates/partials/toolbar-desktop.tpl.html:105
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:87
 msgid "Show all"
@@ -3851,13 +3860,13 @@ msgstr "Show all"
 msgid "Show details"
 msgstr "Show details"
 
-#: src/app/templates/views/account.tpl.html:231
-#: src/app/templates/views/outside.message.tpl.html:42
-msgctxt "Default"
+#: src/app/templates/partials/message.tpl.html:225
 msgid "Show images"
 msgstr "Show images"
 
-#: src/app/templates/partials/message.tpl.html:225
+#: src/app/templates/views/account.tpl.html:231
+#: src/app/templates/views/outside.message.tpl.html:42
+msgctxt "Default"
 msgid "Show images"
 msgstr "Show images"
 
@@ -3876,7 +3885,7 @@ msgstr "Show read"
 msgid "Show unread"
 msgstr "Show unread"
 
-#: src/app/templates/views/step1.tpl.html:180
+#: src/app/templates/views/step1.tpl.html:183
 msgctxt "Default"
 msgid "Sign up failed"
 msgstr "Sign up failed"
@@ -3890,13 +3899,13 @@ msgstr "Sign up for free"
 msgid "Sign up for free"
 msgstr "Sign up for free"
 
-#: src/app/templates/modals/identity.tpl.html:30
-#: src/app/templates/modals/identity.tpl.html:42
+#: src/app/templates/views/account.tpl.html:22
+msgctxt "Default"
 msgid "Signature"
 msgstr "Signature"
 
-#: src/app/templates/views/account.tpl.html:22
-msgctxt "Default"
+#: src/app/templates/modals/identity.tpl.html:30
+#: src/app/templates/modals/identity.tpl.html:42
 msgid "Signature"
 msgstr "Signature"
 
@@ -3915,10 +3924,20 @@ msgstr "Size"
 msgid "Small to large"
 msgstr "Small to large"
 
-#: src/app/templates/views/step1.tpl.html:130
+#: src/app/templates/views/step1.tpl.html:99
+msgctxt "Title"
+msgid "SMS"
+msgstr ""
+
+#: src/app/templates/views/step1.tpl.html:133
 msgctxt "Default"
 msgid "SMS verification"
 msgstr "SMS verification"
+
+#: src/app/controllers/signup.js:210
+msgctxt "Error"
+msgid "Something went wrong"
+msgstr "Something went wrong"
 
 #: src/app/templates/views/outside.unlock.tpl.html:43
 msgctxt "Default"
@@ -3930,14 +3949,7 @@ msgctxt "Default"
 msgid "Space"
 msgstr "Space"
 
-#. Folder name
-#: src/app/templates/partials/sidebar-responsive.tpl.html:56
-#: src/app/templates/partials/sidebar.tpl.html:52
-msgctxt "Noun"
-msgid "Spam"
-msgstr "Spam"
-
-#: src/app/controllers/secured.js:203 src/app/directives/move.js:23
+#: src/app/controllers/secured.js:207 src/app/directives/move.js:23
 msgctxt "Default"
 msgid "Spam"
 msgstr "Spam"
@@ -3946,6 +3958,13 @@ msgstr "Spam"
 #: src/app/templates/partials/no-results.tpl.html:19
 #: src/app/templates/partials/sidebar-responsive.tpl.html:54
 #: src/app/templates/partials/sidebar.tpl.html:49
+msgid "Spam"
+msgstr "Spam"
+
+#. Folder name
+#: src/app/templates/partials/sidebar-responsive.tpl.html:56
+#: src/app/templates/partials/sidebar.tpl.html:52
+msgctxt "Noun"
 msgid "Spam"
 msgstr "Spam"
 
@@ -3969,6 +3988,11 @@ msgstr "Star"
 msgid "Star conversation"
 msgstr "Star conversation"
 
+#: src/app/templates/partials/sidebar-responsive.tpl.html:40
+#: src/app/templates/partials/sidebar.tpl.html:33
+msgid "Starred"
+msgstr "Starred"
+
 #. Folder name
 #: src/app/templates/partials/sidebar-responsive.tpl.html:42
 #: src/app/templates/partials/sidebar.tpl.html:36
@@ -3976,12 +4000,7 @@ msgctxt "Noun"
 msgid "Starred"
 msgstr "Starred"
 
-#: src/app/templates/partials/sidebar-responsive.tpl.html:40
-#: src/app/templates/partials/sidebar.tpl.html:33
-msgid "Starred"
-msgstr "Starred"
-
-#: src/app/controllers/secured.js:197
+#: src/app/controllers/secured.js:201
 msgctxt "Default"
 msgid "Starred"
 msgstr "Starred"
@@ -4090,17 +4109,17 @@ msgstr ""
 msgid "Thank you for your subscription."
 msgstr "Thank you for your subscription."
 
-#: src/app/controllers/settings/appearance.js:41
+#: src/app/controllers/settings/appearance.js:40
 msgctxt "Default"
 msgid "Theme saved"
 msgstr "Theme saved"
 
-#: src/app/templates/views/step1.tpl.html:173
+#: src/app/templates/views/step1.tpl.html:176
 msgctxt "Default"
 msgid "This can take a few seconds or a few minutes depending on your device."
 msgstr "This can take a few seconds or a few minutes depending on your device."
 
-#: src/app/controllers/conversations.js:865
+#: src/app/controllers/conversations.js:891
 msgctxt "Default"
 msgid "This cannot be undone."
 msgstr "This cannot be undone."
@@ -4279,6 +4298,11 @@ msgctxt "Default"
 msgid "Total price:"
 msgstr "Total price:"
 
+#: src/app/controllers/secured.js:210 src/app/directives/move.js:24
+msgctxt "Default"
+msgid "Trash"
+msgstr "Trash"
+
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
 #: src/app/templates/partials/sidebar-responsive.tpl.html:61
@@ -4293,14 +4317,15 @@ msgctxt "Noun"
 msgid "Trash"
 msgstr "Trash"
 
-#: src/app/controllers/secured.js:206 src/app/directives/move.js:24
-msgctxt "Default"
-msgid "Trash"
-msgstr "Trash"
-
 #: src/app/templates/partials/header-auth-desktop.tpl.html:72
 msgid "Tutorial"
 msgstr "Tutorial"
+
+#: src/app/templates/views/payments.tpl.html:16
+#: src/app/templates/views/payments.tpl.html:48
+msgctxt "Default"
+msgid "Type"
+msgstr "Type"
 
 #: src/app/templates/modals/domain/dkim.tpl.html:19
 #: src/app/templates/modals/domain/dkim.tpl.html:32
@@ -4315,14 +4340,8 @@ msgstr "Tutorial"
 msgid "Type"
 msgstr "Type"
 
-#: src/app/templates/views/payments.tpl.html:16
-#: src/app/templates/views/payments.tpl.html:48
-msgctxt "Default"
-msgid "Type"
-msgstr "Type"
-
 #: src/app/controllers/settings/addresses.js:243
-#: src/app/controllers/settings/appearance.js:47
+#: src/app/controllers/settings/appearance.js:46
 #: src/app/controllers/settings/labels.js:118
 #: src/app/controllers/settings/members.js:269
 #: src/app/controllers/settings/members.js:272
@@ -4458,7 +4477,7 @@ msgstr ""
 msgid "Upload"
 msgstr "Upload"
 
-#: src/app/templates/partials/composer.tpl.html:261
+#: src/app/templates/partials/composer.tpl.html:265
 msgid "Uploading"
 msgstr "Uploading"
 
@@ -4490,13 +4509,13 @@ msgstr "User login"
 msgid "User storage"
 msgstr "User storage"
 
-#: src/app/templates/views/login.tpl.html:11
-#: src/app/templates/views/reset-login-password.tpl.html:12
+#: src/app/templates/views/members.tpl.html:70
+msgctxt "Default"
 msgid "Username"
 msgstr "Username"
 
-#: src/app/templates/views/members.tpl.html:70
-msgctxt "Default"
+#: src/app/templates/views/login.tpl.html:11
+#: src/app/templates/views/reset-login-password.tpl.html:12
 msgid "Username"
 msgstr "Username"
 
@@ -4514,7 +4533,7 @@ msgctxt "Default"
 msgid "Username:"
 msgstr "Username:"
 
-#: src/app/controllers/secured.js:239 src/app/controllers/secured.js:37
+#: src/app/controllers/secured.js:243 src/app/controllers/secured.js:37
 #: src/app/templates/views/members.tpl.html:62
 msgctxt "Default"
 msgid "Users"
@@ -4543,7 +4562,7 @@ msgctxt "Default"
 msgid "Verification code"
 msgstr "Verification code"
 
-#: src/app/templates/views/step1.tpl.html:115
+#: src/app/templates/views/step1.tpl.html:118
 msgctxt "Default"
 msgid "Verification code sent"
 msgstr "Verification code sent"
@@ -4563,7 +4582,7 @@ msgstr "Verification did not succeed, please try again in an hour."
 msgid "Verify"
 msgstr "Verify"
 
-#: src/app/templates/views/step1.tpl.html:199
+#: src/app/templates/views/step1.tpl.html:202
 msgid "Verifying encryption keys"
 msgstr "Verifying encryption keys"
 
@@ -4571,7 +4590,7 @@ msgstr "Verifying encryption keys"
 msgid "Verifying invite link..."
 msgstr "Verifying invite link…"
 
-#: src/app/templates/views/step1.tpl.html:195
+#: src/app/templates/views/step1.tpl.html:198
 msgid "Verifying new account"
 msgstr "Verifying new account"
 
@@ -4717,15 +4736,15 @@ msgstr ""
 "Wrong verification code. Please make sure you copied the verification code "
 "correctly and try again. It can take up to 1 hour for changes to take affect."
 
+#: src/app/templates/views/invoice.print.tpl.html:85
+msgctxt "Default"
+msgid "Year"
+msgstr "Year"
+
 #: src/app/templates/modals/card.tpl.html:41
 #: src/app/templates/modals/donate.tpl.html:57
 #: src/app/templates/modals/monetize.tpl.html:33
 #: src/app/templates/modals/payment/payment.tpl.html:113
-msgid "Year"
-msgstr "Year"
-
-#: src/app/templates/views/invoice.print.tpl.html:85
-msgctxt "Default"
 msgid "Year"
 msgstr "Year"
 
@@ -4838,7 +4857,7 @@ msgstr ""
 "immediately upgrade your account. Thanks for choosing to become a paying "
 "customer!"
 
-#: src/app/routes.js:825
+#: src/app/routes.js:826
 msgctxt "Error"
 msgid ""
 "Your account currently has an overdue invoice. Please pay all unpaid "
@@ -4894,12 +4913,3131 @@ msgstr "Your thoughts..."
 msgid "ZIP code"
 msgstr "ZIP code"
 
-#~ msgctxt "Default"
-#~ msgid "Default language changed"
-#~ msgstr "Default language changed"
+#~ msgctxt "Title"
+#~ msgid "{{ $count }} conversation selected"
+#~ msgid_plural "{{ $count }} conversations selected"
+#~ msgstr[0] "{{ $count }} conversation selected"
+#~ msgstr[1] "{{ $count }} conversations selected"
+
+#~ msgid "{{ key.created | date }} - {{ key.fingerprint }}"
+#~ msgstr "{{ key.created | date }} - {{ key.fingerprint }}"
+
+#~ msgid "{{ key.fingerprint }} ({{ key.created | date }})"
+#~ msgstr "{{ key.fingerprint }} ({{ key.created | date }})"
+
+#~ msgid ""
+#~ "{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} "
+#~ "Used"
+#~ msgstr ""
+#~ "{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} "
+#~ "Used"
+
+#~ msgid ""
+#~ "{{ message.Attachments.length }} Files attached "
+#~ "({{ getAttachmentsSize(message) | humanSize }})"
+#~ msgstr ""
+#~ "{{ message.Attachments.length }} Files attached "
+#~ "({{ getAttachmentsSize(message) | humanSize }})"
+
+#~ msgid "{{ organization.MaxAddresses }} addresses used."
+#~ msgstr "{{ organization.MaxAddresses }} addresses used."
+
+#~ msgid ""
+#~ "{{ organization.UsedDomains }} / {{ organization.MaxDomains Domains used."
+#~ msgstr ""
+#~ "{{ organization.UsedDomains }} / {{ organization.MaxDomains Domains used."
+
+#~ msgid "/Month"
+#~ msgstr "/Month"
 
 #~ msgid "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
 #~ msgstr "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
+
+#~ msgid "+{{ (conversation.LabelIDs | labels).length - 4 }} More labels"
+#~ msgstr "+{{ (conversation.LabelIDs | labels).length - 4 }} More labels"
+
+#~ msgid "+{{ (message.LabelIDs | labels).length - 4 }} More labels"
+#~ msgstr "+{{ (message.LabelIDs | labels).length - 4 }} More labels"
+
+#~ msgid "A contact already exists for this email address."
+#~ msgstr "A contact already exists for this email address."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "A screenshot of your current page will be sent to us automatically, so we "
+#~ "can help debug your problem! Screenshots are hosted using a 3rd party, "
+#~ "public service [imgur]."
+#~ msgstr ""
+#~ "A screenshot of your current page will be sent to us automatically, so we "
+#~ "can help debug your problem! Screenshots are hosted using a 3rd party, "
+#~ "public service [imgur]."
+
+#~ msgctxt "Title"
+#~ msgid "Absolute security"
+#~ msgstr "Absolute security"
+
+#~ msgctxt "Nav"
+#~ msgid "Account"
+#~ msgstr "Account"
+
+#~ msgctxt "Title"
+#~ msgid "Account"
+#~ msgstr "Account"
+
+#~ msgctxt "Title"
+#~ msgid "Actions"
+#~ msgstr "Actions"
+
+#~ msgctxt "Title"
+#~ msgid "Active addresses"
+#~ msgstr "Active addresses"
+
+#~ msgctxt "Action"
+#~ msgid "Add"
+#~ msgstr "Add"
+
+#~ msgctxt "Action"
+#~ msgid "Add address"
+#~ msgstr "Add address"
+
+#~ msgctxt "Title"
+#~ msgid "Add address"
+#~ msgstr "Add address"
+
+#~ msgctxt "Action"
+#~ msgid "Add coupon"
+#~ msgstr "Add coupon"
+
+#~ msgctxt "Action"
+#~ msgid "Add custom domain"
+#~ msgstr "Add custom domain"
+
+#~ msgctxt "Action"
+#~ msgid "Add custom domain address"
+#~ msgstr "Add custom domain address"
+
+#~ msgctxt "Action"
+#~ msgid "Add new contact"
+#~ msgstr "Add new contact"
+
+#~ msgctxt "Action"
+#~ msgid "Add new ProtonMail address"
+#~ msgstr "Add new ProtonMail address"
+
+#~ msgctxt "Title"
+#~ msgid "Add new ProtonMail address"
+#~ msgstr "Add new ProtonMail address"
+
+#~ msgctxt "Action"
+#~ msgid "Add user"
+#~ msgstr "Add user"
+
+#~ msgctxt "Title"
+#~ msgid "Add user"
+#~ msgstr "Add user"
+
+#~ msgctxt "Title"
+#~ msgid "Added addresses"
+#~ msgstr "Added addresses"
+
+#~ msgctxt "Title"
+#~ msgid "Additional themes (experimental)"
+#~ msgstr "Additional themes (experimental)"
+
+#~ msgctxt "Title"
+#~ msgid "Address"
+#~ msgstr "Address"
+
+#~ msgid "Address added"
+#~ msgstr "Address added"
+
+#~ msgctxt "Error"
+#~ msgid "Address creation failed"
+#~ msgstr "Address creation failed"
+
+#~ msgid "Address deleted"
+#~ msgstr "Address deleted"
+
+#~ msgid "Address disabled"
+#~ msgstr "Address disabled"
+
+#~ msgid "Address enabled"
+#~ msgstr "Address enabled"
+
+#~ msgid "Address order saved"
+#~ msgstr "Address order saved"
+
+#~ msgid "Address updated"
+#~ msgstr "Address updated"
+
+#~ msgctxt "Title"
+#~ msgid "Addresses"
+#~ msgstr "Addresses"
+
+#~ msgctxt "Nav"
+#~ msgid "Addresses"
+#~ msgstr "Addresses"
+
+#~ msgctxt "Action"
+#~ msgid "Addresses"
+#~ msgstr "Addresses"
+
+#~ msgctxt "Title"
+#~ msgid "Addresses added"
+#~ msgstr "Addresses added"
+
+#~ msgid "Addresses used."
+#~ msgstr "Addresses used."
+
+#~ msgctxt "Action"
+#~ msgid "Advanced"
+#~ msgstr "Advanced"
+
+#~ msgctxt "Action"
+#~ msgid "Advanced search"
+#~ msgstr "Advanced search"
+
+#~ msgctxt "Info"
+#~ msgid "ALL OF YOUR DATA WILL BE LOST FOREVER!"
+#~ msgstr "ALL OF YOUR DATA WILL BE LOST FOREVER!"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "All PayPal orders are charged in US Dollar, click the link to change your "
+#~ "subscription to US Dollar."
+#~ msgstr ""
+#~ "All PayPal orders are charged in US Dollar, click the link to change your "
+#~ "subscription to US Dollar."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class=\"pull-"
+#~ "right\" href=\"https://protonmail.com/support/knowledge-base/adding-"
+#~ "contacts/\" target=\"_blank\">Need help?</a>"
+#~ msgstr ""
+#~ "Allowed formats (UTF-8 encoding): <code>.vcf, .csv</code><a class=\"pull-"
+#~ "right\" href=\"https://protonmail.com/support/knowledge-base/adding-"
+#~ "contacts/\" target=\"_blank\">Need help?</a>"
+
+#~ msgctxt "Action"
+#~ msgid "Already have an account?"
+#~ msgstr "Already have an account?"
+
+#~ msgctxt "Info"
+#~ msgid "Already subscribed"
+#~ msgstr "Already subscribed"
+
+#~ msgctxt "Info"
+#~ msgid "Also used to reset a forgotten password."
+#~ msgstr "Also used to reset a forgotten password."
+
+#~ msgctxt "Title"
+#~ msgid "Amount"
+#~ msgstr "Amount"
+
+#~ msgctxt "Title"
+#~ msgid "Amount due"
+#~ msgstr "Amount due"
+
+#~ msgctxt "Error"
+#~ msgid ""
+#~ "An error occured while trying to create your account. To see common "
+#~ "problems and solutions <a target=\"_blank\" href=\"https://protonmail.com/"
+#~ "support/knowledge-base/common-sign-up-problems-and-solutions/\">click "
+#~ "here</a>."
+#~ msgstr ""
+#~ "An error occurred while trying to create your account. To see common "
+#~ "problems and solutions <a target=“_blank” href=“https://protonmail.com/"
+#~ "support/knowledge-base/common-sign-up-problems-and-solutions/“>click "
+#~ "here</a>."
+
+#~ msgid "Android"
+#~ msgstr "Android"
+
+#~ msgid "Annually"
+#~ msgstr "Annually"
+
+#~ msgctxt "Title"
+#~ msgid "Annually"
+#~ msgstr "Annually"
+
+#~ msgctxt "Nav"
+#~ msgid "Appearance"
+#~ msgstr "Appearance"
+
+#~ msgctxt "Title"
+#~ msgid "Appearance"
+#~ msgstr "Appearance"
+
+#~ msgctxt "Action"
+#~ msgid "Apply"
+#~ msgstr "Apply"
+
+#~ msgctxt "Title"
+#~ msgid "Archive"
+#~ msgstr "Archive"
+
+#~ msgctxt "Nav"
+#~ msgid "Archive"
+#~ msgstr "Archive"
+
+#~ msgctxt "Title"
+#~ msgid "Are you human?"
+#~ msgstr "Are you human?"
+
+#~ msgid "Are you sure you want to clear all your logs?"
+#~ msgstr "Are you sure you want to clear all your logs?"
+
+#~ msgctxt "Info"
+#~ msgid "Are you sure you want to clear all your logs?"
+#~ msgstr "Are you sure you want to clear all your logs?"
+
+#~ msgctxt "Info"
+#~ msgid "Are you sure you want to delete all your contacts?"
+#~ msgstr "Are you sure you want to delete all your contacts?"
+
+#~ msgctxt "Info"
+#~ msgid "Are you sure you want to delete this address?"
+#~ msgstr "Are you sure you want to delete this address?"
+
+#~ msgctxt "Info"
+#~ msgid "Are you sure you want to delete this label?"
+#~ msgstr "Are you sure you want to delete this label?"
+
+#~ msgctxt "Info"
+#~ msgid "Are you sure you want to delete this payment method?"
+#~ msgstr "Are you sure you want to delete this payment method?"
+
+#~ msgid "Are you sure you want to disable this address?"
+#~ msgstr "Are you sure you want to disable this address?"
+
+#~ msgid "Are you sure you want to remove this member?"
+#~ msgstr "Are you sure you want to remove this member?"
+
+#~ msgid "Are you sure you want to unlink this address?"
+#~ msgstr "Are you sure you want to unlink this address?"
+
+#~ msgctxt "Title"
+#~ msgid "Attach screenshot"
+#~ msgstr "Attach screenshot"
+
+#~ msgctxt "Title"
+#~ msgid "Attachments"
+#~ msgstr "Attachments"
+
+#~ msgctxt "Title"
+#~ msgid "Authentication Logs"
+#~ msgstr "Authentication Logs"
+
+#~ msgctxt "Action"
+#~ msgid "Auto"
+#~ msgstr "Auto"
+
+#~ msgctxt "Title"
+#~ msgid "Automatically save contacts"
+#~ msgstr "Automatically save contacts"
+
+#~ msgctxt "Action"
+#~ msgid "Back to inbox"
+#~ msgstr "Back to inbox"
+
+#~ msgctxt "Action"
+#~ msgid "Back to list"
+#~ msgstr "Back to list"
+
+#~ msgctxt "Action"
+#~ msgid "Back to protonmail.com"
+#~ msgstr "Back to protonmail.com"
+
+#~ msgctxt "Action"
+#~ msgid "Basic"
+#~ msgstr "Basic"
+
+#~ msgctxt "Title"
+#~ msgid "BCC"
+#~ msgstr "BCC"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Before you can receive emails for your custom domain addresses at "
+#~ "ProtonMail, you need to add the following MX record to your DNS. This can "
+#~ "typically be done in the control panel of your domain name registrar."
+#~ msgstr ""
+#~ "Before you can receive emails for your custom domain addresses at "
+#~ "ProtonMail, you need to add the following MX record to your DNS. This can "
+#~ "typically be done in the control panel of your domain name registrar."
+
+#~ msgid "Billed"
+#~ msgstr "Billed"
+
+#~ msgctxt "Title"
+#~ msgid "Billing cycle"
+#~ msgstr "Billing cycle"
+
+#~ msgctxt "Title"
+#~ msgid "Browser"
+#~ msgstr "Browser"
+
+#~ msgctxt "Title"
+#~ msgid "Browser version"
+#~ msgstr "Browser version"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Bug reports are not end-to-end encrypted, please do not send any "
+#~ "sensitive information."
+#~ msgstr ""
+#~ "Bug reports are not end-to-end encrypted, please do not send any "
+#~ "sensitive information."
+
+#~ msgid "Buttons position saved"
+#~ msgstr "Buttons position saved"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "By clicking Create Account, you agree to abide by ProtonMail's <a href="
+#~ "\"https://protonmail.com/terms-and-conditions\" target=\"_blank\">Terms "
+#~ "and Conditions</a>."
+#~ msgstr ""
+#~ "By clicking Create Account, you agree to abide by ProtonMail’s <a "
+#~ "href=“https://protonmail.com/terms-and-conditions” target=“_blank”>Terms "
+#~ "and Conditions</a>."
+
+#~ msgid ""
+#~ "By leaving now, you will lose what you have written in this email. You "
+#~ "can save a draft if you want to come back to it later on."
+#~ msgstr ""
+#~ "By leaving now, you will lose what you have written in this email. You "
+#~ "can save a draft if you want to come back to it later on."
+
+#~ msgctxt "Action"
+#~ msgid "Cancel"
+#~ msgstr "Cancel"
+
+#~ msgid "Cancellation"
+#~ msgstr "Cancellation"
+
+#~ msgctxt "Error"
+#~ msgid "Card number invalid"
+#~ msgstr "Card number invalid"
+
+#~ msgctxt "Title"
+#~ msgid "CC"
+#~ msgstr "CC"
+
+#~ msgctxt "Action"
+#~ msgid "Change subscription"
+#~ msgstr "Change subscription"
+
+#~ msgctxt "Title"
+#~ msgid "Check your email"
+#~ msgstr "Check your email"
+
+#~ msgctxt "Title"
+#~ msgid "Choose address"
+#~ msgstr "Choose address"
+
+#~ msgid "Choose your default language."
+#~ msgstr "Choose your default language."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Choose your prefered button order for marking messages as read / unread."
+#~ msgstr ""
+#~ "Choose your prefered button order for marking messages as read / unread."
+
+#~ msgctxt "Action"
+#~ msgid "Clear"
+#~ msgstr "Clear"
+
+#~ msgctxt "Title"
+#~ msgid "Clear"
+#~ msgstr "Clear"
+
+#~ msgctxt "Action"
+#~ msgid "Close"
+#~ msgstr "Close"
+
+#~ msgctxt "Title"
+#~ msgid "Color"
+#~ msgstr "Color"
+
+#~ msgid "Column"
+#~ msgstr "Column"
+
+#~ msgctxt "Action"
+#~ msgid "Common login problems"
+#~ msgstr "Common login problems"
+
+#~ msgctxt "Action"
+#~ msgid "Complete setup"
+#~ msgstr "Complete setup"
+
+#~ msgctxt "Action"
+#~ msgid "Compose"
+#~ msgstr "Compose"
+
+#~ msgctxt "Info"
+#~ msgid "Compose mode saved"
+#~ msgstr "Compose mode saved"
+
+#~ msgctxt "Title"
+#~ msgid "Composer"
+#~ msgstr "Composer"
+
+#~ msgctxt "Action"
+#~ msgid "Confirm"
+#~ msgstr "Confirm"
+
+#~ msgctxt "Title"
+#~ msgid "Confirm downgrade"
+#~ msgstr "Confirm downgrade"
+
+#~ msgctxt "Title"
+#~ msgid "Confirm message password"
+#~ msgstr "Confirm message password"
+
+#~ msgctxt "Title"
+#~ msgid "Confirm new password"
+#~ msgstr "Confirm new password"
+
+#~ msgid "Confirmation"
+#~ msgstr "Confirmation"
+
+#~ msgid "Contact added"
+#~ msgstr "Contact added"
+
+#~ msgid "Contact edited"
+#~ msgstr "Contact edited"
+
+#~ msgid "Contact imported"
+#~ msgstr "Contact imported"
+
+#~ msgctxt "Title"
+#~ msgid "Contact us"
+#~ msgstr "Contact us"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Contact us at <a href=\"mailto:security@protonmail.com"
+#~ "\">security@protonmail.com</a> for critical security issues."
+#~ msgstr ""
+#~ "Contact us at <a href=“mailto:security@protonmail."
+#~ "com”>security@protonmail.com</a> for critical security issues."
+
+#~ msgctxt "Nav"
+#~ msgid "Contacts"
+#~ msgstr "Contacts"
+
+#~ msgctxt "Action"
+#~ msgid "Contacts"
+#~ msgstr "Contacts"
+
+#~ msgctxt "Title"
+#~ msgid "Contacts"
+#~ msgstr "Contacts"
+
+#~ msgid "Contacts deleted"
+#~ msgstr "Contacts deleted"
+
+#~ msgid "Contacts imported"
+#~ msgstr "Contacts imported"
+
+#~ msgctxt "Error"
+#~ msgid ""
+#~ "Cookies are disabled.\n"
+#~ "Please activate it and then reload the page.\n"
+#~ "<a href=\"// Detect if the current browser have cookie enable\" target="
+#~ "\"_blank\">More information here</a>."
+#~ msgstr ""
+#~ "Cookies are disabled.\n"
+#~ "Please activate it and then reload the page.\n"
+#~ "<a href=“// Detect if the current browser have cookie enable” "
+#~ "target=“_blank”>More information here</a>."
+
+#~ msgid "Coupon accepted"
+#~ msgstr "Coupon accepted"
+
+#~ msgctxt "Action"
+#~ msgid "Create account"
+#~ msgstr "Create account"
+
+#~ msgid "Create new label"
+#~ msgstr "Create new label"
+
+#~ msgctxt "Title"
+#~ msgid "Create time"
+#~ msgstr "Create time"
+
+#~ msgctxt "Title"
+#~ msgid "Create your account"
+#~ msgstr "Create your account"
+
+#~ msgid "Creating account"
+#~ msgstr "Creating account"
+
+#~ msgctxt "Title"
+#~ msgid "Creating new mailbox"
+#~ msgstr "Creating new mailbox"
+
+#~ msgctxt "Title"
+#~ msgid "Credit"
+#~ msgstr "Credit"
+
+#~ msgctxt "Title"
+#~ msgid "Credit card"
+#~ msgstr "Credit card"
+
+#~ msgid "Currency"
+#~ msgstr "Currency"
+
+#~ msgctxt "Title"
+#~ msgid "Current login password"
+#~ msgstr "Current login password"
+
+#~ msgctxt "Title"
+#~ msgid "Current mailbox password"
+#~ msgstr "Current mailbox password"
+
+#~ msgctxt "Title"
+#~ msgid "Current password"
+#~ msgstr "Current password"
+
+#~ msgctxt "Title"
+#~ msgid "Current status"
+#~ msgstr "Current status"
+
+#~ msgctxt "Title"
+#~ msgid "Custom"
+#~ msgstr "Custom"
+
+#~ msgctxt "Title"
+#~ msgid "Custom domain addresses"
+#~ msgstr "Custom domain addresses"
+
+#~ msgctxt "Title"
+#~ msgid "Custom theme"
+#~ msgstr "Custom theme"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Custom themes from third-parties can potentially betray your privacy. "
+#~ "Only use themes from trusted sources."
+#~ msgstr ""
+#~ "Custom themes from third-parties can potentially betray your privacy. "
+#~ "Only use themes from trusted sources."
+
+#~ msgctxt "Action"
+#~ msgid "Customize"
+#~ msgstr "Customize"
+
+#~ msgctxt "Title"
+#~ msgid "Customize invoices"
+#~ msgstr "Customize invoices"
+
+#~ msgid "CVC"
+#~ msgstr "CVC"
+
+#~ msgctxt "Error"
+#~ msgid "CVC invalid"
+#~ msgstr "CVC invalid"
+
+#~ msgctxt "Title"
+#~ msgid "Daily email notifications"
+#~ msgstr "Daily email notifications"
+
+#~ msgctxt "Nav"
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+
+#~ msgctxt "Title"
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+
+#~ msgctxt "Title"
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgctxt "Action"
+#~ msgid "Date: New to old"
+#~ msgstr "Date: New to old"
+
+#~ msgctxt "Action"
+#~ msgid "Date: Old to new"
+#~ msgstr "Date: Old to new"
+
+#~ msgid "Decrypt"
+#~ msgstr "Decrypt"
+
+#~ msgctxt "Title"
+#~ msgid "Decrypt mailbox"
+#~ msgstr "Decrypt mailbox"
+
+#~ msgctxt "Title"
+#~ msgid "Decrypt message"
+#~ msgstr "Decrypt message"
+
+#~ msgid "Decrypting"
+#~ msgstr "Decrypting"
+
+#~ msgctxt "Error"
+#~ msgid "Decryption error"
+#~ msgstr "Decryption error"
+
+#~ msgctxt "Error"
+#~ msgid "Decryption of this message's encryption content failed."
+#~ msgstr "Decryption of this message’s encryption content failed."
+
+#~ msgctxt "Title"
+#~ msgid "Default"
+#~ msgstr "Default"
+
+#~ msgid "Default identity"
+#~ msgstr "Default identity"
+
+#~ msgctxt "Title"
+#~ msgid "Delete"
+#~ msgstr "Delete"
+
+#~ msgctxt "Action"
+#~ msgid "Delete"
+#~ msgstr "Delete"
+
+#~ msgctxt "Title"
+#~ msgid "Delete account"
+#~ msgstr "Delete account"
+
+#~ msgctxt "Title"
+#~ msgid "Delete address"
+#~ msgstr "Delete address"
+
+#~ msgctxt "Title"
+#~ msgid "Delete all"
+#~ msgstr "Delete all"
+
+#~ msgctxt "Action"
+#~ msgid "Delete all"
+#~ msgstr "Delete all"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Delete any other MX records or make sure ProtonMail's Priority is the "
+#~ "lowest number."
+#~ msgstr ""
+#~ "Delete any other MX records or make sure ProtonMail’s Priority is the "
+#~ "lowest number."
+
+#~ msgctxt "Title"
+#~ msgid "Delete domain"
+#~ msgstr "Delete domain"
+
+#~ msgctxt "Title"
+#~ msgid "Delete payment method"
+#~ msgstr "Delete payment method"
+
+#~ msgctxt "Action"
+#~ msgid "Delete your account"
+#~ msgstr "Delete your account"
+
+#~ msgctxt "Action"
+#~ msgid "Deselect all"
+#~ msgstr "Deselect all"
+
+#~ msgctxt "Action"
+#~ msgid "Disable"
+#~ msgstr "Disable"
+
+#~ msgid "Disable address"
+#~ msgstr "Disable address"
+
+#~ msgid "Disabled"
+#~ msgstr "Disabled"
+
+#~ msgctxt "Action"
+#~ msgid "Disabled"
+#~ msgstr "Disabled"
+
+#~ msgctxt "Action"
+#~ msgid "Discard"
+#~ msgstr "Discard"
+
+#~ msgctxt "Action"
+#~ msgid "Display invoice"
+#~ msgstr "Display invoice"
+
+#~ msgctxt "Title"
+#~ msgid "Display name"
+#~ msgstr "Display name"
+
+#~ msgctxt "Nav"
+#~ msgid "DKIM"
+#~ msgstr "DKIM"
+
+#~ msgctxt "Title"
+#~ msgid "DKIM"
+#~ msgstr "DKIM"
+
+#~ msgctxt "Nav"
+#~ msgid "DMARC"
+#~ msgstr "DMARC"
+
+#~ msgctxt "Nav"
+#~ msgid "Domain"
+#~ msgstr "Domain"
+
+#~ msgctxt "Title"
+#~ msgid "Domain"
+#~ msgstr "Domain"
+
+#~ msgid "Domain created"
+#~ msgstr "Domain created"
+
+#~ msgid "Domain deleted"
+#~ msgstr "Domain deleted"
+
+#~ msgid "Domain verified"
+#~ msgstr "Domain verified"
+
+#~ msgctxt "Title"
+#~ msgid "Domains"
+#~ msgstr "Domains"
+
+#~ msgctxt "Nav"
+#~ msgid "Domains"
+#~ msgstr "Domains"
+
+#~ msgctxt "Title"
+#~ msgid "Donate"
+#~ msgstr "Donate"
+
+#~ msgctxt "Action"
+#~ msgid "Donate"
+#~ msgstr "Donate"
+
+#~ msgctxt "Title"
+#~ msgid "Donate to ProtonMail"
+#~ msgstr "Donate to ProtonMail"
+
+#~ msgid "Donation"
+#~ msgstr "Donation"
+
+#~ msgctxt "Action"
+#~ msgid "Downgrade to Free"
+#~ msgstr "Downgrade to Free"
+
+#~ msgctxt "Action"
+#~ msgid "Downgrade to Plus"
+#~ msgstr "Downgrade to Plus"
+
+#~ msgctxt "Action"
+#~ msgid "Download"
+#~ msgstr "Download"
+
+#~ msgctxt "Title"
+#~ msgid "Download"
+#~ msgstr "Download"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Download your PGP Keys for use with other PGP compatible services. Only "
+#~ "incoming messages in inline OpenPGP format are currently supported."
+#~ msgstr ""
+#~ "Download your PGP Keys for use with other PGP compatible services. Only "
+#~ "incoming messages in inline OpenPGP format are currently supported."
+
+#~ msgctxt "Title"
+#~ msgid "Downloading"
+#~ msgstr "Downloading"
+
+#~ msgctxt "Title"
+#~ msgid "Drafts"
+#~ msgstr "Drafts"
+
+#~ msgctxt "Nav"
+#~ msgid "Drafts"
+#~ msgstr "Drafts"
+
+#~ msgctxt "Info"
+#~ msgid "Drop a file here to upload"
+#~ msgstr "Drop a file here to upload"
+
+#~ msgid "Edit"
+#~ msgstr "Edit"
+
+#~ msgid "Edit address"
+#~ msgstr "Edit address"
+
+#~ msgctxt "Action"
+#~ msgid "Edit identity"
+#~ msgstr "Edit identity"
+
+#~ msgid "Edit label"
+#~ msgstr "Edit label"
+
+#~ msgctxt "Action"
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgctxt "Title"
+#~ msgid "Email address"
+#~ msgstr "Email address"
+
+#~ msgctxt "Error"
+#~ msgid "Email already taken"
+#~ msgstr "Email already taken"
+
+#~ msgid "Email available"
+#~ msgstr "Email available"
+
+#~ msgctxt "Title"
+#~ msgid "Email images"
+#~ msgstr "Email images"
+
+#~ msgctxt "Action"
+#~ msgid "Email our aupport team"
+#~ msgstr "Email our support team"
+
+#~ msgctxt "Action"
+#~ msgid "Empty drafts"
+#~ msgstr "Empty drafts"
+
+#~ msgctxt "Action"
+#~ msgid "Empty spam"
+#~ msgstr "Empty spam"
+
+#~ msgctxt "Action"
+#~ msgid "Empty trash"
+#~ msgstr "Empty trash"
+
+#~ msgctxt "Action"
+#~ msgid "Enable"
+#~ msgstr "Enable"
+
+#~ msgid "Enabled"
+#~ msgstr "Enabled"
+
+#~ msgctxt "Action"
+#~ msgid "Enabled"
+#~ msgstr "Enabled"
+
+#~ msgctxt "Title"
+#~ msgid "Encrypt for non-ProtonMail users"
+#~ msgstr "Encrypt for non-ProtonMail users"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Encrypted messages to non-ProtonMail recipients will expire in 28 days "
+#~ "unless a shorter expiration time is set."
+#~ msgstr ""
+#~ "Encrypted messages to non-ProtonMail recipients will expire in 28 days "
+#~ "unless a shorter expiration time is set."
+
+#~ msgctxt "Action"
+#~ msgid "Encrypting"
+#~ msgstr "Encrypting"
+
+#~ msgctxt "Title"
+#~ msgid "End date"
+#~ msgstr "End date"
+
+#~ msgid "End to end encrypted for outside"
+#~ msgstr "End to end encrypted for outside"
+
+#~ msgid "End to end encrypted for outside reply"
+#~ msgstr "End to end encrypted for outside reply"
+
+#~ msgid "End to end encrypted internal message"
+#~ msgstr "End to end encrypted internal message"
+
+#~ msgid "End to end encrypted using PGP"
+#~ msgstr "End to end encrypted using PGP"
+
+#~ msgid "End to end encrypted using PGP/MIME"
+#~ msgstr "End to end encrypted using PGP/MIME"
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Enter custom text that you want to appear on your invoice beneath the "
+#~ "ProtonMail logo."
+#~ msgstr ""
+#~ "Enter custom text that you want to appear on your invoice beneath the "
+#~ "ProtonMail logo."
+
+#~ msgctxt "Action"
+#~ msgid "Enter mailbox"
+#~ msgstr "Enter mailbox"
+
+#~ msgid "Enter the word 'DANGER' here."
+#~ msgstr "Enter the word ‘DANGER’ here."
+
+#~ msgctxt "Title"
+#~ msgid "Enter your login password to confirm your identity:"
+#~ msgstr "Enter your login password to confirm your identity:"
+
+#~ msgctxt "Error"
+#~ msgid "Error"
+#~ msgstr "Error"
+
+#~ msgctxt "Title"
+#~ msgid "Error"
+#~ msgstr "Error"
+
+#~ msgctxt "Error"
+#~ msgid "Error connecting to PayPal."
+#~ msgstr "Error connecting to PayPal."
+
+#~ msgctxt "Error"
+#~ msgid "Error during Deletion"
+#~ msgstr "Error during Deletion"
+
+#~ msgctxt "Error"
+#~ msgid "Error during organization request"
+#~ msgstr "Error during organization request"
+
+#~ msgctxt "Error"
+#~ msgid "Error during the encryption"
+#~ msgstr "Error during the encryption"
+
+#~ msgctxt "Error"
+#~ msgid "Error during the reply process"
+#~ msgstr "Error during the reply process"
+
+#~ msgctxt "Error"
+#~ msgid "Error processing payment."
+#~ msgstr "Error processing payment."
+
+#~ msgctxt "Error"
+#~ msgid "Error while processing donation."
+#~ msgstr "Error while processing donation."
+
+#~ msgctxt "Title"
+#~ msgid "Event"
+#~ msgstr "Event"
+
+#~ msgid "ex: Thomas Anderson"
+#~ msgstr "ex: Thomas Anderson"
+
+#~ msgid "Expiration"
+#~ msgstr "Expiration"
+
+#~ msgctxt "Title"
+#~ msgid "Expiration"
+#~ msgstr "Expiration"
+
+#~ msgctxt "Error"
+#~ msgid "Expiration date invalid"
+#~ msgstr "Expiration date invalid"
+
+#~ msgctxt "Title"
+#~ msgid "Expiration time"
+#~ msgstr "Expiration time"
+
+#~ msgid "Expiring in"
+#~ msgstr "Expiring in"
+
+#~ msgid "External message stored encrypted"
+#~ msgstr "External message stored encrypted"
+
+#~ msgctxt "Title"
+#~ msgid "Feedback form"
+#~ msgstr "Feedback form"
+
+#~ msgctxt "Error"
+#~ msgid "Field required"
+#~ msgstr "Field required"
+
+#~ msgctxt "Title"
+#~ msgid "Fingerprint"
+#~ msgstr "Fingerprint"
+
+#~ msgctxt "Action"
+#~ msgid "Finish"
+#~ msgstr "Finish"
+
+#~ msgid "Folder emptied"
+#~ msgstr "Folder emptied"
+
+#~ msgctxt "Info"
+#~ msgid "For more help please contact us directly: support@protonmail.com"
+#~ msgstr "For more help please contact us directly: support@protonmail.com"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "For security reasons, we need to verify that you are the owner of your "
+#~ "domain. Please add the following code into your DNS. <strong>Do not "
+#~ "remove it even after successful verification</strong>. This can typically "
+#~ "be done in the control panel of your domain name registrar."
+#~ msgstr ""
+#~ "For security reasons, we need to verify that you are the owner of your "
+#~ "domain. Please add the following code into your DNS. <strong>Do not "
+#~ "remove it even after successful verification</strong>. This can typically "
+#~ "be done in the control panel of your domain name registrar."
+
+#~ msgctxt "Action"
+#~ msgid "Forgot password?"
+#~ msgstr "Forgot password?"
+
+#~ msgctxt "Action"
+#~ msgid "Forgot username?"
+#~ msgstr "Forgot username?"
+
+#~ msgid "Free"
+#~ msgstr "Free"
+
+#~ msgctxt "Title"
+#~ msgid "From"
+#~ msgstr "From"
+
+#~ msgid "Fw:"
+#~ msgstr "Fw:"
+
+#~ msgid "Generate key pair"
+#~ msgstr "Generate key pair"
+
+#~ msgctxt "Action"
+#~ msgid "Generate keys"
+#~ msgstr "Generate keys"
+
+#~ msgctxt "Action"
+#~ msgid "Generate missing keys"
+#~ msgstr "Generate missing keys"
+
+#~ msgctxt "Action"
+#~ msgid "Generate new key pair"
+#~ msgstr "Generate new key pair"
+
+#~ msgid "Generate new key pair"
+#~ msgstr "Generate new key pair"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Generating 4096-bit encryption keys may crash or freeze your browser. "
+#~ "4096-bit keys are only recommended for high performance computers - not "
+#~ "recommended for tablet and mobile devices."
+#~ msgstr ""
+#~ "Generating 4096-bit encryption keys may crash or freeze your browser. "
+#~ "4096-bit keys are only recommended for high performance computers - not "
+#~ "recommended for tablet and mobile devices."
+
+#~ msgid "Generating keys..."
+#~ msgstr "Generating keys…"
+
+#~ msgctxt "Action"
+#~ msgid "Having trouble? Use the old version (v2)"
+#~ msgstr "Having trouble? Use the old version (v2)"
+
+#~ msgctxt "Title"
+#~ msgid "Help"
+#~ msgstr "Help"
+
+#~ msgctxt "Action"
+#~ msgid "Help & answers"
+#~ msgstr "Help & answers"
+
+#~ msgctxt "Title"
+#~ msgid "Help and support"
+#~ msgstr "Help and support"
+
+#~ msgctxt "Title"
+#~ msgid "Help us protect online privacy"
+#~ msgstr "Help us protect online privacy"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Here is a basic DMARC record that does nothing except email you reports."
+#~ msgstr ""
+#~ "Here is a basic DMARC record that does nothing except email you reports."
+
+#~ msgctxt "Action"
+#~ msgid "Hide"
+#~ msgstr "Hide"
+
+#~ msgctxt "Action"
+#~ msgid "Hide details"
+#~ msgstr "Hide details"
+
+#~ msgctxt "Title"
+#~ msgid "High security"
+#~ msgstr "High security"
+
+#~ msgctxt "Title"
+#~ msgid "Highest security"
+#~ msgstr "Highest security"
+
+#~ msgctxt "Title"
+#~ msgid "Host name"
+#~ msgstr "Host name"
+
+#~ msgctxt "Action"
+#~ msgid "How does this work?"
+#~ msgstr "How does this work?"
+
+#~ msgctxt "Action"
+#~ msgid "I have a question"
+#~ msgstr "I have a question"
+
+#~ msgctxt "Title"
+#~ msgid "Identity"
+#~ msgstr "Identity"
+
+#~ msgctxt "Action"
+#~ msgid "Identity"
+#~ msgstr "Identity"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "If this domain is currently actively receiving emails, create all used "
+#~ "email addresses in Step 3 before changing MX record to ensure a smooth "
+#~ "transition."
+#~ msgstr ""
+#~ "If this domain is currently actively receiving emails, create all used "
+#~ "email addresses in Step 3 before changing MX record to ensure a smooth "
+#~ "transition."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "If you forget your mailbox password, you can reset your account but..."
+#~ msgstr ""
+#~ "If you forget your mailbox password, you can reset your account but…"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "If you have questions or need help, please visit <a href=\"https://"
+#~ "protonmail.com/support\" target=\"_blank\">our support page</a> to find "
+#~ "troubleshooting guides and contact our support team. If you find a bug in "
+#~ "ProtonMail, please let us know! You can send us a bug report by clicking "
+#~ "<em>Report bugs</em> <strong>(1)</strong>"
+#~ msgstr ""
+#~ "If you have questions or need help, please visit <a href=“https://"
+#~ "protonmail.com/support” target=“_blank”>our support page</a> to find "
+#~ "troubleshooting guides and contact our support team. If you find a bug in "
+#~ "ProtonMail, please let us know! You can send us a bug report by clicking "
+#~ "<em>Report bugs</em> <strong>(1)</strong>"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "If you have set both SPF and DKIM, DMARC allows you to specify how other "
+#~ "email services should deliver email for your domain if both SPF and DKIM "
+#~ "checks have failed. This can make it harder for spammers pretending to be "
+#~ "you but may also cause delivery issues if not done properly. Feel free to "
+#~ "ignore and skip DMARC unless you really want strict policies such as "
+#~ "<strong>p=quarantine</strong> or <strong>p=reject</strong>. <a target="
+#~ "\"_blank\" href=\"https://protonmail.com/support/knowledge-base/anti-"
+#~ "spoofing/\" translate=\"\">Learn more</a>"
+#~ msgstr ""
+#~ "If you have set both SPF and DKIM, DMARC allows you to specify how other "
+#~ "email services should deliver email for your domain if both SPF and DKIM "
+#~ "checks have failed. This can make it harder for spammers pretending to be "
+#~ "you but may also cause delivery issues if not done properly. Feel free to "
+#~ "ignore and skip DMARC unless you really want strict policies such as "
+#~ "<strong>p=quarantine</strong> or <strong>p=reject</strong>. <a "
+#~ "target=“_blank” href=“https://protonmail.com/support/knowledge-base/anti-"
+#~ "spoofing/“ translate=“”>Learn more</a>"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "If you lose your mailbox password, you won't be able to read your emails, "
+#~ "we cannot recover this password for you."
+#~ msgstr ""
+#~ "If you lose your mailbox password, you won’t be able to read your emails, "
+#~ "we cannot recover this password for you."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "If you want to keep an existing SPF record, you can just add "
+#~ "<code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</"
+#~ "code>. Do not create multiple SPF records."
+#~ msgstr ""
+#~ "If you want to keep an existing SPF record, you can just add "
+#~ "<code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</"
+#~ "code>. Do not create multiple SPF records."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "If you wish to delete in order to combine this account with another one, "
+#~ "do NOT delete your account. You need to instead follow the procedure <a "
+#~ "href=\"https://protonmail.com/support/knowledge-base/combine-accounts/\" "
+#~ "target=\"_blank\">here</a>."
+#~ msgstr ""
+#~ "If you wish to delete in order to combine this account with another one, "
+#~ "do NOT delete your account. You need to instead follow the procedure <a "
+#~ "href=“https://protonmail.com/support/knowledge-base/combine-accounts/“ "
+#~ "target=“_blank”>here</a>."
+
+#~ msgctxt "Title"
+#~ msgid "Inactive addresses"
+#~ msgstr "Inactive addresses"
+
+#~ msgctxt "Nav"
+#~ msgid "Inbox"
+#~ msgstr "Inbox"
+
+#~ msgctxt "Title"
+#~ msgid "Inbox"
+#~ msgstr "Inbox"
+
+#~ msgctxt "Action"
+#~ msgid "Insert image"
+#~ msgstr "Insert image"
+
+#~ msgctxt "Title"
+#~ msgid "Internationalization"
+#~ msgstr "Internationalization"
+
+#~ msgctxt "Error"
+#~ msgid "Invalid email."
+#~ msgstr "Invalid email."
+
+#~ msgctxt "Error"
+#~ msgid "Invalid recovery email."
+#~ msgstr "Invalid recovery email."
+
+#~ msgctxt "Title"
+#~ msgid "Invoice"
+#~ msgstr "Invoice"
+
+#~ msgctxt "Title"
+#~ msgid "Invoices"
+#~ msgstr "Invoices"
+
+#~ msgid "Invoices"
+#~ msgstr "Invoices"
+
+#~ msgid "iOS"
+#~ msgstr "iOS"
+
+#~ msgctxt "Title"
+#~ msgid "IP"
+#~ msgstr "IP"
+
+#~ msgctxt "Info"
+#~ msgid "It can take up to a day for DNS changes to update."
+#~ msgstr "It can take up to a day for DNS changes to update."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "It's also possible to donate with <a href=\"https://protonmail.com/donate"
+#~ "\" target=\"_blank\">PayPal or Bitcoin</a>."
+#~ msgstr ""
+#~ "It’s also possible to donate with <a href=“https://protonmail.com/donate” "
+#~ "target=“_blank”>PayPal or Bitcoin</a>."
+
+#~ msgctxt "Info"
+#~ msgid "Keep this password safe - it cannot be recovered."
+#~ msgstr "Keep this password safe - it cannot be recovered."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Keep this record in your DNS for as long as you want to use DKIM. You can "
+#~ "change its Value to <code>off</code> to disable DKIM"
+#~ msgstr ""
+#~ "Keep this record in your DNS for as long as you want to use DKIM. You can "
+#~ "change its Value to <code>off</code> to disable DKIM"
+
+#~ msgid "Key password"
+#~ msgstr "Key password"
+
+#~ msgctxt "Title"
+#~ msgid "Key size"
+#~ msgstr "Key size"
+
+#~ msgctxt "Title"
+#~ msgid "Keywords"
+#~ msgstr "Keywords"
+
+#~ msgctxt "Title"
+#~ msgid "Label"
+#~ msgstr "Label"
+
+#~ msgid "Label created"
+#~ msgstr "Label created"
+
+#~ msgid "Label deleted"
+#~ msgstr "Label deleted"
+
+#~ msgid "Label edited"
+#~ msgstr "Label edited"
+
+#~ msgid "Label order saved"
+#~ msgstr "Label order saved"
+
+#~ msgctxt "Action"
+#~ msgid "Label settings"
+#~ msgstr "Label settings"
+
+#~ msgctxt "Nav"
+#~ msgid "Labels"
+#~ msgstr "Labels"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Labels are a powerful tool to manage your inbox. You can add and remove "
+#~ "labels from selected emails by clicking the Label button <strong>(1)</"
+#~ "strong>. You can also add, delete, and edit labels by clicking on "
+#~ "<em>Label settings</em> <strong>(2)</strong>."
+#~ msgstr ""
+#~ "Labels are a powerful tool to manage your inbox. You can add and remove "
+#~ "labels from selected emails by clicking the Label button <strong>(1)</"
+#~ "strong>. You can also add, delete, and edit labels by clicking on "
+#~ "<em>Label settings</em> <strong>(2)</strong>."
+
+#~ msgid "Labels saved"
+#~ msgstr "Labels saved"
+
+#~ msgctxt "Title"
+#~ msgid "Layout"
+#~ msgstr "Layout"
+
+#~ msgid "Layout saved"
+#~ msgstr "Layout saved"
+
+#~ msgctxt "Action"
+#~ msgid "Learn more"
+#~ msgstr "Learn more"
+
+#~ msgid "Limited support"
+#~ msgstr "Limited support"
+
+#~ msgid "Linux"
+#~ msgstr "Linux"
+
+#~ msgctxt "Button"
+#~ msgid "Load classic theme"
+#~ msgstr "Load classic theme"
+
+#~ msgctxt "Button"
+#~ msgid "Load edison theme"
+#~ msgstr "Load edison theme"
+
+#~ msgctxt "Info"
+#~ msgid "Loading themes will override your current theme!"
+#~ msgstr "Loading themes will override your current theme!"
+
+#~ msgid "Loading..."
+#~ msgstr "Loading…"
+
+#~ msgctxt "Title"
+#~ msgid "Location"
+#~ msgstr "Location"
+
+#~ msgctxt "Action"
+#~ msgid "Log out"
+#~ msgstr "Log out"
+
+#~ msgid "Logging preference updated"
+#~ msgstr "Logging preference updated"
+
+#~ msgctxt "Action"
+#~ msgid "Login"
+#~ msgstr "Login"
+
+#~ msgctxt "Error"
+#~ msgid "Login failed"
+#~ msgstr "Login failed"
+
+#~ msgctxt "Title"
+#~ msgid "Login password"
+#~ msgstr "Login password"
+
+#~ msgctxt "Error"
+#~ msgid "Login password is required."
+#~ msgstr "Login password is required."
+
+#~ msgctxt "Title"
+#~ msgid "Login password required"
+#~ msgstr "Login password required"
+
+#~ msgid "Login success"
+#~ msgstr "Login success"
+
+#~ msgctxt "Action"
+#~ msgid "Logout"
+#~ msgstr "Logout"
+
+#~ msgid "Logs cleared"
+#~ msgstr "Logs cleared"
+
+#~ msgid "Mac OSX"
+#~ msgstr "Mac OS X"
+
+#~ msgctxt "Title"
+#~ msgid "Mailbox password"
+#~ msgstr "Mailbox password"
+
+#~ msgctxt "Error"
+#~ msgid "Mailbox password is required."
+#~ msgstr "Mailbox password is required."
+
+#~ msgid "Main"
+#~ msgstr "Main"
+
+#~ msgctxt "Action"
+#~ msgid "Make default"
+#~ msgstr "Make default"
+
+#~ msgctxt "Action"
+#~ msgid "Make primary"
+#~ msgstr "Make primary"
+
+#~ msgctxt "Action"
+#~ msgid "Manage"
+#~ msgstr "Manage"
+
+#~ msgctxt "Action"
+#~ msgid "Manage password"
+#~ msgstr "Manage password"
+
+#~ msgctxt "Title"
+#~ msgid "Manage storage"
+#~ msgstr "Manage storage"
+
+#~ msgctxt "Title"
+#~ msgid "Manage your email with labels"
+#~ msgstr "Manage your email with labels"
+
+#~ msgctxt "Action"
+#~ msgid "Manual"
+#~ msgstr "Manual"
+
+#~ msgctxt "Action"
+#~ msgid "Mark as read"
+#~ msgstr "Mark as read"
+
+#~ msgctxt "Action"
+#~ msgid "Mark as spam"
+#~ msgstr "Mark as spam"
+
+#~ msgctxt "Action"
+#~ msgid "Mark as unread"
+#~ msgstr "Mark as unread"
+
+#~ msgid "Master"
+#~ msgstr "Master"
+
+#~ msgid "Me"
+#~ msgstr "Me"
+
+#~ msgid "Member removed"
+#~ msgstr "Member removed"
+
+#~ msgctxt "Title"
+#~ msgid "Members"
+#~ msgstr "Members"
+
+#~ msgid "Message discarded"
+#~ msgstr "Message discarded"
+
+#~ msgctxt "Title"
+#~ msgid "Message password"
+#~ msgstr "Message password"
+
+#~ msgid "Message saved"
+#~ msgstr "Message saved"
+
+#~ msgid "Message sent"
+#~ msgstr "Message sent"
+
+#~ msgid "Messages per day"
+#~ msgstr "Messages per day"
+
+#~ msgid "Missing keys"
+#~ msgstr "Missing keys"
+
+#~ msgid "MM"
+#~ msgstr "MM"
+
+#~ msgid "MM/DD/YYYY"
+#~ msgstr "MM/DD/YYYY"
+
+#~ msgid "Monthly"
+#~ msgstr "Monthly"
+
+#~ msgctxt "Title"
+#~ msgid "Monthly"
+#~ msgstr "Monthly"
+
+#~ msgctxt "Action"
+#~ msgid "Move to archive"
+#~ msgstr "Move to archive"
+
+#~ msgctxt "Action"
+#~ msgid "Move to inbox"
+#~ msgstr "Move to inbox"
+
+#~ msgctxt "Action"
+#~ msgid "Move to spam"
+#~ msgstr "Move to spam"
+
+#~ msgctxt "Action"
+#~ msgid "Move to trash"
+#~ msgstr "Move to trash"
+
+#~ msgctxt "Nav"
+#~ msgid "MX"
+#~ msgstr "MX"
+
+#~ msgctxt "Title"
+#~ msgid "MX Record"
+#~ msgstr "MX Record"
+
+#~ msgid "My organization"
+#~ msgstr "My organization"
+
+#~ msgctxt "Title"
+#~ msgid "My subscription"
+#~ msgstr "My subscription"
+
+#~ msgctxt "Title"
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgctxt "Action"
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgctxt "Action"
+#~ msgid "Need help?"
+#~ msgstr "Need help?"
+
+#~ msgctxt "Title"
+#~ msgid "New mailbox password"
+#~ msgstr "New mailbox password"
+
+#~ msgid "New message"
+#~ msgstr "New message"
+
+#~ msgctxt "Title"
+#~ msgid "New password"
+#~ msgstr "New password"
+
+#~ msgctxt "Action"
+#~ msgid "Next"
+#~ msgstr "Next"
+
+#~ msgctxt "Action"
+#~ msgid "Next tip"
+#~ msgstr "Next tip"
+
+#~ msgctxt "Title"
+#~ msgid "No conversations"
+#~ msgstr "No conversations"
+
+#~ msgid "No custom domain found"
+#~ msgstr "No custom domain found"
+
+#~ msgctxt "Info"
+#~ msgid "No labels"
+#~ msgstr "No labels"
+
+#~ msgid "No logs yet."
+#~ msgstr "No logs yet."
+
+#~ msgctxt "Title"
+#~ msgid "No messages"
+#~ msgstr "No messages"
+
+#~ msgctxt "Info"
+#~ msgid "No results for this search in your contacts list."
+#~ msgstr "No results for this search in your contacts list."
+
+#~ msgid "No subject"
+#~ msgstr "No subject"
+
+#~ msgid "No subject, send anyway?"
+#~ msgstr "No subject, send anyway?"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Non-original <strong>@protonmail</strong> addresses can never be deleted "
+#~ "(only disabled). This means that once you create an address it will "
+#~ "always count towards your address limit. Custom domain addresses must be "
+#~ "disabled before they can be deleted. Custom domain addresses can only be "
+#~ "deleted if all messages associated with that address are deleted. <a href="
+#~ "\"https://protonmail.com/support/knowledge-base/aliases-within-protonmail/"
+#~ "\" target=\"_blank\">Learn more about addresses here</a>."
+#~ msgstr ""
+#~ "Non-original <strong>@protonmail</strong> addresses can never be deleted "
+#~ "(only disabled). This means that once you create an address it will "
+#~ "always count towards your address limit. Custom domain addresses must be "
+#~ "disabled before they can be deleted. Custom domain addresses can only be "
+#~ "deleted if all messages associated with that address are deleted. <a "
+#~ "href=“https://protonmail.com/support/knowledge-base/aliases-within-"
+#~ "protonmail/“ target=“_blank”>Learn more about addresses here</a>."
+
+#~ msgctxt "Title"
+#~ msgid "None"
+#~ msgstr "None"
+
+#~ msgctxt "Action"
+#~ msgid "Not spam"
+#~ msgstr "Not spam"
+
+#~ msgid "Notifications"
+#~ msgstr "Notifications"
+
+#~ msgctxt "Title"
+#~ msgid "Number"
+#~ msgstr "Number"
+
+#~ msgctxt "Title"
+#~ msgid "Number of users:"
+#~ msgstr "Number of users:"
+
+#~ msgctxt "Action"
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgctxt "Title"
+#~ msgid "Operating system"
+#~ msgstr "Operating system"
+
+#~ msgctxt "Title"
+#~ msgid "Organization"
+#~ msgstr "Organization"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Organization administrators cannot access the messages of private users."
+#~ msgstr ""
+#~ "Organization administrators cannot access the messages of private users."
+
+#~ msgctxt "Title"
+#~ msgid "Organization history"
+#~ msgstr "Organization history"
+
+#~ msgctxt "Title"
+#~ msgid "Organization name"
+#~ msgstr "Organization name"
+
+#~ msgctxt "Title"
+#~ msgid "Organization recovery password"
+#~ msgstr "Organization recovery password"
+
+#~ msgctxt "Title"
+#~ msgid "Organization storage:"
+#~ msgstr "Organization storage:"
+
+#~ msgid "Organization updated"
+#~ msgstr "Organization updated"
+
+#~ msgid "Orphan"
+#~ msgstr "Orphan"
+
+#~ msgctxt "Title"
+#~ msgid "OS version"
+#~ msgstr "OS version"
+
+#~ msgid "Other amount"
+#~ msgstr "Other amount"
+
+#~ msgctxt "Action"
+#~ msgid "Others identities"
+#~ msgstr "Others identities"
+
+#~ msgctxt "Info"
+#~ msgid "Our secure email requires a modern web browser."
+#~ msgstr "Our secure email requires a modern web browser."
+
+#~ msgctxt "title"
+#~ msgid "Overview"
+#~ msgstr "Overview"
+
+#~ msgid "Paid"
+#~ msgstr "Paid"
+
+#~ msgctxt "Title"
+#~ msgid "Password hint (optional)"
+#~ msgstr "Password hint (optional)"
+
+#~ msgctxt "Error"
+#~ msgid "Passwords don't match."
+#~ msgstr "Passwords don’t match."
+
+#~ msgctxt "Action"
+#~ msgid "Pay"
+#~ msgstr "Pay"
+
+#~ msgctxt "Action"
+#~ msgid "Pay annually"
+#~ msgstr "Pay annually"
+
+#~ msgctxt "Title"
+#~ msgid "Pay invoice"
+#~ msgstr "Pay invoice"
+
+#~ msgctxt "Title"
+#~ msgid "Payment"
+#~ msgstr "Payment"
+
+#~ msgctxt "Title"
+#~ msgid "Payment details"
+#~ msgstr "Payment details"
+
+#~ msgid "Payment method deleted"
+#~ msgstr "Payment method deleted"
+
+#~ msgid "Payment method updated"
+#~ msgstr "Payment method updated"
+
+#~ msgctxt "Title"
+#~ msgid "Payment methods"
+#~ msgstr "Payment methods"
+
+#~ msgctxt "Title"
+#~ msgid "Payment:"
+#~ msgstr "Payment:"
+
+#~ msgctxt "Nav"
+#~ msgid "Payments"
+#~ msgstr "Payments"
+
+#~ msgctxt "Title"
+#~ msgid "Personalize your layout"
+#~ msgstr "Personalize your layout"
+
+#~ msgctxt "Title"
+#~ msgid "Plan"
+#~ msgstr "Plan"
+
+#~ msgid "Plan subscription"
+#~ msgstr "Plan subscription"
+
+#~ msgctxt "Title"
+#~ msgid "Plan:"
+#~ msgstr "Plan:"
+
+#~ msgid "Plans and prices"
+#~ msgstr "Plans and prices"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Please add the following MX record. Note, DNS records can take several "
+#~ "hours to update."
+#~ msgstr ""
+#~ "Please add the following MX record. Note, DNS records can take several "
+#~ "hours to update."
+
+#~ msgctxt "Info"
+#~ msgid "Please add the following TXT record:"
+#~ msgstr "Please add the following TXT record:"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Please add the following TXT record. Note, DNS records can take several "
+#~ "hours to update."
+#~ msgstr ""
+#~ "Please add the following TXT record. Note, DNS records can take several "
+#~ "hours to update."
+
+#~ msgctxt "Info"
+#~ msgid "Please check your email and enter the code below:"
+#~ msgstr "Please check your email and enter the code below:"
+
+#~ msgctxt "Title"
+#~ msgid "Please tell us why you are leaving:"
+#~ msgstr "Please tell us why you are leaving:"
+
+#~ msgid "Popup"
+#~ msgstr "Popup"
+
+#~ msgctxt "Title"
+#~ msgid "Price"
+#~ msgstr "Price"
+
+#~ msgid "Primary"
+#~ msgstr "Primary"
+
+#~ msgctxt "Action"
+#~ msgid "Print"
+#~ msgstr "Print"
+
+#~ msgctxt "Title"
+#~ msgid "Priority"
+#~ msgstr "Priority"
+
+#~ msgid "Priority support"
+#~ msgstr "Priority support"
+
+#~ msgctxt "Action"
+#~ msgid "Private key"
+#~ msgstr "Private key"
+
+#~ msgctxt "Title"
+#~ msgid "Private user"
+#~ msgstr "Private user"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "ProtonMail address can never be deleted (only disabled). This means that "
+#~ "once you create an address it will always count towards your address "
+#~ "limit. <a href=\"https://protonmail.com/support/knowledge-base/aliases-"
+#~ "within-protonmail/\" target=\"_blank\">Learn more about addresses here.</"
+#~ "a>"
+#~ msgstr ""
+#~ "ProtonMail address can never be deleted (only disabled). This means that "
+#~ "once you create an address it will always count towards your address "
+#~ "limit. <a href=\"https://protonmail.com/support/knowledge-base/aliases-"
+#~ "within-protonmail/\" target=\"_blank\">Learn more about addresses here.</"
+#~ "a>"
+
+#~ msgctxt "Title"
+#~ msgid "ProtonMail addresses"
+#~ msgstr "ProtonMail addresses"
+
+#~ msgctxt "Title"
+#~ msgid "ProtonMail aliases"
+#~ msgstr "ProtonMail aliases"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "ProtonMail allows you to fully customize your inbox experience. By "
+#~ "clicking <strong>(1)</strong> you can quickly switch between two possible "
+#~ "layouts. You can set a default layout, set your composer style, adjust "
+#~ "button layouts, and even switch themes under <em>Settings</em> --> "
+#~ "<em>Appearance</em> <strong>(2)</strong>"
+#~ msgstr ""
+#~ "ProtonMail allows you to fully customize your inbox experience. By "
+#~ "clicking <strong>(1)</strong> you can quickly switch between two possible "
+#~ "layouts. You can set a default layout, set your composer style, adjust "
+#~ "button layouts, and even switch themes under <em>Settings</em> —> "
+#~ "<em>Appearance</em> <strong>(2)</strong>"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "ProtonMail business accounts can create subaccounts which are used by "
+#~ "other members of your organization."
+#~ msgstr ""
+#~ "ProtonMail business accounts can create sub accounts which are used by "
+#~ "other members of your organization."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "ProtonMail is open source software that protects your privacy and doesn't "
+#~ "have ads. Your support is essential for keeping the service running."
+#~ msgstr ""
+#~ "ProtonMail is open source software that protects your privacy and doesn’t "
+#~ "have ads. Your support is essential for keeping the service running."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "ProtonMail supports both column and row layouts for the inbox. Using this "
+#~ "setting, it is possible to change between the two layouts."
+#~ msgstr ""
+#~ "ProtonMail supports both column and row layouts for the inbox. Using this "
+#~ "setting, it is possible to change between the two layouts."
+
+#~ msgid "ProtonMail Verified"
+#~ msgstr "ProtonMail Verified"
+
+#~ msgctxt "Action"
+#~ msgid "Public key"
+#~ msgstr "Public key"
+
+#~ msgid "Quota updated"
+#~ msgstr "Quota updated"
+
+#~ msgid "Re:"
+#~ msgstr "Re:"
+
+#~ msgctxt "Title"
+#~ msgid "Reactivate key pair"
+#~ msgstr "Reactivate key pair"
+
+#~ msgctxt "Title"
+#~ msgid "reCaptcha verification"
+#~ msgstr "reCaptcha verification"
+
+#~ msgid "Received:"
+#~ msgstr "Received:"
+
+#~ msgctxt "Title"
+#~ msgid "Recipient"
+#~ msgstr "Recipient"
+
+#~ msgctxt "Title"
+#~ msgid "Recipients"
+#~ msgstr "Recipients"
+
+#~ msgctxt "Title"
+#~ msgid "Recovery email"
+#~ msgstr "Recovery email"
+
+#~ msgctxt "Action"
+#~ msgid "Refresh domain status"
+#~ msgstr "Refresh domain status"
+
+#~ msgid "Remove Attachments to change your From address."
+#~ msgstr "Remove Attachments to change your From address."
+
+#~ msgctxt "Action"
+#~ msgid "Remove link"
+#~ msgstr "Remove link"
+
+#~ msgid "Remove member"
+#~ msgstr "Remove member"
+
+#~ msgctxt "Action"
+#~ msgid "Remove user"
+#~ msgstr "Remove user"
+
+#~ msgctxt "Action"
+#~ msgid "Reply securely"
+#~ msgstr "Reply securely"
+
+#~ msgctxt "Action"
+#~ msgid "Report a bug"
+#~ msgstr "Report a bug"
+
+#~ msgctxt "Title"
+#~ msgid "Report bug"
+#~ msgstr "Report bug"
+
+#~ msgctxt "Action"
+#~ msgid "Report bug"
+#~ msgstr "Report bug"
+
+#~ msgctxt "Action"
+#~ msgid "Reset"
+#~ msgstr "Reset"
+
+#~ msgctxt "Action"
+#~ msgid "Reset login password"
+#~ msgstr "Reset login password"
+
+#~ msgctxt "Title"
+#~ msgid "Reset login password"
+#~ msgstr "Reset login password"
+
+#~ msgctxt "Info"
+#~ msgid "Reset login password"
+#~ msgstr "Reset login password"
+
+#~ msgctxt "Title"
+#~ msgid "Reset mailbox"
+#~ msgstr "Reset mailbox"
+
+#~ msgctxt "Action"
+#~ msgid "Reset mailbox"
+#~ msgstr "Reset mailbox"
+
+#~ msgctxt "Action"
+#~ msgid "Reset now"
+#~ msgstr "Reset now"
+
+#~ msgctxt "Action"
+#~ msgid "Reset password"
+#~ msgstr "Reset password"
+
+#~ msgctxt "Title"
+#~ msgid "Role"
+#~ msgstr "Role"
+
+#~ msgid "Role updated"
+#~ msgstr "Role updated"
+
+#~ msgid "Row"
+#~ msgstr "Row"
+
+#~ msgctxt "Info"
+#~ msgid "Safari does not fully support downloading encrypted attachments."
+#~ msgstr "Safari does not fully support downloading encrypted attachments."
+
+#~ msgctxt "Error"
+#~ msgid ""
+#~ "Safari doesn't support downloading of keys. We are working on a fix for "
+#~ "this."
+#~ msgstr ""
+#~ "Safari doesn’t support downloading of keys. We are working on a fix for "
+#~ "this."
+
+#~ msgctxt "Action"
+#~ msgid "Save"
+#~ msgstr "Save"
+
+#~ msgid "Saved at {{ message.Time | date : 'shortTime' }}"
+#~ msgstr "Saved at {{ message.Time | date : ‘shortTime’ }}"
+
+#~ msgctxt "Action"
+#~ msgid "Saving"
+#~ msgstr "Saving"
+
+#~ msgid "Saving encrypted keys"
+#~ msgstr "Saving encrypted keys"
+
+#~ msgctxt "Title"
+#~ msgid "Search"
+#~ msgstr "Search"
+
+#~ msgctxt "Action"
+#~ msgid "Search"
+#~ msgstr "Search"
+
+#~ msgid "Seconds"
+#~ msgstr "Seconds"
+
+#~ msgctxt "Nav"
+#~ msgid "Security"
+#~ msgstr "Security"
+
+#~ msgctxt "Title"
+#~ msgid "Select domain"
+#~ msgstr "Select domain"
+
+#~ msgctxt "Title"
+#~ msgid "Select payment method:"
+#~ msgstr "Select payment method:"
+
+#~ msgctxt "Action"
+#~ msgid "Send"
+#~ msgstr "Send"
+
+#~ msgctxt "Action"
+#~ msgid "Send new code"
+#~ msgstr "Send new code"
+
+#~ msgctxt "Title"
+#~ msgid "Sender"
+#~ msgstr "Sender"
+
+#~ msgctxt "Action"
+#~ msgid "Sending"
+#~ msgstr "Sending"
+
+#~ msgctxt "Nav"
+#~ msgid "Sent"
+#~ msgstr "Sent"
+
+#~ msgctxt "Title"
+#~ msgid "Sent"
+#~ msgstr "Sent"
+
+#~ msgid "Sent:"
+#~ msgstr "Sent:"
+
+#~ msgctxt "Action"
+#~ msgid "Set"
+#~ msgstr "Set"
+
+#~ msgctxt "Action"
+#~ msgid "Settings"
+#~ msgstr "Settings"
+
+#~ msgctxt "Nav"
+#~ msgid "Settings"
+#~ msgstr "Settings"
+
+#~ msgctxt "Action"
+#~ msgid "Show"
+#~ msgstr "Show"
+
+#~ msgctxt "Action"
+#~ msgid "Show all"
+#~ msgstr "Show all"
+
+#~ msgctxt "Action"
+#~ msgid "Show details"
+#~ msgstr "Show details"
+
+#~ msgctxt "Title"
+#~ msgid "Show images"
+#~ msgstr "Show images"
+
+#~ msgctxt "Action"
+#~ msgid "Show images"
+#~ msgstr "Show images"
+
+#~ msgid "Show previous message"
+#~ msgstr "Show previous message"
+
+#~ msgctxt "Action"
+#~ msgid "Show read"
+#~ msgstr "Show read"
+
+#~ msgctxt "Action"
+#~ msgid "Show unread"
+#~ msgstr "Show unread"
+
+#~ msgctxt "Error"
+#~ msgid "Sign up failed"
+#~ msgstr "Sign up failed"
+
+#~ msgctxt "Action"
+#~ msgid "Sign up for free"
+#~ msgstr "Sign up for free"
+
+#~ msgctxt "Title"
+#~ msgid "Signature"
+#~ msgstr "Signature"
+
+#~ msgctxt "Action"
+#~ msgid "Size: Large to small"
+#~ msgstr "Size: Large to small"
+
+#~ msgctxt "Action"
+#~ msgid "Size: Small to large"
+#~ msgstr "Size: Small to large"
+
+#~ msgctxt "Title"
+#~ msgid "SMS verification"
+#~ msgstr "SMS verification"
+
+#~ msgctxt "Error"
+#~ msgid "Sorry, this message does not exist or has already expired"
+#~ msgstr "Sorry, this message does not exist or has already expired"
+
+#~ msgctxt "Title"
+#~ msgid "Space"
+#~ msgstr "Space"
+
+#~ msgctxt "Title"
+#~ msgid "Spam"
+#~ msgstr "Spam"
+
+#~ msgctxt "Nav"
+#~ msgid "Spam"
+#~ msgstr "Spam"
+
+#~ msgctxt "Nav"
+#~ msgid "SPF"
+#~ msgstr "SPF"
+
+#~ msgctxt "Title"
+#~ msgid "SPF"
+#~ msgstr "SPF"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "SPF is used to specify who is allowed to send email for the domain so we "
+#~ "strongly recommend including ProtonMail in your SPF record. Please add "
+#~ "the following TXT record into your DNS. This can typically be done in the "
+#~ "control panel of your domain name registrar."
+#~ msgstr ""
+#~ "SPF is used to specify who is allowed to send email for the domain so we "
+#~ "strongly recommend including ProtonMail in your SPF record. Please add "
+#~ "the following TXT record into your DNS. This can typically be done in the "
+#~ "control panel of your domain name registrar."
+
+#~ msgctxt "Title"
+#~ msgid "Star"
+#~ msgstr "Star"
+
+#~ msgctxt "Nav"
+#~ msgid "Starred"
+#~ msgstr "Starred"
+
+#~ msgctxt "Title"
+#~ msgid "Start date"
+#~ msgstr "Start date"
+
+#~ msgctxt "Title"
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgctxt "Title"
+#~ msgid "Storage"
+#~ msgstr "Storage"
+
+#~ msgid "Storage as MB"
+#~ msgstr "Storage as MB"
+
+#~ msgid "Stored encrypted"
+#~ msgstr "Stored encrypted"
+
+#~ msgid "Sub"
+#~ msgstr "Sub"
+
+#~ msgctxt "Info"
+#~ msgid "Submit"
+#~ msgstr "Submit"
+
+#~ msgctxt "Action"
+#~ msgid "Submit"
+#~ msgstr "Submit"
+
+#~ msgid "Subscription"
+#~ msgstr "Subscription"
+
+#~ msgid "Support"
+#~ msgstr "Support"
+
+#~ msgid "Support ProtonMail"
+#~ msgstr "Support ProtonMail"
+
+#~ msgctxt "Title"
+#~ msgid "Support ProtonMail by upgrading to a paid account"
+#~ msgstr "Support ProtonMail by upgrading to a paid account"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Take back your privacy! Creating your free secure email account takes "
+#~ "less than 2 minutes in most cases."
+#~ msgstr ""
+#~ "Take back your privacy! Creating your free secure email account takes "
+#~ "less than 2 minutes in most cases."
+
+#~ msgctxt "Title"
+#~ msgid "Thank you for your subscription."
+#~ msgstr "Thank you for your subscription."
+
+#~ msgid "Theme saved"
+#~ msgstr "Theme saved"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "This can take a few seconds or a few minutes depending on your device."
+#~ msgstr ""
+#~ "This can take a few seconds or a few minutes depending on your device."
+
+#~ msgid "This cannot be undone."
+#~ msgstr "This cannot be undone."
+
+#~ msgctxt "Info"
+#~ msgid "This conversation contains non-trashed messages."
+#~ msgstr "This conversation contains non-trashed messages."
+
+#~ msgctxt "Info"
+#~ msgid "This conversation contains trashed messages."
+#~ msgstr "This conversation contains trashed messages."
+
+#~ msgctxt "Info"
+#~ msgid "This is the 'From' name that people will see when you email them."
+#~ msgstr "This is the ‘From’ name that people will see when you email them."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "This is used to encrypt and decrypt your messages. This is private and "
+#~ "only you know it."
+#~ msgstr ""
+#~ "This is used to encrypt and decrypt your messages. This is private and "
+#~ "only you know it."
+
+#~ msgctxt "Info"
+#~ msgid "This is used to log you into our system."
+#~ msgstr "This is used to log you into our system."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "This is used to recover your account if you get locked out or forget your "
+#~ "login password."
+#~ msgstr ""
+#~ "This is used to recover your account if you get locked out or forget your "
+#~ "login password."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "This page is only available on larger resolution devices. If you are on "
+#~ "a  phone, try landscape mode, or visit on a computer instead."
+#~ msgstr ""
+#~ "This page is only available on larger resolution devices. If you are on "
+#~ "a  phone, try landscape mode, or visit on a computer instead."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "This sets the default composer size. Two sizes are available, a smaller "
+#~ "popup composer, and a bigger full screen composer."
+#~ msgstr ""
+#~ "This sets the default composer size. Two sizes are available, a smaller "
+#~ "popup composer, and a bigger full screen composer."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "This short tutorial will show you the main features of your new "
+#~ "ProtonMail account. For more information, you can also check out the "
+#~ "Welcome email we have sent you. If you ever want to view this tutorial "
+#~ "again, you can access it by clicking your username in the upper right "
+#~ "corner."
+#~ msgstr ""
+#~ "This short tutorial will show you the main features of your new "
+#~ "ProtonMail account. For more information, you can also check out the "
+#~ "Welcome email we have sent you. If you ever want to view this tutorial "
+#~ "again, you can access it by clicking your username in the upper right "
+#~ "corner."
+
+#~ msgctxt "Info"
+#~ msgid "This will be a new address you can send and receive emails with."
+#~ msgstr "This will be a new address you can send and receive emails with."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "This will be your email address. Select the drop down to choose your "
+#~ "domain."
+#~ msgstr ""
+#~ "This will be your email address. Select the drop down to choose your "
+#~ "domain."
+
+#~ msgctxt "Title"
+#~ msgid "Time"
+#~ msgstr "Time"
+
+#~ msgctxt "Title"
+#~ msgid "To"
+#~ msgstr "To"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "To add more addresses to your account, or to use your own domain, upgrade "
+#~ "your account."
+#~ msgstr ""
+#~ "To add more addresses to your account, or to use your own domain, upgrade "
+#~ "your account."
+
+#~ msgctxt "Info"
+#~ msgid "To continue, type '<kbd>DANGER</kbd>' below:"
+#~ msgstr "To continue, type ‘<kbd>DANGER</kbd>’ below:"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "To pay via Bitcoin or Cash, please email us at <strong>contact@protonmail."
+#~ "ch</strong> for instructions."
+#~ msgstr ""
+#~ "To pay via Bitcoin or Cash, please email us at <strong>contact@protonmail."
+#~ "ch</strong> for instructions."
+
+#~ msgctxt "Title"
+#~ msgid "Toolbar"
+#~ msgstr "Toolbar"
+
+#~ msgctxt "Title"
+#~ msgid "Total price:"
+#~ msgstr "Total price:"
+
+#~ msgctxt "Nav"
+#~ msgid "Trash"
+#~ msgstr "Trash"
+
+#~ msgctxt "Title"
+#~ msgid "Trash"
+#~ msgstr "Trash"
+
+#~ msgctxt "Action"
+#~ msgid "Tutorial"
+#~ msgstr "Tutorial"
+
+#~ msgctxt "Title"
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Unencrypted message"
+#~ msgstr "Unencrypted message"
+
+#~ msgid "Unlimited labels"
+#~ msgstr "Unlimited labels"
+
+#~ msgid "Unlimited sending"
+#~ msgstr "Unlimited sending"
+
+#~ msgctxt "Action"
+#~ msgid "Unlock"
+#~ msgstr "Unlock"
+
+#~ msgid "Unpaid"
+#~ msgstr "Unpaid"
+
+#~ msgctxt "Action"
+#~ msgid "Update link"
+#~ msgstr "Update link"
+
+#~ msgctxt "Action"
+#~ msgid "Upgrade"
+#~ msgstr "Upgrade"
+
+#~ msgctxt "Nav"
+#~ msgid "Upgrade"
+#~ msgstr "Upgrade"
+
+#~ msgctxt "Action"
+#~ msgid "Upgrade account"
+#~ msgstr "Upgrade account"
+
+#~ msgctxt "Action"
+#~ msgid "Upgrade your plan"
+#~ msgstr "Upgrade your plan"
+
+#~ msgid ""
+#~ "Upgrading to a paid account is the best way to support ProtonMail, but "
+#~ "you can also donate any amount."
+#~ msgstr ""
+#~ "Upgrading to a paid account is the best way to support ProtonMail, but "
+#~ "you can also donate any amount."
+
+#~ msgctxt "Title"
+#~ msgid "Upload"
+#~ msgstr "Upload"
+
+#~ msgctxt "Action"
+#~ msgid "Upload"
+#~ msgstr "Upload"
+
+#~ msgctxt "Action"
+#~ msgid "Uploading"
+#~ msgstr "Uploading"
+
+#~ msgctxt "Info"
+#~ msgid "Use one of these browsers for the best experience during Beta:"
+#~ msgstr "Use one of these browsers for the best experience during Beta:"
+
+#~ msgctxt "Title"
+#~ msgid "User"
+#~ msgstr "User"
+
+#~ msgctxt "Title"
+#~ msgid "User history"
+#~ msgstr "User history"
+
+#~ msgctxt "Title"
+#~ msgid "User login"
+#~ msgstr "User login"
+
+#~ msgctxt "Title"
+#~ msgid "User storage"
+#~ msgstr "User storage"
+
+#~ msgctxt "Title"
+#~ msgid "Username"
+#~ msgstr "Username"
+
+#~ msgctxt "Title"
+#~ msgid "Username and domain"
+#~ msgstr "Username and domain"
+
+#~ msgctxt "Error"
+#~ msgid "Username is required."
+#~ msgstr "Username is required."
+
+#~ msgctxt "Title"
+#~ msgid "Users"
+#~ msgstr "Users"
+
+#~ msgctxt "Title"
+#~ msgid "Value / Data / Points to"
+#~ msgstr "Value / Data / Points to"
+
+#~ msgid "Verification code"
+#~ msgstr "Verification code"
+
+#~ msgctxt "Title"
+#~ msgid "Verification code"
+#~ msgstr "Verification code"
+
+#~ msgctxt "Info"
+#~ msgid "Verification code sent"
+#~ msgstr "Verification code sent"
+
+#~ msgctxt "Title"
+#~ msgid "Verify"
+#~ msgstr "Verify"
+
+#~ msgctxt "Nav"
+#~ msgid "Verify"
+#~ msgstr "Verify"
+
+#~ msgctxt "Action"
+#~ msgid "Verify"
+#~ msgstr "Verify"
+
+#~ msgid "Version"
+#~ msgstr "Version"
+
+#~ msgctxt "Action"
+#~ msgid "View headers"
+#~ msgstr "View headers"
+
+#~ msgctxt "Action"
+#~ msgid "View original"
+#~ msgstr "View original"
+
+#~ msgctxt "Action"
+#~ msgid "View rendered HTML"
+#~ msgstr "View rendered HTML"
+
+#~ msgctxt "Action"
+#~ msgid "View source code"
+#~ msgstr "View source code"
+
+#~ msgid "Void"
+#~ msgstr "Void"
+
+#~ msgctxt "Title"
+#~ msgid "Warning"
+#~ msgstr "Warning"
+
+#~ msgctxt "Info"
+#~ msgid "WARNING: DELETION IS PERMANENT"
+#~ msgstr "WARNING: DELETION IS PERMANENT"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "We are now generating encryption keys for your account, this may take "
+#~ "several minutes and temporarily freeze your browser."
+#~ msgstr ""
+#~ "We are now generating encryption keys for your account, this may take "
+#~ "several minutes and temporarily freeze your browser."
+
+#~ msgctxt "Title"
+#~ msgid "We are sorry to see you go!"
+#~ msgstr "We are sorry to see you go!"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "We only accept PayPal for annual subscriptions, click the link to switch "
+#~ "to an annual subscription."
+#~ msgstr ""
+#~ "We only accept PayPal for annual subscriptions, click the link to switch "
+#~ "to an annual subscription."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "We only accept PayPal for annual subscriptions. PayPal is also only "
+#~ "accepted for US Dollar plans. Click here to switch to an annual US Dollar "
+#~ "subscription."
+#~ msgstr ""
+#~ "We only accept PayPal for annual subscriptions. PayPal is also only "
+#~ "accepted for US Dollar plans. Click here to switch to an annual US Dollar "
+#~ "subscription."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "We will send a code to your <abbr title=\"This is the optional email you "
+#~ "used when first creating an account. This is the same as your "
+#~ "Notification Email that is used for sending alerts about new "
+#~ "messages.'>Recovery email</abbr> to reset your <abbr title='Your Login "
+#~ "Password is the first password you enter to enter our secure system. The "
+#~ "Mailbox password is your second password and is used to decrypt your "
+#~ "messages.\">Login Password</abbr>."
+#~ msgstr ""
+#~ "We will send a code to your <abbr title=“This is the optional email you "
+#~ "used when first creating an account. This is the same as your "
+#~ "Notification Email that is used for sending alerts about new "
+#~ "messages.’>Recovery email</abbr> to reset your <abbr title=‘Your Login "
+#~ "Password is the first password you enter to enter our secure system. The "
+#~ "Mailbox password is your second password and is used to decrypt your "
+#~ "messages.”>Login Password</abbr>."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "We've sent a verification code to your <strong>Recovery email</strong>. "
+#~ "Enter it below to continue."
+#~ msgstr ""
+#~ "We’ve sent a verification code to your <strong>Recovery email</strong>. "
+#~ "Enter it below to continue."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "We've sent a Verification Token to your Recovery Email. Please enter it "
+#~ "below:"
+#~ msgstr ""
+#~ "We’ve sent a Verification Token to your Recovery Email. Please enter it "
+#~ "below:"
+
+#~ msgctxt "Title"
+#~ msgid "Welcome"
+#~ msgstr "Welcome"
+
+#~ msgctxt "Title"
+#~ msgid "Welcome to ProtonMail"
+#~ msgstr "Welcome to ProtonMail"
+
+#~ msgctxt "Title"
+#~ msgid "Welcome to your new encrypted email account"
+#~ msgstr "Welcome to your new encrypted email account"
+
+#~ msgctxt "Info"
+#~ msgid "What do you think of ProtonMail version 3.0?"
+#~ msgstr "What do you think of ProtonMail version 3.0?"
+
+#~ msgctxt "Title"
+#~ msgid "What happened?"
+#~ msgstr "What happened?"
+
+#~ msgid "Windows"
+#~ msgstr "Windows"
+
+#~ msgctxt "Action"
+#~ msgid "Wipe"
+#~ msgstr "Wipe"
+
+#~ msgctxt "Info"
+#~ msgid "You can drag and drop addresses to order them."
+#~ msgstr "You can drag and drop addresses to order them."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "You can enable authentication logging to see who and when your account is "
+#~ "accessed. We will record the IP address that accesses the account and the "
+#~ "time, as well as failed attempts."
+#~ msgstr ""
+#~ "You can enable authentication logging to see who and when your account is "
+#~ "accessed. We will record the IP address that accesses the account and the "
+#~ "time, as well as failed attempts."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "You have no contacts, you can add contact with the above button 'ADD "
+#~ "CONTACT'."
+#~ msgstr ""
+#~ "You have no contacts, you can add contact with the above button ‘ADD "
+#~ "CONTACT’."
+
+#~ msgctxt "Info"
+#~ msgid "You have no invoices."
+#~ msgstr "You have no invoices."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "You have no labels, you can add label with the above button 'ADD LABEL'."
+#~ msgstr ""
+#~ "You have no labels, you can add label with the above button ‘ADD LABEL’."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "You have no saved payment methods, you can add a payment method by "
+#~ "clicking 'ADD'."
+#~ msgstr ""
+#~ "You have no saved payment methods, you can add a payment method by "
+#~ "clicking ‘ADD’."
+
+#~ msgid "You have successfully unsubscribed"
+#~ msgstr "You have successfully unsubscribed"
+
+#~ msgctxt "Info"
+#~ msgid "You must unsubscribe before requesting deletion of your account."
+#~ msgstr "You must unsubscribe before requesting deletion of your account."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "You now have an encrypted email account! Below are optional settings you "
+#~ "can use to customize your account. You can always find these on your "
+#~ "Settings page."
+#~ msgstr ""
+#~ "You now have an encrypted email account! Below are optional settings you "
+#~ "can use to customize your account. You can always find these on your "
+#~ "Settings page."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "You will need to login to your PayPal account to complete this "
+#~ "transaction. We will open a new tab with PayPal for you. If you use any "
+#~ "pop-up blockers, please disable them to continue."
+#~ msgstr ""
+#~ "You will need to login to your PayPal account to complete this "
+#~ "transaction. We will open a new tab with PayPal for you. If you use any "
+#~ "pop-up blockers, please disable them to continue."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "You're upgrading your account. Once we successfully process payment, "
+#~ "we'll immediately upgrade your account. Thanks for choosing to become a "
+#~ "paying customer!"
+#~ msgstr ""
+#~ "You’re upgrading your account. Once we successfully process payment, "
+#~ "we’ll immediately upgrade your account. Thanks for choosing to become a "
+#~ "paying customer!"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Your account currently has an overdue invoice. Please pay all unpaid "
+#~ "invoices."
+#~ msgstr ""
+#~ "Your account currently has an overdue invoice. Please pay all unpaid "
+#~ "invoices."
+
+#~ msgctxt "Info"
+#~ msgid "Your account is being updated, this may take up to 30 seconds."
+#~ msgstr "Your account is being updated, this may take up to 30 seconds."
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "Your attachments are secure and encrypted, but to download them requires "
+#~ "extra work. We recommend using a different web browser such as Chrome or "
+#~ "Firefox for a better user experience."
+#~ msgstr ""
+#~ "Your attachments are secure and encrypted, but to download them requires "
+#~ "extra work. We recommend using a different web browser such as Chrome or "
+#~ "Firefox for a better user experience."
+
+#~ msgid ""
+#~ "Your donation helps us support more users and continue to develop "
+#~ "ProtonMail as free and open source software."
+#~ msgstr ""
+#~ "Your donation helps us support more users and continue to develop "
+#~ "ProtonMail as free and open source software."
+
+#~ msgid "YY"
+#~ msgstr "YY"
+
+#~ msgid "Already subscribed"
+#~ msgstr "Already subscribed"
+
+#~ msgid "Are you sure you want to delete all your contacts?"
+#~ msgstr "Are you sure you want to delete all your contacts?"
+
+#~ msgid "Are you sure you want to delete this address?"
+#~ msgstr "Are you sure you want to delete this address?"
+
+#~ msgid "Are you sure you want to delete this label?"
+#~ msgstr "Are you sure you want to delete this label?"
+
+#~ msgid "Are you sure you want to delete this payment method?"
+#~ msgstr "Are you sure you want to delete this payment method?"
+
+#~ msgid "Delete domain"
+#~ msgstr "Delete domain"
+
+#~ msgid "Delete label"
+#~ msgstr "Delete label"
+
+#~ msgid "Delete payment method"
+#~ msgstr "Delete payment method"
+
+#~ msgid "Disable"
+#~ msgstr "Disable"
+
+#~ msgctxt "Title"
+#~ msgid ""
+#~ "Display name <a href=\"https://protonmail.com/support/knowledge-base/"
+#~ "display-name/\" target=\"_blank\" class=\"text-purple\"><i class=\"fa fa-"
+#~ "info-circle\"></i></a>"
+#~ msgstr ""
+#~ "Display name <a href=“https://protonmail.com/support/knowledge-base/"
+#~ "display-name/“ target=“_blank” class=“text-purple”><i class=“fa fa-info-"
+#~ "circle”></i></a>"
+
+#~ msgid "DKIM"
+#~ msgstr "DKIM"
+
+#~ msgctxt "Title"
+#~ msgid "Domains:"
+#~ msgstr "Domains:"
+
+#~ msgid "Downgrade to Free"
+#~ msgstr "Downgrade to Free"
+
+#~ msgid "Downgrade to Plus"
+#~ msgstr "Downgrade to Plus"
+
+#~ msgid "Drop a file here to upload"
+#~ msgstr "Drop a file here to upload"
+
+#~ msgctxt "Title"
+#~ msgid "Storage:"
+#~ msgstr "Storage:"
+
+#~ msgid "Update Plus"
+#~ msgstr "Update Plus"
+
+#~ msgid "Update Visionary"
+#~ msgstr "Update Visionary"
+
+#~ msgid "Upgrade to Plus"
+#~ msgstr "Upgrade to Plus"
+
+#~ msgid "Upgrade to Visionary"
+#~ msgstr "Upgrade to Visionary"
+
+#~ msgctxt "title"
+#~ msgid "Username:"
+#~ msgstr "Username:"
+
+#~ msgid "Delete address"
+#~ msgstr "Delete address"
+
+#~ msgid "Decrypting..."
+#~ msgstr "Decrypting..."
+
+#~ msgctxt "Info"
+#~ msgid "Cancel"
+#~ msgstr "Cancel"
+
+#~ msgid "Card number'"
+#~ msgstr "Card number'"
+
+#~ msgid "Card Validation Code"
+#~ msgstr "Card Validation Code"
+
+#~ msgid "Choose a display name<br>*<em translate=\"\">Optional</em>"
+#~ msgstr "Choose a display name<br>*<em translate=“”>Optional</em>"
+
+#~ msgid "Clear"
+#~ msgstr "Clear"
+
+#~ msgid "Compose mode saved"
+#~ msgstr "Compose mode saved"
+
+#~ msgid "Confirm downgrade"
+#~ msgstr "Confirm downgrade"
+
+#~ msgid "Contact exists for this email address"
+#~ msgstr "Contact exists for this email address"
+
+#~ msgctxt "Title"
+#~ msgid "Credit:"
+#~ msgstr "Credit:"
+
+#~ msgctxt "Title"
+#~ msgid "Custom addresses"
+#~ msgstr "Custom addresses"
+
+#~ msgid ""
+#~ "This will downgrade your account to a free account.<br /><br />Please "
+#~ "disable all additional addresses prior to downgrading your account. You "
+#~ "can manage that inside the addresses tab.<br /><br />ProtonMail is free "
+#~ "software that is supported by donations and paid accounts. Please "
+#~ "consider <a href=\"https://protonmail.com/donate\" target=\"_blank"
+#~ "\">making a donation</a> so we can continue to offer the service for free."
+#~ msgstr ""
+#~ "This will downgrade your account to a free account.<br /><br />Please "
+#~ "disable all additional addresses prior to downgrading your account. You "
+#~ "can manage that inside the addresses tab.<br /><br />ProtonMail is free "
+#~ "software that is supported by donations and paid accounts. Please "
+#~ "consider <a href=\"https://protonmail.com/donate\" target=\"_blank"
+#~ "\">making a donation</a> so we can continue to offer the service for free."
+
+#~ msgctxt "Action"
+#~ msgid "Add domain"
+#~ msgstr "Add domain"
+
+#~ msgctxt "Action"
+#~ msgid "Add ProtonMail address"
+#~ msgstr "Add ProtonMail address"
+
+#~ msgctxt "Title"
+#~ msgid "Addresses:"
+#~ msgstr "Addresses:"
+
+#~ msgctxt "Title"
+#~ msgid "Autosave contact list"
+#~ msgstr "Autosave contact list"
+
+#~ msgctxt "Title"
+#~ msgid "Autosave contacts"
+#~ msgstr "Autosave contacts"
+
+#~ msgid "Domains used."
+#~ msgstr "Domains used."
+
+#~ msgid "'No"
+#~ msgstr "'No"
+
+#~ msgid "(Optional)"
+#~ msgstr "(Optional)"
+
+#~ msgid "(Required)"
+#~ msgstr "(Required)"
+
+#~ msgid "{{ 'Mark as read / Mark as unread"
+#~ msgstr "{{ 'Mark as read / Mark as unread"
+
+#~ msgid "{{ 'Mark as unread / Mark as read"
+#~ msgstr "{{ 'Mark as unread / Mark as read"
+
+#~ msgid "{{ 'Organization name"
+#~ msgstr "{{ 'Organization name"
+
+#~ msgid "*Optional"
+#~ msgstr "*Optional"
+
+#~ msgid "Choose a display name<br><em translate=\"\">*Optional</em>"
+#~ msgstr "Choose a display name<br><em translate=\"\">*Optional</em>"
+
+#~ msgid "Login"
+#~ msgstr "Login"
+
+#~ msgid "Users"
+#~ msgstr "Users"
+
+#~ msgid "snackies"
+#~ msgstr "meow"
+
+#~ msgctxt "Default"
+#~ msgid "Create new label"
+#~ msgstr "Create new label"
+
+#~ msgctxt "Default"
+#~ msgid "Delete label"
+#~ msgstr "Delete label"
+
+#~ msgctxt "Default"
+#~ msgid "Edit address"
+#~ msgstr "Edit address"
+
+#~ msgctxt "Default"
+#~ msgid "Edit label"
+#~ msgstr "Edit label"
+
+#~ msgid "Email our aupport team"
+#~ msgstr "Email our support team"
+
+#~ msgid ""
+#~ "Add a domain that you own to your ProtonMail account.' | translate }}"
+#~ msgstr ""
+#~ "Add a domain that you own to your ProtonMail account.’ | translate }}"
+
+#~ msgctxt "Default"
+#~ msgid "(Required)"
+#~ msgstr "(Required)"
+
+#~ msgctxt "Default"
+#~ msgid "{{ key.bitSize }} Bit"
+#~ msgstr "{{ key.bitSize }} Bit"
+
+#~ msgctxt "Default"
+#~ msgid "{{ organization.UsedAddresses }} of {{ organization.MaxAddresses }}"
+#~ msgstr "{{ organization.UsedAddresses }} of {{ organization.MaxAddresses }}"
+
+#~ msgctxt "Default"
+#~ msgid "{{ organization.UsedDomains }} of {{ organization.MaxDomains }}"
+#~ msgstr "{{ organization.UsedDomains }} of {{ organization.MaxDomains }}"
+
+#~ msgctxt "Default"
+#~ msgid "{{ organization.UsedMembers }} of {{ organization.MaxMembers }} Used"
+#~ msgstr ""
+#~ "{{ organization.UsedMembers }} of {{ organization.MaxMembers }} Used"
+
+#~ msgctxt "Default"
+#~ msgid ""
+#~ "{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | "
+#~ "humanSize }}"
+#~ msgstr ""
+#~ "{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | "
+#~ "humanSize }}"
+
+#~ msgctxt "Default"
+#~ msgid "{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}"
+#~ msgstr "{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}"
+
+#~ msgctxt "Default"
+#~ msgid "5GB Storage (instead of 500MB)"
+#~ msgstr "5GB Storage (instead of 500MB)"
+
+#~ msgctxt "Default"
+#~ msgid ""
+#~ "Add a domain that you own to your ProtonMail account.' | translate }}"
+#~ msgstr ""
+#~ "Add a domain that you own to your ProtonMail account.' | translate }}"
+
+#~ msgctxt "Default"
+#~ msgid "Also archive"
+#~ msgstr "Also archive"
+
+#~ msgctxt "Default"
+#~ msgid "Creating new user"
+#~ msgstr "Creating new user"
+
+#~ msgctxt "Default"
+#~ msgid "Done"
+#~ msgstr "Done"
+
+#~ msgctxt "Default"
+#~ msgid "Draft"
+#~ msgstr "Draft"
+
+#~ msgctxt "Default"
+#~ msgid "Generating keys"
+#~ msgstr "Generating keys"
+
+#~ msgctxt "Default"
+#~ msgid "Higher message sending limits"
+#~ msgstr "Higher message sending limits"
+
+#~ msgctxt "Default"
+#~ msgid "Host name"
+#~ msgstr "Host name"
+
+#~ msgctxt "Default"
+#~ msgid "Loading new account"
+#~ msgstr "Loading new account"
+
+#~ msgctxt "Default"
+#~ msgid "Not set"
+#~ msgstr "Not set"
+
+#~ msgctxt "Default"
+#~ msgid "Not set properly"
+#~ msgstr "Not set properly"
+
+#~ msgctxt "Default"
+#~ msgid "Off"
+#~ msgstr "Off"
+
+#~ msgctxt "Default"
+#~ msgid "On"
+#~ msgstr "On"
+
+#~ msgctxt "Default"
+#~ msgid "Optional, advanced"
+#~ msgstr "Optional, advanced"
+
+#~ msgctxt "Default"
+#~ msgid "Page"
+#~ msgstr "Page"
+
+#~ msgctxt "Default"
+#~ msgid ""
+#~ "Please add the follow TXT record. Note, DNS records can take several "
+#~ "hours to update."
+#~ msgstr ""
+#~ "Please add the follow TXT record. Note, DNS records can take several "
+#~ "hours to update."
+
+#~ msgctxt "Default"
+#~ msgid "Priority customer support"
+#~ msgstr "Priority customer support"
+
+#~ msgctxt "Default"
+#~ msgid ""
+#~ "ProtonMail supports DKIM signing for custom domains! To use DKIM "
+#~ "authentication, please add the following TXT record into your DNS for "
+#~ "this domain. This can typically be done in the control panel of your "
+#~ "domain name registrar."
+#~ msgstr ""
+#~ "ProtonMail supports DKIM signing for custom domains! To use DKIM "
+#~ "authentication, please add the following TXT record into your DNS for "
+#~ "this domain. This can typically be done in the control panel of your "
+#~ "domain name registrar."
+
+#~ msgctxt "Default"
+#~ msgid "Set"
+#~ msgstr "Set"
+
+#~ msgctxt "Default"
+#~ msgid "Support for custom domains and aliases"
+#~ msgstr "Support for custom domains and aliases"
+
+#~ msgctxt "Default"
+#~ msgid "To send and receive email with this domain, please add all addresses"
+#~ msgstr ""
+#~ "To send and receive email with this domain, please add all addresses"
+
+#~ msgctxt "Default"
+#~ msgid "Value / Data / Points to"
+#~ msgstr "Value / Data / Points to"
+
+#~ msgctxt "Default"
+#~ msgid "Verifying encryption keys"
+#~ msgstr "Verifying encryption keys"
+
+#~ msgctxt "Default"
+#~ msgid "Verifying invite link..."
+#~ msgstr "Verifying invite link…"
+
+#~ msgctxt "Default"
+#~ msgid "Verifying new account"
+#~ msgstr "Verifying new account"
+
+#~ msgctxt "Default"
+#~ msgid "Email verification"
+#~ msgstr "Email verification"
+
+#~ msgctxt "Default"
+#~ msgid "French"
+#~ msgstr "French"
+
+#~ msgctxt "Default"
+#~ msgid "Default language changed"
+#~ msgstr "Default language changed"
 
 #~ msgid "Absolute security"
 #~ msgstr "Absolute security"
@@ -4925,26 +8063,8 @@ msgstr "ZIP code"
 #~ msgid "Additional themes (experimental)"
 #~ msgstr "Additional themes (experimental)"
 
-#~ msgid "Address added"
-#~ msgstr "Address added"
-
 #~ msgid "Address created failed"
 #~ msgstr "Address created failed"
-
-#~ msgid "Address deleted"
-#~ msgstr "Address deleted"
-
-#~ msgid "Address disabled"
-#~ msgstr "Address disabled"
-
-#~ msgid "Address enabled"
-#~ msgstr "Address enabled"
-
-#~ msgid "Address order saved"
-#~ msgstr "Address order saved"
-
-#~ msgid "Address updated"
-#~ msgstr "Address updated"
 
 #~ msgid "Addresses:"
 #~ msgstr "Addresses:"
@@ -4957,9 +8077,6 @@ msgstr "ZIP code"
 
 #~ msgid "Already have an account?"
 #~ msgstr "Already have an account?"
-
-#~ msgid "Already subscribed"
-#~ msgstr "Already subscribed"
 
 #~ msgid "Also used to reset a forgotten password."
 #~ msgstr "Also used to reset a forgotten password."
@@ -4978,30 +8095,6 @@ msgstr "ZIP code"
 #~ "support/knowledge-base/common-sign-up-problems-and-solutions/« >click "
 #~ "here</a>."
 
-#~ msgid "Annually"
-#~ msgstr "Annually"
-
-#~ msgid "Are you sure you want to clear all your logs?"
-#~ msgstr "Are you sure you want to clear all your logs?"
-
-#~ msgid "Are you sure you want to delete this address?"
-#~ msgstr "Are you sure you want to delete this address?"
-
-#~ msgid "Are you sure you want to delete this label?"
-#~ msgstr "Are you sure you want to delete this label?"
-
-#~ msgid "Are you sure you want to delete this payment method?"
-#~ msgstr "Are you sure you want to delete this payment method?"
-
-#~ msgid "Are you sure you want to disable this address?"
-#~ msgstr "Are you sure you want to disable this address?"
-
-#~ msgid "Are you sure you want to remove this member?"
-#~ msgstr "Are you sure you want to remove this member?"
-
-#~ msgid "Are you sure you want to unlink this address?"
-#~ msgstr "Are you sure you want to unlink this address?"
-
 #~ msgid "Authentication Logs"
 #~ msgstr "Authentication Logs"
 
@@ -5017,27 +8110,11 @@ msgstr "ZIP code"
 #~ msgid "Basic"
 #~ msgstr "Basic"
 
-#~ msgid "Billed"
-#~ msgstr "Billed"
-
 #~ msgid "Billing cycle"
 #~ msgstr "Billing cycle"
 
 #~ msgid "Bit"
 #~ msgstr "Bit"
-
-#~ msgid "Buttons position saved"
-#~ msgstr "Buttons position saved"
-
-#~ msgid ""
-#~ "By leaving now, you will lose what you have written in this email. You "
-#~ "can save a draft if you want to come back to it later on."
-#~ msgstr ""
-#~ "By leaving now, you will lose what you have written in this email. You "
-#~ "can save a draft if you want to come back to it later on."
-
-#~ msgid "Cancellation"
-#~ msgstr "Cancellation"
 
 #~ msgid "Card number invalid"
 #~ msgstr "Card number invalid"
@@ -5045,49 +8122,13 @@ msgstr "ZIP code"
 #~ msgid "Check your email"
 #~ msgstr "Check your email"
 
-#~ msgid "Choose your default language."
-#~ msgstr "Choose your default language."
-
 #~ msgid ""
 #~ "Choose your prefered button order for marking messages as read / unread."
 #~ msgstr ""
 #~ "Choose your prefered button order for marking messages as read / unread."
 
-#~ msgid "Clear"
-#~ msgstr "Clear"
-
-#~ msgid "Column"
-#~ msgstr "Column"
-
-#~ msgid "Compose mode saved"
-#~ msgstr "Compose mode saved"
-
 #~ msgid "Composer"
 #~ msgstr "Composer"
-
-#~ msgid "Confirm downgrade"
-#~ msgstr "Confirm downgrade"
-
-#~ msgid "Confirmation"
-#~ msgstr "Confirmation"
-
-#~ msgid "Contact added"
-#~ msgstr "Contact added"
-
-#~ msgid "Contact edited"
-#~ msgstr "Contact edited"
-
-#~ msgid "Contact imported"
-#~ msgstr "Contact imported"
-
-#~ msgid "Contacts deleted"
-#~ msgstr "Contacts deleted"
-
-#~ msgid "Contacts imported"
-#~ msgstr "Contacts imported"
-
-#~ msgid "Coupon accepted"
-#~ msgstr "Coupon accepted"
 
 #~ msgid "Coupon invalid"
 #~ msgstr "Coupon invalid"
@@ -5095,23 +8136,14 @@ msgstr "ZIP code"
 #~ msgid "Create account"
 #~ msgstr "Create account"
 
-#~ msgid "Create new label"
-#~ msgstr "Create new label"
-
 #~ msgid "Create time"
 #~ msgstr "Create time"
-
-#~ msgid "Creating account"
-#~ msgstr "Creating account"
 
 #~ msgid "Creating new mailbox"
 #~ msgstr "Creating new mailbox"
 
 #~ msgid "Credit:"
 #~ msgstr "Credit:"
-
-#~ msgid "Currency"
-#~ msgstr "Currency"
 
 #~ msgid "Current status"
 #~ msgstr "Current status"
@@ -5138,47 +8170,14 @@ msgstr "ZIP code"
 #~ msgid "Daily email notifications"
 #~ msgstr "Daily email notifications"
 
-#~ msgid "Decrypt"
-#~ msgstr "Decrypt"
-
 #~ msgid "Decrypt message"
 #~ msgstr "Decrypt message"
-
-#~ msgid "Decrypting"
-#~ msgstr "Decrypting"
-
-#~ msgid "Decrypting..."
-#~ msgstr "Decrypting..."
-
-#~ msgid "Default identity"
-#~ msgstr "Default identity"
 
 #~ msgid "Default language changed"
 #~ msgstr "Default language changed"
 
-#~ msgid "Delete address"
-#~ msgstr "Delete address"
-
-#~ msgid "Delete domain"
-#~ msgstr "Delete domain"
-
-#~ msgid "Delete label"
-#~ msgstr "Delete label"
-
-#~ msgid "Delete payment method"
-#~ msgstr "Delete payment method"
-
 #~ msgid "Delete your account"
 #~ msgstr "Delete your account"
-
-#~ msgid "Disable"
-#~ msgstr "Disable"
-
-#~ msgid "Disable address"
-#~ msgstr "Disable address"
-
-#~ msgid "Disabled"
-#~ msgstr "Disabled"
 
 #~ msgid "Display invoice"
 #~ msgstr "Display invoice"
@@ -5192,29 +8191,11 @@ msgstr "ZIP code"
 #~ "display-name/«  target=« _blank » class=« text-purple »><i class=« fa fa-"
 #~ "info-circle »></i></a>"
 
-#~ msgid "Domain created"
-#~ msgstr "Domain created"
-
-#~ msgid "Domain deleted"
-#~ msgstr "Domain deleted"
-
 #~ msgid "Domain not found"
 #~ msgstr "Domain not found"
 
-#~ msgid "Domain verified"
-#~ msgstr "Domain verified"
-
 #~ msgid "Domains:"
 #~ msgstr "Domains:"
-
-#~ msgid "Donation"
-#~ msgstr "Donation"
-
-#~ msgid "Downgrade to Free"
-#~ msgstr "Downgrade to Free"
-
-#~ msgid "Downgrade to Plus"
-#~ msgstr "Downgrade to Plus"
 
 #~ msgid ""
 #~ "Download your PGP Keys for use with other PGP compatible services. Only "
@@ -5223,53 +8204,17 @@ msgstr "ZIP code"
 #~ "Download your PGP Keys for use with other PGP compatible services. Only "
 #~ "incoming messages in inline OpenPGP format are currently supported."
 
-#~ msgid "Drop a file here to upload"
-#~ msgstr "Drop a file here to upload"
-
-#~ msgid "Edit"
-#~ msgstr "Edit"
-
-#~ msgid "Edit address"
-#~ msgstr "Edit address"
-
 #~ msgid "Edit identity"
 #~ msgstr "Edit identity"
 
-#~ msgid "Edit label"
-#~ msgstr "Edit label"
-
 #~ msgid "Email already taken"
 #~ msgstr "Email already taken"
-
-#~ msgid "Email available"
-#~ msgstr "Email available"
 
 #~ msgid "Email images"
 #~ msgstr "Email images"
 
 #~ msgid "Enable"
 #~ msgstr "Enable"
-
-#~ msgid "Enabled"
-#~ msgstr "Enabled"
-
-#~ msgid "End to end encrypted for outside"
-#~ msgstr "End to end encrypted for outside"
-
-#~ msgid "End to end encrypted for outside reply"
-#~ msgstr "End to end encrypted for outside reply"
-
-#~ msgid "End to end encrypted internal message"
-#~ msgstr "End to end encrypted internal message"
-
-#~ msgid "End to end encrypted using PGP"
-#~ msgstr "End to end encrypted using PGP"
-
-#~ msgid "End to end encrypted using PGP/MIME"
-#~ msgstr "End to end encrypted using PGP/MIME"
-
-#~ msgid "English"
-#~ msgstr "English"
 
 #~ msgid "Error during creation"
 #~ msgstr "Error during creation"
@@ -5313,14 +8258,8 @@ msgstr "ZIP code"
 #~ msgid "Event"
 #~ msgstr "Event"
 
-#~ msgid "Expiring in"
-#~ msgstr "Expiring in"
-
 #~ msgid "Expiry invalid"
 #~ msgstr "Expiry invalid"
-
-#~ msgid "External message stored encrypted"
-#~ msgstr "External message stored encrypted"
 
 #~ msgid "Field required"
 #~ msgstr "Field required"
@@ -5328,32 +8267,14 @@ msgstr "ZIP code"
 #~ msgid "Fingerprint"
 #~ msgstr "Fingerprint"
 
-#~ msgid "Folder emptied"
-#~ msgstr "Folder emptied"
-
 #~ msgid "Forgot password?"
 #~ msgstr "Forgot password?"
-
-#~ msgid "Free"
-#~ msgstr "Free"
 
 #~ msgid "French"
 #~ msgstr "French"
 
-#~ msgid "Fw:"
-#~ msgstr "Fw:"
-
-#~ msgid "Generate key pair"
-#~ msgstr "Generate key pair"
-
 #~ msgid "Generate missing keys"
 #~ msgstr "Generate missing keys"
-
-#~ msgid "Generate new key pair"
-#~ msgstr "Generate new key pair"
-
-#~ msgid "Generating keys..."
-#~ msgstr "Generating keys…"
 
 #~ msgid "Having trouble? Use the old version (v2)"
 #~ msgstr "Having trouble? Use the old version (v2)"
@@ -5391,38 +8312,14 @@ msgstr "ZIP code"
 #~ msgid "Invoice"
 #~ msgstr "Invoice"
 
-#~ msgid "Invoices"
-#~ msgstr "Invoices"
-
 #~ msgid "Keep this password safe - it cannot be recovered."
 #~ msgstr "Keep this password safe - it cannot be recovered."
 
 #~ msgid "Key size"
 #~ msgstr "Key size"
 
-#~ msgid "Label created"
-#~ msgstr "Label created"
-
-#~ msgid "Label deleted"
-#~ msgstr "Label deleted"
-
-#~ msgid "Label edited"
-#~ msgstr "Label edited"
-
-#~ msgid "Label order saved"
-#~ msgstr "Label order saved"
-
-#~ msgid "Labels saved"
-#~ msgstr "Labels saved"
-
 #~ msgid "Layout"
 #~ msgstr "Layout"
-
-#~ msgid "Layout saved"
-#~ msgstr "Layout saved"
-
-#~ msgid "Limited support"
-#~ msgstr "Limited support"
 
 #~ msgid "Load classic theme"
 #~ msgstr "Load classic theme"
@@ -5433,32 +8330,14 @@ msgstr "ZIP code"
 #~ msgid "Loading themes will override your current theme!"
 #~ msgstr "Loading themes will override your current theme!"
 
-#~ msgid "Loading..."
-#~ msgstr "Loading…"
-
-#~ msgid "Logging preference updated"
-#~ msgstr "Logging preference updated"
-
-#~ msgid "Login"
-#~ msgstr "Login"
-
 #~ msgid "Login failed"
 #~ msgstr "Login failed"
 
 #~ msgid "Login password is required."
 #~ msgstr "Login password is required."
 
-#~ msgid "Login success"
-#~ msgstr "Login success"
-
-#~ msgid "Logs cleared"
-#~ msgstr "Logs cleared"
-
 #~ msgid "Mailbox password is required."
 #~ msgstr "Mailbox password is required."
-
-#~ msgid "Main"
-#~ msgstr "Main"
 
 #~ msgid "Make default"
 #~ msgstr "Make default"
@@ -5475,41 +8354,11 @@ msgstr "ZIP code"
 #~ msgid "Manual"
 #~ msgstr "Manual"
 
-#~ msgid "Master"
-#~ msgstr "Master"
-
 #~ msgid "Maximum composer reached"
 #~ msgstr "Maximum composer reached"
 
-#~ msgid "Me"
-#~ msgstr "Me"
-
-#~ msgid "Member removed"
-#~ msgstr "Member removed"
-
 #~ msgid "Members"
 #~ msgstr "Members"
-
-#~ msgid "Message discarded"
-#~ msgstr "Message discarded"
-
-#~ msgid "Message saved"
-#~ msgstr "Message saved"
-
-#~ msgid "Message sent"
-#~ msgstr "Message sent"
-
-#~ msgid "Messages per day"
-#~ msgstr "Messages per day"
-
-#~ msgid "Missing keys"
-#~ msgstr "Missing keys"
-
-#~ msgid "Monthly"
-#~ msgstr "Monthly"
-
-#~ msgid "My organization"
-#~ msgstr "My organization"
 
 #~ msgid "My subscription"
 #~ msgstr "My subscription"
@@ -5517,26 +8366,11 @@ msgstr "ZIP code"
 #~ msgid "Need help?"
 #~ msgstr "Need help?"
 
-#~ msgid "New message"
-#~ msgstr "New message"
-
-#~ msgid "No custom domain found"
-#~ msgstr "No custom domain found"
-
 #~ msgid "No files were selected"
 #~ msgstr "No files were selected"
 
-#~ msgid "No logs yet."
-#~ msgstr "No logs yet."
-
 #~ msgid "No results for this search in your contacts list."
 #~ msgstr "No results for this search in your contacts list."
-
-#~ msgid "No subject"
-#~ msgstr "No subject"
-
-#~ msgid "No subject, send anyway?"
-#~ msgstr "No subject, send anyway?"
 
 #~ msgid ""
 #~ "Non-original <strong>@protonmail</strong> addresses can never be deleted "
@@ -5558,9 +8392,6 @@ msgstr "ZIP code"
 #~ msgid "None"
 #~ msgstr "None"
 
-#~ msgid "Notifications"
-#~ msgstr "Notifications"
-
 #~ msgid "Number"
 #~ msgstr "Number"
 
@@ -5579,12 +8410,6 @@ msgstr "ZIP code"
 #~ msgid "Organization storage:"
 #~ msgstr "Organization storage:"
 
-#~ msgid "Organization updated"
-#~ msgstr "Organization updated"
-
-#~ msgid "Orphan"
-#~ msgstr "Orphan"
-
 #~ msgid "Others identities"
 #~ msgstr "Others identities"
 
@@ -5593,9 +8418,6 @@ msgstr "ZIP code"
 
 #~ msgid "Overview"
 #~ msgstr "Overview"
-
-#~ msgid "Paid"
-#~ msgstr "Paid"
 
 #~ msgid "Passwords don't match"
 #~ msgstr "Passwords don't match"
@@ -5606,41 +8428,20 @@ msgstr "ZIP code"
 #~ msgid "Pay"
 #~ msgstr "Pay"
 
-#~ msgid "Payment method deleted"
-#~ msgstr "Payment method deleted"
-
-#~ msgid "Payment method updated"
-#~ msgstr "Payment method updated"
-
 #~ msgid "Payment methods"
 #~ msgstr "Payment methods"
 
 #~ msgid "Payment:"
 #~ msgstr "Payment:"
 
-#~ msgid "Plan subscription"
-#~ msgstr "Plan subscription"
-
 #~ msgid "Plan:"
 #~ msgstr "Plan:"
-
-#~ msgid "Plans and prices"
-#~ msgstr "Plans and prices"
 
 #~ msgid "Please add a payment method first"
 #~ msgstr "Please add a payment method first"
 
 #~ msgid "Please check your email and enter the code below:"
 #~ msgstr "Please check your email and enter the code below:"
-
-#~ msgid "Popup"
-#~ msgstr "Popup"
-
-#~ msgid "Primary"
-#~ msgstr "Primary"
-
-#~ msgid "Priority support"
-#~ msgstr "Priority support"
 
 #~ msgid "Private key"
 #~ msgstr "Private key"
@@ -5668,23 +8469,11 @@ msgstr "ZIP code"
 #~ msgid "Public key"
 #~ msgstr "Public key"
 
-#~ msgid "Quota updated"
-#~ msgstr "Quota updated"
-
-#~ msgid "Re:"
-#~ msgstr "Re:"
-
 #~ msgid "reCaptcha verification"
 #~ msgstr "reCaptcha verification"
 
-#~ msgid "Received:"
-#~ msgstr "Received:"
-
 #~ msgid "Refresh domain status"
 #~ msgstr "Refresh domain status"
-
-#~ msgid "Remove member"
-#~ msgstr "Remove member"
 
 #~ msgid "Remove user"
 #~ msgstr "Remove user"
@@ -5707,30 +8496,12 @@ msgstr "ZIP code"
 #~ msgid "Role"
 #~ msgstr "Role"
 
-#~ msgid "Role updated"
-#~ msgstr "Role updated"
-
-#~ msgid "Row"
-#~ msgstr "Row"
-
 #~ msgid ""
 #~ "Safari doesn't support downloading of keys. We are working on a fix for "
 #~ "this."
 #~ msgstr ""
 #~ "Safari doesn't support downloading of keys. We are working on a fix for "
 #~ "this."
-
-#~ msgid "Saving encrypted keys"
-#~ msgstr "Saving encrypted keys"
-
-#~ msgid "Seconds"
-#~ msgstr "Seconds"
-
-#~ msgid "Sent:"
-#~ msgstr "Sent:"
-
-#~ msgid "Show previous message"
-#~ msgstr "Show previous message"
 
 #~ msgid "Sign up failed"
 #~ msgstr "Sign up failed"
@@ -5747,21 +8518,6 @@ msgstr "ZIP code"
 #~ msgid "Storage:"
 #~ msgstr "Storage:"
 
-#~ msgid "Stored encrypted"
-#~ msgstr "Stored encrypted"
-
-#~ msgid "Sub"
-#~ msgstr "Sub"
-
-#~ msgid "Subscription"
-#~ msgstr "Subscription"
-
-#~ msgid "Support"
-#~ msgstr "Support"
-
-#~ msgid "Support ProtonMail"
-#~ msgstr "Support ProtonMail"
-
 #~ msgid ""
 #~ "Take back your privacy! Creating your free secure email account takes "
 #~ "less than 2 minutes in most cases."
@@ -5769,16 +8525,10 @@ msgstr "ZIP code"
 #~ "Take back your privacy! Creating your free secure email account takes "
 #~ "less than 2 minutes in most cases."
 
-#~ msgid "Theme saved"
-#~ msgstr "Theme saved"
-
 #~ msgid ""
 #~ "This can take a few seconds or a few minutes depending on your device."
 #~ msgstr ""
 #~ "This can take a few seconds or a few minutes depending on your device."
-
-#~ msgid "This cannot be undone."
-#~ msgstr "This cannot be undone."
 
 #~ msgid ""
 #~ "This is used to encrypt and decrypt your messages. This is private and "
@@ -5822,21 +8572,6 @@ msgstr "ZIP code"
 #~ "This will be your email address. Select the drop down to choose your "
 #~ "domain."
 
-#~ msgid ""
-#~ "This will downgrade your account to a free account.<br /><br />Please "
-#~ "disable all additional addresses prior to downgrading your account. You "
-#~ "can manage that inside the addresses tab.<br /><br />ProtonMail is free "
-#~ "software that is supported by donations and paid accounts. Please "
-#~ "consider <a href=\"https://protonmail.com/donate\" target=\"_blank"
-#~ "\">making a donation</a> so we can continue to offer the service for free."
-#~ msgstr ""
-#~ "This will downgrade your account to a free account.<br /><br />Please "
-#~ "disable all additional addresses prior to downgrading your account. You "
-#~ "can manage that inside the addresses tab.<br /><br />ProtonMail is free "
-#~ "software that is supported by donations and paid accounts. Please "
-#~ "consider <a href=\"https://protonmail.com/donate\" target=\"_blank"
-#~ "\">making a donation</a> so we can continue to offer the service for free."
-
 #~ msgid "Time"
 #~ msgstr "Time"
 
@@ -5862,42 +8597,11 @@ msgstr "ZIP code"
 #~ msgid "Unable to upload"
 #~ msgstr "Unable to upload"
 
-#~ msgid "Unencrypted message"
-#~ msgstr "Unencrypted message"
-
-#~ msgid "Unlimited labels"
-#~ msgstr "Unlimited labels"
-
-#~ msgid "Unlimited sending"
-#~ msgstr "Unlimited sending"
-
 #~ msgid "Unlock"
 #~ msgstr "Unlock"
 
-#~ msgid "Unpaid"
-#~ msgstr "Unpaid"
-
-#~ msgid "Update Plus"
-#~ msgstr "Update Plus"
-
-#~ msgid "Update Visionary"
-#~ msgstr "Update Visionary"
-
-#~ msgid "Upgrade to Plus"
-#~ msgstr "Upgrade to Plus"
-
-#~ msgid "Upgrade to Visionary"
-#~ msgstr "Upgrade to Visionary"
-
 #~ msgid "Upgrade your plan"
 #~ msgstr "Upgrade your plan"
-
-#~ msgid ""
-#~ "Upgrading to a paid account is the best way to support ProtonMail, but "
-#~ "you can also donate any amount."
-#~ msgstr ""
-#~ "Upgrading to a paid account is the best way to support ProtonMail, but "
-#~ "you can also donate any amount."
 
 #~ msgid "Use one of these browsers for the best experience during Beta:"
 #~ msgstr "Use one of these browsers for the best experience during Beta:"
@@ -5920,23 +8624,11 @@ msgstr "ZIP code"
 #~ msgid "Username:"
 #~ msgstr "Username:"
 
-#~ msgid "Users"
-#~ msgstr "Users"
-
-#~ msgid "Verification code"
-#~ msgstr "Verification code"
-
 #~ msgid "Verification code sent"
 #~ msgstr "Verification code sent"
 
 #~ msgid "Verification did not succeed, please try again in an hour."
 #~ msgstr "Verification did not succeed, please try again in an hour."
-
-#~ msgid "Version"
-#~ msgstr "Version"
-
-#~ msgid "Void"
-#~ msgstr "Void"
 
 #~ msgid "Warning"
 #~ msgstr "Warning"
@@ -6009,9 +8701,6 @@ msgstr "ZIP code"
 #~ "You have no saved payment methods, you can add a payment method by "
 #~ "clicking ‘ADD’."
 
-#~ msgid "You have successfully unsubscribed"
-#~ msgstr "You have successfully unsubscribed"
-
 #~ msgid "You must unsubscribe before requesting deletion of your account."
 #~ msgstr "You must unsubscribe before requesting deletion of your account."
 
@@ -6021,13 +8710,6 @@ msgstr "ZIP code"
 #~ msgstr ""
 #~ "Your account currently has an overdue invoice. Please pay all unpaid "
 #~ "invoices."
-
-#~ msgid ""
-#~ "Your donation helps us support more users and continue to develop "
-#~ "ProtonMail as free and open source software."
-#~ msgstr ""
-#~ "Your donation helps us support more users and continue to develop "
-#~ "ProtonMail as free and open source software."
 
 #, fuzzy
 #~ msgid "Conversation selected"

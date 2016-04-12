@@ -231,8 +231,10 @@
                 ng-disabled="message.allowOthers() || message !== selected"
                 pt-placement="top"
                 pt-tooltip="{{ 'Encryption' | translate }}"
+                pt-tooltip-context="Title"
                 ng-click="togglePanel(message, 'encrypt')">
-                    <i class="fa fa-lock"></i> <span ng-show="!!message.maximized" translate>Encryption</span>
+                    <i class="fa fa-lock"></i>
+                    <span ng-show="!!message.maximized" translate translate-context="Title">Encryption</span>
                 </button>
                 <button
                 class="pm_button"
@@ -242,9 +244,11 @@
                 }"
                 ng-disabled="message.allowOthers() || message !== selected"
                 pt-placement="top"
-                pt-tooltip="{{ 'Expiration time' | translate }}"
+                pt-tooltip-translate="Expiration time"
+                pt-tooltip-translate-context="Action"
                 ng-click="togglePanel(message, 'expiration')">
-                    <i class="fa fa-clock-o"></i> <span ng-show="!!message.maximized" translate>Expiration</span>
+                    <i class="fa fa-clock-o"></i>
+                    <span ng-show="!!message.maximized" translate translate-context="Action">Expiration</span>
                 </button>
                 <span class="text-muted saveAt" ng-show="message.Time">
                 {{ 'Saved at' | translate }} {{ message.Time | date : 'shortTime' }}

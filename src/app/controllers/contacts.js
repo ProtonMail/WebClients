@@ -235,7 +235,7 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.editContact = function(contact) {
-        openContactModal(gettextCatalog.getString('Edit', null, 'Default'), contact.Name, contact.Email, function(name, email) {
+        openContactModal(gettextCatalog.getString('Edit', null, 'Action'), contact.Name, contact.Email, function(name, email) {
             networkActivityTracker.track(
                 Contact.edit({
                     id: contact.ID,

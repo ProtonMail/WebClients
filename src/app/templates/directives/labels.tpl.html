@@ -27,9 +27,18 @@
                 </div>
             </div>
         </form>
-        <label ng-show="labelsSelected().length > 0">
-            <input type="checkbox" ng-model="alsoArchive" /> {{ 'Also archive' | translate }}
-        </label>
+        <div class="wrapper">
+            <ul class="list-group" ng-show="labels.length > 0">
+                <li class="list-group-item">
+                    <label>
+                        <input type="checkbox" ng-model="label.Selected" />
+                        <span class="label label-pm">
+                            <i class="fa fa-tag" ng-style="color(label)"></i> {{ 'Also archive' | translate }}
+                        </span>
+                    </label>
+                </li>
+            </ul>
+        </div>
         <div class="clearfix">
             <button class="createLabel pull-left pm_button" ng-click="toggle()" pt-tooltip="{{ 'Add new label' | translate }}">
                 <i class="fa fa-plus"></i>

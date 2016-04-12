@@ -179,10 +179,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: gettextCatalog.getString('Error during Deletion', null, 'Error'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: gettextCatalog.getString('Error during Deletion', null, 'Error'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {

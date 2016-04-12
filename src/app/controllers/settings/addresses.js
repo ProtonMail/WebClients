@@ -124,7 +124,7 @@ angular.module('proton.controllers.Settings')
     $scope.identity = function(address) {
         identityModal.activate({
             params: {
-                title: gettextCatalog.getString('Edit address', null, 'Default'),
+                title: gettextCatalog.getString('Edit address', null, 'Title'),
                 address: address,
                 confirm: function(address) {
                     if (address.custom === false) {
