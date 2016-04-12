@@ -28,7 +28,7 @@
             </section>
             <section class="setting pm_form pull-right">
                 <legend translate-context="Title" translate>Layout</legend>
-                <p class="alert alert-info"><span translate-context="Info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</span> <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank"  translate>Learn more</a></p>
+                <p class="alert alert-info"><span translate-context="Info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</span> <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank"  translate translate-context="Action">Learn more</a></p>
                 <div class="radio col left">
                     <label>
                         <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />
@@ -101,8 +101,8 @@
                     <i class="fa fa-exclamation-triangle"></i> <span translate-context="Info" translate>Loading themes will override your current theme!</span>
                 </p>
                 <p>
-                    <button class="pm_button" ng-click="loadThemeClassic()" translate-context="Button" translate>Load classic theme</button>
-                    <button ng-if="false" class="pm_button" ng-click="enableThemeEdison()" translate-context="Button" translate>Load edison theme</button>
+                    <button class="pm_button" ng-click="loadThemeClassic()" translate-context="Action" translate>Load classic theme</button>
+                    <button ng-if="false" class="pm_button" ng-click="enableThemeEdison()" translate-context="Action" translate>Load edison theme</button>
                 </p>
 
             </section>
