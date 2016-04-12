@@ -17,7 +17,7 @@ angular.module("proton.transformation", [])
     };
 })
 
-.directive('hideFirstBlockquote', function($timeout, gettext) {
+.directive('hideFirstBlockquote', function($timeout, gettextCatalog) {
     return {
         restrict: 'A',
         link: function(scope, element, attributes) {
