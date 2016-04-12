@@ -21,8 +21,8 @@ angular.module("proton.controllers.Settings")
     var NORMAL = 0;
 
     $scope.roles = [
-        {label: gettextCatalog.getString('Master', null, 'Default'), value: MASTER},
-        {label: gettextCatalog.getString('Sub', null, 'Default'), value: SUB}
+        {label: gettextCatalog.getString('Master', null), value: MASTER},
+        {label: gettextCatalog.getString('Sub', null), value: SUB}
     ];
 
     // Listeners
@@ -128,7 +128,7 @@ angular.module("proton.controllers.Settings")
     $scope.changeRole = function(member) {
         Member.role(member.ID, member.Role).then(function(result) { // TODO check request
             if(result.data && result.data.Code === 1000) {
-                notify({message: gettextCatalog.getString('Role updated', null, 'Default'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Role updated', null), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
@@ -149,7 +149,7 @@ angular.module("proton.controllers.Settings")
             }
         }).then(function(result) { // TODO omit some parameters
             if(result.data && result.data.Code === 1000) {
-                notify({message: gettextCatalog.getString('Organization updated', null, 'Default'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Organization updated', null), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
@@ -166,8 +166,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} address
      */
     $scope.unlinkAddress = function(member, address) {
-        var title = gettextCatalog.getString('Unlink address', null, 'Default');
-        var message = gettextCatalog.getString('Are you sure you want to unlink this address?', null, 'Default');
+        var title = gettextCatalog.getString('Unlink address', null);
+        var message = gettextCatalog.getString('Are you sure you want to unlink this address?', null);
 
         confirmModal.activate({
             params: {
@@ -178,7 +178,7 @@ angular.module("proton.controllers.Settings")
                         if (result.data && result.data) {
                             address.Status = 0;
                             confirmModal.deactivate();
-                            notify({message: gettextCatalog.getString('Address disabled', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address disabled', null), classes: 'notification-success'});
                         }
                     });
                 },
@@ -218,8 +218,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} member
      */
     $scope.remove = function(member) {
-        var title = gettextCatalog.getString('Remove member', null, 'Default');
-        var message = gettextCatalog.getString('Are you sure you want to remove this member?', null, 'Default');
+        var title = gettextCatalog.getString('Remove member', null);
+        var message = gettextCatalog.getString('Are you sure you want to remove this member?', null);
         var index = $scope.members.indexOf(member);
 
         confirmModal.activate({
@@ -231,7 +231,7 @@ angular.module("proton.controllers.Settings")
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             $scope.members.splice(index, 1); // Remove member in the members list
                             confirmModal.deactivate(); // Close the modal
-                            notify({message: gettextCatalog.getString('Member removed', null, 'Default'), classes: 'notification-success'}); // Display notification
+                            notify({message: gettextCatalog.getString('Member removed', null), classes: 'notification-success'}); // Display notification
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
@@ -262,7 +262,7 @@ angular.module("proton.controllers.Settings")
                         if (result.data && result.data.Code === 1000) {
                             eventManager.call();
                             storageModal.deactivate();
-                            notify({message: gettextCatalog.getString('Quota updated', null, 'Default'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Quota updated', null), classes: 'notification-success'});
                         } else if (result.data && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {

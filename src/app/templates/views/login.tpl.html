@@ -3,24 +3,24 @@
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
     <h4 class="text-center margin-bottom">
-        <i class="fa fa-user title-icon"></i> <span translate-context="Default" translate>User login</span>
+        <i class="fa fa-user title-icon"></i> <span translate-context="Title" translate>User login</span>
     </h4>
 
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-    <input autofocus autocapitalize="off" autocorrect="off" type="text" ng-model="username" tabindex="1" id="username" name="username" placeholder="{{ 'Username' | translate }}" class="margin" required="" />
+    <input autofocus autocapitalize="off" autocorrect="off" type="text" ng-model="username" tabindex="1" id="username" name="username" placeholder-translate="Username" class="margin" required="" />
 
-    <input maxlength="{{ ::maxPW }}" autocapitalize="off" autocorrect="off" type="password" ng-model="password" tabindex="2" id="password" name="password" class="margin" required="" placeholder="{{ 'Password' | translate }}" />
+    <input maxlength="{{ ::maxPW }}" autocapitalize="off" autocorrect="off" type="password" ng-model="password" tabindex="2" id="password" name="password" class="margin" required="" placeholder-translate="Password" />
 
     <div class="clearfix">
-        <a class="pm_button link pull-left" ng-click="getLoginHelp()" translate-context="Default" translate>Need help?</a>
-        <button id="login_btn" type="submit" class="pm_button primary pull-right" ng-class="{disabled: networkActivity.loading()}" translate-context="Default" translate>Login</button>
+        <a class="pm_button link pull-left" ng-click="getLoginHelp()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
+        <button id="login_btn" type="submit" class="pm_button primary pull-right" ng-class="{disabled: networkActivity.loading()}" translate-context="Action" translate>Login</button>
     </div>
 
     <br />
 
     <div class="clearfix">
-        <a class="pm_button link" ui-sref="step1" translate-context="Default" translate>Sign up for free</a>
+        <a class="pm_button link" ui-sref="step1" translate-context="Action" translate-comment="link for account creation" translate>Sign up for free</a>
     </div>
 
     <input type="hidden" id="hashed_pw" name="hashed_pw" />
@@ -28,5 +28,5 @@
 </form>
 
 <div class="clearfix text-center">
-    <a class="pm_button link" style="color: #fff; text-transform: none;" href="https://v2.protonmail.com/login" target="_self" translate-context="Default" translate>Having trouble? Use the old version (v2)</a>
+    <a class="pm_button link" style="color: #fff; text-transform: none;" href="https://v2.protonmail.com/login" target="_self" translate-context="Action" translate-comment="link for v2" translate>Having trouble? Use the old version (v2)</a>
 </div>

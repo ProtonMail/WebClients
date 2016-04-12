@@ -50,43 +50,43 @@
 
 	<table>
 		<tr>
-			<th translate-context="Default" translate>User</th>
+			<th translate-context="Title" translate-comment="invoice heading" translate>User</th>
 			<td>{{ user.Name }}</td>
 		</tr>
 		<tr>
-			<th translate-context="Default" translate>Organization</th>
+			<th translate-context="Title" translate-comment="invoice heading" translate>Organization</th>
 			<td>{{ organization.DisplayName }}</td>
 		</tr>
 		<tr>
-			<th translate-context="Default" translate>Domains</th>
+			<th translate-context="Title" translate-comment="invoice heading" translate>Domains</th>
 			<td>{{ organization.MaxDomains }}</td>
 		</tr>
 		<tr>
-			<th translate-context="Default" translate>Space</th>
+			<th translate-context="Title" translate-comment="invoice heading" translate>Space</th>
 			<td>{{ organization.MaxSpace | humanSize }}</td>
 		</tr>
 		<tr>
-			<th translate-context="Default" translate>Members</th>
+			<th translate-context="Title" translate-comment="invoice heading" translate>Members</th>
 			<td>{{ organization.MaxMembers }}</td>
 		</tr>
 		<tr>
-			<th translate-context="Default" translate>Price</th>
+			<th translate-context="Title" translate-comment="invoice heading" translate>Price</th>
 			<td>{{ invoice.Amount | currency:invoice.Currency }}</td>
 		</tr>
 		<tr>
-			<th translate-context="Default" translate>Time</th>
+			<th translate-context="Title" translate-comment="invoice heading" translate>Time</th>
 			<td>{{ invoice.PeriodStart | localReadableTime }} &nbsp; - &nbsp; {{ invoice.PeriodEnd | localReadableTime }}</td>
 		</tr>
 		<tr>
-			<th translate-context="Default" translate>Billing cycle</th>
+			<th translate-context="Title" translate-comment="invoice heading" translate>Billing cycle</th>
 			<td>
 				{{ invoice.BillingCycle }}
-				<span ng-show="invoice.BillingCycle < 12" translate-context="Default" translate>Month</span>
-				<span ng-show="invoice.BillingCycle >= 12" translate-context="Default" translate>Year</span>
+				<span ng-show="invoice.BillingCycle < 12"  translate translate-plural="Months">Month</span>
+				<span ng-show="invoice.BillingCycle >= 12"  translate>Year</span>
 			</td>
 		</tr>
 		<tr class="total">
-			<th translate-context="Default" translate>Amount due</th>
+			<th translate-context="Title" translate-comment="invoice heading" translate>Amount due</th>
 			<th>{{ invoice.Amount | currency:invoice.Currency }}</th>
 		</tr>
 	</table>

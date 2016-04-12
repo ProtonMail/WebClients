@@ -7,7 +7,7 @@
     <ng-include src="'templates/partials/searchForm.tpl.html'" ng-if="!('secured.contacts' | includedByState)"></ng-include>
     <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
         <fieldset>
-            <input type="search" placeholder="{{ 'Search contacts' | translate }}" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
+            <input type="search" placeholder-translate="Search contacts" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
             <button type="submit">
                 <i class="fa fa-search"></i>
             </button>
@@ -19,7 +19,7 @@
                 <span>
                     <i class="fa fa-cubes"></i>
                 </span>
-                <strong translate>Upgrade</strong>
+                <strong translate translate-context="Action">Upgrade</strong>
             </a>
         </li>
         <li ng-class="{'active': activeSettings()}">
@@ -27,7 +27,7 @@
                 <span>
                     <i class="fa fa-cogs"></i>
                 </span>
-                <strong translate>Settings</strong>
+                <strong translate translate-context="Action">Settings</strong>
             </a>
         </li>
         <li ui-sref-active="active">
@@ -35,7 +35,7 @@
                 <span>
                     <i class="fa fa-users"></i>
                 </span>
-                <strong translate>Contacts</strong>
+                <strong translate translate-context="Action">Contacts</strong>
             </a>
         </li>
         <li class="pm_buttons">
@@ -44,14 +44,16 @@
                     <i class="fa fa-life-ring"></i>
                     <i class="fa fa-angle-down"></i>
                 </span>
-                <strong translate>Report bug</strong>
+                <strong translate translate-context="Action">Report bug</strong>
             </a>
             <span class="pm_dropdown wide right">
                 <a href="https://protonmail.com/support" target="_blank" class="help">
-                    <i class="fa fa-question-circle"></i> {{ 'I have a question' | translate }}
+                    <i class="fa fa-question-circle"></i>
+                    <span translate translate-context="Action">I have a question</span>
                 </a>
                 <a href="#" ng-click="openReportModal()" class="help">
-                    <i class="fa fa-bug"></i> {{ 'Report a bug' | translate }}
+                    <i class="fa fa-bug"></i>
+                    <span translate translate-context="Action">Report a bug</span>
                 </a>
             </span>
         </li>
@@ -69,12 +71,14 @@
                     <b>{{ user.Addresses[0].Email }}</b>
                 </span>
                 <a href="#" class="help" ng-click="tour()" ng-if="wizardEnabled === true">
-                    <i class="fa fa-magic"></i> {{ 'Tutorial' | translate }}
+                    <i class="fa fa-magic"></i>
+                    <span translate translate-context="Action">Tutorial</span>
                 </a>
                 <a class="help" target="_blank" href="https://protonmail.com/support">
-                    <i class="fa fa-life-ring"></i> {{ 'Help & answers' | translate }}
+                    <i class="fa fa-life-ring"></i>
+                    <span translate translate-context="Action">Help & answers</span>
                 </a>
-                <a href="#" ng-click="logout()" class="pm_button primary text-center" translate>Logout</a>
+                <a href="#" ng-click="logout()" class="pm_button primary text-center" translate translate-context="Action">Logout</a>
                 <a href="https://protonmail.com/blog/protonmail-beta-v3-1-release-notes/" target="_blank" class="version text-center" title="{{ dateVersion }}" target="_blank">
                     <small>ProtonMail {{ appVersion }}</small>
                 </a>

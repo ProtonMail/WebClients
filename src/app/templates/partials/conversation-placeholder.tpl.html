@@ -1,5 +1,5 @@
 <div id="pm_latest" ng-show="showWelcome === true">
-    <header translate>Welcome</header>
+    <header translate translate-context="Title">Welcome</header>
     <p class="text-center" translate>Number of unread conversations</p>
     <p class="text-center">You have <strong>{{ numberElementUnread }}</strong> unread conversations.</p>
     <section id="storageStatus" ng-show="user.UsedSpace > 0">
@@ -17,7 +17,7 @@
     <section>
         <a ui-sref="secured.dashboard" class="text-center latest-upgrade">
             <img src="/assets/img/latest/privacy.jpg">
-            <button type="button" class="pm_button primary" translate>Upgrade account</button>
+            <button type="button" class="pm_button primary" translate translate-context="Action">Upgrade account</button>
         </a>
     </section>
     <div class="pm_grid">
@@ -40,6 +40,6 @@
 
 <div id="pm_placeholder" ng-show="showWelcome === false">
     <i class="fa fa-check-square"></i>
-    <h2 translate translate-n="numberElementChecked" translate-plural="{{ $count }} conversations selected">{{ $count }} conversation selected</h2>
-    <button class="pm_button" ng-show="numberElementChecked > 0" ng-click="unselectAllElements()" translate>Deselect all</button>
+    <h2 translate translate-n="numberElementChecked" translate-comment="placeholder showing unread conversations" translate-plural="{{ $count }} conversations selected" translate-context="Title">{{ $count }} conversation selected</h2>
+    <button class="pm_button" ng-show="numberElementChecked > 0" ng-click="unselectAllElements()" translate translate-context="Action">Deselect all</button>
 </div>

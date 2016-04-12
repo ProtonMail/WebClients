@@ -1,6 +1,6 @@
 <div class="pm_modal {{ctrl.class}}" role="dialog" id="labelModal">
     <div class="modal-dialog">
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'Close' | translate }}" class="fa fa-times close"></button>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header" ng-show="ctrl.title">
                 <h3 class="modal-title">{{ ctrl.title }}</h3>
@@ -8,15 +8,15 @@
             <div class="modal-body pm_form">
                 <div class="row">
                     <span class="col narrow">
-                        <label for="labelName" translate>Name</label>
+                        <label for="labelName" translate translate-context="Title">Name</label>
                     </span><!--/.col-->
                     <span class="col full last">
-                        <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="label" ng-model="ctrl.name" placeholder="{{ 'Label name' | translate }}" required="" />
+                        <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="label" ng-model="ctrl.name" placeholder-translate="Label name" required="" />
                     </span>
                 </div>
                 <div class="row">
                     <span class="col narrow">
-                        <label translate>Color</label>
+                        <label translate translate-context="Title">Color</label>
                     </span><!--/.col-->
                     <span class="col full last">
                         <div class="text-center">
@@ -31,8 +31,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate>Cancel</button>
-            <button type="button" ng-click="ctrl.create()" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate>Save</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
+            <button type="button" ng-click="ctrl.create()" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate translate-context="Action">Save</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

@@ -1,6 +1,6 @@
 <div class="modal-content">
     <div class="modal-header">
-        <h4 class="modal-title" translate>Payment</h4>
+        <h4 class="modal-title" translate translate-context="Title">Payment</h4>
     </div>
     <div class="modal-body pm_form">
         <div class="pm_grid">
@@ -8,17 +8,17 @@
                 <table class="pm_table margin">
                     <thead>
                         <tr>
-                            <th class="desc" translate>Plan</th>
-                            <th class="price" translate>Price</th>
+                            <th class="desc" translate translate-context="Title" translate-comment="table heading">Plan</th>
+                            <th class="price" translate translate-context="Title" translate-comment="table heading">Price</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
                             <td class="desc">
-                                <div>{{ plan.Title }} {{ 'Plan' | translate }}</div>
-                                <div><span class="space"></span>{{ ctrl.count('MaxSpace') | humanSize }} {{ 'Storage' | translate }}</div>
+                                <div>{{ plan.Title }} <span translate>Plan</span></div>
+                                <div><span class="space"></span>{{ ctrl.count('MaxSpace') | humanSize }} <span translate>Storage</span></div>
                                 <div><span class="space"></span>{{ ctrl.count('MaxDomains') }} <span translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span></div>
-                                <div><span class="space"></span>{{ ctrl.count('MaxAddresses') }} {{ 'Addresses' | translate }}</div>
+                                <div><span class="space"></span>{{ ctrl.count('MaxAddresses') }} <span translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses">Address</span></div>
                             </td>
                             <td class="price text-right">
                                 <strong ng-show="ctrl.valid.Cycle === 1">{{ ctrl.valid.Amount / 100 | currency: plan.Currency }}</strong>
@@ -57,7 +57,7 @@
                         <strong translate>Save 20% with the annual plan!</strong>
                     </p>
                     <p>
-                        <button type="button" class="pm_button primary" ng-click="ctrl.switch(12)" translate>Pay annually</button>
+                        <button type="button" class="pm_button primary" ng-click="ctrl.switch(12)" translate translate-context="Action">Pay annually</button>
                     </p>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <div ng-hide="ctrl.valid.AmountDue === 0">
                     <div class="pm_grid margin">
                         <div class="col-1-2">
-                            <label for="paymentMethod" translate>Select payment method:</label>
+                            <label for="paymentMethod" translate translate-context="Title" translate-comment="form label">Select payment method:</label>
                         </div>
                         <div class="col-1-2">
                             <span class="pm_select">
@@ -83,7 +83,7 @@
                         </div>
                         <div ng-show="ctrl.methods.length === 0">
                             <div class="margin">
-                                <input type="text" ng-model="ctrl.fullname" placeholder="{{ 'Name on card' | translate }}" />
+                                <input type="text" ng-model="ctrl.fullname" placeholder-translate="Name on card" />
                             </div>
                             <div class="pm_grid margin">
                                 <div class="col-2-3">
@@ -93,30 +93,30 @@
                                     </span>
                                 </div>
                                 <div class="col-1-3">
-                                    <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" placeholder="{{ 'ZIP code' | translate }}" required />
+                                    <input type="text" minlength="3" maxlength="9" autocomplete="off" ng-model="ctrl.zip" placeholder-translate="ZIP code" required />
                                 </div>
                             </div>
                             <div class="input-icon margin">
                                 <card-icon number="ctrl.number"></card-icon>
-                                <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" placeholder="{{ 'Card number' | translate }}" required />
+                                <input type="text" maxlength="20" autocomplete="off" ng-model="ctrl.number" placeholder-translate="Card number" required />
                             </div>
                             <div class="pm_grid margin">
                                 <div class="col-1-3">
                                     <div class="input-icon">
                                         <i class="fa fa-calendar"></i>
-                                        <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" placeholder="MM" pt-tooltip="{{ 'Month' | translate }}" required />
+                                        <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" placeholder-translate="MM" pt-tooltip-translate="Month" required />
                                     </div>
                                 </div>
                                 <div class="col-1-3">
                                     <div class="input-icon">
                                         <i class="fa fa-calendar"></i>
-                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" placeholder="YY" pt-tooltip="{{ 'Year' | translate }}" required />
+                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" placeholder-translate="YY" pt-tooltip-translate="Year" required />
                                     </div>
                                 </div>
                                 <div class="col-1-3">
                                     <div class="input-icon">
                                         <i class="fa fa-lock"></i>
-                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" placeholder="CVC" pt-tooltip="{{ 'Card validation code' | translate }}" required />
+                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.cvc" placeholder-translate="CVC" pt-tooltip-translate="Card validation code" required />
                                     </div>
                                 </div>
                             </div>
@@ -124,13 +124,26 @@
                     </div>
                     <div ng-show="ctrl.choice.value === 'paypal'">
                         <p ng-show="!ctrl.approvalURL && ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false">
-                            <i class="fa fa-spin fa-spinner"></i> {{ 'Loading' | translate }}...
+                            <i class="fa fa-spin fa-spinner"></i>
+                            <span translate>Loading...</span>
                         </p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">{{ 'Error connecting to PayPal.' | translate }} <a href="#" ng-click="ctrl.initPaypal()">Click here</a> to try again.</p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 1">{{ 'We only accept PayPal for annual subscriptions, click the link to switch to an annual subscription.' | translate }} <a href="#" ng-click="ctrl.switch(12, 'USD')" translate>Change subscription</a></p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 2">{{ 'We only accept PayPal for annual subscriptions. PayPal is also only accepted for US Dollar plans. Click here to switch to an annual US Dollar subscription.' | translate }} <a href="#" ng-click="ctrl.switch(12, 'USD')" translate>Change subscription</a></p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 3">{{ 'All PayPal orders are charged in US Dollar, click the link to change your subscription to US Dollar.' | translate }} <a href="#" ng-click="ctrl.switch(12, 'USD')" translate>Change subscription</a></p>
-                        <p class="alert alert-info" ng-show="ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false" translate>You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalNetworkError === true">
+                            <span translate-context="Error" translate>Error connecting to PayPal.</span>
+                            <a href="#" ng-click="ctrl.initPaypal()">Click here</a> to try again.
+                        </p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 1">
+                            <span translate-context="Info" translate>We only accept PayPal for annual subscriptions, click the link to switch to an annual subscription.</span>
+                            <a href="#" ng-click="ctrl.switch(12, 'USD')" translate translate-context="Action">Change subscription</a>
+                        </p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 2">
+                            <span translate-context="Info" translate>We only accept PayPal for annual subscriptions. PayPal is also only accepted for US Dollar plans. Click here to switch to an annual US Dollar subscription.</span>
+                            <a href="#" ng-click="ctrl.switch(12, 'USD')" translate translate-context="Action">Change subscription</a>
+                        </p>
+                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 3">
+                            <span translate-context="Info" translate>All PayPal orders are charged in US Dollar, click the link to change your subscription to US Dollar.</span>
+                            <a href="#" ng-click="ctrl.switch(12, 'USD')" translate translate-context="Action">Change subscription</a>
+                        </p>
+                        <p class="alert alert-info" ng-show="ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false" translate translate-context="Info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
                         <p class="text-center" ng-show="ctrl.approvalURL">
                             <a href="#" ng-click="ctrl.openPaypalTab()">
                                 <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
@@ -138,30 +151,30 @@
                         </p>
                     </div>
                     <div ng-show="ctrl.choice.value === 'bitcoin'">
-                        <p class="alert alert-info" translate>To pay via Bitcoin or Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
+                        <p class="alert alert-info" translate translate-context="Info">To pay via Bitcoin or Cash, please email us at <strong>contact@protonmail.ch</strong> for instructions.</p>
                     </div>
                     <hr />
                 </div>
                 <p ng-show="ctrl.displayCoupon === false">
-                    <a href="#" ng-click="ctrl.displayCoupon = true" translate>Add coupon</a>
+                    <a href="#" ng-click="ctrl.displayCoupon = true" translate translate-context="Action" translate-comment="payment modal add coupon button">Add coupon</a>
                 </p>
                 <div class="pm_grid" ng-show="ctrl.displayCoupon === true">
                     <div class="col-2-3">
                         <div class="input-icon">
                             <i class="fa fa-tag"></i>
-                            <input type="text" ng-model="ctrl.coupon" placeholder="{{ 'Coupon' | translate }}" />
+                            <input type="text" ng-model="ctrl.coupon" placeholder-translate="Coupon" />
                         </div>
                     </div>
                     <div class="col-1-3">
-                        <button type="button" class="pm_button primary" ng-click="ctrl.apply()" translate>Apply</button>
+                        <button type="button" class="pm_button primary" ng-click="ctrl.apply()" translate translate-context="Action">Apply</button>
                     </div>
                 </div>
-                <p translate>By clicking Create Account, you agree to abide by ProtonMail's <a href='https://protonmail.com/terms-and-conditions' target='_blank'>Terms and Conditions</a>.</p>
+                <p translate translate-context="Info">By clicking Create Account, you agree to abide by ProtonMail's <a href='https://protonmail.com/terms-and-conditions' target='_blank'>Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
-    <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()" ng-show="ctrl.choice.value === 'card'" translate>Submit</button>
+    <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+    <button type="button" class="pm_button primary pull-right" ng-click="ctrl.submit()" ng-show="ctrl.choice.value === 'card'" translate translate-context="Action">Submit</button>
 </div>

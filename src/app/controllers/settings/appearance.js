@@ -14,7 +14,7 @@ angular.module("proton.controllers.Settings")
     notify) {
     $scope.appearance = {
         locales: [
-            {label: gettextCatalog.getString('English', null, 'Default'), key: 'en_US'}
+            {label: gettextCatalog.getString('English', null), key: 'en_US'}
         ],
         cssTheme: authentication.user.Theme,
         ComposerMode: authentication.user.ComposerMode,
@@ -37,7 +37,7 @@ angular.module("proton.controllers.Settings")
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
                     authentication.user.Theme = $scope.appearance.cssTheme;
-                    notify({message: gettextCatalog.getString('Theme saved', null, 'Default'), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('Theme saved', null), classes: 'notification-success'});
                     deferred.resolve();
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
@@ -71,7 +71,7 @@ angular.module("proton.controllers.Settings")
             .then(function(result) {
                 if(result.data && result.data.Code === 1000) {
                     authentication.user.ComposerMode = value;
-                    notify({message: gettextCatalog.getString('Compose mode saved', null, 'Default'), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('Compose mode saved', null, 'Info'), classes: 'notification-success'});
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 }
@@ -94,7 +94,7 @@ angular.module("proton.controllers.Settings")
                         $rootScope.layoutMode = 'rows';
                     }
 
-                    notify({message: gettextCatalog.getString('Layout saved', null, 'Default'), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success'});
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 }
@@ -117,7 +117,7 @@ angular.module("proton.controllers.Settings")
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
                     authentication.user.MessageButtons = $scope.appearance.MessageButtons;
-                    notify({message: gettextCatalog.getString('Buttons position saved', null, 'Default'), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('Buttons position saved', null), classes: 'notification-success'});
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 }

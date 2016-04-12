@@ -81,6 +81,7 @@ angular.module('proton', [
     'proton.toggle',
     'proton.tooltip',
     'proton.transformation',
+    'proton.translate',
     'proton.wizard',
 
     // Filters

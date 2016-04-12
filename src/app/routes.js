@@ -459,7 +459,7 @@ angular.module('proton.routes', [
         },
         onEnter: function(gettext) {
             window.onbeforeunload = function() {
-                return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null, 'Default');
+                return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
         },
         onExit: function() {
@@ -823,7 +823,7 @@ angular.module('proton.routes', [
                     if (user.Delinquent < 3) {
                         deferred.resolve();
                     } else {
-                        notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Error'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger'});
                         $state.go('secured.payments');
                         deferred.reject();
                     }

@@ -1,31 +1,31 @@
 <div class="modal-content pm_form">
     <div class="modal-header">
-        <h4 class="modal-title" translate>Add user</h4>
+        <h4 class="modal-title" translate-context="Title" translate>Add user</h4>
     </div>
     <div class="modal-body">
         <div class="pm_grid">
             <div class="col-1-3">
-                <label translate>Name</label>
+                <label translate translate-context="Title">Name</label>
             </div>
             <div class="col-2-3">
-                <input autofocus type="text" ng-model="ctrl.name" placeholder="ex: Thomas Anderson">
+                <input autofocus type="text" ng-model="ctrl.name" placeholder-translate="ex: Thomas Anderson">
             </div>
         </div>
         <div class="pm_grid">
             <div class="col-1-3">
-                <label translate>Login password</label>
+                <label translate translate-context="Title">Login password</label>
             </div>
             <div class="col-2-3">
-                <input type="text" ng-model="ctrl.loginPassword" class="margin" placeholder="{{ 'Login password' | translate }}">
-                <input type="text" ng-model="ctrl.confirmPassword" placeholder="{{ 'Confirm login password' | translate }}">
+                <input type="text" ng-model="ctrl.loginPassword" class="margin" placeholder-translate="Login password">
+                <input type="text" ng-model="ctrl.confirmPassword" placeholder-translate="Confirm login password">
             </div>
         </div>
         <div class="pm_grid">
             <div class="col-1-3">
-                <label translate>User storage</label>
+                <label translate translate-context="Title">User storage</label>
             </div>
             <div class="col-2-3">
-                <input type="text" ng-model="ctrl.quota" class="inline" placeholder="Storage as MB">
+                <input type="text" ng-model="ctrl.quota" class="inline" placeholder-translate="Storage as MB">
                 <span class="pm_select inline mini">
                     <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
                     <i class="fa fa-angle-down"></i>
@@ -37,18 +37,19 @@
         </div>
         <div class="pm_grid">
             <div class="col-1-3">
-                <label translate>Private user</label>
+                <label translate translate-context="Title">Private user</label>
             </div>
             <div class="col-2-3">
                 <label>
-                    <input type="checkbox" ng-model="ctrl.private" /> {{ 'Make user private' | translate }}
+                    <input type="checkbox" ng-model="ctrl.private" />
+                    <span translate>Make user private</span>
                 </label>
-                <p class="alert alert-info" translate>Organization administrators cannot access the messages of private users.</p>
+                <p class="alert alert-info" translate translate-context="Info">Organization administrators cannot access the messages of private users.</p>
             </div>
         </div>
     </div>
 </div>
 <div class="modal-footer text-right">
-    <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate>Cancel</button>
-    <button type="button" class="pm_button primary" ng-click="ctrl.next()" translate>Next</button>
+    <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+    <button type="button" class="pm_button primary" ng-click="ctrl.next()" translate translate-context="Action">Next</button>
 </div>

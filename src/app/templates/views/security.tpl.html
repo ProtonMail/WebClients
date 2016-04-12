@@ -4,48 +4,48 @@
         <div class="row">
             <section class="setting pm_form full">
                 <form method="post">
-                    <legend translate-context="Default" translate>Authentication Logs</legend>
+                    <legend translate-context="Title" translate-comment="logs page heading" translate>Authentication Logs</legend>
                         <div class="pull-right" id="logActions" ng-hide="doLogging === 0">
-                            <button class="pm_button pull-left" ng-click="clearLogs()" translate-context="Default" translate>Wipe</button>
-                            <button class="pm_button pull-left" ng-click="downloadLogs()" translate-context="Default" translate>Download</button>
+                            <button class="pm_button pull-left" ng-click="clearLogs()" translate-context="Action" translate>Wipe</button>
+                            <button class="pm_button pull-left" ng-click="downloadLogs()" translate-context="Action" translate>Download</button>
                             <span ng-show="(logCount > logItemsPerPage)">
                                 <paginator page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs" />
                             </span>
                         </div>
                         <div class="pm_buttons pull-left">
                             <a ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">{{ disabledText }}</a>
-                            <a ng-class="{'active': doLogging === 1}" class="divider" ng-click="setLogging(1)" translate-context="Default" translate>Basic</a>
-                            <a ng-class="{'active': doLogging === 2}" class="divider" ng-click="setLogging(2)" translate-context="Default" translate>Advanced</a>
+                            <a ng-class="{'active': doLogging === 1}" class="divider" ng-click="setLogging(1)" translate-context="Action" translate>Basic</a>
+                            <a ng-class="{'active': doLogging === 2}" class="divider" ng-click="setLogging(2)" translate-context="Action" translate>Advanced</a>
                         </div>
                         <a class="pm_button pull-left" id="logRefresh" ng-hide="doLogging === 0" ng-click="initLogs()">
                             <i class="fa fa-rotate-right"></i>
                         </a>
                         <div class="clear" ng-show="doLogging == 0">
                             <p>&nbsp;</p>
-                            <p class="alert" translate>You can enable authentication logging to see who and when your account is accessed. We will record the IP address that accesses the account and the time, as well as failed attempts.</p>
+                            <p class="alert" translate translate-context="Info">You can enable authentication logging to see who and when your account is accessed. We will record the IP address that accesses the account and the time, as well as failed attempts.</p>
                         </div>
                         <div id="logArea" ng-show="doLogging != 0" class="clear">
-                            <p class="alert alert-info" ng-show="logs.length < 1 && haveLogs" translate-context="Default" translate>No logs yet.</p>
-                            <p class="alert alert-info" ng-show="!haveLogs && doLogging !== 0"><i class="fa fa-spin fa-spinner"></i translate-context="Default" translate>Fetching logs...</p>
+                            <p class="alert alert-info" ng-show="logs.length < 1 && haveLogs"  translate>No logs yet.</p>
+                            <p class="alert alert-info" ng-show="!haveLogs && doLogging !== 0"><i class="fa fa-spin fa-spinner"></i  translate>Fetching logs...</p>
                             <table class="pm_table" id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
                                 <thead>
                                     <tr>
-                                        <th translate-context="Default" translate>Event</th>
-                                        <th style="width:12rem" ng-show="doLogging == 2" class="text-right">IP</th>
-                                        <th style="width:12rem" class="text-right" translate-context="Default" translate>Time</th>
+                                        <th translate-context="Title" translate>Event</th>
+                                        <th style="width:12rem" ng-show="doLogging == 2" class="text-right" translate translate-context="Title">IP</th>
+                                        <th style="width:12rem" class="text-right" translate-context="Title" translate>Time</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="log in logs | limitTo: logItemsPerPage: (currentLogPage - 1) * logItemsPerPage" ng-class="{ 'danger': (log.Event == 0) }">
                                         <td scope="row">
                                             <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle text-red"></i>
-                                                <span translate-context="Default" translate>Login failed</span>
+                                                <span translate-context="Error" translate-comment="authentication log record" translate>Login failed</span>
                                             </span>
                                             <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i>
-                                                <span translate-context="Default" translate>Login success</span>
+                                                <span  translate>Login success</span>
                                             </span>
                                             <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i>
-                                                <span translate-context="Default" translate>Log out</span>
+                                                <span  translate>Log out</span>
                                             </span>
                                         </td>
                                         <td ng-show="doLogging == 2" class="text-right">

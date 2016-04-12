@@ -15,7 +15,9 @@ angular.module("proton.controllers.Settings")
     $scope.logs = [];
     $scope.logItemsPerPage = 20;
     $scope.doLogging = authentication.user.LogAuth;
-    $scope.disabledText = gettextCatalog.getString('Disable', null, 'Default');
+
+    /// logging page
+    $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
     $scope.haveLogs = false;
 
     $scope.loadLogs = function (page) {
@@ -40,8 +42,8 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.clearLogs = function() {
-        var title = gettextCatalog.getString('Clear', null, 'Default');
-        var message = gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Default');
+        var title = gettextCatalog.getString('Clear', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info');
 
         confirmModal.activate({
             params: {
@@ -53,7 +55,7 @@ angular.module("proton.controllers.Settings")
                             function(response) {
                                 $scope.logs = [];
                                 $scope.logCount = 0;
-                                notify({message: gettextCatalog.getString('Logs cleared', null, 'Default'), classes: 'notification-success'});
+                                notify({message: gettextCatalog.getString('Logs cleared', null), classes: 'notification-success'});
                             },
                             function(error) {
                                 notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
@@ -93,14 +95,14 @@ angular.module("proton.controllers.Settings")
         if (value === 0) {
             confirmModal.activate({
                 params: {
-                    message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Default'),
+                    message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null),
                     confirm: function() {
                         Setting.setLogging({LogAuth: 0});
                         $scope.doLogging = 0;
                         authentication.user.LogAuth = 0;
-                        notify({message: gettextCatalog.getString('Logging preference updated', null, 'Default'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Logging preference updated', null), classes: 'notification-success'});
                         confirmModal.deactivate();
-                        $scope.disabledText = gettextCatalog.getString('Disabled', null, 'Default');
+                        $scope.disabledText = gettextCatalog.getString('Disabled', null);
                     },
                     cancel: function() {
                         confirmModal.deactivate();
@@ -111,8 +113,10 @@ angular.module("proton.controllers.Settings")
             $scope.doLogging = value;
             authentication.user.LogAuth = value;
             Setting.setLogging({LogAuth: value});
-            notify({message: gettextCatalog.getString('Logging preference updated', null, 'Default'), classes: 'notification-success'});
-            $scope.disabledText = gettextCatalog.getString('Disable', null, 'Default');
+            notify({message: gettextCatalog.getString('Logging preference updated', null), classes: 'notification-success'});
+
+            /// logging page
+            $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
         }
     };
 
