@@ -104,7 +104,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * @param {String} route
      */
     $scope.goTo = function(route) {
-        var sameFolder = $state.$current.name === route;
+        var sameFolder = $state.$current.name.indexOf(route) !== -1;
         var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
         var params = {page: null, filter: null, sort: null};
 
@@ -112,7 +112,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         $scope.hideMobileSidebar();
 
         // Call last event if first page and same folder
-        if(sameFolder === true && firstPage === true) {
+        if (sameFolder === true && firstPage === true) {
             $scope.lastEvent();
         }
 
