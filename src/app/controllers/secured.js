@@ -97,13 +97,11 @@ angular.module("proton.controllers.Secured", [])
      * Returns a string for the storage bar
      * @return {String} "12.5"
      */
-    $scope.storagePercentage = function() {
-        if (authentication.user && authentication.user.UsedSpace && authentication.user.MaxSpace) {
-            return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
-        } else {
-            return '';
-        }
-    };
+    if (authentication.user && authentication.user.UsedSpace && authentication.user.MaxSpace) {
+        $scope.storagePercentage = {
+            'width': Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace) 
+        };
+    }
 
     $scope.storageString = function() {
         return $filter('humanSize')(authentication.user.UsedSpace) + ' / ' + $filter('humanSize')(authentication.user.MaxSpace);
