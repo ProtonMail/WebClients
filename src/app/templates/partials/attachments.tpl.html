@@ -7,7 +7,7 @@
         <em></em>
     </header>
     <section>
-        <a ng-repeat="attachment in message.Attachments" class="pm_button" ng-class="{ 'dead': attachment.decrypting || ('eo.reply' | includedByState) }" data-download-text="{{ 'Download' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment(attachment, $event, message)">
+        <a ng-repeat="attachment in message.Attachments" class="pm_button" ng-class="{ 'dead': attachment.decrypting, 'remove': ('eo.reply' | includedByState) }" data-download-text="{{ 'Download' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment(attachment, $event, message)">
             <em></em>
             <i class="fa fa-file-o"         ng-show="!attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa fa-archive-o"      ng-show="attachment.MIMEType.indexOf('zip')            !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
@@ -22,6 +22,9 @@
             <i class="fa stuff" ng-class="{ 'fa-cog fa-spin': attachment.decrypting, 'fa-download': attachment.decrypted }"></i>
             <strong class="name">{{ attachment.Name }}</strong>
             <span class="size">{{ attachment.Size | humanSize }}</span>
+            <button ng-click="removeAttachment(attachment)" ng-show="'eo.reply' | includedByState" class="removeButton">
+                <i class="fa fa-times"></i>
+            </button>
         </a>
         <div class="clear"></div>
     </section>

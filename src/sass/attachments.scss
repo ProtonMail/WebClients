@@ -81,6 +81,9 @@
 			background-color: $light;
 			max-width: 100%;
 			float: left;
+			&.remove {
+				padding-right: 2.5rem;
+			}
 			em {
 				height: 40px;
 				width: 2.5rem;
@@ -111,6 +114,17 @@
 				padding-bottom: 5px;
 				float: left;
 				clear: both;
+			}
+			.removeButton {
+				appearance: none;
+				-webkit-appearance: none;
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				position: relative;
+				right: -.5rem;
+				z-index: 999;
+				font-size: 1rem;
 			}
 			& > .fa {
 				color: $gray;
