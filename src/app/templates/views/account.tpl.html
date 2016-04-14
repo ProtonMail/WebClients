@@ -261,7 +261,7 @@
             <section class="setting pm_form">
                 <legend translate-context="Title" translate>Delete account</legend>
                 <p ng-show="user.Subscribed === 1" class="alert alert-info"><i class="fa fa-info-circle"></i> <span translate-context="Info" translate>You must unsubscribe before requesting deletion of your account.</span></p>
-                <button ng-show="user.Subscribed === 0" class="pm_button error" ng-click="deleteAccount()" translate-context="Action" translate>Delete your account</button>
+                <button class="pm_button error" ng-click="deleteAccount()" translate-context="Action" translate>Delete your account</button>
             </section>
         </div>
     </div>
