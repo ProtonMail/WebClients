@@ -84,8 +84,8 @@
                         </p>
                     </div>
                     <footer class="text-right">
-                        <button type="button" class="pm_button pull-left" ng-click="clearEncrypt(message, params, encryptForm);" translate translate-context="Action">Cancel</button>
-                        <button type="submit" class="pm_button primary" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid" translate translate-context="Action">Set</button>
+                        <button type="button" class="pm_button pull-left mobileFull" ng-click="clearEncrypt(message, params, encryptForm);" translate translate-context="Action">Cancel</button>
+                        <button type="submit" class="pm_button primary mobileFull" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid" translate translate-context="Action">Set</button>
                     </footer>
                 </div>
             </div>
@@ -117,8 +117,8 @@
                     <span translate>Hours</span>
                 </div>
                 <footer class="text-right">
-                    <button type="button" class="pm_button pull-left" ng-click="clearExpiration(message)" translate translate-context="Action">Cancel</button>
-                    <button type="button" class="pm_button primary" ng-click="closePanel(message)" translate translate-context="Action">Set</button>
+                    <button type="button" class="pm_button pull-left mobileFull" ng-click="clearExpiration(message)" translate translate-context="Action">Cancel</button>
+                    <button type="button" class="pm_button primary mobileFull" ng-click="closePanel(message)" translate translate-context="Action">Set</button>
                 </footer>
             </div>
 
@@ -241,7 +241,7 @@
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true" translate translate-context="Action">Save</span>
                     </button>
-                    <button class="pm_button primary" ng-disabled="message.allowSend() || message !== selected" ng-click="send(message)">
+                    <button class="pm_button primary mobileFull" ng-disabled="message.allowSend() || message !== selected" ng-click="send(message)">
                         <span ng-hide="message.allowSend()" translate translate-context="Action">Send</span>
                         <span ng-show="message.uploading > 0" translate translate-context="Action">Uploading</span>
                         <span ng-show="message.sending === true" translate translate-context="Action">Sending</span>
