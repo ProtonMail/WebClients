@@ -50,7 +50,7 @@
         </div>
 
         <div class="row">
-            <section class="setting pm_form">
+            <section class="setting pm_form full">
                 <form method="post" class="toolbar-button-options" novalidate ng-submit="saveButtonsPosition(buttonsForm)" name="buttonsForm">
                     <legend translate-context="Title" translate>Toolbar</legend>
                     <p translate-context="Info" translate>Choose your prefered button order for marking messages as read / unread.</p>
@@ -70,14 +70,14 @@
                     </label>
                 </form>
             </section>
-            <section class="setting pm_form pull-right">
+            <!-- <section class="setting pm_form pull-right">
                 <legend translate-context="Title" translate>Internationalization</legend>
                 <label for="selectDefaultLanguage"  translate translate-comment="form option">Choose your default language.</label>
                 <span class="pm_select">
                     <select id="selectDefaultLanguage" ng-model="appearance.locale" ng-options="locale.label for locale in appearance.locales" ng-change="saveDefaultLanguage()"></select>
                     <i class="fa fa-angle-down"></i>
                 </span>
-            </section>
+            </section> -->
         </div>
 
         <div class="row">
