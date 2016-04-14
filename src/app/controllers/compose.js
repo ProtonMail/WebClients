@@ -541,7 +541,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.initMessage = function(message, save) {
-        if (user.Delinquent < 3) {
+        if (authentication.user.Delinquent < 3) {
             // Not in the delinquent state
         } else {
             // In delinquent state
