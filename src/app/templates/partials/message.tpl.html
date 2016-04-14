@@ -25,7 +25,7 @@ ng-class="{
                 <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
                 <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
                 <span class="contact">
-                    <span class="from" ng-show="message.expand" translate>From</span>:
+                    <span class="from" ng-show="message.expand"><span translate>From</span>:</span>
                     <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name': true }}</strong>
                     <em ng-click="$event.stopPropagation();">
                         {{ message.Sender | contact:'Address' }}
@@ -77,9 +77,9 @@ ng-class="{
     <div class="details" ng-show="message.expand">
 
         <div class="recipients-summary" ng-hide="toggleDetails === true">
-            <strong translate>To</strong>: 
+            <strong translate>To</strong>:
             <span ng-repeat="email in recipients()" title="{{ email | contact:'Address' }}">
-                {{ email | contact: 'Name':true }}<span ng-hide="$last">, </span>
+                {{ email | contact: 'Name': true }}<span ng-hide="$last">, </span>
             </span>
         </div>
 
