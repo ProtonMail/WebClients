@@ -8,13 +8,13 @@
                     <button type="button" class="pm_button primary" ng-click="add()" translate-context="Action" translate>Add</button>
                 </div>
                 <p class="alert alert-info" ng-show="methods.length === 0" translate-context="Info" translate>You have no saved payment methods, you can add a payment method by clicking 'ADD'.</p>
-                <table class="pm_table" ng-show="methods.length > 0">
+                <table class="pm_table" ng-show="methods.length > 0" id="paymentMethodsTable">
                     <thead>
                         <tr>
-                            <th translate-context="Title" translate>Number</th>
-                            <th translate-context="Title" translate>Expiration</th>
-                            <th translate-context="Title" translate>Type</th>
-                            <th translate-context="Title" translate>Actions</th>
+                            <th class="number" translate-context="Title" translate>Number</th>
+                            <th class="expiration" translate-context="Title" translate>Expiration</th>
+                            <th class="type" translate-context="Title" translate>Type</th>
+                            <th class="actions" translate-context="Title" translate>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -25,7 +25,7 @@
                                 <span class="pm_badge">{{ method.Type }}</span>
                                 <span ng-show="$first" class="pm_badge" translate>Default</span>
                             </td>
-                            <td>
+                            <td class="text-right">
                                 <button type="button" class="pm_button link" ng-hide="$first === true" ng-click="default(method)" translate-context="Action" translate>Make default</button>
                                 <button type="button" class="pm_button link" ng-click="edit(method)" translate-context="Action" translate>Edit</button>
                                 <button type="button" class="pm_button link" ng-click="delete(method)" translate-context="Action" translate>Delete</button>
@@ -41,22 +41,25 @@
                 </div>
                 <p class="alert alert-danger" ng-show="delinquent === true" translate-context="Info" translate>Your account currently has an overdue invoice. Please pay all unpaid invoices.</p>
                 <p class="alert alert-info" ng-show="invoices.length === 0" translate-context="Info" translate>You have no invoices.</p>
-                <table class="pm_table" ng-show="invoices.length > 0">
+                <table class="pm_table" ng-show="invoices.length > 0" id="invoicesTable">
                     <thead>
                         <tr>
-                            <th translate-context="Title" translate>Invoice</th>
-                            <th translate-context="Title" translate>Type</th>
-                            <th translate-context="Title" translate>Status</th>
-                            <th translate-context="Title" translate>Create time</th>
-                            <th class="text-right" translate-context="Title" translate>Actions</th>
+                            <th class="invoice" translate-context="Title" translate>ID</th>
+                            <th class="paid" translate-context="Title" translate>Amount Paid / Due</th>
+                            <th class="type" translate-context="Title" translate>Type</th>
+                            <th class="status" translate-context="Title" translate>Status</th>
+                            <th class="time" translate-context="Title" translate>Create time</th>
+                            <th class="text-right actions" translate-context="Title" translate>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="invoice in invoices">
                             <td>
-                                <span class="bold">{{ invoice.ID }}</span>
-                                <span ng-show="invoice.State === 0">({{ invoice.AmountDue / 100 | currency: invoice.Currency }})</span>
-                                <span ng-show="invoice.State === 1">({{ invoice.AmountCharged / 100 | currency: invoice.Currency }})</span>
+                                <span class="bold">#{{ invoice.ID }}</span>
+                            </td>
+                            <td>
+                                <span ng-show="invoice.State === 0">{{ invoice.AmountDue / 100 | currency: invoice.Currency }}</span>
+                                <span ng-show="invoice.State === 1">{{ invoice.AmountCharged / 100 | currency: invoice.Currency }}</span>
                             </td>
                             <td>
                                 <span class="pm_badge" ng-show="invoice.Type === 0" translate-comment="payment type badge" translate>Other</span>
