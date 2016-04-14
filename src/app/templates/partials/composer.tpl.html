@@ -231,7 +231,7 @@
                     <i class="fa fa-clock-o"></i>
                     <span ng-show="!!message.maximized" translate translate-context="Action">Expiration</span>
                 </button>
-                <span class="text-muted saveAt" ng-show="message.Time" translate>Saved at {{ message.Time | date : 'shortTime' }}</span>
+                <span class="text-muted saveAt" ng-show="message.Time" translate>Saved at {{ message.Time | date : "shortTime" }}</span>
                 <div class="pull-right">
                     <button class="pm_button" ng-disabled="message.allowDiscard()" ng-click="close(message, true, false)" pt-tooltip-translate="Delete draft" pt-placement="top" pt-tooltip-context="Action">
                         <i class="fa fa-trash-o"></i>
