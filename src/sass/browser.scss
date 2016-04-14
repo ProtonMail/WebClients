@@ -147,6 +147,15 @@ input:-moz-ui-invalid {
 
 
 .ua-safari {
+
+    input[type="checkbox"] {
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        transform: scale(2);
+    }
+    
     .conversation .pm_labels label {
         &:first-child,
         &:hover {

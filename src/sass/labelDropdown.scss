@@ -13,6 +13,14 @@
 		display: block;
 		text-align: left;
 	}
+	.alsoArchive {
+		display: block;
+		clear: both;
+		margin: 1rem -15px;
+		border-top: 1px solid $border;
+		border-bottom: 1px solid $border;
+		padding: 0 15px;
+	}
 	.labelSearch {
 		position: relative;
 		display: block;

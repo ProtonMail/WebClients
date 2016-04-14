@@ -27,9 +27,9 @@
                 </div>
             </div>
         </form>
-        <label ng-show="labelsSelected().length > 0">
+        <label ng-show="labelsSelected().length > 0" class="text-right alsoArchive">
+            <span translate   translate-comment="Form checkbox option" class="pull-left">Also archive</span>
             <input type="checkbox" ng-model="alsoArchive" />
-            <span translate   translate-comment="Form checkbox option">Also archive</span>
         </label>
         <div class="clearfix">
             <button class="createLabel pull-left pm_button" ng-click="toggle()" pt-tooltip-translate="Add new label">
