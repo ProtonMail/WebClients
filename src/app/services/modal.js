@@ -454,7 +454,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('payModal', function(pmModal, Payment, notify) {
+.factory('payModal', function(pmModal, Payment, notify, eventManager) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/pay.tpl.html',
@@ -500,6 +500,8 @@ angular.module("proton.modals", [])
                 Payment.pay(params.invoice.ID, parameters)
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
+                        // manually fetch event log
+                        eventManager.call();
                         params.close(true);
                     } else if (result.data && result.data.Error) {
                         notify({message: result.data.Error, classes: 'notification-danger'});
