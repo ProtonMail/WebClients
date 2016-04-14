@@ -7,11 +7,11 @@
             <div class="storageArea">
 	            <span class="current">{{ user.UsedSpace | humanSize }}</span>
 	            <div class="bar">
-	                <em style="width: {{ storagePercentage() }}%"></em>
+	                <em style="width: {{ storageString() }}%"></em>
 	            </div>
 	            <span class="total">{{ user.MaxSpace | humanSize }}</span>
             </div>
-            <span><strong>{{ storagePercentage() }}% </strong translate>Storage space used.</span>
+            <span><strong>{{ storageString() }}% </strong translate>Storage space used.</span>
         </div>
     </section>
     <section>

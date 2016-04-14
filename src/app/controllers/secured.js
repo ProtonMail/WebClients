@@ -98,8 +98,8 @@ angular.module("proton.controllers.Secured", [])
      * @return {String} "12.5"
      */
     if (authentication.user && authentication.user.UsedSpace && authentication.user.MaxSpace) {
-        $scope.storagePercentage = {
-            'width': Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace) 
+        $scope.stylePourcentage = {
+            'width': Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace)
         };
     }
 
