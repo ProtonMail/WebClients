@@ -23,10 +23,11 @@
                     </tbody>
                 </table>
                 <div ng-show="ctrl.amountDue > 0">
+                    <p class="alert alert-info" ng-show="ctrl.methods.length === 0" translate translate-context="Info">You need to add a credit card before to pay with it.</p>
                     <div class="margin pm_grid" ng-show="ctrl.currency === 'USD'">
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices"> <span translate>Credit card</span>
+                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices" ng-disabled="ctrl.methods.length > 0"> <span translate>Credit card</span>
                             </label>
                         </div>
                         <div class="col-1-2">

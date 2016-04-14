@@ -460,16 +460,24 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/pay.tpl.html',
         controller: function(params) {
             // Variables
-            this.choice = 'card';
             this.amount = params.amount;
             this.amountDue = params.amountDue;
             this.credit = params.credit;
             this.currency = params.currency;
             this.methods = params.methods;
-            this.method = this.methods[0];
             this.invoice = params.invoice;
 
             // Functions
+            this.initialization = function() {
+                if (this.methods.length > 0) {
+                    this.choice = 'card';
+                    this.method = this.methods[0];
+                } else {
+                    this.choice = 'paypal';
+                    this.initPaypal();
+                }
+            }.bind(this);
+
             this.label = function(method) {
                 return '•••• •••• •••• ' + method.Details.Last4;
             };
@@ -480,7 +488,7 @@ angular.module("proton.modals", [])
                     Currency: params.currency
                 };
 
-                if (params.amountDue > 0) {
+                if (this.choice === 'card' && this.methods.length > 0) {
                     parameters.PaymentMethodID = this.method.ID;
                 }
 
@@ -553,6 +561,8 @@ angular.module("proton.modals", [])
                 this.childWindow.close();
                 window.removeEventListener('message', this.receivePaypalMessage, false);
             }.bind(this);
+
+            this.initialization();
         }
     });
 })
