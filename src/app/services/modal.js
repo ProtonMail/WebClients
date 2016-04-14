@@ -469,12 +469,17 @@ angular.module("proton.modals", [])
 
             // Functions
             this.initialization = function() {
-                if (this.methods.length > 0) {
-                    this.choice = 'card';
-                    this.method = this.methods[0];
-                } else {
-                    this.choice = 'paypal';
-                    this.initPaypal();
+                if (this.amountDue > 0) {
+                    if (this.methods.length > 0) {
+                        this.choice = 'card';
+                        this.method = this.methods[0];
+                    } else {
+                        this.choice = 'paypal';
+                        this.initPaypal();
+                    }
+                }
+                else {
+                    this.choice = 'none';
                 }
             }.bind(this);
 
