@@ -541,6 +541,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.initMessage = function(message, save) {
+        if (user.Delinquent < 3) {
+            // Not in the delinquent state
+        } else {
+            // In delinquent state
+            notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger'});
+            return false;
+        }
+
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
             $rootScope.maximizedComposer = true;

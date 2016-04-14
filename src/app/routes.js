@@ -541,6 +541,21 @@ angular.module('proton.routes', [
 
     .state('secured.contacts', {
         url: '/contacts',
+        resolve: {
+            delinquent: function($q, $state, gettextCatalog, user, notify) {
+                var deferred = $q.defer();
+
+                if (user.Delinquent < 3) {
+                    deferred.resolve();
+                } else {
+                    notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger'});
+                    $state.go('secured.payments');
+                    deferred.reject();
+                }
+
+                return deferred.promise;
+            }
+        },
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/contacts.tpl.html',
