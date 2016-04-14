@@ -117,7 +117,10 @@
 				border: 1px solid $border;
 				margin-bottom: 5px;
 				input {
-					right: 15px;
+					right: 0;
+					height: initial !important;
+					width: initial !important;
+					margin: 10px;
 				}
 			}
 		}
