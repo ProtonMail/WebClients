@@ -866,4 +866,28 @@ body.mobileMode {
     .pm_buttons.paginator {
         margin: 0 1rem;
     }
+    #invoicesTable {
+        display: none;
+    }
+    #invoicesList {
+        &, li {
+            display: block;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 1rem;
+            border: 1px solid $border;
+            p {
+                display: block;
+                border-bottom: 1px solid $border;
+                padding: .5rem 1rem;
+                margin: 0;
+                &.title {
+                    background: $read;
+                }
+            }
+        }
+    }
 }
