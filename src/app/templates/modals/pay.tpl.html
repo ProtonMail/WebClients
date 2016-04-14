@@ -27,7 +27,7 @@
                     <div class="margin pm_grid" ng-show="ctrl.currency === 'USD'">
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices" ng-disabled="ctrl.methods.length > 0"> <span translate>Credit card</span>
+                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices" ng-disabled="ctrl.methods.length === 0"> <span translate>Credit card</span>
                             </label>
                         </div>
                         <div class="col-1-2">
