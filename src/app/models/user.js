@@ -23,8 +23,8 @@ angular.module('proton.models.user', [])
         unlock: function(params) {
             return $http.put(url.get() + '/users/unlock', params);
         },
-        delete: function() {
-            return $http.put(url.get() + '/users/delete');
+        delete: function(params) {
+            return $http.put(url.get() + '/users/delete', params);
         }
     };
 
