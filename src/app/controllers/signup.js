@@ -36,11 +36,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.getUserInfo = false;
         $scope.finishCreation = false;
 
-        $scope.signup = {
-            verificationSent: false,
-            smsVerificationSent: false
-        };
-
         $scope.generating = false;
         $scope.domains = [];
 
@@ -135,10 +130,16 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
         // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
         window.captchaSendMessage = function() {
-            iframe = document.getElementById('pm_captcha');
+            var iframe = document.getElementById('pm_captcha');
             iframe.contentWindow.postMessage(message, 'https://secure.protonmail.com');
         };
 
+    };
+
+    $scope.setIframeSrc = function() {
+        var iframe = document.getElementById('pm_captcha');
+        iframe.onload = captchaSendMessage;
+        iframe.src = "https://secure.protonmail.com/recaptcha.html";
     };
 
     $scope.notificationEmailValidation = function() {

@@ -80,7 +80,7 @@
         <label for="password">
             <em class="num">5</em><span translate translate-context="Title" translate-comment="Antispam section of account creation">Are you human?</span>
         </label>
-        <p class="help">To help fight spammers, please verify you are human. You can verify via email, text (sms), or solve a reCaptcha:</p>
+        <p class="help">To help fight spammers, please verify you are human.</p>
         <div ng-show="showEmail">
             <label>
                 <input type="radio" ng-model="verificator" value="email" />
@@ -88,9 +88,9 @@
             </label>
         </div>
         <div ng-show="showCaptcha">
-            <label>
+            <label ng-click="setIframeSrc()">
                 <input type="radio" ng-model="verificator" value="recaptcha" />
-                <span translate translate-context="Title">reCaptcha</span>
+                <span>reCAPTCHA</span>
             </label>
         </div>
         <div ng-show="showSms">
@@ -149,11 +149,11 @@
             </div>
         </div>
 
-        <div ng-if="verificator === 'recaptcha'" id="recaptchaFrame">
+        <div ng-show="verificator === 'recaptcha'" id="recaptchaFrame">
             <p>&nbsp;</p>
-            <h3 translate-context="Title" translate>reCaptcha verification</h3>
+            <h3 translate-context="Title" translate>reCAPTCHA verification</h3>
             <span class="loading"  translate>Loading...</span>
-            <iframe id="pm_captcha" src="https://secure.protonmail.com/recaptcha.html" sandbox="allow-scripts allow-same-origin" onload="captchaSendMessage()"></iframe>
+            <iframe id="pm_captcha" sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
 
         <div class="text-center">
