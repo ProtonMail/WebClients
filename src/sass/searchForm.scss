@@ -162,9 +162,10 @@ body.mobileMode {
 			display: none;
 		}
 		#advancedSearchDropdown {
-			top: 35px;
+			top: 70px;
 			box-shadow: none;
 			border-radius: none;
+			padding-top: 0;
 			.wrap {
 				border-radius: 0;
 				border-bottom: 1px solid $border;
