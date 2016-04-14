@@ -681,7 +681,7 @@ body.mobileMode {
 			}
 			.options {
 				padding-bottom: 4rem;
-				bottom: initial !important;
+				bottom: 0 !important;
 				.pm_select {
 					margin: 0 0 0 .5rem;
 				}
@@ -701,7 +701,7 @@ body.mobileMode {
 			span {
 				display: none;
 			}
-			&.primary {
+			&.mobileFull {
 				span {
 					display: block;
 				}
