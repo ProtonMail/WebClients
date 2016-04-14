@@ -232,12 +232,37 @@
             width: 9rem;
         }
     }
-    #invoicesTable {
-        .actions {
-            width: 3.5rem;
+    #paymentMethodsTable {
+        .number {
+            width: auto;
         }
-        .price {
-            width: 3.5rem;
+        .expiration {
+            width: 9rem;
+        }
+        .type {
+            width: 9rem;
+        }
+        .actions {
+            width: 9rem;
+            text-align: right;
+        }
+    }
+    #invoicesTable {
+        .invoice {
+            width: 5rem;
+        }
+        .type {
+            width: 8rem;
+        }
+        .status {
+            width: 8rem;
+        }
+        .time {
+            width: 8rem;
+        }
+        .actions {
+            width: 9rem;
+            text-align: right;
         }
     }
     #tableSubscription {
