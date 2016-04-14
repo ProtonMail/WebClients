@@ -475,11 +475,17 @@ angular.module("proton.modals", [])
             };
 
             this.submit = function() {
-                Payment.pay(params.invoice.ID, {
+                var parameters = {
                     Amount: params.amountDue,
-                    Currency: params.currency,
-                    PaymentMethodID: this.method.ID
-                }).then(function(result) {
+                    Currency: params.currency
+                };
+
+                if (params.amountDue > 0) {
+                    parameters.PaymentMethodID = this.method.ID;
+                }
+
+                Payment.pay(params.invoice.ID, parameters)
+                .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         params.close(true);
                     } else if (result.data && result.data.Error) {
