@@ -3,7 +3,7 @@
         <span ng-repeat="email in emails" class="email">
             <span class="label-email" title="{{ email | contact }}">
                 <span ng-bind="email | contact: 'Name'"></span>
-                <a ng-click="onRemove($index)" pt-tooltip-translate="Remove" pt-tooltip-translate-context="Action">
+                <a href="#" ng-click="onRemove($index)">
                     <i class="fa fa-times"></i>
                 </a>
             </span>
