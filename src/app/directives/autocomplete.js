@@ -129,7 +129,7 @@ angular.module('proton.autocomplete', [])
                 $timeout.cancel(timeoutBlur);
                 timeoutBlur = $timeout(function() {
                     scope.onSubmit();
-                }, 100);
+                }, 250);
             };
 
             scope.onRemove = function(index) {
