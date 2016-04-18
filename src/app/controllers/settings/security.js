@@ -51,17 +51,16 @@ angular.module("proton.controllers.Settings")
                 message: message,
                 confirm: function() {
                     networkActivityTracker.track(
-                        Logs.clearLogs().then(
-                            function(response) {
+                        Logs.clearLogs()
+                        .then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
                                 $scope.logs = [];
                                 $scope.logCount = 0;
                                 notify({message: gettextCatalog.getString('Logs cleared', null), classes: 'notification-success'});
-                            },
-                            function(error) {
-                                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
-                                $log.error(error);
+                            } else {
+
                             }
-                        )
+                        })
                     );
                     confirmModal.deactivate();
                 },

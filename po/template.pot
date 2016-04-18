@@ -520,7 +520,7 @@ msgctxt "Title"
 msgid "Are you human?"
 msgstr ""
 
-#: src/app/controllers/settings/security.js:98
+#: src/app/controllers/settings/security.js:95
 msgid "Are you sure you want to clear all your logs?"
 msgstr ""
 
@@ -1404,7 +1404,7 @@ msgid "Deselect all"
 msgstr ""
 
 #. logging page
-#: src/app/controllers/settings/security.js:119
+#: src/app/controllers/settings/security.js:116
 #: src/app/controllers/settings/security.js:20
 #: src/app/templates/views/addresses.tpl.html:33
 #: src/app/templates/views/addresses.tpl.html:57
@@ -1426,7 +1426,7 @@ msgstr ""
 
 #. address state badge
 #. form option
-#: src/app/controllers/settings/security.js:105
+#: src/app/controllers/settings/security.js:102
 #: src/app/templates/views/account.tpl.html:221
 #: src/app/templates/views/addresses.tpl.html:49
 #: src/app/templates/views/domains.tpl.html:147
@@ -2577,8 +2577,8 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
-#: src/app/controllers/settings/security.js:103
-#: src/app/controllers/settings/security.js:116
+#: src/app/controllers/settings/security.js:100
+#: src/app/controllers/settings/security.js:113
 msgid "Logging preference updated"
 msgstr ""
 
@@ -2634,7 +2634,7 @@ msgctxt "Action"
 msgid "Logout"
 msgstr ""
 
-#: src/app/controllers/settings/security.js:58
+#: src/app/controllers/settings/security.js:59
 msgid "Logs cleared"
 msgstr ""
 
@@ -4372,7 +4372,6 @@ msgstr ""
 #: src/app/controllers/settings/members.js:272
 #: src/app/controllers/settings/payments.js:88
 #: src/app/controllers/settings/payments.js:91
-#: src/app/controllers/settings/security.js:61
 msgctxt "Error"
 msgid "Unable to save your changes, please try again."
 msgstr ""
