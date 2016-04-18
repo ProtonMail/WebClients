@@ -41,7 +41,7 @@ angular.module("proton.transformation", [])
                     var parent = angular.element(blockquote).parent().clone(); // Clone the parent of the current blockquote
                     var textSplitted = parent.text().replace(/\s+/g, '').split(blockquote.text().replace(/\s+/g, ''));
 
-                    if (angular.isArray(textSplitted) && textSplitted[0].length > 0) {
+                    if (angular.isArray(textSplitted) && textSplitted.length > 0 && textSplitted[0].length > 0) {
                         var button = angular.element('<button/>', {
                             title: gettextCatalog.getString('Show previous message', null, 'Title'),
                             class: 'fa fa-ellipsis-h pm_button more',
