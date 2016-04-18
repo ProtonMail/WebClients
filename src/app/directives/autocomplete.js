@@ -172,7 +172,7 @@ angular.module('proton.autocomplete', [])
                         _.each(contacts, function(contact) {
                             // We limit the number of contact by 10
                             if (list.length <= 10) {
-                                if (contact.Name.toLowerCase().startsWith(value)) {
+                                if (contact.Name.toLowerCase().indexOf(value) !== -1) {
                                     list.push(contact);
                                 } else if (contact.Address.toLowerCase().startsWith(value)) {
                                     list.push(contact);
