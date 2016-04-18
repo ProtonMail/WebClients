@@ -307,7 +307,7 @@ angular.module("proton.authentication", [
                 State: this.randomString(24)
             })
             .then(
-                function(response) {
+                function(result) {
                     $log.debug(result);
 
                     if (result.data.Code === 1000) {
