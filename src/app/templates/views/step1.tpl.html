@@ -68,7 +68,7 @@
             </div>
             <p ng-if="preInvited">&nbsp;</p>
         </div><!--/.wrapper-->
-        <p translate-context="Info" translate>By clicking Create Account, you agree to abide by ProtonMail's <a href='https://protonmail.com/terms-and-conditions' target='_blank'>Terms and Conditions</a>.</p>
+        <p><span translate translate-context="Info">By clicking Create Account, you agree to abide by</span> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate-context="Title" translate>ProtonMail's Terms and Conditions</a>.</p>
         <button type="submit" class="pm_button primary large" ng-class="{ disabled: ( networkActivity.loading() || !step1.$valid ) } " translate-context="Action" translate>Create account</button>
         <p>&nbsp;</p>
         <p><a ui-sref="login" translate-context="Action" translate translate-comment="link to login">Already have an account?</a></p>
