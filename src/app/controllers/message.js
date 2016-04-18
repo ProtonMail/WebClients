@@ -473,7 +473,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     el: link,
                 });
                 attachment.decrypting = false;
-                $scope.$apply();
             } else {
                 // decode key packets
                 var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
