@@ -62,8 +62,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         timeoutRefresh = $timeout(function() {
             // Get the latest event
             eventManager.call().then(function() {
-                // Clear cache for the current mailbox
-                cache.empty(mailbox);
                 // Stop spin icon
                 $scope.spinMe = false;
             }, function(error) {
@@ -114,9 +112,9 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         // Call last event if first page and same folder
         if (sameFolder === true && firstPage === true) {
             $scope.lastEvent();
+        } else {
+            $state.go(route, params); // remove the older parameters
         }
-
-        $state.go(route, params); // remove the older parameters
     };
 
     /**
