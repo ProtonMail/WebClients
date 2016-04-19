@@ -214,7 +214,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     function onDragEnter(event) {
         $scope.isOver = true;
-        $scope.$apply();
+        // $scope.$apply();
     }
 
     function onDragStart(event) {
@@ -372,7 +372,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     event.preventDefault();
 
                     $scope.isOver = false;
-                    $scope.$apply();
+                    // $scope.$apply();
                 },
                 error: function(event) {
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
