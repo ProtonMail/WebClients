@@ -756,7 +756,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.listenEditor = function(message) {
-        if(message.editor) {
+        if (message.editor) {
             var dropzone = $('#uid' + message.uid + ' .composer-dropzone')[0];
 
             message.editor.addEventListener('focus', function() {
@@ -764,7 +764,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     message.fields = false;
                     message.ccbcc = false;
                     $('.typeahead-container').scrollTop(0);
-                    $scope.$apply();
                 });
             });
 
