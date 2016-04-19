@@ -636,7 +636,7 @@ msgid "Basic"
 msgstr ""
 
 #. printed message info
-#: src/app/controllers/compose.js:1564
+#: src/app/controllers/compose.js:1563
 #: src/app/templates/partials/message.tpl.html:117
 #: src/app/templates/views/message.print.tpl.html:46
 msgid "BCC"
@@ -773,7 +773,7 @@ msgstr ""
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1554
+#: src/app/controllers/compose.js:1553
 #: src/app/templates/partials/message.tpl.html:103
 #: src/app/templates/views/message.print.tpl.html:39
 #: src/app/templates/views/outside.message.tpl.html:34
@@ -1404,7 +1404,7 @@ msgid "Deselect all"
 msgstr ""
 
 #. logging page
-#: src/app/controllers/settings/security.js:118
+#: src/app/controllers/settings/security.js:124
 #: src/app/controllers/settings/security.js:20
 #: src/app/templates/views/addresses.tpl.html:35
 #: src/app/templates/views/addresses.tpl.html:59
@@ -1419,7 +1419,7 @@ msgstr ""
 
 #. address state badge
 #. form option
-#: src/app/controllers/settings/security.js:104
+#: src/app/controllers/settings/security.js:106
 #: src/app/templates/views/account.tpl.html:221
 #: src/app/templates/views/addresses.tpl.html:51
 #: src/app/templates/views/domains.tpl.html:147
@@ -2582,8 +2582,8 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
-#: src/app/controllers/settings/security.js:102
-#: src/app/controllers/settings/security.js:115
+#: src/app/controllers/settings/security.js:104
+#: src/app/controllers/settings/security.js:123
 msgid "Logging preference updated"
 msgstr ""
 
@@ -2793,7 +2793,7 @@ msgctxt "Title"
 msgid "Members"
 msgstr ""
 
-#: src/app/controllers/compose.js:1530
+#: src/app/controllers/compose.js:1529
 msgid "Message discarded"
 msgstr ""
 
@@ -2806,11 +2806,11 @@ msgctxt "Title"
 msgid "Message password"
 msgstr ""
 
-#: src/app/controllers/compose.js:1166
+#: src/app/controllers/compose.js:1165
 msgid "Message saved"
 msgstr ""
 
-#: src/app/controllers/compose.js:1384
+#: src/app/controllers/compose.js:1383
 #: src/app/controllers/outside.js:144
 msgid "Message sent"
 msgstr ""
@@ -2980,7 +2980,7 @@ msgstr ""
 msgid "New mailbox password"
 msgstr ""
 
-#: src/app/controllers/compose.js:1219
+#: src/app/controllers/compose.js:1218
 msgctxt "Title"
 msgid "New message"
 msgstr ""
@@ -3058,12 +3058,12 @@ msgctxt "Info"
 msgid "No results for this search in your contacts list."
 msgstr ""
 
-#: src/app/controllers/compose.js:1229
+#: src/app/controllers/compose.js:1228
 msgctxt "Title"
 msgid "No subject"
 msgstr ""
 
-#: src/app/controllers/compose.js:1230
+#: src/app/controllers/compose.js:1229
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
@@ -4275,7 +4275,7 @@ msgstr ""
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1544
+#: src/app/controllers/compose.js:1543
 #: src/app/templates/partials/message.tpl.html:80
 #: src/app/templates/partials/message.tpl.html:89
 #: src/app/templates/partials/searchForm.tpl.html:36
