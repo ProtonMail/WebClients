@@ -466,7 +466,7 @@ angular.module("proton.controllers.Settings")
                             }
                         });
                     } else {
-                        notify({message: gettextCatalog.getString('Amount is different', null, 'Error'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Amount mismatch', null, 'Error'), classes: 'notification-danger'});
                     }
                 } else if (methods.data && methods.data.Error) {
                     notify({message: methods.data.Error, classes: 'notification-danger'});

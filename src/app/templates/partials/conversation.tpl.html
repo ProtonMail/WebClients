@@ -1,10 +1,7 @@
 <header id="conversationHeader">
     <span class="pm_buttons starButton">
-        <a
-        ng-click="toggleStar(conversation)"
-        pt-tooltip-translate="Star conversation"
-        class="fa" ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}">
-        </a>
+        <a ng-click="toggleStar(conversation)" pt-tooltip-translate="Star" class="fa fa-star-o" ng-show="!starred(conversation)"></a>
+        <a ng-click="toggleStar(conversation)" pt-tooltip-translate="Unstar" class="fa fa-star" ng-show="starred(conversation)"></a>
     </span>
     <h1>
         <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>

@@ -204,7 +204,7 @@ angular.module("proton.controllers.Contacts", [
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match) {
-                notify({message: gettextCatalog.getString('A contact already exists for this email address.', null), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('A contact already exists for this email address', null), classes: 'notification-danger'});
                 contactModal.deactivate();
             } else {
                 var newContact = {
