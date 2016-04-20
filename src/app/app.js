@@ -9,7 +9,6 @@ angular.module('proton', [
     'ngRoute',
     'ngSanitize',
     'pikaday',
-    // 'SmoothScrollbar',
     'ui.router',
 
     // Constant

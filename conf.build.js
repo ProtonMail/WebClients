@@ -56,8 +56,6 @@ module.exports = {
       "vendor/svg4everybody/dist/svg4everybody.js",
       "vendor/ical.js/build/ical.js",
       "vendor/angular-ical/dist/js/angular-ical.js",
-      "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
-      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js",
       "vendor/angular-messages/angular-messages.js",
       "vendor/svgeezy/svgeezy.js",
       "vendor/angular-gettext/dist/angular-gettext.js"
