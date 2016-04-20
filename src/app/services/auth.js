@@ -307,11 +307,11 @@ angular.module("proton.authentication", [
                 State: this.randomString(24)
             })
             .then(
-                function(response) {
-                    $log.debug(response);
+                function(result) {
+                    $log.debug(result);
 
-                    if (response.data.Code === 1000) {
-                        $log.debug('/auth/cookies:', response);
+                    if (result.data.Code === 1000) {
+                        $log.debug('/auth/cookies:', result);
                         $log.debug('/auth/cookies1: resolved');
                         $rootScope.domoArigato = true;
                         // forget the old headers, set the new ones
@@ -320,7 +320,7 @@ angular.module("proton.authentication", [
                         $log.debug('headers change', $http.defaults.headers);
 
                         var data = {
-                            SessionToken: response.data.SessionToken
+                            SessionToken: result.data.SessionToken
                         };
 
                         auth.saveAuthData( data );
@@ -329,15 +329,15 @@ angular.module("proton.authentication", [
                         $rootScope.doRefresh = true;
 
                     } else {
-                        deferred.reject({message: response.data.Error});
-                        $log.error('setAuthCookie1', response);
+                        deferred.reject({message: result.data.Error});
+                        $log.error('setAuthCookie1', result);
                     }
                 },
                 function(error) {
                     $log.error('setAuthCookie2', error);
 
-                    if (response.data && response.data.Error) {
-                        deferred.reject({message: response.data.Error});
+                    if (error.data && error.data.Error) {
+                        deferred.reject({message: error.data.Error});
                     } else {
                         deferred.reject({message: "Error setting authentication cookies."});
                     }

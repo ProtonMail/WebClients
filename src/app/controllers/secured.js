@@ -63,8 +63,10 @@ angular.module("proton.controllers.Secured", [])
         $scope.organization = organization;
     });
 
-    if (window.navigator.registerProtocolHandler) {
-        window.navigator.registerProtocolHandler('mailto', $state.href('secured.inbox', {}, {absolute: true}) + '?email=%s', 'ProtonMail');
+    if ('registerProtocolHandler' in navigator) {
+        try {
+            navigator.registerProtocolHandler('mailto', $state.href('secured.inbox', {}, {absolute: true}) + '?email=%s', 'ProtonMail');
+        } catch(e) {}
     }
 
     _.each(authentication.user.Addresses, function(address) {

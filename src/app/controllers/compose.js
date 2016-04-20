@@ -214,7 +214,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     function onDragEnter(event) {
         $scope.isOver = true;
-        $scope.$apply();
+        // $scope.$apply();
     }
 
     function onDragStart(event) {
@@ -372,7 +372,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     event.preventDefault();
 
                     $scope.isOver = false;
-                    $scope.$apply();
+                    // $scope.$apply();
                 },
                 error: function(event) {
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
@@ -756,7 +756,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.listenEditor = function(message) {
-        if(message.editor) {
+        if (message.editor) {
             var dropzone = $('#uid' + message.uid + ' .composer-dropzone')[0];
 
             message.editor.addEventListener('focus', function() {
@@ -764,7 +764,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     message.fields = false;
                     message.ccbcc = false;
                     $('.typeahead-container').scrollTop(0);
-                    $scope.$apply();
                 });
             });
 
@@ -1350,7 +1349,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                     message.encrypting = false;
                                     message.sending = true;
                                     Message.send(parameters).$promise.then(function(result) {
-                                        if(angular.isDefined(result.Error)) {
+                                        if (angular.isDefined(result.Error)) {
                                             message.sending = false;
                                             deferred.reject(new Error(result.Error));
                                         } else {
