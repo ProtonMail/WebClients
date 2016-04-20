@@ -33,7 +33,7 @@
                 <em class="num">2</em>
                 <span translate translate-context="Title">Login password</span>
             </label>
-            <p class="help" translate-context="Info" translate>This is used to log you into our system.</p>
+            <p class="help" translate-context="Info" translate>This is used to log you into your account.</p>
             <input id="password" name="password" ng-model="account.loginPassword" type="password" class="form-control margin" placeholder-translate="Choose a login password" maxlength="{{ maxPW }}" required />
             <div ng-show="step1.$submitted || step1.password.$touched">
                 <p ng-show="step1.$submitted && step1.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Login password is required.</p>
@@ -46,7 +46,8 @@
                 <em class="num">3</em>
                 <span translate translate-context="Title">Mailbox password</span>
             </label>
-            <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt your messages. This is private and only you know it.</p>
+            <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
+        your messages. Do not lose this password, we cannot recover it.</p>
             <input id="MBpassword" name="MBpassword" ng-model="account.mailboxPassword" type="password" class="form-control margin" placeholder-translate="Choose a mailbox password" required />
             <div ng-show="step1.$submitted || step1.MBpassword.$touched">
                 <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="alert alert-danger" translate-context="Error" translate>Mailbox password is required.</p>
