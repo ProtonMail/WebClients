@@ -10,7 +10,7 @@
     "bower": "^1.7.7",
     "findup-sync": "^0.3.0",
     "grunt": "^0.4.5",
-    "grunt-angular-gettext": "git@github.com:bartbutler/grunt-angular-gettext.git",
+    "grunt-angular-gettext": "git+ssh://git@github.com/bartbutler/grunt-angular-gettext.git",
     "grunt-cache-bust": "1.1.0",
     "grunt-cli": "^0.1.13",
     "grunt-commands": "^0.1.8",
@@ -33,7 +33,7 @@
     "grunt-wait": "^0.1.0",
     "http-proxy": "^1.13.2",
     "jshint": "^2.9.1",
-    "load-grunt-tasks": "^3.4.1",
+    "load-grunt-tasks": "^3.5.0",
     "lodash": "^4.6.1",
     "serve-static": "^1.10.2"
   },
