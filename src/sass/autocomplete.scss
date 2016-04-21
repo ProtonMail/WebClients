@@ -6,17 +6,24 @@
         box-sizing: border-box;
     }
     .input-email {
-        display: block;
-        cursor: text;
+        display: flex;
+        flex-wrap: wrap;
         min-height: 30px;
         line-height: 30px;
         padding: 0 6px;
         vertical-align: middle;
         position: relative;
-        form input {
-            max-width: 95%;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        form {
+            flex: 1;
+
+            input {
+                display: block;
+                width: 100%;
+            }
+
+            input:focus {
+                min-width: 100px;
+            }
         }
     }
 
@@ -52,15 +59,9 @@
         box-shadow: none;
         height: 30px;
         line-height: 30px;
-        width: 330px;
         overflow: hidden;
         white-space: nowrap;
         transition: none;
-    }
-
-    .input-email form {
-        margin-bottom: 0;
-        display: inline;
     }
 
     .autocomplete-email {

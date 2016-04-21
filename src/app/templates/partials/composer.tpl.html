@@ -131,25 +131,18 @@
                     </button>
                     <span class="overlay" ng-show="message.Attachments.length > 0" pt-tooltip-translate="Remove Attachments to change your From address."></span>
                 </div>
-                <div class="row placeholder" ng-click="focusTo(message)" ng-hide="message.fields === true">
-                    <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0" translate translate-context="Title">Recipients</label>
-                    <div>{{ recipients(message) }}</div>
-                    <button class="pm_button link pull-right" ng-click="$event.stopPropagation();toggleCcBcc(message);attHide(message);" pt-tooltip-translate="CC BCC" pt-placement="left">
-                        <i class="fa fa-angle-down transition"></i>
-                    </button>
-                </div>
-                <div class="row toRow" ng-show="message.fields === true">
+                <div class="row toRow">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">To</label>
                     <autocomplete emails="message.ToList" />
                     <button class="pm_button link pull-right" ng-click="toggleCcBcc(message);attHide(message);" pt-tooltip-translate="CC BCC" pt-placement="left">
                         <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
-                <div class="row" ng-show="message.fields === true && message.ccbcc === true">
+                <div class="row" ng-show="message.ccbcc === true">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">CC</label>
                     <autocomplete emails="message.CCList" />
                 </div>
-                <div class="row" ng-show="message.fields === true && message.ccbcc === true">
+                <div class="row" ng-show="message.ccbcc === true">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">BCC</label>
                     <autocomplete emails="message.BCCList" />
                 </div>

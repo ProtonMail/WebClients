@@ -109,26 +109,32 @@ angular.module('proton.autocomplete', [])
             };
             /**
             * Submit a new address
+            * @param {Boolean} enter
             */
-            scope.onSubmit = function() {
-                if (scope.params.selected !== null) {
+            scope.onSubmit = function(enter) {
+                if (enter === true && scope.params.selected !== null) { 
                     scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
-                } else if(scope.params.newValue.length > 0) {
+                } else if (scope.params.newValue.length > 0) {
                     var emails = getEmails(scope.params.newValue);
 
-                    if(emails.length > 0) {
+                    if (emails.length > 0) {
                         scope.emails = _.union(scope.emails, emails);
+                        scope.params.newValue = '';
                     }
 
-                    scope.params.newValue = '';
                     scope.onChange();
                 }
+            };
+
+            scope.onFocus = function() {
+                scope.focussed = true;
             };
 
             scope.onBlur = function() {
                 $timeout.cancel(timeoutBlur);
                 timeoutBlur = $timeout(function() {
-                    scope.onSubmit();
+                    scope.onSubmit(false);
+                    scope.focussed = false;
                 }, 250);
             };
 
@@ -218,11 +224,11 @@ angular.module('proton.autocomplete', [])
             scope.onKeyUp = function(event, email) {
                 switch (event.keyCode) {
                     case ENTER_KEY:
-                        scope.onSubmit();
+                        scope.onSubmit(true);
                         break;
                     case TAB_KEY:
                         if(scope.params.newValue.length > 0) {
-                            scope.onSubmit();
+                            scope.onSubmit(true);
                         } else {
                             // Focus next input (autocomplete or subject)
                             angular.element(element).parent().nextAll('.row:visible:first').find('input').focus();
