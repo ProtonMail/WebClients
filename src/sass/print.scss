@@ -3,6 +3,8 @@
 	#secured-print {
 		* {
 			word-break: break-word;
+			border-radius: 0 !important;
+			box-shadow: none !important;
 		}
 		table.print {
 			width: initial !important;
