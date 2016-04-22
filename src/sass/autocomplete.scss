@@ -87,24 +87,22 @@
     .autocomplete-email li {
         padding: 0;
         margin: 0;
+
+        &.selected, &:hover.selected {
+            background-color: $gray-light;
+        }
+
+        &:hover {
+            background-color: $light;
+        }
     }
 
     .autocomplete-email a {
         color: $gray;
-        cursor: pointer;
         line-height: 30px;
         padding-left: 10px;
         padding-right: 10px;
         display: block;
         text-decoration: none;
-    }
-
-    .autocomplete-email a.selected,
-    .autocomplete-email a:hover.selected {
-        background-color: $gray-light;
-    }
-
-    .autocomplete-email a:hover {
-        background-color: $light;
     }
 }

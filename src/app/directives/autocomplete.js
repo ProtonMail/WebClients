@@ -81,6 +81,15 @@ angular.module('proton.autocomplete', [])
                 return emails;
             };
 
+            var scrollToSelected = function() {
+                var ul = angular.element(element).find('.autocomplete-email');
+                var li = angular.element(element).find('.selected');
+
+                ul.animate({
+                    scrollTop: li.offset().top + 'px'
+                });
+            };
+
             var getEmails = function(value) {
                 var emails = [];
                 var separators = [',', ';'];
@@ -248,6 +257,7 @@ angular.module('proton.autocomplete', [])
                             } else if(scope.params.contactsFiltered.length > 0 && scope.params.selected < scope.params.contactsFiltered.length - 1) {
                                 scope.params.selected++;
                             }
+                            scrollToSelected();
                         }
                         break;
                     case UP_KEY:
@@ -257,6 +267,7 @@ angular.module('proton.autocomplete', [])
                             } else {
                                 scope.params.selected = 0;
                             }
+                            scrollToSelected();
                         }
                         break;
                     default:
