@@ -85,9 +85,7 @@ angular.module('proton.autocomplete', [])
                 var ul = angular.element(element).find('.autocomplete-email');
                 var li = angular.element(element).find('.selected');
 
-                ul.animate({
-                    scrollTop: li.offset().top + 'px'
-                });
+                ul.scrollTop(li.offset().top - li.parent().offset().top);
             };
 
             var getEmails = function(value) {
