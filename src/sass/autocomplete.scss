@@ -2,6 +2,8 @@
     position: relative;
     color: $gray;
     font-size: 13px;
+    max-height: 64px;
+    overflow-y: auto;
     * {
         box-sizing: border-box;
     }
