@@ -28,7 +28,7 @@
     }
 
     .label-email {
-        border: 1px solid $gray-light;
+        border: 1px solid $gray;
         background-color: $gray-light;
         margin-top: 5px;
         text-shadow: none;
@@ -38,10 +38,6 @@
         display: inline-block;
         line-height: 20px;
         word-break: break-all;
-    }
-
-    .label-email:hover {
-        border-color: $gray;
     }
 
     .label-email a {
