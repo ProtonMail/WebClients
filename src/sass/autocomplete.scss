@@ -2,8 +2,6 @@
     position: relative;
     color: $gray;
     font-size: 13px;
-    max-height: 64px;
-    overflow-y: auto;
     * {
         box-sizing: border-box;
     }
@@ -78,33 +76,28 @@
         width: 100%;
         margin: 0;
         padding: 0;
-    }
 
-    .autocomplete-email ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
+        li {
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
 
-    .autocomplete-email li {
-        padding: 0;
-        margin: 0;
+            &.selected, &:hover.selected {
+                background-color: $gray-light;
+            }
 
-        &.selected, &:hover.selected {
-            background-color: $gray-light;
+            &:hover {
+                background-color: $light;
+            }
+
+            a {
+                color: $gray;
+                line-height: 30px;
+                padding-left: 10px;
+                padding-right: 10px;
+                display: block;
+                text-decoration: none;
+            }
         }
-
-        &:hover {
-            background-color: $light;
-        }
-    }
-
-    .autocomplete-email a {
-        color: $gray;
-        line-height: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-        display: block;
-        text-decoration: none;
     }
 }
