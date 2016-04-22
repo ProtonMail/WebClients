@@ -18,10 +18,11 @@
 
             input {
                 display: block;
-                width: 100%;
+                width: 0%;
             }
 
             input:focus {
+                width: 100%;
                 min-width: 100px;
             }
         }
