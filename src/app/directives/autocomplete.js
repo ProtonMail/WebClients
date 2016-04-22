@@ -162,10 +162,10 @@ angular.module('proton.autocomplete', [])
             scope.onAddEmail = function(email) {
                 var index = scope.emails.indexOf(email);
 
-                if(index === -1) {
-                    scope.emails.push(email);
+                if (index === -1) {
                     scope.params.selected = null;
                     scope.params.newValue = '';
+                    scope.emails.push(email);
                     angular.element(element).find('.new-value-email').focus();
                     scope.onChange();
                 }
@@ -180,37 +180,34 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onChange = function() {
-                $timeout.cancel(timeoutChange);
-                timeoutChange = $timeout(function() {
-                    if (scope.params.newValue.length > 0) {
-                        var value = scope.params.newValue.toLowerCase();
-                        var list = [];
-                        var contacts = _.map(authentication.user.Contacts, function(contact) {
-                            return { Name: contact.Name, Address: contact.Email };
-                        });
+                if (scope.params.newValue.length > 0) {
+                    var value = scope.params.newValue.toLowerCase();
+                    var list = [];
+                    var contacts = _.map(authentication.user.Contacts, function(contact) {
+                        return { Name: contact.Name, Address: contact.Email };
+                    });
 
-                        _.each(contacts, function(contact) {
-                            // We limit the number of contact by 10
-                            if (list.length <= 10) {
-                                if (contact.Name.toLowerCase().indexOf(value) !== -1) {
-                                    list.push(contact);
-                                } else if (contact.Address.toLowerCase().startsWith(value)) {
-                                    list.push(contact);
-                                }
+                    _.each(contacts, function(contact) {
+                        // We limit the number of contact by 10
+                        if (list.length <= 10) {
+                            if (contact.Name.toLowerCase().indexOf(value) !== -1) {
+                                list.push(contact);
+                            } else if (contact.Address.toLowerCase().startsWith(value)) {
+                                list.push(contact);
                             }
-                        });
+                        }
+                    });
 
-                        scope.params.contactsFiltered = list;
-                    } else {
-                        scope.params.contactsFiltered = [];
-                    }
+                    scope.params.contactsFiltered = list;
+                } else {
+                    scope.params.contactsFiltered = [];
+                }
 
-                    if (scope.params.contactsFiltered.length > 0) {
-                        scope.onOpen();
-                    } else {
-                        scope.onClose();
-                    }
-                }, 250);
+                if (scope.params.contactsFiltered.length > 0) {
+                    scope.onOpen();
+                } else {
+                    scope.onClose();
+                }
             };
 
             scope.onKeyDown = function(event, email) {
