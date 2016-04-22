@@ -1,4 +1,11 @@
 angular.module('proton.autocomplete', [])
+.filter('highlight', function() {
+    return function(string, value) {
+        var regex = new RegExp('(' + value + ')', 'gi');
+
+        return string.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, '<strong>$1</strong>');
+    };
+})
 .directive('autocomplete', function ($timeout, regexEmail, authentication) {
     return {
         restrict: 'E',
@@ -112,7 +119,7 @@ angular.module('proton.autocomplete', [])
             * @param {Boolean} enter
             */
             scope.onSubmit = function(enter) {
-                if (enter === true && scope.params.selected !== null) { 
+                if (enter === true && scope.params.selected !== null) {
                     scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
                 } else if (scope.params.newValue.length > 0) {
                     var emails = getEmails(scope.params.newValue);

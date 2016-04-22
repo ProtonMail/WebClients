@@ -14,7 +14,7 @@
     </label>
     <ul class="autocomplete-email" ng-show="params.contactsFiltered.length > 0 && focussed === true">
         <li ng-repeat="email in params.contactsFiltered">
-            <a href="#" ng-click="onAddEmail(email)" ng-class="{'selected': $index === params.selected}" ng-bind="email | contact"></a>
+            <a href="#" ng-click="onAddEmail(email)" ng-class="{'selected': $index === params.selected}" ng-bind-html="email | contact | highlight: params.newValue"></a>
         </li>
     </ul>
 </div>
