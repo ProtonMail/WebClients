@@ -17,12 +17,11 @@
             flex: 1;
 
             input {
+                width: 100%;
                 display: block;
-                width: 1%;
             }
 
             input:focus {
-                width: 100%;
                 min-width: 100px;
             }
         }
