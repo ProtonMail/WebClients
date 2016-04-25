@@ -43,10 +43,10 @@
                 <form method="post" name="notificationForm" ng-submit="saveNotification(notificationForm)" novalidate  >
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="noticeePassword" translate-context="Title" translate translate-comment="form label for entering current login password">Current login password</label>
+                            <label for="noticeePassword" translate-context="Title" translate translate-comment="form label for entering current login password">Current Login Password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" autocomplete="off" placeholder-translate="Current login password" required ng-model="noticeePassword" id="noticeePassword" />
+                            <input type="password" autocomplete="off" placeholder-translate="Current Login Password" required ng-model="noticeePassword" id="noticeePassword" />
                         </div>
                     </div>
                     <div class="clearfix">
@@ -94,10 +94,10 @@
                 <form method="post" ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="oldLoginPassword" translate-context="Title" translate translate-comment="current login password for heading for changing login password">Current password</label>
+                            <label for="oldLoginPassword" translate-context="Title" translate translate-comment="current login password for heading for changing login password">Current Password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder-translate="Current password" required />
+                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder-translate="Current Password" required />
                             <div ng-messages="loginForm.oldLoginPassword.$error" class="text-red" ng-if="loginForm.oldLoginPassword.$touched">
                                 <p ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
@@ -116,10 +116,10 @@
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label translate-context="Title" translate translate-comment="form label / heading for confirming new login password">Confirm new password</label>
+                            <label translate-context="Title" translate translate-comment="form label / heading for confirming new login password">Confirm New Password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder-translate="Confirm new password" required class="margin" />
+                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder-translate="Confirm New Password" required class="margin" />
                             <div ng-messages="loginForm.confirmLoginPassword.$error" class="text-red" ng-if="loginForm.confirmLoginPassword.$touched">
                                 <p ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
@@ -139,10 +139,10 @@
                 <form method="post" ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="currentLoginPassword" translate-context="Title" translate translate-comment="form heading for current login password">Current login password</label>
+                            <label for="currentLoginPassword" translate-context="Title" translate translate-comment="form heading for current login password">Current Login Password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder-translate="Current login password" required="" />
+                            <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder-translate="Current Login Password" required="" />
                             <div ng-messages="mailboxForm.currentLoginPassword.$error" class="text-red" ng-if="mailboxForm.currentLoginPassword.$touched">
                                 <p ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
@@ -150,10 +150,10 @@
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="oldMailboxPassword" translate-context="Title" translate translate-comment="form heading for current mailbox password">Current mailbox password</label>
+                            <label for="oldMailboxPassword" translate-context="Title" translate translate-comment="form heading for current mailbox password">Current Mailbox Password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" placeholder-translate="Current mailbox password" required="" />
+                            <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" placeholder-translate="Current Mailbox Password" required="" />
                             <div ng-messages="mailboxForm.oldMailboxPassword.$error" class="text-red" ng-if="mailboxForm.oldMailboxPassword.$touched">
                                 <p ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
@@ -172,10 +172,10 @@
                     </div>
                     <div class="clearfix">
                         <div class="col left">
-                            <label for="confirmMailboxPassword"  Title>Confirm new mailbox password</label>
+                            <label for="confirmMailboxPassword" Title translate>Confirm New Mailbox Password</label>
                         </div>
                         <div class="col right">
-                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder-translate="Confirm new mailbox password" class="margin" required="" />
+                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder-translate="Confirm New Mailbox Password" class="margin" required="" />
                             <div ng-messages="mailboxForm.confirmMailboxPassword.$error" class="text-red" ng-if="mailboxForm.confirmMailboxPassword.$touched">
                                 <p ng-message="required"  Error>Field required</p>
                             </div>

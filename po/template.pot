@@ -342,7 +342,7 @@ msgid "Addresses added"
 msgstr ""
 
 #: src/app/templates/views/domains.tpl.html:120
-msgid "Addresses used."
+msgid "Addresses used"
 msgstr ""
 
 #. DMARC status badge
@@ -960,12 +960,12 @@ msgstr ""
 
 #: src/app/templates/modals/user/member.tpl.html:20
 #: src/app/templates/views/step1.tpl.html:41
-msgid "Confirm login password"
+msgid "Confirm Login Password"
 msgstr ""
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:42
 #: src/app/templates/views/step1.tpl.html:55
-msgid "Confirm mailbox password"
+msgid "Confirm Mailbox Password"
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:65
@@ -973,23 +973,24 @@ msgctxt "Title"
 msgid "Confirm message password"
 msgstr ""
 
+#: src/app/templates/views/account.tpl.html:175
 #: src/app/templates/views/account.tpl.html:178
-msgid "Confirm new mailbox password"
+msgid "Confirm New Mailbox Password"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:122
-msgid "Confirm new password"
+msgid "Confirm New Password"
 msgstr ""
 
 #. form label / heading for confirming new login password
 #: src/app/templates/views/account.tpl.html:119
 msgctxt "Title"
-msgid "Confirm new password"
+msgid "Confirm New Password"
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:68
 #: src/app/templates/views/reset-login-password.tpl.html:47
-msgid "Confirm password"
+msgid "Confirm Password"
 msgstr ""
 
 #: src/app/controllers/conversations.js:890
@@ -1070,7 +1071,7 @@ msgstr ""
 
 #: src/app/templates/views/step1.tpl.html:73
 msgctxt "Action"
-msgid "Create account"
+msgid "Create Account"
 msgstr ""
 
 #: src/app/controllers/settings/labels.js:60
@@ -1131,7 +1132,7 @@ msgstr ""
 
 #: src/app/templates/views/account.tpl.html:145
 #: src/app/templates/views/account.tpl.html:49
-msgid "Current login password"
+msgid "Current Login Password"
 msgstr ""
 
 #. form heading for current login password
@@ -1139,27 +1140,27 @@ msgstr ""
 #: src/app/templates/views/account.tpl.html:142
 #: src/app/templates/views/account.tpl.html:46
 msgctxt "Title"
-msgid "Current login password"
+msgid "Current Login Password"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:156
-msgid "Current mailbox password"
+msgid "Current Mailbox Password"
 msgstr ""
 
 #. form heading for current mailbox password
 #: src/app/templates/views/account.tpl.html:153
 msgctxt "Title"
-msgid "Current mailbox password"
+msgid "Current Mailbox Password"
 msgstr ""
 
 #: src/app/templates/views/account.tpl.html:100
-msgid "Current password"
+msgid "Current Password"
 msgstr ""
 
 #. current login password for heading for changing login password
 #: src/app/templates/views/account.tpl.html:97
 msgctxt "Title"
-msgid "Current password"
+msgid "Current Password"
 msgstr ""
 
 #: src/app/templates/views/domains.tpl.html:28
@@ -1273,7 +1274,7 @@ msgstr ""
 
 #: src/app/templates/views/unlock.tpl.html:8
 msgctxt "Title"
-msgid "Decrypt mailbox"
+msgid "Decrypt Mailbox"
 msgstr ""
 
 #: src/app/templates/views/outside.unlock.tpl.html:7
@@ -3993,7 +3994,7 @@ msgctxt "Title"
 msgid "SMS verification"
 msgstr ""
 
-#: src/app/controllers/signup.js:216
+#: src/app/controllers/signup.js:241
 msgctxt "Error"
 msgid "Something went wrong"
 msgstr ""
