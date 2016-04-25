@@ -166,8 +166,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} address
      */
     $scope.unlinkAddress = function(member, address) {
-        var title = gettextCatalog.getString('Unlink address', null);
-        var message = gettextCatalog.getString('Are you sure you want to unlink this address?', null);
+        var title = gettextCatalog.getString('Unlink address', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to unlink this address?', null, 'Info');
 
         confirmModal.activate({
             params: {
@@ -178,7 +178,7 @@ angular.module("proton.controllers.Settings")
                         if (result.data && result.data) {
                             address.Status = 0;
                             confirmModal.deactivate();
-                            notify({message: gettextCatalog.getString('Address disabled', null), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success'});
                         }
                     });
                 },
@@ -219,7 +219,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.remove = function(member) {
         var title = gettextCatalog.getString('Remove member', null, 'Title');
-        var message = gettextCatalog.getString('Are you sure you want to remove this member?', null);
+        var message = gettextCatalog.getString('Are you sure you want to remove this member?', null, "Info");
         var index = $scope.members.indexOf(member);
 
         confirmModal.activate({

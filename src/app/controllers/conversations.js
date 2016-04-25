@@ -887,8 +887,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} mailbox
      */
     $scope.empty = function(mailbox) {
-        var title = gettextCatalog.getString('Confirmation', null);
-        var message = gettextCatalog.getString('Are you sure?') + ' ' + gettextCatalog.getString('This cannot be undone.', null);
+        var title = gettextCatalog.getString('Confirmation', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure?', null, 'Info') + ' ' + gettextCatalog.getString('This cannot be undone.', null);
         var promise;
 
         if(['drafts', 'spam', 'trash'].indexOf(mailbox) !== -1) {

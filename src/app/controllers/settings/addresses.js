@@ -77,7 +77,7 @@ angular.module('proton.controllers.Settings')
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                 eventManager.call();
-                notify({message: gettextCatalog.getString('Address enabled', null), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Address enabled', null, 'Info'), classes: 'notification-success'});
             } else if(angular.isDefined(result.data) && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
@@ -95,12 +95,12 @@ angular.module('proton.controllers.Settings')
         confirmModal.activate({
             params: {
                 title: gettextCatalog.getString('Disable address', null),
-                message: gettextCatalog.getString('Are you sure you want to disable this address?', null),
+                message: gettextCatalog.getString('Are you sure you want to disable this address?', null, 'Title'),
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
                             eventManager.call();
-                            notify({message: gettextCatalog.getString('Address disabled', null), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success'});
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
@@ -137,7 +137,7 @@ angular.module('proton.controllers.Settings')
                         .then(function(result) {
                             if(angular.isDefined(result.data) && result.data.Code === 1000) {
                                 eventManager.call();
-                                notify({message: gettextCatalog.getString('Address updated', null), classes: 'notification-success'});
+                                notify({message: gettextCatalog.getString('Address updated', null, 'Info'), classes: 'notification-success'});
                                 identityModal.deactivate();
                             } else if(angular.isDefined(result.data) && result.data.Error) {
                                 notify({message: result.data.Error, classes: 'notification-danger'});
@@ -170,7 +170,7 @@ angular.module('proton.controllers.Settings')
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Address deleted', null), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success'});
                             $scope.disabledAddresses.splice(index, 1); // Remove address in UI
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
@@ -236,7 +236,7 @@ angular.module('proton.controllers.Settings')
             Setting.addressOrder({Order: order})
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Address order saved', null), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('Address order saved', null, 'Info'), classes: 'notification-success'});
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {

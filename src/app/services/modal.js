@@ -1055,7 +1055,8 @@ angular.module("proton.modals", [])
                     })
                 ).then(function(result) {
                     if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        notify({message: gettextCatalog.getString('Address added', null), classes: 'notification-success'});
+                        /// notification
+                        notify({message: gettextCatalog.getString('Address added', null, 'Info'), classes: 'notification-success'});
                         this.domain.Addresses.push(result.data.Address);
                         eventManager.call();
                     } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
