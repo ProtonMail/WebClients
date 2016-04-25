@@ -466,8 +466,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.uploading++;
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
-
-        $scope.composerStyle();
         $rootScope.$broadcast('composerModeChange');
 
         var cleanup = function( result ) {
@@ -578,7 +576,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // This timeout is really important to load the structure of Squire
         $timeout(function() {
-            $rootScope.$broadcast('squireHeightChanged');
             $scope.composerStyle();
             // forward case: we need to save to get the attachments
             if(save === true) {
@@ -605,59 +602,64 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.composerStyle = function() {
         var composers = $('.composer');
-        var composerWidth = $('.composer').eq(0).outerWidth();
+        var environment = function() {
+            if (!composers) { return; }
 
-        _.each(composers, function(composer, index) {
+            var set = {};
 
-            var margin = 20;
-            var reverseIndex = $scope.messages.length - index;
-            var message = $scope.messages[index];
-            var styles = {};
-            var widthWindow = $('body').outerWidth();
-            var windowHeight = $(window).height() - margin;
-            var composerHeight = $(composer).outerHeight();
+            set.composerWidth = composers.eq(0).outerWidth();
+            set.margin = ($('html').hasClass('ua-windows_nt')) ? 40 : 20;
+            set.windowWidth = $('body').outerWidth();
+            set.messagesCount = $scope.messages.length;
+            set.isBootstrap = (tools.findBootstrapEnvironment() === 'xs') ? true : false;
 
-            if ($('html').hasClass('ua-windows_nt')) {
-                margin = 40;
+            /*
+            Is the available space enough ?
+            */
+            if (!set.isBootstrap && ((set.windowWidth / set.messagesCount) < set.composerWidth) ) {
+                console.log('set.overlap = ');
+                /* overlap is a ratio that will share equaly the space available between overlayed composers. */
+                set.overlap = ((set.windowWidth - set.composerWidth - (2 * set.margin)) / (set.messagesCount - 1));
             }
 
-            if (tools.findBootstrapEnvironment() === 'xs') {
-                var marginTop = 80; // px
-                var top = marginTop;
+            return set;
+        };
+
+        /* used as _ context */
+        var context = environment();
+
+        _.each(composers, function(composer, index) {
+            var styles = { opacity: 1 };
+
+            if (this.isBootstrap) {
+                var top = 80; // px
 
                 styles.top = top + 'px';
             } else {
-                var marginRight = margin; // px
-                var widthComposer = composerWidth; // px
+                var c = this;
+                var messagesCount = c.messagesCount;
+                var margin = c.margin;
+                var isCurrent = ((messagesCount - index) === messagesCount) ? true : false;
 
-                if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
-                    right = (index * (widthComposer + marginRight)) + marginRight;
+                if (isCurrent) {
+                    // set the current composer to right : margin
+                    styles.right = margin;
                 } else {
-                    widthWindow -= margin; // margin left
-                    var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
-                    right = index * (widthComposer - ( overlap + margin ));
-                }
+                    var composerWidth = c.composerWidth;
+                    var windowWidth = c.windowWidth;
+                    var innerWindow = c.innerWindow;
+                    var overlap = c.overlap;
 
-                if (reverseIndex === $scope.messages.length) {
-                    right = marginRight;
-                    index = $scope.messages.length;
+                    styles.right = (overlap) ? (index * overlap) : (index * (composerWidth + margin) + margin);
+                    styles.top = '';
                 }
-
-                styles.top = '';
-                styles.right = right + 'px';
-                styles.opacity = 1;
             }
 
-            // Height - depreciated. pure css solution - Jason
-            // if(windowHeight < composerHeight) {
-                // styles.height = windowHeight + 'px';
-            // } else {
-                // styles.height = 'auto';
-            // }
-
-            $(composer).css(styles);
-
-        });
+            /* Set the new styles */
+            $timeout(function() {
+                $(composer).css(styles);
+            }, 250);
+        }, context);
     };
 
     /**
@@ -793,8 +795,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.toggleCcBcc = function(message) {
         message.ccbcc = !!!message.ccbcc;
-
-        $scope.composerStyle();
     };
 
     $scope.hideFields = function(message) {
@@ -1565,12 +1565,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.focusTo = function(message) {
-        $rootScope.$broadcast('squireHeightChanged');
-        $scope.composerStyle();
         // Focus input
         $timeout(function() {
             $('#uid' + message.uid + ' .toRow input.new-value-email').focus();
-        });
+        }, 250);
     };
 
     $scope.focusNextInput = function(event) {
