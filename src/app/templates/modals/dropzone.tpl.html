@@ -10,7 +10,7 @@
                 <p ng-hide="ctrl.fileDropped" class="text-center dropzone" id="dropzone" ng-class="{'hover': hover}">
                     <br />
                     <br />
-                    {{ 'Drop here
+                    <span translate translate-context="Info">Drop here</span>
                 </p>
                 <p ng-show="ctrl.fileDropped" class="text-center bold" ng-bind="ctrl.fileDropped"></p>
                 <input id="selectedFile" type="file" style="display: none;" />

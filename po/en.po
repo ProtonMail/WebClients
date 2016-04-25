@@ -238,7 +238,7 @@ msgctxt "Action"
 msgid "Add new contact"
 msgstr "Add new contact"
 
-#: src/app/templates/directives/labels.tpl.html:35
+#: src/app/templates/directives/labels.tpl.html:36
 msgctxt "Action"
 msgid "Add new label"
 msgstr "Add new label"
@@ -518,7 +518,7 @@ msgctxt "Title"
 msgid "Appearance"
 msgstr "Appearance"
 
-#: src/app/templates/directives/labels.tpl.html:38
+#: src/app/templates/directives/labels.tpl.html:39
 #: src/app/templates/modals/payment/payment.tpl.html:169
 #: src/app/templates/modals/storage.tpl.html:24
 msgctxt "Action"
@@ -746,13 +746,13 @@ msgstr "By clicking Create Account, you agree to abide by"
 #: src/app/templates/modals/payment/payment.tpl.html:172
 msgctxt "Info"
 msgid ""
-"By clicking Create Account, you agree to abide by ProtonMail's <a href="
+"By clicking Create Account, you agree to abide by ProtonMails <a href="
 "\"https://protonmail.com/terms-and-conditions\" target=\"_blank\">Terms and "
 "Conditions</a>."
 msgstr ""
-"By clicking Create Account, you agree to abide by ProtonMail’s <a "
-"href=“https://protonmail.com/terms-and-conditions” target=“_blank”>Terms and "
-"Conditions</a>."
+"By clicking Create Account, you agree to abide by ProtonMails <a "
+"href=« https://protonmail.com/terms-and-conditions » target=« _blank »>Terms "
+"and Conditions</a>."
 
 #: src/app/controllers/compose.js:93 src/app/routes.js:462
 msgid ""
@@ -5230,6 +5230,16 @@ msgstr "YY"
 #: src/app/templates/modals/payment/payment.tpl.html:96
 msgid "ZIP code"
 msgstr "ZIP code"
+
+#~ msgctxt "Info"
+#~ msgid ""
+#~ "By clicking Create Account, you agree to abide by ProtonMail's <a href="
+#~ "\"https://protonmail.com/terms-and-conditions\" target=\"_blank\">Terms "
+#~ "and Conditions</a>."
+#~ msgstr ""
+#~ "By clicking Create Account, you agree to abide by ProtonMail’s <a "
+#~ "href=“https://protonmail.com/terms-and-conditions” target=“_blank”>Terms "
+#~ "and Conditions</a>."
 
 #~ msgid "Add new label"
 #~ msgstr "Add new label"

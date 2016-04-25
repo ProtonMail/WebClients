@@ -11,6 +11,7 @@ angular.module('proton.controllers.Settings')
     Bug,
     confirmModal,
     deleteAccountModal,
+    eventManager,
     Key,
     networkActivityTracker,
     notify,
@@ -229,28 +230,34 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveIdentity = function() {
+        var deferred = $q.defer();
         var displayName = $scope.displayName;
         var signature = $scope.signature;
 
         signature = signature.replace(/\n/g, '<br />');
 
-        networkActivityTracker.track(
-            $q.all({
-                displayName: Setting.display({DisplayName: displayName}),
-                signature: Setting.signature({Signature: signature})
-            })
-            .then(function(result) {
-                if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
-                    authentication.user.DisplayName = displayName;
-                    authentication.user.Signature = signature;
-                    notify({message: gettextCatalog.getString('Identity saved', null), classes: 'notification-success'});
-                } else {
-                    notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
-                }
-            }, function() {
+
+        $q.all({
+            displayName: Setting.display({DisplayName: displayName}),
+            signature: Setting.signature({Signature: signature})
+        })
+        .then(function(result) {
+            if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
+                notify({message: gettextCatalog.getString('Identity saved', null), classes: 'notification-success'});
+                eventManager.call()
+                .then(function() {
+                    deferred.resolve();
+                });
+            } else {
                 notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
-            })
-        );
+                deferred.reject();
+            }
+        }, function() {
+            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
+            deferred.reject();
+        });
+
+        return networkActivityTracker.track(deferred.promise);
     };
 
     $scope.saveAutosaveContacts = function(form) {
