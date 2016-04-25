@@ -412,9 +412,19 @@ var pmcrypto = (function() {
                 return packet.tag != openpgp.enums.packet.symmetricallyEncrypted && packet.tag != openpgp.enums.packet.symEncryptedIntegrityProtected;
             };
 
+            var nonData = msg.packets.filter(keyFilter);
+            var data = msg.packets.filterByTag(openpgp.enums.packet.symmetricallyEncrypted, openpgp.enums.packet.symEncryptedIntegrityProtected);
+
+            if ( nonData.length === 0 ) {
+                return reject(new Error('No non-data packets found'));
+            }
+            if ( data.length === 0 ) {
+                return reject(new Error('No data packets found'));
+            }
+
             var obj = {
-                keys: msg.packets.filter(keyFilter).write(),
-                data: msg.packets.filterByTag(openpgp.enums.packet.symmetricallyEncrypted, openpgp.enums.packet.symEncryptedIntegrityProtected).write()
+                keys: nonData.write(),
+                data: data.write()
             };
             resolve(obj);
         });
@@ -434,8 +444,16 @@ var pmcrypto = (function() {
                 bitSize: keys[0].primaryKey.getBitSize(),
                 created: keys[0].primaryKey.created
             };
-            resolve(obj);
-        }); 
+
+            encryptMessage("test message", prKey).then(
+                function() {
+                    resolve(obj);
+                },
+                function(err) {
+                    reject(err);
+                }
+            );
+        }.bind(this));
     }
 
     function binaryStringToArray(str) {
