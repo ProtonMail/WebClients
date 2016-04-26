@@ -8,7 +8,7 @@
                 <h4 class="modal-title">1. <span translate translate-context="Title">Domain</span></h4>
             </div>
             <div class="modal-body pm_form">
-                <p><span translate-comment="label for adding a new custom domain" translate>Add a domain that you own to your ProtonMail account.</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/" translate translate-context="Action">Learn more</a></p>
+                <p><span translate-comment="label for adding a new custom domain" translate translate-context="Info">Add a domain that you own to your ProtonMail account.</span> <a target="_blank" href="https://protonmail.com/support/knowledge-base/custom-domains/" translate translate-context="Action">Learn more</a></p>
                 <input ng-hide="ctrl.domain" type="text" autofocus ng-model="ctrl.name" placeholder-translate="Domain name" />
                 <textarea rows="1" ng-show="ctrl.domain" readonly ng-bind="::ctrl.domain.DomainName"></textarea>
             </div>

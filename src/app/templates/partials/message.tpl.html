@@ -86,7 +86,7 @@ ng-class="{
         <div class="recipients-details" ng-show="toggleDetails === true">
             <div ng-if="message.ToList.length" class="toGroup">
                 <span class="from">
-                    <span class="where" translate>To</span>:
+                    <span class="where" translate translate-context="Title">To</span>:
                 </span>
                 <ul>
                     <li class="contact" ng-repeat="email in message.ToList">
@@ -100,7 +100,7 @@ ng-class="{
             </div>
             <div ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true">
                 <span class="from">
-                    <span class="where" translate>CC</span>:
+                    <span class="where" translate translate-context="Title">CC</span>:
                 </span>
                 <ul>
                    <li class="contact" ng-repeat="email in message.CCList">
@@ -114,7 +114,7 @@ ng-class="{
             </div>
             <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
                 <span class="from">
-                    <span class="where" translate>BCC</span>:
+                    <span class="where" translate translate-context="Title">BCC</span>:
                 </span>
                 <ul>
                    <li class="contact" ng-repeat="email in message.BCCList">

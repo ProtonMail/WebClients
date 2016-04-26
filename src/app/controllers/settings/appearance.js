@@ -117,7 +117,7 @@ angular.module("proton.controllers.Settings")
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
                     authentication.user.MessageButtons = $scope.appearance.MessageButtons;
-                    notify({message: gettextCatalog.getString('Buttons position saved', null), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('Buttons position saved', null, 'Info'), classes: 'notification-success'});
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 }

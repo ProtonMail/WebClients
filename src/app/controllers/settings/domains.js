@@ -246,7 +246,7 @@ angular.module("proton.controllers.Settings")
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Address deleted', null), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success'});
                             domain.Addresses.splice(index, 1); // Remove address in interface
                             eventManager.call(); // Call event log manager
                             confirmModal.deactivate();
@@ -272,7 +272,7 @@ angular.module("proton.controllers.Settings")
     $scope.enableAddress = function(address) {
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                notify({message: gettextCatalog.getString('Address enabled', null), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Address enabled', null, 'Info'), classes: 'notification-success'});
                 address.Status = 1;
             } else if(angular.isDefined(result.data) && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
@@ -290,12 +290,12 @@ angular.module("proton.controllers.Settings")
     $scope.disableAddress = function(address) {
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Disable address', null),
-                message: gettextCatalog.getString('Are you sure you want to disable this address?', null),
+                title: gettextCatalog.getString('Disable address', null, 'Title'),
+                message: gettextCatalog.getString('Are you sure you want to disable this address?', null, 'Info'),
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Address disabled', null), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success'});
                             address.Status = 0;
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {

@@ -94,7 +94,7 @@ angular.module("proton.controllers.Settings")
         if (value === 0) {
             confirmModal.activate({
                 params: {
-                    message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null),
+                    message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info'),
                     confirm: function() {
                         Setting.setLogging({LogAuth: 0})
                         .then(function(result) {

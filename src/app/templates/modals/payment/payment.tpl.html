@@ -27,27 +27,27 @@
                         </tr>
                         <tr>
                             <td class="desc">
-                                <strong ng-show="ctrl.valid.Cycle === 1" tranlate>Total per month (incl. taxes)</strong>
-                                <strong ng-show="ctrl.valid.Cycle === 12" translate>Total per year (incl. taxes)</strong>
+                                <strong ng-show="ctrl.valid.Cycle === 1" tranlate translate-context="Title">Total per month (incl. taxes)</strong>
+                                <strong ng-show="ctrl.valid.Cycle === 12" translate translate-context="Title">Total per year (incl. taxes)</strong>
                             </td>
                             <td class="price text-right">
                                 <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
                             </td>
                         </tr>
                         <tr ng-show="ctrl.valid.Proration !== 0">
-                            <td class="desc" translate>Proration</td>
+                            <td class="desc" translate translate-context="Title">Proration</td>
                             <td class="text-green price text-right"><strong>{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                         <tr ng-show="ctrl.valid.CouponDiscount !== 0">
-                            <td class="desc" translate>Coupon</td>
+                            <td class="desc" translate translate-context="Title">Coupon</td>
                             <td class="text-green price text-right"><strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                         <tr ng-show="ctrl.valid.Credit !== 0">
-                            <td class="desc" translate>Credit</td>
+                            <td class="desc" translate translate-context="Title">Credit</td>
                             <td class="text-green price text-right"><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                         <tr>
-                            <td class="desc"><strong translate>Amount due</strong></td>
+                            <td class="desc"><strong translate translate-context="Title">Amount due</strong></td>
                             <td class="price text-right"><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
                         </tr>
                     </tbody>
@@ -169,7 +169,7 @@
                         <button type="button" class="pm_button primary" ng-click="ctrl.apply()" translate translate-context="Action">Apply</button>
                     </div>
                 </div>
-                <p><span translate translate-context="Info">By clicking Create Account, you agree to abide by</span> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate-context="Title" translate>ProtonMail's Terms and Conditions</a>.</p>
+                <p translate translate-context="Info">By clicking Create Account, you agree to abide by <a href="https://protonmail.com/terms-and-conditions" target="_blank">ProtonMail's Terms and Conditions</a>.</p>
             </div>
         </div>
     </div>

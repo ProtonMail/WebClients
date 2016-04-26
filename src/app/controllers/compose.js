@@ -1530,7 +1530,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(message.ToList.length > 0) {
             recipients = recipients.concat(_.map(message.ToList, function(contact, index) {
                 if(index === 0) {
-                    return gettextCatalog.getString('To', null) + ': ' + $filter('contact')(contact, 'Name');
+                    return gettextCatalog.getString('To', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
                 }
@@ -1540,7 +1540,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(message.CCList.length > 0) {
             recipients = recipients.concat(_.map(message.CCList, function(contact, index) {
                 if(index === 0) {
-                    return gettextCatalog.getString('CC', null) + ': ' + $filter('contact')(contact, 'Name');
+                    return gettextCatalog.getString('CC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
                 }
@@ -1550,7 +1550,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(message.BCCList.length > 0) {
             recipients = recipients.concat(_.map(message.BCCList, function(contact, index) {
                 if(index === 0) {
-                    return gettextCatalog.getString('BCC', null) + ': ' + $filter('contact')(contact, 'Name');
+                    return gettextCatalog.getString('BCC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
                 }
