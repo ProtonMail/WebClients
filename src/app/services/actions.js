@@ -12,6 +12,21 @@ angular.module('proton.actions', [])
     notify,
     CONSTANTS
 ) {
+    var findCurrentLocation = function(message) {
+        var locations = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive
+        ];
+
+        if (angular.isArray(message.LabelIDs)) {
+            return _.chain(message.LabelIDs).intersection(locations).first().value();
+        }
+    };
+
     return {
         // Conversation actions
         /**
@@ -862,37 +877,17 @@ angular.module('proton.actions', [])
         discardMessage: function(message) {
             var context = tools.cacheContext();
             var events = [];
-            var conversation = cache.getConversationCached(message.ConversationID);
             var promise;
+            var current = findCurrentLocation(message);
 
-            // Generate message event to delete the message
-            events.push({Action: 0, ID: message.ID});
-
-            if(angular.isDefined(conversation)) {
-                if(conversation.NumMessages === 1) {
-                    // Delete conversation
-                    events.push({Action: 0, ID: conversation.ID});
-                } else if(conversation.NumMessages > 1) {
-                     var messages = cache.queryMessagesCached(conversation.ID);
-                     var labelIDs = [];
-
-                     _.each(messages, function(message) {
-                         labelIDs = labelIDs.concat(message.LabelIDs);
-                     });
-
-                     // Remove one of the draft label
-                     labelIDs.splice(labelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts), 1);
-
-                    // Decrease the number of message
-                    conversation.NumMessages--;
-
-                    // Generate conversation event
-                    events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-                }
-            }
+            // Generate message event to move the message to trash
+            events.push({Action: 3, ID: message.ID, Message: {
+                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.trash],
+                LabelIDsRemoved: [current]
+            }});
 
             // Send request
-            promise = Message.delete({IDs: [message.ID]}).$promise;
+            promise = Message.trash({IDs: [message.ID]}).$promise;
             cache.addToDispatcher(promise);
 
             if(context === true) {

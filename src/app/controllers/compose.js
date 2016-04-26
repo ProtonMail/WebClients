@@ -763,7 +763,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
-                    message.fields = false;
                     message.ccbcc = false;
                     $('.typeahead-container').scrollTop(0);
                 });
@@ -796,18 +795,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.toggleCcBcc = function(message) {
         message.ccbcc = !!!message.ccbcc;
-
-        if(message.ccbcc === true) {
-            message.fields = true;
-        }
-    };
-
-    $scope.showFields = function(message) {
-        message.fields = true;
     };
 
     $scope.hideFields = function(message) {
-        message.fields = false;
         message.ccbcc = false;
     };
 
@@ -1575,7 +1565,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.focusTo = function(message) {
-        message.fields = true;
         // Focus input
         $timeout(function() {
             $('#uid' + message.uid + ' .toRow input.new-value-email').focus();
