@@ -140,15 +140,10 @@ angular.module('proton.autocomplete', [])
                 }
             };
 
-            scope.onFocus = function() {
-                scope.focussed = true;
-            };
-
             scope.onBlur = function() {
                 $timeout.cancel(timeoutBlur);
                 timeoutBlur = $timeout(function() {
                     scope.onSubmit(false);
-                    scope.focussed = false;
                 }, 250);
             };
 
