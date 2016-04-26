@@ -2,7 +2,7 @@
     <div class="main">
         <div class="pull-right">
             <span class="pm_buttons layout">
-                <a href="#" pt-tooltip-translate="Change layout" ng-click="toggleLayout()"><i class="fa fa-columns" ng-class="{ 'fa-rotate-90': layoutMode === 'columns' }"></i></a>
+                <a href="#" pt-tooltip-translate="Change layout" pt-tooltip-translate-context="Action" ng-click="toggleLayout()"><i class="fa fa-columns" ng-class="{ 'fa-rotate-90': layoutMode === 'columns' }"></i></a>
             </span>
             <paginator ng-hide="idDefined() && layoutMode === 'rows'" page="page" total-items="conversationCount()" items-per-page="elementPerPage" change="selectPage" />
             <span class="pm_buttons" ng-show="idDefined() && layoutMode === 'rows'">

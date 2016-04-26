@@ -863,7 +863,7 @@ angular.module("proton.modals", [])
                             notify({message: gettextCatalog.getString('Invalid coupon', null, 'Error'), classes: 'notification-danger'});
                             this.coupon = '';
                         } else {
-                            notify({message: gettextCatalog.getString('Coupon accepted', null), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Coupon accepted', null, 'Info'), classes: 'notification-success'});
                         }
                         this.valid = result.data;
                     }

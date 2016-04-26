@@ -139,7 +139,7 @@ angular.module("proton.controllers.Contacts", [
                 confirm: function() {
                     networkActivityTracker.track(
                         Contact.clear().then(function(response) {
-                            notify({message: gettextCatalog.getString('Contacts deleted', null), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Contacts deleted', null, 'Info'), classes: 'notification-success'});
                             eventManager.call();
                         }, function(response) {
                             $log.error(response);
@@ -183,7 +183,7 @@ angular.module("proton.controllers.Contacts", [
                         Contact.delete({
                             IDs : deletedIDs
                         }).then(function(response) {
-                            notify({message: gettextCatalog.getString('Contacts deleted', null), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Contacts deleted', null, 'Info'), classes: 'notification-success'});
                             confirmModal.deactivate();
                             eventManager.call();
                         }, function(error) {
@@ -410,9 +410,9 @@ angular.module("proton.controllers.Contacts", [
                                 });
 
                                 if(added === 1) {
-                                    notify({message: added + ' ' + gettextCatalog.getString('Contact imported', null), classes: 'notification-success'});
+                                    notify({message: added + ' ' + gettextCatalog.getString('Contact imported', null, 'Info'), classes: 'notification-success'});
                                 } else if(added > 1) {
-                                    notify({message: added + ' ' + gettextCatalog.getString('Contacts imported', null), classes: 'notification-success'});
+                                    notify({message: added + ' ' + gettextCatalog.getString('Contacts imported', null, 'Info'), classes: 'notification-success'});
                                 }
 
                                 _.each(Object.keys(errors), function(key) {

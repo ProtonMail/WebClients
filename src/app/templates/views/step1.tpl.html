@@ -38,7 +38,7 @@
             <div ng-show="step1.$submitted || step1.password.$touched">
                 <p ng-show="step1.$submitted && step1.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Login password is required.</p>
             </div>
-            <input id="passwordc" name="passwordc" ng-model="account.loginPasswordConfirm" type="password" class="form-control" placeholder-translate="Confirm Login Password" required validator="account.loginPassword !== account.loginPasswordConfirm" />
+            <input id="passwordc" name="passwordc" ng-model="account.loginPasswordConfirm" type="password" class="form-control" placeholder-translate="Confirm login password" required validator="account.loginPassword !== account.loginPasswordConfirm" />
             <div ng-show="step1.$submitted || step1.passwordc.$touched">
                 <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords don't match.</p>
             </div>
@@ -52,7 +52,7 @@
             <div ng-show="step1.$submitted || step1.MBpassword.$touched">
                 <p ng-show="step1.$submitted && step1.MBpassword.$error.required" class="alert alert-danger" translate-context="Error" translate>Mailbox password is required.</p>
             </div>
-            <input id="MBpasswordc" name="MBpasswordc" ng-model="account.mailboxPasswordConfirm" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}" placeholder-translate="Confirm Mailbox Password" required />
+            <input id="MBpasswordc" name="MBpasswordc" ng-model="account.mailboxPasswordConfirm" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}" placeholder-translate="Confirm mailbox password" required />
             <div ng-show="step1.$submitted || step1.MBpasswordc.$touched">
                 <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords don't match.</p>
             </div>
