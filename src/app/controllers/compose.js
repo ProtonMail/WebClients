@@ -188,7 +188,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         timeoutStyle = $timeout(function() {
             $scope.composerStyle();
-        }, 50);
+        }, 1000);
     }
 
     function onOrientationChange() {
@@ -617,7 +617,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             Is the available space enough ?
             */
             if (!set.isBootstrap && ((set.windowWidth / set.messagesCount) < set.composerWidth) ) {
-                console.log('set.overlap = ');
                 /* overlap is a ratio that will share equaly the space available between overlayed composers. */
                 set.overlap = ((set.windowWidth - set.composerWidth - (2 * set.margin)) / (set.messagesCount - 1));
             }
