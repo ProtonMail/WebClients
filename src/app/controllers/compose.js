@@ -801,13 +801,22 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.togglePanel = function(message, panelName) {
-        message.displayPanel = !!!message.displayPanel;
-        message.panelName = panelName;
+        if (message.displayPanel === true) {
+            $scope.closePanel(message);
+        } else {
+            $scope.openPanel(message, panelName);
+        }
     };
 
     $scope.openPanel = function(message, panelName) {
         message.displayPanel = true;
         message.panelName = panelName;
+
+        if (panelName === 'encrypt') {
+            $timeout(function() {
+                 $('#uid' + message.uid + ' input[name="outsidePw"]').focus();
+            });
+        }
     };
 
     $scope.closePanel = function(message) {
