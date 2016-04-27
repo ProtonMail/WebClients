@@ -27,6 +27,19 @@ angular.module('proton.actions', [])
         }
     };
 
+    var getFolderNameTranslated = function(mailbox) {
+        var mailboxs = {
+            inbox: gettextCatalog.getString('Inbox', null),
+            spam: gettextCatalog.getString('Spam', null),
+            drafts: gettextCatalog.getString('Drafts', null),
+            sent: gettextCatalog.getString('Sent', null),
+            trash: gettextCatalog.getString('Trash', null),
+            archive: gettextCatalog.getString('Archive', null)
+        };
+
+        return mailboxs[mailbox];
+    };
+
     return {
         // Conversation actions
         /**
@@ -42,6 +55,13 @@ angular.module('proton.actions', [])
             var toInbox = mailbox === 'inbox';
             var current = tools.currentLocation();
             var labelIDsRemoved = [];
+            var folder = getFolderNameTranslated(mailbox);
+            var process = function() {
+                // Send cache events
+                cache.events(events);
+                // Display notification
+                notify({message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success'});                    
+            };
 
             if (tools.currentMailbox() !== 'label') {
                 labelIDsRemoved.push(current);
@@ -94,12 +114,11 @@ angular.module('proton.actions', [])
             promise = Conversation[mailbox](ids);
             cache.addToDispatcher(promise);
 
-            if(context === true) {
-                cache.events(events);
+            if (context === true) {
+                process();
             } else {
                 promise.then(function() {
-                    // Send cache events
-                    cache.events(events);
+                    process();
                 });
 
                 networkActivityTracker.track(promise);
