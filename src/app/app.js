@@ -82,6 +82,7 @@ angular.module('proton', [
     'proton.transformation',
     'proton.translate',
     'proton.wizard',
+    'proton.rightClick',
 
     // Filters
     'proton.filters',
