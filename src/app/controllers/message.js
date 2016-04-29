@@ -685,6 +685,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var fw_prefix = gettextCatalog.getString('Fw:', null);
         var re_length = re_prefix.length;
         var fw_length = fw_prefix.length;
+        var body = $scope.message.decryptedBody || $scope.message.Body;
 
         if (action === 'reply') {
             base.Action = 0;
@@ -754,7 +755,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
 
         base.ParentID = $scope.message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + body + blockquoteEnd;
 
         return base;
     };
