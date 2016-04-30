@@ -29,10 +29,10 @@ angular.module("proton.models.incomingDefaults", [])
         },
 
         /**
-        * Delete a rule
+        * Delete rule(s)
         */
-        delete: function() {
-            return $http.put(url.get() + '/incomingdefaults/delete');
+        delete: function(Obj) {
+            return $http.put(url.get() + '/incomingdefaults/delete', Obj);
         },
 
         // DELETE

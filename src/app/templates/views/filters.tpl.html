@@ -12,15 +12,15 @@
 
                 <legend translate-context="Title" translate-comment="defaults page heading" translate>Incomming Defaults</legend>
 
-                <button class="pm_button pull-right danger pull-right" ng-click="clearDefaults()">
+                <button class="pm_button pull-right danger pull-right" ng-click="clearDefaults()" ng-disabled="networkActivity.loading()">
                     <i class="fa fa-times-circle-o"></i> Delete All
                 </button>
                 <div class="pm_buttons pull-left">
-                    <a ng-click="deleteSelectedDefaults()">
+                    <a ng-click="deleteSelectedDefaults()" ng-disabled="networkActivity.loading() || defaultsSelected().length === 0">
                         <i class="fa fa-trash-o"></i> Delete Selected
                     </a>
                 </div>
-                <a class="pm_button pull-left" ng-click="refreshDefaults()" id="refreshDefaults">
+                <a class="pm_button pull-left" ng-click="refreshDefaults()" id="refreshDefaults" ng-disabled="networkActivity.loading()">
                     <i class="fa fa-rotate-right"></i>
                 </a>
 
@@ -40,7 +40,7 @@
                             <tr ng-repeat="default in IncomingDefaults track by default.ID">
                                 <td class="text-center hidden-xs checkbox">
                                     <label>
-                                        <input type="checkbox" ng-model="default.selected" ng-click="onSelectContact($event, default)" />
+                                        <input type="checkbox" ng-model="default.selected" ng-click="onSelectDefault($event, default)" />
                                     </label>
                                 </td>
                                 <td class="email">
@@ -48,12 +48,10 @@
                                 </td>
                                 <td class="rule text-right">
                                     <span ng-if="default.Location === 0" class="pm_badge primary">
-                                        <i class="fa fa-inbox"></i> &nbsp;
-                                        <span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to inbox</span>
+                                        <i class="fa fa-inbox"></i>&nbsp;<span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to inbox</span>
                                     </span>
                                     <span ng-if="default.Location === 4" class="pm_badge error">
-                                        <i class="fa fa-ban"></i> &nbsp;
-                                        <span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to spam</span>
+                                        <i class="fa fa-ban"></i>&nbsp;<span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to spam</span>
                                     </span>
                                 </td>
                             </tr>
