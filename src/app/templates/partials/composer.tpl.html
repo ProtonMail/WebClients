@@ -131,11 +131,12 @@
                     </button>
                     <span class="overlay" ng-show="message.Attachments.length > 0" pt-tooltip-translate="Remove Attachments to change your From address."></span>
                 </div>
+                <div class="row recipients" ng-bind="recipients(message)" ng-click="focusTo(message)" ng-right-click="focusTo(message)"></div>
                 <div class="row toRow">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">To</label>
                     <autocomplete emails="message.ToList" />
-                    <button class="pm_button link pull-right" ng-click="toggleCcBcc(message);attHide(message);" pt-tooltip-translate="CC BCC" pt-placement="left" pt-tooltip-translate-context="Action">
-                        <i class="fa fa-angle-down transition" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
+                    <button class="pm_button link" ng-click="toggleCcBcc(message);attHide(message);" pt-tooltip-translate="CC BCC" pt-placement="left" pt-tooltip-translate-context="Action">
+                        <i class="fa fa-angle-down" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
                 <div class="row" ng-show="message.ccbcc === true">

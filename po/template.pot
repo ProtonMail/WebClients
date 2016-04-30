@@ -625,7 +625,7 @@ msgid "Basic"
 msgstr ""
 
 #. printed message info
-#: src/app/controllers/compose.js:1552
+#: src/app/controllers/compose.js:1561
 #: src/app/templates/partials/composer.tpl.html:146
 #: src/app/templates/partials/message.tpl.html:117
 #: src/app/templates/views/message.print.tpl.html:46
@@ -755,7 +755,7 @@ msgstr ""
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1542
+#: src/app/controllers/compose.js:1551
 #: src/app/templates/partials/composer.tpl.html:142
 #: src/app/templates/partials/message.tpl.html:103
 #: src/app/templates/views/message.print.tpl.html:39
@@ -2763,7 +2763,7 @@ msgctxt "Title"
 msgid "Members"
 msgstr ""
 
-#: src/app/controllers/compose.js:1518
+#: src/app/controllers/compose.js:1527
 msgid "Message discarded"
 msgstr ""
 
@@ -2776,11 +2776,11 @@ msgctxt "Title"
 msgid "Message Password"
 msgstr ""
 
-#: src/app/controllers/compose.js:1154
+#: src/app/controllers/compose.js:1163
 msgid "Message saved"
 msgstr ""
 
-#: src/app/controllers/compose.js:1372
+#: src/app/controllers/compose.js:1381
 #: src/app/controllers/outside.js:144
 msgid "Message sent"
 msgstr ""
@@ -2951,7 +2951,7 @@ msgstr ""
 msgid "New mailbox password"
 msgstr ""
 
-#: src/app/controllers/compose.js:1207
+#: src/app/controllers/compose.js:1216
 msgctxt "Title"
 msgid "New message"
 msgstr ""
@@ -3029,12 +3029,12 @@ msgctxt "Info"
 msgid "No results for this search in your contacts list."
 msgstr ""
 
-#: src/app/controllers/compose.js:1217
+#: src/app/controllers/compose.js:1226
 msgctxt "Title"
 msgid "No subject"
 msgstr ""
 
-#: src/app/controllers/compose.js:1218
+#: src/app/controllers/compose.js:1227
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
@@ -4219,7 +4219,7 @@ msgstr ""
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1532
+#: src/app/controllers/compose.js:1541
 #: src/app/templates/partials/composer.tpl.html:135
 #: src/app/templates/partials/message.tpl.html:89
 #: src/app/templates/views/message.print.tpl.html:32

@@ -108,6 +108,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     });
 
+    $scope.$on('autocompleteFocussed', function(event, autocomplete) {
+        console.log(autocomplete);
+    });
+
+    $scope.$on('autocompleteBlured', function(event, autocomplete) {
+        console.log(autocomplete);
+    });
+
     // When the user delete a conversation and a message is a part of this conversation
     $scope.$on('deleteConversation', function(event, ID) {
         _.each($scope.messages, function(message) {
@@ -566,19 +574,20 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.numTags = [];
         message.recipientFields = [];
         message.uploading = 0;
+        message.toFocussed = false;
+        message.ccbcc = false;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.insertSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
-
         $scope.isOver = false;
 
         // This timeout is really important to load the structure of Squire
         $timeout(function() {
             $scope.composerStyle();
             // forward case: we need to save to get the attachments
-            if(save === true) {
+            if (save === true) {
                 $scope.save(message, true, false).then(function() { // message, forward, notification
                     $scope.decryptAttachments(message);
                     $scope.composerStyle();
@@ -741,7 +750,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var composer = $('#uid' + message.uid);
 
             if (message.ToList.length === 0) {
-                $scope.focusTo(message);
+                $timeout(function () {
+                    $scope.focusTo(message);
+                });
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
             } else if (message.editor) {
@@ -1535,7 +1546,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.recipients = function(message) {
         var recipients = [];
 
-        if(message.ToList.length > 0) {
+        if (message.ToList.length > 0) {
             recipients = recipients.concat(_.map(message.ToList, function(contact, index) {
                 if(index === 0) {
                     return gettextCatalog.getString('To', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
@@ -1545,7 +1556,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }));
         }
 
-        if(message.CCList.length > 0) {
+        if (message.CCList.length > 0) {
             recipients = recipients.concat(_.map(message.CCList, function(contact, index) {
                 if(index === 0) {
                     return gettextCatalog.getString('CC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
@@ -1555,7 +1566,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }));
         }
 
-        if(message.BCCList.length > 0) {
+        if (message.BCCList.length > 0) {
             recipients = recipients.concat(_.map(message.BCCList, function(contact, index) {
                 if(index === 0) {
                     return gettextCatalog.getString('BCC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
@@ -1573,10 +1584,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.focusTo = function(message) {
-        // Focus input
-        $timeout(function() {
-            $('#uid' + message.uid + ' .toRow input.new-value-email').focus();
-        }, 250);
+        var input = $('#uid' + message.uid + ' .toRow input.new-value-email');
+
+        input.focus();
     };
 
     $scope.focusNextInput = function(event) {
