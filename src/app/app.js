@@ -28,6 +28,7 @@ angular.module('proton', [
     'proton.models.contact',
     'proton.models.conversations',
     'proton.models.domains',
+    'proton.models.incomingDefaults',
     'proton.models.eo',
     'proton.models.events',
     'proton.models.label',

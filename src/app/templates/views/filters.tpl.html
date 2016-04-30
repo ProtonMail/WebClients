@@ -1,0 +1,66 @@
+<div id="pm_settings">
+
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+
+    <div class="settings">
+
+        <div class="row">
+
+            <p class="alert alert-info" ng-if="mobileMode">This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
+
+            <div class="setting pm_form full">
+                <legend translate-context="Title" translate-comment="defaults page heading" translate>Incomming Defaults</legend>
+
+                <button class="pm_button pull-right danger pull-right" ng-click="clearDefaults()">
+                    <i class="fa fa-times-circle-o"></i> Delete All
+                </button>
+                <div class="pm_buttons pull-left">
+                    <a ng-click="deleteSelectedDefaults()">
+                        <i class="fa fa-trash-o"></i> Delete Selected
+                    </a>
+                </div>
+                <a class="pm_button pull-left" ng-click="refreshDefaults()" id="refreshDefaults">
+                    <i class="fa fa-rotate-right"></i>
+                </a>
+
+                <div class="row" id="settingsIncomingDefaults">
+                    <table ng-if="IncomingDefaults.length > 0" class="pm_table">
+                        <thead>
+                            <tr>
+                                <th class="hidden-xs checkbox"></th>
+                                <th class="email">Email</th>
+                                <th class="rule text-right">Default Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="default in IncomingDefaults track by default.ID">
+                                <td class="text-center hidden-xs checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="default.selected" ng-click="onSelectContact($event, default)" />
+                                    </label>
+                                </td>
+                                <td class="email">
+                                    <span title="{{ default.Email }}">{{ default.Email }}</span>
+                                </td>
+                                <td class="rule text-right">
+                                    <span ng-if="default.Location === 0" class="pm_badge primary">
+                                        <i class="fa fa-inbox"></i> &nbsp; 
+                                        <span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to inbox</span>
+                                    </span>
+                                    <span ng-if="default.Location === 4" class="pm_badge error">
+                                        <i class="fa fa-ban"></i> &nbsp; 
+                                        <span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to spam</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><!--/.setting-->
+
+        </div><!--/.row-->
+
+    </div><!--/.settings-->
+
+</div>

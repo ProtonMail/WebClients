@@ -805,6 +805,21 @@ angular.module('proton.routes', [
                 controller: 'DomainsController'
             }
         }
+    })
+
+    .state('secured.filters', {
+        url: '/filters',
+        resolve: {
+            incomingDefaults: function(IncomingDefault, networkActivityTracker) {
+                return networkActivityTracker.track(IncomingDefault.get());
+            },
+        },
+        views: {
+            'content@secured': {
+                templateUrl: 'templates/views/filters.tpl.html',
+                controller: 'FiltersController'
+            }
+        }
     });
 
     _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id, box) {

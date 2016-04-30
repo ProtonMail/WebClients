@@ -61,6 +61,20 @@
         }
     }
 }
+#settingsIncomingDefaults {
+    .pm_table {
+        tr {
+            .rule {
+                width: 12rem;
+            }
+            td {
+                vertical-align: middle;
+                line-height: 40px;
+                padding: 10px;
+            }
+        }
+    }
+}
 #settingsDomains {
     .pm_table {
         &.domains {

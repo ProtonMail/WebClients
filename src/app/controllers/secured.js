@@ -35,7 +35,8 @@ angular.module("proton.controllers.Secured", [])
         {value: 'secured.appearance', label: gettextCatalog.getString('Appearance', null, 'Title')},
         {value: 'secured.domains', label: gettextCatalog.getString('Domains', null, 'Title')},
         {value: 'secured.members', label: gettextCatalog.getString('Users', null, 'Title')},
-        {value: 'secured.payments', label: gettextCatalog.getString('Payments', null, 'Title')}
+        {value: 'secured.payments', label: gettextCatalog.getString('Payments', null, 'Title')},
+        {value: 'secured.filters', label: gettextCatalog.getString('Filters', null, 'Title')}
     ];
 
     // Set language used for the application
