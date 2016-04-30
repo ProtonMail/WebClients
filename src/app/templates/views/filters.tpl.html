@@ -9,6 +9,7 @@
             <p class="alert alert-info" ng-if="mobileMode">This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
 
             <div class="setting pm_form full">
+
                 <legend translate-context="Title" translate-comment="defaults page heading" translate>Incomming Defaults</legend>
 
                 <button class="pm_button pull-right danger pull-right" ng-click="clearDefaults()">
@@ -24,6 +25,9 @@
                 </a>
 
                 <div class="row" id="settingsIncomingDefaults">
+
+                    <p class="alert alert-info" ng-show="IncomingDefaults.length < 1"  translate>No incomming default rules yet</p>
+
                     <table ng-if="IncomingDefaults.length > 0" class="pm_table">
                         <thead>
                             <tr>
@@ -44,11 +48,11 @@
                                 </td>
                                 <td class="rule text-right">
                                     <span ng-if="default.Location === 0" class="pm_badge primary">
-                                        <i class="fa fa-inbox"></i> &nbsp; 
+                                        <i class="fa fa-inbox"></i> &nbsp;
                                         <span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to inbox</span>
                                     </span>
                                     <span ng-if="default.Location === 4" class="pm_badge error">
-                                        <i class="fa fa-ban"></i> &nbsp; 
+                                        <i class="fa fa-ban"></i> &nbsp;
                                         <span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to spam</span>
                                     </span>
                                 </td>
