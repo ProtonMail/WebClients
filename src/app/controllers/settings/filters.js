@@ -4,6 +4,7 @@ angular.module("proton.controllers.Settings")
     $log,
     $rootScope,
     $scope,
+    CONSTANTS,
     $state,
     $window,
     gettextCatalog,
@@ -19,6 +20,10 @@ angular.module("proton.controllers.Settings")
     // Variables
     var lastChecked = null;
     $scope.IncomingDefaults = incomingDefaults.data.IncomingDefaults;
+    $scope.Locations = [
+        { name: 'Inbox', id: CONSTANTS.MAILBOX_IDENTIFIERS.inbox },
+        { name: 'Spam', id: CONSTANTS.MAILBOX_IDENTIFIERS.spam }
+    ];
 
     $scope.clearDefaults = function() {
         networkActivityTracker.track(

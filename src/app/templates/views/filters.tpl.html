@@ -47,11 +47,11 @@
                                     <span title="{{ default.Email }}">{{ default.Email }}</span>
                                 </td>
                                 <td class="rule text-right">
-                                    <span ng-if="default.Location === 0" class="pm_badge primary">
-                                        <i class="fa fa-inbox"></i>&nbsp;<span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to inbox</span>
-                                    </span>
-                                    <span ng-if="default.Location === 4" class="pm_badge error">
-                                        <i class="fa fa-ban"></i>&nbsp;<span translate translate-comment="badge for incomingDefaults" translate-context="Info">Move to spam</span>
+                                    <label>Move to </label>
+                                    <!-- TODO: need to make the default value be selected. also need to save on change -->
+                                     <span class="pm_select">
+                                        <select ng-model="default.Location" ng-options="location.id as location.name for location in Locations"></select>
+                                        <i class="fa fa-angle-down"></i>
                                     </span>
                                 </td>
                             </tr>
