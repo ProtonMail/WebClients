@@ -6,40 +6,39 @@
 
         <div class="row">
 
-            <p class="alert alert-info" ng-if="mobileMode">This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
+            <p class="alert alert-info" ng-if="mobileMode" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
 
             <div class="setting pm_form full desktopOnly">
 
                 <legend translate-context="Title" translate-comment="defaults page heading" translate>Incomming Defaults</legend>
 
-                <button class="pm_button pull-right danger pull-right" ng-click="clearDefaults()" ng-disabled="networkActivity.loading()">
-                    <i class="fa fa-times-circle-o"></i> Delete All
-                </button>
-                <div class="pm_buttons pull-left">
-                    <a ng-click="deleteSelectedDefaults()" ng-disabled="networkActivity.loading() || defaultsSelected().length === 0">
-                        <i class="fa fa-trash-o"></i> Delete Selected
-                    </a>
+                <div class="pull-right">
+                    <button type="button" class="pm_button" ng-click="deleteSelectedDefaults()" ng-disabled="networkActivity.loading() || defaultsSelected().length === 0" translate>Delete Selected</button>
                 </div>
-                <a class="pm_button pull-left" ng-click="refreshDefaults()" id="refreshDefaults" ng-disabled="networkActivity.loading()">
-                    <i class="fa fa-rotate-right"></i>
-                </a>
+
+                <div class="pull-left">
+                    <button type="button" class="pm_button" ng-click="clearDefaults()" ng-disabled="networkActivity.loading()" translate>Delete All</button>
+                    <button type="button" class="pm_button" ng-click="refreshDefaults()" ng-disabled="networkActivity.loading()">
+                        <i class="fa fa-rotate-right"></i>
+                    </button>
+                </div>
 
                 <div class="row" id="settingsIncomingDefaults">
 
-                    <p class="alert alert-info" ng-show="IncomingDefaults.length < 1"  translate>No incomming default rules yet</p>
+                    <p class="alert alert-info" ng-show="defaults.length < 1" translate>No incomming default rules yet</p>
 
-                    <table ng-if="IncomingDefaults.length > 0" class="pm_table">
+                    <table ng-if="defaults.length > 0" class="pm_table">
                         <thead>
                             <tr>
                                 <th class="hidden-xs checkbox"></th>
-                                <th class="email">Email</th>
-                                <th class="rule text-right">Default Action</th>
+                                <th class="email" translate>Email</th>
+                                <th class="rule text-right" translate>Default Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="default in IncomingDefaults track by default.ID">
+                            <tr ng-repeat="default in defaults track by default.ID">
                                 <td class="text-center hidden-xs checkbox">
-                                    <label>
+                                    <label for="">
                                         <input type="checkbox" ng-model="default.selected" ng-click="onSelectDefault($event, default)" />
                                     </label>
                                 </td>
@@ -47,10 +46,9 @@
                                     <span title="{{ default.Email }}">{{ default.Email }}</span>
                                 </td>
                                 <td class="rule text-right">
-                                    <label>Move to </label>
-                                    <!-- TODO: need to make the default value be selected. also need to save on change -->
+                                    <label for="">Move to </label>
                                      <span class="pm_select">
-                                        <select ng-model="default.Location" ng-options="location.id as location.name for location in Locations"></select>
+                                        <select ng-model="default.destination" ng-options="location.label for location in locations" ng-init="initSelect(default)" ng-change="changeLocation(default)"></select>
                                         <i class="fa fa-angle-down"></i>
                                     </span>
                                 </td>

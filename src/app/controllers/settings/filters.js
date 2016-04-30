@@ -19,10 +19,11 @@ angular.module("proton.controllers.Settings")
 
     // Variables
     var lastChecked = null;
-    $scope.IncomingDefaults = incomingDefaults.data.IncomingDefaults;
-    $scope.Locations = [
-        { name: 'Inbox', id: CONSTANTS.MAILBOX_IDENTIFIERS.inbox },
-        { name: 'Spam', id: CONSTANTS.MAILBOX_IDENTIFIERS.spam }
+
+    $scope.defaults = incomingDefaults;
+    $scope.locations = [
+        { label: gettextCatalog.getString('Inbox', null), id: parseInt(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) },
+        { label: gettextCatalog.getString('Spam', null), id: parseInt(CONSTANTS.MAILBOX_IDENTIFIERS.spam) }
     ];
 
     $scope.clearDefaults = function() {
@@ -30,9 +31,9 @@ angular.module("proton.controllers.Settings")
             IncomingDefault.clear()
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-                    $scope.IncomingDefaults = [];
+                    $scope.defaults = [];
                     notify({
-                        message: gettextCatalog.getString('Default incomming rules cleared', null), 
+                        message: gettextCatalog.getString('Default incomming rules cleared', null),
                         classes: 'notification-success'
                     });
                 }
@@ -45,14 +46,22 @@ angular.module("proton.controllers.Settings")
             IncomingDefault.get()
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-                    $scope.IncomingDefaults = result.data.IncomingDefaults;
+                    $scope.defaults = result.data.IncomingDefaults;
                     notify({
-                        message: gettextCatalog.getString('Default incomming rules refreshed', null), 
+                        message: gettextCatalog.getString('Default incomming rules refreshed', null),
                         classes: 'notification-success'
                     });
                 }
             })
         );
+    };
+
+    $scope.initSelect = function(deflt) {
+        console.log(deflt, _.findWhere($scope.locations, {id: deflt.Location}));
+        deflt.destination = _.findWhere($scope.locations, {id: deflt.Location});
+    };
+
+    $scope.changeLocation = function() {
 
     };
 
@@ -73,7 +82,7 @@ angular.module("proton.controllers.Settings")
                 notify({message: gettextCatalog.getString('Incomming defaults deleted', null, 'Info'), classes: 'notification-success'});
                 // TODO: replace this with a smart comaprison of the IncomingDefaults array and the deletedDefaults arrays;
 
-                $scope.IncomingDefaults = $scope.IncomingDefaults.filter(function(val) {
+                $scope.defaults = $scope.defaults.filter(function(val) {
                     return deletedDefaults.indexOf(val) === -1;
                 });
 
@@ -89,10 +98,10 @@ angular.module("proton.controllers.Settings")
             lastChecked = deflt;
         } else {
             if (event.shiftKey) {
-                var start = _.indexOf($scope.IncomingDefaults, deflt);
-                var end = _.indexOf($scope.IncomingDefaults, lastChecked);
+                var start = _.indexOf($scope.defaults, deflt);
+                var end = _.indexOf($scope.defaults, lastChecked);
 
-                _.each($scope.IncomingDefaults.slice(Math.min(start, end), Math.max(start, end) + 1), function(deflt) {
+                _.each($scope.defaults.slice(Math.min(start, end), Math.max(start, end) + 1), function(deflt) {
                     deflt.selected = lastChecked.selected;
                 });
             }
@@ -102,7 +111,7 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.defaultsSelected = function() {
-        return _.filter($scope.IncomingDefaults, function(deflt) {
+        return _.filter($scope.defaults, function(deflt) {
             return deflt.selected === true;
         });
     };

@@ -784,7 +784,7 @@ angular.module('proton.routes', [
             access: function(user, $q) {
                 var deferred = $q.defer();
 
-                if(user.Role === 2) {
+                if (user.Role === 2) {
                     deferred.resolve();
                 } else {
                     deferred.reject();
@@ -810,8 +810,19 @@ angular.module('proton.routes', [
     .state('secured.filters', {
         url: '/filters',
         resolve: {
-            incomingDefaults: function(IncomingDefault, networkActivityTracker) {
-                return networkActivityTracker.track(IncomingDefault.get());
+            incomingDefaults: function($q, IncomingDefault, networkActivityTracker) {
+                var deferred = $q.defer();
+
+                IncomingDefault.get()
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        deferred.resolve(result.data.IncomingDefaults);
+                    } else {
+                        deferred.reject();
+                    }
+                });
+
+                return deferred.promise;
             },
         },
         views: {
