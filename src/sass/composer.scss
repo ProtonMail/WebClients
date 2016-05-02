@@ -70,6 +70,10 @@
 	      flex-direction: column;
 		}
 
+		.container-email{
+			width: 100%; /*fix autocomplete*/
+		}
+
 		iframe{
 			flex:1;
 			position: relative;
