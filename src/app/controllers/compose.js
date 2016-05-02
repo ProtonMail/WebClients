@@ -108,14 +108,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     });
 
-    $scope.$on('autocompleteFocussed', function(event, autocomplete) {
-        console.log(autocomplete);
-    });
-
-    $scope.$on('autocompleteBlured', function(event, autocomplete) {
-        console.log(autocomplete);
-    });
-
     // When the user delete a conversation and a message is a part of this conversation
     $scope.$on('deleteConversation', function(event, ID) {
         _.each($scope.messages, function(message) {
@@ -747,7 +739,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
 
             // focus correct field
-            var composer = $('#uid' + message.uid);
+            var composer = angular.element('#uid' + message.uid);
 
             if (message.ToList.length === 0) {
                 $timeout(function () {
@@ -769,12 +761,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.listenEditor = function(message) {
         if (message.editor) {
-            var dropzone = $('#uid' + message.uid + ' .composer-dropzone')[0];
+            var dropzone = angular.element('#uid' + message.uid + ' .composer-dropzone')[0];
 
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
                     message.ccbcc = false;
-                    $('.typeahead-container').scrollTop(0);
+                    angular.element('.typeahead-container').scrollTop(0);
                 });
             });
 
@@ -825,7 +817,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if (panelName === 'encrypt') {
             $timeout(function() {
-                 $('#uid' + message.uid + ' input[name="outsidePw"]').focus();
+                 angular.element('#uid' + message.uid + ' input[name="outsidePw"]').focus();
             });
         }
     };
@@ -1025,7 +1017,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.changeFrom = function(message) {
         var currentBody = $.parseHTML(message.Body);
-        var tempDOM = $('<div>').append(currentBody);
+        var tempDOM = angular.element('<div>').append(currentBody);
         var signature = tempDOM.find('.protonmail_signature_block').first().html();
         var content = (message.From.Signature === null)?authentication.user.Signature:message.From.Signature;
 
@@ -1548,7 +1540,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if (message.ToList.length > 0) {
             recipients = recipients.concat(_.map(message.ToList, function(contact, index) {
-                if(index === 0) {
+                if (index === 0) {
                     return gettextCatalog.getString('To', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
@@ -1558,7 +1550,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if (message.CCList.length > 0) {
             recipients = recipients.concat(_.map(message.CCList, function(contact, index) {
-                if(index === 0) {
+                if (index === 0) {
                     return gettextCatalog.getString('CC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
@@ -1568,13 +1560,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if (message.BCCList.length > 0) {
             recipients = recipients.concat(_.map(message.BCCList, function(contact, index) {
-                if(index === 0) {
+                if (index === 0) {
                     return gettextCatalog.getString('BCC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
                 }
             }));
         }
+
 
         return recipients.join(', ');
     };
@@ -1584,9 +1577,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.focusTo = function(message) {
-        var input = $('#uid' + message.uid + ' .toRow input.new-value-email');
+        var input = angular.element('#uid' + message.uid + ' .toRow input.new-value-email');
 
-        input.focus();
+        message.autocompletesFocussed = true;
+
+        $timeout(function() {
+            input.focus();
+        });
     };
 
     $scope.focusNextInput = function(event) {
@@ -1601,5 +1598,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.focusEditor = function(message, event) {
         event.preventDefault();
         message.editor.focus();
+    };
+
+    /**
+     * Return if emails value has correct format
+     * @param {Object} message
+     * @return {Boolean}
+     */
+    $scope.emailsAreValid = function(message) {
+        var emails = message.ToList.concat(message.CCList).concat(message.BCCList);
+
+        return _.where(emails, {invalid: true}).length === 0;
     };
 });

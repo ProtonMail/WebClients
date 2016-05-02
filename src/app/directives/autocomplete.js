@@ -136,7 +136,8 @@ angular.module('proton.autocomplete', [])
                     } else {
                         scope.emails.push({
                             Address: scope.params.newValue,
-                            Name: scope.params.newValue
+                            Name: scope.params.newValue,
+                            invalid: true
                         });
                     }
 
@@ -146,11 +147,10 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onFocus = function() {
-                $rootScope.$broadcast('autocompleteFocussed', element);
+
             };
 
             scope.onBlur = function() {
-                $rootScope.$broadcast('autocompleteBlured', element);
                 $timeout.cancel(timeoutBlur);
                 timeoutBlur = $timeout(function() {
                     scope.onSubmit(false);

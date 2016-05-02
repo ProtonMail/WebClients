@@ -1,6 +1,6 @@
 <div class="container-email">
     <label class="input-email" for="autocomplete{{ $id }}">
-        <span ng-repeat="email in emails" class="email label-email" ng-class="{valid: valid()}" title="{{ email | contact }}">
+        <span ng-repeat="email in emails" class="label-email" ng-class="{invalid: email.invalid === true}" title="{{ email | contact }}">
             <span ng-bind="email | contact: 'Name'"></span>
             <a ng-click="onRemove($index)">
                 <i class="fa fa-times"></i>

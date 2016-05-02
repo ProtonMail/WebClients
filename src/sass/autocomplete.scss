@@ -36,8 +36,14 @@
         padding-left: 5px;
         margin-right: 5px;
         display: inline-block;
-        line-height: 20px;
+        line-height: 22px;
+        height: 22px;
         word-break: break-all;
+
+        &.invalid {
+            border-color: $red;
+            color: $red;
+        }
     }
 
     .label-email a {
