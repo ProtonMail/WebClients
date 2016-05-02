@@ -153,7 +153,7 @@
 
                 <div class="row subjectRow">
 
-                    <input type="text" title="Subject" class="subject" placeholder-translate="Subject" ng-focus="message.autocompletesFocussed = false" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+                    <input type="text" title="Subject" class="flex subject" placeholder-translate="Subject" ng-focus="message.autocompletesFocussed = false" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
             </div>
             <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
