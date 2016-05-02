@@ -293,10 +293,7 @@
 			height: auto !important;
 			box-sizing: border-box;
 			margin: 0;
-			section {
-				height: calc(100% - 130px) !important;
-			    overflow: initial !important;
-			}
+			
 			header, footer {
 				border-radius: 0;
 			}
@@ -366,7 +363,8 @@
 
 		input, select{
 	      font-size: 14px;
-	      color: #333
+	      color: #333;
+
 	    }
 
 	    .meta{
@@ -422,6 +420,10 @@
 	    .angular-squire {
 			overflow: auto;
 			-webkit-overflow-scrolling: touch;
+	    }
+
+	    input{
+	    	outline: none;
 	    }
 
 	    input,select{
@@ -488,7 +490,7 @@
 	}
 }
 
-@media (max-height: 700px) and (max-width: $tablet-landscape) {
+@media screen and (max-width: $tablet-landscape) {
 	#pm_composer {
 		.composer {
 			header {
