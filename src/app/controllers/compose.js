@@ -178,6 +178,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if(angular.isDefined(message) && message.editor === editor) {
             $scope.focusComposer(message);
+            message.autocompletesFocussed = false;
         }
 
         $rootScope.$broadcast('composerModeChange');
