@@ -179,9 +179,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if(angular.isDefined(message) && message.editor === editor) {
             $scope.focusComposer(message);
             message.autocompletesFocussed = false;
+            message.ccbcc = false;
+            message.attachmentsToggle = false;
         }
 
         $rootScope.$broadcast('composerModeChange');
+    });
+
+    $scope.$on('subjectFocussed', function(event, message) {
+        var current = _.findWhere($scope.messages, {uid: message.uid});
+
+        current.autocompletesFocussed = false;
+        current.ccbcc = false;
+        current.attachmentsToggle = false;
     });
 
     function onResize() {
@@ -297,6 +307,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.slideDown = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
+    };
+
+    $scope.onFocusSubject = function(message) {
+        $rootScope.$broadcast('subjectFocussed', message);
     };
 
     $scope.dropzoneConfig = function(message) {
@@ -799,6 +813,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.toggleCcBcc = function(message) {
         message.ccbcc = !!!message.ccbcc;
+        message.autocompletesFocussed = true;
+        message.attachmentsToggle = false;
     };
 
     $scope.hideFields = function(message) {
