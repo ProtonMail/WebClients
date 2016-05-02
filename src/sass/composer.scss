@@ -3,20 +3,19 @@
 	/* COMPONNENT STRUCTURE */
 
 	.composer{
- 
-        width: 100%;
+
+        display: flex;
+      	flex-direction: column; /* .editor space fill */     
+
+	 	position: fixed;
 		height: 510px !important; // the drag directive tries to override this.
-      	margin-right: 10px;
-		opacity: 0;
+        right:1rem;
+        bottom:1rem;
+		z-index: 8888;
 
         /* STYLES */
-        display: inline-block;
         background:#FFF;
-
-
-      	display: flex;
-      	flex-direction: column; /* .editor space fill */
-		background-color: #fff; 
+		opacity: 0;
 
 		-webkit-transition: opacity .25s linear, right .25s linear; /* DRY */
 		   -moz-transition: opacity .25s linear, right .25s linear;
@@ -256,11 +255,6 @@
 	    @media (min-width:500px){
 	      &{
 	      	width: 500px;
-	 		position: fixed;
-	        right:1rem;
-	        bottom:1rem;
-			z-index: 8888;
-
 	        /* STYLES */
 	 		box-shadow: $box-shadow;
 	        border-radius: 2px;
@@ -371,7 +365,6 @@
 	    }
 
 		input, select{
-	      font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 	      font-size: 14px;
 	      color: #333
 	    }
@@ -493,8 +486,6 @@
 			}
 		}
 	}
-
-
 }
 
 @media (max-height: 700px) and (max-width: $tablet-landscape) {
