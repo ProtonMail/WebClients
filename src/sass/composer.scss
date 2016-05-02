@@ -1,168 +1,224 @@
 #pm_composer {
-	.composer {
-		border-radius: 2px;
-		display: inline-block;
-		width: 500px;
-		height: 460px !important; // the drag directive tries to override this.
-		background-color: #fff;
-		margin: 0 10px 0 0;
-		box-shadow: $box-shadow;
-		position: absolute;
-		padding-bottom: 51px;
-		right: 1rem;
-		bottom: 1rem;
-		z-index: 8888;
+
+	/* COMPONNENT STRUCTURE */
+
+	.composer{
+ 
+        width: 100%;
+		height: 510px !important; // the drag directive tries to override this.
+      	margin-right: 10px;
 		opacity: 0;
-		-webkit-transition: opacity .25s linear, right .25s linear;
+
+        /* STYLES */
+        display: inline-block;
+        background:#FFF;
+
+
+      	display: flex;
+      	flex-direction: column; /* .editor space fill */
+		background-color: #fff; 
+
+		-webkit-transition: opacity .25s linear, right .25s linear; /* DRY */
 		   -moz-transition: opacity .25s linear, right .25s linear;
 		    -ms-transition: opacity .25s linear, right .25s linear;
 		     -o-transition: opacity .25s linear, right .25s linear;
 		        transition: opacity .25s linear, right .25s linear;
-		.dotdotdot {
-			display: none;
-		}
-		::-webkit-input-placeholder {
-		   color: $gray-light;
-		}
-		:-moz-placeholder {
-		   color: $gray-light;
+
+
+	    header, footer, .row{
+	      line-height: $composerRowHeight;
+	    }
+	  
+	    .row{
+	      display: flex;
+	      flex-direction: row;
+
+	      position: relative;
+	      padding: 0px 10px;
+
+	      label{
+	        padding-right: 10px;
+	      }
+
+		  input, 
+		  select{
+		  	height: $composerRowHeight;
+		    line-height: $composerRowHeight;
+		  }
+
+		  select{
+		  	z-index: 2;
+		  	background:transparent;
+		  }
+
+		  .pm_button.link {
+			  position: absolute;
+			  right: 7px;
+			  top: 0;
+			  line-height: $composerRowHeight;
+			  cursor: pointer;
+		  }
+	    }
+
+	    .flex{
+	        flex:1; 
+	     }
+
+	    .fill{
+	      flex: 1;
+	      display: flex;
+	      flex-direction: column;
+		  height: 100%;
+		  width: 100%;
 		}
 
-		::-moz-placeholder {
-		   color: $gray-light;
-		}
-		:-ms-input-placeholder {
-		   color: $gray-light;
-		}
-		&.blur {
-			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.1);
-			& > * {
-				opacity: .75;
-			}
-			-webkit-transition: opacity .25s linear;
-			   -moz-transition: opacity .25s linear;
-			    -ms-transition: opacity .25s linear;
-			     -o-transition: opacity .25s linear;
-			        transition: opacity .25s linear;
-		}
-		footer.disabled {
-			.pm_button {
-				pointer-events: none;
-				opacity: .5;
-			}
-			.dead {
-				pointer-events: none;
-			}
-		}
-		&.attachmentsOpen.moreAttachments {
-			.previews {
-				height: 111px;
-				overflow: auto;
-			}
-			.attachmentBar {
-				bottom: 163px;
-			}
-		}
-		.composeEditor {
-			float: left;
+		iframe{
+			height:100%;
 			width: 100%;
 			position: relative;
-			.dropzone {
-				position: absolute;
-				left: 0;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				height: 100%;
-				width: 100%;
-				z-index: 99;
-				border: 1rem solid rgba(0,0,0,.05);
+			z-index: 4
+		}
+
+		.dropzone {
+			position: relative;
+			z-index: 99;
+			border: 1rem solid rgba(0,0,0,.05);
+		}
+
+	    .toolbar li{
+	      flex:1;
+	      cursor: pointer;
+	      height:$composerRowHeight;
+	      line-height:$composerRowHeight;
+	    }
+
+		.options {
+        	position: absolute;
+        	left: 0;
+        	right: 0;
+        	top: $composerRowHeight;
+        	bottom: 0;
+        	padding: 2rem 10px;
+        	box-sizing: border-box;
+        	z-index: 99;
+        	background: #fafafa;
+        	display: none;
+        	-webkit-transition: opacity .25s linear;
+			-moz-transition: opacity .25s linear;
+			-ms-transition: opacity .25s linear;
+			-o-transition: opacity .25s linear;
+			transition: opacity .25s linear;
+        	&.show {
+        		display: block;
+        	}
+        	.pm_select {
+        		display: inline-block;
+        		margin: 0 .5rem 0 2rem;
+        	}
+        	footer {
+        		position: absolute;
+        		left: 0;
+        		right:0;
+        		background: #fafafa;
+        		bottom: 0;
+        	}
+        	.clearfix {
+        		padding: 5px 0;
+        	}
+        	h3 {
+        		display: inline-block;
+        	}
+        	h1, h2, h3, h4, h5 {
+        		font-weight: 400;
+        	}
+        	input[type="range"] {
+        		width: 100%;
+        		margin: 2rem 0;
+        	}
+        	.fa {
+        		color: $primary;
+        	}
+        	.pm_button.primary {
+        		padding: 0 2rem;
+        	}
+        	div.text-center {
+        		padding: 1rem 0 2rem 0;
+        	}
+        }
+
+		.fa {
+			font-size: 14px;
+			&.fa-minus {
+				position: relative;
+				top: 5px;
 			}
-			.angular-squire {
+		}
+
+		.squire-popover-overlay {
+			background: rgba(0,0,0,.2);
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			position: absolute;
+			z-index: 2;
+		}
+
+		.attachmentBar {
+
+			height: $composerRowHeight;
+			line-height: $composerRowHeight;
+			padding: 0 10px;
+			cursor: pointer;
+			box-sizing: border-box;
+			z-index: 7;
+			border-top: 1px solid $border;
+			background: $read;
+			i {
+				color: $primary;
+				font-style: normal;
+			}
+			.fa {
+				display: inline-block;
+				line-height: $composerRowHeight;
+				height: $composerRowHeight;
+			}
+		}
+
+		.previews {
+			padding-top: 10px;
+			padding-left: 10px;
+
+	        overflow: auto;
+	        -webkit-overflow-scrolling: touch;
+	        box-sizing: border-box;
+	        background: $read;
+	        
+	        .preview-close {
+	        	margin-left: .25rem;
+	        	color: $gray;
+	        }
+	        footer {
+        		position: absolute;
+        		left: 0;
+        		right: 0;
+        		bottom: 0;
+        	}
+			.pm_button {
+				margin: 0 10px 10px 0;
 				float: left;
-				width: 100%;
-				.editor-container {
-					float: left;
-					width: 100%;
-					.angular-squire-wrapper {
-						float: left;
-						width: 100%;
-						overflow: auto;
-						-webkit-overflow-scrolling: touch;
-						iframe {
-							position: relative;
-							z-index: 4;
-						}
-					}
-				}
+				text-transform: initial;
+				background: $white;
 			}
 		}
-		.saveAt {
-			display: none;
-		}
-		&.expandRecipients {
-			overflow: hidden;
-		}
-		&.attachmentsOpen.moreAttachments {
-			section {
-				.angular-squire-wrapper {
-					iframe {
-						height: 325px;
-					}
-				}
-			}
-		}
-		&.normalized.hasAttachment {
-			.composeEditor .dropzone {
-				height: 169px !important;
-			}
-		}
-		&.normalized {
-			.composeEditor .dropzone {
-				height: 382px !important;
-			}
-			&.expandRecipients {
-				.composeEditor .dropzone {
-					height: 287px !important;
-				}
-			}
-		}
-		&.normalized.attachmentsOpen {
-			.composeEditor .dropzone {
-				height: 269px !important;
-			}
-			&.expandRecipients {
-				.composeEditor .dropzone {
-					height: 187px !important;
-				}
-			}
-			&.moreAttachments {
-				.composeEditor .dropzone {
-					height: 219px !important;
-				}
-			}
-		}
+
 		&.attachmentsOpen {
-			section {
-				height: 280px;
-				.angular-squire-wrapper {
-					iframe {
-						height: 225px;
-					}
-				}
-			}
 			.previews {
-				position: absolute;
-				height: 61px;
 				overflow: hidden;
 				-webkit-overflow-scrolling: touch;
-				top: auto;
-				bottom: 52px;
+				
 			}
 			.attachmentBar {
-				bottom: 113px;
-				top: auto;
-				z-index: 9;
 				box-shadow: 0 1px 0 $border;
 			}
 			.attachmentArea {
@@ -194,22 +250,29 @@
 				}
 			}
 		}
-		&.tall {
-			section {
-				height: auto !important;
-				overflow: initial !important;
-				.angular-squire-wrapper {
-					iframe {
-						height: 325px;
-					}
-				}
-			}
-		}
+
+	    /* STATE CHANGE */
+
+	    @media (min-width:500px){
+	      &{
+	      	width: 500px;
+	 		position: absolute;
+	        right:1rem;
+	        bottom:1rem;
+			z-index: 8888;
+
+	        /* STYLES */
+	 		box-shadow: $box-shadow;
+	        border-radius: 2px;
+	        overflow: hidden;
+	      }
+	    }
+
 		&.small {
-			height: 430px !important;
+			height: 480px !important;
 		}
 		&.mini {
-			height: 330px !important;
+			height: 380px !important;
 		}
 		&.minimized {
 			height: $composerRowHeight !important;
@@ -243,390 +306,82 @@
 			header, footer {
 				border-radius: 0;
 			}
-			.meta .row .subject {
-				width: 90%;
-			}
-			.meta .row select {
-				width: 100%;
-				width: 82%;
-			}
-			.composeEditor {
-				height: 100%;
-			}
 		}
-		.options {
-        	position: absolute;
-        	left: 0;
-        	right: 0;
-        	top: 30px;
-        	bottom: 0;
-        	padding: 2rem 10px;
-        	box-sizing: border-box;
-        	z-index: 99;
-        	background: #fafafa;
-        	display: none;
-        	-webkit-transition: opacity .25s linear;
-			-moz-transition: opacity .25s linear;
-			-ms-transition: opacity .25s linear;
-			-o-transition: opacity .25s linear;
-			transition: opacity .25s linear;
-        	&.show {
-        		display: block;
-        	}
-        	.pm_select {
-        		display: inline-block;
-        		margin: 0 .5rem 0 2rem;
-        	}
-        	footer {
-        		position: absolute;
-        		left: 0;
-        		background: #fafafa;
-        		bottom: 0;
-        	}
-        	.clearfix {
-        		padding: 5px 0;
-        	}
-        	h3 {
-        		display: inline-block;
-        	}
-        	h1, h2, h3, h4, h5 {
-        		font-weight: 400;
-        	}
-        	input[type="range"] {
-        		width: 100%;
-        		margin: 2rem 0;
-        	}
-        	.fa {
-        		color: $primary;
-        	}
-        	.pm_button.primary {
-        		padding: 0 2rem;
-        	}
-        	div.text-center {
-        		padding: 1rem 0 2rem 0;
-        	}
-        }
-		.fa {
-			font-size: 14px;
-			&.fa-minus {
-				position: relative;
-				top: 5px;
-			}
-		}
-		.squire-popover-overlay {
-			background: rgba(0,0,0,.2);
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			position: absolute;
-			z-index: 2;
-		}
-		.pm_button {
-			line-height: $composerRowHeight;
-			height: $composerRowHeight;
-		}
-		header {
-			overflow: hidden;
-			background: $secondary;
-			border-radius: 2px 2px 0 0;
-			position: relative;
-			box-sizing: border-box;
-			height: $composerRowHeight;
-			min-height: $composerRowHeight;
-			.actions {
-				float: right;
-				padding: 0;
-			}
-			.subject {
-				float: left;
-				width: 22rem;
-				max-width: 70%;
-				display: inline-block;
-				color: $white;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				padding: 0 0 0 10px;
-				height: $composerRowHeight;
-				line-height: $composerRowHeight;
-				box-sizing: border-box;
-			}
-			.pm_button {
-				width: $composerRowHeight;
-				padding: 0;
-				text-align: center;
-				height: $composerRowHeight;
-				line-height: $composerRowHeight;
-				color: #dadae5;
-				float: left;
-				margin: 0 ;
-				&:hover {
-					color: $white;
-				}
-			}
-		}
-		.meta {
-			-webkit-flex-grow: 1;
-		    -ms-flex-positive: 1;
-	        flex-grow: 1;
-	        position: relative;
-	        box-sizing: border-box;
-			color: $gray-light;
-			float: left;
-			width: 100%;
-			.fromRow {
-				height: $composerRowHeight;
-				position: relative;
-				button {
-					position: absolute;
-					right: 7px;
-					top: 0;
-					bottom: 0;
-					z-index: 1;
-				}
-				select {
-					position: absolute;
-					left: 3.5rem;
-					right: 0;
-					top: 0;
-					bottom: 0;
-					z-index: 2;
-					cursor: pointer;
-				}
-				.overlay {
-					position: absolute;
-					left: 0;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					width: 100%;
-					display: block;
-					z-index: 2;
-				}
-			}
-			.tm-tag,
-			span button {
-			    padding: 0 10px;
-			    line-height: 26px;
-			    height: 26px;
-			    margin: 7px 7px 0 0;
-			    float: left;
-			    border: none;
-			    box-shadow: none;
-			}
-			.tm-tag {
-				background: $border;
-				background: #eee;
-				font-size: 14px;
-				color: initial !important;
-			}
-			.twitter-typeahead {
-				line-height: 26px;
-			    height: 26px;
-				margin: 7px 7px 0 0;
-				float: left;
-				input {
-					padding: 0 10px !important;
-					line-height: 26px !important;
-					height: 26px !important;
-					top: initial !important;
-					float: left;
-				}
-				pre {
-					display: none;
-				}
-			}
-			.tt-dropdown-menu {
-			background-color: white;
-			border-radius: 0 0 4px 4px;
-			border: 1px solid #ddd;
 
-				.tt-suggestion {
-					padding: 1px 10px;
-					border-bottom: 1px solid #ddd;
-					color: $text;
-					&.tt-cursor {
-						background-color: $read;
-					}
-				}
-			}
-			.row {
-				min-height: $composerRowHeight;
-				line-height: $composerRowHeight;
-				border-bottom: 1px solid $border;
-				float: left;
-				width: 100%;
-				position: relative;
-				box-sizing: border-box;
-				&.closed {
-					height: $composerRowHeight;
-					overflow: hidden;
-				}
-				&.toRow,
-				&.ccRow,
-				&.bccRow {
-					box-sizing: border-box;
-					padding-right: 0;
-				}
-				&.subjectRow {
-					height: $composerRowHeight;
-				}
-				.pm_button.link {
-					position: absolute;
-					right: 7px;
-					top: 0;
-				}
-				.ccPlus {
-					position: absolute;
-					right: 3rem;
-					cursor: default;
-					pointer-events: none;
-					top: 0;
-					z-index: 8;
-				}
-				> label {
-					min-width: 4.5rem;
-					width: 4.5rem;
-					box-sizing: border-box;
-					padding-left: 10px;
-					position: absolute;
-					line-height: $composerRowHeight;
-					left: 0;
-					top: 0;
-				}
-				.subject {
-					width: 100%;
-				}
-				select::-ms-expand {
-				    display: none;
-				}
-				input,
-				select {
-					margin-left: 3.5rem;
-					line-height: $composerRowHeight;
-					height: $composerRowHeight;
-					padding: 0 10px;
-					margin: 0;
-					outline: none;
-					border: none;
-					display: inline-block;
-					background: transparent;
-					font-size: 1em;
-					box-sizing: border-box;
-					font-size: 14px;
-				}
-				select {
-					-webkit-appearance: none;
-					-moz-appearance: none;
-					appearance: none;
-					width: 90%;
-				}
-				& > div {
-					margin-left: 3.5rem;
-					margin-right: 2rem;
-				}
-				&.placeholder > div {
-					padding-left: 10px;
-					margin: 0;
-					color: initial !important;
-					font-size: 14px;
-					white-space: nowrap;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					width: 90%;
-				}
-			}
+
+		/* COMPONNENT APPEARANCE */
+
+		.dotdotdot{
+			display: none;
 		}
-		.attachmentBar {
-			position: absolute;
-			bottom: 52px;
-			left: 0;
-			right: 0;
-			height: $composerRowHeight;
-			line-height: $composerRowHeight;
-			padding: 0 10px;
-			cursor: pointer;
-			box-sizing: border-box;
-			z-index: 7;
-			border-top: 1px solid $border;
-			background: $read;
-			i {
-				color: $primary;
-				font-style: normal;
+
+		&.blur{
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), 
+						0 0 2px rgba(0, 0, 0, 0.1);
+			& > * {
+				opacity: .75;
 			}
-			.fa {
-				display: inline-block;
+			-webkit-transition: opacity .25s linear; /* DRY */
+			   -moz-transition: opacity .25s linear;
+			    -ms-transition: opacity .25s linear;
+			     -o-transition: opacity .25s linear;
+			        transition: opacity .25s linear;
+		}
+
+	    header{
+	      background: #505061;
+	      color: white;
+	      padding:0px 0px 0px 10px;
+	      
+	      .actions{
+	    		float:right;
+				.pm_button {
+				  color: #dadae5;
+				  float: left;
+				  height: 32px;
+				  line-height: 32px;
+				  margin: 0;
+				  padding: 0;
+				  text-align: center;
+				  width: 32px;
+		    	  i{ font-size:14; }
+		    	}
+	    	}
+	    }
+
+	    .row{
+	      border-bottom:1px solid #ccd0dd;
+	    }
+
+		input, select{
+	      font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+	      font-size: 14px;
+	      color: #333
+	    }
+
+	    .meta{
+	    	color: $gray-light;
+	    }
+
+	    footer{
+	      padding: 10px;
+	      background: $read;
+	      border-top: 1px solid $border;
+
+			 &.disabled {
+
+				.pm_button {
+					pointer-events: none;
+					opacity: .5;
+				}
+				.dead {
+					pointer-events: none;
+				}
+			}
+		
+			.pm_button {
 				line-height: $composerRowHeight;
 				height: $composerRowHeight;
-			}
-		}
-		.previews {
-			padding-top: 10px;
-			padding-left: 10px;
-	        position: absolute;
-	        left: 0;
-	        right: 0;
-	        bottom: 0;
-	        top: 80px;
-	        overflow: auto;
-	        -webkit-overflow-scrolling: touch;
-	        box-sizing: border-box;
-	        background: $read;
-	        z-index: 9;
-	        .preview-close {
-	        	margin-left: .25rem;
-	        	color: $gray;
-	        }
-	        footer {
-        		position: absolute;
-        		left: 0;
-        		right: 0;
-        		bottom: 0;
-        	}
-			.pm_button {
-				margin: 0 10px 10px 0;
-				float: left;
-				text-transform: initial;
-				background: $white;
-			}
-		}
-		pre {
-			margin: 0;
-		}
-		section {
-			display: block;
-			clear: both;
-	        overflow: auto;
-	        -webkit-overflow-scrolling: touch;
-	        position: relative;
-	        height: 325px;
-	        box-sizing: border-box;
-			.angular-squire-wrapper {
-				iframe {
-					width: 100%;
-					height: 280px;
-					float: left;
-					box-sizing: border-box;
-				}
-			}
-		}
-		footer {
-			overflow: hidden;
-			line-height: $composerRowHeight;
-			height: ($composerRowHeight + 20);
-			min-height: ($composerRowHeight + 20);
-			padding: 10px;
-			border-top: 1px solid $border;
-			border-radius: 0 0 2px 2px;
-			box-sizing: border-box;
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: $read;
-			z-index: 5;
-			.pm_button {
 				padding: 0 1rem;
 				background: $white;
 				&.primary {
@@ -635,77 +390,64 @@
 				&.disabled {
 					background: black;
 				}
+				span {
+					display: none;
+				}
+				&.mobileFull {
+					span {
+						display: block;
+					}
+				}
 			}
 		}
+
+		.saveAt {
+			display: none;
+		}
+		&.expandRecipients {
+			overflow: hidden;
+		}
+
+	    /* RESETS */
+	    /* Probably to move as a global reset scope */
+
+	    ul{
+	      margin:0px;
+	      padding:0px;
+	      list-style: none;
+	    }
+
+	    .angular-squire {
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+	    }
+
+	    select{
+    	  border:none;
+          -webkit-appearance: none; /* DRY */
+          -moz-appearance: none;
+          appearance: none;
+	    }
+
+		select::-ms-expand {
+		    display: none;
+		}
+	    /* DRY */
+		::-webkit-input-placeholder {color: $gray-light;}
+		:-moz-placeholder {color: $gray-light;}
+		::-moz-placeholder {color: $gray-light;}
+		:-ms-input-placeholder {color: $gray-light;}
+
 	}
+
 }
 
-body.mobileMode {
-	#pm_composer .composer {
-		&.maximized {
-			left: 20px;
-		}
-	}
-}
+/* RESPONSIVE */
 
 @media screen and (max-width: $mobile-landscape) {
 	.activeComposer {
 		#pm_composer {
 			display: block;
-		}
-	}
-	#pm_composer {
-		position: relative;
-		display: none;
-		float: left;
-		width: 100%;
-		.composer.maximized {
-			position: static;
-			margin: 0;
-			padding: 0;
-			float: none;
-			opacity: 1;
-			width: 100% !important;
-			.meta {
-				display: block;
-				float: left;
-				width: 100%;
-			}
-			& > footer {
-				position: static;;
-				left: 0;
-				bottom: 0;
-				z-index: 99;
-				right: 0;
-				height: auto !important;
-			}
-			.options {
-				padding-bottom: 4rem;
-				bottom: 0 !important;
-				.pm_select {
-					margin: 0 0 0 .5rem;
-				}
-				.text-center {
-					font-size: .9em;
-				}
-			}
-		}
-		.composer.tall section .angular-squire-wrapper iframe {
-			height: 620px;
-		}
-		.composer.tall section {
-			height: 320px;
-		}
-		footer .pm_button {
-			padding: 0 10px !important;
-			span {
-				display: none;
-			}
-			&.mobileFull {
-				span {
-					display: block;
-				}
-			}
 		}
 	}
 	html.protonmail {
@@ -729,7 +471,6 @@ body.mobileMode {
 	}
 }
 
-
 @media (max-height: 700px) and (max-width: $tablet-landscape) {
 	#pm_composer {
 		.composer {
@@ -739,10 +480,11 @@ body.mobileMode {
 				}
 			}
 			&.maximized {
-				left: 2%;
-				right: 2%;
-				top: 80px;
-				width: 96%;
+				left:0 !important;
+				top:0;
+				width: 100%;
+				height: 100% !important;
+				border-radius: 0;
 			}
 		}
 	}
