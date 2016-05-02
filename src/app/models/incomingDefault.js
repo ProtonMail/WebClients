@@ -24,7 +24,7 @@ angular.module("proton.models.incomingDefaults", [])
         * Update a rule
         */
         update: function(params) {
-            var id = params.id;
+            var id = params.ID;
 
             return $http.put(url.get() + '/incomingdefaults/' + id, params);
         },

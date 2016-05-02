@@ -13,21 +13,19 @@
                 <legend translate-context="Title" translate-comment="defaults page heading" translate>Incomming Defaults</legend>
 
                 <div class="pull-right">
-                    <button type="button" class="pm_button" ng-click="deleteSelectedDefaults()" ng-disabled="networkActivity.loading() || defaultsSelected().length === 0" translate>Delete Selected</button>
+                    <button type="button" class="pm_button" ng-click="clearDefaults()" ng-disabled="networkActivity.loading()" translate>Delete All</button>
                 </div>
 
                 <div class="pull-left">
-                    <button type="button" class="pm_button" ng-click="clearDefaults()" ng-disabled="networkActivity.loading()" translate>Delete All</button>
-                    <button type="button" class="pm_button" ng-click="refreshDefaults()" ng-disabled="networkActivity.loading()">
-                        <i class="fa fa-rotate-right"></i>
-                    </button>
+                    <button type="button" class="pm_button" ng-click="deleteSelectedDefaults()" ng-disabled="networkActivity.loading()" translate>Delete Selected</button>
+                    <button type="button" class="pm_button" ng-click="refreshDefaults()" ng-disabled="networkActivity.loading()"><i class="fa fa-rotate-right"></i></button>
                 </div>
 
                 <div class="row" id="settingsIncomingDefaults">
 
-                    <p class="alert alert-info" ng-show="defaults.length < 1" translate>No incomming default rules yet</p>
+                    <p class="alert alert-info" ng-show="rules.length < 1" translate>No incomming default rules yet</p>
 
-                    <table ng-if="defaults.length > 0" class="pm_table">
+                    <table ng-if="rules.length > 0" class="pm_table">
                         <thead>
                             <tr>
                                 <th class="hidden-xs checkbox"></th>
@@ -37,17 +35,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="default in defaults track by default.ID">
+                            <tr ng-repeat="rule in rules track by rule.ID">
                                 <td class="text-center hidden-xs checkbox">
                                     <label for="">
-                                        <input type="checkbox" ng-model="default.selected" ng-click="onSelectDefault($event, default)" />
+                                        <input type="checkbox" ng-model="rule.selected" ng-click="onSelectDefault($event, rule)" />
                                     </label>
                                 </td>
                                 <td class="email">
-                                    <span ng-bind="default.Email"></span>
+                                    <span ng-bind="rule.Email"></span>
                                 </td>
                                 <td class="date">
-                                    <span ng-bind="(default.Time * 1000 | date : 'medium' )"></span>
+                                    <span ng-bind="(rule.Time * 1000 | date : 'medium' )"></span>
                                 </td>
                                 <td class="rule pm_grid">
                                     <div class="col-1-2">
@@ -55,7 +53,7 @@
                                     </div>
                                     <div class="col-1-2">
                                         <span class="pm_select">
-                                            <select ng-model="default.destination" ng-options="location.label for location in locations" ng-init="initSelect(default)" ng-change="changeLocation(default)"></select>
+                                            <select ng-model="rule.destination" ng-options="destination.label for destination in destinations" ng-init="initSelect(rule)" ng-change="changeDestination(rule)"></select>
                                             <i class="fa fa-angle-down"></i>
                                         </span>
                                     </div>
