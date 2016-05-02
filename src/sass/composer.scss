@@ -256,7 +256,7 @@
 	    @media (min-width:500px){
 	      &{
 	      	width: 500px;
-	 		position: absolute;
+	 		position: fixed;
 	        right:1rem;
 	        bottom:1rem;
 			z-index: 8888;
@@ -331,8 +331,17 @@
 	    header{
 	      background: #505061;
 	      color: white;
-	      padding:0px 0px 0px 10px;
-	      
+
+		  .subject {
+				width: 22rem;
+				max-width: 70%;
+				float:left;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				padding: 0 0 0 10px;
+		  }
+
 	      .actions{
 	    		float:right;
 				.pm_button {
@@ -351,6 +360,14 @@
 
 	    .row{
 	      border-bottom:1px solid #ccd0dd;
+	      &.placeholder div{
+					color: $text;
+				  	overflow: hidden;
+				  	-o-text-overflow: ellipsis; /* for Opera 9 */
+				  	text-overflow: ellipsis; /* for the rest of the world */
+					white-space: nowrap;
+
+				}
 	    }
 
 		input, select{
@@ -390,14 +407,6 @@
 				&.disabled {
 					background: black;
 				}
-				span {
-					display: none;
-				}
-				&.mobileFull {
-					span {
-						display: block;
-					}
-				}
 			}
 		}
 
@@ -422,7 +431,7 @@
 			-webkit-overflow-scrolling: touch;
 	    }
 
-	    select{
+	    input,select{
     	  border:none;
           -webkit-appearance: none; /* DRY */
           -moz-appearance: none;
@@ -469,6 +478,23 @@
 			display: none;
 		}
 	}
+
+    footer{
+
+		.pm_button {
+
+			span {
+				display: none;
+			}
+			&.mobileFull {
+				span {
+					display: block;
+				}
+			}
+		}
+	}
+
+
 }
 
 @media (max-height: 700px) and (max-width: $tablet-landscape) {
