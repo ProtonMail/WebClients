@@ -567,6 +567,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.recipientFields = [];
         message.uploading = 0;
         message.toFocussed = false;
+        message.autocompletesFocussed = false;
         message.ccbcc = false;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
