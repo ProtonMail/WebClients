@@ -1,12 +1,10 @@
 <div class="container-email flex">
     <label class="input-email" for="autocomplete{{ $id }}">
-        <span ng-repeat="email in emails" class="email">
-            <span class="label-email" title="{{ email | contact }}">
-                <span ng-bind="email | contact: 'Name'"></span>
-                <a ng-click="onRemove($index)">
-                    <i class="fa fa-times"></i>
-                </a>
-            </span>
+        <span ng-repeat="email in emails" class="label-email" ng-class="{invalid: email.invalid === true}" title="{{ email | contact }}">
+            <span ng-bind="email | contact: 'Name'"></span>
+            <a ng-click="onRemove($index)">
+                <i class="fa fa-times"></i>
+            </a>
         </span>
         <form method="post" class="form-email">
             <input type="text" id="autocomplete{{ $id }}" name="email-autocomplete" class="new-value-email" ng-model="params.newValue" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 100, 'blur': 0 } }" ng-keydown="onKeyDown($event)" ng-keyup="onKeyUp($event)" ng-focus="onFocus()" ng-blur="onBlur()" ng-change="onChange()" class="edit-email" spellcheck="false" autocapitalize="off" autocomplete="false" role="combobox" />

@@ -33,7 +33,6 @@ function generateDirective( attrName ) {
     }
 
     var normAttrName = normalizeAttributeName( attrName );
-    console.log(normAttrName);
 
     return function (gettextCatalog, $parse, $animate, $compile, $window) {
 
@@ -119,4 +118,3 @@ angular.module('proton.translate', [])
 .directive('placeholderTranslate', generateDirective( 'placeholder' ))
 .directive('titleTranslate', generateDirective( 'title' ))
 .directive('ptTooltipTranslate', generateDirective( 'pt-tooltip' ));
-

@@ -6,7 +6,7 @@ angular.module('proton.autocomplete', [])
         return string.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, '<strong>$1</strong>');
     };
 })
-.directive('autocomplete', function ($timeout, regexEmail, authentication) {
+.directive('autocomplete', function ($timeout, $rootScope, regexEmail, authentication) {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/autocomplete.tpl.html',
@@ -133,11 +133,21 @@ angular.module('proton.autocomplete', [])
 
                     if (emails.length > 0) {
                         scope.emails = _.union(scope.emails, emails);
-                        scope.params.newValue = '';
+                    } else {
+                        scope.emails.push({
+                            Address: scope.params.newValue,
+                            Name: scope.params.newValue,
+                            invalid: true
+                        });
                     }
 
+                    scope.params.newValue = '';
                     scope.onChange();
                 }
+            };
+
+            scope.onFocus = function() {
+
             };
 
             scope.onBlur = function() {
