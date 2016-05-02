@@ -293,12 +293,18 @@
 			height: auto !important;
 			box-sizing: border-box;
 			margin: 0;
-			
+
 			header, footer {
 				border-radius: 0;
 			}
 		}
 
+		&.attachmentsOpen.moreAttachments {
+			.previews {
+				height: 111px;
+				overflow: auto;
+			}
+		}
 
 		/* COMPONNENT APPEARANCE */
 
