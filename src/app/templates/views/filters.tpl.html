@@ -32,7 +32,8 @@
                             <tr>
                                 <th class="hidden-xs checkbox"></th>
                                 <th class="email" translate>Email</th>
-                                <th class="rule text-right" translate>Default Action</th>
+                                <th class="date" translate>Date</th>
+                                <th class="rule" translate>Incoming Mail Default Folder</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,14 +44,21 @@
                                     </label>
                                 </td>
                                 <td class="email">
-                                    <span title="{{ default.Email }}">{{ default.Email }}</span>
+                                    <span ng-bind="default.Email"></span>
                                 </td>
-                                <td class="rule text-right">
-                                    <label for="">Move to </label>
-                                     <span class="pm_select">
-                                        <select ng-model="default.destination" ng-options="location.label for location in locations" ng-init="initSelect(default)" ng-change="changeLocation(default)"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
+                                <td class="date">
+                                    <span ng-bind="(default.Time * 1000 | date : 'medium' )"></span>
+                                </td>
+                                <td class="rule pm_grid">
+                                    <div class="col-1-2">
+                                        <label for="">Move to </label>
+                                    </div>
+                                    <div class="col-1-2">
+                                        <span class="pm_select">
+                                            <select ng-model="default.destination" ng-options="location.label for location in locations" ng-init="initSelect(default)" ng-change="changeLocation(default)"></select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </span>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

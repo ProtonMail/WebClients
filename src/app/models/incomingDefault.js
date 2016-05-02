@@ -7,7 +7,7 @@ angular.module("proton.models.incomingDefaults", [])
         /**
          * Get all default rules
          */
-        get: function(id) {
+        get: function() {
             return $http.get(url.get() + '/incomingdefaults');
         },
 
@@ -15,24 +15,25 @@ angular.module("proton.models.incomingDefaults", [])
         /**
          * Create a new default rule
          */
-        add: function(Obj) {
-            return $http.post(url.get() + '/incomingdefaults', Obj);
+        add: function(params) {
+            return $http.post(url.get() + '/incomingdefaults', params);
         },
 
         // PUT
         /**
         * Update a rule
         */
-        update: function(Obj) {
-            var id = Obj.id;
-            return $http.put(url.get() + '/incomingdefaults/' + id, Obj);
+        update: function(params) {
+            var id = params.id;
+
+            return $http.put(url.get() + '/incomingdefaults/' + id, params);
         },
 
         /**
         * Delete rule(s)
         */
-        delete: function(Obj) {
-            return $http.put(url.get() + '/incomingdefaults/delete', Obj);
+        delete: function(params) {
+            return $http.put(url.get() + '/incomingdefaults/delete', params);
         },
 
         // DELETE
