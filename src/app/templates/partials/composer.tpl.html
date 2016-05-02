@@ -163,7 +163,7 @@
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
 
-                    <squire ng-model="message.Body" ng-click="attHide(message); message.autocompletesFocussed = false;" ng-hide="isOver === true" max-composer-height></squire>
+                    <squire ng-model="message.Body" ng-click="attHide(message); message.autocompletesFocussed = false;" ng-hide="isOver === true"></squire>
                 </div>
             </section>
              <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0">
