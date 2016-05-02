@@ -134,11 +134,14 @@
                 <div class="row placeholder" ng-click="focusTo(message)" ng-right-click="focusTo(message)" ng-show="emailsAreValid(message) === true && message.autocompletesFocussed === false">
                     <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0" translate translate-context="Title">Recipients</label>
                     <div title="{{ recipients(message) }}" ng-bind="recipients(message)"></div>
+                    <button class="pm_button link" ng-click="toggleCcBcc(message)" pt-tooltip-translate="CC BCC" pt-placement="left" pt-tooltip-translate-context="Action">
+                        <i class="fa fa-angle-down" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
+                    </button>
                 </div>
                 <div class="row toRow" ng-show="emailsAreValid(message) === false || message.autocompletesFocussed === true">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">To</label>
                     <autocomplete emails="message.ToList" />
-                    <button class="pm_button link" ng-click="toggleCcBcc(message);attHide(message);" pt-tooltip-translate="CC BCC" pt-placement="left" pt-tooltip-translate-context="Action">
+                    <button class="pm_button link" ng-click="toggleCcBcc(message)" pt-tooltip-translate="CC BCC" pt-placement="left" pt-tooltip-translate-context="Action">
                         <i class="fa fa-angle-down" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
@@ -153,7 +156,7 @@
 
                 <div class="row subjectRow">
 
-                    <input type="text" title="Subject" class="flex subject" placeholder-translate="Subject" ng-focus="message.autocompletesFocussed = false" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+                    <input type="text" title="Subject" class="flex subject" placeholder-translate="Subject" ng-focus="onFocusSubject(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
             </div>
             <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
