@@ -11,6 +11,7 @@
 	list-style-type: none;
 	height: $composerRowHeight;
 	line-height: $composerRowHeight;
+	min-height: $composerRowHeight; /* mobile devices */
 	border: 1px solid $border;
 	background-color: $read;
 	border-width: 0 0 1px 0;

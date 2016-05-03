@@ -380,6 +380,7 @@
 	    	color: $gray-light;
 	    	input, select{
 	    		border:none;
+	    		padding:none; /* iOS */
 	    	}
 	    }
 
