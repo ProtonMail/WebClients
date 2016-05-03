@@ -7,7 +7,7 @@
         display: flex;
       	flex-direction: column; /* .editor space fill */     
 
-	 	position: fixed;
+	 	position: absolute; /* better for iOS then fixed*/
 		height: 510px !important; // the drag directive tries to override this.
         right:1rem;
         bottom:1rem;
