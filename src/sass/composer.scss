@@ -378,6 +378,9 @@
 
 	    .meta{
 	    	color: $gray-light;
+	    	input, select{
+	    		border:none;
+	    	}
 	    }
 
 	    footer{
@@ -434,7 +437,6 @@
 
 	    input,select{
 	      outline: none;
-    	  border:none;
           -webkit-appearance: none; /* DRY */
           -moz-appearance: none;
           appearance: none;
