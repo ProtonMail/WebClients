@@ -16,7 +16,7 @@ angular.module("proton.controllers.Settings")
     var lastChecked = null;
 
     $scope.currentPage = 1;
-    $scope.numPerPage = 40;
+    $scope.numPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
     $scope.rules = incomingDefaults.slice(($scope.currentPage - 1) * $scope.numPerPage, ($scope.currentPage - 1) * $scope.numPerPage + $scope.numPerPage);
     $scope.totalItems = incomingDefaults.length;
     $scope.destinations = [
