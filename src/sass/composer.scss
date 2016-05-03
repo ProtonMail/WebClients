@@ -71,7 +71,7 @@
 		}
 
 		.container-email{
-			width: 100%; /*fix autocomplete*/
+			width: calc(100% - 40px); /* absolute pm_button .link*/
 		}
 
 		iframe{

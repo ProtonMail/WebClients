@@ -40,6 +40,10 @@
         line-height: 22px;
         height: 22px;
         max-width: 100%;
+        /* "By default, flex items won't shrink below their minimum content size 
+        (the length of the longest word or fixed-size element).
+        To change this, set the ‘min-width’ or ‘min-height’ property."*/
+        min-width:0px; 
 
         &.invalid {
             border-color: $red;
