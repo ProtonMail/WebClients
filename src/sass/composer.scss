@@ -70,6 +70,10 @@
 	      flex-direction: column;
 		}
 
+		.container-email{
+			width: 100%; /*fix autocomplete*/
+		}
+
 		iframe{
 			flex:1;
 			position: relative;
@@ -361,7 +365,8 @@
 				  	-o-text-overflow: ellipsis; /* for Opera 9 */
 				  	text-overflow: ellipsis; /* for the rest of the world */
 					white-space: nowrap;
-
+					display:block; /* webkit */
+					padding-right: 20px; /* button */
 				}
 	    }
 
@@ -373,6 +378,9 @@
 
 	    .meta{
 	    	color: $gray-light;
+	    	input, select{
+	    		border:none;
+	    	}
 	    }
 
 	    footer{
@@ -426,12 +434,9 @@
 			-webkit-overflow-scrolling: touch;
 	    }
 
-	    input{
-	    	outline: none;
-	    }
 
 	    input,select{
-    	  border:none;
+	      outline: none;
           -webkit-appearance: none; /* DRY */
           -moz-appearance: none;
           appearance: none;
