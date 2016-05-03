@@ -2,7 +2,31 @@
 
     <div class="wrap">
 
-        <div ng-include src="'templates/partials/toolbar-contacts.tpl.html'"></div>
+        <nav id="pm_toolbar" class="pm_toolbar">
+            <div class="pull-right">
+                <span class="pull-right" ng-show="contacts.length > 0">
+                    <paginator page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
+                </span>
+                <a class="pm_button deleteAll" ng-click="deleteAllContacts()">
+                    <i class="fa fa-ban"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Delete all</span>
+                </a>
+                <a class="pm_button" ng-click="downloadContacts()">
+                    <i class="fa fa-download"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Download</span>
+                </a>
+                <a class="pm_button" ng-click="uploadContacts()">
+                    <i class="fa fa-upload"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Upload</span>
+                </a>
+            </div>
+            <button class="pm_button primary" type="button" ng-click="addContact()">
+                <i class="fa fa-plus"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Add</span>
+            </button>
+            <button class="delete pm_button" type="button" ng-click="deleteContact()" ng-disabled="contactsSelected().length === 0">
+                <i class="fa fa-trash-o"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Delete</span>
+            </button>
+            <button class="compose pm_button" type="button" ng-click="composeContacts()" ng-disabled="contactsSelected().length === 0">
+                <i class="fa fa-edit"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Compose</span>
+            </button
+        </nav>
 
         <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length === 0" translate-context="Info" translate>You have no contacts, you can add contact with the above button 'ADD CONTACT'.</p>
         <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length > 0" translate-context="Info" translate>No results for this search in your contacts list.</p>
