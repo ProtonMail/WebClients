@@ -365,7 +365,8 @@
 				  	-o-text-overflow: ellipsis; /* for Opera 9 */
 				  	text-overflow: ellipsis; /* for the rest of the world */
 					white-space: nowrap;
-
+					display:block; /* webkit */
+					padding-right: 20px; /* button */
 				}
 	    }
 
@@ -430,11 +431,9 @@
 			-webkit-overflow-scrolling: touch;
 	    }
 
-	    input{
-	    	outline: none;
-	    }
 
 	    input,select{
+	      outline: none;
     	  border:none;
           -webkit-appearance: none; /* DRY */
           -moz-appearance: none;
