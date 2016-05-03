@@ -15,7 +15,10 @@ angular.module("proton.controllers.Settings")
     // Variables
     var lastChecked = null;
 
-    $scope.rules = incomingDefaults;
+    $scope.currentPage = 1;
+    $scope.numPerPage = 40;
+    $scope.rules = incomingDefaults.slice(($scope.currentPage - 1) * $scope.numPerPage, ($scope.currentPage - 1) * $scope.numPerPage + $scope.numPerPage);
+    $scope.totalItems = incomingDefaults.length;
     $scope.destinations = [
         { label: gettextCatalog.getString('Inbox', null), id: parseInt(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) },
         { label: gettextCatalog.getString('Spam', null), id: parseInt(CONSTANTS.MAILBOX_IDENTIFIERS.spam) }
@@ -104,5 +107,10 @@ angular.module("proton.controllers.Settings")
 
             lastChecked = rule;
         }
+    };
+
+    $scope.selectPage = function(page) {
+        $scope.currentPage = page;
+        $scope.rules = incomingDefaults.slice(($scope.currentPage - 1) * $scope.numPerPage, ($scope.currentPage - 1) * $scope.numPerPage + $scope.numPerPage);
     };
 });
