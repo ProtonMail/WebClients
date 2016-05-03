@@ -30,8 +30,7 @@
                             <tr>
                                 <th class="hidden-xs checkbox"></th>
                                 <th class="email" translate>Email</th>
-                                <th class="date" translate>Date</th>
-                                <th class="rule" translate>Incoming Mail Default Folder</th>
+                                <th class="rule" translate>Default Folder</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,9 +42,6 @@
                                 </td>
                                 <td class="email">
                                     <span ng-bind="rule.Email"></span>
-                                </td>
-                                <td class="date">
-                                    <span ng-bind="(rule.Time * 1000 | date : 'medium' )"></span>
                                 </td>
                                 <td class="rule pm_grid">
                                     <div class="col-1-2">
