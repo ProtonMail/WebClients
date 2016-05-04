@@ -18,7 +18,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Message,
     eventManager,
     Label,
-    regexEmail,
     authentication,
     cache,
     confirmModal,
