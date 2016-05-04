@@ -34,7 +34,7 @@
 		padding: 0;
 		height: $composerRowHeight;
 		line-height: $composerRowHeight;
-		max-width: 3rem; // ~ 40px
+		/* max-width: 3rem; // ~ 40px deprecated via flex */
 		a {
 			text-align: center;
 			display: block;
