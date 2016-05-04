@@ -242,7 +242,8 @@ angular.module("proton.models.message", ["proton.constants"])
 
             this.decrypting = true;
 
-            pmcw.decryptMessageRSA(this.Body, keys, this.Time).then(function(result) {
+            pmcw.decryptMessageRSA(this.Body, keys, this.Time)
+            .then(function(result) {
                 this.decrypting = false;
                 deferred.resolve(result);
             }.bind(this), function(error) {
@@ -344,7 +345,8 @@ angular.module("proton.models.message", ["proton.constants"])
             if (this.isDraft() || this.IsEncrypted > 0) {
                 if (angular.isUndefined(this.DecryptedBody)) {
                     try {
-                        this.decryptBody().then(function(result) {
+                        this.decryptBody()
+                        .then(function(result) {
                             this.DecryptedBody = result;
                             this.failedDecryption = false;
                             deferred.resolve(result);
