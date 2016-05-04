@@ -162,23 +162,19 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.breakImages = function(html) {
-        html = html.replace(/\ssrc='/g, " data-src='");
-        html = html.replace(/\ssrc="/g, " data-src=\"");
-        html = html.replace(/xlink:href=/g, "data-xlink:href=");
-        html = html.replace(/poster=/g, " data-poster=");
-        html = html.replace(/background=/g, " data-background=");
-        html = html.replace(/url\(/g, "data-url(");
+        var re = new RegExp(/https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)/, 'g');
+
+        html = html.replace(re, function(match, $1, $2, offset, original) {
+            return 'protonmail_' + match;
+        });
 
         return html;
     };
 
     tools.fixImages = function(html) {
-        html = html.replace(/data-src='/g, " src='");
-        html = html.replace(/data-src="/g, " src=\"");
-        html = html.replace(/data-xlink:href=/g, "xlink:href=");
-        html = html.replace(/data-poster=/g, " poster=");
-        html = html.replace(/data-background=/g, " background=");
-        html = html.replace(/data-url\(/g,  "url(");
+        var re = new RegExp(/protonmail_http/, 'g');
+
+        html = html.replace(re, 'http');
 
         return html;
     };
@@ -393,7 +389,9 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.containsImage = function(content) {
-        return content.match('<img') !== null;
+        var re = new RegExp(/https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)/);
+
+        return re.test(content);
     };
 
     tools.clearImageBody = function(content) {
