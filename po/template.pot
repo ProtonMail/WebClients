@@ -117,7 +117,7 @@ msgstr ""
 
 #. custom domain menu
 #. custom domain menu select dropdown
-#: src/app/controllers/secured.js:228
+#: src/app/controllers/secured.js:222
 #: src/app/controllers/secured.js:31
 #: src/app/templates/partials/menu.settings.tpl.html:30
 #: src/app/templates/partials/menu.settings.tpl.html:6
@@ -466,7 +466,7 @@ msgstr ""
 
 #. custom domain menu
 #. custom domain menu select dropdown
-#: src/app/controllers/secured.js:237
+#: src/app/controllers/secured.js:231
 #: src/app/controllers/secured.js:35
 #: src/app/templates/partials/menu.settings.tpl.html:15
 #: src/app/templates/partials/menu.settings.tpl.html:33
@@ -484,7 +484,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:204
+#: src/app/controllers/secured.js:198
 #: src/app/directives/move.js:22
 #: src/app/templates/directives/location-tag.tpl.html:7
 #: src/app/templates/partials/no-results.tpl.html:21
@@ -552,7 +552,7 @@ msgctxt "Info"
 msgid "Are you sure you want to unlink this address?"
 msgstr ""
 
-#: src/app/controllers/conversations.js:891
+#: src/app/controllers/conversations.js:865
 msgctxt "Info"
 msgid "Are you sure?"
 msgstr ""
@@ -987,7 +987,7 @@ msgctxt "Title"
 msgid "Confirm Password"
 msgstr ""
 
-#: src/app/controllers/conversations.js:890
+#: src/app/controllers/conversations.js:864
 msgctxt "Title"
 msgid "Confirmation"
 msgstr ""
@@ -1029,7 +1029,7 @@ msgid "Contacts"
 msgstr ""
 
 #. Folder name
-#: src/app/controllers/secured.js:222
+#: src/app/controllers/secured.js:216
 #: src/app/templates/partials/sidebar-responsive.tpl.html:66
 msgctxt "Title"
 msgid "Contacts"
@@ -1231,7 +1231,7 @@ msgstr ""
 
 #. custom domain menu
 #. custom domain menu select dropdown
-#: src/app/controllers/secured.js:225
+#: src/app/controllers/secured.js:219
 #: src/app/controllers/secured.js:30
 #: src/app/controllers/secured.js:34
 #: src/app/templates/partials/menu.settings.tpl.html:29
@@ -1495,7 +1495,7 @@ msgstr ""
 
 #. custom domain menu
 #. invoice heading
-#: src/app/controllers/secured.js:240
+#: src/app/controllers/secured.js:234
 #: src/app/controllers/secured.js:36
 #: src/app/templates/partials/menu.settings.tpl.html:18
 #: src/app/templates/views/dashboard.tpl.html:19
@@ -1597,7 +1597,7 @@ msgstr ""
 
 #. Folder name
 #. no results heading
-#: src/app/controllers/secured.js:195
+#: src/app/controllers/secured.js:189
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:23
 #: src/app/templates/partials/sidebar.tpl.html:21
@@ -1875,7 +1875,7 @@ msgctxt "Error"
 msgid "Error during organization request"
 msgstr ""
 
-#: src/app/controllers/conversations.js:330
+#: src/app/controllers/conversations.js:304
 msgctxt "Error"
 msgid "Error during quering conversations"
 msgstr ""
@@ -2022,7 +2022,7 @@ msgctxt "Action"
 msgid "Finish"
 msgstr ""
 
-#: src/app/controllers/conversations.js:918
+#: src/app/controllers/conversations.js:892
 msgid "Folder emptied"
 msgstr ""
 
@@ -2311,7 +2311,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:192
+#: src/app/controllers/secured.js:186
 #: src/app/directives/move.js:21
 #: src/app/templates/directives/location-tag.tpl.html:2
 #: src/app/templates/partials/no-results.tpl.html:15
@@ -2361,7 +2361,7 @@ msgctxt "Error"
 msgid "Invalid recovery email."
 msgstr ""
 
-#: src/app/controllers/secured.js:246
+#: src/app/controllers/secured.js:240
 #: src/app/controllers/settings/invoices.js:16
 #: src/app/templates/views/payments.tpl.html:39
 msgctxt "Title"
@@ -2420,7 +2420,7 @@ msgid "Keywords"
 msgstr ""
 
 #. no results heading
-#: src/app/controllers/secured.js:218
+#: src/app/controllers/secured.js:212
 #: src/app/templates/partials/no-results.tpl.html:23
 msgctxt "Title"
 msgid "Label"
@@ -2462,7 +2462,7 @@ msgid "Labels"
 msgstr ""
 
 #. custom domain menu
-#: src/app/controllers/secured.js:231
+#: src/app/controllers/secured.js:225
 #: src/app/controllers/secured.js:32
 #: src/app/templates/partials/menu.settings.tpl.html:9
 msgctxt "Title"
@@ -2484,7 +2484,7 @@ msgctxt "Title"
 msgid "Layout"
 msgstr ""
 
-#: src/app/controllers/conversations.js:632
+#: src/app/controllers/conversations.js:606
 #: src/app/controllers/settings/appearance.js:97
 msgid "Layout saved"
 msgstr ""
@@ -2568,7 +2568,7 @@ msgctxt "Action"
 msgid "Login"
 msgstr ""
 
-#: src/app/controllers/secured.js:249
+#: src/app/controllers/secured.js:243
 msgctxt "Title"
 msgid "Login"
 msgstr ""
@@ -3788,7 +3788,7 @@ msgstr ""
 
 #. custom domain menu
 #. custom domain menu select dropdown
-#: src/app/controllers/secured.js:234
+#: src/app/controllers/secured.js:228
 #: src/app/controllers/secured.js:33
 #: src/app/templates/partials/menu.settings.tpl.html:12
 #: src/app/templates/partials/menu.settings.tpl.html:32
@@ -3851,7 +3851,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:198
+#: src/app/controllers/secured.js:192
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/no-results.tpl.html:17
 #: src/app/templates/partials/sidebar-responsive.tpl.html:30
@@ -3917,7 +3917,7 @@ msgctxt "Action"
 msgid "Show images"
 msgstr ""
 
-#: src/app/directives/transformation.js:46
+#: src/app/directives/transformation.js:96
 msgctxt "Title"
 msgid "Show previous message"
 msgstr ""
@@ -3997,7 +3997,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:207
+#: src/app/controllers/secured.js:201
 #: src/app/directives/move.js:23
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
@@ -4028,7 +4028,7 @@ msgstr ""
 
 #. Folder name
 #. no results heading
-#: src/app/controllers/secured.js:201
+#: src/app/controllers/secured.js:195
 #: src/app/templates/partials/no-results.tpl.html:20
 #: src/app/templates/partials/sidebar-responsive.tpl.html:37
 #: src/app/templates/partials/sidebar.tpl.html:37
@@ -4144,7 +4144,7 @@ msgctxt "Info"
 msgid "This can take a few seconds or a few minutes depending on your device."
 msgstr ""
 
-#: src/app/controllers/conversations.js:891
+#: src/app/controllers/conversations.js:865
 msgid "This cannot be undone."
 msgstr ""
 
@@ -4283,7 +4283,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:210
+#: src/app/controllers/secured.js:204
 #: src/app/directives/move.js:24
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
@@ -4515,7 +4515,7 @@ msgctxt "Error"
 msgid "Username is required."
 msgstr ""
 
-#: src/app/controllers/secured.js:243
+#: src/app/controllers/secured.js:237
 #: src/app/controllers/secured.js:37
 #: src/app/templates/views/members.tpl.html:62
 msgctxt "Title"
