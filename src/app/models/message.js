@@ -372,7 +372,7 @@ angular.module("proton.models.message", ["proton.constants"])
         clearImageBody: function(body) {
             if (angular.isUndefined(body)) {
 
-            } else if (this.containsImage === false || body.match('<img') === null) {
+            } else if (this.containsImage === false || tools.containsImage(body) === false) {
                 this.containsImage = false;
             } else {
                 this.containsImage = true;

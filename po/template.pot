@@ -90,7 +90,7 @@ msgstr ""
 msgid "+{{ (conversation.LabelIDs | labels).length - 4 }} More labels"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:55
+#: src/app/templates/partials/message.tpl.html:54
 msgid "+{{ (message.LabelIDs | labels).length - 4 }} More labels"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 
 #. custom domain menu
 #. custom domain menu select dropdown
-#: src/app/controllers/secured.js:228
+#: src/app/controllers/secured.js:222
 #: src/app/controllers/secured.js:31
 #: src/app/templates/partials/menu.settings.tpl.html:30
 #: src/app/templates/partials/menu.settings.tpl.html:6
@@ -153,7 +153,7 @@ msgstr ""
 #. Tooltip
 #: src/app/templates/modals/domain/address.tpl.html:30
 #: src/app/templates/modals/user/address.tpl.html:28
-#: src/app/templates/partials/message.tpl.html:154
+#: src/app/templates/partials/message.tpl.html:153
 #: src/app/templates/partials/toolbar-contacts.tpl.html:17
 #: src/app/templates/views/labels.tpl.html:5
 #: src/app/templates/views/payments.tpl.html:8
@@ -466,7 +466,7 @@ msgstr ""
 
 #. custom domain menu
 #. custom domain menu select dropdown
-#: src/app/controllers/secured.js:237
+#: src/app/controllers/secured.js:231
 #: src/app/controllers/secured.js:35
 #: src/app/templates/partials/menu.settings.tpl.html:15
 #: src/app/templates/partials/menu.settings.tpl.html:33
@@ -484,7 +484,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:204
+#: src/app/controllers/secured.js:198
 #: src/app/directives/move.js:22
 #: src/app/templates/directives/location-tag.tpl.html:7
 #: src/app/templates/partials/no-results.tpl.html:21
@@ -552,7 +552,7 @@ msgctxt "Info"
 msgid "Are you sure you want to unlink this address?"
 msgstr ""
 
-#: src/app/controllers/conversations.js:891
+#: src/app/controllers/conversations.js:865
 msgctxt "Info"
 msgid "Are you sure?"
 msgstr ""
@@ -627,7 +627,7 @@ msgstr ""
 #. printed message info
 #: src/app/controllers/compose.js:1582
 #: src/app/templates/partials/composer.tpl.html:153
-#: src/app/templates/partials/message.tpl.html:117
+#: src/app/templates/partials/message.tpl.html:116
 #: src/app/templates/views/message.print.tpl.html:46
 msgctxt "Title"
 msgid "BCC"
@@ -757,7 +757,7 @@ msgstr ""
 #. printed message info
 #: src/app/controllers/compose.js:1572
 #: src/app/templates/partials/composer.tpl.html:149
-#: src/app/templates/partials/message.tpl.html:103
+#: src/app/templates/partials/message.tpl.html:102
 #: src/app/templates/views/message.print.tpl.html:39
 #: src/app/templates/views/outside.message.tpl.html:34
 msgctxt "Title"
@@ -929,10 +929,10 @@ msgctxt "Info"
 msgid "Compose mode saved"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:110
-#: src/app/templates/partials/message.tpl.html:124
-#: src/app/templates/partials/message.tpl.html:32
-#: src/app/templates/partials/message.tpl.html:96
+#: src/app/templates/partials/message.tpl.html:109
+#: src/app/templates/partials/message.tpl.html:123
+#: src/app/templates/partials/message.tpl.html:31
+#: src/app/templates/partials/message.tpl.html:95
 msgid "Compose to"
 msgstr ""
 
@@ -987,7 +987,7 @@ msgctxt "Title"
 msgid "Confirm Password"
 msgstr ""
 
-#: src/app/controllers/conversations.js:890
+#: src/app/controllers/conversations.js:864
 msgctxt "Title"
 msgid "Confirmation"
 msgstr ""
@@ -1029,7 +1029,7 @@ msgid "Contacts"
 msgstr ""
 
 #. Folder name
-#: src/app/controllers/secured.js:222
+#: src/app/controllers/secured.js:216
 #: src/app/templates/partials/sidebar-responsive.tpl.html:66
 msgctxt "Title"
 msgid "Contacts"
@@ -1231,7 +1231,7 @@ msgstr ""
 
 #. custom domain menu
 #. custom domain menu select dropdown
-#: src/app/controllers/secured.js:225
+#: src/app/controllers/secured.js:219
 #: src/app/controllers/secured.js:30
 #: src/app/controllers/secured.js:34
 #: src/app/templates/partials/menu.settings.tpl.html:29
@@ -1285,13 +1285,13 @@ msgstr ""
 msgid "Decrypting"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:248
+#: src/app/templates/partials/message.tpl.html:247
 #: src/app/templates/views/outside.reply.tpl.html:28
 msgctxt "Error"
 msgid "Decryption error"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:249
+#: src/app/templates/partials/message.tpl.html:248
 #: src/app/templates/views/outside.reply.tpl.html:29
 msgctxt "Error"
 msgid "Decryption of this message's encryption content failed."
@@ -1322,7 +1322,7 @@ msgstr ""
 
 #. contacts toolbar menu option
 #: src/app/templates/modals/deleteAccount.tpl.html:25
-#: src/app/templates/partials/message.tpl.html:193
+#: src/app/templates/partials/message.tpl.html:192
 #: src/app/templates/partials/toolbar-contacts.tpl.html:20
 #: src/app/templates/partials/toolbar-desktop.tpl.html:23
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:25
@@ -1495,7 +1495,7 @@ msgstr ""
 
 #. custom domain menu
 #. invoice heading
-#: src/app/controllers/secured.js:240
+#: src/app/controllers/secured.js:234
 #: src/app/controllers/secured.js:36
 #: src/app/templates/partials/menu.settings.tpl.html:18
 #: src/app/templates/views/dashboard.tpl.html:19
@@ -1580,8 +1580,8 @@ msgctxt "Title"
 msgid "Downloading"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:135
-#: src/app/templates/partials/message.tpl.html:40
+#: src/app/templates/partials/message.tpl.html:134
+#: src/app/templates/partials/message.tpl.html:39
 msgid "Draft"
 msgstr ""
 
@@ -1597,7 +1597,7 @@ msgstr ""
 
 #. Folder name
 #. no results heading
-#: src/app/controllers/secured.js:195
+#: src/app/controllers/secured.js:189
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:23
 #: src/app/templates/partials/sidebar.tpl.html:21
@@ -1875,7 +1875,7 @@ msgctxt "Error"
 msgid "Error during organization request"
 msgstr ""
 
-#: src/app/controllers/conversations.js:330
+#: src/app/controllers/conversations.js:304
 msgctxt "Error"
 msgid "Error during quering conversations"
 msgstr ""
@@ -2022,7 +2022,7 @@ msgctxt "Action"
 msgid "Finish"
 msgstr ""
 
-#: src/app/controllers/conversations.js:918
+#: src/app/controllers/conversations.js:892
 msgid "Folder emptied"
 msgstr ""
 
@@ -2052,7 +2052,7 @@ msgctxt "Action"
 msgid "Forgot username?"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:168
+#: src/app/templates/partials/message.tpl.html:167
 msgctxt "Action"
 msgid "Forward"
 msgstr ""
@@ -2061,7 +2061,7 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:28
+#: src/app/templates/partials/message.tpl.html:27
 #: src/app/templates/partials/searchForm.tpl.html:32
 #: src/app/templates/views/outside.reply.tpl.html:14
 msgid "From"
@@ -2175,7 +2175,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:223
+#: src/app/templates/partials/message.tpl.html:222
 msgctxt "Action"
 msgid "Hide details"
 msgstr ""
@@ -2286,20 +2286,20 @@ msgid "If you wish to delete in order to combine this account with another one, 
 msgstr ""
 
 #. message label
-#: src/app/templates/partials/message.tpl.html:132
-#: src/app/templates/partials/message.tpl.html:37
+#: src/app/templates/partials/message.tpl.html:131
+#: src/app/templates/partials/message.tpl.html:36
 msgid "In archive"
-msgstr ""
-
-#. message label
-#: src/app/templates/partials/message.tpl.html:134
-#: src/app/templates/partials/message.tpl.html:39
-msgid "In spam"
 msgstr ""
 
 #. message label
 #: src/app/templates/partials/message.tpl.html:133
 #: src/app/templates/partials/message.tpl.html:38
+msgid "In spam"
+msgstr ""
+
+#. message label
+#: src/app/templates/partials/message.tpl.html:132
+#: src/app/templates/partials/message.tpl.html:37
 msgid "In trash"
 msgstr ""
 
@@ -2311,7 +2311,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:192
+#: src/app/controllers/secured.js:186
 #: src/app/directives/move.js:21
 #: src/app/templates/directives/location-tag.tpl.html:2
 #: src/app/templates/partials/no-results.tpl.html:15
@@ -2361,7 +2361,7 @@ msgctxt "Error"
 msgid "Invalid recovery email."
 msgstr ""
 
-#: src/app/controllers/secured.js:246
+#: src/app/controllers/secured.js:240
 #: src/app/controllers/settings/invoices.js:16
 #: src/app/templates/views/payments.tpl.html:39
 msgctxt "Title"
@@ -2420,7 +2420,7 @@ msgid "Keywords"
 msgstr ""
 
 #. no results heading
-#: src/app/controllers/secured.js:218
+#: src/app/controllers/secured.js:212
 #: src/app/templates/partials/no-results.tpl.html:23
 msgctxt "Title"
 msgid "Label"
@@ -2462,7 +2462,7 @@ msgid "Labels"
 msgstr ""
 
 #. custom domain menu
-#: src/app/controllers/secured.js:231
+#: src/app/controllers/secured.js:225
 #: src/app/controllers/secured.js:32
 #: src/app/templates/partials/menu.settings.tpl.html:9
 msgctxt "Title"
@@ -2484,7 +2484,7 @@ msgctxt "Title"
 msgid "Layout"
 msgstr ""
 
-#: src/app/controllers/conversations.js:632
+#: src/app/controllers/conversations.js:606
 #: src/app/controllers/settings/appearance.js:97
 msgid "Layout saved"
 msgstr ""
@@ -2568,7 +2568,7 @@ msgctxt "Action"
 msgid "Login"
 msgstr ""
 
-#: src/app/controllers/secured.js:249
+#: src/app/controllers/secured.js:243
 msgctxt "Title"
 msgid "Login"
 msgstr ""
@@ -2704,14 +2704,14 @@ msgctxt "Action"
 msgid "Mark as read / Mark as unread"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:189
+#: src/app/templates/partials/message.tpl.html:188
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:24
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:72
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:185
+#: src/app/templates/partials/message.tpl.html:184
 #: src/app/templates/partials/toolbar-desktop.tpl.html:11
 #: src/app/templates/partials/toolbar-desktop.tpl.html:16
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:12
@@ -2843,7 +2843,7 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:171
+#: src/app/templates/partials/message.tpl.html:170
 msgctxt "Action"
 msgid "More"
 msgstr ""
@@ -2857,7 +2857,7 @@ msgctxt "Action"
 msgid "Move to archive"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:177
+#: src/app/templates/partials/message.tpl.html:176
 #: src/app/templates/partials/toolbar-desktop.tpl.html:20
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:22
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:64
@@ -2874,7 +2874,7 @@ msgctxt "Action"
 msgid "Move to spam"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:181
+#: src/app/templates/partials/message.tpl.html:180
 #: src/app/templates/partials/toolbar-desktop.tpl.html:19
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:21
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:60
@@ -3425,7 +3425,7 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:215
+#: src/app/templates/partials/message.tpl.html:214
 msgctxt "Action"
 msgid "Print"
 msgstr ""
@@ -3603,12 +3603,12 @@ msgctxt "Action"
 msgid "Remove user"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:162
+#: src/app/templates/partials/message.tpl.html:161
 msgctxt "Action"
 msgid "Reply"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:165
+#: src/app/templates/partials/message.tpl.html:164
 msgctxt "Action"
 msgid "Reply all"
 msgstr ""
@@ -3788,7 +3788,7 @@ msgstr ""
 
 #. custom domain menu
 #. custom domain menu select dropdown
-#: src/app/controllers/secured.js:234
+#: src/app/controllers/secured.js:228
 #: src/app/controllers/secured.js:33
 #: src/app/templates/partials/menu.settings.tpl.html:12
 #: src/app/templates/partials/menu.settings.tpl.html:32
@@ -3842,8 +3842,8 @@ msgstr ""
 
 #. printed message info
 #: src/app/services/actions.js:35
-#: src/app/templates/partials/message.tpl.html:136
-#: src/app/templates/partials/message.tpl.html:41
+#: src/app/templates/partials/message.tpl.html:135
+#: src/app/templates/partials/message.tpl.html:40
 #: src/app/templates/views/message.print.tpl.html:14
 msgid "Sent"
 msgstr ""
@@ -3851,7 +3851,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:198
+#: src/app/controllers/secured.js:192
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/no-results.tpl.html:17
 #: src/app/templates/partials/sidebar-responsive.tpl.html:30
@@ -3900,7 +3900,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:222
+#: src/app/templates/partials/message.tpl.html:221
 msgctxt "Action"
 msgid "Show details"
 msgstr ""
@@ -3911,13 +3911,13 @@ msgid "Show images"
 msgstr ""
 
 #. show images in an email button
-#: src/app/templates/partials/message.tpl.html:239
+#: src/app/templates/partials/message.tpl.html:238
 #: src/app/templates/views/outside.message.tpl.html:42
 msgctxt "Action"
 msgid "Show images"
 msgstr ""
 
-#: src/app/directives/transformation.js:46
+#: src/app/directives/transformation.js:96
 msgctxt "Title"
 msgid "Show previous message"
 msgstr ""
@@ -3997,7 +3997,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:207
+#: src/app/controllers/secured.js:201
 #: src/app/directives/move.js:23
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
@@ -4028,7 +4028,7 @@ msgstr ""
 
 #. Folder name
 #. no results heading
-#: src/app/controllers/secured.js:201
+#: src/app/controllers/secured.js:195
 #: src/app/templates/partials/no-results.tpl.html:20
 #: src/app/templates/partials/sidebar-responsive.tpl.html:37
 #: src/app/templates/partials/sidebar.tpl.html:37
@@ -4144,7 +4144,7 @@ msgctxt "Info"
 msgid "This can take a few seconds or a few minutes depending on your device."
 msgstr ""
 
-#: src/app/controllers/conversations.js:891
+#: src/app/controllers/conversations.js:865
 msgid "This cannot be undone."
 msgstr ""
 
@@ -4181,7 +4181,7 @@ msgid "This is used to recover your account if you get locked out or forget your
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:101
-#: src/app/templates/partials/message.tpl.html:232
+#: src/app/templates/partials/message.tpl.html:231
 msgid "This message will expire in"
 msgstr ""
 
@@ -4227,14 +4227,14 @@ msgstr ""
 #. printed message info
 #: src/app/controllers/compose.js:1562
 #: src/app/templates/partials/composer.tpl.html:142
-#: src/app/templates/partials/message.tpl.html:89
+#: src/app/templates/partials/message.tpl.html:88
 #: src/app/templates/views/message.print.tpl.html:32
 #: src/app/templates/views/outside.message.tpl.html:28
 msgctxt "Title"
 msgid "To"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:80
+#: src/app/templates/partials/message.tpl.html:79
 #: src/app/templates/partials/searchForm.tpl.html:36
 #: src/app/templates/views/outside.reply.tpl.html:18
 msgid "To"
@@ -4283,7 +4283,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:210
+#: src/app/controllers/secured.js:204
 #: src/app/directives/move.js:24
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
@@ -4515,7 +4515,7 @@ msgctxt "Error"
 msgid "Username is required."
 msgstr ""
 
-#: src/app/controllers/secured.js:243
+#: src/app/controllers/secured.js:237
 #: src/app/controllers/secured.js:37
 #: src/app/templates/views/members.tpl.html:62
 msgctxt "Title"
@@ -4591,22 +4591,22 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:207
+#: src/app/templates/partials/message.tpl.html:206
 msgctxt "Action"
 msgid "View headers"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:211
+#: src/app/templates/partials/message.tpl.html:210
 msgctxt "Action"
 msgid "View original"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:202
+#: src/app/templates/partials/message.tpl.html:201
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:198
+#: src/app/templates/partials/message.tpl.html:197
 msgctxt "Action"
 msgid "View source code"
 msgstr ""
