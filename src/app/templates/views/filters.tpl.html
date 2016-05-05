@@ -10,7 +10,7 @@
 
             <div class="setting pm_form full desktopOnly">
 
-                <legend translate-context="Title" translate-comment="defaults page heading" translate>Incomming Defaults</legend>
+                <legend translate-context="Title" translate>Custom Filters</legend>
 
                 <div class="pm_grid">
                     <div class="col-1-2">
@@ -62,29 +62,60 @@
 
                 </div> -->
 
+                <legend translate translate-context="Title">Spam Filters</legend>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis porro ullam odio ex quae non autem soluta quod ipsam! Dolore ducimus sapiente possimus voluptas, molestiae suscipit adipisci saepe autem tempore.</p>
+
+                <div class="margin">
+                    <input type="search" ng-model="searchSpamFilter" />
+                </div>
+
                 <div class="pm_grid">
-                    <div class="col-2-5">
-                        <table class="pm_table">
+                    <div class="col-1-2">
+                        <div class="pm_grid">
+                            <div class="col-1-2">
+                                <strong translate translate-text="Title">White List</strong>
+                            </div>
+                            <div class="text-right">
+                                <button class="pm_button" translate translate-context="Action">Add</button>
+                            </div>
+                        </div>
+                        <table class="pm_table bordered">
                             <tbody>
-                                <tr ng-repeat="rule in rules | filter: {Location: 0} track by rule.ID">
+                                <tr ng-repeat="rule in rules | filter: {Location: 0} | filter: searchSpamFilter track by rule.ID">
                                     <td ng-bind="rule.Email"></td>
-                                    <td>
-                                        <button class="pm_button" ng-click="" translate translate-context="Action">Delete</button>
+                                    <td class="text-right">
+                                        <button class="pm_button link" ng-click="">
+                                            <i class="fa fa-arrows-h"></i>
+                                        </button>
+                                        <button class="pm_button link" ng-click="deleteSpamFilter()">
+                                            <i class="fa fa-times"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-1-5">
-                        Switch
-                    </div>
-                    <div class="col-2-5">
-                        <table class="pm_table">
+                    <div class="col-1-2">
+                        <div class="pm_grid">
+                            <div class="col-1-2">
+                                <strong translate translate-text="Title">Black List</strong>
+                            </div>
+                            <div class="text-right">
+                                <button class="pm_button" translate translate-context="Action">Add</button>
+                            </div>
+                        </div>
+                        <table class="pm_table bordered">
                             <tbody>
-                                <tr ng-repeat="rule in rules | filter: {Location: 4} track by rule.ID">
+                                <tr ng-repeat="rule in rules | filter: {Location: 4} | filter: searchSpamFilter track by rule.ID">
                                     <td ng-bind="rule.Email"></td>
-                                    <td>
-                                        <button class="pm_button" ng-click="" translate translate-context="Action">Delete</button>
+                                    <td class="text-right">
+                                        <button class="pm_button link" ng-click="">
+                                            <i class="fa fa-arrows-h"></i>
+                                        </button>
+                                        <button class="pm_button link" ng-click="">
+                                            <i class="fa fa-times"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
