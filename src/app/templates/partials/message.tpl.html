@@ -172,7 +172,7 @@ ng-class="{
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <span class="pm_dropdown wide right">
-                        <a ng-click="move('inbox')">
+                        <a ng-click="move('inbox')" ng-hide="message.Type === 2 || message.Type === 3">
                             <i class="fa fa-inbox"></i>
                             <span translate translate-context="Action">Move to inbox</span>
                         </a>
@@ -242,7 +242,7 @@ ng-class="{
 
     <div class="frame" ng-show="message.expand">
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
-        <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote scroll="true"></div>
+        <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote mail-to scroll="true"></div>
         <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
             <span class="pull-left fa fa-exclamation-triangle"></span>
             <strong translate translate-context="Error">Decryption error</strong>

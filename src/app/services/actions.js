@@ -60,7 +60,7 @@ angular.module('proton.actions', [])
                 // Send cache events
                 cache.events(events);
                 // Display notification
-                notify({message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success'});                    
+                notify({message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success'});
             };
 
             if (tools.currentMailbox() !== 'label') {
@@ -82,10 +82,10 @@ angular.module('proton.actions', [])
                     var copyLabelIDsAdded = angular.copy(labelIDsAdded);
                     var copyLabelIDsRemoved = angular.copy(labelIDsRemoved);
 
-                    if(toInbox === true) {
+                    if (toInbox === true) {
                         var index;
 
-                        if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
+                        if (message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
                             index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
 
                             copyLabelIDsAdded.splice(index, 1);
@@ -471,7 +471,7 @@ angular.module('proton.actions', [])
                     return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
                 });
 
-                if(inInbox === true) {
+                if (inInbox === true) {
                     var index;
 
                     if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
@@ -514,7 +514,11 @@ angular.module('proton.actions', [])
 
                     _.each(messages, function(message) {
                         var found = _.find(events, function(event) {
-                            return message.ID === event.Message.ID;
+                            if (angular.isDefined(event.Message)) {
+                                return message.ID === event.Message.ID;
+                            } else {
+                                return false;
+                            }
                         });
 
                         if (angular.isDefined(found)) {

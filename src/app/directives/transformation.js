@@ -1,4 +1,4 @@
-angular.module("proton.transformation", [])
+angular.module('proton.transformation', [])
 
 .directive('transformLinks', function($timeout) {
     return {
@@ -12,6 +12,56 @@ angular.module("proton.transformation", [])
                         links.attr('target','_blank').attr('rel', 'noreferrer');
                     }
                 }, 0, false);
+            });
+        }
+    };
+})
+
+.directive('mailTo', function($timeout, $rootScope, regexEmail, Message) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attributes) {
+            var links;
+            var onClick = function(event) {
+                event.preventDefault();
+                var emails = event.target.getAttribute('href').match(regexEmail);
+
+                if (emails) {
+                    var message = new Message();
+                    var ToList = [];
+
+                    ToList.push({
+                        Address: emails[0],
+                        Name: emails[0]
+                    });
+
+                    _.defaults(message, {
+                        ToList: ToList,
+                        CCList: [],
+                        BCCList: [],
+                        Subject: '',
+                        PasswordHint: '',
+                        Attachments: []
+                    });
+
+                    $rootScope.$broadcast('loadMessage', message);
+                }
+            };
+
+            scope.$watch(attributes.ngBindHtml, function(newValue, oldValue) {
+                $timeout(function() {
+                    links = angular.element(element).find('a[href^=mailto]');
+
+                    if (links) {
+                        angular.element(links).on('click', onClick);
+                    }
+                }, 0, false);
+            });
+
+            scope.$on('$destroy', function(event) {
+                if (links) {
+                    angular.element(links).off('click', onClick);
+                }
             });
         }
     };

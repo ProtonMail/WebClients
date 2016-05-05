@@ -86,6 +86,19 @@ angular.module("proton.labels", [])
                 scope.close();
             };
 
+            scope.moveTo = function(label) {
+                // Unselect all labels
+                _.each(scope.labels, function(l) { l.Selected = false; });
+                // Select just one
+                label.Selected = true;
+                // Check also archive
+                scope.alsoArchive = true;
+                // Save
+                scope.saveLabels(scope.labels, scope.alsoArchive);
+                // Close
+                scope.close();
+            };
+
             scope.close = function() {
                 $rootScope.$broadcast('closeDropdown');
             };
