@@ -10,9 +10,8 @@
                 <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
                     <label>
                         <input type="checkbox" ng-model="label.Selected" />
-                        <span class="label label-pm" title="{{ label.Name }}">
-                            <i class="fa fa-tag" ng-style="color(label)"></i> {{ label.Name | limitTo: 20 }}
-                        </span>
+                        <i class="fa fa-tag" ng-style="color(label)" ng-click="moveTo(label)" pt-tooltip-translate="Archive and Apply" pt-tooltip-translate-context="Action"></i>
+                        <span class="label label-pm" title="{{ label.Name }}">{{ label.Name | limitTo: 20 }}</span>
                     </label>
                 </li>
             </ul>

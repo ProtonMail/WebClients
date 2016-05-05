@@ -37,7 +37,7 @@
                 <i class="fa fa-trash-o"></i>
                 <span translate translate-context="Action">Move to trash</span>
             </a>
-            <a ng-click="move('inbox')" ng-hide="{{ ('secured.inbox.**' | includedByState) || ('secured.spam.**' | includedByState) }}" ng-class="{ disabled: numberElementSelected === 0 }">
+            <a ng-click="move('inbox')" ng-hide="{{ ('secured.inbox.**' | includedByState) || ('secured.spam.**' | includedByState) || ('secured.sent.**' | includedByState) }}" ng-class="{ disabled: numberElementSelected === 0 }">
                 <i class="fa fa-inbox"></i>
                 <span translate translate-context="Action">Move to inbox</span>
             </a>

@@ -23,6 +23,7 @@ angular.module('proton.autocomplete', [])
             var DOWN_KEY = 40;
             var ESC_KEY = 27;
             var SPACE_KEY = 32;
+            var COMMA_KEY = 188;
             var timeoutChange;
             var timeoutBlur;
 
@@ -228,6 +229,7 @@ angular.module('proton.autocomplete', [])
                     case DOWN_KEY:
                     case UP_KEY:
                     case TAB_KEY:
+                    case COMMA_KEY:
                     case ENTER_KEY:
                         event.preventDefault();
                         event.stopPropagation();
@@ -239,6 +241,7 @@ angular.module('proton.autocomplete', [])
 
             scope.onKeyUp = function(event, email) {
                 switch (event.keyCode) {
+                    case COMMA_KEY:
                     case ENTER_KEY:
                         scope.onSubmit(true);
                         break;
