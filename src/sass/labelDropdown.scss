@@ -103,6 +103,9 @@
 				width: 20px;
 				float: left;
 				display: block;
+				&:hover:before {
+					content: '\f187';
+				}
 			}
 		}
 	}
