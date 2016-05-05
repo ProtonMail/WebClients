@@ -229,6 +229,7 @@ angular.module('proton.autocomplete', [])
                     case DOWN_KEY:
                     case UP_KEY:
                     case TAB_KEY:
+                    case COMMA_KEY:
                     case ENTER_KEY:
                         event.preventDefault();
                         event.stopPropagation();
