@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="row" id="settingsIncomingDefaults">
+                <!-- <div class="row" id="settingsIncomingDefaults">
 
                     <p class="alert alert-info" ng-show="rules.length < 1" translate>No incomming default rules yet</p>
 
@@ -60,6 +60,36 @@
                         </tbody>
                     </table>
 
+                </div> -->
+
+                <div class="pm_grid">
+                    <div class="col-2-5">
+                        <table class="pm_table">
+                            <tbody>
+                                <tr ng-repeat="rule in rules | filter: {Location: 0} track by rule.ID">
+                                    <td ng-bind="rule.Email"></td>
+                                    <td>
+                                        <button class="pm_button" ng-click="" translate translate-context="Action">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-1-5">
+                        Switch
+                    </div>
+                    <div class="col-2-5">
+                        <table class="pm_table">
+                            <tbody>
+                                <tr ng-repeat="rule in rules | filter: {Location: 4} track by rule.ID">
+                                    <td ng-bind="rule.Email"></td>
+                                    <td>
+                                        <button class="pm_button" ng-click="" translate translate-context="Action">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             </div><!--/.setting-->

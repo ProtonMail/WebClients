@@ -7,6 +7,8 @@ angular.module("proton.controllers.Settings")
     CONSTANTS,
     gettextCatalog,
     IncomingDefault,
+    confirmModal,
+    Filter,
     incomingDefaults,
     networkActivityTracker,
     notify,
@@ -112,5 +114,31 @@ angular.module("proton.controllers.Settings")
     $scope.selectPage = function(page) {
         $scope.currentPage = page;
         $scope.rules = incomingDefaults.slice(($scope.currentPage - 1) * $scope.numPerPage, ($scope.currentPage - 1) * $scope.numPerPage + $scope.numPerPage);
+    };
+
+    $scope.deleteFilter = function(filter) {
+        var title = gettextCatalog.getString('');
+        var message = gettextCatalog.getString('');
+
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    confirmModal.deactivate();
+                    networkActivityTracker.track(
+                        Filter.delete(filter)
+                        .then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+
+                            }
+                        })
+                    );
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
     };
 });
