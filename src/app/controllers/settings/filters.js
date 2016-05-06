@@ -11,121 +11,53 @@ angular.module("proton.controllers.Settings")
     Filter,
     incomingDefaults,
     networkActivityTracker,
+    filterModal,
+    filterAddressModal,
     notify,
     Setting
 ) {
     // Variables
-    var lastChecked = null;
-
-    $scope.currentPage = 1;
-    $scope.numPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
-    $scope.rules = incomingDefaults.slice(($scope.currentPage - 1) * $scope.numPerPage, ($scope.currentPage - 1) * $scope.numPerPage + $scope.numPerPage);
-    $scope.totalItems = incomingDefaults.length;
-    $scope.destinations = [
-        { label: gettextCatalog.getString('Inbox', null), id: parseInt(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) },
-        { label: gettextCatalog.getString('Spam', null), id: parseInt(CONSTANTS.MAILBOX_IDENTIFIERS.spam) }
+    $scope.spamFilters = incomingDefaults;
+    $scope.customFilters = [
+        {
+            "ID": "Ik65N-aChBuWFdo1JpmHJB4iWetfzjVLNILERQqbYFBZc5crnxOabXKuIMKhiwBNwiuogItetAUvkFTwJFJPQg==",
+            "Name": "Updated",
+            "Status": 1,
+            "Data": "require [\"label\"];  if address :DOMAIN :is [\"From\", \"Delivered-To\"] \"protonmail.ch\" {     label \"mylabel\"; } else {     keep; }",
+            "Version": 1
+        }
     ];
 
-    $scope.clearDefaults = function() {
-        networkActivityTracker.track(
-            IncomingDefault.clear()
-            .then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    $scope.rules = [];
-                    notify({message: gettextCatalog.getString('Default incomming rules cleared', null), classes: 'notification-success'});
+    $scope.addCustomFilter = function() {
+        filterModal.activate({
+            params: {
+                close: function() {
+                    filterModal.deactivate();
                 }
-            })
-        );
-    };
-
-    $scope.refreshDefaults = function() {
-        networkActivityTracker.track(
-            IncomingDefault.get()
-            .then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    $scope.rules = result.data.IncomingDefaults;
-                    notify({message: gettextCatalog.getString('Default incomming rules refreshed', null), classes: 'notification-success'});
-                }
-            })
-        );
-    };
-
-    $scope.initSelect = function(rule) {
-        rule.destination = _.findWhere($scope.destinations, {id: rule.Location});
-    };
-
-    $scope.changeDestination = function(rule) {
-        rule.Location = rule.destination.id;
-
-        networkActivityTracker.track(
-            IncomingDefault.update(rule)
-            .then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    angular.extend(rule, result.data.IncomingDefault);
-                    notify({message: gettextCatalog.getString('Default incomming rule updated', null), classes: 'notification-success'});
-                }
-            })
-        );
-    };
-
-    $scope.deleteSelectedDefaults = function() {
-        var defaultsSelected = _.where($scope.rules, {selected: true});
-        var deletedIDs = [];
-        var deletedDefaults = [];
-
-        _.forEach(defaultsSelected, function(rule) {
-            deletedIDs.push(rule.ID.toString());
-            deletedDefaults.push(rule);
-        });
-
-        networkActivityTracker.track(
-            IncomingDefault.delete({
-                IDs : deletedIDs
-            }).then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Incomming defaults deleted', null, 'Info'), classes: 'notification-success'});
-
-                    // TODO: replace this with a smart comaprison of the IncomingDefaults array and the deletedDefaults arrays;
-                    $scope.rules = $scope.rules.filter(function(val) {
-                        return deletedDefaults.indexOf(val) === -1;
-                    });
-                }
-            })
-        );
-    };
-
-    $scope.onSelectDefault = function(event, rule) {
-        if (!lastChecked) {
-            lastChecked = rule;
-        } else {
-            if (event.shiftKey) {
-                var start = _.indexOf($scope.rules, rule);
-                var end = _.indexOf($scope.rules, lastChecked);
-
-                _.each($scope.rules.slice(Math.min(start, end), Math.max(start, end) + 1), function(rule) {
-                    rule.selected = lastChecked.selected;
-                });
             }
-
-            lastChecked = rule;
-        }
+        });
     };
 
-    $scope.selectPage = function(page) {
-        $scope.currentPage = page;
-        $scope.rules = incomingDefaults.slice(($scope.currentPage - 1) * $scope.numPerPage, ($scope.currentPage - 1) * $scope.numPerPage + $scope.numPerPage);
+    $scope.editCustomFilter = function(filter) {
+        filterModal.activate({
+            params: {
+                filter: filter,
+                close: function() {
+                    filterModal.deactivate();
+                }
+            }
+        });
     };
 
-    $scope.deleteFilter = function(filter) {
-        var title = gettextCatalog.getString('');
-        var message = gettextCatalog.getString('');
+    $scope.deleteCustomFilter = function(filter) {
+        var title = gettextCatalog.getString('Delete Filter', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to delete this filter?', null, 'Info');
 
         confirmModal.activate({
             params: {
                 title: title,
                 message: message,
                 confirm: function() {
-                    confirmModal.deactivate();
                     networkActivityTracker.track(
                         Filter.delete(filter)
                         .then(function(result) {
@@ -134,11 +66,101 @@ angular.module("proton.controllers.Settings")
                             }
                         })
                     );
+                    confirmModal.deactivate();
                 },
                 cancel: function() {
                     confirmModal.deactivate();
                 }
             }
         });
+    };
+
+    $scope.enableCustomFilter = function(filter) {
+        networkActivityTracker.track(
+            Filter.enable(filter)
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+
+                }
+            })
+        );
+    };
+
+    $scope.disableCustomFilter = function(filter) {
+        networkActivityTracker.track(
+            Filter.disable(filter)
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+
+                }
+            })
+        );
+    };
+
+    /**
+     * Open a modal to a spam filter to a specific location
+     * @param {Integer} folder
+     */
+    $scope.addSpamFilter = function(folder) {
+        filterAddressModal.activate({
+            params: {
+                location: folder,
+                add: function(filter) {
+                    $scope.spamFilters.push(filter);
+                    filterAddressModal.deactivate();
+                    notify({message: gettextCatalog.getString('Spam Filter Added'), classes: 'notification-success'});
+                },
+                close: function() {
+                    filterAddressModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Delete a specific spam filter
+     * @param {Object} filter
+     */
+    $scope.deleteSpamFilter = function(filter) {
+        var IDs = [];
+
+        IDs.push(filter.ID);
+
+        networkActivityTracker.track(
+            IncomingDefault.delete({IDs: IDs})
+            .then(function(result) {
+                if (result.data && result.data.Code === 1001) {
+                    var index = $scope.spamFilters.indexOf(filter);
+
+                    $scope.spamFilters.splice(index, 1);
+                    notify({message: gettextCatalog.getString('Spam Filter Deleted'), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                }
+            })
+        );
+    };
+
+    /**
+     * Move a filter to an other spam list
+     * @param {Object} filter
+     * @param {Integer} folder
+     */
+    $scope.switchSpamFilter = function(filter, folder) {
+        var clone = angular.copy(filter);
+
+        clone.Location = folder;
+
+        networkActivityTracker.track(
+            IncomingDefault.update(clone)
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    angular.extend(filter, result.data.IncomingDefault);
+                    notify({message: gettextCatalog.getString('Spam Filter Updated', null), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                }
+            })
+        );
     };
 });

@@ -10,85 +10,69 @@
 
             <div class="setting pm_form full desktopOnly">
 
-                <legend translate-context="Title" translate>Custom Filters</legend>
+                <!-- <legend translate-context="Title" translate>Custom Filters</legend>
 
-                <div class="pm_grid">
-                    <div class="col-1-2">
-                        <button type="button" class="pm_button" ng-click="deleteSelectedDefaults()" ng-disabled="networkActivity.loading()" translate>Delete Selected</button>
-                        <button type="button" class="pm_button" ng-click="refreshDefaults()" ng-disabled="networkActivity.loading()"><i class="fa fa-rotate-right"></i></button>
-                    </div>
-                    <div class="col-1-2 text-right">
-                        <button type="button" class="pm_button" ng-click="clearDefaults()" ng-disabled="networkActivity.loading()" translate>Delete All</button>
-                        <paginator page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
-                    </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, tenetur numquam. Nesciunt provident perspiciatis explicabo, quis voluptatum, recusandae nam, earum tempore quas culpa architecto obcaecati inventore. Perspiciatis, iure voluptatem consequuntur.</p>
+
+                <div class="margin">
+                    <button class="pm_button primary" translate translate-context="Action" ng-click="addCustomFilter()">Add New Filter</button>
                 </div>
 
-                <!-- <div class="row" id="settingsIncomingDefaults">
-
-                    <p class="alert alert-info" ng-show="rules.length < 1" translate>No incomming default rules yet</p>
-
-                    <table ng-if="rules.length > 0" class="pm_table">
-                        <thead>
-                            <tr>
-                                <th class="hidden-xs checkbox"></th>
-                                <th class="email" translate>Email</th>
-                                <th class="rule" translate>Default Folder</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="rule in rules track by rule.ID">
-                                <td class="text-center hidden-xs checkbox">
-                                    <label for="">
-                                        <input type="checkbox" ng-model="rule.selected" ng-click="onSelectDefault($event, rule)" />
-                                    </label>
-                                </td>
-                                <td class="email">
-                                    <span ng-bind="rule.Email"></span>
-                                </td>
-                                <td class="rule pm_grid">
-                                    <div class="col-1-2">
-                                        <label for="">Move to </label>
-                                    </div>
-                                    <div class="col-1-2">
-                                        <span class="pm_select">
-                                            <select ng-model="rule.destination" ng-options="destination.label for destination in destinations" ng-init="initSelect(rule)" ng-change="changeDestination(rule)"></select>
-                                            <i class="fa fa-angle-down"></i>
-                                        </span>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div> -->
+                <table class="pm_table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <i class="fa fa-arrows"></i>
+                            </th>
+                            <th>Filtername</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="filter in customFilters track by filter.ID">
+                            <td>
+                                <i class="fa fa-ellipsis-v"></i>
+                            </td>
+                            <td ng-bind="filter.Name"></td>
+                            <td>
+                                <toggle status="filter.Status" on-translate="Enable" off-translate="Disable"></toggle>
+                            </td>
+                            <td>
+                                <button class="pm_button link" ng-click="editCustomFilter(filter)">Edit</button>
+                                <button class="pm_button link" ng-click="deleteCustomFilter(filter)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> -->
 
                 <legend translate translate-context="Title">Spam Filters</legend>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis porro ullam odio ex quae non autem soluta quod ipsam! Dolore ducimus sapiente possimus voluptas, molestiae suscipit adipisci saepe autem tempore.</p>
 
                 <div class="margin">
-                    <input type="search" ng-model="searchSpamFilter" />
+                    <input type="search" ng-model="searchSpamFilter" placeholder-translate="Search in Spam lists" />
                 </div>
 
                 <div class="pm_grid">
                     <div class="col-1-2">
-                        <div class="pm_grid">
+                        <div class="pm_grid margin">
                             <div class="col-1-2">
-                                <strong translate translate-text="Title">White List</strong>
+                                <legend translate translate-text="Title" class="no-border">White List</legend>
                             </div>
                             <div class="text-right">
-                                <button class="pm_button" translate translate-context="Action">Add</button>
+                                <button class="pm_button" translate translate-context="Action" ng-click="addSpamFilter(0)">Add</button>
                             </div>
                         </div>
                         <table class="pm_table bordered">
                             <tbody>
-                                <tr ng-repeat="rule in rules | filter: {Location: 0} | filter: searchSpamFilter track by rule.ID">
-                                    <td ng-bind="rule.Email"></td>
+                                <tr ng-repeat="filter in spamFilters | filter: {Location: 0} | filter: searchSpamFilter track by filter.ID">
+                                    <td ng-bind="filter.Email"></td>
                                     <td class="text-right">
-                                        <button class="pm_button link" ng-click="">
+                                        <button class="pm_button link" ng-click="switchSpamFilter(filter, 4)">
                                             <i class="fa fa-arrows-h"></i>
                                         </button>
-                                        <button class="pm_button link" ng-click="deleteSpamFilter()">
+                                        <button class="pm_button link" ng-click="deleteSpamFilter(filter)">
                                             <i class="fa fa-times"></i>
                                         </button>
                                     </td>
@@ -97,23 +81,23 @@
                         </table>
                     </div>
                     <div class="col-1-2">
-                        <div class="pm_grid">
+                        <div class="pm_grid margin">
                             <div class="col-1-2">
-                                <strong translate translate-text="Title">Black List</strong>
+                                <legend translate translate-text="Title" class="no-border">Black List</legend>
                             </div>
                             <div class="text-right">
-                                <button class="pm_button" translate translate-context="Action">Add</button>
+                                <button class="pm_button" translate translate-context="Action" ng-click="addSpamFilter(4)">Add</button>
                             </div>
                         </div>
                         <table class="pm_table bordered">
                             <tbody>
-                                <tr ng-repeat="rule in rules | filter: {Location: 4} | filter: searchSpamFilter track by rule.ID">
-                                    <td ng-bind="rule.Email"></td>
+                                <tr ng-repeat="filter in spamFilters | filter: {Location: 4} | filter: searchSpamFilter track by filter.ID">
+                                    <td ng-bind="filter.Email"></td>
                                     <td class="text-right">
-                                        <button class="pm_button link" ng-click="">
+                                        <button class="pm_button link" ng-click="switchSpamFilter(filter, 0)">
                                             <i class="fa fa-arrows-h"></i>
                                         </button>
-                                        <button class="pm_button link" ng-click="">
+                                        <button class="pm_button link" ng-click="deleteSpamFilter(filter)">
                                             <i class="fa fa-times"></i>
                                         </button>
                                     </td>
