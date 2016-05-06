@@ -1,7 +1,6 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" novalidate>
         <div
-        ng-squire-height
         class="composer animate"
         id="uid{{message.uid}}"
         ng-repeat="message in messages"
@@ -121,11 +120,12 @@
                     <button type="button" class="pm_button primary mobileFull" ng-click="closePanel(message)" translate translate-context="Action">Set</button>
                 </footer>
             </div>
+            
 
             <div class="meta">
                 <div class="row fromRow">
                     <label translate translate-context="Title">From</label>
-                    <select ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0" ng-change="changeFrom(message)"></select>
+                    <select class="flex" ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0" ng-change="changeFrom(message)"></select>
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
                     </button>
@@ -153,19 +153,27 @@
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">BCC</label>
                     <autocomplete emails="message.BCCList" />
                 </div>
+
                 <div class="row subjectRow">
-                    <input type="text" title="Subject" class="subject" placeholder-translate="Subject" ng-focus="onFocusSubject(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
+
+                    <input type="text" title="Subject" class="flex subject" placeholder-translate="Subject" ng-focus="onFocusSubject(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
                 </div>
             </div>
-            <section ng-if="!message.minimized" ng-form="composeForm{{$index}}" max-composer-height>
-                <div class="composeEditor">
+            <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
+                <div class="composeEditor fill">
                     <div
-                    class="dropzone composer-dropzone"
+                    class="dropzone composer-dropzone fill"
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
-                    <squire ng-model="message.Body" ng-click="attHide(message); message.autocompletesFocussed = false;" ng-hide="isOver === true" max-composer-height></squire>
+
+                    <squire ng-model="message.Body" ng-click="attHide(message); message.autocompletesFocussed = false;" ng-hide="isOver === true"></squire>
                 </div>
             </section>
+             <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0">
+                <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate translate-context="Action">Hide</i>
+                <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
+                <span translate>{{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})</span>
+            </aside>           
             <div
             class="previews clearfix attachmentArea"
             ng-show="(message.attachmentsToggle === true) && (message.Attachments.length > 0)">
@@ -185,11 +193,6 @@
                     </a>
                 </span>
             </div>
-            <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0">
-                <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate translate-context="Action">Hide</i>
-                <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
-                <span translate>{{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})</span>
-            </aside>
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button class="pm_button"
                 ng-click="addFile(message)"
