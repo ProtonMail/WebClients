@@ -26,6 +26,21 @@
             border-width: 0 0 1px 0;
         }
     }
+    &.limited {
+        display: table;
+        width: 100%;
+        tbody {
+            float: left;
+            width: 100%;
+            overflow: auto;
+            max-height: 300px;
+
+            tr {
+                width: 100%;
+                display: table;
+            }
+        }
+    }
     &.thick {
         th,
         td {

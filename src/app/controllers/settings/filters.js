@@ -3,6 +3,7 @@ angular.module("proton.controllers.Settings")
 .controller('FiltersController', function(
     $log,
     $q,
+    $filter,
     $scope,
     CONSTANTS,
     gettextCatalog,
@@ -95,6 +96,19 @@ angular.module("proton.controllers.Settings")
                 }
             })
         );
+    };
+
+    /**
+     * Check if the table filtered is empty
+     * @param {Integer} folder
+     * @return {Boolean}
+     */
+    $scope.empty = function(folder) {
+        var filters = $filter('filter')($scope.spamFilters, {Location: folder});
+
+        filter = $filter('filter')(filters, $scope.searchSpamFilter);
+
+        return filters.length === 0;
     };
 
     /**

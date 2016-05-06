@@ -6,9 +6,7 @@
 
         <div class="row">
 
-            <p class="alert alert-info" ng-if="mobileMode" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
-
-            <div class="setting pm_form full desktopOnly">
+            <div class="setting pm_form full">
 
                 <!-- <legend translate-context="Title" translate>Custom Filters</legend>
 
@@ -60,11 +58,12 @@
                             <div class="col-1-2">
                                 <legend translate translate-text="Title" class="no-border">White List</legend>
                             </div>
-                            <div class="text-right">
+                            <div class="col-1-2 text-right">
                                 <button class="pm_button" translate translate-context="Action" ng-click="addSpamFilter(0)">Add</button>
                             </div>
                         </div>
-                        <table class="pm_table bordered">
+                        <p class="alert alert-info" ng-show="empty(0)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident soluta tenetur dignissimos, ipsum sit quasi aliquid obcaecati voluptatum voluptates laudantium voluptatibus nisi quod magni. Iure, quis alias natus eos delectus!</p>
+                        <table class="pm_table bordered limited" ng-hide="empty(0)">
                             <tbody>
                                 <tr ng-repeat="filter in spamFilters | filter: {Location: 0} | filter: searchSpamFilter track by filter.ID">
                                     <td ng-bind="filter.Email"></td>
@@ -85,11 +84,12 @@
                             <div class="col-1-2">
                                 <legend translate translate-text="Title" class="no-border">Black List</legend>
                             </div>
-                            <div class="text-right">
+                            <div class="col-1-2 text-right">
                                 <button class="pm_button" translate translate-context="Action" ng-click="addSpamFilter(4)">Add</button>
                             </div>
                         </div>
-                        <table class="pm_table bordered">
+                        <p class="alert alert-info" ng-show="empty(4)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident soluta tenetur dignissimos, ipsum sit quasi aliquid obcaecati voluptatum voluptates laudantium voluptatibus nisi quod magni. Iure, quis alias natus eos delectus!</p>
+                        <table class="pm_table bordered limited" ng-hide="empty(4)">
                             <tbody>
                                 <tr ng-repeat="filter in spamFilters | filter: {Location: 4} | filter: searchSpamFilter track by filter.ID">
                                     <td ng-bind="filter.Email"></td>
