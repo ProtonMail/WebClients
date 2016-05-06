@@ -29,11 +29,11 @@
 </ul>
 
 <div class="pm_form" id="settingsSelect">
-    <a class="pm_button" ng-class="{ 'primary': ('secured.dashboard' | includedByState) }"  ng-show="user.Role === 0 || user.Role === 2" ui-sref="secured.dashboard" translate-context="Title" translate-comment="custom domain menu select dropdown" translate>Dashboard</a>
-    <a class="pm_button" ng-class="{ 'primary': ('secured.account' | includedByState) }"  ui-sref="secured.account" translate-context="Title" translate-comment="custom domain menu select dropdown" translate>Account</a>
-    <a class="pm_button" ng-class="{ 'primary': ('secured.labels' | includedByState) }"  ui-sref="secured.labels" translate>Labels</a>
-    <a class="pm_button" ng-class="{ 'primary': ('secured.filters' | includedByState) }"  ui-sref="secured.filters" translate>Filters</a>
-    <a class="pm_button" ng-class="{ 'primary': ('secured.security' | includedByState) }"  ui-sref="secured.security" translate-context="Title" translate-comment="custom domain menu select dropdown" translate>Security</a>
-    <a class="pm_button" ng-class="{ 'primary': ('secured.appearance' | includedByState) }"  ui-sref="secured.appearance" translate-context="Title" translate-comment="custom domain menu select dropdown" translate>Appearance</a>
-    <a class="pm_button" ng-class="{ 'primary': ('secured.payments' | includedByState) }" ui-sref="secured.payments" translate-context="Title" translate-comment="custom domain menu select dropdown" translate>Payments</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.dashboard' | includedByState) }"  ng-show="user.Role === 0 || user.Role === 2" ui-sref="secured.dashboard" translate-context="Title" translate>Dashboard</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.account' | includedByState) }"  ui-sref="secured.account" translate-context="Title" translate>Account</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.labels' | includedByState) }"  ui-sref="secured.labels" translate translate-context="Title">Labels</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.filters' | includedByState) }"  ui-sref="secured.filters" translate translate-context="Title">Filters</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.security' | includedByState) }"  ui-sref="secured.security" translate-context="Title" translate>Security</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.appearance' | includedByState) }"  ui-sref="secured.appearance" translate-context="Title" translate>Appearance</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.payments' | includedByState) }" ui-sref="secured.payments" translate-context="Title" translate>Payments</a>
 </div>
