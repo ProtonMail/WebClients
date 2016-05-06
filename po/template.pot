@@ -34,7 +34,7 @@ msgstr ""
 msgid "{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:191
+#: src/app/templates/partials/composer.tpl.html:175
 msgid "{{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})"
 msgstr ""
 
@@ -575,7 +575,7 @@ msgid_plural "Attachments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/app/templates/partials/composer.tpl.html:194
+#: src/app/templates/partials/composer.tpl.html:197
 #: src/app/templates/views/outside.reply.tpl.html:37
 msgid "Attachments"
 msgstr ""
@@ -726,8 +726,8 @@ msgstr ""
 #: src/app/templates/modals/storage.tpl.html:23
 #: src/app/templates/modals/user/address.tpl.html:55
 #: src/app/templates/modals/user/member.tpl.html:53
-#: src/app/templates/partials/composer.tpl.html:120
-#: src/app/templates/partials/composer.tpl.html:87
+#: src/app/templates/partials/composer.tpl.html:119
+#: src/app/templates/partials/composer.tpl.html:86
 #: src/app/templates/views/outside.reply.tpl.html:36
 #: src/app/templates/views/reset-mailbox-password.tpl.html:11
 #: src/app/templates/views/reset-mailbox-password.tpl.html:50
@@ -885,7 +885,7 @@ msgstr ""
 #: src/app/templates/modals/support.tpl.html:3
 #: src/app/templates/modals/user/modal.tpl.html:3
 #: src/app/templates/modals/welcome.tpl.html:3
-#: src/app/templates/partials/composer.tpl.html:40
+#: src/app/templates/partials/composer.tpl.html:39
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:24
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:6
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:7
@@ -982,12 +982,12 @@ msgstr ""
 msgid "Confirm new password"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:68
+#: src/app/templates/partials/composer.tpl.html:67
 #: src/app/templates/views/reset-login-password.tpl.html:47
 msgid "Confirm password"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:65
+#: src/app/templates/partials/composer.tpl.html:64
 msgctxt "Title"
 msgid "Confirm Password"
 msgstr ""
@@ -1267,7 +1267,7 @@ msgid "Date: Old to new"
 msgstr ""
 
 #: src/app/filters/filters.js:33
-#: src/app/templates/partials/composer.tpl.html:112
+#: src/app/templates/partials/composer.tpl.html:111
 msgid "Days"
 msgstr ""
 
@@ -1376,7 +1376,7 @@ msgctxt "Title"
 msgid "Delete domain"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:236
+#: src/app/templates/partials/composer.tpl.html:239
 msgid "Delete draft"
 msgstr ""
 
@@ -1435,7 +1435,7 @@ msgctxt "Action"
 msgid "Disabled"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:238
+#: src/app/templates/partials/composer.tpl.html:241
 msgctxt "Action"
 msgid "Discard"
 msgstr ""
@@ -1732,27 +1732,27 @@ msgctxt "Action"
 msgid "Enabled"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:49
+#: src/app/templates/partials/composer.tpl.html:48
 msgctxt "Title"
 msgid "Encrypt for non-ProtonMail users"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:83
+#: src/app/templates/partials/composer.tpl.html:82
 msgctxt "Info"
 msgid "Encrypted messages to non-ProtonMail recipients will expire in 28 days unless a shorter expiration time is set."
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:248
+#: src/app/templates/partials/composer.tpl.html:251
 msgctxt "Action"
 msgid "Encrypting"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:218
+#: src/app/templates/partials/composer.tpl.html:221
 msgctxt "Title"
 msgid "Encryption"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:206
+#: src/app/templates/partials/composer.tpl.html:209
 msgid "Encryption"
 msgstr ""
 
@@ -1942,12 +1942,12 @@ msgstr ""
 msgid "ex: Thomas Anderson"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:37
+#: src/app/templates/partials/composer.tpl.html:36
 msgctxt "Action"
 msgid "Exit fullscreen"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:31
+#: src/app/templates/partials/composer.tpl.html:30
 msgctxt "Action"
 msgid "Expand"
 msgstr ""
@@ -1957,7 +1957,7 @@ msgctxt "Title"
 msgid "Expiration"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:232
+#: src/app/templates/partials/composer.tpl.html:235
 msgctxt "Action"
 msgid "Expiration"
 msgstr ""
@@ -1967,12 +1967,12 @@ msgctxt "Error"
 msgid "Expiration date invalid"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:95
+#: src/app/templates/partials/composer.tpl.html:94
 msgctxt "Title"
 msgid "Expiration time"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:220
+#: src/app/templates/partials/composer.tpl.html:223
 msgctxt "Action"
 msgid "Expiration time"
 msgstr ""
@@ -2081,7 +2081,7 @@ msgctxt "Title"
 msgid "From"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:34
+#: src/app/templates/partials/composer.tpl.html:33
 msgctxt "Action"
 msgid "Fullscreen"
 msgstr ""
@@ -2175,7 +2175,7 @@ msgctxt "Info"
 msgid "Here is a basic DMARC record that does nothing except email you reports."
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:189
+#: src/app/templates/partials/composer.tpl.html:173
 msgctxt "Action"
 msgid "Hide"
 msgstr ""
@@ -2202,7 +2202,7 @@ msgctxt "Title"
 msgid "Highest security"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:78
+#: src/app/templates/partials/composer.tpl.html:77
 msgid "Hint"
 msgstr ""
 
@@ -2221,7 +2221,7 @@ msgid "Host name"
 msgstr ""
 
 #: src/app/filters/filters.js:33
-#: src/app/templates/partials/composer.tpl.html:117
+#: src/app/templates/partials/composer.tpl.html:116
 msgid "Hours"
 msgstr ""
 
@@ -2777,7 +2777,7 @@ msgstr ""
 msgid "Message password"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:57
+#: src/app/templates/partials/composer.tpl.html:56
 msgctxt "Title"
 msgid "Message Password"
 msgstr ""
@@ -2796,7 +2796,7 @@ msgstr ""
 msgid "Messages per day"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:28
+#: src/app/templates/partials/composer.tpl.html:27
 msgctxt "Action"
 msgid "Minimize"
 msgstr ""
@@ -3243,13 +3243,13 @@ msgstr ""
 msgid "Paid"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:60
+#: src/app/templates/partials/composer.tpl.html:59
 #: src/app/templates/views/login.tpl.html:13
 #: src/app/templates/views/reset-login-password.tpl.html:44
 msgid "Password"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:74
+#: src/app/templates/partials/composer.tpl.html:73
 msgctxt "Title"
 msgid "Password Hint"
 msgstr ""
@@ -3739,8 +3739,8 @@ msgstr ""
 #. Save button for updating default identity on account page
 #: src/app/templates/modals/contact.tpl.html:30
 #: src/app/templates/modals/label.tpl.html:35
-#: src/app/templates/partials/composer.tpl.html:240
-#: src/app/templates/partials/composer.tpl.html:242
+#: src/app/templates/partials/composer.tpl.html:243
+#: src/app/templates/partials/composer.tpl.html:245
 #: src/app/templates/views/account.tpl.html:131
 #: src/app/templates/views/account.tpl.html:187
 #: src/app/templates/views/account.tpl.html:35
@@ -3760,11 +3760,11 @@ msgstr ""
 msgid "Saved"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:234
+#: src/app/templates/partials/composer.tpl.html:237
 msgid "Saved at {{ message.Time | date : \"shortTime\" }}"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:249
+#: src/app/templates/partials/composer.tpl.html:252
 msgctxt "Action"
 msgid "Saving"
 msgstr ""
@@ -3826,7 +3826,7 @@ msgid "Select payment method:"
 msgstr ""
 
 #: src/app/templates/modals/feedback.tpl.html:16
-#: src/app/templates/partials/composer.tpl.html:245
+#: src/app/templates/partials/composer.tpl.html:248
 #: src/app/templates/views/outside.reply.tpl.html:38
 #: src/app/templates/views/step1.tpl.html:112
 #: src/app/templates/views/step1.tpl.html:136
@@ -3845,7 +3845,7 @@ msgctxt "Title"
 msgid "Sender"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:247
+#: src/app/templates/partials/composer.tpl.html:250
 msgctxt "Action"
 msgid "Sending"
 msgstr ""
@@ -3870,8 +3870,8 @@ msgctxt "Title"
 msgid "Sent"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:121
-#: src/app/templates/partials/composer.tpl.html:88
+#: src/app/templates/partials/composer.tpl.html:120
+#: src/app/templates/partials/composer.tpl.html:87
 msgctxt "Action"
 msgid "Set"
 msgstr ""
@@ -3898,7 +3898,7 @@ msgctxt "Action"
 msgid "Settings"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:190
+#: src/app/templates/partials/composer.tpl.html:174
 msgctxt "Action"
 msgid "Show"
 msgstr ""
@@ -4089,7 +4089,7 @@ msgstr ""
 msgid "Sub"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:157
+#: src/app/templates/partials/composer.tpl.html:159
 msgid "Subject"
 msgstr ""
 
@@ -4190,7 +4190,7 @@ msgctxt "Info"
 msgid "This is used to recover your account if you get locked out or forget your login password."
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:101
+#: src/app/templates/partials/composer.tpl.html:100
 #: src/app/templates/partials/message.tpl.html:232
 msgid "This message will expire in"
 msgstr ""
@@ -4468,7 +4468,7 @@ msgctxt "Title"
 msgid "Upload"
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:246
+#: src/app/templates/partials/composer.tpl.html:249
 msgctxt "Action"
 msgid "Uploading"
 msgstr ""
@@ -4669,7 +4669,7 @@ msgctxt "Info"
 msgid "We've sent a verification code to your <strong>Recovery email</strong>. Enter it below to continue."
 msgstr ""
 
-#: src/app/templates/partials/composer.tpl.html:107
+#: src/app/templates/partials/composer.tpl.html:106
 msgid "Weeks"
 msgstr ""
 

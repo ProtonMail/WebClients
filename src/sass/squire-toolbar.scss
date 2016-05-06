@@ -11,6 +11,7 @@
 	list-style-type: none;
 	height: $composerRowHeight;
 	line-height: $composerRowHeight;
+	min-height: $composerRowHeight; /* mobile devices */
 	border: 1px solid $border;
 	background-color: $read;
 	border-width: 0 0 1px 0;
@@ -26,14 +27,12 @@
 	}
 	li {
 		display: block;
-		-webkit-flex-grow: 1;
-		    -ms-flex-positive: 1;
-		        flex-grow: 1;
 		margin: 0;
 		padding: 0;
 		height: $composerRowHeight;
+		width: 40px;
 		line-height: $composerRowHeight;
-		max-width: 3rem; // ~ 40px
+		/* max-width: 3rem; // ~ 40px deprecated via flex */
 		a {
 			text-align: center;
 			display: block;
@@ -91,10 +90,10 @@
 	    display: inline-block;
 	    cursor: pointer;
 	    font-size: 1em;
-	    transition: background-color .25s linear, border-color .25s linear;		
+	    transition: background-color .25s linear, border-color .25s linear;
         background-color: $primary;
         border-color: $primary;
-        color: $white;	
+        color: $white;
         margin: 0;
 	}
 }
