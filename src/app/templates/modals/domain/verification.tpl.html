@@ -14,32 +14,19 @@
                     <p translate translate-context="Info">For security reasons, we need to verify that you are the owner of your domain. Please add the following code into your DNS. <strong>Do not remove it even after successful verification</strong>. This can typically be done in the control panel of your domain name registrar.</p>
                     <p translate translate-context="Info">Please add the following TXT record:</p>
                     <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/dns-records/' translate translate-context="Action">Learn more</a></p>
-                    <table class="pm_table record" ng-if="!mobileMode">
-                        <tr>
-                            <th style="width:3rem" translate translate-context="Title">Type</th>
-                            <th style="width:6.5rem" translate translate-context="Title">Host name</th>
-                            <th translate translate-context="Title">Value / Data / Points to</th>
-                        </tr>
-                        <tr>
-                            <td><code>TXT</code></td>
-                            <td><code>@</code></td>
-                            <td><code>{{ ctrl.domain.VerifyCode }}</code></td>
-                        </tr>
-                    </table>
-
-                    <div ng-if="mobileMode">
-                        <p>
-                            <strong translate translate-context="Title">Type</strong>:<br>
-                            <code>TXT</code>
-                        </p>
-                        <p>
-                            <strong translate translate-context="Title">Host name</strong>:<br>
-                            <code>@</code>
-                        </p>
-                        <p>
-                            <strong translate translate-context="Title">Value / Data / Points to</strong>:<br>
-                            <code>{{ ctrl.domain.VerifyCode }}</code>
-                        </p>
+                    <div class="pm_table">
+                        <table class="record">
+                            <tr>
+                                <th style="width:3rem" translate translate-context="Title">Type</th>
+                                <th style="width:6.5rem" translate translate-context="Title">Host name</th>
+                                <th style="width: 14rem" translate translate-context="Title">Value / Data / Points to</th>
+                            </tr>
+                            <tr>
+                                <td><code>TXT</code></td>
+                                <td><code>@</code></td>
+                                <td><code>{{ ctrl.domain.VerifyCode }}</code></td>
+                            </tr>
+                        </table>
                     </div>
 
                     <p class="alert alert-info" translate translate-context="Info">It can take up to a day for DNS changes to update.</p>
