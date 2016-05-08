@@ -72,7 +72,8 @@
         line-height: 32px;
     }
     .pm_tag {
-        line-height: 14px;
+        position: relative;
+        top: -2px;
     }
     .pm_labels.inline label {
         height: 18px;
