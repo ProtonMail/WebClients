@@ -77,9 +77,14 @@
             & > div.summary {
                 height: 60px;
                 .meta {
+                    height: 40px;
+                    line-height: 40px;
                     .history {
                         float: left;
-                        margin: 5px .5rem 0 0;
+                        margin: 0;
+                        display: inline-block;
+                        height: 40px;
+                        line-height: 40px;
                     }
                     .contact {
                         float: left;
