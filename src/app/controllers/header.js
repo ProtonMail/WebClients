@@ -55,7 +55,7 @@ angular.module('proton.controllers.Header', [])
      */
     var extractParameters = function() {
         var parameters = {};
-        var value = $scope.params.searchMessageInput;
+        var value = $scope.params.searchMessageInput.trim();
         var separators = [
             {value: 'keyword:', key: 'keyword'},
             {value: 'from:', key: 'from'},

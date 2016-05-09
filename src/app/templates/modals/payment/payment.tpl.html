@@ -5,53 +5,55 @@
     <div class="modal-body pm_form">
         <div class="pm_grid">
             <div class="col-1-2">
-                <table class="pm_table margin">
-                    <thead>
-                        <tr>
-                            <th class="desc" translate translate-context="Title" translate-comment="table heading">Plan</th>
-                            <th class="price" translate translate-context="Title" translate-comment="table heading">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
-                            <td class="desc">
-                                <div>{{ plan.Title }} <span translate translate-context="Title">Plan</span></div>
-                                <div><span class="space"></span>{{ ctrl.count('MaxSpace') | humanSize }} <span translate>Storage</span></div>
-                                <div><span class="space"></span>{{ ctrl.count('MaxDomains') }} <span translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span></div>
-                                <div><span class="space"></span>{{ ctrl.count('MaxAddresses') }} <span translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses">Address</span></div>
-                            </td>
-                            <td class="price text-right">
-                                <strong ng-show="ctrl.valid.Cycle === 1">{{ ctrl.valid.Amount / 100 | currency: plan.Currency }}</strong>
-                                <strong ng-show="ctrl.valid.Cycle === 12">{{ ctrl.valid.Amount / 100 / 12 | currency: plan.Currency }}/mo</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="desc">
-                                <strong ng-show="ctrl.valid.Cycle === 1" tranlate translate-context="Title">Total per month (incl. taxes)</strong>
-                                <strong ng-show="ctrl.valid.Cycle === 12" translate translate-context="Title">Total per year (incl. taxes)</strong>
-                            </td>
-                            <td class="price text-right">
-                                <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
-                            </td>
-                        </tr>
-                        <tr ng-show="ctrl.valid.Proration !== 0">
-                            <td class="desc" translate translate-context="Title">Proration</td>
-                            <td class="text-green price text-right"><strong>{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong></td>
-                        </tr>
-                        <tr ng-show="ctrl.valid.CouponDiscount !== 0">
-                            <td class="desc" translate translate-context="Title">Coupon</td>
-                            <td class="text-green price text-right"><strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong></td>
-                        </tr>
-                        <tr ng-show="ctrl.valid.Credit !== 0">
-                            <td class="desc" translate translate-context="Title">Credit</td>
-                            <td class="text-green price text-right"><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
-                        </tr>
-                        <tr>
-                            <td class="desc"><strong translate translate-context="Title">Amount due</strong></td>
-                            <td class="price text-right"><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="pm_table">
+                    <table class="margin">
+                        <thead>
+                            <tr>
+                                <th class="desc" translate translate-context="Title" translate-comment="table heading">Plan</th>
+                                <th style="width: 4rem" class="price text-right" translate translate-context="Title" translate-comment="table heading">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="plan in ctrl.plans | filter: {Type: 1}">
+                                <td class="desc">
+                                    <div>{{ plan.Title }} <span translate translate-context="Title">Plan</span></div>
+                                    <div><span class="space"></span>{{ ctrl.count('MaxSpace') | humanSize }} <span translate>Storage</span></div>
+                                    <div><span class="space"></span>{{ ctrl.count('MaxDomains') }} <span translate translate-n="ctrl.count('MaxDomains')" translate-plural="Custom domains">Custom domain</span></div>
+                                    <div><span class="space"></span>{{ ctrl.count('MaxAddresses') }} <span translate translate translate-n="ctrl.count('MaxAddresses')" translate-plural="Addresses">Address</span></div>
+                                </td>
+                                <td class="price text-right">
+                                    <strong ng-show="ctrl.valid.Cycle === 1">{{ ctrl.valid.Amount / 100 | currency: plan.Currency }}</strong>
+                                    <strong ng-show="ctrl.valid.Cycle === 12">{{ ctrl.valid.Amount / 100 / 12 | currency: plan.Currency }}/mo</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="desc">
+                                    <strong ng-show="ctrl.valid.Cycle === 1" tranlate translate-context="Title">Total per month (incl. taxes)</strong>
+                                    <strong ng-show="ctrl.valid.Cycle === 12" translate translate-context="Title">Total per year (incl. taxes)</strong>
+                                </td>
+                                <td class="price text-right">
+                                    <strong>{{ ctrl.valid.Amount / 100 | currency: ctrl.valid.Currency }}</strong>
+                                </td>
+                            </tr>
+                            <tr ng-show="ctrl.valid.Proration !== 0">
+                                <td class="desc" translate translate-context="Title">Proration</td>
+                                <td class="text-green price text-right"><strong>{{ ctrl.valid.Proration / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            </tr>
+                            <tr ng-show="ctrl.valid.CouponDiscount !== 0">
+                                <td class="desc" translate translate-context="Title">Coupon</td>
+                                <td class="text-green price text-right"><strong>{{ ctrl.valid.CouponDiscount / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            </tr>
+                            <tr ng-show="ctrl.valid.Credit !== 0">
+                                <td class="desc" translate translate-context="Title">Credit</td>
+                                <td class="text-green price text-right"><strong>{{ ctrl.valid.Credit / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="desc"><strong translate translate-context="Title">Amount due</strong></td>
+                                <td class="price text-right"><strong>{{ ctrl.valid.AmountDue / 100 | currency: ctrl.valid.Currency }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="text-center alert alert-info" ng-show="ctrl.valid.Cycle === 1">
                     <p>
                         <strong translate>Save 20% with the annual plan!</strong>

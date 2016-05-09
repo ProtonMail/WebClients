@@ -1,171 +1,152 @@
-.pm_table {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
-    margin-bottom: 1rem;
-    thead {
-        border-top: 1px solid $border;
-    }
-    &.print {
-        em {
-            font-style: normal;
-            border: 1px solid $border;
-            padding: 1px 4px;
-            margin-right: 4px;
-            border-radius: 2px;
-        }
-        th {
-            width: 4rem;
-            background-color: transparent;
-            text-transform: none;
-        }
-        tr {
-            border: none;
-        }
-        table {
-            border-width: 0 0 1px 0;
-        }
-    }
-    &.thick {
-        th,
-        td {
-            padding: .5rem 1rem;
-        }
-    }
-    &.bordered {
-        border: 1px solid $border;
-    }
-    &.plain {
-        th, td {
-            line-height: initial;
-            padding: 0;
-            text-align: left;
-            border: none;
-            &.text-center {
-                text-align: center;
-            }
-            &.text-right {
-                text-align: right;
-            }
-        }
-        th {
-            color: $gray;
-            background: transparent;
-            text-transform: none;
-        }
-        th, td {
-            line-height: 1.75rem;
-            height: 1.75rem;
-            vertical-align: top;
-        }
-        td strong {
-            font-weight: 700;
-        }
-    }
-    th, td {
-        line-height: $rowHeight;
-        padding: 0 1rem;
-        text-align: left;
-        vertical-align: top;
-        .fa.fa-sort {
-            color: $gray-light;
-            margin-right: .25rem;
-            cursor: pointer;
-        }
-        .pm_button {
-            margin: 0;
-            height: 36px;
-            line-height: 36px;
-            &.round {
-                width: 36px;
-            }
-        }
-        .pm_select {
-            margin: 4px 0 -11px 0;
-        }
-        .pm_badge {
-            margin: 0;
-            position: relative;
-            top: 7px;
-        }
-        &.checkbox {
-            width: 35px;
-            padding: 0;
-            label {
-                padding: 0 1rem 0 0;
-                line-height: $rowHeight;
-                display: block;
-                cursor: pointer;
-            }
-        }
-        &.name {
-            padding-left: 0;
-        }
-        span {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            max-width: 100%;
-        }
-        &.email {
-            padding-left: 0;
-        }
-        &.actions {
-            width: 8rem;
-            span {
-                width: 8rem;
-            }
-        }
-    }
-    th {
-        background: $read;
-        border-bottom: 1px solid $border;
-        color: $alt;
-        font-weight: 400;
-        text-transform: uppercase;
-        a {
-            font-weight: 700;
-            color: $primary;
-        }
-        .fa {
-            color: $primary;
-        }
-    }
-    td {
-        border-bottom: 1px solid $border;
-        color: $gray;
-    }
-    tr {
-        &.disabled {
-            td {
-                color: $gray-medium;
-            }
-        }
-    }
+.responsive-container {
+    overflow-x: auto;
 }
 
-
-body.mobileMode {
-    .pm_table {
+.pm_table {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 100%;
+        margin-bottom: 1rem;
         thead {
-            display: none;
+            border-top: 1px solid $border;
         }
-        tr {
-            display: block;
-            width: 100% !important;
-            box-sizing: border-box;
-            margin: 1rem 0;
-            border: 1px solid $border;
-            padding: 1rem;
-            border-top: none;
-            th,
-            td {
-                display: block;
-                width: 100% !important;
-                box-sizing: border-box;
-                height: initial !important;
+        &.print {
+            em {
+                font-style: normal;
+                border: 1px solid $border;
+                padding: 1px 4px;
+                margin-right: 4px;
+                border-radius: 2px;
+            }
+            th {
+                width: 4rem;
+                background-color: transparent;
+                text-transform: none;
+            }
+            tr {
                 border: none;
             }
+            table {
+                border-width: 0 0 1px 0;
+            }
+        }
+        &.bordered {
+            border: 1px solid $border;
+        }
+        &.plain {
+            th, td {
+                line-height: initial;
+                padding: 0;
+                text-align: left;
+                border: none;
+                &.text-center {
+                    text-align: center;
+                }
+                &.text-right {
+                    text-align: right;
+                }
+            }
+            th {
+                color: $gray;
+                background: transparent;
+                text-transform: none;
+            }
+            th, td {
+                line-height: 1.75rem;
+                height: 1.75rem;
+                vertical-align: top;
+            }
+            td strong {
+                font-weight: 700;
+            }
+        }
+        th, td {
+            line-height: $rowHeight;
+            padding: 0 1rem;
+            text-align: left;
+            vertical-align: top;
+            .fa.fa-sort {
+                color: $gray-light;
+                margin-right: .25rem;
+                cursor: pointer;
+            }
+            .pm_button {
+                margin: 0;
+                height: 36px;
+                line-height: 36px;
+                &.round {
+                    width: 36px;
+                }
+            }
+            .pm_select {
+                margin: 4px 0 -11px 0;
+            }
+            .pm_badge {
+                margin: 0;
+                position: relative;
+                top: 7px;
+            }
+            &.checkbox {
+                width: 35px;
+                padding: 0;
+                label {
+                    padding: 0 1rem 0 0;
+                    line-height: $rowHeight;
+                    display: block;
+                    cursor: pointer;
+                }
+            }
+            &.name {
+                padding-left: 0;
+            }
+            span {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 100%;
+            }
+            &.email {
+                padding-left: 0;
+            }
+            &.actions {
+                width: 8rem;
+                span {
+                    width: 8rem;
+                }
+            }
+        }
+        th {
+            background: $read;
+            border-bottom: 1px solid $border;
+            color: $alt;
+            font-weight: 400;
+            text-transform: uppercase;
+            a {
+                font-weight: 700;
+                color: $primary;
+            }
+            .fa {
+                color: $primary;
+            }
+        }
+        td {
+            border-bottom: 1px solid $border;
+            color: $gray;
+        }
+        tr {
+            &.disabled {
+                td {
+                    color: $gray-medium;
+                }
+            }
         }
     }
 }
+
+
+body.mobileMode {}

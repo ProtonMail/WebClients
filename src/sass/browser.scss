@@ -72,12 +72,10 @@
         line-height: 32px;
     }
     .pm_tag {
-        line-height: 14px;
+        position: relative;
+        top: -2px;
     }
-    .pm_labels.inline label {
-        height: 18px;
-        line-height: 8px;
-    }
+    .pm_labels.inline label { }
     #conversation-view .message > div.summary,
     #conversation-view .message > div.summary .time .fa-paperclip {
         line-height: 34px;
