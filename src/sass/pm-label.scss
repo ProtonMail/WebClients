@@ -4,7 +4,6 @@
 			padding-right: 1.25rem;
 		    .close {
 	    		color: $gray;
-	    		font-size: 10px;
 	    		position: absolute;
 	    		left: 0;
 	    		top: 0;
@@ -17,11 +16,6 @@
 	    		padding-right: .25rem;
 	    		z-index: 2;
 	    		cursor: pointer;
-	    		&::before {
-		    		display: block;
-		    		height: 18px;
-		    		line-height: 12px;
-		    	}
 	    	}
 		}
 	}
