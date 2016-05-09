@@ -21,6 +21,12 @@
     }
 }
 
+#domainsTable {
+    td {
+        padding: 10px 1rem;
+    }
+}
+
 .pm_form .toolbar-button-options label {
     display: inline-block;
     padding-right: 2rem;
@@ -61,95 +67,8 @@
         }
     }
 }
-#settingsDomains {
-    .pm_table {
-        &.domains {
-            .pm_button {
-                i.fa {
-                    font-size: 16px;
-                    text-align: left;
-                    width: auto !important
-                }
-            }
-        }
-        .verifyButton {
-            width: 8rem;
-        }
-        tr {
-            &.error td {
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-            td.domain {
-                width: auto;
-            }
-            th.status {
-                width: 38rem;
-            }
-            th {
-                padding-right: 0;
-                text-align: left !important;
-                padding-left: 1rem;
-                font-size: .8rem;
-                &.text-right {
-                    text-align: right !important;
-                    padding-right: 1rem;
-                    width: auto;
-                }
-            }
-            td {
-                padding-right: 0;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                .fa {
-                    width: 1.5rem;
-                }
-                .fa-circle-o {
-                    color: #999;
-                }
-                .domain {
-                    line-height: 60px;
-                }
-                .progress {
-                    text-align: center;
-                    position: relative;
-                    margin-right: .5rem;
-                    .text-green .fa {
-                        color: $green;
-                    }
-                    .text-red .fa {
-                        color: $red;
-                    }
-                    span {
-                        display: inline;
-                    }
-                    &.dead {}
-                }
-                .remove {
-                    position: relative;
-                    .fa {
-                        position: relative;
-                        top: 2px;
-                        font-size: 16px;
-                    }
-                }
-                span {
-                    span {
-                        display: inline;
-                    }
-                }
-                &.text-right {
-                    padding-right: 1rem;
-                    .pm_button.round {
-                        width: 36px;
-                        margin-left: .5rem;
-                    }
-                }
-            }
-        }
-    }
-}
-#newUser{
+
+#newUser {
     .newUser {
         padding-left: 2rem;
         clear: both;
@@ -167,6 +86,7 @@
         }
     }
 }
+
 #settingsAppearance {
     label {
         cursor: pointer;
@@ -335,6 +255,7 @@
             height: 40px;
             line-height: 40px;
             a.pm_button {
+                font-size: .65rem;
                 border-color: $alt;
                 background: rgba(255,255,255,.8);
                 color: $btn;
@@ -540,24 +461,6 @@ body.mobileMode {
             padding-top: 2rem;
         }
 
-        #accessLog tr {
-            margin-bottom: 1rem;
-            padding: 0;
-            border: 1px solid $border;
-            display: block;
-            td {
-                display: block;
-                padding: 0 1rem;
-                span {
-                    float: none;
-                    text-align: left !important;
-                }
-            }
-            td.text-right {
-                text-align: left;
-            }
-        }
-
         .settings {
             padding: 0 10px;
             height: initial;
@@ -616,13 +519,6 @@ body.mobileMode {
                 padding: 1rem;
             }
         }
-        #invoicesTable {
-            th,
-            td {
-                padding: 10px 1rem;
-                line-height: 20px;
-            }
-        }
     }
 }
 
@@ -669,23 +565,6 @@ body.mobileMode {
         .pm_tabs {
             display: none;
         }
-        .pm_table tr {
-            display: table-row;
-            margin: 0;
-            border: none;
-            td, th {
-                display: table-cell;
-                width: initial !important;
-                span,
-                small {
-                    text-align: right !important;
-                    float: right;
-                }
-            }
-            &.storage {
-                display: none !important;
-            }
-        }
     }
 }
 
@@ -707,47 +586,6 @@ body.mobileMode {
                 }
             }
         }
-        #settingsDomains {
-            .pm_table {
-                display: block;
-                width: 100%;
-                box-sizing: border-box;
-                border: 0;
-                &.pm_form.bordered {
-                    tr td.text-right {
-                        float: right;
-                    }
-                }
-                thead,
-                tbody {
-                    display: block;
-                    width: 100%;
-                    box-sizing: border-box;
-                    tr {
-                        display: block;
-                        width: 100%;
-                        box-sizing: border-box;
-                        margin-bottom: 1rem;
-                        padding-bottom: 1rem;
-                        border: 1px solid $border;
-                        td.domain {
-                            display: block;
-                            width: 100%;
-                            box-sizing: border-box;
-                        }
-                        td {
-                            width: auto;
-                            display: inline-block;
-                            box-sizing: border-box;
-                            border-bottom: 0;
-                        }
-                    }
-                }
-                thead {
-                    display: none;
-                }
-            }
-        }
     }
 }
 
@@ -766,45 +604,6 @@ body.mobileMode {
 }
 body.mobileMode {
     #pm_settings {
-        #settingsDomains {
-            .pm_table {
-                &.pm_form.bordered {
-                    tr td.text-right {
-                        float: none;
-                    }
-                }
-                tbody {
-                    tr {
-                        td {
-                            display: block;
-                            width: 100%;
-                            .pm_button {
-                                text-align: left;
-                                padding-left: 1rem;
-                                width: 10rem;
-                                strong {
-                                    display: inline;
-                                }
-                                span {
-                                    float: none;
-                                }
-                            }
-                            span {
-                                float: none !important;
-                            }
-                        }
-                        td.text-right {
-                            text-align: left !important;
-                            .pm_button {
-                                width: 36px !important;
-                                text-align: center !important;
-                                padding: 0 !important;
-                            }
-                        }
-                    }
-                }
-            }
-        }
         .settings {
             table.pm_table {
                 border: none;
@@ -859,15 +658,8 @@ body.mobileMode {
 
 
 body.mobileMode {
-    #settingsDomains,
-    #settingsAddresses {
-        display: none;
-    }
     .pm_buttons.paginator {
         margin: 0 1rem;
-    }
-    #invoicesTable {
-        display: none;
     }
     #invoicesList {
         &, li {

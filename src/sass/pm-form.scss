@@ -17,6 +17,9 @@
                 color: $primary;
             }
         }
+        &.no-border {
+            border-bottom: 0;
+        }
     }
     ::-webkit-input-placeholder {
        color: #aaaabf;

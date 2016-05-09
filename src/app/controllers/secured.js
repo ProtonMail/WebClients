@@ -23,6 +23,8 @@ angular.module("proton.controllers.Secured", [])
     var dirtyAddresses = [];
 
     $scope.user = authentication.user;
+    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
+    $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
     $scope.organization = organization;
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
@@ -35,7 +37,8 @@ angular.module("proton.controllers.Secured", [])
         {value: 'secured.appearance', label: gettextCatalog.getString('Appearance', null, 'Title')},
         {value: 'secured.domains', label: gettextCatalog.getString('Domains', null, 'Title')},
         {value: 'secured.members', label: gettextCatalog.getString('Users', null, 'Title')},
-        {value: 'secured.payments', label: gettextCatalog.getString('Payments', null, 'Title')}
+        {value: 'secured.payments', label: gettextCatalog.getString('Payments', null, 'Title')},
+        {value: 'secured.filters', label: gettextCatalog.getString('Filters', null, 'Title')}
     ];
 
     // Set language used for the application
@@ -59,10 +62,16 @@ angular.module("proton.controllers.Secured", [])
     // Listeners
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 
+    $scope.$on('updateUser', function(event) {
+        $scope.user = authentication.user;
+        $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
+        $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
+    });
+
     $scope.$on('organizationChange', function(event, organization) {
         $scope.organization = organization;
     });
-    
+
     _.each(authentication.user.Addresses, function(address) {
         if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
             dirtyAddresses.push(address);

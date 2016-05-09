@@ -32,18 +32,20 @@
 
                 <div ng-show="ctrl.domain.Addresses.length > 0">
                     <p><strong translate translate-context="Title" translate-comment="added addesses table label / heading">Added addresses</strong></p>
-                    <table class="pm_table pm_form bordered">
-                        <thead>
-                            <tr>
-                                <th translate translate-context="Title" translate-comment="table heading">Address</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="address in ctrl.domain.Addresses" ng-class="{'disabled': address.Status === 0}">
-                                <td>{{ address.Email }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="pm_table">
+                        <table class="pm_form bordered">
+                            <thead>
+                                <tr>
+                                    <th translate translate-context="Title" translate-comment="table heading">Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="address in ctrl.domain.Addresses" ng-class="{'disabled': address.Status === 0}">
+                                    <td>{{ address.Email }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             </div>

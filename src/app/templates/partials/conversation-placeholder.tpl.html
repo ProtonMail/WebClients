@@ -14,9 +14,14 @@
             <span><strong>{{ storagePourcentage() }}% </strong translate>Storage space used.</span>
         </div>
     </section>
-    <section>
+    <section ng-if="isFree === false">
+        <a href="https://protonmail.com/blog/best-secure-email-app/" target="_blank" title-translate="Learn More">
+            <img src="/assets/img/latest/android-app.jpg" />
+        </a>
+    </section>
+    <section ng-if="isFree === true">
         <a ui-sref="secured.dashboard" class="text-center latest-upgrade">
-            <img src="/assets/img/latest/privacy.jpg">
+            <img src="/assets/img/latest/privacy.jpg" />
             <button type="button" class="pm_button primary" translate translate-context="Action">Upgrade account</button>
         </a>
     </section>
