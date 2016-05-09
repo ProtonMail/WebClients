@@ -1739,6 +1739,54 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('filterModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/filter.tpl.html',
+        controller: function(params) {
+            this.filter = params.filter || {};
+
+            this.cancel = function() {
+                params.close();
+            };
+        }
+    });
+})
+
+.factory('filterAddressModal', function($timeout, pmModal, IncomingDefault, networkActivityTracker, notify) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/filterAddress.tpl.html',
+        controller: function(params) {
+            this.filter = {
+                Email: '',
+                Location: params.location
+            };
+
+            this.create = function() {
+                networkActivityTracker.track(
+                    IncomingDefault.add(this.filter)
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            params.add(result.data.IncomingDefault);
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        }
+                    })
+                );
+            }.bind(this);
+
+            this.cancel = function() {
+                params.close();
+            };
+
+            $timeout(function() {
+                angular.element('#emailAddress').focus();
+            });
+        }
+    });
+})
+
 .factory('welcomeModal', function(pmModal, Setting, authentication, networkActivityTracker, $q) {
     return pmModal({
         controllerAs: 'ctrl',

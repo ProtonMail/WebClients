@@ -1,0 +1,20 @@
+<div class="pm_modal small {{ctrl.class}}" role="dialog">
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" translate translate-context="Title">New Filter Address</h3>
+            </div>
+            <div class="modal-body pm_form">
+                <label for="emailAddress" ng-show="ctrl.filter.Location === 0" translate translate-context="Label">Add to Whitelist</label>
+                <label for="emailAddress" ng-show="ctrl.filter.Location === 4" translate translate-context="Label">Add to Blacklist</label>
+                <input type="text" ng-model="ctrl.filter.Email" id="emailAddress" placeholder-translate="Email Address"/>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
+            <button type="button" ng-click="ctrl.create()" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate translate-context="Action">Save</button>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+</div>
