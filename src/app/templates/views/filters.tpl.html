@@ -61,25 +61,27 @@
                                 <legend translate translate-text="Title" class="no-border no-margin">White List</legend>
                             </div>
                             <div class="col-1-2 text-right">
-                                <button class="pm_button" translate translate-context="Action" ng-click="addSpamFilter(0)">Add New Filter</button>
+                                <button class="pm_button primary" translate translate-context="Action" ng-click="addSpamFilter(0)">Add New Filter</button>
                             </div>
                         </div>
                         <p class="alert alert-info" ng-show="empty(0)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident soluta tenetur dignissimos, ipsum sit quasi aliquid obcaecati voluptatum voluptates laudantium voluptatibus nisi quod magni. Iure, quis alias natus eos delectus!</p>
-                        <table class="pm_table bordered limited" ng-hide="empty(0)">
-                            <tbody>
-                                <tr ng-repeat="filter in spamFilters | filter: {Location: 0} | filter: searchSpamFilter track by filter.ID">
-                                    <td ng-bind="filter.Email"></td>
-                                    <td class="text-right">
-                                        <button class="pm_button link" ng-click="switchSpamFilter(filter, 4)" pt-tooltip-translate="Switch">
-                                            <i class="fa fa-arrows-h"></i>
-                                        </button>
-                                        <button class="pm_button link" ng-click="deleteSpamFilter(filter)" pt-tooltip-translate="Delete">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="pm_table">
+                            <table class="bordered limited" ng-hide="empty(0)">
+                                <tbody>
+                                    <tr ng-repeat="filter in spamFilters | filter: {Location: 0} | filter: searchSpamFilter track by filter.ID">
+                                        <td ng-bind="filter.Email"></td>
+                                        <td class="text-right">
+                                            <button class="pm_button link" ng-click="switchSpamFilter(filter, 4)" pt-tooltip-translate="Switch">
+                                                <i class="fa fa-arrows-h"></i>
+                                            </button>
+                                            <button class="pm_button link" ng-click="deleteSpamFilter(filter)" pt-tooltip-translate="Delete">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="col-1-2">
                         <div class="pm_grid margin">
@@ -87,25 +89,27 @@
                                 <legend translate translate-text="Title" class="no-border no-margin">Black List</legend>
                             </div>
                             <div class="col-1-2 text-right">
-                                <button class="pm_button" translate translate-context="Action" ng-click="addSpamFilter(4)">Add New Filter</button>
+                                <button class="pm_button primary" translate translate-context="Action" ng-click="addSpamFilter(4)">Add New Filter</button>
                             </div>
                         </div>
                         <p class="alert alert-info" ng-show="empty(4)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident soluta tenetur dignissimos, ipsum sit quasi aliquid obcaecati voluptatum voluptates laudantium voluptatibus nisi quod magni. Iure, quis alias natus eos delectus!</p>
-                        <table class="pm_table bordered limited" ng-hide="empty(4)">
-                            <tbody>
-                                <tr ng-repeat="filter in spamFilters | filter: {Location: 4} | filter: searchSpamFilter track by filter.ID">
-                                    <td ng-bind="filter.Email"></td>
-                                    <td class="text-right">
-                                        <button class="pm_button link" ng-click="switchSpamFilter(filter, 0)" pt-tooltip-translate="Switch">
-                                            <i class="fa fa-arrows-h"></i>
-                                        </button>
-                                        <button class="pm_button link" ng-click="deleteSpamFilter(filter)" pt-tooltip-translate="Delete">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="pm_table">
+                            <table class="bordered limited" ng-hide="empty(4)">
+                                <tbody>
+                                    <tr ng-repeat="filter in spamFilters | filter: {Location: 4} | filter: searchSpamFilter track by filter.ID">
+                                        <td ng-bind="filter.Email"></td>
+                                        <td class="text-right">
+                                            <button class="pm_button link" ng-click="switchSpamFilter(filter, 0)" pt-tooltip-translate="Switch">
+                                                <i class="fa fa-arrows-h"></i>
+                                            </button>
+                                            <button class="pm_button link" ng-click="deleteSpamFilter(filter)" pt-tooltip-translate="Delete">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
