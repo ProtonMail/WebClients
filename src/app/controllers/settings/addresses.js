@@ -21,8 +21,6 @@ angular.module('proton.controllers.Settings')
 ) {
     $scope.activeAddresses = _.where(authentication.user.Addresses, {Status: 1, Receive: 1});
     $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
-    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
-    $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
     $scope.itemMoved = false;
 
     // Drag and Drop configuration
