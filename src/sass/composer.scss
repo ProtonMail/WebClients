@@ -286,7 +286,7 @@
 			}
 		}
 		&.maximized {
-			position: fixed;
+			position: absolute;
 			top: ($headerHeight + 20);
 			left: ($sidebarWidth + 20);
 			bottom: 20px;
