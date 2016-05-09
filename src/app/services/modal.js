@@ -42,6 +42,7 @@ angular.module("proton.modals", [])
                 $rootScope.modalOpen = true;
                 setTimeout(function() {
                     $('.modal').addClass('in');
+                    window.scrollTo(0, 0);
                 }, 100);
             });
         }
