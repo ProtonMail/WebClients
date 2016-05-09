@@ -20,7 +20,7 @@
 	    		&::before {
 		    		display: block;
 		    		height: 18px;
-		    		line-height: 18px;
+		    		line-height: 12px;
 		    	}
 	    	}
 		}
@@ -60,6 +60,7 @@
 	    	&:hover {
 	    		max-width: 8rem;
 	    		line-height: 18px;
+	    		padding: 0 .4rem;
 	    	}
 	    }
 		&.more {
@@ -69,7 +70,7 @@
 			width: 1.5rem;
 			text-align: center;
 			background: rgba(0,0,0,.1) !important;
-			padding: 0;
+			padding: 0 !important;
 			margin: 0;
 		}
 	}
