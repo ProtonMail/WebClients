@@ -27,35 +27,37 @@
                         <div id="logArea" ng-show="doLogging != 0" class="clear">
                             <p class="alert alert-info" ng-show="logs.length < 1 && haveLogs"  translate>No logs yet</p>
                             <p class="alert alert-info" ng-show="!haveLogs && doLogging !== 0"><i class="fa fa-spin fa-spinner"></i  translate>Fetching logs...</p>
-                            <table class="pm_table" id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
-                                <thead>
-                                    <tr>
-                                        <th translate-context="Title" translate>Event</th>
-                                        <th style="width:12rem" ng-show="doLogging == 2" class="text-right" translate translate-context="Title">IP</th>
-                                        <th style="width:12rem" class="text-right" translate-context="Title" translate>Time</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-repeat="log in logs | limitTo: logItemsPerPage: (currentLogPage - 1) * logItemsPerPage" ng-class="{ 'danger': (log.Event == 0) }">
-                                        <td scope="row">
-                                            <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle text-red"></i>
-                                                <span translate-context="Info" translate-comment="authentication log record" translate translate-comment="auth log entry">Login failed</span>
-                                            </span>
-                                            <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i>
-                                                <span translate translate-comment="auth log entry">Login success</span>
-                                            </span>
-                                            <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i>
-                                                <span translate translate-comment="auth log entry">Log out</span>
-                                            </span>
-                                        </td>
-                                        <td ng-show="doLogging == 2" class="text-right">
-                                            <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>
-                                            <kbd ng-show="log.IP===''">--</kbd>
-                                        </td>
-                                        <td class="text-right">{{ log.Time * 1000 | date : 'medium' }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="pm_table">
+                                <table id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:10rem" translate-context="Title" translate>Event</th>
+                                            <th style="width:10rem" ng-show="doLogging == 2" class="text-right" translate translate-context="Title">IP</th>
+                                            <th style="width:14rem" class="text-right" translate-context="Title" translate>Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="log in logs | limitTo: logItemsPerPage: (currentLogPage - 1) * logItemsPerPage" ng-class="{ 'danger': (log.Event == 0) }">
+                                            <td scope="row">
+                                                <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle text-red"></i>
+                                                    <span translate-context="Info" translate-comment="authentication log record" translate translate-comment="auth log entry">Login failed</span>
+                                                </span>
+                                                <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i>
+                                                    <span translate translate-comment="auth log entry">Login success</span>
+                                                </span>
+                                                <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i>
+                                                    <span translate translate-comment="auth log entry">Log out</span>
+                                                </span>
+                                            </td>
+                                            <td ng-show="doLogging == 2" class="text-right">
+                                                <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>
+                                                <kbd ng-show="log.IP===''">--</kbd>
+                                            </td>
+                                            <td class="text-right">{{ log.Time * 1000 | date : 'medium' }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div><!--/.pm_table-->
                         </div>
                 </form>
             </section>

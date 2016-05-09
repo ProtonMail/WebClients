@@ -33,20 +33,22 @@
                 <label translate translate-context="Title">Addresses added</label>
             </div>
             <div class="col-2-3">
-                <table class="pm_table pm_form bordered">
-                    <thead>
-                        <tr>
-                            <th translate translate-context="Title">Addresses</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="address in ctrl.domain.Addresses">
-                            <td>
-                                <strong>{{ address.Email }}</strong>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="pm_table">
+                    <table class="pm_form bordered">
+                        <thead>
+                            <tr>
+                                <th translate translate-context="Title">Addresses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="address in ctrl.domain.Addresses">
+                                <td>
+                                    <strong>{{ address.Email }}</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

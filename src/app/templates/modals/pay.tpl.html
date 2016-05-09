@@ -6,22 +6,24 @@
                 <h4 class="modal-title" translate translate-context="Title">Pay invoice</h4>
             </div>
             <div class="modal-body pm_form">
-                <table class="pm_table">
-                    <tbody>
-                        <tr>
-                            <th translate translate-context="Title">Amount</th>
-                            <td>{{ ctrl.amount / 100 | currency: ctrl.currency }}</td>
-                        </tr>
-                        <tr ng-show="ctrl.credit !== 0">
-                            <th translate translate-context="Title">Credit</th>
-                            <td>{{ ctrl.credit / 100 | currency: ctrl.currency }}</td>
-                        </tr>
-                        <tr>
-                            <th translate translate-context="Title">Amount due</th>
-                            <td>{{ ctrl.amountDue / 100 | currency: ctrl.currency }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="pm_table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th style="width: 8rem" translate translate-context="Title">Amount</th>
+                                <td class="text-right">{{ ctrl.amount / 100 | currency: ctrl.currency }}</td>
+                            </tr>
+                            <tr ng-show="ctrl.credit !== 0">
+                                <th translate translate-context="Title">Credit</th>
+                                <td class="text-right">{{ ctrl.credit / 100 | currency: ctrl.currency }}</td>
+                            </tr>
+                            <tr>
+                                <th translate translate-context="Title">Amount due</th>
+                                <td class="text-right">{{ ctrl.amountDue / 100 | currency: ctrl.currency }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div ng-show="ctrl.amountDue > 0">
                     <p class="alert alert-info" ng-show="ctrl.methods.length === 0" translate translate-context="Info">You need to add a credit card before to pay with it.</p>
                     <div class="margin pm_grid" ng-show="ctrl.currency === 'USD'">

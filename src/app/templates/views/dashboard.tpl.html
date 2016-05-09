@@ -7,101 +7,105 @@
                     <div class="col-1-2">
                         <legend translate-context="Title" translate>Overview</legend>
                         <div class="well">
-                            <table class="pm_table plain">
-                                <tr>
-                                    <th translate-context="Title" translate>Username</th>
-                                    <td>
-                                        <strong>{{ user.Name }}</strong>
-                                    </td>
-                                    <td class="text-right actions"></td>
-                                </tr>
-                                <tr>
-                                    <th translate-context="Title" translate>Domains</th>
-                                    <td>
-                                        <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many domains exist for an organization as well as the total number allowed." translate>{{ organization.UsedDomains }} of {{ organization.MaxDomains }}</strong>
-                                        <strong ng-show="organization.PlanName === 'free'">0</strong>
-                                    </td>
-                                    <td class="text-right actions">
-                                        <a ui-sref="secured.domains" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
-                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th translate-context="Title" translate>Addresses</th>
-                                    <td>
-                                        <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many addresses exist for an organization as well as the total number allowed." translate>{{ organization.UsedAddresses }} of {{ organization.MaxAddresses }}</strong>
-                                        <strong ng-show="organization.PlanName === 'free'">1</strong>
-                                    </td>
-                                    <td class="text-right actions">
-                                        <a ui-sref="secured.addresses" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
-                                        <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th translate-context="Title" translate>Storage</th>
-                                    <td colspan="2">
-                                        <strong ng-hide="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | humanSize }}</strong>
-                                        <strong ng-show="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}</strong>
-                                        <br>
-                                        <div class="bar">
-                                            <em ng-hide="organization.PlanName === 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></em>
-                                            <em ng-show="organization.PlanName === 'free'" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></em>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div class="pm_table">
+                                <table class="plain">
+                                    <tr>
+                                        <th style="width: 6rem" translate-context="Title" translate>Username</th>
+                                        <td>
+                                            <strong>{{ user.Name }}</strong>
+                                        </td>
+                                        <td style="width: 8rem" class="text-right actions"></td>
+                                    </tr>
+                                    <tr>
+                                        <th translate-context="Title" translate>Domains</th>
+                                        <td>
+                                            <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many domains exist for an organization as well as the total number allowed." translate>{{ organization.UsedDomains }} of {{ organization.MaxDomains }}</strong>
+                                            <strong ng-show="organization.PlanName === 'free'">0</strong>
+                                        </td>
+                                        <td class="text-right actions">
+                                            <a ui-sref="secured.domains" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
+                                            <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th translate-context="Title" translate>Addresses</th>
+                                        <td>
+                                            <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many addresses exist for an organization as well as the total number allowed." translate>{{ organization.UsedAddresses }} of {{ organization.MaxAddresses }}</strong>
+                                            <strong ng-show="organization.PlanName === 'free'">1</strong>
+                                        </td>
+                                        <td class="text-right actions">
+                                            <a ui-sref="secured.addresses" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
+                                            <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th translate-context="Title" translate>Storage</th>
+                                        <td colspan="2">
+                                            <strong ng-hide="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | humanSize }}</strong>
+                                            <strong ng-show="organization.PlanName === 'free'"  translate-comment="show used storage for an account" translate>{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}</strong>
+                                            <br>
+                                            <div class="bar">
+                                                <em ng-hide="organization.PlanName === 'free'" style="width: {{ organization.UsedSpace / organization.MaxSpace * 100 }}%"></em>
+                                                <em ng-show="organization.PlanName === 'free'" style="width: {{ user.UsedSpace / user.MaxSpace * 100 }}%"></em>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="col-1-2" ng-hide="subscription.Name === 'free'">
                         <legend translate-context="Title" translate>My subscription</legend>
                         <div class="well">
-                            <table class="pm_table plain">
-                                <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
-                                    <th translate-context="Title" translate>Plan:</th>
-                                    <td><strong>{{ plan.Title }}</strong></td>
-                                    <td class="text-right actions">
-                                        <span ng-show="subscription.Cycle === 1">{{ subscription.Amount / 100 | currency: subscription.Currency }}</span>
-                                        <span ng-show="subscription.Cycle === 12">{{ subscription.Amount / 100 / 12 | currency: subscription.Currency }}/mo</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td colspan="2"><strong>{{ count('MaxSpace') | humanSize }} <span translate-context="Title" translate>Storage</span></strong></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td colspan="2"><strong>{{ count('MaxDomains') }} <span translate-context="Title" translate>Domains</span></strong></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td colspan="2"><strong> {{ count('MaxAddresses') }} <span translate-context="Title" translate>Addresses</span></strong></td>
-                                </tr>
-                                <tr>
-                                    <th translate-context="Title" translate>Total price:</th>
-                                    <td>
-                                        <strong ng-show="subscription.Cycle === 1" translate-context="Title" translate>Monthly</strong>
-                                        <strong ng-show="subscription.Cycle === 12" translate-context="Title" translate>Annually</strong>
-                                    </td>
-                                    <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
-                                </tr>
-                                <tr ng-show="user.Credit > 0">
-                                    <th translate-context="Title" translate>Credit</th>
-                                    <td></td>
-                                    <td class="text-right actions">{{ user.Credit / 100 | currency: subscription.Currency }}</td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <span translate-context="Title" translate>Payment</span>:
-                                    </th>
-                                    <td>
-                                        <strong ng-show="methods.length === 0" translate-context="Title" translate>None</strong>
-                                        <strong ng-show="methods.length > 0" translate-context="Title" translate>Credit card</strong>
-                                    </td>
-                                    <td class="text-right actions">
-                                        <a class="pm_button link" ui-sref="secured.payments" translate-context="Action" translate>Manage</a>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div class="pm_table">
+                                <table class="plain">
+                                    <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
+                                        <th style="width: 10rem" translate-context="Title" translate>Plan:</th>
+                                        <td><strong>{{ plan.Title }}</strong></td>
+                                        <td style="width: 12rem" class="text-right actions">
+                                            <span ng-show="subscription.Cycle === 1">{{ subscription.Amount / 100 | currency: subscription.Currency }}</span>
+                                            <span ng-show="subscription.Cycle === 12">{{ subscription.Amount / 100 / 12 | currency: subscription.Currency }}/mo</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td colspan="2"><strong>{{ count('MaxSpace') | humanSize }} <span translate-context="Title" translate>Storage</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td colspan="2"><strong>{{ count('MaxDomains') }} <span translate-context="Title" translate>Domains</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td colspan="2"><strong> {{ count('MaxAddresses') }} <span translate-context="Title" translate>Addresses</span></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <th translate-context="Title" translate>Total price:</th>
+                                        <td>
+                                            <strong ng-show="subscription.Cycle === 1" translate-context="Title" translate>Monthly</strong>
+                                            <strong ng-show="subscription.Cycle === 12" translate-context="Title" translate>Annually</strong>
+                                        </td>
+                                        <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
+                                    </tr>
+                                    <tr ng-show="user.Credit > 0">
+                                        <th translate-context="Title" translate>Credit</th>
+                                        <td></td>
+                                        <td class="text-right actions">{{ user.Credit / 100 | currency: subscription.Currency }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span translate-context="Title" translate>Payment</span>:
+                                        </th>
+                                        <td>
+                                            <strong ng-show="methods.length === 0" translate-context="Title" translate>None</strong>
+                                            <strong ng-show="methods.length > 0" translate-context="Title" translate>Credit card</strong>
+                                        </td>
+                                        <td class="text-right actions">
+                                            <a class="pm_button link" ui-sref="secured.payments" translate-context="Action" translate>Manage</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="col-1-2 donate" ng-show="subscription.Name === 'free'">
