@@ -1,17 +1,22 @@
 <div class="labelDropdown">
     <div role="menu" ng-click="$event.stopPropagation()">
         <p ng-show="labels.length === 0" class="alert alert-info" translate translate-context="Info">No labels</p>
-        <div ng-show="labels.length > 1" class="margin labelSearch">
+        <div ng-show="labels.length > 1 && altMode === false" class="margin labelSearch">
             <i class="fa fa-search"></i>
             <input type="search" id="searchLabels" placeholder-translate="Filter labels" ng-model="searchLabels" ng-minlength="1" />
         </div>
+        <div class="margin bold" translate translate-context="Title" ng-show="altMode === true">Apply label and archive</div>
         <div class="wrapper">
             <ul class="list-group" ng-show="labels.length > 0">
                 <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
-                    <label>
+                    <label ng-show="altMode === false">
                         <input type="checkbox" ng-model="label.Selected" />
-                        <i class="fa fa-tag" ng-style="color(label)" ng-click="moveTo(label)" pt-tooltip-translate="Archive and Apply" pt-tooltip-translate-context="Action"></i>
-                        <span class="label label-pm" title="{{ label.Name }}">{{ label.Name | limitTo: 20 }}</span>
+                        <i class="fa fa-tag" ng-style="color(label)"></i>
+                        <span class="label label-pm" title="{{ label.Name }}">{{ label.Name }}</span>
+                    </label>
+                    <label ng-show="altMode === true" ng-click="moveTo(label)">
+                        <i class="fa fa-archive" ng-style="color(label)"></i>
+                        <span class="label label-pm" title="{{ label.Name }}">{{ label.Name }}</span>
                     </label>
                 </li>
             </ul>
@@ -31,7 +36,7 @@
             <input type="checkbox" ng-model="alsoArchive" />
         </label>
         <div class="clearfix"></div>
-        <div>
+        <div ng-show="altMode === false">
             <button class="createLabel pull-left pm_button" ng-click="toggle()" pt-tooltip-translate="Add new label" pt-tooltip-translate-context="Action">
                 <i class="fa fa-plus"></i>
             </button>

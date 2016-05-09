@@ -152,7 +152,7 @@ msgstr ""
 #. Tooltip
 #: src/app/templates/modals/domain/address.tpl.html:30
 #: src/app/templates/modals/user/address.tpl.html:28
-#: src/app/templates/partials/message.tpl.html:154
+#: src/app/templates/partials/message.tpl.html:155
 #: src/app/templates/views/contacts.tpl.html:21
 #: src/app/templates/views/labels.tpl.html:5
 #: src/app/templates/views/payments.tpl.html:8
@@ -219,7 +219,7 @@ msgctxt "Action"
 msgid "Add New Filter"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:35
+#: src/app/templates/directives/labels.tpl.html:40
 msgctxt "Action"
 msgid "Add new label"
 msgstr ""
@@ -436,7 +436,7 @@ msgid "Already subscribed"
 msgstr ""
 
 #. Form checkbox option
-#: src/app/templates/directives/labels.tpl.html:30
+#: src/app/templates/directives/labels.tpl.html:35
 msgid "Also archive"
 msgstr ""
 
@@ -496,11 +496,20 @@ msgctxt "Title"
 msgid "Appearance"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:38
+#: src/app/templates/directives/labels.tpl.html:43
 #: src/app/templates/modals/payment/payment.tpl.html:171
 #: src/app/templates/modals/storage.tpl.html:24
 msgctxt "Action"
 msgid "Apply"
+msgstr ""
+
+#: src/app/templates/directives/labels.tpl.html:8
+msgctxt "Title"
+msgid "Apply label and archive"
+msgstr ""
+
+#: src/app/services/actions.js:37
+msgid "Archive"
 msgstr ""
 
 #. Folder name
@@ -514,15 +523,6 @@ msgstr ""
 #: src/app/templates/partials/sidebar.tpl.html:45
 msgctxt "Title"
 msgid "Archive"
-msgstr ""
-
-#: src/app/services/actions.js:37
-msgid "Archive"
-msgstr ""
-
-#: src/app/templates/directives/labels.tpl.html:13
-msgctxt "Action"
-msgid "Archive and Apply"
 msgstr ""
 
 #. Antispam section of account creation
@@ -1317,13 +1317,13 @@ msgstr ""
 msgid "Decrypting"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:250
+#: src/app/templates/partials/message.tpl.html:251
 #: src/app/templates/views/outside.reply.tpl.html:28
 msgctxt "Error"
 msgid "Decryption error"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:251
+#: src/app/templates/partials/message.tpl.html:252
 #: src/app/templates/views/outside.reply.tpl.html:29
 msgctxt "Error"
 msgid "Decryption of this message's encryption content failed."
@@ -1359,7 +1359,7 @@ msgstr ""
 
 #. contacts toolbar menu option
 #: src/app/templates/modals/deleteAccount.tpl.html:25
-#: src/app/templates/partials/message.tpl.html:193
+#: src/app/templates/partials/message.tpl.html:194
 #: src/app/templates/partials/toolbar-desktop.tpl.html:23
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:25
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:76
@@ -2108,7 +2108,7 @@ msgctxt "Action"
 msgid "Forgot username?"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:168
+#: src/app/templates/partials/message.tpl.html:169
 msgctxt "Action"
 msgid "Forward"
 msgstr ""
@@ -2231,7 +2231,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:223
+#: src/app/templates/partials/message.tpl.html:224
 msgctxt "Action"
 msgid "Hide details"
 msgstr ""
@@ -2764,7 +2764,7 @@ msgctxt "Action"
 msgid "Mark as read / Mark as unread"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:189
+#: src/app/templates/partials/message.tpl.html:190
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:24
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:72
 msgctxt "Action"
@@ -2775,7 +2775,7 @@ msgstr ""
 msgid "Mark as unread"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:185
+#: src/app/templates/partials/message.tpl.html:186
 #: src/app/templates/partials/toolbar-desktop.tpl.html:11
 #: src/app/templates/partials/toolbar-desktop.tpl.html:16
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:12
@@ -2897,7 +2897,7 @@ msgstr ""
 msgid "Monthly"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:171
+#: src/app/templates/partials/message.tpl.html:172
 msgctxt "Action"
 msgid "More"
 msgstr ""
@@ -2917,7 +2917,7 @@ msgctxt "Action"
 msgid "Move to archive"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:177
+#: src/app/templates/partials/message.tpl.html:178
 #: src/app/templates/partials/toolbar-desktop.tpl.html:20
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:22
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:64
@@ -2934,7 +2934,7 @@ msgctxt "Action"
 msgid "Move to spam"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:181
+#: src/app/templates/partials/message.tpl.html:182
 #: src/app/templates/partials/toolbar-desktop.tpl.html:19
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:21
 #: src/app/templates/partials/toolbar-list-rows-responsive.tpl.html:60
@@ -2977,7 +2977,7 @@ msgctxt "Title"
 msgid "Name"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:22
+#: src/app/templates/directives/labels.tpl.html:27
 msgid "Name"
 msgstr ""
 
@@ -3179,7 +3179,7 @@ msgstr ""
 msgid "Off"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:25
+#: src/app/templates/directives/labels.tpl.html:30
 #: src/app/templates/modals/alert.tpl.html:13
 msgctxt "Action"
 msgid "OK"
@@ -3493,7 +3493,7 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:215
+#: src/app/templates/partials/message.tpl.html:216
 msgctxt "Action"
 msgid "Print"
 msgstr ""
@@ -3675,12 +3675,12 @@ msgctxt "Action"
 msgid "Remove user"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:162
+#: src/app/templates/partials/message.tpl.html:163
 msgctxt "Action"
 msgid "Reply"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:165
+#: src/app/templates/partials/message.tpl.html:166
 msgctxt "Action"
 msgid "Reply all"
 msgstr ""
@@ -3986,7 +3986,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:222
+#: src/app/templates/partials/message.tpl.html:223
 msgctxt "Action"
 msgid "Show details"
 msgstr ""
@@ -3997,7 +3997,7 @@ msgid "Show images"
 msgstr ""
 
 #. show images in an email button
-#: src/app/templates/partials/message.tpl.html:239
+#: src/app/templates/partials/message.tpl.html:240
 #: src/app/templates/views/outside.message.tpl.html:42
 msgctxt "Action"
 msgid "Show images"
@@ -4265,12 +4265,12 @@ msgctxt "Info"
 msgid "This conversation contains trashed messages."
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:246
+#: src/app/templates/partials/message.tpl.html:247
 msgctxt "Info"
 msgid "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:245
+#: src/app/templates/partials/message.tpl.html:246
 msgctxt "Info"
 msgid "This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!"
 msgstr ""
@@ -4298,7 +4298,7 @@ msgid "This is used to recover your account if you get locked out or forget your
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:100
-#: src/app/templates/partials/message.tpl.html:232
+#: src/app/templates/partials/message.tpl.html:233
 msgid "This message will expire in"
 msgstr ""
 
@@ -4697,22 +4697,22 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:207
+#: src/app/templates/partials/message.tpl.html:208
 msgctxt "Action"
 msgid "View headers"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:211
+#: src/app/templates/partials/message.tpl.html:212
 msgctxt "Action"
 msgid "View original"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:202
+#: src/app/templates/partials/message.tpl.html:203
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr ""
 
-#: src/app/templates/partials/message.tpl.html:198
+#: src/app/templates/partials/message.tpl.html:199
 msgctxt "Action"
 msgid "View source code"
 msgstr ""
