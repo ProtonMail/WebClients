@@ -3,24 +3,25 @@ angular.module("proton.controllers.Contacts", [
 ])
 
 .controller("ContactsController", function(
+    $filter,
+    $log,
     $rootScope,
     $scope,
     $state,
-    $log,
-    gettextCatalog,
     $stateParams,
-    $filter,
-    tools,
-    authentication,
-    Contact,
-    confirmModal,
-    contactModal,
     alertModal,
+    authentication,
+    confirmModal,
+    CONSTANTS,
+    Contact,
+    contactModal,
     dropzoneModal,
     eventManager,
+    gettextCatalog,
     Message,
     networkActivityTracker,
-    notify
+    notify,
+    tools
 ) {
     // Variables
     var lastChecked = null;
@@ -29,7 +30,7 @@ angular.module("proton.controllers.Contacts", [
     $scope.currentPage = 1;
     $scope.params = { searchContactInput: ''};
     $scope.editing = false;
-    $scope.numPerPage = 40;
+    $scope.numPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
     $scope.sortBy = 'Name';
 
     // Listeners
