@@ -6,38 +6,26 @@
                 <ng-include src="'templates/modals/domain/menu.tpl.html'"></ng-include>
                 <span ng-show="ctrl.domain.DmarcState === 0 || ctrl.domain.DmarcState === 1 || ctrl.domain.DmarcState === 2" class="pull-right pm_badge error" translate  translate-comment="DMARC status badge">Not set</span>
                 <span ng-show="ctrl.domain.DmarcState === 3" class="pull-right pm_badge success" translate  translate-comment="DMARC status badge">Set</span>
-                <h4 class="modal-title">7. DMARC <em translate  translate-comment="DMARC status badge">Optional<em><em>, </em><em translate  translate-comment="DMARC status badge">advanced</em></h4>
+                <h4 class="modal-title">7. DMARC <em translate  translate-comment="DMARC status badge">Optional</em><em>, </em><em translate  translate-comment="DMARC status badge">advanced</em></h4>
             </div>
             <div class="modal-body pm_form">
                 <p translate translate-context="Info">If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly. Feel free to ignore and skip DMARC unless you really want strict policies such as <strong>p=quarantine</strong> or <strong>p=reject</strong>. <a target="_blank" href="https://protonmail.com/support/knowledge-base/anti-spoofing/" translate translate-context="Action">Learn more</a></p>
                 <p translate translate-context="Info">Here is a basic DMARC record that does nothing except email you reports.</p>
-                <table class="pm_table record" ng-if="!mobileMode">
-                    <tr>
-                        <th style="width:3rem" translate translate-context="Title"  translate-context="table heading">Type</th>
-                        <th style="width:6.5rem" translate translate-context="Title"  translate-context="table heading">Host name</th>
-                        <th translate translate-context="Title"  translate-context="table heading">Value / Data / Points to</th>
-                    </tr>
-                    <tr>
-                        <td><code>TXT</code></td>
-                        <td><code>_dmarc</code></td>
-                        <td><code>v=DMARC1; p=none; rua=mailto:address@yourdomain.com</code></td>
-                    </tr>
-                </table>
-
-                <div ng-if="mobileMode">
-                    <p>
-                        <strong translate translate-context="Title">Type</strong>:<br>
-                        <code>TXT</code>
-                    </p>
-                    <p>
-                        <strong translate translate-context="Title">Host name</strong>:<br>
-                        <code>_dmarc</code>
-                    </p>
-                    <p>
-                        <strong translate translate-context="Title">Value / Data / Points to</strong>:<br>
-                        <code>v=DMARC1; p=none; rua=mailto:address@yourdomain.com</code>
-                    </p>
+                <div class="pm_table">
+                    <table class="record">
+                        <tr>
+                            <th style="width:3rem" translate translate-context="Title"  translate-context="table heading">Type</th>
+                            <th style="width:6.5rem" translate translate-context="Title"  translate-context="table heading">Host name</th>
+                            <th style="width: 12rem" translate translate-context="Title"  translate-context="table heading">Value / Data / Points to</th>
+                        </tr>
+                        <tr>
+                            <td><code>TXT</code></td>
+                            <td><code>_dmarc</code></td>
+                            <td><code>v=DMARC1; p=none; rua=mailto:address@yourdomain.com</code></td>
+                        </tr>
+                    </table>
                 </div>
+
                 <p class="alert alert-info"><strong>p=none</strong> has no effect on email delivery.</p>
                 <p class="alert alert-info"><strong>address@yourdomain.com</strong> is where you will receive DMARC reports from other email services</p>
             </div>

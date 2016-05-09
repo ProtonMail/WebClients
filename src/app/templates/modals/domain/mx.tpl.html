@@ -13,39 +13,24 @@
                 <p translate translate-context="Info">Before you can receive emails for your custom domain addresses at ProtonMail, you need to add the following MX record to your DNS. This can typically be done in the control panel of your domain name registrar.</p>
                 <p translate translate-context="Info">Please add the following MX record. Note, DNS records can take several hours to update.</p>
                 <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/dns-records/' translate translate-context="Action">Learn more</a></p>
-                <table class="pm_table record" ng-if="!mobileMode">
-                    <tr>
-                        <th style="width:3rem" translate translate-context="Title">Type</th>
-                        <th style="width:6.5rem" translate translate-context="Title">Host name</th>
-                        <th translate translate-context="Title">Value / Data / Points to</th>
-                        <th style="width:4rem" translate translate-context="Title">Priority</th>
-                    </tr>
-                    <tr>
-                        <td><code>MX</code></td>
-                        <td><code>@</code></td>
-                        <td><code>mail.protonmail.ch</code></td>
-                        <td><code>10</code></td>
-                    </tr>
-                </table>
 
-                <div ng-if="mobileMode">
-                    <p>
-                        <strong translate translate-context="Title">Type</strong>:<br>
-                        <code>MX</code>
-                    </p>
-                    <p>
-                        <strong translate translate-context="Title">Host name</strong>:<br>
-                        <code>@</code>
-                    </p>
-                    <p>
-                        <strong translate translate-context="Title">Value / Data / Points to</strong>:<br>
-                        <code>mail.protonmail.ch</code>
-                    </p>
-                    <p>
-                        <strong translate translate-context="Title">Priority</strong>:<br>
-                        <code>10</code>
-                    </p>
+                <div class="pm_table">
+                    <table class="record">
+                        <tr>
+                            <th style="width:3rem" translate translate-context="Title">Type</th>
+                            <th style="width:6.5rem" translate translate-context="Title">Host name</th>
+                            <th style="width: 12rem" translate translate-context="Title">Value / Data / Points to</th>
+                            <th style="width:4rem" translate translate-context="Title">Priority</th>
+                        </tr>
+                        <tr>
+                            <td><code>MX</code></td>
+                            <td><code>@</code></td>
+                            <td><code>mail.protonmail.ch</code></td>
+                            <td><code>10</code></td>
+                        </tr>
+                    </table>
                 </div>
+
                 <p class="alert alert-info" translate translate-context="Info">Delete any other MX records or make sure ProtonMail's Priority is the lowest number.</p>
                 <p class="alert alert-info" translate translate-context="Info">If this domain is currently actively receiving emails, create all used email addresses in Step 3 before changing MX record to ensure a smooth transition.</p>
             </div>

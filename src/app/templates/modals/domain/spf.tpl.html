@@ -13,33 +13,21 @@
                 <p translate translate-context="Info">SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ProtonMail in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.</p>
                 <p translate translate-context="Info">Please add the following TXT record. Note, DNS records can take several hours to update.</p>
                 <p><a target='_blank' href='https://protonmail.com/support/knowledge-base/anti-spoofing/' translate translate-context="Action">Learn more</a></p>
-                <table class="pm_table record" ng-if="!mobileMode">
-                    <tr>
-                        <th style="width:3rem" translate translate-context="Title">Type</th>
-                        <th style="width:6.5rem" translate translate-context="Title">Host name</th>
-                        <th translate translate-context="Title">Value / Data / Points to</th>
-                    </tr>
-                    <tr>
-                        <td><code>TXT</code></td>
-                        <td><code>@</code></td>
-                        <td><code>v=spf1 include:_spf.protonmail.ch mx ~all</code></td>
-                    </tr>
-                </table>
-
-                <div class="mobileOnly">
-                    <p>
-                        <strong translate translate-context="Title">Type</strong>:<br>
-                        <code>TXT</code>
-                    </p>
-                    <p>
-                        <strong translate translate-context="Title">Host name</strong>:<br>
-                        <code>@</code>
-                    </p>
-                    <p>
-                        <strong translate translate-context="Title">Value / Data / Points to</strong>:<br>
-                        <code>v=spf1 include:_spf.protonmail.ch mx ~all</code>
-                    </p>
+                <div class="pm_table">
+                    <table class="record">
+                        <tr>
+                            <th style="width:3rem" translate translate-context="Title">Type</th>
+                            <th style="width:6.5rem" translate translate-context="Title">Host name</th>
+                            <th style="width: 14rem" translate translate-context="Title">Value / Data / Points to</th>
+                        </tr>
+                        <tr>
+                            <td><code>TXT</code></td>
+                            <td><code>@</code></td>
+                            <td><code>v=spf1 include:_spf.protonmail.ch mx ~all</code></td>
+                        </tr>
+                    </table>
                 </div>
+
                 <p class="alert alert-info" translate translate-context="Info">If you want to keep an existing SPF record, you can just add <code>include:_spf.protonmail.ch</code> to it after the <code>v=spf1</code>. Do not create multiple SPF records.</p>
             </div>
         </div>

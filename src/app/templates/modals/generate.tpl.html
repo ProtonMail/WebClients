@@ -22,26 +22,28 @@
                     </div>
                 </div>
                 <p class="alert alert-info" ng-show="ctrl.size === '4096'" translate translate-context="Info">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
-                <table class="pm_table">
-                    <thead>
-                        <tr>
-                            <th translate translate-context="Title" translate-comment="table heading">Address</th>
-                            <th style="width: 10rem" class="text-right" translate translate-context="Title" translate-comment="table heading">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="address in ctrl.addresses | orderBy: 'Send'">
-                            <td>{{ address.Email }}</td>
-                            <td class="text-right">
-                                <span ng-show="address.state === 0" class="pm_badge" translate translate-comment="key generation progrss">Queued</span>
-                                <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'Generating</span>
-                                <span ng-show="address.state === 2" class="pm_badge success" translate translate-comment="key generation progrss">Done</span>
-                                <span ng-show="address.state === 3" class="pm_badge success" translate translate-comment="key generation progrss">Saved</span>
-                                <span ng-show="address.state === 4" class="pm_badge error" translate translate-context="Error" translate-comment="key generation progrss">Error</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="pm_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th translate translate-context="Title" translate-comment="table heading">Address</th>
+                                <th style="width: 6rem" class="text-right" translate translate-context="Title" translate-comment="table heading">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="address in ctrl.addresses | orderBy: 'Send'">
+                                <td>{{ address.Email }}</td>
+                                <td class="text-right">
+                                    <span ng-show="address.state === 0" class="pm_badge" translate translate-comment="key generation progrss">Queued</span>
+                                    <span ng-show="address.state === 1" class="pm_badge"><i class="fa fa-spinner fa-spin"></i> {{ 'Generating</span>
+                                    <span ng-show="address.state === 2" class="pm_badge success" translate translate-comment="key generation progrss">Done</span>
+                                    <span ng-show="address.state === 3" class="pm_badge success" translate translate-comment="key generation progrss">Saved</span>
+                                    <span ng-show="address.state === 4" class="pm_badge error" translate translate-context="Error" translate-comment="key generation progrss">Error</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="modal-body" ng-show="ctrl.process === true">
                 <p>&nbsp;</p>
