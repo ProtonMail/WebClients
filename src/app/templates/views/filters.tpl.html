@@ -16,33 +16,35 @@
                     <button class="pm_button primary" translate translate-context="Action" ng-click="addCustomFilter()">Add New Filter</button>
                 </div>
 
-                <table class="pm_table">
-                    <thead>
-                        <tr>
-                            <th>
-                                <i class="fa fa-arrows"></i>
-                            </th>
-                            <th>Filtername</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="filter in customFilters track by filter.ID">
-                            <td>
-                                <i class="fa fa-ellipsis-v"></i>
-                            </td>
-                            <td ng-bind="filter.Name"></td>
-                            <td>
-                                <toggle status="filter.Status" on-translate="Enable" off-translate="Disable"></toggle>
-                            </td>
-                            <td>
-                                <button class="pm_button link" ng-click="editCustomFilter(filter)">Edit</button>
-                                <button class="pm_button link" ng-click="deleteCustomFilter(filter)">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table> -->
+                <div class="pm_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <i class="fa fa-arrows"></i>
+                                </th>
+                                <th>Filtername</th>
+                                <th>Status</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="filter in customFilters track by filter.ID">
+                                <td>
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </td>
+                                <td ng-bind="filter.Name"></td>
+                                <td>
+                                    <toggle status="filter.Status" on-translate="Enable" off-translate="Disable"></toggle>
+                                </td>
+                                <td class="text-right">
+                                    <button class="pm_button link" ng-click="editCustomFilter(filter)">Edit</button>
+                                    <button class="pm_button link" ng-click="deleteCustomFilter(filter)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
 
                 <legend translate translate-context="Title">Spam Filters</legend>
 
