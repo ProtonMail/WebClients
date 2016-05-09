@@ -59,7 +59,6 @@
 	    	line-height: 999rem;
 	    	&:hover {
 	    		max-width: 8rem;
-	    		padding: 0 .4rem;
 	    		line-height: 18px;
 	    	}
 	    }
@@ -69,7 +68,7 @@
 			max-width: 1.5rem;
 			width: 1.5rem;
 			text-align: center;
-			background: rgba(0,0,0,.1);
+			background: rgba(0,0,0,.1) !important;
 			padding: 0;
 			margin: 0;
 		}
