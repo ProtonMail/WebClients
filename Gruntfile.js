@@ -3,7 +3,7 @@
 
 var _ = require('lodash');
 var util = require('util');
-var appVersion = '3.1.7';
+var appVersion = '3.1.8';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
@@ -458,7 +458,7 @@ module.exports = function(grunt) {
         nggettext_extract: {
             pot: {
                 options: {
-                    attributes: ['placeholder-translate', 'title-translate', 'pt-tooltip-translate'] 
+                    attributes: ['placeholder-translate', 'title-translate', 'pt-tooltip-translate']
                 },
                 files: {
                     'po/template.pot': ['<%= app_files.js %>', '<%= app_files.atpl %>', '<%= app_files.html %>']

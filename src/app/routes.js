@@ -784,7 +784,7 @@ angular.module('proton.routes', [
             access: function(user, $q) {
                 var deferred = $q.defer();
 
-                if(user.Role === 2) {
+                if (user.Role === 2) {
                     deferred.resolve();
                 } else {
                     deferred.reject();
@@ -803,6 +803,32 @@ angular.module('proton.routes', [
             'content@secured': {
                 templateUrl: 'templates/views/domains.tpl.html',
                 controller: 'DomainsController'
+            }
+        }
+    })
+
+    .state('secured.filters', {
+        url: '/filters',
+        resolve: {
+            incomingDefaults: function($q, IncomingDefault, networkActivityTracker) {
+                var deferred = $q.defer();
+
+                IncomingDefault.get()
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        deferred.resolve(result.data.IncomingDefaults);
+                    } else {
+                        deferred.reject();
+                    }
+                });
+
+                return deferred.promise;
+            },
+        },
+        views: {
+            'content@secured': {
+                templateUrl: 'templates/views/filters.tpl.html',
+                controller: 'FiltersController'
             }
         }
     });
