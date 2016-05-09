@@ -364,6 +364,9 @@
                 }
             }
         }
+        &.closed .summary {
+            overflow: hidden;
+        }
     }
 }
 
