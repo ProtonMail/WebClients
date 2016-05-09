@@ -754,8 +754,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.getStyleLabel = function(id) {
         return {
-            color: $scope.getLabel(id).Color,
-            borderColor: $scope.getLabel(id).Color
+            backgroundColor: $scope.getLabel(id).Color
+            // boxShadow: "inset 0 0 0 2px " + $scope.getLabel(id).Color
         };
     };
 

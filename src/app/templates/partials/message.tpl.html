@@ -142,7 +142,8 @@ ng-class="{
                 ng-style="getStyleLabel(labelID)"
                 ng-click="detachLabel(labelID); $event.stopPropagation();"
                 ng-show="getLabel(labelID).Name">
-                    {{ getLabel(labelID).Name }} <a class="close fa fa-times"></a>
+                    <span>{{ getLabel(labelID).Name }}</span> 
+                    <a class="close fa fa-times"></a>
                 </label>
             </span>
         </div>
