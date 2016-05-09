@@ -46,11 +46,11 @@
 
                 <legend translate translate-context="Title">Spam Filters</legend>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis porro ullam odio ex quae non autem soluta quod ipsam! Dolore ducimus sapiente possimus voluptas, molestiae suscipit adipisci saepe autem tempore.</p>
+                <p><span translate translate-context="Info">Sender specific spam rules can be applied here. Whitelist addresses always go to Inbox while Blacklist addresses always go to Spam. Marking a message as spam adds the address to the Blacklist. Marking a message as not spam adds the address to the Whitelist.</span> <a href="" translate translate-context="Link">Learn More</a></p>
 
                 <div class="pm_grid">
                     <div class="col-1-1">
-                        <input type="search" ng-model="searchSpamFilter" placeholder-translate="Search in Spam lists" />
+                        <input type="search" ng-model="searchSpamFilter" placeholder-translate="Search Whitelist and Blacklist" />
                     </div>
                 </div>
 
@@ -58,13 +58,13 @@
                     <div class="col-1-2">
                         <div class="pm_grid margin">
                             <div class="col-1-2">
-                                <legend translate translate-text="Title" class="no-border no-margin">White List</legend>
+                                <legend translate translate-text="Title" class="no-border no-margin">Whitelist</legend>
                             </div>
                             <div class="col-1-2 text-right">
                                 <button class="pm_button primary" translate translate-context="Action" ng-click="addSpamFilter(0)">Add New Filter</button>
                             </div>
                         </div>
-                        <p class="alert alert-info" ng-show="empty(0)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident soluta tenetur dignissimos, ipsum sit quasi aliquid obcaecati voluptatum voluptates laudantium voluptatibus nisi quod magni. Iure, quis alias natus eos delectus!</p>
+                        <p class="alert alert-info" ng-show="empty(0)" translate translate-context="Info">No emails in Whitelist, click Add to Whitelist to add addresses to the Whitelist.</p>
                         <div class="pm_table">
                             <table class="bordered limited" ng-hide="empty(0)">
                                 <tbody>
@@ -86,13 +86,13 @@
                     <div class="col-1-2">
                         <div class="pm_grid margin">
                             <div class="col-1-2">
-                                <legend translate translate-text="Title" class="no-border no-margin">Black List</legend>
+                                <legend translate translate-text="Title" class="no-border no-margin">Blacklist</legend>
                             </div>
                             <div class="col-1-2 text-right">
                                 <button class="pm_button primary" translate translate-context="Action" ng-click="addSpamFilter(4)">Add New Filter</button>
                             </div>
                         </div>
-                        <p class="alert alert-info" ng-show="empty(4)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident soluta tenetur dignissimos, ipsum sit quasi aliquid obcaecati voluptatum voluptates laudantium voluptatibus nisi quod magni. Iure, quis alias natus eos delectus!</p>
+                        <p class="alert alert-info" ng-show="empty(4)" translate translate-context="Info">No emails in Blacklist, click Add to Blacklist to add addresses to the Blacklist.</p>
                         <div class="pm_table">
                             <table class="bordered limited" ng-hide="empty(4)">
                                 <tbody>
