@@ -40,6 +40,13 @@
     }
 }
 
+// Win 7 Firefox
+.ua-windows_nt-6-1.ua_firefox {
+    .pm_labels label .close::before {
+        line-height: 12px;
+    }
+}
+
 .ua-mac_os_x.ua_firefox,
 .ua-windows_nt-6-1.ua_firefox {
     .pm_labels label,
