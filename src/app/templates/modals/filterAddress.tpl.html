@@ -3,11 +3,10 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" translate translate-context="Title">New Filter Address</h3>
+                <h3 class="modal-title" ng-show="ctrl.filter.Location === 0" translate translate-context="Title">Add to Whitelist</h3>
+                <h3 class="modal-title" ng-show="ctrl.filter.Location === 4" translate translate-context="Title">Add to Blacklist</h3>
             </div>
             <div class="modal-body pm_form">
-                <label for="emailAddress" ng-show="ctrl.filter.Location === 0" translate translate-context="Label">Add to Whitelist</label>
-                <label for="emailAddress" ng-show="ctrl.filter.Location === 4" translate translate-context="Label">Add to Blacklist</label>
                 <input type="text" ng-model="ctrl.filter.Email" id="emailAddress" placeholder-translate="Email Address"/>
             </div>
         </div>
