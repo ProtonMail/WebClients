@@ -22,7 +22,6 @@ angular.module("proton.labels", [])
         link: function(scope, element, attrs) {
             // Variables
             var dropdown = angular.element(element).closest('.pm_buttons').find('.open-label');
-            var ALT_KEY = 18;
 
             // Functions
             var onClick = function() {
@@ -35,29 +34,11 @@ angular.module("proton.labels", [])
                 list.scrollTop = list.scrollHeight;
             };
 
-            var onKeyDown = function(event) {
-                if (scope.altMode === false) {
-                    scope.altMode = event.altKey;
-                    scope.$apply();
-                }
-            };
-
-            var onKeyUp = function(event) {
-                if (scope.altMode === true) {
-                    scope.altMode = event.altKey;
-                    scope.$apply();
-                }
-            };
-
             // Listeners
             dropdown.bind('click', onClick);
-            window.addEventListener('keydown', onKeyDown, false);
-            window.addEventListener('keyup', onKeyUp, false);
 
             scope.$on('$destroy', function() {
                 dropdown.unbind('click', onClick);
-                window.removeEventListener('keydown', onKeyDown);
-                window.removeEventListener('keyup', onKeyUp);
             });
 
 
@@ -70,7 +51,6 @@ angular.module("proton.labels", [])
                     scope.displayField = false;
                     scope.alsoArchive = false;
                     scope.labels = angular.copy(authentication.user.Labels);
-                    scope.altMode = false;
 
                     _.each(messages, function(message) {
                         messagesLabel = messagesLabel.concat(_.map(message.LabelIDs, function(id) {
@@ -108,8 +88,6 @@ angular.module("proton.labels", [])
             };
 
             scope.moveTo = function(label) {
-                // Unselect all labels
-                _.each(scope.labels, function(l) { l.Selected = false; });
                 // Select just one
                 label.Selected = true;
                 // Check also archive
