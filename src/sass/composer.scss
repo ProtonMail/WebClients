@@ -4,7 +4,10 @@
 
 	.composer{
 
+		display: -webkit-flex;
         display: flex;
+
+        -webkit-flex-direction:column;
       	flex-direction: column; /* .editor space fill */     
 
 	 	position: absolute; /* better for iOS then fixed*/
@@ -22,7 +25,10 @@
 	    }
 	  
 	    .row{
+	      display: -webkit-flex; /* ipad */
 	      display: flex;
+
+	      -webkit-flex-direction: row;  /* ipad */
 	      flex-direction: row;
 
 	      position: relative;
@@ -53,14 +59,22 @@
 	    }
 
 	    .flex{
-	        flex:1; 
+	    	-webkit-flex:1; /* ipad */
+	        flex:1;
+	        display:-webkit-flex; 
 	        display: flex;
 	        min-height: 0px; /* trigger height change */
 	     }
 
 	    .fill{
+
+	      -webkit-flex:1; /* ipad */
 	      flex: 1;
+
 	      display: flex;
+	      display: -webkit-flex;
+
+	      -webkit-flex-direction: column;
 	      flex-direction: column;
 		}
 
@@ -69,7 +83,9 @@
 		}
 
 		iframe{
+			-webkit-flex:1;
 			flex:1;
+			
 			position: relative;
 			z-index: 4
 		}
@@ -81,6 +97,7 @@
 		}
 
 	    .toolbar li{
+	      -webkit-flex:1;
 	      flex:1;
 	      cursor: pointer;
 	      height:$composerRowHeight;
