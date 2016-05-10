@@ -162,7 +162,7 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.breakImages = function(html) {
-        var re = new RegExp(/https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)/, 'g');
+        var re = new RegExp('https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)', 'g');
 
         html = html.replace(re, function(match, $1, $2, offset, original) {
             return 'protonmail_' + match;
@@ -172,7 +172,7 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.fixImages = function(html) {
-        var re = new RegExp(/protonmail_http/, 'g');
+        var re = new RegExp('protonmail_http', 'g');
 
         html = html.replace(re, 'http');
 
