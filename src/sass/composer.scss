@@ -62,6 +62,7 @@
 	    .flex{
 	        flex:1; 
 	        display: flex;
+	        min-height: 0px; /* trigger height change */
 	     }
 
 	    .fill{
@@ -515,6 +516,20 @@
 				height: 100% !important;
 				border-radius: 0;
 			}
+		}
+	}
+}
+
+
+@media screen and (max-height: 500px) {
+	#pm_composer {
+		footer{
+			position:relative;
+			z-index: 10
+		}
+		.squire-toolbar{
+			position:absolute;
+			z-index: 8
 		}
 	}
 }
