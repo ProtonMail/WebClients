@@ -11,7 +11,7 @@ angular.module('proton.transformation', [])
                     if(links.length > 0) {
                         links.attr('target','_blank').attr('rel', 'noreferrer');
                     }
-                }, 0, false);
+                }, 250, false);
             });
         }
     };
@@ -55,7 +55,7 @@ angular.module('proton.transformation', [])
                     if (links) {
                         angular.element(links).on('click', onClick);
                     }
-                }, 0, false);
+                }, 250, false);
             });
 
             scope.$on('$destroy', function(event) {
@@ -131,7 +131,7 @@ angular.module('proton.transformation', [])
                         // Stop searching of blockquotes
                         stopObserving();
                     }
-                }, 0, false);
+                }, 250, false);
             });
         }
     };
