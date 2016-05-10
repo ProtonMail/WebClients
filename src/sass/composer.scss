@@ -4,7 +4,10 @@
 
 	.composer{
 
+		display: -webkit-flex;
         display: flex;
+
+        -webkit-flex-direction:column;
       	flex-direction: column; /* .editor space fill */     
 
 	 	position: absolute; /* better for iOS then fixed*/
@@ -17,19 +20,15 @@
         background:#FFF;
 		opacity: 0;
 
-		-webkit-transition: opacity .25s linear, right .25s linear; /* DRY */
-		   -moz-transition: opacity .25s linear, right .25s linear;
-		    -ms-transition: opacity .25s linear, right .25s linear;
-		     -o-transition: opacity .25s linear, right .25s linear;
-		        transition: opacity .25s linear, right .25s linear;
-
-
 	    header, footer, .row{
 	      line-height: $composerRowHeight;
 	    }
 	  
 	    .row{
+	      display: -webkit-flex; /* ipad */
 	      display: flex;
+
+	      -webkit-flex-direction: row;  /* ipad */
 	      flex-direction: row;
 
 	      position: relative;
@@ -60,13 +59,22 @@
 	    }
 
 	    .flex{
-	        flex:1; 
+	    	-webkit-flex:1; /* ipad */
+	        flex:1;
+	        display:-webkit-flex; 
 	        display: flex;
+	        min-height: 0px; /* trigger height change */
 	     }
 
 	    .fill{
+
+	      -webkit-flex:1; /* ipad */
 	      flex: 1;
+
 	      display: flex;
+	      display: -webkit-flex;
+
+	      -webkit-flex-direction: column;
 	      flex-direction: column;
 		}
 
@@ -75,7 +83,9 @@
 		}
 
 		iframe{
+			-webkit-flex:1;
 			flex:1;
+			
 			position: relative;
 			z-index: 4
 		}
@@ -87,6 +97,7 @@
 		}
 
 	    .toolbar li{
+	      -webkit-flex:1;
 	      flex:1;
 	      cursor: pointer;
 	      height:$composerRowHeight;
@@ -104,11 +115,6 @@
         	z-index: 99;
         	background: #fafafa;
         	display: none;
-        	-webkit-transition: opacity .25s linear;
-			-moz-transition: opacity .25s linear;
-			-ms-transition: opacity .25s linear;
-			-o-transition: opacity .25s linear;
-			transition: opacity .25s linear;
         	&.show {
         		display: block;
         	}
@@ -254,6 +260,7 @@
 
 	    /* STATE CHANGE */
 
+
 	    @media (min-width:600px){
 	      &{
 	      	width: 600px;
@@ -320,11 +327,6 @@
 			& > * {
 				opacity: .75;
 			}
-			-webkit-transition: opacity .25s linear; /* DRY */
-			   -moz-transition: opacity .25s linear;
-			    -ms-transition: opacity .25s linear;
-			     -o-transition: opacity .25s linear;
-			        transition: opacity .25s linear;
 		}
 
 	    header{
@@ -466,12 +468,10 @@
 	}
 	html.protonmail {
 	    overflow: auto !important;
-	    -webkit-overflow-scrolling: touch;
 		height: initial;
 		body.modalOpen,
 		body.activeComposer {
 		    overflow: auto !important;
-		    -webkit-overflow-scrolling: touch;
 		    height: initial;
 		    min-height: initial;
 		}
@@ -515,6 +515,20 @@
 				height: 100% !important;
 				border-radius: 0;
 			}
+		}
+	}
+}
+
+
+@media screen and (max-height: 500px) {
+	#pm_composer {
+		footer{
+			position:relative;
+			z-index: 10
+		}
+		.squire-toolbar{
+			position:absolute;
+			z-index: 8
 		}
 	}
 }
