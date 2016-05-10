@@ -62,6 +62,7 @@
 	    .flex{
 	        flex:1; 
 	        display: flex;
+	        min-height: 0px; /* trigger height change */
 	     }
 
 	    .fill{
@@ -253,6 +254,11 @@
 		}
 
 	    /* STATE CHANGE */
+
+		&, & *{
+			/* Webkit fix for overflow:touch && position:relative; */
+	        -webkit-transform: translate3d(0, 0, 0);
+		}
 
 	    @media (min-width:600px){
 	      &{
@@ -515,6 +521,20 @@
 				height: 100% !important;
 				border-radius: 0;
 			}
+		}
+	}
+}
+
+
+@media screen and (max-height: 500px) {
+	#pm_composer {
+		footer{
+			position:relative;
+			z-index: 10
+		}
+		.squire-toolbar{
+			position:absolute;
+			z-index: 8
 		}
 	}
 }
