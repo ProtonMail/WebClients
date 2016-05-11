@@ -37,10 +37,10 @@ angular.module("proton.controllers.Settings")
             Setting.theme({Theme: $scope.appearance.cssTheme})
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-                    authentication.user.Theme = $scope.appearance.cssTheme;
                     notify({message: gettextCatalog.getString('Theme saved', null), classes: 'notification-success'});
-                    deferred.resolve();
-                    eventManager.call();
+                    eventManager.call().then(function() {
+                        deferred.resolve();
+                    });
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                     deferred.reject();
@@ -58,11 +58,7 @@ angular.module("proton.controllers.Settings")
         // Reset the theme value
         $scope.appearance.cssTheme = '';
         // Save the theme
-        $scope.saveTheme()
-        .then(function() {
-            // Reload the page
-            $state.go($state.current, {}, {reload: true});
-        });
+        $scope.saveTheme();
     };
 
     $scope.saveComposerMode = function(form) {
@@ -72,8 +68,8 @@ angular.module("proton.controllers.Settings")
             Setting.setComposerMode({ComposerMode: value})
             .then(function(result) {
                 if(result.data && result.data.Code === 1000) {
-                    authentication.user.ComposerMode = value;
                     notify({message: gettextCatalog.getString('Compose mode saved', null, 'Info'), classes: 'notification-success'});
+                    return eventManager.call();
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 }
@@ -88,15 +84,8 @@ angular.module("proton.controllers.Settings")
             Setting.setViewlayout({ViewLayout: value})
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-                    authentication.user.ViewLayout = value;
-
-                    if (value === 0) {
-                        $rootScope.layoutMode = 'columns';
-                    } else {
-                        $rootScope.layoutMode = 'rows';
-                    }
-
                     notify({message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success'});
+                    return eventManager.call();
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 }
@@ -118,8 +107,8 @@ angular.module("proton.controllers.Settings")
             Setting.setMessageStyle({ MessageButtons: $scope.appearance.MessageButtons })
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-                    authentication.user.MessageButtons = $scope.appearance.MessageButtons;
                     notify({message: gettextCatalog.getString('Buttons position saved', null, 'Info'), classes: 'notification-success'});
+                    return eventManager.call();
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 }
