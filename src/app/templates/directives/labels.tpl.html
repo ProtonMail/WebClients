@@ -26,9 +26,9 @@
                 </div>
             </div>
         </form>
-        <label ng-show="labelsSelected().length > 0" class="text-right alsoArchive">
+        <label class="text-right alsoArchive">
             <span translate   translate-comment="Form checkbox option" class="pull-left">Also archive</span>
-            <input type="checkbox" ng-model="alsoArchive" />
+            <input type="checkbox" ng-model="alsoArchive" ng-change="changeAlsoArchive()" />
         </label>
         <div class="clearfix"></div>
         <div>

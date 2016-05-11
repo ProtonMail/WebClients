@@ -1,14 +1,16 @@
 angular.module("proton.labels", [])
 
 .directive('dropdownLabels', function (
-    $timeout,
+    $filter,
     $q,
     $rootScope,
-    $filter,
+    $timeout,
     authentication,
+    eventManager,
     Label,
     networkActivityTracker,
     notify,
+    Setting,
     tools
 ) {
     return {
@@ -49,7 +51,7 @@ angular.module("proton.labels", [])
 
                     scope.labelName = '';
                     scope.displayField = false;
-                    scope.alsoArchive = false;
+                    scope.alsoArchive = Boolean(authentication.user.AlsoArchive);
                     scope.labels = angular.copy(authentication.user.Labels);
 
                     _.each(messages, function(message) {
@@ -85,6 +87,17 @@ angular.module("proton.labels", [])
             scope.save = function() {
                 scope.saveLabels(scope.labels, scope.alsoArchive);
                 scope.close();
+            };
+
+            scope.changeAlsoArchive = function() {
+                var archive = scope.alsoArchive ? 1 : 0;
+
+                Setting.alsoArchive({AlsoArchive: archive})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        eventManager.call();
+                    }
+                });
             };
 
             scope.moveTo = function(label) {
