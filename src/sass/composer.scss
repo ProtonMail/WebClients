@@ -78,6 +78,10 @@
 	      flex-direction: column;
 		}
 
+		.composeEditor{
+			position: relative; /* dropzone parent which is absolute */
+		}
+
 		.container-email{
 			width: calc(100% - 40px); /* absolute pm_button .link*/
 		}
@@ -91,7 +95,9 @@
 		}
 
 		.dropzone {
-			position: relative;
+			position: absolute;
+			width: 100%;
+			height: 100%;
 			z-index: 99;
 			border: 1rem solid rgba(0,0,0,.05);
 		}
