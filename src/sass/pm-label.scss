@@ -20,6 +20,7 @@
 		}
 	}
 	label {
+		background-color: transparent;
 	    border-radius: 3px;
 	    border: none;
 	    color: $text;
@@ -29,7 +30,7 @@
 	    max-width: 8rem;
 	    text-overflow: ellipsis;
 	    overflow: hidden;
-	    line-height: 18px;
+	    line-height: 14px;
 	    height: 18px;
 	    box-sizing: border-box;
 	    display: inline-block;
@@ -43,22 +44,25 @@
 		span {
 			display: block;
 			height: 18px;
-			line-height: 18px;
+			line-height: 14px;
 		}
 	    &.closed {
 	    	max-width: .5rem;
-	    	border-left-width: 0;
 	    	padding: 0;
 	    	overflow: hidden;
 	    	line-height: 999rem;
+			border-left-width: 0 !important;
+			border-radius: 0 3px 3px 0;
 	    	&:hover {
+				border-left-width: 2px !important;
+				border-radius: 3px;
 	    		max-width: 8rem;
-	    		line-height: 18px;
+	    		line-height: 14px;
 	    		padding: 0 .4rem;
 	    	}
 	    }
 		&.more {
-			line-height: 18px;
+			line-height: 14px;
 			color: rgba(0,0,0,.35);
 			max-width: 1.5rem;
 			width: 1.5rem;
