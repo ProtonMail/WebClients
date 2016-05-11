@@ -397,11 +397,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     // $scope.$apply();
                 },
                 error: function(event) {
+                    
+                    /* Notification is already handled by the accept method */
+                    /*
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
                     if(event.size > sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE) {
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
                     }
+                    */
                 }
             }
         };
