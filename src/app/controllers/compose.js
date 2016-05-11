@@ -209,7 +209,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     function onDragOver(event) {
-        event.preventDefault();
+        
+        
+        /* 
+            event.preventDefault();
+            if we disable the default behavior then 
+            the text can't be draged inside the iframe.
+        */
+        
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
 
