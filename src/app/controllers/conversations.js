@@ -753,9 +753,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} id
      */
     $scope.getStyleLabel = function(id) {
+        var color = $scope.getLabel(id).Color;
+
         return {
-            backgroundColor: $scope.getLabel(id).Color
-            // boxShadow: "inset 0 0 0 2px " + $scope.getLabel(id).Color
+            border: '2px solid ' +  color,
+            color: color
         };
     };
 

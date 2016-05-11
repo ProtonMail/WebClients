@@ -10,7 +10,8 @@
                 <li class="list-group-item" ng-repeat="label in labels | filter: {Name: searchLabels} | orderBy: 'Order'">
                     <label>
                         <input type="checkbox" ng-model="label.Selected" />
-                        <i class="fa fa-tag" ng-style="color(label)" ng-click="moveTo(label)" pt-tooltip-translate="Apply label and archive"></i>
+                        <i class="fa fa-tag" ng-style="color(label)" ng-show="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label and archive"></i>
+                        <i class="fa fa-tag" ng-style="color(label)" ng-hide="alsoArchive" ng-click="moveTo(label)" pt-tooltip-translate="Apply label"></i>
                         <span class="label label-pm" title="{{ label.Name }}">{{ label.Name }}</span>
                     </label>
                 </li>
@@ -26,9 +27,9 @@
                 </div>
             </div>
         </form>
-        <label ng-show="labelsSelected().length > 0" class="text-right alsoArchive">
+        <label class="text-right alsoArchive">
             <span translate   translate-comment="Form checkbox option" class="pull-left">Also archive</span>
-            <input type="checkbox" ng-model="alsoArchive" />
+            <input type="checkbox" ng-model="alsoArchive" ng-change="changeAlsoArchive()" />
         </label>
         <div class="clearfix"></div>
         <div>
