@@ -103,8 +103,6 @@ angular.module("proton.labels", [])
             scope.moveTo = function(label) {
                 // Select just one
                 label.Selected = true;
-                // Check also archive
-                scope.alsoArchive = true;
                 // Save
                 scope.saveLabels(scope.labels, scope.alsoArchive);
                 // Close
