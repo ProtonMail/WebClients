@@ -163,6 +163,8 @@ angular.module("proton.controllers.Settings")
     $scope.switchSpamFilter = function(filter, folder) {
         var clone = angular.copy(filter);
 
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
         clone.Location = folder;
 
         networkActivityTracker.track(
