@@ -11,6 +11,7 @@ angular.module("proton.labels", [])
     networkActivityTracker,
     notify,
     Setting,
+    gettextCatalog,
     tools
 ) {
     return {
