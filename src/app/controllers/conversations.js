@@ -881,23 +881,19 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                             promise = Message.emptyTrash().$promise;
                         }
 
-
-
                         networkActivityTracker.track(
-                            promise.then(
-                                function(result) {
+                            promise.then(function(response) {
+                                if (response.Code === 1000) {
                                     // Call to empty cache conversation
                                     cache.empty(mailbox);
                                     // Close modal
                                     confirmModal.deactivate();
                                     // Notify user
                                     notify({message: gettextCatalog.getString('Folder emptied', null), classes: 'notification-success'});
-                                },
-                                function(error) {
-                                    notify({message: 'Error during the empty request', classes: 'notification-danger'});
-                                    $log.error(error);
+                                    // Call event manager to update the storage space
+                                    eventManager.call();
                                 }
-                            )
+                            })
                         );
                     },
                     cancel: function() {
