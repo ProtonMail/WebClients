@@ -138,6 +138,8 @@ angular.module("proton.controllers.Settings")
     $scope.deleteSpamFilter = function(filter) {
         var IDs = [];
 
+        // Hide all the tooltip
+        $('.tooltip').not(this).hide();
         IDs.push(filter.ID);
 
         networkActivityTracker.track(
