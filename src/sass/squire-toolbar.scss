@@ -18,8 +18,8 @@
 	&.b li.bold a,
 	&.i li.italic a,
 	&.u li.underline a,
-	&.li li.ulist a,
-	&.ol li.olist a,
+	&.ul.li li.ulist a,
+	&.ol.li li.olist a,
 	&.align-left li.aleft a,
 	&.align-center li.acenter a,
 	&.align-right li.aright a {
