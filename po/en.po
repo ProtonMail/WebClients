@@ -1120,15 +1120,15 @@ msgstr ""
 "Contact us at <a href=“mailto:security@protonmail.com”>security@protonmail."
 "com</a> for critical security issues."
 
-#: src/app/templates/partials/header-auth-desktop.tpl.html:38
-msgctxt "Action"
-msgid "Contacts"
-msgstr "Contacts"
-
 #. Folder name
 #: src/app/controllers/secured.js:225
 #: src/app/templates/partials/sidebar-responsive.tpl.html:66
 msgctxt "Title"
+msgid "Contacts"
+msgstr "Contacts"
+
+#: src/app/templates/partials/header-auth-desktop.tpl.html:38
+msgctxt "Action"
 msgid "Contacts"
 msgstr "Contacts"
 
@@ -1864,12 +1864,12 @@ msgctxt "Action"
 msgid "Encrypting"
 msgstr "Encrypting"
 
-#: src/app/templates/partials/composer.tpl.html:209
+#: src/app/templates/partials/composer.tpl.html:221
+msgctxt "Title"
 msgid "Encryption"
 msgstr "Encryption"
 
-#: src/app/templates/partials/composer.tpl.html:221
-msgctxt "Title"
+#: src/app/templates/partials/composer.tpl.html:209
 msgid "Encryption"
 msgstr "Encryption"
 
@@ -1902,12 +1902,12 @@ msgstr "End to end encrypted using PGP/MIME"
 msgid "English"
 msgstr "English"
 
-#: src/app/templates/views/members.tpl.html:115
+#: src/app/templates/views/members.tpl.html:116
+msgctxt "Action"
 msgid "Enter mailbox"
 msgstr "Enter mailbox"
 
-#: src/app/templates/views/members.tpl.html:116
-msgctxt "Action"
+#: src/app/templates/views/members.tpl.html:115
 msgid "Enter mailbox"
 msgstr "Enter mailbox"
 
@@ -2154,7 +2154,7 @@ msgctxt "Action"
 msgid "Finish"
 msgstr "Finish"
 
-#: src/app/controllers/conversations.js:894
+#: src/app/controllers/conversations.js:892
 msgid "Folder emptied"
 msgstr "Folder emptied"
 
@@ -2678,9 +2678,9 @@ msgstr ""
 "strong>. You can also add, delete, and edit labels by clicking on <em>Label "
 "settings</em> <strong>(2)</strong>."
 
-#: src/app/services/actions.js:143 src/app/services/actions.js:590
-msgid "Labels saved"
-msgstr "Labels saved"
+#: src/app/directives/labels.js:90
+msgid "Labels Saved"
+msgstr "Labels Saved"
 
 #: src/app/templates/views/appearance.tpl.html:30
 msgctxt "Title"
@@ -2758,15 +2758,15 @@ msgctxt "Title"
 msgid "Location"
 msgstr "Location"
 
+#. auth log entry
+#: src/app/templates/views/security.tpl.html:49
+msgid "Log out"
+msgstr "Log out"
+
 #: src/app/templates/partials/header-auth-simple.tpl.html:6
 #: src/app/templates/partials/header-no-auth.tpl.html:7
 #: src/app/templates/partials/sidebar-responsive.tpl.html:90
 msgctxt "Action"
-msgid "Log out"
-msgstr "Log out"
-
-#. auth log entry
-#: src/app/templates/views/security.tpl.html:49
 msgid "Log out"
 msgstr "Log out"
 
@@ -2775,13 +2775,13 @@ msgstr "Log out"
 msgid "Logging preference updated"
 msgstr "Logging preference updated"
 
-#: src/app/templates/views/login.tpl.html:17
-msgctxt "Action"
+#: src/app/controllers/secured.js:252
+msgctxt "Title"
 msgid "Login"
 msgstr "Login"
 
-#: src/app/controllers/secured.js:252
-msgctxt "Title"
+#: src/app/templates/views/login.tpl.html:17
+msgctxt "Action"
 msgid "Login"
 msgstr "Login"
 
@@ -2831,14 +2831,14 @@ msgstr "Logout"
 msgid "Logs cleared"
 msgstr "Logs cleared"
 
-#: src/app/templates/views/unlock.tpl.html:15
-msgid "Mailbox password"
-msgstr "Mailbox password"
-
 #. form heading for changing mailbox password
 #: src/app/templates/views/account.tpl.html:138
 #: src/app/templates/views/step1.tpl.html:47
 msgctxt "Title"
+msgid "Mailbox password"
+msgstr "Mailbox password"
+
+#: src/app/templates/views/unlock.tpl.html:15
 msgid "Mailbox password"
 msgstr "Mailbox password"
 
@@ -4340,7 +4340,7 @@ msgstr "Spam Filter Added"
 msgid "Spam Filter Deleted"
 msgstr "Spam Filter Deleted"
 
-#: src/app/controllers/settings/filters.js:173
+#: src/app/controllers/settings/filters.js:175
 msgid "Spam Filter Updated"
 msgstr "Spam Filter Updated"
 
@@ -5333,6 +5333,9 @@ msgstr "YY"
 #: src/app/templates/modals/payment/payment.tpl.html:98
 msgid "ZIP code"
 msgstr "ZIP code"
+
+#~ msgid "Labels saved"
+#~ msgstr "Labels saved"
 
 #~ msgctxt "Title"
 #~ msgid "Apply label and archive"
