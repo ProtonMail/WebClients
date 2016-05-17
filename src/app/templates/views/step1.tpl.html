@@ -27,8 +27,8 @@
                 </span>
                 <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em>
             </div>
-            <p class="alert alert-danger" ng-show="badUsername" translate-context="Error" translate>Email already taken</p>
-            <p class="alert alert-success" ng-show="goodUsername"  translate>Email available</p>
+            <p class="alert alert-danger" ng-show="badUsername" ng-bind="badUsernameMessage"></p>
+            <p class="alert alert-success" ng-show="goodUsername" translate-context="Info" translate>Email available</p>
             <label for="password">
                 <em class="num">2</em>
                 <span translate translate-context="Title">Login password</span>

@@ -37,18 +37,18 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.finishCreation = false;
 
         $scope.signup = {
-            verificationSent: false,		
+            verificationSent: false,
             smsVerificationSent: false
         };
 
 
         var IP = null;
-        $.get('http://jsonip.com/', function(r) { 
+        $.get('http://jsonip.com/', function(r) {
             console.log(r);
             if (r.ip) {
 
                 // r.ip = '181.40.112.194';
-                
+
                 $.ajax({
                     url: 'http://api.stopforumspam.org/api?ip='+r.ip+'&f=json',
                     dataType: 'jsonp',
@@ -117,8 +117,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.URLparams = $location.search();
         if ($scope.URLparams.u !== undefined) {
             $scope.account.Username = $scope.URLparams.u;
-            $timeout( function() {
-                $scope.checkAvailability( true );
+            $timeout(function() {
+                $scope.checkAvailability(true);
             }, 200);
         }
 
@@ -261,24 +261,19 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             }
 
             networkActivityTracker.track(
-                $scope.checkAvailability()
-                .then( $scope.generateNewKeys )
-                .then(
-                    function() {
-                        $timeout( function() {
-                            $scope.genNewKeys = false;
-                            if ($rootScope.preInvited) {
-                                $scope.createAccount();
-                            }
-                            else {
-                                $scope.humanityTest = true;
-                            }
-                        }, 2000);
-                    },
-                    function() {
-
-                    }
-                )
+                $scope.checkAvailability(false)
+                .then($scope.generateNewKeys )
+                .then(function() {
+                    $timeout( function() {
+                        $scope.genNewKeys = false;
+                        if ($rootScope.preInvited) {
+                            $scope.createAccount();
+                        }
+                        else {
+                            $scope.humanityTest = true;
+                        }
+                    }, 2000);
+                })
             );
         }
     };
@@ -327,6 +322,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         // reset
         $scope.goodUsername = false;
         $scope.badUsername = false;
+        $scope.badUsernameMessage = '';
         $scope.checkingUsername = true;
 
         // user came from pre-invite so we can not check if it exists
@@ -340,17 +336,20 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                     if (result.data && result.data.Error) {
                         $scope.badUsername = true;
                         $scope.checkingUsername = false;
+                        $scope.badUsernameMessage = result.data.Error;
                         $('#Username').focus();
                         deferred.reject(result.data.Error);
                     } else if (result.data && result.data.Code === 1000) {
                         if (result.data.Available === 0) {
-                            if ( manual === true ) {
+                            if (manual === true) {
                                 $scope.badUsername = true;
+                                $scope.badUsernameMessage = gettextCatalog.getString('Username already taken', null, 'Error');
                                 $scope.checkingUsername = false;
+                                $('#Username').focus();
                                 deferred.resolve(200);
                             } else {
                                 $('#Username').focus();
-                                deferred.reject('Username already taken.');
+                                deferred.reject(gettextCatalog.getString('Username already taken', null, 'Error'));
                             }
                         } else {
                             if ( manual === true ) {
