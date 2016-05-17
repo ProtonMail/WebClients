@@ -529,6 +529,9 @@
 
 @media screen and (max-height: 500px) {
 	#pm_composer {
+		.angular-squire-wrapper{
+			padding-top: 2rem; /* toolbar height */
+		}
 		footer{
 			position:relative;
 			z-index: 10
