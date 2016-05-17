@@ -469,8 +469,8 @@ msgstr "Already subscribed"
 
 #. Form checkbox option
 #: src/app/templates/directives/labels.tpl.html:31
-msgid "Also archive"
-msgstr "Also archive"
+msgid "Also Archive"
+msgstr "Also Archive"
 
 #: src/app/templates/views/account.tpl.html:58
 msgctxt "Info"
@@ -2678,7 +2678,7 @@ msgstr ""
 "strong>. You can also add, delete, and edit labels by clicking on <em>Label "
 "settings</em> <strong>(2)</strong>."
 
-#: src/app/directives/labels.js:90
+#: src/app/directives/labels.js:91
 msgid "Labels Saved"
 msgstr "Labels Saved"
 
@@ -4336,11 +4336,11 @@ msgstr "Spam"
 msgid "Spam Filter Added"
 msgstr "Spam Filter Added"
 
-#: src/app/controllers/settings/filters.js:150
+#: src/app/controllers/settings/filters.js:152
 msgid "Spam Filter Deleted"
 msgstr "Spam Filter Deleted"
 
-#: src/app/controllers/settings/filters.js:175
+#: src/app/controllers/settings/filters.js:177
 msgid "Spam Filter Updated"
 msgstr "Spam Filter Updated"
 
@@ -5334,6 +5334,9 @@ msgstr "YY"
 msgid "ZIP code"
 msgstr "ZIP code"
 
+#~ msgid "Also archive"
+#~ msgstr "Also archive"
+
 #~ msgid "Labels saved"
 #~ msgstr "Labels saved"
 
@@ -5485,9 +5488,6 @@ msgstr "ZIP code"
 
 #~ msgid "Addresses used."
 #~ msgstr "Addresses used."
-
-#~ msgid "Also Archive"
-#~ msgstr "Also Archive"
 
 #~ msgid "Amount due"
 #~ msgstr "Amount due"
