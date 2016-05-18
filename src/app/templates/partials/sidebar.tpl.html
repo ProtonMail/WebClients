@@ -7,7 +7,7 @@
 
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <a href="/inbox" title="Inbox" ng-click="goTo('secured.inbox');">
+            <a href="#" title="Inbox" ng-click="goTo('secured.inbox');">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.inbox.**' | includedByState"></button>
                 <i class="fa fa-inbox"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Inbox</span>
@@ -15,7 +15,7 @@
             </a>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
-            <a href="/drafts" title="Drafts" ng-click="goTo('secured.drafts')">
+            <a href="#" title="Drafts" ng-click="goTo('secured.drafts')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.drafts.**' | includedByState"></button>
                 <i class="fa fa-file-text-o"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Drafts</span>
@@ -23,7 +23,7 @@
             </a>
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
-            <a href="/sent" title="Sent" ng-click="goTo('secured.sent')">
+            <a href="#" title="Sent" ng-click="goTo('secured.sent')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.sent.**' | includedByState"></button>
                 <i class="fa fa-send"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Sent</span>
@@ -31,7 +31,7 @@
             </a>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
-            <a href="/starred" title="Starred" ng-click="goTo('secured.starred')">
+            <a href="#" title="Starred" ng-click="goTo('secured.starred')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.starred.**' | includedByState"></button>
                 <i class="fa fa-star-o"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Starred</span>
@@ -39,7 +39,7 @@
             </a>
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
-            <a href="/archive" title="Archive" ng-click="goTo('secured.archive')">
+            <a href="#" title="Archive" ng-click="goTo('secured.archive')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.archive.**' | includedByState"></button>
                 <i class="fa fa-archive"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Archive</span>
@@ -47,7 +47,7 @@
             </a>
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
-            <a href="/spam" title="Spam" ng-click="goTo('secured.spam')">
+            <a href="#" title="Spam" ng-click="goTo('secured.spam')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.spam.**' | includedByState"></button>
                 <i class="fa fa-ban"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Spam</span>
@@ -55,7 +55,7 @@
             </a>
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
-            <a href="/trash" title="Trash" ng-click="goTo('secured.trash')">
+            <a href="#" title="Trash" ng-click="goTo('secured.trash')">
                 <button class="fa fa-repeat pull-right refresh" ng-class="{ 'spinMe': spinMe }" ng-show="'secured.trash.**' | includedByState"></button>
                 <i class="fa fa-trash-o"></i>
                 <span translate-context="Title" translate-comment="Folder name" translate>Trash</span>
