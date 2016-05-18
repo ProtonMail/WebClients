@@ -367,7 +367,7 @@
 	    }
 
 	    .row{
-	      border-bottom:1px solid #ccd0dd;
+	      border-bottom:1px solid $border;
 	      &.placeholder div{
 					color: $text;
 				  	overflow: hidden;
