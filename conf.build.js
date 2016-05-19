@@ -64,7 +64,8 @@ module.exports = {
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
       "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js",
       "vendor/angular-messages/angular-messages.js",
-      "vendor/svgeezy/svgeezy.js"
+      "vendor/svgeezy/svgeezy.js",
+      "vendor/html5-desktop-notifications/desktop-notify.js"
     ],
     bootstrap_components: [
       "affix",
