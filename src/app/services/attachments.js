@@ -1,7 +1,5 @@
-angular.module("proton.attachments", [
-    "proton.authentication"
-])
-.service("attachments", function(
+angular.module('proton.attachments', ['proton.authentication'])
+.service('attachments', function(
     $http,
     $log,
     $window,
@@ -12,6 +10,7 @@ angular.module("proton.attachments", [
     url,
     pmcw,
     errorReporter,
+    gettextCatalog,
     CONSTANTS,
     CONFIG
 ) {
@@ -97,7 +96,7 @@ angular.module("proton.attachments", [
 
                 if (statusCode !== 200) {
                     // Error with the request
-                    notify({message: 'Unable to upload file. Please try again.', classes: 'notification-danger'}); // TODO translate
+                    notify({message: gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error'), classes: 'notification-danger'});
                     deferred.reject(response);
                 } else if (response.Error !== undefined) {
                     if (validJSON) {
@@ -105,7 +104,7 @@ angular.module("proton.attachments", [
                         notify({message: response.Error, classes: 'notification-danger'});
                         deferred.reject(response);
                     } else {
-                        notify({message: $translate.instant('UNABLE_TO_UPLOAD'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Unable to upload file. Please try again', null, 'Error'), classes: 'notification-danger'});
                         deferred.reject(response);
                     }
                 } else {

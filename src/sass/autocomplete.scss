@@ -6,41 +6,62 @@
         box-sizing: border-box;
     }
     .input-email {
-        display: block;
-        cursor: text;
+        display: flex;
+        flex-wrap: wrap;
         min-height: 30px;
         line-height: 30px;
         padding: 0 6px;
         vertical-align: middle;
         position: relative;
-        form input {
-            max-width: 95%;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        form {
+            flex: 1;
+
+            input {
+                width: 100%;
+                display: block;
+            }
+
+            input:focus {
+                min-width: 100px;
+            }
         }
     }
 
     .label-email {
         border: 1px solid $gray-light;
-        background-color: $gray-light;
+        background-color: $read;
         margin-top: 5px;
         text-shadow: none;
         border-radius: 2px;
         padding-left: 5px;
         margin-right: 5px;
-        display: inline-block;
-        line-height: 20px;
-        word-break: break-all;
-    }
+        display: flex;
+        flex-direction: row;
+        line-height: 22px;
+        height: 22px;
+        max-width: 100%;
+        /* "By default, flex items won't shrink below their minimum content size 
+        (the length of the longest word or fixed-size element).
+        To change this, set the ‘min-width’ or ‘min-height’ property."*/
+        min-width:0px; 
 
-    .label-email:hover {
-        border-color: $gray;
-    }
+        &.invalid {
+            border-color: $red;
+            color: $red;
+        }
 
-    .label-email a {
-        font-weight: normal;
-        margin-right: 5px;
-        cursor: pointer;
+        span {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        a {
+            margin-left: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
     }
 
     .input-email input[type="text"] {
@@ -52,15 +73,9 @@
         box-shadow: none;
         height: 30px;
         line-height: 30px;
-        width: 330px;
         overflow: hidden;
         white-space: nowrap;
         transition: none;
-    }
-
-    .input-email form {
-        margin-bottom: 0;
-        display: inline;
     }
 
     .autocomplete-email {
@@ -74,35 +89,28 @@
         width: 100%;
         margin: 0;
         padding: 0;
-    }
 
-    .autocomplete-email ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
+        li {
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
 
-    .autocomplete-email li {
-        padding: 0;
-        margin: 0;
-    }
+            &.selected, &:hover.selected {
+                background-color: $gray-light;
+            }
 
-    .autocomplete-email a {
-        color: $gray;
-        cursor: pointer;
-        line-height: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-        display: block;
-        text-decoration: none;
-    }
+            &:hover {
+                background-color: $light;
+            }
 
-    .autocomplete-email a.selected,
-    .autocomplete-email a:hover.selected {
-        background-color: $gray-light;
-    }
-
-    .autocomplete-email a:hover {
-        background-color: $light;
+            a {
+                color: $gray;
+                line-height: 30px;
+                padding-left: 10px;
+                padding-right: 10px;
+                display: block;
+                text-decoration: none;
+            }
+        }
     }
 }

@@ -1,11 +1,11 @@
 <div class="modal-content pm_form">
     <div class="modal-header">
-        <h4 class="modal-title">{{ 'ADD_USER' | translate }}</h4>
+        <h4 class="modal-title" translate translate-context="Title">Add user</h4>
     </div>
     <div class="modal-body">
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>{{ 'SELECT_DOMAIN' | translate }}</label>
+                <label translate translate-context="Title">Select domain</label>
             </div>
             <div class="col-2-3">
                 <span class="pm_select inline">
@@ -18,40 +18,42 @@
 
         <form class="pm_grid" method="post" ng-submit="ctrl.add()" novalidate>
             <div class="col-1-3">
-                <label>{{ 'ADD_ADDRESS'}}</label>
+                <label translate translate-context="Title" translate-comment="label for adding new address form">Add address</label>
             </div>
             <div class="col-1-3">
-                <input type="text" ng-model="ctrl.address" placeholder="Address" />
+                <input type="text" ng-model="ctrl.address" placeholder-translate="Address" />
             </div>
             <div class="col-1-3">
                 <strong>@{{ ctrl.domain.DomainName }}</strong>
-                <button type="submit" class="pm_button primary">{{ 'ADD' | translate }}</button>
+                <button type="submit" class="pm_button primary" translate-context="Action" translate>Add</button>
             </div>
         </form>
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>{{ 'ADDRESSES_ADDED' | translate }}</label>
+                <label translate translate-context="Title">Addresses added</label>
             </div>
             <div class="col-2-3">
-                <table class="pm_table pm_form bordered">
-                    <thead>
-                        <tr>
-                            <th>{{ 'ADDRESSES' | translate }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="address in ctrl.domain.Addresses">
-                            <td>
-                                <strong>{{ address.Email }}</strong>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="pm_table">
+                    <table class="pm_form bordered">
+                        <thead>
+                            <tr>
+                                <th translate translate-context="Title">Addresses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="address in ctrl.domain.Addresses">
+                                <td>
+                                    <strong>{{ address.Email }}</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div class="modal-footer text-right">
-    <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-    <button type="submit" class="pm_button primary">{{ 'SUBMIT' | translate }}</button>
+    <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+    <button type="submit" class="pm_button primary" translate translate-context="Action">Submit</button>
 </div>

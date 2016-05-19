@@ -1,27 +1,27 @@
 /* global -_ */
 /* jshint node: true, camelcase: false */
 
-var _ = require("lodash"),
-util = require("util");
-var appVersion = '3.1.6';
+var _ = require('lodash');
+var util = require('util');
+var appVersion = '3.2.0';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
-var BROWSERS = ["PhantomJS", "Chrome", "Firefox", "Safari"];
+var BROWSERS = ['PhantomJS', 'Chrome', 'Firefox', 'Safari'];
 var API_TARGETS = {
-    blue: "https://52.36.229.13/api",
-    prod: "https://mail.protonmail.com/api",
-    dev: "https://dev.protonmail.com/api",
-    v2: "https://v2.protonmail.com/api",
-    build: "/api"
+    blue: 'https://52.36.229.13/api',
+    prod: 'https://mail.protonmail.com/api',
+    dev: 'https://dev.protonmail.com/api',
+    v2: 'https://v2.protonmail.com/api',
+    build: '/api'
 };
 
 module.exports = function(grunt) {
     var serveStatic = require('serve-static');
 
-    grunt.loadTasks("tasks");
-    require("load-grunt-tasks")(grunt);
+    grunt.loadTasks('tasks');
+    require('load-grunt-tasks')(grunt);
 
     function apiUrl() {
         var api = API_TARGETS.build;
@@ -43,10 +43,10 @@ module.exports = function(grunt) {
         return _.isEmpty(selected) ? [BROWSERS[0]] : selected;
     }
 
-    var userConfig = require("./conf.build.js");
+    var userConfig = require('./conf.build.js');
 
     var taskConfig = {
-        pkg: grunt.file.readJSON("package.json"),
+        pkg: grunt.file.readJSON('package.json'),
         meta: {
             banner: "/**\n" +
             " * <%= pkg.name %> - <%= pkg.version %> - <%= grunt.template.today('yyyy-mm-dd HH:MM:ss') %>\n" +
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
             options: {
                 enabled: true,
                 max_jshint_notifications: 5, // maximum number of notifications from jshint output
-                title: "ProtonMail Angular", // defaults to the name in package.json, or will use project directory's name
+                title: 'ProtonMail Angular', // defaults to the name in package.json, or will use project directory's name
                 success: false, // whether successful grunt executions should be notified automatically
                 duration: 3 // the duration of notification in seconds, for `notify-send only
             }
@@ -99,18 +99,6 @@ module.exports = function(grunt) {
             }
         },
 
-        i18nextract: {
-            default_options: {
-                src: ["<%= app_files.js %>", "<%= app_files.atpl %>", "<%= app_files.ctpl %>", "<%= app_files.html %>"],
-                dest: "src/assets/locales",
-                lang: ['fr_FR', 'en_US', 'de_DE', 'it_IT', 'es_ES', 'nl_NL'],
-                defaultLang: "en_US",
-                prefix: "",
-                suffix: ".json",
-                stringifyOptions: true // the output will be sort (case insensitive)
-            }
-        },
-
         clean: {
             build: [
                 "<%= build_dir %>"
@@ -118,16 +106,6 @@ module.exports = function(grunt) {
             dist: [
                 "<%= compile_dir %>"
             ]
-        },
-
-        forever: {
-            mock_server: {
-                options: {
-                    command: './node_modules/api-mock/bin/api-mock ./api/blueprint.md' + ' -p ' + (grunt.option('api-port') || '4003'),
-                    index: '',
-                    logDir: 'logs'
-                }
-            }
         },
 
         connect: {
@@ -142,9 +120,9 @@ module.exports = function(grunt) {
                         serveStatic(base),
                         function(req, res, next) {
                             // no file found; send app.html
-                            var file = base + "/app.html";
+                            var file = base + '/app.html';
                             if (grunt.file.exists(file)) {
-                                require("fs").createReadStream(file).pipe(res);
+                                require('fs').createReadStream(file).pipe(res);
                                 return;
                             }
                             res.statusCode(404);
@@ -156,17 +134,16 @@ module.exports = function(grunt) {
 
             compile: {
                 options: {
-                    base: "<%= compile_dir %>"
+                    base: '<%= compile_dir %>'
                 }
             },
 
             watch: {
                 options: {
                     livereload: 40093,
-                    base: "<%= build_dir %>"
+                    base: '<%= build_dir %>'
                 }
-            },
-
+            }
         },
 
         copy: {
@@ -285,14 +262,6 @@ module.exports = function(grunt) {
                 },
                 src: ["<%= app_files.atpl %>"],
                 dest: "<%= build_dir %>/src/app/templates/templates-app.js"
-            },
-
-            common: {
-                options: {
-                    base: "src/common"
-                },
-                src: ["<%= app_files.ctpl %>"],
-                dest: "<%= build_dir %>/src/app/templates/templates-common.js"
             }
         },
 
@@ -324,13 +293,10 @@ module.exports = function(grunt) {
                 eqeqeq: true, // This options prohibits the use of == and != in favor of === and !==.
                 eqnull: true,
                 expr: true,
-                // latedef: true,
                 onevar: true,
                 noarg: true,
                 node: true,
                 trailing: true,
-                // undef: true,
-                // unused: true,
                 globals: {
                     angular: true,
                     pmcrypto: true,
@@ -424,7 +390,7 @@ module.exports = function(grunt) {
             },
 
             tpls: {
-                files: ["<%= app_files.atpl %>", "<%= app_files.ctpl %>"],
+                files: ["<%= app_files.atpl %>"],
                 tasks: ["html2js"]
             },
 
@@ -487,16 +453,33 @@ module.exports = function(grunt) {
                     delay: 3000
                 }
             }
+        },
+
+        nggettext_extract: {
+            pot: {
+                options: {
+                    attributes: ['placeholder-translate', 'title-translate', 'pt-tooltip-translate']
+                },
+                files: {
+                    'po/template.pot': ['<%= app_files.js %>', '<%= app_files.atpl %>', '<%= app_files.html %>']
+                }
+            }
+        },
+
+        nggettext_compile: {
+            all: {
+                options: {
+                    module: 'proton'
+                },
+                files: {
+                    'src/app/translations.js': ['po/*.po']
+                }
+            }
         }
     };
 
     // Project config
     grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
-
-    // Load the grunt plugins
-    grunt.loadNpmTasks('grunt-angular-translate');
-    grunt.loadNpmTasks('grunt-notify');
-    grunt.loadNpmTasks('grunt-ng-constant');
 
     grunt.renameTask('watch', 'delta');
 
@@ -507,11 +490,6 @@ module.exports = function(grunt) {
         'jshint',
         'connect:watch',
         'delta'
-    ]);
-
-    // Extract translate keys from HTML and JS files
-    grunt.registerTask('extract', [
-        'i18nextract'
     ]);
 
     grunt.registerTask('deploy', [
@@ -533,6 +511,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'clean:build',
+        'nggettext_extract', // extract key inside JS and HTML files
+        'nggettext_compile', // transform po file to translations.js
         'html2js',
         'sass:build',
         'concat:build_css',

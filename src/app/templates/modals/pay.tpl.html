@@ -1,32 +1,35 @@
 <div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
     <form class="modal-dialog" novalidate ng-submit="ctrl.submit()" name="payForm">
-        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title="{{ 'CLOSE' | translate }}" class="fa fa-times close"></button>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ 'PAY_INVOICE' | translate }} {{ ctrl.invoice.ID }}</h4>
+                <h4 class="modal-title" translate translate-context="Title">Pay invoice</h4>
             </div>
             <div class="modal-body pm_form">
-                <table class="pm_table">
-                    <tbody>
-                        <tr>
-                            <th>{{ 'AMOUNT' | translate }}</th>
-                            <td>{{ ctrl.amount / 100 | currency: ctrl.currency }}</td>
-                        </tr>
-                        <tr ng-show="ctrl.credit !== 0">
-                            <th>{{ 'CREDIT' | translate }}</th>
-                            <td>{{ ctrl.credit / 100 | currency: ctrl.currency }}</td>
-                        </tr>
-                        <tr>
-                            <th>{{ 'AMOUNT_DUE' | translate }}</th>
-                            <td>{{ ctrl.amountDue / 100 | currency: ctrl.currency }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="pm_table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th style="width: 8rem" translate translate-context="Title">Amount</th>
+                                <td class="text-right">{{ ctrl.amount / 100 | currency: ctrl.currency }}</td>
+                            </tr>
+                            <tr ng-show="ctrl.credit !== 0">
+                                <th translate translate-context="Title">Credit</th>
+                                <td class="text-right">{{ ctrl.credit / 100 | currency: ctrl.currency }}</td>
+                            </tr>
+                            <tr>
+                                <th translate translate-context="Title">Amount due</th>
+                                <td class="text-right">{{ ctrl.amountDue / 100 | currency: ctrl.currency }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div ng-show="ctrl.amountDue > 0">
+                    <p class="alert alert-info" ng-show="ctrl.methods.length === 0" translate translate-context="Info">You need to add a credit card before to pay with it.</p>
                     <div class="margin pm_grid" ng-show="ctrl.currency === 'USD'">
                         <div class="col-1-2">
                             <label>
-                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices"> {{ 'CREDIT_CARD' | translate }}
+                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices" ng-disabled="ctrl.methods.length === 0"> <span translate>Credit card</span>
                             </label>
                         </div>
                         <div class="col-1-2">
@@ -44,9 +47,9 @@
                     </div>
                     <div ng-show="ctrl.choice === 'paypal'">
                         <p ng-show="!ctrl.approvalURL">
-                            <i class="fa fa-spin fa-spinner"></i> {{ 'LOADING' | translate }}...
+                            <i class="fa fa-spin fa-spinner"></i> <span translate>Loading...</span>
                         </p>
-                        <p class="alert alert-info">{{ 'PAYPAL_LOGIN_MESSAGE' | translate }}</p>
+                        <p class="alert alert-info" translate translate-context="Info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
                         <div class="text-center">
                             <a href="#" ng-show="ctrl.approvalURL" ng-click="ctrl.openPaypalTab()">
                                 <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
@@ -57,8 +60,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-            <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.choice === 'paypal'">{{ 'SUBMIT' | translate }}</button>
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.choice === 'paypal'" translate translate-context="Info">Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

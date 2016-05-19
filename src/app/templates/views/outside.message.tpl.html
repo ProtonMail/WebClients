@@ -1,6 +1,6 @@
 <div id="outsideMessageWrap">
     <div ng-if="true" id="expirationMessage">
-        {{ 'EXPIRING_IN' | translate }}
+        <span  translate>Expiring in</span>
         <strong time="{{ message.ExpirationTime }}" interval="1000" filter="delay">
             <i class="fa fa-spin fa-circle-o-notch"></i>
         </strong>.
@@ -8,9 +8,7 @@
     <div class="message-head">
         <a ng-click="reply()" class="pm_button pull-right">
             <i class="fa fa-reply"></i>
-            <span class="visible-md-inline-block visible-lg-inline-block">
-                {{ 'REPLY_SECURELY' | translate }}
-            </span>
+            <span class="visible-md-inline-block visible-lg-inline-block" translate-context="Action" translate>Reply securely</span>
         </a>
         <h1 class="no-margin-bottom">
             <span class="attachement" ng-show="message.Attachments.length > 0">
@@ -22,18 +20,18 @@
     <div class="message-metadata">
         <ul class="infos">
             <li>
-                <strong>{{ 'FROM' | translate }}</strong>
+                <strong translate-comment="message metadata" translate translate-context="Title">From</strong>
                 <b>{{ message.Sender.Name }}</b> &lt;{{ message.Sender.Address }}&gt;
-                <span class="fa fa-check-circle verified" pt-tooltip="ProtonMail Verified"></span>
+                <span class="fa fa-check-circle verified" pt-tooltip-translate="ProtonMail Verified"></span>
             </li>
             <li ng-if="message.ToList.length > 0">
-                <strong>{{ 'TO' | translate }}</strong>
+                <strong translate-comment="message metadata" translate translate-context="Title">To</strong>
                 <span ng-repeat="email in message.ToList">
                     <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
                 </span>
             </li>
             <li ng-if="message.CCList.length > 0">
-                <strong>{{ 'CC' | translate }}</strong>
+                <strong translate-comment="message metadata" translate translate-context="Title">CC</strong>
                 <span ng-repeat="email in message.CCList">
                     <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
                 </span>
@@ -41,7 +39,7 @@
         </ul>
         <p class="display-image text-center pm_button" ng-show="!!message.imagesHidden" id="showImages">
             <a href="#" ng-click="toggleImages()">
-                <i class="fa fa-photo"></i> {{ 'SHOW_IMAGES' | translate }}
+                <i class="fa fa-photo"></i> <span translate-context="Action" translate translate-comment="show images in an email button">Show images</span>
             </a>
         </p>
     </div>
@@ -49,7 +47,7 @@
         <div id="message-body">
             <div class="email" ng-bind-html="message.Body | purify" transform-links hide-first-blockquote scroll="false"></div>
         </div>
-    </div><!--/#outsideMessage-->
+    </div>
     <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
     <div id="eo_footer"></div>
 </div>

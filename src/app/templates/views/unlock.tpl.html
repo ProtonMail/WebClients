@@ -5,19 +5,18 @@
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
         <h4 class="text-center">
-            <span class="fa fa-inbox title-icon"></span>
-            {{ 'DECRYPT_MAILBOX' | translate }}
+            <span class="fa fa-inbox title-icon"></span> <span translate translate-context="Title">Decrypt Mailbox</span>
         </h4>
 
         <p class="text-center">{{ tempUser.username }}</p>
 
         <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-        <input autofocus autocapitalize="off" autocorrect="off" class="margin" type="password" id="password" name="MailboxPassword" ng-model="mailboxPassword" placeholder="MAILBOX PASSWORD" />
+        <input autofocus autocapitalize="off" autocorrect="off" class="margin" type="password" id="password" name="MailboxPassword" ng-model="mailboxPassword" placeholder-translate="Mailbox password" />
 
         <div class="clearfix">
-            <a ui-sref="reset" class="login-support pm_button link pull-left">{{ 'FORGOT_PASSWORD?' | translate }}</a>
-            <button id="unlock_btn" class="pm_button primary pull-right" type="submit" ng-class="{disabled: networkActivity.loading()}">{{ 'UNLOCK' | translate }}</button>
+            <a ui-sref="reset" class="login-support pm_button link pull-left" translate-context="Action" translate translate-comment="link to reset mailbox">Forgot password?</a>
+            <button id="unlock_btn" class="pm_button primary pull-right" type="submit" ng-class="{disabled: networkActivity.loading()}" translate-context="Action" translate>Unlock</button>
         </div>
 
     </div>
@@ -25,6 +24,6 @@
     <div ng-show="domoArigato">
         <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
         <img src="/assets/img/decrypt.gif" class="loader">
-        <p>DECRYPTING...</p>
+        <p><span translate>Decrypting</span>...</p>
     </div>
 </form>

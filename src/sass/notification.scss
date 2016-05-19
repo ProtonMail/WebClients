@@ -1,22 +1,23 @@
 body .cg-notify-message {
     background: #43434f;
-    border-color: #43434f;
+    box-shadow: inset 0 -1px 0 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.5);
     color: #fff !important;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
-    box-shadow: none;
-    padding: .5rem 1rem;
+    border: none;
+    padding: .75rem 1.25rem;
     z-index: 9999999 !important;
+    font-size: 110%;
     &.notification-success {
         background-color: $green;
-        border-color: $green;
     }
     &.notification-warning {
-        background-color: $yellow;
-        border-color: $yellow;
+        background-color: $orange;
     }
     &.notification-danger {
-        background-color: #cc9393;
-        border-color: #cc9393;
+        background-color: $red;
+    }
+    &.notification-info {
+        background-color: $blue;
     }
     &.bottom-right {
         right: 2rem !important;

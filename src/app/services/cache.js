@@ -824,12 +824,12 @@ angular.module('proton.cache', [])
                 deferred.resolve();
             } else {
                 // Manage labels
-                if(angular.isDefined(event.Message.LabelIDsRemoved)) {
+                if (angular.isDefined(event.Message.LabelIDsRemoved)) {
                     message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
                     delete message.LabelIDsRemoved;
                 }
 
-                if(angular.isDefined(event.Message.LabelIDsAdded)) {
+                if (angular.isDefined(event.Message.LabelIDsAdded)) {
                     message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
                     delete message.LabelIDsAdded;
                 }
@@ -857,6 +857,8 @@ angular.module('proton.cache', [])
             deferred.resolve();
         } else {
             getConversation(event.ID).then(function(conversation) {
+                conversation.LabelIDsAdded = event.Conversation.LabelIDsAdded;
+                conversation.LabelIDsRemoved = event.Conversation.LabelIDsRemoved;
                 updateConversation(conversation);
                 deferred.resolve();
             });
@@ -885,7 +887,7 @@ angular.module('proton.cache', [])
         }
 
         _.each(events, function(event) {
-            if(event.Action === DELETE) { // Can be for message or conversation
+            if (event.Action === DELETE) { // Can be for message or conversation
                 promises.push(api.delete(event));
             } else if(angular.isDefined(event.Message)) { // Manage message action
                 event.Message.ID = event.Message.ID || event.ID;

@@ -1,6 +1,6 @@
 angular.module("proton.models.payments", [])
 
-.factory("Payment", function($http, $q, $translate, authentication, CONSTANTS, url) {
+.factory("Payment", function($http, $q, gettextCatalog, authentication, CONSTANTS, url) {
     return {
         /**
         * Donate for perks. Does not require authentication.
@@ -87,16 +87,16 @@ angular.module("proton.models.payments", [])
                                 case 'free':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = '150 ' + $translate.instant('MESSAGES_PER_DAY');
-                                    plan.labels = '20 ' + $translate.instant('LABELS');
-                                    plan.support = $translate.instant('LIMITED_SUPPORT');
+                                    plan.sending = '150 ' + gettextCatalog.getString('Messages per day', null);
+                                    plan.labels = '20 ' + gettextCatalog.getString('Labels', null);
+                                    plan.support = gettextCatalog.getString('Limited support', null);
                                     break;
                                 case 'plus':
                                     plan.editable = true;
                                     plan.display = true;
-                                    plan.sending = '1000 ' + $translate.instant('MESSAGES_PER_DAY');
-                                    plan.labels = '200 ' + $translate.instant('LABELS');
-                                    plan.support = $translate.instant('SUPPORT');
+                                    plan.sending = '1000 ' + gettextCatalog.getString('Messages per day', null);
+                                    plan.labels = '200 ' + gettextCatalog.getString('Labels', null);
+                                    plan.support = gettextCatalog.getString('Support', null);
                                     break;
                                 case 'business':
                                     plan.editable = true;
@@ -108,9 +108,9 @@ angular.module("proton.models.payments", [])
                                 case 'visionary':
                                     plan.editable = false;
                                     plan.display = true;
-                                    plan.sending = $translate.instant('UNLIMITED_SENDING');
-                                    plan.labels = $translate.instant('UNLIMITED_LABELS');
-                                    plan.support = $translate.instant('PRIORITY_SUPPORT');
+                                    plan.sending = gettextCatalog.getString('Unlimited sending', null);
+                                    plan.labels = gettextCatalog.getString('Unlimited labels', null);
+                                    plan.support = gettextCatalog.getString('Priority support', null);
                                     break;
                                 default:
                                     break;
@@ -261,7 +261,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardNumber(number) === false) {
-                deferred.reject(new Error($translate.instant('CARD_NUMER_INVALID')));
+                deferred.reject(new Error(gettextCatalog.getString('Card number invalid', null, 'Error')));
             } else {
                 deferred.resolve();
             }
@@ -272,7 +272,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardExpiry(month, year) === false) {
-                deferred.reject(new Error($translate.instant('EXPIRY_INVALID')));
+                deferred.reject(new Error(gettextCatalog.getString('Expiration date invalid', null, 'Error')));
             } else {
                 deferred.resolve();
             }
@@ -283,7 +283,7 @@ angular.module("proton.models.payments", [])
             var deferred = $q.defer();
 
             if ($.payment.validateCardCVC(cvc) === false) {
-                deferred.reject(new Error($translate.instant('CVC_INVALID')));
+                deferred.reject(new Error(gettextCatalog.getString('CVC invalid', null, 'Error')));
             } else {
                 deferred.resolve();
             }

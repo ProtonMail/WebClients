@@ -3,7 +3,7 @@ angular.module('proton.actions', [])
 .factory('action', function(
     $q,
     $rootScope,
-    $translate,
+    gettextCatalog,
     tools,
     cache,
     Conversation,
@@ -12,6 +12,34 @@ angular.module('proton.actions', [])
     notify,
     CONSTANTS
 ) {
+    var findCurrentLocation = function(message) {
+        var locations = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive
+        ];
+
+        if (angular.isArray(message.LabelIDs)) {
+            return _.chain(message.LabelIDs).intersection(locations).first().value();
+        }
+    };
+
+    var getFolderNameTranslated = function(mailbox) {
+        var mailboxs = {
+            inbox: gettextCatalog.getString('Inbox', null),
+            spam: gettextCatalog.getString('Spam', null),
+            drafts: gettextCatalog.getString('Drafts', null),
+            sent: gettextCatalog.getString('Sent', null),
+            trash: gettextCatalog.getString('Trash', null),
+            archive: gettextCatalog.getString('Archive', null)
+        };
+
+        return mailboxs[mailbox];
+    };
+
     return {
         // Conversation actions
         /**
@@ -27,6 +55,13 @@ angular.module('proton.actions', [])
             var toInbox = mailbox === 'inbox';
             var current = tools.currentLocation();
             var labelIDsRemoved = [];
+            var folder = getFolderNameTranslated(mailbox);
+            var process = function() {
+                // Send cache events
+                cache.events(events);
+                // Display notification
+                notify({message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success'});
+            };
 
             if (tools.currentMailbox() !== 'label') {
                 labelIDsRemoved.push(current);
@@ -47,10 +82,10 @@ angular.module('proton.actions', [])
                     var copyLabelIDsAdded = angular.copy(labelIDsAdded);
                     var copyLabelIDsRemoved = angular.copy(labelIDsRemoved);
 
-                    if(toInbox === true) {
+                    if (toInbox === true) {
                         var index;
 
-                        if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
+                        if (message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
                             index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
 
                             copyLabelIDsAdded.splice(index, 1);
@@ -79,12 +114,11 @@ angular.module('proton.actions', [])
             promise = Conversation[mailbox](ids);
             cache.addToDispatcher(promise);
 
-            if(context === true) {
-                cache.events(events);
+            if (context === true) {
+                process();
             } else {
                 promise.then(function() {
-                    // Send cache events
-                    cache.events(events);
+                    process();
                 });
 
                 networkActivityTracker.track(promise);
@@ -106,7 +140,6 @@ angular.module('proton.actions', [])
             var current = tools.currentLocation();
             var process = function() {
                 cache.events(events);
-                notify({message: $translate.instant('LABELS_SAVED'), classes: 'notification-success'});
 
                 if(alsoArchive === true) {
                     Conversation.archive(ids); // Send request to archive conversations
@@ -437,7 +470,7 @@ angular.module('proton.actions', [])
                     return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
                 });
 
-                if(inInbox === true) {
+                if (inInbox === true) {
                     var index;
 
                     if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
@@ -480,7 +513,11 @@ angular.module('proton.actions', [])
 
                     _.each(messages, function(message) {
                         var found = _.find(events, function(event) {
-                            return message.ID === event.Message.ID;
+                            if (angular.isDefined(event.Message)) {
+                                return message.ID === event.Message.ID;
+                            } else {
+                                return false;
+                            }
                         });
 
                         if (angular.isDefined(found)) {
@@ -549,7 +586,6 @@ angular.module('proton.actions', [])
                     });
 
                     cache.events(events2);
-                    notify({message: $translate.instant('LABELS_SAVED'), classes: 'notification-success'});
 
                     if(alsoArchive === true) {
                         Message.archive({IDs: ids}); // Send request to archive conversations
@@ -862,37 +898,17 @@ angular.module('proton.actions', [])
         discardMessage: function(message) {
             var context = tools.cacheContext();
             var events = [];
-            var conversation = cache.getConversationCached(message.ConversationID);
             var promise;
+            var current = findCurrentLocation(message);
 
-            // Generate message event to delete the message
-            events.push({Action: 0, ID: message.ID});
-
-            if(angular.isDefined(conversation)) {
-                if(conversation.NumMessages === 1) {
-                    // Delete conversation
-                    events.push({Action: 0, ID: conversation.ID});
-                } else if(conversation.NumMessages > 1) {
-                     var messages = cache.queryMessagesCached(conversation.ID);
-                     var labelIDs = [];
-
-                     _.each(messages, function(message) {
-                         labelIDs = labelIDs.concat(message.LabelIDs);
-                     });
-
-                     // Remove one of the draft label
-                     labelIDs.splice(labelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts), 1);
-
-                    // Decrease the number of message
-                    conversation.NumMessages--;
-
-                    // Generate conversation event
-                    events.push({Action: 3, ID: conversation.ID, Conversation: conversation});
-                }
-            }
+            // Generate message event to move the message to trash
+            events.push({Action: 3, ID: message.ID, Message: {
+                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.trash],
+                LabelIDsRemoved: [current]
+            }});
 
             // Send request
-            promise = Message.delete({IDs: [message.ID]}).$promise;
+            promise = Message.trash({IDs: [message.ID]}).$promise;
             cache.addToDispatcher(promise);
 
             if(context === true) {

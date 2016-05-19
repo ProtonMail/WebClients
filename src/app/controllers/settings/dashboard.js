@@ -5,7 +5,7 @@ angular.module("proton.controllers.Settings")
     $rootScope,
     $scope,
     $stateParams,
-    $translate,
+    gettextCatalog,
     $q,
     $window,
     eventManager,
@@ -261,23 +261,23 @@ angular.module("proton.controllers.Settings")
 
         if (plan.Name === 'free') {
             if ($scope.subscription.Name === plan.Name) {
-                text = $translate.instant('ALREADY_SUBSCRIBED');
+                text = gettextCatalog.getString('Already subscribed', null, 'Info');
             } else {
-                text = $translate.instant('DOWNGRADE_TO_FREE');
+                text = gettextCatalog.getString('Downgrade to Free', null, 'Action');
             }
         } else if (plan.Name === 'plus') {
             if ($scope.subscription.Name === plan.Name) {
-                text = $translate.instant('UPDATE_PLUS');
+                text = gettextCatalog.getString('Update Plus', null, 'Action');
             } else if ($scope.subscription.Name === 'free') {
-                text = $translate.instant('UPGRADE_TO_PLUS');
+                text = gettextCatalog.getString('Upgrade to Plus', null, 'Action');
             } else if ($scope.subscription.Name === 'visionary') {
-                text = $translate.instant('DOWNGRADE_TO_PLUS');
+                text = gettextCatalog.getString('Downgrade to Plus', null, 'Action');
             }
         } else if (plan.Name === 'visionary') {
             if ($scope.subscription.Name === plan.Name) {
-                text = $translate.instant('UPDATE_VISIONARY');
+                text = gettextCatalog.getString('Update Visionary', null, 'Action');
             } else {
-                text = $translate.instant('UPGRADE_TO_VISIONARY');
+                text = gettextCatalog.getString('Upgrade to Visionary', null, 'Action');
             }
         }
 
@@ -311,8 +311,8 @@ angular.module("proton.controllers.Settings")
      * Open a modal to confirm to switch to the free plan
      */
     $scope.free = function() {
-        var title = $translate.instant('CONFIRM_DOWNGRADE');
-        var message = $translate.instant('CONFIRM_DOWNGRADE_MESSAGE');
+        var title = gettextCatalog.getString('Confirm downgrade', null, 'Title');
+        var message = gettextCatalog.getString('This will downgrade your account to a free account.<br /><br />Please disable all additional addresses prior to downgrading your account. You can manage that inside the addresses tab.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.', null, 'Info');
 
         confirmModal.activate({
             params: {
@@ -329,7 +329,7 @@ angular.module("proton.controllers.Settings")
                             } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                                 deferred.reject(new Error(result.data.Error));
                             } else {
-                                deferred.reject(new Error($translate.instant('ERROR_DURING_ORGANIZATION_REQUEST')));
+                                deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
                             }
                         });
 
@@ -346,7 +346,7 @@ angular.module("proton.controllers.Settings")
                             } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                                 deferred.reject(new Error(result.data.Error));
                             } else {
-                                deferred.reject(new Error($translate.instant('ERROR_DURING_PAYMENT_REQUEST')));
+                                deferred.reject(new Error(gettextCatalog.getString('Error processing payment.', null, 'Error')));
                             }
                         });
 
@@ -356,7 +356,7 @@ angular.module("proton.controllers.Settings")
                     var finish = function() {
                         $scope.refresh();
                         confirmModal.deactivate();
-                        notify({message: $translate.instant('YOU_HAVE_SUCCESSFULLY_UNSUBSCRIBED'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('You have successfully unsubscribed', null), classes: 'notification-success'});
                     };
 
                     networkActivityTracker.track(
@@ -466,7 +466,7 @@ angular.module("proton.controllers.Settings")
                             }
                         });
                     } else {
-                        notify({message: $translate.instant('AMOUNT_IS_DIFFERENT'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Amount mismatch', null, 'Error'), classes: 'notification-danger'});
                     }
                 } else if (methods.data && methods.data.Error) {
                     notify({message: methods.data.Error, classes: 'notification-danger'});

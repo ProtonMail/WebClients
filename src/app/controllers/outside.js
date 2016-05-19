@@ -13,7 +13,7 @@ angular.module("proton.controllers.Outside", [
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettextCatalog,
     Attachment,
     CONSTANTS,
     Eo,
@@ -141,17 +141,17 @@ angular.module("proton.controllers.Outside", [
                 .then(
                     function(result) {
                         $state.go('eo.message', {tag: $stateParams.tag});
-                        notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'});
                         deferred.resolve(result);
                     },
                     function(error) {
-                        error.message = 'Error during the reply process'; // TODO send to back-end
+                        error.message = gettextCatalog.getString('Error during the reply process', null, 'Error');
                         deferred.reject(error);
                     }
                 );
             },
             function(error) {
-                error.message = 'Error during the encryption'; // TODO send to back-end
+                error.message = gettextCatalog.getString('Error during the encryption', null, 'Error');
                 deferred.reject(error);
             }
         );
@@ -241,7 +241,12 @@ angular.module("proton.controllers.Outside", [
     };
 
     $scope.decryptAttachment = function(attachment, $event) {
+
         $event.preventDefault();
+
+        if ($state.includes('eo.reply')) {
+            return;
+        }
 
         var link = angular.element($event.target);
         var href = link.attr('href');

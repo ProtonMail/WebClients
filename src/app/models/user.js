@@ -3,7 +3,7 @@ angular.module('proton.models.user', [])
 .factory('User', function($http, url) {
     var User = {
         create: function(params) {
-            return $http.post(url.get() + '/users/:token', params);
+            return $http.post(url.get() + '/users', params);
         },
         code: function(params) {
             return $http.post(url.get() + '/users/code', params);
@@ -12,7 +12,7 @@ angular.module('proton.models.user', [])
             return $http.get(url.get() + '/users');
         },
         pubkeys: function(emails) {
-            return $http.get(url.get() + '/users/pubkeys/' + emails);
+            return $http.get(url.get() + '/users/pubkeys/' + window.encodeURIComponent(emails));
         },
         available: function(username) {
             return $http.get(url.get() + '/users/available/' + username);
@@ -23,8 +23,8 @@ angular.module('proton.models.user', [])
         unlock: function(params) {
             return $http.put(url.get() + '/users/unlock', params);
         },
-        delete: function() {
-            return $http.put(url.get() + '/users/delete');
+        delete: function(params) {
+            return $http.put(url.get() + '/users/delete', params);
         }
     };
 

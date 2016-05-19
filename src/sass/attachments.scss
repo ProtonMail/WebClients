@@ -16,7 +16,7 @@
 		position: relative;
 		z-index: 2;
 		display: inline-block;
-		// background-color: #fff;
+		/* background-color: #fff;*/
 		padding-right: 1rem;
 	}
 	em {
@@ -25,7 +25,7 @@
 		right: 0;
 		top: 20px;
 		height: 1px;
-		// background: $border;
+		/* background: $border;*/
 		width: 100%;
 		display: block;
 		z-index: 1;
@@ -60,12 +60,12 @@
 	}
 
 	section {
-		// overflow: auto;
-		// height: 82px;
+		/* overflow: auto;*/
+		/* height: 82px;*/
 		position: relative;
 		.pm_button {
-			// max-width: 8rem;
-			// width: 8rem;
+			/* max-width: 8rem;*/
+			/* width: 8rem;*/
 			box-sizing: border-box;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -81,6 +81,9 @@
 			background-color: $light;
 			max-width: 100%;
 			float: left;
+			&.remove {
+				padding-right: 2.5rem;
+			}
 			em {
 				height: 40px;
 				width: 2.5rem;
@@ -91,7 +94,7 @@
 				bottom: 0;
 				border-right: 1px solid $border;
 			}
-			strong {
+			.name {
 				text-transform: initial;
 				display: block;
 				line-height: 15px;
@@ -104,7 +107,7 @@
 			    display: inline-block;
 			    float: left;
 			}
-			span {
+			.size {
 				display: block;
 				line-height: 15px;
 				height: 15px;
@@ -112,7 +115,18 @@
 				float: left;
 				clear: both;
 			}
-			.fa {
+			.removeButton {
+				appearance: none;
+				-webkit-appearance: none;
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				position: relative;
+				right: -.5rem;
+				z-index: 999;
+				font-size: 1rem;
+			}
+			& > .fa {
 				color: $gray;
 				display: block;
 				position: absolute;

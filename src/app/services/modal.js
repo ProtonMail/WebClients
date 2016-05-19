@@ -42,6 +42,7 @@ angular.module("proton.modals", [])
                 $rootScope.modalOpen = true;
                 setTimeout(function() {
                     $('.modal').addClass('in');
+                    window.scrollTo(0, 0);
                 }, 100);
             });
         }
@@ -288,7 +289,7 @@ angular.module("proton.modals", [])
 })
 
 // Card modal
-.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, $translate, $q) {
+.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, gettextCatalog, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -454,33 +455,54 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('payModal', function(pmModal, Payment, notify) {
+.factory('payModal', function(pmModal, Payment, notify, eventManager) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/pay.tpl.html',
         controller: function(params) {
             // Variables
-            this.choice = 'card';
             this.amount = params.amount;
             this.amountDue = params.amountDue;
             this.credit = params.credit;
             this.currency = params.currency;
             this.methods = params.methods;
-            this.method = this.methods[0];
             this.invoice = params.invoice;
 
             // Functions
+            this.initialization = function() {
+                if (this.amountDue > 0) {
+                    if (this.methods.length > 0) {
+                        this.choice = 'card';
+                        this.method = this.methods[0];
+                    } else {
+                        this.choice = 'paypal';
+                        this.initPaypal();
+                    }
+                }
+                else {
+                    this.choice = 'none';
+                }
+            }.bind(this);
+
             this.label = function(method) {
                 return '•••• •••• •••• ' + method.Details.Last4;
             };
 
             this.submit = function() {
-                Payment.pay(params.invoice.ID, {
+                var parameters = {
                     Amount: params.amountDue,
-                    Currency: params.currency,
-                    PaymentMethodID: this.method.ID
-                }).then(function(result) {
+                    Currency: params.currency
+                };
+
+                if (this.choice === 'card' && this.methods.length > 0) {
+                    parameters.PaymentMethodID = this.method.ID;
+                }
+
+                Payment.pay(params.invoice.ID, parameters)
+                .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
+                        // manually fetch event log
+                        eventManager.call();
                         params.close(true);
                     } else if (result.data && result.data.Error) {
                         notify({message: result.data.Error, classes: 'notification-danger'});
@@ -547,6 +569,8 @@ angular.module("proton.modals", [])
                 this.childWindow.close();
                 window.removeEventListener('message', this.receivePaypalMessage, false);
             }.bind(this);
+
+            this.initialization();
         }
     });
 })
@@ -556,7 +580,7 @@ angular.module("proton.modals", [])
     notify,
     pmModal,
     Organization,
-    $translate,
+    gettextCatalog,
     $log,
     $window,
     $q,
@@ -574,12 +598,12 @@ angular.module("proton.modals", [])
             // IE11 doesn't support PayPal
             if ($.browser.msie === true && $.browser.edge !== true) {
                 this.choices = [
-                    {value: 'card', label: $translate.instant('CREDIT_CARD')},
+                    {value: 'card', label: gettextCatalog.getString('Credit card', null)},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
             } else {
                 this.choices = [
-                    {value: 'card', label: $translate.instant('CREDIT_CARD')},
+                    {value: 'card', label: gettextCatalog.getString('Credit card', null)},
                     {value: 'paypal', label: 'PayPal'},
                     {value: 'bitcoin', label: 'Bitcoin'}
                 ];
@@ -609,7 +633,7 @@ angular.module("proton.modals", [])
                 .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
                 .uniq()
                 .value();
-            this.organizationName = $translate.instant('MY_ORGANIZATION'); // TODO set this value for the business plan
+            this.organizationName = gettextCatalog.getString('My organization', null, 'Title'); // TODO set this value for the business plan
 
             // Functions
 
@@ -666,10 +690,10 @@ angular.module("proton.modals", [])
                         } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             deferred.reject(new Error(result.data.Error));
                         } else {
-                            deferred.reject(new Error($translate.instant('ERROR_DURING_ORGANIZATION_REQUEST')));
+                            deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
                         }
                     }.bind(this), function(error) {
-                        deferred.reject(new Error($translate.instant('ERROR_DURING_ORGANIZATION_REQUEST')));
+                        deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
                     });
                 } else {
                     deferred.resolve();
@@ -837,10 +861,10 @@ angular.module("proton.modals", [])
                 .then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
-                            notify({message: $translate.instant('COUPON_INVALID'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Invalid coupon', null, 'Error'), classes: 'notification-danger'});
                             this.coupon = '';
                         } else {
-                            notify({message: $translate.instant('COUPON_ACCEPTED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Coupon accepted', null, 'Info'), classes: 'notification-success'});
                         }
                         this.valid = result.data;
                     }
@@ -1006,7 +1030,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, $translate, eventManager) {
+.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, gettextCatalog, eventManager) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/address.tpl.html',
@@ -1032,18 +1056,19 @@ angular.module("proton.modals", [])
                     })
                 ).then(function(result) {
                     if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        notify({message: $translate.instant('ADDRESS_ADDED'), classes: 'notification-success'});
+                        /// notification
+                        notify({message: gettextCatalog.getString('Address added', null, 'Info'), classes: 'notification-success'});
                         this.domain.Addresses.push(result.data.Address);
                         eventManager.call();
                     } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
-                        notify({message: $translate.instant('DOMAIN_NOT_FOUND'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Domain not found', null, 'Error'), classes: 'notification-danger'});
                     } else if(angular.isDefined(result.data) && result.data.Error) {
                         notify({message: result.data.Error, classes: 'notification-danger'});
                     } else {
-                        notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Address creation failed', null, 'Error'), classes: 'notification-danger'});
                     }
                 }.bind(this), function(error) {
-                    notify({message: $translate.instant('ADDRESS_CREATION_FAILED'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Address creation failed', null, 'Error'), classes: 'notification-danger'});
                 });
             }.bind(this);
 
@@ -1453,7 +1478,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('donateModal', function(authentication, pmModal, Payment, notify, tools, networkActivityTracker, $translate, $q) {
+.factory('donateModal', function(authentication, pmModal, Payment, notify, tools, networkActivityTracker, gettextCatalog, $q) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/donate.tpl.html',
@@ -1545,7 +1570,7 @@ angular.module("proton.modals", [])
                 } else if (result.data && result.data.Error) {
                     deferred.reject(new Error(result.data.Error));
                 } else {
-                    deferred.resolve(new Error($translate.instant('ERROR_DURING_DONATION_REQUEST')));
+                    deferred.resolve(new Error(gettextCatalog.getString('Error while processing donation.', null, 'Error')));
                 }
 
                 return deferred.promise;
@@ -1711,6 +1736,54 @@ angular.module("proton.modals", [])
             this.cancel = function() {
                 params.cancel();
             };
+        }
+    });
+})
+
+.factory('filterModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/filter.tpl.html',
+        controller: function(params) {
+            this.filter = params.filter || {};
+
+            this.cancel = function() {
+                params.close();
+            };
+        }
+    });
+})
+
+.factory('filterAddressModal', function($timeout, pmModal, IncomingDefault, networkActivityTracker, notify) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/filterAddress.tpl.html',
+        controller: function(params) {
+            this.filter = {
+                Email: '',
+                Location: params.location
+            };
+
+            this.create = function() {
+                networkActivityTracker.track(
+                    IncomingDefault.add(this.filter)
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            params.add(result.data.IncomingDefault);
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        }
+                    })
+                );
+            }.bind(this);
+
+            this.cancel = function() {
+                params.close();
+            };
+
+            $timeout(function() {
+                angular.element('#emailAddress').focus();
+            });
         }
     });
 })

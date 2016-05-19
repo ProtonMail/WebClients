@@ -1,9 +1,4 @@
-<section
-id="pm_sidebarMobile"
-ng-if="showSidebar && mobileMode"
-class="pm_opensans sidebar"
-ng-controller="SidebarController"
-ng-class="{ 'show': showSidebar }">
+<section id="pm_sidebarMobile" ng-if="showSidebar && mobileMode" class="pm_opensans sidebar" ng-controller="SidebarController" ng-class="{ 'show': showSidebar }">
     <button class="pm_button round pull-right" ng-click="hideMobileSidebar()">
         <i class="fa fa-times"></i>
     </button>
@@ -16,83 +11,83 @@ ng-class="{ 'show': showSidebar }">
     </span>
     <ul class="menu">
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
-            <button title="{{ 'INBOX' | translate }}" ng-click="goTo('secured.inbox')">
+            <button title="Inbox" ng-click="goTo('secured.inbox')">
                 <i class="fa fa-inbox"></i>
-                <span>{{ 'INBOX' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Inbox</span>
                 <em ng-bind="unread('inbox')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.drafts.**' | includedByState) }">
-            <button title="{{ 'DRAFTS' | translate }}" ng-click="goTo('secured.drafts')">
+            <button title="Drafts" ng-click="goTo('secured.drafts')">
                 <i class="fa fa-file-text-o"></i>
-                <span>{{ 'DRAFTS' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Drafts</span>
                 <em ng-bind="unread('drafts')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.sent.**' | includedByState) }">
-            <button title="{{ 'SENT' | translate }}" ng-click="goTo('secured.sent')">
+            <button title="Sent" ng-click="goTo('secured.sent')">
                 <i class="fa fa-send"></i>
-                <span>{{ 'SENT' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Sent</span>
                 <em ng-bind="unread('sent')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.starred.**' | includedByState) }">
-            <button title="{{ 'STARRED' | translate }}" ng-click="goTo('secured.starred')">
+            <button title="Starred" ng-click="goTo('secured.starred')">
                 <i class="fa fa-star-o"></i>
-                <span>{{ 'STARRED' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Starred</span>
                 <em ng-bind="unread('starred')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.archive.**' | includedByState) }">
-            <button title="{{ 'ARCHIVE' | translate }}" ng-click="goTo('secured.archive')">
+            <button title="Archive" ng-click="goTo('secured.archive')">
                 <i class="fa fa-archive"></i>
-                <span>{{ 'ARCHIVE' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Archive</span>
                 <em ng-bind="unread('archive')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.spam.**' | includedByState) }">
-            <button title="{{ 'SPAM' | translate }}" ng-click="goTo('secured.spam')">
+            <button title="Spam" ng-click="goTo('secured.spam')">
                 <i class="fa fa-ban"></i>
-                <span>{{ 'SPAM' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Spam</span>
                 <em ng-bind="unread('spam')"></em>
             </button>
         </li>
         <li ng-class="{ active: ('secured.trash.**' | includedByState) }">
-            <button title="{{ 'TRASH' | translate }}" ng-click="goTo('secured.trash')">
+            <button title="Trash" ng-click="goTo('secured.trash')">
                 <i class="fa fa-trash-o"></i>
-                <span>{{ 'TRASH' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Trash</span>
                 <em ng-bind="unread('trash')"></em>
             </button>
         </li>
         <li class="divider"></li>
         <li ng-class="{ active: ('secured.contacts.**' | includedByState) }">
-            <button title="{{ 'CONTACTS' | translate }}" ui-sref='secured.contacts' ng-click="hideMobileSidebar()">
+            <button title="Contacts" ui-sref='secured.contacts' ng-click="hideMobileSidebar()">
                 <i class="fa fa-users"></i>
-                <span>{{ 'CONTACTS' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Contacts</span>
             </button>
         </li>
         <li ng-class="{ active: ('secured.dashboard.**' | includedByState) }">
-            <button title="{{ 'UPGRADE' | translate }}" ui-sref='secured.account' ng-click="hideMobileSidebar()">
+            <button title="Upgrade" ui-sref='secured.account' ng-click="hideMobileSidebar()">
                 <i class="fa fa-arrow-up"></i>
-                <span>{{ 'UPGRADE' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Upgrade</span>
             </button>
         </li>
         <li ng-class="{ active: ('secured.account.**' | includedByState) }">
-            <button title="{{ 'SETTINGS' | translate }}" ui-sref='secured.account' ng-click="hideMobileSidebar()">
+            <button title="Settings" ui-sref='secured.account' ng-click="hideMobileSidebar()">
                 <i class="fa fa-cogs"></i>
-                <span>{{ 'SETTINGS' | translate }}</span>
+                <span translate-context="Title" translate-comment="Folder name" translate>Settings</span>
             </button>
         </li>
         <li>
             <button ng-click="openReportModal(); hideMobileSidebar();">
                 <i class="fa fa-bug"></i>
-                <span>{{ 'REPORT_BUG' | translate }}</span>
+                <span translate-context="Action"  translate>Report bug</span>
             </button>
         </li>
         <li>
             <button ng-click="logout(); hideMobileSidebar();">
                 <i class="fa fa-power-off"></i>
-                <span>{{ 'LOG_OUT' | translate }}</span>
+                <span translate-context="Action"  translate>Log out</span>
             </button>
         </li>
         <li class="divider"></li>

@@ -7,6 +7,7 @@ angular.module('proton.routes', [
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
     var conversationParameters = function() {
       var parameters = [
+        'email',
         'address',
         'page',
         'filter',
@@ -204,7 +205,7 @@ angular.module('proton.routes', [
                     .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             if (result.data.Direct === 1) {
-                                deferred.resolve();
+                                deferred.resolve(result.data);
                             } else {
                                 window.location.href = 'https://protonmail.com/invite';
                                 deferred.reject();
@@ -456,9 +457,9 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/outside.reply.tpl.html'
             }
         },
-        onEnter: function($translate) {
+        onEnter: function(gettextCatalog) {
             window.onbeforeunload = function() {
-                return $translate.instant('MESSAGE_LEAVE_WARNING');
+                return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
         },
         onExit: function() {
@@ -540,6 +541,21 @@ angular.module('proton.routes', [
 
     .state('secured.contacts', {
         url: '/contacts',
+        resolve: {
+            delinquent: function($q, $state, gettextCatalog, user, notify, authentication) {
+                var deferred = $q.defer();
+
+                if (authentication.user.Delinquent < 3) {
+                    deferred.resolve();
+                } else {
+                    notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger'});
+                    $state.go('secured.payments');
+                    deferred.reject();
+                }
+
+                return deferred.promise;
+            }
+        },
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/contacts.tpl.html',
@@ -768,7 +784,7 @@ angular.module('proton.routes', [
             access: function(user, $q) {
                 var deferred = $q.defer();
 
-                if(user.Role === 2) {
+                if (user.Role === 2) {
                     deferred.resolve();
                 } else {
                     deferred.reject();
@@ -787,6 +803,32 @@ angular.module('proton.routes', [
             'content@secured': {
                 templateUrl: 'templates/views/domains.tpl.html',
                 controller: 'DomainsController'
+            }
+        }
+    })
+
+    .state('secured.filters', {
+        url: '/filters',
+        resolve: {
+            incomingDefaults: function($q, IncomingDefault, networkActivityTracker) {
+                var deferred = $q.defer();
+
+                IncomingDefault.get()
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        deferred.resolve(result.data.IncomingDefaults);
+                    } else {
+                        deferred.reject();
+                    }
+                });
+
+                return deferred.promise;
+            },
+        },
+        views: {
+            'content@secured': {
+                templateUrl: 'templates/views/filters.tpl.html',
+                controller: 'FiltersController'
             }
         }
     });
@@ -816,13 +858,13 @@ angular.module('proton.routes', [
             url: '/' + box + '?' + conversationParameters(),
             views: list,
             resolve: {
-                delinquent: function($q, $state, $translate, user, notify) {
+                delinquent: function($q, $state, gettextCatalog, user, notify, authentication) {
                     var deferred = $q.defer();
 
-                    if (user.Delinquent < 3) {
+                    if (authentication.user.Delinquent < 3) {
                         deferred.resolve();
                     } else {
-                        notify({message: $translate.instant('DELINQUENT_NOTIFICATION'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger'});
                         $state.go('secured.payments');
                         deferred.reject();
                     }

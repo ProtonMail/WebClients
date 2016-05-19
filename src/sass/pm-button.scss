@@ -18,7 +18,6 @@
     -webkit-tap-highlight-color: transparent;
     vertical-align: middle;
     z-index: 1;
-    will-change: opacity, transform;
     &:hover {
         background-color: #fafafa;
         transition: none;
@@ -138,8 +137,7 @@
 .pm_buttons {
     border: 1px solid $border;
     border-radius: 2px;
-    display: block;
-    float: left;
+    display: inline-block;
     height: 33px;
     line-height: 33px;
     text-align: center;
@@ -149,12 +147,15 @@
         display: inline-block;
         float: none;
     }
+    &.disabled {
+        border: 1px solid lighten($border, 10%);
+    }
     .disabled,
     [disabled] {
         pointer-events: none;
-        opacity: .5;
         box-shadow: none;
-        box-shadow: inset 0 0 5rem 0 rgba(0, 0, 0, 0.06);
+        color: $border;
+        box-shadow: inset 0 0 50rem 0 $read;
     }
     .dead {
         pointer-events: none;
@@ -191,7 +192,6 @@
         -webkit-tap-highlight-color: transparent;
         vertical-align: middle;
         z-index: 1;
-        will-change: opacity, transform;
         box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1) ;
         &.fa-angle-down {
             padding: 0 3px;
@@ -202,6 +202,7 @@
         &:hover {
             background-color: #fafafa;
             transition: none;
+            color: #000;
         }
         &:active,
         &.active {

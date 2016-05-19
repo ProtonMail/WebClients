@@ -8,7 +8,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettextCatalog,
     $filter,
     authentication,
     cache,
@@ -62,8 +62,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         timeoutRefresh = $timeout(function() {
             // Get the latest event
             eventManager.call().then(function() {
-                // Clear cache for the current mailbox
-                cache.empty(mailbox);
                 // Stop spin icon
                 $scope.spinMe = false;
             }, function(error) {
@@ -104,19 +102,18 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * @param {String} route
      */
     $scope.goTo = function(route) {
-        var sameFolder = $state.$current.name === route;
+        var sameRoute = $state.$current.name === route;
         var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
         var params = {page: null, filter: null, sort: null};
 
-        // Hide sidebar for mobile
-        $scope.hideMobileSidebar();
-
-        // Call last event if first page and same folder
-        if(sameFolder === true && firstPage === true) {
+        if (sameRoute === true && firstPage === true) {
+            // Hide sidebar for mobile
+            $scope.hideMobileSidebar();
+            // Call last event
             $scope.lastEvent();
+        } else {
+            $state.go(route, params); // remove the older parameters
         }
-
-        $state.go(route, params); // remove the older parameters
     };
 
     /**

@@ -64,7 +64,6 @@
         &.open {
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
             & > div.summary {
-                margin-bottom: -.5rem;
                 .meta {
                     .contact {
                         strong {
@@ -78,9 +77,14 @@
             & > div.summary {
                 height: 60px;
                 .meta {
+                    height: 40px;
+                    line-height: 40px;
                     .history {
                         float: left;
-                        margin: 5px .5rem 0 0;
+                        margin: 0 .5rem 0 0;
+                        display: inline-block;
+                        height: 40px;
+                        line-height: 40px;
                     }
                     .contact {
                         float: left;
@@ -343,7 +347,7 @@
             cursor: pointer;
         }
         .frame {
-            padding: 1rem;
+            padding: 15px 30px;
             border-top: 1px solid $border;
             overflow: auto;
             zoom: 1;
@@ -359,6 +363,9 @@
                     position: relative;
                 }
             }
+        }
+        &.closed .summary {
+            overflow: hidden;
         }
     }
 }

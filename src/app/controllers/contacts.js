@@ -3,24 +3,25 @@ angular.module("proton.controllers.Contacts", [
 ])
 
 .controller("ContactsController", function(
+    $filter,
+    $log,
     $rootScope,
     $scope,
     $state,
-    $log,
-    $translate,
     $stateParams,
-    $filter,
-    tools,
-    authentication,
-    Contact,
-    confirmModal,
-    contactModal,
     alertModal,
+    authentication,
+    confirmModal,
+    CONSTANTS,
+    Contact,
+    contactModal,
     dropzoneModal,
     eventManager,
+    gettextCatalog,
     Message,
     networkActivityTracker,
-    notify
+    notify,
+    tools
 ) {
     // Variables
     var lastChecked = null;
@@ -29,7 +30,7 @@ angular.module("proton.controllers.Contacts", [
     $scope.currentPage = 1;
     $scope.params = { searchContactInput: ''};
     $scope.editing = false;
-    $scope.numPerPage = 40;
+    $scope.numPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
     $scope.sortBy = 'Name';
 
     // Listeners
@@ -129,8 +130,8 @@ angular.module("proton.controllers.Contacts", [
     }
 
     $scope.deleteAllContacts = function() {
-        var title = $translate.instant('DELETE_ALL_CONTACTS');
-        var message = 'Are you sure you want to delete all your contacts?'; // TODO translate
+        var title = gettextCatalog.getString('Delete all', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to delete all your contacts?', null, 'Info');
 
         confirmModal.activate({
             params: {
@@ -139,7 +140,7 @@ angular.module("proton.controllers.Contacts", [
                 confirm: function() {
                     networkActivityTracker.track(
                         Contact.clear().then(function(response) {
-                            notify({message: $translate.instant('CONTACTS_DELETED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Contacts deleted', null, 'Info'), classes: 'notification-success'});
                             eventManager.call();
                         }, function(response) {
                             $log.error(response);
@@ -154,15 +155,15 @@ angular.module("proton.controllers.Contacts", [
         });
     };
 
-    $scope.deleteContacts = function(contact) {
+    $scope.deleteContact = function(contact) {
         var contactsSelected = contact ? [contact] : $scope.contactsSelected();
         var message, title;
 
         if (contactsSelected.length === 1) {
-            title = $translate.instant('DELETE_CONTACT');
+            title = gettextCatalog.getString('Delete', null, 'Title');
             message = 'Are you sure you want to delete this contact?';
         } else {
-            title = $translate.instant('DELETE_CONTACTS');
+            title = gettextCatalog.getString('Delete', null, 'Title');
             message = 'Are you sure you want to delete the selected contacts?';
         }
 
@@ -183,7 +184,7 @@ angular.module("proton.controllers.Contacts", [
                         Contact.delete({
                             IDs : deletedIDs
                         }).then(function(response) {
-                            notify({message: $translate.instant('CONTACTS_DELETED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Contacts deleted', null, 'Info'), classes: 'notification-success'});
                             confirmModal.deactivate();
                             eventManager.call();
                         }, function(error) {
@@ -200,11 +201,11 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.addContact = function() {
-        openContactModal($translate.instant('ADD_NEW_CONTACT'), '', '', function(name, email) {
+        openContactModal(gettextCatalog.getString('Add new contact', null, 'Action'), '', '', function(name, email) {
             var match = _.findWhere(authentication.user.Contacts, {Email: email});
 
             if (match) {
-                notify("Contact exists for this email address"); // TODO translate
+                notify({message: gettextCatalog.getString('A contact already exists for this email address', null), classes: 'notification-danger'});
                 contactModal.deactivate();
             } else {
                 var newContact = {
@@ -218,7 +219,7 @@ angular.module("proton.controllers.Contacts", [
                         Contacts : contactList
                     }).then(function(response) {
                         if(response.data.Code === 1001) {
-                            notify({message: $translate.instant('CONTACT_ADDED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Contact added', null), classes: 'notification-success'});
                             contactModal.deactivate();
                             eventManager.call();
                         } else {
@@ -235,7 +236,7 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.editContact = function(contact) {
-        openContactModal($translate.instant('EDIT_CONTACT'), contact.Name, contact.Email, function(name, email) {
+        openContactModal(gettextCatalog.getString('Edit', null, 'Action'), contact.Name, contact.Email, function(name, email) {
             networkActivityTracker.track(
                 Contact.edit({
                     id: contact.ID,
@@ -244,7 +245,7 @@ angular.module("proton.controllers.Contacts", [
                 }).then(function(response) {
                     if(response.data.Code === 1000) {
                         contactModal.deactivate();
-                        notify({message: $translate.instant('CONTACT_EDITED'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Contact edited', null), classes: 'notification-success'});
                         eventManager.call();
                     } else {
                         notify({message: response.data.Error, classes: 'notification-danger'});
@@ -329,7 +330,7 @@ angular.module("proton.controllers.Contacts", [
                     var importContacts;
 
                     if( angular.isUndefined(files) || files.length === 0 ) {
-                        notify({message: $translate.instant('NO_FILE'), classes: 'notification-danger'}); //TODO translate
+                        notify({message: gettextCatalog.getString('No files were selected', null, 'Error'), classes: 'notification-danger'}); //TODO translate
                         return;
                     }
 
@@ -387,7 +388,7 @@ angular.module("proton.controllers.Contacts", [
                                 }
                             });
                         } else {
-                            notify({message: $translate.instant('INVALID_FILE_TYPE'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Invalid file type', null, 'Error'), classes: 'notification-danger'});
                         }
                     };
 
@@ -410,9 +411,9 @@ angular.module("proton.controllers.Contacts", [
                                 });
 
                                 if(added === 1) {
-                                    notify({message: added + ' ' + $translate.instant('CONTACT_IMPORTED'), classes: 'notification-success'});
+                                    notify({message: added + ' ' + gettextCatalog.getString('Contact imported', null, 'Info'), classes: 'notification-success'});
                                 } else if(added > 1) {
-                                    notify({message: added + ' ' + $translate.instant('CONTACTS_IMPORTED'), classes: 'notification-success'});
+                                    notify({message: added + ' ' + gettextCatalog.getString('Contacts imported', null, 'Info'), classes: 'notification-success'});
                                 }
 
                                 _.each(Object.keys(errors), function(key) {
@@ -441,9 +442,9 @@ angular.module("proton.controllers.Contacts", [
     $scope.openSafariWarning = function() {
         alertModal.activate({
             params: {
-                title: $translate.instant('DOWNLOAD_CONTACTS'),
+                title: gettextCatalog.getString('Download', null, 'Title'),
                 alert: 'alert-warning',
-                message: 'Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', // TODO translate
+                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error', 'Info'),
                 ok: function() {
                     alertModal.deactivate();
                 }

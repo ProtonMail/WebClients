@@ -52,9 +52,11 @@ body {
 
             input[type="checkbox"] {
                 margin: 0 10px;
+                /*
                 float: left;
                 position: relative;
-                top: 1px;
+                top: 1px; */
+                height:auto; /*safari bounce bug*/
             }
             .fa-star-o {
                 color: $gray-light;
@@ -103,6 +105,9 @@ body {
                     height: 30px;
                     label {
                         margin-left: .25rem;
+                        &.more {
+                            margin-left: 0;
+                        }
                     }
                 }
             }

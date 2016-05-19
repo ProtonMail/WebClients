@@ -40,11 +40,21 @@
     }
 }
 
+// Win 7 Firefox
+.ua-windows_nt-6-1.ua_firefox {
+    .pm_labels label .close::before {
+        line-height: 12px;
+    }
+}
+
 .ua-mac_os_x.ua_firefox,
 .ua-windows_nt-6-1.ua_firefox {
     .pm_labels label,
     .pm_labels label.closed:hover {
         line-height: 8px;
+    }
+    .summary .pm_tag {
+        line-height: 18px;
     }
 }
 
@@ -69,14 +79,14 @@
         line-height: 32px;
     }
     .pm_tag {
-        line-height: 14px;
+        position: relative;
+        top: -2px;
     }
-    .pm_labels.inline label {
-        height: 18px;
-        line-height: 8px;
-    }
-    #conversation-view .message > div.summary {
+    .pm_labels.inline label { }
+    #conversation-view .message > div.summary,
+    #conversation-view .message > div.summary .time .fa-paperclip {
         line-height: 34px;
+        height: 34px;
     }
     .pm_table th .pm_button, .pm_table td .pm_button {
         line-height: 36px;
@@ -142,6 +152,7 @@ input:-moz-ui-invalid {
 
 
 .ua-safari {
+
     .conversation .pm_labels label {
         &:first-child,
         &:hover {

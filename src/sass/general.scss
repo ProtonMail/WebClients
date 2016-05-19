@@ -6,9 +6,6 @@ html.protonmail {
 		.mobileOnly {
 			display: none;
 		}
-		.desktopOnly {
-			display: block;
-		}
 		&.secure {
 			background: $white;
 		}
@@ -20,11 +17,11 @@ html.protonmail {
 		&.mobileMode {
 			height: initial;
 			overflow: initial !important;
+			.desktopOnly {
+				display: none !important;
+			}
 			.mobileOnly {
 				display: block;
-			}
-			.desktopOnly {
-				display: none;
 			}
 			&.locked {
 				overflow: initial !important;

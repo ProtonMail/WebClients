@@ -4,7 +4,7 @@ angular.module("proton.controllers.Settings")
     $log,
     $rootScope,
     $scope,
-    $translate,
+    gettextCatalog,
     authentication,
     confirmModal,
     Logs,
@@ -15,7 +15,9 @@ angular.module("proton.controllers.Settings")
     $scope.logs = [];
     $scope.logItemsPerPage = 20;
     $scope.doLogging = authentication.user.LogAuth;
-    $scope.disabledText = $translate.instant('DISABLE');
+
+    /// logging page
+    $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
     $scope.haveLogs = false;
 
     $scope.loadLogs = function (page) {
@@ -32,7 +34,7 @@ angular.module("proton.controllers.Settings")
                     $scope.haveLogs = true;
                 },
                 function(error) {
-                    notify({message: $translate.instant('UNABLE_TO_LOAD_LOGS'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Error during the initialization of logs', null, 'Error'), classes: 'notification-danger'});
                     $log.error(error);
                 }
             )
@@ -40,8 +42,8 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.clearLogs = function() {
-        var title = $translate.instant('CLEAR');
-        var message = $translate.instant('CLEAR_LOGS_CONFIRMATION');
+        var title = gettextCatalog.getString('Clear', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info');
 
         confirmModal.activate({
             params: {
@@ -49,17 +51,16 @@ angular.module("proton.controllers.Settings")
                 message: message,
                 confirm: function() {
                     networkActivityTracker.track(
-                        Logs.clearLogs().then(
-                            function(response) {
+                        Logs.clearLogs()
+                        .then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
                                 $scope.logs = [];
                                 $scope.logCount = 0;
-                                notify({message: $translate.instant('LOGS_CLEARED'), classes: 'notification-success'});
-                            },
-                            function(error) {
-                                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
-                                $log.error(error);
+                                notify({message: gettextCatalog.getString('Logs cleared', null), classes: 'notification-success'});
+                            } else {
+
                             }
-                        )
+                        })
                     );
                     confirmModal.deactivate();
                 },
@@ -93,14 +94,20 @@ angular.module("proton.controllers.Settings")
         if (value === 0) {
             confirmModal.activate({
                 params: {
-                    message: $translate.instant('CLEAR_LOGS_CONFIRMATION'), // TODO translate
+                    message: gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info'),
                     confirm: function() {
-                        Setting.setLogging({LogAuth: 0});
-                        $scope.doLogging = 0;
-                        authentication.user.LogAuth = 0;
-                        notify({message: $translate.instant('LOG_SETTINGS_UPDATED'), classes: 'notification-success'});
-                        confirmModal.deactivate();
-                        $scope.disabledText = $translate.instant('DISABLED');
+                        Setting.setLogging({LogAuth: 0})
+                        .then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+                                $scope.doLogging = 0;
+                                authentication.user.LogAuth = 0;
+                                notify({message: gettextCatalog.getString('Logging preference updated', null), classes: 'notification-success'});
+                                confirmModal.deactivate();
+                                $scope.disabledText = gettextCatalog.getString('Disabled', null);
+                            } else if (result.data && result.data.Error) {
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            }
+                        });
                     },
                     cancel: function() {
                         confirmModal.deactivate();
@@ -108,11 +115,18 @@ angular.module("proton.controllers.Settings")
                 }
             });
         } else {
-            $scope.doLogging = value;
-            authentication.user.LogAuth = value;
-            Setting.setLogging({LogAuth: value});
-            notify({message: $translate.instant('LOG_SETTINGS_UPDATED'), classes: 'notification-success'});
-            $scope.disabledText = $translate.instant('DISABLE');
+            Setting.setLogging({LogAuth: value})
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    $scope.doLogging = value;
+                    authentication.user.LogAuth = value;
+                    notify({message: gettextCatalog.getString('Logging preference updated', null), classes: 'notification-success'});
+                    $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                }
+            });
+
         }
     };
 

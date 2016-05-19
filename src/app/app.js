@@ -1,4 +1,5 @@
 angular.module('proton', [
+    'gettext',
     'as.sortable',
     'cgNotify',
     'ngCookies',
@@ -7,9 +8,7 @@ angular.module('proton', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'pascalprecht.translate',
     'pikaday',
-    // 'SmoothScrollbar',
     'ui.router',
 
     // Constant
@@ -17,13 +16,11 @@ angular.module('proton', [
 
     // templates
     'templates-app',
-    'templates-common',
 
     // App
     'proton.routes',
 
     // Models
-    'proton.models.keys',
     'proton.models.addresses',
     'proton.models.attachment',
     'proton.models.bug',
@@ -32,6 +29,9 @@ angular.module('proton', [
     'proton.models.domains',
     'proton.models.eo',
     'proton.models.events',
+    'proton.models.filter',
+    'proton.models.incomingDefaults',
+    'proton.models.keys',
     'proton.models.label',
     'proton.models.logs',
     'proton.models.memberKeys',
@@ -76,14 +76,15 @@ angular.module('proton', [
     'proton.move',
     'proton.phone',
     'proton.responsiveComposer',
-    'proton.sample',
     'proton.sidebarHeight',
     'proton.squire',
     'proton.time',
     'proton.toggle',
     'proton.tooltip',
     'proton.transformation',
+    'proton.translate',
     'proton.wizard',
+    'proton.rightClick',
 
     // Filters
     'proton.filters',
@@ -103,10 +104,7 @@ angular.module('proton', [
     'proton.controllers.Sidebar',
     'proton.controllers.Signup',
     'proton.controllers.Support',
-    'proton.controllers.Upgrade',
-
-    // Translations
-    'proton.translations'
+    'proton.controllers.Upgrade'
 ])
 
 /**
@@ -163,18 +161,17 @@ angular.module('proton', [
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
 
-.run(function(CONSTANTS, $translate) {
+.run(function (CONFIG, gettextCatalog) {
+    var locale = window.navigator.userLanguage || window.navigator.language;
+
+    gettextCatalog.setCurrentLanguage('en_US');
+    gettextCatalog.debug = CONFIG.debug || false;
+    moment.locale(locale);
+})
+
+.run(function(CONSTANTS) {
     // This function clears junk from session storage. Should not be needed forever
     try {
-        var defaultLanguage = 'en';
-        var preferredLanguage = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage || defaultLanguage;
-        var locales = {
-            fr: 'fr_FR',
-            en: 'en_US',
-            de: 'de_DE',
-            es: 'es_ES',
-            it: 'it_IT'
-        };
         var whitelist = [
             CONSTANTS.EVENT_ID,
             CONSTANTS.MAILBOX_PASSWORD_KEY,
@@ -197,8 +194,6 @@ angular.module('proton', [
         }
 
         window.sessionStorage.clear();
-        moment.locale(preferredLanguage);
-        $translate.use(locales[preferredLanguage] || defaultLanguage);
 
         for (var key in data) {
             window.sessionStorage.setItem(key, data[key]);

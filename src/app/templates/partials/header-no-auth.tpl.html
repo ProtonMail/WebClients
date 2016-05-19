@@ -1,13 +1,12 @@
 <header id="pm_header" class="clearfix pm_opensans no-auth" ng-controller="HeaderController">
     <div class="pull-right">
         <a class="reportBug" href="#" ng-click="openReportModal()">
-        	<i class="fa fa-bug"></i> <b>{{ 'REPORT_BUG' | translate }}</b>
+        	<i class="fa fa-bug"></i> <b translate translate-context="Action">Report bug</b>
         </a>
-        <a class="signUp pm_button primary" ui-sref="step1" ng-if="!isLoggedIn" translate="SIGNUP_FOR_FREE"></a>
-        <a class="logOut pm_button primary" ng-click="logout()" ng-if="isLoggedIn">{{ 'LOG_OUT' | translate }}</a>
+        <a class="signUp pm_button primary" ui-sref="step1" ng-if="!isLoggedIn" translate translate-context="Action">Sign up for free</a>
+        <a class="logOut pm_button primary" ng-click="logout()" ng-if="isLoggedIn" translate translate-context="Action">Log out</a>
     </div>
     <a class="back" href="https://protonmail.com" target="_self">
-    	<i class="fa fa-chevron-left"></i>
-    	<b> &nbsp; BACK TO PROTONMAIL.COM</b>
+    	<i class="fa fa-chevron-left"></i> <b translate translate-context="Action">Back to protonmail.com</b>
     </a>
 </header>

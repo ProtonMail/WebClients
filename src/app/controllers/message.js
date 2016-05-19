@@ -13,7 +13,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $stateParams,
     $templateCache,
     $timeout,
-    $translate,
+    gettextCatalog,
     $window,
     action,
     alertModal,
@@ -34,8 +34,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.tools = tools;
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
-    $scope.CONSTANTS = CONSTANTS;
     $scope.attachmentsStorage = [];
+    $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
 
     $scope.$on('refreshMessage', function(event) {
         var message = cache.getMessageCached($scope.message.ID);
@@ -204,11 +204,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 copy.Body = content;
                 $rootScope.$broadcast('loadMessage', copy);
             }, function(error) {
-                notify({message: 'Error during the decryption of the message', classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during the decryption of the message', null, 'Error'), classes: 'notification-danger'});
                 $log.error(error); // TODO send to back-end
             });
         }, function(error) {
-            notify({message: 'Error during the getting message', classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Error during the getting message', null, 'Error'), classes: 'notification-danger'});
             $log.error(error); // TODO send to back-end
         });
     };
@@ -277,9 +277,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.openSafariWarning = function() {
         alertModal.activate({
             params: {
-                title: $translate.instant('DOWNLOAD_CONTACTS'),
+                title: gettextCatalog.getString('Download', null, 'Title'),
                 alert: 'alert-warning',
-                message: 'Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', // TODO translate
+                message: gettextCatalog.getString('Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts.', null, 'Error'),
                 ok: function() {
                     alertModal.deactivate();
                 }
@@ -473,7 +473,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     el: link,
                 });
                 attachment.decrypting = false;
-                $scope.$apply();
             } else {
                 // decode key packets
                 var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
@@ -682,10 +681,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var to = 'To: ' + tools.contactsToString($scope.message.ToList) + br;
         var cc = ($scope.message.CCList.length > 0)?('CC: ' + tools.contactsToString($scope.message.CCList) + br):'';
         var blockquoteEnd = '</blockquote>';
-        var re_prefix = $translate.instant('RE:');
-        var fw_prefix = $translate.instant('FW:');
+        var re_prefix = gettextCatalog.getString('Re:', null);
+        var fw_prefix = gettextCatalog.getString('Fw:', null);
         var re_length = re_prefix.length;
         var fw_length = fw_prefix.length;
+        var body = $scope.message.decryptedBody || $scope.message.Body;
 
         if (action === 'reply') {
             base.Action = 0;
@@ -755,7 +755,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
 
         base.ParentID = $scope.message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + $scope.message.decryptedBody + blockquoteEnd;
+        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + body + blockquoteEnd;
 
         return base;
     };

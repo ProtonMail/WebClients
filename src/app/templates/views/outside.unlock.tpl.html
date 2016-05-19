@@ -1,54 +1,32 @@
-<form method="post"
-id="pm_login"
-class="pm_panel alt pm_form"
-novalidate
-ng-keypress="keypress($event)"
-role="form"
-autocomplete="on"
-ng-submit="unlock()"
-ng-if="tokenError !== true">
-
+<form method="post" id="pm_login" class="pm_panel alt pm_form" novalidate ng-keypress="keypress($event)" role="form" autocomplete="on" ng-submit="unlock()" ng-if="tokenError !== true">
 
     <img src="assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
 
     <h4 class="text-center">
         <span class="fa fa-envelope title-icon"></span>
-        {{ 'DECRYPT_MESSAGE' | translate }}
+        <span translate-context="Title" translate>Decrypt message</span>
     </h4>
 
     <p></p>
 
     <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-    <input
-    class="margin"
-    autofocus
-    autocomplete="off"
-    autocapitalize="off"
-    autocorrect="off"
-    type="password"
-    ng-enter="unlock()"
-    name="MessagePassword"
-    ng-model="params.MessagePassword"
-    placeholder="{{ 'MESSAGE_PASSWORD' | translate }}" />
+    <input class="margin" autofocus autocomplete="off" autocapitalize="off" autocorrect="off" type="password" ng-enter="unlock()" name="MessagePassword" ng-model="params.MessagePassword" placeholder-translate="Message password" />
 
     <p></p>
 
     <div class="clearfix">
-        <a href="https://protonmail.com/support" target="_blank" class="login-support pm_button link pull-left">{{ 'NEED_HELP?' | translate }}</a>
+        <a href="https://protonmail.com/support" target="_blank" class="login-support pm_button link pull-left" translate-context="Action" translate-comment="link to support portal" translate>Need help?</a>
         <button type="submit" class="pm_button primary pull-right" ng-class="{disabled: networkActivity.loading() || trying}">
             <i class="fa fa-circle-o-notch fa-spin" ng-show="networkActivity.loading() || trying"></i>
-            <span ng-show="!trying">{{ 'DECRYPT' | translate }}</span>
-            <span ng-show="trying">{{ 'DECRYPTING' | translate }}</span>
+            <span ng-show="!trying"  translate>Decrypt</span>
+            <span ng-show="trying"  translate>Decrypting</span>
         </button>
     </div>
 
 </form>
 
-<form method="post"
-id="pm_login"
-class="pm_panel alt pm_form error"
-ng-if="tokenError === true">
-    <h1 class="text-center">{{ 'ERROR' | translate }}</h1>
-    <p>{{ 'EXPIRATION_ERROR' | translate }}</p>
+<form method="post" id="pm_login" class="pm_panel alt pm_form error" ng-if="tokenError === true">
+    <h1 class="text-center" translate-context="Title" translate>Error</h1>
+    <p translate-context="Error" translate>Sorry, this message does not exist or has already expired</p>
 </form>

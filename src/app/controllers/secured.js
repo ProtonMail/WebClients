@@ -1,5 +1,5 @@
 angular.module("proton.controllers.Secured", [])
-
+.constant('regexEmail', /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/gi)
 .controller("SecuredController", function(
     $cookies,
     $filter,
@@ -8,7 +8,7 @@ angular.module("proton.controllers.Secured", [])
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettextCatalog,
     $window,
     authentication,
     cache,
@@ -23,23 +23,26 @@ angular.module("proton.controllers.Secured", [])
     var dirtyAddresses = [];
 
     $scope.user = authentication.user;
+    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
+    $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
     $scope.organization = organization;
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
     $scope.settingsRoutes = [
-        {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
-        {value: 'secured.account', label: $translate.instant('ACCOUNT')},
-        {value: 'secured.labels', label: $translate.instant('LABELS')},
-        {value: 'secured.security', label: $translate.instant('SECURITY')},
-        {value: 'secured.dashboard', label: $translate.instant('DASHBOARD')},
-        {value: 'secured.appearance', label: $translate.instant('APPEARANCE')},
-        {value: 'secured.domains', label: $translate.instant('DOMAINS')},
-        {value: 'secured.members', label: $translate.instant('USERS')},
-        {value: 'secured.payments', label: $translate.instant('PAYMENTS')}
+        {value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard', null, 'Title')},
+        {value: 'secured.account', label: gettextCatalog.getString('Account', null, 'Title')},
+        {value: 'secured.labels', label: gettextCatalog.getString('Labels', null, 'Title')},
+        {value: 'secured.security', label: gettextCatalog.getString('Security', null, 'Title')},
+        {value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard', null, 'Title')},
+        {value: 'secured.appearance', label: gettextCatalog.getString('Appearance', null, 'Title')},
+        {value: 'secured.domains', label: gettextCatalog.getString('Domains', null, 'Title')},
+        {value: 'secured.members', label: gettextCatalog.getString('Users', null, 'Title')},
+        {value: 'secured.payments', label: gettextCatalog.getString('Payments', null, 'Title')},
+        {value: 'secured.filters', label: gettextCatalog.getString('Filters', null, 'Title')}
     ];
 
     // Set language used for the application
-    $translate.use(authentication.user.Language);
+    gettextCatalog.setCurrentLanguage(authentication.user.Language);
 
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
@@ -60,7 +63,9 @@ angular.module("proton.controllers.Secured", [])
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 
     $scope.$on('updateUser', function(event) {
-        $translate.use(authentication.user.Language);
+        $scope.user = authentication.user;
+        $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
+        $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
     });
 
     $scope.$on('organizationChange', function(event, organization) {
@@ -93,20 +98,18 @@ angular.module("proton.controllers.Secured", [])
         return angular.isDefined(id) && id.length > 0;
     };
 
-    /**
-     * Returns a string for the storage bar
-     * @return {String} "12.5"
-     */
-    $scope.storagePercentage = function() {
-        if (authentication.user && authentication.user.UsedSpace && authentication.user.MaxSpace) {
-            return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
-        } else {
-            return '';
-        }
+    $scope.storagePourcentage = function() {
+        return Math.round(100 * authentication.user.UsedSpace / authentication.user.MaxSpace);
+    };
+
+    $scope.storageStyle = function() {
+        return {
+            width: $scope.storagePourcentage() + '%'
+        };
     };
 
     $scope.storageString = function() {
-        return $filter('humanSize')(authentication.user.UsedSpace) + ' / ' + $filter('humanSize')(authentication.user.UsedSpace);
+        return $filter('humanSize')(authentication.user.UsedSpace) + ' / ' + $filter('humanSize')(authentication.user.MaxSpace);
     };
 
     /**
@@ -189,25 +192,25 @@ angular.module("proton.controllers.Secured", [])
 
         switch (state) {
             case 'inbox':
-                name = unread + $translate.instant('INBOX');
+                name = unread + gettextCatalog.getString('Inbox', null, 'Title');
                 break;
             case 'drafts':
-                name = unread + $translate.instant('DRAFTS');
+                name = unread + gettextCatalog.getString('Drafts', null, 'Title');
                 break;
             case 'sent':
-                name = unread + $translate.instant('SENT');
+                name = unread + gettextCatalog.getString('Sent', null, 'Title');
                 break;
             case 'starred':
-                name = unread + $translate.instant('STARRED');
+                name = unread + gettextCatalog.getString('Starred', null, 'Title');
                 break;
             case 'archive':
-                name = unread + $translate.instant('ARCHIVE');
+                name = unread + gettextCatalog.getString('Archive', null, 'Title');
                 break;
             case 'spam':
-                name = unread + $translate.instant('SPAM');
+                name = unread + gettextCatalog.getString('Spam', null, 'Title');
                 break;
             case 'trash':
-                name = unread + $translate.instant('TRASH');
+                name = unread + gettextCatalog.getString('Trash', null, 'Title');
                 break;
             case 'label':
                 var label = _.findWhere(authentication.user.Labels, {ID: $state.params.label});
@@ -215,38 +218,38 @@ angular.module("proton.controllers.Secured", [])
                 if (angular.isDefined(label)) {
                     name = label.Name;
                 } else {
-                    name = $translate.instant('LABEL');
+                    name = gettextCatalog.getString('Label', null, 'Title');
                 }
                 break;
             case 'contacts':
-                name = $translate.instant('CONTACTS');
+                name = gettextCatalog.getString('Contacts', null, 'Title');
                 break;
             case 'dashboard':
-                name = $translate.instant('DASHBOARD');
+                name = gettextCatalog.getString('Dashboard', null, 'Title');
                 break;
             case 'account':
-                name = $translate.instant('ACCOUNT');
+                name = gettextCatalog.getString('Account', null, 'Title');
                 break;
             case 'labels':
-                name = $translate.instant('LABELS');
+                name = gettextCatalog.getString('Labels', null, 'Title');
                 break;
             case 'security':
-                name = $translate.instant('SECURITY');
+                name = gettextCatalog.getString('Security', null, 'Title');
                 break;
             case 'appearance':
-                name = $translate.instant('APPEARANCE');
+                name = gettextCatalog.getString('Appearance', null, 'Title');
                 break;
             case 'domains':
-                name = $translate.instant('DOMAINS');
+                name = gettextCatalog.getString('Domains', null, 'Title');
                 break;
             case 'users':
-                name = $translate.instant('USERS');
+                name = gettextCatalog.getString('Users', null, 'Title');
                 break;
             case 'invoices':
-                name = $translate.instant('INVOICES');
+                name = gettextCatalog.getString('Invoices', null, 'Title');
                 break;
             case 'login':
-                name = $translate.instant('LOGIN');
+                name = gettextCatalog.getString('Login', null, 'Title');
                 break;
             default:
                 name = '';

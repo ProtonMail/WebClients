@@ -5,12 +5,13 @@ angular.module('proton.controllers.Settings')
     $rootScope,
     $scope,
     $timeout,
-    $translate,
+    gettextCatalog,
     $q,
     authentication,
     Bug,
     confirmModal,
     deleteAccountModal,
+    eventManager,
     Key,
     networkActivityTracker,
     notify,
@@ -35,7 +36,7 @@ angular.module('proton.controllers.Settings')
 
     $scope.saveNotification = function(form) {
         if (angular.isUndefined($scope.noticeePassword)) {
-            notify({classes: "notification-danger", message: "Enter your current login password."});
+            notify({classes: 'notification-danger', message: gettextCatalog.getString('Enter your current login password', null, 'Error')});
             angular.element('#noticeePassword').focus();
         } else {
             networkActivityTracker.track(
@@ -44,7 +45,7 @@ angular.module('proton.controllers.Settings')
                     if (result.data && result.data.Code === 1000) {
                         $scope.noticeePassword = '';
                         authentication.user.NotificationEmail = $scope.notificationEmail;
-                        notify({message: $translate.instant('NOTIFICATION_EMAIL_SAVED'), classes: 'notification-success'});
+                        notify({message: gettextCatalog.getString('Notification email saved', null), classes: 'notification-success'});
                     } else if (result.data && result.data.Error) {
                         notify({message: result.data.Error, classes: 'notification-danger'});
                     }
@@ -61,7 +62,7 @@ angular.module('proton.controllers.Settings')
           .then(function(result) {
               if (result.data && result.data.Code === 1000) {
                   authentication.user.Notify = $scope.dailyNotifications;
-                  notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
+                  notify({message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success'});
               } else if (result.data && result.data.Error) {
                   notify({message: result.data.Error, classes: 'notification-danger'});
               }
@@ -75,7 +76,7 @@ angular.module('proton.controllers.Settings')
         var confLoginPwd = $scope.confirmLoginPassword;
 
         if (newLoginPwd !== confLoginPwd) {
-            notify({message: $translate.instant('PASSWORDS_DONT_MATCH'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Passwords don\'t match', null, 'Error'), classes: 'notification-danger'});
             return false;
         }
 
@@ -86,7 +87,7 @@ angular.module('proton.controllers.Settings')
                 NewPassword: newLoginPwd
             }).then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-                    notify({message: $translate.instant('LOGIN_PASSWORD_UPDATED'), classes: 'notification-success'});
+                    notify({message: gettextCatalog.getString('Login password updated', null), classes: 'notification-success'});
                     $scope.oldLoginPassword = '';
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
@@ -94,10 +95,10 @@ angular.module('proton.controllers.Settings')
                 } else if(result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: $translate.instant('INVALID_LOGIN_PASSWORD'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Invalid login password', null, 'Error'), classes: 'notification-danger'});
                 }
             }, function(error) {
-                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
                 $log.error(error);
             })
         );
@@ -112,12 +113,12 @@ angular.module('proton.controllers.Settings')
         var promises = [];
 
         if (oldMailPwd !== authentication.getPassword()) {
-            notify({message: $translate.instant('WRONG_MBPW'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Wrong mailbox password', null, 'Error'), classes: 'notification-danger'});
             return false;
         }
 
         if (newMailPwd !== confMailPwd) {
-            notify({message: $translate.instant('PASSWORDS_DONT_MATCH'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Passwords don\'t match', null, 'Error'), classes: 'notification-danger'});
             return false;
         }
 
@@ -142,7 +143,7 @@ angular.module('proton.controllers.Settings')
                                 } else if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                 } else {
-                                    notify({message: $translate.instant('ERROR_ORG_KEYS'), classes: 'notification-danger'});
+                                    notify({message: gettextCatalog.getString('Unable to get organization keys', null, 'Error'), classes: 'notification-danger'});
                                 }
                             });
                         }, function(error) {
@@ -156,10 +157,10 @@ angular.module('proton.controllers.Settings')
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                 } else {
-                    notify({message: $translate.instant('ERROR_ORG_KEYS'), classes: 'notification-danger'});
+                    notify({message: gettextCatalog.getString('Unable to get organization keys', null, 'Error'), classes: 'notification-danger'});
                 }
             }, function(error) {
-                notify({message: $translate.instant('ERROR_ORG_KEYS'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Unable to get organization keys', null, 'Error'), classes: 'notification-danger'});
             });
         }
 
@@ -190,7 +191,7 @@ angular.module('proton.controllers.Settings')
                     keys = keys.filter(function(obj) { return obj !== 0; });
 
                     if (keys.length === 0) {
-                        notify({message: $translate.instant('NO_KEYS'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('No keys to update', null, 'Error'), classes: 'notification-danger'});
                     }
 
                     return Key.private({
@@ -204,11 +205,11 @@ angular.module('proton.controllers.Settings')
                             $scope.confirmMailboxPassword = '';
                             form.$setUntouched();
                             authentication.savePassword(newMailPwd);
-                            notify({message: $translate.instant('MAILBOX_PASSWORD_UPDATED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Mailbox password updated', null), classes: 'notification-success'});
                         } else if(result.data && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('WRONG_MBPW'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Wrong mailbox password', null, 'Error'), classes: 'notification-danger'});
                         }
                     });
                 }, function(error) {
@@ -219,7 +220,7 @@ angular.module('proton.controllers.Settings')
                 $log.error(result.Error);
                 notify({message: result.Error, classes: 'notification-danger'});
             } else {
-                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
             }
         }, function(errors) {
             _.each(errors, function(error) {
@@ -229,35 +230,41 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveIdentity = function() {
+        var deferred = $q.defer();
         var displayName = $scope.displayName;
         var signature = $scope.signature;
 
         signature = signature.replace(/\n/g, '<br />');
 
-        networkActivityTracker.track(
-            $q.all({
-                displayName: Setting.display({DisplayName: displayName}),
-                signature: Setting.signature({Signature: signature})
-            })
-            .then(function(result) {
-                if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
-                    authentication.user.DisplayName = displayName;
-                    authentication.user.Signature = signature;
-                    notify({message: $translate.instant('IDENTITY_SAVED'), classes: 'notification-success'});
-                } else {
-                    notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
-                }
-            }, function() {
-                notify({message: $translate.instant('ERROR_WHILE_SAVING'), classes: 'notification-danger'});
-            })
-        );
+
+        $q.all({
+            displayName: Setting.display({DisplayName: displayName}),
+            signature: Setting.signature({Signature: signature})
+        })
+        .then(function(result) {
+            if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
+                notify({message: gettextCatalog.getString('Identity saved', null), classes: 'notification-success'});
+                eventManager.call()
+                .then(function() {
+                    deferred.resolve();
+                });
+            } else {
+                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
+                deferred.reject();
+            }
+        }, function() {
+            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
+            deferred.reject();
+        });
+
+        return networkActivityTracker.track(deferred.promise);
     };
 
     $scope.saveAutosaveContacts = function(form) {
         networkActivityTracker.track(
             Setting.autosave({AutoSaveContacts: $scope.autosaveContacts})
             .then(function(result) {
-                notify({message: $translate.instant('PREFERENCE_SAVED'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success'});
                 authentication.user.AutoSaveContacts = $scope.autosaveContacts;
             })
         );
@@ -268,7 +275,7 @@ angular.module('proton.controllers.Settings')
             Setting.setShowImages({ShowImages: $scope.ShowImages})
             .then(function(result) {
                 authentication.user.ShowImages = $scope.ShowImages;
-                notify({message: $translate.instant('IMAGE_PREFERENCES_UPDATED'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success'});
             })
         );
     };

@@ -12,7 +12,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $templateCache,
     $timeout,
     $filter,
-    $translate,
+    gettextCatalog,
     authentication,
     CONFIG,
     CONSTANTS,
@@ -131,15 +131,15 @@ angular.module("proton.models.message", ["proton.constants"])
         },
         encryptionType: function() {
             var texts = [
-                $translate.instant('UNENCRYPTED_MESSAGE'),
-                $translate.instant('END_TO_END_ENCRYPTED_INTERNAL_MESSAGE'),
-                $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
-                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE'),
-                $translate.instant('EXTERNAL_MESSAGE_STORED_ENCRYPTED'),
-                $translate.instant('STORED_ENCRYPTED'),
-                $translate.instant('END_TO_END_ENCRYPTED_FOR_OUTSIDE_REPLY'),
-                $translate.instant('ENCRYPTED_PGP'),
-                $translate.instant('ENCRYPTED_PGP_MIME'),
+                gettextCatalog.getString('Unencrypted message', null),
+                gettextCatalog.getString('End to end encrypted internal message', null),
+                gettextCatalog.getString('External message stored encrypted', null),
+                gettextCatalog.getString('End to end encrypted for outside', null),
+                gettextCatalog.getString('External message stored encrypted', null),
+                gettextCatalog.getString('Stored encrypted', null),
+                gettextCatalog.getString('End to end encrypted for outside reply', null),
+                gettextCatalog.getString('End to end encrypted using PGP', null),
+                gettextCatalog.getString('End to end encrypted using PGP/MIME', null),
             ];
 
             return texts[this.IsEncrypted];
@@ -242,7 +242,8 @@ angular.module("proton.models.message", ["proton.constants"])
 
             this.decrypting = true;
 
-            pmcw.decryptMessageRSA(this.Body, keys, this.Time).then(function(result) {
+            pmcw.decryptMessageRSA(this.Body, keys, this.Time)
+            .then(function(result) {
                 this.decrypting = false;
                 deferred.resolve(result);
             }.bind(this), function(error) {
@@ -344,7 +345,8 @@ angular.module("proton.models.message", ["proton.constants"])
             if (this.isDraft() || this.IsEncrypted > 0) {
                 if (angular.isUndefined(this.DecryptedBody)) {
                     try {
-                        this.decryptBody().then(function(result) {
+                        this.decryptBody()
+                        .then(function(result) {
                             this.DecryptedBody = result;
                             this.failedDecryption = false;
                             deferred.resolve(result);
@@ -370,7 +372,7 @@ angular.module("proton.models.message", ["proton.constants"])
         clearImageBody: function(body) {
             if (angular.isUndefined(body)) {
 
-            } else if (this.containsImage === false || body.match('<img') === null) {
+            } else if (this.containsImage === false || tools.containsImage(body) === false) {
                 this.containsImage = false;
             } else {
                 this.containsImage = true;

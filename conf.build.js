@@ -15,8 +15,7 @@ module.exports = {
     jsunit: ["src/**/*.spec.js"],
     jse2e: ["src/**/*.scenario.js"],
     atpl: ["src/app/**/*.tpl.html"],
-    ctpl: ["src/common/**/*.tpl.html"],
-    html: ["src/app.html", "src/admin.html", "src/static/**.html"],
+    html: ["src/app.html"],
     sass: ["src/sass/application.scss"]
   },
   external_files: {
@@ -32,7 +31,6 @@ module.exports = {
   vendor_files: (vendor_files = {
     js: [
       "vendor/jquery/dist/jquery.js",
-      "vendor/jquery-ui/jquery-ui.js",
       "vendor/jquery.payment/lib/jquery.payment.js",
       "vendor/fastclick/lib/fastclick.js",
       "vendor/angular/angular.js",
@@ -52,20 +50,15 @@ module.exports = {
       "vendor/pikaday-angular/pikaday-angular.js",
       "vendor/Squire/build/squire.js",
       "vendor/dropzone/dist/dropzone.js",
-      "vendor/angular-translate/angular-translate.js",
-      "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
-      "vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
-      "vendor/angular-translate-storage-local/angular-translate-storage-local.js",
       "vendor/vcard/src/vcard.js",
       "vendor/html2canvas/build/html2canvas.js",
       "vendor/svg4everybody/dist/svg4everybody.js",
       "vendor/ical.js/build/ical.js",
       "vendor/angular-ical/dist/js/angular-ical.js",
-      "vendor/smooth-scrollbar/dist/smooth-scrollbar.js",
-      "vendor/angular-smooth-scrollbar/dist/angular-smooth-scrollbar.js",
       "vendor/angular-messages/angular-messages.js",
       "vendor/svgeezy/svgeezy.js",
-      "vendor/html5-desktop-notifications/desktop-notify.js"
+      "vendor/html5-desktop-notifications/desktop-notify.js",
+      "vendor/angular-gettext/dist/angular-gettext.js"
     ],
     bootstrap_components: [
       "affix",

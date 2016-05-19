@@ -10,12 +10,12 @@ body {
     }
     section.sidebar {
         display: block;
-        padding: 0 20px 15px 20px;
+        padding: 0 20px;
         width: $sidebarWidth;
         min-width: $sidebarWidth;
         box-sizing: border-box;
         float: left;
-        height: calc(100% - 61px);
+        height: calc(100% - 50px);
         background: $secondary;
         position: relative;
         overflow: hidden;
@@ -25,7 +25,8 @@ body {
         a.compose {
             margin-bottom: 10px;
             font-size: 12px;
-            padding: 0 0 0 25px;
+            padding: 0;
+            text-align: center;
             width: 100%;
             text-transform: uppercase;
             border-color: transparent;
@@ -201,7 +202,7 @@ body {
                         overflow: hidden;
                         text-overflow: ellipsis;
                         padding: 0;
-                        font-size: .8rem;
+                        font-size: .9rem;
                         max-width: 100%;
                         &:hover {
                             color: $white;
@@ -227,16 +228,17 @@ body {
             }
         }
         div.footer {
-            text-transform: uppercase;
             text-align: center;
             font-size: 10px;
             padding-top: 10px;
+            padding-bottom: 20px;
             .wrap {
                 padding: 0;
-                margin: 0 -10px 1rem;
+                margin: 0 -10px;
             }
             div.link {
                 a {
+                    text-transform: uppercase;
                     font-weight: bold;
                     color: $primary;
                     text-decoration: none;
@@ -369,7 +371,7 @@ body.mobileMode {
                             display: inline-block;
                             float: left;
                         }
-                        span {
+                        & > span {
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;

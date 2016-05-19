@@ -4,7 +4,7 @@ angular.module("proton.controllers.Settings")
     $q,
     $rootScope,
     $scope,
-    $translate,
+    gettextCatalog,
     Address,
     addressModal,
     authentication,
@@ -167,22 +167,22 @@ angular.module("proton.controllers.Settings")
 
         confirmModal.activate({
             params: {
-                title: $translate.instant('DELETE_DOMAIN'),
-                message: $translate.instant('DELETE_ADDRESS_CONFIRMATION'),
+                title: gettextCatalog.getString('Delete domain', null, 'Title'),
+                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
                 confirm: function() {
                     networkActivityTracker.track(Domain.delete(domain.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('DOMAIN_DELETED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Domain deleted', null), classes: 'notification-success'});
                             $scope.domains.splice(index, 1); // Remove domain in interface
                             eventManager.call(); // Call event log manager
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -220,7 +220,7 @@ angular.module("proton.controllers.Settings")
     $scope.generate = function(address) {
         generateModal.activate({
             params: {
-                title: $translate.instant('GENERATE_KEY_PAIR'),
+                title: gettextCatalog.getString('Generate key pair', null),
                 message: '', // TODO need text
                 addresses: [address],
                 cancel: function() {
@@ -241,22 +241,22 @@ angular.module("proton.controllers.Settings")
 
         confirmModal.activate({
             params: {
-                title: $translate.instant('DELETE_ADDRESS'),
-                message: $translate.instant('DELETE_ADDRESS_CONFIRMATION'),
+                title: gettextCatalog.getString('Delete address', null, 'Title'),
+                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
                 confirm: function() {
                     networkActivityTracker.track(Address.delete(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('ADDRESS_DELETED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success'});
                             domain.Addresses.splice(index, 1); // Remove address in interface
                             eventManager.call(); // Call event log manager
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('ERROR_DURING_DELETION'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -272,15 +272,15 @@ angular.module("proton.controllers.Settings")
     $scope.enableAddress = function(address) {
         networkActivityTracker.track(Address.enable(address.ID).then(function(result) {
             if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                notify({message: $translate.instant('ADDRESS_ENABLED'), classes: 'notification-success'});
+                notify({message: gettextCatalog.getString('Address enabled', null, 'Info'), classes: 'notification-success'});
                 address.Status = 1;
             } else if(angular.isDefined(result.data) && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
             } else {
-                notify({message: $translate.instant('ERROR_DURING_ENABLE'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Error during enable request', null, 'Error'), classes: 'notification-danger'});
             }
         }, function(error) {
-            notify({message: $translate.instant('ERROR_DURING_ENABLE'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Error during enable request', null, 'Error'), classes: 'notification-danger'});
         }));
     };
 
@@ -290,21 +290,21 @@ angular.module("proton.controllers.Settings")
     $scope.disableAddress = function(address) {
         confirmModal.activate({
             params: {
-                title: $translate.instant('DISABLE_ADDRESS'),
-                message: $translate.instant('DISABLE_ADDRESS_CONFIRMATION'),
+                title: gettextCatalog.getString('Disable address', null, 'Title'),
+                message: gettextCatalog.getString('Are you sure you want to disable this address?', null, 'Info'),
                 confirm: function() {
                     networkActivityTracker.track(Address.disable(address.ID).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('ADDRESS_DISABLED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success'});
                             address.Status = 0;
                             confirmModal.deactivate();
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('ERROR_DURING_DISABLE'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during disable request', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('ERROR_DURING_DISABLE'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during disable request', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 cancel: function() {
@@ -325,7 +325,7 @@ angular.module("proton.controllers.Settings")
                 submit: function(name) {
                     networkActivityTracker.track(Domain.create({Name: name}).then(function(result) {
                         if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({message: $translate.instant('DOMAIN_CREATED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Domain created', null), classes: 'notification-success'});
                             $scope.domains.push(result.data.Domain);
                             eventManager.call(); // Call event log manager
                             domainModal.deactivate();
@@ -334,10 +334,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Error during creation', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('ERROR_DURING_CREATION'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Error during creation', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 next: function() {
@@ -381,17 +381,13 @@ angular.module("proton.controllers.Settings")
                             // 0 is default, 1 is has code but wrong, 2 is good
                             switch (result.data.Domain.VerifyState) {
                                 case 0:
-                                    notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
+                                    notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                                     break;
                                 case 1:
-                                    notify({
-                                        message: $translate.instant('HAS_CODE_BUT_WRONG'),
-                                        classes: 'notification-danger',
-                                        duration: 30000
-                                    });
+                                    notify({message: gettextCatalog.getString('Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 1 hour for changes to take affect.', null, 'Error'), classes: 'notification-danger', duration: 30000});
                                     break;
                                 case 2:
-                                    notify({message: $translate.instant('DOMAIN_VERIFIED'), classes: 'notification-success'});
+                                    notify({message: gettextCatalog.getString('Domain verified', null), classes: 'notification-success'});
                                     $scope.domains[index] = result.data.Domain;
                                     verificationModal.deactivate();
                                     // open the next step
@@ -403,10 +399,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 next: function() {
@@ -528,10 +524,10 @@ angular.module("proton.controllers.Settings")
                         } else if(angular.isDefined(result.data) && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
-                            notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
+                            notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                         }
                     }, function(error) {
-                        notify({message: $translate.instant('VERIFICATION_DID_NOT_SUCCEED'), classes: 'notification-danger'});
+                        notify({message: gettextCatalog.getString('Verification did not succeed, please try again in an hour.', null, 'Error'), classes: 'notification-danger'});
                     }));
                 },
                 close: function() {

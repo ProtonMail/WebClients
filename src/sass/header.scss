@@ -42,6 +42,8 @@ header#pm_header-desktop {
 		text-align: center;
 		background-color: $secondary;
 		overflow: hidden;
+		display: block;
+		height: $headerHeight;
 		img {
 			display: inline-block;
 			margin: auto;

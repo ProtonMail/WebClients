@@ -5,52 +5,54 @@
     <div class="settings">
         <div class="row">
             <section class="setting pm_form full">
-                <legend>{{ 'ORGANIZATION' | translate }}</legend>
+                <legend translate-context="Title" translate>Organization</legend>
                 <div class="pm_grid">
 	            	<div class="col-1-2">
 		            	<form method="post" name="form_organization" ng-submit="saveOrganizationName()" novalidate="">
 	            			<div class="col left">
-	            				<label for="orgName">{{ 'ORGANIZATION_NAME'| translate }}</label>
+	            				<label for="orgName" translate-context="Title" translate>Organization name</label>
 	            			</div>
 	            			<div class="col right">
 	            				<div class="clearfix">
-		            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder="{{ 'ORGANIZATION_NAME' | translate }}" ng-minlength="0" ng-maxlength="100" required="" />
+		            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="Organization name" ng-minlength="0" ng-maxlength="100" required="" />
 	            				</div>
 			            		<p class="text-right clearfix">
-				            		<button class="pm_button primary" type="submit">{{ 'SAVE'| translate }}</button>
+				            		<button class="pm_button primary" type="submit" translate-context="Action" translate>Save</button>
 			            		</p>
 	            			</div>
 	            		</form>
 	            	</div>
 	            	<div class="col-1-2">
-	                    <table class="pm_table plain" id="usersTable">
-	                        <tbody>
-	                        	<tr>
-		                            <th width="7rem">{{ 'NUMBER_OF_USER'| translate }}: </th>
-		                            <td>
-		                                <strong>{{ organization.UsedMembers }} {{ 'OF' | translate }} {{ organization.MaxMembers }} {{ 'USED' | translate }}</strong>
-		                            </td>
-		                            <td class="text-right">
-		                            	<span>
-		                                    <a ui-sref="secured.dashboard">{{ 'UPGRADE'| translate }}</a>
-		                                </span>
-		                            </td>
-		                        </tr>
-		                        <tr>
-		                            <th>{{ 'ORGANIZATION_STORAGE'| translate }}:</th>
-		                            <td>
-		                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
-		                            </td>
-		                            <td class="text-right">
-		                                <span>
-		                                    <a ui-sref="secured.dashboard">{{ 'UPGRADE'| translate }}</a>
-		                                </span>
-		                            </td>
-		                        </tr>
-		                    </tbody>
-	                    </table>
+	            		<div class="pm_table">
+		                    <table class="plain" id="usersTable">
+		                        <tbody>
+		                        	<tr>
+			                            <td style="width: 10rem" translate-context="Title" translate>Number of users:</td>
+			                            <td>
+			                                <strong  translate-comment="members page. how many members exist for an organization as well as the total number allowed." translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} Used</strong>
+			                            </td>
+			                            <td style="width: 5rem" class="text-right">
+			                            	<span>
+			                                    <a ui-sref="secured.dashboard" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+			                                </span>
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td translate-context="Title" translate>Organization storage:</td>
+			                            <td>
+			                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
+			                            </td>
+			                            <td class="text-right">
+			                                <span>
+			                                    <a ui-sref="secured.dashboard" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+			                                </span>
+			                            </td>
+			                        </tr>
+			                    </tbody>
+		                    </table>
+		                    </div><!--/.pm_table-->
 	                    <p>
-		                    <small><i class="fa fa-info-circle text-purple"></i> {{ 'SUBACCOUNT_INFO' | translate }}</small>
+		                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create subaccounts which are used by other members of your organization.</span></small>
 	                    </p>
 	            	</div>
 	            </div>
@@ -59,69 +61,71 @@
 
         <div class="row">
             <section class="setting pm_form full">
-                <legend>{{ 'USERS' | translate }}</legend>
+                <legend translate-context="Title" translate>Users</legend>
                 <p ng-show="checkDomains()">
-                    <button type="button" class="pm_button primary" ng-click="openUserModal()">{{ 'ADD_USER'| translate }}</button>
-                    <a ui-sref="secured.domains" class="pm_button">{{ 'ADD_USER' | translate }}</a>
+                    <button type="button" class="pm_button primary" ng-click="openUserModal()" translate-context="Action" translate>Add user</button>
+                    <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add custom domain</a>
                 </p>
-                <table class="pm_table hidden-xs" id="userTable">
-		            <thead>
-		                <tr>
-		                    <th class="username">{{ 'USERNAME'| translate }}</th>
-		                    <th class="role">{{ 'ROLE'| translate }}</th>
-		                    <th class="storage">{{ 'STORAGE'| translate }}</th>
-		                    <th class="addresses">{{ 'ADDRESSES'| translate }}</th>
-		                    <th class="actions">{{ 'ACTIONS'| translate }}</th>
-		                </tr>
-		            </thead>
-		            <tbody>
-						<tr ng-repeat="member in members">
-		                    <td class="username">
-		                        <span ng-bind="member.NickName"></span>
-		                    </td>
-		                    <td class="role">
-                                <span ng-show="member.Role">{{ 'MASTER' | translate }}</span>
-		                    	<span class="pm_select" ng-hide="member.Role === 2">
-									<select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
-			                        <i class="fa fa-angle-down"></i>
-			                    </span>
-		                    </td>
-		                    <td class="storage">
-                                <a href="#" ng-click="manageStorage(member)" class="fa fa-edit pm_button link pull-right"></a>
-                                {{ member.UsedSpace | humanSize }} {{ 'OF' | translate }} {{ member.MaxSpace | humanSize }} {{ 'USED' | translate }}
-                            </td>
-		                    <td class="addresses">
-                                <div ng-repeat="address in member.Addresses | orderBy: 'Send'" ng-hide="address.Status === 0">
-                                    {{ address.Email }} <small ng-show="address.Send === 1"><strong>(DEFAULT)</strong></small>
-                                    <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip="{{ 'UNLINK_ADDRESS' | translate }}"><i class="fa fa-chain-broken pm_button link"></i></a>
-                                </div>
-                                <a ui-sref="secured.domains" class="pm_button" ng-show="checkDomains()">{{ 'ADD_ADDRESS' | translate }}</button>
-                            </td>
-		                    <td class="actions">
-			                    <div ng-hide="member.Private === 1">
-			                    	<button type="button" class="pm_button link" ng-click="managePasswords(member)" pt-tooltip="{{ 'MANAGE_PASSWORDS'| translate }}">
-                                        <i class="fa fa-cog"></i> {{ 'MANAGE_PASSWORD' | translate }}
-                                    </button>
-                                </div>
-			                    <div ng-hide="member.Private === 1">
-			                    	<button type="button" class="pm_button link" ng-click="generateKeys(member)" pt-tooltip="{{ 'GENERATE_KEYS'| translate }}">
-                                        <i class="fa fa-key"></i> {{ 'GENERATE_KEYS' | translate }}
-                                    </button>
-                                </div>
-			                    <div ng-hide="member.Private === 1">
-			                    	<button type="button" class="pm_button link" ng-click="enterMailbox(member)" pt-tooltip="{{ 'ENTER_MAILBOX'| translate }}">
-                                        <i class="fa fa-inbox"></i> {{ 'ENTER_MAILBOX' | translate }}
-                                    </button>
-                                </div>
-                                <div>
-                                    <button type="button" class="pm_button link" ng-click="remove(member)">
-                                        <i class="fa fa-trash-o"></i> {{ 'REMOVE_USER' | translate }}
-                                    </button>
-                                </div>
-							</td>
-		                </tr>
-		            </tbody>
-		        </table>
+                <div class="pm_table">
+	                <table id="userTable">
+			            <thead>
+			                <tr>
+			                    <th style="width: 12rem" class="username" translate-context="Title" translate-comment="table heading" translate>Username</th>
+			                    <th style="width: 6rem" class="role" translate-context="Title" translate-comment="table heading" translate>Role</th>
+			                    <th style="width: 14rem" class="storage" translate-context="Title" translate-comment="table heading" translate>Storage</th>
+			                    <th style="width: 12rem" class="addresses" translate-context="Title" translate-comment="table heading" translate>Addresses</th>
+			                    <th style="width: 8rem" class="actions" translate-context="Title" translate-comment="table heading" translate>Actions</th>
+			                </tr>
+			            </thead>
+			            <tbody>
+							<tr ng-repeat="member in members">
+			                    <td class="username">
+			                        <span ng-bind="member.NickName"></span>
+			                    </td>
+			                    <td class="role">
+	                                <span ng-show="member.Role"  translate>Master</span>
+			                    	<span class="pm_select" ng-hide="member.Role === 2">
+										<select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
+				                        <i class="fa fa-angle-down"></i>
+				                    </span>
+			                    </td>
+			                    <td class="storage">
+	                                <a href="#" ng-click="manageStorage(member)" class="fa fa-edit pm_button link pull-right"></a>
+	                                <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used</span>
+	                            </td>
+			                    <td class="addresses">
+	                                <div ng-repeat="address in member.Addresses | orderBy: 'Send'" ng-hide="address.Status === 0">
+	                                    {{ address.Email }} <small ng-show="address.Send === 1"><strong  translate>Default</strong></small>
+	                                    <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip-translate="Unlink address"><i class="fa fa-chain-broken pm_button link"></i></a>
+	                                </div>
+	                                <a ui-sref="secured.domains" class="pm_button" ng-show="checkDomains()" translate-context="Action" translate-comment="add address button on members page" translate>Add address</a>
+	                            </td>
+			                    <td class="actions">
+				                    <div ng-hide="member.Private === 1">
+				                    	<button type="button" class="pm_button link" ng-click="managePasswords(member)" pt-tooltip-translate="Manage passwords" pt-tooltip-translate-context="Action">
+	                                        <i class="fa fa-cog"></i> <span translate-context="Action" translate>Manage passwords</span>
+	                                    </button>
+	                                </div>
+				                    <div ng-hide="member.Private === 1">
+				                    	<button type="button" class="pm_button link" ng-click="generateKeys(member)" pt-tooltip-translate="Generate keys" pt-tooltip-translate-context="Action">
+	                                        <i class="fa fa-key"></i> <span translate-context="Action" translate>Generate keys</span>
+	                                    </button>
+	                                </div>
+				                    <div ng-hide="member.Private === 1">
+				                    	<button type="button" class="pm_button link" ng-click="enterMailbox(member)" pt-tooltip-translate="Enter mailbox">
+	                                        <i class="fa fa-inbox"></i> <span translate-context="Action" translate>Enter mailbox</span>
+	                                    </button>
+	                                </div>
+	                                <div>
+	                                    <button type="button" class="pm_button link" ng-click="remove(member)">
+	                                        <i class="fa fa-trash-o"></i> <span translate-context="Action" translate>Remove user</span>
+	                                    </button>
+	                                </div>
+								</td>
+			                </tr>
+			            </tbody>
+			        </table>
+		        </div>
             </section>
         </div>
     </div>

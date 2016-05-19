@@ -1,6 +1,12 @@
 angular.module('proton.autocomplete', [])
-.constant("regexEmail", /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/gi)
-.directive('autocomplete', function ($timeout, $filter, regexEmail, authentication) {
+.filter('highlight', function() {
+    return function(string, value) {
+        var regex = new RegExp('(' + value + ')', 'gi');
+
+        return string.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, '<strong>$1</strong>');
+    };
+})
+.directive('autocomplete', function ($timeout, $rootScope, regexEmail, authentication) {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/autocomplete.tpl.html',
@@ -17,6 +23,7 @@ angular.module('proton.autocomplete', [])
             var DOWN_KEY = 40;
             var ESC_KEY = 27;
             var SPACE_KEY = 32;
+            var COMMA_KEY = 188;
             var timeoutChange;
             var timeoutBlur;
 
@@ -75,6 +82,13 @@ angular.module('proton.autocomplete', [])
                 return emails;
             };
 
+            var scrollToSelected = function() {
+                var ul = angular.element(element).find('.autocomplete-email');
+                var li = angular.element(element).find('.selected');
+
+                ul.scrollTop(li.offset().top - li.parent().offset().top);
+            };
+
             var getEmails = function(value) {
                 var emails = [];
                 var separators = [',', ';'];
@@ -99,15 +113,6 @@ angular.module('proton.autocomplete', [])
                 return emails;
             };
 
-            /**
-            * Highlight value searched in the autocompletion
-            */
-            var highlight = function(string, word) {
-                var regex = new RegExp('(' + word + ')', 'gi');
-
-                return string.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, "<strong>$1</strong>");
-            };
-
             // Functions
             /**
             * Function called at the initialization of this directive
@@ -119,15 +124,22 @@ angular.module('proton.autocomplete', [])
             };
             /**
             * Submit a new address
+            * @param {Boolean} enter
             */
-            scope.onSubmit = function() {
-                if (scope.params.selected !== null) {
+            scope.onSubmit = function(enter) {
+                if (enter === true && scope.params.selected !== null) {
                     scope.onAddEmail(scope.params.contactsFiltered[scope.params.selected]);
-                } else if(scope.params.newValue.length > 0) {
+                } else if (scope.params.newValue.length > 0) {
                     var emails = getEmails(scope.params.newValue);
 
-                    if(emails.length > 0) {
+                    if (emails.length > 0) {
                         scope.emails = _.union(scope.emails, emails);
+                    } else {
+                        scope.emails.push({
+                            Address: scope.params.newValue,
+                            Name: scope.params.newValue,
+                            invalid: true
+                        });
                     }
 
                     scope.params.newValue = '';
@@ -135,11 +147,15 @@ angular.module('proton.autocomplete', [])
                 }
             };
 
+            scope.onFocus = function() {
+
+            };
+
             scope.onBlur = function() {
                 $timeout.cancel(timeoutBlur);
                 timeoutBlur = $timeout(function() {
-                    scope.onSubmit();
-                }, 100);
+                    scope.onSubmit(false);
+                }, 250);
             };
 
             scope.onRemove = function(index) {
@@ -152,10 +168,10 @@ angular.module('proton.autocomplete', [])
             scope.onAddEmail = function(email) {
                 var index = scope.emails.indexOf(email);
 
-                if(index === -1) {
-                    scope.emails.push(email);
+                if (index === -1) {
                     scope.params.selected = null;
                     scope.params.newValue = '';
+                    scope.emails.push(email);
                     angular.element(element).find('.new-value-email').focus();
                     scope.onChange();
                 }
@@ -170,27 +186,34 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onChange = function() {
-                $timeout.cancel(timeoutChange);
-                timeoutChange = $timeout(function() {
+                if (scope.params.newValue.length > 0) {
+                    var value = scope.params.newValue.toLowerCase();
+                    var list = [];
                     var contacts = _.map(authentication.user.Contacts, function(contact) {
                         return { Name: contact.Name, Address: contact.Email };
                     });
-                    var byName = $filter('filter')(contacts, {Name: scope.params.newValue});
-                    var byAddress = $filter('filter')(contacts, {Address: scope.params.newValue});
-                    var list = $filter('limitTo')(_.union(byName, byAddress), 10); // We limit the number of contact by 10
 
-                    if(scope.params.newValue.length > 0) {
-                        scope.params.contactsFiltered = list;
-                    } else {
-                        scope.params.contactsFiltered = [];
-                    }
+                    _.each(contacts, function(contact) {
+                        // We limit the number of contact by 10
+                        if (list.length <= 10) {
+                            if (contact.Name.toLowerCase().indexOf(value) !== -1) {
+                                list.push(contact);
+                            } else if (contact.Address.toLowerCase().startsWith(value)) {
+                                list.push(contact);
+                            }
+                        }
+                    });
 
-                    if(scope.params.contactsFiltered.length > 0) {
-                        scope.onOpen();
-                    } else {
-                        scope.onClose();
-                    }
-                }, 250);
+                    scope.params.contactsFiltered = list;
+                } else {
+                    scope.params.contactsFiltered = [];
+                }
+
+                if (scope.params.contactsFiltered.length > 0) {
+                    scope.onOpen();
+                } else {
+                    scope.onClose();
+                }
             };
 
             scope.onKeyDown = function(event, email) {
@@ -206,6 +229,7 @@ angular.module('proton.autocomplete', [])
                     case DOWN_KEY:
                     case UP_KEY:
                     case TAB_KEY:
+                    case COMMA_KEY:
                     case ENTER_KEY:
                         event.preventDefault();
                         event.stopPropagation();
@@ -217,12 +241,13 @@ angular.module('proton.autocomplete', [])
 
             scope.onKeyUp = function(event, email) {
                 switch (event.keyCode) {
+                    case COMMA_KEY:
                     case ENTER_KEY:
-                        scope.onSubmit();
+                        scope.onSubmit(true);
                         break;
                     case TAB_KEY:
                         if(scope.params.newValue.length > 0) {
-                            scope.onSubmit();
+                            scope.onSubmit(true);
                         } else {
                             // Focus next input (autocomplete or subject)
                             angular.element(element).parent().nextAll('.row:visible:first').find('input').focus();
@@ -235,6 +260,7 @@ angular.module('proton.autocomplete', [])
                             } else if(scope.params.contactsFiltered.length > 0 && scope.params.selected < scope.params.contactsFiltered.length - 1) {
                                 scope.params.selected++;
                             }
+                            scrollToSelected();
                         }
                         break;
                     case UP_KEY:
@@ -244,6 +270,7 @@ angular.module('proton.autocomplete', [])
                             } else {
                                 scope.params.selected = 0;
                             }
+                            scrollToSelected();
                         }
                         break;
                     default:
@@ -252,54 +279,6 @@ angular.module('proton.autocomplete', [])
             };
             // Initialization
             scope.initialization();
-        }
-    };
-})
-
-.directive('autosize', function() {
-    return {
-        link: function(scope, element, attrs) {
-            var span, resize, change, input;
-
-            input = angular.element(element);
-            span = angular.element('<span></span>');
-            span.css('display', 'none')
-                .css('visibility', 'hidden')
-                .css('width', 'auto');
-
-            element.parent().append(span);
-
-            resize = function(value) {
-                var style = getComputedStyle(element[0]);
-                span.css('font', style.font)
-                .css('letter-spacing', style.letterSpacing)
-                .css('word-spacing', style.wordSpacing)
-                .css('padding', style.padding);
-
-                if (value !== null && value.length === 0) {
-                    value = element.attr('placeholder') || '';
-                }
-
-                span.text(value);
-                span.css('display', '');
-
-                try {
-                    element.css('width',(span.prop('offsetWidth') + 13) + 'px');
-                }
-                finally {
-                    span.css('display', 'none');
-                }
-            };
-
-            change = function(event) {
-                resize(input.val());
-            };
-
-            input.bind('input', change);
-
-            scope.$on('$destroy', function() {
-                input.unbind('input', change);
-            });
         }
     };
 });

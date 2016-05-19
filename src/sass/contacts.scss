@@ -66,9 +66,6 @@ body.mobileMode {
 			tr {
 				margin: 0;
 			}
-			td span {
-				line-height: 50px;
-			}
 			th.checkbox {
 				width: 4rem;
 				label {
@@ -82,15 +79,6 @@ body.mobileMode {
 			}
 			td.text-right {
 				padding: .5rem 0;
-			}
-			td.actions {
-				text-align: left !important;
-				span {
-					width: 100%;
-					.pm_button.round {
-						margin-right: 1rem;
-					}
-				}
 			}
 		}
 		.pm_toolbar {

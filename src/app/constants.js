@@ -32,7 +32,6 @@ angular.module('proton.constants', [])
     SAVE_TIMEOUT_TIME: 2000, // 2 seconds
     MAX_EXPIRATION_TIME: 672, // hours
     ELEMENTS_PER_PAGE: 50,
-    COUNT_UNREAD_INTERVAL_TIME: 20000, // 20 seconds
     LOGIN_PW_MAX_LEN: 500,
     HD_BREAKPOINT: 1920,
     DESKTOP_BREAKPOINT: 1200,

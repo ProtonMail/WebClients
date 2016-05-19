@@ -13,6 +13,14 @@
 		display: block;
 		text-align: left;
 	}
+	.alsoArchive {
+		display: block;
+		clear: both;
+		margin: 1rem -15px;
+		border-top: 1px solid $border;
+		border-bottom: 1px solid $border;
+		padding: 0 15px;
+	}
 	.labelSearch {
 		position: relative;
 		display: block;
@@ -76,7 +84,7 @@
 				span {
 					white-space: nowrap;
 					display: inline-block;
-					max-width: 7rem;
+					max-width: 90px;
 					overflow: hidden;
 					text-overflow: ellipsis;
 				}
@@ -95,6 +103,9 @@
 				width: 20px;
 				float: left;
 				display: block;
+				&:hover {
+					font-size: 20px;
+				}
 			}
 		}
 	}
@@ -109,7 +120,10 @@
 				border: 1px solid $border;
 				margin-bottom: 5px;
 				input {
-					right: 15px;
+					right: 0;
+					height: initial !important;
+					width: initial !important;
+					margin: 10px;
 				}
 			}
 		}

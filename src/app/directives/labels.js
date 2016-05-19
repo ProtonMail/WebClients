@@ -1,14 +1,17 @@
 angular.module("proton.labels", [])
 
 .directive('dropdownLabels', function (
-    $timeout,
+    $filter,
     $q,
     $rootScope,
-    $filter,
+    $timeout,
     authentication,
+    eventManager,
     Label,
     networkActivityTracker,
     notify,
+    Setting,
+    gettextCatalog,
     tools
 ) {
     return {
@@ -41,6 +44,7 @@ angular.module("proton.labels", [])
                 dropdown.unbind('click', onClick);
             });
 
+
             scope.open = function() {
                 if (angular.isFunction(scope.getMessages) && angular.isFunction(scope.saveLabels)) {
                     var messagesLabel = [];
@@ -48,7 +52,7 @@ angular.module("proton.labels", [])
 
                     scope.labelName = '';
                     scope.displayField = false;
-                    scope.alsoArchive = false;
+                    scope.alsoArchive = Boolean(authentication.user.AlsoArchive);
                     scope.labels = angular.copy(authentication.user.Labels);
 
                     _.each(messages, function(message) {
@@ -74,13 +78,36 @@ angular.module("proton.labels", [])
             };
 
             scope.color = function(label) {
-                return {
-                    color: label.Color
-                };
+                if (label && label.Color) {
+                    return { color: label.Color };
+                } else {
+                    return {};
+                }
             };
 
             scope.save = function() {
                 scope.saveLabels(scope.labels, scope.alsoArchive);
+                scope.close();
+                notify({message: gettextCatalog.getString('Labels Saved', null), classes: 'notification-success'});
+            };
+
+            scope.changeAlsoArchive = function() {
+                var archive = scope.alsoArchive ? 1 : 0;
+
+                Setting.alsoArchive({AlsoArchive: archive})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        eventManager.call();
+                    }
+                });
+            };
+
+            scope.moveTo = function(label) {
+                // Select just one
+                label.Selected = true;
+                // Save
+                scope.saveLabels(scope.labels, scope.alsoArchive);
+                // Close
                 scope.close();
             };
 

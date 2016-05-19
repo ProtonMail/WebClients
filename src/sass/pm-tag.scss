@@ -5,8 +5,10 @@
     display: inline-block;
     margin: 0 .5rem;
     border-radius: 2px;
-    line-height: 18px;
-    height: 18px;
+    line-height: 14px;
+    height: 14px;
     font-size: 10px;
+    position: relative;
+    top: -1px;
     color: $text !important;
 }

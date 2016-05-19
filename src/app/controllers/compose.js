@@ -10,7 +10,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettextCatalog,
     action,
     Attachment,
     attachments,
@@ -90,7 +90,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if ($scope.messages.length > 0) {
             $rootScope.activeComposer = true;
             window.onbeforeunload = function() {
-                return $translate.instant('MESSAGE_LEAVE_WARNING');
+                return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
         } else {
             $rootScope.activeComposer = false;
@@ -137,7 +137,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) ||
             ($scope.messages.length === 1 && $rootScope.mobileMode === true)
         ) {
-            notify({message: $translate.instant('MAXIMUM_COMPOSER_REACHED'), classes: 'notification-danger'});
+            notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger'});
         } else {
             var message = new Message();
             $scope.initMessage(message, false);
@@ -178,9 +178,20 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if(angular.isDefined(message) && message.editor === editor) {
             $scope.focusComposer(message);
+            message.autocompletesFocussed = false;
+            message.ccbcc = false;
+            message.attachmentsToggle = false;
         }
 
         $rootScope.$broadcast('composerModeChange');
+    });
+
+    $scope.$on('subjectFocussed', function(event, message) {
+        var current = _.findWhere($scope.messages, {uid: message.uid});
+
+        current.autocompletesFocussed = false;
+        current.ccbcc = false;
+        current.attachmentsToggle = false;
     });
 
     function onResize() {
@@ -188,7 +199,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         timeoutStyle = $timeout(function() {
             $scope.composerStyle();
-        }, 50);
+        }, 1000);
     }
 
     function onOrientationChange() {
@@ -198,7 +209,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     function onDragOver(event) {
-        event.preventDefault();
+        
+        
+        /* 
+            event.preventDefault();
+            if we disable the default behavior then 
+            the text can't be draged inside the iframe.
+        */
+        
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
 
@@ -214,7 +232,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     function onDragEnter(event) {
         $scope.isOver = true;
-        $scope.$apply();
+        // $scope.$apply();
     }
 
     function onDragStart(event) {
@@ -298,11 +316,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.attachmentsToggle = !!!message.attachmentsToggle;
     };
 
+    $scope.onFocusSubject = function(message) {
+        $rootScope.$broadcast('subjectFocussed', message);
+    };
+
     $scope.dropzoneConfig = function(message) {
         return {
             options: {
                 addRemoveLinks: false,
-                dictDefaultMessage: $translate.instant('DROP_FILE_HERE_TO_UPLOAD'),
+                dictDefaultMessage: gettextCatalog.getString('Drop a file here to upload', null, 'Info'),
                 url: "/file/post",
                 autoProcessQueue: false,
                 paramName: "file", // The name that will be used to transfer the file
@@ -372,14 +394,18 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     event.preventDefault();
 
                     $scope.isOver = false;
-                    $scope.$apply();
+                    // $scope.$apply();
                 },
                 error: function(event) {
+                    
+                    /* Notification is already handled by the accept method */
+                    /*
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
                     if(event.size > sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE) {
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
                     }
+                    */
                 }
             }
         };
@@ -466,8 +492,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.uploading++;
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
-
-        $scope.composerStyle();
         $rootScope.$broadcast('composerModeChange');
 
         var cleanup = function( result ) {
@@ -541,6 +565,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.initMessage = function(message, save) {
+        if (authentication.user.Delinquent < 3) {
+            // Not in the delinquent state
+        } else {
+            // In delinquent state
+            notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger'});
+            return false;
+        }
+
         if (authentication.user.ComposerMode === 1) {
             message.maximized = true;
             $rootScope.maximizedComposer = true;
@@ -551,7 +583,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.maximized = true;
             if ($scope.messages.length > 0) {
                 notify.closeAll();
-                notify({message: $translate.instant('MAXIMUM_COMPOSER_REACHED'), classes: 'notification-danger'});
+                notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger'});
                 return;
             }
         }
@@ -560,20 +592,21 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.numTags = [];
         message.recipientFields = [];
         message.uploading = 0;
+        message.toFocussed = false;
+        message.autocompletesFocussed = false;
+        message.ccbcc = false;
         $scope.messages.unshift(message);
         $scope.setDefaults(message);
         $scope.insertSignature(message);
         $scope.sanitizeBody(message);
         $scope.decryptAttachments(message);
-
         $scope.isOver = false;
 
         // This timeout is really important to load the structure of Squire
         $timeout(function() {
-            $rootScope.$broadcast('squireHeightChanged');
             $scope.composerStyle();
             // forward case: we need to save to get the attachments
-            if(save === true) {
+            if (save === true) {
                 $scope.save(message, true, false).then(function() { // message, forward, notification
                     $scope.decryptAttachments(message);
                     $scope.composerStyle();
@@ -597,59 +630,63 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.composerStyle = function() {
         var composers = $('.composer');
-        var composerWidth = $('.composer').eq(0).outerWidth();
+        var environment = function() {
+            if (!composers) { return; }
 
-        _.each(composers, function(composer, index) {
+            var set = {};
 
-            var margin = 20;
-            var reverseIndex = $scope.messages.length - index;
-            var message = $scope.messages[index];
-            var styles = {};
-            var widthWindow = $('body').outerWidth();
-            var windowHeight = $(window).height() - margin;
-            var composerHeight = $(composer).outerHeight();
+            set.composerWidth = composers.eq(0).outerWidth();
+            set.margin = ($('html').hasClass('ua-windows_nt')) ? 40 : 20;
+            set.windowWidth = $('body').outerWidth();
+            set.messagesCount = $scope.messages.length;
+            set.isBootstrap = (tools.findBootstrapEnvironment() === 'xs') ? true : false;
 
-            if ($('html').hasClass('ua-windows_nt')) {
-                margin = 40;
+            /*
+            Is the available space enough ?
+            */
+            if (!set.isBootstrap && ((set.windowWidth / set.messagesCount) < set.composerWidth) ) {
+                /* overlap is a ratio that will share equaly the space available between overlayed composers. */
+                set.overlap = ((set.windowWidth - set.composerWidth - (2 * set.margin)) / (set.messagesCount - 1));
             }
 
-            if (tools.findBootstrapEnvironment() === 'xs') {
-                var marginTop = 80; // px
-                var top = marginTop;
+            return set;
+        };
+
+        /* used as _ context */
+        var context = environment();
+
+        _.each(composers, function(composer, index) {
+            var styles = { opacity: 1 };
+
+            if (this.isBootstrap) {
+                var top = 80; // px
 
                 styles.top = top + 'px';
             } else {
-                var marginRight = margin; // px
-                var widthComposer = composerWidth; // px
+                var c = this;
+                var messagesCount = c.messagesCount;
+                var margin = c.margin;
+                var isCurrent = ((messagesCount - index) === messagesCount) ? true : false;
 
-                if (Math.ceil(widthWindow / $scope.messages.length) > (widthComposer + marginRight)) {
-                    right = (index * (widthComposer + marginRight)) + marginRight;
+                if (isCurrent) {
+                    // set the current composer to right : margin
+                    styles.right = margin;
                 } else {
-                    widthWindow -= margin; // margin left
-                    var overlap = (((widthComposer * $scope.messages.length) - widthWindow) / ($scope.messages.length - 1));
-                    right = index * (widthComposer - ( overlap + margin ));
-                }
+                    var composerWidth = c.composerWidth;
+                    var windowWidth = c.windowWidth;
+                    var innerWindow = c.innerWindow;
+                    var overlap = c.overlap;
 
-                if (reverseIndex === $scope.messages.length) {
-                    right = marginRight;
-                    index = $scope.messages.length;
+                    styles.right = (overlap) ? (index * overlap) : (index * (composerWidth + margin) + margin);
+                    styles.top = '';
                 }
-
-                styles.top = '';
-                styles.right = right + 'px';
-                styles.opacity = 1;
             }
 
-            // Height - depreciated. pure css solution - Jason
-            // if(windowHeight < composerHeight) {
-                // styles.height = windowHeight + 'px';
-            // } else {
-                // styles.height = 'auto';
-            // }
-
-            $(composer).css(styles);
-
-        });
+            /* Set the new styles */
+            $timeout(function() {
+                $(composer).css(styles);
+            }, 250);
+        }, context);
     };
 
     /**
@@ -729,13 +766,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
 
             // focus correct field
-            var composer = $('#uid' + message.uid);
+            var composer = angular.element('#uid' + message.uid);
 
             if (message.ToList.length === 0) {
-                $scope.focusTo(message);
+                $timeout(function () {
+                    $scope.focusTo(message);
+                });
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
-            } else {
+            } else if (message.editor) {
                 message.editor.focus();
             }
 
@@ -748,15 +787,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.listenEditor = function(message) {
-        if(message.editor) {
-            var dropzone = $('#uid' + message.uid + ' .composer-dropzone')[0];
+        if (message.editor) {
+            var dropzone = angular.element('#uid' + message.uid + ' .composer-dropzone')[0];
 
             message.editor.addEventListener('focus', function() {
                 $timeout(function() {
-                    message.fields = false;
                     message.ccbcc = false;
-                    $('.typeahead-container').scrollTop(0);
-                    $scope.$apply();
+                    angular.element('.typeahead-container').scrollTop(0);
                 });
             });
 
@@ -787,31 +824,31 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.toggleCcBcc = function(message) {
         message.ccbcc = !!!message.ccbcc;
-
-        if(message.ccbcc === true) {
-            message.fields = true;
-        }
-
-        $scope.composerStyle();
-    };
-
-    $scope.showFields = function(message) {
-        message.fields = true;
+        message.autocompletesFocussed = true;
+        message.attachmentsToggle = false;
     };
 
     $scope.hideFields = function(message) {
-        message.fields = false;
         message.ccbcc = false;
     };
 
     $scope.togglePanel = function(message, panelName) {
-        message.displayPanel = !!!message.displayPanel;
-        message.panelName = panelName;
+        if (message.displayPanel === true) {
+            $scope.closePanel(message);
+        } else {
+            $scope.openPanel(message, panelName);
+        }
     };
 
     $scope.openPanel = function(message, panelName) {
         message.displayPanel = true;
         message.panelName = panelName;
+
+        if (panelName === 'encrypt') {
+            $timeout(function() {
+                 angular.element('#uid' + message.uid + ' input[name="outsidePw"]').focus();
+            });
+        }
     };
 
     $scope.closePanel = function(message) {
@@ -1009,7 +1046,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.changeFrom = function(message) {
         var currentBody = $.parseHTML(message.Body);
-        var tempDOM = $('<div>').append(currentBody);
+        var tempDOM = angular.element('<div>').append(currentBody);
         var signature = tempDOM.find('.protonmail_signature_block').first().html();
         var content = (message.From.Signature === null)?authentication.user.Signature:message.From.Signature;
 
@@ -1155,7 +1192,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         cache.events(events);
 
                         if(notification === true) {
-                            notify({message: $translate.instant('MESSAGE_SAVED'), classes: 'notification-success'});
+                            notify({message: gettextCatalog.getString('Message saved', null), classes: 'notification-success'});
                         }
 
                         message.saving = false;
@@ -1208,7 +1245,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * Return the subject title of the composer
      */
      $scope.subject = function(message) {
-        return message.Subject || $translate.instant('NEW_MESSAGE');
+        return message.Subject || gettextCatalog.getString('New message', null, 'Title');
      };
 
     /**
@@ -1218,8 +1255,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.checkSubject = function(message) {
         var deferred = $q.defer();
-        var title = $translate.instant('NO_SUBJECT');
-        var text = $translate.instant('NO_SUBJECT_SEND_ANYWAY?');
+        var title = gettextCatalog.getString('No subject', null, 'Title');
+        var text = gettextCatalog.getString('No subject, send anyway?', null, 'Info');
 
         if(angular.isUndefined(message.Subject) || message.Subject.length === 0) {
             message.Subject = '';
@@ -1342,7 +1379,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                     message.encrypting = false;
                                     message.sending = true;
                                     Message.send(parameters).$promise.then(function(result) {
-                                        if(angular.isDefined(result.Error)) {
+                                        if (angular.isDefined(result.Error)) {
                                             message.sending = false;
                                             deferred.reject(new Error(result.Error));
                                         } else {
@@ -1373,7 +1410,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             }});
 
                                             cache.events(events); // Send events to the cache manager
-                                            notify({message: $translate.instant('MESSAGE_SENT'), classes: 'notification-success'}); // Notify the user
+                                            notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'}); // Notify the user
                                             $scope.close(message, false, false); // Close the composer window
 
                                             $timeout(function() {
@@ -1519,7 +1556,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         action.discardMessage(message);
 
         // Notification
-        notify({message: $translate.instant('MESSAGE_DISCARDED'), classes: 'notification-success'});
+        notify({message: gettextCatalog.getString('Message discarded', null), classes: 'notification-success'});
     };
 
     /**
@@ -1530,35 +1567,36 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.recipients = function(message) {
         var recipients = [];
 
-        if(message.ToList.length > 0) {
+        if (message.ToList.length > 0) {
             recipients = recipients.concat(_.map(message.ToList, function(contact, index) {
-                if(index === 0) {
-                    return $translate.instant('TO') + ': ' + $filter('contact')(contact, 'Name');
+                if (index === 0) {
+                    return gettextCatalog.getString('To', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
                 }
             }));
         }
 
-        if(message.CCList.length > 0) {
+        if (message.CCList.length > 0) {
             recipients = recipients.concat(_.map(message.CCList, function(contact, index) {
-                if(index === 0) {
-                    return $translate.instant('CC') + ': ' + $filter('contact')(contact, 'Name');
+                if (index === 0) {
+                    return gettextCatalog.getString('CC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
                 }
             }));
         }
 
-        if(message.BCCList.length > 0) {
+        if (message.BCCList.length > 0) {
             recipients = recipients.concat(_.map(message.BCCList, function(contact, index) {
-                if(index === 0) {
-                    return $translate.instant('BCC') + ': ' + $filter('contact')(contact, 'Name');
+                if (index === 0) {
+                    return gettextCatalog.getString('BCC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
                 } else {
                     return $filter('contact')(contact, 'Name');
                 }
             }));
         }
+
 
         return recipients.join(', ');
     };
@@ -1568,12 +1606,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.focusTo = function(message) {
-        message.fields = true;
-        $rootScope.$broadcast('squireHeightChanged');
-        $scope.composerStyle();
-        // Focus input
+        var input = angular.element('#uid' + message.uid + ' .toRow input.new-value-email');
+
+        message.autocompletesFocussed = true;
+
         $timeout(function() {
-            $('#uid' + message.uid + ' .toRow input.new-value-email').focus();
+            input.focus();
         });
     };
 
@@ -1589,5 +1627,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.focusEditor = function(message, event) {
         event.preventDefault();
         message.editor.focus();
+    };
+
+    /**
+     * Return if emails value has correct format
+     * @param {Object} message
+     * @return {Boolean}
+     */
+    $scope.emailsAreValid = function(message) {
+        var emails = message.ToList.concat(message.CCList).concat(message.BCCList);
+
+        return _.where(emails, {invalid: true}).length === 0;
     };
 });

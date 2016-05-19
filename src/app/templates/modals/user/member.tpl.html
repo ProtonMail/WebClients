@@ -1,54 +1,55 @@
 <div class="modal-content pm_form">
     <div class="modal-header">
-        <h4 class="modal-title">{{ 'ADD_USER' | translate }}</h4>
+        <h4 class="modal-title" translate-context="Title" translate>Add user</h4>
     </div>
     <div class="modal-body">
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>{{ 'NAME' | translate }}</label>
+                <label translate translate-context="Title">Name</label>
             </div>
             <div class="col-2-3">
-                <input autofocus type="text" ng-model="ctrl.name" placeholder="ex: Thomas Anderson">
+                <input autofocus type="text" ng-model="ctrl.name" placeholder-translate="ex: Thomas Anderson">
             </div>
         </div>
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>{{ 'LOGIN_PASSWORD' | translate }}</label>
+                <label translate translate-context="Title">Login password</label>
             </div>
             <div class="col-2-3">
-                <input type="text" ng-model="ctrl.loginPassword" class="margin" placeholder="{{ 'LOGIN_PASSWORD' | translate }}">
-                <input type="text" ng-model="ctrl.confirmPassword" placeholder="{{ 'CONFIRM_LOGIN_PASSWORD' | translate }}">
+                <input type="text" ng-model="ctrl.loginPassword" class="margin" placeholder-translate="Login password">
+                <input type="text" ng-model="ctrl.confirmPassword" placeholder-translate="Confirm login password">
             </div>
         </div>
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>{{ 'USER_STORAGE' | translate }}</label>
+                <label translate translate-context="Title">User storage</label>
             </div>
             <div class="col-2-3">
-                <input type="text" ng-model="ctrl.quota" class="inline" placeholder="Storage as MB (Mega Byte)">
+                <input type="text" ng-model="ctrl.quota" class="inline" placeholder-translate="Storage as MB">
                 <span class="pm_select inline mini">
                     <select ng-model="ctrl.unit" ng-options="unit.label for unit in ctrl.units"></select>
                     <i class="fa fa-angle-down"></i>
                 </span>
                 <p class="alert alert-info">
-                    Your Organization has <strong>{{ (ctrl.organization.MaxSpace - ctrl.organization.UsedSpace) | humanSize }} left</strong>.
+                    Your organization has <strong>{{ (ctrl.organization.MaxSpace - ctrl.organization.UsedSpace) | humanSize }} left</strong>.
                 </p>
             </div>
         </div>
         <div class="pm_grid">
             <div class="col-1-3">
-                <label>{{ 'PRIVATE_USER' | translate }}</label>
+                <label translate translate-context="Title">Private user</label>
             </div>
             <div class="col-2-3">
                 <label>
-                    <input type="checkbox" ng-model="ctrl.private" /> {{ 'MAKE_USER_PRIVATE' | translate }}
+                    <input type="checkbox" ng-model="ctrl.private" />
+                    <span translate translate-context="Action" translate-comment="Form checkbox option">Make user private</span>
                 </label>
-                <p class="alert alert-info">{{ 'ORG_ADMINS_CANT_ACCESS_MESSAGE' | translate }}</p>
+                <p class="alert alert-info" translate translate-context="Info">Organization administrators cannot access the messages of private users.</p>
             </div>
         </div>
     </div>
 </div>
 <div class="modal-footer text-right">
-    <button type="button" class="pm_button" ng-click="ctrl.cancel()">{{ 'CANCEL' | translate }}</button>
-    <button type="button" class="pm_button primary" ng-click="ctrl.next()">{{ 'NEXT' | translate }}</button>
+    <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+    <button type="button" class="pm_button primary" ng-click="ctrl.next()" translate translate-context="Action">Next</button>
 </div>

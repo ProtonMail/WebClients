@@ -1,4 +1,4 @@
-angular.module("proton.transformation", [])
+angular.module('proton.transformation', [])
 
 .directive('transformLinks', function($timeout) {
     return {
@@ -11,13 +11,63 @@ angular.module("proton.transformation", [])
                     if(links.length > 0) {
                         links.attr('target','_blank').attr('rel', 'noreferrer');
                     }
-                }, 0, false);
+                }, 250, false);
             });
         }
     };
 })
 
-.directive('hideFirstBlockquote', function($timeout, $translate) {
+.directive('mailTo', function($timeout, $rootScope, regexEmail, Message) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attributes) {
+            var links;
+            var onClick = function(event) {
+                event.preventDefault();
+                var emails = event.target.getAttribute('href').match(regexEmail);
+
+                if (emails) {
+                    var message = new Message();
+                    var ToList = [];
+
+                    ToList.push({
+                        Address: emails[0],
+                        Name: emails[0]
+                    });
+
+                    _.defaults(message, {
+                        ToList: ToList,
+                        CCList: [],
+                        BCCList: [],
+                        Subject: '',
+                        PasswordHint: '',
+                        Attachments: []
+                    });
+
+                    $rootScope.$broadcast('loadMessage', message);
+                }
+            };
+
+            scope.$watch(attributes.ngBindHtml, function(newValue, oldValue) {
+                $timeout(function() {
+                    links = angular.element(element).find('a[href^=mailto]');
+
+                    if (links) {
+                        angular.element(links).on('click', onClick);
+                    }
+                }, 250, false);
+            });
+
+            scope.$on('$destroy', function(event) {
+                if (links) {
+                    angular.element(links).off('click', onClick);
+                }
+            });
+        }
+    };
+})
+
+.directive('hideFirstBlockquote', function($timeout, gettextCatalog) {
     return {
         restrict: 'A',
         link: function(scope, element, attributes) {
@@ -39,12 +89,11 @@ angular.module("proton.transformation", [])
                 $timeout(function() {
                     var blockquote = jQuery(element).find(quotes).first(); // Reduce the set of matched elements to the first in the set.
                     var parent = angular.element(blockquote).parent().clone(); // Clone the parent of the current blockquote
+                    var textSplitted = parent.text().replace(/\s+/g, '').split(blockquote.text().replace(/\s+/g, ''));
 
-                    parent.find(quotes).remove();
-
-                    if (parent.text().replace(/\s+/g, '').length > 0) {
+                    if (angular.isArray(textSplitted) && textSplitted.length > 0 && textSplitted[0].length > 0) {
                         var button = angular.element('<button/>', {
-                            title: $translate.instant('SHOW_PREVIOUS_MESSAGE'),
+                            title: gettextCatalog.getString('Show previous message', null, 'Title'),
                             class: 'fa fa-ellipsis-h pm_button more',
                             click: function () {
                                 if(angular.element(blockquote).is(':visible')) {
@@ -82,7 +131,7 @@ angular.module("proton.transformation", [])
                         // Stop searching of blockquotes
                         stopObserving();
                     }
-                }, 0, false);
+                }, 250, false);
             });
         }
     };

@@ -7,7 +7,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $state,
     $stateParams,
     $timeout,
-    $translate,
+    gettextCatalog,
     $q,
     action,
     authentication,

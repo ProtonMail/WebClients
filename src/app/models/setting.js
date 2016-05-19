@@ -49,6 +49,9 @@ angular.module('proton.models.setting', [])
         },
         invoiceText: function(params) {
             return $http.put(url.get() + '/settings/invoicetext', params);
+        },
+        alsoArchive: function(params) {
+            return $http.put(url.get() + '/settings/alsoarchive', params);
         }
     };
 
