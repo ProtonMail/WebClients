@@ -35,8 +35,6 @@ angular.module("proton.controllers.Auth", [
             alert(err);
         }
     }
-
-    notify.permissionLevel();
     
     var clearErrors = function() {
         $scope.error = null;

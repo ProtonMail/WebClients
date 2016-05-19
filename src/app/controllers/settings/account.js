@@ -19,14 +19,25 @@ angular.module('proton.controllers.Settings')
     Setting,
     Organization,
     tools,
-    User
+    User,
+    desktopNotifications
 ) {
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;
+    $scope.desktopNotifications = window.notify.permissionLevel();
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.tools = tools;
+
+    $scope.enableDesktopNotifications = function() {
+        window.notify.requestPermission( function() {
+            console.log($scope.desktopNotifications);
+            $scope.desktopNotifications = window.notify.permissionLevel();
+            $scope.$apply();
+            console.log($scope.desktopNotifications);
+        });
+    };
 
     $timeout(function() {
         if(angular.isDefined(authentication.user.Signature)) {
