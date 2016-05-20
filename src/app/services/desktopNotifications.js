@@ -1,7 +1,7 @@
 angular.module("proton.desktopNotifications", [])
 .service("desktopNotifications", function () {
 
-    notification = {
+    var notification = {
         supported: function() {
             return window.notify.isSupported;
         },
