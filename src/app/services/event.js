@@ -15,6 +15,7 @@ angular.module("proton.event", ["proton.constants"])
 		cacheCounters,
 		CONSTANTS,
 		Contact,
+		desktopNotifications,
 		Events,
 		Label,
 		notify,
@@ -218,6 +219,18 @@ angular.module("proton.event", ["proton.constants"])
 					cache.events(events, true);
 				}
 			},
+			manageDesktopNotifications: function(messages) {
+				if (angular.isDefined(messages)) {
+					_.each(messages, function(message) {
+						if (message.Action === 1 && message.Message.Type === 0) {
+							var title = message.Message.Subject;
+							var params = {};
+
+							desktopNotifications.create(title, params);
+						}
+					});
+				}
+			},
 			manageStorage: function(storage) {
 				if(angular.isDefined(storage)) {
 					authentication.user.UsedSpace = storage;
@@ -308,6 +321,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
 					this.manageThreadings(data.Messages, data.Conversations);
+					this.manageDesktopNotifications(data.Messages);
 					this.manageMessageCounts(data.MessageCounts);
 					this.manageConversationCounts(data.ConversationCounts);
 					this.manageStorage(data.UsedSpace);
