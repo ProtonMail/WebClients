@@ -623,15 +623,15 @@ msgid "Authentication Logs"
 msgstr ""
 
 #. form option
-#: src/app/templates/views/account.tpl.html:262
+#: src/app/templates/views/account.tpl.html:263
 msgctxt "Action"
 msgid "Auto"
 msgstr ""
 
 #. Section heading
 #. Settings/Account page form heading for enabling or disabling autosave contacts
-#: src/app/templates/views/account.tpl.html:227
-#: src/app/templates/views/account.tpl.html:230
+#: src/app/templates/views/account.tpl.html:228
+#: src/app/templates/views/account.tpl.html:231
 msgctxt "Title"
 msgid "Automatically save contacts"
 msgstr ""
@@ -999,18 +999,18 @@ msgstr ""
 msgid "Confirm mailbox password"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:196
-#: src/app/templates/views/account.tpl.html:199
+#: src/app/templates/views/account.tpl.html:197
+#: src/app/templates/views/account.tpl.html:200
 msgid "Confirm new mailbox Password"
 msgstr ""
 
 #. form label / heading for confirming new login password
-#: src/app/templates/views/account.tpl.html:140
+#: src/app/templates/views/account.tpl.html:141
 msgctxt "Title"
 msgid "Confirm new password"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:143
+#: src/app/templates/views/account.tpl.html:144
 msgid "Confirm new password"
 msgstr ""
 
@@ -1171,35 +1171,35 @@ msgstr ""
 msgid "Currency"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:166
+#: src/app/templates/views/account.tpl.html:167
 #: src/app/templates/views/account.tpl.html:50
 msgid "Current login password"
 msgstr ""
 
 #. form heading for current login password
 #. form label for entering current login password
-#: src/app/templates/views/account.tpl.html:163
+#: src/app/templates/views/account.tpl.html:164
 #: src/app/templates/views/account.tpl.html:47
 msgctxt "Title"
 msgid "Current login password"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:177
+#: src/app/templates/views/account.tpl.html:178
 msgid "Current mailbox password"
 msgstr ""
 
 #. form heading for current mailbox password
-#: src/app/templates/views/account.tpl.html:174
+#: src/app/templates/views/account.tpl.html:175
 msgctxt "Title"
 msgid "Current mailbox password"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:121
+#: src/app/templates/views/account.tpl.html:122
 msgid "Current password"
 msgstr ""
 
 #. current login password for heading for changing login password
-#: src/app/templates/views/account.tpl.html:118
+#: src/app/templates/views/account.tpl.html:119
 msgctxt "Title"
 msgid "Current password"
 msgstr ""
@@ -1379,7 +1379,7 @@ msgid "Delete"
 msgstr ""
 
 #: src/app/templates/modals/deleteAccount.tpl.html:6
-#: src/app/templates/views/account.tpl.html:283
+#: src/app/templates/views/account.tpl.html:284
 msgctxt "Title"
 msgid "Delete account"
 msgstr ""
@@ -1430,7 +1430,7 @@ msgctxt "Title"
 msgid "Delete payment method"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:284
+#: src/app/templates/views/account.tpl.html:285
 msgctxt "Action"
 msgid "Delete your account"
 msgstr ""
@@ -1467,7 +1467,7 @@ msgstr ""
 #. address state badge
 #. form option
 #: src/app/controllers/settings/security.js:106
-#: src/app/templates/views/account.tpl.html:242
+#: src/app/templates/views/account.tpl.html:243
 #: src/app/templates/views/addresses.tpl.html:51
 #: src/app/templates/views/domains.tpl.html:150
 #: src/app/templates/views/keys.tpl.html:16
@@ -1713,7 +1713,7 @@ msgctxt "Info"
 msgid "Email available"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:253
+#: src/app/templates/views/account.tpl.html:254
 msgctxt "Title"
 msgid "Email images"
 msgstr ""
@@ -1769,7 +1769,7 @@ msgid "Enabled"
 msgstr ""
 
 #. form option
-#: src/app/templates/views/account.tpl.html:236
+#: src/app/templates/views/account.tpl.html:237
 #: src/app/templates/views/addresses.tpl.html:30
 #: src/app/templates/views/domains.tpl.html:149
 #: src/app/templates/views/keys.tpl.html:15
@@ -2039,11 +2039,11 @@ msgctxt "Title"
 msgid "Feedback form"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:123
-#: src/app/templates/views/account.tpl.html:134
-#: src/app/templates/views/account.tpl.html:145
-#: src/app/templates/views/account.tpl.html:168
-#: src/app/templates/views/account.tpl.html:179
+#: src/app/templates/views/account.tpl.html:124
+#: src/app/templates/views/account.tpl.html:135
+#: src/app/templates/views/account.tpl.html:146
+#: src/app/templates/views/account.tpl.html:169
+#: src/app/templates/views/account.tpl.html:180
 msgctxt "Error"
 msgid "Field required"
 msgstr ""
@@ -2278,8 +2278,8 @@ msgstr ""
 
 #. link to learn more
 #. link to learn more about changing your mailbox password
-#: src/app/templates/views/account.tpl.html:215
-#: src/app/templates/views/account.tpl.html:271
+#: src/app/templates/views/account.tpl.html:216
+#: src/app/templates/views/account.tpl.html:272
 #: src/app/templates/views/account.tpl.html:81
 msgctxt "Action"
 msgid "How does this work?"
@@ -2652,7 +2652,7 @@ msgstr ""
 
 #. change login password heading
 #: src/app/templates/modals/user/member.tpl.html:16
-#: src/app/templates/views/account.tpl.html:114
+#: src/app/templates/views/account.tpl.html:115
 #: src/app/templates/views/step1.tpl.html:34
 msgctxt "Title"
 msgid "Login password"
@@ -2688,7 +2688,7 @@ msgid "Mailbox password"
 msgstr ""
 
 #. form heading for changing mailbox password
-#: src/app/templates/views/account.tpl.html:159
+#: src/app/templates/views/account.tpl.html:160
 #: src/app/templates/views/step1.tpl.html:47
 msgctxt "Title"
 msgid "Mailbox password"
@@ -2742,7 +2742,7 @@ msgid "Manage your email with labels"
 msgstr ""
 
 #. form option
-#: src/app/templates/views/account.tpl.html:267
+#: src/app/templates/views/account.tpl.html:268
 msgctxt "Action"
 msgid "Manual"
 msgstr ""
@@ -3006,12 +3006,12 @@ msgctxt "Action"
 msgid "Need help?"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:185
+#: src/app/templates/views/account.tpl.html:186
 msgctxt "Title"
 msgid "New mailbox password"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:188
+#: src/app/templates/views/account.tpl.html:189
 #: src/app/templates/views/reset-mailbox-password.tpl.html:39
 msgid "New mailbox password"
 msgstr ""
@@ -3022,12 +3022,12 @@ msgid "New message"
 msgstr ""
 
 #. form heading for new login password
-#: src/app/templates/views/account.tpl.html:129
+#: src/app/templates/views/account.tpl.html:130
 msgctxt "Title"
 msgid "New password"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:132
+#: src/app/templates/views/account.tpl.html:133
 msgid "New password"
 msgstr ""
 
@@ -3809,8 +3809,8 @@ msgstr ""
 #: src/app/templates/modals/label.tpl.html:35
 #: src/app/templates/partials/composer.tpl.html:243
 #: src/app/templates/partials/composer.tpl.html:245
-#: src/app/templates/views/account.tpl.html:152
-#: src/app/templates/views/account.tpl.html:208
+#: src/app/templates/views/account.tpl.html:153
+#: src/app/templates/views/account.tpl.html:209
 #: src/app/templates/views/account.tpl.html:36
 #: src/app/templates/views/account.tpl.html:61
 #: src/app/templates/views/appearance.tpl.html:95
@@ -3995,7 +3995,7 @@ msgctxt "Action"
 msgid "Show details"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:257
+#: src/app/templates/views/account.tpl.html:258
 msgctxt "Title"
 msgid "Show images"
 msgstr ""

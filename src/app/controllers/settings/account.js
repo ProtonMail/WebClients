@@ -25,35 +25,29 @@ angular.module('proton.controllers.Settings')
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;
-    $scope.desktopNotifications = desktopNotifications.status();
+    $scope.desktopNotificationsStatus = desktopNotifications.status();
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.tools = tools;
-
-    $scope.enableDesktopNotifications = function() {
-        $scope.showNotificationArrow = true;
-        $timeout( function() {
-            $scope.showNotificationArrow = false;
-        }, 12000);
-        desktopNotifications.request( function() {
-            $scope.showNotificationArrow = false;
-            $scope.desktopNotifications = desktopNotifications.status();
-            $scope.$apply();
-        });
-    };
-
-    $scope.testNotification = function() {
-        desktopNotifications.create('You have a new email', {
-            body: 'Quarterly Operations Update - Q1 2016 ',
-            icon: '/assets/img/notification-badge.gif'
-        });
-    }; 
 
     $timeout(function() {
         if(angular.isDefined(authentication.user.Signature)) {
             $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
         }
     }, 1000);
+
+    $scope.enableDesktopNotifications = function() {
+        desktopNotifications.request(function() {
+            $scope.desktopNotificationsStatus = desktopNotifications.status();
+        });
+    };
+
+    $scope.testDesktopNotification = function() {
+        desktopNotifications.create(gettextCatalog.getString('You have a new email', null, 'Info'), {
+            body: 'Quarterly Operations Update - Q1 2016 ',
+            icon: '/assets/img/notification-badge.gif'
+        });
+    };
 
     $scope.saveNotification = function(form) {
         if (angular.isUndefined($scope.noticeePassword)) {
