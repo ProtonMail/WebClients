@@ -3,20 +3,21 @@ angular.module("proton.event", ["proton.constants"])
 		$cookies,
 		$location,
 		$log,
+		$q,
 		$rootScope,
 		$state,
 		$stateParams,
 		$timeout,
 		$window,
-		$q,
 		authentication,
 		cache,
-		generateModal,
 		cacheCounters,
 		CONSTANTS,
 		Contact,
 		desktopNotifications,
 		Events,
+		generateModal,
+		gettextCatalog,
 		Label,
 		notify,
 		pmcw
@@ -223,10 +224,10 @@ angular.module("proton.event", ["proton.constants"])
 				if (angular.isDefined(messages)) {
 					_.each(messages, function(message) {
 						if (message.Action === 1 && message.Message.Type === 0) {
-							var title = message.Message.Subject;
-							var params = {};
-
-							desktopNotifications.create(title, params);
+							desktopNotifications.create(gettextCatalog.getString('You have a new email', null, 'Info'), {
+					            body: message.Message.Subject,
+					            icon: '/assets/img/notification-badge.gif'
+					        });
 						}
 					});
 				}
