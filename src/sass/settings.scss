@@ -1,3 +1,32 @@
+
+
+#notificationArrow {
+    position: fixed;
+    z-index: 99;
+    visibility: hidden; // default
+    color: $primary;
+    text-shadow: 0 1px 1px rgba(0,0,0,.75);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+    -webkit-animation-name: tada;
+  animation-name: tada;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.ua-chrome #notificationArrow {
+    left: 360px;
+    top: 110px;
+    visibility: visible;
+}
+.ua-firefox #notificationArrow {
+    left: 300px;
+    top: 160px;
+    visibility: visible;
+}
 #pm_contacts {
     height: 100%;
     .wrap {

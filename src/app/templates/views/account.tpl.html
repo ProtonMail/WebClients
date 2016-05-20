@@ -1,3 +1,4 @@
+<span class="fa fa-arrow-up fa-3x animated bounce" ng-show="showNotificationArrow" id="notificationArrow" ng-click="showNotificationArrow = false"></span>
 <div id="pm_settings">
 
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
@@ -91,12 +92,16 @@
                             <p class="alert alert-info" style="margin:0" ng-show="desktopNotifications === 'granted'">
                                 Desktop notifications are currently <strong>enabled</strong>. To disable them, click <a href="#">here</a>.
                             </p>
-                            <p class="alert alert-info" style="margin:0" ng-show="desktopNotifications !== 'granted'">
+                            <p class="alert alert-info" style="margin:0" ng-show="desktopNotifications === 'denied'">
+                                Desktop notifications are currently <strong>disabled</strong>. To enable them, click <a href="#">here</a>.
+                            </p>
+                            <p class="alert alert-info" style="margin:0" ng-show="desktopNotifications === 'default'">
                                 To enable desktop notifications <a href="#" ng-click="enableDesktopNotifications()">click here</a>.
                             </p>
                             <p>
                                 <a href="https://protonmail.com/blog/desktop-notifications/" target="_blank" class="pm_button link" translation-comment="link to learn more about desktop notifications" translate-context="Action" translate>What is this?</a>
                             </p>
+                            <p><a href="#" ng-click="testNotification()">test notification</a></p>
                         </div>
                     </div>
                 </form>

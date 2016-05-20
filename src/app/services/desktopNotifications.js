@@ -2,21 +2,20 @@ angular.module("proton.desktopNotifications", [])
 .service("desktopNotifications", function () {
 
     notification = {
+        supported: function() {
+            return window.notify.isSupported;
+        },
         status: function() { 
-            return;
+            return window.notify.permissionLevel();
         },
-        request: function() {
-            return;
-        },
-        activate: function() {
-            return;
-        },
-        deactivate: function() {
-            return;
+        request: function( callback ) {
+            window.notify.requestPermission( callback );
         },
         create: function(title, params) {
-            return;
+            window.notify.createNotification(title, params);
         }
     };
+
+    return notification;
 
 });

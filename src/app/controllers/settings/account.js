@@ -25,19 +25,29 @@ angular.module('proton.controllers.Settings')
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;
-    $scope.desktopNotifications = window.notify.permissionLevel();
+    $scope.desktopNotifications = desktopNotifications.status();
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.tools = tools;
 
     $scope.enableDesktopNotifications = function() {
-        window.notify.requestPermission( function() {
-            console.log($scope.desktopNotifications);
-            $scope.desktopNotifications = window.notify.permissionLevel();
+        $scope.showNotificationArrow = true;
+        $timeout( function() {
+            $scope.showNotificationArrow = false;
+        }, 12000);
+        desktopNotifications.request( function() {
+            $scope.showNotificationArrow = false;
+            $scope.desktopNotifications = desktopNotifications.status();
             $scope.$apply();
-            console.log($scope.desktopNotifications);
         });
     };
+
+    $scope.testNotification = function() {
+        desktopNotifications.create('You have a new email', {
+            body: 'Quarterly Operations Update - Q1 2016 ',
+            icon: '/assets/img/notification-badge.gif'
+        });
+    }; 
 
     $timeout(function() {
         if(angular.isDefined(authentication.user.Signature)) {
