@@ -19,11 +19,13 @@ angular.module('proton.controllers.Settings')
     Setting,
     Organization,
     tools,
-    User
+    User,
+    desktopNotifications
 ) {
     $scope.displayName = authentication.user.DisplayName;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;
+    $scope.desktopNotificationsStatus = desktopNotifications.status();
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.tools = tools;
@@ -33,6 +35,19 @@ angular.module('proton.controllers.Settings')
             $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
         }
     }, 1000);
+
+    $scope.enableDesktopNotifications = function() {
+        desktopNotifications.request(function() {
+            $scope.desktopNotificationsStatus = desktopNotifications.status();
+        });
+    };
+
+    $scope.testDesktopNotification = function() {
+        desktopNotifications.create(gettextCatalog.getString('You have a new email', null, 'Info'), {
+            body: 'Quarterly Operations Update - Q1 2016 ',
+            icon: '/assets/img/notification-badge.gif'
+        });
+    };
 
     $scope.saveNotification = function(form) {
         if (angular.isUndefined($scope.noticeePassword)) {

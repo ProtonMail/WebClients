@@ -3,19 +3,21 @@ angular.module("proton.event", ["proton.constants"])
 		$cookies,
 		$location,
 		$log,
+		$q,
 		$rootScope,
 		$state,
 		$stateParams,
 		$timeout,
 		$window,
-		$q,
 		authentication,
 		cache,
-		generateModal,
 		cacheCounters,
 		CONSTANTS,
 		Contact,
+		desktopNotifications,
 		Events,
+		generateModal,
+		gettextCatalog,
 		Label,
 		notify,
 		pmcw
@@ -218,6 +220,18 @@ angular.module("proton.event", ["proton.constants"])
 					cache.events(events, true);
 				}
 			},
+			manageDesktopNotifications: function(messages) {
+				if (angular.isDefined(messages)) {
+					_.each(messages, function(message) {
+						if (message.Action === 1 && message.Message.Type === 0) {
+							desktopNotifications.create(gettextCatalog.getString('You have a new email', null, 'Info'), {
+					            body: message.Message.Subject,
+					            icon: '/assets/img/notification-badge.gif'
+					        });
+						}
+					});
+				}
+			},
 			manageStorage: function(storage) {
 				if(angular.isDefined(storage)) {
 					authentication.user.UsedSpace = storage;
@@ -308,6 +322,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
 					this.manageThreadings(data.Messages, data.Conversations);
+					this.manageDesktopNotifications(data.Messages);
 					this.manageMessageCounts(data.MessageCounts);
 					this.manageConversationCounts(data.ConversationCounts);
 					this.manageStorage(data.UsedSpace);

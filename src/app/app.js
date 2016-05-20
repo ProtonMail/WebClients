@@ -58,6 +58,7 @@ angular.module('proton', [
     'proton.networkActivity',
     'proton.pmcw',
     'proton.tools',
+    'proton.desktopNotifications',
 
     // Directives
     'proton.autocomplete',

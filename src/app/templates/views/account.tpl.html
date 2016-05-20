@@ -82,6 +82,20 @@
                         </div>
                     </div>
                     <p ng-show="!!!tools.validEmail(notificationEmail) && notificationEmail.trim()!==''" class="text-danger" translation-comment="error when notification email is empty or not a valid email format" translate-context="Error" translate>Invalid email.</p>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="clearfix">
+                        <div class="col left">
+                            <label translate-context="Title" translate translate-comment="form heading for changing desktop notifications">Desktop notifications</label>
+                        </div>
+                        <div class="col right">
+                            <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'granted'">Desktop notifications are currently <strong>enabled</strong>. To disable them, click <a href="#" ng-click="disableDesktopNotifications()">click here</a>.<br /><a href="#" ng-click="testDesktopNotification()">Test notification</a></p>
+                            <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'denied'">Desktop notifications are currently <strong>disabled</strong>. To enable them, <a href="#" ng-click="enableDesktopNotifications()">click here</a>.</p>
+                            <p class="alert alert-info" ng-show="desktopNotificationsStatus === 'default'">To enable desktop notifications, <a href="#" ng-click="enableDesktopNotifications()">click here</a>.</p>
+                            <p>
+                                <a href="https://protonmail.com/blog/desktop-notifications/" target="_blank" class="pm_button link" translation-comment="link to learn more about desktop notifications" translate-context="Action" translate>What is this?</a>
+                            </p>
+                        </div>
+                    </div>
                 </form>
             </section>
 

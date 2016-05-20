@@ -18,7 +18,8 @@ angular.module("proton.controllers.Secured", [])
     feedbackModal,
     generateModal,
     organization,
-    tools
+    tools,
+    desktopNotifications
 ) {
     var dirtyAddresses = [];
 
@@ -43,6 +44,9 @@ angular.module("proton.controllers.Secured", [])
 
     // Set language used for the application
     gettextCatalog.setCurrentLanguage(authentication.user.Language);
+
+    // Request for desktop notification
+    desktopNotifications.request();
 
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {

@@ -35,7 +35,7 @@ angular.module("proton.controllers.Auth", [
             alert(err);
         }
     }
-
+    
     var clearErrors = function() {
         $scope.error = null;
         notify.closeAll();
