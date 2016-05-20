@@ -16,5 +16,4 @@ angular.module('proton.desktopNotifications', [])
     };
 
     return notification;
-
 });
