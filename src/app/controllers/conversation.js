@@ -17,6 +17,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     Conversation,
     networkActivityTracker,
     notify,
+    hotkeyModal,
     tools
 ) {
     var scrollPromise;
@@ -32,7 +33,42 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $rootScope.showWelcome = false;
     $scope.inTrash = $state.is('secured.trash.view');
 
-    // Listeners
+    Mousetrap.bind('up up down down left right left right b a enter', function() {
+        console.log('konami code');
+    });
+
+    Mousetrap.bind(['R', 'r'], function() {
+        $scope.read();
+    });
+    Mousetrap.bind(['U', 'u'], function() {
+        $scope.unread();
+    });
+    Mousetrap.bind(['space'], function() {
+        $scope.toggleStar();
+    });
+    Mousetrap.bind(['T', 't'], function() {
+        $scope.move('trash');
+    });
+    Mousetrap.bind(['A', 'a'], function() {
+        $scope.move('archive');
+    });
+    Mousetrap.bind(['S', 's'], function() {
+        $scope.move('spam');
+    });
+    Mousetrap.bind(['?'], function() {
+        hotkeyModal.activate({
+            params: {
+                confirm: function() {
+                    hotkeyModal.deactivate();
+                },
+                cancel: function() {
+                    hotkeyModal.deactivate();
+                }
+            }
+        });
+    });
+
+    // Listeners 
     $scope.$on('refreshConversation', function(event) {
         $scope.refreshConversation();
     });

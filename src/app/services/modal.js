@@ -1754,6 +1754,25 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('hotkeyModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/hotkey.tpl.html',
+        controller: function(params) {
+            this.confirm = function() {
+                if (angular.isDefined(params.confirm) && angular.isFunction(params.confirm)) {
+                    params.confirm();
+                }
+            };
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+        }
+    });
+})
+
 .factory('filterAddressModal', function($timeout, pmModal, IncomingDefault, networkActivityTracker, notify) {
     return pmModal({
         controllerAs: 'ctrl',
