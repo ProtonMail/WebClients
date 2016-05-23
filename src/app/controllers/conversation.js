@@ -33,8 +33,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $rootScope.showWelcome = false;
     $scope.inTrash = $state.is('secured.trash.view');
 
-    Mousetrap.bind('up up down down left right left right b a enter', function() {
-        console.log('konami code');
+    Mousetrap.bind('up up down down left right left right b a', function() {
+        console.log('konami code, this doesnt do anything yet :)');
     });
 
     Mousetrap.bind(['R', 'r'], function() {
