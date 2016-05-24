@@ -478,8 +478,7 @@ angular.module("proton.modals", [])
                         this.choice = 'paypal';
                         this.initPaypal();
                     }
-                }
-                else {
+                } else {
                     this.choice = 'none';
                 }
             }.bind(this);
