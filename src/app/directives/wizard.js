@@ -1,22 +1,35 @@
 angular.module('proton.wizard', [])
 
-.directive('wizard', function($rootScope, $timeout, $state, welcomeModal, monetizeModal, donateModal, $window) {
+.directive('wizard', function($rootScope, $timeout, $state, welcomeModal, monetizeModal, donateModal, $window, Payment, notify, gettextCatalog) {
     return {
         restrict: 'E',
         replace: true,
         templateUrl: 'templates/partials/wizard.tpl.html',
         link: function(scope, element, attrs) {
             var donate = function(amount, currency) {
-                donateModal.activate({
-                    params: {
-                        amount: amount,
-                        currency: currency,
-                        close: function() {
-                            // Close donate modal
-                            donateModal.deactivate();
-                            // Start tour
-                            scope.tourStart();
+                Payment.status()
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        if (result.data.Stripe === true) {
+                            donateModal.activate({
+                                params: {
+                                    amount: amount,
+                                    currency: currency,
+                                    close: function() {
+                                        // Close donate modal
+                                        donateModal.deactivate();
+                                        // Start tour
+                                        scope.tourStart();
+                                    }
+                                }
+                            });
+                        } else {
+                            notify({message: gettextCatalog.getString('Donations are currently not available, please try again later', null, 'Info')});
                         }
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    } else {
+                        notify({message: 'Request error', classes: 'notification-danger'});
                     }
                 });
             };

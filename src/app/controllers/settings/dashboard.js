@@ -289,23 +289,27 @@ angular.module("proton.controllers.Settings")
      * Open donate modal
      */
     $scope.donate = function() {
-        networkActivityTracker.track(
-            Payment.methods()
-            .then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    donateModal.activate({
-                        params: {
-                            amount: 25,
-                            methods: result.data.PaymentMethods,
-                            close: function(donate) {
-                                // Close donate modal
-                                donateModal.deactivate();
+        if (status.data.Stripe === true) {
+            networkActivityTracker.track(
+                Payment.methods()
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        donateModal.activate({
+                            params: {
+                                amount: 25,
+                                methods: result.data.PaymentMethods,
+                                close: function(donate) {
+                                    // Close donate modal
+                                    donateModal.deactivate();
+                                }
                             }
-                        }
-                    });
-                }
-            })
-        );
+                        });
+                    }
+                })
+            );
+        } else {
+            notify({message: gettextCatalog.getString('Donations are currently not available, please try again later', null, 'Info')});
+        }
     };
 
     /**
