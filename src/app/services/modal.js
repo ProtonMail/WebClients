@@ -467,17 +467,22 @@ angular.module("proton.modals", [])
             this.currency = params.currency;
             this.methods = params.methods;
             this.invoice = params.invoice;
+            this.choices = [];
 
             // Functions
             this.initialization = function() {
                 if (this.amountDue > 0) {
-                    if (this.methods.length > 0) {
-                        this.choice = 'card';
+                    if (params.status.Stripe === true && this.methods.length > 0) {
                         this.method = this.methods[0];
-                    } else {
-                        this.choice = 'paypal';
-                        this.initPaypal();
+                        this.choices.push({value: 'card', label: gettextCatalog.getString('Credit card', null)});
                     }
+
+                    if (params.status.Paypal === true && ($.browser.msie !== true || $.browser.edge === true)) { // IE11 doesn't support PayPal
+                        this.choices.push({value: 'paypal', label: 'PayPal'});
+                    }
+
+                    this.choice = this.choices[0];
+                    this.changeChoice();
                 } else {
                     this.choice = 'none';
                 }
@@ -511,6 +516,12 @@ angular.module("proton.modals", [])
 
             this.cancel = function() {
                 params.close();
+            };
+
+            this.changeChoice = function() {
+                if (this.choice.value === 'paypal') {
+                    this.initPaypal();
+                }
             };
 
             this.initPaypal = function() {

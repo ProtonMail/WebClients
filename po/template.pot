@@ -299,13 +299,13 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. notification
-#: src/app/services/modal.js:1054
+#: src/app/services/modal.js:1062
 msgctxt "Info"
 msgid "Address added"
 msgstr ""
 
-#: src/app/services/modal.js:1062
-#: src/app/services/modal.js:1065
+#: src/app/services/modal.js:1070
+#: src/app/services/modal.js:1073
 msgctxt "Error"
 msgid "Address creation failed"
 msgstr ""
@@ -562,7 +562,7 @@ msgctxt "Info"
 msgid "Are you sure you want to delete this label?"
 msgstr ""
 
-#: src/app/controllers/settings/payments.js:97
+#: src/app/controllers/settings/payments.js:98
 msgctxt "Info"
 msgid "Are you sure you want to delete this payment method?"
 msgstr ""
@@ -1004,13 +1004,13 @@ msgstr ""
 msgid "Confirm new mailbox Password"
 msgstr ""
 
-#: src/app/templates/views/account.tpl.html:136
-msgid "Confirm new password"
-msgstr ""
-
 #. form label / heading for confirming new login password
 #: src/app/templates/views/account.tpl.html:133
 msgctxt "Title"
+msgid "Confirm new password"
+msgstr ""
+
+#: src/app/templates/views/account.tpl.html:136
 msgid "Confirm new password"
 msgstr ""
 
@@ -1106,7 +1106,7 @@ msgstr ""
 msgid "Coupon"
 msgstr ""
 
-#: src/app/services/modal.js:861
+#: src/app/services/modal.js:869
 msgctxt "Info"
 msgid "Coupon accepted"
 msgstr ""
@@ -1161,7 +1161,8 @@ msgctxt "Title"
 msgid "Credit card"
 msgstr ""
 
-#: src/app/services/modal.js:630
+#: src/app/services/modal.js:473
+#: src/app/services/modal.js:638
 #: src/app/templates/modals/pay.tpl.html:32
 msgid "Credit card"
 msgstr ""
@@ -1424,7 +1425,7 @@ msgctxt "Title"
 msgid "Delete label"
 msgstr ""
 
-#: src/app/controllers/settings/payments.js:96
+#: src/app/controllers/settings/payments.js:97
 msgctxt "Title"
 msgid "Delete payment method"
 msgstr ""
@@ -1534,7 +1535,7 @@ msgstr ""
 msgid "Domain name"
 msgstr ""
 
-#: src/app/services/modal.js:1058
+#: src/app/services/modal.js:1066
 msgctxt "Error"
 msgid "Domain not found"
 msgstr ""
@@ -1923,8 +1924,8 @@ msgid "Error during label request"
 msgstr ""
 
 #: src/app/controllers/settings/dashboard.js:337
-#: src/app/services/modal.js:687
-#: src/app/services/modal.js:690
+#: src/app/services/modal.js:695
+#: src/app/services/modal.js:698
 msgctxt "Error"
 msgid "Error during organization request"
 msgstr ""
@@ -1974,7 +1975,7 @@ msgctxt "Error"
 msgid "Error processing payment."
 msgstr ""
 
-#: src/app/services/modal.js:1567
+#: src/app/services/modal.js:1575
 msgctxt "Error"
 msgid "Error while processing donation."
 msgstr ""
@@ -2401,7 +2402,7 @@ msgstr ""
 msgid "Insert link"
 msgstr ""
 
-#: src/app/services/modal.js:858
+#: src/app/services/modal.js:866
 msgctxt "Error"
 msgid "Invalid coupon"
 msgstr ""
@@ -2963,7 +2964,7 @@ msgctxt "Title"
 msgid "MX Record"
 msgstr ""
 
-#: src/app/services/modal.js:620
+#: src/app/services/modal.js:628
 msgctxt "Title"
 msgid "My organization"
 msgstr ""
@@ -3376,11 +3377,11 @@ msgctxt "Title"
 msgid "Payment details"
 msgstr ""
 
-#: src/app/controllers/settings/payments.js:110
+#: src/app/controllers/settings/payments.js:111
 msgid "Payment method deleted"
 msgstr ""
 
-#: src/app/controllers/settings/payments.js:84
+#: src/app/controllers/settings/payments.js:85
 msgid "Payment method updated"
 msgstr ""
 
@@ -4444,8 +4445,8 @@ msgstr ""
 #: src/app/controllers/settings/labels.js:118
 #: src/app/controllers/settings/members.js:269
 #: src/app/controllers/settings/members.js:272
-#: src/app/controllers/settings/payments.js:88
-#: src/app/controllers/settings/payments.js:91
+#: src/app/controllers/settings/payments.js:89
+#: src/app/controllers/settings/payments.js:92
 msgctxt "Error"
 msgid "Unable to save your changes, please try again."
 msgstr ""
@@ -4926,7 +4927,7 @@ msgstr ""
 
 #: src/app/controllers/compose.js:572
 #: src/app/routes.js:551
-#: src/app/routes.js:870
+#: src/app/routes.js:873
 #: src/app/templates/views/payments.tpl.html:45
 msgctxt "Info"
 msgid "Your account currently has an overdue invoice. Please pay all unpaid invoices."
