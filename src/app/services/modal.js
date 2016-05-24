@@ -594,25 +594,10 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
-
-            // IE11 doesn't support PayPal
-            if ($.browser.msie === true && $.browser.edge !== true) {
-                this.choices = [
-                    {value: 'card', label: gettextCatalog.getString('Credit card', null)},
-                    {value: 'bitcoin', label: 'Bitcoin'}
-                ];
-            } else {
-                this.choices = [
-                    {value: 'card', label: gettextCatalog.getString('Credit card', null)},
-                    {value: 'paypal', label: 'PayPal'},
-                    {value: 'bitcoin', label: 'Bitcoin'}
-                ];
-            }
-
             // Variables
+            this.choices = [];
             this.paypalNetworkError = false;
             this.paypalAccessError = false;
-            this.choice = this.choices[0];
             this.displayCoupon = false;
             this.step = 'payment';
             this.methods = [];
@@ -636,12 +621,22 @@ angular.module("proton.modals", [])
             this.organizationName = gettextCatalog.getString('My organization', null, 'Title'); // TODO set this value for the business plan
 
             // Functions
-
             var initialization = function() {
                 if (params.methods.length > 0) {
                     this.methods = params.methods;
                     this.method = this.methods[0];
                 }
+
+                if (params.status.Stripe === true) {
+                    this.choices.push({value: 'card', label: gettextCatalog.getString('Credit card', null)});
+                }
+
+                if (params.status.Paypal === true && ($.browser.msie !== true || $.browser.edge === true)) { // IE11 doesn't support PayPal
+                    this.choices.push({value: 'paypal', label: 'PayPal'});
+                }
+
+                this.choices.push({value: 'bitcoin', label: 'Bitcoin'});
+                this.choice = this.choices[0];
 
                 if (angular.isDefined(params.choice)) {
                     this.choice = _.findWhere(this.choices, {value: params.choice});

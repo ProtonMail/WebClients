@@ -21,6 +21,7 @@ angular.module("proton.controllers.Settings")
     methods,
     monthly,
     pmcw,
+    status,
     subscription,
     supportModal,
     CONSTANTS,
@@ -442,6 +443,7 @@ angular.module("proton.controllers.Settings")
                                 plans: $scope.plans,
                                 valid: valid.data,
                                 choice: choice,
+                                status: status.data,
                                 methods: methods.data.PaymentMethods,
                                 change: function(subscription) {
                                     $scope.refresh();

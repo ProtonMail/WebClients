@@ -739,6 +739,9 @@ angular.module('proton.routes', [
             },
             methods: function(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
+            },
+            status: function(user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.status());
             }
         },
         views: {
