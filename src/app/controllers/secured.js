@@ -46,7 +46,7 @@ angular.module("proton.controllers.Secured", [])
     gettextCatalog.setCurrentLanguage(authentication.user.Language);
 
     // Request for desktop notification
-    desktopNotifications.request();
+    // desktopNotifications.request();
 
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
