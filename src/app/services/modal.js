@@ -623,6 +623,7 @@ angular.module("proton.modals", [])
             this.coupon = '';
             this.childWindow = null;
             this.countries = tools.countries;
+            this.status = params.status;
             this.country = _.findWhere(this.countries, {value: 'US'});
             this.plans = _.chain(params.plans)
                 .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
