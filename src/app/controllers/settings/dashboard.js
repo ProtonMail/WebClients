@@ -442,7 +442,7 @@ angular.module("proton.controllers.Settings")
                     if ($scope.total(plan, plan.Cycle) === valid.data.Amount) {
                         paymentModal.activate({
                             params: {
-                                create: $scope.organization === null,
+                                create: $scope.subscription.Name === 'free',
                                 planIDs: planIDs,
                                 plans: $scope.plans,
                                 valid: valid.data,
