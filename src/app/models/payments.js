@@ -25,6 +25,13 @@ angular.module("proton.models.payments", [])
             return $http.post(url.get() + '/payments/paypal', params);
         },
         /**
+         * Get payment method status
+         * @return {Promise}
+         */
+        status: function() {
+            return $http.get(url.get() + '/payments/status');
+        },
+        /**
          * Get invoices in reverse time order
          * @param {Object} params
          * @return {Promise}

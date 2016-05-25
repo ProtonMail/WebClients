@@ -21,6 +21,7 @@ angular.module("proton.controllers.Settings")
     methods,
     monthly,
     pmcw,
+    status,
     subscription,
     supportModal,
     CONSTANTS,
@@ -288,23 +289,27 @@ angular.module("proton.controllers.Settings")
      * Open donate modal
      */
     $scope.donate = function() {
-        networkActivityTracker.track(
-            Payment.methods()
-            .then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    donateModal.activate({
-                        params: {
-                            amount: 25,
-                            methods: result.data.PaymentMethods,
-                            close: function(donate) {
-                                // Close donate modal
-                                donateModal.deactivate();
+        if (status.data.Stripe === true) {
+            networkActivityTracker.track(
+                Payment.methods()
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        donateModal.activate({
+                            params: {
+                                amount: 25,
+                                methods: result.data.PaymentMethods,
+                                close: function(donate) {
+                                    // Close donate modal
+                                    donateModal.deactivate();
+                                }
                             }
-                        }
-                    });
-                }
-            })
-        );
+                        });
+                    }
+                })
+            );
+        } else {
+            notify({message: gettextCatalog.getString('Donations are currently not available, please try again later', null, 'Info')});
+        }
     };
 
     /**
@@ -437,11 +442,12 @@ angular.module("proton.controllers.Settings")
                     if ($scope.total(plan, plan.Cycle) === valid.data.Amount) {
                         paymentModal.activate({
                             params: {
-                                create: $scope.organization === null,
+                                create: $scope.organization.PlanName === 'free',
                                 planIDs: planIDs,
                                 plans: $scope.plans,
                                 valid: valid.data,
                                 choice: choice,
+                                status: status.data,
                                 methods: methods.data.PaymentMethods,
                                 change: function(subscription) {
                                     $scope.refresh();

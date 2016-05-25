@@ -28,24 +28,23 @@
                     <p class="alert alert-info" ng-show="ctrl.methods.length === 0" translate translate-context="Info">You need to add a credit card before to pay with it.</p>
                     <div class="margin pm_grid" ng-show="ctrl.currency === 'USD'">
                         <div class="col-1-2">
-                            <label>
-                                <input type="radio" ng-model="ctrl.choice" value="card" name="choices" ng-disabled="ctrl.methods.length === 0"> <span translate>Credit card</span>
-                            </label>
+                            <label for="paymentMethod" translate translate-context="Title" translate-comment="form label">Select payment method:</label>
                         </div>
                         <div class="col-1-2">
-                            <label>
-                                <input type="radio" ng-model="ctrl.choice" value="paypal" name="choices" ng-change="ctrl.initPaypal()"> PayPal
-                            </label>
+                            <span class="pm_select">
+                                <select id="paymentMethod" ng-model="ctrl.choice" ng-options="choice.label for choice in ctrl.choices" ng-change="ctrl.changeChoice()"></select>
+                                <i class="fa fa-angle-down"></i>
+                            </span>
                         </div>
                     </div>
-                    <div ng-show="ctrl.choice === 'card'">
+                    <div ng-show="ctrl.choice.value === 'card'">
                         <label for="paymentMethod" class="margin">Select your payment method</label>
                         <span class="pm_select">
                             <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>
                     </div>
-                    <div ng-show="ctrl.choice === 'paypal'">
+                    <div ng-show="ctrl.choice.value === 'paypal'">
                         <p ng-show="!ctrl.approvalURL">
                             <i class="fa fa-spin fa-spinner"></i> <span translate>Loading...</span>
                         </p>
@@ -61,7 +60,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
-            <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.choice === 'paypal'" translate translate-context="Info">Submit</button>
+            <button type="submit" class="pm_button primary pull-right" ng-hide="ctrl.choice.value === 'paypal'" translate translate-context="Info">Submit</button>
         </div>
     </form>
     <div class="modal-overlay"></div>

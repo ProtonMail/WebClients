@@ -467,19 +467,23 @@ angular.module("proton.modals", [])
             this.currency = params.currency;
             this.methods = params.methods;
             this.invoice = params.invoice;
+            this.choices = [];
 
             // Functions
             this.initialization = function() {
                 if (this.amountDue > 0) {
-                    if (this.methods.length > 0) {
-                        this.choice = 'card';
+                    if (params.status.Stripe === true && this.methods.length > 0) {
                         this.method = this.methods[0];
-                    } else {
-                        this.choice = 'paypal';
-                        this.initPaypal();
+                        this.choices.push({value: 'card', label: gettextCatalog.getString('Credit card', null)});
                     }
-                }
-                else {
+
+                    if (params.status.Paypal === true && ($.browser.msie !== true || $.browser.edge === true)) { // IE11 doesn't support PayPal
+                        this.choices.push({value: 'paypal', label: 'PayPal'});
+                    }
+
+                    this.choice = this.choices[0];
+                    this.changeChoice();
+                } else {
                     this.choice = 'none';
                 }
             }.bind(this);
@@ -512,6 +516,12 @@ angular.module("proton.modals", [])
 
             this.cancel = function() {
                 params.close();
+            };
+
+            this.changeChoice = function() {
+                if (this.choice.value === 'paypal') {
+                    this.initPaypal();
+                }
             };
 
             this.initPaypal = function() {
@@ -594,25 +604,10 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller: function(params) {
-
-            // IE11 doesn't support PayPal
-            if ($.browser.msie === true && $.browser.edge !== true) {
-                this.choices = [
-                    {value: 'card', label: gettextCatalog.getString('Credit card', null)},
-                    {value: 'bitcoin', label: 'Bitcoin'}
-                ];
-            } else {
-                this.choices = [
-                    {value: 'card', label: gettextCatalog.getString('Credit card', null)},
-                    {value: 'paypal', label: 'PayPal'},
-                    {value: 'bitcoin', label: 'Bitcoin'}
-                ];
-            }
-
             // Variables
+            this.choices = [];
             this.paypalNetworkError = false;
             this.paypalAccessError = false;
-            this.choice = this.choices[0];
             this.displayCoupon = false;
             this.step = 'payment';
             this.methods = [];
@@ -628,6 +623,7 @@ angular.module("proton.modals", [])
             this.coupon = '';
             this.childWindow = null;
             this.countries = tools.countries;
+            this.status = params.status;
             this.country = _.findWhere(this.countries, {value: 'US'});
             this.plans = _.chain(params.plans)
                 .filter(function(plan) { return params.planIDs.indexOf(plan.ID) !== -1; })
@@ -636,12 +632,22 @@ angular.module("proton.modals", [])
             this.organizationName = gettextCatalog.getString('My organization', null, 'Title'); // TODO set this value for the business plan
 
             // Functions
-
             var initialization = function() {
                 if (params.methods.length > 0) {
                     this.methods = params.methods;
                     this.method = this.methods[0];
                 }
+
+                if (params.status.Stripe === true) {
+                    this.choices.push({value: 'card', label: gettextCatalog.getString('Credit card', null)});
+                }
+
+                if (params.status.Paypal === true && ($.browser.msie !== true || $.browser.edge === true)) { // IE11 doesn't support PayPal
+                    this.choices.push({value: 'paypal', label: 'PayPal'});
+                }
+
+                this.choices.push({value: 'bitcoin', label: 'Bitcoin'});
+                this.choice = this.choices[0];
 
                 if (angular.isDefined(params.choice)) {
                     this.choice = _.findWhere(this.choices, {value: params.choice});

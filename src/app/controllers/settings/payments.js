@@ -13,7 +13,8 @@ angular.module('proton.controllers.Settings')
     methods,
     notify,
     networkActivityTracker,
-    Payment
+    Payment,
+    status
 ) {
     $scope.methods = methods.data.PaymentMethods;
     $scope.subscribed = authentication.user.Subscribed === 1;
@@ -173,6 +174,7 @@ angular.module('proton.controllers.Settings')
                  params: {
                      invoice: invoice,
                      methods: methods,
+                     status: status.data,
                      currency: result.check.data.Currency,
                      amount: result.check.data.Amount,
                      credit: result.check.data.Credit,
