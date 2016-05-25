@@ -105,6 +105,7 @@ angular.module('proton.cache', [])
             }
 
             conversation.LabelIDs = labelIDs;
+            conversation.NumUnread = conversation.NumUnread || current.NumUnread;
 
             manageCounters(current, conversation, 'conversation');
 
@@ -128,8 +129,8 @@ angular.module('proton.cache', [])
         var condition = true;
         var locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
-        if(unread === true) {
-            if(type === 'message') {
+        if (unread === true) {
+            if (type === 'message') {
                 condition = element.IsRead === 0;
             } else if(type === 'conversation') {
                 condition = element.NumUnread > 0;
@@ -137,7 +138,7 @@ angular.module('proton.cache', [])
         }
 
         _.each(locs, function(loc) {
-            if(angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(loc) !== -1 && condition) {
+            if (angular.isDefined(element.LabelIDs) && element.LabelIDs.indexOf(loc) !== -1 && condition) {
                 result[loc] = 1;
             } else {
                 result[loc] = 0;
@@ -193,7 +194,7 @@ angular.module('proton.cache', [])
             var currentUnread;
             var currentTotal;
 
-            if(type === 'message') {
+            if (type === 'message') {
                 currentUnread = cacheCounters.unreadMessage(loc);
                 currentTotal = cacheCounters.totalMessage(loc);
                 cacheCounters.updateMessage(loc, currentTotal + deltaTotal, currentUnread + deltaUnread);

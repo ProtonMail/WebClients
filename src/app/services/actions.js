@@ -754,7 +754,7 @@ angular.module('proton.actions', [])
                     return ids.indexOf(message.ID) !== -1;
                 });
 
-                if(angular.isDefined(conversation)) {
+                if (angular.isDefined(conversation)) {
                     events.push({Action: 3, ID: conversation.ID, Conversation: {
                         ID: conversation.ID,
                         NumUnread: conversation.NumUnread - filtered.length
