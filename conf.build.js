@@ -57,6 +57,7 @@ module.exports = {
       "vendor/angular-ical/dist/js/angular-ical.js",
       "vendor/angular-messages/angular-messages.js",
       "vendor/svgeezy/svgeezy.js",
+      "vendor/mousetrap/mousetrap.js",
       "vendor/html5-desktop-notifications/desktop-notify.js",
       "vendor/angular-gettext/dist/angular-gettext.js"
     ],
