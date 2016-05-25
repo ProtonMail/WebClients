@@ -655,6 +655,7 @@ angular.module('proton.actions', [])
             var events = [];
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
             var message = cache.getMessageCached(id);
+            var conversation = cache.getConversationCached(message.ConversationID);
             var promise;
 
             // Messages
@@ -664,7 +665,7 @@ angular.module('proton.actions', [])
             }});
 
             // Conversation
-            events.push({Action: 3, ID: message.ConversationID, Conversation: {ID: message.ConversationID, LabelIDsAdded: labelIDsAdded}});
+            events.push({Action: 3, ID: message.ConversationID, Conversation: {ID: message.ConversationID, LabelIDsAdded: labelIDsAdded, NumUnread: conversation.NumUnread}});
 
             // Send request
             promise = Message.star({IDs: ids}).$promise;
@@ -691,6 +692,7 @@ angular.module('proton.actions', [])
             var events = [];
             var labelIDsRemoved = [CONSTANTS.MAILBOX_IDENTIFIERS.starred];
             var message = cache.getMessageCached(id);
+            var conversation = cache.getConversationCached(message.ConversationID);
             var messages = cache.queryMessagesCached(message.ConversationID);
             var stars = _.filter(messages, function(message) {
                 return message.LabelIDs && message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
@@ -705,7 +707,7 @@ angular.module('proton.actions', [])
 
             // Conversation
             if(stars.length === 1) {
-                events.push({Action: 3, ID: message.ConversationID, Conversation: {ID: message.ConversationID, LabelIDsRemoved: labelIDsRemoved}});
+                events.push({Action: 3, ID: message.ConversationID, Conversation: {ID: message.ConversationID, LabelIDsRemoved: labelIDsRemoved, NumUnread: conversation.NumUnread}});
             }
 
             // Send request

@@ -105,7 +105,6 @@ angular.module('proton.cache', [])
             }
 
             conversation.LabelIDs = labelIDs;
-            conversation.NumUnread = conversation.NumUnread || current.NumUnread;
 
             manageCounters(current, conversation, 'conversation');
 
