@@ -18,6 +18,12 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
+    var toggleStar = function(event) {
+        $rootScope.$broadcast('toggleStar');
+
+        return false;
+    };
+
     var trash = function(event) {
         $rootScope.$broadcast('move', 'trash');
 
@@ -53,6 +59,7 @@ angular.module('proton.hotkeys', [])
             Mousetrap.bind(['C', 'c'], composer);
             Mousetrap.bind(['R', 'r'], read);
             Mousetrap.bind(['U', 'u'], unread);
+            Mousetrap.bind(['*'], toggleStar);
             Mousetrap.bind(['T', 't'], trash);
             Mousetrap.bind(['A', 'a'], archive);
             Mousetrap.bind(['S', 's'], spam);
@@ -62,6 +69,7 @@ angular.module('proton.hotkeys', [])
             Mousetrap.unbind(['C', 'c']);
             Mousetrap.unbind(['R', 'r']);
             Mousetrap.unbind(['U', 'u']);
+            Mousetrap.unbind(['*']);
             Mousetrap.unbind(['T', 't']);
             Mousetrap.unbind(['A', 'a']);
             Mousetrap.unbind(['S', 's']);
