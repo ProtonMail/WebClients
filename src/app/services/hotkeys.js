@@ -2,26 +2,38 @@ angular.module('proton.hotkeys', [])
 .factory('hotkeys', function(hotkeyModal, $rootScope) {
     var composer = function(event) {
         $rootScope.$broadcast('newMessage');
+
+        return false;
     };
 
     var read = function(event) {
         $rootScope.$broadcast('read');
+
+        return false;
     };
 
     var unread = function(event) {
         $rootScope.$broadcast('unread');
+
+        return false;
     };
 
     var trash = function(event) {
         $rootScope.$broadcast('move', 'trash');
+
+        return false;
     };
 
     var archive = function(event) {
         $rootScope.$broadcast('move', 'archive');
+
+        return false;
     };
 
     var spam = function(event) {
         $rootScope.$broadcast('move', 'spam');
+
+        return false;
     };
 
     var help = function() {
@@ -32,6 +44,8 @@ angular.module('proton.hotkeys', [])
                 }
             }
         });
+
+        return false;
     };
 
     var hotkeys = {
