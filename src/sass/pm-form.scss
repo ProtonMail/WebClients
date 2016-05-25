@@ -272,55 +272,9 @@
             display: inline-block;
         }
     }
-    .col {
-        display: block;
-        width: 50%;
-        min-width: 50%;
-        float: left;
-        box-sizing: border-box;
-        padding-bottom: 0;
-        &.left {
-            width: 40%;
-            min-width: 40%;
-        }
-        &.right {
-            width: 60%;
-            min-width: 60%;
-            float: right;
-        }
-    }
-    &.alt {
-        .col {
-            width: 25%;
-            min-width: 25%;
-            &.wide {
-                width: 70%;
-                min-width: 70%;
-            }
-        }
-    }
     .row {
         float: left;
         width: 100%;
         clear: both;
-        .col {
-            width: 25%;
-            min-width: 25%;
-            padding-right: 1rem;
-            &.last {
-                padding-right: 0;
-            }
-            &.narrow {
-                width: 20%;
-                min-width: 20%;
-            }
-            &.wide {
-                width: 30%;
-                min-width: 30%;
-            }
-            &.full {
-                width: 80%;
-            }
-        }
     }
 }

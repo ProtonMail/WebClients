@@ -12,14 +12,6 @@
         }
     }
 }
-#settingsAppearance.row {
-    .setting {
-        .radio.col {
-            width: 50%;
-            min-width: 50%;
-        }
-    }
-}
 
 #domainsTable {
     td {
@@ -523,15 +515,6 @@ body.mobileMode {
 }
 
 body.mobileMode {
-
-    #settingsAppearance.row {
-        .setting {
-            .radio.col {
-                width: 100%;
-                min-width: 100%;
-            }
-        }
-    }
 
     #newUser{
         .newUser {
