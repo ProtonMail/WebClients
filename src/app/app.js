@@ -66,6 +66,7 @@ angular.module('proton', [
     'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
+    'proton.hotkeys',
     'proton.enter',
     'proton.height',
     'proton.heightOutside',
