@@ -35,7 +35,7 @@ angular.module("proton.controllers.Auth", [
             alert(err);
         }
     }
-    
+
     var clearErrors = function() {
         $scope.error = null;
         notify.closeAll();
@@ -50,7 +50,7 @@ angular.module("proton.controllers.Auth", [
         if (iOSSafari) {
             // Don't focus the input field
         } else {
-            $('input.focus').focus();
+            angular.element('input.focus').focus();
         }
 
         // If #help
@@ -173,13 +173,15 @@ angular.module("proton.controllers.Auth", [
                     }
 
                     notify({message: result.message, classes: 'notification-danger'});
-                    $('input[name="Username"]').focus();
+                    angular.element('input[name="Username"]').focus();
                 }
             )
         );
     };
 
     $scope.unlock = function() {
+        // Blur unlock password field
+        angular.element('[type=password]').blur();
         // Make local so extensions (or Angular) can't mess with it by clearing the form too early
         var mailboxPassword = $scope.mailboxPassword;
 
@@ -209,7 +211,7 @@ angular.module("proton.controllers.Auth", [
                         function(err) {
                             $log.error('unlock', err);
                             notify({message: err.message, classes: 'notification-danger'});
-                            $('[type=password]').focus();
+                            angular.element('[type=password]').focus();
                         }
                     );
                 },
@@ -226,7 +228,7 @@ angular.module("proton.controllers.Auth", [
     };
 
     $scope.selectPassword = function() {
-        var input = $('#password');
+        var input = angular.element('#password');
 
         input.focus();
         input.select();
