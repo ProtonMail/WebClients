@@ -322,7 +322,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageContacts(data.Contacts);
 					this.manageUser(data.User);
 					this.manageThreadings(data.Messages, data.Conversations);
-					// this.manageDesktopNotifications(data.Messages);
+					this.manageDesktopNotifications(data.Messages);
 					this.manageMessageCounts(data.MessageCounts);
 					this.manageConversationCounts(data.ConversationCounts);
 					this.manageStorage(data.UsedSpace);
