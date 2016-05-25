@@ -1760,6 +1760,18 @@ angular.module("proton.modals", [])
     });
 })
 
+.factory('hotkeyModal', function(pmModal) {
+    return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/hotkey.tpl.html',
+        controller: function(params) {
+            this.close = function() {
+                params.close();
+            };
+        }
+    });
+})
+
 .factory('filterAddressModal', function($timeout, pmModal, IncomingDefault, networkActivityTracker, notify) {
     return pmModal({
         controllerAs: 'ctrl',

@@ -37,9 +37,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         $scope.refreshConversation();
     });
 
+    $scope.$on('toggleStar', function(event) {
+        $scope.toggleStar();
+    });
+
     $scope.$on('$destroy', function(event) {
         $timeout.cancel(scrollPromise);
     });
+
 
     /**
      * Method call at the initialization of this controller

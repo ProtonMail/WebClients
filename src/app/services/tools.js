@@ -162,22 +162,35 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.breakImages = function(html) {
-        var re = new RegExp('https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)', 'g');
 
-        html = html.replace(re, function(match, $1, $2, offset, original) {
-            return 'protonmail_' + match;
-        });
+        function replace(regex,html) {
+            
+            return html.replace(regex, function(match, $1, $2, offset, original) {
+                 return 'o' + match;
+            });
+
+        }
+
+        var url = new RegExp(/url\(/ig);
+        var src = new RegExp('(src=)', 'g');
+
+        html = replace(url,html);
+        html = replace(src,html);
 
         return html;
     };
 
     tools.fixImages = function(html) {
-        var re = new RegExp('protonmail_http', 'g');
 
-        html = html.replace(re, 'http');
+        var re = new RegExp('(ourl|osrc)', 'g');
+
+        html = html.replace(re, function(match, $1, $2, offset, original) {
+            return $1.substring(1);
+        });
 
         return html;
     };
+
 
     /**
      * Detect if the content is type of HTML
@@ -389,9 +402,12 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.containsImage = function(content) {
-        var re = new RegExp(/https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)/);
-
+        
+        var url = new RegExp(/url\(/ig);
+        var src = new RegExp('src=', 'g');
+        var re = new RegExp(url.source + "|" + src.source);
         return re.test(content);
+
     };
 
     tools.clearImageBody = function(content) {
