@@ -223,7 +223,7 @@ angular.module("proton.event", ["proton.constants"])
 			manageDesktopNotifications: function(messages) {
 				if (angular.isDefined(messages)) {
 					_.each(messages, function(message) {
-						if (message.Action === 1 && message.Message.Type === 0) {
+						if (message.Action === 1 && message.Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
 							desktopNotifications.create(gettextCatalog.getString('You have a new email', null, 'Info'), {
 					            body: message.Message.Subject,
 					            icon: '/assets/img/notification-badge.gif'
