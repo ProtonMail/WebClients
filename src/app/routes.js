@@ -872,8 +872,12 @@ angular.module('proton.routes', [
                     return deferred.promise;
                 }
             },
-            onExit: function($rootScope) {
+            onEnter: function(hotkeys) {
+                hotkeys.bind();
+            },
+            onExit: function($rootScope, hotkeys) {
                 $rootScope.showWelcome = false;
+                hotkeys.unbind();
             }
         });
 
