@@ -42,7 +42,7 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
-    var help = function() {
+    var help = function(event) {
         hotkeyModal.activate({
             params: {
                 close: function() {
