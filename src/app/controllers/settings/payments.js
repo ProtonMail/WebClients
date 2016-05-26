@@ -13,8 +13,7 @@ angular.module('proton.controllers.Settings')
     methods,
     notify,
     networkActivityTracker,
-    Payment,
-    status
+    Payment
 ) {
     $scope.methods = methods.data.PaymentMethods;
     $scope.subscribed = authentication.user.Subscribed === 1;
@@ -159,36 +158,44 @@ angular.module('proton.controllers.Settings')
      $scope.pay = function(invoice) {
          var promises = {
              methods: Payment.methods(),
-             check: Payment.check(invoice.ID)
+             check: Payment.check(invoice.ID),
+             status: Payment.status()
          };
 
-         networkActivityTracker.track($q.all(promises)
-         .then(function(result) {
-             var methods = [];
+         networkActivityTracker.track(
+             $q.all(promises)
+             .then(function(result) {
+                 var methods = [];
+                 var status;
 
-             if (result.methods.data && result.methods.data.PaymentMethods) {
-                 methods = result.methods.data.PaymentMethods;
-             }
+                 if (result.methods.data && result.methods.data.PaymentMethods) {
+                     methods = result.methods.data.PaymentMethods;
+                 }
 
-             payModal.activate({
-                 params: {
-                     invoice: invoice,
-                     methods: methods,
-                     status: status.data,
-                     currency: result.check.data.Currency,
-                     amount: result.check.data.Amount,
-                     credit: result.check.data.Credit,
-                     amountDue: result.check.data.AmountDue,
-                     close: function(result) {
-                         payModal.deactivate();
+                 if (result.status.data && result.status.data.Code === 1000) {
+                     status = result.status.data;
+                 }
 
-                         if (result === true) {
-                             // Set invoice state to PAID
-                             invoice.State = 1;
+                 payModal.activate({
+                     params: {
+                         invoice: invoice,
+                         methods: methods,
+                         status: status,
+                         currency: result.check.data.Currency,
+                         amount: result.check.data.Amount,
+                         credit: result.check.data.Credit,
+                         amountDue: result.check.data.AmountDue,
+                         close: function(result) {
+                             payModal.deactivate();
+
+                             if (result === true) {
+                                 // Set invoice state to PAID
+                                 invoice.State = 1;
+                             }
                          }
                      }
-                 }
-             });
-         }));
+                 });
+             })
+         );
      };
 });
