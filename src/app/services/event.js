@@ -176,7 +176,7 @@ angular.module("proton.event", ["proton.constants"])
 				}
 			},
 			manageMessageCounts: function(counts) {
-				if(angular.isDefined(counts)) {
+				if (angular.isDefined(counts)) {
 					var labelIDs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
 					_.each(labelIDs, function(labelID) {
@@ -188,10 +188,12 @@ angular.module("proton.event", ["proton.constants"])
 							cacheCounters.updateMessage(labelID, 0, 0);
 						}
 					});
+
+					cache.callRefresh();
 				}
 			},
 			manageConversationCounts: function(counts) {
-				if(angular.isDefined(counts)) {
+				if (angular.isDefined(counts)) {
 					var labelIDs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
 
 					_.each(labelIDs, function(labelID) {
@@ -203,6 +205,8 @@ angular.module("proton.event", ["proton.constants"])
 							cacheCounters.updateConversation(labelID, 0, 0);
 						}
 					});
+
+					cache.callRefresh();
 				}
 			},
 			manageThreadings: function(messages, conversations) {
