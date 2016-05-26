@@ -280,6 +280,13 @@
         box-sizing: border-box;
         height: calc(100% - 41px );
         overflow: auto;
+        .angular-squire-wrapper {
+            border: 1px solid $border;
+        }
+        .squire-toolbar {
+            border-width: 1px 1px 0 1px;
+            box-sizing: border-box;
+        }
         .pm_sort ul li {
             .label {
                 white-space: nowrap;
