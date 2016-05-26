@@ -20,13 +20,6 @@
 	.last.date em {
 		right: 1rem;
 	}
-	.col .input-icon {
-		float: left;
-		width: 100%;
-		em {
-			pointer-events: none;
-		}
-	}
 	.pm_select {
 		margin-bottom: 0;
 	}
@@ -47,11 +40,6 @@ body .pika-button:hover {
 
 body.mobileMode {
 	#advancedSearchModal {
-		.col {
-			display: block;
-			width: 100%;
-			padding: 0;
-		}
 		.pm_form .radio label {
 			display: block;
 		}

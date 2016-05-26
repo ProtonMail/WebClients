@@ -5,20 +5,20 @@
             <div class="modal-header" ng-show="ctrl.title">
                 <h3 class="modal-title">{{ ctrl.title }}</h3>
             </div>
-            <div class="modal-body pm_form">
+            <div class="modal-body pm_form pm_grid">
                 <div class="row">
-                    <span class="col narrow">
+                    <span class="col-1-4">
                         <label for="labelName" translate translate-context="Title">Name</label>
                     </span><!--/.col-->
-                    <span class="col full last">
+                    <span class="col-3-4">
                         <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="label" ng-model="ctrl.name" placeholder-translate="Label name" required="" />
                     </span>
                 </div>
                 <div class="row">
-                    <span class="col narrow">
+                    <span class="col-1-4">
                         <label translate translate-context="Title">Color</label>
                     </span><!--/.col-->
-                    <span class="col full last">
+                    <span class="col-3-4">
                         <div class="text-center">
                             <ul class="palette list-inline">
                                 <li ng-repeat="c in ctrl.colors">

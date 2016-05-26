@@ -9,7 +9,7 @@
             <section class="setting pm_form">
                 <legend translate-context="Title" translate>Composer</legend>
                 <p class="alert alert-info"><span translate-context="Info" translate>This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer.</span> <a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank" translate-context="Action" translate-comment="learn more link" translate>Learn more</a></p>
-                <div class="radio col left">
+                <div class="radio col-1-2">
                     <label>
                         <input type="radio" ng-model="appearance.ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
                         <span  translate tranlate-comment="form option">Popup</span>
@@ -17,7 +17,7 @@
                         <img src="assets/img/settings/pop.gif"  alt="Popup" />
                     </label>
                 </div>
-                <div class="radio col right">
+                <div class="radio col-1-2">
                     <label>
                         <input type="radio" ng-model="appearance.ComposerMode" value="1" ng-change="saveComposerMode(composerMode)" />
                         <span  translate translate-comment="form option">Maximized</span>
@@ -29,7 +29,7 @@
             <section class="setting pm_form pull-right">
                 <legend translate-context="Title" translate>Layout</legend>
                 <p class="alert alert-info"><span translate-context="Info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</span> <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank"  translate translate-context="Action">Learn more</a></p>
-                <div class="radio col left">
+                <div class="radio col-1-2">
                     <label>
                         <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />
                         <span  translate translate-comment="form option">Column</span>
@@ -37,7 +37,7 @@
                         <img src="/assets/img/settings/col.gif" alt="Column" />
                     </label>
                 </div>
-                <div class="radio col right">
+                <div class="radio col-1-2">
                     <label>
                         <input type="radio" ng-model="appearance.ViewLayout" ng-value="1" ng-change="saveLayoutMode(composerMode)" />
                         <span  translate translate-comment="form option">Row</span>
