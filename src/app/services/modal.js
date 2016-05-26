@@ -481,8 +481,10 @@ angular.module("proton.modals", [])
                         this.choices.push({value: 'paypal', label: 'PayPal'});
                     }
 
-                    this.choice = this.choices[0];
-                    this.changeChoice();
+                    if (this.choices.length > 0) {
+                        this.choice = this.choices[0];
+                        this.changeChoice();
+                    }
                 } else {
                     this.choice = 'none';
                 }
