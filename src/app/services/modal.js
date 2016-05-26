@@ -553,15 +553,10 @@ angular.module("proton.modals", [])
 
                 var paypalObject = event.data;
 
-                // we need to capitalize some stuff
-                if (paypalObject.payerID && paypalObject.paymentID) {
-                    paypalObject.PayerID = paypalObject.payerID;
-                    paypalObject.PaymentID = paypalObject.paymentID;
-
-                    // delete unused
-                    delete paypalObject.payerID;
-                    delete paypalObject.paymentID;
-                }
+                paypalObject.PayerID = paypalObject.payerID;
+                paypalObject.PaymentID = paypalObject.paymentID;
+                delete paypalObject.payerID;
+                delete paypalObject.paymentID;
 
                 Payment.pay(params.invoice.ID, {
                     Amount: params.amountDue,
