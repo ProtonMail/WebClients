@@ -54,26 +54,27 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
+    var keys = [
+        {keyboard: ['C', 'c'], callback: composer},
+        {keyboard: ['R', 'r'], callback: read},
+        {keyboard: ['U', 'u'], callback: unread},
+        {keyboard: ['*'], callback: toggleStar},
+        {keyboard: ['T', 't'], callback: trash},
+        {keyboard: ['A', 'a'], callback: archive},
+        {keyboard: ['S', 's'], callback: spam},
+        {keyboard: ['?'], callback: help}
+    ];
+
     var hotkeys = {
         bind: function() {
-            Mousetrap.bind(['C', 'c'], composer);
-            Mousetrap.bind(['R', 'r'], read);
-            Mousetrap.bind(['U', 'u'], unread);
-            Mousetrap.bind(['*'], toggleStar);
-            Mousetrap.bind(['T', 't'], trash);
-            Mousetrap.bind(['A', 'a'], archive);
-            Mousetrap.bind(['S', 's'], spam);
-            Mousetrap.bind(['?'], help);
+            _.each(keys, function(key) {
+                Mousetrap.bind(key.keyboard, key.callback);
+            });
         },
         unbind: function() {
-            Mousetrap.unbind(['C', 'c']);
-            Mousetrap.unbind(['R', 'r']);
-            Mousetrap.unbind(['U', 'u']);
-            Mousetrap.unbind(['*']);
-            Mousetrap.unbind(['T', 't']);
-            Mousetrap.unbind(['A', 'a']);
-            Mousetrap.unbind(['S', 's']);
-            Mousetrap.unbind(['?']);
+            _.each(keys, function(key) {
+                Mousetrap.unbind(key.keyboard);
+            });
         }
     };
 
