@@ -280,9 +280,27 @@
         box-sizing: border-box;
         height: calc(100% - 41px );
         overflow: auto;
+
+
         .angular-squire-wrapper {
             border: 1px solid $border;
+            
+            display: -webkit-flex;
+            display: flex;
+
+            -webkit-flex-direction: column;
+            flex-direction: column;
+
+            min-width: 0px;
+
+            iframe{
+                -webkit-flex:1;
+                flex:1;
+            }
+
         }
+
+
         .squire-toolbar {
             border-width: 1px 1px 0 1px;
             box-sizing: border-box;
