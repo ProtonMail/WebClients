@@ -172,6 +172,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.unread();
         });
 
+        $scope.$on('nextConversation', function(event) {
+            $scope.nextConversation();
+        });
+
+        $scope.$on('previousConversation', function(event) {
+            $scope.previousConversation();
+        });
+
         $scope.$on('$destroy', $scope.stopWatchingEvent);
     };
 

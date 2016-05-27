@@ -1,9 +1,44 @@
 angular.module('proton.hotkeys', [])
-.factory('hotkeys', function(hotkeyModal, $rootScope) {
+.factory('hotkeys', function(hotkeyModal, $rootScope, authentication) {
+    var ROW_MODE = 1;
+    var COLUMN_MODE = 0;
+
     var composer = function(event) {
         $rootScope.$broadcast('newMessage');
 
         return false;
+    };
+
+    var left = function(event) {
+        if (authentication.user.ViewLayout === ROW_MODE) {
+            $rootScope.$broadcast('nextConversation');
+
+            return false;
+        }
+    };
+
+    var right = function(event) {
+        if (authentication.user.ViewLayout === ROW_MODE) {
+            $rootScope.$broadcast('previousConversation');
+
+            return false;
+        }
+    };
+
+    var up = function(event) {
+        if (authentication.user.ViewLayout === COLUMN_MODE) {
+            $rootScope.$broadcast('nextConversation');
+
+            return false;
+        }
+    };
+
+    var down = function(event) {
+        if (authentication.user.ViewLayout === COLUMN_MODE) {
+            $rootScope.$broadcast('previousConversation');
+
+            return false;
+        }
     };
 
     var read = function(event) {
@@ -55,13 +90,17 @@ angular.module('proton.hotkeys', [])
     };
 
     var keys = [
-        {keyboard: ['C', 'c'], callback: composer},
-        {keyboard: ['R', 'r'], callback: read},
-        {keyboard: ['U', 'u'], callback: unread},
-        {keyboard: ['*'], callback: toggleStar},
-        {keyboard: ['T', 't'], callback: trash},
-        {keyboard: ['A', 'a'], callback: archive},
-        {keyboard: ['S', 's'], callback: spam},
+        {keyboard: 'c', callback: composer},
+        {keyboard: 'left', callback: left},
+        {keyboard: 'up', callback: up},
+        {keyboard: 'right', callback: right},
+        {keyboard: 'down', callback: down},
+        {keyboard: 'r', callback: read},
+        {keyboard: 'u', callback: unread},
+        {keyboard: '*', callback: toggleStar},
+        {keyboard: 't', callback: trash},
+        {keyboard: 'a', callback: archive},
+        {keyboard: 's', callback: spam},
         {keyboard: ['?'], callback: help}
     ];
 

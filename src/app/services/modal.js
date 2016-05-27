@@ -1758,11 +1758,17 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('hotkeyModal', function(pmModal) {
+.factory('hotkeyModal', function(pmModal, authentication) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/hotkey.tpl.html',
         controller: function(params) {
+            if (authentication.user.ViewLayout === 1) {
+                this.mode = 'row';
+            } else {
+                this.mode = 'column';
+            }
+
             this.close = function() {
                 params.close();
             };
