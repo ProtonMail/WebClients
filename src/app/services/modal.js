@@ -455,7 +455,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('payModal', function(pmModal, Payment, notify, eventManager) {
+.factory('payModal', function(pmModal, Payment, notify, eventManager, gettextCatalog) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/pay.tpl.html',
