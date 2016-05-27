@@ -567,6 +567,7 @@ angular.module("proton.modals", [])
                     }
                 }).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
+                        eventManager.call();
                         params.close(true);
                     } else if (result.data && result.data.Error) {
                         notify({message: result.data.Error, classes: 'notification-danger'});
