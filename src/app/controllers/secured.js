@@ -8,18 +8,19 @@ angular.module("proton.controllers.Secured", [])
     $state,
     $stateParams,
     $timeout,
-    gettextCatalog,
     $window,
     authentication,
     cache,
     cacheCounters,
     CONSTANTS,
+    desktopNotifications,
     eventManager,
     feedbackModal,
     generateModal,
+    gettextCatalog,
+    hotkeys,
     organization,
-    tools,
-    desktopNotifications
+    tools
 ) {
     var dirtyAddresses = [];
 
@@ -48,6 +49,9 @@ angular.module("proton.controllers.Secured", [])
     // Request for desktop notification
     desktopNotifications.request();
 
+    // Enable hotkeys
+    hotkeys.bind();
+
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
         if (authentication.user.ViewLayout === 0) {
@@ -74,6 +78,11 @@ angular.module("proton.controllers.Secured", [])
 
     $scope.$on('organizationChange', function(event, organization) {
         $scope.organization = organization;
+    });
+
+    $scope.$on('$destroy', function(event) {
+        // Disable hotkeys
+        hotkeys.unbind();
     });
 
     _.each(authentication.user.Addresses, function(address) {
