@@ -69,6 +69,24 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     });
 
+    $scope.$on('replyConversation', function(event) {
+        if ($scope.$last === true && $scope.message.Type !== 1) {
+            $scope.reply();
+        }
+    });
+
+    $scope.$on('replyAllConversation', function(event) {
+        if ($scope.$last === true && $scope.message.Type !== 1) {
+            $scope.replyAll();
+        }
+    });
+
+    $scope.$on('forwardConversation', function(event) {
+        if ($scope.$last === true && $scope.message.Type !== 1) {
+            $scope.forward();
+        }
+    });
+
     // Listner when we destroy this message controller
     $scope.$on('$destroy', function(event) {
         $scope.message.expand = false;

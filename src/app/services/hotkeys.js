@@ -9,6 +9,24 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
+    var reply = function(event) {
+        $rootScope.$broadcast('replyConversation');
+
+        return false;
+    };
+
+    var replyAll = function(event) {
+        $rootScope.$broadcast('replyAllConversation');
+
+        return false;
+    };
+
+    var forward = function(event) {
+        $rootScope.$broadcast('forwardConversation');
+
+        return false;
+    };
+
     var left = function(event) {
         if (authentication.user.ViewLayout === ROW_MODE) {
             $rootScope.$broadcast('nextConversation');
@@ -91,6 +109,9 @@ angular.module('proton.hotkeys', [])
 
     var keys = [
         {keyboard: 'c', callback: composer},
+        {keyboard: 'shift+r', callback: reply},
+        {keyboard: 'shift+a', callback: replyAll},
+        {keyboard: 'shift+f', callback: forward},
         {keyboard: 'left', callback: left},
         {keyboard: 'up', callback: up},
         {keyboard: 'right', callback: right},
