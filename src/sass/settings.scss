@@ -291,6 +291,8 @@
             -webkit-flex-direction: column;
             flex-direction: column;
 
+            min-width: 0px;
+
             iframe{
                 -webkit-flex:1;
                 flex:1;
