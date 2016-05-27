@@ -14,7 +14,7 @@
     }
 }
 
-.ua-edge {} 
+.ua-edge {}
 
 // All iOS devices
 .ua-ios {
@@ -157,7 +157,7 @@ input:-moz-ui-invalid {
         &:first-child,
         &:hover {
             position: relative;
-            top: -6px;
+            top: -4px;
         }
         &.single {
             top: -3px !important;
