@@ -228,7 +228,9 @@ angular.module("proton.event", ["proton.constants"])
 				if (angular.isDefined(messages)) {
 					_.each(messages, function(message) {
 						if (message.Action === 1 && message.Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
-							desktopNotifications.create(gettextCatalog.getString('You have a new email', null, 'Info'), {
+							var title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + message.Message.Sender.Name || message.Message.Sender.Address;
+
+							desktopNotifications.create(title, {
 					            body: message.Message.Subject,
 					            icon: '/assets/img/notification-badge.gif'
 					        });
