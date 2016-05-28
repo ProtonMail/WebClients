@@ -374,13 +374,13 @@ msgid "Address"
 msgstr ""
 
 #. notification
-#: src/app/services/modal.js:1064
+#: src/app/services/modal.js:1062
 msgctxt "Info"
 msgid "Address added"
 msgstr ""
 
-#: src/app/services/modal.js:1072
-#: src/app/services/modal.js:1075
+#: src/app/services/modal.js:1070
+#: src/app/services/modal.js:1073
 msgctxt "Error"
 msgid "Address creation failed"
 msgstr ""
@@ -1180,7 +1180,7 @@ msgctxt "Title"
 msgid "Coupon"
 msgstr ""
 
-#: src/app/services/modal.js:871
+#: src/app/services/modal.js:869
 msgctxt "Info"
 msgid "Coupon accepted"
 msgstr ""
@@ -1231,7 +1231,7 @@ msgid "Credit"
 msgstr ""
 
 #: src/app/services/modal.js:477
-#: src/app/services/modal.js:640
+#: src/app/services/modal.js:638
 msgid "Credit card"
 msgstr ""
 
@@ -1606,7 +1606,7 @@ msgstr ""
 msgid "Domain name"
 msgstr ""
 
-#: src/app/services/modal.js:1068
+#: src/app/services/modal.js:1066
 msgctxt "Error"
 msgid "Domain not found"
 msgstr ""
@@ -1989,8 +1989,8 @@ msgid "Error during label request"
 msgstr ""
 
 #: src/app/controllers/settings/dashboard.js:337
-#: src/app/services/modal.js:697
-#: src/app/services/modal.js:700
+#: src/app/services/modal.js:695
+#: src/app/services/modal.js:698
 msgctxt "Error"
 msgid "Error during organization request"
 msgstr ""
@@ -2040,7 +2040,7 @@ msgctxt "Error"
 msgid "Error processing payment."
 msgstr ""
 
-#: src/app/services/modal.js:1577
+#: src/app/services/modal.js:1575
 msgctxt "Error"
 msgid "Error while processing donation."
 msgstr ""
@@ -2472,7 +2472,7 @@ msgstr ""
 msgid "Insert link"
 msgstr ""
 
-#: src/app/services/modal.js:868
+#: src/app/services/modal.js:866
 msgctxt "Error"
 msgid "Invalid coupon"
 msgstr ""
@@ -3001,7 +3001,7 @@ msgctxt "Title"
 msgid "MX Record"
 msgstr ""
 
-#: src/app/services/modal.js:630
+#: src/app/services/modal.js:628
 msgctxt "Title"
 msgid "My organization"
 msgstr ""

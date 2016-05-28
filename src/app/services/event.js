@@ -227,7 +227,7 @@ angular.module("proton.event", ["proton.constants"])
 			manageDesktopNotifications: function(messages) {
 				if (angular.isDefined(messages)) {
 					_.each(messages, function(message) {
-						if (message.Action === 1 && message.Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
+						if (message.Action === 1 && message.Message.IsRead === 0 && message.Message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox) !== -1) {
 							var title = gettextCatalog.getString('New mail from', null, 'Info') + ' ' + message.Message.Sender.Name || message.Message.Sender.Address;
 
 							desktopNotifications.create(title, {
