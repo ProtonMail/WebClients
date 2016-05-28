@@ -485,8 +485,6 @@ angular.module("proton.modals", [])
                         this.choice = this.choices[0];
                         this.changeChoice();
                     }
-                } else {
-                    this.choice = 'none';
                 }
             }.bind(this);
 
@@ -500,7 +498,7 @@ angular.module("proton.modals", [])
                     Currency: params.currency
                 };
 
-                if (this.choice === 'card' && this.methods.length > 0) {
+                if (this.choice.value === 'card' && this.methods.length > 0) {
                     parameters.PaymentMethodID = this.method.ID;
                 }
 
