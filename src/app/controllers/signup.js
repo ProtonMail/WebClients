@@ -43,7 +43,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
 
         var IP = null;
-        $.get('http://jsonip.com/', function(r) {
+        $.get('https://api.ipify.org?format=json', function(r) {
             console.log(r);
             if (r.ip) {
 
