@@ -109,6 +109,8 @@ angular.module("proton.labels", [])
                 scope.saveLabels(scope.labels, scope.alsoArchive);
                 // Close
                 scope.close();
+                // Notify the user
+                notify({message: gettextCatalog.getString('Label Saved', null), classes: 'notification-success'});
             };
 
             scope.close = function() {
