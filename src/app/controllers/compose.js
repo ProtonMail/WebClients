@@ -690,31 +690,38 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     /**
-     * Insert signature in the message body
+     * Insert / Update signature in the message body
      * @param {Object} message
      */
     $scope.insertSignature = function(message) {
-        if (angular.isUndefined(message.Body)) {
-            var content;
-            var space = '<br /><br />';
 
-            if (message.From.Signature === null) {
-                content = authentication.user.Signature;
-            } else {
-                content = message.From.Signature;
-            }
+    
+        message.Body = (angular.isUndefined(message.Body))? '<div>' : message.Body;
 
-            var signature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(content) + '</div>', {
-                ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style', 'input', 'form']
-            });
+        var space = '<br /><br />';
+        var content = (message.From.Signature === null)?authentication.user.Signature:message.From.Signature;
 
-            if ($(signature).text().length === 0 && $(signature).find('img').length === 0) {
-                message.Body = space;
-            } else {
-                message.Body = space + signature;
-            }
+        var signature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(space + content) + '</div>', {
+            ADD_ATTR: ['target'],
+            FORBID_TAGS: ['style', 'input', 'form']
+        });
+
+        var currentBody = $.parseHTML(message.Body);
+        var tempDOM = angular.element('<div>').append(currentBody);
+        var hasSignature = tempDOM.find('.protonmail_signature_block').html();
+
+
+        if (hasSignature && hasSignature.length > 0) {
+            // update the signature
+            tempDOM.find('.protonmail_signature_block').replaceWith(signature);
+        } else {
+            // insert signature
+            tempDOM.append(signature);
         }
+
+        message.Body = tempDOM.html();
+
+
     };
 
     $scope.focusComposer = function(message) {
@@ -1045,18 +1052,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Resource} message - Message to save
      */
     $scope.changeFrom = function(message) {
-        var currentBody = $.parseHTML(message.Body);
-        var tempDOM = angular.element('<div>').append(currentBody);
-        var signature = tempDOM.find('.protonmail_signature_block').first().html();
-        var content = (message.From.Signature === null)?authentication.user.Signature:message.From.Signature;
-
-        if (signature && signature.length > 0) {
-            tempDOM.find('.protonmail_signature_block').html(content);
-        } else {
-            tempDOM.append(content);
-        }
-
-        message.Body = tempDOM.html();
+        
+        $scope.insertSignature(message);
 
         // save when DOM is updated
         $scope.save(message, false, false, true);
