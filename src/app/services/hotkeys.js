@@ -1,8 +1,5 @@
 angular.module('proton.hotkeys', [])
-.factory('hotkeys', function(hotkeyModal, $rootScope, authentication) {
-    var ROW_MODE = 1;
-    var COLUMN_MODE = 0;
-
+.factory('hotkeys', function(hotkeyModal, $rootScope, authentication, CONSTANTS) {
     var composer = function(event) {
         $rootScope.$broadcast('newMessage');
 
@@ -28,7 +25,7 @@ angular.module('proton.hotkeys', [])
     };
 
     var left = function(event) {
-        if (authentication.user.ViewLayout === ROW_MODE) {
+        if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
             $rootScope.$broadcast('nextConversation');
 
             return false;
@@ -36,7 +33,7 @@ angular.module('proton.hotkeys', [])
     };
 
     var right = function(event) {
-        if (authentication.user.ViewLayout === ROW_MODE) {
+        if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
             $rootScope.$broadcast('previousConversation');
 
             return false;
@@ -44,7 +41,7 @@ angular.module('proton.hotkeys', [])
     };
 
     var up = function(event) {
-        if (authentication.user.ViewLayout === COLUMN_MODE) {
+        if (authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
             $rootScope.$broadcast('nextConversation');
 
             return false;
@@ -52,7 +49,7 @@ angular.module('proton.hotkeys', [])
     };
 
     var down = function(event) {
-        if (authentication.user.ViewLayout === COLUMN_MODE) {
+        if (authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
             $rootScope.$broadcast('previousConversation');
 
             return false;

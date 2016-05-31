@@ -1756,14 +1756,14 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('hotkeyModal', function(pmModal, authentication) {
+.factory('hotkeyModal', function(pmModal, authentication, CONSTANTS) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/hotkey.tpl.html',
         controller: function(params) {
-            if (authentication.user.ViewLayout === 1) {
+            if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
                 this.mode = 'row';
-            } else {
+            } else if (authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
                 this.mode = 'column';
             }
 
