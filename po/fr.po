@@ -4708,33 +4708,33 @@ msgstr ""
 #: src/app/templates/views/members.tpl.html:47
 msgctxt "Action"
 msgid "Upgrade"
-msgstr ""
+msgstr "Améliorer"
 
 #. Folder name
 #: src/app/templates/partials/sidebar-responsive.tpl.html:72
 msgctxt "Title"
 msgid "Upgrade"
-msgstr ""
+msgstr "Améliorer"
 
 #: src/app/templates/partials/conversation-placeholder.tpl.html:25
 msgctxt "Action"
 msgid "Upgrade account"
-msgstr ""
+msgstr "Améliorer votre compte"
 
 #: src/app/templates/partials/sidebar.tpl.html:94
 msgctxt "Action"
 msgid "Upgrade storage"
-msgstr ""
+msgstr "Augmenter votre espace de stockage"
 
 #: src/app/controllers/settings/dashboard.js:273
 msgctxt "Action"
 msgid "Upgrade to Plus"
-msgstr ""
+msgstr "Souscrire à Plus"
 
 #: src/app/controllers/settings/dashboard.js:281
 msgctxt "Action"
 msgid "Upgrade to Visionary"
-msgstr ""
+msgstr "Souscrire à Visionary"
 
 #. link to dashboard
 #. link to dashboard page
@@ -4743,7 +4743,7 @@ msgstr ""
 #: src/app/templates/views/domains.tpl.html:15
 msgctxt "Action"
 msgid "Upgrade your plan"
-msgstr ""
+msgstr "Améliorer votre plan"
 
 #: src/app/templates/views/dashboard.tpl.html:114
 msgid ""
@@ -4761,7 +4761,7 @@ msgstr "Charger"
 #: src/app/templates/views/contacts.tpl.html:17
 msgctxt "Action"
 msgid "Upload"
-msgstr ""
+msgstr "Télécharger"
 
 #: src/app/templates/partials/composer.tpl.html:249
 msgctxt "Action"
@@ -4770,7 +4770,7 @@ msgstr "Chargement"
 
 #: src/app/templates/directives/squire.tpl.html:73
 msgid "URL to image"
-msgstr ""
+msgstr "URL de l'image"
 
 #: src/app/templates/views/upgrade.tpl.html:31
 msgctxt "Info"
@@ -4871,13 +4871,13 @@ msgstr ""
 #: src/app/templates/modals/domain/verification.tpl.html:37
 msgctxt "Action"
 msgid "Verify"
-msgstr ""
+msgstr "Vérifier"
 
 #: src/app/templates/modals/domain/menu.tpl.html:12
 #: src/app/templates/modals/domain/verification.tpl.html:10
 msgctxt "Title"
 msgid "Verify"
-msgstr ""
+msgstr "Vérifier"
 
 #: src/app/templates/views/step1.tpl.html:197
 msgid "Verifying encryption keys"
@@ -4893,7 +4893,7 @@ msgstr ""
 
 #: src/app/templates/views/upgrade.tpl.html:42
 msgid "Version"
-msgstr ""
+msgstr "Version"
 
 #: src/app/templates/partials/message.tpl.html:208
 msgctxt "Action"
@@ -4923,7 +4923,7 @@ msgstr ""
 #: src/app/templates/views/reset-mailbox-password.tpl.html:4
 msgctxt "Title"
 msgid "Warning"
-msgstr ""
+msgstr "Attention"
 
 #. account deletion warning
 #: src/app/templates/modals/deleteAccount.tpl.html:10
@@ -4989,7 +4989,7 @@ msgstr "Bienvenue"
 #: src/app/templates/modals/welcome.tpl.html:6
 msgctxt "Title"
 msgid "Welcome to ProtonMail"
-msgstr ""
+msgstr "Bienvenue chez ProtonMail"
 
 #: src/app/templates/partials/wizard.tpl.html:9
 msgctxt "Title"
@@ -5004,7 +5004,7 @@ msgstr ""
 #: src/app/templates/modals/filter.tpl.html:20
 msgctxt "Title"
 msgid "What do you want to filter?"
-msgstr ""
+msgstr "Que souhaitez-vous filtrer?"
 
 #: src/app/templates/modals/bug.tpl.html:58
 msgctxt "Title"
@@ -5014,16 +5014,16 @@ msgstr "Qu'est-il arrivé?"
 #: src/app/templates/views/account.tpl.html:95
 msgctxt "Action"
 msgid "What is this?"
-msgstr ""
+msgstr "Qu'est-ce que c'est?"
 
 #: src/app/templates/modals/filter.tpl.html:44
 msgctxt "Title"
 msgid "Which rule do you want to apply?"
-msgstr ""
+msgstr "Quelle règle voulez-vous appliquer?"
 
 #: src/app/templates/views/filters.tpl.html:63
 msgid "Whitelist"
-msgstr ""
+msgstr "Whitelist"
 
 #: src/app/templates/views/security.tpl.html:9
 msgctxt "Action"
@@ -5040,6 +5040,9 @@ msgid ""
 "Wrong verification code. Please make sure you copied the verification code "
 "correctly and try again. It can take up to 1 hour for changes to take affect."
 msgstr ""
+"Code de vérification incorrect. Assurez-vous que vous avez copié le code de "
+"vérification correctement et essayez à nouveau. Il est possible d’attendre "
+"jusqu’à 1 heure pour que les modifications prennent effet."
 
 #: src/app/templates/modals/card.tpl.html:41
 #: src/app/templates/modals/donate.tpl.html:57
