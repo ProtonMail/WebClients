@@ -81,8 +81,8 @@ kbd {
   color: $text;
   background-color: #f2f2f2;
   border-radius: 3px;
-  -webkit-box-shadow: 0 1px 0 $border, inset 0 0 0 1px $border;
-          box-shadow: 0 1px 0 $border, inset 0 0 0 1px $border;
+  -webkit-box-shadow: 0 0px 0 $border, inset 0 0 0 1px $border;
+          box-shadow: 0 0px 0 $border, inset 0 0 0 1px $border;
 }
 kbd kbd {
   padding: 0;
