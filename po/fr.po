@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.8\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. placeholder showing unread conversations
@@ -5120,13 +5120,16 @@ msgid ""
 "use to customize your account. You can always find these on your Settings "
 "page."
 msgstr ""
+"Vous avez à présent un compte mail chiffré! Ci-dessous les paramètres afin "
+"de personnalisé votre compte. Ceux-ci restes disponibles dans la page de vos "
+"paramètres."
 
 #. safari attachment instructions
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:18
 #: src/app/templates/partials/safari.warning.tpl.html:18
 msgctxt "Info"
 msgid "You will be prompted to save the attachment."
-msgstr ""
+msgstr "Vous serez invité à enregistrer la pièce jointe."
 
 #: src/app/templates/modals/pay.tpl.html:51
 #: src/app/templates/modals/payment/payment.tpl.html:150
@@ -5136,6 +5139,9 @@ msgid ""
 "We will open a new tab with PayPal for you. If you use any pop-up blockers, "
 "please disable them to continue."
 msgstr ""
+"Afin de finaliser la transaction, vous aller devoir vous identifier sur "
+"votre compte Paypal. Nous ouvrirons un nouvel onglet Paypal pour vous. Si "
+"vous utiliser un bloquer de pop-up, désactivez le pour continuer. "
 
 #: src/app/templates/modals/payment/process.tpl.html:7
 msgctxt "Info"
@@ -5144,6 +5150,8 @@ msgid ""
 "immediately upgrade your account. Thanks for choosing to become a paying "
 "customer!"
 msgstr ""
+"Vous avez choisi de passé à un plan payant. Dès que nous aurons reçu votre "
+"paiement nous mettrons à jours votre compte. Merci pour votre soutient! "
 
 #: src/app/controllers/compose.js:572 src/app/routes.js:551
 #: src/app/routes.js:870 src/app/templates/views/payments.tpl.html:45
@@ -5152,11 +5160,13 @@ msgid ""
 "Your account currently has an overdue invoice. Please pay all unpaid "
 "invoices."
 msgstr ""
+"Vous avez une facture impayée. S’il vous plait payer toutes vos factures. "
 
 #: src/app/templates/modals/payment/process.tpl.html:9
 msgctxt "Info"
 msgid "Your account is being updated, this may take up to 30 seconds."
 msgstr ""
+"Mise à jours de votre compte en cours, cela peut prendre jusqu’à 30 secondes."
 
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:13
 #: src/app/templates/partials/safari.warning.tpl.html:13
@@ -5166,12 +5176,17 @@ msgid ""
 "extra work. We recommend using a different web browser such as Chrome or "
 "Firefox for a better user experience."
 msgstr ""
+"Vos pièces jointes sont sécurisées et chiffrées. Pour une meilleur "
+"expérience, nous vous recommandons d’utiliser un navigateur tel que Chrome "
+"ou Firefox."
 
 #: src/app/templates/views/dashboard.tpl.html:115
 msgid ""
 "Your donation helps us support more users and continue to develop ProtonMail "
 "as free and open source software."
 msgstr ""
+"Vos dons nous aides a supporter plus d’utilisateurs, a continuer le "
+"développement de ProtonMail et a conserver le projet gratuit et open source."
 
 #: src/app/templates/modals/payment/thanks.tpl.html:4
 msgid "Your new features are now available."
@@ -5179,7 +5194,7 @@ msgstr "Vos nouvelles fonctionnalités sont maintenant disponibles."
 
 #: src/app/templates/modals/feedback.tpl.html:10
 msgid "Your thoughts..."
-msgstr ""
+msgstr "Vos pensées…"
 
 #: src/app/templates/modals/card.tpl.html:41
 #: src/app/templates/modals/donate.tpl.html:57
