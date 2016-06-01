@@ -12,6 +12,7 @@ angular.module('proton.controllers.Settings')
     confirmModal,
     deleteAccountModal,
     eventManager,
+    hotkeyModal,
     Key,
     networkActivityTracker,
     notify,
@@ -293,6 +294,16 @@ angular.module('proton.controllers.Settings')
                 notify({message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success'});
             })
         );
+    };
+
+    $scope.openHotkeyModal = function() {
+        hotkeyModal.activate({
+            params: {
+                close: function() {
+                    hotkeyModal.deactivate();
+                }
+            }
+        });
     };
 
     $scope.deleteAccount = function() {
