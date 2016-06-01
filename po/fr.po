@@ -339,17 +339,17 @@ msgstr ""
 
 #: src/app/templates/modals/filter.tpl.html:48
 msgid "Add Rule"
-msgstr ""
+msgstr "Ajouter une règle"
 
 #: src/app/templates/modals/filterAddress.tpl.html:7
 msgctxt "Title"
 msgid "Add to Blacklist"
-msgstr ""
+msgstr "Ajouter à la Blacklist"
 
 #: src/app/templates/modals/filterAddress.tpl.html:6
 msgctxt "Title"
 msgid "Add to Whitelist"
-msgstr ""
+msgstr "Ajouté à la Whitelist"
 
 #: src/app/templates/views/members.tpl.html:66
 msgctxt "Action"
@@ -541,7 +541,7 @@ msgstr ""
 #. Form checkbox option
 #: src/app/templates/directives/labels.tpl.html:31
 msgid "Also Archive"
-msgstr ""
+msgstr "Archivé aussi"
 
 #: src/app/templates/views/account.tpl.html:58
 msgctxt "Info"
@@ -551,11 +551,11 @@ msgstr ""
 #: src/app/templates/modals/pay.tpl.html:13
 msgctxt "Title"
 msgid "Amount"
-msgstr ""
+msgstr "Montant"
 
 #: src/app/templates/modals/donate.tpl.html:12
 msgid "Amount"
-msgstr ""
+msgstr "Montant"
 
 #. invoice heading
 #: src/app/templates/modals/pay.tpl.html:21
@@ -563,7 +563,7 @@ msgstr ""
 #: src/app/templates/views/invoice.print.tpl.html:89
 msgctxt "Title"
 msgid "Amount due"
-msgstr ""
+msgstr "Montant"
 
 #: src/app/controllers/settings/dashboard.js:475
 msgctxt "Error"
@@ -586,12 +586,12 @@ msgstr ""
 #: src/app/templates/views/dashboard.tpl.html:86
 msgctxt "Title"
 msgid "Annually"
-msgstr ""
+msgstr "Annuellement"
 
 #: src/app/templates/views/invoices.tpl.html:30
 #: src/app/templates/views/invoices.tpl.html:60
 msgid "Annually"
-msgstr ""
+msgstr "Annuellement"
 
 #. custom domain menu
 #: src/app/controllers/secured.js:253 src/app/controllers/secured.js:39
@@ -2238,7 +2238,7 @@ msgstr ""
 
 #: src/app/templates/views/dashboard.tpl.html:209
 msgid "Free"
-msgstr ""
+msgstr "Gratuit"
 
 #: src/app/templates/partials/message.tpl.html:28
 #: src/app/templates/partials/searchForm.tpl.html:32
@@ -2319,7 +2319,7 @@ msgstr ""
 #: src/app/templates/modals/domain/spf.tpl.html:9
 #: src/app/templates/modals/domain/verification.tpl.html:9
 msgid "Good"
-msgstr ""
+msgstr "Bon"
 
 #. link for v2
 #: src/app/templates/views/login.tpl.html:31
@@ -2356,18 +2356,18 @@ msgstr ""
 #: src/app/templates/partials/composer.tpl.html:173
 msgctxt "Action"
 msgid "Hide"
-msgstr ""
+msgstr "Cacher"
 
 #: src/app/templates/partials/message.tpl.html:224
 msgctxt "Action"
 msgid "Hide details"
-msgstr ""
+msgstr "Cacher les détails"
 
 #. form option heading
 #: src/app/templates/modals/generate.tpl.html:14
 msgctxt "Title"
 msgid "High security"
-msgstr ""
+msgstr "Haute sécurité"
 
 #. feature for upgrading from a free account to a paid account
 #: src/app/templates/modals/monetize.tpl.html:37
@@ -2382,7 +2382,7 @@ msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:77
 msgid "Hint"
-msgstr ""
+msgstr "Indice"
 
 #: src/app/templates/modals/domain/dkim.tpl.html:21
 #: src/app/templates/modals/domain/dmarc.tpl.html:18
@@ -2396,12 +2396,12 @@ msgstr ""
 #: src/app/templates/modals/hotkey.tpl.html:6
 msgctxt "Title"
 msgid "Hotkeys"
-msgstr ""
+msgstr "Raccourcis clavier"
 
 #: src/app/filters/filters.js:33
 #: src/app/templates/partials/composer.tpl.html:116
 msgid "Hours"
-msgstr ""
+msgstr "Heures"
 
 #. link to learn more
 #. link to learn more about changing your mailbox password
@@ -2420,17 +2420,17 @@ msgstr ""
 #: src/app/templates/views/payments.tpl.html:52
 msgctxt "Title"
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: src/app/templates/modals/identity.tpl.html:6
 msgctxt "Title"
 msgid "Identity"
-msgstr ""
+msgstr "Identité"
 
 #: src/app/templates/views/addresses.tpl.html:57
 msgctxt "Action"
 msgid "Identity"
-msgstr ""
+msgstr "Identité"
 
 #: src/app/templates/modals/domain/mx.tpl.html:35
 msgctxt "Info"
@@ -2492,19 +2492,19 @@ msgstr ""
 #: src/app/templates/partials/message.tpl.html:132
 #: src/app/templates/partials/message.tpl.html:37
 msgid "In archive"
-msgstr ""
+msgstr "Dans les archives"
 
 #. message label
 #: src/app/templates/partials/message.tpl.html:134
 #: src/app/templates/partials/message.tpl.html:39
 msgid "In spam"
-msgstr ""
+msgstr "Dans les spams"
 
 #. message label
 #: src/app/templates/partials/message.tpl.html:133
 #: src/app/templates/partials/message.tpl.html:38
 msgid "In trash"
-msgstr ""
+msgstr "Dans la corbeille"
 
 #: src/app/templates/views/addresses.tpl.html:43
 msgctxt "Title"
@@ -2521,11 +2521,11 @@ msgstr ""
 #: src/app/templates/partials/sidebar.tpl.html:13
 msgctxt "Title"
 msgid "Inbox"
-msgstr ""
+msgstr "Boîte de réception"
 
 #: src/app/services/actions.js:32
 msgid "Inbox"
-msgstr ""
+msgstr "Boîte de réception"
 
 #: src/app/templates/directives/squire.tpl.html:53
 #: src/app/templates/directives/squire.tpl.html:75
@@ -3616,7 +3616,7 @@ msgstr ""
 #: src/app/templates/partials/toolbar-desktop.tpl.html:98
 msgctxt "Action"
 msgid "Previous"
-msgstr ""
+msgstr "Précédent"
 
 #. invoice heading
 #. table heading
@@ -3633,17 +3633,17 @@ msgstr ""
 #: src/app/templates/views/keys.tpl.html:35
 #: src/app/templates/views/keys.tpl.html:84
 msgid "Primary"
-msgstr ""
+msgstr "Primaire"
 
 #: src/app/templates/partials/message.tpl.html:216
 msgctxt "Action"
 msgid "Print"
-msgstr ""
+msgstr "Imprimer"
 
 #: src/app/templates/modals/domain/mx.tpl.html:23
 msgctxt "Title"
 msgid "Priority"
-msgstr ""
+msgstr "Priorité"
 
 #. feature for upgrading from a free account to a paid account
 #: src/app/templates/modals/monetize.tpl.html:38
@@ -4215,17 +4215,17 @@ msgstr ""
 #: src/app/templates/views/step1.tpl.html:100
 msgctxt "Title"
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 #: src/app/templates/views/step1.tpl.html:130
 msgctxt "Title"
 msgid "SMS verification"
-msgstr ""
+msgstr "Vérification par SMS"
 
 #: src/app/controllers/signup.js:241
 msgctxt "Error"
 msgid "Something went wrong"
-msgstr ""
+msgstr "Quelque-chose s'est mal passé"
 
 #: src/app/templates/views/outside.unlock.tpl.html:31
 msgctxt "Error"
@@ -4236,7 +4236,7 @@ msgstr ""
 #: src/app/templates/views/invoice.print.tpl.html:65
 msgctxt "Title"
 msgid "Space"
-msgstr ""
+msgstr "Espace"
 
 #: src/app/services/actions.js:33
 msgid "Spam"
@@ -4252,7 +4252,7 @@ msgstr "Spam"
 #: src/app/templates/partials/sidebar.tpl.html:53
 msgctxt "Title"
 msgid "Spam"
-msgstr ""
+msgstr "Spam"
 
 #: src/app/controllers/settings/filters.js:125
 msgid "Spam Filter Added"
@@ -4315,7 +4315,7 @@ msgstr ""
 #: src/app/templates/views/payments.tpl.html:55
 msgctxt "Title"
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. table heading
 #: src/app/templates/modals/storage.tpl.html:12
@@ -4324,16 +4324,16 @@ msgstr ""
 #: src/app/templates/views/members.tpl.html:75
 msgctxt "Title"
 msgid "Storage"
-msgstr ""
+msgstr "Stockage"
 
 #: src/app/templates/modals/payment/payment.tpl.html:20
 #: src/app/templates/views/dashboard.tpl.html:166
 msgid "Storage"
-msgstr ""
+msgstr "Stockage"
 
 #: src/app/templates/modals/user/member.tpl.html:28
 msgid "Storage as MB"
-msgstr ""
+msgstr "Stockage en MB"
 
 #: src/app/models/message.js:139
 msgid "Stored encrypted"
@@ -4363,7 +4363,7 @@ msgstr ""
 #: src/app/templates/modals/user/address.tpl.html:58
 msgctxt "Action"
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #. payment type badge
 #: src/app/templates/views/payments.tpl.html:71
@@ -4391,7 +4391,7 @@ msgstr ""
 #: src/app/templates/views/filters.tpl.html:104
 #: src/app/templates/views/filters.tpl.html:76
 msgid "Switch"
-msgstr ""
+msgstr "Changer"
 
 #: src/app/templates/views/step1.tpl.html:14
 msgctxt "Info"
@@ -4412,7 +4412,7 @@ msgstr ""
 
 #: src/app/controllers/settings/appearance.js:40
 msgid "Theme saved"
-msgstr ""
+msgstr "Thème sauvegardé"
 
 #: src/app/templates/views/step1.tpl.html:171
 msgctxt "Info"
@@ -4678,7 +4678,7 @@ msgstr ""
 #. payment status badge
 #: src/app/templates/views/payments.tpl.html:77
 msgid "Unpaid"
-msgstr ""
+msgstr "Non payé"
 
 #: src/app/templates/partials/conversation.tpl.html:4
 msgid "Unstar"
@@ -4781,7 +4781,7 @@ msgstr ""
 #: src/app/templates/views/invoice.print.tpl.html:53
 msgctxt "Title"
 msgid "User"
-msgstr ""
+msgstr "Utilisateur"
 
 #: src/app/templates/views/invoices.tpl.html:43
 msgctxt "Title"
@@ -4903,7 +4903,7 @@ msgstr ""
 #: src/app/templates/partials/message.tpl.html:212
 msgctxt "Action"
 msgid "View original"
-msgstr ""
+msgstr "Voir l'original"
 
 #: src/app/templates/partials/message.tpl.html:203
 msgctxt "Action"
