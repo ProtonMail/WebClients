@@ -2272,7 +2272,7 @@ msgstr "Plein écran"
 
 #: src/app/controllers/message.js:703
 msgid "Fw:"
-msgstr ""
+msgstr "Fw;"
 
 #: src/app/controllers/settings/addresses.js:197
 #: src/app/controllers/settings/domains.js:223
@@ -2345,7 +2345,7 @@ msgstr "Aide"
 #: src/app/templates/partials/header-auth-desktop.tpl.html:79
 msgctxt "Action"
 msgid "Help &amp; answers"
-msgstr ""
+msgstr "Aide &amp; réponse"
 
 #: src/app/templates/partials/wizard.tpl.html:33
 msgctxt "Title"
@@ -2355,13 +2355,15 @@ msgstr "Aide et assistance"
 #: src/app/templates/modals/monetize.tpl.html:6
 msgctxt "Title"
 msgid "Help us protect online privacy"
-msgstr ""
+msgstr "Aides nous a protéger la vie privée en ligne"
 
 #: src/app/templates/modals/domain/dmarc.tpl.html:13
 msgctxt "Info"
 msgid ""
 "Here is a basic DMARC record that does nothing except email you reports."
 msgstr ""
+"Voici un enregistrement DMARC de base qui n’efffectue que le rapport "
+"d’email. "
 
 #: src/app/templates/partials/composer.tpl.html:173
 msgctxt "Action"
@@ -2588,7 +2590,7 @@ msgstr "IP"
 #: src/app/templates/modals/domain/verification.tpl.html:32
 msgctxt "Info"
 msgid "It can take up to a day for DNS changes to update."
-msgstr ""
+msgstr "Cela peut prendre jusqu’à 1 jours afin que les DNS se propagent."
 
 #: src/app/templates/modals/donate.tpl.html:68
 msgctxt "Info"
@@ -2603,7 +2605,7 @@ msgstr "Italique"
 #: src/app/templates/views/reset-mailbox-password.tpl.html:44
 msgctxt "Info"
 msgid "Keep this password safe - it cannot be recovered."
-msgstr ""
+msgstr "Conserver ce mot de passe, il ne peut être récupérer ultérieurement."
 
 #: src/app/templates/modals/domain/dkim.tpl.html:32
 msgctxt "Info"
@@ -2611,6 +2613,9 @@ msgid ""
 "Keep this record in your DNS for as long as you want to use DKIM. You can "
 "change its Value to <code>off</code> to disable DKIM"
 msgstr ""
+"Sauvegardé cet enregistrement dans vos DNS aussi longuement que vous "
+"souhaitez utiliser DKIM. Changer sa valeur à <code>off</code> afin de "
+"désactiver DKIM."
 
 #: src/app/templates/modals/reactivate.tpl.html:12
 msgid "Key password"
@@ -2622,7 +2627,7 @@ msgstr "Mot de passe de clé"
 #: src/app/templates/views/keys.tpl.html:74
 msgctxt "Title"
 msgid "Key size"
-msgstr ""
+msgstr "Longueur de clé"
 
 #: src/app/templates/partials/searchForm.tpl.html:19
 msgid "Keywords"
@@ -2659,7 +2664,7 @@ msgstr "Nom du libellé"
 
 #: src/app/controllers/settings/labels.js:176
 msgid "Label order saved"
-msgstr ""
+msgstr "Ordre des libellés sauvegardé"
 
 #: src/app/directives/labels.js:113
 msgid "Label Saved"
@@ -2692,6 +2697,11 @@ msgid ""
 "strong>. You can also add, delete, and edit labels by clicking on <em>Label "
 "settings</em> <strong>(2)</strong>."
 msgstr ""
+"Les libellés sont des outils performants afin de gérer votre boîte de "
+"réception. Vous pouvez ajouter et supprimer les libellés des mails "
+"sélectionné en cliquant sur le bouton libellé <strong>(1)</strong>. Ceci "
+"peut également être réalisé en cliquant sur <em>Paramètres</em> <strong>(2)</"
+"strong>"
 
 #: src/app/directives/labels.js:91
 msgid "Labels Saved"
@@ -2784,7 +2794,7 @@ msgstr "Se déconnecter"
 #: src/app/controllers/settings/security.js:104
 #: src/app/controllers/settings/security.js:123
 msgid "Logging preference updated"
-msgstr ""
+msgstr "Préférence d’enregistrements sauvegardée"
 
 #: src/app/controllers/secured.js:265
 msgctxt "Title"
@@ -2844,19 +2854,19 @@ msgstr "Journaux effacés"
 
 #: src/app/templates/views/unlock.tpl.html:15
 msgid "Mailbox password"
-msgstr ""
+msgstr "Mot de passe de la boîte aux lettres"
 
 #. form heading for changing mailbox password
 #: src/app/templates/views/account.tpl.html:152
 #: src/app/templates/views/step1.tpl.html:47
 msgctxt "Title"
 msgid "Mailbox password"
-msgstr ""
+msgstr "Mot de passe de la boîte aux lettres"
 
 #: src/app/templates/views/step1.tpl.html:53
 msgctxt "Error"
 msgid "Mailbox password is required."
-msgstr ""
+msgstr "Le mot de passe de la boîte aux lettres est requis"
 
 #: src/app/templates/views/payments.tpl.html:31
 msgctxt "Action"
@@ -2874,7 +2884,7 @@ msgstr "Utiliser comme principal"
 #: src/app/templates/modals/user/member.tpl.html:45
 msgctxt "Action"
 msgid "Make user private"
-msgstr ""
+msgstr "Passer en utilisateur privé"
 
 #: src/app/templates/views/dashboard.tpl.html:104
 #: src/app/templates/views/dashboard.tpl.html:26
@@ -2888,7 +2898,7 @@ msgstr "Gérer"
 #: src/app/templates/views/members.tpl.html:106
 msgctxt "Action"
 msgid "Manage passwords"
-msgstr ""
+msgstr "Gérer les mot de passes"
 
 #: src/app/templates/modals/storage.tpl.html:6
 msgctxt "Title"
@@ -2898,7 +2908,7 @@ msgstr "Gérer le stockage"
 #: src/app/templates/partials/wizard.tpl.html:25
 msgctxt "Title"
 msgid "Manage your email with labels"
-msgstr ""
+msgstr "Gérer les libellés de vos emails"
 
 #. form option
 #: src/app/templates/views/account.tpl.html:260
@@ -2939,7 +2949,7 @@ msgstr "Marquer comme non lu / Marquer comme lu"
 #: src/app/controllers/settings/members.js:24
 #: src/app/templates/views/members.tpl.html:86
 msgid "Master"
-msgstr ""
+msgstr "Principal"
 
 #. form option
 #: src/app/templates/views/appearance.tpl.html:23
@@ -2977,7 +2987,7 @@ msgstr "Mot de passe du message"
 #: src/app/templates/partials/composer.tpl.html:56
 msgctxt "Title"
 msgid "Message Password"
-msgstr ""
+msgstr "Mot de passe du message"
 
 #: src/app/controllers/compose.js:1192
 msgid "Message saved"
@@ -3135,12 +3145,12 @@ msgstr "Besoin d'aide ?"
 #: src/app/templates/views/account.tpl.html:178
 msgctxt "Title"
 msgid "New mailbox password"
-msgstr ""
+msgstr "Nouveau mot de passe de boîte aux lettres"
 
 #: src/app/templates/views/account.tpl.html:181
 #: src/app/templates/views/reset-mailbox-password.tpl.html:39
 msgid "New mailbox password"
-msgstr ""
+msgstr "Nouveau mot de passe de boîte aux lettres"
 
 #: src/app/controllers/compose.js:1245
 msgctxt "Title"
@@ -3193,7 +3203,7 @@ msgstr "Aucune conversation"
 #: src/app/templates/views/domains.tpl.html:112
 #: src/app/templates/views/domains.tpl.html:163
 msgid "No custom domain found"
-msgstr ""
+msgstr "Aucun domaine personnalisé trouvé."
 
 #: src/app/templates/views/filters.tpl.html:97
 msgctxt "Info"
@@ -3201,6 +3211,8 @@ msgid ""
 "No emails in Blacklist, click Add to Blacklist to add addresses to the "
 "Blacklist."
 msgstr ""
+"Pas d’email dans la liste noir, cliquez sur ajouter à la liste noir afin "
+"d’ajouter des adresses."
 
 #: src/app/templates/views/filters.tpl.html:69
 msgctxt "Info"
@@ -3208,11 +3220,13 @@ msgid ""
 "No emails in Whitelist, click Add to Whitelist to add addresses to the "
 "Whitelist."
 msgstr ""
+"Pas d’email dans la liste blanche, cliquez sur ajouter à la liste blanche "
+"afin d’ajouter des adresses."
 
 #: src/app/controllers/contacts.js:333
 msgctxt "Error"
 msgid "No files were selected"
-msgstr ""
+msgstr "Aucun fichier n’a été sélectionné"
 
 #: src/app/templates/directives/labels.tpl.html:3
 msgctxt "Info"
@@ -3231,7 +3245,7 @@ msgstr "Aucun messages"
 #: src/app/templates/views/contacts.tpl.html:33
 msgctxt "Info"
 msgid "No results for this search in your contacts list."
-msgstr ""
+msgstr "Pas de résultats pour cette recherche dans votre liste de contact."
 
 #: src/app/controllers/compose.js:1255
 msgctxt "Title"
@@ -3290,7 +3304,7 @@ msgstr "Non spam"
 
 #: src/app/templates/views/account.tpl.html:57
 msgid "Notification email"
-msgstr ""
+msgstr "Notification d’email"
 
 #. notifications heading on account page
 #: src/app/templates/views/account.tpl.html:42
@@ -3356,6 +3370,8 @@ msgctxt "Info"
 msgid ""
 "Organization administrators cannot access the messages of private users."
 msgstr ""
+"Les administrateur de l’organisation ne peuvent accéder aux messages des "
+"utilisateurs privés."
 
 #: src/app/templates/views/invoices.tpl.html:13
 msgctxt "Title"
@@ -3374,7 +3390,7 @@ msgstr "Nom de l'organisation"
 #: src/app/templates/modals/organizationRecovery.tpl.html:6
 msgctxt "Title"
 msgid "Organization recovery password"
-msgstr ""
+msgstr "Récupération de mot de passe pour organisation"
 
 #: src/app/templates/views/members.tpl.html:41
 msgctxt "Title"
@@ -3419,7 +3435,7 @@ msgstr "Autres identités"
 #: src/app/templates/views/upgrade.tpl.html:6
 msgctxt "Info"
 msgid "Our secure email requires a modern web browser."
-msgstr ""
+msgstr "Les mails sécurisés fonctionnent seulement avec un navigateur moderne."
 
 #: src/app/templates/views/dashboard.tpl.html:8
 msgctxt "Title"
@@ -3466,7 +3482,7 @@ msgstr "Les mots de passe ne correspondent pas."
 
 #: src/app/templates/views/appearance.tpl.html:91
 msgid "Paste your CSS code here (limited to 200,000 characters)"
-msgstr ""
+msgstr "Coller votre style CSS (limité à 200 000 caractères)"
 
 #: src/app/templates/views/payments.tpl.html:84
 msgctxt "Action"
@@ -3530,6 +3546,7 @@ msgstr "Paiements"
 msgctxt "Info"
 msgid "PayPal is currently not available, please try again later."
 msgstr ""
+"Paypal n’est pas accessible actuellement, s’il vous plaît essayez plus tard."
 
 #: src/app/templates/modals/donate.tpl.html:68
 msgctxt "Link"
@@ -3567,6 +3584,8 @@ msgid ""
 "Please add the follow TXT record. Note, DNS records can take several hours "
 "to update."
 msgstr ""
+"Please add the following TXT record. Note, DNS records can take several "
+"hours to update."
 
 #: src/app/templates/modals/domain/mx.tpl.html:14
 msgctxt "Info"
@@ -3574,11 +3593,14 @@ msgid ""
 "Please add the following MX record. Note, DNS records can take several hours "
 "to update."
 msgstr ""
+"S’il vous plaît, ajouter l’enregistrement MX suivant. Notez qu’un "
+"enregistrement DNS peut prendre plusieurs heures afin d’être mis à jours "
+"globalement. "
 
 #: src/app/templates/modals/domain/verification.tpl.html:15
 msgctxt "Info"
 msgid "Please add the following TXT record:"
-msgstr ""
+msgstr "S’il vous plaît, ajouter l’enregistrement TXT suivant. "
 
 #: src/app/templates/modals/domain/spf.tpl.html:14
 msgctxt "Info"
@@ -3586,15 +3608,20 @@ msgid ""
 "Please add the following TXT record. Note, DNS records can take several "
 "hours to update."
 msgstr ""
+"S’il vous plaît, ajouter l’enregistrement TXT suivant. Notez qu’un "
+"enregistrement DNS peut prendre plusieurs heures afin d’être mis à jours "
+"globalement. "
 
 #: src/app/templates/views/step1.tpl.html:117
 msgctxt "Info"
 msgid "Please check your email and enter the code below:"
-msgstr ""
+msgstr "S’il vous plaît, vérifiez vos email et entrez le code ci-dessous :"
 
 #: src/app/templates/modals/bug.tpl.html:61
 msgid "Please describe the problem and include any error messages"
 msgstr ""
+"S’il vous plait décrivez le problème et insérer les images ou messages "
+"d’erreurs utiles."
 
 #: src/app/templates/modals/organizationRecovery.tpl.html:9
 msgid "Please enter your organization recovery password:"
@@ -3603,7 +3630,7 @@ msgstr "Veuillez entrer votre mot de passe de récupération d'organisation :"
 #: src/app/controllers/login.js:110
 msgctxt "Error"
 msgid "Please enter your username and password."
-msgstr ""
+msgstr "S’il vous plaît entrez votre identifiant et mot de passe."
 
 #: src/app/templates/modals/bug.tpl.html:53
 msgid "Please make sure to give us a way to contact you"
@@ -3686,6 +3713,11 @@ msgid ""
 "<a href=\"https://protonmail.com/support/knowledge-base/aliases-within-"
 "protonmail/\" target=\"_blank\">Learn more</a>"
 msgstr ""
+"Les adresses ProtonMail ne peuvent jamais être supprimées (seulement "
+"désactivées). Cela signifie qu’une fois crée, une adresse sera toujours "
+"déduite de votre limite d’adresse.  <a href=\"https://protonmail.com/support/"
+"knowledge-base/aliases-within-protonmail/\" target=\"_blank\">En savoir "
+"plus</a>"
 
 #: src/app/templates/views/keys.tpl.html:7
 msgctxt "Title"
@@ -3713,6 +3745,8 @@ msgid ""
 "ProtonMail business accounts can create subaccounts which are used by other "
 "members of your organization."
 msgstr ""
+"Les comptes business de ProtonMail peuvent créer des sous comptes pouvant "
+"être utilisé par les membres de leur organisation."
 
 #: src/app/templates/modals/monetize.tpl.html:10
 msgctxt "Info"
@@ -3720,6 +3754,9 @@ msgid ""
 "ProtonMail is open source software that protects your privacy and doesn't "
 "have ads. Your support is essential for keeping the service running."
 msgstr ""
+"ProtonMail est un logiciel open source qui protège votre vie privée et "
+"n’utilise pas la publicité. Votre soutient est essentiel afin de conserver "
+"le service."
 
 #: src/app/templates/views/appearance.tpl.html:31
 msgctxt "Info"
@@ -3727,6 +3764,8 @@ msgid ""
 "ProtonMail supports both column and row layouts for the inbox. Using this "
 "setting, it is possible to change between the two layouts."
 msgstr ""
+"ProtonMail proposer un affichage en colonne ou en rang. En utilisant ces "
+"paramètres, vous changerez le mode d’affichage."
 
 #: src/app/templates/modals/domain/dkim.tpl.html:14
 msgid ""
@@ -3735,6 +3774,10 @@ msgid ""
 "domain. This can typically be done in the control panel of your domain name "
 "registrar."
 msgstr ""
+"ProtonMail est compatible avec l’identification DKIM des domaines "
+"personnels. Afin d’utiliser l’identification DKIM, s’il vous plaît ajouter "
+"l’enregistrement TXT au DNS de votre domaine. Ceci, en général, peut être "
+"effectué dans les paramètres de votre bureau d’enregistrement. "
 
 #: src/app/templates/views/outside.message.tpl.html:25
 msgid "ProtonMail Verified"
@@ -3769,7 +3812,7 @@ msgstr "Quota mis à jour"
 
 #: src/app/controllers/message.js:702
 msgid "Re:"
-msgstr ""
+msgstr "Re:"
 
 #: src/app/templates/modals/reactivate.tpl.html:6
 msgctxt "Title"
@@ -3890,12 +3933,12 @@ msgstr "Réinitialiser"
 #: src/app/templates/views/reset-login-password.tpl.html:36
 msgctxt "Title"
 msgid "Reset login password"
-msgstr ""
+msgstr "Réinitialiser le mot de passe d’identification"
 
 #: src/app/templates/views/reset-login-password.tpl.html:4
 msgctxt "Info"
 msgid "Reset login password"
-msgstr ""
+msgstr "Réinitialiser le mot de passe d’identification"
 
 #. button to reset login password
 #: src/app/templates/views/reset-login-password.tpl.html:17
@@ -3903,17 +3946,17 @@ msgstr ""
 #: src/app/templates/views/reset-login-password.tpl.html:49
 msgctxt "Action"
 msgid "Reset login password"
-msgstr ""
+msgstr "Réinitialiser le mot de passe d’identification"
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:27
 msgctxt "Action"
 msgid "Reset mailbox"
-msgstr ""
+msgstr "Réinitialiser la boîte aux lettre"
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:34
 msgctxt "Title"
 msgid "Reset mailbox"
-msgstr ""
+msgstr "Réinitialiser la boîte aux lettre"
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:14
 msgctxt "Action"
@@ -3931,6 +3974,8 @@ msgstr "Réinitialiser le mot de passe"
 msgctxt "Info"
 msgid "Right-click on your attachment and choose 'Download linked file as...'"
 msgstr ""
+"Cliquez droit sur la pièce jointe, et choisissez ‘Enregistrer la cible du "
+"lien sous…’ "
 
 #. table heading
 #: src/app/templates/views/members.tpl.html:74
@@ -3953,18 +3998,25 @@ msgid ""
 "Safari does not fully support downloading contacts.<br /><br />Please login "
 "with a different browser to download contacts."
 msgstr ""
+"Safari n’est pas compatible avec le téléchargement des contacts. <br /><br /"
+">S’il vous plaît, identifiez vous avec une navigateur différent afin de "
+"télécharger vos contacts."
 
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:12
 #: src/app/templates/partials/safari.warning.tpl.html:12
 msgctxt "Info"
 msgid "Safari does not fully support downloading encrypted attachments."
 msgstr ""
+"Safari n’est pas compatible avec le téléchargement des pièces jointes "
+"chiffrées."
 
 #: src/app/templates/views/keys.tpl.html:5
 msgctxt "Error"
 msgid ""
 "Safari doesn't support downloading of keys. We are working on a fix for this."
 msgstr ""
+"Safari n’est pas compatible avec le téléchargement de clés. Nous essayons de "
+"trouver une solution."
 
 #. save button for saving notification email
 #. Save button for updating default identity on account page
@@ -3995,7 +4047,7 @@ msgstr "Sauvegardé"
 
 #: src/app/templates/partials/composer.tpl.html:237
 msgid "Saved at {{ message.Time | date : \"shortTime\" }}"
-msgstr ""
+msgstr "Sauvegardé le {{ message.Time | date : \"shortTime\" }}"
 
 #: src/app/templates/partials/composer.tpl.html:252
 msgctxt "Action"
@@ -4091,6 +4143,11 @@ msgid ""
 "as spam adds the address to the Blacklist. Marking a message as not spam "
 "adds the address to the Whitelist."
 msgstr ""
+"Les règles de spams peuvent être appliquées ici. Les adresses dans la liste "
+"blanche iront toujours dans votre boîte de réception, les adresses dans la "
+"liste noir iront dans les spams. Marqué un message comme spam ajoute les "
+"adresses à la liste noir. Marqué un message comme non spam ajoute les "
+"adresses à la liste blanche."
 
 #: src/app/templates/partials/composer.tpl.html:250
 msgctxt "Action"
@@ -4211,12 +4268,12 @@ msgstr "Signature"
 #: src/app/templates/partials/toolbar-desktop.tpl.html:64
 msgctxt "Action"
 msgid "Size: Large to small"
-msgstr ""
+msgstr "Taille: Grand à Petit"
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:60
 msgctxt "Action"
 msgid "Size: Small to large"
-msgstr ""
+msgstr "Taille: Petit à Grand"
 
 #: src/app/templates/views/step1.tpl.html:100
 msgctxt "Title"
@@ -4291,6 +4348,11 @@ msgid ""
 "following TXT record into your DNS. This can typically be done in the "
 "control panel of your domain name registrar."
 msgstr ""
+"SPF est utile afin de spécifier qui est autorisé à envoyer des emails depuis "
+"le domaine, nous recommandons d’inclure ProtonMail dans vos enregistrements "
+"SPF. S’il vous plaît, ajouter l’enregistrement TXT suivant dans vos DNS. "
+"Généralement, cela peut s’effectuer dans les panneaux de contrôle de votre "
+"bureau d’enregistrement. "
 
 #: src/app/templates/partials/conversation.tpl.html:3
 msgid "Star"
@@ -4446,6 +4508,8 @@ msgid ""
 "This email has failed its domain's authentication requirements. It may be "
 "spoofed or improperly forwarded!"
 msgstr ""
+"Ce mail échoué au processus d’identification de son domaine. Il est possible "
+"que celui-ci soit falsifiée ou transmis incorrectement!"
 
 #: src/app/templates/partials/message.tpl.html:246
 msgctxt "Info"
@@ -4454,11 +4518,14 @@ msgid ""
 "system and failed our authentication requirements. It may be spoofed or "
 "improperly forwarded!"
 msgstr ""
+"Ce mail semble provenir d’un compte ProtonMail mais n’a pas été rédigé "
+"depuis notre système, il a échoué à notre processus d’identification. Il est "
+"possible que celui-ci soit falsifiée ou transmis incorrectement!"
 
 #: src/app/templates/modals/welcome.tpl.html:22
 msgctxt "Info"
 msgid "This is the 'From' name that people will see when you email them."
-msgstr ""
+msgstr "Ceci est le ‘De’ affiché lors de vos échanges de mail."
 
 #: src/app/templates/views/step1.tpl.html:49
 msgctxt "Info"
@@ -4466,6 +4533,9 @@ msgid ""
 "This is used to encrypt and decrypt\n"
 "        your messages. Do not lose this password, we cannot recover it."
 msgstr ""
+"Ceci est utilisé pour chiffrer et déchiffrer\n"
+"        vos emails. Ne perdez pas ce mot de passe, nous ne pourrons pas le "
+"récupérer."
 
 #: src/app/templates/views/step1.tpl.html:36
 msgctxt "Info"
@@ -4478,6 +4548,8 @@ msgid ""
 "This is used to recover your account if you get locked out or forget your "
 "login password."
 msgstr ""
+"Ceci est utiliser afin de récupérer votre compte si vous avez perdu votre "
+"mot de passe d’identification."
 
 #: src/app/templates/partials/composer.tpl.html:100
 #: src/app/templates/partials/message.tpl.html:233
@@ -4491,6 +4563,9 @@ msgid ""
 "This page is only available on larger resolution devices. If you are on a  "
 "phone, try landscape mode, or visit on a computer instead."
 msgstr ""
+"Cette page est uniquement disponible sur les écrans de grande résolution. Si "
+"vous utilisez un téléphone mobile, essayez le mode paysage, ou utiliser un "
+"ordinateur. "
 
 #: src/app/templates/views/appearance.tpl.html:11
 msgctxt "Info"
@@ -4498,6 +4573,8 @@ msgid ""
 "This sets the default composer size. Two sizes are available, a smaller "
 "popup composer, and a bigger full screen composer."
 msgstr ""
+"Ceci enregistre la taille par default du composer. Deux tailles sont "
+"disponibles, réduite ou pleine page. "
 
 #: src/app/templates/partials/wizard.tpl.html:11
 msgctxt "Info"
@@ -4507,11 +4584,16 @@ msgid ""
 "have sent you. If you ever want to view this tutorial again, you can access "
 "it by clicking your username in the upper right corner."
 msgstr ""
+"Ce petit didacticiel vous indiquera les principales fonctionnalités de votre "
+"nouveau compte ProtonMail. Pour plus d’informations, lisez le mail de "
+"bienvenue que nous vous avons envoyé. Ce didacticiel reste accessible en "
+"cliquant sur votre nom d’utilisateur situé dans le coin supérieur droit. "
 
 #: src/app/templates/modals/alias.tpl.html:18
 msgctxt "Info"
 msgid "This will be a new address you can send and receive emails with."
 msgstr ""
+"Cette nouvelle adresse vous permettra d’envoyer et de recevoir des emails."
 
 #: src/app/templates/views/step1.tpl.html:20
 msgctxt "Info"
@@ -4535,7 +4617,7 @@ msgstr ""
 #: src/app/templates/views/security.tpl.html:36
 msgctxt "Title"
 msgid "Time"
-msgstr ""
+msgstr "Date"
 
 #. message metadata
 #. printed message info
@@ -4560,6 +4642,8 @@ msgid ""
 "To add more addresses to your account, or to use your own domain, upgrade "
 "your account."
 msgstr ""
+"Afin d’ajouter plus d’adresse à votre compte, ou d’utiliser votre nom de "
+"domaine personnel, abonnez vous."
 
 #. reset warning 3/3
 #: src/app/templates/views/reset-mailbox-password.tpl.html:7
@@ -4762,6 +4846,8 @@ msgid ""
 "Upgrading to a paid account is the best way to support ProtonMail, but you "
 "can also donate any amount."
 msgstr ""
+"Choisir un abonnement payant est la meilleur façon de nous soutenir, mais "
+"vous pouvez également faire un don."
 
 #: src/app/templates/modals/dropzone.tpl.html:6
 msgctxt "Title"
@@ -4788,6 +4874,8 @@ msgstr "URL de l'image"
 msgctxt "Info"
 msgid "Use one of these browsers for the best experience during Beta:"
 msgstr ""
+"Utilisez un de ces navigateurs pour une meilleur expérience lors de la phase "
+"Beta:"
 
 #. invoice heading
 #: src/app/templates/views/invoice.print.tpl.html:53
@@ -4850,7 +4938,7 @@ msgstr "Utilisateurs"
 #: src/app/templates/modals/domain/verification.tpl.html:22
 msgctxt "Title"
 msgid "Value / Data / Points to"
-msgstr ""
+msgstr "Valeur / Données / Cible"
 
 #: src/app/templates/views/domains.tpl.html:49
 msgid "Verification"
@@ -4878,7 +4966,7 @@ msgstr "Code de vérification envoyé"
 #: src/app/controllers/settings/domains.js:530
 msgctxt "Error"
 msgid "Verification did not succeed, please try again in an hour."
-msgstr ""
+msgstr "La vérification à échoué, s’il vous plaît, réessayer dans une heure."
 
 #: src/app/templates/modals/domain/verification.tpl.html:37
 msgctxt "Action"
@@ -4893,7 +4981,7 @@ msgstr "Vérifier"
 
 #: src/app/templates/views/step1.tpl.html:197
 msgid "Verifying encryption keys"
-msgstr ""
+msgstr "Vérification des clés de chiffrement"
 
 #: src/app/templates/layout/pre.tpl.html:7
 msgid "Verifying invite link..."
@@ -4910,17 +4998,17 @@ msgstr "Version"
 #: src/app/templates/partials/message.tpl.html:208
 msgctxt "Action"
 msgid "View headers"
-msgstr "Voir les en-têtes"
+msgstr "Afficher les en-têtes"
 
 #: src/app/templates/partials/message.tpl.html:212
 msgctxt "Action"
 msgid "View original"
-msgstr "Voir l'original"
+msgstr "Afficher l'original"
 
 #: src/app/templates/partials/message.tpl.html:203
 msgctxt "Action"
 msgid "View rendered HTML"
-msgstr "Voir le rendu HTML"
+msgstr "Afficher le rendu HTML"
 
 #: src/app/templates/partials/message.tpl.html:199
 msgctxt "Action"
@@ -4930,7 +5018,7 @@ msgstr "Afficher le code source"
 #. payment status badge
 #: src/app/templates/views/payments.tpl.html:79
 msgid "Void"
-msgstr ""
+msgstr "Vide"
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:4
 msgctxt "Title"
@@ -4941,7 +5029,7 @@ msgstr "Attention"
 #: src/app/templates/modals/deleteAccount.tpl.html:10
 msgctxt "Info"
 msgid "WARNING: DELETION IS PERMANENT"
-msgstr ""
+msgstr "ATTENTION: L’EFFACEMENT EST PERMANENT"
 
 #: src/app/templates/modals/generate.tpl.html:50
 msgctxt "Info"
@@ -4949,11 +5037,13 @@ msgid ""
 "We are now generating encryption keys for your account, this may take "
 "several minutes and temporarily freeze your browser."
 msgstr ""
+"Nous générons vos clés de chiffrement, cela peut prendre quelques minutes et "
+"bloquer temporairement votre navigateur."
 
 #: src/app/templates/modals/deleteAccount.tpl.html:14
 msgctxt "Title"
 msgid "We are sorry to see you go!"
-msgstr "Nous sommes désolés de vous voir partir."
+msgstr "Nous sommes désolés de vous voir partir!"
 
 #: src/app/templates/modals/payment/payment.tpl.html:139
 msgctxt "Info"
@@ -4961,6 +5051,8 @@ msgid ""
 "We only accept PayPal for annual subscriptions, click the link to switch to "
 "an annual subscription."
 msgstr ""
+"Nous acceptons seulement Paypal pour les abonnements annuels, cliquez sur le "
+"lien afin de passer en abonnement annuel."
 
 #: src/app/templates/modals/payment/payment.tpl.html:143
 msgctxt "Info"
@@ -4969,6 +5061,9 @@ msgid ""
 "for US Dollar plans. Click here to switch to an annual US Dollar "
 "subscription."
 msgstr ""
+"Nous acceptons seulement Paypal pour les abonnements annuels. Les "
+"abonnements en dollar Américain sont uniquement traités par PayPal. Cliquez "
+"sur le lien afin de passer en abonnement annuel."
 
 #: src/app/templates/views/reset-login-password.tpl.html:2
 msgctxt "Info"
@@ -4988,6 +5083,8 @@ msgid ""
 "We've sent a verification code to your <strong>Recovery email</strong>. "
 "Enter it below to continue."
 msgstr ""
+"Nous vous avons envoyé un code de vérification à votre <strong>adresse de "
+"récupération</strong>. Entrez-le ci-dessous."
 
 #: src/app/templates/partials/composer.tpl.html:106
 msgid "Weeks"
@@ -5077,11 +5174,15 @@ msgid ""
 "<a href=\"// Detect if the current browser have cookie enable\" target="
 "\"_blank\">More information here</a>."
 msgstr ""
+"Vous êtes en mode privé ou n’avez pas de stockage de session.\n"
+"S’il vous plaît, désactiver le mode privé de votre navigateur.\n"
+"<a href=\"// Detect if the current browser have cookie enable\" target="
+"\"_blank\">Plus d’informations</a>."
 
 #: src/app/templates/views/addresses.tpl.html:19
 msgctxt "Info"
 msgid "You can drag and drop addresses to order them."
-msgstr ""
+msgstr "Vous pouvez glisser déposer les adresses afin des les réorganiser."
 
 #: src/app/templates/views/security.tpl.html:25
 msgctxt "Info"
@@ -5090,6 +5191,9 @@ msgid ""
 "and from which IP. We will record the IP address that accesses the account "
 "and the time, as well as failed attempts."
 msgstr ""
+"Vous pouvez activer l’enregistrement afin de voir quand votre compte est "
+"utilisé et par quel adresse IP. Nous enregistrerons les adresses IP, le "
+"moment, ainsi que les tentatives d’identification échouées."
 
 #: src/app/templates/views/contacts.tpl.html:32
 msgctxt "Info"
@@ -5097,6 +5201,8 @@ msgid ""
 "You have no contacts, you can add contact with the above button 'ADD "
 "CONTACT'."
 msgstr ""
+"Vous n’avez pas de contacts, vous pouvez ajouter un contact en cliquant sur "
+"le bouton ‘AJOUTER UN CONTACT’ "
 
 #: src/app/templates/views/payments.tpl.html:46
 msgctxt "Info"
@@ -5108,6 +5214,8 @@ msgctxt "Info"
 msgid ""
 "You have no labels, you can add label with the above button 'ADD LABEL'."
 msgstr ""
+"Vous n’avez pas de libellés, vous pouvez ajouter un libellé en cliquant sur "
+"le bouton ‘AJOUTER UN LIBELLÉ’"
 
 #: src/app/templates/views/payments.tpl.html:10
 msgctxt "Info"
@@ -5115,6 +5223,8 @@ msgid ""
 "You have no saved payment methods, you can add a payment method by clicking "
 "'ADD'."
 msgstr ""
+"Vous n’avez pas de moyen de paiement, vous pouvez en ajouter un en cliquant "
+"sur le lien ‘AJOUTER’"
 
 #: src/app/controllers/settings/dashboard.js:364
 msgid "You have successfully unsubscribed"
@@ -5124,6 +5234,7 @@ msgstr "Vous vous êtes désabonné avec succès"
 msgctxt "Info"
 msgid "You need to add a credit card if you want to pay your invoice."
 msgstr ""
+"Vous devez ajouter une carte de crédit si vous souhaitez régler vos factures."
 
 #: src/app/templates/modals/welcome.tpl.html:9
 msgctxt "Info"
@@ -5132,13 +5243,16 @@ msgid ""
 "use to customize your account. You can always find these on your Settings "
 "page."
 msgstr ""
+"Vous avez à présent un compte mail chiffré! Ci-dessous les paramètres afin "
+"de personnaliser votre compte. Vous pourrez retrouver ces options dans votre "
+"page des paramètres."
 
 #. safari attachment instructions
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:18
 #: src/app/templates/partials/safari.warning.tpl.html:18
 msgctxt "Info"
 msgid "You will be prompted to save the attachment."
-msgstr ""
+msgstr "Vous serez invité à sauvegarder la pièce jointe."
 
 #: src/app/templates/modals/pay.tpl.html:51
 #: src/app/templates/modals/payment/payment.tpl.html:150
@@ -5148,6 +5262,9 @@ msgid ""
 "We will open a new tab with PayPal for you. If you use any pop-up blockers, "
 "please disable them to continue."
 msgstr ""
+"Vous devrez vous identifier sur votre compte PayPal afin de finaliser la "
+"transaction. Nous ouvrirons un nouvel onglet Paypal pour vous. Si vous "
+"utiliser un bloquer de publicité, désactivez le temporairement."
 
 #: src/app/templates/modals/payment/process.tpl.html:7
 msgctxt "Info"
@@ -5156,6 +5273,8 @@ msgid ""
 "immediately upgrade your account. Thanks for choosing to become a paying "
 "customer!"
 msgstr ""
+"Vous avez commandé un abonnement. Dès que nous auront reçu votre paiement, "
+"nous mettrons à jours votre compte. Merci d’avoir choisi ProtonMail! "
 
 #: src/app/controllers/compose.js:572 src/app/routes.js:551
 #: src/app/routes.js:870 src/app/templates/views/payments.tpl.html:45
@@ -5164,11 +5283,14 @@ msgid ""
 "Your account currently has an overdue invoice. Please pay all unpaid "
 "invoices."
 msgstr ""
+"Votre compte a des factures en attente. Svp régler toutes vos factures "
+"ouvertes."
 
 #: src/app/templates/modals/payment/process.tpl.html:9
 msgctxt "Info"
 msgid "Your account is being updated, this may take up to 30 seconds."
 msgstr ""
+"Nous mettons à jours votre compte, cela peut prendre jusqu’à 30 secondes."
 
 #: src/app/templates/partials/safari.attachment.warning.tpl.html:13
 #: src/app/templates/partials/safari.warning.tpl.html:13
@@ -5178,6 +5300,9 @@ msgid ""
 "extra work. We recommend using a different web browser such as Chrome or "
 "Firefox for a better user experience."
 msgstr ""
+"Vos pièces jointes sont sécurisé et chiffrées, mais afin de les télécharger "
+"dans les meilleurs conditions nous vous recommandons d’utiliser un "
+"navigateur tel que Chrome ou Firefox. "
 
 #: src/app/templates/views/dashboard.tpl.html:115
 msgid ""
