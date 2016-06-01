@@ -297,6 +297,7 @@ module.exports = function(grunt) {
                 noarg: true,
                 node: true,
                 trailing: true,
+                '-W100': true,
                 globals: {
                     angular: true,
                     pmcrypto: true,
