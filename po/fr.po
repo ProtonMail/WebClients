@@ -523,6 +523,8 @@ msgid ""
 "All PayPal orders are charged in US Dollar, click the link to change your "
 "subscription to US Dollar."
 msgstr ""
+"Toutes les commandes PayPal sont facturée en dollar Américain, cliquez sur "
+"le lien pour changer votre abonnement en dollar Américain"
 
 #: src/app/templates/modals/dropzone.tpl.html:9
 msgctxt "Info"
@@ -531,6 +533,9 @@ msgid ""
 "right\" href=\"https://protonmail.com/support/knowledge-base/adding-contacts/"
 "\" target=\"_blank\">Need help?</a>"
 msgstr ""
+"Formats autorisés (encodage UTF-8): <code>.vcf, .csv</code><a class=\"pull-"
+"right\" href=\"https://protonmail.com/support/knowledge-base/adding-contacts/"
+"\" target=\"_blank\">Besoin d’aide?</a>"
 
 #. link to login
 #: src/app/templates/views/step1.tpl.html:75
@@ -768,7 +773,7 @@ msgstr "Retour à protonmail.com"
 #: src/app/templates/views/security.tpl.html:17
 msgctxt "Action"
 msgid "Basic"
-msgstr ""
+msgstr "Basique"
 
 #. printed message info
 #: src/app/controllers/compose.js:1590
@@ -786,6 +791,9 @@ msgid ""
 "ProtonMail, you need to add the following MX record to your DNS. This can "
 "typically be done in the control panel of your domain name registrar."
 msgstr ""
+"Avant de réception des mail avec votre domain personnalisé vous devez "
+"ajouter les enregistrement MX dans vos DNS. Généralement, ceci peut être "
+"réaliser depuis le panneau de contrôle de votre bureau d’enregistrement."
 
 #. payment status badge
 #: src/app/templates/views/payments.tpl.html:80
@@ -832,6 +840,8 @@ msgid ""
 "Bug reports are not end-to-end encrypted, please do not send any sensitive "
 "information."
 msgstr ""
+"Les rapports de Bugs ne sont pas chiffrés de bout en bout, n’envoyez pas "
+"d’informations sensibles!"
 
 #: src/app/controllers/settings/appearance.js:110
 msgctxt "Info"
@@ -842,13 +852,15 @@ msgstr "Position des boutons sauvée"
 #: src/app/templates/views/step1.tpl.html:72
 msgctxt "Info"
 msgid "By clicking Create Account, you agree to abide by"
-msgstr ""
+msgstr "En cliquant sur créer un compte, vous acceptez "
 
 #: src/app/controllers/compose.js:93 src/app/routes.js:462
 msgid ""
 "By leaving now, you will lose what you have written in this email. You can "
 "save a draft if you want to come back to it later on."
 msgstr ""
+"En quittant maintenant, vous perdrez ce que vous avez écris dans ce mail. "
+"Vous pouvez sauvegardé un brouillon si vous souhaitez le récupérer plus tard."
 
 #. back to login page
 #. cancel reset process
@@ -955,7 +967,7 @@ msgstr "Choisissez un mot de passe de connexion"
 
 #: src/app/templates/views/step1.tpl.html:51
 msgid "Choose a mailbox password"
-msgstr ""
+msgstr "Choisissez un mot de passe de boîte au lettres."
 
 #: src/app/templates/modals/alias.tpl.html:9
 msgctxt "Title"
@@ -971,6 +983,8 @@ msgctxt "Info"
 msgid ""
 "Choose your prefered button order for marking messages as read / unread."
 msgstr ""
+"Choisissez l’ordre préféré des boutons pour marqué les messages comme lu / "
+"non lu. "
 
 #: src/app/controllers/settings/security.js:45
 msgctxt "Title"
@@ -1069,7 +1083,7 @@ msgstr "Colonne"
 #: src/app/templates/modals/loginHelp.tpl.html:16
 msgctxt "Action"
 msgid "Common login problems"
-msgstr ""
+msgstr "Problème courant d’identification"
 
 #: src/app/templates/views/step1.tpl.html:161
 msgctxt "Action"
@@ -1082,7 +1096,7 @@ msgstr "Terminer la configuration"
 #: src/app/templates/views/contacts.tpl.html:27
 msgctxt "Action"
 msgid "Compose"
-msgstr ""
+msgstr "Compose"
 
 #: src/app/controllers/settings/appearance.js:71
 msgctxt "Info"
@@ -1120,12 +1134,12 @@ msgstr "Confirmer le mot de passe"
 #: src/app/templates/views/reset-mailbox-password.tpl.html:42
 #: src/app/templates/views/step1.tpl.html:55
 msgid "Confirm mailbox password"
-msgstr ""
+msgstr "Confirmer le mot de passe de la boîte au lettres"
 
 #: src/app/templates/views/account.tpl.html:189
 #: src/app/templates/views/account.tpl.html:192
 msgid "Confirm new mailbox Password"
-msgstr ""
+msgstr "Confirmer le nouveau mot de passe de la boîte au lettres"
 
 #: src/app/templates/views/account.tpl.html:136
 msgid "Confirm new password"
@@ -1184,6 +1198,8 @@ msgid ""
 "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonmail."
 "com</a> for critical security issues."
 msgstr ""
+"Contactez nous à <a href=\"mailto:security@protonmail.com"
+"\">security@protonmail.com</a> pour toutes failles de sécurités détectées."
 
 #. Folder name
 #: src/app/controllers/secured.js:238
@@ -1221,6 +1237,10 @@ msgid ""
 "<a href=\"// Detect if the current browser have cookie enable\" target="
 "\"_blank\">More information here</a>."
 msgstr ""
+"Les cookies sont désactivés.\n"
+"S’il vous plaît activez les cookies et recharger la page.\n"
+"<a href=\"// Detect if the current browser have cookie enable\" target="
+"\"_blank\">Plus d’informations</a>."
 
 #: src/app/templates/modals/payment/payment.tpl.html:169
 msgid "Coupon"
@@ -1294,6 +1314,8 @@ msgstr "Carte de crédit"
 msgctxt "Info"
 msgid "Credit card payment is currently not available, please try again later."
 msgstr ""
+"Le paiement par carte de crédit est actuellement indisponible, réessayer "
+"plus tard."
 
 #: src/app/templates/views/dashboard.tpl.html:130
 msgid "Currency"
@@ -1305,28 +1327,28 @@ msgstr "Devise"
 #: src/app/templates/views/account.tpl.html:46
 msgctxt "Title"
 msgid "Current login password"
-msgstr ""
+msgstr "Identifiant actuel"
 
 #: src/app/templates/views/account.tpl.html:159
 #: src/app/templates/views/account.tpl.html:49
 msgid "Current login password"
-msgstr ""
+msgstr "Mot de passe actuel"
 
 #: src/app/templates/views/account.tpl.html:170
 msgid "Current mailbox password"
-msgstr ""
+msgstr "Mot de passe boîte aux lettre actuel"
 
 #. form heading for current mailbox password
 #: src/app/templates/views/account.tpl.html:167
 msgctxt "Title"
 msgid "Current mailbox password"
-msgstr ""
+msgstr "Mot de passe boîte aux lettre actuel"
 
 #. current login password for heading for changing login password
 #: src/app/templates/views/account.tpl.html:111
 msgctxt "Title"
 msgid "Current password"
-msgstr ""
+msgstr "Mot de passe actuel"
 
 #: src/app/templates/views/account.tpl.html:114
 msgid "Current password"
@@ -1367,6 +1389,8 @@ msgid ""
 "Custom themes from third-parties can potentially betray your privacy. Only "
 "use themes from trusted sources."
 msgstr ""
+"Les thèmes personnalisés de tierces personnes peuvent trahir votre vie "
+"privée. Utilisez seulement des thèmes de sources sûres!"
 
 #: src/app/templates/views/payments.tpl.html:43
 msgctxt "Action"
@@ -1414,12 +1438,12 @@ msgstr "Date"
 #: src/app/templates/partials/toolbar-desktop.tpl.html:68
 msgctxt "Action"
 msgid "Date: New to old"
-msgstr ""
+msgstr "Date: Nouveau à ancien"
 
 #: src/app/templates/partials/toolbar-desktop.tpl.html:72
 msgctxt "Action"
 msgid "Date: Old to new"
-msgstr ""
+msgstr "Date: Ancien à nouveau"
 
 #: src/app/filters/filters.js:33
 #: src/app/templates/partials/composer.tpl.html:111
@@ -1433,7 +1457,7 @@ msgstr "Déchiffrer"
 #: src/app/templates/views/unlock.tpl.html:8
 msgctxt "Title"
 msgid "Decrypt Mailbox"
-msgstr ""
+msgstr "Déchiffrer la boîte aux lettres"
 
 #: src/app/templates/views/outside.unlock.tpl.html:7
 msgctxt "Title"
@@ -1528,6 +1552,8 @@ msgid ""
 "Delete any other MX records or make sure ProtonMail's Priority is the lowest "
 "number."
 msgstr ""
+"Supprimer tous les autres enregistrent MX, ou vérifier que ProtonMail est le "
+"moins prioritaire. "
 
 #: src/app/controllers/settings/domains.js:170
 msgctxt "Title"
@@ -1902,7 +1928,7 @@ msgstr "Activé"
 #: src/app/templates/partials/composer.tpl.html:48
 msgctxt "Title"
 msgid "Encrypt for non-ProtonMail users"
-msgstr ""
+msgstr "Chiffrer pour les personnes n’utilisant pas ProtonMail"
 
 #: src/app/templates/partials/composer.tpl.html:82
 msgctxt "Info"
@@ -1910,6 +1936,8 @@ msgid ""
 "Encrypted messages to non-ProtonMail recipients will expire in 28 days "
 "unless a shorter expiration time is set."
 msgstr ""
+"Les messages chiffrés à destination des utilisateurs non ProtonMail expire "
+"après 28 jours, à moins qu’un délais plus court soit renseigné. "
 
 #: src/app/templates/partials/composer.tpl.html:251
 msgctxt "Action"
@@ -1932,23 +1960,23 @@ msgstr "Date de fin"
 
 #: src/app/models/message.js:137
 msgid "End to end encrypted for outside"
-msgstr ""
+msgstr "Chiffrement de bout en bout pour l’extérieur"
 
 #: src/app/models/message.js:140
 msgid "End to end encrypted for outside reply"
-msgstr ""
+msgstr "Chiffrement de bout en bout pour les réponses éxtérieur"
 
 #: src/app/models/message.js:135
 msgid "End to end encrypted internal message"
-msgstr ""
+msgstr "Chiffrement de bout en bout pour les messages internes"
 
 #: src/app/models/message.js:141
 msgid "End to end encrypted using PGP"
-msgstr ""
+msgstr "Chiffrement de bout en bout utilisant PGP"
 
 #: src/app/models/message.js:142
 msgid "End to end encrypted using PGP/MIME"
-msgstr ""
+msgstr "Chiffrement de bout en bout utilisant PGP/MIME"
 
 #: src/app/controllers/settings/appearance.js:18
 msgid "English"
@@ -1965,21 +1993,22 @@ msgstr "Accéder à la boîte aux lettres"
 
 #: src/app/templates/modals/reactivate.tpl.html:11
 msgid "Enter the key password:"
-msgstr ""
+msgstr "Entre le mot de passe de la clé:"
 
 #: src/app/templates/views/reset-mailbox-password.tpl.html:9
 msgid "Enter the word 'DANGER' here."
-msgstr ""
+msgstr "Entrez le mot ‘DANGER’ ici."
 
 #: src/app/templates/modals/deleteAccount.tpl.html:19
 msgctxt "Title"
 msgid "Enter your login password to confirm your identity:"
 msgstr ""
+"Entrez votre mot de passe d’identification afin de confirmer votre identité:"
 
 #: src/app/templates/modals/loginPassword.tpl.html:9
 #: src/app/templates/modals/reactivate.tpl.html:9
 msgid "Enter your login password:"
-msgstr ""
+msgstr "Entrez votre mot de passe d’identification"
 
 #. key generation progrss
 #: src/app/templates/modals/generate.tpl.html:41
@@ -2040,33 +2069,33 @@ msgstr "Erreur lors de la demande de d'activation"
 #: src/app/controllers/settings/labels.js:210
 msgctxt "Error"
 msgid "Error during label request"
-msgstr ""
+msgstr "Erreur pendant la requête de libellé"
 
 #: src/app/controllers/settings/dashboard.js:337 src/app/services/modal.js:695
 #: src/app/services/modal.js:698
 msgctxt "Error"
 msgid "Error during organization request"
-msgstr ""
+msgstr "Erreur pendant la requête d’organisation"
 
 #: src/app/controllers/conversations.js:320
 msgctxt "Error"
 msgid "Error during quering conversations"
-msgstr ""
+msgstr "Erreur pendant la requête de conversations"
 
 #: src/app/controllers/message.js:225
 msgctxt "Error"
 msgid "Error during the decryption of the message"
-msgstr ""
+msgstr "Erreur de déchiffrement du message"
 
 #: src/app/controllers/outside.js:154
 msgctxt "Error"
 msgid "Error during the encryption"
-msgstr ""
+msgstr "Erreur de chiffrement du message"
 
 #: src/app/controllers/message.js:229
 msgctxt "Error"
 msgid "Error during the getting message"
-msgstr ""
+msgstr "Erreur de récupération du message"
 
 #: src/app/controllers/settings/security.js:37
 msgctxt "Error"
@@ -2091,12 +2120,12 @@ msgstr "Erreur lors de la mise à jour"
 #: src/app/controllers/settings/dashboard.js:354
 msgctxt "Error"
 msgid "Error processing payment."
-msgstr ""
+msgstr "Erreur lors du traitement de paiement."
 
 #: src/app/services/modal.js:1575
 msgctxt "Error"
 msgid "Error while processing donation."
-msgstr ""
+msgstr "Erreur lors du traitement du don."
 
 #. Table heading
 #: src/app/templates/views/invoices.tpl.html:19
@@ -5300,7 +5329,7 @@ msgid ""
 "extra work. We recommend using a different web browser such as Chrome or "
 "Firefox for a better user experience."
 msgstr ""
-"Vos pièces jointes sont sécurisé et chiffrées, mais afin de les télécharger "
+"Vos pièces jointes sont sécurisés et chiffrées, mais afin de les télécharger "
 "dans les meilleurs conditions nous vous recommandons d’utiliser un "
 "navigateur tel que Chrome ou Firefox. "
 
