@@ -152,6 +152,7 @@
             z-index: 2;
             label {
                 margin-left: .25rem;
+                background: $white;
             }
         }
     }
@@ -164,6 +165,7 @@
         .pm_labels {
             label {;
                 box-shadow: .25rem 0 0 .25rem $read;
+                background: $read;
             }
         }
     }

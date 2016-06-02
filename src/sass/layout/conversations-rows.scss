@@ -105,6 +105,7 @@ body {
                     height: 30px;
                     label {
                         margin-left: .25rem;
+                        background: $white;
                         &.more {
                             margin-left: 0;
                         }
@@ -141,6 +142,9 @@ body {
                     }
                     .pm_labels {
                         background: $read;
+                        label {
+                            background: $read;
+                        }
                     }
                 }
             }
