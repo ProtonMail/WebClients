@@ -93,17 +93,13 @@ angular.module('proton.hotkeys', [])
     };
 
     var help = function(event) {
-        if (hotkeyModal.active() === true) {
-            hotkeyModal.deactivate();
-        } else {
-            hotkeyModal.activate({
-                params: {
-                    close: function() {
-                        hotkeyModal.deactivate();
-                    }
+        hotkeyModal.activate({
+            params: {
+                close: function() {
+                    hotkeyModal.deactivate();
                 }
-            });
-        }
+            }
+        });
 
         return false;
     };
