@@ -30,7 +30,7 @@ angular.module("proton.controllers.Settings")
     $scope.domains = domains.data.Domains;
     $scope.members = members.data.Members;
     $scope.addressMemberID = $scope.members[0];
-    $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
+    $scope.isAdmin = !!(authentication.user && authentication.user.Role === CONSTANTS.PAID_ADMIN);
 
     // Listeners
     $scope.$on('domain', function(event, domain) {
