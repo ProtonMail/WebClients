@@ -5242,6 +5242,12 @@ msgid ""
 "you enter to enter our secure system. The Mailbox password is your second "
 "password and is used to decrypt your messages.\">Login Password</abbr>."
 msgstr ""
+"We will send a code to your <abbr title=\"This is the optional email you "
+"used when first creating an account. This is the same as your Notification "
+"Email that is used for sending alerts about new messages.'>Recovery email</"
+"abbr> to reset your <abbr title='Your Login Password is the first password "
+"you enter to enter our secure system. The Mailbox password is your second "
+"password and is used to decrypt your messages.\">Login Password</abbr>."
 
 #: src/app/templates/views/reset-login-password.tpl.html:22
 #: src/app/templates/views/reset-mailbox-password.tpl.html:20
