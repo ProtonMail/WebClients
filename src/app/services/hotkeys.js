@@ -93,13 +93,17 @@ angular.module('proton.hotkeys', [])
     };
 
     var help = function(event) {
-        hotkeyModal.activate({
-            params: {
-                close: function() {
-                    hotkeyModal.deactivate();
+        if (hotkeyModal.active() === true) {
+            hotkeyModal.deactivate();
+        } else {
+            hotkeyModal.activate({
+                params: {
+                    close: function() {
+                        hotkeyModal.deactivate();
+                    }
                 }
-            }
-        });
+            });
+        }
 
         return false;
     };
@@ -119,7 +123,7 @@ angular.module('proton.hotkeys', [])
         {keyboard: 't', callback: trash},
         {keyboard: 'a', callback: archive},
         {keyboard: 's', callback: spam},
-        {keyboard: ['?'], callback: help}
+        {keyboard: '?', callback: help}
     ];
 
     var hotkeys = {
