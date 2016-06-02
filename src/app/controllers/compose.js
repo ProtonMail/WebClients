@@ -261,8 +261,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     function onDragEnter(event) {
-        $scope.isOver = true;
-        // $scope.$apply();
+        
+        /* /!\ force digest over state change */
+        $scope.$digest(function() {
+            $scope.isOver = true;
+        });
+
     }
 
     function onDragStart(event) {
@@ -422,9 +426,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             eventHandlers: {
                 drop: function(event) {
                     event.preventDefault();
+                    
+                     /* /!\ force digest over state change */
+                    $scope.$digest(function() {
+                        $scope.isOver = false;
+                    });
 
-                    $scope.isOver = false;
-                    // $scope.$apply();
                 },
                 error: function(event) {
 
