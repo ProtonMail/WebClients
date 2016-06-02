@@ -159,6 +159,36 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
+    $scope.$on('sendMessage', function(event, element) {
+        var composer = $(element).parents('.composer');
+        var index = $('.composer').index(composer);
+        var message = $scope.messages[index];
+
+        if (angular.isDefined(message)) {
+            $scope.send(message);
+        }
+    });
+
+    $scope.$on('saveMessage', function(event, element) {
+        var composer = $(element).parents('.composer');
+        var index = $('.composer').index(composer);
+        var message = $scope.messages[index];
+
+        if (angular.isDefined(message)) {
+            $scope.save(message, false, true, false);
+        }
+    });
+
+    $scope.$on('discardMessage', function(event, element) {
+        var composer = $(element).parents('.composer');
+        var index = $('.composer').index(composer);
+        var message = $scope.messages[index];
+
+        if (angular.isDefined(message)) {
+            $scope.close(message, true, false);
+        }
+    });
+
     $scope.$on('editorLoaded', function(event, element, editor) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
@@ -176,7 +206,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
 
-        if(angular.isDefined(message) && message.editor === editor) {
+        if (angular.isDefined(message)) {
             $scope.focusComposer(message);
             message.autocompletesFocussed = false;
             message.ccbcc = false;
@@ -209,14 +239,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     function onDragOver(event) {
-        
-        
-        /* 
+
+
+        /*
             event.preventDefault();
-            if we disable the default behavior then 
+            if we disable the default behavior then
             the text can't be draged inside the iframe.
         */
-        
+
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
 
@@ -397,7 +427,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     // $scope.$apply();
                 },
                 error: function(event) {
-                    
+
                     /* Notification is already handled by the accept method */
                     /*
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
@@ -695,7 +725,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.insertSignature = function(message) {
 
-    
+
         message.Body = (angular.isUndefined(message.Body))? '<div>' : message.Body;
 
         var space = '<br /><br />';
@@ -1052,7 +1082,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Resource} message - Message to save
      */
     $scope.changeFrom = function(message) {
-        
+
         $scope.insertSignature(message);
 
         // save when DOM is updated
