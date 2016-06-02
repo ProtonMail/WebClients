@@ -199,7 +199,11 @@ angular.module("proton.tools", ["proton.constants"])
         if (content) {
             var doc = new DOMParser().parseFromString(content, 'text/html');
 
-            return Array.from(doc.body.childNodes).some(function(node) { return node.nodeType === 1; });
+            if (doc) {
+                return Array.from(doc.body.childNodes).some(function(node) { return node.nodeType === 1; });
+            } else {
+                return true;
+            }
         } else {
             return true;
         }
