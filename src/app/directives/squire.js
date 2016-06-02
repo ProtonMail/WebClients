@@ -221,14 +221,6 @@ angular.module("proton.squire", [
                     $rootScope.$broadcast('sendMessage', element);
                 });
 
-                editor.setKeyHandler('ctrl-s', function(self, event, range) {
-                    $rootScope.$broadcast('saveMessage', element);
-                });
-
-                editor.setKeyHandler('ctrl-d', function(self, event, range) {
-                    $rootScope.$broadcast('discardMessage', element);
-                });
-
                 $rootScope.$broadcast('editorLoaded', element, editor);
             };
 

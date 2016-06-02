@@ -169,26 +169,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
-    $scope.$on('saveMessage', function(event, element) {
-        var composer = $(element).parents('.composer');
-        var index = $('.composer').index(composer);
-        var message = $scope.messages[index];
-
-        if (angular.isDefined(message)) {
-            $scope.save(message, false, true, false);
-        }
-    });
-
-    $scope.$on('discardMessage', function(event, element) {
-        var composer = $(element).parents('.composer');
-        var index = $('.composer').index(composer);
-        var message = $scope.messages[index];
-
-        if (angular.isDefined(message)) {
-            $scope.close(message, true, false);
-        }
-    });
-
     $scope.$on('editorLoaded', function(event, element, editor) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
