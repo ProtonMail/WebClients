@@ -32,12 +32,16 @@ msgstr "{{ key.bitSize }} bit"
 msgid ""
 "{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used"
 msgstr ""
+"{{ member.UsedSpace | humanSize }} de {{ member.MaxSpace | humanSize }} "
+"utilisés"
 
 #: src/app/templates/partials/composer.tpl.html:175
 msgid ""
 "{{ message.Attachments.length }} Files attached "
 "({{ getAttachmentsSize(message) | humanSize }})"
 msgstr ""
+"{{ message.Attachments.length }} fichiers attachés "
+"({{ getAttachmentsSize(message) | humanSize }})"
 
 #. addresses page. how many addresses are in use
 #: src/app/templates/views/addresses.tpl.html:8
@@ -47,22 +51,25 @@ msgstr "{{ organization.MaxAddresses }} adresses utilisées."
 #. dashboard page. how many addresses exist for an organization as well as the total number allowed.
 #: src/app/templates/views/dashboard.tpl.html:33
 msgid "{{ organization.UsedAddresses }} of {{ organization.MaxAddresses }}"
-msgstr ""
+msgstr "{{ organization.UsedAddresses }} de {{ organization.MaxAddresses }}"
 
 #: src/app/templates/views/domains.tpl.html:14
 msgid ""
 "{{ organization.UsedDomains }} / {{ organization.MaxDomains }} Domains used."
 msgstr ""
+"{{ organization.UsedDomains }} / {{ organization.MaxDomains }} Domaines "
+"utilisés."
 
 #. dashboard page. how many domains exist for an organization as well as the total number allowed.
 #: src/app/templates/views/dashboard.tpl.html:22
 msgid "{{ organization.UsedDomains }} of {{ organization.MaxDomains }}"
-msgstr ""
+msgstr "{{ organization.UsedDomains }} de {{ organization.MaxDomains }}"
 
 #. members page. how many members exist for an organization as well as the total number allowed.
 #: src/app/templates/views/members.tpl.html:32
 msgid "{{ organization.UsedMembers }} of {{ organization.MaxMembers }} Used"
 msgstr ""
+"{{ organization.UsedMembers }} de {{ organization.MaxMembers }} utilisé"
 
 #. show used storage for an account
 #: src/app/templates/views/dashboard.tpl.html:44
@@ -70,11 +77,13 @@ msgid ""
 "{{ organization.UsedSpace | humanSize }} of {{ organization.MaxSpace | "
 "humanSize }}"
 msgstr ""
+"{{ organization.UsedSpace | humanSize }} de {{ organization.MaxSpace | "
+"humanSize }}"
 
 #. show used storage for an account
 #: src/app/templates/views/dashboard.tpl.html:45
 msgid "{{ user.UsedSpace | humanSize }} of {{ user.MaxSpace | humanSize }}"
-msgstr ""
+msgstr "{{ user.UsedSpace | humanSize }} de {{ user.MaxSpace | humanSize }}"
 
 #. price per month for a plan
 #: src/app/templates/views/dashboard.tpl.html:221
@@ -3262,6 +3271,8 @@ msgid ""
 "Name your attachment from 'unknown' to the correct name, including the file "
 "extension."
 msgstr ""
+"Nommez votre pièce jointe avec le nom exact, y compris l’extension de "
+"fichier."
 
 #. link for login help
 #. link to support portal
@@ -3396,6 +3407,13 @@ msgid ""
 "before they can be deleted. Custom domain addresses can only be deleted if "
 "all messages associated with that address are deleted."
 msgstr ""
+"Les adresses non originaires de <strong>@protonmail</strong> ne peuvent "
+"jamais être supprimés (seulement désactivées). Cela signifie qu’une fois que "
+"vous aurez créé une adresse, celle-ci sera décompter de votre limite "
+"d'adresses. Les adresses de domaine personnalisé doivent être désactivées "
+"avant qu’elles puissent être supprimées. Les adresses de domaine "
+"personnalisé peuvent seulement être supprimées que si tous les messages "
+"associés à cette adresse sont supprimés."
 
 #: src/app/templates/views/dashboard.tpl.html:100
 msgctxt "Title"
