@@ -94,11 +94,11 @@ msgstr ""
 #: src/app/templates/partials/conversation-list-columns.tpl.html:76
 #: src/app/templates/partials/conversation-list-rows.tpl.html:74
 msgid "+{{ (conversation.LabelIDs | labels).length - 4 }} More labels"
-msgstr ""
+msgstr "+{{ (conversation.LabelIDs | labels).length - 4 }} Libellés"
 
 #: src/app/templates/partials/message.tpl.html:55
 msgid "+{{ (message.LabelIDs | labels).length - 4 }} More labels"
-msgstr ""
+msgstr "+{{ (message.LabelIDs | labels).length - 4 }} Libellés"
 
 #: src/app/templates/modals/hotkey.tpl.html:13
 msgctxt "Info"
@@ -2563,6 +2563,12 @@ msgid ""
 "ProtonMail, please let us know! You can send us a bug report by clicking "
 "<em>Report bugs</em> <strong>(1)</strong>"
 msgstr ""
+"Si vous avez des questions ou besoin d’aide, veuillez visiter <a href="
+"\"https://protonmail.com/support\" target=\"_blank\">notre page dédié au "
+"support</a> pour trouver dépannage, guides ou contactez notre équipe "
+"d’assistance. Si vous trouvez un bug dans ProtonMail, vous pouvez nous "
+"envoyer un rapport de bogue en cliquant sur <em>signaler un bug</em> "
+"<strong>(1)</strong>"
 
 #: src/app/templates/modals/domain/dmarc.tpl.html:12
 msgctxt "Info"
@@ -2574,6 +2580,14 @@ msgid ""
 "ignore and skip DMARC unless you really want strict policies such as "
 "<strong>p=quarantine</strong> or <strong>p=reject</strong>."
 msgstr ""
+"Si vous avez défini les SPF et DKIM, DMARC vous permet de spécifier comment "
+"les autres services de messagerie devraient délivrer les emails pour votre "
+"domaine si à la fois la vérification de SPF et DKIM échoue. Cela peut rendre "
+"la tâche plus difficile pour les spammeurs de se faire passer pour vous, "
+"mais peut également entraîner des problèmes de livraison si cela n'est pas "
+"configuré correctement. N’hésitez pas à ignorer et passer DMARC sauf si vous "
+"souhaitez une politique stricte tel que <strong>p=quarantine</strong> ou "
+"<strong>p=reject</strong>."
 
 #: src/app/templates/views/step1.tpl.html:59
 msgctxt "Info"
@@ -2602,6 +2616,8 @@ msgid ""
 "If you wish to delete in order to combine this account with another one, do "
 "NOT delete your account. You need to instead follow"
 msgstr ""
+"Si vous souhaitez supprimer ce compte afin de le combiner avec un autre, "
+"veuillez ne pas continuer. Vous devez suivre ce guide"
 
 #. message label
 #: src/app/templates/partials/message.tpl.html:132
@@ -4732,6 +4748,13 @@ msgid ""
 "\"https://protonmail.com/donate\" target=\"_blank\">making a donation</a> so "
 "we can continue to offer the service for free."
 msgstr ""
+"Cette action va rétrograder votre compte vers un compte gratuit. <br /><br /"
+"> Veuillez désactiver toutes les adresses supplémentaires avant le "
+"déclassement de votre compte. Vous pouvez éditer celles-ci avec l'onglet "
+"adresses. <br /><br /> Protonmail est un logiciel libre qui est soutenu par "
+"les dons et les comptes payant. Vous pouvez participer en <a href=\"https://"
+"protonmail.com/donate\" target=\"_blank\">faisant un don</a> afin que nous "
+"puissions continuer à offrir ce service gratuitement."
 
 #. invoice heading
 #: src/app/templates/views/invoice.print.tpl.html:77
