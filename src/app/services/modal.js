@@ -43,6 +43,9 @@ angular.module("proton.modals", [])
                 setTimeout(function() {
                     $('.modal').addClass('in');
                     window.scrollTo(0, 0);
+                    Mousetrap.bind('escape', function(event) {
+                        deactivate();
+                    });
                 }, 100);
             });
         }
@@ -76,6 +79,7 @@ angular.module("proton.modals", [])
                 return $q.when();
             }
             return $animate.leave(element).then(function() {
+                Mousetrap.unbind('escape');
                 scope.$destroy();
                 scope = null;
                 element.remove();
