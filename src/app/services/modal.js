@@ -108,16 +108,20 @@ angular.module("proton.modals", [])
             this.message = params.message;
             this.title = params.title;
 
+            Mousetrap.bind('enter', function(event) {
+                this.confirm();
+
+                return false;
+            }.bind(this));
+
             this.confirm = function() {
-                if (angular.isDefined(params.confirm) && angular.isFunction(params.confirm)) {
-                    params.confirm();
-                }
+                Mousetrap.unbind('enter');
+                params.confirm();
             };
 
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                Mousetrap.unbind('enter');
+                params.cancel();
             };
         },
         controllerAs: 'ctrl',
