@@ -276,7 +276,10 @@ angular.module("proton.event", ["proton.constants"])
 			},
 			manageID: function(id) {
 				this.ID = id;
-				window.sessionStorage[CONSTANTS.EVENT_ID] = id;
+
+				if (window.sessionStorage) {
+					window.sessionStorage[CONSTANTS.EVENT_ID] = id;
+				}
 			},
 			manageNotices: function(notices) {
 				if(angular.isDefined(notices) && notices.length > 0) {
@@ -367,7 +370,10 @@ angular.module("proton.event", ["proton.constants"])
 		var api = _.bindAll({
 			start: function () {
 				if (angular.isUndefined(eventModel.promiseCancel)) {
-					eventModel.ID = window.sessionStorage[CONSTANTS.EVENT_ID];
+					if (window.sessionStorage) {
+						eventModel.ID = window.sessionStorage[CONSTANTS.EVENT_ID];
+					}
+					
 					eventModel.promiseCancel = $timeout(eventModel.interval, 0);
 				}
 			},
