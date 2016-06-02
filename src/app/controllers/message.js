@@ -341,12 +341,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     // NOTE Plain text detection doesn't work. Check #1701
                     var isHtml = tools.isHtml(content);
 
-                    if($rootScope.printMode !== true) {
+                    if ($rootScope.printMode !== true) {
                         content = $scope.message.clearImageBody(content);
                     }
 
                     // Safari warning
-                    if(!$rootScope.isFileSaverSupported) {
+                    if (!$rootScope.isFileSaverSupported) {
                         $scope.safariWarning = true;
                     }
 
@@ -385,7 +385,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 };
 
                 // PGP/MIME case
-                if ( $scope.message.IsEncrypted === 8 ) {
+                if ($scope.message.IsEncrypted === 8) {
                     var mailparser = new MailParser({
                         defaultCharset: 'UTF-8'
                     });

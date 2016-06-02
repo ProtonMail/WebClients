@@ -164,7 +164,7 @@ angular.module("proton.tools", ["proton.constants"])
     tools.breakImages = function(html) {
 
         function replace(regex,html) {
-            
+
             return html.replace(regex, function(match, $1, $2, offset, original) {
                  return 'o' + match;
             });
@@ -196,7 +196,13 @@ angular.module("proton.tools", ["proton.constants"])
      * Detect if the content is type of HTML
      */
     tools.isHtml = function(content) {
-        return angular.isArray(content.match(/<(\w+)((?:\s+\w+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/));
+        if (content) {
+            var doc = new DOMParser().parseFromString(content, 'text/html');
+
+            return Array.from(doc.body.childNodes).some(function(node) { return node.nodeType === 1; });
+        } else {
+            return true;
+        }
     };
 
     // Squire does this funny thing where it takes style tags, i.e.
@@ -402,7 +408,7 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.containsImage = function(content) {
-        
+
         var url = new RegExp(/url\(/ig);
         var src = new RegExp('src=', 'g');
         var re = new RegExp(url.source + "|" + src.source);
