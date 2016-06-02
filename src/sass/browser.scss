@@ -150,8 +150,13 @@ input:-moz-ui-invalid {
     -webkit-box-shadow:none;
 }
 
-
+// Safari
 .ua-safari {
+
+    .labelDropdown .wrapper li input {
+        height: initial;
+        top: 11px;
+    }
 
     .conversation .pm_labels label {
         &:first-child,
