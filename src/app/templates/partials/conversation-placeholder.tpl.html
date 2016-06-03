@@ -1,7 +1,5 @@
 <div id="pm_latest" ng-show="showWelcome === true">
     <header translate translate-context="Title">Welcome</header>
-    <p class="text-center" translate>Number of unread conversations</p>
-    <p class="text-center">You have <strong>{{ numberElementUnread }}</strong> unread conversations.</p>
     <section id="storageStatus" ng-show="user.UsedSpace > 0">
     	<div class="wrap">
             <div class="storageArea">
@@ -20,7 +18,7 @@
         </a>
     </section>
     <section ng-if="isFree === true">
-        <a ui-sref="secured.dashboard" class="text-center latest-upgrade">
+        <a ui-sref="secured.dashboard({scroll: true})" class="text-center latest-upgrade">
             <img src="/assets/img/latest/privacy.jpg" />
             <button type="button" class="pm_button primary" translate translate-context="Action">Upgrade account</button>
         </a>
