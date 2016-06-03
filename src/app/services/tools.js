@@ -166,7 +166,7 @@ angular.module("proton.tools", ["proton.constants"])
         function replace(regex,html) {
 
             return html.replace(regex, function(match, $1, $2, offset, original) {
-                 return 'o' + match;
+                 return 'proton-' + match;
             });
 
         }
@@ -182,10 +182,10 @@ angular.module("proton.tools", ["proton.constants"])
 
     tools.fixImages = function(html) {
 
-        var re = new RegExp('(ourl|osrc)', 'g');
+        var re = new RegExp('(proton-url|proton-src)', 'g');
 
         html = html.replace(re, function(match, $1, $2, offset, original) {
-            return $1.substring(1);
+            return $1.substring(7);
         });
 
         return html;
