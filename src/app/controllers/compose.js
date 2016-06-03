@@ -377,8 +377,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     var total_num = angular.isDefined(message.Attachments) ? message.Attachments.length : 0;
                     total_num += angular.isDefined(message.queuedFiles) ? message.queuedFiles : 0;
 
-                    alert("accepted");
-
                     if(total_num === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         dropzone.removeFile(file);
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
