@@ -344,6 +344,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 paramName: "file", // The name that will be used to transfer the file
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
+
                 accept: function(file, done) {
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
@@ -364,7 +365,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         dropzone.removeFile(file);
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10 + ' MB.');
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10 + ' MB.', classes: 'notification-danger'});
-                    } else {
+                    } else if(totalSize === 0){
+                        /* file is too big */
+                        dropzone.removeFile(file);
+                        done('Attachments are limited to ' + sizeLimit + ' MB.');
+                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
+                    }
+
+
+
+                    else {
                         if ( angular.isUndefined( message.queuedFiles ) ) {
                             message.queuedFiles = 0;
                             message.queuedFilesSize = 0;
