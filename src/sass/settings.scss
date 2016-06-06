@@ -362,12 +362,7 @@
         }
         .row {
             padding: 2rem 0 1rem;
-            -webkit-flex-grow: 1;
-                -ms-flex-positive: 1;
-                    flex-grow: 1;
             clear:both;
-            float: left;
-            width: 100%;
             .border-bottom {
                 border-bottom: 1px solid $border;
             }
@@ -376,10 +371,7 @@
                 margin: 0 -5px;
             }
             .setting {
-                width: 48%;
-                float: left;
                 box-sizing: border-box;
-                padding: 0;
                 .as-sortable-placeholder {
                     background: $border !important;
                     box-sizing: border-box;
@@ -416,12 +408,6 @@
                         float: left;
                         margin-right: .5rem;
                     }
-                }
-                &.pull-right {
-                    float: right;
-                }
-                &.full {
-                    width: 100%;
                 }
                 .angular-squire-wrapper {
                     width: 100%;
