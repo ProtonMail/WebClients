@@ -353,9 +353,9 @@ msgid "Added addresses"
 msgstr ""
 
 #. legend / form heading for adding custom CSS theme code
-#: src/app/templates/views/appearance.tpl.html:99
+#: src/app/templates/views/appearance.tpl.html:92
 msgctxt "Title"
-msgid "Additional themes (experimental)"
+msgid "Additional themes"
 msgstr ""
 
 #. table heading
@@ -927,7 +927,7 @@ msgstr ""
 msgid "Choose username"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:56
+#: src/app/templates/views/appearance.tpl.html:51
 msgctxt "Info"
 msgid "Choose your prefered button order for marking messages as read / unread."
 msgstr ""
@@ -937,7 +937,7 @@ msgctxt "Title"
 msgid "Clear"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:94
+#: src/app/templates/views/appearance.tpl.html:86
 msgctxt "Action"
 msgid "Clear"
 msgstr ""
@@ -1018,7 +1018,7 @@ msgid "Color"
 msgstr ""
 
 #. form option
-#: src/app/templates/views/appearance.tpl.html:35
+#: src/app/templates/views/appearance.tpl.html:31
 msgid "Column"
 msgstr ""
 
@@ -1053,7 +1053,7 @@ msgid "Compose to"
 msgstr ""
 
 #: src/app/templates/modals/hotkey.tpl.html:17
-#: src/app/templates/views/appearance.tpl.html:10
+#: src/app/templates/views/appearance.tpl.html:6
 msgctxt "Title"
 msgid "Composer"
 msgstr ""
@@ -1317,12 +1317,12 @@ msgctxt "Title"
 msgid "Custom domain addresses"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:88
+#: src/app/templates/views/appearance.tpl.html:80
 msgctxt "Title"
 msgid "Custom theme"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:90
+#: src/app/templates/views/appearance.tpl.html:82
 msgctxt "Info"
 msgid "Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources."
 msgstr ""
@@ -2639,7 +2639,7 @@ msgstr ""
 msgid "Labels Saved"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:30
+#: src/app/templates/views/appearance.tpl.html:26
 msgctxt "Title"
 msgid "Layout"
 msgstr ""
@@ -2657,8 +2657,8 @@ msgstr ""
 #: src/app/templates/modals/domain/spf.tpl.html:15
 #: src/app/templates/modals/domain/verification.tpl.html:16
 #: src/app/templates/views/addresses.tpl.html:16
-#: src/app/templates/views/appearance.tpl.html:11
-#: src/app/templates/views/appearance.tpl.html:31
+#: src/app/templates/views/appearance.tpl.html:27
+#: src/app/templates/views/appearance.tpl.html:7
 #: src/app/templates/views/dashboard.tpl.html:128
 msgctxt "Action"
 msgid "Learn more"
@@ -2686,12 +2686,12 @@ msgctxt "Title"
 msgid "List"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:104
+#: src/app/templates/views/appearance.tpl.html:97
 msgctxt "Action"
 msgid "Load classic theme"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:105
+#: src/app/templates/views/appearance.tpl.html:98
 msgctxt "Action"
 msgid "Load edison theme"
 msgstr ""
@@ -2700,7 +2700,7 @@ msgstr ""
 msgid "Loading new account"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:101
+#: src/app/templates/views/appearance.tpl.html:94
 msgctxt "Info"
 msgid "Loading themes will override your current theme!"
 msgstr ""
@@ -2860,7 +2860,7 @@ msgctxt "Action"
 msgid "Mark as read"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:59
+#: src/app/templates/views/appearance.tpl.html:54
 msgctxt "Action"
 msgid "Mark as read / Mark as unread"
 msgstr ""
@@ -2878,7 +2878,7 @@ msgctxt "Action"
 msgid "Mark as unread"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:66
+#: src/app/templates/views/appearance.tpl.html:61
 msgctxt "Action"
 msgid "Mark as unread / Mark as read"
 msgstr ""
@@ -2889,7 +2889,7 @@ msgid "Master"
 msgstr ""
 
 #. form option
-#: src/app/templates/views/appearance.tpl.html:23
+#: src/app/templates/views/appearance.tpl.html:19
 msgid "Maximized"
 msgstr ""
 
@@ -3398,7 +3398,7 @@ msgctxt "Error"
 msgid "Passwords don't match."
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:91
+#: src/app/templates/views/appearance.tpl.html:83
 msgid "Paste your CSS code here (limited to 200,000 characters)"
 msgstr ""
 
@@ -3542,7 +3542,7 @@ msgctxt "Title"
 msgid "Please tell us why you are leaving:"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:15
+#: src/app/templates/views/appearance.tpl.html:11
 msgid "Popup"
 msgstr ""
 
@@ -3636,7 +3636,7 @@ msgctxt "Info"
 msgid "ProtonMail is open source software that protects your privacy and doesn't have ads. Your support is essential for keeping the service running."
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:31
+#: src/app/templates/views/appearance.tpl.html:27
 msgctxt "Info"
 msgid "ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts."
 msgstr ""
@@ -3852,7 +3852,7 @@ msgid "Role updated"
 msgstr ""
 
 #. form option
-#: src/app/templates/views/appearance.tpl.html:43
+#: src/app/templates/views/appearance.tpl.html:39
 msgid "Row"
 msgstr ""
 
@@ -3885,7 +3885,7 @@ msgstr ""
 #: src/app/templates/views/account.tpl.html:201
 #: src/app/templates/views/account.tpl.html:35
 #: src/app/templates/views/account.tpl.html:60
-#: src/app/templates/views/appearance.tpl.html:95
+#: src/app/templates/views/appearance.tpl.html:87
 #: src/app/templates/views/members.tpl.html:20
 msgctxt "Action"
 msgid "Save"
@@ -4381,7 +4381,7 @@ msgctxt "Info"
 msgid "This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead."
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:11
+#: src/app/templates/views/appearance.tpl.html:7
 msgctxt "Info"
 msgid "This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer."
 msgstr ""
@@ -4455,7 +4455,7 @@ msgstr ""
 msgid "To send and receive email with this domain, please add all addresses"
 msgstr ""
 
-#: src/app/templates/views/appearance.tpl.html:55
+#: src/app/templates/views/appearance.tpl.html:50
 msgctxt "Title"
 msgid "Toolbar"
 msgstr ""

@@ -330,41 +330,52 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             $scope.checkingUsername = false;
             deferred.resolve(200);
         } else {
-            if ($scope.account.Username && $scope.account.Username.length > 0) {
-                User.available($scope.account.Username)
-                .then(function(result) {
-                    if (result.data && result.data.Error) {
-                        $scope.badUsername = true;
-                        $scope.checkingUsername = false;
-                        $scope.badUsernameMessage = result.data.Error;
-                        $('#Username').focus();
-                        deferred.reject(result.data.Error);
-                    } else if (result.data && result.data.Code === 1000) {
-                        if (result.data.Available === 0) {
-                            if (manual === true) {
-                                $scope.badUsername = true;
-                                $scope.badUsernameMessage = gettextCatalog.getString('Username already taken', null, 'Error');
-                                $scope.checkingUsername = false;
-                                $('#Username').focus();
-                                deferred.resolve(200);
+            if ($scope.account.Username) {
+                var patt = new RegExp(/^[A-Za-z0-9]+(?:[_.-][A-Za-z0-9]+)*$/);
+
+                if (patt.test($scope.account.Username)) {
+                    User.available($scope.account.Username)
+                    .then(function(result) {
+                        if (result.data && result.data.Error) {
+                            $scope.badUsername = true;
+                            $scope.checkingUsername = false;
+                            $scope.badUsernameMessage = result.data.Error;
+                            $('#Username').focus();
+                            deferred.reject(result.data.Error);
+                        } else if (result.data && result.data.Code === 1000) {
+                            if (result.data.Available === 0) {
+                                if (manual === true) {
+                                    $scope.badUsername = true;
+                                    $scope.badUsernameMessage = gettextCatalog.getString('Username already taken', null, 'Error');
+                                    $scope.checkingUsername = false;
+                                    $('#Username').focus();
+                                    deferred.resolve(200);
+                                } else {
+                                    $('#Username').focus();
+                                    deferred.reject(gettextCatalog.getString('Username already taken', null, 'Error'));
+                                }
                             } else {
-                                $('#Username').focus();
-                                deferred.reject(gettextCatalog.getString('Username already taken', null, 'Error'));
-                            }
-                        } else {
-                            if ( manual === true ) {
-                                $scope.goodUsername = true;
-                                $scope.checkingUsername = false;
-                                deferred.resolve(200);
-                            } else {
-                                $scope.checkingUsername = false;
-                                deferred.resolve(200);
+                                if ( manual === true ) {
+                                    $scope.goodUsername = true;
+                                    $scope.checkingUsername = false;
+                                    deferred.resolve(200);
+                                } else {
+                                    $scope.checkingUsername = false;
+                                    deferred.resolve(200);
+                                }
                             }
                         }
-                    }
-                });
+                    });
+                } else {
+                    $scope.badUsername = true;
+                    $scope.checkingUsername = false;
+                    $scope.badUsernameMessage = gettextCatalog.getString('Username invalid', null, 'Error');
+                    $('#Username').focus();
+                    deferred.resolve(200);
+                }
             } else {
                 $scope.checkingUsername = false;
+                deferred.resolve(200);
             }
         }
 
