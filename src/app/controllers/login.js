@@ -60,12 +60,12 @@ angular.module("proton.controllers.Auth", [
 
         // Detect if the current browser have session storage enable
         if (tools.hasSessionStorage() === false) {
-            notify({message: gettextCatalog.getString('You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0'});
+            notify({message: gettextCatalog.getString('You are in Private Mode or have Session Storage disabled.\nPlease deactivate Private Mode and then reload the page.\n<a href="https://protonmail.com/support/knowledge-base/enabling-cookies/" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0'});
         }
 
         // Detect if the current browser have cookie enable
         if (tools.hasCookie() === false) {
-            notify({message: gettextCatalog.getString('Cookies are disabled.\nPlease activate it and then reload the page.\n<a href="// Detect if the current browser have cookie enable" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0'});
+            notify({message: gettextCatalog.getString('Cookies are disabled.\nPlease activate it and then reload the page.\n<a href="https://protonmail.com/support/knowledge-base/enabling-cookies/" target="_blank">More information here</a>.', null, 'Error'), classes: 'notification-danger', duration: '0'});
         }
     };
 
