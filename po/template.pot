@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 
 #. placeholder showing unread conversations
-#: src/app/templates/partials/conversation-placeholder.tpl.html:48
+#: src/app/templates/partials/conversation-placeholder.tpl.html:46
 msgctxt "Title"
 msgid "{{ $count }} conversation selected"
 msgid_plural "{{ $count }} conversations selected"
@@ -738,7 +738,7 @@ msgid "Basic"
 msgstr ""
 
 #. printed message info
-#: src/app/controllers/compose.js:1607
+#: src/app/controllers/compose.js:1617
 #: src/app/templates/partials/composer.tpl.html:153
 #: src/app/templates/partials/message.tpl.html:117
 #: src/app/templates/views/message.print.tpl.html:46
@@ -868,7 +868,7 @@ msgstr ""
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1597
+#: src/app/controllers/compose.js:1607
 #: src/app/templates/partials/composer.tpl.html:149
 #: src/app/templates/partials/message.tpl.html:103
 #: src/app/templates/views/message.print.tpl.html:39
@@ -1521,7 +1521,7 @@ msgctxt "Action"
 msgid "Delete your account"
 msgstr ""
 
-#: src/app/templates/partials/conversation-placeholder.tpl.html:49
+#: src/app/templates/partials/conversation-placeholder.tpl.html:47
 msgctxt "Action"
 msgid "Deselect all"
 msgstr ""
@@ -2365,7 +2365,7 @@ msgstr ""
 
 #: src/app/templates/modals/hotkey.tpl.html:6
 msgctxt "Title"
-msgid "Hotkeys"
+msgid "Hotkeys (Experimental)"
 msgstr ""
 
 #: src/app/filters/filters.js:33
@@ -2669,7 +2669,7 @@ msgctxt "Link"
 msgid "Learn More"
 msgstr ""
 
-#: src/app/templates/partials/conversation-placeholder.tpl.html:18
+#: src/app/templates/partials/conversation-placeholder.tpl.html:16
 msgid "Learn More"
 msgstr ""
 
@@ -2894,7 +2894,7 @@ msgid "Maximized"
 msgstr ""
 
 #: src/app/controllers/compose.js:140
-#: src/app/controllers/compose.js:603
+#: src/app/controllers/compose.js:613
 msgctxt "Error"
 msgid "Maximum composer reached"
 msgstr ""
@@ -2914,7 +2914,7 @@ msgctxt "Title"
 msgid "Members"
 msgstr ""
 
-#: src/app/controllers/compose.js:1573
+#: src/app/controllers/compose.js:1583
 msgid "Message discarded"
 msgstr ""
 
@@ -2927,11 +2927,11 @@ msgctxt "Title"
 msgid "Message Password"
 msgstr ""
 
-#: src/app/controllers/compose.js:1209
+#: src/app/controllers/compose.js:1219
 msgid "Message saved"
 msgstr ""
 
-#: src/app/controllers/compose.js:1427
+#: src/app/controllers/compose.js:1437
 #: src/app/controllers/outside.js:144
 msgid "Message sent"
 msgstr ""
@@ -3042,13 +3042,13 @@ msgctxt "Title"
 msgid "My subscription"
 msgstr ""
 
-#: src/app/templates/directives/labels.tpl.html:23
-msgid "Name"
-msgstr ""
-
 #. table heading / link to sort table
 #: src/app/templates/views/contacts.tpl.html:42
 msgctxt "Action"
+msgid "Name"
+msgstr ""
+
+#: src/app/templates/directives/labels.tpl.html:23
 msgid "Name"
 msgstr ""
 
@@ -3090,18 +3090,18 @@ msgctxt "Title"
 msgid "New mailbox password"
 msgstr ""
 
-#: src/app/controllers/compose.js:1262
+#: src/app/controllers/compose.js:1272
 msgctxt "Title"
 msgid "New message"
-msgstr ""
-
-#: src/app/templates/views/account.tpl.html:125
-msgid "New password"
 msgstr ""
 
 #. form heading for new login password
 #: src/app/templates/views/account.tpl.html:122
 msgctxt "Title"
+msgid "New password"
+msgstr ""
+
+#: src/app/templates/views/account.tpl.html:125
 msgid "New password"
 msgstr ""
 
@@ -3177,12 +3177,12 @@ msgctxt "Info"
 msgid "No results for this search in your contacts list."
 msgstr ""
 
-#: src/app/controllers/compose.js:1272
+#: src/app/controllers/compose.js:1282
 msgctxt "Title"
 msgid "No subject"
 msgstr ""
 
-#: src/app/controllers/compose.js:1273
+#: src/app/controllers/compose.js:1283
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
@@ -3241,10 +3241,6 @@ msgctxt "Title"
 msgid "Number"
 msgstr ""
 
-#: src/app/templates/partials/conversation-placeholder.tpl.html:3
-msgid "Number of unread conversations"
-msgstr ""
-
 #: src/app/templates/views/members.tpl.html:30
 msgctxt "Title"
 msgid "Number of users:"
@@ -3300,12 +3296,12 @@ msgctxt "Title"
 msgid "Organization history"
 msgstr ""
 
-#: src/app/templates/views/members.tpl.html:17
+#: src/app/templates/views/members.tpl.html:13
+msgctxt "Title"
 msgid "Organization name"
 msgstr ""
 
-#: src/app/templates/views/members.tpl.html:13
-msgctxt "Title"
+#: src/app/templates/views/members.tpl.html:17
 msgid "Organization name"
 msgstr ""
 
@@ -3328,12 +3324,12 @@ msgstr ""
 msgid "Orphan"
 msgstr ""
 
-#: src/app/templates/modals/bug.tpl.html:28
-msgctxt "Title"
+#: src/app/templates/modals/bug.tpl.html:31
 msgid "OS version"
 msgstr ""
 
-#: src/app/templates/modals/bug.tpl.html:31
+#: src/app/templates/modals/bug.tpl.html:28
+msgctxt "Title"
 msgid "OS version"
 msgstr ""
 
@@ -3411,13 +3407,13 @@ msgctxt "Action"
 msgid "Pay"
 msgstr ""
 
-#. form option
-#: src/app/templates/views/dashboard.tpl.html:232
+#: src/app/templates/modals/payment/payment.tpl.html:62
+msgctxt "Action"
 msgid "Pay annually"
 msgstr ""
 
-#: src/app/templates/modals/payment/payment.tpl.html:62
-msgctxt "Action"
+#. form option
+#: src/app/templates/views/dashboard.tpl.html:232
 msgid "Pay annually"
 msgstr ""
 
@@ -4419,7 +4415,7 @@ msgstr ""
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1587
+#: src/app/controllers/compose.js:1597
 #: src/app/templates/partials/composer.tpl.html:142
 #: src/app/templates/partials/message.tpl.html:89
 #: src/app/templates/views/message.print.tpl.html:32
@@ -4601,7 +4597,7 @@ msgctxt "Title"
 msgid "Upgrade"
 msgstr ""
 
-#: src/app/templates/partials/conversation-placeholder.tpl.html:25
+#: src/app/templates/partials/conversation-placeholder.tpl.html:23
 msgctxt "Action"
 msgid "Upgrade account"
 msgstr ""
@@ -4997,7 +4993,7 @@ msgctxt "Info"
 msgid "You're upgrading your account. Once we successfully process payment, we'll immediately upgrade your account. Thanks for choosing to become a paying customer!"
 msgstr ""
 
-#: src/app/controllers/compose.js:589
+#: src/app/controllers/compose.js:599
 #: src/app/routes.js:551
 #: src/app/routes.js:870
 #: src/app/templates/views/payments.tpl.html:45
