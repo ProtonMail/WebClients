@@ -1,0 +1,508 @@
+#conversation-view {
+    .fa-star {
+        color: $yellow;
+    }
+    header {
+        display: block;
+        min-height: 35px;
+        box-sizing: border-box;
+        clear: both;
+        padding: 12px 0;
+        border-bottom: 1px solid $border;
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #333;
+            line-height: 35px;
+            margin: 0;
+            letter-spacing: .04rem;
+            display: inline-block;
+            width: calc(100% - 4.5rem);
+            padding: 0 10px;
+        }
+        .containsMessage {
+            p {
+                margin: 10px 10px 0;
+            }
+        }
+        .starButton {
+            border: none;
+            margin-right: 0;
+            float: right;
+            box-shadow: none;
+            a {
+                background: transparent !important;
+                line-height: 33px;
+                height: 33px;
+                padding: 0 10px;
+                display: block;
+                font-size: 1.5rem;
+                box-shadow: none;
+            }
+        }
+    }
+    .message {
+        border: 1px solid $border;
+        border-radius: 2px;
+        margin: 0 10px 10px;
+        box-sizing: border-box;
+        clear: both;
+        & > div.summary,
+        & > div.details {
+            float: left;
+            width: 100%;
+            clear: both;
+            box-sizing: border-box;
+        }
+        .contact {
+            a.compose {
+                cursor: pointer;
+                color: $primary;
+            }
+        }
+        &.open {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            & > div.summary {
+                .meta {
+                    .contact {
+                        strong {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+        &.details.open {
+            & > div.summary {
+                height: 60px;
+                .meta {
+                    height: 40px;
+                    line-height: 40px;
+                    .history {
+                        float: left;
+                        margin: 0 .5rem 0 0;
+                        display: inline-block;
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                    .contact {
+                        float: left;
+                        display: block;
+                        span.from {
+                            width: 3rem;
+                            text-align: left;
+                            display: block;
+                            float: left;
+                        }
+                        strong {
+                            display: block;
+                            float: left;
+                        }
+                        em {
+                            display: block;
+                            clear: both;
+                            float: left;
+                            margin: -.5rem 0 0 3rem;
+                            line-height: 1rem;
+                        }
+                    }
+                }
+            }
+            .labelz {
+                padding: 10px 0 0;
+                line-height: 16px;
+                background: $read;
+                float: left;
+                width: 100%;
+                clear: both;
+                box-sizing: border-box;
+                .loc,
+                .pm_tag {
+                    float: left;
+                    margin: 0 .5rem 7px 0;
+                }
+                .pm_labels {
+                    float: left;
+                    label {
+                        margin: 0 .5rem 3px 0;
+                        box-shadow: .25rem 0 0 .25rem $read;
+                    }
+                }
+            }
+        }
+        &.unread > div.summary {
+            background: $white;
+            .meta .contact strong {
+                font-weight: 700;
+            }
+            .time,
+            .status,
+            .labels {
+                background: #fff !important;
+            }
+            .time::after {
+                background: #fff !important;
+            }
+            .labels {
+                .pm_labels {
+                    label {
+                        box-shadow: .25rem 0 0 .25rem $white;
+                    }
+                }
+            }
+        }
+        & > div.summary {
+            height: 40px;
+            line-height: 40px;
+            background: $read;
+            border-radius: 2px;
+            padding: 0 10px;
+            text-align: right;
+            font-size: .9em;
+            cursor: pointer;
+            position: relative;
+            .pull-left {
+                position: absolute;
+                left: 10px;
+                top: 0;
+                z-index: 1;
+                .meta,
+                .location {
+                    float: left;
+                }
+            }
+            .labels,
+            .time,
+            .status {
+                display: inline-block;
+                margin-left: .85rem;
+                position: relative;
+                z-index: 2;
+                background: $read;
+            }
+            .time {
+                position: relative;
+                padding-left: 1rem;
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: -1rem;
+                    width: 1rem;
+                    height: 25px;
+                    top: 0;
+                    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, $read 100%);
+                    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,$read 100%);
+                    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,$read 100%);
+
+                }
+                .fa-paperclip {
+                    display: inline-block;
+                    width: 1rem;
+                    text-align: left;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    line-height: 40px;
+                    height: 40px;
+                }
+            }
+            .meta {
+                .contact {
+                    strong {
+                        font-weight: normal;
+                    }
+                    em {
+                        display: none;
+                    }
+                    span {
+                        color: $gray-medium;
+                    }
+                }
+            }
+            .location {
+                .loc {
+                    color: rgba(0,0,0,.5);
+                    margin-left: .25rem;
+                }
+            }
+            .status {
+                .fa {
+                    display: inline-block;
+                    text-align: right;
+                    width: 1rem;
+                }
+            }
+            .labels {
+                .pm_labels {
+                    position: relative;
+                    top: 4px;
+                    label {
+                        margin-left: .25rem;
+                        box-shadow: .25rem 0 0 .25rem $read;
+                    }
+                }
+            }
+        }
+        & > div.details {
+            background: $read;
+            padding: 0 10px 10px;
+            clear: both;
+            position: relative;
+            .pm_buttons {
+                a {
+                    background: #fff;
+                }
+            }
+            .recipients-details {
+                font-size: .9em;
+                line-height: 20px;
+                width: 100%;
+                .from {
+                    padding-right: .5rem;
+                }
+                .where,
+                .from {
+                    font-weight: normal;
+                    display: inline-block;
+                    float: left;
+                    color: $gray-medium;
+                }
+                .contact {
+                    strong {
+                        font-weight: normal;
+                    }
+                    em {
+                        font-style: italic;
+                        color: $gray-medium;
+                    }
+                }
+                ul {
+                    display: inline-block;
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    line-height: 20px;
+                    li {
+                        display: block;
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                        line-height: 20px;
+                    }
+                }
+            }
+            .recipients-summary {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 20px;
+                strong {
+                    display: inline-block;
+                    color: $gray-medium;
+                    font-weight: normal;
+                    display: inline-block;
+                }
+                font-size: .9em;
+                .from {
+                    width: 3rem;
+                    color: $gray-medium;
+                }
+            }
+            .action-row {
+                padding: 10px 0;
+                clear: both;
+                float: left;
+                width: 100%;
+            }
+        }
+        .toggleDetails {
+            color: $primary;
+            cursor: pointer;
+            height: 35px;
+            line-height: 35px; // height of the buttons on the same line
+            display: inline-block;
+            font-size: .9em;
+        }
+        .expiration {
+            background: $exp;
+            color: $white;
+            padding: .5rem 10px;
+            line-height: 1rem;
+            clear: both;
+            text-align: center;
+            font-size: .9em;
+        }
+        .showImages {
+            background: $read;
+            color: $primary;
+            line-height: 2rem;
+            height: 2rem;
+            clear: both;
+            text-align: center;
+            font-size: .9em;
+            border-top: 1px solid $border;
+            cursor: pointer;
+        }
+        .frame {
+            padding: 15px 30px;
+            border-top: 1px solid $border;
+            overflow: auto;
+            zoom: 1;
+            .email {
+                position: relative;
+                .pm_button.more {
+                    line-height: 1rem;
+                    height: 1rem;
+                    background: $read;
+                    margin-bottom: 1rem;
+                }
+                blockquote.protonmail_quote {
+                    position: relative;
+                }
+            }
+        }
+        &.closed .summary {
+            overflow: hidden;
+        }
+    }
+}
+
+
+// MOBILE
+body.mobileMode {
+    #conversation-view {
+        .message {
+            & > div.summary {
+                height: 60px;
+                line-height: 25px;
+                position: relative;
+                .pull-left {
+                    position: static;
+                }
+                .meta {
+                    position: absolute;
+                    left: 10px;
+                    top: 5px;
+                    max-width: initial;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: left;
+                    .contact {
+                        strong {
+                            font-weight: normal;
+                        }
+                        .from {
+                            display: none;
+                        }
+                    }
+                }
+                .location {
+                    position: absolute;
+                    left: 10px;
+                    bottom: 5px;
+                    z-index: 5;
+                    .pm_tag {
+                        margin: 0;
+                    }
+                }
+                .labels {
+                    position: absolute;
+                    right: 50px;
+                    bottom: 5px;
+                    z-index: 5;
+                }
+                .time {
+                    position: absolute;
+                    right: 10px;
+                    top: 5px;
+                    background: $read;
+                    max-width: 45%;
+                    min-width: 150px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    span {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: inline-block;
+                        float: right;
+                        width: 100%;
+                    }
+                    .fa.fa-paperclip {
+                        height: 25px;
+                        line-height: 25px;
+                    }
+                }
+                .status {
+                    position: absolute;
+                    right: 10px;
+                    bottom: 5px;
+                    .fa {
+                        display: inline-block;
+                        text-align: right;
+                        width: 1rem;
+                    }
+                }
+            }
+            & > div.details {
+                & > .recipients-summary {
+                    position: relative;
+                    top: -19px;
+                    max-width: 85%;
+                }
+                .contact {
+                    em {
+                        display: block;
+                        padding-bottom: .5rem;
+                    }
+                }
+            }
+            &.details {
+                & > div.summary {
+                    margin-bottom: 0;
+                    .meta {
+                        position: static;
+                        left: initial;
+                        top: initial;
+                        .contact {
+                            strong {
+                                position: absolute;
+                                left: 10px;
+                                top: 5px;
+                            }
+                            em {
+                                position: absolute;
+                                left: 10px;
+                                bottom: 10px;
+                                color: $gray-medium;
+                            }
+                        }
+                    }
+                }
+                &.open > div.summary {
+                    .meta {
+                        margin-top: 5px;
+                        .contact {
+                            strong {
+                                position: static;
+                            }
+                        }
+                    }
+                }
+            }
+            &.sent,
+            &.draft {
+                div.details {
+                    & > .recipients-summary {
+                        padding-left: 2.25rem;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+    }
+}

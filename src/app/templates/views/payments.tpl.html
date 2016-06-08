@@ -1,0 +1,94 @@
+<div id="pm_settings">
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+    <div class="settings">
+        <div class="row">
+            <section class="setting full pm_form">
+                <legend translate-context="Title" translate>Payment methods</legend>
+                <div class="margin">
+                    <button type="button" class="pm_button primary" ng-click="add()" translate-context="Action" translate>Add</button>
+                </div>
+                <p class="alert alert-info" ng-show="methods.length === 0" translate-context="Info" translate>You have no saved payment methods, you can add a payment method by clicking 'ADD'.</p>
+
+                <div class="pm_table">
+                    <table ng-show="methods.length > 0" id="paymentMethodsTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 8rem" class="number" translate-context="Title" translate>Number</th>
+                                <th style="width: 7rem" class="expiration" translate-context="Title" translate>Expiration</th>
+                                <th style="width: 8rem" class="type" translate-context="Title" translate>Type</th>
+                                <th style="width: 8rem" class="actions" translate-context="Title" translate>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="method in methods">
+                                <td>•••• •••• •••• {{ method.Details.Last4 }}</td>
+                                <td>{{ method.Details.ExpMonth }}/{{ method.Details.ExpYear }}</td>
+                                <td>
+                                    <span class="pm_badge">{{ method.Type }}</span>
+                                    <span ng-show="$first" class="pm_badge" translate>Default</span>
+                                </td>
+                                <td class="text-right">
+                                    <button type="button" class="pm_button link" ng-hide="$first === true" ng-click="default(method)" translate-context="Action" translate>Make default</button>
+                                    <button type="button" class="pm_button link" ng-click="edit(method)" translate-context="Action" translate>Edit</button>
+                                    <button type="button" class="pm_button link" ng-click="delete(method)" translate-context="Action" translate>Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="setting full pm_form">
+                <legend translate-context="Title" translate>Invoices</legend>
+                <div class="margin">
+                    <button type="button" class="pm_button" ng-click="customize()" translate-context="Action" translate>Customize</button>
+                </div>
+                <p class="alert alert-danger" ng-show="delinquent === true" translate-context="Info" translate>Your account currently has an overdue invoice. Please pay all unpaid invoices.</p>
+                <p class="alert alert-info" ng-show="invoices.length === 0" translate-context="Info" translate>You have no invoices.</p>
+
+                <div class="pm_table">
+                    <table ng-show="invoices.length > 0" id="invoicesTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 4rem" class="invoice" translate-context="Title" translate>ID</th>
+                                <th style="width: 10rem" class="paid" translate-context="Title" translate>Amount Paid / Due</th>
+                                <th style="width: 10rem" class="type" translate-context="Title" translate>Type</th>
+                                <th style="width: 6rem" class="status" translate-context="Title" translate>Status</th>
+                                <th style="width: 8rem" class="time" translate-context="Title" translate>Create time</th>
+                                <th style="width: 10rem" class="text-right actions" translate-context="Title" translate>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="invoice in invoices">
+                                <td>
+                                    <span class="bold">#{{ invoice.ID }}</span>
+                                </td>
+                                <td>
+                                    <span ng-show="invoice.State === 0">{{ invoice.AmountDue / 100 | currency: invoice.Currency }}</span>
+                                    <span ng-show="invoice.State === 1">{{ invoice.AmountCharged / 100 | currency: invoice.Currency }}</span>
+                                </td>
+                                <td>
+                                    <span class="pm_badge" ng-show="invoice.Type === 0" translate-comment="payment type badge" translate>Other</span>
+                                    <span class="pm_badge" ng-show="invoice.Type === 1" translate-comment="payment type badge" translate>Subscription</span>
+                                    <span class="pm_badge" ng-show="invoice.Type === 2" translate-comment="payment type badge" translate>Cancellation</span>
+                                    <span class="pm_badge" ng-show="invoice.Type === 3" translate-comment="payment type badge" translate>Credit</span>
+                                    <span class="pm_badge" ng-show="invoice.Type === 4" translate-comment="payment type badge" translate>Donation</span>
+                                </td>
+                                <td>
+                                    <span class="pm_badge error" ng-show="invoice.State === 0" translate-comment="payment status badge" translate>Unpaid</span>
+                                    <span class="pm_badge success" ng-show="invoice.State === 1" translate-comment="payment status badge" translate>Paid</span>
+                                    <span class="pm_badge" ng-show="invoice.State === 2" translate-comment="payment status badge" translate>Void</span>
+                                    <span class="pm_badge" ng-show="invoice.State === 3" translate-comment="payment status badge" translate>Billed</span>
+                                </td>
+                                <td>{{ invoice.CreateTime | readableTime }}</td>
+                                <td class="text-right">
+                                    <button class="pm_button link" ng-click="pay(invoice)" ng-show="invoice.State === 0" translate-context="Action" translate>Pay</button>
+                                    <button class="pm_button link" ng-click="download(invoice)" translate-context="Action" translate>Download</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

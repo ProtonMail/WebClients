@@ -1,0 +1,48 @@
+.pm_panel {
+	width: $panel;
+	margin: auto;
+	color: $white;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 50px;
+	max-width: 100%;
+	&.alt {
+		background: rgba(255,255,255,.1);
+		border: 1px solid rgba(255,255,255,.25);
+		margin-top: 8rem;
+		margin-bottom: 2rem;
+		padding: 50px 70px 0 70px;
+		box-sizing: border-box;
+		height: 390px;
+		a {
+			color: $white;
+		}
+	}
+	&.wide {
+		width: ($panel * 1.5);
+	}
+}
+
+body.light {
+	.pm_panel {
+		background: $white;
+		color: $gray;
+	}
+}
+
+body.mobileMode {
+	.pm_panel {
+		width: 100%;
+		padding: 20px !important;
+		margin-top: 2rem;
+	}
+}
+
+#support-reset-password,
+#support-message {
+	.wrap {
+		width: $panel;
+		margin: 2rem auto;
+		box-sizing: border-box;
+	}
+}

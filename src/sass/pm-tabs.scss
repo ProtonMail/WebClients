@@ -1,0 +1,39 @@
+.pm_tabs {
+    display: block;
+    list-style-type: none;
+    border-right: 1px solid $border;
+    float: left;
+    margin: 0;
+    padding: 0;
+    li {
+        display: block;
+        list-style-type: none;
+        float: left;
+        margin: 0;
+        padding: 0;
+        a {
+            text-transform: uppercase;
+            background-color: #fafafa;
+            border-radius: 0;
+            border-right: none;
+        }
+        &.active {
+            a {
+                background-color: $white;
+                border-bottom-color: transparent;
+                color: $primary;
+            }
+        }
+    }
+}
+
+body.mobileMode {
+    .pm_tabs {
+        li {
+            a {
+                padding: 0 5px;
+                font-size: 10px;
+            }
+        }
+    }
+}

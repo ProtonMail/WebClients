@@ -1,0 +1,156 @@
+#attachmentArea {
+	position: relative;
+	padding: 0 10px;
+	background: #fff;
+	border-top: 1px solid $border;
+	header {
+		height: 40px;
+		line-height: 40px !important;
+		position: relative;
+		box-sizing: border-box;
+		padding: 0 !important;
+		margin-bottom: 0 !important;
+		border-bottom: none !important;
+	}
+	.title {
+		position: relative;
+		z-index: 2;
+		display: inline-block;
+		/* background-color: #fff;*/
+		padding-right: 1rem;
+	}
+	em {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 20px;
+		height: 1px;
+		/* background: $border;*/
+		width: 100%;
+		display: block;
+		z-index: 1;
+	}
+
+	.fa.fa-archive-o:before {
+	    content: "\f187";
+	}
+	.fa.fa-audio-o:before {
+	    content: "\f1c7";
+	}
+	.fa.fa-code-o:before {
+	    content: "\f1c9";
+	}
+	.fa.fa-excel-o:before {
+	    content: "\f1c3";
+	}
+	.fa.fa-image-o:before {
+	    content: "\f1c5";
+	}
+	.fa.fa-movie-o:before {
+	    content: "\f1c8";
+	}
+	.fa.fa-pdf-o:before {
+	    content: "\f1c1";
+	}
+	.fa.fa-powerpoint-o:before {
+	    content: "\f1c4";
+	}
+	.fa.fa-word-o:before {
+	    content: "\f1c2";
+	}
+
+	section {
+		/* overflow: auto;*/
+		/* height: 82px;*/
+		position: relative;
+		.pm_button {
+			/* max-width: 8rem;*/
+			/* width: 8rem;*/
+			box-sizing: border-box;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			margin: 0 10px 10px 0;
+			color: $gray;
+			background: #fff;
+			padding-left: 3rem;
+			padding-right: .5rem;
+			position: relative;
+			height: 40px;
+			line-height: 40px;
+			background-color: $light;
+			max-width: 100%;
+			float: left;
+			&.remove {
+				padding-right: 2.5rem;
+			}
+			em {
+				height: 40px;
+				width: 2.5rem;
+				position: absolute;
+				z-index: 1;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				border-right: 1px solid $border;
+			}
+			.name {
+				text-transform: initial;
+				display: block;
+				line-height: 15px;
+				height: 15px;
+				padding-top: 5px;
+				white-space: nowrap;
+			    max-width: 100%;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    display: inline-block;
+			    float: left;
+			}
+			.size {
+				display: block;
+				line-height: 15px;
+				height: 15px;
+				padding-bottom: 5px;
+				float: left;
+				clear: both;
+			}
+			.removeButton {
+				appearance: none;
+				-webkit-appearance: none;
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				position: relative;
+				right: -.5rem;
+				z-index: 999;
+				font-size: 1rem;
+			}
+			& > .fa {
+				color: $gray;
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				width: 2.5rem;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 22px;
+				z-index: 2;
+				&.stuff {
+					opacity: 0;
+				}
+				&.stuff.fa-cog,
+				&.stuff.fa-download {
+					opacity: 1;
+					border-right: none;
+				}
+			}
+			&.placeholder {
+				margin-right: 8rem;
+			}
+		}
+	}
+}

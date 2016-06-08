@@ -1,0 +1,39 @@
+<ul class="pm_tabs">
+    <li role="presentation" ng-show="user.Role === 0 || user.Role === 2" ng-class="{'active': ('secured.dashboard' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.dashboard" translate-context="Title" translate-comment="custom domain menu" translate>Dashboard</a>
+    </li>
+    <li role="presentation" ng-class="{'active': ('secured.account' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.account" translate-context="Title" translate-comment="custom domain menu" translate>Account</a>
+    </li>
+    <li role="presentation" ng-class="{'active': ('secured.labels' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.labels" translate-context="Title" translate-comment="custom domain menu" translate>Labels</a>
+    </li>
+    <li role="presentation" ng-class="{'active': ('secured.filters' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.filters" translate-context="Title" translate-comment="custom domain menu" translate>Filters</a>
+    </li>
+    <li role="presentation" ng-class="{'active': ('secured.security' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.security" translate-context="Title" translate-comment="custom domain menu" translate>Security</a>
+    </li>
+    <li role="presentation" ng-class="{'active': ('secured.appearance' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.appearance" translate-context="Title" translate-comment="custom domain menu" translate>Appearance</a>
+    </li>
+    <li role="presentation" ng-show="user.Role === 2" ng-class="{'active': ('secured.domains' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.domains" translate-context="Title" translate-comment="custom domain menu" translate>Domains</a>
+    </li>
+    <li role="presentation" ng-class="{'active': ('secured.addresses' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.addresses" translate-context="Title" translate-comment="custom domain menu" translate>Addresses</a>
+    </li>
+    <li role="presentation" ng-class="{'active': ('secured.payments' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.payments" translate-context="Title" translate-comment="custom domain menu" translate>Payments</a>
+    </li>
+</ul>
+
+<div class="pm_form" id="settingsSelect">
+    <a class="pm_button" ng-class="{ 'primary': ('secured.dashboard' | includedByState) }"  ng-show="user.Role === 0 || user.Role === 2" ui-sref="secured.dashboard" translate-context="Title" translate>Dashboard</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.account' | includedByState) }"  ui-sref="secured.account" translate-context="Title" translate>Account</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.labels' | includedByState) }"  ui-sref="secured.labels" translate translate-context="Title">Labels</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.filters' | includedByState) }"  ui-sref="secured.filters" translate translate-context="Title">Filters</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.security' | includedByState) }"  ui-sref="secured.security" translate-context="Title" translate>Security</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.appearance' | includedByState) }"  ui-sref="secured.appearance" translate-context="Title" translate>Appearance</a>
+    <a class="pm_button" ng-class="{ 'primary': ('secured.payments' | includedByState) }" ui-sref="secured.payments" translate-context="Title" translate>Payments</a>
+</div>

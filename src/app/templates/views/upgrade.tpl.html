@@ -1,0 +1,66 @@
+<div class="panel panel-default wrap panel-wide">
+    <div class="panel-heading">
+        <h1 class="text-center no-margin-bottom" translate-context="Title" translate-comment="upgrade page title" translate>Absolute security</h1>
+    </div>
+    <div class="panel-body">
+        <p translate-context="Info" translate>Our secure email requires a modern web browser.</p>
+        <ul class="list-group">
+            <li class="list-group-item" ng-class="{'list-group-item-danger': !sessionStorageCompatible()}">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="http://www.w3schools.com/html/html5_webstorage.asp" target="_blank">sessionStorage</a>
+
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <i class="fa" ng-class="{'fa-check-circle text-success': sessionStorageCompatible(), 'fa-times-circle text-danger': !sessionStorageCompatible()}"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item" ng-class="{'list-group-item-danger': !prngCompatible()}">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="http://en.wikipedia.org/wiki/Pseudorandom_number_generator" target="_blank">PRNG</a>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <i class="fa" ng-class="{'fa-check-circle text-success': prngCompatible(), 'fa-times-circle text-danger': !prngCompatible()}"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div ng-show="!sessionStorageCompatible() || !prngCompatible()">
+            <p translate-context="Info" translate>Use one of these browsers for the best experience during Beta:</p>
+            <p class="text-center">
+                <a target="_blank" href="http://www.mozilla.org/en-US/firefox/new/"><img src='assets/img/icons/browser_firefox.png' alt="Mozilla Firefox" height="40"></a>
+    			<a target="_blank" href="http://www.google.com/intl/en/chrome/browser/"><img src='assets/img/icons/browser_chrome.png' alt="Google Chrome" height="40"></a>
+    			<a target="_blank" href="http://support.apple.com/downloads/#safari"><img src='assets/img/icons/browser_safari.png' alt="Safari Browser" height="40"></a>
+    			<a target="_blank" href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"><img src='assets/img/icons/browser_ie.png' alt="Internet Explorer" height="40"></a>
+            </p>
+            <table class="table">
+				<thead>
+        	        <tr>
+                        <th  translate>Browser</th>
+                        <th  translate>Version</th>
+        	        </tr>
+    		    </thead>
+				<tbody>
+					<tr>
+						<td><a target="_blank" href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a></td>
+						<td>29+</td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="http://www.google.com/intl/en/chrome/browser/">Chrome</a></td>
+						<td>33+</td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="http://support.apple.com/downloads/#safari">Safari</a></td>
+						<td>5.1+</td>
+					</tr>
+					<tr>
+						<td><a target="_blank" href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">IE</a></td>
+						<td>11+</td>
+					</tr>
+				</tbody>
+			</table>
+        </div>
+    </div>
+</div>

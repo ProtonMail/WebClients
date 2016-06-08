@@ -1,0 +1,103 @@
+<div id="pm_settings">
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+    <div class="settings">
+        <div class="row pm_grid" id="settingsAppearance">
+            <section class="setting pm_form col-1-2">
+                <legend translate-context="Title" translate>Composer</legend>
+                <p class="alert alert-info"><span translate-context="Info" translate>This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer.</span> <a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank" translate-context="Action" translate-comment="learn more link" translate>Learn more</a></p>
+                <div class="radio col-1-2">
+                    <label>
+                        <input type="radio" ng-model="appearance.ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
+                        <span  translate tranlate-comment="form option">Popup</span>
+                        <br />
+                        <img src="assets/img/settings/pop.gif"  alt="Popup" />
+                    </label>
+                </div>
+                <div class="radio col-1-2">
+                    <label>
+                        <input type="radio" ng-model="appearance.ComposerMode" value="1" ng-change="saveComposerMode(composerMode)" />
+                        <span  translate translate-comment="form option">Maximized</span>
+                        <br />
+                        <img src="assets/img/settings/max.gif" alt="Maximized" />
+                    </label>
+                </div>
+            </section>
+            <section class="setting pm_form col-1-2">
+                <legend translate-context="Title" translate>Layout</legend>
+                <p class="alert alert-info"><span translate-context="Info" translate>ProtonMail supports both column and row layouts for the inbox. Using this setting, it is possible to change between the two layouts.</span> <a href="https://protonmail.com/support/knowledge-base/change-inbox-layout" target="_blank"  translate translate-context="Action">Learn more</a></p>
+                <div class="radio col-1-2">
+                    <label>
+                        <input type="radio" ng-model="appearance.ViewLayout" ng-value="0" ng-change="saveLayoutMode(composerMode)" />
+                        <span  translate translate-comment="form option">Column</span>
+                        <br />
+                        <img src="/assets/img/settings/col.gif" alt="Column" />
+                    </label>
+                </div>
+                <div class="radio col-1-2">
+                    <label>
+                        <input type="radio" ng-model="appearance.ViewLayout" ng-value="1" ng-change="saveLayoutMode(composerMode)" />
+                        <span  translate translate-comment="form option">Row</span>
+                        <br />
+                        <img src="/assets/img/settings/row.gif" alt="Row" />
+                    </label>
+                </div>
+            </section>
+
+        </div>
+        <div class="row pm_grid">
+            <section class="setting pm_form col-1-1">
+                <form method="post" class="toolbar-button-options" novalidate ng-submit="saveButtonsPosition(buttonsForm)" name="buttonsForm">
+                    <legend translate-context="Title" translate>Toolbar</legend>
+                    <p translate-context="Info" translate>Choose your prefered button order for marking messages as read / unread.</p>
+                    <label for="">
+                        <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
+                        <span ng-click="appearance.MessageButtons = 0; saveButtonsPosition(buttonsForm)" class="pm_buttons pull-left" pt-tooltip-translate="Mark as read / Mark as unread"  pt-tooltip-translate-context="Action">
+                            <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
+                            <a href="#" class="dead divider"><i class="fa fa fa-eye-slash"></i></a>
+                        </span>
+                    </label>
+                    <label for="">
+                        <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
+                        <span ng-click="appearance.MessageButtons = 1; saveButtonsPosition(buttonsForm)" class="pm_buttons pull-left" pt-tooltip-translate="Mark as unread / Mark as read"  pt-tooltip-translate-context="Action">
+                            <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
+                            <a href="#" class="dead divider"><i class="fa fa fa-eye"></i></a>
+                        </span>
+                    </label>
+                </form>
+            </section>
+            <!-- <section class="setting pm_form pull-right">
+                <legend translate-context="Title" translate>Internationalization</legend>
+                <label for="selectDefaultLanguage"  translate translate-comment="form option">Choose your default language.</label>
+                <span class="pm_select">
+                    <select id="selectDefaultLanguage" ng-model="appearance.locale" ng-options="locale.label for locale in appearance.locales" ng-change="saveDefaultLanguage()"></select>
+                    <i class="fa fa-angle-down"></i>
+                </span>
+            </section> -->
+        </div>
+        <div class="row pm_grid">
+            <section class="setting pm_form col-1-2">
+                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
+                    <legend translate-context="Title" translate>Custom theme</legend>
+                    <div class="margin" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
+                        <p class="alert alert-info" translate-context="Info" translate>Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
+                        <textarea class="code" placeholder-translate="Paste your CSS code here (limited to 200,000 characters)" id="cssTheme" name="cssTheme" ng-model="appearance.cssTheme" maxlength="200000"></textarea>
+                    </div>
+                    <div class="text-right">
+                        <button type="button" class="pm_button" ng-click="clearTheme()" translate-context="Action" translate>Clear</button>
+                        <button type="submit" class="pm_button primary" translate-context="Action" translate>Save</button>
+                    </div>
+                </form>
+            </section>
+            <section class="setting pm_form col-1-2">
+                <legend translate-context="Title" translate-comment="legend / form heading for adding custom CSS theme code" translate>Additional themes</legend>
+                <p class="alert alert-warning">
+                    <i class="fa fa-exclamation-triangle"></i> <span translate-context="Info" translate>Loading themes will override your current theme!</span>
+                </p>
+                <p>
+                    <button class="pm_button" ng-click="loadThemeClassic()" translate-context="Action" translate>Load classic theme</button>
+                    <button ng-if="false" class="pm_button" ng-click="enableThemeEdison()" translate-context="Action" translate>Load edison theme</button>
+                </p>
+            </section>
+        </div>
+    </div>
+</div>

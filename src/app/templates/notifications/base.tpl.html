@@ -1,0 +1,16 @@
+<div
+class="proton-notification-template cg-notify-message"
+ng-click="$close()"
+ng-class="[$classes,
+$position === 'center' ? 'cg-notify-message-center' : '',
+$position === 'left' ? 'cg-notify-message-left' : '',
+$position === 'right' ? 'cg-notify-message-right' : '']"
+ng-style="{'margin-left': $centerMargin}">
+
+    <div ng-show="!$messageTemplate" ng-class="{ 'animated bounceIn' : $classes==='notification-success' }">
+    	<span ng-bind-html="$message"></span>
+    </div>
+
+    <div ng-show="$messageTemplate" class="cg-notify-message-template"></div>
+
+</div>

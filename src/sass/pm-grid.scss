@@ -1,0 +1,134 @@
+$pad: 20px;
+
+.pm_grid {
+	margin: 0 0 $pad 0;
+	.col-1-8,
+	.col-2-8,
+	.col-1-5,
+	.col-1-4,
+	.col-1-3,
+	.col-3-8,
+	.col-2-5,
+	.col-4-8,
+	.col-1-2,
+	.col-3-5,
+	.col-5-8,
+	.col-2-3,
+	.col-6-8,
+	.col-3-4,
+	.col-4-5,
+	.col-7-8,
+	.col-1-1,
+	.col-8-8,
+	.col-5-5, {
+		box-sizing: border-box;
+	}
+
+	&.truncate > div {
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&.pad {
+		padding: $pad 0 $pad $pad;
+		[class*='col-']:last-of-type {
+			padding-right: $pad;
+		}
+	}
+
+	&.no-padding {
+		padding: 0;
+		[class*='col-'] {
+			padding: 0;
+		}
+	}
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	[class*='col-'] {
+		float: left;
+		padding-right: $pad;
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
+
+	.col-1-8 {
+		width: 12.5%;
+	}
+	.col-1-6 {
+		width: 16.6%;
+	}
+	.col-1-5 {
+		width: 20%;
+	}
+	.col-2-8,
+	.col-1-4 {
+		width: 25%;
+	}
+	.col-1-3,
+	.col-2-6 {
+		width: 33.33%;
+	}
+	.col-3-8 {
+		width: 37.5%;
+	}
+	.col-2-5 {
+		width: 40%;
+	}
+	.col-4-8,
+	.col-1-2,
+	.col-3-6 {
+		width: 50.0%;
+	}
+	.col-3-5 {
+		width: 60%;
+	}
+	.col-5-8 {
+		width: 62.5%;
+	}
+	.col-2-3,
+	.col-4-6 {
+		width: 66.66%;
+	}
+	.col-6-8,
+	.col-3-4 {
+		width: 75.0%;
+	}
+	.col-4-5 {
+		width: 80%;
+	}
+	.col-5-6 {
+		width: 83.3%
+	}
+	.col-7-8 {
+		width: 87.5%;
+	}
+	.col-1-1,
+	.col-4-4,
+	.col-5-5,
+	.col-6-6,
+	.col-8-8,
+	{
+		width: 100%;
+	}
+
+}
+
+body.mobileMode {
+	.pm_grid {
+		[class*='col-'] {
+			float: left;
+			width: 100% !important;
+			clear: both;
+			box-sizing: border-box;
+			padding: 0;
+		}
+	}
+}

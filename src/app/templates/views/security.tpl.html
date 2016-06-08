@@ -1,0 +1,65 @@
+<div id="pm_settings">
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+    <div class="settings">
+        <div class="row">
+            <section class="setting pm_form full">
+                <form method="post">
+                    <legend translate-context="Title" translate-comment="logs page heading" translate>Authentication Logs</legend>
+                        <div class="pull-right" id="logActions" ng-hide="doLogging === 0">
+                            <button class="pm_button pull-left" ng-click="clearLogs()" translate-context="Action" translate>Wipe</button>
+                            <button class="pm_button pull-left" ng-click="downloadLogs()" translate-context="Action" translate>Download</button>
+                            <span ng-show="(logCount > logItemsPerPage)">
+                                <paginator page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs" />
+                            </span>
+                        </div>
+                        <div class="pm_buttons pull-left">
+                            <a ng-class="{'active': doLogging === 0}" ng-click="setLogging(0)">{{ disabledText }}</a>
+                            <a ng-class="{'active': doLogging === 1}" class="divider" ng-click="setLogging(1)" translate-context="Action" translate>Basic</a>
+                            <a ng-class="{'active': doLogging === 2}" class="divider" ng-click="setLogging(2)" translate-context="Action" translate>Advanced</a>
+                        </div>
+                        <a class="pm_button pull-left" id="logRefresh" ng-hide="doLogging === 0" ng-click="initLogs()">
+                            <i class="fa fa-rotate-right"></i>
+                        </a>
+                        <div class="clear" ng-show="doLogging == 0">
+                            <p>&nbsp;</p>
+                            <p class="alert" translate translate-context="Info">You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.</p>
+                        </div>
+                        <div id="logArea" ng-show="doLogging != 0" class="clear">
+                            <p class="alert alert-info" ng-show="logs.length < 1 && haveLogs"  translate>No logs yet</p>
+                            <p class="alert alert-info" ng-show="!haveLogs && doLogging !== 0"><i class="fa fa-spin fa-spinner"></i  translate>Fetching logs...</p>
+                            <div class="pm_table">
+                                <table id="accessLog" ng-init="initLogs()" ng-show="logs.length>0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:10rem" translate-context="Title" translate>Event</th>
+                                            <th style="width:10rem" ng-show="doLogging == 2" class="text-right" translate translate-context="Title">IP</th>
+                                            <th style="width:14rem" class="text-right" translate-context="Title" translate>Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="log in logs | limitTo: logItemsPerPage: (currentLogPage - 1) * logItemsPerPage" ng-class="{ 'danger': (log.Event == 0) }">
+                                            <td scope="row">
+                                                <span ng-show="{{ log.Event == 0 }}"><i class="fa fa-times-circle text-red"></i>
+                                                    <span translate-context="Info" translate-comment="authentication log record" translate translate-comment="auth log entry">Login failed</span>
+                                                </span>
+                                                <span ng-show="{{ log.Event == 1 }}"><i class="fa fa-check"></i>
+                                                    <span translate translate-comment="auth log entry">Login success</span>
+                                                </span>
+                                                <span ng-show="{{ log.Event == 2 }}"><i class="fa fa-check"></i>
+                                                    <span translate translate-comment="auth log entry">Log out</span>
+                                                </span>
+                                            </td>
+                                            <td ng-show="doLogging == 2" class="text-right">
+                                                <kbd ng-show="log.IP!==''">{{ ::log.IP }}</kbd>
+                                                <kbd ng-show="log.IP===''">--</kbd>
+                                            </td>
+                                            <td class="text-right">{{ log.Time * 1000 | date : 'medium' }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div><!--/.pm_table-->
+                        </div>
+                </form>
+            </section>
+    </div><!--/.settings-->
+</div><!--/#pm_settings-->

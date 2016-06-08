@@ -1,0 +1,50 @@
+#pm_contacts {
+	padding: 0 25px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	.wrap {
+		-webkit-flex-grow: 1;
+		    -ms-flex-positive: 1;
+		        flex-grow: 1;
+	}
+	.tableWrapper {}
+}
+
+@media (max-width: $tablet-landscape) {
+	#pm_contacts {
+		padding: 0;
+		#pm_toolbar {
+			padding: 10px !important;
+			display: block !important;
+		}
+		.pm_table {
+			tr {
+				margin: 0;
+			}
+			td span {
+				line-height: 50px;
+			}
+			th.checkbox {
+				width: 4rem;
+				label {
+					width: 4rem;
+					text-align: center;
+					box-sizing: border-box;
+				}
+			}
+			td.text-right {
+				padding: .5rem 0;
+			}
+			td.actions {
+				span {
+					width: 100%;
+					.pm_button.round {
+						float: left;
+						margin-right: 1rem;
+					}
+				}
+			}
+		}
+	}
+}

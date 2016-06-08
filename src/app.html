@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="proton" class="protonmail">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <base href="/">
+    <title>Login | ProtonMail</title>
+    <meta name="description" content="Login to your encrypted email account from any web browser.">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#333366">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="ProtonMail">
+    <meta name="application-name" content="ProtonMail">
+    <meta name="msapplication-TileColor" content="#333366">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#333366">
+
+    <% styles.forEach(function (file) { %>
+        <link rel="stylesheet" type="text/css" href="/<%= file %>" />
+    <% }); %>
+
+    <style type="text/css">
+    @media print {
+        * {
+          word-break: break-word;
+        }
+        blockquote {
+            margin-left: 1rem !important;
+            padding: 0 !important;
+        }
+        blockquote blockquote blockquote {
+            margin-left: 0 !important;
+        }
+    }
+    </style>
+
+    <ng-include src="'templates/partials/custom-theme.tpl.html'"></ng-include>
+</head>
+<body class="" id="{{ toState }}" ng-class="{
+    locked: (isLoggedIn && isLocked) || ('login'|isState) || ('login.unlock'|isState) || ('eo.unlock'|isState) || ('eo.message'|isState) || ('reset'|isState) || ('eo.reply'|isState) || ('reset'|isState),
+    login:!isLoggedIn,
+    unlock:isLocked,
+    secure:isSecure,
+    blank:!!isBlank,
+    activeComposer:activeComposer,
+    maximizedComposer:maximizedComposer,
+    light: ('support.reset-password'|isState) || ('step1'|isState) || ('pre-invite'|isState) || ('support.message'|isState),
+    scroll: ('step1'|isState) || ('secured.print'|isState),
+    modalOpen: modalOpen,
+    mobileMode: mobileMode,
+    rows: (layoutMode==='rows'),
+    tourActive: tourActive,
+    themeJason: themeJason,
+    mobileSidebarActive: (showSidebar && mobileMode)
+}">
+
+<div
+id="pm_background"
+ng-hide="mobileMode"
+ng-class="{ 'tablet': showSidebar }"
+ng-click="showSidebar = false"
+ng-hide="printMode"></div>
+
+<div id="pm_slow">Loading ProtonMail...</div>
+<div id="pm_slow2" style="display:none;">Loading Message...</div>
+<div id="loading_pm">
+    <noscript style="padding: 2rem; display:block; text-align: center; color: #fff">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
+</div>
+
+<div id="pm_loading" ng-class="{ 'show': networkActivity.loading() || loggingOut }">
+    <img src="/assets/img/small-spinner.gif" width="50" height="50">
+</div>
+
+<div id="exiting" ng-class="{ 'show': loggingOut }">
+    <img src="/assets/img/decrypt1.gif" class="loader">
+    <p>LOGGING OUT...</p>
+</div>
+
+<div ui-view="main" autoscroll="false" id="body"></div>
+<% scripts.forEach(function (file) { %>
+    <script type="text/javascript" src="/<%= file %>"></script>
+<% }); %>
+
+<script type="text/javascript">
+    if(window.location.href.indexOf("/eo/") > -1) {
+        document.getElementById('pm_slow').style.display = 'none';
+        document.getElementById('pm_slow2').style.display = 'block';
+    }
+    else {
+        document.getElementById('pm_slow').style.display = 'block';
+        document.getElementById('pm_slow2').style.display = 'none';
+    }
+
+    // required features check
+    function is_good_prng_available() {
+        if (typeof window !== 'undefined' && window.crypto && window.crypto.getRandomValues) {
+            return true;
+        } else if (typeof window !== 'undefined' && typeof window.msCrypto === 'object' && typeof window.msCrypto.getRandomValues === 'function') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    if (navigator.cookieEnabled===false) {
+        alert('Cookies are required to use ProtonMail. Please enable cookies in your browser.');
+        window.location = "https://protonmail.com/compatibility";
+    }
+    if(typeof Storage === "undefined") {
+        alert('sessionStorage is required to use ProtonMail. Please enable sessionStorage in your browser.');
+        window.location = "https://protonmail.com/compatibility";
+    }
+    if (is_good_prng_available()===false) {
+        alert('A browser that has a Pseudo Random Number Generator is required to use ProtonMail. Please update your browser.');
+        window.location = "https://protonmail.com/compatibility";
+    }
+</script>
+</body>
+</html>

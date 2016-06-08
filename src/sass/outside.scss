@@ -1,0 +1,303 @@
+html.protonmail body.light {
+	background-color: $light;
+}
+body#eo-message {
+	overflow: initial;
+	background: $dark;
+	#pm_footer {
+		position: static;
+	}
+	#attachmentArea {
+		margin: 0;
+	}
+	.message-head {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+}
+
+body#eo-reply {
+	overflow: initial;
+	background: $dark;
+	#attachmentArea {
+		margin: 0;
+	}
+	#pm_footer {
+		position: static;
+	}
+	.outside .message-head {
+		border-bottom: none;
+		& > div.pull-right {
+			font-size: .9rem;
+		}
+	}
+	h1 {
+		padding-bottom: 1rem;
+		display: block;
+	}
+	ul.infos {
+		font-size: .9rem;
+		display: block;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		color: #999;
+		font-weight: 400;
+		strong {
+			font-weight: 400;
+		}
+		b, em {
+			color: $primary;
+			font-style: italic;
+			font-weight: 400;
+		}
+		li {
+			display: block;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+	}
+	#message-body {
+		margin: 0;
+		.squire-toolbar {
+			border-top: 1px solid $border;
+			border-bottom: 1px solid $border;
+			padding: 0 35px;
+			height: 42px;
+			line-height: 42px;
+			box-sizing: border-box;
+			li {
+				height: 40px;
+				line-height: 40px;
+				-webkit-flex-grow: initial;
+				    -ms-flex-positive: initial;
+				        flex-grow: initial;
+				padding: 0 1rem;
+				a {
+					height: 40px;
+					line-height: 40px;
+				}
+				&.separator {
+					padding: 0;
+				}
+			}
+		}
+		iframe {
+			width: 100%;
+			min-height: 30rem;
+			height: 30rem;
+			padding: 1rem 25px;
+			box-sizing: border-box;
+		}
+	}
+	#inputFile {
+		display: none;
+	}
+	footer {
+		padding: 1rem 35px;
+		margin: 0;
+		border-top: 1px solid $border;
+		.pm_button {
+			text-transform: uppercase;
+			padding: 0 1rem;
+		}
+	}
+}
+
+.outside {
+	padding: 4rem 100px;
+	font-size: 1em;
+	line-height: 1.6em;
+	#expirationMessage {
+		background-color: $exp;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		color: #fff;
+		font-size: .9em;
+		margin: 0;
+	}
+	#outsideMessageWrap {
+		padding: 0;
+		background-color: #fff;
+	}
+	#outsideMessage {
+		padding: 35px;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+	.message-head {
+		padding: 20px 35px;
+		border-bottom: 1px solid $border;
+		margin-bottom: 10px;
+		box-sizing: border-box;
+		h1 {
+			line-height: 35px;
+			display: inline-block;
+			font-weight: 500;
+			.attachement {
+				float: left;
+				margin: 5px .5rem 0 0;
+			}
+		}
+	}
+	#attachmentArea {
+		border-top: 1px solid $border;
+		border-bottom: none;
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+	.display-image {
+	    position: absolute;
+	    right: 35px;
+	    bottom: -1px;
+	    margin: 0 0 0 -5rem;
+	    width: initial;
+	    border-radius: 4px 4px 0 0;
+	    background: #fff;
+	    box-sizing: initial;
+	    text-transform: uppercase;
+		border: 1px solid $border;
+	    border-bottom-color: #fff;
+        border-radius: 2px;
+	    -webkit-transition: padding .1s ease;
+	       -moz-transition: padding .1s ease;
+	        -ms-transition: padding .1s ease;
+	         -o-transition: padding .1s ease;
+	            transition: padding .1s ease;
+		a {
+			color: $primary;
+            display: block;
+            width: 100%;
+			text-decoration: none;
+            text-decoration: none;
+	        background-color: #fff !important;
+		}
+		a:hover, a:focus {
+			text-decoration: underline;
+		}
+	    &:hover {
+	        background: #fff;
+	        padding-top: 4px;
+	    }
+	}
+	.message-metadata {
+		margin-bottom: 0;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid $border;
+		position: relative;
+		padding-left: 35px;
+		padding-right: 35px;
+		ul.infos {
+			overflow: auto;
+		}
+		ul.infos,
+		ul.infos li {
+			display: block;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			strong {
+				color: $gray;
+				font-weight: normal;
+			}
+			b {
+				color: $primary;
+				font-weight: normal;
+				font-style: italic;
+			}
+		}
+	}
+}
+
+body.mobileMode {
+	.reportBug {
+		display: none;
+	}
+	#pm_login.pm_panel,
+	#reset .pm_panel {
+		margin: 2rem auto;
+	}
+	.outside {
+		padding: 0;
+		#expirationMessage {
+			margin: 0;
+			border-radius: 0;
+		}
+		#outsideMessageWrap {
+			padding: 0;
+		}
+	}
+	body#eo-reply {
+		footer {
+		    padding: 1rem 25px;
+		    margin: 0;
+		}
+		.message-head {
+			padding-left: 25px;
+			padding-right: 25px;
+			margin: 0;
+		}
+		#attachmentArea {
+			margin: 0;
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+		#message-body {
+			margin: 0;
+			padding: 1rem 0;
+			iframe {
+				padding: 1px 25px;
+				background: #fff;
+			}
+			.squire-toolbar {
+				padding: 0;
+				li {
+					padding: 0;
+					-webkit-flex-grow: 1;
+				    -ms-flex-positive: 1;
+			        flex-grow: 1;
+					text-align: center;
+					&.separator {
+						min-width: 1px !important;
+						width: 1px !important;
+						flex-grow: initial !important;
+					}
+				}
+			}
+		}
+	}
+	body#eo-message {
+		.message-head,
+		#attachmentArea,
+		.message-metadata {
+			margin: 0;
+		}
+		.message-metadata {
+			padding-top: 1rem;
+		}
+		#outsideMessage {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
+		.message-metadata,
+		#outsideMessage,
+		#attachmentArea {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+	}
+}
+
+
+body.mobileMode {
+	.outside {
+		padding: 0;
+	}
+	body#eo-reply {
+		.outside {
+			padding: 0;
+		}
+	}
+}

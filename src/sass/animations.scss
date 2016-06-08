@@ -1,0 +1,184 @@
+$spinnerWidth: 6rem;
+$spinnerSpeed: 600ms;
+$spinnerSize: 10rem;
+
+.loader {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+    width: 100px;
+    height: auto;
+}
+
+#exiting {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 9999;
+    display: none;
+    text-align: center;
+    color: $gray;
+    font-size: 90%;
+    &.show {
+        display: block;
+    }
+    .spinner.large {
+        height: $spinnerSize;
+        .spinner1, .spinner2, .spinner3 {
+            background-color: $primary;
+        }
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+.pm_fadeIn {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:.15s;
+    animation-duration:.15s;
+}
+
+
+/*
+SPINNER
+Inpiration from 'esjay'
+[http://codepen.io/esjay/pen/xclfz]
+*/
+.spinner {
+    position: relative;
+}
+.spinner1,
+.spinner2,
+.spinner3 {
+    padding: 1rem;
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -2.5em;
+    width: ($spinnerWidth / 2);
+    height: ($spinnerWidth / 2);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: rotateY(50%);
+    transform: rotateY(50%);
+    -webkit-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+    -webkit-perspective: ($spinnerWidth / 2);
+    perspective: ($spinnerWidth / 2);
+    background-size: ($spinnerWidth / 2) ($spinnerWidth / 2);
+    -webkit-mask:  url(/assets/img/valence.svg) no-repeat 50% 50%;
+    mask: url(/assets/img/valence.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+.spinner.large {
+    top: 2rem;
+    margin-top: 0;
+    width: auto;
+    height: $spinnerSize;
+    .spinner1,
+    .spinner2,
+    .spinner3 {
+        top: 1rem;
+        margin: 0;
+        margin-left: -($spinnerWidth / 2);
+        width: $spinnerWidth;
+        height: $spinnerWidth;
+        -webkit-perspective: $spinnerWidth;
+        perspective: $spinnerWidth;
+        background-size: $spinnerWidth $spinnerWidth;
+        background-color: $white;
+    }
+}
+
+.spinner1 {
+    transform: rotateX(135deg) rotateY(35deg) rotateZ(0);
+    animation: ($spinnerSpeed * 2) spin1 infinite linear reverse, $spinnerSpeed flash infinite linear;
+    background-color: $primary;
+}
+.spinner2 {
+    transform: rotateX(-135deg) rotateY(35deg) rotateZ(0);
+    animation: ($spinnerSpeed * 2) spin2 infinite linear, $spinnerSpeed flash infinite linear;
+    background-color: $primary;
+}
+.spinner3 {
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+    -webkit-animation: 900ms spin3 infinite linear reverse, 900ms flash1 infinite linear;
+    animation: 900ms spin3 infinite linear reverse, 900ms flash1 infinite linear;
+    background-color: $primary;
+    display: none;
+}
+
+@keyframes spin1 {
+    from { transform: rotateX(135deg) rotateY(35deg) rotateZ(0deg); }
+    to { transform: rotateX(135deg) rotateY(35deg) rotateZ(360deg); }
+}
+@keyframes spin2 {
+    from { transform: rotateX(-135deg) rotateY(35deg) rotateZ(0deg); }
+    to { transform: rotateX(-135deg) rotateY(35deg) rotateZ(360deg); }
+}
+@keyframes spin3 {
+    from { transform: rotateX(0) rotateY(0) rotateZ(0deg); }
+    to { transform: rotateX(0) rotateY(0) rotateZ(360deg); }
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: .5; }
+    100% { opacity: 1; }
+}
+
+@keyframes flash1 {
+    0% { opacity: .5; }
+    50% { opacity: .1; }
+    100% { opacity: .5; }
+}
+
+.spinMe {
+    -webkit-animation: spin .5s infinite linear;
+    animation: spin .5s infinite linear;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}

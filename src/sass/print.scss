@@ -1,0 +1,48 @@
+@media print {
+
+	#secured-print {
+		* {
+			word-break: break-word;
+		}
+		table.print {
+			width: initial !important;
+			b, strong {
+				font-weight: 400;
+			}
+			i, em {
+				font-style: normal;
+			}
+			.pm_button {
+				margin: 4px 4px 0 0;
+			}
+		}
+	}
+
+	#body #conversation-view,
+	#pm_view {
+		width: 100% !important;
+	}
+
+	.pm_button,
+	.pm_buttons,
+	.sidebar,
+	.pm_toolbar,
+	#pm_header,
+	#pm_list,
+	#conversation-list-columns,
+	#pm_header-desktop,
+	#pm_background,
+	#pm_view article.closed
+	 {
+		display: none !important;
+		visibility: hidden !important;
+	}
+	* {
+		overflow: initial !important;
+		height: initial !important;
+		width: initial !important;
+		float: initial !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+	}
+}

@@ -1,0 +1,37 @@
+/*
+Be extremely careful what goes here.
+It will conflict with email rendering if the selectors are not specific or nested properly
+*/
+
+.clearfix {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  zoom: 1;
+  padding: 0 0 1px 0;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.pm_opensans {
+	font-family: sans-serif;
+}
+
+#pm_rows,
+#pm_conversations {
+	article > header .fa-paperclip,
+	header .loc,
+	.meta .fa-star-o,
+	article > header .fa-lock,
+	.meta .singleStar {
+		color: #aba7be;
+		display: inline-block;
+		text-align: center;
+		width: 1.5rem;
+		min-width: 1.5rem;
+		height: 20px;
+		line-height: 20px;
+		float: left;
+	}
+}

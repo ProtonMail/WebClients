@@ -1,0 +1,88 @@
+<header id="pm_header-desktop" class="pm_opensans" ng-controller="HeaderController">
+    <a href="#" class="logo" ui-sref="secured.inbox">
+        <img src="assets/img/logo/logo.svg" height="30" alt="ProtonMail" ng-if="organization.PlanName === 'free'" />
+        <img src="assets/img/logo/logo-plus.svg" height="30" alt="ProtonMail" ng-if="organization.PlanName === 'plus'" />
+        <img src="assets/img/logo/logo-visionary.svg" height="30" alt="ProtonMail" ng-if="organization.PlanName === 'visionary'" />
+    </a>
+    <ng-include src="'templates/partials/searchForm.tpl.html'" ng-if="!('secured.contacts' | includedByState)"></ng-include>
+    <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
+        <fieldset>
+            <input type="search" placeholder-translate="Search contacts" autocomplete="off" ng-model="params.searchContactInput" ng-change="searchContacts()" class="query searchInput" />
+            <button type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </fieldset>
+    </form>
+    <ul class="navigation">
+        <li ui-sref-active="active">
+            <a ui-sref="secured.dashboard">
+                <span>
+                    <i class="fa fa-cubes"></i>
+                </span>
+                <strong translate translate-context="Action">Upgrade</strong>
+            </a>
+        </li>
+        <li ng-class="{'active': activeSettings()}">
+            <a id="tour-settings" ui-sref="secured.account">
+                <span>
+                    <i class="fa fa-cogs"></i>
+                </span>
+                <strong translate translate-context="Action">Settings</strong>
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="secured.contacts">
+                <span>
+                    <i class="fa fa-users"></i>
+                </span>
+                <strong translate translate-context="Action">Contacts</strong>
+            </a>
+        </li>
+        <li class="pm_buttons">
+            <a class="pm_trigger" dropdown href="#" id="tour-support">
+                <span class="text-center">
+                    <i class="fa fa-life-ring"></i>
+                    <i class="fa fa-angle-down"></i>
+                </span>
+                <strong translate translate-context="Action">Report bug</strong>
+            </a>
+            <span class="pm_dropdown wide right">
+                <a href="https://protonmail.com/support" target="_blank" class="help">
+                    <i class="fa fa-question-circle"></i>
+                    <span translate translate-context="Action">I have a question</span>
+                </a>
+                <a href="#" ng-click="openReportModal()" class="help">
+                    <i class="fa fa-bug"></i>
+                    <span translate translate-context="Action">Report a bug</span>
+                </a>
+            </span>
+        </li>
+        <li class="pm_buttons">
+            <a class="pm_trigger" dropdown href="#">
+                <span class="text-center">
+                    <i class="fa fa-user"></i>
+                    <i class="fa fa-angle-down"></i>
+                </span>
+                <strong>{{ user.DisplayName || user.Addresses[0].Email }}</strong>
+            </a>
+            <span class="pm_dropdown wide right">
+                <span class="user">
+                    <strong>{{ user.DisplayName }}</strong>
+                    <b>{{ user.Addresses[0].Email }}</b>
+                </span>
+                <a href="#" class="help" ng-click="tour()" ng-if="wizardEnabled === true">
+                    <i class="fa fa-magic"></i>
+                    <span translate translate-context="Action">Tutorial</span>
+                </a>
+                <a class="help" target="_blank" href="https://protonmail.com/support">
+                    <i class="fa fa-life-ring"></i>
+                    <span translate translate-context="Action">Help &amp; answers</span>
+                </a>
+                <a href="#" ng-click="logout()" class="pm_button primary text-center" translate translate-context="Action">Logout</a>
+                <a href="https://protonmail.com/blog/protonmail-v3-3-release-notes/" target="_blank" class="version text-center" title="{{ dateVersion }}" target="_blank">
+                    <small>ProtonMail {{ appVersion }}</small>
+                </a>
+            </span>
+        </li>
+    </ul>
+</header>

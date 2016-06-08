@@ -1,0 +1,74 @@
+<!-- no longer used? -->
+
+<div id="pm_settings">
+    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+    <div class="settings pm_form">
+        <div class="row">
+            <div class="margin">
+                <span class="pm_select inline">
+                    <select ng-model="range" ng-options="option.label for option in years" ng-change="loadInvoices(range.value)"></select>
+                    <i class="fa fa-angle-down"></i>
+                </span>
+            </div>
+            <legend translate-context="Title" translate>Organization history</legend>
+            <div class="pm_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10rem" class="date" translate-context="Title" translate>Date</th>
+                            <th style="width: 10rem" class="event" translate-context="Title" translate>Event</th>
+                            <th style="width: 10rem" class="price" translate-context="Title" translate>Price</th>
+                            <th style="width: 10rem" class="actions" translate-context="Title" translate>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="invoice in organizationInvoices">
+                            <td class="date">
+                                {{ invoice.PeriodStart * 1000 | date : 'medium' }}
+                            </td>
+                            <td>
+                                {{ invoice.Cart.Next.Plan | capitalize }} <span translate>Plan subscription</span> (<small ng-show="invoice.BillingCycle === 1"  translate>Monthly</small><small ng-show="invoice.BillingCycle === 12"  translate>Annually</small>)
+                            </td>
+                            <td class="price">
+                                {{ invoice.Amount / 100 | currency: invoice.Currency }}
+                            </td>
+                            <td class="actions">
+                                <button type="button" class="pm_button link" ng-click="display(invoice)" translate-context="Action" translate-comment="displays invoice details as a PDF in new tab" translate>Display invoice</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>&nbsp;</p>
+            <legend translate-context="Title" translate>User history</legend>
+            <div class="pm_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10rem" class="date" translate-context="Title" translate-comment="Table heading" translate>Date</th>
+                            <th style="width: 10rem" class="event" translate-context="Title" translate-comment="Table heading" translate>Event</th>
+                            <th style="width: 10rem" class="price" translate-context="Title" translate-comment="Table heading" translate>Price</th>
+                            <th style="width: 10rem" class="actions" translate-context="Title" translate-comment="Table heading" translate>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="invoice in userInvoices">
+                            <td class="date">
+                                {{ invoice.PeriodStart * 1000 | date : 'medium' }}
+                            </td>
+                            <td>
+                                {{ invoice.Cart.Next.Plan | capitalize }} <span  translate>Plan subscription</span> (<small ng-show="invoice.BillingCycle === 1"  translate>Monthly</small><small ng-show="invoice.BillingCycle === 12"  translate>Annually</small>)
+                            </td>
+                            <td class="price">
+                                {{ invoice.Amount / 100 | currency: invoice.Currency }}
+                            </td>
+                            <td class="actions">
+                                <button type="button" class="pm_button link" ng-click="display(invoice)" translate-context="Action" translate-comment="displays invoice details as a PDF in new tab" translate>Display invoice</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

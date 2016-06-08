@@ -1,0 +1,175 @@
+form.searchForm {
+	display: block;
+	float: left;
+	line-height: 35px;
+	height: 35px;
+	margin: 13px 0;
+	border-radius: 35px;
+	color: #fff;
+	width: calc(100% - 700px);
+	max-width: 25%;
+	margin-left: 10px;
+	box-sizing: border-box;
+	position: relative;
+	&.adv {
+		fieldset {
+			box-shadow: none;
+			border-radius: 1rem 1rem 0 0;
+			border: none;
+			button[type="button"] {
+				border-radius: 1rem 0 0 0;
+			}
+			button[type="submit"],
+			#closeAdvSearch {
+				border-radius: 0 1rem 0 0;
+				background: transparent;
+			}
+			input.query {
+				visibility: hidden;
+			}
+		}
+	}
+	fieldset {
+		position: relative;
+		background: lighten($alt, 10%);
+		z-index: 5;
+		display: block;
+		line-height: 35px;
+		height: 35px;
+		border-radius: 35px;
+		color: #fff;
+		width: 100%;
+		box-sizing: border-box;
+		border: none;
+		outline: none;
+		padding: 0;
+		margin: 0;
+		button,
+		button .fa {
+			height: 35px;
+			line-height: 35px;
+			display: block;
+		}
+		button[type="button"] {
+			padding: 0;
+			border: none;
+			display: block;
+			width: 35px;
+			color: #fff;
+			background-color: transparent;
+			border-radius: 35px 0 0 35px;
+			cursor: pointer;
+			transition: background-color .25s ease;
+			float: left;
+			&:hover {
+				background: $alt-light;
+			}
+		}
+		button[type="submit"],
+		#closeAdvSearch {
+			padding: 0;
+			border: none;
+			display: block;
+			width: 45px;
+			color: #fff;
+			background-color: transparent;
+			border-radius: 0 35px 35px 0;
+			cursor: pointer;
+			float: right;
+			position: relative;
+			z-index: 6;
+		}
+		input.query {
+			outline: none;
+			height: 33px;
+			line-height: 33px;
+			display: block;
+			border: none;
+			padding: 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+	        appearance: none;
+			position: relative;
+			border-radius: 0;
+			padding: 0 0 0 10px;
+			background: lighten($alt, 10%);
+			color: #fff;
+			position: absolute;
+			left: 35px;
+			box-sizing: border-box;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 80%;
+			font-size: 14px;
+			border-radius: 35px;
+			&.searchInput {
+				left: 0;
+				width: 85%;
+			}
+		}
+		& > * {
+			line-height: 35px;
+			height: 35px;
+		}
+	}
+	::-webkit-input-placeholder {
+	   color: rgba(255,255,255,.75);
+	}
+	:-moz-placeholder {
+	   color: rgba(255,255,255,.75);
+	}
+
+	::-moz-placeholder {
+	   color: rgba(255,255,255,.75);
+	}
+	:-ms-input-placeholder {
+	   color: rgba(255,255,255,.75);
+	}
+	#advancedSearchDropdown {
+		position: absolute;
+		left: 0;
+		top: 0;
+		box-shadow: $box-shadow;
+		z-index: 2;
+		border-radius: 1rem;
+		padding: 35px 0 0;
+		right: 0;
+		label {
+			color: $gray;
+		}
+		.input-icon {
+			display: block;
+		}
+		.wrap {
+			background: #fff;
+			float: left;
+			padding: 1rem;
+			width: 100%;
+			box-sizing: border-box;
+			border-radius: 0 0 1rem 1rem;
+		}
+	}
+	a {
+		display: none;
+	}
+}
+
+body.mobileMode {
+	form.searchForm {
+		position: static;
+		& > fieldset {
+			display: none;
+		}
+		#advancedSearchDropdown {
+			top: 70px;
+			box-shadow: none;
+			border-radius: none;
+			padding-top: 0;
+			.wrap {
+				border-radius: 0;
+				border-bottom: 1px solid $border;
+			}
+		}
+	}
+}

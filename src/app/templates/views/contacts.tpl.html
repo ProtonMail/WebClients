@@ -1,0 +1,85 @@
+<div id="pm_contacts">
+
+    <div class="wrap">
+        <div>
+            <nav id="pm_toolbar" class="pm_toolbar">
+                <div class="pull-right">
+                    <span class="pull-right" ng-show="contacts.length > 0">
+                        <paginator page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
+                    </span>
+                    <a class="pm_button deleteAll" ng-click="deleteAllContacts()">
+                        <i class="fa fa-ban"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Delete all</span>
+                    </a>
+                    <a class="pm_button" ng-click="downloadContacts()">
+                        <i class="fa fa-download"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Download</span>
+                    </a>
+                    <a class="pm_button" ng-click="uploadContacts()">
+                        <i class="fa fa-upload"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Upload</span>
+                    </a>
+                </div>
+                <button class="pm_button primary" type="button" ng-click="addContact()">
+                    <i class="fa fa-plus"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Add</span>
+                </button>
+                <button class="delete pm_button" type="button" ng-click="deleteContact()" ng-disabled="contactsSelected().length === 0">
+                    <i class="fa fa-trash-o"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Delete</span>
+                </button>
+                <button class="compose pm_button" type="button" ng-click="composeContacts()" ng-disabled="contactsSelected().length === 0">
+                    <i class="fa fa-edit"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Compose</span>
+                </button
+            </nav>
+        </div>
+
+        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length === 0" translate-context="Info" translate>You have no contacts, you can add contact with the above button 'ADD CONTACT'.</p>
+        <p class="alert alert-info" ng-if="contacts.length === 0 && params.searchContactInput.length > 0" translate-context="Info" translate>No results for this search in your contacts list.</p>
+
+        <div class="contactWrapper pm_table">
+            <table ng-if="contacts.length > 0">
+                <thead>
+                    <tr>
+                        <th style="width: 4rem" class="hidden-xs checkbox"></th>
+                        <th style="width: 12rem" class="name">
+                            <span>
+                                <a ng-click="setSortBy('Name')" translate-context="Action" translate-comment="table heading / link to sort table" translate>Name</a>
+                                <a ng-click="setSortBy('Name')" ng-show="sortBy === 'Name'">
+                                    <i class="fa fa-caret-up"></i>
+                                </a>
+                                <a ng-click="setSortBy('Name')" ng-show="sortBy === '-Name'">
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                            </span>
+                        </th>
+                        <th style="width: 12rem" class="email">
+                            <a ng-click="setSortBy('Email')" translate-context="Action" translate-comment="table heading / link to sort table" translate>Email</a>
+                            <a ng-click="setSortBy('Email')" ng-show="sortBy === 'Email'">
+                                <i class="fa fa-caret-up"></i>
+                            </a>
+                            <a ng-click="setSortBy('Email')" ng-show="sortBy === '-Email'">
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                        </th>
+                        <th style="width: 8rem" class="text-right actions" translate-context="Title" translate-comment="table heading" translate>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in contacts track by contact.ID">
+                        <td class="hidden-xs text-center checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="contact.selected" ng-click="onSelectContact($event, contact)" />
+                            </label>
+                        </td>
+                        <td class="name">
+                            <span title="{{ contact.Name }}">{{ contact.Name }}</span>
+                        </td>
+                        <td class="text-muted email">
+                            <span title="contact.Email">{{ contact.Email }}</span>
+                        </td>
+                        <td class="text-right actions">
+                            <button type="button" class="pm_button" ng-click="editContact(contact)" translate-context="Action" translate>Edit</button>
+                            <button type="button" class="pm_button" ng-click="deleteContact(contact)" translate-context="Action" translate>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

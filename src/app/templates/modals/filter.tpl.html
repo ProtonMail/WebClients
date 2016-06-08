@@ -1,0 +1,64 @@
+<div class="pm_modal {{ctrl.class}}" role="dialog">
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Filter</h3>
+            </div>
+            <div class="modal-body pm_form">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit perspiciatis amet neque fugiat modi sunt ducimus. Corporis dolorem voluptate quia deleniti, obcaecati sequi quam, totam ad omnis fuga tempore itaque?</p>
+
+                <div class="pm_grid">
+                    <div class="col-1-4">
+                        <label for="filterName" translate>Filter name</label>
+                    </div>
+                    <div class="col-2-4">
+                        <input type="text" id="filterName" ng-model="ctrl.filter.Name" />
+                    </div>
+                </div>
+
+                <h3 translate-context="Title" translate>What do you want to filter?</h3>
+                <div>
+                    <hr />
+                    <div class="pm_grid">
+                        <div class="col-1-4">
+                            <label class="bold" translate>Sender Address</label>
+                        </div>
+                        <div class="col-3-4">
+
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="pm_grid">
+                    <div class="col-1-4">
+                        <label translate>Add Filter</label>
+                    </div>
+                    <div class="col-3-4">
+                        <button class="pm_button">Subject</button>
+                        <button class="pm_button">Sender Address</button>
+                        <button class="pm_button">Recipient Address</button>
+                        <button class="pm_button">Attachments</button>
+                    </div>
+                </div>
+                <h3 translate-context="Title" translate>Which rule do you want to apply?</h3>
+                <hr />
+                <div class="pm_grid">
+                    <div class="col-1-4">
+                        <label translate>Add Rule</label>
+                    </div>
+                    <div class="col-3-4">
+                        <button class="pm_button">Labels</button>
+                        <button class="pm_button">Move to Folder</button>
+                        <button class="pm_button">Mark as Read</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
+            <button type="button" ng-click="ctrl.create()" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate translate-context="Action">Save</button>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+</div>

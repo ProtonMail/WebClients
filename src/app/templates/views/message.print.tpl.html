@@ -1,0 +1,76 @@
+<div class="print">
+
+    <p>
+        <span colspan="2">
+            <h1 style="padding: 1rem 0;">{{ message.Subject }}</h1>
+        </span>
+    </p>
+
+    <hr>
+
+    <p>
+        <span style="width:14rem" width="14rem">
+            <span ng-show=" message.Location != '2' "  translate-comment="printed message info" translate>Received</span>: 
+            <span ng-show=" message.Location == '2' "  translate-comment="printed message info" translate>Sent</span>: 
+        </span>
+        <span>
+            <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
+            <i class="fa fa-reply-all" ng-show="message.IsRepliedAll === 1"></i>
+            <i class="fa fa-mail-forward" ng-show="message.IsForwarded === 1"></i>
+            <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
+            <i class="fa fa-lock"></i>
+            <b>{{ message.Time | localReadableTime }}</b>
+        </span>
+    </p>
+
+    <p>
+        <span translate-comment="printed message info"  translate translate-context="Title">From</span>:
+        <b>{{ message.Sender.Name }} {{ message.Sender.Address }}</b>
+    </p>
+
+    <p ng-if="message.ToList.length">
+        <span translate-comment="printed message info"  translate translate-context="Title">To</span>:
+        <b ng-repeat="email in ::message.ToList">
+        {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
+        </b>
+    </p>
+
+    <p ng-if="message.CCList.length">
+        <span translate-comment="printed message info"  translate translate-context="Title">CC</span>:
+        <b ng-repeat="email in ::message.CCList">
+        {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
+        </b>
+    </p>
+
+    <p ng-if="message.BCCList.length">
+        <span translate-comment="printed message info" translate translate-context="Title">BCC</span>:
+        <b ng-repeat="email in ::message.BCCList">
+        {{ email.Name }} {{ email.Address }}<i ng-hide="$last">, </i>
+        </b>
+    </p>
+
+    <p ng-show="message.NumAttachments > 0">
+        <span>
+            {{message.NumAttachments}} <i translate translate-n="message.NumAttachments" translate-plural="Attachments"  translate>Attachment</i> ({{ message.sizeAttachments() | humanSize }})
+        </span>
+        <span>
+            <b ng-repeat="attachment in message.Attachments" class="pm_button">
+                <i class="fa fa-archive-o" ng-show="(attachment.MIMEType.indexOf('zip') != -1)"></i>
+                <i class="fa fa-audio-o" ng-show="(attachment.MIMEType.indexOf('mp3') != -1)"></i>
+                <i class="fa fa-code-o" ng-show="(attachment.MIMEType.indexOf('javascript') != -1)"></i>
+                <i class="fa fa-excel-o" ng-show="(attachment.MIMEType.indexOf('xls') != -1)"></i>
+                <i class="fa fa-image-o" ng-show="(attachment.MIMEType.indexOf('image') != -1)"></i>
+                <i class="fa fa-movie-o" ng-show="(attachment.MIMEType.indexOf('mov') != -1)"></i>
+                <i class="fa fa-pdf-o" ng-show="(attachment.MIMEType.indexOf('pdf') != -1)"></i>
+                <i class="fa fa-powerpoint-o" ng-show="(attachment.MIMEType.indexOf('power') != -1)"></i>
+                <i class="fa fa-word-o" ng-show="(attachment.MIMEType.indexOf('word') != -1)"></i>
+                <strong>{{ attachment.Name }}</strong> ({{attachment.Size | humanSize}})
+            </b>
+        </span>
+    </p>
+
+    <hr>
+
+</div>
+
+<div style="padding: 1rem;" ng-bind-html="message.decryptedBody"></div>

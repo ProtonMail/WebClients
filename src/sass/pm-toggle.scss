@@ -1,0 +1,83 @@
+.pm_toggle {
+    position: relative;
+    width: $toggleWidth;
+    border-radius: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    background: $light;
+    box-shadow: 0 0 0 1px $border;
+    span {
+        position: absolute;
+        width: ($toggleWidth / 2);
+        display: block;
+        bottom: 0;
+        top: 0;
+        z-index: 1;
+        height: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        font-size: .9em;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        transition: left .25s ease, opacity .25s ease;
+
+        &.on,
+        &.off {
+            z-index: 3;
+            cursor: pointer;
+        }
+        &.on {
+            border-radius: 2rem 0 0 2rem;
+            left: 0;
+            right: auto;
+        }
+        &.off {
+            border-radius: 0 2rem 2rem 0;
+            right: 0;
+            left: auto;
+        }
+        &.knob {
+            border-radius: 2rem;
+            z-index: 2;
+            background: #fff;
+            border: 1px solid $border;
+            margin: -1px;
+        }
+    }
+    &.on {
+        .knob {
+            left: 0;
+        }
+        .on {
+            background-color: $primary;
+            border-radius: 2rem;
+            color: $white;
+        }
+        .off {
+            opacity: .35;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    &.off {
+        .knob {
+            left: ($toggleWidth / 2);
+        }
+        .on {
+            opacity: .35;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .off {
+            background-color: $primary;
+            border-radius: 2rem;
+            color: $white;
+        }
+    }
+}

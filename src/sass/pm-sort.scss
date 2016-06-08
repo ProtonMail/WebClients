@@ -1,0 +1,74 @@
+.pm_sort {
+	ul, li {
+		display: block;
+		margin: 0;
+		list-style-type: none;
+	}
+	ul {
+		padding: 0;
+		list-style-type: none;
+		border: 1px solid $border;
+		border-bottom-width: 0;
+		li {
+			padding: 5px 1rem;
+			line-height: 32px;
+			list-style-type: none;
+			border-bottom: 1px solid $border;
+			position: relative;
+			background: $white;
+			height: 32px;
+			&.highlight {
+				background-color: $purple-light;
+			}
+			.fa.fa-ellipsis-v {
+				margin-right: .5rem;
+				color: $gray-light;
+				line-height: 32px;
+				float: left;
+			}
+			.fa.fa-tag {
+				line-height: 32px;
+				float: left;
+			}
+			.fa.fa-check {
+				position: absolute;
+				right: 0;
+				top: 5px;
+				bottom: 5px;
+				line-height: 32px;
+				padding: 0 1rem;
+				background: $white;
+				color: $primary;
+			}
+		}
+	}
+}
+
+.as-sortable-placeholder {
+	background: $border !important;
+	box-sizing: border-box;
+}
+.as-sortable-dragging {
+	border: 1px solid $border;
+	line-height: 32px;
+	background: $white;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 5px 1rem;
+	.fa-check {
+		line-height: 32px;
+	    padding: 0 1rem;
+	    background: #fff;
+	    color: #9397cd;
+		position: absolute;
+	    right: 0;
+	    top: 5px;
+	    bottom: 5px;
+	}
+	.fa-ellipsis-v {
+		line-height: 32px;
+		float: left;
+		margin-right: .5rem;
+		color: $gray-light;
+	}
+}

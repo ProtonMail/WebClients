@@ -1,0 +1,42 @@
+// REGULAR
+body {
+	.pm_checkbox {
+		input[type="checkbox"] {
+			margin: 13px 10px 0 0;
+		}
+	}
+	.conversation {
+		.fa-square-o,
+		.fa-check-square {
+			display: none !important;
+		}
+	}
+}
+
+// MOBILE
+body.mobileMode {
+	#body {
+		#pm_main{
+			label.pm_checkbox,
+			input[type="checkbox"] {
+		    	display: none !important;
+		    }
+			.labelDropdown input[type="checkbox"] {
+				display: inline-block !important;
+			}
+		    .fa-square-o,
+		    .fa-check-square {
+		    	display: inline-block !important;
+		    	font-size: 2rem;
+		    	-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+		    	border: none;
+		    	background: transparent;
+		    	text-decoration: none;
+		    	color: $alt;
+		    	width: 2rem;
+		    }
+		}
+	}
+}

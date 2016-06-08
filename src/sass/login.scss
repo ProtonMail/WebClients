@@ -1,0 +1,163 @@
+body#reset {
+	background: $dark;
+	.alert {
+		color: #000;
+	}
+}
+body#login-unlock {
+	height: 100%;
+	background: $dark;
+	p.text-center {
+		margin: 0 0 2rem 0;
+		font-size: 14px
+	}
+	#pm_loader {
+		display: none;
+	}
+}
+body#login {
+	background-color: #667cbd;
+	background: url('/assets/img/login.jpg') #667cbd center center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+body#login-unlock,
+body#login,
+body#eo-unlock {
+	#pm_login {
+		img.logo {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+body#eo-unlock {
+	background: $dark;
+	.pm_panel.error {
+		height: initial;
+		padding: 2rem 2rem 1rem 2rem;
+	}
+}
+
+#pm_login,
+body#reset {
+	text-transform: uppercase;
+	#signUpProcess li {
+		text-align: left;
+	}
+	h4 {
+		line-height: 3em;
+		font-weight: 600;
+	}
+	a.pm_button.link {
+		text-decoration: underline;
+	}
+	img.logo {
+		display: block;
+		height: 20px;
+		width: auto;
+		margin: 0 auto;
+	}
+	.pm_button.primary {
+		padding: 0 25px;
+	}
+	input[type="text"],
+	input[type="password"],
+	input[type="email"] {
+		border-color: #dfdfdf;
+		background: rgba(255,255,255,.1);
+		color: $white;
+		line-height: 38px;
+		height: 38px;
+		&:active,
+		&:focus {
+			color: $white;
+		}
+	}
+	p {
+		text-transform: initial;
+	}
+	::-webkit-input-placeholder {
+	   color: $white;
+	}
+
+	:-moz-placeholder {
+	   color: $white;
+	}
+
+	::-moz-placeholder {
+	   color: $white;
+	}
+
+	input:-ms-input-placeholder {
+       color: $white;
+    }
+    ::-ms-input-placeholder {
+       color: $white;
+    }
+    :-ms-input-placeholder {
+       color: $white;
+    }
+}
+
+#pm_footer {
+	position: absolute;
+	text-align: center;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	color: $white;
+	text-transform: uppercase;
+	display: block;
+	padding: 1rem 0;
+	font-size: 90%;
+	p {
+		margin: 0;
+	}
+	a {
+		color: $white;
+		text-decoration: none;
+		&:hover {
+			color: #e5e5e5;
+		}
+	}
+	&.static {
+		position: static;
+		color: $gray;
+		a {
+			color: $gray;
+			text-decoration: none;
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+}
+
+body.mobileMode {
+	#pm_login {
+		input[type="text"],
+		input[type="password"] {
+			background: rgba(0,0,0,.1);
+		}
+	}
+	#pm_login.pm_panel {
+		margin: 0;
+		border: none;
+		background: transparent;
+	}
+	body#login #pm_header {
+		overflow: visible !important;
+	}
+	#pm_footer {
+		display: none;
+	}
+}
+
+// Short resolutions
+@media (max-height: $short) {
+	#pm_footer {
+		position: static;
+	}
+}

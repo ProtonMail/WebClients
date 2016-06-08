@@ -1,0 +1,13 @@
+<header id="pm_header-mobile" class="pm_opensans" ng-controller="HeaderController">
+    <a href="#" class="logoMobile" ng-click="sidebarToggle();">
+        <i class="fa fa-bars"></i>
+    </a>
+    <span class="location">{{ path }}</span>
+    <ng-include src="'templates/partials/searchForm.tpl.html'"></ng-include>
+    <a href="#" class="compose" ng-click="compose();">
+        <i class="fa fa-pencil"></i>
+    </a>
+    <a href="#" class="searchBtn" ng-click="toggleAdvancedSearch();">
+        <i class="fa fa-search"></i>
+    </a>
+</header>

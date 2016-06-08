@@ -1,0 +1,120 @@
+@media (max-width: 1100px) {
+    header#pm_header-desktop ul.navigation > li > a {
+        width: 100px;
+    }
+    form.searchForm {
+        width: calc(100% - 650px);
+    }
+    #pm_sidebar section.sidebar,
+    body header#pm_header-desktop a.logo,
+    body #pm_background {
+        width: calc(190px - 20px);
+        min-width: calc(190px - 20px);
+    }
+    body #pm_main {
+        width: calc(100% - 170px);
+    }
+    body section.sidebar a.compose {
+        padding-left: 0;
+        text-align: center;
+        .fa {
+            display: none;
+        }
+    }
+    body section.sidebar ul.menu li a {
+        font-size: .9em;
+    }
+}
+
+@media (max-width: 1000px) {
+    header#pm_header-desktop ul.navigation > li > a {
+        strong {
+            font-size: .9em;
+        }
+    }
+    #pm_settings .pm_tabs li a.pm_button {
+        padding: 0 .5rem;
+    }
+    body section.sidebar a.version span {
+        display: none;
+    }
+    form.searchForm {
+        width: calc(100% - 600px);
+    }
+    #pm_sidebar section.sidebar,
+    body header#pm_header-desktop a.logo,
+    body #pm_background {
+        width: calc(190px - 40px);
+        min-width: calc(190px - 40px);
+    }
+    body #pm_main {
+        width: calc(100% - 150px);
+    }
+    body section.sidebar a.compose {
+        padding-left: 0;
+        text-align: center;
+        .fa {
+            display: none;
+        }
+    }
+    body section.sidebar ul.menu li a {
+        font-size: .9em;
+    }
+}
+
+@media (max-width: 900px) {
+    header#pm_header-desktop ul.navigation > li > a {
+        width: 80px;
+    }
+    form.searchForm {
+        width: calc(100% - 550px);
+    }
+    #pm_sidebar section.sidebar,
+    body header#pm_header-desktop a.logo,
+    body #pm_background {
+        width: calc(190px - 60px);
+        min-width: calc(190px - 60px);
+    }
+    body #pm_main {
+        width: calc(100% - 130px);
+    }
+    body section.sidebar a.compose {
+        padding-left: 0;
+        text-align: center;
+        font-size: .8em;
+        .fa {
+            display: none;
+        }
+    }
+    body section.sidebar ul.menu li a {
+        font-size: .9em;
+    }
+    body section.sidebar ul.menu li a em {
+        display: none;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+}
+
+@media (max-width: 700px) {
+
+}
+
+@media (max-width: 600px) {
+
+}
+
+@media (max-width: 500px) {
+
+}
+
+@media (max-width: 400px) {
+
+}
+
+@media (max-width: 300px) {
+
+}

@@ -1,0 +1,131 @@
+.labelDropdown {
+	.pm_button.link {
+		color: $primary;
+		padding-left: 0;
+		.fa {
+			width: 30px;
+			float: left;
+			text-align: left;
+			display: block;
+		}
+	}
+	& > span > label {
+		display: block;
+		text-align: left;
+	}
+	.alsoArchive {
+		display: block;
+		clear: both;
+		margin: 1rem -15px;
+		border-top: 1px solid $border;
+		border-bottom: 1px solid $border;
+		padding: 0 15px;
+	}
+	.labelSearch {
+		position: relative;
+		display: block;
+		clear: both;
+		float: none;
+		padding-left: 30px;
+		height: 25px;
+		max-width: 80%;
+		line-height: 25px;
+		.fa {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 30px;
+			display: block;
+			text-align: left;
+			font-size: 1em;
+			color: $primary;
+			line-height: 25px;
+			height: 25px;
+		}
+		input {
+			float: left;
+			padding: 0;
+			border: none;
+			border-bottom: 1px solid $border;
+			margin: 0 0 1rem 0;
+			height: 25px;
+			line-height: 25px;
+			width: 100%;
+			-webkit-appearance: none;
+			   -moz-appearance: none;
+			        appearance: none;
+		}
+	}
+	.wrapper {
+		max-height: 175px;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		display: block;
+		clear: both;
+		padding-right: 15px;
+		ul,
+		li {
+			display: block;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			clear: both;
+			text-align: left;
+			position: relative;
+		}
+		li {
+			line-height: 35px;
+			height: 35px;
+			overflow: hidden;
+			label {
+				cursor: pointer;
+				display: block;
+				span {
+					white-space: nowrap;
+					display: inline-block;
+					max-width: 90px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+			input {
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				line-height: 35px;
+				height: 35px;
+				margin: 0;
+			}
+			.fa {
+				margin-right: 10px;
+				width: 20px;
+				float: left;
+				display: block;
+				&:hover {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}
+
+.mobileMode {
+	.labelDropdown {
+		.wrapper {
+			padding-right: 0;
+			li {
+				padding: 0 15px;
+				border: 1px solid $border;
+				margin-bottom: 5px;
+				input {
+					right: 0;
+					height: initial !important;
+					width: initial !important;
+					margin: 10px;
+				}
+			}
+		}
+	}
+}

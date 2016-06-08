@@ -1,0 +1,25 @@
+.pm_badge {
+    font-size: 0.75em;
+    font-style: normal;
+    color: $white;
+    background: $gray-light;
+    padding: 0 .35rem;
+    display: inline-block;
+    border-radius: .5rem;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    margin: .25rem 0;
+    text-transform: uppercase;
+    &.primary {
+        background-color: $primary;
+    }
+    &.success {
+        background: $green;
+    }
+    &.error {
+        background: $red;
+    }
+    &.warning {
+        background: $orange;
+    }
+}

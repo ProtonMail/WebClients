@@ -1,0 +1,20 @@
+// WARNING. ALL CLASSES HERE WILL BE APPLIED TO ALL EMAILS!!
+.message .frame > .email,
+#eo-message .email,
+#eo-reply iframe {
+	img.pm_broken {
+		background-color: $gray-light;
+	}
+	blockquote {
+		padding: 0 0 0 1rem !important;
+		margin: 0 !important;
+		border-left: 4px solid #e5e5e5 !important;
+		// overflow: auto;
+		// zoom: 1;
+	}
+	blockquote blockquote blockquote {
+		padding-left: 0 !important;
+		margin-left: 0 !important;
+		border: none !important;
+	}
+}

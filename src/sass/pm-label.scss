@@ -1,0 +1,75 @@
+.pm_labels {
+	&.inline {
+		label {
+			padding-right: 1.25rem;
+		    .close {
+	    		color: $gray;
+	    		position: absolute;
+	    		left: 0;
+	    		top: 0;
+	    		right: 0;
+	    		bottom: 0;
+	    		width: 100%;
+	    		display: block;
+	    		box-sizing: border-box;
+	    		text-align: right;
+	    		padding-right: .25rem;
+	    		z-index: 2;
+	    		cursor: pointer;
+	    	}
+		}
+	}
+	label {
+		background-color: transparent;
+	    border-radius: 3px;
+	    border: none;
+	    color: $text;
+	    padding: 0 .4rem;
+	    font-style: normal;
+	    white-space: nowrap;
+	    max-width: 8rem;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    line-height: 14px;
+	    height: 18px;
+	    box-sizing: border-box;
+	    display: inline-block;
+	    position: relative;
+	    -webkit-transition: max-width .25s ease;
+		-moz-transition: max-width .25s ease;
+		-ms-transition: max-width .25s ease;
+		-o-transition: max-width .25s ease;
+        transition: max-width .25s ease;
+		box-shadow: .25rem 0 0 .25rem $white;
+		span {
+			display: block;
+			height: 18px;
+			line-height: 14px;
+		}
+	    &.closed {
+	    	max-width: .5rem;
+	    	padding: 0;
+	    	overflow: hidden;
+	    	line-height: 999rem;
+			border-left-width: 0 !important;
+			border-radius: 0 3px 3px 0;
+	    	&:hover {
+				border-left-width: 2px !important;
+				border-radius: 3px;
+	    		max-width: 8rem;
+	    		line-height: 14px;
+	    		padding: 0 .4rem;
+	    	}
+	    }
+		&.more {
+			line-height: 14px;
+			color: rgba(0,0,0,.35);
+			max-width: 1.5rem;
+			width: 1.5rem;
+			text-align: center;
+			background: rgba(0,0,0,.1) !important;
+			padding: 0 !important;
+			margin: 0;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+<span class="pm_buttons">
+    <a class="wide pm_trigger" dropdown>
+        <span ng-bind="label"></span> <i class="fa fa-angle-down"></i>
+    </a>
+    <span class="pm_dropdown wider">
+        <a ng-repeat="option in options" ng-bind="option" ng-click="select(option)"></a>
+    </span>
+</span>

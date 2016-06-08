@@ -1,0 +1,48 @@
+<div id="pm_latest" ng-show="showWelcome === true">
+    <header translate translate-context="Title">Welcome</header>
+    <section id="storageStatus" ng-show="user.UsedSpace > 0">
+    	<div class="wrap">
+            <div class="storageArea">
+	            <span class="current">{{ user.UsedSpace | humanSize }}</span>
+	            <div class="bar">
+	                <em ng-style="storageStyle()"></em>
+	            </div>
+	            <span class="total">{{ user.MaxSpace | humanSize }}</span>
+            </div>
+            <span><strong>{{ storagePourcentage() }}% </strong translate>Storage space used.</span>
+        </div>
+    </section>
+    <section ng-if="isFree === false">
+        <a href="https://protonmail.com/blog/best-secure-email-app/" target="_blank" title-translate="Learn More">
+            <img src="/assets/img/latest/android-app.jpg" />
+        </a>
+    </section>
+    <section ng-if="isFree === true">
+        <a ui-sref="secured.dashboard({scroll: true})" class="text-center latest-upgrade">
+            <img src="/assets/img/latest/privacy.jpg" />
+            <button type="button" class="pm_button primary" translate translate-context="Action">Upgrade account</button>
+        </a>
+    </section>
+    <div class="pm_grid">
+        <div class="col-1-2">
+            <section>
+                <a href="https://protonmail.com/blog/swiss-surveillance-law-referendum/" target="_blank">
+                    <img src="/assets/img/latest/swiss-referendum.jpg">
+                </a>
+            </section>
+        </div>
+        <div class="col-1-2">
+            <section>
+                <a href="https://protonmail.com/blog/protonmail-v3-3-release-notes/" target="_blank">
+                    <img src="/assets/img/latest/3.1.jpg">
+                </a>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div id="pm_placeholder" ng-show="showWelcome === false">
+    <i class="fa fa-check-square"></i>
+    <h2 translate translate-n="numberElementChecked" translate-comment="placeholder showing unread conversations" translate-plural="{{ $count }} conversations selected" translate-context="Title">{{ $count }} conversation selected</h2>
+    <button class="pm_button" ng-show="numberElementChecked > 0" ng-click="unselectAllElements()" translate translate-context="Action">Deselect all</button>
+</div>

@@ -1,0 +1,33 @@
+<div class="pm_modal {{this.class}}" role="dialog" style="display: block;" id="welcomeModal">
+    <form class="modal-dialog modal-sm" method="post" ng-submit="ctrl.next()" novalidate>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-center" translate translate-context="Title">Welcome to ProtonMail</h3>
+            </div>
+            <div class="modal-body">
+                <p class="text-center" translate translate-context="Info">You now have an encrypted email account! Below are optional settings you can use to customize your account. You can always find these on your Settings page.</p>
+                <br />
+                <section class="pm_form">
+                    <div class="pm_grid">
+                        <div class="col-1-2">
+                            <label for="displayName">
+                                <span translate>Choose a display name</span>
+                                <br />
+                                *<em translate>Optional</em>
+                            </label>
+                        </div>
+                        <div class="col-1-2">
+                            <input id="displayName" type="text" name="displayName" ng-model="ctrl.displayName" placeholder-translate="Display name" />
+                            <p class="help-block"><small translate translate-context="Info">This is the 'From' name that people will see when you email them.</small></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            <button type="submit" class="pm_button primary" translate translate-context="Action">Next</a>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

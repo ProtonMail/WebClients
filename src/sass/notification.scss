@@ -1,0 +1,41 @@
+body .cg-notify-message {
+    background: #43434f;
+    box-shadow: inset 0 -1px 0 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.5);
+    color: #fff !important;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    border: none;
+    padding: .75rem 1.25rem;
+    z-index: 9999999 !important;
+    font-size: 110%;
+    &.notification-success {
+        background-color: $green;
+    }
+    &.notification-warning {
+        background-color: $orange;
+    }
+    &.notification-danger {
+        background-color: $red;
+    }
+    &.notification-info {
+        background-color: $blue;
+    }
+    &.bottom-right {
+        right: 2rem !important;
+        bottom: 1rem !important;
+        top: initial !important;
+        left: initial !important;
+    }
+}
+
+@media (max-width: 800px) {
+    html body .cg-notify-message {
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+        border-radius: 0 !important;
+        top: 0 !important;
+        max-width: initial !important;
+    }
+}

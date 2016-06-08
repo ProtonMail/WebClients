@@ -1,0 +1,189 @@
+// All versions of IE
+.ua-ie {
+    #pm_header {
+        .pm_dropdown {
+            top: 200%;
+        }
+    }
+    body.scroll {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    #pm_composer .composer {
+        border: 1px solid $border;
+    }
+}
+
+.ua-edge {}
+
+// All iOS devices
+.ua-ios {
+    #pm_captcha {
+        -webkit-overflow-scrolling: touch;
+        overflow: auto !important;
+    }
+}
+
+// Firefox Linux
+.ua-firefox.ua-desktop-linux {
+    .pm_buttons a,
+    .pm_button {
+        overflow: hidden;
+    }
+}
+
+// All Windows
+.ua-windows_nt {
+    #conversation-list-columns .conversation .selection input[type="checkbox"] {
+        position: relative;
+        top: 2px;
+    }
+}
+
+// Win 7 Firefox
+.ua-windows_nt-6-1.ua_firefox {
+    .pm_labels label .close::before {
+        line-height: 12px;
+    }
+}
+
+.ua-mac_os_x.ua_firefox,
+.ua-windows_nt-6-1.ua_firefox {
+    .pm_labels label,
+    .pm_labels label.closed:hover {
+        line-height: 8px;
+    }
+    .summary .pm_tag {
+        line-height: 18px;
+    }
+}
+
+// All Firefox
+.ua-firefox {
+    .pm_labels {
+        label {
+            line-height: -moz-block-height;
+            &.closed:hover {
+                line-height: -moz-block-height;
+            }
+        }
+    }
+    .pm_button {
+        line-height: -moz-block-height;
+    }
+    #pm_composer .composer footer .pm_button {
+        line-height: -moz-block-height;
+    }
+    form.searchForm fieldset button,
+    form.searchForm fieldset button .fa {
+        line-height: 32px;
+    }
+    .pm_tag {
+        position: relative;
+        top: -2px;
+    }
+    .pm_labels.inline label { }
+    #conversation-view .message > div.summary,
+    #conversation-view .message > div.summary .time .fa-paperclip {
+        line-height: 34px;
+        height: 34px;
+    }
+    .pm_table th .pm_button, .pm_table td .pm_button {
+        line-height: 36px;
+    }
+}
+
+// All Windows, Firefox
+.ua-windows_nt.ua-firefox {
+    &.ua-firefox {
+        #pm_composer .composer .pm_button {
+            line-height: -moz-block-height;
+        }
+        .pm_buttons a,
+        .pm_button {
+            line-height: -moz-block-height;
+        }
+        #pm_sidebar section.sidebar .pm_button.round {
+            line-height: 30px;
+        }
+        .pm_table th,
+        .pm_table td {
+            .pm_button.round {
+                line-height: 32px;
+                position: relative;
+            }
+        }
+    }
+}
+
+// Windows 7, IE 11
+.ua-windows_nt-6.ua-ie-11-0 {
+    #pm_settings #plans .plans .plan .features li .pm_select {
+        position: relative;
+        top: 10px;
+    }
+}
+
+.ua-firefox {
+    .pm_button,
+    .pm_buttons a {
+        overflow: hidden;
+    }
+    header#pm_header .pull-right {
+        height: 61px;
+        overflow: hidden;
+        a {
+            float: left;
+        }
+        .pm_button.primary {
+            margin-top: 14px;
+        }
+    }
+}
+
+input:invalid,
+input:-moz-ui-invalid {
+    border:0;
+    outline:none;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+}
+
+// Safari
+.ua-safari {
+
+    .labelDropdown .wrapper li input {
+        height: initial;
+        top: 11px;
+    }
+
+    .conversation .pm_labels label {
+        &:first-child,
+        &:hover {
+            position: relative;
+            top: -4px;
+        }
+        &.single {
+            top: -1px !important;
+        }
+    }
+    #conversation-view .summary .pm_labels label{
+        &:first-child {
+            position: relative;
+            top: -6px;
+        }
+    }
+    #conversation-view .message > div.summary .labels .pm_labels label:hover {
+        top: -6px;
+    }
+    #conversation-view .message > div.summary .labels .pm_labels label.more {
+        top: -7px;
+    }
+    #conversation-list-columns,
+    #conversation-list-rows {
+        .pm_labels label.more {
+            top: -7px;
+        }
+    }
+}

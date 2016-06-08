@@ -1,0 +1,99 @@
+html.protonmail {
+	height: 100%;
+	body {
+		background: $secondary;
+		height: 100%;
+		.mobileOnly {
+			display: none;
+		}
+		&.secure {
+			background: $white;
+		}
+		&.scroll {
+			overflow-y: initial;
+			-webkit-overflow-scrolling: touch;
+			height: initial !important;
+		}
+		&.mobileMode {
+			height: initial;
+			overflow: initial !important;
+			.desktopOnly {
+				display: none !important;
+			}
+			.mobileOnly {
+				display: block;
+			}
+			&.locked {
+				overflow: initial !important;
+			}
+			&.mobileSidebarActive {
+				overflow: hidden !important;
+				#pm_main {
+					display: none;
+				}
+			}
+			#body {
+				height: initial;
+				overflow: initial !important;
+				#pm_main {
+					height: initial;
+				}
+			}
+		}
+	}
+	.bold {
+		font-weight: bold;
+	}
+	.clear {
+		clear: both;
+	}
+	.text-center {
+		text-align: center;
+	}
+	.text-left {
+		text-align: left;
+	}
+	.text-right {
+		text-align: right;
+	}
+	.text-gray {
+		color: $gray;
+	}
+	.text-light-gray {
+		color: $gray-light;
+	}
+	.text-green {
+		color: $green;
+	}
+	.text-yellow {
+		color: $yellow;
+	}
+	.text-red {
+		color: $red;
+	}
+	.text-purple {
+		color: $primary !important;
+	}
+	.border-panel {
+		padding: 15px;
+		border: 1px solid $border;
+	}
+	.margin-top {
+		margin-top: 10px;
+	}
+	.margin-right {
+		margin-right: 10px;
+	}
+	.margin-bottom {
+		margin-bottom: 10px;
+	}
+	.margin-left {
+		margin-left: 10px;
+	}
+	.no-margin {
+		margin: 0;
+	}
+	.dull {
+		opacity: .5;
+	}
+}

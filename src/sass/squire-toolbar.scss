@@ -1,0 +1,99 @@
+.squire-toolbar {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	height: $composerRowHeight;
+	line-height: $composerRowHeight;
+	min-height: $composerRowHeight; /* mobile devices */
+	border: 1px solid $border;
+	background-color: $read;
+	border-width: 0 0 1px 0;
+	&.b li.bold a,
+	&.i li.italic a,
+	&.u li.underline a,
+	&.ul.li li.ulist a,
+	&.ol.li li.olist a,
+	&.align-left li.aleft a,
+	&.align-center li.acenter a,
+	&.align-right li.aright a {
+		background: rgba(0,0,0,.1);
+	}
+	li {
+		display: block;
+		margin: 0;
+		padding: 0;
+		height: $composerRowHeight;
+		width: 40px;
+		line-height: $composerRowHeight;
+		/* max-width: 3rem; // ~ 40px deprecated via flex */
+		a {
+			text-align: center;
+			display: block;
+			height: $composerRowHeight;
+			line-height: $composerRowHeight;
+			color: #333;
+		}
+		&.separator {
+			width: 1px !important;
+			min-width: 1px !important;
+			max-width: 1px !important;
+			-webkit-flex-grow: initial;
+			    -ms-flex-positive: initial;
+			        flex-grow: initial;
+			background: $border;
+		}
+	}
+	.popover-visible .squire-popover {
+		display: block;
+	}
+}
+.squire-popover {
+	position: absolute;
+	z-index: 5;
+	padding: 1rem;
+	background: $white;
+	border: 1px solid $border;
+	white-space: nowrap;
+	right: 10px !important;
+	margin-top: 10px;
+	text-align: right;
+	display: block;
+	input {
+        line-height: $inputHeight;
+        border: 1px solid #e1e1ef;
+        box-sizing: border-box;
+        color: $text;
+        display: block;
+        width: 100%;
+        font-size: 1em;
+        border-radius: 2px;
+        position: relative;
+        resize: none;
+        margin-bottom: 10px;
+        padding: 0 1rem;
+	}
+	button {
+	    text-decoration: none;
+	    padding: 0 10px;
+	    height: 35px;
+	    line-height: 35px;
+	    border: 1px solid $border;
+	    border-radius: 2px;
+	    box-sizing: border-box;
+	    display: inline-block;
+	    cursor: pointer;
+	    font-size: 1em;
+	    transition: background-color .25s linear, border-color .25s linear;
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+        margin: 0;
+	}
+}

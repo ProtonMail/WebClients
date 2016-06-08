@@ -1,0 +1,91 @@
+#pm_contacts {
+
+	.pm_table {
+		td {
+			vertical-align: middle;
+			label {
+				padding-left: 10px;
+			}
+			line-height: 40px;
+			span {
+				line-height: 40px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: block;
+				width: 100%;
+				display: block;
+			}
+		}
+		td.name {
+			width: initial;
+			min-width: initial;
+		}
+		td.actions {
+			padding: 10px;
+		}
+		th.name {
+			width: initial;
+		}
+	}
+}
+
+body.mobileMode {
+	&#secured-contacts #pm_main {
+		overflow: auto;
+	}
+	#pm_contacts {
+		padding: 0;
+		#pm_toolbar {
+			padding: 10px !important;
+			display: block !important;
+			height: auto;
+			.pm_button[disabled] {
+				display: none;
+			}
+			.pm_button {
+				strong {
+					display: none;
+				}
+			}
+			.pm_button.deleteAll {
+				display: none;
+			}
+			.pm_button.primary {
+				strong {
+					display: inline;
+				}
+			}
+			.pm_buttons {
+				margin-left: 10px;
+				.page {
+					display: none;
+				}
+			}
+		}
+		.pm_table {
+			tr {
+				margin: 0;
+			}
+			th.checkbox {
+				width: 4rem;
+				label {
+					width: 4rem;
+					text-align: center;
+					box-sizing: border-box;
+				}
+			}
+			td.name {
+				font-weight: bold;
+			}
+			td.text-right {
+				padding: .5rem 0;
+			}
+		}
+		.pm_toolbar {
+			.compose,
+			.delete {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ProtonMail/Angular.git"
+  },
+  "name": "protonmail-web",
+  "author": "ProtonMail, Inc.",
+  "description": "Angular frontend for protonmail.com",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "findup-sync": "^0.3.0",
+    "grunt": "^0.4.5",
+    "grunt-angular-gettext": "git+ssh://git@github.com/bartbutler/grunt-angular-gettext.git",
+    "grunt-cache-bust": "1.1.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-commands": "^0.1.8",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-jshint": "~1.0.0",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-forever": "^0.4.7",
+    "grunt-git": "^0.3.7",
+    "grunt-html2js": "^0.3.5",
+    "grunt-ng-annotate": "^1.0.1",
+    "grunt-ng-constant": "~2.0.1",
+    "grunt-notify": "~0.4.5",
+    "grunt-sass": "^1.1.0",
+    "grunt-shell": "^1.2.1",
+    "grunt-wait": "^0.1.0",
+    "http-proxy": "^1.13.2",
+    "jshint": "^2.9.1",
+    "load-grunt-tasks": "^3.5.0",
+    "lodash": "^4.6.1",
+    "serve-static": "^1.10.2"
+  },
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "grunt watch --api=dev"
+  }
+}

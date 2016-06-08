@@ -1,0 +1,16 @@
+<div>
+    <input type="search" placeholder-translate="Filter" ng-model="filter" />
+    <ul>
+        <li ng-repeat="loc in locs | filter: {name: search}">
+            <a ng-click="move(loc)">
+                <i class="fa fa-folder"></i> <span ng-bind="loc.name"></span>
+            </a>
+        </li>
+        <li class="separator"></li>
+        <li ng-repeat="label in labels | filter: {name: search} | orderBy: 'Order'">
+            <a ng-click="applyAndArchive(label)">
+                <i class="fa fa-tag" ng-style="style(label)"></i> <span ng-bind="label.name"></span>
+            </a>
+        </li>
+    </ul>
+</div>

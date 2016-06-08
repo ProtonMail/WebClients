@@ -1,0 +1,39 @@
+<div class="pm_modal {{ctrl.class}}" role="dialog" id="labelModal">
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header" ng-show="ctrl.title">
+                <h3 class="modal-title">{{ ctrl.title }}</h3>
+            </div>
+            <div class="modal-body pm_form pm_grid">
+                <div class="row">
+                    <span class="col-1-4">
+                        <label for="labelName" translate translate-context="Title">Name</label>
+                    </span><!--/.col-->
+                    <span class="col-3-4">
+                        <input tabindex="1" type="text" class="form-control" autofocus id="labelName" name="label" ng-model="ctrl.name" placeholder-translate="Label name" required="" />
+                    </span>
+                </div>
+                <div class="row">
+                    <span class="col-1-4">
+                        <label translate translate-context="Title">Color</label>
+                    </span><!--/.col-->
+                    <span class="col-3-4">
+                        <div class="text-center">
+                            <ul class="palette list-inline">
+                                <li ng-repeat="c in ctrl.colors">
+                                    <a ng-click="ctrl.color = c;" class="color" ng-class="{'active': ctrl.color === c}" ng-style="{ 'background-color': c }"><i class="fa fa-check"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
+            <button type="button" ng-click="ctrl.create()" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate translate-context="Action">Save</button>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+</div>

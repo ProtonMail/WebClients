@@ -1,0 +1,8 @@
+<span ng-show="('secured.starred.**' | includedByState) || ('secured.search.**' | includedByState) || ('secured.label.**' | includedByState)">
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('0') !== -1 && ('secured.search.**' | includedByState)"  translate-comment="location tag" translate translate-context="Title">Inbox</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('1') !== -1 && ('secured.search.**' | includedByState)"  translate-comment="location tag" translate translate-context="Title">Draft</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('2') !== -1 && ('secured.search.**' | includedByState)"  translate-comment="location tag" translate translate-context="Title">Sent</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('3') !== -1 && ('secured.search.**' | includedByState)"  translate-comment="location tag" translate translate-context="Title">Trash</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('4') !== -1 && ('secured.search.**' | includedByState)"  translate-comment="location tag" translate translate-context="Title">Spam</span>
+    <span class="pm_tag" ng-show="conversation.LabelIDs.indexOf('5') !== -1 && ('secured.search.**' | includedByState)"  translate-comment="location tag" translate translate-context="Title">Archive</span>
+</span>

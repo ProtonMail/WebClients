@@ -1,0 +1,10 @@
+// Each browser has its own limitations and possibilities for scrollbar styling.
+// Chrome / Webkit: http://cssdeck.com/labs/css3-webkit-vertical-scrollbars/
+.scrollbar-track.scrollbar-track-y { 
+	opacity: 1 !important;
+	display: block !important;
+} 
+
+.sidebar .scrollbar-thumb {
+	max-height: 50% !important; 
+}

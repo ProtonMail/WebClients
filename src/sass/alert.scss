@@ -1,0 +1,36 @@
+.alert {
+	padding: 15px 35px;
+	border-radius: 4px;
+	background: #f7f7f7;
+	a {
+		color: $primary;
+	}
+	&.alert-info {
+		background: $purple-light;
+		a {
+			font-weight: 500;
+			color: #000;
+		}
+	}
+    &.alert-success {
+        background: $green;
+        a {
+        	font-weight: 500;
+        	color: #000;
+        }
+    }
+    &.alert-danger {
+        background: #cf9696;
+        a {
+        	font-weight: 500;
+        	color: #000;
+        }
+    }
+    &.alert-warning {
+        background: #d9c4a2;
+        a {
+        	font-weight: 500;
+        	color: #000;
+        }
+    }
+}

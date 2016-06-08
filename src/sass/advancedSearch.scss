@@ -1,0 +1,47 @@
+#advancedSearchModal {
+	display: block;
+	.row {
+		margin-bottom: 1rem;
+	}
+	.date {
+		position: relative;
+		em {
+			position: absolute;
+			right: 2rem;
+			top: 1px;
+			bottom: 1px;
+			text-align: right;
+			display: block;
+			line-height: $inputHeight;
+			height: $inputHeight;
+			color: $gray-light;
+		}
+	}
+	.last.date em {
+		right: 1rem;
+	}
+	.pm_select {
+		margin-bottom: 0;
+	}
+}
+
+body .is-selected .pika-button {
+	background: $primary;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,.25);
+	color: #fff !important;
+}
+body .is-today .pika-button {
+	color: $primary;
+}
+
+body .pika-button:hover {
+	background: rgba(0,0,0,.25);
+}
+
+body.mobileMode {
+	#advancedSearchModal {
+		.pm_form .radio label {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+<ng-include src="'templates/partials/header-auth-simple.tpl.html'" ng-if="isLoggedIn"></ng-include>
+<ng-include src="'templates/partials/header-no-auth.tpl.html'" ng-if="!isLoggedIn"></ng-include>
+
+<div class="outside">
+    <div ui-view="content"></div>
+</div>
+
+<div id="pm_footer">
+    <p><span  translate-comment="copyright footer" translate>&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland.</span> v<a href="https://protonmail.com/blog/category/release-notes/" target="_blank">{{ app_version }}</a></p>
+</div>

@@ -1,0 +1,411 @@
+// This is the modification to the sidebar menu to solve the scrolling issue. Set to 0 to undo.
+$sidebarReduction: 6px;
+
+// DESKTOP
+body {
+    #pm_sidebar {
+        float: left;
+        height: 100%;
+        display: block;
+    }
+    section.sidebar {
+        display: block;
+        padding: 0 20px;
+        width: $sidebarWidth;
+        min-width: $sidebarWidth;
+        box-sizing: border-box;
+        float: left;
+        height: calc(100% - 50px);
+        background: $secondary;
+        position: relative;
+        overflow: hidden;
+        #labelSettings {
+            margin-bottom: 0;
+        }
+        a.compose {
+            margin-bottom: 10px;
+            font-size: 12px;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+            text-transform: uppercase;
+            border-color: transparent;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            letter-spacing: 1px;
+            .fa {
+                display: inline-block;
+                width: 1.25rem;
+            }
+        }
+        ul.menu {
+            padding: 0;
+            display: block;
+            list-style-type: none;
+            font-size: 14px;
+            margin: 0 -20px 10px -20px;
+            li {
+                height: ($sidebarRowHeight - $sidebarReduction);
+                line-height: ($sidebarRowHeight - $sidebarReduction);
+                display: block;
+                &.divider {
+                    height: 1px;
+                    line-height: 1px;
+                    margin: 10px 0;
+                    background: rgba(255,255,255,.1);
+                }
+                a {
+                    text-decoration: none;
+                    height: ($sidebarRowHeight - 2 - $sidebarReduction);
+                    line-height: ($sidebarRowHeight - 2 - $sidebarReduction);
+                    display: block;
+                    border-bottom: 1px solid transparent;
+                    border-top: 1px solid transparent;
+                    padding: 0 20px;
+                    position: relative;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    color: lighten(#dadae5, 5%);
+                    &:hover {
+                        color: $white;
+                    }
+                    i.fa {
+                        height: ($sidebarRowHeight - $sidebarReduction);
+                        line-height: ($sidebarRowHeight - $sidebarReduction);
+                        display: block;
+                        float: left;
+                        width: 25px;
+                        text-align: left;
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                    .fa-repeat {
+                        float: right;
+                        display: block;
+                        line-height: 100%;
+                        height: ($sidebarRowHeight - 2 - $sidebarReduction);
+                        margin-right: 15px;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        cursor: pointer;
+                        z-index: 42;
+                        background: transparent;
+                        color: rgba(255,255,255,.35);
+                        -webkit-appearance: none;
+                           -moz-appearance: none;
+                                appearance: none;
+                                border: none;
+                        &:hover {
+                            color: #fff;
+                        }
+                        &:focus {
+                            outline: 0;
+                        }
+                    }
+                    em {
+                        font-style: normal;
+                        font-weight: 400;
+                        color: rgba(255,255,255,.35);
+                    }
+                }
+                &.active {
+                    a {
+                        background-color: rgba(255,255,255,.06);
+                        border-color: transparent;
+                        color: #fff;
+                        font-weight: 700;
+                        i.fa {
+                            color: lighten($primary, 10%);
+                        }
+                    }
+                }
+            }
+        }
+        #sidebarLabels {
+            position: relative;
+            overflow: auto;
+            height: calc(100% - 400px);
+            min-height: 50px; // 2 labels
+        }
+        div.labels {
+            font-size: 14px;
+            clear: both;
+            form {
+                margin-bottom: .5rem;
+                input {
+                    display: inline-block;
+                    border: none;
+                    border-bottom: 1px solid $border;
+                    padding-left: 10px;
+                    line-height: 30px;
+                    height: 30px;
+                    width: 9rem;
+                    font-size: 12px;
+                    box-sizing: border-box;
+                    margin-left: -10px;
+                    background: transparent;
+                }
+                ::-webkit-input-placeholder {
+                   color: #d9d9d9;
+                   text-transform: uppercase;
+                }
+                :-moz-placeholder {
+                   color: #d9d9d9;
+                   text-transform: uppercase;
+                }
+                ::-moz-placeholder {
+                   color: #d9d9d9;
+                   text-transform: uppercase;
+                }
+                :-ms-input-placeholder {
+                   color: #d9d9d9;
+                   text-transform: uppercase;
+                }
+                .fa-plus {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $primary;
+                }
+            }
+            ul {
+                display: block;
+                list-style-type: none;
+                overflow: hidden !important;
+                position: relative;
+                -webkit-overflow-scrolling: touch;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                width: 100%;
+                li {
+                    display: block;
+                    padding: 0;
+                    margin: 0;
+                    &.active {
+                        a {
+                            padding: 0 20px;
+                            margin: 0 -20px;
+                            background-color: transparent;
+                            border-color: transparent;
+                            color: $white;
+                        }
+                    }
+                    a {
+                        display: block;
+                        height: 25px;
+                        line-height: 25px;
+                        text-decoration: none;
+                        color: rgba(255, 255, 255, 0.5);
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        padding: 0;
+                        font-size: .9rem;
+                        max-width: 100%;
+                        &:hover {
+                            color: $white;
+                        }
+                        .fa-tag {
+                            display: inline-block;
+                            width: 25px;
+                            float: left;
+                            line-height: 25px;
+                        }
+                        strong {
+                            float: left;
+                            display: block;
+                            font-weight: 400;
+                        }
+                        em {
+                            font-style: normal;
+                            font-weight: 400;
+                            color: rgba(255,255,255,.35);
+                        }
+                    }
+                }
+            }
+        }
+        div.footer {
+            text-align: center;
+            font-size: 10px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            .wrap {
+                padding: 0;
+                margin: 0 -10px;
+            }
+            div.link {
+                a {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: $primary;
+                    text-decoration: none;
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+            div.storage {
+                padding: 0;
+                strong {
+                    color: $primary
+                }
+                .fa {
+                    margin-right: .5rem;
+                    opacity: .5;
+                }
+            }
+            a.upgrade {
+                display: block;
+                text-align: center;
+                color: $primary;
+                text-decoration: none;
+                font-weight: 700;
+            }
+            .bar {
+                height: 1px;
+                background-color: rgba(255,255,255,.1);
+                width: 90%;
+                display: block;
+                position: relative;
+                margin: .5rem auto;
+                em {
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    height: 1px;
+                    z-index: 2;
+                    background-color: $primary;
+                }
+            }
+        }
+        a.version {
+            letter-spacing: 0px;
+            text-decoration: none;
+            color: #6e6f80;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+// MOBILE
+body.mobileMode {
+    #pm_sidebar {
+        section.sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 999;
+            display: block;
+            padding: 2rem 2rem;
+            width: 100%;
+            min-width: 100%;
+            box-sizing: border-box;
+            background: $secondary;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            .logo {
+                display: block;
+                padding-top: 5px;
+            }
+            .pm_button.round {
+                background: rgba(255,255,255,.1);
+                border-color: transparent;
+                .fa {
+                    float: left;
+                    text-align: center;
+                    display: block;
+                    color: #fff;
+                    width: 100%;
+                }
+            }
+            .userDisplay {
+                display: block;
+                padding: 1rem 0;
+                font-size: .9em;
+                font-style: normal;
+                em, strong {
+                    display: block;
+                    color: #fff;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-style: normal;
+                }
+            }
+            ul.menu {
+                display: block;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    button {
+                        color: #fff;
+                        text-decoration: none;
+                        line-height: 3rem;
+                        height: 3rem;
+                        display: block;
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                        background: transparent;
+                        font-size: 1em;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        width: 100%;
+                        text-align: left;
+                        .fa {
+                            width: 1.5rem;
+                            color: rgba(255,255,255,.35);
+                            height: 3rem;
+                            line-height: 3rem;
+                            display: inline-block;
+                            float: left;
+                        }
+                        & > span {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: inline-block;
+                            height: 3rem;
+                            line-height: 3rem;
+                            float: left;
+                            max-width: 80%;
+                        }
+                        em {
+                            font-style: normal;
+                            font-weight: 400;
+                            color: rgba(255,255,255,.35);
+                            height: 3rem;
+                            line-height: 3rem;
+                            display: inline-block;
+                            float: left;
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-height: 500px) {
+    #pm_sidebar {
+        height: 100%;
+        section.sidebar {
+            overflow: auto;
+            #sidebarLabels {
+                height: initial;
+            }
+        }
+    }
+}
