@@ -31,20 +31,56 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
     $scope.inTrash = $state.is('secured.trash.view');
+    $scope.markedMessage = null;
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
         $scope.refreshConversation();
     });
 
+    $scope.$on('unmarkMessages', function(event) {
+        $scope.markedMessage = null;
+    });
+
+    $scope.$on('previousMessage', function(event) {
+        var index = _.findIndex($scope.messages, {marked: true});
+
+        if (index === -1) {
+            $scope.markedMessage = _.first($scope.messages);
+            $scope.$apply();
+            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop);
+        } else if (index > 0) {
+            $scope.markedMessage = $scope.messages[index - 1];
+            $scope.$apply();
+            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop);
+        }
+    });
+
+    $scope.$on('nextMessage', function(event) {
+        var index = $scope.messages.indexOf($scope.markedMessage);
+
+        if (index === -1) {
+            $scope.markedMessage = _.last($scope.messages);
+            $scope.$apply();
+            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop);
+        } else if (index  < ($scope.messages.length - 1)) {
+            $scope.markedMessage = $scope.messages[index + 1];
+            $scope.$apply();
+            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop);
+        }
+    });
+
     $scope.$on('toggleStar', function(event) {
         $scope.toggleStar();
+    });
+
+    $scope.$on('escape', function(event) {
+        $scope.back();
     });
 
     $scope.$on('$destroy', function(event) {
         $timeout.cancel(scrollPromise);
     });
-
 
     /**
      * Method call at the initialization of this controller

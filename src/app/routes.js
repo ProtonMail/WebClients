@@ -889,6 +889,7 @@ angular.module('proton.routes', [
             views: view,
             onExit: function($rootScope) {
                 $rootScope.$broadcast('unactiveMessages');
+                $rootScope.$broadcast('unmarkMessages');
             }
         });
     });

@@ -36,6 +36,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      */
     $scope.initialization = function() {
         // Variables
+        $scope.markedConversation = null;
         $scope.mailbox = tools.currentMailbox();
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
@@ -147,9 +148,22 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.startWatchingEvent = function() {
-
         $scope.$on('refreshConversations', function() {
             $scope.refreshConversations();
+        });
+
+        $scope.$on('openMarked', function(event) {
+            if (angular.element('.message.marked').length === 0) {
+                $scope.click($scope.markedConversation);
+            }
+        });
+
+        $scope.$on('selectActive', function(event) {
+            $scope.markedConversation.Selected = !!!$scope.markedConversation.Selected;
+        });
+
+        $scope.$on('selectAllElements', function(event) {
+            $scope.selectAllElements();
         });
 
         $scope.$on('unselectAllElements', function(event) {
@@ -161,15 +175,43 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
 
         $scope.$on('move', function(event, name) {
-            $scope.move(name);
+            if (angular.element('.message.marked').length === 0) {
+                $scope.move(name);
+            }
         });
 
         $scope.$on('read', function(event) {
-            $scope.read();
+            if (angular.element('.message.marked').length === 0) {
+                $scope.read();
+            }
         });
 
         $scope.$on('unread', function(event) {
-            $scope.unread();
+            if (angular.element('.message.marked').length === 0) {
+                $scope.unread();
+            }
+        });
+
+        $scope.$on('markPrevious', function(event) {
+            var index = $scope.conversations.indexOf($scope.markedConversation);
+
+            if (index > 0) {
+                $scope.markedConversation = $scope.conversations[index - 1];
+                $scope.$apply();
+                angular.element('#conversation-list-rows').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-rows').height() / 2);
+                angular.element('#conversation-list-columns').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-columns').height() / 2);
+            }
+        });
+
+        $scope.$on('markNext', function(event) {
+            var index = $scope.conversations.indexOf($scope.markedConversation);
+
+            if (index < ($scope.conversations.length - 1)) {
+                $scope.markedConversation = $scope.conversations[index + 1];
+                $scope.$apply();
+                angular.element('#conversation-list-rows').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-rows').height() / 2);
+                angular.element('#conversation-list-columns').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-columns').height() / 2);
+            }
         });
 
         $scope.$on('nextConversation', function(event) {
@@ -198,6 +240,19 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if ($rootScope.scrollPosition) {
             $('#content').scrollTop($rootScope.scrollPosition);
             $rootScope.scrollPosition = null;
+        }
+
+        if ($scope.conversations.length > 0) {
+            // Mark one element
+            var element;
+
+            if ($stateParams.id) {
+                element = _.findWhere($scope.conversations, {ID: $stateParams.id});
+            } else {
+                element = $scope.conversations[0];
+            }
+
+            $scope.markedConversation = element;
         }
     };
 
@@ -799,6 +854,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Unselect all elements
         $scope.unselectAllElements();
+        // Mark this element
+        $scope.markedConversation = element;
         // Open conversation
         if(type === 'conversation') {
             params.id = element.ID;

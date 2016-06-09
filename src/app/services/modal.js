@@ -1769,6 +1769,8 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/hotkey.tpl.html',
         controller: function(params) {
+            this.isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
+            
             if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
                 this.mode = 'row';
             } else if (authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {

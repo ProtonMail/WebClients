@@ -15,11 +15,12 @@ angular.module("proton.squire", [
         link: function(scope, element, attrs, ngModel) {
             if (!ngModel) { return; } // do nothing if no ng-model
 
-            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, loaded, menubar, ua, updateModel, updateStylesToMatch;
+            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, menubar, ua, updateModel, updateStylesToMatch;
 
             LINK_DEFAULT = IMAGE_DEFAULT = "";
             IFRAME_CLASS = 'angular-squire-iframe';
             HEADER_CLASS = 'h4';
+            isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
             editor = scope.editor = null;
             scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
 
@@ -217,8 +218,18 @@ angular.module("proton.squire", [
                     return editor.bold();
                 };
 
-                editor.setKeyHandler('ctrl-enter', function(self, event, range) {
-                    $rootScope.$broadcast('sendMessage', element);
+                if (isMac === true) {
+                    editor.setKeyHandler('meta-enter', function(self, event, range) {
+                        $rootScope.$broadcast('sendMessage', element);
+                    });
+                } else {
+                    editor.setKeyHandler('ctrl-enter', function(self, event, range) {
+                        $rootScope.$broadcast('sendMessage', element);
+                    });
+                }
+
+                editor.setKeyHandler('escape', function(self, event, range) {
+                    $rootScope.$broadcast('closeMessage', element);
                 });
 
                 $rootScope.$broadcast('editorLoaded', element, editor);
