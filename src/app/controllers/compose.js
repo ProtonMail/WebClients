@@ -735,12 +735,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         var currentBody = $.parseHTML(message.Body);
         var tempDOM = angular.element('<div>').append(currentBody);
-        var hasSignature = tempDOM.find('.protonmail_signature_block').html();
+        var hasSignature = tempDOM.first('.protonmail_signature_block').html();
 
 
         if (hasSignature && hasSignature.length > 0) {
             // update the signature
-            tempDOM.find('.protonmail_signature_block').replaceWith(signature);
+            tempDOM.first('.protonmail_signature_block').replaceWith(signature);
         } else {
             // insert signature
             tempDOM.append(signature);
