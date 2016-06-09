@@ -169,6 +169,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
+    $scope.$on('closeMessage', function(event, element) {
+        var composer = $(element).parents('.composer');
+        var index = $('.composer').index(composer);
+        var message = $scope.messages[index];
+
+        if (angular.isDefined(message)) {
+            $scope.close(message, false, false);
+        }
+    });
+
     $scope.$on('editorLoaded', function(event, element, editor) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
@@ -241,7 +251,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     function onDragEnter(event) {
-        
+
         /* /!\ force digest over state change */
         $scope.$digest(function() {
             $scope.isOver = true;
@@ -416,7 +426,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             eventHandlers: {
                 drop: function(event) {
                     event.preventDefault();
-                    
+
                      /* /!\ force digest over state change */
                     $scope.$digest(function() {
                         $scope.isOver = false;

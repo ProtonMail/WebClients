@@ -87,15 +87,40 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     });
 
+    $scope.$on('initMessage', function(event, ID, scroll) {
+        if ($scope.message.ID === ID) {
+            $scope.initialization(scroll);
+        }
+    });
+
+    $scope.$on('move', function(event, name) {
+        if ($scope.message === $scope.markedMessage) {
+            $scope.move(name);
+        }
+    });
+
+    $scope.$on('read', function(event) {
+        if ($scope.message === $scope.markedMessage) {
+            $scope.read();
+        }
+    });
+
+    $scope.$on('unread', function(event) {
+        if ($scope.message === $scope.markedMessage) {
+            $scope.unread();
+        }
+    });
+
+    $scope.$on('openMarked', function(event) {
+        if ($scope.message === $scope.markedMessage) {
+            $scope.toggle();
+            $scope.$apply();
+        }
+    });
+
     // Listner when we destroy this message controller
     $scope.$on('$destroy', function(event) {
         $scope.message.expand = false;
-    });
-
-    $scope.$on('initMessage', function(event, ID, scroll) {
-        if($scope.message.ID === ID) {
-            $scope.initialization(scroll);
-        }
     });
 
     // Get all recipients

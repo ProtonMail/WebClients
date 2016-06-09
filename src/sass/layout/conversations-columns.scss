@@ -169,6 +169,14 @@
             }
         }
     }
+    &.marked::before {
+        background-color: $primary;
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 5px;
+    }
     &.active {
         background: $active;
         color: $white;
