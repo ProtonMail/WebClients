@@ -31,26 +31,26 @@ We are very open to bug reports via Issues as well as Pull Requests.
 
 Installation:
 
-```
+```shell
 npm install -g protractor
 webdriver-manager update
 ```
 
 Start up a Selenium Server:
 
-```
+```shell
 webdriver-manager start
 ```
 
 Run tests:
 
-```
+```shell
 protractor protractor_conf.js
 ```
 
 Run a scenario:
 
-```
+```shell
 protractor protractor_conf.js --suite=login
 ```
 
