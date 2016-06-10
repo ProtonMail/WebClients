@@ -172,8 +172,10 @@ angular.module("proton.tools", ["proton.constants"])
         }
 
         var url = new RegExp(/url\(/ig);
+        var svg = new RegExp('(svg)', 'g');
         var src = new RegExp('(src=)', 'g');
 
+        html = replace(svg,html);
         html = replace(url,html);
         html = replace(src,html);
 
@@ -182,7 +184,7 @@ angular.module("proton.tools", ["proton.constants"])
 
     tools.fixImages = function(html) {
 
-        var re = new RegExp('(proton-url|proton-src)', 'g');
+        var re = new RegExp('(proton-url|proton-src|proton-svg)', 'g');
 
         html = html.replace(re, function(match, $1, $2, offset, original) {
             return $1.substring(7);
@@ -415,7 +417,9 @@ angular.module("proton.tools", ["proton.constants"])
 
         var url = new RegExp(/url\(/ig);
         var src = new RegExp('src=', 'g');
-        var re = new RegExp(url.source + "|" + src.source);
+        var svg = new RegExp('svg', 'g');
+
+        var re = new RegExp(url.source + "|" + src.source + "|" + svg.source );
         return re.test(content);
 
     };
