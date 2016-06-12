@@ -9,10 +9,10 @@ To assist with the ProtonMail Translation Project, please visit our dedicated tr
 
 ### Basic Installation
 
-#### If you have node `0.12` installed locally
+#### If you have node >= 0.12 installed locally
 
-1. `npm install` (requires nodejs)
-2. `npm start` to start the app locally at `http://localhost:8080`
+- `npm install` (requires nodejs)
+- `npm start` to start the app locally at `http://localhost:8080`
 
 #### If you have docker, and prefer to not install node (or anything else) locally
 
