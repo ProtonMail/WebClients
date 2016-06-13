@@ -220,10 +220,12 @@ angular.module("proton.squire", [
 
                 if (isMac === true) {
                     editor.setKeyHandler('meta-enter', function(self, event, range) {
+                        event.preventDefault();
                         $rootScope.$broadcast('sendMessage', element);
                     });
                 } else {
                     editor.setKeyHandler('ctrl-enter', function(self, event, range) {
+                        event.preventDefault();
                         $rootScope.$broadcast('sendMessage', element);
                     });
                 }
