@@ -242,16 +242,18 @@ angular.module('proton.actions', [])
          */
         starConversation: function(id) {
             var context = tools.cacheContext();
+            var conversation = cache.getConversationCached(id);
             var events = [];
             var promise;
             var element = {
                 ID: id,
-                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
+                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.starred],
+                NumUnread: conversation.NumUnread
             };
             var messages = cache.queryMessagesCached(element.ID);
 
             // Generate message changes with event
-            if(messages.length > 0) {
+            if (messages.length > 0) {
                 _.each(messages, function(message) {
                     events.push({ID: message.ID, Action: 3, Message: {
                         ID: message.ID,
@@ -284,11 +286,13 @@ angular.module('proton.actions', [])
          */
         unstarConversation: function(id) {
             var context = tools.cacheContext();
+            var conversation = cache.getConversationCached(id);
             var events = [];
             var promise;
             var element = {
                 ID: id,
-                LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
+                LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.starred],
+                NumUnread: conversation.NumUnread
             };
             var messages = cache.queryMessagesCached(element.ID);
 
