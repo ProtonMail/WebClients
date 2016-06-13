@@ -784,21 +784,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             base.From = found;
         }
 
-        if (base.From.Signature) {
-            contentSignature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(base.From.Signature) + '</div>', {
-                ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style', 'input', 'form']
-            });
-        }
 
-        if ($(contentSignature).text().length === 0 && $(contentSignature).find('img').length === 0) {
-            signature = br + br;
-        } else {
-            signature = br + br + contentSignature + br + br;
-        }
 
         base.ParentID = $scope.message.ID;
-        base.Body = signature + blockquoteStart + originalMessage + subject + time + from + to + cc + br + body + blockquoteEnd;
+        base.Body =  blockquoteStart + originalMessage + subject + time + from + to + cc + br + body + blockquoteEnd + br;
 
         return base;
     };
