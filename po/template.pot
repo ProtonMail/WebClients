@@ -76,7 +76,7 @@ msgid "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
 msgstr ""
 
 #: src/app/templates/partials/conversation-list-columns.tpl.html:77
-#: src/app/templates/partials/conversation-list-rows.tpl.html:72
+#: src/app/templates/partials/conversation-list-rows.tpl.html:60
 msgid "+{{ (conversation.LabelIDs | labels).length - 4 }} More labels"
 msgstr ""
 

@@ -80,7 +80,7 @@ angular.module('proton.actions', [])
 
                 _.each(messages, function(message) {
                     var copyLabelIDsAdded = angular.copy(labelIDsAdded);
-                    var copyLabelIDsRemoved = angular.copy(labelIDsRemoved);
+                    var copyLabelIDsRemoved = [tools.currentLocation(message.LabelIDs)];
 
                     if (toInbox === true) {
                         var index;

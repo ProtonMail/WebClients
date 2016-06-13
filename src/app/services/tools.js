@@ -444,14 +444,26 @@ angular.module("proton.tools", ["proton.constants"])
         return _.map(contacts, function(m) { return m.Address; }).join(',');
     };
 
-    tools.currentLocation = function() {
-        var mailbox = tools.currentMailbox();
+    tools.currentLocation = function(labelIDs) {
         var loc; // Don't choose location
 
-        if (mailbox === 'label') {
-            loc = $stateParams.label;
+        if (angular.isDefined(labelIDs)) {
+            loc = _.intersection(labelIDs, [
+                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                CONSTANTS.MAILBOX_IDENTIFIERS.archive
+            ])[0];
         } else {
-            loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            var mailbox = tools.currentMailbox();
+
+            if (mailbox === 'label') {
+                loc = $stateParams.label;
+            } else {
+                loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+            }
         }
 
         return loc;
