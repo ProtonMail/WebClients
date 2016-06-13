@@ -732,32 +732,57 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.insertSignature = function(message) {
 
+        message.Body = (angular.isUndefined(message.Body))? '' : message.Body;
 
-        message.Body = (angular.isUndefined(message.Body))? '<div>' : message.Body;
+        var content = (message.From.Signature === null)?authentication.user.Signature:message.From.Signature,
+            signature = "",
+            newSign = false,
+            space = "<div><br /></div>";
+            className = "protonmail_signature_block";
 
-        var space = '<br /><br />';
-        var content = (message.From.Signature === null)?authentication.user.Signature:message.From.Signature;
+        var currentBody = $.parseHTML(message.Body),
+            tempDOM = angular.element('<div>').append(currentBody);
 
-        var signature = DOMPurify.sanitize('<div class="protonmail_signature_block">' + tools.replaceLineBreaks(space + content) + '</div>', {
-            ADD_ATTR: ['target'],
-            FORBID_TAGS: ['style', 'input', 'form']
-        });
+        // use children to match only first-child signatures (reply/forward case)
+        var countSignatures = tempDOM.children('.'+className).length,
+            firstSignature = tempDOM.children('.protonmail_signature_block:first'),
+            firstQuote = tempDOM.children('.protonmail_quote:first'),
+            countQuotes = tempDOM.find('.protonmail_quote').length;
 
-        var currentBody = $.parseHTML(message.Body);
-        var tempDOM = angular.element('<div>').append(currentBody);
-        var hasSignature = tempDOM.first('.protonmail_signature_block').html();
+        if ($(content).text().length > 0 || $(content).find('img').length > 0) {
+            
+             signature = DOMPurify.sanitize('<div class="'+className+'">' + tools.replaceLineBreaks(content + space) + '</div>', {
+                ADD_ATTR: ['target'],
+                FORBID_TAGS: ['style', 'input', 'form']
+            });
 
-
-        if (hasSignature && hasSignature.length > 0) {
-            // update the signature
-            tempDOM.first('.protonmail_signature_block').replaceWith(signature);
-        } else {
-            // insert signature
-            tempDOM.append(signature);
         }
 
-        message.Body = tempDOM.html();
+        if ( countSignatures > 0) {
+            // update the first signature (reply/foward case)
+            // .first() + replace fail, use :first selector
+            firstSignature.replaceWith(signature);
 
+        } else {
+            // insert signature at the right place
+            (countQuotes > 0) ? firstQuote.before(signature) : tempDOM.append(signature);
+           
+            newSign = true;
+            firstSignature = tempDOM.children('.protonmail_signature_block:first');
+        }
+
+
+        /* Handle free space around the signature */
+        
+       if( firstQuote.prevAll("div").length === 0 && newSign) {
+          firstQuote.before(space + space);
+       } 
+
+       if(firstSignature.prevAll("div").length === 0  && newSign) {
+          firstSignature.before(space + space);
+       }
+        
+       message.Body = tempDOM.html();
 
     };
 
