@@ -199,7 +199,7 @@ angular.module('proton.hotkeys', [])
         {keyboard: 'r', callback: read},
         {keyboard: 'u', callback: unread},
         {keyboard: '.', callback: toggleStar},
-        {keyboard: 't', callback: trash},
+        {keyboard: ['t', 'del'], callback: trash},
         {keyboard: 'a', callback: archive},
         {keyboard: 's', callback: spam},
         {keyboard: '?', callback: help},
