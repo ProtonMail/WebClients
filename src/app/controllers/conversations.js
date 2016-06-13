@@ -241,19 +241,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $('#content').scrollTop($rootScope.scrollPosition);
             $rootScope.scrollPosition = null;
         }
-
-        if ($scope.conversations.length > 0) {
-            // Mark one element
-            var element;
-
-            if ($stateParams.id) {
-                element = _.findWhere($scope.conversations, {ID: $stateParams.id});
-            } else {
-                element = $scope.conversations[0];
-            }
-
-            $scope.markedConversation = element;
-        }
     };
 
     $scope.selectPage = function(page) {
@@ -366,8 +353,20 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.watchElements();
             firstLoad = false;
 
-            if($scope.conversations.length === 0 && page > 0) {
+            if ($scope.conversations.length === 0 && page > 0) {
                 $scope.back();
+            }
+
+            if ($scope.conversations.length > 0 && ($scope.markedConversation === null || $scope.conversations.indexOf($scope.markedConversation) === -1)) {
+                var element;
+
+                if ($stateParams.id) {
+                    element = _.findWhere($scope.conversations, {ID: $stateParams.id});
+                } else {
+                    element = $scope.conversations[0];
+                }
+
+                $scope.markedConversation = element;
             }
 
             deferred.resolve(elements);
@@ -513,16 +512,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Array} elements
      */
     $scope.elementsSelected = function() {
-        var elements = _.where($scope.conversations, {Selected: true});
-        var conversationID = $state.params.id;
+        var elements = $scope.elementsChecked();
 
-        if(elements.length === 0 && angular.isDefined(conversationID)) {
+        if (elements.length === 0) {
             var type = tools.typeList();
 
-            if(type === 'message') {
-                elements = _.where($scope.conversations, {ConversationID: conversationID});
-            } else if(type === 'conversation') {
-                elements = _.where($scope.conversations, {ID: conversationID});
+            if (type === 'message') {
+                elements = _.where($scope.conversations, {ConversationID: $scope.markedConversation.ID});
+            } else if (type === 'conversation') {
+                elements = _.where($scope.conversations, {ID: $scope.markedConversation.ID});
             }
         }
 
