@@ -209,6 +209,12 @@ angular.module('proton.controllers.Header', [])
         $rootScope.$broadcast('sidebarMobileToggle');
     };
 
+    $scope.blurSearch = function(event) {
+        var inputs = angular.element('.query');
+
+        angular.element(inputs[0]).blur();
+    };
+
     $scope.searchMessages = function() {
         var parameters = resetParameters();
         var redirection;

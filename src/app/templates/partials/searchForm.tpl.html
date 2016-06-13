@@ -3,7 +3,7 @@
         <button  type="button" class="advanced" ng-click="toggleAdvancedSearch();" pt-tooltip-translate-context="Action" pt-tooltip-translate="Advanced search" pt-placement="bottom">
             <i class="fa" ng-class="{'fa-angle-down': advancedSearch === false, 'fa-angle-up': advancedSearch === true}"></i>
         </button>
-        <input type="text" placeholder-translate="Search messages" autocomplete="off" ng-model="params.searchMessageInput" class="query" />
+        <input type="text" placeholder-translate="Search messages" autocomplete="off" ng-model="params.searchMessageInput" ng-keyup="$event.which === 27 && blurSearch($event)" class="query" />
         <button type="submit" ng-show="advancedSearch !== true">
             <i class="fa fa-search"></i>
         </button>
