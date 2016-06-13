@@ -70,6 +70,12 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
+    var inbox = function(event) {
+        $rootScope.$broadcast('move', 'inbox');
+
+        return false;
+    };
+
     var trash = function(event) {
         $rootScope.$broadcast('move', 'trash');
 
@@ -199,6 +205,7 @@ angular.module('proton.hotkeys', [])
         {keyboard: 'r', callback: read},
         {keyboard: 'u', callback: unread},
         {keyboard: '.', callback: toggleStar},
+        {keyboard: 'i', callback: inbox},
         {keyboard: ['t', 'del'], callback: trash},
         {keyboard: 'a', callback: archive},
         {keyboard: 's', callback: spam},
