@@ -946,19 +946,19 @@ angular.module('proton.cache', [])
 
     /**
      * Return previous ID of message specified
-     * @param {String} conversationID
+     * @param {String} elementID - can be a message ID or a conversation ID
      * @param {String} type - 'next' or 'previous'
      * @return {Promise}
      */
-    api.more = function(conversationID, type) {
+    api.more = function(elementID, type) {
         var deferred = $q.defer();
         var loc = tools.currentLocation();
         var request = {Label: loc};
-        var context = tools.cacheContext();
-        var callApi = function() {
-            queryConversations(request).then(function(conversations) {
-                if(angular.isArray(conversations) && conversations.length > 0) {
-                    var first = _.first(conversations);
+        var typeList = tools.typeList();
+        var callApi = function() {            
+            queryConversations(request).then(function(elements) {
+                if (angular.isArray(elements) && elements.length > 0) {
+                    var first = _.first(elements);
 
                     deferred.resolve(first.ID);
                 } else {
@@ -967,38 +967,24 @@ angular.module('proton.cache', [])
             });
         };
 
-        if (context === true) {
-            var conversations = _.filter(conversationsCached, function(conversation) {
-                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1 && angular.isDefined(api.getTime(conversation.ID, loc));
-            });
+        var conversations = _.filter(conversationsCached, function(conversation) {
+            return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1 && angular.isDefined(api.getTime(conversation.ID, loc));
+        });
 
-            conversations = api.orderConversation(conversations, loc);
+        conversations = api.orderConversation(conversations, loc);
 
-            var index = _.findIndex(conversations, {ID: conversationID});
+        var index = _.findIndex(conversations, {ID: elementID});
 
-            if (index !== -1) {
-                if (type === 'previous' && angular.isDefined(conversations[index + 1])) {
-                    deferred.resolve(conversations[index + 1].ID);
-                } else if (type === 'next' && angular.isDefined(conversations[index - 1])) {
-                    deferred.resolve(conversations[index - 1].ID);
-                } else {
-                    callApi();
-                }
+        if (index !== -1) {
+            if (type === 'previous' && angular.isDefined(conversations[index + 1])) {
+                deferred.resolve(conversations[index + 1].ID);
+            } else if (type === 'next' && angular.isDefined(conversations[index - 1])) {
+                deferred.resolve(conversations[index - 1].ID);
             } else {
                 callApi();
             }
         } else {
-            var conversation = api.getConversationCached(conversationID);
-
-            if (type === 'previous') {
-                request.End = conversation.Time;
-                request.EndID = conversation.ID;
-                request.Desc = 1;
-            } else if (type === 'next') {
-                request.Begin = conversation.Time;
-                request.BeginID = conversation.ID;
-                request.Desc = 0;
-            }
+            callApi();
         }
 
         return deferred.promise;

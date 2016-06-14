@@ -32,6 +32,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $rootScope.showWelcome = false;
     $scope.inTrash = $state.is('secured.trash.view');
     $scope.markedMessage = null;
+    $scope.cacheContext = tools.cacheContext();
 
     // Listeners
     $scope.$on('refreshConversation', function(event) {
