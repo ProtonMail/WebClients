@@ -161,11 +161,11 @@ angular.module("proton.squire", [
                     $rootScope.$broadcast('editorFocussed', element, editor);
                 });
 
-                editor.addEventListener('willPaste', function(event) {
-                    var div = document.createElement('div');
+                editor.addEventListener('purify', function(event) {
+                    // triggered by Squire at paste event, before all dom injection
+                    event.string = DOMPurify.sanitize(event.string);
+                    return event;
 
-                    div.appendChild(event.fragment);
-                    event.fragment = DOMPurify.sanitize(div.innerHTML, {RETURN_DOM_FRAGMENT: true});
                 });
 
                 editor.addEventListener('blur', function() {
