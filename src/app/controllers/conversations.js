@@ -158,8 +158,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         });
 
-        $scope.$on('selectActive', function(event) {
+        $scope.$on('selectMark', function(event) {
             $scope.markedConversation.Selected = !!!$scope.markedConversation.Selected;
+            $scope.$apply();
         });
 
         $scope.$on('selectAllElements', function(event) {

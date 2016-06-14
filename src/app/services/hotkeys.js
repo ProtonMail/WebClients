@@ -160,8 +160,8 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
-    var selectActive = function(event) {
-        $rootScope.$broadcast('selectActive');
+    var selectMark = function(event) {
+        $rootScope.$broadcast('selectMark');
 
         return false;
     };
@@ -219,7 +219,7 @@ angular.module('proton.hotkeys', [])
         {keyboard: 'g t', callback: goToTrash},
         {keyboard: '* a', callback: selectAll},
         {keyboard: '* n', callback: unselectAll},
-        {keyboard: 'x', callback: selectActive},
+        {keyboard: 'x', callback: selectMark},
         {keyboard: 'up', callback: markPrevious},
         {keyboard: 'down', callback: markNext},
         {keyboard: 'escape', callback: escape},
