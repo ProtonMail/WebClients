@@ -94,7 +94,7 @@
                 <img src="/assets/img/rowview.svg" />
             </a>
         </span>
-        <span class="pm_buttons" ng-show="idDefined() && rowMode === true && cacheContext === true">
+        <span class="pm_buttons" ng-show="idDefined() && rowMode === true && tools.cacheContext()">
             <a href="#" ng-click="nextConversation(conversation)" pt-tooltip-translate="Previous" pt-tooltip-translate-context="Action">
                 <i class="fa fa-chevron-left"></i>
             </a>

@@ -280,37 +280,6 @@ angular.module('proton', [
         position: 'center',
         maximumOpen: 5
     });
-
-    $rootScope.mobileResponsive = function() {
-        var bodyWidth = $('body').outerWidth();
-
-        // Force Mobile
-        if ( bodyWidth > CONSTANTS.MOBILE_BREAKPOINT ) {
-            $rootScope.mobileMode = false;
-            if (authentication.user && authentication.user.ViewLayout===0 && $rootScope.rowMode) {
-                $rootScope.rowMode = false;
-                $rootScope.layoutMode = 'columns';
-            }
-            else if (authentication.user && authentication.user.ViewLayout===1) {
-                $rootScope.rowMode = true;
-                $rootScope.layoutMode = 'rows';
-            }
-        }
-        else if ( bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT ) {
-            $rootScope.mobileMode = true;
-            $rootScope.rowMode = false;
-            $rootScope.layoutMode = 'columns';
-            $rootScope.$broadcast('tourEnd');
-        }
-    };
-
-    angular.element($window).bind('resize', $window._.debounce(function() {
-        $rootScope.mobileResponsive();
-    }, 30));
-    angular.element($window).bind('orientationchange', $rootScope.mobileResponsive());
-
-    $rootScope.mobileResponsive();
-
 })
 
 //
@@ -514,10 +483,8 @@ angular.module('proton', [
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
 
         $timeout( function() {
-            $rootScope.mobileResponsive();
             $rootScope.showSidebar = false;
         }, 30);
-
     });
 })
 

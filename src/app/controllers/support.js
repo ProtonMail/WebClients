@@ -14,7 +14,6 @@ angular.module("proton.controllers.Support", [
 ) {
 
     $scope.tools = tools;
-
     $scope.params = {};
     $scope.params.recoveryEmail = '';
     $scope.params.username = '';
