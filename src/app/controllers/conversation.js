@@ -43,16 +43,16 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     });
 
     $scope.$on('previousMessage', function(event) {
-        var index = _.findIndex($scope.messages, {marked: true});
+        var index = $scope.messages.indexOf($scope.markedMessage);
 
         if (index === -1) {
             $scope.markedMessage = _.first($scope.messages);
             $scope.$apply();
-            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop);
+            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
         } else if (index > 0) {
             $scope.markedMessage = $scope.messages[index - 1];
             $scope.$apply();
-            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop);
+            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
         }
     });
 
@@ -62,11 +62,11 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         if (index === -1) {
             $scope.markedMessage = _.last($scope.messages);
             $scope.$apply();
-            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop);
-        } else if (index  < ($scope.messages.length - 1)) {
+            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
+        } else if (index < ($scope.messages.length - 1)) {
             $scope.markedMessage = $scope.messages[index + 1];
             $scope.$apply();
-            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop);
+            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
         }
     });
 
