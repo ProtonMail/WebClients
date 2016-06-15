@@ -1,7 +1,7 @@
 angular.module("proton.squire", [
     "proton.tooltip"
 ])
-.directive("squire", function(tools, $rootScope, $timeout) {
+.directive("squire", function(tools, $rootScope, $timeout, authentication) {
     return {
         restrict: 'E',
         require: "ngModel",
@@ -220,18 +220,24 @@ angular.module("proton.squire", [
 
                 if (isMac === true) {
                     editor.setKeyHandler('meta-enter', function(self, event, range) {
-                        event.preventDefault();
-                        $rootScope.$broadcast('sendMessage', element);
+                        if (authentication.user.Hotkeys === 1) {
+                            event.preventDefault();
+                            $rootScope.$broadcast('sendMessage', element);
+                        }
                     });
                 } else {
                     editor.setKeyHandler('ctrl-enter', function(self, event, range) {
-                        event.preventDefault();
-                        $rootScope.$broadcast('sendMessage', element);
+                        if (authentication.user.Hotkeys === 1) {
+                            event.preventDefault();
+                            $rootScope.$broadcast('sendMessage', element);
+                        }
                     });
                 }
 
                 editor.setKeyHandler('escape', function(self, event, range) {
-                    $rootScope.$broadcast('closeMessage', element);
+                    if (authentication.user.Hotkeys === 1) {
+                        $rootScope.$broadcast('closeMessage', element);
+                    }
                 });
 
                 $rootScope.$broadcast('editorLoaded', element, editor);

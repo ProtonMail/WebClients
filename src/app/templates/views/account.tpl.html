@@ -278,7 +278,25 @@
             </section>
             <section class="pm_form col-1-2">
                 <legend translate-context="Title" translate>Keyboard Shortcuts</legend>
-                <button class="pm_button" ng-click="openHotkeyModal()" translate translate-context="Action">View Keyboard Shortcuts</button>
+                <div class="pm_grid">
+                    <div class="col-3-8">
+                        <label translate-context="Title" translate>Keyboard Shortcuts</label>
+                    </div>
+                    <div class="col-5-8">
+                        <label>
+                            <input type="radio" ng-change="saveHotkeys()" ng-model="hotkeys" ng-value="1"/> <span translate-context="Action" translate>Enabled<span>
+                        </label>
+                        <label>
+                            <input type="radio" ng-change="saveHotkeys()" ng-model="hotkeys" ng-value="0"/> <span translate-context="Action" translate>Disabled<span>
+                        </label>
+                    </div>
+                </div>
+                <div class="pm_grid">
+                    <div class="col-3-8">&nbsp;</div>
+                    <div class="col-5-8">
+                        <button class="pm_button" ng-click="openHotkeyModal()" translate translate-context="Action">View Keyboard Shortcuts</button>
+                    </div>
+                </div>
             </section>
         </div>
     </div>

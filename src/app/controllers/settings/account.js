@@ -12,6 +12,7 @@ angular.module('proton.controllers.Settings')
     confirmModal,
     deleteAccountModal,
     eventManager,
+    hotkeys,
     hotkeyModal,
     Key,
     networkActivityTracker,
@@ -29,6 +30,7 @@ angular.module('proton.controllers.Settings')
     $scope.desktopNotificationsStatus = desktopNotifications.status();
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
     $scope.ShowImages = authentication.user.ShowImages;
+    $scope.hotkeys = authentication.user.Hotkeys;
     $scope.tools = tools;
 
     $timeout(function() {
@@ -304,6 +306,27 @@ angular.module('proton.controllers.Settings')
                 }
             }
         });
+    };
+
+    $scope.saveHotkeys = function() {
+        networkActivityTracker.track(
+            Setting.setHotkeys({Hotkeys: $scope.hotkeys})
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    authentication.user.Hotkeys = $scope.hotkeys;
+
+                    if ($scope.hotkeys === 1) {
+                        hotkeys.bind();
+                    } else {
+                        hotkeys.unbind();
+                    }
+
+                    notify({message: gettextCatalog.getString('Hotkeys preferences updated', null), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                }
+            })
+        );
     };
 
     $scope.deleteAccount = function() {

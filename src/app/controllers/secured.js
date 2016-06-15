@@ -50,7 +50,9 @@ angular.module("proton.controllers.Secured", [])
     desktopNotifications.request();
 
     // Enable hotkeys
-    hotkeys.bind();
+    if (authentication.user.Hotkeys === 1) {
+        hotkeys.bind();
+    }
 
     // Set the rows / columns mode
     if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
