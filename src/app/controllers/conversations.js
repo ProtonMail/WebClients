@@ -519,7 +519,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             var type = tools.typeList();
 
             if (type === 'message') {
-                elements = _.where($scope.conversations, {ConversationID: $scope.markedConversation.ID});
+                elements = _.where($scope.conversations, {ID: $scope.markedConversation.ID});
             } else if (type === 'conversation') {
                 elements = _.where($scope.conversations, {ID: $scope.markedConversation.ID});
             }
