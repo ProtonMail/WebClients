@@ -515,7 +515,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.elementsSelected = function() {
         var elements = $scope.elementsChecked();
 
-        if (elements.length === 0) {
+        if ($scope.conversations.length > 0 && elements.length === 0) {
             var type = tools.typeList();
 
             if (type === 'message') {
