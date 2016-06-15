@@ -31,7 +31,6 @@ angular.module('proton.controllers.Settings')
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.hotkeys = authentication.user.Hotkeys;
-    $scope.tools = tools;
 
     $timeout(function() {
         if(angular.isDefined(authentication.user.Signature)) {

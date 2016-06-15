@@ -677,7 +677,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                             $rootScope.mobileMode = false;
                             $rootScope.layoutMode = mode;
                             authentication.user.ViewLayout = newLayout;
-                            $rootScope.mobileResponsive();
+                            $scope.mobileResponsive();
                         } else if (result.data && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {

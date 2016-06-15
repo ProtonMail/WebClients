@@ -31,7 +31,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     ical
 ) {
     $scope.mailbox = tools.currentMailbox();
-    $scope.tools = tools;
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
     $scope.attachmentsStorage = [];

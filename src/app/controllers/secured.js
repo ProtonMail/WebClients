@@ -24,6 +24,7 @@ angular.module("proton.controllers.Secured", [])
 ) {
     var dirtyAddresses = [];
 
+    $scope.tools = tools;
     $scope.user = authentication.user;
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
@@ -62,6 +63,35 @@ angular.module("proton.controllers.Secured", [])
             $rootScope.layoutMode = 'rows';
         }
     }
+
+    $scope.mobileResponsive = function() {
+        var bodyWidth = $('body').outerWidth();
+
+        // Force Mobile
+        if (bodyWidth > CONSTANTS.MOBILE_BREAKPOINT) {
+            $rootScope.mobileMode = false;
+
+            if (authentication.user && authentication.user.ViewLayout === 0 && $rootScope.rowMode) {
+                $rootScope.rowMode = false;
+                $rootScope.layoutMode = 'columns';
+            } else if (authentication.user && authentication.user.ViewLayout === 1) {
+                $rootScope.rowMode = true;
+                $rootScope.layoutMode = 'rows';
+            }
+        } else if (bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT) {
+            $rootScope.mobileMode = true;
+            $rootScope.rowMode = false;
+            $rootScope.layoutMode = 'columns';
+        }
+
+        $rootScope.$broadcast('tourEnd');
+    };
+
+    angular.element($window).bind('resize', _.debounce(function() {
+        $scope.mobileResponsive();
+    }, 50));
+
+    angular.element($window).bind('orientationchange', $scope.mobileResponsive());
 
     // Set event ID
     eventManager.start(authentication.user.EventID);
