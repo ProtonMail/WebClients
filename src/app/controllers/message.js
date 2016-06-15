@@ -783,8 +783,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             base.From = found;
         }
 
-
-
         base.ParentID = $scope.message.ID;
         base.Body =  blockquoteStart + originalMessage + subject + time + from + to + cc + br + body + blockquoteEnd + br;
 
