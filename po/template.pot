@@ -281,8 +281,8 @@ msgid "Absolute security"
 msgstr ""
 
 #. custom domain menu
-#: src/app/controllers/secured.js:246
-#: src/app/controllers/secured.js:35
+#: src/app/controllers/secured.js:276
+#: src/app/controllers/secured.js:36
 #: src/app/templates/partials/menu.settings.tpl.html:33
 #: src/app/templates/partials/menu.settings.tpl.html:6
 msgctxt "Title"
@@ -654,8 +654,8 @@ msgid "Annually"
 msgstr ""
 
 #. custom domain menu
-#: src/app/controllers/secured.js:255
-#: src/app/controllers/secured.js:39
+#: src/app/controllers/secured.js:285
+#: src/app/controllers/secured.js:40
 #: src/app/templates/partials/menu.settings.tpl.html:18
 #: src/app/templates/partials/menu.settings.tpl.html:37
 msgctxt "Title"
@@ -685,7 +685,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:222
+#: src/app/controllers/secured.js:252
 #: src/app/directives/move.js:22
 #: src/app/templates/directives/location-tag.tpl.html:7
 #: src/app/templates/partials/no-results.tpl.html:21
@@ -1232,7 +1232,7 @@ msgid "Contact us at <a href=\"mailto:security@protonmail.com\">security@protonm
 msgstr ""
 
 #. Folder name
-#: src/app/controllers/secured.js:240
+#: src/app/controllers/secured.js:270
 #: src/app/templates/partials/sidebar-responsive.tpl.html:66
 msgctxt "Title"
 msgid "Contacts"
@@ -1441,9 +1441,9 @@ msgid "Daily email notifications"
 msgstr ""
 
 #. custom domain menu
-#: src/app/controllers/secured.js:243
-#: src/app/controllers/secured.js:34
-#: src/app/controllers/secured.js:38
+#: src/app/controllers/secured.js:273
+#: src/app/controllers/secured.js:35
+#: src/app/controllers/secured.js:39
 #: src/app/templates/partials/menu.settings.tpl.html:3
 #: src/app/templates/partials/menu.settings.tpl.html:32
 msgctxt "Title"
@@ -1725,8 +1725,8 @@ msgstr ""
 
 #. custom domain menu
 #. invoice heading
-#: src/app/controllers/secured.js:258
-#: src/app/controllers/secured.js:40
+#: src/app/controllers/secured.js:288
+#: src/app/controllers/secured.js:41
 #: src/app/templates/partials/menu.settings.tpl.html:21
 #: src/app/templates/views/dashboard.tpl.html:20
 #: src/app/templates/views/dashboard.tpl.html:76
@@ -1783,7 +1783,7 @@ msgstr ""
 
 #. table heading
 #: src/app/controllers/contacts.js:445
-#: src/app/controllers/message.js:323
+#: src/app/controllers/message.js:322
 #: src/app/templates/views/keys.tpl.html:125
 #: src/app/templates/views/keys.tpl.html:26
 #: src/app/templates/views/keys.tpl.html:75
@@ -1831,7 +1831,7 @@ msgstr ""
 
 #. Folder name
 #. no results heading
-#: src/app/controllers/secured.js:213
+#: src/app/controllers/secured.js:243
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:23
 #: src/app/templates/partials/sidebar.tpl.html:21
@@ -2115,7 +2115,7 @@ msgctxt "Error"
 msgid "Error during quering conversations"
 msgstr ""
 
-#: src/app/controllers/message.js:250
+#: src/app/controllers/message.js:249
 msgctxt "Error"
 msgid "Error during the decryption of the message"
 msgstr ""
@@ -2125,7 +2125,7 @@ msgctxt "Error"
 msgid "Error during the encryption"
 msgstr ""
 
-#: src/app/controllers/message.js:254
+#: src/app/controllers/message.js:253
 msgctxt "Error"
 msgid "Error during the getting message"
 msgstr ""
@@ -2247,7 +2247,7 @@ msgid "Filter name"
 msgstr ""
 
 #. custom domain menu
-#: src/app/controllers/secured.js:43
+#: src/app/controllers/secured.js:44
 #: src/app/templates/partials/menu.settings.tpl.html:12
 #: src/app/templates/partials/menu.settings.tpl.html:35
 msgctxt "Title"
@@ -2329,7 +2329,7 @@ msgctxt "Action"
 msgid "Fullscreen"
 msgstr ""
 
-#: src/app/controllers/message.js:728
+#: src/app/controllers/message.js:727
 msgid "Fw:"
 msgstr ""
 
@@ -2559,7 +2559,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:210
+#: src/app/controllers/secured.js:240
 #: src/app/directives/move.js:21
 #: src/app/templates/directives/location-tag.tpl.html:2
 #: src/app/templates/partials/no-results.tpl.html:15
@@ -2609,7 +2609,7 @@ msgctxt "Error"
 msgid "Invalid recovery email."
 msgstr ""
 
-#: src/app/controllers/secured.js:264
+#: src/app/controllers/secured.js:294
 #: src/app/controllers/settings/invoices.js:16
 #: src/app/templates/views/payments.tpl.html:41
 msgctxt "Title"
@@ -2679,7 +2679,7 @@ msgid "Keywords"
 msgstr ""
 
 #. no results heading
-#: src/app/controllers/secured.js:236
+#: src/app/controllers/secured.js:266
 #: src/app/templates/partials/no-results.tpl.html:23
 msgctxt "Title"
 msgid "Label"
@@ -2723,8 +2723,8 @@ msgid "Labels"
 msgstr ""
 
 #. custom domain menu
-#: src/app/controllers/secured.js:249
-#: src/app/controllers/secured.js:36
+#: src/app/controllers/secured.js:279
+#: src/app/controllers/secured.js:37
 #: src/app/templates/partials/menu.settings.tpl.html:34
 #: src/app/templates/partials/menu.settings.tpl.html:9
 msgctxt "Title"
@@ -2834,7 +2834,7 @@ msgctxt "Action"
 msgid "Login"
 msgstr ""
 
-#: src/app/controllers/secured.js:267
+#: src/app/controllers/secured.js:297
 msgctxt "Title"
 msgid "Login"
 msgstr ""
@@ -3554,7 +3554,7 @@ msgid "Payment methods"
 msgstr ""
 
 #. custom domain menu
-#: src/app/controllers/secured.js:42
+#: src/app/controllers/secured.js:43
 #: src/app/templates/partials/menu.settings.tpl.html:27
 #: src/app/templates/partials/menu.settings.tpl.html:38
 msgctxt "Title"
@@ -3777,7 +3777,7 @@ msgstr ""
 msgid "Quota updated"
 msgstr ""
 
-#: src/app/controllers/message.js:727
+#: src/app/controllers/message.js:726
 msgid "Re:"
 msgstr ""
 
@@ -3958,7 +3958,7 @@ msgid "Row"
 msgstr ""
 
 #: src/app/controllers/contacts.js:447
-#: src/app/controllers/message.js:325
+#: src/app/controllers/message.js:324
 msgctxt "Error"
 msgid "Safari does not fully support downloading contacts.<br /><br />Please login with a different browser to download contacts."
 msgstr ""
@@ -4042,8 +4042,8 @@ msgid "Seconds"
 msgstr ""
 
 #. custom domain menu
-#: src/app/controllers/secured.js:252
-#: src/app/controllers/secured.js:37
+#: src/app/controllers/secured.js:282
+#: src/app/controllers/secured.js:38
 #: src/app/templates/partials/menu.settings.tpl.html:15
 #: src/app/templates/partials/menu.settings.tpl.html:36
 msgctxt "Title"
@@ -4113,7 +4113,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:216
+#: src/app/controllers/secured.js:246
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/no-results.tpl.html:17
 #: src/app/templates/partials/sidebar-responsive.tpl.html:30
@@ -4252,7 +4252,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:225
+#: src/app/controllers/secured.js:255
 #: src/app/directives/move.js:23
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
@@ -4300,7 +4300,7 @@ msgstr ""
 
 #. Folder name
 #. no results heading
-#: src/app/controllers/secured.js:219
+#: src/app/controllers/secured.js:249
 #: src/app/templates/partials/no-results.tpl.html:20
 #: src/app/templates/partials/sidebar-responsive.tpl.html:37
 #: src/app/templates/partials/sidebar.tpl.html:37
@@ -4579,7 +4579,7 @@ msgstr ""
 #. Folder name
 #. location tag
 #. no results heading
-#: src/app/controllers/secured.js:228
+#: src/app/controllers/secured.js:258
 #: src/app/directives/move.js:24
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
@@ -4816,8 +4816,8 @@ msgctxt "Error"
 msgid "Username is required."
 msgstr ""
 
-#: src/app/controllers/secured.js:261
-#: src/app/controllers/secured.js:41
+#: src/app/controllers/secured.js:291
+#: src/app/controllers/secured.js:42
 #: src/app/templates/views/members.tpl.html:64
 msgctxt "Title"
 msgid "Users"
