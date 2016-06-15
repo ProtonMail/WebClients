@@ -47,6 +47,9 @@ angular.module('proton.models.setting', [])
         setViewMode: function(params) {
             return $http.put(url.get() + '/settings/viewmode', params);
         },
+        setHotkeys: function(params) {
+            return $http.put(url.get() + '/settings/hotkeys', params);
+        },
         invoiceText: function(params) {
             return $http.put(url.get() + '/settings/invoicetext', params);
         },
