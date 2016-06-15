@@ -731,7 +731,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.insertSignature = function(message) {
-
         message.Body = (angular.isUndefined(message.Body))? '' : message.Body;
 
         var content = (message.From.Signature === null)?authentication.user.Signature:message.From.Signature,
@@ -1113,7 +1112,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Resource} message - Message to save
      */
     $scope.changeFrom = function(message) {
-
         $scope.insertSignature(message);
 
         // save when DOM is updated
