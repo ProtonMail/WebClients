@@ -42,36 +42,43 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         $scope.markedMessage = null;
     });
 
-    $scope.$on('previousMessage', function(event) {
-        var index = $scope.messages.indexOf($scope.markedMessage);
+    $scope.$on('markPrevious', function(event) {
+        if ($scope.markedMessage) {
+            var index = $scope.messages.indexOf($scope.markedMessage);
 
-        if (index === -1) {
-            $scope.markedMessage = _.first($scope.messages);
-            $scope.$apply();
-            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
-        } else if (index > 0) {
-            $scope.markedMessage = $scope.messages[index - 1];
-            $scope.$apply();
-            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
+            if (index > 0) {
+                $scope.markedMessage = $scope.messages[index - 1];
+                $scope.$apply();
+                angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
+            }
         }
     });
 
-    $scope.$on('nextMessage', function(event) {
-        var index = $scope.messages.indexOf($scope.markedMessage);
+    $scope.$on('markNext', function(event) {
+        if ($scope.markedMessage) {
+            var index = $scope.messages.indexOf($scope.markedMessage);
 
-        if (index === -1) {
-            $scope.markedMessage = _.last($scope.messages);
-            $scope.$apply();
-            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
-        } else if (index < ($scope.messages.length - 1)) {
-            $scope.markedMessage = $scope.messages[index + 1];
-            $scope.$apply();
-            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
+            if (index < ($scope.messages.length - 1)) {
+                $scope.markedMessage = $scope.messages[index + 1];
+                $scope.$apply();
+                angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
+            }
         }
     });
 
     $scope.$on('toggleStar', function(event) {
         $scope.toggleStar();
+    });
+
+    $scope.$on('left', function(event) {
+        $scope.markedMessage = null;
+        $scope.$apply();
+    });
+
+    $scope.$on('right', function(event) {
+        $scope.markedMessage = _.first($scope.messages);
+        angular.element('#pm_thread')[0].focus();
+        $scope.$apply();
     });
 
     $scope.$on('escape', function(event) {
