@@ -41,31 +41,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             smsVerificationSent: false
         };
 
-
-        var IP = null;
-        $.get('https://api.ipify.org?format=json', function(r) {
-            console.log(r);
-            if (r.ip) {
-
-                // r.ip = '181.40.112.194';
-
-                $.ajax({
-                    url: 'http://api.stopforumspam.org/api?ip='+r.ip+'&f=json',
-                    dataType: 'jsonp',
-                    success: function(r) {
-                        if (r.ip) {
-                            if (r.ip.appears !== 0) {
-                                console.log('Probably a spammer.');
-                            }
-                            else {
-                                console.log('Looks ok.');
-                            }
-                        }
-                    }
-                });
-            }
-        });
-
         $scope.generating = false;
         $scope.domains = [];
 
