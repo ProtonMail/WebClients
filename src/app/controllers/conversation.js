@@ -76,9 +76,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     });
 
     $scope.$on('right', function(event) {
-        $scope.markedMessage = _.first($scope.messages);
-        angular.element('#pm_thread')[0].focus();
+        $scope.markedMessage = _.last($scope.messages);
         $scope.$apply();
+        angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
+        angular.element('#pm_thread')[0].focus();
     });
 
     $scope.$on('escape', function(event) {
