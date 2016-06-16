@@ -165,10 +165,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         $scope.$on('selectAllElements', function(event) {
             $scope.selectAllElements();
+            $scope.$apply();
         });
 
         $scope.$on('unselectAllElements', function(event) {
             $scope.unselectAllElements();
+            $scope.$apply();
         });
 
         $scope.$on('applyLabels', function(event, LabelID) {
