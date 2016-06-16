@@ -506,7 +506,7 @@ angular.module("proton.modals", [])
                     Currency: params.currency
                 };
 
-                if (this.choice.value === 'card' && this.methods.length > 0) {
+                if (this.amountDue > 0 && this.choice.value === 'card' && this.methods.length > 0) {
                     parameters.PaymentMethodID = this.method.ID;
                 }
 
@@ -1770,7 +1770,7 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/hotkey.tpl.html',
         controller: function(params) {
             this.isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
-            
+
             if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
                 this.mode = 'row';
             } else if (authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
