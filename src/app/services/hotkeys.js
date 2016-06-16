@@ -40,18 +40,6 @@ angular.module('proton.hotkeys', [])
         $rootScope.$broadcast('openMarked');
     };
 
-    var nextMessage = function(event) {
-        $rootScope.$broadcast('nextMessage');
-
-        return false;
-    };
-
-    var previousMessage = function(event) {
-        $rootScope.$broadcast('previousMessage');
-
-        return false;
-    };
-
     var read = function(event) {
         $rootScope.$broadcast('read');
 
@@ -184,6 +172,18 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
+    var left = function(event) {
+        $rootScope.$broadcast('left');
+
+        return false;
+    };
+
+    var right = function(event) {
+        $rootScope.$broadcast('right');
+
+        return false;
+    };
+
     var slash = function(event) {
         var inputs = angular.element('.query');
 
@@ -200,8 +200,6 @@ angular.module('proton.hotkeys', [])
         {keyboard: 'k', callback: nextConversation},
         {keyboard: 'j', callback: previousConversation},
         {keyboard: 'enter', callback: openMarked},
-        {keyboard: 'p', callback: previousMessage},
-        {keyboard: 'n', callback: nextMessage},
         {keyboard: 'r', callback: read},
         {keyboard: 'u', callback: unread},
         {keyboard: '.', callback: toggleStar},
@@ -220,6 +218,8 @@ angular.module('proton.hotkeys', [])
         {keyboard: '* a', callback: selectAll},
         {keyboard: '* n', callback: unselectAll},
         {keyboard: 'x', callback: selectMark},
+        {keyboard: 'left', callback: left},
+        {keyboard: 'right', callback: right},
         {keyboard: 'up', callback: markPrevious},
         {keyboard: 'down', callback: markNext},
         {keyboard: 'escape', callback: escape},
