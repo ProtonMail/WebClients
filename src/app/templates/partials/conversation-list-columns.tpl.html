@@ -15,7 +15,6 @@
         expiring: (conversation.ExpirationTime > 0)
     }">
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-        <div class="selected-bar"></div>
         <div class="selection">
             <input type="checkbox" ng-model="conversation.Selected" class="mousetrap" ng-click="$event.stopPropagation();select($event, conversation)" />
             <a

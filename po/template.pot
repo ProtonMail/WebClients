@@ -758,7 +758,7 @@ msgctxt "Info"
 msgid "Are you sure you want to unlink this address?"
 msgstr ""
 
-#: src/app/controllers/conversations.js:939
+#: src/app/controllers/conversations.js:943
 msgctxt "Info"
 msgid "Are you sure?"
 msgstr ""
@@ -829,7 +829,7 @@ msgid "Basic"
 msgstr ""
 
 #. printed message info
-#: src/app/controllers/compose.js:1651
+#: src/app/controllers/compose.js:1649
 #: src/app/templates/partials/composer.tpl.html:153
 #: src/app/templates/partials/conversation.tpl.html:138
 #: src/app/templates/views/message.print.tpl.html:46
@@ -959,7 +959,7 @@ msgstr ""
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1641
+#: src/app/controllers/compose.js:1639
 #: src/app/templates/partials/composer.tpl.html:149
 #: src/app/templates/partials/conversation.tpl.html:124
 #: src/app/templates/views/message.print.tpl.html:39
@@ -1195,7 +1195,7 @@ msgctxt "Title"
 msgid "Confirm Password"
 msgstr ""
 
-#: src/app/controllers/conversations.js:938
+#: src/app/controllers/conversations.js:942
 msgctxt "Title"
 msgid "Confirmation"
 msgstr ""
@@ -2110,7 +2110,7 @@ msgctxt "Error"
 msgid "Error during organization request"
 msgstr ""
 
-#: src/app/controllers/conversations.js:375
+#: src/app/controllers/conversations.js:379
 msgctxt "Error"
 msgid "Error during quering conversations"
 msgstr ""
@@ -2269,7 +2269,7 @@ msgctxt "Action"
 msgid "Finish"
 msgstr ""
 
-#: src/app/controllers/conversations.js:964
+#: src/app/controllers/conversations.js:968
 msgid "Folder emptied"
 msgstr ""
 
@@ -2745,7 +2745,7 @@ msgctxt "Title"
 msgid "Layout"
 msgstr ""
 
-#: src/app/controllers/conversations.js:676
+#: src/app/controllers/conversations.js:680
 #: src/app/controllers/settings/appearance.js:87
 msgid "Layout saved"
 msgstr ""
@@ -3010,7 +3010,7 @@ msgctxt "Title"
 msgid "Members"
 msgstr ""
 
-#: src/app/controllers/compose.js:1617
+#: src/app/controllers/compose.js:1615
 msgid "Message discarded"
 msgstr ""
 
@@ -3023,11 +3023,11 @@ msgctxt "Title"
 msgid "Message Password"
 msgstr ""
 
-#: src/app/controllers/compose.js:1253
+#: src/app/controllers/compose.js:1251
 msgid "Message saved"
 msgstr ""
 
-#: src/app/controllers/compose.js:1471
+#: src/app/controllers/compose.js:1469
 #: src/app/controllers/outside.js:144
 msgid "Message sent"
 msgstr ""
@@ -3191,7 +3191,7 @@ msgstr ""
 msgid "New mailbox password"
 msgstr ""
 
-#: src/app/controllers/compose.js:1306
+#: src/app/controllers/compose.js:1304
 msgctxt "Title"
 msgid "New message"
 msgstr ""
@@ -3278,12 +3278,12 @@ msgctxt "Info"
 msgid "No results for this search in your contacts list."
 msgstr ""
 
-#: src/app/controllers/compose.js:1316
+#: src/app/controllers/compose.js:1314
 msgctxt "Title"
 msgid "No subject"
 msgstr ""
 
-#: src/app/controllers/compose.js:1317
+#: src/app/controllers/compose.js:1315
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr ""
@@ -4233,7 +4233,7 @@ msgctxt "Title"
 msgid "SMS verification"
 msgstr ""
 
-#: src/app/controllers/signup.js:241
+#: src/app/controllers/signup.js:216
 msgctxt "Error"
 msgid "Something went wrong"
 msgstr ""
@@ -4425,7 +4425,7 @@ msgctxt "Info"
 msgid "This can take a few seconds or a few minutes depending on your device."
 msgstr ""
 
-#: src/app/controllers/conversations.js:939
+#: src/app/controllers/conversations.js:943
 msgid "This cannot be undone."
 msgstr ""
 
@@ -4521,7 +4521,7 @@ msgstr ""
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1631
+#: src/app/controllers/compose.js:1629
 #: src/app/templates/partials/composer.tpl.html:142
 #: src/app/templates/partials/conversation.tpl.html:110
 #: src/app/templates/views/message.print.tpl.html:32
@@ -4795,8 +4795,8 @@ msgctxt "Title"
 msgid "Username"
 msgstr ""
 
-#: src/app/controllers/signup.js:349
-#: src/app/controllers/signup.js:355
+#: src/app/controllers/signup.js:324
+#: src/app/controllers/signup.js:330
 msgctxt "Error"
 msgid "Username already taken"
 msgstr ""
@@ -4806,7 +4806,7 @@ msgctxt "Title"
 msgid "Username and domain"
 msgstr ""
 
-#: src/app/controllers/signup.js:372
+#: src/app/controllers/signup.js:347
 msgctxt "Error"
 msgid "Username invalid"
 msgstr ""

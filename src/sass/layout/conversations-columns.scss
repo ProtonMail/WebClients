@@ -4,15 +4,6 @@
     box-shadow: inset 0 -1px 0 $border;
     overflow: hidden;
     position: relative;
-    .selected-bar {
-        background: $primary;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 0;
-    }
     .selection {
         float: left;
         height: 30px;
@@ -193,14 +184,7 @@
         }
     }
     &.selected {
-        .selected-bar {
-            width: 5px;
-            -webkit-transition: width .25s ease;
-               -moz-transition: width .25s ease;
-                -ms-transition: width .25s ease;
-                 -o-transition: width .25s ease;
-                    transition: width .25s ease;
-        }
+        
     }
     &.hasLabels {
         .row .senders {

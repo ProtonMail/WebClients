@@ -10,7 +10,6 @@
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-        <div class="selected-bar"></div>
         <label><input type="checkbox" ng-model="conversation.Selected" class="mousetrap" ng-click="$event.stopPropagation();select($event, conversation)" />
         <a href="#" ng-click="conversation.Selected = !conversation.Selected;select($event, conversation);" class="fa" ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a></label>
         <a
