@@ -191,6 +191,8 @@ angular.module('proton.controllers.Settings')
                              if (result === true) {
                                  // Set invoice state to PAID
                                  invoice.State = 1;
+                                 // Display a success notification
+                                 notify({message: gettextCatalog.getString('Invoice paid', null, 'Info'), classes: 'notification-success'});
                              }
                          }
                      }
