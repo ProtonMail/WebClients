@@ -167,6 +167,9 @@
         &.mini {
             width: 5rem;
         }
+        &.search {
+            border-radius: 32px;
+        }
     }
 
     select:active,
