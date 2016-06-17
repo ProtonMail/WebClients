@@ -22,6 +22,20 @@
                 <span ng-hide="showTrashed === true">Show trashed messages</span>
             </a>
         </p>
+        <p ng-show="nonSpammed() && inSpam === true" class="alert">
+            <span translate translate-context="Info">This conversation contains non-spammed messages.</span>
+            <a href="#" ng-click="toggleNonSpammed()">
+                <span ng-show="showNonSpammed === true">Hide non spammed messages</span>
+                <span ng-hide="showNonSpammed === true">Show non spammed messages</span>
+            </a>
+        </p>
+        <p ng-show="spammed() && inSpam === false" class="alert">
+            <span translate translate-context="Info">This conversation contains spammed messages.</span>
+            <a href="#" ng-click="toggleSpammed()">
+                <span ng-show="showSpammed === true">Hide spammed messages</span>
+                <span ng-hide="showSpammed === true">Show spammed messages</span>
+            </a>
+        </p>
     </div>
 </header>
 <div id="pm_thread" pt-height>
