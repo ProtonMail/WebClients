@@ -58,7 +58,7 @@ module.exports = {
       "vendor/angular-messages/angular-messages.js",
       "vendor/svgeezy/svgeezy.js",
       "vendor/mousetrap/mousetrap.js",
-      "vendor/html5-desktop-notifications/desktop-notify.js",
+      "vendor/push.js/push.js",
       "vendor/angular-gettext/dist/angular-gettext.js"
     ],
     bootstrap_components: [
