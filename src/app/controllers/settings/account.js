@@ -47,7 +47,10 @@ angular.module('proton.controllers.Settings')
     $scope.testDesktopNotification = function() {
         desktopNotifications.create(gettextCatalog.getString('You have a new email', null, 'Info'), {
             body: 'Quarterly Operations Update - Q1 2016 ',
-            icon: '/assets/img/notification-badge.gif'
+            icon: '/assets/img/notification-badge.gif',
+            onClick: function(event) {
+                window.focus();
+            }
         });
     };
 

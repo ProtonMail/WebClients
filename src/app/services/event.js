@@ -232,7 +232,10 @@ angular.module("proton.event", ["proton.constants"])
 
 							desktopNotifications.create(title, {
 					            body: message.Message.Subject,
-					            icon: '/assets/img/notification-badge.gif'
+					            icon: '/assets/img/notification-badge.gif',
+								onClick: function(event) {
+									window.focus();
+								}
 					        });
 						}
 					});
@@ -373,7 +376,7 @@ angular.module("proton.event", ["proton.constants"])
 					if (window.sessionStorage) {
 						eventModel.ID = window.sessionStorage[CONSTANTS.EVENT_ID];
 					}
-					
+
 					eventModel.promiseCancel = $timeout(eventModel.interval, 0);
 				}
 			},
