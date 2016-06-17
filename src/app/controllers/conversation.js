@@ -28,9 +28,12 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.conversation = conversation;
     $scope.showTrashed = false;
     $scope.showNonTrashed = false;
+    $scope.showSpammed = false;
+    $scope.showNonSpammed = false;
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
     $scope.inTrash = $state.is('secured.trash.view');
+    $scope.inSpam = $state.is('secured.spam.view');
     $scope.markedMessage = null;
 
     // Listeners
@@ -100,7 +103,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             var labels = conversation.LabelIDs;
             var messages = cache.queryMessagesCached($scope.conversation.ID);
 
-            if($state.is('secured.starred.view') === false && $state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
+            if ($state.is('secured.starred.view') === false && $state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
                 // Remove trashed message
                 if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
@@ -109,6 +112,16 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 // Remove non trashed message
                 if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
+                }
+
+                // Remove spammed message
+                if ($state.is('secured.spam.view') === false && $scope.showSpammed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1; });
+                }
+
+                // Remove non spammed message
+                if ($state.is('secured.spam.view') === true && $scope.showNonSpammed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) === -1; });
                 }
             }
 
@@ -184,7 +197,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         var messages = cache.queryMessagesCached($stateParams.id);
         var loc = tools.currentLocation();
 
-        if(angular.isDefined(conversation)) {
+        if (angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
 
             if(labels.indexOf(loc) !== -1 || loc === CONSTANTS.MAILBOX_IDENTIFIERS.search) {
@@ -196,7 +209,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             return $scope.back();
         }
 
-        if(angular.isArray(messages) && messages.length > 0) {
+        if (angular.isArray(messages) && messages.length > 0) {
             var toAdd = [];
             var toRemove = [];
             var index, message, found, ref;
@@ -213,6 +226,16 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 // Remove non trashed message
                 if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
+                }
+
+                // Remove spammed message
+                if ($state.is('secured.spam.view') === false && $scope.showSpammed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1; });
+                }
+
+                // Remove non spammed message
+                if ($state.is('secured.spam.view') === true && $scope.showNonSpammed === false) {
+                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) === -1; });
                 }
             }
 
@@ -262,6 +285,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     };
 
     /**
+     * Return if there are spammed message inside this conversation
+     * @return {Boolean}
+     */
+    $scope.spammed = function() {
+        return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1;
+    };
+
+    /**
      * Return if there are non trashed message inside this conversation
      * @return {Boolean}
      */
@@ -272,6 +303,30 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
             CONSTANTS.MAILBOX_IDENTIFIERS.sent,
             CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+            CONSTANTS.MAILBOX_IDENTIFIERS.starred,
+            CONSTANTS.MAILBOX_IDENTIFIERS.archive
+        ];
+
+        _.each($scope.conversation.LabelIDs, function(labelID) {
+            if (locations.indexOf(labelID) !== -1) {
+                result = true;
+            }
+        });
+
+        return result;
+    };
+
+    /**
+     * Return if there are non spammed message inside this conversation
+     * @return {Boolean}
+     */
+    $scope.nonTrashed = function() {
+        var result = false;
+        var locations = [
+            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
+            CONSTANTS.MAILBOX_IDENTIFIERS.trash,
             CONSTANTS.MAILBOX_IDENTIFIERS.starred,
             CONSTANTS.MAILBOX_IDENTIFIERS.archive
         ];
@@ -298,6 +353,22 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     $scope.toggleNonTrashed = function() {
         $scope.showNonTrashed = !$scope.showNonTrashed;
+        $scope.refreshConversation();
+    };
+
+    /**
+     * Toggle spammed messages
+     */
+    $scope.toggleSpammed = function() {
+        $scope.showSpammed = !$scope.showSpammed;
+        $scope.refreshConversation();
+    };
+
+    /**
+     * Toggle non spammed messages
+     */
+    $scope.toggleNonSpammed = function() {
+        $scope.showNonSpammed = !$scope.showNonSpammed;
         $scope.refreshConversation();
     };
 
