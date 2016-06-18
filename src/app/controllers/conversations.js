@@ -901,6 +901,21 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
+     * Select conversations by read or unread
+     * @param {Boolean} isRead
+     */
+    $scope.selectReadOrUnread = function(isRead) {
+      _.each($scope.conversations, function(element) {
+          if(isRead) {
+              element.Selected = element.NumUnread === 0 || element.IsRead === 1;
+          }
+          else {
+              element.Selected = element.NumUnread > 0 || element.IsRead === 0;
+          }
+      });
+    };
+
+    /**
      * Filter current list
      * @param {String}
      */

@@ -4290,6 +4290,16 @@ msgctxt "Title"
 msgid "Select payment method:"
 msgstr "Select payment method:"
 
+#: src/app/templates/partials/toolbar-desktop.tpl.html:23
+msgctxt "Action"
+msgid "Select read"
+msgstr "Select read"
+
+#: src/app/templates/partials/toolbar-desktop.tpl.html:19
+msgctxt "Action"
+msgid "Select unread"
+msgstr "Select unread"
+
 #: src/app/templates/modals/feedback.tpl.html:16
 #: src/app/templates/partials/composer.tpl.html:248
 #: src/app/templates/views/outside.reply.tpl.html:38
@@ -8375,6 +8385,12 @@ msgstr "ZIP code"
 
 #~ msgid "Select payment method:"
 #~ msgstr "Select payment method:"
+
+#~ msgid "Select read"
+#~ msgstr "Select read"
+
+#~ msgid "Select unread"
+#~ msgstr "Select unread"
 
 #~ msgid "Send"
 #~ msgstr "Send"
