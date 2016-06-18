@@ -4264,6 +4264,16 @@ msgctxt "Title"
 msgid "Select payment method:"
 msgstr "Sélectionnez un mode de paiement :"
 
+#: src/app/templates/partials/toolbar-desktop.tpl.html:23
+msgctxt "Action"
+msgid "Select read"
+msgstr "Sélectionner lu"
+
+#: src/app/templates/partials/toolbar-desktop.tpl.html:19
+msgctxt "Action"
+msgid "Select unread"
+msgstr "Sélectionner non lu"
+
 #: src/app/templates/modals/feedback.tpl.html:16
 #: src/app/templates/partials/composer.tpl.html:248
 #: src/app/templates/views/outside.reply.tpl.html:38

@@ -4,9 +4,22 @@
             <i class="fa fa-long-arrow-left"></i>
         </a>
     </span>
-    <label class="pm_checkbox" ng-if="!idDefined() || layoutMode === 'columns'">
-        <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip-translate="Select all messages" pt-tooltip-translate-context="Action">
-    </label>
+    <span class="pm_buttons" ng-if="!idDefined() || layoutMode === 'columns'">
+      <a class="pm_trigger" dropdown>
+          <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected();$event.stopPropagation()" ng-disabled="numberElement === 0" pt-tooltip-translate="Select all messages" pt-tooltip-translate-context="Action">
+          <i class="fa fa-angle-down"></i>
+      </a>
+      <span class="pm_dropdown wider">
+          <a href="#" ng-click="selectReadOrUnread(false)">
+              <i class="fa fa-eye-slash"></i>
+              <span translate translate-context="Action">Select unread</span>
+          </a>
+          <a href="#" ng-click="selectReadOrUnread(true)">
+              <i class="fa fa-eye"></i>
+              <span translate translate-context="Action">Select read</span>
+          </a>
+      </span>
+    </span>
     <span ng-show="messageButtons === 1" class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
         <a href="#" class="fa fa-eye-slash" pt-tooltip-translate="Mark as unread" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate-context="Action"></a>
         <a href="#" class="fa fa-eye divider" pt-tooltip-translate="Mark as read" ng-click="read()" ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate-context="Action"></a>
