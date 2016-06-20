@@ -32,6 +32,11 @@ angular.module("proton.controllers.Outside", [
     var token_id = $stateParams.tag;
 
     $scope.initialization = function() {
+        // Manage responsive changes
+        angular.element(window).bind('resize', _.debounce(tools.mobileResponsive, 50));
+        angular.element(window).bind('orientationchange', tools.mobileResponsive);
+        tools.mobileResponsive();
+
         if (message.displayMessage === true) {
             message.Body = $scope.clean(message.Body);
             message.imagesHidden = tools.containsImage(message.Body);
