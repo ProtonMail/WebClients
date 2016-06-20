@@ -1052,6 +1052,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.validate = function(message) {
         var deferred = $q.defer();
 
+        angular.element('input').blur();
+
         // We delay the validation to let the time for the autocomplete
         $timeout(function() {
             // set msgBody input element to editor content
@@ -1102,7 +1104,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
 
             deferred.resolve();
-        }, 250);
+        }, 500);
 
         return deferred.promise;
     };
