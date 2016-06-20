@@ -55,43 +55,10 @@ angular.module("proton.controllers.Secured", [])
         hotkeys.bind();
     }
 
-    // Set the rows / columns mode
-    if (angular.isDefined(authentication.user) && angular.isDefined(authentication.user.ViewLayout)) {
-        if (authentication.user.ViewLayout === 0) {
-            $rootScope.layoutMode = 'columns';
-        } else {
-            $rootScope.layoutMode = 'rows';
-        }
-    }
-
-    $scope.mobileResponsive = function() {
-        var bodyWidth = $('body').outerWidth();
-
-        // Force Mobile
-        if (bodyWidth > CONSTANTS.MOBILE_BREAKPOINT) {
-            $rootScope.mobileMode = false;
-
-            if (authentication.user && authentication.user.ViewLayout === 0 && $rootScope.rowMode) {
-                $rootScope.rowMode = false;
-                $rootScope.layoutMode = 'columns';
-            } else if (authentication.user && authentication.user.ViewLayout === 1) {
-                $rootScope.rowMode = true;
-                $rootScope.layoutMode = 'rows';
-            }
-        } else if (bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT) {
-            $rootScope.mobileMode = true;
-            $rootScope.rowMode = false;
-            $rootScope.layoutMode = 'columns';
-        }
-
-        $rootScope.$broadcast('tourEnd');
-    };
-
-    angular.element($window).bind('resize', _.debounce(function() {
-        $scope.mobileResponsive();
-    }, 50));
-
-    angular.element($window).bind('orientationchange', $scope.mobileResponsive());
+    // Manage responsive changes
+    angular.element(window).bind('resize', _.debounce(tools.mobileResponsive, 50));
+    angular.element(window).bind('orientationchange', tools.mobileResponsive);
+    tools.mobileResponsive();
 
     // Set event ID
     eventManager.start(authentication.user.EventID);

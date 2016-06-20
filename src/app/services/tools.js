@@ -1,5 +1,5 @@
 angular.module("proton.tools", ["proton.constants"])
-.factory("tools", function($log, $state, $stateParams, $compile, $templateCache, $q, CONSTANTS) {
+.factory("tools", function($log, $state, $stateParams, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS) {
     var tools = {};
 
     tools.hasSessionStorage = function() {
@@ -16,6 +16,27 @@ angular.module("proton.tools", ["proton.constants"])
 
     tools.hasCookie = function() {
         return navigator.cookieEnabled;
+    };
+
+    tools.mobileResponsive = function() {
+        var bodyWidth = $('body').outerWidth();
+
+        // Force Mobile
+        if (bodyWidth > CONSTANTS.MOBILE_BREAKPOINT) {
+            $rootScope.mobileMode = false;
+
+            if (authentication.user && authentication.user.ViewLayout === 0 && $rootScope.rowMode) {
+                $rootScope.rowMode = false;
+                $rootScope.layoutMode = 'columns';
+            } else if (authentication.user && authentication.user.ViewLayout === 1) {
+                $rootScope.rowMode = true;
+                $rootScope.layoutMode = 'rows';
+            }
+        } else if (bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT) {
+            $rootScope.mobileMode = true;
+            $rootScope.rowMode = false;
+            $rootScope.layoutMode = 'columns';
+        }
     };
 
     tools.colors = function() {
