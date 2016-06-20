@@ -35,3 +35,14 @@ It will conflict with email rendering if the selectors are not specific or neste
 		float: left;
 	}
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+     /* webkit CSS here*/
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"],
+    input[type="search"]{
+		line-height: normal !important;
+	}
+}
