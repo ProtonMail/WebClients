@@ -195,11 +195,13 @@ angular.module("proton.tools", ["proton.constants"])
         var url = new RegExp(/url\(/ig);
         var svg = new RegExp('(svg)', 'g');
         var src = new RegExp('(src=)', 'g');
+        var bg = new RegExp('(background=)', 'g');
         var poster = new RegExp('(poster=)', 'g');
 
         html = replace(svg,html);
         html = replace(url,html);
         html = replace(src,html);
+        html = replace(bg,html);
         html = replace(poster,html);
 
         return html;
@@ -207,7 +209,7 @@ angular.module("proton.tools", ["proton.constants"])
 
     tools.fixImages = function(html) {
 
-        var re = new RegExp('(proton-url|proton-src|proton-svg|proton-poster)', 'g');
+        var re = new RegExp('(proton-url|proton-src|proton-svg|proton-background|proton-poster)', 'g');
 
         html = html.replace(re, function(match, $1, $2, offset, original) {
             return $1.substring(7);
@@ -440,9 +442,11 @@ angular.module("proton.tools", ["proton.constants"])
 
         var url = new RegExp(/url\(/ig);
         var src = new RegExp('src=', 'g');
+        var bg = new RegExp('background=', 'g');
+        var poster = new RegExp('poster=', 'g');
         var svg = new RegExp('svg', 'g');
 
-        var re = new RegExp(url.source + "|" + src.source + "|" + svg.source );
+        var re = new RegExp(url.source + "|" + src.source + "|" + bg.source + "|" + poster.source + "|" + svg.source );
         return re.test(content);
 
     };
