@@ -1,24 +1,29 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings" id="labelContainer">
-        <p>
-            <button type="button" class="pm_button primary" ng-click="createLabel()" translate-context="Action" translate>Add</button>
-        </p>
-        <p class="alert alert-info" ng-show="labels.length === 0" translate-context="Info" translate>You have no labels, you can add label with the above button 'ADD LABEL'.</p>
-        <div class="pm_sort" ng-show="labels.length > 0">
-            <ul data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
-                <li ng-repeat="label in labels | orderBy: 'Order'" as-sortable-item="">
-                    <span as-sortable-item-handle="">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-tag" ng-style="{ 'color': label.Color }"></i>
-                        <span class="label label-pm">{{ label.Name }}</span>
-                        <span class="pull-right">
-                            <button type="button" class="pm_button link" ng-click="editLabel(label)" translate-context="Action" translate>Edit</button>
-                            <button type="button" class="pm_button link" ng-click="deleteLabel(label)" translate-context="Action" translate>Delete</button>
-                        </span>
-                    </span>
-                </li>
-            </ul>
+        <div class="row">
+            <div class="setting pm_form full">
+                <legend translate translate-context="Title">Labels</legend>
+                <p>
+                    <button type="button" class="pm_button primary" ng-click="createLabel()" translate-context="Action" translate>Add Label</button>
+                </p>
+                <p class="alert alert-info" ng-show="labels.length === 0" translate-context="Info" translate>You have no labels, you can add label with the above button 'ADD LABEL'.</p>
+                <div class="pm_sort" ng-show="labels.length > 0">
+                    <ul data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
+                        <li ng-repeat="label in labels | orderBy: 'Order'" as-sortable-item="">
+                            <span as-sortable-item-handle="">
+                                <i class="fa fa-ellipsis-v"></i>
+                                <i class="fa fa-tag" ng-style="{ 'color': label.Color }"></i>
+                                <span class="label label-pm">{{ label.Name }}</span>
+                                <span class="pull-right">
+                                    <button type="button" class="pm_button link" ng-click="editLabel(label)" translate-context="Action" translate>Edit</button>
+                                    <button type="button" class="pm_button link" ng-click="deleteLabel(label)" translate-context="Action" translate>Delete</button>
+                                </span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
