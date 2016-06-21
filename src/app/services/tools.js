@@ -181,7 +181,7 @@ angular.module("proton.tools", ["proton.constants"])
             return false;
         }
     };
-
+    
     tools.breakImages = function(html) {
 
         function replace(regex,html) {
@@ -191,18 +191,10 @@ angular.module("proton.tools", ["proton.constants"])
             });
 
         }
+        
+        var re = new RegExp('(url|svg|src=|background=|poster=)', 'g');
+        html = replace(re,html);
 
-        var url = new RegExp(/url\(/ig);
-        var svg = new RegExp('(svg)', 'g');
-        var src = new RegExp('(src=)', 'g');
-        var bg = new RegExp('(background=)', 'g');
-        var poster = new RegExp('(poster=)', 'g');
-
-        html = replace(svg,html);
-        html = replace(url,html);
-        html = replace(src,html);
-        html = replace(bg,html);
-        html = replace(poster,html);
 
         return html;
     };
