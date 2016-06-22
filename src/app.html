@@ -63,18 +63,12 @@
     scroll: ('step1'|isState) || ('secured.print'|isState),
     modalOpen: modalOpen,
     mobileMode: mobileMode,
-    rows: (layoutMode==='rows'),
     tourActive: tourActive,
     themeJason: themeJason,
     mobileSidebarActive: (showSidebar && mobileMode)
 }">
 
-<div
-id="pm_background"
-ng-hide="mobileMode"
-ng-class="{ 'tablet': showSidebar }"
-ng-click="showSidebar = false"
-ng-hide="printMode"></div>
+<div id="pm_background" ng-hide="mobileMode || printMode" ng-class="{ 'tablet': showSidebar }" ng-click="showSidebar = false"></div>
 
 <div id="pm_slow">Loading ProtonMail...</div>
 <div id="pm_slow2" style="display:none;">Loading Message...</div>

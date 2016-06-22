@@ -3,7 +3,7 @@
 
 <ng-include src="'templates/partials/sidebar.tpl.html'" id="pm_sidebar"></ng-include>
 
-<div id="pm_main" ui-view="content"></div>
+<div id="pm_main" ng-class="{rows: user.ViewLayout === 1}" ui-view="content"></div>
 
 <!-- Composer controller -->
 <ng-include src="'templates/partials/composer.tpl.html'" id="pm_composer"></ng-include>

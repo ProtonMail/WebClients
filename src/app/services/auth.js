@@ -613,7 +613,7 @@ angular.module("proton.authentication", [
         var form = {
             OS: tools.getOs(),
             OSVersion: '',
-            DisplayMode: $rootScope.layoutMode,
+            DisplayMode: authentication.user.ViewLayout === 1 ? 'row' : 'column',
             Resolution: window.innerHeight + ' x ' + window.innerWidth ,
             Browser: tools.getBrowser(),
             BrowserVersion: tools.getBrowserVersion(),

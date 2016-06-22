@@ -21,21 +21,10 @@ angular.module("proton.tools", ["proton.constants"])
     tools.mobileResponsive = function() {
         var bodyWidth = $('body').outerWidth();
 
-        // Force Mobile
         if (bodyWidth > CONSTANTS.MOBILE_BREAKPOINT) {
             $rootScope.mobileMode = false;
-
-            if (authentication.user && authentication.user.ViewLayout === 0 && $rootScope.rowMode) {
-                $rootScope.rowMode = false;
-                $rootScope.layoutMode = 'columns';
-            } else if (authentication.user && authentication.user.ViewLayout === 1) {
-                $rootScope.rowMode = true;
-                $rootScope.layoutMode = 'rows';
-            }
         } else if (bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT) {
             $rootScope.mobileMode = true;
-            $rootScope.rowMode = false;
-            $rootScope.layoutMode = 'columns';
         }
     };
 
@@ -181,7 +170,7 @@ angular.module("proton.tools", ["proton.constants"])
             return false;
         }
     };
-    
+
     tools.breakImages = function(html) {
 
         function replace(regex,html) {
@@ -191,7 +180,7 @@ angular.module("proton.tools", ["proton.constants"])
             });
 
         }
-        
+
         var re = new RegExp('(url|svg|src=|background=|poster=)', 'g');
         html = replace(re,html);
 
