@@ -1,4 +1,4 @@
-#step1 {
+#subscription {
     iframe#pm_captcha {
         outline: none;
         border: none;
@@ -125,7 +125,7 @@
 }
 
 body.mobileMode {
-    &#step1 {
+    &#subscription {
         .container-fluid .row > div > p {
             display: none;
         }
