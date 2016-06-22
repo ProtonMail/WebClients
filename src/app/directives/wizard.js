@@ -34,30 +34,31 @@ angular.module('proton.wizard', [])
                 });
             };
 
-            var monetize = function() {
-                monetizeModal.activate({
-                    params: {
-                        donate: function(amount, currency) {
-                            // Close monetize modal
-                            monetizeModal.deactivate();
-                            // Open donate modal
-                            donate(amount, currency);
-                        },
-                        upgrade: function() {
-                            // Close monetize modal
-                            monetizeModal.deactivate();
-                            // Go to the dashboard page
-                            $state.go('secured.dashboard', {scroll: true});
-                        },
-                        close: function() {
-                            // Close monetize modal
-                            monetizeModal.deactivate();
-                            // Start tour
-                            scope.tourStart();
-                        }
-                    }
-                });
-            };
+            // NOTE Not used since upsell during the signup process
+            // var monetize = function() {
+            //     monetizeModal.activate({
+            //         params: {
+            //             donate: function(amount, currency) {
+            //                 // Close monetize modal
+            //                 monetizeModal.deactivate();
+            //                 // Open donate modal
+            //                 donate(amount, currency);
+            //             },
+            //             upgrade: function() {
+            //                 // Close monetize modal
+            //                 monetizeModal.deactivate();
+            //                 // Go to the dashboard page
+            //                 $state.go('secured.dashboard', {scroll: true});
+            //             },
+            //             close: function() {
+            //                 // Close monetize modal
+            //                 monetizeModal.deactivate();
+            //                 // Start tour
+            //                 scope.tourStart();
+            //             }
+            //         }
+            //     });
+            // };
 
             var welcome = function() {
                 welcomeModal.activate({
@@ -67,8 +68,8 @@ angular.module('proton.wizard', [])
                         },
                         next: function(displayName) {
                             welcomeModal.deactivate();
-                            // Open monetize modal
-                            monetize();
+                            // Start tour
+                            scope.tourStart();
                         }
                     }
                 });
