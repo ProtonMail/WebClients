@@ -437,7 +437,7 @@ angular.module('proton', [
         var isUpgrade = (toState.name === "upgrade");
         var isSupport = (toState.name.includes("support"));
         var isAccount = (toState.name === "account");
-        var isSignup = (toState.name === "signup" || toState.name === "subscription" || toState.name === "pre-invite");
+        var isSignup = (toState.name === "signup" || toState.name === "step1" || toState.name === "step2" || toState.name === "pre-invite");
         var isUnlock = (toState.name === "login.unlock");
         var isOutside = (toState.name.includes("eo"));
         var isReset = (toState.name.includes("reset"));

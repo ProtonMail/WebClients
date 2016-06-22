@@ -3,7 +3,6 @@ angular.module("proton.controllers.Secured", [])
 .controller("SecuredController", function(
     $cookies,
     $filter,
-    $q,
     $rootScope,
     $scope,
     $state,
@@ -20,11 +19,7 @@ angular.module("proton.controllers.Secured", [])
     generateModal,
     gettextCatalog,
     hotkeys,
-    notify,
     organization,
-    Organization,
-    Payment,
-    pmcw,
     tools
 ) {
     var dirtyAddresses = [];
@@ -58,74 +53,6 @@ angular.module("proton.controllers.Secured", [])
     // Enable hotkeys
     if (authentication.user.Hotkeys === 1) {
         hotkeys.bind();
-    }
-
-    // if the user subscribed to a plan during the signup process
-    if ($rootScope.payer && $rootScope.payer.Amount === authentication.user.Credit) {
-        var subscribe = function() {
-            var deferred = $q.defer();
-
-            Payment.subscribe({
-                Amount : 0,
-                Currency : $rootScope.payer.Currency,
-                PlanIDs: [$rootScope.payer.ID]
-            }).then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    deferred.resolve();
-                } else if (result.data && result.data.Error) {
-                    deferred.reject(new Error(result.data.Error));
-                }
-            });
-
-            return deferred.promise;
-        };
-
-        var organizationKey = function() {
-            var deferred = $q.defer();
-            var mailboxPassword = authentication.getPassword();
-
-            pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
-            .then(function(response) {
-                var privateKey = response.privateKeyArmored;
-
-                deferred.resolve({
-                    DisplayName: gettextCatalog.getString('My organization', null, 'Title'),
-                    PrivateKey: privateKey,
-                    BackupPrivateKey: privateKey
-                });
-            }, function(error) {
-                deferred.reject(new Error('Error during the generation of new keys for pm_org_admin'));
-            });
-
-            return deferred.promise;
-        };
-
-        var createOrganization = function(parameters) {
-            var deferred = $q.defer();
-
-            Organization.create(parameters)
-            .then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    deferred.resolve(result);
-                } else if (result.data && result.data.Error) {
-                    deferred.reject(new Error(result.data.Error));
-                } else {
-                    deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
-                }
-            }.bind(this), function(error) {
-                deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
-            });
-
-            return deferred.promise;
-        };
-
-        subscribe()
-        .then(organizationKey)
-        .then(createOrganization)
-        .then(eventManager.call)
-        .catch(function(error) {
-            notify({message: error, classes: 'notification-danger'});
-        });
     }
 
     // Manage responsive changes
