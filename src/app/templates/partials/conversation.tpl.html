@@ -46,7 +46,7 @@
         'marked': message === markedMessage,
         'read': message.IsRead === 1,
         'unread': message.IsRead === 0,
-        'details': toggleDetails === true,
+        'details': message.toggleDetails === true,
         'showingImages': showingMessages,
         'hasImages': !!message.imagesHidden,
         'hasLabels': (message.LabelIDs | labels).length > 0,
@@ -69,7 +69,7 @@
                         </em>
                     </span>
                 </div>
-                <div class="location" ng-hide="toggleDetails === true">
+                <div class="location" ng-hide="message.toggleDetails === true">
                     <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip-translate="In archive"></i>
                     <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip-translate="In trash"></i>
                     <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip-translate="In spam"></i>
@@ -77,7 +77,7 @@
                     <i class="pm_tag" ng-if="message.Type === 2 || message.Type === 3" translate>Sent</i>
                 </div>
             </div>
-            <div class="labels" ng-hide="toggleDetails === true">
+            <div class="labels" ng-hide="message.toggleDetails === true">
                 <span class="pm_labels">
                     <label
                     ng-repeat="labelID in message.LabelIDs | labels | limitTo: 4"
@@ -93,8 +93,8 @@
             </div>
             <div class="time">
                 <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
-                <span ng-show="toggleDetails === true">{{ message.Time | localReadableTime }}</span>
-                <span ng-show="toggleDetails !== true" time="{{ message.Time }}" filter="messageTime" interval="30000"></span>
+                <span ng-show="message.toggleDetails === true">{{ message.Time | localReadableTime }}</span>
+                <span ng-show="message.toggleDetails !== true" time="{{ message.Time }}" filter="messageTime" interval="30000"></span>
             </div>
             <div class="status">
                 <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
@@ -111,14 +111,14 @@
         </div>
 
         <div class="details" ng-if="message.expand">
-            <div class="recipients-summary" ng-hide="toggleDetails === true">
+            <div class="recipients-summary" ng-hide="message.toggleDetails === true">
                 <strong translate>To</strong>:
                 <span ng-repeat="email in recipients()" title="{{ email | contact:'Address' }}">
                     {{ email | contact: 'Name': true }}<span ng-hide="$last">, </span>
                 </span>
             </div>
 
-            <div class="recipients-details" ng-show="toggleDetails === true">
+            <div class="recipients-details" ng-show="message.toggleDetails === true">
                 <div ng-if="message.ToList.length" class="toGroup">
                     <span class="from">
                         <span class="where" translate translate-context="Title">To</span>:
@@ -126,7 +126,7 @@
                     <ul>
                         <li class="contact" ng-repeat="email in message.ToList">
                             <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
-                            <em ng-show="toggleDetails === true">
+                            <em ng-show="message.toggleDetails === true">
                                 {{ email | contact:'Address' }}
                                 <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
                             </em>
@@ -140,7 +140,7 @@
                     <ul>
                        <li class="contact" ng-repeat="email in message.CCList">
                             <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
-                            <em ng-show="toggleDetails === true">
+                            <em ng-show="message.toggleDetails === true">
                                 {{ email | contact:'Address' }}
                                 <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
                             </em>
@@ -154,7 +154,7 @@
                     <ul>
                        <li class="contact" ng-repeat="email in message.BCCList">
                             <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
-                            <em ng-show="toggleDetails === true">
+                            <em ng-show="message.toggleDetails === true">
                                 {{ email | contact:'Address' }}
                                 <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
                             </em>
@@ -163,7 +163,7 @@
                 </div>
             </div>
 
-            <div class="labelz" ng-show="toggleDetails === true && ((conversation.LabelIDs | labels).length > 0)">
+            <div class="labelz" ng-show="message.toggleDetails === true && ((conversation.LabelIDs | labels).length > 0)">
                 <i class="fa loc fa-archive" ng-if="archive() === true" pt-tooltip-translate="In archive" pt-tooltip-translate-comment="message label"></i>
                 <i class="fa loc fa-trash-o" ng-if="trash() === true" pt-tooltip-translate="In trash" pt-tooltip-translate-comment="message label"></i>
                 <i class="fa loc fa-ban" ng-if="spam() === true" pt-tooltip-translate="In spam" pt-tooltip-translate-comment="message label"></i>
@@ -254,9 +254,9 @@
                     </span>
                 </div>
 
-                <a class="toggleDetails" ng-click="toggleDetails = !toggleDetails">
-                    <span ng-show="toggleDetails !== true" translate translate-context="Action">Show details</span>
-                    <span ng-show="toggleDetails === true" translate translate-context="Action">Hide details</span>
+                <a class="toggleDetails" ng-click="message.toggleDetails = !message.toggleDetails">
+                    <span ng-show="message.toggleDetails !== true" translate translate-context="Action">Show details</span>
+                    <span ng-show="message.toggleDetails === true" translate translate-context="Action">Hide details</span>
                 </a>
 
             </div>
