@@ -318,7 +318,7 @@ msgstr ""
 #. Tooltip
 #: src/app/templates/modals/domain/address.tpl.html:30
 #: src/app/templates/modals/user/address.tpl.html:28
-#: src/app/templates/partials/conversation.tpl.html:170
+#: src/app/templates/partials/conversation.tpl.html:190
 #: src/app/templates/views/contacts.tpl.html:21
 msgctxt "Action"
 msgid "Add"
@@ -1499,13 +1499,13 @@ msgstr ""
 msgid "Decrypting"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:266
+#: src/app/templates/partials/conversation.tpl.html:286
 #: src/app/templates/views/outside.reply.tpl.html:28
 msgctxt "Error"
 msgid "Decryption error"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:267
+#: src/app/templates/partials/conversation.tpl.html:287
 #: src/app/templates/views/outside.reply.tpl.html:29
 msgctxt "Error"
 msgid "Decryption of this message's encryption content failed."
@@ -1536,7 +1536,7 @@ msgstr ""
 
 #. contacts toolbar menu option
 #: src/app/templates/modals/deleteAccount.tpl.html:25
-#: src/app/templates/partials/conversation.tpl.html:209
+#: src/app/templates/partials/conversation.tpl.html:229
 #: src/app/templates/partials/toolbar-desktop.tpl.html:23
 #: src/app/templates/partials/toolbar-mobile.tpl.html:54
 #: src/app/templates/views/addresses.tpl.html:60
@@ -1822,6 +1822,7 @@ msgctxt "Title"
 msgid "Downloading"
 msgstr ""
 
+#: src/app/templates/partials/conversation.tpl.html:170
 #: src/app/templates/partials/conversation.tpl.html:76
 msgid "Draft"
 msgstr ""
@@ -2307,7 +2308,7 @@ msgctxt "Action"
 msgid "Forgot username?"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:184
+#: src/app/templates/partials/conversation.tpl.html:204
 msgctxt "Action"
 msgid "Forward"
 msgstr ""
@@ -2430,7 +2431,7 @@ msgctxt "Action"
 msgid "Hide"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:239
+#: src/app/templates/partials/conversation.tpl.html:259
 msgctxt "Action"
 msgid "Hide details"
 msgstr ""
@@ -2540,14 +2541,20 @@ msgctxt "Info"
 msgid "If you wish to delete in order to combine this account with another one, do NOT delete your account. You need to instead follow"
 msgstr ""
 
+#. message label
+#: src/app/templates/partials/conversation.tpl.html:167
 #: src/app/templates/partials/conversation.tpl.html:73
 msgid "In archive"
 msgstr ""
 
+#. message label
+#: src/app/templates/partials/conversation.tpl.html:169
 #: src/app/templates/partials/conversation.tpl.html:75
 msgid "In spam"
 msgstr ""
 
+#. message label
+#: src/app/templates/partials/conversation.tpl.html:168
 #: src/app/templates/partials/conversation.tpl.html:74
 msgid "In trash"
 msgstr ""
@@ -2968,12 +2975,12 @@ msgctxt "Action"
 msgid "Mark as read / Mark as unread"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:205
+#: src/app/templates/partials/conversation.tpl.html:225
 msgctxt "Action"
 msgid "Mark as spam"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:201
+#: src/app/templates/partials/conversation.tpl.html:221
 #: src/app/templates/partials/toolbar-desktop.tpl.html:11
 #: src/app/templates/partials/toolbar-desktop.tpl.html:16
 #: src/app/templates/partials/toolbar-mobile.tpl.html:21
@@ -3090,7 +3097,7 @@ msgstr ""
 msgid "Monthly"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:187
+#: src/app/templates/partials/conversation.tpl.html:207
 msgctxt "Action"
 msgid "More"
 msgstr ""
@@ -3105,7 +3112,7 @@ msgctxt "Action"
 msgid "Move to archive"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:193
+#: src/app/templates/partials/conversation.tpl.html:213
 #: src/app/templates/partials/toolbar-desktop.tpl.html:20
 #: src/app/templates/partials/toolbar-mobile.tpl.html:42
 msgctxt "Action"
@@ -3118,7 +3125,7 @@ msgctxt "Action"
 msgid "Move to spam"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:197
+#: src/app/templates/partials/conversation.tpl.html:217
 #: src/app/templates/partials/toolbar-desktop.tpl.html:19
 #: src/app/templates/partials/toolbar-mobile.tpl.html:38
 msgctxt "Action"
@@ -3677,7 +3684,7 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:231
+#: src/app/templates/partials/conversation.tpl.html:251
 msgctxt "Action"
 msgid "Print"
 msgstr ""
@@ -3859,12 +3866,12 @@ msgctxt "Action"
 msgid "Remove user"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:178
+#: src/app/templates/partials/conversation.tpl.html:198
 msgctxt "Action"
 msgid "Reply"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:181
+#: src/app/templates/partials/conversation.tpl.html:201
 msgctxt "Action"
 msgid "Reply all"
 msgstr ""
@@ -4111,6 +4118,7 @@ msgstr ""
 
 #. printed message info
 #: src/app/services/actions.js:35
+#: src/app/templates/partials/conversation.tpl.html:171
 #: src/app/templates/partials/conversation.tpl.html:77
 #: src/app/templates/views/message.print.tpl.html:14
 msgid "Sent"
@@ -4167,7 +4175,7 @@ msgctxt "Action"
 msgid "Show all"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:238
+#: src/app/templates/partials/conversation.tpl.html:258
 msgctxt "Action"
 msgid "Show details"
 msgstr ""
@@ -4178,7 +4186,7 @@ msgid "Show images"
 msgstr ""
 
 #. show images in an email button
-#: src/app/templates/partials/conversation.tpl.html:255
+#: src/app/templates/partials/conversation.tpl.html:275
 #: src/app/templates/views/outside.message.tpl.html:42
 msgctxt "Action"
 msgid "Show images"
@@ -4455,12 +4463,12 @@ msgctxt "Info"
 msgid "This conversation contains trashed messages."
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:262
+#: src/app/templates/partials/conversation.tpl.html:282
 msgctxt "Info"
 msgid "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:261
+#: src/app/templates/partials/conversation.tpl.html:281
 msgctxt "Info"
 msgid "This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!"
 msgstr ""
@@ -4488,7 +4496,7 @@ msgid "This is used to recover your account if you get locked out or forget your
 msgstr ""
 
 #: src/app/templates/partials/composer.tpl.html:100
-#: src/app/templates/partials/conversation.tpl.html:248
+#: src/app/templates/partials/conversation.tpl.html:268
 msgid "This message will expire in"
 msgstr ""
 
@@ -4903,7 +4911,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:223
+#: src/app/templates/partials/conversation.tpl.html:243
 msgctxt "Action"
 msgid "View headers"
 msgstr ""
@@ -4913,17 +4921,17 @@ msgctxt "Action"
 msgid "View Keyboard Shortcuts"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:227
+#: src/app/templates/partials/conversation.tpl.html:247
 msgctxt "Action"
 msgid "View original"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:218
+#: src/app/templates/partials/conversation.tpl.html:238
 msgctxt "Action"
 msgid "View rendered HTML"
 msgstr ""
 
-#: src/app/templates/partials/conversation.tpl.html:214
+#: src/app/templates/partials/conversation.tpl.html:234
 msgctxt "Action"
 msgid "View source code"
 msgstr ""
