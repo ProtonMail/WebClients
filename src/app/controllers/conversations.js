@@ -144,7 +144,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Boolean}
      */
     $scope.placeholder = function() {
-        return $rootScope.layoutMode === 'columns' && ($scope.idDefined() === false || ($scope.idDefined() === true && $rootScope.numberElementChecked > 0));
+        return authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE && ($scope.idDefined() === false || ($scope.idDefined() === true && $rootScope.numberElementChecked > 0));
     };
 
     $scope.startWatchingEvent = function() {
@@ -663,34 +663,31 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.changeLayout = function(mode) {
         var newLayout;
 
-        if (mode === 'rows' && $rootScope.layoutMode!=='rows') {
+        if (mode === 'rows' && authentication.user.ViewLayout === CONSTANTS.COLUMN_MODE) {
             newLayout = 1;
-        } else if (mode === 'columns' && $rootScope.layoutMode!=='columns') {
+        } else if (mode === 'columns' && authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
             newLayout = 0;
         } else if (mode === 'mobile') {
             $rootScope.mobileMode = true;
         }
 
-        if (
-            (mode === 'columns' && $rootScope.layoutMode!=='columns') ||
-            (mode === 'rows' && $rootScope.layoutMode!=='rows')
-        ) {
+        if (angular.isDefined(newLayout)) {
             networkActivityTracker.track(
                 Setting.setViewlayout({ViewLayout: newLayout})
                 .then(function(result) {
-                        if (result.data && result.data.Code === 1000) {
+                    if (result.data && result.data.Code === 1000) {
+                        $rootScope.mobileMode = false;
+                        return eventManager.call()
+                        .then(function() {
+                            tools.mobileResponsive();
                             notify({message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success'});
-                            $rootScope.mobileMode = false;
-                            $rootScope.layoutMode = mode;
-                            authentication.user.ViewLayout = newLayout;
-                            $scope.mobileResponsive();
-                        } else if (result.data && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
-                        }
+                        });
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    } else {
+                        notify({message: 'Error during saving layout mode', classes: 'notification-danger'});
                     }
-                )
+                })
             );
         }
 

@@ -1,10 +1,10 @@
 <nav id="pm_toolbar-desktop" class="pm_toolbar">
-    <span class="pm_buttons back" ng-if="idDefined() &&  layoutMode === 'rows'">
+    <span class="pm_buttons back" ng-if="idDefined() &&  user.ViewLayout === 1">
         <a href="#" ng-click="back()" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
             <i class="fa fa-long-arrow-left"></i>
         </a>
     </span>
-    <label class="pm_checkbox" ng-if="!idDefined() || layoutMode === 'columns'">
+    <label class="pm_checkbox" ng-if="!idDefined() || user.ViewLayout === 0">
         <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip-translate="Select all messages" pt-tooltip-translate-context="Action">
     </label>
     <span ng-show="messageButtons === 1" class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
@@ -87,14 +87,14 @@
     </span>
     <div class="pull-right action">
         <span class="pm_buttons layout" id="tour-layout">
-            <a href="#" pt-tooltip-translate="Change layout" pt-tooltip-translate-context="Action" ng-class="{ 'active': layoutMode === 'columns' }" ng-click="changeLayout('columns')">
+            <a href="#" pt-tooltip-translate="Change layout" pt-tooltip-translate-context="Action" ng-class="{ 'active': user.ViewLayout === 0 }" ng-click="changeLayout('columns')">
                 <img src="/assets/img/columnview.svg" />
             </a>
-            <a href="#" pt-tooltip-translate="Change layout" pt-tooltip-translate-context="Action" class="divider" ng-class="{ 'active': layoutMode === 'rows' }" ng-click="changeLayout('rows')">
+            <a href="#" pt-tooltip-translate="Change layout" pt-tooltip-translate-context="Action" class="divider" ng-class="{ 'active': user.ViewLayout === 1 }" ng-click="changeLayout('rows')">
                 <img src="/assets/img/rowview.svg" />
             </a>
         </span>
-        <span class="pm_buttons" ng-show="idDefined() && rowMode === true && tools.cacheContext()">
+        <span class="pm_buttons" ng-show="idDefined() && user.ViewLayout === 1 && tools.cacheContext()">
             <a href="#" ng-click="nextConversation(conversation)" pt-tooltip-translate="Previous" pt-tooltip-translate-context="Action">
                 <i class="fa fa-chevron-left"></i>
             </a>
@@ -102,6 +102,6 @@
                 <i class="fa fa-chevron-right"></i>
             </a>
         </span>
-        <paginator ng-hide="idDefined() && rowMode === true" page="page" total-items="conversationCount()" items-per-page="elementPerPage" change="selectPage" />
+        <paginator ng-hide="idDefined() && user.ViewLayout === 1" page="page" total-items="conversationCount()" items-per-page="elementPerPage" change="selectPage" />
     </div>
 </nav>
