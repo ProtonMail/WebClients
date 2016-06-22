@@ -125,7 +125,7 @@ angular.module('proton.routes', [
                         $rootScope.inviteToken = $stateParams.token;
                         $rootScope.preInvited = true;
                         $rootScope.username = $stateParams.user;
-                        $state.go('subscription');
+                        $state.go('step1');
                     }
                     else {
                         notify({
@@ -150,7 +150,7 @@ angular.module('proton.routes', [
                     .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             if (result.data.Direct === 1) {
-                                $state.go('subscription');
+                                $state.go('step1');
                                 deferred.resolve();
                             } else {
                                 window.location.href = 'https://protonmail.com/invite';
@@ -170,52 +170,19 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('subscription', {
-        url: '/create/new?plan&billing&currency',
-        params: {
-            plan: null, // 'free' / 'plus' / 'visionary'
-            billing: null, // 1 / 12
-            currency: null // 'CHF' / 'EUR' / 'USD'
-        },
+    .state('step1', {
+        url: '/create/new',
         views: {
             'main@': {
                 controller: 'SignupController',
                 templateUrl: 'templates/layout/auth.tpl.html'
             },
-            'panel@subscription': {
-                templateUrl: 'templates/views/subscription.tpl.html'
+            'panel@step1': {
+                templateUrl: 'templates/views/step1.tpl.html'
             }
         },
         resolve: {
-            plans: function(direct, $q, $stateParams, Payment) {
-                var deferred = $q.defer();
-                var currencies = ['USD', 'EUR', 'CHF'];
-                var cycles = ['1', '12'];
-                var plans = ['free', 'plus', 'visionary'];
-                var currency = $stateParams.currency;
-                var cycle = $stateParams.billing;
-                var plan = $stateParams.plan;
-
-                if (cycles.indexOf(cycle) !== -1 && currencies.indexOf(currency) !== -1 && plans.indexOf(plan) !== -1) {
-                    if (plan === 'free') {
-                        deferred.resolve([]);
-                    } else {
-                        Payment.plans(currency, cycle)
-                        .then(function(result) {
-                            if (result.data && result.data.Code === 1000) {
-                                deferred.resolve(result.data.Plans);
-                            } else {
-                                deferred.reject();
-                            }
-                        });
-                    }
-                } else {
-                    deferred.resolve([]);
-                }
-
-                return deferred.promise;
-            },
-            domains: function(direct, $q, Domain) {
+            domains: function($q, Domain) {
                 var deferred = $q.defer();
 
                 Domain.available().then(function(result) {
