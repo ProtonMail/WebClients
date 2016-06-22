@@ -364,13 +364,19 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 $scope.back();
             }
 
-            if ($scope.conversations.length > 0 && ($scope.markedConversation === null || $scope.conversations.indexOf($scope.markedConversation) === -1)) {
+            if ($scope.conversations.length > 0) {
                 var element;
 
-                if ($stateParams.id) {
-                    element = _.findWhere($scope.conversations, {ID: $stateParams.id});
+                if ($scope.markedConversation === null) {
+                    if ($stateParams.id) {
+                        element = _.findWhere($scope.conversations, {ID: $stateParams.id});
+                    } else {
+                        element = _.first($scope.conversations);
+                    }
+                } else if (angular.isDefined(_.findWhere($scope.conversations, {ID: $scope.markedConversation.ID}))) {
+                    element = _.findWhere($scope.conversations, {ID: $scope.markedConversation.ID});
                 } else {
-                    element = $scope.conversations[0];
+                    element = _.first($scope.conversations);
                 }
 
                 $scope.markedConversation = element;
