@@ -1750,16 +1750,250 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('filterModal', function(pmModal) {
+.factory('filterModal', function($timeout, pmModal, gettextCatalog, authentication, Filter, networkActivityTracker, notify, CONSTANTS, eventManager) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
         controller: function(params) {
-            this.filter = params.filter || {};
+            this.simple = true;
+            this.hasLabels = false;
+            this.hasMove = false;
+            this.hasMark = false;
+
+            this.types = [
+                {label: gettextCatalog.getString('Select', null), value: 'select'},
+                {label: gettextCatalog.getString('Subject', null), value: 'subject'},
+                {label: gettextCatalog.getString('Sender', null), value: 'sender'},
+                {label: gettextCatalog.getString('Recipient', null), value: 'recipient'},
+                {label: gettextCatalog.getString('Attachments', null), value: 'attachments'}
+            ];
+
+            this.comparators = [
+                {label: gettextCatalog.getString('contains', null), value: 'contains'},
+                {label: gettextCatalog.getString('is exactly', null), value: 'is'},
+                {label: gettextCatalog.getString('begins with', null), value: 'starts'},
+                {label: gettextCatalog.getString('ends with', null), value: 'ends'},
+                {label: gettextCatalog.getString('matches', null), value: 'matches'},
+                {label: gettextCatalog.getString('does not contain', null), value: '!contains'},
+                {label: gettextCatalog.getString('is not exactly', null), value: '!is'},
+                {label: gettextCatalog.getString('does not begin with', null), value: '!starts'},
+                {label: gettextCatalog.getString('does not end with', null), value: '!ends'},
+                {label: gettextCatalog.getString('does not match', null), value: '!matches'}
+            ];
+
+            this.operators = [
+                {label: gettextCatalog.getString('all', null), value: 'all'},
+                {label: gettextCatalog.getString('any', null), value: 'any'}
+            ];
+
+            this.initialization = function() {
+                if (angular.isDefined(params.filter)) {
+                    // Update existing custom filter
+                    this.filter = {
+                        ID: params.filter.ID,
+                        Name: params.filter.Name,
+                        Status: params.filter.Status,
+                        Version: CONSTANTS.FILTER_VERSION
+                    };
+
+                    if (angular.isObject(params.filter.Simple) && Object.keys(params.filter.Simple).length > 0) {
+                        // Simple mode
+                        this.filter.Simple = {
+                            Operator: _.findWhere(this.operators, {value: params.filter.Simple.Operator.value}),
+                            Conditions: [],
+                            Actions: {
+                                Labels: _.map(authentication.user.Labels, function(label) {
+                                    label.Selected = angular.isDefined(_.findWhere(params.filter.Simple.Actions.Labels, {Name: label.Name}));
+
+                                    return label;
+                                }),
+                                Move: params.filter.Simple.Actions.Move || CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                                Mark: params.filter.Simple.Actions.Mark
+                            }
+                        };
+
+                        _.each(params.filter.Simple.Conditions, function(condition) {
+                            condition.Type = _.findWhere(this.types, {value: condition.Type.value});
+                            condition.Comparator = _.findWhere(this.comparators, {value: condition.Comparator.value});
+                            this.filter.Simple.Conditions.push(condition);
+                        }.bind(this));
+
+                        if (params.filter.Simple.Actions.Labels && params.filter.Simple.Actions.Labels.length > 0) {
+                            this.hasLabels = true;
+                        }
+
+                        if (params.filter.Simple.Actions.Move) {
+                            this.hasMove = true;
+                        }
+
+                        if (params.filter.Simple.Actions.Mark && (params.filter.Simple.Actions.Mark.Read === true || params.filter.Simple.Actions.Mark.Starred === true)) {
+                            this.hasMark = true;
+                        }
+                    } else {
+                        // Complex mode
+                        this.simple = false;
+                        this.filter.Sieve = params.filter.Sieve;
+                        this.filter.Version = CONSTANTS.FILTER_VERSION;
+                    }
+                } else {
+                    // Create new custom filter
+                    this.filter = {
+                        Name: '',
+                        Status: 1,
+                        Version: CONSTANTS.FILTER_VERSION,
+                        Simple: {
+                            Operator: _.first(this.operators),
+                            Conditions: [],
+                            Actions: {
+                                Labels: _.map(authentication.user.Labels, function(label) {
+                                    label.Selected = false;
+
+                                    return label;
+                                }),
+                                Move: CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                                Mark: {
+                                    Read: false,
+                                    Starred: false
+                                }
+                            }
+                        }
+                    };
+
+                    this.addCondition();
+                }
+
+                $timeout(function() {
+                    angular.element('#filterName').focus();
+                });
+            }.bind(this);
+
+            this.displaySeparator = function() {
+                if (this.filter.Simple) {
+                    var conditions = this.filter.Simple.Conditions;
+
+                    return conditions.length > 0 && _.first(conditions).Type.value !== 'select';
+                } else {
+                    return false;
+                }
+            }.bind(this);
+
+            this.valid = function() {
+                var pass = true;
+
+                // Check name
+                pass = this.filter.Name.length > 0;
+
+                if (angular.isObject(this.filter.Simple) && Object.keys(this.filter.Simple).length > 0) {
+                    // Simple mode
+                    // Check conditions
+                    var attachmentsCondition = 0;
+
+                    _.each(this.filter.Simple.Conditions, function(condition) {
+                        pass = pass && condition.Type.value !== 'select';
+
+                        if (condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient') {
+                            pass = pass && condition.Values.length > 0;
+                        }
+
+                        if (condition.Type.value === 'attachments') {
+                            attachmentsCondition++;
+                        }
+                    });
+
+                    pass = pass && attachmentsCondition <= 1;
+
+                    // Check actions
+                    pass = pass && (this.hasLabels || this.hasMove || this.hasMark);
+
+                    if (this.hasLabels === true) {
+                        pass = pass && _.where(this.filter.Simple.Actions.Labels, {Selected: true}).length > 0;
+                    }
+
+                    if (this.hasMark === true) {
+                        pass = pass && (this.filter.Simple.Actions.Mark.Starred || this.filter.Simple.Actions.Mark.Read);
+                    }
+
+                    return pass;
+                } else {
+                    // Complex mode
+                    // Check sieve script content
+                    return this.filter.Sieve.length > 0;
+                }
+            }.bind(this);
+
+            this.addCondition = function() {
+                this.filter.Simple.Conditions.push({
+                    Type: _.first(this.types),
+                    Comparator: _.first(this.comparators),
+                    Values: [],
+                    value: ''
+                });
+            };
+
+            this.addValue = function(condition) {
+                if (condition.Values.indexOf(condition.value) === -1) {
+                    if (condition.value) {
+                        condition.Values.push(condition.value);
+                        condition.value = '';
+                    }
+                } else {
+                    notify({message: gettextCatalog.getString('Text or pattern already included', null), classes: 'notification-danger'});
+                }
+            };
+
+            this.removeCondition = function(condition) {
+                var index = this.filter.Simple.Conditions.indexOf(condition);
+
+                this.filter.Simple.Conditions.splice(index, 1);
+            }.bind(this);
+
+            this.save = function() {
+                var promise;
+                var messageSuccess;
+                var clone = angular.copy(this.filter);
+
+                if (angular.isObject(this.filter.Simple) && Object.keys(this.filter.Simple).length > 0) {
+                    if (this.hasLabels === true) {
+                        clone.Simple.Actions.Labels = _.filter(clone.Simple.Actions.Labels, function(label) { return label.Selected === true; });
+                    } else {
+                        clone.Simple.Actions.Labels = [];
+                    }
+
+                    if (this.hasMove === false) {
+                        clone.Simple.Actions.Move = null;
+                    }
+
+                    if (this.hasMark === false) {
+                        clone.Simple.Actions.Mark = {Read: false, Starred: false};
+                    }
+                }
+
+                if (angular.isDefined(clone.ID)) {
+                    promise = Filter.update(clone);
+                    messageSuccess = gettextCatalog.getString('Filter updated', null, 'Notification');
+                } else {
+                    promise = Filter.create(clone);
+                    messageSuccess = gettextCatalog.getString('Filter created', null, 'Notification');
+                }
+
+                networkActivityTracker.track(
+                    promise.then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            notify({message: messageSuccess, classes: 'notification-success'});
+                            eventManager.call();
+                            params.close();
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        }
+                    }.bind(this))
+                );
+            }.bind(this);
 
             this.cancel = function() {
                 params.close();
             };
+
+            this.initialization();
         }
     });
 })

@@ -33,4 +33,16 @@
         	color: #000;
         }
     }
+	.pm_button {
+        background: #fff;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"],
+    input[type="search"],
+    textarea,
+    .pm_select {
+        background: #fff !important;
+    }
 }
