@@ -1775,7 +1775,7 @@ angular.module("proton.modals", [])
                 {label: gettextCatalog.getString('ends with', null), value: 'ends'},
                 {label: gettextCatalog.getString('matches', null), value: 'matches'},
                 {label: gettextCatalog.getString('does not contain', null), value: '!contains'},
-                {label: gettextCatalog.getString('is not exactly', null), value: '!is'},
+                {label: gettextCatalog.getString('is not', null), value: '!is'},
                 {label: gettextCatalog.getString('does not begin with', null), value: '!starts'},
                 {label: gettextCatalog.getString('does not end with', null), value: '!ends'},
                 {label: gettextCatalog.getString('does not match', null), value: '!matches'}
