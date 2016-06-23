@@ -156,7 +156,8 @@
     input[type="password"],
     input[type="email"],
     input[type="search"] {
-        box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+        box-shadow: inset 0 2px 5px rgba(0,0,0,.15);
+        background: #fafafa;
         &.inline {
             display: inline-block;
             width: 8rem;
@@ -250,7 +251,8 @@
     }
     textarea {
         min-height: 6rem;
-        box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+        background: #fafafa;
         padding: .5rem 1rem;
         line-height: 1.5rem;
     }

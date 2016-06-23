@@ -9,7 +9,9 @@ angular.module("proton.controllers.Settings")
     gettextCatalog,
     IncomingDefault,
     confirmModal,
+    eventManager,
     Filter,
+    customFilters,
     incomingDefaults,
     networkActivityTracker,
     filterModal,
@@ -19,21 +21,117 @@ angular.module("proton.controllers.Settings")
 ) {
     // Variables
     $scope.spamFilters = incomingDefaults;
-    $scope.customFilters = [
-        {
-            "ID": "Ik65N-aChBuWFdo1JpmHJB4iWetfzjVLNILERQqbYFBZc5crnxOabXKuIMKhiwBNwiuogItetAUvkFTwJFJPQg==",
-            "Name": "Updated",
-            "Status": 1,
-            "Data": "require [\"label\"];  if address :DOMAIN :is [\"From\", \"Delivered-To\"] \"protonmail.ch\" {     label \"mylabel\"; } else {     keep; }",
-            "Version": 1
+    $scope.customFilters = customFilters;
+    $scope.itemMoved = false;
+
+    // Drag and Drop configuration
+    $scope.filterDragControlListeners = {
+        containment: '.pm_sort',
+        accept: function(sourceItemHandleScope, destSortableScope) {
+            return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
+        },
+        dragStart: function() {
+            $scope.itemMoved = true;
+        },
+        dragEnd: function() {
+            $scope.itemMoved = false;
+        },
+        orderChanged: function() {
+            var order = [];
+
+            _.each($scope.customFilters, function(filter, index) {
+                order[index] = filter.Priority;
+                filter.Priority = index + 1;
+            });
+
+            // Save priority order
+            networkActivityTracker.track(
+                Filter.order({Order: order})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        notify({message: gettextCatalog.getString('Order saved', null, 'Info'), classes: 'notification-success'});
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    } else {
+                        notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes : 'notification-danger'});
+                    }
+                })
+            );
         }
-    ];
+    };
+
+    $scope.$on('deleteFilter', function(event, filterId) {
+        if ($scope.itemMoved === false) {
+            var index = _.findIndex($scope.customFilters, {ID: filterId});
+
+            if (index !== -1) {
+                $scope.customFilters.splice(index, 1);
+            }
+        }
+    });
+
+    $scope.$on('createFilter', function(event, filterId, filter) {
+        if ($scope.itemMoved === false) {
+            var index = _.findIndex($scope.customFilters, {ID: filterId});
+
+            if (index === -1) {
+                $scope.customFilters.push(filter);
+            } else {
+                _.extend($scope.customFilters[index], filter);
+            }
+        }
+    });
+
+    $scope.$on('updateFilter', function(event, filterId, filter) {
+        if ($scope.itemMoved === false) {
+            var index = _.findIndex($scope.customFilters, {ID: filterId});
+
+            if (index === -1) {
+                $scope.customFilters.push(filter);
+            } else {
+                _.extend($scope.customFilters[index], filter);
+            }
+        }
+    });
 
     $scope.addCustomFilter = function() {
-        filterModal.activate({
+        if ($scope.isFree === true && $scope.customFilters.length === 1) {
+            notify(gettextCatalog.getString('Free ProtonMail accounts are limited to 1 custom filter. Please <a href="/dashboard">upgrade</a> to get unlimited filters.', null, 'Info'));
+        } else {
+            filterModal.activate({
+                params: {
+                    close: function() {
+                        filterModal.deactivate();
+                    }
+                }
+            });
+        }
+    };
+
+    $scope.clearCustomFilters = function() {
+        var title = gettextCatalog.getString('Clear All', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to clear all custom filters?', null, 'Info');
+
+        confirmModal.activate({
             params: {
-                close: function() {
-                    filterModal.deactivate();
+                title: title,
+                message: message,
+                confirm: function() {
+                    networkActivityTracker.track(
+                        Filter.clear()
+                        .then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+                                $scope.customFilters = [];
+                                confirmModal.deactivate();
+                                notify({message: gettextCatalog.getString('Custom filters cleared', null, 'Info'), classes: 'notification-success'});
+                            } else if (result.data && result.data.Error) {
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            }
+                        })
+                    );
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
                 }
             }
         });
@@ -63,7 +161,10 @@ angular.module("proton.controllers.Settings")
                         Filter.delete(filter)
                         .then(function(result) {
                             if (result.data && result.data.Code === 1000) {
-
+                                eventManager.call();
+                                notify({message: gettextCatalog.getString('Custom filter deleted', null, 'Info'), classes: 'notification-success'});
+                            } else if (result.data && result.data.Error) {
+                                notify({message: result.data.Error, classes: 'notification-danger'});
                             }
                         })
                     );
@@ -77,25 +178,37 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.enableCustomFilter = function(filter) {
-        networkActivityTracker.track(
+        return networkActivityTracker.track(
             Filter.enable(filter)
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-
+                    notify({message: gettextCatalog.getString('Status updated', null, 'Info'), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
                 }
             })
         );
     };
 
     $scope.disableCustomFilter = function(filter) {
-        networkActivityTracker.track(
+        return networkActivityTracker.track(
             Filter.disable(filter)
             .then(function(result) {
                 if (result.data && result.data.Code === 1000) {
-
+                    notify({message: gettextCatalog.getString('Status updated', null, 'Info'), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
                 }
             })
         );
+    };
+
+    $scope.statusCustomFilter = function(filter) {
+        if (filter.Status === 0) {
+            $scope.disableCustomFilter(filter);
+        } else if (filter.Status === 1) {
+            $scope.enableCustomFilter(filter);
+        }
     };
 
     /**
@@ -106,7 +219,7 @@ angular.module("proton.controllers.Settings")
     $scope.empty = function(folder) {
         var filters = $filter('filter')($scope.spamFilters, {Location: folder});
 
-        filter = $filter('filter')(filters, $scope.searchSpamFilter);
+        filters = $filter('filter')(filters, $scope.searchSpamFilter);
 
         return filters.length === 0;
     };

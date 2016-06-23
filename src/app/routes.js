@@ -813,6 +813,20 @@ angular.module('proton.routes', [
     .state('secured.filters', {
         url: '/filters',
         resolve: {
+            customFilters: function($q, Filter, networkActivityTracker) {
+                var deferred = $q.defer();
+
+                Filter.query()
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        deferred.resolve(result.data.Filters);
+                    } else {
+                        deferred.reject();
+                    }
+                });
+
+                return networkActivityTracker.track(deferred.promise);
+            },
             incomingDefaults: function($q, IncomingDefault, networkActivityTracker) {
                 var deferred = $q.defer();
 
@@ -825,7 +839,7 @@ angular.module('proton.routes', [
                     }
                 });
 
-                return deferred.promise;
+                return networkActivityTracker.track(deferred.promise);
             },
         },
         views: {

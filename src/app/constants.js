@@ -9,6 +9,7 @@ angular.module('proton.constants', [])
     MAILBOX_PASSWORD_KEY: "proton:mailbox_pwd",
     OAUTH_KEY: "proton:oauth",
     EVENT_ID: "proton:eventid",
+    FILTER_VERSION: 1,
     FREE_USER: 0,
     PAID_MEMBER: 1,
     PAID_ADMIN: 2,

@@ -277,6 +277,21 @@ angular.module("proton.event", ["proton.constants"])
 					$rootScope.$broadcast('organizationChange', organization);
 				}
 			},
+			manageFilters: function(filters) {
+				if (angular.isArray(filters)) {
+					_.each(filters, function(filter) {
+						if (filter.Action === DELETE) {
+							$rootScope.$broadcast('deleteFilter', filter.ID);
+						} else if (filter.Action === CREATE) {
+							filter.Filter.Simple = Sieve.fromTree(filter.Filter.Tree);
+							$rootScope.$broadcast('createFilter', filter.ID, filter.Filter);
+						} else if (filter.Action === UPDATE) {
+							filter.Filter.Simple = Sieve.fromTree(filter.Filter.Tree);
+							$rootScope.$broadcast('updateFilter', filter.ID, filter.Filter);
+						}
+					});
+				}
+			},
 			manageID: function(id) {
 				this.ID = id;
 
@@ -341,6 +356,7 @@ angular.module("proton.event", ["proton.constants"])
 					this.manageDomains(data.Domains);
 					this.manageMembers(data.Members);
 					this.manageOrganization(data.Organization);
+					this.manageFilters(data.Filters);
 					this.manageID(data.EventID);
 				}
 

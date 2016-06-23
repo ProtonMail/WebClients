@@ -84,6 +84,9 @@ html.protonmail {
 	.margin-right {
 		margin-right: 10px;
 	}
+	.margin-top {
+		margin-top: 10px;
+	}
 	.margin-bottom {
 		margin-bottom: 10px;
 	}
@@ -95,5 +98,12 @@ html.protonmail {
 	}
 	.dull {
 		opacity: .5;
+	}
+	.help {
+		font-size: 12px;
+		font-style: italic;
+	}
+	.or {
+		font-size: 75%;
 	}
 }

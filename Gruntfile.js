@@ -3,14 +3,14 @@
 
 var _ = require('lodash');
 var util = require('util');
-var appVersion = '3.3.4';
+var appVersion = '3.3.5';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
 var BROWSERS = ['PhantomJS', 'Chrome', 'Firefox', 'Safari'];
 var API_TARGETS = {
-    blue: 'https://52.36.229.13/api',
+    blue: 'https://protonmail.blue/api',
     prod: 'https://mail.protonmail.com/api',
     dev: 'https://dev.protonmail.com/api',
     v2: 'https://v2.protonmail.com/api',

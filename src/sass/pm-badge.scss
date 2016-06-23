@@ -1,25 +1,32 @@
 .pm_badge {
-    font-size: 0.75em;
-    font-style: normal;
-    color: $white;
     background: $gray-light;
-    padding: 0 .35rem;
+    border-radius: .25em;
+    color: $white;
     display: inline-block;
-    border-radius: .5rem;
-    line-height: 1.5rem;
+    font-size: 75%;
+    font-style: normal;
     height: 1.5rem;
+    line-height: 1.5rem;
     margin: .25rem 0;
+    padding: 0 .35rem;
     text-transform: uppercase;
+    &.none {
+        text-transform: none;
+        font-weight: 700;
+    }
+    &.default {
+        color: $gray;
+    }
     &.primary {
         background-color: $primary;
     }
     &.success {
-        background: $green;
+        background-color: $green;
     }
     &.error {
-        background: $red;
+        background-color: $red;
     }
     &.warning {
-        background: $orange;
+        background-color: $orange;
     }
 }
