@@ -25,6 +25,14 @@ angular.module("proton.models.payments", [])
             return $http.post(url.get() + '/payments/paypal', params);
         },
         /**
+         * Send payment details to subscribe during the signup process
+         * @param {Object} params
+         * @param {Promise}
+         */
+        verify: function(params) {
+            return $http.post(url.get() + '/payments/verify', params);
+        },
+        /**
          * Get payment method status
          * @return {Promise}
          */

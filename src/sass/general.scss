@@ -41,8 +41,17 @@ html.protonmail {
 			}
 		}
 	}
+	.visionary {
+		color: $light-blue;
+	}
+	.plus {
+		color: $light-green;
+	}
 	.bold {
 		font-weight: bold;
+	}
+	.uppercase {
+		text-transform: uppercase;
 	}
 	.clear {
 		clear: both;

@@ -1,4 +1,4 @@
-#step1 {
+#subscription {
     iframe#pm_captcha {
         outline: none;
         border: none;
@@ -39,15 +39,6 @@
         margin-bottom: 1rem;
         .fa {
             margin-bottom: .5rem;
-        }
-    }
-    .header {
-        p {
-            color: $gray-light;
-            strong {
-                color: #000;
-                font-weight: normal;
-            }
         }
     }
     .spinner.large {
@@ -119,13 +110,14 @@
             span {
                 color: $text;
                 font-weight: 700;
+                font-size: 1.1rem;
             }
         }
     }
 }
 
 body.mobileMode {
-    &#step1 {
+    &#subscription {
         .container-fluid .row > div > p {
             display: none;
         }
