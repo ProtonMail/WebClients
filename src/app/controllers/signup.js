@@ -1,32 +1,38 @@
 angular.module("proton.controllers.Signup", ["proton.tools"])
 
 .controller("SignupController", function(
-    $scope,
-    tools,
+    $http,
+    $location,
     $log,
+    $q,
     $rootScope,
+    $scope,
     $state,
     $stateParams,
-    gettextCatalog,
-    $location,
-    $q,
     $timeout,
-    $http,
     $window,
-    CONSTANTS,
     authentication,
+    CONSTANTS,
+    direct,
     domains,
+    gettextCatalog,
     networkActivityTracker,
-    User,
-    Reset,
-    pmcw,
     notify,
-    direct
+    Payment,
+    plans,
+    pmcw,
+    Reset,
+    tools,
+    User
 ) {
     $scope.initialization = function() {
         // Variables
-        $scope.tools    = tools;
+        $scope.card = {};
+        $scope.tools = tools;
         $scope.compatibility = tools.isCompatible();
+        $scope.showFeatures = false;
+        $scope.filling = true;
+        $scope.payment = false;
         $scope.creating = false;
         $scope.genNewKeys = false;
         $scope.createUser = false;
@@ -35,6 +41,9 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.mailboxLogin = false;
         $scope.getUserInfo = false;
         $scope.finishCreation = false;
+        $scope.verifyCode = false;
+        $scope.errorPay = false;
+        $scope.card.country = _.findWhere(tools.countries, {priority: 1});
 
         $scope.signup = {
             verificationSent: false,
@@ -58,6 +67,10 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                     $scope.showSms = true;
                 }
             }
+        }
+
+        if (plans.length > 0) {
+            $scope.plan = _.findWhere(plans, {Name: $stateParams.plan, Cycle: parseInt($stateParams.billing), Currency: $stateParams.currency});
         }
 
         // Populate the domains <select>
@@ -196,7 +209,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     // ---------------------------------------------------
 
     $scope.start = function() {
-        $state.go('step1');
+        $state.go('subscription');
     };
 
     $scope.createAccount = function() {
@@ -225,26 +238,26 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.saveContinue = function(form) {
-
         if (form.$valid) {
-
-            $log.debug($scope.account);
-
             // custom validation
-            if ($scope.account.loginPasswordConfirm!==$scope.account.loginPassword) {
+            if ($scope.account.loginPasswordConfirm !== $scope.account.loginPassword) {
                 return;
             }
 
+            $scope.filling = false;
+
             networkActivityTracker.track(
                 $scope.checkAvailability(false)
-                .then($scope.generateNewKeys )
+                .then($scope.generateNewKeys)
                 .then(function() {
-                    $timeout( function() {
+                    $timeout(function() {
                         $scope.genNewKeys = false;
+
                         if ($rootScope.preInvited) {
                             $scope.createAccount();
-                        }
-                        else {
+                        } else if (plans.length > 0) {
+                            $scope.payment = true;
+                        } else {
                             $scope.humanityTest = true;
                         }
                     }, 2000);
@@ -358,16 +371,58 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     };
 
     $scope.generateNewKeys = function() {
-        $log.debug('generateNewKeys');
-        $scope.genNewKeys   = true;
         var mbpw;
+
+        $scope.genNewKeys = true;
+
         if ($scope.account.mailboxPasswordConfirm!==undefined) {
             mbpw = $scope.account.mailboxPasswordConfirm;
-        }
-        else if ($scope.account.mailboxPassword!==undefined) {
+        } else if ($scope.account.mailboxPassword!==undefined) {
             mbpw = $scope.account.mailboxPassword;
         }
+
         return $scope.generateKeys($scope.account.Username + '@' + $scope.account.domain.value, mbpw);
+    };
+
+    $scope.pay = function() {
+        var year = ($scope.card.year.length === 2) ? '20' + $scope.card.year : $scope.card.year;
+        var method = {
+            Type: 'card',
+            Details: {
+                Number: $scope.card.number,
+                ExpMonth: $scope.card.month,
+                ExpYear: year,
+                CVC: $scope.card.cvc,
+                Name: $scope.card.fullname,
+                Country: $scope.card.country.value,
+                ZIP: $scope.card.zip
+            }
+        };
+
+        $scope.errorPay = false;
+
+        networkActivityTracker.track(
+            Payment.verify({
+                Username: $scope.account.Username,
+                Amount: $scope.plan.Amount,
+                Currency: $scope.plan.Currency,
+                Payment: method
+            })
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    $scope.verifyCode = result.data.VerifyCode;
+                    $scope.payment = false;
+                    $rootScope.tempPlan = $scope.plan; // We need to subcribe this user later
+                    $rootScope.tempMethod = method; // We save this payment method to save it later
+                    $scope.createAccount();
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    $scope.errorPay = true;
+                } else {
+                    $scope.errorPay = true;
+                }
+            })
+        );
     };
 
     $scope.doCreateUser = function() {
@@ -387,6 +442,9 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         } else if (angular.isDefined($scope.account.captcha_token) && $scope.account.captcha_token !== false) {
             params.Token = $scope.account.captcha_token;
             params.TokenType = 'recaptcha';
+        } else if ($scope.verifyCode) {
+            params.Token = $scope.verifyCode;
+            params.TokenType = 'payment';
         } else if ($scope.signup.smsVerificationSent !== false) {
             params.Token = $scope.account.smsCodeVerification;
             params.TokenType = 'sms';

@@ -170,7 +170,7 @@
                     text-align: center;
                 }
             }
-            &.free {
+            &.free-plan {
                 header {
                     visibility: hidden;
                 }
@@ -179,7 +179,7 @@
                     height: 110px;
                 }
             }
-            &.plus {
+            &.plus-plan {
                 margin: 0 -1px;
                 h3 {
                     box-shadow: inset 0 0 1px rgba(0,0,0,.5);
@@ -198,7 +198,7 @@
                     background: $white;
                 }
             }
-            &.visionary {
+            &.visionary-plan {
                 header,
                 h3 span {
                     color: $light-blue;
@@ -218,7 +218,7 @@
         section ul li .pm_select.inline {
             width: 4rem;
         }
-        &.free {
+        &.free-plan {
             footer .cycle {
                 line-height: 164px;
                 height: 184px;

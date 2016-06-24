@@ -23,6 +23,7 @@
                         <textarea id="filterScript" ng-model="ctrl.filter.Sieve" placeholder="Sieve Script"></textarea>
                     </div>
                 </div>
+                <p translate translate-context="Info" class="alert alert-info">Custom filters work on all new emails, including incoming emails as well as sent emails</p>
                 <div ng-show="ctrl.simple">
                     <legend translate-context="Title" translate translate-context="Title">Conditions</legend>
                     <div ng-repeat="condition in ctrl.filter.Simple.Conditions">
@@ -72,7 +73,6 @@
                     <p>
                         <a href="#" class="pm_button link" ng-click="ctrl.addCondition()" translate translate-context="Action">Add Condition</a>
                     </p>
-                    <p translate translate-context="Info" class="alert alert-info">Custom filters work on all new emails, including incoming emails as well as sent emails</p>
                     <p class="bold" ng-show="ctrl.displaySeparator()">If <span class="pm_select inline"><select ng-model="ctrl.filter.Simple.Operator" ng-options="operator.label for operator in ctrl.operators"></select><i class="fa fa-angle-down"></i></span> of the conditions above apply, do the following actions.</p>
                     <legend translate-context="Title" translate translate-context="Title">Actions</legend>
                     <label for="labels">
