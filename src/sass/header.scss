@@ -30,7 +30,7 @@ header#pm_header-desktop {
 	background: $alt;
 	font-size: 12px;
 	position: relative;
-	z-index: 100; /*less or equal to composer for responsive purpose*/
+	z-index: 100; /* less or equal to 100 for responsive composer*/
 	i, b {
 		font-style: normal;
 		font-weight: normal;
