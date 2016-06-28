@@ -181,9 +181,11 @@ angular.module("proton.tools", ["proton.constants"])
 
         }
 
-        var re = new RegExp('(url|svg|src=|background=|poster=)', 'g');
+        var re = new RegExp('(svg|src=|background=|poster=)', 'g');
         html = replace(re,html);
 
+        var url = new RegExp(/url\(/ig);
+        html = replace(url,html);
 
         return html;
     };
