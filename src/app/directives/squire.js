@@ -365,7 +365,7 @@ angular.module("proton.squire", [
                     editor.focus();
                 } else {
                     editor[action]();
-                    editor.focus();
+                    //editor.focus();
                 }
             };
         }
