@@ -16,13 +16,14 @@
 				vertical-align: initial;
 			}
 			span.pm_badge {
-				height: 30px;
-				line-height: 30px;
-				padding: 0 .35rem;
+				line-height: 1.1rem;
+				height: initial;
+				padding: .19rem .35rem;
 				margin: 0 0 1rem 0;
 				position: relative;
 				top: -1px;
 				background: rgba(0,0,0,.1);
+				word-break: break-word;
 			}
 			form#filter-add-condition {
 				width: 15rem;
