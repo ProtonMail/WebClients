@@ -49,7 +49,7 @@
                                     </label>
                             </span>
                             <span class="pm_select inline" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
-                                <select ng-model="condition.Comparator" ng-options="comparator.label for comparator in ctrl.comparators"></select>
+                                <select class="autoWidth" ng-model="condition.Comparator" ng-options="comparator.label for comparator in ctrl.comparators"></select>
                                 <i class="fa fa-angle-down"></i>
                             </span>
                             <span ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">

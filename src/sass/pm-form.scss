@@ -51,6 +51,9 @@
             display: inline-block;
             select {
                 width: 8rem;
+                &.autoWidth{
+                    width:auto;
+                }
             }
         }
         &.bigger {
