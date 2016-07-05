@@ -733,8 +733,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.insertSignature = function(message) {
         message.Body = (angular.isUndefined(message.Body))? '' : message.Body;
 
-        var content = (message.From.Signature === null)?authentication.user.Signature:message.From.Signature,
-            $content = $('<div>' + content + '</div>'),
+        var content = (angular.isUndefined(message.From.Signature))?authentication.user.Signature:message.From.Signature;
+            content = DOMPurify.sanitize(content, {
+                ADD_ATTR: ['target'],
+                FORBID_TAGS: ['style', 'input', 'form']
+            });
+
+        var $content = $('<div>' + content + '</div>'),
             signature = "",
             newSign = false,
             space = "<div><br /></div>";
@@ -750,10 +755,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             countQuotes = tempDOM.find('.protonmail_quote').length;
 
         if ($content.text().length > 0 || $content.find('img').length > 0) {
-             signature = DOMPurify.sanitize('<div class="'+className+'">' + tools.replaceLineBreaks(content + space) + '</div>', {
-                ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style', 'input', 'form']
-            });
+             signature = $('<div class="'+className+'">' + tools.replaceLineBreaks(content + space) + '</div>');
         }
 
         if ( countSignatures > 0) {

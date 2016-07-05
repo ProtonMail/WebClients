@@ -362,6 +362,18 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         if (angular.isUndefined($scope.message.decryptedBody) || force === true) {
             $scope.message.clearTextBody().then(function(result) {
                 var showMessage = function(content) {
+
+                    // Clear content with DOMPurify before anything happen!
+                    content = DOMPurify.sanitize(content, {
+                        ADD_ATTR: ['target'],
+                        FORBID_TAGS: ['style', 'input', 'form']
+                    });
+
+                    // Safari warning
+                    if (!$rootScope.isFileSaverSupported) {
+                        $scope.safariWarning = true;
+                    }
+
                     // NOTE Plain text detection doesn't work. Check #1701
                     var isHtml = tools.isHtml(content);
 
@@ -369,16 +381,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         content = $scope.message.clearImageBody(content);
                     }
 
-                    // Safari warning
-                    if (!$rootScope.isFileSaverSupported) {
-                        $scope.safariWarning = true;
-                    }
-
-                    // Clear content with DOMPurify
-                    content = DOMPurify.sanitize(content, {
-                        ADD_ATTR: ['target'],
-                        FORBID_TAGS: ['style', 'input', 'form']
-                    });
 
                     // For the welcome email, we need to change the path to the welcome image lock
                     content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
@@ -784,7 +786,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
 
         base.ParentID = $scope.message.ID;
-        base.Body =  blockquoteStart + originalMessage + subject + time + from + to + cc + br + body + blockquoteEnd + br;
+        base.Body =  blockquoteStart + originalMessage + DOMPurify.sanitize(subject) + time + from + to + cc + br + body + blockquoteEnd + br;
 
         return base;
     };
