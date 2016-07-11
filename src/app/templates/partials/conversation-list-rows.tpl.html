@@ -5,7 +5,7 @@
     <div ng-repeat="conversation in conversations track by conversation.ID" class="conversation" ng-class="{
         selected: conversation.Selected,
         active: active(conversation),
-        marked: conversation === markedConversation,
+        marked: conversation.ID === markedConversation.ID,
         hasLabels: (conversation.LabelIDs | labels).length > 0,
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
