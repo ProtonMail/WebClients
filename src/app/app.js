@@ -59,8 +59,10 @@ angular.module('proton', [
     'proton.pmcw',
     'proton.tools',
     'proton.desktopNotifications',
+    'proton.service.message',
 
     // Directives
+    'proton.message',
     'proton.autocomplete',
     'proton.card',
     'proton.drag',

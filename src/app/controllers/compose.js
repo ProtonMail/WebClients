@@ -140,11 +140,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger'});
         } else {
             var message = new Message();
-            $scope.initMessage(message, false);
+            initMessage(message, false);
         }
     });
 
-    $scope.$on('loadMessage', function(event, message, save) {
+    $rootScope.$on('loadMessage', function(event, message, save) {
         var current = _.findWhere($scope.messages, {ID: message.ID});
         var mess = new Message(_.pick(message, 'ID', 'AddressID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
 
@@ -155,7 +155,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         if(angular.isUndefined(current)) {
-            $scope.initMessage(mess, save);
+            initMessage(mess, save);
         }
     });
 
@@ -601,7 +601,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      * @param {Boolean} save
      */
-    $scope.initMessage = function(message, save) {
+    function initMessage(message, save) {
         if (authentication.user.Delinquent < 3) {
             // Not in the delinquent state
         } else {
@@ -652,11 +652,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 });
             }
         });
-    };
-
-    $scope.addFile = function(message) {
-        $('#uid' + message.uid + ' .dropzone').click();
-    };
+    }
 
     $scope.sanitizeBody = function(message) {
         message.Body = DOMPurify.sanitize(message.Body, {
