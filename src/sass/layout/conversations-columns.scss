@@ -184,7 +184,7 @@
         }
     }
     &.selected {
-        
+
     }
     &.hasLabels {
         .row .senders {
@@ -206,33 +206,6 @@
             }
             .subject {
                 width: calc(100% - 10.5rem);
-            }
-        }
-    }
-}
-
-// MOBILE
-body.mobileMode {
-    #conversation-list-columns {
-        .selection {
-            width: 50px;
-            padding-top: 15px;
-            height: 60px;
-            position: absolute;
-            z-index: 99;
-        }
-        .row {
-            padding-left: 50px;
-        }
-    }
-    .conversation {
-        .row {
-            h4 {
-                width: calc(100% - 11rem);
-            }
-            .senders.full {
-                width: calc(100% - 10rem);
-                cursor: pointer;
             }
         }
     }
