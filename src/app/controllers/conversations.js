@@ -34,28 +34,28 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     /**
      * Method called at the initialization of this controller
      */
-    $scope.initialization = function() {
+    function initialization() {
+
         // Variables
         $scope.markedConversation = null;
         $scope.mailbox = tools.currentMailbox();
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
-        $scope.Math = window.Math;
         $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || "-date";
         $scope.page = parseInt($stateParams.page || 1);
         $scope.startWatchingEvent();
         $scope.refreshConversations().then(function() {
-            $timeout($scope.actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
+            $timeout(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
         }, function(error) {
             $log.error(error);
         });
         $scope.setTimeWidths();
 
-    };
+    }
 
     $scope.setTimeWidths = function() {
 
@@ -104,7 +104,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         unbindWatcherElements = $scope.$watch('conversations', function(newValue, oldValue) {
             $rootScope.numberElement = newValue.length;
             $rootScope.numberElementSelected = $scope.elementsSelected().length;
-            $rootScope.numberElementChecked = $scope.elementsChecked().length;
             $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
         }, true);
     };
@@ -237,21 +236,23 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         angular.element($window).unbind('orientationchange', $rootScope.mobileResponsive);
     };
 
-    $scope.actionsDelayed = function() {
+    function actionsDelayed() {
         $scope.unselectAllElements();
-        $('#page').val($scope.page);
-        $('#page').change(function(event) {
-            $scope.goToPage();
+
+        var $page = $('#page');
+        $page.val($scope.page);
+        $page.change(function(event) {
+            goToPage();
         });
 
         if ($rootScope.scrollPosition) {
             $('#content').scrollTop($rootScope.scrollPosition);
             $rootScope.scrollPosition = null;
         }
-    };
+    }
 
     $scope.selectPage = function(page) {
-        $scope.goToPage(page, page < $scope.page);
+        goToPage(page, page < $scope.page);
     };
 
     $scope.conversationCount = function() {
@@ -475,40 +476,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.allSelected = function() {
-        if(angular.isDefined($scope.conversations)) {
-            var numberElement = $scope.conversations.length;
-            var numberElementChecked = _.where($scope.conversations, {Selected: true}).length;
-
-            if (numberElement > 0) {
-                return numberElement === numberElementChecked;
-            } else {
-                return false;
-            }
-        } else {
+        if (!Array.isArray($scope.conversations)) {
             return false;
         }
-    };
-
-    /**
-     * Select or unselect all elements
-     */
-    $scope.toggleAllSelected = function() {
-        var status = $scope.allSelected();
-
-        if(status === true) {
-            $scope.unselectAllElements();
-        } else {
-            $scope.selectAllElements();
-        }
-    };
-
-    /**
-     * Select all elements
-     */
-    $scope.selectAllElements = function() {
-        _.each($scope.conversations, function(element) {
-            element.Selected = true;
-        });
+        return _.every($scope.conversations, {Selected: true});
     };
 
     /**
@@ -518,6 +489,19 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         _.each($scope.conversations, function(element) {
             element.Selected = false;
         });
+        $rootScope.numberElementChecked = 0;
+        $rootScope.showWelcome = true;
+    };
+
+    /**
+      * Select all elements
+      */
+    $scope.selectAllElements = function() {
+        _.each($scope.conversations, function(element) {
+            element.Selected = true;
+        });
+        $rootScope.numberElementChecked = $scope.conversations.length;
+        $rootScope.showWelcome = false;
     };
 
     /**
@@ -525,7 +509,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Array} elements
      */
     $scope.elementsSelected = function() {
-        var elements = $scope.elementsChecked();
+        var elements = elementsChecked();
 
         if ($scope.conversations.length > 0 && elements.length === 0) {
             var type = tools.typeList();
@@ -540,9 +524,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         return elements;
     };
 
-    $scope.elementsChecked = function() {
+    function elementsChecked () {
         return _.where($scope.conversations, {Selected: true});
-    };
+    }
 
     /**
      * Return [IDs]
@@ -736,12 +720,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     // Used for mobile
     $scope.next = function() {
-        $scope.goToPage( $scope.page + 1 );
+        goToPage( $scope.page + 1 );
     };
 
     $scope.previous = function() {
         if ( $scope.page > 1 ) {
-            $scope.goToPage( $scope.page - 1 );
+            goToPage( $scope.page - 1 );
         }
     };
 
@@ -749,7 +733,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Switch to an other page
      * @param {Integer} page
      */
-    $scope.goToPage = function(page) {
+    function goToPage(page) {
         var route = 'secured.' + $scope.mailbox;
 
         $scope.unselectAllElements();
@@ -765,7 +749,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 id: undefined
             }));
         }
-    };
+    }
 
     /**
      * Toggle star
@@ -880,30 +864,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
-     * On select a conversation
-     * @param {Object} event
-     * @param {Object} conversation
-     */
-    $scope.select = function(event, conversation) {
-        $rootScope.showWelcome = false;
-
-        if(!lastChecked) {
-            lastChecked = conversation;
-        } else {
-            if (event.shiftKey) {
-                var start = _.indexOf($scope.conversations, conversation);
-                var end = _.indexOf($scope.conversations, lastChecked);
-
-                _.each($scope.conversations.slice(Math.min(start, end), Math.max(start, end) + 1), function(conversation) {
-                    conversation.Selected = lastChecked.Selected;
-                });
-            }
-
-            lastChecked = conversation;
-        }
-    };
-
-    /**
      * Filter current list
      * @param {String}
      */
@@ -986,5 +946,5 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     // Call initialization
-    $scope.initialization();
+    initialization();
 });

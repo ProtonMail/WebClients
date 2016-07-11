@@ -1,27 +1,24 @@
-<div id="conversation-list-columns" ng-if="user.ViewLayout === 0">
+<div id="conversation-list-columns" ng-if="user.ViewLayout === 0" pt-select-multiple-conversations>
 
     <ng-include src="'templates/partials/no-results.tpl.html'"></ng-include>
 
     <div
-    ng-repeat="conversation in conversations track by conversation.ID"
-    class="conversation"
-    ng-class="{
-        selected: conversation.Selected,
-        active: active(conversation),
-        read: conversation.NumUnread === 0 || conversation.IsRead === 1,
-        marked: conversation === markedConversation,
-        hasLabels: (conversation.LabelIDs | labels).length > 0,
-        hasAttachments: (conversation.NumAttachments > 0),
-        expiring: (conversation.ExpirationTime > 0)
-    }">
+        ng-repeat="conversation in conversations track by conversation.ID"
+        class="conversation"
+        ng-class="{
+            selected: conversation.Selected,
+            active: active(conversation),
+            read: conversation.NumUnread === 0 || conversation.IsRead === 1,
+            marked: conversation === markedConversation,
+            hasLabels: (conversation.LabelIDs | labels).length > 0,
+            hasAttachments: (conversation.NumAttachments > 0),
+            expiring: (conversation.ExpirationTime > 0)
+        }">
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-        <div class="selection">
-            <input type="checkbox" ng-model="conversation.Selected" class="mousetrap" ng-click="$event.stopPropagation();select($event, conversation)" />
-            <a
-            ng-click="conversation.Selected = !conversation.Selected;select($event, conversation);"
-            class="fa"
-            ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a>
-        </div>
+
+        <pt-select-conversation
+            data-index="{{ ::$index }}"
+            data-model="conversation"></pt-select-conversation>
         <div class="row top">
             <h4
             class="subject"

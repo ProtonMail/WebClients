@@ -50,14 +50,14 @@ body {
                 font-size: .9em;
             }
 
-            input[type="checkbox"] {
-                margin: 0 10px;
-                /*
-                float: left;
+            .ptSelectConversation-container {
                 position: relative;
-                top: 1px; */
+                float: left;
+                padding: 0;
+                margin: 0 10px;
                 height:auto; /*safari bounce bug*/
             }
+
             .fa-star-o {
                 color: $gray-light;
                 text-decoration: none;
@@ -160,6 +160,7 @@ body {
 // MOBILE
 body.mobileMode {
     #conversation-list-rows {
+
         .conversation {
             height: 50px;
             line-height: 50px;
@@ -175,6 +176,15 @@ body.mobileMode {
             .fa-check-square {
                 margin: 0 0 0 10px;
             }
+        }
+
+        .ptSelectConversation-container {
+            margin: 0;
+            width: 50px;
+        }
+        .ptSelectConversation-icon {
+            margin: 0;
+            left: 0
         }
     }
 }
