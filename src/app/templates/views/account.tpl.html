@@ -7,7 +7,12 @@
         <div class="row pm_grid">
 
             <section class="pm_form col-1-2">
-                <legend  translate translate-comment="Account page heading">Default identity</legend>
+                <legend>
+                <span translate translate-comment="Account page heading">Default identity</span>
+
+                <a ui-sref="secured.addresses" class="pm_button link pull-right" translate-context="Action" translate translate-comment="link to addresses page">Other identities</a>
+
+                </legend>
                 <form method="post" ng-submit="saveIdentity(displayNameForm)" name="displayNameForm" novalidate>
                     <div class="clearfix">
                         <div class="col-3-8">
@@ -28,10 +33,21 @@
                             <squire id="signature" name="signature" class="form-control no-resize" ng-model="signature"></squire>
                         </div>
                     </div>
+
+                    <div class="clearfix">
+                        <div class="col-3-8">
+                            <label>ProtonMail Signature</label>
+                        </div>
+                        <div class="col-5-8">
+                            <toggle ng-hide="isFree" class="small pull-right" status="PMSignature" on="ON" off="OFF" change="statusPMSignature(PMSignature)"></toggle>
+                            <p ng-bind-html="signatureContent"></p>
+                            <p class="alert alert-info" ng-show="isFree" translate translate-context="Info"><a ui-sref="secured.dashboard({scroll: true})">Upgrade to a paid plan</a> to disable the ProtonMail signature.</p>
+                        </div>
+                    </div>
+
                     <div class="clearfix">
                         <div class="col-3-8">&nbsp;</div>
                         <div class="col-5-8">
-                            <a ui-sref="secured.addresses" class="pm_button link pull-right" translate-context="Action" translate translate-comment="link to addresses page">Other identities</a>
                             <button class="pm_button primary" type="submit" translate-context="Action" translate translate-comment="Save button for updating default identity on account page">Save</button>
                         </div>
                     </div>

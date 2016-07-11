@@ -5,6 +5,7 @@ angular.module('proton.controllers.Settings')
     $rootScope,
     $scope,
     $timeout,
+    CONSTANTS,
     gettextCatalog,
     $q,
     authentication,
@@ -24,7 +25,9 @@ angular.module('proton.controllers.Settings')
     User,
     desktopNotifications
 ) {
+    $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.displayName = authentication.user.DisplayName;
+    $scope.PMSignature = authentication.user.PMSignature;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;
     $scope.desktopNotificationsStatus = desktopNotifications.status();
@@ -279,6 +282,34 @@ angular.module('proton.controllers.Settings')
 
         return networkActivityTracker.track(deferred.promise);
     };
+
+
+    $scope.statusPMSignature = function(status) {
+
+        var state;
+
+        if(status) {
+            state = 1;
+        } else {
+            state = 0;
+        }
+
+        return networkActivityTracker.track(
+
+            Setting.PMSignature({PMSignature:state})
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    authentication.user.PMSignature = status;
+                    notify({message: gettextCatalog.getString('Signature updated', null, 'Info'), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                }
+            })
+
+        );
+
+    };
+
 
     $scope.saveAutosaveContacts = function(form) {
         networkActivityTracker.track(

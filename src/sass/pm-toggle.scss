@@ -6,6 +6,12 @@
     line-height: 2rem;
     background: $light;
     box-shadow: 0 0 0 1px $border;
+
+    &.small{
+        transform: scale(.8);
+        transform-origin: right center;
+    }
+
     span {
         position: absolute;
         width: ($toggleWidth / 2);
