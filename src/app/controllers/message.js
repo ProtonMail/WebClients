@@ -241,7 +241,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     /**
      * Method called at the initialization of this controller
      */
-    $scope.initialization = function() {
+    function initialization() {
         if ($rootScope.printMode === true) {
             networkActivityTracker.track(cache.getMessage($stateParams.id).then(function(message) {
                 $scope.message = message;
@@ -250,44 +250,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         } else if ($stateParams.message === $scope.message.ID) {
             $scope.initView();
         }
-    };
+    }
 
     $scope.getMessage = function() {
         return [$scope.message];
     };
 
-    /**
-     * Return star status of current message
-     * @return {Boolean}
-     */
-    $scope.starred = function() {
-        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
-    };
-
-    /**
-     * Toggle star status of the current message
-     */
-    $scope.toggleStar = function() {
-        if($scope.starred() === true) {
-            $scope.unstar();
-        } else {
-            $scope.star();
-        }
-    };
-
-    /**
-     * Star the current message
-     */
-    $scope.star = function() {
-        action.starMessage($scope.message.ID);
-    };
-
-    /**
-     * Unstar the current message
-     */
-    $scope.unstar = function() {
-        action.unstarMessage($scope.message.ID);
-    };
 
     /**
      * Order to the conversation controller to scroll to this message
@@ -771,5 +739,5 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
-    $scope.initialization();
+    initialization();
 });

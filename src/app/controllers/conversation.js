@@ -293,30 +293,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     };
 
     /**
-     * Return if there are non trashed message inside this conversation
-     * @return {Boolean}
-     */
-    $scope.nonTrashed = function() {
-        var result = false;
-        var locations = [
-            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-            CONSTANTS.MAILBOX_IDENTIFIERS.starred,
-            CONSTANTS.MAILBOX_IDENTIFIERS.archive
-        ];
-
-        _.each($scope.conversation.LabelIDs, function(labelID) {
-            if (locations.indexOf(labelID) !== -1) {
-                result = true;
-            }
-        });
-
-        return result;
-    };
-
-    /**
      * Return if there are non spammed message inside this conversation
      * @return {Boolean}
      */

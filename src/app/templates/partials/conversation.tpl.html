@@ -1,39 +1,33 @@
 <header id="conversationHeader">
-    <span class="pm_buttons starButton">
-        <a ng-click="toggleStar(conversation)" pt-tooltip-translate="Star" class="fa fa-star-o" ng-show="!starred(conversation)"></a>
-        <a ng-click="toggleStar(conversation)" pt-tooltip-translate="Unstar" class="fa fa-star" ng-show="starred(conversation)"></a>
-    </span>
+
+    <pt-star data-model="conversation" class="pm_buttons"></pt-star>
     <h1>
         <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-        <span ng-bind="conversation.Subject"></span>
+        <span>{{ conversation.Subject }}</span>
     </h1>
     <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
         <p ng-show="nonTrashed() && inTrash === true" class="alert">
             <span translate translate-context="Info">This conversation contains non-trashed messages.</span>
             <a href="#" ng-click="toggleNonTrashed()">
-                <span ng-show="showNonTrashed === true">Hide non trashed messages</span>
-                <span ng-hide="showNonTrashed === true">Show non trashed messages</span>
+                {{ showNonTrashed ? 'Hide' : 'Show'}} non trashed messages
             </a>
         </p>
         <p ng-show="trashed() && inTrash === false" class="alert">
             <span translate translate-context="Info">This conversation contains trashed messages.</span>
             <a href="#" ng-click="toggleTrashed()">
-                <span ng-show="showTrashed === true">Hide trashed messages</span>
-                <span ng-hide="showTrashed === true">Show trashed messages</span>
+                {{ showTrashed ? 'Hide' : 'Show'}} trashed messages
             </a>
         </p>
         <p ng-show="nonSpammed() && inSpam === true" class="alert">
             <span translate translate-context="Info">This conversation contains non-spammed messages.</span>
             <a href="#" ng-click="toggleNonSpammed()">
-                <span ng-show="showNonSpammed === true">Hide non spammed messages</span>
-                <span ng-hide="showNonSpammed === true">Show non spammed messages</span>
+                {{showNonSpammed ? 'Hide' : 'Show'}} non spammed messages
             </a>
         </p>
         <p ng-show="spammed() && inSpam === false" class="alert">
             <span translate translate-context="Info">This conversation contains spammed messages.</span>
             <a href="#" ng-click="toggleSpammed()">
-                <span ng-show="showSpammed === true">Hide spammed messages</span>
-                <span ng-hide="showSpammed === true">Show spammed messages</span>
+                {{showSpammed ? 'Hide' : 'Show'}} non spammed messages
             </a>
         </p>
     </div>
@@ -63,9 +57,9 @@
                     <span class="contact">
                         <span class="from" ng-if="message.expand"><span translate>From</span>:</span>
                         <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name': true }}</strong>
-                        <em ng-click="$event.stopPropagation();">
+                        <em>
                             {{ message.Sender | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a>
+                            <a class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a>
                         </em>
                     </span>
                 </div>
@@ -101,9 +95,11 @@
                     time-interval="30000"></time>
             </div>
             <div class="status">
-                <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
-                    <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
-                </a>
+                <pt-star
+                    data-model="message"
+                    class="singleStar"
+                    data-pt-star-type="message"></pt-star>
+
                 <span class="fa locks" ng-class="{
                     'fa-lock': !!!(message.IsEncrypted == '0'),
                     'text-purple': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6'),

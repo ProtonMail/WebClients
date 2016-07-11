@@ -753,57 +753,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
     }
 
-    /**
-     * Toggle star
-     * @param {Object} element - conversation or message
-     */
-    $scope.toggleStar = function(element) {
-        if ($scope.starred(element) === true) {
-            $scope.unstar(element);
-        } else {
-            $scope.star(element);
-        }
-    };
-
-    /**
-     * Star conversation or message
-     * @param {Object} element
-     */
-    $scope.star = function(element) {
-        var type = tools.typeList();
-
-        if (type === 'conversation') {
-            action.starConversation(element.ID);
-        } else if(type === 'message') {
-            action.starMessage(element.ID);
-        }
-    };
-
-    /**
-     * Unstar conversation or message
-     * @param {Object} element
-     */
-    $scope.unstar = function(element) {
-        var type = tools.typeList();
-
-        if(type === 'conversation') {
-            action.unstarConversation(element.ID);
-        } else if(type === 'message') {
-            action.unstarMessage(element.ID);
-        }
-    };
-
-    /**
-     * Check in LabelIDs to see if the conversation or message is starred
-     * @param {Object} element
-     */
-    $scope.starred = function(element) {
-        if(element.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1) {
-            return true;
-        } else {
-            return false;
-        }
-    };
 
     /**
      * Return label object
