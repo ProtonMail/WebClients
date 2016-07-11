@@ -1,7 +1,10 @@
 <div id="outsideMessageWrap">
     <div ng-if="true" id="expirationMessage">
         <span  translate>Expiring in</span>
-        <strong time="{{ message.ExpirationTime }}" interval="1000" filter="delay">
+        <strong
+            time-refreshed="{{ message.ExpirationTime }}"
+            time-filter="delay"
+            time-interval="1000">
             <i class="fa fa-spin fa-circle-o-notch"></i>
         </strong>.
     </div>
