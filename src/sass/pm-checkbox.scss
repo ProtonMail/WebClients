@@ -19,8 +19,23 @@ body.mobileMode {
 		#pm_main{
 			label.pm_checkbox,
 			input[type="checkbox"] {
-		    	display: none !important;
+		    	top: 0;
+    	    left: 0;
+    	    height: 100%;
+    	    width: 100%;
+    	    opacity: 0;
 		    }
+
+
+		  .ptSelectConversation-input ~ .fa-check-square {
+		  	display: none !important;
+		  }
+		  .ptSelectConversation-input:checked ~ .fa-check-square {
+		  	display: inline-block !important;
+		  }
+		  .ptSelectConversation-input:checked ~ .fa-square-o {
+		  	display: none !important;
+		  }
 			.labelDropdown input[type="checkbox"] {
 				display: inline-block !important;
 			}
@@ -37,6 +52,14 @@ body.mobileMode {
 		    	color: $alt;
 		    	width: 2rem;
 		    }
+
+		    .ptSelectConversation-icon {
+		    	position: absolute;
+		    	top: calc(50% - 1rem);
+		    	pointer-events: none
+		    }
+
+
 		}
 	}
 }

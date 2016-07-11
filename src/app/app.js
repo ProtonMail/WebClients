@@ -87,6 +87,7 @@ angular.module('proton', [
     'proton.translate',
     'proton.wizard',
     'proton.rightClick',
+    'proton.selectConversation',
 
     // Filters
     'proton.filters',

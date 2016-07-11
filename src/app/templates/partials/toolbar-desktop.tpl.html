@@ -5,7 +5,7 @@
         </a>
     </span>
     <label class="pm_checkbox" ng-if="!idDefined() || user.ViewLayout === 0">
-        <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip-translate="Select all messages" pt-tooltip-translate-context="Action">
+        <input type="checkbox" name="selectAll" ng-checked="allSelected()" pt-select-all-conversations ng-disabled="numberElement === 0" pt-tooltip-translate="Select all messages" pt-tooltip-translate-context="Action">
     </label>
     <span ng-show="messageButtons === 1" class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
         <a href="#" class="fa fa-eye-slash" pt-tooltip-translate="Mark as unread" ng-click="unread()" ng-class="{ disabled: numberElementSelected === 0 }" pt-tooltip-translate-context="Action"></a>

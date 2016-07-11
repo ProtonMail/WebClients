@@ -1,4 +1,4 @@
-<div id="conversation-list-rows">
+<div id="conversation-list-rows" pt-select-multiple-conversations>
 
     <ng-include src="'templates/partials/no-results.tpl.html'"></ng-include>
 
@@ -10,8 +10,9 @@
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }">
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-        <label><input type="checkbox" ng-model="conversation.Selected" class="mousetrap" ng-click="$event.stopPropagation();select($event, conversation)" />
-        <a href="#" ng-click="conversation.Selected = !conversation.Selected;select($event, conversation);" class="fa" ng-class="{'fa-square-o': !conversation.Selected, 'fa-check-square': conversation.Selected}"></a></label>
+        <pt-select-conversation
+            data-index="{{ ::$index }}"
+            data-model="conversation"></pt-select-conversation>
         <a
         class="fa"
         ng-click="$event.stopPropagation();toggleStar(conversation)"

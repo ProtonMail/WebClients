@@ -1,9 +1,5 @@
 <nav id="pm_toolbar-mobile" class="pm_toolbar">
 
-    <label class="pm_checkbox" ng-if="!idDefined() || user.ViewLayout === 0">
-        <input type="checkbox" name="selectAll" ng-checked="allSelected()" ng-click="toggleAllSelected()" ng-disabled="numberElement === 0" pt-tooltip-translate-context="Action" pt-tooltip-translate="Select all messages">
-    </label>
-
     <span class="pm_buttons back" ng-if="idDefined() && (user.ViewLayout === 1 || mobileMode)">
         <a ng-click="back()" pt-tooltip-translate="Back to list" pt-tooltip-translate-context="Action">
             <i class="fa fa-long-arrow-left"></i>
