@@ -94,7 +94,11 @@
             <div class="time">
                 <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
                 <span ng-show="message.toggleDetails === true">{{ message.Time | localReadableTime }}</span>
-                <span ng-show="message.toggleDetails !== true" time="{{ message.Time }}" filter="messageTime" interval="30000"></span>
+                <time
+                    ng-show="message.toggleDetails !== true"
+                    time-refreshed="{{ message.Time }}"
+                    time-filter="messageTime"
+                    time-interval="30000"></time>
             </div>
             <div class="status">
                 <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
@@ -281,7 +285,7 @@
         <div ng-if="message.ExpirationTime > 0" class="expiration" ng-if="message.expand">
             <i class="fa fa-clock-o"></i>
             <span translate>This message will expire in</span>
-            <span time="{{ message.ExpirationTime }}"></span>
+            <time time-refreshed="{{ message.ExpirationTime }}"></time>
         </div>
 
         <div ng-show="!!message.imagesHidden && message.expand" class="showImages" ng-click="displayImages()">
