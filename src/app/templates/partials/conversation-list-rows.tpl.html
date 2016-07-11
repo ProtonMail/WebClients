@@ -13,10 +13,9 @@
         <pt-select-conversation
             data-index="{{ ::$index }}"
             data-model="conversation"></pt-select-conversation>
-        <a
-        class="fa"
-        ng-click="$event.stopPropagation();toggleStar(conversation)"
-        ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"></a>
+        <pt-star
+            data-model="conversation"
+            class="singleStar"></pt-star>
         <span
         class="senders"
         ng-click="click(conversation)">

@@ -65,6 +65,7 @@ angular.module('proton', [
     'proton.message',
     'proton.autocomplete',
     'proton.card',
+    'proton.star',
     'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
