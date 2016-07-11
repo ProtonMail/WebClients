@@ -543,8 +543,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var current = $state.$current.name;
         var id = $state.params.id;
 
-        cache.more(id, 'next').then(function(id) {
-            $state.go(current, {id: id});
+        cache.more(id, 'next').then(function(conversation) {
+            $state.go(current, {id: conversation.ID});
+            $scope.markedConversation = conversation;
         });
     };
 
@@ -555,8 +556,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var current = $state.$current.name;
         var id = $state.params.id;
 
-        cache.more(id, 'previous').then(function(id) {
-            $state.go(current, {id: id});
+        cache.more(id, 'previous').then(function(conversation) {
+            $state.go(current, {id: conversation.ID});
+            $scope.markedConversation = conversation;
         });
     };
 

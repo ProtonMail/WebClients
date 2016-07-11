@@ -9,7 +9,7 @@
             selected: conversation.Selected,
             active: active(conversation),
             read: conversation.NumUnread === 0 || conversation.IsRead === 1,
-            marked: conversation === markedConversation,
+            marked: conversation.ID === markedConversation.ID,
             hasLabels: (conversation.LabelIDs | labels).length > 0,
             hasAttachments: (conversation.NumAttachments > 0),
             expiring: (conversation.ExpirationTime > 0)

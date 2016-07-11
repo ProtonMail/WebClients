@@ -955,12 +955,12 @@ angular.module('proton.cache', [])
         var loc = tools.currentLocation();
         var request = {Label: loc};
         var typeList = tools.typeList();
-        var callApi = function() {            
+        var callApi = function() {
             queryConversations(request).then(function(elements) {
                 if (angular.isArray(elements) && elements.length > 0) {
                     var first = _.first(elements);
 
-                    deferred.resolve(first.ID);
+                    deferred.resolve(first);
                 } else {
                     deferred.reject();
                 }
@@ -977,9 +977,9 @@ angular.module('proton.cache', [])
 
         if (index !== -1) {
             if (type === 'previous' && angular.isDefined(conversations[index + 1])) {
-                deferred.resolve(conversations[index + 1].ID);
+                deferred.resolve(conversations[index + 1]);
             } else if (type === 'next' && angular.isDefined(conversations[index - 1])) {
-                deferred.resolve(conversations[index - 1].ID);
+                deferred.resolve(conversations[index - 1]);
             } else {
                 callApi();
             }
