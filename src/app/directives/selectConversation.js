@@ -138,7 +138,7 @@ angular.module("proton.selectConversation", [])
 
         scope
           .$on('$destroy', function () {
-            items.off('click', onClick);
+            items && items.off('click', onClick);
           });
       }
     };
