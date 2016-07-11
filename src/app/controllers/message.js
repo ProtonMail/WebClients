@@ -560,8 +560,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                                 attachment.decrypting = false;
                                 attachment.decrypted = true;
                                 if(!$rootScope.isFileSaverSupported) {
-                                    $($event.currentTarget)
-                                    .prepend('<span class="fa fa-download"></span>');
+                                    // display a download icon
+                                    attachment.decrypted = true;
                                 }
                                 $scope.$apply();
                             },
@@ -611,7 +611,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     var reader = new FileReader();
 
                     reader.onloadend = function () {
-                        link.attr('href',reader.result);
+                        link.parent('a').attr('href',reader.result);
                     };
 
                     reader.readAsDataURL(blob);

@@ -299,7 +299,8 @@ angular.module("proton.controllers.Outside", [
                             });
                             attachment.decrypting = false;
                             if(!$rootScope.isFileSaverSupported) {
-                                $($event.currentTarget).prepend('<span class="fa fa-download"></span>');
+                                // display a download icon
+                                attachment.decrypted = true;
                             }
                             $scope.$apply();
                         } catch (error) {
@@ -329,7 +330,7 @@ angular.module("proton.controllers.Outside", [
                 var reader = new FileReader();
 
                 reader.onloadend = function () {
-                    link.attr('href',reader.result);
+                    link.parent('a').attr('href',reader.result);
                 };
 
                 reader.readAsDataURL(blob);
