@@ -11,6 +11,9 @@ angular.module('proton.models.setting', [])
         signature: function(params) {
             return $http.put(url.get() + '/settings/signature', params);
         },
+        PMSignature: function(params){
+            return $http.put(url.get() + '/settings/pmsignature', params);
+        },
         display: function(params) {
             return $http.put(url.get() + '/settings/display', params);
         },

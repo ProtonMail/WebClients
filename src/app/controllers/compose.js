@@ -750,9 +750,20 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             firstQuote = tempDOM.children('.protonmail_quote:first'),
             countQuotes = tempDOM.find('.protonmail_quote').length;
 
-        if ($content.text().length > 0 || $content.find('img').length > 0) {
-             signature = $('<div class="'+className+'">' + tools.replaceLineBreaks(content + space) + '</div>');
+        if ($content.text().length === 0 && $content.find('img').length === 0){
+            // remove the empty DOM elements
+            content = "";
+        } 
+         
+        var PMSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : ''; 
+
+        if(content !== '' || PMSignature !== ''){
+            signature = DOMPurify.sanitize('<div class="'+className+'">' + tools.replaceLineBreaks(content + PMSignature + space) +'</div>', {
+                ADD_ATTR: ['target'],
+                FORBID_TAGS: ['style', 'input', 'form']
+            });
         }
+
 
         if ( countSignatures > 0) {
             // update the first signature (reply/foward case)
