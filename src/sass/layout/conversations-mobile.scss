@@ -1,0 +1,28 @@
+body.mobileMode {
+    .conversation {
+        .selection {
+            width: 50px;
+            padding-top: 15px;
+            height: 60px;
+            position: absolute;
+            z-index: 99;
+        }
+        .row {
+            padding-left: 50px;
+            h4 {
+                width: calc(100% - 11rem);
+            }
+            .senders.full {
+                width: calc(100% - 10rem);
+                cursor: pointer;
+            }
+        }
+    }
+    .ptSelectConversation-container {
+        margin: 0;
+        width: 50px;
+    }
+    .ptSelectConversation-icon {
+        margin: 0;
+    }
+}
