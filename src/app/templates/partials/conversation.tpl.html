@@ -195,13 +195,28 @@
                         </span>
                     </span>
                     <span class="pm_buttons">
-                        <a href="#" ng-click="reply(message)" pt-tooltip-translate="Reply" pt-tooltip-translate-context="Action">
+                        <a
+                            href="#"
+                            data-action-message="::message"
+                            data-action-message-type="reply"
+                            pt-tooltip-translate="Reply"
+                            pt-tooltip-translate-context="Action">
+
                             <i class="fa fa-mail-reply"></i>
                         </a>
-                        <a class="divider" ng-click="replyAll(message)" pt-tooltip-translate="Reply all" pt-tooltip-translate-context="Action">
+                        <a
+                            class="divider"
+                            data-action-message="::message"
+                            data-action-message-type="replyall"
+                            pt-tooltip-translate="Reply all" pt-tooltip-translate-context="Action">
                             <i class="fa fa-mail-reply-all"></i>
                         </a>
-                        <a class="divider" ng-click="forward(message)" pt-tooltip-translate="Forward" pt-tooltip-translate-context="Action">
+
+                        <a
+                            class="divider"
+                            data-action-message="::message"
+                            data-action-message-type="forward"
+                            pt-tooltip-translate="Forward" pt-tooltip-translate-context="Action">
                             <i class="fa fa-mail-forward"></i>
                         </a>
                         <a href="#" class="divider pm_trigger" dropdown pt-tooltip-translate="More" pt-tooltip-translate-context="Action">
