@@ -230,6 +230,11 @@ angular.module('proton', [
         }
     });
 
+    // Manage responsive changes
+    angular.element(window).bind('resize', _.debounce(tools.mobileResponsive, 50));
+    angular.element(window).bind('orientationchange', tools.mobileResponsive);
+    tools.mobileResponsive();
+
     // Less than 1030 / Tablet Mode
     // can pass in show (true/false) to explicity show/hide
     $rootScope.$on('sidebarMobileToggle', function(event, show) {
