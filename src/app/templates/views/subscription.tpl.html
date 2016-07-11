@@ -180,9 +180,12 @@
         </div>
         <hr />
         <div class="text-center">
-            <p><button class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Submit</button></p>
+            <p class="alert alert-info" ng-show="errorPay">Would you like to create a free ProtonMail account instead? <a href="#" ng-click="payment = false;humanityTest = true;">Yes</a> <a href="https://protonmail.com/signup">No</a></p>
+            <p>
+                <button ng-hide="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Submit</button>
+                <button ng-show="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Retry</button>
+            </p>
             <p><button class="pm_button link" type="button" ng-click="errorPay = true" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button></p>
-            <p class="alert" ng-show="errorPay">Would you like to create a free ProtonMail account instead? <a href="#" ng-click="payment = false;humanityTest = true;">Yes</a> <a href="https://protonmail.com/signup">No</a></p>
         </div>
     </form>
 </div>
