@@ -108,9 +108,9 @@ angular.module("proton.event", ["proton.constants"])
 							dirtyAddresses.push(address);
 						} else {
 							_.each(address.Keys, function(key, index) {
-								promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
+								promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(pkg) { // Decrypt private key with the mailbox password
 									key.decrypted = true; // We mark this key as decrypted
-									authentication.storeKey(address.ID, key.ID, package); // We store the package to the current service
+									authentication.storeKey(address.ID, key.ID, pkg); // We store the package to the current service
 
 									return keyInfo(key);
 								}, function(error) {
