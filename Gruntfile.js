@@ -116,9 +116,10 @@ module.exports = function(grunt) {
                 files: [{
                     src: [
                         '<%= build_dir %>/src/app/**/*.js',
-                        '!<%= build_dir %>/src/app/libraries/**/*.js'
+                        '!<%= build_dir %>/src/app/libraries/**/*.js',
+                        '!<%= build_dir %>/src/app/templates/templates-app.js'
                     ],
-                    dest: "<%= build_dir %>",
+                    dest: ".",
                     cwd: ".",
                     filter: 'isFile',
                     expand: true
@@ -516,7 +517,6 @@ module.exports = function(grunt) {
         'clean:dist', // clean dist directory
         'shell:setup_dist',
         'ngconstant:prod', // set prod variables
-        'babel',
         'build',
         'copy:compile_assets', // copy assets
         'copy:compile_htaccess', // copy htaccess file
