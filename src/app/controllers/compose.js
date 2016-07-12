@@ -738,7 +738,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var $content = $('<div>' + content + '</div>'),
             signature = "",
             newSign = false,
-            space = "<div><br /></div>";
+            space = "<div><br /></div>",
             className = "protonmail_signature_block";
 
         var currentBody = $.parseHTML(message.Body),
