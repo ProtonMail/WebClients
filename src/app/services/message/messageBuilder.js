@@ -17,7 +17,7 @@ angular.module('proton.service.message', [])
      * @param  {Array}  address UserAdresses
      * @return {Array}
      */
-    const filterUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address) === -1);
+    const filterUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address.toLowerCase()) === -1);
 
     /**
      * Format and build a reply
@@ -62,7 +62,7 @@ angular.module('proton.service.message', [])
         newMsg.CCList = _.union(ToList, CCList);
 
         // Remove user address in CCList and ToList
-        const userAddresses = _(authentication.user.Addresses).map(({ Email }) => Email);
+        const userAddresses = _(authentication.user.Addresses).map(({ Email = '' }) => Email.toLowerCase());
         newMsg.ToList = filterUserAddresses(newMsg.ToList, userAddresses);
         newMsg.CCList = filterUserAddresses(newMsg.CCList, userAddresses);
       }
@@ -96,14 +96,14 @@ angular.module('proton.service.message', [])
       const adr = _.findWhere(authentication.user.Addresses, {ID: AddressID}) || {};
 
       if (Type !== 2 && Type !== 3) {
-        let found = _.findWhere(recipients, {Address: adr.Email});
+        let found;
 
         _.each(_.sortBy(authentication.user.Addresses, 'Send'), (address) => {
           if (found) {
             return false;
           }
 
-          found = _.findWhere(recipients, {Address: address.Email});
+          found = _.findWhere(address, {Address: recipients.Address});
         });
 
         return (found || adr);
