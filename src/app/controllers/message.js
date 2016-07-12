@@ -46,8 +46,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.$on('refreshMessage', function(event) {
         var message = cache.getMessageCached($scope.message.ID);
 
-        if(angular.isDefined(message)) {
-            $scope.message = message;
+        if (angular.isDefined(message)) {
+            angular.extend($scope.message, message);
         }
     });
 
