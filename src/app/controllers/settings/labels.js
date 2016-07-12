@@ -35,19 +35,19 @@ angular.module("proton.controllers.Settings")
     };
 
     // Listeners
-    $scope.$on('deleteLabel', function(event, ID) {
+    $rootScope.$on('deleteLabel', function(event, ID) {
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
     });
 
-    $scope.$on('createLabel', function(event, ID, label) {
+    $rootScope.$on('createLabel', function(event, ID, label) {
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
     });
 
-    $scope.$on('updateLabel', function(event, ID, label) {
+    $rootScope.$on('updateLabel', function(event, ID, label) {
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
     });
 
-    $scope.$on('updateLabels', function(event) {
+    $rootScope.$on('updateLabels', function(event) {
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
     });
 
@@ -144,7 +144,7 @@ angular.module("proton.controllers.Settings")
 
                                     notify({message: gettextCatalog.getString('Label deleted', null), classes: 'notification-success'});
                                     authentication.user.Labels.splice(index, 1);
-                                    $rootScope.$broadcast('deleteLabel', label.ID);
+                                    $rootScope.$emit('deleteLabel', label.ID);
                                     confirmModal.deactivate();
                                 } else if(angular.isDefined(data) && angular.isDefined(data.Error)) {
                                     notify({message: data.Error, classes: 'notification-danger'});

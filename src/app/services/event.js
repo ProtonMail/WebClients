@@ -45,18 +45,18 @@ angular.module("proton.event", ["proton.constants"])
 						if(label.Action === DELETE) {
 							if (index !== -1) {
 								authentication.user.Labels.splice(index, 1);
-								$rootScope.$broadcast('deleteLabel', label.ID);
+								$rootScope.$emit('deleteLabel', label.ID);
 							}
 						} else if(label.Action === CREATE) {
 							if (index === -1) {
 								authentication.user.Labels.push(label.Label);
 								cacheCounters.add(label.Label.ID);
-								$rootScope.$broadcast('createLabel', label.ID, label.Label);
+								$rootScope.$emit('createLabel', label.ID, label.Label);
 							}
 						} else if(label.Action === UPDATE) {
 							if(index !== -1) {
 								authentication.user.Labels[index] = label.Label;
-								$rootScope.$broadcast('updateLabel', label.ID, label.Label);
+								$rootScope.$emit('updateLabel', label.ID, label.Label);
 							}
 						}
 					});
@@ -340,7 +340,7 @@ angular.module("proton.event", ["proton.constants"])
 					.then(function() {
 						$rootScope.$broadcast('updateUser');
 						$rootScope.$broadcast('updateContacts');
-						$rootScope.$broadcast('updateLabels');
+						$rootScope.$emit('updateLabels');
 					});
 				} else if (data.Reload === 1) {
 					$window.location.reload();

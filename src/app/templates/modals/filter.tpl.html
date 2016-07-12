@@ -81,9 +81,12 @@
                     <div class="alert pm_grid" ng-show="ctrl.hasLabels">
                         <div class="col-1-4" ng-repeat="label in ctrl.filter.Simple.Actions.Labels track by label.ID | orderBy: 'Order'">
                             <label for="label_{{$id}}">
-                                <input type="checkbox" id="label_{{$id}}" ng-model="label.Selected" /> <i class="fa fa-tag" ng-style="{color: label.Color}"></i> 
+                                <input type="checkbox" id="label_{{$id}}" ng-model="label.Selected" /> <i class="fa fa-tag" ng-style="{color: label.Color}"></i>
                                 <span>{{ label.Name }}</span>
                             </label>
+                        </div>
+                        <div class="col-1-4">
+                            <button class="pm_button primary" ng-click="ctrl.addLabel()" translate translate-context="Action">Add Label</button>
                         </div>
                     </div>
                     <label for="move">
