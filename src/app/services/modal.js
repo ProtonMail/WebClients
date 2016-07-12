@@ -1750,7 +1750,7 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('filterModal', function($timeout, pmModal, gettextCatalog, authentication, Filter, networkActivityTracker, notify, CONSTANTS, eventManager) {
+.factory('filterModal', function($timeout, $rootScope, pmModal, gettextCatalog, authentication, Filter, networkActivityTracker, notify, CONSTANTS, eventManager, labelModal, Label) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
@@ -1862,6 +1862,14 @@ angular.module("proton.modals", [])
                     this.addCondition();
                 }
 
+                if (angular.isObject(this.filter.Simple)) {
+                    _.each(['deleteLabel', 'createLabel', 'updateLabel', 'updateLabels'], function(name) {
+                        $rootScope.$on(name, function(event, ID) {
+                            this.filter.Simple.Actions.Labels = authentication.user.Labels;
+                        }.bind(this));
+                    }.bind(this));
+                }
+
                 $timeout(function() {
                     angular.element('#filterName').focus();
                 });
@@ -1939,6 +1947,33 @@ angular.module("proton.modals", [])
                 } else {
                     notify({message: gettextCatalog.getString('Text or pattern already included', null), classes: 'notification-danger'});
                 }
+            };
+
+            this.addLabel = function() {
+                labelModal.activate({
+                    params: {
+                        title: gettextCatalog.getString('Create new label', null, 'Title'),
+                        create: function(name, color) {
+                            networkActivityTracker.track(
+                                Label.create({
+                                    Name: name,
+                                    Color: color,
+                                    Display: 1
+                                }).then(function(result) {
+                                    if (result.data && result.data.Code === 1000) {
+                                        eventManager.call();
+                                        labelModal.deactivate();
+                                    } else if (result.data && result.data.Error) {
+                                        notify({message: result.data.Error, classes: 'notification-danger'});
+                                    }
+                                })
+                            );
+                        },
+                        cancel: function() {
+                            labelModal.deactivate();
+                        }
+                    }
+                });
             };
 
             this.removeCondition = function(condition) {
