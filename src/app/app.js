@@ -91,6 +91,7 @@ angular.module('proton', [
     'proton.wizard',
     'proton.rightClick',
     'proton.selectConversation',
+    'proton.detectTimeWidth',
 
     // Filters
     'proton.filters',
