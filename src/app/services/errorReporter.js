@@ -1,6 +1,6 @@
 angular.module("proton.errorReporter", [])
     .factory("errorReporter", function($log, $rootScope, $q, notify) {
-        var api = _.bindAll({
+        var api = {
             catcher: function(msg, promise) {
                 var self = this;
 
@@ -27,7 +27,7 @@ angular.module("proton.errorReporter", [])
 
                 return q.promise;
             },
-            notify: function(message, error) {
+            notify(message, error) {
                 if (angular.isDefined(message)) {
                     notify(message);
                 }
@@ -35,7 +35,7 @@ angular.module("proton.errorReporter", [])
             clear: function() {
                 notify.closeAll();
             }
-        }, 'catcher', 'resolve', 'notify', 'clear');
+        };
 
         return api;
     })
