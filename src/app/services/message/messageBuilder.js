@@ -1,18 +1,23 @@
 angular.module('proton.service.message', [])
-  .factory('messageBuilder', function(gettextCatalog, tools, authentication, Message, $filter) {
+  .factory('messageBuilder', (gettextCatalog, tools, authentication, Message, $filter) => {
 
-    var RE_PREFIX = gettextCatalog.getString('Re:', null);
-    var FW_PREFIX = gettextCatalog.getString('Fw:', null);
-    var RE_LENGTH = RE_PREFIX.length;
-    var FW_LENGTH = FW_PREFIX.length;
+   const RE_PREFIX = gettextCatalog.getString('Re:', null);
+   const FW_PREFIX = gettextCatalog.getString('Fw:', null);
+   const RE_LENGTH = RE_PREFIX.length;
+   const FW_LENGTH = FW_PREFIX.length;
 
-    function formatSubject(subject, prefixSubject) {
-      var prefix = prefixSubject || RE_PREFIX;
-      var sub = subject || '';
-      var hasPrefix = sub.toLowerCase().substring(0, prefix) === prefix.toLowerCase();
-
-      return hasPrefix ? sub : (prefix + ' ' + subject);
+    function formatSubject(subject = '', prefix = RE_PREFIX) {
+      const hasPrefix = subject.toLowerCase().substring(0, prefix) === prefix.toLowerCase();
+      return hasPrefix ? subject : (prefix + ' ' + subject);
     }
+
+    /**
+     * Filter user's adresses
+     * @param  {Array}  list
+     * @param  {Array}  address UserAdresses
+     * @return {Array}
+     */
+    const filterUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address) === -1);
 
     /**
      * Format and build a reply
@@ -22,10 +27,7 @@ angular.module('proton.service.message', [])
      * @param  {String} options.ReplyTo from the current message
      * @param  {Number} options.Type    from the current message
      */
-    function reply(newMsg, currentMsg) {
-
-      var origin = currentMsg || {};
-
+    function reply(newMsg, origin = {}) {
       newMsg.Action = 0;
       newMsg.Subject = formatSubject(origin.Subject);
 
@@ -46,49 +48,37 @@ angular.module('proton.service.message', [])
      * @param  {String} options.ReplyTo from the current message
      * @param  {Number} options.Type    from the current message
      */
-    function replyAll(newMsg, currentMsg) {
-
-      var origin = currentMsg || {};
+    function replyAll(newMsg, { Subject, Type, ToList, ReplyTo, CCList, BCCList } = {}) {
 
       newMsg.Action = 1;
-      newMsg.Subject = formatSubject(origin.Subject);
+      newMsg.Subject = formatSubject(Subject);
 
-      if(origin.Type === 2 || origin.Type === 3) {
-        newMsg.ToList = origin.ToList;
-        newMsg.CCList = origin.CCList;
-        newMsg.BCCList = origin.BCCList;
+      if(Type === 2 || Type === 3) {
+        newMsg.ToList = ToList;
+        newMsg.CCList = CCList;
+        newMsg.BCCList = BCCList;
       } else {
-        newMsg.ToList = [origin.ReplyTo];
-        newMsg.CCList = _.union(origin.ToList, origin.CCList);
+        newMsg.ToList = [ReplyTo];
+        newMsg.CCList = _.union(ToList, CCList);
 
         // Remove user address in CCList and ToList
-       var userAddresses = _(authentication.user.Addresses)
-        .map(function (adr) {
-          return adr.Email;
-        });
-
-        newMsg.ToList = _.filter(newMsg.ToList, function (contact) {
-          return userAddresses.indexOf(contact.Address) === -1;
-        });
-
-        newMsg.CCList = _.filter(newMsg.CCList, function (contact) {
-           userAddresses.indexOf(contact.Address) === -1;
-        });
+        const userAddresses = _(authentication.user.Addresses).map(({ Email }) => Email);
+        newMsg.ToList = filterUserAddresses(newMsg.ToList, userAddresses);
+        newMsg.CCList = filterUserAddresses(newMsg.CCList, userAddresses);
       }
     }
+
+
 
     /**
      * Format and build a forward
      * @param  {Message} newMsg          New message to build
      * @param  {String} options.Subject from the current message
      */
-    function forward(newMsg, currentMsg) {
-
-      var origin = currentMsg || {};
-
+    function forward(newMsg, { Subject } = {}) {
       newMsg.Action = 2;
       newMsg.ToList = [];
-      newMsg.Subject = formatSubject(origin.Subject, FW_PREFIX);
+      newMsg.Subject = formatSubject(Subject, FW_PREFIX);
     }
 
     /**
@@ -97,20 +87,18 @@ angular.module('proton.service.message', [])
      * @param  {Array} options.CCList    From the new message
      * @param  {Array} options.BCCList   From the new message
      * @param  {String} options.AddressID From the current message
+     * @param  {Number} options.Type From the current message
      * @return {String}
      */
-    function findFrom(msg, currentMsg) {
+    function findFrom({ ToList, CCList, BCCList } = {}, { AddressID, Type } = {}) {
 
-      var newMsg = msg || {};
-      var origin = currentMsg || {};
+      const recipients = _.union(ToList, CCList, BCCList);
+      const adr = _.findWhere(authentication.user.Addresses, {ID: AddressID}) || {};
 
-      var recipients = _.union(newMsg.ToList, newMsg.CCList, newMsg.BCCList);
-      var adr = _.findWhere(authentication.user.Addresses, {ID: origin.AddressID}) || {};
+      if (Type !== 2 && Type !== 3) {
+        let found = _.findWhere(recipients, {Address: adr.Email});
 
-      if (origin.Type !== 2 && origin.Type !== 3) {
-        var found = _.findWhere(recipients, {Address: adr.Email});
-
-        _.each(_.sortBy(authentication.user.Addresses, 'Send'), function (address) {
+        _.each(_.sortBy(authentication.user.Addresses, 'Send'), (address) => {
           if (found) {
             return false;
           }
@@ -127,15 +115,14 @@ angular.module('proton.service.message', [])
     /**
      * Create a new message
      * @param  {String} action   reply|replyAll|forward
-     * @param  {Message} original Current message to reply etc.
+     * @param  {Message} currentMsg Current message to reply etc.
      * @return {Message}          New message formated
      */
-    function create(action, original) {
+    function create(action, currentMsg = {}) {
 
-      var newMsg = new Message();
-      var currentMsg = original || {};
-      var subject = DOMPurify.sanitize('Subject: ' + currentMsg.Subject + '<br>');
-      var cc = tools.contactsToString(Array.isArray(currentMsg.CCList) ? currentMsg.CCList : [currentMsg.CCList]);
+      const newMsg = new Message();
+      const subject = DOMPurify.sanitize('Subject: ' + currentMsg.Subject + '<br>');
+      const cc = tools.contactsToString(Array.isArray(currentMsg.CCList) ? currentMsg.CCList : [currentMsg.CCList]);
 
       (action === 'reply') && reply(newMsg, currentMsg);
       (action === 'replyall') && replyAll(newMsg, currentMsg);
@@ -162,5 +149,5 @@ angular.module('proton.service.message', [])
       return newMsg;
     }
 
-    return {create: create};
+    return { create };
   });

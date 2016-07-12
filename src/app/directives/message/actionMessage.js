@@ -1,28 +1,25 @@
 angular.module('proton.message', [])
-    .directive('actionMessage', function($rootScope, messageBuilder) {
+  .directive('actionMessage', ($rootScope, messageBuilder) => ({
+    scope: {
+      model: '=actionMessage'
+    },
+    link(scope, el, { actionMessageType }) {
 
-        return {
-            scope: {
-                model: '=actionMessage'
-            },
-            link: function (scope, el, attr) {
+      function onClick(e) {
+        e.preventDefault();
 
-                function onClick(e) {
-                    e.preventDefault();
+        if ('addfile' === actionMessageType) {
+          return $('#uid' + scope.model.uid).find('.dropzone').click();
+        }
+        const msg = messageBuilder.create(actionMessageType, scope.model);
+        $rootScope.$emit('loadMessage', msg);
+      }
 
-                    if ('addfile' === attr.actionMessageType) {
-                        return $('#uid' + scope.model.uid).find('.dropzone').click();
-                    }
-                    var msg = messageBuilder.create(attr.actionMessageType, scope.model);
-                    $rootScope.$emit('loadMessage', msg);
-                }
+      el.on('click', onClick);
 
-                el.on('click', onClick);
-
-                scope
-                    .$on('$destroy', function() {
-                        el.off('click', onClick);
-                    });
-            }
-        };
-    });
+      scope
+        .$on('$destroy', () => {
+          el.off('click', onClick);
+        });
+    }
+  }));

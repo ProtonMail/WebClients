@@ -127,9 +127,9 @@ angular.module("proton.controllers.Settings")
             params: {
                 submit: function(loginPassword, keyPassword) {
                     // Try to decrypt private key with the key password specified
-                    pmcw.decryptPrivateKey(key.PrivateKey, keyPassword).then(function(package) {
+                    pmcw.decryptPrivateKey(key.PrivateKey, keyPassword).then(function(pkg) {
                         // Encrypt private key with the current mailbox password
-                        pmcw.encryptPrivateKey(package, mailboxPassword).then(function(privateKey) {
+                        pmcw.encryptPrivateKey(pkg, mailboxPassword).then(function(privateKey) {
                             // Update private key
                             networkActivityTracker.track(Key.private({
                                 Password: loginPassword,

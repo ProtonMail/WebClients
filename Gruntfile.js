@@ -108,6 +108,24 @@ module.exports = function(grunt) {
             ]
         },
 
+        babel: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: [{
+                    src: [
+                        '<%= build_dir %>/src/app/**/*.js',
+                        '!<%= build_dir %>/src/app/libraries/**/*.js'
+                    ],
+                    dest: "<%= build_dir %>",
+                    cwd: ".",
+                    filter: 'isFile',
+                    expand: true
+                }]
+            }
+        },
+
         connect: {
             options: {
                 hostname: '*',
@@ -303,7 +321,8 @@ module.exports = function(grunt) {
                     pmcrypto: true,
                     _: true,
                     jQuery: true
-                }
+                },
+                "esversion": 6
             }
         },
 
@@ -490,13 +509,14 @@ module.exports = function(grunt) {
         'build',
         'jshint',
         'connect:watch',
-        'delta'
+        'delta',
     ]);
 
     grunt.registerTask('deploy', [
         'clean:dist', // clean dist directory
         'shell:setup_dist',
         'ngconstant:prod', // set prod variables
+        'babel',
         'build',
         'copy:compile_assets', // copy assets
         'copy:compile_htaccess', // copy htaccess file
@@ -523,6 +543,7 @@ module.exports = function(grunt) {
         'copy:build_external',
         'copy:build_htaccess',
         'ngAnnotate',
+        'babel',
         'index:build'
     ]);
 };

@@ -153,9 +153,9 @@ angular.module('proton.controllers.Settings')
                     var encryptPrivateKey = result.data.PrivateKey;
 
                     // Decrypt organization private key with the old mailbox password (current)
-                    pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd).then(function(package) {
+                    pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd).then(function(pkg) {
                         // Encrypt private key with the new mailbox password
-                        pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
+                        pmcw.encryptPrivateKey(pkg, newMailPwd).then(function(privateKey) {
                             // Send request to the back-end to update the organization private key
                             Organization.private({
                                 Password: loginPwd,
@@ -193,9 +193,9 @@ angular.module('proton.controllers.Settings')
                 _.each(result.data.User.Addresses, function(address) {
                     _.each(address.Keys, function(key) {
                         // Decrypt private key with the old mailbox password
-                        promises.push(pmcw.decryptPrivateKey(key.PrivateKey, oldMailPwd).then(function(package) {
+                        promises.push(pmcw.decryptPrivateKey(key.PrivateKey, oldMailPwd).then(function(pkg) {
                             // Encrypt the key with the new mailbox password
-                            return pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
+                            return pmcw.encryptPrivateKey(pkg, newMailPwd).then(function(privateKey) {
                                 return {ID: key.ID, PrivateKey: privateKey};
                             }, function(error) {
                                 $log.error(error);
