@@ -15,7 +15,7 @@ angular.module("proton.squire", [
         link: function(scope, element, attrs, ngModel) {
             if (!ngModel) { return; } // do nothing if no ng-model
 
-            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, menubar, ua, updateModel, updateStylesToMatch;
+            var IFRAME_CLASS, HEADER_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, menubar, ua, updateModel, updateStylesToMatch;
 
             LINK_DEFAULT = IMAGE_DEFAULT = "";
             IFRAME_CLASS = 'angular-squire-iframe';
