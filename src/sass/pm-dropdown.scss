@@ -38,7 +38,16 @@
 	&.open {
 		display: block;
 	}
-	> a {
+
+	> button {
+		background: inherit;
+		color: currentColor;
+		border: 0
+	}
+
+	> a,
+	> button {
+		cursor: pointer;
 		width: 100%;
 		text-align: left;
 		display: block;
@@ -62,7 +71,8 @@
 			font-style: normal;
 		}
 	}
-	> a:last-child {
-		border-bottom: none;
+	> a:last-child,
+	> button:last-child {
+		border-bottom: none
 	}
 }

@@ -178,9 +178,6 @@ angular.module('proton.controllers.Header', [])
         $rootScope.$broadcast('newMessage');
     };
 
-    $scope.tour = function() {
-        $rootScope.$broadcast('tourStart');
-    };
 
     $scope.toggleAdvancedSearch = function() {
         if ($scope.advancedSearch === false) {
