@@ -753,9 +753,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if ($content.text().length === 0 && $content.find('img').length === 0){
             // remove the empty DOM elements
             content = "";
-        } 
-         
-        var PMSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : ''; 
+        }
+
+        var PMSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : '';
 
         if(content !== '' || PMSignature !== ''){
             signature = DOMPurify.sanitize('<div class="'+className+'">' + tools.replaceLineBreaks(content + PMSignature + space) +'</div>', {
@@ -844,7 +844,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             // focus correct field
             var composer = angular.element('#uid' + message.uid);
 
-            if (message.ToList.length === 0) {
+            if ((message.ToList.length+message.CCList.length+message.BCCList.length) === 0) {
                 $timeout(function () {
                     $scope.focusTo(message);
                 });
