@@ -4,7 +4,7 @@ angular.module("proton.errorReporter", [])
     const newNotification = (msg, error) => msg && notify(msg);
     const clear = notify.closeAll;
     ​
-    const catcher = (msg, promise) => () => {
+    const catcher = (msg, promise) => (error) => {
         newNotification(msg, error);
         promise && promise.reject();
     };
