@@ -49,12 +49,17 @@ body.tourActive {
 	width: 100%;
 	background: $white;
 	padding: 2rem 14rem 2rem 8rem;
-	a.close {
+
+	[class^="step-"] {display: none}
+
+	.close {
 		display: block;
 		position: absolute;
 		right: 0;
 		top: 0;
 		padding: 0 1rem;
+		background: inherit;
+		border: 0;
 		line-height: 2rem;
 		cursor: pointer;
 		color: $primary;
@@ -98,25 +103,22 @@ body.tourActive {
 				height: 12px;
 				width: 12px;
 				border-radius: 12px;
-				&.active {
-					a {
-						background: $primary;
-					}
-				}
-				a {
-					display: block;
-					list-style-type: none;
-					margin: 0;
-					padding: 0;
-					height: 12px;
-					width: 12px;
-					border-radius: 12px;
-					background: $border;
-				}
+
+			}
+
+			a {
+				display: block;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				height: 12px;
+				width: 12px;
+				border-radius: 12px;
+				background-color: $border;
 			}
 		}
 	}
-	.step {
+	[class^="step-"] {
 		.title {}
 		.body {
 			strong {
@@ -125,6 +127,19 @@ body.tourActive {
 		}
 	}
 }
+
+
+#pm_wizard.wizardStep-1 .step-1 {display: block}
+#pm_wizard.wizardStep-2 .step-2 {display: block}
+#pm_wizard.wizardStep-3 .step-3 {display: block}
+#pm_wizard.wizardStep-4 .step-4 {display: block}
+
+#pm_wizard.wizardStep-1 .pagination .pagination-step-1 a {background-color: $primary}
+#pm_wizard.wizardStep-2 .pagination .pagination-step-2 a {background-color: $primary}
+#pm_wizard.wizardStep-3 .pagination .pagination-step-3 a {background-color: $primary}
+#pm_wizard.wizardStep-4 .pagination .pagination-step-4 a {background-color: $primary}
+
+.wizardStep-hidden {display: none}
 
 #welcomeModal {
 	.pm_form {
