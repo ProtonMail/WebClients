@@ -120,8 +120,8 @@ angular.module("proton.tools", ["proton.constants"])
 
     tools.findBootstrapEnvironment = function() {
         var envs = ['xs', 'sm', 'md', 'lg'];
+        var $el = $('<div>');
 
-        $el = $('<div>');
         $el.appendTo($('body'));
 
         for (var i = envs.length - 1; i >= 0; i--) {
