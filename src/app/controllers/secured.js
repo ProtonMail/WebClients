@@ -260,6 +260,7 @@ angular.module("proton.controllers.Secured", [])
      * the number of unread messages in this folder
      */
     $scope.updatePageName = function() {
+        let value;
         var name;
         var unread = '';
         var state = tools.currentMailbox();

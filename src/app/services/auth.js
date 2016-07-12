@@ -212,7 +212,7 @@ angular.module("proton.authentication", [
             var isOpera = Object.prototype.toString.call(window.opera) === '[object Opera]';
 
             if(window.crypto && window.crypto.getRandomValues) {
-                values = new Uint32Array(length);
+                const values = new Uint32Array(length);
                 window.crypto.getRandomValues(values);
 
                 for(i=0; i<length; i++) {
