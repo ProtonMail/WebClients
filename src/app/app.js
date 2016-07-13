@@ -1,3 +1,18 @@
+/**
+ * The requestAnimationFrame polyfill
+ * Paul Irish.
+ * {@link http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/}
+ */
+window._rAF = window._rAF || (function() {
+  return window.requestAnimationFrame ||
+     window.webkitRequestAnimationFrame ||
+     window.mozRequestAnimationFrame ||
+     function(callback) {
+       window.setTimeout(callback, 16);
+     };
+})();
+
+
 angular.module('proton', [
     'gettext',
     'as.sortable',
