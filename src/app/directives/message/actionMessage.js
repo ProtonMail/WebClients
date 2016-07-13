@@ -12,7 +12,7 @@ angular.module('proton.message', [])
           return $('#uid' + scope.model.uid).find('.dropzone').click();
         }
         const msg = messageBuilder.create(actionMessageType, scope.model);
-        $rootScope.$emit('loadMessage', msg);
+        $rootScope.$emit('loadMessage', msg, 'forward' === actionMessageType);
       }
 
       el.on('click', onClick);
