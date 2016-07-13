@@ -1,6 +1,6 @@
 .starButton .starButton-unstar {display: none !important}
 .starButton.starButton-starred {
-  .starButton-unstar {display: block !important}
+  .starButton-unstar {display: inline-block !important}
   .starButton-star {display: none !important}
 }
 
