@@ -55,7 +55,7 @@ angular.module('proton.controllers.Header', [])
      */
     var extractParameters = function() {
         var parameters = {};
-        var value = $scope.params.searchMessageInput.trim();
+        var value = $scope.params.searchMessageInput;
         var separators = [
             {value: 'keyword:', key: 'keyword'},
             {value: 'from:', key: 'from'},
@@ -73,14 +73,16 @@ angular.module('proton.controllers.Header', [])
             });
 
             if (tmp[1]) {
+                var tmp1 = tmp[1].trim();
+
                 if (separator.key === 'label') {
-                    var folder = _.findWhere($scope.ctrl.folders, {label: tmp[1]});
+                    var folder = _.findWhere($scope.ctrl.folders, {label: tmp1});
 
                     if (angular.isDefined(folder)) {
                         parameters.label = folder.value;
                     }
                 } else {
-                    parameters[separator.key] = tmp[1];
+                    parameters[separator.key] = tmp1;
                 }
             }
         });
@@ -121,12 +123,22 @@ angular.module('proton.controllers.Header', [])
     var generateSearchString = function() {
         var result = '';
 
+        if (angular.isDefined($stateParams.label)) {
+            var folder = _.findWhere($scope.ctrl.folders, {value: $stateParams.label});
+
+            if (angular.isDefined(folder)) {
+                result += 'in:' + folder.label + ' ';
+            }
+        }
+
         if (angular.isDefined($stateParams.keyword)) {
             if (angular.isUndefined($stateParams.from) && angular.isUndefined($stateParams.to) && angular.isUndefined($stateParams.label)) {
                 result += $stateParams.keyword + ' ';
             } else {
                 result += 'keyword:' + $stateParams.keyword + ' ';
             }
+        } else if (angular.isDefined($stateParams.label)) {
+            result += 'keyword: ';
         }
 
         if (angular.isDefined($stateParams.from)) {
@@ -135,14 +147,6 @@ angular.module('proton.controllers.Header', [])
 
         if (angular.isDefined($stateParams.to)) {
             result += 'to:' + $stateParams.to + ' ';
-        }
-
-        if (angular.isDefined($stateParams.label)) {
-            var folder = _.findWhere($scope.ctrl.folders, {value: $stateParams.label});
-
-            if (angular.isDefined(folder)) {
-                result += 'in:' + folder.label + ' ';
-            }
         }
 
         $scope.params.searchMessageInput = result;
