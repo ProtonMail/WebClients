@@ -748,7 +748,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * On click on a conversation
      * @param {Object} element - Conversation or Message
      */
-    $scope.click = function(element) {
+    $scope.click = function($event, element) {
+
+        // Prevent click onto the selecte checkbox
+        if (/ptSelectConversation/.test($event.target.className)) {
+            return false;
+        }
+
         var type = tools.typeList();
         var params = {};
 

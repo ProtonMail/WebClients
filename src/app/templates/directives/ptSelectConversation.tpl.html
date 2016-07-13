@@ -2,7 +2,8 @@
   <input
     class="ptSelectConversation-input"
     type="checkbox"
-    ng-checked="model.Selected"
+    data-index="{{::$index}}"
+    ng-checked="conversations[$index].Selected"
     class="mousetrap">
   <span class="fa fa-square-o ptSelectConversation-icon"></span>
   <span class="fa fa-check-square ptSelectConversation-icon"></span>

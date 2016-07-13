@@ -1,8 +1,42 @@
 angular.module("proton.selectConversation", [])
-  .directive('ptSelectConversation', function ($rootScope) {
+  .directive('ptSelectConversation',  () => ({
+    replace: true,
+    templateUrl: 'templates/directives/ptSelectConversation.tpl.html'
+  }))
+  .directive('ptSelectAllConversations', ($rootScope) => ({
+    link(scope, el) {
 
-    function countChecked(isChecked, number) {
-      var num = number;
+      $rootScope.numberElementChecked = 0;
+
+      function onChange({ target }) {
+        const isChecked = target.checked;
+
+        scope
+          .$applyAsync(() => {
+
+            _.each(scope.conversations, (conversation) => {
+              conversation.Selected = isChecked;
+            });
+
+            $rootScope.numberElementChecked = isChecked ? scope.conversations.length : 0;
+            $rootScope.showWelcome = !$rootScope.numberElementChecked;
+          });
+      }
+      el.on('change', onChange);
+
+      scope
+        .$on('$destroy', () => {
+          el.off('change', onChange);
+        });
+    }
+
+  }))
+  .directive('ptSelectMultipleConversations', ($rootScope) => {
+
+    const countChecked = (conversations) => _.where(conversations, {Selected: true}).length;
+
+    function countCheckedStatic(isChecked, number) {
+      let num = number;
       if (isChecked) {
         num = number + 1;
       } else {
@@ -10,66 +44,6 @@ angular.module("proton.selectConversation", [])
       }
 
       return num;
-    }
-
-    return {
-      scope: {
-        model: '='
-      },
-      replace: true,
-      templateUrl: 'templates/directives/ptSelectConversation.tpl.html',
-      link: function (scope, el, attr) {
-
-        var input = el[0].querySelector('input');
-        input.setAttribute('data-index', attr.index);
-        input.addEventListener('click', onClick);
-
-        function onClick(e) {
-          scope
-            .$applyAsync(function () {
-              var isChecked = e.target.checked;
-              scope.model.Selected = isChecked;
-              $rootScope.numberElementChecked = countChecked(isChecked, $rootScope.numberElementChecked);
-              $rootScope.showWelcome = false;
-            });
-        }
-
-        scope
-          .$on('$destroy', function () {
-            input.removeEventListener('click', onClick);
-          });
-      }
-    };
-  })
-  .directive('ptSelectAllConversations', function ($rootScope) {
-    return {
-      link: function (scope, el) {
-        $rootScope.numberElementChecked = 0;
-        function onChange(e) {
-          var isChecked = e.target.checked;
-          scope
-            .$applyAsync(function () {
-              _.each(scope.conversations, function (conversation) {
-                conversation.Selected = isChecked;
-              });
-
-              $rootScope.numberElementChecked = isChecked ? scope.conversations.length : 0;
-              $rootScope.showWelcome = !$rootScope.numberElementChecked;
-            });
-        }
-        el.on('change', onChange);
-
-        scope
-          .$on('$destroy', function () {
-            el.off('change', onChange);
-          });
-      }
-    };
-  })
-  .directive('ptSelectMultipleConversations', function ($rootScope) {
-
-    function countChecked(conversations) {
-      return _.where(conversations, {Selected: true}).length;
     }
 
     /**
@@ -86,58 +60,68 @@ angular.module("proton.selectConversation", [])
        * @param  {Number} to       Index conversation
        * @return {void}
        */
-      return function (previous, from, to) {
+      return (previous, from, to) => {
+        _.each(scope.conversations, (conversation, i) => {
+          if (i >= from && i <= to) {
+            conversation.Selected = previous.conversation.Selected;
+          } else {
+            return false; // Break
+          }
+        });
 
-        // Do not create another $diges, use the current one.
-        scope
-          .$applyAsync(function () {
-
-
-            _.each(scope.conversations, function (conversation, i) {
-              if (i >= from && i <= to) {
-                conversation.Selected = previous.conversation.Selected;
-              } else {
-                return false; // Break
-              }
-            });
-
-            $rootScope.numberElementChecked = countChecked(scope.conversations);
-            $rootScope.showWelcome = false;
-          });
+        $rootScope.numberElementChecked = countChecked(scope.conversations);
       };
     }
 
     return {
-      link: function (scope, el) {
-        var previous = null;
-        var items = null;
-        var conversationsToSelect = selectConversations(scope);
+      link(scope, el) {
+        let previous = null;
+        let items = null;
+        const conversationsToSelect = selectConversations(scope);
 
-        function onClick(e) {
+        function onClick({ target, shiftKey }) {
 
-          var index = e.target.getAttribute('data-index');
+          const index = target.getAttribute('data-index');
 
-          if (e.shiftKey && previous) {
-            var from = Math.min(index, previous.index);
-            var to = Math.max(index, previous.index);
-            conversationsToSelect(previous, from, to);
+          if ('INPUT' !== target.nodeName) {
+            return;
           }
 
-          previous = {
-            index: index,
-            conversation: scope.conversations[index]
-          };
+          const isChecked = target.checked;
+
+          scope
+            .$applyAsync(() => {
+              scope.conversations[index].Selected = isChecked;
+              $rootScope.numberElementChecked = countCheckedStatic(isChecked, $rootScope.numberElementChecked);
+
+              if (shiftKey && previous) {
+                const from = Math.min(index, previous.index);
+                const to = Math.max(index, previous.index);
+                conversationsToSelect(previous, from, to);
+
+                // Unselect the latest click if we unselect a list of checkbox
+                target.checked = previous.conversation.Selected;
+              }
+
+              $rootScope.showWelcome = false;
+
+              previous = {
+                index: index,
+                conversation: scope.conversations[index]
+              };
+            });
+
         }
 
         // defer loading to prevent an empty collection as the ng-repeat is not compiled yet
-        var id = setTimeout(function() {
+        const id = setTimeout(() => {
           items = el.find('.ptSelectConversation-container');
           items.on('click', onClick);
           clearTimeout(id);
         }, 1000);
 
         scope
-          .$on('$destroy', function () {
+          .$on('$destroy', () => {
             items && items.off('click', onClick);
           });
       }

@@ -8,17 +8,13 @@
         marked: conversation.ID === markedConversation.ID,
         hasLabels: (conversation.LabelIDs | labels).length > 0,
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
-    }">
+    }" ng-click="click($event, conversation)">
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-        <pt-select-conversation
-            data-index="{{ ::$index }}"
-            data-model="conversation"></pt-select-conversation>
+        <pt-select-conversation data-index="{{ ::$index }}"></pt-select-conversation>
         <pt-star
             data-model="conversation"
             class="singleStar"></pt-star>
-        <span
-        class="senders"
-        ng-click="click(conversation)">
+        <span class="senders">
             &nbsp;
             <span
             ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
@@ -33,9 +29,7 @@
                 {{ contact | contact: 'Name' }}<span ng-hide="$last">, </span>
             </span>
         </span>
-        <div
-        class="subject"
-        ng-click="click(conversation)">
+        <div class="subject">
             <span class="location fa fa-inbox" ng-show="( ('secured.search.**' | includedByState) || ('secured.label.**' | includedByState) ) && conversation.LabelIDs.indexOf('0') > -1"></span>
             <span class="location fa fa-file-text-o" ng-show="( ('secured.search.**' | includedByState) || ('secured.label.**' | includedByState) ) && conversation.LabelIDs.indexOf('1') > -1"></span>
             <span class="location fa fa-send" ng-show="( ('secured.search.**' | includedByState) || ('secured.label.**' | includedByState) ) && conversation.LabelIDs.indexOf('2') > -1"></span>
