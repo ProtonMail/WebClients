@@ -1199,6 +1199,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 var draftPromise;
                 var CREATE = 1;
                 var UPDATE = 2;
+                var actionType;
 
                 // Set encrypted body
                 parameters.Message.Body = result;
