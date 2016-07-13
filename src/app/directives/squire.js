@@ -120,7 +120,7 @@ angular.module("proton.squire", [
                 var head = doc.head || doc.getElementsByTagName('head')[0];
                 var style = doc.createElement('style');
 
-                var css = "html{height:100%} body {height:100%; box-sizing:border-box; padding: 1rem 10px 1rem 10px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; line-height: 1.65em; color: #222; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; }";
+                var css = "html{height:100%} body {height:100%; box-sizing:border-box; padding: 1rem 10px 1rem 10px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; line-height: 1.65em; color: #222; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; } .proton-embedded{ max-width:100%; }";
 
                 style.setAttribute('type', 'text/css');
                 style.setAttribute('rel', 'stylesheet');

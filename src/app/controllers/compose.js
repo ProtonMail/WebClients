@@ -20,6 +20,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     CONSTANTS,
     Contact,
     Message,
+    embedded,
     networkActivityTracker,
     notify,
     pmcw,
@@ -41,6 +42,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.isAppleDevice = navigator.userAgent.match(/(iPod|iPhone|iPad)/); // Determine if user navigated from Apple device
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
     $scope.numTags = [];
+    $scope.pendingAttachements = [];
     $scope.weekOptions = [
         {label: '0', value: 0},
         {label: '1', value: 1},
@@ -275,6 +277,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $scope.isOver = false;
     }
 
+
+
     $(window).on('resize', onResize);
     $(window).on('orientationchange', onOrientationChange);
     $(window).on('dragover', onDragOver);
@@ -344,6 +348,34 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $rootScope.$broadcast('subjectFocussed', message);
     };
 
+
+    $scope.cancelAskEmbedding = function(){
+        $scope.pendingAttachements = [];
+        $scope.askEmbedding = false;
+    };
+
+    $scope.processPending  = function(message, embedding){
+
+        _.forEach($scope.pendingAttachements, function (file) {
+            
+            if(embedding) {
+                // required for BE to get a cid-header
+                file.inline = 1;
+                // for loading UX
+                // message.editor.insertImage("", {alt: file.name, id:file.name});
+
+            }
+
+            $scope.addAttachment(file, message);
+
+        });
+
+        // close the dialog
+        $scope.cancelAskEmbedding();
+
+    };
+
+
     $scope.dropzoneConfig = function(message) {
         return {
             options: {
@@ -367,7 +399,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     var total_num = angular.isDefined(message.Attachments) ? message.Attachments.length : 0;
                     total_num += angular.isDefined(message.queuedFiles) ? message.queuedFiles : 0;
 
-                    if(total_num === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
+                    if (total_num === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
                         dropzone.removeFile(file);
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
@@ -380,11 +412,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         dropzone.removeFile(file);
                         done('Attachments are limited to ' + sizeLimit + ' MB.');
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
-                    }
-
-
-
-                    else {
+                    } else {
                         if ( angular.isUndefined( message.queuedFiles ) ) {
                             message.queuedFiles = 0;
                             message.queuedFilesSize = 0;
@@ -395,9 +423,26 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         var process = function() {
                             message.queuedFiles--;
                             message.queuedFilesSize -= file.size;
-                            $scope.addAttachment(file, message).finally(function () {
+
+                            // check if embedded before upload!
+                            var img = new RegExp("image");
+                            var isImg = img.test(file.type);
+
+                            if(isImg){
+
+                                $scope.askEmbedding = true;
+                                $scope.pendingAttachements.push(file);
+                                // add attachement with embeded and include the img ?
                                 dropzone.removeFile(file);
-                            });
+
+                            } else {
+
+                                $scope.addAttachment(file, message).finally(function () {
+                                    dropzone.removeFile(file);
+                                });
+
+                            }
+
                         };
 
                         if(angular.isUndefined(message.ID)) {
@@ -418,7 +463,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                     _.forEach(message.Attachments, function (attachment) {
                         var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
-
                         dropzone.options.addedfile.call(dropzone, mockFile);
                     });
                 }
@@ -463,7 +507,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var removeAttachments = [];
         var promises = [];
 
-        if(message.Attachments && message.Attachments.length > 0) {
+        if (message.Attachments && message.Attachments.length > 0) {
 
             var keys = authentication.getPrivateKeys(message.From.ID);
 
@@ -489,11 +533,17 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         $q.all(promises).finally(function() {
-            if(removeAttachments.length > 0) {
+            if (removeAttachments.length > 0) {
                 _.each(removeAttachments, function(attachment) {
                     notify({classes: 'notification-danger', message: 'Decryption of attachment ' + attachment.Name + ' failed. It has been removed from this draft.'});
                     $scope.removeAttachment(attachment, message);
                 });
+            }
+
+            if (_.find(message.Attachments, {isEmbedded: true}).length > 0) {
+               _.each(message.Attachments, function(attachment) {
+                   // $scope.addAttachment(file, message); // file ???
+               });
             }
         });
     };
@@ -525,6 +575,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         tempPacket.filename = file.name;
         tempPacket.uploading = true;
         tempPacket.Size = file.size;
+        tempPacket.Inline = file.inline || 0;
 
         message.uploading++;
         message.Attachments.push(tempPacket);
@@ -540,16 +591,24 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             else {
                 message.Attachments.splice(index, 1);
             }
-
             message.uploading--;
             onResize();
         };
 
         return attachments.load(file, message.From.Keys[0].PublicKey).then(
             function(packets) {
+                var preview = packets.Preview;
+
                 return attachments.upload(packets, message, tempPacket).then(
                     function(result) {
+
                         cleanup( result );
+
+                        if(angular.isDefined( result.Headers['content-id'] ) && file.inline === 1) {
+                            var cid = result.Headers['content-id'].replace(/[<>]+/g,'');
+                            embedded.addEmbedded(message,cid,preview, result.MIMEType);                           
+                        }
+
                     },
                     function(error) {
                         cleanup();
@@ -568,8 +627,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.removeAttachment = function(attachment, message) {
         var index = message.Attachments.indexOf(attachment);
-
         // Remove attachment in UI
+        var headers = attachment.Headers;
         message.Attachments.splice(index, 1);
 
         Attachment.remove({
@@ -579,10 +638,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var data = result.data;
 
             if(angular.isDefined(data) && data.Code === 1000) {
-                // Attachment removed
+                // Attachment removed, may remove embedded ref
+                message.Body = embedded.removeEmbedded(message,headers);
+
             } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
-
                 message.Attachments.push(attachment);
                 dropzone.options.addedfile.call(dropzone, mockFile);
                 notify({message: data.Error, classes: 'notification-danger'});
@@ -643,22 +703,37 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $timeout(function() {
             $scope.composerStyle();
             // forward case: we need to save to get the attachments
+            // embedded case: if has embedded image we have to save the attachments
             if (save === true) {
-                $scope.save(message, true, false).then(function() { // message, forward, notification
+                $scope.save(message, save, false).then(function() { // message, forward, notification
                     $scope.decryptAttachments(message);
+                    // check for the embedded images
+                    // as it's a forward it won't process
+                    // the decryption (thanks to service storage)
+
+                    $scope.sanitizeBody(message);
+
                     $scope.composerStyle();
+
+
                 }, function(error) {
                     $log.error(error);
                 });
             }
-        });
+        }, 100, false);
     }
 
     $scope.sanitizeBody = function(message) {
+
         message.Body = DOMPurify.sanitize(message.Body, {
             ADD_ATTR: ['target'],
             FORBID_TAGS: ['style', 'input', 'form']
         });
+
+        embedded.parser(message).then( function(result) {
+           message.Body = result;
+        });
+
     };
 
     $scope.composerStyle = function() {
@@ -862,6 +937,23 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     };
 
+    $scope.removeEmbedded = function(event,message){
+            
+        if( event.target.classList ){
+            if(event.target.classList.contains("proton-embedded")) {
+                var cid = event.target.getAttribute('rel');
+                var attachments = _.filter(message.Attachments, function (el) {
+                     return el.Headers['content-id'].replace(/[<>]+/g,'') === cid;
+                });
+
+                if(angular.isDefined(attachments[0])) {
+                    $scope.removeAttachment(attachments[0], message);
+                }
+            }
+        }  
+
+    };
+
     $scope.listenEditor = function(message) {
         if (message.editor) {
             var dropzone = angular.element('#uid' + message.uid + ' .composer-dropzone')[0];
@@ -881,11 +973,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('dragend', onDragEnd);
             message.editor.addEventListener('dragenter', onDragEnter);
             message.editor.addEventListener('dragover', onDragOver);
-
             dropzone.addEventListener('dragover', dragover);
+
+            message.editor.addEventListener('DOMNodeRemoved', function(event){
+                $scope.removeEmbedded(event,message);
+            });
+
 
             $scope.saveOld(message);
         }
+
     };
 
     $scope.attToggle = function(message) {
@@ -1400,6 +1497,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                                         promises.push(replyTokenPromise.then(function(encryptedToken) {
                                             return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
+                                                
                                                 var body = result;
 
                                                 return message.encryptPackets('', message.Password).then(function(result) {
@@ -1414,6 +1512,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                                 message.encrypting = false;
                                                 $log.error(error);
                                             });
+
                                         }, function(error) {
                                             message.encrypting = false;
                                             $log.error(error);
@@ -1434,6 +1533,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                     }, function(error) {
                                         $log.error(error);
                                     }));
+
+                                    // Replace blobs with cid for outside world
+                                    promises.push(embedded.parser(message,'cid').then( function(result) {
+                                        parameters.ClearBody = result;
+                                    }, function(error) {
+                                        $log.error(error);
+                                    }));
+
                                 }
                             }
 
@@ -1561,6 +1668,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.editor.removeEventListener('input', function() {
             $scope.saveLater(message);
         });
+
+        message.editor.removeEventListener('DOMNodeRemoved');
 
         message.editor.removeEventListener('dragenter', onDragEnter);
         message.editor.removeEventListener('dragover', onDragOver);

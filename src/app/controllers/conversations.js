@@ -25,6 +25,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     cacheCounters,
     networkActivityTracker,
     notify,
+    embedded,
     tools
 ) {
     var lastChecked = null;
@@ -762,8 +763,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $rootScope.scrollPosition = $('#content').scrollTop();
         // Unselect all elements
         $scope.unselectAllElements();
+
+        // it's possible that the previous conversation or message
+        // had embedded images, and as blob URLs never get deallocated automatically
+        // we may trigger a deallocation process to avoid a memory leak.
+
+        embedded.deallocator();
+
         // Mark this element
         $scope.markedConversation = element;
+
         // Open conversation
         if(type === 'conversation') {
             params.id = element.ID;

@@ -59,6 +59,7 @@ angular.module('proton', [
     'proton.pmcw',
     'proton.tools',
     'proton.desktopNotifications',
+    'proton.embedded',
     'proton.service.message',
 
     // Directives
@@ -92,6 +93,7 @@ angular.module('proton', [
     'proton.rightClick',
     'proton.selectConversation',
     'proton.detectTimeWidth',
+    'proton.images',
 
     // Filters
     'proton.filters',
