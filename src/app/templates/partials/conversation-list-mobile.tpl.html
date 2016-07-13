@@ -13,16 +13,15 @@
             hasLabels: (conversation.LabelIDs | labels).length > 0,
             hasAttachments: (conversation.NumAttachments > 0),
             expiring: (conversation.ExpirationTime > 0)
-        }">
+        }"
+        ng-click="click($event, conversation)">
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
 
         <pt-select-conversation
             data-index="{{ ::$index }}"
             data-model="conversation"></pt-select-conversation>
         <div class="row top">
-            <h4
-            class="subject"
-            ng-click="click(conversation)">
+            <h4 class="subject">
                 <span class="location fa fa-inbox" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('0') > -1"></span>
                 <span class="location fa fa-file-text-o" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('1') > -1"></span>
                 <span class="location fa fa-send" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('2') > -1"></span>
@@ -34,18 +33,16 @@
             </h4>
             <span class="meta">
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
-                <a
-                class="fa"
-                ng-class="{'fa-star': starred(conversation), 'fa-star-o': !starred(conversation)}"
-                ng-click="$event.stopPropagation();toggleStar(conversation)"></a>
-                <em class="time" ng-click="click(conversation)">{{ time(conversation) | readableTime }}</em>
+                <pt-star
+                  data-model="conversation"
+                  class="singleStar"></pt-star>
+                <em class="time" >{{ time(conversation) | readableTime }}</em>
             </span>
         </div>
-        <div class="row bottom" ng-click="click(conversation)">
+        <div class="row bottom">
             <span
             class="senders"
-            ng-class="{ 'full': (conversation.LabelIDs | labels).length === 0 }"
-            ng-click="click(conversation)">
+            ng-class="{ 'full': (conversation.LabelIDs | labels).length === 0 }">
                 <span
                 ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
                 ng-repeat="contact in senders(conversation)"
