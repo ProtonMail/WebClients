@@ -17,7 +17,7 @@ angular.module('proton.wizard', [])
       });
   }
 }))
-.directive('wizard', ($rootScope, $timeout, $state, welcomeModal, monetizeModal, donateModal, $window, Payment, notify, gettextCatalog, wizardBuilder) => {
+.directive('wizard', ($rootScope, $timeout, $state, welcomeModal, donateModal, $window, Payment, notify, gettextCatalog, wizardBuilder) => {
   return {
     restrict: 'E',
     replace: true,
@@ -52,32 +52,6 @@ angular.module('proton.wizard', [])
             }
           });
       };
-
-      // NOTE Not used since upsell during the signup process
-      // var monetize = function() {
-      //     monetizeModal.activate({
-      //         params: {
-      //             donate: function(amount, currency) {
-      //                 // Close monetize modal
-      //                 monetizeModal.deactivate();
-      //                 // Open donate modal
-      //                 donate(amount, currency);
-      //             },
-      //             upgrade: function() {
-      //                 // Close monetize modal
-      //                 monetizeModal.deactivate();
-      //                 // Go to the dashboard page
-      //                 $state.go('secured.dashboard', {scroll: true});
-      //             },
-      //             close: function() {
-      //                 // Close monetize modal
-      //                 monetizeModal.deactivate();
-      //                 // Start tour
-      //                 tourStart();
-      //             }
-      //         }
-      //     });
-      // };
 
       var welcome = function() {
         welcomeModal.activate({
