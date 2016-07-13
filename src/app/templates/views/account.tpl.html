@@ -38,9 +38,11 @@
                         <label>ProtonMail Signature</label>
                     </div>
                     <div class="col-5-8">
-                        <toggle ng-hide="isFree" class="small pull-right" status="PMSignature" on="ON" off="OFF" change="statusPMSignature(PMSignature)"></toggle>
+                        <toggle ng-hide="user.PMSignature === 2" class="small pull-right" status="PMSignature" on="ON" off="OFF" change="statusPMSignature(PMSignature)"></toggle>
                         <p ng-bind-html="signatureContent"></p>
-                        <p class="alert alert-info" ng-show="isFree" translate translate-context="Info"><a ui-sref="secured.dashboard({scroll: true})">Upgrade to a paid plan</a> to disable the ProtonMail signature.</p>
+                        <p class="alert alert-info" ng-show="user.PMSignature === 2" translate translate-context="Info">
+                            A <a ui-sref="secured.dashboard({scroll: true})">paid plan</a> is required to turn off the ProtonMail signature. Paid plan revenue allows us to continue supporting free accounts.
+                        </p>
                     </div>
                 </div>
 
