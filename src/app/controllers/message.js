@@ -20,6 +20,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     attachments,
     authentication,
     cache,
+    embedded,
     confirmModal,
     CONSTANTS,
     Label,
@@ -190,6 +191,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var process = function() {
             // Display content
             $scope.displayContent();
+            
         };
 
         // If the message is a draft
@@ -289,6 +291,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.displayContent(true);
     };
 
+
+    /**
+     * Parse attachements for embedded images and store them to 'message.decryptedBody'
+     */
+    $scope.injectEmbedded = function() {
+        embedded.parser($scope.message).then( function(result) {
+            $scope.message.decryptedBody =  result;           
+        });
+    };
+
     /**
      * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} force
@@ -312,7 +324,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         if (angular.isUndefined($scope.message.decryptedBody) || force === true) {
             $scope.message.clearTextBody().then(function(result) {
+
+                // return a promise for embedded images
+
                 var showMessage = function(content) {
+
+                    var deferred = $q.defer();
 
                     // Clear content with DOMPurify before anything happen!
                     content = DOMPurify.sanitize(content, {
@@ -332,7 +349,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         content = $scope.message.clearImageBody(content);
                     }
 
-
                     // For the welcome email, we need to change the path to the welcome image lock
                     content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
@@ -342,6 +358,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         $scope.message.viewMode = 'html';
                         // Assign decrypted content
                         $scope.message.decryptedBody = $sce.trustAsHtml(content);
+                        deferred.resolve();
                     } else {
                         $scope.isPlain = true;
                         $scope.message.viewMode = 'plain';
@@ -359,6 +376,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     } else {
                         $scope.scrollToMe();
                     }
+
+
+                    return deferred.promise;
                 };
 
                 // PGP/MIME case
@@ -383,15 +403,20 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         }
 
                         $scope.$evalAsync(function() {
-                            showMessage(content);
+                            showMessage(content).then(function(){
+                                $scope.injectEmbedded();
+                            });
                         });
                     });
 
                     mailparser.write(result);
                     mailparser.end();
+
                 } else {
                     $scope.$evalAsync(function() {
-                        showMessage(result);
+                        showMessage(result).then(function(){
+                            $scope.injectEmbedded();
+                        });
                     });
                 }
             }, function(err) {
@@ -403,6 +428,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.scrollToMe();
         }
     };
+
 
     /**
      * Mark current message as read

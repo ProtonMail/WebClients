@@ -28,13 +28,16 @@ angular.module('proton.attachments', ['proton.authentication'])
 
             reader.onloadend = function(event) {
                 // encryptFile(data, pubKeys, passwords, filename)
-                var encAttachment = pmcw.encryptFile(new Uint8Array(reader.result), key, [], file.name);
+                var Uint8 = new Uint8Array(reader.result);
+                var encAttachment = pmcw.encryptFile(Uint8, key, [], file.name);
 
                 return encAttachment.then(
                     function(packets) {
                         packets.Filename = file.name;
                         packets.MIMEType = file.type;
                         packets.FileSize = file.size;
+                        packets.Inline = file.inline;
+                        packets.Preview = Uint8;
                         q.resolve(packets);
                     }
                 )
@@ -59,12 +62,14 @@ angular.module('proton.attachments', ['proton.authentication'])
             data.append('Filename', packets.Filename);
             data.append('MessageID', message.ID);
             data.append('MIMEType', packets.MIMEType);
+            data.append('Inline', packets.Inline);
             data.append('KeyPackets', new Blob([packets.keys]));
             data.append('DataPacket', new Blob([packets.data]));
 
             attachmentData.filename = packets.Filename;
             attachmentData.Size = packets.FileSize;
             attachmentData.MIMEType = packets.MIMEType;
+            attachmentData.Inline = packets.Inline;
             attachmentData.uploading = false;
 
             tempPacket.cancel = function() {
@@ -108,7 +113,10 @@ angular.module('proton.attachments', ['proton.authentication'])
                         deferred.reject(response);
                     }
                 } else {
+                    
                     attachmentData.AttachmentID = response.AttachmentID;
+                    attachmentData.Headers = response.Attachment.Headers;
+
                     sessionKeyPromise.then(function(sessionKey) {
                         attachmentData.sessionKey = sessionKey;
                         deferred.resolve(attachmentData);
@@ -123,6 +131,7 @@ angular.module('proton.attachments', ['proton.authentication'])
             xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
             xhr.setRequestHeader("x-pm-apiversion", CONFIG.api_version);
             xhr.setRequestHeader("x-pm-session", pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken')));
+            
             xhr.send(data);
 
             return deferred.promise;

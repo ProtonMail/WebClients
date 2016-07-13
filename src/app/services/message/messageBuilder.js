@@ -132,6 +132,15 @@ angular.module('proton.service.message', [])
         newMsg.From = findFrom(newMsg, currentMsg);
       }
 
+      /* add inline images as attachements */
+      if((action === 'reply') || (action === 'replyall')){
+        newMsg.Attachments = _.filter(currentMsg.Attachments, function (el) {
+            var disposition = el.Headers["content-disposition"];
+            var inline = new RegExp('^inline', 'i');
+            return inline.test(disposition) === true;
+        });
+      }
+
       newMsg.ParentID = currentMsg.ID;
       newMsg.Body = [
         '<blockquote class="protonmail_quote" type="cite">',

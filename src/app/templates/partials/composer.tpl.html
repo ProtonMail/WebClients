@@ -161,6 +161,33 @@
             </div>
             <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
                 <div class="composeEditor fill">
+                    <div  class="askEmbedding"
+                    ng-show="askEmbedding && message.focussed && !preventDropbox">
+                        <ul>
+                            <li class="title">{{ pendingAttachements.length }} images detected</li>
+                            <li>Insert images<li>
+                            <li>                
+                                <button class="pm_button primary"
+                                ng-click="processPending(message,false)"
+                                pt-tooltip-translate="inline image"
+                                pt-placement="top">
+                                    <span>as attachement</span>
+                                </button>
+                            </li>
+                            <li>or</li>
+                            <li>
+                                <button class="pm_button primary"
+                                ng-click="processPending(message,true)"
+                                pt-tooltip-translate="Attachments"
+                                pt-placement="top">
+                                    <span>inline</span>
+                                </button>                        
+                            </li>
+                            <li class="cancel" ng-click="cancelAskEmbedding()">
+                               <span>cancel</span>  <i class="fa fa-close"></i> 
+                            </li>                            
+                        </ul>
+                    </div>
                     <div
                     class="dropzone composer-dropzone fill"
                     dropzone="dropzoneConfig(message)"
