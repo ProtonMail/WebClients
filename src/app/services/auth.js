@@ -608,12 +608,14 @@ angular.module("proton.authentication", [
      * Open report modal
      */
     $rootScope.openReportModal = function() {
-        var username = (authentication.user && angular.isDefined(authentication.user.Name)) ? authentication.user.Name : '';
+        var modes = ['column', 'row'];
+        var username = (authentication.user && angular.isString(authentication.user.Name)) ? authentication.user.Name : '';
         var email = (authentication.user && angular.isArray(authentication.user.Addresses)) ? authentication.user.Addresses[0].Email : '';
+        var displayMode = (authentication.user && angular.isNumber(authentication.user.ViewLayout)) ? modes[authentication.user.ViewLayout] : '';
         var form = {
             OS: tools.getOs(),
             OSVersion: '',
-            DisplayMode: authentication.user.ViewLayout === 1 ? 'row' : 'column',
+            DisplayMode: displayMode,
             Resolution: window.innerHeight + ' x ' + window.innerWidth ,
             Browser: tools.getBrowser(),
             BrowserVersion: tools.getBrowserVersion(),
