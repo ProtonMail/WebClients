@@ -342,10 +342,6 @@ angular.module("proton.squire", [
                             selection.addRange(range);
                         }
 
-                        var reg = /^((http|https|ftp):\/\/)/;
-
-                        if(!reg.test(scope.data.link)) { scope.data.link = "http://" + scope.data.link; }
-
                         editor.makeLink(scope.data.link, {
                             target: '_blank',
                             title: scope.data.link,
@@ -365,7 +361,6 @@ angular.module("proton.squire", [
                     editor.focus();
                 } else {
                     editor[action]();
-                    //editor.focus();
                 }
             };
         }
