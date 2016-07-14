@@ -609,6 +609,7 @@ angular.module("proton.authentication", [
      */
     $rootScope.openReportModal = function() {
         var modes = ['column', 'row'];
+        var displayMode = (authentication.user && angular.isNumber(authentication.user.ViewLayout)) ? modes[authentication.user.ViewLayout] : '';
         var username = (authentication.user && angular.isString(authentication.user.Name)) ? authentication.user.Name : '';
         var email = (authentication.user && angular.isArray(authentication.user.Addresses)) ? authentication.user.Addresses[0].Email : '';
         var displayMode = (authentication.user && angular.isNumber(authentication.user.ViewLayout)) ? modes[authentication.user.ViewLayout] : '';
