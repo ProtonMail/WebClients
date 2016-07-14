@@ -53,6 +53,7 @@ angular.module('proton.actions', [])
             var promise;
             var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
             var toInbox = mailbox === 'inbox';
+            var toTrash = mailbox === 'trash';
             var current = tools.currentLocation();
             var labelIDsRemoved = [];
             var folder = getFolderNameTranslated(mailbox);
@@ -73,6 +74,7 @@ angular.module('proton.actions', [])
                 var messages = cache.queryMessagesCached(id);
                 var element = {
                     ID: id,
+                    IsRead: toTrash ? 1 : conversation.IsRead,
                     Selected: false,
                     LabelIDsRemoved: labelIDsRemoved, // Remove current location
                     LabelIDsAdded: labelIDsAdded // Add new location
@@ -102,6 +104,7 @@ angular.module('proton.actions', [])
 
                     events.push({Action: 3, ID: message.ID, Message: {
                         ID: message.ID,
+                        IsRead: toTrash ? 1 : message.IsRead,
                         LabelIDsRemoved: copyLabelIDsRemoved, // Remove current location
                         LabelIDsAdded: copyLabelIDsAdded // Add new location
                     }});
@@ -462,13 +465,14 @@ angular.module('proton.actions', [])
             var conversationIDs = [];
             var events = [];
             var promise;
+            var inInbox = mailbox === 'inbox';
+            var inTrash = mailbox === 'trash';
 
             // Generate cache events
             _.each(ids, function(id) {
                 var message = cache.getMessageCached(id);
                 var labelIDs = message.LabelIDs || [];
                 var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
-                var inInbox = mailbox === 'inbox';
                 var labelIDsRemoved = _.reject(message.LabelIDs, function(labelID) {
                     // Remove starred and labels
                     return labelID === CONSTANTS.MAILBOX_IDENTIFIERS.starred || labelID.length > 2;
@@ -504,7 +508,8 @@ angular.module('proton.actions', [])
                     ID: id,
                     ConversationID: message.ConversationID,
                     Selected: false,
-                    LabelIDs: labelIDs
+                    LabelIDs: labelIDs,
+                    IsRead: inTrash ? 1 : message.IsRead
                 }});
             });
 
