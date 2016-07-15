@@ -12,7 +12,7 @@ angular.module("proton.filters",[])
 
             // update the duration in ms
             ms = then.diff(now, 'milliseconds', true);
-            days = Math.floor(moment.duration(ms).asDays());
+            const days = Math.floor(moment.duration(ms).asDays());
 
             then = then.subtract(days, 'days');
             // update the duration in ms
