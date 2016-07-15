@@ -392,10 +392,7 @@ angular.module('proton.actions', [])
                 element.NumUnread = conversation.NumUnread - 1;
 
                 if (messages.length > 0) {
-                    var last = _.chain(messages)
-                        .sortBy(function(message) { return message.Time; })
-                        .last
-                        .value();
+                    var last = _.chain(messages).sortBy(function(message) { return message.Time; }).last().value();
 
                     events.push({Action: 3, ID: last.ID, Message: {
                         ID: last.ID,
