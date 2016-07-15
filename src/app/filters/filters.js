@@ -17,17 +17,17 @@ angular.module("proton.filters",[])
             then = then.subtract(days, 'days');
             // update the duration in ms
             ms = then.diff(now, 'milliseconds', true);
-            hours = Math.floor(moment.duration(ms).asHours());
+            const hours = Math.floor(moment.duration(ms).asHours());
 
             then = then.subtract(hours,'hours');
             // update the duration in ms
             ms = then.diff(now, 'milliseconds', true);
-            minutes = Math.floor(moment.duration(ms).asMinutes());
+            const minutes = Math.floor(moment.duration(ms).asMinutes());
 
             then = then.subtract(minutes, 'minutes');
             // update the duration in ms
             ms = then.diff(now, 'milliseconds', true);
-            seconds = Math.floor(moment.duration(ms).asSeconds());
+            const seconds = Math.floor(moment.duration(ms).asSeconds());
 
             // concatonate the variables
             return days + ' ' + gettextCatalog.getString('Days') + ' ' + hours + ' ' + gettextCatalog.getString('Hours') + ' ' + minutes + ' ' + gettextCatalog.getString('Minutes') + ' ' + seconds + ' ' + gettextCatalog.getString('Seconds', null);
