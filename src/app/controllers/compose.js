@@ -1730,10 +1730,23 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @return {Promise}
      */
     $scope.discard = function(message) {
-        action.discardMessage(message);
+        var title = gettextCatalog.getString('Delete', null);
+        var question = gettextCatalog.getString('Permanently delete this draft?', null);
 
-        // Notification
-        notify({message: gettextCatalog.getString('Message discarded', null), classes: 'notification-success'});
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: question,
+                confirm: function() {
+                    action.discardMessage(message);
+                    notify({message: gettextCatalog.getString('Message discarded', null), classes: 'notification-success'});
+                    confirmModal.deactivate();
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
     };
 
     /**
