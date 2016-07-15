@@ -15,8 +15,6 @@ angular.module('proton.actions', [])
     var findCurrentLocation = function(message) {
         var locations = [
             CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
             CONSTANTS.MAILBOX_IDENTIFIERS.trash,
             CONSTANTS.MAILBOX_IDENTIFIERS.spam,
             CONSTANTS.MAILBOX_IDENTIFIERS.archive
@@ -84,7 +82,7 @@ angular.module('proton.actions', [])
 
                 _.each(messages, function(message) {
                     var copyLabelIDsAdded = angular.copy(labelIDsAdded);
-                    var copyLabelIDsRemoved = _.difference([tools.currentLocation(message.LabelIDs)], remove);
+                    var copyLabelIDsRemoved = _.difference([findCurrentLocation(message)], remove);
 
                     if (toInbox === true) {
                         var index;
