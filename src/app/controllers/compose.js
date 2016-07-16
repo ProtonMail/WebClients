@@ -675,6 +675,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             $rootScope.maximizedComposer = true;
         }
 
+        // Mark message as read
+        if (message.IsRead === 0) {
+            var ids = [message.ID];
+
+            action.readMessage(ids);
+        }
+
         // if tablet we maximize by default
         if (tools.findBootstrapEnvironment() === 'sm') {
             message.maximized = true;
