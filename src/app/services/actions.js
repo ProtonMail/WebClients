@@ -387,7 +387,7 @@ angular.module('proton.actions', [])
                 var messages = cache.queryMessagesCached(element.ID);
 
                 conversation = cache.getConversationCached(id);
-                element.NumUnread = conversation.NumUnread - 1;
+                element.NumUnread = conversation.NumUnread + 1;
 
                 if (messages.length > 0) {
                     var last = _.chain(messages).sortBy(function(message) { return message.Time; }).last().value();
