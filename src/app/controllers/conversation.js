@@ -103,14 +103,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             var labels = conversation.LabelIDs;
             var messages = cache.queryMessagesCached($scope.conversation.ID);
 
-            if ($state.is('secured.starred.view') === false && $state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
+            if ($state.is('secured.inbox.view') === true || $state.is('secured.archive.view') === true) {
                 // Remove trashed message
-                if ($scope.inTrash === false && $scope.showTrashed === false) {
+                if ($scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
                 }
 
                 // Remove spammed message
-                if ($scope.inSpam === false && $scope.showSpammed === false) {
+                if ($scope.showSpammed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1; });
                 }
             }
@@ -207,14 +207,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 return _.find(messages, function(m) { return m.ID === ID; });
             };
 
-            if ($state.is('secured.starred.view') === false && $state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
+            if ($state.is('secured.inbox.view') === true || $state.is('secured.archive.view') === true) {
                 // Remove trashed message
-                if ($scope.inTrash === false && $scope.showTrashed === false) {
+                if ($scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
                 }
 
                 // Remove spammed message
-                if ($scope.inSpam === false && $scope.showSpammed === false) {
+                if ($scope.showSpammed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1; });
                 }
             }
