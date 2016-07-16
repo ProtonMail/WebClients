@@ -105,23 +105,13 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
             if ($state.is('secured.starred.view') === false && $state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
                 // Remove trashed message
-                if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
+                if ($scope.inTrash === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
                 }
 
-                // Remove non trashed message
-                if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
-                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
-                }
-
                 // Remove spammed message
-                if ($state.is('secured.spam.view') === false && $scope.showSpammed === false) {
+                if ($scope.inSpam === false && $scope.showSpammed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1; });
-                }
-
-                // Remove non spammed message
-                if ($state.is('secured.spam.view') === true && $scope.showNonSpammed === false) {
-                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) === -1; });
                 }
             }
 
@@ -131,10 +121,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if (messages.length > 0) {
                 var latest = _.last(messages);
 
-                if($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
+                if ($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
                     var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
-                    if(sents.length > 0) {
+                    if (sents.length > 0) {
                         // We try to open the last sent message
                         $state.go('.', {message: _.last(sents).ID});
                     } else {
@@ -217,25 +207,15 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 return _.find(messages, function(m) { return m.ID === ID; });
             };
 
-            if($state.is('secured.starred.view') === false && $state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
+            if ($state.is('secured.starred.view') === false && $state.is('secured.label.view') === false && $state.is('secured.search.view') === false) {
                 // Remove trashed message
-                if ($state.is('secured.trash.view') === false && $scope.showTrashed === false) {
+                if ($scope.inTrash === false && $scope.showTrashed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
                 }
 
-                // Remove non trashed message
-                if ($state.is('secured.trash.view') === true && $scope.showNonTrashed === false) {
-                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) === -1; });
-                }
-
                 // Remove spammed message
-                if ($state.is('secured.spam.view') === false && $scope.showSpammed === false) {
+                if ($scope.inSpam === false && $scope.showSpammed === false) {
                     messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1; });
-                }
-
-                // Remove non spammed message
-                if ($state.is('secured.spam.view') === true && $scope.showNonSpammed === false) {
-                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) === -1; });
                 }
             }
 
@@ -293,54 +273,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     };
 
     /**
-     * Return if there are non trashed message inside this conversation
-     * @return {Boolean}
-     */
-    $scope.nonTrashed = function() {
-        var result = false;
-        var locations = [
-            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-            CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-            CONSTANTS.MAILBOX_IDENTIFIERS.starred,
-            CONSTANTS.MAILBOX_IDENTIFIERS.archive
-        ];
-
-        _.each($scope.conversation.LabelIDs, function(labelID) {
-            if (locations.indexOf(labelID) !== -1) {
-                result = true;
-            }
-        });
-
-        return result;
-    };
-
-    /**
-     * Return if there are non spammed message inside this conversation
-     * @return {Boolean}
-     */
-    $scope.nonTrashed = function() {
-        var result = false;
-        var locations = [
-            CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-            CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-            CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-            CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-            CONSTANTS.MAILBOX_IDENTIFIERS.starred,
-            CONSTANTS.MAILBOX_IDENTIFIERS.archive
-        ];
-
-        _.each($scope.conversation.LabelIDs, function(labelID) {
-            if (locations.indexOf(labelID) !== -1) {
-                result = true;
-            }
-        });
-
-        return result;
-    };
-
-    /**
      * Toggle trashed messages
      */
     $scope.toggleTrashed = function() {
@@ -349,26 +281,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     };
 
     /**
-     * Toggle non trashed messages
-     */
-    $scope.toggleNonTrashed = function() {
-        $scope.showNonTrashed = !$scope.showNonTrashed;
-        $scope.refreshConversation();
-    };
-
-    /**
      * Toggle spammed messages
      */
     $scope.toggleSpammed = function() {
         $scope.showSpammed = !$scope.showSpammed;
-        $scope.refreshConversation();
-    };
-
-    /**
-     * Toggle non spammed messages
-     */
-    $scope.toggleNonSpammed = function() {
-        $scope.showNonSpammed = !$scope.showNonSpammed;
         $scope.refreshConversation();
     };
 
