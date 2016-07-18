@@ -9,16 +9,20 @@
     </h1>
     <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
         <p ng-show="showNotifier('trash')" class="alert">
-            <span ng-show="trashed === true && inTrash === false" translate translate-context="Info">This conversation contains trashed messages.</span>
-            <span ng-show="nonTrashed === true && inTrash === true" translate translate-context="Info">This conversation contains non-trashed messages.</span>
-            <a href="#" ng-click="showTrashed = !showTrashed;refreshConversation();" ng-show="trashed === true && inTrash === false" translate translate-context="Action">Toggle trashed messages</a>
-            <a href="#" ng-click="showNonTrashed = !showNonTrashed;refreshConversation();" ng-show="nonTrashed === true && inTrash === true" translate translate-context="Action">Toggle non-trashed messages</a>
+            <span ng-show="inTrash === false" translate translate-context="Info">This conversation contains trashed messages.</span>
+            <span ng-show="inTrash === true" translate translate-context="Info">This conversation contains non-trashed messages.</span>
+            <a href="#" ng-click="toggleOption('showTrashed')" ng-show="showTrashed === false && inTrash === false" translate translate-context="Action">Show trashed messages</a>
+            <a href="#" ng-click="toggleOption('showNonTrashed')" ng-show="showNonTrashed === false && inTrash === true" translate translate-context="Action">Show non-trashed messages</a>
+            <a href="#" ng-click="toggleOption('showTrashed')" ng-show="showTrashed === true && inTrash === false" translate translate-context="Action">Hide trashed messages</a>
+            <a href="#" ng-click="toggleOption('showNonTrashed')" ng-show="showNonTrashed === true && inTrash === true" translate translate-context="Action">Hide non-trashed messages</a>
         </p>
         <p ng-show="showNotifier('spam')" class="alert">
-            <span ng-show="spammed === true && inSpam === false" translate translate-context="Info">This conversation contains spammed messages.</span>
-            <span ng-show="nonSpammed === true && inSpam === true" translate translate-context="Info">This conversation contains non-spammed messages.</span>
-            <a href="#" ng-click="showSpammed = !showSpammed;refreshConversation();" ng-show="spammed === true && inSpam === false" translate translate-context="Action">Toggle spammed messages</a>
-            <a href="#" ng-click="showNonSpammed = !showNonSpammed;refreshConversation();" ng-show="nonSpammed === true && inSpam === true" translate translate-context="Action">Toggle non-spammed messages</a>
+            <span ng-show="inSpam === false" translate translate-context="Info">This conversation contains spammed messages.</span>
+            <span ng-show="inSpam === true" translate translate-context="Info">This conversation contains non-spammed messages.</span>
+            <a href="#" ng-click="toggleOption('showSpammed')" ng-show="showSpammed === false && inSpam === false" translate translate-context="Action">Show spammed messages</a>
+            <a href="#" ng-click="toggleOption('showNonSpammed')" ng-show="showNonSpammed === false && inSpam === true" translate translate-context="Action">Show non-spammed messages</a>
+            <a href="#" ng-click="toggleOption('showSpammed')" ng-show="showSpammed === true && inSpam === false" translate translate-context="Action">Hide spammed messages</a>
+            <a href="#" ng-click="toggleOption('showNonSpammed')" ng-show="showNonSpammed === true && inSpam === true" translate translate-context="Action">Hide non-spammed messages</a>
         </p>
     </div>
 </header>
