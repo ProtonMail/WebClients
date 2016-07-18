@@ -9,6 +9,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $timeout,
     gettextCatalog,
     $q,
+    $filter,
     action,
     authentication,
     cache,
@@ -20,16 +21,17 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     tools
 ) {
     var scrollPromise;
+    var messagesCached = [];
 
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
     $scope.currentState = $state.$current.name;
     $scope.scrolled = false;
     $scope.conversation = conversation;
-    $scope.showTrashed = false;
-    $scope.showNonTrashed = false;
-    $scope.showSpammed = false;
-    $scope.showNonSpammed = false;
+    $rootScope.showTrashed = false;
+    $rootScope.showNonTrashed = false;
+    $rootScope.showSpammed = false;
+    $rootScope.showNonSpammed = false;
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
     $scope.inTrash = $state.is('secured.trash.view');
@@ -97,26 +99,20 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Method call at the initialization of this controller
      */
     $scope.initialization = function() {
+        console.log('initialization conversation controller');
         var loc = tools.currentLocation();
 
         if (angular.isDefined(conversation)) {
-            var labels = conversation.LabelIDs;
-            var messages = cache.queryMessagesCached($scope.conversation.ID);
+            var messages = [];
 
-            if ($state.is('secured.inbox.view') === true || $state.is('secured.archive.view') === true) {
-                // Remove trashed message
-                if ($scope.showTrashed === false) {
-                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
-                }
+            messagesCached = cache.queryMessagesCached($stateParams.id);
+            $scope.trashed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; }).length > 0;
+            $scope.nonTrashed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
+            $scope.spammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; }).length > 0;
+            $scope.nonSpammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; }).length > 0;
 
-                // Remove spammed message
-                if ($scope.showSpammed === false) {
-                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1; });
-                }
-            }
-
-            // Sort by time
-            messages = cache.orderMessage(messages).reverse();
+            messages = $filter('filterMessages')(messagesCached);
+            messages = $scope.orderMessages(messages);
 
             if (messages.length > 0) {
                 var latest = _.last(messages);
@@ -173,7 +169,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     }
                 }
 
-                $scope.messages = messages;
+                $scope.messages = messagesCached;
             } else {
                 $scope.back();
             }
@@ -182,10 +178,23 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         }
     };
 
+    /**
+     * Sort messages by time
+     */
+    $scope.orderMessages = function(messages) {
+        return cache.orderMessage(messages).reverse();
+    };
+
     $scope.refreshConversation = function() {
         var conversation = cache.getConversationCached($stateParams.id);
         var messages = cache.queryMessagesCached($stateParams.id);
         var loc = tools.currentLocation();
+
+        messagesCached = messages;
+        $scope.trashed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; }).length > 0;
+        $scope.nonTrashed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
+        $scope.spammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; }).length > 0;
+        $scope.nonSpammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; }).length > 0;
 
         if (angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
@@ -207,20 +216,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 return _.find(messages, function(m) { return m.ID === ID; });
             };
 
-            if ($state.is('secured.inbox.view') === true || $state.is('secured.archive.view') === true) {
-                // Remove trashed message
-                if ($scope.showTrashed === false) {
-                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1; });
-                }
-
-                // Remove spammed message
-                if ($scope.showSpammed === false) {
-                    messages = _.reject(messages, function(message) { return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1; });
-                }
-            }
-
-            // Sort by time
-            messages = cache.orderMessage(messages).reverse();
+            messages = $filter('filterMessages')(messages);
+            messages = $scope.orderMessages(messages);
 
             for (index = 0; index < messages.length; index++) {
                 found = find($scope.messages, messages[index].ID);
@@ -257,35 +254,12 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     };
 
     /**
-     * Return if there are trashed message inside this conversation
      * @return {Boolean}
      */
-    $scope.trashed = function() {
-        return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash) !== -1;
-    };
+    $scope.showNotifier = function(folder) {
+        var filtered = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]); });
 
-    /**
-     * Return if there are spammed message inside this conversation
-     * @return {Boolean}
-     */
-    $scope.spammed = function() {
-        return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.spam) !== -1;
-    };
-
-    /**
-     * Toggle trashed messages
-     */
-    $scope.toggleTrashed = function() {
-        $scope.showTrashed = !$scope.showTrashed;
-        $scope.refreshConversation();
-    };
-
-    /**
-     * Toggle spammed messages
-     */
-    $scope.toggleSpammed = function() {
-        $scope.showSpammed = !$scope.showSpammed;
-        $scope.refreshConversation();
+        return filtered.length < messagesCached.length && filtered.length > 0;
     };
 
     /**

@@ -865,7 +865,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // Mark this element
         $scope.markedConversation = element;
         // Open conversation
-        if(type === 'conversation') {
+        if (type === 'conversation') {
             params.id = element.ID;
         } else if (type === 'message') {
             params.id = element.ConversationID;

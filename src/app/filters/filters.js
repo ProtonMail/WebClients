@@ -339,6 +339,43 @@ angular.module("proton.filters",[])
 	};
 })
 
+.filter('filterMessages', function($state, $rootScope, CONSTANTS) {
+    return function(messages) {
+        if ($state.is('secured.search.view') === false && $state.is('secured.label.view') === false) {
+            var trashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash); });
+            var nonTrashed = _.difference(messages, trashed);
+            var spammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam); });
+            var nonSpammed = _.difference(messages, spammed);
+
+            if (trashed.length < messages.length) {
+                if ($state.is('secured.trash.view') === true) {
+                    if ($rootScope.showNonTrashed === false) {
+                        messages = trashed;
+                    }
+                } else {
+                    if ($rootScope.showTrashed === false) {
+                        messages = nonTrashed;
+                    }
+                }
+            }
+
+            if (spammed.length < messages.length) {
+                if ($state.is('secured.spam.view') === true) {
+                    if ($rootScope.showNonSpammed === false) {
+                        messages = spammed;
+                    }
+                } else {
+                    if ($rootScope.showSpammed === false) {
+                        messages = nonSpammed;
+                    }
+                }
+            }
+        }
+
+        return messages;
+    };
+})
+
 .filter('range', function() {
     return function(val, range) {
         range = parseInt(range);
