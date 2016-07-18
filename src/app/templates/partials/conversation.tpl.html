@@ -6,22 +6,22 @@
         <span>{{ conversation.Subject }}</span>
     </h1>
     <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
-        <p ng-show="trashed() && inTrash === false" class="alert">
-            <span translate translate-context="Info">This conversation contains trashed messages.</span>
-            <a href="#" ng-click="toggleTrashed()">
-                {{ showTrashed ? 'Hide' : 'Show'}} trashed messages
-            </a>
+        <p ng-show="showNotifier('trash')" class="alert">
+            <span ng-show="trashed === true && inTrash === false" translate translate-context="Info">This conversation contains trashed messages.</span>
+            <span ng-show="nonTrashed === true && inTrash === true" translate translate-context="Info">This conversation contains non-trashed messages.</span>
+            <a href="#" ng-click="showTrashed = !showTrashed;refreshConversation();" ng-show="trashed === true && inTrash === false" translate translate-context="Action">Toggle trashed messages</a>
+            <a href="#" ng-click="showNonTrashed = !showNonTrashed;refreshConversation();" ng-show="nonTrashed === true && inTrash === true" translate translate-context="Action">Toggle non-trashed messages</a>
         </p>
-        <p ng-show="spammed() && inSpam === false" class="alert">
-            <span translate translate-context="Info">This conversation contains spammed messages.</span>
-            <a href="#" ng-click="toggleSpammed()">
-                {{showSpammed ? 'Hide' : 'Show'}} non spammed messages
-            </a>
+        <p ng-show="showNotifier('spam')" class="alert">
+            <span ng-show="spammed === true && inSpam === false" translate translate-context="Info">This conversation contains spammed messages.</span>
+            <span ng-show="nonSpammed === true && inSpam === true" translate translate-context="Info">This conversation contains non-spammed messages.</span>
+            <a href="#" ng-click="showSpammed = !showSpammed;refreshConversation();" ng-show="spammed === true && inSpam === false" translate translate-context="Action">Toggle spammed messages</a>
+            <a href="#" ng-click="showNonSpammed = !showNonSpammed;refreshConversation();" ng-show="nonSpammed === true && inSpam === true" translate translate-context="Action">Toggle non-spammed messages</a>
         </p>
     </div>
 </header>
 <div id="pm_thread" pt-height>
-    <article class="message" ng-repeat="message in messages track by message.ID" ng-controller="MessageController" id="message{{ $index }}" ng-class="{
+    <article class="message" ng-repeat="message in orderMessages(messages) | filter: filterMessages track by message.ID" ng-controller="MessageController" id="message{{ $index }}" ng-class="{
         'last': $last,
         'open': message.expand,
         'closed': !message.expand,
@@ -35,7 +35,6 @@
         'draft': message.Type === 1,
         'sent': message.Type === 2 || message.Type === 3
     }">
-
         <div class="summary" ng-click="toggle()">
             <div class="pull-left">
                 <div class="meta">
