@@ -316,6 +316,7 @@ module.exports = function(grunt) {
                 noarg: true,
                 node: true,
                 trailing: true,
+                debug: true,
                 '-W100': true,
                 globals: {
                     angular: true,
