@@ -342,10 +342,7 @@ angular.module("proton.filters",[])
 .filter('filterMessages', function($state, $rootScope, CONSTANTS) {
     return function(messages) {
         if ($state.is('secured.search.view') === false && $state.is('secured.label.view') === false) {
-            var trashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash); });
-            var nonTrashed = _.difference(messages, trashed);
-            var spammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam); });
-            var nonSpammed = _.difference(messages, spammed);
+            var trashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; });
 
             if (trashed.length < messages.length) {
                 if ($state.is('secured.trash.view') === true) {
@@ -354,10 +351,12 @@ angular.module("proton.filters",[])
                     }
                 } else {
                     if ($rootScope.showTrashed === false) {
-                        messages = nonTrashed;
+                        messages = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; });
                     }
                 }
             }
+
+            var spammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; });
 
             if (spammed.length < messages.length) {
                 if ($state.is('secured.spam.view') === true) {
@@ -366,7 +365,7 @@ angular.module("proton.filters",[])
                     }
                 } else {
                     if ($rootScope.showSpammed === false) {
-                        messages = nonSpammed;
+                        messages = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; });
                     }
                 }
             }
