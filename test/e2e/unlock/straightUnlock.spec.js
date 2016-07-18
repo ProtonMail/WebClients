@@ -17,6 +17,7 @@ describe('Unlock tests', function() {
         expect(unlockPage.password.getAttribute('value')).toBe(browser.params.password2);
 
         unlockPage.button.click();
+        // browser.waitForAngular();
         browser.wait(function() {
             return browser.getCurrentUrl().then(function(url) {
                 return url.indexOf('/inbox') !== -1;
