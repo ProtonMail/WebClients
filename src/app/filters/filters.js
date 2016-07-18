@@ -359,22 +359,22 @@ angular.module("proton.filters",[])
                 }
             }
 
-            var spammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; });
-            var nonSpammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; });
-
-            if ($state.is('secured.spam.view') === true) {
-                if (spammed.length > 0) {
-                    if ($rootScope.showNonSpammed === false) {
-                        messages = spammed;
-                    }
-                }
-            } else {
-                if (nonSpammed.length > 0) {
-                    if ($rootScope.showSpammed === false) {
-                        messages = nonSpammed;
-                    }
-                }
-            }
+            // var spammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; });
+            // var nonSpammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; });
+            //
+            // if ($state.is('secured.spam.view') === true) {
+            //     if (spammed.length > 0) {
+            //         if ($rootScope.showNonSpammed === false) {
+            //             messages = spammed;
+            //         }
+            //     }
+            // } else {
+            //     if (nonSpammed.length > 0) {
+            //         if ($rootScope.showSpammed === false) {
+            //             messages = nonSpammed;
+            //         }
+            //     }
+            // }
         }
 
         return messages;
