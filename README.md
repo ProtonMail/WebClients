@@ -32,26 +32,33 @@ We are very open to bug reports via Issues as well as Pull Requests.
 Installation:
 
 ```shell
-npm install -g protractor
-webdriver-manager update
+$ npm install -g protractor
+$ webdriver-manager update
 ```
 
 Start up a Selenium Server:
 
 ```shell
-webdriver-manager start
+$ webdriver-manager start
 ```
+
+> To run selenium you can use docker if you don't want to install Java :
+```sh
+$ docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:2.53.0
+```
+cf [Selenium Docker](https://github.com/SeleniumHQ/docker-selenium)
+
 
 Run tests:
 
 ```shell
-protractor protractor_conf.js
+$ protractor protractor_conf.js
 ```
 
 Run a scenario:
 
 ```shell
-protractor protractor_conf.js --suite=login
+$ protractor protractor_conf.js --suite=login
 ```
 
 ### License

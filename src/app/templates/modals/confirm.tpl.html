@@ -10,8 +10,20 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <button class="pm_button pull-left" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
-            <button tabindex="1" type="button" class="pm_button primary" ng-click="ctrl.confirm()" translate translate-context="Action">Confirm</button>
+            <button
+                id="cancelModalBtn"
+                class="pm_button pull-left"
+                ng-click="ctrl.cancel()"
+                translate
+                translate-context="Action">Cancel</button>
+            <button
+                id="confirmModalBtn"
+                tabindex="1"
+                type="button"
+                class="pm_button primary"
+                ng-click="ctrl.confirm()"
+                translate
+                translate-context="Action">Confirm</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

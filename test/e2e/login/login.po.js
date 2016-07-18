@@ -13,7 +13,7 @@ var LoginPage = function() {
     var v2 = element(by.css('[href="https://v2.protonmail.com/login"]'));
 
     // Signup link
-    var signup = element(by.css('[ui-sref="subscription"]'));
+    var signup = element(by.css('#btnSignup'));
 
     // Back link
     var back = element(by.css('[href="https://protonmail.com"]'));
@@ -26,27 +26,22 @@ var LoginPage = function() {
 
     this.openHelp = function() {
         openHelp.click();
-        browser.waitForAngular();
     };
 
     this.openBug = function() {
         openBug.click();
-        browser.waitForAngular();
     };
 
     this.v2 = function() {
         v2.click();
-        browser.waitForAngular();
     };
 
     this.signup = function() {
         signup.click();
-        browser.waitForAngular();
     };
 
     this.back = function() {
         back.click();
-        browser.waitForAngular();
     };
 };
 
