@@ -869,13 +869,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             params.id = element.ID;
         } else if (type === 'message') {
             params.id = element.ConversationID;
-            params.message = element.ID;
+            $rootScope.expandMessage = element;
         }
 
         $state.go('secured.' + $scope.mailbox + '.view', params);
 
         if (params.id === $stateParams.id) {
-            $rootScope.$broadcast('initMessage', params.message, true);
+            $rootScope.$broadcast('initMessage', element.ID, true);
         }
     };
 
