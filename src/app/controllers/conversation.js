@@ -104,10 +104,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
             if (sents.length > 0) {
                 // We try to open the last sent message
-                $state.go('.', {message: _.last(sents).ID});
+                $rootScope.expandMessage = _.last(sents);
             } else {
                 // Or the last message
-                $state.go('.', {message: _.last(messages).ID});
+                $rootScope.expandMessage = _.last(messages);
             }
         } else if ($state.is('secured.search.view') || $state.is('secured.drafts.view')) {
             // Do nothing, target initialized by click
@@ -117,19 +117,20 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
             }).last().value();
 
-            $state.go('.', {message: lastStarred.ID});
+            $rootScope.expandMessage = lastStarred;
         } else if ($state.is('secured.label.view')) {
             // Select the last message with this label
             var lastLabel = _.chain(messages).filter(function(message) {
                 return message.LabelIDs.indexOf($stateParams.label) !== -1;
             }).last().value();
 
-            $state.go('.', {message: lastLabel.ID});
+            $rootScope.expandMessage = lastLabel;
         } else {
             var latest = _.last(messages);
+
             // If the latest message is read, we open it
             if(latest.IsRead === 1) {
-                $state.go('.', {message: latest.ID});
+                $rootScope.expandMessage = latest;
             } else {
                 // Else we open the first message unread beginning to the end list
                 var loop = true;
@@ -148,7 +149,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     index = 0;
                 }
 
-                $state.go('.', {message: messages[index].ID});
+                $rootScope.expandMessage = messages[index];
             }
         }
     }
@@ -167,7 +168,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             $scope.nonTrashed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
             $scope.spammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; }).length > 0;
             $scope.nonSpammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; }).length > 0;
-
             messages = $filter('filterMessages')(messagesCached);
             messages = $scope.orderMessages(messages);
 
