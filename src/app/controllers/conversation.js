@@ -189,6 +189,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         return cache.orderMessage(messages).reverse();
     };
 
+    /**
+     * Refresh the current conversation with the latest change reported by the event log manager
+     */
     $scope.refreshConversation = function() {
         var conversation = cache.getConversationCached($stateParams.id);
         var messages = cache.queryMessagesCached($stateParams.id);

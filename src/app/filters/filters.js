@@ -343,29 +343,35 @@ angular.module("proton.filters",[])
     return function(messages) {
         if ($state.is('secured.search.view') === false && $state.is('secured.label.view') === false) {
             var trashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; });
+            var nonTrashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; });
 
-            if (trashed.length < messages.length) {
-                if ($state.is('secured.trash.view') === true) {
+            if ($state.is('secured.trash.view') === true) {
+                if (trashed.length > 0) {
                     if ($rootScope.showNonTrashed === false) {
                         messages = trashed;
                     }
-                } else {
+                }
+            } else {
+                if (nonTrashed.length > 0) {
                     if ($rootScope.showTrashed === false) {
-                        messages = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; });
+                        messages = nonTrashed;
                     }
                 }
             }
 
             var spammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; });
+            var nonSpammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; });
 
-            if (spammed.length < messages.length) {
-                if ($state.is('secured.spam.view') === true) {
+            if ($state.is('secured.spam.view') === true) {
+                if (spammed.length > 0) {
                     if ($rootScope.showNonSpammed === false) {
                         messages = spammed;
                     }
-                } else {
+                }
+            } else {
+                if (nonSpammed.length > 0) {
                     if ($rootScope.showSpammed === false) {
-                        messages = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; });
+                        messages = nonSpammed;
                     }
                 }
             }
