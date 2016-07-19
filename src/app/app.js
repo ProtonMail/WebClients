@@ -290,9 +290,9 @@ angular.module('proton', [
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
         if(newVal) {
-            $document.find("title").text(newVal + ' | ProtonMail');
+            $document.find('title').text(newVal + ' | ProtonMail');
         } else {
-            $document.find("title").text('ProtonMail');
+            $document.find('title').text('ProtonMail');
         }
     });
 

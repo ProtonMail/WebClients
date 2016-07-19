@@ -347,6 +347,6 @@ angular.module("proton.controllers.Secured", [])
                 break;
         }
 
-        $rootScope.pageName = name;
+        $rootScope.pageName = name + ' | ' + authentication.user.Name + ' | ProtonMail';
     };
 });
