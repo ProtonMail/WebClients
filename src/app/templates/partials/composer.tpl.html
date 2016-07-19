@@ -1,25 +1,25 @@
 <div ng-controller="ComposeMessageController">
     <ng-form name="composeForm" novalidate>
         <div
-        class="composer animate"
-        id="uid{{message.uid}}"
-        ng-repeat="message in messages"
-        ng-init="params = {}"
-        ng-style="{'z-index': message.zIndex}"
-        ng-class="{
-        'minimized': message.minimized,
-        'blur': message !== selected,
-        'maximized': message.maximized,
-        'normalized': !message.maximized && !message.minimized,
-        'expandRecipients': message.ccbcc === true,
-        'hasAttachment': (message.Attachments.length > 0),
-        'attachmentsOpen': ((message.attachmentsToggle === true) && (message.Attachments.length > 0)),
-        'moreAttachments': ((message.attachmentsToggle === true) && (message.Attachments.length > 2)),
-        'tall': (message.Attachments.length === 0),
-        'mini': mini === true,
-        'small': small === true
-        }"
-        ng-mousedown="focusComposer(message)">
+            class="composer animate"
+            id="uid{{ ::message.uid}}"
+            ng-repeat="message in messages track by message.uid"
+            ng-init="params = {}"
+            ng-style="{'z-index': message.zIndex}"
+            ng-class="{
+            'minimized': message.minimized,
+            'blur': message !== selected,
+            'maximized': message.maximized,
+            'normalized': !message.maximized && !message.minimized,
+            'expandRecipients': message.ccbcc === true,
+            'hasAttachment': (message.Attachments.length > 0),
+            'attachmentsOpen': ((message.attachmentsToggle === true) && (message.Attachments.length > 0)),
+            'moreAttachments': ((message.attachmentsToggle === true) && (message.Attachments.length > 2)),
+            'tall': (message.Attachments.length === 0),
+            'mini': mini === true,
+            'small': small === true
+            }"
+            ng-mousedown="focusComposer(message)">
 
             <header responsive-composer="message">
                 <span ng-click="normalize(message);" class="subject" ng-bind="subject(message)"></span>
@@ -120,7 +120,7 @@
                     <button type="button" class="pm_button primary mobileFull" ng-click="closePanel(message)" translate translate-context="Action">Set</button>
                 </footer>
             </div>
-            
+
 
             <div class="meta">
                 <div class="row fromRow">
@@ -161,6 +161,33 @@
             </div>
             <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
                 <div class="composeEditor fill">
+                    <div  class="askEmbedding"
+                    ng-show="askEmbedding && message.focussed && !preventDropbox">
+                        <ul>
+                            <li class="title">{{ pendingAttachements.length }} images detected</li>
+                            <li>Insert images<li>
+                            <li>                
+                                <button class="pm_button primary"
+                                ng-click="processPending(message,false)"
+                                pt-tooltip-translate="inline image"
+                                pt-placement="top">
+                                    <span>as attachement</span>
+                                </button>
+                            </li>
+                            <li>or</li>
+                            <li>
+                                <button class="pm_button primary"
+                                ng-click="processPending(message,true)"
+                                pt-tooltip-translate="Attachments"
+                                pt-placement="top">
+                                    <span>inline</span>
+                                </button>                        
+                            </li>
+                            <li class="cancel" ng-click="cancelAskEmbedding()">
+                               <span>cancel</span>  <i class="fa fa-close"></i> 
+                            </li>                            
+                        </ul>
+                    </div>
                     <div
                     class="dropzone composer-dropzone fill"
                     dropzone="dropzoneConfig(message)"
@@ -173,7 +200,7 @@
                 <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate translate-context="Action">Hide</i>
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
                 <span translate>{{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})</span>
-            </aside>           
+            </aside>
             <div
             class="previews clearfix attachmentArea"
             ng-show="(message.attachmentsToggle === true) && (message.Attachments.length > 0)">
@@ -195,15 +222,15 @@
             </div>
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button class="pm_button"
-                ng-click="addFile(message)"
-                ng-disabled="message.allowOthers() || message !== selected"
-                ng-class="{
-                    'active': message.displayPanel && message.panelName == 'attachments',
-                    'primary': message.Attachments && message.Attachments.length > 0
-                }"
-                pt-tooltip-translate="Attachments"
-                pt-placement="top"
-                >
+                    action-message="::message"
+                    action-message-type="addfile"
+                    ng-disabled="message.allowOthers() || message !== selected"
+                    ng-class="{
+                        'active': message.displayPanel && message.panelName == 'attachments',
+                        'primary': message.Attachments && message.Attachments.length > 0
+                    }"
+                    pt-tooltip-translate="Attachments"
+                    pt-placement="top">
                     <i class="fa fa-paperclip"></i>
                 </button>
                 <button

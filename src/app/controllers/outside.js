@@ -32,11 +32,6 @@ angular.module("proton.controllers.Outside", [
     var token_id = $stateParams.tag;
 
     $scope.initialization = function() {
-        // Manage responsive changes
-        angular.element(window).bind('resize', _.debounce(tools.mobileResponsive, 50));
-        angular.element(window).bind('orientationchange', tools.mobileResponsive);
-        tools.mobileResponsive();
-
         if (message.displayMessage === true) {
             message.Body = $scope.clean(message.Body);
             message.imagesHidden = tools.containsImage(message.Body);
@@ -299,7 +294,8 @@ angular.module("proton.controllers.Outside", [
                             });
                             attachment.decrypting = false;
                             if(!$rootScope.isFileSaverSupported) {
-                                $($event.currentTarget).prepend('<span class="fa fa-download"></span>');
+                                // display a download icon
+                                attachment.decrypted = true;
                             }
                             $scope.$apply();
                         } catch (error) {
@@ -329,7 +325,7 @@ angular.module("proton.controllers.Outside", [
                 var reader = new FileReader();
 
                 reader.onloadend = function () {
-                    link.attr('href',reader.result);
+                    link.parent('a').attr('href',reader.result);
                 };
 
                 reader.readAsDataURL(blob);

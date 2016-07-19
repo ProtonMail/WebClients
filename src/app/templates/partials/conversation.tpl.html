@@ -1,11 +1,9 @@
 <header id="conversationHeader">
-    <span class="pm_buttons starButton">
-        <a ng-click="toggleStar(conversation)" pt-tooltip-translate="Star" class="fa fa-star-o" ng-show="!starred(conversation)"></a>
-        <a ng-click="toggleStar(conversation)" pt-tooltip-translate="Unstar" class="fa fa-star" ng-show="starred(conversation)"></a>
-    </span>
+
+    <pt-star data-model="conversation" class="pm_buttons"></pt-star>
     <h1>
         <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-        <span ng-bind="conversation.Subject"></span>
+        <span>{{ conversation.Subject }}</span>
     </h1>
     <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
         <p ng-show="showNotifier('trash')" class="alert">
@@ -50,9 +48,9 @@
                     <span class="contact">
                         <span class="from" ng-if="message.expand"><span translate>From</span>:</span>
                         <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name': true }}</strong>
-                        <em ng-click="$event.stopPropagation();">
+                        <em>
                             {{ message.Sender | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a>
+                            <a class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a>
                         </em>
                     </span>
                 </div>
@@ -81,12 +79,18 @@
             <div class="time">
                 <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
                 <span ng-show="message.toggleDetails === true">{{ message.Time | localReadableTime }}</span>
-                <span ng-show="message.toggleDetails !== true" time="{{ message.Time }}" filter="messageTime" interval="30000"></span>
+                <time
+                    ng-show="message.toggleDetails !== true"
+                    time-refreshed="{{ message.Time }}"
+                    time-filter="messageTime"
+                    time-interval="30000"></time>
             </div>
             <div class="status">
-                <a ng-click="$event.stopPropagation();toggleStar();" class="singleStar">
-                    <i class="fa" ng-class="{'fa-star': starred(), 'fa-star-o': !starred()}"></i>
-                </a>
+                <pt-star
+                    data-model="message"
+                    class="singleStar"
+                    data-pt-star-type="message"></pt-star>
+
                 <span class="fa locks" ng-class="{
                     'fa-lock': !!!(message.IsEncrypted == '0'),
                     'text-purple': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6'),
@@ -172,7 +176,7 @@
 
             <div class="action-row">
 
-                <div class="actions pull-right">
+                <div class="actions pull-right" ng-show="message.decrypting === false">
                     <span class="pm_buttons">
                         <a class="pm_trigger open-label pull-left" pt-tooltip-translate="Add" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown ng-click="message.labelDropdownOpen = !message.labelDropdownOpen">
                             <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
@@ -182,13 +186,28 @@
                         </span>
                     </span>
                     <span class="pm_buttons">
-                        <a href="#" ng-click="reply(message)" pt-tooltip-translate="Reply" pt-tooltip-translate-context="Action">
+                        <a
+                            href="#"
+                            data-action-message="::message"
+                            data-action-message-type="reply"
+                            pt-tooltip-translate="Reply"
+                            pt-tooltip-translate-context="Action">
+
                             <i class="fa fa-mail-reply"></i>
                         </a>
-                        <a class="divider" ng-click="replyAll(message)" pt-tooltip-translate="Reply all" pt-tooltip-translate-context="Action">
+                        <a
+                            class="divider"
+                            data-action-message="::message"
+                            data-action-message-type="replyall"
+                            pt-tooltip-translate="Reply all" pt-tooltip-translate-context="Action">
                             <i class="fa fa-mail-reply-all"></i>
                         </a>
-                        <a class="divider" ng-click="forward(message)" pt-tooltip-translate="Forward" pt-tooltip-translate-context="Action">
+
+                        <a
+                            class="divider"
+                            data-action-message="::message"
+                            data-action-message-type="forward"
+                            pt-tooltip-translate="Forward" pt-tooltip-translate-context="Action">
                             <i class="fa fa-mail-forward"></i>
                         </a>
                         <a href="#" class="divider pm_trigger" dropdown pt-tooltip-translate="More" pt-tooltip-translate-context="Action">
@@ -253,7 +272,7 @@
         <div ng-if="message.ExpirationTime > 0" class="expiration" ng-if="message.expand">
             <i class="fa fa-clock-o"></i>
             <span translate>This message will expire in</span>
-            <span time="{{ message.ExpirationTime }}"></span>
+            <time time-refreshed="{{ message.ExpirationTime }}"></time>
         </div>
 
         <div ng-show="!!message.imagesHidden && message.expand" class="showImages" ng-click="displayImages()">
@@ -267,7 +286,7 @@
             <loader-tag ng-if="message.decrypting === true"></loader-tag>
             <p class="alert alert-danger" ng-if="message.SpamScore === 100" translate translate-context="Info">This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!</p>
             <p class="alert alert-danger" ng-if="message.SpamScore === 101" translate translate-context="Info">This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!</p>
-            <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" transform-links hide-first-blockquote mail-to scroll="true"></div>
+            <div class="email" ng-class="{'plain': isPlain}" ng-if="message.viewMode === 'html'" ng-bind-html="message.decryptedBody" images transform-links hide-first-blockquote mail-to scroll="true"></div>
             <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
                 <span class="pull-left fa fa-exclamation-triangle"></span>
                 <strong translate translate-context="Error">Decryption error</strong>

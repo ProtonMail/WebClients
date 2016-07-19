@@ -1,15 +1,15 @@
-<div id="pm_latest" ng-show="showWelcome === true">
+<div id="pm_latest" ng-if="showWelcome === true">
     <header translate translate-context="Title">Welcome</header>
     <section id="storageStatus" ng-show="user.UsedSpace > 0">
     	<div class="wrap">
             <div class="storageArea">
-	            <span class="current">{{ user.UsedSpace | humanSize }}</span>
+	            <span class="current">{{ ::user.UsedSpace | humanSize }}</span>
 	            <div class="bar">
 	                <em ng-style="storageStyle()"></em>
 	            </div>
-	            <span class="total">{{ user.MaxSpace | humanSize }}</span>
+	            <span class="total">{{ ::user.MaxSpace | humanSize }}</span>
             </div>
-            <span><strong>{{ storagePourcentage() }}% </strong translate>Storage space used.</span>
+            <span><strong>{{ ::storagePourcentage() }}% </strong translate>Storage space used.</span>
         </div>
     </section>
     <section ng-if="isFree === false">

@@ -15,7 +15,7 @@ angular.module("proton.squire", [
         link: function(scope, element, attrs, ngModel) {
             if (!ngModel) { return; } // do nothing if no ng-model
 
-            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, menubar, ua, updateModel, updateStylesToMatch;
+            var IFRAME_CLASS, HEADER_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, menubar, ua, updateModel, updateStylesToMatch;
 
             LINK_DEFAULT = IMAGE_DEFAULT = "";
             IFRAME_CLASS = 'angular-squire-iframe';
@@ -32,16 +32,17 @@ angular.module("proton.squire", [
 
             updateModel = function(value) {
                 value = DOMPurify.sanitize(value);
-                $timeout.cancel(debounce);
-                debounce = $timeout(function() {
-                    ngModel.$setViewValue(value);
+                scope
+                    .$applyAsync(() => {
+                        ngModel.$setViewValue(value);
 
-                    if (ngModel.$isEmpty(value)) {
-                        element.removeClass('squire-has-value');
-                    } else {
-                        element.addClass('squire-has-value');
-                    }
-                }, 200);
+                        if (ngModel.$isEmpty(value)) {
+                            element.removeClass('squire-has-value');
+                        } else {
+                            element.addClass('squire-has-value');
+                        }
+
+                    });
             };
 
             getLinkAtCursor = function() {
@@ -120,7 +121,7 @@ angular.module("proton.squire", [
                 var head = doc.head || doc.getElementsByTagName('head')[0];
                 var style = doc.createElement('style');
 
-                var css = "html{height:100%} body {height:100%; box-sizing:border-box; padding: 1rem 10px 1rem 10px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; line-height: 1.65em; color: #222; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; }";
+                var css = "html{height:100%} body {height:100%; box-sizing:border-box; padding: 1rem 10px 1rem 10px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; line-height: 1.65em; color: #222; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; } .proton-embedded{ max-width:100%; }";
 
                 style.setAttribute('type', 'text/css');
                 style.setAttribute('rel', 'stylesheet');
@@ -342,10 +343,6 @@ angular.module("proton.squire", [
                             selection.addRange(range);
                         }
 
-                        var reg = /^((http|https|ftp):\/\/)/;
-
-                        if(!reg.test(scope.data.link)) { scope.data.link = "http://" + scope.data.link; }
-
                         editor.makeLink(scope.data.link, {
                             target: '_blank',
                             title: scope.data.link,
@@ -365,7 +362,6 @@ angular.module("proton.squire", [
                     editor.focus();
                 } else {
                     editor[action]();
-                    //editor.focus();
                 }
             };
         }

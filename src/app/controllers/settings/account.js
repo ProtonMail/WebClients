@@ -5,6 +5,7 @@ angular.module('proton.controllers.Settings')
     $rootScope,
     $scope,
     $timeout,
+    CONSTANTS,
     gettextCatalog,
     $q,
     authentication,
@@ -24,7 +25,9 @@ angular.module('proton.controllers.Settings')
     User,
     desktopNotifications
 ) {
+    $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.displayName = authentication.user.DisplayName;
+    $scope.PMSignature = authentication.user.PMSignature;
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;
     $scope.desktopNotificationsStatus = desktopNotifications.status();
@@ -150,9 +153,9 @@ angular.module('proton.controllers.Settings')
                     var encryptPrivateKey = result.data.PrivateKey;
 
                     // Decrypt organization private key with the old mailbox password (current)
-                    pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd).then(function(package) {
+                    pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd).then(function(pkg) {
                         // Encrypt private key with the new mailbox password
-                        pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
+                        pmcw.encryptPrivateKey(pkg, newMailPwd).then(function(privateKey) {
                             // Send request to the back-end to update the organization private key
                             Organization.private({
                                 Password: loginPwd,
@@ -190,9 +193,9 @@ angular.module('proton.controllers.Settings')
                 _.each(result.data.User.Addresses, function(address) {
                     _.each(address.Keys, function(key) {
                         // Decrypt private key with the old mailbox password
-                        promises.push(pmcw.decryptPrivateKey(key.PrivateKey, oldMailPwd).then(function(package) {
+                        promises.push(pmcw.decryptPrivateKey(key.PrivateKey, oldMailPwd).then(function(pkg) {
                             // Encrypt the key with the new mailbox password
-                            return pmcw.encryptPrivateKey(package, newMailPwd).then(function(privateKey) {
+                            return pmcw.encryptPrivateKey(pkg, newMailPwd).then(function(privateKey) {
                                 return {ID: key.ID, PrivateKey: privateKey};
                             }, function(error) {
                                 $log.error(error);
@@ -279,6 +282,34 @@ angular.module('proton.controllers.Settings')
 
         return networkActivityTracker.track(deferred.promise);
     };
+
+
+    $scope.statusPMSignature = function(status) {
+
+        var state;
+
+        if(status) {
+            state = 1;
+        } else {
+            state = 0;
+        }
+
+        return networkActivityTracker.track(
+
+            Setting.PMSignature({PMSignature:state})
+            .then(function(result) {
+                if (result.data && result.data.Code === 1000) {
+                    authentication.user.PMSignature = status;
+                    notify({message: gettextCatalog.getString('Signature updated', null, 'Info'), classes: 'notification-success'});
+                } else if (result.data && result.data.Error) {
+                    notify({message: result.data.Error, classes: 'notification-danger'});
+                }
+            })
+
+        );
+
+    };
+
 
     $scope.saveAutosaveContacts = function(form) {
         networkActivityTracker.track(

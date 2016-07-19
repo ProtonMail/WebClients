@@ -416,7 +416,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                     $rootScope.tempMethod = method; // We save this payment method to save it later
                     $scope.createAccount();
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    notify({message: result.data.Error, classes: 'notification-danger'}); // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
                     $scope.errorPay = true;
                 } else {
                     $scope.errorPay = true;

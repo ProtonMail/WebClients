@@ -108,6 +108,25 @@ module.exports = function(grunt) {
             ]
         },
 
+        babel: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: [{
+                    src: [
+                        '<%= build_dir %>/src/app/**/*.js',
+                        '!<%= build_dir %>/src/app/libraries/**/*.js',
+                        '!<%= build_dir %>/src/app/templates/templates-app.js'
+                    ],
+                    dest: ".",
+                    cwd: ".",
+                    filter: 'isFile',
+                    expand: true
+                }]
+            }
+        },
+
         connect: {
             options: {
                 hostname: '*',
@@ -297,13 +316,15 @@ module.exports = function(grunt) {
                 noarg: true,
                 node: true,
                 trailing: true,
+                debug: true,
                 '-W100': true,
                 globals: {
                     angular: true,
                     pmcrypto: true,
                     _: true,
                     jQuery: true
-                }
+                },
+                "esversion": 6
             }
         },
 
@@ -490,7 +511,7 @@ module.exports = function(grunt) {
         'build',
         'jshint',
         'connect:watch',
-        'delta'
+        'delta',
     ]);
 
     grunt.registerTask('deploy', [
@@ -523,6 +544,7 @@ module.exports = function(grunt) {
         'copy:build_external',
         'copy:build_htaccess',
         'ngAnnotate',
+        'babel',
         'index:build'
     ]);
 };

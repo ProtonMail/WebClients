@@ -1,7 +1,7 @@
-var Unlock = require('./unlock.po.js');
+var UnlockPage = require('./unlock.po.js');
 
 describe('Unlock tests', function() {
-    var unlock = new Unlock();
+    var unlockPage = new UnlockPage();
 
     browser.ignoreSynchronization = true;
 
@@ -10,13 +10,20 @@ describe('Unlock tests', function() {
     });
 
     it('should unlock', function() {
-        expect(unlock.password).toBeDefined();
-        expect(unlock.button).toBeDefined();
+        expect(unlockPage.password).toBeDefined();
+        expect(unlockPage.button).toBeDefined();
 
-        unlock.password.sendKeys(browser.params.password2);
-        expect(unlock.password.getAttribute('value')).toBe(browser.params.password2);
+        unlockPage.password.sendKeys(browser.params.password2);
+        expect(unlockPage.password.getAttribute('value')).toBe(browser.params.password2);
 
-        unlock.button.click();
-        browser.waitForAngular();
+        unlockPage.button.click();
+        browser.wait(function() {
+            return browser.getCurrentUrl().then(function(url) {
+                return url.indexOf('/inbox') !== -1;
+            });
+        }, 10000)
+        .then(function(result) {
+            expect(result).toBe(true);
+        });
     });
 });

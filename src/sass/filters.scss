@@ -30,8 +30,19 @@
 				display: inline-block;
 			}
 			label {
-				display: inline-block;
-				padding-left: 1rem;
+				display: flex;
+				padding: 1rem 0rem;
+
+				i{
+					margin: 0.1rem 0.5rem;
+				}
+
+				span{
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow:hidden;
+					line-height: 1rem
+				}
 			}
 		}
 	}

@@ -20,6 +20,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     attachments,
     authentication,
     cache,
+    embedded,
     confirmModal,
     CONSTANTS,
     Label,
@@ -28,7 +29,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     notify,
     pmcw,
     tools,
-    ical
+    ical,
+    messageBuilder
 ) {
     $scope.mailbox = tools.currentMailbox();
     $scope.isPlain = false;
@@ -36,53 +38,35 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.attachmentsStorage = [];
     $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
 
+
+    function loadMessage(action) {
+        var msg = messageBuilder.create(action, $scope.message);
+        $rootScope.$emit('loadMessage', msg);
+    }
+
     $scope.$on('refreshMessage', function(event) {
         var message = cache.getMessageCached($scope.message.ID);
 
-        if(angular.isDefined(message)) {
-            $scope.message.AddressID = message.AddressID;
-            $scope.message.Attachments = message.Attachments;
-            $scope.message.BCCList = message.BCCList;
-            $scope.message.Body = message.Body;
-            $scope.message.CCList = message.CCList;
-            $scope.message.ConversationID = message.ConversationID;
-            $scope.message.ExpirationTime = message.ExpirationTime;
-            $scope.message.ID = message.ID;
-            $scope.message.IsEncrypted = message.IsEncrypted;
-            $scope.message.IsForwarded = message.IsForwarded;
-            $scope.message.IsRead = message.IsRead;
-            $scope.message.IsReplied = message.IsReplied;
-            $scope.message.IsRepliedAll = message.IsRepliedAll;
-            $scope.message.LabelIDs = message.LabelIDs;
-            $scope.message.Location = message.Location;
-            $scope.message.NumAttachments = message.NumAttachments;
-            $scope.message.Sender = message.Sender;
-            $scope.message.SenderAddress = message.SenderAddress;
-            $scope.message.SenderName = message.SenderName;
-            $scope.message.Size = message.Size;
-            $scope.message.Starred = message.Starred;
-            $scope.message.Subject = message.Subject;
-            $scope.message.Time = message.Time;
-            $scope.message.ToList = message.ToList;
-            $scope.message.Type = message.Type;
+        if (angular.isDefined(message)) {
+            angular.extend($scope.message, message);
         }
     });
 
     $scope.$on('replyConversation', function(event) {
         if ($scope.$last === true && $scope.message.Type !== 1) {
-            $scope.reply();
+            loadMessage('reply');
         }
     });
 
     $scope.$on('replyAllConversation', function(event) {
         if ($scope.$last === true && $scope.message.Type !== 1) {
-            $scope.replyAll();
+            loadMessage('replyall');
         }
     });
 
     $scope.$on('forwardConversation', function(event) {
         if ($scope.$last === true && $scope.message.Type !== 1) {
-            $scope.forward();
+            loadMessage('forward');
         }
     });
 
@@ -207,6 +191,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var process = function() {
             // Display content
             $scope.displayContent();
+            
         };
 
         // If the message is a draft
@@ -258,7 +243,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     /**
      * Method called at the initialization of this controller
      */
-    $scope.initialization = function() {
+    function initialization() {
         if ($rootScope.printMode === true) {
             networkActivityTracker.track(cache.getMessage($stateParams.id).then(function(message) {
                 $scope.message = message;
@@ -267,44 +252,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         } else if ($rootScope.expandMessage.ID === $scope.message.ID) {
             $scope.initView();
         }
-    };
+    }
 
     $scope.getMessage = function() {
         return [$scope.message];
     };
 
-    /**
-     * Return star status of current message
-     * @return {Boolean}
-     */
-    $scope.starred = function() {
-        return angular.isDefined($scope.message.LabelIDs) && $scope.message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
-    };
-
-    /**
-     * Toggle star status of the current message
-     */
-    $scope.toggleStar = function() {
-        if($scope.starred() === true) {
-            $scope.unstar();
-        } else {
-            $scope.star();
-        }
-    };
-
-    /**
-     * Star the current message
-     */
-    $scope.star = function() {
-        action.starMessage($scope.message.ID);
-    };
-
-    /**
-     * Unstar the current message
-     */
-    $scope.unstar = function() {
-        action.unstarMessage($scope.message.ID);
-    };
 
     /**
      * Order to the conversation controller to scroll to this message
@@ -338,6 +291,16 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.displayContent(true);
     };
 
+
+    /**
+     * Parse attachements for embedded images and store them to 'message.decryptedBody'
+     */
+    $scope.injectEmbedded = function() {
+        embedded.parser($scope.message).then( function(result) {
+            $scope.message.decryptedBody =  result;           
+        });
+    };
+
     /**
      * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} force
@@ -361,7 +324,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
         if (angular.isUndefined($scope.message.decryptedBody) || force === true) {
             $scope.message.clearTextBody().then(function(result) {
+
+                // return a promise for embedded images
+
                 var showMessage = function(content) {
+
+                    var deferred = $q.defer();
 
                     // Clear content with DOMPurify before anything happen!
                     content = DOMPurify.sanitize(content, {
@@ -381,7 +349,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         content = $scope.message.clearImageBody(content);
                     }
 
-
                     // For the welcome email, we need to change the path to the welcome image lock
                     content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
@@ -391,6 +358,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         $scope.message.viewMode = 'html';
                         // Assign decrypted content
                         $scope.message.decryptedBody = $sce.trustAsHtml(content);
+                        deferred.resolve();
                     } else {
                         $scope.isPlain = true;
                         $scope.message.viewMode = 'plain';
@@ -408,6 +376,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     } else {
                         $scope.scrollToMe();
                     }
+
+
+                    return deferred.promise;
                 };
 
                 // PGP/MIME case
@@ -432,15 +403,20 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         }
 
                         $scope.$evalAsync(function() {
-                            showMessage(content);
+                            showMessage(content).then(function(){
+                                $scope.injectEmbedded();
+                            });
                         });
                     });
 
                     mailparser.write(result);
                     mailparser.end();
+
                 } else {
                     $scope.$evalAsync(function() {
-                        showMessage(result);
+                        showMessage(result).then(function(){
+                            $scope.injectEmbedded();
+                        });
                     });
                 }
             }, function(err) {
@@ -452,6 +428,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.scrollToMe();
         }
     };
+
 
     /**
      * Mark current message as read
@@ -560,8 +537,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                                 attachment.decrypting = false;
                                 attachment.decrypted = true;
                                 if(!$rootScope.isFileSaverSupported) {
-                                    $($event.currentTarget)
-                                    .prepend('<span class="fa fa-download"></span>');
+                                    // display a download icon
+                                    attachment.decrypted = true;
                                 }
                                 $scope.$apply();
                             },
@@ -611,7 +588,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     var reader = new FileReader();
 
                     reader.onloadend = function () {
-                        link.attr('href',reader.result);
+                        link.parent('a').attr('href',reader.result);
                     };
 
                     reader.readAsDataURL(blob);
@@ -710,108 +687,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $rootScope.$broadcast('loadMessage', message);
     };
 
-    // Return Message object to build response or forward
-    // TODO refactor this function
-    var buildMessage = function(action) {
-        var base = new Message();
-        var br = '<br />';
-        var contentSignature = '';
-        var signature;
-        var blockquoteStart = '<blockquote class="protonmail_quote" type="cite">';
-        var originalMessage = '-------- Original Message --------<br />';
-        var subject = 'Subject: ' + $scope.message.Subject + br;
-        var time = 'Local Time: ' + $filter('localReadableTime')($scope.message.Time) + '<br />UTC Time: ' + $filter('utcReadableTime')($scope.message.Time) + '<br />';
-        var from = 'From: ' + $scope.message.Sender.Address + br;
-        var to = 'To: ' + tools.contactsToString($scope.message.ToList) + br;
-        var cc = ($scope.message.CCList.length > 0)?('CC: ' + tools.contactsToString($scope.message.CCList) + br):'';
-        var blockquoteEnd = '</blockquote>';
-        var re_prefix = gettextCatalog.getString('Re:', null);
-        var fw_prefix = gettextCatalog.getString('Fw:', null);
-        var re_length = re_prefix.length;
-        var fw_length = fw_prefix.length;
-        var body = $scope.message.decryptedBody || $scope.message.Body;
-
-        if (action === 'reply') {
-            base.Action = 0;
-            base.Subject = ($scope.message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? $scope.message.Subject : re_prefix + ' ' + $scope.message.Subject;
-
-            if ($scope.message.Type === 2 || $scope.message.Type === 3) {
-                base.ToList = $scope.message.ToList;
-            } else {
-                base.ToList = [$scope.message.ReplyTo];
-            }
-        } else if (action === 'replyall') {
-            base.Action = 1;
-            base.Subject = ($scope.message.Subject.toLowerCase().substring(0, re_length) === re_prefix.toLowerCase()) ? $scope.message.Subject : re_prefix + ' ' + $scope.message.Subject;
-
-            if($scope.message.Type === 2 || $scope.message.Type === 3) {
-                base.ToList = $scope.message.ToList;
-                base.CCList = $scope.message.CCList;
-                base.BCCList = $scope.message.BCCList;
-            } else {
-                base.ToList = [$scope.message.ReplyTo];
-                base.CCList = _.union($scope.message.ToList, $scope.message.CCList);
-                // Remove user address in CCList and ToList
-                _.each(authentication.user.Addresses, function(address) {
-                    base.ToList = _.filter(base.ToList, function(contact) { return contact.Address !== address.Email; });
-                    base.CCList = _.filter(base.CCList, function(contact) { return contact.Address !== address.Email; });
-                });
-            }
-        } else if (action === 'forward') {
-            base.Action = 2;
-            base.ToList = [];
-            base.Subject = ($scope.message.Subject.toLowerCase().substring(0, fw_length) === fw_prefix.toLowerCase()) ? $scope.message.Subject : fw_prefix + ' ' + $scope.message.Subject;
-        }
-
-        if (angular.isDefined($scope.message.AddressID)) {
-            var recipients = base.ToList.concat(base.CCList).concat(base.BCCList);
-            var address = _.findWhere(authentication.user.Addresses, {ID: $scope.message.AddressID});
-            var found = _.findWhere(recipients, {Address: address.Email});
-
-            if ($scope.message.Type === 2 || $scope.message.Type === 3) {
-                found = address;
-            } else {
-                _.each(_.sortBy(authentication.user.Addresses, 'Send'), function(address) {
-                    if (angular.isUndefined(found)) {
-                        found = _.findWhere(recipients, {Address: address.Email});
-                    }
-                });
-
-                if (angular.isUndefined(found)) {
-                    found = address;
-                }
-            }
-
-            base.From = found;
-        }
-
-        base.ParentID = $scope.message.ID;
-        base.Body =  blockquoteStart + originalMessage + DOMPurify.sanitize(subject) + time + from + to + cc + br + body + blockquoteEnd + br;
-
-        return base;
-    };
-
-    /**
-     * Compose a reply to a specific message in the thread
-     */
-    $scope.reply = function() {
-        $rootScope.$broadcast('loadMessage', buildMessage('reply'));
-    };
-
-    /**
-     * Compose reply all
-     */
-    $scope.replyAll = function() {
-        $rootScope.$broadcast('loadMessage', buildMessage('replyall'));
-    };
-
-    /**
-     * Compose forward
-     */
-    $scope.forward = function() {
-        $rootScope.$broadcast('loadMessage', buildMessage('forward'), true);
-    };
-
     /**
      * Check if the sender is the current user
      * @param {Object} message
@@ -890,5 +765,5 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
-    $scope.initialization();
+    initialization();
 });

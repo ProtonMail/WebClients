@@ -1,44 +1,30 @@
 angular.module("proton.errorReporter", [])
-    .factory("errorReporter", function($log, $rootScope, $q, notify) {
-        var api = _.bindAll({
-            catcher: function(msg, promise) {
-                var self = this;
+  .factory("errorReporter", ($log, $rootScope, $q, notify) => {
 
-                return function(error) {
-                    self.notify(msg, error);
-                    if (promise) {
-                        promise.reject();
-                    }
-                };
-            },
-            resolve: function(msg, promise, defaultResult) {
-                var q = $q.defer();
-                var self = this;
+    const newNotification = (msg, error) => msg && notify(msg);
+    const clear = notify.closeAll;
 
-                promise.then(
-                    function(result) {
-                        q.resolve(result);
-                    },
-                    function(error) {
-                        self.notify(msg, error);
-                        q.resolve(defaultResult);
-                    }
-                );
+    const catcher = (msg, promise) => (error) => {
+      newNotification(msg, error);
+      promise && promise.reject();
+    };
 
-                return q.promise;
-            },
-            notify: function(message, error) {
-                if (angular.isDefined(message)) {
-                    notify(message);
-                }
-            },
-            clear: function() {
-                notify.closeAll();
-            }
-        }, 'catcher', 'resolve', 'notify', 'clear');
+    const resolve = (msg, promise, defaultResult) => {
+      const q = $q.defer();
+      promise
+        .then(
+          q.resolve,
+          (error) => {
+            newNotification(msg, error);
+            q.resolve(defaultResult);
+          }
+        );
+      return q.promise;
+    };
 
-        return api;
-    })
+    return { clear, catcher, resolve, notify: newNotification };
+
+  })
 .run(function($rootScope) {
-    $rootScope.errorReporter = {};
+  $rootScope.errorReporter = {};
 });

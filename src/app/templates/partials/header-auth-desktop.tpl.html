@@ -67,13 +67,14 @@
             </a>
             <span class="pm_dropdown wide right">
                 <span class="user">
-                    <strong>{{ user.DisplayName }}</strong>
+                    <strong>{{ ::user.DisplayName }}</strong>
                     <b>{{ user.Addresses[0].Email }}</b>
                 </span>
-                <a href="#" class="help" ng-click="tour()" ng-if="wizardEnabled === true">
+                <button class="help" ng-if="wizardEnabled === true" data-display-wizard-button>
                     <i class="fa fa-magic"></i>
                     <span translate translate-context="Action">Tutorial</span>
-                </a>
+                </button>
+
                 <a class="help" target="_blank" href="https://protonmail.com/support">
                     <i class="fa fa-life-ring"></i>
                     <span translate translate-context="Action">Help &amp; answers</span>

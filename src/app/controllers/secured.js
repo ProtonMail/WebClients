@@ -138,11 +138,6 @@ angular.module("proton.controllers.Secured", [])
         });
     }
 
-    // Manage responsive changes
-    angular.element(window).bind('resize', _.debounce(tools.mobileResponsive, 50));
-    angular.element(window).bind('orientationchange', tools.mobileResponsive);
-    tools.mobileResponsive();
-
     // Set event ID
     eventManager.start(authentication.user.EventID);
 
@@ -265,6 +260,7 @@ angular.module("proton.controllers.Secured", [])
      * the number of unread messages in this folder
      */
     $scope.updatePageName = function() {
+        let value;
         var name;
         var unread = '';
         var state = tools.currentMailbox();

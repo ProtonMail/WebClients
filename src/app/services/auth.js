@@ -100,9 +100,9 @@ angular.module("proton.authentication", [
                                     // All private keys are decrypted with the mailbox password and stored in a `keys` array
                                     _.each(user.Addresses, function(address) {
                 						_.each(address.Keys, function(key, index) {
-                							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(package) { // Decrypt private key with the mailbox password
+                							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(pkg) { // Decrypt private key with the mailbox password
                 								key.decrypted = true; // We mark this key as decrypted
-                								api.storeKey(address.ID, key.ID, package); // We store the package to the current service
+                								api.storeKey(address.ID, key.ID, pkg); // We store the package to the current service
                                                 keyInfo(key);
                 							}, function(error) {
                 								key.decrypted = false; // This key is not decrypted
@@ -212,7 +212,7 @@ angular.module("proton.authentication", [
             var isOpera = Object.prototype.toString.call(window.opera) === '[object Opera]';
 
             if(window.crypto && window.crypto.getRandomValues) {
-                values = new Uint32Array(length);
+                const values = new Uint32Array(length);
                 window.crypto.getRandomValues(values);
 
                 for(i=0; i<length; i++) {
@@ -264,10 +264,10 @@ angular.module("proton.authentication", [
         /**
          * Store package
          */
-        storeKey: function(addressID, keyID, package) {
-            package.ID = keyID; // Add the keyID inside the package
+        storeKey: function(addressID, keyID, pkg) {
+            pkg.ID = keyID; // Add the keyID inside the package
             keys[addressID] = keys[addressID] || []; // Initialize array for the address
-            keys[addressID].push(package); // Add key package
+            keys[addressID].push(pkg); // Add key package
         },
 
         getRefreshCookie: function() {
@@ -609,9 +609,9 @@ angular.module("proton.authentication", [
      */
     $rootScope.openReportModal = function() {
         var modes = ['column', 'row'];
-        var displayMode = (authentication.user && angular.isNumber(authentication.user.ViewLayout)) ? modes[authentication.user.ViewLayout] : '';
         var username = (authentication.user && angular.isString(authentication.user.Name)) ? authentication.user.Name : '';
         var email = (authentication.user && angular.isArray(authentication.user.Addresses)) ? authentication.user.Addresses[0].Email : '';
+        var displayMode = (authentication.user && angular.isNumber(authentication.user.ViewLayout)) ? modes[authentication.user.ViewLayout] : '';
         var form = {
             OS: tools.getOs(),
             OSVersion: '',

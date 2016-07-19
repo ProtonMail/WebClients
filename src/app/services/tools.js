@@ -19,13 +19,16 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.mobileResponsive = function() {
-        var bodyWidth = $('body').outerWidth();
 
-        if (bodyWidth > CONSTANTS.MOBILE_BREAKPOINT) {
-            $rootScope.mobileMode = false;
-        } else if (bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT) {
-            $rootScope.mobileMode = true;
-        }
+        _rAF(() => {
+           const bodyWidth = document.body.offsetWidth;
+
+            if (bodyWidth > CONSTANTS.MOBILE_BREAKPOINT) {
+                $rootScope.mobileMode = false;
+            } else if (bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT) {
+                $rootScope.mobileMode = true;
+            }
+        });
     };
 
     tools.colors = function() {
@@ -120,8 +123,8 @@ angular.module("proton.tools", ["proton.constants"])
 
     tools.findBootstrapEnvironment = function() {
         var envs = ['xs', 'sm', 'md', 'lg'];
+        var $el = $('<div>');
 
-        $el = $('<div>');
         $el.appendTo($('body'));
 
         for (var i = envs.length - 1; i >= 0; i--) {
@@ -424,7 +427,7 @@ angular.module("proton.tools", ["proton.constants"])
     tools.containsImage = function(content) {
 
         var url = new RegExp(/url\(/ig);
-        var src = new RegExp('src=', 'g');
+        var src = new RegExp('src=(?!"blob:|"cid:)', 'g');
         var bg = new RegExp('background=', 'g');
         var poster = new RegExp('poster=', 'g');
         var svg = new RegExp('svg', 'g');

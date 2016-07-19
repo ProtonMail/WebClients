@@ -26,8 +26,19 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
-                <button type="submit" class="pm_button primary pull-right" ng-disabled="contactForm.$invalid || networkActivity.loading()" translate translate-context="Action">Save</button>
+                <button
+                    id="cancelNewContact"
+                    type="button"
+                    class="pm_button"
+                    ng-click="ctrl.cancel()"
+                    translate
+                    translate-context="Action">Cancel</button>
+                <button
+                    id="addNewContact"
+                    class="pm_button primary pull-right"
+                    ng-disabled="contactForm.$invalid || networkActivity.loading()"
+                    translate
+                    translate-context="Action">Save</button>
             </div>
         </form>
     </div>

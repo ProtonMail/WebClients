@@ -1,3 +1,18 @@
+/**
+ * The requestAnimationFrame polyfill
+ * Paul Irish.
+ * {@link http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/}
+ */
+window._rAF = window._rAF || (function() {
+  return window.requestAnimationFrame ||
+     window.webkitRequestAnimationFrame ||
+     window.mozRequestAnimationFrame ||
+     function(callback) {
+       window.setTimeout(callback, 16);
+     };
+})();
+
+
 angular.module('proton', [
     'gettext',
     'as.sortable',
@@ -59,10 +74,14 @@ angular.module('proton', [
     'proton.pmcw',
     'proton.tools',
     'proton.desktopNotifications',
+    'proton.embedded',
+    'proton.service.message',
 
     // Directives
+    'proton.message',
     'proton.autocomplete',
     'proton.card',
+    'proton.star',
     'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
@@ -87,6 +106,9 @@ angular.module('proton', [
     'proton.translate',
     'proton.wizard',
     'proton.rightClick',
+    'proton.selectConversation',
+    'proton.detectTimeWidth',
+    'proton.images',
 
     // Filters
     'proton.filters',
@@ -226,6 +248,11 @@ angular.module('proton', [
             $('body').append('<style>body > div * {-webkit-animation: spin 10s ease-in-out infinite;-moz-animation: spin 10s ease-in-out infinite;}</style>');
         }
     });
+
+    // Manage responsive changes
+    angular.element(window).bind('resize', _.debounce(tools.mobileResponsive, 50));
+    angular.element(window).bind('orientationchange', tools.mobileResponsive);
+    tools.mobileResponsive();
 
     // Less than 1030 / Tablet Mode
     // can pass in show (true/false) to explicity show/hide
