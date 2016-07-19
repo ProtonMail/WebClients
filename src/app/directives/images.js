@@ -5,12 +5,12 @@ angular.module("proton.images", [])
 				var images;
 
 				scope.$watch(attributes.ngBindHtml, function() {
-			        images = angular.element(element).find('img[src]');
+			        images = angular.element(element).find('img');
 			        if(images) {
 			        	angular.element(images)
 			        	.each(function() {
 							var src = angular.element(this).attr("src");
-							var embedded = new RegExp('^(blob:|cid:)', 'g');
+							var embedded = new RegExp('^(cid:)', 'g');
 							var isEmbedded = embedded.test(src);
 							if(this.complete) {
 								(isEmbedded) ? angular.element(this).wrap('<div class="image loading"></div>') : '';
