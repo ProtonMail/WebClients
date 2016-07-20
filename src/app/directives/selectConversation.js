@@ -35,18 +35,7 @@ angular.module("proton.selectConversation", [])
 
     const countChecked = (conversations) => _.where(conversations, {Selected: true}).length;
 
-    function countCheckedStatic(isChecked, number) {
-      let num = number;
-      if (isChecked) {
-        num = number + 1;
-      } else {
-        num = number > 0 ? number -1 : 0;
-      }
-
-      return num;
-    }
-
-    /**
+     /**
      * Select many conversations and update the scope
      * @param  {$scope} scope
      * @return {function}       (previous, from, to)
@@ -92,7 +81,7 @@ angular.module("proton.selectConversation", [])
           scope
             .$applyAsync(() => {
               scope.conversations[index].Selected = isChecked;
-              $rootScope.numberElementChecked = countCheckedStatic(isChecked, $rootScope.numberElementChecked);
+              $rootScope.numberElementChecked = countChecked(scope.conversations);
 
               if (shiftKey && previous) {
                 const from = Math.min(index, previous.index);

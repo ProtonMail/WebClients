@@ -10,7 +10,7 @@
         read: conversation.NumUnread === 0 || conversation.IsRead === 1
     }" ng-click="click($event, conversation)">
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
-        <pt-select-conversation data-index="{{ ::$index }}"></pt-select-conversation>
+        <pt-select-conversation data-index="{{ $index }}"></pt-select-conversation>
         <pt-star
             data-model="conversation"
             class="singleStar"></pt-star>
