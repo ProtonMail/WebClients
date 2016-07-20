@@ -883,14 +883,18 @@ angular.module("proton.modals", [])
 
             this.changeChoice = function() {
                 if (this.choice.value === 'paypal') {
-                    if (this.valid.Currency === 'USD' && this.valid.Cycle === 12) {
-                        this.initPaypal();
-                    } else if (this.valid.Currency === 'USD' && this.valid.Cycle === 1) {
-                        this.paypalAccessError = 1; // We only accept PayPal for annual subscriptions, click here to switch to an annual subscription. [Change Subscription]
-                    } else if (this.valid.Currency !== 'USD' && this.valid.Cycle === 1) {
-                        this.paypalAccessError = 2; // We only accept PayPal for annual subscriptions. PayPal is also only accepted for USD plans. Click here to switch to an annual USD subscription. [Change Subscription]
-                    } else if (this.valid.Currency !== 'USD' && this.valid.Cycle === 12) {
-                        this.paypalAccessError = 3; // All PayPal orders are charged in USD, click here to change your subscription to USD. [Change Subscription]
+                    if (this.valid.Currency === 'USD' || this.valid.Currency === 'EUR') {
+                        if (this.valid.Cycle === 12) {
+                            this.initPaypal();
+                        } else if (this.valid.Cycle === 1) {
+                            this.paypalAccessError = 1; // We only accept PayPal for annual subscriptions, click here to switch to an annual subscription. [Change Subscription]
+                        }
+                    } else {
+                        if (this.valid.Cycle === 1) {
+                            this.paypalAccessError = 2; // We only accept PayPal for annual subscriptions. PayPal is also only accepted for USD plans. Click here to switch to an annual USD subscription. [Change Subscription]
+                        } else if (this.valid.Cycle === 12) {
+                            this.paypalAccessError = 3; // All PayPal orders are charged in USD, click here to change your subscription to USD. [Change Subscription]
+                        }
                     }
                 }
             };
