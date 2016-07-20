@@ -75,8 +75,19 @@
             </div>
         </div>
         <div class="modal-footer text-right">
-            <a class="pm_button pull-left" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</a>
-            <button ng-class="{disabled: networkActivity.loading()}" type="button" ng-click="ctrl.submit()" class="pm_button primary" translate translate-context="Action">Submit</button>
+            <a
+                id="cancelModalBtn"
+                class="pm_button pull-left"
+                ng-click="ctrl.cancel()"
+                translate
+                translate-context="Action">Cancel</a>
+            <button
+                id="confirmModalBtn"
+                class="pm_button primary"
+                ng-class="{disabled: networkActivity.loading()}"
+                ng-click="ctrl.submit()"
+                translate
+                translate-context="Action">Submit</button>
         </div>
     </div>
     <div class="modal-overlay"></div>

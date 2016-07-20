@@ -1,12 +1,5 @@
 module.exports = () => {
 
-  const getNotification = () => element(by.css('.proton-notification-template'));
-
-  const getModalButtons = () => ({
-    cancel: element(by.id('cancelModalBtn')),
-    confirm: element(by.id('confirmModalBtn'))
-  });
-
   const navigate = () => element(by.css('[ui-sref="secured.contacts"]')).click();
 
   /**
@@ -42,17 +35,14 @@ module.exports = () => {
 
   const removeAll = () => element(by.css('.deleteAll')).click();
 
-  const getModalMessage = () => element(by.css('.modal-body div')).getText();
   const getContactList = (shouldBeEmpty = false) => {
     const $table = element(by.css('.contactWrapper'));
     return !shouldBeEmpty ? $table.$$('tr[ng-repeat]') : $table;
   };
 
-  const getAlert = () => element(by.css('.alert-info span'));
-
   return {
     navigate,
     add, remove, removeAll,
-    getAlert, getContactList, getModalMessage, getModalButtons, getNotification
+    getContactList
   };
 };

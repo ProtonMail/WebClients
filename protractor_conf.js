@@ -55,8 +55,10 @@ exports.config = {
   specs: [
     'test/e2e/login/login.spec.js',
     'test/e2e/unlock/unlock.spec.js',
+    'test/e2e/stars/stars.spec.js',
     'test/e2e/contact/contact.spec.js',
-    'test/e2e/logout/logout.spec.js'
+    'test/e2e/bugreport/bugreport.spec.js',
+    'test/e2e/logout/logout.spec.js',
   ],
   files: [
     "vendor/angular/angular.js",
@@ -71,6 +73,8 @@ exports.config = {
     contact: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/contact/contact.spec.js'],
     login: 'test/e2e/login/login.spec.js',
     logout: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/logout/logout.spec.js'],
-    unlock: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/unlock.spec.js']
+    unlock: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/unlock.spec.js'],
+    bugreport: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/bugReport/bugreport.spec.js'],
+    stars: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/stars/stars.spec.js'],
   }
 };
