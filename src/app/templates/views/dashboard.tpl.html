@@ -64,7 +64,7 @@
                                         <td><strong>{{ plan.Title }}</strong></td>
                                         <td style="width: 12rem" class="text-right actions">
                                             <span ng-show="subscription.Cycle === 1">{{ subscription.Amount / 100 | currency: subscription.Currency }}</span>
-                                            <span ng-show="subscription.Cycle === 12">{{ subscription.Amount / 100 / 12 | currency: subscription.Currency }}/mo</span>
+                                            <span ng-show="subscription.Cycle === 12">{{ subscription.Amount / 100 / 12 | fixed: 2 | currency: subscription.Currency }}/mo</span>
                                         </td>
                                     </tr>
                                     <tr>

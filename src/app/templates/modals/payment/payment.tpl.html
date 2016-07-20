@@ -23,7 +23,7 @@
                                 </td>
                                 <td class="price text-right">
                                     <strong ng-show="ctrl.valid.Cycle === 1">{{ ctrl.valid.Amount / 100 | currency: plan.Currency }}</strong>
-                                    <strong ng-show="ctrl.valid.Cycle === 12">{{ ctrl.valid.Amount / 100 / 12 | currency: plan.Currency }}/mo</strong>
+                                    <strong ng-show="ctrl.valid.Cycle === 12">{{ ctrl.valid.Amount / 100 / 12 | fixed: 2 | currency: plan.Currency }}/mo</strong>
                                 </td>
                             </tr>
                             <tr>

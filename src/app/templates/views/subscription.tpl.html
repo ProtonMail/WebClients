@@ -111,7 +111,7 @@
                     <tr>
                         <th translate translate-context="Title">Price</th>
                         <td>
-                            <strong ng-bind="plan.Amount / 100 | currency: plan.Currency"></strong> <i ng-show="plan.Cycle === 12">({{ plan.Amount / 100 / 12 | currency: plan.Currency }} / month)</i>
+                            <strong ng-bind="plan.Amount / 100 | currency: plan.Currency"></strong> <i ng-show="plan.Cycle === 12">({{ plan.Amount / 100 / 12 | fixed: 2 | currency: plan.Currency }} / month)</i>
                         </td>
                     </tr>
                 </tbody>
