@@ -271,6 +271,9 @@ angular.module('proton.controllers.Settings')
                 .then(function() {
                     deferred.resolve();
                 });
+            } else if (result.signature.data.Code === 12055) {
+                notify({message: gettextCatalog.getString('Unable to save your changes, your signature is too large.', null, 'Error'), classes: 'notification-danger'});
+                deferred.reject();
             } else {
                 notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
                 deferred.reject();
