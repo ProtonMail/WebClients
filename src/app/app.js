@@ -92,6 +92,7 @@ angular.module('proton', [
     'proton.labelHeight',
     'proton.labels',
     'proton.loaderTag',
+    'proton.login',
     'proton.locationTag',
     'proton.maxComposerHeight',
     'proton.move',
