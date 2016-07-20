@@ -92,7 +92,7 @@ angular.module("proton.selectConversation", [])
                 target.checked = previous.conversation.Selected;
               }
 
-              $rootScope.showWelcome = false;
+              $rootScope.showWelcome = $rootScope.numberElementChecked === 0;
 
               previous = {
                 index: index,
