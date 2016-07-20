@@ -216,6 +216,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         current.attachmentsToggle = false;
     });
 
+
+
     function onResize() {
         $timeout.cancel(timeoutStyle);
 
@@ -312,6 +314,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     // Functions
+
     $scope.setDefaults = function(message) {
         var enabledAddresses = _.chain(authentication.user.Addresses)
             .where({Status: 1})
@@ -877,7 +880,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.focusComposer = function(message) {
         $scope.selected = message;
-
         if (!!!message.focussed) {
             // calculate z-index
             var index = $scope.messages.indexOf(message);
@@ -1634,6 +1636,21 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         return deferred.promise;
     };
 
+    /**
+     * Focus the first not minimized composer window
+     * @param {Object} message
+     * @param {Boolean} discard
+     * @param {Boolean} save
+     */
+
+    $scope.focusFirstComposer = function(message) {
+        var messageFocussed = !!message.focussed;
+        var isFocusable = _.find($scope.messages, function (x) { return x.minimized === false; });
+        if(messageFocussed && !angular.isUndefined(isFocusable)) {
+            $scope.focusComposer(isFocusable);
+        }
+    };
+
     $scope.minimize = function(message) {
         message.minimized = true;
         message.previousMaximized = message.maximized;
@@ -1641,6 +1658,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $rootScope.maximizedComposer = false;
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
+        $scope.focusFirstComposer(message);
         $rootScope.$broadcast('composerModeChange');
     };
 
@@ -1695,7 +1713,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.close = function(message, discard, save) {
         var index = $scope.messages.indexOf(message);
-        var messageFocussed = !!message.focussed;
 
         if(discard === true && angular.isDefined(message.ID)) {
             $scope.discard(message);
@@ -1717,10 +1734,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $('.tooltip').not(this).hide();
 
         // Message closed and focussed?
-        if(messageFocussed && $scope.messages.length > 0) {
-            // Focus the first message
-            $scope.focusComposer(_.first($scope.messages));
-        }
+        $scope.focusFirstComposer(message);
 
         $timeout(function () {
             $scope.composerStyle();
