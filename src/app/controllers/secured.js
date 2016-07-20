@@ -25,8 +25,19 @@ angular.module("proton.controllers.Secured", [])
     Organization,
     Payment,
     pmcw,
-    tools
+    tools,
+    welcomeModal
 ) {
+    welcomeModal.activate({
+      params: {
+        cancel: function() {
+          welcomeModal.deactivate();
+        },
+        next: function(displayName) {
+          welcomeModal.deactivate();
+        }
+      }
+    });
     var dirtyAddresses = [];
 
     $scope.tools = tools;
