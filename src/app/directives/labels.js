@@ -86,6 +86,8 @@ angular.module("proton.labels", [])
             };
 
             scope.save = function() {
+                $rootScope.numberElementChecked = 0;
+                $rootScope.showWelcome = true;
                 scope.saveLabels(scope.labels, scope.alsoArchive);
                 scope.close();
                 notify({message: gettextCatalog.getString('Labels Saved', null), classes: 'notification-success'});

@@ -17,7 +17,7 @@
         ng-click="click($event, conversation)">
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
 
-        <pt-select-conversation data-index="{{ ::$index }}"></pt-select-conversation>
+        <pt-select-conversation data-index="{{ $index }}"></pt-select-conversation>
         <div class="row top">
             <h4 class="subject">
                 <span class="location fa fa-inbox" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('0') > -1"></span>
