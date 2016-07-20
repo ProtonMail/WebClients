@@ -63,7 +63,6 @@ angular.module('proton.service.message', [])
 
         // Remove user address in CCList and ToList
         const userAddresses = _(authentication.user.Addresses).map(({ Email = '' }) => Email.toLowerCase());
-        newMsg.ToList = filterUserAddresses(newMsg.ToList, userAddresses);
         newMsg.CCList = filterUserAddresses(newMsg.CCList, userAddresses);
       }
     }
