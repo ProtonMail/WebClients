@@ -21,7 +21,7 @@ angular.module("proton.embedded", [])
         /* initiate a CID list */
         self.CIDList = [];
 
-        // Check if we have attachements
+        // Check if we have attachments
         if(attachs && attachs.length > 0) {
 
             // Build a list of cids
@@ -47,7 +47,7 @@ angular.module("proton.embedded", [])
     };
 
     // Use the Blobs array to store CIDs url reference
-    // once the attachement has been decrypted
+    // once the attachment has been decrypted
     // so we can re-use the blob instead of decrypting 
     // this should be rewritted a bit to work with 
     // the service store
@@ -78,7 +78,7 @@ angular.module("proton.embedded", [])
     };
 
 
-    // Decrypt the attachement that has been detected within
+    // Decrypt the attachment that has been detected within
     // a CID header, and store them for reusability purpose
 
     var decrypt = function() {

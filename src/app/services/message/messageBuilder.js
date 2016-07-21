@@ -131,7 +131,7 @@ angular.module('proton.service.message', [])
         newMsg.From = findFrom(newMsg, currentMsg);
       }
 
-      /* add inline images as attachements */
+      /* add inline images as attachments */
       if((action === 'reply') || (action === 'replyall')){
         newMsg.Attachments = _.filter(currentMsg.Attachments, function (el) {
             var disposition = el.Headers["content-disposition"];
