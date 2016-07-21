@@ -904,7 +904,7 @@ angular.module("proton.modals", [])
 
                 Payment.paypal({
                     Amount : this.valid.AmountDue,
-                    Currency : this.valid.Currency // Only USD allowed for now
+                    Currency : this.valid.Currency
                 }).then(function(result) {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.ApprovalURL) {

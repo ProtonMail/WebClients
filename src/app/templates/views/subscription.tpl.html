@@ -116,7 +116,11 @@
                     </tr>
                 </tbody>
             </table>
-            <p><a href="#" ng-click="showFeatures = !showFeatures" translate-context="Action" translate><i class="fa" ng-class="{'fa-angle-down': !showFeatures, 'fa-angle-up': showFeatures}"></i> Show features</a></p>
+            <p>
+                <a href="#" ng-click="showFeatures = !showFeatures">
+                    <span translate-context="Action" translate>Show features</span> <i class="fa" ng-class="{'fa-angle-down': !showFeatures, 'fa-angle-up': showFeatures}"></i>
+                </a>
+            </p>
             <ul ng-show="showFeatures === true">
                 <li ng-show="plan.Name === 'plus'" translate>5GB storage</li>
                 <li ng-show="plan.Name === 'visionary'" translate>20GB storage</li>
@@ -136,56 +140,85 @@
     </div>
     <form method="post" ng-submit="pay()" role="form" novalidate class="pm_form">
         <div class="pm_grid">
-            <div class="col-1-4 bold" translate translate-context="Title">Credit Card</div>
+            <div class="col-1-4 bold" translate translate-context="Title">Payment Method</div>
             <div class="col-3-4">
-                <div class="pm_grid">
-                    <input type="text" autofocus ng-model="card.fullname" placeholder-translate="Name on card" required />
-                </div>
-                <div class="pm_grid">
-                    <div class="col-2-3">
-                        <span class="pm_select">
-                            <select ng-model="card.country" ng-options="country.label for country in tools.countries | orderBy: 'priority'"></select>
-                            <i class="fa fa-angle-down"></i>
-                        </span>
+                <div class="pm_grid" ng-init="method = 'card'">
+                    <div class="col-1-2">
+                        <label>
+                            <input type="radio" ng-model="method" value="card" /> <span translate translate-context="Label">Credit Card</span>
+                        </label>
                     </div>
-                    <div class="col-1-3">
-                        <input type="text" minlength="3" maxlength="9" ng-model="card.zip"  placeholder-translate="ZIP code" required />
+                    <div class="col-1-2">
+                        <label>
+                            <input type="radio" ng-model="method" value="paypal" ng-disabled="::paypalSupport === false" ng-change="changeChoice(method)" /> <span translate translate-context="Label">Paypal</span>
+                        </label>
                     </div>
                 </div>
-                <div class="pm_grid input-icon">
-                    <card-icon number="card.number"></card-icon>
-                    <input type="text" ng-model="card.number" placeholder-translate="Card number" maxlength="20" required />
+                <p ng-show="::paypalSupport === false" class="help" translate translate-context="Info">We only accept PayPal for annual subscriptions and EUR or USD currency.</p>
+                <p class="alert alert-warning" ng-show="paypalNetworkError === true">
+                    <span translate-context="Error" translate>Error connecting to PayPal.</span>
+                    <a href="#" ng-click="initPaypal()">Click here</a> to try again.
+                </p>
+                <div ng-show="method === 'card'">
+                    <div class="pm_grid">
+                        <input type="text" autofocus ng-model="card.fullname" placeholder-translate="Name on card" required />
+                    </div>
+                    <div class="pm_grid">
+                        <div class="col-2-3">
+                            <span class="pm_select">
+                                <select ng-model="card.country" ng-options="country.label for country in tools.countries | orderBy: 'priority'"></select>
+                                <i class="fa fa-angle-down"></i>
+                            </span>
+                        </div>
+                        <div class="col-1-3">
+                            <input type="text" minlength="3" maxlength="9" ng-model="card.zip"  placeholder-translate="ZIP code" required />
+                        </div>
+                    </div>
+                    <div class="pm_grid input-icon">
+                        <card-icon number="card.number"></card-icon>
+                        <input type="text" ng-model="card.number" placeholder-translate="Card number" maxlength="20" required />
+                    </div>
+                    <div class="pm_grid no-margin">
+                        <div class="col-1-3">
+                            <div class="input-icon">
+                                <i class="fa fa-calendar"></i>
+                                <input type="text" ng-model="card.month" placeholder-translate="MM" pt-tooltip-translate="Month" maxlength="2" required />
+                            </div>
+                        </div>
+                        <div class="col-1-3">
+                            <div class="input-icon">
+                                <i class="fa fa-calendar"></i>
+                                <input type="text" ng-model="card.year" placeholder-translate="YY" pt-tooltip-translate="Year" maxlength="4" required />
+                            </div>
+                        </div>
+                        <div class="col-1-3">
+                            <div class="input-icon">
+                                <i class="fa fa-lock"></i>
+                                <input type="text" ng-model="card.cvc" placeholder-translate="CVC" pt-tooltip-translate="Card validation code" maxlength="4" required />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="pm_grid no-margin">
-                    <div class="col-1-3">
-                        <div class="input-icon">
-                            <i class="fa fa-calendar"></i>
-                            <input type="text" ng-model="card.month" placeholder-translate="MM" pt-tooltip-translate="Month" maxlength="2" required />
-                        </div>
-                    </div>
-                    <div class="col-1-3">
-                        <div class="input-icon">
-                            <i class="fa fa-calendar"></i>
-                            <input type="text" ng-model="card.year" placeholder-translate="YY" pt-tooltip-translate="Year" maxlength="4" required />
-                        </div>
-                    </div>
-                    <div class="col-1-3">
-                        <div class="input-icon">
-                            <i class="fa fa-lock"></i>
-                            <input type="text" ng-model="card.cvc" placeholder-translate="CVC" pt-tooltip-translate="Card validation code" maxlength="4" required />
-                        </div>
-                    </div>
+                <div ng-show="method === 'paypal'">
+                    <p class="alert alert-info text-center" ng-show="approvalURL === false" translate>Loading...</p>
+                    <p ng-hide="approvalURL === false">
+                        <a href="#" ng-click="openPaypalTab()">
+                            <img src="/assets/img/settings/paypal.png" alt="Paypal button" />
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
-        <hr />
-        <div class="text-center">
-            <p class="alert alert-info" ng-show="errorPay">Would you like to create a free ProtonMail account instead? <a href="#" ng-click="payment = false;humanityTest = true;">Yes</a> <a href="https://protonmail.com/signup">No</a></p>
-            <p>
-                <button ng-hide="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Submit</button>
-                <button ng-show="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Retry</button>
-            </p>
-            <p><button class="pm_button link" type="button" ng-click="errorPay = true" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button></p>
+        <div ng-hide="method === 'paypal'">
+            <hr />
+            <div class="text-center">
+                <p class="alert alert-info" ng-show="errorPay">Would you like to create a free ProtonMail account instead? <a href="#" ng-click="payment = false;humanityTest = true;">Yes</a> <a href="https://protonmail.com/signup">No</a></p>
+                <p>
+                    <button ng-hide="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Submit</button>
+                    <button ng-show="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Retry</button>
+                </p>
+                <p><button class="pm_button link" type="button" ng-click="errorPay = true" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button></p>
+            </div>
         </div>
     </form>
 </div>
