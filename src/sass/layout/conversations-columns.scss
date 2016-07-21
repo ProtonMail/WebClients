@@ -89,14 +89,13 @@
         }
         .senders {
             cursor: pointer;
-            span::before {content: ', '}
-            span:first-of-type::before {display: none}
+            span::after {content: ', '}
+            span:last-of-type::after {display: none}
         }
         .senders.full {
             width: 100%;
-
-            span::before {content: ', '}
-            span:first-of-type::before {display: none}
+            span::after {content: ', '}
+            span:last-of-type::after {display: none}
         }
         .meta {
             display: block;

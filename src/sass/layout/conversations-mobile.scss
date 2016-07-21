@@ -15,7 +15,7 @@ body.mobileMode {
             .folderConversations-container {
                 i.fa {
                     width: 1rem;
-                    text-align: center; 
+                    text-align: center;
                 }
             }
             .senders.full {
@@ -23,8 +23,8 @@ body.mobileMode {
                 cursor: pointer;
             }
             .senders {
-                span::before {content: ', '}
-                span:first-of-type::before {display: none}
+                span::after {content: ', '}
+                span:last-of-type::after {display: none}
             }
         }
     }
