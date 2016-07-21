@@ -19,45 +19,48 @@ body.mobileMode {
 		#pm_main{
 			label.pm_checkbox,
 			input[type="checkbox"] {
-		    	top: 0;
-    	    left: 0;
-    	    height: 100%;
-    	    width: 100%;
-    	    opacity: 0;
-		    }
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				opacity: 0;
+			}
 
+			.ptSelectConversation-input {
+				position: absolute;
+			}
 
-		  .ptSelectConversation-input ~ .fa-check-square {
-		  	display: none !important;
-		  }
-		  .ptSelectConversation-input:checked ~ .fa-check-square {
-		  	display: inline-block !important;
-		  }
-		  .ptSelectConversation-input:checked ~ .fa-square-o {
-		  	display: none !important;
-		  }
+			.ptSelectConversation-input ~ .fa-check-square {
+				display: none !important;
+			}
+			.ptSelectConversation-input:checked ~ .fa-check-square {
+				display: inline-block !important;
+			}
+			.ptSelectConversation-input:checked ~ .fa-square-o {
+				display: none !important;
+			}
 			.labelDropdown input[type="checkbox"] {
 				display: inline-block !important;
 			}
-		    .fa-square-o,
-		    .fa-check-square {
-		    	display: inline-block !important;
-		    	font-size: 2rem;
-		    	-webkit-appearance: none;
+			.fa-square-o,
+			.fa-check-square {
+				display: inline-block !important;
+				font-size: 2rem;
+				-webkit-appearance: none;
 				-moz-appearance: none;
 				appearance: none;
-		    	border: none;
-		    	background: transparent;
-		    	text-decoration: none;
-		    	color: $alt;
-		    	width: 2rem;
-		    }
+				border: none;
+				background: transparent;
+				text-decoration: none;
+				color: $alt;
+				width: 2rem;
+			}
 
-		    .ptSelectConversation-icon {
-		    	position: absolute;
-		    	top: calc(50% - 1rem);
-		    	pointer-events: none
-		    }
+			.ptSelectConversation-icon {
+				position: absolute;
+				top: calc(50% - 1rem);
+				pointer-events: none
+			}
 
 
 		}
