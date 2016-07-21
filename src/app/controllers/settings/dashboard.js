@@ -317,7 +317,7 @@ angular.module("proton.controllers.Settings")
      */
     $scope.free = function() {
         var title = gettextCatalog.getString('Confirm downgrade', null, 'Title');
-        var message = gettextCatalog.getString('This will downgrade your account to a free account.<br /><br />Please disable all additional addresses prior to downgrading your account. You can manage that inside the addresses tab.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.', null, 'Info');
+        var message = gettextCatalog.getString('This will downgrade your account to a free account.<br /><br />Active aliases and custom domain addresses will be disabled automatically.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.', null, 'Info');
 
         confirmModal.activate({
             params: {
