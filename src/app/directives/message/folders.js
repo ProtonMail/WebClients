@@ -1,30 +1,57 @@
 angular.module('proton.message', [])
-.directive('foldersMessage', function($rootScope, CONSTANTS) {
-    return {
-        restrict: 'E',
-        templateUrl: 'templates/directives/message/folders.tpl.html',
-        replace: true,
-        scope: {
-            message: '='
-        },
-        link: function(scope, element, attrs) {
-            var unsubscribe;
-            var build = function(event, message) {
-                if (angular.isArray(message.LabelIDs)) {
-                    scope.archive = _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.archive);
-                    scope.trash = _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash);
-                    scope.spam = _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam);
-                }
+.directive('foldersMessage', ($rootScope, gettextCatalog, $compile, mailboxIdentifersTemplate) => {
 
-                if (angular.isNumber(message.Type)) {
-                    scope.sent = message.Type === 2 || message.Type === 3;
-                    scope.drafts = message.Type === 1;
-                }
-            };
+  const MAP_LABELS = {
+    archive: {
+      className: 'fa-archive',
+      tooltip: gettextCatalog.getString('In archive', null)
+    },
+    trash: {
+      className: 'fa-trash-o',
+      tooltip: gettextCatalog.getString('In trash', null)
+    },
+    spam: {
+      className: 'fa-ban',
+      tooltip: gettextCatalog.getString('In spam', null)
+    }
+  };
 
-            unsubscribe = $rootScope.$on('foldersMessage.' + scope.message.ID, build);
-            scope.$on('$destroy', unsubscribe);
-            build(undefined, scope.message);
-        }
-    };
+  const MAP_TYPES = {
+    drafts: {
+      className: 'pm_tag',
+      tooltip: gettextCatalog.getString('Draft', null)
+    },
+    sent: {
+      className: 'pm_tag',
+      tooltip: gettextCatalog.getString('Sent', null)
+    }
+  };
+
+  const { getTemplateLabels, getTemplateType } = mailboxIdentifersTemplate({ MAP_LABELS, MAP_TYPES });
+
+  return {
+    restrict: 'E',
+    templateUrl: 'templates/directives/message/folders.tpl.html',
+    replace: true,
+    scope: {
+      message: '='
+    },
+    link(scope, el) {
+
+      const build = (event, { LabelIDs, Type}) => {
+        let template = '';
+        Array.isArray(LabelIDs) && (template += getTemplateLabels(LabelIDs));
+        angular.isNumber(Type) && (template += getTemplateType(Type));
+
+        // Compile the template to bind the tooltip etc.
+        el.empty().append($compile(template)(scope));
+      };
+
+      const unsubscribe = $rootScope.$on('foldersMessage.' + scope.message.ID, build);
+
+      build(undefined, scope.message);
+
+      scope.$on('$destroy', unsubscribe);
+    }
+  };
 });

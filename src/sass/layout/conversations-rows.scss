@@ -73,8 +73,8 @@ body {
             .senders {
                 width: 16%;
                 cursor: pointer;
-                span::before {content: ', '}
-                span:first-of-type::before {display: none}
+                span::after {content: ', '}
+                span:last-of-type::after {display: none}
             }
             .subject {
                 width: calc(84% - 19rem);
