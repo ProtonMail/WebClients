@@ -44,10 +44,12 @@
             ng-class="{ 'full': (conversation.LabelIDs | labels).length === 0 }">
                 <span
                 ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+                class="senders-name"
                 ng-repeat="contact in senders(conversation)"
                 title="{{ contact.Address }}">{{ contact | contact: 'Name' }}</span>
                 <span
-                ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+                ng-if="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
+                class="senders-name"
                 ng-repeat="contact in recipients(conversation)"
                 title="{{ contact.Address }}">{{ contact | contact: 'Name' }}</span>
             </span>
