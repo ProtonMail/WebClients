@@ -18,7 +18,7 @@
         <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
 
         <pt-select-conversation
-            data-index="{{ ::$index }}"
+            data-index="{{ $index }}"
             data-model="conversation"></pt-select-conversation>
         <div class="row top">
             <h4 class="subject">
@@ -47,15 +47,11 @@
                 <span
                 ng-hide="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
                 ng-repeat="contact in senders(conversation)"
-                title="{{ contact.Address }}">
-                    {{ contact | contact: 'Name' }}<span ng-hide="$last">, </span>
-                </span>
+                title="{{ contact.Address }}">{{ contact | contact: 'Name' }}</span>
                 <span
                 ng-show="('secured.sent.**' | includedByState) || ('secured.drafts.**' | includedByState)"
                 ng-repeat="contact in recipients(conversation)"
-                title="{{ contact.Address }}">
-                    {{ contact | contact: 'Name' }}<span ng-hide="$last">, </span>
-                </span>
+                title="{{ contact.Address }}">{{ contact | contact: 'Name' }}</span>
             </span>
             <labels-element element="conversation"></labels-element>
         </div>
