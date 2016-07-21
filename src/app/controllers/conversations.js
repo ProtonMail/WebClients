@@ -436,7 +436,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Boolean}
      */
     $scope.allSelected = function() {
-        if (!Array.isArray($scope.conversations)) {
+        if (!Array.isArray($scope.conversations) || !$scope.conversations.length) {
             return false;
         }
         return _.every($scope.conversations, {Selected: true});
