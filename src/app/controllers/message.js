@@ -293,7 +293,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
 
     /**
-     * Parse attachements for embedded images and store them to 'message.decryptedBody'
+     * Parse attachments for embedded images and store them to 'message.decryptedBody'
      */
     $scope.injectEmbedded = function() {
         embedded.parser($scope.message).then( function(result) {

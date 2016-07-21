@@ -1,7 +1,7 @@
 <div id="outsideMessageWrap">
     <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
         <h1>
-            <span class="attachement" ng-show="message.Attachments.length > 0">
+            <span class="attachment" ng-show="message.Attachments.length > 0">
                 <i class="fa fa-paperclip"></i>
             </span>
             {{ message.Subject }}

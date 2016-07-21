@@ -435,7 +435,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                                 $scope.askEmbedding = true;
                                 $scope.pendingAttachements.push(file);
-                                // add attachement with embeded and include the img ?
+                                // add attachment with embeded and include the img ?
                                 dropzone.removeFile(file);
 
                             } else {
