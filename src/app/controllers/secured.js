@@ -339,14 +339,15 @@ angular.module("proton.controllers.Secured", [])
             case 'invoices':
                 name = gettextCatalog.getString('Invoices', null, 'Title');
                 break;
-            case 'login':
-                name = gettextCatalog.getString('Login', null, 'Title');
-                break;
             default:
                 name = '';
                 break;
         }
 
-        $rootScope.pageName = name + ' | ' + authentication.user.Name + ' | ProtonMail';
+        if (name.length > 0) {
+            name += ' | ';
+        }
+
+        $rootScope.pageName = name + authentication.user.Name + ' | ProtonMail';
     };
 });
