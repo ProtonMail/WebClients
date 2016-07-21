@@ -52,13 +52,6 @@ angular.module("proton.models.organization", [])
          */
         payment: function(Obj) {
             return $http.put(url.get() + '/organizations/payment', Obj);
-        },
-        // DELETE
-        /**
-         * Delete the group.
-         */
-        delete: function() {
-            return $http.delete(url.get() + '/organizations');
         }
     };
 });

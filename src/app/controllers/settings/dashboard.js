@@ -324,23 +324,6 @@ angular.module("proton.controllers.Settings")
                 title: title,
                 message: message,
                 confirm: function() {
-                    var deleteOrganization = function() {
-                        var deferred = $q.defer();
-
-                        Organization.delete()
-                        .then(function(result) {
-                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                                deferred.resolve();
-                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                                deferred.reject(new Error(result.data.Error));
-                            } else {
-                                deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
-                            }
-                        });
-
-                        return deferred.promise;
-                    };
-
                     var unsubscribe = function() {
                         var deferred = $q.defer();
 
@@ -365,8 +348,7 @@ angular.module("proton.controllers.Settings")
                     };
 
                     networkActivityTracker.track(
-                        deleteOrganization()
-                        .then(unsubscribe)
+                        unsubscribe()
                         .then(finish)
                         .catch(function(error) {
                             notify({message: error, classes: 'notification-danger'});
