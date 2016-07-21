@@ -66,7 +66,7 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.getBrowser = function() {
-        return $.browser.name;
+        return jQuery.browser.name;
     };
 
     tools.getBrowserVersion = function() {
