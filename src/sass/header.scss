@@ -68,6 +68,9 @@ header#pm_header-desktop {
 			float: left;
 			position: relative;
 			height: 60px;
+			&.active {
+				box-shadow: 0 5px 0 0 $primary inset;
+			}
 			& > a {
 				display: block;
 				float: left;
