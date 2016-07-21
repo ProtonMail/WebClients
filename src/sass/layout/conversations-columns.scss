@@ -72,6 +72,11 @@
             font-size: 1em;
             cursor: pointer;
             color: #000;
+            .folderConversations-container .fa {
+                display: inline-block;
+                width: 1rem;
+                text-align: center;
+            }
         }
         .meta,
         .pm_labels {
@@ -141,7 +146,7 @@
             position: absolute;
             right: 10px;
             bottom: 10px;
-            width: 100%;
+            width: auto;
             z-index: 2;
             label {
                 margin-left: .25rem;

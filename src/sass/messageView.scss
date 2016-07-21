@@ -166,6 +166,9 @@
             font-size: .9em;
             cursor: pointer;
             position: relative;
+            span i.fa {
+                margin-left: .5rem;
+            }
             .pull-left {
                 position: absolute;
                 left: 10px;

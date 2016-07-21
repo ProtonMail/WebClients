@@ -86,15 +86,13 @@ angular.module("proton.filters",[])
         if( !authentication.user ) {
             return [];
         }
-        var userLabels = _.chain(authentication.user.Labels)
-            .sortBy('Order')
-            .value();
+        var userLabels = _.chain(authentication.user.Labels).sortBy('Order').value();
 
         for (var i = 0; i < userLabels.length; i++) {
             var labelObject = userLabels[i];
 
             if (labels.indexOf(labelObject.ID) !== -1) {
-                labelsFiltered.push(labelObject.ID);
+                labelsFiltered.push(labelObject);
             }
         }
 

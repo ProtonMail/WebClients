@@ -79,6 +79,7 @@ angular.module('proton', [
 
     // Directives
     'proton.message',
+    'proton.conversation',
     'proton.autocomplete',
     'proton.card',
     'proton.star',

@@ -88,6 +88,11 @@ body {
                     max-width: 90%;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    .fa {
+                        display: inline-block;
+                        width: 1rem;
+                        text-align: center;
+                    }
                 }
                 .location {
                     width: 1.25rem;

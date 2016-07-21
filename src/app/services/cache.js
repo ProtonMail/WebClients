@@ -70,7 +70,7 @@ angular.module('proton.cache', [])
 
         message = new Message(message);
 
-        if(angular.isDefined(current)) {
+        if (angular.isDefined(current)) {
             manageCounters(current, message, 'message');
 
             var index = messagesCached.indexOf(current);
@@ -81,6 +81,8 @@ angular.module('proton.cache', [])
         }
 
         manageTimes(message.ConversationID);
+        $rootScope.$emit('labelsElement.' + message.ID, message);
+        $rootScope.$emit('foldersMessage.' + message.ID, message);
     };
 
     /**
@@ -114,6 +116,8 @@ angular.module('proton.cache', [])
         }
 
         manageTimes(conversation.ID);
+        $rootScope.$emit('labelsElement.' + conversation.ID, conversation);
+        $rootScope.$emit('foldersConversation.' + conversation.ID, conversation);
     };
 
     /**
