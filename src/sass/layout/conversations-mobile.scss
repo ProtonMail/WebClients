@@ -22,6 +22,10 @@ body.mobileMode {
                 width: calc(100% - 10rem);
                 cursor: pointer;
             }
+            .senders {
+                span::before {content: ', '}
+                span:first-of-type::before {display: none}
+            }
         }
     }
     .ptSelectConversation-container {

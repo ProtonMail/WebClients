@@ -89,9 +89,14 @@
         }
         .senders {
             cursor: pointer;
+            span::before {content: ', '}
+            span:first-of-type::before {display: none}
         }
         .senders.full {
             width: 100%;
+
+            span::before {content: ', '}
+            span:first-of-type::before {display: none}
         }
         .meta {
             display: block;
@@ -135,6 +140,7 @@
             font-size: .8em;
             position: relative;
             top: 1px;
+
         }
         .pm_labels {
             display: block;
