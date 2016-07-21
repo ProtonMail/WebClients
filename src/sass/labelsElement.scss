@@ -1,0 +1,21 @@
+.labelsElement-hidden {display: none !important}
+
+.labelsElement-label::before {color: attr(data-color)}
+.labelsElement-label {border: 2px solid currentColor}
+
+.labelsElement-label:not(:first-of-type) {
+  max-width: .5rem;
+  padding: 0;
+  overflow: hidden;
+  line-height: 999rem;
+  border-left-width: 0 !important;
+  border-radius: 0 3px 3px 0;
+}
+
+.labelsElement-label:not(:first-of-type):hover {
+  border-left-width: 2px !important;
+  border-radius: 3px;
+  max-width: 8rem;
+  line-height: 14px;
+  padding: 0 .4rem;
+}

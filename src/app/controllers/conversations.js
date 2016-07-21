@@ -730,19 +730,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
-     * Return style for label element
-     * @param {String} id
-     */
-    $scope.getStyleLabel = function(id) {
-        var color = $scope.getLabel(id).Color;
-
-        return {
-            border: '2px solid ' +  color,
-            color: color
-        };
-    };
-
-    /**
      * Go to label folder + reset parameters
      * @param {String} labelID
      */

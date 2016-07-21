@@ -28,6 +28,7 @@
                 <span class="location fa fa-trash-o" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('3') > -1"></span>
                 <span class="location fa fa-archive" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('6') > -1"></span>
                 <span class="location fa fa-ban" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('4') > -1"></span>
+                <folders-conversation conversation="conversation"></folders-conversation>
                 <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 {{ conversation.Subject }}
             </h4>
@@ -56,19 +57,7 @@
                     {{ contact | contact: 'Name' }}<span ng-hide="$last">, </span>
                 </span>
             </span>
-
-            <span class="pm_labels">
-                <label
-                ng-repeat="labelID in conversation.LabelIDs | labels | limitTo: 4"
-                title="{{ getLabel(labelID).Name }}"
-                class="pm_label"
-                ng-class="{ 'closed': !$first, 'single': ($first && $last) }"
-                ng-style="getStyleLabel(labelID)"
-                ng-show="getLabel(labelID).Name"
-                ng-click="$event.stopPropagation();goToLabel(labelID)">{{ getLabel(labelID).Name }}
-                </label>
-                <label class="pm_label closed more" ng-show="(conversation.LabelIDs | labels).length > 4" pt-tooltip-translate="+{{ (conversation.LabelIDs | labels).length - 4 }} More labels">&hellip;</label>
-            </span>
+            <labels-element element="conversation"></labels-element>
         </div>
     </div>
 </div>

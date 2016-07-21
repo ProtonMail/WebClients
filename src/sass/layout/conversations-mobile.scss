@@ -12,6 +12,12 @@ body.mobileMode {
             h4 {
                 width: calc(100% - 11rem);
             }
+            .folderConversations-container {
+                i.fa {
+                    width: 1rem;
+                    text-align: center; 
+                }
+            }
             .senders.full {
                 width: calc(100% - 10rem);
                 cursor: pointer;
