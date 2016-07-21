@@ -1,4 +1,4 @@
-angular.module('proton.message', [])
+angular.module('proton.message')
 .directive('foldersMessage', ($rootScope, gettextCatalog, $compile, mailboxIdentifersTemplate) => {
 
   const MAP_LABELS = {
