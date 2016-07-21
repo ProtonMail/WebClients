@@ -140,8 +140,9 @@
                             <a href="#" ng-click="ctrl.switch(12, 'USD')" translate translate-context="Action">Change subscription</a>
                         </p>
                         <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 2">
-                            <span translate-context="Info" translate>We only accept PayPal for annual subscriptions. PayPal is also only accepted for US Dollar plans. Click here to switch to an annual US Dollar subscription.</span>
-                            <a href="#" ng-click="ctrl.switch(12, 'USD')" translate translate-context="Action">Change subscription</a>
+                            <span translate-context="Info" translate>We only accept PayPal for annual subscriptions with USD or EUR plans.</span><br />
+                            <a href="#" ng-click="ctrl.switch(12, 'USD')" translate translate-context="Action">Switch to annual USD subscription</a><br />
+                            <a href="#" ng-click="ctrl.switch(12, 'EUR')" translate translate-context="Action">Switch to annual EUR subscription</a>
                         </p>
                         <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 3">
                             <span translate-context="Info" translate>All PayPal orders are charged in US Dollar, click the link to change your subscription to US Dollar.</span>
