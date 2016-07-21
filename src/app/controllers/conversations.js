@@ -113,7 +113,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         $scope.$on('openMarked', function(event) {
             if (angular.element('.message.marked').length === 0) {
-                $scope.click($scope.markedConversation);
+                openElement($scope.markedConversation);
             }
         });
 
@@ -740,16 +740,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     /**
-     * On click on a conversation
-     * @param {Object} element - Conversation or Message
+     * open a specific element
+     * @param {Object} element - conversation / message
      */
-    $scope.click = function($event, element) {
-
-        // Prevent click onto the selecte checkbox
-        if (/ptSelectConversation/.test($event.target.className)) {
-            return false;
-        }
-
+    var openElement = function(element) {
         var type = tools.typeList();
         var params = {};
 
@@ -780,6 +774,19 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if (params.id === $stateParams.id) {
             $rootScope.$broadcast('initMessage', element.ID, true);
         }
+    };
+
+    /**
+     * On click on a conversation
+     * @param {Object} element - Conversation or Message
+     */
+    $scope.click = function($event, element) {
+        // Prevent click onto the selecte checkbox
+        if ($event.target && /ptSelectConversation/.test($event.target.className)) {
+            return false;
+        }
+
+        openElement(element);
     };
 
     /**
