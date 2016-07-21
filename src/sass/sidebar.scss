@@ -132,61 +132,20 @@ body {
         div.labels {
             font-size: 14px;
             clear: both;
-            form {
-                margin-bottom: .5rem;
-                input {
-                    display: inline-block;
-                    border: none;
-                    border-bottom: 1px solid $border;
-                    padding-left: 10px;
-                    line-height: 30px;
-                    height: 30px;
-                    width: 9rem;
-                    font-size: 12px;
-                    box-sizing: border-box;
-                    margin-left: -10px;
-                    background: transparent;
-                }
-                ::-webkit-input-placeholder {
-                   color: #d9d9d9;
-                   text-transform: uppercase;
-                }
-                :-moz-placeholder {
-                   color: #d9d9d9;
-                   text-transform: uppercase;
-                }
-                ::-moz-placeholder {
-                   color: #d9d9d9;
-                   text-transform: uppercase;
-                }
-                :-ms-input-placeholder {
-                   color: #d9d9d9;
-                   text-transform: uppercase;
-                }
-                .fa-plus {
-                    display: inline-block;
-                    font-size: 10px;
-                    color: $primary;
-                }
-            }
             ul {
                 display: block;
                 list-style-type: none;
-                overflow: auto !important;
                 position: relative;
                 -webkit-overflow-scrolling: touch;
                 padding: 0;
                 margin: 0;
                 box-sizing: border-box;
-                width: 100%;
                 li {
                     display: block;
                     padding: 0;
                     margin: 0;
                     &.active {
                         a {
-                            padding: 0 20px;
-                            margin: 0 -20px;
                             background-color: transparent;
                             border-color: transparent;
                             color: $white;
