@@ -1,4 +1,4 @@
-angular.module('proton.message', [])
+angular.module('proton.message')
   .directive('actionMessage', ($rootScope, messageBuilder) => ({
     scope: {
       model: '=actionMessage'

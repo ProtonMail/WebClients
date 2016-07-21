@@ -6,6 +6,8 @@ module.exports = {
   compile_dir: "dist",
   app_files: {
     js: [
+      "src/app/**/index.js",
+      "src/**/**/*.js",
       "src/**/*.js",
       "!src/**/*.spec.js",
       "!src/**/*.scenario.js",

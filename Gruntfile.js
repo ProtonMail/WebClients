@@ -261,7 +261,10 @@ module.exports = function(grunt) {
                     banner: "<%= meta.banner %>"
                 },
                 files: {
-                    '<%= compile_dir %>/assets/app.js': ['<%= vendor_files.js %>', '<%= build_dir %>/src/app/**/*.js']
+                    '<%= compile_dir %>/assets/app.js': ['<%= vendor_files.js %>',
+                    '<%= build_dir %>/src/app/**/index.js',
+                    '<%= build_dir %>/src/app/**/*.js',
+                    ]
                 },
                 nonull: true
             }
@@ -356,6 +359,7 @@ module.exports = function(grunt) {
                 src: [
                     '<%= build_dir %>/openpgp.min.js',
                     '<%= build_dir %>/pmcrypto.js',
+                    '<%= build_dir %>/src/**/index.js',
                     '<%= build_dir %>/src/**/*.js',
                     '<%= vendor_files.included_js %>',
                     '<%= build_dir %>/assets/application.css',
