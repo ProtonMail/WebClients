@@ -1,5 +1,5 @@
 /*!
- * jQuery Browser Plugin 0.0.7
+ * jQuery Browser Plugin 0.1.0
  * https://github.com/gabceb/jquery-browser-plugin
  *
  * Original jquery-browser code Copyright 2005, 2015 jQuery Foundation, Inc. and other contributors
@@ -10,7 +10,7 @@
  *
  * Released under the MIT license
  *
- * Date: 19-05-2015
+ * Date: 05-07-2015
  */
 /*global window: false */
 
@@ -40,6 +40,7 @@
     var match = /(edge)\/([\w.]+)/.exec( ua ) ||
         /(opr)[\/]([\w.]+)/.exec( ua ) ||
         /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
+        /(iemobile)[\/]([\w.]+)/.exec( ua ) ||
         /(version)(applewebkit)[ \/]([\w.]+).*(safari)[ \/]([\w.]+)/.exec( ua ) ||
         /(webkit)[ \/]([\w.]+).*(version)[ \/]([\w.]+).*(safari)[ \/]([\w.]+)/.exec( ua ) ||
         /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
@@ -51,11 +52,11 @@
 
     var platform_match = /(ipad)/.exec( ua ) ||
         /(ipod)/.exec( ua ) ||
+        /(windows phone)/.exec( ua ) ||
         /(iphone)/.exec( ua ) ||
         /(kindle)/.exec( ua ) ||
         /(silk)/.exec( ua ) ||
         /(android)/.exec( ua ) ||
-        /(windows phone)/.exec( ua ) ||
         /(win)/.exec( ua ) ||
         /(mac)/.exec( ua ) ||
         /(linux)/.exec( ua ) ||
@@ -100,12 +101,20 @@
     }
 
     // IE11 has a new token so we will assign it msie to avoid breaking changes
-    // IE12 disguises itself as Chrome, but adds a new Edge token.
-    if ( browser.rv || browser.edge ) {
+    if ( browser.rv || browser.iemobile) {
       var ie = "msie";
 
       matched.browser = ie;
       browser[ie] = true;
+    }
+
+    // Edge is officially known as Microsoft Edge, so rewrite the key to match
+    if ( browser.edge ) {
+      delete browser.edge;
+      var msedge = "msedge";
+
+      matched.browser = msedge;
+      browser[msedge] = true;
     }
 
     // Blackberry browsers are marked as Safari on BlackBerry
