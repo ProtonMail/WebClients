@@ -129,7 +129,7 @@ angular.module("proton.controllers.Secured", [])
     }
 
     // We save the payment method used during the subscription
-    if ($rootScope.tempMethod) {
+    if ($rootScope.tempMethod && $rootScope.tempMethod.Type === 'card') {
         Payment.updateMethod($rootScope.tempMethod)
         .then(function(result) {
             if (result.data && result.data.Code === 1000) {

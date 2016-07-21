@@ -25,6 +25,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     tools,
     User
 ) {
+    var childWindow;
+
     $scope.initialization = function() {
         // Variables
         $scope.card = {};
@@ -43,6 +45,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         $scope.finishCreation = false;
         $scope.verifyCode = false;
         $scope.errorPay = false;
+        $scope.approvalURL = false;
+        $scope.paypalNetworkError = false;
         $scope.card.country = _.findWhere(tools.countries, {priority: 1});
 
         $scope.signup = {
@@ -71,6 +75,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
 
         if (plans.length > 0) {
             $scope.plan = _.findWhere(plans, {Name: $stateParams.plan, Cycle: parseInt($stateParams.billing), Currency: $stateParams.currency});
+            $scope.paypalSupport = ($stateParams.currency === 'USD' || $stateParams.currency === 'EUR') && parseInt($stateParams.billing) === 12;
         }
 
         // Populate the domains <select>
@@ -384,21 +389,32 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         return $scope.generateKeys($scope.account.Username + '@' + $scope.account.domain.value, mbpw);
     };
 
-    $scope.pay = function() {
-        var year = ($scope.card.year.length === 2) ? '20' + $scope.card.year : $scope.card.year;
-        var method = {
-            Type: 'card',
-            Details: {
-                Number: $scope.card.number,
-                ExpMonth: $scope.card.month,
-                ExpYear: year,
-                CVC: $scope.card.cvc,
-                Name: $scope.card.fullname,
-                Country: $scope.card.country.value,
-                ZIP: $scope.card.zip
-            }
-        };
+    $scope.changeChoice = function(method) {
+        if (method === 'paypal' && $scope.approvalURL === false) {
+            $scope.initPaypal();
+        }
+    };
 
+    $scope.initPaypal = function() {
+        $scope.paypalNetworkError = false;
+
+        Payment.paypal({
+            Amount : $scope.plan.Amount,
+            Currency : $scope.plan.Currency
+        }).then(function(result) {
+            if (result.data && result.data.Code === 1000) {
+                if (result.data.ApprovalURL) {
+                    $scope.approvalURL = result.data.ApprovalURL;
+                }
+            } else if (result.data.Code === 22802) {
+                $scope.paypalNetworkError = true;
+            } else if (result.data && result.data.Error){
+                notify({message: result.data.Error, classes: 'notification-danger'});
+            }
+        });
+    };
+
+    function verify(method) {
         $scope.errorPay = false;
 
         networkActivityTracker.track(
@@ -423,6 +439,55 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                 }
             })
         );
+    }
+
+    function receivePaypalMessage() {
+        var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+
+        if (origin !== 'https://secure.protonmail.com') {
+            return;
+        }
+
+        var paypalObject = event.data;
+
+        // we need to capitalize some stuff
+        if (paypalObject.payerID && paypalObject.paymentID) {
+            paypalObject.PayerID = paypalObject.payerID;
+            paypalObject.PaymentID = paypalObject.paymentID;
+
+            // delete unused
+            delete paypalObject.payerID;
+            delete paypalObject.paymentID;
+        }
+
+        var method = {Type: 'paypal', Details: paypalObject};
+
+        verify(method);
+        childWindow.close();
+        window.removeEventListener('message', receivePaypalMessage, false);
+    }
+
+    $scope.openPaypalTab = function() {
+        childWindow = window.open($scope.approvalURL, 'PayPal');
+        window.addEventListener('message', receivePaypalMessage, false);
+    };
+
+    $scope.pay = function() {
+        var year = ($scope.card.year.length === 2) ? '20' + $scope.card.year : $scope.card.year;
+        var method = {
+            Type: 'card',
+            Details: {
+                Number: $scope.card.number,
+                ExpMonth: $scope.card.month,
+                ExpYear: year,
+                CVC: $scope.card.cvc,
+                Name: $scope.card.fullname,
+                Country: $scope.card.country.value,
+                ZIP: $scope.card.zip
+            }
+        };
+
+        verify(method);
     };
 
     $scope.doCreateUser = function() {
