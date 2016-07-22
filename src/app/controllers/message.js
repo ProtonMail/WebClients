@@ -44,6 +44,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $rootScope.$emit('loadMessage', msg);
     }
 
+    $rootScope.$on('toggleMessage.' + $scope.message.ID, function(event) {
+        $scope.toggle();
+    });
+
     $scope.$on('refreshMessage', function(event) {
         var message = cache.getMessageCached($scope.message.ID);
 
@@ -191,7 +195,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         var process = function() {
             // Display content
             $scope.displayContent();
-            
+
         };
 
         // If the message is a draft
@@ -297,7 +301,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.injectEmbedded = function() {
         embedded.parser($scope.message).then( function(result) {
-            $scope.message.decryptedBody =  result;           
+            $scope.message.decryptedBody =  result;
         });
     };
 

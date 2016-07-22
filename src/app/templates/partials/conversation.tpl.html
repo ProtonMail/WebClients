@@ -39,7 +39,7 @@
         'draft': message.Type === 1,
         'sent': message.Type === 2 || message.Type === 3
     }">
-        <div class="summary" ng-click="toggle()">
+        <div class="summary" toggle-message>
             <div class="pull-left">
                 <div class="meta">
                     <i class="history fa fa-reply" ng-if="message.IsReplied === 1"></i>
