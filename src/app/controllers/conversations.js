@@ -308,9 +308,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var type = tools.typeList();
         var promise;
 
-        if(type === 'message') {
+        if (type === 'message') {
             promise = cache.queryMessages(request, firstLoad);
-        } else if(type === 'conversation') {
+        } else if (type === 'conversation') {
             promise = cache.queryConversations(request, firstLoad);
         }
 
@@ -469,7 +469,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @return {Array} elements
      */
     $scope.elementsSelected = function() {
-        var elements = elementsChecked();
+        var elements = _.where($scope.conversations, {Selected: true});
 
         if ($scope.conversations.length > 0 && elements.length === 0) {
             var type = tools.typeList();
@@ -483,10 +483,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         return elements;
     };
-
-    function elementsChecked () {
-        return _.where($scope.conversations, {Selected: true});
-    }
 
     /**
      * Return [IDs]
