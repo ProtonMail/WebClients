@@ -418,6 +418,9 @@ angular.module('proton', [
                                     notify({message: result.data.Error, classes: 'notification-danger'});
                                     deferred.reject();
                                 }
+                            }, function(error) {
+                                notify({message: error, classes: 'notification-danger'});
+                                deferred.reject();
                             });
                         },
                         cancel: function() {
