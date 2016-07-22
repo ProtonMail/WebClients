@@ -218,11 +218,12 @@
         font-size: 12px;
         text-transform: uppercase;
     }
-    .divider {
+    & > * {
         border-left: 1px solid $border;
     }
     & > *:first-child {
         border-radius: 2px 0 0 2px;
+        border-left: none;
     }
     & > *:last-child {
         border-radius: 0 2px 2px 0;
@@ -243,8 +244,11 @@
                 outline: none;
             }
         }
-        .divider {
-            border-left: 1px solid #fff;
+        & > * {
+            border-left: 1px solid $fff;
+        }
+        & > *:first-child {
+            border-left: none;
         }
     }
 }
