@@ -65,20 +65,18 @@ angular.module("proton.selectConversation", [])
     return {
         link(scope, el) {
             let previous = null;
-            let items = null;
             const conversationsToSelect = selectConversations(scope);
 
             function onClick({ target, shiftKey }) {
                 const index = +target.getAttribute('data-index');
 
-                if ('INPUT' !== target.nodeName) {
+                if ('INPUT' !== target.nodeName || !/ptSelectConversation/.test(target.className)) {
                     return;
                 }
 
                 const isChecked = target.checked;
 
-                scope
-                .$applyAsync(() => {
+                scope.$applyAsync(() => {
                     scope.conversations[index].Selected = isChecked;
                     $rootScope.numberElementChecked = countChecked(scope.conversations);
 
@@ -101,16 +99,10 @@ angular.module("proton.selectConversation", [])
 
             }
 
-            // defer loading to prevent an empty collection as the ng-repeat is not compiled yet
-            const id = setTimeout(() => {
-                items = el.find('.ptSelectConversation-container');
-                items.on('click', onClick);
-                clearTimeout(id);
-            }, 1000);
+            el.on('click', onClick);
 
-            scope
-            .$on('$destroy', () => {
-                items && items.off('click', onClick);
+            scope.$on('$destroy', () => {
+                el.off('click', onClick);
             });
         }
     };
