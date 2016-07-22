@@ -84,7 +84,7 @@ angular.module('proton.transformation', [])
                 '#oriMsgHtmlSeperator:first',
                 '#OLK_SRC_BODY_SECTION:first',
                 'blockquote[type="cite"]:first'
-            ].join(', ');
+            ];
             var stopObserving = scope.$watch(attributes.ngBindHtml, function(newValue, oldValue) {
                 $timeout(function() {
                     var blockquote = jQuery(element).find(quotes).first(); // Reduce the set of matched elements to the first in the set.
