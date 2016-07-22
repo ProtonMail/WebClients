@@ -52,13 +52,6 @@ angular.module("proton.squire", [
                 return angular.element(editor.getSelection().commonAncestorContainer).closest("a").attr("href");
             };
 
-            // Specify how UI should be updated
-            ngModel.$render = function() {
-                if(editor) {
-                    editor.setHTML(ngModel.$viewValue || '');
-                }
-            };
-
             ngModel.$isEmpty = function(value) {
                 if (angular.isString(value)) {
                     return angular.element("<div>" + value + "</div>").text().trim().length === 0;
