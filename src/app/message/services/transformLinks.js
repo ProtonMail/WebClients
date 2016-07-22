@@ -1,10 +1,13 @@
 angular.module('proton.message')
 .factory('transformLinks', function() {
-    return function(input) {
-        var links = angular.element(input).find('a[href^=http]');
+    return function(html) {
+        var links = html.querySelectorAll('a[href^=http]');
 
         if (links.length > 0) {
-            links.attr('target','_blank').attr('rel', 'noreferrer');
+            links.setAttribute('target','_blank');
+            links.setAttribute('rel', 'noreferrer');
         }
+
+        return html;
     };
 });
