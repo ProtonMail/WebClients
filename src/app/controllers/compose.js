@@ -360,7 +360,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.processPending  = function(message, embedding){
 
         _.forEach($scope.pendingAttachements, function (file) {
-            
+
             if(embedding) {
                 // required for BE to get a cid-header
                 file.inline = 1;
@@ -609,7 +609,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         if(angular.isDefined( result.Headers['content-id'] ) && file.inline === 1) {
                             var cid = result.Headers['content-id'].replace(/[<>]+/g,'');
-                            embedded.addEmbedded(message,cid,preview, result.MIMEType);                           
+                            embedded.addEmbedded(message,cid,preview, result.MIMEType);
                         }
 
                     },
@@ -947,7 +947,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.removeEmbedded = function(event,message){
-            
+
         if( event.target.classList ){
             if(event.target.classList.contains("proton-embedded")) {
                 var cid = event.target.getAttribute('rel');
@@ -959,7 +959,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     $scope.removeAttachment(attachments[0], message);
                 }
             }
-        }  
+        }
 
     };
 
@@ -1307,6 +1307,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 var UPDATE = 2;
                 var actionType;
 
+
                 // Set encrypted body
                 parameters.Message.Body = result;
 
@@ -1459,7 +1460,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * Try to send message specified
      * @param {Object} message
      */
-    $scope.send = function(message) {
+    $scope.send = function(msg) {
+        // Prevent mutability
+        const message = new Message(msg);
+
         var deferred = $q.defer();
         $scope.validate(message)
         .then(function() {
@@ -1508,7 +1512,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                                             promises.push(replyTokenPromise.then(function(encryptedToken) {
                                                 return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
-                                                    
+
                                                     var body = result;
 
                                                     return message.encryptPackets('', message.Password).then(function(result) {
