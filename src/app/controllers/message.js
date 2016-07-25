@@ -13,24 +13,25 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $stateParams,
     $templateCache,
     $timeout,
-    gettextCatalog,
     $window,
     action,
     alertModal,
     attachments,
     authentication,
     cache,
-    embedded,
     confirmModal,
     CONSTANTS,
+    embedded,
+    gettextCatalog,
+    ical,
     Label,
     Message,
+    messageBuilder,
     networkActivityTracker,
     notify,
     pmcw,
-    tools,
-    ical,
-    messageBuilder
+    prepareContent,
+    tools
 ) {
     $scope.mailbox = tools.currentMailbox();
     $scope.isPlain = false;
@@ -300,9 +301,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Parse attachments for embedded images and store them to 'message.decryptedBody'
      */
     $scope.injectEmbedded = function() {
-        embedded.parser($scope.message).then( function(result) {
-            $scope.message.decryptedBody =  result;
-        });
+        // embedded.parser($scope.message).then( function(result) {
+        //     $scope.message.decryptedBody =  result;
+        // });
     };
 
     /**
@@ -356,6 +357,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     // For the welcome email, we need to change the path to the welcome image lock
                     content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
 
+                    content = prepareContent(content, $scope.message);
+
                     // Detect type of content
                     if (isHtml === true) {
                         $scope.isPlain = false;
@@ -407,9 +410,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         }
 
                         $scope.$evalAsync(function() {
-                            showMessage(content).then(function(){
-                                $scope.injectEmbedded();
-                            });
+                            showMessage(content);
                         });
                     });
 
@@ -418,9 +419,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
                 } else {
                     $scope.$evalAsync(function() {
-                        showMessage(result).then(function(){
-                            $scope.injectEmbedded();
-                        });
+                        showMessage(result);
                     });
                 }
             }, function(err) {
