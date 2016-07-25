@@ -12,6 +12,8 @@ angular.module("proton.embedded", [])
     // CIDs for any embedded image attachments
     var Blobs = [];
 
+    let CIDList = {};
+
     const REGEXP_IS_INLINE = /^inline/i;
     const REGEXP_CID_CLEAN = /[<>]+/g;
     const EMBEDDED_CLASSNAME = 'proton-embedded';
@@ -52,7 +54,7 @@ angular.module("proton.embedded", [])
      * set an extra rel attribute so we can update the blob src later
      * @param  {String} this.DecryptedBody From Message
      * @param  {String} this.Body          From Message
-     * @param  {Array} this.CIDList        From Message
+     * @param  {Array} CIDList        From Message
      * @param  {String} direction             Parsing to execute, blob || cid
      * @return {String}                       Parsed HTML
      */
@@ -61,7 +63,7 @@ angular.module("proton.embedded", [])
         const testDiv = getBodyParser();
         testDiv.innerHTML = this.DecryptedBody || this.Body;
         Object
-            .keys(this.CIDList)
+            .keys(CIDList)
             .forEach((cid, index) => {
                 const current = Blobs[ cid ];
                 const selector = (current.isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[rel="${cid}"]`;
@@ -85,7 +87,7 @@ angular.module("proton.embedded", [])
         var attachs =  self.Attachments || [];
 
         /* initiate a CID list */
-        self.CIDList = {};
+        CIDList = {};
 
         // Check if we have attachments
         if (attachs.length) {
@@ -109,7 +111,7 @@ angular.module("proton.embedded", [])
                         cid = Headers['content-location'];
                     }
 
-                    self.CIDList[cid] = { Headers };
+                    CIDList[cid] = { Headers };
                 }
             });
 
@@ -143,6 +145,7 @@ angular.module("proton.embedded", [])
             // Store the generated URL
             Blobs[ cid ] = {url:imageUrl};
 
+
            // this is supposed to remove the blob so it
            // can be garbage collected. we dont save it (for now)
            blob, urlCreator, imageUrl = null;
@@ -167,7 +170,7 @@ angular.module("proton.embedded", [])
 
         // loop the CID list
         Object
-            .keys(self.CIDList)
+            .keys(CIDList)
             .forEach( function(cid, index) {
 
             // Check if the CID is already stored
@@ -209,7 +212,7 @@ angular.module("proton.embedded", [])
                         function(decryptedAtt) {
 
                             // store to Blobs
-                            store(cid,decryptedAtt.data,attachment.MIMEType, self.CIDList, decryption);
+                            store(cid,decryptedAtt.data,attachment.MIMEType, CIDList, decryption);
                             attachment.decrypting = false;
                         }
                     );
@@ -258,16 +261,16 @@ angular.module("proton.embedded", [])
 
              // parse direction (cid<->blob)
             direction = direction || "blob";
-
+            CIDList = {};
             var deferred = $q.defer(),
                 content = message.decryptedBody|| message.Body,
                 x = xray.bind(message),
                 d = decrypt.bind(message),
                 p = parse.bind(message, direction);
 
-            if (x) {
+            if (x()) {
                 // Check if the content has cid attachments
-                if(Object.keys(message.CIDList).length > 0) {
+                if(Object.keys(CIDList).length > 0) {
 
                     // Decrypt, then return the parsed content
                     d().then(p).then(function(content){
@@ -307,7 +310,19 @@ angular.module("proton.embedded", [])
 
             return message.Body;
         },
-        deallocator: deallocate
+        deallocator: deallocate,
+
+        /**
+         * Get the url for an embedded image
+         * @param  {Node} node Image
+         * @return {String}
+         */
+        getUrl(node) {
+            const attribute = node.getAttribute('data-embedded-img') || '';
+            const cid = attribute.split(':')[1];
+            const { url = '' } = Blobs[cid] || {};
+            return url;
+        }
 
     };
 
