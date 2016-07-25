@@ -72,8 +72,9 @@ angular.module("proton.controllers.Setup", [
         }
         else {
             _.each($scope.addresses, function(address) {
+                var userID = '<' + address.Email + '>';
                 promises.push(
-                    pmcw.generateKeysRSA(address.Email, mbpw).then(
+                    pmcw.generateKeysRSA(userID, mbpw).then(
                         function(response) {
                             address.PublicKey = response.publicKeyArmored;
                             address.PrivateKey = response.privateKeyArmored;
