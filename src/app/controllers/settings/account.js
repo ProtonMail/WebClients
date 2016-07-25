@@ -57,7 +57,7 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.saveNotification = function(form) {
+    $scope.saveNotification = function() {
         if (angular.isUndefined($scope.noticeePassword)) {
             notify({classes: 'notification-danger', message: gettextCatalog.getString('Enter your current login password', null, 'Error')});
             angular.element('#noticeePassword').focus();
