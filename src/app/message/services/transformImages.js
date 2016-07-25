@@ -1,23 +1,23 @@
 angular.module('proton.message')
 .factory('transformImages', function(embedded) {
+
+    const REGEXP_IS_CID = new RegExp('^cid:', 'g');
+    const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
+
     return function(html, message) {
-        var images = [].slice.call(html.querySelectorAll('img'));
+
+        const images = [].slice.call(html.querySelectorAll('img'));
 
         if (images.length > 0) {
-            var embedded = new RegExp('^(cid:)', 'g');
 
             images.forEach(function(image) {
-                var src = image.getAttribute('src');
-                var isEmbedded = embedded.test(src);
+                const src = image.src;
+                const isEmbedded = /^cid:/g.test(src);
 
-                if (image.complete && isEmbedded) {
-                    var wrapper = document.createElement('div');
-
-                    image.setAttribute('data-src', src);
+                if (isEmbedded) {
                     image.removeAttribute('src');
-                    wrapper.className = 'image loading';
-                    image.before(wrapper);
-                    wrapper.append(element);
+                    image.setAttribute('data-embedded-img', src);
+                    wrapImage(image);
                 }
             });
         }
