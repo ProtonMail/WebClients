@@ -4,9 +4,10 @@ angular.module('proton.message')
         var images = [].slice.call(html.querySelectorAll('img'));
 
         if (images.length > 0) {
+            var embedded = new RegExp('^(cid:)', 'g');
+
             images.forEach(function(image) {
                 var src = image.getAttribute('src');
-                var embedded = new RegExp('^(cid:)', 'g');
                 var isEmbedded = embedded.test(src);
 
                 if (image.complete && isEmbedded) {
