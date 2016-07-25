@@ -12,6 +12,8 @@ angular.module("proton.embedded", [])
     // CIDs for any embedded image attachments
     var Blobs = [];
 
+    const REGEXP_IS_INLINE = /^inline/i;
+    const REGEXP_CID_CLEAN = /[<>]+/g;
     const EMBEDDED_CLASSNAME = 'proton-embedded';
     const DIV = document.createElement('DIV');
 
@@ -58,15 +60,16 @@ angular.module("proton.embedded", [])
 
         const testDiv = getBodyParser();
         testDiv.innerHTML = this.DecryptedBody || this.Body;
-
-        this
-            .CIDList
+        Object
+            .keys(this.CIDList)
             .forEach((cid, index) => {
-                const blobURL = Blobs[ cid ].url;
-                const nodes = [].slice.call(testDiv.querySelectorAll(`img[src="cid:${cid}"], img[rel="${cid}"]`));
+                const current = Blobs[ cid ];
+                const selector = (current.isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[rel="${cid}"]`;
+
+                const nodes = [].slice.call(testDiv.querySelectorAll(selector));
 
                 if (nodes.length) {
-                    (actionDirection[direction] || angular.noop)(nodes, cid, blobURL);
+                    (actionDirection[direction] || angular.noop)(nodes, cid, current.url);
                 }
             });
 
@@ -77,30 +80,37 @@ angular.module("proton.embedded", [])
     var xray = function() {
 
         var self = this;
-        var attachs =  self.Attachments;
+        var attachs =  self.Attachments || [];
 
         /* initiate a CID list */
-        self.CIDList = [];
+        self.CIDList = {};
 
         // Check if we have attachments
-        if(attachs && attachs.length > 0) {
+        if(attachs.length) {
 
             // Build a list of cids
-            angular.forEach(attachs, function(value, key) {
-                if(value.Headers['content-disposition'] !== undefined) {
-                    var disposition = value.Headers["content-disposition"];
-                    var inline = new RegExp('^inline', 'i');
+            attachs
+                .forEach(({ Headers = {} }) => {
+                    const disposition = Headers['content-disposition'];
+
                     // BE require an inline content-disposition!
-                    if(inline.test(disposition)){
-                        // remove the < >.
-                        // e.g content-id: "<ii_io4oiedu2_154a668c35c08c81>"
-                        if(value.Headers['content-id'] !== undefined) {
-                            var cid = value.Headers['content-id'].replace(/[<>]+/g,'');
-                            self.CIDList.push(cid);
+                    if (disposition && REGEXP_IS_INLINE.test(disposition)) {
+                        let cid;
+
+                        if (Headers['content-id']) {
+                            // remove the < >.
+                            // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
+                            cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
                         }
+
+                        // We can find an image without cid so base64 the location
+                        if (Headers['content-location'] && !Headers['content-id']) {
+                            cid = Headers['content-location'];
+                        }
+
+                        self.CIDList[cid] = { Headers };
                     }
-                }
-            });
+                });
         }
 
         return Promise.resolve();
@@ -113,29 +123,33 @@ angular.module("proton.embedded", [])
     // this should be rewritted a bit to work with
     // the service store
 
-    var store = function(cid, data, MIME, CIDList, decryption) {
+    const store = (cid, data, MIME, CIDList = {}, decryption = Promise) =>{
 
-        // Turn the decrypted attachment data into a blob.
-        var blob = new Blob([data], {type: MIME});
-        // Generate the URL
-        var urlCreator = window.URL || window.webkitURL;
-        var imageUrl = urlCreator.createObjectURL( blob );
+        const { Headers = {}} = CIDList[cid] || {};
 
-        // Store the generated URL
+        if (Headers['content-location'] && !Headers['content-id']) {
+            Blobs[ cid ] = {
+                isContentLocation: true,
+                url: cid
+            };
+        } else {
+            // Turn the decrypted attachment data into a blob.
+            let blob = new Blob([data], {type: MIME});
+            // Generate the URL
+            let urlCreator = window.URL || window.webkitURL;
+            let imageUrl = urlCreator.createObjectURL( blob );
+            // Store the generated URL
+            Blobs[ cid ] = {url:imageUrl};
 
-        Blobs[ cid ] = {url:imageUrl};
-
-        if(CIDList){
-            // check if all CID are stored so we can resolve
-            if(Object.keys(Blobs).length === CIDList.length){
-                decryption.resolve(Blobs);
-            }
+           // this is supposed to remove the blob so it
+           // can be garbage collected. we dont save it (for now)
+           blob, urlCreator, imageUrl = null;
         }
 
-       // this is supposed to remove the blob so it
-       // can be garbage collected. we dont save it (for now)
-       blob, urlCreator, imageUrl = null;
-
+        // check if all CID are stored so we can resolve
+        if(Object.keys(Blobs).length === Object.keys(CIDList).length){
+            decryption.resolve(Blobs);
+        }
     };
 
 
@@ -150,7 +164,9 @@ angular.module("proton.embedded", [])
         var processed = false;
 
         // loop the CID list
-        self.CIDList.forEach( function(cid, index) {
+        Object
+            .keys(self.CIDList)
+            .forEach( function(cid, index) {
 
             // Check if the CID is already stored
             if(!Blobs[ cid ]) {
@@ -189,6 +205,7 @@ angular.module("proton.embedded", [])
                     pmcw.decryptMessage(at, key, true, algo)
                     .then(
                         function(decryptedAtt) {
+
                             // store to Blobs
                             store(cid,decryptedAtt.data,attachment.MIMEType, self.CIDList, decryption);
                             attachment.decrypting = false;
@@ -248,7 +265,7 @@ angular.module("proton.embedded", [])
 
             x().then(function(){
                 // Check if the content has cid attachments
-                if(message.CIDList.length > 0) {
+                if(Object.keys(message.CIDList).length > 0) {
 
                     // Decrypt, then return the parsed content
                     d().then(p).then(function(content){
@@ -266,7 +283,7 @@ angular.module("proton.embedded", [])
            return deferred.promise;
 
         },
-        addEmbedded: function(message,cid,data,MIME){
+        addEmbedded: function(message, cid, data, MIME){
             store(cid, data, MIME);
             message.editor.insertImage(Blobs[ cid ].url, {rel:cid, class:'proton-embedded'});
         },
