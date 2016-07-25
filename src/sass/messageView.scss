@@ -3,11 +3,12 @@
         color: $yellow;
     }
     header {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        position: relative;
         min-height: 35px;
         box-sizing: border-box;
-        clear: both;
-        padding: 12px 0;
+        padding: 12px 0 30px;
         border-bottom: 1px solid $border;
         h1 {
             font-size: 24px;
@@ -26,9 +27,10 @@
             }
         }
         .starButton {
+            position: absolute;
+            right: 0;
             border: none;
             margin-right: 0;
-            float: right;
             box-shadow: none;
             a {
                 background: transparent !important;
