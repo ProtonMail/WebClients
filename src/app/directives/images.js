@@ -1,4 +1,4 @@
-angular.module("proton.images", [])
+angular.module('proton.images', [])
 .directive('images', function ($timeout, gettextCatalog) {
     return {
         link: function(scope, element, attributes) {
