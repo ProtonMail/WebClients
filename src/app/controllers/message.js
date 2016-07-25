@@ -296,16 +296,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.displayContent(true);
     };
 
-
-    /**
-     * Parse attachments for embedded images and store them to 'message.decryptedBody'
-     */
-    $scope.injectEmbedded = function() {
-        // embedded.parser($scope.message).then( function(result) {
-        //     $scope.message.decryptedBody =  result;
-        // });
-    };
-
     /**
      * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} force
