@@ -66,12 +66,15 @@ angular.module("proton.embedded", [])
             .keys(CIDList)
             .forEach((cid, index) => {
                 const current = Blobs[ cid ];
-                const selector = (current.isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[rel="${cid}"]`;
 
-                const nodes = [].slice.call(testDiv.querySelectorAll(selector));
+                if (current) {
+                    const selector = (current.isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[rel="${cid}"]`;
 
-                if (nodes.length) {
-                    (actionDirection[direction] || angular.noop)(nodes, cid, current.url);
+                    const nodes = [].slice.call(testDiv.querySelectorAll(selector));
+
+                    if (nodes.length) {
+                        (actionDirection[direction] || angular.noop)(nodes, cid, current.url);
+                    }
                 }
             });
 
