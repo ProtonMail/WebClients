@@ -77,8 +77,10 @@ angular.module("proton.embedded", [])
         return testDiv.innerHTML.replace(/data-src/g, 'src');
     };
 
+    /**
+     * @return {Boolean}
+     */
     var xray = function() {
-
         var self = this;
         var attachs =  self.Attachments || [];
 
@@ -86,35 +88,35 @@ angular.module("proton.embedded", [])
         self.CIDList = {};
 
         // Check if we have attachments
-        if(attachs.length) {
+        if (attachs.length) {
 
             // Build a list of cids
-            attachs
-                .forEach(({ Headers = {} }) => {
-                    const disposition = Headers['content-disposition'];
+            attachs.forEach(({ Headers = {} }) => {
+                const disposition = Headers['content-disposition'];
 
-                    // BE require an inline content-disposition!
-                    if (disposition && REGEXP_IS_INLINE.test(disposition)) {
-                        let cid;
+                // BE require an inline content-disposition!
+                if (disposition && REGEXP_IS_INLINE.test(disposition)) {
+                    let cid;
 
-                        if (Headers['content-id']) {
-                            // remove the < >.
-                            // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
-                            cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
-                        }
-
-                        // We can find an image without cid so base64 the location
-                        if (Headers['content-location'] && !Headers['content-id']) {
-                            cid = Headers['content-location'];
-                        }
-
-                        self.CIDList[cid] = { Headers };
+                    if (Headers['content-id']) {
+                        // remove the < >.
+                        // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
+                        cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
                     }
-                });
+
+                    // We can find an image without cid so base64 the location
+                    if (Headers['content-location'] && !Headers['content-id']) {
+                        cid = Headers['content-location'];
+                    }
+
+                    self.CIDList[cid] = { Headers };
+                }
+            });
+
+            return true;
+        } else {
+            return false;
         }
-
-        return Promise.resolve();
-
     };
 
     // Use the Blobs array to store CIDs url reference
@@ -263,7 +265,7 @@ angular.module("proton.embedded", [])
                 d = decrypt.bind(message),
                 p = parse.bind(message, direction);
 
-            x().then(function(){
+            if (x) {
                 // Check if the content has cid attachments
                 if(Object.keys(message.CIDList).length > 0) {
 
@@ -276,9 +278,9 @@ angular.module("proton.embedded", [])
                     // Resolve the decrypted body
                     deferred.resolve(content);
                 }
-
-            });
-
+            } else {
+                deferred.resolve(content);
+            }
 
            return deferred.promise;
 
