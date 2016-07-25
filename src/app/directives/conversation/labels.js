@@ -60,7 +60,7 @@ angular.module('proton.conversation', [])
 })
 .directive('foldersConversation', ($rootScope, $state, CONSTANTS, gettextCatalog, $compile, mailboxIdentifersTemplate) => {
 
-  const ALLOWED_STATE = ['secured.sent', 'secured.sent.view', 'secured.drafts', 'secured.drafts.view'];
+  const ALLOWED_STATE = ['secured.sent', 'secured.sent.view'];
   const isAllowedState = () => _.contains(ALLOWED_STATE, $state.$current.name);
 
   const MAP_LABELS = {
