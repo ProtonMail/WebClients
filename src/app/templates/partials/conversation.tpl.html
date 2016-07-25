@@ -270,7 +270,7 @@
             <p class="alert alert-danger" ng-if="message.SpamScore === 100" translate translate-context="Info">This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!</p>
             <p class="alert alert-danger" ng-if="message.SpamScore === 101" translate translate-context="Info">This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!</p>
             <div
-                id="bodyDecrypted"
+                class="bodyDecrypted"
                 class="email"
                 ng-class="{'plain': isPlain}"
                 ng-if="message.viewMode === 'html'"
