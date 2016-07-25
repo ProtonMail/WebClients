@@ -8,7 +8,7 @@ msgstr ""
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "X-Generator: Poedit 1.8.7\n"
-"Last-Translator: Richard Tetaz <richard@protonmail.com>\n"
+"Last-Translator: Richard Tetaz <paul.feuvraux@protonmail.ch>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr\n"
 
@@ -97,7 +97,7 @@ msgstr "/ mois"
 #: src/app/templates/layout/outside.tpl.html:9
 #: src/app/templates/views/step1.tpl.html:214
 msgid "&copy; 2016 ProtonMail.com - Made globally, hosted in Switzerland."
-msgstr ""
+msgstr "&copy; 2016 ProtonMail.com - Développé mondialement, hébergé en Suisse."
 
 #: src/app/templates/partials/conversation-list-columns.tpl.html:79
 #: src/app/templates/partials/conversation-list-rows.tpl.html:77
@@ -111,11 +111,11 @@ msgstr ""
 #. feature for upgrading from a free account to a paid account
 #: src/app/templates/modals/monetize.tpl.html:36
 msgid "5GB Storage (instead of 500MB)"
-msgstr ""
+msgstr "5Go d'espace de stockage (au lieu de 500Mo)"
 
 #: src/app/controllers/contacts.js:207
 msgid "A contact already exists for this email address."
-msgstr ""
+msgstr "Un contact existe déjà sous cette adresse email."
 
 #. Explain privacy issues for using img.ur to do screenshot uploading
 #: src/app/templates/modals/bug.tpl.html:70
@@ -125,12 +125,15 @@ msgid ""
 "can help debug your problem! Screenshots are hosted using a 3rd party, "
 "public service [imgur]."
 msgstr ""
+"Une capture d'écran de la page actuelle nous sera automatiquement envoyé, donc nous"
+"pouvons aider à déboguer votre problème ! Les captures d'écran sont hébergées via un service tiers, "
+"un service public [imgur]"
 
 #. upgrade page title
 #: src/app/templates/views/upgrade.tpl.html:3
 msgctxt "Title"
 msgid "Absolute security"
-msgstr ""
+msgstr "Sécurité absolue"
 
 #. custom domain menu
 #. custom domain menu select dropdown
@@ -201,26 +204,26 @@ msgstr "Ajouter une adresse"
 #: src/app/templates/modals/user/address.tpl.html:21
 msgctxt "Title"
 msgid "Add address"
-msgstr ""
+msgstr "Ajouter une adresse"
 
 #. payment modal add coupon button
 #: src/app/templates/modals/payment/payment.tpl.html:159
 msgctxt "Action"
 msgid "Add coupon"
-msgstr ""
+msgstr "Ajouter un coupon"
 
 #. button to add custom domains
 #: src/app/templates/views/domains.tpl.html:21
 #: src/app/templates/views/members.tpl.html:65
 msgctxt "Action"
 msgid "Add custom domain"
-msgstr ""
+msgstr "Ajouter un domaine personnalisé"
 
 #. addresses page
 #: src/app/templates/views/addresses.tpl.html:13
 msgctxt "Action"
 msgid "Add custom domain address"
-msgstr ""
+msgstr "Ajouter une adresse issue d'un domaine personnalisé"
 
 #: src/app/templates/modals/customizeInvoice.tpl.html:6
 msgctxt "Title"
@@ -230,7 +233,7 @@ msgstr ""
 #: src/app/controllers/contacts.js:203
 msgctxt "Action"
 msgid "Add new contact"
-msgstr ""
+msgstr "Ajouter un nouveau contact"
 
 #: src/app/templates/directives/labels.tpl.html:35
 msgid "Add new label"
@@ -240,13 +243,13 @@ msgstr "Ajouter un libellé"
 #: src/app/templates/modals/alias.tpl.html:6
 msgctxt "Title"
 msgid "Add new ProtonMail address"
-msgstr ""
+msgstr "Ajouter une nouvelle adresse ProtonMail"
 
 #. addresses page
 #: src/app/templates/views/addresses.tpl.html:12
 msgctxt "Action"
 msgid "Add new ProtonMail address"
-msgstr ""
+msgstr "Ajouter une nouvelle adresse ProtonMail"
 
 #: src/app/templates/modals/user/address.tpl.html:3
 #: src/app/templates/modals/user/member.tpl.html:3
@@ -268,13 +271,13 @@ msgstr ""
 #: src/app/templates/modals/domain/address.tpl.html:34
 msgctxt "Title"
 msgid "Added addresses"
-msgstr ""
+msgstr "Adresses ajoutées"
 
 #. legend / form heading for adding custom CSS theme code
 #: src/app/templates/views/appearance.tpl.html:99
 msgctxt "Title"
 msgid "Additional themes (experimental)"
-msgstr ""
+msgstr "Thèmes additionnels"
 
 #: src/app/templates/modals/alias.tpl.html:11
 #: src/app/templates/modals/domain/address.tpl.html:24
@@ -303,7 +306,7 @@ msgstr "Adresse ajoutée"
 #: src/app/services/modal.js:1066 src/app/services/modal.js:1069
 msgctxt "Error"
 msgid "Address creation failed"
-msgstr ""
+msgstr "Création de l'adresse échouée"
 
 #: src/app/controllers/settings/addresses.js:173
 #: src/app/controllers/settings/domains.js:249
@@ -327,7 +330,7 @@ msgstr ""
 
 #: src/app/controllers/settings/addresses.js:140
 msgid "Address updated"
-msgstr ""
+msgstr "Adresse mise à jour"
 
 #: src/app/templates/views/domains.tpl.html:51
 msgctxt "Action"
@@ -403,7 +406,7 @@ msgstr "Tous"
 #: src/app/templates/views/reset-mailbox-password.tpl.html:6
 msgctxt "Info"
 msgid "ALL OF YOUR DATA WILL BE LOST FOREVER!"
-msgstr ""
+msgstr "TOUTES VOS DONNÉES SERONT PERDUES POUR TOUJOURS"
 
 #: src/app/templates/modals/payment/payment.tpl.html:143
 msgctxt "Info"
@@ -424,22 +427,22 @@ msgstr ""
 #: src/app/templates/views/step1.tpl.html:74
 msgctxt "Action"
 msgid "Already have an account?"
-msgstr ""
+msgstr "Avez-vous déjà un compte ?"
 
 #: src/app/controllers/settings/dashboard.js:264
 msgctxt "Info"
 msgid "Already subscribed"
-msgstr ""
+msgstr "Déjà inscrit"
 
 #. Form checkbox option
 #: src/app/templates/directives/labels.tpl.html:31
 msgid "Also archive"
-msgstr ""
+msgstr "Archiver également"
 
 #: src/app/templates/views/account.tpl.html:58
 msgctxt "Info"
 msgid "Also used to reset a forgotten password."
-msgstr ""
+msgstr "Aussi utilisé afin de réinitialiser le mot de passe."
 
 #: src/app/templates/modals/donate.tpl.html:12
 msgid "Amount"
@@ -487,12 +490,12 @@ msgstr ""
 #: src/app/templates/views/invoices.tpl.html:27
 #: src/app/templates/views/invoices.tpl.html:55
 msgid "Annually"
-msgstr ""
+msgstr "Annuellement"
 
 #: src/app/templates/views/dashboard.tpl.html:83
 msgctxt "Title"
 msgid "Annually"
-msgstr ""
+msgstr "Annuellement"
 
 #. custom domain menu
 #. custom domain menu select dropdown
@@ -500,12 +503,12 @@ msgstr ""
 #: src/app/templates/partials/menu.settings.tpl.html:33
 msgctxt "Nav"
 msgid "Appearance"
-msgstr ""
+msgstr "Apparence"
 
 #: src/app/controllers/secured.js:237 src/app/controllers/secured.js:35
 msgctxt "Title"
 msgid "Appearance"
-msgstr ""
+msgstr "Apparence"
 
 #: src/app/templates/directives/labels.tpl.html:38
 #: src/app/templates/modals/payment/payment.tpl.html:169
@@ -518,67 +521,67 @@ msgstr "Appliquer"
 #: src/app/directives/move.js:22
 #: src/app/templates/directives/location-tag.tpl.html:7
 msgid "Archive"
-msgstr ""
+msgstr "Archiver"
 
 #. no results heading
 #: src/app/controllers/secured.js:204
 #: src/app/templates/partials/no-results.tpl.html:21
 msgctxt "Title"
 msgid "Archive"
-msgstr ""
+msgstr "Archiver"
 
 #. Folder name
 #: src/app/templates/partials/sidebar-responsive.tpl.html:44
 #: src/app/templates/partials/sidebar.tpl.html:45
 msgctxt "Nav"
 msgid "Archive"
-msgstr ""
+msgstr "Archiver"
 
 #. Antispam section of account creation
 #: src/app/templates/views/step1.tpl.html:81
 msgctxt "Title"
 msgid "Are you human?"
-msgstr ""
+msgstr "Êtes-vous humain ?"
 
 #: src/app/controllers/settings/security.js:97
 msgid "Are you sure you want to clear all your logs?"
-msgstr ""
+msgstr "Êtes-vous sûr(e) de vouloir effacer toutes les logs ?"
 
 #: src/app/controllers/settings/security.js:46
 msgctxt "Info"
 msgid "Are you sure you want to clear all your logs?"
-msgstr ""
+msgstr "Êtes-vous sûr(e) de vouloir effacer toutes les logs ?"
 
 #: src/app/controllers/contacts.js:133
 msgctxt "Info"
 msgid "Are you sure you want to delete all your contacts?"
-msgstr ""
+msgstr "Êtes-vous sûr(e) de vouloir supprimer tous vos contacts ?"
 
 #: src/app/controllers/settings/addresses.js:169
 #: src/app/controllers/settings/domains.js:171
 #: src/app/controllers/settings/domains.js:245
 msgctxt "Info"
 msgid "Are you sure you want to delete this address?"
-msgstr ""
+msgstr "Êtes-vous sûr(e) de vouloir supprimer cette adresse ?"
 
 #: src/app/controllers/settings/labels.js:134
 msgctxt "Info"
 msgid "Are you sure you want to delete this label?"
-msgstr ""
+msgstr "Êtes-vous sûr(e) de vouloir supprimer ce label ?"
 
 #: src/app/controllers/settings/payments.js:97
 msgctxt "Info"
 msgid "Are you sure you want to delete this payment method?"
-msgstr ""
+msgstr "Êtes-vous sûr() de vouloir supprimer cette méthode de payement ?"
 
 #: src/app/controllers/settings/addresses.js:98
 #: src/app/controllers/settings/domains.js:294
 msgid "Are you sure you want to disable this address?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer cette adresse ?"
 
 #: src/app/controllers/settings/members.js:222
 msgid "Are you sure you want to remove this member?"
-msgstr ""
+msgstr "Êtes-vous sûr de vouloir supprimer ce membre ?"
 
 #: src/app/controllers/settings/members.js:170
 msgid "Are you sure you want to unlink this address?"
@@ -586,7 +589,7 @@ msgstr ""
 
 #: src/app/controllers/conversations.js:891
 msgid "Are you sure?"
-msgstr ""
+msgstr "Êtes-vous sûr(s)"
 
 #. but report form heading label
 #: src/app/templates/modals/bug.tpl.html:66
