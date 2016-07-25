@@ -18,19 +18,20 @@ angular.module('proton.message')
 
         var blockquotes = html.querySelectorAll(quotes);
         var blockquote = blockquotes[0];
-        var parent = blockquote.parentElement;
-        var textSplitted = parent.textContent.replace(/\s+/g, '').split(blockquote.textContent.replace(/\s+/g, ''));
 
-        console.dir(blockquote);
+        if (blockquote) {
+            var parent = blockquote.parentElement;
+            var textSplitted = parent.textContent.replace(/\s+/g, '').split(blockquote.textContent.replace(/\s+/g, ''));
 
-        if (angular.isArray(textSplitted) && textSplitted.length > 0 && textSplitted[0].length > 0) {
-            var button = document.createElement('button');
-            var title = gettextCatalog.getString('Show previous message', null, 'Title');
+            if (angular.isArray(textSplitted) && textSplitted.length > 0 && textSplitted[0].length > 0) {
+                var button = document.createElement('button');
+                var title = gettextCatalog.getString('Show previous message', null, 'Title');
 
-            button.className = 'fa fa-ellipsis-h pm_button more';
-            button.setAttribute('title', title);
-            blockquote.parentNode.insertBefore(button, blockquote);
-            blockquote.style.display = 'none';
+                button.className = 'fa fa-ellipsis-h pm_button more';
+                button.setAttribute('title', title);
+                blockquote.parentNode.insertBefore(button, blockquote);
+                blockquote.style.display = 'none';
+            }
         }
 
         return html;
