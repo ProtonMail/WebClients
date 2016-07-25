@@ -7,7 +7,7 @@ angular.module('proton.message')
          * @return {void}
          */
         const bindImagesUrl = (body) => {
-            const $list = body.querySelectorAll('[data-embedded-img]');
+            const $list = body ? body.querySelectorAll('[data-embedded-img]') : [];
 
             [].slice.call($list)
                 .forEach((img) => {
@@ -32,7 +32,7 @@ angular.module('proton.message')
             link(scope, el, attr) {
                 const unsubscribe = $rootScope
                     .$on('embedded.loaded', () => {
-                        bindImagesUrl(el[0].querySelector('#bodyDecrypted'));
+                        bindImagesUrl(el[0].querySelector('.bodyDecrypted'));
                 });
 
                 scope.$on('$destroy', () => unsubscribe());
