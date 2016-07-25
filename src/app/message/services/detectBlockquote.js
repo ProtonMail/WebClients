@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('mailTo', function() {
+.factory('detectBlockquote', function() {
     return function(input) {
 
     };
