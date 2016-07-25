@@ -1,7 +1,7 @@
 angular.module('proton.message')
 .factory('transformImages', function() {
     return function(html) {
-        var images = html.querySelectorAll('img');
+        var images = [].slice.call(html.querySelectorAll('img'));
 
         if (images.length > 0) {
             images.forEach(function(image) {
