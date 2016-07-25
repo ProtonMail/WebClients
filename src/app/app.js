@@ -104,7 +104,6 @@ angular.module('proton', [
     'proton.time',
     'proton.toggle',
     'proton.tooltip',
-    'proton.transformation',
     'proton.translate',
     'proton.wizard',
     'proton.rightClick',
