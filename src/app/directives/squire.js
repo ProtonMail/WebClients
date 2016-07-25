@@ -30,8 +30,8 @@ angular.module("proton.squire", [
                 }
             });
 
-            updateModel = function(value) {
-                value = DOMPurify.sanitize(value);
+            updateModel = function(val) {
+                const value = DOMPurify.sanitize(val);
                 scope
                     .$applyAsync(() => {
                         ngModel.$setViewValue(value);
@@ -145,9 +145,7 @@ angular.module("proton.squire", [
                 }
 
                 editor.addEventListener('input', function() {
-                    var html = editor.getHTML();
-
-                    updateModel(html);
+                    _rAF(() => updateModel(editor.getHTML()));
                 });
 
                 editor.addEventListener('focus', function() {
