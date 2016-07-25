@@ -271,14 +271,6 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
         }
     };
 
-    $scope.finish = function(form) {
-        $log.debug('finish');
-        if (form.$valid) {
-            $log.debug('finish: form valid');
-            return $scope.generateKeys($scope.account.Username, $scope.account.mailboxPassword);
-        }
-    };
-
     $scope.finishLoginReset = function(form) {
         $log.debug('finishLoginReset');
     };
@@ -386,7 +378,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
             mbpw = $scope.account.mailboxPassword;
         }
 
-        return $scope.generateKeys($scope.account.Username + '@' + $scope.account.domain.value, mbpw);
+        return $scope.generateKeys('<' + $scope.account.Username + '@' + $scope.account.domain.value + '>', mbpw);
     };
 
     $scope.changeChoice = function(method) {
