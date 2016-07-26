@@ -1709,6 +1709,17 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $scope.close(message, false, true);
     };
 
+
+    /**
+     * Remove a message from the list of messages
+     * @param  {Array} list    List of messages
+     * @param  {Ressource} message Message to remove
+     * @return {Array}
+     */
+    function removeMessage(list, message) {
+        return _.filter(list, (item) => message.ID !== item.ID);
+    }
+
     /**
      * Close the composer window
      * @param {Object} message
@@ -1716,7 +1727,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.close = function(message, discard, save) {
-        var index = $scope.messages.indexOf(message);
 
         if(discard === true && angular.isDefined(message.ID)) {
             $scope.discard(message);
@@ -1732,7 +1742,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.close();
 
         // Remove message in composer controller
-        $scope.messages.splice(index, 1);
+        $scope.messages = removeMessage($scope.messages, message);
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
