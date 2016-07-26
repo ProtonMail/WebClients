@@ -6,7 +6,7 @@
         <span>{{ conversation.Subject }}</span>
     </h1>
     <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
-        <p ng-show="showNotifier('trash')" class="alert">
+        <p ng-if="showNotifier('trash')" class="alert">
             <span ng-show="inTrash === false" translate translate-context="Info">This conversation contains trashed messages.</span>
             <span ng-show="inTrash === true" translate translate-context="Info">This conversation contains non-trashed messages.</span>
             <a href="#" ng-click="toggleOption('showTrashed')" ng-show="showTrashed === false && inTrash === false" translate translate-context="Action">Show trashed messages</a>
