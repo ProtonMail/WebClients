@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.directive('mailTo', ($rootScope, regexEmail, Message) => ({
+.directive('mailTo', ($rootScope, regexEmail, Message, authentication) => ({
     restrict: 'A',
     link(scope, element) {
         var click = function(event) {
@@ -23,7 +23,10 @@ angular.module('proton.message')
                             Name: emails[0]
                         });
 
+                        const adr = _.findWhere(authentication.user.Addresses, {ID: scope.message.AddressID}) || {};
+                        
                         _.defaults(message, {
+                            From: adr,
                             ToList: ToList,
                             CCList: [],
                             BCCList: [],
