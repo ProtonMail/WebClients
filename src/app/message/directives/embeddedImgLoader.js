@@ -16,6 +16,7 @@ angular.module('proton.message')
                         _rAF(() => {
                             const loader = img.parentElement;
                             const container = loader.parentElement;
+                            
                             img.src = src;
                             // Don't need to reload it everytime, only load once
                             img.removeAttribute('data-embedded-img');
