@@ -56,6 +56,10 @@ angular.module('proton.controllers.Settings')
         }
     });
 
+    $scope.$on('createUser', function(event) {
+        notify({message: gettextCatalog.getString('Address created', null, 'Info'), classes: 'notification-success'});
+    });
+
     /**
      * Return domain value for a specific address
      * @param {Object} address

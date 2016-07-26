@@ -1430,7 +1430,7 @@ angular.module("proton.modals", [])
                         }).then(function(result) {
                             if (result.data && result.data.Code === 1000) {
                                 address.state = SAVED;
-
+                                notify({message: 'Key created', classes: 'notification-success'});
                                 return $q.resolve();
                             } else if (result.data && result.data.Error) {
                                 address.state = ERROR;

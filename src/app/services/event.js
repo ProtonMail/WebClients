@@ -150,6 +150,7 @@ angular.module("proton.event", ["proton.constants"])
 
 									if (index === -1) {
 										authentication.user.Addresses.push(address);
+										$rootScope.$broadcast('createUser');
 									} else {
 										angular.extend(authentication.user.Addresses[index], address);
 									}
