@@ -5,9 +5,10 @@ angular.module('proton.message')
         var click = function(event) {
             var target = event.target;
 
-            event.preventDefault();
-
             if (target.tagName === 'BUTTON' && target.classList.contains('more')) {
+                
+                event.preventDefault();
+
                 var blockquote = target.nextElementSibling;
 
                 if (blockquote.style.display === 'none') {
