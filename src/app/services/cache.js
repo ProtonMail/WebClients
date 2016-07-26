@@ -93,7 +93,7 @@ angular.module('proton.cache', [])
         var current = _.findWhere(conversationsCached, {ID: conversation.ID});
 
         if (angular.isDefined(current)) {
-            var index = conversationsCached.indexOf(current);
+            var index = _.findIndex(conversationsCached, {ID: conversation.ID});
             var labelIDs = conversation.LabelIDs || current.LabelIDs || [];
 
             if (angular.isArray(conversation.LabelIDsRemoved)) {
