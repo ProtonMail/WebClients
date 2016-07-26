@@ -27,7 +27,7 @@ angular.module('proton.conversation', [])
         moreToggle.hide();
 
         // Check if there is custom labels
-        if (Array.isArray(LabelIDs) && LabelIDs.some(id => isNaN(+id))) {
+        if (Array.isArray(LabelIDs)) {
           const labels = toLabels(LabelIDs);
           scope.labels = labels.slice(0, 4);
           labels.length > 4 && moreToggle.show();

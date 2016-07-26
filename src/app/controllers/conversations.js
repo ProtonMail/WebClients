@@ -329,8 +329,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 var element;
 
                 if ($scope.markedConversation === null) {
-                    if ($stateParams.id) {
-                        element = _.findWhere($scope.conversations, {ID: $stateParams.id});
+                    if ($state.params.id) {
+                        element = _.findWhere($scope.conversations, {ID: $state.params.id});
                     } else {
                         element = _.first($scope.conversations);
                     }
