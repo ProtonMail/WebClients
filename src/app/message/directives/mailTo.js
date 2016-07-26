@@ -7,12 +7,14 @@ angular.module('proton.message')
                 var href = event.target.getAttribute('href');
 
                 if (href) {
-                    event.preventDefault();
 
                     var mailTo = href.indexOf('mailto') === 0;
                     var emails = event.target.getAttribute('href').match(regexEmail);
 
                     if (mailTo && emails) {
+                        
+                        event.preventDefault();
+                        
                         var message = new Message();
                         var ToList = [];
 
