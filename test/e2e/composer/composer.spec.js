@@ -12,4 +12,26 @@ describe('composer tests', () => {
     expect(editor.isOpened()).toEqual(true)
   })
 
+  it('should create a new message', () => {
+  })
+
+  it('should add a recepient', () => {
+  })
+
+  it('should add a subject', () => {
+  })
+
+  it('should fill the content', () => {
+  })
+
+  it('should send the message', () => {
+  })
+
+  it('should hide the composer', () => {
+  })
+
+  it('should add a new conversation', () => {
+  })
+
+
 });
