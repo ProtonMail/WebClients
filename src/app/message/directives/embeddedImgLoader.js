@@ -8,7 +8,6 @@ angular.module('proton.message')
          */
         const bindImagesUrl = (body) => {
             const $list = body ? body.querySelectorAll('[data-embedded-img]') : [];
-
             [].slice.call($list)
                 .forEach((img) => {
                     const src = embedded.getUrl(img);
@@ -17,22 +16,24 @@ angular.module('proton.message')
                         _rAF(() => {
                             const loader = img.parentElement;
                             const container = loader.parentElement;
-
-                            container.removeChild(loader);
                             img.src = src;
                             // Don't need to reload it everytime, only load once
                             img.removeAttribute('data-embedded-img');
-                            container.appendChild(img);
+                            container.replaceChild(img, loader);
                         });
                     }
                 });
         };
 
         return {
-            link(scope, el, attr) {
+            link(scope, el) {
                 const unsubscribe = $rootScope
                     .$on('embedded.loaded', () => {
-                        bindImagesUrl(el[0].querySelector('.bodyDecrypted'));
+                        // Need to build images after the $digest as we need the decrypted body to be already compiled
+                        scope
+                            .$applyAsync(() => {
+                                bindImagesUrl(el[0].querySelector('.bodyDecrypted'));
+                            });
                 });
 
                 scope.$on('$destroy', () => unsubscribe());

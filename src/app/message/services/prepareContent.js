@@ -9,7 +9,6 @@ angular.module('proton.message')
         const output =  transformers.reduceRight((html, transformer) => transformer(html, message), div);
 
         transformAttachement(output, message);
-
         return output.innerHTML;
     };
 });

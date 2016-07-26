@@ -3,10 +3,7 @@ angular.module('proton.message')
         return (html, message) => {
             embedded
                 .parser(message)
-                .then(() => {
-                    _rAF(() => $rootScope.$emit('embedded.loaded'));
-                });
-
+                .then(() => $rootScope.$emit('embedded.loaded'));
             return html;
         };
     });

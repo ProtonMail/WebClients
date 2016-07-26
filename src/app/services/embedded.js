@@ -217,6 +217,7 @@ angular.module("proton.embedded", [])
                             // store to Blobs
                             store(cid,decryptedAtt.data,attachment.MIMEType, CIDList, decryption);
                             attachment.decrypting = false;
+                            at = null;
                         }
                     );
 
@@ -299,7 +300,7 @@ angular.module("proton.embedded", [])
 
             if(headers['content-id'] !== undefined) {
 
-                var cid = headers['content-id'].replace(/[<>]+/g,'');
+                var cid = headers['content-id'].replace(REGEXP_CID_CLEAN,'');
                 var tempDOM = angular.element('<div>').append(message.Body);
                 var nodes = tempDOM.find('img[src="cid:'+cid+'"], img[rel="'+cid+'"]');
 
