@@ -8,6 +8,7 @@
         position: relative;
         box-sizing: border-box;
         padding: 14px 0;
+        min-height: 35px;
         border-bottom: 1px solid #acb0bf;
         justify-content: center;
         h1 {
@@ -40,6 +41,7 @@
                 display: block;
                 font-size: 1.5rem;
                 box-shadow: none;
+                border: 0
             }
         }
     }
