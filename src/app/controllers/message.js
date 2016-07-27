@@ -339,9 +339,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         content = $scope.message.clearImageBody(content);
                     }
 
-                    // For the welcome email, we need to change the path to the welcome image lock
-                    content = content.replace("/img/app/welcome_lock.gif", "/assets/img/emails/welcome_lock.gif");
-
                     content = prepareContent(content, $scope.message);
 
                     // Detect type of content
