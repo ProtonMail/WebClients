@@ -123,6 +123,13 @@ angular.module('proton.autocomplete', [])
                 scope.onChange();
             };
             /**
+             * Click on an address displayed inside the autocomplete list
+             */
+            scope.onClick = function(email) {
+                scope.params.selected = scope.params.contactsFiltered.indexOf(email);
+                scope.onSubmit(true);
+            };
+            /**
             * Submit a new address
             * @param {Boolean} enter
             */
@@ -147,10 +154,6 @@ angular.module('proton.autocomplete', [])
                 }
             };
 
-            scope.onFocus = function() {
-
-            };
-
             scope.onBlur = function() {
                 $timeout.cancel(timeoutBlur);
                 timeoutBlur = $timeout(function() {
@@ -166,15 +169,11 @@ angular.module('proton.autocomplete', [])
             };
 
             scope.onAddEmail = function(email) {
-                var index = scope.emails.indexOf(email);
-
-                if (index === -1) {
-                    scope.params.selected = null;
-                    scope.params.newValue = '';
-                    scope.emails.push(email);
-                    angular.element(element).find('.new-value-email').focus();
-                    scope.onChange();
-                }
+                scope.params.selected = null;
+                scope.params.newValue = '';
+                scope.emails.push(email);
+                angular.element(element).find('.new-value-email').focus();
+                scope.onChange();
             };
 
             scope.onClose = function() {
