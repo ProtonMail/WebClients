@@ -10,8 +10,8 @@
 
     <p>
         <span style="width:14rem" width="14rem">
-            <span ng-show=" message.Location != '2' "  translate-comment="printed message info" translate>Received</span>: 
-            <span ng-show=" message.Location == '2' "  translate-comment="printed message info" translate>Sent</span>: 
+            <span ng-show=" message.Location != '2' "  translate-comment="printed message info" translate>Received</span>:
+            <span ng-show=" message.Location == '2' "  translate-comment="printed message info" translate>Sent</span>:
         </span>
         <span>
             <i class="fa fa-reply" ng-show="message.IsReplied === 1"></i>
@@ -73,4 +73,6 @@
 
 </div>
 
-<div style="padding: 1rem;" ng-bind-html="message.decryptedBody"></div>
+<div data-embedded-img-loader>
+    <div style="padding: 1rem;" class="bodyDecrypted" ng-bind-html="message.decryptedBody"></div>
+</div>

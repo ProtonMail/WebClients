@@ -21,7 +21,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     cache,
     confirmModal,
     CONSTANTS,
-    embedded,
     gettextCatalog,
     ical,
     Label,
@@ -55,6 +54,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.$on('replyConversation', function(event) {
         if ($scope.$last === true && $scope.message.Type !== 1) {
             loadMessage('reply');
+        }
+    });
+
+    $rootScope.$on('embedded.injected', (event) => {
+        if ($rootScope.printMode === true) {
+            $scope.$applyAsync(() => {
+                $window.print();
+            });
         }
     });
 
@@ -263,7 +270,9 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Order to the conversation controller to scroll to this message
      */
     $scope.scrollToMe = function() {
-        $scope.scrollToMessage($scope.message.ID);
+        if (angular.isFunction($scope.scrollToMessage)) {
+            $scope.scrollToMessage($scope.message.ID);
+        }
     };
 
     /**
@@ -315,8 +324,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         if (angular.isUndefined($scope.message.decryptedBody) || force === true) {
             $scope.message.clearTextBody().then(function(result) {
 
-                // return a promise for embedded images
-
                 var showMessage = function(content) {
 
                     var deferred = $q.defer();
@@ -358,14 +365,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         $(this).unbind("error").addClass("pm_broken");
                     });
 
-                    if ($rootScope.printMode === true) {
-                        $timeout(function() {
-                            $window.print();
-                        }, 1000);
-                    } else {
-                        $scope.scrollToMe();
-                    }
-
+                    $scope.scrollToMe();
 
                     return deferred.promise;
                 };
