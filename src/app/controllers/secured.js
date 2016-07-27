@@ -148,13 +148,17 @@ angular.module("proton.controllers.Secured", [])
     $scope.$on('updatePageName', function(event) { $scope.updatePageName(); });
 
     $scope.$on('updateUser', function(event) {
-        $scope.user = authentication.user;
-        $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
-        $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
+        $scope.$applyAsync(() => {
+            $scope.user = authentication.user;
+            $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
+            $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
+        });
     });
 
     $scope.$on('organizationChange', function(event, organization) {
-        $scope.organization = organization;
+        $scope.$applyAsync(() => {
+            $scope.organization = organization;
+        });
     });
 
     $scope.$on('$destroy', function(event) {
