@@ -867,6 +867,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
        }
 
        message.Body = tempDOM.html();
+       message.editor && message.editor.fireEvent("refresh");
+
 
     };
 

@@ -148,6 +148,10 @@ angular.module("proton.squire", [
                     _rAF(() => updateModel(editor.getHTML()));
                 });
 
+                editor.addEventListener('refresh', function(){
+                    editor.setHTML(scope.ngModel);
+                });
+
                 editor.addEventListener('focus', function() {
                     element.addClass('focus').triggerHandler('focus');
                     $rootScope.$broadcast('editorFocussed', element, editor);
