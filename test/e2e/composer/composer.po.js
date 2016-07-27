@@ -1,9 +1,5 @@
 module.exports = () => {
 
-  // 'composer-email-ToList'
-  // 'composer-email-CCList'
-  // 'composer-email-BCCList'
-
   const open = () => {
     return element(by.css('.compose.pm_button')).click();
   };
@@ -17,6 +13,7 @@ module.exports = () => {
 
     const content = (txt) => {
 
+      // Can't use txt inside of a callback YOFLO
       const body = `
         const $div = $(document.body.querySelector('.composer'))
           .find('.angular-squire-wrapper')
@@ -28,13 +25,21 @@ module.exports = () => {
           $div.textContent = '${txt}';
           return $div.textContent;
       `;
-      const getTxt = Function(body);
-
-      return browser
-        .executeScript(getTxt);
+      return browser.executeScript(body);
     };
 
-    return { content };
+    const fillInput = (type, value) => {
+      const body = `
+        const $input = $('.composer-email-${type}')
+        .find('input');
+
+        $input.val('${value}');
+        return $input.val();
+      `;
+      return browser.executeScript(body);
+    };
+
+    return { content, fillInput };
   };
 
   return { open, isOpened, compose };
