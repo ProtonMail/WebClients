@@ -165,10 +165,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
-
-        if (angular.isDefined(message)) {
-            $scope.send(message);
-        }
+        message && $scope.send(message);
     });
 
     $scope.$on('closeMessage', function(event, element) {
@@ -623,6 +620,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.removeAttachment = function(attachment, message) {
+
         var index = message.Attachments.indexOf(attachment);
         // Remove attachment in UI
         var headers = attachment.Headers;
@@ -940,35 +938,63 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     };
 
-    $scope.removeEmbedded = function(event,message){
+    /**
+     * Watcher onInput to find and remove attachements if we remove an embedded
+     * image from the input
+     * @return {Function} Taking message as param
+     */
+    function removerEmbeddedWatcher() {
+        let latestCids = [];
 
-        if( event.target.classList ){
-            if(event.target.classList.contains("proton-embedded")) {
-                var cid = event.target.getAttribute('rel');
-                var attachments = _.filter(message.Attachments, function (el) {
-                     return el.Headers['content-id'].replace(/[<>]+/g,'') === cid;
-                });
+        return (message) => {
+            const input = message.editor.getHTML() || '' ;
 
-                if(angular.isDefined(attachments[0])) {
-                    $scope.removeAttachment(attachments[0], message);
+            // Extract CID per embedded image
+            const cids = (input.match(/rel=("([^"]|"")*")/g) || [])
+                .map((value) => value.split('rel="')[1].slice(0, -1));
+
+            // If we add or remove an embedded image, the diff is true
+            if (cids.length !== latestCids.length) {
+                // Find attachements not in da input
+                const AttToRemove = message
+                    .Attachments
+                    .filter((attachment) => {
+
+                        // If the file is uploading it means: its first time
+                        if (attachment.uploading) {
+                            return false;
+                        }
+
+                        const cid = attachment.Headers['content-id'].replace(/[<>]+/g, '');
+                        return cids.indexOf(cid) === -1;
+                    });
+
+                if (AttToRemove.length) {
+                    AttToRemove
+                        .forEach((att) => $scope.removeAttachment(att, message));
                 }
             }
-        }
 
-    };
+            latestCids = cids;
+        };
+    }
 
     $scope.listenEditor = function(message) {
+
+        const watcherEmbedded = removerEmbeddedWatcher();
+
         if (message.editor) {
             var dropzone = angular.element('#uid' + message.uid + ' .composer-dropzone')[0];
 
             message.editor.addEventListener('focus', function() {
-                $timeout(function() {
-                    message.ccbcc = false;
-                    angular.element('.typeahead-container').scrollTop(0);
-                });
+                $scope
+                    .$applyAsync(() => {
+                        message.ccbcc = false;
+                    });
             });
 
             message.editor.addEventListener('input', function() {
+                watcherEmbedded(message);
                 $scope.saveLater(message);
             });
 
@@ -977,11 +1003,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('dragenter', onDragEnter);
             message.editor.addEventListener('dragover', onDragOver);
             dropzone.addEventListener('dragover', dragover);
-
-            message.editor.addEventListener('DOMNodeRemoved', function(event){
-                $scope.removeEmbedded(event,message);
-            });
-
 
             $scope.saveOld(message);
         }
@@ -1455,6 +1476,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.send = function(msg) {
+
         // Prevent mutability
         const message = new Message(msg);
 
