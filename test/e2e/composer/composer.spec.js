@@ -1,5 +1,8 @@
 const composer = require('./composer.po');
 const message = {
+  ToList: 'qatest1@protonmail.com',
+  CCList: 'qatest2@protonmail.com',
+  BCCList: 'qatest3@protonmail.com',
   body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos aperiam debitis, ipsam numquam eius unde cupiditate atque enim, deleniti amet, quidem itaque. Voluptatum quisquam voluptates neque, numquam molestiae! Molestiae, aliquam?'
 };
 
@@ -25,13 +28,17 @@ describe('composer tests', () => {
       borodin
         .content(message.body)
         .then((text) => {
-          browser.pause();
           expect(text).toEqual(message.body);
         })
     })
 
-    // it('should add a recepient', () => {
-    // })
+    it('should add a recepient', () => {
+      borodin
+        .fillInput('ToList', message.ToList)
+        .then((text) => {
+          expect(text).toEqual(message.ToList);
+        })
+    })
 
     // it('should add a subject', () => {
     // })
