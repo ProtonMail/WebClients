@@ -77,6 +77,6 @@ exports.config = {
     unlock: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/unlock.spec.js'],
     bugreport: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/bugReport/bugreport.spec.js'],
     stars: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/stars/stars.spec.js'],
-    composer: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/stars/composer.spec.js'],
+    composer: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/composer/composer.spec.js'],
   }
 };
