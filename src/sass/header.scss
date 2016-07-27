@@ -68,6 +68,10 @@ header#pm_header-desktop {
 			float: left;
 			position: relative;
 			height: 60px;
+			&:hover {
+				box-shadow: 0 5px 0 0 $primary inset;
+				transition: all .15s ease-in-out;
+			}
 			&.active {
 				box-shadow: 0 5px 0 0 $primary inset;
 			}
