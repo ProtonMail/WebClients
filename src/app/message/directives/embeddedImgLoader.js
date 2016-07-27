@@ -8,22 +8,30 @@ angular.module('proton.message')
          */
         const bindImagesUrl = (body) => {
             const $list = body ? body.querySelectorAll('[data-embedded-img]') : [];
-            [].slice.call($list)
-                .forEach((img) => {
-                    const src = embedded.getUrl(img);
+            const promises = [].slice.call($list).map((img) => {
+                const src = embedded.getUrl(img);
+                const image  = new Image();
 
-                    if (src) {
-                        _rAF(() => {
-                            const loader = img.parentElement;
-                            const container = loader.parentElement;
-                            
-                            img.src = src;
-                            // Don't need to reload it everytime, only load once
-                            img.removeAttribute('data-embedded-img');
-                            container.replaceChild(img, loader);
-                        });
-                    }
+                image.src = src;
+
+                return new Promise((resolve, reject) => { image.onload = resolve({img, src}); });
+            });
+
+            Promise.all(promises)
+            .then((images) => {
+                _rAF(() => {
+                    images.forEach(({img, src}) => {
+                        const loader = img.parentElement;
+                        const container = loader.parentElement;
+
+                        img.src = src;
+                        img.removeAttribute('data-embedded-img');
+                        container.replaceChild(img, loader);
+                    });
+                    
+                    $rootScope.$emit('embedded.injected');
                 });
+            });
         };
 
         return {
