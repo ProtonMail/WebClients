@@ -743,7 +743,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 deferred.resolve(message);
             });
         return deferred.promise;
-    };
+    }
 
     $scope.composerStyle = function() {
         var composers = $('.composer');
