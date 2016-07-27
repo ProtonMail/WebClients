@@ -1,6 +1,7 @@
 angular.module("proton.controllers.Outside", [
     "proton.routes",
-    "proton.constants"
+    "proton.constants",
+    "proton.storage"
 ])
 
 .controller("OutsideController", function(
@@ -24,11 +25,12 @@ angular.module("proton.controllers.Outside", [
     notify,
     pmcw,
     tools,
-    networkActivityTracker
+    networkActivityTracker,
+    secureSessionStorage
 ) {
     // Variables
-    var decrypted_token = window.sessionStorage["proton:decrypted_token"];
-    var password = pmcw.decode_utf8_base64(window.sessionStorage["proton:encrypted_password"]);
+    var decrypted_token = secureSessionStorage.getItem("proton:decrypted_token");
+    var password = pmcw.decode_utf8_base64(secureSessionStorage.getItem("proton:encrypted_password"));
     var token_id = $stateParams.tag;
 
     $scope.initialization = function() {

@@ -1,7 +1,8 @@
 angular.module('proton.routes', [
     'ui.router',
     'proton.authentication',
-    'proton.constants'
+    'proton.constants',
+    'proton.storage'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
@@ -363,7 +364,7 @@ angular.module('proton.routes', [
         views: {
             'content': {
                 templateUrl: 'templates/views/outside.unlock.tpl.html',
-                controller: function($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notify) {
+                controller: function($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notify, secureSessionStorage) {
                     $scope.params = {};
                     $scope.params.MessagePassword = '';
 
@@ -389,8 +390,8 @@ angular.module('proton.routes', [
                                 var promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword);
 
                                 promise.then(function(decryptedToken) {
-                                    window.sessionStorage['proton:decrypted_token'] = decryptedToken;
-                                    window.sessionStorage['proton:encrypted_password'] = pmcw.encode_utf8_base64($scope.params.MessagePassword);
+                                    secureSessionStorage.setItem('proton:decrypted_token', decryptedToken);
+                                    secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
                                     $state.go('eo.message', {tag: $stateParams.tag});
                                     $scope.trying = false;
                                 }, function(err) {
@@ -410,11 +411,11 @@ angular.module('proton.routes', [
     .state('eo.message', {
         url: '/eo/message/:tag',
         resolve: {
-            message: function($stateParams, $q, Eo, Message, pmcw) {
+            message: function($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
                 var deferred = $q.defer();
                 var token_id = $stateParams.tag;
-                var decrypted_token = window.sessionStorage['proton:decrypted_token'];
-                var password = pmcw.decode_utf8_base64(window.sessionStorage['proton:encrypted_password']);
+                var decrypted_token = secureSessionStorage.getItem('proton:decrypted_token');
+                var password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
                 Eo.message(decrypted_token, token_id)
                 .then(function(result) {
@@ -451,11 +452,11 @@ angular.module('proton.routes', [
     .state('eo.reply', {
         url: '/eo/reply/:tag',
         resolve: {
-            message: function($stateParams, $q, Eo, Message, pmcw) {
+            message: function($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
                 var deferred = $q.defer();
                 var token_id = $stateParams.tag;
-                var decrypted_token = window.sessionStorage['proton:decrypted_token'];
-                var password = pmcw.decode_utf8_base64(window.sessionStorage['proton:encrypted_password']);
+                var decrypted_token = secureSessionStorage.getItem('proton:decrypted_token');
+                var password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
                 Eo.message(decrypted_token, token_id)
                 .then(function(result) {
@@ -507,12 +508,12 @@ angular.module('proton.routes', [
         },
         resolve: {
             // Contains also labels and contacts
-            user: function(authentication, $http, pmcw) {
+            user: function(authentication, $http, pmcw, secureSessionStorage) {
                 if (angular.isObject(authentication.user)) {
                     return authentication.user;
                 } else {
-                    if(angular.isDefined(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
-                        $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
+                    if(angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
+                        $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
                     }
 
                     return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page

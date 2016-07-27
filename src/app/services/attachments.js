@@ -1,4 +1,4 @@
-angular.module('proton.attachments', ['proton.authentication'])
+angular.module('proton.attachments', ['proton.authentication', 'proton.storage'])
 .service('attachments', function(
     $http,
     $log,
@@ -12,7 +12,8 @@ angular.module('proton.attachments', ['proton.authentication'])
     errorReporter,
     gettextCatalog,
     CONSTANTS,
-    CONFIG
+    CONFIG,
+    secureSessionStorage
 ) {
     return {
         store: [],
@@ -130,7 +131,7 @@ angular.module('proton.attachments', ['proton.authentication'])
             xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
             xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
             xhr.setRequestHeader("x-pm-apiversion", CONFIG.api_version);
-            xhr.setRequestHeader("x-pm-session", pmcw.decode_base64(window.sessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken')));
+            xhr.setRequestHeader("x-pm-session", pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken')));
             
             xhr.send(data);
 

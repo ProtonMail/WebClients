@@ -1,4 +1,4 @@
-angular.module("proton.controllers.Signup", ["proton.tools"])
+angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
 
 .controller("SignupController", function(
     $http,
@@ -23,7 +23,8 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
     pmcw,
     Reset,
     tools,
-    User
+    User,
+    secureSessionStorage
 ) {
     var childWindow;
 
@@ -574,7 +575,7 @@ angular.module("proton.controllers.Signup", ["proton.tools"])
                         $rootScope.isLoggedIn = authentication.isLoggedIn();
                         $rootScope.isLocked = authentication.isLocked();
                         $rootScope.isSecure = authentication.isSecured();
-                        window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
+                        secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
                     }
                 );
             }

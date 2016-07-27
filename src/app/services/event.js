@@ -1,4 +1,4 @@
-angular.module("proton.event", ["proton.constants"])
+angular.module("proton.event", ["proton.constants", "proton.storage"])
 	.service("eventManager", function (
 		$cookies,
 		$location,
@@ -20,7 +20,8 @@ angular.module("proton.event", ["proton.constants"])
 		gettextCatalog,
 		Label,
 		notify,
-		pmcw
+		pmcw,
+		secureSessionStorage
 	) {
 
 		function getRandomInt(min, max) {
@@ -296,9 +297,7 @@ angular.module("proton.event", ["proton.constants"])
 			manageID: function(id) {
 				this.ID = id;
 
-				if (window.sessionStorage) {
-					window.sessionStorage[CONSTANTS.EVENT_ID] = id;
-				}
+				secureSessionStorage.setItem(CONSTANTS.EVENT_ID, id);
 			},
 			manageNotices: function(notices) {
 				if(angular.isDefined(notices) && notices.length > 0) {
@@ -390,9 +389,7 @@ angular.module("proton.event", ["proton.constants"])
 		var api = _.bindAll({
 			start: function () {
 				if (angular.isUndefined(eventModel.promiseCancel)) {
-					if (window.sessionStorage) {
-						eventModel.ID = window.sessionStorage[CONSTANTS.EVENT_ID];
-					}
+					eventModel.ID = secureSessionStorage.getItem(CONSTANTS.EVENT_ID);
 
 					eventModel.promiseCancel = $timeout(eventModel.interval, 0);
 				}
