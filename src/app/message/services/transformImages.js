@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('transformImages', function(embedded) {
+.factory('transformImages', function() {
 
     const REGEXP_IS_CID = /^cid:/;
     const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
