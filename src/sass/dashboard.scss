@@ -124,6 +124,10 @@
                     padding: 10px 2rem 10px 1rem;
                     color: $gray-medium;
                     position: relative;
+                    height: 55px;
+                    small {
+                        font-size: 10px;
+                    }
                     .discount {
                         position: absolute;
                         z-index: 5;
@@ -211,7 +215,7 @@
 // 1200
 @media (max-width: $desktop) {
     #plans .plans .plan {
-        font-size: 85%;
+        // font-size: 85%;
         .pm_button {
             font-size: 85%;
         }
@@ -224,13 +228,21 @@
                 height: 184px;
             }
         }
+        footer .cycle {
+            height: 92px;
+        }
+    }
+    #plans .plans .plan footer .cycle {
+        // color: red;
     }
 }
 
 // 1000
 @media (max-width: $desktop) {
     #plans .plans .plan {
-        font-size: 10px;
+        small {
+            font-size: 10px;
+        }
         .pm_button {
             font-size: 11px;
         }
