@@ -39,15 +39,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.attachmentsStorage = [];
     $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
 
-
     function loadMessage(action) {
         var msg = messageBuilder.create(action, $scope.message);
         $rootScope.$emit('loadMessage', msg);
     }
-
-    $rootScope.$on('toggleMessage.' + $scope.message.ID, function(event) {
-        $scope.toggle();
-    });
 
     $scope.$on('refreshMessage', function(event) {
         var message = cache.getMessageCached($scope.message.ID);
