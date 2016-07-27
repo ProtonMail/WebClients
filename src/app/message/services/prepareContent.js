@@ -1,8 +1,8 @@
 angular.module('proton.message')
-.factory('prepareContent', function(transformLinks, transformImages, transformBlockquotes, transformAttachement) {
+.factory('prepareContent', function(transformLinks, transformImages, transformWelcome, transformBlockquotes, transformAttachement) {
     return function(content, message) {
         const div = document.createElement('div');
-        const transformers = [transformLinks, transformImages, transformBlockquotes];
+        const transformers = [transformLinks, transformImages, transformWelcome, transformBlockquotes];
 
         div.innerHTML = content;
 
