@@ -279,8 +279,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $scope.isOver = false;
     }
 
-
-
     $(window).on('resize', onResize);
     $(window).on('orientationchange', onOrientationChange);
     $(window).on('dragover', onDragOver);
@@ -406,20 +404,21 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         dropzone.removeFile(file);
                         done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
                         notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
-                    } else if(totalSize >= (sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE)) {
+                    } else if (totalSize >= (sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE)) {
                         dropzone.removeFile(file);
                         done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10 + ' MB.');
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10 + ' MB.', classes: 'notification-danger'});
-                    } else if(totalSize === 0){
+                    } else if (totalSize === 0) {
                         /* file is too big */
                         dropzone.removeFile(file);
                         done('Attachments are limited to ' + sizeLimit + ' MB.');
                         notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
                     } else {
-                        if ( angular.isUndefined( message.queuedFiles ) ) {
+                        if (angular.isUndefined(message.queuedFiles)) {
                             message.queuedFiles = 0;
                             message.queuedFilesSize = 0;
                         }
+
                         message.queuedFiles++;
                         message.queuedFilesSize += file.size;
 
@@ -431,24 +430,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             var img = new RegExp("image");
                             var isImg = img.test(file.type);
 
-                            if(isImg){
-
-                                $scope.askEmbedding = true;
+                            if (isImg) {
                                 $scope.pendingAttachements.push(file);
                                 // add attachment with embeded and include the img ?
                                 dropzone.removeFile(file);
-
+                                $scope.$applyAsync(() => { $scope.askEmbedding = true; });
                             } else {
-
                                 $scope.addAttachment(file, message).finally(function () {
                                     dropzone.removeFile(file);
                                 });
-
                             }
-
                         };
 
-                        if(angular.isUndefined(message.ID)) {
+                        if (angular.isUndefined(message.ID)) {
                             if (angular.isUndefined(message.savePromise)) {
                                 $scope.save(message, false, false, false); // message, forward, notification
                             }

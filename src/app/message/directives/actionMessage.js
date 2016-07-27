@@ -11,6 +11,7 @@ angular.module('proton.message')
         if ('addfile' === actionMessageType) {
           return $('#uid' + scope.model.uid).find('.dropzone').click();
         }
+        
         const msg = messageBuilder.create(actionMessageType, scope.model);
         $rootScope.$emit('loadMessage', msg, (actionMessageType === "forward" || !angular.isUndefined(msg.Attachments)) );
       }
