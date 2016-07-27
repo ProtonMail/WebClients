@@ -1,5 +1,6 @@
 angular.module("proton.controllers.Setup", [
-    "proton.tools"
+    "proton.tools",
+    "proton.storage"
 ])
 
 .controller("SetupController", function(
@@ -21,7 +22,8 @@ angular.module("proton.controllers.Setup", [
     pmcw,
     tools,
     notify,
-    token
+    token,
+    secureSessionStorage
 ) {
     $scope.initialization = function() {
         // Variables
@@ -193,7 +195,7 @@ angular.module("proton.controllers.Setup", [
                     function(resp) {
                         $scope.process.redirecting = true;
                         $rootScope.isLoggedIn = true;
-                        window.sessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
+                        secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
                         $rootScope.isLoggedIn = authentication.isLoggedIn();
                         $rootScope.isLocked = authentication.isLocked();
                         $rootScope.isSecure = authentication.isSecured();

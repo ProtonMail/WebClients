@@ -194,41 +194,6 @@ angular.module('proton', [
     moment.locale(locale);
 })
 
-.run(function(CONSTANTS) {
-    // This function clears junk from session storage. Should not be needed forever
-    try {
-        var whitelist = [
-            CONSTANTS.EVENT_ID,
-            CONSTANTS.MAILBOX_PASSWORD_KEY,
-            CONSTANTS.OAUTH_KEY + ':SessionToken',
-            CONSTANTS.OAUTH_KEY + ':Uid',
-            CONSTANTS.OAUTH_KEY + ':AccessToken',
-            CONSTANTS.OAUTH_KEY + ':RefreshToken',
-            'proton:decrypted_token',
-            'proton:encrypted_password'
-        ];
-
-        var data = {};
-
-        for(var i = 0; i < whitelist.length; i++) {
-            var item = window.sessionStorage.getItem(whitelist[i]);
-
-            if( angular.isString(item) ) {
-                data[whitelist[i]] = item;
-            }
-        }
-
-        window.sessionStorage.clear();
-
-        for (var key in data) {
-            window.sessionStorage.setItem(key, data[key]);
-        }
-    }
-    catch(err) {
-        // Do nothing, session storage support checked for elsewhere
-    }
-})
-
 .run(function(
     $document,
     $rootScope,

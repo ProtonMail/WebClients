@@ -1,6 +1,7 @@
 angular.module("proton.authentication", [
     "proton.pmcw",
-    "proton.models"
+    "proton.models",
+    "proton.storage"
 ])
 
 .factory('authentication', function(
@@ -20,7 +21,8 @@ angular.module("proton.authentication", [
     notify,
     pmcw,
     url,
-    User
+    User,
+    secureSessionStorage
 ) {
     var keys = {}; // Store decrypted keys
     var auth = {
@@ -34,9 +36,9 @@ angular.module("proton.authentication", [
                 $http.defaults.headers.common["x-pm-session"] = auth.data.SessionToken;
                 $http.defaults.headers.common.Authorization = undefined;
                 $http.defaults.headers.common["x-pm-uid"] = undefined;
-                window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":AccessToken");
-                window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":Uid");
-                window.sessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":RefreshToken");
+                secureSessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":AccessToken");
+                secureSessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":Uid");
+                secureSessionStorage.removeItem(CONSTANTS.OAUTH_KEY + ":RefreshToken");
             } else {
                 // we need the old stuff for now
                 $http.defaults.headers.common["x-pm-session"] = undefined;
@@ -158,12 +160,12 @@ angular.module("proton.authentication", [
 
         saveAuthData: function(data) {
             if ( data.SessionToken ) {
-                window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"] = pmcw.encode_base64(data.SessionToken);
+                secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ":SessionToken", pmcw.encode_base64(data.SessionToken));
                 auth.data = data;
             } else {
-                window.sessionStorage[CONSTANTS.OAUTH_KEY + ":Uid"] = data.Uid;
-                window.sessionStorage[CONSTANTS.OAUTH_KEY + ":AccessToken"] = data.AccessToken;
-                window.sessionStorage[CONSTANTS.OAUTH_KEY + ":RefreshToken"] = data.RefreshToken;
+                secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ":Uid", data.Uid);
+                secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ":AccessToken", data.AccessToken);
+                secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ":RefreshToken", data.RefreshToken);
                 auth.data = _.pick(data, "Uid", "AccessToken", "RefreshToken");
             }
 
@@ -171,7 +173,7 @@ angular.module("proton.authentication", [
         },
 
         saveEventId: function(id) {
-            window.sessionStorage[CONSTANTS.EVENT_ID] = id;
+            secureSessionStorage.setItem(CONSTANTS.EVENT_ID, id);
         }
     };
 
@@ -179,7 +181,7 @@ angular.module("proton.authentication", [
     var api = {
         user: null,
         detectAuthenticationState: function() {
-            var session = window.sessionStorage[CONSTANTS.OAUTH_KEY + ":SessionToken"];
+            var session = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ":SessionToken");
 
             if (session) {
                 auth.data = {
@@ -193,7 +195,7 @@ angular.module("proton.authentication", [
 
         savePassword: function(pwd) {
             // Save password in session storage
-            window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY] = pmcw.encode_utf8_base64(pwd);
+            secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
             // Set pmcrypto.mailboxPassword
             pmcw.setMailboxPassword(pwd);
         },
@@ -202,7 +204,7 @@ angular.module("proton.authentication", [
          * Return the mailbox password stored in the session storage
          */
         getPassword: function() {
-            return pmcw.decode_utf8_base64(window.sessionStorage[CONSTANTS.MAILBOX_PASSWORD_KEY]);
+            return pmcw.decode_utf8_base64(secureSessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
         },
 
         randomString: function(length) {
@@ -244,7 +246,7 @@ angular.module("proton.authentication", [
         },
 
         getPrivateKey: function() {
-            var pw = pmcw.decode_utf8_base64(window.sessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
+            var pw = pmcw.decode_utf8_base64(secureSessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
 
             return pmcw.decryptPrivateKey(this.user.EncPrivateKey, pw).catch( function(err) {
                 $log.error( this.user.EncPrivateKey );
@@ -279,7 +281,7 @@ angular.module("proton.authentication", [
                         $log.debug('new token',response.data.SessionToken);
                         $log.debug('before',$http.defaults.headers.common['x-pm-session']);
                         $http.defaults.headers.common['x-pm-session'] = response.data.SessionToken;
-                        window.sessionStorage.setItem(CONSTANTS.OAUTH_KEY+':SessionToken', pmcw.encode_base64(response.data.SessionToken));
+                        secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY+':SessionToken', pmcw.encode_base64(response.data.SessionToken));
                         $log.debug('after',$http.defaults.headers.common['x-pm-session']);
                         $rootScope.doRefresh = true;
                     }
@@ -467,8 +469,8 @@ angular.module("proton.authentication", [
          */
         logout: function(redirect, call_api) {
             call_api = angular.isDefined(call_api) ? call_api : true;
-            var sessionToken = window.sessionStorage[CONSTANTS.OAUTH_KEY+":SessionToken"];
-            var uid = window.sessionStorage[CONSTANTS.OAUTH_KEY+":Uid"];
+            var sessionToken = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+":SessionToken");
+            var uid = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+":Uid");
             var process = function() {
                 this.clearData();
 
@@ -492,7 +494,7 @@ angular.module("proton.authentication", [
             $http.defaults.headers.common.Authorization = undefined;
             $http.defaults.headers.common["x-pm-uid"] = undefined;
             // Completely clear sessionstorage
-            window.sessionStorage.clear();
+            secureSessionStorage.clear();
             // Delete data key
             delete auth.data;
             // Clean keys
