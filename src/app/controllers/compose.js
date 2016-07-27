@@ -441,7 +441,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         if (angular.isUndefined(message.ID)) {
                             if (angular.isUndefined(message.savePromise)) {
-                                $scope.save(message, false, false, false); // message, forward, notification
+                                recordMessage(message, false, false, false); // message, forward, notification
                             }
 
                             message.savePromise.then(process);
@@ -694,48 +694,55 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.toFocussed = false;
         message.autocompletesFocussed = false;
         message.ccbcc = false;
-        $scope.messages.unshift(message);
         $scope.setDefaults(message);
-        $scope.insertSignature(message);
-        $scope.sanitizeBody(message);
-        $scope.decryptAttachments(message);
-        $scope.isOver = false;
 
-        // This timeout is really important to load the structure of Squire
-        $timeout(function() {
-            $scope.composerStyle();
-            // forward case: we need to save to get the attachments
-            // embedded case: if has embedded image we have to save the attachments
-            if (save === true) {
-                $scope.save(message, save, false).then(function() { // message, forward, notification
-                    $scope.decryptAttachments(message);
-                    // check for the embedded images
-                    // as it's a forward it won't process
-                    // the decryption (thanks to service storage)
+        sanitizeBody(message)
+            .then((message) => {
+                // Need to update the message only after the body is clean with valid embedded images
+                // and sanitize input
+                insertSignature(message);
+                $scope.messages.unshift(message);
 
-                    $scope.sanitizeBody(message);
+                $scope.decryptAttachments(message);
+                $scope.isOver = false;
 
+                // This timeout is really important to load the structure of Squire
+                $timeout(function() {
                     $scope.composerStyle();
+                    // forward case: we need to save to get the attachments
+                    // embedded case: if has embedded image we have to save the attachments
+                    if (save === true) {
+                        recordMessage(message, save, false).then(function() { // message, forward, notification
+                            $scope.decryptAttachments(message);
+                            // check for the embedded images
+                            // as it's a forward it won't process
+                            // the decryption (thanks to service storage)
+
+                            sanitizeBody(message);
+
+                            $scope.composerStyle();
 
 
-                }, function(error) {
-                    $log.error(error);
-                });
-            }
-        }, 100, false);
+                        }, function(error) {
+                            $log.error(error);
+                        });
+                    }
+                }, 100, false);
+            });
     }
 
-    $scope.sanitizeBody = function(message) {
-
-        message.Body = DOMPurify.sanitize(message.Body, {
-            ADD_ATTR: ['target'],
-            FORBID_TAGS: ['style', 'input', 'form']
-        });
-
-        embedded.parser(message).then( function(result) {
-           message.Body = result;
-        });
-
+    function sanitizeBody(message) {
+        const deferred = $q.defer();
+        embedded
+            .parser(message)
+            .then( function(result) {
+                message.Body = DOMPurify.sanitize(result, {
+                    ADD_ATTR: ['target'],
+                    FORBID_TAGS: ['style', 'input', 'form']
+                });
+                deferred.resolve(message);
+            });
+        return deferred.promise;
     };
 
     $scope.composerStyle = function() {
@@ -795,7 +802,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             /* Set the new styles */
             $timeout(function() {
                 $(composer).css(styles);
-            }, 250);
+            }, 250, false);
         }, context);
     };
 
@@ -803,7 +810,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * Insert / Update signature in the message body
      * @param {Object} message
      */
-    $scope.insertSignature = function(message) {
+    function insertSignature(message) {
         message.Body = (angular.isUndefined(message.Body))? '' : message.Body;
 
         var content = (angular.isUndefined(message.From.Signature))?authentication.user.Signature:message.From.Signature;
@@ -870,7 +877,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
        message.editor && message.editor.fireEvent("refresh");
 
 
-    };
+    }
 
     $scope.focusComposer = function(message) {
         $scope.selected = message;
@@ -1176,7 +1183,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         message.timeoutSaving = $timeout(function() {
             if($scope.needToSave(message)) {
-                $scope.save(message, false, false, true); // message, forward, notification, autosaving
+                recordMessage(message, false, false, true); // message, forward, notification, autosaving
             }
         }, CONSTANTS.SAVE_TIMEOUT_TIME); // 3 seconds
     };
@@ -1246,10 +1253,20 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Resource} message - Message to save
      */
     $scope.changeFrom = function(message) {
-        $scope.insertSignature(message);
+        insertSignature(message);
 
         // save when DOM is updated
-        $scope.save(message, false, false, true);
+        recordMessage(message, false, false, true);
+    };
+
+    $scope.save = (message, forward, notification, autosaving) => {
+        const msg = new Message(message);
+        return embedded
+            .parser(message,'cid')
+            .then((result) => {
+                msg.Body = result;
+                return recordMessage(msg);
+            });
     };
 
     /**
@@ -1259,7 +1276,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} notification - Add a notification when the saving is complete
      * @param {Boolean} autosaving
      */
-    $scope.save = function(message, forward, notification, autosaving) {
+    function recordMessage(message, forward, notification, autosaving) {
         // Variables
         var deferred = $q.defer();
         var parameters = {
@@ -1269,7 +1286,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         // Functions
         // Schedule this save after the in-progress one completes
         var nextSave = function(result) {
-            return $scope.save(message, forward, notification);
+            return recordMessage(message, forward, notification);
         };
 
         if(angular.isDefined(message.timeoutSaving)) {
@@ -1396,7 +1413,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         delete message.ID;
                         message.saving = false;
                         message.autosaving = false;
-                        deferred.resolve($scope.save(message, forward, notification));
+                        deferred.resolve(recordMessage(message, forward, notification));
                     } else if (angular.isDefined(result) && result.Error) {
                         // Errors from backend
                         message.saving = false;
@@ -1431,7 +1448,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         return deferred.promise;
-    };
+    }
 
     /**
      * Return the subject title of the composer
@@ -1487,7 +1504,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         .then(function() {
             embedded.parser(message,'cid').then(function(result) {
                 message.Body = result;
-                $scope.save(message, false, false, false)
+                recordMessage(message, false, false, false)
                 .then(function() {
                     $scope.checkSubject(message).then(function() {
                         message.encrypting = true;
@@ -1645,7 +1662,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         deferred.reject();
                     });
                 }, function(error) {
-                    deferred.reject(); // Don't add parameter in the rejection because $scope.save already do that.
+                    deferred.reject(); // Don't add parameter in the rejection because recordMessage already do that.
                 });
 
             });
@@ -1754,7 +1771,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $rootScope.maximizedComposer = false;
 
         if (save === true) {
-            $scope.save(message, true, false, false);
+            recordMessage(message, true, false, false);
         }
 
         message.close();
@@ -1770,7 +1787,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         $timeout(function () {
             $scope.composerStyle();
-        }, 250);
+        }, 250, false);
     };
 
     /**
