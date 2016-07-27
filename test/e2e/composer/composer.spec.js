@@ -1,36 +1,52 @@
 const composer = require('./composer.po');
+const message = {
+  body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos aperiam debitis, ipsam numquam eius unde cupiditate atque enim, deleniti amet, quidem itaque. Voluptatum quisquam voluptates neque, numquam molestiae! Molestiae, aliquam?'
+};
 
 describe('composer tests', () => {
   const editor = composer();
 
-  beforeEach(() => {
-    editor.open();
-    browser.sleep(1000);
-  });
+  describe('Composer simple message', () => {
 
-  it('should open a the composer', () => {
-    expect(editor.isOpened()).toEqual(true)
-  })
+    let borodin;
 
-  it('should create a new message', () => {
-  })
+    it('should open a the composer', () => {
+      editor.open();
+      browser.sleep(500);
+      editor
+        .isOpened()
+        .then(test => {
+          borodin = editor.compose();
+          expect(test).toEqual(true)
+        });
+    })
 
-  it('should add a recepient', () => {
-  })
+    it('should create a new message', () => {
+      borodin
+        .content(message.body)
+        .then((text) => {
+          browser.pause();
+          expect(text).toEqual(message.body);
+        })
+    })
 
-  it('should add a subject', () => {
-  })
+    // it('should add a recepient', () => {
+    // })
 
-  it('should fill the content', () => {
-  })
+    // it('should add a subject', () => {
+    // })
 
-  it('should send the message', () => {
-  })
+    // it('should fill the content', () => {
+    // })
 
-  it('should hide the composer', () => {
-  })
+    // it('should send the message', () => {
+    // })
 
-  it('should add a new conversation', () => {
+    // it('should hide the composer', () => {
+    // })
+
+    // it('should add a new conversation', () => {
+    // })
   })
 
 
