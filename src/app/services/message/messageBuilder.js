@@ -81,6 +81,19 @@ angular.module('proton.service.message', [])
     }
 
     /**
+     * Inject the inline images as attachement for embedded xray()
+     * @param {Array} originalAttachements From the current message
+     * return {String}
+    */
+    function injectInline(originalAttachements = {}){
+      return _.filter(originalAttachements, function (el) {
+          var disposition = el.Headers["content-disposition"];
+          var inline = new RegExp('^inline', 'i');
+          return inline.test(disposition) === true;
+      });      
+    }
+
+    /**
      * Find the from origin
      * @param  {Array} options.ToList    From the new message
      * @param  {Array} options.CCList    From the new message
@@ -132,13 +145,7 @@ angular.module('proton.service.message', [])
       }
 
       /* add inline images as attachments */
-      if((action === 'reply') || (action === 'replyall')){
-        newMsg.Attachments = _.filter(currentMsg.Attachments, function (el) {
-            var disposition = el.Headers["content-disposition"];
-            var inline = new RegExp('^inline', 'i');
-            return inline.test(disposition) === true;
-        });
-      }
+      newMsg.Attachments = injectInline(currentMsg.Attachments);
 
       newMsg.ParentID = currentMsg.ID;
       newMsg.Body = [

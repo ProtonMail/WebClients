@@ -702,30 +702,22 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 // and sanitize input
                 insertSignature(message);
                 $scope.messages.unshift(message);
-
-                $scope.decryptAttachments(message);
                 $scope.isOver = false;
 
                 // This timeout is really important to load the structure of Squire
                 $timeout(function() {
-                    $scope.composerStyle();
                     // forward case: we need to save to get the attachments
                     // embedded case: if has embedded image we have to save the attachments
                     if (save === true) {
                         recordMessage(message, save, false).then(function() { // message, forward, notification
                             $scope.decryptAttachments(message);
-                            // check for the embedded images
-                            // as it's a forward it won't process
-                            // the decryption (thanks to service storage)
-
                             sanitizeBody(message);
-
                             $scope.composerStyle();
-
-
                         }, function(error) {
                             $log.error(error);
                         });
+                    } else {
+                        $scope.composerStyle();
                     }
                 }, 100, false);
             });
