@@ -195,11 +195,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.initView = function() {
         var deferred = $q.defer();
-        var process = function() {
-            // Display content
-            $scope.displayContent();
-
-        };
 
         // If the message is a draft
         if ($scope.message.Type === 1) {
@@ -212,12 +207,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         } else {
             // Display content
             if(angular.isDefined($scope.message.Body)) {
-                process();
+                displayContent(true);
                 deferred.resolve();
             } else {
                 cache.getMessage($scope.message.ID).then(function(message) {
                     _.extend($scope.message, message);
-                    process();
+                    displayContent();
                     deferred.resolve();
                 });
             }
@@ -297,14 +292,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.displayImages = function() {
         $scope.message.toggleImages();
         $scope.showingMessages = true;
-        $scope.displayContent(true);
+        displayContent(true);
     };
 
     /**
      * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} force
      */
-    $scope.displayContent = function(force) {
+    function displayContent(force) {
         var whitelist = ['notify@protonmail.com'];
 
         if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
@@ -361,7 +356,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     }
 
                     // Broken images
-                    $(".email img").error(function () {
+                    $(".email").find("img").error(function () {
                         $(this).unbind("error").addClass("pm_broken");
                     });
 
@@ -391,7 +386,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                             content = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+content;
                         }
 
-                        $scope.$evalAsync(function() {
+                        $scope.$applyAsync(function() {
                             showMessage(content);
                         });
                     });
@@ -400,7 +395,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     mailparser.end();
 
                 } else {
-                    $scope.$evalAsync(function() {
+                    $scope.$applyAsync(function() {
                         showMessage(result);
                     });
                 }
@@ -412,7 +407,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         } else {
             $scope.scrollToMe();
         }
-    };
+    }
 
 
     /**
@@ -579,7 +574,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     reader.readAsDataURL(blob);
                 }
             } catch (error) {
-                console.log(error);
+                console.error(error);
             }
 
         // }
