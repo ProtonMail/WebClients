@@ -12,15 +12,18 @@ angular.module("proton.controllers.Outside", [
     $rootScope,
     $scope,
     $state,
+    $sce,
     $stateParams,
     $timeout,
     gettextCatalog,
     Attachment,
     CONSTANTS,
     Eo,
+    embedded,
     Message,
     attachments,
     authentication,
+    prepareContent,
     message,
     notify,
     pmcw,
@@ -33,17 +36,42 @@ angular.module("proton.controllers.Outside", [
     var password = pmcw.decode_utf8_base64(secureSessionStorage.getItem("proton:encrypted_password"));
     var token_id = $stateParams.tag;
 
+    function clean(body) {
+        var content = angular.copy(body);
+
+        content = tools.clearImageBody(content);
+        content = DOMPurify.sanitize(content, {
+            ADD_ATTR: ['target'],
+            FORBID_TAGS: ['style', 'input', 'form']
+        });
+
+        if ($state.is('eo.message')) {
+            content = prepareContent(content, message);
+        } else if ($state.is('eo.reply')) {
+            content = '<br /><br /><blockquote>' + content + '</blockquote>';
+        }
+
+        return content;
+    }
+
     $scope.initialization = function() {
-        if (message.displayMessage === true) {
-            message.Body = $scope.clean(message.Body);
+        message.Body = clean(message.Body);
+
+        if ($state.is('eo.message')) {
             message.imagesHidden = tools.containsImage(message.Body);
 
             _.each(message.Replies, function(reply) {
-                reply.Body = $scope.clean(reply.Body);
+                reply.Body = clean(reply.Body);
+            });
+
+            message.decryptedBody = $sce.trustAsHtml(message.Body);
+            $scope.message = message;
+        } else if ($state.is('eo.reply')) {
+            embedded.parser(message).then( function(result) {
+                message.Body = result;
+                $scope.message = message;
             });
         }
-
-        $scope.message = message;
 
         $('#inputFile').change(function(event) {
             event.preventDefault();
@@ -109,73 +137,88 @@ angular.module("proton.controllers.Outside", [
     $scope.send = function() {
         var deferred = $q.defer();
         var publicKey = $scope.message.publicKey;
-        var bodyPromise = pmcw.encryptMessage($scope.message.Body, $scope.message.publicKey);
-        var replyBodyPromise = pmcw.encryptMessage($scope.message.Body, [], password);
+        embedded.parser($scope.message, 'cid')
+        .then(function(result) {
+            var bodyPromise = pmcw.encryptMessage(result, $scope.message.publicKey);
+            var replyBodyPromise = pmcw.encryptMessage(result, [], password);
 
-        $q.all({
-            Body: bodyPromise,
-            ReplyBody: replyBodyPromise
-        })
-        .then(
-            function(result) {
-                var Filename = [];
-                var MIMEType = [];
-                var KeyPackets = [];
-                var DataPacket = [];
+            $q.all({
+                Body: bodyPromise,
+                ReplyBody: replyBodyPromise
+            })
+            .then(
+                function(result) {
+                    var promises = [];
+                    var Filename = [];
+                    var MIMEType = [];
+                    var KeyPackets = [];
+                    var DataPacket = [];
+                    const REGEXP_CID_CLEAN = /[<>]+/g;
 
-                _.each($scope.message.Attachments, function(attachment) {
-                    Filename.push(attachment.Filename);
-                    MIMEType.push(attachment.MIMEType);
-                    KeyPackets.push(attachment.KeyPackets);
-                    DataPacket.push(attachment.DataPacket);
-                });
+                    promises = $scope.message.Attachments.map(function(attachment) {
+                        var cid = embedded.getCid(attachment.Headers);
 
-                var data = {
-                    'Body': result.Body,
-                    'ReplyBody': result.ReplyBody,
-                    'Filename[]': Filename,
-                    'MIMEType[]': MIMEType,
-                    'KeyPackets[]': KeyPackets,
-                    'DataPacket[]': DataPacket
-                };
+                        if (cid) {
+                            return embedded.getBlob(cid).then((blob) => {
+                                return Promise.resolve({
+                                    Filename: attachment.Name,
+                                    DataPacket: blob,
+                                    MIMEType: attachment.MIMEType,
+                                    KeyPackets: new Blob([attachment.KeyPackets])
+                                });
+                            });
+                        } else {
+                            return Promise.resolve({
+                                Filename: attachment.Filename,
+                                DataPacket: attachment.DataPacket,
+                                MIMEType: attachment.MIMEType,
+                                KeyPackets: attachment.KeyPackets
+                            });
+                        }
+                    });
 
-                Eo.reply(decrypted_token, token_id, data)
-                .then(
-                    function(result) {
-                        $state.go('eo.message', {tag: $stateParams.tag});
-                        notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'});
-                        deferred.resolve(result);
-                    },
-                    function(error) {
-                        error.message = gettextCatalog.getString('Error during the reply process', null, 'Error');
-                        deferred.reject(error);
-                    }
-                );
-            },
-            function(error) {
-                error.message = gettextCatalog.getString('Error during the encryption', null, 'Error');
-                deferred.reject(error);
-            }
-        );
+                    Promise.all(promises)
+                    .then(function(attachments) {
+                        attachments.forEach((attachment) => {
+                            Filename.push(attachment.Filename);
+                            DataPacket.push(attachment.DataPacket);
+                            MIMEType.push(attachment.MIMEType);
+                            KeyPackets.push(attachment.KeyPackets);
+                        });
+
+                        Eo.reply(decrypted_token, token_id, {
+                            'Body': result.Body,
+                            'ReplyBody': result.ReplyBody,
+                            'Filename[]': Filename,
+                            'MIMEType[]': MIMEType,
+                            'KeyPackets[]': KeyPackets,
+                            'DataPacket[]': DataPacket
+                        })
+                        .then(
+                            function(result) {
+                                $state.go('eo.message', {tag: $stateParams.tag});
+                                notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'});
+                                deferred.resolve(result);
+                            },
+                            function(error) {
+                                error.message = gettextCatalog.getString('Error during the reply process', null, 'Error');
+                                deferred.reject(error);
+                            }
+                        );
+                    });
+                },
+                function(error) {
+                    error.message = gettextCatalog.getString('Error during the encryption', null, 'Error');
+                    deferred.reject(error);
+                }
+            );
+        });
 
         return networkActivityTracker.track(deferred.promise);
     };
 
     $scope.cancel = function() {
         $state.go('eo.message', {tag: $stateParams.tag});
-    };
-
-
-    $scope.clean = function(body) {
-        var content = angular.copy(body);
-
-        content = tools.clearImageBody(content);
-        content = DOMPurify.sanitize(content, {
-            ADD_ATTR: ['target'],
-            FORBID_TAGS: ['style', 'input', 'form']
-        });
-
-        return content;
     };
 
     $scope.reply = function() {
@@ -320,7 +363,7 @@ angular.module("proton.controllers.Outside", [
             var blob = new Blob([attachment.data], {type: attachment.MIMEType});
             var link = $(attachment.el);
 
-            if($rootScope.isFileSaverSupported) {
+            if ($rootScope.isFileSaverSupported) {
                 saveAs(blob, attachment.Name);
             } else {
                 // Bad blob support, make a data URI, don't click it

@@ -65,17 +65,13 @@ angular.module('proton.cache', [])
      * Update message cached
      * @param {Object} message
      */
-    var updateMessage = function(message) {
-        var current = _.findWhere(messagesCached, {ID: message.ID});
-
-        message = new Message(message);
+    var updateMessage = function(msg) {
+        var current = _.findWhere(messagesCached, {ID: msg.ID});
+        const message = new Message(msg);
 
         if (angular.isDefined(current)) {
             manageCounters(current, message, 'message');
-
-            var index = messagesCached.indexOf(current);
-
-            _.extend(messagesCached[index], message);
+            _.extend(current, message);
         } else {
             messagesCached.push(message);
         }
@@ -93,7 +89,6 @@ angular.module('proton.cache', [])
         var current = _.findWhere(conversationsCached, {ID: conversation.ID});
 
         if (angular.isDefined(current)) {
-            var index = _.findIndex(conversationsCached, {ID: conversation.ID});
             var labelIDs = conversation.LabelIDs || current.LabelIDs || [];
 
             if (angular.isArray(conversation.LabelIDsRemoved)) {
@@ -107,10 +102,8 @@ angular.module('proton.cache', [])
             }
 
             conversation.LabelIDs = labelIDs;
-
             manageCounters(current, conversation, 'conversation');
-
-            _.extend(conversationsCached[index], conversation);
+            _.extend(current, conversation);
         } else {
             conversationsCached.push(conversation);
         }
@@ -848,7 +841,7 @@ angular.module('proton.cache', [])
         var promises = [];
         var dirty;
 
-        if(fromBackend === true) {
+        if (fromBackend === true) {
             console.log('events from the back-end', events);
             dirty = false;
         } else {

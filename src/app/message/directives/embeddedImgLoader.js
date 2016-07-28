@@ -28,7 +28,7 @@ angular.module('proton.message')
                         img.removeAttribute('data-embedded-img');
                         container.replaceChild(img, loader);
                     });
-                    
+
                     $rootScope.$emit('embedded.injected');
                 });
             });
