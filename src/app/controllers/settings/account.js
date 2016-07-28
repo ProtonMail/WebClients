@@ -34,12 +34,7 @@ angular.module('proton.controllers.Settings')
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
     $scope.ShowImages = authentication.user.ShowImages;
     $scope.hotkeys = authentication.user.Hotkeys;
-
-    $timeout(function() {
-        if(angular.isDefined(authentication.user.Signature)) {
-            $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
-        }
-    }, 1000);
+    $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
 
     $scope.enableDesktopNotifications = function() {
         desktopNotifications.request(function() {
