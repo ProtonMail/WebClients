@@ -74,7 +74,6 @@ angular.module('proton.actions', [])
                 var messages = cache.queryMessagesCached(id);
                 var element = {
                     ID: id,
-                    IsRead: toTrash ? 1 : conversation.IsRead,
                     Selected: false,
                     LabelIDsRemoved: labelIDsRemoved, // Remove current location
                     LabelIDsAdded: labelIDsAdded // Add new location

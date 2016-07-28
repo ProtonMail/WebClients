@@ -433,7 +433,6 @@ angular.module('proton.routes', [
                     });
 
                     $q.all(promises).then(function() {
-                        message.displayMessage = true;
                         deferred.resolve(new Message(message));
                     });
                 });
@@ -452,7 +451,7 @@ angular.module('proton.routes', [
     .state('eo.reply', {
         url: '/eo/reply/:tag',
         resolve: {
-            message: function($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
+            message: function($stateParams, $q, Eo, Message, pmcw, prepareContent, secureSessionStorage) {
                 var deferred = $q.defer();
                 var token_id = $stateParams.tag;
                 var decrypted_token = secureSessionStorage.getItem('proton:decrypted_token');
@@ -465,10 +464,11 @@ angular.module('proton.routes', [
                     message.publicKey = result.data.PublicKey; // The sender’s public key
                     pmcw.decryptMessageRSA(message.Body, password, message.Time)
                     .then(function(body) {
-                        message.Body = '<br /><br /><blockquote>' + body + '</blockquote>';
-                        message.Attachments = [];
-                        message.NumAttachments = 0;
-                        message.replyMessage = true;
+                        var attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
+
+                        message.Body = body;
+                        message.Attachments = attachments;
+                        message.NumAttachments = attachments.length;
                         deferred.resolve(new Message(message));
                     });
                 });

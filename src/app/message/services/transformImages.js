@@ -13,7 +13,7 @@ angular.module('proton.message')
             images.forEach(function(image) {
                 const src = image.src;
                 const isEmbedded = REGEXP_IS_CID.test(src);
-
+            
                 if (isEmbedded) {
                     image.removeAttribute('src');
                     image.setAttribute('data-embedded-img', src);

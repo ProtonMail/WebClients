@@ -32,8 +32,8 @@ angular.module("proton.models.eo", [])
             var fd = new FormData();
             var xhr = new XMLHttpRequest();
 
-            _.each(Object.keys(data), function(key) {
-                if(angular.isArray(data[key])) {
+            Object.keys(data).forEach(function(key) {
+                if (angular.isArray(data[key])) {
                     _.each(data[key], function(v) {
                         fd.append(key, v);
                     });

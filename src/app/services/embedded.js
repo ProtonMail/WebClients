@@ -2,10 +2,14 @@ angular.module("proton.embedded", [])
 .factory("embedded", function(
     $log,
     $q,
-    authentication,
-    pmcw,
+    $state,
+    $stateParams,
     attachments,
-    notify
+    authentication,
+    Eo,
+    notify,
+    secureSessionStorage,
+    pmcw
 ) {
 
     // Loop through attachments and create an array of
@@ -86,8 +90,8 @@ angular.module("proton.embedded", [])
      * @return {Boolean}
      */
     var xray = function() {
-        var self = this;
-        var attachs =  self.Attachments || [];
+        var message = this;
+        var attachs =  message.Attachments || [];
 
         /* initiate a CID list */
         CIDList = {};
@@ -107,10 +111,8 @@ angular.module("proton.embedded", [])
                         // remove the < >.
                         // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
                         cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
-                    }
-
-                    // We can find an image without cid so base64 the location
-                    if (Headers['content-location'] && !Headers['content-id']) {
+                    } else if (Headers['content-location']) {
+                        // We can find an image without cid so base64 the location
                         cid = Headers['content-location'];
                     }
 
@@ -165,10 +167,9 @@ angular.module("proton.embedded", [])
     // a CID header, and store them for reusability purpose
 
     var decrypt = function() {
-
-        var self = this;
+        var message = this;
         var decryption = $q.defer();
-        var attachs =  self.Attachments;
+        var attachs =  message.Attachments;
         var processed = false;
 
         // loop the CID list
@@ -182,16 +183,23 @@ angular.module("proton.embedded", [])
                 processed = true;
 
                 var attachment = attachs[index];
-                var att = attachments.get(attachment.ID, attachment.Name);
-                var message = self.message;
+                var att, pk;
 
                 attachment.decrypting = true;
-
                 // decode key packets
                 var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-
                 // get user's pk
-                var pk = authentication.getPrivateKeys(self.AddressID);
+                if ($state.is('eo.message') || $state.is('eo.reply')) {
+                    var decrypted_token = secureSessionStorage.getItem('proton:decrypted_token');
+                    var token_id = $stateParams.tag;
+
+                    pk = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
+                    att = Eo.attachment(decrypted_token, token_id, attachment.ID);
+                } else {
+                    pk = authentication.getPrivateKeys(message.AddressID);
+                    att = attachments.get(attachment.ID, attachment.Name);
+                }
+
                 var key = pmcw.decryptSessionKey(keyPackets, pk);
 
                 // when we have the session key and attachment:
@@ -226,7 +234,7 @@ angular.module("proton.embedded", [])
 
        });
 
-       if(!processed) {
+       if (!processed) {
           // all cid was already stored, we can resolve
           decryption.resolve(Blobs);
        }
@@ -267,11 +275,10 @@ angular.module("proton.embedded", [])
             direction = direction || "blob";
             CIDList = {};
             var deferred = $q.defer(),
-                content = message.decryptedBody|| message.Body,
+                content = message.decryptedBody || message.Body,
                 x = xray.bind(message),
                 d = decrypt.bind(message),
                 p = parse.bind(message, direction);
-
             if (x()) {
                 // Check if the content has cid attachments
                 if(Object.keys(CIDList).length > 0) {
@@ -291,6 +298,25 @@ angular.module("proton.embedded", [])
 
            return deferred.promise;
 
+        },
+        getCid: function(headers) {
+            return headers && (headers['content-id'].replace(REGEXP_CID_CLEAN, '') || headers['content-location']);
+        },
+        getBlob: function(cid) {
+            var xhr = new XMLHttpRequest();
+            var deferred = $q.defer();
+
+            xhr.open('GET', Blobs[cid].url, true);
+            xhr.responseType = 'blob';
+            xhr.onload = function(e) {
+                if (this.status === 200) {
+                    deferred.resolve(this.response);
+                }
+            };
+
+            xhr.send();
+
+            return deferred.promise;
         },
         addEmbedded: function(message, cid, data, MIME){
             store(cid, data, MIME);
