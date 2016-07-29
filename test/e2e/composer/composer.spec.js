@@ -1,5 +1,6 @@
 const composer = require('./composer.po');
 const message = {
+  Subject: 'JO: Ha que coucou',
   ToList: 'qatest1@protonmail.com',
   CCList: 'qatest2@protonmail.com',
   BCCList: 'qatest3@protonmail.com',
@@ -40,14 +41,23 @@ describe('composer tests', () => {
         })
     })
 
-    // it('should add a subject', () => {
-    // })
+    it('should add a subject', () => {
+      borodin
+        .fillInput('Subject', message.Subject)
+        .then((text) => {
+          expect(text).toEqual(message.Subject);
+        })
+    })
 
-    // it('should fill the content', () => {
-    // })
-
-    // it('should send the message', () => {
-    // })
+    it('should send the message', () => {
+      borodin
+        .send()
+        .then(browser.sleep(5000))
+        .then(borodin.isOpened())
+        .then((editor) => {
+          expect(editor).toEqual(false);
+        });
+    })
 
     // it('should hide the composer', () => {
     // })
