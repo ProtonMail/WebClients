@@ -450,7 +450,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             element.Selected = false;
         });
         $rootScope.numberElementChecked = 0;
-        $rootScope.showWelcome = true;
     };
 
     /**
@@ -461,7 +460,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             element.Selected = true;
         });
         $rootScope.numberElementChecked = $scope.conversations.length;
-        $rootScope.showWelcome = false;
     };
 
     /**
