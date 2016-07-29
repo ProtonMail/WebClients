@@ -297,7 +297,7 @@ angular.module("proton.modals", [])
 })
 
 // Card modal
-.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, gettextCatalog, $q) {
+.factory('cardModal', function(pmModal, Payment, notify, pmcw, tools, gettextCatalog, $q, networkActivityTracker) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/card.tpl.html',
@@ -390,15 +390,17 @@ angular.module("proton.modals", [])
             this.submit = function() {
                 this.process = true;
 
-                validateCardNumber()
-                .then(validateCardExpiry)
-                .then(validateCardCVC)
-                .then(method)
-                .then(finish)
-                .catch(function(error) {
-                    notify({message: error, classes: 'notification-danger'});
-                    this.process = false;
-                }.bind(this));
+                networkActivityTracker.track(
+                    validateCardNumber()
+                    .then(validateCardExpiry)
+                    .then(validateCardCVC)
+                    .then(method)
+                    .then(finish)
+                    .catch(function(error) {
+                        notify({message: error, classes: 'notification-danger'});
+                        this.process = false;
+                    }.bind(this))
+                );
             };
 
             this.cancel = function() {
