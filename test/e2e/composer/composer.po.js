@@ -39,7 +39,11 @@ module.exports = () => {
       return browser.executeScript(body);
     };
 
-    return { content, fillInput };
+    const isOpened = () => browser.executeScript(`document.body.querySelector('.composer') !== null`);
+
+    const send = () => browser.executeScript(`$('composer-email-Send').click()`);
+
+    return { content, fillInput, send, isOpened };
   };
 
   return { open, isOpened, compose };
