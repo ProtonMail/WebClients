@@ -52,10 +52,13 @@ describe('composer tests', () => {
     it('should send the message', () => {
       borodin
         .send()
-        .then(browser.sleep(5000))
-        .then(borodin.isOpened())
-        .then((editor) => {
-          expect(editor).toEqual(false);
+        .then(() => {
+          browser.sleep(5000);
+          borodin
+            .isOpened()
+            .then((editor) => {
+              expect(editor).toEqual(false);
+            });
         });
     })
 
