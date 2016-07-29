@@ -25,10 +25,9 @@ angular.module('proton.message')
                 var button = document.createElement('button');
                 var title = gettextCatalog.getString('Show previous message', null, 'Title');
 
-                button.className = 'fa fa-ellipsis-h pm_button more';
+                button.className = 'fa fa-ellipsis-h pm_button more proton-message-blockquote-toggle';
                 button.setAttribute('title', title);
                 blockquote.parentNode.insertBefore(button, blockquote);
-                blockquote.style.display = 'none';
             }
         }
 

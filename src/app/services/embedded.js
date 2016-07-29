@@ -72,7 +72,7 @@ angular.module("proton.embedded", [])
                 const current = Blobs[ cid ];
 
                 if (current) {
-                    const selector = (current.isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[rel="${cid}"]`;
+                    const selector = (current.isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[rel="${cid}"], img[data-embedded-img="cid:${cid}"]`;
 
                     const nodes = [].slice.call(testDiv.querySelectorAll(selector));
 
@@ -274,6 +274,7 @@ angular.module("proton.embedded", [])
              // parse direction (cid<->blob)
             direction = direction || "blob";
             CIDList = {};
+
             var deferred = $q.defer(),
                 content = message.decryptedBody || message.Body,
                 x = xray.bind(message),
@@ -282,7 +283,6 @@ angular.module("proton.embedded", [])
             if (x()) {
                 // Check if the content has cid attachments
                 if(Object.keys(CIDList).length > 0) {
-
                     // Decrypt, then return the parsed content
                     d().then(p).then(function(content){
                         deferred.resolve(content);

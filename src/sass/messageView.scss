@@ -522,3 +522,7 @@ body.mobileMode {
         }
     }
 }
+
+
+.proton-message-blockquote-toggle ~ * {display: none}
+/*blockquote:not(.proton-message-blockquote-toggle) > .proton-message-blockquote-toggle {display: block}*/
