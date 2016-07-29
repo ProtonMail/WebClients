@@ -48,7 +48,7 @@
     </div>
     <div id="outsideMessage">
         <div id="message-body" data-embedded-img-loader>
-            <div class="email bodyDecrypted" ng-bind-html="message.decryptedBody" scroll="false"></div>
+            <div class="email bodyDecrypted" ng-bind-html="message.decryptedBody" toggle-blockquote mail-to scroll="false"></div>
         </div>
     </div>
     <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
