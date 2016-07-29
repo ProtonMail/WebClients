@@ -148,14 +148,12 @@ angular.module("proton.controllers.Outside", [
             })
             .then(
                 function(result) {
-                    var promises = [];
                     var Filename = [];
                     var MIMEType = [];
                     var KeyPackets = [];
                     var DataPacket = [];
-                    const REGEXP_CID_CLEAN = /[<>]+/g;
-
-                    promises = $scope.message.Attachments.map(function(attachment) {
+                    var attachments = $scope.message.Attachments || [];
+                    var promises = attachments.map(function(attachment) {
                         var cid = embedded.getCid(attachment.Headers);
 
                         if (cid) {
@@ -164,7 +162,8 @@ angular.module("proton.controllers.Outside", [
                                     Filename: attachment.Name,
                                     DataPacket: blob,
                                     MIMEType: attachment.MIMEType,
-                                    KeyPackets: new Blob([attachment.KeyPackets])
+                                    KeyPackets: new Blob([attachment.KeyPackets]),
+                                    Headers: attachment.Headers
                                 });
                             });
                         } else {

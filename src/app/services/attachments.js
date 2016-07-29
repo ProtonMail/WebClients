@@ -114,7 +114,6 @@ angular.module('proton.attachments', ['proton.authentication', 'proton.storage']
                         deferred.reject(response);
                     }
                 } else {
-                    
                     attachmentData.AttachmentID = response.AttachmentID;
                     attachmentData.Headers = response.Attachment.Headers;
 
@@ -132,7 +131,7 @@ angular.module('proton.attachments', ['proton.authentication', 'proton.storage']
             xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
             xhr.setRequestHeader("x-pm-apiversion", CONFIG.api_version);
             xhr.setRequestHeader("x-pm-session", pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken')));
-            
+
             xhr.send(data);
 
             return deferred.promise;
