@@ -29,9 +29,11 @@ module.exports = () => {
     };
 
     const fillInput = (type, value) => {
+      const input = 'Subject' === type ? 'input' : 'input.new-value-email';
+
       const body = `
         const $input = $('.composer-email-${type}')
-        .find('input');
+        .find(${input});
 
         $input.val('${value}');
         return $input.val();
@@ -39,9 +41,9 @@ module.exports = () => {
       return browser.executeScript(body);
     };
 
-    const isOpened = () => browser.executeScript(`document.body.querySelector('.composer') !== null`);
+    const isOpened = () => browser.executeScript(`return document.body.querySelector('.composer') !== null`);
 
-    const send = () => browser.executeScript(`$('composer-email-Send').click()`);
+    const send = () => browser.executeScript(`$('.composer-email-Send').click()`);
 
     return { content, fillInput, send, isOpened };
   };
