@@ -356,7 +356,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         _.forEach($scope.pendingAttachements, function (file) {
 
-            if(embedding) {
+            if (embedding) {
                 // required for BE to get a cid-header
                 file.inline = 1;
                 // for loading UX
