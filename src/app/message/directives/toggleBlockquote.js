@@ -3,19 +3,14 @@ angular.module('proton.message')
     restrict: 'A',
     link(scope, element) {
         var click = function(event) {
-            var target = event.target;
+
+            const target = event.target;
 
             if (target.tagName === 'BUTTON' && target.classList.contains('more')) {
-                
                 event.preventDefault();
-
-                var blockquote = target.nextElementSibling;
-
-                if (blockquote.style.display === 'none') {
-                    blockquote.style.display = 'block';
-                } else {
-                    blockquote.style.display = 'none';
-                }
+                target
+                    .classList
+                    .toggle('proton-message-blockquote-toggle');
             }
         };
 
