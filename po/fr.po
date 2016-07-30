@@ -7,7 +7,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-07-30 12:55+0200\n"
+"PO-Revision-Date: 2016-07-30 13:59+0200\n"
 "Language-Team: français <>\n"
 "MIME-Version: 1.0\n"
 "X-Generator: Gtranslator 2.91.6\n"
@@ -237,7 +237,7 @@ msgstr ""
 #: src/app/controllers/contacts.js:203
 msgctxt "Action"
 msgid "Add new contact"
-msgstr ""
+msgstr "Ajouter un nouveau contact"
 
 #: src/app/templates/directives/labels.tpl.html:35
 msgid "Add new label"
@@ -572,7 +572,7 @@ msgstr "Êtes-vous sûr de vouloir supprimer cette adresse ?"
 #: src/app/controllers/settings/labels.js:134
 msgctxt "Info"
 msgid "Are you sure you want to delete this label?"
-msgstr "Êtes-vous sûr de vouloir supprimer ce label ?"
+msgstr "Êtes-vous sûr de vouloir supprimer ce libellé ?"
 
 #: src/app/controllers/settings/payments.js:97
 msgctxt "Info"
@@ -1133,7 +1133,7 @@ msgstr "Créer un compte"
 #: src/app/controllers/settings/labels.js:60
 msgctxt "Title"
 msgid "Create new label"
-msgstr "Créer un nouveau label"
+msgstr "Créer un nouveau libellé"
 
 #: src/app/templates/views/payments.tpl.html:109
 msgctxt "Title"
@@ -1437,7 +1437,7 @@ msgstr "Supprimer le brouillon"
 #: src/app/controllers/settings/labels.js:133
 msgctxt "Title"
 msgid "Delete label"
-msgstr "Supprimer le label"
+msgstr "Supprimer le libellé"
 
 #: src/app/controllers/settings/payments.js:96
 msgctxt "Title"
@@ -1694,7 +1694,7 @@ msgstr "Éditer l’identité"
 #: src/app/controllers/settings/labels.js:91
 msgctxt "Title"
 msgid "Edit label"
-msgstr "Éditer un label"
+msgstr "Éditer un libellé"
 
 #: src/app/templates/modals/contact.tpl.html:20
 #: src/app/templates/views/step1.tpl.html:87
@@ -1928,7 +1928,7 @@ msgstr "Erreur pendant la requête d'activation"
 #: src/app/controllers/settings/labels.js:210
 msgctxt "Error"
 msgid "Error during label request"
-msgstr "Erreur pendant la requête du label"
+msgstr "Erreur pendant la requête du libellé"
 
 #: src/app/controllers/settings/dashboard.js:332 src/app/services/modal.js:692
 #: src/app/services/modal.js:695
@@ -2536,24 +2536,24 @@ msgstr "Mots-clefs"
 #: src/app/templates/partials/no-results.tpl.html:23
 msgctxt "Title"
 msgid "Label"
-msgstr "Label"
+msgstr "Libellé"
 
 #: src/app/controllers/settings/labels.js:71
 msgid "Label created"
-msgstr "Label créé"
+msgstr "Libellé créé"
 
 #: src/app/controllers/settings/labels.js:145
 msgid "Label deleted"
-msgstr "Label supprimé"
+msgstr "Libellé supprimé"
 
 #: src/app/controllers/settings/labels.js:107
 #: src/app/controllers/settings/labels.js:201
 msgid "Label edited"
-msgstr "Label édité"
+msgstr "Libellé édité"
 
 #: src/app/templates/modals/label.tpl.html:14
 msgid "Label name"
-msgstr "Nom du label"
+msgstr "Nom du libellé"
 
 #: src/app/controllers/settings/labels.js:176
 msgid "Label order saved"
@@ -2562,7 +2562,7 @@ msgstr ""
 #: src/app/templates/partials/sidebar.tpl.html:71
 msgctxt "Action"
 msgid "Label settings"
-msgstr "Paramètres du label"
+msgstr "Paramètres du libellé"
 
 #: src/app/models/payments.js:91 src/app/models/payments.js:98
 #: src/app/templates/partials/menu.settings.tpl.html:31
@@ -2570,18 +2570,18 @@ msgstr "Paramètres du label"
 #: src/app/templates/partials/toolbar-list-rows.tpl.html:42
 #: src/app/templates/partials/toolbar-mobile.tpl.html:64
 msgid "Labels"
-msgstr "Labels"
+msgstr "Libellés"
 
 #: src/app/controllers/secured.js:231 src/app/controllers/secured.js:32
 msgctxt "Title"
 msgid "Labels"
-msgstr "Labels"
+msgstr "Libellés"
 
 #. custom domain menu
 #: src/app/templates/partials/menu.settings.tpl.html:9
 msgctxt "Nav"
 msgid "Labels"
-msgstr "Labels"
+msgstr "Libellés"
 
 #: src/app/templates/partials/wizard.tpl.html:27
 msgctxt "Info"
@@ -2594,7 +2594,7 @@ msgstr ""
 
 #: src/app/services/actions.js:109 src/app/services/actions.js:552
 msgid "Labels saved"
-msgstr "Labels sauvegardés"
+msgstr "Libellés sauvegardés"
 
 #: src/app/templates/views/appearance.tpl.html:30
 msgctxt "Title"
@@ -2802,7 +2802,7 @@ msgstr "Gérer le stockage"
 #: src/app/templates/partials/wizard.tpl.html:25
 msgctxt "Title"
 msgid "Manage your email with labels"
-msgstr "Gérer vos emails avec les labels"
+msgstr "Gérer vos emails avec les libellés"
 
 #. form option
 #: src/app/templates/views/account.tpl.html:246
@@ -3140,7 +3140,7 @@ msgstr "Aucun fichier n'a été sélectionné"
 #: src/app/templates/directives/labels.tpl.html:3
 msgctxt "Info"
 msgid "No labels"
-msgstr "Aucun label"
+msgstr "Aucun libellé"
 
 #: src/app/templates/views/security.tpl.html:28
 msgid "No logs yet"
@@ -4590,7 +4590,7 @@ msgstr "Message non-chiffré"
 
 #: src/app/models/payments.js:112
 msgid "Unlimited labels"
-msgstr "Labels illimités"
+msgstr "Libellés illimités"
 
 #: src/app/models/payments.js:111
 msgid "Unlimited sending"
@@ -5026,8 +5026,8 @@ msgctxt "Info"
 msgid ""
 "You have no labels, you can add label with the above button 'ADD LABEL'."
 msgstr ""
-"Vous n'avez aucun label, vous pouvez ajouter un label via le bouton 'AJOUTER "
-"UN LABEL'."
+"Vous n'avez aucun libellé, vous pouvez ajouter un libellé via le bouton "
+"'AJOUTER UN LIBELLÉ'."
 
 #: src/app/templates/views/payments.tpl.html:10
 msgctxt "Info"
