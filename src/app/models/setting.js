@@ -44,9 +44,6 @@ angular.module('proton.models.setting', [])
         setShowImages: function(params) {
             return $http.put(url.get() + '/settings/showimages', params);
         },
-        setShowEmbedded: function(params) {
-            return $http.put(url.get() + '/settings/showembedded', params);
-        },
         setViewlayout: function(params) {
             return $http.put(url.get() + '/settings/viewlayout', params);
         },

@@ -32,8 +32,7 @@ angular.module('proton.controllers.Settings')
     $scope.dailyNotifications = !!authentication.user.Notify;
     $scope.desktopNotificationsStatus = desktopNotifications.status();
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
-    $scope.images = authentication.user.ShowImages;
-    $scope.embedded = authentication.user.ShowEmbedded;
+    $scope.ShowImages = authentication.user.ShowImages;
     $scope.hotkeys = authentication.user.Hotkeys;
     $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
 
@@ -320,21 +319,11 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.saveImages = function(form) {
+    $scope.saveShowImages = function(form) {
         networkActivityTracker.track(
-            Setting.setShowImages({ShowImages: $scope.images})
+            Setting.setShowImages({ShowImages: $scope.ShowImages})
             .then(function(result) {
-                authentication.user.ShowImages = $scope.images;
-                notify({message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success'});
-            })
-        );
-    };
-
-    $scope.saveEmbedded = function() {
-        networkActivityTracker.track(
-            Setting.setShowEmbedded({ShowEmbedded: $scope.embedded})
-            .then(function(result) {
-                authentication.user.ShowEmbedded = $scope.embedded;
+                authentication.user.ShowImages = $scope.ShowImages;
                 notify({message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success'});
             })
         );

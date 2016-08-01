@@ -33,6 +33,8 @@
         'read': message.IsRead === 1,
         'unread': message.IsRead === 0,
         'details': message.toggleDetails === true,
+        'showingImages': showingMessages,
+        'hasImages': !!message.imagesHidden,
         'hasLabels': (message.LabelIDs | labels).length > 0,
         'draft': message.Type === 1,
         'sent': message.Type === 2 || message.Type === 3
@@ -247,6 +249,7 @@
                 </a>
 
             </div>
+
         </div>
 
         <div ng-if="message.ExpirationTime > 0" class="expiration" ng-if="message.expand">
@@ -259,13 +262,6 @@
             <a href="#">
                 <i class="fa fa-photo"></i>
                 <span translate translate-context="Action">Show images</span>
-            </a>
-        </div>
-
-        <div ng-show="message.embeddedHidden && message.expand" class="showImages" ng-click="displayEmbedded()">
-            <a href="#">
-                <i class="fa fa-photo"></i>
-                <span translate translate-context="Action">Show embedded images</span>
             </a>
         </div>
 
