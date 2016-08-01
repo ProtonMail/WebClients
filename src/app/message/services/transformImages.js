@@ -9,14 +9,13 @@ angular.module('proton.message')
         const images = [].slice.call(html.querySelectorAll('img[src]'));
 
         if (images.length > 0) {
-
             images.forEach(function(image) {
                 const src = image.src;
                 const isEmbedded = REGEXP_IS_CID.test(src);
-            
+
                 if (isEmbedded) {
-                    image.removeAttribute('src');
                     image.setAttribute('data-embedded-img', src);
+                    image.removeAttribute('src');
                     !image.parentElement.classList.contains('loading') && wrapImage(image);
                 }
             });
