@@ -9,6 +9,7 @@ angular.module("proton.embedded", [])
     Eo,
     notify,
     secureSessionStorage,
+    networkActivityTracker,
     pmcw
 ) {
 
@@ -97,8 +98,7 @@ angular.module("proton.embedded", [])
         CIDList = {};
 
         // Check if we have attachments
-        if (attachs.length) {
-
+        if (attachs.length && message.showEmbedded) {
             // Build a list of cids
             attachs.forEach(({ Headers = {} }) => {
                 const disposition = Headers['content-disposition'];
@@ -203,33 +203,33 @@ angular.module("proton.embedded", [])
                 var key = pmcw.decryptSessionKey(keyPackets, pk);
 
                 // when we have the session key and attachment:
-                $q.all({
-                    "attObject": att,
-                    "key": key
-                }).then(function(obj) {
+                networkActivityTracker.track(
+                    $q.all({
+                        "attObject": att,
+                        "key": key
+                    }).then(function(obj) {
 
-                    // create new Uint8Array to store decryted attachment
-                    var at = new Uint8Array(obj.attObject.data);
+                        // create new Uint8Array to store decryted attachment
+                        var at = new Uint8Array(obj.attObject.data);
 
-                    // grab the key
-                    var key = obj.key.key;
+                        // grab the key
+                        var key = obj.key.key;
 
-                    // grab the algo
-                    var algo = obj.key.algo;
+                        // grab the algo
+                        var algo = obj.key.algo;
 
-                    // decrypt the att
-                    pmcw.decryptMessage(at, key, true, algo)
-                    .then(
-                        function(decryptedAtt) {
-
-                            // store to Blobs
-                            store(cid,decryptedAtt.data,attachment.MIMEType, CIDList, decryption);
-                            attachment.decrypting = false;
-                            at = null;
-                        }
-                    );
-
-                });
+                        // decrypt the att
+                        return pmcw.decryptMessage(at, key, true, algo)
+                        .then(
+                            function(decryptedAtt) {
+                                // store to Blobs
+                                store(cid,decryptedAtt.data,attachment.MIMEType, CIDList, decryption);
+                                attachment.decrypting = false;
+                                at = null;
+                            }
+                        );
+                    })
+                );
             }
 
        });

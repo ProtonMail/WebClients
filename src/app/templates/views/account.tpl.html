@@ -256,28 +256,44 @@
 
             <section class="pm_form col-1-2">
                 <legend translate-context="Title" translate>Email images</legend>
-                <form method="post" novalidate ng-submit="saveShowImages(showImages)" name="showImages">
-                    <div class="clearfix">
-                        <div class="col-3-8">
-                            <label class="control-label" translate-context="Title" translate>Show images</label>
+
+                <div class="clearfix">
+                    <div class="col-3-8">
+                        <label class="control-label" translate-context="Title" translate>Show images</label>
+                    </div>
+                    <div class="col-5-8">
+                        <div class="radio">
+                            <label>
+                                <input ng-change="saveImages()" type="radio" ng-model="images" ng-value="1" /> <span translate-comment="form option" translate-context="Action" translate>Auto</span>
+                            </label>
                         </div>
-                        <div class="col-5-8">
-                            <div class="radio">
-                                <label>
-                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="1" /> <span translate-comment="form option" translate-context="Action" translate>Auto</span>
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input ng-change="saveShowImages()" type="radio" ng-model="ShowImages" ng-value="0" /> <span translate-comment="form option" translate-context="Action" translate>Manual</span>
-                                </label>
-                            </div>
-                            <p>
-                                <a target="_blank" href="https://protonmail.com/support/knowledge-base/images-by-default/" class="pm_button link" translate-context="Action" translate translate-comment="link to learn more">How does this work?</a>
-                            </p>
+                        <div class="radio">
+                            <label>
+                                <input ng-change="saveImages()" type="radio" ng-model="images" ng-value="0" /> <span translate-comment="form option" translate-context="Action" translate>Manual</span>
+                            </label>
+                        </div>
+                        <p>
+                            <a target="_blank" href="https://protonmail.com/support/knowledge-base/images-by-default/" class="pm_button link" translate-context="Action" translate translate-comment="link to learn more">How does this work?</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="col-3-8">
+                        <label class="control-label" translate-context="Title" translate>Embedded images</label>
+                    </div>
+                    <div class="col-5-8">
+                        <div class="radio">
+                            <label>
+                                <input ng-change="saveEmbedded()" type="radio" ng-model="embedded" ng-value="1" /> <span translate-comment="form option" translate-context="Action" translate>Auto</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input ng-change="saveEmbedded()" type="radio" ng-model="embedded" ng-value="0" /> <span translate-comment="form option" translate-context="Action" translate>Manual</span>
+                            </label>
                         </div>
                     </div>
-                </form>
+                </div>
             </section>
 
         </div><!--/.row-->
