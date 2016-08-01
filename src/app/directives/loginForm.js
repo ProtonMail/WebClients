@@ -8,7 +8,7 @@ angular.module('proton.login', [])
       // Clear cache
       cache.reset();
       cacheCounters.reset();
-      // We automatically logout the user when he comes to login page
-      authentication.logout(false);
+      // We automatically logout the user when he comes to login page and is already logged in
+      authentication.isLoggedIn() && authentication.logout(false);
     }
   }));
