@@ -86,24 +86,26 @@ angular.module("proton.tools", ["proton.constants"])
     tools.getOs = function() {
         var OSName = "other"; // Unknown OS
 
-        if (navigator.appVersion.indexOf("Win") !== -1) {
-            OSName = "windows";
+        if (navigator.appVersion) {
+            if (navigator.appVersion.indexOf('Win') !== -1) {
+                OSName = 'windows';
+            }
+
+            if (navigator.appVersion.indexOf('Mac') !== -1) {
+                OSName = 'osx';
+            }
+
+            if (navigator.appVersion.indexOf('X11') !== -1) {
+                OSName = 'linux';
+            }
+
+            if (navigator.appVersion.indexOf('Linux') !== -1) {
+                OSName = 'linux';
+            }
         }
 
-        if (navigator.appVersion.indexOf("Mac") !== -1) {
-            OSName = "osx";
-        }
-
-        if (navigator.appVersion.indexOf("X11") !== -1) {
-            OSName = "linux";
-        }
-
-        if (navigator.appVersion.indexOf("Linux") !== -1) {
-            OSName = "linux";
-        }
-
-        if(/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
-            OSName = "ios";
+        if (navigator.userAgent && /(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
+            OSName = 'ios';
         }
 
         return OSName;
