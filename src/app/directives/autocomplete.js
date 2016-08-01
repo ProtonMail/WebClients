@@ -119,6 +119,8 @@ angular.module('proton.autocomplete', [])
             */
             scope.initialization = function() {
                 scope.emails = scope.emails || [];
+
+                debugger;
                 scope.params.newValue = '';
                 scope.onChange();
             };
@@ -213,6 +215,8 @@ angular.module('proton.autocomplete', [])
                 } else {
                     scope.onClose();
                 }
+
+                debugger;
             };
 
             scope.onKeyDown = function(event, email) {
