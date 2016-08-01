@@ -15,11 +15,11 @@ angular.module("proton.squire", [
         link: function(scope, element, attrs, ngModel) {
             if (!ngModel) { return; } // do nothing if no ng-model
 
-            var IFRAME_CLASS, HEADER_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, menubar, ua, updateModel, updateStylesToMatch;
+            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, ua, updateModel, updateStylesToMatch;
 
             LINK_DEFAULT = IMAGE_DEFAULT = "";
             IFRAME_CLASS = 'angular-squire-iframe';
-            HEADER_CLASS = 'h4';
+
             isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
             editor = scope.editor = null;
             scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
@@ -178,19 +178,6 @@ angular.module("proton.squire", [
                     event.preventDefault();
                 });
 
-                editor.addEventListener("pathChange", function() {
-                    var p, ref;
-
-                    p = editor.getPath();
-
-                    if (/>A\b/.test(p) || editor.hasFormat('A')) {
-                        element.find('.add-link').addClass('active');
-                    } else {
-                        element.find('.add-link').removeClass('active');
-                    }
-
-                    menubar.attr("class", "squire-toolbar " + p.split("BODY")[1].replace(/>|\.|html|body|div/ig, ' ').replace(RegExp(HEADER_CLASS, 'g'), 'size').toLowerCase());
-                });
 
                 editor.alignRight = function() {
                     return editor.setTextAlignment("right");
@@ -241,7 +228,6 @@ angular.module("proton.squire", [
 
             iframe = element.find('iframe.squireIframe');
             var iframeDoc = iframe.contentDocument || iframe.contentWindow && iframe.contentWindow.document;
-            menubar = element.find('.squire-toolbar');
             loaded = false;
 
             // Check if browser is Webkit (Safari/Chrome) or Opera
