@@ -295,11 +295,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         displayContent(true);
     };
 
-    $scope.displayEmbedded = function() {
-        $scope.message.showEmbedded = true;
-        displayContent(true);
-    };
-
     /**
      * Decrypt the content of the current message and store it in 'message.decryptedBody'
      * @param {Boolean} force
