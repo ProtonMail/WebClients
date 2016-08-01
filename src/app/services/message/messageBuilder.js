@@ -90,7 +90,7 @@ angular.module('proton.service.message', [])
           var disposition = el.Headers["content-disposition"];
           var inline = new RegExp('^inline', 'i');
           return inline.test(disposition) === true;
-      });      
+      });
     }
 
     /**

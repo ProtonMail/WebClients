@@ -9,6 +9,7 @@ angular.module("proton.embedded", [])
     Eo,
     notify,
     secureSessionStorage,
+    networkActivityTracker,
     pmcw
 ) {
 
@@ -98,7 +99,6 @@ angular.module("proton.embedded", [])
 
         // Check if we have attachments
         if (attachs.length) {
-
             // Build a list of cids
             attachs.forEach(({ Headers = {} }) => {
                 const disposition = Headers['content-disposition'];
@@ -132,7 +132,7 @@ angular.module("proton.embedded", [])
     // this should be rewritted a bit to work with
     // the service store
 
-    const store = (cid, data, MIME, CIDList = {}, decryption = Promise) =>{
+    const store = (cid, data, MIME, CIDList = {}, deferred = Promise) =>{
 
         const { Headers = {}} = CIDList[cid] || {};
 
@@ -157,8 +157,8 @@ angular.module("proton.embedded", [])
         }
 
         // check if all CID are stored so we can resolve
-        if(Object.keys(Blobs).length === Object.keys(CIDList).length){
-            decryption.resolve(Blobs);
+        if (Object.keys(Blobs).length === Object.keys(CIDList).length){
+            deferred.resolve(Blobs);
         }
     };
 
@@ -168,7 +168,7 @@ angular.module("proton.embedded", [])
 
     var decrypt = function() {
         var message = this;
-        var decryption = $q.defer();
+        var deferred = $q.defer();
         var attachs =  message.Attachments;
         var processed = false;
 
@@ -178,8 +178,7 @@ angular.module("proton.embedded", [])
             .forEach( function(cid, index) {
 
             // Check if the CID is already stored
-            if(!Blobs[ cid ]) {
-
+            if (!Blobs[cid]) {
                 processed = true;
 
                 var attachment = attachs[index];
@@ -203,43 +202,42 @@ angular.module("proton.embedded", [])
                 var key = pmcw.decryptSessionKey(keyPackets, pk);
 
                 // when we have the session key and attachment:
-                $q.all({
-                    "attObject": att,
-                    "key": key
-                }).then(function(obj) {
+                networkActivityTracker.track(
+                    $q.all({
+                        "attObject": att,
+                        "key": key
+                    }).then(function(obj) {
 
-                    // create new Uint8Array to store decryted attachment
-                    var at = new Uint8Array(obj.attObject.data);
+                        // create new Uint8Array to store decryted attachment
+                        var at = new Uint8Array(obj.attObject.data);
 
-                    // grab the key
-                    var key = obj.key.key;
+                        // grab the key
+                        var key = obj.key.key;
 
-                    // grab the algo
-                    var algo = obj.key.algo;
+                        // grab the algo
+                        var algo = obj.key.algo;
 
-                    // decrypt the att
-                    pmcw.decryptMessage(at, key, true, algo)
-                    .then(
-                        function(decryptedAtt) {
-
-                            // store to Blobs
-                            store(cid,decryptedAtt.data,attachment.MIMEType, CIDList, decryption);
-                            attachment.decrypting = false;
-                            at = null;
-                        }
-                    );
-
-                });
+                        // decrypt the att
+                        return pmcw.decryptMessage(at, key, true, algo)
+                        .then(
+                            function(decryptedAtt) {
+                                // store to Blobs
+                                store(cid,decryptedAtt.data,attachment.MIMEType, CIDList, deferred);
+                                attachment.decrypting = false;
+                                at = null;
+                            }
+                        );
+                    })
+                );
             }
-
        });
 
        if (!processed) {
           // all cid was already stored, we can resolve
-          decryption.resolve(Blobs);
+          deferred.resolve();
        }
 
-       return decryption.promise;
+       return deferred.promise;
 
     };
 
@@ -282,7 +280,7 @@ angular.module("proton.embedded", [])
                 p = parse.bind(message, direction);
             if (x()) {
                 // Check if the content has cid attachments
-                if(Object.keys(CIDList).length > 0) {
+                if (Object.keys(CIDList).length > 0) {
                     // Decrypt, then return the parsed content
                     d().then(p).then(function(content){
                         deferred.resolve(content);
