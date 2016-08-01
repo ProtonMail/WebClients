@@ -61,7 +61,8 @@ module.exports = {
       "vendor/svgeezy/svgeezy.js",
       "vendor/mousetrap/mousetrap.js",
       "vendor/push.js/push.js",
-      "vendor/angular-gettext/dist/angular-gettext.js"
+      "vendor/angular-gettext/dist/angular-gettext.js",
+      "vendor/awesomplete/awesomplete.js",
     ],
     bootstrap_components: [
       "affix",
