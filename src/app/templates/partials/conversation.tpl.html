@@ -262,7 +262,7 @@
             </a>
         </div>
 
-        <div ng-show="message.embeddedHidden && message.expand" class="showImages" ng-click="displayEmbedded()">
+        <div ng-show="message.showEmbedded === false && message.expand" class="showImages" ng-click="displayEmbedded()">
             <a href="#">
                 <i class="fa fa-photo"></i>
                 <span translate translate-context="Action">Show embedded images</span>

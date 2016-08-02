@@ -502,7 +502,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var promises = [];
 
         if (message.Attachments && message.Attachments.length > 0) {
-
             var keys = authentication.getPrivateKeys(message.From.ID);
 
             _.each(message.Attachments, function(attachment) {
@@ -1494,7 +1493,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var deferred = $q.defer();
         $scope.validate(message)
         .then(function() {
-            embedded.parser(message,'cid').then(function(result) {
+            embedded.parser(message, 'cid').then(function(result) {
                 message.Body = result;
                 recordMessage(message, false, false, false)
                 .then(function() {
@@ -1570,11 +1569,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                                     if (message.Attachments.length > 0) {
                                         // Add clear attachments packet in parameter
-                                        promises.push(message.clearPackets().then(function(packets) {
-                                            parameters.AttachmentKeys = packets;
-                                        }, function(error) {
-                                            $log.error(error);
-                                        }));
+                                        promises.push(
+                                            message.clearPackets().then(function(packets) {
+                                                parameters.AttachmentKeys = packets;
+                                            })
+                                        );
                                     }
                                 }
 
