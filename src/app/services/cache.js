@@ -1006,6 +1006,7 @@ angular.module('proton.cache', [])
     //     }
     // }
     var exist = function(loc) {
+
         if(angular.isUndefined(counters[loc])) {
             counters[loc] = {
                 message: {
@@ -1022,36 +1023,39 @@ angular.module('proton.cache', [])
 
     /**
     * Query unread and total
+    * Find the total and unread items per message and conversation
     * @return {Promise}
     */
     api.query = function() {
-        var deferred = $q.defer();
+        const deferred = $q.defer();
+        const idsLabel = _.map(authentication.user.Labels, ({ ID }) => ID) || [];
+        const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(idsLabel);
 
         $q.all({
             message: Message.count().$promise,
             conversation: Conversation.count()
-        }).then(function(result) {
-            var locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, function(label) { return label.ID; }) || []);
+        })
+        .then(({ message = {}, conversation = {} } = {}) => {
 
             // Initialize locations
-            _.each(locs, function(loc) {
-                exist(loc);
-            });
+            locs.forEach(exist);
 
-            _.each(result.message.Counts, function(counter) {
-                counters[counter.LabelID].message.total = counter.Total || 0;
-                counters[counter.LabelID].message.unread = counter.Unread || 0;
-            });
+            _.chain(message.Counts)
+                .filter(({ LabelID }) => counters[LabelID])
+                .each(({ LabelID, Total = 0, Unread = 0 }) => {
+                    counters[LabelID].message.total = Total;
+                    counters[LabelID].message.unread = Unread;
+                });
 
-            _.each(result.conversation.data.Counts, function(counter) {
-                counters[counter.LabelID].conversation.total = counter.Total || 0;
-                counters[counter.LabelID].conversation.unread = counter.Unread || 0;
-            });
+            _.chain(conversation.data.Counts)
+                .filter(({ LabelID }) => counters[LabelID])
+                .each(({ LabelID, Total = 0, Unread = 0 }) => {
+                    counters[LabelID].conversation.total = Total;
+                    counters[LabelID].conversation.unread = Unread;
+                });
 
             deferred.resolve();
-        },function(error) {
-            deferred.reject(error);
-        });
+        }, deferred.reject);
 
         return deferred.promise;
     };
