@@ -523,9 +523,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var type = tools.typeList();
         var ids = $scope.idsSelected();
 
-        $rootScope.numberElementChecked = 0;
-        $rootScope.showWelcome = true;
-
         if(type === 'conversation') {
             action.readConversation(ids);
         } else if(type === 'message') {
@@ -537,6 +534,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Mark conversations selected as unread
      */
     $scope.unread = function() {
+
         var type = tools.typeList();
         var ids = $scope.idsSelected();
 
@@ -545,9 +543,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         } else if(type === 'message') {
             action.unreadMessage(ids);
         }
-
-        $rootScope.numberElementChecked = 0;
-        $rootScope.showWelcome = true;
 
         if(angular.isDefined($state.params.id)) {
             $scope.back();
@@ -576,7 +571,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var type = tools.typeList();
         var ids = $scope.idsSelected();
         $rootScope.numberElementChecked = 0;
-        $rootScope.showWelcome = true;
         if(type === 'conversation') {
             action.moveConversation(ids, mailbox);
         } else if(type === 'message') {
