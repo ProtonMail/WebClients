@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('transformImages', function() {
+.factory('transformImages', function(authentication) {
 
     const REGEXP_IS_CID = /^cid:/;
     const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
@@ -14,9 +14,14 @@ angular.module('proton.message')
                 const isEmbedded = REGEXP_IS_CID.test(src);
 
                 if (isEmbedded) {
-                    image.setAttribute('data-embedded-img', src);
+                    if (authentication.user.ShowEmbedded === 1 || message.showEmbedded === true) {
+                        image.setAttribute('data-embedded-img', src);
+                        !image.parentElement.classList.contains('loading') && wrapImage(image);
+                    } else {
+                        message.showEmbedded = false;
+                    }
+
                     image.removeAttribute('src');
-                    !image.parentElement.classList.contains('loading') && wrapImage(image);
                 }
             });
         }

@@ -288,22 +288,21 @@ angular.module("proton.models.message", ["proton.constants"])
             var packets = [];
             var promises = [];
             var deferred = $q.defer();
-
-            var keys = authentication.getPrivateKeys(this.AddressID);
+            var keys = authentication.getPrivateKeys(this.From.ID);
 
             _.each(this.Attachments, function(element) {
-                if(element.sessionKey === undefined) {
+                if (element.sessionKey === undefined) {
                     var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(element.KeyPackets));
-                    return pmcw.decryptSessionKey(keyPackets, keys).then(function(key) {
+
+                    promises.push(pmcw.decryptSessionKey(keyPackets, keys).then(function(key) {
                         element.sessionKey = key;
                         packets.push({
                             ID: element.ID,
                             Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),
                             Algo: element.sessionKey.algo
                         });
-                    });
-                }
-                else {
+                    }));
+                } else {
                     promises.push(packets.push({
                         ID: element.AttachmentID || element.ID,
                         Key: pmcw.encode_base64(pmcw.arrayToBinaryString(element.sessionKey.key)),

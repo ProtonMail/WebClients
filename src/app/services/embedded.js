@@ -70,16 +70,14 @@ angular.module("proton.embedded", [])
         Object
             .keys(CIDList)
             .forEach((cid, index) => {
-                const current = Blobs[ cid ];
+                const current = Blobs[cid];
+                const isContentLocation = (current) ? current.isContentLocation : false;
+                const url = (current) ? current.url : '';
+                const selector = (isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[rel="${cid}"], img[data-embedded-img="cid:${cid}"]`;
+                const nodes = [].slice.call(testDiv.querySelectorAll(selector));
 
-                if (current) {
-                    const selector = (current.isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[rel="${cid}"], img[data-embedded-img="cid:${cid}"]`;
-
-                    const nodes = [].slice.call(testDiv.querySelectorAll(selector));
-
-                    if (nodes.length) {
-                        (actionDirection[direction] || angular.noop)(nodes, cid, current.url);
-                    }
+                if (nodes.length) {
+                    (actionDirection[direction] || angular.noop)(nodes, cid, url);
                 }
             });
 
@@ -178,7 +176,7 @@ angular.module("proton.embedded", [])
             .forEach( function(cid, index) {
 
             // Check if the CID is already stored
-            if (!Blobs[cid]) {
+            if (!Blobs[cid] && (authentication.user.ShowEmbedded === 1 || message.showEmbedded === true)) {
                 processed = true;
 
                 var attachment = attachs[index];
