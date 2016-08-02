@@ -14,6 +14,8 @@ angular.module("proton.controllers.Settings")
     cacheCounters,
     notify
 ) {
+
+    let labelOrder = [];
     $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
 
     // Drag and Drop configuration
