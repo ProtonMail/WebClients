@@ -74,6 +74,14 @@
         border: 1px solid $border;
         border-radius: 30px;
         padding: 0;
+        &.big{
+            margin-top:-10px;
+            font-size: 22px;
+            border-radius: 40px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
         .fa {
             color: $primary;
         }
