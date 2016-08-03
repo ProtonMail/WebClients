@@ -7,6 +7,7 @@ angular.module('proton.controllers.Header', [])
     $scope,
     $state,
     $stateParams,
+    $document,
     gettextCatalog,
     authentication,
     CONFIG,
@@ -153,6 +154,18 @@ angular.module('proton.controllers.Header', [])
         $scope.params.searchContactInput = '';
     };
 
+    /**
+     * Close the advanced search when clicking outside of it
+     */
+
+    var outside = function(event) {
+        var element = angular.element('.searchForm');
+        if (element !== event.target && !element[0].contains(event.target)) {
+            $scope.closeSearchModal();
+        }
+    };
+
+
     // Listeners
     $scope.$on('$stateChangeSuccess', function(event) {
         addFolders();
@@ -169,6 +182,8 @@ angular.module('proton.controllers.Header', [])
 
         $scope.ctrl.address = $scope.addresses[0];
     });
+
+    $document.on('click', outside);
 
     $scope.initialization = function() {
         addFolders();
@@ -200,6 +215,7 @@ angular.module('proton.controllers.Header', [])
         $scope.ctrl.to = parameters.to || '';
         $scope.ctrl.folder = _.findWhere($scope.ctrl.folders, {value: parameters.label}) || $scope.ctrl.folders[0];
         $scope.advancedSearch = true;
+
     };
 
     $scope.closeSearchModal = function() {
@@ -212,7 +228,6 @@ angular.module('proton.controllers.Header', [])
 
     $scope.blurSearch = function(event) {
         var inputs = angular.element('.query');
-
         angular.element(inputs[0]).blur();
     };
 
@@ -344,4 +359,11 @@ angular.module('proton.controllers.Header', [])
     };
 
     $scope.initialization();
+
+    /* Remove listenners */
+
+    $scope.$on('$destroy', function() {
+        $document.off('click', outside);
+    });
+
 });
