@@ -137,16 +137,7 @@
                         </p>
                         <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 1">
                             <span translate-context="Info" translate>We only accept PayPal for annual subscriptions, click the link to switch to an annual subscription.</span>
-                            <a href="#" ng-click="ctrl.switch(12, 'USD')" translate translate-context="Action">Change subscription</a>
-                        </p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 2">
-                            <span translate-context="Info" translate>We only accept PayPal for annual subscriptions with USD or EUR plans.</span><br />
-                            <a href="#" ng-click="ctrl.switch(12, 'USD')" translate translate-context="Action">Switch to annual USD subscription</a><br />
-                            <a href="#" ng-click="ctrl.switch(12, 'EUR')" translate translate-context="Action">Switch to annual EUR subscription</a>
-                        </p>
-                        <p class="alert alert-warning" ng-show="ctrl.paypalAccessError === 3">
-                            <span translate-context="Info" translate>All PayPal orders are charged in US Dollar, click the link to change your subscription to US Dollar.</span>
-                            <a href="#" ng-click="ctrl.switch(12, 'USD')" translate translate-context="Action">Change subscription</a>
+                            <a href="#" ng-click="ctrl.switch(12, ctrl.valid.Currency)" translate translate-context="Action">Change subscription</a>
                         </p>
                         <p class="alert alert-info" ng-show="ctrl.paypalNetworkError === false && ctrl.paypalAccessError === false" translate translate-context="Info">You will need to login to your PayPal account to complete this transaction. We will open a new tab with PayPal for you. If you use any pop-up blockers, please disable them to continue.</p>
                         <p class="text-center" ng-show="ctrl.approvalURL">

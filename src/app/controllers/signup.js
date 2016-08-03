@@ -76,7 +76,7 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
 
         if (plans.length > 0) {
             $scope.plan = _.findWhere(plans, {Name: $stateParams.plan, Cycle: parseInt($stateParams.billing), Currency: $stateParams.currency});
-            $scope.paypalSupport = ($stateParams.currency === 'USD' || $stateParams.currency === 'EUR') && parseInt($stateParams.billing) === 12;
+            $scope.paypalSupport = parseInt($stateParams.billing) === 12 && ($.browser.msie !== true || $.browser.edge === true);  // IE11 doesn't support PayPal
         }
 
         // Populate the domains <select>
