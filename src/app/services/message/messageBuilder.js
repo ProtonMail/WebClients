@@ -141,6 +141,7 @@ angular.module('proton.service.message', [])
       (action === 'forward') && forward(newMsg, currentMsg);
 
       if (currentMsg.AddressID) {
+        newMsg.AddressID = currentMsg.AddressID;
         newMsg.From = findFrom(newMsg, currentMsg);
       }
 
