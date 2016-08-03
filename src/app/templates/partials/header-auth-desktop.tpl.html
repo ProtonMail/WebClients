@@ -1,8 +1,8 @@
 <header id="pm_header-desktop" class="pm_opensans" ng-controller="HeaderController">
     <a href="#" class="logo" ui-sref="secured.inbox">
-        <img src="assets/img/logo/logo.svg" height="30" alt="ProtonMail" ng-if="organization.PlanName === 'free'" />
-        <img src="assets/img/logo/logo-plus.svg" height="30" alt="ProtonMail" ng-if="organization.PlanName === 'plus'" />
-        <img src="assets/img/logo/logo-visionary.svg" height="30" alt="ProtonMail" ng-if="organization.PlanName === 'visionary'" />
+        <img src="assets/img/logo/logo.svg" height="30" alt="ProtonMail" ng-if="isFree === true || organization.PlanName === 'free'" />
+        <img src="assets/img/logo/logo-plus.svg" height="30" alt="ProtonMail" ng-if="isFree === false && organization.PlanName === 'plus'" />
+        <img src="assets/img/logo/logo-visionary.svg" height="30" alt="ProtonMail" ng-if="isFree === false && organization.PlanName === 'visionary'" />
     </a>
     <ng-include src="'templates/partials/searchForm.tpl.html'" ng-if="!('secured.contacts' | includedByState)"></ng-include>
     <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
