@@ -4,7 +4,7 @@ angular.module('proton.message')
         '.protonmail_quote',
         '.gmail_quote',
         '.yahoo_quoted',
-        '.WordSection1',
+        // '.WordSection1',
         '#isForwardContent',
         '#isReplyContent',
         '#mailcontent',
