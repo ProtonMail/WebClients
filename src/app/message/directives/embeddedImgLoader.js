@@ -26,8 +26,10 @@ angular.module('proton.message')
                             const container = loader.parentElement;
 
                             img.src = src;
+                            img.classList.add('proton-embedded');
                             img.removeAttribute('data-embedded-img');
                             container.replaceChild(img, loader);
+
                         });
 
                         $rootScope.$emit('embedded.injected');
