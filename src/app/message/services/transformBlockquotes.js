@@ -12,7 +12,7 @@ angular.module('proton.message')
         '#reply139content',
         '#oriMsgHtmlSeperator',
         '#OLK_SRC_BODY_SECTION',
-        'blockquote[type="cite"]'
+        'blockquote'
     ].join(',');
 
     return function(html, message) {
