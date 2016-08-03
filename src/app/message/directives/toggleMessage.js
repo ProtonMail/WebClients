@@ -7,7 +7,7 @@ angular.module('proton.message')
         }
 
         function mouseup(event) {
-            if (selection()) {
+            if (selection() && event.target.nodeName !== 'A') {
                 scope.$applyAsync(() => {
                     scope.toggle();
                 });
