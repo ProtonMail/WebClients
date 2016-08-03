@@ -283,15 +283,7 @@
 
 
         .angular-squire-wrapper {
-            border: 1px solid $border;
-            
-            display: -webkit-flex;
-            display: flex;
-
-            -webkit-flex-direction: column;
-            flex-direction: column;
-
-            min-width: 0px;
+            border: 1px solid $bord
 
             iframe{
                 -webkit-flex:1;
