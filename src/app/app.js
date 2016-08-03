@@ -34,6 +34,7 @@ angular.module('proton', [
 
     // App
     'proton.routes',
+    'proton.composer',
 
     // Models
     'proton.models.addresses',

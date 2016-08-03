@@ -166,7 +166,7 @@
                         <ul>
                             <li class="title">{{ pendingAttachements.length }} images detected</li>
                             <li>Insert images<li>
-                            <li>                
+                            <li>
                                 <button class="pm_button primary"
                                 ng-click="processPending(message,false)"
                                 pt-tooltip-translate="inline image"
@@ -181,11 +181,11 @@
                                 pt-tooltip-translate="Attachments"
                                 pt-placement="top">
                                     <span>inline</span>
-                                </button>                        
+                                </button>
                             </li>
                             <li class="cancel" ng-click="cancelAskEmbedding()">
-                               <span>cancel</span>  <i class="fa fa-close"></i> 
-                            </li>                            
+                               <span>cancel</span>  <i class="fa fa-close"></i>
+                            </li>
                         </ul>
                     </div>
                     <div
@@ -271,13 +271,9 @@
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true" translate translate-context="Action">Save</span>
                     </button>
-                    <button class="pm_button primary mobileFull" ng-disabled="message.allowSend() || message !== selected" ng-click="send(message)">
-                        <span ng-hide="message.allowSend()" translate translate-context="Action">Send</span>
-                        <span ng-show="message.uploading > 0" translate translate-context="Action">Uploading</span>
-                        <span ng-show="message.sending === true" translate translate-context="Action">Sending</span>
-                        <span ng-show="message.encrypting === true" translate translate-context="Action">Encrypting</span>
-                        <span ng-show="message.saving === true && message.autosaving === false" translate translate-context="Action">Saving</span>
-                    </button>
+                    <btn-send-message
+                        class="pm_button primary mobileFull"
+                        data-message="message"></btn-send-message>
                 </div>
             </footer>
         </div>
