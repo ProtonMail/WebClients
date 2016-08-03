@@ -1,5 +1,4 @@
 angular.module("proton.controllers.Compose", ["proton.constants"])
-
 .controller("ComposeMessageController", function(
     $filter,
     $interval,
@@ -161,11 +160,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
-    $scope.$on('sendMessage', function(event, element) {
-        var composer = $(element).parents('.composer');
-        var index = $('.composer').index(composer);
-        var message = $scope.messages[index];
-        message && $scope.send(message);
+    $rootScope.$on('sendMessage', function(event, element, msg) {
+        if (element) {
+            var composer = $(element).parents('.composer');
+            var index = $('.composer').index(composer);
+            var message = $scope.messages[index];
+            message && $scope.send(message);
+        }
+
+        msg && $scope.send(msg);
     });
 
     $scope.$on('closeMessage', function(event, element) {
@@ -213,14 +216,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         current.attachmentsToggle = false;
     });
 
-
-
     function onResize() {
         $timeout.cancel(timeoutStyle);
 
         timeoutStyle = $timeout(function() {
             $scope.composerStyle();
-        }, 1000);
+        }, 1000, false);
     }
 
     function onOrientationChange() {
@@ -550,7 +551,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 tempPacket.elem.removeAttribute('id');
 
                 attachments.uploadProgress(1, tempPacket.elem);
-            });
+            }, 100, false);
         }
     };
 
@@ -571,6 +572,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         tempPacket.Inline = file.inline || 0;
 
         message.uploading++;
+        dispatchMessageAction(message);
         message.Attachments.push(tempPacket);
         message.attachmentsToggle = true;
         $rootScope.$broadcast('composerModeChange');
@@ -586,6 +588,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
             message.uploading--;
             onResize();
+            dispatchMessageAction(message);
         };
 
         return attachments.load(file, message.From.Keys[0].PublicKey).then(
@@ -656,6 +659,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     function initMessage(message, save) {
+
         if (authentication.user.Delinquent < 3) {
             // Not in the delinquent state
         } else {
@@ -871,6 +875,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     $scope.focusComposer = function(message) {
+
         $scope.selected = message;
         if (!!!message.focussed) {
             // calculate z-index
@@ -923,7 +928,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             if ((message.ToList.length+message.CCList.length+message.BCCList.length) === 0) {
                 $timeout(function () {
                     $scope.focusTo(message);
-                });
+                }, 100, false);
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
             } else if (message.editor) {
@@ -1044,7 +1049,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if (panelName === 'encrypt') {
             $timeout(function() {
                  angular.element('#uid' + message.uid + ' input[name="outsidePw"]').focus();
-            });
+            }, 100, false);
         }
     };
 
@@ -1156,7 +1161,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if (angular.isDefined(message.old)) {
             var currentMessage = _.pick(message, $scope.oldProperties);
             var oldMessage = _.pick(message.old, $scope.oldProperties);
-
             return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
         } else {
             return true;
@@ -1176,7 +1180,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             if ($scope.needToSave(message)) {
                 recordMessage(message, false, false, true); // message, forward, notification, autosaving
             }
-        }, CONSTANTS.SAVE_TIMEOUT_TIME); // 3 seconds
+        }, CONSTANTS.SAVE_TIMEOUT_TIME, false); // 3 seconds
     };
 
     $scope.validate = function(message) {
@@ -1234,7 +1238,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
 
             deferred.resolve();
-        }, 500);
+        }, 500, false);
 
         return deferred.promise;
     };
@@ -1290,6 +1294,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         } else {
             message.saving = true;
             message.autosaving = autosaving || false;
+            dispatchMessageAction(message);
 
             if (angular.isUndefined(parameters.Message.Subject)) {
                 parameters.Message.Subject = '';
@@ -1397,6 +1402,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         message.saving = false;
                         message.autosaving = false;
+                        dispatchMessageAction(message);
 
                         deferred.resolve(result);
                     } else if (angular.isDefined(result) && result.Code === 15033) {
@@ -1404,26 +1410,31 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         delete message.ID;
                         message.saving = false;
                         message.autosaving = false;
+                        dispatchMessageAction(message);
                         deferred.resolve(recordMessage(message, forward, notification));
                     } else if (angular.isDefined(result) && result.Error) {
                         // Errors from backend
                         message.saving = false;
                         message.autosaving = false;
+                        dispatchMessageAction(message);
                         deferred.reject(result.Error);
                     } else {
                         message.saving = false;
                         message.autosaving = false;
+                        dispatchMessageAction(message);
                         deferred.reject(result);
                     }
                 }, function(error) {
                     message.saving = false;
                     message.autosaving = false;
+                    dispatchMessageAction(message);
                     error.message = 'Error during the draft request';
                     deferred.reject(error);
                 });
             }, function(error) {
                 message.saving = false;
                 message.autosaving = false;
+                dispatchMessageAction(message);
                 error.message = 'Error encrypting message';
                 deferred.reject(error);
             });
@@ -1431,6 +1442,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.savePromise = deferred.promise.finally(function() {
                 message.saving = false;
                 message.autosaving = false;
+                dispatchMessageAction(message);
             });
         }
 
@@ -1481,6 +1493,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         return deferred.promise;
     };
 
+    function dispatchMessageAction(message) {
+        $rootScope.$emit('actionMessage', message);
+    }
+
     /**
      * Try to send message specified
      * @param {Object} message
@@ -1498,7 +1514,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 recordMessage(message, false, false, false)
                 .then(function() {
                     $scope.checkSubject(message).then(function() {
+
+
                         message.encrypting = true;
+                        dispatchMessageAction(message);
                         var parameters = {};
                         var emails = message.emailsToString();
 
@@ -1547,15 +1566,18 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                                         return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
                                                     }, function(error) {
                                                         message.encrypting = false;
+                                                        dispatchMessageAction(message);
                                                         $log.error(error);
                                                     });
                                                 }, function(error) {
                                                     message.encrypting = false;
+                                                    dispatchMessageAction(message);
                                                     $log.error(error);
                                                 });
 
                                             }, function(error) {
                                                 message.encrypting = false;
+                                                dispatchMessageAction(message);
                                                 $log.error(error);
                                             }));
                                         }
@@ -1586,66 +1608,77 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                     } else {
                                         message.encrypting = false;
                                         message.sending = true;
-                                        Message.send(parameters).$promise.then(function(result) {
-                                            if (angular.isDefined(result.Error)) {
+                                        dispatchMessageAction(message);
+
+                                        Message
+                                            .send(parameters)
+                                            .$promise
+                                            .then(function (result) {
+
                                                 message.sending = false;
-                                                deferred.reject(new Error(result.Error));
-                                            } else {
-                                                var events = [];
-                                                var messages = cache.queryMessagesCached(result.Sent.ConversationID);
-                                                var conversation = cache.getConversationCached(result.Sent.ConversationID);
-                                                var numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
-                                                var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
+                                                dispatchMessageAction(message);
 
-                                                message.sending = false; // Change status
-                                                result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
-                                                result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                                events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
+                                                if (angular.isDefined(result.Error)) {
+                                                    deferred.reject(new Error(result.Error));
+                                                } else {
+                                                    var events = [];
+                                                    var messages = cache.queryMessagesCached(result.Sent.ConversationID);
+                                                    var conversation = cache.getConversationCached(result.Sent.ConversationID);
+                                                    var numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
+                                                    var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
 
-                                                if (result.Parent) {
-                                                    events.push({Action: 3, ID: result.Parent.ID, Message: result.Parent});
-                                                }
+                                                    result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
+                                                    result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
+                                                    events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
 
-                                                events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {
-                                                    NumMessages: numMessages,
-                                                    NumUnread: numUnread,
-                                                    Recipients: result.Sent.Recipients,
-                                                    Senders: result.Sent.Senders,
-                                                    Subject: result.Sent.Subject,
-                                                    ID: result.Sent.ConversationID,
-                                                    LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.sent],
-                                                    LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
-                                                }});
+                                                    if (result.Parent) {
+                                                        events.push({Action: 3, ID: result.Parent.ID, Message: result.Parent});
+                                                    }
 
-                                                cache.events(events); // Send events to the cache manager
-                                                notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'}); // Notify the user
-                                                $scope.close(message, false, false); // Close the composer window
+                                                    events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {
+                                                        NumMessages: numMessages,
+                                                        NumUnread: numUnread,
+                                                        Recipients: result.Sent.Recipients,
+                                                        Senders: result.Sent.Senders,
+                                                        Subject: result.Sent.Subject,
+                                                        ID: result.Sent.ConversationID,
+                                                        LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.sent],
+                                                        LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                                                    }});
 
-                                                $timeout(function() {
-                                                    $stateParams.message = result.Sent.ID; // Define target ID
-                                                    $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
-                                                }, 500);
+                                                    cache.events(events); // Send events to the cache manager
+                                                    notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'}); // Notify the user
+                                                    $scope.close(message, false, false); // Close the composer window
 
-                                                deferred.resolve(result); // Resolve finally the promise
+                                                    $timeout(function() {
+                                                        $stateParams.message = result.Sent.ID; // Define target ID
+                                                        $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
+                                                    }, 500);
+
+                                                    deferred.resolve(result); // Resolve finally the promise
                                             }
                                         }, function(error) {
                                             message.sending = false;
+                                            dispatchMessageAction(message);
                                             error.message = 'There was a problem sending your message. Please try again.';
                                             deferred.reject(error);
                                         });
                                     }
                                 }, function(error) {
                                     message.encrypting = false;
+                                    dispatchMessageAction(message);
                                     error.message = 'Error during the promise preparation';
                                     deferred.reject(error);
                                 });
                             } else {
                                 message.encrypting = false;
+                                dispatchMessageAction(message);
                                 error.message = 'Error during get public keys user request';
                                 deferred.reject(error);
                             }
                         }, function(error) {
                             message.encrypting = false;
+                            dispatchMessageAction(message);
                             error.message = 'Error getting the public key';
                             deferred.reject(error);
                         });
@@ -1859,7 +1892,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         $timeout(function() {
             input.focus();
-        });
+        }, 100, false);
     };
 
     $scope.focusNextInput = function(event) {
