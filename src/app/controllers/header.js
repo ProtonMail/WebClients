@@ -157,10 +157,10 @@ angular.module('proton.controllers.Header', [])
     /**
      * Close the advanced search when clicking outside of it
      */
-
     var outside = function(event) {
-        var element = angular.element('.searchForm');
-        if (element !== event.target && !element[0].contains(event.target)) {
+        var elements = angular.element('.searchForm');
+        
+        if (elements.length > 0 && elements !== event.target && !elements[0].contains(event.target)) {
             $scope.closeSearchModal();
         }
     };
