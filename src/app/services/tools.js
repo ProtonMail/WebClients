@@ -429,7 +429,7 @@ angular.module("proton.tools", ["proton.constants"])
     tools.containsImage = function(content) {
 
         var url = new RegExp(/url\(/ig);
-        var src = new RegExp('src=(?!"blob:|"cid:)', 'g');
+        var src = new RegExp('src=(?!"blob:|"cid:|"data:)', 'g');
         var bg = new RegExp('background=', 'g');
         var poster = new RegExp('poster=', 'g');
         var svg = new RegExp('svg', 'g');
