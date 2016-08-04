@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('transformImages', function(authentication) {
+.factory('transformImages', function(authentication, embedded) {
 
     const REGEXP_IS_CID = /^cid:/;
     const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
@@ -19,6 +19,7 @@ angular.module('proton.message')
                         !image.parentElement.classList.contains('loading') && wrapImage(image);
                     } else {
                         message.showEmbedded = false;
+                        image.setAttribute("alt",embedded.getName(message,image.src));
                     }
 
                     image.removeAttribute('src');

@@ -1,1 +1,23 @@
-.proton-embedded {max-width: 100%}
+.proton-embedded {
+	max-width: 100%;
+	position: relative;
+
+	/* ALT with CSS for broken/not loaded state*/
+
+  	position: relative;
+  	display: block;
+  	margin: 10px 0px 30px;
+
+	&:after {
+	  content: " " attr(alt);
+	  color: rgba(0,0,0,0.5);
+	  position: absolute;
+	  top:0px;
+	  left: 0px;
+	  display: inline-block;
+	  padding: 10px 10px 10px 30px;
+	  background: url(/assets/img/icons/broken-img.png) no-repeat 5px 50% #FFF;
+	  border:1px solid;
+	  border-color: #444 #CCC #CCC #444
+	}
+}

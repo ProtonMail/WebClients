@@ -93,30 +93,33 @@ angular.module("proton.embedded", [])
         var attachs =  message.Attachments || [];
 
         /* initiate a CID list */
-        CIDList = {};
+        CIDList = message.CIDList || {};
 
         // Check if we have attachments
         if (attachs.length) {
-            // Build a list of cids
-            attachs.forEach(({ Headers = {} }) => {
-                const disposition = Headers['content-disposition'];
+            if(Object.keys(CIDList).length === 0) {
+                // Build a list of cids
+                attachs.forEach(({ Headers = {}, Name = {} }) => {
+                    const disposition = Headers['content-disposition'];
 
-                // BE require an inline content-disposition!
-                if (disposition && REGEXP_IS_INLINE.test(disposition)) {
-                    let cid;
+                    // BE require an inline content-disposition!
+                    if (disposition && REGEXP_IS_INLINE.test(disposition)) {
+                        let cid;
 
-                    if (Headers['content-id']) {
-                        // remove the < >.
-                        // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
-                        cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
-                    } else if (Headers['content-location']) {
-                        // We can find an image without cid so base64 the location
-                        cid = Headers['content-location'];
+                        if (Headers['content-id']) {
+                            // remove the < >.
+                            // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
+                            cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
+                        } else if (Headers['content-location']) {
+                            // We can find an image without cid so base64 the location
+                            cid = Headers['content-location'];
+                        }
+
+                        CIDList[cid] = { Headers, Name };
+                        message.CIDList = CIDList;
                     }
-
-                    CIDList[cid] = { Headers };
-                }
-            });
+                });
+            }
 
             return true;
         } else {
@@ -348,6 +351,21 @@ angular.module("proton.embedded", [])
             const cid = attribute.split(':')[1];
             const { url = '' } = Blobs[cid] || {};
             return url;
+        },
+
+        /**
+         * Get the name for an embedded image
+         * @param  {src} cid:url
+         * @return {name}
+         */
+        getName(message,src) {
+
+            x = xray.bind(message);
+            if (x()) {
+                return CIDList[src.replace(/^cid:/g,"")].Name;
+            } else {
+                return {};
+            }
         }
 
     };
