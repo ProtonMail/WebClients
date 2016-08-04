@@ -360,9 +360,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             if (embedding) {
                 // required for BE to get a cid-header
                 file.inline = 1;
-                // for loading UX
-                // message.editor.insertImage("", {alt: file.name, id:file.name});
-
             }
 
             $scope.addAttachment(file, message);
@@ -706,6 +703,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 insertSignature(message);
                 $scope.messages.unshift(message);
                 $scope.isOver = false;
+                $scope.askEmbedding = false;
 
                 // This timeout is really important to load the structure of Squire
                 $timeout(function() {
