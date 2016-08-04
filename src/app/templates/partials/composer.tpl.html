@@ -196,10 +196,19 @@
                     <squire ng-model="message.Body" ng-click="attHide(message); message.autocompletesFocussed = false;" ></squire>
                 </div>
             </section>
-             <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0">
+             <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.NumAttachments > 0 || message.NumEmbedded > 0" >
                 <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate translate-context="Action">Hide</i>
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
-                <span translate>{{ message.Attachments.length }} Files attached ({{ getAttachmentsSize(message) | humanSize }})</span>
+                <strong>{{ message.sizeAttachments() | humanSize }}</strong>
+                <span ng-show="message.Attachments.length - message.NumEmbedded > 0">
+                    <i class="fa fa-paperclip"></i> ({{ message.Attachments.length -  message.NumEmbedded }})
+                    <span translate translate-n="message.Attachments.length -  message.NumEmbedded" translate-plural="Files attached">File attached</span>
+                </span>
+                <span ng-show="message.NumEmbedded > 0">
+                    <i class="fa fa-picture-o embedded"></i> ({{ message.NumEmbedded }})
+                    <span translate-n="message.NumEmbedded" translate-plural="embedded images">
+                    embedded image</span>
+                </span>
             </aside>
             <div
             class="previews clearfix attachmentArea"
@@ -211,7 +220,14 @@
                 ng-repeat="attachment in message.Attachments"
                 ng-class="{ 'uploading': attachment.uploading }"
                 ng-init="initAttachment(attachment, $index)">
-                    <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
+
+                    <span ng-show="attachment.Headers.embedded === 1" pt-tooltip-translate="Embedded image" class="attachement embedded">
+                        <i class="fa fa-picture-o"></i>
+                        <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
+                    </span>
+
+                    <span ng-hide="attachment.Headers.embedded === 1" class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
+
                     <a ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
                         <i class="fa fa-times"></i>
                     </a>

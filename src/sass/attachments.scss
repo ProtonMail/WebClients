@@ -11,6 +11,9 @@
 		padding: 0 !important;
 		margin-bottom: 0 !important;
 		border-bottom: none !important;
+		.embedded{
+			color:$primary;
+		}
 	}
 	.title {
 		position: relative;
@@ -141,6 +144,9 @@
 				z-index: 2;
 				&.stuff {
 					opacity: 0;
+				}
+				&.embedded{
+					color:$primary;
 				}
 				&.stuff.fa-cog,
 				&.stuff.fa-download {

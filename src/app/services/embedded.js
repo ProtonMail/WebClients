@@ -53,6 +53,16 @@ angular.module("proton.embedded", [])
         }
     };
 
+    const counterState = {
+        add(message){
+            var attachs =  message.Attachments || [];
+            message.NumEmbedded = message.NumEmbedded + 1;
+        },
+        remove(message){
+            message.NumEmbedded = message.NumEmbedded-1;
+        }
+    };
+
     /**
      * Parse the content to inject the generated blob src
      * because the blob live inside the browser we may
@@ -89,37 +99,39 @@ angular.module("proton.embedded", [])
      * @return {Boolean}
      */
     var xray = function() {
+
         var message = this;
         var attachs =  message.Attachments || [];
 
-        /* initiate a CID list */
-        CIDList = message.CIDList || {};
+        /* initiate a CID list & attachements counter */
+        var self = this;
+        CIDList = {};
+        self.NumEmbedded = 0;
 
         // Check if we have attachments
         if (attachs.length) {
-            if(Object.keys(CIDList).length === 0) {
-                // Build a list of cids
-                attachs.forEach(({ Headers = {}, Name = {} }) => {
-                    const disposition = Headers['content-disposition'];
+            // Build a list of cids
+            attachs.forEach(({ Headers = {}, Name = {} }) => {
+                const disposition = Headers['content-disposition'];
+                // BE require an inline content-disposition!
+                if (disposition && REGEXP_IS_INLINE.test(disposition)) {
+                    let cid;
 
-                    // BE require an inline content-disposition!
-                    if (disposition && REGEXP_IS_INLINE.test(disposition)) {
-                        let cid;
-
-                        if (Headers['content-id']) {
-                            // remove the < >.
-                            // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
-                            cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
-                        } else if (Headers['content-location']) {
-                            // We can find an image without cid so base64 the location
-                            cid = Headers['content-location'];
-                        }
-
-                        CIDList[cid] = { Headers, Name };
-                        message.CIDList = CIDList;
+                    if (Headers['content-id']) {
+                        // remove the < >.
+                        // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
+                        cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
+                    } else if (Headers['content-location']) {
+                        // We can find an image without cid so base64 the location
+                        cid = Headers['content-location'];
                     }
-                });
-            }
+
+                    Headers.embedded = 1;
+                    counterState.add(self);
+
+                    CIDList[cid] = { Headers, Name };
+                }
+            });
 
             return true;
         } else {
@@ -321,19 +333,28 @@ angular.module("proton.embedded", [])
             store(cid, data, MIME);
             message.editor.insertImage(Blobs[ cid ].url, {rel:cid, class:'proton-embedded'});
         },
-        removeEmbedded: function(message,headers){
+        removeEmbedded: function(message,Headers){
 
-            if(headers['content-id'] !== undefined) {
+            const disposition = Headers['content-disposition'];
+            if(Headers['content-disposition'] && REGEXP_IS_INLINE.test(disposition)) {
 
-                var cid = headers['content-id'].replace(REGEXP_CID_CLEAN,'');
+                if (Headers['content-id']) {
+                    // remove the < >.
+                    // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
+                    cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
+                } else if (Headers['content-location']) {
+                    // We can find an image without cid so base64 the location
+                    cid = Headers['content-location'];
+                }
+
                 var tempDOM = angular.element('<div>').append(message.Body);
-                var nodes = tempDOM.find('img[src="cid:'+cid+'"], img[rel="'+cid+'"]');
-
+                var nodes = tempDOM.find('img[data-embedded-img="cid:'+cid+'"], img[rel="'+cid+'"]');
                 if(nodes.length > 0) {
                     nodes.remove();
                 }
 
-                return tempDOM.html();
+                counterState.remove(message);
+                message.Body = tempDOM.html();
 
             }
 
