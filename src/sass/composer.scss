@@ -8,7 +8,7 @@
         display: flex;
 
         -webkit-flex-direction:column;
-      	flex-direction: column; /* .editor space fill */     
+      	flex-direction: column; /* .editor space fill */
 
 	 	position: absolute; /* better for iOS then fixed*/
 		height: 510px !important; // the drag directive tries to override this.
@@ -23,7 +23,7 @@
 	    header, footer, .row{
 	      line-height: $composerRowHeight;
 	    }
-	  
+
 	    .row{
 	      display: -webkit-flex; /* ipad */
 	      display: flex;
@@ -38,7 +38,7 @@
 	        padding-right: 10px;
 	      }
 
-		  input, 
+		  input,
 		  select{
 		  	height: $composerRowHeight;
 		    line-height: $composerRowHeight;
@@ -61,7 +61,7 @@
 	    .flex{
 	    	-webkit-flex:1; /* ipad */
 	        flex:1;
-	        display:-webkit-flex; 
+	        display:-webkit-flex;
 	        display: flex;
 	        min-height: 0px; /* trigger height change */
 	     }
@@ -91,7 +91,7 @@
 		iframe{
 			-webkit-flex:1;
 			flex:1;
-			
+
 			position: relative;
 			z-index: 4;
 			width: 100%;
@@ -265,8 +265,10 @@
 			border-top: 1px solid $border;
 			background: $read;
 			i {
-				color: $primary;
 				font-style: normal;
+				&.embedded{
+					color: $primary;
+				}
 			}
 			.fa {
 				display: inline-block;
@@ -283,11 +285,27 @@
 	        -webkit-overflow-scrolling: touch;
 	        box-sizing: border-box;
 	        background: $read;
-	        
+
 	        .preview-close {
 	        	margin-left: .25rem;
 	        	color: $gray;
 	        }
+
+			.attachement{
+				&.embedded{
+					.fa{
+						margin-right: .5rem;
+						line-height: 34px;
+						float:left;
+						color:$primary;
+					}
+					.preview-name{
+						float: left;
+						width: calc(100% - 4rem);
+					}
+				}
+			}
+
 	        footer {
         		position: absolute;
         		left: 0;
@@ -306,7 +324,7 @@
 			.previews {
 				overflow: hidden;
 				-webkit-overflow-scrolling: touch;
-				
+
 			}
 			.attachmentBar {
 				box-shadow: 0 1px 0 $border;
@@ -405,7 +423,7 @@
 		}
 
 		&.blur{
-			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), 
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1),
 						0 0 2px rgba(0, 0, 0, 0.1);
 			& > * {
 				opacity: .75;
@@ -484,7 +502,7 @@
 					pointer-events: none;
 				}
 			}
-		
+
 			.pm_button {
 				line-height: $composerRowHeight;
 				height: $composerRowHeight;

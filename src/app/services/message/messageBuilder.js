@@ -147,6 +147,7 @@ angular.module('proton.service.message', [])
 
       /* add inline images as attachments */
       newMsg.Attachments = injectInline(currentMsg.Attachments);
+      newMsg.NumEmbedded = 0;
 
       newMsg.ParentID = currentMsg.ID;
       newMsg.Body = [

@@ -149,7 +149,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var current = _.findWhere($scope.messages, {ID: message.ID});
         var mess = new Message(_.pick(message, 'ID', 'AddressID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
 
-        if (mess.NumAttachments > 0) {
+        if ((mess.Attachments.length - mess.NumEmbedded) > 0 && (mess.Attachments.length > mess.NumEmbedded)) {
             mess.attachmentsToggle = true;
         } else {
             mess.attachmentsToggle = false;
@@ -431,6 +431,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 dropzone.removeFile(file);
                                 $scope.$applyAsync(() => { $scope.askEmbedding = true; });
                             } else {
+                                // force update the attachment counter
                                 $scope.addAttachment(file, message).finally(function () {
                                     dropzone.removeFile(file);
                                 });
@@ -554,7 +555,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $scope.cancelAttachment = function(attachment, message) {
         // Cancel the request
-        attachment.cancel(); // Also remove the attachment in the UI
+        attachment.cancel();
         // FIXME Reload message/attachments from the server when this happens.
         // A late cancel might succeed on the back-end but not be reflected on the front-end
         // Need to be careful if there are currently-uploading attachments, an do autosave first
@@ -568,9 +569,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         tempPacket.Size = file.size;
         tempPacket.Inline = file.inline || 0;
 
+        // force update the embedded counter
+        if (tempPacket.Inline) {
+            message.NumEmbedded++;
+        }
+
         message.uploading++;
         dispatchMessageAction(message);
         message.Attachments.push(tempPacket);
+
         message.attachmentsToggle = true;
         $rootScope.$broadcast('composerModeChange');
 
@@ -597,8 +604,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         cleanup( result );
 
+
                         if (angular.isDefined( result.Headers['content-id'] ) && file.inline === 1) {
                             var cid = result.Headers['content-id'].replace(/[<>]+/g,'');
+                            result.Headers.embedded = 1;
                             embedded.addEmbedded(message,cid,preview, result.MIMEType);
                         }
 
@@ -634,7 +643,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             if (angular.isDefined(data) && data.Code === 1000) {
                 // Attachment removed, may remove embedded ref
                 message.Body = embedded.removeEmbedded(message,headers);
-
+                message.editor && message.editor.fireEvent('refresh', {Body: message.Body});
             } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
                 message.Attachments.push(attachment);
@@ -648,6 +657,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             notify({message: 'Error during the remove request', classes: 'notification-danger'});
             $log.error(error);
         });
+
     };
 
     /**
@@ -858,18 +868,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         /* Handle free space around the signature */
 
-       if ( firstQuote.prevAll("div").length === 0 && newSign) {
+        if ( firstQuote.prevAll("div").length === 0 && newSign) {
           firstQuote.before(space + space);
-       }
+        }
 
-       if (firstSignature.prevAll("div").length === 0  && newSign) {
+        if (firstSignature.prevAll("div").length === 0  && newSign) {
           firstSignature.before(space + space);
-       }
+        }
 
-       message.Body = tempDOM.html();
-       message.editor && message.editor.fireEvent("refresh");
-
-
+        message.Body = tempDOM.html();
+        message.editor && message.editor.fireEvent('refresh', {Body: message.Body});
     }
 
     $scope.focusComposer = function(message) {
@@ -1368,7 +1376,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         if (forward === true && result.Message.Attachments.length > 0) {
                             message.Attachments = result.Message.Attachments;
-                            message.attachmentsToggle = true;
+                            if (message.Attachments.length > message.NumEmbedded) {
+                                message.attachmentsToggle = true;
+                            }
                         }
 
                         result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
@@ -1381,7 +1391,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         // Generate conversation event
                         events.push({Action: 3, ID: result.Message.ConversationID, Conversation: {
-                            NumAttachments: result.Message.Attachments.length,
+                            NumAttachments: result.Message.Attachments.length, // it's fine
                             NumMessages: numMessages,
                             NumUnread: numUnread,
                             Recipients: result.Message.Recipients,
