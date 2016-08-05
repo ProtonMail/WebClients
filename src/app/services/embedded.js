@@ -40,8 +40,8 @@ angular.module("proton.embedded", [])
         },
         cid(nodes, cid, url) {
             /**
-             * Don't set the src attrite since its evaluated and cid:cid create an error
-             * @{link https://github.com/ProtonMail/Angular/issues/3330}
+             * Don't set the src attribute since it's evaluated and cid:cid create an error (#3330)
+             * NET::ERR_UNKNOWN_URL_SCHEME because src="cid:xxxx" is not valid HTML
              */
             _(nodes)
                 .each((node) => {
@@ -92,7 +92,10 @@ angular.module("proton.embedded", [])
                 }
             });
 
-        // Prevent error => https://github.com/ProtonMail/Angular/issues/3330
+        /**
+         * Prevent this error (#3330):
+         * NET::ERR_UNKNOWN_URL_SCHEME because src="cid:xxxx" is not valid HTML
+         */
         return testDiv.innerHTML.replace(/data-src/g, 'src');
     };
 
