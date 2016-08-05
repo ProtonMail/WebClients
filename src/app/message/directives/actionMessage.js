@@ -9,7 +9,7 @@ angular.module('proton.message')
         e.preventDefault();
 
 
-        if (actionMessageType === 'addFile' || 'addEmbedded') {
+        if (/addFile|addEmbedded/.test(actionMessageType)) {
           var dropzone = $(el).parents('.composer').find('.dropzone');
           return $rootScope.$emit("addFile", {dropzone:dropzone, isEmbedded: (actionMessageType === 'addEmbedded')});
         }
