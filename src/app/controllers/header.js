@@ -154,18 +154,6 @@ angular.module('proton.controllers.Header', [])
         $scope.params.searchContactInput = '';
     };
 
-    /**
-     * Close the advanced search when clicking outside of it
-     */
-     var outside = function(event) {
-         const element = document.body.querySelector('.searchForm');
-
-         if (element && !element[0].contains(event.target)) {
-             $scope.closeSearchModal();
-         }
-     };
-
-
     // Listeners
     $scope.$on('$stateChangeSuccess', function(event) {
         addFolders();
@@ -182,8 +170,6 @@ angular.module('proton.controllers.Header', [])
 
         $scope.ctrl.address = $scope.addresses[0];
     });
-
-    $document.on('click', outside);
 
     $scope.initialization = function() {
         addFolders();
@@ -359,11 +345,4 @@ angular.module('proton.controllers.Header', [])
     };
 
     $scope.initialization();
-
-    /* Remove listenners */
-
-    $scope.$on('$destroy', function() {
-        $document.off('click', outside);
-    });
-
 });
