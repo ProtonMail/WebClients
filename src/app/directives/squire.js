@@ -19,6 +19,7 @@ angular.module("proton.squire", [
 
             LINK_DEFAULT = IMAGE_DEFAULT = "";
             IFRAME_CLASS = 'angular-squire-iframe';
+            const HEADER_CLASS = 'h4';
 
             isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
             editor = scope.editor = null;
@@ -144,6 +145,36 @@ angular.module("proton.squire", [
                     updateModel(scope.ngModel);
                 }
 
+                editor.addEventListener("pathChange", _.throttle(() => {
+                    const p = editor.getPath();
+                    const node = element[0].querySelector('.add-link');
+
+                    if (node) {
+                        if (/>A\b/.test(p) || editor.hasFormat('A')) {
+                            node.classList.add('active');
+                        } else {
+                            node.classList.remove('active');
+                        }
+                    }
+
+                    if ('(selection)' !== p) {
+                        menubar[0].className = 'squire-toolbar '+ p
+                            .split("BODY")[1]
+                            .split('>')
+                            .reduce((acc, path) => acc.concat(path.split('.')), [])
+                            .filter(i => i && !/IMG.proton-embedded|.proton-embedded|div|html|body|span/i.test(i))
+                            .reduce((acc, key) => {
+                                if (HEADER_CLASS === key) {
+                                    return `${acc} size`;
+                                }
+                                return `${acc} ${key.trim()}`;
+                            }, '')
+                            .toLowerCase()
+                            .trim();
+                    }
+
+                }), 500);
+
                 editor.addEventListener('input', function() {
                     _rAF(() => updateModel(editor.getHTML()));
                 });
@@ -230,6 +261,7 @@ angular.module("proton.squire", [
 
             iframe = element.find('iframe.squireIframe');
             var iframeDoc = iframe.contentDocument || iframe.contentWindow && iframe.contentWindow.document;
+            menubar = element.find('.squire-toolbar');
             loaded = false;
 
             // Check if browser is Webkit (Safari/Chrome) or Opera
