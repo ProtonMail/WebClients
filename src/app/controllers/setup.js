@@ -184,13 +184,11 @@ angular.module("proton.controllers.Setup", [
      */
     $scope.doMailboxLogin = function() {
         return authentication.unlockWithPassword(
-            $scope.authResponse.EncPrivateKey,
             $scope.account.mailboxPassword,
-            $scope.authResponse.AccessToken,
             $scope.authResponse
         ).then(
             function(response) {
-                return authentication.setAuthCookie()
+                return authentication.setAuthCookie($scope.authResponse)
                 .then(
                     function(resp) {
                         $scope.process.redirecting = true;

@@ -55,7 +55,7 @@ angular.module('proton.routes', [
             }
         },
         onEnter: function($rootScope, $state, authentication) {
-            if ($rootScope.TemporaryEncryptedPrivateKeyChallenge === undefined) {
+            if (!$rootScope.isLoggedIn) {
                 authentication.logout(true);
             }
 
@@ -277,7 +277,7 @@ angular.module('proton.routes', [
             }
         },
         onEnter: function($rootScope, $state, $log) {
-            if ($rootScope.TemporaryAccessData===undefined) {
+            if (!$rootScope.isLoggedIn) {
                 $log.debug('reset.onEnter:1');
                 $state.go('login');
                 return;

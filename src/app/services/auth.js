@@ -295,7 +295,7 @@ angular.module("proton.authentication", [
             );
         },
 
-        setAuthCookie: function(type) {
+        setAuthCookie: function(authResponse) {
             var deferred = $q.defer();
 
             $log.debug('setAuthCookie');
@@ -304,7 +304,7 @@ angular.module("proton.authentication", [
                 ResponseType: "token",
                 ClientID: CONFIG.clientID,
                 GrantType: "refresh_token",
-                RefreshToken: $rootScope.TemporaryAccessData.RefreshToken,
+                RefreshToken: authResponse.RefreshToken,
                 RedirectURI: "https://protonmail.com",
                 State: this.randomString(24)
             })
@@ -370,9 +370,6 @@ angular.module("proton.authentication", [
                     })
                 ).then(
                     function(resp) {
-                        $rootScope.TemporaryAccessData = resp.data;
-                        $rootScope.TemporaryEncryptedAccessToken = resp.data.AccessToken;
-                        $rootScope.TemporaryEncryptedPrivateKeyChallenge = resp.data.EncPrivateKey;
                         deferred.resolve(resp);
                         // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
                     },
@@ -515,21 +512,21 @@ angular.module("proton.authentication", [
 
         // Returns an async promise that will be successful only if the mailbox password
         // proves correct (we test this by decrypting a small blob)
-        unlockWithPassword: function(epk, pwd, accessToken, TemporaryAccessData) {
+        unlockWithPassword: function(pwd, authResponse) {
             var req = $q.defer();
             var self = this;
 
             if (pwd) {
-                pmcw.checkMailboxPassword(epk, pwd, accessToken)
+                pmcw.checkMailboxPassword(authResponse.PrivateKey, pwd, authResponse.AccessToken)
                 .then(
-                    function(response) {
+                    function(token) {
                         this.savePassword(pwd);
                         this.receivedCredentials({
-                            "AccessToken": response,
-                            "RefreshToken": TemporaryAccessData.RefreshToken,
-                            "Uid": TemporaryAccessData.Uid,
-                            "ExpiresIn": TemporaryAccessData.ExpiresIn,
-                            "EventID": TemporaryAccessData.EventID
+                            "AccessToken": token,
+                            "RefreshToken": authResponse.RefreshToken,
+                            "Uid": authResponse.Uid,
+                            "ExpiresIn": authResponse.ExpiresIn,
+                            "EventID": authResponse.EventID
                         });
                         req.resolve(200);
                     }.bind(this),

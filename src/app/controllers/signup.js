@@ -561,14 +561,12 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         $log.debug('doMailboxLogin');
         $scope.mailboxLogin  = true;
         return authentication.unlockWithPassword(
-            $scope.authResponse.EncPrivateKey,
             $scope.account.mailboxPassword,
-            $scope.authResponse.AccessToken,
             $scope.authResponse
         ).then(
             function(response) {
                 $log.debug('doMailboxLogin:unlockWithPassword:',response);
-                return authentication.setAuthCookie()
+                return authentication.setAuthCookie($scope.authResponse)
                 .then(
                     function(resp) {
                         $log.debug('setAuthCookie:resp'+resp);
