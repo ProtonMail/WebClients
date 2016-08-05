@@ -8,9 +8,12 @@ angular.module('proton.message')
       function onClick(e) {
         e.preventDefault();
 
-        if ('addfile' === actionMessageType) {
-          return $('#uid' + scope.model.uid).find('.dropzone').click();
+
+        if (actionMessageType === 'addFile' || 'addEmbedded') {
+          var dropzone = $(el).parents('.composer').find('.dropzone');
+          return $rootScope.$emit("addFile", {dropzone:dropzone, isEmbedded: (actionMessageType === 'addEmbedded')});
         }
+
 
         const msg = messageBuilder.create(actionMessageType, scope.model);
         $rootScope.$emit('loadMessage', msg, (actionMessageType === 'forward' || msg.Attachments.length > 0));

@@ -193,7 +193,7 @@
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
 
-                    <squire ng-model="message.Body" ng-click="attHide(message); message.autocompletesFocussed = false;" ></squire>
+                    <squire ng-model="message.Body" allow-embedded="true" ng-click="attHide(message); message.autocompletesFocussed = false;" ></squire>
                 </div>
             </section>
              <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.NumAttachments > 0 || message.NumEmbedded > 0" >
@@ -239,7 +239,7 @@
             <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
                 <button class="pm_button"
                     action-message="::message"
-                    action-message-type="addfile"
+                    action-message-type="addFile"
                     ng-disabled="message.allowOthers() || message !== selected"
                     ng-class="{
                         'active': message.displayPanel && message.panelName == 'attachments',

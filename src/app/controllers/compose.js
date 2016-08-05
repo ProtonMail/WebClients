@@ -160,6 +160,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     });
 
+    const subscribeAddFile = $rootScope.$on('addFile', function(event, params) {
+        $scope.isEmbedded = params.isEmbedded;
+        params.dropzone.click();
+    });
+
+
     $rootScope.$on('sendMessage', function(event, element, msg) {
         if (element) {
             var composer = $(element).parents('.composer');
@@ -291,6 +297,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
         window.onbeforeunload = undefined;
+        subscribeAddFile();
     });
 
     // Function used for dragover listener on the dropzones
@@ -429,7 +436,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 $scope.pendingAttachements.push(file);
                                 // add attachment with embeded and include the img ?
                                 dropzone.removeFile(file);
-                                $scope.$applyAsync(() => { $scope.askEmbedding = true; });
+                                if($scope.isEmbedded) {
+                                    $scope.$applyAsync(() => { $scope.processPending(message,true); $scope.dropEmbedded = false; });
+                                } else {
+                                    $scope.$applyAsync(() => { $scope.askEmbedding = true; });
+                                }
                             } else {
                                 // force update the attachment counter
                                 $scope.addAttachment(file, message).finally(function () {

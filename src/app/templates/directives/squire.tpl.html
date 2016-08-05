@@ -78,7 +78,15 @@
                 <div class="panel">
                     <input type="text" autocomplete="off" placeholder-translate="URL to image" ng-model="data.image" ng-keydown="popoverHide($event, 'insertImage')" />
                 </div>
-                <button class="btn primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert image</button>
+
+                <button class="btn primary" action-message="::message"
+                    ng-if="allowEmbedded"
+                    ng-click="popoverHide($event, 'insertImage')"
+                    action-message-type="addEmbedded" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert File</button>
+
+                <button class="btn primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert URL</button>
+
+
             </div>
         </div>
         <div class='angular-squire-wrapper fill'>
