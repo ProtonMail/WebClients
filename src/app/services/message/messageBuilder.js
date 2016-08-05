@@ -7,8 +7,10 @@ angular.module('proton.service.message', [])
    const FW_LENGTH = FW_PREFIX.length;
 
     function formatSubject(subject = '', prefix = RE_PREFIX) {
-      const hasPrefix = subject.toLowerCase().substring(0, prefix) === prefix.toLowerCase();
-      return hasPrefix ? subject : (prefix + ' ' + subject);
+        const newSubject = subject.substring(0, prefix.length);
+        const hasPrefix = subject.toLowerCase().indexOf(prefix.toLowerCase()) === 0;
+
+        return hasPrefix ? subject : (prefix + ' ' + subject);
     }
 
     /**
