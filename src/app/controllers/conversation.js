@@ -211,15 +211,12 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             var toAdd = [];
             var toRemove = [];
             var index, message, found, ref;
-            var find = function(messages, ID) {
-                return _.find(messages, function(m) { return m.ID === ID; });
-            };
-
+            const lookFor = (messages, ID) => _.find(messages, (m = {}) => m.ID === ID);
             messages = $filter('filterMessages')(messages);
-            messages = cache.orderMessage(messages);
+            messages = cache.orderMessage(messages, false);
 
             for (index = 0; index < messages.length; index++) {
-                found = find($scope.messages, messages[index].ID);
+                found = lookFor($scope.messages, messages[index].ID);
 
                 if (angular.isUndefined(found)) {
                     toAdd.push({index: index, message: messages[index]});
@@ -234,7 +231,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             }
 
             for (index = 0; index < $scope.messages.length; index++) {
-                found = find(messages, $scope.messages[index].ID);
+                found = lookFor(messages, $scope.messages[index].ID);
 
                 if (angular.isUndefined(found)) {
                     toRemove.push({index: index});
