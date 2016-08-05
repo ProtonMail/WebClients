@@ -217,8 +217,8 @@ angular.module('proton', [
     });
 
     // Manage responsive changes
-    angular.element(window).bind('resize', _.throttle(tools.mobileResponsive, 50));
-    angular.element(window).bind('orientationchange', tools.mobileResponsive);
+    window.addEventListener('resize', _.debounce(tools.mobileResponsive, 50));
+    window.addEventListener('orientationchange', tools.mobileResponsive);
     tools.mobileResponsive();
 
     // Less than 1030 / Tablet Mode
@@ -226,8 +226,7 @@ angular.module('proton', [
     $rootScope.$on('sidebarMobileToggle', function(event, show) {
         if (typeof show !== "undefined") {
             $rootScope.showSidebar = show;
-        }
-        else {
+        } else {
             $rootScope.showSidebar = !$rootScope.showSidebar;
         }
     });
