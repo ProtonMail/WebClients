@@ -20,10 +20,6 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
             errorReporter.clear();
             promises = _.union(promises, [promise]);
 
-            promise.then(function(result) {
-
-            });
-
             promise.catch(function(error) {
                 if(angular.isString(error)) { // Just a String
                     notify({message: error, classes: 'notification-danger', duration: duration});

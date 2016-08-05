@@ -261,7 +261,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     function onDragEnter(event) {
 
         /* /!\ force digest over state change */
-        $scope.$digest(function() {
+        $scope.$applyAsync(function() {
             $scope.isOver = true;
         });
 
@@ -390,7 +390,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
 
-                accept: function(file, done) {
+                accept(file, done) {
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
@@ -450,11 +450,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         };
 
                         if (angular.isUndefined(message.ID)) {
-                            if (angular.isUndefined(message.savePromise)) {
-                                recordMessage(message, false, false, false); // message, forward, notification
-                            }
-
-                            message.savePromise.then(process);
+                            recordMessage(message, false, false, false).then(process); // message, forward, notification
                         } else {
                            process();
                         }
@@ -462,26 +458,25 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         done();
                     }
                 },
-                init: function(event) {
-                    var dropzone = this;
+                init(event) {
+                    const dropzone = this;
 
-                    _.forEach(message.Attachments, function (attachment) {
-                        var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
+                    _.forEach(message.Attachments, ({ Name, Size, MIMEType, ID }) => {
+                        const mockFile = { name: Name, size: Size, type: MIMEType, ID };
                         dropzone.options.addedfile.call(dropzone, mockFile);
                     });
                 }
             },
             eventHandlers: {
-                drop: function(event) {
+                drop(event) {
                     event.preventDefault();
-
                      /* /!\ force digest over state change */
-                    $scope.$digest(function() {
+                    $scope.$applyAsync(function() {
                         $scope.isOver = false;
                     });
 
                 },
-                error: function(event) {
+                error(event) {
 
                     /* Notification is already handled by the accept method */
                     /*
@@ -496,16 +491,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         };
     };
 
-    $scope.getAttachmentsSize = function(message) {
-        var size = 0;
-
-        angular.forEach(message.Attachments, function(attachment) {
-            if (angular.isDefined(attachment.Size)) {
-                size += parseInt(attachment.Size);
-            }
-        });
-        return size;
-    };
+    $scope.getAttachmentsSize = ({ Attachments = [] } = {}) => Attachments.reduce((acc, { Size = 0 } = {}) => acc + ~~Size, 0);
 
     $scope.decryptAttachments = function(message) {
         var removeAttachments = [];
@@ -542,13 +528,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     $scope.removeAttachment(attachment, message);
                 });
             }
-
-            if (_.find(message.Attachments, {isEmbedded: true}).length > 0) {
-               _.each(message.Attachments, function(attachment) {
-                   // $scope.addAttachment(file, message); // file ???
-               });
-            }
-        });
+       });
     };
 
     $scope.initAttachment = function(tempPacket, index) {
@@ -767,10 +747,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var set = {};
 
             set.composerWidth = composers.eq(0).outerWidth();
-            set.margin = ($('html').hasClass('ua-windows_nt')) ? 40 : 20;
-            set.windowWidth = $('body').outerWidth();
+            set.margin = document.documentElement.classList.contains('ua-windows_nt') ? 40 : 20;
+
+            set.windowWidth = document.body.offsetWidth;
             set.messagesCount = $scope.messages.length;
-            set.isBootstrap = (tools.findBootstrapEnvironment() === 'xs') ? true : false;
+            set.isBootstrap = (tools.findBootstrapEnvironment() === 'xs');
 
             /*
             Is the available space enough ?
@@ -980,15 +961,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 // Find attachements not in da input
                 const AttToRemove = message
                     .Attachments
-                    .filter((attachment) => {
+                    .filter(({ uploading, Headers = {} }) => {
 
                         // If the file is uploading it means: its first time
-                        if (attachment.uploading) {
+                        if (uploading) {
                             return false;
                         }
 
-                        const cid = attachment.Headers['content-id'].replace(/[<>]+/g, '');
-                        return cids.indexOf(cid) === -1;
+                        const cid = Headers['content-id'] || '';
+                        return cids.indexOf(cid.replace(/[<>]+/g, '')) === -1;
                     });
 
                 if (AttToRemove.length) {
@@ -1171,30 +1152,37 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     };
 
+    const filterAttachementsComparator = (msg) => msg.Attachments.map(o => _.omit(o, 'sessionKey', 'elem'));
+
     /**
      * Determine if we need to save the message
      */
-    $scope.needToSave = function(message) {
+    function needToSave(message) {
+
         if (angular.isDefined(message.old)) {
-            var currentMessage = _.pick(message, $scope.oldProperties);
-            var oldMessage = _.pick(message.old, $scope.oldProperties);
+            const currentMessage = _.pick(message, $scope.oldProperties);
+            const oldMessage = _.pick(message.old, $scope.oldProperties);
+
+            currentMessage.Attachments = filterAttachementsComparator(currentMessage);
+            oldMessage.Attachments = filterAttachementsComparator(oldMessage);
             return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
-        } else {
-            return true;
         }
-    };
+
+        return true;
+    }
 
     /**
      * Delay the saving
      * @param {Object} message
      */
     $scope.saveLater = function(message) {
+
         if (angular.isDefined(message.timeoutSaving)) {
             $timeout.cancel(message.timeoutSaving);
         }
 
         message.timeoutSaving = $timeout(function() {
-            if ($scope.needToSave(message)) {
+            if (needToSave(message)) {
                 recordMessage(message, false, false, true); // message, forward, notification, autosaving
             }
         }, CONSTANTS.SAVE_TIMEOUT_TIME, false); // 3 seconds
@@ -1295,175 +1283,160 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
         };
 
-        // Functions
-        // Schedule this save after the in-progress one completes
-        var nextSave = function(result) {
-            return recordMessage(message, forward, notification, autosaving);
-        };
-
         if (angular.isDefined(message.timeoutSaving)) {
             $timeout.cancel(message.timeoutSaving);
         }
 
-        if (message.saving === true && message.savePromise) {
-            message.savePromise = message.savePromise.then(nextSave, nextSave);
-            deferred.resolve(message.savePromise);
+        message.saving = true;
+        message.autosaving = autosaving || false;
+        dispatchMessageAction(message);
+
+        if (angular.isUndefined(parameters.Message.Subject)) {
+            parameters.Message.Subject = '';
+        }
+
+        if (angular.isString(parameters.Message.ToList)) {
+            parameters.Message.ToList = [];
+        }
+
+        if (angular.isString(parameters.Message.CCList)) {
+            parameters.Message.CCList = [];
+        }
+
+        if (angular.isString(parameters.Message.BCCList)) {
+            parameters.Message.BCCList = [];
+        }
+
+        if (angular.isDefined(message.ParentID)) {
+            parameters.ParentID = message.ParentID;
+            parameters.Action = message.Action;
+        }
+
+        if (angular.isDefined(message.ID)) {
+            parameters.id = message.ID;
         } else {
-            message.saving = true;
-            message.autosaving = autosaving || false;
-            dispatchMessageAction(message);
+            parameters.Message.IsRead = 1;
+        }
 
-            if (angular.isUndefined(parameters.Message.Subject)) {
-                parameters.Message.Subject = '';
-            }
+        if (autosaving === false) {
+            parameters.Message.IsRead = 1;
+        }
 
-            if (angular.isString(parameters.Message.ToList)) {
-                parameters.Message.ToList = [];
-            }
+        parameters.Message.AddressID = message.From.ID;
 
-            if (angular.isString(parameters.Message.CCList)) {
-                parameters.Message.CCList = [];
-            }
+        // Encrypt message body with the first public key for the From address
+        message.encryptBody(message.From.Keys[0].PublicKey)
+        .then(function(result) {
+            var draftPromise;
+            var CREATE = 1;
+            var UPDATE = 2;
+            var actionType;
 
-            if (angular.isString(parameters.Message.BCCList)) {
-                parameters.Message.BCCList = [];
-            }
 
-            if (angular.isDefined(message.ParentID)) {
-                parameters.ParentID = message.ParentID;
-                parameters.Action = message.Action;
-            }
+            // Set encrypted body
+            parameters.Message.Body = result;
 
             if (angular.isDefined(message.ID)) {
-                parameters.id = message.ID;
+                draftPromise = Message.updateDraft(parameters).$promise;
+                actionType = UPDATE;
             } else {
-                parameters.Message.IsRead = 1;
+                draftPromise = Message.createDraft(parameters).$promise;
+                actionType = CREATE;
             }
 
-            if (autosaving === false) {
-                parameters.Message.IsRead = 1;
-            }
-
-            parameters.Message.AddressID = message.From.ID;
-
-            // Encrypt message body with the first public key for the From address
-            message.encryptBody(message.From.Keys[0].PublicKey)
+            // Save draft before to send
+            draftPromise
             .then(function(result) {
-                var draftPromise;
-                var CREATE = 1;
-                var UPDATE = 2;
-                var actionType;
+                if (angular.isDefined(result) && result.Code === 1000) {
+                    var events = [];
+                    var conversation = cache.getConversationCached(result.Message.ConversationID);
+                    var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
+                    var numMessages;
 
-
-                // Set encrypted body
-                parameters.Message.Body = result;
-
-                if (angular.isDefined(message.ID)) {
-                    draftPromise = Message.updateDraft(parameters).$promise;
-                    actionType = UPDATE;
-                } else {
-                    draftPromise = Message.createDraft(parameters).$promise;
-                    actionType = CREATE;
-                }
-
-                // Save draft before to send
-                draftPromise
-                .then(function(result) {
-                    if (angular.isDefined(result) && result.Code === 1000) {
-                        var events = [];
-                        var conversation = cache.getConversationCached(result.Message.ConversationID);
-                        var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
-                        var numMessages;
-
-                        if (actionType === CREATE) {
-                            numMessages = angular.isDefined(conversation) ? (conversation.NumMessages + 1) : 1;
-                        } else if (actionType === UPDATE) {
-                            numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
-                        }
-
-                        message.ID = result.Message.ID;
-                        message.IsRead = result.Message.IsRead;
-                        message.Time = result.Message.Time;
-
-                        if (forward === true && result.Message.Attachments.length > 0) {
-                            message.Attachments = result.Message.Attachments;
-                            if (message.Attachments.length > message.NumEmbedded) {
-                                message.attachmentsToggle = true;
-                            }
-                        }
-
-                        result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
-                        result.Message.Recipients = _.uniq(result.Message.ToList.concat(result.Message.CCList).concat(result.Message.BCCList)); // The back-end doesn't return Recipients
-
-                        $scope.saveOld(message);
-
-                        // Update draft in message list
-                        events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
-
-                        // Generate conversation event
-                        events.push({Action: 3, ID: result.Message.ConversationID, Conversation: {
-                            NumAttachments: result.Message.Attachments.length, // it's fine
-                            NumMessages: numMessages,
-                            NumUnread: numUnread,
-                            Recipients: result.Message.Recipients,
-                            Senders: result.Message.Senders,
-                            Subject: result.Message.Subject,
-                            ID: result.Message.ConversationID,
-                            LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
-                        }});
-
-                        // Send events
-                        cache.events(events);
-
-                        if (notification === true) {
-                            notify({message: gettextCatalog.getString('Message saved', null), classes: 'notification-success'});
-                        }
-
-                        message.saving = false;
-                        message.autosaving = false;
-                        dispatchMessageAction(message);
-
-                        deferred.resolve(result);
-                    } else if (angular.isDefined(result) && result.Code === 15033) {
-                        // Case where the user delete draft in an other terminal
-                        delete message.ID;
-                        message.saving = false;
-                        message.autosaving = false;
-                        dispatchMessageAction(message);
-                        deferred.resolve(recordMessage(message, forward, notification));
-                    } else if (angular.isDefined(result) && result.Error) {
-                        // Errors from backend
-                        message.saving = false;
-                        message.autosaving = false;
-                        dispatchMessageAction(message);
-                        deferred.reject(result.Error);
-                    } else {
-                        message.saving = false;
-                        message.autosaving = false;
-                        dispatchMessageAction(message);
-                        deferred.reject(result);
+                    if (actionType === CREATE) {
+                        numMessages = angular.isDefined(conversation) ? (conversation.NumMessages + 1) : 1;
+                    } else if (actionType === UPDATE) {
+                        numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
                     }
-                }, function(error) {
+
+                    message.ID = result.Message.ID;
+                    message.IsRead = result.Message.IsRead;
+                    message.Time = result.Message.Time;
+
+                    if (forward === true && result.Message.Attachments.length > 0) {
+                        message.Attachments = result.Message.Attachments;
+                        if (message.Attachments.length > message.NumEmbedded) {
+                            message.attachmentsToggle = true;
+                        }
+                    }
+
+                    result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
+                    result.Message.Recipients = _.uniq(result.Message.ToList.concat(result.Message.CCList).concat(result.Message.BCCList)); // The back-end doesn't return Recipients
+
+                    $scope.saveOld(message);
+
+                    // Update draft in message list
+                    events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
+
+                    // Generate conversation event
+                    events.push({Action: 3, ID: result.Message.ConversationID, Conversation: {
+                        NumAttachments: result.Message.Attachments.length, // it's fine
+                        NumMessages: numMessages,
+                        NumUnread: numUnread,
+                        Recipients: result.Message.Recipients,
+                        Senders: result.Message.Senders,
+                        Subject: result.Message.Subject,
+                        ID: result.Message.ConversationID,
+                        LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                    }});
+
+                    // Send events
+                    cache.events(events);
+
+                    if (notification === true) {
+                        notify({message: gettextCatalog.getString('Message saved', null), classes: 'notification-success'});
+                    }
+
                     message.saving = false;
                     message.autosaving = false;
                     dispatchMessageAction(message);
-                    error.message = 'Error during the draft request';
-                    deferred.reject(error);
-                });
+
+                    deferred.resolve(result);
+                } else if (angular.isDefined(result) && result.Code === 15033) {
+
+                    // Case where the user delete draft in an other terminal
+                    delete message.ID;
+                    message.saving = false;
+                    message.autosaving = false;
+                    dispatchMessageAction(message);
+                    deferred.resolve(recordMessage(message, forward, notification));
+                } else if (angular.isDefined(result) && result.Error) {
+
+                    // Errors from backend
+                    message.saving = false;
+                    message.autosaving = false;
+                    dispatchMessageAction(message);
+                    deferred.reject(result.Error);
+                } else {
+                    message.saving = false;
+                    message.autosaving = false;
+                    dispatchMessageAction(message);
+                    deferred.reject(result);
+                }
             }, function(error) {
                 message.saving = false;
                 message.autosaving = false;
                 dispatchMessageAction(message);
-                error.message = 'Error encrypting message';
+                error.message = 'Error during the draft request';
                 deferred.reject(error);
             });
-
-            message.savePromise = deferred.promise.finally(function() {
-                message.saving = false;
-                message.autosaving = false;
-                dispatchMessageAction(message);
-            });
-        }
+        }, function(error) {
+            message.saving = false;
+            message.autosaving = false;
+            dispatchMessageAction(message);
+            error.message = 'Error encrypting message';
+            deferred.reject(error);
+        });
 
         if (autosaving === false) {
             networkActivityTracker.track(deferred.promise);
@@ -1534,7 +1507,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 .then(function() {
                     $scope.checkSubject(message).then(function() {
 
-
                         message.encrypting = true;
                         dispatchMessageAction(message);
                         var parameters = {};
@@ -1542,8 +1514,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         parameters.id = message.ID;
                         parameters.ExpirationTime = message.ExpirationTime;
+
                         message.getPublicKeys(emails)
                         .then(function(result) {
+
                             if (result.data && result.data.Code === 1000) {
                                 var keys = result.data; // Save result in keys variables
                                 var outsiders = false; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
@@ -1557,14 +1531,24 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                         var key = keys[email];
 
                                         // Encrypt content body in with the public key user
-                                        promises.push(message.encryptBody(key).then(function(result) {
-                                            var body = result;
-
-                                            // Encrypt attachments with the public key
-                                            return message.encryptPackets(key).then(function(keyPackets) {
-                                                return parameters.Packages.push({Address: email, Type: 1, Body: body, KeyPackets: keyPackets});
+                                        const encryptingPromise = message
+                                            .encryptBody(key)
+                                            .then((result) => {
+                                                const Body = result;
+                                                // Encrypt attachments with the public key
+                                                return message
+                                                    .encryptPackets(key)
+                                                    .then((keyPackets) => {
+                                                        return parameters
+                                                            .Packages
+                                                            .push({
+                                                                Address: email,
+                                                                Type: 1,
+                                                                Body, KeyPackets: keyPackets
+                                                            });
+                                                    });
                                             });
-                                        }));
+                                        promises.push(encryptingPromise);
                                     }
                                     // Outside user
                                     else {
@@ -1575,6 +1559,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
                                             promises.push(replyTokenPromise.then(function(encryptedToken) {
+
                                                 return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
 
                                                     var body = result;
@@ -1611,18 +1596,20 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                     if (message.Attachments.length > 0) {
                                         // Add clear attachments packet in parameter
                                         promises.push(
-                                            message.clearPackets().then(function(packets) {
-                                                parameters.AttachmentKeys = packets;
-                                            })
+                                            message
+                                                .clearPackets()
+                                                .then((packets) => parameters.AttachmentKeys = packets)
                                         );
                                     }
                                 }
 
                                 // When all promises are complete
                                 $q.all(promises).then(function() {
+
                                     if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
                                         $log.error(message);
                                         message.encrypting = false;
+                                        dispatchMessageAction(message);
                                         deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
                                     } else {
                                         message.encrypting = false;
@@ -1709,9 +1696,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 });
 
             });
-        }, function(error) {
-            deferred.reject(error);
-        });
+        }, deferred.reject);
 
         networkActivityTracker.track(deferred.promise);
 

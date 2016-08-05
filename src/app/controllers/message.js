@@ -414,7 +414,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     }
 
-
     /**
      * Mark current message as read
      */

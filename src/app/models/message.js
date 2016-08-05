@@ -254,32 +254,32 @@ angular.module("proton.models.message", ["proton.constants"])
             return deferred.promise;
         },
 
-        encryptPackets: function(keys, passwords) {
-            var deferred = $q.defer();
-            var packets = [];
+        encryptPackets(keys = '', passwords = '') {
+            const deferred = $q.defer();
+            const packets = [];
 
-            if (keys===(undefined||'')) {
-                keys = [];
-            }
+            const keysPackets = keys !== '' ? keys : [];
+            const passwordsPackets = passwords !== '' ? passwords : [];
 
-            if (passwords===(undefined||'')) {
-                passwords = [];
-            }
+            _.each(this.Attachments, (element = {}) => {
 
-            _.each(this.Attachments, function(element) {
-                packets.push(pmcw.encryptSessionKey(element.sessionKey.key, element.sessionKey.algo, keys, passwords).then(function (keyPacket) {
-                    return {
-                        ID: element.AttachmentID || element.ID,
-                        KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
-                    };
-                }));
-            }, function(error) {
-                console.log(error);
+                const { sessionKey = {}, AttachmentID, ID } = element;
+                const { key, algo } = sessionKey;
+
+                if (key) {
+                    const defferedAction = pmcw
+                        .encryptSessionKey(key, algo, keysPackets, passwordsPackets)
+                        .then((keyPacket) => ({
+                            ID: AttachmentID || ID,
+                            KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
+                        }));
+
+                    packets.push(defferedAction);
+                }
+
             });
 
-            $q.all(packets).then(function(result) {
-                deferred.resolve(result);
-            });
+            $q.all(packets).then(deferred.resolve);
 
             return deferred.promise;
         },
