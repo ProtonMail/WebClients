@@ -151,7 +151,8 @@ angular.module("proton.controllers.Auth", [
                         $rootScope.isLoggedIn = true;
                         $rootScope.tempUser = {
                             username: $scope.username,
-                            password: $scope.password
+                            password: $scope.password,
+                            authResponse: result.data
                         };
 
                         $state.go('login.unlock');
@@ -189,15 +190,13 @@ angular.module("proton.controllers.Auth", [
 
         networkActivityTracker.track(
             authentication.unlockWithPassword(
-                $rootScope.TemporaryEncryptedPrivateKeyChallenge,
                 mailboxPassword,
-                $rootScope.TemporaryEncryptedAccessToken,
-                $rootScope.TemporaryAccessData
+                $rootScope.tempUser.authResponse
             )
             .then(
                 function(resp) {
                     $log.debug('unlockWithPassword:resp'+resp);
-                    return authentication.setAuthCookie()
+                    return authentication.setAuthCookie($rootScope.tempUser.authResponse)
                     .then(
                         function(resp) {
                             $log.debug('setAuthCookie:resp'+resp);
