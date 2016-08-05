@@ -93,9 +93,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             window.onbeforeunload = function() {
                 return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
+            hotkeys.unbind(); // Disable hotkeys
         } else {
             $rootScope.activeComposer = false;
             window.onbeforeunload = undefined;
+            hotkeys.bind(); // Enable hotkeys
         }
     });
 
@@ -924,9 +926,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var composer = angular.element('#uid' + message.uid);
 
             if ((message.ToList.length+message.CCList.length+message.BCCList.length) === 0) {
-                $timeout(function () {
-                    $scope.focusTo(message);
-                }, 100, false);
+                $scope.$applyAsync(() => $scope.focusTo(message));
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
             } else if (message.editor) {
