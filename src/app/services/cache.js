@@ -430,9 +430,9 @@ angular.module('proton.cache', [])
      * @param {Array} messages
      * @return {Array} don't miss this array is reversed
      */
-    api.orderMessage = function(messages) {
-        if (angular.isArray(messages)) {
-            return messages.sort(function(a, b) {
+    api.orderMessage = function(messages = [], doReverse = true) {
+        const list = messages
+            .sort(function(a, b) {
                 if (a.Time < b.Time) {
                     return -1;
                 }
@@ -450,10 +450,9 @@ angular.module('proton.cache', [])
                 }
 
                 return 0;
-            }).reverse();
-        } else {
-            return [];
-        }
+            });
+
+        return doReverse ? list.reverse() : list;
     };
 
     /**

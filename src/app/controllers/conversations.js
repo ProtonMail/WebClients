@@ -334,8 +334,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     } else {
                         element = _.first($scope.conversations);
                     }
-                } else if (angular.isDefined(_.findWhere($scope.conversations, {ID: $scope.markedConversation.ID}))) {
-                    element = _.findWhere($scope.conversations, {ID: $scope.markedConversation.ID});
+
+                    const find = $scope.markedConversation ? _.findWhere($scope.conversations, {ID: $scope.markedConversation.ID}) : void 0;
+
+                } else if (find) {
+                    element = find;
                 } else {
                     element = _.first($scope.conversations);
                 }
@@ -446,8 +449,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Unselect all elements
      */
     $scope.unselectAllElements = function() {
-        _.each($scope.conversations, function(element) {
+        $scope.conversations = _.map($scope.conversations, function(element) {
             element.Selected = false;
+            return element;
         });
         $rootScope.numberElementChecked = 0;
     };
@@ -469,9 +473,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.elementsSelected = function() {
         var elements = _.where($scope.conversations, {Selected: true});
 
-        if ($scope.conversations.length > 0 && elements.length === 0) {
+        if ($scope.conversations.length > 0 && elements.length === 0 && $scope.markedConversation) {
             var type = tools.typeList();
-
             if (type === 'message') {
                 elements = _.where($scope.conversations, {ID: $scope.markedConversation.ID});
             } else if (type === 'conversation') {

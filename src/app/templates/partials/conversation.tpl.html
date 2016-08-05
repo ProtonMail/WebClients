@@ -25,7 +25,7 @@
     </div>
 </header>
 <div id="pm_thread">
-    <article class="message" ng-repeat="message in orderMessages(messages) | filter: filterMessages track by message.ID" ng-controller="MessageController" id="message{{ $index }}" ng-class="{
+    <article class="message" ng-repeat="message in messages | filter: filterMessages track by message.ID" ng-controller="MessageController" id="message{{ $index }}" ng-class="{
         'last': $last,
         'open': message.expand,
         'closed': !message.expand,

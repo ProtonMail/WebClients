@@ -169,24 +169,17 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             // $scope.spammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; }).length > 0;
             // $scope.nonSpammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; }).length > 0;
             messages = $filter('filterMessages')(messagesCached);
-            messages = $scope.orderMessages(messages);
+
 
             if (messages.length > 0) {
                 expandMessage(messages);
-                $scope.messages = messages;
+                $scope.messages = cache.orderMessage(messages, false);
             } else {
                 $scope.back();
             }
         } else {
             $scope.back();
         }
-    };
-
-    /**
-     * Sort messages by time
-     */
-    $scope.orderMessages = function(messages) {
-        return cache.orderMessage(messages).reverse();
     };
 
     /**
@@ -224,7 +217,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             };
 
             messages = $filter('filterMessages')(messages);
-            messages = $scope.orderMessages(messages);
+            messages = cache.orderMessage(messages);
 
             for (index = 0; index < messages.length; index++) {
                 found = find($scope.messages, messages[index].ID);
