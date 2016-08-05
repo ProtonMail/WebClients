@@ -217,7 +217,7 @@ angular.module('proton', [
     });
 
     // Manage responsive changes
-    angular.element(window).bind('resize', _.debounce(tools.mobileResponsive, 50));
+    angular.element(window).bind('resize', _.throttle(tools.mobileResponsive, 50));
     angular.element(window).bind('orientationchange', tools.mobileResponsive);
     tools.mobileResponsive();
 
