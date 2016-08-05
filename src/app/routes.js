@@ -261,21 +261,6 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/reset-mailbox-password.tpl.html'
             }
         },
-        resolve: {
-            token: function($http, $rootScope, authentication, url, CONFIG) {
-                return $http.post(url.get() + '/auth',
-                    _.extend(_.pick($rootScope.creds, 'Username', 'Password', 'HashedPassword'), {
-                        ClientID: CONFIG.clientID,
-                        ClientSecret: CONFIG.clientSecret,
-                        GrantType: 'password',
-                        State: authentication.randomString(24),
-                        RedirectURI: 'https://protonmail.com',
-                        ResponseType: 'token',
-                        Scope: 'reset'
-                    })
-                );
-            }
-        },
         onEnter: function($rootScope, $state, $log) {
             if (!$rootScope.isLoggedIn) {
                 $log.debug('reset.onEnter:1');
@@ -540,7 +525,6 @@ angular.module('proton.routes', [
         },
         onEnter: function($rootScope, authentication, $timeout, CONSTANTS) {
             // This will redirect to a login step if necessary
-            delete $rootScope.creds;
             delete $rootScope.tempUser;
             authentication.redirectIfNecessary();
         }

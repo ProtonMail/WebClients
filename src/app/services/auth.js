@@ -358,7 +358,6 @@ angular.module("proton.authentication", [
                 });
             } else {
                 delete $http.defaults.headers.common.Accept;
-                $rootScope.creds = creds;
                 $http.post(url.get() + "/auth",
                     _.extend(_.pick(creds, "Username", "Password"), {
                         ResponseType: "token",
@@ -739,7 +738,6 @@ angular.module("proton.authentication", [
         eventManager.stop();
         cache.reset();
         cacheCounters.reset();
-        delete $rootScope.creds;
         delete $rootScope.tempUser;
         $state.go('login');
     };

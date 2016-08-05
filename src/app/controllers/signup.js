@@ -511,13 +511,6 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
             params.TokenType = 'email';
         }
 
-        if ($rootScope.tempUser === undefined) {
-            $rootScope.tempUser = [];
-        }
-
-        $rootScope.tempUser.username = $scope.account.Username;
-        $rootScope.tempUser.password = $scope.account.loginPassword;
-
         User.create(params).then(function(result) {
             if (result.data && result.data.Code === 1000) {
                 $scope.createUser  = true;
@@ -536,8 +529,8 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         if (response.Code && response.Code===1000) {
             $scope.logUserIn   = true;
             return authentication.loginWithCredentials({
-                Username: $rootScope.tempUser.username,
-                Password: $rootScope.tempUser.password
+                Username: $scope.account.Username,
+                Password: $scope.account.loginPassword
             });
         }
         else {

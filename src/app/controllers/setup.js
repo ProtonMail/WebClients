@@ -22,7 +22,6 @@ angular.module("proton.controllers.Setup", [
     pmcw,
     tools,
     notify,
-    token,
     secureSessionStorage
 ) {
     $scope.initialization = function() {
@@ -44,10 +43,6 @@ angular.module("proton.controllers.Setup", [
             $rootScope.tempUser = [];
         }
 
-        if(angular.isDefined(token) && angular.isDefined(token.data)) {
-            $scope.resetToken = token.data.AccessToken;
-            $scope.resetUID = token.data.Uid;
-        }
     };
 
     // ---------------------------------------------------
@@ -265,9 +260,9 @@ angular.module("proton.controllers.Setup", [
             return false;
         }
 
-        if (angular.isDefined(token) && angular.isDefined(token.data)) {
-            $http.defaults.headers.common.Authorization = "Bearer " + token.data.AccessToken;
-            $http.defaults.headers.common["x-pm-uid"] = token.data.Uid;
+        if (angular.isDefined($rootScope.tempUser) && angular.isDefined($rootScope.tempUser.authResponse)) {
+            $http.defaults.headers.common.Authorization = "Bearer " + $rootScope.tempUser.authResponse.ResetToken;
+            $http.defaults.headers.common["x-pm-uid"] = $rootScope.tempUser.authResponse.Uid;
         }
 
         /**
