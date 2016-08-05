@@ -18,6 +18,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     confirmModal,
     CONSTANTS,
     Contact,
+    hotkeys,
     Message,
     embedded,
     networkActivityTracker,
