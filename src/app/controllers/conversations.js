@@ -334,13 +334,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     } else {
                         element = _.first($scope.conversations);
                     }
-
-                    const found = $scope.markedConversation ? _.findWhere($scope.conversations, {ID: $scope.markedConversation.ID}) : void 0;
-
-                } else if (found) {
-                    element = found;
                 } else {
-                    element = _.first($scope.conversations);
+                    const found = _.findWhere($scope.conversations, {ID: $scope.markedConversation.ID});
+
+                    if (found) {
+                        element = found;
+                    } else {
+                        element = _.first($scope.conversations);
+                    }
                 }
 
                 $scope.markedConversation = element;
