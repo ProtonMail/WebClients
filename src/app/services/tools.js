@@ -19,14 +19,10 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.mobileResponsive = function() {
-        _rAF(() => {
-           const bodyWidth = document.body.offsetWidth;
+        const bodyWidth = document.body.offsetWidth;
 
-            if (bodyWidth > CONSTANTS.MOBILE_BREAKPOINT) {
-                $rootScope.mobileMode = false;
-            } else if (bodyWidth <= CONSTANTS.MOBILE_BREAKPOINT) {
-                $rootScope.mobileMode = true;
-            }
+        $rootScope.$applyAsync(() => {
+            $rootScope.mobileMode = bodyWidth < CONSTANTS.MOBILE_BREAKPOINT;
         });
     };
 
