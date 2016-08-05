@@ -100,6 +100,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     function expandMessage(messages) {
         if ($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
+            debugger;
             var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
             if (sents.length > 0) {
@@ -112,6 +113,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         } else if ($state.is('secured.search.view') || $state.is('secured.drafts.view')) {
             // Do nothing, target initialized by click
         } else if ($state.is('secured.starred.view')) {
+            debugger;
             // Select the last message starred
             var lastStarred = _.chain(messages).filter(function(message) {
                 return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
@@ -119,6 +121,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
             $rootScope.expandMessage = lastStarred;
         } else if ($state.is('secured.label.view')) {
+
+            debugger;
             // Select the last message with this label
             var lastLabel = _.chain(messages).filter(function(message) {
                 return message.LabelIDs.indexOf($stateParams.label) !== -1;
@@ -128,10 +132,12 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         } else {
             var latest = _.last(messages);
 
+            debugger;
             // If the latest message is read, we open it
             if(latest.IsRead === 1) {
                 $rootScope.expandMessage = latest;
             } else {
+            debugger;
                 // Else we open the first message unread beginning to the end list
                 var loop = true;
                 var index = messages.length - 1;
@@ -149,6 +155,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                     index = 0;
                 }
 
+            debugger;
                 $rootScope.expandMessage = messages[index];
             }
         }
@@ -172,8 +179,8 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
 
             if (messages.length > 0) {
-                expandMessage(messages);
                 $scope.messages = cache.orderMessage(messages, false);
+                expandMessage($scope.messages);
             } else {
                 $scope.back();
             }
