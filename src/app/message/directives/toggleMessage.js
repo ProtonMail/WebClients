@@ -15,9 +15,11 @@ angular.module('proton.message')
         }
 
         element.on('mouseup', mouseup);
+        element.on('touchend', mouseup);
 
         scope.$on('$destroy', () => {
             element.off('mouseup', mouseup);
+            element.off('touchend', mouseup);
         });
     }
 }));
