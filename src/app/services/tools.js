@@ -19,7 +19,6 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.mobileResponsive = function() {
-
         _rAF(() => {
            const bodyWidth = document.body.offsetWidth;
 
