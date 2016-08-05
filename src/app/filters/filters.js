@@ -339,7 +339,7 @@ angular.module("proton.filters",[])
 
 .filter('filterMessages', function($state, $rootScope, CONSTANTS) {
     return function(messages) {
-        if ($state.is('secured.search.view') === false && $state.is('secured.label.view') === false) {
+        if (!$state.is('secured.search.view') && !$state.is('secured.label.view') && !$state.is('secured.starred.view')) {
             var trashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; });
             var nonTrashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; });
 
