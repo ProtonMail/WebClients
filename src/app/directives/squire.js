@@ -7,14 +7,14 @@ angular.module("proton.squire", [
         require: "ngModel",
         priority: 99,
         scope: {
-            ngModel: '=' // body
+            ngModel: '=', // body
+            allowEmbedded: '='
         },
         replace: true,
         transclude: true,
         templateUrl: "templates/directives/squire.tpl.html",
         link: function(scope, element, attrs, ngModel) {
             if (!ngModel) { return; } // do nothing if no ng-model
-
             var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, ua, updateModel, updateStylesToMatch;
 
             LINK_DEFAULT = IMAGE_DEFAULT = "";
