@@ -14,7 +14,6 @@ angular.module('proton.message')
           return $rootScope.$emit("addFile", {dropzone:dropzone, isEmbedded: (actionMessageType === 'addEmbedded')});
         }
 
-
         const msg = messageBuilder.create(actionMessageType, scope.model);
         $rootScope.$emit('loadMessage', msg, (actionMessageType === 'forward' || msg.Attachments.length > 0));
       }

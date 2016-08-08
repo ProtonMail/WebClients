@@ -958,7 +958,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 .map((value) => value.split('rel="')[1].slice(0, -1));
 
             // If we add or remove an embedded image, the diff is true
-            if (cids.length !== latestCids.length) {
+            if (cids.length < latestCids.length) {
                 // Find attachements not in da input
                 const AttToRemove = message
                     .Attachments
@@ -969,14 +969,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             return false;
                         }
 
-                        const cid = Headers['content-id'] || '';
-                        return cids.indexOf(cid.replace(/[<>]+/g, '')) === -1;
+                        const cid = Headers['content-id'];
+                        if(cid) {
+                            return cids.indexOf(cid.replace(/[<>]+/g, '')) === -1;
+                        }
+
                     });
 
-                if (AttToRemove.length) {
-                    AttToRemove
-                        .forEach((att) => $scope.removeAttachment(att, message));
-                }
+                    AttToRemove.forEach((att) => $scope.removeAttachment(att, message));
             }
 
             latestCids = cids;
