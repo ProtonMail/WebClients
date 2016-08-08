@@ -22,6 +22,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     Message,
     embedded,
     networkActivityTracker,
+    composerRequestModel,
     notify,
     pmcw,
     tools,
@@ -383,6 +384,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
 
     $scope.dropzoneConfig = function(message) {
+        let promise;
+
         return {
             options: {
                 addRemoveLinks: false,
@@ -393,6 +396,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
 
+                drop() {
+                    // When we drop something auto record a message
+                    promise = recordMessage(message, false, false, false);
+                },
                 accept(file, done) {
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
@@ -452,8 +459,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             }
                         };
 
+                        // Defer the code execution if the draft is still not saved
                         if (angular.isUndefined(message.ID)) {
-                            recordMessage(message, false, false, false).then(process); // message, forward, notification
+                            promise.then(process);
                         } else {
                            process();
                         }
@@ -1263,12 +1271,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.save = (message, forward, notification, autosaving) => {
         const msg = new Message(message);
         return embedded
-            .parser(message,'cid')
+            .parser(msg,'cid')
             .then((result) => {
                 msg.Body = result;
                 return recordMessage(msg, forward, notification, autosaving);
             });
     };
+
+
+
 
     /**
      * Save the Message
@@ -1286,6 +1297,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if (angular.isDefined(message.timeoutSaving)) {
             $timeout.cancel(message.timeoutSaving);
+        }
+
+        if (message.saving === true && composerRequestModel.has(message)) {
+            const nextSave = () => recordMessage(message, forward, notification, autosaving);
+            composerRequestModel.map(message, nextSave);
+            deferred.resolve();
+            return deferred.promise;
         }
 
         message.saving = true;
@@ -1333,7 +1351,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var UPDATE = 2;
             var actionType;
 
-
             // Set encrypted body
             parameters.Message.Body = result;
 
@@ -1348,6 +1365,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             // Save draft before to send
             draftPromise
             .then(function(result) {
+
                 if (angular.isDefined(result) && result.Code === 1000) {
                     var events = [];
                     var conversation = cache.getConversationCached(result.Message.ConversationID);
@@ -1508,10 +1526,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         const message = new Message(msg);
 
         var deferred = $q.defer();
+
         $scope.validate(message)
         .then(function() {
             embedded.parser(message, 'cid').then(function(result) {
                 message.Body = result;
+
                 recordMessage(message, false, false, false)
                 .then(function() {
                     $scope.checkSubject(message).then(function() {
@@ -1556,7 +1576,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                                                 Body, KeyPackets: keyPackets
                                                             });
                                                     });
-                                            });
+                                            }, deferred.reject);
                                         promises.push(encryptingPromise);
                                     }
                                     // Outside user
@@ -1568,7 +1588,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
                                             promises.push(replyTokenPromise.then(function(encryptedToken) {
-
                                                 return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
 
                                                     var body = result;
@@ -1608,6 +1627,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             message
                                                 .clearPackets()
                                                 .then((packets) => parameters.AttachmentKeys = packets)
+                                                .catch(deferred.reject)
                                         );
                                     }
                                 }
@@ -1669,7 +1689,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                                         $stateParams.message = result.Sent.ID; // Define target ID
                                                         $rootScope.$broadcast('initMessage', result.Sent.ID, true); // Scroll and open the message sent
                                                     }, 500);
-
                                                     deferred.resolve(result); // Resolve finally the promise
                                             }
                                         }, function(error) {
@@ -1704,11 +1723,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     deferred.reject(); // Don't add parameter in the rejection because recordMessage already do that.
                 });
 
-            });
+            }, deferred.reject);
         }, deferred.reject);
 
         networkActivityTracker.track(deferred.promise);
-
         return deferred.promise;
     };
 
@@ -1789,7 +1807,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @return {Array}
      */
     function removeMessage(list, message) {
-        return _.filter(list, (item) => message.ID !== item.ID);
+        return _.filter(list, (item) => message.uid !== item.uid);
     }
 
     /**
@@ -1812,6 +1830,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         message.close();
+        composerRequestModel.clear(message);
 
         // Remove message in composer controller
         $scope.messages = removeMessage($scope.messages, message);
