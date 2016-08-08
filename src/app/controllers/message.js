@@ -316,6 +316,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         // Mark message as expanded
         $scope.message.expand = true;
 
+        $scope.message.decrypting = false;
+
         // Mark message as read
         if ($scope.message.IsRead === 0) {
             $scope.read();
