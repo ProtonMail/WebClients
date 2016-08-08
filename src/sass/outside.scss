@@ -148,11 +148,12 @@ body#eo-reply {
 		padding-left: 35px;
 		padding-right: 35px;
 	}
-	.display-image {
-	    position: absolute;
-	    right: 35px;
-	    bottom: -1px;
-	    margin: 0 0 0 -5rem;
+	.display-image,
+	.display-embedded {
+	    float:right;
+	    margin: -20px 0px 0px 10px;
+	    padding: 10px;
+	    height: auto;
 	    width: initial;
 	    border-radius: 4px 4px 0 0;
 	    background: #fff;
@@ -179,7 +180,6 @@ body#eo-reply {
 		}
 	    &:hover {
 	        background: #fff;
-	        padding-top: 4px;
 	    }
 	}
 	.message-metadata {

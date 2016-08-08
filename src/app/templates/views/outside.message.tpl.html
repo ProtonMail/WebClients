@@ -45,6 +45,13 @@
                 <i class="fa fa-photo"></i> <span translate-context="Action" translate translate-comment="show images in an email button">Load remote content</span>
             </a>
         </p>
+        <p ng-show="message.showEmbedded === false" class="display-embedded text-center pm_button" ng-click="displayEmbedded()">
+            <a href="#">
+                <i class="fa fa-photo"></i>
+                <span translate translate-context="Action">Load embedded images</span>
+            </a>
+        </p>
+
     </div>
     <div id="outsideMessage">
         <div id="message-body" data-embedded-img-loader>

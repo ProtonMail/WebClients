@@ -7,6 +7,8 @@ angular.module('proton.message')
     return function(html, message) {
 
         const images = [].slice.call(html.querySelectorAll('img[src]'));
+        const user = authentication.user || {ShowEmbedded:0};
+        const show = message.showEmbedded === true || user.ShowEmbedded === 1;
 
         if (images.length > 0) {
             images.forEach(function(image) {
@@ -14,7 +16,7 @@ angular.module('proton.message')
                 const isEmbedded = REGEXP_IS_CID.test(src);
 
                 if (isEmbedded) {
-                    if (authentication.user.ShowEmbedded === 1 || message.showEmbedded === true) {
+                    if (show) {
                         image.setAttribute('data-embedded-img', src);
                         !image.parentElement.classList.contains('loading') && wrapImage(image);
                     } else {

@@ -55,7 +55,6 @@ angular.module("proton.embedded", [])
 
     const counterState = {
         add(message){
-            var attachs =  message.Attachments || [];
             message.NumEmbedded = message.NumEmbedded + 1;
         },
         remove(message){
@@ -186,6 +185,9 @@ angular.module("proton.embedded", [])
         var attachs =  message.Attachments;
         var processed = false;
         const list = Object.keys(CIDList[message.ID] || {});
+        const user = authentication.user || {ShowEmbedded:0};
+        const show = message.showEmbedded === true || user.ShowEmbedded === 1;
+
         let parsingAttachementPromise = [];
 
         // loop the CID list
@@ -193,7 +195,7 @@ angular.module("proton.embedded", [])
             .forEach( function(cid, index) {
 
             // Check if the CID is already stored
-            if (!Blobs[cid] && (authentication.user.ShowEmbedded === 1 || message.showEmbedded === true)) {
+            if (!Blobs[cid] && show) {
                 processed = true;
 
                 var attachment = attachs[index];
