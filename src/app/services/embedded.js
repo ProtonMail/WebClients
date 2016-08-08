@@ -233,6 +233,12 @@ angular.module("proton.embedded", [])
                                 at = null;
                                 const storeAttachement = store(message, cid);
                                 storeAttachement(data, attachment.MIMEType);
+                                // Store attachment decrypted
+                                attachments.push({
+                                    ID: attachment.ID,
+                                    data: data,
+                                    name: attachment.Name
+                                });
                             })
                             .catch(deferred.reject);
                     }).catch(deferred.reject);

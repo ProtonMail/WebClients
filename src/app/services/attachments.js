@@ -17,6 +17,15 @@ angular.module('proton.attachments', ['proton.authentication', 'proton.storage']
 ) {
     return {
         store: [],
+        push : function(data) {
+            this.store.push(data);
+        },
+        fetch: function(){
+            return this.store;
+        },
+        flush: function(){
+            this.store = [];
+        },
         // read the file locally, and encrypt it. return the encrypted file.
         load: function(file, key) {
             var q = $q.defer();
