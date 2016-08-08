@@ -101,6 +101,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     });
 
+    $rootScope.$on('toggleMessage', function(event, messageID) {
+        if ($scope.message.ID === messageID) {
+            $scope.toggle();
+        }
+    });
+
     // Listner when we destroy this message controller
     $scope.$on('$destroy', function(event) {
         $scope.message.expand = false;
@@ -135,7 +141,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.openComposer($scope.message.ID, true); // MessageID, force saving to get attachment IDs
         } else {
             if (angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
-                networkActivityTracker.track($scope.initView(true));
+                networkActivityTracker.track($scope.initView());
             } else {
                 $scope.message.expand = false;
             }

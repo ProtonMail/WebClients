@@ -767,8 +767,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         $state.go('secured.' + $scope.mailbox + '.view', params);
 
-        if (params.id === $stateParams.id) {
-            $rootScope.$broadcast('initMessage', element.ID, true);
+        if (params.id === $state.params.id) {
+            $rootScope.$emit('toggleMessage', element.ID);
         }
     };
 

@@ -99,7 +99,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      * Search and ask to expand a message
      */
     function expandMessage(messages = []) {
-
          if ($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
             var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
@@ -111,7 +110,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 $rootScope.expandMessage = _.last(messages);
             }
         } else if ($state.is('secured.search.view') || $state.is('secured.drafts.view')) {
-            // Do nothing, target initialized by click
+            if (typeof $rootScope.expandMessage === 'undefined') {
+                $rootScope.expandMessage = _.last(messages);
+            }
         } else if ($state.is('secured.starred.view')) {
             // Select the last message starred
             var lastStarred = _.chain(messages).filter(function(message) {
