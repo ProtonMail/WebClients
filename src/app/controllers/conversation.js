@@ -98,8 +98,9 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     /**
      * Search and ask to expand a message
      */
-    function expandMessage(messages) {
-        if ($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
+    function expandMessage(messages = []) {
+
+         if ($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
             var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
             if (sents.length > 0) {
@@ -147,7 +148,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 if (loop === true) { // No message read found
                     index = 0;
                 }
-
                 $rootScope.expandMessage = messages[index];
             }
         }
@@ -384,7 +384,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $scope.starred = function() {
         return $scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
     };
-
     // Call initialization
     $scope.initialization();
 

@@ -76,12 +76,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     });
 
-    $scope.$on('initMessage', function(event, ID, scroll) {
-        if ($scope.message.ID === ID) {
-            $scope.initialization(scroll);
-        }
-    });
-
     $scope.$on('move', function(event, name) {
         if ($scope.message === $scope.markedMessage) {
             $scope.move(name);
