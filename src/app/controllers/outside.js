@@ -66,6 +66,7 @@ angular.module("proton.controllers.Outside", [
 
             message.decryptedBody = $sce.trustAsHtml(message.Body);
             $scope.message = message;
+
         } else if ($state.is('eo.reply')) {
             embedded.parser(message).then( function(result) {
                 message.Body = result;
@@ -101,6 +102,7 @@ angular.module("proton.controllers.Outside", [
             // cancel timer ago
             $interval.cancel($scope.agoTimer);
         });
+
     };
 
     /**
@@ -233,6 +235,16 @@ angular.module("proton.controllers.Outside", [
             $scope.message.imagesHidden = true;
         }
     };
+
+
+    $scope.displayEmbedded = function() {
+        message = $scope.message;
+        message.showEmbedded = true;
+        embedded.parser(message).then( function(result) {
+            message.decryptedBody = result;
+        });
+    };
+
 
     $scope.addAttachment = function(file) {
         var totalSize = message.sizeAttachments();

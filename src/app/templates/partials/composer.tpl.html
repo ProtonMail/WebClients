@@ -196,11 +196,11 @@
                     <squire ng-model="message.Body" allow-embedded="true" ng-click="attHide(message); message.autocompletesFocussed = false;" ></squire>
                 </div>
             </section>
-             <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.NumAttachments > 0 || message.NumEmbedded > 0" >
+             <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0" >
                 <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate translate-context="Action">Hide</i>
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
                 <strong>{{ message.sizeAttachments() | humanSize }}</strong>
-                <span ng-show="message.Attachments.length - message.NumEmbedded > 0">
+                <span ng-show="message.Attachments.length > message.NumEmbedded">
                     <i class="fa fa-paperclip"></i> ({{ message.Attachments.length -  message.NumEmbedded }})
                     <span translate translate-n="message.Attachments.length -  message.NumEmbedded" translate-plural="Files attached">File attached</span>
                 </span>
