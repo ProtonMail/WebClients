@@ -137,11 +137,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.toggle = function() {
         // If this message is a draft
-        if($scope.message.Type === 1) {
+        if ($scope.message.Type === 1) {
             // Open the message in composer if it's a draft
-            $scope.openComposer($scope.message.ID);
+            $scope.openComposer($scope.message.ID, true); // MessageID, force saving to get attachment IDs
         } else {
-            if(angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
+            if (angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
                 networkActivityTracker.track($scope.initView(true));
             } else {
                 $scope.message.expand = false;
@@ -200,7 +200,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         if ($scope.message.Type === 1) {
             if ($state.is('secured.drafts.view') === true) {
                 // Open the message in composer if it's a draft
-                $scope.openComposer($scope.message.ID);
+                $scope.openComposer($scope.message.ID, true);
             }
 
             deferred.resolve();
@@ -224,14 +224,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     /**
      * Open the message in the composer window
      * @param {String} id
+     * @param {Boolean} save
      */
-    $scope.openComposer = function(id) {
+    $scope.openComposer = function(id, save) {
         cache.getMessage(id).then(function(message) {
             var copy = angular.copy(message);
 
             copy.decryptBody().then(function(content) {
                 copy.Body = content;
-                $rootScope.$broadcast('loadMessage', copy);
+                $rootScope.$broadcast('loadMessage', copy, save);
             }, function(error) {
                 notify({message: gettextCatalog.getString('Error during the decryption of the message', null, 'Error'), classes: 'notification-danger'});
                 $log.error(error); // TODO send to back-end
