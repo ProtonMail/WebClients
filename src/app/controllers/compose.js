@@ -1380,16 +1380,24 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
 
                     // Generate conversation event
-                    events.push({Action: 3, ID: result.Message.ConversationID, Conversation: {
-                        NumAttachments: result.Message.Attachments.length, // it's fine
-                        NumMessages: numMessages,
-                        NumUnread: numUnread,
+                    const firstConversation = {
                         Recipients: result.Message.Recipients,
                         Senders: result.Message.Senders,
-                        Subject: result.Message.Subject,
+                        Subject: result.Message.Subject
+                    };
+
+                    // Generate conversation event
+                    events.push({
+                        Action: 3,
                         ID: result.Message.ConversationID,
-                        LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
-                    }});
+                        Conversation: angular.extend({
+                            NumAttachments: result.Message.Attachments.length, // it's fine
+                            NumMessages: numMessages,
+                            NumUnread: numUnread,
+                            ID: result.Message.ConversationID,
+                            LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                        }, numMessages === 1 ? firstConversation : {})
+                    });
 
                     // Send events
                     cache.events(events);
