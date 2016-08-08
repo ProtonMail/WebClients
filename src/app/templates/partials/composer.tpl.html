@@ -201,11 +201,12 @@
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
                 <strong>{{ message.sizeAttachments() | humanSize }}</strong>
                 <span ng-show="message.Attachments.length > message.NumEmbedded">
-                    <i class="fa fa-paperclip"></i> ({{ message.Attachments.length -  message.NumEmbedded }})
+                    ({{ message.Attachments.length -  message.NumEmbedded }})
+                    <i class="fa fa-paperclip"></i>
                     <span translate translate-n="message.Attachments.length -  message.NumEmbedded" translate-plural="Files attached">File attached</span>
                 </span>
                 <span ng-show="message.NumEmbedded > 0">
-                    <i class="fa fa-picture-o embedded"></i> ({{ message.NumEmbedded }})
+                    ({{ message.NumEmbedded }}) <i class="fa fa-image embedded"></i>
                     <span translate-n="message.NumEmbedded" translate-plural="embedded images">
                     embedded image</span>
                 </span>
@@ -222,7 +223,7 @@
                 ng-init="initAttachment(attachment, $index)">
 
                     <span ng-show="attachment.Headers.embedded === 1" pt-tooltip-translate="Embedded image" class="attachement embedded">
-                        <i class="fa fa-picture-o"></i>
+                        <i class="fa fa-image"></i>
                         <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
                     </span>
 

@@ -25,6 +25,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     cacheCounters,
     networkActivityTracker,
     notify,
+    attachments,
     embedded,
     tools
 ) {
@@ -749,6 +750,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // we may trigger a deallocation process to avoid a memory leak.
 
         embedded.deallocator();
+
+        // reset the attachement storage
+        attachments.flush();
 
         // Mark this element
         $scope.markedConversation = element;

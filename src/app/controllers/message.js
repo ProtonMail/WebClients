@@ -35,7 +35,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.mailbox = tools.currentMailbox();
     $scope.isPlain = false;
     $scope.labels = authentication.user.Labels;
-    $scope.attachmentsStorage = [];
     $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
 
     function loadMessage(action) {
@@ -469,7 +468,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             });
         } else {
-            var attachmentStored = _.findWhere($scope.attachmentsStorage, {ID: attachment.ID});
+            var attachmentStored = _.findWhere(attachments.fetch(), {ID: attachment.ID});
 
             if(angular.isDefined(attachmentStored)) {
                 $scope.downloadAttachment({
@@ -507,7 +506,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         .then(
                             function(decryptedAtt) {
                                 // Store attachment decrypted
-                                $scope.attachmentsStorage.push({
+                                attachments.push({
                                     ID: attachment.ID,
                                     data: decryptedAtt.data,
                                     name: decryptedAtt.filename
