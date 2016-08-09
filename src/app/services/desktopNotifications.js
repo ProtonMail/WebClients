@@ -4,7 +4,7 @@ angular.module('proton.desktopNotifications', [])
         status: function() {
             return Push.Permission.get();
         },
-        request: function(onGranted, onDenied) {
+        request: function(onGranted = angular.noop, onDenied = angular.noop) {
             Push.Permission.request(onGranted, onDenied);
         },
         create: function(title, params) {
