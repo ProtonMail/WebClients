@@ -49,6 +49,7 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         $scope.approvalURL = false;
         $scope.paypalNetworkError = false;
         $scope.card.country = _.findWhere(tools.countries, {priority: 1});
+        $scope.method = 'card';
 
         $scope.signup = {
             verificationSent: false,
@@ -382,8 +383,10 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         return $scope.generateKeys('<' + $scope.account.Username + '@' + $scope.account.domain.value + '>', mbpw);
     };
 
-    $scope.changeChoice = function(method) {
-        if (method === 'paypal' && $scope.approvalURL === false) {
+    $scope.choosePaypal = function() {
+        $scope.method = 'paypal';
+
+        if ($scope.approvalURL === false) {
             $scope.initPaypal();
         }
     };

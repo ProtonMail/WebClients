@@ -139,7 +139,7 @@
         </div>
     </div>
     <form method="post" ng-submit="pay()" role="form" novalidate class="pm_form">
-        <div class="pm_grid" ng-init="method = 'card'" ng-show="method === 'card'">
+        <div class="pm_grid" ng-show="method === 'card'">
             <div class="col-1-4 bold" translate translate-context="Title">Credit Card</div>
             <div class="col-3-4">
                 <div class="pm_grid">
@@ -180,7 +180,7 @@
                         </div>
                     </div>
                 </div>
-                <p ng-if="::paypalSupport"><a href="#" ng-click="method = 'paypal';changeChoice(method);" translate translate-context="Link">Pay with PayPal</a></p>
+                <p ng-if="::paypalSupport"><a href="#" ng-click="choosePaypal();" translate translate-context="Link">Pay with PayPal</a></p>
             </div>
         </div>
         <div class="pm_grid" ng-show="method === 'paypal'">
