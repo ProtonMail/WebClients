@@ -273,6 +273,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     function onDragStart(event) {
         $scope.preventDropbox = true;
+        $scope.isEmbedded = false;
     }
 
     function onMouseOver(event) {
