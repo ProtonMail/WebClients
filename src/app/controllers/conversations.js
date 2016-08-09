@@ -558,14 +558,30 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Delete elements selected
      */
     $scope.delete = function() {
-        var type = tools.typeList();
-        var ids = $scope.idsSelected();
+        var title = gettextCatalog.getString('Delete', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
 
-        if(type === 'conversation') {
-            action.deleteConversation(ids);
-        } else if(type === 'message') {
-            action.deleteMessage(ids);
-        }
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    var type = tools.typeList();
+                    var ids = $scope.idsSelected();
+
+                    if (type === 'conversation') {
+                        action.deleteConversation(ids);
+                    } else if(type === 'message') {
+                        action.deleteMessage(ids);
+                    }
+
+                    confirmModal.deactivate();
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
     };
 
     /**
@@ -826,8 +842,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} mailbox
      */
     $scope.empty = function(mailbox) {
-        var title = gettextCatalog.getString('Confirmation', null, 'Title');
-        var message = gettextCatalog.getString('Are you sure?', null, 'Info') + ' ' + gettextCatalog.getString('This cannot be undone.', null);
+        var title = gettextCatalog.getString('Delete all', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure? This cannot be undone.', null, 'Info');
         var promise;
 
         if(['drafts', 'spam', 'trash'].indexOf(mailbox) !== -1) {
