@@ -207,7 +207,7 @@
                 </span>
                 <span ng-show="message.NumEmbedded > 0">
                     ({{ message.NumEmbedded }}) <i class="fa fa-image embedded"></i>
-                    <span translate-n="message.NumEmbedded" translate-plural="embedded images">
+                    <span translate translate-n="message.NumEmbedded" translate-plural="embedded images">
                     embedded image</span>
                 </span>
             </aside>
@@ -222,12 +222,10 @@
                 ng-class="{ 'uploading': attachment.uploading }"
                 ng-init="initAttachment(attachment, $index)">
 
-                    <span ng-show="attachment.Headers.embedded === 1" pt-tooltip-translate="Embedded image" class="attachement embedded">
-                        <i class="fa fa-image"></i>
+                    <span class="attachment">
+                        <i ng-class="(attachment.Headers.embedded === 1) ? 'fa fa-image embedded' : 'fa fa-paperclip'"></i>
                         <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
                     </span>
-
-                    <span ng-hide="attachment.Headers.embedded === 1" class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
 
                     <a ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
                         <i class="fa fa-times"></i>

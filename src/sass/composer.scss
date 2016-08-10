@@ -300,18 +300,24 @@
 	        	color: $gray;
 	        }
 
-			.attachement{
-				&.embedded{
-					.fa{
-						margin-right: .5rem;
-						line-height: 34px;
-						float:left;
+			.attachment{
+				.fa{
+					margin-right: .5rem;
+					line-height: 34px;
+					float:left;
+					&.embedded{
 						color:$primary;
 					}
-					.preview-name{
-						float: left;
-						width: calc(100% - 4rem);
-					}
+				}
+				.preview-name{
+					float: left;
+					width: calc(100% - 4rem);
+				}
+			}
+
+			.uploading{
+				.fa{
+					display: none;
 				}
 			}
 
