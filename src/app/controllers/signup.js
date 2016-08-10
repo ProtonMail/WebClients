@@ -13,6 +13,7 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
     $window,
     authentication,
     CONSTANTS,
+    confirmModal,
     direct,
     domains,
     gettextCatalog,
@@ -244,34 +245,54 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         });
     };
 
-    $scope.saveContinue = function(form) {
+    $scope.checking = function(form) {
         if (form.$valid) {
             // custom validation
             if ($scope.account.loginPasswordConfirm !== $scope.account.loginPassword) {
                 return;
             }
 
-            $scope.filling = false;
-
-            networkActivityTracker.track(
-                $scope.checkAvailability(false)
-                .then($scope.generateNewKeys)
-                .then(function() {
-                    $timeout(function() {
-                        $scope.genNewKeys = false;
-
-                        if ($rootScope.preInvited) {
-                            $scope.createAccount();
-                        } else if (plans.length > 0) {
-                            $scope.payment = true;
-                        } else {
-                            $scope.humanityTest = true;
+            if ($scope.account.notificationEmail) {
+                saveContinue();
+            } else {
+                confirmModal.activate({
+                    params: {
+                        title: gettextCatalog.getString('Warning', null, 'Title'),
+                        message: gettextCatalog.getString('Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?', null, 'Warning'),
+                        confirm: function() {
+                            saveContinue();
+                            confirmModal.deactivate();
+                        },
+                        cancel: function() {
+                            confirmModal.deactivate();
                         }
-                    }, 2000);
-                })
-            );
+                    }
+                });
+            }
         }
     };
+
+    function saveContinue() {
+        $scope.filling = false;
+
+        networkActivityTracker.track(
+            $scope.checkAvailability(false)
+            .then($scope.generateNewKeys)
+            .then(function() {
+                $timeout(function() {
+                    $scope.genNewKeys = false;
+
+                    if ($rootScope.preInvited) {
+                        $scope.createAccount();
+                    } else if (plans.length > 0) {
+                        $scope.payment = true;
+                    } else {
+                        $scope.humanityTest = true;
+                    }
+                }, 2000);
+            })
+        );
+    }
 
     $scope.finishLoginReset = function(form) {
         $log.debug('finishLoginReset');
