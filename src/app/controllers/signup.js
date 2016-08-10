@@ -383,6 +383,10 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         return $scope.generateKeys('<' + $scope.account.Username + '@' + $scope.account.domain.value + '>', mbpw);
     };
 
+    $scope.chooseCard = function() {
+        $scope.method = 'card';
+    };
+
     $scope.choosePaypal = function() {
         $scope.method = 'paypal';
 
