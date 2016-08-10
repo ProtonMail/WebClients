@@ -1542,7 +1542,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                      *     - click < 3s (with/without concurent draft creation)
                      */
                     const msg = data.Message || {};
-                    message.ID = msg.ID;
+
+                    if (msg.ID) {
+                        message.ID = msg.ID;
+                    }
+
                     return recordMessage(message, false, false, false);
                 })
                 .then(function() {
