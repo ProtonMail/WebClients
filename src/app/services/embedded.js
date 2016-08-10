@@ -4,6 +4,7 @@ angular.module("proton.embedded", [])
     $q,
     $state,
     $stateParams,
+    $rootScope,
     attachments,
     authentication,
     Eo,
@@ -17,12 +18,16 @@ angular.module("proton.embedded", [])
     // CIDs for any embedded image attachments
     var Blobs = {};
     let CIDList = {};
+    let MAP_BLOBS = {};
+
 
     const REGEXP_IS_INLINE = /^inline/i;
     const REGEXP_CID_CLEAN = /[<>]+/g;
     const REGEXP_CID_START = /^cid:/g;
     const EMBEDDED_CLASSNAME = 'proton-embedded';
+    const PREFIX_DRAFT = 'draft_';
     const DIV = document.createElement('DIV');
+    const urlCreator = () => window.URL || window.webkitURL;
 
     /**
      * Flush the container HTML and return the container
@@ -61,6 +66,22 @@ angular.module("proton.embedded", [])
             message.NumEmbedded = message.NumEmbedded-1;
         }
     };
+
+    /**
+     * When we close the composer we need to deallocate Blobs used by this composer
+     * @param  {String} 'composer.close'     EventName
+     * @param  {Object} e                    Event from Angular
+     * @return {String} opt.ID               ID of a message/conversation
+     * @return {String} opt.ConversationID   ID of a message
+     */
+    $rootScope.$on('composer.close', (e, { ID, ConversationID }) => {
+        const key = `${PREFIX_DRAFT}${ConversationID || ID}`;
+
+        // Clean these blobs !
+        if (MAP_BLOBS[key]) {
+            deallocateList(key);
+        }
+    });
 
     /**
      * Parse the content to inject the generated blob src
@@ -140,19 +161,25 @@ angular.module("proton.embedded", [])
         return false;
     };
 
+    function getHashKey(msg) {
+        const isDraft = msg.isDraft ? msg.isDraft() : false;
+        const prefix = isDraft ? PREFIX_DRAFT : '';
+        return `${prefix}${msg.ConversationID || msg.ID}`.trim();
+    }
+
     // Use the Blobs array to store CIDs url reference
     // once the attachment has been decrypted
     // so we can re-use the blob instead of decrypting
     // this should be rewritted a bit to work with
     // the service store
-
-    const store = (message, cid) => {
+    const store = (message = { isDraft: angular.noop }, cid = '') => {
 
         const Attachments = CIDList[message.ID] || {};
         const { Headers = {}} = Attachments[cid] || {};
+        const key = getHashKey(message);
+        MAP_BLOBS[key] = MAP_BLOBS[key] || [];
 
         return (data, MIME) => {
-
             if (Headers['content-location'] && !Headers['content-id']) {
                 Blobs[ cid ] = {
                     isContentLocation: true,
@@ -162,16 +189,17 @@ angular.module("proton.embedded", [])
                 // Turn the decrypted attachment data into a blob.
                 let blob = new Blob([data], {type: MIME});
                 // Generate the URL
-                let urlCreator = window.URL || window.webkitURL;
-                let imageUrl = urlCreator.createObjectURL( blob );
+                let imageUrl = urlCreator().createObjectURL( blob );
                 // Store the generated URL
                 Blobs[ cid ] = { url:imageUrl };
 
 
                // this is supposed to remove the blob so it
                // can be garbage collected. we dont save it (for now)
-               blob = null, urlCreator = null, imageUrl = null;
+               blob = null, imageUrl = null;
             }
+
+            MAP_BLOBS[key].push(cid);
         };
     };
 
@@ -271,24 +299,31 @@ angular.module("proton.embedded", [])
     // once we navigate away from a conversation
     // eg. this can be triggered from the conversations controller
 
-    var deallocate = function() {
+   function deallocate(message = {}) {
+        const key = getHashKey(message);
+        Object
+            .keys(MAP_BLOBS)
+            .filter(k => k !== key && k.indexOf(PREFIX_DRAFT) !== 0) // Do nothing for draft and itself
+            .forEach(deallocateList);
+    }
 
-        var urlCreator = window.URL || window.webkitURL;
-
-        for (var index in Blobs) {
-
-            // The URL.revokeObjectURL() static method releases an existing object URL
-            // which was previously created by calling URL.createObjectURL().
-            // Call this method when you've finished using a object URL, in order to let
-            // the browser know it doesn't need to keep the reference to the file any longer.
-
-            urlCreator.revokeObjectURL(Blobs[index].url);
-
+    /**
+     * The URL.revokeObjectURL() static method releases an existing object URL
+     * which was previously created by calling URL.createObjectURL().
+     * Call this method when you've finished using a object URL, in order to let
+     * the browser know it doesn't need to keep the reference to the file
+     * any longer.
+     * @param {key}  key     Key of the message/conversation
+     */
+    function deallocateList(key) {
+        const list = MAP_BLOBS[key] || [];
+        _(list).each((cid) => {
+            urlCreator().revokeObjectURL(Blobs[cid].url);
             // Remove the Blob ref from our store
-            delete Blobs[index];
-
-        }
-    };
+            delete Blobs[cid];
+        });
+        delete MAP_BLOBS[key];
+    }
 
     var embedded = {
         parser(message,direction) {

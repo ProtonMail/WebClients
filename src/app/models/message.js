@@ -146,7 +146,7 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         isDraft: function() {
-            return this.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.drafts) !== -1;
+            return this.Type === 1;
         },
 
         toggleImages: function() {

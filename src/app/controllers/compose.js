@@ -1374,6 +1374,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     message.ID = result.Message.ID;
                     message.IsRead = result.Message.IsRead;
                     message.Time = result.Message.Time;
+                    message.Type = result.Message.Type;
+                    message.LabelIDs = result.Message.LabelIDs;
+
 
                     if (forward === true && result.Message.Attachments.length > 0) {
                         message.Attachments = result.Message.Attachments;
@@ -1850,6 +1853,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // Remove message in composer controller
         $scope.messages = removeMessage($scope.messages, message);
+
+        $rootScope.$emit('composer.close', message);
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
