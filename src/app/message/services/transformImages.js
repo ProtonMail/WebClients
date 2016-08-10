@@ -16,15 +16,18 @@ angular.module('proton.message')
                 const isEmbedded = REGEXP_IS_CID.test(src);
 
                 if (isEmbedded) {
-                    if (show) {
-                        image.setAttribute('data-embedded-img', src);
-                        !image.parentElement.classList.contains('loading') && wrapImage(image);
-                    } else {
-                        message.showEmbedded = false;
-                        image.setAttribute("alt",embedded.getName(message,image.src));
+                    const attach = embedded.getAttachment(message,image.src);
+                    // check if the attachment exist before processing
+                    if (Object.keys(attach).length > 0) {
+                        if(show) {
+                            image.setAttribute('data-embedded-img', src);
+                            !image.parentElement.classList.contains('loading') && wrapImage(image);
+                        } else {
+                            message.showEmbedded = false;
+                            image.setAttribute("alt",attach.Name);
+                        }
+                        image.removeAttribute('src');
                     }
-
-                    image.removeAttribute('src');
                 }
             });
         }

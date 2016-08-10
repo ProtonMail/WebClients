@@ -387,19 +387,18 @@ angular.module("proton.embedded", [])
         },
 
         /**
-         * Get the name for an embedded image
+         * Check if attachment exist
          * @param  {src} cid:url
-         * @return {name}
+         * @return {attach}
          */
-        getName(message, src) {
-            console.trace('SRC', src, message);
-
+        getAttachment(message, src) {
             const x = xray.bind(message);
             if (x()) {
-                return CIDList[message.ID][src.replace(REGEXP_CID_START, "")].Name;
+                return (CIDList[message.ID][src.replace(REGEXP_CID_START, "")]);
             }
             return {};
         }
+
 
     };
 
