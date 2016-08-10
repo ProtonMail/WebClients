@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-  .factory('composerRequestModel', (Message) => {
+  .factory('composerRequestModel', (Message, $q) => {
 
     let MAP_REQUEST = {};
 
@@ -8,21 +8,7 @@ angular.module('proton.composer')
      * @param  {Number} key uid
      * @return {Array}
      */
-    const read = (key) => MAP_REQUEST[`key.${key}`];
-
-    /**
-     * Get the list of pending requests for a composer
-     * @param  {Number} message.uid
-     * @return {Array}
-     */
-    const find = ({ uid }) => (read(uid) || []).filter(({ promise }) => $$state.status === 0);
-
-    /**
-     * Check if there are pendings request
-     * @param  {Number} options.uid
-     * @return {Boolean}
-     */
-    const has = ({ uid }) => Array.isArray(read(uid)) && read(uid).length;
+    const read = (key) => MAP_REQUEST[`key.${key}`] || [];
 
     /**
      * Kill each pending requests
@@ -30,7 +16,7 @@ angular.module('proton.composer')
      * @return {void}
      */
     const kill = (uid) => {
-        const list = read(uid) || [];
+        const list = read(uid);
         list.length && list.forEach((promise) => promise.resolve()); // Kill them all !
     };
 
@@ -53,17 +39,19 @@ angular.module('proton.composer')
     const save = (message, deferred) => {
         const key = `key.${message.uid}`;
         MAP_REQUEST[key] = MAP_REQUEST[key] || [];
-        kill();
+        kill(message.uid);
         MAP_REQUEST[key].push(deferred);
     };
 
     /**
-     * Attach an action to trigger when a request is resolved
+     * Resolve all the previous promises and allow chaining
      * @param  {Number}   options.uid
-     * @param  {Function} cb
-     * @return {Array}               List of requests
+     * @return {Array}              $q.all
      */
-    const map = ({ uid }, cb) => (read(uid).forEach(p => p.promise.then(cb, cb)), read(uid));
+    const chain = ({ uid }) => {
+        const list = read(uid).map(({ promise }) => promise);
+        return $q.all(list);
+    };
 
-    return { save, has, find, clear, map };
+    return { save, clear, chain };
   });

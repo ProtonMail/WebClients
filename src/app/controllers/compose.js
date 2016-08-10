@@ -1280,8 +1280,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
 
-
-
     /**
      * Save the Message
      * @param {Resource} message - Message to save
@@ -1290,6 +1288,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} autosaving
      */
     function recordMessage(message, forward, notification, autosaving) {
+
         // Variables
         var deferred = $q.defer();
         var parameters = {
@@ -1298,13 +1297,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if (angular.isDefined(message.timeoutSaving)) {
             $timeout.cancel(message.timeoutSaving);
-        }
-
-        if (message.saving === true && composerRequestModel.has(message)) {
-            const nextSave = () => recordMessage(message, forward, notification, autosaving);
-            composerRequestModel.map(message, nextSave);
-            deferred.resolve();
-            return deferred.promise;
         }
 
         message.saving = true;
@@ -1469,6 +1461,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if (autosaving === false) {
             networkActivityTracker.track(deferred.promise);
         }
+        composerRequestModel.save(message, deferred);
 
         return deferred.promise;
     }
@@ -1525,15 +1518,33 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // Prevent mutability
         const message = new Message(msg);
-
         var deferred = $q.defer();
 
         $scope.validate(message)
         .then(function() {
+
             embedded.parser(message, 'cid').then(function(result) {
                 message.Body = result;
 
-                recordMessage(message, false, false, false)
+                /**
+                 * Chain promises (concurrency with the draft creation)
+                 * Prevent 2 messages created as the autosaving is creating a new one
+                 * and if the click is < 3s this one does not have an ID too.
+                 *
+                 * If there are no promise, it works too, and it's faster :)
+                 */
+                composerRequestModel.chain(message)
+                .then(([ data = {} ]) => {
+                    /**
+                     * This arg is the resolved promise from the draft creation
+                     * Find its message and attach the ID to the current message.
+                     * The current message from @send does not contains any ID if
+                     *     - click < 3s (with/without concurent draft creation)
+                     */
+                    const msg = data.Message || {};
+                    message.ID = msg.ID;
+                    return recordMessage(message, false, false, false);
+                })
                 .then(function() {
                     $scope.checkSubject(message).then(function() {
 
