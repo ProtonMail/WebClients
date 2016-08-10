@@ -17,11 +17,10 @@
     </span>
     <span class="pm_buttons" ng-class="{ disabled: numberElementSelected === 0 }">
         <a href="#" pt-tooltip-translate="Move to trash" ng-click="move('trash')" ng-if="!('secured.trash.**' | includedByState) && !('secured.drafts.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-trash-o" pt-tooltip-translate-context="Action"></a>
-        <a href="#" pt-tooltip-translate="Move to inbox" ng-click="move('inbox')" ng-if="!('secured.inbox.**' | includedByState) && !('secured.spam.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-inbox" pt-tooltip-translate-context="Action"></a>
+        <a href="#" pt-tooltip-translate="Move to inbox" ng-click="move('inbox')" ng-if="!('secured.inbox.**' | includedByState) && !('secured.sent.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-inbox" pt-tooltip-translate-context="Action"></a>
         <a href="#" pt-tooltip-translate="Move to archive" ng-click="move('archive')" ng-if="!('secured.archive.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-archive" pt-tooltip-translate-context="Action"></a>
         <a href="#" pt-tooltip-translate="Move to spam" ng-click="move('spam')" ng-if="!('secured.spam.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-ban" pt-tooltip-translate-context="Action"></a>
         <a href="#" pt-tooltip-translate="Delete" ng-click="delete()" ng-if="('secured.trash.**' | includedByState) || ('secured.drafts.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-times-circle-o" pt-tooltip-translate-context="Action"></a>
-        <a href="#" pt-tooltip-translate="Not spam" ng-click="move('inbox')" ng-if="('secured.spam.**' | includedByState)" ng-class="{ disabled: numberElementSelected === 0 }" class="fa fa-check" pt-tooltip-translate-context="Action"></a>
     </span>
 
     <span
