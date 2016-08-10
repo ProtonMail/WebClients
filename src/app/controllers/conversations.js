@@ -764,8 +764,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // it's possible that the previous conversation or message
         // had embedded images, and as blob URLs never get deallocated automatically
         // we may trigger a deallocation process to avoid a memory leak.
-
-        embedded.deallocator();
+        embedded.deallocator(element);
 
         // reset the attachement storage
         attachments.flush();
