@@ -83,12 +83,14 @@ angular.module('proton.wizard', [])
        *   - touchNext: Display the next slide
        *   - touchGo: Going to a slide by its position
        */
-      $rootScope.$on('tourActions', (e, { action, position }) => {
+      const unsubscribe = $rootScope.$on('tourActions', (e, { action, position }) => {
         ('tourStart' === action) && tourStart();
         ('tourEnd' === action) && tourEnd();
         ('tourNext' === action) && tourNext();
         ('tourGo' === action) && tourGo(position);
       });
+
+      scope.$on('$destroy', unsubscribe);
 
       /**
        * Action with left and right arrows
