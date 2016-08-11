@@ -726,11 +726,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Print current message
      */
     $scope.print = function() {
-        var ie11 = $.browser.msie !== true || $.browser.edge === true;
+        // NOTE postMessage still broken on IE11
+        var postMessageSupport = $.browser.msie !== true || $.browser.edge === true;
 
-        if (ie11) {
-            window.print();
-        } else {
+        if (postMessageSupport) {
             var tab = $state.href('printer', {messageID: $scope.message.ID}, {absolute: true});
             var url = window.location.href;
             var arr = url.split('/');
@@ -746,6 +745,8 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             }
 
             var child = window.open(tab, '_blank');
+        } else {
+            window.print();
         }
     };
 
