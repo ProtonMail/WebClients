@@ -265,6 +265,7 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
                         },
                         cancel: function() {
                             confirmModal.deactivate();
+                            angular.element('#notificationEmail').focus();
                         }
                     }
                 });
