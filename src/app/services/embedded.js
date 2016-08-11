@@ -430,8 +430,8 @@ angular.module("proton.embedded", [])
          */
         getAttachment(message, src) {
             const x = xray.bind(message);
-            if (x()) {
-                return (CIDList[message.ID][src.replace(REGEXP_CID_START, "")]);
+            if (x() && CIDList[message.ID]) {
+                return (CIDList[message.ID][src.replace(REGEXP_CID_START, "")]) || {};
             }
             return {};
         }
