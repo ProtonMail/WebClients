@@ -37,79 +37,83 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.labels = authentication.user.Labels;
     $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
 
+    const unsubscribe = [];
+
     function loadMessage(action) {
         var msg = messageBuilder.create(action, $scope.message);
         $rootScope.$emit('loadMessage', msg);
     }
 
-    $scope.$on('refreshMessage', function(event) {
+    unsubscribe.push($scope.$on('refreshMessage', function(event) {
         var message = cache.getMessageCached($scope.message.ID);
 
         if (angular.isDefined(message)) {
             angular.extend($scope.message, message);
         }
-    });
+    }));
 
-    $scope.$on('replyConversation', function(event) {
+    unsubscribe.push($scope.$on('replyConversation', function(event) {
         if ($scope.$last === true && $scope.message.Type !== 1) {
             loadMessage('reply');
         }
-    });
+    }));
 
-    $rootScope.$on('embedded.injected', (event) => {
+    unsubscribe.push($rootScope.$on('embedded.injected', (event) => {
         if ($rootScope.printMode === true) {
             $scope.$applyAsync(() => {
                 $window.print();
             });
         }
-    });
+    }));
 
-    $scope.$on('replyAllConversation', function(event) {
+    unsubscribe.push($scope.$on('replyAllConversation', function(event) {
         if ($scope.$last === true && $scope.message.Type !== 1) {
             loadMessage('replyall');
         }
-    });
+    }));
 
-    $scope.$on('forwardConversation', function(event) {
+    unsubscribe.push($scope.$on('forwardConversation', function(event) {
         if ($scope.$last === true && $scope.message.Type !== 1) {
             loadMessage('forward');
         }
-    });
+    }));
 
-    $scope.$on('move', function(event, name) {
+    unsubscribe.push($scope.$on('move', function(event, name) {
         if ($scope.message === $scope.markedMessage) {
             $scope.move(name);
         }
-    });
+    }));
 
-    $scope.$on('read', function(event) {
+    unsubscribe.push($scope.$on('read', function(event) {
         if ($scope.message === $scope.markedMessage) {
             $scope.read();
         }
-    });
+    }));
 
-    $scope.$on('unread', function(event) {
+    unsubscribe.push($scope.$on('unread', function(event) {
         if ($scope.message === $scope.markedMessage) {
             $scope.unread();
         }
-    });
+    }));
 
-    $scope.$on('openMarked', function(event) {
+    unsubscribe.push($scope.$on('openMarked', function(event) {
         if ($scope.message === $scope.markedMessage) {
             $scope.toggle();
             $scope.$apply();
         }
-    });
+    }));
 
-    $rootScope.$on('toggleMessage', function(event, messageID) {
+    unsubscribe.push($rootScope.$on('toggleMessage', function(event, messageID) {
         if ($scope.message.ID === messageID) {
             $scope.toggle();
         }
-    });
+    }));
 
     // Listner when we destroy this message controller
     $scope.$on('$destroy', function(event) {
         $scope.message.expand = false;
+        unsubscribe.forEach(cb => cb());
+        unsubscribe.length = 0;
     });
 
     // Get all recipients
