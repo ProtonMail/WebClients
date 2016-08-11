@@ -160,8 +160,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 var index = $scope.conversations.indexOf($scope.markedConversation);
 
                 if (index > 0) {
-                    $scope.markedConversation = $scope.conversations[index - 1];
-                    $scope.$apply();
+                    $scope.$applyAsync(() => {
+                        $scope.markedConversation = $scope.conversations[index - 1];
+                    });
+
                     angular.element('#conversation-list-rows').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-rows').height() / 2);
                     angular.element('#conversation-list-columns').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-columns').height() / 2);
                 }
@@ -173,8 +175,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 var index = $scope.conversations.indexOf($scope.markedConversation);
 
                 if (index < ($scope.conversations.length - 1)) {
-                    $scope.markedConversation = $scope.conversations[index + 1];
-                    $scope.$apply();
+                    $scope.$applyAsync(() => {
+                        $scope.markedConversation = $scope.conversations[index + 1];
+                    });
                     angular.element('#conversation-list-rows').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-rows').height() / 2);
                     angular.element('#conversation-list-columns').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-columns').height() / 2);
                 }
