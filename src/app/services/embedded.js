@@ -318,9 +318,11 @@ angular.module("proton.embedded", [])
     function deallocateList(key) {
         const list = MAP_BLOBS[key] || [];
         _(list).each((cid) => {
-            urlCreator().revokeObjectURL(Blobs[cid].url);
-            // Remove the Blob ref from our store
-            delete Blobs[cid];
+            if (Blobs[cid]) {
+                urlCreator().revokeObjectURL(Blobs[cid].url);
+                // Remove the Blob ref from our store
+                delete Blobs[cid];
+            }
         });
         delete MAP_BLOBS[key];
     }
