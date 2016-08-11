@@ -1863,11 +1863,18 @@ angular.module("proton.modals", [])
                 }
 
                 if (angular.isObject(this.filter.Simple)) {
-                    _.each(['deleteLabel', 'createLabel', 'updateLabel', 'updateLabels'], function(name) {
-                        $rootScope.$on(name, function(event, ID) {
+                    const unsubscribe = [];
+
+                    ['deleteLabel', 'createLabel', 'updateLabel', 'updateLabels'].forEach(function(name) {
+                        unsubscribe.push($rootScope.$on(name, function(event, ID) {
                             this.filter.Simple.Actions.Labels = authentication.user.Labels;
-                        }.bind(this));
+                        }.bind(this)));
                     }.bind(this));
+
+                    this.$on('$destroy', () => {
+                        unsubscribe.forEach(cb => cb());
+                        unsubscribe.length = 0;
+                    });
                 }
 
                 $timeout(function() {
