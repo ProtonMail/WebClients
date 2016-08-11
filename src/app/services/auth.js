@@ -179,7 +179,7 @@ angular.module("proton.authentication", [
 
     // RUN-TIME PUBLIC FUNCTIONS
     var api = {
-        user: null,
+        user: {},
         detectAuthenticationState: function() {
             var session = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ":SessionToken");
 
