@@ -494,7 +494,7 @@ angular.module('proton.routes', [
         resolve: {
             // Contains also labels and contacts
             user: function(authentication, $http, pmcw, secureSessionStorage) {
-                if (angular.isObject(authentication.user)) {
+                if (Object.keys(authentication.user).length > 0) {
                     return authentication.user;
                 } else {
                     if(angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {

@@ -21,7 +21,7 @@ angular.module('proton.controllers.Header', [])
     $scope.addresses = [];
     $scope.addresses.push({Email: gettextCatalog.getString('All', null), ID: undefined, Send: 0, Receive: 1, Status: 1}); // Add ALL option
 
-    if (authentication.user) { // This code is also executed on the login page, it explain this condition
+    if (Object.keys(authentication.user).length > 0) { // This code is also executed on the login page, it explain this condition
         $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
     }
 
@@ -41,7 +41,7 @@ angular.module('proton.controllers.Header', [])
             }
         });
 
-        if (authentication.user) {
+        if (Object.keys(authentication.user).length > 0) {
             _.each(authentication.user.Labels, function(label) {
                 $scope.ctrl.folders.push({value: label.ID, label: label.Name, group: 'label'});
             });
@@ -164,7 +164,7 @@ angular.module('proton.controllers.Header', [])
         $scope.addresses = [];
         $scope.addresses.push({Email: gettextCatalog.getString('All', null), ID: undefined});
 
-        if (authentication.user) {
+        if (Object.keys(authentication.user).length > 0) {
             $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
         }
 
@@ -331,7 +331,7 @@ angular.module('proton.controllers.Header', [])
     };
 
     $scope.email = function() {
-        if (authentication.user) {
+        if (Object.keys(authentication.user).length > 0) {
             var address = _.findWhere(authentication.user.Addresses, {Send: 1});
 
             if (address) {
