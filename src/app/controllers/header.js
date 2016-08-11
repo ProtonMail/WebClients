@@ -316,7 +316,7 @@ angular.module('proton.controllers.Header', [])
     $scope.displayName = function() {
         var displayName = '';
 
-        if(authentication.user) {
+        if (Object.keys(authentication.user).length > 0) {
             displayName = authentication.user.DisplayName || authentication.user.Name;
         } else if($rootScope.tempUser && $rootScope.tempUser.username) {
             displayName = $rootScope.tempUser.username;
