@@ -1388,7 +1388,7 @@ angular.module("proton.modals", [])
             _.each(this.addresses, function(address) { address.state = QUEUED; });
 
             // Listeners
-            $rootScope.$on('updateUser', function(event) {
+            const unsubscribe = $rootScope.$on('updateUser', function(event) {
                 var dirtyAddresses = [];
 
                 _.each(authentication.user.Addresses, function(address) {
@@ -1401,6 +1401,8 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             });
+
+            this.$on('$destroy', unsubscribe);
 
             // Functions
             this.submit = function() {
