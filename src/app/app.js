@@ -255,10 +255,10 @@ angular.module('proton', [
 
     // Manage page title
     $rootScope.$watch('pageName', function(newVal, oldVal) {
-        if(newVal) {
-            $document.find('title').text(newVal + ' | ProtonMail');
+        if (newVal) {
+            document.title = newVal + ' | ProtonMail';
         } else {
-            $document.find('title').text('ProtonMail');
+            document.title = 'ProtonMail';
         }
     });
 

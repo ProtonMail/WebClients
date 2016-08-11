@@ -268,6 +268,7 @@ angular.module("proton.controllers.Secured", [])
         var name;
         var unread = '';
         var state = tools.currentMailbox();
+        var defaultAddress = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').first().value();
 
         switch (state) {
             case 'drafts':
@@ -352,6 +353,6 @@ angular.module("proton.controllers.Secured", [])
             name += ' | ';
         }
 
-        $rootScope.pageName = name + authentication.user.Name + ' | ProtonMail';
+        $rootScope.pageName = name + defaultAddress.Email;
     };
 });
