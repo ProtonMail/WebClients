@@ -726,9 +726,21 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Print current message
      */
     $scope.print = function() {
-        var url = $state.href('secured.print', { id: $scope.message.ID });
+        var tab = $state.href('printer', {messageID: $scope.message.ID}, {absolute: true});
+        var url = window.location.href;
+        var arr = url.split('/');
+        var targetOrigin = arr[0] + '//' + arr[2];
 
-        window.open(url, '_blank');
+        window.addEventListener('message', sendMessage, false);
+
+        function sendMessage(event) {
+            if (event.data === $scope.message.ID) {
+                event.source.postMessage(JSON.stringify($scope.message), targetOrigin);
+                window.removeEventListener('message', this);
+            }
+        }
+
+        var child = window.open(tab, '_blank');
     };
 
     /**
