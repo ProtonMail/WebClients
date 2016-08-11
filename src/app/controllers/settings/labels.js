@@ -15,6 +15,7 @@ angular.module("proton.controllers.Settings")
     notify
 ) {
 
+    const unsubscribe = [];
     let labelOrder = [];
     $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
 
@@ -37,20 +38,25 @@ angular.module("proton.controllers.Settings")
     };
 
     // Listeners
-    $rootScope.$on('deleteLabel', function(event, ID) {
+    unsubscribe.push($rootScope.$on('deleteLabel', function(event, ID) {
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
-    });
+    }));
 
-    $rootScope.$on('createLabel', function(event, ID, label) {
+    unsubscribe.push($rootScope.$on('createLabel', function(event, ID, label) {
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
-    });
+    }));
 
-    $rootScope.$on('updateLabel', function(event, ID, label) {
+    unsubscribe.push($rootScope.$on('updateLabel', function(event, ID, label) {
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
-    });
+    }));
 
-    $rootScope.$on('updateLabels', function(event) {
+    unsubscribe.push($rootScope.$on('updateLabels', function(event) {
         $scope.labels = _.chain(authentication.user.Labels).sortBy('Order').value();
+    }));
+
+    $scope.$on('$destroy', () => {
+        unsubscribe.forEach(cb => cb());
+        unsubscribe.length = 0;
     });
 
     /**
