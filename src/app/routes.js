@@ -436,7 +436,7 @@ angular.module('proton.routes', [
     .state('eo.reply', {
         url: '/eo/reply/:tag',
         resolve: {
-            message: function($stateParams, $q, Eo, Message, pmcw, prepareContent, secureSessionStorage) {
+            message: function($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
                 var deferred = $q.defer();
                 var token_id = $stateParams.tag;
                 var decrypted_token = secureSessionStorage.getItem('proton:decrypted_token');
