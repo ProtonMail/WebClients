@@ -530,20 +530,55 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('secured.print', {
-        url: '/print/:id',
-        onEnter: function($rootScope) {
-            $rootScope.isBlank = true;
-            $rootScope.printMode = true;
-        },
-        onExit: function($rootScope) {
-            $rootScope.isBlank = false;
-            $rootScope.printMode = false;
+    .state('printer', {
+        params: {messageID: null},
+        url: '/printer/:messageID',
+        resolve: {
+            messageID: function($q, $stateParams) {
+                var deferred = $q.defer();
+
+                if ($stateParams.messageID) {
+                    deferred.resolve($stateParams.messageID);
+                } else {
+                    deferred.reject();
+                }
+
+                return deferred.promise;
+            }
         },
         views: {
             'main@': {
-                controller: 'MessageController',
                 templateUrl: 'templates/views/message.print.tpl.html',
+                controller: function($scope, $state, $rootScope, $sce, $timeout, messageID) {
+                    $rootScope.isBlank = true;
+                    $scope.loading = true;
+
+                    if (window.opener) {
+                        var url = window.location.href;
+                        var arr = url.split('/');
+                        var targetOrigin = arr[0] + '//' + arr[2];
+
+                        window.addEventListener('message', printMessage, false);
+                        window.opener.postMessage(messageID, targetOrigin);
+                    }
+
+                    function printMessage(event) {
+                        var message = JSON.parse(event.data);
+
+                        if (message.ID === messageID) {
+                            $scope.$applyAsync(() => {
+                                $scope.content = $sce.trustAsHtml(message.DecryptedBody || message.Body);
+                                $scope.message = message;
+                                $scope.loading = false;
+                            });
+
+                            window.removeEventListener('message', this);
+                            $timeout(() => {
+                                window.print();
+                            }, 2000, false);
+                        }
+                    }
+                }
             }
         }
     })

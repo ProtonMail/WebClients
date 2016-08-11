@@ -6,7 +6,7 @@ html.protonmail {
 		.mobileOnly {
 			display: none;
 		}
-		&.secure {
+		&.secure, &.blank {
 			background: $white;
 		}
 		&.scroll {
