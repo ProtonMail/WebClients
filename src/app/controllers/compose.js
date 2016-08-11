@@ -33,6 +33,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     var timeoutStyle;
     var dropzone;
 
+    const unsubscribe = [];
+
     $scope.addresses = authentication.user.Addresses;
     $scope.messages = [];
     $scope.isOver = false;
@@ -89,7 +91,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     ];
 
     // Listeners
-    $scope.$watch('messages.length', function(newValue, oldValue) {
+    unsubscribe.push($scope.$watch('messages.length', function(newValue, oldValue) {
         if ($scope.messages.length > 0) {
             $rootScope.activeComposer = true;
             window.onbeforeunload = function() {
@@ -101,30 +103,30 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             window.onbeforeunload = undefined;
             hotkeys.bind(); // Enable hotkeys
         }
-    });
+    }));
 
-    $scope.$on('updateUser', function(event) {
+    unsubscribe.push($scope.$on('updateUser', function(event) {
         $scope.addresses = authentication.user.Addresses;
-    });
+    }));
 
-    $scope.$on('onDrag', function() {
+    unsubscribe.push($scope.$on('onDrag', function() {
         _.each($scope.messages, function(message) {
             $scope.togglePanel(message, 'attachments');
         });
-    });
+    }));
 
     // When the user delete a conversation and a message is a part of this conversation
-    $scope.$on('deleteConversation', function(event, ID) {
+    unsubscribe.push($scope.$on('deleteConversation', function(event, ID) {
         _.each($scope.messages, function(message) {
             if (ID === message.ID) {
                 // Close the composer
                 $scope.close(message, false, false);
             }
         });
-    });
+    }));
 
     // When a message is updated we try to update the message
-    $scope.$on('refreshMessage', function(event) {
+    unsubscribe.push($scope.$on('refreshMessage', function(event) {
         _.each($scope.messages, function(message) {
             if (angular.isDefined(message.ID)) {
                 var messageCached = cache.getMessageCached(message.ID);
@@ -135,9 +137,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 }
             }
         });
-    });
+    }));
 
-    $scope.$on('newMessage', function() {
+    unsubscribe.push($scope.$on('newMessage', function() {
         if (
             ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) ||
             ($scope.messages.length === 1 && $rootScope.mobileMode === true)
@@ -147,9 +149,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var message = new Message();
             initMessage(message, false);
         }
-    });
+    }));
 
-    $rootScope.$on('loadMessage', function(event, message, save) {
+    unsubscribe.push($rootScope.$on('loadMessage', function(event, message, save) {
         var current = _.findWhere($scope.messages, {ID: message.ID});
         var mess = new Message(_.pick(message, 'ID', 'AddressID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
 
@@ -162,15 +164,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if (angular.isUndefined(current)) {
             initMessage(mess, save);
         }
-    });
+    }));
 
-    const subscribeAddFile = $rootScope.$on('addFile', function(event, params) {
+    unsubscribe.push($rootScope.$on('addFile', function(event, params) {
         $scope.isEmbedded = params.isEmbedded;
         params.dropzone.click();
-    });
+    }));
 
 
-    $rootScope.$on('sendMessage', function(event, element, msg) {
+    unsubscribe.push($rootScope.$on('sendMessage', function(event, element, msg) {
         if (element) {
             var composer = $(element).parents('.composer');
             var index = $('.composer').index(composer);
@@ -179,9 +181,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         msg && $scope.send(msg);
-    });
+    }));
 
-    $scope.$on('closeMessage', function(event, element) {
+    unsubscribe.push($scope.$on('closeMessage', function(event, element) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
@@ -189,9 +191,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if (angular.isDefined(message)) {
             $scope.close(message, false, false);
         }
-    });
+    }));
 
-    $scope.$on('editorLoaded', function(event, element, editor) {
+    unsubscribe.push($scope.$on('editorLoaded', function(event, element, editor) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
@@ -201,9 +203,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             $scope.listenEditor(message);
             $scope.focusComposer(message);
         }
-    });
+    }));
 
-    $scope.$on('editorFocussed', function(event, element, editor) {
+    unsubscribe.push($scope.$on('editorFocussed', function(event, element, editor) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
         var message = $scope.messages[index];
@@ -216,15 +218,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         $rootScope.$broadcast('composerModeChange');
-    });
+    }));
 
-    $scope.$on('subjectFocussed', function(event, message) {
+    unsubscribe.push($scope.$on('subjectFocussed', function(event, message) {
         var current = _.findWhere($scope.messages, {uid: message.uid});
 
         current.autocompletesFocussed = false;
         current.ccbcc = false;
         current.attachmentsToggle = false;
-    });
+    }));
 
     function onResize() {
         $timeout.cancel(timeoutStyle);
@@ -302,7 +304,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $interval.cancel($scope.intervalComposer);
         $interval.cancel($scope.intervalDropzone);
         window.onbeforeunload = undefined;
-        subscribeAddFile();
+
+        unsubscribe.forEach(cb => cb());
+        unsubscribe.length = 0;
     });
 
     // Function used for dragover listener on the dropzones
