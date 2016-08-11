@@ -497,7 +497,7 @@ angular.module("proton.authentication", [
             keys = {};
             auth.headersSet = false;
             // Remove all user information
-            this.user = null;
+            this.user = {};
             // Clean onbeforeunload listener
             window.onbeforeunload = undefined;
             // Disable animation
