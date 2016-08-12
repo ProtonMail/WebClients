@@ -1083,8 +1083,6 @@ angular.module('proton.cache', [])
         if(angular.isDefined(unread)) {
             counters[loc].message.unread = unread;
         }
-
-        $rootScope.$broadcast('updatePageName');
     };
 
     /**
@@ -1096,15 +1094,13 @@ angular.module('proton.cache', [])
     api.updateConversation = function(loc, total, unread) {
         exist(loc);
 
-        if(angular.isDefined(total)) {
+        if (angular.isDefined(total)) {
             counters[loc].conversation.total = total;
         }
 
-        if(angular.isDefined(unread)) {
+        if (angular.isDefined(unread)) {
             counters[loc].conversation.unread = unread;
         }
-
-        $rootScope.$broadcast('updatePageName');
     };
 
     /**
