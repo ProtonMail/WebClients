@@ -4,9 +4,11 @@
 
     <div class="settings">
 
-        <p class="alert alert-info" ng-if="mobileMode">This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
+        <p class="alert alert-info" ng-if="mobileMode" translate translate-context="Info" translate-comment="responsiveness info">This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
 
-        <div class="row" id="settingsDomains">
+        <p class="alert alert-info" ng-show="isFree === true">Use your own domain with ProtonMail and use your own email address, e.g. yourname@yourdomain.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
+
+        <div class="row" id="settingsDomains" ng-show="isAdmin === true">
 
             <section class="setting pm_form full">
                 <legend>

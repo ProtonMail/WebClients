@@ -828,22 +828,37 @@ angular.module('proton.routes', [
     .state('secured.domains', {
         url: '/domains',
         resolve: {
-            access: function(user, $q) {
+            members: function($q, user, Member, networkActivityTracker) {
                 var deferred = $q.defer();
 
                 if (user.Role === 2) {
-                    deferred.resolve();
+                    Member.query()
+                    .then((result) => {
+                        if (result.data && result.data.Code === 1000) {
+                            deferred.resolve(result.data.Members);
+                        }
+                    });
                 } else {
-                    deferred.reject();
+                    deferred.resolve([]);
                 }
 
-                return deferred.promise;
+                return networkActivityTracker.track(deferred.promise);
             },
-            members: function(Member, networkActivityTracker) {
-                return networkActivityTracker.track(Member.query());
-            },
-            domains: function(Domain, networkActivityTracker) {
-                return networkActivityTracker.track(Domain.query());
+            domains: function($q, user, Domain, networkActivityTracker) {
+                var deferred = $q.defer();
+
+                if (user.Role === 2) {
+                    Domain.query()
+                    .then((result) => {
+                        if (result.data && result.data.Code === 1000) {
+                            deferred.resolve(result.data.Domains);
+                        }
+                    });
+                } else {
+                    deferred.resolve([]);
+                }
+
+                return networkActivityTracker.track(deferred.promise);
             }
         },
         views: {

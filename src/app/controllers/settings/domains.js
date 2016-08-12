@@ -27,10 +27,8 @@ angular.module("proton.controllers.Settings")
     verificationModal
 ) {
     // Variables
-    $scope.domains = domains.data.Domains;
-    $scope.members = members.data.Members;
-    $scope.addressMemberID = $scope.members[0];
-    $scope.isAdmin = !!(authentication.user && authentication.user.Role === CONSTANTS.PAID_ADMIN);
+    $scope.domains = domains;
+    $scope.members = members;
 
     // Listeners
     $scope.$on('domain', function(event, domain) {
