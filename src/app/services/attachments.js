@@ -146,13 +146,18 @@ angular.module('proton.attachments', ['proton.authentication', 'proton.storage']
             return deferred.promise;
         },
         get: function(id) {
-            return $http
-                .get(url.get() + "/attachments/" + id, {responseType: "arraybuffer"})
-                .success(function(data, status, headers, other) {
-                    return data;
-                }).error(function(response) {
-                    $log.debug(response);
-                });
+            var attachment = _.findWhere(this.store, {ID: id});
+            if(!attachment) {
+                return $http
+                    .get(url.get() + "/attachments/" + id, {responseType: "arraybuffer"})
+                    .success(function(data, status, headers, other) {
+                        return data;
+                    }).error(function(response) {
+                        $log.debug(response);
+                    });
+            } else {
+                return attachment;
+            }
         },
         uploadProgress: function(progress, elem) {
             const $elem = $(elem);
