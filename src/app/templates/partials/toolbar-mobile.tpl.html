@@ -77,14 +77,7 @@
             </a>
         </span>
 
-        <span class="pm_buttons" ng-show="!idDefined()">
-            <a href="#" ng-click="previous()" ng-class="{'disabled': (page<2)}">
-                <i class="fa fa-chevron-left"></i>
-            </a>
-            <a href="#" ng-click="next()" ng-class="{'disabled': disableN}">
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </span>
+        <paginator ng-hide="idDefined()" page="page" total-items="conversationCount()" items-per-page="elementPerPage" change="selectPage" />
 
     </div>
 
