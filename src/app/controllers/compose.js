@@ -611,7 +611,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         cleanup( result );
 
-
                         if (angular.isDefined( result.Headers['content-id'] ) && file.inline === 1) {
                             var cid = result.Headers['content-id'].replace(/[<>]+/g,'');
                             result.Headers.embedded = 1;
@@ -1468,6 +1467,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if (autosaving === false) {
             networkActivityTracker.track(deferred.promise);
         }
+
         composerRequestModel.save(message, deferred);
 
         return deferred.promise;
@@ -1847,13 +1847,21 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         $rootScope.activeComposer = false;
         $rootScope.maximizedComposer = false;
+        composerRequestModel.clear(message);
 
         if (save === true) {
-            recordMessage(message, true, false, false);
-        }
+            composerRequestModel.chain(message)
+            .then(([ data = {} ]) => {
+                const msg = data.Message || {};
 
-        message.close();
-        composerRequestModel.clear(message);
+                if (msg.ID) {
+                    message.ID = msg.ID;
+                }
+
+                return recordMessage(message, true, false, false);
+            })
+            .then(() => composerRequestModel.clear(message));
+        }
 
         // Remove message in composer controller
         $scope.messages = removeMessage($scope.messages, message);

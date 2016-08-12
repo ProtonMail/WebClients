@@ -39,7 +39,6 @@ angular.module('proton.composer')
     const save = (message, deferred) => {
         const key = `key.${message.uid}`;
         MAP_REQUEST[key] = MAP_REQUEST[key] || [];
-        kill(message.uid);
         MAP_REQUEST[key].push(deferred);
     };
 
@@ -50,7 +49,10 @@ angular.module('proton.composer')
      */
     const chain = ({ uid }) => {
         const list = read(uid).map(({ promise }) => promise);
-        return $q.all(list);
+
+        return list.reduce((current, next) => {
+            return current.then(next);
+        }, $q.defer().promise);
     };
 
     return { save, clear, chain };
