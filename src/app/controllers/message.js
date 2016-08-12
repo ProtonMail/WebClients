@@ -474,13 +474,11 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             });
         } else {
-            var attachmentStored = _.findWhere(attachments.fetch(), {ID: attachment.ID});
-
-            if(angular.isDefined(attachmentStored)) {
+            if(angular.isDefined(att.data)) {
                 $scope.downloadAttachment({
-                    data: attachmentStored.data,
-                    Name: attachmentStored.name,
-                    MIMEType: attachment.MIMEType,
+                    data: att.data,
+                    Name: att.name,
+                    MIMEType: att.MIMEType,
                     el: link,
                 });
                 attachment.decrypting = false;
