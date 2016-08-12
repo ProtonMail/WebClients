@@ -196,8 +196,6 @@ angular.module("proton.authentication", [
         savePassword: function(pwd) {
             // Save password in session storage
             secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
-            // Set pmcrypto.mailboxPassword
-            pmcw.setMailboxPassword(pwd);
         },
 
         /**
