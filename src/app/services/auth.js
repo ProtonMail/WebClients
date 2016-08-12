@@ -511,24 +511,20 @@ angular.module("proton.authentication", [
 
         // Returns an async promise that will be successful only if the mailbox password
         // proves correct (we test this by decrypting a small blob)
-        unlockWithPassword: function(pwd, authResponse) {
+        unlockWithPassword(pwd, { PrivateKey = '', AccessToken = '', RefreshToken = '', Uid = '', ExpiresIn = 0, EventID = '' } = {}) {
             var req = $q.defer();
             var self = this;
-
             if (pwd) {
-                pmcw.checkMailboxPassword(authResponse.PrivateKey, pwd, authResponse.AccessToken)
+                pmcw.checkMailboxPassword(PrivateKey, pwd, AccessToken)
                 .then(
                     function(token) {
-                        this.savePassword(pwd);
-                        this.receivedCredentials({
-                            "AccessToken": token,
-                            "RefreshToken": authResponse.RefreshToken,
-                            "Uid": authResponse.Uid,
-                            "ExpiresIn": authResponse.ExpiresIn,
-                            "EventID": authResponse.EventID
+                        self.savePassword(pwd);
+                        self.receivedCredentials({
+                            AccessToken: token,
+                            RefreshToken, Uid, ExpiresIn, EventID
                         });
                         req.resolve(200);
-                    }.bind(this),
+                    },
                     function(rejection) {
                         // console.log(rejection);
                         req.reject({
