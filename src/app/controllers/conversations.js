@@ -176,7 +176,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         $scope.$on('markPrevious', function(event) {
-            if (angular.element('.message.marked').length === 0) {
+            if (angular.element('.message.marked').length === 0 && $scope.conversations) {
                 var index = $scope.conversations.indexOf($scope.markedConversation);
 
                 if (index > 0) {
@@ -184,13 +184,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                         $scope.markedConversation = $scope.conversations[index - 1];
                     });
                     scrollToConversationPos();
+                } else {
+                    goToPage($scope.page - 1);
                 }
             }
         });
 
-
         $scope.$on('markNext', function(event) {
-            if (angular.element('.message.marked').length === 0) {
+            if (angular.element('.message.marked').length === 0 && $scope.conversations) {
                 var index = $scope.conversations.indexOf($scope.markedConversation);
 
                 if (index < ($scope.conversations.length - 1)) {
@@ -198,6 +199,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                         $scope.markedConversation = $scope.conversations[index + 1];
                     });
                     scrollToConversationPos();
+                } else {
+                    goToPage($scope.page + 1);
                 }
             }
         });
@@ -234,7 +237,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     }
 
     $scope.selectPage = function(page) {
-        goToPage(page, page < $scope.page);
+        goToPage(page);
     };
 
     $scope.conversationCount = function() {
@@ -715,17 +718,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
 
         $scope.saveLabels(labels, true);
-    };
-
-    // Used for mobile
-    $scope.next = function() {
-        goToPage( $scope.page + 1 );
-    };
-
-    $scope.previous = function() {
-        if ( $scope.page > 1 ) {
-            goToPage( $scope.page - 1 );
-        }
     };
 
     /**
