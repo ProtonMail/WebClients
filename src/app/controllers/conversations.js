@@ -234,6 +234,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $('#content').scrollTop($rootScope.scrollPosition);
             $rootScope.scrollPosition = null;
         }
+
+        $rootScope.$broadcast('updatePageName');
     }
 
     $scope.selectPage = function(page) {
