@@ -282,7 +282,7 @@ angular.module("proton.controllers.Secured", [])
                 break;
         }
 
-        if(angular.isDefined(value) && value > 0) {
+        if (angular.isDefined(value) && value > 0) {
             unread = '(' + value + ') ';
         }
 
