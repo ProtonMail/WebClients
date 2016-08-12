@@ -595,12 +595,12 @@ angular.module('proton', [
                 var tools = $injector.get("tools");
                 var $state = $injector.get("$state");
                 var crashData = {
-                    OS:             tools.getOs,
-                    OSVersion:      '',
-                    Browser:         tools.getBrowser,
-                    BrowserVersion:  tools.getBrowserVersion,
-                    Client:         'Angular',
-                    ClientVersion:  CONFIG.app_version,
+                    OS: tools.getOs(),
+                    OSVersion: '',
+                    Browser: tools.getBrowser(),
+                    BrowserVersion: tools.getBrowserVersion(),
+                    Client: 'Angular',
+                    ClientVersion: CONFIG.app_version,
                     Debug: { 'state': $state.$current.name, 'error': debug },
                 };
                 crashPromise = $http.post( url.get() + '/bugs/crash', crashData )
