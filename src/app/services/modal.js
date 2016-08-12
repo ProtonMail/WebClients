@@ -1398,7 +1398,6 @@ angular.module("proton.modals", [])
                 });
 
                 if (dirtyAddresses.length === 0) {
-                    unsubscribe();
                     params.cancel();
                 }
             });
@@ -1454,15 +1453,15 @@ angular.module("proton.modals", [])
 
                 $q.all(promises)
                 .finally(function() {
-                    unsubscribe();
                     params.cancel();
                 }.bind(this));
             };
 
             this.cancel = function() {
-                unsubscribe();
                 params.cancel();
             };
+
+            this.$onDestroy = unsubscribe;
         }
     });
 })
@@ -1871,11 +1870,11 @@ angular.module("proton.modals", [])
                             this.filter.Simple.Actions.Labels = authentication.user.Labels;
                         }.bind(this)));
                     }.bind(this));
-                    
-    //                 this.$on('$destroy', () => {
-    //                     unsubscribe.forEach(cb => cb());
-    //                     unsubscribe.length = 0;
-    //                 });
+
+                    this.$onDestroy = () => {
+                        unsubscribe.forEach(cb => cb());
+                        unsubscribe.length = 0;
+                    };
                 }
 
                 $timeout(function() {
