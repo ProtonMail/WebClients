@@ -155,6 +155,26 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         });
 
+        /**
+         * Scroll to the current marked conversation
+]        */
+        function scrollToConversationPos() {
+            const $convRows = document.getElementById('conversation-list-rows');
+            const $convCols = document.getElementById('conversation-list-columns');
+
+            if ($convCols) {
+                const $marked = $convCols.querySelector('.conversation.marked');
+                const scrollTo = (cols, marked) => () => cols.scrollTop = marked.offsetTop - cols.offsetHeight / 2;
+                $marked && _rAF(scrollTo($convCols, $marked));
+            }
+
+            if ($convRows) {
+                const $marked = $convRows.querySelector('.conversation.marked');
+                const scrollTo = (rows, marked) => () => rows.scrollTop = marked.offsetTop - rows.offsetHeight / 2;
+                $marked && _rAF(scrollTo($convRows, $marked));
+            }
+        }
+
         $scope.$on('markPrevious', function(event) {
             if (angular.element('.message.marked').length === 0) {
                 var index = $scope.conversations.indexOf($scope.markedConversation);
@@ -163,12 +183,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     $scope.$applyAsync(() => {
                         $scope.markedConversation = $scope.conversations[index - 1];
                     });
-
-                    angular.element('#conversation-list-rows').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-rows').height() / 2);
-                    angular.element('#conversation-list-columns').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-columns').height() / 2);
+                    scrollToConversationPos();
                 }
             }
         });
+
 
         $scope.$on('markNext', function(event) {
             if (angular.element('.message.marked').length === 0) {
@@ -178,8 +197,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     $scope.$applyAsync(() => {
                         $scope.markedConversation = $scope.conversations[index + 1];
                     });
-                    angular.element('#conversation-list-rows').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-rows').height() / 2);
-                    angular.element('#conversation-list-columns').scrollTop(angular.element('.conversation.marked')[0].offsetTop - angular.element('#conversation-list-columns').height() / 2);
+                    scrollToConversationPos();
                 }
             }
         });
