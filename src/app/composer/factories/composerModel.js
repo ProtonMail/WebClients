@@ -33,13 +33,13 @@ angular.module('proton.composer')
     /**
      * Save a new pending request for a message
      * @param  {Message} message
-     * @param  {Promise} deferred
+     * @param  {Promise} promise
      * @return {void}
      */
-    const save = (message, deferred) => {
+    const save = (message, promise) => {
         const key = `key.${message.uid}`;
         MAP_REQUEST[key] = MAP_REQUEST[key] || [];
-        MAP_REQUEST[key].push(deferred);
+        MAP_REQUEST[key].push(promise);
     };
 
     /**
@@ -49,10 +49,7 @@ angular.module('proton.composer')
      */
     const chain = ({ uid }) => {
         const list = read(uid).map(({ promise }) => promise);
-
-        return list.reduce((current, next) => {
-            return current.then(next);
-        }, $q.defer().promise);
+        return $q.all(list);
     };
 
     return { save, clear, chain };

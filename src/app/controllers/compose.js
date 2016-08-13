@@ -1291,7 +1291,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} autosaving
      */
     function recordMessage(message, forward, notification, autosaving) {
-
         // Variables
         var deferred = $q.defer();
         var parameters = {
@@ -1340,128 +1339,133 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         parameters.Message.AddressID = message.From.ID;
 
         // Encrypt message body with the first public key for the From address
-        message.encryptBody(message.From.Keys[0].PublicKey)
-        .then(function(result) {
-            var draftPromise;
-            var CREATE = 1;
-            var UPDATE = 2;
-            var actionType;
-
-            // Set encrypted body
-            parameters.Message.Body = result;
-
-            if (angular.isDefined(message.ID)) {
-                draftPromise = Message.updateDraft(parameters).$promise;
-                actionType = UPDATE;
-            } else {
-                draftPromise = Message.createDraft(parameters).$promise;
-                actionType = CREATE;
+        composerRequestModel.chain(message)
+        .then(([{ID} = {}]) => {
+            if (ID) {
+                message.ID = ID;
+                parameters.id = ID;
             }
-
-            // Save draft before to send
-            draftPromise
+            message.encryptBody(message.From.Keys[0].PublicKey)
             .then(function(result) {
+                var draftPromise;
+                var CREATE = 1;
+                var UPDATE = 2;
+                var actionType;
 
-                if (angular.isDefined(result) && result.Code === 1000) {
-                    var events = [];
-                    var conversation = cache.getConversationCached(result.Message.ConversationID);
-                    var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
-                    var numMessages;
+                // Set encrypted body
+                parameters.Message.Body = result;
 
-                    if (actionType === CREATE) {
-                        numMessages = angular.isDefined(conversation) ? (conversation.NumMessages + 1) : 1;
-                    } else if (actionType === UPDATE) {
-                        numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
-                    }
-
-                    message.ID = result.Message.ID;
-                    message.IsRead = result.Message.IsRead;
-                    message.Time = result.Message.Time;
-                    message.Type = result.Message.Type;
-                    message.LabelIDs = result.Message.LabelIDs;
-
-
-                    if (forward === true && result.Message.Attachments.length > 0) {
-                        message.Attachments = result.Message.Attachments;
-                        if (message.Attachments.length > message.NumEmbedded) {
-                            message.attachmentsToggle = true;
-                        }
-                    }
-
-                    result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
-                    result.Message.Recipients = _.uniq(result.Message.ToList.concat(result.Message.CCList).concat(result.Message.BCCList)); // The back-end doesn't return Recipients
-
-                    $scope.saveOld(message);
-
-                    // Update draft in message list
-                    events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
-
-                    // Generate conversation event
-                    const firstConversation = {
-                        Recipients: result.Message.Recipients,
-                        Senders: result.Message.Senders,
-                        Subject: result.Message.Subject
-                    };
-
-                    // Generate conversation event
-                    events.push({
-                        Action: 3,
-                        ID: result.Message.ConversationID,
-                        Conversation: angular.extend({
-                            NumAttachments: result.Message.Attachments.length, // it's fine
-                            NumMessages: numMessages,
-                            NumUnread: numUnread,
-                            ID: result.Message.ConversationID,
-                            LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
-                        }, numMessages === 1 ? firstConversation : {})
-                    });
-
-                    // Send events
-                    cache.events(events);
-
-                    if (notification === true) {
-                        notify({message: gettextCatalog.getString('Message saved', null), classes: 'notification-success'});
-                    }
-
-                    message.saving = false;
-                    message.autosaving = false;
-                    dispatchMessageAction(message);
-
-                    deferred.resolve(result);
-                } else if (angular.isDefined(result) && result.Code === 15033) {
-
-                    // Case where the user delete draft in an other terminal
-                    delete message.ID;
-                    message.saving = false;
-                    message.autosaving = false;
-                    dispatchMessageAction(message);
-                    deferred.resolve(recordMessage(message, forward, notification));
-                } else if (angular.isDefined(result) && result.Error) {
-
-                    // Errors from backend
-                    message.saving = false;
-                    message.autosaving = false;
-                    dispatchMessageAction(message);
-                    deferred.reject(result.Error);
+                if (message.ID) {
+                    draftPromise = Message.updateDraft(parameters).$promise;
+                    actionType = UPDATE;
                 } else {
+                    draftPromise = Message.createDraft(parameters).$promise;
+                    actionType = CREATE;
+                }
+
+                // Save draft before to send
+                draftPromise
+                .then(function(result) {
+                    if (angular.isDefined(result) && result.Code === 1000) {
+                        var events = [];
+                        var conversation = cache.getConversationCached(result.Message.ConversationID);
+                        var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
+                        var numMessages;
+
+                        if (actionType === CREATE) {
+                            numMessages = angular.isDefined(conversation) ? (conversation.NumMessages + 1) : 1;
+                            message.ID = result.Message.ID;
+                        } else if (actionType === UPDATE) {
+                            numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
+                        }
+
+                        message.IsRead = result.Message.IsRead;
+                        message.Time = result.Message.Time;
+                        message.Type = result.Message.Type;
+                        message.LabelIDs = result.Message.LabelIDs;
+
+                        if (forward === true && result.Message.Attachments.length > 0) {
+                            message.Attachments = result.Message.Attachments;
+                            if (message.Attachments.length > message.NumEmbedded) {
+                                message.attachmentsToggle = true;
+                            }
+                        }
+
+                        result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
+                        result.Message.Recipients = _.uniq(result.Message.ToList.concat(result.Message.CCList).concat(result.Message.BCCList)); // The back-end doesn't return Recipients
+
+                        $scope.saveOld(message);
+
+                        // Update draft in message list
+                        events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
+
+                        // Generate conversation event
+                        const firstConversation = {
+                            Recipients: result.Message.Recipients,
+                            Senders: result.Message.Senders,
+                            Subject: result.Message.Subject
+                        };
+
+                        // Generate conversation event
+                        events.push({
+                            Action: 3,
+                            ID: result.Message.ConversationID,
+                            Conversation: angular.extend({
+                                NumAttachments: result.Message.Attachments.length, // it's fine
+                                NumMessages: numMessages,
+                                NumUnread: numUnread,
+                                ID: result.Message.ConversationID,
+                                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                            }, numMessages === 1 ? firstConversation : {})
+                        });
+
+                        // Send events
+                        cache.events(events);
+
+                        if (notification === true) {
+                            notify({message: gettextCatalog.getString('Message saved', null), classes: 'notification-success'});
+                        }
+
+                        message.saving = false;
+                        message.autosaving = false;
+                        dispatchMessageAction(message);
+
+                        deferred.resolve(result.Message);
+                    } else if (angular.isDefined(result) && result.Code === 15033) {
+
+                        // Case where the user delete draft in an other terminal
+                        delete message.ID;
+                        message.saving = false;
+                        message.autosaving = false;
+                        dispatchMessageAction(message);
+                        deferred.resolve(recordMessage(message, forward, notification));
+                    } else if (angular.isDefined(result) && result.Error) {
+
+                        // Errors from backend
+                        message.saving = false;
+                        message.autosaving = false;
+                        dispatchMessageAction(message);
+                        deferred.reject(result.Error);
+                    } else {
+                        message.saving = false;
+                        message.autosaving = false;
+                        dispatchMessageAction(message);
+                        deferred.reject(result);
+                    }
+                }, function(error) {
                     message.saving = false;
                     message.autosaving = false;
                     dispatchMessageAction(message);
-                    deferred.reject(result);
-                }
+                    error.message = 'Error during the draft request';
+                    deferred.reject(error);
+                });
             }, function(error) {
                 message.saving = false;
                 message.autosaving = false;
                 dispatchMessageAction(message);
-                error.message = 'Error during the draft request';
+                error.message = 'Error encrypting message';
                 deferred.reject(error);
             });
-        }, function(error) {
-            message.saving = false;
-            message.autosaving = false;
-            dispatchMessageAction(message);
-            error.message = 'Error encrypting message';
-            deferred.reject(error);
         });
 
         if (autosaving === false) {
@@ -1522,7 +1526,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.send = function(msg) {
-
         // Prevent mutability
         const message = new Message(msg);
         var deferred = $q.defer();
@@ -1532,30 +1535,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             embedded.parser(message, 'cid').then(function(result) {
                 message.Body = result;
-
-                /**
-                 * Chain promises (concurrency with the draft creation)
-                 * Prevent 2 messages created as the autosaving is creating a new one
-                 * and if the click is < 3s this one does not have an ID too.
-                 *
-                 * If there are no promise, it works too, and it's faster :)
-                 */
-                composerRequestModel.chain(message)
-                .then(([ data = {} ]) => {
-                    /**
-                     * This arg is the resolved promise from the draft creation
-                     * Find its message and attach the ID to the current message.
-                     * The current message from @send does not contains any ID if
-                     *     - click < 3s (with/without concurent draft creation)
-                     */
-                    const msg = data.Message || {};
-
-                    if (msg.ID) {
-                        message.ID = msg.ID;
-                    }
-
-                    return recordMessage(message, false, false, false);
-                })
+                return recordMessage(message, false, false, false)
                 .then(function() {
                     $scope.checkSubject(message).then(function() {
 
@@ -1847,20 +1827,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         $rootScope.activeComposer = false;
         $rootScope.maximizedComposer = false;
-        composerRequestModel.clear(message);
 
         if (save === true) {
-            composerRequestModel.chain(message)
-            .then(([ data = {} ]) => {
-                const msg = data.Message || {};
-
-                if (msg.ID) {
-                    message.ID = msg.ID;
-                }
-
-                return recordMessage(message, true, false, false);
-            })
-            .then(() => composerRequestModel.clear(message));
+            recordMessage(message, true, false, false);
         }
 
         // Remove message in composer controller
