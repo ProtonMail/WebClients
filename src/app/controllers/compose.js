@@ -606,29 +606,31 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             function(packets) {
                 var preview = packets.Preview;
 
-                return attachments.upload(packets, message, tempPacket).then(
-                    function(result) {
+                return attachments
+                    .upload(packets, message, tempPacket)
+                        .then((result = {}) => {
 
-                        cleanup( result );
+                            cleanup( result );
 
-                        if (angular.isDefined( result.Headers['content-id'] ) && file.inline === 1) {
-                            var cid = result.Headers['content-id'].replace(/[<>]+/g,'');
-                            result.Headers.embedded = 1;
-                            embedded.addEmbedded(message,cid,preview, result.MIMEType);
-                        }
+                            if (!Object.keys(result.Headers || {}).length) {
+                                return $q.reject(new Error('Headers must be defined to add an attachment'));
+                            }
 
-                    },
-                    function(error) {
-                        cleanup();
-                        notify({message: 'Error during file upload', classes: 'notification-danger'});
-                        $log.error(error);
-                    }
-                );
+                            if (angular.isDefined( result.Headers['content-id'] ) && file.inline === 1) {
+                                var cid = result.Headers['content-id'].replace(/[<>]+/g,'');
+                                result.Headers.embedded = 1;
+                                embedded.addEmbedded(message,cid,preview, result.MIMEType);
+                            }
+
+                        })
+                        .catch((error) =>  {
+                            cleanup();
+                            notify({message: 'Error during file upload', classes: 'notification-danger'});
+                        });
             },
             function(error) {
                 cleanup();
                 notify({message: 'Error encrypting attachment', classes: 'notification-danger'});
-                $log.error(error);
             }
         );
     };
