@@ -135,6 +135,7 @@ angular.module("proton.embedded", [])
         if (attachs.length) {
                 // Build a list of cids
                 attachs.forEach(({ Headers = {}, Name = {} }) => {
+
                     const disposition = Headers['content-disposition'];
 
                     // BE require an inline content-disposition!
@@ -178,7 +179,6 @@ angular.module("proton.embedded", [])
         const { Headers = {}} = Attachments[cid] || {};
         const key = getHashKey(message);
         MAP_BLOBS[key] = MAP_BLOBS[key] || [];
-
         return (data, MIME) => {
             if (Headers['content-location'] && !Headers['content-id']) {
                 Blobs[ cid ] = {
@@ -210,23 +210,40 @@ angular.module("proton.embedded", [])
     var decrypt = function() {
         var message = this;
         var deferred = $q.defer();
-        var attachs =  message.Attachments;
+        var attachs =  message.Attachments || [];
         var processed = false;
-        const list = Object.keys(CIDList[message.ID] || {});
-        const user = authentication.user || {ShowEmbedded:0};
+
+        /**
+         * Find all attachements to inline
+         * @type {Array}
+         */
+        const list = Object
+            .keys(CIDList[message.ID] || {})
+            .reduce((acc, cid) => {
+
+                // Extract current attachement content-id
+                const contentId = CIDList[message.ID][cid].Headers['content-id'];
+
+                // Find the matching attachement
+                const attachment = attachs.filter(({ Headers = {} } = {}) => Headers['content-id'] === contentId)[0];
+                attachment && acc.push({ cid, attachment});
+                return acc;
+            }, []);
+
+        const user = authentication.user || { ShowEmbedded: 0 };
         const show = message.showEmbedded === true || user.ShowEmbedded === 1;
 
         let parsingAttachementPromise = [];
 
+
         // loop the CID list
         list
-            .forEach( function(cid, index) {
+            .forEach( function({ cid, attachment }) {
 
             // Check if the CID is already stored
             if (!Blobs[cid] && show) {
                 processed = true;
 
-                var attachment = attachs[index];
                 var att, pk;
 
                 attachment.decrypting = true;

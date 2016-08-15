@@ -606,12 +606,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                             cleanup( result );
 
-                            if (!Object.keys(result.Headers || {}).length) {
-                                return $q.reject(new Error('Headers must be defined to add an attachment'));
-                            }
+                            // Extract content-id even if there are no headers
+                            const contentId = (result.Headers || {})['content-id'] || '';
 
-                            if (angular.isDefined( result.Headers['content-id'] ) && file.inline === 1) {
-                                var cid = result.Headers['content-id'].replace(/[<>]+/g,'');
+                            if (contentId && file.inline === 1) {
+                                var cid = contentId.replace(/[<>]+/g,'');
                                 result.Headers.embedded = 1;
                                 embedded.addEmbedded(message,cid,preview, result.MIMEType);
                             }
@@ -619,6 +618,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         })
                         .catch((error) =>  {
                             cleanup();
+                            console.error(error);
                             notify({message: 'Error during file upload', classes: 'notification-danger'});
                         });
             },
