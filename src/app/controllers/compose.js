@@ -355,6 +355,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     };
 
+
+    $scope.disabledNotify = function() {
+        notify({message: 'Attachments and inline images must be removed first before changing sender', classes: 'notification-danger'});
+    };
+
     $scope.slideDown = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
     };

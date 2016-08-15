@@ -485,7 +485,15 @@
 					white-space: nowrap;
 					display:block; /* webkit */
 					padding-right: 20px; /* button */
-				}
+		  }
+		  .overlay{
+		  	position: absolute;
+		  	z-index: 10;
+		  	left: 0px;
+		  	top:0px;
+		  	width: 100%;
+		  	height: 100%;
+		  }
 	    }
 
 		input, select{
