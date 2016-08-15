@@ -413,7 +413,7 @@
 			top: ($headerHeight + 20);
 			left: ($sidebarWidth + 20);
 			bottom: 20px;
-			right: 20px;
+			right: 20px !important;
 			width: auto;
 			height: auto !important;
 			box-sizing: border-box;
@@ -621,7 +621,7 @@
 		.composer {
 			header {
 				.pm_button.maximize-button {
-					// display: none;
+					/*display: none;*/
 				}
 			}
 			&.maximized {
@@ -634,11 +634,22 @@
 		}
 	}
 }
+@media screen and (max-width: $tablet-portrait) {
+	#pm_composer {
+		.composer {
+			header {
+				.pm_button.maximize-button {
+					display: none;
+				}
+			}
+		}
+	}
+}
 
 
 @media screen and (max-height: 500px) {
 	#pm_composer {
-		.angular-squire-wrapper{
+ 		.angular-squire-wrapper{
 			padding-top: 2rem; /* toolbar height */
 		}
 		footer{
