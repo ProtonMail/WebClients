@@ -165,8 +165,9 @@ angular.module("proton.squire", [
                          */
                         const classNames = _
                             .chain(p.split('BODY')[1].split('>'))
-                            .filter(i => i && !/IMG.proton-embedded|.proton-embedded|div|html|body|span|DIV.image.loading/i.test(i))
+                            .filter(i => i && !/IMG.proton-embedded|.proton-embedded|DIV.image.loading/i.test(i))
                             .reduce((acc, path) => acc.concat(path.split('.')), [])
+                            .filter(i => i && !/div|html|body|span/i.test(i))
                             .reduce((acc, key) => {
                               if (HEADER_CLASS === key) {
                                   return `${acc} size`;
