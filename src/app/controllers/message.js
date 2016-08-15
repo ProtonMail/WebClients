@@ -569,7 +569,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 var blob = new Blob([attachment.data], {type: attachment.MIMEType});
                 var link = $(attachment.el);
 
-                if($rootScope.isFileSaverSupported) {
+                if ($rootScope.isFileSaverSupported) {
                     saveAs(blob, attachment.Name);
                 } else {
                     // Bad blob support, make a data URI, don't click it
