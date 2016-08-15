@@ -389,8 +389,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
 
     $scope.dropzoneConfig = function(message) {
-        let promise;
-
         return {
             options: {
                 addRemoveLinks: false,
@@ -400,11 +398,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 paramName: "file", // The name that will be used to transfer the file
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
-
-                drop() {
-                    // When we drop something auto record a message
-                    promise = recordMessage(message, false, false, false);
-                },
                 accept(file, done) {
                     var totalSize = $scope.getAttachmentsSize(message);
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
@@ -466,9 +459,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         // Defer the code execution if the draft is still not saved
                         if (angular.isUndefined(message.ID)) {
-                            promise.then(process);
+                            recordMessage(message, false, false, false)
+                            .then(process);
                         } else {
-                           process();
+                            process();
                         }
 
                         done();
