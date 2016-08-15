@@ -125,11 +125,11 @@
             <div class="meta">
                 <div class="row fromRow">
                     <label translate translate-context="Title">From</label>
-                    <select class="flex" ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0" ng-change="changeFrom(message)"></select>
+                    <select class="flex" ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0"  ng-change="changeFrom(message)"></select>
                     <button class="pm_button link">
                         <i class="fa fa-angle-down"></i>
                     </button>
-                    <span class="overlay" ng-show="message.Attachments.length > 0" pt-tooltip-translate="Remove Attachments to change your From address."></span>
+                    <span class="overlay" ng-click="disabledNotify()" ng-show="message.Attachments.length > 0" translate=""></span>
                 </div>
                 <div class="row placeholder" ng-click="focusTo(message)" ng-right-click="focusTo(message)" ng-show="emailsAreValid(message) === true && message.autocompletesFocussed === false">
                     <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0" translate translate-context="Title">Recipients</label>
