@@ -158,19 +158,26 @@ angular.module("proton.squire", [
                     }
 
                     if ('(selection)' !== p) {
-                        menubar[0].className = 'squire-toolbar '+ p
-                            .split("BODY")[1]
-                            .split('>')
+
+                        /**
+                         * Find and filter selections to toogle the current action (toolbar)
+                         * Ex: isBold etc.
+                         */
+                        const classNames = _
+                            .chain(p.split('BODY')[1].split('>'))
+                            .filter(i => i && !/IMG.proton-embedded|.proton-embedded|div|html|body|span|DIV.image.loading/i.test(i))
                             .reduce((acc, path) => acc.concat(path.split('.')), [])
-                            .filter(i => i && !/IMG.proton-embedded|.proton-embedded|div|html|body|span/i.test(i))
                             .reduce((acc, key) => {
-                                if (HEADER_CLASS === key) {
-                                    return `${acc} size`;
-                                }
-                                return `${acc} ${key.trim()}`;
+                              if (HEADER_CLASS === key) {
+                                  return `${acc} size`;
+                              }
+                              return `${acc} ${key.trim()}`;
                             }, '')
+                            .value()
                             .toLowerCase()
                             .trim();
+
+                        menubar[0].className = `squire-toolbar ${classNames}`;
                     }
 
                 }), 500);
