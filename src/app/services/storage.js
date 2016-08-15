@@ -78,13 +78,15 @@ angular.module("proton.storage", [])
             continue;
         }
 
-        var xored = new Uint8Array(item.length);
+        var xored = new Array(item.length);
+
         for (var j = 0; j < item.length; j++) {
             xored[j] = item[j] ^ nameItem[j];
         }
 
         // Strip off padding
         var unpaddedLength = item.length;
+        
         while (unpaddedLength > 0 && xored[unpaddedLength - 1] === 0) {
             unpaddedLength--;
         }
