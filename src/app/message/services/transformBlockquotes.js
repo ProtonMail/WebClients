@@ -17,11 +17,10 @@ angular.module('proton.message')
 
     return function(html, message) {
 
-        var blockquotes = html.querySelectorAll(quotes);
-        var blockquote = blockquotes[0];
+        var blockquote = html.querySelector(quotes);
 
         if (blockquote) {
-            if (blockquote.textContent.trim() < html.textContent.trim()) {
+            if (blockquote.textContent.trim().length < html.textContent.trim().length) {
                 var button = document.createElement('button');
                 var title = gettextCatalog.getString('Show previous message', null, 'Title');
 
