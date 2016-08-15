@@ -62,6 +62,7 @@
 	    	}
 	    }
 		&.more {
+			pointer-events: none;
 			line-height: 14px;
 			color: rgba(0,0,0,.35);
 			max-width: 1.5rem;
