@@ -3,7 +3,7 @@ angular.module('proton.autocomplete', [])
     return function(string, value) {
         var regex = new RegExp('(' + value + ')', 'gi');
 
-        return string.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(regex, '<strong>$1</strong>');
+        return string.replace(/</g, '‹').replace(/>/g, '›').replace(regex, '<strong>$1</strong>');
     };
 })
 .directive('autocomplete', function ($timeout, $rootScope, regexEmail, authentication) {
