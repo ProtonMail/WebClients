@@ -557,35 +557,26 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     $scope.downloadAttachment = function(attachment) {
 
-        // if (attachment.MIMEType.indexOf('calendar')) {
-        //     console.log(attachment);
-        //     var iCalendarData = attachment.data; // attachment.data is not ready. need to convert first.. HELP BART!
-        //     var jcalData = ICAL.parse(iCalendarData);
-        //     console.log(jcalData);
-        // }
-        // else {
+        try {
+            var blob = new Blob([attachment.data], {type: attachment.MIMEType});
+            var link = $(attachment.el);
 
-            try {
-                var blob = new Blob([attachment.data], {type: attachment.MIMEType});
-                var link = $(attachment.el);
+            if ($rootScope.isFileSaverSupported) {
+                saveAs(blob, attachment.Name);
+            } else {
+                // Bad blob support, make a data URI, don't click it
+                var reader = new FileReader();
 
-                if ($rootScope.isFileSaverSupported) {
-                    saveAs(blob, attachment.Name);
-                } else {
-                    // Bad blob support, make a data URI, don't click it
-                    var reader = new FileReader();
+                reader.onloadend = function () {
+                    link.attr('href', reader.result);
+                };
 
-                    reader.onloadend = function () {
-                        link.parent('a').attr('href',reader.result);
-                    };
-
-                    reader.readAsDataURL(blob);
-                }
-            } catch (error) {
-                console.error(error);
+                reader.readAsDataURL(blob);
             }
+        } catch (error) {
+            console.error(error);
+        }
 
-        // }
     };
 
     /**
