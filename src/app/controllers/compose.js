@@ -717,7 +717,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             .then((message) => {
                 // Need to update the message only after the body is clean with valid embedded images
                 // and sanitize input
-                insertSignature(message);
+                if ([0, 2, 3].indexOf(message.Type) !== -1) { // 0 = INBOX, 1 = DRAFT, 2 = SENT, 3 = INBOX_AND_SENT
+                    insertSignature(message);
+                }
+
                 $scope.messages.unshift(message);
                 $scope.isOver = false;
                 $scope.askEmbedding = false;
@@ -824,14 +827,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     function insertSignature(message) {
         message.Body = (angular.isUndefined(message.Body))? '' : message.Body;
 
-        var content = (angular.isUndefined(message.From.Signature))?authentication.user.Signature:message.From.Signature;
+        var content = angular.isUndefined(message.From.Signature) ? authentication.user.Signature : message.From.Signature;
             content = DOMPurify.sanitize(content, {
                 ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style', 'input', 'form']
             });
 
         var $content = $('<div>' + content + '</div>'),
-            signature = "",
+            signature = '',
             newSign = false,
             space = "<div><br /></div>",
             className = "protonmail_signature_block";
@@ -847,24 +850,22 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if ($content.text().length === 0 && $content.find('img').length === 0){
             // remove the empty DOM elements
-            content = "";
+            content = '';
         }
 
         var PMSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : '';
 
-        if (content !== '' || PMSignature !== ''){
+        if (content.length > 0 || PMSignature.length > 0) {
             signature = DOMPurify.sanitize('<div class="'+className+'">' + tools.replaceLineBreaks(content + PMSignature + space) +'</div>', {
                 ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style', 'input', 'form']
             });
         }
 
-
-        if ( countSignatures > 0) {
+        if (countSignatures > 0) {
             // update the first signature (reply/foward case)
             // .first() + replace fail, use :first selector
             firstSignature.replaceWith(signature);
-
         } else {
             // insert signature at the right place
             (countQuotes > 0) ? firstQuote.before(signature) : tempDOM.append(signature);
@@ -873,14 +874,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             firstSignature = tempDOM.children('.protonmail_signature_block:first');
         }
 
-
         /* Handle free space around the signature */
-
-        if ( firstQuote.prevAll("div").length === 0 && newSign) {
+        if (firstQuote.prevAll('div').length === 0 && newSign) {
           firstQuote.before(space + space);
         }
 
-        if (firstSignature.prevAll("div").length === 0  && newSign) {
+        if (firstSignature.prevAll('div').length === 0  && newSign) {
           firstSignature.before(space + space);
         }
 
