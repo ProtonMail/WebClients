@@ -362,27 +362,36 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 
 				this.manageNotices(data.Notices);
 			},
+			milliseconds: CONSTANTS.INTERVAL_EVENT_TIMER,
+			reset: () => {
+				$timeout.cancel(eventModel.promiseCancel);
+				eventModel.notification && eventModel.notification.close();
+				eventModel.interval();
+			},
 			interval: function() {
-				eventModel.get().then(function (result) {
-					// Check for force upgrade
-					if (angular.isDefined(result.data) && result.data.Code === 5003) {
-						// Force upgrade, kill event loop
-						eventModel.promiseCancel = undefined;
-					} else {
-						// Schedule next event API call, do it here so a crash in managing events doesn't kill the loop forever
-						if ( angular.isDefined(eventModel.promiseCancel) ) {
-							eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
+				return eventModel.get().then(
+					function (result) {
+						// Check for force upgrade
+						if (result.data && result.data.Code === 5003) {
+							// Force upgrade, kill event loop
+							$timeout.cancel(eventModel.promiseCancel);
+						} else {
+							eventModel.notification && eventModel.notification.close();
+							eventModel.milliseconds = CONSTANTS.INTERVAL_EVENT_TIMER;
+							eventModel.promiseCancel = $timeout(eventModel.interval, eventModel.milliseconds);
+							eventModel.manage(result.data);
 						}
-
-						eventModel.manage(result.data);
+					},
+					function(err) {
+						if (angular.isDefined(eventModel.promiseCancel)) {
+							$timeout.cancel(eventModel.promiseCancel);
+							eventModel.notification && eventModel.notification.close();
+							eventModel.milliseconds = eventModel.milliseconds * 2; // We multiplie the interval by 2
+							eventModel.promiseCancel = $timeout(eventModel.interval, eventModel.milliseconds);
+							eventModel.notification = notify({templateUrl: 'templates/notifications/retry.tpl.html', duration: '0', onClick: eventModel.reset});
+						}
 					}
-				},
-				function(err) {
-					// Try again later
-					if ( angular.isDefined(eventModel.promiseCancel) ) {
-						eventModel.promiseCancel = $timeout(eventModel.interval, CONSTANTS.INTERVAL_EVENT_TIMER);
-					}
-				});
+				);
 			}
 		};
 
@@ -390,7 +399,6 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 			start: function () {
 				if (angular.isUndefined(eventModel.promiseCancel)) {
 					eventModel.ID = secureSessionStorage.getItem(CONSTANTS.EVENT_ID);
-
 					eventModel.promiseCancel = $timeout(eventModel.interval, 0);
 				}
 			},
@@ -402,10 +410,7 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 				});
 			},
 			stop: function () {
-				if (angular.isDefined(eventModel.promiseCancel)) {
-					$timeout.cancel(eventModel.promiseCancel);
-					eventModel.promiseCancel = undefined;
-				}
+				$timeout.cancel(eventModel.promiseCancel);
 			}
 		}, 'start', 'call', 'stop');
 
