@@ -1,0 +1,9 @@
+<div
+    class="proton-notification-template cg-notify-message"
+    ng-class="[$classes,
+        $position === 'center' ? 'cg-notify-message-center' : '',
+        $position === 'left' ? 'cg-notify-message-left' : '',
+        $position === 'right' ? 'cg-notify-message-right' : '']"
+    ng-style="{'margin-left': $centerMargin}">
+    <div>Servers are unreachable. <a href="#" ng-click="$click()">Retry now</a>.</div>
+</div>
