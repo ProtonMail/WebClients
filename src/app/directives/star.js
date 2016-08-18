@@ -15,7 +15,7 @@ angular.module("proton.star", [])
      * @param {String} type Type of message, conversation or message
      */
     function toggleStar(item, type) {
-      var todoAction = isStarred(item) ? 'unstar' : 'star';
+      const todoAction = isStarred(item) ? 'unstar' : 'star';
 
       if (type === 'conversation') {
         action[todoAction + 'Conversation'](item.ID);
@@ -32,13 +32,11 @@ angular.module("proton.star", [])
       },
       replace: true,
       templateUrl: 'templates/directives/star.tpl.html',
-      link: function (scope, el, attr) {
+      link(scope, el, attr) {
 
-        var customType = attr.ptStarType || tools.typeList();
+        const customType = attr.ptStarType || tools.typeList();
 
-        scope.isStarred = function() {
-          return isStarred(scope.model);
-        };
+        scope.isStarred = () => isStarred(scope.model);
 
         function onClick(e) {
           if (e.target.nodeName === 'A') {
@@ -53,6 +51,7 @@ angular.module("proton.star", [])
         scope
           .$on('$destroy', function() {
             el.off('click', onClick);
+            $('.tooltip').remove(); // Clear all tooltips when we destroy a conversation cf #3513
           });
       }
     };
