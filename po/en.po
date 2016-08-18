@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 # i.e. “1 conversation selected”, “5 conversations selected”
@@ -661,7 +661,7 @@ msgstr "all"
 
 #. form option
 #: src/app/controllers/header.js:165 src/app/controllers/header.js:22
-#: src/app/controllers/header.js:36 src/app/controllers/settings/invoices.js:20
+#: src/app/controllers/header.js:36
 #: src/app/templates/partials/searchForm.tpl.html:68
 msgid "All"
 msgstr "All"
@@ -810,7 +810,7 @@ msgstr "Archive"
 #: src/app/templates/directives/location-tag.tpl.html:7
 #: src/app/templates/partials/no-results.tpl.html:21
 #: src/app/templates/partials/sidebar-responsive.tpl.html:44
-#: src/app/templates/partials/sidebar.tpl.html:45
+#: src/app/templates/partials/sidebar.tpl.html:48
 msgctxt "Title"
 msgid "Archive"
 msgstr "Archive"
@@ -900,7 +900,7 @@ msgstr "Attachments"
 
 #: src/app/services/modal.js:1768
 #: src/app/templates/partials/composer.tpl.html:170
-#: src/app/templates/partials/composer.tpl.html:239
+#: src/app/templates/partials/composer.tpl.html:242
 #: src/app/templates/views/outside.reply.tpl.html:37
 msgid "Attachments"
 msgstr "Attachments"
@@ -948,7 +948,7 @@ msgid "Basic"
 msgstr "Basic"
 
 #. printed message info
-#: src/app/controllers/compose.js:1908
+#: src/app/controllers/compose.js:1757
 #: src/app/templates/partials/composer.tpl.html:153
 #: src/app/templates/partials/conversation.tpl.html:126
 #: src/app/templates/views/message.print.tpl.html:41
@@ -1125,7 +1125,7 @@ msgstr "Card validation code"
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1898
+#: src/app/controllers/compose.js:1747
 #: src/app/templates/partials/composer.tpl.html:149
 #: src/app/templates/partials/conversation.tpl.html:112
 #: src/app/templates/views/message.print.tpl.html:36
@@ -1309,7 +1309,7 @@ msgstr "Complete setup"
 
 #. compose button in sidebar
 #. contacts toolbar menu option
-#: src/app/templates/partials/sidebar.tpl.html:5
+#: src/app/templates/partials/sidebar.tpl.html:8
 #: src/app/templates/views/contacts.tpl.html:27
 msgctxt "Action"
 msgid "Compose"
@@ -1753,7 +1753,7 @@ msgstr "Default"
 msgid "Default identity"
 msgstr "Default identity"
 
-#: src/app/controllers/compose.js:1858
+#: src/app/controllers/compose.js:1707
 #: src/app/templates/views/filters.tpl.html:63
 #: src/app/templates/views/filters.tpl.html:91
 msgid "Delete"
@@ -1802,7 +1802,8 @@ msgctxt "Action"
 msgid "Delete all"
 msgstr "Delete all"
 
-#: src/app/controllers/contacts.js:133 src/app/controllers/conversations.js:859
+#: src/app/controllers/contacts.js:133
+#: src/app/controllers/conversations.js:859
 msgctxt "Title"
 msgid "Delete all"
 msgstr "Delete all"
@@ -1821,7 +1822,7 @@ msgctxt "Title"
 msgid "Delete domain"
 msgstr "Delete domain"
 
-#: src/app/templates/partials/composer.tpl.html:281
+#: src/app/templates/partials/composer.tpl.html:284
 msgid "Delete draft"
 msgstr "Delete draft"
 
@@ -1904,7 +1905,7 @@ msgstr ""
 "Disabled<span>\n"
 "                            </span>"
 
-#: src/app/templates/partials/composer.tpl.html:283
+#: src/app/templates/partials/composer.tpl.html:286
 msgctxt "Action"
 msgid "Discard"
 msgstr "Discard"
@@ -2053,7 +2054,7 @@ msgid "Download"
 msgstr "Download"
 
 #. table heading
-#: src/app/controllers/contacts.js:445 src/app/controllers/message.js:283
+#: src/app/controllers/contacts.js:445 src/app/controllers/message.js:285
 #: src/app/templates/views/keys.tpl.html:125
 #: src/app/templates/views/keys.tpl.html:26
 #: src/app/templates/views/keys.tpl.html:75
@@ -2097,7 +2098,7 @@ msgstr "Draft"
 #: src/app/controllers/secured.js:294
 #: src/app/templates/partials/no-results.tpl.html:16
 #: src/app/templates/partials/sidebar-responsive.tpl.html:23
-#: src/app/templates/partials/sidebar.tpl.html:21
+#: src/app/templates/partials/sidebar.tpl.html:24
 msgctxt "Title"
 msgid "Drafts"
 msgstr "Drafts"
@@ -2106,7 +2107,7 @@ msgstr "Drafts"
 msgid "Drafts"
 msgstr "Drafts"
 
-#: src/app/controllers/compose.js:400
+#: src/app/controllers/compose.js:368
 msgctxt "Info"
 msgid "Drop a file here to upload"
 msgstr "Drop a file here to upload"
@@ -2189,7 +2190,7 @@ msgctxt "Title"
 msgid "Email verification"
 msgstr "Email verification"
 
-#: src/app/templates/partials/composer.tpl.html:210
+#: src/app/templates/partials/composer.tpl.html:213
 msgid "embedded image"
 msgid_plural "embedded images"
 msgstr[0] "embedded image"
@@ -2261,12 +2262,12 @@ msgctxt "Action"
 msgid "Encrypting"
 msgstr "Encrypting"
 
-#: src/app/templates/partials/composer.tpl.html:263
+#: src/app/templates/partials/composer.tpl.html:266
 msgctxt "Title"
 msgid "Encryption"
 msgstr "Encryption"
 
-#: src/app/templates/partials/composer.tpl.html:251
+#: src/app/templates/partials/composer.tpl.html:254
 msgid "Encryption"
 msgstr "Encryption"
 
@@ -2275,23 +2276,23 @@ msgctxt "Title"
 msgid "End date"
 msgstr "End date"
 
-#: src/app/models/message.js:137
+#: src/app/models/message.js:146
 msgid "End to end encrypted for outside"
 msgstr "End to end encrypted for outside"
 
-#: src/app/models/message.js:140
+#: src/app/models/message.js:149
 msgid "End to end encrypted for outside reply"
 msgstr "End to end encrypted for outside reply"
 
-#: src/app/models/message.js:135
+#: src/app/models/message.js:144
 msgid "End to end encrypted internal message"
 msgstr "End to end encrypted internal message"
 
-#: src/app/models/message.js:141
+#: src/app/models/message.js:150
 msgid "End to end encrypted using PGP"
 msgstr "End to end encrypted using PGP"
 
-#: src/app/models/message.js:142
+#: src/app/models/message.js:151
 msgid "End to end encrypted using PGP/MIME"
 msgstr "End to end encrypted using PGP/MIME"
 
@@ -2408,17 +2409,17 @@ msgctxt "Error"
 msgid "Error during quering conversations"
 msgstr "Error during querying conversations."
 
-#: src/app/controllers/message.js:240
+#: src/app/controllers/message.js:242
 msgctxt "Error"
 msgid "Error during the decryption of the message"
 msgstr "Error during the decryption of the message."
 
-#: src/app/controllers/outside.js:212
+#: src/app/controllers/outside.js:211
 msgctxt "Error"
 msgid "Error during the encryption"
 msgstr "Error during the encryption."
 
-#: src/app/controllers/message.js:244
+#: src/app/controllers/message.js:246
 msgctxt "Error"
 msgid "Error during the getting message"
 msgstr "Error during the getting message."
@@ -2428,7 +2429,7 @@ msgctxt "Error"
 msgid "Error during the initialization of logs"
 msgstr "Error during the initialization of logs."
 
-#: src/app/controllers/outside.js:205
+#: src/app/controllers/outside.js:204
 msgctxt "Error"
 msgid "Error during the reply process"
 msgstr "Error during the reply process."
@@ -2485,7 +2486,7 @@ msgctxt "Title"
 msgid "Expiration"
 msgstr "Expiration"
 
-#: src/app/templates/partials/composer.tpl.html:277
+#: src/app/templates/partials/composer.tpl.html:280
 msgctxt "Action"
 msgid "Expiration"
 msgstr "Expiration"
@@ -2500,7 +2501,7 @@ msgctxt "Title"
 msgid "Expiration time"
 msgstr "Expiration time"
 
-#: src/app/templates/partials/composer.tpl.html:265
+#: src/app/templates/partials/composer.tpl.html:268
 msgctxt "Action"
 msgid "Expiration time"
 msgstr "Expiration time"
@@ -2509,7 +2510,7 @@ msgstr "Expiration time"
 msgid "Expiring in"
 msgstr "Expiring in"
 
-#: src/app/models/message.js:136 src/app/models/message.js:138
+#: src/app/models/message.js:145 src/app/models/message.js:147
 msgid "External message stored encrypted"
 msgstr "External message stored encrypted"
 
@@ -2532,7 +2533,7 @@ msgid "Field required"
 msgstr "Field required"
 
 #: src/app/templates/partials/attachments.tpl.html:8
-#: src/app/templates/partials/composer.tpl.html:206
+#: src/app/templates/partials/composer.tpl.html:209
 #, fuzzy
 msgid "File attached"
 msgid_plural "Files attached"
@@ -2672,7 +2673,7 @@ msgctxt "Action"
 msgid "Fullscreen"
 msgstr "Fullscreen"
 
-#: src/app/services/message/messageBuilder.js:5
+#: src/app/services/message/messageBuilder.js:8
 msgid "Fw:"
 msgstr "Fw:"
 
@@ -2774,7 +2775,7 @@ msgid ""
 msgstr ""
 "Here is a basic DMARC record that does nothing except email you reports."
 
-#: src/app/templates/partials/composer.tpl.html:200
+#: src/app/templates/partials/composer.tpl.html:203
 msgctxt "Action"
 msgid "Hide"
 msgstr "Hide"
@@ -2998,7 +2999,7 @@ msgstr "Inbox"
 #: src/app/templates/directives/location-tag.tpl.html:2
 #: src/app/templates/partials/no-results.tpl.html:15
 #: src/app/templates/partials/sidebar-responsive.tpl.html:16
-#: src/app/templates/partials/sidebar.tpl.html:13
+#: src/app/templates/partials/sidebar.tpl.html:16
 msgctxt "Title"
 msgid "Inbox"
 msgstr "Inbox"
@@ -3069,7 +3070,6 @@ msgid "Invoice paid"
 msgstr "Invoice paid"
 
 #: src/app/controllers/secured.js:345
-#: src/app/controllers/settings/invoices.js:16
 #: src/app/templates/views/payments.tpl.html:41
 msgctxt "Title"
 msgid "Invoices"
@@ -3185,7 +3185,7 @@ msgstr "Label order saved"
 msgid "Label Saved"
 msgstr "Label Saved"
 
-#: src/app/templates/partials/sidebar.tpl.html:71
+#: src/app/templates/partials/sidebar.tpl.html:74
 msgctxt "Action"
 msgid "Label settings"
 msgstr "Label settings"
@@ -3509,7 +3509,7 @@ msgstr "matches"
 msgid "Maximized"
 msgstr "Maximized"
 
-#: src/app/controllers/compose.js:147 src/app/controllers/compose.js:702
+#: src/app/controllers/compose.js:147 src/app/controllers/compose.js:670
 msgctxt "Error"
 msgid "Maximum composer reached"
 msgstr ""
@@ -3530,7 +3530,7 @@ msgctxt "Title"
 msgid "Members"
 msgstr "Members"
 
-#: src/app/controllers/compose.js:1867
+#: src/app/controllers/compose.js:1716
 msgid "Message discarded"
 msgstr "Message discarded"
 
@@ -3543,11 +3543,11 @@ msgctxt "Title"
 msgid "Message Password"
 msgstr "Message Password"
 
-#: src/app/controllers/compose.js:1427
+#: src/app/controllers/compose.js:1273
 msgid "Message saved"
 msgstr "Message saved"
 
-#: src/app/controllers/compose.js:1689 src/app/controllers/outside.js:201
+#: src/app/controllers/compose.js:1538 src/app/controllers/outside.js:200
 msgid "Message sent"
 msgstr "Message sent"
 
@@ -3731,7 +3731,7 @@ msgstr "New mailbox password"
 msgid "New mailbox password"
 msgstr "New mailbox password"
 
-#: src/app/controllers/compose.js:1485
+#: src/app/controllers/compose.js:1331
 msgctxt "Title"
 msgid "New message"
 msgstr "New message"
@@ -3830,12 +3830,12 @@ msgstr "No results for this search in your contacts list."
 msgid "No sending limits"
 msgstr "No sending limits"
 
-#: src/app/controllers/compose.js:1495
+#: src/app/controllers/compose.js:1341
 msgctxt "Title"
 msgid "No subject"
 msgstr "No subject"
 
-#: src/app/controllers/compose.js:1496
+#: src/app/controllers/compose.js:1342
 msgctxt "Info"
 msgid "No subject, send anyway?"
 msgstr "No subject, send anyway?"
@@ -4171,7 +4171,7 @@ msgctxt "Link"
 msgid "PayPal or Bitcoin"
 msgstr "PayPal or Bitcoin"
 
-#: src/app/controllers/compose.js:1859
+#: src/app/controllers/compose.js:1708
 msgid "Permanently delete this draft?"
 msgstr "Permanently delete this draft?"
 
@@ -4442,7 +4442,7 @@ msgstr "Queued"
 msgid "Quota updated"
 msgstr "Quota updated"
 
-#: src/app/services/message/messageBuilder.js:4
+#: src/app/services/message/messageBuilder.js:7
 msgid "Re:"
 msgstr "Re:"
 
@@ -4632,7 +4632,7 @@ msgstr "Role updated"
 msgid "Row"
 msgstr "Row"
 
-#: src/app/controllers/contacts.js:447 src/app/controllers/message.js:285
+#: src/app/controllers/contacts.js:447 src/app/controllers/message.js:287
 msgctxt "Error"
 msgid ""
 "Safari does not fully support downloading contacts.<br /><br />Please login "
@@ -4660,8 +4660,8 @@ msgstr ""
 #: src/app/templates/modals/filter.tpl.html:139
 #: src/app/templates/modals/filterAddress.tpl.html:15
 #: src/app/templates/modals/label.tpl.html:35
-#: src/app/templates/partials/composer.tpl.html:285
-#: src/app/templates/partials/composer.tpl.html:287
+#: src/app/templates/partials/composer.tpl.html:288
+#: src/app/templates/partials/composer.tpl.html:290
 #: src/app/templates/views/account.tpl.html:157
 #: src/app/templates/views/account.tpl.html:213
 #: src/app/templates/views/account.tpl.html:52
@@ -4681,7 +4681,7 @@ msgstr "Save 20% with the annual plan!"
 msgid "Saved"
 msgstr "Saved"
 
-#: src/app/templates/partials/composer.tpl.html:279
+#: src/app/templates/partials/composer.tpl.html:282
 msgid "Saved at {{ message.Time | date : \"shortTime\" }}"
 msgstr "Saved at {{ message.Time | date : \"shortTime\" }}"
 
@@ -4812,7 +4812,7 @@ msgstr "Sending"
 #: src/app/templates/directives/location-tag.tpl.html:4
 #: src/app/templates/partials/no-results.tpl.html:17
 #: src/app/templates/partials/sidebar-responsive.tpl.html:30
-#: src/app/templates/partials/sidebar.tpl.html:29
+#: src/app/templates/partials/sidebar.tpl.html:32
 msgctxt "Title"
 msgid "Sent"
 msgstr "Sent"
@@ -4855,7 +4855,7 @@ msgctxt "Action"
 msgid "Settings"
 msgstr "Settings"
 
-#: src/app/templates/partials/composer.tpl.html:201
+#: src/app/templates/partials/composer.tpl.html:204
 msgctxt "Action"
 msgid "Show"
 msgstr "Show"
@@ -4881,7 +4881,7 @@ msgctxt "Action"
 msgid "Show non-trashed messages"
 msgstr "Show non-trashed messages"
 
-#: src/app/message/services/transformBlockquotes.js:25
+#: src/app/message/services/transformBlockquotes.js:24
 msgctxt "Title"
 msgid "Show previous message"
 msgstr "Show previous message"
@@ -4977,7 +4977,7 @@ msgstr "Spam"
 #: src/app/templates/directives/location-tag.tpl.html:6
 #: src/app/templates/partials/no-results.tpl.html:19
 #: src/app/templates/partials/sidebar-responsive.tpl.html:51
-#: src/app/templates/partials/sidebar.tpl.html:53
+#: src/app/templates/partials/sidebar.tpl.html:56
 msgctxt "Title"
 msgid "Spam"
 msgstr "Spam"
@@ -5036,7 +5036,7 @@ msgstr "Starred"
 #: src/app/controllers/secured.js:300
 #: src/app/templates/partials/no-results.tpl.html:20
 #: src/app/templates/partials/sidebar-responsive.tpl.html:37
-#: src/app/templates/partials/sidebar.tpl.html:37
+#: src/app/templates/partials/sidebar.tpl.html:40
 msgctxt "Title"
 msgid "Starred"
 msgstr "Starred"
@@ -5082,7 +5082,7 @@ msgstr "Storage"
 msgid "Storage as MB"
 msgstr "Storage as MB"
 
-#: src/app/models/message.js:139
+#: src/app/models/message.js:148
 msgid "Stored encrypted"
 msgstr "Stored encrypted"
 
@@ -5324,7 +5324,7 @@ msgstr "Time"
 
 #. message metadata
 #. printed message info
-#: src/app/controllers/compose.js:1888
+#: src/app/controllers/compose.js:1737
 #: src/app/templates/partials/composer.tpl.html:142
 #: src/app/templates/partials/conversation.tpl.html:98
 #: src/app/templates/views/message.print.tpl.html:31
@@ -5385,7 +5385,7 @@ msgstr "Total price:"
 #: src/app/templates/directives/location-tag.tpl.html:5
 #: src/app/templates/partials/no-results.tpl.html:18
 #: src/app/templates/partials/sidebar-responsive.tpl.html:58
-#: src/app/templates/partials/sidebar.tpl.html:61
+#: src/app/templates/partials/sidebar.tpl.html:64
 msgctxt "Title"
 msgid "Trash"
 msgstr "Trash"
@@ -5457,7 +5457,7 @@ msgctxt "Action"
 msgid "Underline"
 msgstr "Underline"
 
-#: src/app/models/message.js:134
+#: src/app/models/message.js:143
 msgid "Unencrypted message"
 msgstr "Unencrypted message"
 
@@ -5542,7 +5542,7 @@ msgctxt "Action"
 msgid "Upgrade account"
 msgstr "Upgrade account"
 
-#: src/app/templates/partials/sidebar.tpl.html:94
+#: src/app/templates/partials/sidebar.tpl.html:97
 msgctxt "Action"
 msgid "Upgrade storage"
 msgstr "Upgrade storage"
@@ -6021,8 +6021,8 @@ msgstr ""
 "immediately upgrade your account. Thanks for choosing to become a paying "
 "customer!"
 
-#: src/app/controllers/compose.js:681 src/app/routes.js:595
-#: src/app/routes.js:943 src/app/templates/views/payments.tpl.html:45
+#: src/app/controllers/compose.js:649 src/app/routes.js:595
+#: src/app/routes.js:900 src/app/templates/views/payments.tpl.html:45
 msgctxt "Info"
 msgid ""
 "Your account currently has an overdue invoice. Please pay all unpaid "
