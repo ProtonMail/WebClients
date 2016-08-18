@@ -150,18 +150,19 @@ body#eo-reply {
 	}
 	.display-image,
 	.display-embedded {
-	    float:right;
-	    margin: -20px 0px 0px 10px;
-	    padding: 10px;
+	    display: inline-block;
+	    margin: 0px 0px -1rem 10px;
+	    line-height: 35px;
 	    height: auto;
 	    width: initial;
-	    border-radius: 4px 4px 0 0;
 	    background: #fff;
 	    box-sizing: initial;
 	    text-transform: uppercase;
 		border: 1px solid $border;
-	    border-bottom-color: #fff;
         border-radius: 2px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 0;
 	    -webkit-transition: padding .1s ease;
 	       -moz-transition: padding .1s ease;
 	        -ms-transition: padding .1s ease;
@@ -189,12 +190,15 @@ body#eo-reply {
 		position: relative;
 		padding-left: 35px;
 		padding-right: 35px;
+		text-align: right;
+
 		ul.infos {
 			overflow: auto;
 		}
 		ul.infos,
 		ul.infos li {
 			display: block;
+			text-align: left;
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
