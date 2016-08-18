@@ -40,7 +40,7 @@
         "contains": "contains",
         "!contains": "does not contain",
         "is": "is exactly",
-        "!is": "is not exactly",
+        "!is": "is not",
         "matches": "matches",
         "!matches": "does not match",
         "starts": "begins with",
@@ -51,6 +51,16 @@
 
     function escapeCharacters(text) {
         return text.replace(/([*?])/g, "\\\\$1");
+    }
+
+    /**
+     * Overwrites object1's values with object2's and/or adds object2's attributes if missing in object1
+     */
+    function mergeObjects(object1, object2) {
+        var merged = {};
+        for (var attrname in object1) { merged[attrname] = object1[attrname]; }
+        for (attrname in object2) { merged[attrname] = object2[attrname]; }
+        return merged;
     }
 
     function validateSimpleRepresentation(simple)
@@ -260,28 +270,43 @@
     }
 
     function validateTree(tree) {
+        var string = "";
+        var pass = false;
+
         if (tree instanceof Array) {
             var check = tree[0]; // First elements corresponds to the requirements
             if (check.Type === "require") {
                 requirements = ["fileinto", "imap4flags"];
                 if (check.List.indexOf(requirements) < 0) {
-                    throw { name: 'InvalidInput', message: 'Invalid tree representation' };
+                    throw { name: 'InvalidInput', message: 'Invalid tree representation: requirements' };
                 }
             }
 
             // Second element is used to build the modal
             tree = tree[1];
+            pass = true;
+
+            if (pass) {
+                pass = pass && tree.hasOwnProperty('If');
+                string = "If";
+            }
+            // FIXME Figure out whether this is necessary
+            if (pass) {
+                pass = pass && tree.If.hasOwnProperty('Tests');
+                string = "Tests";
+            }
+            if (pass) {
+                pass = pass && tree.hasOwnProperty('Then');
+                string = "Then";
+            }
+            if (pass) {
+                pass = pass && tree.hasOwnProperty('Type');
+                string = "Type";
+            }
         }
 
-        var pass = true;
-
-        pass = pass && tree.hasOwnProperty('If');
-        pass = pass && tree.If.hasOwnProperty('Tests');
-        pass = pass && tree.hasOwnProperty('Then');
-        pass = pass && tree.hasOwnProperty('Type');
-
         if (!pass) {
-            throw { name: 'InvalidInput', message: 'Invalid tree representation' };
+            throw { name: 'InvalidInput', message: 'Invalid tree representation: ' + string + ' level' };
         }
 
         return tree;
@@ -367,10 +392,10 @@
             switch (element.Type)
             {
                 case "Reject":
-                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation' };
+                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Reject' };
 
                 case "Redirect":
-                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation' };
+                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Redirect' };
 
                 case "Keep":
                     break;
@@ -418,7 +443,7 @@
                     break;
 
                 default:
-                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation' };
+                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: ' + element.Type };
             }
 
             if (skip) continue;
@@ -615,7 +640,7 @@
             "Type": buildLabelValueObject(type),
             "Comparator": buildLabelValueObject(comparator)
         };
-        return angular.merge(condition, params);
+        return mergeObjects(condition, params);
     }
 
     function buildSimpleActions()
