@@ -255,7 +255,7 @@
             <time time-refreshed="{{ message.ExpirationTime }}"></time>
         </div>
 
-        <div ng-show="!!message.imagesHidden && message.expand" class="showImages" ng-click="displayImages()">
+        <div ng-show="message.showImages === false && message.expand" class="showImages" ng-click="displayImages()">
             <a href="#">
                 <i class="fa fa-photo"></i>
                 <span translate translate-context="Action">Load remote content</span>

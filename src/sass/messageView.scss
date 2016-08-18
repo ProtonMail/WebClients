@@ -528,4 +528,5 @@ body.mobileMode {
 
 
 .proton-message-blockquote-toggle ~ * {display: none}
+.print .proton-message-blockquote-toggle ~ * {display: block}
 /*blockquote:not(.proton-message-blockquote-toggle) > .proton-message-blockquote-toggle {display: block}*/

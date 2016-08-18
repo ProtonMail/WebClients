@@ -39,7 +39,6 @@ angular.module("proton.controllers.Outside", [
     function clean(body) {
         var content = angular.copy(body);
 
-        content = tools.clearImageBody(content);
         content = DOMPurify.sanitize(content, {
             ADD_ATTR: ['target'],
             FORBID_TAGS: ['style', 'input', 'form']
@@ -53,12 +52,14 @@ angular.module("proton.controllers.Outside", [
     }
 
     $scope.initialization = function() {
+        if ($state.is('eo.reply')) {
+            message.showImages = true;
+            message.showEmbedded = true;
+        }
 
         message.setDecryptedBody(clean(message.getDecryptedBody()));
 
         if ($state.is('eo.message')) {
-            message.imagesHidden = tools.containsImage(message.getDecryptedBody());
-
             _.each(message.Replies, function(reply) {
                 reply.Body = clean(reply.Body);
             });
@@ -226,13 +227,8 @@ angular.module("proton.controllers.Outside", [
     };
 
     $scope.toggleImages = function() {
-        if($scope.message.imagesHidden === true) {
-            $scope.message.setDecryptedBody(tools.fixImages($scope.message.getDecryptedBody()));
-            $scope.message.imagesHidden = false;
-        } else {
-            $scope.message.setDecryptedBody(tools.breakImages($scope.message.getDecryptedBody()));
-            $scope.message.imagesHidden = true;
-        }
+        $scope.message.showImages = !$scope.message.showImages;
+        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformLinks', 'transformImages', 'transformWelcome', 'transformBlockquotes']));
     };
 
 
