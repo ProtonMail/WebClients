@@ -42,10 +42,10 @@
                             </span>
                             <span ng-show="condition.Type.value === 'attachments'">
                                     <label for="with_{{$id}}">
-                                        <input type="radio" ng-model="condition.Comparator.value" value="contains" id="with_{{$id}}" /> <span translate translate-context="Title">With Attachments</span>
+                                        <input type="radio" name="with_{{$id}}" ng-click="condition.Comparator = ctrl.findWhere(ctrl.comparators, 'contains')" id="with_{{$id}}" /> <span translate translate-context="Title">With Attachments</span>
                                     </label>
                                     <label for="without_{{$id}}">
-                                        <input type="radio" ng-model="condition.Comparator.value" value="!contains" id="without_{{$id}}" /> <span translate translate-context="Title">Without Attachments</span>
+                                        <input type="radio" name="with_{{$id}}" ng-click="condition.Comparator = ctrl.findWhere(ctrl.comparators, '!contains')" id="without_{{$id}}" /> <span translate translate-context="Title">Without Attachments</span>
                                     </label>
                             </span>
                             <span class="pm_select inline" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">

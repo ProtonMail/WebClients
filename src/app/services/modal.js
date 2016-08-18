@@ -2035,6 +2035,8 @@ angular.module("proton.modals", [])
                 params.close();
             };
 
+            this.findWhere = (array, value) => _.findWhere(array, {value});
+
             this.initialization();
         }
     });
