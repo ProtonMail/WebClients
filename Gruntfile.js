@@ -14,6 +14,7 @@ var API_TARGETS = {
     prod: 'https://mail.protonmail.com/api',
     dev: 'https://dev.protonmail.com/api',
     v2: 'https://v2.protonmail.com/api',
+    local: 'https://protonmail.dev',
     build: '/api'
 };
 
