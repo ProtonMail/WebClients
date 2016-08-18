@@ -378,7 +378,7 @@ angular.module("proton.squire", [
                     }
                 } else if(action === 'insertImage') {
                     if(scope.data.image.length > 0) {
-                        editor.insertImage(scope.data.image);
+                        editor.insertImage(scope.data.image, {"class": 'proton-embedded'});
                         scope.data.image = '';
                     }
 
