@@ -6,7 +6,6 @@ angular.module('proton.message')
     const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
 
     return function(html, message) {
-
         const images = [].slice.call(html.querySelectorAll('img[src]'));
         const user = authentication.user || {ShowEmbedded:0};
         const show = message.showEmbedded === true || user.ShowEmbedded === 1;

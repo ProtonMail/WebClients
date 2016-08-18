@@ -425,35 +425,6 @@ angular.module("proton.tools", ["proton.constants"])
         return content.replace(/(?:\r\n|\r|\n)/g, '<br />');
     };
 
-    tools.containsImage = function(content) {
-
-        var url = new RegExp(/url\(/ig);
-        var src = new RegExp('src=(?!"blob:|"cid:|"data:)', 'g');
-        var bg = new RegExp('background=', 'g');
-        var poster = new RegExp('poster=', 'g');
-        var svg = new RegExp('svg', 'g');
-
-        var re = new RegExp(url.source + "|" + src.source + "|" + bg.source + "|" + poster.source + "|" + svg.source );
-        return re.test(content);
-
-    };
-
-    tools.clearImageBody = function(content) {
-        if(tools.containsImage(content)) {
-            return tools.breakImages(content);
-        } else {
-            return content;
-        }
-    };
-
-    tools.restoreImageBody = function(content) {
-        if(tools.containsImage(content)) {
-            return tools.fixImages(content);
-        } else {
-            return content;
-        }
-    };
-
     tools.contactsToString = function(contacts) {
         return _.map(contacts, function(m) { return m.Address; }).join(',');
     };

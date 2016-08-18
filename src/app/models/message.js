@@ -158,10 +158,6 @@ angular.module("proton.models.message", ["proton.constants"])
             return this.Type === 1;
         },
 
-        toggleImages: function() {
-            this.imagesHidden = !!!this.imagesHidden;
-        },
-
         plainText: function() {
             var body = this.getDecryptedBody();
 
@@ -355,26 +351,6 @@ angular.module("proton.models.message", ["proton.constants"])
             }
 
             return deferred.promise;
-        },
-
-        clearImageBody: function(body) {
-            if (angular.isUndefined(body)) {
-
-            } else if (this.containsImage === false || tools.containsImage(body) === false) {
-                this.containsImage = false;
-            } else {
-                this.containsImage = true;
-
-                if (angular.isUndefined(this.imagesHidden) || this.imagesHidden === true) {
-                    this.imagesHidden = true;
-                    body = tools.breakImages(body);
-                } else {
-                    this.imagesHidden = false;
-                    body = tools.fixImages(body);
-                }
-            }
-
-            return body;
         }
     });
 

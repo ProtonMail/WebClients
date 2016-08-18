@@ -296,8 +296,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * Get the decrypted content and fix images inside
      */
     $scope.displayImages = function() {
-        $scope.message.toggleImages();
-        $scope.showingMessages = true;
+        $scope.message.showImages = true;
         $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformBlockquotes']));
     };
 
@@ -311,14 +310,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      * @param {Boolean} force
      */
     function displayContent(force) {
-        var whitelist = ['notify@protonmail.com'];
-
-        if (whitelist.indexOf($scope.message.Sender.Address) !== -1 && $scope.message.IsEncrypted === 0) {
-            $scope.message.imagesHidden = false;
-        } else if(authentication.user.ShowImages === 1) {
-            $scope.message.imagesHidden = false;
-        }
-
         // Mark message as expanded
         $scope.message.expand = true;
 
@@ -349,10 +340,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
                     // NOTE Plain text detection doesn't work. Check #1701
                     var isHtml = tools.isHtml(content);
-
-                    if ($rootScope.printMode !== true) {
-                        content = $scope.message.clearImageBody(content);
-                    }
 
                     content = prepareContent(content, $scope.message);
 
