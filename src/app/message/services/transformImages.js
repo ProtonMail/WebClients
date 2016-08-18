@@ -14,24 +14,21 @@ angular.module('proton.message')
         if (images.length > 0) {
             images.forEach(function(image) {
                 const src = image.src;
-                const isEmbedded = REGEXP_IS_CID.test(src);
+                const attach = embedded.getAttachment(message, image.src);
 
                 if (!image.classList.contains(EMBEDDED_CLASSNAME)) {
                     image.classList.add(EMBEDDED_CLASSNAME);
                 }
 
-                if (isEmbedded) {
-                    const attach = embedded.getAttachment(message,image.src);
-                    // check if the attachment exist before processing
-                    if (Object.keys(attach).length > 0) {
-                        if(show) {
-                            image.setAttribute('data-embedded-img', src);
-                            !image.parentElement.classList.contains('loading') && wrapImage(image);
-                        } else {
-                            message.showEmbedded = false;
-                            image.setAttribute("alt",attach.Name);
-                        }
+                // check if the attachment exist before processing
+                if (attach && Object.keys(attach).length > 0) {
+                    if (show) {
+                        image.setAttribute('data-embedded-img', src);
+                        !image.parentElement.classList.contains('loading') && wrapImage(image);
                         image.removeAttribute('src');
+                    } else {
+                        message.showEmbedded = false;
+                        image.setAttribute("alt",attach.Name);
                     }
                 }
             });

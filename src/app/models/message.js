@@ -5,6 +5,7 @@ angular.module("proton.models.message", ["proton.constants"])
     $http,
     $log,
     $q,
+    $sce,
     $resource,
     $rootScope,
     $state,
@@ -118,16 +119,24 @@ angular.module("proton.models.message", ["proton.constants"])
 
     _.extend(Message.prototype, {
         promises: [],
-        sizeAttachments: function() {
-            var size = 0;
 
-            angular.forEach(this.Attachments, function(attachment) {
-                if (angular.isDefined(attachment.Size)) {
-                    size += parseInt(attachment.Size);
-                }
+        setDecryptedBody(input = '', purify = true) {
+
+            this.DecryptedBody = !purify ? input : DOMPurify.sanitize(input, {
+                ADD_ATTR: ['target'],
+                FORBID_TAGS: ['style', 'input', 'form']
             });
+        },
 
-            return size;
+        getDecryptedBody(trustAsHtml =  false) {
+            if (trustAsHtml) {
+                return $sce.trustAsHtml(this.DecryptedBody);
+            }
+            return this.DecryptedBody || '';
+        },
+
+        sizeAttachments() {
+            return (this.Attachments || []).reduce((acc, { Size = 0 } = {}) => acc + (+Size), 0);
         },
         encryptionType: function() {
             var texts = [
@@ -154,7 +163,7 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         plainText: function() {
-            var body = this.DecryptedBody || this.Body;
+            var body = this.getDecryptedBody();
 
             return body;
         },
@@ -171,27 +180,6 @@ angular.module("proton.models.message", ["proton.constants"])
 
         labels: function() {
             return $filter('labels')(this.LabelIDs);
-        },
-
-        setMsgBody: function() {
-            var body;
-
-            // get the message content from either the editor or textarea if its iOS
-            // if its iOS / textarea we need to replace natural linebreaks with HTML linebreaks
-            if ($rootScope.isMobile) {
-                body = this.Body.replace(/(?:\r\n|\r|\n)/g, '<br />');
-            } else {
-                body = this.Body;
-                body = tools.fixImages(body);
-            }
-
-            // if there is no message body we "pad" with a line return so encryption and decryption doesnt break
-            if (body.trim().length < 1) {
-                body = '\n';
-            }
-
-            // Set input elements
-            this.Body = body;
         },
 
         close: function() {
@@ -229,7 +217,7 @@ angular.module("proton.models.message", ["proton.constants"])
         },
 
         encryptBody: function(key) {
-            return pmcw.encryptMessage(this.Body, key);
+            return pmcw.encryptMessage(this.getDecryptedBody(), key);
         },
 
         /**
@@ -342,11 +330,11 @@ angular.module("proton.models.message", ["proton.constants"])
             var deferred = $q.defer();
 
             if (this.isDraft() || this.IsEncrypted > 0) {
-                if (angular.isUndefined(this.DecryptedBody)) {
+                if (!this.getDecryptedBody()) {
                     try {
                         this.decryptBody()
                         .then(function(result) {
-                            this.DecryptedBody = result;
+                            this.setDecryptedBody(result);
                             this.failedDecryption = false;
                             deferred.resolve(result);
                         }.bind(this), function(err) {
@@ -359,10 +347,11 @@ angular.module("proton.models.message", ["proton.constants"])
                     }
                 } else {
                     this.failedDecryption = false;
-                    deferred.resolve(this.DecryptedBody);
+                    deferred.resolve(this.getDecryptedBody());
                 }
             } else {
-                deferred.resolve(this.Body);
+                this.DecryptedBody = this.Body;
+                deferred.resolve(this.getDecryptedBody());
             }
 
             return deferred.promise;

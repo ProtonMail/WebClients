@@ -73,13 +73,6 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     /**
-     * Call event to open new composer
-     */
-    $scope.compose = function() {
-        $rootScope.$broadcast('newMessage');
-    };
-
-    /**
      * Returns a hexidecimal string for label colors
      * @return {String} "#333" or "#cc9999"
      */

@@ -45,34 +45,33 @@ angular.module("proton.controllers.Outside", [
             FORBID_TAGS: ['style', 'input', 'form']
         });
 
-        if ($state.is('eo.message')) {
-            content = prepareContent(content, message);
-        } else if ($state.is('eo.reply')) {
+        if ($state.is('eo.reply')) {
             content = '<br /><br /><blockquote>' + content + '</blockquote>';
         }
 
-        return content;
+        return prepareContent(content, message);
     }
 
     $scope.initialization = function() {
-        message.Body = clean(message.Body);
+
+        message.setDecryptedBody(clean(message.getDecryptedBody()));
 
         if ($state.is('eo.message')) {
-            message.imagesHidden = tools.containsImage(message.Body);
+            message.imagesHidden = tools.containsImage(message.getDecryptedBody());
 
             _.each(message.Replies, function(reply) {
                 reply.Body = clean(reply.Body);
             });
-
-            message.decryptedBody = $sce.trustAsHtml(message.Body);
-            $scope.message = message;
-
-        } else if ($state.is('eo.reply')) {
-            embedded.parser(message).then( function(result) {
-                message.Body = result;
-                $scope.message = message;
-            });
         }
+
+        embedded.parser(message).then( (result) => {
+
+            message.setDecryptedBody(result);
+
+
+            $scope.message = message;
+        });
+
 
         $('#inputFile').change(function(event) {
             event.preventDefault();
@@ -228,10 +227,10 @@ angular.module("proton.controllers.Outside", [
 
     $scope.toggleImages = function() {
         if($scope.message.imagesHidden === true) {
-            $scope.message.Body = tools.fixImages($scope.message.Body);
+            $scope.message.setDecryptedBody(tools.fixImages($scope.message.getDecryptedBody()));
             $scope.message.imagesHidden = false;
         } else {
-            $scope.message.Body = tools.breakImages($scope.message.Body);
+            $scope.message.setDecryptedBody(tools.breakImages($scope.message.getDecryptedBody()));
             $scope.message.imagesHidden = true;
         }
     };
@@ -240,9 +239,12 @@ angular.module("proton.controllers.Outside", [
     $scope.displayEmbedded = function() {
         message = $scope.message;
         message.showEmbedded = true;
-        embedded.parser(message).then( function(result) {
-            message.decryptedBody = result;
-        });
+        embedded
+            .parser(message)
+            .then((content) => {
+                message.setDecryptedBody(content);
+                $scope.message = message;
+            });
     };
 
 

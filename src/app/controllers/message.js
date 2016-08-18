@@ -144,8 +144,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             // Open the message in composer if it's a draft
             $scope.openComposer($scope.message.ID, true); // MessageID, force saving to get attachment IDs
         } else {
-            if (angular.isUndefined($scope.message.expand) || $scope.message.expand === false) {
+            if (angular.isUndefined($scope.message.expand)) {
                 networkActivityTracker.track($scope.initView());
+            } else if ($scope.message.expand === false) {
+                $scope.message.expand = true;
             } else {
                 $scope.message.expand = false;
             }
@@ -209,7 +211,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             deferred.resolve();
         } else {
             // Display content
-            if(angular.isDefined($scope.message.Body)) {
+            if (angular.isDefined($scope.message.Body)) {
                 displayContent(true);
                 deferred.resolve();
             } else {
@@ -234,7 +236,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             var copy = angular.copy(message);
 
             copy.decryptBody().then(function(content) {
-                copy.Body = content;
+                copy.setDecryptedBody(content);
                 $rootScope.$broadcast('loadMessage', copy, save);
             }, function(error) {
                 notify({message: gettextCatalog.getString('Error during the decryption of the message', null, 'Error'), classes: 'notification-danger'});
@@ -296,12 +298,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $scope.displayImages = function() {
         $scope.message.toggleImages();
         $scope.showingMessages = true;
-        displayContent(true);
+        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformBlockquotes']));
     };
 
     $scope.displayEmbedded = function() {
         $scope.message.showEmbedded = true;
-        displayContent(true);
+        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformBlockquotes']));
     };
 
     /**
@@ -327,7 +329,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
             $scope.read();
         }
 
-        if (angular.isUndefined($scope.message.decryptedBody) || force === true) {
+        if (!$scope.message.getDecryptedBody() || force === true) {
             $scope.message.clearTextBody().then(function(result) {
 
                 var showMessage = function(content) {
@@ -358,8 +360,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     if (isHtml === true) {
                         $scope.isPlain = false;
                         $scope.message.viewMode = 'html';
-                        // Assign decrypted content
-                        $scope.message.decryptedBody = $sce.trustAsHtml(content);
+                        $scope.message.setDecryptedBody(content);
                         deferred.resolve();
                     } else {
                         $scope.isPlain = true;

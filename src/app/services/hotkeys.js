@@ -1,7 +1,7 @@
 angular.module('proton.hotkeys', [])
-.factory('hotkeys', function(hotkeyModal, $rootScope, $state, authentication, CONSTANTS) {
+.factory('hotkeys', function(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, messageBuilder) {
     var composer = function(event) {
-        $rootScope.$broadcast('newMessage');
+        $rootScope.$emit('newMessage', messageBuilder.create('new'));
 
         return false;
     };
