@@ -341,7 +341,7 @@
 
             params = {
                 "Comparator": comparator,
-                "Values": element.Keys
+                "Values": (element.Keys !== undefined) ? element.Keys : []
             };
 
             condition = buildSimpleCondition(type, comparator, params);
