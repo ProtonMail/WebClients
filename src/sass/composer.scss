@@ -622,6 +622,9 @@
 			}
 		}
 	}
+
+	.mobileMode #outsideMessageWrap footer .pm_button span {display: block}
+	.mobileMode#eo-reply #message-body .squire-toolbar {padding: 0}
 }
 
 @media screen and (max-width: $tablet-landscape) {
