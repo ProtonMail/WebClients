@@ -1,6 +1,9 @@
 <section class="pm_opensans sidebar" ng-controller="SidebarController" ng-hide="mobileMode || !sidebarMode">
 
-    <a class="compose pm_button primary" ng-click="compose()">
+    <a
+        class="compose pm_button primary"
+        action-message
+        action-message-type="new">
         <i class="fa fa-pencil"></i>
         <span translate-context="Action" translate translate-comment="compose button in sidebar">Compose</span>
     </a>
@@ -101,7 +104,7 @@
                 <em ng-style="storageStyle()"></em>
             </div>
         </div>
-        <a href="https://protonmail.com/blog/protonmail-v3-3-release-notes/" target="_blank" class="version" title="{{ dateVersion }}" target="_blank">v{{ appVersion }}</a>
+        <a href="https://protonmail.com/blog/protonmail-v3-4-release-notes/" target="_blank" class="version" title="{{ dateVersion }}" target="_blank">v{{ appVersion }}</a>
     </div>
 
 </section>

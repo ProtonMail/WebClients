@@ -176,14 +176,6 @@ angular.module('proton.controllers.Header', [])
         generateSearchString();
     };
 
-    /**
-     * Call event to open new composer
-     */
-    $scope.compose = function() {
-        $rootScope.$broadcast('newMessage');
-    };
-
-
     $scope.toggleAdvancedSearch = function() {
         if ($scope.advancedSearch === false) {
             $scope.openSearchModal();
@@ -305,13 +297,6 @@ angular.module('proton.controllers.Header', [])
         $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);
     };
 
-    $scope.closeMobileDropdown = function() {
-        $(".navbar-toggle").click();
-    };
-
-    $scope.openNewMessage = function() {
-        $rootScope.$broadcast('newMessage');
-    };
 
     $scope.displayName = function() {
         var displayName = '';

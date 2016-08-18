@@ -162,9 +162,9 @@
             <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
                 <div class="composeEditor fill">
                     <div  class="askEmbedding"
-                    ng-show="askEmbedding && message.focussed && !preventDropbox">
+                    ng-show="message.askEmbedding && !preventDropbox">
                         <ul>
-                            <li class="title">{{ pendingAttachements.length }} images detected</li>
+                            <li class="title">{{ message.pendingAttachements.length }} images detected</li>
                             <li>Insert images<li>
                             <li>
                                 <button class="pm_button primary"
@@ -193,7 +193,10 @@
                     dropzone="dropzoneConfig(message)"
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
 
-                    <squire ng-model="message.Body" allow-embedded="true" ng-click="attHide(message); message.autocompletesFocussed = false;" ></squire>
+                    <squire
+                        ng-model="message.DecryptedBody"
+                        allow-embedded="true"
+                        ng-click="attHide(message); message.autocompletesFocussed = false;"></squire>
                 </div>
             </section>
              <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0" >

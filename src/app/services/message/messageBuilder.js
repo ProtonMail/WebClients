@@ -1,172 +1,306 @@
 angular.module('proton.service.message', [])
-  .factory('messageBuilder', (gettextCatalog, tools, authentication, Message, $filter) => {
+    .factory('messageBuilder', (gettextCatalog, tools, authentication, Message, $filter, CONSTANTS) => {
 
-   const RE_PREFIX = gettextCatalog.getString('Re:', null);
-   const FW_PREFIX = gettextCatalog.getString('Fw:', null);
-   const RE_LENGTH = RE_PREFIX.length;
-   const FW_LENGTH = FW_PREFIX.length;
+        const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
+        const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
+        const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
+        const RE_PREFIX = gettextCatalog.getString('Re:', null);
+        const FW_PREFIX = gettextCatalog.getString('Fw:', null);
+        const RE_LENGTH = RE_PREFIX.length;
+        const FW_LENGTH = FW_PREFIX.length;
 
-    function formatSubject(subject = '', prefix = RE_PREFIX) {
-        const newSubject = subject.substring(0, prefix.length);
-        const hasPrefix = subject.toLowerCase().indexOf(prefix.toLowerCase()) === 0;
+        function purify(html) {
+            return DOMPurify.sanitize(html, {
+                ADD_ATTR: ['target'],
+                FORBID_TAGS: ['style', 'input', 'form']
+            });
+        }
 
-        return hasPrefix ? subject : (prefix + ' ' + subject);
-    }
+        function formatSubject(subject = '', prefix = RE_PREFIX) {
+            const newSubject = subject.substring(0, prefix.length);
+            const hasPrefix = subject.toLowerCase().indexOf(prefix.toLowerCase()) === 0;
 
-    /**
-     * Filter user's adresses
-     * @param  {Array}  list
-     * @param  {Array}  address UserAdresses
-     * @return {Array}
-     */
-    const filterUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address.toLowerCase()) === -1);
+            return hasPrefix ? subject : (prefix + ' ' + subject);
+        }
 
-    /**
-     * Format and build a reply
-     * @param  {Message} newMsg          New message to build
-     * @param  {String} options.Subject from the current message
-     * @param  {String} options.ToList  from the current message
-     * @param  {String} options.ReplyTo from the current message
-     * @param  {Number} options.Type    from the current message
-     */
-    function reply(newMsg, origin = {}) {
-      newMsg.Action = 0;
-      newMsg.Subject = formatSubject(origin.Subject);
+        /**
+         * Filter user's adresses
+         * @param  {Array}  list
+         * @param  {Array}  address UserAdresses
+         * @return {Array}
+         */
+        const filterUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address.toLowerCase()) === -1);
 
-      if(origin.Type === 2 || origin.Type === 3) {
-        newMsg.ToList = origin.ToList;
-      } else {
-        newMsg.ToList = [origin.ReplyTo];
-      }
-    }
+        /**
+         * Format and build a reply
+         * @param  {Message} newMsg          New message to build
+         * @param  {String} options.Subject from the current message
+         * @param  {String} options.ToList  from the current message
+         * @param  {String} options.ReplyTo from the current message
+         * @param  {Number} options.Type    from the current message
+         */
+        function reply(newMsg, origin = {}) {
+            newMsg.Action = 0;
+            newMsg.Subject = formatSubject(origin.Subject);
 
-    /**
-     * Format and build a replyAll
-     * @param  {Message} newMsg          New message to build
-     * @param  {String} options.Subject from the current message
-     * @param  {String} options.ToList  from the current message
-     * @param  {String} options.CCList  from the current message
-     * @param  {String} options.BCCList from the current message
-     * @param  {String} options.ReplyTo from the current message
-     * @param  {Number} options.Type    from the current message
-     */
-    function replyAll(newMsg, { Subject, Type, ToList, ReplyTo, CCList, BCCList } = {}) {
+            if(origin.Type === 2 || origin.Type === 3) {
+                newMsg.ToList = origin.ToList;
+            } else {
+                newMsg.ToList = [origin.ReplyTo];
+            }
+        }
 
-      newMsg.Action = 1;
-      newMsg.Subject = formatSubject(Subject);
+        /**
+         * Format and build a replyAll
+         * @param  {Message} newMsg          New message to build
+         * @param  {String} options.Subject from the current message
+         * @param  {String} options.ToList  from the current message
+         * @param  {String} options.CCList  from the current message
+         * @param  {String} options.BCCList from the current message
+         * @param  {String} options.ReplyTo from the current message
+         * @param  {Number} options.Type    from the current message
+         */
+        function replyAll(newMsg, { Subject, Type, ToList, ReplyTo, CCList, BCCList } = {}) {
 
-      if(Type === 2 || Type === 3) {
-        newMsg.ToList = ToList;
-        newMsg.CCList = CCList;
-        newMsg.BCCList = BCCList;
-      } else {
-        newMsg.ToList = [ReplyTo];
-        newMsg.CCList = _.union(ToList, CCList);
+            newMsg.Action = 1;
+            newMsg.Subject = formatSubject(Subject);
 
-        // Remove user address in CCList and ToList
-        const userAddresses = _(authentication.user.Addresses).map(({ Email = '' }) => Email.toLowerCase());
-        newMsg.CCList = filterUserAddresses(newMsg.CCList, userAddresses);
-      }
-    }
+            if(Type === 2 || Type === 3) {
+                newMsg.ToList = ToList;
+                newMsg.CCList = CCList;
+                newMsg.BCCList = BCCList;
+            } else {
+                newMsg.ToList = [ReplyTo];
+                newMsg.CCList = _.union(ToList, CCList);
+
+                // Remove user address in CCList and ToList
+                const userAddresses = _(authentication.user.Addresses).map(({ Email = '' }) => Email.toLowerCase());
+                newMsg.CCList = filterUserAddresses(newMsg.CCList, userAddresses);
+            }
+        }
 
 
 
-    /**
-     * Format and build a forward
-     * @param  {Message} newMsg          New message to build
-     * @param  {String} options.Subject from the current message
-     */
-    function forward(newMsg, { Subject } = {}) {
-      newMsg.Action = 2;
-      newMsg.ToList = [];
-      newMsg.Subject = formatSubject(Subject, FW_PREFIX);
-    }
+        /**
+         * Format and build a forward
+         * @param  {Message} newMsg          New message to build
+         * @param  {String} options.Subject from the current message
+         */
+        function forward(newMsg, { Subject } = {}) {
+            newMsg.Action = 2;
+            newMsg.ToList = [];
+            newMsg.Subject = formatSubject(Subject, FW_PREFIX);
+        }
 
-    /**
-     * Inject the inline images as attachement for embedded xray()
-     * @param {Array} originalAttachements From the current message
-     * return {String}
-    */
-    function injectInline(originalAttachements = {}){
-      return _.filter(originalAttachements, function (el) {
-          var disposition = el.Headers["content-disposition"];
-          var inline = new RegExp('^inline', 'i');
-          return inline.test(disposition) === true;
-      });
-    }
+        /**
+         * Inject the inline images as attachement for embedded xray()
+         * @param {Array} originalAttachements From the current message
+         * return {String}
+        */
+        function injectInline(originalAttachements = {}){
+            return _.filter(originalAttachements, function (el) {
+                    var disposition = el.Headers["content-disposition"];
+                    var inline = new RegExp('^inline', 'i');
+                    return inline.test(disposition) === true;
+            });
+        }
 
-    /**
-     * Find the from origin
-     * @param  {Array} options.ToList    From the new message
-     * @param  {Array} options.CCList    From the new message
-     * @param  {Array} options.BCCList   From the new message
-     * @param  {String} options.AddressID From the current message
-     * @param  {Number} options.Type From the current message
-     * @return {String}
-     */
-    function findFrom({ ToList, CCList, BCCList } = {}, { AddressID, Type } = {}) {
+        /**
+         * Find the from origin
+         * @param  {Array} options.ToList    From the new message
+         * @param  {Array} options.CCList    From the new message
+         * @param  {Array} options.BCCList   From the new message
+         * @param  {String} options.AddressID From the current message
+         * @param  {Number} options.Type From the current message
+         * @return {String}
+         */
+        function findFrom({ ToList, CCList, BCCList } = {}, { AddressID, Type } = {}) {
 
-      const recipients = _.union(ToList, CCList, BCCList);
-      const adr = _.findWhere(authentication.user.Addresses, {ID: AddressID}) || {};
+            const recipients = _.union(ToList, CCList, BCCList);
+            const adr = _.findWhere(authentication.user.Addresses, {ID: AddressID}) || {};
 
-      if (Type !== 2 && Type !== 3) {
-        let found;
+            if (Type !== 2 && Type !== 3) {
+                let found;
 
-        _.each(_.sortBy(authentication.user.Addresses, 'Send'), (address) => {
-          if (found) {
-            return false;
-          }
+                _.each(_.sortBy(authentication.user.Addresses, 'Send'), (address) => {
+                    if (found) {
+                        return false;
+                    }
 
-          found = _.findWhere(address, {Address: recipients.Address});
-        });
+                    found = _.findWhere(address, {Address: recipients.Address});
+                });
 
-        return (found || adr);
-      }
+                return (found || adr);
+            }
 
-      return adr;
-    }
+            return adr;
+        }
 
-    /**
-     * Create a new message
-     * @param  {String} action   reply|replyAll|forward
-     * @param  {Message} currentMsg Current message to reply etc.
-     * @return {Message}          New message formated
-     */
-    function create(action, currentMsg = {}) {
+        /**
+         * Insert Signatures before the message
+         *     - Always append a container signature with both user's and proton's
+         *     - Theses signature can be empty but the dom remains
+         *
+         * @param  {Message} message
+         * @param {Boolean} isAfter Append the signature at the end of the content
+         * @return {String}
+         */
+        function insertSignature(message = { getDecryptedBody : angular.noop }, isAfter = false) {
 
-      const newMsg = new Message();
-      const subject = DOMPurify.sanitize('Subject: ' + currentMsg.Subject + '<br>');
-      const cc = tools.contactsToString(Array.isArray(currentMsg.CCList) ? currentMsg.CCList : [currentMsg.CCList]);
+            const { From = {} } = message;
+            const position = isAfter ? 'beforeEnd' : 'afterBegin';
+            const userSignature = !From.Signature ? authentication.user.Signature : From.Signature;
+            const protonSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : '';
 
-      (action === 'reply') && reply(newMsg, currentMsg);
-      (action === 'replyall') && replyAll(newMsg, currentMsg);
-      (action === 'forward') && forward(newMsg, currentMsg);
+            const SPACE = '<div><br /></div>';
+            const template = `${SPACE}${SPACE}<div class="${CLASSNAME_SIGNATURE_CONTAINER}">
+                <div class="${CLASSNAME_SIGNATURE_USER}">${tools.replaceLineBreaks(userSignature)}</div>
+                <div class="${CLASSNAME_SIGNATURE_PROTON}">${tools.replaceLineBreaks(protonSignature)}</div>
+            </div>${SPACE}`;
 
-      if (currentMsg.AddressID) {
-        newMsg.AddressID = currentMsg.AddressID;
-        newMsg.From = findFrom(newMsg, currentMsg);
-      }
+            // Parse the current message and append before it the signature
+            const [ $parser ] = $.parseHTML(`<div>${message.getDecryptedBody()}</div>`);
+            $parser.insertAdjacentHTML(position, purify(template));
+            return $parser.innerHTML;
+        }
 
-      /* add inline images as attachments */
-      newMsg.Attachments = injectInline(currentMsg.Attachments);
-      newMsg.NumEmbedded = 0;
+        /**
+         * Update the user signature
+         * @param  {Message} message
+         * @return {String}
+         */
+        function updateSignature(message = { getDecryptedBody : angular.noop }) {
 
-      newMsg.ParentID = currentMsg.ID;
-      newMsg.Body = [
-        '<blockquote class="protonmail_quote" type="cite">',
-        '-------- Original Message --------<br>',
-        subject,
-        'Local Time: ' + $filter('localReadableTime')(currentMsg.Time) + '<br>',
-        'UTC Time: ' + $filter('utcReadableTime')(currentMsg.Time) + '<br>',
-        'From: ' + currentMsg.Sender.Address + '<br>',
-        'To: ' + tools.contactsToString(currentMsg.ToList) + '<br>',
-        (cc.length ? cc + '<br>': '') + '<br>',
-        (currentMsg.decryptedBody || currentMsg.Body),
-        '</blockquote><br>'
-      ].join('');
+            const { From = {} } = message;
+            const content = !From.Signature ? authentication.user.Signature : From.Signature;
 
-      return newMsg;
-    }
+            const [ dom ] = $.parseHTML(`<div>${purify(message.getDecryptedBody())}</div>`) || [];
+            const [ userSignature ] = $.parseHTML(`<div>${purify(content)}</div>`) || [];
 
-    return { create };
-  });
+            /**
+             * Update the signature for a user if it exists
+             */
+            if (dom && userSignature) {
+                const item = dom.querySelector('.' + CLASSNAME_SIGNATURE_USER);
+
+                // If a user deletes all the content we need to append the signature
+                if (!item) {
+                    // Insert at the end because it can contains some text
+                    return insertSignature(message, true);
+                }
+
+                item.innerHTML = userSignature.innerHTML;
+            }
+
+            // Return the message with the new signature
+            return dom.innerHTML;
+        }
+
+        function builder(action, currentMsg = {}, newMsg = {}) {
+
+            const subject = DOMPurify.sanitize('Subject: ' + currentMsg.Subject + '<br>');
+            const cc = tools.contactsToString(Array.isArray(currentMsg.CCList) ? currentMsg.CCList : [currentMsg.CCList]);
+
+            (action === 'reply') && reply(newMsg, currentMsg);
+            (action === 'replyall') && replyAll(newMsg, currentMsg);
+            (action === 'forward') && forward(newMsg, currentMsg);
+
+            if (currentMsg.AddressID) {
+                newMsg.AddressID = currentMsg.AddressID;
+                newMsg.From = findFrom(newMsg, currentMsg);
+            }
+
+            /* add inline images as attachments */
+            newMsg.Attachments = injectInline(currentMsg.Attachments);
+            newMsg.NumEmbedded = 0;
+
+            newMsg.ParentID = currentMsg.ID;
+            newMsg.setDecryptedBody([
+                '<blockquote class="protonmail_quote" type="cite">',
+                '-------- Original Message --------<br>',
+                subject,
+                'Local Time: ' + $filter('localReadableTime')(currentMsg.Time) + '<br>',
+                'UTC Time: ' + $filter('utcReadableTime')(currentMsg.Time) + '<br>',
+                'From: ' + currentMsg.Sender.Address + '<br>',
+                'To: ' + tools.contactsToString(currentMsg.ToList) + '<br>',
+                (cc.length ? cc + '<br>': '') + '<br>',
+                (currentMsg.getDecryptedBody()),
+                '</blockquote><br>'
+            ].join(''));
+
+
+            return newMsg;
+        }
+
+        /**
+         * Find the current sender for a message
+         * @param  {String} options.AddressID
+         * @return {Object}
+         */
+        function findSender({ AddressID = '' } = {}) {
+
+            const enabledAddresses = _
+                .chain(authentication.user.Addresses)
+                .where({ Status: 1 })
+                .sortBy('Send')
+                .value();
+
+            let sender = enabledAddresses[0];
+
+            if (AddressID) {
+                const originalAddress = _.findWhere(enabledAddresses, {ID: AddressID});
+
+                originalAddress && (sender = originalAddress);
+            }
+
+            return sender;
+        }
+
+        /**
+         * Bind defaults parameters for a messafe
+         * @param {Message} message
+         */
+        function setDefaultsParams(message) {
+            const sender = findSender(message);
+
+            _.defaults(message, {
+                Type: 1,
+                ToList: [],
+                CCList: [],
+                BCCList: [],
+                Attachments: [],
+                numTags: [],
+                recipientFields: [],
+                Subject: '',
+                PasswordHint: '',
+                IsEncrypted: 0,
+                ExpirationTime: 0,
+                From: sender,
+                uploading: 0,
+                toFocussed: false,
+                autocompletesFocussed: false,
+                ccbcc: false,
+            });
+        }
+
+
+        /**
+         * Create a new message
+         * @param  {String} action   reply|replyAll|forward
+         * @param  {Message} currentMsg Current message to reply etc.
+         * @return {Message}          New message formated
+         */
+        function create(action, currentMsg = {}) {
+            let newMsg = new Message();
+
+            setDefaultsParams(newMsg);
+
+            if ('new' !== action) {
+                newMsg = builder(action, currentMsg, newMsg);
+            }
+            newMsg.setDecryptedBody(insertSignature(newMsg));
+            return newMsg;
+        }
+
+        return { create, findSender, updateSignature };
+    });

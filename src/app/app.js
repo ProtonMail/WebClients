@@ -336,7 +336,7 @@ angular.module('proton', [
                     });
                 } else {
                     notification = $injector.get('notify')({
-                        message: 'Not connected to Internet.',
+                        message: 'No Internet connection found.',
                         classes: 'notification-danger'
                     });
                 }
@@ -373,15 +373,13 @@ angular.module('proton', [
                             // Send request to unlock the current session for administrator privileges
                             User.unlock({Password: loginPassword})
                             .then(function(result) {
-                                if (result.data && result.data.Code === 1000) {
-                                    // Close the modal
-                                    loginPasswordModal.deactivate();
-                                    // Resend request now
-                                    deferred.resolve($http(rejection.config));
-                                } else if (result.data && result.data.Error) {
+                                if (result.data && result.data.Error) {
                                     notify({message: result.data.Error, classes: 'notification-danger'});
-                                    deferred.reject();
                                 }
+                                // Close the modal
+                                loginPasswordModal.deactivate();
+                                // Resend request now
+                                deferred.resolve($http(rejection.config));
                             }, function(error) {
                                 notify({message: error, classes: 'notification-danger'});
                                 deferred.reject();
@@ -395,9 +393,9 @@ angular.module('proton', [
                 });
 
                 return deferred.promise;
-            } else if (rejection.status === 504) { // Time-out
+            } else if ([408, 503, 504].indexOf(rejection.status) !== -1) {
                 notification = $injector.get('notify')({
-                    message: 'Please retry.',
+                    message: 'ProtonMail cannot be reached right now, please try again later.',
                     classes: 'notification-danger'
                 });
             }

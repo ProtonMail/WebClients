@@ -190,6 +190,10 @@ angular.module("proton.tools", ["proton.constants"])
         return html;
     };
 
+    /**
+     * Remove every protonmail attributes inside the HTML content specified
+     * @param {} html
+     */
     tools.fixImages = function(html) {
 
         var re = new RegExp('(proton-url|proton-src|proton-svg|proton-background|proton-poster)', 'g');

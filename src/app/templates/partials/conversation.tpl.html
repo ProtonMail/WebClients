@@ -269,7 +269,7 @@
             </a>
         </div>
 
-        <div class="frame" ng-if="message.expand" data-embedded-img-loader>
+        <div class="frame" ng-show="message.expand" data-embedded-img-loader>
             <loader-tag ng-if="message.decrypting === true"></loader-tag>
             <p class="alert alert-danger" ng-if="message.SpamScore === 100" translate translate-context="Info">This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!</p>
             <p class="alert alert-danger" ng-if="message.SpamScore === 101" translate translate-context="Info">This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!</p>
@@ -277,7 +277,7 @@
                 class="bodyDecrypted email"
                 ng-class="{'plain': isPlain}"
                 ng-if="message.viewMode === 'html'"
-                ng-bind-html="message.decryptedBody"
+                ng-bind-html="message.getDecryptedBody(true)"
                 toggle-blockquote
                 mail-to scroll="true" ></div>
             <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">

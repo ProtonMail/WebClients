@@ -15,6 +15,11 @@ angular.module('proton.message')
         }
 
         const msg = messageBuilder.create(actionMessageType, scope.model);
+
+        if (actionMessageType === 'new') {
+            return $rootScope.$emit('newMessage', msg);
+        }
+
         $rootScope.$emit('loadMessage', msg, (actionMessageType === 'forward' || msg.Attachments.length > 0));
       }
 

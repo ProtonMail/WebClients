@@ -4,7 +4,11 @@
     </a>
     <span class="location">{{ path }}</span>
     <ng-include src="'templates/partials/searchForm.tpl.html'"></ng-include>
-    <a href="#" class="compose" ng-click="compose();">
+    <a
+        href="#"
+        class="compose"
+        action-message
+        action-message-type="new">
         <i class="fa fa-pencil"></i>
     </a>
     <a href="#" class="searchBtn" ng-click="toggleAdvancedSearch();">

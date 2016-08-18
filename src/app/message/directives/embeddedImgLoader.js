@@ -12,28 +12,31 @@ angular.module('proton.message')
                 .map((img) => {
                     const src = embedded.getUrl(img);
                     const image  = new Image();
-                    image.src = src;
-                    return new Promise((resolve, reject) => image.onload = resolve({img, src}));
+                    return new Promise((resolve, reject) => {
+                        image.src = src;
+                        image.onload = () => resolve({img, src});
+                        image.onerror = (e) => reject(e, src);
+                    });
                 });
 
             Promise
                 .all(promises)
                 .then((images) => {
-
                     _rAF(() => {
                         images.forEach(({img, src}) => {
                             const loader = img.parentElement;
                             const container = loader.parentElement;
-
                             img.src = src;
                             img.classList.add('proton-embedded');
                             img.removeAttribute('data-embedded-img');
                             container.replaceChild(img, loader);
-
                         });
 
                         $rootScope.$emit('embedded.injected');
                     });
+                })
+                .catch((err, src) => {
+                    console.error(err, src);
                 });
         };
 

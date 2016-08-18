@@ -16,7 +16,6 @@ angular.module('proton.message')
     ].join(',');
 
     return function(html, message) {
-
         var blockquote = html.querySelector(quotes);
 
         if (blockquote) {

@@ -23,6 +23,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     embedded,
     networkActivityTracker,
     composerRequestModel,
+    messageBuilder,
     notify,
     pmcw,
     tools,
@@ -45,7 +46,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.isAppleDevice = navigator.userAgent.match(/(iPod|iPhone|iPad)/); // Determine if user navigated from Apple device
     $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
     $scope.numTags = [];
-    $scope.pendingAttachements = [];
     $scope.weekOptions = [
         {label: '0', value: 0},
         {label: '1', value: 1},
@@ -139,30 +139,29 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     }));
 
-    unsubscribe.push($scope.$on('newMessage', function() {
+    unsubscribe.push($rootScope.$on('newMessage', function (e, message) {
         if (
             ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) ||
             ($scope.messages.length === 1 && $rootScope.mobileMode === true)
         ) {
             notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger'});
         } else {
-            var message = new Message();
             initMessage(message, false);
         }
     }));
 
     unsubscribe.push($rootScope.$on('loadMessage', function(event, message, save) {
         var current = _.findWhere($scope.messages, {ID: message.ID});
-        var mess = new Message(_.pick(message, 'ID', 'AddressID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
+        // var mess = new Message(_.pick(message, 'ID', 'AddressID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
 
-        if ((mess.Attachments.length - mess.NumEmbedded) > 0 && (mess.Attachments.length > mess.NumEmbedded)) {
-            mess.attachmentsToggle = true;
+        if ((message.Attachments.length - message.NumEmbedded) > 0 && (message.Attachments.length > message.NumEmbedded)) {
+            message.attachmentsToggle = true;
         } else {
-            mess.attachmentsToggle = false;
+            message.attachmentsToggle = false;
         }
 
         if (angular.isUndefined(current)) {
-            initMessage(mess, save);
+            initMessage(message, save);
         }
     }));
 
@@ -325,37 +324,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     };
 
-    // Functions
-
-    $scope.setDefaults = function(message) {
-        var enabledAddresses = _.chain(authentication.user.Addresses)
-            .where({Status: 1})
-            .sortBy('Send')
-            .value();
-        var sender = enabledAddresses[0];
-
-        if (angular.isDefined(message.AddressID)) {
-            var originalAddress = _.findWhere(enabledAddresses, {ID: message.AddressID});
-
-            if (angular.isDefined(originalAddress)) {
-                sender = originalAddress;
-            }
-        }
-
-        _.defaults(message, {
-            ToList: [],
-            CCList: [],
-            BCCList: [],
-            Subject: '',
-            PasswordHint: '',
-            Attachments: [],
-            IsEncrypted: 0,
-            Body: message.Body,
-            From: sender
-        });
-    };
-
-
     $scope.disabledNotify = function() {
         notify({message: 'Attachments and inline images must be removed first before changing sender', classes: 'notification-danger'});
     };
@@ -369,14 +337,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
 
-    $scope.cancelAskEmbedding = function(){
-        $scope.pendingAttachements = [];
-        $scope.askEmbedding = false;
+    $scope.cancelAskEmbedding = function(message) {
+        message.pendingAttachements = [];
+        message.askEmbedding = false;
     };
 
     $scope.processPending  = function(message, embedding){
 
-        _.forEach($scope.pendingAttachements, function (file) {
+        _.forEach(message.pendingAttachements, function (file) {
 
             if (embedding) {
                 // required for BE to get a cid-header
@@ -388,7 +356,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
 
         // close the dialog
-        $scope.cancelAskEmbedding();
+        $scope.cancelAskEmbedding(message);
 
     };
 
@@ -446,13 +414,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             var isImg = img.test(file.type);
 
                             if (isImg) {
-                                $scope.pendingAttachements.push(file);
+                                message.pendingAttachements.push(file);
                                 // add attachment with embeded and include the img ?
                                 dropzone.removeFile(file);
                                 if($scope.isEmbedded) {
-                                    $scope.$applyAsync(() => { $scope.processPending(message,true); $scope.dropEmbedded = false; });
+                                    $scope.$applyAsync(() => { $scope.processPending(message, true); $scope.dropEmbedded = false; });
                                 } else {
-                                    $scope.$applyAsync(() => { $scope.askEmbedding = true; });
+                                    $scope.$applyAsync(() => { message.askEmbedding = true; });
                                 }
                             } else {
                                 // force update the attachment counter
@@ -642,15 +610,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.Attachments.splice(index, 1);
 
         Attachment.remove({
-            "MessageID": message.ID,
-            "AttachmentID": attachment.AttachmentID || attachment.ID
+            MessageID: message.ID,
+            AttachmentID: attachment.AttachmentID || attachment.ID
         }).then(function(result) {
             var data = result.data;
 
             if (angular.isDefined(data) && data.Code === 1000) {
                 // Attachment removed, may remove embedded ref
-                message.Body = embedded.removeEmbedded(message,headers);
-                message.editor && message.editor.fireEvent('refresh', {Body: message.Body});
+                message.setDecryptedBody(embedded.removeEmbedded(message, headers));
+                message.editor && message.editor.fireEvent('refresh', {Body: message.getDecryptedBody()});
             } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
                 message.Attachments.push(attachment);
@@ -705,25 +673,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         message.uid = $scope.uid++;
-        message.numTags = [];
-        message.recipientFields = [];
-        message.uploading = 0;
-        message.toFocussed = false;
-        message.autocompletesFocussed = false;
-        message.ccbcc = false;
-        $scope.setDefaults(message);
+        message.pendingAttachements = [];
+        message.askEmbedding = false;
 
         sanitizeBody(message)
             .then((message) => {
-                // Need to update the message only after the body is clean with valid embedded images
-                // and sanitize input
-                if ([0, 2, 3].indexOf(message.Type) !== -1) { // 0 = INBOX, 1 = DRAFT, 2 = SENT, 3 = INBOX_AND_SENT
-                    insertSignature(message);
-                }
-
                 $scope.messages.unshift(message);
                 $scope.isOver = false;
-                $scope.askEmbedding = false;
 
                 // This timeout is really important to load the structure of Squire
                 $timeout(function() {
@@ -749,10 +705,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         embedded
             .parser(message)
             .then( function(result) {
-                message.Body = DOMPurify.sanitize(result, {
-                    ADD_ATTR: ['target'],
-                    FORBID_TAGS: ['style', 'input', 'form']
-                });
+                message.setDecryptedBody(result, true);
                 deferred.resolve(message);
             });
         return deferred.promise;
@@ -824,69 +777,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * Insert / Update signature in the message body
      * @param {Object} message
      */
-    function insertSignature(message) {
-        message.Body = (angular.isUndefined(message.Body))? '' : message.Body;
-
-        var content = angular.isUndefined(message.From.Signature) ? authentication.user.Signature : message.From.Signature;
-            content = DOMPurify.sanitize(content, {
-                ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style', 'input', 'form']
-            });
-
-        var $content = $('<div>' + content + '</div>'),
-            signature = '',
-            newSign = false,
-            space = "<div><br /></div>",
-            className = "protonmail_signature_block";
-
-        var currentBody = $.parseHTML(message.Body),
-            tempDOM = angular.element('<div>').append(currentBody);
-
-        // use children to match only first-child signatures (reply/forward case)
-        var countSignatures = tempDOM.children('.'+className).length,
-            firstSignature = tempDOM.children('.protonmail_signature_block:first'),
-            firstQuote = tempDOM.children('.protonmail_quote:first'),
-            countQuotes = tempDOM.find('.protonmail_quote').length;
-
-        if ($content.text().length === 0 && $content.find('img').length === 0){
-            // remove the empty DOM elements
-            content = '';
-        }
-
-        var PMSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : '';
-
-        if (content.length > 0 || PMSignature.length > 0) {
-            signature = DOMPurify.sanitize('<div class="'+className+'">' + tools.replaceLineBreaks(content + PMSignature + space) +'</div>', {
-                ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style', 'input', 'form']
-            });
-        }
-
-        if (countSignatures > 0) {
-            // update the first signature (reply/foward case)
-            // .first() + replace fail, use :first selector
-            firstSignature.replaceWith(signature);
-        } else {
-            // insert signature at the right place
-            (countQuotes > 0) ? firstQuote.before(signature) : tempDOM.append(signature);
-
-            newSign = true;
-            firstSignature = tempDOM.children('.protonmail_signature_block:first');
-        }
-
-        /* Handle free space around the signature */
-        if (firstQuote.prevAll('div').length === 0 && newSign) {
-          firstQuote.before(space + space);
-        }
-
-        if (firstSignature.prevAll('div').length === 0  && newSign) {
-          firstSignature.before(space + space);
-        }
-
-        message.Body = tempDOM.html();
-        message.editor && message.editor.fireEvent('refresh', {Body: message.Body});
-    }
-
     $scope.focusComposer = function(message) {
 
         $scope.selected = message;
@@ -1009,18 +899,29 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     });
             });
 
-            message.editor.addEventListener('input', function() {
+            // Check if we need to remove embedded after a delay
+            message.editor.addEventListener('input', _.throttle(() => {
                 watcherEmbedded(message);
-                $scope.saveLater(message);
-            });
+            }, 300));
+
+
+            /**
+             * There is an input triggered on load (thx to the signature ?)
+             * so we will set the listener after a delay.
+             * Then the message will be saved every 3s.
+             */
+            $timeout(() => {
+                message.editor.addEventListener('input', _.throttle(() => {
+                    $scope.saveLater(message);
+                }, CONSTANTS.SAVE_TIMEOUT_TIME));
+
+            }, CONSTANTS.SAVE_TIMEOUT_TIME, false);
 
             message.editor.addEventListener('dragstart', onDragStart);
             message.editor.addEventListener('dragend', onDragEnd);
             message.editor.addEventListener('dragenter', onDragEnter);
             message.editor.addEventListener('dragover', onDragOver);
             dropzone.addEventListener('dragover', dragover);
-
-            $scope.saveOld(message);
         }
 
     };
@@ -1128,7 +1029,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var hours = params.expirationHours.value + params.expirationDays.value * 24 + params.expirationWeeks.value * 24 * 7;
         var error = false;
 
-        if (parseInt(hours) > CONSTANTS.MAX_EXPIRATION_TIME) { // How can we enter in this situation?
+        if (parseInt(hours, 10) > CONSTANTS.MAX_EXPIRATION_TIME) { // How can we enter in this situation?
             notify({message: 'The maximum expiration is 4 weeks.', classes: 'notification-danger'});
             error = true;
         }
@@ -1152,65 +1053,21 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $scope.closePanel(message);
     };
 
-    $scope.saveOld = function(message) {
-        message.old = _.pick(message, $scope.oldProperties);
-
-        _.defaults(message.old, {
-            ToList: [],
-            BCCList: [],
-            CCList: [],
-            Attachments: [],
-            PasswordHint: "",
-            Subject: ""
-        });
-    };
-
-    const filterAttachementsComparator = (msg) => msg.Attachments.map(o => _.omit(o, 'sessionKey', 'elem'));
-
-    /**
-     * Determine if we need to save the message
-     */
-    function needToSave(message) {
-
-        if (angular.isDefined(message.old)) {
-            const currentMessage = _.pick(message, $scope.oldProperties);
-            const oldMessage = _.pick(message.old, $scope.oldProperties);
-
-            currentMessage.Attachments = filterAttachementsComparator(currentMessage);
-            oldMessage.Attachments = filterAttachementsComparator(oldMessage);
-            return JSON.stringify(oldMessage) !== JSON.stringify(currentMessage);
-        }
-
-        return true;
-    }
-
     /**
      * Delay the saving
      * @param {Object} message
      */
-    $scope.saveLater = function(message) {
-
-        if (angular.isDefined(message.timeoutSaving)) {
-            $timeout.cancel(message.timeoutSaving);
-        }
-
-        message.timeoutSaving = $timeout(function() {
-            if (needToSave(message)) {
-                recordMessage(message, false, false, true); // message, forward, notification, autosaving
-            }
-        }, CONSTANTS.SAVE_TIMEOUT_TIME, false); // 3 seconds
-    };
+    $scope.saveLater = (message) => recordMessage(message, false, false, true);
 
     $scope.validate = function(message) {
         var deferred = $q.defer();
 
         angular.element('input').blur();
 
+        message.setDecryptedBody(tools.fixImages(message.getDecryptedBody()));
+
         // We delay the validation to let the time for the autocomplete
         $timeout(function() {
-            // set msgBody input element to editor content
-            message.setMsgBody();
-
             // Check if there is an attachment uploading
             if (message.uploading === true) {
                 deferred.reject('Wait for attachment to finish uploading or cancel upload.');
@@ -1218,14 +1075,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
 
             // Check all emails to make sure they are valid
-            var invalidEmails = [];
-            var allEmails = _.map(message.ToList.concat(message.CCList).concat(message.BCCList), function(email) { return email.Address.trim(); });
-
-            _.each(allEmails, function(email) {
-                if (!tools.validEmail(email)) {
-                    invalidEmails.push(email);
-                }
-            });
+            var allEmails = _.map(message.ToList.concat(message.CCList).concat(message.BCCList), ({ Address = '' } = {}) => Address.trim());
+            var invalidEmails = _.filter(allEmails, (email) => !tools.validEmail(email));
 
             if (invalidEmails.length > 0) {
                 deferred.reject('Invalid email(s): ' + invalidEmails.join(',') + '.');
@@ -1250,7 +1101,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
 
             // Check body length
-            if (message.Body.length > 16000000) {
+            if (message.getDecryptedBody().length > 16000000) {
                 deferred.reject('The maximum length of the message body is 16,000,000 characters.');
                 return false;
             }
@@ -1266,8 +1117,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Resource} message - Message to save
      */
     $scope.changeFrom = function(message) {
-        insertSignature(message);
-
+        message.setDecryptedBody(messageBuilder.updateSignature(message));
+        message.editor && message.editor.fireEvent('refresh', {Body: message.getDecryptedBody()});
         // save when DOM is updated
         recordMessage(message, false, false, true);
     };
@@ -1297,9 +1148,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
         };
 
-        if (angular.isDefined(message.timeoutSaving)) {
-            $timeout.cancel(message.timeoutSaving);
-        }
+        message.From = message.From || messageBuilder.findSender(message);
 
         message.saving = true;
         message.autosaving = autosaving || false;
@@ -1393,8 +1242,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
                         result.Message.Recipients = _.uniq(result.Message.ToList.concat(result.Message.CCList).concat(result.Message.BCCList)); // The back-end doesn't return Recipients
-
-                        $scope.saveOld(message);
 
                         // Update draft in message list
                         events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
@@ -1528,13 +1375,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.send = function(msg) {
         // Prevent mutability
         const message = new Message(msg);
+        message.Password = message.Password || '';
+        message.PasswordHint = message.PasswordHint || '';
+
         var deferred = $q.defer();
 
         $scope.validate(message)
         .then(function() {
 
             embedded.parser(message, 'cid').then(function(result) {
-                message.Body = result;
+                message.setDecryptedBody(result);
                 return recordMessage(message, false, false, false)
                 .then(function() {
                     $scope.checkSubject(message).then(function() {
@@ -1591,7 +1441,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                             var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
 
                                             promises.push(replyTokenPromise.then(function(encryptedToken) {
-                                                return pmcw.encryptMessage(message.Body, [], message.Password).then(function(result) {
+                                                return pmcw.encryptMessage(message.getDecryptedBody(), [], message.Password).then(function(result) {
 
                                                     var body = result;
 
@@ -1620,9 +1470,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 });
 
                                 // If there are some outsiders
-                                if (outsiders === true && message.IsEncrypted === 0) {
+                                if (outsiders === true && message.Password.length === 0) {
                                     parameters.AttachmentKeys = [];
-                                    parameters.ClearBody = message.Body; // Add a clear body in parameter
+                                    parameters.ClearBody = message.getDecryptedBody(); // Add a clear body in parameter
 
                                     if (message.Attachments.length > 0) {
                                         // Add clear attachments packet in parameter
@@ -1638,7 +1488,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 // When all promises are complete
                                 $q.all(promises).then(function() {
 
-                                    if (outsiders === true && message.IsEncrypted === 0 && message.ExpirationTime) {
+                                    if (outsiders === true && message.Password.length === 0 && message.ExpirationTime) {
                                         $log.error(message);
                                         message.encrypting = false;
                                         dispatchMessageAction(message);

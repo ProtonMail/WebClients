@@ -408,12 +408,12 @@ angular.module('proton.routes', [
                     var promises = [];
 
                     promises.push(pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
-                        message.Body = body;
+                        message.DecryptedBody = body;
                     }));
 
                     _.each(message.Replies, function(reply) {
                         promises.push(pmcw.decryptMessageRSA(reply.Body, password, reply.Time).then(function(body) {
-                            reply.Body = body;
+                            reply.DecryptedBody = body;
                         }));
                     });
 
@@ -451,7 +451,7 @@ angular.module('proton.routes', [
                     .then(function(body) {
                         var attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
 
-                        message.Body = body;
+                        message.DecryptedBody = body;
                         message.Attachments = attachments;
                         message.NumAttachments = attachments.length;
                         deferred.resolve(new Message(message));
@@ -683,49 +683,6 @@ angular.module('proton.routes', [
             },
             methods: function(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
-            }
-        }
-    })
-
-    .state('secured.invoice', {
-        url: '/invoice/:time',
-        onEnter: function($rootScope) {
-            $rootScope.isBlank = true;
-            $rootScope.printMode = true;
-        },
-        onExit: function($rootScope) {
-            $rootScope.isBlank = false;
-            $rootScope.printMode = false;
-        },
-        resolve: {
-            invoice: function(user, $stateParams, $q, Payment) {
-                var deferred = $q.defer();
-                var time = $stateParams.time;
-                var limit = 1;
-
-                Payment.organization(time, limit).then(function(result) {
-                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        deferred.resolve(_.first(result.data.Payments));
-                    } else {
-                        deferred.reject();
-                    }
-                }, function() {
-                    deferred.reject();
-                });
-
-                return deferred.promise;
-            }
-        },
-        views: {
-            'main@': {
-                templateUrl: 'templates/views/invoice.print.tpl.html',
-                controller: function($scope, $timeout, invoice) {
-                    $scope.invoice = invoice;
-
-                    $timeout( function() {
-                        window.print();
-                    }, 200);
-                },
             }
         }
     })
