@@ -13,7 +13,7 @@ var LoginPage = function() {
     var v2 = element(by.css('[href="https://v2.protonmail.com/login"]'));
 
     // Signup link
-    var signup = element(by.css('#btnSignup'));
+    var signup = element(by.css('a.signUp'));
 
     // Back link
     var back = element(by.css('[href="https://protonmail.com"]'));

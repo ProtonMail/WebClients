@@ -37,14 +37,13 @@ describe('Star actions tests', () => {
 
     describe('Star from an openend conversation', () => {
       let openend;
-      beforeEach(() => {
-        openend = page.loadOpenedConversation().header;
-      })
+
 
       it('should star all the messages', () => {
 
         // Dunno why it will toggle stars if it's the beforeEach...
         conversation.open();
+        openend = page.loadOpenedConversation().header;
         browser.sleep(1000)
         openend.star();
         browser.sleep(500)
@@ -57,10 +56,12 @@ describe('Star actions tests', () => {
       })
 
       it('should star the conversation', () => {
+        openend = page.loadOpenedConversation().header;
         expect(openend.getStarComponent().getAttribute('class')).toMatch(/starButton-starred/);
       })
 
       it('should also put the conversation as starred into the column', () => {
+        openend = page.loadOpenedConversation().header;
         expect(conversation.getStarComponent().getAttribute('class')).toMatch(/starButton-starred/);
       })
 
