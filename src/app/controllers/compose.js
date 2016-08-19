@@ -1279,13 +1279,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                         deferred.resolve(result.Message);
                     } else if (angular.isDefined(result) && result.Code === 15033) {
-
                         // Case where the user delete draft in an other terminal
-                        delete message.ID;
-                        message.saving = false;
-                        message.autosaving = false;
-                        dispatchMessageAction(message);
-                        deferred.resolve(recordMessage(message, forward, notification));
+                        delete parameters.id;
+                        Message.createDraft(parameters).$promise.then((result) => deferred.resolve(result.Message));
                     } else if (angular.isDefined(result) && result.Error) {
 
                         // Errors from backend
@@ -1386,9 +1382,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             embedded.parser(message, 'cid').then(function(result) {
                 message.setDecryptedBody(result);
                 return recordMessage(message, false, false, false)
-                .then(function() {
+                .then(function(messageSaved) {
+                    message.ID = messageSaved.ID;
                     $scope.checkSubject(message).then(function() {
-
                         message.encrypting = true;
                         dispatchMessageAction(message);
                         var parameters = {};
