@@ -463,7 +463,7 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         );
     }
 
-    function receivePaypalMessage() {
+    function receivePaypalMessage(event) {
         var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
         if (origin !== 'https://secure.protonmail.com') {
