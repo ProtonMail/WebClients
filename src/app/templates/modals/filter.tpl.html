@@ -44,16 +44,22 @@
                                     <label for="with_{{$id}}" style="display: inline-block;">
                                         <input
                                             type="radio"
-                                            ng-model="condition.Comparator"
-                                            ng-value="{label: 'contains', value: 'contains'}" id="with_{{$id}}" />
+                                            ng-change="ctrl.onChangeAttachements(condition, 'contains')"
+                                            ng-model="condition.Comparator.value"
+                                            ng-value="'contains'"
+                                            value="contains"
+                                            id="with_{{$id}}" />
                                         <span translate translate-context="Title">With Attachments</span>
                                     </label>
                                     <label for="without_{{$id}}" style="display: inline-block;">
                                         <input
                                             type="radio"
-                                            ng-model="condition.Comparator"
-                                            ng-value="{label: 'does not contains', value: '!contains'}"
-                                            id="without_{{$id}}" /> <span translate translate-context="Title">Without Attachments</span>
+                                            ng-change="ctrl.onChangeAttachements(condition, '!contains')"
+                                            ng-model="condition.Comparator.value"
+                                            ng-value="'!contains'"
+                                            value="!contains"
+                                            id="without_{{$id}}" />
+                                            <span translate translate-context="Title">Without Attachments</span>
                                     </label>
                             </span>
                             <span class="pm_select inline" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
