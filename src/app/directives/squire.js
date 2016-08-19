@@ -53,6 +53,36 @@ angular.module("proton.squire", [
                 return angular.element(editor.getSelection().commonAncestorContainer).closest("a").attr("href");
             };
 
+            handleDrop = function(e) {
+              // let the user drop an image
+              e.stopPropagation();
+              e.preventDefault();
+              //console.log(e);
+              //drops are treated as multiple files. Only dealing with single files right now, so assume its the first object you're interested in
+              var file = e.dataTransfer.files[0];
+              //don't try to mess with non-image files
+              if (file.type.match('image.*')) {
+                //then we have an image,
+
+                //we have a file handle, need to read it with file reader!
+                var reader = new FileReader();
+
+                // Closure to capture the file information.
+                reader.onload = (function(theFile) {
+                  //get the data uri
+                  var dataURI = theFile.target.result;
+                  // and inset the image
+                  editor.insertImage(dataURI);
+
+                });
+                //this reads in the file, and the onload event triggers,
+                // which adds the image to the div at the caret
+                reader.readAsDataURL(file);
+
+              }
+            };
+
+
             ngModel.$isEmpty = function(value) {
                 if (angular.isString(value)) {
                     return angular.element("<div>" + value + "</div>").text().trim().length === 0;
@@ -263,6 +293,8 @@ angular.module("proton.squire", [
                         $rootScope.$broadcast('closeMessage', element);
                     }
                 });
+
+                editor.addEventListener('drop', handleDrop, false);
 
                 $rootScope.$broadcast('editorLoaded', element, editor);
             };
