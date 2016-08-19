@@ -9,13 +9,15 @@ angular.module('proton.message')
         const user = authentication.user || {ShowImages:0};
         const showImages = message.showImages || user.ShowImages || (CONSTANTS.WHITELIST.indexOf(message.Sender.Address) !== -1 && !message.IsEncrypted) || $state.is('printer');
 
-        if (showImages) {
-            html.innerHTML = html.innerHTML.replace(REGEXP_IS_FIX, (match, $1) => $1.substring(7));
-        } else {
-            html.innerHTML = replace(url, replace(REGEXP_IS_BREAK, html.innerHTML));
-        }
+        if (html.innerHTML.search(REGEXP_IS_BREAK) !== -1 || html.innerHTML.search(REGEXP_IS_FIX) !== -1) {
+            if (showImages) {
+                html.innerHTML = html.innerHTML.replace(REGEXP_IS_FIX, (match, $1) => $1.substring(7));
+            } else {
+                html.innerHTML = replace(url, replace(REGEXP_IS_BREAK, html.innerHTML));
+            }
 
-        message.showImages = showImages;
+            message.showImages = showImages;
+        }
 
         return html;
     };
