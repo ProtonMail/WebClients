@@ -600,7 +600,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     } else if(type === 'message') {
                         action.deleteMessage(ids);
                     }
-
+                    $rootScope.showWelcome = false;
+                    $rootScope.numberElementChecked = 0;
                     confirmModal.deactivate();
                 },
                 cancel: function() {
