@@ -1755,6 +1755,7 @@ angular.module("proton.modals", [])
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/filter.tpl.html',
         controller: function(params) {
+            const ctrl = this;
             this.simple = true;
             this.hasLabels = false;
             this.hasMove = false;
@@ -1873,7 +1874,7 @@ angular.module("proton.modals", [])
 
                     this.$onDestroy = () => {
                         unsubscribe.forEach(cb => cb());
-                        unsubscribe.length = 0;
+                        unsubscribe.length = 0;
                     };
                 }
 
@@ -1881,6 +1882,18 @@ angular.module("proton.modals", [])
                     angular.element('#filterName').focus();
                 });
             }.bind(this);
+
+
+            /**
+             * Condition Attachements:
+             * When you select an option, assign the valid object to the comparator on change
+             * @param  {Object} model
+             * @param  {String} value Value selected
+             * @return {void}
+             */
+            this.onChangeAttachements = (model, value) => {
+                model.Comparator = _.findWhere(ctrl.comparators, { value });
+            };
 
             this.displaySeparator = function() {
                 if (this.filter.Simple) {
