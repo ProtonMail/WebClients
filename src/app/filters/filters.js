@@ -259,7 +259,7 @@ angular.module("proton.filters",[])
         var same = contact.Address === contact.Name;
         var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
         var found = _.findWhere(authentication.user.Contacts, {Email: contact.Address});
-        var myself = _.findWhere(authentication.user.Addresses, {Email: contact.Address});
+        var myself = _.findWhere(authentication.user.Addresses, {Email: contact.Address, Status: 1, Receive: 1});
 
         if (me === true && angular.isDefined(myself)) {
             /// if an email is sent to you, we replace the email with this string
