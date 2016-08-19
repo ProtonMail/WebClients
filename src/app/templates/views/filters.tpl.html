@@ -9,7 +9,7 @@
                     <button class="pm_button primary" translate translate-context="Action" ng-click="addCustomFilter()">Add Filter</button>
                     <button class="pm_button" translate translate-context="Action" ng-click="clearCustomFilters()">Clear All</button>
                 </div>
-                <p class="alert alert-info" ng-show="isFree" translate translate-context="Info">Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sref="secured.dashboard({scroll: true})">upgrade</a> to get unlimited filters.</p>
+                <p class="alert alert-info" ng-show="isFree === true && customFilters.length > 0" translate translate-context="Info">Free ProtonMail accounts are limited to 1 custom filter. Please <a ui-sref="secured.dashboard({scroll: true})">upgrade</a> to get unlimited filters.</p>
                 <p class="alert alert-info" ng-show="customFilters.length === 0" translate translate-context="Info">You have no custom filters.</p>
                 <div ng-show="customFilters.length > 0">
                     <div class="pm_sort">
