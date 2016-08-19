@@ -72,7 +72,7 @@ angular.module("proton.squire", [
                   //get the data uri
                   var dataURI = theFile.target.result;
                   // and inset the image
-                  editor.insertImage(dataURI);
+                  editor.insertImage(dataURI,{class:'proton-embedded'});
 
                 });
                 //this reads in the file, and the onload event triggers,
