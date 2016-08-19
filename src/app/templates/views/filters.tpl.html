@@ -2,7 +2,7 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings">
         <div class="row">
-            <div class="setting pm_form full">
+            <div class="setting pm_form full" ng-show="organization.PlanName === 'visionary'">
                 <legend translate-context="Title" translate>Custom Filters</legend>
                 <p translate translate-context="Info" class="alert alert-info">Add a custom filter to perform actions such as automatically labeling or archiving messages.</p>
                 <div class="margin">
@@ -17,7 +17,7 @@
                             <li ng-repeat="filter in customFilters | orderBy: 'Priority'" as-sortable-item="">
                                 <div as-sortable-item-handle="" class="pm_grid">
                                     <div class="col-1-2 truncate">
-                                        <i class="fa fa-ellipsis-v"></i> {{ filter.Name }}
+                                        <i class="fa fa-ellipsis-v"></i> {{ filter.Name }} ff
                                     </div>
                                     <div class="col-1-4">
                                         <toggle status="filter.Status" on="ON" off="OFF" change="statusCustomFilter(filter)"></toggle>
