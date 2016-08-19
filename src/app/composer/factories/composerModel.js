@@ -26,7 +26,6 @@ angular.module('proton.composer')
      * @return {void}
      */
     const clear = ({ uid }) => {
-        kill(uid);
         delete MAP_REQUEST[`key.${uid}`];
     };
 
