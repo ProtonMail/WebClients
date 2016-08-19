@@ -40,12 +40,20 @@
                                 <select ng-model="condition.Type" ng-options="type.label for type in ctrl.types"></select>
                                 <i class="fa fa-angle-down"></i>
                             </span>
-                            <span ng-show="condition.Type.value === 'attachments'">
+                            <span ng-if="condition.Type.value === 'attachments'">
                                     <label for="with_{{$id}}" style="display: inline-block;">
-                                        <input type="radio" ng-model="condition.Comparator.value" ng-value="contains" id="with_{{$id}}" /> <span translate translate-context="Title">With Attachments</span>
+                                        <input
+                                            type="radio"
+                                            ng-model="condition.Comparator"
+                                            ng-value="{label: 'contains', value: 'contains'}" id="with_{{$id}}" />
+                                        <span translate translate-context="Title">With Attachments</span>
                                     </label>
                                     <label for="without_{{$id}}" style="display: inline-block;">
-                                        <input type="radio" ng-model="condition.Comparator.value" ng-value="!contains" id="without_{{$id}}" /> <span translate translate-context="Title">Without Attachments</span>
+                                        <input
+                                            type="radio"
+                                            ng-model="condition.Comparator"
+                                            ng-value="{label: 'does not contains', value: '!contains'}"
+                                            id="without_{{$id}}" /> <span translate translate-context="Title">Without Attachments</span>
                                     </label>
                             </span>
                             <span class="pm_select inline" ng-show="condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient'">
@@ -131,6 +139,7 @@
                         <div class="col-1-4">&nbsp;</div>
                         <div class="col-1-4">&nbsp;</div>
                     </div>
+
                 </div>
             </div>
         </div>
