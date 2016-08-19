@@ -6,9 +6,7 @@ angular.module('proton.models.filter', [])
      */
     var transformRequestFilter = function(filter) {
         if (angular.isDefined(filter.Simple)) {
-            console.log(angular.toJson(filter.Simple));
             filter.Tree = Sieve.toTree(filter.Simple);
-            console.log(angular.toJson(filter.Tree));
         }
 
         return angular.toJson(filter);
