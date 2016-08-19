@@ -19,9 +19,9 @@ exports.config = {
   // This can be changed via the command line as:
   //   --params.login.user "Joe"
   params: {
-    login: 'qatest1',
-    password1: 'qatest1',
-    password2: 'qatest1',
+    login: 'qatest1234',
+    password1: 'qatest1234',
+    password2: 'qatest1234',
     sleep: 2000,
     contact: {
       create: {
