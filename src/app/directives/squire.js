@@ -53,7 +53,7 @@ angular.module("proton.squire", [
                 return angular.element(editor.getSelection().commonAncestorContainer).closest("a").attr("href");
             };
 
-            handleDrop = function(e) {
+            function handleDrop(e) {
               // let the user drop an image
               e.stopPropagation();
               e.preventDefault();
@@ -80,7 +80,7 @@ angular.module("proton.squire", [
                 reader.readAsDataURL(file);
 
               }
-            };
+            }
 
 
             ngModel.$isEmpty = function(value) {
