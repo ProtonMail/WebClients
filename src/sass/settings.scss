@@ -285,9 +285,8 @@
         .angular-squire-wrapper {
             border: 1px solid $border;
 
-            iframe{
-                -webkit-flex:1;
-                flex:1;
+            iframe {
+                width: 100%;
             }
 
         }
