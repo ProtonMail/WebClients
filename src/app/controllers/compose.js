@@ -885,6 +885,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         };
     }
 
+    /**
+     * Method called each time the editor content change.
+     */
+    function autosaving(message) {
+        $scope.saveLater(message);
+    }
+
     $scope.listenEditor = function(message) {
 
         const watcherEmbedded = removerEmbeddedWatcher();
@@ -911,10 +918,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
              * Then the message will be saved every 3s.
              */
             $timeout(() => {
-                message.editor.addEventListener('input', _.throttle(() => {
-                    $scope.saveLater(message);
-                }, CONSTANTS.SAVE_TIMEOUT_TIME));
-
+                message.editor.addEventListener('input', () => { autosaving(message); });
             }, CONSTANTS.SAVE_TIMEOUT_TIME, false);
 
             message.editor.addEventListener('dragstart', onDragStart);
@@ -1057,7 +1061,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * Delay the saving
      * @param {Object} message
      */
-    $scope.saveLater = (message) => recordMessage(message, false, false, true);
+    $scope.saveLater = (message) => {
+        $timeout.cancel(message.saveTimeout);
+        message.saveTimeout = $timeout(() => { recordMessage(message, false, false, true); }, CONSTANTS.SAVE_TIMEOUT_TIME, false);
+    };
 
     $scope.validate = function(message) {
         var deferred = $q.defer();
@@ -1628,12 +1635,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.openCloseModal = function(message, save) {
         var dropzones = $('#uid' + message.uid + ' .composer-dropzone');
 
-        message.editor.removeEventListener('input', function() {
-            $scope.saveLater(message);
-        });
-
+        message.editor.removeEventListener('input', () => { autosaving(message); });
         message.editor.removeEventListener('DOMNodeRemoved');
-
         message.editor.removeEventListener('dragenter', onDragEnter);
         message.editor.removeEventListener('dragover', onDragOver);
         message.editor.removeEventListener('dragstart', onDragStart);
