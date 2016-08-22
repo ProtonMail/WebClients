@@ -50,18 +50,37 @@ angular.module('proton.message')
          * Generate the template for a signature and clean it
          * @param  {String} userSignature
          * @param  {String} protonSignature
+         * @param  {String} spaces
          * @return {String}
          */
-        function templateBuilder(userSignature, protonSignature) {
+        function templateBuilder(userSignature, protonSignature, spaces) {
             const { userClass, protonClass, containerClass } = getClassNamesSignature(userSignature, protonSignature);
 
             const template = `${SPACE()}${SPACE(containerClass)}
             <div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
                 <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">${tools.replaceLineBreaks(userSignature)}</div>
                 <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(protonSignature)}</div>
-            </div>${SPACE(containerClass)}`;
+            </div>${SPACE(containerClass)}${spaces}`;
 
             return purify(template);
+        }
+
+        /**
+         * Add spaces if signature content is empty
+         * @param {String} userSignature
+         * @param {Message} message
+         * @return {String}
+         */
+        function getSpaces(userSignature, message) {
+            const isUserEmpty = isEmptyUserSignature(userSignature);
+            const isProtonEmpty = !authentication.user.PMSignature;
+            const isAction = [CONSTANTS.REPLY, CONSTANTS.REPLY_ALL, CONSTANTS.FORWARD].indexOf(message.Action) !== -1;
+
+            if (isUserEmpty && isProtonEmpty && isAction) {
+                return `${SPACE()}${SPACE()}`;
+            } else {
+                return '';
+            }
         }
 
         /**
@@ -74,18 +93,15 @@ angular.module('proton.message')
          * @return {String}
          */
         function insert(message = { getDecryptedBody : angular.noop }, isAfter = false) {
-
             const { From = {} } = message;
-            let defaultSignatureClassName = '';
             const position = isAfter ? 'beforeEnd' : 'afterBegin';
             const userSignature = !From.Signature ? authentication.user.Signature : From.Signature;
             const protonSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : '';
-
-            const template = templateBuilder(userSignature, protonSignature);
-
+            const template = templateBuilder(userSignature, protonSignature, getSpaces(userSignature, message));
             // Parse the current message and append before it the signature
             const [ $parser ] = $.parseHTML(`<div>${message.getDecryptedBody()}</div>`);
             $parser.insertAdjacentHTML(position, template);
+
             return $parser.innerHTML;
         }
 

@@ -1,5 +1,5 @@
 angular.module('proton.service.message', [])
-    .factory('messageBuilder', (gettextCatalog, tools, authentication, Message, $filter, signatureBuilder) => {
+    .factory('messageBuilder', (gettextCatalog, tools, authentication, Message, $filter, signatureBuilder, CONSTANTS) => {
 
         const RE_PREFIX = gettextCatalog.getString('Re:', null);
         const FW_PREFIX = gettextCatalog.getString('Fw:', null);
@@ -30,7 +30,7 @@ angular.module('proton.service.message', [])
          * @param  {Number} options.Type    from the current message
          */
         function reply(newMsg, origin = {}) {
-            newMsg.Action = 0;
+            newMsg.Action = CONSTANTS.REPLY;
             newMsg.Subject = formatSubject(origin.Subject);
 
             if(origin.Type === 2 || origin.Type === 3) {
@@ -51,8 +51,7 @@ angular.module('proton.service.message', [])
          * @param  {Number} options.Type    from the current message
          */
         function replyAll(newMsg, { Subject, Type, ToList, ReplyTo, CCList, BCCList } = {}) {
-
-            newMsg.Action = 1;
+            newMsg.Action = CONSTANTS.REPLY_ALL;
             newMsg.Subject = formatSubject(Subject);
 
             if(Type === 2 || Type === 3) {
@@ -77,7 +76,7 @@ angular.module('proton.service.message', [])
          * @param  {String} options.Subject from the current message
          */
         function forward(newMsg, { Subject } = {}) {
-            newMsg.Action = 2;
+            newMsg.Action = CONSTANTS.FORWARD;
             newMsg.ToList = [];
             newMsg.Subject = formatSubject(Subject, FW_PREFIX);
         }
