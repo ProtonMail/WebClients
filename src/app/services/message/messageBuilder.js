@@ -1,20 +1,10 @@
 angular.module('proton.service.message', [])
-    .factory('messageBuilder', (gettextCatalog, tools, authentication, Message, $filter, CONSTANTS) => {
+    .factory('messageBuilder', (gettextCatalog, tools, authentication, Message, $filter, signatureBuilder) => {
 
-        const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
-        const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';
-        const CLASSNAME_SIGNATURE_PROTON = 'protonmail_signature_block-proton';
         const RE_PREFIX = gettextCatalog.getString('Re:', null);
         const FW_PREFIX = gettextCatalog.getString('Fw:', null);
         const RE_LENGTH = RE_PREFIX.length;
         const FW_LENGTH = FW_PREFIX.length;
-
-        function purify(html) {
-            return DOMPurify.sanitize(html, {
-                ADD_ATTR: ['target'],
-                FORBID_TAGS: ['style', 'input', 'form']
-            });
-        }
 
         function formatSubject(subject = '', prefix = RE_PREFIX) {
             const newSubject = subject.substring(0, prefix.length);
@@ -136,66 +126,6 @@ angular.module('proton.service.message', [])
             return adr;
         }
 
-        /**
-         * Insert Signatures before the message
-         *     - Always append a container signature with both user's and proton's
-         *     - Theses signature can be empty but the dom remains
-         *
-         * @param  {Message} message
-         * @param {Boolean} isAfter Append the signature at the end of the content
-         * @return {String}
-         */
-        function insertSignature(message = { getDecryptedBody : angular.noop }, isAfter = false) {
-
-            const { From = {} } = message;
-            const position = isAfter ? 'beforeEnd' : 'afterBegin';
-            const userSignature = !From.Signature ? authentication.user.Signature : From.Signature;
-            const protonSignature = authentication.user.PMSignature ? CONSTANTS.PM_SIGNATURE : '';
-
-            const SPACE = '<div><br /></div>';
-            const template = `${SPACE}${SPACE}<div class="${CLASSNAME_SIGNATURE_CONTAINER}">
-                <div class="${CLASSNAME_SIGNATURE_USER}">${tools.replaceLineBreaks(userSignature)}</div>
-                <div class="${CLASSNAME_SIGNATURE_PROTON}">${tools.replaceLineBreaks(protonSignature)}</div>
-            </div>${SPACE}`;
-
-            // Parse the current message and append before it the signature
-            const [ $parser ] = $.parseHTML(`<div>${message.getDecryptedBody()}</div>`);
-            $parser.insertAdjacentHTML(position, purify(template));
-            return $parser.innerHTML;
-        }
-
-        /**
-         * Update the user signature
-         * @param  {Message} message
-         * @return {String}
-         */
-        function updateSignature(message = { getDecryptedBody : angular.noop }) {
-
-            const { From = {} } = message;
-            const content = !From.Signature ? authentication.user.Signature : From.Signature;
-
-            const [ dom ] = $.parseHTML(`<div>${purify(message.getDecryptedBody())}</div>`) || [];
-            const [ userSignature ] = $.parseHTML(`<div>${purify(content)}</div>`) || [];
-
-            /**
-             * Update the signature for a user if it exists
-             */
-            if (dom && userSignature) {
-                const item = dom.querySelector('.' + CLASSNAME_SIGNATURE_USER);
-
-                // If a user deletes all the content we need to append the signature
-                if (!item) {
-                    // Insert at the end because it can contains some text
-                    return insertSignature(message, true);
-                }
-
-                item.innerHTML = userSignature.innerHTML;
-            }
-
-            // Return the message with the new signature
-            return dom.innerHTML;
-        }
-
         function builder(action, currentMsg = {}, newMsg = {}) {
 
             const subject = DOMPurify.sanitize('Subject: ' + currentMsg.Subject + '<br>');
@@ -253,7 +183,7 @@ angular.module('proton.service.message', [])
                 originalAddress && (sender = originalAddress);
             }
 
-            return sender;
+            return sender || {};
         }
 
         /**
@@ -298,9 +228,9 @@ angular.module('proton.service.message', [])
             if ('new' !== action) {
                 newMsg = builder(action, currentMsg, newMsg);
             }
-            newMsg.setDecryptedBody(insertSignature(newMsg));
+            newMsg.setDecryptedBody(signatureBuilder.insert(newMsg));
             return newMsg;
         }
 
-        return { create, findSender, updateSignature };
+        return { create, findSender, updateSignature: signatureBuilder.update };
     });
