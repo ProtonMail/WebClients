@@ -348,6 +348,7 @@ angular.module("proton.embedded", [])
     }
 
     var embedded = {
+        MIMETypeSupported,
         parser(message, direction = 'blob') {
             CIDList = {};
 
