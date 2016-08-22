@@ -1623,7 +1623,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $rootScope.$broadcast('composerModeChange');
     };
 
-    $scope.openCloseModal = function(message, save) {
+    $scope.openCloseModal = function(message) {
         var dropzones = $('#uid' + message.uid + ' .composer-dropzone');
 
         message.editor.removeEventListener('input');
@@ -1659,9 +1659,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.close = function(message, discard, save) {
-
         if (discard === true && angular.isDefined(message.ID)) {
-            $scope.discard(message);
+            action.discardMessage(message);
         }
 
         $rootScope.activeComposer = false;
@@ -1701,7 +1700,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 title: title,
                 message: question,
                 confirm: function() {
-                    action.discardMessage(message);
+                    $scope.close(message, true, false);
                     notify({message: gettextCatalog.getString('Message discarded', null), classes: 'notification-success'});
                     confirmModal.deactivate();
                 },
