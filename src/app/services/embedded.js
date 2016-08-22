@@ -190,7 +190,7 @@ angular.module("proton.embedded", [])
         if (Headers['content-disposition'] !== 'inline') {
             const splits = Headers['content-disposition'].split('filename=');
             if (splits.length > 0 && splits[1]) {
-                return splits[1].replace(new RegExp(/"/g, 'g'), '');
+                return splits[1].replace(/"/g, '');
             }
         }
         return '';
