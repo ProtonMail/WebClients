@@ -355,7 +355,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         // close the dialog
         $scope.cancelAskEmbedding(message);
-
     };
 
 
@@ -408,8 +407,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                             message.queuedFilesSize -= file.size;
 
                             // check if embedded before upload!
-                            var img = new RegExp("image");
-                            var isImg = img.test(file.type);
+                            var isImg = embedded.MIMETypeSupported.indexOf(file.type) !== -1;
 
                             if (isImg) {
                                 message.pendingAttachements.push(file);
