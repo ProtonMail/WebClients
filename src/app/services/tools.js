@@ -96,6 +96,10 @@ angular.module("proton.tools", ["proton.constants"])
 
             if (navigator.appVersion.indexOf('Linux') !== -1) {
                 OSName = 'linux';
+
+                if (navigator.appVersion.indexOf('Android') !== -1) {
+                    OSName = 'android';
+                }
             }
         }
 
