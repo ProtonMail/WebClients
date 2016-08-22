@@ -343,9 +343,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.processPending  = function(message, embedding){
-
         _.forEach(message.pendingAttachements, function (file) {
-
             if (embedding) {
                 // required for BE to get a cid-header
                 file.inline = 1;
@@ -1139,7 +1137,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} autosaving
      */
     function recordMessage(message, forward, notification, autosaving) {
-        console.log('recordMessage');
         // Variables
         var deferred = $q.defer();
         var parameters = {
