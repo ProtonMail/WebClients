@@ -126,32 +126,60 @@
                 <div class="row fromRow">
                     <label translate translate-context="Title">From</label>
                     <select class="flex" ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0"  ng-change="changeFrom(message)"></select>
-                    <button class="pm_button link">
+                    <button class="pm_button link" >
                         <i class="fa fa-angle-down"></i>
                     </button>
                     <span class="overlay" ng-click="disabledNotify()" ng-show="message.Attachments.length > 0" translate=""></span>
                 </div>
-                <div class="row placeholder" ng-click="focusTo(message)" ng-right-click="focusTo(message)" ng-show="emailsAreValid(message) === true && message.autocompletesFocussed === false">
-                    <label ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0" translate translate-context="Title">Recipients</label>
+
+                <div
+                    class="row placeholder"
+                    ng-click="focusTo(message)"
+                    ng-right-click="focusTo(message)"
+                    ng-show="emailsAreValid(message) === true && message.autocompletesFocussed === false">
+
+                    <label
+                        ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0"
+                        translate
+                        translate-context="Title">Recipients</label>
                     <div title="{{ recipients(message) }}" ng-bind="recipients(message)"></div>
-                    <button class="pm_button link" ng-click="toggleCcBcc(message)" pt-tooltip-translate="CC BCC" pt-placement="left" pt-tooltip-translate-context="Action">
+                    <button
+                        class="pm_button link"
+                        ng-click="toggleCcBcc(message)"
+                        pt-tooltip-translate="CC BCC"
+                        pt-placement="left"
+                        pt-tooltip-translate-context="Action"
+                        tabindex="-1">
                         <i class="fa fa-angle-down" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
-                <div class="row toRow" ng-show="emailsAreValid(message) === false || message.autocompletesFocussed === true">
-                    <label ng-click="focusNextInput($event)" translate translate-context="Title">To</label>
-                    <autocomplete emails="message.ToList" />
-                    <button class="pm_button link" ng-click="toggleCcBcc(message)" pt-tooltip-translate="CC BCC" pt-placement="left" pt-tooltip-translate-context="Action">
+
+                <div
+                    class="row toRow"
+                    ng-show="emailsAreValid(message) === false || message.autocompletesFocussed === true">
+                    <label
+                        ng-click="focusNextInput($event)"
+                        translate
+                        translate-context="Title">To</label>
+                    <autocomplete-emails data-emails="message.ToList"></autocomplete-emails>
+
+                    <button
+                        class="pm_button link"
+                        tabindex="-1"
+                        ng-click="toggleCcBcc(message)"
+                        pt-tooltip-translate="CC BCC"
+                        pt-placement="left"
+                        pt-tooltip-translate-context="Action">
                         <i class="fa fa-angle-down" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
                 <div class="row" ng-show="message.ccbcc === true && (emailsAreValid(message) === false || message.autocompletesFocussed === true)">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">CC</label>
-                    <autocomplete emails="message.CCList" />
+                    <autocomplete-emails data-emails="message.CCList"></autocomplete-emails>
                 </div>
                 <div class="row" ng-show="message.ccbcc === true && (emailsAreValid(message) === false || message.autocompletesFocussed === true)">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">BCC</label>
-                    <autocomplete emails="message.BCCList" />
+                    <autocomplete-emails data-emails="message.BCCList"></autocomplete-emails>
                 </div>
 
                 <div class="row subjectRow">
