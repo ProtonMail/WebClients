@@ -63,8 +63,6 @@ angular.module('proton', [
     // Config
     'proton.config',
 
-    'proton.ui',
-
     // Services
     'proton.actions',
     'proton.attachments',
@@ -83,6 +81,7 @@ angular.module('proton', [
     // Directives
     'proton.message',
     'proton.conversation',
+    'proton.autocomplete',
     'proton.card',
     'proton.star',
     'proton.drag',
