@@ -1753,7 +1753,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     $scope.focusTo = function(message) {
-        const input = angular.element(`#uid${message.uid}`).find('.toRow').find('input');
+        var input = angular.element('#uid' + message.uid + ' .toRow input.new-value-email');
+
         message.autocompletesFocussed = true;
 
         $timeout(function() {
@@ -1762,7 +1763,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.focusNextInput = function(event) {
-        angular.element(event.target).parent().find('input').eq(0).focus();
+        angular.element(event.target).parent().find('input.new-value-email:first').focus();
     };
 
     /**
