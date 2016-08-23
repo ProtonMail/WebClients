@@ -39,7 +39,6 @@ angular.module("proton.embedded", [])
             _(nodes)
                 .each((node) => {
                     node.src = url;
-                    node.rel = cid;
                     node.classList.add(EMBEDDED_CLASSNAME);
                 });
         },
@@ -85,8 +84,6 @@ angular.module("proton.embedded", [])
 
     /**
      * Parse the content to inject the generated blob src
-     * because the blob live inside the browser we may
-     * set an extra rel attribute so we can update the blob src later
      * @param  {Resource} message             Message
      * @param  {String} direction             Parsing to execute, blob || cid
      * @return {String}                       Parsed HTML
@@ -100,7 +97,7 @@ angular.module("proton.embedded", [])
                 const current = Blobs[cid];
                 const isContentLocation = (current) ? current.isContentLocation : false;
                 const url = (current) ? current.url : '';
-                const selector = (isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[rel="${cid}"], img[data-embedded-img="cid:${cid}"]`;
+                const selector = (isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"]`;
                 const nodes = [].slice.call(testDiv.querySelectorAll(selector));
 
                 if (nodes.length) {
@@ -396,7 +393,7 @@ angular.module("proton.embedded", [])
         },
         addEmbedded: function(message, cid, data, MIME){
             store(message, cid)(data, MIME);
-            message.editor.insertImage(Blobs[ cid ].url, {rel:cid, class:'proton-embedded'});
+            message.editor.insertImage(Blobs[ cid ].url, {class:'proton-embedded'});
         },
         removeEmbedded: function(message,Headers){
 
@@ -413,7 +410,7 @@ angular.module("proton.embedded", [])
                 }
 
                 var tempDOM = angular.element('<div>').append(message.getDecryptedBody());
-                var nodes = tempDOM.find('img[data-embedded-img="cid:'+cid+'"], img[rel="'+cid+'"]');
+                var nodes = tempDOM.find('img[data-embedded-img="cid:'+cid+'"]');
                 if(nodes.length > 0) {
                     nodes.remove();
                 }
