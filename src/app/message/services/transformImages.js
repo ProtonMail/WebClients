@@ -13,7 +13,7 @@ angular.module('proton.message')
         if (images.length > 0) {
             images.forEach(function(image) {
                 const src = image.src;
-                const attach = embedded.getAttachment(message, image.src);
+                const attach = embedded.getAttachment(message, src);
 
                 if (!image.classList.contains(EMBEDDED_CLASSNAME)) {
                     image.classList.add(EMBEDDED_CLASSNAME);
