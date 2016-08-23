@@ -140,18 +140,18 @@
                 </div>
                 <div class="row toRow" ng-show="emailsAreValid(message) === false || message.autocompletesFocussed === true">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">To</label>
-                    <autocomplete emails="message.ToList" />
+                    <autocomplete-emails data-emails="message.ToList"></autocomplete-emails>
                     <button class="pm_button link" ng-click="toggleCcBcc(message)" pt-tooltip-translate="CC BCC" pt-placement="left" pt-tooltip-translate-context="Action">
                         <i class="fa fa-angle-down" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
                     </button>
                 </div>
                 <div class="row" ng-show="message.ccbcc === true && (emailsAreValid(message) === false || message.autocompletesFocussed === true)">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">CC</label>
-                    <autocomplete emails="message.CCList" />
+                    <autocomplete-emails data-emails="message.CCList"></autocomplete-emails>
                 </div>
                 <div class="row" ng-show="message.ccbcc === true && (emailsAreValid(message) === false || message.autocompletesFocussed === true)">
                     <label ng-click="focusNextInput($event)" translate translate-context="Title">BCC</label>
-                    <autocomplete emails="message.BCCList" />
+                    <autocomplete-emails data-emails="message.BCCList"></autocomplete-emails>
                 </div>
 
                 <div class="row subjectRow">
