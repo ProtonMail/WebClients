@@ -61,7 +61,8 @@ module.exports = {
       "vendor/svgeezy/svgeezy.js",
       "vendor/mousetrap/mousetrap.js",
       "vendor/push.js/push.js",
-      "vendor/angular-gettext/dist/angular-gettext.js"
+      "vendor/angular-gettext/dist/angular-gettext.js",
+      "vendor/awesomplete/awesomplete.js"
     ],
     bootstrap_components: [
       "affix",
@@ -79,7 +80,8 @@ module.exports = {
       "vendor/angular-notify/dist/angular-notify.css",
       "vendor/pikaday/css/pikaday.css",
       "vendor/dropzone/dist/dropzone.css",
-      "vendor/smooth-scrollbar/dist/smooth-scrollbar.css"
+      "vendor/smooth-scrollbar/dist/smooth-scrollbar.css",
+      "vendor/awesomplete/awesomplete.css",
     ],
 
     sass_include_dirs: [

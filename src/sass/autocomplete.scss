@@ -1,112 +1,99 @@
-.container-email {
-    position: relative;
+.autocompleteEmails-container {
+    box-sizing: border-box;
     color: $gray;
     font-size: 13px;
-    * {
-        box-sizing: border-box;
-    }
-    .input-email {
-        display: flex;
-        flex-wrap: wrap;
-        min-height: 30px;
-        line-height: 30px;
-        padding: 0 6px;
-        vertical-align: middle;
-        position: relative;
-        form {
-            flex: 1;
-            input {
-                width: 100%;
-                display: block;
-                min-width: 100px;
-            }
+    width: 100%;
+}
+
+.autocompleteEmails-admin {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 30px;
+    line-height: 30px;
+    padding: 0;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+}
+
+.autocompleteEmails-admin, .autocompleteEmails-admin * {box-sizing: border-box}
+
+
+.autocompleteEmails-item {
+    border: 1px solid $gray-light;
+    background-color: $read;
+    margin-top: 5px;
+    text-shadow: none;
+    border-radius: 2px;
+    padding-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: row;
+    line-height: 22px;
+    height: 22px;
+    max-width: 100%;
+    min-width: 0px
+}
+
+.autocompleteEmails-item-invalid {
+    border-color: $red;
+    color: $red;
+}
+
+.autocompleteEmails-field {
+    flex: 1;
+    min-width: 15%;
+
+    .awesomplete {
+        display: block;
+        position: static;
+
+        input {width: 100%}
+
+        ul {
+            border-radius: 0;
+            max-height: 150px;
+            overflow: auto;
+            z-index: 999;
+            border: 1px solid $border;
+            background-color: $white;
+            box-shadow: none;
+            transform: scale(1) !important;
+            transition-duration: 0s !important;
+        }
+
+        ul[hidden] {pointer-events: none;}
+
+        ul:empty {display: none}
+
+        ul::before {display: none}
+
+        li[aria-selected="true"], li[aria-selected="true"]:hover {background-color: $gray-light}
+
+        li:hover {background-color: $light}
+
+        li,
+        li:hover,
+        li[aria-selected="true"],
+        li[aria-selected="true"]:hover {color: $gray }
+
+        mark,
+        li:hover mark,
+        li[aria-selected="true"] mark {
+            color: inherit;
+            background-color: transparent;
+            font-weight: bold
         }
     }
+}
 
-    .label-email {
-        border: 1px solid $gray-light;
-        background-color: $read;
-        margin-top: 5px;
-        text-shadow: none;
-        border-radius: 2px;
-        padding-left: 5px;
-        margin-right: 5px;
-        display: flex;
-        flex-direction: row;
-        line-height: 22px;
-        height: 22px;
-        max-width: 100%;
-        /* "By default, flex items won't shrink below their minimum content size
-        (the length of the longest word or fixed-size element).
-        To change this, set the ‘min-width’ or ‘min-height’ property."*/
-        min-width:0px;
+.autocompleteEmails-btn-remove {
+    cursor: pointer;
+    background: transparent;
+    border: 0
+}
 
-        &.invalid {
-            border-color: $red;
-            color: $red;
-        }
-
-        span {
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        a {
-            margin-left: 5px;
-            margin-right: 5px;
-            cursor: pointer;
-        }
-    }
-
-    .input-email input[type="text"] {
-        border: none;
-        resize: none;
-        padding: 0 5px !important;
-        outline: none;
-        margin-bottom: 0;
-        box-shadow: none;
-        height: 30px;
-        line-height: 30px;
-        overflow: hidden;
-        white-space: nowrap;
-        transition: none;
-    }
-
-    .autocomplete-email {
-        z-index: 999;
-        list-style-type: none;
-        border: 1px solid $border;
-        position: absolute;
-        background-color: white;
-        max-height: 150px;
-        overflow-y: auto;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-
-        li {
-            cursor: pointer;
-            padding: 0;
-            margin: 0;
-
-            &.selected, &:hover.selected {
-                background-color: $gray-light;
-            }
-
-            &:hover {
-                background-color: $light;
-            }
-
-            a {
-                color: $gray;
-                line-height: 30px;
-                padding-left: 10px;
-                padding-right: 10px;
-                display: block;
-                text-decoration: none;
-            }
-        }
-    }
+.autocompleteEmails-btn-remove:focus, .autocompleteEmails-btn-remove:active {
+    color: $active;
 }
