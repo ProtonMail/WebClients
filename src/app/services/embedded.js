@@ -39,6 +39,7 @@ angular.module("proton.embedded", [])
             _(nodes)
                 .each((node) => {
                     node.src = url;
+                    node.setAttribute('data-embedded-img', cid);
                     node.classList.add(EMBEDDED_CLASSNAME);
                 });
         },
@@ -393,7 +394,7 @@ angular.module("proton.embedded", [])
         },
         addEmbedded: function(message, cid, data, MIME){
             store(message, cid)(data, MIME);
-            message.editor.insertImage(Blobs[ cid ].url, {class:'proton-embedded'});
+            message.editor.insertImage(Blobs[ cid ].url, {'data-embedded-img': cid, class: 'proton-embedded'});
         },
         removeEmbedded: function(message,Headers){
 
