@@ -432,6 +432,7 @@ angular.module("proton.embedded", [])
         getUrl(node) {
             const attribute = node.getAttribute('data-embedded-img') || '';
             const cid = attribute.replace('cid:', '');
+            console.log(cid, Blobs);
             const { url = '' } = Blobs[cid] || {};
             return url;
         },

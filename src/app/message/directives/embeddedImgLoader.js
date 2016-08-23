@@ -11,11 +11,13 @@ angular.module('proton.message')
             const promises = [].slice.call($list)
                 .map((img) => {
                     const src = embedded.getUrl(img);
+                        console.log('SRC 1', src, img);
                     const image  = new Image();
                     return new Promise((resolve, reject) => {
+                        console.log('SRC', src);
                         image.src = src;
                         image.onload = () => resolve({img, src});
-                        image.onerror = (e) => reject(e, src);
+                        image.onerror = (error) => reject({ error, src });
                     });
                 });
 
@@ -28,15 +30,15 @@ angular.module('proton.message')
                             const container = loader.parentElement;
                             img.src = src;
                             img.classList.add('proton-embedded');
-                            img.removeAttribute('data-embedded-img');
+                            // img.removeAttribute('data-embedded-img');
                             container.replaceChild(img, loader);
                         });
 
                         $rootScope.$emit('embedded.injected');
                     });
                 })
-                .catch((err, src) => {
-                    console.error(err, src);
+                .catch((err) => {
+                    console.error(err);
                 });
         };
 
