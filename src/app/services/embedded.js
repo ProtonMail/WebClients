@@ -446,6 +446,7 @@ angular.module("proton.embedded", [])
             if (xray(message) && CIDList[message.ID]) {
                 return (CIDList[message.ID][src.replace(REGEXP_CID_START, "")]) || {};
             }
+
             return {};
         }
 

@@ -11,10 +11,8 @@ angular.module('proton.message')
             const promises = [].slice.call($list)
                 .map((img) => {
                     const src = embedded.getUrl(img);
-                        console.log('SRC 1', src, img);
                     const image  = new Image();
                     return new Promise((resolve, reject) => {
-                        console.log('SRC', src);
                         image.src = src;
                         image.onload = () => resolve({img, src});
                         image.onerror = (error) => reject({ error, src });
