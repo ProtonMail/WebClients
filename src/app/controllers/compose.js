@@ -211,8 +211,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if (angular.isDefined(message)) {
             $scope.focusComposer(message);
-            message.autocompletesFocussed = false;
-            message.ccbcc = false;
             message.attachmentsToggle = false;
         }
 
@@ -221,7 +219,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     unsubscribe.push($scope.$on('subjectFocussed', function(event, message) {
         var current = _.findWhere($scope.messages, {uid: message.uid});
-
         current.autocompletesFocussed = false;
         current.ccbcc = false;
         current.attachmentsToggle = false;
@@ -651,6 +648,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             $rootScope.maximizedComposer = true;
         }
 
+        message.ccbcc = !!message.CCList.length || !!message.BCCList.length;
+        message.autocompletesFocussed = message.ccbcc;
+
         // Mark message as read
         if (message.IsRead === 0) {
             var ids = [message.ID];
@@ -674,6 +674,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         sanitizeBody(message)
             .then((message) => {
+
                 $scope.messages.unshift(message);
                 $scope.isOver = false;
 
@@ -888,13 +889,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if (message.editor) {
             var dropzone = angular.element('#uid' + message.uid + ' .composer-dropzone')[0];
 
-            message.editor.addEventListener('focus', function() {
-                $scope
-                    .$applyAsync(() => {
-                        message.ccbcc = false;
-                    });
-            });
-
             // Check if we need to remove embedded after a delay
             message.editor.addEventListener('input', _.throttle(() => {
                 watcherEmbedded(message);
@@ -930,7 +924,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.toggleCcBcc = function(message) {
-        message.ccbcc = !!!message.ccbcc;
+        message.ccbcc = !message.ccbcc;
         message.autocompletesFocussed = true;
         message.attachmentsToggle = false;
     };
@@ -1781,7 +1775,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      */
     $scope.emailsAreValid = function(message) {
         var emails = message.ToList.concat(message.CCList).concat(message.BCCList);
-
         return _.where(emails, {invalid: true}).length === 0;
     };
 });
