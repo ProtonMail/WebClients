@@ -99,21 +99,6 @@ angular.module('proton.ui')
                     }
                 };
 
-                /**
-                 * Auto scroll will be available with the 1.2
-                 * Patch extracted from {@link https://github.com/LeaVerou/awesomplete/issues/16875}
-                 */
-                awesomplete.input.addEventListener('awesomplete-highlight', onHighlight);
-
-                /**
-                 * Update the model when an user select an option
-                 */
-                awesomplete.replace = function (opt) {
-                    model.add(opt);
-                    this.input.value = '';
-                    syncModel();
-                };
-
                 const onInput = ({ target }) => {
                     // Only way to clear the input if you add a comma.
                     target.value === ',' && (target.value = '');
@@ -164,10 +149,15 @@ angular.module('proton.ui')
                     switch(e.keyCode) {
                         case TAB_KEY:
                             // Only when the autocomplete is running
-                            if (awesomplete.input.value) {
+                            if (awesomplete.input.value && !model.isEmpty()) {
                                 e.preventDefault();
                                 awesomplete.select();
                                 _rAF(() => awesomplete.input.focus());
+                            }
+
+                            // When there is no autocompletion available
+                            if (awesomplete.input.value && model.isEmpty()) {
+                                onSubmit(e);
                             }
                             break;
 
@@ -204,6 +194,21 @@ angular.module('proton.ui')
                         clear();
                         syncModel();
                     }
+                };
+
+                /**
+                 * Auto scroll will be available with the 1.2
+                 * Patch extracted from {@link https://github.com/LeaVerou/awesomplete/issues/16875}
+                 */
+                awesomplete.input.addEventListener('awesomplete-highlight', onHighlight);
+                awesomplete.input.addEventListener('blur', onSubmit);
+                /**
+                 * Update the model when an user select an option
+                 */
+                awesomplete.replace = function (opt) {
+                    model.add(opt);
+                    this.input.value = '';
+                    syncModel();
                 };
 
                 el.on('keydown', onKeyDown);
