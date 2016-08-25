@@ -228,7 +228,7 @@ angular.module("proton.controllers.Outside", [
 
     $scope.toggleImages = function() {
         $scope.message.showImages = !$scope.message.showImages;
-        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformLinks', 'transformImages', 'transformWelcome', 'transformBlockquotes']));
+        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']));
     };
 
 

@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('transformImages', function(authentication, embedded) {
+.factory('transformEmbedded', function(authentication, embedded) {
 
     const REGEXP_IS_CID = /^cid:/;
     const EMBEDDED_CLASSNAME = 'proton-embedded';
@@ -12,7 +12,7 @@ angular.module('proton.message')
 
         if (images.length > 0) {
             images.forEach(function(image) {
-                const src = image.src;
+                const src = image.getAttribute('src');
                 const attach = embedded.getAttachment(message, src);
 
                 if (!image.classList.contains(EMBEDDED_CLASSNAME)) {
@@ -27,7 +27,7 @@ angular.module('proton.message')
                         image.removeAttribute('src');
                     } else {
                         message.showEmbedded = false;
-                        image.setAttribute("alt",attach.Name);
+                        image.setAttribute('alt', attach.Name);
                     }
                 }
             });
