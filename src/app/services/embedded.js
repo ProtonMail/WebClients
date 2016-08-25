@@ -145,6 +145,11 @@ angular.module("proton.embedded", [])
                 attachs.forEach(({ Headers = {}, Name = '', MIMEType = '' }) => {
                     const disposition = Headers['content-disposition'];
 
+                    // console.log('Headers', Headers);
+                    // console.log('disposition', disposition);
+                    // console.log('REGEXP_IS_INLINE.test(disposition)', REGEXP_IS_INLINE.test(disposition));
+                    // console.log('MIMETypeSupported.indexOf(MIMEType) !== -1', MIMETypeSupported.indexOf(MIMEType) !== -1);
+
                     // BE require an inline content-disposition!
                     if (disposition && REGEXP_IS_INLINE.test(disposition) && MIMETypeSupported.indexOf(MIMEType) !== -1) {
                         let cid;
@@ -163,7 +168,8 @@ angular.module("proton.embedded", [])
                         MAP[cid] = { Headers, Name };
                     }
                 });
-            return true;
+
+            return Object.keys(MAP[cid]).length > 0;
         }
 
         return false;
@@ -250,7 +256,6 @@ angular.module("proton.embedded", [])
         var processed = false;
 
         const list = findInlineAttachements(message);
-
         const user = authentication.user || { ShowEmbedded: 0 };
         const show = message.showEmbedded === true || user.ShowEmbedded === 1;
 
@@ -414,9 +419,9 @@ angular.module("proton.embedded", [])
             message.editor.insertImage(Blobs[ cid ].url, {'data-embedded-img': cid, class: 'proton-embedded'});
         },
         removeEmbedded: function(message,Headers){
-
             const disposition = Headers['content-disposition'];
-            if(Headers['content-disposition'] && REGEXP_IS_INLINE.test(disposition)) {
+
+            if (disposition && REGEXP_IS_INLINE.test(disposition)) {
 
                 if (Headers['content-id']) {
                     // remove the < >.
@@ -450,7 +455,7 @@ angular.module("proton.embedded", [])
             const attribute = node.getAttribute('data-embedded-img') || '';
             const cid = attribute.replace(REGEXP_CID_START, '');
             const { url = '' } = Blobs[cid] || {};
-            
+
             return url;
         },
 
@@ -463,16 +468,13 @@ angular.module("proton.embedded", [])
         getAttachment(message, src) {
             const cid = src.replace(REGEXP_CID_START, '');
             const resultXray = xray(message);
-            const attachment = _.findWhere(message.Attachments, (att) => (trimQuotes(att.Headers['content-id']) === cid || att.Headers['content-location'] === cid));
 
-            if (resultXray && attachment) {
-                return attachment;
+            if (resultXray && CIDList[message.ID]) {
+                return CIDList[message.ID][cid] || {};
             } else {
                 return {};
             }
         }
-
-
     };
 
     return embedded;
