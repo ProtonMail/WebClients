@@ -106,7 +106,6 @@ angular.module("proton.squire", [
             };
 
             scope.popoverHide = function(event, name) {
-                var linkElement = angular.element(event.currentTarget);
                 var hide = function() {
                     element.find('.squire-popover.' + name).hide();
 
