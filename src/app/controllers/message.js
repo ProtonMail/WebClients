@@ -430,14 +430,14 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.back();
     };
 
-    $scope.decryptAttachment = function(attachment, $event, message) {
-        $event.preventDefault();
+    $scope.decryptAttachment = function(event, attachment, message) {
+        event.preventDefault();
 
-        var link = angular.element($event.currentTarget);
-        var href = link.attr('href');
+        var link = event.currentTarget;
+        var href = link.getAttribute('href');
 
-        if(angular.isDefined(href) && href.search(/^data.*/)!==-1) {
-            alert("Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As.");
+        if (href && href.search(/^data.*/)!==-1) {
+            alert('Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As.');
             return false;
         }
 
@@ -454,7 +454,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                         data: result.data,
                         Name: attachment.Name,
                         MIMEType: attachment.MIMEType,
-                        el: link,
+                        el: link
                     });
                     attachment.decrypting = false;
                     attachment.decrypted = true;
@@ -462,12 +462,12 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
             });
         } else {
-            if(angular.isDefined(att.data)) {
+            if (angular.isDefined(att.data)) {
                 $scope.downloadAttachment({
                     data: att.data,
                     Name: att.name,
                     MIMEType: att.MIMEType,
-                    el: link,
+                    el: link
                 });
                 attachment.decrypting = false;
             } else {
@@ -479,11 +479,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
                 // when we have the session key and attachment:
                 $q.all({
-                    "attObject": att,
-                    "key": key
+                    attObject: att,
+                    key: key
                  }).then(
                     function(obj) {
-
                         // create new Uint8Array to store decryted attachment
                         var at = new Uint8Array(obj.attObject.data);
 
@@ -508,7 +507,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                                     data: decryptedAtt.data,
                                     Name: decryptedAtt.filename,
                                     MIMEType: attachment.MIMEType,
-                                    el: link,
+                                    el: link
                                 });
                                 attachment.decrypting = false;
                                 attachment.decrypted = true;
@@ -543,8 +542,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
     };
 
+    /**
+     * @param {Object} attachment
+     */
     $scope.downloadAttachment = function(attachment) {
-
         try {
             var blob = new Blob([attachment.data], {type: attachment.MIMEType});
             var link = $(attachment.el);
@@ -564,7 +565,6 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         } catch (error) {
             console.error(error);
         }
-
     };
 
     /**
