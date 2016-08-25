@@ -22,12 +22,28 @@ angular.module("proton.embedded", [])
 
     const MIMETypeSupported = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
     const REGEXP_IS_INLINE = /^inline/i;
-    const REGEXP_CID_CLEAN = /[<>]+/g;
     const REGEXP_CID_START = /^cid:/g;
     const EMBEDDED_CLASSNAME = 'proton-embedded';
     const PREFIX_DRAFT = 'draft_';
     const DIV = document.createElement('DIV');
     const urlCreator = () => window.URL || window.webkitURL;
+
+    /**
+     * Removes enclosing quotes ("", '', &lt;&gt;) from a string
+     * @param {String} value - String to be converted
+     * @return {String} value - Converted string
+     */
+    const trimQuotes = (value) => {
+        value = (value || '').trim();
+
+        if ((value.charAt(0) === '"' && value.charAt(value.length - 1) === '"') ||
+            (value.charAt(0) === "'" && value.charAt(value.length - 1) === "'") ||
+            (value.charAt(0) === '<' && value.charAt(value.length - 1) === '>')) {
+            value = value.substr(1, value.length - 2);
+        }
+
+        return value;
+    };
 
     /**
      * Flush the container HTML and return the container
@@ -136,7 +152,7 @@ angular.module("proton.embedded", [])
                         if (Headers['content-id']) {
                             // remove the < >.
                             // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
-                            cid = Headers['content-id'].replace(REGEXP_CID_CLEAN, '');
+                            cid = trimQuotes(Headers['content-id']);
                         } else if (Headers['content-location']) {
                             // We can find an image without cid so base64 the location
                             cid = Headers['content-location'];
@@ -374,7 +390,7 @@ angular.module("proton.embedded", [])
 
         },
         getCid: function(headers) {
-            return headers && (headers['content-id'].replace(REGEXP_CID_CLEAN, '') || headers['content-location']);
+            return headers && (trimQuotes(headers['content-id']) || headers['content-location']);
         },
         getBlob: function(cid) {
             var xhr = new XMLHttpRequest();
@@ -404,7 +420,7 @@ angular.module("proton.embedded", [])
                 if (Headers['content-id']) {
                     // remove the < >.
                     // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
-                    cid = Headers['content-id'].replace(REGEXP_CID_CLEAN,'');
+                    cid = trimQuotes(Headers['content-id']);
                 } else if (Headers['content-location']) {
                     // We can find an image without cid so base64 the location
                     cid = Headers['content-location'];
