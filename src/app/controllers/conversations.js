@@ -355,7 +355,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if ($scope.conversations.length > 0) {
                 var element;
 
-                if ($scope.markedConversation === null) {
+                if (!$scope.markedConversation) {
                     if ($state.params.id) {
                         element = _.findWhere($scope.conversations, {ID: $state.params.id});
                     } else {
