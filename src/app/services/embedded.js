@@ -132,7 +132,7 @@ angular.module("proton.embedded", [])
     /**
      * @return {Boolean}
      */
-    var xray = function(message) {
+    const xray = (message) => {
         var attachs =  message.Attachments || [];
         message.NumEmbedded = 0;
 
@@ -200,13 +200,14 @@ angular.module("proton.embedded", [])
     };
 
     const extractAttachementName = (Headers = {}) => {
-
         if (Headers['content-disposition'] !== 'inline') {
             const splits = Headers['content-disposition'].split('filename=');
+
             if (splits.length > 0 && splits[1]) {
                 return splits[1].replace(/"/g, '');
             }
         }
+
         return '';
     };
 
@@ -447,23 +448,28 @@ angular.module("proton.embedded", [])
          */
         getUrl(node) {
             const attribute = node.getAttribute('data-embedded-img') || '';
-            const cid = attribute.replace('cid:', '');
-            console.log(cid, Blobs);
+            const cid = attribute.replace(REGEXP_CID_START, '');
             const { url = '' } = Blobs[cid] || {};
+            
             return url;
         },
 
         /**
          * Check if attachment exist
-         * @param  {src} cid:url
-         * @return {attach}
+         * @param  {Resource} message
+         * @param  {String} src - cid:url
+         * @return {Object}
          */
         getAttachment(message, src) {
-            if (xray(message) && CIDList[message.ID]) {
-                return (CIDList[message.ID][src.replace(REGEXP_CID_START, "")]) || {};
-            }
+            const cid = src.replace(REGEXP_CID_START, '');
+            const resultXray = xray(message);
+            const attachment = _.findWhere(message.Attachments, (att) => (trimQuotes(att.Headers['content-id']) === cid || att.Headers['content-location'] === cid));
 
-            return {};
+            if (resultXray && attachment) {
+                return attachment;
+            } else {
+                return {};
+            }
         }
 
 
