@@ -169,7 +169,7 @@ angular.module("proton.embedded", [])
                     }
                 });
 
-            return Object.keys(MAP[cid]).length > 0;
+            return Object.keys(CIDList[message.ID]).length > 0;
         }
 
         return false;
