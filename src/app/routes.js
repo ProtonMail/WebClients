@@ -162,6 +162,35 @@ angular.module('proton.routes', [
         }
     })
 
+    .state('reset-theme', {
+        url:  '/reset-theme',
+        resolve: {
+            reset: function(networkActivityTracker, Setting, notify, eventManager, gettextCatalog) {
+                networkActivityTracker.track(
+                    Setting.theme({Theme: '' })
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            notify({message: gettextCatalog.getString('Theme reset! Redirecting...', null), classes: 'notification-success'});
+                            eventManager.call().then(function() {
+                                deferred.resolve();
+                            });
+                        } else if (result.data && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                            deferred.reject();
+                        } else {
+                            notify({message: gettextCatalog.getString('Unable to reset theme', null, 'Error'), classes: 'notification-danger'});
+                            deferred.reject();
+                        }
+                    })
+                );
+            }
+        },
+        onEnter: function($state) {
+            $state.go('secured.inbox');
+            return;
+        }
+    })
+
     .state('subscription', {
         url: '/create/new?plan&billing&currency',
         params: {
