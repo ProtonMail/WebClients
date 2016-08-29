@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('transformBlockquotes', function(gettextCatalog) {
+.factory('transformBlockquotes', (gettextCatalog) => {
     const quotes = [
         '.protonmail_quote',
         '.gmail_quote',
@@ -12,16 +12,16 @@ angular.module('proton.message')
         '#reply139content',
         '#oriMsgHtmlSeperator',
         '#OLK_SRC_BODY_SECTION',
-        'blockquote'
+        'blockquote:last-child'
     ].join(',');
 
-    return function(html, message) {
-        var blockquote = html.querySelector(quotes);
+    return (html, message) => {
+        const blockquote = html.querySelector(quotes);
 
         if (blockquote) {
             if (blockquote.textContent.trim().length < html.textContent.trim().length) {
-                var button = document.createElement('button');
-                var title = gettextCatalog.getString('Show previous message', null, 'Title');
+                const button = document.createElement('button');
+                const title = gettextCatalog.getString('Show previous message', null, 'Title');
 
                 button.className = 'fa fa-ellipsis-h pm_button more proton-message-blockquote-toggle';
                 button.setAttribute('title', title);
