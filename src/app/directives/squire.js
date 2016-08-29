@@ -55,34 +55,13 @@ angular.module("proton.squire", [
             };
 
             function handleDrop(e) {
-              // let the user drop an image
               e.stopPropagation();
               e.preventDefault();
-              //console.log(e);
-              //drops are treated as multiple files. Only dealing with single files right now, so assume its the first object you're interested in
-              var file = e.dataTransfer.files[0];
-              //don't try to mess with non-image files
-              if (file.type.match('image.*')) {
-                //then we have an image,
 
-                //we have a file handle, need to read it with file reader!
-                var reader = new FileReader();
+              const file = e.dataTransfer.files[0];
 
-                // Closure to capture the file information.
-                reader.onload = (function(theFile) {
-                  //get the data uri
-                  var dataURI = theFile.target.result;
-                  // and inset the image
-                  editor.insertImage(dataURI,{class:'proton-embedded'});
-
-                });
-                //this reads in the file, and the onload event triggers,
-                // which adds the image to the div at the caret
-                reader.readAsDataURL(file);
-
-              }
+              insertImage(file);
             }
-
 
             ngModel.$isEmpty = function(value) {
                 if (angular.isString(value)) {
@@ -141,23 +120,32 @@ angular.module("proton.squire", [
                 }
             };
 
+            /**
+             * Insert data-uri image from File
+             * @param {File} file
+             */
+            function insertImage(file) {
+                const reader = new FileReader();
+
+                reader.addEventListener('load', () => {
+                    const dataURI = reader.result;
+
+                    editor.insertImage(dataURI, {class: 'proton-embedded'});
+                    scope.popoverHide($event, 'insertImage');
+                }, false);
+
+                if (file && file.type.match('image.*')) {
+                    reader.readAsDataURL(file);
+                }
+            }
+
             scope.insertDataUri = ($event) => {
                 const input = element[0].querySelector('input[type=file]');
 
                 input.onchange = (e) => {
                     const file = input.files[0];
-                    const reader = new FileReader();
 
-                    reader.addEventListener('load', () => {
-                        const dataURI = reader.result;
-
-                        editor.insertImage(dataURI, {class: 'proton-embedded'});
-                        scope.popoverHide($event, 'insertImage');
-                    }, false);
-
-                    if (file) {
-                        reader.readAsDataURL(file);
-                    }
+                    insertImage(file);
                 };
 
                 if (input && document.createEvent) {
