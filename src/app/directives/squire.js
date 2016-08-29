@@ -4,11 +4,12 @@ angular.module("proton.squire", [
 .directive("squire", function(tools, $rootScope, $timeout, authentication) {
     return {
         restrict: 'E',
-        require: "ngModel",
+        require: 'ngModel',
         priority: 99,
         scope: {
             ngModel: '=', // body
-            allowEmbedded: '='
+            allowEmbedded: '=',
+            allowDataUri: '='
         },
         replace: true,
         transclude: true,
@@ -137,6 +138,33 @@ angular.module("proton.squire", [
 
                     element.find('.squire-popover.' + name).show();
                     element.find('.squire-popover.' + name).find('input').focus().end();
+                }
+            };
+
+            scope.insertDataUri = ($event) => {
+                const input = element[0].querySelector('input[type=file]');
+
+                input.onchange = (e) => {
+                    const file = input.files[0];
+                    const reader = new FileReader();
+
+                    reader.addEventListener('load', () => {
+                        const dataURI = reader.result;
+
+                        editor.insertImage(dataURI, {class: 'proton-embedded'});
+                        scope.popoverHide($event, 'insertImage');
+                    }, false);
+
+                    if (file) {
+                        reader.readAsDataURL(file);
+                    }
+                };
+
+                if (input && document.createEvent) {
+                    const evt = document.createEvent('MouseEvents');
+
+                    evt.initEvent('click', true, false);
+                    input.dispatchEvent(evt);
                 }
             };
 
