@@ -23,21 +23,21 @@ angular.module('proton.message')
                 .all(promises)
                 .then((images) => {
                     _rAF(() => {
-                        images.forEach(({img, src}) => {
-                            const loader = img.parentElement;
-                            const container = loader.parentElement;
+                        images.forEach(({ img, src }) => {
                             img.src = src;
                             img.classList.add('proton-embedded');
-                            // img.removeAttribute('data-embedded-img');
-                            container.replaceChild(img, loader);
                         });
+
+                        // Remove all the loaders !
+                        const loader = body.querySelectorAll('.loading');
+                        if (loader.length) {
+                            $(loader).contents().unwrap();
+                        }
 
                         $rootScope.$emit('embedded.injected');
                     });
                 })
-                .catch((err) => {
-                    console.error(err);
-                });
+                .catch(console.error);
         };
 
         return {
