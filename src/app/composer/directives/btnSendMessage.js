@@ -21,7 +21,7 @@ angular.module('proton.composer')
                 case (msg.saving === true && msg.autosaving === false):
                     label = gettextCatalog.getString('Saving', null, 'Action');
                     break;
-                case (msg.allowSend && msg.allowSend()):
+                case (msg.disableSend && msg.disableSend()):
                     label = gettextCatalog.getString('Send', null, 'Action');
                     break;
                 default:
@@ -49,8 +49,8 @@ angular.module('proton.composer')
                     .$on('actionMessage', (e, message) => {
                         if (isCurrentMsg(message)) {
                             el[0].textContent = getLabel(message);
-                            if (message.allowSend) {
-                                el[0].disabled = message.allowSend();
+                            if (message.disableSend) {
+                                el[0].disabled = message.disableSend();
                             }
                         }
                     });

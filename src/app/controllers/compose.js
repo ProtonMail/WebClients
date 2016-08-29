@@ -337,6 +337,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.cancelAskEmbedding = function(message) {
         message.pendingAttachements = [];
         message.askEmbedding = false;
+        dispatchMessageAction(message);
     };
 
     $scope.processPending  = function(message, embedding){
@@ -413,7 +414,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                                 if($scope.isEmbedded) {
                                     $scope.$applyAsync(() => { $scope.processPending(message, true); $scope.dropEmbedded = false; });
                                 } else {
-                                    $scope.$applyAsync(() => { message.askEmbedding = true; });
+                                    $scope.$applyAsync(() => { message.askEmbedding = true;dispatchMessageAction(message); });
                                 }
                             } else {
                                 // force update the attachment counter
@@ -671,6 +672,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.uid = $scope.uid++;
         message.pendingAttachements = [];
         message.askEmbedding = false;
+        message.uploading = 0;
 
         sanitizeBody(message)
             .then((message) => {
@@ -1056,7 +1058,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         // We delay the validation to let the time for the autocomplete
         $timeout(function() {
             // Check if there is an attachment uploading
-            if (message.uploading === true) {
+            if (message.uploading > 0) {
                 deferred.reject('Wait for attachment to finish uploading or cancel upload.');
                 return false;
             }

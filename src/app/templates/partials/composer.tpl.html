@@ -272,7 +272,7 @@
                 <button class="pm_button"
                     action-message="::message"
                     action-message-type="addFile"
-                    ng-disabled="message.allowOthers() || message !== selected"
+                    ng-disabled="message.disableOthers() || message !== selected"
                     ng-class="{
                         'active': message.displayPanel && message.panelName == 'attachments',
                         'primary': message.Attachments && message.Attachments.length > 0
@@ -287,7 +287,7 @@
                     'active': message.displayPanel && message.panelName == 'encrypt',
                     'primary': message.IsEncrypted === 1
                 }"
-                ng-disabled="message.allowOthers() || message !== selected"
+                ng-disabled="message.disableOthers() || message !== selected"
                 pt-placement="top"
                 pt-tooltip-context="Action"
                 pt-tooltip-translate="Encryption"
@@ -301,7 +301,7 @@
                     'active': message.displayPanel && message.panelName == 'expiration',
                     'primary': message.ExpirationTime > 0
                 }"
-                ng-disabled="message.allowOthers() || message !== selected"
+                ng-disabled="message.disableOthers() || message !== selected"
                 pt-placement="top"
                 pt-tooltip-translate="Expiration time"
                 pt-tooltip-translate-context="Action"
@@ -311,11 +311,11 @@
                 </button>
                 <span class="text-muted saveAt" ng-show="message.Time" translate>Saved at {{ message.Time | date : "shortTime" }}</span>
                 <div class="pull-right">
-                    <button class="pm_button" ng-disabled="message.allowDiscard()" ng-click="discard(message)" pt-tooltip-translate="Delete draft" pt-placement="top" pt-tooltip-context="Action">
+                    <button class="pm_button" ng-disabled="message.disableDiscard()" ng-click="discard(message)" pt-tooltip-translate="Delete draft" pt-placement="top" pt-tooltip-context="Action">
                         <i class="fa fa-trash-o"></i>
                         <span ng-show="!!message.maximized" translate translate-context="Action">Discard</span>
                     </button>
-                    <button class="pm_button" ng-disabled="message.allowSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip-translate="Save" pt-placement="top" pt-tooltip-translate-context="Action">
+                    <button class="pm_button" ng-disabled="message.disableSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip-translate="Save" pt-placement="top" pt-tooltip-translate-context="Action">
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true" translate translate-context="Action">Save</span>
                     </button>

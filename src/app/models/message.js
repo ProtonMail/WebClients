@@ -196,20 +196,20 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
 
-        allowSend: function() {
-            return this.uploading > 0 || this.allowOthers();
+        disableSend: function() {
+            return this.uploading > 0 || this.disableOthers();
         },
 
-        allowSave: function() {
-            return this.allowSend();
+        disableSave: function() {
+            return this.disableSend();
         },
 
-        allowDiscard: function() {
-            return this.allowSend();
+        disableDiscard: function() {
+            return this.disableSend();
         },
 
-        allowOthers: function() {
-            return (this.saving === true && this.autosaving === false) || this.sending || this.encrypting;
+        disableOthers: function() {
+            return (this.saving === true && this.autosaving === false) || this.sending || this.encrypting || this.askEmbedding;
         },
 
         encryptBody: function(key) {
