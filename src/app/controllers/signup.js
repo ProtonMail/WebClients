@@ -514,13 +514,15 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
 
     $scope.doCreateUser = function() {
         var deferred = $q.defer();
+
         var params = {
             Username: $scope.account.Username,
             Password: $scope.account.loginPassword,
             Domain: $scope.account.domain.value,
             Email: $scope.account.notificationEmail,
             News: !!($scope.account.optIn),
-            PrivateKey: $scope.account.PrivateKey
+            PrivateKey: $scope.account.PrivateKey,
+            Referrer: $location.search().ref
         };
 
         if (angular.isDefined($rootScope.inviteToken)) {
