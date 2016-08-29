@@ -45,7 +45,7 @@
                     <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
                     <span class="contact">
                         <span class="from" ng-if="message.expand"><span translate>From</span>:</span>
-                        <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name': true }}</strong>
+                        <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name' }}</strong>
                         <em>
                             {{ message.Sender | contact:'Address' }}
                             <a class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a>
