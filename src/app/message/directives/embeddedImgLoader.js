@@ -29,7 +29,7 @@ angular.module('proton.message')
                         });
 
                         // Remove all the loaders !
-                        const loader = body.querySelectorAll('.loading');
+                        const loader = body ? body.querySelectorAll('.loading') : [];
                         if (loader.length) {
                             $(loader).contents().unwrap();
                         }
