@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('transformRemote', ($state, authentication, CONSTANTS) => {
+.factory('transformRemote', ($state, authentication, CONSTANTS, tools) => {
     const REGEXP_IS_BREAK = new RegExp('(svg|src=(?!"blob:|"cid:|"data:)|background=|poster=)', 'g');
     const REGEXP_IS_FIX = new RegExp('(proton-url|proton-src|proton-svg|proton-background|proton-poster)', 'g');
     const url = new RegExp(/url\(/ig);
@@ -19,6 +19,6 @@ angular.module('proton.message')
             message.showImages = showImages;
         }
 
-        return content;
+        return tools.fixRedirectExploits(content);
     };
 });
