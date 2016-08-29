@@ -254,17 +254,13 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('contact', function(gettextCatalog, authentication) {
-    return function(contact, parameter, me) {
+.filter('contact', (gettextCatalog, authentication) => {
+    return (contact, parameter) => {
         var same = contact.Address === contact.Name;
         var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
         var found = _.findWhere(authentication.user.Contacts, {Email: contact.Address});
-        var myself = _.findWhere(authentication.user.Addresses, {Email: contact.Address, Status: 1, Receive: 1});
 
-        if (me === true && angular.isDefined(myself)) {
-            /// if an email is sent to you, we replace the email with this string
-            return gettextCatalog.getString('Me', null);
-        } else if (parameter === 'Address') {
+        if (parameter === 'Address') {
             return '<' + contact.Address + '>';
         } else if (parameter === 'Name') {
             if (angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0 && found.Name !== found.Email) {
