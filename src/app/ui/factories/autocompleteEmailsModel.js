@@ -24,7 +24,7 @@ angular.module('proton.ui')
                 .first(10)
                 .map(({ Name, Email }) => {
                     const value = Email;
-                    const label = (Email === Name || !Name) ? Email : `${Name} (${Email})`;
+                    const label = (Email === Name || !Name) ? Email : `${Name} 	‹${Email}›`;
                     return { label, value };
                 })
                 .value();
