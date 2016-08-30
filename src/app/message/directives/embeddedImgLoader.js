@@ -9,6 +9,7 @@ angular.module('proton.message')
         const bindImagesUrl = (body) => {
             const $list = body ? body.querySelectorAll('[data-embedded-img]') : [];
             const promises = [].slice.call($list)
+                .filter((img) => img.src.indexOf('cid:') === -1) // Prevent Uncaught (in promise) TypeError: Illegal invocation
                 .map((img) => {
                     const src = embedded.getUrl(img);
                     const image  = new Image();
