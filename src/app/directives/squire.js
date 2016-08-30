@@ -60,7 +60,7 @@ angular.module("proton.squire", [
 
               const file = e.dataTransfer.files[0];
 
-              insertImage(file);
+              insertImage(file, e);
             }
 
             ngModel.$isEmpty = function(value) {
@@ -124,14 +124,14 @@ angular.module("proton.squire", [
              * Insert data-uri image from File
              * @param {File} file
              */
-            function insertImage(file) {
+            function insertImage(file, evt) {
                 const reader = new FileReader();
 
                 reader.addEventListener('load', () => {
                     const dataURI = reader.result;
 
                     editor.insertImage(dataURI, {class: 'proton-embedded'});
-                    scope.popoverHide($event, 'insertImage');
+                    scope.popoverHide(evt, 'insertImage');
                 }, false);
 
                 if (file && file.type.match('image.*')) {
@@ -145,7 +145,7 @@ angular.module("proton.squire", [
                 input.onchange = (e) => {
                     const file = input.files[0];
 
-                    insertImage(file);
+                    insertImage(file, $event);
                 };
 
                 if (input && document.createEvent) {
