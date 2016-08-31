@@ -169,7 +169,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         const message = $scope.messages[index];
 
         message.asEmbedded = asEmbedded;
-        params.dropzone.click();
+        dropzone.click();
     }));
 
     unsubscribe.push($rootScope.$on('sendMessage', function(event, element, msg) {
