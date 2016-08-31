@@ -224,7 +224,7 @@
                     ng-show="isOver && message.focussed && !preventDropbox"></div>
 
                     <squire
-                        ng-model="message.DecryptedBody"
+                        data-message="message"
                         allow-embedded="true"
                         ng-click="attHide(message); message.autocompletesFocussed = false;"></squire>
                 </div>
@@ -251,7 +251,7 @@
                 title="{{attachment.filename || attachment.Name}}"
                 class="preview-template pm_button"
                 id="attachment{{$index}}"
-                ng-repeat="attachment in message.Attachments"
+                ng-repeat="attachment in message.Attachments track by $id(attachment)"
                 ng-class="{ 'uploading': attachment.uploading }"
                 ng-init="initAttachment(attachment, $index)">
 
@@ -315,7 +315,7 @@
                         <i class="fa fa-trash-o"></i>
                         <span ng-show="!!message.maximized" translate translate-context="Action">Discard</span>
                     </button>
-                    <button class="pm_button" ng-disabled="message.disableSave() || message !== selected" ng-click="save(message, false, true, false)" pt-tooltip-translate="Save" pt-placement="top" pt-tooltip-translate-context="Action">
+                    <button class="pm_button" ng-disabled="message.disableSave() || message !== selected" ng-click="save(message, true, false)" pt-tooltip-translate="Save" pt-placement="top" pt-tooltip-translate-context="Action">
                         <i class="fa fa-floppy-o"></i>
                         <span ng-show="message.maximized === true" translate translate-context="Action">Save</span>
                     </button>

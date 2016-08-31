@@ -8,6 +8,7 @@ angular.module('proton.composer')
          */
         const getLabel = (msg) => {
             let label;
+
             switch(!!msg) {
                 case (msg.uploading > 0):
                     label = gettextCatalog.getString('Uploading', null, 'Action');
@@ -26,17 +27,19 @@ angular.module('proton.composer')
                     break;
                 default:
                     label = gettextCatalog.getString('Send', null, 'Action');
+                    break;
             }
 
             return label;
         };
+
 
         return {
             replace: true,
             scope: {
                 model: '=message'
             },
-            template: '<button></button>',
+            template: '<button class="btnSendMessage-btn-action"></button>',
             link(scope, el) {
 
                 const isCurrentMsg = (msg) => msg.ID === scope.model.ID;
@@ -49,6 +52,7 @@ angular.module('proton.composer')
                     .$on('actionMessage', (e, message) => {
                         if (isCurrentMsg(message)) {
                             el[0].textContent = getLabel(message);
+
                             if (message.disableSend) {
                                 el[0].disabled = message.disableSend();
                             }

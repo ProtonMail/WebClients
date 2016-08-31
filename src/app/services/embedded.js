@@ -56,6 +56,7 @@ angular.module("proton.embedded", [])
                 .each((node) => {
                     node.src = url;
                     node.setAttribute('data-embedded-img', cid);
+                    node.removeAttribute('data-src');
                     node.classList.add(EMBEDDED_CLASSNAME);
                 });
         },
@@ -105,16 +106,19 @@ angular.module("proton.embedded", [])
      * @param  {String} direction             Parsing to execute, blob || cid
      * @return {String}                       Parsed HTML
      */
-    const parse = (message, direction) => {
+    const parse = (message, direction, body) => {
         const testDiv = getBodyParser();
-        testDiv.innerHTML = message.getDecryptedBody();
+
+        // Escape  cid-errors
+        testDiv.innerHTML = body.replace(/src="cid/g, 'data-src="cid');
+
         Object
             .keys(CIDList[message.ID] || {})
             .forEach((cid, index) => {
                 const current = Blobs[cid];
                 const isContentLocation = (current) ? current.isContentLocation : false;
                 const url = (current) ? current.url : '';
-                const selector = (isContentLocation) ? `img[src="${cid}"]` : `img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"]`;
+                const selector = `img[src="${cid}"], img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`;
                 const nodes = [].slice.call(testDiv.querySelectorAll(selector));
 
                 if (nodes.length) {
@@ -144,11 +148,6 @@ angular.module("proton.embedded", [])
                 // Build a list of cids
                 attachs.forEach(({ Headers = {}, Name = '', MIMEType = '' }) => {
                     const disposition = Headers['content-disposition'];
-
-                    // console.log('Headers', Headers);
-                    // console.log('disposition', disposition);
-                    // console.log('REGEXP_IS_INLINE.test(disposition)', REGEXP_IS_INLINE.test(disposition));
-                    // console.log('MIMETypeSupported.indexOf(MIMEType) !== -1', MIMETypeSupported.indexOf(MIMEType) !== -1);
 
                     // BE require an inline content-disposition!
                     if (disposition && REGEXP_IS_INLINE.test(disposition) && MIMETypeSupported.indexOf(MIMEType) !== -1) {
@@ -187,10 +186,12 @@ angular.module("proton.embedded", [])
     // this should be rewritted a bit to work with
     // the service store
     const store = (message = { isDraft: angular.noop }, cid = '') => {
+
         const Attachments = CIDList[message.ID] || {};
         const { Headers = {}} = Attachments[cid] || {};
         const key = getHashKey(message);
         MAP_BLOBS[key] = MAP_BLOBS[key] || [];
+
         return (data, MIME) => {
             // Turn the decrypted attachment data into a blob.
             let blob = new Blob([data], {type: MIME});
@@ -263,9 +264,15 @@ angular.module("proton.embedded", [])
 
         // loop the CID list
         list
-            .forEach( function({ cid, attachment }) {
+            .forEach(({ cid, attachment }) => {
+
+            // For a draft if we close it before the end of the attachement upload, there are no keyPackets
+            if (!attachment.KeyPackets) {
+                console.warn('There is no keyPackets for this attachment', attachment);
+            }
+
             // Check if the CID is already stored
-            if (!Blobs[cid] && show) {
+            if (!Blobs[cid] && show && attachment.KeyPackets) {
                 processed = true;
 
                 var att, pk;
@@ -369,17 +376,28 @@ angular.module("proton.embedded", [])
 
     var embedded = {
         MIMETypeSupported,
-        parser(message, direction = 'blob') {
+
+        /**
+         * Parse a message in order to
+         *     - Find an lot its attachments
+         *     - Store blobs per attachment
+         *     - Bind blobs or cid to the body
+         * @param  {Message} message
+         * @param  {String} direction blob | cid
+         * @param  {String} text      Alternative body to parse
+         * @return {Promise}
+         */
+        parser(message, direction = 'blob', text = '') {
             CIDList = {};
 
-            var deferred = $q.defer(), content = message.getDecryptedBody();
+            var deferred = $q.defer(), content = text || message.getDecryptedBody();
 
-            if (xray(message)) {
+            if (xray(message, content)) {
                 // Check if the content has cid attachments
                 if (Object.keys(CIDList).length > 0) {
                     // Decrypt, then return the parsed content
-                    decrypt(message)
-                    .then(() => parse(message, direction))
+                    decrypt(message, content)
+                    .then(() => parse(message, direction, content))
                     .then((content) => {
                         deferred.resolve(content);
                     });
@@ -414,14 +432,16 @@ angular.module("proton.embedded", [])
 
             return deferred.promise;
         },
-        addEmbedded: function(message, cid, data, MIME){
+        addEmbedded(message, cid, data, MIME){
             store(message, cid)(data, MIME);
-            message.editor.insertImage(Blobs[ cid ].url, {'data-embedded-img': cid, class: 'proton-embedded'});
+            return Blobs[cid];
         },
-        removeEmbedded: function(message,Headers){
+        removeEmbedded(message, Headers, content = ''){
             const disposition = Headers['content-disposition'];
 
             if (disposition && REGEXP_IS_INLINE.test(disposition)) {
+
+                let cid;
 
                 if (Headers['content-id']) {
                     // remove the < >.
@@ -432,14 +452,14 @@ angular.module("proton.embedded", [])
                     cid = Headers['content-location'];
                 }
 
-                var tempDOM = angular.element('<div>').append(message.getDecryptedBody());
-                var nodes = tempDOM.find('img[data-embedded-img="cid:'+cid+'"]');
+                var tempDOM = $(`<div>${content || message.getDecryptedBody()}</div>`);
+                counterState.remove(message);
+                var nodes = tempDOM.find(`img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`);
                 if(nodes.length > 0) {
                     nodes.remove();
                 }
 
-                counterState.remove(message);
-                message.setDecryptedBody(tempDOM.html());
+                message.setDecryptedBody(tempDOM.html(), true);
             }
 
             return message.getDecryptedBody();

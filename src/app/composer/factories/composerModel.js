@@ -17,7 +17,7 @@ angular.module('proton.composer')
      */
     const kill = (uid) => {
         const list = read(uid);
-        list.length && list.forEach((promise) => promise.resolve()); // Kill them all !
+        list.length && list.forEach((promise) => promise.reject()); // Kill them all !
     };
 
     /**
