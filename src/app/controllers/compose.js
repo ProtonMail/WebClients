@@ -1521,13 +1521,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         };
 
 
-        const getPromises = (emails, keys) => {
+        const getPromises = (emails, keys = {}) => {
 
             let outsiders = false;
             const promises = _.chain(emails)
                 .map((email) => {
                     // Inside user
-                    if (keys && keys[email].length > 0) {
+                    if (keys[email] && keys[email].length > 0) {
                         // Encrypt content body in with the public key user
                         return insideUser(keys[email], email);
                     }
