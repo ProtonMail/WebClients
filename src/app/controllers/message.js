@@ -297,12 +297,15 @@ angular.module("proton.controllers.Message", ["proton.constants"])
      */
     $scope.displayImages = function() {
         $scope.message.showImages = true;
-        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformBlockquotes']));
+        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']));
     };
 
+    /**
+     * Load embedded content from attachments
+     */
     $scope.displayEmbedded = function() {
         $scope.message.showEmbedded = true;
-        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformBlockquotes']));
+        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformLinks', 'transformRemote', 'transformWelcome', 'transformBlockquotes']));
     };
 
     /**

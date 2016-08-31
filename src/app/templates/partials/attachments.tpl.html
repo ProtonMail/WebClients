@@ -17,7 +17,7 @@
     </header>
 
     <section>
-        <a ng-repeat="attachment in message.Attachments track by attachment.ID" class="pm_button" ng-class="{ 'dead': attachment.decrypting, 'remove': ('eo.reply' | includedByState) }" data-download-text="{{ 'Download' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment($event, attachment, message)">
+        <a ng-repeat="attachment in message.Attachments track by $id(attachment)" class="pm_button" ng-class="{ 'dead': attachment.decrypting, 'remove': ('eo.reply' | includedByState) }" data-download-text="{{ 'Download' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment($event, attachment, message)">
             <em></em>
             <i class="fa fa-file-o"         ng-show="!attachment.decrypting && !attachment.decrypted && attachment.Headers.embedded !== 1"></i>
             <i class="fa fa-archive-o"      ng-show="attachment.MIMEType.indexOf('zip')            !== -1 && !attachment.decrypting && !attachment.decrypted"></i>

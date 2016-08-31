@@ -8,7 +8,6 @@ angular.module('proton.message')
         const images = [].slice.call(html.querySelectorAll('img[src]'));
         const user = authentication.user || {ShowEmbedded:0};
         const show = message.showEmbedded === true || user.ShowEmbedded === 1;
-
         images.forEach((image) => {
             const src = image.getAttribute('src');
             const attachment = embedded.getAttachment(message, src);

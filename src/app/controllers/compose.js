@@ -128,13 +128,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     // When a message is updated we try to update the message
     unsubscribe.push($scope.$on('refreshMessage', function(event) {
         _.each($scope.messages, function(message) {
-            if (angular.isDefined(message.ID)) {
-                var messageCached = cache.getMessageCached(message.ID);
+            var messageCached = cache.getMessageCached(message.ID);
 
-                if (angular.isDefined(messageCached)) {
-                    message.Time = messageCached.Time;
-                    message.ConversationID = messageCached.ConversationID;
-                }
+            if (angular.isDefined(messageCached)) {
+                message.Time = messageCached.Time;
+                message.ConversationID = messageCached.ConversationID;
             }
         });
     }));
@@ -165,17 +163,22 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     }));
 
-    unsubscribe.push($rootScope.$on('addFile', function(event, params) {
-        $scope.isEmbedded = params.isEmbedded;
+    unsubscribe.push($rootScope.$on('addFile', function(event, element, asEmbedded) {
+        const composer = $(element).parents('.composer');
+        const index = $('.composer').index(composer);
+        const message = $scope.messages[index];
+
+        message.asEmbedded = asEmbedded;
         params.dropzone.click();
     }));
 
 
     unsubscribe.push($rootScope.$on('sendMessage', function(event, element, msg) {
         if (element) {
-            var composer = $(element).parents('.composer');
-            var index = $('.composer').index(composer);
-            var message = $scope.messages[index];
+            const composer = $(element).parents('.composer');
+            const index = $('.composer').index(composer);
+            const message = $scope.messages[index];
+
             message && $scope.send(message);
         }
 
@@ -261,17 +264,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     function onDragEnter(event) {
-
         /* /!\ force digest over state change */
         $scope.$applyAsync(function() {
             $scope.isOver = true;
         });
-
     }
 
     function onDragStart(event) {
         $scope.preventDropbox = true;
-        $scope.isEmbedded = false;
     }
 
     function onMouseOver(event) {
@@ -321,6 +321,62 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     };
 
+    /**
+      * Convert data-uri to blob
+      * @param {String} dataURI
+      * @return {Blob}
+      */
+    function dataURItoBlob(dataURI) {
+        // convert base64 to raw binary data held in a string
+        // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+        const byteString = atob(dataURI.split(',')[1]);
+        // separate out the mime component
+        const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+        // write the bytes of the string to an ArrayBuffer
+        const ab = new ArrayBuffer(byteString.length);
+        const dw = new DataView(ab);
+
+        for (let i = 0; i < byteString.length; i++) {
+            dw.setUint8(i, byteString.charCodeAt(i));
+        }
+
+        // write the ArrayBuffer to a blob, and you're done
+        return new Blob([ab], {type: mimeString});
+    }
+
+    /**
+    * Transform every data-uri in the messsage content to embedded attachment
+    * @param {Resource} message
+    * @return {Promise}
+    */
+    function extractDataURI(message) {
+        const content = message.getDecryptedBody();
+        const testDiv = document.createElement('DIV');
+
+        testDiv.innerHTML = content;
+
+        const images = testDiv.querySelectorAll('img[src^="data:image"]');
+        const promises = [].slice.call(images).map((image) => {
+            const file = dataURItoBlob(image.src);
+
+            file.name = image.alt ||  'image' + Date.now();
+            file.inline = 1;
+
+            return addAttachment(file, message, false)
+            .then((cid) => {
+                image.setAttribute('data-embedded-img', cid);
+                image.src = embedded.getUrl(image);
+            });
+        });
+
+        return Promise.all(promises)
+        .then(() => {
+            message.setDecryptedBody(testDiv.innerHTML);
+            message.editor && message.editor.fireEvent('refresh', {Body: message.getDecryptedBody()});
+            return message;
+        });
+    }
+
     $scope.disabledNotify = function() {
         notify({message: 'Attachments and inline images must be removed first before changing sender', classes: 'notification-danger'});
     };
@@ -337,22 +393,25 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.cancelAskEmbedding = function(message) {
         message.pendingAttachements = [];
         message.askEmbedding = false;
+        delete message.asEmbedded;
         dispatchMessageAction(message);
     };
 
     $scope.processPending  = function(message, embedding){
-        _.forEach(message.pendingAttachements, function (file) {
+        const promises = _.map(message.pendingAttachements, function (file) {
             if (embedding) {
                 // required for BE to get a cid-header
                 file.inline = 1;
             }
-
-            $scope.addAttachment(file, message);
-
+            return addAttachment(file, message, true);
         });
 
-        // close the dialog
-        $scope.cancelAskEmbedding(message);
+        $q
+            .all(promises)
+            .then(() => recordMessage(message, false, false));
+
+                // close the dialog
+                $scope.cancelAskEmbedding(message);
     };
 
 
@@ -361,9 +420,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             options: {
                 addRemoveLinks: false,
                 dictDefaultMessage: gettextCatalog.getString('Drop a file here to upload', null, 'Info'),
-                url: "/file/post",
+                url: '/file/post',
                 autoProcessQueue: false,
-                paramName: "file", // The name that will be used to transfer the file
+                paramName: 'file', // The name that will be used to transfer the file
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
                 accept(file, done) {
@@ -400,36 +459,31 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         message.queuedFiles++;
                         message.queuedFilesSize += file.size;
 
-                        var process = function() {
-                            message.queuedFiles--;
-                            message.queuedFilesSize -= file.size;
+                        // check if embedded before upload!
+                        const isImg = embedded.MIMETypeSupported.indexOf(file.type) !== -1;
 
-                            // check if embedded before upload!
-                            var isImg = embedded.MIMETypeSupported.indexOf(file.type) !== -1;
+                        if (isImg) {
+                            message.pendingAttachements.push(file);
+                            // add attachment with embeded and include the img ?
+                            dropzone.removeFile(file);
 
-                            if (isImg) {
-                                message.pendingAttachements.push(file);
-                                // add attachment with embeded and include the img ?
-                                dropzone.removeFile(file);
-                                if($scope.isEmbedded) {
-                                    $scope.$applyAsync(() => { $scope.processPending(message, true); $scope.dropEmbedded = false; });
-                                } else {
-                                    $scope.$applyAsync(() => { message.askEmbedding = true;dispatchMessageAction(message); });
-                                }
+                            if (message.asEmbedded === true) {
+                                $scope.$applyAsync(() => {
+                                    $scope.processPending(message, true);
+                                });
                             } else {
-                                // force update the attachment counter
-                                $scope.addAttachment(file, message).finally(function () {
-                                    dropzone.removeFile(file);
+                                $scope.$applyAsync(() => {
+                                    message.askEmbedding = true;
+                                    dispatchMessageAction(message);
                                 });
                             }
-                        };
-
-                        // Defer the code execution if the draft is still not saved
-                        if (angular.isUndefined(message.ID)) {
-                            recordMessage(message, false, false, false)
-                            .then(process);
                         } else {
-                            process();
+                            addAttachment(file, message, true)
+                            .then(() => {
+                                message.queuedFiles--;
+                                message.queuedFilesSize -= file.size;
+                                dropzone.removeFile(file);
+                            });
                         }
 
                         done();
@@ -529,9 +583,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         // Need to be careful if there are currently-uploading attachments, an do autosave first
     };
 
-    $scope.addAttachment = function(file, message) {
+    function addAttachment(file, message, insert = true) {
         var tempPacket = {};
-
+        const deferred = $q.defer();
         tempPacket.filename = file.name;
         tempPacket.uploading = true;
         tempPacket.Size = file.size;
@@ -563,11 +617,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             dispatchMessageAction(message);
         };
 
-        return attachments.load(file, message.From.Keys[0].PublicKey).then(
-            function(packets) {
+        attachments
+            .load(file, message.From.Keys[0].PublicKey)
+            .then(function(packets) {
                 var preview = packets.Preview;
 
-                return attachments
+                attachments
                     .upload(packets, message, tempPacket)
                         .then((result = {}) => {
 
@@ -575,26 +630,38 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                             // Extract content-id even if there are no headers
                             const contentId = (result.Headers || {})['content-id'] || '';
+                            const cid = contentId.replace(/[<>]+/g, '');
 
                             if (contentId && file.inline === 1) {
-                                var cid = contentId.replace(/[<>]+/g,'');
                                 result.Headers.embedded = 1;
-                                embedded.addEmbedded(message,cid,preview, result.MIMEType);
+                                const blobItem = embedded.addEmbedded(message, cid, preview, result.MIMEType);
+
+                                if (insert && message.editor) {
+                                    // If we close the composer the editor won't exist anymore but maybe we were uploading an attchement
+                                    message.editor.insertImage(blobItem.url, {'data-embedded-img': cid, class: 'proton-embedded'});
+                                }
                             }
 
+                            deferred.resolve(cid);
                         })
                         .catch((error) =>  {
                             cleanup();
                             console.error(error);
+                            deferred.reject(error);
                             notify({message: 'Error during file upload', classes: 'notification-danger'});
                         });
             },
             function(error) {
                 cleanup();
+                deferred.reject(error);
                 notify({message: 'Error encrypting attachment', classes: 'notification-danger'});
             }
         );
-    };
+
+        composerRequestModel.save(message, deferred);
+
+        return deferred.promise;
+    }
 
     $scope.removeAttachment = function(attachment, message) {
 
@@ -611,8 +678,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             if (angular.isDefined(data) && data.Code === 1000) {
                 // Attachment removed, may remove embedded ref
-                message.setDecryptedBody(embedded.removeEmbedded(message, headers));
-                message.editor && message.editor.fireEvent('refresh', {Body: message.getDecryptedBody()});
+                message.editor && message.editor.fireEvent('refresh', {
+                    action: 'attachment.remove',
+                    data: headers
+                });
+
             } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
                 message.Attachments.push(attachment);
@@ -632,9 +702,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     /**
      * Add message in composer list
      * @param {Object} message
-     * @param {Boolean} save
      */
-    function initMessage(message, save) {
+    function initMessage(message) {
 
         if (authentication.user.Delinquent < 3) {
             // Not in the delinquent state
@@ -672,29 +741,24 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.uid = $scope.uid++;
         message.pendingAttachements = [];
         message.askEmbedding = false;
+        delete message.asEmbedded;
         message.uploading = 0;
+        message.sending = false;
 
-        sanitizeBody(message)
-            .then((message) => {
-
+        $scope
+            .$applyAsync(() => {
                 $scope.messages.unshift(message);
                 $scope.isOver = false;
 
                 // This timeout is really important to load the structure of Squire
-                $timeout(function() {
-                    // forward case: we need to save to get the attachments
-                    // embedded case: if has embedded image we have to save the attachments
-                    if (save === true) {
-                        recordMessage(message, save, false).then(function() { // message, forward, notification
-                            $scope.decryptAttachments(message);
-                            sanitizeBody(message);
-                            $scope.composerStyle();
-                        }, function(error) {
-                            $log.error(error);
-                        });
-                    } else {
+                $timeout(() => {
+                    recordMessage(message, false, false).then(() => { // message, notification, autosaving
+                        $scope.decryptAttachments(message);
+                        // sanitizeBody(message);
                         $scope.composerStyle();
-                    }
+                    }, (error) => {
+                        $log.error(error);
+                    });
                 }, 100, false);
             });
     }
@@ -902,8 +966,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
              * so we will set the listener after a delay.
              * Then the message will be saved every 3s.
              */
-            $timeout(() => {
-                message.editor.addEventListener('input', _.debounce(() => $scope.saveLater(message), CONSTANTS.SAVE_TIMEOUT_TIME));
+            message.defferredSaveLater = $timeout(() => {
+                message.editor.addEventListener('input', _.debounce(() => {
+                    $scope.saveLater(message);
+                }, CONSTANTS.SAVE_TIMEOUT_TIME));
             }, CONSTANTS.SAVE_TIMEOUT_TIME, false);
 
             message.editor.addEventListener('dragstart', onDragStart);
@@ -1046,7 +1112,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * Delay the saving
      * @param {Object} message
      */
-    $scope.saveLater = (message) => recordMessage(message, false, false, true);
+    $scope.saveLater = (message) => recordMessage(message, false, true);
 
     $scope.validate = function(message) {
         var deferred = $q.defer();
@@ -1109,29 +1175,65 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.setDecryptedBody(messageBuilder.updateSignature(message));
         message.editor && message.editor.fireEvent('refresh', {Body: message.getDecryptedBody()});
         // save when DOM is updated
-        recordMessage(message, false, false, true);
+        recordMessage(message, false, true);
     };
 
-    $scope.save = (message, forward, notification, autosaving) => {
+    $scope.save = (message, notification, autosaving) => {
         const msg = new Message(message);
         return embedded
             .parser(msg,'cid')
             .then((result) => {
                 msg.Body = result;
-                return recordMessage(msg, forward, notification, autosaving);
+                return recordMessage(msg, notification, autosaving);
             });
     };
 
+    /**
+     * Handle the draft request
+     * @param {Object} parameters
+     * @param {Integer} type
+     * @return {Promise}
+     */
+    function draftRequest(parameters, type) {
+        const deferred = $q.defer();
+        const CREATE = 1;
+        const UPDATE = 2;
+        let errorMessage = gettextCatalog.getString('Saving draft failed, please try again', null, 'Info');
+        let promise;
+
+        if (type === UPDATE) {
+            promise = Message.updateDraft(parameters).$promise;
+        } else if (type === CREATE) {
+            promise = Message.createDraft(parameters).$promise;
+        }
+
+        promise
+        .then((data) => {
+            if (data && (data.Code === 1000 || data.Code === 15033)) {
+                deferred.resolve(data);
+            } else if (data && data.Error) {
+                deferred.reject(data.Error);
+            } else {
+                deferred.reject(errorMessage);
+            }
+        }, () => {
+            deferred.reject(errorMessage);
+        });
+
+        return deferred.promise;
+    }
 
     /**
      * Save the Message
      * @param {Resource} message - Message to save
-     * @param {Boolean} forward - Forward case
      * @param {Boolean} notification - Add a notification when the saving is complete
      * @param {Boolean} autosaving
      */
-    function recordMessage(message, forward, notification, autosaving) {
+    function recordMessage(message, notification, autosaving) {
         // Variables
+        var CREATE = 1;
+        var UPDATE = 2;
+        var actionType;
         var deferred = $q.defer();
         var parameters = {
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
@@ -1175,6 +1277,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         parameters.Message.AddressID = message.From.ID;
+        parameters.Message.Packages = [];
 
         // Encrypt message body with the first public key for the From address
         composerRequestModel.chain(message)
@@ -1183,125 +1286,105 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 message.ID = ID;
                 parameters.id = ID;
             }
-            embedded.parser(message, 'cid')
-            .then((body) => {
-                message.setDecryptedBody(body);
-                message.encryptBody(message.From.Keys[0].PublicKey)
-                .then(function(result) {
-                    var draftPromise;
-                    var CREATE = 1;
-                    var UPDATE = 2;
-                    var actionType;
+            return embedded.parser(message, 'cid');
+        })
+        .then((body) => (message.setDecryptedBody(body), message))
+        .then(() => {
+            if (autosaving && message.Attachments.length && message.Attachments.every(({ uploading }) => uploading !== true)) {
+                return encryptUserBody(message, deferred, parameters.Message.Packages)
+                    .insideUser(message.From.Keys[0].PublicKey, message.From.Email);
+            }
 
-                    // Set encrypted body
-                    parameters.Message.Body = result;
+            return message.encryptBody(message.From.Keys[0].PublicKey);
+        })
+        .then(function(result) {
+            var draftPromise;
+            // Set encrypted body
+            parameters.Message.Body = result;
 
-                    if (message.ID) {
-                        draftPromise = Message.updateDraft(parameters).$promise;
-                        actionType = UPDATE;
-                    } else {
-                        draftPromise = Message.createDraft(parameters).$promise;
-                        actionType = CREATE;
+            if (message.ID) {
+                actionType = UPDATE;
+            } else {
+                actionType = CREATE;
+            }
+
+            draftPromise = draftRequest(parameters, actionType);
+
+            // Save draft before to send
+            return draftPromise
+            .then((result) => {
+                if (result.Code === 1000) {
+                    var events = [];
+                    var conversation = cache.getConversationCached(result.Message.ConversationID);
+                    var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
+                    var numMessages;
+
+                    if (actionType === CREATE) {
+                        numMessages = angular.isDefined(conversation) ? (conversation.NumMessages + 1) : 1;
+                        message.ID = result.Message.ID;
+                    } else if (actionType === UPDATE) {
+                        numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
                     }
 
-                    // Save draft before to send
-                    draftPromise
-                    .then(function(result) {
-                        if (angular.isDefined(result) && result.Code === 1000) {
-                            var events = [];
-                            var conversation = cache.getConversationCached(result.Message.ConversationID);
-                            var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
-                            var numMessages;
+                    message.IsRead = result.Message.IsRead;
+                    message.Time = result.Message.Time;
+                    message.Type = result.Message.Type;
+                    message.LabelIDs = result.Message.LabelIDs;
 
-                            if (actionType === CREATE) {
-                                numMessages = angular.isDefined(conversation) ? (conversation.NumMessages + 1) : 1;
-                                message.ID = result.Message.ID;
-                            } else if (actionType === UPDATE) {
-                                numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
-                            }
+                    if (result.Message.Attachments.length > 0) {
+                        message.Attachments = syncAttachmentsRemote(message.Attachments, result.Message.Attachments);
+                    }
 
-                            message.IsRead = result.Message.IsRead;
-                            message.Time = result.Message.Time;
-                            message.Type = result.Message.Type;
-                            message.LabelIDs = result.Message.LabelIDs;
+                    result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
+                    result.Message.Recipients = _.uniq(result.Message.ToList.concat(result.Message.CCList).concat(result.Message.BCCList)); // The back-end doesn't return Recipients
 
-                            if (forward === true && result.Message.Attachments.length > 0) {
-                                message.Attachments = result.Message.Attachments;
-                                if (message.Attachments.length > message.NumEmbedded) {
-                                    message.attachmentsToggle = true;
-                                }
-                            }
+                    // Update draft in message list
+                    events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
 
-                            result.Message.Senders = [result.Message.Sender]; // The back-end doesn't return Senders so need a trick
-                            result.Message.Recipients = _.uniq(result.Message.ToList.concat(result.Message.CCList).concat(result.Message.BCCList)); // The back-end doesn't return Recipients
+                    // Generate conversation event
+                    const firstConversation = {
+                        Recipients: result.Message.Recipients,
+                        Senders: result.Message.Senders,
+                        Subject: result.Message.Subject
+                    };
 
-                            // Update draft in message list
-                            events.push({Action: actionType, ID: result.Message.ID, Message: result.Message});
-
-                            // Generate conversation event
-                            const firstConversation = {
-                                Recipients: result.Message.Recipients,
-                                Senders: result.Message.Senders,
-                                Subject: result.Message.Subject
-                            };
-
-                            // Generate conversation event
-                            events.push({
-                                Action: 3,
-                                ID: result.Message.ConversationID,
-                                Conversation: angular.extend({
-                                    NumAttachments: result.Message.Attachments.length, // it's fine
-                                    NumMessages: numMessages,
-                                    NumUnread: numUnread,
-                                    ID: result.Message.ConversationID,
-                                    LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
-                                }, numMessages === 1 ? firstConversation : {})
-                            });
-
-                            // Send events
-                            cache.events(events);
-
-                            if (notification === true) {
-                                notify({message: gettextCatalog.getString('Message saved', null), classes: 'notification-success'});
-                            }
-
-                            message.saving = false;
-                            message.autosaving = false;
-                            dispatchMessageAction(message);
-
-                            deferred.resolve(result.Message);
-                        } else if (angular.isDefined(result) && result.Code === 15033) {
-                            // Case where the user delete draft in an other terminal
-                            delete parameters.id;
-                            Message.createDraft(parameters).$promise.then((result) => deferred.resolve(result.Message));
-                        } else if (angular.isDefined(result) && result.Error) {
-
-                            // Errors from backend
-                            message.saving = false;
-                            message.autosaving = false;
-                            dispatchMessageAction(message);
-                            deferred.reject(result.Error);
-                        } else {
-                            message.saving = false;
-                            message.autosaving = false;
-                            dispatchMessageAction(message);
-                            deferred.reject(result);
-                        }
-                    }, function(error) {
-                        message.saving = false;
-                        message.autosaving = false;
-                        dispatchMessageAction(message);
-                        error.message = 'Error during the draft request';
-                        deferred.reject(error);
+                    // Generate conversation event
+                    events.push({
+                        Action: 3,
+                        ID: result.Message.ConversationID,
+                        Conversation: angular.extend({
+                            NumAttachments: result.Message.Attachments.length, // it's fine
+                            NumMessages: numMessages,
+                            NumUnread: numUnread,
+                            ID: result.Message.ConversationID,
+                            LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                        }, numMessages === 1 ? firstConversation : {})
                     });
-                }, function(error) {
+
+                    // Send events
+                    cache.events(events);
+
+                    if (notification === true) {
+                        notify({message: gettextCatalog.getString('Message saved', null), classes: 'notification-success'});
+                    }
+
                     message.saving = false;
                     message.autosaving = false;
                     dispatchMessageAction(message);
-                    error.message = 'Error encrypting message';
-                    deferred.reject(error);
-                });
+                    deferred.resolve(result.Message);
+                } else if (result.Code === 15033) {
+                    // Case where the user delete draft in an other terminal
+                    delete parameters.id;
+                    Message.createDraft(parameters).$promise.then((result) => deferred.resolve(result.Message));
+                }
             });
+        })
+        .catch((error) => {
+            message.saving = false;
+            message.autosaving = false;
+            dispatchMessageAction(message);
+            composerRequestModel.clear(message);
+            deferred.reject(error);
         });
 
         if (autosaving === false) {
@@ -1311,6 +1394,25 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         composerRequestModel.save(message, deferred);
 
         return deferred.promise;
+    }
+
+    /**
+     * Extend local attachements for a message with remote's
+     * @param  {Array} collection Attachements from the message
+     * @param  {Array} list       Attachements from the remote
+     * @return {Array}            Merge
+     */
+    function syncAttachmentsRemote(collection, list) {
+        return list
+            .reduce((acc, att = {}) => {
+                // Find if attachement already exists
+                const item = _.filter(collection, ({ AttachmentID, ID }) => ID === att.ID || AttachmentID === att.ID)[0];
+
+                const data = angular.extend({}, item, att);
+
+                acc.push(data);
+                return acc;
+            }, []);
     }
 
     /**
@@ -1325,7 +1427,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * And ask the user to send anyway
      * @param {Object} message
      */
-    $scope.checkSubject = function(message) {
+     function checkSubject(message) {
         var deferred = $q.defer();
         var title = gettextCatalog.getString('No subject', null, 'Title');
         var text = gettextCatalog.getString('No subject, send anyway?', null, 'Info');
@@ -1351,11 +1453,154 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
 
         return deferred.promise;
-    };
+    }
 
     function dispatchMessageAction(message) {
         $rootScope.$emit('actionMessage', message);
     }
+
+    /**
+     * Generate a sessionKey for attachements if they don't have one
+     * @param  {Message} message
+     * @return {Promise}
+     */
+    function getSessionKey(message) {
+        const keys = authentication.getPrivateKeys(message.From.ID);
+        const promises = _.chain(message.Attachments)
+            .filter((attachment) => !attachment.sessionKey)
+            .map((attachment) =>  {
+                // decode key packets
+                const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+                return pmcw
+                    .decryptSessionKey(keyPackets, keys)
+                    .then((sessionKey) => (attachment.sessionKey = sessionKey, attachment))
+                    .catch($log.error);
+            })
+            .value();
+
+        return $q.all(promises);
+    }
+
+    function encryptUserBody(message, deferred, Packages) {
+        const insideUser = (key, Address) => {
+            return message
+                .encryptBody(key)
+                .then((Body) => {
+                    return getSessionKey(message)
+                        .then(() => message.encryptPackets(key))
+                        .then((KeyPackets) => (Packages.push({ Address, Type: 1, Body, KeyPackets}), Body));
+                }, deferred.reject);
+        };
+
+        const outsideUser = (Token, Address) => {
+            return pmcw
+                .encryptMessage(Token, [], message.Password)
+                .then((EncToken) => {
+                    // return getSessionKey(message)
+                    //     .then(pmcw.encryptMessage(message.getDecryptedBody(), [], message.Password))
+                    return pmcw
+                        .encryptMessage(message.getDecryptedBody(), [], message.Password)
+                        .then((Body) => {
+                            return message
+                                .encryptPackets('', message.Password)
+                                .then((KeyPackets) => {
+                                    return Packages
+                                        .push({
+                                            Type: 2,
+                                            PasswordHint: message.PasswordHint,
+                                            Address, Token, Body, KeyPackets, EncToken
+                                        });
+                            });
+                        });
+
+                })
+                .catch((error) => {
+                    message.encrypting = false;
+                    dispatchMessageAction(message);
+                    $log.error(error);
+                });
+        };
+
+
+        const getPromises = (emails, keys) => {
+
+            let outsiders = false;
+            const promises = _.chain(emails)
+                .map((email) => {
+                    // Inside user
+                    if (keys && keys[email].length > 0) {
+                        // Encrypt content body in with the public key user
+                        return insideUser(keys[email], email);
+                    }
+                    // Outside user
+                    else {
+                        outsiders = true;
+
+                        if (message.IsEncrypted === 1) {
+                            return outsideUser(message.generateReplyToken(), email);
+                        }
+                    }
+                })
+                .filter(Boolean)
+                .value();
+
+            return { outsiders, promises };
+        };
+
+        return { getPromises, insideUser };
+    }
+
+    function encryptBodyFromEmails(message, emails, parameters, deferred) {
+        return message
+            .getPublicKeys(emails)
+            .then((result) => {
+
+                if (result.data && result.data.Code === 1000) {
+                    var keys = result.data; // Save result in keys variables
+                    parameters.Packages = [];
+
+                    const encryptingBody = encryptUserBody(message, deferred, parameters.Packages)
+                        .getPromises(emails, keys);
+
+                    let outsiders = encryptingBody.outsiders; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
+
+                    let promises = encryptingBody.promises;
+
+
+                    // If there are some outsiders
+                    if (outsiders === true && message.Password.length === 0) {
+                        parameters.AttachmentKeys = [];
+                        parameters.ClearBody = message.getDecryptedBody(); // Add a clear body in parameter
+
+                        if (message.Attachments.length > 0) {
+                            // Add clear attachments packet in parameter
+                            promises.push(
+                                message
+                                    .clearPackets()
+                                    .then((packets) => parameters.AttachmentKeys = packets)
+                                    .catch(deferred.reject)
+                            );
+                        }
+                    }
+
+                    return { outsiders, promises };
+
+                } else {
+                    message.encrypting = false;
+                    dispatchMessageAction(message);
+                    error.message = 'Error during get public keys user request';
+                    deferred.reject(error);
+                }
+            })
+            .catch((error) => {
+                message.encrypting = false;
+                dispatchMessageAction(message);
+                error.message = 'Error getting the public key';
+                deferred.reject(error);
+            });
+    }
+
+
 
     /**
      * Try to send message specified
@@ -1366,202 +1611,100 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         const message = new Message(msg);
         message.Password = message.Password || '';
         message.PasswordHint = message.PasswordHint || '';
+        message.sending = true;
+        dispatchMessageAction(message);
 
         var deferred = $q.defer();
+        var parameters = {};
 
         $scope.validate(message)
-        .then(function() {
-            return recordMessage(message, false, false, false)
-            .then(function(messageSaved) {
-                message.ID = messageSaved.ID;
-                $scope.checkSubject(message).then(function() {
-                    message.encrypting = true;
+        .then(() => extractDataURI(message))
+        .then(() => recordMessage(message, false, false))
+        .then((messageSaved) => (message.ID = messageSaved.ID, message))
+        .then(checkSubject(message))
+        .then(() => {
+            message.encrypting = true;
+            dispatchMessageAction(message);
+            parameters.id = message.ID;
+            parameters.ExpirationTime = message.ExpirationTime;
+            return message.emailsToString();
+        })
+        .then((emails) => encryptBodyFromEmails(message, emails, parameters, deferred))
+        .then(({ promises, outsiders }) => {
+            // When all promises are complete
+            $q.all(promises).then(function() {
+
+                if (outsiders === true && message.Password.length === 0 && message.ExpirationTime) {
+                    $log.error(message);
+                    message.encrypting = false;
+                    message.sending = false;
                     dispatchMessageAction(message);
-                    var parameters = {};
-                    var emails = message.emailsToString();
+                    return deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
+                } else {
+                    message.encrypting = false;
+                    dispatchMessageAction(message);
+                    return Message.send(parameters).$promise;
+                }
+            })
+            .then((result = {}) => {
+                const { Parent, Sent = {} } = result;
 
-                    parameters.id = message.ID;
-                    parameters.ExpirationTime = message.ExpirationTime;
+                if (angular.isDefined(result.Error)) {
+                    return deferred.reject(new Error(result.Error));
+                }
 
-                    message.getPublicKeys(emails)
-                    .then(function(result) {
+                var events = [];
+                var messages = cache.queryMessagesCached(Sent.ConversationID);
+                var conversation = cache.getConversationCached(Sent.ConversationID);
+                var numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
+                var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
 
-                        if (result.data && result.data.Code === 1000) {
-                            var keys = result.data; // Save result in keys variables
-                            var outsiders = false; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
-                            var promises = [];
+                result.Sent.Senders = [Sent.Sender]; // The back-end doesn't return Senders so need a trick
+                result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
+                events.push({Action: 3, ID: Sent.ID, Message: Sent}); // Generate event for this message
 
-                            parameters.Packages = [];
+                if (Parent) {
+                    events.push({Action: 3, ID: Parent.ID, Message: Parent});
+                }
 
-                            _.each(emails, function(email) {
-                                // Inside user
-                                if (keys && keys[email].length > 0) {
-                                    var key = keys[email];
-
-                                    // Encrypt content body in with the public key user
-                                    const encryptingPromise = message
-                                        .encryptBody(key)
-                                        .then((result) => {
-                                            const Body = result;
-                                            // Encrypt attachments with the public key
-                                            return message
-                                                .encryptPackets(key)
-                                                .then((keyPackets) => {
-                                                    return parameters
-                                                        .Packages
-                                                        .push({
-                                                            Address: email,
-                                                            Type: 1,
-                                                            Body, KeyPackets: keyPackets
-                                                        });
-                                                });
-                                        }, deferred.reject);
-                                    promises.push(encryptingPromise);
-                                }
-                                // Outside user
-                                else {
-                                    outsiders = true;
-
-                                    if (message.IsEncrypted === 1) {
-                                        var replyToken = message.generateReplyToken();
-                                        var replyTokenPromise = pmcw.encryptMessage(replyToken, [], message.Password);
-
-                                        promises.push(replyTokenPromise.then(function(encryptedToken) {
-                                            return pmcw.encryptMessage(message.getDecryptedBody(), [], message.Password).then(function(result) {
-
-                                                var body = result;
-
-                                                return message.encryptPackets('', message.Password).then(function(result) {
-                                                    var keyPackets = result;
-
-                                                    return parameters.Packages.push({Address: email, Type: 2, Body: body, KeyPackets: keyPackets, PasswordHint: message.PasswordHint, Token: replyToken, EncToken: encryptedToken});
-                                                }, function(error) {
-                                                    message.encrypting = false;
-                                                    dispatchMessageAction(message);
-                                                    $log.error(error);
-                                                });
-                                            }, function(error) {
-                                                message.encrypting = false;
-                                                dispatchMessageAction(message);
-                                                $log.error(error);
-                                            });
-
-                                        }, function(error) {
-                                            message.encrypting = false;
-                                            dispatchMessageAction(message);
-                                            $log.error(error);
-                                        }));
-                                    }
-                                }
-                            });
-
-                            // If there are some outsiders
-                            if (outsiders === true && message.Password.length === 0) {
-                                parameters.AttachmentKeys = [];
-                                parameters.ClearBody = message.getDecryptedBody(); // Add a clear body in parameter
-
-                                if (message.Attachments.length > 0) {
-                                    // Add clear attachments packet in parameter
-                                    promises.push(
-                                        message
-                                            .clearPackets()
-                                            .then((packets) => parameters.AttachmentKeys = packets)
-                                            .catch(deferred.reject)
-                                    );
-                                }
-                            }
-
-                            // When all promises are complete
-                            $q.all(promises).then(function() {
-
-                                if (outsiders === true && message.Password.length === 0 && message.ExpirationTime) {
-                                    $log.error(message);
-                                    message.encrypting = false;
-                                    dispatchMessageAction(message);
-                                    deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
-                                } else {
-                                    message.encrypting = false;
-                                    message.sending = true;
-                                    dispatchMessageAction(message);
-
-                                    Message
-                                        .send(parameters)
-                                        .$promise
-                                        .then(function (result) {
-
-                                            message.sending = false;
-                                            dispatchMessageAction(message);
-
-                                            if (angular.isDefined(result.Error)) {
-                                                deferred.reject(new Error(result.Error));
-                                            } else {
-                                                var events = [];
-                                                var messages = cache.queryMessagesCached(result.Sent.ConversationID);
-                                                var conversation = cache.getConversationCached(result.Sent.ConversationID);
-                                                var numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
-                                                var numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
-
-                                                result.Sent.Senders = [result.Sent.Sender]; // The back-end doesn't return Senders so need a trick
-                                                result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
-                                                events.push({Action: 3, ID: result.Sent.ID, Message: result.Sent}); // Generate event for this message
-
-                                                if (result.Parent) {
-                                                    events.push({Action: 3, ID: result.Parent.ID, Message: result.Parent});
-                                                }
-
-                                                events.push({Action: 3, ID: result.Sent.ConversationID, Conversation: {
-                                                    NumMessages: numMessages,
-                                                    NumUnread: numUnread,
-                                                    Recipients: result.Sent.Recipients,
-                                                    Senders: result.Sent.Senders,
-                                                    Subject: result.Sent.Subject,
-                                                    ID: result.Sent.ConversationID,
-                                                    LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.sent],
-                                                    LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
-                                                }});
-
-                                                cache.events(events); // Send events to the cache manager
-                                                notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'}); // Notify the user
-                                                $scope.close(message, false, false); // Close the composer window
-
-                                                $timeout(function() {
-                                                    $rootScope.$emit('toggleMessage', result.Sent.ID);
-                                                }, 500);
-                                                deferred.resolve(result); // Resolve finally the promise
-                                        }
-                                    }, function(error) {
-                                        message.sending = false;
-                                        dispatchMessageAction(message);
-                                        error.message = 'There was a problem sending your message. Please try again.';
-                                        deferred.reject(error);
-                                    });
-                                }
-                            }, function(error) {
-                                message.encrypting = false;
-                                dispatchMessageAction(message);
-                                error.message = 'Error during the promise preparation';
-                                deferred.reject(error);
-                            });
-                        } else {
-                            message.encrypting = false;
-                            dispatchMessageAction(message);
-                            error.message = 'Error during get public keys user request';
-                            deferred.reject(error);
-                        }
-                    }, function(error) {
-                        message.encrypting = false;
-                        dispatchMessageAction(message);
-                        error.message = 'Error getting the public key';
-                        deferred.reject(error);
-                    });
-                }, function(error) {
-                    deferred.reject();
+                events.push({
+                    Action: 3,
+                    ID: Sent.ConversationID,
+                        Conversation: {
+                        NumMessages: numMessages,
+                        NumUnread: numUnread,
+                        Recipients: Sent.Recipients,
+                        Senders: Sent.Senders,
+                        Subject: Sent.Subject,
+                        ID: Sent.ConversationID,
+                        LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.sent],
+                        LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.drafts]
+                    }
                 });
-            }, function(error) {
-                deferred.reject(); // Don't add parameter in the rejection because recordMessage already do that.
-            });
-        }, deferred.reject);
 
+                cache.events(events); // Send events to the cache manager
+                notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'}); // Notify the user
+                $scope.close(message, false, false); // Close the composer window
+
+                $timeout(function() {
+                    $rootScope.$emit('toggleMessage', Sent.ID);
+                }, 500);
+                deferred.resolve(result); // Resolve finally the promise
+            })
+            .catch((error) => {
+                message.sending = false;
+                message.encrypting = false;
+                dispatchMessageAction(message);
+                error.message = 'Sending failed, please try again';
+                deferred.reject(error);
+            });
+        })
+        .catch((error) => {
+            message.sending = false;
+            message.encrypting = false;
+            dispatchMessageAction(message);
+            deferred.reject(error);
+        });
         networkActivityTracker.track(deferred.promise);
         return deferred.promise;
     };
@@ -1627,7 +1770,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if (angular.isDefined(dropzones) && angular.isDefined(_.first(dropzones))) {
             _.first(dropzones).removeEventListener('dragover', dragover);
         }
-
+        delete message.editor;
         $scope.close(message, false, true);
     };
 
@@ -1649,21 +1792,23 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.close = function(message, discard, save) {
-        if (discard === true && angular.isDefined(message.ID)) {
+        if (discard === true) {
             action.discardMessage(message);
         }
 
         $rootScope.activeComposer = false;
         $rootScope.maximizedComposer = false;
+        $timeout.cancel(message.defferredSaveLater);
 
         if (save === true) {
-            recordMessage(message, true, false, false);
+            recordMessage(message, false, false);
         }
 
         // Remove message in composer controller
         $scope.messages = removeMessage($scope.messages, message);
 
         $rootScope.$emit('composer.close', message);
+        composerRequestModel.clear(message);
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();

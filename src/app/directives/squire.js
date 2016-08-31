@@ -1,26 +1,38 @@
 angular.module("proton.squire", [
     "proton.tooltip"
 ])
-.directive("squire", function(tools, $rootScope, $timeout, authentication) {
+.directive("squire", function(tools, $rootScope, $timeout, authentication, embedded, CONSTANTS) {
     return {
-        restrict: 'E',
-        require: 'ngModel',
-        priority: 99,
         scope: {
-            ngModel: '=', // body
+            message: '=', // body
+            value: '=?', // body
             allowEmbedded: '=',
             allowDataUri: '='
         },
         replace: true,
         transclude: true,
         templateUrl: "templates/directives/squire.tpl.html",
-        link: function(scope, element, attrs, ngModel) {
-            if (!ngModel) { return; } // do nothing if no ng-model
-            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, ua, updateModel, updateStylesToMatch;
+        link(scope, element, { typeContent = 'message' }) {
+
+            // Delay before updating the model as the process is slow
+            const TIMEOUTAPP = 300;
+            // For a type !== message vodoo magic "realtime"
+            const timeout = (typeContent === 'message') ? TIMEOUTAPP : 32;
+
+            /**
+             * Check if this squire instance is for a message or not
+             * Ex: you can work with a string intead of the message model
+             *   => signature
+             * @return {Boolean}
+             */
+            const isMessage = () => typeContent === 'message';
+
+            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, ua, updateStylesToMatch;
 
             LINK_DEFAULT = IMAGE_DEFAULT = "";
             IFRAME_CLASS = 'angular-squire-iframe';
             const HEADER_CLASS = 'h4';
+            let isLoaded = false;
 
             isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
             editor = scope.editor = null;
@@ -32,20 +44,29 @@ angular.module("proton.squire", [
                 }
             });
 
-            updateModel = function(val) {
+            const DOC = document.createElement('DIV');
+
+            function updateModel(val) {
                 const value = DOMPurify.sanitize(val);
+                DOC.innerHTML = value;
                 scope
                     .$applyAsync(() => {
-                        ngModel.$setViewValue(value);
 
-                        if (ngModel.$isEmpty(value)) {
-                            element.removeClass('squire-has-value');
-                        } else {
-                            element.addClass('squire-has-value');
+                        const isEmpty = !DOC.textContent.trim().length;
+                        element[`${isEmpty ? 'remove' : 'add'}Class`]('squire-has-value');
+
+                        if (isMessage()) {
+                            // Replace the embedded images with CID to keep the model updated
+                            return embedded
+                                .parser(scope.message, 'cid', value)
+                                .then((body) => scope.message.setDecryptedBody(body));
                         }
 
+                        // We can work onto a string too
+                        scope.value = value;
+
                     });
-            };
+            }
 
             getLinkAtCursor = function() {
                 if (!editor) {
@@ -62,14 +83,6 @@ angular.module("proton.squire", [
 
               insertImage(file, e);
             }
-
-            ngModel.$isEmpty = function(value) {
-                if (angular.isString(value)) {
-                    return angular.element("<div>" + value + "</div>").text().trim().length === 0;
-                } else {
-                    return !value;
-                }
-            };
 
             scope.canRemoveLink = function() {
                 var href = getLinkAtCursor();
@@ -130,7 +143,7 @@ angular.module("proton.squire", [
                 reader.addEventListener('load', () => {
                     const dataURI = reader.result;
 
-                    editor.insertImage(dataURI, {class: 'proton-embedded'});
+                    editor.insertImage(dataURI, {class: 'proton-embedded', alt: file.name});
                     scope.popoverHide(evt, 'insertImage');
                 }, false);
 
@@ -182,13 +195,20 @@ angular.module("proton.squire", [
                 var iframeDoc = iframe[0].contentWindow.document;
 
                 updateStylesToMatch(iframeDoc);
-                ngModel.$setPristine();
+                // ngModel.$setPristine();
                 editor = new Squire(iframeDoc);
 
-                if (scope.ngModel) {
-                    editor.setHTML(scope.ngModel);
-                    updateModel(scope.ngModel);
+
+                if (isMessage()) {
+                    // On load we parse the body of the message in order to load its embedded images
+                    embedded
+                        .parser(scope.message)
+                        .then((body) => (editor.setHTML(body), isLoaded = true));
+                } else {
+                    editor.setHTML(scope.value || '');
+                    isLoaded = true;
                 }
+
 
                 editor.addEventListener("pathChange", _.throttle(() => {
                     const p = editor.getPath();
@@ -228,14 +248,26 @@ angular.module("proton.squire", [
 
                 }), 500);
 
-                editor.addEventListener('input', function() {
-                    _rAF(() => updateModel(editor.getHTML()));
-                });
+                // Only update the model every 300ms or at least 2 times before saving a draft
+                editor.addEventListener('input', _.throttle(() => {
+                    isLoaded && updateModel(editor.getHTML());
+                }, timeout));
 
-                editor.addEventListener('refresh', function(event){
-                    scope.ngModel = event.Body;
-                    editor.setHTML(scope.ngModel);
-                    updateModel(scope.ngModel);
+                editor.addEventListener('refresh', ({ Body = '', action = '', data } = {}) => {
+                    if (action === 'attachment.remove') {
+                        embedded.removeEmbedded(scope.message, data, editor.getHTML());
+                    }
+
+                    if (isMessage()) {
+                        // Replace the embedded images with CID to keep the model updated
+                        return embedded
+                            .parser(scope.message)
+                            .then((body) => editor.setHTML(body))
+                            .then(() => updateModel(editor.getHTML()));
+                    }
+
+                    editor.setHTML(Body);
+                    updateModel(editor.getHTML());
                 });
 
                 editor.addEventListener('focus', function() {
@@ -252,12 +284,6 @@ angular.module("proton.squire", [
 
                 editor.addEventListener('blur', function() {
                     element.removeClass('focus').triggerHandler('blur');
-
-                    if (ngModel.$pristine && !ngModel.$isEmpty(ngModel.$viewValue)) {
-                        ngModel.$setTouched();
-                    } else {
-                        ngModel.$setPristine();
-                    }
                 });
 
                 editor.addEventListener("mscontrolselect", function(event) {

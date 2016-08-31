@@ -9,7 +9,11 @@ angular.module('proton.message')
         const div = document.createElement('div');
         const transformers = filters.filter(({ name }) => blacklist.indexOf(name) === -1);
 
-        div.innerHTML = transformRemote(content, message);
+        if (blacklist.indexOf('transformRemote') !== -1) {
+            div.innerHTML = content;
+        } else {
+            div.innerHTML = transformRemote(content, message);
+        }
 
         const output =  transformers.reduceRight((html, transformer) => transformer.action(html, message), div);
         transformAttachement(output, message);
