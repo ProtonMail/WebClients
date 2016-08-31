@@ -56,5 +56,9 @@ angular.module('proton.constants', [])
         archive: '6',
         search: '7',
         label: '8'
+    },
+    EMAIL_FORMATING: {
+        OPEN_TAG_AUTOCOMPLETE: '‹',
+        CLOSE_TAG_AUTOCOMPLETE: '›'
     }
 });

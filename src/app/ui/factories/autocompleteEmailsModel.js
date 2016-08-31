@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .factory('autocompleteEmailsModel', (authentication, regexEmail) => {
+    .factory('autocompleteEmailsModel', (authentication, regexEmail, $filter) => {
 
         /**
          * Filter emails from our contacts to find by
@@ -37,9 +37,37 @@ angular.module('proton.ui')
             };
         };
 
+        /**
+         * Format any new email added to the collection
+         * @param  {String} label
+         * @param  {String} value
+         * @return {Object}       {Name, Address}
+         */
+        const formatNewEmail = (label, value) => {
+
+            // We need to clean the label because the one comming from the autocomplete can contains some unicode
+            const cleanLabel = $filter('chevrons')(label);
+
+            // Check if an user paste an email Name <email>
+            if (regexEmail.test(cleanLabel)) {
+                const [ Name, adr = value ] = cleanLabel
+                    .split('<')
+                    .map((str = '') => str.trim());
+
+                // If the last > does not exist, keep the email intact
+                const Address = (adr.indexOf('>') === (adr.length - 1)) ? adr.slice(0, -1) : adr;
+
+                return { Name, Address };
+            }
+
+            return { Name: label, Address: value };
+        };
+
         return (previousList = []) => {
 
-            let list  = angular.copy(previousList);
+            // Prevent empty names if we only have the address (new email, no contact yet for this one)
+            let list  = angular.copy(previousList)
+                .map(({ Address = '', Name = '' }) => ({ Name: Name || Address, Address }));
 
             const all = () => list;
 
@@ -50,14 +78,15 @@ angular.module('proton.ui')
              * @return {Number}
              */
             const add = ({ label, value } = {}) => {
-                const data = {
-                    Name: label,
-                    Address: value,
-                    invalid: !regexEmail.test(value)
-                };
+
+                const data = formatNewEmail(label, value);
 
                 // If the mail is not already inside the collection, add it
-                (!list.some(({ Address }) => Address === value)) && list.push(data);
+                if (!list.some(({ Address }) => Address === data.Address)) {
+                    list.push(angular.extend({}, data , {
+                        invalid: !regexEmail.test(data.Address)
+                    }));
+                }
             };
 
             /**

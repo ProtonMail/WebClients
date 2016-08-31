@@ -1,6 +1,9 @@
 angular.module('proton.ui')
-.filter('chevrons', () => {
+.filter('chevrons', (CONSTANTS) => {
+
+    const { OPEN_TAG_AUTOCOMPLETE, CLOSE_TAG_AUTOCOMPLETE } = CONSTANTS.EMAIL_FORMATING;
+
     return (input) => {
-        return input.replace('›', '>').replace('‹', '<');
+        return input.replace(CLOSE_TAG_AUTOCOMPLETE, '>').replace(OPEN_TAG_AUTOCOMPLETE, '<');
     };
 });
