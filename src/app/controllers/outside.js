@@ -294,7 +294,7 @@ angular.module("proton.controllers.Outside", [
         }
     };
 
-    $scope.decryptAttachment = function(attachment, $event) {
+    $scope.decryptAttachment = function($event, attachment){
 
         $event.preventDefault();
 
