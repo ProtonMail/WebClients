@@ -8,17 +8,27 @@ angular.module('proton.message')
          */
         const bindImagesUrl = (body) => {
             const $list = body ? body.querySelectorAll('[data-embedded-img]') : [];
+
+            /**
+             * Filter img and don't build promises if
+             *     - src contains `cid:`
+             *     - src is empty
+             * @type {Array}
+             */
             const promises = [].slice.call($list)
-                .filter((img) => img.src.indexOf('cid:') === -1) // Prevent Uncaught (in promise) TypeError: Illegal invocation
+                .filter((img) => img.src.indexOf('cid:') === -1)
                 .map((img) => {
                     const src = embedded.getUrl(img);
-                    const image  = new Image();
-                    return new Promise((resolve, reject) => {
-                        image.src = src;
-                        image.onload = () => resolve({img, src});
-                        image.onerror = (error) => reject({ error, src });
-                    });
-                });
+                    if (src) {
+                        const image  = new Image();
+                        return new Promise((resolve, reject) => {
+                            image.src = src;
+                            image.onload = () => resolve({img, src});
+                            image.onerror = (error) => reject({ error, src });
+                        });
+                    }
+                })
+                .filter(Boolean);
 
             Promise
                 .all(promises)
