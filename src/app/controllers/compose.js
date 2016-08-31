@@ -163,15 +163,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     }));
 
-    unsubscribe.push($rootScope.$on('addFile', function(event, element, asEmbedded) {
-        const composer = $(element).parents('.composer');
+    unsubscribe.push($rootScope.$on('addFile', function(event, {dropzone, asEmbedded}) {
+        const composer = $(dropzone).parents('.composer');
         const index = $('.composer').index(composer);
         const message = $scope.messages[index];
 
         message.asEmbedded = asEmbedded;
         params.dropzone.click();
     }));
-
 
     unsubscribe.push($rootScope.$on('sendMessage', function(event, element, msg) {
         if (element) {
