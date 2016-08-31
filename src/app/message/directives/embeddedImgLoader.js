@@ -13,6 +13,7 @@ angular.module('proton.message')
              * Filter img and don't build promises if
              *     - src contains `cid:`
              *     - src is empty
+             * Prevent Uncaught (in promise) TypeError: Illegal invocation
              * @type {Array}
              */
             const promises = [].slice.call($list)
