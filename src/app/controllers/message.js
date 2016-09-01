@@ -725,7 +725,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
                         message.content = bodyDecrypted.innerHTML;
                         event.source.postMessage(JSON.stringify($scope.message), targetOrigin);
-                        window.removeEventListener('message', this);
+                        window.removeEventListener('message', sendMessage, false);
                     }
                 }
             };
