@@ -1111,7 +1111,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * Delay the saving
      * @param {Object} message
      */
-    $scope.saveLater = (message) => recordMessage(message, false, true);
+    $scope.saveLater = (message) => !message.sending && recordMessage(message, false, true);
 
     $scope.validate = function(message) {
         var deferred = $q.defer();
@@ -1604,8 +1604,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         });
     }
 
-
-
     /**
      * Try to send message specified
      * @param {Object} message
@@ -1613,9 +1611,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.send = function(msg) {
         // Prevent mutability
         const message = new Message(msg);
+        const setStateSending = (is) => message.sending = msg.sending = is;
+
         message.Password = message.Password || '';
         message.PasswordHint = message.PasswordHint || '';
-        message.sending = true;
+        setStateSending(true);
+
         dispatchMessageAction(message);
 
         var deferred = $q.defer();
@@ -1642,7 +1643,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 if (outsiders === true && message.Password.length === 0 && message.ExpirationTime) {
                     $log.error(message);
                     message.encrypting = false;
-                    message.sending = false;
+                    setStateSending(false);
                     dispatchMessageAction(message);
                     return deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
                 } else {
@@ -1697,7 +1698,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 deferred.resolve(result); // Resolve finally the promise
             })
             .catch((error) => {
-                message.sending = false;
+                setStateSending(false);
                 message.encrypting = false;
                 dispatchMessageAction(message);
                 error.message = 'Sending failed, please try again';
@@ -1705,7 +1706,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             });
         })
         .catch((error) => {
-            message.sending = false;
+            setStateSending(false);
             message.encrypting = false;
             dispatchMessageAction(message);
             deferred.reject(error);

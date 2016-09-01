@@ -13,14 +13,14 @@ angular.module('proton.composer')
                 case (msg.uploading > 0):
                     label = gettextCatalog.getString('Uploading', null, 'Action');
                     break;
-                case (msg.sending === true):
-                    label = gettextCatalog.getString('Sending', null, 'Action');
-                    break;
                 case (msg.encrypting === true):
                     label = gettextCatalog.getString('Encrypting', null, 'Action');
                     break;
                 case (msg.saving === true && msg.autosaving === false):
                     label = gettextCatalog.getString('Saving', null, 'Action');
+                    break;
+                case (msg.sending === true):
+                    label = gettextCatalog.getString('Sending', null, 'Action');
                     break;
                 case (msg.disableSend && msg.disableSend()):
                     label = gettextCatalog.getString('Send', null, 'Action');
