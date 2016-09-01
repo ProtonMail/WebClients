@@ -704,26 +704,34 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
     /**
      * Print current message
+     * @param {Integer} index
      */
-    $scope.print = function() {
+    $scope.print = function(index) {
         // NOTE postMessage still broken on IE11
-        var postMessageSupport = $.browser.msie !== true || $.browser.edge === true;
+        const postMessageSupport = $.browser.msie !== true || $.browser.edge === true;
 
         if (postMessageSupport) {
-            var tab = $state.href('printer', {messageID: $scope.message.ID}, {absolute: true});
-            var url = window.location.href;
-            var arr = url.split('/');
-            var targetOrigin = arr[0] + '//' + arr[2];
-            var sendMessage = (event) => {
+            const tab = $state.href('printer', {messageID: $scope.message.ID}, {absolute: true});
+            const url = window.location.href;
+            const arr = url.split('/');
+            const targetOrigin = arr[0] + '//' + arr[2];
+            const sendMessage = (event) => {
                 if (event.data === $scope.message.ID) {
-                    event.source.postMessage(JSON.stringify($scope.message), targetOrigin);
-                    window.removeEventListener('message', this);
+                    const message = $scope.message;
+                    const element = document.getElementById('message' + index);
+
+                    if (element) {
+                        const bodyDecrypted = element.querySelector('.bodyDecrypted');
+
+                        message.content = bodyDecrypted.innerHTML;
+                        event.source.postMessage(JSON.stringify($scope.message), targetOrigin);
+                        window.removeEventListener('message', this);
+                    }
                 }
             };
 
             window.addEventListener('message', sendMessage, false);
-
-            var child = window.open(tab, '_blank');
+            window.open(tab, '_blank');
         } else {
             window.print();
         }

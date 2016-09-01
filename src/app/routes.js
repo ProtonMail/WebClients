@@ -596,7 +596,7 @@ angular.module('proton.routes', [
 
                         if (message.ID === messageID) {
                             $scope.$applyAsync(() => {
-                                $scope.content = $sce.trustAsHtml(message.DecryptedBody || message.Body);
+                                $scope.content = $sce.trustAsHtml(message.content);
                                 $scope.message = message;
                                 $scope.loading = false;
                             });
