@@ -1,5 +1,43 @@
 angular.module('proton.ui')
-    .factory('autocompleteEmailsModel', (authentication, regexEmail, $filter) => {
+    .factory('autocompleteEmailsModel', (authentication, regexEmail, $filter, CONSTANTS) => {
+
+        const {
+            OPEN_TAG_AUTOCOMPLETE,
+            CLOSE_TAG_AUTOCOMPLETE,
+            OPEN_TAG_AUTOCOMPLETE_RAW,
+            CLOSE_TAG_AUTOCOMPLETE_RAW
+        } = CONSTANTS.EMAIL_FORMATING;
+
+        const REGEXP_ESCAPE_AUTOCOMPLETE = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE_RAW}|${CLOSE_TAG_AUTOCOMPLETE_RAW}`, 'ig');
+
+        const MAP_TAGS = {
+            [OPEN_TAG_AUTOCOMPLETE_RAW]: OPEN_TAG_AUTOCOMPLETE,
+            [CLOSE_TAG_AUTOCOMPLETE_RAW]: CLOSE_TAG_AUTOCOMPLETE
+        };
+
+        /**
+         * Format the label of an address to display both the name and the address
+         * @param  {String} Name
+         * @param  {String} Email
+         * @return {String}
+         */
+        const formatLabel = (Name, Email) => {
+            if (Email === Name || !Name) {
+                return Email;
+            }
+
+            return `${Name} ${OPEN_TAG_AUTOCOMPLETE}${Email}${CLOSE_TAG_AUTOCOMPLETE}`;
+        };
+
+        /**
+         * Replace unicode with <>
+         * @param  {String} input
+         * @return {String}
+         */
+        const relaceTagAutocomplete = (input = '') => {
+            return input
+                .replace(REGEXP_ESCAPE_AUTOCOMPLETE(), (match) => MAP_TAGS[match] || '');
+        };
 
         /**
          * Filter emails from our contacts to find by
@@ -13,20 +51,15 @@ angular.module('proton.ui')
          */
         const filterContact = (val = '') => {
 
-            const value = val.toLowerCase();
+            const value = relaceTagAutocomplete(val.toLowerCase());
             const collection = _.chain(authentication.user.Contacts)
-                .filter(({ Name, Email}) => {
-                    const containsName = Name.toLowerCase().indexOf(value) !== -1;
-                    const containsEmail = Email.toLowerCase().indexOf(value) !== -1;
-
-                    return containsName || containsEmail;
-                })
-                .first(10)
                 .map(({ Name, Email }) => {
                     const value = Email;
-                    const label = (Email === Name || !Name) ? Email : `${Name} 	‹${Email}›`;
+                    const label = formatLabel(Name, Email);
                     return { label, value };
                 })
+                .filter(({ label }) => label.toLowerCase().includes(value))
+                .first(10)
                 .value();
 
             const list = collection.length ? collection : [{ label: value, value}];
@@ -110,6 +143,7 @@ angular.module('proton.ui')
 
             return {
                 filterContact,
+                formatInput: relaceTagAutocomplete,
                 all, add, remove, removeLast, isEmpty
             };
         };
