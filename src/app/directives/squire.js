@@ -47,6 +47,7 @@ angular.module("proton.squire", [
             const DOC = document.createElement('DIV');
 
             function updateModel(val) {
+
                 const value = DOMPurify.sanitize(val);
                 DOC.innerHTML = value;
                 scope
@@ -206,7 +207,12 @@ angular.module("proton.squire", [
                         .then((body) => (editor.setHTML(body), isLoaded = true));
                 } else {
                     editor.setHTML(scope.value || '');
-                    isLoaded = true;
+
+                    // defer loading to prevent input event refresh (takes some time to perform the setHTML)
+                    const id = setTimeout(() => {
+                        isLoaded = true;
+                        clearTimeout(id);
+                    }, 100);
                 }
 
 
