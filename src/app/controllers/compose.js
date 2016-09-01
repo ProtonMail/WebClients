@@ -1550,20 +1550,30 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     function encryptBodyFromEmails(message, emails, parameters, deferred) {
-        return message
-            .getPublicKeys(emails)
-            .then((result) => {
 
-                if (result.data && result.data.Code === 1000) {
-                    var keys = result.data; // Save result in keys variables
+        // Wrap the promise to isolate its chaining
+        return new Promise((resolve, reject) => {
+            message
+                .getPublicKeys(emails)
+                .then(({ data = {} } = {}) => {
+
+                    if (data.Code !== 1000) {
+                        message.encrypting = false;
+                        dispatchMessageAction(message);
+                        const error = new Error('Error during get public keys user request');
+                        deferred.reject(error);
+                        return reject(error);
+                    }
+
+                    const keys = data; // Save result in keys variables
                     parameters.Packages = [];
 
                     const encryptingBody = encryptUserBody(message, deferred, parameters.Packages)
                         .getPromises(emails, keys);
 
-                    let outsiders = encryptingBody.outsiders; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
+                    const outsiders = encryptingBody.outsiders; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
 
-                    let promises = encryptingBody.promises;
+                    const promises = encryptingBody.promises;
 
 
                     // If there are some outsiders
@@ -1582,21 +1592,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                         }
                     }
 
-                    return { outsiders, promises };
-
-                } else {
+                    resolve({ outsiders, promises });
+                })
+                .catch((error) => {
                     message.encrypting = false;
                     dispatchMessageAction(message);
-                    error.message = 'Error during get public keys user request';
+                    error.message = 'Error getting the public key';
                     deferred.reject(error);
-                }
-            })
-            .catch((error) => {
-                message.encrypting = false;
-                dispatchMessageAction(message);
-                error.message = 'Error getting the public key';
-                deferred.reject(error);
-            });
+                    reject(error);
+                });
+        });
     }
 
 
@@ -1629,7 +1634,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             return message.emailsToString();
         })
         .then((emails) => encryptBodyFromEmails(message, emails, parameters, deferred))
-        .then(({ promises, outsiders }) => {
+        .then(({ promises = [], outsiders }) => {
+
             // When all promises are complete
             $q.all(promises).then(function() {
 
