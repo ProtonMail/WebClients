@@ -1,5 +1,5 @@
 angular.module("proton.tools", ["proton.constants"])
-.factory("tools", function($log, $state, $stateParams, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS) {
+.factory("tools", function($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS) {
     var tools = {};
 
     tools.hasSessionStorage = function() {
@@ -430,7 +430,15 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.contactsToString = function(contacts) {
-        return _.map(contacts, function(m) { return m.Address; }).join(',');
+        return _.map(contacts, ({Name = '', Address = ''}) => {
+            const name = $filter('nameRecipient')(Name);
+
+            if (name) {
+                return `${name} &lt;${Address}&gt;`;
+            }
+
+            return Address;
+        }).join(', ');
     };
 
     tools.currentLocation = function(labelIDs) {

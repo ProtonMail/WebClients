@@ -1852,45 +1852,31 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     /**
+     * Return the correct format to display a contact inside the composer
+     * @param {Object} Name, Address - contact
+     * @return {String}
+     */
+    function displayContact({Name, Address}) {
+        return Name || Address;
+    }
+
+    /**
      * Transform the recipients list to a string
      * @param {Object} message
      * @return {String}
      */
-    $scope.recipients = function(message) {
-        var recipients = [];
+    $scope.recipients = ({ToList = [], CCList = [], BCCList = []}) => {
+        const formatAddresses = (key) => (contact, index) => {
+            const name = $filter('contact')(contact, 'Name');
 
-        if (message.ToList.length > 0) {
-            recipients = recipients.concat(_.map(message.ToList, function(contact, index) {
-                if (index === 0) {
-                    return gettextCatalog.getString('To', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
-                } else {
-                    return $filter('contact')(contact, 'Name');
-                }
-            }));
-        }
+            return (index === 0) ? `${key}: ${name}` : name;
+        };
 
-        if (message.CCList.length > 0) {
-            recipients = recipients.concat(_.map(message.CCList, function(contact, index) {
-                if (index === 0) {
-                    return gettextCatalog.getString('CC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
-                } else {
-                    return $filter('contact')(contact, 'Name');
-                }
-            }));
-        }
-
-        if (message.BCCList.length > 0) {
-            recipients = recipients.concat(_.map(message.BCCList, function(contact, index) {
-                if (index === 0) {
-                    return gettextCatalog.getString('BCC', null, 'Title') + ': ' + $filter('contact')(contact, 'Name');
-                } else {
-                    return $filter('contact')(contact, 'Name');
-                }
-            }));
-        }
-
-
-        return recipients.join(', ');
+        return []
+            .concat(ToList.map(formatAddresses(gettextCatalog.getString('To', null, 'Title'))))
+            .concat(CCList.map(formatAddresses(gettextCatalog.getString('CC', null, 'Title'))))
+            .concat(BCCList.map(formatAddresses(gettextCatalog.getString('BCC', null, 'Title'))))
+            .join(', ');
     };
 
     /**
