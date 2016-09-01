@@ -64,8 +64,6 @@ angular.module('proton.ui')
 
             return (scope, el, attr) => {
 
-                let latestKeyCode = null;
-
                 // Model for this autocomplete
                 const model = autocompleteEmailsModel(scope.emails);
 
@@ -116,6 +114,7 @@ angular.module('proton.ui')
 
                     // Classic autocompletion
                     const { list, hasAutocompletion } = model.filterContact(target.value);
+
                     hasAutocompletion && (awesomplete.list = list);
                 };
 
@@ -162,8 +161,8 @@ angular.module('proton.ui')
                             break;
 
                         // Prevent autoselect if you press MAJ + COMMA (< for QWERTY)
-                        case COMMA_KEY:
-                            (latestKeyCode !== MAJ_KEY) && awesomplete.select();
+                        case COMMA_KEY && !e.shiftKey:
+                            awesomplete.select();
                             break;
 
                         case BACKSPACE_KEY:
@@ -174,8 +173,6 @@ angular.module('proton.ui')
                             }
                             break;
                     }
-
-                    latestKeyCode = e.keyCode;
 
                 };
 
@@ -209,6 +206,11 @@ angular.module('proton.ui')
                     model.add(opt);
                     this.input.value = '';
                     syncModel();
+                };
+
+                // Custom filter as the list contains unicode and not the input
+                awesomplete.filter = (text, input) => {
+                    return Awesomplete.FILTER_CONTAINS(text, model.formatInput(input));
                 };
 
                 el.on('keydown', onKeyDown);
