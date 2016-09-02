@@ -29,15 +29,20 @@ module.exports = () => {
     };
 
     const fillInput = (type, value) => {
-      const input = 'Subject' === type ? 'input' : 'input.new-value-email';
+      const input = 'Subject' === type ? 'input' : 'input.autocompleteEmails-input';
 
-      const body = `
+      let body = `
         const $input = $('.composer-email-${type}')
-        .find(${input});
+          .find('${input}');
 
         $input.val('${value}');
-        return $input.val();
       `;
+
+      if (type === 'Subject') {
+        body += '$input.blur();';
+      }
+
+      body += 'return $input.val()';
       return browser.executeScript(body);
     };
 

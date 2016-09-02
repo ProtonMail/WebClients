@@ -52,8 +52,8 @@ describe('composer tests', () => {
     it('should send the message', () => {
       borodin
         .send()
+        .then(() => browser.sleep(5000))
         .then(() => {
-          browser.sleep(5000);
           borodin
             .isOpened()
             .then((editor) => {
