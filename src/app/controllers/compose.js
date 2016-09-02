@@ -1426,13 +1426,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * And ask the user to send anyway
      * @param {Object} message
      */
-     function checkSubject(message) {
-        var deferred = $q.defer();
-        var title = gettextCatalog.getString('No subject', null, 'Title');
-        var text = gettextCatalog.getString('No subject, send anyway?', null, 'Info');
+     function checkSubject({Subject}) {
+        const deferred = $q.defer();
+        const title = gettextCatalog.getString('No subject', null, 'Title');
+        const text = gettextCatalog.getString('No subject, send anyway?', null, 'Info');
 
-        if (angular.isUndefined(message.Subject) || message.Subject.length === 0) {
-            message.Subject = '';
+        if (!Subject) {
             confirmModal.activate({
                 params: {
                     title: title,
@@ -1623,10 +1622,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var parameters = {};
 
         $scope.validate(message)
+        .then(() => checkSubject(message))
         .then(() => extractDataURI(message))
         .then(() => recordMessage(message, false, false))
         .then((messageSaved) => (message.ID = messageSaved.ID, message))
-        .then(checkSubject(message))
         .then(() => {
             message.encrypting = true;
             dispatchMessageAction(message);
