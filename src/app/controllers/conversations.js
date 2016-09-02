@@ -39,7 +39,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     function initialization() {
 
         // Variables
-        $scope.markedConversation = null;
+        $scope.markedConversation = void 0;
         $scope.mailbox = tools.currentMailbox();
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
@@ -47,7 +47,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || "-date";
-        $scope.page = parseInt($stateParams.page || 1);
+        $scope.page = parseInt($stateParams.page || 1, 10);
         $scope.startWatchingEvent();
         $scope.refreshConversations().then(function() {
             $timeout(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
