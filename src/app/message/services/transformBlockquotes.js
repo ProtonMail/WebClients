@@ -16,18 +16,27 @@ angular.module('proton.message')
     ].join(',');
 
     return (html, message) => {
-        const blockquote = html.querySelector(quotes);
+        const blockquotes = [].slice.call(html.querySelectorAll(quotes));
+        let found = false;
 
-        if (blockquote) {
-            if (blockquote.textContent.trim().length < html.textContent.trim().length) {
-                const button = document.createElement('button');
-                const title = gettextCatalog.getString('Show previous message', null, 'Title');
+        blockquotes.forEach((blockquote) => {
+            if (!found) {
+                const parent = html.textContent.trim();
+                const child = blockquote.textContent.trim();
+                const splitted = parent.split(child);
 
-                button.className = 'fa fa-ellipsis-h pm_button more proton-message-blockquote-toggle';
-                button.setAttribute('title', title);
-                blockquote.parentNode.insertBefore(button, blockquote);
+                if (child.length < parent.length && splitted[0].length) {
+                    const button = document.createElement('button');
+                    const title = gettextCatalog.getString('Show previous message', null, 'Title');
+
+                    button.className = 'fa fa-ellipsis-h pm_button more proton-message-blockquote-toggle';
+                    button.setAttribute('title', title);
+                    blockquote.parentNode.insertBefore(button, blockquote);
+
+                    found = true;
+                }
             }
-        }
+        });
 
         return html;
     };
