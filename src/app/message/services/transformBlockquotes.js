@@ -17,11 +17,11 @@ angular.module('proton.message')
 
     return (html, message) => {
         const blockquotes = [].slice.call(html.querySelectorAll(quotes));
+        const parent = html.textContent.trim();
         let found = false;
 
         blockquotes.forEach((blockquote) => {
             if (!found) {
-                const parent = html.textContent.trim();
                 const child = blockquote.textContent.trim();
                 const splitted = parent.split(child);
 
