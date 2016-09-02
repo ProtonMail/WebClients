@@ -234,14 +234,10 @@
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
                 <strong>{{ message.sizeAttachments() | humanSize }}</strong>
                 <span ng-show="message.Attachments.length > message.NumEmbedded">
-                    ({{ message.Attachments.length -  message.NumEmbedded }})
-                    <i class="fa fa-paperclip"></i>
-                    <span translate translate-n="message.Attachments.length -  message.NumEmbedded" translate-plural="Files attached">File attached</span>
+                    <i class="fa fa-paperclip"></i> {{ message.Attachments.length - message.NumEmbedded }} <span translate translate-n="message.Attachments.length - message.NumEmbedded" translate-plural="files attached">file attached</span>
                 </span>
                 <span ng-show="message.NumEmbedded > 0">
-                    ({{ message.NumEmbedded }}) <i class="fa fa-image embedded"></i>
-                    <span translate translate-n="message.NumEmbedded" translate-plural="embedded images">
-                    embedded image</span>
+                    <i class="fa fa-image embedded"></i> {{ message.NumEmbedded }} <span translate translate-n="message.NumEmbedded" translate-plural="embedded images">embedded image</span>
                 </span>
             </aside>
             <div
