@@ -405,16 +405,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} conversation or message
      * @return {Integer}
      */
-    $scope.time = function(element) {
-        var type = tools.typeList();
-        var time;
+    $scope.time = ({ID, Time}) => {
+        const type = tools.typeList();
+        let time;
 
-        if(type === 'conversation') {
-            var loc = tools.currentLocation();
+        if (type === 'conversation') {
+            const loc = tools.currentLocation();
 
-            time = cache.getTime(element.ID, loc);
+            time = cache.getTime(ID, loc);
         } else if(type === 'message') {
-            time = element.Time;
+            time = Time;
         }
 
         return time;
