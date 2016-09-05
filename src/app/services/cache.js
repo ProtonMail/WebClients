@@ -148,18 +148,16 @@ angular.module('proton.cache', [])
      * Update time for conversation
      * @param {String} conversationID
      */
-    var manageTimes = function(conversationID) {
+    function manageTimes(conversationID) {
         if (angular.isDefined(conversationID)) {
-            var conversation = api.getConversationCached(conversationID);
-            var messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
+            const conversation = api.getConversationCached(conversationID);
+            const messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
 
             if (angular.isDefined(conversation) && angular.isArray(conversation.LabelIDs) && messages.length > 0) {
-                _.each(conversation.LabelIDs, function(labelID) {
+                conversation.LabelIDs.forEach((labelID) => {
                     // Get the most recent message for a specific label
-                    var message = _.chain(messages)
-                        .filter(function(message) {
-                            return angular.isArray(message.LabelIDs) && message.LabelIDs.indexOf(labelID) !== -1;
-                        })
+                    let message = _.chain(messages)
+                        .filter(({LabelIDs}) => angular.isArray(LabelIDs) && LabelIDs.indexOf(labelID) !== -1)
                         .first()
                         .value();
 
@@ -169,7 +167,7 @@ angular.module('proton.cache', [])
                 });
             }
         }
-    };
+    }
 
     /**
      * Manage the updating to calcultate the total number of messages and unread messages
