@@ -238,7 +238,8 @@ angular.module("proton.controllers.Outside", [
         embedded
             .parser(message)
             .then((content) => {
-                message.setDecryptedBody(content);
+                const body = prepareContent(content, message, ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']);
+                message.setDecryptedBody(body);
                 $scope.message = message;
             });
     };
