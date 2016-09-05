@@ -94,41 +94,10 @@ angular.module('proton.service.message', [])
             });
         }
 
-        /**
-         * Find the from origin
-         * @param  {Array} options.ToList    From the new message
-         * @param  {Array} options.CCList    From the new message
-         * @param  {Array} options.BCCList   From the new message
-         * @param  {String} options.AddressID From the current message
-         * @param  {Number} options.Type From the current message
-         * @return {String}
-         */
-        function findFrom({ ToList, CCList, BCCList } = {}, { AddressID, Type } = {}) {
-
-            const recipients = _.union(ToList, CCList, BCCList);
-            const adr = _.findWhere(authentication.user.Addresses, {ID: AddressID}) || {};
-
-            if (Type !== 2 && Type !== 3) {
-                let found;
-
-                _.each(_.sortBy(authentication.user.Addresses, 'Send'), (address) => {
-                    if (found) {
-                        return false;
-                    }
-
-                    found = _.findWhere(address, {Address: recipients.Address});
-                });
-
-                return (found || adr);
-            }
-
-            return adr;
-        }
-
         function builder(action, currentMsg = {}, newMsg = {}) {
-
             const subject = DOMPurify.sanitize('Subject: ' + currentMsg.Subject + '<br>');
             const cc = tools.contactsToString(Array.isArray(currentMsg.CCList) ? currentMsg.CCList : [currentMsg.CCList]);
+            const addresses = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').value();
 
             (action === 'reply') && reply(newMsg, currentMsg);
             (action === 'replyall') && replyAll(newMsg, currentMsg);
@@ -136,7 +105,10 @@ angular.module('proton.service.message', [])
 
             if (currentMsg.AddressID) {
                 newMsg.AddressID = currentMsg.AddressID;
-                newMsg.From = findFrom(newMsg, currentMsg);
+                newMsg.From = _.findWhere(addresses, {ID: currentMsg.AddressID});
+            } else {
+                newMsg.AddressID = addresses[0].ID;
+                newMsg.From = addresses[0];
             }
 
             /* add inline images as attachments */

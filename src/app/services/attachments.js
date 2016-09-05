@@ -64,7 +64,7 @@ angular.module('proton.attachments', ['proton.authentication', 'proton.storage']
             var deferred = $q.defer();
             var data = new FormData();
             var xhr = new XMLHttpRequest();
-            var keys = authentication.getPrivateKeys(message.From.ID);
+            var keys = authentication.getPrivateKeys(message.AddressID);
             var sessionKeyPromise = pmcw.decryptSessionKey(packets.keys, keys);
             var attachmentData = {};
             var that = this;
