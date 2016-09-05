@@ -1537,7 +1537,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
             let outsiders = false;
             // We remove duplicatas
-            const promises = _.chain(_.uniq(emails))
+            const promises = _.chain(emails)
+                .uniq()
                 .map((email) => {
                     // Inside user
                     if (keys[email] && keys[email].length > 0) {
