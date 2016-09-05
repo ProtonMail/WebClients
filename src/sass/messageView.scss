@@ -364,6 +364,9 @@
             border-top: 1px solid $border;
             overflow: auto;
             zoom: 1;
+
+            .bodyDecrypted {word-wrap: break-word}
+
             .email {
                 position: relative;
                 .pm_button.more {
