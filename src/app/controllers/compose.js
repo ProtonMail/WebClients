@@ -206,6 +206,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     }));
 
+    unsubscribe.push($rootScope.$on('message.updated', (e, { message }) => {
+        // save when DOM is updated
+        recordMessage(message, false, true);
+    }));
+
     unsubscribe.push($scope.$on('editorFocussed', function(event, element, editor) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
@@ -528,7 +533,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         var promises = [];
 
         if (message.Attachments && message.Attachments.length > 0) {
-            var keys = authentication.getPrivateKeys(message.From.ID);
+            var keys = authentication.getPrivateKeys(message.AddressID);
 
             _.each(message.Attachments, function(attachment) {
 
@@ -659,6 +664,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         composerRequestModel.save(message, deferred);
 
+        networkActivityTracker.track(deferred.promise);
+
         return deferred.promise;
     }
 
@@ -703,6 +710,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Object} message
      */
     function initMessage(message) {
+        const addresses = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').value();
 
         if (authentication.user.Delinquent < 3) {
             // Not in the delinquent state
@@ -735,6 +743,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger'});
                 return;
             }
+        }
+
+        if (message.AddressID) {
+            message.From = _.findWhere(addresses, {ID: message.AddressID});
+        } else {
+            message.From = addresses[0];
+            message.AddressID = addresses[0].ID;
         }
 
         message.uid = $scope.uid++;
@@ -1171,10 +1186,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Resource} message - Message to save
      */
     $scope.changeFrom = function(message) {
-        message.setDecryptedBody(messageBuilder.updateSignature(message));
-        message.editor && message.editor.fireEvent('refresh', {Body: message.getDecryptedBody()});
-        // save when DOM is updated
-        recordMessage(message, false, true);
+        message.AddressID = message.From.ID;
+        message.editor && message.editor.fireEvent('refresh', {
+            action: 'message.changeFrom'
+        });
     };
 
     $scope.save = (message, notification, autosaving) => {
@@ -1238,8 +1253,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             Message: _.pick(message, 'ToList', 'CCList', 'BCCList', 'Subject', 'IsRead')
         };
 
-        message.From = message.From || messageBuilder.findSender(message);
-
         message.saving = true;
         message.autosaving = autosaving || false;
         dispatchMessageAction(message);
@@ -1275,7 +1288,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             parameters.Message.IsRead = 1;
         }
 
-        parameters.Message.AddressID = message.From.ID;
+        parameters.Message.AddressID = message.AddressID;
         parameters.Message.Packages = [];
 
         // Encrypt message body with the first public key for the From address
@@ -1463,7 +1476,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @return {Promise}
      */
     function getSessionKey(message) {
-        const keys = authentication.getPrivateKeys(message.From.ID);
+        const keys = authentication.getPrivateKeys(message.AddressID);
         const promises = _.chain(message.Attachments)
             .filter((attachment) => !attachment.sessionKey)
             .map((attachment) =>  {
@@ -1523,7 +1536,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         const getPromises = (emails, keys = {}) => {
 
             let outsiders = false;
-            const promises = _.chain(emails)
+            // We remove duplicatas
+            const promises = _.chain([...new Set(emails)])
                 .map((email) => {
                     // Inside user
                     if (keys[email] && keys[email].length > 0) {
@@ -1764,12 +1778,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $scope.openCloseModal = function(message) {
         var dropzones = $('#uid' + message.uid + ' .composer-dropzone');
 
-        message.editor.removeEventListener('input');
-        message.editor.removeEventListener('DOMNodeRemoved');
-        message.editor.removeEventListener('dragenter', onDragEnter);
-        message.editor.removeEventListener('dragover', onDragOver);
-        message.editor.removeEventListener('dragstart', onDragStart);
-        message.editor.removeEventListener('dragend', onDragEnd);
+        if (message.editor) {
+            message.editor.removeEventListener('input');
+            message.editor.removeEventListener('DOMNodeRemoved');
+            message.editor.removeEventListener('dragenter', onDragEnter);
+            message.editor.removeEventListener('dragover', onDragOver);
+            message.editor.removeEventListener('dragstart', onDragStart);
+            message.editor.removeEventListener('dragend', onDragEnd);
+        }
 
         // We need to manage step by step the dropzone in the case where the composer is collapsed
         if (angular.isDefined(dropzones) && angular.isDefined(_.first(dropzones))) {
@@ -1797,6 +1813,24 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
      * @param {Boolean} save
      */
     $scope.close = function(message, discard, save) {
+        const process = () => {
+            // Remove message in composer controller
+            $scope.messages = removeMessage($scope.messages, message);
+
+            $rootScope.$emit('composer.close', message);
+            composerRequestModel.clear(message);
+
+            // Hide all the tooltip
+            $('.tooltip').not(this).hide();
+
+            // Message closed and focussed?
+            $scope.focusFirstComposer(message);
+
+            $timeout(function () {
+                $scope.composerStyle();
+            }, 250, false);
+        };
+
         if (discard === true) {
             action.discardMessage(message);
         }
@@ -1806,24 +1840,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $timeout.cancel(message.defferredSaveLater);
 
         if (save === true) {
-            recordMessage(message, false, false);
+            recordMessage(message, false, true).then(process);
+        } else {
+            process();
         }
-
-        // Remove message in composer controller
-        $scope.messages = removeMessage($scope.messages, message);
-
-        $rootScope.$emit('composer.close', message);
-        composerRequestModel.clear(message);
-
-        // Hide all the tooltip
-        $('.tooltip').not(this).hide();
-
-        // Message closed and focussed?
-        $scope.focusFirstComposer(message);
-
-        $timeout(function () {
-            $scope.composerStyle();
-        }, 250, false);
     };
 
     /**

@@ -1,7 +1,7 @@
 angular.module("proton.squire", [
     "proton.tooltip"
 ])
-.directive("squire", function(tools, $rootScope, $timeout, authentication, embedded, CONSTANTS) {
+.directive("squire", function(tools, $rootScope, $timeout, authentication, embedded, CONSTANTS, signatureBuilder) {
     return {
         scope: {
             message: '=', // body
@@ -46,7 +46,7 @@ angular.module("proton.squire", [
 
             const DOC = document.createElement('DIV');
 
-            function updateModel(val) {
+            function updateModel(val, dispatchAction = false) {
 
                 const value = DOMPurify.sanitize(val);
                 DOC.innerHTML = value;
@@ -60,7 +60,14 @@ angular.module("proton.squire", [
                             // Replace the embedded images with CID to keep the model updated
                             return embedded
                                 .parser(scope.message, 'cid', value)
-                                .then((body) => scope.message.setDecryptedBody(body));
+                                .then((body) => {
+                                    scope.message.setDecryptedBody(body);
+
+                                    // Dispatch an event to update the message
+                                    dispatchAction && $rootScope.$emit('message.updated', {
+                                        message: scope.message
+                                    });
+                                });
                         }
 
                         // We can work onto a string too
@@ -260,20 +267,27 @@ angular.module("proton.squire", [
                 }, timeout));
 
                 editor.addEventListener('refresh', ({ Body = '', action = '', data } = {}) => {
+
                     if (action === 'attachment.remove') {
                         embedded.removeEmbedded(scope.message, data, editor.getHTML());
+                    }
+
+                    if (action === 'message.changeFrom') {
+                        const html = signatureBuilder.update(scope.message, editor.getHTML());
+                        editor.setHTML(html);
+                        return updateModel(html, true);
                     }
 
                     if (isMessage()) {
                         // Replace the embedded images with CID to keep the model updated
                         return embedded
                             .parser(scope.message)
-                            .then((body) => editor.setHTML(body))
-                            .then(() => updateModel(editor.getHTML()));
+                            .then((body) => (editor.setHTML(body), body))
+                            .then(updateModel);
                     }
 
                     editor.setHTML(Body);
-                    updateModel(editor.getHTML());
+                    updateModel(Body);
                 });
 
                 editor.addEventListener('focus', function() {

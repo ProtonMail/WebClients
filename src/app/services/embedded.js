@@ -321,15 +321,13 @@ angular.module("proton.embedded", [])
             }
         });
 
-        const promiseList = $q.all(parsingAttachementPromise)
+        $q.all(parsingAttachementPromise)
             .then(() => {
                 const computed =  list
                     .reduce((acc, key) => (acc[key] = Blobs[key], acc), Object.create(null));
                 deferred.resolve(computed);
             })
             .catch((err) => console.error(err));
-
-        networkActivityTracker.track(promiseList);
 
        if (!processed) {
           // all cid was already stored, we can resolve
@@ -400,6 +398,10 @@ angular.module("proton.embedded", [])
                     .then(() => parse(message, direction, content))
                     .then((content) => {
                         deferred.resolve(content);
+                    })
+                    .catch((error) => {
+                        $log.error(error);
+                        deferred.reject(error);
                     });
 
                 } else {

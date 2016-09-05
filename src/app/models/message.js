@@ -280,7 +280,7 @@ angular.module("proton.models.message", ["proton.constants"])
             var packets = [];
             var promises = [];
             var deferred = $q.defer();
-            var keys = authentication.getPrivateKeys(this.From.ID);
+            var keys = authentication.getPrivateKeys(this.AddressID);
 
             _.each(this.Attachments, function(element) {
                 if (element.sessionKey === undefined) {
