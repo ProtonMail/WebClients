@@ -51,7 +51,7 @@ angular.module('proton.ui')
          */
         const filterContact = (val = '') => {
 
-            const value = relaceTagAutocomplete(val.toLowerCase());
+            const value = relaceTagAutocomplete(val.toLowerCase().trim());
             const collection = _.chain(authentication.user.Contacts)
                 .map(({ Name, Email }) => {
                     const value = Email;
@@ -93,7 +93,7 @@ angular.module('proton.ui')
                 return { Name, Address };
             }
 
-            return { Name: label, Address: value };
+            return { Name: label.trim(), Address: value.trim() };
         };
 
         return (previousList = []) => {
