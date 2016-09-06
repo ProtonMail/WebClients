@@ -1667,12 +1667,18 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 }
             })
             .then((result = {}) => {
-                const { Parent, Sent = {} } = result;
 
+                // Check if there is an error coming from the server, then reject the process
                 if (angular.isDefined(result.Error)) {
-                    return deferred.reject(new Error(result.Error));
+                    const error = new Error(result.Error);
+                    deferred.reject(error);
+                    return $q.reject(error);
                 }
 
+                return result;
+            })
+            .then((result = {}) => {
+                const { Parent, Sent = {} } = result;
                 var events = [];
                 var messages = cache.queryMessagesCached(Sent.ConversationID);
                 var conversation = cache.getConversationCached(Sent.ConversationID);
@@ -1717,6 +1723,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 dispatchMessageAction(message);
                 error.message = 'Sending failed, please try again';
                 deferred.reject(error);
+
             });
         })
         .catch((error) => {
