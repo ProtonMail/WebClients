@@ -72,70 +72,73 @@ angular.module("proton.models.payments", [])
         /**
          * Get plans available to user
          */
-        plans: function(currency, cycle) {
-            return $http.get(url.get() + '/payments/plans', {
-                params: {
-                    Currency: currency,
-                    Cycle: cycle
-                },
-                transformResponse: function(data, headersGetter, status) {
-                    data = angular.fromJson(data);
+        plans(Currency, Cycle) {
 
-                    if(angular.isDefined(data) && data.Code === 1000) {
-                        // Add free plan
-                        data.Plans.unshift({
-                            Type: 1,
-                            Cycle: cycle,
-                            Currency: currency,
-                            Name: 'free',
-                            Title: 'Free',
-                            Amount: 0,
-                            MaxDomains: 0,
-                            MaxAddresses: 1,
-                            MaxSpace: 500 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE,
-                            MaxMembers: 0,
-                            TwoFactor: 0
-                        });
+            const transformResponse = (data) => {
 
-                        _.each(data.Plans, function(plan) {
-                            switch (plan.Name) {
-                                case 'free':
-                                    plan.editable = false;
-                                    plan.display = true;
-                                    plan.sending = '150 ' + gettextCatalog.getString('Messages per day', null);
-                                    plan.labels = '20 ' + gettextCatalog.getString('Labels', null);
-                                    plan.support = gettextCatalog.getString('Limited support', null);
-                                    break;
-                                case 'plus':
-                                    plan.editable = true;
-                                    plan.display = true;
-                                    plan.sending = '1000 ' + gettextCatalog.getString('Messages per day', null);
-                                    plan.labels = '200 ' + gettextCatalog.getString('Labels', null);
-                                    plan.support = gettextCatalog.getString('Support', null);
-                                    break;
-                                case 'business':
-                                    plan.editable = true;
-                                    plan.display = false;
-                                    plan.sending = '???';
-                                    plan.labels = '???';
-                                    plan.support = '???';
-                                    break;
-                                case 'visionary':
-                                    plan.editable = false;
-                                    plan.display = true;
-                                    plan.sending = gettextCatalog.getString('Unlimited sending', null);
-                                    plan.labels = gettextCatalog.getString('Unlimited labels', null);
-                                    plan.support = gettextCatalog.getString('Priority support', null);
-                                    break;
-                                default:
-                                    break;
-                            }
-                        });
-                    }
+                const json = angular.fromJson(data);
 
-                    return data;
+                if(json && json.Code === 1000) {
+                    // Add free plan
+                    json.Plans.unshift({
+                        Type: 1,
+                        Cycle,
+                        Currency,
+                        Name: 'free',
+                        Title: 'Free',
+                        Amount: 0,
+                        MaxDomains: 0,
+                        MaxAddresses: 1,
+                        MaxSpace: 500 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE,
+                        MaxMembers: 0,
+                        TwoFactor: 0
+                    });
+
+                    _.each(json.Plans, function(plan) {
+                        switch (plan.Name) {
+                            case 'free':
+                                plan.editable = false;
+                                plan.display = true;
+                                plan.sending = '150 ' + gettextCatalog.getString('Messages per day', null);
+                                plan.labels = '20 ' + gettextCatalog.getString('Labels', null);
+                                plan.support = gettextCatalog.getString('Limited support', null);
+                                break;
+                            case 'plus':
+                                plan.editable = true;
+                                plan.display = true;
+                                plan.sending = '1000 ' + gettextCatalog.getString('Messages per day', null);
+                                plan.labels = '200 ' + gettextCatalog.getString('Labels', null);
+                                plan.support = gettextCatalog.getString('Support', null);
+                                break;
+                            case 'business':
+                                plan.editable = true;
+                                plan.display = false;
+                                plan.sending = '???';
+                                plan.labels = '???';
+                                plan.support = '???';
+                                break;
+                            case 'visionary':
+                                plan.editable = false;
+                                plan.display = true;
+                                plan.sending = gettextCatalog.getString('Unlimited sending', null);
+                                plan.labels = gettextCatalog.getString('Unlimited labels', null);
+                                plan.support = gettextCatalog.getString('Priority support', null);
+                                break;
+                            default:
+                                break;
+                        }
+                    });
                 }
-            });
+
+                return json;
+
+            };
+
+            return $http
+                .get(url.get() + '/payments/plans', {
+                    params: { Currency, Cycle },
+                    transformResponse
+                });
         },
         /**
         * Get current subscription
