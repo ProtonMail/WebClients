@@ -156,7 +156,7 @@ angular.module('proton.cache', [])
             if (angular.isDefined(conversation) && angular.isArray(conversation.LabelIDs) && messages.length > 0) {
                 conversation.LabelIDs.forEach((labelID) => {
                     // Get the most recent message for a specific label
-                    let message = _.chain(messages)
+                    const message = _.chain(messages)
                         .filter(({LabelIDs}) => angular.isArray(LabelIDs) && LabelIDs.indexOf(labelID) !== -1)
                         .first()
                         .value();
