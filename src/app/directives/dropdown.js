@@ -1,35 +1,31 @@
 angular.module('proton.dropdown', [])
 
-.directive('dropdown', function ($timeout, $document, $rootScope) {
+.directive('dropdown', ($timeout, $document, $rootScope) => {
     return function (scope, element, attrs) {
-        // Functions
-        var showDropdown = function() {
-            var parent = element.parent();
-            var dropdown = parent.find('.pm_dropdown');
-            var next = element.next();
+        const parent = element.parent();
+        const dropdown = parent.find('.pm_dropdown');
+        const next = element.next();
 
+        // Functions
+        function showDropdown() {
             element.addClass('active');
             dropdown.show();
             $document.on('click', outside);
-        };
+        }
 
-        var hideDropdown = function() {
-            var parent = element.parent();
-            var dropdown = parent.find('.pm_dropdown');
-            var next = element.next();
-
+        function hideDropdown() {
             element.removeClass('active');
             dropdown.hide();
             $document.off('click', outside);
-        };
+        }
 
-        var outside = function(event) {
-            if (element !== event.target && !element[0].contains(event.target)) {
+        function outside(event) {
+            if (!dropdown[0].contains(event.target)) {
                 hideDropdown();
             }
-        };
+        }
 
-        var click = function(event) {
+        function click(event) {
             if (element.hasClass('active')) {
                 hideDropdown();
             } else {
@@ -40,16 +36,16 @@ angular.module('proton.dropdown', [])
             }
 
             return false;
-        };
+        }
 
         // Listeners
         element.on('click', click);
 
-        scope.$on('closeDropdown', function(event) {
+        scope.$on('closeDropdown', (event) => {
             hideDropdown();
         });
 
-        scope.$on('$destroy', function() {
+        scope.$on('$destroy', () => {
             element.off('click', click);
             hideDropdown();
         });
