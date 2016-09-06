@@ -12,6 +12,7 @@ angular.module("proton.authentication", [
     $rootScope,
     $state,
     $timeout,
+    $injector,
     CONFIG,
     CONSTANTS,
     Contact,
@@ -170,10 +171,6 @@ angular.module("proton.authentication", [
             }
 
             auth.setAuthHeaders();
-        },
-
-        saveEventId: function(id) {
-            secureSessionStorage.setItem(CONSTANTS.EVENT_ID, id);
         }
     };
 
@@ -541,8 +538,10 @@ angular.module("proton.authentication", [
         },
 
         receivedCredentials: function(data) {
+            const eventManager = $injector.get('eventManager');
+
             auth.saveAuthData(data);
-            auth.saveEventId(data.EventID);
+            eventManager.setEventID(data.EventID);
         },
 
         fetchUserInfo: function(uid) {

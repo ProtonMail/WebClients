@@ -297,7 +297,6 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 			manageID: function(id) {
 				if (id) {
 					this.ID = id;
-					secureSessionStorage.setItem(CONSTANTS.EVENT_ID, id);
 				}
 			},
 			manageNotices: function(notices) {
@@ -397,9 +396,11 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 		};
 
 		var api = _.bindAll({
+			setEventID(ID) {
+				eventModel.manageID(ID);
+			},
 			start: function () {
 				if (angular.isUndefined(eventModel.promiseCancel)) {
-					eventModel.ID = secureSessionStorage.getItem(CONSTANTS.EVENT_ID);
 					eventModel.promiseCancel = $timeout(eventModel.interval, 0);
 				}
 			},

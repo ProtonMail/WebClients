@@ -45,7 +45,6 @@ angular.module("proton.storage", [])
     var data = {};
 
     var whitelist = [
-        CONSTANTS.EVENT_ID,
         CONSTANTS.MAILBOX_PASSWORD_KEY,
         CONSTANTS.OAUTH_KEY + ':SessionToken',
         CONSTANTS.OAUTH_KEY + ':Uid',
@@ -86,7 +85,7 @@ angular.module("proton.storage", [])
 
         // Strip off padding
         var unpaddedLength = item.length;
-        
+
         while (unpaddedLength > 0 && xored[unpaddedLength - 1] === 0) {
             unpaddedLength--;
         }
