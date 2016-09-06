@@ -295,9 +295,10 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 				}
 			},
 			manageID: function(id) {
-				this.ID = id;
-
-				secureSessionStorage.setItem(CONSTANTS.EVENT_ID, id);
+				if (id) {
+					this.ID = id;
+					secureSessionStorage.setItem(CONSTANTS.EVENT_ID, id);
+				}
 			},
 			manageNotices: function(notices) {
 				if(angular.isDefined(notices) && notices.length > 0) {
