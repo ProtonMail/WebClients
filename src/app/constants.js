@@ -9,7 +9,6 @@ angular.module('proton.constants', [])
     PM_SIGNATURE: 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.',
     MAILBOX_PASSWORD_KEY: "proton:mailbox_pwd",
     OAUTH_KEY: "proton:oauth",
-    EVENT_ID: "proton:eventid",
     WHITELIST: ['notify@protonmail.com'],
     REPLY: 0,
     REPLY_ALL: 1,
