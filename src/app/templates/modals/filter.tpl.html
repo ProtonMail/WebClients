@@ -15,7 +15,7 @@
                         <input type="text" id="filterName" ng-model="ctrl.filter.Name" />
                     </div>
                 </div>
-                <div ng-hide="ctrl.simple" class="pm_grid">
+                <div ng-show="ctrl.mode === 'complex'" class="pm_grid">
                     <div class="col-1-4">
                         <label for="filterScript" translate translate-context="Title">Sieve Script</label>
                     </div>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <p translate translate-context="Info" class="alert alert-info">Custom filters work on all new emails, including incoming emails as well as sent emails</p>
-                <div ng-show="ctrl.simple">
+                <div ng-show="ctrl.mode === 'simple'">
                     <legend translate-context="Title" translate translate-context="Title">Conditions</legend>
                     <div ng-repeat="condition in ctrl.filter.Simple.Conditions">
                         <p class="bold text-center" ng-hide="$index === 0">

@@ -13,17 +13,17 @@ angular.module("proton.toggle", [])
         },
         link: function(scope, element, attrs) {
             // Initialization
-            if(angular.isUndefined(scope.status)) {
+            if (angular.isUndefined(scope.status)) {
                 scope.check = true;
             } else {
                 scope.check = Boolean(scope.status);
             }
 
-            if(angular.isUndefined(scope.on)) {
+            if (angular.isUndefined(scope.on)) {
                 scope.on = 'Yes';
             }
 
-            if(angular.isUndefined(scope.off)) {
+            if (angular.isUndefined(scope.off)) {
                 scope.off = 'No';
             }
 
@@ -31,13 +31,13 @@ angular.module("proton.toggle", [])
             scope.click = function(event) {
                 scope.check = !scope.check;
 
-                if(angular.isNumber(scope.status)) {
+                if (angular.isNumber(scope.status)) {
                     scope.status = Number(scope.check);
                 } else {
                     scope.status = scope.check;
                 }
 
-                if(angular.isDefined(scope.change) && angular.isFunction(scope.change)) {
+                if (angular.isDefined(scope.change) && angular.isFunction(scope.change)) {
                     // Need to delay the change to be sure, the model is updated
                     setTimeout(function() {
                         scope.change();
