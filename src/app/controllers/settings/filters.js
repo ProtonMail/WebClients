@@ -102,6 +102,7 @@ angular.module("proton.controllers.Settings")
         } else {
             filterModal.activate({
                 params: {
+                    mode: 'simple',
                     close: function() {
                         filterModal.deactivate();
                     }
@@ -142,6 +143,7 @@ angular.module("proton.controllers.Settings")
     $scope.editCustomFilter = function(filter) {
         filterModal.activate({
             params: {
+                mode: (filter.Simple && Object.keys(filter.Simple).length) ? 'simple' : 'complex',
                 filter: filter,
                 close: function() {
                     filterModal.deactivate();
@@ -179,33 +181,35 @@ angular.module("proton.controllers.Settings")
         });
     };
 
-    $scope.enableCustomFilter = function(filter) {
+    $scope.enableCustomFilter = (filter) => {
         return networkActivityTracker.track(
             Filter.enable(filter)
-            .then(function(result) {
+            .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     notify({message: gettextCatalog.getString('Status updated', null, 'Info'), classes: 'notification-success'});
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
+                    filter.Status = 0;
                 }
             })
         );
     };
 
-    $scope.disableCustomFilter = function(filter) {
+    $scope.disableCustomFilter = (filter) => {
         return networkActivityTracker.track(
             Filter.disable(filter)
-            .then(function(result) {
+            .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     notify({message: gettextCatalog.getString('Status updated', null, 'Info'), classes: 'notification-success'});
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
+                    filter.Status = 1;
                 }
             })
         );
     };
 
-    $scope.statusCustomFilter = function(filter) {
+    $scope.statusCustomFilter = (filter) => {
         if (filter.Status === 0) {
             $scope.disableCustomFilter(filter);
         } else if (filter.Status === 1) {

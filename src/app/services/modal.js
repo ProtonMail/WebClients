@@ -1756,12 +1756,12 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/filter.tpl.html',
         controller: function(params) {
             const ctrl = this;
-            this.simple = true;
-            this.hasLabels = false;
-            this.hasMove = false;
-            this.hasMark = false;
 
-            this.types = [
+            ctrl.hasLabels = false;
+            ctrl.hasMove = false;
+            ctrl.hasMark = false;
+
+            ctrl.types = [
                 {label: gettextCatalog.getString('Select', null), value: 'select'},
                 {label: gettextCatalog.getString('Subject', null), value: 'subject'},
                 {label: gettextCatalog.getString('Sender', null), value: 'sender'},
@@ -1769,7 +1769,7 @@ angular.module("proton.modals", [])
                 {label: gettextCatalog.getString('Attachments', null), value: 'attachments'}
             ];
 
-            this.comparators = [
+            ctrl.comparators = [
                 {label: gettextCatalog.getString('contains', null), value: 'contains'},
                 {label: gettextCatalog.getString('is exactly', null), value: 'is'},
                 {label: gettextCatalog.getString('begins with', null), value: 'starts'},
@@ -1782,97 +1782,130 @@ angular.module("proton.modals", [])
                 {label: gettextCatalog.getString('does not match', null), value: '!matches'}
             ];
 
-            this.operators = [
+            ctrl.operators = [
                 {label: gettextCatalog.getString('all', null), value: 'all'},
                 {label: gettextCatalog.getString('any', null), value: 'any'}
             ];
 
-            this.initialization = function() {
-                if (angular.isDefined(params.filter)) {
-                    // Update existing custom filter
-                    this.filter = {
-                        ID: params.filter.ID,
-                        Name: params.filter.Name,
-                        Status: params.filter.Status,
-                        Version: CONSTANTS.FILTER_VERSION
-                    };
+            /**
+             * Prepare the Conditions Model
+             * @param {Object}
+             * @return {Array}
+             */
+            function prepareConditions({Simple = {}} = {}) {
+                const {Conditions = []} = Simple;
+                const conditions = Conditions.map(({Type = {}, Comparator = {}, Values = []}) => ({
+                    Values,
+                    value: '',
+                    Type: _.findWhere(ctrl.types, {value: Type.value}),
+                    Comparator: _.findWhere(ctrl.comparators, {value: Comparator.value})
+                }));
 
-                    if (angular.isObject(params.filter.Simple) && Object.keys(params.filter.Simple).length > 0) {
-                        // Simple mode
-                        this.filter.Simple = {
-                            Operator: _.findWhere(this.operators, {value: params.filter.Simple.Operator.value}),
-                            Conditions: [],
-                            Actions: {
-                                Labels: _.map(authentication.user.Labels, function(label) {
-                                    label.Selected = angular.isDefined(_.findWhere(params.filter.Simple.Actions.Labels, {Name: label.Name}));
-
-                                    return label;
-                                }),
-                                Move: params.filter.Simple.Actions.Move || CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                                Mark: params.filter.Simple.Actions.Mark
-                            }
-                        };
-
-                        _.each(params.filter.Simple.Conditions, function(condition) {
-                            condition.Type = _.findWhere(this.types, {value: condition.Type.value});
-                            condition.Comparator = _.findWhere(this.comparators, {value: condition.Comparator.value});
-                            this.filter.Simple.Conditions.push(condition);
-                        }.bind(this));
-
-                        if (params.filter.Simple.Actions.Labels && params.filter.Simple.Actions.Labels.length > 0) {
-                            this.hasLabels = true;
-                        }
-
-                        if (params.filter.Simple.Actions.Move) {
-                            this.hasMove = true;
-                        }
-
-                        if (params.filter.Simple.Actions.Mark && (params.filter.Simple.Actions.Mark.Read === true || params.filter.Simple.Actions.Mark.Starred === true)) {
-                            this.hasMark = true;
-                        }
-                    } else {
-                        // Complex mode
-                        this.simple = false;
-                        this.filter.Sieve = params.filter.Sieve;
-                        this.filter.Version = CONSTANTS.FILTER_VERSION;
-                    }
-                } else {
-                    // Create new custom filter
-                    this.filter = {
-                        Name: '',
-                        Status: 1,
-                        Version: CONSTANTS.FILTER_VERSION,
-                        Simple: {
-                            Operator: _.first(this.operators),
-                            Conditions: [],
-                            Actions: {
-                                Labels: _.map(authentication.user.Labels, function(label) {
-                                    label.Selected = false;
-
-                                    return label;
-                                }),
-                                Move: CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                                Mark: {
-                                    Read: false,
-                                    Starred: false
-                                }
-                            }
-                        }
-                    };
-
-                    this.addCondition();
+                if (conditions.length === 0) {
+                    conditions.push({
+                        Values: [],
+                        value: '',
+                        Type: ctrl.types[0],
+                        Comparator: ctrl.comparators[0]
+                    });
                 }
 
-                if (angular.isObject(this.filter.Simple)) {
+                return conditions;
+            }
+
+            /**
+             * Prepare the Actions Model
+             * @param {Object}
+             * @return {Object} actions
+             */
+            function prepareActions({Simple = {}} = {}) {
+                const {Actions = {}} = Simple;
+                const {Move = '', Mark = {Read: false, Starred: false}, Labels = []} = Actions;
+                const actions = {};
+
+                ctrl.hasMove = Move.length > 0;
+                actions.Move = (Move.length) ? Move : CONSTANTS.MAILBOX_IDENTIFIERS.inbox;
+                ctrl.hasMark = (Mark.Read || Mark.Starred);
+                actions.Mark = Mark;
+                ctrl.hasLabels = Labels.length > 0;
+                actions.Labels = authentication.user.Labels.map((label) => {
+                    label.Selected = _.findIndex(Labels, {Name: label.Name}) !== -1;
+
+                    return label;
+                });
+
+                return actions;
+            }
+
+            /**
+             * Prepare the Operator model
+             * @param {Object}
+             * @return {Object}
+             */
+            function prepareOperator({Simple = {}} = {}) {
+                const {Operator = {}} = Simple;
+                const {value = 'all'} = Operator;
+
+                return _.findWhere(ctrl.operators, {value});
+            }
+
+            /**
+             * Prepare the ID
+             * @param  {String} {ID=''}
+             * @return {String}
+             */
+            function prepareID({ID = ''} = {}) {
+                return ID;
+            }
+
+            /**
+             * Prepare the Name
+             * @param  {String} Name
+             * @return {String}
+             */
+            function prepareName({Name = ''} = {}) {
+                return Name;
+            }
+
+            /**
+             * Prepare the Status
+             * @param  {Integer} Status
+             * @return {Integer}
+             */
+            function prepareStatus({Status = 1} = {}) {
+                return Status;
+            }
+
+            ctrl.initialization = function() {
+                ctrl.filter = {
+                    ID: prepareID(params.filter),
+                    Name: prepareName(params.filter),
+                    Status: prepareStatus(params.filter),
+                    Version: CONSTANTS.FILTER_VERSION
+                };
+
+                if (params.mode === 'simple') {
+                    ctrl.mode = 'simple';
+                    ctrl.filter.Simple = {
+                        Operator: prepareOperator(params.filter),
+                        Conditions: prepareConditions(params.filter),
+                        Actions: prepareActions(params.filter)
+                    };
+                } else if (params.mode === 'complex') {
+                    ctrl.mode = 'complex';
+                    ctrl.filter.Sieve = params.filter.Sieve;
+                }
+
+                if (angular.isObject(ctrl.filter.Simple)) {
                     const unsubscribe = [];
 
                     ['deleteLabel', 'createLabel', 'updateLabel', 'updateLabels'].forEach(function(name) {
                         unsubscribe.push($rootScope.$on(name, function(event, ID) {
-                            this.filter.Simple.Actions.Labels = authentication.user.Labels;
-                        }.bind(this)));
-                    }.bind(this));
+                            ctrl.filter.Simple.Actions.Labels = authentication.user.Labels;
+                        }));
+                    });
 
-                    this.$onDestroy = () => {
+                    ctrl.$onDestroy = () => {
                         unsubscribe.forEach(cb => cb());
                         unsubscribe.length = 0;
                     };
@@ -1881,8 +1914,7 @@ angular.module("proton.modals", [])
                 $timeout(function() {
                     angular.element('#filterName').focus();
                 });
-            }.bind(this);
-
+            };
 
             /**
              * Condition Attachements:
@@ -1891,32 +1923,32 @@ angular.module("proton.modals", [])
              * @param  {String} value Value selected
              * @return {void}
              */
-            this.onChangeAttachements = (model, value) => {
+            ctrl.onChangeAttachements = (model, value) => {
                 model.Comparator = _.findWhere(ctrl.comparators, { value });
             };
 
-            this.displaySeparator = function() {
-                if (this.filter.Simple) {
-                    var conditions = this.filter.Simple.Conditions;
+            ctrl.displaySeparator = function() {
+                if (ctrl.filter.Simple) {
+                    var conditions = ctrl.filter.Simple.Conditions;
 
-                    return conditions.length > 0 && _.first(conditions).Type.value !== 'select';
+                    return conditions.length > 0 && conditions[0].Type.value !== 'select';
                 } else {
                     return false;
                 }
-            }.bind(this);
+            }.bind(ctrl);
 
-            this.valid = function() {
+            ctrl.valid = function() {
                 var pass = true;
 
                 // Check name
-                pass = this.filter.Name.length > 0;
+                pass = ctrl.filter.Name.length > 0;
 
-                if (angular.isObject(this.filter.Simple) && Object.keys(this.filter.Simple).length > 0) {
+                if (angular.isObject(ctrl.filter.Simple) && Object.keys(ctrl.filter.Simple).length > 0) {
                     // Simple mode
                     // Check conditions
                     var attachmentsCondition = 0;
 
-                    _.each(this.filter.Simple.Conditions, function(condition) {
+                    _.each(ctrl.filter.Simple.Conditions, function(condition) {
                         pass = pass && condition.Type.value !== 'select';
 
                         if (condition.Type.value === 'subject' || condition.Type.value === 'sender' || condition.Type.value === 'recipient') {
@@ -1931,34 +1963,34 @@ angular.module("proton.modals", [])
                     pass = pass && attachmentsCondition <= 1;
 
                     // Check actions
-                    pass = pass && (this.hasLabels || this.hasMove || this.hasMark);
+                    pass = pass && (ctrl.hasLabels || ctrl.hasMove || ctrl.hasMark);
 
-                    if (this.hasLabels === true) {
-                        pass = pass && _.where(this.filter.Simple.Actions.Labels, {Selected: true}).length > 0;
+                    if (ctrl.hasLabels === true) {
+                        pass = pass && _.where(ctrl.filter.Simple.Actions.Labels, {Selected: true}).length > 0;
                     }
 
-                    if (this.hasMark === true) {
-                        pass = pass && (this.filter.Simple.Actions.Mark.Starred || this.filter.Simple.Actions.Mark.Read);
+                    if (ctrl.hasMark === true) {
+                        pass = pass && (ctrl.filter.Simple.Actions.Mark.Starred || ctrl.filter.Simple.Actions.Mark.Read);
                     }
 
                     return pass;
                 } else {
                     // Complex mode
                     // Check sieve script content
-                    return this.filter.Sieve.length > 0;
+                    return ctrl.filter.Sieve.length > 0;
                 }
-            }.bind(this);
+            };
 
-            this.addCondition = function() {
-                this.filter.Simple.Conditions.push({
-                    Type: _.first(this.types),
-                    Comparator: _.first(this.comparators),
+            ctrl.addCondition = function() {
+                ctrl.filter.Simple.Conditions.push({
+                    Type: _.first(ctrl.types),
+                    Comparator: _.first(ctrl.comparators),
                     Values: [],
                     value: ''
                 });
             };
 
-            this.addValue = function(condition) {
+            ctrl.addValue = function(condition) {
                 if (condition.Values.indexOf(condition.value) === -1) {
                     if (condition.value) {
                         condition.Values.push(condition.value);
@@ -1969,7 +2001,7 @@ angular.module("proton.modals", [])
                 }
             };
 
-            this.addLabel = function() {
+            ctrl.addLabel = function() {
                 labelModal.activate({
                     params: {
                         title: gettextCatalog.getString('Create new label', null, 'Title'),
@@ -1996,34 +2028,34 @@ angular.module("proton.modals", [])
                 });
             };
 
-            this.removeCondition = function(condition) {
-                var index = this.filter.Simple.Conditions.indexOf(condition);
+            ctrl.removeCondition = function(condition) {
+                var index = ctrl.filter.Simple.Conditions.indexOf(condition);
 
-                this.filter.Simple.Conditions.splice(index, 1);
-            }.bind(this);
+                ctrl.filter.Simple.Conditions.splice(index, 1);
+            }.bind(ctrl);
 
-            this.save = function() {
+            ctrl.save = function() {
                 var promise;
                 var messageSuccess;
-                var clone = angular.copy(this.filter);
+                var clone = angular.copy(ctrl.filter);
 
-                if (angular.isObject(this.filter.Simple) && Object.keys(this.filter.Simple).length > 0) {
-                    if (this.hasLabels === true) {
+                if (angular.isObject(ctrl.filter.Simple) && Object.keys(ctrl.filter.Simple).length > 0) {
+                    if (ctrl.hasLabels === true) {
                         clone.Simple.Actions.Labels = _.filter(clone.Simple.Actions.Labels, function(label) { return label.Selected === true; });
                     } else {
                         clone.Simple.Actions.Labels = [];
                     }
 
-                    if (this.hasMove === false) {
+                    if (ctrl.hasMove === false) {
                         clone.Simple.Actions.Move = null;
                     }
 
-                    if (this.hasMark === false) {
+                    if (ctrl.hasMark === false) {
                         clone.Simple.Actions.Mark = {Read: false, Starred: false};
                     }
                 }
 
-                if (angular.isDefined(clone.ID)) {
+                if (clone.ID) {
                     promise = Filter.update(clone);
                     messageSuccess = gettextCatalog.getString('Filter updated', null, 'Notification');
                 } else {
@@ -2039,18 +2071,21 @@ angular.module("proton.modals", [])
                             params.close();
                         } else if (result.data && result.data.Error) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
-                        }
-                    }.bind(this))
-                );
-            }.bind(this);
 
-            this.cancel = function() {
+                            if (result.data.Code === 50016) {
+                                eventManager.call();
+                                params.close();
+                            }
+                        }
+                    })
+                );
+            };
+
+            ctrl.cancel = function() {
                 params.close();
             };
 
-            this.findWhere = (array, value) => _.findWhere(array, {value});
-
-            this.initialization();
+            ctrl.initialization();
         }
     });
 })
