@@ -3,7 +3,11 @@ angular.module('proton.message')
     restrict: 'A',
     link(scope, element) {
         function selection() {
-            return window.getSelection().toString().length === 0;
+            if (window.getSelection) {
+                return window.getSelection().toString().length === 0;
+            } else {
+                return true;
+            }
         }
 
         function mouseup(event) {
