@@ -1669,8 +1669,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             .then((result = {}) => {
 
                 // Check if there is an error coming from the server, then reject the process
-                if (angular.isDefined(result.Error)) {
-                    const error = new Error(result.Error);
+                if (result.Error) {
+
+                    let error;
+                    // Internal recipient not found
+                    if (result.Code === 15198) {
+                        const { ErrorDescription } = result;
+                        const msg = ErrorDescription ? `${result.Error}: ${ErrorDescription}` : result.Error;
+
+                        error = new Error(msg);
+                    } else {
+                        error = new Error(result.Error);
+                    }
+
                     deferred.reject(error);
                     return $q.reject(error);
                 }
