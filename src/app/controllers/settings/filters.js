@@ -95,7 +95,9 @@ angular.module("proton.controllers.Settings")
     });
 
     $scope.addCustomFilter = function() {
-        if ($scope.isFree === true && $scope.customFilters.length === 1) {
+        const activeCustomFilters = _.where($scope.customFilters, {Status: 1});
+
+        if ($scope.isFree === true && activeCustomFilters.length === 1) {
             notify(gettextCatalog.getString('Free ProtonMail accounts are limited to 1 custom filter. Please <a href="/dashboard">upgrade</a> to get unlimited filters.', null, 'Info'));
         } else {
             filterModal.activate({
