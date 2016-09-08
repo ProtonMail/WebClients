@@ -297,10 +297,11 @@ angular.module("proton.embedded", [])
                 // when we have the session key and attachment:
                 const promiseParsing = $q.all({ attObject: att, key })
                     .then(({ attObject = {}, key = {} } = {} ) => {
+                        const storeAttachement = store(message, cid);
 
                         // If it's coming from the cache to not try to decrypt it again as it's already decrypted
                         if (attObject.isCache) {
-                            return;
+                            return storeAttachement(attObject.attachment.data, attachment.MIMEType);
                         }
 
                         // create new Uint8Array to store decryted attachment
@@ -311,7 +312,6 @@ angular.module("proton.embedded", [])
                             .then(({ data } = {}) => {
                                 attachment.decrypting = false;
                                 at = null;
-                                const storeAttachement = store(message, cid);
                                 storeAttachement(data, attachment.MIMEType);
                                 // Store attachment decrypted
                                 attachments.push({
