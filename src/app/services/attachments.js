@@ -145,19 +145,32 @@ angular.module('proton.attachments', ['proton.authentication', 'proton.storage']
 
             return deferred.promise;
         },
-        get: function(id) {
-            var attachment = _.findWhere(this.store, {ID: id});
+
+        /**
+         * Get an attachement.
+         * - If it's coming from the cache, we will get the decrypted attachment
+         * - If it's not inside the cache, get encrypted version
+         * @param  {String} ID Attachment.ID
+         * @return {Promise}
+         */
+        get(ID) {
+            const attachment = _.findWhere(this.store, {ID});
             if(!attachment) {
                 return $http
-                    .get(url.get() + "/attachments/" + id, {responseType: "arraybuffer"})
-                    .success(function(data, status, headers, other) {
-                        return data;
-                    }).error(function(response) {
-                        $log.debug(response);
-                    });
-            } else {
-                return attachment;
+                    .get(`${url.get()}/attachments/${ID}`, {
+                        responseType: 'arraybuffer'
+                    })
+                    .then(({ data }) => ({
+                        attachment: data,
+                        isCache: false
+                    }))
+                    .catch($log.debug);
             }
+
+            return $q.resolve({
+                attachment,
+                isCache: true
+            });
         },
         uploadProgress: function(progress, elem) {
             const $elem = $(elem);
