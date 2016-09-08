@@ -300,7 +300,6 @@ angular.module("proton.embedded", [])
 
                         // If it's coming from the cache to not try to decrypt it again as it's already decrypted
                         if (attObject.isCache) {
-                        debugger;
                             return;
                         }
 
