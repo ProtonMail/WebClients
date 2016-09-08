@@ -433,7 +433,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         $scope.back();
     };
 
-    $scope.decryptAttachment = function(event, attachment, message) {
+    $scope.decryptAttachment = function(event, att, message) {
         event.preventDefault();
 
         var link = event.currentTarget;
@@ -445,104 +445,80 @@ angular.module("proton.controllers.Message", ["proton.constants"])
         }
 
         // get enc attachment
-        var att = attachments.get(attachment.ID, attachment.Name);
+        const attachmentPromise = attachments.get(att.ID, att.Name);
 
-        attachment.decrypting = true;
+        att.decrypting = true;
 
-        if (attachment.KeyPackets === undefined) {
-            return att.then( function(result) {
+        // decode key packets
+        const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(att.KeyPackets));
+        // get user's pk
+        const pk = authentication.getPrivateKeys(message.AddressID);
+        const key = pmcw.decryptSessionKey(keyPackets, pk);
 
-                $timeout(function(){
-                    $scope.downloadAttachment({
-                        data: result.data,
-                        Name: attachment.Name,
+        // when we have the session key and attachment:
+        $q.all({ attObject: attachmentPromise, key })
+            .then(({ key, attObject }) => {
+
+                const { attachment, isCache } = attObject;
+
+                // It's coming from the cache ? So we can download it
+                if (isCache) {
+                    att.decrypting = false;
+                    return $scope.downloadAttachment({
+                        data: attachment.data,
+                        Name: attachment.name,
                         MIMEType: attachment.MIMEType,
                         el: link
                     });
-                    attachment.decrypting = false;
-                    attachment.decrypted = true;
-                });
+                }
 
-            });
-        } else {
-            if (angular.isDefined(att.data)) {
-                $scope.downloadAttachment({
-                    data: att.data,
-                    Name: att.name,
-                    MIMEType: att.MIMEType,
-                    el: link
-                });
-                attachment.decrypting = false;
-            } else {
-                // decode key packets
-                var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-                // get user's pk
-                var pk = authentication.getPrivateKeys(message.AddressID);
-                var key = pmcw.decryptSessionKey(keyPackets, pk);
+                // create new Uint8Array to store decryted attachment
+                let at = new Uint8Array(attObject.attachment);
 
-                // when we have the session key and attachment:
-                $q.all({
-                    attObject: att,
-                    key: key
-                 }).then(
-                    function(obj) {
-                        // create new Uint8Array to store decryted attachment
-                        var at = new Uint8Array(obj.attObject.data);
-
-                        // grab the key
-                        var key = obj.key.key;
-
-                        // grab the algo
-                        var algo = obj.key.algo;
-
-                        // decrypt the att
-                        pmcw.decryptMessage(at, key, true, algo)
-                        .then(
-                            function(decryptedAtt) {
-                                // Store attachment decrypted
-                                attachments.push({
-                                    ID: attachment.ID,
-                                    data: decryptedAtt.data,
-                                    name: decryptedAtt.filename
-                                });
-                                // Call download function
-                                $scope.downloadAttachment({
-                                    data: decryptedAtt.data,
-                                    Name: decryptedAtt.filename,
-                                    MIMEType: attachment.MIMEType,
-                                    el: link
-                                });
-                                attachment.decrypting = false;
-                                attachment.decrypted = true;
-                                if(!$rootScope.isFileSaverSupported) {
-                                    // display a download icon
-                                    attachment.decrypted = true;
-                                }
-                                $scope.$apply();
-                            },
-                            function(err) {
-                                $log.error(err);
-                            }
-                        );
-                    },
-                    function(err) {
-                        attachment.decrypting = false;
-                        confirmModal.activate({
-                            params: {
-                                title: 'Unable to decrypt attachment.',
-                                message: '<p>We were not able to decrypt this attachment. The technical error code is:</p><p> <pre>'+err+'</pre></p><p>Email us and we can try to help you with this. <kbd>support@protonmail.com</kbd></p>',
-                                confirm: function() {
-                                    confirmModal.deactivate();
-                                },
-                                cancel: function() {
-                                    confirmModal.deactivate();
-                                }
-                            }
+                // decrypt the att
+                pmcw
+                    .decryptMessage(at, key.key, true, key.algo)
+                    .then(({ data, filename } = {}) => {
+                        // Store attachment decrypted
+                        attachments.push({
+                            ID: att.ID,
+                            data,
+                            name: filename
                         });
-                    }
-                );
-            }
-        }
+                        // Call download function
+                        $scope.downloadAttachment({
+                            data,
+                            Name: filename,
+                            MIMEType: att.MIMEType,
+                            el: link
+                        });
+                        att.decrypting = false;
+                        att.decrypted = true;
+                        if(!$rootScope.isFileSaverSupported) {
+                            // display a download icon
+                            att.decrypted = true;
+                        }
+                        $scope.$apply();
+                        at = null;
+                    })
+                    .catch($log.error);
+            })
+            .catch((error) => {
+                att.decrypting = false;
+                confirmModal
+                    .activate({
+                        params: {
+                            title: 'Unable to decrypt attachment.',
+                            message: '<p>We were not able to decrypt this attachment. The technical error code is:</p><p> <pre>'+error+'</pre></p><p>Email us and we can try to help you with this. <kbd>support@protonmail.com</kbd></p>',
+                            confirm() {
+                                confirmModal.deactivate();
+                            },
+                            cancel() {
+                                confirmModal.deactivate();
+                            }
+                        }
+                    });
+            });
     };
 
     /**
