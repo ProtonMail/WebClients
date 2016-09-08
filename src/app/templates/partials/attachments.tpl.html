@@ -1,7 +1,7 @@
 <div ng-show="message.Attachments.length > 0" id="attachmentArea">
     <header>
         <span class="title">
-            <strong>{{ message.sizeAttachments() | humanSize }}</strong>
+            <strong>{{ message.attachmentsSize() | humanSize }}</strong>
             <span ng-show="message.Attachments.length - message.NumEmbedded > 0">
                 <i class="fa fa-paperclip"></i> {{ message.Attachments.length -  message.NumEmbedded }} <span translate translate-n="message.Attachments.length - message.NumEmbedded" translate-plural="files attached">file attached</span>
             </span>

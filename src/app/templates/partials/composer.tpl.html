@@ -232,7 +232,7 @@
              <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0" >
                 <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate translate-context="Action">Hide</i>
                 <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
-                <strong>{{ message.sizeAttachments() | humanSize }}</strong>
+                <strong>{{ message.attachmentsSize() | humanSize }}</strong>
                 <span ng-show="message.Attachments.length > message.NumEmbedded">
                     <i class="fa fa-paperclip"></i> {{ message.Attachments.length - message.NumEmbedded }} <span translate translate-n="message.Attachments.length - message.NumEmbedded" translate-plural="files attached">file attached</span>
                 </span>
