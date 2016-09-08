@@ -328,8 +328,10 @@ angular.module("proton.controllers.Outside", [
             "key": key
          }).then(
             function(obj) {
+
+
                 // create new Uint8Array to store decryted attachment
-                var at = new Uint8Array(obj.attObject.data);
+                var at = new Uint8Array(obj.attObject.attachment);
 
                 // grab the key
                 var key = obj.key.key;
