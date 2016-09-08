@@ -86,11 +86,12 @@ angular.module('proton.service.message', [])
          * @param {Array} originalAttachements From the current message
          * return {String}
         */
-        function injectInline(originalAttachements = {}){
-            return _.filter(originalAttachements, function (el) {
-                    var disposition = el.Headers["content-disposition"];
-                    var inline = new RegExp('^inline', 'i');
-                    return inline.test(disposition) === true;
+        function injectInline({Attachments = []} = {}){
+            return Attachments.filter((attachement) => {
+                const disposition = attachement.Headers['content-disposition'];
+                const REGEXP_IS_INLINE = /^inline/i;
+
+                return (typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition));
             });
         }
 
@@ -112,7 +113,7 @@ angular.module('proton.service.message', [])
             }
 
             /* add inline images as attachments */
-            newMsg.Attachments = injectInline(currentMsg.Attachments);
+            newMsg.Attachments = injectInline(currentMsg);
             newMsg.NumEmbedded = 0;
 
             newMsg.ParentID = currentMsg.ID;

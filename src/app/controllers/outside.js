@@ -246,7 +246,7 @@ angular.module("proton.controllers.Outside", [
 
 
     $scope.addAttachment = function(file) {
-        var totalSize = message.sizeAttachments();
+        var totalSize = message.attachmentsSize();
         var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
         message.uploading = true;

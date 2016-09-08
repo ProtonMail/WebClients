@@ -135,7 +135,7 @@ angular.module("proton.models.message", ["proton.constants"])
             return this.DecryptedBody || '';
         },
 
-        sizeAttachments() {
+        attachmentsSize() {
             return (this.Attachments || []).reduce((acc, { Size = 0 } = {}) => acc + (+Size), 0);
         },
         encryptionType: function() {

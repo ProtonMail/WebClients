@@ -430,7 +430,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 previewTemplate: '<div style="display:none"></div>',
                 previewsContainer: '.previews',
                 accept(file, done) {
-                    var totalSize = $scope.getAttachmentsSize(message);
+                    var totalSize = message.attachmentsSize();
                     var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
                     totalSize += angular.isDefined(message.queuedFilesSize) ? message.queuedFilesSize : 0;
@@ -525,8 +525,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
         };
     };
-
-    $scope.getAttachmentsSize = ({ Attachments = [] } = {}) => Attachments.reduce((acc, { Size = 0 } = {}) => acc + ~~Size, 0);
 
     $scope.decryptAttachments = function(message) {
         var removeAttachments = [];
