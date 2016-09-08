@@ -209,8 +209,8 @@ angular.module("proton.controllers.Contacts", [
                 contactModal.deactivate();
             } else {
                 var newContact = {
-                    Name: name,
-                    Email: email
+                    Name: DOMPurify.sanitize(name),
+                    Email: DOMPurify.sanitize(email)
                 };
                 var contactList = [];
                 contactList.push(newContact);
