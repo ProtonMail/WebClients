@@ -1,8 +1,3 @@
-@keyframes nodeInserted {
-    from { opacity: 0.99; }
-    to { opacity: 1; }
-}
-
 #conversation-view {
     .fa-star {
         color: $yellow;
@@ -393,12 +388,6 @@
         }
         &.closed .summary {
             overflow: hidden;
-        }
-
-        .bodyDecrypted {
-            will-change: transform;
-            animation: nodeInserted;
-            animation-duration: 0.001s;
         }
     }
 }
