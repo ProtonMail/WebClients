@@ -128,10 +128,6 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
 
-        getDecryptedBodyKey() {
-            return 'DecryptedBody';
-        },
-
         getDecryptedBody(trustAsHtml =  false) {
             if (trustAsHtml) {
                 return $sce.trustAsHtml(this.DecryptedBody);
