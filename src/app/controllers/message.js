@@ -348,12 +348,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
                     // Detect type of content
                     if (isHtml === true) {
-                        $scope.isPlain = false;
                         $scope.message.viewMode = 'html';
                         $scope.message.setDecryptedBody(content);
                         deferred.resolve();
                     } else {
-                        $scope.isPlain = true;
                         $scope.message.viewMode = 'plain';
                     }
 
@@ -402,8 +400,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     });
                 }
             }, function(err) {
-                $scope.togglePlainHtml();
-                //TODO error reporter?
+                $scope.message.viewMode = 'plain';
                 $log.error(err);
             });
         } else {

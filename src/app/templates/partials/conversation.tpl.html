@@ -168,7 +168,7 @@
                             <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
                         </span>
                     </span>
-                    <filter-button message="message"></filter-button>                    
+                    <filter-button message="message"></filter-button>
                     <span class="pm_buttons">
                         <a
                             href="#"
@@ -276,7 +276,7 @@
             <p class="alert alert-danger" ng-if="message.SpamScore === 101" translate translate-context="Info">This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!</p>
             <div
                 class="bodyDecrypted email"
-                ng-class="{'plain': isPlain}"
+                ng-class="{'plain': message.viewMode === 'plain'}"
                 ng-if="message.viewMode === 'html'"
                 ng-bind-html="message.getDecryptedBody(true)"
                 toggle-blockquote
