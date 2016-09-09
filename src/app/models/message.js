@@ -345,10 +345,12 @@ angular.module("proton.models.message", ["proton.constants"])
                             this.failedDecryption = false;
                             deferred.resolve(result);
                         }.bind(this), function(err) {
+                            this.DecryptedBody = this.Body;
                             this.failedDecryption = true;
                             deferred.reject(err);
                         }.bind(this));
                     } catch (err) {
+                        this.DecryptedBody = this.Body;
                         this.failedDecryption = true;
                         deferred.reject(err);
                     }
