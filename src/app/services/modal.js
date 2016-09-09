@@ -1820,11 +1820,12 @@ angular.module("proton.modals", [])
              */
             function prepareActions({Simple = {}} = {}) {
                 const {Actions = {}} = Simple;
-                const {Move = '', Mark = {Read: false, Starred: false}, Labels = []} = Actions;
+                const {Move, Mark = {Read: false, Starred: false}, Labels = []} = Actions;
                 const actions = {};
+                const move = Move || '';
 
-                ctrl.hasMove = Move.length > 0;
-                actions.Move = (Move.length) ? Move : CONSTANTS.MAILBOX_IDENTIFIERS.inbox;
+                ctrl.hasMove = move.length > 0;
+                actions.Move = (move.length) ? move : CONSTANTS.MAILBOX_IDENTIFIERS.inbox;
                 ctrl.hasMark = (Mark.Read || Mark.Starred);
                 actions.Mark = Mark;
                 ctrl.hasLabels = Labels.length > 0;
