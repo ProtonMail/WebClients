@@ -394,6 +394,7 @@ angular.module("proton.embedded", [])
         parser(message, direction = 'blob', text = '') {
             CIDList = {};
 
+
             var deferred = $q.defer(), content = text || message.getDecryptedBody();
 
             if (xray(message, content)) {
