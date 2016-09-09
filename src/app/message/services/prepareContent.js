@@ -1,8 +1,12 @@
 angular.module('proton.message')
 .factory('prepareContent', function($injector, transformAttachement, transformRemote) {
 
-    const filters = ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']
-        .map((name) => ({ name, action: $injector.get(name) }));
+    const filters = [
+        'transformLinks',
+        'transformEmbedded',
+        'transformWelcome',
+        'transformBlockquotes'
+    ].map((name) => ({ name, action: $injector.get(name) }));
 
     return function(content, message, blacklist = []) {
 
@@ -15,7 +19,8 @@ angular.module('proton.message')
             div.innerHTML = transformRemote(content, message);
         }
 
-        const output =  transformers.reduceRight((html, transformer) => transformer.action(html, message), div);
+        const output = transformers
+            .reduceRight((html, transformer) => transformer.action(html, message), div);
         transformAttachement(output, message);
         return output.innerHTML;
     };
