@@ -276,9 +276,9 @@
             <p class="alert alert-danger" ng-if="message.SpamScore === 101" translate translate-context="Info">This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!</p>
             <div
                 class="bodyDecrypted email"
+                render-message-body
                 ng-class="{'plain': isPlain}"
                 ng-if="message.viewMode === 'html'"
-                ng-bind-html="message.getDecryptedBody(true)"
                 toggle-blockquote
                 mail-to scroll="true" ></div>
             <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
