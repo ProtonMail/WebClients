@@ -77,6 +77,10 @@
         position: relative;
         text-align: initial;
         .usernameWrap {
+            strong {
+                float: left;
+                line-height: 2rem;
+            }
             input {
                 width: 11rem;
                 display: inline-block;
