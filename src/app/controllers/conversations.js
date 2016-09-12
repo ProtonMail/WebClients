@@ -33,6 +33,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     var unbindWatcherElements;
     var firstLoad = true; // Variable used to determine if it's the first load to force the cache to call back-end result
 
+    $scope.conversations = [];
     /**
      * Method called at the initialization of this controller
      */
@@ -63,7 +64,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         }
 
         unbindWatcherElements = $scope.$watch('conversations', function(newValue, oldValue) {
-            $rootScope.numberElement = newValue.length;
             $rootScope.numberElementSelected = $scope.elementsSelected().length;
             $rootScope.numberElementUnread = cacheCounters.unreadConversation(tools.currentLocation());
         }, true);
