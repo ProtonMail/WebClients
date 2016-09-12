@@ -47,6 +47,7 @@ angular.module('proton', [
     'proton.models.events',
     'proton.models.filter',
     'proton.models.incomingDefaults',
+    'proton.models.invite',
     'proton.models.keys',
     'proton.models.label',
     'proton.models.logs',

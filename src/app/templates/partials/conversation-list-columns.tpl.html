@@ -28,7 +28,7 @@
                 <span class="location fa fa-ban" ng-show="('secured.search.**' | includedByState) && conversation.LabelIDs.indexOf('4') > -1"></span>
                 <folders-conversation conversation="conversation"></folders-conversation>
                 <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-                {{ conversation.Subject }}
+                {{ conversation.Subject | unescape }}
             </h4>
             <span class="meta">
                 <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
