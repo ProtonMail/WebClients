@@ -457,101 +457,123 @@ angular.module('proton.actions', [])
             }
         },
         // Message actions
-        moveMessage: function(ids, mailbox) {
-            var context = tools.cacheContext();
-            var conversationIDs = [];
-            var events = [];
-            var promise;
-            var toInbox = mailbox === 'inbox';
-            var toTrash = mailbox === 'trash';
-            var remove = [CONSTANTS.MAILBOX_IDENTIFIERS.starred, CONSTANTS.MAILBOX_IDENTIFIERS.drafts, CONSTANTS.MAILBOX_IDENTIFIERS.sent];
+        moveMessage(ids, mailbox) {
+            const context = tools.cacheContext();
+            const toInbox = mailbox === 'inbox';
+            const toTrash = mailbox === 'trash';
+            const remove = [
+              CONSTANTS.MAILBOX_IDENTIFIERS.starred,
+              CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
+              CONSTANTS.MAILBOX_IDENTIFIERS.sent
+            ];
 
-            // Generate cache events
-            _.each(ids, function(id) {
-                var message = cache.getMessageCached(id);
-                var labelIDs = message.LabelIDs || [];
-                var labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
-                var labelIDsRemoved = _.reject(message.LabelIDs, function(labelID) {
-                    var index = remove.indexOf(labelID);
+            const events = _.chain(ids)
+                .map((id) => {
+                    const message = cache.getMessageCached(id);
+                    let labelIDs = message.LabelIDs || [];
+                    let labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
+                    const labelIDsRemoved = _.reject(message.LabelIDs, (labelID) => {
+                        const index = remove.indexOf(labelID);
+                        return (index !== -1 && remove[index] === labelID) || labelID.length > 2;
+                     });
 
-                    return (index !== -1 && remove[index] === labelID) || labelID.length > 2;
-                });
 
-                if (toInbox === true) {
-                    var index;
+                    if (toInbox === true) {
 
-                    if(message.Type === 1) { // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
-                        index = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+                        switch(message.Type) {
+                            // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
+                            case 1:
+                                const index = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
 
-                        labelIDsAdded.splice(index, 1);
-                        labelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
-                    } else if(message.Type === 2) { // This message is sent, if you move it to trash and back, it will go back to sent
-                        index = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
+                                labelIDsAdded.splice(index, 1);
+                                labelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
+                                break;
 
-                        labelIDsAdded.splice(index, 1);
-                        labelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                    } else if(message.Type === 3) { // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
-                        labelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                    }
-                }
+                            // This message is sent, if you move it to trash and back, it will go back to sent
+                            case 2:
+                                const pos = labelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
 
-                if (angular.isArray(labelIDsRemoved)) {
-                    labelIDs = _.difference(labelIDs, labelIDsRemoved);
-                }
+                                labelIDsAdded.splice(pos, 1);
+                                labelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
+                                break;
 
-                if (angular.isArray(labelIDsAdded)) {
-                    labelIDs = _.uniq(labelIDs.concat(labelIDsAdded));
-                }
-
-                events.push({Action: 3, ID: id, Message: {
-                    ID: id,
-                    ConversationID: message.ConversationID,
-                    Selected: false,
-                    LabelIDs: labelIDs,
-                    IsRead: toTrash ? 1 : message.IsRead
-                }});
-            });
-
-            _.each(events, function(event) {
-                var conversation = cache.getConversationCached(event.Message.ConversationID);
-                var messages = cache.queryMessagesCached(event.Message.ConversationID);
-
-                if (angular.isDefined(conversation) && angular.isArray(messages)) {
-                    var labelIDs = [];
-
-                    _.each(messages, function(message) {
-                        var found = _.find(events, function(event) {
-                            return message.ID === event.Message.ID;
-                        });
-
-                        if (angular.isDefined(found)) {
-                            labelIDs = labelIDs.concat(found.Message.LabelIDs);
-                        } else {
-                            labelIDs = labelIDs.concat(message.LabelIDs);
+                            // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
+                            case 3:
+                                labelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
+                                break;
                         }
-                    });
+                    }
 
-                    events.push({Action: 3, ID: conversation.ID, Conversation: {
-                        ID: conversation.ID,
-                        LabelIDs: _.uniq(labelIDs)
-                    }});
-                }
-            });
+                    if (Array.isArray(labelIDsRemoved)) {
+                        labelIDs = _.difference(labelIDs, labelIDsRemoved);
+                    }
 
-            // Send request
-            promise = Message[mailbox]({IDs: ids}).$promise;
+                    if (Array.isArray(labelIDsAdded)) {
+                        labelIDs = _.uniq(labelIDs.concat(labelIDsAdded));
+                    }
+
+                    return {
+                        Action: 3,
+                        ID: id,
+                        Message: {
+                            ID: id,
+                            ConversationID: message.ConversationID,
+                            Selected: false,
+                            LabelIDs: labelIDs,
+                            IsRead: toTrash ? 1 : message.IsRead
+                        }
+                    };
+
+                })
+                .reduce((acc, event, i, list) => {
+                    acc[event.ID] = event;
+                    return acc;
+                }, {})
+                .reduce((acc, event, i, eventList) => {
+
+                    const conversation = cache.getConversationCached(event.Message.ConversationID);
+                    const messages = cache.queryMessagesCached(event.Message.ConversationID);
+
+                    acc.push(event);
+
+                    if (conversation && Array.isArray(messages)) {
+
+                        const labelIDs = _.reduce(messages, (acc, { ID, LabelIDs = [] }) => {
+                            const found = _.find(eventList, ({ Message = {} }) => ID === Message.ID);
+
+                            if (found) {
+                                return acc.concat(found.Message.LabelIDs);
+                            }
+
+                            return acc.concat(LabelIDs);
+                        }, []);
+
+                        acc.push({
+                            Action: 3,
+                            ID: conversation.ID,
+                            Conversation: {
+                                ID: conversation.ID,
+                                LabelIDs: _.uniq(labelIDs)
+                            }
+                        });
+                    }
+
+                    return acc;
+
+                }, [])
+                .value();
+
+             // Send request
+            const promise = Message[mailbox]({IDs: ids}).$promise;
             cache.addToDispatcher(promise);
 
             if (context === true) {
-                cache.events(events);
-            } else {
-                promise.then(function() {
-                    // Send cache events
-                    cache.events(events);
-                });
-
-                networkActivityTracker.track(promise);
+                return cache.events(events);
             }
+
+            // Send cache events
+            promise.then(() => cache.events(events));
+            networkActivityTracker.track(promise);
         },
         /**
          * Apply labels on a list of messages
