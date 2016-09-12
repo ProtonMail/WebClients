@@ -3,7 +3,7 @@
     <pt-star data-model="conversation" class="pm_buttons"></pt-star>
     <h1>
         <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
-        <span>{{ conversation.Subject }}</span>
+        <span>{{ conversation.Subject | unescape }}</span>
     </h1>
     <div ng-hide="('secured.search.view' | includedByState) || ('secured.label.view' | includedByState)" class="containsMessage">
         <p ng-if="showNotifier('trash')" class="alert">
