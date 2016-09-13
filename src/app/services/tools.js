@@ -14,6 +14,10 @@ angular.module("proton.tools", ["proton.constants"])
         }
     };
 
+    tools.hash = (str = '') => {
+        return str.split('').reduce((prevHash, currVal) => ((prevHash << 5) - prevHash) + currVal.charCodeAt(0), 0);
+    };
+
     tools.hasCookie = function() {
         return navigator.cookieEnabled;
     };
