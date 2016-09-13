@@ -122,6 +122,14 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 max-width: 100%;
+
+                &.pm_badge {
+                    /*
+                        badges are inline-block
+                        force align with the overflow hidden ellipsis
+                    */
+                    vertical-align: middle;
+                }
             }
             &.email {
                 padding-left: 0;
