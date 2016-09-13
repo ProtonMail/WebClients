@@ -28,6 +28,7 @@ angular.module('proton', [
 
     // Constant
     'proton.constants',
+    'proton.core',
 
     // templates
     'templates-app',

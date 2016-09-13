@@ -277,8 +277,8 @@
             <div
                 class="bodyDecrypted email"
                 ng-class="{'plain': message.viewMode === 'plain'}"
+                render-message-body
                 ng-if="message.viewMode === 'html'"
-                ng-bind-html="message.getDecryptedBody(true)"
                 toggle-blockquote
                 mail-to scroll="true" ></div>
             <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
