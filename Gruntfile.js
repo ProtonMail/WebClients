@@ -315,6 +315,7 @@ module.exports = function(grunt) {
                 curly: true, // This option requires you to always put curly braces around blocks in loops and conditionals.
                 eqeqeq: true, // This options prohibits the use of == and != in favor of === and !==.
                 eqnull: true,
+                loopfunc: true,
                 expr: true,
                 onevar: true,
                 noarg: true,
