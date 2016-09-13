@@ -219,6 +219,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         if (angular.isDefined(message)) {
             $scope.focusComposer(message);
             $scope.$applyAsync(() => {
+                message.autocompletesFocussed = false;
                 message.attachmentsToggle = false;
                 message.ccbcc = false;
             });
