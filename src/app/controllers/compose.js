@@ -23,6 +23,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     embedded,
     networkActivityTracker,
     composerRequestModel,
+    dropzoneModel,
     messageBuilder,
     notify,
     pmcw,
@@ -32,7 +33,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     // Variables
     var promiseComposerStyle;
     var timeoutStyle;
-    var dropzone;
 
     const unsubscribe = [];
 
@@ -235,13 +235,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         current.attachmentsToggle = false;
     }));
 
-    function onResize() {
-        $timeout.cancel(timeoutStyle);
-
-        timeoutStyle = $timeout(function() {
-            $scope.composerStyle();
-        }, 1000, false);
-    }
+    const onResize = _.debounce(() => {
+        console.log('PULL');
+        $rootScope.$emit('composer.update', {
+            type: 'refresh',
+            data: { size: $scope.messages.length }
+        });
+    }, 1000);
 
     function onOrientationChange() {
         _.each($scope.messages, function(message) {
@@ -443,7 +443,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     totalSize += angular.isDefined(message.queuedFilesSize) ? message.queuedFilesSize : 0;
                     totalSize += file.size;
                     $scope.isOver = false;
-                    dropzone = this;
+                    const dropzone = dropzoneModel.get(message);
 
                     var total_num = angular.isDefined(message.Attachments) ? message.Attachments.length : 0;
                     total_num += angular.isDefined(message.queuedFiles) ? message.queuedFiles : 0;
@@ -501,7 +501,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     }
                 },
                 init(event) {
-                    const dropzone = this;
+                    const dropzone = dropzoneModel.put(message, this);
 
                     _.forEach(message.Attachments, ({ Name, Size, MIMEType, ID }) => {
                         const mockFile = { name: Name, size: Size, type: MIMEType, ID };
@@ -622,7 +622,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 message.Attachments.splice(index, 1);
             }
             message.uploading--;
-            onResize();
             dispatchMessageAction(message);
         };
 
@@ -697,6 +696,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
                 var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
                 message.Attachments.push(attachment);
+                const dropzone = dropzoneModel.get(message);
                 dropzone.options.addedfile.call(dropzone, mockFile);
                 notify({message: data.Error, classes: 'notification-danger'});
             } else {
@@ -766,19 +766,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         $scope
             .$applyAsync(() => {
-                $scope.messages.unshift(message);
+                const size = $scope.messages.unshift(message);
                 $scope.isOver = false;
 
-                // This timeout is really important to load the structure of Squire
-                $timeout(() => {
-                    recordMessage(message, false, false).then(() => { // message, notification, autosaving
-                        $scope.decryptAttachments(message);
-                        // sanitizeBody(message);
-                        $scope.composerStyle();
-                    }, (error) => {
-                        $log.error(error);
-                    });
-                }, 100, false);
+                recordMessage(message, false, false).then(() => { // message, notification, autosaving
+                    $scope.decryptAttachments(message);
+                    $rootScope.$emit('composer.update', { type: 'loaded', data: { size } });
+                }, (error) => {
+                    $log.error(error);
+                });
             });
     }
 
@@ -792,68 +788,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             });
         return deferred.promise;
     }
-
-    $scope.composerStyle = function() {
-        var composers = $('.composer');
-        var environment = function() {
-            if (!composers) { return; }
-
-            var set = {};
-
-            set.composerWidth = composers.eq(0).outerWidth();
-            set.margin = document.documentElement.classList.contains('ua-windows_nt') ? 40 : 20;
-
-            set.windowWidth = document.body.offsetWidth;
-            set.messagesCount = $scope.messages.length;
-            set.isBootstrap = (tools.findBootstrapEnvironment() === 'xs');
-
-            /*
-            Is the available space enough ?
-            */
-            if (!set.isBootstrap && ((set.windowWidth / set.messagesCount) < set.composerWidth) ) {
-                /* overlap is a ratio that will share equaly the space available between overlayed composers. */
-                set.overlap = ((set.windowWidth - set.composerWidth - (2 * set.margin)) / (set.messagesCount - 1));
-            }
-
-            return set;
-        };
-
-        /* used as _ context */
-        var context = environment();
-
-        _.each(composers, function(composer, index) {
-            var styles = { opacity: 1 };
-
-            if (this.isBootstrap) {
-                var top = 80; // px
-
-                styles.top = top + 'px';
-            } else {
-                var c = this;
-                var messagesCount = c.messagesCount;
-                var margin = c.margin;
-                var isCurrent = ((messagesCount - index) === messagesCount) ? true : false;
-
-                if (isCurrent) {
-                    // set the current composer to right : margin
-                    styles.right = margin;
-                } else {
-                    var composerWidth = c.composerWidth;
-                    var windowWidth = c.windowWidth;
-                    var innerWindow = c.innerWindow;
-                    var overlap = c.overlap;
-
-                    styles.right = (overlap) ? (index * overlap) : (index * (composerWidth + margin) + margin);
-                    styles.top = '';
-                }
-            }
-
-            /* Set the new styles */
-            $timeout(function() {
-                $(composer).css(styles);
-            }, 250, false);
-        }, context);
-    };
 
     /**
      * Insert / Update signature in the message body
@@ -972,7 +906,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         const watcherEmbedded = removerEmbeddedWatcher();
 
         if (message.editor) {
-            var dropzone = angular.element('#uid' + message.uid + ' .composer-dropzone')[0];
+            const dropzone = dropzoneModel.get(message);
 
             // Check if we need to remove embedded after a delay
             message.editor.addEventListener('input', _.throttle(() => {
@@ -995,7 +929,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.addEventListener('dragend', onDragEnd);
             message.editor.addEventListener('dragenter', onDragEnter);
             message.editor.addEventListener('dragover', onDragOver);
-            dropzone.addEventListener('dragover', dragover);
+            dropzone.on('dragover', dragover);
         }
 
     };
@@ -1800,7 +1734,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     };
 
     $scope.openCloseModal = function(message) {
-        var dropzones = $('#uid' + message.uid + ' .composer-dropzone');
 
         if (message.editor) {
             message.editor.removeEventListener('input');
@@ -1811,10 +1744,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             message.editor.removeEventListener('dragend', onDragEnd);
         }
 
-        // We need to manage step by step the dropzone in the case where the composer is collapsed
-        if (angular.isDefined(dropzones) && angular.isDefined(_.first(dropzones))) {
-            _.first(dropzones).removeEventListener('dragover', dragover);
-        }
         delete message.editor;
         $scope.close(message, false, true);
     };
@@ -1850,9 +1779,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             // Message closed and focussed?
             $scope.focusFirstComposer(message);
 
-            $timeout(function () {
-                $scope.composerStyle();
-            }, 250, false);
+            $rootScope.$emit('composer.update', { type: 'close', data: {
+                size: $scope.messages.length
+            }});
         };
 
         if (discard === true) {
@@ -1862,6 +1791,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $rootScope.activeComposer = false;
         $rootScope.maximizedComposer = false;
         $timeout.cancel(message.defferredSaveLater);
+
+        // We need to manage step by step the dropzone in the case where the composer is collapsed
+        const dropzone = dropzoneModel.get(message);
+        dropzoneModel.remove(message);
 
         if (save === true) {
             recordMessage(message, false, true).then(process);
