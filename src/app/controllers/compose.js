@@ -218,7 +218,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         if (angular.isDefined(message)) {
             $scope.focusComposer(message);
-            message.attachmentsToggle = false;
+            $scope.$applyAsync(() => {
+                message.attachmentsToggle = false;
+                message.ccbcc = false;
+            });
         }
 
         $rootScope.$broadcast('composerModeChange');
