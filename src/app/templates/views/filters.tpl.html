@@ -15,11 +15,11 @@
                     <div class="pm_sort">
                         <ul data-as-sortable="filterDragControlListeners" data-ng-model="customFilters">
                             <li ng-repeat="filter in customFilters | orderBy: 'Priority'" as-sortable-item="">
-                                <div as-sortable-item-handle="" class="pm_grid">
+                                <div as-sortable-item-handle="" class="pm_grid flex shrink">
                                     <div class="col-1-2 truncate">
                                         <i class="fa fa-ellipsis-v"></i> {{ filter.Name }}
                                     </div>
-                                    <div class="col-1-4">
+                                    <div class="col-1-4 desktopOnly">
                                         <toggle status="filter.Status" on="ON" off="OFF" change="statusCustomFilter(filter)"></toggle>
                                     </div>
                                     <div class="col-1-4 text-right">
