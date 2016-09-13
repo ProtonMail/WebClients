@@ -180,11 +180,12 @@
         }
     }
     .pm_buttons {
-        border: none;
+        float:left; /* inline-block add extra space*/
         border-radius: 0;
-        margin: 0;
-        a {
-            border-radius: 0;
+        margin: 0 !important; /* overide unknow margin for mobileMode */
+        border:none;
+        &:not(:first-of-type){
+            border-left:1px solid $border;
         }
     }
     a {

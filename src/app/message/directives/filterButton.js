@@ -5,7 +5,7 @@ angular.module('proton.message')
     scope: { message: '=' },
     template: `
     <span class="pm_buttons">
-        <a href="#" class="pm_trigger open-label" dropdown>
+        <a href="#" class="pm_trigger open-label" pt-tooltip-translate="Custom Filter" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip"  dropdown>
             <small><i class="fa fa-filter"></i> <i class="fa fa-angle-down"></i></small>
         </a>
         <span class="pm_dropdown wide">
