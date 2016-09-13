@@ -1,4 +1,4 @@
-<table ng-if="conversations.length === 0" id="nothingToSeeHere">
+<table ng-if="conversations.length === 0 && firstLoad === false" id="nothingToSeeHere">
     <tr>
         <td>
             <i class="fa" ng-class="{
@@ -21,8 +21,8 @@
             <span ng-show="mailbox === 'archive'" translate translate-context="Title" translate-comment="no results heading">Archive</span>
             <span ng-show="mailbox === 'search'" translate translate-context="Title" translate-comment="no results heading">Search</span>
             <span ng-show="mailbox === 'label'" translate translate-context="Title" translate-comment="no results heading">Label</span>
-            <h3 ng-show="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'" translate translate-context="Title">No messages</h3>
-            <h3 ng-hide="mailbox === 'drafts' || mailbox === 'sent' || mailbox === 'search'" translate translate-context="Title">No conversations</h3>
+            <h3 ng-show="mailbox === 'drafts' || mailbox === 'search'" translate translate-context="Title">No messages</h3>
+            <h3 ng-hide="mailbox === 'drafts' || mailbox === 'search'" translate translate-context="Title">No conversations</h3>
         </td>
     </tr>
 </table>
