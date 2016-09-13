@@ -414,8 +414,8 @@
 			left: ($sidebarWidth + 20);
 			bottom: 20px;
             transition: none;
-            right: 20px !important;
-			transform: translateX(0) !important;
+            right:  0 !important;
+			transform: translateX(-20px) !important;
 			width: auto;
 			height: auto !important;
 			box-sizing: border-box;
