@@ -252,7 +252,7 @@
                 ng-init="initAttachment(attachment, $index)">
 
                     <span class="attachment">
-                        <i ng-class="(attachment.Headers.embedded === 1) ? 'fa fa-image embedded' : 'fa fa-paperclip'"></i>
+                        <i ng-class="isEmbedded(attachment) ? 'fa fa-image embedded' : 'fa fa-paperclip'"></i>
                         <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
                     </span>
 

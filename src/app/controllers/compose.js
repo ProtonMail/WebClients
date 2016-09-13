@@ -393,6 +393,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $rootScope.$broadcast('subjectFocussed', message);
     };
 
+    $scope.isEmbedded = (attachment) => {
+        return embedded.isEmbedded(attachment);
+    };
 
     $scope.cancelAskEmbedding = function(message) {
         message.pendingAttachements = [];

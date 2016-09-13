@@ -105,6 +105,10 @@ angular.module("proton.controllers.Outside", [
 
     };
 
+    $scope.isEmbedded = (attachment) => {
+        return embedded.isEmbedded(attachment);
+    };
+
     /**
      * Determine if the message is expire
      */
