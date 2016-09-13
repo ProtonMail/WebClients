@@ -16,6 +16,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $window,
     action,
     alertModal,
+    embedded,
     attachments,
     authentication,
     cache,
@@ -152,6 +153,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 $scope.message.expand = false;
             }
         }
+    };
+
+    $scope.isEmbedded = (attachment) => {
+        return embedded.isEmbedded(attachment);
     };
 
     /**
