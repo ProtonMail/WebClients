@@ -74,14 +74,14 @@ angular.module('proton.composer')
         }
 
         return {
-            link(scope, [element]) {
+            link(scope, el) {
 
                 const unsubscribe = $rootScope
                     .$on('composer.update', (e, { type, data }) => {
                         // Need to perform the rendering after the $digest to match each new composer
                         scope
                             .$applyAsync(() => {
-                                const $list = [].slice.call(element.querySelectorAll('.composer-container'));
+                                const $list = [].slice.call(el[0].querySelectorAll('.composer-container'));
                                 _rAF(() => render($list, data));
                             });
 
