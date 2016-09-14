@@ -174,6 +174,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if (messages.length > 0) {
                 $scope.messages = cache.orderMessage(messages, false);
                 expandMessage($scope.messages);
+
+                if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
+                    $scope.markedMessage = $rootScope.expandMessage;
+                }
             } else {
                 $scope.back();
             }
