@@ -16,6 +16,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
     $window,
     action,
     alertModal,
+    embedded,
     attachments,
     authentication,
     cache,
@@ -152,6 +153,10 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                 $scope.message.expand = false;
             }
         }
+    };
+
+    $scope.isEmbedded = (attachment) => {
+        return embedded.isEmbedded(attachment);
     };
 
     /**
@@ -328,8 +333,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
                 var showMessage = function(content) {
 
-                    var deferred = $q.defer();
-
+                    // var deferred = $q.defer();
                     // Clear content with DOMPurify before anything happen!
                     content = DOMPurify.sanitize(content, {
                         ADD_ATTR: ['target'],
@@ -342,18 +346,20 @@ angular.module("proton.controllers.Message", ["proton.constants"])
                     }
 
                     // NOTE Plain text detection doesn't work. Check #1701
-                    var isHtml = tools.isHtml(content);
+                    // var isHtml = tools.isHtml(content);
 
                     content = prepareContent(content, $scope.message);
 
                     // Detect type of content
-                    if (isHtml === true) {
+                    // if (isHtml === true) {
+                        $scope.isPlain = false;
                         $scope.message.viewMode = 'html';
                         $scope.message.setDecryptedBody(content);
-                        deferred.resolve();
-                    } else {
-                        $scope.message.viewMode = 'plain';
-                    }
+                        // deferred.resolve();
+                    // } else {
+                    //     $scope.isPlain = true;
+                    //     $scope.message.viewMode = 'plain';
+                    // }
 
                     // Broken images
                     $(".email").find("img").error(function () {
@@ -362,7 +368,7 @@ angular.module("proton.controllers.Message", ["proton.constants"])
 
                     $scope.scrollToMe();
 
-                    return deferred.promise;
+                    // return deferred.promise;
                 };
 
                 // PGP/MIME case

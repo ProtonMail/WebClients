@@ -82,9 +82,7 @@
     <noscript style="padding: 2rem; display:block; text-align: center; color: #fff">ProtonMail requires Javascript. Enable Javascript and reload this page to continue.</noscript>
 </div>
 
-<div id="pm_loading" ng-class="{ 'show': networkActivity.loading() || loggingOut }">
-    <img src="/assets/img/small-spinner.gif" width="50" height="50">
-</div>
+<proton-loader></proton-loader>
 
 <div id="exiting" ng-class="{ 'show': loggingOut }">
     <img src="/assets/img/decrypt1.gif" class="loader">

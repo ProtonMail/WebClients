@@ -146,11 +146,10 @@ angular.module("proton.embedded", [])
         // Check if we have attachments
         if (attachs.length) {
                 // Build a list of cids
-                attachs.forEach(({ Headers = {}, Name = '', MIMEType = '' }) => {
-                    const disposition = Headers['content-disposition'];
-
+                attachs.forEach((attachment) => {
                     // BE require an inline content-disposition!
-                    if (disposition && REGEXP_IS_INLINE.test(disposition) && MIMETypeSupported.indexOf(MIMEType) !== -1) {
+                    if (embedded.isEmbedded(attachment)) {
+                        const {Headers = {}, Name = ''} = attachment;
                         let cid;
 
                         if (Headers['content-id']) {
@@ -380,6 +379,11 @@ angular.module("proton.embedded", [])
 
     var embedded = {
         MIMETypeSupported,
+        isEmbedded({Headers = {}, MIMEType = ''}) {
+            const disposition = Headers['content-disposition'];
+
+            return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition) && MIMETypeSupported.indexOf(MIMEType) !== -1;
+        },
 
         /**
          * Parse a message in order to

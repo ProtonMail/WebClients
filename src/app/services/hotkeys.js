@@ -1,88 +1,88 @@
 angular.module('proton.hotkeys', [])
-.factory('hotkeys', function(hotkeyModal, $rootScope, $state, authentication, CONSTANTS, messageBuilder) {
-    var composer = function(event) {
+.factory('hotkeys', (hotkeyModal, $rootScope, $state, authentication, CONSTANTS, messageBuilder) => {
+    const composer = (event) => {
         $rootScope.$emit('newMessage', messageBuilder.create('new'));
 
         return false;
     };
 
-    var reply = function(event) {
+    const reply = (event) => {
         $rootScope.$broadcast('replyConversation');
 
         return false;
     };
 
-    var replyAll = function(event) {
+    const replyAll = (event) => {
         $rootScope.$broadcast('replyAllConversation');
 
         return false;
     };
 
-    var forward = function(event) {
+    const forward = (event) => {
         $rootScope.$broadcast('forwardConversation');
 
         return false;
     };
 
-    var nextConversation = function(event) {
+    const nextConversation = (event) => {
         $rootScope.$broadcast('nextConversation');
 
         return false;
     };
 
-    var previousConversation = function(event) {
+    const previousConversation = (event) => {
         $rootScope.$broadcast('previousConversation');
 
         return false;
     };
 
-    var openMarked = function(event) {
+    const openMarked = (event) => {
         $rootScope.$broadcast('openMarked');
     };
 
-    var read = function(event) {
+    const read = (event) => {
         $rootScope.$broadcast('read');
 
         return false;
     };
 
-    var unread = function(event) {
+    const unread = (event) => {
         $rootScope.$broadcast('unread');
 
         return false;
     };
 
-    var toggleStar = function(event) {
+    const toggleStar = (event) => {
         $rootScope.$broadcast('toggleStar');
 
         return false;
     };
 
-    var inbox = function(event) {
+    const inbox = (event) => {
         $rootScope.$broadcast('move', 'inbox');
 
         return false;
     };
 
-    var trash = function(event) {
+    const trash = (event) => {
         $rootScope.$broadcast('move', 'trash');
 
         return false;
     };
 
-    var archive = function(event) {
+    const archive = (event) => {
         $rootScope.$broadcast('move', 'archive');
 
         return false;
     };
 
-    var spam = function(event) {
+    const spam = (event) => {
         $rootScope.$broadcast('move', 'spam');
 
         return false;
     };
 
-    var help = function(event) {
+    const help = (event) => {
         hotkeyModal.activate({
             params: {
                 close: function() {
@@ -94,109 +94,105 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
-    var goToInbox = function(event) {
+    const goToInbox = (event) => {
         $state.go('secured.inbox');
 
         return false;
     };
 
-    var goToDrafts = function(event) {
+    const goToDrafts = (event) => {
         $state.go('secured.drafts');
 
         return false;
     };
 
-    var goToSent = function(event) {
+    const goToSent = (event) => {
         $state.go('secured.sent');
 
         return false;
     };
 
-    var goToStarred = function(event) {
+    const goToStarred = (event) => {
         $state.go('secured.starred');
 
         return false;
     };
 
-    var goToArchive = function(event) {
+    const goToArchive = (event) => {
         $state.go('secured.archive');
 
         return false;
     };
 
-    var goToSpam = function(event) {
+    const goToSpam = (event) => {
         $state.go('secured.spam');
 
         return false;
     };
 
-    var goToTrash = function(event) {
+    const goToTrash = (event) => {
         $state.go('secured.trash');
 
         return false;
     };
 
-    var selectAll = function(event) {
+    const selectAll = (event) => {
         $rootScope.$broadcast('selectAllElements');
 
         return false;
     };
 
-    var unselectAll = function(event) {
+    const unselectAll = (event) => {
         $rootScope.$broadcast('unselectAllElements');
 
         return false;
     };
 
-    var selectMark = function(event) {
+    const selectMark = (event) => {
         $rootScope.$broadcast('selectMark');
 
         return false;
     };
 
-    var markPrevious = function(event) {
-        document.activeElement = null;
+    const markPrevious = (event) => {
         $rootScope.$broadcast('markPrevious');
 
         return false;
     };
 
-    var markNext = function(event) {
-        document.activeElement = null;
+    const markNext = (event) => {
         $rootScope.$broadcast('markNext');
 
         return false;
     };
 
-    var escape = function(event) {
+    const escape = (event) => {
         $rootScope.$broadcast('escape');
 
         return false;
     };
 
-    var left = function(event) {
-        document.activeElement = null;
+    const left = (event) => {
         $rootScope.$broadcast('left');
 
         return false;
     };
 
-    var right = function(event) {
-        document.activeElement = null;
+    const right = (event) => {
         $rootScope.$broadcast('right');
 
         return false;
     };
 
-    var slash = function(event) {
-        var inputs = angular.element('.query');
+    const slash = (event) => {
+        const inputs = angular.element('.query');
 
         inputs[0].focus();
 
         return false;
     };
 
-    var keys = [
+    const keys = [
         {keyboard: 'c', callback: composer},
         {keyboard: 'shift+r', callback: reply},
         {keyboard: 'shift+a', callback: replyAll},
@@ -230,15 +226,15 @@ angular.module('proton.hotkeys', [])
         {keyboard: '/', callback: slash}
     ];
 
-    var hotkeys = {
-        bind: function() {
-            _.each(keys, function(key) {
-                Mousetrap.bind(key.keyboard, key.callback);
+    const hotkeys = {
+        bind() {
+            keys.forEach(({keyboard, callback}) => {
+                Mousetrap.bind(keyboard, callback);
             });
         },
-        unbind: function() {
-            _.each(keys, function(key) {
-                Mousetrap.unbind(key.keyboard);
+        unbind() {
+            keys.forEach(({keyboard, callback}) => {
+                Mousetrap.unbind(keyboard, callback);
             });
         }
     };

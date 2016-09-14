@@ -15,14 +15,13 @@
     <section>
         <a ng-repeat="attachment in message.Attachments track by $id(attachment)" class="pm_button" ng-class="{ 'dead': attachment.decrypting, 'remove': ('eo.reply' | includedByState) }" data-download-text="{{ 'Download' | translate }}" title="{{ attachment.Name }} ({{ attachment.Size | humanSize }})" ng-click="decryptAttachment($event, attachment, message)">
             <em></em>
-            <i class="fa fa-file-o"         ng-show="!attachment.decrypting && !attachment.decrypted && attachment.Headers.embedded !== 1"></i>
+            <i class="fa fa-file-o"         ng-show="!attachment.decrypting && !attachment.decrypted && !isEmbedded(attachment)"></i>
             <i class="fa fa-archive-o"      ng-show="attachment.MIMEType.indexOf('zip')            !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa fa-audio-o"        ng-show="attachment.MIMEType.indexOf('mp3')            !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa fa-code-o"         ng-show="attachment.MIMEType.indexOf('javascript')     !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa fa-excel-o"        ng-show="attachment.MIMEType.indexOf('xls')            !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
-            <i class="fa fa-image-o"        ng-show="attachment.MIMEType.indexOf('image')          !== -1 && !attachment.decrypting && !attachment.decrypted && attachment.Headers.embedded !== 1"></i>
-            <i class="fa fa-picture-o embedded"        ng-show="
-            attachment.Headers.embedded === 1 && !attachment.decrypting && !attachment.decrypted"></i>
+            <i class="fa fa-image-o"        ng-show="attachment.MIMEType.indexOf('image')          !== -1 && !attachment.decrypting && !attachment.decrypted && !isEmbedded(attachment)"></i>
+            <i class="fa fa-picture-o embedded" ng-show="isEmbedded(attachment) && !attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa fa-movie-o"        ng-show="attachment.MIMEType.indexOf('mov')            !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa fa-pdf-o"          ng-show="attachment.MIMEType.indexOf('pdf')            !== -1 && !attachment.decrypting && !attachment.decrypted"></i>
             <i class="fa fa-powerpoint-o"   ng-show="attachment.MIMEType.indexOf('power')          !== -1 && !attachment.decrypting && !attachment.decrypted"></i>

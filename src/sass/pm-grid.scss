@@ -141,12 +141,27 @@ $pad: 20px;
 
 body.mobileMode {
 	.pm_grid {
-		[class*='col-'] {
+		&.flex {
+		 	display: flex;
+			flex-direction: column;
+			&.shrink {
+			 	flex-direction:row;
+			}
+
+			[class*='col-'] {
+			 	flex:1;
+				width: auto
+			}
+		}
+
+		&:not(.flex) [class*='col-'] {
 			float: left;
 			width: 100% !important;
 			clear: both;
 			box-sizing: border-box;
 			padding: 0;
 		}
+
 	}
+
 }

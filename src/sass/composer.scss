@@ -12,13 +12,15 @@
 
 	 	position: absolute; /* better for iOS then fixed*/
 		height: 510px !important; // the drag directive tries to override this.
-        right:1rem;
-        bottom:1rem;
+        right:  0 !important;
+        transform: translateX(-20px);
+        transition: transform cubic-bezier(0.5, 1.1, 0.5, 1.1) .2s;
+        bottom: 1rem;
 		z-index: 8888;
 
         /* STYLES */
         background:#FFF;
-		opacity: 0;
+        will-change: transform;
 
 	    header, footer, .row{
 	      line-height: $composerRowHeight;
@@ -407,7 +409,8 @@
 			top: ($headerHeight + 20);
 			left: ($sidebarWidth + 20);
 			bottom: 20px;
-			right: 20px !important;
+            transition: none;
+			transform: translateX(-20px) !important;
 			width: auto;
 			height: auto !important;
 			box-sizing: border-box;
@@ -579,6 +582,11 @@
 /* RESPONSIVE */
 
 @media screen and (max-width: $mobile-landscape) {
+    #pm_composer .composer[style] {
+        transition: none !important;
+        transform: translateX(0) !important
+    }
+
 	.activeComposer {
 		#pm_composer {
 			display: block;
@@ -653,17 +661,21 @@
 
 
 @media screen and (max-height: 500px) {
-	#pm_composer {
- 		.angular-squire-wrapper{
-			padding-top: 2rem; /* toolbar height */
-		}
-		footer{
-			position:relative;
-			z-index: 10
-		}
-		.squire-toolbar{
-			position:absolute;
-			z-index: 8
-		}
-	}
+    #pm_composer {
+        .composer {
+            transition: none !important;
+            transform: translateX(0) !important;
+        }
+        .angular-squire-wrapper{
+            padding-top: 2rem; /* toolbar height */
+        }
+        footer{
+            position:relative;
+            z-index: 10
+        }
+        .squire-toolbar{
+            position:absolute;
+            z-index: 8
+        }
+    }
 }

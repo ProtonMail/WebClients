@@ -100,7 +100,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
      */
     function expandMessage(messages = []) {
          if ($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
-            var sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
+            const sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
 
             if (sents.length > 0) {
                 // We try to open the last sent message
@@ -140,7 +140,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 while(loop === true && index > 0) {
                     index--;
 
-                    if(messages[index].IsRead === 1) { // Is read
+                    if (messages[index].IsRead === 1) { // Is read
                         loop = false;
                         index++;
                     }
@@ -174,6 +174,10 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             if (messages.length > 0) {
                 $scope.messages = cache.orderMessage(messages, false);
                 expandMessage($scope.messages);
+
+                if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
+                    $scope.markedMessage = $rootScope.expandMessage;
+                }
             } else {
                 $scope.back();
             }
