@@ -338,12 +338,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
       * @param {String} dataURI
       * @return {Blob}
       */
-    function dataURItoBlob(dataURI) {
+    function dataURItoBlob(dataURI = '') {
+        const [mime = '', byte = ''] = dataURI.split(',');
         // convert base64 to raw binary data held in a string
         // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
-        const byteString = atob(dataURI.split(',')[1]);
+        const byteString = atob(byte);
         // separate out the mime component
-        const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+        const mimeString = mime.split(':')[1].split(';')[0];
         // write the bytes of the string to an ArrayBuffer
         const ab = new ArrayBuffer(byteString.length);
         const dw = new DataView(ab);
@@ -368,25 +369,27 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         testDiv.innerHTML = content;
 
         const images = testDiv.querySelectorAll('img[src^="data:image"]');
-        const promises = [].slice.call(images).map((image) => {
-            const file = dataURItoBlob(image.src);
+        const promises = [].slice.call(images)
+            .filter(({ src }) => src.includes(',')) // remove invalid data:uri
+            .map((image) => {
+                const file = dataURItoBlob(image.src);
 
-            file.name = image.alt ||  'image' + Date.now();
-            file.inline = 1;
+                file.name = image.alt ||  'image' + Date.now();
+                file.inline = 1;
 
-            return addAttachment(file, message, false)
-            .then((cid) => {
-                image.setAttribute('data-embedded-img', cid);
-                image.src = embedded.getUrl(image);
+                return addAttachment(file, message, false)
+                .then((cid) => {
+                    image.setAttribute('data-embedded-img', cid);
+                    image.src = embedded.getUrl(image);
+                });
             });
-        });
 
         return Promise.all(promises)
-        .then(() => {
-            message.setDecryptedBody(testDiv.innerHTML);
-            message.editor && message.editor.fireEvent('refresh', {Body: message.getDecryptedBody()});
-            return message;
-        });
+            .then(() => {
+                message.setDecryptedBody(testDiv.innerHTML);
+                message.editor && message.editor.fireEvent('refresh', {Body: message.getDecryptedBody()});
+                return message;
+            });
     }
 
     $scope.disabledNotify = function() {
