@@ -368,8 +368,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
         testDiv.innerHTML = content;
 
-        const images = testDiv.querySelectorAll('img[src^="data:image"]');
-        const promises = [].slice.call(images)
+        const images = testDiv.querySelectorAll('img');
+        const promises = _.chain([].slice.call(images))
+            .filter(({ src }) => /src^="data:image/.text(src))
             .filter(({ src }) => src.includes(',')) // remove invalid data:uri
             .map((image) => {
                 const file = dataURItoBlob(image.src);
@@ -382,7 +383,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     image.setAttribute('data-embedded-img', cid);
                     image.src = embedded.getUrl(image);
                 });
-            });
+            })
+            .value();
 
         return Promise.all(promises)
             .then(() => {
