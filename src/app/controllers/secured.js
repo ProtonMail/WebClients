@@ -58,6 +58,8 @@ angular.module("proton.controllers.Secured", [])
     // Enable hotkeys
     if (authentication.user.Hotkeys === 1) {
         hotkeys.bind();
+    } else {
+        hotkeys.unbind();
     }
 
     // if the user subscribed to a plan during the signup process

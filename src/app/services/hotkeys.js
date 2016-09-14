@@ -230,15 +230,15 @@ angular.module('proton.hotkeys', [])
         {keyboard: '/', callback: slash}
     ];
 
-    var hotkeys = {
-        bind: function() {
-            _.each(keys, function(key) {
-                Mousetrap.bind(key.keyboard, key.callback);
+    const hotkeys = {
+        bind() {
+            keys.forEach(({keyboard, callback}) => {
+                Mousetrap.bind(keyboard, callback);
             });
         },
-        unbind: function() {
-            _.each(keys, function(key) {
-                Mousetrap.unbind(key.keyboard);
+        unbind() {
+            keys.forEach(({keyboard, callback}) => {
+                Mousetrap.unbind(keyboard, callback);
             });
         }
     };
