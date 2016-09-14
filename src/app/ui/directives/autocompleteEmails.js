@@ -155,7 +155,7 @@ angular.module('proton.ui')
                             }
 
                             // Default case, when you add someting inside the input
-                            onSubmit(e);
+                            awesomplete.input.value && onSubmit(e);
                             break;
 
                         // Prevent autoselect if you press MAJ + COMMA (< for QWERTY)
