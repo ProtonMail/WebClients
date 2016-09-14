@@ -101,7 +101,12 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         } else {
             $rootScope.activeComposer = false;
             window.onbeforeunload = undefined;
-            hotkeys.bind(); // Enable hotkeys
+
+            if (authentication.user.Hotkeys === 1) {
+                hotkeys.bind();
+            } else {
+                hotkeys.unbind();
+            }
         }
     }));
 
