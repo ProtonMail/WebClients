@@ -155,14 +155,12 @@ angular.module('proton.hotkeys', [])
     };
 
     const markPrevious = (event) => {
-        document.activeElement = null;
         $rootScope.$broadcast('markPrevious');
 
         return false;
     };
 
     const markNext = (event) => {
-        document.activeElement = null;
         $rootScope.$broadcast('markNext');
 
         return false;
@@ -175,14 +173,12 @@ angular.module('proton.hotkeys', [])
     };
 
     const left = (event) => {
-        document.activeElement = null;
         $rootScope.$broadcast('left');
 
         return false;
     };
 
     const right = (event) => {
-        document.activeElement = null;
         $rootScope.$broadcast('right');
 
         return false;
