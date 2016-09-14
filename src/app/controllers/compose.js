@@ -241,7 +241,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }));
 
     const onResize = _.debounce(() => {
-        console.log('PULL');
         $rootScope.$emit('composer.update', {
             type: 'refresh',
             data: { size: $scope.messages.length }
