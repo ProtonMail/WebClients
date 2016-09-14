@@ -369,8 +369,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         testDiv.innerHTML = content;
 
         const images = testDiv.querySelectorAll('img');
+
         const promises = _.chain([].slice.call(images))
-            .filter(({ src }) => /src^="data:image/.test(src))
+            .filter(({ src }) => /data:image/.test(src))
             .filter(({ src }) => src.includes(',')) // remove invalid data:uri
             .map((image) => {
                 const file = dataURItoBlob(image.src);
