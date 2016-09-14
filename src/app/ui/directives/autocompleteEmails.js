@@ -147,17 +147,15 @@ angular.module('proton.ui')
 
                     switch(e.keyCode) {
                         case TAB_KEY:
-                            // Only when the autocomplete is running
-                            if (awesomplete.input.value && !model.isEmpty()) {
+                            // When the autocomplete is opened
+                            if (awesomplete.opened) {
                                 e.preventDefault();
                                 awesomplete.select();
-                                _rAF(() => awesomplete.input.focus());
+                                return _rAF(() => awesomplete.input.focus());
                             }
 
-                            // When there is no autocompletion available
-                            if (awesomplete.input.value && model.isEmpty()) {
-                                onSubmit(e);
-                            }
+                            // Default case, when you add someting inside the input
+                            onSubmit(e);
                             break;
 
                         // Prevent autoselect if you press MAJ + COMMA (< for QWERTY)

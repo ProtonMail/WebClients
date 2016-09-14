@@ -97,7 +97,15 @@ angular.module("proton.authentication", [
                                         });
                                     };
 
-                                    user.Contacts = result[0].data.Contacts;
+                                    // Prevent XSS...
+                                    user.Contacts = _
+                                        .map(result[0].data.Contacts, (about) => {
+                                            return angular
+                                                .extend({}, about, {
+                                                    Email: DOMPurify.sanitize(about.Email || ''),
+                                                    Name: DOMPurify.sanitize(about.Name || '')
+                                                });
+                                        });
                                     user.Labels = result[1].data.Labels;
 
                                     // All private keys are decrypted with the mailbox password and stored in a `keys` array
