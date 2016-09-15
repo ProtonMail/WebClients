@@ -13,8 +13,10 @@ angular.module('proton.composer')
     };
     const get = ({ ID } = {}) => MAP[ID];
     const remove = ({ ID } = {}) => {
-        MAP[ID].off('dragover');
-        delete MAP[ID];
+        if (MAP[ID]) {
+            MAP[ID].off('dragover');
+            delete MAP[ID];
+        }
     };
 
     return { put, get, remove };
