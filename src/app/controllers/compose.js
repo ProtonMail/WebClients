@@ -1828,7 +1828,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         $timeout.cancel(message.defferredSaveLater);
 
         // We need to manage step by step the dropzone in the case where the composer is collapsed
-        const dropzone = dropzoneModel.get(message);
         dropzoneModel.remove(message);
 
         if (save === true) {
