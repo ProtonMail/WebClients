@@ -2,44 +2,74 @@ angular.module('proton.message')
 .directive('mailTo', ($rootScope, regexEmail, Message, authentication) => ({
     restrict: 'A',
     link(scope, element) {
-        var click = function(event) {
-            if (event.target.tagName === 'A') {
-                var href = event.target.getAttribute('href');
+        function parseQuery(str) {
+            return str.split('&').reduce((query, pairStr) => {
+                const pair = pairStr.split('=');
+                query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+                return query;
+            }, {});
+        }
 
-                if (href) {
+        function toAddresses(emails) {
+            return emails.map((email) => {
+                return {
+                    Address: email,
+                    Name: email
+                };
+            });
+        }
 
-                    var mailTo = href.indexOf('mailto') === 0;
-                    var emails = event.target.getAttribute('href').match(regexEmail);
-
-                    if (mailTo && emails) {
-                        
-                        event.preventDefault();
-                        
-                        var message = new Message();
-                        var ToList = [];
-
-                        ToList.push({
-                            Address: emails[0],
-                            Name: emails[0]
-                        });
-
-                        const adr = _.findWhere(authentication.user.Addresses, {ID: scope.message.AddressID}) || {};
-                        
-                        _.defaults(message, {
-                            From: adr,
-                            ToList: ToList,
-                            CCList: [],
-                            BCCList: [],
-                            Subject: '',
-                            PasswordHint: '',
-                            Attachments: []
-                        });
-
-                        $rootScope.$broadcast('loadMessage', message);
-                    }
-                }
+        function click(event) {
+            const link = event.target;
+            if (link.tagName.toUpperCase() !== 'A') {
+                return;
             }
-        };
+
+            let mailto = link.href;
+            if (mailto.indexOf('mailto:') !== 0) {
+                return;
+            }
+            mailto = mailto.replace('mailto:', '');
+
+            event.preventDefault();
+
+            let j = mailto.indexOf('?');
+            if (j < 0) {
+                j = mailto.length;
+            }
+
+            const to = mailto.substring(0, j);
+            const params = parseQuery(mailto.substring(j + 1));
+
+            const message = new Message();
+            _.defaults(message, {
+                From: _.findWhere(authentication.user.Addresses, {ID: scope.message.AddressID}) || {},
+                PasswordHint: '',
+                Attachments: [],
+                ToList: [],
+                Subject: '',
+                CCList: [],
+                BCCList: []
+            });
+
+            if (to) {
+                message.ToList = toAddresses(to.split(','));
+            }
+            if (params.subject) {
+                message.Subject = params.subject;
+            }
+            if (params.cc) {
+                message.CCList = toAddresses(params.cc.split(','));
+            }
+            if (params.bcc) {
+                message.BCCList = toAddresses(params.bcc.split(','));
+            }
+            if (params.body) {
+                message.DecryptedBody = params.body;
+            }
+
+            $rootScope.$broadcast('loadMessage', message);
+        }
 
         element.on('click', click);
         scope.$on('$destroy', () => { element.off('click', click); });
