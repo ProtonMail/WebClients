@@ -1,15 +1,7 @@
 angular.module('proton.message')
-.directive('mailTo', ($rootScope, regexEmail, Message, authentication) => ({
+.directive('mailTo', ($rootScope, $location, regexEmail, Message, authentication) => ({
     restrict: 'A',
     link(scope, element) {
-        function parseQuery(str) {
-            return str.split('&').reduce((query, pairStr) => {
-                const pair = pairStr.split('=');
-                query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-                return query;
-            }, {});
-        }
-
         function toAddresses(emails) {
             return emails.map((email) => {
                 return {
@@ -39,8 +31,7 @@ angular.module('proton.message')
             }
 
             const to = mailto.substring(0, j);
-            const params = parseQuery(mailto.substring(j + 1));
-
+            const params = $location.search(mailto.substring(j + 1)).search();
             const message = new Message();
             _.defaults(message, {
                 From: _.findWhere(authentication.user.Addresses, {ID: scope.message.AddressID}) || {},
