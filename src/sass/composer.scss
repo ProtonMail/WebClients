@@ -14,7 +14,7 @@
 		height: 510px !important; // the drag directive tries to override this.
         right:  0 !important;
         transform: translateX(-20px);
-        transition: transform cubic-bezier(0.5, 1.1, 0.5, 1.1) .2s;
+        visibility: hidden;
         bottom: 1rem;
 		z-index: 8888;
 

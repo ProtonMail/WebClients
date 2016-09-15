@@ -60,7 +60,7 @@ angular.module('proton.composer')
             $list
                 .forEach((node, index) => {
                     const config = sizes(node, size);
-                    const styles = {};
+                    const styles = {visibility: 'visible'};
 
                     // Better for rendering
                     styles.transform = `translateX(-${getPositionRight(config, index)}px)`;
