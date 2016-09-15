@@ -357,7 +357,7 @@ angular.module("proton.squire", [
 
                 editor.addEventListener('drop', handleDrop, false);
 
-                $rootScope.$broadcast('editorLoaded', element, editor);
+                $rootScope.$emit('editorLoaded', element, editor, scope.message);
             };
 
             iframe = element.find('iframe.squireIframe');
