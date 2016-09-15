@@ -199,14 +199,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         }
     }));
 
-    unsubscribe.push($scope.$on('editorLoaded', function(event, element, editor) {
-        var composer = $(element).parents('.composer');
-        var index = $('.composer').index(composer);
-        var message = $scope.messages[index];
-
+    unsubscribe.push($rootScope.$on('editorLoaded', (event, element, editor, message) => {
         if (message) {
             message.editor = editor;
-            $scope.listenEditor(message);
+            editor && listenEditor(message);
             $scope.focusComposer(message);
         }
     }));
@@ -435,113 +431,147 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 $scope.cancelAskEmbedding(message);
     };
 
-
-    $scope.dropzoneConfig = function(message) {
+    /**
+     * Compute some informations to get the current context for a dropzone
+     * @param  {Message} message
+     * @param  {File} file
+     * @return {Object}
+     */
+    function getDropFileConfigMessage(message, file) {
+        const messageSize = message.attachmentsSize();
+        const currentSize = messageSize + (message.queuedFilesSize || 0) + file.size;
         return {
-            options: {
-                addRemoveLinks: false,
-                dictDefaultMessage: gettextCatalog.getString('Drop a file here to upload', null, 'Info'),
-                url: '/file/post',
-                autoProcessQueue: false,
-                paramName: 'file', // The name that will be used to transfer the file
-                previewTemplate: '<div style="display:none"></div>',
-                previewsContainer: '.previews',
-                accept(file, done) {
-                    var totalSize = message.attachmentsSize();
-                    var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
-
-                    totalSize += angular.isDefined(message.queuedFilesSize) ? message.queuedFilesSize : 0;
-                    totalSize += file.size;
-                    $scope.isOver = false;
-                    const dropzone = dropzoneModel.get(message);
-
-                    var total_num = angular.isDefined(message.Attachments) ? message.Attachments.length : 0;
-                    total_num += angular.isDefined(message.queuedFiles) ? message.queuedFiles : 0;
-
-                    if (total_num === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
-                        dropzone.removeFile(file);
-                        done('Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments');
-                        notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
-                    } else if (totalSize >= (sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE)) {
-                        dropzone.removeFile(file);
-                        done('Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10 + ' MB.');
-                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10 + ' MB.', classes: 'notification-danger'});
-                    } else if (totalSize === 0) {
-                        /* file is too big */
-                        dropzone.removeFile(file);
-                        done('Attachments are limited to ' + sizeLimit + ' MB.');
-                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
-                    } else {
-                        if (angular.isUndefined(message.queuedFiles)) {
-                            message.queuedFiles = 0;
-                            message.queuedFilesSize = 0;
-                        }
-
-                        message.queuedFiles++;
-                        message.queuedFilesSize += file.size;
-
-                        // check if embedded before upload!
-                        const isImg = embedded.MIMETypeSupported.indexOf(file.type) !== -1;
-
-                        if (isImg) {
-                            message.pendingAttachements.push(file);
-                            // add attachment with embeded and include the img ?
-                            dropzone.removeFile(file);
-
-                            if (message.asEmbedded === true) {
-                                $scope.$applyAsync(() => {
-                                    $scope.processPending(message, true);
-                                });
-                            } else {
-                                $scope.$applyAsync(() => {
-                                    message.askEmbedding = true;
-                                    dispatchMessageAction(message);
-                                });
-                            }
-                        } else {
-                            addAttachment(file, message, true)
-                            .then(() => {
-                                message.queuedFiles--;
-                                message.queuedFilesSize -= file.size;
-                                dropzone.removeFile(file);
-                            });
-                        }
-
-                        done();
-                    }
-                },
-                init(event) {
-                    const dropzone = dropzoneModel.put(message, this);
-
-                    _.forEach(message.Attachments, ({ Name, Size, MIMEType, ID }) => {
-                        const mockFile = { name: Name, size: Size, type: MIMEType, ID };
-                        dropzone.options.addedfile.call(dropzone, mockFile);
-                    });
-                }
-            },
-            eventHandlers: {
-                drop(event) {
-                    event.preventDefault();
-                     /* /!\ force digest over state change */
-                    $scope.$applyAsync(function() {
-                        $scope.isOver = false;
-                    });
-
-                },
-                error(event) {
-
-                    /* Notification is already handled by the accept method */
-                    /*
-                    var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
-
-                    if (event.size > sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE) {
-                        notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
-                    }
-                    */
-                }
-            }
+            messageSize,
+            currentSize,
+            numberFiles: (message.Attachments || []).length + (message.queuedFiles || 0)
         };
+    }
+
+    function notifyError(message) {
+        notify({ message , classes: 'notification-danger'});
+    }
+
+    const ATTACHMENT_MAX_SIZE = CONSTANTS.ATTACHMENT_SIZE_LIMIT * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE;
+
+    const dropMessages = {
+        [CONSTANTS.ATTACHMENT_NUMBER_LIMIT]: `Messages are limited to ${CONSTANTS.ATTACHMENT_NUMBER_LIMIT} attachments`,
+        [CONSTANTS.ATTACHMENT_SIZE_LIMIT]: `Attachments are limited to ${CONSTANTS.ATTACHMENT_SIZE_LIMIT} MB.`,
+        [ATTACHMENT_MAX_SIZE](bytes) {
+            const total = Math.round(10*bytes/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10;
+            return `Attachments are limited to ${CONSTANTS.ATTACHMENT_SIZE_LIMIT} MB. Total attached would be: ${total} MB.`;
+        }
     };
+
+
+    $scope.dropzoneConfig = (message) => ({
+        options: {
+            addRemoveLinks: false,
+            dictDefaultMessage: gettextCatalog.getString('Drop a file here to upload', null, 'Info'),
+            url: '/file/post',
+            autoProcessQueue: false,
+            paramName: 'file', // The name that will be used to transfer the file
+            previewTemplate: '<div style="display:none"></div>',
+            previewsContainer: '.previews',
+            accept(file, done) {
+                $scope.isOver = false;
+
+                const dropzone = dropzoneModel.get(message);
+                const { messageSize, currentSize, numberFiles } = getDropFileConfigMessage(message, file);
+
+                if (numberFiles === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
+                    const msg = dropMessages[CONSTANTS.ATTACHMENT_NUMBER_LIMIT];
+                    dropzone.removeFile(file);
+                    done(msg);
+                    return notifyError(msg);
+                }
+
+                if (currentSize >= ATTACHMENT_MAX_SIZE) {
+                    const msg = dropMessages[ATTACHMENT_MAX_SIZE](currentSize);
+                    dropzone.removeFile(file);
+                    done(msg);
+                    return notifyError(msg);
+                }
+
+                if (currentSize === 0) {
+                    const msg = dropMessages[CONSTANTS.ATTACHMENT_SIZE_LIMIT];
+                    /* file is too big */
+                    dropzone.removeFile(file);
+                    done(msg);
+                    return notifyError(msg);
+                }
+
+                if (angular.isUndefined(message.queuedFiles)) {
+                    message.queuedFiles = 0;
+                    message.queuedFilesSize = 0;
+                }
+
+                message.queuedFiles++;
+                message.queuedFilesSize += file.size;
+
+                // check if embedded before upload!
+                const isImg = embedded.MIMETypeSupported.indexOf(file.type) !== -1;
+
+                if (isImg) {
+                    message.pendingAttachements.push(file);
+                    message.queuedFiles--;
+                    message.queuedFilesSize -= file.size;
+                    // add attachment with embeded and include the img ?
+                    dropzone.removeFile(file);
+
+                    if (message.asEmbedded === true) {
+                        $scope.$applyAsync(() => {
+                            $scope.processPending(message, true);
+                        });
+                    } else {
+                        $scope.$applyAsync(() => {
+                            message.askEmbedding = true;
+                            dispatchMessageAction(message);
+                        });
+                    }
+                } else {
+                    addAttachment(file, message, true)
+                    .then(() => {
+                        message.queuedFiles--;
+                        message.queuedFilesSize -= file.size;
+                        dropzone.removeFile(file);
+                    });
+                }
+
+                done();
+            },
+            init(event) {
+                const dropzone = dropzoneModel.put(message, this);
+
+                _.forEach(message.Attachments, ({ Name, Size, MIMEType, ID }) => {
+                    const mockFile = { name: Name, size: Size, type: MIMEType, ID };
+                    dropzone.options.addedfile.call(dropzone, mockFile);
+                });
+
+                dropzone.on('dragover', dragover);
+            }
+        },
+        eventHandlers: {
+            drop(event) {
+                event.preventDefault();
+                 /* /!\ force digest over state change */
+                $scope.$applyAsync(function() {
+                    $scope.isOver = false;
+                });
+
+            },
+            error(event) {
+
+                /* Notification is already handled by the accept method */
+                /*
+                var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
+
+                if (event.size > sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE) {
+                    notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
+                }
+                */
+            }
+        }
+    });
 
     $scope.decryptAttachments = function(message) {
         var removeAttachments = [];
@@ -911,38 +941,33 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         };
     }
 
-    $scope.listenEditor = function(message) {
+    function listenEditor(message) {
 
         const watcherEmbedded = removerEmbeddedWatcher();
 
-        if (message.editor) {
-            const dropzone = dropzoneModel.get(message);
-
-            // Check if we need to remove embedded after a delay
-            message.editor.addEventListener('input', _.throttle(() => {
-                watcherEmbedded(message);
-            }, 300));
+        // Check if we need to remove embedded after a delay
+        message.editor.addEventListener('input', _.throttle(() => {
+            watcherEmbedded(message);
+        }, 300));
 
 
-            /**
-             * There is an input triggered on load (thx to the signature ?)
-             * so we will set the listener after a delay.
-             * Then the message will be saved every 3s.
-             */
-            message.defferredSaveLater = $timeout(() => {
-                message.editor.addEventListener('input', _.debounce(() => {
-                    $scope.saveLater(message);
-                }, CONSTANTS.SAVE_TIMEOUT_TIME));
-            }, CONSTANTS.SAVE_TIMEOUT_TIME, false);
+        /**
+         * There is an input triggered on load (thx to the signature ?)
+         * so we will set the listener after a delay.
+         * Then the message will be saved every 3s.
+         */
+        message.defferredSaveLater = $timeout(() => {
+            message.editor.addEventListener('input', _.debounce(() => {
+                $scope.saveLater(message);
+            }, CONSTANTS.SAVE_TIMEOUT_TIME));
+        }, CONSTANTS.SAVE_TIMEOUT_TIME, false);
 
-            message.editor.addEventListener('dragstart', onDragStart);
-            message.editor.addEventListener('dragend', onDragEnd);
-            message.editor.addEventListener('dragenter', onDragEnter);
-            message.editor.addEventListener('dragover', onDragOver);
-            dropzone.on('dragover', dragover);
-        }
+        message.editor.addEventListener('dragstart', onDragStart);
+        message.editor.addEventListener('dragend', onDragEnd);
+        message.editor.addEventListener('dragenter', onDragEnter);
+        message.editor.addEventListener('dragover', onDragOver);
 
-    };
+    }
 
     $scope.attToggle = function(message) {
         message.attachmentsToggle = !!!message.attachmentsToggle;
