@@ -48,7 +48,7 @@
                 display: block;
                 font-size: 1.5rem;
                 box-shadow: none;
-                border: 0
+                border: 0;
             }
         }
     }
@@ -90,7 +90,6 @@
         }
         &.details.open {
             & > div.summary {
-                height: 60px;
                 .meta {
                     height: 40px;
                     line-height: 40px;
@@ -102,24 +101,14 @@
                         line-height: 40px;
                     }
                     .contact {
-                        float: left;
-                        display: block;
                         span.from {
                             width: 3rem;
                             text-align: left;
-                            display: block;
-                            float: left;
-                        }
-                        strong {
-                            display: block;
-                            float: left;
                         }
                         em {
-                            display: block;
-                            clear: both;
-                            float: left;
-                            margin: -.5rem 0 0 3rem;
-                            line-height: 1rem;
+                            a {
+                                display: inline;
+                            }
                         }
                     }
                 }
@@ -231,11 +220,13 @@
                     strong {
                         font-weight: normal;
                     }
-                    em {
-                        display: none;
-                    }
                     span {
                         color: $gray-medium;
+                    }
+                    em {
+                        a {
+                            display: none;
+                        }
                     }
                 }
             }

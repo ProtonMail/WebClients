@@ -44,12 +44,7 @@
                     <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
                     <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
                     <span class="contact">
-                        <span class="from" ng-if="message.expand"><span translate>From</span>:</span>
-                        <strong title="{{ message.Sender | contact:'Address' }}">{{ message.Sender | contact:'Name' }}</strong>
-                        <em>
-                            {{ message.Sender | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a>
-                        </em>
+                        <span class="from" ng-if="message.expand"><span translate>From</span>:</span> <strong>{{ message.Sender | contact:'Name' }}</strong> <em>{{ message.Sender | contact:'Address' }} <a class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a></em>
                     </span>
                 </div>
                 <div class="location" ng-hide="message.toggleDetails === true">
