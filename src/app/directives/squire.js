@@ -443,7 +443,6 @@ angular.module("proton.squire", [
                     }
                     if (test.testLink) {
                         editor.removeLink();
-                        return editor.focus();
                     }
                 } else if (test.isNotValue("removeLink")) {
 
@@ -466,19 +465,17 @@ angular.module("proton.squire", [
                         });
 
                         scope.data.link = LINK_DEFAULT;
-
-                        editor.focus();
                     }
                 } else if(action === 'insertImage') {
                     if(scope.data.image.length > 0) {
                         editor.insertImage(scope.data.image, {"class": 'proton-embedded'});
                         scope.data.image = '';
                     }
-
-                    editor.focus();
                 } else {
                     editor[action]();
                 }
+
+                editor.focus();
             };
         }
     };
