@@ -1,46 +1,50 @@
 angular.module("proton.responsiveComposer", [])
+.directive('responsiveComposer', ($rootScope, authentication) => {
 
-.directive('responsiveComposer', function ($window, $rootScope, $timeout, authentication) {
+    /**
+     * Factory to compute sizes
+     * @param  {$scope} scope
+     * @return {Function}        Callback
+     */
+    const computeType = (scope) => () => {
+
+        // If the composer is maximized do nothing, keep this state
+        if (scope.message.maximized) {
+            return;
+        }
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        $rootScope.small = height < 700 && height >= 600;
+        $rootScope.mini = height < 600;
+
+        // max
+        scope
+            .$applyAsync(() => {
+                const isSmall = (width <= 640 || height <= 500);
+                isSmall && scope.maximize(scope.message);
+                !isSmall && (authentication.user.ComposerMode === 0) && scope.normalize(scope.message);
+            });
+    };
+
     return {
         restrict: 'A',
-        link: function (scope, element, attrs, message) {
-            var responsiveTimeout;
-            var responsive = function() {
-                // small
-                if ($window.innerHeight < 700) {
-                    $rootScope.small = true;
-                } else {
-                    $rootScope.small = false;
-                }
+        link(scope) {
 
-                // mini
-                if ($window.innerHeight < 600) {
-                    $rootScope.mini = true;
-                } else {
-                    $rootScope.mini = false;
-                }
+            const resizable = computeType(scope);
+            const onResize = _.debounce(resizable, 100);
 
-                // max
-                if ( ($window.innerWidth <= 640) || ($window.innerHeight <= 500) ) {
-                    scope.maximize(scope.message);
-                } else {
-                    if (authentication.user.ComposerMode === 0) {
-                        scope.normalize(scope.message);
-                    }
-                }
-            };
+            const id = setTimeout(() => {
+                resizable();
+                clearTimeout(id);
+            }, 100);
 
-            // Listen resize window
-            angular.element($window).bind('resize', responsive);
+            window.addEventListener('resize', onResize);
 
             // Remove listener on resize window
-            scope.$on('$destroy', function() {
-                angular.element($window).unbind('resize', responsive);
-                $timeout.cancel(responsiveTimeout);
-            });
-
-            responsiveTimeout = $timeout(function() {
-                responsive();
+            scope.$on('$destroy', () => {
+                window.removeEventListener('resize', onResize);
             });
         }
     };
