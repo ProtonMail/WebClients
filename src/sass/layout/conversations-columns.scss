@@ -142,17 +142,21 @@
 
         }
         .pm_labels {
-            display: block;
-            float: right;
-            overflow: hidden;
-            white-space: nowrap;
-            height: 18px;
-            text-align: right;
             position: absolute;
             right: 10px;
             bottom: 10px;
-            width: auto;
             z-index: 2;
+            height: 18px;
+            width: auto;
+            /*
+            label height is 18px + 4px padding + 4px border (top-bottom)
+            */
+            display:inline-block;
+            line-height: 26px;
+
+            white-space: nowrap;
+            text-align: right;
+
             label {
                 margin-left: .25rem;
                 background: $white;
