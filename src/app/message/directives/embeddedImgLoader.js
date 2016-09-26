@@ -6,7 +6,7 @@ angular.module('proton.message')
          * @param  {Node} body Container body mail
          * @return {void}
          */
-        const bindImagesUrl = (body) => {
+        const bindImagesUrl = (body, message) => {
             const $list = body ? body.querySelectorAll('[data-embedded-img]') : [];
 
             /**
@@ -42,11 +42,14 @@ angular.module('proton.message')
 
                         // Remove all the loaders !
                         const loader = body ? body.querySelectorAll('.loading') : [];
+
                         if (loader.length) {
                             $(loader).contents().unwrap();
                         }
 
-                        $rootScope.$emit('embedded.injected');
+                        if (images.length) {
+                            $rootScope.$emit('message.embedded.injected', message, body.innerHTML);
+                        }
                     });
                 })
                 .catch(console.error);
@@ -55,11 +58,11 @@ angular.module('proton.message')
         return {
             link(scope, el) {
                 const unsubscribe = $rootScope
-                    .$on('embedded.loaded', () => {
+                    .$on('message.embedded.loaded', (event, message, body) => {
                         // Need to build images after the $digest as we need the decrypted body to be already compiled
                         scope
                             .$applyAsync(() => {
-                                bindImagesUrl(el[0].querySelector('.bodyDecrypted'));
+                                bindImagesUrl(body, message);
                             });
                 });
 

@@ -9,110 +9,141 @@ angular.module("proton.controllers.Settings")
     gettextCatalog,
     $q,
     authentication,
+    CONSTANTS,
     networkActivityTracker,
     eventManager,
     Setting,
     notify) {
-    $scope.appearance = {
-        locales: [
-            {label: gettextCatalog.getString('English', null), key: 'en_US'}
-        ],
-        cssTheme: authentication.user.Theme,
-        ComposerMode: authentication.user.ComposerMode,
-        ViewLayout: authentication.user.ViewLayout,
-        MessageButtons: authentication.user.MessageButtons
-    };
+        const unsubscribe = [];
+        $scope.appearance = {
+            locales: [
+                {label: gettextCatalog.getString('English', null), key: 'en_US'}
+            ],
+            cssTheme: authentication.user.Theme,
+            ComposerMode: authentication.user.ComposerMode,
+            ViewLayout: authentication.user.ViewLayout,
+            MessageButtons: authentication.user.MessageButtons,
+            viewMode: !!!(authentication.user.ViewMode) // BE data is reversed
+        };
 
-    $scope.appearance.locale = _.findWhere($scope.appearance.locales, {key: gettextCatalog.getCurrentLanguage()});
+        $scope.appearance.locale = _.findWhere($scope.appearance.locales, {key: gettextCatalog.getCurrentLanguage()});
+        unsubscribe.push($rootScope.$on('changeViewMode', changeViewMode));
+        $scope.$on('$destroy', () => {
+            unsubscribe.forEach(cb => cb());
+            unsubscribe.length = 0;
+        });
+        $scope.loadThemeClassic = function() {
+            $scope.appearance.cssTheme = "CLASSIC";
+            $scope.saveTheme();
+        };
 
-    $scope.loadThemeClassic = function() {
-        $scope.appearance.cssTheme = "CLASSIC";
-        $scope.saveTheme();
-    };
+        $scope.saveTheme = function(form) {
+            var deferred = $q.defer();
 
-    $scope.saveTheme = function(form) {
-        var deferred = $q.defer();
+            networkActivityTracker.track(
+                Setting.theme({Theme: $scope.appearance.cssTheme})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        notify({message: gettextCatalog.getString('Theme saved', null), classes: 'notification-success'});
+                        eventManager.call().then(function() {
+                            deferred.resolve();
+                        });
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                        deferred.reject();
+                    } else {
+                        notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
+                        deferred.reject();
+                    }
+                })
+            );
 
-        networkActivityTracker.track(
-            Setting.theme({Theme: $scope.appearance.cssTheme})
-            .then(function(result) {
+            return deferred.promise;
+        };
+
+        $scope.clearTheme = function() {
+            // Reset the theme value
+            $scope.appearance.cssTheme = '';
+            // Save the theme
+            $scope.saveTheme();
+        };
+
+        $scope.saveComposerMode = function(form) {
+            var value = parseInt($scope.appearance.ComposerMode);
+
+            networkActivityTracker.track(
+                Setting.setComposerMode({ComposerMode: value})
+                .then(function(result) {
+                    if(result.data && result.data.Code === 1000) {
+                        notify({message: gettextCatalog.getString('Compose mode saved', null, 'Info'), classes: 'notification-success'});
+                        return eventManager.call();
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    }
+                })
+            );
+        };
+
+        $scope.saveLayoutMode = function(form) {
+            var value = $scope.appearance.ViewLayout;
+
+            networkActivityTracker.track(
+                Setting.setViewlayout({ViewLayout: value})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        notify({message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success'});
+                        return eventManager.call();
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                    }
+                })
+            );
+        };
+
+        $scope.saveDefaultLanguage = () => {
+            const Language = $scope.appearance.locale.key;
+
+            return Setting.setLanguage({Language})
+            .then((result) => $window.location.reload());
+        };
+
+        $scope.saveButtonsPosition = () => {
+            const MessageButtons = $scope.appearance.MessageButtons;
+            const promise = Setting.setMessageStyle({MessageButtons})
+            .then((result) => {
                 if (result.data && result.data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Theme saved', null), classes: 'notification-success'});
-                    eventManager.call().then(function() {
-                        deferred.resolve();
+                    return eventManager.call()
+                    .then(() => {
+                        notify({message: gettextCatalog.getString('Buttons position saved', null, 'Info'), classes: 'notification-success'});
+                        return Promise.resolve();
                     });
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
-                    deferred.reject();
-                } else {
-                    notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
-                    deferred.reject();
+                    return Promise.reject(result.data.Error);
                 }
-            })
-        );
+            });
 
-        return deferred.promise;
-    };
+            networkActivityTracker.track(promise);
 
-    $scope.clearTheme = function() {
-        // Reset the theme value
-        $scope.appearance.cssTheme = '';
-        // Save the theme
-        $scope.saveTheme();
-    };
+            return promise;
+        };
 
-    $scope.saveComposerMode = function(form) {
-        var value = parseInt($scope.appearance.ComposerMode);
-
-        networkActivityTracker.track(
-            Setting.setComposerMode({ComposerMode: value})
-            .then(function(result) {
-                if(result.data && result.data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Compose mode saved', null, 'Info'), classes: 'notification-success'});
-                    return eventManager.call();
-                } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
-                }
-            })
-        );
-    };
-
-    $scope.saveLayoutMode = function(form) {
-        var value = $scope.appearance.ViewLayout;
-
-        networkActivityTracker.track(
-            Setting.setViewlayout({ViewLayout: value})
-            .then(function(result) {
+        function changeViewMode(event, viewMode) {
+            const ViewMode = (viewMode) ? CONSTANTS.CONVERSATION_VIEW_MODE : CONSTANTS.MESSAGE_VIEW_MODE; // Be careful, BE is reversed
+            const promise = Setting.setViewMode({ViewMode})
+            .then((result) => {
                 if (result.data && result.data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Layout saved', null), classes: 'notification-success'});
-                    return eventManager.call();
+                    return eventManager.call()
+                    .then(() => {
+                        notify({message: gettextCatalog.getString('View mode saved', null, 'Info'), classes: 'notification-success'});
+                        return Promise.resolve();
+                    });
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    return Promise.reject(result.data.Error);
                 }
-            })
-        );
-    };
+            });
 
-    $scope.saveDefaultLanguage = function() {
-        var lang = $scope.appearance.locale.key;
+            networkActivityTracker.track(promise);
 
-        Setting.setLanguage({Language: lang})
-        .then(function(result) {
-            $window.location.reload();
-        });
-    };
-
-    $scope.saveButtonsPosition = function(form) {
-        networkActivityTracker.track(
-            Setting.setMessageStyle({ MessageButtons: $scope.appearance.MessageButtons })
-            .then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Buttons position saved', null, 'Info'), classes: 'notification-success'});
-                    return eventManager.call();
-                } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
-                }
-            })
-        );
-    };
-});
+            return promise;
+        }
+    });

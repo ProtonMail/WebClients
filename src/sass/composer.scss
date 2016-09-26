@@ -1,581 +1,599 @@
 #pm_composer {
 
-	/* COMPONNENT STRUCTURE */
+    /* COMPONNENT STRUCTURE */
 
-	.composer{
+/*    [class*="composer-draggable"]::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 90;
+    }*/
 
-		display: -webkit-flex;
+    .composer-askEmbedding {display: none !important}
+    .composer-dropzone {display: none !important}
+    .composer-dropzone * {pointer-events: none}
+    .composer-draggable .composer-dropzone,
+    .composer-draggable .composer-dropzone * {display: block !important}
+    .composer-draggable-editor .composer-askEmbedding {display: flex !important}
+
+    .composer{
+
+        display: -webkit-flex;
         display: flex;
 
         -webkit-flex-direction:column;
-      	flex-direction: column; /* .editor space fill */
+        flex-direction: column; /* .editor space fill */
 
-	 	position: absolute; /* better for iOS then fixed*/
-		height: 510px !important; // the drag directive tries to override this.
+        position: absolute; /* better for iOS then fixed*/
+        height: 510px !important; // the drag directive tries to override this.
         right:  0 !important;
         transform: translateX(-20px);
         visibility: hidden;
         bottom: 1rem;
-		z-index: 8888;
+        z-index: 8888;
 
         /* STYLES */
         background:#FFF;
         will-change: transform;
 
-	    header, footer, .row{
-	      line-height: $composerRowHeight;
-	    }
-
-	    .row{
-	      display: -webkit-flex; /* ipad */
-	      display: flex;
-
-	      -webkit-flex-direction: row;  /* ipad */
-	      flex-direction: row;
-
-	      position: relative;
-	      padding: 0px 10px;
-
-	      label{
-	        padding-right: 10px;
-	      }
-
-		  input,
-		  select{
-		  	height: $composerRowHeight;
-		    line-height: $composerRowHeight;
-		  }
-
-		  select{
-		  	z-index: 2;
-		  	background:transparent;
-		  }
-
-		  .pm_button.link {
-			  position: absolute;
-			  right: 7px;
-			  top: 0;
-			  line-height: $composerRowHeight;
-			  cursor: pointer;
-		  }
-
-		  &.placeholder,
-		  &.toRow {
-			  cursor: text;
-			  label{
-			 	cursor: text;
-			  }
-		  }
-
-	    }
-
-	    .flex{
-	    	-webkit-flex:1; /* ipad */
-	        flex:1;
-	        display:-webkit-flex;
-	        display: flex;
-	        min-height: 0px; /* trigger height change */
-	     }
-
-	    .fill{
-
-	      -webkit-flex:1; /* ipad */
-	      flex: 1;
-
-	      display: flex;
-	      display: -webkit-flex;
-
-	      max-height: 100%; /* scroll issue with attachments */
-
-	      -webkit-flex-direction: column;
-	      flex-direction: column;
-		}
-
-		.composeEditor{
-			position: relative; /* dropzone parent which is absolute */
-		}
-
-		.container-email{
-			width: calc(100% - 40px); /* absolute pm_button .link*/
-		}
-
-		iframe{
-			-webkit-flex:1;
-			flex:1;
-
-			position: relative;
-			z-index: 4;
-			width: 100%;
-		}
-
-		.dropzone {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			z-index: 99;
-			border: 1rem solid rgba(0,0,0,.05);
-		}
-
-		.askEmbedding {
-			position: absolute;
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			z-index: 100;
-			border:1rem solid solid rgba(0,0,0,.05);
-			background: #F5F5F5;
-			color: #505061;
-			text-align: center;
-
-
-			&:after {
-			    content: "\f03e";
-			    font-family: FontAwesome;
-			    left:-5px;
-			    position:absolute;
-			    top:0;
-			    z-index: 0;
-			    font-size: 15rem;
-			    transform: rotate(10deg);
-			    opacity: 0.1
-			 }
-
-			ul {
-				position: relative;
-				z-index: 1;
-				display: inline-block;
-				padding: 40px 0px;
-				width: 90%;
-				margin:0px auto;
-				background: #FFF;
-				border:1px solid rgba(0,0,0,0.2);
-				border-radius: 4px;
-
-				li {
-					display: inline;
-					font-size: 1.1rem;
-					margin: 0px 2px;
-
-					&.title{
-						display: block;
-						font-weight: bold;
-						width: 100%;
-						margin-bottom: 1.5rem;
-					}
-
-					&.cancel{
-						position: absolute;
-						top: 1rem;
-						right: 1rem;
-						cursor: pointer;
-						font-size: 0.8rem;
-						line-height: 1.1rem;
-						i{
-							font-size: 1.1rem
-						}
-					}
-
-
-					button{
-						font-size: .8rem;
-						line-height: 1.2rem;
-						i{
-							font-size: 1.2rem;
-						}
-					}
-				}
-			}
-		}
-
-	    .toolbar li{
-	      -webkit-flex:1;
-	      flex:1;
-	      cursor: pointer;
-	      height:$composerRowHeight;
-	      line-height:$composerRowHeight;
-	    }
-
-		.options {
-        	position: absolute;
-        	left: 0;
-        	right: 0;
-        	top: $composerRowHeight;
-        	bottom: 0;
-        	padding: 2rem 10px;
-        	box-sizing: border-box;
-        	z-index: 99;
-        	background: #fafafa;
-        	display: none;
-        	&.show {
-        		display: block;
-        	}
-        	.pm_select {
-        		display: inline-block;
-        		margin: 0 .5rem 0 2rem;
-        	}
-        	footer {
-        		position: absolute;
-        		left: 0;
-        		right:0;
-        		background: #fafafa;
-        		bottom: 0;
-        	}
-        	.clearfix {
-        		padding: 5px 0;
-        	}
-        	h3 {
-        		display: inline-block;
-        	}
-        	h1, h2, h3, h4, h5 {
-        		font-weight: 400;
-        	}
-        	input[type="range"] {
-        		width: 100%;
-        		margin: 2rem 0;
-        	}
-        	.fa {
-        		color: $primary;
-        	}
-        	.pm_button.primary {
-        		padding: 0 2rem;
-        	}
-        	div.text-center {
-        		padding: 1rem 0 2rem 0;
-        	}
+        header, footer, .row{
+          line-height: $composerRowHeight;
         }
 
-		.fa {
-			font-size: 14px;
-			&.fa-minus {
-				position: relative;
-				top: 5px;
-			}
-		}
+        .row{
+          display: -webkit-flex; /* ipad */
+          display: flex;
 
-		.squire-popover-overlay {
-			background: rgba(0,0,0,.2);
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			position: absolute;
-			z-index: 2;
-		}
+          -webkit-flex-direction: row;  /* ipad */
+          flex-direction: row;
 
-		.attachmentBar {
+          position: relative;
+          padding: 0px 10px;
 
-			height: $composerRowHeight;
-			line-height: $composerRowHeight;
-			padding: 0 10px;
-			cursor: pointer;
-			box-sizing: border-box;
-			z-index: 7;
-			border-top: 1px solid $border;
-			background: $read;
-			i {
-				font-style: normal;
-				&.embedded{
-					color: $primary;
-				}
-			}
-			.fa {
-				display: inline-block;
-				line-height: $composerRowHeight;
-				height: $composerRowHeight;
-			}
-		}
+          label{
+            padding-right: 10px;
+          }
 
-		.previews {
-			padding-top: 10px;
-			padding-left: 10px;
+          input,
+          select{
+            height: $composerRowHeight;
+            line-height: $composerRowHeight;
+          }
 
-	        overflow: auto;
-	        -webkit-overflow-scrolling: touch;
-	        box-sizing: border-box;
-	        background: $read;
+          select{
+            z-index: 2;
+            background:transparent;
+          }
 
-	        .preview-close {
-	        	margin-left: .25rem;
-	        	color: $gray;
-	        }
+          .pm_button.link {
+              position: absolute;
+              right: 7px;
+              top: 0;
+              line-height: $composerRowHeight;
+              cursor: pointer;
+          }
 
-			.attachment{
-				.fa{
-					margin-right: .5rem;
-					line-height: 34px;
-					float:left;
-					&.embedded{
-						color:$primary;
-					}
-				}
-				.preview-name{
-					float: left;
-					width: calc(100% - 4rem);
-				}
-			}
+          &.placeholder,
+          &.toRow {
+              cursor: text;
+              label{
+                cursor: text;
+              }
+          }
 
-	        footer {
-        		position: absolute;
-        		left: 0;
-        		right: 0;
-        		bottom: 0;
-        	}
-			.pm_button {
-				margin: 0 10px 10px 0;
-				float: left;
-				text-transform: initial;
-				background: $white;
-			}
-		}
+        }
 
-		&.attachmentsOpen {
-			.previews {
-				overflow: hidden;
-				-webkit-overflow-scrolling: touch;
+        .flex{
+            -webkit-flex:1; /* ipad */
+            flex:1;
+            display:-webkit-flex;
+            display: flex;
+            min-height: 0px; /* trigger height change */
+         }
 
-			}
-			.attachmentBar {
-				box-shadow: 0 1px 0 $border;
-			}
-			.attachmentArea {
-				.pm_button {
-					color: $gray;
-					border-radius: 2px;
-					width: 45%;
-					box-sizing: border-box;
-					white-space: nowrap;
-					position: relative;
-					.preview-name {
-						overflow: hidden;
-						text-overflow: ellipsis;
-						padding-right: 1.25rem;
-						display: block;
-						height: 32px;
-					}
-					.preview-close {
-						position: absolute;
-						right: 0;
-						top: 0;
-						bottom: 0;
-						cursor: pointer;
-						padding: 0 .5rem;
-					}
-					&.uploading {
-						background: $gray-light;
-					}
-				}
-			}
-		}
+        .fill{
 
-	    /* STATE CHANGE */
+          -webkit-flex:1; /* ipad */
+          flex: 1;
+
+          display: flex;
+          display: -webkit-flex;
+
+          max-height: 100%; /* scroll issue with attachments */
+
+          -webkit-flex-direction: column;
+          flex-direction: column;
+        }
+
+        .composeEditor{
+            position: relative; /* dropzone parent which is absolute */
+        }
+
+        .container-email{
+            width: calc(100% - 40px); /* absolute pm_button .link*/
+        }
+
+        iframe{
+            -webkit-flex:1;
+            flex:1;
+
+            position: relative;
+            z-index: 4;
+            width: 100%;
+        }
+
+        .dropzone {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            border: 1rem solid rgba(0,0,0,.05);
+        }
+
+        .askEmbedding {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 100;
+            border:1rem solid solid rgba(0,0,0,.05);
+            background: #F5F5F5;
+            color: #505061;
+            text-align: center;
 
 
-	    @media (min-width:600px){
-	      &{
-	      	width: 600px;
-	        /* STYLES */
-	 		box-shadow: $box-shadow;
-	        border-radius: 2px;
-	        overflow: hidden;
-	      }
-	    }
+            &:after {
+                content: "\f03e";
+                font-family: FontAwesome;
+                left:-5px;
+                position:absolute;
+                top:0;
+                z-index: 0;
+                font-size: 15rem;
+                transform: rotate(10deg);
+                opacity: 0.1
+             }
 
-		&.small {
-			height: 480px !important;
-		}
-		&.mini {
-			height: 380px !important;
-		}
-		&.minimized {
-			height: $composerRowHeight !important;
-			overflow: hidden;
-			padding: 0 !important;
-			header {
-				border-radius: 2px;
-				.fa.fa-minus {
-					top: -5px;
-				}
-			}
-			& > div,
-			& > footer {
-				display: none;
-			}
-		}
-		&.maximized {
-			position: absolute;
-			top: ($headerHeight + 20);
+            ul {
+                position: relative;
+                z-index: 1;
+                display: inline-block;
+                padding: 40px 0px;
+                width: 90%;
+                margin:0px auto;
+                background: #FFF;
+                border:1px solid rgba(0,0,0,0.2);
+                border-radius: 4px;
+
+                li {
+                    display: inline;
+                    font-size: 1.1rem;
+                    margin: 0px 2px;
+
+                    &.title{
+                        display: block;
+                        font-weight: bold;
+                        width: 100%;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    &.cancel{
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        cursor: pointer;
+                        font-size: 0.8rem;
+                        line-height: 1.1rem;
+                        i{
+                            font-size: 1.1rem
+                        }
+                    }
+
+
+                    button{
+                        font-size: .8rem;
+                        line-height: 1.2rem;
+                        i{
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .toolbar li{
+          -webkit-flex:1;
+          flex:1;
+          cursor: pointer;
+          height:$composerRowHeight;
+          line-height:$composerRowHeight;
+        }
+
+        .options {
+            position: absolute;
+            left: 0;
             right: 0;
-			bottom: 20px;
+            top: $composerRowHeight;
+            bottom: 0;
+            padding: 2rem 10px;
+            box-sizing: border-box;
+            z-index: 99;
+            background: #fafafa;
+            display: none;
+            &.show {
+                display: block;
+            }
+            .pm_select {
+                display: inline-block;
+                margin: 0 .5rem 0 2rem;
+            }
+            footer {
+                position: absolute;
+                left: 0;
+                right:0;
+                background: #fafafa;
+                bottom: 0;
+            }
+            .clearfix {
+                padding: 5px 0;
+            }
+            h3 {
+                display: inline-block;
+            }
+            h1, h2, h3, h4, h5 {
+                font-weight: 400;
+            }
+            input[type="range"] {
+                width: 100%;
+                margin: 2rem 0;
+            }
+            .fa {
+                color: $primary;
+            }
+            .pm_button.primary {
+                padding: 0 2rem;
+            }
+            div.text-center {
+                padding: 1rem 0 2rem 0;
+            }
+        }
+
+        .fa {
+            font-size: 14px;
+            &.fa-minus {
+                position: relative;
+                top: 5px;
+            }
+        }
+
+        .squire-popover-overlay {
+            background: rgba(0,0,0,.2);
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 2;
+        }
+
+        .attachmentBar {
+
+            height: $composerRowHeight;
+            line-height: $composerRowHeight;
+            padding: 0 10px;
+            cursor: pointer;
+            box-sizing: border-box;
+            z-index: 7;
+            border-top: 1px solid $border;
+            background: $read;
+            i {
+                font-style: normal;
+                &.embedded{
+                    color: $primary;
+                }
+            }
+            .fa {
+                display: inline-block;
+                line-height: $composerRowHeight;
+                height: $composerRowHeight;
+            }
+        }
+
+        .previews {
+            padding-top: 10px;
+            padding-left: 10px;
+
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            box-sizing: border-box;
+            background: $read;
+
+            .preview-close {
+                margin-left: .25rem;
+                color: $gray;
+            }
+
+            .attachment{
+                .fa{
+                    margin-right: .5rem;
+                    line-height: 34px;
+                    float:left;
+                    &.embedded{
+                        color:$primary;
+                    }
+                }
+                .preview-name{
+                    float: left;
+                    width: calc(100% - 4rem);
+                }
+            }
+
+            footer {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+            .pm_button {
+                margin: 0 10px 10px 0;
+                float: left;
+                text-transform: initial;
+                background: $white;
+            }
+        }
+
+        &.attachmentsOpen {
+            .previews {
+                overflow: hidden;
+                -webkit-overflow-scrolling: touch;
+
+            }
+            .attachmentBar {
+                box-shadow: 0 1px 0 $border;
+            }
+            .attachmentArea {
+                .pm_button {
+                    color: $gray;
+                    border-radius: 2px;
+                    width: 45%;
+                    box-sizing: border-box;
+                    white-space: nowrap;
+                    position: relative;
+                    .preview-name {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        padding-right: 1.25rem;
+                        display: block;
+                        height: 32px;
+                    }
+                    .preview-close {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        cursor: pointer;
+                        padding: 0 .5rem;
+                    }
+                    &.uploading {
+                        background: $gray-light;
+                    }
+                }
+            }
+        }
+
+        /* STATE CHANGE */
+
+
+        @media (min-width:600px){
+          &{
+            width: 600px;
+            /* STYLES */
+            box-shadow: $box-shadow;
+            border-radius: 2px;
+            overflow: hidden;
+          }
+        }
+
+        &.small {
+            height: 480px !important;
+        }
+        &.mini {
+            height: 380px !important;
+        }
+        &.minimized {
+            height: $composerRowHeight !important;
+            overflow: hidden;
+            padding: 0 !important;
+            header {
+                border-radius: 2px;
+                .fa.fa-minus {
+                    top: -5px;
+                }
+            }
+            & > div,
+            & > footer {
+                display: none;
+            }
+        }
+        &.maximized {
+            position: absolute;
+            top: ($headerHeight + 20);
+            right: 0;
+            bottom: 20px;
             transition: none;
-			transform: translateX(-20px) !important;
-			width: calc(100% - #{$sidebarWidth} - 40px);
-			height: auto !important;
-			box-sizing: border-box;
-			margin: 0;
+            transform: translateX(-20px) !important;
+            width: calc(100% - #{$sidebarWidth} - 40px);
+            height: auto !important;
+            box-sizing: border-box;
+            margin: 0;
 
-			header, footer {
-				border-radius: 0;
-			}
-		}
+            header, footer {
+                border-radius: 0;
+            }
+        }
 
-		&.attachmentsOpen.moreAttachments {
-			.previews {
-				height: 111px;
-				overflow: auto;
-			}
-		}
+        &.attachmentsOpen.moreAttachments {
+            .previews {
+                height: 111px;
+                overflow: auto;
+            }
+        }
 
-		/* COMPONNENT APPEARANCE */
+        /* COMPONNENT APPEARANCE */
 
-		.dotdotdot{
-			display: none;
-		}
+        .dotdotdot{
+            display: none;
+        }
 
-		&.blur{
-			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1),
-						0 0 2px rgba(0, 0, 0, 0.1);
-			& > * {
-				opacity: .75;
-			}
-		}
+        &.blur{
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1),
+                        0 0 2px rgba(0, 0, 0, 0.1);
+            & > * {
+                opacity: .75;
+            }
+        }
 
-	    header{
-	      background: #505061;
-	      color: white;
+        header{
+          background: #505061;
+          color: white;
 
-		  .subject {
-				width: 22rem;
-				max-width: 50%;
-				float:left;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				padding: 0 0 0 10px;
-		  }
+          .subject {
+                width: 22rem;
+                max-width: 50%;
+                float:left;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding: 0 0 0 10px;
+          }
 
-	      .actions{
-	    		float:right;
-				.pm_button {
-				  color: #dadae5;
-				  float: left;
-				  height: 32px;
-				  line-height: 32px;
-				  margin: 0;
-				  padding: 0;
-				  text-align: center;
-				  width: 32px;
-		    	  i{ font-size:14; }
-		    	}
-	    	}
-	    }
+          .actions{
+                float:right;
+                .pm_button {
+                  color: #dadae5;
+                  float: left;
+                  height: 32px;
+                  line-height: 32px;
+                  margin: 0;
+                  padding: 0;
+                  text-align: center;
+                  width: 32px;
+                  i{ font-size:14; }
+                }
+            }
+        }
 
-	    .row{
-	      border-bottom:1px solid $border;
-	      &.placeholder div{
-					color: $text;
-				  	overflow: hidden;
-				  	-o-text-overflow: ellipsis; /* for Opera 9 */
-				  	text-overflow: ellipsis; /* for the rest of the world */
-					white-space: nowrap;
-					display:block; /* webkit */
-					padding-right: 20px; /* button */
-		  }
-		  .overlay{
-		  	position: absolute;
-		  	z-index: 10;
-		  	left: 0px;
-		  	top:0px;
-		  	width: 100%;
-		  	height: 100%;
-		  }
-	    }
+        .row{
+          border-bottom:1px solid $border;
+          &.placeholder div{
+                    color: $text;
+                    overflow: hidden;
+                    -o-text-overflow: ellipsis; /* for Opera 9 */
+                    text-overflow: ellipsis; /* for the rest of the world */
+                    white-space: nowrap;
+                    display:block; /* webkit */
+                    padding-right: 20px; /* button */
+          }
+          .overlay{
+            position: absolute;
+            z-index: 10;
+            left: 0px;
+            top:0px;
+            width: 100%;
+            height: 100%;
+          }
+        }
 
-		input, select{
-	      font-size: 14px;
-	      color: #333;
+        input, select{
+          font-size: 14px;
+          color: #333;
 
-	    }
+        }
 
-	    .meta{
-	    	color: $gray-light;
-	    	input, select{
-	    		border:none;
-	    		padding:none; /* iOS */
-	    	}
-	    }
+        .meta{
+            color: $gray-light;
+            input, select{
+                border:none;
+                padding:none; /* iOS */
+            }
+        }
 
-	    footer{
-	      padding: 10px;
-	      background: $read;
-	      border-top: 1px solid $border;
+        footer{
+          padding: 10px;
+          background: $read;
+          border-top: 1px solid $border;
 
-			 &.disabled {
+             &.disabled {
 
-				.pm_button {
-					pointer-events: none;
-					opacity: .5;
-				}
-				.dead {
-					pointer-events: none;
-				}
-			}
+                .pm_button {
+                    pointer-events: none;
+                    opacity: .5;
+                }
+                .dead {
+                    pointer-events: none;
+                }
+            }
 
-			.pm_button {
-				line-height: $composerRowHeight;
-				height: $composerRowHeight;
-				padding: 0 1rem;
-				background: $white;
-				&.primary {
-					background: $primary;
-				}
-				&.disabled {
-					background: black;
-				}
-			}
-		}
+            .pm_button {
+                line-height: $composerRowHeight;
+                height: $composerRowHeight;
+                padding: 0 1rem;
+                background: $white;
+                &.primary {
+                    background: $primary;
+                }
+                &.disabled {
+                    background: black;
+                }
+            }
+        }
 
-		.saveAt {
-			display: none;
-		}
-		&.expandRecipients {
-			overflow: hidden;
-		}
+        .saveAt {
+            display: none;
+        }
+        &.expandRecipients {
+            overflow: hidden;
+        }
 
-	    /* RESETS */
-	    /* Probably to move as a global reset scope */
+        /* RESETS */
+        /* Probably to move as a global reset scope */
 
-	    ul{
-	      margin:0px;
-	      padding:0px;
-	      list-style: none;
-	    }
+        ul{
+          margin:0px;
+          padding:0px;
+          list-style: none;
+        }
 
-	    .angular-squire {
-			overflow: auto;
-			-webkit-overflow-scrolling: touch;
-	    }
+        .angular-squire {
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
 
 
-	    input,select{
-	      outline: none;
+        input,select{
+          outline: none;
           -webkit-appearance: none; /* DRY */
           -moz-appearance: none;
           appearance: none;
-	    }
+        }
 
-		select::-ms-expand {
-		    display: none;
-		}
-	    /* DRY */
-		::-webkit-input-placeholder {color: $gray-light;}
-		:-moz-placeholder {color: $gray-light;}
-		::-moz-placeholder {color: $gray-light;}
-		:-ms-input-placeholder {color: $gray-light;}
+        select::-ms-expand {
+            display: none;
+        }
+        /* DRY */
+        ::-webkit-input-placeholder {color: $gray-light;}
+        :-moz-placeholder {color: $gray-light;}
+        ::-moz-placeholder {color: $gray-light;}
+        :-ms-input-placeholder {color: $gray-light;}
 
-	}
+    }
 
 }
 
@@ -587,77 +605,77 @@
         transform: translateX(0) !important
     }
 
-	.activeComposer {
-		#pm_composer {
-			display: block;
-		}
-	}
-	html.protonmail {
-	    overflow: auto !important;
-		height: initial;
-		body.modalOpen,
-		body.activeComposer {
-		    overflow: auto !important;
-		    height: initial;
-		    min-height: initial;
-		}
-	}
-	body.maximizedComposer {
-		#pm_main,
-		#pm_header,
-		#pm_sidebar {
-			display: none;
-		}
-	}
+    .activeComposer {
+        #pm_composer {
+            display: block;
+        }
+    }
+    html.protonmail {
+        overflow: auto !important;
+        height: initial;
+        body.modalOpen,
+        body.activeComposer {
+            overflow: auto !important;
+            height: initial;
+            min-height: initial;
+        }
+    }
+    body.maximizedComposer {
+        #pm_main,
+        #pm_header,
+        #pm_sidebar {
+            display: none;
+        }
+    }
 
     footer{
 
-		.pm_button {
-			padding:0px 10px !important;
-			span {
-				display: none;
-			}
-			&.mobileFull {
-				span {
-					display: block;
-				}
-			}
-		}
-	}
+        .pm_button {
+            padding:0px 10px !important;
+            span {
+                display: none;
+            }
+            &.mobileFull {
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
 
-	.mobileMode #outsideMessageWrap footer .pm_button span {display: block}
-	.mobileMode#eo-reply #message-body .squire-toolbar {padding: 0}
+    .mobileMode #outsideMessageWrap footer .pm_button span {display: block}
+    .mobileMode#eo-reply #message-body .squire-toolbar {padding: 0}
 }
 
 @media screen and (max-width: $tablet-landscape) {
-	#pm_composer {
-		.composer {
-			header {
-				.pm_button.maximize-button {
-					/*display: none;*/
-				}
-			}
-			&.maximized {
-				left:0 !important;
-				top:0;
-				width: 100%;
-				height: 100% !important;
+    #pm_composer {
+        .composer {
+            header {
+                .pm_button.maximize-button {
+                    /*display: none;*/
+                }
+            }
+            &.maximized {
+                left:0 !important;
+                top:0;
+                width: 100%;
+                height: 100% !important;
                 transform: translateX(-0px) !important;
-				border-radius: 0;
-			}
-		}
-	}
+                border-radius: 0;
+            }
+        }
+    }
 }
 @media screen and (max-width: $tablet-portrait) {
-	#pm_composer {
-		.composer {
-			header {
-				.pm_button.maximize-button {
-					display: none;
-				}
-			}
-		}
-	}
+    #pm_composer {
+        .composer {
+            header {
+                .pm_button.maximize-button {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 

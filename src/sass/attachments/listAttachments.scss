@@ -1,0 +1,122 @@
+.listAttachments-container.hidden {display: none}
+
+.listAttachments-container {padding: 0 10px}
+.state-eoReply.listAttachments-container {padding: 0 35px}
+
+.listAttachments-item * {pointer-events: none}
+
+[class*="listAttachments-icon"] {
+    color: $gray;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2.5rem;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    z-index: 2;
+    &.stuff {
+        opacity: 0;
+    }
+    &.embedded{
+        color:$primary;
+    }
+    &.stuff.fa-cog,
+    &.stuff.fa-download {
+        opacity: 1;
+        border-right: none;
+    }
+}
+
+.listAttachments-icon-loader,
+.listAttachments-icon-download { display: none }
+
+.listAttachments-item-decrypt .listAttachments-icon-loader { display: inline-block }
+.listAttachments-item-download .listAttachments-icon-download { display: inline-block }
+
+.listAttachments-item-download .listAttachments-icon-loader,
+.listAttachments-item-decrypt .listAttachments-icon,
+.listAttachments-item-download .listAttachments-icon {display: none}
+
+/* NAooooon, but we need to override utilities... and don't break everything */
+.listAttachments-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .listAttachments-att {
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 0 10px 10px 0;
+        color: $gray;
+        background: #fff;
+        padding-left: 3rem;
+        padding-right: .5rem;
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        background-color: $light;
+        max-width: 100%;
+
+        display: flex;
+
+
+        &.remove {
+            padding-right: 2.5rem;
+        }
+        em {
+            height: 40px;
+            width: 2.5rem;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            border-right: 1px solid $border;
+        }
+        .name {
+            text-transform: initial;
+            display: block;
+            line-height: 15px;
+            height: 15px;
+            padding-top: 5px;
+            white-space: nowrap;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            float: left;
+        }
+        .size {
+            display: block;
+            line-height: 15px;
+            height: 15px;
+            padding-bottom: 5px;
+            float: left;
+            clear: both;
+        }
+        .removeButton {
+            appearance: none;
+            -webkit-appearance: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            right: -.5rem;
+            z-index: 999;
+            font-size: 1rem;
+        }
+        &.placeholder {
+            margin-right: 8rem;
+        }
+    }
+
+}
+
+.listAttachments-btn-action-remove {display: none}
+.listAttachments-btn-action-remove i {pointer-events: none}
+.state-eoReply .listAttachments-btn-action-remove {display: block}

@@ -41,12 +41,7 @@ angular.module("proton.models.message", ["proton.constants"])
             // GET
             get: {
                 method: 'get',
-                url: url.get() + '/messages/:id',
-                transformResponse: (data) => {
-                    const json = angular.fromJson(data);
-
-                    return json.Message;
-                }
+                url: url.get() + '/messages/:id'
             },
             query: {
                 method: 'get',
@@ -121,7 +116,6 @@ angular.module("proton.models.message", ["proton.constants"])
         promises: [],
 
         setDecryptedBody(input = '', purify = true) {
-
             this.DecryptedBody = !purify ? input : DOMPurify.sanitize(input, {
                 ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style', 'input', 'form']
@@ -132,16 +126,31 @@ angular.module("proton.models.message", ["proton.constants"])
             return 'DecryptedBody';
         },
 
-        getDecryptedBody(trustAsHtml =  false) {
-            if (trustAsHtml) {
-                return $sce.trustAsHtml(this.DecryptedBody);
-            }
+        getDecryptedBody() {
             return this.DecryptedBody || '';
         },
 
         attachmentsSize() {
             return (this.Attachments || []).reduce((acc, { Size = 0 } = {}) => acc + (+Size), 0);
         },
+
+        countEmbedded() {
+            return this.Attachments
+                .filter(({ Headers = {} }) => Headers['content-disposition'] === 'inline')
+                .length;
+        },
+
+        addAttachments(list = []) {
+            this.Attachments = [].concat(this.Attachments).concat(list);
+            this.NumEmbedded = this.countEmbedded();
+        },
+
+        removeAttachment({ ID } = {}) {
+            this.Attachments = (this.Attachments || [])
+                .filter((att) => att.ID !== ID);
+            this.NumEmbedded = this.countEmbedded();
+        },
+
         encryptionType: function() {
             var texts = [
                 gettextCatalog.getString('Unencrypted message', null),

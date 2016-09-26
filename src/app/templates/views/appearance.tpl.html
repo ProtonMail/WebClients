@@ -45,25 +45,37 @@
 
         </div>
         <div class="row pm_grid">
-            <section class="setting pm_form col-1-1">
-                <form method="post" class="toolbar-button-options" novalidate ng-submit="saveButtonsPosition(buttonsForm)" name="buttonsForm">
-                    <legend translate-context="Title" translate>Toolbar</legend>
-                    <p translate-context="Info" translate>Choose your prefered button order for marking messages as read / unread.</p>
-                    <label for="">
-                        <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
-                        <span ng-click="appearance.MessageButtons = 0; saveButtonsPosition(buttonsForm)" class="pm_buttons pull-left" pt-tooltip-translate="Mark as read / Mark as unread"  pt-tooltip-translate-context="Action">
+            <section class="setting pm_form col-1-2">
+                <legend translate-context="Title" translate>Toolbar</legend>
+                <p translate-context="Info" translate>Choose your prefered button order for marking messages as read / unread.</p>
+                <div class="toolbar-button-options">
+                    <label for="messageButtons1">
+                        <input id="messageButtons1" ng-change="saveButtonsPosition()" type="radio" ng-model="appearance.MessageButtons" ng-value="0" />
+                        <span class="pm_buttons" pt-tooltip-translate="Mark as read / Mark as unread"  pt-tooltip-translate-context="Action">
                             <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
                             <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
                         </span>
                     </label>
-                    <label for="">
-                        <input ng-change="saveButtonsPosition(buttonsForm)" type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
-                        <span ng-click="appearance.MessageButtons = 1; saveButtonsPosition(buttonsForm)" class="pm_buttons pull-left" pt-tooltip-translate="Mark as unread / Mark as read"  pt-tooltip-translate-context="Action">
+                    <label for="messageButtons2">
+                        <input id="messageButtons2" ng-change="saveButtonsPosition()" type="radio" ng-model="appearance.MessageButtons" ng-value="1" />
+                        <span class="pm_buttons" pt-tooltip-translate="Mark as unread / Mark as read"  pt-tooltip-translate-context="Action">
                             <a href="#" class="dead"><i class="fa fa fa-eye-slash"></i></a>
                             <a href="#" class="dead"><i class="fa fa fa-eye"></i></a>
                         </span>
                     </label>
-                </form>
+                </div>
+            </section>
+            <section class="setting pm_form col-1-2">
+                <legend translate-context="Title" translate>Conversation Grouping</legend>
+                <p translate-context="Info" translate>Conversation Grouping automatically groups messages in the same conversation together.</p>
+                <div>
+                    <div class="col-1-2">
+                        <label translate-context="Label" translate>Enable Conversation Grouping</label>
+                    </div>
+                    <div class="col-1-2">
+                        <toggle status="appearance.viewMode" on="ON" off="OFF" name="changeViewMode"></toggle>
+                    </div>
+                </div>
             </section>
             <!-- <section class="setting pm_form pull-right">
                 <legend translate-context="Title" translate>Internationalization</legend>

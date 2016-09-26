@@ -10,13 +10,18 @@
     header {
         display: flex;
         flex-direction: column;
-        position: relative;
-        box-sizing: border-box;
-        padding: 14px 0;
-        min-height: 35px;
+        /*
+        Supercalifragilisticexpialidocious h1
+		avoid child shrink which is accomplished here by min-content
+		*/
+		min-height: -moz-min-content;
+	    min-height: -webkit-min-content;
+        min-height: min-content;
         border-bottom: 1px solid #acb0bf;
-        justify-content: center;
+        padding: 0px 10px;
+
         h1 {
+            position: relative;
             font-size: 24px;
             font-weight: 400;
             color: #333;
@@ -25,37 +30,39 @@
             letter-spacing: .04rem;
             display: inline-block;
             word-wrap: break-word;
-            width: calc(100% - 4.5rem);
             padding: 0 10px;
+            padding: 14px 0;
+            min-height: 35px;
+
+            .starButton {
+                position: absolute;
+                right: -10px;
+                top: 14px;
+                border: none;
+                margin-right: 0;
+                box-shadow: none;
+                a {
+                    background: transparent !important;
+                    line-height: 33px;
+                    height: 33px;
+                    padding: 0 10px;
+                    display: block;
+                    font-size: 1.5rem;
+                    box-shadow: none;
+                    border: 0;
+                }
+            }
         }
         .containsMessage {
             p {
-                margin: 13px 10px;
-            }
-        }
-        .starButton {
-            position: absolute;
-            right: 0;
-            top: .15em;
-            border: none;
-            margin-right: 0;
-            box-shadow: none;
-            a {
-                background: transparent !important;
-                line-height: 33px;
-                height: 33px;
-                padding: 0 10px;
-                display: block;
-                font-size: 1.5rem;
-                box-shadow: none;
-                border: 0;
+                margin: 0px 0px 13px 0px;
             }
         }
     }
     .message {
         border: 1px solid $border;
         border-radius: 2px;
-        margin: 0 10px 10px;
+        margin: 10px;
         box-sizing: border-box;
         clear: both;
         & > div.summary,
@@ -90,9 +97,9 @@
         }
         &.details.open {
             & > div.summary {
+                height: 50px;
                 .meta {
-                    height: 40px;
-                    line-height: 40px;
+
                     .history {
                         float: left;
                         margin: 0 .5rem 0 0;
@@ -106,28 +113,28 @@
                             text-align: left;
                         }
                         em {
+                            display: flex;
+                            position: absolute;
+                            bottom:5px;
+                            line-height: 20px;
+                            height: 1rem;
+
                             a {
-                                display: inline;
+                                line-height: 20px;
+                                padding: 0px 3px;
+                                display: inline-block;
                             }
                         }
                     }
                 }
             }
             .labelz {
-                padding: 10px 0 0;
-                line-height: 16px;
-                background: $read;
-                float: left;
-                width: 100%;
-                clear: both;
-                box-sizing: border-box;
+                padding: 10px 0 0 0;
                 .loc,
                 .pm_tag {
-                    float: left;
                     margin: 0 .5rem 7px 0;
                 }
                 .pm_labels {
-                    float: left;
                     label {
                         margin: 0 .5rem 3px 0;
                         box-shadow: .25rem 0 0 .25rem $read;
@@ -174,6 +181,10 @@
                 left: 10px;
                 top: 0;
                 z-index: 1;
+                height: 100%;
+                max-width: 80%; /* handle long from */
+                overflow: hidden;
+
                 .meta,
                 .location {
                     float: left;
@@ -216,6 +227,7 @@
                 }
             }
             .meta {
+                white-space: nowrap; /* single line for long from */
                 .contact {
                     strong {
                         font-weight: normal;

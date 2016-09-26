@@ -1,8 +1,8 @@
 angular.module('proton.message')
-    .directive('renderMessageBody', (networkActivityTracker) => ({
+    .directive('renderMessageBody', (networkActivityTracker, $sce) => ({
         link(scope, el) {
 
-            const watcherKey = `message.${scope.message.getDecryptedBodyKey()}`;
+            const watcherKey = 'body';
 
             // Render the loader
             networkActivityTracker.dispatch('load');
@@ -25,7 +25,7 @@ angular.module('proton.message')
                 .$watch(watcherKey, () => {
                     scope
                         .$applyAsync(() => {
-                            el[0].innerHTML = scope.message.getDecryptedBody(true);
+                            el[0].innerHTML = $sce.getTrustedHtml($sce.trustAsHtml(scope.body));
                         });
                 });
 
@@ -33,6 +33,8 @@ angular.module('proton.message')
                 .$on('$destroy', () => {
                     el[0].removeEventListener('animationstart', onAnimationStart, false);
                     unsubscribe();
+                    // Close the loader
+                    networkActivityTracker.dispatch('close');
                 });
 
         }

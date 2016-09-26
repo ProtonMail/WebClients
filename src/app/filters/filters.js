@@ -80,19 +80,19 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('labels', function(authentication) {
-    return function(labels) {
-        var labelsFiltered = [];
-        if( !authentication.user ) {
-            return [];
-        }
-        var userLabels = _.chain(authentication.user.Labels).sortBy('Order').value();
+.filter('labels', (authentication) => {
+    return (labels = []) => {
+        const labelsFiltered = [];
 
-        for (var i = 0; i < userLabels.length; i++) {
-            var labelObject = userLabels[i];
+        if (authentication.user) {
+            const userLabels = _.sortBy(authentication.user.Labels, 'Order');
 
-            if (labels.indexOf(labelObject.ID) !== -1) {
-                labelsFiltered.push(labelObject);
+            for (let i = 0; i < userLabels.length; i++) {
+                const labelObject = userLabels[i];
+
+                if (labels.indexOf(labelObject.ID) !== -1) {
+                    labelsFiltered.push(labelObject);
+                }
             }
         }
 
@@ -335,11 +335,11 @@ angular.module("proton.filters",[])
 
 .filter('filterMessages', function($state, $rootScope, CONSTANTS) {
     return function(messages) {
-        if (!$state.is('secured.search.view') && !$state.is('secured.label.view') && !$state.is('secured.starred.view')) {
+        if (!$state.includes('secured.search.**') && !$state.includes('secured.label.**') && !$state.includes('secured.starred.**')) {
             var trashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; });
             var nonTrashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; });
 
-            if ($state.is('secured.trash.view') === true) {
+            if ($state.includes('secured.trash.**') === true) {
                 if (trashed.length > 0) {
                     if ($rootScope.showNonTrashed === false) {
                         messages = trashed;
@@ -352,23 +352,6 @@ angular.module("proton.filters",[])
                     }
                 }
             }
-
-            // var spammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; });
-            // var nonSpammed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; });
-            //
-            // if ($state.is('secured.spam.view') === true) {
-            //     if (spammed.length > 0) {
-            //         if ($rootScope.showNonSpammed === false) {
-            //             messages = spammed;
-            //         }
-            //     }
-            // } else {
-            //     if (nonSpammed.length > 0) {
-            //         if ($rootScope.showSpammed === false) {
-            //             messages = nonSpammed;
-            //         }
-            //     }
-            // }
         }
 
         return messages;

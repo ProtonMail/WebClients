@@ -170,79 +170,26 @@
     </div>
     <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
         <div class="composeEditor fill">
-            <div  class="askEmbedding"
-            ng-show="message.askEmbedding && !preventDropbox">
-                <ul>
-                    <li class="title">{{ message.pendingAttachements.length }} images detected</li>
-                    <li>Insert images<li>
-                    <li>
-                        <button class="pm_button primary"
-                        ng-click="processPending(message,false)"
-                        pt-tooltip-translate="Attachments"
-                        pt-placement="top">
-                            <span>as attachment</span>
-                        </button>
-                    </li>
-                    <li>or</li>
-                    <li>
-                        <button class="pm_button primary"
-                        ng-click="processPending(message,true)"
-                        pt-tooltip-translate="inline image"
-                        pt-placement="top">
-                            <span>inline</span>
-                        </button>
-                    </li>
-                    <li class="cancel" ng-click="cancelAskEmbedding(message)">
-                       <span>cancel</span>  <i class="fa fa-close"></i>
-                    </li>
-                </ul>
-            </div>
+            <composer-ask-embedded
+                class="askEmbedding composer-askEmbedding"
+                ng-show="!preventDropbox"></composer-ask-embedded>
+
             <div
-            class="dropzone composer-dropzone fill"
-            dropzone="dropzoneConfig(message)"
-            ng-show="isOver && message.focussed && !preventDropbox"></div>
+                class="dropzone composer-dropzone fill"
+                composer-dropzone
+                id="dropzone_message{{::message.ID}}"
+                ng-show="message.focussed && !preventDropbox"></div>
 
             <squire
                 data-message="message"
                 allow-embedded="true"
+                class="composer-editor"
                 ng-click="attHide(message); message.autocompletesFocussed = false;"></squire>
         </div>
     </section>
-     <aside class="attachmentBar" ng-click="attToggle(message); hideFields(message);" ng-show="message.Attachments.length > 0" >
-        <i class="pull-right" ng-if="(message.attachmentsToggle === true)" translate translate-context="Action">Hide</i>
-        <i class="pull-right" ng-if="!(message.attachmentsToggle === true)" translate translate-context="Action">Show</i>
-        <strong>{{ message.attachmentsSize() | humanSize }}</strong>
-        <span ng-show="message.Attachments.length > message.NumEmbedded">
-            <i class="fa fa-paperclip"></i> {{ message.Attachments.length - message.NumEmbedded }} <span translate translate-n="message.Attachments.length - message.NumEmbedded" translate-plural="files attached">file attached</span>
-        </span>
-        <span ng-show="message.NumEmbedded > 0">
-            <i class="fa fa-image embedded"></i> {{ message.NumEmbedded }} <span translate translate-n="message.NumEmbedded" translate-plural="embedded images">embedded image</span>
-        </span>
-    </aside>
-    <div
-    class="previews clearfix attachmentArea"
-    ng-show="(message.attachmentsToggle === true) && (message.Attachments.length > 0)">
-        <span
-        title="{{attachment.filename || attachment.Name}}"
-        class="preview-template pm_button"
-        id="attachment{{$index}}"
-        ng-repeat="attachment in message.Attachments track by $id(attachment)"
-        ng-class="{ 'uploading': attachment.uploading }"
-        ng-init="initAttachment(attachment, $index)">
 
-            <span class="attachment">
-                <i ng-class="isEmbedded(attachment) ? 'fa fa-image embedded' : 'fa fa-paperclip'"></i>
-                <span class="preview-name" ng-bind="attachment.filename || attachment.Name"></span>
-            </span>
+    <composer-attachments data-model="message"></composer-attachments>
 
-            <a ng-show="!!attachment.uploading" class="preview-close" ng-click="cancelAttachment(attachment, message)">
-                <i class="fa fa-times"></i>
-            </a>
-            <a ng-show="!!!attachment.uploading" class="preview-close" ng-click="removeAttachment(attachment, message)">
-                <i class="fa fa-times"></i>
-            </a>
-        </span>
-    </div>
     <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
         <button class="pm_button"
             action-message="::message"

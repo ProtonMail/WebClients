@@ -20,7 +20,7 @@
                                         <i class="fa fa-ellipsis-v"></i> {{ filter.Name }}
                                     </div>
                                     <div class="col-1-4 desktopOnly">
-                                        <toggle status="filter.Status" on="ON" off="OFF" change="statusCustomFilter(filter)"></toggle>
+                                        <toggle status="filter.Status" on="ON" off="OFF" name="changeCustomFilterStatus.{{ filter.ID }}"></toggle>
                                     </div>
                                     <div class="col-1-4 text-right">
                                         <button class="pm_button link" ng-click="editCustomFilter(filter)">Edit</button>

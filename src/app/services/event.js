@@ -191,7 +191,7 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 						}
 					});
 
-					cache.callRefresh();
+					$rootScope.$emit('messages.counter');
 				}
 			},
 			manageConversationCounts: function(counts) {
@@ -208,7 +208,7 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 						}
 					});
 
-					cache.callRefresh();
+					$rootScope.$emit('conversations.counter');
 				}
 			},
 			manageThreadings: function(messages, conversations) {
@@ -326,9 +326,9 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 			manage: function (data) {
 				// Check if eventID is sent
 				if (data.Error) {
-					Events.getLatestID({})
-					.then(function(response) {
-						eventModel.manageID(response.data.EventID);
+					Events.getLatestID()
+					.then((result) => {
+						eventModel.manageID(result.data.EventID);
 					});
 				} else if (data.Refresh === 1) {
 					eventModel.manageID(data.EventID);
@@ -399,19 +399,20 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 			setEventID(ID) {
 				eventModel.manageID(ID);
 			},
-			start: function () {
+			start() {
 				if (angular.isUndefined(eventModel.promiseCancel)) {
 					eventModel.promiseCancel = $timeout(eventModel.interval, 0);
 				}
 			},
-			call: function() {
-				return eventModel.get().then(function (result) {
+			call() {
+				return eventModel.get()
+				.then((result) => {
 					if (result.data && result.data.Code === 1000) {
 						eventModel.manage(result.data);
 					}
 				});
 			},
-			stop: function () {
+			stop() {
 				$timeout.cancel(eventModel.promiseCancel);
 			}
 		}, 'start', 'call', 'stop');

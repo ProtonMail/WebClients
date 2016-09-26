@@ -8,18 +8,13 @@ angular.module('proton.message')
         e.preventDefault();
 
         if (/addFile|addEmbedded/.test(actionMessageType)) {
-            const dropzone = $(el).parents('.composer').find('.dropzone');
-
-            return $rootScope.$emit('addFile', {dropzone, asEmbedded: (actionMessageType === 'addEmbedded')});
+            return $rootScope.$emit('addFile', {
+                asEmbedded: (actionMessageType === 'addEmbedded'),
+                message: scope.model
+            });
         }
 
-        const msg = messageBuilder.create(actionMessageType, scope.model);
-
-        if (actionMessageType === 'new') {
-            return $rootScope.$emit('newMessage', msg);
-        }
-
-        $rootScope.$emit('loadMessage', msg, (actionMessageType === 'forward' || msg.Attachments.length > 0));
+        $rootScope.$emit('composer.new', {type: actionMessageType, message: scope.model});
       }
 
       el.on('click', onClick);

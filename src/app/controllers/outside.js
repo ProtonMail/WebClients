@@ -16,12 +16,10 @@ angular.module("proton.controllers.Outside", [
     $stateParams,
     $timeout,
     gettextCatalog,
-    Attachment,
     CONSTANTS,
     Eo,
     embedded,
     Message,
-    attachments,
     authentication,
     prepareContent,
     message,
@@ -29,6 +27,7 @@ angular.module("proton.controllers.Outside", [
     pmcw,
     tools,
     networkActivityTracker,
+    AttachmentLoader,
     secureSessionStorage
 ) {
     // Variables
@@ -51,6 +50,28 @@ angular.module("proton.controllers.Outside", [
         return prepareContent(content, message);
     }
 
+    function watchInput() {
+        const ATTACHMENT_MAX_SIZE = CONSTANTS.ATTACHMENT_SIZE_LIMIT * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE;
+
+        // Add a delay to detect the input as it might not be availabled
+        const id = setTimeout(() => {
+            $('#inputFile').change((e) => {
+                e.preventDefault();
+                const files = e.target.files;
+
+                const totalSize = _.reduce(files, (acc, file) => acc + file.size, 0);
+                const totalSizeAtt = message.attachmentsSize();
+
+                if ((totalSize + totalSizeAtt) > ATTACHMENT_MAX_SIZE) {
+                    return notify({message: 'Attachments are limited to ' + CONSTANTS.ATTACHMENT_SIZE_LIMIT + ' MB.', classes: 'notification-danger'});
+                }
+                _.each(files, addAttachment);
+
+            });
+            clearTimeout(id);
+        }, 500);
+    }
+
     $scope.initialization = function() {
         if ($state.is('eo.reply')) {
             message.showImages = true;
@@ -66,29 +87,12 @@ angular.module("proton.controllers.Outside", [
         }
 
         embedded.parser(message).then( (result) => {
-
             message.setDecryptedBody(result);
-
-
             $scope.message = message;
+            watchInput();
         });
 
 
-        $('#inputFile').change(function(event) {
-            event.preventDefault();
-
-            var files = $('#inputFile')[0].files;
-
-            for (var i = 0; i<files.length; i++) {
-                var file = files[i];
-
-                if (file.size > CONSTANTS.ATTACHMENT_SIZE_LIMIT * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE) {
-                    notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
-                } else {
-                    $scope.addAttachment(file);
-                }
-            }
-        });
 
         // start timer ago
         $scope.agoTimer = $interval(function() {
@@ -249,7 +253,7 @@ angular.module("proton.controllers.Outside", [
     };
 
 
-    $scope.addAttachment = function(file) {
+    function addAttachment(file) {
         var totalSize = message.attachmentsSize();
         var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
@@ -266,15 +270,17 @@ angular.module("proton.controllers.Outside", [
             totalSize += file.size;
 
             var attachmentPromise;
-            var element = $(file.previewElement);
 
             if (totalSize < (sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE)) {
                 var publicKey = $scope.message.publicKey;
 
-                attachments.load(file, publicKey).then(function(packets) {
+                AttachmentLoader.load(file, publicKey).then(function(packets) {
                     message.uploading = false;
                     $scope.resetFile();
+
+                    // The id is for the front only and the BE ignores it
                     message.Attachments.push({
+                        ID: `att_${Math.random().toString(32).slice(0,12)}_${Date.now()}`,
                         Name: file.name,
                         Size: file.size,
                         Filename: packets.Filename,
@@ -297,108 +303,7 @@ angular.module("proton.controllers.Outside", [
                 // TODO remove file in droparea
             }
         }
-    };
-
-    $scope.decryptAttachment = function($event, attachment){
-
-        $event.preventDefault();
-
-        if ($state.includes('eo.reply')) {
-            return;
-        }
-
-        var link = angular.element($event.target);
-        var href = link.attr('href');
-
-        if(href !== undefined && href.search(/^data.*/)!==-1) {
-            alert("Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As.");
-            return false;
-        }
-
-        attachment.decrypting = true;
-
-        // decode key packets
-        var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-
-        // get enc attachment promise
-        var att = Eo.attachment(decrypted_token, token_id, attachment.ID);
-
-        // decrypt session key promise
-        var key = pmcw.decryptSessionKey(keyPackets, password);
-
-        // when we have the session key and attachent:
-        $q.all({
-            "attObject": att,
-            "key": key
-         }).then(
-            function(obj) {
-
-
-                // create new Uint8Array to store decryted attachment
-                var at = new Uint8Array(obj.attObject.attachment);
-
-                // grab the key
-                var key = obj.key.key;
-
-                // grab the algo
-                var algo = obj.key.algo;
-
-                // decrypt the att
-                pmcw.decryptMessage(at, key, true, algo).then(
-                    function(decryptedAtt) {
-                        try {
-                            $scope.downloadAttachment({
-                                data: decryptedAtt.data,
-                                Name: decryptedAtt.filename,
-                                MIMEType: attachment.MIMEType,
-                                el: $event.target
-                            });
-                            attachment.decrypting = false;
-                            if(!$rootScope.isFileSaverSupported) {
-                                // display a download icon
-                                attachment.decrypted = true;
-                            }
-                            $scope.$apply();
-                        } catch (error) {
-                            $log.error(error);
-                        }
-                    },
-                    function(error) {
-                        $log.error(error);
-                    }
-                );
-            },
-            function(error) {
-                $log.error(error);
-            }
-        );
-    };
-
-     $scope.downloadAttachment = function(attachment) {
-        try {
-            var blob = new Blob([attachment.data], {type: attachment.MIMEType});
-            var link = $(attachment.el);
-
-            if ($rootScope.isFileSaverSupported) {
-                saveAs(blob, attachment.Name);
-            } else {
-                // Bad blob support, make a data URI, don't click it
-                var reader = new FileReader();
-
-                reader.onloadend = function () {
-                    link.parent('a').attr('href',reader.result);
-                };
-
-                reader.readAsDataURL(blob);
-            }
-        } catch (error) {
-            $log.error(error);
-        }
-    };
-
-    $scope.removeAttachment = function(attachment) {
-        $scope.message.Attachments = _.without(message.Attachments, attachment);
-    };
+    }
 
     $scope.initialization();
 });

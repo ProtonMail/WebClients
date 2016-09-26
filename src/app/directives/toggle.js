@@ -1,49 +1,36 @@
-angular.module("proton.toggle", [])
-
-.directive("toggle", function() {
+angular.module('proton.toggle', [])
+.directive('toggle', (gettextCatalog, $rootScope) => {
     return {
         restrict: 'E',
         replace: true,
         templateUrl: 'templates/directives/toggle.tpl.html',
         scope: {
             status: '=', // status value
-            change: '&change', // method called when status change
+            name: '@', // event name called
             on: '@', // text for on
             off: '@' // text for off
         },
-        link: function(scope, element, attrs) {
-            // Initialization
-            if (angular.isUndefined(scope.status)) {
-                scope.check = true;
-            } else {
-                scope.check = Boolean(scope.status);
+        link(scope, element, attrs) {
+            if (!scope.on) {
+                scope.on = gettextCatalog.getString('Yes', null, 'Title');
             }
 
-            if (angular.isUndefined(scope.on)) {
-                scope.on = 'Yes';
+            if (!scope.off) {
+                scope.off = gettextCatalog.getString('No', null, 'Title');
             }
 
-            if (angular.isUndefined(scope.off)) {
-                scope.off = 'No';
-            }
+            function onClick(event) {
+                scope.status = !scope.status;
 
-            // Functions
-            scope.click = function(event) {
-                scope.check = !scope.check;
-
-                if (angular.isNumber(scope.status)) {
-                    scope.status = Number(scope.check);
-                } else {
-                    scope.status = scope.check;
+                if (scope.name) {
+                    $rootScope.$emit(scope.name, scope.status);
                 }
+            }
 
-                if (angular.isDefined(scope.change) && angular.isFunction(scope.change)) {
-                    // Need to delay the change to be sure, the model is updated
-                    setTimeout(function() {
-                        scope.change();
-                    }, 200);
-                }
-            };
+            element.on('click', onClick);
+            scope.$on('$destroy', () => {
+                element.off('click', onClick);
+            });
         }
     };
 });

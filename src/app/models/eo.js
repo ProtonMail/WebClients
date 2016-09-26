@@ -25,11 +25,7 @@ angular.module("proton.models.eo", [])
                     'Authorization': decrypted_token,
                     'x-eo-uid': token_id
                 }
-            })
-            .then(({ data }) => ({
-                attachment: data,
-                isCache: false
-            }));
+            });
         },
         reply: function(decrypted_token, token_id, data) {
             var deferred = $q.defer();

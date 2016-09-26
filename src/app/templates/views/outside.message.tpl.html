@@ -58,6 +58,6 @@
             <div class="email bodyDecrypted" ng-bind-html="message.getDecryptedBody(true)" toggle-blockquote mail-to scroll="false"></div>
         </div>
     </div>
-    <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
+    <list-attachments data-model="message"></list-attachments>
     <div id="eo_footer"></div>
 </div>

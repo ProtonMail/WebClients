@@ -21,6 +21,7 @@ angular.module("proton.controllers.Secured", [])
     gettextCatalog,
     hotkeys,
     notify,
+    messageActions, // added here to initialize $rootScope.$on
     organization,
     Organization,
     Payment,

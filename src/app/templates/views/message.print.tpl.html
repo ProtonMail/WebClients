@@ -1,4 +1,5 @@
-<div class="print" ng-hide="loading">
+<loader-tag ng-if="loading"></loader-tag>
+<div class="print" ng-if="!loading">
     <p>
         <span>
             <h1 style="padding: 1rem 0;">{{ message.Subject }}</h1>

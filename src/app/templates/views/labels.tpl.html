@@ -10,7 +10,7 @@
                 <p class="alert alert-info" ng-show="labels.length === 0" translate-context="Info" translate>You have no labels.</p>
                 <div class="pm_sort" ng-show="labels.length > 0">
                     <ul data-as-sortable="labelsDragControlListeners" data-ng-model="labels">
-                        <li ng-repeat="label in labels | orderBy: 'Order'" as-sortable-item="">
+                        <li ng-repeat="label in labels track by label.ID" as-sortable-item="">
                             <span as-sortable-item-handle="">
                                 <i class="fa fa-ellipsis-v"></i>
                                 <i class="fa fa-tag" ng-style="{ 'color': label.Color }"></i>

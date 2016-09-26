@@ -22,6 +22,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 ) {
     var scrollPromise;
     var messagesCached = [];
+    const unsubscribe = [];
 
     $scope.mailbox = tools.currentMailbox();
     $scope.labels = authentication.user.Labels;
@@ -34,13 +35,21 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     $rootScope.showNonSpammed = false;
     $rootScope.numberElementSelected = 1;
     $rootScope.showWelcome = false;
-    $scope.inTrash = $state.is('secured.trash.view');
-    $scope.inSpam = $state.is('secured.spam.view');
+    $scope.inTrash = $state.includes('secured.trash.**');
+    $scope.inSpam = $state.includes('secured.spam.**');
     $scope.markedMessage = null;
 
     // Listeners
-    $scope.$on('refreshConversation', function(event) {
-        $scope.refreshConversation();
+    unsubscribe.push($rootScope.$on('refreshConversation', (event, conversationIDs) => {
+        if (conversationIDs.indexOf($scope.conversation.ID) > -1) {
+            $scope.refreshConversation();
+        }
+    }));
+
+    $scope.$on('$destroy', () => {
+        $timeout.cancel(scrollPromise);
+        unsubscribe.forEach(cb => cb());
+        unsubscribe.length = 0;
     });
 
     $scope.$on('unmarkMessages', function(event) {
@@ -91,53 +100,38 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         $scope.back();
     });
 
-    $scope.$on('$destroy', function(event) {
-        $timeout.cancel(scrollPromise);
-    });
-
     /**
-     * Search and ask to expand a message
+     * Set a flag (expand) to the message to be expanded
+     * @param {Array} messages
+     * @return {Array} messages
      */
     function expandMessage(messages = []) {
-         if ($state.is('secured.sent.view')) { // If we open a conversation in the sent folder
-            const sents = _.where(messages, { AddressID: authentication.user.Addresses[0].ID });
+        let thisOne;
+        const type = tools.typeList();
 
-            if (sents.length > 0) {
-                // We try to open the last sent message
-                $rootScope.expandMessage = _.last(sents);
-            } else {
-                // Or the last message
-                $rootScope.expandMessage = _.last(messages);
-            }
-        } else if ($state.is('secured.search.view') || $state.is('secured.drafts.view')) {
-            if (typeof $rootScope.expandMessage === 'undefined') {
-                $rootScope.expandMessage = _.last(messages);
-            }
-        } else if ($state.is('secured.starred.view')) {
+         if (type === 'message') { // If we open a conversation in the sent folder
+            thisOne = _.last(messages);
+        } else if ($state.includes('secured.starred.**')) {
             // Select the last message starred
-            var lastStarred = _.chain(messages).filter(function(message) {
+            thisOne = _.chain(messages).filter((message) => {
                 return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
             }).last().value();
-
-            $rootScope.expandMessage = lastStarred;
-        } else if ($state.is('secured.label.view')) {
+        } else if ($state.includes('secured.label.**')) {
             // Select the last message with this label
-            var lastLabel = _.chain(messages).filter(function(message) {
+            thisOne = _.chain(messages).filter((message) => {
                 return message.LabelIDs.indexOf($stateParams.label) !== -1;
             }).last().value();
-
-            $rootScope.expandMessage = lastLabel;
         } else {
-            var latest = _.last(messages);
+            const latest = _.last(messages);
             // If the latest message is read, we open it
-            if(latest.IsRead === 1) {
-                $rootScope.expandMessage = latest;
+            if (latest.IsRead === 1) {
+                thisOne = latest;
             } else {
                 // Else we open the first message unread beginning to the end list
-                var loop = true;
-                var index = messages.length - 1;
+                let loop = true;
+                let index = messages.length - 1;
 
-                while(loop === true && index > 0) {
+                while (loop === true && index > 0) {
                     index--;
 
                     if (messages[index].IsRead === 1) { // Is read
@@ -149,9 +143,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
                 if (loop === true) { // No message read found
                     index = 0;
                 }
-                $rootScope.expandMessage = messages[index];
+
+                thisOne = messages[index];
             }
         }
+
+        thisOne.openMe = true;
+
+        return messages;
     }
 
     /**
@@ -172,8 +171,7 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
 
 
             if (messages.length > 0) {
-                $scope.messages = cache.orderMessage(messages, false);
-                expandMessage($scope.messages);
+                $scope.messages = expandMessage(cache.orderMessage(messages, false));
 
                 if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
                     $scope.markedMessage = $rootScope.expandMessage;
@@ -189,16 +187,15 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
     /**
      * Refresh the current conversation with the latest change reported by the event log manager
      */
-    $scope.refreshConversation = function() {
-        var conversation = cache.getConversationCached($stateParams.id);
-        var messages = cache.queryMessagesCached($stateParams.id);
-        var loc = tools.currentLocation();
+    $scope.refreshConversation = () => {
+        const conversation = cache.getConversationCached($stateParams.id);
+        let messages = cache.queryMessagesCached($stateParams.id);
+        const loc = tools.currentLocation();
 
+            console.trace('REFRSH');
         messagesCached = messages;
-        $scope.trashed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; }).length > 0;
-        $scope.nonTrashed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
-        // $scope.spammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; }).length > 0;
-        // $scope.nonSpammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; }).length > 0;
+        $scope.trashed = _.filter(messagesCached, ({LabelIDs = []}) => { return _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; }).length > 0;
+        $scope.nonTrashed = _.filter(messagesCached, ({LabelIDs = []}) => { return _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
 
         if (angular.isDefined(conversation)) {
             var labels = conversation.LabelIDs;
@@ -213,17 +210,18 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         }
 
         if (angular.isArray(messages) && messages.length > 0) {
-            var toAdd = [];
-            var toRemove = [];
-            var index, message, found, ref;
-            const lookFor = (messages, ID) => _.find(messages, (m = {}) => m.ID === ID);
+            const toAdd = [];
+            const toRemove = [];
+            let index, found, ref;
+
+
             messages = $filter('filterMessages')(messages);
             messages = cache.orderMessage(messages, false);
 
             for (index = 0; index < messages.length; index++) {
-                found = lookFor($scope.messages, messages[index].ID);
+                found = _.findWhere($scope.messages, {ID: messages[index].ID});
 
-                if (angular.isUndefined(found)) {
+                if (!found) {
                     toAdd.push({index: index, message: messages[index]});
                 }
             }
@@ -231,14 +229,14 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
             for (index = 0; index < toAdd.length; index++) {
                 ref = toAdd[index];
 
-                // Insert new message
+                // Insert new message at a specific index
                 $scope.messages.splice(ref.index, 0, ref.message);
             }
 
             for (index = 0; index < $scope.messages.length; index++) {
-                found = lookFor(messages, $scope.messages[index].ID);
+                found = _.findWhere(messages, {ID: $scope.messages[index].ID});
 
-                if (angular.isUndefined(found)) {
+                if (!found) {
                     toRemove.push({index: index});
                 }
             }

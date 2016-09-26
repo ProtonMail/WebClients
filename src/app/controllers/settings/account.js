@@ -25,9 +25,10 @@ angular.module('proton.controllers.Settings')
     User,
     desktopNotifications
 ) {
+    const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.displayName = authentication.user.DisplayName;
-    $scope.PMSignature = authentication.user.PMSignature;
+    $scope.PMSignature = Boolean(authentication.user.PMSignature);
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.dailyNotifications = !!authentication.user.Notify;
     $scope.desktopNotificationsStatus = desktopNotifications.status();
@@ -36,6 +37,13 @@ angular.module('proton.controllers.Settings')
     $scope.embedded = authentication.user.ShowEmbedded;
     $scope.hotkeys = authentication.user.Hotkeys;
     $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
+
+    // Listeners
+    unsubscribe.push($rootScope.$on('changePMSignature', changePMSignature));
+    $scope.$on('$destroy', () => {
+        unsubscribe.forEach(cb => cb());
+        unsubscribe.length = 0;
+    });
 
     $scope.enableDesktopNotifications = function() {
         desktopNotifications.request(function() {
@@ -283,32 +291,24 @@ angular.module('proton.controllers.Settings')
     };
 
 
-    $scope.statusPMSignature = function(status) {
-
-        var state;
-
-        if(status) {
-            state = 1;
-        } else {
-            state = 0;
-        }
-
-        return networkActivityTracker.track(
-
-            Setting.PMSignature({PMSignature:state})
-            .then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    authentication.user.PMSignature = status;
+    function changePMSignature(event, status) {
+        const PMSignature = (status) ? 1 : 0;
+        const promise = Setting.PMSignature({PMSignature})
+        .then((result) => {
+            if (result.data && result.data.Code === 1000) {
+                return eventManager.call()
+                .then(() => {
                     notify({message: gettextCatalog.getString('Signature updated', null, 'Info'), classes: 'notification-success'});
-                } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
-                }
-            })
+                });
+            } else if (result.data && result.data.Error) {
+                return Promise.reject(result.data.Error);
+            }
+        });
 
-        );
+        networkActivityTracker.track(promise);
 
-    };
-
+        return promise;
+    }
 
     $scope.saveAutosaveContacts = function(form) {
         networkActivityTracker.track(

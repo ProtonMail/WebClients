@@ -1,37 +1,43 @@
 angular.module('proton.hotkeys', [])
-.factory('hotkeys', (hotkeyModal, $rootScope, $state, authentication, CONSTANTS, messageBuilder) => {
+.factory('hotkeys', (hotkeyModal, $rootScope, $state, authentication, CONSTANTS, Message) => {
     const composer = (event) => {
-        $rootScope.$emit('newMessage', messageBuilder.create('new'));
+        const type = 'new';
+        const message = new Message();
+
+        $rootScope.$emit('composer.new', {message, type});
 
         return false;
     };
 
-    const reply = (event) => {
-        $rootScope.$broadcast('replyConversation');
+
+    const reply = function(event) {
+        $rootScope.$emit('replyConversation');
 
         return false;
     };
 
-    const replyAll = (event) => {
-        $rootScope.$broadcast('replyAllConversation');
+
+    const replyAll = function(event) {
+        $rootScope.$emit('replyAllConversation');
 
         return false;
     };
 
-    const forward = (event) => {
-        $rootScope.$broadcast('forwardConversation');
+
+    const forward = function(event) {
+        $rootScope.$emit('forwardConversation');
 
         return false;
     };
 
-    const nextConversation = (event) => {
-        $rootScope.$broadcast('nextConversation');
+    const nextElement = (event) => {
+        $rootScope.$broadcast('nextElement');
 
         return false;
     };
 
-    const previousConversation = (event) => {
-        $rootScope.$broadcast('previousConversation');
+    const previousElement = (event) => {
+        $rootScope.$broadcast('previousElement');
 
         return false;
     };
@@ -197,8 +203,8 @@ angular.module('proton.hotkeys', [])
         {keyboard: 'shift+r', callback: reply},
         {keyboard: 'shift+a', callback: replyAll},
         {keyboard: 'shift+f', callback: forward},
-        {keyboard: 'k', callback: nextConversation},
-        {keyboard: 'j', callback: previousConversation},
+        {keyboard: 'k', callback: nextElement},
+        {keyboard: 'j', callback: previousElement},
         {keyboard: 'enter', callback: openMarked},
         {keyboard: 'r', callback: read},
         {keyboard: 'u', callback: unread},

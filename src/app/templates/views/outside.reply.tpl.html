@@ -1,4 +1,4 @@
-<div id="outsideMessageWrap">
+<div id="outsideMessageWrap"  ng-if="message">
     <div class="message-head" ng-class="{ unread:!message.IsRead, starred: message.Starred === 1 }">
         <h1>
             <span class="attachment" ng-show="message.Attachments.length > 0">
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <ng-include src="'templates/partials/attachments.tpl.html'"></ng-include>
+    <list-attachments data-model="message"></list-attachments>
 
     <footer class="text-right">
         <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()" translate-context="Action" translate>Cancel</button>

@@ -56,6 +56,9 @@ angular.module('proton.models.setting', [])
         setHotkeys: function(params) {
             return $http.put(url.get() + '/settings/hotkeys', params);
         },
+        setThreading(params) {
+            return $http.put(url.get() + '/settings/threading', params);
+        },
         invoiceText: function(params) {
             return $http.put(url.get() + '/settings/invoicetext', params);
         },

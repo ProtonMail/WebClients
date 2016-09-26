@@ -1,6 +1,6 @@
 angular.module("proton.controllers.Conversations", ["proton.constants"])
 
-.controller('ConversationsController', function(
+.controller('ElementsController', function(
     $q,
     $log,
     $rootScope,
@@ -24,8 +24,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     Setting,
     cacheCounters,
     networkActivityTracker,
+    AttachmentLoader,
     notify,
-    attachments,
     embedded,
     tools
 ) {
@@ -40,7 +40,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     function initialization() {
 
         // Variables
-        $scope.markedConversation = void 0;
+        $scope.markedElement = void 0;
         $scope.mailbox = tools.currentMailbox();
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
@@ -108,18 +108,18 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.startWatchingEvent = function() {
-        $scope.$on('refreshConversations', function() {
+        $scope.$on('refreshElements', (event) => {
             $scope.refreshConversations();
         });
 
         $scope.$on('openMarked', function(event) {
             if (angular.element('.message.marked').length === 0) {
-                openElement($scope.markedConversation);
+                openElement($scope.markedElement);
             }
         });
 
         $scope.$on('selectMark', function(event) {
-            $scope.markedConversation.Selected = !!!$scope.markedConversation.Selected;
+            $scope.markedElement.Selected = !!!$scope.markedElement.Selected;
             $scope.$apply();
         });
 
@@ -177,11 +177,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         $scope.$on('markPrevious', function(event) {
             if (angular.element('.message.marked').length === 0 && $scope.conversations) {
-                var index = $scope.conversations.indexOf($scope.markedConversation);
+                var index = $scope.conversations.indexOf($scope.markedElement);
 
                 if (index > 0) {
                     $scope.$applyAsync(() => {
-                        $scope.markedConversation = $scope.conversations[index - 1];
+                        $scope.markedElement = $scope.conversations[index - 1];
                     });
                     scrollToConversationPos();
                 } else {
@@ -192,11 +192,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         $scope.$on('markNext', function(event) {
             if (angular.element('.message.marked').length === 0 && $scope.conversations) {
-                var index = $scope.conversations.indexOf($scope.markedConversation);
+                var index = $scope.conversations.indexOf($scope.markedElement);
 
                 if (index < ($scope.conversations.length - 1)) {
                     $scope.$applyAsync(() => {
-                        $scope.markedConversation = $scope.conversations[index + 1];
+                        $scope.markedElement = $scope.conversations[index + 1];
                     });
                     scrollToConversationPos();
                 } else {
@@ -205,12 +205,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         });
 
-        $scope.$on('nextConversation', function(event) {
-            $scope.nextConversation();
+        $scope.$on('nextElement', function(event) {
+            $scope.nextElement();
         });
 
-        $scope.$on('previousConversation', function(event) {
-            $scope.previousConversation();
+        $scope.$on('previousElement', function(event) {
+            $scope.previousElement();
         });
 
         $scope.$on('$destroy', $scope.stopWatchingEvent);
@@ -355,14 +355,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             if ($scope.conversations.length > 0) {
                 var element;
 
-                if (!$scope.markedConversation) {
+                if (!$scope.markedElement) {
                     if ($state.params.id) {
                         element = _.findWhere($scope.conversations, {ID: $state.params.id});
                     } else {
                         element = _.first($scope.conversations);
                     }
                 } else {
-                    const found = _.findWhere($scope.conversations, {ID: $scope.markedConversation.ID});
+                    const found = _.findWhere($scope.conversations, {ID: $scope.markedElement.ID});
 
                     if (found) {
                         element = found;
@@ -371,7 +371,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     }
                 }
 
-                $scope.markedConversation = element;
+                $scope.markedElement = element;
             }
 
             deferred.resolve(elements);
@@ -501,12 +501,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.elementsSelected = function() {
         var elements = _.where($scope.conversations, {Selected: true});
 
-        if ($scope.conversations.length > 0 && elements.length === 0 && $scope.markedConversation) {
+        if ($scope.conversations.length > 0 && elements.length === 0 && $scope.markedElement) {
             var type = tools.typeList();
             if (type === 'message') {
-                elements = _.where($scope.conversations, {ID: $scope.markedConversation.ID});
+                elements = _.where($scope.conversations, {ID: $scope.markedElement.ID});
             } else if (type === 'conversation') {
-                elements = _.where($scope.conversations, {ID: $scope.markedConversation.ID});
+                elements = _.where($scope.conversations, {ID: $scope.markedElement.ID});
             }
         }
 
@@ -524,26 +524,30 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     /**
      * Go to the next conversation
      */
-    $scope.nextConversation = function() {
-        var current = $state.$current.name;
-        var id = $state.params.id;
+    $scope.nextElement = () => {
+        const current = $state.$current.name;
+        const elementID = $state.params.id;
+        const type = $state.includes('**.conversation') ? 'conversation' : 'message';
 
-        cache.more(id, 'next').then(function(conversation) {
-            $state.go(current, {id: conversation.ID});
-            $scope.markedConversation = conversation;
+        cache.more(elementID, 'next', type)
+        .then((element) => {
+            $state.go(current, {id: element.ID});
+            $scope.markedElement = element;
         });
     };
 
     /**
      * Go to the previous conversation
      */
-    $scope.previousConversation = function() {
-        var current = $state.$current.name;
-        var id = $state.params.id;
+    $scope.previousElement = () => {
+        const current = $state.$current.name;
+        const elementID = $state.params.id;
+        const type = $state.includes('**.conversation') ? 'conversation' : 'message';
 
-        cache.more(id, 'previous').then(function(conversation) {
-            $state.go(current, {id: conversation.ID});
-            $scope.markedConversation = conversation;
+        cache.more(elementID, 'previous', type)
+        .then((element) => {
+            $state.go(current, {id: element.ID});
+            $scope.markedElement = element;
         });
     };
 
@@ -551,13 +555,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Mark conversations selected as read
      */
     $scope.read = function() {
-        var type = tools.typeList();
-        var ids = $scope.idsSelected();
+        const type = tools.typeList();
+        const ids = $scope.idsSelected();
 
-        if(type === 'conversation') {
+        if (type === 'conversation') {
             action.readConversation(ids);
-        } else if(type === 'message') {
-            action.readMessage(ids);
+        } else if (type === 'message') {
+            $rootScope.$emit('messageActions', {action: 'read', data: {ids}});
         }
     };
 
@@ -565,17 +569,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * Mark conversations selected as unread
      */
     $scope.unread = function() {
+        const type = tools.typeList();
+        const ids = $scope.idsSelected();
 
-        var type = tools.typeList();
-        var ids = $scope.idsSelected();
-
-        if(type === 'conversation') {
+        if (type === 'conversation') {
             action.unreadConversation(ids);
-        } else if(type === 'message') {
-            action.unreadMessage(ids);
+        } else if (type === 'message') {
+            $rootScope.$emit('messageActions', {action: 'unread', data: {ids}});
         }
 
-        if(angular.isDefined($state.params.id)) {
+        if (angular.isDefined($state.params.id)) {
             $scope.back();
         }
     };
@@ -597,12 +600,14 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
                     if (type === 'conversation') {
                         action.deleteConversation(ids);
-                    } else if(type === 'message') {
-                        action.deleteMessage(ids);
+                    } else if (type === 'message') {
+                        $rootScope.$emit('messageActions', {action: 'delete', data: {ids}});
                     }
+
                     $rootScope.showWelcome = false;
                     $rootScope.numberElementChecked = 0;
                     confirmModal.deactivate();
+                    redirectUser();
                 },
                 cancel: function() {
                     confirmModal.deactivate();
@@ -610,6 +615,12 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         });
     };
+
+    function redirectUser() {
+        // The default view for all conversations in not the state conversation but inbox
+        // Return to the state and close message
+        $state.go($state.$current.name.replace('.conversation', ''), { id: '' });
+    }
 
     /**
      * Move conversation to an other location
@@ -622,8 +633,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if(type === 'conversation') {
             action.moveConversation(ids, mailbox);
         } else if(type === 'message') {
-            action.moveMessage(ids, mailbox);
+            $rootScope.$emit('messageActions', {action: 'move', data: {ids, mailbox}});
         }
+
+        redirectUser();
     };
 
     /**
@@ -639,9 +652,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         if(type === 'conversation') {
             action.labelConversation(ids, labels, alsoArchive);
         } else if(type === 'message') {
-            var messages = $scope.elementsSelected();
+            const messages = $scope.elementsSelected();
 
-            action.labelMessage(messages, labels, alsoArchive);
+            $rootScope.$emit('messageActions', {action: 'label', data: {messages, labels, alsoArchive}});
         }
     };
 
@@ -768,9 +781,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * open a specific element
      * @param {Object} element - conversation / message
      */
-    var openElement = function(element) {
-        var type = tools.typeList();
-        var params = {};
+    function openElement(element) {
+        const type = tools.typeList();
+        const params = { id: element.ID  };
 
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
@@ -783,25 +796,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         embedded.deallocator(element);
 
         // reset the attachement storage
-        attachments.flush();
+        AttachmentLoader.flushCache();
 
         // Mark this element
-        $scope.markedConversation = element;
+        $scope.markedElement = element;
 
-        // Open conversation
-        if (type === 'conversation') {
-            params.id = element.ID;
-        } else if (type === 'message') {
-            params.id = element.ConversationID;
-            $rootScope.expandMessage = element;
-        }
-
-        $state.go('secured.' + $scope.mailbox + '.view', params);
-
-        if (params.id === $state.params.id) {
-            $rootScope.$emit('toggleMessage', element.ID);
-        }
-    };
+        $state.go('secured.' + $scope.mailbox + '.' + type, params);
+    }
 
     /**
      * On click on a conversation

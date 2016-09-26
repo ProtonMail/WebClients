@@ -26,6 +26,7 @@ angular.module('proton.message')
             event.preventDefault();
 
             let j = mailto.indexOf('?');
+
             if (j < 0) {
                 j = mailto.length;
             }
@@ -33,33 +34,30 @@ angular.module('proton.message')
             const to = mailto.substring(0, j);
             const params = $location.search(mailto.substring(j + 1)).search();
             const message = new Message();
-            _.defaults(message, {
-                From: _.findWhere(authentication.user.Addresses, {ID: scope.message.AddressID}) || {},
-                PasswordHint: '',
-                Attachments: [],
-                ToList: [],
-                Subject: '',
-                CCList: [],
-                BCCList: []
-            });
+
+            message.From = _.findWhere(authentication.user.Addresses, {ID: scope.message.AddressID});
 
             if (to) {
                 message.ToList = toAddresses(to.split(','));
             }
+
             if (params.subject) {
                 message.Subject = params.subject;
             }
+
             if (params.cc) {
                 message.CCList = toAddresses(params.cc.split(','));
             }
+
             if (params.bcc) {
                 message.BCCList = toAddresses(params.bcc.split(','));
             }
+
             if (params.body) {
                 message.DecryptedBody = params.body;
             }
 
-            $rootScope.$broadcast('loadMessage', message);
+            $rootScope.$emit('composer.new', {message, type: 'new'});
         }
 
         element.on('click', click);

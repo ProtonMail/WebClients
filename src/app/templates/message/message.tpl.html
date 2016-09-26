@@ -1,0 +1,260 @@
+<article class="message" ng-class="{
+    'last': last,
+    'open': message.expand,
+    'closed': !message.expand,
+    'marked': message === markedMessage,
+    'read': message.IsRead === 1,
+    'unread': message.IsRead === 0,
+    'details': message.toggleDetails === true,
+    'hasLabels': (message.LabelIDs | labels).length > 0,
+    'draft': message.Type === 1,
+    'sent': message.Type === 2 || message.Type === 3
+}">
+
+<div class="summary" toggle-message>
+        <div class="pull-left">
+            <div class="meta">
+                <i class="history fa fa-reply" ng-if="message.IsReplied === 1"></i>
+                <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
+                <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
+                <span class="contact">
+                    <span class="from" ng-if="message.expand"><span translate>From</span>:</span> <strong>{{ message.Sender | contact:'Name' }}</strong> <em>{{ message.Sender | contact:'Address' }} <a class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a></em>
+                </span>
+            </div>
+            <div class="location" ng-hide="message.toggleDetails === true">
+                <folders-message message="message"></folders-message>
+            </div>
+        </div>
+        <div class="labels" ng-hide="message.toggleDetails === true">
+            <labels-element element="message"></labels-element>
+        </div>
+        <div class="time">
+            <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
+            <span ng-show="message.toggleDetails === true">{{ message.Time | localReadableTime }}</span>
+            <time
+                ng-show="message.toggleDetails !== true"
+                time-refreshed="{{ message.Time }}"
+                time-filter="messageTime"
+                time-interval="30000"></time>
+        </div>
+        <div class="status">
+            <pt-star
+                data-model="message"
+                class="singleStar"
+                data-pt-star-type="message"></pt-star>
+
+            <span class="fa locks" ng-class="{
+                'fa-lock': !!!(message.IsEncrypted == '0'),
+                'text-purple': !!(message.IsEncrypted == '1') || !!(message.IsEncrypted == '3') || !!(message.IsEncrypted == '5') || !!(message.IsEncrypted == '6'),
+                'fa-unlock-alt': !!(message.IsEncrypted == '0'),
+                'pgp': !!(message.IsEncrypted == '7') || !!(message.IsEncrypted == '8')
+            }" title="{{ message.encryptionType() }}">
+            </span>
+        </div>
+    </div>
+
+    <div class="details" ng-if="message.expand">
+        <div class="recipients-summary" ng-hide="message.toggleDetails === true">
+            <strong translate>To</strong>:
+            <span ng-repeat="email in recipients()" title="{{ email | contact:'Address' }}">
+                {{ email | contact: 'Name': true | nameRecipient }}<span ng-hide="$last">, </span>
+            </span>
+        </div>
+
+        <div class="recipients-details" ng-show="message.toggleDetails === true">
+            <div ng-if="message.ToList.length" class="toGroup">
+                <span class="from">
+                    <span class="where" translate translate-context="Title">To</span>:
+                </span>
+                <ul>
+                    <li class="contact" ng-repeat="email in message.ToList">
+                        <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
+                        <em ng-show="message.toggleDetails === true">
+                            {{ email | contact:'Address' }}
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
+                        </em>
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true">
+                <span class="from">
+                    <span class="where" translate translate-context="Title">CC</span>:
+                </span>
+                <ul>
+                   <li class="contact" ng-repeat="email in message.CCList">
+                        <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
+                        <em ng-show="message.toggleDetails === true">
+                            {{ email | contact:'Address' }}
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
+                        </em>
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
+                <span class="from">
+                    <span class="where" translate translate-context="Title">BCC</span>:
+                </span>
+                <ul>
+                   <li class="contact" ng-repeat="email in message.BCCList">
+                        <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
+                        <em ng-show="message.toggleDetails === true">
+                            {{ email | contact:'Address' }}
+                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
+                        </em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="labelz" ng-if="message.toggleDetails">
+            <i class="fa loc fa-archive" ng-if="isArchive()" pt-tooltip-translate="In archive" pt-tooltip-translate-comment="message label"></i>
+            <i class="fa loc fa-trash-o" ng-if="isTrash()" pt-tooltip-translate="In trash" pt-tooltip-translate-comment="message label"></i>
+            <i class="fa loc fa-ban" ng-if="isSpam()" pt-tooltip-translate="In spam" pt-tooltip-translate-comment="message label"></i>
+            <i class="pm_tag" ng-if="isDraft()" translate>Draft</i>
+            <i class="pm_tag" ng-if="isSent()" translate>Sent</i>
+            <span class="pm_labels">
+                <label ng-repeat="label in message.LabelIDs | labels" class="pm_label" ng-style="{border: '2px solid ' + label.Color, color: label.Color}">
+                    <span ng-bind="label.Name"></span>
+                    <!-- <a href="#" ng-click="detachLabel(label)" class="close">&times;</a> -->
+                </label>
+            </span>
+        </div>
+
+        <div class="action-row">
+
+            <div class="actions pull-right" ng-show="message.decrypting === false">
+                <span class="pm_buttons">
+                    <filter-button message="message"></filter-button>
+                    <span class="pm_buttons">
+                        <a class="pm_trigger open-label pull-left" pt-tooltip-translate="Add" pt-tooltip-translate-context="Action" pt-tooltip-translate-comment="Tooltip" dropdown ng-click="message.labelDropdownOpen = !message.labelDropdownOpen">
+                            <small><i class="fa fa-tag"></i> <i class="fa fa-angle-down"></i></small>
+                        </a>
+                        <span class="pm_dropdown right wide pull-left">
+                            <dropdown-labels messages="getMessage" save="saveLabels"></dropdown-labels>
+                        </span>
+                    </span>
+                </span>
+                <span class="pm_buttons">
+                    <a
+                        href="#"
+                        data-action-message="::message"
+                        data-action-message-type="reply"
+                        pt-tooltip-translate="Reply"
+                        pt-tooltip-translate-context="Action">
+
+                        <i class="fa fa-mail-reply"></i>
+                    </a>
+                    <a
+                        data-action-message="::message"
+                        data-action-message-type="replyall"
+                        pt-tooltip-translate="Reply all" pt-tooltip-translate-context="Action">
+                        <i class="fa fa-mail-reply-all"></i>
+                    </a>
+
+                    <a
+                        data-action-message="::message"
+                        data-action-message-type="forward"
+                        pt-tooltip-translate="Forward" pt-tooltip-translate-context="Action">
+                        <i class="fa fa-mail-forward"></i>
+                    </a>
+                    <a href="#" class="pm_trigger" dropdown pt-tooltip-translate="More" pt-tooltip-translate-context="Action">
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <span class="pm_dropdown wide right">
+                        <a ng-click="move('inbox')" ng-hide="message.Type === 2 || message.Type === 3">
+                            <i class="fa fa-inbox"></i>
+                            <span translate translate-context="Action">Move to inbox</span>
+                        </a>
+                        <a ng-click="move('trash')">
+                            <i class="fa fa-trash-o"></i>
+                            <span translate translate-context="Action">Move to trash</span>
+                        </a>
+                        <a ng-click="unread()">
+                            <i class="fa fa-eye-slash"></i>
+                            <span translate translate-context="Action">Mark as unread</span>
+                        </a>
+                        <a ng-click="move('spam')" ng-hide="'secured.spam.**' | includedByState">
+                            <i class="fa fa-ban"></i>
+                            <span translate translate-context="Action">Mark as spam</span>
+                        </a>
+                        <a ng-click="delete()" ng-if="'secured.trash.**' | includedByState">
+                            <i class="fa fa-times"></i>
+                            <span translate translate-context="Action">Delete</span>
+                        </a>
+                        <a ng-click="togglePlainHtml()">
+                            <span ng-show="message.viewMode === 'html'">
+                                <i class="fa fa-file-text-o"></i>
+                                <span translate translate-context="Action">View source code</span>
+                            </span>
+                            <span ng-show="message.viewMode === 'plain'">
+                                <i class="fa fa-file-photo-o"></i>
+                                <span translate translate-context="Action">View rendered HTML</span>
+                            </span>
+                        </a>
+                        <a ng-click="viewPgp()" ng-if="message.IsEncrypted !== 0">
+                            <i class="fa fa-code"></i>
+                            <span translate translate-context="Action">View headers</span>
+                        </a>
+                        <a ng-click="viewPgp()" ng-if="message.IsEncrypted === 0">
+                            <i class="fa fa-code"></i>
+                            <span translate translate-context="Action">View original</span>
+                        </a>
+                        <a ng-click="print($index)">
+                            <i class="fa fa-print"></i>
+                            <span translate translate-context="Action">Print</span>
+                        </a>
+                    </span>
+                </span>
+            </div>
+
+            <a class="toggleDetails" ng-click="message.toggleDetails = !message.toggleDetails">
+                <span ng-show="message.toggleDetails !== true" translate translate-context="Action">Show details</span>
+                <span ng-show="message.toggleDetails === true" translate translate-context="Action">Hide details</span>
+            </a>
+
+        </div>
+    </div>
+
+    <div ng-if="message.ExpirationTime > 0" class="expiration" ng-if="message.expand">
+        <i class="fa fa-clock-o"></i>
+        <span translate>This message will expire in</span>
+        <time time-refreshed="{{ message.ExpirationTime }}"></time>
+    </div>
+
+    <div ng-show="message.showImages === false && message.expand" class="showImages" ng-click="displayImages()">
+        <a href="#">
+            <i class="fa fa-photo"></i>
+            <span translate translate-context="Action">Load remote content</span>
+        </a>
+    </div>
+
+    <div ng-show="message.showEmbedded === false && message.expand" class="showImages" ng-click="displayEmbedded()">
+        <a href="#">
+            <i class="fa fa-photo"></i>
+            <span translate translate-context="Action">Load embedded images</span>
+        </a>
+    </div>
+
+    <div class="frame" ng-show="message.expand" data-embedded-img-loader>
+        <loader-tag ng-if="message.decrypting === true"></loader-tag>
+        <p class="alert alert-danger" ng-if="message.SpamScore === 100" translate translate-context="Info">This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!</p>
+        <p class="alert alert-danger" ng-if="message.SpamScore === 101" translate translate-context="Info">This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!</p>
+        <div
+            class="bodyDecrypted email"
+            ng-class="{'plain': message.viewMode === 'plain'}"
+            render-message-body
+            ng-if="message.viewMode === 'html'"
+            toggle-blockquote
+            mail-to scroll="true" ></div>
+        <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
+            <span class="pull-left fa fa-exclamation-triangle"></span>
+            <strong translate translate-context="Error">Decryption error</strong>
+            <div translate translate-context="Error">Decryption of this message's encryption content failed.</div>
+        </div>
+        <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
+    </div>
+
+    <list-attachments ng-if="message.expand && message.Attachments.length" data-model="message"></list-attachments>
+    <div class="clear"></div>
+
+</article>

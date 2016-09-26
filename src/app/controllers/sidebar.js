@@ -24,9 +24,11 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 ) {
 
     // Variables
+    const unsubscribe = [];
     var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
     var timeoutRefresh;
-    $scope.labels = authentication.user.Labels;
+
+    $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
     $scope.dateVersion = CONFIG.date_version;
     $scope.droppedMessages = [];
     $scope.droppableOptions = {
@@ -42,7 +44,33 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     };
 
     // Listeners
+    unsubscribe.push($rootScope.$on('deleteLabel', (event, ID) => {
+        $scope.$applyAsync(() => {
+            $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
+        });
+    }));
+
+    unsubscribe.push($rootScope.$on('createLabel', (event, ID, label) => {
+        $scope.$applyAsync(() => {
+            $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
+        });
+    }));
+
+    unsubscribe.push($rootScope.$on('updateLabel', (event, ID, label) => {
+        $scope.$applyAsync(() => {
+            $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
+        });
+    }));
+
+    unsubscribe.push($rootScope.$on('updateLabels', (event) => {
+        $scope.$applyAsync(() => {
+            $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
+        });
+    }));
+
     $scope.$on('$destroy', function(event) {
+        unsubscribe.forEach(cb => cb());
+        unsubscribe.length = 0;
         $timeout.cancel(timeoutRefresh);
     });
 
@@ -140,24 +168,15 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * @param id {Integer} labelID for a label
      * @return {Integer}
      */
-    $scope.unread = function(mailbox, id) {
-        var result;
-        var count;
-
-        switch (mailbox) {
-            case 'drafts':
-                count = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-                break;
-            case 'label':
-                count = cacheCounters.unreadConversation(id);
-                break;
-            default:
-                count = cacheCounters.unreadConversation(CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]);
-                break;
-        }
+    $scope.unread = (mailbox, id) => {
+        let result;
+        const type = tools.typeList(mailbox);
+        const folderID = (mailbox === 'label') ? id : CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
+        const count = (type === 'conversation') ? cacheCounters.unreadConversation(folderID) : cacheCounters.unreadMessage(folderID);
 
         if (count === undefined) {
-            // THIS IS A BUG. TODO: WHY IS THIS UNDEFINED!
+            // THIS IS A BUG.
+            // TODO: WHY IS THIS UNDEFINED!
             result = '';
         } else if (count <= 0) {
             result = '';

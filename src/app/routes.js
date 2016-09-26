@@ -561,16 +561,12 @@ angular.module('proton.routes', [
         params: {messageID: null},
         url: '/printer/:messageID',
         resolve: {
-            messageID: function($q, $stateParams) {
-                var deferred = $q.defer();
-
+            messageID($stateParams) {
                 if ($stateParams.messageID) {
-                    deferred.resolve($stateParams.messageID);
+                    return Promise.resolve($stateParams.messageID);
                 } else {
-                    deferred.reject();
+                    return Promise.reject();
                 }
-
-                return deferred.promise;
             }
         },
         views: {
@@ -581,16 +577,16 @@ angular.module('proton.routes', [
                     $scope.loading = true;
 
                     if (window.opener) {
-                        var url = window.location.href;
-                        var arr = url.split('/');
-                        var targetOrigin = arr[0] + '//' + arr[2];
+                        const url = window.location.href;
+                        const arr = url.split('/');
+                        const targetOrigin = arr[0] + '//' + arr[2];
 
                         window.addEventListener('message', printMessage, false);
                         window.opener.postMessage(messageID, targetOrigin);
                     }
 
                     function printMessage(event) {
-                        var message = JSON.parse(event.data);
+                        const message = JSON.parse(event.data);
 
                         if (message.ID === messageID) {
                             $scope.$applyAsync(() => {
@@ -650,16 +646,6 @@ angular.module('proton.routes', [
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/labels.tpl.html',
-                controller: 'LabelsController'
-            }
-        }
-    })
-
-    .state('secured.example', {
-        url: '/example',
-        views: {
-            'content@secured': {
-                templateUrl: 'templates/views/example.tpl.html',
                 controller: 'LabelsController'
             }
         }
@@ -895,23 +881,29 @@ angular.module('proton.routes', [
 
     _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id, box) {
         var parentState = 'secured.' + box;
-        var childState = 'secured.' + box + '.view';
-        var view = {};
+        var conversationState = 'secured.' + box + '.conversation';
+        var messageState = 'secured.' + box + '.message';
+        var conversationView = {};
+        var messageView = {};
         var list = {};
 
         list['content@secured'] = {
-            controller: 'ConversationsController',
+            controller: 'ElementsController',
             templateUrl: 'templates/partials/conversations.tpl.html'
         };
 
-        view['view@secured.' + box] = {
-            templateUrl: 'templates/partials/conversation.tpl.html',
+        conversationView['view@secured.' + box] = {
             controller: 'ConversationController',
+            templateUrl: 'templates/partials/conversation.tpl.html',
             resolve: {
-                conversation: function($stateParams, cache, networkActivityTracker) {
-                    return networkActivityTracker.track(cache.getConversation($stateParams.id));
+                conversation($stateParams, cache) {
+                    return cache.getConversation($stateParams.id);
                 }
             }
+        };
+
+        messageView['view@secured.' + box] = {
+            template: `<message-view></message-view>`
         };
 
         $stateProvider.state(parentState, {
@@ -937,17 +929,25 @@ angular.module('proton.routes', [
             }
         });
 
-        $stateProvider.state(childState, {
-            url: '/{id}',
+        $stateProvider.state(conversationState, {
+            url: '/c/{id}',
             params: {
-                id: null,
+                id: '',
                 message: null
             },
-            views: view,
+            views: conversationView,
             onExit: function($rootScope) {
                 $rootScope.$broadcast('unactiveMessages');
                 $rootScope.$broadcast('unmarkMessages');
             }
+        });
+
+        $stateProvider.state(messageState, {
+            url: '/m/{id}',
+            params: {
+                id: ''
+            },
+            views: messageView
         });
     });
 

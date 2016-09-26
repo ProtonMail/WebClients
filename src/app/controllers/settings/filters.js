@@ -3,6 +3,7 @@ angular.module("proton.controllers.Settings")
 .controller('FiltersController', function(
     $log,
     $q,
+    $rootScope,
     $filter,
     $scope,
     CONSTANTS,
@@ -20,9 +21,16 @@ angular.module("proton.controllers.Settings")
     Setting
 ) {
     // Variables
+    const unsubscribe = [];
     $scope.spamFilters = incomingDefaults;
     $scope.customFilters = customFilters;
     $scope.itemMoved = false;
+
+    customFilters.forEach((filter) => {
+        unsubscribe.push($rootScope.$on('changeCustomFilterStatus.' + filter.ID, (event, status) => {
+            changeCustomFilterStatus(filter, status);
+        }));
+    });
 
     // Drag and Drop configuration
     $scope.filterDragControlListeners = {
@@ -59,6 +67,11 @@ angular.module("proton.controllers.Settings")
             );
         }
     };
+
+    $rootScope.$on('$destroy', () => {
+        unsubscribe.forEach(cb => cb());
+        unsubscribe.length = 0;
+    });
 
     $scope.$on('deleteFilter', function(event, filterId) {
         if ($scope.itemMoved === false) {
@@ -209,13 +222,15 @@ angular.module("proton.controllers.Settings")
         );
     };
 
-    $scope.statusCustomFilter = (filter) => {
+    function changeCustomFilterStatus(filter, status) {
+        filter.Status = (status) ? 1 : 0;
+
         if (filter.Status === 0) {
             $scope.disableCustomFilter(filter);
         } else if (filter.Status === 1) {
             $scope.enableCustomFilter(filter);
         }
-    };
+    }
 
     /**
      * Check if the table filtered is empty

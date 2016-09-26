@@ -48,12 +48,16 @@
 @import "filters.scss";
 @import "labelsElement.scss";
 @import "starButton.scss";
+@import "composer/composerAttachments.scss";
+@import "composer/composerAskEmbdded.scss";
+@import "composer/progressUpload.scss";
+@import "attachments/listAttachments.scss";
+@import "message/messageView.scss";
 
 @import "layout/conversation-layout.scss";
 @import "layout/conversations-columns.scss";
 @import "layout/conversations-rows.scss";
 @import "layout/conversations-mobile.scss";
-@import "layout/conversation-view.scss";
 
 @import "print.scss";
 
