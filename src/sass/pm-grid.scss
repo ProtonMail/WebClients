@@ -137,6 +137,17 @@ $pad: 20px;
 		width: 100%;
 	}
 
+	[class^="col-"].verticalAlign{
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 3rem;
+
+		.autoWidth {
+			align-self: flex-start;
+		}
+	}
+
 }
 
 body.mobileMode {
