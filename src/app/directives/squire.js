@@ -2,6 +2,27 @@ angular.module("proton.squire", [
     "proton.tooltip"
 ])
 .directive("squire", function(tools, $rootScope, $timeout, authentication, embedded, CONSTANTS, signatureBuilder) {
+
+    /**
+     * Generate an event listener based on the eventName
+     * Debounce some events are thez are triggered too many times
+     * Dispatch an event editor.draggable
+     * @param  {String} type void
+     * @return {Function}      EventListener Callback
+     */
+    const draggableCallback = (type, message) => {
+        const isEnd = type === 'dragleave' || type === 'drop';
+        const cb = (event) => {
+            $rootScope.$emit('editor.draggable', {
+                type,
+                data: {
+                    messageID: message.ID,
+                    message, event
+                }
+            });
+        };
+        return isEnd ? _.debounce(cb, 500) : cb;
+    };
     return {
         scope: {
             message: '=', // body
@@ -40,6 +61,9 @@ angular.module("proton.squire", [
 
             scope.$on('$destroy', function() {
                 if(angular.isDefined(editor)) {
+                    ['dragleave', 'dragenter', 'drop']
+                        .forEach((key) => editor.removeEventListener(key, draggableCallback(key, scope.message)));
+
                     editor.destroy();
                 }
             });
@@ -207,6 +231,10 @@ angular.module("proton.squire", [
                 editor = new Squire(iframeDoc);
 
 
+                ['dragleave', 'dragenter', 'drop']
+                    .forEach((key) => editor.addEventListener(key, draggableCallback(key, scope.message)));
+
+
                 if (isMessage()) {
                     // On load we parse the body of the message in order to load its embedded images
                     embedded
@@ -270,6 +298,14 @@ angular.module("proton.squire", [
 
                     if (action === 'attachment.remove') {
                         embedded.removeEmbedded(scope.message, data, editor.getHTML());
+                    }
+
+                    if (action === 'attachment.embedded') {
+                        return editor
+                            .insertImage(data.url, {
+                                'data-embedded-img': data.cid,
+                                class: 'proton-embedded'
+                            });
                     }
 
                     if (action === 'message.changeFrom') {

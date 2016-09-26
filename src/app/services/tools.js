@@ -445,33 +445,15 @@ angular.module("proton.tools", ["proton.constants"])
         }).join(', ');
     };
 
-    tools.currentLocation = function(labelIDs) {
-        var loc; // Don't choose location
-
-        if (angular.isDefined(labelIDs)) {
-            loc = _.intersection(labelIDs, [
-                CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
-                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                CONSTANTS.MAILBOX_IDENTIFIERS.sent,
-                CONSTANTS.MAILBOX_IDENTIFIERS.trash,
-                CONSTANTS.MAILBOX_IDENTIFIERS.spam,
-                CONSTANTS.MAILBOX_IDENTIFIERS.archive
-            ])[0];
-        } else {
-            var mailbox = tools.currentMailbox();
-
-            if (mailbox === 'label') {
-                loc = $stateParams.label;
-            } else {
-                loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-            }
-        }
+    tools.currentLocation = () => {
+        const mailbox = tools.currentMailbox();
+        const loc = (mailbox === 'label') ? $stateParams.label : CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
         return loc;
     };
 
     tools.currentMailbox = function() {
-        var mailbox = $state.$current.name.replace('secured.', '').replace('.view', '');
+        var mailbox = $state.$current.name.replace('secured.', '').replace('.conversation', '').replace('.message', '');
 
         if(_.contains(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), mailbox)) {
             return mailbox;
@@ -480,8 +462,10 @@ angular.module("proton.tools", ["proton.constants"])
         }
     };
 
-    tools.typeList = function() {
-        if(['search', 'drafts'].indexOf(tools.currentMailbox()) !== -1) {
+    tools.typeList = (box) => {
+        box = box || tools.currentMailbox();
+
+        if (['search', 'drafts', 'sent'].indexOf(box) > -1 || authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE) {
             return 'message';
         } else {
             return 'conversation';
@@ -493,9 +477,11 @@ angular.module("proton.tools", ["proton.constants"])
      * @return {Boolean}
      */
     tools.cacheContext = function() {
-        var context = $state.is('secured.search') === false && $state.is('secured.search.view') === false && angular.isUndefined($stateParams.filter) && angular.isUndefined($stateParams.sort);
+        const filterDefined = angular.isDefined($stateParams.filter);
+        const sortDefined = angular.isDefined($stateParams.sort);
+        const isSearch = $state.is('secured.search.**');
 
-        return context;
+        return !isSearch && !sortDefined && !filterDefined;
     };
 
     tools.countries = [

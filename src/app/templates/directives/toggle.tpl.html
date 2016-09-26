@@ -1,5 +1,5 @@
-<div class="pm_toggle" ng-click="click($event)" ng-class="{ 'on': check === true, 'off': check === false }">
-    <span class="on">{{ on }}</span>
-    <span class="off">{{ off }}</span>
+<div class="pm_toggle" ng-class="{ 'on': status, 'off': !status }">
+    <span class="on">{{ ::on }}</span>
+    <span class="off">{{ ::off }}</span>
     <span class="knob"></span>
 </div>

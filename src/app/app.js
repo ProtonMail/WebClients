@@ -39,7 +39,6 @@ angular.module('proton', [
 
     // Models
     'proton.models.addresses',
-    'proton.models.attachment',
     'proton.models.bug',
     'proton.models.contact',
     'proton.models.conversations',
@@ -99,7 +98,6 @@ angular.module('proton', [
     'proton.loaderTag',
     'proton.login',
     'proton.locationTag',
-    'proton.maxComposerHeight',
     'proton.move',
     'proton.phone',
     'proton.responsiveComposer',
@@ -124,7 +122,6 @@ angular.module('proton', [
     'proton.controllers.Header',
     'proton.controllers.Conversation',
     'proton.controllers.Conversations',
-    'proton.controllers.Message',
     'proton.controllers.Compose',
     'proton.controllers.Outside',
     'proton.controllers.Secured',
@@ -560,7 +557,6 @@ angular.module('proton', [
 .run(function($rootScope, CONFIG) {
     $rootScope.app_version = CONFIG.app_version;
     $rootScope.date_version = CONFIG.date_version;
-    $rootScope.isFileSaverSupported = !!(('download' in document.createElement('a')) || navigator.msSaveOrOpenBlob);
 })
 
 //

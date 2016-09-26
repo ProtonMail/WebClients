@@ -1,0 +1,28 @@
+.progressLoader-container {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.progressLoader-container.pm_button {
+    background: white;
+}
+
+.progressLoader-attachment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden
+}
+
+.progressLoader-name {
+    padding: 0 1em;
+    line-height: 1;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-transform: none;
+    white-space: pre;
+}
+
+
+.progressLoader-container .hidden {display: none}

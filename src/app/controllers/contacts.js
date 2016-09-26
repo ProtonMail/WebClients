@@ -282,42 +282,19 @@ angular.module("proton.controllers.Contacts", [
     };
 
     $scope.sendMessageTo = function(contact) {
-        var message = new Message();
+        const message = new Message();
 
-        _.defaults(message, {
-            ToList: [{Address: contact.Email, Name: contact.Name}],
-            CCList: [],
-            BCCList: [],
-            Subject: '',
-            PasswordHint: '',
-            Attachments: []
-        });
+        message.ToList = [{Address: contact.Email, Name: contact.Name}];
 
-        $rootScope.$broadcast('loadMessage', message);
+        $rootScope.$emit('composer.new', {message, type: 'new'});
     };
 
-    $scope.composeContacts = function() {
-        var contactsSelected = $scope.contactsSelected();
-        var message = new Message();
-        var ToList = [];
+    $scope.composeContacts = () => {
+        const contactsSelected = $scope.contactsSelected();
+        const message = new Message();
 
-        _.each(contactsSelected, function(contact) {
-            ToList.push({
-                Address: contact.Email,
-                Name: contact.Name
-            });
-        });
-
-        _.defaults(message, {
-            ToList: ToList,
-            CCList: [],
-            BCCList: [],
-            Subject: '',
-            PasswordHint: '',
-            Attachments: []
-        });
-
-        $rootScope.$broadcast('loadMessage', message);
+        message.ToList = contactsSelected.map(({Email, Name}) => ({ Address: Email, Name }));
+        $rootScope.$emit('composer.new', {message, type: 'new'});
     };
 
     $scope.uploadContacts = function() {

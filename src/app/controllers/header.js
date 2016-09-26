@@ -279,13 +279,6 @@ angular.module('proton.controllers.Header', [])
         }
     };
 
-    $scope.activeMail = function() {
-        var folders = Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS);
-        var mailbox = $state.$current.name.replace('secured.', '').replace('.view', '');
-
-        return folders.indexOf(mailbox) !== -1;
-    };
-
     $scope.activeSettings = function() {
         var route = $state.$current.name.replace('secured.', '');
         var settings = ['account', 'labels', 'security', 'appearance', 'domains', 'addresses', 'users', 'payments', 'keys'];

@@ -1,5 +1,5 @@
 angular.module("proton.star", [])
-  .directive('ptStar', function (CONSTANTS, gettextCatalog, tools, action) {
+  .directive('ptStar', ($rootScope, CONSTANTS, gettextCatalog, tools, action) => {
 
     /**
      * Check in LabelIDs to see if the conversation or message is starred
@@ -21,8 +21,8 @@ angular.module("proton.star", [])
         action[todoAction + 'Conversation'](item.ID);
       }
 
-      if(type === 'message') {
-        action[todoAction + 'Message'](item.ID);
+      if (type === 'message') {
+          $rootScope.$emit('messageActions', {action: todoAction, data: {id: item.ID}});
       }
     }
 

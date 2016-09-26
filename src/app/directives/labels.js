@@ -140,26 +140,28 @@ angular.module("proton.labels", [])
                 var color = colors[index];
 
                 if (scope.labelName.length > 0) {
-                    networkActivityTracker.track(
-                        Label.create({
-                            Name: name,
-                            Color: color,
-                            Display: 1
-                        }).then(function(result) {
-                            if (result.data && result.data.Code === 1000) {
-                                var label = result.data.Label;
+                    const promise = Label.create({ Name: name, Color: color, Display: 1});
 
-                                authentication.user.Labels.push(label);
+                    promise.then((result) => {
+                        if (result.data && result.data.Code === 1000) {
+                            return eventManager.call()
+                            .then(() => {
+                                const label = result.data.Label;
+
+                                label.Selected = true;
+
+                                scope.labels.push(label);
                                 scope.labelName = '';
                                 scope.displayField = false;
-                                label.Selected = true;
-                                scope.labels.push(label);
+
                                 scrollDown();
-                            } else if (result.data && result.data.Error) {
-                                notify({message: result.data.Error, classes: 'notification-danger'});
-                            }
-                        })
-                    );
+                            });
+                        } else if (result.data && result.data.Error) {
+                            return Promise.reject(result.data.Error);
+                        }
+                    });
+
+                    networkActivityTracker.track(promise);
                 } else {
                     scope.displayField = false;
                 }

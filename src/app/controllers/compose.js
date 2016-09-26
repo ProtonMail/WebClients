@@ -11,8 +11,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $timeout,
     gettextCatalog,
     action,
-    Attachment,
-    attachments,
     authentication,
     cache,
     confirmModal,
@@ -23,7 +21,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     embedded,
     networkActivityTracker,
     composerRequestModel,
-    dropzoneModel,
+    attachmentModel,
     messageBuilder,
     notify,
     pmcw,
@@ -131,50 +129,38 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }));
 
     // When a message is updated we try to update the message
-    unsubscribe.push($scope.$on('refreshMessage', function(event) {
-        _.each($scope.messages, function(message) {
-            var messageCached = cache.getMessageCached(message.ID);
+    unsubscribe.push($rootScope.$on('message.refresh', (event, messageIDs) => {
+        $scope.messages.forEach(({ID, Time, ConversationID}) => {
+            if (messageIDs.indexOf(ID) > -1) {
+                const messageCached = cache.getMessageCached(ID);
 
-            if (angular.isDefined(messageCached)) {
-                message.Time = messageCached.Time;
-                message.ConversationID = messageCached.ConversationID;
+                if (messageCached) {
+                    Time = messageCached.Time;
+                    ConversationID = messageCached.ConversationID;
+                }
             }
         });
     }));
 
-    unsubscribe.push($rootScope.$on('newMessage', function (e, message) {
-        if (
-            ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) ||
-            ($scope.messages.length === 1 && $rootScope.mobileMode === true)
-        ) {
-            notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger'});
-        } else {
-            initMessage(message, false);
+    unsubscribe.push($rootScope.$on('composer.new', (event, {message, type}) => {
+        const limitReached = checkComposerNumber();
+
+        if (!limitReached) {
+            initMessage(messageBuilder.create(type, message));
         }
     }));
 
-    unsubscribe.push($rootScope.$on('loadMessage', function(event, message, save) {
-        var current = _.findWhere($scope.messages, {ID: message.ID});
-        // var mess = new Message(_.pick(message, 'ID', 'AddressID', 'Subject', 'Body', 'From', 'ToList', 'CCList', 'BCCList', 'Attachments', 'Action', 'ParentID', 'IsRead', 'LabelIDs'));
+    unsubscribe.push($rootScope.$on('composer.load', (event, {ID}) => {
+        const found = _.findWhere($scope.messages, {ID});
+        const limitReached = checkComposerNumber();
 
-        if ((message.Attachments.length - message.NumEmbedded) > 0 && (message.Attachments.length > message.NumEmbedded)) {
-            message.attachmentsToggle = true;
-        } else {
-            message.attachmentsToggle = false;
+        if (!found && !limitReached) {
+            cache.getMessage(ID)
+            .then((message) => {
+                message.clearTextBody()
+                .then((body) => initMessage(message));
+            });
         }
-
-        if (angular.isUndefined(current)) {
-            initMessage(message, save);
-        }
-    }));
-
-    unsubscribe.push($rootScope.$on('addFile', function(event, {dropzone, asEmbedded}) {
-        const composer = $(dropzone).parents('.composer');
-        const index = $('.composer').index(composer);
-        const message = $scope.messages[index];
-
-        message.asEmbedded = asEmbedded;
-        dropzone.click();
     }));
 
     unsubscribe.push($rootScope.$on('sendMessage', function(event, element, msg) {
@@ -212,6 +198,10 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         recordMessage(message, false, true);
     }));
 
+    unsubscribe.push($rootScope.$on('attachment.upload', (e, { type, data }) => {
+        (type === 'remove.success') && recordMessage(data.message, false, true);
+    }));
+
     unsubscribe.push($scope.$on('editorFocussed', function(event, element, editor) {
         var composer = $(element).parents('.composer');
         var index = $('.composer').index(composer);
@@ -226,7 +216,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             });
         }
 
-        $rootScope.$broadcast('composerModeChange');
     }));
 
     unsubscribe.push($scope.$on('subjectFocussed', function(event, message) {
@@ -242,6 +231,20 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             data: { size: $scope.messages.length }
         });
     }, 1000);
+
+    /**
+     * Check if the user reach the composer number limit
+     * @return {Boolean}
+     */
+    function checkComposerNumber() {
+        const limit = ($scope.messages.length >= CONSTANTS.MAX_NUMBER_COMPOSER) || ($scope.messages.length === 1 && $rootScope.mobileMode);
+
+        if (limit) {
+            notify({message: gettextCatalog.getString('Maximum composer reached', null, 'Error'), classes: 'notification-danger'});
+        }
+
+        return limit;
+    }
 
     function onOrientationChange() {
         _.each($scope.messages, function(message) {
@@ -296,9 +299,9 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
     $(window).on('resize', onResize);
     $(window).on('orientationchange', onOrientationChange);
-    $(window).on('dragover', onDragOver);
-    $(window).on('dragstart', onDragStart);
-    $(window).on('dragend', onDragEnd);
+    // $(window).on('dragover', onDragOver);
+    // $(window).on('dragstart', onDragStart);
+    // $(window).on('dragend', onDragEnd);
     // $(window).on('mouseover', onMouseOver);
 
     $scope.$on('$destroy', function() {
@@ -354,7 +357,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     }
 
     /**
-    * Transform every data-uri in the messsage content to embedded attachment
+    * Transform every data-uri in the message content to embedded attachment
     * @param {Resource} message
     * @return {Promise}
     */
@@ -375,18 +378,19 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 file.name = image.alt ||  'image' + Date.now();
                 file.inline = 1;
 
-                return addAttachment(file, message, false)
-                .then((cid) => {
-                    image.setAttribute('data-embedded-img', cid);
-                    image.src = embedded.getUrl(image);
-                });
+                return attachmentModel
+                    .create(file, message)
+                    .then(({ cid, url }) => {
+                        image.setAttribute('data-embedded-img', cid);
+                        image.src = url;
+                    });
             })
             .value();
 
         return Promise.all(promises)
             .then(() => {
                 message.setDecryptedBody(testDiv.innerHTML);
-                message.editor && message.editor.fireEvent('refresh', {Body: message.getDecryptedBody()});
+                message.editor && message.editor.fireEvent('refresh', {Body: testDiv.innerHTML});
                 return message;
             });
     }
@@ -407,348 +411,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         return embedded.isEmbedded(attachment);
     };
 
-    $scope.cancelAskEmbedding = function(message) {
-        message.pendingAttachements = [];
-        message.askEmbedding = false;
-        delete message.asEmbedded;
-        dispatchMessageAction(message);
-    };
-
-    $scope.processPending  = function(message, embedding){
-        const promises = _.map(message.pendingAttachements, function (file) {
-            if (embedding) {
-                // required for BE to get a cid-header
-                file.inline = 1;
-            }
-            return addAttachment(file, message, true);
-        });
-
-        $q
-            .all(promises)
-            .then(() => recordMessage(message, false, false));
-
-                // close the dialog
-                $scope.cancelAskEmbedding(message);
-    };
-
-    /**
-     * Compute some informations to get the current context for a dropzone
-     * @param  {Message} message
-     * @param  {File} file
-     * @return {Object}
-     */
-    function getDropFileConfigMessage(message, file) {
-        const messageSize = message.attachmentsSize();
-        const currentSize = messageSize + (message.queuedFilesSize || 0) + file.size;
-        return {
-            messageSize,
-            currentSize,
-            numberFiles: (message.Attachments || []).length + (message.queuedFiles || 0)
-        };
-    }
-
-    function notifyError(message) {
-        notify({ message , classes: 'notification-danger'});
-    }
-
-    const ATTACHMENT_MAX_SIZE = CONSTANTS.ATTACHMENT_SIZE_LIMIT * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE;
-
-    const dropMessages = {
-        [CONSTANTS.ATTACHMENT_NUMBER_LIMIT]: `Messages are limited to ${CONSTANTS.ATTACHMENT_NUMBER_LIMIT} attachments`,
-        [CONSTANTS.ATTACHMENT_SIZE_LIMIT]: `Attachments are limited to ${CONSTANTS.ATTACHMENT_SIZE_LIMIT} MB.`,
-        [ATTACHMENT_MAX_SIZE](bytes) {
-            const total = Math.round(10*bytes/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10;
-            return `Attachments are limited to ${CONSTANTS.ATTACHMENT_SIZE_LIMIT} MB. Total attached would be: ${total} MB.`;
-        }
-    };
-
-
-    $scope.dropzoneConfig = (message) => ({
-        options: {
-            addRemoveLinks: false,
-            dictDefaultMessage: gettextCatalog.getString('Drop a file here to upload', null, 'Info'),
-            url: '/file/post',
-            autoProcessQueue: false,
-            paramName: 'file', // The name that will be used to transfer the file
-            previewTemplate: '<div style="display:none"></div>',
-            previewsContainer: '.previews',
-            accept(file, done) {
-                $scope.isOver = false;
-
-                const dropzone = dropzoneModel.get(message);
-                const { messageSize, currentSize, numberFiles } = getDropFileConfigMessage(message, file);
-
-                if (numberFiles === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
-                    const msg = dropMessages[CONSTANTS.ATTACHMENT_NUMBER_LIMIT];
-                    dropzone.removeFile(file);
-                    done(msg);
-                    return notifyError(msg);
-                }
-
-                if (currentSize >= ATTACHMENT_MAX_SIZE) {
-                    const msg = dropMessages[ATTACHMENT_MAX_SIZE](currentSize);
-                    dropzone.removeFile(file);
-                    done(msg);
-                    return notifyError(msg);
-                }
-
-                if (currentSize === 0) {
-                    const msg = dropMessages[CONSTANTS.ATTACHMENT_SIZE_LIMIT];
-                    /* file is too big */
-                    dropzone.removeFile(file);
-                    done(msg);
-                    return notifyError(msg);
-                }
-
-                if (angular.isUndefined(message.queuedFiles)) {
-                    message.queuedFiles = 0;
-                    message.queuedFilesSize = 0;
-                }
-
-                message.queuedFiles++;
-                message.queuedFilesSize += file.size;
-
-                // check if embedded before upload!
-                const isImg = embedded.MIMETypeSupported.indexOf(file.type) !== -1;
-
-                if (isImg) {
-                    message.pendingAttachements.push(file);
-                    message.queuedFiles--;
-                    message.queuedFilesSize -= file.size;
-                    // add attachment with embeded and include the img ?
-                    dropzone.removeFile(file);
-
-                    if (message.asEmbedded === true) {
-                        $scope.$applyAsync(() => {
-                            $scope.processPending(message, true);
-                        });
-                    } else {
-                        $scope.$applyAsync(() => {
-                            message.askEmbedding = true;
-                            dispatchMessageAction(message);
-                        });
-                    }
-                } else {
-                    addAttachment(file, message, true)
-                    .then(() => {
-                        message.queuedFiles--;
-                        message.queuedFilesSize -= file.size;
-                        dropzone.removeFile(file);
-                    });
-                }
-
-                done();
-            },
-            init(event) {
-                const dropzone = dropzoneModel.put(message, this);
-
-                _.forEach(message.Attachments, ({ Name, Size, MIMEType, ID }) => {
-                    const mockFile = { name: Name, size: Size, type: MIMEType, ID };
-                    dropzone.options.addedfile.call(dropzone, mockFile);
-                });
-
-                dropzone.on('dragover', dragover);
-            }
-        },
-        eventHandlers: {
-            drop(event) {
-                event.preventDefault();
-                 /* /!\ force digest over state change */
-                $scope.$applyAsync(function() {
-                    $scope.isOver = false;
-                });
-
-            },
-            error(event) {
-
-                /* Notification is already handled by the accept method */
-                /*
-                var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
-
-                if (event.size > sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE) {
-                    notify({message: 'Attachments are limited to ' + sizeLimit + ' MB.', classes: 'notification-danger'});
-                }
-                */
-            }
-        }
-    });
-
-    $scope.decryptAttachments = function(message) {
-        var removeAttachments = [];
-        var promises = [];
-
-        if (message.Attachments && message.Attachments.length > 0) {
-            var keys = authentication.getPrivateKeys(message.AddressID);
-
-            _.each(message.Attachments, function(attachment) {
-
-                try {
-                    // decode key packets
-                    var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-
-                    var promise = pmcw.decryptSessionKey(keyPackets, keys).then(function(sessionKey) {
-                        attachment.sessionKey = sessionKey;
-                    }, function(error) {
-                        notify({message: 'Error during decryption of the session key', classes: 'notification-danger'});
-                        $log.error(error);
-                        removeAttachments.push(attachment);
-                    });
-
-                    promises.push(promise);
-                } catch(error) {
-                    removeAttachments.push(attachment);
-                }
-            });
-        }
-
-        $q.all(promises).finally(function() {
-            if (removeAttachments.length > 0) {
-                _.each(removeAttachments, function(attachment) {
-                    notify({classes: 'notification-danger', message: 'Decryption of attachment ' + attachment.Name + ' failed. It has been removed from this draft.'});
-                    $scope.removeAttachment(attachment, message);
-                });
-            }
-       });
-    };
-
-    $scope.initAttachment = function(tempPacket, index) {
-        if (tempPacket.uploading) {
-            var id = 'attachment' + index;
-
-            $timeout(function() {
-                tempPacket.elem = document.getElementById(id);
-                tempPacket.elem.removeAttribute('id');
-
-                attachments.uploadProgress(1, tempPacket.elem);
-            }, 100, false);
-        }
-    };
-
-    $scope.cancelAttachment = function(attachment, message) {
-        // Cancel the request
-        attachment.cancel();
-        // FIXME Reload message/attachments from the server when this happens.
-        // A late cancel might succeed on the back-end but not be reflected on the front-end
-        // Need to be careful if there are currently-uploading attachments, an do autosave first
-    };
-
-    function addAttachment(file, message, insert = true) {
-        var tempPacket = {};
-        const deferred = $q.defer();
-        tempPacket.filename = file.name;
-        tempPacket.uploading = true;
-        tempPacket.Size = file.size;
-        tempPacket.Inline = file.inline || 0;
-
-        // force update the embedded counter
-        if (tempPacket.Inline) {
-            message.NumEmbedded++;
-        }
-
-        message.uploading++;
-        dispatchMessageAction(message);
-        message.Attachments.push(tempPacket);
-
-        message.attachmentsToggle = true;
-        $rootScope.$broadcast('composerModeChange');
-
-        var cleanup = function( result ) {
-            var index = message.Attachments.indexOf(tempPacket);
-
-            if ( angular.isDefined( result ) && angular.isDefined( result.AttachmentID ) ) {
-                message.Attachments.splice(index, 1, result);
-            }
-            else {
-                message.Attachments.splice(index, 1);
-            }
-            message.uploading--;
-            dispatchMessageAction(message);
-        };
-
-        attachments
-            .load(file, message.From.Keys[0].PublicKey)
-            .then(function(packets) {
-                var preview = packets.Preview;
-
-                attachments
-                    .upload(packets, message, tempPacket)
-                        .then((result = {}) => {
-
-                            cleanup( result );
-
-                            // Extract content-id even if there are no headers
-                            const contentId = (result.Headers || {})['content-id'] || '';
-                            const cid = contentId.replace(/[<>]+/g, '');
-
-                            if (contentId && file.inline === 1) {
-                                result.Headers.embedded = 1;
-                                const blobItem = embedded.addEmbedded(message, cid, preview, result.MIMEType);
-
-                                if (insert && message.editor) {
-                                    // If we close the composer the editor won't exist anymore but maybe we were uploading an attchement
-                                    message.editor.insertImage(blobItem.url, {'data-embedded-img': cid, class: 'proton-embedded'});
-                                }
-                            }
-
-                            deferred.resolve(cid);
-                        })
-                        .catch((error) =>  {
-                            cleanup();
-                            console.error(error);
-                            deferred.reject(error);
-                            notify({message: 'Error during file upload', classes: 'notification-danger'});
-                        });
-            },
-            function(error) {
-                cleanup();
-                deferred.reject(error);
-                notify({message: 'Error encrypting attachment', classes: 'notification-danger'});
-            }
-        );
-
-        composerRequestModel.save(message, deferred);
-
-        networkActivityTracker.track(deferred.promise);
-
-        return deferred.promise;
-    }
-
-    $scope.removeAttachment = function(attachment, message) {
-
-        var index = message.Attachments.indexOf(attachment);
-        // Remove attachment in UI
-        var headers = attachment.Headers;
-        message.Attachments.splice(index, 1);
-
-        Attachment.remove({
-            MessageID: message.ID,
-            AttachmentID: attachment.AttachmentID || attachment.ID
-        }).then(function(result) {
-            var data = result.data;
-
-            if (angular.isDefined(data) && data.Code === 1000) {
-                // Attachment removed, may remove embedded ref
-                message.editor && message.editor.fireEvent('refresh', {
-                    action: 'attachment.remove',
-                    data: headers
-                });
-
-            } else if (angular.isDefined(data) && angular.isDefined(data.Error)) {
-                var mockFile = { name: attachment.Name, size: attachment.Size, type: attachment.MIMEType, ID: attachment.ID };
-                message.Attachments.push(attachment);
-                const dropzone = dropzoneModel.get(message);
-                dropzone.options.addedfile.call(dropzone, mockFile);
-                notify({message: data.Error, classes: 'notification-danger'});
-            } else {
-                notify({message: 'Error during the remove request', classes: 'notification-danger'});
-                $log.error(result);
-            }
-        }, function(error) {
-            notify({message: 'Error during the remove request', classes: 'notification-danger'});
-            $log.error(error);
-        });
-
-    };
 
     /**
      * Add message in composer list
@@ -770,14 +432,15 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             $rootScope.maximizedComposer = true;
         }
 
+        message.attachmentsToggle = (message.Attachments.length - message.NumEmbedded) > 0 && (message.Attachments.length > message.NumEmbedded);
         message.ccbcc = !!message.CCList.length || !!message.BCCList.length;
         message.autocompletesFocussed = message.ccbcc;
 
         // Mark message as read
         if (message.IsRead === 0) {
-            var ids = [message.ID];
+            const ids = [message.ID];
 
-            action.readMessage(ids);
+            $rootScope.$emit('messageActions', {action: 'read', data: {ids}});
         }
 
         // if tablet we maximize by default
@@ -810,23 +473,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 $scope.isOver = false;
 
                 recordMessage(message, false, false).then(() => { // message, notification, autosaving
-                    $scope.decryptAttachments(message);
                     $rootScope.$emit('composer.update', { type: 'loaded', data: { size } });
                 }, (error) => {
                     $log.error(error);
                 });
             });
-    }
-
-    function sanitizeBody(message) {
-        const deferred = $q.defer();
-        embedded
-            .parser(message)
-            .then( function(result) {
-                message.setDecryptedBody(result, true);
-                deferred.resolve(message);
-            });
-        return deferred.promise;
     }
 
     /**
@@ -912,8 +563,8 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             const input = message.editor.getHTML() || '' ;
 
             // Extract CID per embedded image
-            const cids = (input.match(/rel=("([^"]|"")*")/g) || [])
-                .map((value) => value.split('rel="')[1].slice(0, -1));
+            const cids = (input.match(/(rel=("([^"]|"")*"))|(data-embedded-img=("([^"]|"")*"))/g) || [])
+                .map((value) => value.split(/rel="|data-embedded-img="/)[1].slice(0, -1));
 
             // If we add or remove an embedded image, the diff is true
             if (cids.length < latestCids.length) {
@@ -934,7 +585,13 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
                     });
 
-                    AttToRemove.forEach((att) => $scope.removeAttachment(att, message));
+                    $rootScope.$emit('attachment.upload', {
+                        type: 'remove.all',
+                        data: {
+                            message,
+                            list: AttToRemove
+                        }
+                    });
             }
 
             latestCids = cids;
@@ -968,16 +625,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.editor.addEventListener('dragover', onDragOver);
 
     }
-
-    $scope.attToggle = function(message) {
-        message.attachmentsToggle = !!!message.attachmentsToggle;
-        $rootScope.$broadcast('composerModeChange');
-    };
-
-    $scope.attHide = function(message) {
-        message.attachmentsToggle = false;
-        $rootScope.$broadcast('composerModeChange');
-    };
 
     $scope.toggleCcBcc = function(message) {
         message.ccbcc = !message.ccbcc;
@@ -1696,10 +1343,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 cache.events(events); // Send events to the cache manager
                 notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'}); // Notify the user
                 $scope.close(message, false, false); // Close the composer window
-
                 $timeout(function() {
-                    $rootScope.$emit('toggleMessage', Sent.ID);
-                }, 500);
+                    $rootScope.$emit('message.open', {
+                        type: 'save.success',
+                        data: {
+                            message: new Message(Sent)
+                        }
+                    });
+                }, 500, false);
                 deferred.resolve(result); // Resolve finally the promise
             })
             .catch((error) => {
@@ -1744,7 +1395,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
         $scope.focusFirstComposer(message);
-        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.unminimize = function(message) {
@@ -1752,20 +1402,17 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         message.maximized = message.previousMaximized;
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
-        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.maximize = function(message) {
         message.maximized = true;
         $rootScope.maximizedComposer = true;
-        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.normalize = function(message) {
         message.minimized = false;
         message.maximized = false;
         $rootScope.maximizedComposer = false;
-        $rootScope.$broadcast('composerModeChange');
     };
 
     $scope.openCloseModal = function(message) {
@@ -1820,15 +1467,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         };
 
         if (discard === true) {
-            action.discardMessage(message);
+            const ids = [message.ID];
+
+            $rootScope.$emit('messageActions', {action: 'delete', data: {ids}});
         }
 
         $rootScope.activeComposer = false;
         $rootScope.maximizedComposer = false;
         $timeout.cancel(message.defferredSaveLater);
-
-        // We need to manage step by step the dropzone in the case where the composer is collapsed
-        dropzoneModel.remove(message);
 
         if (save === true) {
             recordMessage(message, false, true).then(process);

@@ -1,7 +1,9 @@
 angular.module('proton.message')
-.directive('toggleMessage', ($rootScope) => ({
+.directive('toggleMessage', ($rootScope, $state, CONSTANTS) => ({
     restrict: 'A',
     link(scope, element) {
+        const allowToggle = $state.includes('**.conversation') || $state.includes('secured.drafts.**');
+
         function selection() {
             if (window.getSelection) {
                 return window.getSelection().toString().length === 0;
@@ -11,9 +13,26 @@ angular.module('proton.message')
         }
 
         function mouseup(event) {
-            if (selection() && event.target.nodeName !== 'A') {
+
+            if (allowToggle && selection() && event.target.nodeName !== 'A') {
+
                 scope.$applyAsync(() => {
-                    scope.toggle();
+                    // Open the message in composer if it's a draft
+                    if (scope.message.Type === CONSTANTS.DRAFT) {
+                        return $rootScope.$emit('composer.load', scope.message);
+                    }
+
+                    if (typeof scope.message.expand === 'undefined') {
+                        scope.message.expand = true;
+                        $rootScope.$emit('message.open', {
+                            type: 'toggle',
+                            data: {
+                                message: scope.message
+                            }
+                        });
+                    } else {
+                        scope.message.expand = !scope.message.expand;
+                    }
                 });
             }
         }

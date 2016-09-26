@@ -607,22 +607,25 @@ angular.module("proton.authentication", [
      * Open report modal
      */
     $rootScope.openReportModal = function() {
-        var modes = ['column', 'row'];
-        var username = (authentication.user && angular.isString(authentication.user.Name)) ? authentication.user.Name : '';
-        var email = (authentication.user && angular.isArray(authentication.user.Addresses)) ? authentication.user.Addresses[0].Email : '';
-        var displayMode = (authentication.user && angular.isNumber(authentication.user.ViewLayout)) ? modes[authentication.user.ViewLayout] : '';
-        var form = {
+        const layouts = ['column', 'row'];
+        const modes = ['conversation', 'message'];
+        const {Name = '', Addresses = [], ViewLayout = '', ViewMode = ''} = authentication.user;
+        const email = (Addresses.length) ? Addresses[0].Email : '';
+        const displayMode = (angular.isNumber(ViewLayout)) ? layouts[ViewLayout] : '';
+        const viewMode = (angular.isNumber(ViewMode)) ? modes[ViewMode] : '';
+        const form = {
             OS: tools.getOs(),
             OSVersion: '',
             DisplayMode: displayMode,
-            Resolution: window.innerHeight + ' x ' + window.innerWidth ,
+            ViewMode: viewMode,
+            Resolution: window.innerHeight + ' x ' + window.innerWidth,
             Browser: tools.getBrowser(),
             BrowserVersion: tools.getBrowserVersion(),
             Client: 'Angular',
             ClientVersion: CONFIG.app_version,
             Title: '[Angular] Bug [' + $state.$current.name + ']',
             Description: '',
-            Username: username,
+            Username: Name,
             Email: email
         };
 

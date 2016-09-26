@@ -22,6 +22,20 @@ angular.module('proton.service.message', [])
         const filterUserAddresses = (list = [], address = []) => _.filter(list, ({ Address }) => address.indexOf(Address.toLowerCase()) === -1);
 
         /**
+         * Format and build a new message
+         * @param  {Message} newMsg          New message to build
+         * @param  {String} options.Subject from the current message
+         * @param  {String} options.ToList  from the current message
+         */
+        function nouveau(newMsg, {Subject = '', ToList = [], CCList = [], BCCList = [], DecryptedBody = ''} = {}) {
+            newMsg.Subject = Subject;
+            newMsg.ToList = ToList;
+            newMsg.CCList = CCList;
+            newMsg.BCCList = BCCList;
+            DecryptedBody && newMsg.setDecryptedBody(DecryptedBody);
+        }
+
+        /**
          * Format and build a reply
          * @param  {Message} newMsg          New message to build
          * @param  {String} options.Subject from the current message
@@ -54,7 +68,7 @@ angular.module('proton.service.message', [])
             newMsg.Action = CONSTANTS.REPLY_ALL;
             newMsg.Subject = formatSubject(Subject);
 
-            if(Type === 2 || Type === 3) {
+            if (Type === 2 || Type === 3) {
                 newMsg.ToList = ToList;
                 newMsg.CCList = CCList;
                 newMsg.BCCList = BCCList;
@@ -67,8 +81,6 @@ angular.module('proton.service.message', [])
                 newMsg.CCList = filterUserAddresses(newMsg.CCList, userAddresses);
             }
         }
-
-
 
         /**
          * Format and build a forward
@@ -96,10 +108,9 @@ angular.module('proton.service.message', [])
         }
 
         function builder(action, currentMsg = {}, newMsg = {}) {
-            const subject = DOMPurify.sanitize('Subject: ' + currentMsg.Subject + '<br>');
-            const cc = tools.contactsToString(Array.isArray(currentMsg.CCList) ? currentMsg.CCList : [currentMsg.CCList]);
             const addresses = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').value();
 
+            (action === 'new') && nouveau(newMsg, currentMsg);
             (action === 'reply') && reply(newMsg, currentMsg);
             (action === 'replyall') && replyAll(newMsg, currentMsg);
             (action === 'forward') && forward(newMsg, currentMsg);
@@ -116,20 +127,24 @@ angular.module('proton.service.message', [])
             newMsg.Attachments = injectInline(currentMsg);
             newMsg.NumEmbedded = 0;
 
-            newMsg.ParentID = currentMsg.ID;
-            newMsg.setDecryptedBody([
-                '<blockquote class="protonmail_quote" type="cite">',
-                '-------- Original Message --------<br>',
-                subject,
-                'Local Time: ' + $filter('localReadableTime')(currentMsg.Time) + '<br>',
-                'UTC Time: ' + $filter('utcReadableTime')(currentMsg.Time) + '<br>',
-                'From: ' + currentMsg.Sender.Address + '<br>',
-                'To: ' + tools.contactsToString(currentMsg.ToList) + '<br>',
-                (cc.length ? cc + '<br>': '') + '<br>',
-                (currentMsg.getDecryptedBody()),
-                '</blockquote><br>'
-            ].join(''));
+            if (action !== 'new') {
+                const subject = DOMPurify.sanitize('Subject: ' + currentMsg.Subject + '<br>');
+                const cc = tools.contactsToString(Array.isArray(currentMsg.CCList) ? currentMsg.CCList : [currentMsg.CCList]);
 
+                newMsg.ParentID = currentMsg.ID;
+                newMsg.setDecryptedBody([
+                    '<blockquote class="protonmail_quote" type="cite">',
+                    '-------- Original Message --------<br>',
+                    subject,
+                    'Local Time: ' + $filter('localReadableTime')(currentMsg.Time) + '<br>',
+                    'UTC Time: ' + $filter('utcReadableTime')(currentMsg.Time) + '<br>',
+                    'From: ' + currentMsg.Sender.Address + '<br>',
+                    'To: ' + tools.contactsToString(currentMsg.ToList) + '<br>',
+                    (cc.length ? cc + '<br>': '') + '<br>',
+                    (currentMsg.getDecryptedBody()),
+                    '</blockquote><br>'
+                ].join(''));
+            }
 
             return newMsg;
         }
@@ -166,7 +181,7 @@ angular.module('proton.service.message', [])
             const sender = findSender(message);
 
             _.defaults(message, {
-                Type: 1,
+                Type: CONSTANTS.DRAFT,
                 ToList: [],
                 CCList: [],
                 BCCList: [],
@@ -188,19 +203,17 @@ angular.module('proton.service.message', [])
 
         /**
          * Create a new message
-         * @param  {String} action   reply|replyAll|forward
+         * @param  {String} action new|reply|replyall|forward
          * @param  {Message} currentMsg Current message to reply etc.
-         * @return {Message}          New message formated
+         * @return {Message}    New message formated
          */
-        function create(action, currentMsg = {}) {
+        function create(action = '', currentMsg = {}) {
             let newMsg = new Message();
 
             setDefaultsParams(newMsg);
-
-            if ('new' !== action) {
-                newMsg = builder(action, currentMsg, newMsg);
-            }
+            newMsg = builder(action, currentMsg, newMsg);
             newMsg.setDecryptedBody(signatureBuilder.insert(newMsg));
+
             return newMsg;
         }
 

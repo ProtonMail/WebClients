@@ -1,0 +1,40 @@
+.composerAttachments-container {
+    background: #e6eaf0;
+}
+.composerAttachments-hidden {display: none}
+
+.composerAttachments-close .composerAttachments-loaders {display: none}
+
+.composerAttachments-header {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.composerAttachments-header * { pointer-events: none }
+
+
+.composerAttachments-loaders {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 85px;
+    overflow: auto;
+    padding: 10px;
+    border-top: 1px solid #acb0bf;
+}
+
+.composerAttachments-loader {
+    margin-top: 10px;
+    width: 45%
+}
+
+.composerAttachments-loader:first-child,
+.composerAttachments-loader:nth-child(2) {margin-top: 0}
+
+.composerAttachments-loader:nth-child(even) {margin-left: 1em}
+
+.composerAttachments-size {margin-right: 1em}
+.composerAttachments-action {margin-left: auto}

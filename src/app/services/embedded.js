@@ -5,12 +5,13 @@ angular.module("proton.embedded", [])
     $state,
     $stateParams,
     $rootScope,
-    attachments,
     authentication,
     Eo,
     notify,
     secureSessionStorage,
     networkActivityTracker,
+    AttachmentLoader,
+    attachmentFileFormat,
     pmcw
 ) {
 
@@ -20,7 +21,6 @@ angular.module("proton.embedded", [])
     let CIDList = {};
     let MAP_BLOBS = {};
 
-    const MIMETypeSupported = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
     const REGEXP_IS_INLINE = /^inline/i;
     const REGEXP_CID_START = /^cid:/g;
     const EMBEDDED_CLASSNAME = 'proton-embedded';
@@ -252,95 +252,38 @@ angular.module("proton.embedded", [])
      * @param {Resource} message
      */
     const decrypt = function(message) {
-        var deferred = $q.defer();
-        var processed = false;
+        const deferred = $q.defer();
 
         const list = findInlineAttachements(message);
         const user = authentication.user || { ShowEmbedded: 0 };
         const show = message.showEmbedded === true || user.ShowEmbedded === 1;
 
-        let parsingAttachementPromise = [];
+        // For a draft if we close it before the end of the attachement upload, there are no keyPackets
+        const promise = _.chain(list)
+            .filter(({ attachment }) => attachment.KeyPackets)
+            .filter(({ cid, attachment }) => !Blobs[cid] && show)
+            .map(({ cid, attachment }) => {
+                const storeAttachement = store(message, cid);
+                return AttachmentLoader
+                    .get(attachment, message)
+                    .then((buffer) => storeAttachement(buffer, attachment.MIMEType));
+            })
+            .value();
 
-        // loop the CID list
-        list
-            .forEach(({ cid, attachment }) => {
-
-            // For a draft if we close it before the end of the attachement upload, there are no keyPackets
-            if (!attachment.KeyPackets) {
-                console.warn('There is no keyPackets for this attachment', attachment);
-            }
-
-            // Check if the CID is already stored
-            if (!Blobs[cid] && show && attachment.KeyPackets) {
-                processed = true;
-
-                var att, pk;
-
-                attachment.decrypting = true;
-                // decode key packets
-                var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-                // get user's pk
-                if ($state.is('eo.message') || $state.is('eo.reply')) {
-                    var decrypted_token = secureSessionStorage.getItem('proton:decrypted_token');
-                    var token_id = $stateParams.tag;
-
-                    pk = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
-                    att = Eo.attachment(decrypted_token, token_id, attachment.ID);
-                } else {
-                    pk = authentication.getPrivateKeys(message.AddressID);
-                    att = attachments.get(attachment.ID, attachment.Name);
-                }
-
-                var key = pmcw.decryptSessionKey(keyPackets, pk);
-
-                // when we have the session key and attachment:
-                const promiseParsing = $q.all({ attObject: att, key })
-                    .then(({ attObject = {}, key = {} } = {} ) => {
-                        const storeAttachement = store(message, cid);
-
-                        // If it's coming from the cache to not try to decrypt it again as it's already decrypted
-                        if (attObject.isCache) {
-                            return storeAttachement(attObject.attachment.data, attachment.MIMEType);
-                        }
-
-                        // create new Uint8Array to store decryted attachment
-                        let at = new Uint8Array(attObject.attachment);
-                        // decrypt the att
-                        return pmcw
-                            .decryptMessage(at, key.key, true, key.algo)
-                            .then(({ data } = {}) => {
-                                attachment.decrypting = false;
-                                at = null;
-                                storeAttachement(data, attachment.MIMEType);
-                                // Store attachment decrypted
-                                attachments.push({
-                                    ID: attachment.ID,
-                                    data: data,
-                                    name: attachment.Name
-                                });
-                            })
-                            .catch(deferred.reject);
-                    }).catch(deferred.reject);
-
-                parsingAttachementPromise.push(promiseParsing);
-            }
-        });
-
-        $q.all(parsingAttachementPromise)
+        $q.all(promise)
             .then(() => {
                 const computed =  list
                     .reduce((acc, key) => (acc[key] = Blobs[key], acc), Object.create(null));
                 deferred.resolve(computed);
             })
-            .catch((err) => console.error(err));
+            .catch(deferred.reject);
 
-       if (!processed) {
+       if (!promise.length) {
           // all cid was already stored, we can resolve
           deferred.resolve({});
        }
 
        return deferred.promise;
-
     };
 
 
@@ -378,11 +321,10 @@ angular.module("proton.embedded", [])
     }
 
     var embedded = {
-        MIMETypeSupported,
         isEmbedded({Headers = {}, MIMEType = ''}) {
             const disposition = Headers['content-disposition'];
 
-            return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition) && MIMETypeSupported.indexOf(MIMEType) !== -1;
+            return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition) && attachmentFileFormat.isEmbedded(MIMEType);
         },
 
         /**
