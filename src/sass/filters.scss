@@ -2,6 +2,7 @@
 	.pm_form {
 		.alert {
 			padding-right: 55px; // space for trash icon
+			
 			.if {
 				display: inline-block;
 				line-height: 34px;
@@ -29,12 +30,21 @@
 				width: 15rem;
 				display: inline-block;
 			}
+
 			label {
 				display: flex;
-				padding: 1rem 0rem;
+				/*
+				Align the baselines of the flex items
+				necessary for the radio inputs
+				*/
+				align-items: baseline;
+
+				:first-child{
+					margin-right: 0.5rem;
+				}
 
 				i{
-					margin: 0.1rem 0.5rem;
+					margin: 0.1rem 0.5rem 0.1rem 0;
 				}
 
 				span{
