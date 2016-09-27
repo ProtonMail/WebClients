@@ -171,7 +171,7 @@ angular.module('proton.message')
                 cache.events(events);
 
                 // Send request to detach the label
-                message.updateLabels(labelID, REMOVE, [messageID]);
+                new Message().updateLabels(labelID, REMOVE, [messageID]);
             },
             /**
              * Apply labels on a list of messages
