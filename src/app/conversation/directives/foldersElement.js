@@ -1,7 +1,7 @@
 angular.module('proton.conversation')
 .directive('foldersElement', ($rootScope, $state, CONSTANTS, gettextCatalog, $compile, mailboxIdentifersTemplate) => {
     const allowedStates = ['secured.sent.**', 'secured.drafts.**', 'secured.search.**', 'secured.starred.**', 'secured.label.**'];
-    const isAllowedState = () => allowedStates.some($state.includes);
+    const isAllowedState = () => allowedStates.some((key) => $state.includes(key));
     const MAP_LABELS = {
         inbox: {
             className: 'fa-inbox',
