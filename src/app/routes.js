@@ -879,13 +879,14 @@ angular.module('proton.routes', [
         }
     });
 
-    _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(id, box) {
-        var parentState = 'secured.' + box;
-        var conversationState = 'secured.' + box + '.conversation';
-        var messageState = 'secured.' + box + '.message';
-        var conversationView = {};
-        var messageView = {};
-        var list = {};
+    Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS).forEach((box) => {
+        const id = CONSTANTS.MAILBOX_IDENTIFIERS[box];
+        const parentState = 'secured.' + box;
+        const conversationState = 'secured.' + box + '.conversation';
+        const messageState = 'secured.' + box + '.message';
+        const conversationView = {};
+        const messageView = {};
+        const list = {};
 
         list['content@secured'] = {
             controller: 'ElementsController',
