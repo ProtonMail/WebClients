@@ -3,7 +3,7 @@
 
 var _ = require('lodash');
 var util = require('util');
-var appVersion = '3.4.3';
+var appVersion = '3.5.0';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
