@@ -192,7 +192,6 @@ angular.module("proton.controllers.Conversation", ["proton.constants"])
         let messages = cache.queryMessagesCached($stateParams.id);
         const loc = tools.currentLocation();
 
-            console.trace('REFRSH');
         messagesCached = messages;
         $scope.trashed = _.filter(messagesCached, ({LabelIDs = []}) => { return _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; }).length > 0;
         $scope.nonTrashed = _.filter(messagesCached, ({LabelIDs = []}) => { return _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
