@@ -453,7 +453,7 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.currentMailbox = function() {
-        var mailbox = $state.$current.name.replace('secured.', '').replace('.conversation', '').replace('.message', '');
+        var mailbox = $state.$current.name.replace('secured.', '').replace('.element', '');
 
         if(_.contains(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), mailbox)) {
             return mailbox;
@@ -463,13 +463,18 @@ angular.module("proton.tools", ["proton.constants"])
     };
 
     tools.typeList = (box) => {
+        const specialBoxes = ['drafts', 'search', 'sent'];
         box = box || tools.currentMailbox();
 
-        if (['search', 'drafts', 'sent'].indexOf(box) > -1 || authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE) {
+        if (authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE || specialBoxes.indexOf(box) > -1) {
             return 'message';
         } else {
             return 'conversation';
         }
+    };
+
+    tools.typeView = () => {
+        return (authentication.user.ViewMode === CONSTANTS.MESSAGE_VIEW_MODE) ? 'message' : 'conversation';
     };
 
     /**

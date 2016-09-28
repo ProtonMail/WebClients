@@ -12,7 +12,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $filter,
     $window,
     $cookies,
-    action,
+    actionConversation,
     CONSTANTS,
     Conversation,
     Message,
@@ -527,7 +527,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.nextElement = () => {
         const current = $state.$current.name;
         const elementID = $state.params.id;
-        const type = $state.includes('**.conversation') ? 'conversation' : 'message';
+        const type = tools.typeList();
 
         cache.more(elementID, 'next', type)
         .then((element) => {
@@ -542,7 +542,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     $scope.previousElement = () => {
         const current = $state.$current.name;
         const elementID = $state.params.id;
-        const type = $state.includes('**.conversation') ? 'conversation' : 'message';
+        const type = tools.typeList();
 
         cache.more(elementID, 'previous', type)
         .then((element) => {
@@ -559,7 +559,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         const ids = $scope.idsSelected();
 
         if (type === 'conversation') {
-            action.readConversation(ids);
+            actionConversation.readConversation(ids);
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', {action: 'read', data: {ids}});
         }
@@ -573,7 +573,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         const ids = $scope.idsSelected();
 
         if (type === 'conversation') {
-            action.unreadConversation(ids);
+            actionConversation.unreadConversation(ids);
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', {action: 'unread', data: {ids}});
         }
@@ -599,7 +599,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     var ids = $scope.idsSelected();
 
                     if (type === 'conversation') {
-                        action.deleteConversation(ids);
+                        actionConversation.deleteConversation(ids);
                     } else if (type === 'message') {
                         $rootScope.$emit('messageActions', {action: 'delete', data: {ids}});
                     }
@@ -618,8 +618,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
     function redirectUser() {
         // The default view for all conversations in not the state conversation but inbox
+        const name = $state.$current.name;
+        const route = name.replace('.element', '');
         // Return to the state and close message
-        $state.go($state.$current.name.replace('.conversation', ''), { id: '' });
+        $state.go(route, { id: '' });
     }
 
     /**
@@ -631,7 +633,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var ids = $scope.idsSelected();
         $rootScope.numberElementChecked = 0;
         if(type === 'conversation') {
-            action.moveConversation(ids, mailbox);
+            actionConversation.moveConversation(ids, mailbox);
         } else if(type === 'message') {
             $rootScope.$emit('messageActions', {action: 'move', data: {ids, mailbox}});
         }
@@ -650,7 +652,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         var ids = $scope.idsSelected();
 
         if(type === 'conversation') {
-            action.labelConversation(ids, labels, alsoArchive);
+            actionConversation.labelConversation(ids, labels, alsoArchive);
         } else if(type === 'message') {
             const messages = $scope.elementsSelected();
 
@@ -782,8 +784,19 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {Object} element - conversation / message
      */
     function openElement(element) {
-        const type = tools.typeList();
-        const params = { id: element.ID  };
+        const view = tools.typeView();
+        const list = tools.typeList();
+        const name = $state.$current.name;
+        const route = name.replace('.element', '');
+        const params = {};
+        const sameView = $state.params.id && $state.params.id === element.ConversationID;
+
+        if (view === 'conversation' && list === 'message') {
+            params.id = element.ConversationID;
+            params.messageID = element.ID;
+        } else {
+            params.id = element.ID;
+        }
 
         // Save scroll position
         $rootScope.scrollPosition = $('#content').scrollTop();
@@ -801,7 +814,11 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         // Mark this element
         $scope.markedElement = element;
 
-        $state.go('secured.' + $scope.mailbox + '.' + type, params);
+        if (sameView) {
+            $rootScope.$emit('message.open', { type: 'toggle', data: { message: element }});
+        } else {
+            $state.go(route + '.element', params);
+        }
     }
 
     /**

@@ -1,0 +1,13 @@
+@mixin fillHeight() {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    /*
+    Allow scroll inside Flex box
+    1. An item in a flexbox will not shrink below its intrinsic size.
+    2. A flexbox is also a flex item in a parent flexbox,
+    and will not shrink because it has an implicit min-height:auto.
+    That's why we set it to zero.
+    */
+    min-height: 0px; // allow scroll for childs
+}

@@ -10,7 +10,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
     $stateParams,
     $timeout,
     gettextCatalog,
-    action,
     authentication,
     cache,
     confirmModal,

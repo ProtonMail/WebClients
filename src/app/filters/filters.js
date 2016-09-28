@@ -334,20 +334,20 @@ angular.module("proton.filters",[])
 })
 
 .filter('filterMessages', function($state, $rootScope, CONSTANTS) {
-    return function(messages) {
+    return (messages, showTrashed, showNonTrashed) => {
         if (!$state.includes('secured.search.**') && !$state.includes('secured.label.**') && !$state.includes('secured.starred.**')) {
-            var trashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; });
-            var nonTrashed = _.filter(messages, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; });
+            const trashed = messages.filter((message) => _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+            const nonTrashed = messages.filter((message) => !_.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
 
             if ($state.includes('secured.trash.**') === true) {
                 if (trashed.length > 0) {
-                    if ($rootScope.showNonTrashed === false) {
+                    if (showNonTrashed === false) {
                         messages = trashed;
                     }
                 }
             } else {
                 if (nonTrashed.length > 0) {
-                    if ($rootScope.showTrashed === false) {
+                    if (showTrashed === false) {
                         messages = nonTrashed;
                     }
                 }

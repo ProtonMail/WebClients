@@ -882,10 +882,8 @@ angular.module('proton.routes', [
     Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS).forEach((box) => {
         const id = CONSTANTS.MAILBOX_IDENTIFIERS[box];
         const parentState = 'secured.' + box;
-        const conversationState = 'secured.' + box + '.conversation';
-        const messageState = 'secured.' + box + '.message';
-        const conversationView = {};
-        const messageView = {};
+        const childState = 'secured.' + box + '.element';
+        const elementView = {};
         const list = {};
 
         list['content@secured'] = {
@@ -893,18 +891,8 @@ angular.module('proton.routes', [
             templateUrl: 'templates/partials/conversations.tpl.html'
         };
 
-        conversationView['view@secured.' + box] = {
-            controller: 'ConversationController',
-            templateUrl: 'templates/partials/conversation.tpl.html',
-            resolve: {
-                conversation($stateParams, cache) {
-                    return cache.getConversation($stateParams.id);
-                }
-            }
-        };
-
-        messageView['view@secured.' + box] = {
-            template: `<message-view></message-view>`
+        elementView['view@secured.' + box] = {
+            template: `<element-view></element-view>`
         };
 
         $stateProvider.state(parentState, {
@@ -930,25 +918,14 @@ angular.module('proton.routes', [
             }
         });
 
-        $stateProvider.state(conversationState, {
-            url: '/c/{id}',
-            params: {
-                id: '',
-                message: null
-            },
-            views: conversationView,
+        $stateProvider.state(childState, {
+            url: '/{id}',
+            views: elementView,
+            params: { id: '', messageID: null },
             onExit: function($rootScope) {
                 $rootScope.$broadcast('unactiveMessages');
                 $rootScope.$broadcast('unmarkMessages');
             }
-        });
-
-        $stateProvider.state(messageState, {
-            url: '/m/{id}',
-            params: {
-                id: ''
-            },
-            views: messageView
         });
     });
 

@@ -1,6 +1,5 @@
-angular.module('proton.actions', [])
-
-.factory('action', function(
+angular.module('proton.conversation')
+.factory('actionConversation', (
     $q,
     $rootScope,
     gettextCatalog,
@@ -11,7 +10,7 @@ angular.module('proton.actions', [])
     networkActivityTracker,
     notify,
     CONSTANTS
-) {
+) => {
     function getFolderNameTranslated(mailbox) {
         const mailboxs = {
             inbox: gettextCatalog.getString('Inbox', null),
