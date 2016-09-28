@@ -1,8 +1,9 @@
 angular.module('proton.message')
-.directive('toggleMessage', ($rootScope, $state, CONSTANTS) => ({
+.directive('toggleMessage', ($rootScope, $state, CONSTANTS, tools) => ({
     restrict: 'A',
     link(scope, element) {
-        const allowToggle = $state.includes('**.conversation') || $state.includes('secured.drafts.**');
+        const type = tools.typeView();
+        const allowToggle = type === 'conversation' || $state.includes('secured.drafts.**');
 
         function selection() {
             if (window.getSelection) {

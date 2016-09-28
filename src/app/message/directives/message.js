@@ -54,7 +54,7 @@ angular.module('proton.message')
      */
     function back() {
         const name = $state.$current.name;
-        const route = name.replace('.conversation', '').replace('.message', '');
+        const route = name.replace('.element', '');
 
         $state.go(route, { id: null });
     }
@@ -67,7 +67,7 @@ angular.module('proton.message')
     function canBeOpen({LabelIDs = []}) {
         const currentLocation = tools.currentLocation();
         const condition = LabelIDs.indexOf(currentLocation) !== -1;
-        const type = tools.typeList();
+        const type = tools.typeView();
         const isSearch = $state.includes('secured.search.**');
 
         return type === 'conversation' || isSearch || condition;
@@ -118,10 +118,11 @@ angular.module('proton.message')
             unsubscribe.push($rootScope.$on('message.refresh', (event, messageIDs) => {
                 if (messageIDs.indexOf(scope.message.ID) > -1) {
                     const message = cache.getMessageCached(scope.message.ID);
+                    const type = tools.typeView();
 
                     if (message && canBeOpen(message)) {
                         scope.message = _.extend(scope.message, message);
-                    } else if ($state.includes('**.message')) {
+                    } else if (type === 'message') {
                         back();
                     }
                 }

@@ -31,7 +31,7 @@
             display: inline-block;
             word-wrap: break-word;
             padding: 0 10px;
-            padding: 14px 0;
+            padding: 14px 30px 14px 0px; /* star */
             min-height: 35px;
 
             .starButton {
@@ -182,7 +182,7 @@
                 top: 0;
                 z-index: 1;
                 height: 100%;
-                max-width: 80%; /* handle long from */
+                width: 80%;
                 overflow: hidden;
 
                 .meta,

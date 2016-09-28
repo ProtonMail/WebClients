@@ -2,7 +2,7 @@
     <h1>
         <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
         <span>{{ conversation.Subject | unescape }}</span>
-        <pt-star data-model="conversation" class="pm_buttons"></pt-star>
+        <pt-star data-model="conversation" data-pt-star-type="conversation" class="pm_buttons"></pt-star>
     </h1>
     <div ng-hide="('secured.search.**' | includedByState) || ('secured.label.**' | includedByState)" class="containsMessage">
         <p ng-if="showNotifier('trash')" class="alert">
@@ -21,6 +21,6 @@
         data-model="message"
         data-last="$last"
         data-index="$index"
-        ng-repeat="message in messages | filter: filterMessages track by message.ID"
+        ng-repeat="message in messages | filter: filterMessages:showTrashed:showNonTrashed track by message.ID"
     ></message>
 </div>

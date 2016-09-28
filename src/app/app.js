@@ -67,7 +67,6 @@ angular.module('proton', [
     'proton.ui',
 
     // Services
-    'proton.actions',
     'proton.attachments',
     'proton.authentication',
     'proton.cache',
@@ -120,7 +119,6 @@ angular.module('proton', [
     'proton.controllers.Auth',
     'proton.controllers.Contacts',
     'proton.controllers.Header',
-    'proton.controllers.Conversation',
     'proton.controllers.Conversations',
     'proton.controllers.Compose',
     'proton.controllers.Outside',

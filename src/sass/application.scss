@@ -1,5 +1,6 @@
 // global variables
 @import "variables";
+@import "mixin";
 
 // Fonts
 @import "fonts.scss";
@@ -53,6 +54,9 @@
 @import "composer/progressUpload.scss";
 @import "attachments/listAttachments.scss";
 @import "message/messageView.scss";
+@import "conversation/conversation.scss";
+@import "conversation/conversationView.scss";
+@import "element/elementView.scss";
 
 @import "layout/conversation-layout.scss";
 @import "layout/conversations-columns.scss";
