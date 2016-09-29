@@ -7,6 +7,10 @@ angular.module("proton.controllers.Settings")
     gettextCatalog,
     authentication,
     confirmModal,
+    CONSTANTS,
+    sharedSecretModal,
+    loginPasswordModal,
+    recoveryCodeModal,
     Logs,
     networkActivityTracker,
     notify,
@@ -15,10 +19,150 @@ angular.module("proton.controllers.Settings")
     $scope.logs = [];
     $scope.logItemsPerPage = 20;
     $scope.doLogging = authentication.user.LogAuth;
+    $scope.twoFactor = authentication.user.TwoFactor;
+    $scope.keyPhase = CONSTANTS.KEY_PHASE;
 
     /// logging page
     $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
     $scope.haveLogs = false;
+
+    $scope.showSharedSecret = function() {
+        const randomBytes = window.crypto.getRandomValues(new Uint8Array(20));
+        const sharedSecret = base32.encode(randomBytes);
+        let identifier = authentication.user.Name + '@protonmail';
+        const primaryAddress = _.find(authentication.user.Addresses, () => true);
+        if (primaryAddress) {
+            identifier = primaryAddress.Email;
+        }
+
+        const qrURI = "otpauth://totp/" + identifier + "?secret=" + sharedSecret + "&issuer=protonmail&algorithm=SHA1&digits=6&period=30";
+
+        sharedSecretModal.activate({
+            params: {
+                sharedSecret: sharedSecret,
+                qrURI: qrURI,
+                next: function() {
+                    sharedSecretModal.deactivate();
+                    $scope.confirm2FAEnable(sharedSecret, qrURI);
+                },
+                cancel: function() {
+                    sharedSecretModal.deactivate();
+                }
+            }
+        });
+    };
+
+    $scope.confirm2FAEnable = function(sharedSecret, qrURI) {
+        function submit(loginPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
+            networkActivityTracker.track(
+                Setting.enableTwoFactor(
+                    { TwoFactorSharedSecret: sharedSecret },
+                    { TwoFactorCode: twoFactorCode, Password: loginPassword }
+                )
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        var recoveryCodes = result.data.TwoFactorRecoveryCodes;
+                        $scope.twoFactor = 1;
+                        authentication.user.TwoFactor = 1;
+                        $scope.recoveryCodes(recoveryCodes);
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                        sharedSecretModal.activate({
+                            params: {
+                                sharedSecret: sharedSecret,
+                                qrURI: qrURI,
+                                next: function() {
+                                    sharedSecretModal.deactivate();
+                                    // open the next step
+                                    $scope.confirm2FAEnable(sharedSecret, qrURI);
+                                },
+                                cancel: function() {
+                                    sharedSecretModal.deactivate();
+                                }
+                            }
+                        });
+                    }
+                })
+            );
+        }
+        $scope.checkCredentials2FA(submit);
+    };
+
+    $scope.recoveryCodes = function(recoveryCodes) {
+        var title = gettextCatalog.getString('Two-factor authentication enabled', null, 'Title');
+        var message = gettextCatalog.getString('Keep these recovery codes in a safe place. If you lose your two factor enabled device, these one-time use codes can be used in the listed order to log in to your account.', null, 'Info');
+        recoveryCodeModal.activate({
+            params: {
+                title: title,
+                message: message,
+                recoveryCodes: recoveryCodes,
+                download: function() {
+                    var blob = new Blob([recoveryCodes.join("\r\n")], { type: 'text/plain;charset=utf-8;' });
+                    saveAs(blob, "protonmail_recovery_codes.txt");
+                },
+                done: function () {
+                    recoveryCodeModal.deactivate();
+                },
+                cancel: function() {
+                    recoveryCodeModal.deactivate();
+                }
+            }
+
+        });
+
+    };
+
+    $scope.disableTwoFactor = function() {
+        var title_confirm = gettextCatalog.getString('Disable Two-Factor Authentication', null, 'Title');
+        var message = gettextCatalog.getString('Are you sure you want to disable two-factor authentication?', null, 'Info');
+        var title_twofactor = gettextCatalog.getString('Confirm Disable Two-Factor Authentication');
+        confirmModal.activate({
+            params: {
+                title: title_confirm,
+                message: message,
+                confirm: function() {
+                    confirmModal.deactivate();
+                    $scope.confirm2FADisable();
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    $scope.confirm2FADisable = function() {
+        function submit(loginPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
+             networkActivityTracker.track(
+                Setting.disableTwoFactor({TwoFactorCode: twoFactorCode, Password: loginPassword})
+                .then(function(result) {
+                    if (result.data && result.data.Code === 1000) {
+                        $scope.twoFactor = 0;
+                        authentication.user.TwoFactor = 0;
+                        notify({message: gettextCatalog.getString('Two-factor authentication disabled', null), classes: 'notification-success'});
+                    } else if (result.data && result.data.Error) {
+                        notify({message: result.data.Error, classes: 'notification-danger'});
+                        $scope.disableTwoFactor();
+                    }
+                })
+            );
+        }
+        $scope.checkCredentials2FA(submit);
+    };
+
+    $scope.checkCredentials2FA = function(submit) {
+        loginPasswordModal.activate({
+            params: {
+                submit: submit,
+                cancel: function() {
+                    loginPasswordModal.deactivate();
+                },
+                hasTwoFactor: 1
+            }
+        });
+    };
 
     $scope.loadLogs = function (page) {
         $scope.currentLogPage = page;
@@ -80,7 +224,7 @@ angular.module("proton.controllers.Settings")
           logsArray.push([log.Event, moment(log.Time * 1000), log.IP]);
         });
 
-        for(var i=0, l=logsArray.length; i<l; ++i){
+        for(var i=0, l=logsArray.length; i<l; ++i) {
             csvRows.push(logsArray[i].join(','));
         }
 

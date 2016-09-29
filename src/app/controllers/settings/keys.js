@@ -132,11 +132,12 @@ angular.module("proton.controllers.Settings")
                         pmcw.encryptPrivateKey(pkg, mailboxPassword).then(function(privateKey) {
                             // Update private key
                             networkActivityTracker.track(Key.private({
-                                Password: loginPassword,
                                 Keys: [{
                                     ID: key.ID,
                                     PrivateKey: privateKey
                                 }]
+                            }, {
+                                Password: loginPassword,
                             }).then(function(result) {
                                 if (result.data && result.data.Code === 1000) {
                                     // Close the modal
@@ -175,8 +176,12 @@ angular.module("proton.controllers.Settings")
                 title: gettextCatalog.getString('Generate key pair', null),
                 message: '', // TODO need text
                 addresses: [address],
-                cancel: function() {
-                    eventManager.call();
+                password: authentication.getPassword(),
+                close: function(success) {
+                    if (success) {
+                        eventManager.call();
+                    }
+
                     generateModal.deactivate();
                 }
             }

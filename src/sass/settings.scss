@@ -104,46 +104,6 @@
     .editor-container {
         position: relative;
     }
-    #usersTable {
-        th {
-            width: 12rem;
-        }
-    }
-    #userTable {
-        td {
-            padding: 10px 1rem;
-            line-height: 1.5rem;
-            .pm_button {
-                line-height: 1.5rem;
-                margin: 0;
-                height: auto;
-                text-decoration: none;
-                padding-left: 0;
-            }
-        }
-        .pm_select {
-            margin: 0;
-            line-height: 1.5rem;
-            height: 1.5rem;
-            select {
-                line-height: 1.5rem;
-                height: 1.5rem;
-            }
-            .fa {
-                line-height: 1.5rem;
-                height: 1.5rem;
-            }
-        }
-        .role {
-            width: 5rem;
-        }
-        .storage {
-            width: 16rem;
-        }
-        .actions {
-            width: 9rem;
-        }
-    }
     #paymentMethodsTable {
         .number {
             width: auto;

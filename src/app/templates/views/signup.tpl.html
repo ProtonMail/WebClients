@@ -9,7 +9,7 @@
             <span translate translate-context="Title">Create your account</span>
         </h2>
     </div>
-    <form method="post" ng-submit="checking(subscription)" name="subscription" role="form" novalidate class="pm_form">
+    <form method="post" ng-submit="checking(accountForm)" name="accountForm" role="form" novalidate class="pm_form">
         <div class="wrapper margin">
             <p class="alert alert-info" translate-context="Info" translate>Take back your privacy! Creating your secure email account takes less than 2 minutes.</p>
             <label for="Username">
@@ -29,49 +29,73 @@
             </div>
             <p class="alert alert-danger" ng-show="badUsername" ng-bind="badUsernameMessage"></p>
             <p class="alert alert-success" ng-show="goodUsername" translate-context="Info" translate>Email available</p>
-            <label for="password">
-                <em class="num">2</em>
-                <span translate translate-context="Title">Login password</span>
-            </label>
-            <p class="help" translate-context="Info" translate>This is used to decrypt your inbox.</p>
-            <input id="password" name="password" ng-model="account.loginPassword" type="password" class="form-control margin" placeholder-translate="Choose a login password" maxlength="{{ maxPW }}" required />
-            <div ng-show="subscription.$submitted || subscription.password.$touched">
-                <p ng-show="subscription.$submitted && subscription.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Login password is required.</p>
+
+            <div ng-if="keyPhase < 3">
+                <label for="password">
+                    <em class="num">2</em>
+                    <span translate translate-context="Title">Login password</span>
+                </label>
+                <p class="help" translate-context="Info" translate>This is used to login to our servers.</p>
+                <input id="password" name="password" ng-model="$parent.account.loginPassword" type="password" class="form-control margin" placeholder-translate="Choose a login password" maxlength="{{ maxPW }}" required />
+                <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.password.$touched">
+                    <p ng-show="$parent.accountForm.$submitted && $parent.accountForm.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Login password is required.</p>
+                </div>
+                <input id="passwordc" name="passwordc" ng-model="$parent.account.loginPasswordConfirm" type="password" class="form-control" placeholder-translate="Confirm login password" required compare-to="$parent.account.loginPassword">
+                <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.passwordc.$touched">
+                    <p ng-show="$parent.account.loginPassword !== $parent.account.loginPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
+                </div>
+
+                <label for="MBpassword">
+                    <em class="num">3</em>
+                    <span translate translate-context="Title">Mailbox password</span>
+                </label>
+                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
+            your messages. Do not lose this password--we cannot recover it.</p>
+                <input id="MBpassword" name="MBpassword" ng-model="$parent.account.mailboxPassword" type="password" class="form-control margin" placeholder-translate="Choose a mailbox password" required />
+                <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.MBpassword.$touched">
+                    <p ng-show="$parent.accountForm.$submitted && $parent.accountForm.MBpassword.$error.required" class="alert alert-danger" translate-context="Error" translate>Mailbox password is required.</p>
+                </div>
+                <input id="MBpasswordc" name="MBpasswordc" ng-model="$parent.account.mailboxPasswordConfirm" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}" placeholder-translate="Confirm mailbox password" required compare-to="$parent.account.mailboxPassword">
+                <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.MBpasswordc.$touched">
+                    <p ng-show="$parent.account.mailboxPassword !== $parent.account.mailboxPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
+                </div>
+                <p class="alert alert-info" translate-context="Info" translate>If you lose your mailbox password, you will not be able to read your emails. We cannot recover this password for you.</p>
             </div>
-            <input id="passwordc" name="passwordc" ng-model="account.loginPasswordConfirm" type="password" class="form-control" placeholder-translate="Confirm login password" required validator="account.loginPassword !== account.loginPasswordConfirm" />
-            <div ng-show="subscription.$submitted || subscription.passwordc.$touched">
-                <p ng-show="account.loginPassword !== account.loginPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords don't match.</p>
+
+            <div ng-if="keyPhase > 2">
+                <label for="password">
+                    <em class="num">2</em>
+                    <span translate translate-context="Title">Password</span>
+                </label>
+                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
+            your messages. Do not lose this password, we cannot recover it.</p>
+                <input id="password" name="password" ng-model="$parent.account.loginPassword" type="password" class="form-control margin" placeholder-translate="Choose a password" maxlength="{{ maxPW }}" required />
+                <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.password.$touched">
+                    <p ng-show="$parent.accountForm.$submitted && $parent.accountForm.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Password is required.</p>
+                </div>
+                <input id="passwordc" name="passwordc" ng-model="$parent.account.loginPasswordConfirm" type="password" class="form-control" placeholder-translate="Confirm password" required compare-to="$parent.account.loginPassword">
+                <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.passwordc.$touched">
+                    <p ng-show="$parent.account.loginPassword !== $parent.account.loginPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
+                </div>
+                <p class="alert alert-info" translate-context="Info" translate>If you lose your password, you will not be able to read your emails.</p>
             </div>
-            <label for="password">
-                <em class="num">3</em>
-                <span translate translate-context="Title">Mailbox password</span>
-            </label>
-            <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
-        your messages. Do not lose this password, we cannot recover it.</p>
-            <input id="MBpassword" name="MBpassword" ng-model="account.mailboxPassword" type="password" class="form-control margin" placeholder-translate="Choose a mailbox password" required />
-            <div ng-show="subscription.$submitted || subscription.MBpassword.$touched">
-                <p ng-show="subscription.$submitted && subscription.MBpassword.$error.required" class="alert alert-danger" translate-context="Error" translate>Mailbox password is required.</p>
-            </div>
-            <input id="MBpasswordc" name="MBpasswordc" ng-model="account.mailboxPasswordConfirm" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}" placeholder-translate="Confirm mailbox password" required />
-            <div ng-show="subscription.$submitted || subscription.MBpasswordc.$touched">
-                <p ng-show="account.mailboxPassword !== account.mailboxPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords don't match.</p>
-            </div>
-            <p class="alert alert-info" translate-context="Info" translate>If you lose your mailbox password, you won't be able to read your emails, we cannot recover this password for you.</p>
+
             <label for="notificationEmail">
-                <em class="num">4</em>
+                <em class="num" ng-if="keyPhase < 3">4</em>
+                <em class="num" ng-if="keyPhase > 2">3</em>
                 <span translate translate-context="Title">Recovery email</span>
                 (<span translate>Optional</span>)
             </label>
-            <p class="help" translate-context="Info" translate>This is used to recover your account if you get locked out or forget your login password.</p>
+            <p class="help" translate-context="Info" translate>This is used to recover your account if you get locked out or forget your password.</p>
             <input id="notificationEmail" name="notificationEmail" ng-model="account.notificationEmail" type="email" class="form-control" placeholder-translate="Recovery email" validator="notificationEmailValidation()" ng-required="false" />
-            <div ng-show="subscription.notificationEmail.$error.email">
+            <div ng-show="accountForm.notificationEmail.$error.email">
                 <p class="alert alert-danger" translate-context="Error" translate>Invalid recovery email.</p>
             </div>
             <p>&nbsp;</p>
         </div><!--/.wrapper-->
         <div class="text-center">
             <p><span translate translate-context="Info">By clicking Create Account, you agree to abide by</span><br /> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate-context="Title" translate>ProtonMail's Terms and Conditions</a>.</p>
-            <p><button type="submit" class="pm_button primary large" ng-class="{ disabled: ( networkActivity.loading() || !subscription.$valid ) } " translate-context="Action" translate>Create Account</button></p>
+            <p><button type="submit" class="pm_button primary large" ng-class="{ disabled: ( networkActivity.loading() || !accountForm.$valid ) } " translate-context="Action" translate>Create Account</button></p>
             <p><a ui-sref="login" translate-context="Action" translate translate-comment="link to login">Already have an account?</a></p>
         </div>
     </form>
@@ -320,21 +344,17 @@
                 <i class="show fa fa-check"></i>
                 <span translate>Generating keys</span>
             </li>
-            <li ng-class="{ 'done': createUser }">
-                <i ng-class="{ 'show': createUser }" class="fa fa-check"></i>
-                <span translate>Creating new user</span>
+            <li ng-class="{ 'done': createAccount }">
+                <i ng-class="{ 'show': createAccount }" class="fa fa-check"></i>
+                <span translate>Creating new account</span>
             </li>
             <li ng-class="{ 'done': logUserIn }">
                 <i ng-class="{ 'show': logUserIn }" class="fa fa-check"></i>
-                <span translate>Verifying new account</span>
+                <span translate>Logging in to new account</span>
             </li>
-            <li ng-class="{ 'done': decryptAccessToken }">
-                <i ng-class="{ 'show': decryptAccessToken }" class="fa fa-check"></i>
-                <span translate>Verifying encryption keys</span>
-            </li>
-            <li ng-class="{ 'done': mailboxLogin }">
-                <i ng-class="{ 'show': mailboxLogin }" class="fa fa-check"></i>
-                <span translate>Loading new account</span>
+            <li ng-class="{ 'done': setupAccount }">
+                <i ng-class="{ 'show': setupAccount }" class="fa fa-check"></i>
+                <span translate>Setting up new account</span>
             </li>
             <li ng-class="{ 'done': getUserInfo }">
                 <i ng-class="{ 'show': getUserInfo }" class="fa fa-check"></i>

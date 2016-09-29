@@ -104,6 +104,11 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 						});
 					};
 
+					if (user.Role === 0) {
+						// Necessary because there is no deletion event for organizations
+						$rootScope.$broadcast('organizationChange', { PlanName: 'free' });
+					}
+
 					_.each(user.Addresses, function(address) {
 						if (address.Keys.length === 0 && address.Status === 1 && privateUser === true) {
 							dirtyAddresses.push(address);
@@ -131,11 +136,15 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 					if (dirtyAddresses.length > 0 && generateModal.active() === false) {
 						generateModal.activate({
 							params: {
-								title: 'Setting up your Addresses',
-				                message: 'Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', // TODO need text
+								title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
+				                message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', null, 'Info'),
 								addresses: dirtyAddresses,
-								cancel: function() {
-									api.call();
+								password: authentication.getPassword(),
+								close: function(success) {
+									if (success) {
+										api.call();
+									}
+
 									generateModal.deactivate();
 								}
 							}
@@ -252,11 +261,11 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 				if (angular.isDefined(members)) {
 					_.each(members, function(member) {
 						if (member.Action === DELETE) {
-							$rootScope.$broadcast('deleteMember', member.ID);
+							$rootScope.$emit('deleteMember', member.ID);
 						} else if (member.Action === CREATE) {
-							$rootScope.$broadcast('createMember', member.ID, member.Member);
+							$rootScope.$emit('createMember', member.ID, member.Member);
 						} else if (member.Action === UPDATE) {
-							$rootScope.$broadcast('updateMember', member.ID, member.Member);
+							$rootScope.$emit('updateMember', member.ID, member.Member);
 						}
 					});
 				}

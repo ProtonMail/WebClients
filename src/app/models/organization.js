@@ -1,6 +1,6 @@
-angular.module("proton.models.organization", [])
+angular.module("proton.models.organization", ['proton.srp'])
 
-.factory("Organization", function($http, $q, url) {
+.factory("Organization", function($http, $q, url, srp) {
     return {
         // POST
         /**
@@ -31,7 +31,7 @@ angular.module("proton.models.organization", [])
         /**
          *
          */
-        getKey: function() {
+        getKeys: function() {
             return $http.get(url.get() + '/organizations/keys');
         },
         // PUT
@@ -44,8 +44,8 @@ angular.module("proton.models.organization", [])
         /**
          * Update private key for the organization
          */
-        private: function(Obj) {
-            return $http.put(url.get() + '/organizations/keys/private', Obj);
+        private: function(Obj, creds) {
+            return srp.performSRPRequest("PUT", '/organizations/keys/private', Obj, creds);
         },
         /**
          * Update group in a way that requires a payment.

@@ -4,7 +4,7 @@
     class="pm_panel alt pm_form"
     novalidate role="form"
     autocomplete="on"
-    ng-submit="login()"
+    ng-submit="enterLoginPassword()"
     onsubmit="return false"
     action="login">
 
@@ -21,7 +21,7 @@
     <input maxlength="{{ ::maxPW }}" autocapitalize="off" autocorrect="off" type="password" ng-model="password" tabindex="2" id="password" name="password" class="margin" required="" placeholder-translate="Password" />
 
     <div class="clearfix">
-        <a class="pm_button link pull-left" ng-click="getLoginHelp()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
+        <a class="pm_button link pull-left" ng-click="displayHelpModal()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
         <button id="login_btn" type="submit" tabindex="3" class="pm_button primary pull-right" ng-class="{disabled: networkActivity.loading()}" translate-context="Action" translate>Login</button>
     </div>
 

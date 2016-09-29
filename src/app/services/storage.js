@@ -1,6 +1,6 @@
-angular.module("proton.storage", [])
+angular.module("proton.storage", ["proton.webcrypto"])
 
-.factory("secureSessionStorage", function(CONSTANTS) {
+.factory("secureSessionStorage", function(CONSTANTS, webcrypto) {
     // Partially inspired by http://www.thomasfrank.se/sessionvars.html
 
     // This service implements essentially the sessionStorage API. However,
@@ -124,21 +124,12 @@ angular.module("proton.storage", [])
     };
 
     var flush = function() {
-        var crypto;
-        if (window.crypto && window.crypto.getRandomValues) {
-            crypto = window.crypto;
-        } else if (window.msCrypto && window.msCrypto.getRandomValues) {
-            crypto = window.msCrypto;
-        } else {
-            return;
-        }
-
         for (var key in data) {
             if (data.hasOwnProperty(key)) {
                 var item = pmcrypto.binaryStringToArray(data[key]);
                 var paddedLength = Math.ceil(item.length/256)*256;
 
-                var share1 = crypto.getRandomValues(new Uint8Array(paddedLength));
+                var share1 = webcrypto.getRandomValues(new Uint8Array(paddedLength));
                 var share2 = new Uint8Array(share1);
 
                 for (var i = 0; i < item.length; i++) {

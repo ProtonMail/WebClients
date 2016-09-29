@@ -114,9 +114,6 @@
                     cursor: pointer;
                 }
             }
-            &.name {
-                padding-left: 0;
-            }
             span {
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -129,15 +126,6 @@
                         force align with the overflow hidden ellipsis
                     */
                     vertical-align: middle;
-                }
-            }
-            &.email {
-                padding-left: 0;
-            }
-            &.actions {
-                width: 8rem;
-                span {
-                    width: 8rem;
                 }
             }
         }
@@ -160,6 +148,13 @@
             color: $gray;
         }
         tr {
+            &.hasTable{
+                background-color: rgba(0,0,0,0.05);
+                table{
+                    background-color: #FFF
+                }
+            }
+
             &.disabled {
                 td {
                     color: $gray-medium;

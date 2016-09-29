@@ -25,15 +25,9 @@
 	margin-left: -3px;
 }
 .tooltip-inner {
-	padding: 0 15px;
-	line-height: 2rem;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-
+	padding: 10px 15px;
 	max-width: 500px;
-	word-break: break-word;
 	color: $white;
-	text-align: center;
 	background-color: darken($secondary, 10%);
 	border-radius: 2px;
 }

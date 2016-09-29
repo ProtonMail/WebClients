@@ -7,6 +7,14 @@
             </div>
             <div class="modal-body pm_form" ng-hide="ctrl.process === true">
                 <p ng-show="ctrl.message">{{ ctrl.message }}</p>
+                <div class="pm_grid" ng-if="ctrl.askPassword">
+                    <div class="col-1-2">
+                        <label for="password" translate translate-context="Title">Password</label>
+                    </div>
+                    <div class="col-1-2">
+                        <input id="password" type="password" ng-model="ctrl.password" />
+                    </div>
+                </div>
                 <div class="pm_grid">
                     <div class="col-1-2 text-center">
                         <label class="checkbox">

@@ -58,18 +58,25 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
                     message = 'An error has occurred. Please try again.';
                 }
 
+                $log.error(error);
+
                 notifyAlert(message);
+
+                return Promise.reject(error);
             }
         });
 
-        promise.finally(function () {
+        function cleanup() {
             promises = _.without(promises, promise);
 
             // Nothing in the queue hide the loader
             if (!promises.length) {
                 dispatch('close');
             }
-        });
+        }
+
+        // Do not use finally, not part of ES6
+        promise.then(cleanup, cleanup);
 
         return promise;
     };

@@ -1,20 +1,25 @@
-angular.module("proton.controllers.Settings")
+angular.module('proton.controllers.Settings')
 
 .controller('MembersController', function(
     $rootScope,
     $scope,
-    gettextCatalog,
-    confirmModal,
+    $state,
+    $stateParams,
     Address,
-    Member,
-    members,
-    eventManager,
-    Organization,
-    storageModal,
+    authentication,
+    confirmModal,
     domains,
-    userModal,
+    eventManager,
+    gettextCatalog,
+    Member,
+    memberModal,
+    members,
+    networkActivityTracker,
     notify,
-    networkActivityTracker
+    organization,
+    Organization,
+    organizationKeys,
+    storageModal
 ) {
     var MASTER = 2;
     var SUB = 1;
@@ -54,7 +59,7 @@ angular.module("proton.controllers.Settings")
         }
     });
 
-    $scope.$on('deleteMember', function(event, memberId) {
+    $rootScope.$on('deleteMember', function(event, memberId) {
         var index = _.findIndex($scope.members, {ID: memberId});
 
         if (index !== -1) {
@@ -62,7 +67,7 @@ angular.module("proton.controllers.Settings")
         }
     });
 
-    $scope.$on('createMember', function(event, memberId, member) {
+    $rootScope.$on('createMember', function(event, memberId, member) {
         var index = _.findIndex($scope.members, {ID: memberId});
 
         if (index === -1) {
@@ -72,7 +77,7 @@ angular.module("proton.controllers.Settings")
         }
     });
 
-    $scope.$on('updateMember', function(event, memberId, member) {
+    $rootScope.$on('updateMember', function(event, memberId, member) {
         var index = _.findIndex($scope.members, {ID: memberId});
 
         if (index === -1) {
@@ -89,6 +94,28 @@ angular.module("proton.controllers.Settings")
 
         if (domains.data && domains.data.Code === 1000) {
             $scope.domains = domains.data.Domains;
+        }
+
+        if (organization.data && organization.data.Code === 1000) {
+            $scope.organization = organization.data.Organization;
+        }
+
+        if (organizationKeys.data && organizationKeys.data.Code === 1000) {
+            $scope.organizationPublicKey = organizationKeys.data.PublicKey;
+            $scope.organizationPrivateKey = organizationKeys.data.PrivateKey;
+        }
+
+        switch ($stateParams.action) {
+            case 'new':
+                $scope.add();
+                break;
+            case 'edit':
+                var member = _.findWhere($scope.members, {ID: $stateParams.id});
+
+                $scope.edit(member);
+                break;
+            default:
+                break;
         }
     };
 
@@ -126,7 +153,13 @@ angular.module("proton.controllers.Settings")
      * @param {Object} member
      */
     $scope.changeRole = function(member) {
-        Member.role(member.ID, member.Role).then(function(result) { // TODO check request
+        var params = { Role: member.selectRole.value };
+
+        if (member.selectRole.value === MASTER) {
+            params.PrivateKey = $scope.organizationPrivateKey;
+        }
+
+        Member.role(member.ID, params).then(function(result) { // TODO check request
             if(result.data && result.data.Code === 1000) {
                 notify({message: gettextCatalog.getString('Role updated', null), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
@@ -143,12 +176,9 @@ angular.module("proton.controllers.Settings")
      * Save the organization name
      */
     $scope.saveOrganizationName = function() {
-        Organization.update({
-            Organization: {
-                DisplayName: $scope.organization.DisplayName
-            }
-        }).then(function(result) { // TODO omit some parameters
-            if(result.data && result.data.Code === 1000) {
+        Organization.update({ DisplayName: $scope.organization.DisplayName })
+        .then(function(result) {
+            if (result.data && result.data.Code === 1000) {
                 notify({message: gettextCatalog.getString('Organization updated', null), classes: 'notification-success'});
             } else if(result.data && result.data.Error) {
                 notify({message: result.data.Error, classes: 'notification-danger'});
@@ -190,27 +220,125 @@ angular.module("proton.controllers.Settings")
     };
 
     /**
-     * Manage user's passwords
-     * @param {Object} member
+     * Open modal to fix keys
+     * @param {Object} address
      */
-    $scope.managePasswords = function(member) {
-        // TODO
+    $scope.generate = function(address) {
+        var title = gettextCatalog.getString('Generate key pair', null, 'Title');
+        var message = gettextCatalog.getString('Generate key pair', null, 'Info');
+
+        generateModal.activate({
+            params: {
+                title: title,
+                message: message,
+                addresses: [address],
+                password: authentication.getPassword(),
+                close: function(success) {
+                    if (success) {
+                        eventManager.call();
+                    }
+
+                    generateModal.deactivate();
+                }
+            }
+        });
     };
 
     /**
-     * Generate keys
+     * Switch a specific member to private
      * @param {Object} member
      */
-    $scope.generateKeys = function(member) {
-        // TODO
+    $scope.makePrivate = function(member) {
+        var title = gettextCatalog.getString('Make Private', null);
+        var message = gettextCatalog.getString('TODO', null);
+        var success = gettextCatalog.getString('Status Updated', null);
+        var mailboxPassword = authentication.getPassword();
+
+        confirmModal.activate({
+            params: {
+                title: title,
+                message: message,
+                confirm: function() {
+                    networkActivityTracker.track(
+                        Member.private(member.ID, {Password: mailboxPassword})
+                        .then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+                                member.Private = 1;
+                                notify({message: success, classes: 'notification-success'});
+                                confirmModal.deactivate();
+                            } else if (result.data && result.data.Error) {
+                                notify({message: result.data.Error, classes: 'notification-danger'});
+                            }
+                        })
+                    );
+                },
+                cancel: function() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
     };
 
     /**
-     * Open a new tab to access to a specific user's inbox
+     * Allow the current user to access to the mailbox of a specific member
      * @param {Object} member
      */
-    $scope.enterMailbox = function(member) {
-        // TODO
+    $scope.readMail = function(member) {
+        var mailboxPassword = authentication.getPassword();
+
+        Member.authenticate(member.ID, {Password: mailboxPassword})
+        .then(function(result) {
+            if (result.data && result.data.Code === 1000) {
+                var sessionToken = result.data.SessionToken;
+                var url = window.location.href;
+                var arr = url.split('/');
+                var domain = arr[0] + '//' + arr[2];
+                var tab = $state.href('login', {sub: true}, {absolute: true});
+                var send = function(event) {
+                    if (event.origin !== domain) { return; }
+                    if (event.data === 'ready') {
+                        // Send the session token and the organization owner’s mailbox password to the target URI
+                        event.source.postMessage({ SessionToken: sessionToken, MailboxPassword: mailboxPassword }, domain);
+                        window.removeEventListener('message', send);
+                    }
+                };
+                // Listen message from the future child
+                window.addEventListener('message', send, false);
+                // Open new tab
+                window.open(tab, '_blank');
+            } else if (result.data && result.data.Error) {
+                notify({message: result.data.Error, classes: 'notification-danger'});
+            }
+        });
+    };
+
+    /**
+     * Open a modal to create a new member
+     */
+    $scope.add = function() {
+        $scope.edit();
+    };
+
+    /**
+     * Display a modal to edit a member
+     * @param {Object} member
+     */
+    $scope.edit = function(member) {
+        memberModal.activate({
+            params: {
+                member: member,
+                organization: $scope.organization,
+                organizationPublicKey: $scope.organizationPublicKey,
+                domains: $scope.domains,
+                cancel: function(member) {
+                    if (angular.isDefined(member)) {
+                        $scope.members.push(member);
+                    }
+
+                    memberModal.deactivate();
+                }
+            }
+        });
     };
 
     /**
@@ -228,11 +356,11 @@ angular.module("proton.controllers.Settings")
                 message: message,
                 confirm: function() {
                     networkActivityTracker.track(Member.delete(member.ID).then(function(result) {
-                        if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
                             $scope.members.splice(index, 1); // Remove member in the members list
                             confirmModal.deactivate(); // Close the modal
                             notify({message: gettextCatalog.getString('Member removed', null), classes: 'notification-success'}); // Display notification
-                        } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                        } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             notify({message: result.data.Error, classes: 'notification-danger'});
                         } else {
                             notify({message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger'});
@@ -274,25 +402,6 @@ angular.module("proton.controllers.Settings")
                 },
                 cancel: function() {
                     storageModal.deactivate();
-                }
-            }
-        });
-    };
-
-    /**
-     * Provide a modal to create a new user
-     */
-    $scope.openUserModal = function() {
-        userModal.activate({
-            params: {
-                organization: $scope.organization,
-                domains: $scope.domains,
-                submit: function(datas) {
-                    // TODO
-                    userModal.deactivate();
-                },
-                cancel: function() {
-                    userModal.deactivate();
                 }
             }
         });

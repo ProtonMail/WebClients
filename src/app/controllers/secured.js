@@ -34,6 +34,7 @@ angular.module("proton.controllers.Secured", [])
     $scope.user = authentication.user;
     $scope.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
+    $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $scope.organization = organization;
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
@@ -181,8 +182,12 @@ angular.module("proton.controllers.Secured", [])
                 title: 'Setting up your Addresses',
                 message: 'Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', // TODO need text
                 addresses: dirtyAddresses,
-                cancel: function() {
-                    eventManager.call();
+                password: authentication.getPassword(),
+                close: function(success) {
+                    if (success) {
+                        eventManager.call();
+                    }
+
                     generateModal.deactivate();
                 }
             }

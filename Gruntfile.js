@@ -14,7 +14,7 @@ var API_TARGETS = {
     prod: 'https://mail.protonmail.com/api',
     dev: 'https://dev.protonmail.com/api',
     v2: 'https://v2.protonmail.com/api',
-    local: 'https://protonmail.dev',
+    local: 'https://protonmail.dev/api',
     build: '/api'
 };
 
@@ -452,25 +452,33 @@ module.exports = function(grunt) {
                         option = grunt.option('dest');
                     }
 
-                    commands.push('mkdir dist');
+                    commands.push('git fetch origin ' + option + ':' + option);
+                    commands.push('git clone file://$PWD --depth 1 --single-branch --branch ' + option + ' dist');
                     commands.push('cd dist');
-                    commands.push('git init');
-                    commands.push('git remote add origin git@github.com:ProtonMail/Angular.git');
-                    commands.push('git fetch origin');
-                    commands.push('git checkout -b ' + option + ' origin/' + option);
                     commands.push('rm -rf *');
 
                     return commands.join('&&');
                 }
             },
             push: {
-                command: [
-                    "cd dist",
-                    "git ls-files --deleted -z | xargs -0 git rm",
-                    "git add --all",
-                    "git commit -m \"New Release\"",
-                    "git push"
-                ].join("&&")
+                command: function() {
+                    var commands = [];
+                    var option = 'deploy3';
+
+                    if (grunt.option('dest')) {
+                        option = grunt.option('dest');
+                    }
+
+                    commands.push('cd dist');
+                    commands.push('git ls-files --deleted -z | xargs -0 git rm');
+                    commands.push('git add --all');
+                    commands.push('git commit -m "New Release"');
+                    commands.push('git push origin ' + option);
+                    commands.push('cd ..');
+                    commands.push('git push origin ' + option);
+
+                    return commands.join('&&');
+                }
             }
 
         },

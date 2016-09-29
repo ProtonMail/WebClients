@@ -50,7 +50,7 @@
 			                        </tr>
 			                    </tbody>
 		                    </table>
-		                    </div><!--/.pm_table-->
+	                    </div>
 	                    <p>
 		                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create subaccounts which are used by other members of your organization.</span></small>
 	                    </p>
@@ -62,67 +62,79 @@
         <div class="row">
             <section class="setting pm_form full">
                 <legend translate-context="Title" translate>Users</legend>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error animi nobis minus, corporis quaerat! Veritatis, amet recusandae aspernatur dolor, distinctio in similique qui velit laboriosam vitae impedit excepturi ea blanditiis.</p>
                 <p ng-show="checkDomains()">
-                    <button type="button" class="pm_button primary" ng-click="openUserModal()" translate-context="Action" translate>Add user</button>
+                    <button type="button" class="pm_button primary" ng-click="add()" translate-context="Action" translate>Add user</button>
                     <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add custom domain</a>
                 </p>
                 <div class="pm_table">
-	                <table id="userTable">
+	                <table>
 			            <thead>
 			                <tr>
-			                    <th style="width: 12rem" class="username" translate-context="Title" translate-comment="table heading" translate>Username</th>
-			                    <th style="width: 6rem" class="role" translate-context="Title" translate-comment="table heading" translate>Role</th>
-			                    <th style="width: 14rem" class="storage" translate-context="Title" translate-comment="table heading" translate>Storage</th>
-			                    <th style="width: 12rem" class="addresses" translate-context="Title" translate-comment="table heading" translate>Addresses</th>
-			                    <th style="width: 8rem" class="actions" translate-context="Title" translate-comment="table heading" translate>Actions</th>
+			                    <th class="username" translate-context="Title" translate-comment="table heading" translate>Name</th>
+			                    <th class="role" translate-context="Title" translate-comment="table heading" translate>Role</th>
+			                    <th class="storage" translate-context="Title" translate-comment="table heading" translate>Private</th>
+			                    <th class="storage" translate-context="Title" translate-comment="table heading" translate>Space</th>
+			                    <th class="actions" translate-context="Title" translate-comment="table heading" translate>Actions</th>
 			                </tr>
 			            </thead>
 			            <tbody>
-							<tr ng-repeat="member in members">
+							<tr ng-repeat-start="member in members">
 			                    <td class="username">
-			                        <span ng-bind="member.NickName"></span>
+			                        <span ng-bind="member.Name"></span>
 			                    </td>
 			                    <td class="role">
-	                                <span ng-show="member.Role"  translate>Master</span>
+	                                <span ng-show="member.Role === 2" translate>Admin</span>
 			                    	<span class="pm_select" ng-hide="member.Role === 2">
 										<select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
 				                        <i class="fa fa-angle-down"></i>
 				                    </span>
 			                    </td>
+                                <td>
+	                                <span ng-show="member.Private === 1">
+	                                    <i  class="fa fa-check"></i>
+	                                </span>
+			                    </td>
 			                    <td class="storage">
-	                                <a href="#" ng-click="manageStorage(member)" class="fa fa-edit pm_button link pull-right"></a>
 	                                <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used</span>
 	                            </td>
-			                    <td class="addresses">
-	                                <div ng-repeat="address in member.Addresses | orderBy: 'Send'" ng-hide="address.Status === 0">
-	                                    {{ address.Email }} <small ng-show="address.Send === 1"><strong  translate>Default</strong></small>
-	                                    <a ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" pt-tooltip-translate="Unlink address"><i class="fa fa-chain-broken pm_button link"></i></a>
-	                                </div>
-	                                <a ui-sref="secured.domains" class="pm_button" ng-show="checkDomains()" translate-context="Action" translate-comment="add address button on members page" translate>Add address</a>
-	                            </td>
 			                    <td class="actions">
-				                    <div ng-hide="member.Private === 1">
-				                    	<button type="button" class="pm_button link" ng-click="managePasswords(member)" pt-tooltip-translate="Manage passwords" pt-tooltip-translate-context="Action">
-	                                        <i class="fa fa-cog"></i> <span translate-context="Action" translate>Manage passwords</span>
-	                                    </button>
-	                                </div>
-				                    <div ng-hide="member.Private === 1">
-				                    	<button type="button" class="pm_button link" ng-click="generateKeys(member)" pt-tooltip-translate="Generate keys" pt-tooltip-translate-context="Action">
-	                                        <i class="fa fa-key"></i> <span translate-context="Action" translate>Generate keys</span>
-	                                    </button>
-	                                </div>
-				                    <div ng-hide="member.Private === 1">
-				                    	<button type="button" class="pm_button link" ng-click="enterMailbox(member)" pt-tooltip-translate="Enter mailbox">
-	                                        <i class="fa fa-inbox"></i> <span translate-context="Action" translate>Enter mailbox</span>
-	                                    </button>
-	                                </div>
-	                                <div>
-	                                    <button type="button" class="pm_button link" ng-click="remove(member)">
-	                                        <i class="fa fa-trash-o"></i> <span translate-context="Action" translate>Remove user</span>
-	                                    </button>
-	                                </div>
+                                    <button type="button" class="pm_button link" ng-init="member.toggle = false" ng-click="member.toggle = !member.toggle" translate-context="Action" translate>Addresses</button>
+                                    <button type="button" class="pm_button link" ng-click="edit(member)" translate-context="Action" translate>Manage</button>
+                                    <button type="button" class="pm_button link" ng-click="makePrivate(member)" ng-show="member.Private === 0" translate-context="Action" translate>Make Private</button>
+                                    <button type="button" class="pm_button link" ng-click="readMail(member)" ng-show="member.Private === 0" translate-context="Action" translate>Read Mail</button>
+	                                <button type="button" class="pm_button link" ng-click="remove(member)" translate-context="Action" translate>Delete</button>
 								</td>
 			                </tr>
+                            <tr class="hasTable" ng-repeat-end ng-show="member.toggle === true">
+                                <td colspan="5">
+                                    <div class="pm_table">
+                                        <table class="margin-top">
+                                            <thead>
+                                                <tr>
+                                                    <th>Address</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="address in member.Addresses | orderBy: 'Send'" ng-hide="address.Status === 0">
+                                                    <td ng-bind="address.Email"></td>
+                                                    <td>
+                                                        <span ng-show="address.Status === 1 && address.Receive === 1" class="pm_badge success">Enabled</span>
+                                                        <span ng-hide="address.Status === 1 && address.Receive === 1" class="pm_badge success">Disabled</span>
+                                                        <span ng-show="address.Send === 1" class="pm_badge primary">Default</span>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="pm_button link" ng-click="generate(address)" ng-show="address.HasKeys === 0 && address.Status === 1" translate-context="Action" translate>Generate missing keys</button>
+                                                        <button type="button" class="pm_button link" ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" translate-context="Action" translate>Unlink</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
 			            </tbody>
 			        </table>
 		        </div>

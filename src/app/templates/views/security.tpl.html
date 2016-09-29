@@ -1,6 +1,15 @@
 <div id="pm_settings">
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
     <div class="settings">
+        <div class="row" ng-show="twoFactor === 1 || keyPhase > 2">
+            <section class="setting pm_form full">
+                <form method="post">
+                    <legend translate-context="Title" translate-comment="two factor page heading" translate>Two-Factor Authentication</legend>
+                        <button class="pm_button pull-left" ng-show="twoFactor === 1" ng-click="disableTwoFactor()" translate-context="Action" translate>Disable Two-Factor Authentication</button>
+                        <button class="pm_button pull-left" ng-show="twoFactor === 0" ng-click="showSharedSecret()" translate-context="Action" translate>Enable Two-Factor Authentication</button>
+                </form>
+            </section>
+        </div>
         <div class="row">
             <section class="setting pm_form full">
                 <form method="post">
@@ -61,5 +70,6 @@
                         </div>
                 </form>
             </section>
+        </div>
     </div><!--/.settings-->
 </div><!--/#pm_settings-->

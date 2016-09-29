@@ -73,12 +73,10 @@ angular.module("proton.models.payments", [])
          * Get plans available to user
          */
         plans(Currency, Cycle) {
-
             const transformResponse = (data) => {
-
                 const json = angular.fromJson(data);
 
-                if(json && json.Code === 1000) {
+                if (json && json.Code === 1000) {
                     // Add free plan
                     json.Plans.unshift({
                         Type: 1,
@@ -90,11 +88,15 @@ angular.module("proton.models.payments", [])
                         MaxDomains: 0,
                         MaxAddresses: 1,
                         MaxSpace: 500 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE,
-                        MaxMembers: 0,
+                        MaxMembers: 1,
                         TwoFactor: 0
                     });
 
-                    _.each(json.Plans, function(plan) {
+                    if (CONSTANTS.KEY_PHASE <= 3) {
+                        json.Plans = json.Plans.filter(({Name}) => Name !== 'business');
+                    }
+
+                    json.Plans.forEach((plan) => {
                         switch (plan.Name) {
                             case 'free':
                                 plan.editable = false;
@@ -131,7 +133,6 @@ angular.module("proton.models.payments", [])
                 }
 
                 return json;
-
             };
 
             return $http
