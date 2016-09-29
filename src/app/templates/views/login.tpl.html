@@ -1,4 +1,6 @@
-<login-form></login-form>
+<login-form ng-show="twoFactor === 0"></login-form>
+<login-two-factor-form ng-show="twoFactor === 1"></login-two-factor-form>
+
 <div class="clearfix text-center">
     <a class="pm_button link" style="color: #fff; text-transform: none;" href="https://v2.protonmail.com/login" target="_self" translate-context="Action" translate-comment="link for v2" translate>Having trouble? Use the old version (v2)</a>
 </div>

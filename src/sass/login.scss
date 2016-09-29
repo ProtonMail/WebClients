@@ -25,7 +25,9 @@ body#login {
 body#login-unlock,
 body#login,
 body#eo-unlock {
-	#pm_login {
+	#pm_login,
+	#pm_loginTwoFactor,
+	{
 		img.logo {
 			margin-bottom: 2rem;
 		}
@@ -39,8 +41,8 @@ body#eo-unlock {
 		padding: 2rem 2rem 1rem 2rem;
 	}
 }
-
 #pm_login,
+#pm_loginTwoFactor,
 body#reset {
 	text-transform: uppercase;
 	#signUpProcess li {

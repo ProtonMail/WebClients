@@ -62,24 +62,19 @@
 
             <section class="pm_form col-1-2">
                 <legend  translate translate-comment="notifications heading on account page">Notifications</legend>
-                <div class="clearfix">
-                    <div class="col-3-8">
-                        <label for="noticeePassword" translate-context="Title" translate translate-comment="form label for entering current login password">Current login password</label>
+                <form method="post" ng-submit="saveNotification(noticeForm)" name="noticeForm" novalidate>
+                    <div class="clearfix">
+                        <div class="col-3-8">
+                            <label for="notificationEmail" translate-context="Title" translate translate-comment="form label for setting recovery email">Recovery email</label>
+                        </div>
+                        <div class="col-5-8">
+                            <input class="margin" type="email" autocomplete="off" id="notificationEmail" name="notificationEmail" placeholder-translate="Notification email" ng-model="notificationEmail" />
+                            <p class="help-block"><small><i class="fa fa-info-circle"></i> <span translate-context="Info" translate>Also used to reset a forgotten password.</span></small></p>
+                            <button class="pm_button primary" ng-disabled="noticeForm.$valid === false || networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
+                        </div>
                     </div>
-                    <div class="col-5-8">
-                        <input type="password" autocomplete="off" placeholder-translate="Current login password" required ng-model="noticeePassword" id="noticeePassword" />
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <div class="col-3-8">
-                        <label for="notificationEmail" translate-context="Title" translate translate-comment="form label for setting recovery email">Recovery email</label>
-                    </div>
-                    <div class="col-5-8">
-                        <input class="margin" type="email" autocomplete="off" id="notificationEmail" name="notificationEmail" placeholder-translate="Notification email" ng-model="notificationEmail" />
-                        <p class="help-block"><small><i class="fa fa-info-circle"></i> <span translate-context="Info" translate>Also used to reset a forgotten password.</span></small></p>
-                        <button class="pm_button primary" type="button" ng-click="saveNotification()" translate translate-context="Action" translate-comment="save button for saving notification email">Save</button>
-                    </div>
-                </div>
+                </form>
+
                 <div class="clearfix">&nbsp;</div>
                 <div class="clearfix">
                     <div class="col-3-8">
@@ -121,26 +116,15 @@
 
         <div class="row pm_grid">
 
-            <section class="pm_form col-1-2">
+            <section class="pm_form col-1-2" ng-show="passwordMode === 2 || keyPhase < 2">
                 <legend translate-context="Title" translate translate-comment="change login password heading">Login password</legend>
                 <form method="post" ng-submit="saveLoginPassword(loginForm)" name="loginForm" novalidate>
                     <div class="clearfix">
                         <div class="col-3-8">
-                            <label for="oldLoginPassword" translate-context="Title" translate translate-comment="current login password for heading for changing login password">Current password</label>
+                            <label for="newLoginPassword" translate-context="Title" translate translate-comment="form heading for new login password">New login password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" id="oldLoginPassword" name="oldLoginPassword" ng-model="oldLoginPassword" placeholder-translate="Current password" required />
-                            <div ng-messages="loginForm.oldLoginPassword.$error" class="text-red" ng-if="loginForm.oldLoginPassword.$touched">
-                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix">
-                        <div class="col-3-8">
-                            <label for="newLoginPassword" translate-context="Title" translate translate-comment="form heading for new login password">New password</label>
-                        </div>
-                        <div class="col-5-8">
-                            <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder-translate="New password" required />
+                            <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder-translate="New login password" required>
                             <div ng-messages="loginForm.newLoginPassword.$error" class="text-red" ng-if="loginForm.newLoginPassword.$touched">
                                 <p ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
@@ -148,12 +132,13 @@
                     </div>
                     <div class="clearfix">
                         <div class="col-3-8">
-                            <label translate-context="Title" translate translate-comment="form label / heading for confirming new login password">Confirm new password</label>
+                            <label translate-context="Title" translate translate-comment="form label / heading for confirming new login password">Confirm new login password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder-translate="Confirm new password" required class="margin" />
+                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder-translate="Confirm new login password" required class="margin" compare-to="newLoginPassword">
                             <div ng-messages="loginForm.confirmLoginPassword.$error" class="text-red" ng-if="loginForm.confirmLoginPassword.$touched">
                                 <p ng-message="required" translate-context="Error" translate>Field required</p>
+                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
                             </div>
                         </div>
                     </div>
@@ -163,42 +148,28 @@
                             <button class="pm_button primary" ng-disabled="loginForm.$valid === false || networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
                         </div>
                     </div>
+                    <div class="clearfix" ng-if="keyPhase > 2">
+                        <div class="col-3-8">&nbsp;</div>
+                        <div class="col-5-8">
+                            <p>
+                                <a href="#" ng-click="setPasswordMode(1)" class="pm_button link pull-left" translate-context="Action" translate-comment="switch to one-password mode" translate>Switch to one-password mode</a>
+                            </p>
+                        </div>
+                    </div>
                 </form>
             </section>
 
-            <section class="pm_form col-1-2">
+            <section class="pm_form col-1-2" ng-show="passwordMode === 2 || keyPhase < 2">
                 <legend translate-context="Title" translate translate-comment="form heading for changing mailbox password">Mailbox password</legend>
                 <form method="post" ng-submit="saveMailboxPassword(mailboxForm)" name="mailboxForm" novalidate>
-                    <div class="clearfix">
-                        <div class="col-3-8">
-                            <label for="currentLoginPassword" translate-context="Title" translate translate-comment="form heading for current login password">Current login password</label>
-                        </div>
-                        <div class="col-5-8">
-                            <input type="password" id="currentLoginPassword" name="currentLoginPassword" ng-model="currentLoginPassword" placeholder-translate="Current login password" required="" />
-                            <div ng-messages="mailboxForm.currentLoginPassword.$error" class="text-red" ng-if="mailboxForm.currentLoginPassword.$touched">
-                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix">
-                        <div class="col-3-8">
-                            <label for="oldMailboxPassword" translate-context="Title" translate translate-comment="form heading for current mailbox password">Current mailbox password</label>
-                        </div>
-                        <div class="col-5-8">
-                            <input type="password" id="oldMailboxPassword" name="oldMailboxPassword" ng-model="oldMailboxPassword" placeholder-translate="Current mailbox password" required="" />
-                            <div ng-messages="mailboxForm.oldMailboxPassword.$error" class="text-red" ng-if="mailboxForm.oldMailboxPassword.$touched">
-                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="clearfix">
                         <div class="col-3-8">
                             <label for="newMailboxPassword" translate-context="Title" translate>New mailbox password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder-translate="New mailbox password" required="" />
+                            <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder-translate="New mailbox password" required>
                             <div ng-messages="mailboxForm.newMailboxPassword.$error" class="text-red" ng-if="mailboxForm.newMailboxPassword.$touched">
-                                <p ng-message="required"  Error>Field required</p>
+                                <p ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
                         </div>
                     </div>
@@ -207,9 +178,10 @@
                             <label for="confirmMailboxPassword" Title translate>Confirm new mailbox Password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder-translate="Confirm new mailbox Password" class="margin" required="" />
+                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder-translate="Confirm new mailbox Password" class="margin" required compare-to="newMailboxPassword">
                             <div ng-messages="mailboxForm.confirmMailboxPassword.$error" class="text-red" ng-if="mailboxForm.confirmMailboxPassword.$touched">
-                                <p ng-message="required"  Error>Field required</p>
+                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
                             </div>
                         </div>
                     </div>
@@ -224,6 +196,57 @@
                         <div class="col-5-8">
                             <p>
                                 <a href="https://protonmail.com/support/knowledge-base/resetting-mailbox-password/" target="_blank pull-left" class="pm_button link pull-left" translate-context="Action" translate-comment="link to learn more about changing your mailbox password" translate>How does this work?</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="pm_form col-1-2" ng-show="passwordMode === 1 && keyPhase > 1">
+                <legend translate-context="Title" translate translate-comment="form heading for changing single password">Password</legend>
+                <form method="post" ng-submit="savePassword(passwordForm)" name="passwordForm" novalidate>
+                    <div class="clearfix">
+                        <div class="col-3-8">
+                            <label for="newPassword" translate-context="Title" translate>New password</label>
+                        </div>
+                        <div class="col-5-8">
+                            <input type="password" id="newPassword" name="newPassword" ng-model="newPassword" placeholder-translate="New password" required>
+                            <div ng-messages="passwordForm.newPassword.$error" class="text-red" ng-if="passwordForm.newPassword.$touched">
+                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-3-8">
+                            <label for="confirmPassword" Title translate>Confirm new password</label>
+                        </div>
+                        <div class="col-5-8">
+                            <input type="password" id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" placeholder-translate="Confirm new password" class="margin" required compare-to="newPassword">
+                            <div ng-messages="passwordForm.confirmPassword.$error" class="text-red" ng-if="passwordForm.confirmPassword.$touched">
+                                <p ng-message="required"  translate-context="Error" translate>Field required</p>
+                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-3-8">&nbsp;</div>
+                        <div class="col-5-8">
+                            <button class="pm_button primary" ng-disabled="passwordForm.$valid === false || networkActivity.loading()" type="submit" translate translate-context="Action">Save</button>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-3-8">&nbsp;</div>
+                        <div class="col-5-8">
+                            <p>
+                                <a href="#" ng-click="setPasswordMode(2)" class="pm_button link pull-left" translate-context="Action" translate-comment="switch to two-password mode" translate>Switch to two-password mode</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-3-8">&nbsp;</div>
+                        <div class="col-5-8">
+                            <p>
+                                <a href="https://protonmail.com/support/knowledge-base/single-password/" target="_blank pull-left" class="pm_button link pull-left" translate-context="Action" translate-comment="link to learn more about single password mode" translate>How does this work?</a>
                             </p>
                         </div>
                     </div>

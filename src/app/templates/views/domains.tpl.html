@@ -125,7 +125,7 @@
                 <legend>
                     <span class="pull-right small">
                         {{ organization.UsedAddresses }} / {{ organization.MaxAddresses }}
-                        <span translate translate-context="Title">Addresses used</span>
+                        <span translate translate-context="Title">Addresses used.</span>
                         <a ui-sref="secured.dashboard" translate-comment="link to dashboard" translate-context="Action" translate>Upgrade your plan</a>
                     </span>
                     <span translate translate-context="Title">Custom domain addresses</span>
@@ -143,14 +143,18 @@
                         <table class="pm_form bordered" ng-show="domain.Addresses.length > 0">
                             <thead>
                                 <tr>
-                                    <th style="width: 10rem" translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Address</th>
-                                    <th style="width: 10rem" translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Status</th>
-                                    <th style="width: 10rem" class="text-right actions" style="width: 10rem" translate-context="Title" translate>Actions</th>
+                                    <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Name</th>
+                                    <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Address</th>
+                                    <th translate-context="Title" translate-comment="table heading for the domains page table listing of addresses" translate>Status</th>
+                                    <th class="text-right actions" translate-context="Title" translate>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="address in domain.Addresses | orderBy: 'Send'" ng-class="{'disabled': address.Status === 0}">
-                                    <td>{{ address.Email }}</td>
+                                    <td>
+                                        <a ui-sref="secured.members({action: 'edit', id: address.MemberID})" ng-bind="member(address.MemberID).Name"></a>
+                                    </td>
+                                    <td ng-bind="address.Email"></td>
                                     <td>
                                         <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1"  translate>Enabled</span>
                                         <span class="pm_badge error" ng-show="address.Status === 0"  translate>Disabled</span>
@@ -168,7 +172,7 @@
                     <p>
                         <strong  translate>No custom domain found</strong>
                     </p>
-                    <p>Please add first a custom domain to configure addresses.</p>
+                    <p translate>Please add a custom domain before configuring addresses.</p>
                 </div>
             </section>
         </div>

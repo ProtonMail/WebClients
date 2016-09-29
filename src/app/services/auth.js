@@ -1,7 +1,9 @@
 angular.module("proton.authentication", [
     "proton.pmcw",
     "proton.models",
-    "proton.storage"
+    "proton.storage",
+    "proton.passwords",
+    "proton.srp"
 ])
 
 .factory('authentication', function(
@@ -16,14 +18,19 @@ angular.module("proton.authentication", [
     CONFIG,
     CONSTANTS,
     Contact,
+    Domain,
     errorReporter,
+    generateModal,
+    gettextCatalog,
     Label,
     networkActivityTracker,
     notify,
     pmcw,
+    secureSessionStorage,
     url,
     User,
-    secureSessionStorage
+    passwords,
+    srp
 ) {
     var keys = {}; // Store decrypted keys
     var auth = {
@@ -48,127 +55,186 @@ angular.module("proton.authentication", [
             }
         },
 
-        fetchUserInfo: function(uid) {
-            var deferred = $q.defer();
+        fetchUserInfo: function() {
 
-            User.get().then(function(result) {
+            return networkActivityTracker.track(User.get()
+            .then((result) => {
                 if (result.data && result.data.Code === 1000) {
-                    var user = result.data.User;
-
-                    if (!user.EncPrivateKey) { // Need to check something else, this is going away
-                        deferred.reject({message: 'Error with EncPrivateKey'});
-                        api.logout(true);
-                    } else {
-                        // Hacky fix for missing organizations
-                        var generateOrganizationKey = $q.resolve();
-
-                        if (user.Role === 0 && user.Subscribed === 1) {
-                            var mailboxPassword = api.getPassword();
-
-                            generateOrganizationKey = pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
-                            .then(function(response) {
-                                var privateKey = response.privateKeyArmored;
-
-                                return {
-                                    DisplayName: 'My Organization',
-                                    PrivateKey: privateKey,
-                                    BackupPrivateKey: privateKey
-                                };
-                            })
-                            .then(function(params) {
-                                return $http.post(url.get() + "/organizations", params);
-                            });
-                        }
-
-                        $q.all([
-                            Contact.query(),
-                            Label.query(),
-                            generateOrganizationKey
-                        ]).then(
-                            function(result) {
-                                if(angular.isDefined(result[0].data) && result[0].data.Code === 1000 && angular.isDefined(result[1].data) && result[1].data.Code === 1000) {
-                                    var promises = [];
-                                    var mailboxPassword = api.getPassword();
-                                    var keyInfo = function(key) {
-                                        return pmcw.keyInfo(key.PrivateKey).then(function(info) {
-                                            key.created = info.created; // Creation date
-                                            key.bitSize = info.bitSize; // We don't use this data currently
-                                            key.fingerprint = info.fingerprint; // Fingerprint
-                                        });
-                                    };
-
-                                    // Prevent XSS...
-                                    user.Contacts = _
-                                        .map(result[0].data.Contacts, (about) => {
-                                            return angular
-                                                .extend({}, about, {
-                                                    Email: DOMPurify.sanitize(about.Email || ''),
-                                                    Name: DOMPurify.sanitize(about.Name || '')
-                                                });
-                                        });
-                                    user.Labels = result[1].data.Labels;
-
-                                    // All private keys are decrypted with the mailbox password and stored in a `keys` array
-                                    _.each(user.Addresses, function(address) {
-                						_.each(address.Keys, function(key, index) {
-                							promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then(function(pkg) { // Decrypt private key with the mailbox password
-                								key.decrypted = true; // We mark this key as decrypted
-                								api.storeKey(address.ID, key.ID, pkg); // We store the package to the current service
-                                                keyInfo(key);
-                							}, function(error) {
-                								key.decrypted = false; // This key is not decrypted
-                                                keyInfo(key);
-                								// If the primary (first) key for address does not decrypt, display error.
-                								if(index === 0) {
-                									address.disabled = true; // This address cannot be used
-                									notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
-                								}
-                							}));
-                						});
-                					});
-
-                                    $q.all(promises).then(function() {
-                                        deferred.resolve(user);
-                                    }, function() {
-                                        deferred.resolve(user);
-                                    });
-                                } else if(angular.isDefined(result[0].data) && result[0].data.Error) {
-                                    deferred.reject({message: result[0].data.Error});
-                                    api.logout(true);
-                                } else if(angular.isDefined(result[1].data) && result[1].data.Error) {
-                                    deferred.reject({message: result[1].data.Error});
-                                    api.logout(true);
-                                } else {
-                                    deferred.reject({message: 'Error during label / contact request'});
-                                    api.logout(true);
-                                }
-                            },
-                            function() {
-                                deferred.reject({message: 'Sorry, but we were unable to fully log you in.'});
-                                api.logout(true);
-                            }
-                        );
-                    }
+                    return result.data.User;
                 } else if(angular.isDefined(result.data) && result.data.Error) {
-                    deferred.reject({message: result.data.Error});
-                    api.logout(true);
+                    return Promise.reject({message: result.data.Error});
                 } else {
-                    deferred.reject({message: 'Error during user request'});
-                    api.logout(true);
+                    return Promise.reject({message: 'Error during user request'});
                 }
-            },
-            function(err) {
-                deferred.reject({message: 'Sorry, but we were unable to log you in.'});
+            })
+            .then((user) => {
+
+                // Redirect to setup if necessary
+                if (user.Keys.length === 0) {
+                    $state.go('login.setup');
+                    return Promise.resolve(user);
+                }
+
+                var subuser = angular.isDefined(user.OrganizationPrivateKey);
+                // Required for subuser
+                var decryptOrganization = function() {
+                    if (subuser === true) {
+                        return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
+                    } else {
+                        return Promise.resolve();
+                    }
+                };
+
+                // Hacky fix for missing organizations
+                var fixOrganization = function() {
+                    if (user.Role === 0 && user.Subscribed === 1) {
+                        return pmcw.generateKeysRSA('pm_org_admin', api.getPassword())
+                        .then(function(response) {
+                            var privateKey = response.privateKeyArmored;
+
+                            return {
+                                DisplayName: 'My Organization',
+                                PrivateKey: privateKey,
+                                BackupPrivateKey: privateKey
+                            };
+                        })
+                        .then(function(params) {
+                            return $http.post(url.get() + '/organizations', params);
+                        });
+                    } else {
+                        return Promise.resolve();
+                    }
+                };
+
+                return $q.all({
+                    contacts: Contact.query(),
+                    labels: Label.query(),
+                    fix: fixOrganization(),
+                    organizationKey: decryptOrganization()
+                })
+                .then(({contacts, labels, organizationKey}) => {
+                    if (contacts.data && contacts.data.Code === 1000 && labels.data && labels.data.Code === 1000) {
+
+                        user.Contacts = contacts.data.Contacts;
+                        user.Labels = labels.data.Labels;
+
+                        return { user, organizationKey };
+                    } else if (contacts.data && contacts.data.Error) {
+                        return Promise.reject({message: contacts.data.Error});
+                    } else if (labels.data && labels.data.Error) {
+                        return Promise.reject({message: labels.data.Error});
+                    } else {
+                        return Promise.reject({message: 'Error during label / contact request'});
+                    }
+                })
+                .then(({ user, organizationKey }) => {
+                    var promises = [];
+                    var dirtyAddresses = [];
+                    var privateUser = user.Private === 1;
+                    var keyInfo = function(key) {
+                        return pmcw.keyInfo(key.PrivateKey).then(function(info) {
+                            key.created = info.created; // Creation date
+                            key.bitSize = info.bitSize; // We don't use this data currently
+                            key.fingerprint = info.fingerprint; // Fingerprint
+                        });
+                    };
+
+                    var decryptToken = function(token) {
+                        return pmcw.decryptMessage(token, result.organizationKey);
+                    };
+
+                    var decryptKey = ({key, password, address, index}) => {
+                        return pmcw.decryptPrivateKey(key.PrivateKey, password).then(function(pkg) { // Decrypt private key with the password
+                            key.decrypted = true; // We mark this key as decrypted
+                            api.storeKey(address.ID, key.ID, pkg); // We store the package to the current service
+                            return keyInfo(key);
+                        }, function(error) {
+                            key.decrypted = false; // This key is not decrypted
+                            // If the primary (first) key for address does not decrypt, display error.
+                            if (index === 0) {
+                                address.disabled = true; // This address cannot be used
+                                notify({message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger'});
+                            }
+                            return keyInfo(key);
+                        });
+                    };
+
+                    var generateKeys = function() {
+                        var deferred = $q.defer();
+
+                        generateModal.activate({
+                            params: {
+                                title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
+                                message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', null, 'Info'),
+                                password: api.getPassword(),
+                                addresses: dirtyAddresses,
+                                close: function(success, addresses) {
+                                    if (success) {
+                                        // FIXME this doesn't decrypt or store keys!!!
+                                        // Can't call the event service because it might not be started
+                                        // Stupid fix
+                                        location.reload();
+                                        user.Addresses.forEach(function(address) {
+                                            var found = _.findWhere(addresses, {ID: address.ID});
+
+                                            if (angular.isDefined(found)) {
+                                                address = found;
+                                            }
+                                        });
+                                        deferred.resolve();
+                                    } else {
+                                        deferred.reject();
+                                    }
+
+                                    generateModal.deactivate();
+
+                                }
+                            }
+                        });
+
+                        return deferred.promise;
+                    };
+
+                    // All private keys are decrypted and stored in a `keys` array
+                    _.each(user.Addresses, function(address) {
+                        if (address.Keys.length > 0) {
+                            let index = 0;
+                            _.each(address.Keys, function(key) {
+                                if (subuser === true) {
+                                    promises.push(decryptToken(key.Token, result.organizationKey).then(function(token) { return decryptKey(key, token); }));
+                                } else {
+                                    promises.push(decryptKey({key, password: api.getPassword(), address, index}));
+                                }
+                                index++;
+                            });
+                        } else if (address.Status === 1 && privateUser === true) {
+                            dirtyAddresses.push(address);
+                        }
+                    });
+
+                    if (dirtyAddresses.length > 0) {
+                        promises.push(generateKeys());
+                    }
+
+                    return $q.all(promises).then(function() {
+                        return user;
+                    }, function() {
+                        return user;
+                    });
+                });
+            })
+            .catch((err) => {
                 api.logout(true);
-            });
+                return Promise.reject(err);
+            }));
+        }
+    };
 
-            networkActivityTracker.track(deferred.promise);
-
-            return deferred.promise;
-        },
-
+    // RUN-TIME PUBLIC FUNCTIONS
+    var api = {
+        user: {},
         saveAuthData: function(data) {
-            if ( data.SessionToken ) {
+            if (data.SessionToken) {
                 secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ":SessionToken", pmcw.encode_base64(data.SessionToken));
                 auth.data = data;
             } else {
@@ -179,12 +245,7 @@ angular.module("proton.authentication", [
             }
 
             auth.setAuthHeaders();
-        }
-    };
-
-    // RUN-TIME PUBLIC FUNCTIONS
-    var api = {
-        user: {},
+        },
         detectAuthenticationState: function() {
             var session = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ":SessionToken");
 
@@ -207,7 +268,8 @@ angular.module("proton.authentication", [
          * Return the mailbox password stored in the session storage
          */
         getPassword: function() {
-            return pmcw.decode_utf8_base64(secureSessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY));
+            const value = secureSessionStorage.getItem(CONSTANTS.MAILBOX_PASSWORD_KEY);
+            return value ? pmcw.decode_utf8_base64(value) : undefined;
         },
 
         randomString: function(length) {
@@ -328,7 +390,7 @@ angular.module("proton.authentication", [
                             SessionToken: result.data.SessionToken
                         };
 
-                        auth.saveAuthData( data );
+                        this.saveAuthData( data );
 
                         $rootScope.isLocked = false;
                         $rootScope.doRefresh = true;
@@ -337,7 +399,7 @@ angular.module("proton.authentication", [
                         deferred.reject({message: result.data.Error});
                         $log.error('setAuthCookie1', result);
                     }
-                },
+                }.bind(this),
                 function(error) {
                     $log.error('setAuthCookie2', error);
 
@@ -352,7 +414,7 @@ angular.module("proton.authentication", [
             return deferred.promise;
         },
 
-        loginWithCredentials: function(creds) {
+        loginWithCredentials: function(creds, initialInfoResponse) {
             var deferred = $q.defer();
 
             if (!creds.Username || !creds.Password) {
@@ -361,28 +423,34 @@ angular.module("proton.authentication", [
                 });
             } else {
                 delete $http.defaults.headers.common.Accept;
-                $http.post(url.get() + "/auth",
-                    _.extend(_.pick(creds, "Username", "Password"), {
-                        ResponseType: "token",
+                srp.performSRPRequest(
+                    "POST",
+                    "/auth",
+                    {
+                        Username: creds.Username,
                         ClientID: CONFIG.clientID,
-                        ClientSecret: CONFIG.clientSecret,
-                        GrantType: "password",
-                        RedirectURI: "https://protonmail.com",
-                        State: this.randomString(24)
-                    })
-                ).then(
-                    function(resp) {
-                        deferred.resolve(resp);
-                        // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
+                        ClientSecret: CONFIG.clientSecret
                     },
-                    function(error) {
-                        // TODO: This is almost certainly broken, not sure it needs to work though?
-                        console.log(error);
-                        deferred.reject({
-                            message: error.error_description
+                    creds
+                ).then(function(resp) {
+                    deferred.resolve(resp);
+                    // Upgrade users to the newest auth version
+                    if (resp.authVersion < passwords.currentAuthVersion) {
+                        srp.randomVerifier(creds.Password).then(function(pass_params) {
+                            return srp.performSRPRequest("PUT", '/settings/password/upgrade', pass_params, creds, undefined, {
+                                Authorization: "Bearer " + resp.data.ResetToken,
+                                "x-pm-uid": resp.data.Uid
+                            });
                         });
                     }
-                );
+                    // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
+                }, function(error) {
+                    // TODO: This is almost certainly broken, not sure it needs to work though?
+                    console.log(error);
+                    deferred.reject({
+                        message: error.error_description
+                    });
+                });
             }
 
             return deferred.promise;
@@ -437,31 +505,6 @@ angular.module("proton.authentication", [
             }
         },
 
-        // refreshIfNecessary: function(force) {
-        //     if ((auth.data && auth.data.shouldRefresh && this.refreshTokenIsDefined()) || !!force) {
-        //         $http.post(
-        //             url.get() + "/auth/refresh",
-        //             _.extend(_.pick(auth.data, "RefreshToken"), {
-        //                 ClientID: CONFIG.clientID,
-        //                 ClientSecret: CONFIG.clientSecret,
-        //                 GrantType: "refresh_token",
-        //                 State: this.randomString(24),
-        //                 ResponseType: "token",
-        //             })
-        //         ).then(
-        //             function(resp) {
-        //                 auth.saveAuthData(_.pick(resp.data, "AccessToken", "RefreshToken", "Uid", "ExpiresIn"));
-        //             },
-        //             function(resp) {
-        //                 if(resp.error) {
-        //                     this.logout();
-        //                 }
-        //                 errorReporter.catcher("Something went wrong with authentication");
-        //             }
-        //         );
-        //     }
-        // },
-
         /**
          * Removes all connection data
          * @param {Boolean} redirect - Redirect at the end the user to the login page
@@ -514,14 +557,16 @@ angular.module("proton.authentication", [
 
         // Returns an async promise that will be successful only if the mailbox password
         // proves correct (we test this by decrypting a small blob)
-        unlockWithPassword(pwd, { PrivateKey = '', AccessToken = '', RefreshToken = '', Uid = '', ExpiresIn = 0, EventID = '' } = {}) {
+        unlockWithPassword: function(pwd, { PrivateKey = '', AccessToken = '', RefreshToken = '', Uid = '', ExpiresIn = 0, EventID = '', KeySalt = '' } = {}) {
             var req = $q.defer();
             var self = this;
             if (pwd) {
-                pmcw.checkMailboxPassword(PrivateKey, pwd, AccessToken)
+
+                passwords.computeKeyPassword(pwd, KeySalt)
+                .then((pwd) => pmcw.checkMailboxPassword(PrivateKey, pwd, AccessToken))
                 .then(
-                    function(token) {
-                        self.savePassword(pwd);
+                    function({ token, password }) {
+                        self.savePassword(password);
                         self.receivedCredentials({
                             AccessToken: token,
                             RefreshToken, Uid, ExpiresIn, EventID
@@ -548,12 +593,13 @@ angular.module("proton.authentication", [
         receivedCredentials: function(data) {
             const eventManager = $injector.get('eventManager');
 
-            auth.saveAuthData(data);
+            this.saveAuthData(data);
             eventManager.setEventID(data.EventID);
         },
 
-        fetchUserInfo: function(uid) {
-            var promise = auth.fetchUserInfo(uid);
+        fetchUserInfo: function() {
+
+            var promise = auth.fetchUserInfo();
 
             return promise.then(
                 function(user) {
@@ -741,7 +787,7 @@ angular.module("proton.authentication", [
         eventManager.stop();
         cache.reset();
         cacheCounters.reset();
-        delete $rootScope.tempUser;
-        $state.go('login');
+        // Prevent autologin if we try to logout from the state: unlock
+        $state.go('login', {creds: undefined});
     };
 });

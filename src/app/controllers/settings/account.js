@@ -9,21 +9,24 @@ angular.module('proton.controllers.Settings')
     gettextCatalog,
     $q,
     authentication,
+    changeMailboxPassword,
     Bug,
     confirmModal,
     deleteAccountModal,
+    desktopNotifications,
     eventManager,
     hotkeys,
     hotkeyModal,
     Key,
+    loginPasswordModal,
     networkActivityTracker,
     notify,
+    passwords,
     pmcw,
     Setting,
     Organization,
     tools,
-    User,
-    desktopNotifications
+    User
 ) {
     const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
@@ -37,6 +40,25 @@ angular.module('proton.controllers.Settings')
     $scope.embedded = authentication.user.ShowEmbedded;
     $scope.hotkeys = authentication.user.Hotkeys;
     $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
+    $scope.passwordMode = authentication.user.PasswordMode;
+    $scope.keyPhase = CONSTANTS.KEY_PHASE;
+    $scope.twoFactor = authentication.user.TwoFactor;
+
+    function passwordModal(submit) {
+        loginPasswordModal.activate({
+            params: {
+                submit: submit,
+                cancel: function() {
+                    loginPasswordModal.deactivate();
+                },
+                hasTwoFactor: authentication.user.TwoFactor
+            }
+        });
+    }
+
+    $scope.setPasswordMode = function(mode = 0) {
+        $scope.passwordMode = mode;
+    };
 
     // Listeners
     unsubscribe.push($rootScope.$on('changePMSignature', changePMSignature));
@@ -61,24 +83,34 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.saveNotification = function() {
-        if (angular.isUndefined($scope.noticeePassword)) {
-            notify({classes: 'notification-danger', message: gettextCatalog.getString('Enter your current login password', null, 'Error')});
-            angular.element('#noticeePassword').focus();
-        } else {
+    $scope.saveNotification = function(form) {
+
+        function submit(currentPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
+
+
             networkActivityTracker.track(
-                Setting.noticeEmail({Password: $scope.noticeePassword, NotificationEmail: $scope.notificationEmail})
-                .then(function(result) {
-                    if (result.data && result.data.Code === 1000) {
-                        $scope.noticeePassword = '';
-                        authentication.user.NotificationEmail = $scope.notificationEmail;
-                        notify({message: gettextCatalog.getString('Notification email saved', null), classes: 'notification-success'});
-                    } else if (result.data && result.data.Error) {
-                        notify({message: result.data.Error, classes: 'notification-danger'});
+                Setting.noticeEmail(
+                    {
+                        NotificationEmail: $scope.notificationEmail
+                    },
+                    {
+                        Password: currentPassword,
+                        TwoFactorCode: twoFactorCode
                     }
+                )
+                .then(function(result) {
+                    authentication.user.NotificationEmail = $scope.notificationEmail;
+                    form.$setUntouched();
+                    notify({message: gettextCatalog.getString('Notification email saved', null), classes: 'notification-success'});
                 })
-            );
+            )
+            .catch((error) => {
+                // Nothing
+            });
         }
+
+        passwordModal(submit);
     };
 
     $scope.saveDailyNotifications = function(form) {
@@ -98,162 +130,89 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveLoginPassword = function(form) {
-        var oldLoginPwd = $scope.oldLoginPassword;
-        var newLoginPwd = $scope.newLoginPassword;
-        var confLoginPwd = $scope.confirmLoginPassword;
+        const newLoginPwd = $scope.newLoginPassword;
+        const confLoginPwd = $scope.confirmLoginPassword;
 
-        if (newLoginPwd !== confLoginPwd) {
-            notify({message: gettextCatalog.getString('Passwords don\'t match', null, 'Error'), classes: 'notification-danger'});
-            return false;
-        }
+        function submit(currentPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
 
-        networkActivityTracker.track(
-            Setting.password({
-                Password: oldLoginPwd,
-                OldHashedPassword: pmcw.getHashedPassword(oldLoginPwd),
-                NewPassword: newLoginPwd
-            }).then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Login password updated', null), classes: 'notification-success'});
-                    $scope.oldLoginPassword = '';
+            networkActivityTracker.track(
+                Setting.password({
+                    Password: currentPassword,
+                    TwoFactorCode: twoFactorCode
+                },
+                newLoginPwd).then(function(result) {
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
                     form.$setUntouched();
-                } else if(result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
-                } else {
-                    notify({message: gettextCatalog.getString('Invalid login password', null, 'Error'), classes: 'notification-danger'});
-                }
-            }, function(error) {
-                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
-                $log.error(error);
-            })
-        );
+                    authentication.user.PasswordMode = 1;
+                    notify({message: gettextCatalog.getString('Login password updated', null), classes: 'notification-success'});
+                })
+            )
+            .catch((error) => {
+                // Nothing
+            });
+        }
+
+        passwordModal(submit);
     };
 
     $scope.saveMailboxPassword = function(form) {
-        var loginPwd = $scope.currentLoginPassword;
-        var oldMailPwd = $scope.oldMailboxPassword;
-        var newMailPwd = $scope.newMailboxPassword;
-        var confMailPwd = $scope.confirmMailboxPassword;
-        var copyAddresses = angular.copy(authentication.user.Addresses);
-        var promises = [];
+        const newPassword = $scope.newMailboxPassword;
+        const confNewPassword = $scope.confirmMailboxPassword;
 
-        if (oldMailPwd !== authentication.getPassword()) {
-            notify({message: gettextCatalog.getString('Wrong mailbox password', null, 'Error'), classes: 'notification-danger'});
-            return false;
-        }
+        function submit(currentPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
 
-        if (newMailPwd !== confMailPwd) {
-            notify({message: gettextCatalog.getString('Passwords don\'t match', null, 'Error'), classes: 'notification-danger'});
-            return false;
-        }
-
-        // If the current user is an admin, we need to change the organization private key
-        if (authentication.user.Role === 2) {
-            // Get organization key
-            Organization.getKey().then(function(result) {
-                if (result.data && result.data.Code === 1000) {
-                    var encryptPrivateKey = result.data.PrivateKey;
-
-                    // Decrypt organization private key with the old mailbox password (current)
-                    pmcw.decryptPrivateKey(encryptPrivateKey, oldMailPwd).then(function(pkg) {
-                        // Encrypt private key with the new mailbox password
-                        pmcw.encryptPrivateKey(pkg, newMailPwd).then(function(privateKey) {
-                            // Send request to the back-end to update the organization private key
-                            Organization.private({
-                                Password: loginPwd,
-                                PrivateKey: privateKey
-                            }).then(function(result) {
-                                if (result.data && result.data.Code === 1000) {
-                                    // No message
-                                } else if (result.data && result.data.Error) {
-                                    notify({message: result.data.Error, classes: 'notification-danger'});
-                                } else {
-                                    notify({message: gettextCatalog.getString('Unable to get organization keys', null, 'Error'), classes: 'notification-danger'});
-                                }
-                            });
-                        }, function(error) {
-                            notify({message: error, classes: 'notification-danger'});
-                        });
-                    }, function(error) {
-                        // TODO We don't display the error for 3.1, but it should be enable after
-                        // https://github.com/ProtonMail/Angular/issues/2434
-                        // notify({message: 'Unable to decrypt and update organization key', classes: 'notification-danger'});
-                    });
-                } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
-                } else {
-                    notify({message: gettextCatalog.getString('Unable to get organization keys', null, 'Error'), classes: 'notification-danger'});
-                }
-            }, function(error) {
-                notify({message: gettextCatalog.getString('Unable to get organization keys', null, 'Error'), classes: 'notification-danger'});
+            changeMailboxPassword(
+                {
+                    currentPassword,
+                    newPassword,
+                    twoFactorCode,
+                    onePassword: false
+                })
+            .then(() => {
+                $scope.newMailboxPassword = '';
+                $scope.confirmMailboxPassword = '';
+                form.$setUntouched();
+                authentication.user.PasswordMode = 2;
+                notify({message: gettextCatalog.getString('Mailbox password updated', null), classes: 'notification-success'});
+            })
+            .catch((error) => {
+                // Nothing
             });
         }
 
-        // Instead of grab keys from the cache, we call the back-end, just to make sure everything is up to date
-        networkActivityTracker.track(User.get().then(function(result) {
-            if (result.data.Code === 1000) {
-                _.each(result.data.User.Addresses, function(address) {
-                    _.each(address.Keys, function(key) {
-                        // Decrypt private key with the old mailbox password
-                        promises.push(pmcw.decryptPrivateKey(key.PrivateKey, oldMailPwd).then(function(pkg) {
-                            // Encrypt the key with the new mailbox password
-                            return pmcw.encryptPrivateKey(pkg, newMailPwd).then(function(privateKey) {
-                                return {ID: key.ID, PrivateKey: privateKey};
-                            }, function(error) {
-                                $log.error(error);
-                                return Promise.reject(error);
-                            });
-                        }, function(error) {
-                            $log.error(error);
-                            return Promise.resolve(0);
-                        }));
-                    });
-                });
+        passwordModal(submit);
+    };
 
-                // When all promises are done, we can send the new keys to the back-end
-                return $q.all(promises).then(function(keys) {
+    $scope.savePassword = function(form) {
+        const newPassword = $scope.newPassword;
+        const confNewPassword = $scope.confirmPassword;
 
-                    keys = keys.filter(function(obj) { return obj !== 0; });
+        function submit(currentPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
 
-                    if (keys.length === 0) {
-                        notify({message: gettextCatalog.getString('No keys to update', null, 'Error'), classes: 'notification-danger'});
-                    }
-
-                    return Key.private({
-                        Password: loginPwd,
-                        Keys: keys
-                    }).then(function(result) {
-                        if (result.data && result.data.Code === 1000) {
-                            $scope.currentLoginPassword = '';
-                            $scope.oldMailboxPassword = '';
-                            $scope.newMailboxPassword = '';
-                            $scope.confirmMailboxPassword = '';
-                            form.$setUntouched();
-                            authentication.savePassword(newMailPwd);
-                            notify({message: gettextCatalog.getString('Mailbox password updated', null), classes: 'notification-success'});
-                        } else if(result.data && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                        } else {
-                            notify({message: gettextCatalog.getString('Wrong mailbox password', null, 'Error'), classes: 'notification-danger'});
-                        }
-                    });
-                }, function(error) {
-                    $log.error(error);
-                    notify({message: error, classes: 'notification-danger'});
-                });
-            } else if (result.Error) {
-                $log.error(result.Error);
-                notify({message: result.Error, classes: 'notification-danger'});
-            } else {
-                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
-            }
-        }, function(errors) {
-            _.each(errors, function(error) {
-                notify({message: error, classes: 'notification-danger'});
+            changeMailboxPassword(
+                {
+                    currentPassword,
+                    newPassword,
+                    twoFactorCode,
+                    onePassword: true
+                })
+            .then(() => {
+                $scope.newPassword = '';
+                $scope.confirmPassword = '';
+                form.$setUntouched();
+                authentication.user.PasswordMode = 1;
+                notify({message: gettextCatalog.getString('Password updated', null), classes: 'notification-success'});
+            })
+            .catch((error) => {
+                // Nothing
             });
-        }));
+        }
+
+        passwordModal(submit);
     };
 
     $scope.saveIdentity = function() {

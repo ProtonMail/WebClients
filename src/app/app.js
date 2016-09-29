@@ -84,6 +84,7 @@ angular.module('proton', [
     'proton.message',
     'proton.conversation',
     'proton.card',
+    'proton.compareTo',
     'proton.star',
     'proton.drag',
     'proton.dropdown',
@@ -96,6 +97,7 @@ angular.module('proton', [
     'proton.labels',
     'proton.loaderTag',
     'proton.login',
+    'proton.loginTwoFactor',
     'proton.locationTag',
     'proton.move',
     'proton.phone',
@@ -115,16 +117,17 @@ angular.module('proton', [
     'proton.filters',
 
     // Controllers
-    'proton.controllers.Setup',
     'proton.controllers.Auth',
     'proton.controllers.Contacts',
     'proton.controllers.Header',
     'proton.controllers.Conversations',
     'proton.controllers.Compose',
     'proton.controllers.Outside',
+    'proton.controllers.Reset',
     'proton.controllers.Secured',
     'proton.controllers.Settings',
     'proton.controllers.Sidebar',
+    'proton.controllers.Setup',
     'proton.controllers.Signup',
     'proton.controllers.Support',
     'proton.controllers.Upgrade'
@@ -359,6 +362,7 @@ angular.module('proton', [
                 var $http = $injector.get('$http');
                 var loginPasswordModal = $injector.get('loginPasswordModal');
                 var User = $injector.get('User');
+                var authentication = $injector.get('authentication');
                 var notify = $injector.get('notify');
                 var eventManager = $injector.get('eventManager');
                 var deferred = $q.defer();
@@ -366,26 +370,27 @@ angular.module('proton', [
                 // Open the open to enter login password because this request require lock scope
                 loginPasswordModal.activate({
                     params: {
-                        submit: function(loginPassword) {
+                        submit: function(loginPassword, twoFactorCode) {
                             // Send request to unlock the current session for administrator privileges
-                            User.unlock({Password: loginPassword})
+                            User.unlock({Password: loginPassword, TwoFactorCode: twoFactorCode})
                             .then(function(result) {
-                                if (result.data && result.data.Error) {
-                                    notify({message: result.data.Error, classes: 'notification-danger'});
-                                }
+                                // if (result.data && result.data.Error) {
+                                //     notify({message: result.data.Error, classes: 'notification-danger'});
+                                // }
                                 // Close the modal
                                 loginPasswordModal.deactivate();
                                 // Resend request now
                                 deferred.resolve($http(rejection.config));
                             }, function(error) {
-                                notify({message: error, classes: 'notification-danger'});
-                                deferred.reject();
+                                notify({message: error.error_description, classes: 'notification-danger'});
+                                //deferred.reject();
                             });
                         },
                         cancel: function() {
                             loginPasswordModal.deactivate();
                             deferred.reject();
-                        }
+                        },
+                        hasTwoFactor: authentication.user.TwoFactor
                     }
                 });
 
@@ -424,14 +429,14 @@ angular.module('proton', [
 
         networkActivityTracker.clear();
 
-        var isLogin = (toState.name === "login");
-        var isUpgrade = (toState.name === "upgrade");
-        var isSupport = (toState.name.includes("support"));
-        var isAccount = (toState.name === "account");
-        var isSignup = (toState.name === "signup" || toState.name === "subscription" || toState.name === "pre-invite");
-        var isUnlock = (toState.name === "login.unlock");
-        var isOutside = (toState.name.includes("eo"));
-        var isReset = (toState.name.includes("reset"));
+        var isLogin = (toState.name === 'login');
+        var isUpgrade = (toState.name === 'upgrade');
+        var isSupport = (toState.name.includes('support'));
+        var isAccount = (toState.name === 'account');
+        var isSignup = (toState.name === 'signup' || toState.name === 'pre-invite');
+        var isUnlock = (toState.name === 'login.unlock');
+        var isOutside = (toState.name.includes('eo'));
+        var isReset = (toState.name.includes('reset'));
         var isPrinter = (toState.name === "printer");
 
         if (isUnlock && $rootScope.isLoggedIn) {

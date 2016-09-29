@@ -290,24 +290,6 @@ angular.module('proton.controllers.Header', [])
         $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);
     };
 
-
-    $scope.displayName = function() {
-        var displayName = '';
-
-        if (Object.keys(authentication.user).length > 0) {
-            displayName = authentication.user.DisplayName || authentication.user.Name;
-        } else if($rootScope.tempUser && $rootScope.tempUser.username) {
-            displayName = $rootScope.tempUser.username;
-        }
-
-        // Truncate
-        if (displayName && displayName.length > 20) {
-            displayName = displayName.substring(0, 17) + '...';
-        }
-
-        return displayName;
-    };
-
     $scope.email = function() {
         if (Object.keys(authentication.user).length > 0) {
             var address = _.findWhere(authentication.user.Addresses, {Send: 1});

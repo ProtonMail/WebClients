@@ -1,0 +1,111 @@
+<p>&nbsp;</p>
+<div class="pm_panel wide" ng-show="filling">
+    <div class="text-center header">
+        <div>
+            <img src="/assets/img/logo-dark.png" height="20" />
+        </div>
+        <h2>
+            <i class="fa fa-user"></i>
+            <span translate translate-context="Title">Set up your account</span>
+        </h2>
+    </div>
+    <form method="post" ng-submit="submit(setup)" name="setup" role="form" novalidate class="pm_form">
+        <div class="wrapper margin">
+            <p class="alert alert-info" translate-context="Info" translate>Take back your privacy! Setting up your secure email account takes less than 2 minutes.</p>
+
+            <div ng-if="chooseDomain">
+                <label for="Username">
+                    <em class="num">1</em>
+                    <span translate translate-context="Title">Email Address</span>
+                </label>
+                <div class="usernameWrap">
+                    <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
+                    <strong ng-bind="$parent.username"></strong>
+                    <em class="usernameDomain">@</em>
+                    <span class="pm_select inline bigger">
+                        <select class="selectDomain" ng-model="$parent.domain" ng-options="domain.label for domain in domains"></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div ng-if="keyPhase < 3">
+                <label for="password">
+                    <em class="num" ng-if="chooseDomain">2</em>
+                    <span translate translate-context="Title">Mailbox Password</span>
+                </label>
+                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
+            your messages. Do not lose this password--we cannot recover it.</p>
+                <input id="password" name="password" ng-model="$parent.password" type="password" class="form-control margin" placeholder-translate="Choose a mailbox password" maxlength="{{ maxPW }}" required />
+                <div ng-show="$parent.setup.$submitted || $parent.setup.password.$touched">
+                    <p ng-show="$parent.setup.$submitted && $parent.setup.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Login password is required.</p>
+                </div>
+                <input id="passwordc" name="passwordc" ng-model="$parent.passwordConfirm" type="password" class="form-control" placeholder-translate="Confirm mailbox password" required compare-to="$parent.password">
+                <div ng-show="$parent.setup.$submitted || $parent.setup.passwordc.$touched">
+                    <p ng-show="$parent.password !== $parent.passwordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
+                </div>
+                <p class="alert alert-info" translate-context="Info" translate>If you lose your mailbox password, you will not be able to read your emails. We cannot recover this password for you.</p>
+            </div>
+
+            <div ng-if="keyPhase > 2">
+                <label for="password">
+                    <em class="num" ng-if="chooseDomain">2</em>
+                    <span translate translate-context="Title">Password</span>
+                </label>
+                <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
+            your messages. Do not lose this password--we cannot recover it.</p>
+                <input id="password" name="password" ng-model="$parent.password" type="password" class="form-control margin" placeholder-translate="Choose a new password" maxlength="{{ maxPW }}" required />
+                <div ng-show="$parent.setup.$submitted || $parent.setup.password.$touched">
+                    <p ng-show="$parent.setup.$submitted && $parent.setup.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Password is required.</p>
+                </div>
+                <input id="passwordc" name="passwordc" ng-model="$parent.passwordConfirm" type="password" class="form-control" placeholder-translate="Confirm password" required compare-to="$parent.password">
+                <div ng-show="$parent.setup.$submitted || $parent.setup.passwordc.$touched">
+                    <p ng-show="$parent.password !== $parent.passwordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
+                </div>
+                <p class="alert alert-info" translate-context="Info" translate>If you lose your password, you will not be able to read your emails.</p>
+            </div>
+            <p>&nbsp;</p>
+        </div><!--/.wrapper-->
+        <div class="text-center">
+            <p><span translate translate-context="Info">By clicking Setup Account, you agree to abide by</span><br /> <a href="https://protonmail.com/terms-and-conditions" target="_blank" translate-context="Title" translate>ProtonMail's Terms and Conditions</a>.</p>
+            <p><button type="submit" class="pm_button primary large" ng-class="{ disabled: ( networkActivity.loading() || !setup.$valid ) } " translate-context="Action" translate>Setup Account</button></p>
+        </div>
+    </form>
+</div>
+
+<div class="pm_panel wide" ng-show="genKeys">
+    <div class="text-center header">
+        <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" />
+        <h2 class="text-center" ng-show="!signupError" translate translate-text="Title">Generating keys...</h2>
+    </div>
+    <p class="alert" translate-context="Info" translate>This can take a few seconds or a few minutes depending on your device.</p>
+</div>
+
+<div class="pm_panel wide" ng-show="creating" id="setUpProcess">
+    <div class="text-center header">
+        <img src="/assets/img/decrypt1.gif" class="loader" style="margin: 0 auto 1rem auto" ng-show="creating && !setupError" />
+        <h2 class="text-center" ng-show="!setupError"  translate>Setting up account</h2>
+        <h2 class="text-center" ng-show="setupError" translate-context="Error" translate>Setup failed</h2>
+    </div>
+    <p class="alert alert-danger" ng-show="setupError" translate-context="Error" translate>An error occured while setting up your account. To see common problems and solutions <a target='_blank' href='https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/'>click here</a>.</p>
+    <div class="wrapper text-left">
+        <ol id="creationList">
+            <li class="done">
+                <i class="show fa fa-check"></i>
+                <span translate>Generating keys</span>
+            </li>
+            <li ng-class="{ 'done': setupAccount }">
+                <i ng-class="{ 'show': setupAccount }" class="fa fa-check"></i>
+                <span translate>Setting up account</span>
+            </li>
+            <li ng-class="{ 'done': getUserInfo }">
+                <i ng-class="{ 'show': getUserInfo }" class="fa fa-check"></i>
+                <span translate>Done</span>
+            </li>
+            <li ng-class="{ 'done': finishCreation }">
+                <i ng-class="{ 'show': finishCreation }" class="fa fa-check"></i>
+                <span translate>Redirecting</span>
+            </li>
+        </ol>
+    </div>
+</div>

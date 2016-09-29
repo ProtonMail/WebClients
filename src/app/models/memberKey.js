@@ -1,6 +1,6 @@
-angular.module("proton.models.memberKeys", [])
+angular.module('proton.models.memberKeys', [])
 
-.factory("MemberKey", function($http, url) {
+.factory('MemberKey', function($http, url) {
     return {
         // POST
         /**

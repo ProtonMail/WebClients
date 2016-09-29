@@ -4,7 +4,7 @@ var LoginPage = function() {
     var loginButton = element(by.id('login_btn'));
 
     // Help modal
-    var openHelp = element(by.css('[ng-click="getLoginHelp()"]'));
+    var openHelp = element(by.css('[ng-click="displayHelpModal()"]'));
 
     // Report bug modal
     var openBug = element(by.css('[ng-click="openReportModal()"]'));

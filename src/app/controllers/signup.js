@@ -1,6 +1,6 @@
-angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
+angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
-.controller("SignupController", function(
+.controller('SignupController', function(
     $http,
     $location,
     $log,
@@ -11,25 +11,31 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
     $stateParams,
     $timeout,
     $window,
+    Address,
     authentication,
     CONSTANTS,
     confirmModal,
     direct,
     domains,
     gettextCatalog,
+    Key,
     networkActivityTracker,
     notify,
     Payment,
     plans,
+    passwords,
     pmcw,
     Reset,
+    setupKeys,
     tools,
-    User,
-    secureSessionStorage
+    User
 ) {
     var childWindow;
 
-    $scope.initialization = function() {
+    function initialization() {
+
+        $scope.keyPhase = CONSTANTS.KEY_PHASE;
+
         // Variables
         $scope.card = {};
         $scope.tools = tools;
@@ -42,7 +48,7 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         $scope.createUser = false;
         $scope.logUserIn = false;
         $scope.decryptAccessToken = false;
-        $scope.mailboxLogin = false;
+        $scope.setupAccount = false;
         $scope.getUserInfo = false;
         $scope.finishCreation = false;
         $scope.verifyCode = false;
@@ -159,8 +165,7 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
             var iframe = document.getElementById('pm_captcha');
             iframe.contentWindow.postMessage(message, 'https://secure.protonmail.com');
         };
-
-    };
+    }
 
     $scope.setIframeSrc = function() {
         var iframe = document.getElementById('pm_captcha');
@@ -226,11 +231,13 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
 
         $scope.doCreateUser()
         .then( $scope.doLogUserIn )
-        .then( $scope.doDecryptAccessToken )
-        .then( $scope.doMailboxLogin )
+        .then( $scope.doAccountSetup )
         .then( $scope.doGetUserInfo )
         .then( $scope.finishRedirect )
         .catch( function(err) {
+
+            $log.error(err);
+
             var msg = err;
 
             if (typeof msg !== 'string') {
@@ -246,30 +253,24 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
     };
 
     $scope.checking = function(form) {
-        if (form.$valid) {
-            // custom validation
-            if ($scope.account.loginPasswordConfirm !== $scope.account.loginPassword) {
-                return;
-            }
 
-            if ($scope.account.notificationEmail) {
-                saveContinue();
-            } else {
-                confirmModal.activate({
-                    params: {
-                        title: gettextCatalog.getString('Warning', null, 'Title'),
-                        message: gettextCatalog.getString('Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?', null, 'Warning'),
-                        confirm: function() {
-                            saveContinue();
-                            confirmModal.deactivate();
-                        },
-                        cancel: function() {
-                            confirmModal.deactivate();
-                            angular.element('#notificationEmail').focus();
-                        }
+        if ($scope.account.notificationEmail) {
+            saveContinue();
+        } else {
+            confirmModal.activate({
+                params: {
+                    title: gettextCatalog.getString('Warning', null, 'Title'),
+                    message: gettextCatalog.getString('Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?', null, 'Warning'),
+                    confirm: function() {
+                        saveContinue();
+                        confirmModal.deactivate();
+                    },
+                    cancel: function() {
+                        confirmModal.deactivate();
+                        angular.element('#notificationEmail').focus();
                     }
-                });
-            }
+                }
+            });
         }
     };
 
@@ -278,7 +279,7 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
 
         networkActivityTracker.track(
             $scope.checkAvailability(false)
-            .then($scope.generateNewKeys)
+            .then(generateNewKeys)
             .then(function() {
                 $timeout(function() {
                     $scope.genNewKeys = false;
@@ -299,34 +300,11 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         $log.debug('finishLoginReset');
     };
 
-    $scope.generateKeys = function(userID, pass) {
-        var deferred = $q.defer();
-
-        $log.debug('generateKeys');
-
-        pmcw.generateKeysRSA(userID, pass).then(
-            function(response) {
-                $log.debug(response);
-                $scope.account.PublicKey = response.publicKeyArmored;
-                $scope.account.PrivateKey = response.privateKeyArmored;
-                $log.debug('pmcw.generateKeysRSA:resolved');
-                deferred.resolve(response);
-            },
-            function(err) {
-                $log.error(err);
-                $scope.error = err;
-                deferred.reject(err);
-            }
-        );
-
-        return deferred.promise;
-    };
-
     /**
      * @param {Boolean} manual - it means the fucntion was called outside of the automated chained functions. it will be set to true if triggered manually
      */
-    $scope.checkAvailability = function(manual) {
-        var deferred = $q.defer();
+    $scope.checkAvailability = (manual) => {
+        const deferred = $q.defer();
 
         // reset
         $scope.goodUsername = false;
@@ -391,8 +369,8 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         return deferred.promise;
     };
 
-    $scope.generateNewKeys = function() {
-        var mbpw;
+    function generateNewKeys() {
+        let mbpw;
 
         $scope.genNewKeys = true;
 
@@ -402,8 +380,19 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
             mbpw = $scope.account.mailboxPassword;
         }
 
-        return $scope.generateKeys('<' + $scope.account.Username + '@' + $scope.account.domain.value + '>', mbpw);
-    };
+        if ($scope.keyPhase > 2) {
+            mbpw = $scope.account.loginPassword;
+        }
+
+        $log.debug('generateKeys');
+
+        const email = $scope.account.Username + '@' + $scope.account.domain.value;
+        return setupKeys.generate(addresses = [{ID: 0, Email: email}], mbpw)
+        .then((result) => {
+            // Save for later
+            $scope.setupPayload = result;
+        });
+    }
 
     $scope.chooseCard = function() {
         $scope.method = 'card';
@@ -513,15 +502,13 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
     };
 
     $scope.doCreateUser = function() {
-        var deferred = $q.defer();
 
-        var params = {
+        $scope.createUser = true;
+
+        const params = {
             Username: $scope.account.Username,
-            Password: $scope.account.loginPassword,
-            Domain: $scope.account.domain.value,
             Email: $scope.account.notificationEmail,
             News: !!($scope.account.optIn),
-            PrivateKey: $scope.account.PrivateKey,
             Referrer: $location.search().ref
         };
 
@@ -542,72 +529,71 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
             params.TokenType = 'email';
         }
 
-        User.create(params).then(function(result) {
-            if (result.data && result.data.Code === 1000) {
-                $scope.createUser  = true;
-                deferred.resolve(result.data);
-            } else if (result.data && result.data.Error) {
-                deferred.reject(result.data.Error);
-            } else {
-                deferred.reject('Something went wrong');
-            }
-        });
-
-        return deferred.promise;
+        return User.create(params, $scope.account.loginPassword);
     };
 
     $scope.doLogUserIn = function(response) {
-        if (response.Code && response.Code===1000) {
-            $scope.logUserIn   = true;
+        if (response.data.Code && response.data.Code===1000) {
+            $scope.logUserIn = true;
             return authentication.loginWithCredentials({
                 Username: $scope.account.Username,
                 Password: $scope.account.loginPassword
+            })
+            .then(({ data }) => {
+                authentication.receivedCredentials(data);
+                return authentication.setAuthCookie(data);
+            })
+            .then(() => {
+                $rootScope.isLoggedIn = authentication.isLoggedIn();
+                $rootScope.isLocked = authentication.isLocked();
+                $rootScope.isSecure = authentication.isSecured();
             });
         }
         else {
             var deferred = $q.defer();
-            deferred.reject(response.Error);
+            deferred.reject(response.data.Error);
             return deferred.promise;
         }
     };
 
-    $scope.doDecryptAccessToken = function(response) {
-        $log.debug('doDecryptAccessToken', response);
-        $scope.authResponse = response.data;
-        $scope.decryptAccessToken = true;
-        return pmcw.decryptPrivateKey(
-            $scope.authResponse.EncPrivateKey,
-            $scope.account.mailboxPassword
-        );
-    };
+    $scope.doAccountSetup = function(result) {
+        $log.debug('doAccountSetup');
 
-    $scope.doMailboxLogin = function() {
-        $log.debug('doMailboxLogin');
-        $scope.mailboxLogin  = true;
-        return authentication.unlockWithPassword(
-            $scope.account.mailboxPassword,
-            $scope.authResponse
-        ).then(
-            function(response) {
-                $log.debug('doMailboxLogin:unlockWithPassword:',response);
-                return authentication.setAuthCookie($scope.authResponse)
-                .then(
-                    function(resp) {
-                        $log.debug('setAuthCookie:resp'+resp);
-                        $rootScope.isLoggedIn = authentication.isLoggedIn();
-                        $rootScope.isLocked = authentication.isLocked();
-                        $rootScope.isSecure = authentication.isSecured();
-                        secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64($scope.account.mailboxPassword));
-                    }
-                );
+        $scope.setupAccount = true;
+
+        return Address.setup({
+            Domain: $scope.account.domain.value
+        })
+        .then((result) => {
+            if (result.data && result.data.Code === 1000) {
+
+                // Replace 0 with correct address ID
+                $scope.setupPayload.keys[0].AddressID = result.data.Address.ID;
+
+                return setupKeys.setup($scope.setupPayload, $scope.account.loginPassword)
+                .then(() => {
+                    authentication.savePassword($scope.setupPayload.mailboxPassword);
+
+                    $rootScope.isLoggedIn = authentication.isLoggedIn();
+                    $rootScope.isLocked = authentication.isLocked();
+                    $rootScope.isSecure = authentication.isSecured();
+                });
+            } else if (result.data && result.data.Error) {
+                return Promise.reject({message: result.data.Error});
             }
-        );
+            return Promise.reject({message: 'Something went wrong during address creation'});
+        })
+        .catch((error) => {
+            authentication.logout(true);
+            notify({message: error.message, classes: 'notification-danger'});
+            return Promise.reject();
+        });
     };
 
     $scope.doGetUserInfo = function() {
         $log.debug('getUserInfo');
         $scope.getUserInfo  = true;
-        return authentication.fetchUserInfo($scope.authResponse.Uid);
+        return authentication.fetchUserInfo();
     };
 
     $scope.finishRedirect = function() {
@@ -625,6 +611,5 @@ angular.module("proton.controllers.Signup", ["proton.tools", "proton.storage"])
         }
     };
 
-    $scope.initialization();
-
+    initialization();
 });

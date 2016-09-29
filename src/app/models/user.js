@@ -1,9 +1,11 @@
-angular.module('proton.models.user', [])
+angular.module('proton.models.user', ["proton.srp"])
 
-.factory('User', function($http, url) {
+.factory('User', function($http, url, srp) {
     var User = {
-        create: function(params) {
-            return $http.post(url.get() + '/users', params);
+        create: function(params, password) {
+            return srp.randomVerifier(password).then(function(pass_params) {
+                return $http.post(url.get() + '/users', _.extend(params, pass_params));
+            });
         },
         code: function(params) {
             return $http.post(url.get() + '/users/code', params);
@@ -21,10 +23,10 @@ angular.module('proton.models.user', [])
             return $http.get(url.get() + '/users/direct');
         },
         unlock: function(params) {
-            return $http.put(url.get() + '/users/unlock', params);
+            return srp.performSRPRequest("PUT", '/users/unlock', {}, params);
         },
         delete: function(params) {
-            return $http.put(url.get() + '/users/delete', params);
+            return srp.performSRPRequest("PUT", '/users/delete', {}, params);
         }
     };
 

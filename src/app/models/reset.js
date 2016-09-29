@@ -1,23 +1,25 @@
-angular.module("proton.models.reset", [])
+angular.module("proton.models.reset", ['proton.srp'])
 
-.factory("Reset", function($http, url) {
+.factory("Reset", function($http, url, srp) {
     return {
         // POST
-        requestResetToken: function(Obj) {
-            return $http.post(url.get() + '/reset', Obj);
+        requestResetToken: function(params = {}) {
+            return $http.post(url.get() + '/reset', params);
         },
-        resetPassword: function(Obj) {
-            return $http.post(url.get() + '/reset/' + encodeURIComponent(Obj.Token), Obj);
+        resetPassword: function(params = {}, newPassword = '') {
+            return srp.randomVerifier(newPassword).then(function(auth_params) {
+                return $http.post(url.get() + '/reset/' + encodeURIComponent(params.Token), _.extend(params,auth_params));
+            });
         },
-        getMailboxResetToken: function(Obj) {
-            return $http.post(url.get() + '/reset/mailbox', Obj);
+        getMailboxResetToken: function(params = {}) {
+            return $http.post(url.get() + '/reset/mailbox', params);
         },
-        resetMailbox: function(Obj) {
-            return $http.post(url.get() + '/reset/mailbox/' + encodeURIComponent(Obj.Token), Obj);
+        resetMailbox: function(params = {}) {
+            return $http.post(url.get() + '/reset/mailbox/' + encodeURIComponent(params.Token), params);
         },
         // GET
-        validateResetToken: function(Obj) {
-            return $http.get(url.get() + '/reset/' + Obj.username + '/' + encodeURIComponent(Obj.token));
+        validateResetToken: function(params = {}) {
+            return $http.get(url.get() + '/reset/' + params.Username + '/' + encodeURIComponent(params.Token));
         }
     };
 });

@@ -11,6 +11,15 @@ angular.module("proton.models.addresses", [])
         create: function(address) {
             return $http.post(url.get() + '/addresses', address);
         },
+        // POST
+        /**
+         * Add an address to a domain, returns {address_id} if successful, group address limit and usage
+         * @param {Object} address
+         * @return {Promise}
+         */
+        setup: function(params) {
+            return $http.post(url.get() + '/addresses/setup', params);
+        },
         // PUT
         /**
          * Edit address

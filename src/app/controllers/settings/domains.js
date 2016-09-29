@@ -23,12 +23,14 @@ angular.module("proton.controllers.Settings")
     networkActivityTracker,
     notify,
     Organization,
+    organizationKeys,
     spfModal,
     verificationModal
 ) {
     // Variables
-    $scope.domains = domains;
-    $scope.members = members;
+    $scope.organizationPublicKey = organizationKeys.data.PublicKey;
+    $scope.domains = domains.data.Domains;
+    $scope.members = members.data.Members;
 
     // Listeners
     $scope.$on('domain', function(event, domain) {
@@ -94,7 +96,7 @@ angular.module("proton.controllers.Settings")
         }
     });
 
-    $scope.$on('deleteMember', function(event, memberId) {
+    $rootScope.$on('deleteMember', function(event, memberId) {
         var index = _.findIndex($scope.members, {ID: memberId});
 
         if (index !== -1) {
@@ -102,7 +104,7 @@ angular.module("proton.controllers.Settings")
         }
     });
 
-    $scope.$on('createMember', function(event, memberId, member) {
+    $rootScope.$on('createMember', function(event, memberId, member) {
         var index = _.findIndex($scope.members, {ID: memberId});
 
         if (index === -1) {
@@ -112,7 +114,7 @@ angular.module("proton.controllers.Settings")
         }
     });
 
-    $scope.$on('updateMember', function(event, memberId, member) {
+    $rootScope.$on('updateMember', function(event, memberId, member) {
         var index = _.findIndex($scope.members, {ID: memberId});
 
         if (index === -1) {
@@ -221,8 +223,12 @@ angular.module("proton.controllers.Settings")
                 title: gettextCatalog.getString('Generate key pair', null),
                 message: '', // TODO need text
                 addresses: [address],
-                cancel: function() {
-                    eventManager.call();
+                password: authentication.getPassword(),
+                close: function(success) {
+                    if (success) {
+                        eventManager.call();
+                    }
+
                     generateModal.deactivate();
                 }
             }
@@ -424,6 +430,7 @@ angular.module("proton.controllers.Settings")
                 step: 3,
                 domain: domain,
                 members: $scope.members,
+                organizationPublicKey: $scope.organizationPublicKey,
                 next: function() {
                     addressModal.deactivate();
                     $scope.mx(domain);

@@ -34,7 +34,8 @@ angular.module('proton.routes', [
     // LOGIN ROUTES
     // ------------
     .state('login', {
-        url: '/login',
+        params: { sub: null, creds: null },
+        url: '/login?sub',
         views: {
             'main@': {
                 templateUrl: 'templates/layout/login.tpl.html'
@@ -47,6 +48,7 @@ angular.module('proton.routes', [
     })
 
     .state('login.unlock', {
+        params: { creds: null, authResponse: null },
         url: '/unlock',
         views: {
             'panel@login': {
@@ -58,10 +60,47 @@ angular.module('proton.routes', [
             if (!$rootScope.isLoggedIn) {
                 authentication.logout(true);
             }
+        }
+    })
 
-            setTimeout( function() {
-                $( '[type=password]' ).focus();
-            }, 200);
+    .state('login.setup', {
+        url: '/setup',
+        views: {
+            'panel@login': {
+                controller: 'SetupController',
+                templateUrl: 'templates/views/setup.tpl.html'
+            }
+        },
+        onEnter: function($rootScope, $state, authentication) {
+            if (!$rootScope.isLoggedIn) {
+                authentication.logout(true);
+            }
+        },
+        resolve: {
+            domains: function($q, Domain) {
+                var deferred = $q.defer();
+
+                Domain.available().then(function(result) {
+                    if (result.data && angular.isArray(result.data.Domains)) {
+                        deferred.resolve(result.data.Domains);
+                    } else {
+                        deferred.reject();
+                    }
+                }, function() {
+                    deferred.reject();
+                });
+
+                return deferred.promise;
+            },
+            user: function(User) {
+                return User.get()
+                .then(({ data }) => {
+                    if (data && data.Code !== 1000) {
+                        return Promise.reject();
+                    }
+                    return data.User;
+                });
+            }
         }
     })
 
@@ -88,7 +127,7 @@ angular.module('proton.routes', [
         },
         views: {
             'main@': {
-                controller: 'SetupController',
+                controller: 'ResetController',
                 templateUrl: 'templates/layout/auth.tpl.html'
             },
             'panel@account': {
@@ -117,7 +156,7 @@ angular.module('proton.routes', [
                     $rootScope.inviteToken = $stateParams.token;
                     $rootScope.preInvited = true;
                     $rootScope.username = $stateParams.user;
-                    $state.go('subscription');
+                    $state.go('signup');
                 } else if (result.data && result.data.Error) {
                     notify({message: result.data.Error, classes: 'notification-danger'});
                     $state.go('login');
@@ -140,7 +179,7 @@ angular.module('proton.routes', [
                     .then(function(result) {
                         if (result.data && result.data.Code === 1000) {
                             if (result.data.Direct === 1) {
-                                $state.go('subscription');
+                                $state.go('signup');
                                 deferred.resolve();
                             } else {
                                 window.location.href = 'https://protonmail.com/invite';
@@ -189,7 +228,7 @@ angular.module('proton.routes', [
         }
     })
 
-    .state('subscription', {
+    .state('signup', {
         url: '/create/new?plan&billing&currency',
         params: {
             plan: null, // 'free' / 'plus' / 'visionary'
@@ -201,8 +240,8 @@ angular.module('proton.routes', [
                 controller: 'SignupController',
                 templateUrl: 'templates/layout/auth.tpl.html'
             },
-            'panel@subscription': {
-                templateUrl: 'templates/views/subscription.tpl.html'
+            'panel@signup': {
+                templateUrl: 'templates/views/signup.tpl.html'
             }
         },
         resolve: {
@@ -279,20 +318,19 @@ angular.module('proton.routes', [
     // Reset Mailbox Password
     .state('reset', {
         url: '/reset',
+        params: { creds: null, authResponse: null },
         views: {
             'main@': {
-                controller: 'SetupController',
+                controller: 'ResetController',
                 templateUrl: 'templates/layout/auth.tpl.html'
             },
             'panel@reset': {
                 templateUrl: 'templates/views/reset-mailbox-password.tpl.html'
             }
         },
-        onEnter: function($rootScope, $state, $log) {
+        onEnter: function($rootScope, $state) {
             if (!$rootScope.isLoggedIn) {
-                $log.debug('reset.onEnter:1');
                 $state.go('login');
-                return;
             }
         }
     })
@@ -524,7 +562,7 @@ angular.module('proton.routes', [
                 if (Object.keys(authentication.user).length > 0) {
                     return authentication.user;
                 } else {
-                    if(angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
+                    if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
                         $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
                     }
 
@@ -552,7 +590,6 @@ angular.module('proton.routes', [
         },
         onEnter: function($rootScope, authentication, $timeout, CONSTANTS) {
             // This will redirect to a login step if necessary
-            delete $rootScope.tempUser;
             authentication.redirectIfNecessary();
         }
     })
@@ -768,11 +805,15 @@ angular.module('proton.routes', [
 
     .state('secured.members', {
         url: '/members',
+        params: {
+            action: null,
+            id: null
+        },
         resolve: {
-            access: function(user, $q) {
-                var deferred = $q.defer();
+            access: function(user, $q, CONSTANTS) {
+                const deferred = $q.defer();
 
-                if(user.Role === 2) {
+                if(user.Role === 2 && CONSTANTS.KEY_PHASE > 3) {
                     deferred.resolve();
                 } else {
                     deferred.reject();
@@ -780,11 +821,17 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            members: function(Member, networkActivityTracker) {
+            members: function(access, Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
             },
-            domains: function(Domain, networkActivityTracker) {
+            domains: function(access, Domain, networkActivityTracker) {
                 return networkActivityTracker.track(Domain.query());
+            },
+            organization: function(access, Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.get());
+            },
+            organizationKeys: function(access, Organization, networkActivityTracker) {
+                return networkActivityTracker.track(Organization.getKeys());
             }
         },
         views: {
@@ -798,37 +845,29 @@ angular.module('proton.routes', [
     .state('secured.domains', {
         url: '/domains',
         resolve: {
-            members: function($q, user, Member, networkActivityTracker) {
-                var deferred = $q.defer();
-
+            members: function(user, Member, networkActivityTracker) {
                 if (user.Role === 2) {
-                    Member.query()
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            deferred.resolve(result.data.Members);
-                        }
-                    });
-                } else {
-                    deferred.resolve([]);
+                    return networkActivityTracker.track(Member.query());
                 }
-
-                return networkActivityTracker.track(deferred.promise);
+                return {data: {}};
             },
-            domains: function($q, user, Domain, networkActivityTracker) {
-                var deferred = $q.defer();
-
+            domains: function(user, Domain, networkActivityTracker) {
                 if (user.Role === 2) {
-                    Domain.query()
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            deferred.resolve(result.data.Domains);
-                        }
-                    });
-                } else {
-                    deferred.resolve([]);
+                    return networkActivityTracker.track(Domain.query());
                 }
-
-                return networkActivityTracker.track(deferred.promise);
+                return {data: {}};
+            },
+            organization: function(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.get());
+                }
+                return {data: {}};
+            },
+            organizationKeys: function(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.getKeys());
+                }
+                return {data: {}};
             }
         },
         views: {

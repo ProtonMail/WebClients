@@ -33,7 +33,7 @@ angular.module("proton.controllers.Settings")
     $scope.subscription = {};
 
     // Options
-    $scope.spaceOptions = [
+    $scope.plusSpaceOptions = [
         {label: '5 GB', index: 0, value: 5 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
         {label: '6 GB', index: 1, value: 6 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
         {label: '7 GB', index: 2, value: 7 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
@@ -50,6 +50,20 @@ angular.module("proton.controllers.Settings")
         {label: '18 GB', index: 13, value: 18 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
         {label: '19 GB', index: 14, value: 19 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
         {label: '20 GB', index: 15, value: 20 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE}
+    ];
+
+    $scope.businessSpaceOptions = [
+        {label: '10 GB', index: 0, value: 10 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '11 GB', index: 1, value: 11 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '12 GB', index: 2, value: 12 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '13 GB', index: 3, value: 13 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '14 GB', index: 4, value: 14 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '15 GB', index: 5, value: 15 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '16 GB', index: 6, value: 16 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '17 GB', index: 7, value: 17 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '18 GB', index: 8, value: 18 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '19 GB', index: 9, value: 19 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE},
+        {label: '20 GB', index: 10, value: 20 * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE}
     ];
 
     $scope.domainOptions = [
@@ -78,9 +92,27 @@ angular.module("proton.controllers.Settings")
         {label: '50', index: 9, value: 50}
     ];
 
+    $scope.memberOptions = [
+        {label: '2', index: 0, value: 2},
+        {label: '3', index: 1, value: 3},
+        {label: '4', index: 2, value: 4},
+        {label: '5', index: 3, value: 5},
+        {label: '6', index: 4, value: 6},
+        {label: '7', index: 5, value: 7},
+        {label: '8', index: 6, value: 8},
+        {label: '9', index: 7, value: 9},
+        {label: '10', index: 8, value: 10}
+    ];
+
     $scope.selects = {
         plus: {
-            space: $scope.spaceOptions[0],
+            space: $scope.plusSpaceOptions[0],
+            domain: $scope.domainOptions[0],
+            address: $scope.addressOptions[0]
+        },
+        business: {
+            member: $scope.memberOptions[0],
+            space: $scope.businessSpaceOptions[0],
             domain: $scope.domainOptions[0],
             address: $scope.addressOptions[0]
         }
@@ -99,14 +131,23 @@ angular.module("proton.controllers.Settings")
             $scope.configuration.cycle = subscription.Cycle;
             $scope.configuration.currency = subscription.Currency;
 
-            if ($scope.subscription.Name === 'plus' || $scope.subscription.Name === 'business') {
-                $scope.selects.plus.space = _.findWhere($scope.spaceOptions, {value: $scope.count('MaxSpace')});
+            if ($scope.subscription.Name === 'plus') {
+                $scope.selects.plus.space = _.findWhere($scope.plusSpaceOptions, {value: $scope.count('MaxSpace')});
                 $scope.selects.plus.domain = _.findWhere($scope.domainOptions, {value: $scope.count('MaxDomains')});
                 $scope.selects.plus.address = _.findWhere($scope.addressOptions, {value: $scope.count('MaxAddresses')});
+            } else if ($scope.subscription.Name === 'business') {
+                $scope.selects.business.space = _.findWhere($scope.businessSpaceOptions, {value: $scope.count('MaxSpace')});
+                $scope.selects.business.domain = _.findWhere($scope.domainOptions, {value: $scope.count('MaxDomains')});
+                $scope.selects.business.address = _.findWhere($scope.addressOptions, {value: $scope.count('MaxAddresses')});
+                $scope.selects.business.member = _.findWhere($scope.memberOptions, {value: $scope.count('MaxMembers')});
             } else {
-                $scope.selects.plus.space = $scope.spaceOptions[0];
+                $scope.selects.plus.space = $scope.plusSpaceOptions[0];
                 $scope.selects.plus.domain = $scope.domainOptions[0];
                 $scope.selects.plus.address = $scope.addressOptions[0];
+                $scope.selects.business.member = $scope.memberOptions[0];
+                $scope.selects.business.space = $scope.businessSpaceOptions[0];
+                $scope.selects.business.domain = $scope.domainOptions[0];
+                $scope.selects.business.address = $scope.addressOptions[0];
             }
         }
 
@@ -116,12 +157,14 @@ angular.module("proton.controllers.Settings")
                 1: {
                     space: _.findWhere(monthly, {Name: '1gb'}),
                     domain: _.findWhere(monthly, {Name: '1domain'}),
-                    address: _.findWhere(monthly, {Name: '5address'})
+                    address: _.findWhere(monthly, {Name: '5address'}),
+                    member: _.findWhere(monthly, {Name: '1member'})
                 },
                 12: {
                     space: _.findWhere(yearly, {Name: '1gb'}),
                     domain: _.findWhere(yearly, {Name: '1domain'}),
-                    address: _.findWhere(yearly, {Name: '5address'})
+                    address: _.findWhere(yearly, {Name: '5address'}),
+                    member: _.findWhere(yearly, {Name: '1member'})
                 }
             };
 
@@ -211,10 +254,14 @@ angular.module("proton.controllers.Settings")
         total += plan.Amount;
 
         // Add addons
-        if (plan.editable === true) {
-            total += $scope.selects.plus.space.index * $scope.addons[cycle].space.Amount;
-            total += $scope.selects.plus.domain.index * $scope.addons[cycle].domain.Amount;
-            total += $scope.selects.plus.address.index * $scope.addons[cycle].address.Amount;
+        if (plan.Name === 'plus' || plan.Name === 'business') {
+            total += $scope.selects[plan.Name].space.index * $scope.addons[cycle].space.Amount;
+            total += $scope.selects[plan.Name].domain.index * $scope.addons[cycle].domain.Amount;
+            total += $scope.selects[plan.Name].address.index * $scope.addons[cycle].address.Amount;
+
+            if (plan.Name === 'business') {
+                total += $scope.selects[plan.Name].member.index * $scope.addons[cycle].member.Amount;
+            }
         }
 
         return total;
@@ -271,8 +318,16 @@ angular.module("proton.controllers.Settings")
                 text = gettextCatalog.getString('Update Plus', null, 'Action');
             } else if ($scope.subscription.Name === 'free') {
                 text = gettextCatalog.getString('Upgrade to Plus', null, 'Action');
-            } else if ($scope.subscription.Name === 'visionary') {
+            } else if ($scope.subscription.Name === 'business' || $scope.subscription.Name === 'visionary') {
                 text = gettextCatalog.getString('Downgrade to Plus', null, 'Action');
+            }
+        } else if (plan.Name === 'business') {
+            if ($scope.subscription.Name === plan.Name) {
+                text = gettextCatalog.getString('Update Business', null, 'Action');
+            } else if ($scope.subscription.Name === 'free' || $scope.subscription.Name === 'plus') {
+                text = gettextCatalog.getString('Upgrade to Business', null, 'Action');
+            } else if ($scope.subscription.Name === 'visionary') {
+                text = gettextCatalog.getString('Downgrade to Business', null, 'Action');
             }
         } else if (plan.Name === 'visionary') {
             if ($scope.subscription.Name === plan.Name) {
@@ -328,15 +383,19 @@ angular.module("proton.controllers.Settings")
                         var deferred = $q.defer();
 
                         Payment.delete()
-                        .then(function(result) {
-                            if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                                deferred.resolve();
-                            } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                                deferred.reject(new Error(result.data.Error));
-                            } else {
-                                deferred.reject(new Error(gettextCatalog.getString('Error processing payment.', null, 'Error')));
+                        .then((result) => {
+                                if(angular.isDefined(result.data) && result.data.Code === 1000) {
+                                    deferred.resolve();
+                                } else if(angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
+                                    deferred.reject(new Error(result.data.Error));
+                                } else {
+                                    deferred.reject(new Error(gettextCatalog.getString('Error processing payment.', null, 'Error')));
+                                }
+                            },
+                            (error) => {
+                                deferred.reject();
                             }
-                        });
+                        );
 
                         return deferred.promise;
                     };
@@ -351,7 +410,7 @@ angular.module("proton.controllers.Settings")
                         unsubscribe()
                         .then(finish)
                         .catch(function(error) {
-                            notify({message: error, classes: 'notification-danger'});
+                            //notify({message: error.message, classes: 'notification-danger'});
                         })
                     );
                 },
@@ -391,16 +450,22 @@ angular.module("proton.controllers.Settings")
             plan.quantity = 1;
 
             if (plan.Name === 'plus' || plan.Name === 'business') {
-                for (i = 0; i < $scope.selects.plus.space.index; i++) {
+                for (i = 0; i < $scope.selects[plan.Name].space.index; i++) {
                     planIDs.push($scope.addons[$scope.configuration.cycle].space.ID);
                 }
 
-                for (i = 0; i < $scope.selects.plus.domain.index; i++) {
+                for (i = 0; i < $scope.selects[plan.Name].domain.index; i++) {
                     planIDs.push($scope.addons[$scope.configuration.cycle].domain.ID);
                 }
 
-                for (i = 0; i < $scope.selects.plus.address.index; i++) {
+                for (i = 0; i < $scope.selects[plan.Name].address.index; i++) {
                     planIDs.push($scope.addons[$scope.configuration.cycle].address.ID);
+                }
+
+                if (plan.Name === 'business') {
+                    for (i = 0; i < $scope.selects.business.member.index; i++) {
+                        planIDs.push($scope.addons[$scope.configuration.cycle].member.ID);
+                    }
                 }
             }
 

@@ -196,13 +196,20 @@ angular.module('proton.controllers.Settings')
      * @param {Object} address
      */
     $scope.generate = function(address) {
+        var title = gettextCatalog.getString('Generate key pair', null, 'Title');
+        var message = gettextCatalog.getString('Generate key pair', null, 'Info');
+
         generateModal.activate({
             params: {
-                title: gettextCatalog.getString('Generate key pair', null),
-                message: '', // TODO need text
+                title: title,
+                message: message,
                 addresses: [address],
-                cancel: function() {
-                    eventManager.call();
+                password: authentication.getPassword(),
+                close: function(success) {
+                    if (success) {
+                        eventManager.call();
+                    }
+
                     generateModal.deactivate();
                 }
             }

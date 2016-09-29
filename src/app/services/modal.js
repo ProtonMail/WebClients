@@ -7,7 +7,8 @@ angular.module("proton.modals", [])
     $controller,
     $q,
     $http,
-    $templateCache
+    $templateCache,
+    passwords
 ) {
     return function modalFactory(config) {
         if (!(!config.template ^ !config.templateUrl)) {
@@ -416,13 +417,15 @@ angular.module("proton.modals", [])
         templateUrl: 'templates/modals/loginPassword.tpl.html',
         controller: function(params) {
             this.loginPassword = '';
+            this.twoFactorCode = '';
+            this.hasTwoFactor = params.hasTwoFactor;
             $timeout(function() {
                 $('#loginPassword').focus();
             });
 
             this.submit = function() {
                 if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit(this.loginPassword);
+                    params.submit(this.loginPassword, this.twoFactorCode);
                 }
             }.bind(this);
 
@@ -431,7 +434,6 @@ angular.module("proton.modals", [])
                     params.cancel();
                 }
             };
-
         }
     });
 })
@@ -668,16 +670,13 @@ angular.module("proton.modals", [])
                 var deferred = $q.defer();
 
                 if (params.create === true) {
-                    var mailboxPassword = authentication.getPassword();
 
-                    pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
+                    pmcw.generateKeysRSA('pm_org_admin', authentication.getPassword())
                     .then(function(response) {
                         var privateKey = response.privateKeyArmored;
 
                         deferred.resolve({
-                            DisplayName: this.organizationName,
-                            PrivateKey: privateKey,
-                            BackupPrivateKey: privateKey
+                            PrivateKey: privateKey
                         });
                     }.bind(this), function(error) {
                         deferred.reject(new Error('Error during the generation of new keys for pm_org_admin'));
@@ -968,21 +967,24 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('userModal', function(pmModal, CONSTANTS) {
+.factory('memberModal', function(pmModal, CONSTANTS, gettextCatalog, Member, $q, networkActivityTracker, notify, pmcw, MemberKey, authentication, Address) {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/user/modal.tpl.html',
+        templateUrl: 'templates/modals/member.tpl.html',
         controller: function(params) {
             // Variables
             var base = CONSTANTS.BASE_SIZE;
 
-            // Parameters
+            // Default Parameters
+            this.ID = null;
             this.step = 'member';
+            this.size = 2048;
             this.organization = params.organization;
+            this.organizationPublicKey = params.organizationPublicKey;
             this.domains = params.domains;
             this.domain = params.domains[0];
-            this.nickname = '';
-            this.loginPassword = '';
+            this.name = '';
+            this.temporaryPassword = '';
             this.confirmPassword = '';
             this.address = '';
             this.quota = 0;
@@ -991,27 +993,231 @@ angular.module("proton.modals", [])
                 {label: 'GB', value: base * base * base}
             ];
             this.unit = this.units[0];
-            this.private = false; // Uncheck by default
+            this.private = true;
+
+            // Edit mode
+            if (params.member) {
+                this.ID = params.member.ID;
+                this.name = params.member.Name;
+                this.private = Boolean(params.member.Private);
+                this.isPrivate = Boolean(params.member.Private);
+                this.quota = params.member.MaxSpace / this.unit.value;
+            }
 
             // Functions
             this.submit = function() {
-                if (angular.isDefined(params.submit) && angular.isFunction(params.submit)) {
-                    params.submit();
-                }
-            };
+                var mainPromise;
+                var address;
+                var notificationMessage;
+                var member = {
+                    Name: this.name,
+                    Private: this.private ? 1 : 0,
+                    MaxSpace: this.quota * this.unit.value
+                };
 
-            this.next = function() {
-                this.step = 'address';
+                var check = function() {
+                    var deferred = $q.defer();
+                    var error;
+
+                    if (this.name.length === 0) {
+                        error = gettextCatalog.getString('Invalid Name', null, 'Error');
+                        deferred.reject(error);
+                    } else if (!member.ID && this.temporaryPassword !== this.confirmPassword) {
+                        error = gettextCatalog.getString('Invalid Password', null, 'Error');
+                        deferred.reject(error);
+                    } else if (!member.ID && this.address.length === 0) {
+                        error = gettextCatalog.getString('Invalid Address', null, 'Error');
+                        deferred.reject(error);
+                    } else if (this.quota * this.unit.value > (this.organization.MaxSpace - this.organization.UsedSpace)) {
+                        error = gettextCatalog.getString('Invalid Quota', null, 'Error');
+                        deferred.reject(error);
+                    } else {
+                        deferred.resolve();
+                    }
+
+                    return deferred.promise;
+                }.bind(this);
+
+                var updateName = function() {
+                    var deferred = $q.defer();
+
+                    Member.name(member.ID, this.name)
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            deferred.resolve();
+                        } else if (result.data && result.data.Error){
+                            deferred.reject(result.data.Error);
+                        } else {
+                            deferred.reject('Request error');
+                        }
+                    });
+
+                    return deferred.promise;
+                }.bind(this);
+
+                var updateQuota = function() {
+                    var deferred = $q.defer();
+
+                    Member.quota(member.ID, this.quota * this.unit.value)
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            deferred.resolve();
+                        } else if (result.data && result.data.Error){
+                            deferred.reject(result.data.Error);
+                        } else {
+                            deferred.reject('Request error');
+                        }
+                    });
+
+                    return deferred.promise;
+                }.bind(this);
+
+                var updatePrivate = function() {
+                    var deferred = $q.defer();
+
+                    if (this.private) {
+                        Member.private(member.ID, this.quota * this.unit.value)
+                        .then(function(result) {
+                            if (result.data && result.data.Code === 1000) {
+                                deferred.resolve();
+                            } else if (result.data && result.data.Error){
+                                deferred.reject(result.data.Error);
+                            } else {
+                                deferred.reject('Request error');
+                            }
+                        });
+                    } else {
+                        deferred.resolve();
+                    }
+
+                    return deferred.promise;
+                }.bind(this);
+
+                var memberRequest = function() {
+                    var deferred = $q.defer();
+                    var request = member.ID ? Member.update(member) : Member.create(member);
+
+                    request.then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            member = result.data.Member;
+                            deferred.resolve();
+                        } else if (result.data && result.data.Error){
+                            deferred.reject(result.data.Error);
+                        } else {
+                            deferred.reject('Request error');
+                        }
+                    });
+
+                    return deferred.promise;
+                };
+
+                var addressRequest = function() {
+                    var deferred = $q.defer();
+
+                    Address.create({Local: this.address, Domain: this.domain.DomainName, MemberID: member.ID})
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            address = result.data.Address;
+                            deferred.resolve();
+                        } else if (result.data && result.data.Error){
+                            deferred.reject(result.data.Error);
+                        } else {
+                            deferred.reject('Request error');
+                        }
+                    });
+
+                    return deferred.promise;
+                }.bind(this);
+
+                var generateKey = function() {
+                    var password = this.temporaryPassword;
+                    var numBits = this.size;
+                    var randomString = authentication.randomString(24);
+                    var organizationKey = this.organizationPublicKey;
+
+                    return pmcw.generateKeysRSA(address.Email, password, numBits)
+                    .then(function(result) {
+                        var userKey = result.privateKeyArmored;
+
+                        return pmcw.decryptPrivateKey(userKey, password)
+                        .then(function(result) {
+                            return pmcw.encryptPrivateKey(result, randomString)
+                            .then(function(memberKey) {
+                                return pmcw.encryptMessage(randomString, organizationKey)
+                                .then(function(token) {
+                                    return Promise.resolve({
+                                        userKey: userKey,
+                                        memberKey: memberKey,
+                                        token: token
+                                    });
+                                });
+                            });
+                        });
+                    });
+                }.bind(this);
+
+                var keyRequest = function(result) {
+                    return MemberKey.create({
+                        AddressID: address.ID,
+                        UserKey: result.userKey,
+                        MemberKey: result.memberKey,
+                        Token: result.token
+                    })
+                    .then(function(result) {
+                        if (result.data && result.data.Code === 1000) {
+                            return Promise.resolve();
+                        } else if (result.data && result.data.Error) {
+                            return Promise.reject(result.data.Error);
+                        } else {
+                            return Promise.reject('Request error');
+                        }
+                    });
+                };
+
+                var finish = function() {
+                    notify({message: notificationMessage, classes: 'notification-success'});
+                    params.cancel(member);
+                };
+
+                var error = function(error) {
+                    notify({message: error, classes: 'notification-danger'});
+                };
+
+                if (this.ID) {
+                    member.ID = this.ID;
+                    notificationMessage = gettextCatalog.getString('Member updated', null, 'Notification');
+                    mainPromise = check()
+                    .then(updateName)
+                    .then(updateQuota)
+                    .then(updatePrivate)
+                    .then(finish)
+                    .catch(error);
+                } else {
+                    member.Password = this.temporaryPassword;
+                    notificationMessage = gettextCatalog.getString('Member created', null, 'Notification');
+
+                    if (member.Private === 0) {
+                        mainPromise = check()
+                        .then(memberRequest)
+                        .then(addressRequest)
+                        .then(generateKey)
+                        .then(keyRequest)
+                        .then(finish)
+                        .catch(error);
+                    } else {
+                        mainPromise = check()
+                        .then(memberRequest)
+                        .then(addressRequest)
+                        .then(finish)
+                        .catch(error);
+                    }
+                }
+
+                networkActivityTracker.track(mainPromise);
             }.bind(this);
 
             this.cancel = function() {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
-            };
-
-            this.add = function() {
-
+                params.cancel();
             };
         }
     });
@@ -1038,17 +1244,20 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('addressModal', function(pmModal, $rootScope, networkActivityTracker, notify, Address, gettextCatalog, eventManager) {
+.factory('addressModal', function(pmModal, authentication, $rootScope, $state, $q, networkActivityTracker, notify, Address, gettextCatalog, eventManager, pmcw, Key, MemberKey) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/domain/address.tpl.html',
         controller: function(params) {
             // Variables
             this.domain = params.domain;
+            this.organizationPublicKey = params.organizationPublicKey;
             this.step = params.step;
             this.members = params.members;
             this.member = params.members[0];
             this.address = '';
+            this.password = '';
+            this.size = 2048;
 
             this.open = function(name) {
                 $rootScope.$broadcast(name, params.domain);
@@ -1057,28 +1266,74 @@ angular.module("proton.modals", [])
             // Functions
             this.add = function() {
                 networkActivityTracker.track(
-                    Address.create({
-                        Local: this.address, // local part
-                        Domain: this.domain.DomainName,
-                        MemberID: this.member.ID // either you custom domain or a protonmail domain
-                    })
-                ).then(function(result) {
-                    if(angular.isDefined(result.data) && result.data.Code === 1000) {
-                        /// notification
-                        notify({message: gettextCatalog.getString('Address added', null, 'Info'), classes: 'notification-success'});
-                        this.domain.Addresses.push(result.data.Address);
-                        eventManager.call();
-                    } else if(angular.isDefined(result.data) && result.data.Code === 31006) {
-                        notify({message: gettextCatalog.getString('Domain not found', null, 'Error'), classes: 'notification-danger'});
-                    } else if(angular.isDefined(result.data) && result.data.Error) {
-                        notify({message: result.data.Error, classes: 'notification-danger'});
-                    } else {
-                        notify({message: gettextCatalog.getString('Address creation failed', null, 'Error'), classes: 'notification-danger'});
-                    }
-                }.bind(this), function(error) {
-                    notify({message: gettextCatalog.getString('Address creation failed', null, 'Error'), classes: 'notification-danger'});
-                });
+                    Address.create({Local: this.address, Domain: this.domain.DomainName, MemberID: this.member.ID})
+                    .then(function(result) {
+                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
+                            var address = result.data.Address;
+                            var password = this.password;
+                            var numBits = this.size;
+
+                            var generate = function() {
+                                var randomString = authentication.randomString(24);
+
+                                return $q.all({
+                                    userKey: pmcw.generateKeysRSA(address.Email, password, numBits),
+                                    memberKey: pmcw.generateKeysRSA(address.Email, randomString, numBits),
+                                    token: pmcw.encryptMessage(randomString, this.organizationPublicKey)
+                                });
+                            }.bind(this);
+
+                            var keyRequest = function(result) {
+                                var deferred = $q.defer();
+
+                                MemberKey.create({
+                                    AddressID: address.ID,
+                                    UserKey: result.userKey.privateKeyArmored,
+                                    MemberKey: result.memberKey,
+                                    Token: result.token
+                                })
+                                .then(function(result) {
+                                    if (result.data && result.data.Code === 1000) {
+                                        deferred.resolve();
+                                    } else if (result.data && result.data.Error) {
+                                        deferred.reject(result.data.Error);
+                                    } else {
+                                        deferred.reject('Request error');
+                                    }
+                                });
+
+                                return deferred.promise;
+                            };
+
+                            var finish = function() {
+                                notify({message: gettextCatalog.getString('Address added', null, 'Info'), classes: 'notification-success'});
+                                this.domain.Addresses.push(address);
+
+                                return eventManager.call();
+                            }.bind(this);
+
+                            if (this.member.Private === 0) {
+                                return generate()
+                                .then(keyRequest)
+                                .then(finish);
+                            } else {
+                                return finish();
+                            }
+                        } else if (angular.isDefined(result.data) && result.data.Code === 31006) {
+                            notify({message: gettextCatalog.getString('Domain not found', null, 'Error'), classes: 'notification-danger'});
+                        } else if (angular.isDefined(result.data) && result.data.Error) {
+                            notify({message: result.data.Error, classes: 'notification-danger'});
+                        } else {
+                            notify({message: gettextCatalog.getString('Address creation failed', null, 'Error'), classes: 'notification-danger'});
+                        }
+                    }.bind(this))
+                );
             }.bind(this);
+
+            this.createMember = function() {
+                params.cancel();
+                $state.go('secured.members', {action: 'new'});
+            };
 
             this.next = function() {
                 params.next();
@@ -1365,13 +1620,12 @@ angular.module("proton.modals", [])
     });
 })
 
-.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, authentication, notify, $q, $rootScope) {
+.factory('generateModal', function(pmModal, networkActivityTracker, Key, pmcw, notify, $q, $rootScope) {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/generate.tpl.html',
         controller: function(params) {
             // Variables
-            var mailboxPassword = authentication.getPassword();
             var promises = [];
             var QUEUED = 0;
             var GENERATING = 1;
@@ -1385,21 +1639,29 @@ angular.module("proton.modals", [])
             this.title = params.title;
             this.addresses = params.addresses;
             this.message = params.message;
+            // Kill this for now
+            this.askPassword = 0; //= params.password.length === 0;
+            this.password = params.password;
             _.each(this.addresses, function(address) { address.state = QUEUED; });
 
             // Listeners
+            // FIXME
+            // This is broken because authentication depends on generateModal and we can't have circular dependencies
+            // It is also bad logic, because which dirty addresses could change and this does not address that
+            // Better to just close the modal
             const unsubscribe = $rootScope.$on('updateUser', function(event) {
-                var dirtyAddresses = [];
+                // var dirtyAddresses = [];
 
-                _.each(authentication.user.Addresses, function(address) {
-                    if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
-                        dirtyAddresses.push(address);
-                    }
-                });
+                // _.each(authentication.user.Addresses, function(address) {
+                //     if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
+                //         dirtyAddresses.push(address);
+                //     }
+                // });
 
-                if (dirtyAddresses.length === 0) {
-                    params.cancel();
-                }
+                // if (dirtyAddresses.length === 0) {
+                //     params.cancel();
+                // }
+                params.cancel();
             });
 
             // Functions
@@ -1409,14 +1671,11 @@ angular.module("proton.modals", [])
                 this.process = true;
                 _.each(this.addresses, function(address) {
                     address.state = GENERATING;
-                    promises.push(pmcw.generateKeysRSA(
-                        address.Email,
-                        mailboxPassword,
-                        numBits
-                    ).then(function(result) {
-                        address.state = DONE;
-                        // var publicKeyArmored = result.publicKeyArmored; not used
+                    promises.push(pmcw.generateKeysRSA(address.Email, this.password, numBits)
+                    .then(function(result) {
                         var privateKeyArmored = result.privateKeyArmored;
+
+                        address.state = DONE;
 
                         return Key.create({
                             AddressID: address.ID,
@@ -1424,6 +1683,8 @@ angular.module("proton.modals", [])
                         }).then(function(result) {
                             if (result.data && result.data.Code === 1000) {
                                 address.state = SAVED;
+                                address.Keys = address.Keys || [];
+                                address.Keys.push(result.data.Key);
                                 notify({message: 'Key created', classes: 'notification-success'});
                                 return $q.resolve();
                             } else if (result.data && result.data.Error) {
@@ -1453,12 +1714,12 @@ angular.module("proton.modals", [])
 
                 $q.all(promises)
                 .finally(function() {
-                    params.cancel();
+                    params.close(true, this.addresses, this.password);
                 }.bind(this));
             };
 
             this.cancel = function() {
-                params.cancel();
+                params.close(false);
             };
 
             this.$onDestroy = unsubscribe;
@@ -2141,6 +2402,63 @@ angular.module("proton.modals", [])
             $timeout(function() {
                 angular.element('#emailAddress').focus();
             });
+        }
+    });
+})
+
+.factory('sharedSecretModal', function(pmModal, $timeout) {
+
+   return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/twofactor/sharedSecret.tpl.html',
+        controller: function(params) {
+            this.sharedSecret = params.sharedSecret;
+            this.next = function() {
+                if (angular.isDefined(params.next) && angular.isFunction(params.next)) {
+                    params.next();
+                }
+            }.bind(this);
+
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+
+            this.makeCode = function() {
+                $timeout(function() {
+                    var qrCode = new QRCode(document.getElementById("qrcode"), params.qrURI);
+                }, 0);
+            };
+        }
+    });
+})
+
+.factory('recoveryCodeModal', function(pmModal) {
+   return pmModal({
+        controllerAs: 'ctrl',
+        templateUrl: 'templates/modals/twofactor/recoveryCode.tpl.html',
+        controller: function(params) {
+            this.title = params.title;
+            this.message = params.message;
+            this.recoveryCodesFirstHalf = params.recoveryCodes.slice(0, 8);
+            this.recoveryCodesSecondHalf = params.recoveryCodes.slice(8, 16);
+            this.done = function() {
+                  if (angular.isDefined(params.done) && angular.isFunction(params.done)) {
+                    params.done();
+                }
+            };
+            this.download = function() {
+                if (angular.isDefined(params.download) && angular.isFunction(params.download)) {
+                    params.download();
+                }
+            };
+            this.cancel = function() {
+                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
+                    params.cancel();
+                }
+            };
+
         }
     });
 })

@@ -24,7 +24,7 @@ angular.module("proton.pmcw", [])
                     pmcrypto.decryptMessage(accessToken, privateKey)
                     .then(
                         function(resp) {
-                            return resolve(resp);
+                            return resolve({ password: prKeyPassCode, token: resp });
                         },
                         function(error) {
                             return reject(new Error('Unable to get Access Token.'));
