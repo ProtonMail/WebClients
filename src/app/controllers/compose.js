@@ -412,11 +412,36 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
 
 
     /**
+     * Bind the From configuration to a message and update the AddressID if we need to
+     * @param  {String} options.AddressID
+     * @return {Object}
+     */
+    function bindFrom({ AddressID }) {
+
+        const addresses = _.chain(authentication.user.Addresses)
+            .where({Status: 1, Receive: 1})
+            .sortBy('Send')
+            .value();
+
+        if (AddressID) {
+            // If you try to create a reply from a disabled alias, bind the first Address.
+            const adr = _.findWhere(addresses, { ID: AddressID });
+            return {
+                From: adr || addresses[0],
+                AddressID: adr ? AddressID : addresses[0].ID
+            };
+        }
+        return {
+            From: addresses[0],
+            AddressID: addresses[0].ID
+        };
+    }
+
+    /**
      * Add message in composer list
      * @param {Object} message
      */
     function initMessage(message) {
-        const addresses = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').value();
 
         if (authentication.user.Delinquent < 3) {
             // Not in the delinquent state
@@ -438,8 +463,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
         // Mark message as read
         if (message.IsRead === 0) {
             const ids = [message.ID];
-
-            $rootScope.$emit('messageActions', {action: 'read', data: {ids}});
+            $rootScope.$emit('messageActions', {action: 'read', data: { ids }});
         }
 
         // if tablet we maximize by default
@@ -452,19 +476,16 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             }
         }
 
-        if (message.AddressID) {
-            message.From = _.findWhere(addresses, {ID: message.AddressID});
-        } else {
-            message.From = addresses[0];
-            message.AddressID = addresses[0].ID;
-        }
-
         message.uid = $scope.uid++;
         message.pendingAttachements = [];
         message.askEmbedding = false;
         delete message.asEmbedded;
         message.uploading = 0;
         message.sending = false;
+
+        const { From, AddressID } = bindFrom(message);
+        message.From = From;
+        message.AddressID = AddressID;
 
         $scope
             .$applyAsync(() => {
