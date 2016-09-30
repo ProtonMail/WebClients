@@ -8,15 +8,13 @@
 
             <section class="pm_form col-1-2">
                 <legend>
-                <span translate translate-comment="Account page heading">Default identity</span>
-
-                <a ui-sref="secured.addresses" class="pm_button link pull-right" translate-context="Action" translate translate-comment="link to addresses page">Other identities</a>
+                <span translate translate-comment="Account page heading">Identity</span>
 
                 </legend>
                 <div class="clearfix">
                     <div class="col-3-8">
                         <label for="displayName">
-                            <span translate-context="Title" translate translate-comment="display name heading on account page">Display name</span>
+                            <span translate-context="Title" translate translate-comment="display name heading on account page">Default display name</span>
                             <a href="https://protonmail.com/support/knowledge-base/display-name/" target="_blank" class="text-purple"><i class="fa fa-info-circle"></i></a>
                         </label>
                     </div>
@@ -26,7 +24,7 @@
                 </div>
                 <div class="clearfix">
                     <div class="col-3-8">
-                        <label for="signature" translate-context="Title" translate translate-comment="Signature heading on account page">Signature</label>
+                        <label for="signature" translate-context="Title" translate translate-comment="Signature heading on account page">Default signature</label>
                     </div>
                     <div class="col-5-8">
                         <squire
@@ -56,6 +54,7 @@
                     <div class="col-3-8">&nbsp;</div>
                     <div class="col-5-8">
                         <button class="pm_button primary" ng-click="saveIdentity()" translate-context="Action" translate translate-comment="Save button for updating default identity on account page">Save</button>
+                        <a ui-sref="secured.addresses" class="pm_button" translate-context="Action" translate translate-comment="link to addresses page">Edit other identities</a>
                     </div>
                 </div>
             </section>
