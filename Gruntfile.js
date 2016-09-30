@@ -113,6 +113,21 @@ module.exports = function(grunt) {
             options: {
                 sourceMap: true
             },
+            watch: {
+                files: [{
+                    src: [
+                        'src/app/*.js',
+                        'src/app/**/*.js',
+                        'src/app/**/**/*.js',
+                        '!src/app/libraries/**/*.js',
+                        '!src/app/templates/templates-app.js'
+                    ],
+                    dest: "<%= build_dir %>",
+                    cwd: ".",
+                    filter: 'isFile',
+                    expand: true
+                }]
+            },
             dist: {
                 files: [{
                     src: [
@@ -424,7 +439,7 @@ module.exports = function(grunt) {
 
             jssrc: {
                 files: ["<%= app_files.js %>"],
-                tasks: ["jshint", "copy:build_appjs", "index:build"]
+                tasks: ['changed:jshint:files','changed:babel:watch', "index:build"]
             },
 
             assets: {
@@ -523,7 +538,6 @@ module.exports = function(grunt) {
         'notify_hooks',
         'ngconstant:dev',
         'build',
-        'jshint',
         'connect:watch',
         'delta',
     ]);
@@ -532,6 +546,7 @@ module.exports = function(grunt) {
         'clean:dist', // clean dist directory
         'shell:setup_dist',
         'ngconstant:prod', // set prod variables
+        'jshint',
         'build',
         'copy:compile_assets', // copy assets
         'copy:compile_htaccess', // copy htaccess file
@@ -558,7 +573,7 @@ module.exports = function(grunt) {
         'copy:build_external',
         'copy:build_htaccess',
         'ngAnnotate',
-        'babel',
+        'babel:dist',
         'index:build'
     ]);
 };
