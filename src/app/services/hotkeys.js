@@ -239,8 +239,8 @@ angular.module('proton.hotkeys', [])
             });
         },
         unbind() {
-            keys.forEach(({keyboard, callback}) => {
-                Mousetrap.unbind(keyboard, callback);
+            keys.forEach(({keyboard}) => {
+                Mousetrap.unbind(keyboard);
             });
         }
     };
