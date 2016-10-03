@@ -108,24 +108,33 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.startWatchingEvent = function() {
+
+        let isOpened = false;
+
+        const onElement = (cb, value = true) => (event) => {
+            if (!isOpened) {
+                cb();
+                isOpened = value;
+            }
+        };
+
         $scope.$on('refreshElements', (event) => {
             $scope.refreshConversations();
         });
 
-        $scope.$on('openMarked', function(event) {
-            if (angular.element('.message.marked').length === 0) {
-                openElement($scope.markedElement);
-            }
-        });
+        $scope.$on('openMarked', onElement(() => {
+            openElement($scope.markedElement);
+
+        }));
 
         $scope.$on('left', function(event) {
             redirectUser();
+            isOpened = false;
         });
-        $scope.$on('right', function(event) {
-            if (angular.element('.message.marked').length === 0) {
-                openElement($scope.markedElement);
-            }
-        });
+        $scope.$on('right', onElement(() => {
+            openElement($scope.markedElement);
+
+        }));
 
         $scope.$on('selectMark', function(event) {
             $scope.markedElement.Selected = !!!$scope.markedElement.Selected;
@@ -184,8 +193,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         }
 
-        $scope.$on('markPrevious', function(event) {
-            if (angular.element('.message.marked').length === 0 && $scope.conversations) {
+        $scope.$on('markPrevious', onElement(() => {
+            if ($scope.conversations) {
                 var index = $scope.conversations.indexOf($scope.markedElement);
 
                 if (index > 0) {
@@ -197,10 +206,9 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     goToPage($scope.page - 1);
                 }
             }
-        });
-
-        $scope.$on('markNext', function(event) {
-            if (angular.element('.message.marked').length === 0 && $scope.conversations) {
+        }, false));
+        $scope.$on('markNext', onElement(() => {
+            if ($scope.conversations) {
                 var index = $scope.conversations.indexOf($scope.markedElement);
 
                 if (index < ($scope.conversations.length - 1)) {
@@ -212,7 +220,37 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     goToPage($scope.page + 1);
                 }
             }
-        });
+        }, false));
+        // $scope.$on('markPrevious', function(event) {
+        //     console.log('ElementsController');
+        //     if (angular.element('.message.marked').length === 0 && $scope.conversations) {
+        //         var index = $scope.conversations.indexOf($scope.markedElement);
+
+        //         if (index > 0) {
+        //             $scope.$applyAsync(() => {
+        //                 $scope.markedElement = $scope.conversations[index - 1];
+        //             });
+        //             scrollToConversationPos();
+        //         } else {
+        //             goToPage($scope.page - 1);
+        //         }
+        //     }
+        // });
+
+        // $scope.$on('markNext', function(event) {
+        //     if (angular.element('.message.marked').length === 0 && $scope.conversations) {
+        //         var index = $scope.conversations.indexOf($scope.markedElement);
+
+        //         if (index < ($scope.conversations.length - 1)) {
+        //             $scope.$applyAsync(() => {
+        //                 $scope.markedElement = $scope.conversations[index + 1];
+        //             });
+        //             scrollToConversationPos();
+        //         } else {
+        //             goToPage($scope.page + 1);
+        //         }
+        //     }
+        // });
 
         $scope.$on('nextElement', function(event) {
             $scope.nextElement();
@@ -226,6 +264,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
+        console.log('DESTROY');
         angular.element($window).unbind('resize', $rootScope.mobileResponsive);
         angular.element($window).unbind('orientationchange', $rootScope.mobileResponsive);
     };
