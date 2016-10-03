@@ -118,6 +118,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         });
 
+        $scope.$on('left', function(event) {
+            redirectUser();
+        });
+        $scope.$on('right', function(event) {
+            if (angular.element('.message.marked').length === 0) {
+                openElement($scope.markedElement);
+            }
+        });
+
         $scope.$on('selectMark', function(event) {
             $scope.markedElement.Selected = !!!$scope.markedElement.Selected;
             $scope.$apply();
