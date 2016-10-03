@@ -78,16 +78,19 @@ angular.module('proton.conversation')
             scope.toggleStar();
         });
 
-        scope.$on('left', function(event) {
-            scope.markedMessage = null;
-            scope.$apply();
-        });
+        // scope.$on('left', function(event) {
+        //     scope.markedMessage = null;
+        //     scope.$apply();
+        // });
 
         scope.$on('right', function(event) {
-            scope.markedMessage = _.last(scope.messages);
-            scope.$apply();
-            angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
-            angular.element('#pm_thread')[0].focus();
+            scope
+                .$applyAsync(() => {
+                    scope.markedMessage = _.last(scope.messages);
+                // angular.element('#pm_thread').scrollTop(angular.element('.message.marked')[0].offsetTop - angular.element('#pm_thread').height() / 2);
+                // angular.element('#pm_thread')[0].focus();
+                // debugger;
+                });
         });
 
         scope.$on('escape', function(event) {
@@ -101,7 +104,7 @@ angular.module('proton.conversation')
             const name = $state.$current.name;
             const route = name.replace('.element', '');
 
-            $state.go(route, { id: null });
+            $state.go(route, { id: '' });
         }
 
         /**
