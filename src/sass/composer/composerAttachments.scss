@@ -16,7 +16,6 @@
 
 .composerAttachments-header * { pointer-events: none }
 
-
 .composerAttachments-loaders {
     display: flex;
     flex-wrap: wrap;
@@ -38,3 +37,4 @@
 
 .composerAttachments-size {margin-right: 1em}
 .composerAttachments-action {margin-left: auto}
+.composerAttachments-counter { margin-right:1em; }
