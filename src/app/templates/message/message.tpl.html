@@ -2,7 +2,7 @@
     'last': last,
     'open': message.expand,
     'closed': !message.expand,
-    'marked': message === markedMessage,
+    'marked': message.ID === marked.ID,
     'read': message.IsRead === 1,
     'unread': message.IsRead === 0,
     'details': message.toggleDetails === true,
@@ -11,7 +11,7 @@
     'sent': message.Type === 2 || message.Type === 3
 }">
 
-<div class="summary" toggle-message>
+    <div class="summary" toggle-message>
         <div class="pull-left">
             <div class="meta">
                 <i class="history fa fa-reply" ng-if="message.IsReplied === 1"></i>

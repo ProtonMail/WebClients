@@ -19,6 +19,7 @@
     <message
         id="message{{ $index }}"
         data-model="message"
+        data-marked="markedMessage"
         data-last="$last"
         data-index="$index"
         ng-repeat="message in messages | filter: filterMessages:showTrashed:showNonTrashed track by message.ID"

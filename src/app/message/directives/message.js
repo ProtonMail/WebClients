@@ -79,6 +79,7 @@ angular.module('proton.message')
         templateUrl: 'templates/message/message.tpl.html',
         scope: {
             message: '=model',
+            marked: '=',
             last: '=',
             index: '='
         },
