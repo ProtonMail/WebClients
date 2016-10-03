@@ -387,7 +387,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         $log.debug('generateKeys');
 
         const email = $scope.account.Username + '@' + $scope.account.domain.value;
-        return setupKeys.generate(addresses = [{ID: 0, Email: email}], mbpw)
+        return setupKeys.generate([{ID: 0, Email: email}], mbpw)
         .then((result) => {
             // Save for later
             $scope.setupPayload = result;
