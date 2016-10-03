@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .directive('composer', ($rootScope, embedded) => {
+    .directive('composer', ($rootScope, embedded, attachmentFileFormat) => {
 
         const CLASS_DRAGGABLE = 'composer-draggable';
         const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
@@ -28,7 +28,9 @@ angular.module('proton.composer')
 
             switch(type) {
                 case 'dragenter':
-                    addDragenterClassName(el);
+                    if (attachmentFileFormat.isUploadAbleType(data.event)) {
+                        addDragenterClassName(el);
+                    }
                     break;
                 case 'drop':
                     // Same event as the one coming from squire
