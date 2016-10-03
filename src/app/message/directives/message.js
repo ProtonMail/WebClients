@@ -103,7 +103,7 @@ angular.module('proton.message')
 
                 switch (type) {
                     case 'toggle':
-                        openMessage();
+                        openMessage(data);
                         break;
                     case 'save.success':
                         if ($state.includes('secured.drafts.**')) {
@@ -133,17 +133,22 @@ angular.module('proton.message')
                 unsubscribe.length = 0;
             });
 
-            function openMessage() {
+            function openMessage({ message, expand } = {}) {
                 if (scope.message.Type === 1) {
                     if ($state.includes('secured.drafts.**')) {
                         $rootScope.$emit('composer.load', scope.message);
                     }
-                } else {
-                    const promise = (typeof scope.message.Body === 'undefined') ? loadMessageBody() : Promise.resolve();
-
-                    promise
-                    .then(() => loadContent());
+                    return;
                 }
+
+                // Default there is no expand, this key is coming from toggleMessage
+                if (expand === false) {
+                    return;
+                }
+
+                const promise = (typeof scope.message.Body === 'undefined') ? loadMessageBody() : Promise.resolve();
+
+                promise.then(() => loadContent());
             }
 
             /**

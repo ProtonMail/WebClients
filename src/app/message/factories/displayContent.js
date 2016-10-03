@@ -60,13 +60,14 @@ angular.module('proton.message')
         }
 
         return (message, body, index) => {
+
             return new Promise((resolve, reject) => {
                 if (body) {
                     read(message);
+                    return resolve({ body, type: detect(body) });
+                }
 
-                    return resolve();
-                } else {
-                    decrypt(message)
+                return decrypt(message)
                     .then((decrytedBody) => (message.IsEncrypted === 8) ? parse(decrytedBody) : decrytedBody)
                     .then((body) => clean(body))
                     .then((body) => show(body, message, false))
@@ -76,7 +77,6 @@ angular.module('proton.message')
                     })
                     .then(resolve)
                     .catch(reject);
-                }
             });
         };
     });

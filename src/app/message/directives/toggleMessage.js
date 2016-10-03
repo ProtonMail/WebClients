@@ -23,17 +23,14 @@ angular.module('proton.message')
                         return $rootScope.$emit('composer.load', scope.message);
                     }
 
-                    if (typeof scope.message.expand === 'undefined') {
-                        scope.message.expand = true;
-                        $rootScope.$emit('message.open', {
-                            type: 'toggle',
-                            data: {
-                                message: scope.message
-                            }
-                        });
-                    } else {
-                        scope.message.expand = !scope.message.expand;
-                    }
+                    scope.message.expand = !scope.message.expand;
+                    $rootScope.$emit('message.open', {
+                        type: 'toggle',
+                        data: {
+                            message: scope.message,
+                            expand: scope.message.expand
+                        }
+                    });
                 });
             }
         }
