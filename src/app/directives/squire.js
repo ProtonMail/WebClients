@@ -1,7 +1,7 @@
 angular.module("proton.squire", [
     "proton.tooltip"
 ])
-.directive("squire", function(tools, $rootScope, $timeout, authentication, embedded, CONSTANTS, signatureBuilder) {
+.directive("squire", function(tools, $rootScope, $timeout, authentication, embedded, CONSTANTS, signatureBuilder, attachmentFileFormat) {
 
     /**
      * Generate an event listener based on the eventName
@@ -10,7 +10,12 @@ angular.module("proton.squire", [
      * @param  {String} type void
      * @return {Function}      EventListener Callback
      */
-    const draggableCallback = (type, message) => {
+    const draggableCallback = (type, message, typeContent) => {
+
+        if (typeContent !== 'message') {
+            return angular.noop;
+        }
+
         const isEnd = type === 'dragleave' || type === 'drop';
         const cb = (event) => {
             $rootScope.$emit('editor.draggable', {
@@ -62,7 +67,7 @@ angular.module("proton.squire", [
             scope.$on('$destroy', function() {
                 if(angular.isDefined(editor)) {
                     ['dragleave', 'dragenter', 'drop']
-                        .forEach((key) => editor.removeEventListener(key, draggableCallback(key, scope.message)));
+                        .forEach((key) => editor.removeEventListener(key, draggableCallback(key, scope.message, typeContent)));
 
                     editor.destroy();
                 }
@@ -108,12 +113,12 @@ angular.module("proton.squire", [
             };
 
             function handleDrop(e) {
-              e.stopPropagation();
-              e.preventDefault();
-
-              const file = e.dataTransfer.files[0];
-
-              insertImage(file, e);
+                // Do not prevent the drop of text
+                attachmentFileFormat.isUploadAbleType(e) && e.preventDefault();
+                const file = e.dataTransfer.files[0];
+                if (file && /image/.test(file.type || '')) {
+                    insertImage(file, e);
+                }
             }
 
             scope.canRemoveLink = function() {
@@ -232,7 +237,7 @@ angular.module("proton.squire", [
 
 
                 ['dragleave', 'dragenter', 'drop']
-                    .forEach((key) => editor.addEventListener(key, draggableCallback(key, scope.message)));
+                    .forEach((key) => editor.addEventListener(key, draggableCallback(key, scope.message, typeContent)));
 
 
                 if (isMessage()) {
