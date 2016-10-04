@@ -1363,14 +1363,14 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 cache.events(events); // Send events to the cache manager
                 notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'}); // Notify the user
                 $scope.close(message, false, false); // Close the composer window
-                $timeout(function() {
+                // $timeout(function() {
                     $rootScope.$emit('message.open', {
                         type: 'save.success',
                         data: {
                             message: new Message(Sent)
                         }
                     });
-                }, 500, false);
+                // }, 500, false);
                 deferred.resolve(result); // Resolve finally the promise
             })
             .catch((error) => {
