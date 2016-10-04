@@ -9,7 +9,8 @@ angular.module('proton.conversation')
     authentication,
     cache,
     CONSTANTS,
-    tools
+    tools,
+    hotkeys
 ) => {
 
     /**
@@ -70,7 +71,7 @@ angular.module('proton.conversation')
             conversation: '='
         },
         templateUrl: 'templates/partials/conversation.tpl.html',
-        link(scope) {
+        link(scope, el) {
             var scrollPromise;
             var messagesCached = [];
             const unsubscribe = [];
@@ -139,12 +140,11 @@ angular.module('proton.conversation')
                 scope.toggleStar();
             });
 
-            // scope.$on('left', function(event) {
-            //     console.log('dede');
-            //     scope.markedMessage = null;
-            //     scope.$apply();
-            // });
-            //
+            // We don't need to check these events if we didn't choose to focus onto a specific message
+            hotkeys.unbind(['down', 'up']);
+
+            // Restore them to allow custom keyboard navigation
+            scope.$on('left', () => hotkeys.bind(['down', 'up']));
             scope.$on('openMarked', () => {
                 if (scope.markedMessage) {
                     scope
@@ -161,9 +161,10 @@ angular.module('proton.conversation')
             });
 
             scope.$on('right', function(event) {
-                scope
+                !scope.markedMessage && scope
                     .$applyAsync(() => {
                         scope.markedMessage = _.last(scope.messages);
+                        hotkeys.bind(['down', 'up']);
                     });
             });
 

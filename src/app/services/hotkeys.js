@@ -232,16 +232,34 @@ angular.module('proton.hotkeys', [])
         {keyboard: '/', callback: slash}
     ];
 
+    const removeBinding = ({ keyboard }) => Mousetrap.unbind(keyboard);
+    const addBinding = ({ keyboard, callback }) => Mousetrap.bind(keyboard, callback);
+    /**
+     * Bind/unBind an action for an event based on a custom list
+     * @param  {Array}    list [...<eventName>]
+     * @param  {Function} cb   Action to perform
+     * @return {void}
+     */
+    const filterBinding = (list = [], cb = angular.noop) => {
+        _.chain(keys)
+            .filter(({ keyboard }) => _.contains(list, keyboard))
+            .each(cb);
+    };
+
     const hotkeys = {
-        bind() {
-            keys.forEach(({keyboard, callback}) => {
-                Mousetrap.bind(keyboard, callback);
-            });
+        bind(list = []) {
+            if (!list.length) {
+                return keys.forEach(addBinding);
+            }
+
+            filterBinding(list, addBinding);
         },
-        unbind() {
-            keys.forEach(({keyboard}) => {
-                Mousetrap.unbind(keyboard);
-            });
+        unbind(list = []) {
+            if (!list.length) {
+                return keys.forEach(removeBinding);
+            }
+
+            filterBinding(list, removeBinding);
         }
     };
 

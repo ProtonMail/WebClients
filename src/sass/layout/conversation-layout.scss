@@ -33,7 +33,7 @@ body {
         }
     }
     #pm_thread {
-        overflow-y: auto;
+        overflow-y: scroll;
         overflow-x: hidden;
     }
     #conversation-list-rows {
