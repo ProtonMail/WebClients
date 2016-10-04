@@ -86,7 +86,6 @@ angular.module('proton.message')
         link(scope, element) {
             const unsubscribe = [];
             const postMessageSupport = $.browser.msie !== true || $.browser.edge === true; // NOTE postMessage still broken on IE11
-
             initMessage();
 
             unsubscribe.push($rootScope.$on('message.embedded.injected', (event, message, body) => {

@@ -6,6 +6,7 @@ angular.module('proton.conversation')
     $stateParams,
     $timeout,
     actionConversation,
+    conversationListeners,
     authentication,
     cache,
     CONSTANTS,
@@ -76,6 +77,9 @@ angular.module('proton.conversation')
             var messagesCached = [];
             const unsubscribe = [];
 
+            const scrollToPosition = getScrollToPosition();
+            let unsubscribeActions = angular.noop;
+
             scope.mailbox = tools.currentMailbox();
             scope.labels = authentication.user.Labels;
             scope.currentState = $state.$current.name;
@@ -94,19 +98,30 @@ angular.module('proton.conversation')
                 }
             }));
 
+            unsubscribe.push($rootScope.$on('message.open', (event, { type, data }) => {
+                if (type === 'toggle') {
+                    unsubscribeActions();
+                    unsubscribeActions = conversationListeners(data.message);
+                }
+            }));
+
             scope.$on('$destroy', () => {
                 $timeout.cancel(scrollPromise);
                 unsubscribe.forEach(cb => cb());
                 unsubscribe.length = 0;
+                unsubscribeActions();
+                console.log('DESTROY');
             });
 
             scope.$on('unmarkMessages', function(event) {
                 scope.markedMessage = undefined;
+                unsubscribeActions();
             });
 
-            const scrollToPosition = getScrollToPosition();
+
 
             scope.$on('markPrevious', function(event) {
+                unsubscribeActions();
                 if (scope.markedMessage) {
                     var index = scope.messages.indexOf(scope.markedMessage);
                     if (index > 0) {
@@ -115,12 +130,14 @@ angular.module('proton.conversation')
                             .$applyAsync(() => {
                                 scope.markedMessage = scope.messages[pos];
                                 scrollToPosition(pos, scope.messages.length, 'UP');
+                                unsubscribeActions = conversationListeners(scope.markedMessage);
                             });
                     }
                 }
             });
 
             scope.$on('markNext', function(event) {
+                unsubscribeActions();
                 if (scope.markedMessage) {
                     var index = scope.messages.indexOf(scope.markedMessage);
                     if (index < (scope.messages.length - 1)) {
@@ -129,6 +146,7 @@ angular.module('proton.conversation')
                             .$applyAsync(() => {
                                 scope.markedMessage = scope.messages[pos];
                                 scrollToPosition(pos, scope.messages.length, 'DOWN');
+                                unsubscribeActions = conversationListeners(scope.markedMessage);
                             });
 
 
@@ -161,9 +179,11 @@ angular.module('proton.conversation')
             });
 
             scope.$on('right', function(event) {
+                unsubscribeActions();
                 !scope.markedMessage && scope
                     .$applyAsync(() => {
                         scope.markedMessage = _.last(scope.messages);
+                        unsubscribeActions = conversationListeners(scope.markedMessage);
                         hotkeys.bind(['down', 'up']);
                     });
             });
@@ -258,6 +278,7 @@ angular.module('proton.conversation')
 
                 if (messages.length > 0) {
                     scope.messages = expandMessage(cache.orderMessage(messages, false));
+                    unsubscribeActions = conversationListeners(_.last(scope.messages));
 
                     if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
                         scope.markedMessage = $rootScope.expandMessage;

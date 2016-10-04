@@ -1,38 +1,34 @@
 angular.module('proton.conversation')
 .factory('conversationListeners', ($rootScope, cache, CONSTANTS) => {
-    function isDraft({Type}) {
-        return Type === CONSTANTS.DRAFT;
-    }
 
+    const composerMapActions = {
+        replyConversation: 'reply',
+        replyAllConversation: 'replyall',
+        forwardConversation: 'forward'
+    };
+
+    const isDraft = ({ Type }) => Type === CONSTANTS.DRAFT;
     function openComposer(type = '', message = {}) {
-        if (isDraft(message) === false) {
-            $rootScope.$emit('composer.new', {message, type});
-        }
+        !isDraft(message) && $rootScope.$emit('composer.new', { message, type });
     }
 
-    function getLastMessage(conversationID = '') {
-        const messages = cache.queryMessagesCached(conversationID);
-        const ordered = cache.orderMessage(messages, false);
-        const message = _.last(ordered);
+    /**
+     * Bind some eventListeners for every action specifics to a message
+     * @param  {Message} message
+     * @return {Function}         unsubscribe
+     */
+    function watch(message) {
+        const listeners = Object
+            .keys(composerMapActions)
+            .map((key) => {
+                return $rootScope
+                    .$on(key, () => openComposer(composerMapActions[key], message));
+            });
 
-        return message;
+        return () => {
+            listeners.forEach((cb) => cb());
+        };
     }
 
-    $rootScope.$on('replyConversation', (event, conversationID = '') => {
-        const message = getLastMessage(conversationID);
-
-        openComposer('reply', message);
-    });
-
-    $rootScope.$on('replyAllConversation', (event, conversationID = '') => {
-        const message = getLastMessage(conversationID);
-
-        openComposer('replyall', message);
-    });
-
-    $rootScope.$on('forwardConversation', (event, conversationID = '') => {
-        const message = getLastMessage(conversationID);
-
-        openComposer('forward', message);
-    });
+    return watch;
 });

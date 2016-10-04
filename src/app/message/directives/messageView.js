@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.directive('messageView', ($stateParams, cache) => ({
+.directive('messageView', ($stateParams, conversationListeners, cache) => ({
     restrict: 'E',
     template: `
     <header id="conversationHeader">
@@ -11,11 +11,18 @@ angular.module('proton.message')
     `,
     link(scope) {
         const messageID = $stateParams.id;
+        let unsubscribeActions = angular.noop;
 
-        cache.getMessage(messageID)
-        .then((message) => {
-            message.openMe = true;
-            scope.message = message;
+        cache
+            .getMessage(messageID)
+            .then((message) => {
+                message.openMe = true;
+                scope.message = message;
+                unsubscribeActions = conversationListeners(scope.message);
+            });
+
+        scope.$on('$destroy', () => {
+            unsubscribeActions();
         });
     }
 }));
