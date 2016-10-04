@@ -124,7 +124,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         $scope.$on('openMarked', onElement(() => {
             openElement($scope.markedElement);
-
         }));
 
         $scope.$on('left', function(event) {
@@ -133,7 +132,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
         $scope.$on('right', onElement(() => {
             openElement($scope.markedElement);
-
         }));
 
         $scope.$on('selectMark', function(event) {
