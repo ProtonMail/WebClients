@@ -71,11 +71,17 @@ angular.module('proton.cache', [])
 
         if (angular.isDefined(current)) {
             manageCounters(current, message, 'message');
-            _.extend(current, message);
+            messagesCached = _.map(messagesCached, (msg) => {
+                if (msg.ID === message.ID) {
+                    return _.extend(new Message(msg), message);
+                }
+                return msg;
+            });
         } else {
             messagesCached.push(message);
         }
 
+        console.trace('update');
         manageTimes(message.ConversationID);
         $rootScope.$emit('labelsElement.' + message.ID, message);
         $rootScope.$emit('foldersMessage.' + message.ID, message);
@@ -787,35 +793,24 @@ angular.module('proton.cache', [])
         const deferred = $q.defer();
         const current = _.findWhere(messagesCached, {ID: event.ID});
 
-        // Present in the current cache?
-        if (current) {
-            if (event.Message.Time === current.Time) {
-                deferred.resolve();
-            } else {
-                const message = new Message(current);
-
-                _.extend(message, event.Message);
-
-                // Manage labels
-                if (angular.isDefined(event.Message.LabelIDsRemoved)) {
-                    message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
-                    delete message.LabelIDsRemoved;
-                }
-
-                if (angular.isDefined(event.Message.LabelIDsAdded)) {
-                    message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
-                    delete message.LabelIDsAdded;
-                }
-
-                updateMessage(message);
-                deferred.resolve();
-           }
-        } else {
-            // Do nothing
-            deferred.resolve();
+        if (!current || (current && event.Message.Time === current.Time)) {
+            return Promise.resolve();
         }
 
-        return deferred.promise;
+        const message = _.extend(new Message(current), event.Message);
+
+        // Manage labels
+        if (angular.isDefined(event.Message.LabelIDsRemoved)) {
+            message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
+            delete message.LabelIDsRemoved;
+        }
+
+        if (angular.isDefined(event.Message.LabelIDsAdded)) {
+            message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
+            delete message.LabelIDsAdded;
+        }
+
+        return Promise.resolve(updateMessage(message));
     };
 
     /**
@@ -853,9 +848,9 @@ angular.module('proton.cache', [])
         const conversationIDs = [];
 
         if (fromBackend === true) {
-            console.log('events from the back-end', events);
+            console.trace('events from the back-end', events);
         } else {
-            console.log('events from the front-end', events);
+            console.trace('events from the front-end', events);
         }
 
         events.forEach((event) => {

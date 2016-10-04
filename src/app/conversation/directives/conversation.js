@@ -193,8 +193,8 @@ angular.module('proton.conversation')
             const loc = tools.currentLocation();
 
             messagesCached = messages;
-            scope.trashed = messagesCached.filter(({LabelIDs = []}) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)).length > 0;
-            scope.nonTrashed = messagesCached.filter(({LabelIDs = []}) => !_.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash)).length > 0;
+            scope.trashed = messagesCached.some(({LabelIDs = []}) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+            scope.nonTrashed = messagesCached.some(({LabelIDs = []}) => !_.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
 
             if (conversation) {
                 if (conversation.LabelIDs.indexOf(loc) !== -1 || $state.includes('secured.search.**')) {
@@ -206,47 +206,41 @@ angular.module('proton.conversation')
                 return back();
             }
 
-            if (angular.isArray(messages) && messages.length > 0) {
+            if (Array.isArray(messages) && messages.length > 0) {
                 const toAdd = [];
                 const toRemove = [];
-                let index, found, ref;
-
-                messages = $filter('filterMessages')(messages, scope.showTrashed, scope.showNonTrashed);
-                messages = cache.orderMessage(messages, false);
-
-                for (index = 0; index < messages.length; index++) {
-                    found = _.findWhere(scope.messages, {ID: messages[index].ID});
-
-                    if (!found) {
-                        toAdd.push({index: index, message: messages[index]});
+                const list = cache
+                    .orderMessage($filter('filterMessages')(messages, scope.showTrashed, scope.showNonTrashed), false);
+                for (let index = 0; index < list.length; index++) {
+                    if (!scope.messages.some(({ ID }) => ID === list[index].ID)) {
+                        toAdd.push({index, message: list[index]});
                     }
                 }
 
-                for (index = 0; index < toAdd.length; index++) {
-                    ref = toAdd[index];
+                for (let index = 0; index < toAdd.length; index++) {
+                    const ref = toAdd[index];
 
                     // Insert new message at a specific index
                     scope.messages.splice(ref.index, 0, ref.message);
                 }
 
-                for (index = 0; index < scope.messages.length; index++) {
-                    found = _.findWhere(messages, {ID: scope.messages[index].ID});
-
-                    if (!found) {
-                        toRemove.push({index: index});
+                for (let index = 0; index < scope.messages.length; index++) {
+                    if (!list.some(({ ID }) => ID === scope.messages[index].ID)) {
+                        toRemove.push({index});
                     }
                 }
 
-                for (index = toRemove.length - 1; index >= 0; index--) {
-                    ref = toRemove[index];
-
+                for (let index = toRemove.length - 1; index >= 0; index--) {
                     // Remove message deleted
-                    scope.messages.splice(ref.index, 1);
+                    scope.messages.splice(toRemove[index].index, 1);
                 }
             } else {
                 back();
             }
         };
+
+
+
 
         scope.toggleOption = function(option) {
             scope[option] = !!!scope[option];
