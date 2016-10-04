@@ -25,9 +25,7 @@ angular.module('proton.cache', [])
     var UPDATE_FLAGS = 3;
     var intervalExpiration;
 
-    $interval(function() {
-        api.expiration();
-    }, 1000, 0 , false);
+    $interval(expiration, 1000, 0 , false);
 
     /**
     * Save conversations in conversationsCached and add loc in attribute
@@ -928,25 +926,24 @@ angular.module('proton.cache', [])
     /**
      * Manage expiration time for messages in the cache
      */
-    api.expiration = () => {
+    function expiration() {
         const now = moment().unix();
-        const removed = [];
+        const { list, removeList } = messagesCached
+            .reduce((acc, message = {}) => {
+                const { ExpirationTime, ID } = message;
+                const test = !(ExpirationTime !== 0 && ExpirationTime < now);
+                if (test) {
+                    acc.list.push(message);
+                } else {
+                    acc.removeList.push(ID);
+                }
 
-        messagesCached = messagesCached.filter((message) => {
-            const expTime = message.ExpirationTime;
-            const response = (expTime !== 0 && expTime < now) ? false : true;
+                return acc;
+            }, { list: [], removeList: [] });
 
-            if (!response) {
-                removed.push(message.ID);
-            }
-
-            return response;
-        });
-
-        if (removed.length) {
-            $rootScope.$emit('message.expiration', removed);
-        }
-    };
+        messagesCached = list;
+        (removeList.length) && $rootScope.$emit('message.expiration', removeList);
+    }
 
     /**
      * Return previous ID of message specified
