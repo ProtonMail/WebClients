@@ -25,9 +25,7 @@ angular.module('proton.cache', [])
     var UPDATE_FLAGS = 3;
     var intervalExpiration;
 
-    $interval(function() {
-        api.expiration();
-    }, 1000, 0 , false);
+    $interval(expiration, 1000, 0 , false);
 
     /**
     * Save conversations in conversationsCached and add loc in attribute
@@ -65,22 +63,38 @@ angular.module('proton.cache', [])
      * Update message cached
      * @param {Object} message
      */
-    var updateMessage = function(msg) {
-        var current = _.findWhere(messagesCached, {ID: msg.ID});
-        const message = new Message(msg);
+    function updateMessage(currentMsg, isSend) {
+        const current = _.findWhere(messagesCached, { ID: currentMsg.ID });
+        const message = new Message(currentMsg);
 
         if (angular.isDefined(current)) {
             manageCounters(current, message, 'message');
-            _.extend(current, message);
+            messagesCached = _.map(messagesCached, (msg) => {
+
+                // Force update if it's a new message
+                if (isSend && msg.ID === message.ID) {
+                    return message;
+                }
+
+                if (msg.ID === message.ID) {
+                    const m = _.extend(new Message(msg), message);
+                    // It can be 0
+                    m.Type = message.Type;
+                    return m;
+                }
+
+                return msg;
+            });
         } else {
             messagesCached.push(message);
         }
 
         manageTimes(message.ConversationID);
+
         $rootScope.$emit('labelsElement.' + message.ID, message);
         $rootScope.$emit('foldersMessage.' + message.ID, message);
         $rootScope.$emit('foldersElement.' + message.ID, message);
-    };
+    }
 
     /**
      * Update conversation cached
@@ -737,15 +751,10 @@ angular.module('proton.cache', [])
     * @return {Promise}
     */
     api.createMessage = function(event) {
-        var deferred = $q.defer();
         var messages = [event.Message];
-
         // Insert the new message in the cache
         updateMessage(event.Message);
-
-        deferred.resolve();
-
-        return deferred.promise;
+        return Promise.resolve();
     };
 
     /**
@@ -783,39 +792,29 @@ angular.module('proton.cache', [])
     * @param {Object} event
     * @return {Promise}
     */
-    api.updateFlagMessage = (event) => {
+    api.updateFlagMessage = (event, isSend) => {
         const deferred = $q.defer();
         const current = _.findWhere(messagesCached, {ID: event.ID});
 
-        // Present in the current cache?
-        if (current) {
-            if (event.Message.Time === current.Time) {
-                deferred.resolve();
-            } else {
-                const message = new Message(current);
-
-                _.extend(message, event.Message);
-
-                // Manage labels
-                if (angular.isDefined(event.Message.LabelIDsRemoved)) {
-                    message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
-                    delete message.LabelIDsRemoved;
-                }
-
-                if (angular.isDefined(event.Message.LabelIDsAdded)) {
-                    message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
-                    delete message.LabelIDsAdded;
-                }
-
-                updateMessage(message);
-                deferred.resolve();
-           }
-        } else {
-            // Do nothing
-            deferred.resolve();
+        // We need to force the update if the update is coming from a Send (new message)
+        if (!isSend && (!current || (current && event.Message.Time === current.Time))) {
+            return Promise.resolve();
         }
 
-        return deferred.promise;
+        const message = _.extend(new Message(current), event.Message);
+
+        // Manage labels
+        if (angular.isDefined(event.Message.LabelIDsRemoved)) {
+            message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
+            delete message.LabelIDsRemoved;
+        }
+
+        if (angular.isDefined(event.Message.LabelIDsAdded)) {
+            message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
+            delete message.LabelIDsAdded;
+        }
+
+        return Promise.resolve(updateMessage(message, isSend));
     };
 
     /**
@@ -846,7 +845,7 @@ angular.module('proton.cache', [])
     * @param {Boolean} fromBackend - indicate if the events come from the back-end
     * @return {Promise}
     */
-    api.events = function(events, fromBackend) {
+    api.events = function(events, fromBackend, isSend) {
         var deferred = $q.defer();
         var promises = [];
         const messageIDs = [];
@@ -872,10 +871,10 @@ angular.module('proton.cache', [])
                         promises.push(api.createMessage(event));
                         break;
                     case UPDATE_DRAFT:
-                        promises.push(api.updateFlagMessage(event));
+                        promises.push(api.updateFlagMessage(event, isSend));
                         break;
                     case UPDATE_FLAGS:
-                        promises.push(api.updateFlagMessage(event));
+                        promises.push(api.updateFlagMessage(event, isSend));
                         break;
                     default:
                         break;
@@ -933,25 +932,24 @@ angular.module('proton.cache', [])
     /**
      * Manage expiration time for messages in the cache
      */
-    api.expiration = () => {
+    function expiration() {
         const now = moment().unix();
-        const removed = [];
+        const { list, removeList } = messagesCached
+            .reduce((acc, message = {}) => {
+                const { ExpirationTime, ID } = message;
+                const test = !(ExpirationTime !== 0 && ExpirationTime < now);
+                if (test) {
+                    acc.list.push(message);
+                } else {
+                    acc.removeList.push(ID);
+                }
 
-        messagesCached = messagesCached.filter((message) => {
-            const expTime = message.ExpirationTime;
-            const response = (expTime !== 0 && expTime < now) ? false : true;
+                return acc;
+            }, { list: [], removeList: [] });
 
-            if (!response) {
-                removed.push(message.ID);
-            }
-
-            return response;
-        });
-
-        if (removed.length) {
-            $rootScope.$emit('message.expiration', removed);
-        }
-    };
+        messagesCached = list;
+        (removeList.length) && $rootScope.$emit('message.expiration', removeList);
+    }
 
     /**
      * Return previous ID of message specified

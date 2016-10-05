@@ -1340,7 +1340,6 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                 result.Sent.Senders = [Sent.Sender]; // The back-end doesn't return Senders so need a trick
                 result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
                 events.push({Action: 3, ID: Sent.ID, Message: Sent}); // Generate event for this message
-
                 if (Parent) {
                     events.push({Action: 3, ID: Parent.ID, Message: Parent});
                 }
@@ -1360,7 +1359,7 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
                     }
                 });
 
-                cache.events(events); // Send events to the cache manager
+                cache.events(events, false, true); // Send events to the cache manager
                 notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'}); // Notify the user
                 $scope.close(message, false, false); // Close the composer window
                 $timeout(function() {

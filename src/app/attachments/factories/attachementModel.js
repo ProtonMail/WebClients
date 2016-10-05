@@ -42,7 +42,6 @@ angular.module('proton.attachments')
 
         $rootScope
             .$on('attachment.upload', (e, { type, data }) => {
-                console.trace({type, data, queueMessage});
 
                 switch (type) {
                     case 'close':

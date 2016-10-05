@@ -342,13 +342,13 @@ angular.module("proton.filters",[])
             if ($state.includes('secured.trash.**') === true) {
                 if (trashed.length > 0) {
                     if (showNonTrashed === false) {
-                        messages = trashed;
+                        return trashed;
                     }
                 }
             } else {
                 if (nonTrashed.length > 0) {
                     if (showTrashed === false) {
-                        messages = nonTrashed;
+                        return nonTrashed;
                     }
                 }
             }
