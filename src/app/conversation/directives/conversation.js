@@ -7,6 +7,7 @@ angular.module('proton.conversation')
     $timeout,
     actionConversation,
     conversationListeners,
+    messageActions,
     authentication,
     cache,
     CONSTANTS,
@@ -111,6 +112,10 @@ angular.module('proton.conversation')
                 unsubscribe.forEach(cb => cb());
                 unsubscribe.length = 0;
                 unsubscribeActions();
+                // Ensure only one event Listener
+                hotkeys.unbind(['down', 'up']);
+                hotkeys.bind(['down', 'up']);
+                $rootScope.$emit('conversation.close', scope.conversation);
             });
 
             scope.$on('unmarkMessages', function(event) {
@@ -175,6 +180,11 @@ angular.module('proton.conversation')
                     });
                 }
 
+            });
+
+            scope.$on('move', (event, name) => {
+                const ids = scope.markedMessage ? [scope.markedMessage.ID] : scope.messages.map(({ ID }) => ID);
+                messageActions.moveMessage(ids, name);
             });
 
             scope.$on('right', function(event) {
