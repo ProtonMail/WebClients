@@ -98,6 +98,7 @@ angular.module('proton.conversation')
                 }
             }));
 
+            // We need to allow hotkeys for a message when you open the message
             unsubscribe.push($rootScope.$on('message.open', (event, { type, data }) => {
                 if (type === 'toggle') {
                     unsubscribeActions();
@@ -110,14 +111,12 @@ angular.module('proton.conversation')
                 unsubscribe.forEach(cb => cb());
                 unsubscribe.length = 0;
                 unsubscribeActions();
-                console.log('DESTROY');
             });
 
             scope.$on('unmarkMessages', function(event) {
                 scope.markedMessage = undefined;
                 unsubscribeActions();
             });
-
 
 
             scope.$on('markPrevious', function(event) {
@@ -184,6 +183,8 @@ angular.module('proton.conversation')
                     .$applyAsync(() => {
                         scope.markedMessage = _.last(scope.messages);
                         unsubscribeActions = conversationListeners(scope.markedMessage);
+                        scope.scrollToMessage(scope.markedMessage.ID);
+
                         hotkeys.bind(['down', 'up']);
                     });
             });

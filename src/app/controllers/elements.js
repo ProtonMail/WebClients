@@ -111,6 +111,13 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         let isOpened = false;
 
+        /**
+         * Auto detect if there is already a conversation:open, then do nothing
+         * We need to give the focus to a conversation, not every conversations
+         * @param  {Function} cb
+         * @param  {Boolean} value  Default value to set
+         * @return {Function}       EventListener
+         */
         const onElement = (cb, value = true) => (event) => {
             if (!isOpened) {
                 cb();
@@ -154,21 +161,15 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
         });
 
         $scope.$on('move', function(event, name) {
-            if (angular.element('.message.marked').length === 0) {
-                $scope.move(name);
-            }
+            !isOpened && $scope.move(name);
         });
 
-        $scope.$on('read', function(event) {
-            if (angular.element('.message.marked').length === 0) {
-                $scope.read();
-            }
+        $scope.$on('read', function() {
+            !isOpened && $scope.read();
         });
 
-        $scope.$on('unread', function(event) {
-            if (angular.element('.message.marked').length === 0) {
-                $scope.unread();
-            }
+        $scope.$on('unread', function() {
+            !isOpened && $scope.unread();
         });
 
         /**
@@ -205,6 +206,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 }
             }
         }, false));
+
         $scope.$on('markNext', onElement(() => {
             if ($scope.conversations) {
                 var index = $scope.conversations.indexOf($scope.markedElement);
@@ -219,36 +221,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                 }
             }
         }, false));
-        // $scope.$on('markPrevious', function(event) {
-        //     console.log('ElementsController');
-        //     if (angular.element('.message.marked').length === 0 && $scope.conversations) {
-        //         var index = $scope.conversations.indexOf($scope.markedElement);
-
-        //         if (index > 0) {
-        //             $scope.$applyAsync(() => {
-        //                 $scope.markedElement = $scope.conversations[index - 1];
-        //             });
-        //             scrollToConversationPos();
-        //         } else {
-        //             goToPage($scope.page - 1);
-        //         }
-        //     }
-        // });
-
-        // $scope.$on('markNext', function(event) {
-        //     if (angular.element('.message.marked').length === 0 && $scope.conversations) {
-        //         var index = $scope.conversations.indexOf($scope.markedElement);
-
-        //         if (index < ($scope.conversations.length - 1)) {
-        //             $scope.$applyAsync(() => {
-        //                 $scope.markedElement = $scope.conversations[index + 1];
-        //             });
-        //             scrollToConversationPos();
-        //         } else {
-        //             goToPage($scope.page + 1);
-        //         }
-        //     }
-        // });
 
         $scope.$on('nextElement', function(event) {
             $scope.nextElement();
@@ -262,7 +234,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.stopWatchingEvent = function() {
-        console.log('DESTROY');
         angular.element($window).unbind('resize', $rootScope.mobileResponsive);
         angular.element($window).unbind('orientationchange', $rootScope.mobileResponsive);
     };
