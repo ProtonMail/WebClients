@@ -165,15 +165,15 @@ angular.module('proton.conversation')
             scope.$on('left', () => hotkeys.bind(['down', 'up']));
             scope.$on('openMarked', () => {
                 if (scope.markedMessage) {
-                    scope
-                        .$applyAsync(() => {
-                            $rootScope.$emit('message.open', {
-                                type: 'toggle',
-                                data: {
-                                    message: scope.markedMessage
-                                }
-                            });
-                        });
+                    if (scope.markedMessage.Type === CONSTANTS.DRAFT) {
+                        return $rootScope.$emit('composer.load', scope.markedMessage);
+                    }
+                    $rootScope.$emit('message.open', {
+                        type: 'toggle',
+                        data: {
+                            message: scope.markedMessage
+                        }
+                    });
                 }
 
             });
