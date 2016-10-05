@@ -118,12 +118,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
          * @param  {Boolean} value  Default value to set
          * @return {Function}       EventListener
          */
-        const onElement = (cb, value = true) => (event) => {
+        const onElement = (cb, value = true) => (...arg) => {
             if (!isOpened) {
-                cb();
+                cb(...arg);
                 isOpened = value;
             }
         };
+
+        const unsubscribe = $rootScope.$on('conversation.close', () => {
+            isOpened = false;
+        });
 
         $scope.$on('refreshElements', (event) => {
             $scope.refreshConversations();
@@ -135,7 +139,6 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         $scope.$on('left', function(event) {
             redirectUser();
-            isOpened = false;
         });
         $scope.$on('right', onElement(() => {
             openElement($scope.markedElement);
@@ -160,7 +163,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.applyLabels(LabelID);
         });
 
-        $scope.$on('move', function(event, name) {
+        $scope.$on('move', (event, name) => {
             !isOpened && $scope.move(name);
         });
 
@@ -230,7 +233,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.previousElement();
         });
 
-        $scope.$on('$destroy', $scope.stopWatchingEvent);
+        $scope.$on('$destroy', () => {
+            $scope.stopWatchingEvent();
+            unsubscribe();
+        });
     };
 
     $scope.stopWatchingEvent = function() {
