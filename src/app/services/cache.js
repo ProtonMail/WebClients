@@ -63,28 +63,38 @@ angular.module('proton.cache', [])
      * Update message cached
      * @param {Object} message
      */
-    var updateMessage = function(msg) {
-        var current = _.findWhere(messagesCached, {ID: msg.ID});
-        const message = new Message(msg);
+    function updateMessage(currentMsg, isSend) {
+        const current = _.findWhere(messagesCached, { ID: currentMsg.ID });
+        const message = new Message(currentMsg);
 
         if (angular.isDefined(current)) {
             manageCounters(current, message, 'message');
             messagesCached = _.map(messagesCached, (msg) => {
-                if (msg.ID === message.ID) {
-                    return _.extend(new Message(msg), message);
+
+                // Force update if it's a new message
+                if (isSend && msg.ID === message.ID) {
+                    return message;
                 }
+
+                if (msg.ID === message.ID) {
+                    const m = _.extend(new Message(msg), message);
+                    // It can be 0
+                    m.Type = message.Type;
+                    return m;
+                }
+
                 return msg;
             });
         } else {
             messagesCached.push(message);
         }
 
-        console.trace('update');
         manageTimes(message.ConversationID);
+
         $rootScope.$emit('labelsElement.' + message.ID, message);
         $rootScope.$emit('foldersMessage.' + message.ID, message);
         $rootScope.$emit('foldersElement.' + message.ID, message);
-    };
+    }
 
     /**
      * Update conversation cached
@@ -741,15 +751,10 @@ angular.module('proton.cache', [])
     * @return {Promise}
     */
     api.createMessage = function(event) {
-        var deferred = $q.defer();
         var messages = [event.Message];
-
         // Insert the new message in the cache
         updateMessage(event.Message);
-
-        deferred.resolve();
-
-        return deferred.promise;
+        return Promise.resolve();
     };
 
     /**
@@ -787,11 +792,12 @@ angular.module('proton.cache', [])
     * @param {Object} event
     * @return {Promise}
     */
-    api.updateFlagMessage = (event) => {
+    api.updateFlagMessage = (event, isSend) => {
         const deferred = $q.defer();
         const current = _.findWhere(messagesCached, {ID: event.ID});
 
-        if (!current || (current && event.Message.Time === current.Time)) {
+        // We need to force the update if the update is coming from a Send (new message)
+        if (!isSend && (!current || (current && event.Message.Time === current.Time))) {
             return Promise.resolve();
         }
 
@@ -808,7 +814,7 @@ angular.module('proton.cache', [])
             delete message.LabelIDsAdded;
         }
 
-        return Promise.resolve(updateMessage(message));
+        return Promise.resolve(updateMessage(message, isSend));
     };
 
     /**
@@ -839,16 +845,16 @@ angular.module('proton.cache', [])
     * @param {Boolean} fromBackend - indicate if the events come from the back-end
     * @return {Promise}
     */
-    api.events = function(events, fromBackend) {
+    api.events = function(events, fromBackend, isSend) {
         var deferred = $q.defer();
         var promises = [];
         const messageIDs = [];
         const conversationIDs = [];
 
         if (fromBackend === true) {
-            console.trace('events from the back-end', events);
+            console.log('events from the back-end', events);
         } else {
-            console.trace('events from the front-end', events);
+            console.log('events from the front-end', events);
         }
 
         events.forEach((event) => {
@@ -865,10 +871,10 @@ angular.module('proton.cache', [])
                         promises.push(api.createMessage(event));
                         break;
                     case UPDATE_DRAFT:
-                        promises.push(api.updateFlagMessage(event));
+                        promises.push(api.updateFlagMessage(event, isSend));
                         break;
                     case UPDATE_FLAGS:
-                        promises.push(api.updateFlagMessage(event));
+                        promises.push(api.updateFlagMessage(event, isSend));
                         break;
                     default:
                         break;

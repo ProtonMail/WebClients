@@ -118,7 +118,6 @@ angular.module('proton.message')
             unsubscribe.push($rootScope.$on('message.refresh', (event, messageIDs) => {
                 if (messageIDs.indexOf(scope.message.ID) > -1) {
                     const message = cache.getMessageCached(scope.message.ID);
-                    console.log('UPDATE MESSAGE', Object.assign({}, message));
                     const type = tools.typeView();
 
                     if (message && canBeOpen(message)) {
