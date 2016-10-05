@@ -233,7 +233,11 @@ angular.module('proton.conversation')
                         .last()
                         .value();
                 } else {
-                    const latest = _.last(messages);
+                    const latest = _.chain(messages)
+                        .filter(({ Type }) => Type !== CONSTANTS.DRAFT)
+                        .last()
+                        .value();
+
                     // If the latest message is read, we open it
                     if (latest.IsRead === 1) {
                         thisOne = latest;
