@@ -34,7 +34,7 @@ angular.module('proton.routes', [
     // LOGIN ROUTES
     // ------------
     .state('login', {
-        params: { sub: null, creds: null },
+        params: { sub: null },
         url: '/login?sub',
         views: {
             'main@': {
@@ -48,7 +48,6 @@ angular.module('proton.routes', [
     })
 
     .state('login.unlock', {
-        params: { creds: null, authResponse: null },
         url: '/unlock',
         views: {
             'panel@login': {
@@ -318,7 +317,6 @@ angular.module('proton.routes', [
     // Reset Mailbox Password
     .state('reset', {
         url: '/reset',
-        params: { creds: null, authResponse: null },
         views: {
             'main@': {
                 controller: 'ResetController',
