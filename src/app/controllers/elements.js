@@ -108,15 +108,41 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
     };
 
     $scope.startWatchingEvent = function() {
+
+        let isOpened = false;
+
+        /**
+         * Auto detect if there is already a conversation:open, then do nothing
+         * We need to give the focus to a conversation, not every conversations
+         * @param  {Function} cb
+         * @param  {Boolean} value  Default value to set
+         * @return {Function}       EventListener
+         */
+        const onElement = (cb, value = true) => (...arg) => {
+            if (!isOpened) {
+                cb(...arg);
+                isOpened = value;
+            }
+        };
+
+        const unsubscribe = $rootScope.$on('conversation.close', () => {
+            isOpened = false;
+        });
+
         $scope.$on('refreshElements', (event) => {
             $scope.refreshConversations();
         });
 
-        $scope.$on('openMarked', function(event) {
-            if (angular.element('.message.marked').length === 0) {
-                openElement($scope.markedElement);
-            }
+        $scope.$on('openMarked', onElement(() => {
+            openElement($scope.markedElement);
+        }));
+
+        $scope.$on('left', function(event) {
+            redirectUser();
         });
+        $scope.$on('right', onElement(() => {
+            openElement($scope.markedElement);
+        }));
 
         $scope.$on('selectMark', function(event) {
             $scope.markedElement.Selected = !!!$scope.markedElement.Selected;
@@ -137,22 +163,16 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.applyLabels(LabelID);
         });
 
-        $scope.$on('move', function(event, name) {
-            if (angular.element('.message.marked').length === 0) {
-                $scope.move(name);
-            }
+        $scope.$on('move', (event, name) => {
+            !isOpened && $scope.move(name);
         });
 
-        $scope.$on('read', function(event) {
-            if (angular.element('.message.marked').length === 0) {
-                $scope.read();
-            }
+        $scope.$on('read', function() {
+            !isOpened && $scope.read();
         });
 
-        $scope.$on('unread', function(event) {
-            if (angular.element('.message.marked').length === 0) {
-                $scope.unread();
-            }
+        $scope.$on('unread', function() {
+            !isOpened && $scope.unread();
         });
 
         /**
@@ -175,8 +195,8 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             }
         }
 
-        $scope.$on('markPrevious', function(event) {
-            if (angular.element('.message.marked').length === 0 && $scope.conversations) {
+        $scope.$on('markPrevious', onElement(() => {
+            if ($scope.conversations) {
                 var index = $scope.conversations.indexOf($scope.markedElement);
 
                 if (index > 0) {
@@ -188,10 +208,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     goToPage($scope.page - 1);
                 }
             }
-        });
+        }, false));
 
-        $scope.$on('markNext', function(event) {
-            if (angular.element('.message.marked').length === 0 && $scope.conversations) {
+        $scope.$on('markNext', onElement(() => {
+            if ($scope.conversations) {
                 var index = $scope.conversations.indexOf($scope.markedElement);
 
                 if (index < ($scope.conversations.length - 1)) {
@@ -203,7 +223,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
                     goToPage($scope.page + 1);
                 }
             }
-        });
+        }, false));
 
         $scope.$on('nextElement', function(event) {
             $scope.nextElement();
@@ -213,7 +233,10 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
             $scope.previousElement();
         });
 
-        $scope.$on('$destroy', $scope.stopWatchingEvent);
+        $scope.$on('$destroy', () => {
+            $scope.stopWatchingEvent();
+            unsubscribe();
+        });
     };
 
     $scope.stopWatchingEvent = function() {

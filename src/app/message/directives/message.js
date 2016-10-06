@@ -79,13 +79,13 @@ angular.module('proton.message')
         templateUrl: 'templates/message/message.tpl.html',
         scope: {
             message: '=model',
+            marked: '=',
             last: '=',
             index: '='
         },
         link(scope, element) {
             const unsubscribe = [];
             const postMessageSupport = $.browser.msie !== true || $.browser.edge === true; // NOTE postMessage still broken on IE11
-
             initMessage();
 
             unsubscribe.push($rootScope.$on('message.embedded.injected', (event, message, body) => {
@@ -148,7 +148,14 @@ angular.module('proton.message')
 
                 const promise = (typeof scope.message.Body === 'undefined') ? loadMessageBody() : Promise.resolve();
 
-                promise.then(() => loadContent());
+                promise
+                .then(() => loadContent())
+                .then(() => {
+                    // Auto focus message list when we load the message, to allow keyboard srolling
+                    scope.$applyAsync(() => {
+                        document.getElementById('pm_thread').focus();
+                    });
+                });
             }
 
             /**
