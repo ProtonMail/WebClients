@@ -294,6 +294,14 @@ angular.module("proton.controllers.Reset", [
     };
 
     /**
+     * Sends creds back to login.unlock state
+     */
+    $scope.cancelReset = function() {
+        tempStorage.setItem('creds', $scope.creds);
+        $state.go('login.unlock');
+    };
+
+    /**
      * Saves new keys - overriding old, thus resetting the account.
      * @return {Response} $HTTP repsonse. Handled in next chained promise.
      * TODO: error logging

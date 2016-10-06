@@ -5,13 +5,30 @@ angular.module("proton.tempStorage", [])
     // or a timeout, whichever happens first. It is designed to help ensure proper garbage collection of sensitive data.
     // It implements the secureSessionStorage interface, though it is not restricted to strings only.
 
-    var data = {};
+    let data = {};
+    let timeouts = {};
 
-    var api = {
+    function deleteKey(key) {
+        return () => {
+            delete data[key];
+        };
+    }
+
+    function cancelTimeout(key) {
+        if (timeouts[key]) {
+            $timeout.cancel(timeouts[key]);
+            delete timeouts[key];
+        }
+    }
+
+    return {
         getItem: function(key) {
             if (angular.isString(key) && data.hasOwnProperty(key)) {
+
+                cancelTimeout(key);
+
                 let rv = data[key];
-                delete data[key];
+                deleteKey(key)();
                 return rv;
             } else {
                 return null;
@@ -20,25 +37,30 @@ angular.module("proton.tempStorage", [])
 
         setItem: function(key, value, lifetime = 10000) {
             if (angular.isString(key)) {
+
+                cancelTimeout(key);
                 data[key] = value;
 
-                // Delete information if no retrieved within timeout
-                $timeout(() => {
-                    delete data[key];
-                }, lifetime);
+                // Delete information if not retrieved within timeout
+                timeouts[key] = $timeout(deleteKey(key), lifetime);
             }
         },
 
         removeItem: function(key) {
             if (angular.isString(key) && data.hasOwnProperty(key)) {
+
+                cancelTimeout(key);
                 delete data[key];
             }
         },
 
         clear: function() {
+
+            for (let key in timeouts) {
+                cancelTimeout(key);
+            }
+
             data = {};
         }
     };
-
-    return api;
 });
