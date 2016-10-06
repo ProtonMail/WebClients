@@ -33,7 +33,11 @@ angular.module("proton.event", ["proton.constants", "proton.storage"])
 		var UPDATE = 2;
 		var eventModel = {
 			get: function() {
-				return Events.get(this.ID);
+				if (this.ID) {
+					return Events.get(this.ID);
+				} else {
+					return Events.getLatestID();
+				}
 			},
 			isDifferent: function (eventID) {
 				return this.ID !== eventID;
