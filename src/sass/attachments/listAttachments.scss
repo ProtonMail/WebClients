@@ -61,22 +61,22 @@
         line-height: 40px;
         background-color: $light;
         max-width: 100%;
-
         display: flex;
 
-
-        &.remove {
-            padding-right: 2.5rem;
-        }
-        em {
-            height: 40px;
-            width: 2.5rem;
+        &:after{
+            content:"";
             position: absolute;
             z-index: 1;
             left: 0;
             top: 0;
             bottom: 0;
+            height: 40px;
+            width: 2.5rem;
             border-right: 1px solid $border;
+        }
+
+        &.remove {
+            padding-right: 2.5rem;
         }
         .name {
             text-transform: initial;
