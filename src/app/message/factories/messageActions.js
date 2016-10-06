@@ -1,5 +1,21 @@
 angular.module('proton.message')
-    .factory('messageActions', ($q, $rootScope, tools, cache, Message, networkActivityTracker, CONSTANTS) => {
+    .factory('messageActions', ($q, $rootScope, tools, cache, Message, networkActivityTracker, gettextCatalog, notify, CONSTANTS) => {
+
+        const notifySuccess = (message) => notify({ message, classes: 'notification-success' });
+
+        function getFolderNameTranslated(mailbox) {
+            const mailboxs = {
+                inbox: gettextCatalog.getString('Inbox', null),
+                spam: gettextCatalog.getString('Spam', null),
+                drafts: gettextCatalog.getString('Drafts', null),
+                sent: gettextCatalog.getString('Sent', null),
+                trash: gettextCatalog.getString('Trash', null),
+                archive: gettextCatalog.getString('Archive', null)
+            };
+
+            return mailboxs[mailbox];
+        }
+
         $rootScope.$on('messageActions', (event, {action = '', data = {}}) => {
             switch (action) {
                 case 'move':
@@ -143,12 +159,16 @@ angular.module('proton.message')
                 const promise = Message[mailbox]({IDs: ids}).$promise;
                 cache.addToDispatcher(promise);
 
+                const message = gettextCatalog.getPlural(ids.length, 'Message moved to', 'Messages moved to', null);
+                const notification = `${message} ${getFolderNameTranslated(mailbox)}`;
+
                 if (context === true) {
-                    return cache.events(events);
+                    cache.events(events);
+                    return notifySuccess(notification);
                 }
 
                 // Send cache events
-                promise.then(() => cache.events(events));
+                promise.then(() => (cache.events(events), notifySuccess(notification)));
                 networkActivityTracker.track(promise);
             },
             detachLabel(messageID, conversationID, labelID) {
