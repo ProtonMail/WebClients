@@ -3,7 +3,8 @@ angular.module("proton.controllers.Auth", [
     "proton.pmcw",
     "proton.constants",
     "proton.models.setting",
-    "proton.srp"
+    "proton.srp",
+    "proton.tempStorage"
 ])
 
 .controller("LoginController", function(
@@ -23,6 +24,7 @@ angular.module("proton.controllers.Auth", [
     notify,
     loginModal,
     pmcw,
+    tempStorage,
     tools,
     Setting,
     srp,
@@ -50,6 +52,19 @@ angular.module("proton.controllers.Auth", [
     function clearErrors() {
         $scope.error = null;
         notify.closeAll();
+    }
+
+    /**
+     * Set $rootScope.isLoggedIn
+     * Needed to handle back button from unlock state
+     */
+    function setLoggedIn() {
+        if ($state.is('login')) {
+            $rootScope.isLoggedIn = false;
+        }
+        else {
+            $rootScope.isLoggedIn = true;
+        }
     }
 
     /**
@@ -105,40 +120,47 @@ angular.module("proton.controllers.Auth", [
         }
     }
 
-    function stateParamLogin() {
+    function autoLogin() {
 
-        if ($stateParams.creds) {
-            $scope.creds = $stateParams.creds;
+        $scope.creds = tempStorage.getItem('creds');
 
-            if ($state.is('login.unlock')) {
-                if (!$stateParams.authResponse) {
-                    return $state.go('login', $stateParams);
-                }
+        if ($state.is('login.unlock')) {
 
-                $scope.authResponse = $stateParams.authResponse;
-
-                if ($stateParams.authResponse.PasswordMode === 1) {
-                    $rootScope.domoArigato = true;
-                    return unlock($scope.creds.password, $stateParams.authResponse);
-                }
+            if (!$scope.creds) {
+                return $state.go('login');
             }
-            else {
-                srp.info($scope.creds.username).
-                then((resp) => {
-                    if (resp.data.TwoFactor === 0){
-                        //user does not have two factor enabled, we will proceed to the auth call
-                        login($scope.creds.username, $scope.creds.password, null, resp);
-                    } else {
-                        //user has two factor enabled, they need to enter a code first
-                        $scope.twoFactor = 1;
-                        $scope.initialInfoResponse = resp;
-                        $timeout(selectTwoFactor, 100, false);
-                    }
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+
+            if (!$scope.creds.authResponse) {
+                tempStorage.setItem('creds', $scope.creds);
+                return $state.go('login');
             }
+
+            if ($scope.creds.authResponse.PasswordMode === 1) {
+                $rootScope.domoArigato = true;
+                return unlock($scope.creds.password, $scope.creds.authResponse);
+            }
+        }
+        else {
+            if (!$scope.creds || !$scope.creds.username || !$scope.creds.password) {
+                delete $scope.creds;
+                return;
+            }
+
+            srp.info($scope.creds.username).
+            then((resp) => {
+                if (resp.data.TwoFactor === 0){
+                    //user does not have two factor enabled, we will proceed to the auth call
+                    login($scope.creds.username, $scope.creds.password, null, resp);
+                } else {
+                    //user has two factor enabled, they need to enter a code first
+                    $scope.twoFactor = 1;
+                    $scope.initialInfoResponse = resp;
+                    $timeout(selectTwoFactor, 100, false);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
         }
     }
 
@@ -180,12 +202,13 @@ angular.module("proton.controllers.Auth", [
      * Function called at the initialization of this controller
      */
     function initialization() {
+        setLoggedIn();
         focusInput();
         checkHelpTag();
         testSessionStorage();
         testCookie();
         manageSubAccount();
-        stateParamLogin();
+        autoLogin();
     }
 
     function login(username, password, twoFactorCode, initialInfoResponse) {
@@ -234,22 +257,17 @@ angular.module("proton.controllers.Auth", [
                     } else if (result.data && result.data.AccessToken) {
 
                         $rootScope.isLoggedIn = true;
-                        const params = {
-                            creds: {
-                                username,
-                                password
-                            },
+                        const creds = {
+                            username,
+                            password,
                             authResponse: result.data
                         };
 
                         if (result.data.PasswordMode === 1) {
                             $rootScope.domoArigato = true;
-                            params.creds.mailboxPassword = password;
-                            $state.go('login.unlock', params);
                         }
-                        else  {
-                            $state.go('login.unlock', params);
-                        }
+                        tempStorage.setItem('creds', creds);
+                        $state.go('login.unlock');
                     } else if (result.data && result.data.Code === 5003) {
                         // Nothing
                     } else if (result.data && result.data.Error) {
@@ -384,7 +402,7 @@ angular.module("proton.controllers.Auth", [
 
         clearErrors();
 
-        networkActivityTracker.track(unlock(mailboxPassword, $scope.authResponse));
+        networkActivityTracker.track(unlock(mailboxPassword, $scope.creds.authResponse));
     };
 
     $scope.reset = function() {
@@ -393,7 +411,8 @@ angular.module("proton.controllers.Auth", [
             $state.go('support.reset-password');
         }
         else {
-            $state.go('reset', { creds: $scope.creds, authResponse: $scope.authResponse });
+            tempStorage.setItem('creds', $scope.creds);
+            $state.go('reset');
         }
     };
 

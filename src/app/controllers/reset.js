@@ -7,7 +7,6 @@ angular.module("proton.controllers.Reset", [
     $scope,
     $rootScope,
     $state,
-    $stateParams,
     $log,
     gettextCatalog,
     $q,
@@ -21,14 +20,18 @@ angular.module("proton.controllers.Reset", [
     Key,
     passwords,
     pmcw,
+    tempStorage,
     tools,
     notify,
     secureSessionStorage
 ) {
     function initialization() {
 
-        $scope.creds = $stateParams.creds;
-        $scope.authResponse = $stateParams.authResponse;
+        $scope.creds = tempStorage.getItem('creds');
+
+        if (!$scope.creds || !$scope.creds.authResponse) {
+            $state.go('login');
+        }
 
         // Variables
         $scope.tools    =           tools;
@@ -143,14 +146,14 @@ angular.module("proton.controllers.Reset", [
      */
     $scope.doMailboxLogin = function(response) {
 
-        $scope.authResponse = response.data;
+        $scope.creds.authResponse = response.data;
 
         return authentication.unlockWithPassword(
             $scope.account.mailboxPassword,
-            $scope.authResponse
+            $scope.creds.authResponse
         ).then(
             function(response) {
-                return authentication.setAuthCookie($scope.authResponse)
+                return authentication.setAuthCookie($scope.creds.authResponse)
                 .then(
                     function(resp) {
                         $scope.process.redirecting = true;
@@ -225,9 +228,9 @@ angular.module("proton.controllers.Reset", [
             return false;
         }
 
-        if (angular.isDefined($scope.creds) && angular.isDefined($scope.authResponse)) {
-            $http.defaults.headers.common.Authorization = "Bearer " + $scope.authResponse.ResetToken;
-            $http.defaults.headers.common["x-pm-uid"] = $scope.authResponse.Uid;
+        if (angular.isDefined($scope.creds) && angular.isDefined($scope.creds.authResponse)) {
+            $http.defaults.headers.common.Authorization = "Bearer " + $scope.creds.authResponse.ResetToken;
+            $http.defaults.headers.common["x-pm-uid"] = $scope.creds.authResponse.Uid;
         }
 
         /**
@@ -288,6 +291,14 @@ angular.module("proton.controllers.Reset", [
             getMBToken()
             .then( tokenResponse )
         );
+    };
+
+    /**
+     * Sends creds back to login.unlock state
+     */
+    $scope.cancelReset = function() {
+        tempStorage.setItem('creds', $scope.creds);
+        $state.go('login.unlock');
     };
 
     /**

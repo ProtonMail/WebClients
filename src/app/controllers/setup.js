@@ -8,7 +8,6 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
     $rootScope,
     $scope,
     $state,
-    $stateParams,
     $timeout,
     $window,
     Address,
