@@ -42,7 +42,7 @@ angular.module("proton.tempStorage", [])
                 data[key] = value;
 
                 // Delete information if not retrieved within timeout
-                timeouts[key] = $timeout(deleteKey(key), lifetime);
+                timeouts[key] = $timeout(deleteKey(key), lifetime, false);
             }
         },
 
