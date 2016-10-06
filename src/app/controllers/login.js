@@ -122,15 +122,14 @@ angular.module("proton.controllers.Auth", [
 
     function autoLogin() {
 
-        let creds = tempStorage.getItem('creds');
-
-        if (!creds) {
-            return;
-        }
-
-        $scope.creds = creds;
+        $scope.creds = tempStorage.getItem('creds');
 
         if ($state.is('login.unlock')) {
+
+            if (!$scope.creds) {
+                return $state.go('login');
+            }
+
             if (!$scope.creds.authResponse) {
                 tempStorage.setItem('creds', $scope.creds);
                 return $state.go('login');
@@ -142,9 +141,9 @@ angular.module("proton.controllers.Auth", [
             }
         }
         else {
-            // I don't think this is used yet
-            if (!$scope.creds.username || !$scope.creds.password) {
-                return $state.go('login');
+            if (!$scope.creds || !$scope.creds.username || !$scope.creds.password) {
+                delete $scope.creds;
+                return;
             }
 
             srp.info($scope.creds.username).
