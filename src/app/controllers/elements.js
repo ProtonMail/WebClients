@@ -652,12 +652,17 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
      * @param {String} mailbox
      */
     $scope.move = function(mailbox) {
-        var type = tools.typeList();
-        var ids = $scope.idsSelected();
+        const type = tools.typeList();
+
+        const ids = $scope.idsSelected();
+        if (ids.length === 0) {
+            return;
+        }
+
         $rootScope.numberElementChecked = 0;
-        if(type === 'conversation') {
+        if (type === 'conversation') {
             actionConversation.moveConversation(ids, mailbox);
-        } else if(type === 'message') {
+        } else if (type === 'message') {
             $rootScope.$emit('messageActions', {action: 'move', data: {ids, mailbox}});
         }
 

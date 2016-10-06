@@ -44,6 +44,11 @@ angular.module('proton.hotkeys', [])
 
     const openMarked = (event) => {
         $rootScope.$broadcast('openMarked');
+
+        // This function is bind to the Enter key, we need to prevent the
+        // browser from executing the default action otherwise it will
+        // trigger a click on the currently focused element.
+        event.preventDefault();
     };
 
     const read = (event) => {
