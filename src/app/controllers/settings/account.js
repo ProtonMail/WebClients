@@ -145,7 +145,7 @@ angular.module('proton.controllers.Settings')
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
                     form.$setUntouched();
-                    authentication.user.PasswordMode = 1;
+                    authentication.user.PasswordMode = 2;
                     notify({message: gettextCatalog.getString('Login password updated', null), classes: 'notification-success'});
                 })
             )
