@@ -27,7 +27,7 @@
 		                    <table class="plain" id="usersTable">
 		                        <tbody>
 		                        	<tr>
-			                            <td style="width: 10rem" translate-context="Title" translate>Number of users:</td>
+			                            <td style="width: 10rem" translate-context="Title" translate>Number of members:</td>
 			                            <td>
 			                                <strong  translate-comment="members page. how many members exist for an organization as well as the total number allowed." translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }} Used</strong>
 			                            </td>
@@ -52,7 +52,7 @@
 		                    </table>
 	                    </div>
 	                    <p>
-		                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create subaccounts which are used by other members of your organization.</span></small>
+		                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create sub-accounts which are used by other members of your organization.</span></small>
 	                    </p>
 	            	</div>
 	            </div>
@@ -61,10 +61,12 @@
 
         <div class="row">
             <section class="setting pm_form full">
-                <legend translate-context="Title" translate>Users</legend>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error animi nobis minus, corporis quaerat! Veritatis, amet recusandae aspernatur dolor, distinctio in similique qui velit laboriosam vitae impedit excepturi ea blanditiis.</p>
-                <p ng-show="checkDomains()">
-                    <button type="button" class="pm_button primary" ng-click="add()" translate-context="Action" translate>Add user</button>
+                <legend translate-context="Title" translate>Members</legend>
+                <p class="alert alert-info" ng-hide="checkDomains()">
+                    <span translate-context="Info" translate translate-comment="ask user to add domain before adding users">Please configure a custom domain before adding members to your organization.
+                </p>
+                <p>
+                    <button type="button" class="pm_button primary" ng-show="checkDomains()" ng-click="add()" translate-context="Action" translate>Add user</button>
                     <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add custom domain</a>
                 </p>
                 <div class="pm_table">

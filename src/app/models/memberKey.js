@@ -1,6 +1,7 @@
-angular.module('proton.models.memberKeys', [])
+angular.module('proton.models.memberKeys', ['proton.srp'])
 
-.factory('MemberKey', ($http, url) => {
+.factory('MemberKey', ($http, url, srp) => {
+
     return {
         // POST
         /**
@@ -10,6 +11,16 @@ angular.module('proton.models.memberKeys', [])
          */
         create(Obj) {
             return $http.post(url.get() + '/memberkeys', Obj);
+        },
+        /**
+         * Create new member key
+         * @param {Object} Obj
+         * @return {Promise}
+         */
+        setup: function(params = {}, password = '') {
+            return srp.randomVerifier(password).then(function(pass_params) {
+                return $http.post(url.get() + '/memberkeys/setup', _.extend(params,pass_params));
+            });
         },
         /**
          * Update member key priority
