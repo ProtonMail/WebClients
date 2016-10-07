@@ -16,6 +16,17 @@
                                         </td>
                                         <td style="width: 8rem" class="text-right actions"></td>
                                     </tr>
+                                    <tr ng-show="keyPhase > 3">
+                                        <th translate-context="Title" translate>Members</th>
+                                        <td>
+                                            <strong ng-hide="organization.PlanName === 'free'"  translate-comment="dashboard page. how many members exist for an organization as well as the total number allowed." translate>{{ organization.UsedMembers }} of {{ organization.MaxMembers }}</strong>
+                                            <strong ng-show="organization.PlanName === 'free'">0</strong>
+                                        </td>
+                                        <td class="text-right actions">
+                                            <a ui-sref="secured.members" class="pm_button link" ng-hide="subscription.Name === 'free'" translate-context="Action" translate>Manage</a>
+                                            <a href="#" class="pm_button link" ng-show="subscription.Name === 'free'" ng-click="scrollToPlans()" translate-context="Action" translate>Upgrade</a>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <th translate-context="Title" translate>Domains</th>
                                         <td>
@@ -75,6 +86,10 @@
                                     <tr>
                                         <th></th>
                                         <td colspan="2"><strong>{{ count('MaxSpace') | humanSize }} <span translate-context="Title" translate>Storage</span></strong></td>
+                                    </tr>
+                                    <tr ng-show="keyPhase > 3">
+                                        <th></th>
+                                        <td colspan="2"><strong>{{ count('MaxMembers') }} <span translate-context="Title" translate>Members</span></strong></td>
                                     </tr>
                                     <tr>
                                         <th></th>

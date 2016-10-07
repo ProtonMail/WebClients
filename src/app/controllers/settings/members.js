@@ -152,6 +152,11 @@ angular.module('proton.controllers.Settings')
     $scope.changeRole = function (member) {
         const params = { Role: member.selectRole.value };
 
+        // THIS IS WRONG
+        if (true) {
+            throw new Error('this is wrong!');
+        }
+
         if (member.selectRole.value === MASTER) {
             params.PrivateKey = $scope.organizationPrivateKey;
         }
@@ -247,10 +252,9 @@ angular.module('proton.controllers.Settings')
      * @param {Object} member
      */
     $scope.makePrivate = function (member) {
-        const title = gettextCatalog.getString('Make Private', null);
-        const message = gettextCatalog.getString('TODO', null);
-        const success = gettextCatalog.getString('Status Updated', null);
-        const mailboxPassword = authentication.getPassword();
+        var title = gettextCatalog.getString('Privatize Member', null);
+        var message = gettextCatalog.getString("Organization administrators will no longer be able to log in and control the member's account after privatization. This change is PERMANENT.", null);
+        var success = gettextCatalog.getString('Status Updated', null);
 
         confirmModal.activate({
             params: {
@@ -258,8 +262,8 @@ angular.module('proton.controllers.Settings')
                 message,
                 confirm() {
                     networkActivityTracker.track(
-                        Member.private(member.ID, { Password: mailboxPassword })
-                        .then((result) => {
+                        Member.privatize(member.ID)
+                        .then(function(result) {
                             if (result.data && result.data.Code === 1000) {
                                 member.Private = 1;
                                 notify({ message: success, classes: 'notification-success' });
@@ -281,11 +285,12 @@ angular.module('proton.controllers.Settings')
      * Allow the current user to access to the mailbox of a specific member
      * @param {Object} member
      */
-    $scope.readMail = function (member) {
-        const mailboxPassword = authentication.getPassword();
+    $scope.readMail = function(member) {
+        // This is totally broken
+        var mailboxPassword = authentication.getPassword();
 
-        Member.authenticate(member.ID, { Password: mailboxPassword })
-        .then((result) => {
+        Member.authenticate(member.ID, {broken: 'broken'})
+        .then(function(result) {
             if (result.data && result.data.Code === 1000) {
                 const sessionToken = result.data.SessionToken;
                 const url = window.location.href;
@@ -315,6 +320,21 @@ angular.module('proton.controllers.Settings')
      * Open a modal to create a new member
      */
     $scope.add = function () {
+        if ($scope.organization.MaxMembers - $scope.organization.UsedMembers < 1) {
+            notify({message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger'});
+            return;
+        }
+
+        if ($scope.organization.MaxAddresss - $scope.organization.UsedAddresses < 1) {
+            notify({message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger'});
+            return;
+        }
+
+        if ($scope.organization.MaxSpace - $scope.organization.UsedSpace < 1) {
+            notify({message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members', null, 'Error'), classes: 'notification-danger'});
+            return;
+        }
+
         $scope.edit();
     };
 
@@ -331,7 +351,13 @@ angular.module('proton.controllers.Settings')
                 domains: $scope.domains,
                 cancel(member) {
                     if (angular.isDefined(member)) {
-                        $scope.members.push(member);
+                        var index = _.findIndex($scope.members, {ID: member.ID});
+
+                        if (index === -1) {
+                            $scope.members.push(member);
+                        } else {
+                            _.extend($scope.members[index], member);
+                        }
                     }
 
                     memberModal.deactivate();
@@ -357,6 +383,7 @@ angular.module('proton.controllers.Settings')
                     networkActivityTracker.track(Member.delete(member.ID).then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
                             $scope.members.splice(index, 1); // Remove member in the members list
+                            $scope.organization.UsedMembers--;
                             confirmModal.deactivate(); // Close the modal
                             notify({ message: gettextCatalog.getString('Member removed', null), classes: 'notification-success' }); // Display notification
                         } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
