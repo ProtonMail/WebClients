@@ -151,7 +151,7 @@ angular.module('proton.authentication', [
                     };
 
                     const decryptToken = function (token) {
-                        return pmcw.decryptMessage(token, result.organizationKey);
+                        return pmcw.decryptMessage(token, organizationKey);
                     };
 
                     const decryptKey = ({ key, password, address, index }) => {
@@ -220,7 +220,7 @@ angular.module('proton.authentication', [
                             let index = 0;
                             _.each(address.Keys, (key) => {
                                 if (subuser === true) {
-                                    promises.push(decryptToken(key.Token, result.organizationKey).then((token) => { return decryptKey(key, token); }));
+                                    promises.push(decryptToken(key.Token, organizationKey).then((token) => { return decryptKey(key, token); }));
                                 } else {
                                     promises.push(decryptKey({ key, password: api.getPassword(), address, index }));
                                 }

@@ -18,7 +18,7 @@ angular.module('proton.models.members', ['proton.srp'])
          * @return {Promise}
          */
         authenticate(memberID, params) {
-            return $http.post(url.get() + '/members/' + memberID + '/auth', params);
+            return srp.performSRPRequest("POST", '/members/' + memberID + '/auth', {}, params);
         },
         // GET
         query() {
