@@ -253,7 +253,7 @@ angular.module('proton.conversation')
                         .value();
 
                     // If the latest message is read, we open it
-                    if (latest.IsRead === 1) {
+                    if (latest && latest.IsRead === 1) {
                         thisOne = latest;
                     } else {
                         // Else we open the first message unread beginning to the end list
