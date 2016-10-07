@@ -556,7 +556,11 @@ angular.module("proton.controllers.Compose", ["proton.constants"])
             var composer = angular.element('#uid' + message.uid);
 
             if ((message.ToList.length+message.CCList.length+message.BCCList.length) === 0) {
-                $scope.$applyAsync(() => $scope.focusTo(message));
+                if (!$state.includes('secured.drafts.**')) {
+                    $scope.$applyAsync(() => $scope.focusTo(message));
+                } else {
+                    message.editor && message.editor.focus();
+                }
             } else if (message.Subject.length === 0) {
                 $(composer).find('.subject').focus();
             } else if (message.editor) {
