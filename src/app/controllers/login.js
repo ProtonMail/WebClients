@@ -129,6 +129,35 @@ angular.module('proton.controllers.Auth', [
                 $rootScope.domoArigato = true;
                 return unlock($scope.creds.password, $scope.creds.authResponse);
             }
+        } else if ($state.is('login.sub')) {
+
+            const url = window.location.href;
+            const arr = url.split('/');
+            const domain = arr[0] + '//' + arr[2];
+            const login = (event) => {
+                if (event.origin !== domain) { return; }
+
+                // Remove listener
+                window.removeEventListener('message', login);
+
+                const sessionToken = event.data.SessionToken;
+                const adminPassword = event.data.MailboxPassword;
+
+                // Save password FIXME
+                authentication.savePassword(adminPassword);
+
+                // Continues loading up the app
+                authentication.saveAuthData({ SessionToken: sessionToken });
+
+                $rootScope.isSecure = true;
+                $rootScope.isLoggedIn = true;
+
+                // Redirect to inbox
+                $state.go('secured.inbox');
+            };
+
+            window.addEventListener('message', login);
+            window.opener.postMessage('ready', domain);
         } else {
             if (!$scope.creds || !$scope.creds.username || !$scope.creds.password) {
                 delete $scope.creds;
@@ -152,38 +181,6 @@ angular.module('proton.controllers.Auth', [
                 });
         }
     }
-    /**
-     * Detect the sub parameter to initialize the sub account session
-     */
-    function manageSubAccount() {
-        if ($stateParams.sub) {
-            const url = window.location.href;
-            const arr = url.split('/');
-            const domain = arr[0] + '//' + arr[2];
-            const login = (event) => {
-                if (event.origin !== domain) { return; }
-                const sessionToken = event.data.SessionToken;
-                const adminPassword = event.data.MailboxPassword;
-
-                // Save password FIXME
-                authentication.savePassword(adminPassword);
-
-                // Continues loading up the app
-                authentication.saveAuthData({ SessionToken: sessionToken });
-
-                // Remove listener
-                window.removeEventListener('message', this);
-                $rootScope.isSecure = true;
-                $rootScope.isLoggedIn = true;
-
-                // Redirect to inbox
-                $state.go('secured.inbox');
-            };
-
-            window.addEventListener('message', login);
-            window.opener.postMessage('ready', domain);
-        }
-    }
 
     /**
      * Function called at the initialization of this controller
@@ -194,7 +191,6 @@ angular.module('proton.controllers.Auth', [
         checkHelpTag();
         testSessionStorage();
         testCookie();
-        manageSubAccount();
         autoLogin();
     }
 

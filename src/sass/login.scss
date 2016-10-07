@@ -4,7 +4,8 @@ body#reset {
 		color: #000;
 	}
 }
-body#login-unlock {
+body#login-unlock,
+body#login-sub {
 	height: 100%;
 	background: $dark;
 	p.text-center {
@@ -23,6 +24,7 @@ body#login {
 }
 
 body#login-unlock,
+body#login-sub,
 body#login,
 body#eo-unlock {
 	#pm_login,

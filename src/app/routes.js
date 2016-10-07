@@ -34,8 +34,7 @@ angular.module('proton.routes', [
     // LOGIN ROUTES
     // ------------
     .state('login', {
-        params: { sub: null },
-        url: '/login?sub',
+        url: '/login',
         views: {
             'main@': {
                 templateUrl: 'templates/layout/login.tpl.html'
@@ -90,6 +89,20 @@ angular.module('proton.routes', [
                     return data.User;
                 });
             }
+        }
+    })
+
+    .state('login.sub', {
+        url: '/sub',
+        views: {
+            'panel@login': {
+                controller: 'LoginController',
+                templateUrl: 'templates/views/unlock.tpl.html'
+            }
+        },
+        onEnter: function($rootScope) {
+            $rootScope.isLoggedIn = true;
+            $rootScope.domoArigato = true;
         }
     })
 

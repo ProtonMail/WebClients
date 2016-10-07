@@ -5,12 +5,14 @@ angular.module('proton.controllers.Settings')
     $scope,
     $state,
     $stateParams,
+    $timeout,
     Address,
     authentication,
     confirmModal,
     domains,
     eventManager,
     gettextCatalog,
+    loginPasswordModal,
     Member,
     memberModal,
     members,
@@ -24,6 +26,18 @@ angular.module('proton.controllers.Settings')
 ) => {
     const MASTER = 2;
     const SUB = 1;
+
+    function passwordModal(submit) {
+        loginPasswordModal.activate({
+            params: {
+                submit: submit,
+                cancel: function() {
+                    loginPasswordModal.deactivate();
+                },
+                hasTwoFactor: authentication.user.TwoFactor
+            }
+        });
+    }
 
     $scope.roles = [
         { label: gettextCatalog.getString('Master', null), value: MASTER },
@@ -286,34 +300,60 @@ angular.module('proton.controllers.Settings')
      * @param {Object} member
      */
     $scope.readMail = function(member) {
-        // This is totally broken
-        var mailboxPassword = authentication.getPassword();
 
-        Member.authenticate(member.ID, {broken: 'broken'})
-        .then(function(result) {
-            if (result.data && result.data.Code === 1000) {
-                const sessionToken = result.data.SessionToken;
-                const url = window.location.href;
-                const arr = url.split('/');
-                const domain = arr[0] + '//' + arr[2];
-                const tab = $state.href('login', { sub: true }, { absolute: true });
-                const send = function (event) {
-                    if (event.origin !== domain) { return; }
-                    if (event.data === 'ready') {
-                        // Send the session token and the organization owner’s mailbox password to the target URI
-                        event.source.postMessage({ SessionToken: sessionToken, MailboxPassword: mailboxPassword }, domain);
-                        window.removeEventListener('message', send);
-                    }
-                };
-                // Listen message from the future child
-                window.addEventListener('message', send, false);
-                // Open new tab
-                window.open(tab, '_blank');
-            } else if (result.data && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-            }
-        });
+        function submit(currentPassword, twoFactorCode) {
 
+            loginPasswordModal.deactivate();
+
+            const mailboxPassword = authentication.getPassword();
+
+            const arr = window.location.href.split('/');
+            const domain = arr[0] + '//' + arr[2];
+            const tab = $state.href('login.sub', {sub: true}, {absolute: true});
+
+            let ready = false;
+            const receive = (event) => {
+                if (event.origin !== domain) { return; }
+                if (event.data === 'ready') {
+                    ready = true;
+                    window.removeEventListener('message', receive);
+                }
+            };
+
+            // Listen message from the future child
+            window.addEventListener('message', receive, false);
+
+            // Open new tab
+            const child = window.open(tab, '_blank');
+
+            networkActivityTracker.track(
+                Member.authenticate(member.ID, {Password: currentPassword, TwoFactorCode: twoFactorCode})
+                .then((result) => {
+                    let sessionToken = result.data.SessionToken;
+
+                    let cb = () => {
+                        if(ready) {
+                            // Send the session token and the organization owner’s mailbox password to the target URI
+                            child.postMessage({ SessionToken: sessionToken, MailboxPassword: mailboxPassword }, domain);
+                        }
+                        else {
+                            $timeout(cb, 500, false);
+                        }
+                    };
+
+                    cb();
+                },
+                (error) => {
+                    child.close();
+                    notify({message: error.error_description, classes: 'notification-danger'});
+                })
+            )
+            .catch((error) => {
+                // Nothing
+            });
+        }
+
+        passwordModal(submit);
     };
 
     /**

@@ -272,6 +272,7 @@ angular.module('proton', [
         networkActivityTracker.clear();
 
         const isLogin = (toState.name === 'login');
+        const isSub = (toState.name === 'login.sub');
         const isUpgrade = (toState.name === 'upgrade');
         const isSupport = (toState.name.includes('support'));
         const isAccount = (toState.name === 'account');
@@ -290,9 +291,9 @@ angular.module('proton', [
             event.preventDefault();
             $state.go('secured.inbox');
             return;
-        } else if (isLogin || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter) {
+        } else if (isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter) {
             // if on the login, support, account, or signup pages dont require authentication
-            $log.debug('appjs:(isLogin || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter)');
+            $log.debug('appjs:(isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter)');
             return; // no need to redirect
         }
 
