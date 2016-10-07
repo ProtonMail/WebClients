@@ -139,6 +139,7 @@ angular.module("proton.controllers.Conversations", ["proton.constants"])
 
         $scope.$on('left', function(event) {
             redirectUser();
+            isOpened = false;
         });
         $scope.$on('right', onElement(() => {
             openElement($scope.markedElement);
