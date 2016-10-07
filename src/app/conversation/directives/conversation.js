@@ -104,6 +104,10 @@ angular.module('proton.conversation')
                 if (type === 'toggle') {
                     unsubscribeActions();
                     unsubscribeActions = conversationListeners(data.message);
+
+                    // Allow the user to scroll inside the conversation via the keyboard
+                    hotkeys.unbind(['down', 'up']);
+                    scope.markedMessage = void 0;
                 }
             }));
 
