@@ -143,7 +143,7 @@ angular.module('proton.controllers.Auth', [
                 const sessionToken = event.data.SessionToken;
                 const adminPassword = event.data.MailboxPassword;
 
-                // Save password FIXME
+                // Save password
                 authentication.savePassword(adminPassword);
 
                 // Continues loading up the app

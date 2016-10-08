@@ -80,12 +80,36 @@ angular.module('proton.core')
             // Collect address keys
             user.Addresses.forEach((address) => { address.Keys.forEach((key) => inputKeys.push(key)); });
             // Re-encrypt all keys, if they can be decrypted
-            return inputKeys.map(({ PrivateKey, ID }) => {
-                // Decrypt private key with the old mailbox password
-                return pmcw.decryptPrivateKey(PrivateKey, oldMailPwd)
+            let promises = [];
+            if (user.OrganizationPrivateKey) {
+                // Sub-user
+                let organizationKey = pmcw.decryptPrivateKey(user.OrganizationPrivateKey, oldMailPwd);
+
+                promises = inputKeys.map(({PrivateKey, ID, Token}) => {
+                    // Decrypt private key with organization key and token
+                    return organizationKey
+                    .then((key) => pmcw.decryptMessage(Token, key))
+                    .then((token) => pmcw.decryptPrivateKey(PrivateKey, token))
+                    .then((pkg) => ({ ID, pkg }));
+                });
+            }
+            else {
+                // Not sub-user
+                promises = inputKeys.map(({PrivateKey, ID}) => {
+                    // Decrypt private key with the old mailbox password
+                    return pmcw.decryptPrivateKey(PrivateKey, oldMailPwd)
+                    .then((pkg) => ({ ID, pkg }));
+                });
+            }
+
+            return promises.map((promise) => {
+                return promise
                 // Encrypt the key with the new mailbox password
                 .then(
-                    (pkg) => pmcw.encryptPrivateKey(pkg, password).then((PrivateKey) => ({ ID, PrivateKey })),
+                    ({ ID, pkg }) => {
+                        return pmcw.encryptPrivateKey(pkg, password)
+                        .then((PrivateKey) => ({ ID, PrivateKey }));
+                    },
                     (error) => {
                         // Cannot decrypt, return 0 (not an error)
                         $log.error(error);

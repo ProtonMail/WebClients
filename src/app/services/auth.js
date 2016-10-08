@@ -289,6 +289,15 @@ angular.module('proton.authentication', [
             }
         },
 
+        savePassword(pwd) {
+            // Never save mailbox password changes if sub user
+            if (this.user && this.user.OrganizationPrivateKey) {
+                return;
+            }
+
+            // Save password in session storage
+            secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
+        },
 
         /**
          * Return the mailbox password stored in the session storage
