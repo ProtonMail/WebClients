@@ -15,7 +15,7 @@ angular.module('proton.attachments')
          * @return {Boolean}
          */
         const isUploadAbleType = ({ dataTransfer }) => {
-            return (dataTransfer.types || [])
+            return [...(dataTransfer.types || [])]
                 .every((type) => type !== 'text/html' && type !== 'text/plain' && type !== 'text/uri-list');
         };
 
