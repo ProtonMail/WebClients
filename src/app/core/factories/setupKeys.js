@@ -24,7 +24,7 @@ angular.module('proton.core')
                 .then((pass) => {
                     const keyPromises = _.map(addresses, ({ Email, ID } = {}) => {
                         return pmcw
-                            .generateKeysRSA(`<${Email}>`, pass)
+                            .generateKeysRSA(`<${Email}>`, pass, numBits)
                             .then(({ privateKeyArmored }) => ({
                                 AddressID: ID,
                                 PrivateKey: privateKeyArmored
@@ -59,7 +59,7 @@ angular.module('proton.core')
 
         function processMemberKey(mailboxPassword = '', key = '', organizationPublicKey = '') {
 
-            let randomString = pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(128))));
+            const randomString = pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(128))));
             let memberKey;
 
             return pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword)
@@ -70,7 +70,7 @@ angular.module('proton.core')
                 memberKey = result;
                 return pmcw.encryptMessage(randomString, organizationPublicKey);
             })
-            .then(function(token) {
+            .then((token) => {
                 return {
                     AddressID: key.AddressID,
                     UserKey: key.PrivateKey,
@@ -82,7 +82,7 @@ angular.module('proton.core')
 
         function processMemberKeys(mailboxPassword = '', keys = [], organizationPublicKey = '') {
 
-            let promises = [];
+            const promises = [];
             _.each(keys, (key) => {
                 promises.push(processMemberKey(mailboxPassword, key, organizationPublicKey));
             });
@@ -99,7 +99,7 @@ angular.module('proton.core')
             return $q.reject({ message: 'Something went wrong during key setup' });
         }
 
-        function reset({keySalt, keys}, password = '', params = {}) {
+        function reset({ keySalt, keys }, password = '', params = {}) {
 
             const rv = preparePayload(keySalt, keys, password);
             rv.payload = _.extend(rv.payload, params);
@@ -108,7 +108,7 @@ angular.module('proton.core')
             .then(errorHandler);
         }
 
-        function setup({keySalt, keys}, password = '') {
+        function setup({ keySalt, keys }, password = '') {
 
             const rv = preparePayload(keySalt, keys, password);
 
@@ -116,7 +116,7 @@ angular.module('proton.core')
             .then(errorHandler);
         }
 
-        function member({mailboxPassword, keySalt, keys}, password = '', memberID = '', organizationPublicKey = '') {
+        function member({ mailboxPassword, keySalt, keys }, password = '', memberID = '', organizationPublicKey = '') {
 
             return processMemberKeys(mailboxPassword, keys, organizationPublicKey)
             .then((result) => {
