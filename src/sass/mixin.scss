@@ -11,3 +11,7 @@
     */
     min-height: 0px; // allow scroll for childs
 }
+
+@mixin filledWidth() {
+    display: flex;
+}
