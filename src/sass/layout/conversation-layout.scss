@@ -35,6 +35,7 @@ body {
     #pm_thread {
         overflow-y: auto;
         overflow-x: hidden;
+        flex:1;
         &:focus {
             /* hotkey remove browser focus styling */
             outline: none;
