@@ -16,14 +16,15 @@ angular.module('proton.models.setting', ['proton.srp'])
             });
         },
         noticeEmail: function(params, creds) {
-            return srp.performSRPRequest("PUT", '/settings/noticeemail', params, creds)
+            return srp.performSRPRequest('PUT', '/settings/noticeemail', params, creds)
             .catch((error) => {
-                if(error.error_description) {
-                    return Promise.reject(error.error_description);
-                }
-                else {
-                    return Promise.reject(error);
-                }
+                throw error.error_description || error;
+            });
+        },
+        passwordReset: function(params, creds) {
+            return srp.performSRPRequest('PUT', '/settings/reset', params, creds)
+            .catch((error) => {
+                throw error.error_description || error;
             });
         },
         signature: function(params) {
