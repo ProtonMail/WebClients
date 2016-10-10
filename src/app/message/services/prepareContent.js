@@ -1,6 +1,7 @@
 angular.module('proton.message')
 .factory('prepareContent', ($injector, transformAttachement, transformRemote) => {
     const filters = [
+        'transformBase',
         'transformLinks',
         'transformEmbedded',
         'transformWelcome',
