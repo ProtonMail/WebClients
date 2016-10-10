@@ -1,14 +1,14 @@
 angular.module('proton.rightClick', [])
-.directive('ngRightClick', function($parse, $timeout) {
+.directive('ngRightClick', ($parse) => {
     return {
-        restrict:'A',
-        link: function(scope, element, attrs) {
-            var fn = $parse(attrs.ngRightClick);
+        restrict: 'A',
+        link(scope, element, attrs) {
+            const fn = $parse(attrs.ngRightClick);
 
-            element.bind('contextmenu', function(event) {
-                scope.$apply(function() {
+            element.bind('contextmenu', (event) => {
+                scope.$apply(() => {
                     event.preventDefault();
-                    fn(scope, {$event: event});
+                    fn(scope, { $event: event });
                 });
             });
         }

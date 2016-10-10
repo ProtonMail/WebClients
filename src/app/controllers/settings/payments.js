@@ -1,6 +1,6 @@
 angular.module('proton.controllers.Settings')
 
-.controller('PaymentsController', function(
+.controller('PaymentsController', (
     $scope,
     gettextCatalog,
     $q,
@@ -14,31 +14,31 @@ angular.module('proton.controllers.Settings')
     notify,
     networkActivityTracker,
     Payment
-) {
+) => {
     $scope.methods = methods.data.PaymentMethods;
     $scope.subscribed = authentication.user.Subscribed === 1;
     $scope.invoices = invoices.data.Invoices;
     $scope.total = invoices.data.Total;
     $scope.delinquent = authentication.user.Delinquent >= 3;
 
-    $scope.$on('updateUser', function(event) {
+    $scope.$on('updateUser', () => {
         $scope.subscribed = authentication.user.Subscribed === 1;
         $scope.delinquent = authentication.user.Delinquent >= 3;
     });
 
-    $scope.refresh = function() {
+    $scope.refresh = function () {
         networkActivityTracker.track(Payment.methods()
-        .then(function(result) {
+        .then((result) => {
             if (result.data && result.data.Code === 1000) {
                 $scope.methods = result.data.PaymentMethods;
             }
         }));
     };
 
-    $scope.add = function() {
+    $scope.add = function () {
         cardModal.activate({
             params: {
-                close: function(method) {
+                close(method) {
                     cardModal.deactivate();
 
                     if (angular.isDefined(method)) {
@@ -51,13 +51,13 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.edit = function(method) {
-        var index = $scope.methods.indexOf(method);
+    $scope.edit = function (method) {
+        const index = $scope.methods.indexOf(method);
 
         cardModal.activate({
             params: {
-                method: method,
-                close: function(method) {
+                method,
+                close(method) {
                     cardModal.deactivate();
 
                     if (angular.isDefined(method)) {
@@ -68,54 +68,54 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.default = function(method) {
-        var order = [];
-        var from = $scope.methods.indexOf(method);
-        var to = 0;
+    $scope.default = function (method) {
+        const order = [];
+        const from = $scope.methods.indexOf(method);
+        const to = 0;
 
-        _.each($scope.methods, function(method, index) { order.push(index + 1); });
+        _.each($scope.methods, (method, index) => { order.push(index + 1); });
         order.splice(to, 0, order.splice(from, 1)[0]);
 
         networkActivityTracker.track(Payment.order({
             Order: order
-        }).then(function(result) {
+        }).then((result) => {
             if (result.data && result.data.Code === 1000) {
                 $scope.methods.splice(to, 0, $scope.methods.splice(from, 1)[0]);
-                notify({message: gettextCatalog.getString('Payment method updated', null), classes: 'notification-success'});
+                notify({ message: gettextCatalog.getString('Payment method updated', null), classes: 'notification-success' });
             } else if (result.data && result.data.Error) {
-                notify({message: result.data.Error, classes: 'notification-danger'});
+                notify({ message: result.data.Error, classes: 'notification-danger' });
             } else {
-                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
+                notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
             }
-        }, function(error) {
-            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
+        }, () => {
+            notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
         }));
     };
 
-    $scope.delete = function(method) {
-        var title = gettextCatalog.getString('Delete payment method', null, 'Title');
-        var message = gettextCatalog.getString('Are you sure you want to delete this payment method?', null, 'Info');
+    $scope.delete = function (method) {
+        const title = gettextCatalog.getString('Delete payment method', null, 'Title');
+        const message = gettextCatalog.getString('Are you sure you want to delete this payment method?', null, 'Info');
 
         confirmModal.activate({
             params: {
-                title: title,
-                message: message,
-                confirm: function() {
+                title,
+                message,
+                confirm() {
                     networkActivityTracker.track(
                         Payment.deleteMethod(method.ID)
-                        .then(function(result) {
+                        .then((result) => {
                             if (result.data && result.data.Code === 1000) {
                                 confirmModal.deactivate();
                                 $scope.methods.splice($scope.methods.indexOf(method), 1);
-                                notify({message: gettextCatalog.getString('Payment method deleted', null), classes: 'notification-success'});
+                                notify({ message: gettextCatalog.getString('Payment method deleted', null), classes: 'notification-success' });
                             } else if (result.data && result.data.Error) {
                                 confirmModal.deactivate();
-                                notify({message: result.data.Error, classes: 'notification-danger'});
+                                notify({ message: result.data.Error, classes: 'notification-danger' });
                             }
                         })
                     );
                 },
-                cancel: function() {
+                cancel() {
                     confirmModal.deactivate();
                 }
             }
@@ -125,10 +125,10 @@ angular.module('proton.controllers.Settings')
     /**
      * Open modal to customize invoice text
      */
-    $scope.customize = function() {
+    $scope.customize = function () {
         customizeInvoiceModal.activate({
             params: {
-                cancel: function() {
+                cancel() {
                     customizeInvoiceModal.deactivate();
                 }
             }
@@ -139,14 +139,14 @@ angular.module('proton.controllers.Settings')
      * Download invoice
      * @param {Object} invoice
      */
-    $scope.download = function(invoice) {
+    $scope.download = function (invoice) {
         networkActivityTracker.track(
             Payment.invoice(invoice.ID)
-            .then(function(result) {
-                var filename = "ProtonMail Invoice " + invoice.ID + ".pdf";
-                var blob = new Blob([result.data], { type: 'application/pdf' });
+            .then((result) => {
+                const filename = 'ProtonMail Invoice ' + invoice.ID + '.pdf';
+                const blob = new Blob([result.data], { type: 'application/pdf' });
 
-                saveAs(blob, filename);
+                window.saveAs(blob, filename);
             })
         );
     };
@@ -155,18 +155,18 @@ angular.module('proton.controllers.Settings')
      * Open a modal to pay invoice
      * @param {Object} invoice
      */
-     $scope.pay = function(invoice) {
-         var promises = {
-             methods: Payment.methods(),
-             check: Payment.check(invoice.ID),
-             status: Payment.status()
-         };
+    $scope.pay = function (invoice) {
+        const promises = {
+            methods: Payment.methods(),
+            check: Payment.check(invoice.ID),
+            status: Payment.status()
+        };
 
-         networkActivityTracker.track(
+        networkActivityTracker.track(
              $q.all(promises)
-             .then(function(result) {
-                 var methods = [];
-                 var status;
+             .then((result) => {
+                 let methods = [];
+                 let status;
 
                  if (result.methods.data && result.methods.data.PaymentMethods) {
                      methods = result.methods.data.PaymentMethods;
@@ -178,26 +178,26 @@ angular.module('proton.controllers.Settings')
 
                  payModal.activate({
                      params: {
-                         invoice: invoice,
-                         methods: methods,
-                         status: status,
+                         invoice,
+                         methods,
+                         status,
                          currency: result.check.data.Currency,
                          amount: result.check.data.Amount,
                          credit: result.check.data.Credit,
                          amountDue: result.check.data.AmountDue,
-                         close: function(result) {
+                         close(result) {
                              payModal.deactivate();
 
                              if (result === true) {
                                  // Set invoice state to PAID
                                  invoice.State = 1;
                                  // Display a success notification
-                                 notify({message: gettextCatalog.getString('Invoice paid', null, 'Info'), classes: 'notification-success'});
+                                 notify({ message: gettextCatalog.getString('Invoice paid', null, 'Info'), classes: 'notification-success' });
                              }
                          }
                      }
                  });
              })
          );
-     };
+    };
 });

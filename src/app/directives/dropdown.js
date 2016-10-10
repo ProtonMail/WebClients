@@ -1,10 +1,9 @@
 angular.module('proton.dropdown', [])
 
 .directive('dropdown', ($timeout, $document, $rootScope) => {
-    return function (scope, element, attrs) {
+    return function (scope, element) {
         const parent = element.parent();
         const dropdown = parent.find('.pm_dropdown');
-        const next = element.next();
 
         // Functions
         function showDropdown() {
@@ -25,7 +24,7 @@ angular.module('proton.dropdown', [])
             }
         }
 
-        function click(event) {
+        function click() {
             if (element.hasClass('active')) {
                 hideDropdown();
             } else {
@@ -41,7 +40,7 @@ angular.module('proton.dropdown', [])
         // Listeners
         element.on('click', click);
 
-        scope.$on('closeDropdown', (event) => {
+        scope.$on('closeDropdown', () => {
             hideDropdown();
         });
 
@@ -52,7 +51,7 @@ angular.module('proton.dropdown', [])
     };
 })
 
-.directive('selector', function() {
+.directive('selector', () => {
     return {
         restrict: 'E',
         templateUrl: 'templates/directives/selector.tpl.html',
@@ -61,21 +60,21 @@ angular.module('proton.dropdown', [])
             options: '=', // Array of String or Object
             onSelect: '@' // Method called when a change appear
         },
-        link: function(scope, element, attrs) {
+        link(scope) {
 
-            scope.labelized = function() {
-                if(angular.isString(scope.ngModel)) {
+            scope.labelized = function () {
+                if (angular.isString(scope.ngModel)) {
                     scope.label = scope.ngModel;
-                } else if(angular.isObject(scope.ngModel) && angular.isDefined(scope.ngModel.label)) {
+                } else if (angular.isObject(scope.ngModel) && angular.isDefined(scope.ngModel.label)) {
                     scope.label = scope.ngModel.label;
                 }
             };
 
-            scope.select = function(option) {
+            scope.select = function (option) {
                 scope.ngModel = angular.copy(option);
                 scope.labelized();
 
-                if(angular.isFunction(scope.onSelect)) {
+                if (angular.isFunction(scope.onSelect)) {
                     scope.onSelect(option);
                 }
             };
@@ -85,7 +84,7 @@ angular.module('proton.dropdown', [])
     };
 })
 
-.directive('paginator', function ($timeout) {
+.directive('paginator', ($timeout) => {
     return {
         restrict: 'E',
         replace: true,
@@ -96,49 +95,49 @@ angular.module('proton.dropdown', [])
             itemsPerPage: '=',
             change: '='
         },
-        link: function(scope, element, attrs) {
+        link(scope) {
             scope.pages = [];
 
-            var disable = function() {
+            const disable = function () {
                 scope.disableMain = Math.ceil(scope.totalItems / scope.itemsPerPage) === 1 || scope.totalItems === 0; // Main
                 scope.disableP = scope.page === 1 || scope.totalItems === 0; // Previous
                 scope.disableN = Math.ceil(scope.totalItems / scope.itemsPerPage) === scope.page || scope.totalItems === 0; // Next
             };
 
-            var buildPages = function() {
-                var pages;
-                var temp = [];
+            const buildPages = function () {
+                let pages;
+                const temp = [];
 
-                if((scope.totalItems % scope.itemsPerPage) === 0) {
+                if ((scope.totalItems % scope.itemsPerPage) === 0) {
                     pages = scope.totalItems / scope.itemsPerPage;
                 } else {
                     pages = Math.floor(scope.totalItems / scope.itemsPerPage) + 1;
                 }
 
-                for (var i = 1; i <= pages; ++i) {
+                for (let i = 1; i <= pages; ++i) {
                     temp.push(i);
                 }
 
                 scope.pages = temp;
             };
 
-            scope.$watch('totalItems', function(newValue, oldValue) {
+            scope.$watch('totalItems', () => {
                 disable();
                 buildPages();
             });
 
-            scope.select = function(p) {
+            scope.select = function (p) {
                 scope.change(p);
-                $timeout(function() {
+                $timeout(() => {
                     disable();
-                }, 0 , true);
+                }, 0, true);
             };
 
-            scope.next = function() {
+            scope.next = function () {
                 scope.select(scope.page + 1);
             };
 
-            scope.previous = function() {
+            scope.previous = function () {
                 scope.select(scope.page - 1);
             };
         }

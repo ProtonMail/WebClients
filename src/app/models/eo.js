@@ -1,63 +1,63 @@
-angular.module("proton.models.eo", [])
+angular.module('proton.models.eo', [])
 
-.factory("Eo", function($http, $q, url, CONFIG) {
+.factory('Eo', ($http, $q, url, CONFIG) => {
     return {
-        token: function(tokenID) {
+        token(tokenID) {
             return $http.get(url.get() + '/eo/token/' + encodeURIComponent(tokenID), {
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8',
-                    'Accept': 'application/vnd.protonmail.v1+json'
+                    Accept: 'application/vnd.protonmail.v1+json'
                 }
             });
         },
-        message: function(decrypted_token, token_id) {
+        message(Authorization, token) {
             return $http.get(url.get() + '/eo/message', {
                 headers: {
-                    'Authorization': decrypted_token,
-                    'x-eo-uid': token_id
+                    Authorization,
+                    'x-eo-uid': token
                 }
             });
         },
-        attachment(decrypted_token, token_id, attachmentID) {
+        attachment(Authorization, token, attachmentID) {
             return $http.get(url.get() + '/eo/attachment/' + attachmentID, {
-                responseType: "arraybuffer",
+                responseType: 'arraybuffer',
                 headers: {
-                    'Authorization': decrypted_token,
-                    'x-eo-uid': token_id
+                    Authorization,
+                    'x-eo-uid': token
                 }
             });
         },
-        reply: function(decrypted_token, token_id, data) {
-            var deferred = $q.defer();
-            var fd = new FormData();
-            var xhr = new XMLHttpRequest();
+        reply(decryptedToken, token, data) {
+            const deferred = $q.defer();
+            const fd = new FormData();
+            const xhr = new XMLHttpRequest();
 
-            Object.keys(data || {}).forEach(function(key) {
+            Object.keys(data || {}).forEach((key) => {
                 if (angular.isArray(data[key])) {
-                    _.each(data[key], function(v) {
+                    _.each(data[key], (v) => {
                         fd.append(key, v);
                     });
                 } else {
-                    fd.append(key+'', data[key]);
+                    fd.append(key + '', data[key]);
                 }
             });
 
-            xhr.onload = function() {
-                var response;
-                var validJSON;
-                var statusCode = this.status;
+            xhr.onload = function onload() {
+                let response;
+                let validJSON;
+                const statusCode = this.status;
 
                 try {
                     response = JSON.parse(this.responseText);
                     validJSON = true;
                 } catch (error) {
                     response = {
-                        'Error': 'JSON parsing error: ' + this.responseText
+                        Error: 'JSON parsing error: ' + this.responseText
                     };
                     validJSON = false;
                 }
 
-                if(statusCode !== 200) {
+                if (statusCode !== 200) {
                     deferred.reject('Unable to send the message');
                 } else if (response.Error !== undefined) {
                     if (validJSON) {
@@ -71,12 +71,12 @@ angular.module("proton.models.eo", [])
             };
 
             xhr.open('post', url.get() + '/eo/reply', true);
-            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-            xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
-            xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
-            xhr.setRequestHeader("x-pm-apiversion", CONFIG.api_version);
-            xhr.setRequestHeader("Authorization", decrypted_token);
-            xhr.setRequestHeader("x-eo-uid", token_id);
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Accept', 'application/vnd.protonmail.v1+json');
+            xhr.setRequestHeader('x-pm-appversion', 'Web_' + CONFIG.app_version);
+            xhr.setRequestHeader('x-pm-apiversion', CONFIG.api_version);
+            xhr.setRequestHeader('Authorization', decryptedToken);
+            xhr.setRequestHeader('x-eo-uid', token);
             xhr.send(fd);
 
             return deferred.promise;

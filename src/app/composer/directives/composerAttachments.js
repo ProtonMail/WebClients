@@ -37,7 +37,7 @@ angular.module('proton.composer')
             return {
                 open, close, isOpened, hide, show,
                 toggle() {
-                    isOpened() ? close() : open();
+                    return isOpened() ? close() : open();
                 }
             };
         };
@@ -77,13 +77,13 @@ angular.module('proton.composer')
          */
         const onAction = (scope, actionsPanel) => (e, { type, data }) => {
 
-            const { status, packet, id, progress, action, messageID, REQUEST_ID } = data;
+            const { status, packet, id, progress, messageID, REQUEST_ID } = data;
 
             if (!isMessage(scope.message, data)) {
                 return;
             }
 
-            switch(type) {
+            switch (type) {
                 // After an action triggered by askEmbedded
                 case 'upload':
                     if (data.action !== 'cancel') {

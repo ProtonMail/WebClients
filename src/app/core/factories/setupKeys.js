@@ -15,26 +15,23 @@ angular.module('proton.core')
             const passwordPromise = passwords.computeKeyPassword(password, keySalt);
             const promises = {
                 mailboxPassword: passwordPromise,
-                keySalt: $q.resolve(keySalt),
+                keySalt: $q.resolve(keySalt)
             };
 
             return passwordPromise
-            .then((pass) => {
+                .then((pass) => {
+                    const keyPromises = _.map(addresses, ({ Email, ID } = {}) => {
+                        return pmcw
+                            .generateKeysRSA(`<${Email}>`, pass)
+                            .then(({ privateKeyArmored }) => ({
+                                AddressID: ID,
+                                PrivateKey: privateKeyArmored
+                            }));
+                    });
 
-                const keyPromises = [];
-                _.each(addresses, (address) => {
-                    keyPromises.push(
-                        pmcw.generateKeysRSA('<'+address.Email+'>', pass)
-                        .then((response) => ({
-                            AddressID: address.ID,
-                            PrivateKey: response.privateKeyArmored
-                        }))
-                    );
+                    promises.keys = $q.all(keyPromises);
+                    return $q.all(promises);
                 });
-
-                promises.keys = $q.all(keyPromises);
-                return $q.all(promises);
-            });
         }
 
         function preparePayload(mailboxPassword, keySalt, keys, password = '') {
@@ -62,12 +59,12 @@ angular.module('proton.core')
             if (data && data.Code === 1000) {
                 return $q.resolve(data.User);
             } else if (data && data.Error) {
-                return $q.reject({message: data.Error});
+                return $q.reject({ message: data.Error });
             }
-            return $q.reject({message: 'Something went wrong during key setup'});
+            return $q.reject({ message: 'Something went wrong during key setup' });
         }
 
-        function reset({mailboxPassword, keySalt, keys}, password = '', params = {}) {
+        function reset({ mailboxPassword, keySalt, keys }, password = '', params = {}) {
 
             const rv = preparePayload(mailboxPassword, keySalt, keys, password);
             rv.payload = _.extend(rv.payload, params);
@@ -76,7 +73,7 @@ angular.module('proton.core')
             .then(errorHandler);
         }
 
-        function setup({mailboxPassword, keySalt, keys}, password = '') {
+        function setup({ mailboxPassword, keySalt, keys }, password = '') {
 
             const rv = preparePayload(mailboxPassword, keySalt, keys, password);
 

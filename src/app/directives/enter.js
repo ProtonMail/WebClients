@@ -1,10 +1,10 @@
-angular.module("proton.enter", [])
+angular.module('proton.enter', [])
 
-.directive('ngEnter', function () {
+.directive('ngEnter', () => {
     return function (scope, element, attrs) {
-        element.bind("keydown keypress", function (event) {
+        element.bind('keydown keypress', (event) => {
             if (event.which === 13) {
-                scope.$apply(function (){
+                scope.$apply(() => {
                     scope.$eval(attrs.ngEnter);
                 });
 

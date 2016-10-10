@@ -1,6 +1,6 @@
 angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
 
-.controller('SetupController', function(
+.controller('SetupController', (
     $http,
     $location,
     $log,
@@ -27,9 +27,7 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
     setupKeys,
     tools,
     user
-) {
-    var childWindow;
-
+) => {
     function initialization() {
 
         $scope.keyPhase = CONSTANTS.KEY_PHASE;
@@ -48,8 +46,8 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
         $scope.domains = [];
 
         // Populate the domains <select>
-        _.each(domains, function(domain) {
-            $scope.domains.push({label: domain, value: domain});
+        _.each(domains, (domain) => {
+            $scope.domains.push({ label: domain, value: domain });
         });
 
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
@@ -68,7 +66,7 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
         $scope.passwordConfirm = '';
     }
 
-    $scope.submit = (form) => {
+    $scope.submit = () => {
 
         return networkActivityTracker.track(
             setupAddress()
@@ -77,7 +75,7 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
             .then(doGetUserInfo)
             .then(finishRedirect)
         )
-        .catch((error) => {
+        .catch(() => {
             $scope.setupError = true;
         });
     };
@@ -89,7 +87,6 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
     // ---------------------------------------------------
 
     function setupAddress() {
-
         $log.debug('setupAddress');
         $scope.filling = false;
 
@@ -102,9 +99,9 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
                     user.Addresses = [result.data.Address];
                     return user;
                 } else if (result.data && result.data.Error) {
-                    return $q.reject({message: result.data.Error});
+                    return $q.reject({ message: result.data.Error });
                 }
-                return $q.reject({message: 'Something went wrong during address creation'});
+                return $q.reject({ message: 'Something went wrong during address creation' });
             });
         }
         return $q.resolve(user);
@@ -138,7 +135,7 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
     function doGetUserInfo() {
 
         $log.debug('getUserInfo');
-        $scope.getUserInfo  = true;
+        $scope.getUserInfo = true;
 
         return authentication.fetchUserInfo();
     }

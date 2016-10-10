@@ -1,18 +1,18 @@
 angular.module('proton.compareTo', [])
 
-.directive("compareTo", () => {
+.directive('compareTo', () => {
     return {
-        require: "ngModel",
+        require: 'ngModel',
         scope: {
-            otherModelValue: "=compareTo"
+            otherModelValue: '=compareTo'
         },
-        link: function(scope, element, attributes, ngModel) {
+        link(scope, element, attributes, ngModel) {
 
-            ngModel.$validators.compareTo = function(modelValue) {
+            ngModel.$validators.compareTo = function (modelValue) {
                 return modelValue === scope.otherModelValue;
             };
 
-            scope.$watch("otherModelValue", function() {
+            scope.$watch('otherModelValue', () => {
                 ngModel.$validate();
             });
         }

@@ -1,6 +1,6 @@
 // Adapted from https://github.com/rubenv/angular-gettext/blob/master/src/directive.js
 
-function generateDirective( attrName ) {
+function generateDirective(attrName) {
 
     function normalizeAttributeName(attributeName) {
         // copied from angular.js v1.2.2
@@ -9,16 +9,16 @@ function generateDirective( attrName ) {
         // Copied from http://thetoeb.de/2014/01/14/angular-normalized-attribute-names/
         // Modified to escape hyphens in the regexs
 
-        var SPECIAL_CHARS_REGEXP = /([:\-_]+(.))/g;
-        var MOZ_HACK_REGEXP = /^moz([A-Z])/;
+        const SPECIAL_CHARS_REGEXP = /([:\-_]+(.))/g;
+        const MOZ_HACK_REGEXP = /^moz([A-Z])/;
 
         function camelCase(name) {
-            return name.replace(SPECIAL_CHARS_REGEXP, function (_, separator, letter, offset) {
+            return name.replace(SPECIAL_CHARS_REGEXP, (_, separator, letter, offset) => {
                 return offset ? letter.toUpperCase() : letter;
             }).replace(MOZ_HACK_REGEXP, 'Moz$1');
         }
 
-        var PREFIX_REGEXP = /^(x[:\-_]|data[:\-_])/i;
+        const PREFIX_REGEXP = /^(x[:\-_]|data[:\-_])/i;
 
         function directiveNormalize(name) {
             return camelCase(name.replace(PREFIX_REGEXP, ''));
@@ -32,11 +32,11 @@ function generateDirective( attrName ) {
         }
     }
 
-    var normAttrName = normalizeAttributeName( attrName );
+    const normAttrName = normalizeAttributeName(attrName);
 
     return function (gettextCatalog, $parse, $animate, $compile, $window) {
 
-        var msie = parseInt((/msie (\d+)/.exec(angular.lowercase($window.navigator.userAgent)) || [])[1], 10);
+        const msie = parseInt((/msie (\d+)/.exec(angular.lowercase($window.navigator.userAgent)) || [])[1], 10);
 
         return {
             restrict: 'A',
@@ -44,16 +44,15 @@ function generateDirective( attrName ) {
             priority: 1000,
             compile: function compile(element, attrs) {
                 // Validate attributes
-                if(!attrs[normAttrName+'Translate']) {
-                    throw new Error('Missing '+normAttrName+'-translate attribute!');
+                if (!attrs[normAttrName + 'Translate']) {
+                    throw new Error('Missing ' + normAttrName + '-translate attribute!');
                 }
-                assert(!attrs[normAttrName+'TranslatePlural'] || attrs[normAttrName+'TranslateN'], normAttrName+'translate-n', normAttrName+'translate-plural');
-                assert(!attrs[normAttrName+'TranslateN'] || attrs[normAttrName+'TranslatePlural'], normAttrName+'translate-plural', normAttrName+'translate-n');
+                assert(!attrs[normAttrName + 'TranslatePlural'] || attrs[normAttrName + 'TranslateN'], normAttrName + 'translate-n', normAttrName + 'translate-plural');
+                assert(!attrs[normAttrName + 'TranslateN'] || attrs[normAttrName + 'TranslatePlural'], normAttrName + 'translate-plural', normAttrName + 'translate-n');
 
-                var msgid = attrs[normAttrName+'Translate'];
-                var translatePlural = attrs[normAttrName+'TranslatePlural'];
-                var translateN = attrs[normAttrName+'TranslateN'];
-                var translateContext = attrs[normAttrName+'TranslateContext'];
+                let msgid = attrs[normAttrName + 'Translate'];
+                const translatePlural = attrs[normAttrName + 'TranslatePlural'];
+                const translateContext = attrs[normAttrName + 'TranslateContext'];
 
                 if (msie <= 8) {
                     // Workaround fix relating to angular adding a comment node to
@@ -64,14 +63,15 @@ function generateDirective( attrName ) {
                 }
 
                 return {
-                    pre: function (scope, element, attrs) {
-                        var countFn = $parse(attrs[normAttrName+'TranslateN']);
-                        var pluralScope = null;
+                    pre(scope, element, attrs) {
+                        const countFn = $parse(attrs[normAttrName + 'TranslateN']);
+                        let pluralScope = null;
 
                         function update() {
                             // Fetch correct translated string.
-                            var translated;
+                            let translated;
                             if (translatePlural) {
+                                /* eslint no-param-reassign: "off" */
                                 scope = pluralScope || (pluralScope = scope.$new());
                                 scope.$count = countFn(scope);
                                 translated = gettextCatalog.getPlural(scope.$count, msgid, translatePlural, null, translateContext);
@@ -79,10 +79,10 @@ function generateDirective( attrName ) {
                                 translated = gettextCatalog.getString(msgid, null, translateContext);
                             }
 
-                            var oldContents = attrs[normAttrName];
+                            const oldContents = attrs[normAttrName];
 
                             // Avoid redundant swaps
-                            if (translated === oldContents){
+                            if (translated === oldContents) {
                                 return;
                             }
 
@@ -90,8 +90,8 @@ function generateDirective( attrName ) {
                             element.attr(attrName, translated);
                         }
 
-                        if (attrs[normAttrName+'TranslateN']) {
-                            scope.$watch(attrs[normAttrName+'TranslateN'], update);
+                        if (attrs[normAttrName + 'TranslateN']) {
+                            scope.$watch(attrs[normAttrName + 'TranslateN'], update);
                         }
 
                         /**
@@ -104,7 +104,7 @@ function generateDirective( attrName ) {
 
                         update();
 
-                        element.removeAttr(attrName+'-translate');
+                        element.removeAttr(attrName + '-translate');
 
                         $compile(element)(scope);
                     }
@@ -115,6 +115,6 @@ function generateDirective( attrName ) {
 }
 
 angular.module('proton.translate', [])
-.directive('placeholderTranslate', generateDirective( 'placeholder' ))
-.directive('titleTranslate', generateDirective( 'title' ))
-.directive('ptTooltipTranslate', generateDirective( 'pt-tooltip' ));
+.directive('placeholderTranslate', generateDirective('placeholder'))
+.directive('titleTranslate', generateDirective('title'))
+.directive('ptTooltipTranslate', generateDirective('pt-tooltip'));

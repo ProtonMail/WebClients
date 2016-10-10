@@ -1,6 +1,3 @@
-/* global -_ */
-/* jshint node: true, camelcase: false */
-
 var _ = require('lodash');
 var util = require('util');
 var appVersion = '3.5.0';
@@ -60,7 +57,6 @@ module.exports = function(grunt) {
         notify_hooks: {
             options: {
                 enabled: true,
-                max_jshint_notifications: 5, // maximum number of notifications from jshint output
                 title: 'ProtonMail Angular', // defaults to the name in package.json, or will use project directory's name
                 success: false, // whether successful grunt executions should be notified automatically
                 duration: 3 // the duration of notification in seconds, for `notify-send only
@@ -324,30 +320,6 @@ module.exports = function(grunt) {
             }
         },
 
-        jshint: {
-            files: ["<%= app_files.js %>", "!src/app/libraries/**/*.js", "!src/static/**"],
-            options: {
-                curly: true, // This option requires you to always put curly braces around blocks in loops and conditionals.
-                eqeqeq: true, // This options prohibits the use of == and != in favor of === and !==.
-                eqnull: true,
-                loopfunc: true,
-                expr: true,
-                onevar: true,
-                noarg: true,
-                node: true,
-                trailing: true,
-                debug: true,
-                '-W100': true,
-                globals: {
-                    angular: true,
-                    pmcrypto: true,
-                    _: true,
-                    jQuery: true
-                },
-                "esversion": 6
-            }
-        },
-
         uglify: {
             options: {
                 mangle: false,
@@ -494,6 +466,9 @@ module.exports = function(grunt) {
 
                     return commands.join('&&');
                 }
+            },
+            lint: {
+                command: 'npm run lint'
             }
 
         },
@@ -539,14 +514,14 @@ module.exports = function(grunt) {
         'ngconstant:dev',
         'build',
         'connect:watch',
-        'delta',
+        'delta'
     ]);
 
     grunt.registerTask('deploy', [
         'clean:dist', // clean dist directory
         'shell:setup_dist',
         'ngconstant:prod', // set prod variables
-        'jshint',
+        'shell:lint',
         'build',
         'copy:compile_assets', // copy assets
         'copy:compile_htaccess', // copy htaccess file

@@ -1,13 +1,13 @@
-angular.module("proton.models.incomingDefaults", [])
+angular.module('proton.models.incomingDefaults', [])
 
-.factory("IncomingDefault", function($http, $q, url) {
+.factory('IncomingDefault', ($http, $q, url) => {
     return {
 
         // GET
         /**
          * Get all default rules
          */
-        get: function() {
+        get() {
             return $http.get(url.get() + '/incomingdefaults');
         },
 
@@ -15,7 +15,7 @@ angular.module("proton.models.incomingDefaults", [])
         /**
          * Create a new default rule
          */
-        add: function(params) {
+        add(params) {
             return $http.post(url.get() + '/incomingdefaults', params);
         },
 
@@ -23,8 +23,8 @@ angular.module("proton.models.incomingDefaults", [])
         /**
         * Update a rule
         */
-        update: function(params) {
-            var id = params.ID;
+        update(params) {
+            const id = params.ID;
 
             return $http.put(url.get() + '/incomingdefaults/' + id, params);
         },
@@ -32,12 +32,12 @@ angular.module("proton.models.incomingDefaults", [])
         /**
         * Delete rule(s)
         */
-        delete: function(params) {
+        delete(params) {
             return $http.put(url.get() + '/incomingdefaults/delete', params);
         },
 
         // DELETE
-        clear: function(id) {
+        clear() {
             return $http.delete(url.get() + '/incomingdefaults');
         }
 

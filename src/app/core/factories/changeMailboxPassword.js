@@ -25,7 +25,7 @@ angular.module('proton.core')
             $q.all([passwords.computeKeyPassword(newMailPwd, keySalt), User.get()])
             .then(([password, result]) => {
                 if (result.data && result.data.Code === 1000) {
-                    deferred.resolve({password, user: result.data.User});
+                    deferred.resolve({ password, user: result.data.User });
                 } else if (result.data && result.data.Error) {
                     deferred.reject(result.data.Error);
                 } else {
@@ -80,7 +80,7 @@ angular.module('proton.core')
             // Collect address keys
             user.Addresses.forEach((address) => { address.Keys.forEach((key) => inputKeys.push(key)); });
             // Re-encrypt all keys, if they can be decrypted
-            return inputKeys.map(({PrivateKey, ID}) => {
+            return inputKeys.map(({ PrivateKey, ID }) => {
                 // Decrypt private key with the old mailbox password
                 return pmcw.decryptPrivateKey(PrivateKey, oldMailPwd)
                 // Encrypt the key with the new mailbox password
@@ -103,7 +103,7 @@ angular.module('proton.core')
             };
 
             if (keysFiltered.length === 0) {
-                notify({message: gettextCatalog.getString('No keys to update', null, 'Error'), classes: 'notification-danger'});
+                notify({ message: gettextCatalog.getString('No keys to update', null, 'Error'), classes: 'notification-danger' });
             }
 
             if (organizationKey !== 0) {
@@ -126,7 +126,7 @@ angular.module('proton.core')
 
             return networkActivityTracker.track(
                 getUser(newPassword, keySalt)
-                .then(({password = '', user = {}}) => {
+                .then(({ password = '', user = {} }) => {
                     passwordComputed = password;
 
                     const promises = [];
@@ -146,17 +146,11 @@ angular.module('proton.core')
                         organizationKey,
                         newLoginPassword
                     }))
-                .then(
-                    (result) => {
-                        authentication.savePassword(passwordComputed);
-                    })
+                .then(() => {
+                    authentication.savePassword(passwordComputed);
+                })
                 .catch((error) => {
-                    if(error.error_description) {
-                        return Promise.reject(error.error_description);
-                    }
-                    else {
-                        return Promise.reject(error);
-                    }
+                    return Promise.reject(error.error_description || error);
                 }));
         };
     });

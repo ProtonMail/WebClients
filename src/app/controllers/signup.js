@@ -1,6 +1,6 @@
 angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
-.controller('SignupController', function(
+.controller('SignupController', (
     $http,
     $location,
     $log,
@@ -29,8 +29,8 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     setupKeys,
     tools,
     User
-) {
-    var childWindow;
+) => {
+    let childWindow;
 
     function initialization() {
 
@@ -55,7 +55,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         $scope.errorPay = false;
         $scope.approvalURL = false;
         $scope.paypalNetworkError = false;
-        $scope.card.country = _.findWhere(tools.countries, {priority: 1});
+        $scope.card.country = _.findWhere(tools.countries, { priority: 1 });
         $scope.method = 'card';
 
         $scope.signup = {
@@ -83,13 +83,13 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         }
 
         if (plans.length > 0) {
-            $scope.plan = _.findWhere(plans, {Name: $stateParams.plan, Cycle: parseInt($stateParams.billing), Currency: $stateParams.currency});
-            $scope.paypalSupport = parseInt($stateParams.billing) === 12 && ($.browser.msie !== true || $.browser.edge === true);  // IE11 doesn't support PayPal
+            $scope.plan = _.findWhere(plans, { Name: $stateParams.plan, Cycle: parseInt($stateParams.billing, 10), Currency: $stateParams.currency });
+            $scope.paypalSupport = parseInt($stateParams.billing, 10) === 12 && ($.browser.msie !== true || $.browser.edge === true);  // IE11 doesn't support PayPal
         }
 
         // Populate the domains <select>
-        _.each(domains, function(domain) {
-            $scope.domains.push({label: domain, value: domain});
+        _.each(domains, (domain) => {
+            $scope.domains.push({ label: domain, value: domain });
         });
 
         $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
@@ -119,85 +119,84 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         $scope.URLparams = $location.search();
         if ($scope.URLparams.u !== undefined) {
             $scope.account.Username = $scope.URLparams.u;
-            $timeout(function() {
+            $timeout(() => {
                 $scope.checkAvailability(true);
             }, 200);
         }
 
         // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
-        var captchaReceiveMessage = function(event) {
-            if ( typeof event.origin === "undefined" && typeof event.originalEvent.origin === "undefined" ) {
+        const captchaReceiveMessage = function (event) {
+            if (typeof event.origin === 'undefined' && typeof event.originalEvent.origin === 'undefined') {
                 return;
             }
 
             // For Chrome, the origin property is in the event.originalEvent object.
-            var origin = event.origin || event.originalEvent.origin;
+            const origin = event.origin || event.originalEvent.origin;
 
             // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
             if (origin !== 'https://secure.protonmail.com') {
                 return;
             }
 
-            var data = event.data;
+            const data = event.data;
 
-            if ( data.type === "pm_captcha" ) {
+            if (data.type === 'pm_captcha') {
                 $scope.account.captcha_token = data.token;
                 $scope.$apply();
             }
 
-            if ( data.type === "pm_height" ) {
+            if (data.type === 'pm_height') {
                 $('#pm_captcha').height(event.data.height + 40);
             }
         };
 
         // Captcha
-        window.addEventListener("message", captchaReceiveMessage, false);
+        window.addEventListener('message', captchaReceiveMessage, false);
 
         // Change this to our recaptcha key, configurable in Angular?
-        var message = {
-            "type": "pm_captcha",
-            "language": "en",
-            "key": "6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn",
+        const message = {
+            type: 'pm_captcha',
+            language: 'en',
+            key: '6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn'
         };
 
         // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
-        window.captchaSendMessage = function() {
-            var iframe = document.getElementById('pm_captcha');
+        window.captchaSendMessage = function () {
+            const iframe = document.getElementById('pm_captcha');
             iframe.contentWindow.postMessage(message, 'https://secure.protonmail.com');
         };
     }
 
-    $scope.setIframeSrc = function() {
-        var iframe = document.getElementById('pm_captcha');
-        iframe.onload = captchaSendMessage;
-        iframe.src = "https://secure.protonmail.com/recaptcha.html";
+    $scope.setIframeSrc = function () {
+        const iframe = document.getElementById('pm_captcha');
+        iframe.onload = window.captchaSendMessage;
+        iframe.src = 'https://secure.protonmail.com/recaptcha.html';
     };
 
-    $scope.notificationEmailValidation = function() {
+    $scope.notificationEmailValidation = function () {
         if ($scope.account.notificationEmail.length > 0) {
-            return !!!tools.validEmail($scope.account.notificationEmail);
-        } else {
-            return true;
+            return !tools.validEmail($scope.account.notificationEmail);
         }
+        return true;
     };
 
-    $scope.sendVerificationCode = function() {
+    $scope.sendVerificationCode = function () {
         User.code({
             Username: $scope.account.Username,
             Type: 'email',
             Destination: {
                 Address: $scope.account.emailVerification
             }
-        }).then(function(result) {
+        }).then((result) => {
             if (result.data && result.data.Code === 1000) {
                 $scope.signup.verificationSent = true;
             } else if (result.data && result.data.Error) {
-                notify({message: result.data.Error, classes: 'notification-danger'});
+                notify({ message: result.data.Error, classes: 'notification-danger' });
             }
         });
     };
 
-    $scope.sendSmsVerificationCode = function() {
+    $scope.sendSmsVerificationCode = function () {
         $scope.smsSending = true;
         User.code({
             Username: $scope.account.Username,
@@ -205,12 +204,12 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             Destination: {
                 Phone: $scope.account.smsVerification
             }
-        }).then(function(result) {
+        }).then((result) => {
             $scope.smsSending = false;
             if (result.data && result.data.Code === 1000) {
                 $scope.signup.smsVerificationSent = true;
             } else if (result.data && result.data.Error) {
-                notify({message: result.data.Error, classes: 'notification-danger'});
+                notify({ message: result.data.Error, classes: 'notification-danger' });
             }
         });
     };
@@ -221,24 +220,24 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     // ---------------------------------------------------
     // ---------------------------------------------------
 
-    $scope.start = function() {
+    $scope.start = function () {
         $state.go('subscription');
     };
 
-    $scope.createAccount = function() {
+    $scope.createAccount = function () {
 
         $scope.creating = true;
 
         $scope.doCreateUser()
-        .then( $scope.doLogUserIn )
-        .then( $scope.doAccountSetup )
-        .then( $scope.doGetUserInfo )
-        .then( $scope.finishRedirect )
-        .catch( function(err) {
+        .then($scope.doLogUserIn)
+        .then($scope.doAccountSetup)
+        .then($scope.doGetUserInfo)
+        .then($scope.finishRedirect)
+        .catch((err) => {
 
             $log.error(err);
 
-            var msg = err;
+            let msg = err;
 
             if (typeof msg !== 'string') {
                 msg = gettextCatalog.getString('Something went wrong', null, 'Error');
@@ -248,11 +247,11 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                 classes: 'notification-danger',
                 message: msg
             });
-            $scope.signupError= true;
+            $scope.signupError = true;
         });
     };
 
-    $scope.checking = function(form) {
+    $scope.checking = function () {
 
         if ($scope.account.notificationEmail) {
             saveContinue();
@@ -261,11 +260,11 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                 params: {
                     title: gettextCatalog.getString('Warning', null, 'Title'),
                     message: gettextCatalog.getString('Warning: You did not set a recovery email so account recovery is impossible if you forget your password. Proceed without recovery email?', null, 'Warning'),
-                    confirm: function() {
+                    confirm() {
                         saveContinue();
                         confirmModal.deactivate();
                     },
-                    cancel: function() {
+                    cancel() {
                         confirmModal.deactivate();
                         angular.element('#notificationEmail').focus();
                     }
@@ -280,8 +279,8 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         networkActivityTracker.track(
             $scope.checkAvailability(false)
             .then(generateNewKeys)
-            .then(function() {
-                $timeout(function() {
+            .then(() => {
+                $timeout(() => {
                     $scope.genNewKeys = false;
 
                     if ($rootScope.preInvited) {
@@ -296,7 +295,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         );
     }
 
-    $scope.finishLoginReset = function(form) {
+    $scope.finishLoginReset = function () {
         $log.debug('finishLoginReset');
     };
 
@@ -316,55 +315,53 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         if ($rootScope.allowedNewAccount === true && manual !== true) {
             $scope.checkingUsername = false;
             deferred.resolve(200);
-        } else {
-            if ($scope.account.Username) {
-                var patt = new RegExp(/^[A-Za-z0-9]+(?:[_.-][A-Za-z0-9]+)*$/);
+        } else if ($scope.account.Username) {
+            const patt = new RegExp(/^[A-Za-z0-9]+(?:[_.-][A-Za-z0-9]+)*$/);
 
-                if (patt.test($scope.account.Username)) {
-                    User.available($scope.account.Username)
-                    .then(function(result) {
-                        if (result.data && result.data.Error) {
-                            $scope.badUsername = true;
-                            $scope.checkingUsername = false;
-                            $scope.badUsernameMessage = result.data.Error;
-                            $('#Username').focus();
-                            deferred.reject(result.data.Error);
-                        } else if (result.data && result.data.Code === 1000) {
-                            if (result.data.Available === 0) {
-                                if (manual === true) {
-                                    $scope.badUsername = true;
-                                    $scope.badUsernameMessage = gettextCatalog.getString('Username already taken', null, 'Error');
-                                    $scope.checkingUsername = false;
-                                    $('#Username').focus();
-                                    deferred.resolve(200);
-                                } else {
-                                    $('#Username').focus();
-                                    deferred.reject(gettextCatalog.getString('Username already taken', null, 'Error'));
-                                }
+            if (patt.test($scope.account.Username)) {
+                User.available($scope.account.Username)
+                .then((result) => {
+                    if (result.data && result.data.Error) {
+                        $scope.badUsername = true;
+                        $scope.checkingUsername = false;
+                        $scope.badUsernameMessage = result.data.Error;
+                        $('#Username').focus();
+                        deferred.reject(result.data.Error);
+                    } else if (result.data && result.data.Code === 1000) {
+                        if (result.data.Available === 0) {
+                            if (manual === true) {
+                                $scope.badUsername = true;
+                                $scope.badUsernameMessage = gettextCatalog.getString('Username already taken', null, 'Error');
+                                $scope.checkingUsername = false;
+                                $('#Username').focus();
+                                deferred.resolve(200);
                             } else {
-                                if ( manual === true ) {
-                                    $scope.goodUsername = true;
-                                    $scope.checkingUsername = false;
-                                    deferred.resolve(200);
-                                } else {
-                                    $scope.checkingUsername = false;
-                                    deferred.resolve(200);
-                                }
+                                $('#Username').focus();
+                                deferred.reject(gettextCatalog.getString('Username already taken', null, 'Error'));
                             }
+                        } else if (manual === true) {
+                            $scope.goodUsername = true;
+                            $scope.checkingUsername = false;
+                            deferred.resolve(200);
+                        } else {
+                            $scope.checkingUsername = false;
+                            deferred.resolve(200);
                         }
-                    });
-                } else {
-                    $scope.badUsername = true;
-                    $scope.checkingUsername = false;
-                    $scope.badUsernameMessage = gettextCatalog.getString('Username invalid', null, 'Error');
-                    $('#Username').focus();
-                    deferred.resolve(200);
-                }
+
+                    }
+                });
             } else {
+                $scope.badUsername = true;
                 $scope.checkingUsername = false;
+                $scope.badUsernameMessage = gettextCatalog.getString('Username invalid', null, 'Error');
+                $('#Username').focus();
                 deferred.resolve(200);
             }
+        } else {
+            $scope.checkingUsername = false;
+            deferred.resolve(200);
         }
+
 
         return deferred.promise;
     };
@@ -374,9 +371,9 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
         $scope.genNewKeys = true;
 
-        if ($scope.account.mailboxPasswordConfirm!==undefined) {
+        if ($scope.account.mailboxPasswordConfirm !== undefined) {
             mbpw = $scope.account.mailboxPasswordConfirm;
-        } else if ($scope.account.mailboxPassword!==undefined) {
+        } else if ($scope.account.mailboxPassword !== undefined) {
             mbpw = $scope.account.mailboxPassword;
         }
 
@@ -387,18 +384,18 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         $log.debug('generateKeys');
 
         const email = $scope.account.Username + '@' + $scope.account.domain.value;
-        return setupKeys.generate([{ID: 0, Email: email}], mbpw)
+        return setupKeys.generate([{ ID: 0, Email: email }], mbpw)
         .then((result) => {
             // Save for later
             $scope.setupPayload = result;
         });
     }
 
-    $scope.chooseCard = function() {
+    $scope.chooseCard = function () {
         $scope.method = 'card';
     };
 
-    $scope.choosePaypal = function() {
+    $scope.choosePaypal = function () {
         $scope.method = 'paypal';
 
         if ($scope.approvalURL === false) {
@@ -406,21 +403,21 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         }
     };
 
-    $scope.initPaypal = function() {
+    $scope.initPaypal = function () {
         $scope.paypalNetworkError = false;
 
         Payment.paypal({
-            Amount : $scope.plan.Amount,
-            Currency : $scope.plan.Currency
-        }).then(function(result) {
+            Amount: $scope.plan.Amount,
+            Currency: $scope.plan.Currency
+        }).then((result) => {
             if (result.data && result.data.Code === 1000) {
                 if (result.data.ApprovalURL) {
                     $scope.approvalURL = result.data.ApprovalURL;
                 }
             } else if (result.data.Code === 22802) {
                 $scope.paypalNetworkError = true;
-            } else if (result.data && result.data.Error){
-                notify({message: result.data.Error, classes: 'notification-danger'});
+            } else if (result.data && result.data.Error) {
+                notify({ message: result.data.Error, classes: 'notification-danger' });
             }
         });
     };
@@ -435,7 +432,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                 Currency: $scope.plan.Currency,
                 Payment: method
             })
-            .then(function(result) {
+            .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     $scope.verifyCode = result.data.VerifyCode;
                     $scope.payment = false;
@@ -443,7 +440,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                     $rootScope.tempMethod = method; // We save this payment method to save it later
                     $scope.createAccount();
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'}); // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
+                    notify({ message: result.data.Error, classes: 'notification-danger' }); // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
                     $scope.errorPay = true;
                 } else {
                     $scope.errorPay = true;
@@ -453,13 +450,13 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     }
 
     function receivePaypalMessage(event) {
-        var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+        const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
         if (origin !== 'https://secure.protonmail.com') {
             return;
         }
 
-        var paypalObject = event.data;
+        const paypalObject = event.data;
 
         // we need to capitalize some stuff
         if (paypalObject.payerID && paypalObject.paymentID) {
@@ -471,21 +468,21 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             delete paypalObject.paymentID;
         }
 
-        var method = {Type: 'paypal', Details: paypalObject};
+        const method = { Type: 'paypal', Details: paypalObject };
 
         verify(method);
         childWindow.close();
         window.removeEventListener('message', receivePaypalMessage, false);
     }
 
-    $scope.openPaypalTab = function() {
+    $scope.openPaypalTab = function () {
         childWindow = window.open($scope.approvalURL, 'PayPal');
         window.addEventListener('message', receivePaypalMessage, false);
     };
 
-    $scope.pay = function() {
-        var year = ($scope.card.year.length === 2) ? '20' + $scope.card.year : $scope.card.year;
-        var method = {
+    $scope.pay = function () {
+        const year = ($scope.card.year.length === 2) ? '20' + $scope.card.year : $scope.card.year;
+        const method = {
             Type: 'card',
             Details: {
                 Number: $scope.card.number,
@@ -501,7 +498,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         verify(method);
     };
 
-    $scope.doCreateUser = function() {
+    $scope.doCreateUser = function () {
 
         $scope.createUser = true;
 
@@ -532,8 +529,8 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         return User.create(params, $scope.account.loginPassword);
     };
 
-    $scope.doLogUserIn = function(response) {
-        if (response.data.Code && response.data.Code===1000) {
+    $scope.doLogUserIn = function (response) {
+        if (response.data.Code && response.data.Code === 1000) {
             $scope.logUserIn = true;
             return authentication.loginWithCredentials({
                 Username: $scope.account.Username,
@@ -549,14 +546,11 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                 $rootScope.isSecure = authentication.isSecured();
             });
         }
-        else {
-            var deferred = $q.defer();
-            deferred.reject(response.data.Error);
-            return deferred.promise;
-        }
+
+        Promise.reject(response.data.Error);
     };
 
-    $scope.doAccountSetup = function(result) {
+    $scope.doAccountSetup = function () {
         $log.debug('doAccountSetup');
 
         $scope.setupAccount = true;
@@ -579,24 +573,24 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                     $rootScope.isSecure = authentication.isSecured();
                 });
             } else if (result.data && result.data.Error) {
-                return Promise.reject({message: result.data.Error});
+                return Promise.reject({ message: result.data.Error });
             }
-            return Promise.reject({message: 'Something went wrong during address creation'});
+            return Promise.reject({ message: 'Something went wrong during address creation' });
         })
         .catch((error) => {
             authentication.logout(true);
-            notify({message: error.message, classes: 'notification-danger'});
+            notify({ message: error.message, classes: 'notification-danger' });
             return Promise.reject();
         });
     };
 
-    $scope.doGetUserInfo = function() {
+    $scope.doGetUserInfo = function () {
         $log.debug('getUserInfo');
-        $scope.getUserInfo  = true;
+        $scope.getUserInfo = true;
         return authentication.fetchUserInfo();
     };
 
-    $scope.finishRedirect = function() {
+    $scope.finishRedirect = function () {
         $log.debug('finishRedirect');
         $scope.finishCreation = true;
 

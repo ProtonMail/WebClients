@@ -1,39 +1,39 @@
 angular.module('proton.models.filter', [])
 
-.factory('Filter', function($http, $state, url, tools, CONFIG) {
+.factory('Filter', ($http, url) => {
     /**
      * Transform the filter model before to send it to the back-end
      */
-    var transformRequestFilter = function(filter) {
+    function transformRequestFilter(filter) {
         if (angular.isDefined(filter.Simple)) {
             filter.Tree = Sieve.toTree(filter.Simple);
         }
 
         return angular.toJson(filter);
-    };
+    }
 
     /**
      * Transform the datas received
      */
-    var transformResponseFilter = function(data, headersGetter, status) {
-        data = angular.fromJson(data);
+    function transformResponseFilter(data) {
+        const json = angular.fromJson(data);
 
-        if (data.Code === 1000) {
-            _.each(data.Filters, function(filter) {
+        if (json && json.Code === 1000) {
+            _.each(json.Filters, (filter) => {
                 filter.Simple = Sieve.fromTree(filter.Tree);
             });
         }
 
-        return data;
-    };
+        return json || {};
+    }
 
-    var Filter = {
+    const Filter = {
         /**
          * Add filter to the current user
          * @param {Object} filter
          * @return {Promise}
          */
-        create: function(filter) {
+        create(filter) {
             return $http.post(url.get() + '/filters', filter, {
                 transformRequest: transformRequestFilter
             });
@@ -42,7 +42,7 @@ angular.module('proton.models.filter', [])
          * Get filters owned by the current user
          * @return {Promise}
          */
-        query: function() {
+        query() {
             return $http.get(url.get() + '/filters', {
                 transformResponse: transformResponseFilter
             });
@@ -52,7 +52,7 @@ angular.module('proton.models.filter', [])
          * @param {Object} filter
          * @return {Promise}
          */
-        update: function(filter) {
+        update(filter) {
             return $http.put(url.get() + '/filters/' + filter.ID, filter, {
                 transformRequest: transformRequestFilter
             });
@@ -62,7 +62,7 @@ angular.module('proton.models.filter', [])
          * @param {Object} filter
          * @return {Promise}
          */
-        enable: function(filter) {
+        enable(filter) {
             return $http.put(url.get() + '/filters/' + filter.ID + '/enable');
         },
         /**
@@ -70,7 +70,7 @@ angular.module('proton.models.filter', [])
          * @param {Object} filter
          * @return {Promise}
          */
-        disable: function(filter) {
+        disable(filter) {
             return $http.put(url.get() + '/filters/' + filter.ID + '/disable');
         },
         /**
@@ -78,7 +78,7 @@ angular.module('proton.models.filter', [])
          * @param {Array} order
          * @return {Promise}
          */
-        order: function(order) {
+        order(order) {
             return $http.put(url.get() + '/filters/order', order);
         },
         /**
@@ -86,14 +86,14 @@ angular.module('proton.models.filter', [])
          * @param {Object} filter
          * @return {Promise}
          */
-        delete: function(filter) {
+        delete(filter) {
             return $http.delete(url.get() + '/filters/' + filter.ID);
         },
         /**
          * Clear filter
          * @return {Promise}
          */
-        clear: function() {
+        clear() {
             return $http.delete(url.get() + '/filters');
         }
     };

@@ -1,6 +1,6 @@
 angular.module('proton.models.memberKeys', [])
 
-.factory('MemberKey', function($http, url) {
+.factory('MemberKey', ($http, url) => {
     return {
         // POST
         /**
@@ -8,7 +8,7 @@ angular.module('proton.models.memberKeys', [])
          * @param {Object} Obj
          * @return {Promise}
          */
-        create: function(Obj) {
+        create(Obj) {
             return $http.post(url.get() + '/memberkeys', Obj);
         },
         /**
@@ -16,7 +16,7 @@ angular.module('proton.models.memberKeys', [])
          * @param {Object} Obj
          * @return {Promise}
          */
-        order: function(Obj) {
+        order(Obj) {
             return $http.post(url.get() + '/memberkeys/order', Obj);
         },
         // PUT
@@ -26,7 +26,7 @@ angular.module('proton.models.memberKeys', [])
          * @param {Object} Obj
          * @return {Promise}
          */
-        update: function(keyID, Obj) {
+        update(keyID, Obj) {
             return $http.put(url.get() + '/memberkeys' + keyID, Obj);
         },
         // DELETE
@@ -35,8 +35,8 @@ angular.module('proton.models.memberKeys', [])
          * @param {String} keyID
          * @return {Promise}
          */
-        delete: function(keyID) {
+        delete(keyID) {
             return $http.delete(url.get() + '/memberkeys/' + keyID);
         }
-     };
+    };
 });

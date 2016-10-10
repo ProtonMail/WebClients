@@ -1,34 +1,34 @@
-angular.module("proton.heightOutside", [])
+angular.module('proton.heightOutside', [])
 
 .directive('ngHeightOutside', ['$window', function ($window) {
-    return function (scope, element, attrs) {
-        var setHeight = function() {
+    return function (scope, element) {
+        const setHeight = function () {
 
             // set to zero
             element.css({ height: 0 });
-            
-            var windowHeight = angular.element($window).height();
-            var elementOffset = element[0].getBoundingClientRect();
-            var height = (windowHeight - elementOffset.top - 200);
+
+            const windowHeight = angular.element($window).height();
+            const elementOffset = element[0].getBoundingClientRect();
+            const height = (windowHeight - elementOffset.top - 200);
 
             element.css({
-                height: height
+                height
             });
         };
 
         // Listen resize window
         angular.element($window).bind('resize', setHeight);
 
-        scope.$on('$stateChangeSuccess', function() {
+        scope.$on('$stateChangeSuccess', () => {
             setHeight();
         });
 
         // Remove listener on resize window
-        scope.$on('$destroy', function() {
+        scope.$on('$destroy', () => {
             angular.element($window).unbind('resize', setHeight);
         });
 
-        setTimeout(function() {
+        setTimeout(() => {
             setHeight();
         });
     };

@@ -1,34 +1,32 @@
-angular.module('proton.models.user', ["proton.srp"])
-
-.factory('User', function($http, url, srp) {
-    var User = {
-        create: function(params, password) {
-            return srp.randomVerifier(password).then(function(pass_params) {
-                return $http.post(url.get() + '/users', _.extend(params, pass_params));
-            });
+angular.module('proton.models.user', ['proton.srp'])
+.factory('User', ($http, url, srp) => {
+    return {
+        create(params, password) {
+            return srp
+                .getPasswordParams(password, params)
+                .then((data) => $http.post(url.get() + '/users', data));
         },
-        code: function(params) {
+        code(params) {
             return $http.post(url.get() + '/users/code', params);
         },
-        get: function() {
+        get() {
             return $http.get(url.get() + '/users');
         },
-        pubkeys: function(emails) {
+        pubkeys(emails) {
             return $http.get(url.get() + '/users/pubkeys/' + window.encodeURIComponent(emails));
         },
-        available: function(username) {
+        available(username) {
             return $http.get(url.get() + '/users/available/' + username);
         },
-        direct: function() {
+        direct() {
             return $http.get(url.get() + '/users/direct');
         },
-        unlock: function(params) {
-            return srp.performSRPRequest("PUT", '/users/unlock', {}, params);
+
+        unlock(params) {
+            return srp.performSRPRequest('PUT', '/users/unlock', {}, params);
         },
-        delete: function(params) {
-            return srp.performSRPRequest("PUT", '/users/delete', {}, params);
+        delete(params) {
+            return srp.performSRPRequest('PUT', '/users/delete', {}, params);
         }
     };
-
-    return User;
 });

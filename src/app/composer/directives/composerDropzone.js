@@ -10,14 +10,14 @@ angular.module('proton.composer')
             [ATTACHMENT_NUMBER_LIMIT]: `Messages are limited to ${ATTACHMENT_NUMBER_LIMIT} attachments`,
             [ATTACHMENT_SIZE_LIMIT]: `Attachments are limited to ${ATTACHMENT_SIZE_LIMIT} MB.`,
             [ATTACHMENT_MAX_SIZE](bytes) {
-                const total = Math.round(10*bytes/BASE_SIZE/BASE_SIZE)/10;
+                const total = Math.round(10 * bytes / BASE_SIZE / BASE_SIZE) / 10;
                 return `Attachments are limited to ${ATTACHMENT_SIZE_LIMIT} MB. Total attached would be: ${total} MB.`;
             }
         };
 
         const dictDefaultMessage = gettextCatalog.getString('Drop a file here to upload', null, 'Info');
 
-        const notifyError = (message) => notify({ message , classes: 'notification-danger'});
+        const notifyError = (message) => notify({ message, classes: 'notification-danger' });
 
         /**
          * Compute some informations to get the current context for a dropzone
@@ -29,7 +29,6 @@ angular.module('proton.composer')
             const messageSize = message.attachmentsSize();
             const currentSize = messageSize + (message.queuedFilesSize || 0) + file.size;
             return {
-                messageSize,
                 currentSize,
                 numberFiles: (message.Attachments || []).length + (message.queuedFiles || 0)
             };
@@ -42,8 +41,8 @@ angular.module('proton.composer')
          * @return {Function}         Reducer(<queu>, <file>)
          */
         function buildQueue(message, dropzone) {
-            return (queue, file) =>{
-                const { messageSize, currentSize, numberFiles } = getDropFileConfigMessage(message, file);
+            return (queue, file) => {
+                const { currentSize, numberFiles } = getDropFileConfigMessage(message, file);
 
                 if (numberFiles === ATTACHMENT_NUMBER_LIMIT) {
                     const msg = dropMessages[ATTACHMENT_NUMBER_LIMIT];

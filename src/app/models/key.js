@@ -1,13 +1,12 @@
 angular.module('proton.models.keys', ['proton.srp'])
-
-.factory('Key', function($http, $q, url, srp) {
+.factory('Key', ($http, $q, url, srp) => {
     return {
         /**
          * Create a new key
          * @param {Object} params
          * @return {Promise}
          */
-        create: function(params = {}) {
+        create(params = {}) {
             return $http.post(url.get() + '/keys', params);
         },
         /**
@@ -15,12 +14,13 @@ angular.module('proton.models.keys', ['proton.srp'])
          * @param {Object} params
          * @return {Promise}
          */
-        setup: function(params = {}, newPassword = '') {
+        setup(params = {}, newPassword = '') {
             if (newPassword.length) {
-                return srp.randomVerifier(newPassword).then(function(auth_params) {
-                    return $http.post(url.get() + '/keys/setup', _.extend(params,auth_params));
-                });
+                return srp
+                    .getPasswordParams(newPassword, params)
+                    .then((data) => $http.post(url.get() + '/keys/setup', data));
             }
+
             return $http.post(url.get() + '/keys/setup', params);
         },
         /**
@@ -28,11 +28,11 @@ angular.module('proton.models.keys', ['proton.srp'])
          * @param {Object} params
          * @return {Promise}
          */
-        reset: function(params = {}, newPassword = '') {
+        reset(params = {}, newPassword = '') {
             if (newPassword.length) {
-                return srp.randomVerifier(newPassword).then(function(auth_params) {
-                    return $http.post(url.get() + '/keys/reset', _.extend(params,auth_params));
-                });
+                return srp
+                .getPasswordParams(newPassword, params)
+                .then((data) => $http.post(url.get() + '/keys/reset', data));
             }
             return $http.post(url.get() + '/keys/reset', params);
         },
@@ -41,7 +41,7 @@ angular.module('proton.models.keys', ['proton.srp'])
          * @param {Object} params
          * @return {Promise}
          */
-        order: function(params = {}) {
+        order(params = {}) {
             return $http.post(url.get() + '/keys/order', params);
         },
         /**
@@ -50,7 +50,7 @@ angular.module('proton.models.keys', ['proton.srp'])
          * @param {Object} params
          * @return {Promise}
          */
-        update: function(keyID, params = {}) {
+        update(keyID, params = {}) {
             return $http.put(url.get() + '/keys/' + keyID, params);
         },
         /**
@@ -58,20 +58,21 @@ angular.module('proton.models.keys', ['proton.srp'])
          * @param {Object} params
          * @return {Promise}
          */
-        private: function(params = {}, creds = {}, newPassword = '') {
+        private(params = {}, creds = {}, newPassword = '') {
             if (newPassword.length) {
-                return srp.randomVerifier(newPassword).then(function(auth_params) {
-                    return srp.performSRPRequest("PUT", '/keys/private', _.extend(params,auth_params), creds);
-                });
+                return srp
+                    .getPasswordParams(newPassword, params)
+                    .then((authParams) => srp.performSRPRequest('PUT', '/keys/private', authParams, creds));
             }
-            return srp.performSRPRequest("PUT", '/keys/private', params, creds);
+
+            return srp.performSRPRequest('PUT', '/keys/private', params, creds);
         },
         /**
          * Delete key
          * @param {String} keyID
          * @return {Promise}
          */
-        delete: function(keyID) {
+        delete(keyID) {
             return $http.delete(url.get() + '/keys/' + keyID);
         }
     };

@@ -11,7 +11,7 @@ angular.module('proton.message')
         }
     ];
 
-    return (html, message) => {
+    return (html) => {
         const base = html.querySelector('base');
         if (!base || !base.href) {
             return html;
@@ -23,8 +23,8 @@ angular.module('proton.message')
             baseUrl += '/';
         }
 
-        elements.forEach(({selector, attribute}) => {
-            [].slice.call(html.querySelectorAll(selector)).forEach(el => {
+        elements.forEach(({ selector, attribute }) => {
+            [].slice.call(html.querySelectorAll(selector)).forEach((el) => {
                 el[attribute] = baseUrl + el.getAttribute(attribute);
             });
         });

@@ -1,5 +1,5 @@
-angular.module("proton.selectConversation", [])
-.directive('ptSelectConversation',  () => ({
+angular.module('proton.selectConversation', [])
+.directive('ptSelectConversation', () => ({
     replace: true,
     templateUrl: 'templates/directives/ptSelectConversation.tpl.html'
 }))
@@ -33,7 +33,7 @@ angular.module("proton.selectConversation", [])
 }))
 .directive('ptSelectMultipleConversations', ($rootScope) => {
 
-    const countChecked = (conversations) => _.where(conversations, {Selected: true}).length;
+    const countChecked = (conversations) => _.where(conversations, { Selected: true }).length;
 
     /**
     * Select many conversations and update the scope
@@ -70,7 +70,7 @@ angular.module("proton.selectConversation", [])
             function onClick({ target, shiftKey }) {
                 const index = +target.getAttribute('data-index');
 
-                if ('INPUT' !== target.nodeName || !/ptSelectConversation/.test(target.className)) {
+                if (target.nodeName !== 'INPUT' || !/ptSelectConversation/.test(target.className)) {
                     return;
                 }
 
@@ -93,7 +93,7 @@ angular.module("proton.selectConversation", [])
                         $rootScope.showWelcome = false;
 
                         previous = {
-                            index: index,
+                            index,
                             conversation: scope.conversations[index]
                         };
                     });

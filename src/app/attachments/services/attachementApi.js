@@ -25,7 +25,7 @@ angular.module('proton.attachments')
                 return response(JSON.parse(xhr.responseText));
             } catch (e) {
                 return response({
-                    "Error": `JSON parsing error: ${xhr.responseText}`
+                    Error: `JSON parsing error: ${xhr.responseText}`
                 }, true);
             }
         };
@@ -84,14 +84,6 @@ angular.module('proton.attachments')
                 request: xhr
             });
 
-            const attachment = {
-                filename: packets.Filename,
-                Size: packets.FileSize,
-                MIMEType: packets.MIMEType,
-                Inline: packets.Inline,
-                uploading: false
-            };
-
             dispatcher(0, true);
 
             xhr.upload.onprogress = (event) => {
@@ -99,7 +91,7 @@ angular.module('proton.attachments')
                 dispatcher(progress, true);
             };
 
-            xhr.onload = function() {
+            xhr.onload = function onload() {
                 dispatcher(100, false);
                 dispatch('uploaded.success', {
                     id: REQUEST_ID,
@@ -144,13 +136,13 @@ angular.module('proton.attachments')
                     .catch(deferred.reject);
             };
 
-            xhr.open('post', url.get() +'/attachments/upload', true);
+            xhr.open('post', url.get() + '/attachments/upload', true);
             xhr.withCredentials = true;
-            xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-            xhr.setRequestHeader("Accept", "application/vnd.protonmail.v1+json");
-            xhr.setRequestHeader("x-pm-appversion", 'Web_' + CONFIG.app_version);
-            xhr.setRequestHeader("x-pm-apiversion", CONFIG.api_version);
-            xhr.setRequestHeader("x-pm-session", pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken')));
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Accept', 'application/vnd.protonmail.v1+json');
+            xhr.setRequestHeader('x-pm-appversion', 'Web_' + CONFIG.app_version);
+            xhr.setRequestHeader('x-pm-apiversion', CONFIG.api_version);
+            xhr.setRequestHeader('x-pm-session', pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken')));
 
             xhr.send(makeFormUpload(packets, message));
 
@@ -164,8 +156,7 @@ angular.module('proton.attachments')
          * @param  {Object} attachment
          * @return {Promise}
          */
-        const remove = (message, attachment) => {
-            const { ID, Name, Size, MIMEType } = attachment;
+        const remove = (message, { ID } = {}) => {
             return $http
                 .put(url.get() + '/attachments/remove', {
                     MessageID: message.ID,

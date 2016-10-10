@@ -1,6 +1,6 @@
 angular.module('proton.phone', [])
 
-.directive('phone', function($timeout) {
+.directive('phone', ($timeout) => {
     return {
         restrict: 'A',
         require: '^ngModel',
@@ -8,29 +8,25 @@ angular.module('proton.phone', [])
             ngModel: '=',
             country: '='
         },
-        link: function(scope, element, attrs, ctrl) {
+        link(scope, element, attrs, ctrl) {
             if (element.val() !== '') {
-                $timeout(function() {
+                $timeout(() => {
                     element.intlTelInput('setNumber', element.val());
 
                     return ctrl.$setViewValue(element.val());
                 }, 0);
             }
 
-            var read = function() {
-                var value = element.intlTelInput('getNumber');
+            const read = function () {
+                const value = element.intlTelInput('getNumber');
 
                 ctrl.$setViewValue(value);
             };
 
-            watchOnce = scope.$watch('ngModel', function(newValue) {
-                return scope.$$postDigest(function() {
-                    if (newValue !== null && newValue !== void 0 && newValue.length > 0) {
-                        if (newValue[0] !== '+') {
-                            newValue = '+' + newValue;
-                        }
-
-                        ctrl.$modelValue = newValue;
+            const watchOnce = scope.$watch('ngModel', (newValue) => {
+                return scope.$$postDigest(() => {
+                    if (newValue) {
+                        ctrl.$modelValue = (newValue[0] !== '+') ? `+ ${newValue}` : newValue;
                     }
 
                     element.intlTelInput();
@@ -40,13 +36,13 @@ angular.module('proton.phone', [])
                 });
             });
 
-            scope.$watch('country', function(newValue) {
-                if (newValue !== null && newValue !== void 0 && newValue !== '') {
+            scope.$watch('country', (newValue) => {
+                if (newValue) {
                     return element.intlTelInput('selectCountry', newValue);
                 }
             });
 
-            ctrl.$formatters.push(function(value) {
+            ctrl.$formatters.push((value) => {
                 if (!value) {
                     return value;
                 }
@@ -56,7 +52,7 @@ angular.module('proton.phone', [])
                 return element.val();
             });
 
-            ctrl.$parsers.push(function(value) {
+            ctrl.$parsers.push((value) => {
                 if (!value) {
                     return value;
                 }
@@ -64,11 +60,11 @@ angular.module('proton.phone', [])
                 return value.replace(/[^\d|+]/g, '');
             });
 
-            element.on('blur keyup change', function(event) {
+            element.on('blur keyup change', () => {
                 scope.$apply(read);
             });
 
-            scope.$on('$destroy', function() {
+            scope.$on('$destroy', () => {
                 element.intlTelInput('destroy');
                 element.off('blur keyup change');
             });

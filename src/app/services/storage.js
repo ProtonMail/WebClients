@@ -34,17 +34,17 @@ angular.module("proton.storage", ["proton.webcrypto"])
     // can't read the data since they can't access window.name. The lifetime
     // of the data is therefore the smaller lifetime, that of window.name.
 
-    var storage = window.sessionStorage;
-    var nameStorage;
+    const storage = window.sessionStorage;
+    let nameStorage;
     try {
         nameStorage = JSON.parse(window.name);
     } catch (e) {
         nameStorage = {};
     }
 
-    var data = {};
+    let data = {};
 
-    var whitelist = [
+    const whitelist = [
         CONSTANTS.MAILBOX_PASSWORD_KEY,
         CONSTANTS.OAUTH_KEY + ':SessionToken',
         CONSTANTS.OAUTH_KEY + ':Uid',
@@ -54,13 +54,13 @@ angular.module("proton.storage", ["proton.webcrypto"])
         'proton:encrypted_password'
     ];
 
-    for (var i = 0; i < whitelist.length; i++) {
+    for (let i = 0; i < whitelist.length; i++) {
         if (!nameStorage.hasOwnProperty(whitelist[i])) {
             continue;
         }
 
-        var item = storage.getItem(whitelist[i]);
-        var nameItem = nameStorage[whitelist[i]];
+        let item = storage.getItem(whitelist[i]);
+        let nameItem = nameStorage[whitelist[i]];
 
         if (!angular.isString(item) || !angular.isString(nameItem)) {
             continue;
@@ -77,14 +77,14 @@ angular.module("proton.storage", ["proton.webcrypto"])
             continue;
         }
 
-        var xored = new Array(item.length);
+        const xored = new Array(item.length);
 
-        for (var j = 0; j < item.length; j++) {
+        for (let j = 0; j < item.length; j++) {
             xored[j] = item[j] ^ nameItem[j];
         }
 
         // Strip off padding
-        var unpaddedLength = item.length;
+        let unpaddedLength = item.length;
 
         while (unpaddedLength > 0 && xored[unpaddedLength - 1] === 0) {
             unpaddedLength--;
@@ -94,11 +94,11 @@ angular.module("proton.storage", ["proton.webcrypto"])
     }
 
     storage.clear();
-    window.name = "";
+    window.name = '';
     nameStorage = {};
 
-    var api = {
-        getItem: function(key) {
+    const api = {
+        getItem(key) {
             if (angular.isString(key) && data.hasOwnProperty(key)) {
                 return data[key];
             } else {
@@ -106,19 +106,19 @@ angular.module("proton.storage", ["proton.webcrypto"])
             }
         },
 
-        setItem: function(key, value) {
+        setItem(key, value) {
             if (angular.isString(key) && angular.isString(value)) {
                 data[key] = value;
             }
         },
 
-        removeItem: function(key) {
+        removeItem(key) {
             if (angular.isString(key) && data.hasOwnProperty(key)) {
                 delete data[key];
             }
         },
 
-        clear: function() {
+        clear() {
             data = {};
         }
     };
@@ -126,13 +126,13 @@ angular.module("proton.storage", ["proton.webcrypto"])
     var flush = function() {
         for (var key in data) {
             if (data.hasOwnProperty(key)) {
-                var item = pmcrypto.binaryStringToArray(data[key]);
-                var paddedLength = Math.ceil(item.length/256)*256;
+                const item = pmcrypto.binaryStringToArray(data[key]);
+                const paddedLength = Math.ceil(item.length / 256) * 256;
 
                 var share1 = webcrypto.getRandomValues(new Uint8Array(paddedLength));
                 var share2 = new Uint8Array(share1);
 
-                for (var i = 0; i < item.length; i++) {
+                for (let i = 0; i < item.length; i++) {
                     share2[i] ^= item[i];
                 }
 
@@ -147,11 +147,11 @@ angular.module("proton.storage", ["proton.webcrypto"])
     };
 
     if (window.addEventListener) {
-        window.addEventListener("unload", flush, false);
+        window.addEventListener('unload', flush, false);
     } else if (window.attachEvent) {
-        window.attachEvent("onunload", flush);
+        window.attachEvent('onunload', flush);
     } else {
-        throw new Exception("No method for adding event listeners!");
+        throw new Exception('No method for adding event listeners!');
     }
 
     return api;

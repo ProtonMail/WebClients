@@ -1,7 +1,7 @@
 angular.module('proton.composer')
     .directive('composerAskEmbedded', ($rootScope) => {
 
-        const dispatch = (data) => $rootScope.$emit('attachment.upload', { type: 'upload' , data });
+        const dispatch = (data) => $rootScope.$emit('attachment.upload', { type: 'upload', data });
 
         const buildTitle = (node, pending) => node.textContent = `${pending} images detected`;
 

@@ -24,11 +24,11 @@ angular.module('proton.message')
                 } else if (mail.text) {
                     parsedContent = mail.text;
                 } else {
-                    parsedContent = "Empty Message";
+                    parsedContent = 'Empty Message';
                 }
 
                 if (mail.attachments) {
-                    parsedContent = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+parsedContent;
+                    parsedContent = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>" + parsedContent;
                 }
 
                 deferred.resolve(parsedContent);
@@ -55,11 +55,11 @@ angular.module('proton.message')
             return { type, body };
         }
 
-        function read({ID}) {
-            $rootScope.$emit('messageActions', {action: 'read', data: {ids: [ID]}});
+        function read({ ID }) {
+            $rootScope.$emit('messageActions', { action: 'read', data: { ids: [ID] } });
         }
 
-        return (message, body, index) => {
+        return (message, body) => {
 
             return new Promise((resolve, reject) => {
                 if (body) {
@@ -68,7 +68,7 @@ angular.module('proton.message')
                 }
 
                 return decrypt(message)
-                    .then((decrytedBody) => (message.IsEncrypted === 8) ? parse(decrytedBody) : decrytedBody)
+                    .then((decrytedBody) => ((message.IsEncrypted === 8) ? parse(decrytedBody) : decrytedBody))
                     .then((body) => clean(body))
                     .then((body) => show(body, message, false))
                     .then(({ type, body }) => {

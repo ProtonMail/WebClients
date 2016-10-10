@@ -1,21 +1,21 @@
 angular.module('proton.models.contact', [])
 
-.factory('Contact', function($http, url) {
+.factory('Contact', ($http, url) => {
 
-    var Contact = {
-        query: function() {
+    const Contact = {
+        query() {
             return $http.get(url.get() + '/contacts');
         },
-        edit: function(contact) {
+        edit(contact) {
             return $http.put(url.get() + '/contacts/' + contact.id, contact);
         },
-        save: function(contact) {
+        save(contact) {
             return $http.post(url.get() + '/contacts', contact);
         },
-        delete: function(contact) {
+        delete(contact) {
             return $http.put(url.get() + '/contacts/delete', contact);
         },
-        clear: function() {
+        clear() {
             return $http.delete(url.get() + '/contacts');
         }
     };

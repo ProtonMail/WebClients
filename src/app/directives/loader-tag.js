@@ -1,5 +1,5 @@
-angular.module("proton.loaderTag", [])
-.directive('loaderTag', function() {
+angular.module('proton.loaderTag', [])
+.directive('loaderTag', () => {
     return {
         restrict: 'E',
         replace: true,

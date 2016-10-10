@@ -1,6 +1,6 @@
 angular.module('proton.controllers.Header', [])
 
-.controller('HeaderController', function(
+.controller('HeaderController', (
     $location,
     $log,
     $rootScope,
@@ -11,15 +11,13 @@ angular.module('proton.controllers.Header', [])
     gettextCatalog,
     authentication,
     CONFIG,
-    CONSTANTS,
-    notify,
-    tools
-) {
+    CONSTANTS
+) => {
     $scope.params = {};
     $scope.appVersion = CONFIG.app_version;
     $scope.wizardEnabled = CONSTANTS.WIZARD_ENABLED;
     $scope.addresses = [];
-    $scope.addresses.push({Email: gettextCatalog.getString('All', null), ID: undefined, Send: 0, Receive: 1, Status: 1}); // Add ALL option
+    $scope.addresses.push({ Email: gettextCatalog.getString('All', null), ID: undefined, Send: 0, Receive: 1, Status: 1 }); // Add ALL option
 
     if (Object.keys(authentication.user).length > 0) { // This code is also executed on the login page, it explain this condition
         $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
@@ -31,19 +29,19 @@ angular.module('proton.controllers.Header', [])
     $scope.advancedSearch = false;
     $scope.starred = 2;
 
-    var addFolders = function() {
+    const addFolders = function () {
         $scope.ctrl.folders = [];
-        $scope.ctrl.folders.push({value: -1, label: gettextCatalog.getString('All', null), group: 'default'});
+        $scope.ctrl.folders.push({ value: -1, label: gettextCatalog.getString('All', null), group: 'default' });
 
-        _.each(CONSTANTS.MAILBOX_IDENTIFIERS, function(value, key) {
+        _.each(CONSTANTS.MAILBOX_IDENTIFIERS, (value, key) => {
             if (key !== 'search' && key !== 'label') {
-                $scope.ctrl.folders.push({value: value, label: key, group: 'folder'});
+                $scope.ctrl.folders.push({ value, label: key, group: 'folder' });
             }
         });
 
         if (Object.keys(authentication.user).length > 0) {
-            _.each(authentication.user.Labels, function(label) {
-                $scope.ctrl.folders.push({value: label.ID, label: label.Name, group: 'label'});
+            _.each(authentication.user.Labels, (label) => {
+                $scope.ctrl.folders.push({ value: label.ID, label: label.Name, group: 'label' });
             });
         }
 
@@ -54,30 +52,30 @@ angular.module('proton.controllers.Header', [])
      * Return parameters from String
      * @return {Object}
      */
-    var extractParameters = function() {
-        var parameters = {};
-        var value = $scope.params.searchMessageInput;
-        var separators = [
-            {value: 'keyword:', key: 'keyword'},
-            {value: 'from:', key: 'from'},
-            {value: 'to:', key: 'to'},
-            {value: 'in:', key: 'label'}
+    const extractParameters = function () {
+        const parameters = {};
+        const value = $scope.params.searchMessageInput;
+        const separators = [
+            { value: 'keyword:', key: 'keyword' },
+            { value: 'from:', key: 'from' },
+            { value: 'to:', key: 'to' },
+            { value: 'in:', key: 'label' }
         ];
 
-        _.each(separators, function(separator) {
-            var tmp = value.split(separator.value);
+        _.each(separators, (separator) => {
+            const tmp = value.split(separator.value);
 
-            _.each(separators, function(sep) {
+            _.each(separators, (sep) => {
                 if (tmp[1] && tmp[1].indexOf(sep.value) !== -1) {
                     tmp[1] = tmp[1].split(sep.value)[0];
                 }
             });
 
             if (tmp[1]) {
-                var tmp1 = tmp[1].trim();
+                const tmp1 = tmp[1].trim();
 
                 if (separator.key === 'label') {
-                    var folder = _.findWhere($scope.ctrl.folders, {label: tmp1});
+                    const folder = _.findWhere($scope.ctrl.folders, { label: tmp1 });
 
                     if (angular.isDefined(folder)) {
                         parameters.label = folder.value;
@@ -99,7 +97,7 @@ angular.module('proton.controllers.Header', [])
      * Generate an special Object to reset $stateParams values
      * @return {Object}
      */
-    var resetParameters = function() {
+    const resetParameters = function () {
         return {
             address: undefined,
             page: undefined,
@@ -121,11 +119,11 @@ angular.module('proton.controllers.Header', [])
     /**
      * Generate string from parameters set inside the URL
      */
-    var generateSearchString = function() {
-        var result = '';
+    const generateSearchString = function () {
+        let result = '';
 
         if (angular.isDefined($stateParams.label)) {
-            var folder = _.findWhere($scope.ctrl.folders, {value: $stateParams.label});
+            const folder = _.findWhere($scope.ctrl.folders, { value: $stateParams.label });
 
             if (angular.isDefined(folder)) {
                 result += 'in:' + folder.label + ' ';
@@ -155,14 +153,14 @@ angular.module('proton.controllers.Header', [])
     };
 
     // Listeners
-    $scope.$on('$stateChangeSuccess', function(event) {
+    $scope.$on('$stateChangeSuccess', () => {
         addFolders();
         generateSearchString();
     });
 
-    $scope.$on('updateUser', function(event) {
+    $scope.$on('updateUser', () => {
         $scope.addresses = [];
-        $scope.addresses.push({Email: gettextCatalog.getString('All', null), ID: undefined});
+        $scope.addresses.push({ Email: gettextCatalog.getString('All', null), ID: undefined });
 
         if (Object.keys(authentication.user).length > 0) {
             $scope.addresses = $scope.addresses.concat(authentication.user.Addresses);
@@ -171,12 +169,12 @@ angular.module('proton.controllers.Header', [])
         $scope.ctrl.address = $scope.addresses[0];
     });
 
-    $scope.initialization = function() {
+    $scope.initialization = function () {
         addFolders();
         generateSearchString();
     };
 
-    $scope.toggleAdvancedSearch = function() {
+    $scope.toggleAdvancedSearch = function () {
         if ($scope.advancedSearch === false) {
             $scope.openSearchModal();
         } else {
@@ -184,34 +182,34 @@ angular.module('proton.controllers.Header', [])
         }
     };
 
-    $scope.openSearchModal = function() {
-        var parameters = extractParameters();
+    $scope.openSearchModal = function () {
+        const parameters = extractParameters();
 
         $scope.labels = authentication.user.Labels;
         $scope.ctrl.keyword = parameters.keyword || '';
         $scope.ctrl.from = parameters.from || '';
         $scope.ctrl.to = parameters.to || '';
-        $scope.ctrl.folder = _.findWhere($scope.ctrl.folders, {value: parameters.label}) || $scope.ctrl.folders[0];
+        $scope.ctrl.folder = _.findWhere($scope.ctrl.folders, { value: parameters.label }) || $scope.ctrl.folders[0];
         $scope.advancedSearch = true;
 
     };
 
-    $scope.closeSearchModal = function() {
+    $scope.closeSearchModal = function () {
         $scope.advancedSearch = false;
     };
 
-    $scope.sidebarToggle = function() {
+    $scope.sidebarToggle = function () {
         $rootScope.$broadcast('sidebarMobileToggle');
     };
 
-    $scope.blurSearch = function(event) {
-        var inputs = angular.element('.query');
+    $scope.blurSearch = function () {
+        const inputs = angular.element('.query');
         angular.element(inputs[0]).blur();
     };
 
-    $scope.searchMessages = function() {
-        var parameters = resetParameters();
-        var redirection;
+    $scope.searchMessages = function () {
+        const parameters = resetParameters();
+        let redirection;
 
         if ($scope.advancedSearch === false) {
             if ($scope.params.searchMessageInput.length === 0) {
@@ -226,21 +224,21 @@ angular.module('proton.controllers.Header', [])
             parameters.from = $scope.ctrl.from;
             parameters.to = $scope.ctrl.to;
             parameters.subject = $scope.ctrl.subject;
-            parameters.attachments = parseInt($scope.ctrl.attachments);
+            parameters.attachments = parseInt($scope.ctrl.attachments, 10);
 
             if (angular.isDefined($scope.ctrl.address.ID)) {
                 parameters.address = $scope.ctrl.address.ID;
             }
 
-            if($scope.ctrl.folder.value !== -1) {
+            if ($scope.ctrl.folder.value !== -1) {
                 parameters.label = $scope.ctrl.folder.value;
             }
 
-            if($('#search_start').val().length > 0) {
+            if ($('#search_start').val().length > 0) {
                 parameters.begin = $scope.ctrl.start.getMoment().unix();
             }
 
-            if($('#search_end').val().length > 0) {
+            if ($('#search_end').val().length > 0) {
                 parameters.end = $scope.ctrl.end.getMoment().unix();
             }
         }
@@ -249,59 +247,56 @@ angular.module('proton.controllers.Header', [])
         $scope.advancedSearch = false;
     };
 
-    $scope.focusStart = function() {
+    $scope.focusStart = function () {
         $('#search_start').trigger('click');
     };
 
-    $scope.focusEnd = function() {
+    $scope.focusEnd = function () {
         $('#search_end').trigger('click');
     };
 
-    $scope.setMin = function() {
-        if($scope.ctrl.start.getDate() === null) {
+    $scope.setMin = function () {
+        if ($scope.ctrl.start.getDate() === null) {
             $scope.ctrl.start = null;
         } else {
             $scope.ctrl.end.setMinDate($scope.ctrl.start.getDate());
         }
     };
 
-    $scope.setMax = function() {
-        if($scope.ctrl.end === null && $scope.ctrl.end.getDate() === null) {
+    $scope.setMax = function () {
+        if ($scope.ctrl.end === null && $scope.ctrl.end.getDate() === null) {
             $scope.ctrl.end = null;
         } else {
             $scope.ctrl.start.setMaxDate($scope.ctrl.end.getDate());
         }
     };
 
-    $scope.cancel = function() {
+    $scope.cancel = function () {
         if (angular.isDefined($scope.params.cancel) && angular.isFunction($scope.params.cancel)) {
             $scope.params.cancel();
         }
     };
 
-    $scope.activeSettings = function() {
-        var route = $state.$current.name.replace('secured.', '');
-        var settings = ['account', 'labels', 'security', 'appearance', 'domains', 'addresses', 'users', 'payments', 'keys'];
+    $scope.activeSettings = function () {
+        const route = $state.$current.name.replace('secured.', '');
+        const settings = ['account', 'labels', 'security', 'appearance', 'domains', 'addresses', 'users', 'payments', 'keys'];
 
         return settings.indexOf(route) !== -1;
     };
 
-    $scope.searchContacts = function() {
+    $scope.searchContacts = function () {
         $rootScope.$broadcast('searchContacts', $scope.params.searchContactInput);
     };
 
-    $scope.email = function() {
+    $scope.email = function () {
         if (Object.keys(authentication.user).length > 0) {
-            var address = _.findWhere(authentication.user.Addresses, {Send: 1});
+            const address = _.findWhere(authentication.user.Addresses, { Send: 1 });
 
             if (address) {
                 return address.Email;
-            } else {
-                return '';
             }
-        } else {
-            return '';
         }
+        return '';
     };
 
     $scope.initialization();

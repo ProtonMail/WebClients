@@ -57,7 +57,7 @@ angular.module('proton.conversation')
                 }
 
                 if (type === 'UP') {
-                    container.scrollTop = (container.scrollTop - delta);
+                    container.scrollTop -= delta;
                 }
 
                 if (type === 'DOWN') {
@@ -73,9 +73,9 @@ angular.module('proton.conversation')
             conversation: '='
         },
         templateUrl: 'templates/partials/conversation.tpl.html',
-        link(scope, el) {
-            var scrollPromise;
-            var messagesCached = [];
+        link(scope) {
+            let scrollPromise;
+            let messagesCached = [];
             const unsubscribe = [];
 
             const scrollToPosition = getScrollToPosition();
@@ -99,6 +99,7 @@ angular.module('proton.conversation')
                 }
             }));
 
+
             // We need to allow hotkeys for a message when you open the message
             unsubscribe.push($rootScope.$on('message.open', (event, { type, data }) => {
                 if (type === 'toggle') {
@@ -107,13 +108,13 @@ angular.module('proton.conversation')
 
                     // Allow the user to scroll inside the conversation via the keyboard
                     hotkeys.unbind(['down', 'up']);
-                    scope.markedMessage = void 0;
+                    scope.markedMessage = undefined;
                 }
             }));
 
             scope.$on('$destroy', () => {
                 $timeout.cancel(scrollPromise);
-                unsubscribe.forEach(cb => cb());
+                unsubscribe.forEach((cb) => cb());
                 unsubscribe.length = 0;
                 unsubscribeActions();
                 // Ensure only one event Listener
@@ -122,16 +123,16 @@ angular.module('proton.conversation')
                 $rootScope.$emit('conversation.close', scope.conversation);
             });
 
-            scope.$on('unmarkMessages', function(event) {
+            scope.$on('unmarkMessages', () => {
                 scope.markedMessage = undefined;
                 unsubscribeActions();
             });
 
 
-            scope.$on('markPrevious', function(event) {
+            scope.$on('markPrevious', () => {
                 unsubscribeActions();
                 if (scope.markedMessage) {
-                    var index = scope.messages.indexOf(scope.markedMessage);
+                    const index = scope.messages.indexOf(scope.markedMessage);
                     if (index > 0) {
                         const pos = index - 1;
                         scope
@@ -144,10 +145,10 @@ angular.module('proton.conversation')
                 }
             });
 
-            scope.$on('markNext', function(event) {
+            scope.$on('markNext', () => {
                 unsubscribeActions();
                 if (scope.markedMessage) {
-                    var index = scope.messages.indexOf(scope.markedMessage);
+                    const index = scope.messages.indexOf(scope.markedMessage);
                     if (index < (scope.messages.length - 1)) {
                         const pos = index + 1;
                         scope
@@ -162,7 +163,7 @@ angular.module('proton.conversation')
                 }
             });
 
-            scope.$on('toggleStar', function(event) {
+            scope.$on('toggleStar', () => {
                 scope.toggleStar();
             });
 
@@ -191,7 +192,7 @@ angular.module('proton.conversation')
                 messageActions.moveMessage(ids, name);
             });
 
-            scope.$on('right', function(event) {
+            scope.$on('right', () => {
                 unsubscribeActions();
                 !scope.markedMessage && scope
                     .$applyAsync(() => {
@@ -203,7 +204,7 @@ angular.module('proton.conversation')
                     });
             });
 
-            scope.$on('escape', function(event) {
+            scope.$on('escape', () => {
                 back();
             });
 
@@ -226,10 +227,10 @@ angular.module('proton.conversation')
                 let thisOne;
                 const type = tools.typeView();
 
-                 if (type === 'message') { // If we open a conversation in the sent folder
+                if (type === 'message') { // If we open a conversation in the sent folder
                     thisOne = _.last(messages);
                 } else if ($stateParams.messageID) {
-                    thisOne = _.findWhere(messages, {ID: $stateParams.messageID});
+                    thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
                 } else if ($state.includes('secured.starred.**')) {
                     // Select the last message starred
                     thisOne = _.chain(messages)
@@ -242,8 +243,8 @@ angular.module('proton.conversation')
                     // Select the last message with this label
                     thisOne = _.chain(messages)
                     .filter((message) => {
-                            return message.LabelIDs.indexOf($stateParams.label) !== -1;
-                        })
+                        return message.LabelIDs.indexOf($stateParams.label) !== -1;
+                    })
                         .last()
                         .value();
                 } else {
@@ -286,15 +287,14 @@ angular.module('proton.conversation')
              * Method call at the initialization of this directive
              */
             function initialization() {
-                var messages = [];
+                let messages = [];
 
                 messagesCached = cache.queryMessagesCached($stateParams.id);
-                scope.trashed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; }).length > 0;
-                scope.nonTrashed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
+                scope.trashed = _.filter(messagesCached, (message) => { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; }).length > 0;
+                scope.nonTrashed = _.filter(messagesCached, (message) => { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
                 // scope.spammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; }).length > 0;
                 // scope.nonSpammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; }).length > 0;
                 messages = $filter('filterMessages')(messagesCached, scope.showTrashed, scope.showNonTrashed);
-
 
                 if (messages.length > 0) {
                     scope.messages = expandMessage(cache.orderMessage(messages, false));
@@ -314,12 +314,12 @@ angular.module('proton.conversation')
             scope.refreshConversation = () => {
 
                 const conversation = cache.getConversationCached($stateParams.id);
-                let messages = cache.queryMessagesCached($stateParams.id);
+                const messages = cache.queryMessagesCached($stateParams.id);
                 const loc = tools.currentLocation();
 
                 messagesCached = messages;
-                scope.trashed = messagesCached.some(({LabelIDs = []}) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
-                scope.nonTrashed = messagesCached.some(({LabelIDs = []}) => !_.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+                scope.trashed = messagesCached.some(({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+                scope.nonTrashed = messagesCached.some(({ LabelIDs = [] }) => !_.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
 
                 if (conversation) {
                     if (conversation.LabelIDs.indexOf(loc) !== -1 || $state.includes('secured.search.**')) {
@@ -336,9 +336,10 @@ angular.module('proton.conversation')
                     const toRemove = [];
                     const list = cache
                         .orderMessage($filter('filterMessages')(messages, scope.showTrashed, scope.showNonTrashed), false);
+
                     for (let index = 0; index < list.length; index++) {
                         if (!scope.messages.some(({ ID }) => ID === list[index].ID)) {
-                            toAdd.push({index, message: list[index]});
+                            toAdd.push({ index, message: list[index] });
                         }
                     }
 
@@ -351,7 +352,7 @@ angular.module('proton.conversation')
 
                     for (let index = 0; index < scope.messages.length; index++) {
                         if (!list.some(({ ID }) => ID === scope.messages[index].ID)) {
-                            toRemove.push({index});
+                            toRemove.push({ index });
                         }
                     }
 
@@ -362,19 +363,18 @@ angular.module('proton.conversation')
                 } else {
                     back();
                 }
-
             };
 
-            scope.toggleOption = function(option) {
-                scope[option] = !!!scope[option];
+            scope.toggleOption = function (option) {
+                scope[option] = !scope[option];
                 scope.refreshConversation();
             };
 
             /**
              * @return {Boolean}
              */
-            scope.showNotifier = function(folder) {
-                const filtered = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]); });
+            scope.showNotifier = function (folder) {
+                const filtered = _.filter(messagesCached, (message) => { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]); });
 
                 return filtered.length < messagesCached.length && filtered.length > 0;
             };
@@ -382,7 +382,7 @@ angular.module('proton.conversation')
             /**
              * Return messages data for dropdown labels
              */
-            scope.getMessages = function() {
+            scope.getMessages = function () {
                 return scope.messages;
             };
 
@@ -390,7 +390,7 @@ angular.module('proton.conversation')
              * Mark current conversation as read
              * @param {Boolean} back
              */
-            scope.read = function() {
+            scope.read = function () {
                 const ids = [scope.conversation.ID];
 
                 actionConversation.readConversation(ids);
@@ -399,7 +399,7 @@ angular.module('proton.conversation')
             /**
              * Mark current conversation as unread
              */
-            scope.unread = function() {
+            scope.unread = function () {
                 const ids = [scope.conversation.ID];
 
                 actionConversation.unreadConversation(ids);
@@ -410,7 +410,7 @@ angular.module('proton.conversation')
             /**
              * Delete current conversation
              */
-            scope.delete = function() {
+            scope.delete = function () {
                 const ids = [scope.conversation.ID];
 
                 actionConversation.deleteConversation(ids);
@@ -419,7 +419,7 @@ angular.module('proton.conversation')
             /**
              * Move current conversation to a specific location
              */
-            scope.move = function(mailbox) {
+            scope.move = function (mailbox) {
                 const ids = [scope.conversation.ID];
 
                 actionConversation.moveConversation(ids, mailbox);
@@ -429,7 +429,7 @@ angular.module('proton.conversation')
              * Apply labels for the current conversation
              * @return {Promise}
              */
-            scope.saveLabels = function(labels, alsoArchive) {
+            scope.saveLabels = function (labels, alsoArchive) {
                 const ids = [scope.conversation.ID];
 
                 actionConversation.labelConversation(ids, labels, alsoArchive);
@@ -439,19 +439,19 @@ angular.module('proton.conversation')
              * Scroll to the message specified
              * @param {String} ID
              */
-            scope.scrollToMessage = function(ID) {
+            scope.scrollToMessage = function (ID) {
                 $timeout.cancel(scrollPromise);
-                var index = _.findIndex(scope.messages, {ID: ID});
-                var id = '#message' + index;
+                const index = _.findIndex(scope.messages, { ID });
+                const id = '#message' + index;
 
-                scrollPromise = $timeout(function() {
-                    var element = angular.element(id);
+                scrollPromise = $timeout(() => {
+                    const element = angular.element(id);
 
-                    if(angular.isElement(element) && angular.isDefined(element.offset())) {
-                        var headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').outerHeight();
-                        var amountScrolled = $('#pm_thread').scrollTop();
-                        var paddingTop = parseInt($('#pm_thread').css('padding-top').replace('px', ''));
-                        var value = element.offset().top + amountScrolled - headerOffset - paddingTop;
+                    if (angular.isElement(element) && angular.isDefined(element.offset())) {
+                        const headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').outerHeight();
+                        const amountScrolled = $('#pm_thread').scrollTop();
+                        const paddingTop = parseInt($('#pm_thread').css('padding-top').replace('px', ''), 10);
+                        let value = element.offset().top + amountScrolled - headerOffset - paddingTop;
 
                         if (index === 0) {
                             // Do nothing
@@ -471,25 +471,25 @@ angular.module('proton.conversation')
             /**
              * Toggle star status for current conversation
              */
-             scope.toggleStar = function() {
-                if(scope.starred() === true) {
+            scope.toggleStar = function () {
+                if (scope.starred() === true) {
                     scope.unstar();
                 } else {
                     scope.star();
                 }
-             };
+            };
 
             /**
              * Star the current conversation
              */
-            scope.star = function() {
+            scope.star = function () {
                 actionConversation.starConversation(scope.conversation.ID);
             };
 
             /**
              * Unstar the current conversation
              */
-            scope.unstar = function() {
+            scope.unstar = function () {
                 actionConversation.unstarConversation(scope.conversation.ID);
             };
 
@@ -497,9 +497,10 @@ angular.module('proton.conversation')
              * Return status of the star conversation
              * @return {Boolean}
              */
-            scope.starred = function() {
+            scope.starred = function () {
                 return scope.conversation.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
             };
+
             // Call initialization
             initialization();
         }

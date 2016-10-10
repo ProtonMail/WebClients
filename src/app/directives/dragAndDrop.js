@@ -1,15 +1,15 @@
-var app = angular.module('proton.drag', []);
+const app = angular.module('proton.drag', []);
 // http://codepen.io/parkji/pen/JtDro
-app.directive('draggable', function() {
-    return function(scope, element) {
+app.directive('draggable', () => {
+    return function (scope, element) {
         // this gives us the native JS object
-        var el = element[0];
+        const el = element[0];
 
         el.draggable = true;
 
         el.addEventListener(
             'dragstart',
-            function(event) {
+            function (event) {
                 event.dataTransfer.effectAllowed = 'move';
                 event.dataTransfer.setData('Text', 'MAIL'); // this.id
                 this.classList.add('drag');
@@ -20,7 +20,7 @@ app.directive('draggable', function() {
 
         el.addEventListener(
             'dragend',
-            function(event) {
+            function () {
                 this.classList.remove('drag');
                 return false;
             },
@@ -29,19 +29,19 @@ app.directive('draggable', function() {
     };
 });
 
-app.directive('droppable', function() {
+app.directive('droppable', () => {
     return {
         scope: {
             drop: '&',
             bin: '='
         },
-        link: function(scope, element) {
+        link(scope, element) {
             // again we need the native object
-            var el = element[0];
+            const el = element[0];
 
             el.addEventListener(
                 'dragover',
-                function(e) {
+                function (e) {
                     e.dataTransfer.dropEffect = 'move';
                     // allows us to drop
                     if (e.preventDefault) {
@@ -57,7 +57,7 @@ app.directive('droppable', function() {
 
             el.addEventListener(
                 'dragenter',
-                function(e) {
+                function () {
                     this.classList.add('over');
                     return false;
                 },
@@ -66,7 +66,7 @@ app.directive('droppable', function() {
 
             el.addEventListener(
                 'dragleave',
-                function(e) {
+                function () {
                     this.classList.remove('over');
                     return false;
                 },
@@ -75,7 +75,7 @@ app.directive('droppable', function() {
 
             el.addEventListener(
                 'drop',
-                function(e) {
+                function (e) {
                     // Stops some browsers from redirecting.
                     if (e.stopPropagation) {
                         e.stopPropagation();
@@ -83,13 +83,13 @@ app.directive('droppable', function() {
 
                     this.classList.remove('over');
 
-                    var binId = this.id;
-                    var item = document.getElementById(e.dataTransfer.getData('Text'));
+                    const binId = this.id;
+                    const item = document.getElementById(e.dataTransfer.getData('Text'));
                     this.appendChild(item);
                     // call the passed drop function
-                    scope.$apply(function(scope) {
-                        var fn = scope.drop();
-                        if ('undefined' !== typeof fn) {
+                    scope.$apply((scope) => {
+                        const fn = scope.drop();
+                        if (fn !== 'undefined') {
                             fn(item.id, binId);
                         }
                     });

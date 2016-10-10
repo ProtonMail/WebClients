@@ -1,24 +1,28 @@
-angular.module("proton.models.reset", ['proton.srp'])
+angular.module('proton.models.reset', ['proton.srp'])
 
-.factory("Reset", function($http, url, srp) {
+.factory('Reset', ($http, url, srp) => {
     return {
         // POST
-        requestResetToken: function(params = {}) {
+        requestResetToken(params = {}) {
             return $http.post(url.get() + '/reset', params);
         },
-        resetPassword: function(params = {}, newPassword = '') {
-            return srp.randomVerifier(newPassword).then(function(auth_params) {
-                return $http.post(url.get() + '/reset/' + encodeURIComponent(params.Token), _.extend(params,auth_params));
-            });
+        resetPassword(params = {}, newPassword = '') {
+            const request = (data) => {
+                const requestUrl = `${url.get()}/reset/${encodeURIComponent(data.Token)}`;
+                return $http.post(requestUrl, data);
+            };
+            return srp
+                .getPasswordParams(newPassword, params)
+                .then(request);
         },
-        getMailboxResetToken: function(params = {}) {
+        getMailboxResetToken(params = {}) {
             return $http.post(url.get() + '/reset/mailbox', params);
         },
-        resetMailbox: function(params = {}) {
+        resetMailbox(params = {}) {
             return $http.post(url.get() + '/reset/mailbox/' + encodeURIComponent(params.Token), params);
         },
         // GET
-        validateResetToken: function(params = {}) {
+        validateResetToken(params = {}) {
             return $http.get(url.get() + '/reset/' + params.Username + '/' + encodeURIComponent(params.Token));
         }
     };

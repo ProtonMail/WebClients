@@ -1,10 +1,10 @@
-angular.module("proton.controllers.Outside", [
-    "proton.routes",
-    "proton.constants",
-    "proton.storage"
+angular.module('proton.controllers.Outside', [
+    'proton.routes',
+    'proton.constants',
+    'proton.storage'
 ])
 
-.controller("OutsideController", function(
+.controller('OutsideController', (
     $filter,
     $interval,
     $log,
@@ -22,21 +22,22 @@ angular.module("proton.controllers.Outside", [
     Message,
     authentication,
     prepareContent,
-    message,
+    messageData,
     notify,
     pmcw,
     tools,
     networkActivityTracker,
     AttachmentLoader,
     secureSessionStorage
-) {
+) => {
     // Variables
-    var decrypted_token = secureSessionStorage.getItem("proton:decrypted_token");
-    var password = pmcw.decode_utf8_base64(secureSessionStorage.getItem("proton:encrypted_password"));
-    var token_id = $stateParams.tag;
+    const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
+    const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
+    const tokenId = $stateParams.tag;
+    let message = messageData;
 
     function clean(body) {
-        var content = angular.copy(body);
+        let content = angular.copy(body);
 
         content = DOMPurify.sanitize(content, {
             ADD_ATTR: ['target'],
@@ -63,7 +64,7 @@ angular.module("proton.controllers.Outside", [
                 const totalSizeAtt = message.attachmentsSize();
 
                 if ((totalSize + totalSizeAtt) > ATTACHMENT_MAX_SIZE) {
-                    return notify({message: 'Attachments are limited to ' + CONSTANTS.ATTACHMENT_SIZE_LIMIT + ' MB.', classes: 'notification-danger'});
+                    return notify({ message: 'Attachments are limited to ' + CONSTANTS.ATTACHMENT_SIZE_LIMIT + ' MB.', classes: 'notification-danger' });
                 }
                 _.each(files, addAttachment);
 
@@ -72,7 +73,7 @@ angular.module("proton.controllers.Outside", [
         }, 500);
     }
 
-    $scope.initialization = function() {
+    $scope.initialization = function () {
         if ($state.is('eo.reply')) {
             message.showImages = true;
             message.showEmbedded = true;
@@ -81,28 +82,27 @@ angular.module("proton.controllers.Outside", [
         message.setDecryptedBody(clean(message.getDecryptedBody()));
 
         if ($state.is('eo.message')) {
-            _.each(message.Replies, function(reply) {
+            _.each(message.Replies, (reply) => {
                 reply.Body = clean(reply.Body);
             });
         }
 
-        embedded.parser(message).then( (result) => {
+        embedded.parser(message).then((result) => {
             message.setDecryptedBody(result);
             $scope.message = message;
             watchInput();
         });
 
 
-
         // start timer ago
-        $scope.agoTimer = $interval(function() {
+        $scope.agoTimer = $interval(() => {
             // Redirect to unlock view if the message is expired
             if ($scope.isExpired()) {
-                $state.go('eo.unlock', {tag: $stateParams.tag});
+                $state.go('eo.unlock', { tag: $stateParams.tag });
             }
         }, 1000);
 
-        $scope.$on('$destroy', function() {
+        $scope.$on('$destroy', () => {
             // cancel timer ago
             $interval.cancel($scope.agoTimer);
         });
@@ -116,26 +116,26 @@ angular.module("proton.controllers.Outside", [
     /**
      * Determine if the message is expire
      */
-    $scope.isExpired = function() {
+    $scope.isExpired = function () {
         if (angular.isDefined($scope.message)) {
             return $scope.message.ExpirationTime < moment().unix();
-        } else {
-            return false;
         }
+
+        return false;
     };
 
     /**
      * Simulate click event on the input file
      */
-    $scope.selectFile = function() {
+    $scope.selectFile = function () {
         $('#inputFile').click();
     };
 
     /**
      * Reset input file
      */
-    $scope.resetFile = function() {
-        var element = $('#inputFile');
+    $scope.resetFile = function () {
+        const element = $('#inputFile');
 
         element.wrap('<form>').closest('form').get(0).reset();
         element.unwrap();
@@ -144,27 +144,28 @@ angular.module("proton.controllers.Outside", [
     /**
      * Send message
      */
-    $scope.send = function() {
-        var deferred = $q.defer();
-        var publicKey = $scope.message.publicKey;
-        embedded.parser($scope.message, 'cid')
-        .then(function(result) {
-            var bodyPromise = pmcw.encryptMessage(result, $scope.message.publicKey);
-            var replyBodyPromise = pmcw.encryptMessage(result, [], password);
+    $scope.send = function () {
+        const deferred = $q.defer();
+
+        embedded
+        .parser($scope.message, 'cid')
+        .then((result) => {
+            const bodyPromise = pmcw.encryptMessage(result, $scope.message.publicKey);
+            const replyBodyPromise = pmcw.encryptMessage(result, [], password);
 
             $q.all({
                 Body: bodyPromise,
                 ReplyBody: replyBodyPromise
             })
             .then(
-                function(result) {
-                    var Filename = [];
-                    var MIMEType = [];
-                    var KeyPackets = [];
-                    var DataPacket = [];
-                    var attachments = $scope.message.Attachments || [];
-                    var promises = attachments.map(function(attachment) {
-                        var cid = embedded.getCid(attachment.Headers);
+                (result) => {
+                    const Filename = [];
+                    const MIMEType = [];
+                    const KeyPackets = [];
+                    const DataPacket = [];
+                    const attachments = $scope.message.Attachments || [];
+                    const promises = attachments.map((attachment) => {
+                        const cid = embedded.getCid(attachment.Headers);
 
                         if (cid) {
                             return embedded.getBlob(cid).then((blob) => {
@@ -176,18 +177,18 @@ angular.module("proton.controllers.Outside", [
                                     Headers: attachment.Headers
                                 });
                             });
-                        } else {
-                            return Promise.resolve({
-                                Filename: attachment.Filename,
-                                DataPacket: attachment.DataPacket,
-                                MIMEType: attachment.MIMEType,
-                                KeyPackets: attachment.KeyPackets
-                            });
                         }
+
+                        return Promise.resolve({
+                            Filename: attachment.Filename,
+                            DataPacket: attachment.DataPacket,
+                            MIMEType: attachment.MIMEType,
+                            KeyPackets: attachment.KeyPackets
+                        });
                     });
 
                     Promise.all(promises)
-                    .then(function(attachments) {
+                    .then((attachments) => {
                         attachments.forEach((attachment) => {
                             Filename.push(attachment.Filename);
                             DataPacket.push(attachment.DataPacket);
@@ -195,28 +196,28 @@ angular.module("proton.controllers.Outside", [
                             KeyPackets.push(attachment.KeyPackets);
                         });
 
-                        Eo.reply(decrypted_token, token_id, {
-                            'Body': result.Body,
-                            'ReplyBody': result.ReplyBody,
+                        Eo.reply(decryptedToken, tokenId, {
+                            Body: result.Body,
+                            ReplyBody: result.ReplyBody,
                             'Filename[]': Filename,
                             'MIMEType[]': MIMEType,
                             'KeyPackets[]': KeyPackets,
                             'DataPacket[]': DataPacket
                         })
                         .then(
-                            function(result) {
-                                $state.go('eo.message', {tag: $stateParams.tag});
-                                notify({message: gettextCatalog.getString('Message sent', null), classes: 'notification-success'});
+                            (result) => {
+                                $state.go('eo.message', { tag: $stateParams.tag });
+                                notify({ message: gettextCatalog.getString('Message sent', null), classes: 'notification-success' });
                                 deferred.resolve(result);
                             },
-                            function(error) {
+                            (error) => {
                                 error.message = gettextCatalog.getString('Error during the reply process', null, 'Error');
                                 deferred.reject(error);
                             }
                         );
                     });
                 },
-                function(error) {
+                (error) => {
                     error.message = gettextCatalog.getString('Error during the encryption', null, 'Error');
                     deferred.reject(error);
                 }
@@ -226,21 +227,21 @@ angular.module("proton.controllers.Outside", [
         return networkActivityTracker.track(deferred.promise);
     };
 
-    $scope.cancel = function() {
-        $state.go('eo.message', {tag: $stateParams.tag});
+    $scope.cancel = function () {
+        $state.go('eo.message', { tag: $stateParams.tag });
     };
 
-    $scope.reply = function() {
-        $state.go('eo.reply', {tag: $stateParams.tag});
+    $scope.reply = function () {
+        $state.go('eo.reply', { tag: $stateParams.tag });
     };
 
-    $scope.toggleImages = function() {
+    $scope.toggleImages = function () {
         $scope.message.showImages = !$scope.message.showImages;
         $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']));
     };
 
 
-    $scope.displayEmbedded = function() {
+    $scope.displayEmbedded = function () {
         message = $scope.message;
         message.showEmbedded = true;
         embedded
@@ -254,33 +255,31 @@ angular.module("proton.controllers.Outside", [
 
 
     function addAttachment(file) {
-        var totalSize = message.attachmentsSize();
-        var sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
+        let totalSize = message.attachmentsSize();
+        const sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
 
         message.uploading = true;
 
         _.defaults(message, { Attachments: [] });
 
         if (angular.isDefined(message.Attachments) && message.Attachments.length === CONSTANTS.ATTACHMENT_NUMBER_LIMIT) {
-            notify({message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger'});
+            notify({ message: 'Messages are limited to ' + CONSTANTS.ATTACHMENT_NUMBER_LIMIT + ' attachments', classes: 'notification-danger' });
             message.uploading = false;
             $scope.resetFile();
             // TODO remove file in droparea
         } else {
             totalSize += file.size;
 
-            var attachmentPromise;
-
             if (totalSize < (sizeLimit * CONSTANTS.BASE_SIZE * CONSTANTS.BASE_SIZE)) {
-                var publicKey = $scope.message.publicKey;
+                const publicKey = $scope.message.publicKey;
 
-                AttachmentLoader.load(file, publicKey).then(function(packets) {
+                AttachmentLoader.load(file, publicKey).then((packets) => {
                     message.uploading = false;
                     $scope.resetFile();
 
                     // The id is for the front only and the BE ignores it
                     message.Attachments.push({
-                        ID: `att_${Math.random().toString(32).slice(0,12)}_${Date.now()}`,
+                        ID: `att_${Math.random().toString(32).slice(0, 12)}_${Date.now()}`,
                         Name: file.name,
                         Size: file.size,
                         Filename: packets.Filename,
@@ -289,15 +288,15 @@ angular.module("proton.controllers.Outside", [
                         DataPacket: new Blob([packets.data])
                     });
                     message.NumAttachments = message.Attachments.length;
-                }, function(error) {
+                }, (error) => {
                     message.uploading = false;
                     $scope.resetFile();
-                    notify({message: 'Error ', classes: 'notification-danger'});
+                    notify({ message: 'Error ', classes: 'notification-danger' });
                     $log.error(error);
                 });
             } else {
                 // Attachment size error.
-                notify({message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10*totalSize/CONSTANTS.BASE_SIZE/CONSTANTS.BASE_SIZE)/10 + ' MB.', classes: 'notification-danger'});
+                notify({ message: 'Attachments are limited to ' + sizeLimit + ' MB. Total attached would be: ' + Math.round(10 * totalSize / CONSTANTS.BASE_SIZE / CONSTANTS.BASE_SIZE) / 10 + ' MB.', classes: 'notification-danger' });
                 message.uploading = false;
                 $scope.resetFile();
                 // TODO remove file in droparea

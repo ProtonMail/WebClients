@@ -14,9 +14,9 @@ angular.module('proton.attachments')
         const getRequest = ({ ID } = {}) => {
 
             if (isOutside()) {
-                const decrypted_token = secureSessionStorage.getItem('proton:decrypted_token');
+                const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
                 const token = $stateParams.tag;
-                return Eo.attachment(decrypted_token, token, ID);
+                return Eo.attachment(decryptedToken, token, ID);
             }
 
             return attachmentApi.get(ID);
@@ -54,7 +54,7 @@ angular.module('proton.attachments')
                 .catch((err) => ($log.error(err), err));
         };
 
-        const encrypt = (attachment, pubKeys, { name, type, size, inline } = {} ) => {
+        const encrypt = (attachment, pubKeys, { name, type, size, inline } = {}) => {
 
             const at = new Uint8Array(attachment);
             return pmcw
@@ -79,10 +79,10 @@ angular.module('proton.attachments')
             const reader = new FileReader();
 
             if (!file) {
-                return deferred.reject(new TypeError("You did not provide a file"));
+                return deferred.reject(new TypeError('You did not provide a file'));
             }
 
-            reader.onloadend = (event) => {
+            reader.onloadend = () => {
                 encrypt(reader.result, pubKeys, file)
                     .then(deferred.resolve)
                     .catch(() => deferred.reject('Failed to encrypt attachment. Please try again.'));
@@ -149,16 +149,16 @@ angular.module('proton.attachments')
          */
         const generateDownload = (attachment) => {
             try {
-                var blob = new Blob([attachment.data], {type: attachment.MIMEType});
+                const blob = new Blob([attachment.data], { type: attachment.MIMEType });
 
                 if (isFileSaverSupported) {
-                    return saveAs(blob, attachment.Name);
+                    return window.saveAs(blob, attachment.Name);
                 }
 
                 // Bad blob support, make a data URI, don't click it
                 const reader = new FileReader();
 
-                reader.onloadend = function () {
+                reader.onloadend = () => {
                     attachment.el.href = reader.result;
                 };
 

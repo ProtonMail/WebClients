@@ -39,13 +39,13 @@ angular.module('proton.message')
         $($thread).animate({ scrollTop }, 200);
     }
 
-    function checkLabel({LabelIDs = []}, mailbox = '') {
+    function checkLabel({ LabelIDs = [] }, mailbox = '') {
         const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
         return LabelIDs.indexOf(labelID) !== -1;
     }
 
-    function getRecipients({ToList = [], CCList = [], BCCList = []} = {}) {
+    function getRecipients({ ToList = [], CCList = [], BCCList = [] } = {}) {
         return [].concat(ToList).concat(CCList).concat(BCCList);
     }
 
@@ -64,7 +64,7 @@ angular.module('proton.message')
      * @param  {Array}  [LabelIDs=[]}]
      * @return {Boolean}
      */
-    function canBeOpen({LabelIDs = []}) {
+    function canBeOpen({ LabelIDs = [] }) {
         const currentLocation = tools.currentLocation();
         const condition = LabelIDs.indexOf(currentLocation) !== -1;
         const type = tools.typeView();
@@ -128,12 +128,12 @@ angular.module('proton.message')
                 }
             }));
 
-            scope.$on('$destroy', function(event) {
-                unsubscribe.forEach(cb => cb());
+            scope.$on('$destroy', () => {
+                unsubscribe.forEach((cb) => cb());
                 unsubscribe.length = 0;
             });
 
-            function openMessage({ message, expand } = {}) {
+            function openMessage({ expand } = {}) {
                 if (scope.message.Type === 1) {
                     if ($state.includes('secured.drafts.**')) {
                         $rootScope.$emit('composer.load', scope.message);
@@ -246,13 +246,13 @@ angular.module('proton.message')
              * @return {Boolean}
              */
             scope.senderIsMe = () => {
-                return _.findIndex(authentication.user.Addresses, {Email: scope.message.Sender.Address}) !== -1;
+                return _.findIndex(authentication.user.Addresses, { Email: scope.message.Sender.Address }) !== -1;
             };
 
             /**
              * Display PGP
              */
-            scope.viewPgp = function() {
+            scope.viewPgp = function () {
                 let content = scope.message.Header + '\n\r' + scope.message.Body;
                 const filename = 'pgp.txt';
 
@@ -270,7 +270,7 @@ angular.module('proton.message')
              */
             scope.print = () => {
                 if (postMessageSupport) {
-                    const tab = $state.href('printer', {messageID: scope.message.ID}, {absolute: true});
+                    const tab = $state.href('printer', { messageID: scope.message.ID }, { absolute: true });
                     const url = window.location.href;
                     const arr = url.split('/');
                     const targetOrigin = arr[0] + '//' + arr[2];
@@ -313,7 +313,7 @@ angular.module('proton.message')
                 const message = new Message();
 
                 message.ToList = [email];
-                $rootScope.$emit('composer.new', {message, type: 'new'});
+                $rootScope.$emit('composer.new', { message, type: 'new' });
             };
 
             // TODO need review with label dropdown
@@ -329,7 +329,7 @@ angular.module('proton.message')
             scope.saveLabels = (labels, alsoArchive) => {
                 const messages = [scope.message];
 
-                $rootScope.$emit('messageActions', {action: 'label', data: {messages, labels, alsoArchive}});
+                $rootScope.$emit('messageActions', { action: 'label', data: { messages, labels, alsoArchive } });
             };
 
             /**
@@ -337,11 +337,11 @@ angular.module('proton.message')
              * @param {Object} label
              */
             scope.detachLabel = (label) => {
-                $rootScope.$emit('messageActions', {action: 'unlabel', data: {
+                $rootScope.$emit('messageActions', { action: 'unlabel', data: {
                     messageID: scope.message.ID,
                     conversationID: scope.message.ConversationID,
                     labelID: label.ID
-                }});
+                } });
             };
 
             /**
@@ -349,7 +349,7 @@ angular.module('proton.message')
              * @param {String} labelID
              */
             scope.goToLabel = (labelID = '') => {
-                const params = {page: undefined, filter: undefined, sort: undefined, label: labelID};
+                const params = { page: undefined, filter: undefined, sort: undefined, label: labelID };
 
                 $state.go('secured.label', params);
             };
@@ -361,7 +361,7 @@ angular.module('proton.message')
             scope.move = (mailbox) => {
                 const ids = [scope.message.ID];
 
-                $rootScope.$emit('messageActions', {action: 'move', data: {ids, mailbox}});
+                $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
             };
 
             /**
@@ -371,7 +371,7 @@ angular.module('proton.message')
                 const ids = [scope.message.ID];
 
                 scope.message.expand = true;
-                $rootScope.$emit('messageActions', {action: 'read', data: {ids}});
+                $rootScope.$emit('messageActions', { action: 'read', data: { ids } });
             };
 
             /**
@@ -381,7 +381,7 @@ angular.module('proton.message')
                 const ids = [scope.message.ID];
 
                 scope.message.expand = false;
-                $rootScope.$emit('messageActions', {action: 'unread', data: {ids}});
+                $rootScope.$emit('messageActions', { action: 'unread', data: { ids } });
             };
 
             /**
@@ -390,7 +390,7 @@ angular.module('proton.message')
             scope.delete = () => {
                 const ids = [scope.message.ID];
 
-                $rootScope.$emit('messageActions', {action: 'delete', data: {ids}});
+                $rootScope.$emit('messageActions', { action: 'delete', data: { ids } });
             };
 
             /**

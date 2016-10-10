@@ -1,10 +1,8 @@
 angular.module('proton.message')
-.directive('toggleBlockquote', ($rootScope) => ({
+.directive('toggleBlockquote', () => ({
     restrict: 'A',
     link(scope, element) {
-        var click = function(event) {
-
-            const target = event.target;
+        const onClick = ({ target }) => {
 
             if (target.tagName === 'BUTTON' && target.classList.contains('more')) {
                 event.preventDefault();
@@ -14,7 +12,9 @@ angular.module('proton.message')
             }
         };
 
-        element.on('click', click);
-        scope.$on('$destroy', () => { element.off('click', click); });
+        element.on('click', onClick);
+        scope.$on('$destroy', () => {
+            element.off('click', onClick);
+        });
     }
 }));

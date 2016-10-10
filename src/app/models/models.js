@@ -1,1 +1,1 @@
-angular.module("proton.models", []);
+angular.module('proton.models', []);

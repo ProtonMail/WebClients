@@ -35,7 +35,7 @@ angular.module('proton.message')
             const params = $location.search(mailto.substring(j + 1)).search();
             const message = new Message();
 
-            message.From = _.findWhere(authentication.user.Addresses, {ID: scope.message.AddressID});
+            message.From = _.findWhere(authentication.user.Addresses, { ID: scope.message.AddressID });
 
             if (to) {
                 message.ToList = toAddresses(to.split(','));
@@ -57,7 +57,7 @@ angular.module('proton.message')
                 message.DecryptedBody = params.body;
             }
 
-            $rootScope.$emit('composer.new', {message, type: 'new'});
+            $rootScope.$emit('composer.new', { message, type: 'new' });
         }
 
         element.on('click', click);

@@ -1,29 +1,29 @@
 angular.module('proton.card', [])
 
-.directive('cardIcon', function (Payment) {
+.directive('cardIcon', (Payment) => {
     return {
         restrict: 'E',
         replace: true,
         templateUrl: 'templates/directives/card-icon.tpl.html',
-        scope: {number: '='},
-        link: function(scope, element, attrs) {
-            var americanExpress = 'fa-cc-amex';
-            var dinersClub = 'fa-cc-diners-club';
-            var discover = 'fa-cc-discover';
-            var jcb = 'fa-cc-jcb';
-            var mastercard = 'fa-cc-mastercard';
-            var visa = 'fa-cc-visa';
-            var card = 'fa-credit-card';
+        scope: { number: '=' },
+        link(scope) {
+            const americanExpress = 'fa-cc-amex';
+            const dinersClub = 'fa-cc-diners-club';
+            const discover = 'fa-cc-discover';
+            const jcb = 'fa-cc-jcb';
+            const mastercard = 'fa-cc-mastercard';
+            const visa = 'fa-cc-visa';
+            const card = 'fa-credit-card';
 
             scope.class = card;
 
-            scope.$watch('number', function (newValue, oldValue) {
+            scope.$watch('number', (newValue) => {
                 scope.class = card;
 
                 // New value defined?
                 if (angular.isDefined(newValue)) {
                     Payment.cardType(newValue)
-                    .then(function(type) {
+                    .then((type) => {
                         switch (type) {
                             case 'visa':
                                 scope.class = visa;

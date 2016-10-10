@@ -1,17 +1,17 @@
-angular.module("proton.height", [])
+angular.module('proton.height', [])
     .directive('ptHeight', ['$window', function ($window) {
-        return function (scope, element, attrs) {
+        return function (scope, element) {
 
-            function setHeight () {
+            function setHeight() {
                 // set to zero
                 element.css({ height: '1px' });
-                var windowHeight = $window.innerHeight;
-                var elementOffset = element[0].getBoundingClientRect();
-                var height = windowHeight - elementOffset.top;
-                element.css({height: height + 'px'});
+                const windowHeight = $window.innerHeight;
+                const elementOffset = element[0].getBoundingClientRect();
+                const height = windowHeight - elementOffset.top;
+                element.css({ height: height + 'px' });
             }
 
-            var onResize = _.debounce(setHeight);
+            const onResize = _.debounce(setHeight);
 
             // Listen resize window
             $window.addEventListener('resize', onResize);
@@ -21,7 +21,7 @@ angular.module("proton.height", [])
             setTimeout(setHeight);
             // Remove listener on resize window
             scope
-                .$on('$destroy', function() {
+                .$on('$destroy', () => {
                     $window.removeEventListener('resize', onResize);
                 });
         };

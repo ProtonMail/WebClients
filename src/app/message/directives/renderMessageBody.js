@@ -21,7 +21,7 @@ angular.module('proton.message')
             el[0].addEventListener('animationstart', onAnimationStart, false);
 
             // Update the body after every update of the decryptedBody
-            let unsubscribe = scope
+            const unsubscribe = scope
                 .$watch(watcherKey, () => {
                     scope
                         .$applyAsync(() => {
