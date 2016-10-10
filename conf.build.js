@@ -63,6 +63,7 @@ module.exports = {
       "vendor/push.js/push.js",
       "vendor/angular-gettext/dist/angular-gettext.js",
       "vendor/awesomplete/awesomplete.js",
+      "vendor/angular-ui-indeterminate/dist/indeterminate.js",
       "vendor/bcryptjs/dist/bcrypt.js"
     ],
     bootstrap_components: [

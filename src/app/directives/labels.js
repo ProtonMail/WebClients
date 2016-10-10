@@ -1,4 +1,4 @@
-angular.module("proton.labels", [])
+angular.module('proton.labels', ['ui.indeterminate'])
 
 .directive('dropdownLabels', function (
     $filter,
@@ -44,34 +44,31 @@ angular.module("proton.labels", [])
                 dropdown.unbind('click', onClick);
             });
 
-
             scope.open = function() {
                 if (angular.isFunction(scope.getMessages) && angular.isFunction(scope.saveLabels)) {
-                    var messagesLabel = [];
-                    var messages = scope.getMessages();
+                    const messages = scope.getMessages();
 
                     scope.labelName = '';
                     scope.displayField = false;
                     scope.alsoArchive = Boolean(authentication.user.AlsoArchive);
                     scope.labels = angular.copy(authentication.user.Labels);
 
-                    _.each(messages, function(message) {
-                        messagesLabel = messagesLabel.concat(_.map(message.LabelIDs, function(id) {
-                            return id;
-                        }));
+                    let messagesLabels = [];
+                    messages.forEach(message => {
+                        messagesLabels = messagesLabels.concat(message.LabelIDs);
                     });
 
-                    messagesLabel = _.uniq(messagesLabel);
+                    scope.labels.forEach(label => {
+                        const count = messagesLabels.filter(id => id === label.ID).length;
 
-                    _.each(scope.labels, function(label) {
-                        var count = _.filter(messagesLabel, function(m) {
-                            return m === label.ID;
-                        }).length;
-
-                        label.Selected = count > 0;
+                        if (count > 0 && count < messages.length) {
+                            label.Selected = null;
+                        } else {
+                            label.Selected = (count > 0);
+                        }
                     });
 
-                    $timeout(function() {
+                    $timeout(() => {
                         angular.element("[ng-model='searchLabels']").focus();
                     }, 100);
                 }
