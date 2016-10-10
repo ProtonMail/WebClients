@@ -20,11 +20,13 @@ angular.module('proton.toggle', [])
             }
 
             function onClick(event) {
-                scope.status = !scope.status;
+                scope.$apply(() => {
+                    scope.status = !scope.status;
 
-                if (scope.name) {
-                    $rootScope.$emit(scope.name, scope.status);
-                }
+                    if (scope.name) {
+                        $rootScope.$emit(scope.name, scope.status);
+                    }
+                });
             }
 
             element.on('click', onClick);

@@ -34,6 +34,7 @@ angular.module('proton.controllers.Settings')
     $scope.displayName = authentication.user.DisplayName;
     $scope.PMSignature = Boolean(authentication.user.PMSignature);
     $scope.notificationEmail = authentication.user.NotificationEmail;
+    $scope.passwordReset = !!authentication.user.PasswordReset;
     $scope.dailyNotifications = !!authentication.user.Notify;
     $scope.desktopNotificationsStatus = desktopNotifications.status();
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
@@ -85,29 +86,42 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveNotification = function(form) {
-
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
 
+            const credentials = {
+                Password: currentPassword,
+                TwoFactorCode: twoFactorCode
+            };
 
             networkActivityTracker.track(
-                Setting.noticeEmail(
-                    {
-                        NotificationEmail: $scope.notificationEmail
-                    },
-                    {
-                        Password: currentPassword,
-                        TwoFactorCode: twoFactorCode
+                $q.when()
+                .then(() => {
+                    if ($scope.notificationEmail !== authentication.user.NotificationEmail) {
+                        return Setting.noticeEmail({
+                            NotificationEmail: $scope.notificationEmail
+                        }, credentials);
                     }
-                )
-                .then(function(result) {
+                })
+                .then(() => {
+                    if ($scope.passwordReset !== authentication.user.PasswordReset) {
+                        return Setting.passwordReset({
+                            PasswordReset: $scope.passwordReset ? 1 : 0
+                        }, credentials);
+                    }
+                })
+                .then((result) => {
                     authentication.user.NotificationEmail = $scope.notificationEmail;
+                    authentication.user.PasswordReset = $scope.passwordReset;
                     form.$setUntouched();
-                    notify({message: gettextCatalog.getString('Notification email saved', null), classes: 'notification-success'});
+                    notify({
+                        message: gettextCatalog.getString('Notification email saved', null),
+                        classes: 'notification-success'
+                    });
                 })
             )
             .catch((error) => {
-                // Nothing
+                notify({message: error, classes: 'notification-danger'});
             });
         }
 
