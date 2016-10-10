@@ -28,6 +28,7 @@ angular.module('proton.controllers.Settings')
     tools,
     User
 ) {
+
     const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.displayName = authentication.user.DisplayName;

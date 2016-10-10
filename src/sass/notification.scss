@@ -1,4 +1,5 @@
 body .cg-notify-message {
+    @include filledWidth();
     background: #43434f;
     box-shadow: inset 0 -1px 0 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.5);
     color: #fff !important;
@@ -7,11 +8,6 @@ body .cg-notify-message {
     padding: .75rem 1.25rem;
     z-index: 9999999 !important;
     font-size: 110%;
-    width: 50%;
-    margin-left: -25%;
-    a.pull-right {
-        cursor: pointer;
-    }
     &.notification-success {
         background-color: $green;
     }
@@ -29,6 +25,13 @@ body .cg-notify-message {
         bottom: 1rem !important;
         top: initial !important;
         left: initial !important;
+    }
+    .cg-notify-message-content {
+        flex:1;
+    }
+    .cg-notify-text-muted {
+        cursor:pointer;
+        margin-left:.75rem;
     }
 }
 
