@@ -115,12 +115,30 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                         $rootScope.$broadcast('organizationChange', { PlanName: 'free' });
                     }
 
+                    const subuser = angular.isDefined(user.OrganizationPrivateKey);
+                    // Required for subuser
+                    let organizationKeyPromise;
+                    if (subuser) {
+                        organizationKeyPromise = pmcw.decryptPrivateKey(user.OrganizationPrivateKey, mailboxPassword);
+                    }
+
                     _.each(user.Addresses, (address) => {
                         if (address.Keys.length === 0 && address.Status === 1 && privateUser === true) {
                             dirtyAddresses.push(address);
                         } else {
                             _.each(address.Keys, (key, index) => {
-                                promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then((pkg) => { // Decrypt private key with the mailbox password
+
+                                let decryptPromise;
+                                if (subuser) {
+                                    decryptPromise = organizationKeyPromise
+                                    .then((orgKey) => pmcw.decryptMessage(key.Token, orgKey))
+                                    .then((token) => pmcw.decryptPrivateKey(key.PrivateKey, token));
+                                }
+                                else {
+                                    decryptPromise = pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword);
+                                }
+
+                                promises.push(decryptPromise.then((pkg) => { // Decrypt private key with the mailbox password
                                     key.decrypted = true; // We mark this key as decrypted
                                     authentication.storeKey(address.ID, key.ID, pkg); // We store the package to the current service
 
