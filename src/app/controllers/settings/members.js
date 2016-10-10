@@ -30,8 +30,8 @@ angular.module('proton.controllers.Settings')
     function passwordModal(submit) {
         loginPasswordModal.activate({
             params: {
-                submit: submit,
-                cancel: function() {
+                submit,
+                cancel: () => {
                     loginPasswordModal.deactivate();
                 },
                 hasTwoFactor: authentication.user.TwoFactor
@@ -40,8 +40,8 @@ angular.module('proton.controllers.Settings')
     }
 
     $scope.roles = [
-        { label: gettextCatalog.getString('Master', null), value: MASTER },
-        { label: gettextCatalog.getString('Sub', null), value: SUB }
+        { label: gettextCatalog.getString('Admin', null), value: MASTER },
+        { label: gettextCatalog.getString('Member', null), value: SUB }
     ];
 
     // Listeners
@@ -100,7 +100,7 @@ angular.module('proton.controllers.Settings')
         }
     });
 
-    $scope.initialization = function () {
+    $scope.initialization = () => {
         if (members.data && members.data.Code === 1000) {
             $scope.members = members.data.Members;
         }
@@ -134,7 +134,7 @@ angular.module('proton.controllers.Settings')
      * We check if domains are verified
      * @return {Boolean}
      */
-    $scope.checkDomains = function () {
+    $scope.checkDomains = () => {
         let verified = false;
 
         if (angular.isArray($scope.domains)) {
@@ -151,7 +151,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Initialize select value with role user
      */
-    $scope.initRole = function (member) {
+    $scope.initRole = (member) => {
         const role = _.findWhere($scope.roles, { value: member.Role });
 
         if (angular.isDefined(role)) {
@@ -163,7 +163,7 @@ angular.module('proton.controllers.Settings')
      * Inform the back-end to change member role
      * @param {Object} member
      */
-    $scope.changeRole = function (member) {
+    $scope.changeRole = (member) => {
         const params = { Role: member.selectRole.value };
 
         // THIS IS WRONG
@@ -191,7 +191,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Save the organization name
      */
-    $scope.saveOrganizationName = function () {
+    $scope.saveOrganizationName = () => {
         Organization.update({ DisplayName: $scope.organization.DisplayName })
         .then((result) => {
             if (result.data && result.data.Code === 1000) {
@@ -212,63 +212,65 @@ angular.module('proton.controllers.Settings')
      * @param {Object} member
      * @param {Object} address
      */
-    $scope.unlinkAddress = function (member, address) {
-        const title = gettextCatalog.getString('Unlink address', null, 'Title');
-        const message = gettextCatalog.getString('Are you sure you want to unlink this address?', null, 'Info');
+    $scope.unlinkAddress = (member, address) => {
+        // const title = gettextCatalog.getString('Unlink address', null, 'Title');
+        // const message = gettextCatalog.getString('Are you sure you want to unlink this address?', null, 'Info');
 
-        confirmModal.activate({
-            params: {
-                title,
-                message,
-                confirm() {
-                    Address.disable(address.ID).then((result) => {
-                        if (result.data && result.data) {
-                            address.Status = 0;
-                            confirmModal.deactivate();
-                            notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
-                        }
-                    });
-                },
-                cancel() {
-                    confirmModal.deactivate();
-                }
-            }
-        });
+        // confirmModal.activate({
+        //     params: {
+        //         title,
+        //         message,
+        //         confirm() {
+        //             Address.disable(address.ID).then((result) => {
+        //                 if (result.data && result.data) {
+        //                     address.Status = 0;
+        //                     confirmModal.deactivate();
+        //                     notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
+        //                 }
+        //             });
+        //         },
+        //         cancel() {
+        //             confirmModal.deactivate();
+        //         }
+        //     }
+        // });
     };
 
     /**
      * Open modal to fix keys
      * @param {Object} address
      */
-    $scope.generate = function (address) {
-        const title = gettextCatalog.getString('Generate key pair', null, 'Title');
-        const message = gettextCatalog.getString('Generate key pair', null, 'Info');
+    $scope.generate = (address) => {
 
-        generateModal.activate({
-            params: {
-                title,
-                message,
-                addresses: [address],
-                password: authentication.getPassword(),
-                close(success) {
-                    if (success) {
-                        eventManager.call();
-                    }
+        // Broken and should not be necessary initially
+        // const title = gettextCatalog.getString('Generate key pair', null, 'Title');
+        // const message = gettextCatalog.getString('Generate key pair', null, 'Info');
 
-                    generateModal.deactivate();
-                }
-            }
-        });
+        // generateModal.activate({
+        //     params: {
+        //         title,
+        //         message,
+        //         addresses: [address],
+        //         password: authentication.getPassword(),
+        //         close(success) {
+        //             if (success) {
+        //                 eventManager.call();
+        //             }
+
+        //             generateModal.deactivate();
+        //         }
+        //     }
+        // });
     };
 
     /**
      * Switch a specific member to private
      * @param {Object} member
      */
-    $scope.makePrivate = function (member) {
-        var title = gettextCatalog.getString('Privatize Member', null);
-        var message = gettextCatalog.getString("Organization administrators will no longer be able to log in and control the member's account after privatization. This change is PERMANENT.", null);
-        var success = gettextCatalog.getString('Status Updated', null);
+    $scope.makePrivate = (member) => {
+        const title = gettextCatalog.getString('Privatize Member', null);
+        const message = gettextCatalog.getString("Organization administrators will no longer be able to log in and control the member's account after privatization. This change is PERMANENT.", null);
+        const success = gettextCatalog.getString('Status Updated', null);
 
         confirmModal.activate({
             params: {
@@ -277,7 +279,7 @@ angular.module('proton.controllers.Settings')
                 confirm() {
                     networkActivityTracker.track(
                         Member.privatize(member.ID)
-                        .then(function(result) {
+                        .then((result) => {
                             if (result.data && result.data.Code === 1000) {
                                 member.Private = 1;
                                 notify({ message: success, classes: 'notification-success' });
@@ -299,7 +301,7 @@ angular.module('proton.controllers.Settings')
      * Allow the current user to access to the mailbox of a specific member
      * @param {Object} member
      */
-    $scope.readMail = function(member) {
+    $scope.readMail = (member) => {
 
         function submit(currentPassword, twoFactorCode) {
 
@@ -309,7 +311,7 @@ angular.module('proton.controllers.Settings')
 
             const arr = window.location.href.split('/');
             const domain = arr[0] + '//' + arr[2];
-            const tab = $state.href('login.sub', {sub: true}, {absolute: true});
+            const tab = $state.href('login.sub', { sub: true }, { absolute: true });
 
             let ready = false;
             const receive = (event) => {
@@ -327,16 +329,15 @@ angular.module('proton.controllers.Settings')
             const child = window.open(tab, '_blank');
 
             networkActivityTracker.track(
-                Member.authenticate(member.ID, {Password: currentPassword, TwoFactorCode: twoFactorCode})
+                Member.authenticate(member.ID, { Password: currentPassword, TwoFactorCode: twoFactorCode })
                 .then((result) => {
-                    let sessionToken = result.data.SessionToken;
+                    const sessionToken = result.data.SessionToken;
 
-                    let cb = () => {
-                        if(ready) {
+                    const cb = () => {
+                        if (ready) {
                             // Send the session token and the organization owner’s mailbox password to the target URI
                             child.postMessage({ SessionToken: sessionToken, MailboxPassword: mailboxPassword }, domain);
-                        }
-                        else {
+                        } else {
                             $timeout(cb, 500, false);
                         }
                     };
@@ -345,10 +346,10 @@ angular.module('proton.controllers.Settings')
                 },
                 (error) => {
                     child.close();
-                    notify({message: error.error_description, classes: 'notification-danger'});
+                    notify({ message: error.error_description, classes: 'notification-danger' });
                 })
             )
-            .catch((error) => {
+            .catch(() => {
                 // Nothing
             });
         }
@@ -359,19 +360,19 @@ angular.module('proton.controllers.Settings')
     /**
      * Open a modal to create a new member
      */
-    $scope.add = function () {
+    $scope.add = () => {
         if ($scope.organization.MaxMembers - $scope.organization.UsedMembers < 1) {
-            notify({message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger'});
+            notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger' });
             return;
         }
 
         if ($scope.organization.MaxAddresss - $scope.organization.UsedAddresses < 1) {
-            notify({message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger'});
+            notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger' });
             return;
         }
 
         if ($scope.organization.MaxSpace - $scope.organization.UsedSpace < 1) {
-            notify({message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members', null, 'Error'), classes: 'notification-danger'});
+            notify({ message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members', null, 'Error'), classes: 'notification-danger' });
             return;
         }
 
@@ -382,7 +383,7 @@ angular.module('proton.controllers.Settings')
      * Display a modal to edit a member
      * @param {Object} member
      */
-    $scope.edit = function (member) {
+    $scope.edit = (member) => {
         memberModal.activate({
             params: {
                 member,
@@ -391,7 +392,7 @@ angular.module('proton.controllers.Settings')
                 domains: $scope.domains,
                 cancel(member) {
                     if (angular.isDefined(member)) {
-                        var index = _.findIndex($scope.members, {ID: member.ID});
+                        const index = _.findIndex($scope.members, { ID: member.ID });
 
                         if (index === -1) {
                             $scope.members.push(member);
@@ -410,7 +411,7 @@ angular.module('proton.controllers.Settings')
      * Remove member
      * @param {Object} member
      */
-    $scope.remove = function (member) {
+    $scope.remove = (member) => {
         const title = gettextCatalog.getString('Remove member', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to remove this member?', null, 'Info');
         const index = $scope.members.indexOf(member);
@@ -437,37 +438,6 @@ angular.module('proton.controllers.Settings')
                 },
                 cancel() {
                     confirmModal.deactivate();
-                }
-            }
-        });
-    };
-
-    /**
-     * Open modal to manage member's storage
-     * @param {Object} member
-     */
-    $scope.manageStorage = function (member) {
-        storageModal.activate({
-            params: {
-                member,
-                organization: $scope.organization,
-                submit(space) {
-                    networkActivityTracker.track(Member.quota(member.ID, space).then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            eventManager.call();
-                            storageModal.deactivate();
-                            notify({ message: gettextCatalog.getString('Quota updated', null), classes: 'notification-success' });
-                        } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
-                        }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
-                    }));
-                },
-                cancel() {
-                    storageModal.deactivate();
                 }
             }
         });
