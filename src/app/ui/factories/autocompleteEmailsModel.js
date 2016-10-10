@@ -8,7 +8,7 @@ angular.module('proton.ui')
             CLOSE_TAG_AUTOCOMPLETE_RAW
         } = CONSTANTS.EMAIL_FORMATING;
 
-        const REGEXP_ESCAPE_AUTOCOMPLETE = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE_RAW}|${CLOSE_TAG_AUTOCOMPLETE_RAW}`, 'ig');
+        const matchEscapeAutocomplete = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE_RAW}|${CLOSE_TAG_AUTOCOMPLETE_RAW}`, 'ig');
 
         const MAP_TAGS = {
             [OPEN_TAG_AUTOCOMPLETE_RAW]: OPEN_TAG_AUTOCOMPLETE,
@@ -36,7 +36,7 @@ angular.module('proton.ui')
          */
         const relaceTagAutocomplete = (input = '') => {
             return input
-                .replace(REGEXP_ESCAPE_AUTOCOMPLETE(), (match) => MAP_TAGS[match] || '');
+                .replace(matchEscapeAutocomplete(), (match) => MAP_TAGS[match] || '');
         };
 
         /**
@@ -62,7 +62,7 @@ angular.module('proton.ui')
                 .first(10)
                 .value();
 
-            const list = collection.length ? collection : [{ label: value, value}];
+            const list = collection.length ? collection : [{ label: value, value }];
 
             return {
                 list,
@@ -99,7 +99,7 @@ angular.module('proton.ui')
         return (previousList = []) => {
 
             // Prevent empty names if we only have the address (new email, no contact yet for this one)
-            let list  = angular.copy(previousList)
+            let list = angular.copy(previousList)
                 .map(({ Address = '', Name = '' }) => ({ Name: Name || Address, Address }));
 
             const all = () => list;
@@ -116,7 +116,7 @@ angular.module('proton.ui')
 
                 // If the mail is not already inside the collection, add it
                 if (!list.some(({ Address }) => Address === data.Address)) {
-                    list.push(angular.extend({}, data , {
+                    list.push(angular.extend({}, data, {
                         invalid: !regexEmail.test(data.Address)
                     }));
                 }
@@ -127,7 +127,7 @@ angular.module('proton.ui')
              * @param  {String} options.Address
              * @return {Array}
              */
-            const remove = ({ Address }) => list = list.filter((item) => item.Address !== Address);
+            const remove = ({ Address }) => (list = list.filter((item) => item.Address !== Address));
 
             /**
              * Remove the last contact from the list

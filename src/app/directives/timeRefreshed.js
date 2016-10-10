@@ -1,13 +1,13 @@
-angular.module("proton.time", [])
-.directive("timeRefreshed", function($filter) {
+angular.module('proton.time', [])
+.directive('timeRefreshed', ($filter) => {
     return {
-        link: function(scope, element, attrs) {
+        link(scope, element, attrs) {
 
-            var interval = attrs.timeInterval || 1000;
-            var filter = attrs.timeFilter || 'delay';
-            var isTime = element[0].nodeName === 'TIME';
+            const interval = attrs.timeInterval || 1000;
+            const filter = attrs.timeFilter || 'delay';
+            const isTime = element[0].nodeName === 'TIME';
 
-            var id = setInterval(updateTime, interval);
+            const id = setInterval(updateTime, interval);
 
             function updateTime() {
                 isTime && element[0].setAttribute('datetime', (new Date(+attrs.timeRefreshed || Date.now())).toISOString());
@@ -17,7 +17,7 @@ angular.module("proton.time", [])
             updateTime();
 
             scope
-                .$on('$destroy', function () {
+                .$on('$destroy', () => {
                     clearInterval(id);
                 });
         }

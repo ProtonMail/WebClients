@@ -1,6 +1,6 @@
-angular.module("proton.models.addresses", [])
+angular.module('proton.models.addresses', [])
 
-.factory("Address", function($http, $q, url) {
+.factory('Address', ($http, $q, url) => {
     return {
         // POST
         /**
@@ -8,7 +8,7 @@ angular.module("proton.models.addresses", [])
          * @param {Object} address
          * @return {Promise}
          */
-        create: function(address) {
+        create(address) {
             return $http.post(url.get() + '/addresses', address);
         },
         // POST
@@ -17,7 +17,7 @@ angular.module("proton.models.addresses", [])
          * @param {Object} address
          * @return {Promise}
          */
-        setup: function(params) {
+        setup(params) {
             return $http.post(url.get() + '/addresses/setup', params);
         },
         // PUT
@@ -27,7 +27,7 @@ angular.module("proton.models.addresses", [])
          * @param {Object} params
          * @return {Promise}
          */
-        edit: function(addressID, params) {
+        edit(addressID, params) {
             return $http.put(url.get() + '/addresses/' + addressID, params);
         },
         /**
@@ -35,7 +35,7 @@ angular.module("proton.models.addresses", [])
          * @param {String} addressID
          * @return {Promise}
          */
-        enable: function(addressID) {
+        enable(addressID) {
             return $http.put(url.get() + '/addresses/' + addressID + '/enable');
         },
         /**
@@ -43,7 +43,7 @@ angular.module("proton.models.addresses", [])
          * @param {String} addressID
          * @return {Promise}
          */
-        disable: function(addressID) {
+        disable(addressID) {
             return $http.put(url.get() + '/addresses/' + addressID + '/disable');
         },
         // DELETE
@@ -52,7 +52,7 @@ angular.module("proton.models.addresses", [])
          * @param {String} addressID
          * @return {Promise}
          */
-        delete: function(addressID) {
+        delete(addressID) {
             return $http.delete(url.get() + '/addresses/' + addressID);
         }
     };

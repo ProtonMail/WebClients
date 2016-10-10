@@ -14,9 +14,9 @@ angular.module('proton.composer')
             const isBootstrap = tools.findBootstrapEnvironment() === 'xs';
             let overlap = 0;
 
-            if (!isBootstrap && ((windowWidth / count) < width) ) {
+            if (!isBootstrap && ((windowWidth / count) < width)) {
                 /* overlap is a ratio that will share equaly the space available between overlayed composers. */
-                overlap = ((windowWidth - width - (2 * margin)) / (count - 1) );
+                overlap = ((windowWidth - width - (2 * margin)) / (count - 1));
             }
 
             return {
@@ -60,7 +60,7 @@ angular.module('proton.composer')
             $list
                 .forEach((node, index) => {
                     const config = sizes(node, size);
-                    const styles = {visibility: 'visible'};
+                    const styles = { visibility: 'visible' };
 
                     // Better for rendering
                     styles.transform = `translateX(-${getPositionRight(config, index)}px)`;
@@ -77,7 +77,7 @@ angular.module('proton.composer')
             link(scope, el) {
 
                 const unsubscribe = $rootScope
-                    .$on('composer.update', (e, { type, data }) => {
+                    .$on('composer.update', (e, { data }) => {
                         // Need to perform the rendering after the $digest to match each new composer
                         scope
                             .$applyAsync(() => {

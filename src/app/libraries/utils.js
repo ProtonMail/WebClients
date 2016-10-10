@@ -445,3 +445,18 @@ m("intlTelInputUtils.getNumberType",function(a,b){try{var c=N.j(),d;var e=Z(c,a,
 m("intlTelInputUtils.getValidationError",function(a,b){try{var c=N.j(),d;var e=Z(c,a,b),f=S(e),g=e.g();if(g in M){var h,l=T(c,g,U(g));h=w(l,1);var p=z(h,3);d=Y(p,f)}else d=1;return d}catch(v){return"Invalid country calling code"==v?1:"The string supplied did not seem to be a phone number"==v?4:"Phone number too short after IDD"==v||"The string supplied is too short to be a phone number"==v?2:"The string supplied is too long to be a phone number"==v?3:-99}});
 m("intlTelInputUtils.isValidNumber",function(a,b){try{var c=N.j(),d=Z(c,a,b),e;var f=Ia(c,d),g=d.g(),h=T(c,g,f),l;if(!(l=null==h)){var p;if(p="001"!=f){var v,oa=V(c,f);if(null==oa)throw"Invalid region code: "+f;v=oa.g();p=g!=v}l=p}if(l)e=!1;else{var Ma=S(d);e=-1!=W(Ma,h)}return e}catch(Na){return!1}});m("intlTelInputUtils.numberFormat",{E164:0,INTERNATIONAL:1,NATIONAL:2,RFC3966:3});
 m("intlTelInputUtils.numberType",{FIXED_LINE:0,MOBILE:1,FIXED_LINE_OR_MOBILE:2,TOLL_FREE:3,PREMIUM_RATE:4,SHARED_COST:5,VOIP:6,PERSONAL_NUMBER:7,PAGER:8,UAN:9,VOICEMAIL:10,UNKNOWN:-1});m("intlTelInputUtils.validationError",{IS_POSSIBLE:0,INVALID_COUNTRY_CODE:1,TOO_SHORT:2,TOO_LONG:3,NOT_A_NUMBER:4});})();
+
+/**
+ * The requestAnimationFrame polyfill
+ * Paul Irish.
+ * {@link http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/}
+ */
+/*  eslint no-underscore-dangle: "off" */
+window._rAF = window._rAF || (function () {
+    return window.requestAnimationFrame ||
+     window.webkitRequestAnimationFrame ||
+     window.mozRequestAnimationFrame ||
+     function (callback) {
+         window.setTimeout(callback, 16);
+     };
+})();

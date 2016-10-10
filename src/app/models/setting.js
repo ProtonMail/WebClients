@@ -1,110 +1,92 @@
 angular.module('proton.models.setting', ['proton.srp'])
-
-.factory('Setting', function($http, url, srp) {
-    var Setting = {
-        password: function(creds = {}, newPassword = '') {
-            return srp.randomVerifier(newPassword).then(function(auth_params) {
-                return srp.performSRPRequest("PUT", '/settings/password', auth_params, creds);
-            })
-            .catch((error) => {
-                if(error.error_description) {
-                    return Promise.reject(error.error_description);
-                }
-                else {
-                    return Promise.reject(error);
-                }
-            });
+.factory('Setting', ($http, url, srp) => {
+    const Setting = {
+        password(creds = {}, newPassword = '') {
+            return srp
+                .getPasswordParams(newPassword)
+                .then((data) => srp.performSRPRequest('PUT', '/settings/password', data, creds))
+                .catch((error = {}) => Promise.reject(error.error_description || error));
         },
-        noticeEmail: function(params, creds) {
-            return srp.performSRPRequest('PUT', '/settings/noticeemail', params, creds)
-            .catch((error) => {
-                throw error.error_description || error;
-            });
+        passwordReset(params, creds) {
+            return srp
+                .performSRPRequest('PUT', '/settings/reset', params, creds)
+                .catch((error = {}) => {
+                    throw error.error_description || error;
+                });
         },
-        passwordReset: function(params, creds) {
-            return srp.performSRPRequest('PUT', '/settings/reset', params, creds)
-            .catch((error) => {
-                throw error.error_description || error;
-            });
+        noticeEmail(params, creds) {
+            return srp
+                .performSRPRequest('PUT', '/settings/noticeemail', params, creds)
+                .catch((error = {}) => {
+                    throw error.error_description || error;
+                });
         },
-        signature: function(params) {
+        signature(params) {
             return $http.put(url.get() + '/settings/signature', params);
         },
-        PMSignature: function(params){
+        PMSignature(params) {
             return $http.put(url.get() + '/settings/pmsignature', params);
         },
-        display: function(params) {
+        display(params) {
             return $http.put(url.get() + '/settings/display', params);
         },
-        addressOrder: function(params) {
+        addressOrder(params) {
             return $http.put(url.get() + '/settings/addressorder', params);
         },
-        theme: function(params) {
+        theme(params) {
             return $http.put(url.get() + '/settings/theme', params);
         },
-        notify: function(params) {
+        notify(params) {
             return $http.put(url.get() + '/settings/notify', params);
         },
-        autosave: function(params) {
+        autosave(params) {
             return $http.put(url.get() + '/settings/autosave', params);
         },
-        setLanguage: function(params) {
+        setLanguage(params) {
             return $http.put(url.get() + '/settings/language', params);
         },
-        setLogging: function(params) {
+        setLogging(params) {
             return $http.put(url.get() + '/settings/logauth', params);
         },
-        setComposerMode: function(params) {
+        setComposerMode(params) {
             return $http.put(url.get() + '/settings/composermode', params);
         },
-        setMessageStyle: function(params) {
+        setMessageStyle(params) {
             return $http.put(url.get() + '/settings/messagebuttons', params);
         },
-        setShowImages: function(params) {
+        setShowImages(params) {
             return $http.put(url.get() + '/settings/showimages', params);
         },
-        setShowEmbedded: function(params) {
+        setShowEmbedded(params) {
             return $http.put(url.get() + '/settings/showembedded', params);
         },
-        setViewlayout: function(params) {
+        setViewlayout(params) {
             return $http.put(url.get() + '/settings/viewlayout', params);
         },
-        setViewMode: function(params) {
+        setViewMode(params) {
             return $http.put(url.get() + '/settings/viewmode', params);
         },
-        setHotkeys: function(params) {
+        setHotkeys(params) {
             return $http.put(url.get() + '/settings/hotkeys', params);
         },
         setThreading(params) {
             return $http.put(url.get() + '/settings/threading', params);
         },
-        invoiceText: function(params) {
+        invoiceText(params) {
             return $http.put(url.get() + '/settings/invoicetext', params);
         },
-        alsoArchive: function(params) {
+        alsoArchive(params) {
             return $http.put(url.get() + '/settings/alsoarchive', params);
         },
-        enableTwoFactor: function(params, creds) {
-            return srp.performSRPRequest("POST", '/settings/2fa', params, creds)
-            .catch((error) => {
-                if(error.error_description) {
-                    return Promise.reject(error.error_description);
-                }
-                else {
-                    return Promise.reject(error);
-                }
-            });
+        enableTwoFactor(params, creds) {
+            return srp
+                .performSRPRequest('POST', '/settings/2fa', params, creds)
+                .catch((error = {}) => Promise.reject(error.error_description || error));
         },
-        disableTwoFactor: function(creds = {}) {
-            return srp.performSRPRequest("PUT", '/settings/2fa', {}, creds)
-            .catch((error) => {
-                if(error.error_description) {
-                    return Promise.reject(error.error_description);
-                }
-                else {
-                    return Promise.reject(error);
-                }
-            });
+        disableTwoFactor(creds = {}) {
+            return srp
+                .performSRPRequest('PUT', '/settings/2fa', {}, creds)
+                .catch((error = {}) => Promise.reject(error.error_description || error));
         }
     };
 

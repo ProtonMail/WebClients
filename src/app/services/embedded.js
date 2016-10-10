@@ -1,5 +1,5 @@
-angular.module("proton.embedded", [])
-.factory("embedded", function(
+angular.module('proton.embedded', [])
+.factory('embedded', (
     $log,
     $q,
     $state,
@@ -11,15 +11,13 @@ angular.module("proton.embedded", [])
     secureSessionStorage,
     networkActivityTracker,
     AttachmentLoader,
-    attachmentFileFormat,
-    pmcw
-) {
+    attachmentFileFormat) => {
 
     // Loop through attachments and create an array of
     // CIDs for any embedded image attachments
-    var Blobs = {};
+    const Blobs = {};
     let CIDList = {};
-    let MAP_BLOBS = {};
+    const MAP_BLOBS = {};
 
     const REGEXP_IS_INLINE = /^inline/i;
     const REGEXP_CID_START = /^cid:/g;
@@ -28,18 +26,24 @@ angular.module("proton.embedded", [])
     const DIV = document.createElement('DIV');
     const urlCreator = () => window.URL || window.webkitURL;
 
+    function isEmbedded({ Headers = {}, MIMEType = '' }) {
+        const disposition = Headers['content-disposition'];
+
+        return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition) && attachmentFileFormat.isEmbedded(MIMEType);
+    }
+
     /**
      * Removes enclosing quotes ("", '', &lt;&gt;) from a string
      * @param {String} value - String to be converted
      * @return {String} value - Converted string
      */
-    const trimQuotes = (value) => {
-        value = (value || '').trim();
+    const trimQuotes = (input) => {
+        const value = (input || '').trim();
 
         if ((value.charAt(0) === '"' && value.charAt(value.length - 1) === '"') ||
             (value.charAt(0) === "'" && value.charAt(value.length - 1) === "'") ||
             (value.charAt(0) === '<' && value.charAt(value.length - 1) === '>')) {
-            value = value.substr(1, value.length - 2);
+            return value.substr(1, value.length - 2);
         }
 
         return value;
@@ -60,7 +64,7 @@ angular.module("proton.embedded", [])
                     node.classList.add(EMBEDDED_CLASSNAME);
                 });
         },
-        cid(nodes, cid, url) {
+        cid(nodes, cid) {
             /**
              * Don't set the src attribute since it's evaluated and cid:cid create an error (#3330)
              * NET::ERR_UNKNOWN_URL_SCHEME because src="cid:xxxx" is not valid HTML
@@ -76,11 +80,11 @@ angular.module("proton.embedded", [])
     };
 
     const counterState = {
-        add(message){
-            message.NumEmbedded = message.NumEmbedded + 1;
+        add(message) {
+            message.NumEmbedded++;
         },
-        remove(message){
-            message.NumEmbedded = message.NumEmbedded-1;
+        remove(message) {
+            message.NumEmbedded--;
         }
     };
 
@@ -114,9 +118,8 @@ angular.module("proton.embedded", [])
 
         Object
             .keys(CIDList[message.ID] || {})
-            .forEach((cid, index) => {
+            .forEach((cid) => {
                 const current = Blobs[cid];
-                const isContentLocation = (current) ? current.isContentLocation : false;
                 const url = (current) ? current.url : '';
                 const selector = `img[src="${cid}"], img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`;
                 const nodes = [].slice.call(testDiv.querySelectorAll(selector));
@@ -137,7 +140,7 @@ angular.module("proton.embedded", [])
      * @return {Boolean}
      */
     const xray = (message) => {
-        var attachs =  message.Attachments || [];
+        const attachs = message.Attachments || [];
         message.NumEmbedded = 0;
 
         /* initiate a CID list */
@@ -146,26 +149,26 @@ angular.module("proton.embedded", [])
         // Check if we have attachments
         if (attachs.length) {
                 // Build a list of cids
-                attachs.forEach((attachment) => {
+            attachs.forEach((attachment) => {
                     // BE require an inline content-disposition!
-                    if (embedded.isEmbedded(attachment)) {
-                        const {Headers = {}, Name = ''} = attachment;
-                        let cid;
+                if (isEmbedded(attachment)) {
+                    const { Headers = {}, Name = '' } = attachment;
+                    let cid;
 
-                        if (Headers['content-id']) {
+                    if (Headers['content-id']) {
                             // remove the < >.
                             // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
-                            cid = trimQuotes(Headers['content-id']);
-                        } else if (Headers['content-location']) {
+                        cid = trimQuotes(Headers['content-id']);
+                    } else if (Headers['content-location']) {
                             // We can find an image without cid so base64 the location
-                            cid = Headers['content-location'];
-                        }
-
-                        Headers.embedded = 1;
-                        counterState.add(message);
-                        MAP[cid] = { Headers, Name };
+                        cid = Headers['content-location'];
                     }
-                });
+
+                    Headers.embedded = 1;
+                    counterState.add(message);
+                    MAP[cid] = { Headers, Name };
+                }
+            });
 
             return Object.keys(MAP).length > 0;
         }
@@ -187,20 +190,26 @@ angular.module("proton.embedded", [])
     const store = (message = { isDraft: angular.noop }, cid = '') => {
 
         const Attachments = CIDList[message.ID] || {};
-        const { Headers = {}} = Attachments[cid] || {};
+        const { Headers = {} } = Attachments[cid] || {};
         const key = getHashKey(message);
         MAP_BLOBS[key] = MAP_BLOBS[key] || [];
 
         return (data, MIME) => {
             // Turn the decrypted attachment data into a blob.
-            let blob = new Blob([data], {type: MIME});
+            let blob = new Blob([data], { type: MIME });
             // Generate the URL
             let imageUrl = urlCreator().createObjectURL(blob);
             // Store the generated URL
-            Blobs[ cid ] = { url:imageUrl, isContentLocation: typeof Headers['content-location'] !== 'undefined' && typeof Headers['content-id'] === 'undefined' };
+            Blobs[cid] = { url: imageUrl, isContentLocation: typeof Headers['content-location'] !== 'undefined' && typeof Headers['content-id'] === 'undefined' };
             // this is supposed to remove the blob so it
             // can be garbage collected. we dont save it (for now)
-            blob = null, imageUrl = null;
+            blob = null;
+            imageUrl = null;
+
+            if (!Array.isArray(MAP_BLOBS[key])) {
+                debugger;
+            }
+
             MAP_BLOBS[key].push(cid);
         };
     };
@@ -235,12 +244,11 @@ angular.module("proton.embedded", [])
                     .filter(({ Headers = {}, Name = '' } = {}) => {
                         if (Headers['content-location']) {
                             return Name === contentName;
-                        } else {
-                            return Headers['content-id'] === contentId;
                         }
+                        return Headers['content-id'] === contentId;
                     })[0];
 
-                attachment && acc.push({ cid, attachment});
+                attachment && acc.push({ cid, attachment });
                 return acc;
             }, []);
     };
@@ -251,7 +259,7 @@ angular.module("proton.embedded", [])
      * a CID header, and store them for reusability purpose
      * @param {Resource} message
      */
-    const decrypt = function(message) {
+    const decrypt = function (message) {
         const deferred = $q.defer();
 
         const list = findInlineAttachements(message);
@@ -261,7 +269,7 @@ angular.module("proton.embedded", [])
         // For a draft if we close it before the end of the attachement upload, there are no keyPackets
         const promise = _.chain(list)
             .filter(({ attachment }) => attachment.KeyPackets)
-            .filter(({ cid, attachment }) => !Blobs[cid] && show)
+            .filter(({ cid }) => !Blobs[cid] && show)
             .map(({ cid, attachment }) => {
                 const storeAttachement = store(message, cid);
                 return AttachmentLoader
@@ -272,18 +280,18 @@ angular.module("proton.embedded", [])
 
         $q.all(promise)
             .then(() => {
-                const computed =  list
+                const computed = list
                     .reduce((acc, key) => (acc[key] = Blobs[key], acc), Object.create(null));
                 deferred.resolve(computed);
             })
             .catch(deferred.reject);
 
-       if (!promise.length) {
+        if (!promise.length) {
           // all cid was already stored, we can resolve
-          deferred.resolve({});
-       }
+            deferred.resolve({});
+        }
 
-       return deferred.promise;
+        return deferred.promise;
     };
 
 
@@ -292,11 +300,11 @@ angular.module("proton.embedded", [])
     // once we navigate away from a conversation
     // eg. this can be triggered from the conversations controller
 
-   function deallocate(message = {}) {
+    function deallocate(message = {}) {
         const key = getHashKey(message);
         Object
             .keys(MAP_BLOBS)
-            .filter(k => k !== key && k.indexOf(PREFIX_DRAFT) !== 0) // Do nothing for draft and itself
+            .filter((k) => k !== key && k.indexOf(PREFIX_DRAFT) !== 0) // Do nothing for draft and itself
             .forEach(deallocateList);
     }
 
@@ -320,12 +328,8 @@ angular.module("proton.embedded", [])
         delete MAP_BLOBS[key];
     }
 
-    var embedded = {
-        isEmbedded({Headers = {}, MIMEType = ''}) {
-            const disposition = Headers['content-disposition'];
-
-            return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition) && attachmentFileFormat.isEmbedded(MIMEType);
-        },
+    const embedded = {
+        isEmbedded,
 
         /**
          * Parse a message in order to
@@ -341,7 +345,8 @@ angular.module("proton.embedded", [])
             CIDList = {};
 
 
-            var deferred = $q.defer(), content = text || message.getDecryptedBody();
+            const deferred = $q.defer();
+            const content = text || message.getDecryptedBody();
 
             if (xray(message, content)) {
                 // Check if the content has cid attachments
@@ -365,19 +370,19 @@ angular.module("proton.embedded", [])
                 deferred.resolve(content);
             }
 
-           return deferred.promise;
+            return deferred.promise;
 
         },
-        getCid: function(headers) {
+        getCid(headers) {
             return headers && (trimQuotes(headers['content-id']) || headers['content-location']);
         },
-        getBlob: function(cid) {
-            var xhr = new XMLHttpRequest();
-            var deferred = $q.defer();
+        getBlob(cid) {
+            const xhr = new XMLHttpRequest();
+            const deferred = $q.defer();
 
             xhr.open('GET', Blobs[cid].url, true);
             xhr.responseType = 'blob';
-            xhr.onload = function(e) {
+            xhr.onload = function onload() {
                 if (this.status === 200) {
                     deferred.resolve(this.response);
                 }
@@ -387,11 +392,11 @@ angular.module("proton.embedded", [])
 
             return deferred.promise;
         },
-        addEmbedded(message, cid, data, MIME){
+        addEmbedded(message, cid, data, MIME) {
             store(message, cid)(data, MIME);
             return Blobs[cid];
         },
-        removeEmbedded(message, Headers, content = ''){
+        removeEmbedded(message, Headers, content = '') {
             const disposition = Headers['content-disposition'];
 
             if (disposition && REGEXP_IS_INLINE.test(disposition)) {
@@ -407,10 +412,10 @@ angular.module("proton.embedded", [])
                     cid = Headers['content-location'];
                 }
 
-                var tempDOM = $(`<div>${content || message.getDecryptedBody()}</div>`);
+                const tempDOM = $(`<div>${content || message.getDecryptedBody()}</div>`);
                 counterState.remove(message);
-                var nodes = tempDOM.find(`img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`);
-                if(nodes.length > 0) {
+                const nodes = tempDOM.find(`img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`);
+                if (nodes.length > 0) {
                     nodes.remove();
                 }
 
@@ -446,9 +451,9 @@ angular.module("proton.embedded", [])
 
             if (resultXray && CIDList[message.ID]) {
                 return CIDList[message.ID][cid] || {};
-            } else {
-                return {};
             }
+
+            return {};
         }
     };
 

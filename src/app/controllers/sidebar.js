@@ -1,6 +1,6 @@
-angular.module("proton.controllers.Sidebar", ["proton.constants"])
+angular.module('proton.controllers.Sidebar', ['proton.constants'])
 
-.controller('SidebarController', function(
+.controller('SidebarController', (
     $http,
     $log,
     $rootScope,
@@ -21,12 +21,11 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     networkActivityTracker,
     notify,
     tools
-) {
+) => {
 
     // Variables
     const unsubscribe = [];
-    var mailboxes = CONSTANTS.MAILBOX_IDENTIFIERS;
-    var timeoutRefresh;
+    let timeoutRefresh;
 
     $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
     $scope.dateVersion = CONFIG.date_version;
@@ -39,37 +38,37 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
 
     $scope.appVersion = CONFIG.app_version;
 
-    $scope.hideMobileSidebar = function() {
+    $scope.hideMobileSidebar = function () {
         $rootScope.$broadcast('sidebarMobileToggle', false);
     };
 
     // Listeners
-    unsubscribe.push($rootScope.$on('deleteLabel', (event, ID) => {
+    unsubscribe.push($rootScope.$on('deleteLabel', () => {
         $scope.$applyAsync(() => {
             $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
         });
     }));
 
-    unsubscribe.push($rootScope.$on('createLabel', (event, ID, label) => {
+    unsubscribe.push($rootScope.$on('createLabel', () => {
         $scope.$applyAsync(() => {
             $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
         });
     }));
 
-    unsubscribe.push($rootScope.$on('updateLabel', (event, ID, label) => {
+    unsubscribe.push($rootScope.$on('updateLabel', () => {
         $scope.$applyAsync(() => {
             $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
         });
     }));
 
-    unsubscribe.push($rootScope.$on('updateLabels', (event) => {
+    unsubscribe.push($rootScope.$on('updateLabels', () => {
         $scope.$applyAsync(() => {
             $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
         });
     }));
 
-    $scope.$on('$destroy', function(event) {
-        unsubscribe.forEach(cb => cb());
+    $scope.$on('$destroy', () => {
+        unsubscribe.forEach((cb) => cb());
         unsubscribe.length = 0;
         $timeout.cancel(timeoutRefresh);
     });
@@ -77,8 +76,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     /**
      * Send request to get the last event, empty the cache for the current mailbox and then refresh the content automatically
      */
-    $scope.lastEvent = function() {
-        var mailbox = tools.currentMailbox();
+    $scope.lastEvent = function () {
 
         // Start to spin icon on the view
         $scope.spinMe = true;
@@ -87,12 +85,12 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
         $timeout.cancel(timeoutRefresh);
 
         // Debounce
-        timeoutRefresh = $timeout(function() {
+        timeoutRefresh = $timeout(() => {
             // Get the latest event
-            eventManager.call().then(function() {
+            eventManager.call().then(() => {
                 // Stop spin icon
                 $scope.spinMe = false;
-            }, function(error) {
+            }, (error) => {
                 $log.error(error);
                 // Stop spin icon
                 $scope.spinMe = false;
@@ -104,28 +102,27 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * Returns a hexidecimal string for label colors
      * @return {String} "#333" or "#cc9999"
      */
-    $scope.color = function(label) {
+    $scope.color = function (label) {
         if (label && label.Color) {
             return {
                 color: label.Color
             };
         }
-        else {
-            // TODO log an error here that the label has no color.
-            return {
-                color: '#CCCCCC'
-            };
-        }
+
+        // TODO log an error here that the label has no color.
+        return {
+            color: '#CCCCCC'
+        };
     };
 
     /**
      * Open folder
      * @param {String} route
      */
-    $scope.goTo = function(route) {
-        var sameRoute = $state.$current.name === route;
-        var firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
-        var params = {page: null, filter: null, sort: null};
+    $scope.goTo = function (route) {
+        const sameRoute = $state.$current.name === route;
+        const firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
+        const params = { page: null, filter: null, sort: null };
 
         if (sameRoute === true && firstPage === true) {
             // Hide sidebar for mobile
@@ -141,8 +138,8 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * Open label folder
      * @param {Object} label
      */
-    $scope.goToLabel = function(label) {
-        var params = {page: undefined, filter: undefined, sort: undefined, label: label.ID};
+    $scope.goToLabel = function (label) {
+        const params = { page: undefined, filter: undefined, sort: undefined, label: label.ID };
 
         $state.go('secured.label', params);
     };
@@ -150,7 +147,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
     /**
      * Return if the folder need to be `active`
      */
-    $scope.activeLabel = function(label) {
+    $scope.activeLabel = function (label) {
         return $stateParams.label === label.ID;
     };
 
@@ -158,7 +155,7 @@ angular.module("proton.controllers.Sidebar", ["proton.constants"])
      * Returns a string for the storage bar
      * @return {String} "1.25/10 GB"
      */
-    $scope.renderStorageBar = function() {
+    $scope.renderStorageBar = function () {
         return tools.renderStorageBar(authentication.user.UsedSpace, authentication.user.MaxSpace);
     };
 

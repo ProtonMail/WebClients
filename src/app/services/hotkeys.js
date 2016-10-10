@@ -1,48 +1,48 @@
 angular.module('proton.hotkeys', [])
 .factory('hotkeys', (hotkeyModal, $rootScope, $state, authentication, CONSTANTS, Message) => {
-    const composer = (event) => {
+    const composer = () => {
         const type = 'new';
         const message = new Message();
 
-        $rootScope.$emit('composer.new', {message, type});
+        $rootScope.$emit('composer.new', { message, type });
 
         return false;
     };
 
 
-    const reply = function(event) {
+    const reply = function () {
         $rootScope.$emit('replyConversation');
 
         return false;
     };
 
 
-    const replyAll = function(event) {
+    const replyAll = function () {
         $rootScope.$emit('replyAllConversation');
 
         return false;
     };
 
 
-    const forward = function(event) {
+    const forward = function () {
         $rootScope.$emit('forwardConversation');
 
         return false;
     };
 
-    const nextElement = (event) => {
+    const nextElement = () => {
         $rootScope.$broadcast('nextElement');
 
         return false;
     };
 
-    const previousElement = (event) => {
+    const previousElement = () => {
         $rootScope.$broadcast('previousElement');
 
         return false;
     };
 
-    const openMarked = (event) => {
+    const openMarked = () => {
         $rootScope.$broadcast('openMarked');
 
         // This function is bind to the Enter key, we need to prevent the
@@ -51,52 +51,52 @@ angular.module('proton.hotkeys', [])
         event.preventDefault();
     };
 
-    const read = (event) => {
+    const read = () => {
         $rootScope.$broadcast('read');
 
         return false;
     };
 
-    const unread = (event) => {
+    const unread = () => {
         $rootScope.$broadcast('unread');
 
         return false;
     };
 
-    const toggleStar = (event) => {
+    const toggleStar = () => {
         $rootScope.$broadcast('toggleStar');
 
         return false;
     };
 
-    const inbox = (event) => {
+    const inbox = () => {
         $rootScope.$broadcast('move', 'inbox');
 
         return false;
     };
 
-    const trash = (event) => {
+    const trash = () => {
         $rootScope.$broadcast('move', 'trash');
 
         return false;
     };
 
-    const archive = (event) => {
+    const archive = () => {
         $rootScope.$broadcast('move', 'archive');
 
         return false;
     };
 
-    const spam = (event) => {
+    const spam = () => {
         $rootScope.$broadcast('move', 'spam');
 
         return false;
     };
 
-    const help = (event) => {
+    const help = () => {
         hotkeyModal.activate({
             params: {
-                close: function() {
+                close() {
                     hotkeyModal.deactivate();
                 }
             }
@@ -105,97 +105,97 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
-    const goToInbox = (event) => {
+    const goToInbox = () => {
         $state.go('secured.inbox');
 
         return false;
     };
 
-    const goToDrafts = (event) => {
+    const goToDrafts = () => {
         $state.go('secured.drafts');
 
         return false;
     };
 
-    const goToSent = (event) => {
+    const goToSent = () => {
         $state.go('secured.sent');
 
         return false;
     };
 
-    const goToStarred = (event) => {
+    const goToStarred = () => {
         $state.go('secured.starred');
 
         return false;
     };
 
-    const goToArchive = (event) => {
+    const goToArchive = () => {
         $state.go('secured.archive');
 
         return false;
     };
 
-    const goToSpam = (event) => {
+    const goToSpam = () => {
         $state.go('secured.spam');
 
         return false;
     };
 
-    const goToTrash = (event) => {
+    const goToTrash = () => {
         $state.go('secured.trash');
 
         return false;
     };
 
-    const selectAll = (event) => {
+    const selectAll = () => {
         $rootScope.$broadcast('selectAllElements');
 
         return false;
     };
 
-    const unselectAll = (event) => {
+    const unselectAll = () => {
         $rootScope.$broadcast('unselectAllElements');
 
         return false;
     };
 
-    const selectMark = (event) => {
+    const selectMark = () => {
         $rootScope.$broadcast('selectMark');
 
         return false;
     };
 
-    const markPrevious = (event) => {
+    const markPrevious = () => {
         $rootScope.$broadcast('markPrevious');
 
         return false;
     };
 
-    const markNext = (event) => {
+    const markNext = () => {
         $rootScope.$broadcast('markNext');
 
         return false;
     };
 
-    const escape = (event) => {
+    const escape = () => {
         $rootScope.$broadcast('escape');
 
         return false;
     };
 
-    const left = (event) => {
+    const left = () => {
         $rootScope.$broadcast('left');
 
         return false;
     };
 
-    const right = (event) => {
+    const right = () => {
         $rootScope.$broadcast('right');
 
         return false;
     };
 
-    const slash = (event) => {
+    const slash = () => {
         const inputs = angular.element('.query');
 
         inputs[0].focus();
@@ -204,37 +204,37 @@ angular.module('proton.hotkeys', [])
     };
 
     const keys = [
-        {keyboard: 'c', callback: composer},
-        {keyboard: 'shift+r', callback: reply},
-        {keyboard: 'shift+a', callback: replyAll},
-        {keyboard: 'shift+f', callback: forward},
-        {keyboard: 'k', callback: nextElement},
-        {keyboard: 'j', callback: previousElement},
-        {keyboard: 'enter', callback: openMarked},
-        {keyboard: 'r', callback: read},
-        {keyboard: 'u', callback: unread},
-        {keyboard: '.', callback: toggleStar},
-        {keyboard: 'i', callback: inbox},
-        {keyboard: ['t', 'del'], callback: trash},
-        {keyboard: 'a', callback: archive},
-        {keyboard: 's', callback: spam},
-        {keyboard: '?', callback: help},
-        {keyboard: 'g i', callback: goToInbox},
-        {keyboard: 'g d', callback: goToDrafts},
-        {keyboard: 'g s', callback: goToSent},
-        {keyboard: 'g .', callback: goToStarred},
-        {keyboard: 'g a', callback: goToArchive},
-        {keyboard: 'g x', callback: goToSpam},
-        {keyboard: 'g t', callback: goToTrash},
-        {keyboard: '* a', callback: selectAll},
-        {keyboard: '* n', callback: unselectAll},
-        {keyboard: 'x', callback: selectMark},
-        {keyboard: 'left', callback: left},
-        {keyboard: 'right', callback: right},
-        {keyboard: 'up', callback: markPrevious},
-        {keyboard: 'down', callback: markNext},
-        {keyboard: 'escape', callback: escape},
-        {keyboard: '/', callback: slash}
+        { keyboard: 'c', callback: composer },
+        { keyboard: 'shift+r', callback: reply },
+        { keyboard: 'shift+a', callback: replyAll },
+        { keyboard: 'shift+f', callback: forward },
+        { keyboard: 'k', callback: nextElement },
+        { keyboard: 'j', callback: previousElement },
+        { keyboard: 'enter', callback: openMarked },
+        { keyboard: 'r', callback: read },
+        { keyboard: 'u', callback: unread },
+        { keyboard: '.', callback: toggleStar },
+        { keyboard: 'i', callback: inbox },
+        { keyboard: ['t', 'del'], callback: trash },
+        { keyboard: 'a', callback: archive },
+        { keyboard: 's', callback: spam },
+        { keyboard: '?', callback: help },
+        { keyboard: 'g i', callback: goToInbox },
+        { keyboard: 'g d', callback: goToDrafts },
+        { keyboard: 'g s', callback: goToSent },
+        { keyboard: 'g .', callback: goToStarred },
+        { keyboard: 'g a', callback: goToArchive },
+        { keyboard: 'g x', callback: goToSpam },
+        { keyboard: 'g t', callback: goToTrash },
+        { keyboard: '* a', callback: selectAll },
+        { keyboard: '* n', callback: unselectAll },
+        { keyboard: 'x', callback: selectMark },
+        { keyboard: 'left', callback: left },
+        { keyboard: 'right', callback: right },
+        { keyboard: 'up', callback: markPrevious },
+        { keyboard: 'down', callback: markNext },
+        { keyboard: 'escape', callback: escape },
+        { keyboard: '/', callback: slash }
     ];
 
     const removeBinding = ({ keyboard }) => Mousetrap.unbind(keyboard);

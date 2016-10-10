@@ -77,8 +77,7 @@ angular.module('proton.attachments')
                 $rootScope.$emit('attachment.upload', {
                     type: 'upload',
                     data: {
-                        messageID: messageID,
-                        message: message,
+                        messageID, message,
                         action: 'attachment'
                     }
                 });
@@ -96,7 +95,7 @@ angular.module('proton.attachments')
             const action = insert && 'inline';
             return upload([{ file, isEmbedded: insert }], message, action, false)
                 .then(([ upload ]) => upload)
-                .catch(err => {
+                .catch((err) => {
                     $log.error(err);
                     throw err;
                 });
@@ -136,7 +135,7 @@ angular.module('proton.attachments')
          */
         function upload(queue = [], message = {}, action = 'attachment', triggerEvent = true) {
             const deferred = $q.defer();
-            const promises =_.map(queue, ({ file, isEmbedded }, i, list) => {
+            const promises = _.map(queue, ({ file, isEmbedded }, i, list) => {
                 // required for BE to get a cid-header
                 file.inline = +(isEmbedded && action === 'inline');
                 return addAttachment(file, message, isEmbedded, list.length);
@@ -181,7 +180,7 @@ angular.module('proton.attachments')
          * @param  {Object}  options.Headers
          * @return {Boolean}
          */
-        function isEmbedded({ Headers = {}}) {
+        function isEmbedded({ Headers = {} }) {
             return Headers['content-disposition'] === 'inline';
         }
 
@@ -233,7 +232,7 @@ angular.module('proton.attachments')
          * @param  {Object} data
          * @return {void}
          */
-        function remove(data, att) {
+        function remove(data) {
             const { id, message, packet } = data;
             const attachment = data.attachment || getAttachment(message, id);
 

@@ -1,4 +1,4 @@
-angular.module("proton.star", [])
+angular.module('proton.star', [])
 .directive('ptStar', ($rootScope, CONSTANTS, gettextCatalog, tools, actionConversation) => {
 
     /**
@@ -22,7 +22,7 @@ angular.module("proton.star", [])
         }
 
         if (type === 'message') {
-            $rootScope.$emit('messageActions', {action: todoAction, data: {id: item.ID}});
+            $rootScope.$emit('messageActions', { action: todoAction, data: { id: item.ID } });
         }
     }
 
@@ -49,7 +49,7 @@ angular.module("proton.star", [])
             el.on('click', onClick);
 
             scope
-            .$on('$destroy', function() {
+            .$on('$destroy', () => {
                 el.off('click', onClick);
                 $('.tooltip').remove(); // Clear all tooltips when we destroy a conversation cf #3513
             });

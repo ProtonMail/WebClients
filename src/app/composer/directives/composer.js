@@ -26,7 +26,7 @@ angular.module('proton.composer')
                 return;
             }
 
-            switch(type) {
+            switch (type) {
                 case 'dragenter':
                     if (attachmentFileFormat.isUploadAbleType(data.event)) {
                         addDragenterClassName(el);

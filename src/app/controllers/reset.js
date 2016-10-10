@@ -1,9 +1,9 @@
-angular.module("proton.controllers.Reset", [
-    "proton.tools",
-    "proton.storage"
+angular.module('proton.controllers.Reset', [
+    'proton.tools',
+    'proton.storage'
 ])
 
-.controller("ResetController", function(
+.controller('ResetController', (
     $scope,
     $rootScope,
     $state,
@@ -22,9 +22,8 @@ angular.module("proton.controllers.Reset", [
     pmcw,
     tempStorage,
     tools,
-    notify,
-    secureSessionStorage
-) {
+    notify
+) => {
     function initialization() {
 
         $scope.creds = tempStorage.getItem('creds');
@@ -34,19 +33,19 @@ angular.module("proton.controllers.Reset", [
         }
 
         // Variables
-        $scope.tools    =           tools;
-        $scope.compatibility =      tools.isCompatible();
-        $scope.resetMailboxToken =  undefined;
+        $scope.tools = tools;
+        $scope.compatibility = tools.isCompatible();
+        $scope.resetMailboxToken = undefined;
         $scope.account = [];
         $scope.addresses = [];
 
         $scope.process = {};
         $scope.process.danger = '';
-        $scope.process.generatingKeys =     false;
-        $scope.process.savingKeys =         false;
-        $scope.process.redirecting =        false;
+        $scope.process.generatingKeys = false;
+        $scope.process.savingKeys = false;
+        $scope.process.redirecting = false;
 
-        $scope.showForm = false;//($scope.resetMailboxToken!==undefined) ? true : false;
+        $scope.showForm = false;// ($scope.resetMailboxToken!==undefined) ? true : false;
 
     }
 
@@ -62,25 +61,25 @@ angular.module("proton.controllers.Reset", [
      * @param mbpw {String}
      * @return {Promise}
      */
-    $scope.generateKeys = function(mbpw) {
-        var promises = [];
-        var keySalt = (CONSTANTS.KEY_PHASE > 1) ? passwords.generateKeySalt() : null;
+    $scope.generateKeys = function (mbpw) {
+        const promises = [];
+        const keySalt = (CONSTANTS.KEY_PHASE > 1) ? passwords.generateKeySalt() : null;
 
         $scope.process.genNewKeys = true;
 
         return passwords.computeKeyPassword(mbpw, keySalt)
             .then((newMailboxPwd) => {
-                _.each($scope.addresses, function(address) {
-                    var userID = '<' + address.Email + '>';
+                _.each($scope.addresses, (address) => {
+                    const userID = '<' + address.Email + '>';
                     promises.push(
                         pmcw.generateKeysRSA(userID, newMailboxPwd).then(
-                            function(response) {
+                            (response) => {
                                 return {
                                     AddressID: address.ID,
                                     PrivateKey: response.privateKeyArmored
                                 };
                             },
-                            function(err) {
+                            (err) => {
                                 $scope.process.genNewKeys = false;
                                 $log.error(err);
                                 $scope.error = err;
@@ -90,7 +89,7 @@ angular.module("proton.controllers.Reset", [
                     );
                 });
 
-                return $q.all(promises).then(function(keys) {
+                return $q.all(promises).then((keys) => {
                     $scope.process.generatingKeys = true;
                     return { KeySalt: keySalt, PrimaryKey: keys[0].PrivateKey, AddressKeys: keys };
                 });
@@ -102,26 +101,26 @@ angular.module("proton.controllers.Reset", [
      * Else: resets mailbox, logs them in and redirects
      * @param form {Reference to the form submitted}
      */
-    $scope.resetMailbox = function(form) {
+    $scope.resetMailbox = function () {
 
         if (
             $scope.resetMailboxToken === undefined
         ) {
-            notify({message: 'Missing reset token', classes: 'notification-danger'});
+            notify({ message: 'Missing reset token', classes: 'notification-danger' });
             return;
         }
 
         networkActivityTracker.track(
             $scope.generateKeys($scope.account.mailboxPassword)
-            .then( $scope.newMailbox )
-            .then( $scope.resetMailboxTokenResponse )
-            .then( $scope.doLogUserIn )
-            .then( $scope.doMailboxLogin )
-            .catch( function(err) {
+            .then($scope.newMailbox)
+            .then($scope.resetMailboxTokenResponse)
+            .then($scope.doLogUserIn)
+            .then($scope.doMailboxLogin)
+            .catch((err) => {
                 // TODO exception handling
                 $log.error(err);
                 notify({
-                    classes: "notification-danger",
+                    classes: 'notification-danger',
                     message: err.message
                 });
             })
@@ -132,7 +131,7 @@ angular.module("proton.controllers.Reset", [
      * Tries to log the user in.
      * @return {Promise}
      */
-    $scope.doLogUserIn = function() {
+    $scope.doLogUserIn = function () {
         return authentication.loginWithCredentials({
             Username: $scope.creds.username,
             Password: $scope.creds.password
@@ -144,46 +143,40 @@ angular.module("proton.controllers.Reset", [
      * @return {Redirect} redirects user to inbox on success.
      * TODO: error logging
      */
-    $scope.doMailboxLogin = function(response) {
+    $scope.doMailboxLogin = ({ data }) => {
 
-        $scope.creds.authResponse = response.data;
+        $scope.creds.authResponse = data;
 
-        return authentication.unlockWithPassword(
-            $scope.account.mailboxPassword,
-            $scope.creds.authResponse
-        ).then(
-            function(response) {
-                return authentication.setAuthCookie($scope.creds.authResponse)
-                .then(
-                    function(resp) {
+        return authentication
+            .unlockWithPassword($scope.account.mailboxPassword, $scope.creds.authResponse)
+            .then(() => {
+                return authentication
+                    .setAuthCookie($scope.creds.authResponse)
+                    .then(() => {
                         $scope.process.redirecting = true;
                         $rootScope.isLoggedIn = authentication.isLoggedIn();
                         $rootScope.isLocked = authentication.isLocked();
                         $rootScope.isSecure = authentication.isSecured();
-                        $state.go("secured.inbox");
-                    },
-                    function(err) {
+                        $state.go('secured.inbox');
+                    }, () => {
                         notify({
-                            classes: "notification-danger",
+                            classes: 'notification-danger',
                             message: 'doMailboxLogin: Unable to set authCookie.'
                         });
-                    }
-                );
-            },
-            function(err) {
+                    });
+            }, () => {
                 notify({
-                    classes: "notification-danger",
+                    classes: 'notification-danger',
                     message: 'doMailboxLogin: Unable to unlock mailbox.'
                 });
-            }
-        );
+            });
     };
 
     /**
      * Verifies the code reset code from the user. Shows a new form on success in the view using flags.
      * TODO: error logging for analytics / rate limiting?
      */
-    $scope.verifyResetCode = function() {
+    $scope.verifyResetCode = function () {
         if (
             angular.isUndefined($scope.account.resetMbCode) ||
             $scope.account.resetMbCode.length === 0
@@ -195,7 +188,7 @@ angular.module("proton.controllers.Reset", [
                 Token: $scope.account.resetMbCode
             })
             .then(
-                function(response) {
+                (response) => {
                     if (response.data.Code !== 1000) {
                         notify({
                             classes: 'notification-danger',
@@ -208,7 +201,7 @@ angular.module("proton.controllers.Reset", [
                         $scope.showEmailMessage = false;
                     }
                 },
-                function(err) {
+                (err) => {
                     $log.error(err);
                     notify({
                         classes: 'notification-danger',
@@ -222,15 +215,15 @@ angular.module("proton.controllers.Reset", [
     /**
      * Initialized in the view. Setups stuff. Depends on if user has recovery email set.
      */
-    $scope.resetMailboxInit = function() {
+    $scope.resetMailboxInit = function () {
         if ($scope.process.danger !== 'DANGER') {
-            notify({message: 'Invalid value', classes: 'notification-danger'});
+            notify({ message: 'Invalid value', classes: 'notification-danger' });
             return false;
         }
 
         if (angular.isDefined($scope.creds) && angular.isDefined($scope.creds.authResponse)) {
-            $http.defaults.headers.common.Authorization = "Bearer " + $scope.creds.authResponse.ResetToken;
-            $http.defaults.headers.common["x-pm-uid"] = $scope.creds.authResponse.Uid;
+            $http.defaults.headers.common.Authorization = 'Bearer ' + $scope.creds.authResponse.ResetToken;
+            $http.defaults.headers.common['x-pm-uid'] = $scope.creds.authResponse.Uid;
         }
 
         /**
@@ -238,65 +231,62 @@ angular.module("proton.controllers.Reset", [
          * @return {Response} $HTTP repsonse.  Response will not return a token if emailed. This is handled in the next chained promise.
          * TODO: error logging
          */
-        var getMBToken = function() {
+        const getMBToken = function () {
             return Reset.getMailboxResetToken({}); // $http API response
         };
 
-        var tokenResponse = function(response) {
-            var deferred = $q.defer();
+        const tokenResponse = function (response) {
+            const deferred = $q.defer();
             if (response.data.Error || response.data.Code !== 1000) {
                 notify(response);
                 $log.error(response);
                 deferred.reject(response.data.Error);
-            }
-            else {
-                if (response.data.Token) {
-                    $scope.resetMailboxToken = response.data.Token;
-                    Reset.validateResetToken({
-                        Username: $scope.creds.username,
-                        Token: response.data.Token // $scope.account.resetMbCode
-                    })
-                    .then(
-                        function(response) {
-                            if (response.data.Code !== 1000) {
-                                notify({
-                                    classes: 'notification-danger',
-                                    message: 'Invalid Verification Code.'
-                                });
-                            } else {
-                                $scope.addresses = response.data.Addresses;
-                                $scope.showForm = true;
-                                $scope.showEmailMessage = false;
-                                deferred.resolve(200);
-                            }
-                        },
-                        function(err) {
-                            $log.error(err);
+            } else if (response.data.Token) {
+                $scope.resetMailboxToken = response.data.Token;
+                Reset.validateResetToken({
+                    Username: $scope.creds.username,
+                    Token: response.data.Token // $scope.account.resetMbCode
+                })
+                .then(
+                    (response) => {
+                        if (response.data.Code !== 1000) {
                             notify({
                                 classes: 'notification-danger',
-                                message: 'Unable to verify Reset Token.'
+                                message: 'Invalid Verification Code.'
                             });
+                        } else {
+                            $scope.addresses = response.data.Addresses;
+                            $scope.showForm = true;
+                            $scope.showEmailMessage = false;
+                            deferred.resolve(200);
                         }
-                    );
-                }
-                else {
-                    $scope.showEmailMessage = true;
-                    deferred.resolve(200);
-                }
+                    },
+                    (err) => {
+                        $log.error(err);
+                        notify({
+                            classes: 'notification-danger',
+                            message: 'Unable to verify Reset Token.'
+                        });
+                    }
+                );
+            } else {
+                $scope.showEmailMessage = true;
+                deferred.resolve(200);
             }
+
             return deferred.promise;
         };
 
         networkActivityTracker.track(
             getMBToken()
-            .then( tokenResponse )
+            .then(tokenResponse)
         );
     };
 
     /**
      * Sends creds back to login.unlock state
      */
-    $scope.cancelReset = function() {
+    $scope.cancelReset = function () {
         tempStorage.setItem('creds', $scope.creds);
         $state.go('login.unlock');
     };
@@ -306,10 +296,10 @@ angular.module("proton.controllers.Reset", [
      * @return {Response} $HTTP repsonse. Handled in next chained promise.
      * TODO: error logging
      */
-    $scope.newMailbox = function(params) {
-        var resetMBtoken;
+    $scope.newMailbox = function (params) {
+        let resetMBtoken;
 
-        if ($scope.resetMailboxToken!==undefined) {
+        if ($scope.resetMailboxToken !== undefined) {
             resetMBtoken = $scope.resetMailboxToken;
         }
 
@@ -322,40 +312,37 @@ angular.module("proton.controllers.Reset", [
      * Handles $http response for saving new keys.
      * @return {Promise}
      */
-    $scope.resetMailboxTokenResponse = function(response) {
-        var promise = $q.defer();
+    $scope.resetMailboxTokenResponse = function (response) {
+        const promise = $q.defer();
         if (!response) {
-            promise.reject( new Error('Connection error: Unable to save new keys.') );
+            promise.reject(new Error('Connection error: Unable to save new keys.'));
         }
         if (response.status !== 200) {
             notify({
-                classes: "notification-danger",
+                classes: 'notification-danger',
                 message: 'Error, try again in a few minutes.'
             });
             $scope.process.savingKeys = false;
-            promise.reject( new Error('Status Error: Unable to save new keys.') );
-        }
-        else if (response.data.Error) {
-            if (response.data.ErrorDescription!=='') {
+            promise.reject(new Error('Status Error: Unable to save new keys.'));
+        } else if (response.data.Error) {
+            if (response.data.ErrorDescription !== '') {
                 notify({
-                    classes: "notification-danger",
+                    classes: 'notification-danger',
                     message: response.data.ErrorDescription
                 });
                 $log.error(response);
                 $scope.process.savingKeys = false;
-                promise.reject( new Error(response.data.ErrorDescription) );
-            }
-            else {
+                promise.reject(new Error(response.data.ErrorDescription));
+            } else {
                 notify({
-                    classes: "notification-danger",
+                    classes: 'notification-danger',
                     message: response.data.Error
                 });
                 $log.error(response);
                 $scope.process.savingKeys = false;
-                promise.reject( new Error(response.data.Error) );
+                promise.reject(new Error(response.data.Error));
             }
-        }
-        else {
+        } else {
             $scope.process.savingKeys = true;
             promise.resolve(200);
         }

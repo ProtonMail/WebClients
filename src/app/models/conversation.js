@@ -1,40 +1,26 @@
-angular.module("proton.models.conversations", [])
+angular.module('proton.models.conversations', [])
 
-.factory("Conversation", function($http, url) {
+.factory('Conversation', ($http, url) => {
     return {
-        // GET
         /**
          * Get a list of conversations
          * @param {Object} params
-         * @param Location
-         * @param Page
-         * @param PageSize
-         * @param Label
-         * @param Limit
-         * @param Desc
-         * @param Keyword
-         * @param To
-         * @param From
-         * @param Subject
-         * @param Attachments
-         * @param Starred
-         * @param Unread
          */
-        query: function(params) {
+        query(params) {
             return $http({
                 url: url.get() + '/conversations',
                 method: 'GET',
-                params: params
+                params
             });
         },
         /**
         * Get conversation and associated message metadata
         * @param {String} ConversationId
         */
-        get: function(ConversationId) {
+        get(ConversationId) {
             return $http.get(url.get() + '/conversations/' + ConversationId);
         },
-        count: function() {
+        count() {
             return $http.get(url.get() + '/conversations/count');
         },
         // PUT
@@ -42,64 +28,64 @@ angular.module("proton.models.conversations", [])
         * Mark an array of conversations as starred
         * @param {Array} IDs
         */
-        star: function(IDs) {
-            return $http.put(url.get() + '/conversations/star', {IDs: IDs});
+        star(IDs) {
+            return $http.put(url.get() + '/conversations/star', { IDs });
         },
         /**
         * Mark an array of conversations as unstarred
         * @param {Array} IDs
         */
-        unstar: function(IDs) {
-            return $http.put(url.get() + '/conversations/unstar', {IDs: IDs});
+        unstar(IDs) {
+            return $http.put(url.get() + '/conversations/unstar', { IDs });
         },
         /**
         * Mark an array of conversations as read
         * @param {Array} IDs
         */
-        read: function(IDs) {
-            return $http.put(url.get() + '/conversations/read', {IDs: IDs});
+        read(IDs) {
+            return $http.put(url.get() + '/conversations/read', { IDs });
         },
         /**
         * Mark an array of conversations as unread
         * @param {Array} IDs
         */
-        unread: function(IDs) {
-            return $http.put(url.get() + '/conversations/unread', {IDs: IDs});
+        unread(IDs) {
+            return $http.put(url.get() + '/conversations/unread', { IDs });
         },
         /**
          * Move an array of conversations to trash
          * @param {Array} IDs
          */
-        trash: function(IDs) {
-            return $http.put(url.get() + '/conversations/trash', {IDs: IDs});
+        trash(IDs) {
+            return $http.put(url.get() + '/conversations/trash', { IDs });
         },
         /**
          * Move an array of conversations to inbox
          * @param {Array} IDs
          */
-        inbox: function(IDs) {
-            return $http.put(url.get() + '/conversations/inbox', {IDs: IDs});
+        inbox(IDs) {
+            return $http.put(url.get() + '/conversations/inbox', { IDs });
         },
         /**
          * Move an array of conversations to spam
          * @param {Array} IDs
          */
-        spam: function(IDs) {
-            return $http.put(url.get() + '/conversations/spam', {IDs: IDs});
+        spam(IDs) {
+            return $http.put(url.get() + '/conversations/spam', { IDs });
         },
         /**
          * Move an array of conversations to archive
          * @param {Array} IDs
          */
-        archive: function(IDs) {
-            return $http.put(url.get() + '/conversations/archive', {IDs: IDs});
+        archive(IDs) {
+            return $http.put(url.get() + '/conversations/archive', { IDs });
         },
         /**
          * Move an array of conversations to archive
          * @param {Array} IDs
          */
-        delete: function(IDs) {
-            return $http.put(url.get() + '/conversations/delete', {IDs: IDs});
+        delete(IDs) {
+            return $http.put(url.get() + '/conversations/delete', { IDs });
         },
         /**
          * Label/unlabel an array of conversations
@@ -107,8 +93,8 @@ angular.module("proton.models.conversations", [])
          * @param {Integer} Action
          * @param {Array} ConversationIDs
          */
-        labels: function(LabelID, Action, ConversationIDs) {
-            return $http.put(url.get() + '/conversations/label', {LabelID: LabelID, Action: Action, ConversationIDs: ConversationIDs});
+        labels(LabelID, Action, ConversationIDs) {
+            return $http.put(url.get() + '/conversations/label', { LabelID, Action, ConversationIDs });
         }
     };
 });

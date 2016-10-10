@@ -1,14 +1,14 @@
-angular.module("proton.filters",[])
+angular.module('proton.filters', [])
 
-.filter('delay', function (gettextCatalog) {
+.filter('delay', (gettextCatalog) => {
     return function (input) {
         // get the current moment
-        var now = moment();
-        var then = moment.unix(input);
+        const now = moment();
+        let then = moment.unix(input);
 
-        if(then.isAfter(now)) {
+        if (then.isAfter(now)) {
             // get the difference from now to then in ms
-            var ms = then.diff(now, 'milliseconds', true);
+            let ms = then.diff(now, 'milliseconds', true);
 
             // update the duration in ms
             ms = then.diff(now, 'milliseconds', true);
@@ -19,7 +19,7 @@ angular.module("proton.filters",[])
             ms = then.diff(now, 'milliseconds', true);
             const hours = Math.floor(moment.duration(ms).asHours());
 
-            then = then.subtract(hours,'hours');
+            then = then.subtract(hours, 'hours');
             // update the duration in ms
             ms = then.diff(now, 'milliseconds', true);
             const minutes = Math.floor(moment.duration(ms).asMinutes());
@@ -31,42 +31,39 @@ angular.module("proton.filters",[])
 
             // concatonate the variables
             return days + ' ' + gettextCatalog.getString('Days') + ' ' + hours + ' ' + gettextCatalog.getString('Hours') + ' ' + minutes + ' ' + gettextCatalog.getString('Minutes') + ' ' + seconds + ' ' + gettextCatalog.getString('Seconds', null);
-        } else {
-            return '';
         }
+
+        return '';
     };
 })
 
-.filter('reverse', function() {
-    return function(value) {
-        if(angular.isArray(value)) {
+.filter('reverse', () => {
+    return function (value) {
+        if (angular.isArray(value)) {
             return value.reverse();
-        } else {
-            return [];
         }
+        return [];
     };
 })
 
-.filter("capitalize", function() {
-    return function(value) {
+.filter('capitalize', () => {
+    return function (value = '') {
 
         if (value) {
             return angular.uppercase(value).substring(0, 1) + angular.lowercase(value).substring(1);
-        } else {
-            return value;
         }
+
+        return value;
     };
 })
 
-.filter('fixed', function() {
-    return function(input, number) {
-        number = number || 2;
-
-        return input.toFixed(2);
+.filter('fixed', () => {
+    return function (input, number) {
+        return input.toFixed(number || 2);
     };
 })
 
-.filter('number', function () {
+.filter('number', () => {
     return function (input, places) {
         if (isNaN(input)) {
             return input;
@@ -74,7 +71,7 @@ angular.module("proton.filters",[])
         // If we want 1 decimal place, we want to mult/div by 10
         // If we want 2 decimal places, we want to mult/div by 100, etc
         // So use the following to create that factor
-        var factor = "1" + Array(+(places > 0 && places + 1)).join("0");
+        const factor = '1' + Array(+(places > 0 && places + 1)).join('0');
 
         return Math.round(input * factor) / factor;
     };
@@ -101,21 +98,21 @@ angular.module("proton.filters",[])
 })
 
 /* Returns boolean */
-.filter('showLabels', function(authentication) {
-    return function(labels) {
-        var labelsFiltered = [];
-        var currentLabels = _.map(authentication.user.Labels, function(label) {
+.filter('showLabels', (authentication) => {
+    return function (labels) {
+        const labelsFiltered = [];
+        const currentLabels = _.map(authentication.user.Labels, (label) => {
             return label.ID;
         });
 
-        _.each(labels, function(label) {
-            var value = label;
+        _.each(labels, (label) => {
+            let value = label;
 
-            if(angular.isObject(label)) {
+            if (angular.isObject(label)) {
                 value = label.ID;
             }
 
-            if(currentLabels.indexOf(value) !== -1) {
+            if (currentLabels.indexOf(value) !== -1) {
                 labelsFiltered.push(label);
             }
         });
@@ -124,11 +121,11 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('currency', function() {
-    return function(amount, currency) {
-        var result;
+.filter('currency', () => {
+    return function (amount, currency) {
+        let result;
 
-        switch(currency) {
+        switch (currency) {
             case 'EUR':
                 result = amount + ' €';
                 break;
@@ -150,75 +147,73 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('messageTime', function() {
-    return function(time) {
-        var m = moment.unix(time);
+.filter('messageTime', () => {
+    return function (time) {
+        const m = moment.unix(time);
 
         if (m.isSame(moment(), 'day')) {
             return m.format('LT') + ' (' + m.fromNow() + ')';
-        } else {
-            return m.format('L') + ' (' + m.fromNow() + ')';
         }
+
+        return m.format('L') + ' (' + m.fromNow() + ')';
     };
 })
 
 
 // Jan 17, 2016
-.filter('readableTime', function() {
-    return function(time) {
-        var m = moment.unix(time);
+.filter('readableTime', () => {
+    return function (time) {
+        const m = moment.unix(time);
 
         if (m.isSame(moment(), 'day')) {
             return m.format('LT');
-        } else {
-            return m.format('ll');
         }
+
+        return m.format('ll');
     };
 })
 
 // January 17, 2016 8:48 PM
-.filter('utcReadableTime', function() {
-    return function(time) {
-        var m = moment.unix(time);
+.filter('utcReadableTime', () => {
+    return function (time) {
+        const m = moment.unix(time);
 
         return m.utc().format('LL LT');
     };
 })
 
 // January 17, 2016 12:48 pm
-.filter('localReadableTime', function() {
-    return function(time) {
-        var m = moment.unix(time);
+.filter('localReadableTime', () => {
+    return function (time) {
+        const m = moment.unix(time);
 
         return m.format('LL h:mm A');
     };
 })
 
 // 1/17/2016 12:48 PM
-.filter('longReadableTime', function() {
-    return function(time) {
-        var m = moment.unix(time);
+.filter('longReadableTime', () => {
+    return function (time) {
+        const m = moment.unix(time);
 
         if (m.isSame(moment(), 'day')) {
             if (m.isSame(moment(), 'hour')) {
                 return m.fromNow();
-            } else {
-                return m.format('LT');
             }
-        } else {
-            return m.format('l LT');
+            return m.format('LT');
         }
+
+        return m.format('l LT');
     };
 })
 
-.filter('displayName', function() {
-    return function(value) {
-        if(angular.isDefined(value)) {
-            value = value.replace(/</g, "");
-            value = value.replace(/>/g, "");
-            value = value.replace(/\@/g, "");
-        } else {
-            value = '';
+.filter('displayName', () => {
+    return function (input) {
+        const value = input || '';
+
+        if (value) {
+            /* eslint no-useless-escape: "off" */
+            return value.replace(/</g, '').replace(/>/g, '').replace(/\@/g, '');
         }
 
         return value;
@@ -226,39 +221,39 @@ angular.module("proton.filters",[])
 })
 
 // unused
-.filter('purify', function($sce) {
-    return function(value) {
+.filter('purify', ($sce) => {
+    return function (value) {
         return $sce.trustAsHtml(value);
     };
 })
 
-.filter("humanDuration", function () {
+.filter('humanDuration', () => {
     return function (input, units) {
-        var duration = moment.duration(Math.round(input), units);
-        var days = duration.days();
-        var cmps = [];
+        const duration = moment.duration(Math.round(input), units);
+        const days = duration.days();
+        const cmps = [];
         if (days === 1) {
-            cmps.push("a day");
+            cmps.push('a day');
         } else if (days > 1) {
-            cmps.push(days + " days");
+            cmps.push(days + ' days');
         }
 
         duration.subtract(days, 'days');
-        var hours = duration.hours();
+        const hours = duration.hours();
         if (hours === 1) {
-            cmps.push("an hour");
+            cmps.push('an hour');
         } else if (hours > 1) {
-            cmps.push(hours + " hours");
+            cmps.push(hours + ' hours');
         }
-        return cmps.join(" and ");
+        return cmps.join(' and ');
     };
 })
 
 .filter('contact', (gettextCatalog, authentication) => {
     return (contact, parameter) => {
-        var same = contact.Address === contact.Name;
-        var alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
-        var found = _.findWhere(authentication.user.Contacts, {Email: contact.Address});
+        const same = contact.Address === contact.Name;
+        const alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
+        const found = _.findWhere(authentication.user.Contacts, { Email: contact.Address });
 
         if (parameter === 'Address') {
             return '<' + contact.Address + '>';
@@ -267,73 +262,71 @@ angular.module("proton.filters",[])
                 return found.Name;
             } else if (angular.isDefined(contact.Name) && contact.Name.length > 0) {
                 return contact.Name;
-            } else {
-                return contact.Address;
             }
-        } else {
-            if (same || alone) {
-                return contact.Address;
-            } else if (angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
-                return found.Name + ' <' + contact.Address + '>';
-            } else {
-                return contact.Name + ' <' + contact.Address + '>';
-            }
+
+            return contact.Address;
         }
+
+        if (same || alone) {
+            return contact.Address;
+        } else if (angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
+            return found.Name + ' <' + contact.Address + '>';
+        }
+
+        return contact.Name + ' <' + contact.Address + '>';
     };
 })
 
-.filter('humanSize', function (CONSTANTS) {
+.filter('humanSize', (CONSTANTS) => {
     return function (input, withoutUnit) {
-        var bytes;
-        var unit = '';
-        var kb = CONSTANTS.BASE_SIZE;
-        var mb = kb * kb;
-        var gb = mb * kb;
+        let bytes;
+        let unit = '';
+        const kb = CONSTANTS.BASE_SIZE;
+        const mb = kb * kb;
+        const gb = mb * kb;
 
         if (_.isNumber(input)) {
             bytes = input;
-        } else if (_.isNaN(bytes = parseInt(input))) {
+        } else if (_.isNaN(parseInt(input, 10))) {
             bytes = 0;
         }
 
         if (bytes < mb) {
-            if (!!!withoutUnit) {
+            if (!withoutUnit) {
                 unit = ' KB';
             }
-            return (bytes/kb).toFixed(1) + unit;
+            return (bytes / kb).toFixed(1) + unit;
         } else if (bytes < gb) {
-            if (!!!withoutUnit) {
+            if (!withoutUnit) {
                 unit = ' MB';
             }
-            return (bytes/kb/kb).toFixed(2) + unit;
-        } else {
-            if (!!!withoutUnit) {
-                unit = ' GB';
-            }
-            return (bytes/kb/kb/kb).toFixed(2) + unit;
+            return (bytes / kb / kb).toFixed(2) + unit;
         }
+
+        if (!withoutUnit) {
+            unit = ' GB';
+        }
+        return (bytes / kb / kb / kb).toFixed(2) + unit;
     };
 })
 
-.filter('bytes', function() {
-	return function(bytes, precision) {
-		if (isNaN(parseFloat(bytes)) || !isFinite(bytes) || bytes === 0) {
+.filter('bytes', () => {
+    return function (bytes, precision) {
+        if (isNaN(parseFloat(bytes)) || !isFinite(bytes) || bytes === 0) {
             return '-';
-        } else {
-            var kb = 1000;
-            var units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'],
-    			number = Math.floor(Math.log(bytes) / Math.log(kb));
-
-    		if (typeof precision === 'undefined') {
-                precision = 1;
-            }
-
-    		return (bytes / Math.pow(kb, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
         }
-	};
+
+        const kb = 1000;
+        const units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'];
+        const number = Math.floor(Math.log(bytes) / Math.log(kb));
+
+        const padding = (typeof precision === 'undefined') ? 1 : precision;
+
+        return (bytes / Math.pow(kb, Math.floor(number))).toFixed(padding) + ' ' + units[number];
+    };
 })
 
-.filter('filterMessages', function($state, $rootScope, CONSTANTS) {
+.filter('filterMessages', ($state, $rootScope, CONSTANTS) => {
     return (messages, showTrashed, showNonTrashed) => {
         if (!$state.includes('secured.search.**') && !$state.includes('secured.label.**') && !$state.includes('secured.starred.**')) {
             const trashed = messages.filter((message) => _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
@@ -345,11 +338,9 @@ angular.module("proton.filters",[])
                         return trashed;
                     }
                 }
-            } else {
-                if (nonTrashed.length > 0) {
-                    if (showTrashed === false) {
-                        return nonTrashed;
-                    }
+            } else if (nonTrashed.length > 0) {
+                if (showTrashed === false) {
+                    return nonTrashed;
                 }
             }
         }
@@ -358,14 +349,9 @@ angular.module("proton.filters",[])
     };
 })
 
-.filter('range', function() {
-    return function(val, range) {
-        range = parseInt(range);
-
-        for (var i=1; i<range; i++) {
-            val.push(i);
-        }
-
-        return val;
+.filter('range', () => {
+    return function (val, range) {
+        /* eslint no-param-reassign: "off" */
+        return (val = _.range(parseInt(range, 10)));
     };
 });

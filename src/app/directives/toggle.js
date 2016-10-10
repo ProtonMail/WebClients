@@ -10,7 +10,7 @@ angular.module('proton.toggle', [])
             on: '@', // text for on
             off: '@' // text for off
         },
-        link(scope, element, attrs) {
+        link(scope, element) {
             if (!scope.on) {
                 scope.on = gettextCatalog.getString('Yes', null, 'Title');
             }
@@ -19,10 +19,9 @@ angular.module('proton.toggle', [])
                 scope.off = gettextCatalog.getString('No', null, 'Title');
             }
 
-            function onClick(event) {
+            function onClick() {
                 scope.$apply(() => {
                     scope.status = !scope.status;
-
                     if (scope.name) {
                         $rootScope.$emit(scope.name, scope.status);
                     }

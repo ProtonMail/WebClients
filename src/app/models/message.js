@@ -1,6 +1,6 @@
-angular.module("proton.models.message", ["proton.constants"])
+angular.module('proton.models.message', ['proton.constants'])
 
-.factory("Message", function(
+.factory('Message', (
     $compile,
     $http,
     $log,
@@ -23,8 +23,8 @@ angular.module("proton.models.message", ["proton.constants"])
     tools,
     url,
     User
-) {
-    var Message = $resource(
+) => {
+    const Message = $resource(
         url.get() + '/messages/:id',
         authentication.params({
             id: '@id'
@@ -151,8 +151,8 @@ angular.module("proton.models.message", ["proton.constants"])
             this.NumEmbedded = this.countEmbedded();
         },
 
-        encryptionType: function() {
-            var texts = [
+        encryptionType() {
+            const texts = [
                 gettextCatalog.getString('Unencrypted message', null),
                 gettextCatalog.getString('End to end encrypted internal message', null),
                 gettextCatalog.getString('External message stored encrypted', null),
@@ -161,20 +161,18 @@ angular.module("proton.models.message", ["proton.constants"])
                 gettextCatalog.getString('Stored encrypted', null),
                 gettextCatalog.getString('End to end encrypted for outside reply', null),
                 gettextCatalog.getString('End to end encrypted using PGP', null),
-                gettextCatalog.getString('End to end encrypted using PGP/MIME', null),
+                gettextCatalog.getString('End to end encrypted using PGP/MIME', null)
             ];
 
             return texts[this.IsEncrypted];
         },
 
-        isDraft: function() {
+        isDraft() {
             return this.Type === 1;
         },
 
-        plainText: function() {
-            var body = this.getDecryptedBody();
-
-            return body;
+        plainText() {
+            return this.getDecryptedBody();
         },
 
         /**
@@ -183,21 +181,21 @@ angular.module("proton.models.message", ["proton.constants"])
          * @param {Integer} action - 0 for remove or 1 for add
          * @param {Array} messageIDs
          */
-        updateLabels: function(labelID, action, messageIDs) {
-            return $http.put(url.get() + '/messages/label', {LabelID: labelID, Action: action, MessageIDs: messageIDs});
+        updateLabels(labelID, action, messageIDs) {
+            return $http.put(url.get() + '/messages/label', { LabelID: labelID, Action: action, MessageIDs: messageIDs });
         },
 
-        labels: function() {
+        labels() {
             return $filter('labels')(this.LabelIDs);
         },
 
-        close: function() {
-            if(angular.isDefined(this.timeoutSaving)) {
+        close() {
+            if (angular.isDefined(this.timeoutSaving)) {
                 $timeout.cancel(this.timeoutSaving);
             }
         },
 
-        defaults: function() {
+        defaults() {
             _.defaults(this, {
                 ToList: [],
                 BCCList: [],
@@ -209,19 +207,19 @@ angular.module("proton.models.message", ["proton.constants"])
             });
         },
 
-        disableSend: function() {
+        disableSend() {
             return this.uploading > 0 || this.disableOthers();
         },
 
-        disableSave: function() {
+        disableSave() {
             return this.disableSend();
         },
 
-        disableDiscard: function() {
+        disableDiscard() {
             return this.disableSend();
         },
 
-        disableOthers: function() {
+        disableOthers() {
             return (this.saving === true && this.autosaving === false) || this.sending || this.encrypting || this.askEmbedding;
         },
 
@@ -289,17 +287,17 @@ angular.module("proton.models.message", ["proton.constants"])
             return deferred.promise;
         },
 
-        clearPackets: function() {
-            var packets = [];
-            var promises = [];
-            var deferred = $q.defer();
-            var keys = authentication.getPrivateKeys(this.AddressID);
+        clearPackets() {
+            const packets = [];
+            const promises = [];
+            const deferred = $q.defer();
+            const keys = authentication.getPrivateKeys(this.AddressID);
 
-            _.each(this.Attachments, function(element) {
+            _.each(this.Attachments, (element) => {
                 if (element.sessionKey === undefined) {
-                    var keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(element.KeyPackets));
+                    const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(element.KeyPackets));
 
-                    promises.push(pmcw.decryptSessionKey(keyPackets, keys).then(function(key) {
+                    promises.push(pmcw.decryptSessionKey(keyPackets, keys).then((key) => {
                         element.sessionKey = key;
                         packets.push({
                             ID: element.ID,
@@ -316,7 +314,7 @@ angular.module("proton.models.message", ["proton.constants"])
                 }
             });
 
-            $q.all(promises).then(function() {
+            $q.all(promises).then(() => {
                 deferred.resolve(packets);
             });
 
@@ -330,38 +328,37 @@ angular.module("proton.models.message", ["proton.constants"])
             );
         },
 
-        getPublicKeys: function(emails) {
-            var base64 = pmcw.encode_base64(emails.join(','));
+        getPublicKeys(emails) {
+            const base64 = pmcw.encode_base64(emails.join(','));
 
             return User.pubkeys(base64);
         },
 
-        cleanKey: function(key) {
-            return key.replace(/(\r\n|\n|\r)/gm,'');
+        cleanKey(key) {
+            return key.replace(/(\r\n|\n|\r)/gm, '');
         },
 
-        generateReplyToken: function() {
+        generateReplyToken() {
             // Use a base64-encoded AES256 session key as the reply token
             return pmcw.encode_base64(pmcw.arrayToBinaryString(pmcw.generateKeyAES()));
         },
 
-        clearTextBody: function() {
-            var body;
-            var deferred = $q.defer();
+        clearTextBody() {
+            const deferred = $q.defer();
 
             if (this.isDraft() || this.IsEncrypted > 0) {
                 if (!this.getDecryptedBody()) {
                     try {
                         this.decryptBody()
-                        .then(function(result) {
+                        .then((result) => {
                             this.setDecryptedBody(result);
                             this.failedDecryption = false;
                             deferred.resolve(result);
-                        }.bind(this), function(err) {
+                        }, (err) => {
                             this.DecryptedBody = this.Body;
                             this.failedDecryption = true;
                             deferred.reject(err);
-                        }.bind(this));
+                        });
                     } catch (err) {
                         this.DecryptedBody = this.Body;
                         this.failedDecryption = true;

@@ -1,34 +1,34 @@
-angular.module("proton.sidebarHeight", [])
+angular.module('proton.sidebarHeight', [])
 
 .directive('ngSidebarHeight', ['$window', function ($window) {
-    return function (scope, element, attrs) {
-        var setHeight = function() {
+    return function (scope, element) {
+        const setHeight = function () {
 
             // set to zero
             element.css({ height: 0 });
-            
-            var windowHeight = angular.element($window).height();
-            var headerHeight = $('#pm_header').outerHeight();
-            var height = (windowHeight - headerHeight);
+
+            const windowHeight = angular.element($window).height();
+            const headerHeight = $('#pm_header').outerHeight();
+            const height = (windowHeight - headerHeight);
 
             element.css({
-                height: height
+                height
             });
         };
 
         // Listen resize window
         angular.element($window).bind('resize', setHeight);
 
-        scope.$on('$stateChangeSuccess', function() {
+        scope.$on('$stateChangeSuccess', () => {
             setHeight();
         });
 
         // Remove listener on resize window
-        scope.$on('$destroy', function() {
+        scope.$on('$destroy', () => {
             angular.element($window).unbind('resize', setHeight);
         });
 
-        setTimeout(function() {
+        setTimeout(() => {
             setHeight();
         });
     };

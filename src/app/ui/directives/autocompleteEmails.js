@@ -1,13 +1,9 @@
 angular.module('proton.ui')
-.directive('autocompleteEmails', (autocompleteEmailsModel) =>
-    {
+.directive('autocompleteEmails', (autocompleteEmailsModel) => {
 
     const TAB_KEY = 9;
-    const ENTER_KEY = 13;
     const BACKSPACE_KEY = 8;
-    const SPACE_KEY = 32;
     const COMMA_KEY = 188;
-    const MAJ_KEY = 16;
 
     /**
      * Get the form value (the input value) onSubmit
@@ -16,8 +12,8 @@ angular.module('proton.ui')
      */
     const getFormValue = (target) => {
 
-        let api = {};
-        if ('FORM' === target.nodeName) {
+        const api = {};
+        if (target.nodeName === 'FORM') {
             const input = target.querySelector('input');
             return {
                 value: input ? input.value : '',
@@ -28,7 +24,7 @@ angular.module('proton.ui')
         }
 
         api.value = target.value;
-        api.clear = () => target.value = '';
+        api.clear = () => (target.value = '');
 
         return api;
     };
@@ -54,7 +50,7 @@ angular.module('proton.ui')
         },
         replace: true,
         templateUrl: 'templates/directives/ui/autocomplete.tpl.html',
-        compile(element, {name, placeholder = ''}) {
+        compile(element, { name, placeholder = '' }) {
 
             // Bind self configuration for this input (uniq)
             const $input = element[0].querySelector('input');
@@ -62,7 +58,7 @@ angular.module('proton.ui')
             $input.name = $input.id = (name || id);
             $input.placeholder = placeholder;
 
-            return (scope, el, attr) => {
+            return (scope, el) => {
 
                 // Model for this autocomplete
                 const model = autocompleteEmailsModel(scope.emails);
@@ -71,7 +67,7 @@ angular.module('proton.ui')
                  * Sync the model, bind emails selected
                  * @return {void}
                  */
-                const syncModel = () => scope.$applyAsync(() => scope.emails = model.all());
+                const syncModel = () => scope.$applyAsync(() => (scope.emails = model.all()));
 
                 /**
                  * @link {https://leaverou.github.io/awesomplete/#basic-usage}
@@ -141,11 +137,28 @@ angular.module('proton.ui')
                     }
                 };
 
+                /**
+                 * Autodetect the value of the input if you fill it without
+                 * the autocomplete
+                 * @param  {Event} e
+                 * @return {void}
+                 */
+                const onSubmit = (e) => {
+                    e.preventDefault();
+                    const { value, clear } = getFormValue(e.target);
+
+                    if (value) {
+                        model.add(model.filterContact(value).list[0] || {});
+                        clear();
+                        syncModel();
+                    }
+                };
+
                 const onKeyDown = (e) => {
 
                     const hasAutocompletion = !awesomplete.input.value && !model.isEmpty();
 
-                    switch(e.keyCode) {
+                    switch (e.keyCode) {
                         case TAB_KEY:
                             // When the autocomplete is opened
                             if (awesomplete.opened) {
@@ -175,23 +188,6 @@ angular.module('proton.ui')
                 };
 
                 /**
-                 * Autodetect the value of the input if you fill it without
-                 * the autocomplete
-                 * @param  {Event} e
-                 * @return {void}
-                 */
-                const onSubmit = (e) => {
-                    e.preventDefault();
-                    const { value, clear } = getFormValue(e.target);
-
-                    if (value) {
-                        model.add(model.filterContact(value).list[0] || {});
-                        clear();
-                        syncModel();
-                    }
-                };
-
-                /**
                  * Auto scroll will be available with the 1.2
                  * Patch extracted from {@link https://github.com/LeaVerou/awesomplete/issues/16875}
                  */
@@ -200,7 +196,7 @@ angular.module('proton.ui')
                 /**
                  * Update the model when an user select an option
                  */
-                awesomplete.replace = function (opt) {
+                awesomplete.replace = function replace(opt) {
                     model.add(opt);
                     this.input.value = '';
                     syncModel();

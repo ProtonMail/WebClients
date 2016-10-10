@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .directive('embeddedImgLoader', ($rootScope, embedded) => {
+    .directive('embeddedImgLoader', ($rootScope, $log, embedded) => {
 
         /**
          * Remove the loader and display embedded images
@@ -18,18 +18,18 @@ angular.module('proton.message')
              */
             const promises = [].slice.call($list)
                 .filter((img) => img.src.indexOf('cid:') === -1)
-                .map((img) => {
+                .reduce((acc, img) => {
                     const src = embedded.getUrl(img);
                     if (src) {
-                        const image  = new Image();
-                        return new Promise((resolve, reject) => {
+                        const image = new Image();
+                        acc.push(new Promise((resolve, reject) => {
                             image.src = src;
-                            image.onload = () => resolve({img, src});
+                            image.onload = () => resolve({ img, src });
                             image.onerror = (error) => reject({ error, src });
-                        });
+                        }));
                     }
-                })
-                .filter(Boolean);
+                    return acc;
+                }, []);
 
             Promise
                 .all(promises)
@@ -52,11 +52,11 @@ angular.module('proton.message')
                         }
                     });
                 })
-                .catch(console.error);
+                .catch($log.error);
         };
 
         return {
-            link(scope, el) {
+            link(scope) {
                 const unsubscribe = $rootScope
                     .$on('message.embedded.loaded', (event, message, body) => {
                         // Need to build images after the $digest as we need the decrypted body to be already compiled
@@ -64,7 +64,7 @@ angular.module('proton.message')
                             .$applyAsync(() => {
                                 bindImagesUrl(body, message);
                             });
-                });
+                    });
 
                 scope.$on('$destroy', () => unsubscribe());
             }

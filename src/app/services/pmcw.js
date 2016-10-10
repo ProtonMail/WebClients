@@ -1,10 +1,10 @@
-angular.module("proton.pmcw", [])
+angular.module('proton.pmcw', [])
 
 // Proton Mail Crypto Wrapper
-.provider("pmcw", function pmcwProvider() {
-    pmcrypto.checkMailboxPassword = function(prKey, prKeyPassCode, accessToken) {
+.provider('pmcw', function pmcwProvider() {
+    pmcrypto.checkMailboxPassword = function (prKey, prKeyPassCode, accessToken) {
 
-        return new Promise(function(resolve, reject) {
+        return new Promise((resolve, reject) => {
 
             if (typeof prKey === 'undefined') {
                 return reject(new Error('Missing private key.'));
@@ -14,31 +14,31 @@ angular.module("proton.pmcw", [])
                 return reject(new Error('Missing Mailbox Password.'));
             }
 
-            var keyPromise = pmcrypto.decryptPrivateKey(prKey, prKeyPassCode);
+            const keyPromise = pmcrypto.decryptPrivateKey(prKey, prKeyPassCode);
 
             keyPromise
             .then(
-                function(res) {
+                (res) => {
                     // this is the private key, use this and decryptMessage to get the access token
-                    var privateKey = res;
+                    const privateKey = res;
                     pmcrypto.decryptMessage(accessToken, privateKey)
                     .then(
-                        function(resp) {
+                        (resp) => {
                             return resolve({ password: prKeyPassCode, token: resp });
                         },
-                        function(error) {
+                        () => {
                             return reject(new Error('Unable to get Access Token.'));
                         }
                     );
                 },
-                function(err) {
+                () => {
                     return reject(new Error('Wrong Mailbox Password.'));
                 }
             );
         });
     };
 
-    this.$get = function($q) {
+    this.$get = function () {
         return pmcrypto;
     };
 });

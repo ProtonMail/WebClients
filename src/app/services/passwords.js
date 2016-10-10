@@ -1,15 +1,15 @@
-angular.module("proton.passwords", [])
-.factory('passwords', function(
+angular.module('proton.passwords', [])
+.factory('passwords', (
     $q,
     gettextCatalog,
     webcrypto
-) {
-    "use strict";
+) => {
+
 
     function bcrypt(str, salt) {
         const deferred = $q.defer();
-        dcodeIO.bcrypt.hash(str, salt, function(err, hash) {
-            if (typeof(hash) !== 'string') {
+        dcodeIO.bcrypt.hash(str, salt, (err, hash) => {
+            if (typeof (hash) !== 'string') {
                 deferred.reject(err);
             } else {
                 deferred.resolve(hash);
@@ -34,8 +34,8 @@ angular.module("proton.passwords", [])
     function computeKeyPassword(password, salt) {
 
         if (salt && salt.length) {
-            salt = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(salt));
-            return bcrypt(password, "$2y$10$" + dcodeIO.bcrypt.encodeBase64(salt, 16)).then(function(hash) {
+            const saltBinary = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(salt));
+            return bcrypt(password, '$2y$10$' + dcodeIO.bcrypt.encodeBase64(saltBinary, 16)).then((hash) => {
                 // Remove bcrypt prefix and salt (first 29 characters)
                 return hash.slice(29);
             });
@@ -52,39 +52,39 @@ angular.module("proton.passwords", [])
     }
 
     const hashPasswordVersion = {
-        4: function(password, salt, modulus) {
+        4(password, salt, modulus) {
             return hashPasswordVersion[3](password, salt, modulus);
         },
 
-        3: function(password, salt, modulus) {
-            salt = pmcrypto.binaryStringToArray(salt + "proton");
+        3(password, salt, modulus) {
+            const saltBinary = pmcrypto.binaryStringToArray(salt + 'proton');
             // We use the latest version of bcrypt, 2y, with 2^10 rounds.
-            return bcrypt(password, "$2y$10$" + dcodeIO.bcrypt.encodeBase64(salt, 16)).then(function(unexpandedHash) {
+            return bcrypt(password, '$2y$10$' + dcodeIO.bcrypt.encodeBase64(saltBinary, 16)).then((unexpandedHash) => {
                 return expandHash(unexpandedHash + pmcrypto.arrayToBinaryString(modulus));
             });
         },
 
-        2: function(password, userName, modulus) {
+        2(password, userName, modulus) {
             return hashPasswordVersion[1](password, cleanUserName(userName), modulus);
         },
 
-        1: function(password, userName, modulus) {
+        1(password, userName, modulus) {
             const salt = openpgp.crypto.hash.md5(pmcrypto.binaryStringToArray(pmcrypto.encode_utf8(userName.toLowerCase())));
-            var encodedSalt = "";
-            for (var i = 0; i < salt.length; i++) {
-                var byte = salt[i].toString(16);
+            let encodedSalt = '';
+            for (let i = 0; i < salt.length; i++) {
+                let byte = salt[i].toString(16);
                 if (byte.length === 1) {
                     byte = '0' + byte;
                 }
                 encodedSalt += byte;
             }
             // See hash version 3 for explanation of the prefix
-            return bcrypt(password, "$2y$10$" + encodedSalt).then(function(unexpandedHash) {
+            return bcrypt(password, '$2y$10$' + encodedSalt).then((unexpandedHash) => {
                 return expandHash(unexpandedHash + pmcrypto.arrayToBinaryString(modulus));
             });
         },
 
-        0: function(password, userName, modulus) {
+        0(password, userName, modulus) {
             const prehashed = pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(openpgp.crypto.hash.sha512(pmcrypto.binaryStringToArray(userName.toLowerCase() + pmcrypto.encode_utf8(password)))));
             return hashPasswordVersion[1](prehashed, userName, modulus);
         }
@@ -104,7 +104,7 @@ angular.module("proton.passwords", [])
                 case 0:
                     return hashPasswordVersion[version](password, userName, modulus);
                 default:
-                    $q.reject({message: gettextCatalog.getString('Unsupported auth version', null, 'Error')});
+                    $q.reject({ message: gettextCatalog.getString('Unsupported auth version', null, 'Error') });
                     break;
             }
         },

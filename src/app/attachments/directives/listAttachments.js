@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .directive('listAttachments', (attachmentModel, $state, $rootScope) => {
+    .directive('listAttachments', (attachmentModel, $state) => {
 
         const DECRYPTING_CLASSNAME = 'listAttachments-item-decrypt';
         const DOWNLOADED_CLASSNAME = 'listAttachments-item-download';

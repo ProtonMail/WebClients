@@ -1,4 +1,4 @@
-angular.module("proton.controllers.Settings")
+angular.module('proton.controllers.Settings')
 
 .controller('LabelsController', (
     $rootScope,
@@ -39,32 +39,32 @@ angular.module("proton.controllers.Settings")
     };
 
     // Listeners
-    unsubscribe.push($rootScope.$on('deleteLabel', (event, ID) => {
+    unsubscribe.push($rootScope.$on('deleteLabel', () => {
         $scope.$applyAsync(() => {
             $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
         });
     }));
 
-    unsubscribe.push($rootScope.$on('createLabel', (event, ID, label) => {
+    unsubscribe.push($rootScope.$on('createLabel', () => {
         $scope.$applyAsync(() => {
             $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
         });
     }));
 
-    unsubscribe.push($rootScope.$on('updateLabel', (event, ID, label) => {
+    unsubscribe.push($rootScope.$on('updateLabel', () => {
         $scope.$applyAsync(() => {
             $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
         });
     }));
 
-    unsubscribe.push($rootScope.$on('updateLabels', (event) => {
+    unsubscribe.push($rootScope.$on('updateLabels', () => {
         $scope.$applyAsync(() => {
             $scope.labels = _.sortBy(authentication.user.Labels, 'Order');
         });
     }));
 
     $scope.$on('$destroy', () => {
-        unsubscribe.forEach(cb => cb());
+        unsubscribe.forEach((cb) => cb());
         unsubscribe.length = 0;
     });
 
@@ -82,7 +82,7 @@ angular.module("proton.controllers.Settings")
                             return eventManager.call()
                             .then(() => {
                                 labelModal.deactivate();
-                                notify({message: gettextCatalog.getString('Label created', null), classes: 'notification-success'});
+                                notify({ message: gettextCatalog.getString('Label created', null), classes: 'notification-success' });
                             });
                         } else if (result.data && result.data.Error) {
                             return Promise.reject(result.data.Error);
@@ -102,7 +102,7 @@ angular.module("proton.controllers.Settings")
         labelModal.activate({
             params: {
                 title: gettextCatalog.getString('Edit label', null, 'Title'),
-                label: label,
+                label,
                 create(name, color) {
                     const promise = Label.update({ ID: label.ID, Name: name, Color: color, Display: label.Display })
                     .then((result) => {
@@ -110,7 +110,7 @@ angular.module("proton.controllers.Settings")
                             return eventManager.call()
                             .then(() => {
                                 labelModal.deactivate();
-                                notify({message: gettextCatalog.getString('Label edited', null), classes: 'notification-success'});
+                                notify({ message: gettextCatalog.getString('Label edited', null), classes: 'notification-success' });
                             });
                         } else if (result.data && result.data.Error) {
                             return Promise.reject(result.data.Error);
@@ -138,7 +138,7 @@ angular.module("proton.controllers.Settings")
                             return eventManager.call()
                             .then(() => {
                                 confirmModal.deactivate();
-                                notify({message: gettextCatalog.getString('Label deleted', null), classes: 'notification-success'});
+                                notify({ message: gettextCatalog.getString('Label deleted', null), classes: 'notification-success' });
                             });
                         } else if (result.data && result.data.Error) {
                             return Promise.reject(result.data.Error);
@@ -160,7 +160,7 @@ angular.module("proton.controllers.Settings")
             if (result.data && result.data.Code === 1000) {
                 return eventManager.call()
                 .then(() => {
-                    notify({message: gettextCatalog.getString('Label order saved', null), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Label order saved', null), classes: 'notification-success' });
                 });
             } else if (result.data && result.data.Error) {
                 return Promise.reject(result.data.Error);
@@ -171,12 +171,12 @@ angular.module("proton.controllers.Settings")
     };
 
     $scope.toggleDisplayLabel = (label) => {
-        const promise = Label.update({ ID: label.ID, Name: label.Name, Color: label.Color, Display: Number(label.Display)})
+        const promise = Label.update({ ID: label.ID, Name: label.Name, Color: label.Color, Display: Number(label.Display) })
         .then((result) => {
             if (result.data && result.data.Code === 1000) {
                 return eventManager.call()
                 .then(() => {
-                    notify({message: gettextCatalog.getString('Label edited', null), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Label edited', null), classes: 'notification-success' });
                 });
             } else if (result.data && result.data.Error) {
                 return Promise.reject(result.data.Error);

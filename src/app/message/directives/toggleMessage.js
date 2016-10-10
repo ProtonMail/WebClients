@@ -8,9 +8,8 @@ angular.module('proton.message')
         function selection() {
             if (window.getSelection) {
                 return window.getSelection().toString().length === 0;
-            } else {
-                return true;
             }
+            return true;
         }
 
         function mouseup(event) {

@@ -15,7 +15,7 @@ angular.module('proton.message')
         'blockquote[type="cite"]'
     ].join(',');
 
-    return (html, message) => {
+    return (html) => {
         const blockquotes = [].slice.call(html.querySelectorAll(quotes));
         const parent = html.textContent.trim();
         let found = false;

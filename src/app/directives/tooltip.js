@@ -1,14 +1,14 @@
-angular.module("proton.tooltip", [])
+angular.module('proton.tooltip', [])
 
-.directive("ptTooltip", function() {
+.directive('ptTooltip', () => {
     return {
-        link: function(scope, element, attrs) {
-            var title = attrs.ptTooltip;
+        link(scope, element, attrs) {
+            const title = attrs.ptTooltip;
             element.attr('title', title);
             element.attr('aria-label', title);
 
             element.tooltip({
-                trigger : 'hover', // The default value for trigger is 'hover focus'
+                trigger: 'hover', // The default value for trigger is 'hover focus'
                 container: 'body',
                 placement: attrs.ptPlacement || 'top',
                 html: attrs.ptHtml || false

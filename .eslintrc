@@ -1,0 +1,57 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "jasmine": true,
+    "es6": true
+  },
+  "globals": {
+    "angular": true,
+    "pmcrypto": true,
+    "Awesomplete": true,
+    "QRCode": true,
+    "DOMPurify": true,
+    "MailParser": true,
+    "asmCrypto_bn": true,
+    "Squire": true,
+    "dcodeIO": true,
+    "Sieve": true,
+    "moment": true,
+    "openpgp": true,
+    "jQuery": true,
+    "Dropzone": true,
+    "Push": true,
+    "Mousetrap": true,
+    "_rAF": true,
+    "base32": true,
+    "$": true,
+    "_": true
+  },
+  "rules": {
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "arrow-parens": ["error", "always"],
+    "comma-dangle": ["error", "never"],
+    "no-shadow": ["off", { "hoist": "never", "builtinGlobals": true  }],
+    "max-len": ["off", 120],
+    "array-bracket-spacing": ["off", "never"],
+    "object-property-newline": "off",
+    "no-sequences": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+    "padded-blocks": ["off", "always"],
+    "arrow-body-style": ["off", "as-needed"],
+    "no-use-before-define": ["error", { "functions": false, "classes": true }],
+    "new-cap": ["error", { "properties": true, "capIsNewExceptionPattern": "^Awesomplete.|^Setting."  }],
+    "no-mixed-operators": ["error", {"groups": [["&", "|", "^", "~", "<<", ">>", ">>>"], ["&&", "||"]]}],
+    "no-return-assign": "off",
+    "consistent-return": "off",
+    "default-case": "off",
+    "no-plusplus": "off",
+    "no-bitwise": "off",
+    "no-debugger": "off",
+    "prefer-template": "off"
+  }
+}
+

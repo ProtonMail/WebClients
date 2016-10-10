@@ -1,12 +1,12 @@
 angular.module('proton.models.label', [])
 
-.factory('Label', function($http, url) {
-    var api = {
+.factory('Label', ($http, url) => {
+    const api = {
         /**
          * Get labels
          * @return {Promise}
          */
-        query: function() {
+        query() {
             return $http.get(url.get() + '/labels');
         },
         /**
@@ -15,7 +15,7 @@ angular.module('proton.models.label', [])
          * @param {Array} messageIDs
          * @return {Promise}
          */
-        apply: function(labelID, messageIDs) {
+        apply(labelID, messageIDs) {
             return $http.put(url.get() + '/labels/apply/' + labelID, messageIDs);
         },
         /**
@@ -24,7 +24,7 @@ angular.module('proton.models.label', [])
          * @param {Array} messageIDs
          * @return {Promise}
          */
-        remove: function(labelID, messageIDs) {
+        remove(labelID, messageIDs) {
             return $http.put(url.get() + '/labels/remove/' + labelID, messageIDs);
         },
         /**
@@ -32,7 +32,7 @@ angular.module('proton.models.label', [])
          * @param {Object} newOrder
          * @return {Promise}
          */
-        order: function(newOrder) {
+        order(newOrder) {
             return $http.put(url.get() + '/labels/order', newOrder);
         },
         /**
@@ -40,7 +40,7 @@ angular.module('proton.models.label', [])
          * @param {Object} label
          * @return {Promise}
          */
-        update: function(label) {
+        update(label) {
             return $http.put(url.get() + '/labels/' + label.ID, label);
         },
         /**
@@ -48,7 +48,7 @@ angular.module('proton.models.label', [])
          * @param {Object} label
          * @return {Promise}
          */
-        create: function(label) {
+        create(label) {
             return $http.post(url.get() + '/labels', label);
         },
         /**
@@ -56,7 +56,7 @@ angular.module('proton.models.label', [])
          * @param {String} labelID
          * @return {Promise}
          */
-        delete: function(labelID) {
+        delete(labelID) {
             return $http.delete(url.get() + '/labels/' + labelID);
         }
     };

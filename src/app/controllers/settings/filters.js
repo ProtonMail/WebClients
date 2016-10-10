@@ -1,6 +1,6 @@
-angular.module("proton.controllers.Settings")
+angular.module('proton.controllers.Settings')
 
-.controller('FiltersController', function(
+.controller('FiltersController', (
     $log,
     $q,
     $rootScope,
@@ -17,9 +17,8 @@ angular.module("proton.controllers.Settings")
     networkActivityTracker,
     filterModal,
     filterAddressModal,
-    notify,
-    Setting
-) {
+    notify
+) => {
     // Variables
     const unsubscribe = [];
     $scope.spamFilters = incomingDefaults;
@@ -35,33 +34,33 @@ angular.module("proton.controllers.Settings")
     // Drag and Drop configuration
     $scope.filterDragControlListeners = {
         containment: '.pm_sort',
-        accept: function(sourceItemHandleScope, destSortableScope) {
+        accept(sourceItemHandleScope, destSortableScope) {
             return sourceItemHandleScope.itemScope.sortableScope.$id === destSortableScope.$id;
         },
-        dragStart: function() {
+        dragStart() {
             $scope.itemMoved = true;
         },
-        dragEnd: function() {
+        dragEnd() {
             $scope.itemMoved = false;
         },
-        orderChanged: function() {
-            var order = [];
+        orderChanged() {
+            const order = [];
 
-            _.each($scope.customFilters, function(filter, index) {
+            _.each($scope.customFilters, (filter, index) => {
                 order[index] = filter.Priority;
                 filter.Priority = index + 1;
             });
 
             // Save priority order
             networkActivityTracker.track(
-                Filter.order({Order: order})
-                .then(function(result) {
+                Filter.order({ Order: order })
+                .then((result) => {
                     if (result.data && result.data.Code === 1000) {
-                        notify({message: gettextCatalog.getString('Order saved', null, 'Info'), classes: 'notification-success'});
+                        notify({ message: gettextCatalog.getString('Order saved', null, 'Info'), classes: 'notification-success' });
                     } else if (result.data && result.data.Error) {
-                        notify({message: result.data.Error, classes: 'notification-danger'});
+                        notify({ message: result.data.Error, classes: 'notification-danger' });
                     } else {
-                        notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes : 'notification-danger'});
+                        notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
                     }
                 })
             );
@@ -69,13 +68,13 @@ angular.module("proton.controllers.Settings")
     };
 
     $rootScope.$on('$destroy', () => {
-        unsubscribe.forEach(cb => cb());
+        unsubscribe.forEach((cb) => cb());
         unsubscribe.length = 0;
     });
 
-    $scope.$on('deleteFilter', function(event, filterId) {
+    $scope.$on('deleteFilter', (event, filterId) => {
         if ($scope.itemMoved === false) {
-            var index = _.findIndex($scope.customFilters, {ID: filterId});
+            const index = _.findIndex($scope.customFilters, { ID: filterId });
 
             if (index !== -1) {
                 $scope.customFilters.splice(index, 1);
@@ -83,9 +82,9 @@ angular.module("proton.controllers.Settings")
         }
     });
 
-    $scope.$on('createFilter', function(event, filterId, filter) {
+    $scope.$on('createFilter', (event, filterId, filter) => {
         if ($scope.itemMoved === false) {
-            var index = _.findIndex($scope.customFilters, {ID: filterId});
+            const index = _.findIndex($scope.customFilters, { ID: filterId });
 
             if (index === -1) {
                 $scope.customFilters.push(filter);
@@ -95,9 +94,9 @@ angular.module("proton.controllers.Settings")
         }
     });
 
-    $scope.$on('updateFilter', function(event, filterId, filter) {
+    $scope.$on('updateFilter', (event, filterId, filter) => {
         if ($scope.itemMoved === false) {
-            var index = _.findIndex($scope.customFilters, {ID: filterId});
+            const index = _.findIndex($scope.customFilters, { ID: filterId });
 
             if (index === -1) {
                 $scope.customFilters.push(filter);
@@ -107,8 +106,8 @@ angular.module("proton.controllers.Settings")
         }
     });
 
-    $scope.addCustomFilter = function() {
-        const activeCustomFilters = _.where($scope.customFilters, {Status: 1});
+    $scope.addCustomFilter = function () {
+        const activeCustomFilters = _.where($scope.customFilters, { Status: 1 });
 
         if ($scope.isFree === true && activeCustomFilters.length === 1) {
             notify(gettextCatalog.getString('Free ProtonMail accounts are limited to 1 custom filter. Please <a href="/dashboard">upgrade</a> to get unlimited filters.', null, 'Info'));
@@ -116,7 +115,7 @@ angular.module("proton.controllers.Settings")
             filterModal.activate({
                 params: {
                     mode: 'simple',
-                    close: function() {
+                    close() {
                         filterModal.deactivate();
                     }
                 }
@@ -124,70 +123,70 @@ angular.module("proton.controllers.Settings")
         }
     };
 
-    $scope.clearCustomFilters = function() {
-        var title = gettextCatalog.getString('Clear All', null, 'Title');
-        var message = gettextCatalog.getString('Are you sure you want to clear all custom filters?', null, 'Info');
+    $scope.clearCustomFilters = function () {
+        const title = gettextCatalog.getString('Clear All', null, 'Title');
+        const message = gettextCatalog.getString('Are you sure you want to clear all custom filters?', null, 'Info');
 
         confirmModal.activate({
             params: {
-                title: title,
-                message: message,
-                confirm: function() {
+                title,
+                message,
+                confirm() {
                     networkActivityTracker.track(
                         Filter.clear()
-                        .then(function(result) {
+                        .then((result) => {
                             if (result.data && result.data.Code === 1000) {
                                 $scope.customFilters = [];
                                 confirmModal.deactivate();
-                                notify({message: gettextCatalog.getString('Custom filters cleared', null, 'Info'), classes: 'notification-success'});
+                                notify({ message: gettextCatalog.getString('Custom filters cleared', null, 'Info'), classes: 'notification-success' });
                             } else if (result.data && result.data.Error) {
-                                notify({message: result.data.Error, classes: 'notification-danger'});
+                                notify({ message: result.data.Error, classes: 'notification-danger' });
                             }
                         })
                     );
                 },
-                cancel: function() {
+                cancel() {
                     confirmModal.deactivate();
                 }
             }
         });
     };
 
-    $scope.editCustomFilter = function(filter) {
+    $scope.editCustomFilter = function (filter) {
         filterModal.activate({
             params: {
                 mode: (filter.Simple && Object.keys(filter.Simple).length) ? 'simple' : 'complex',
-                filter: filter,
-                close: function() {
+                filter,
+                close() {
                     filterModal.deactivate();
                 }
             }
         });
     };
 
-    $scope.deleteCustomFilter = function(filter) {
-        var title = gettextCatalog.getString('Delete Filter', null, 'Title');
-        var message = gettextCatalog.getString('Are you sure you want to delete this filter?', null, 'Info');
+    $scope.deleteCustomFilter = function (filter) {
+        const title = gettextCatalog.getString('Delete Filter', null, 'Title');
+        const message = gettextCatalog.getString('Are you sure you want to delete this filter?', null, 'Info');
 
         confirmModal.activate({
             params: {
-                title: title,
-                message: message,
-                confirm: function() {
+                title,
+                message,
+                confirm() {
                     networkActivityTracker.track(
                         Filter.delete(filter)
-                        .then(function(result) {
+                        .then((result) => {
                             if (result.data && result.data.Code === 1000) {
                                 eventManager.call();
-                                notify({message: gettextCatalog.getString('Custom filter deleted', null, 'Info'), classes: 'notification-success'});
+                                notify({ message: gettextCatalog.getString('Custom filter deleted', null, 'Info'), classes: 'notification-success' });
                             } else if (result.data && result.data.Error) {
-                                notify({message: result.data.Error, classes: 'notification-danger'});
+                                notify({ message: result.data.Error, classes: 'notification-danger' });
                             }
                         })
                     );
                     confirmModal.deactivate();
                 },
-                cancel: function() {
+                cancel() {
                     confirmModal.deactivate();
                 }
             }
@@ -199,9 +198,9 @@ angular.module("proton.controllers.Settings")
             Filter.enable(filter)
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Status updated', null, 'Info'), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Status updated', null, 'Info'), classes: 'notification-success' });
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    notify({ message: result.data.Error, classes: 'notification-danger' });
                     filter.Status = 0;
                 }
             })
@@ -213,9 +212,9 @@ angular.module("proton.controllers.Settings")
             Filter.disable(filter)
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
-                    notify({message: gettextCatalog.getString('Status updated', null, 'Info'), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Status updated', null, 'Info'), classes: 'notification-success' });
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    notify({ message: result.data.Error, classes: 'notification-danger' });
                     filter.Status = 1;
                 }
             })
@@ -237,8 +236,8 @@ angular.module("proton.controllers.Settings")
      * @param {Integer} folder
      * @return {Boolean}
      */
-    $scope.empty = function(folder) {
-        var filters = $filter('filter')($scope.spamFilters, {Location: folder});
+    $scope.empty = function (folder) {
+        let filters = $filter('filter')($scope.spamFilters, { Location: folder });
 
         filters = $filter('filter')(filters, $scope.searchSpamFilter);
 
@@ -249,16 +248,16 @@ angular.module("proton.controllers.Settings")
      * Open a modal to a spam filter to a specific location
      * @param {Integer} folder
      */
-    $scope.addSpamFilter = function(folder) {
+    $scope.addSpamFilter = function (folder) {
         filterAddressModal.activate({
             params: {
                 location: folder,
-                add: function(filter) {
+                add(filter) {
                     $scope.spamFilters.push(filter);
                     filterAddressModal.deactivate();
-                    notify({message: gettextCatalog.getString('Spam Filter Added'), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Spam Filter Added'), classes: 'notification-success' });
                 },
-                close: function() {
+                close() {
                     filterAddressModal.deactivate();
                 }
             }
@@ -269,23 +268,23 @@ angular.module("proton.controllers.Settings")
      * Delete a specific spam filter
      * @param {Object} filter
      */
-    $scope.deleteSpamFilter = function(filter) {
-        var IDs = [];
+    $scope.deleteSpamFilter = function (filter) {
+        const IDs = [];
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
         IDs.push(filter.ID);
 
         networkActivityTracker.track(
-            IncomingDefault.delete({IDs: IDs})
-            .then(function(result) {
+            IncomingDefault.delete({ IDs })
+            .then((result) => {
                 if (result.data && result.data.Code === 1001) {
-                    var index = $scope.spamFilters.indexOf(filter);
+                    const index = $scope.spamFilters.indexOf(filter);
 
                     $scope.spamFilters.splice(index, 1);
-                    notify({message: gettextCatalog.getString('Spam Filter Deleted'), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Spam Filter Deleted'), classes: 'notification-success' });
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    notify({ message: result.data.Error, classes: 'notification-danger' });
                 }
             })
         );
@@ -296,8 +295,8 @@ angular.module("proton.controllers.Settings")
      * @param {Object} filter
      * @param {Integer} folder
      */
-    $scope.switchSpamFilter = function(filter, folder) {
-        var clone = angular.copy(filter);
+    $scope.switchSpamFilter = function (filter, folder) {
+        const clone = angular.copy(filter);
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
@@ -305,12 +304,12 @@ angular.module("proton.controllers.Settings")
 
         networkActivityTracker.track(
             IncomingDefault.update(clone)
-            .then(function(result) {
+            .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     angular.extend(filter, result.data.IncomingDefault);
-                    notify({message: gettextCatalog.getString('Spam Filter Updated', null), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Spam Filter Updated', null), classes: 'notification-success' });
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    notify({ message: result.data.Error, classes: 'notification-danger' });
                 }
             })
         );

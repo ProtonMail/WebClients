@@ -1,4 +1,6 @@
 angular.module('proton.constants', [])
+/* eslint  no-useless-escape: "off" */
+.constant('regexEmail', /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i)
 
 //
 // Constants definition
@@ -8,8 +10,8 @@ angular.module('proton.constants', [])
     BASE_SIZE: 1024, // define the base used for byte
     PM_SIGNATURE: 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.',
     KEY_PHASE: 1,
-    MAILBOX_PASSWORD_KEY: "proton:mailbox_pwd",
-    OAUTH_KEY: "proton:oauth",
+    MAILBOX_PASSWORD_KEY: 'proton:mailbox_pwd',
+    OAUTH_KEY: 'proton:oauth',
     WHITELIST: ['notify@protonmail.com'],
     INBOX: 0,
     DRAFT: 1,

@@ -3,14 +3,11 @@ angular.module('proton.service.message', [])
 
         const RE_PREFIX = gettextCatalog.getString('Re:', null);
         const FW_PREFIX = gettextCatalog.getString('Fw:', null);
-        const RE_LENGTH = RE_PREFIX.length;
-        const FW_LENGTH = FW_PREFIX.length;
 
         function formatSubject(subject = '', prefix = RE_PREFIX) {
-            const newSubject = subject.substring(0, prefix.length);
             const hasPrefix = subject.toLowerCase().indexOf(prefix.toLowerCase()) === 0;
 
-            return hasPrefix ? subject : (prefix + ' ' + subject);
+            return hasPrefix ? subject : `${prefix} ${subject}`;
         }
 
         /**
@@ -27,7 +24,7 @@ angular.module('proton.service.message', [])
          * @param  {String} options.Subject from the current message
          * @param  {String} options.ToList  from the current message
          */
-        function nouveau(newMsg, {Subject = '', ToList = [], CCList = [], BCCList = [], DecryptedBody = ''} = {}) {
+        function nouveau(newMsg, { Subject = '', ToList = [], CCList = [], BCCList = [], DecryptedBody = '' } = {}) {
             newMsg.Subject = Subject;
             newMsg.ToList = ToList;
             newMsg.CCList = CCList;
@@ -47,7 +44,7 @@ angular.module('proton.service.message', [])
             newMsg.Action = CONSTANTS.REPLY;
             newMsg.Subject = formatSubject(origin.Subject);
 
-            if(origin.Type === 2 || origin.Type === 3) {
+            if (origin.Type === 2 || origin.Type === 3) {
                 newMsg.ToList = origin.ToList;
             } else {
                 newMsg.ToList = [origin.ReplyTo];
@@ -98,7 +95,7 @@ angular.module('proton.service.message', [])
          * @param {Array} originalAttachements From the current message
          * return {String}
         */
-        function injectInline({Attachments = []} = {}){
+        function injectInline({ Attachments = [] } = {}) {
             return Attachments.filter((attachement) => {
                 const disposition = attachement.Headers['content-disposition'];
                 const REGEXP_IS_INLINE = /^inline/i;
@@ -108,7 +105,7 @@ angular.module('proton.service.message', [])
         }
 
         function builder(action, currentMsg = {}, newMsg = {}) {
-            const addresses = _.chain(authentication.user.Addresses).where({Status: 1, Receive: 1}).sortBy('Send').value();
+            const addresses = _.chain(authentication.user.Addresses).where({ Status: 1, Receive: 1 }).sortBy('Send').value();
 
             (action === 'new') && nouveau(newMsg, currentMsg);
             (action === 'reply') && reply(newMsg, currentMsg);
@@ -117,7 +114,7 @@ angular.module('proton.service.message', [])
 
             if (currentMsg.AddressID) {
                 newMsg.AddressID = currentMsg.AddressID;
-                newMsg.From = _.findWhere(addresses, {ID: currentMsg.AddressID});
+                newMsg.From = _.findWhere(addresses, { ID: currentMsg.AddressID });
             } else {
                 newMsg.AddressID = addresses[0].ID;
                 newMsg.From = addresses[0];
@@ -140,7 +137,7 @@ angular.module('proton.service.message', [])
                     'UTC Time: ' + $filter('utcReadableTime')(currentMsg.Time) + '<br>',
                     'From: ' + currentMsg.Sender.Address + '<br>',
                     'To: ' + tools.contactsToString(currentMsg.ToList) + '<br>',
-                    (cc.length ? cc + '<br>': '') + '<br>',
+                    (cc.length ? cc + '<br>' : '') + '<br>',
                     (currentMsg.getDecryptedBody()),
                     '</blockquote><br>'
                 ].join(''));
@@ -165,7 +162,7 @@ angular.module('proton.service.message', [])
             let sender = enabledAddresses[0];
 
             if (AddressID) {
-                const originalAddress = _.findWhere(enabledAddresses, {ID: AddressID});
+                const originalAddress = _.findWhere(enabledAddresses, { ID: AddressID });
 
                 originalAddress && (sender = originalAddress);
             }
@@ -196,7 +193,7 @@ angular.module('proton.service.message', [])
                 uploading: 0,
                 toFocussed: false,
                 autocompletesFocussed: false,
-                ccbcc: false,
+                ccbcc: false
             });
         }
 

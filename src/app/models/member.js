@@ -1,15 +1,15 @@
-angular.module("proton.models.members", ["proton.srp"])
+angular.module('proton.models.members', ['proton.srp'])
 
-.factory("Member", function($http, $q, url, srp) {
+.factory('Member', ($http, $q, url, srp) => {
     return {
         // POST
         /**
          * Add a member to a group. This creates a new user. Returns the new {member_id} if successful.
          */
-        create: function(Obj, password) {
-            return srp.randomVerifier(password).then(function(pass_params) {
-                return $http.post(url.get() + '/members', _.extend(Obj, pass_params));
-            });
+        create(Obj, password) {
+            return srp
+                .getPasswordParams(password, Obj)
+                .then((data) => $http.post(url.get() + '/members', data));
         },
         /**
          * Authenticate on behalf of a member to view her inbox.
@@ -17,24 +17,24 @@ angular.module("proton.models.members", ["proton.srp"])
          * @param {Object} params
          * @return {Promise}
          */
-        authenticate: function(memberID, params) {
+        authenticate(memberID, params) {
             return $http.post(url.get() + '/members/' + memberID + '/auth', params);
         },
-        //GET
-        query: function() {
+        // GET
+        query() {
             return $http.get(url.get() + '/members');
         },
         /**
          * Get member info, including UserID and key pair.
          */
-        get: function(memberID) {
+        get(memberID) {
             return $http.get(url.get() + '/members/' + memberID);
         },
         // PUT
         /**
          * Re-assign user's email address, change the order in which member's addresses are listed, change login pw, change mailbox pw, change keys.
          */
-        update: function(member) {
+        update(member) {
             return $http.put(url.get() + '/members/' + member.ID, member);
         },
         /**
@@ -43,7 +43,7 @@ angular.module("proton.models.members", ["proton.srp"])
          * @param {String} name
          * @return {Promise}
          */
-        name: function(memberID, name) {
+        name(memberID, name) {
             return $http.put(url.get() + '/members/' + memberID + '/name', {
                 Name: name
             });
@@ -54,7 +54,7 @@ angular.module("proton.models.members", ["proton.srp"])
          * @param {Integer} space
          * @return {Promise}
          */
-        quota: function(memberID, space) {
+        quota(memberID, space) {
             return $http.put(url.get() + '/members/' + memberID + '/quota', {
                 MaxSpace: space
             });
@@ -65,7 +65,7 @@ angular.module("proton.models.members", ["proton.srp"])
          * @param {Object} params
          * @return {Promise}
          */
-        role: function(memberID, params) {
+        role(memberID, params) {
             return $http.put(url.get() + '/members/' + memberID + '/role', params);
         },
         /**
@@ -74,30 +74,30 @@ angular.module("proton.models.members", ["proton.srp"])
          * @param {String} password
          * @return {Promise}
          */
-        password: function(memberID, password) {
-            return srp.randomVerifier(password).then(function(pass_params) {
-                return $http.put(url.get() + '/members/' + memberID + '/password', pass_params);
-            });
+        password(memberID, password) {
+            return srp
+                .getPasswordParams(password)
+                .then((data) => $http.post('/members/' + memberID + '/password', data));
         },
         /**
          * Make account private
          * @param {String} memberID
          * @return {Promise}
          */
-         private: function(memberID) {
-             return $http.put(url.get() + '/members/' + memberID + '/private');
-         },
+        private(memberID) {
+            return $http.put(url.get() + '/members/' + memberID + '/private');
+        },
         // DELETE
         /**
          * Nuke the member. Protect against nuking the group owner.
          */
-        delete: function(memberID) {
+        delete(memberID) {
             return $http.delete(url.get() + '/members/' + memberID);
         },
         /**
          * Revoke token.
          */
-        revoke: function() {
+        revoke() {
             return $http.delete(url.get() + 'members/auth');
         }
     };

@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.directive('filterButton', (filterModal, CONSTANTS) => ({
+.directive('filterButton', (filterModal) => ({
     restrict: 'E',
     replace: true,
     scope: { message: '=' },
@@ -23,14 +23,14 @@ angular.module('proton.message')
         </span>
     </span>
     `,
-    link(scope, element, attrs) {
+    link(scope, element) {
         scope.model = {};
 
-        function recipients({ToList = [], CCList = [], BCCList = []}) {
+        function recipients({ ToList = [], CCList = [], BCCList = [] }) {
             return [].concat(ToList).concat(CCList).concat(BCCList).map((contact) => contact.Address);
         }
 
-        function attachments({Attachments = []}) {
+        function attachments({ Attachments = [] }) {
             return (Attachments.length) ? 'contains' : '!contains';
         }
 
@@ -45,24 +45,24 @@ angular.module('proton.message')
             const conditions = [];
 
             if (scope.model.subject) {
-                conditions.push({Type: {value: 'subject'}, Comparator: {value: 'contains'}, Values: [scope.message.Subject]});
+                conditions.push({ Type: { value: 'subject' }, Comparator: { value: 'contains' }, Values: [scope.message.Subject] });
             }
 
             if (scope.model.sender) {
-                conditions.push({Type: {value: 'sender'}, Comparator: {value: 'contains'}, Values: [scope.message.Sender.Address]});
+                conditions.push({ Type: { value: 'sender' }, Comparator: { value: 'contains' }, Values: [scope.message.Sender.Address] });
             }
 
             if (scope.model.recipient) {
-                conditions.push({Type: {value: 'recipient'}, Comparator: {value: 'contains'}, Values: recipients(scope.message)});
+                conditions.push({ Type: { value: 'recipient' }, Comparator: { value: 'contains' }, Values: recipients(scope.message) });
             }
 
             if (scope.model.attachments) {
-                conditions.push({Type: {value: 'attachments'}, Comparator: {value: attachments(scope.message)}});
+                conditions.push({ Type: { value: 'attachments' }, Comparator: { value: attachments(scope.message) } });
             }
 
             const filter = {
                 Simple: {
-                    Operator: {value: 'all'},
+                    Operator: { value: 'all' },
                     Actions: [],
                     Conditions: conditions
                 }

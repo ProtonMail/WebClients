@@ -1,19 +1,38 @@
-angular.module("proton.models.payments", [])
+angular.module('proton.models.payments', [])
 
-.factory("Payment", function($http, $q, gettextCatalog, authentication, CONSTANTS, url) {
+.factory('Payment', ($http, $q, gettextCatalog, authentication, CONSTANTS, url) => {
+
+    const transformRepBillingCycle = (data) => {
+        const json = angular.fromJson(data);
+
+        if (json && json.Code === 1000) {
+            const month = 60 * 60 * 24 * 30; // Time for a month in second
+
+            _.each(json.Payments, (invoice) => {
+                if (parseInt((invoice.PeriodEnd - invoice.PeriodStart) / month, 10) === 1) {
+                    invoice.BillingCycle = 12;
+                } else {
+                    invoice.BillingCycle = 1;
+                }
+            });
+        }
+
+        return json || {};
+    };
+
     return {
         /**
         * Donate for perks. Does not require authentication.
         * @param {Object} Obj
         */
-        donate: function(Obj) {
+        donate(Obj) {
             return $http.post(url.get() + '/payments/donate', Obj);
         },
         /**
         * Cancel given subscription.
         * @param {Object} Obj
         */
-        unsubscribe: function(Obj) {
+        unsubscribe(Obj) {
             return $http.post(url.get() + '/payments/unsubscribe', Obj);
         },
         /**
@@ -21,7 +40,7 @@ angular.module("proton.models.payments", [])
          * @param {Object} params
          * @return {Promise}
          */
-        paypal: function(params) {
+        paypal(params) {
             return $http.post(url.get() + '/payments/paypal', params);
         },
         /**
@@ -29,14 +48,14 @@ angular.module("proton.models.payments", [])
          * @param {Object} params
          * @param {Promise}
          */
-        verify: function(params) {
+        verify(params) {
             return $http.post(url.get() + '/payments/verify', params);
         },
         /**
          * Get payment method status
          * @return {Promise}
          */
-        status: function() {
+        status() {
             return $http.get(url.get() + '/payments/status');
         },
         /**
@@ -44,30 +63,30 @@ angular.module("proton.models.payments", [])
          * @param {Object} params
          * @return {Promise}
          */
-        invoices: function(params) {
-            return $http.get(url.get() + '/payments/invoices', {params: params});
+        invoices(params) {
+            return $http.get(url.get() + '/payments/invoices', { params });
         },
         /**
          * Get an invoice as pdf
          */
-        invoice: function(id) {
-            return $http.get(url.get() + '/payments/invoices/' + id, {responseType: "arraybuffer"});
+        invoice(id) {
+            return $http.get(url.get() + '/payments/invoices/' + id, { responseType: 'arraybuffer' });
         },
         /**
          * Return information to pay invoice unpaid
          */
-         check: function(id) {
-             return $http.post(url.get() + '/payments/invoices/' + id + '/check');
-         },
+        check(id) {
+            return $http.post(url.get() + '/payments/invoices/' + id + '/check');
+        },
          /**
           * Pay an unpaid invoice
           * @param {String} id
           * @param {Object} params
           * @return {Promise}
           */
-         pay: function(id, params) {
+        pay(id, params) {
             return $http.post(url.get() + '/payments/invoices/' + id, params);
-         },
+        },
 
         /**
          * Get plans available to user
@@ -93,7 +112,7 @@ angular.module("proton.models.payments", [])
                     });
 
                     if (CONSTANTS.KEY_PHASE <= 3) {
-                        json.Plans = json.Plans.filter(({Name}) => Name !== 'business');
+                        json.Plans = json.Plans.filter(({ Name }) => Name !== 'business');
                     }
 
                     json.Plans.forEach((plan) => {
@@ -145,19 +164,19 @@ angular.module("proton.models.payments", [])
         * Get current subscription
         * @return {Promise}
         */
-        subscription: function() {
+        subscription() {
             return $http.get(url.get() + '/payments/subscription', {
-                transformResponse: function(data, headersGetter, status) {
-                    data = angular.fromJson(data);
+                transformResponse(datas) {
+                    const json = angular.fromJson(datas);
 
-                    if (angular.isDefined(data) && data.Code === 1000) {
-                        data.Subscription.Name = _.findWhere(data.Subscription.Plans, {Type: 1}).Name;
-                        data.Subscription.Title = _.findWhere(data.Subscription.Plans, {Type: 1}).Title;
+                    if (json && json.Code === 1000) {
+                        const { Name, Title } = _.findWhere(json.Subscription.Plans, { Type: 1 }) || {};
+                        json.Subscription.Name = Name;
+                        json.Subscription.Title = Title;
                     }
-
-                    if (angular.isDefined(data) && data.Code === 22110) {
-                        data.Code = 1000;
-                        data.Subscription = {
+                    if (json && json.Code === 22110) {
+                        json.Code = 1000;
+                        json.Subscription = {
                             Name: 'free',
                             Title: 'ProtonMail Free',
                             MaxDomains: 0,
@@ -169,44 +188,44 @@ angular.module("proton.models.payments", [])
                         };
                     }
 
-                    return data;
+                    return json || {};
                 }
             });
         },
         /**
          * Validate a subscription
          */
-        valid: function(params) {
+        valid(params) {
             return $http.post(url.get() + '/payments/subscription/check', params);
         },
-        updateMethod: function(params) {
+        updateMethod(params) {
             return $http.post(url.get() + '/payments/methods', params);
         },
-        deleteMethod: function(id) {
+        deleteMethod(id) {
             return $http.delete(url.get() + '/payments/methods/' + id);
         },
         /**
          * Get payment methods in priority order
          */
-        methods: function() {
+        methods() {
             return $http.get(url.get() + '/payments/methods');
         },
         /**
          * First will be charged for subscriptions
          */
-        order: function(params) {
+        order(params) {
             return $http.post(url.get() + '/payments/methods/order', params);
         },
         /**
          * Create a subscription
          */
-        subscribe: function(params) {
+        subscribe(params) {
             return $http.post(url.get() + '/payments/subscription', params);
         },
         /**
          * Delete current subscription, locked
          */
-        delete: function() {
+        delete() {
             return $http.delete(url.get() + '/payments/subscription');
         },
         /**
@@ -214,29 +233,10 @@ angular.module("proton.models.payments", [])
         * @param {Integer} timestamp
         * @param {Integer} limit
         */
-        user: function(timestamp, limit) {
+        user(Time, Limit) {
             return $http.get(url.get() + '/payments/user', {
-                params: {
-                    Time: timestamp,//
-                    Limit: limit
-                },
-                transformResponse: function(data, headersGetter, status) {
-                    data = angular.fromJson(data);
-
-                    if(angular.isDefined(data) && data.Code === 1000) {
-                        var month = 60 * 60 * 24 * 30; // Time for a month in second
-
-                        _.each(data.Payments, function(invoice) {
-                            if(parseInt((invoice.PeriodEnd - invoice.PeriodStart) / month) === 1) {
-                                invoice.BillingCycle = 12;
-                            } else {
-                                invoice.BillingCycle = 1;
-                            }
-                        });
-                    }
-
-                    return data;
-                }
+                params: { Time, Limit },
+                transformResponse: transformRepBillingCycle
             });
         },
         /**
@@ -244,40 +244,21 @@ angular.module("proton.models.payments", [])
         * @param {Integer} timestamp
         * @param {Integer} limit
         */
-        organization: function(timestamp, limit) {
+        organization(Time, Limit) {
             return $http.get(url.get() + '/payments/organization', {
-                params: {
-                    Time: timestamp,
-                    Limit: limit
-                },
-                transformResponse: function(data, headersGetter, status) {
-                    data = angular.fromJson(data);
-
-                    if (angular.isDefined(data) && data.Code === 1000) {
-                        var month = 60 * 60 * 24 * 30; // Time for a month in second
-
-                        _.each(data.Payments, function(invoice) {
-                            if(parseInt((invoice.PeriodEnd - invoice.PeriodStart) / month) === 1) {
-                                invoice.BillingCycle = 12;
-                            } else {
-                                invoice.BillingCycle = 1;
-                            }
-                        });
-                    }
-
-                    return data;
-                }
+                params: { Time, Limit },
+                transformResponse: transformRepBillingCycle
             });
         },
-        cardType: function(number) {
-            var deferred = $q.defer();
+        cardType(number) {
+            const deferred = $q.defer();
 
             deferred.resolve($.payment.cardType(number));
 
             return deferred.promise;
         },
-        validateCardNumber: function(number) {
-            var deferred = $q.defer();
+        validateCardNumber(number) {
+            const deferred = $q.defer();
 
             if ($.payment.validateCardNumber(number) === false) {
                 deferred.reject(new Error(gettextCatalog.getString('Card number invalid', null, 'Error')));
@@ -287,8 +268,8 @@ angular.module("proton.models.payments", [])
 
             return deferred.promise;
         },
-        validateCardExpiry: function(month, year) {
-            var deferred = $q.defer();
+        validateCardExpiry(month, year) {
+            const deferred = $q.defer();
 
             if ($.payment.validateCardExpiry(month, year) === false) {
                 deferred.reject(new Error(gettextCatalog.getString('Expiration date invalid', null, 'Error')));
@@ -298,8 +279,8 @@ angular.module("proton.models.payments", [])
 
             return deferred.promise;
         },
-        validateCardCVC: function(cvc) {
-            var deferred = $q.defer();
+        validateCardCVC(cvc) {
+            const deferred = $q.defer();
 
             if ($.payment.validateCardCVC(cvc) === false) {
                 deferred.reject(new Error(gettextCatalog.getString('CVC invalid', null, 'Error')));

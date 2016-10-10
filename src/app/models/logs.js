@@ -1,13 +1,13 @@
-angular.module("proton.models.logs", [])
+angular.module('proton.models.logs', [])
 
-.factory("Logs", function($http, url) {
+.factory('Logs', ($http, url) => {
     return {
         // GET
-        getLogs: function() {
+        getLogs() {
             return $http.get(url.get() + '/logs/auth');
         },
         // DELETE
-        clearLogs: function(Obj) {
+        clearLogs() {
             return $http.delete(url.get() + '/logs/auth');
         }
     };

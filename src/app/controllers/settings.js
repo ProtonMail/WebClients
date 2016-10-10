@@ -1,1 +1,1 @@
-angular.module("proton.controllers.Settings", []);
+angular.module('proton.controllers.Settings', []);

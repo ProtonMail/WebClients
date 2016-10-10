@@ -1,5 +1,5 @@
-angular.module("proton.networkActivity", ["proton.errorReporter"])
-.factory("networkActivityTracker", ($log, errorReporter, $rootScope, notify) => {
+angular.module('proton.networkActivity', ['proton.errorReporter'])
+.factory('networkActivityTracker', ($log, errorReporter, $rootScope, notify) => {
 
     let promises = [];
     const DURATION = 10000; // 10 seconds
@@ -19,7 +19,7 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
      * @param  {Number} duration
      * @return {void}
      */
-    const notifyAlert = (message, duration = DURATION) =>  notify({ message, duration, classes: 'notification-danger' });
+    const notifyAlert = (message, duration = DURATION) => notify({ message, duration, classes: 'notification-danger' });
 
     /**
      * Check if we have some promises currently running
@@ -42,17 +42,17 @@ angular.module("proton.networkActivity", ["proton.errorReporter"])
 
         promises = _.union(promises, [promise]);
 
-        promise.catch(function(error) {
-            if(angular.isString(error)) { // Just a String
+        promise.catch((error) => {
+            if (angular.isString(error)) { // Just a String
                 notifyAlert(error);
             }
 
-            if(angular.isObject(error)) { // Error Object
-                var message;
+            if (angular.isObject(error)) { // Error Object
+                let message;
 
-                if(angular.isDefined(error.message)) {
+                if (angular.isDefined(error.message)) {
                     message = error.message;
-                } else if(angular.isDefined(error.Error)) {
+                } else if (angular.isDefined(error.Error)) {
                     message = error.Error;
                 } else {
                     message = 'An error has occurred. Please try again.';

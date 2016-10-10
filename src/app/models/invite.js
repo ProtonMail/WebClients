@@ -9,7 +9,7 @@ angular.module('proton.models.invite', [])
          * @return {Promise}
          */
         check(Token, Username) {
-            return $http.post(url.get() + '/invites/check', {Token, Username});
+            return $http.post(url.get() + '/invites/check', { Token, Username });
         }
     };
 

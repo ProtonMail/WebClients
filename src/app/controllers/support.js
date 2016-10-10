@@ -1,8 +1,8 @@
-angular.module("proton.controllers.Support", [
-    "proton.models"
+angular.module('proton.controllers.Support', [
+    'proton.models'
 ])
 
-.controller("SupportController", function(
+.controller('SupportController', (
     $rootScope,
     $scope,
     $state,
@@ -16,7 +16,7 @@ angular.module("proton.controllers.Support", [
     setupKeys,
     Key,
     networkActivityTracker
-) {
+) => {
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
 
     $scope.states = {
@@ -25,7 +25,7 @@ angular.module("proton.controllers.Support", [
         DANGER: 3,
         PASSWORD: 4,
         GENERATE: 5,
-        INSTALL: 6,
+        INSTALL: 6
     };
 
     $scope.tools = tools;
@@ -51,34 +51,34 @@ angular.module("proton.controllers.Support", [
     $scope.logUserIn = false;
     $scope.finishInstall = false;
 
-    $scope.getMessageTitle = function() {
-        return $state.params.data.title || "";
+    $scope.getMessageTitle = function () {
+        return $state.params.data.title || '';
     };
 
-    $scope.getMessageContent = function() {
-        return $state.params.data.content || "";
+    $scope.getMessageContent = function () {
+        return $state.params.data.content || '';
     };
 
-    $scope.getMessageType = function() {
-        return $state.params.data.type || "";
+    $scope.getMessageType = function () {
+        return $state.params.data.type || '';
     };
 
     /**
      * Request a token to reset login pass. Some validation first.
      * Shows errors otherwise sets a flag to show a different form
      */
-    $scope.resetLostPassword = function(form) {
+    $scope.resetLostPassword = function () {
         $scope.params.username = $scope.params.username;
         networkActivityTracker.track(
             Reset.requestResetToken({
                 Username: $scope.params.username,
                 NotificationEmail: $scope.params.recoveryEmail
             })
-            .then(function(result) {
+            .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     $scope.resetState = $scope.states.CODE;
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    notify({ message: result.data.Error, classes: 'notification-danger' });
                 }
             })
         );
@@ -88,7 +88,7 @@ angular.module("proton.controllers.Support", [
      * Validates the token and shows the last form
      * @param form {Form}
      */
-    $scope.validateToken = function(form) {
+    $scope.validateToken = function () {
 
         $scope.tokenParams = {
             Username: $scope.params.username,
@@ -96,26 +96,23 @@ angular.module("proton.controllers.Support", [
         };
 
         Reset.validateResetToken($scope.tokenParams)
-        .then(
-            (response) => {
-                if (response.data && response.data.Code === 1000) {
+        .then(({ data = {} }) => {
+            if (data.Code === 1000) {
 
-                    passwordMode = response.data.PasswordMode;
-                    $scope.addresses = response.data.Addresses;
+                passwordMode = data.PasswordMode;
+                $scope.addresses = data.Addresses;
 
-                    $scope.resetState = $scope.states.DANGER;
-                    if (passwordMode === 2 && $scope.keyPhase < 3) {
-                        $scope.resetState = $scope.states.PASSWORD;
-                    }
+                $scope.resetState = $scope.states.DANGER;
+                if (passwordMode === 2 && $scope.keyPhase < 3) {
+                    $scope.resetState = $scope.states.PASSWORD;
                 }
-                else if (response.data && response.data.Error) {
-                    return Promise.reject({message: response.data.Error});
-                }
-                else {
-                    return Promise.reject({message: 'Unable to verify reset token'});
-                }
+            } else {
+                return Promise.reject({
+                    message: data.Error || 'Unable to verify reset token'
+                });
             }
-        )
+
+        })
         .catch((error) => {
             resetState();
             $log.error(error);
@@ -126,23 +123,24 @@ angular.module("proton.controllers.Support", [
         });
     };
 
-    $scope.confirmReset = function() {
+    $scope.confirmReset = function () {
         $scope.resetState = $scope.states.PASSWORD;
     };
 
     function doReset() {
         if (passwordMode === 2 && $scope.keyPhase < 3) {
             return Reset.resetPassword($scope.tokenParams, $scope.params.password)
-            .then((response) => {
-                if (response.data && response.data.Code === 1000) {
+            .then((response = {}) => {
+
+                const { data = {} } = response;
+
+                if (data.Code === 1000) {
                     return response;
                 }
-                else if (response.data && response.data.Error) {
-                    return Promise.reject({message: response.data.Error});
-                }
-                else {
-                    return Promise.reject({message: 'Unable to update password. Please try again'});
-                }
+
+                return Promise.reject({
+                    message: data.Error || 'Unable to update password. Please try again'
+                });
             });
         }
 
@@ -190,7 +188,7 @@ angular.module("proton.controllers.Support", [
      * Saves new login pass. Shows success page.
      * @param form {Form}
      */
-    $scope.resetPassword = function(form) {
+    $scope.resetPassword = function () {
 
         networkActivityTracker.track(
         doReset()

@@ -1,14 +1,14 @@
 angular.module('proton.login', [])
   .directive('loginForm', (authentication, eventManager, cache, cacheCounters) => ({
-    replace: true,
-    templateUrl: 'templates/directives/loginForm.tpl.html',
-    link() {
+      replace: true,
+      templateUrl: 'templates/directives/loginForm.tpl.html',
+      link() {
       // Stop event manager request
-      eventManager.stop();
+          eventManager.stop();
       // Clear cache
-      cache.reset();
-      cacheCounters.reset();
+          cache.reset();
+          cacheCounters.reset();
       // We automatically logout the user when he comes to login page and is already logged in
-      authentication.isLoggedIn() && authentication.logout(false);
-    }
+          authentication.isLoggedIn() && authentication.logout(false);
+      }
   }));

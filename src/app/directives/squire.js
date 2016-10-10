@@ -1,7 +1,13 @@
-angular.module("proton.squire", [
-    "proton.tooltip"
+angular.module('proton.squire', [
+    'proton.tooltip'
 ])
-.directive("squire", function(tools, $rootScope, $timeout, authentication, embedded, CONSTANTS, signatureBuilder, attachmentFileFormat) {
+.directive('squire', (tools, $rootScope, $timeout, authentication, embedded, CONSTANTS, signatureBuilder, attachmentFileFormat) => {
+
+    const isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
+    const IFRAME_CLASS = 'angular-squire-iframe';
+    const IMAGE_DEFAULT = '';
+    const LINK_DEFAULT = '';
+    const HEADER_CLASS = 'h4';
 
     /**
      * Generate an event listener based on the eventName
@@ -37,7 +43,7 @@ angular.module("proton.squire", [
         },
         replace: true,
         transclude: true,
-        templateUrl: "templates/directives/squire.tpl.html",
+        templateUrl: 'templates/directives/squire.tpl.html',
         link(scope, element, { typeContent = 'message' }) {
 
             // Delay before updating the model as the process is slow
@@ -53,19 +59,16 @@ angular.module("proton.squire", [
              */
             const isMessage = () => typeContent === 'message';
 
-            var IFRAME_CLASS, LINK_DEFAULT, IMAGE_DEFAULT, editor, debounce, getLinkAtCursor, iframe, iframeLoaded, isChrome, isFF, isIE, isMac, loaded, ua, updateStylesToMatch;
 
-            LINK_DEFAULT = IMAGE_DEFAULT = "";
-            IFRAME_CLASS = 'angular-squire-iframe';
-            const HEADER_CLASS = 'h4';
+            let editor = scope.editor = null;
+            let iframe;
+            let menubar;
             let isLoaded = false;
 
-            isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
-            editor = scope.editor = null;
             scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
 
-            scope.$on('$destroy', function() {
-                if(angular.isDefined(editor)) {
+            scope.$on('$destroy', () => {
+                if (angular.isDefined(editor)) {
                     ['dragleave', 'dragenter', 'drop']
                         .forEach((key) => editor.removeEventListener(key, draggableCallback(key, scope.message, typeContent)));
 
@@ -105,12 +108,12 @@ angular.module("proton.squire", [
                     });
             }
 
-            getLinkAtCursor = function() {
+            function getLinkAtCursor() {
                 if (!editor) {
                     return LINK_DEFAULT;
                 }
-                return angular.element(editor.getSelection().commonAncestorContainer).closest("a").attr("href");
-            };
+                return angular.element(editor.getSelection().commonAncestorContainer).closest('a').attr('href');
+            }
 
             function handleDrop(e) {
                 // Do not prevent the drop of text
@@ -121,22 +124,22 @@ angular.module("proton.squire", [
                 }
             }
 
-            scope.canRemoveLink = function() {
-                var href = getLinkAtCursor();
+            scope.canRemoveLink = function () {
+                const href = getLinkAtCursor();
 
                 return href && href !== LINK_DEFAULT;
             };
 
-            scope.canAddLink = function() {
+            scope.canAddLink = function () {
                 return scope.data.link && scope.data.link !== LINK_DEFAULT;
             };
 
-            scope.canAddImage = function() {
+            scope.canAddImage = function () {
                 return scope.data.image && scope.data.image !== IMAGE_DEFAULT;
             };
 
-            scope.popoverHide = function(event, name) {
-                var hide = function() {
+            scope.popoverHide = function (event, name) {
+                const hide = function () {
                     element.find('.squire-popover.' + name).hide();
 
                     if (name) {
@@ -153,7 +156,7 @@ angular.module("proton.squire", [
                 }
             };
 
-            scope.popoverShow = function(e, name) {
+            scope.popoverShow = function (e, name) {
                 if (element.find('.squire-popover.' + name).is(':visible')) {
                     element.find('.squire-popover.' + name).hide();
                 } else {
@@ -180,7 +183,7 @@ angular.module("proton.squire", [
                 reader.addEventListener('load', () => {
                     const dataURI = reader.result;
 
-                    editor.insertImage(dataURI, {class: 'proton-embedded', alt: file.name});
+                    editor.insertImage(dataURI, { class: 'proton-embedded', alt: file.name });
                     scope.popoverHide(evt, 'insertImage');
                 }, false);
 
@@ -192,7 +195,7 @@ angular.module("proton.squire", [
             scope.insertDataUri = ($event) => {
                 const input = element[0].querySelector('input[type=file]');
 
-                input.onchange = (e) => {
+                input.onchange = () => {
                     const file = input.files[0];
 
                     insertImage(file, $event);
@@ -206,30 +209,29 @@ angular.module("proton.squire", [
                 }
             };
 
-            updateStylesToMatch = function(doc) {
-                var head = doc.head || doc.getElementsByTagName('head')[0];
-                var style = doc.createElement('style');
+            function updateStylesToMatch(doc) {
+                const head = doc.head || doc.getElementsByTagName('head')[0];
+                const style = doc.createElement('style');
 
-                var css = "html{height:100%} body {height:100%; box-sizing:border-box; padding: 1rem 10px 1rem 10px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; line-height: 1.65em; color: #222; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; } .proton-embedded{ max-width:100%; height:auto; } .protonmail_signature_block-empty {display: none}";
+                const css = "html{height:100%} body {height:100%; box-sizing:border-box; padding: 1rem 10px 1rem 10px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; line-height: 1.65em; color: #222; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; } .proton-embedded{ max-width:100%; height:auto; } .protonmail_signature_block-empty {display: none}";
 
                 style.setAttribute('type', 'text/css');
                 style.setAttribute('rel', 'stylesheet');
-                if (style.styleSheet){
+                if (style.styleSheet) {
                     style.styleSheet.cssText = css;
-                }
-                else {
+                } else {
                     style.appendChild(doc.createTextNode(css));
                 }
                 head.appendChild(style);
 
-                doc.childNodes[0].className = IFRAME_CLASS + " ";
+                doc.childNodes[0].className = IFRAME_CLASS + ' ';
                 if (scope.editorClass) {
                     return doc.childNodes[0].className += scope.editorClass;
                 }
-            };
+            }
 
-            iframeLoaded = function() {
-                var iframeDoc = iframe[0].contentWindow.document;
+            function iframeLoaded() {
+                const iframeDoc = iframe[0].contentWindow.document;
 
                 updateStylesToMatch(iframeDoc);
                 // ngModel.$setPristine();
@@ -256,7 +258,7 @@ angular.module("proton.squire", [
                 }
 
 
-                editor.addEventListener("pathChange", _.throttle(() => {
+                editor.addEventListener('pathChange', _.throttle(() => {
                     const p = editor.getPath();
                     const node = element[0].querySelector('.add-link');
 
@@ -268,7 +270,7 @@ angular.module("proton.squire", [
                         }
                     }
 
-                    if ('(selection)' !== p) {
+                    if (p !== '(selection)') {
 
                         /**
                          * Find and filter selections to toogle the current action (toolbar)
@@ -276,14 +278,14 @@ angular.module("proton.squire", [
                          */
                         const classNames = _
                             .chain(p.split('BODY')[1].split('>'))
-                            .filter(i => i && !/IMG.proton-embedded|.proton-embedded|DIV.image.loading/i.test(i))
+                            .filter((i) => i && !/IMG.proton-embedded|.proton-embedded|DIV.image.loading/i.test(i))
                             .reduce((acc, path) => acc.concat(path.split('.')), [])
-                            .filter(i => i && !/div|html|body|span/i.test(i))
+                            .filter((i) => i && !/div|html|body|span/i.test(i))
                             .reduce((acc, key) => {
-                              if (HEADER_CLASS === key) {
-                                  return `${acc} size`;
-                              }
-                              return `${acc} ${key.trim()}`;
+                                if (HEADER_CLASS === key) {
+                                    return `${acc} size`;
+                                }
+                                return `${acc} ${key.trim()}`;
                             }, '')
                             .value()
                             .toLowerCase()
@@ -331,58 +333,58 @@ angular.module("proton.squire", [
                     updateModel(Body);
                 });
 
-                editor.addEventListener('focus', function() {
+                editor.addEventListener('focus', () => {
                     element.addClass('focus').triggerHandler('focus');
                     $rootScope.$broadcast('editorFocussed', element, editor);
                 });
 
-                editor.addEventListener('purify', function(event) {
+                editor.addEventListener('purify', (event) => {
                     // triggered by Squire at paste event, before all dom injection
                     event.string = DOMPurify.sanitize(event.string);
                     return event;
 
                 });
 
-                editor.addEventListener('blur', function() {
+                editor.addEventListener('blur', () => {
                     element.removeClass('focus').triggerHandler('blur');
                 });
 
-                editor.addEventListener("mscontrolselect", function(event) {
+                editor.addEventListener('mscontrolselect', (event) => {
                     event.preventDefault();
                 });
 
 
-                editor.alignRight = function() {
-                    return editor.setTextAlignment("right");
+                editor.alignRight = function () {
+                    return editor.setTextAlignment('right');
                 };
 
-                editor.alignCenter = function() {
-                    return editor.setTextAlignment("center");
+                editor.alignCenter = function () {
+                    return editor.setTextAlignment('center');
                 };
 
-                editor.alignLeft = function() {
-                    return editor.setTextAlignment("left");
+                editor.alignLeft = function () {
+                    return editor.setTextAlignment('left');
                 };
 
-                editor.alignJustify = function() {
-                    return editor.setTextAlignment("justify");
+                editor.alignJustify = function () {
+                    return editor.setTextAlignment('justify');
                 };
 
-                editor.makeHeading = function() {
-                    editor.setFontSize("2em");
+                editor.makeHeading = function () {
+                    editor.setFontSize('2em');
 
                     return editor.bold();
                 };
 
                 if (isMac === true) {
-                    editor.setKeyHandler('meta-enter', function(self, event, range) {
+                    editor.setKeyHandler('meta-enter', (self, event) => {
                         if (authentication.user.Hotkeys === 1) {
                             event.preventDefault();
                             $rootScope.$broadcast('sendMessage', element);
                         }
                     });
                 } else {
-                    editor.setKeyHandler('ctrl-enter', function(self, event, range) {
+                    editor.setKeyHandler('ctrl-enter', (self, event) => {
                         if (authentication.user.Hotkeys === 1) {
                             event.preventDefault();
                             $rootScope.$broadcast('sendMessage', element);
@@ -390,7 +392,7 @@ angular.module("proton.squire", [
                     });
                 }
 
-                editor.setKeyHandler('escape', function(self, event, range) {
+                editor.setKeyHandler('escape', () => {
                     if (authentication.user.Hotkeys === 1) {
                         $rootScope.$broadcast('closeMessage', element);
                     }
@@ -399,67 +401,60 @@ angular.module("proton.squire", [
                 editor.addEventListener('drop', handleDrop, false);
 
                 $rootScope.$emit('editorLoaded', element, editor, scope.message);
-            };
+            }
 
             iframe = element.find('iframe.squireIframe');
-            var iframeDoc = iframe.contentDocument || iframe.contentWindow && iframe.contentWindow.document;
+
+            /* eslint no-mixed-operators: "off" */
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow && iframe.contentWindow.document;
             menubar = element.find('.squire-toolbar');
-            loaded = false;
 
             // Check if browser is Webkit (Safari/Chrome) or Opera
-            if(
-                ( jQuery.browser && (jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome) ) ||
-                ( $('body').hasClass('ua-safari') || $('body').hasClass('ua-opera') || $('body').hasClass('ua-chrome'))
+            if (
+                (jQuery.browser && (jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome)) ||
+                ($('body').hasClass('ua-safari') || $('body').hasClass('ua-opera') || $('body').hasClass('ua-chrome'))
             ) {
                 // Start timer when loaded.
-                $(iframe).load(function () {
-                    loaded = true;
+                $(iframe).load(() => {
                     iframeLoaded();
                 });
 
                 // Safari and Opera need a kick-start.
-                var source = $(iframe).attr('src');
+                const source = $(iframe).attr('src');
 
                 $(iframe).attr('src', '');
                 $(iframe).attr('src', source);
+            } else if (iframeDoc && iframeDoc.readyState === 'complete') {
+                iframeLoaded();
             } else {
-                // For other browsers.
-                if(iframeDoc && iframeDoc.readyState  === 'complete') {
-                    loaded = true;
+                $(iframe).load(() => {
                     iframeLoaded();
-                } else {
-                    $(iframe).load(function() {
-                        loaded = true;
-                        iframeLoaded();
-                    });
-                }
+                });
             }
 
-            Squire.prototype.testPresenceinSelection = function(name, action, format, validation) {
-                var p, test;
-                p = this.getPath();
-                test = validation.test(p) | this.hasFormat(format);
+
+            Squire.prototype.testPresenceinSelection = function (name, action, format, validation) {
+                const p = this.getPath();
+                const test = validation.test(p) | this.hasFormat(format);
                 return name === action && test;
             };
 
-            scope.action = function(action) {
-                var node, range, selection, test;
-
+            scope.action = function (action) {
                 if (!editor) {
                     return;
                 }
 
-                test = {
+                const test = {
                     value: action,
-                    testBold: editor.testPresenceinSelection("bold", action, "B", />B\b/),
-                    testItalic: editor.testPresenceinSelection("italic", action, "I", />I\b/),
-                    testUnderline: editor.testPresenceinSelection("underline", action, "U", />U\b/),
-                    testOrderedList: editor.testPresenceinSelection("makeOrderedList", action, "OL", />OL\b/),
-                    testUnorderedList: editor.testPresenceinSelection("makeUnorderedList", action, "UL", />UL\b/),
-                    testLink: editor.testPresenceinSelection("removeLink", action, "A", />A\b/),
-                    testQuote: editor.testPresenceinSelection("increaseQuoteLevel", action, "blockquote", />blockquote\b/),
-                    isNotValue: function(a) {
-                        return a === action && this.value !== "";
+                    testBold: editor.testPresenceinSelection('bold', action, 'B', />B\b/),
+                    testItalic: editor.testPresenceinSelection('italic', action, 'I', />I\b/),
+                    testUnderline: editor.testPresenceinSelection('underline', action, 'U', />U\b/),
+                    testOrderedList: editor.testPresenceinSelection('makeOrderedList', action, 'OL', />OL\b/),
+                    testUnorderedList: editor.testPresenceinSelection('makeUnorderedList', action, 'UL', />UL\b/),
+                    testLink: editor.testPresenceinSelection('removeLink', action, 'A', />A\b/),
+                    testQuote: editor.testPresenceinSelection('increaseQuoteLevel', action, 'blockquote', />blockquote\b/),
+                    isNotValue(a) {
+                        return a === action && this.value !== '';
                     }
                 };
 
@@ -485,16 +480,14 @@ angular.module("proton.squire", [
                     if (test.testLink) {
                         editor.removeLink();
                     }
-                } else if (test.isNotValue("removeLink")) {
-
                 } else if (action === 'makeLink') {
                     if (scope.canAddLink()) {
-                        node = angular.element(editor.getSelection().commonAncestorContainer).closest('a')[0];
+                        const node = angular.element(editor.getSelection().commonAncestorContainer).closest('a')[0];
 
                         if (node) {
-                            range = iframe[0].contentWindow.document.createRange();
+                            const range = iframe[0].contentWindow.document.createRange();
                             range.selectNodeContents(node);
-                            selection = iframe[0].contentWindow.getSelection();
+                            const selection = iframe[0].contentWindow.getSelection();
                             selection.removeAllRanges();
                             selection.addRange(range);
                         }
@@ -502,14 +495,14 @@ angular.module("proton.squire", [
                         editor.makeLink(scope.data.link, {
                             target: '_blank',
                             title: scope.data.link,
-                            rel: "nofollow"
+                            rel: 'nofollow'
                         });
 
                         scope.data.link = LINK_DEFAULT;
                     }
-                } else if(action === 'insertImage') {
-                    if(scope.data.image.length > 0) {
-                        editor.insertImage(scope.data.image, {"class": 'proton-embedded'});
+                } else if (action === 'insertImage') {
+                    if (scope.data.image.length > 0) {
+                        editor.insertImage(scope.data.image, { class: 'proton-embedded' });
                         scope.data.image = '';
                     }
                 } else {

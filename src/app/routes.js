@@ -5,27 +5,27 @@ angular.module('proton.routes', [
     'proton.storage'
 ])
 
-.config(function($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) {
-    var conversationParameters = function() {
-      var parameters = [
-        'email',
-        'address',
-        'page',
-        'filter',
-        'sort',
-        'label',
-        'from',
-        'to',
-        'subject',
-        'keyword',
-        'begin',
-        'end',
-        'attachments',
-        'starred',
-        'reload'
-      ];
+.config(($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) => {
+    const conversationParameters = function () {
+        const parameters = [
+            'email',
+            'address',
+            'page',
+            'filter',
+            'sort',
+            'label',
+            'from',
+            'to',
+            'subject',
+            'keyword',
+            'begin',
+            'end',
+            'attachments',
+            'starred',
+            'reload'
+        ];
 
-      return parameters.join('&');
+        return parameters.join('&');
     };
 
     $stateProvider
@@ -55,7 +55,7 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/unlock.tpl.html'
             }
         },
-        onEnter: function($rootScope, $state, authentication) {
+        onEnter($rootScope, $state, authentication) {
             if (!$rootScope.isLoggedIn) {
                 authentication.logout(true);
             }
@@ -70,28 +70,28 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/setup.tpl.html'
             }
         },
-        onEnter: function($rootScope, $state, authentication) {
+        onEnter($rootScope, $state, authentication) {
             if (!$rootScope.isLoggedIn) {
                 authentication.logout(true);
             }
         },
         resolve: {
-            domains: function($q, Domain) {
-                var deferred = $q.defer();
+            domains($q, Domain) {
+                const deferred = $q.defer();
 
-                Domain.available().then(function(result) {
+                Domain.available().then((result) => {
                     if (result.data && angular.isArray(result.data.Domains)) {
                         deferred.resolve(result.data.Domains);
                     } else {
                         deferred.reject();
                     }
-                }, function() {
+                }, () => {
                     deferred.reject();
                 });
 
                 return deferred.promise;
             },
-            user: function(User) {
+            user(User) {
                 return User.get()
                 .then(({ data }) => {
                     if (data && data.Code !== 1000) {
@@ -109,15 +109,15 @@ angular.module('proton.routes', [
     .state('account', {
         url: '/account/:username/:token',
         resolve: {
-            app: function($stateParams, $state, $q, User) {
-                var defer = $q.defer();
+            app($stateParams, $state, $q, User) {
+                const defer = $q.defer();
 
                 User.checkInvite({
                     username: $stateParams.username,
                     token: $stateParams.token
-                }).$promise.then(function(response) {
+                }).$promise.then(() => {
                     defer.resolve();
-                }, function(response) {
+                }, (response) => {
                     defer.reject(response);
                 });
 
@@ -157,10 +157,10 @@ angular.module('proton.routes', [
                     $rootScope.username = $stateParams.user;
                     $state.go('signup');
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    notify({ message: result.data.Error, classes: 'notification-danger' });
                     $state.go('login');
                 } else {
-                    notify({message: 'Invalid Invite Link.', classes: 'notification-danger'});
+                    notify({ message: 'Invalid Invite Link.', classes: 'notification-danger' });
                     $state.go('login');
                 }
             });
@@ -170,12 +170,12 @@ angular.module('proton.routes', [
     .state('invite', {
         url: '/invite',
         resolve: {
-            direct: function($http, $q, $state, $rootScope, url, User) {
-                var deferred = $q.defer();
+            direct($http, $q, $state, $rootScope, url, User) {
+                const deferred = $q.defer();
 
                 if (!$rootScope.preInvited) {
                     User.direct()
-                    .then(function(result) {
+                    .then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             if (result.data.Direct === 1) {
                                 $state.go('signup');
@@ -199,29 +199,29 @@ angular.module('proton.routes', [
     })
 
     .state('reset-theme', {
-        url:  '/reset-theme',
+        url: '/reset-theme',
         resolve: {
-            reset: function(networkActivityTracker, Setting, notify, eventManager, gettextCatalog) {
+            reset(networkActivityTracker, Setting, notify, eventManager, gettextCatalog) {
                 networkActivityTracker.track(
-                    Setting.theme({Theme: '' })
-                    .then(function(result) {
+                    Setting.theme({ Theme: '' })
+                    .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            notify({message: gettextCatalog.getString('Theme reset! Redirecting...', null), classes: 'notification-success'});
-                            eventManager.call().then(function() {
-                                deferred.resolve();
+                            notify({ message: gettextCatalog.getString('Theme reset! Redirecting...', null), classes: 'notification-success' });
+                            eventManager.call().then(() => {
+                                Promise.resolve();
                             });
                         } else if (result.data && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
-                            deferred.reject();
+                            notify({ message: result.data.Error, classes: 'notification-danger' });
+                            Promise.reject();
                         } else {
-                            notify({message: gettextCatalog.getString('Unable to reset theme', null, 'Error'), classes: 'notification-danger'});
-                            deferred.reject();
+                            notify({ message: gettextCatalog.getString('Unable to reset theme', null, 'Error'), classes: 'notification-danger' });
+                            Promise.reject();
                         }
                     })
                 );
             }
         },
-        onEnter: function($state) {
+        onEnter($state) {
             $state.go('secured.inbox');
             return;
         }
@@ -244,21 +244,21 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
-            plans: function(direct, $q, $stateParams, Payment) {
-                var deferred = $q.defer();
-                var currencies = ['USD', 'EUR', 'CHF'];
-                var cycles = ['1', '12'];
-                var plans = ['free', 'plus', 'visionary'];
-                var currency = $stateParams.currency;
-                var cycle = $stateParams.billing;
-                var plan = $stateParams.plan;
+            plans(direct, $q, $stateParams, Payment) {
+                const deferred = $q.defer();
+                const currencies = ['USD', 'EUR', 'CHF'];
+                const cycles = ['1', '12'];
+                const plans = ['free', 'plus', 'visionary'];
+                const currency = $stateParams.currency;
+                const cycle = $stateParams.billing;
+                const plan = $stateParams.plan;
 
                 if (cycles.indexOf(cycle) !== -1 && currencies.indexOf(currency) !== -1 && plans.indexOf(plan) !== -1) {
                     if (plan === 'free') {
                         deferred.resolve([]);
                     } else {
                         Payment.plans(currency, cycle)
-                        .then(function(result) {
+                        .then((result) => {
                             if (result.data && result.data.Code === 1000) {
                                 deferred.resolve(result.data.Plans);
                             } else {
@@ -272,27 +272,27 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            domains: function(direct, $q, Domain) {
-                var deferred = $q.defer();
+            domains(direct, $q, Domain) {
+                const deferred = $q.defer();
 
-                Domain.available().then(function(result) {
+                Domain.available().then((result) => {
                     if (result.data && angular.isArray(result.data.Domains)) {
                         deferred.resolve(result.data.Domains);
                     } else {
                         deferred.reject();
                     }
-                }, function() {
+                }, () => {
                     deferred.reject();
                 });
 
                 return deferred.promise;
             },
-            direct: function($q, $state, $rootScope, User) {
-                var deferred = $q.defer();
+            direct($q, $state, $rootScope, User) {
+                const deferred = $q.defer();
 
                 if (!$rootScope.preInvited) {
                     User.direct()
-                    .then(function(result) {
+                    .then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             if (result.data.Direct === 1) {
                                 deferred.resolve(result.data);
@@ -326,7 +326,7 @@ angular.module('proton.routes', [
                 templateUrl: 'templates/views/reset-mailbox-password.tpl.html'
             }
         },
-        onEnter: function($rootScope, $state) {
+        onEnter($rootScope, $state) {
             if (!$rootScope.isLoggedIn) {
                 $state.go('login');
             }
@@ -368,7 +368,7 @@ angular.module('proton.routes', [
             data: null
         }, // Tip to avoid passing parameters in the URL
         url: '/message',
-        onEnter: function($state, $stateParams) {
+        onEnter($state, $stateParams) {
             if ($stateParams.data === null) {
                 $state.go('login');
             }
@@ -405,28 +405,29 @@ angular.module('proton.routes', [
     .state('eo.unlock', {
         url: '/eo/:tag',
         resolve: {
-            encryptedToken: function(Eo, $stateParams) {
+            encryptedToken(Eo, $stateParams) {
                 return Eo.token($stateParams.tag);
             }
         },
         views: {
-            'content': {
+            content: {
                 templateUrl: 'templates/views/outside.unlock.tpl.html',
-                controller: function($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notify, secureSessionStorage) {
+                controller($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notify, secureSessionStorage) {
                     $scope.params = {};
                     $scope.params.MessagePassword = '';
 
-                    if(encryptedToken.data.Error) {
+                    if (encryptedToken.data.Error) {
                         $scope.tokenError = true;
                     } else {
                         $scope.tokenError = false;
+                        /* eslint  no-param-reassign: "off" */
                         encryptedToken = encryptedToken.data.Token;
                     }
 
                     $scope.trying = false;
                     $scope.tryPass = '';
 
-                    $scope.unlock = function() {
+                    $scope.unlock = function () {
 
                         if ($scope.trying !== true) {
 
@@ -434,16 +435,16 @@ angular.module('proton.routes', [
 
                             clearTimeout($scope.tryPass);
 
-                            $scope.tryPass = setTimeout( function() {
-                                var promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword);
+                            $scope.tryPass = setTimeout(() => {
+                                const promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword);
 
-                                promise.then(function(decryptedToken) {
+                                promise.then((decryptedToken) => {
                                     secureSessionStorage.setItem('proton:decrypted_token', decryptedToken);
                                     secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
-                                    $state.go('eo.message', {tag: $stateParams.tag});
+                                    $state.go('eo.message', { tag: $stateParams.tag });
                                     $scope.trying = false;
-                                }, function(err) {
-                                    notify({message: err.message, classes: 'notification-danger'});
+                                }, (err) => {
+                                    notify({ message: err.message, classes: 'notification-danger' });
                                     $scope.trying = false;
                                 });
                             }, 600);
@@ -459,28 +460,28 @@ angular.module('proton.routes', [
     .state('eo.message', {
         url: '/eo/message/:tag',
         resolve: {
-            message: function($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
-                var deferred = $q.defer();
-                var token_id = $stateParams.tag;
-                var decrypted_token = secureSessionStorage.getItem('proton:decrypted_token');
-                var password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
+            message($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
+                const deferred = $q.defer();
+                const tokenId = $stateParams.tag;
+                const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
+                const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
-                Eo.message(decrypted_token, token_id)
-                .then(function(result) {
-                    var message = result.data.Message;
-                    var promises = [];
+                Eo.message(decryptedToken, tokenId)
+                .then((result) => {
+                    const message = result.data.Message;
+                    const promises = [];
 
-                    promises.push(pmcw.decryptMessageRSA(message.Body, password, message.Time).then(function(body) {
+                    promises.push(pmcw.decryptMessageRSA(message.Body, password, message.Time).then((body) => {
                         message.DecryptedBody = body;
                     }));
 
-                    _.each(message.Replies, function(reply) {
-                        promises.push(pmcw.decryptMessageRSA(reply.Body, password, reply.Time).then(function(body) {
+                    _.each(message.Replies, (reply) => {
+                        promises.push(pmcw.decryptMessageRSA(reply.Body, password, reply.Time).then((body) => {
                             reply.DecryptedBody = body;
                         }));
                     });
 
-                    $q.all(promises).then(function() {
+                    $q.all(promises).then(() => {
                         deferred.resolve(new Message(message));
                     });
                 });
@@ -489,7 +490,7 @@ angular.module('proton.routes', [
             }
         },
         views: {
-            'content': {
+            content: {
                 controller: 'OutsideController',
                 templateUrl: 'templates/views/outside.message.tpl.html'
             }
@@ -499,20 +500,20 @@ angular.module('proton.routes', [
     .state('eo.reply', {
         url: '/eo/reply/:tag',
         resolve: {
-            message: function($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
-                var deferred = $q.defer();
-                var token_id = $stateParams.tag;
-                var decrypted_token = secureSessionStorage.getItem('proton:decrypted_token');
-                var password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
+            messageData($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
+                const deferred = $q.defer();
+                const tokenId = $stateParams.tag;
+                const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
+                const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
 
-                Eo.message(decrypted_token, token_id)
-                .then(function(result) {
-                    var message = result.data.Message;
+                Eo.message(decryptedToken, tokenId)
+                .then((result) => {
+                    const message = result.data.Message;
 
                     message.publicKey = result.data.PublicKey; // The sender’s public key
                     pmcw.decryptMessageRSA(message.Body, password, message.Time)
-                    .then(function(body) {
-                        var attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
+                    .then((body) => {
+                        const attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
 
                         message.DecryptedBody = body;
                         message.Attachments = attachments;
@@ -525,17 +526,17 @@ angular.module('proton.routes', [
             }
         },
         views: {
-            'content': {
+            content: {
                 controller: 'OutsideController',
                 templateUrl: 'templates/views/outside.reply.tpl.html'
             }
         },
-        onEnter: function(gettextCatalog) {
-            window.onbeforeunload = function() {
+        onEnter(gettextCatalog) {
+            window.onbeforeunload = function () {
                 return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
         },
-        onExit: function() {
+        onExit() {
             window.onbeforeunload = undefined;
         }
     })
@@ -556,23 +557,21 @@ angular.module('proton.routes', [
         },
         resolve: {
             // Contains also labels and contacts
-            user: function(authentication, $http, pmcw, secureSessionStorage) {
+            user(authentication, $http, pmcw, secureSessionStorage) {
                 if (Object.keys(authentication.user).length > 0) {
                     return authentication.user;
-                } else {
-                    if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'))) {
-                        $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY+':SessionToken'));
-                    }
-
-                    return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
+                } else if (angular.isDefined(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'))) {
+                    $http.defaults.headers.common['x-pm-session'] = pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken'));
                 }
+
+                return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
             },
-            organization: function($q, user, Organization) {
-                var deferred = $q.defer();
+            organization($q, user, Organization) {
+                const deferred = $q.defer();
 
                 if (user.Role > 0) {
                     Organization.get()
-                    .then(function(result) {
+                    .then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             deferred.resolve(result.data.Organization);
                         }
@@ -586,28 +585,27 @@ angular.module('proton.routes', [
                 return deferred.promise;
             }
         },
-        onEnter: function($rootScope, authentication, $timeout, CONSTANTS) {
+        onEnter($rootScope, authentication) {
             // This will redirect to a login step if necessary
             authentication.redirectIfNecessary();
         }
     })
 
     .state('printer', {
-        params: {messageID: null},
+        params: { messageID: null },
         url: '/printer/:messageID',
         resolve: {
             messageID($stateParams) {
                 if ($stateParams.messageID) {
                     return Promise.resolve($stateParams.messageID);
-                } else {
-                    return Promise.reject();
                 }
+                return Promise.reject();
             }
         },
         views: {
             'main@': {
                 templateUrl: 'templates/views/message.print.tpl.html',
-                controller: function($scope, $state, $rootScope, $sce, $timeout, messageID) {
+                controller($scope, $state, $rootScope, $sce, $timeout, messageID) {
                     $rootScope.isBlank = true;
                     $scope.loading = true;
 
@@ -644,13 +642,13 @@ angular.module('proton.routes', [
     .state('secured.contacts', {
         url: '/contacts',
         resolve: {
-            delinquent: function($q, $state, gettextCatalog, user, notify, authentication) {
-                var deferred = $q.defer();
+            delinquent($q, $state, gettextCatalog, user, notify, authentication) {
+                const deferred = $q.defer();
 
                 if (authentication.user.Delinquent < 3) {
                     deferred.resolve();
                 } else {
-                    notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger'});
+                    notify({ message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger' });
                     $state.go('secured.payments');
                     deferred.reject();
                 }
@@ -726,10 +724,10 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
-            invoices: function(Payment, networkActivityTracker) {
+            invoices(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.invoices());
             },
-            methods: function(Payment, networkActivityTracker) {
+            methods(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
             }
         }
@@ -738,10 +736,10 @@ angular.module('proton.routes', [
     .state('secured.keys', {
         url: '/keys',
         resolve: {
-            access: function(user, $q) {
-                var deferred = $q.defer();
+            access(user, $q) {
+                const deferred = $q.defer();
 
-                if(user.Role === 2) {
+                if (user.Role === 2) {
                     deferred.resolve();
                 } else {
                     deferred.reject();
@@ -764,10 +762,10 @@ angular.module('proton.routes', [
             scroll: null
         },
         resolve: {
-            access: function(user, $q) {
-                var deferred = $q.defer();
+            access(user, $q) {
+                const deferred = $q.defer();
 
-                if(user.Role === 0 || user.Role === 2) {
+                if (user.Role === 0 || user.Role === 2) {
                     deferred.resolve();
                 } else {
                     deferred.reject();
@@ -776,20 +774,20 @@ angular.module('proton.routes', [
                 return deferred.promise;
             },
             // Return yearly plans
-            yearly: function(user, Payment, networkActivityTracker) {
+            yearly(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.plans(user.Currency, 12));
             },
             // Return monthly plans
-            monthly: function(user, Payment, networkActivityTracker) {
+            monthly(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.plans(user.Currency, 1));
             },
-            subscription: function(user, Payment, networkActivityTracker) {
+            subscription(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.subscription());
             },
-            methods: function(user, Payment, networkActivityTracker) {
+            methods(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
             },
-            status: function(user, Payment, networkActivityTracker) {
+            status(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.status());
             }
         },
@@ -808,10 +806,10 @@ angular.module('proton.routes', [
             id: null
         },
         resolve: {
-            access: function(user, $q, CONSTANTS) {
+            access(user, $q, CONSTANTS) {
                 const deferred = $q.defer();
 
-                if(user.Role === 2 && CONSTANTS.KEY_PHASE > 3) {
+                if (user.Role === 2 && CONSTANTS.KEY_PHASE > 3) {
                     deferred.resolve();
                 } else {
                     deferred.reject();
@@ -819,16 +817,16 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            members: function(access, Member, networkActivityTracker) {
+            members(access, Member, networkActivityTracker) {
                 return networkActivityTracker.track(Member.query());
             },
-            domains: function(access, Domain, networkActivityTracker) {
+            domains(access, Domain, networkActivityTracker) {
                 return networkActivityTracker.track(Domain.query());
             },
-            organization: function(access, Organization, networkActivityTracker) {
+            organization(access, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.get());
             },
-            organizationKeys: function(access, Organization, networkActivityTracker) {
+            organizationKeys(access, Organization, networkActivityTracker) {
                 return networkActivityTracker.track(Organization.getKeys());
             }
         },
@@ -843,29 +841,29 @@ angular.module('proton.routes', [
     .state('secured.domains', {
         url: '/domains',
         resolve: {
-            members: function(user, Member, networkActivityTracker) {
+            members(user, Member, networkActivityTracker) {
                 if (user.Role === 2) {
                     return networkActivityTracker.track(Member.query());
                 }
-                return {data: {}};
+                return { data: {} };
             },
-            domains: function(user, Domain, networkActivityTracker) {
+            domains(user, Domain, networkActivityTracker) {
                 if (user.Role === 2) {
                     return networkActivityTracker.track(Domain.query());
                 }
-                return {data: {}};
+                return { data: {} };
             },
-            organization: function(user, Organization, networkActivityTracker) {
+            organization(user, Organization, networkActivityTracker) {
                 if (user.Role === 2) {
                     return networkActivityTracker.track(Organization.get());
                 }
-                return {data: {}};
+                return { data: {} };
             },
-            organizationKeys: function(user, Organization, networkActivityTracker) {
+            organizationKeys(user, Organization, networkActivityTracker) {
                 if (user.Role === 2) {
                     return networkActivityTracker.track(Organization.getKeys());
                 }
-                return {data: {}};
+                return { data: {} };
             }
         },
         views: {
@@ -879,11 +877,11 @@ angular.module('proton.routes', [
     .state('secured.filters', {
         url: '/filters',
         resolve: {
-            customFilters: function($q, Filter, networkActivityTracker) {
-                var deferred = $q.defer();
+            customFilters($q, Filter, networkActivityTracker) {
+                const deferred = $q.defer();
 
                 Filter.query()
-                .then(function(result) {
+                .then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         deferred.resolve(result.data.Filters);
                     } else {
@@ -893,11 +891,11 @@ angular.module('proton.routes', [
 
                 return networkActivityTracker.track(deferred.promise);
             },
-            incomingDefaults: function($q, IncomingDefault, networkActivityTracker) {
-                var deferred = $q.defer();
+            incomingDefaults($q, IncomingDefault, networkActivityTracker) {
+                const deferred = $q.defer();
 
                 IncomingDefault.get()
-                .then(function(result) {
+                .then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         deferred.resolve(result.data.IncomingDefaults);
                     } else {
@@ -906,7 +904,7 @@ angular.module('proton.routes', [
                 });
 
                 return networkActivityTracker.track(deferred.promise);
-            },
+            }
         },
         views: {
             'content@secured': {
@@ -917,7 +915,6 @@ angular.module('proton.routes', [
     });
 
     Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS).forEach((box) => {
-        const id = CONSTANTS.MAILBOX_IDENTIFIERS[box];
         const parentState = 'secured.' + box;
         const childState = 'secured.' + box + '.element';
         const elementView = {};
@@ -929,20 +926,20 @@ angular.module('proton.routes', [
         };
 
         elementView['view@secured.' + box] = {
-            template: `<element-view></element-view>`
+            template: '<element-view></element-view>'
         };
 
         $stateProvider.state(parentState, {
             url: '/' + box + '?' + conversationParameters(),
             views: list,
             resolve: {
-                delinquent: function($q, $state, gettextCatalog, user, notify, authentication) {
-                    var deferred = $q.defer();
+                delinquent($q, $state, gettextCatalog, user, notify, authentication) {
+                    const deferred = $q.defer();
 
                     if (authentication.user.Delinquent < 3) {
                         deferred.resolve();
                     } else {
-                        notify({message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger'});
+                        notify({ message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger' });
                         $state.go('secured.payments');
                         deferred.reject();
                     }
@@ -950,7 +947,7 @@ angular.module('proton.routes', [
                     return deferred.promise;
                 }
             },
-            onExit: function($rootScope) {
+            onExit($rootScope) {
                 $rootScope.showWelcome = false;
             }
         });
@@ -959,16 +956,16 @@ angular.module('proton.routes', [
             url: '/{id}',
             views: elementView,
             params: { id: '', messageID: null },
-            onExit: function($rootScope) {
+            onExit($rootScope) {
                 $rootScope.$broadcast('unactiveMessages');
                 $rootScope.$broadcast('unmarkMessages');
             }
         });
     });
 
-    $urlRouterProvider.otherwise(function($injector) {
-        var $state = $injector.get('$state');
-        var stateName = $injector.get('authentication').state() || 'secured.inbox';
+    $urlRouterProvider.otherwise(($injector) => {
+        const $state = $injector.get('$state');
+        const stateName = $injector.get('authentication').state() || 'secured.inbox';
 
         return $state.href(stateName);
     });

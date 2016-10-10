@@ -31,8 +31,7 @@ angular.module('proton.conversation')
          * @param {Array} ids
          * @param {String} mailbox
          */
-        moveConversation: function(ids, mailbox) {
-            let promise;
+        moveConversation(ids, mailbox) {
             const context = tools.cacheContext();
             const events = [];
             const labelIDsAdded = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
@@ -43,7 +42,7 @@ angular.module('proton.conversation')
                 // Send cache events
                 cache.events(events);
                 // Display notification
-                notify({message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success'});
+                notify({ message: gettextCatalog.getPlural(ids.length, 'Conversation moved to', 'Conversations moved to', null) + ' ' + folder, classes: 'notification-success' });
             };
 
             // Generate cache events
@@ -85,35 +84,35 @@ angular.module('proton.conversation')
 
                             copyLabelIDsAdded.splice(index, 1);
                             copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
-                        } else if(message.Type === 2) { // This message is sent, if you move it to trash and back, it will go back to sent
+                        } else if (message.Type === 2) { // This message is sent, if you move it to trash and back, it will go back to sent
                             index = copyLabelIDsAdded.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
 
                             copyLabelIDsAdded.splice(index, 1);
                             copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
-                        } else if(message.Type === 3) { // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
+                        } else if (message.Type === 3) { // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
                             copyLabelIDsAdded.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
                         }
                     }
 
-                    events.push({Action: 3, ID: message.ID, Message: {
+                    events.push({ Action: 3, ID: message.ID, Message: {
                         ID: message.ID,
                         IsRead: toTrash ? 1 : message.IsRead,
                         LabelIDsRemoved: copyLabelIDsRemoved, // Remove current location
                         LabelIDsAdded: copyLabelIDsAdded // Add new location
-                    }});
+                    } });
                 });
 
-                events.push({Action: 3, ID: element.ID, Conversation: element});
+                events.push({ Action: 3, ID: element.ID, Conversation: element });
             });
 
             // Send request
-            promise = Conversation[mailbox](ids);
+            const promise = Conversation[mailbox](ids);
             cache.addToDispatcher(promise);
 
             if (context === true) {
                 process();
             } else {
-                promise.then(function() {
+                promise.then(() => {
                     process();
                 });
 
@@ -126,29 +125,28 @@ angular.module('proton.conversation')
          * @param {Array} labels
          * @param {Boolean} alsoArchive
          */
-        labelConversation: function(ids, labels, alsoArchive) {
-            var context = tools.cacheContext();
-            var REMOVE = 0;
-            var ADD = 1;
-            var promises = [];
-            var promise;
-            var events = [];
-            var current = tools.currentLocation();
-            var process = function() {
+        labelConversation(ids, labels, alsoArchive) {
+            const context = tools.cacheContext();
+            const REMOVE = 0;
+            const ADD = 1;
+            const promises = [];
+            const events = [];
+            const current = tools.currentLocation();
+            const process = function () {
                 cache.events(events);
 
-                if(alsoArchive === true) {
+                if (alsoArchive === true) {
                     Conversation.archive(ids); // Send request to archive conversations
                 }
             };
-            var toApplyConversation = _.chain(labels)
-                .filter(function(label) { return label.Selected === true; })
-                .map(function(label) { return label.ID; })
+            const toApplyConversation = _.chain(labels)
+                .filter((label) => { return label.Selected === true; })
+                .map((label) => { return label.ID; })
                 .value() || [];
 
-            var toRemoveConversation = _.chain(labels)
-                .filter(function(label) { return label.Selected === false; })
-                .map(function(label) { return label.ID; })
+            const toRemoveConversation = _.chain(labels)
+                .filter((label) => { return label.Selected === false; })
+                .map((label) => { return label.ID; })
                 .value() || [];
 
             if (alsoArchive === true) {
@@ -159,26 +157,26 @@ angular.module('proton.conversation')
                 }
             }
 
-            _.each(ids, function(conversationID) {
-                var conversation = cache.getConversationCached(conversationID);
-                var messages = cache.queryMessagesCached(conversationID);
+            _.each(ids, (conversationID) => {
+                const conversation = cache.getConversationCached(conversationID);
+                const messages = cache.queryMessagesCached(conversationID);
 
                 if (angular.isArray(messages) && messages.length > 0) {
-                    _.each(messages, function(message) {
-                        var toApplyMessage = _.chain(labels)
-                            .filter(function(label) {
+                    _.each(messages, (message) => {
+                        const toApplyMessage = _.chain(labels)
+                            .filter((label) => {
                                 return label.Selected === true;
                             })
-                            .map(function(label) {
+                            .map((label) => {
                                 return label.ID;
                             })
                             .value() || [];
 
-                        var toRemoveMessage = _.chain(labels)
-                            .filter(function(label) {
+                        const toRemoveMessage = _.chain(labels)
+                            .filter((label) => {
                                 return label.Selected === false;
                             })
-                            .map(function(label) {
+                            .map((label) => {
                                 return label.ID;
                             })
                             .value() || [];
@@ -193,41 +191,39 @@ angular.module('proton.conversation')
                             }
                         }
 
-                        events.push({Action: 3, ID: message.ID, Message: {
+                        events.push({ Action: 3, ID: message.ID, Message: {
                             ID: message.ID,
                             LabelIDsAdded: toApplyMessage,
                             LabelIDsRemoved: toRemoveMessage
-                        }});
+                        } });
                     });
                 }
 
                 if (angular.isDefined(conversation)) {
-                    events.push({Action: 3, ID: conversationID, Conversation: {
+                    events.push({ Action: 3, ID: conversationID, Conversation: {
                         ID: conversationID,
                         Selected: false,
                         LabelIDsAdded: toApplyConversation,
                         LabelIDsRemoved: toRemoveConversation
-                    }});
+                    } });
                 }
             });
 
-            _.each(toApplyConversation, function(labelID) {
+            _.each(toApplyConversation, (labelID) => {
                 promises.push(Conversation.labels(labelID, ADD, ids));
             });
 
-            _.each(toRemoveConversation, function(labelID) {
+            _.each(toRemoveConversation, (labelID) => {
                 promises.push(Conversation.labels(labelID, REMOVE, ids));
             });
 
-            promise = $q.all(promises);
+            const promise = $q.all(promises);
             cache.addToDispatcher(promise);
 
-            if(context === true) {
+            if (context === true) {
                 process();
             } else {
-                promise.then(function(results) {
-                    process();
-                });
+                promise.then(() => process());
 
                 networkActivityTracker.track(promise);
             }
@@ -236,39 +232,39 @@ angular.module('proton.conversation')
          * Star conversation
          * @param {String} id - conversation id
          */
-        starConversation: function(id) {
-            var context = tools.cacheContext();
-            var conversation = cache.getConversationCached(id);
-            var events = [];
-            var promise;
-            var element = {
+        starConversation(id) {
+            const context = tools.cacheContext();
+            const conversation = cache.getConversationCached(id);
+            const events = [];
+
+            const element = {
                 ID: id,
                 LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.starred],
                 NumUnread: conversation.NumUnread
             };
-            var messages = cache.queryMessagesCached(element.ID);
+            const messages = cache.queryMessagesCached(element.ID);
 
             // Generate message changes with event
             if (messages.length > 0) {
-                _.each(messages, function(message) {
-                    events.push({ID: message.ID, Action: 3, Message: {
+                _.each(messages, (message) => {
+                    events.push({ ID: message.ID, Action: 3, Message: {
                         ID: message.ID,
                         LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
-                    }});
+                    } });
                 });
             }
 
             // Generate conversation changes with event
-            events.push({ID: element.ID, Action: 3, Conversation: element});
+            events.push({ ID: element.ID, Action: 3, Conversation: element });
 
             // Send conversation request
-            promise = Conversation.star([element.ID]);
+            const promise = Conversation.star([element.ID]);
             cache.addToDispatcher(promise);
 
-            if(context === true) {
+            if (context === true) {
                 cache.events(events);
             } else {
-                promise.then(function() {
+                promise.then(() => {
                     // Send to cache manager
                     cache.events(events);
                 });
@@ -280,39 +276,38 @@ angular.module('proton.conversation')
          * Unstar conversation
          * @param {String} id - conversation id
          */
-        unstarConversation: function(id) {
-            var context = tools.cacheContext();
-            var conversation = cache.getConversationCached(id);
-            var events = [];
-            var promise;
-            var element = {
+        unstarConversation(id) {
+            const context = tools.cacheContext();
+            const conversation = cache.getConversationCached(id);
+            const events = [];
+            const element = {
                 ID: id,
                 LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.starred],
                 NumUnread: conversation.NumUnread
             };
-            var messages = cache.queryMessagesCached(element.ID);
+            const messages = cache.queryMessagesCached(element.ID);
 
             // Generate message changes with event
-            if(messages.length > 0) {
-                _.each(messages, function(message) {
-                    events.push({ID: message.ID, Action: 3, Message: {
+            if (messages.length > 0) {
+                _.each(messages, (message) => {
+                    events.push({ ID: message.ID, Action: 3, Message: {
                         ID: message.ID,
                         LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
-                    }});
+                    } });
                 });
             }
 
             // Generate conversation changes with event
-            events.push({ID: element.ID, Action: 3, Conversation: element});
+            events.push({ ID: element.ID, Action: 3, Conversation: element });
 
             // Send request
-            promise = Conversation.unstar([element.ID]);
+            const promise = Conversation.unstar([element.ID]);
             cache.addToDispatcher(promise);
 
-            if(context === true) {
+            if (context === true) {
                 cache.events(events);
             } else {
-                promise.then(function() {
+                promise.then(() => {
                     // Send to cache manager
                     cache.events(events);
                 });
@@ -324,40 +319,39 @@ angular.module('proton.conversation')
          * Mark as read a list of conversation
          * @param {Array} ids
          */
-        readConversation: function(ids) {
-            var context = tools.cacheContext();
-            var events = [];
-            var promise;
+        readConversation(ids) {
+            const context = tools.cacheContext();
+            const events = [];
 
             // Generate cache events
-            _.each(ids, function(id) {
-                var element = {
+            _.each(ids, (id) => {
+                const element = {
                     ID: id
                 };
-                var messages = cache.queryMessagesCached(element.ID);
+                const messages = cache.queryMessagesCached(element.ID);
 
                 element.NumUnread = 0;
 
-                if(messages.length > 0) {
-                    _.each(messages, function(message) {
-                        events.push({Action: 3, ID: message.ID, Message: {
+                if (messages.length > 0) {
+                    _.each(messages, (message) => {
+                        events.push({ Action: 3, ID: message.ID, Message: {
                             ID: message.ID,
                             IsRead: 1
-                        }});
+                        } });
                     });
                 }
 
-                events.push({Action: 3, ID: element.ID, Conversation: element});
+                events.push({ Action: 3, ID: element.ID, Conversation: element });
             });
 
             // Send request
-            promise = Conversation.read(ids);
+            const promise = Conversation.read(ids);
             cache.addToDispatcher(promise);
 
-            if(context === true) {
+            if (context === true) {
                 cache.events(events);
             } else {
-                promise.then(function() {
+                promise.then(() => {
                     cache.events(events);
                 });
 
@@ -368,40 +362,37 @@ angular.module('proton.conversation')
          * Mark as unread a list of conversation
          * @param {Array} ids
          */
-        unreadConversation: function(ids) {
-            var context = tools.cacheContext();
-            var events = [];
-            var promise;
-
+        unreadConversation(ids) {
+            const context = tools.cacheContext();
+            const events = [];
             // Generate cache events
-            _.each(ids, function(id) {
-                var conversation;
-                var element = { ID: id };
-                var messages = cache.queryMessagesCached(element.ID);
+            _.each(ids, (id) => {
+                const element = { ID: id };
+                const messages = cache.queryMessagesCached(element.ID);
 
-                conversation = cache.getConversationCached(id);
+                const conversation = cache.getConversationCached(id);
                 element.NumUnread = conversation.NumUnread + 1;
 
                 if (messages.length > 0) {
-                    var last = _.chain(messages).sortBy(function(message) { return message.Time; }).last().value();
+                    const last = _.chain(messages).sortBy((message) => { return message.Time; }).last().value();
 
-                    events.push({Action: 3, ID: last.ID, Message: {
+                    events.push({ Action: 3, ID: last.ID, Message: {
                         ID: last.ID,
                         IsRead: 0
-                    }});
+                    } });
                 }
 
-                events.push({Action: 3, ID: element.ID, Conversation: element});
+                events.push({ Action: 3, ID: element.ID, Conversation: element });
             });
 
             // Send request
-            promise = Conversation.unread(ids);
+            const promise = Conversation.unread(ids);
             cache.addToDispatcher(promise);
 
             if (context === true) {
                 cache.events(events);
             } else {
-                promise.then(function() {
+                promise.then(() => {
                     cache.events(events);
                 });
 
@@ -412,37 +403,33 @@ angular.module('proton.conversation')
          * Delete a list of conversations
          * @param {ids}
          */
-        deleteConversation: function(ids) {
-            var context = tools.cacheContext();
-            var events = [];
-            var promise;
+        deleteConversation(ids) {
+            const context = tools.cacheContext();
+            const events = [];
 
             // Generate cache event
-            _.each(ids, function(conversationID) {
-                var conversation = cache.getConversationCached(conversationID); // Get conversation cached
-                var messages = cache.queryMessagesCached(conversationID); // Get messages cached for this conversation
-                var counter = 0; // Initialize counter, count the number of message deleted
+            _.each(ids, (conversationID) => {
+                const messages = cache.queryMessagesCached(conversationID); // Get messages cached for this conversation
 
                 $rootScope.$broadcast('deleteConversation', conversationID); // Close composer
 
-                _.each(messages, function(message) {
-                    if(message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash)) {
-                        counter++;
-                        events.push({Action: 0, ID: message.ID});
+                _.each(messages, (message) => {
+                    if (message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash)) {
+                        events.push({ Action: 0, ID: message.ID });
                     }
                 });
 
-                events.push({Action: 0, ID: conversationID});
+                events.push({ Action: 0, ID: conversationID });
             });
 
             // Send the request
-            promise = Conversation.delete(ids);
+            const promise = Conversation.delete(ids);
             cache.addToDispatcher(promise);
 
-            if(context === true) {
+            if (context === true) {
                 cache.events(events);
             } else {
-                promise.then(function() {
+                promise.then(() => {
                     // Send cache event
                     cache.events(events);
                 });

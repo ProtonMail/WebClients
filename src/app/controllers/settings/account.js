@@ -1,6 +1,6 @@
 angular.module('proton.controllers.Settings')
 
-.controller('AccountController', function(
+.controller('AccountController', (
     $log,
     $rootScope,
     $scope,
@@ -27,7 +27,7 @@ angular.module('proton.controllers.Settings')
     Organization,
     tools,
     User
-) {
+) => {
 
     const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
@@ -49,8 +49,8 @@ angular.module('proton.controllers.Settings')
     function passwordModal(submit) {
         loginPasswordModal.activate({
             params: {
-                submit: submit,
-                cancel: function() {
+                submit,
+                cancel() {
                     loginPasswordModal.deactivate();
                 },
                 hasTwoFactor: authentication.user.TwoFactor
@@ -58,34 +58,34 @@ angular.module('proton.controllers.Settings')
         });
     }
 
-    $scope.setPasswordMode = function(mode = 0) {
+    $scope.setPasswordMode = function (mode = 0) {
         $scope.passwordMode = mode;
     };
 
     // Listeners
     unsubscribe.push($rootScope.$on('changePMSignature', changePMSignature));
     $scope.$on('$destroy', () => {
-        unsubscribe.forEach(cb => cb());
+        unsubscribe.forEach((cb) => cb());
         unsubscribe.length = 0;
     });
 
-    $scope.enableDesktopNotifications = function() {
-        desktopNotifications.request(function() {
+    $scope.enableDesktopNotifications = function () {
+        desktopNotifications.request(() => {
             $scope.desktopNotificationsStatus = desktopNotifications.status();
         });
     };
 
-    $scope.testDesktopNotification = function() {
+    $scope.testDesktopNotification = function () {
         desktopNotifications.create(gettextCatalog.getString('You have a new email', null, 'Info'), {
             body: 'Quarterly Operations Update - Q1 2016 ',
             icon: '/assets/img/notification-badge.gif',
-            onClick: function(event) {
+            onClick() {
                 window.focus();
             }
         });
     };
 
-    $scope.saveNotification = function(form) {
+    $scope.saveNotification = function (form) {
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
 
@@ -110,7 +110,7 @@ angular.module('proton.controllers.Settings')
                         }, credentials);
                     }
                 })
-                .then((result) => {
+                .then(() => {
                     authentication.user.NotificationEmail = $scope.notificationEmail;
                     authentication.user.PasswordReset = $scope.passwordReset;
                     form.$setUntouched();
@@ -121,50 +121,46 @@ angular.module('proton.controllers.Settings')
                 })
             )
             .catch((error) => {
-                notify({message: error, classes: 'notification-danger'});
+                notify({ message: error, classes: 'notification-danger' });
             });
         }
 
         passwordModal(submit);
     };
 
-    $scope.saveDailyNotifications = function(form) {
-        var value = $scope.dailyNotifications;
+    $scope.saveDailyNotifications = function () {
 
         networkActivityTracker.track(
-          Setting.notify({Notify: $scope.dailyNotifications})
-          .then(function(result) {
+          Setting.notify({ Notify: $scope.dailyNotifications })
+          .then((result) => {
               if (result.data && result.data.Code === 1000) {
                   authentication.user.Notify = $scope.dailyNotifications;
-                  notify({message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success'});
+                  notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
               } else if (result.data && result.data.Error) {
-                  notify({message: result.data.Error, classes: 'notification-danger'});
+                  notify({ message: result.data.Error, classes: 'notification-danger' });
               }
           })
         );
     };
 
-    $scope.saveLoginPassword = function(form) {
+    $scope.saveLoginPassword = function (form) {
         const newLoginPwd = $scope.newLoginPassword;
-        const confLoginPwd = $scope.confirmLoginPassword;
 
-        function submit(currentPassword, twoFactorCode) {
+        function submit(Password, TwoFactorCode) {
             loginPasswordModal.deactivate();
 
             networkActivityTracker.track(
-                Setting.password({
-                    Password: currentPassword,
-                    TwoFactorCode: twoFactorCode
-                },
-                newLoginPwd).then(function(result) {
+                Setting
+                .password({ Password, TwoFactorCode }, newLoginPwd)
+                .then(() => {
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
                     form.$setUntouched();
                     authentication.user.PasswordMode = 2;
-                    notify({message: gettextCatalog.getString('Login password updated', null), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Login password updated', null), classes: 'notification-success' });
                 })
             )
-            .catch((error) => {
+            .catch(() => {
                 // Nothing
             });
         }
@@ -172,9 +168,8 @@ angular.module('proton.controllers.Settings')
         passwordModal(submit);
     };
 
-    $scope.saveMailboxPassword = function(form) {
+    $scope.saveMailboxPassword = function (form) {
         const newPassword = $scope.newMailboxPassword;
-        const confNewPassword = $scope.confirmMailboxPassword;
 
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
@@ -191,9 +186,9 @@ angular.module('proton.controllers.Settings')
                 $scope.confirmMailboxPassword = '';
                 form.$setUntouched();
                 authentication.user.PasswordMode = 2;
-                notify({message: gettextCatalog.getString('Mailbox password updated', null), classes: 'notification-success'});
+                notify({ message: gettextCatalog.getString('Mailbox password updated', null), classes: 'notification-success' });
             })
-            .catch((error) => {
+            .catch(() => {
                 // Nothing
             });
         }
@@ -201,9 +196,8 @@ angular.module('proton.controllers.Settings')
         passwordModal(submit);
     };
 
-    $scope.savePassword = function(form) {
+    $scope.savePassword = function (form) {
         const newPassword = $scope.newPassword;
-        const confNewPassword = $scope.confirmPassword;
 
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
@@ -220,9 +214,9 @@ angular.module('proton.controllers.Settings')
                 $scope.confirmPassword = '';
                 form.$setUntouched();
                 authentication.user.PasswordMode = 1;
-                notify({message: gettextCatalog.getString('Password updated', null), classes: 'notification-success'});
+                notify({ message: gettextCatalog.getString('Password updated', null), classes: 'notification-success' });
             })
-            .catch((error) => {
+            .catch(() => {
                 // Nothing
             });
         }
@@ -230,34 +224,34 @@ angular.module('proton.controllers.Settings')
         passwordModal(submit);
     };
 
-    $scope.saveIdentity = function() {
-        var deferred = $q.defer();
-        var displayName = $scope.displayName;
-        var signature = $scope.signature;
+    $scope.saveIdentity = function () {
+        const deferred = $q.defer();
+        const displayName = $scope.displayName;
+        let signature = $scope.signature;
 
         signature = signature.replace(/\n/g, '<br />');
 
 
         $q.all({
-            displayName: Setting.display({DisplayName: displayName}),
-            signature: Setting.signature({Signature: signature})
+            displayName: Setting.display({ DisplayName: displayName }),
+            signature: Setting.signature({ Signature: signature })
         })
-        .then(function(result) {
+        .then((result) => {
             if (result.displayName.data.Code === 1000 && result.signature.data.Code === 1000) {
-                notify({message: gettextCatalog.getString('Identity saved', null), classes: 'notification-success'});
+                notify({ message: gettextCatalog.getString('Identity saved', null), classes: 'notification-success' });
                 eventManager.call()
-                .then(function() {
+                .then(() => {
                     deferred.resolve();
                 });
             } else if (result.signature.data.Code === 12010) {
-                notify({message: gettextCatalog.getString('Unable to save your changes, your signature is too large.', null, 'Error'), classes: 'notification-danger'});
+                notify({ message: gettextCatalog.getString('Unable to save your changes, your signature is too large.', null, 'Error'), classes: 'notification-danger' });
                 deferred.reject();
             } else {
-                notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
+                notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
                 deferred.reject();
             }
-        }, function() {
-            notify({message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger'});
+        }, () => {
+            notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
             deferred.reject();
         });
 
@@ -267,12 +261,12 @@ angular.module('proton.controllers.Settings')
 
     function changePMSignature(event, status) {
         const PMSignature = (status) ? 1 : 0;
-        const promise = Setting.PMSignature({PMSignature})
+        const promise = Setting.PMSignature({ PMSignature })
         .then((result) => {
             if (result.data && result.data.Code === 1000) {
                 return eventManager.call()
                 .then(() => {
-                    notify({message: gettextCatalog.getString('Signature updated', null, 'Info'), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Signature updated', null, 'Info'), classes: 'notification-success' });
                 });
             } else if (result.data && result.data.Error) {
                 return Promise.reject(result.data.Error);
@@ -284,50 +278,50 @@ angular.module('proton.controllers.Settings')
         return promise;
     }
 
-    $scope.saveAutosaveContacts = function(form) {
+    $scope.saveAutosaveContacts = function () {
         networkActivityTracker.track(
-            Setting.autosave({AutoSaveContacts: $scope.autosaveContacts})
-            .then(function(result) {
-                notify({message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success'});
+            Setting.autosave({ AutoSaveContacts: $scope.autosaveContacts })
+            .then(() => {
+                notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
                 authentication.user.AutoSaveContacts = $scope.autosaveContacts;
             })
         );
     };
 
-    $scope.saveImages = function(form) {
+    $scope.saveImages = function () {
         networkActivityTracker.track(
-            Setting.setShowImages({ShowImages: $scope.images})
-            .then(function(result) {
+            Setting.setShowImages({ ShowImages: $scope.images })
+            .then(() => {
                 authentication.user.ShowImages = $scope.images;
-                notify({message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success'});
+                notify({ message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success' });
             })
         );
     };
 
-    $scope.saveEmbedded = function() {
+    $scope.saveEmbedded = function () {
         networkActivityTracker.track(
-            Setting.setShowEmbedded({ShowEmbedded: $scope.embedded})
-            .then(function(result) {
+            Setting.setShowEmbedded({ ShowEmbedded: $scope.embedded })
+            .then(() => {
                 authentication.user.ShowEmbedded = $scope.embedded;
-                notify({message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success'});
+                notify({ message: gettextCatalog.getString('Image preferences updated', null), classes: 'notification-success' });
             })
         );
     };
 
-    $scope.openHotkeyModal = function() {
+    $scope.openHotkeyModal = function () {
         hotkeyModal.activate({
             params: {
-                close: function() {
+                close() {
                     hotkeyModal.deactivate();
                 }
             }
         });
     };
 
-    $scope.saveHotkeys = function() {
+    $scope.saveHotkeys = function () {
         networkActivityTracker.track(
-            Setting.setHotkeys({Hotkeys: $scope.hotkeys})
-            .then(function(result) {
+            Setting.setHotkeys({ Hotkeys: $scope.hotkeys })
+            .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     authentication.user.Hotkeys = $scope.hotkeys;
 
@@ -337,18 +331,18 @@ angular.module('proton.controllers.Settings')
                         hotkeys.unbind();
                     }
 
-                    notify({message: gettextCatalog.getString('Hotkeys preferences updated', null), classes: 'notification-success'});
+                    notify({ message: gettextCatalog.getString('Hotkeys preferences updated', null), classes: 'notification-success' });
                 } else if (result.data && result.data.Error) {
-                    notify({message: result.data.Error, classes: 'notification-danger'});
+                    notify({ message: result.data.Error, classes: 'notification-danger' });
                 }
             })
         );
     };
 
-    $scope.deleteAccount = function() {
+    $scope.deleteAccount = function () {
         deleteAccountModal.activate({
             params: {
-                submit: function(password, feedback) {
+                submit(password, feedback) {
                     Bug.report({
                         OS: '--',
                         OSVersion: '--',
@@ -361,23 +355,23 @@ angular.module('proton.controllers.Settings')
                         Username: '--',
                         Email: '--',
                         Description: feedback
-                    }).then(function(result) {
+                    }).then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            User.delete({Password: password})
-                            .then(function(result) {
+                            User.delete({ Password: password })
+                            .then((result) => {
                                 if (result.data && result.data.Code === 1000) {
                                     deleteAccountModal.deactivate();
                                     $rootScope.logout();
                                 } else if (result.data && result.data.Error) {
-                                    notify({message: result.data.Error, classes: 'notification-danger'});
+                                    notify({ message: result.data.Error, classes: 'notification-danger' });
                                 }
                             });
                         } else if (result.data && result.data.Error) {
-                            notify({message: result.data.Error, classes: 'notification-danger'});
+                            notify({ message: result.data.Error, classes: 'notification-danger' });
                         }
                     });
                 },
-                cancel: function() {
+                cancel() {
                     deleteAccountModal.deactivate();
                 }
             }

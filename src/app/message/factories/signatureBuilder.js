@@ -11,10 +11,10 @@ angular.module('proton.message')
          * @param  {String} className
          * @return {String}
          */
-        const SPACE = (className = '') => {
+        function createSpace(className = '') {
             const tagOpen = (className) ? `<div class="${className}">` : '<div>';
             return `${tagOpen}<br /></div>`;
-        };
+        }
 
         function purify(html) {
             return DOMPurify.sanitize(html, {
@@ -56,11 +56,11 @@ angular.module('proton.message')
         function templateBuilder(userSignature, protonSignature, spaces) {
             const { userClass, protonClass, containerClass } = getClassNamesSignature(userSignature, protonSignature);
 
-            const template = `${SPACE()}${SPACE(containerClass)}
+            const template = `${createSpace()}${createSpace(containerClass)}
             <div class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
                 <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">${tools.replaceLineBreaks(userSignature)}</div>
                 <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">${tools.replaceLineBreaks(protonSignature)}</div>
-            </div>${SPACE(containerClass)}${spaces}`;
+            </div>${createSpace(containerClass)}${spaces}`;
 
             return purify(template);
         }
@@ -77,10 +77,10 @@ angular.module('proton.message')
             const isAction = [CONSTANTS.REPLY, CONSTANTS.REPLY_ALL, CONSTANTS.FORWARD].indexOf(message.Action) !== -1;
 
             if (isUserEmpty && isProtonEmpty && isAction) {
-                return `${SPACE()}${SPACE()}`;
-            } else {
-                return '';
+                return `${createSpace()}${createSpace()}`;
             }
+
+            return '';
         }
 
         /**
@@ -92,7 +92,7 @@ angular.module('proton.message')
          * @param {Boolean} isAfter Append the signature at the end of the content
          * @return {String}
          */
-        function insert(message = { getDecryptedBody : angular.noop }, isAfter = false) {
+        function insert(message = { getDecryptedBody: angular.noop }, isAfter = false) {
             const { From = {} } = message;
             const position = isAfter ? 'beforeEnd' : 'afterBegin';
             const userSignature = !From.Signature ? authentication.user.Signature : From.Signature;
@@ -110,7 +110,7 @@ angular.module('proton.message')
          * @param  {Message} message
          * @return {String}
          */
-        function update(message = { getDecryptedBody : angular.noop }, body = '') {
+        function update(message = { getDecryptedBody: angular.noop }, body = '') {
 
             const { From = {} } = message;
             const content = !From.Signature ? authentication.user.Signature : From.Signature;

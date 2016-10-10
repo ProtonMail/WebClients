@@ -1,8 +1,8 @@
-angular.module("proton.models.bug", [])
+angular.module('proton.models.bug', [])
 
-.factory("Bug", function($http, url) {
+.factory('Bug', ($http, url) => {
     return {
-        report: function(data) {
+        report(data) {
             return $http.post(url.get() + '/bugs', data);
         }
     };

@@ -9,7 +9,7 @@ angular.module('proton.composer')
         const getLabel = (msg) => {
             let label;
 
-            switch(!!msg) {
+            switch (!!msg) {
                 case (msg.uploading > 0):
                     label = gettextCatalog.getString('Uploading', null, 'Action');
                     break;
