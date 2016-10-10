@@ -35,6 +35,10 @@ body {
     #pm_thread {
         overflow-y: auto;
         overflow-x: hidden;
+        &:focus {
+            /* hotkey remove browser focus styling */
+            outline: none;
+        }
     }
     #conversation-list-rows {
         overflow-y: scroll;
