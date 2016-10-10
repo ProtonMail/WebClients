@@ -411,7 +411,7 @@ module.exports = function(grunt) {
 
             jssrc: {
                 files: ["<%= app_files.js %>"],
-                tasks: ['changed:jshint:files','changed:babel:watch', "index:build"]
+                tasks: ['changed:babel:watch', "index:build"]
             },
 
             assets: {
