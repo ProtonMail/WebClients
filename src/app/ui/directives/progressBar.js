@@ -38,7 +38,12 @@ angular.module('proton.ui')
                 const $btnRemove = el[0].querySelector('.progressLoader-btn-remove');
                 const isValidAttachment = isAttachementOfMessage(scope.model);
 
-                toggleBtn($btnClose, $btnRemove, scope.model.packet.uploading);
+                /**
+                 * If you do a reply it can contain attachment,
+                 * we need to be able to remove them.
+                 * When you add a new one the key uploading will be true.
+                 */
+                !scope.model.packet.uploading && toggleBtn($btnClose, $btnRemove);
 
                 const unsubscribe = $rootScope
                     .$on('attachment.upload', (e, { type, data = {} }) => {
@@ -49,7 +54,6 @@ angular.module('proton.ui')
                         }
 
                         if (type === 'uploading') {
-
                             // On end display remove button and remove the subscribe as we cannot reupload it
                             if (data.progress === 100) {
                                 el[0].classList.remove('uploading');
