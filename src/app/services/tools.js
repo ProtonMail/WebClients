@@ -14,6 +14,11 @@ angular.module('proton.tools', ['proton.constants'])
         }
     };
 
+    /**
+     * Generate a hash
+     * @param  {String} str
+     * @return {Integer}
+     */
     tools.hash = (str = '') => {
         return str.split('').reduce((prevHash, currVal) => ((prevHash << 5) - prevHash) + currVal.charCodeAt(0), 0);
     };

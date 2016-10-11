@@ -89,11 +89,12 @@ angular.module('proton.attachments')
          * @param  {File} file
          * @param  {Object} message
          * @param  {Boolean} inset  Append to the message
+         * @param  {String} cid  Content ID
          * @return {Promise} With the configuration for this attachment
          */
-        function create(file, message, insert = true) {
+        function create(file, message, insert = true, cid = '') {
             const action = insert && 'inline';
-            return upload([{ file, isEmbedded: insert }], message, action, false)
+            return upload([{ file, isEmbedded: insert }], message, action, false, cid)
                 .then(([ upload ]) => upload)
                 .catch((err) => {
                     $log.error(err);
@@ -131,14 +132,15 @@ angular.module('proton.attachments')
          * @param  {Object} message
          * @param  {String} action  attachment|inline (type of attachment) (default: attachment)
          * @param  {Boolean} triggerEvent Dispatch an event to refresh the view (default: true)
+         * @param  {String} cid Content ID
          * @return {Promise}
          */
-        function upload(queue = [], message = {}, action = 'attachment', triggerEvent = true) {
+        function upload(queue = [], message = {}, action = 'attachment', triggerEvent = true, cid = '') {
             const deferred = $q.defer();
             const promises = _.map(queue, ({ file, isEmbedded }, i, list) => {
                 // required for BE to get a cid-header
                 file.inline = +(isEmbedded && action === 'inline');
-                return addAttachment(file, message, isEmbedded, list.length);
+                return addAttachment(file, message, isEmbedded, list.length, cid);
             });
 
             message.uploading = promises.length;
@@ -275,16 +277,18 @@ angular.module('proton.attachments')
 
         /**
          * Add a new attachment, upload it to the server
-         * @param {File}  file
-         * @param {Message}  message
-         * @param {Boolean} insert  Embedded or not
-         * @param {Number}  total   Total of attachments
+         * @param {File} file
+         * @param {Message} message
+         * @param {Boolean} insert Embedded or not
+         * @param {Number} total Total of attachments
+         * @param {String} cid Content ID
          */
-        function addAttachment(file, message, insert = true, total = 1) {
+        function addAttachment(file, message, insert = true, total = 1, cid = '') {
             const tempPacket = {
                 filename: file.name,
                 uploading: true,
                 Size: file.size,
+                ContentID: cid,
                 Inline: file.inline || 0
             };
 
