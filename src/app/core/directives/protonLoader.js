@@ -6,8 +6,8 @@ angular.module('proton.core')
         link(scope, el) {
             $rootScope
                 .$on('networkActivity', (e, type) => {
-                    (type && 'load') && _rAF(() => el[0].classList.add('show'));
-                    (type && 'close') && _rAF(() => el[0].classList.remove('show'));
+                    (type === 'load') && _rAF(() => el[0].classList.add('show'));
+                    (type === 'close') && _rAF(() => el[0].classList.remove('show'));
                 });
         }
     }));
