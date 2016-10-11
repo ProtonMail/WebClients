@@ -396,6 +396,10 @@
                     height: auto;
                 }
             }
+
+            .plain {
+                white-space: pre-wrap;
+            }
         }
         &.closed .summary {
             overflow: hidden;

@@ -174,15 +174,16 @@ angular.module('proton.message')
             function updateMessage(promise) {
                 promise.then(({ type, body }) => {
                     scope.message.expand = true;
+                    scope.message.isPlain = (type === 'plain');
 
                     if (type && body) {
-                        scope.message.viewMode = type;
+                        scope.message.viewMode = 'html';
                         scope.body = body;
                     }
 
                     scroll(element[0], scope.index);
                 })
-                .then(null, () => {
+                .catch(() => {
                     scope.message.viewMode = 'plain';
                 });
             }
