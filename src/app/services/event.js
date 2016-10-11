@@ -91,7 +91,7 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                     const promises = [];
                     const dirtyAddresses = [];
                     const privateUser = user.Private === 1;
-                    const keyInfo = function (key) {
+                    const keyInfo = (key) => {
                         return pmcw.keyInfo(key.PrivateKey)
                         .then((info) => {
                             key.created = info.created; // Creation date
