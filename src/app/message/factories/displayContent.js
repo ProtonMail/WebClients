@@ -7,7 +7,7 @@ angular.module('proton.message')
                 .then((body) => (message.decrypting = false, body));
         }
 
-        function withType(body, {MIMEType}) {
+        function withType(body, { MIMEType }) {
             const type = (MIMEType === 'text/plain') ? 'plain' : 'html';
             return { body, type };
         }
@@ -30,7 +30,7 @@ angular.module('proton.message')
                 }
 
                 if (mail.attachments) {
-                    body = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+body;
+                    body = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>" + body;
                 }
 
                 deferred.resolve({ type, body });
@@ -72,7 +72,7 @@ angular.module('proton.message')
             }
 
             return decrypt(message)
-                .then((body) => (message.IsEncrypted === 8) ? parse(body) : withType(body, message))
+                .then((body) => { return (message.IsEncrypted === 8) ? parse(body) : withType(body, message); })
                 .then((content) => clean(content))
                 .then((content) => prepare(content, message))
                 .then((content) => {
