@@ -87,7 +87,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
     unsubscribe.push($scope.$watch('messages.length', () => {
         if ($scope.messages.length > 0) {
             $rootScope.activeComposer = true;
-            window.onbeforeunload = function () {
+            window.onbeforeunload = () => {
                 return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
             hotkeys.unbind(); // Disable hotkeys
@@ -344,27 +344,32 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         const images = testDiv.querySelectorAll('img');
 
         const promises = _.chain([].slice.call(images))
-            .filter(({ src }) => /data:image/.test(src))
+            .filter(({ src }) => /data:image/.test(src)) // only data:uri image
             .filter(({ src }) => src.includes(',')) // remove invalid data:uri
             .map((image) => {
+                const cid = embedded.generateCid(image.src, message.From.Email);
+                const setEmbeddedImg = () => {
+                    image.setAttribute('data-embedded-img', cid);
+
+                    return Promise.resolve();
+                };
+
+                if (embedded.exist(message, cid)) {
+                    return setEmbeddedImg();
+                }
+
                 const file = dataURItoBlob(image.src);
 
                 file.name = image.alt || 'image' + Date.now();
                 file.inline = 1;
 
-                return attachmentModel
-                    .create(file, message)
-                    .then(({ cid, url }) => {
-                        image.setAttribute('data-embedded-img', cid);
-                        image.src = url;
-                    });
+                return attachmentModel.create(file, message, true, cid).then(setEmbeddedImg);
             })
             .value();
 
         return Promise.all(promises)
             .then(() => {
                 message.setDecryptedBody(testDiv.innerHTML);
-                message.editor && message.editor.fireEvent('refresh', { Body: testDiv.innerHTML });
                 return message;
             });
     }

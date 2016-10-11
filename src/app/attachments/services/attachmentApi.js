@@ -36,10 +36,11 @@ angular.module('proton.attachments')
          * @param  {Object} message
          * @return {FormData}
          */
-        const makeFormUpload = (packets, message) => {
+        const makeFormUpload = (packets, message, tempPacket) => {
             const data = new FormData();
             data.append('Filename', packets.Filename);
             data.append('MessageID', message.ID);
+            data.append('ContentID', tempPacket.ContentID);
             data.append('MIMEType', packets.MIMEType);
             data.append('Inline', packets.Inline);
             data.append('KeyPackets', new Blob([packets.keys]));
@@ -69,13 +70,11 @@ angular.module('proton.attachments')
         const get = (ID) => $http.get(`${url.get()}/attachments/${ID}`, { responseType: 'arraybuffer' });
 
         const upload = (packets, message, tempPacket, total) => {
-
             const REQUEST_ID = `${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
             const dispatcher = dispatchUpload(REQUEST_ID, message, tempPacket);
             const deferred = $q.defer();
             const xhr = new XMLHttpRequest();
             const keys = authentication.getPrivateKeys(message.AddressID);
-
 
             pendingUpload.push({
                 id: REQUEST_ID,
@@ -144,7 +143,7 @@ angular.module('proton.attachments')
             xhr.setRequestHeader('x-pm-apiversion', CONFIG.api_version);
             xhr.setRequestHeader('x-pm-session', pmcw.decode_base64(secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken')));
 
-            xhr.send(makeFormUpload(packets, message));
+            xhr.send(makeFormUpload(packets, message, tempPacket));
 
             return deferred.promise;
 
