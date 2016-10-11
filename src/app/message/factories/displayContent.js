@@ -1,10 +1,5 @@
 angular.module('proton.message')
-    .factory('displayContent', ($rootScope, $q, prepareContent, tools) => {
-        function detect(content) {
-            // NOTE Plain text detection doesn't work. Check #1701
-            return (tools.isHtml(content)) ? 'html' : 'plain';
-        }
-
+    .factory('displayContent', ($rootScope, $q, $filter, prepareContent) => {
         function decrypt(message) {
             message.decrypting = true;
             return message
@@ -12,26 +7,33 @@ angular.module('proton.message')
                 .then((body) => (message.decrypting = false, body));
         }
 
+        function withType(body, {MIMEType}) {
+            const type = (MIMEType === 'text/plain') ? 'plain' : 'html';
+            return { body, type };
+        }
+
         function parse(decrytedBody) {
             const deferred = $q.defer();
             const mailparser = new MailParser({ defaultCharset: 'UTF-8' });
 
             mailparser.on('end', (mail) => {
-                let parsedContent;
+                let type = 'html';
+                let body = '';
 
                 if (mail.html) {
-                    parsedContent = mail.html;
+                    body = mail.html;
                 } else if (mail.text) {
-                    parsedContent = mail.text;
+                    type = 'plain';
+                    body = mail.text;
                 } else {
-                    parsedContent = 'Empty Message';
+                    body = 'Empty Message';
                 }
 
                 if (mail.attachments) {
-                    parsedContent = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>" + parsedContent;
+                    body = "<div class='alert alert-danger'><span class='pull-left fa fa-exclamation-triangle'></span><strong>PGP/MIME Attachments Not Supported</strong><br>This message contains attachments which currently are not supported by ProtonMail.</div><br>"+body;
                 }
 
-                deferred.resolve(parsedContent);
+                deferred.resolve({ type, body });
             });
 
             mailparser.write(decrytedBody);
@@ -42,17 +44,21 @@ angular.module('proton.message')
 
         function clean(content) {
             // Clear content with DOMPurify before anything happen!
-            return DOMPurify.sanitize(content, {
+            content.body = DOMPurify.sanitize(content.body, {
                 ADD_ATTR: ['target'],
                 FORBID_TAGS: ['style', 'input', 'form']
             });
+            return content;
         }
 
-        function show(content, message) {
-            const type = detect(content);
-            const body = prepareContent(content, message);
+        function prepare(content, message) {
+            if (content.type === 'html') {
+                content.body = prepareContent(content.body, message);
+            } else {
+                content.body = $filter('linky')(content.body, '_blank');
+            }
 
-            return { type, body };
+            return content;
         }
 
         function read({ ID }) {
@@ -60,23 +66,18 @@ angular.module('proton.message')
         }
 
         return (message, body) => {
+            if (body) {
+                read(message);
+                return $q.when(withType(body, message));
+            }
 
-            return new Promise((resolve, reject) => {
-                if (body) {
+            return decrypt(message)
+                .then((body) => (message.IsEncrypted === 8) ? parse(body) : withType(body, message))
+                .then((content) => clean(content))
+                .then((content) => prepare(content, message))
+                .then((content) => {
                     read(message);
-                    return resolve({ body, type: detect(body) });
-                }
-
-                return decrypt(message)
-                    .then((decrytedBody) => ((message.IsEncrypted === 8) ? parse(decrytedBody) : decrytedBody))
-                    .then((body) => clean(body))
-                    .then((body) => show(body, message, false))
-                    .then(({ type, body }) => {
-                        read(message);
-                        return { body, type };
-                    })
-                    .then(resolve)
-                    .catch(reject);
-            });
+                    return content;
+                });
         };
     });

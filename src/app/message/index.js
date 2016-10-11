@@ -1,1 +1,1 @@
-angular.module('proton.message', []);
+angular.module('proton.message', ['ngSanitize']);
