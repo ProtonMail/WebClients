@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .factory('messageActions', ($q, $rootScope, tools, cache, Message, networkActivityTracker, CONSTANTS, notify, gettextCatalog) => {
+    .factory('messageActions', ($q, $rootScope, tools, cache, eventManager, Message, networkActivityTracker, CONSTANTS, notify, gettextCatalog) => {
 
         const REMOVE_ID = 0;
         const ADD_ID = 1;
@@ -398,7 +398,6 @@ angular.module('proton.message')
 
                     if (IsRead === 0) {
                         acc.conversationIDs.push(ConversationID);
-
                         acc.events.push({
                             Action: 3, ID,
                             Message: { ID, ConversationID, IsRead: 1 }
@@ -447,15 +446,19 @@ angular.module('proton.message')
          * @param {Array} ids
          */
         function unread(ids = []) {
+            const context = tools.cacheContext();
+            const promise = Message.unread({ IDs: ids }).$promise;
 
-            const { messageIDs, conversationIDs, events } = _
+            cache.addToDispatcher(promise);
+
+            if (context) {
+                const { messageIDs, conversationIDs, events } = _
                 .reduce(ids, (acc, ID) => {
                     const { IsRead, ConversationID } = cache.getMessageCached(ID);
 
                     if (IsRead === 1) {
                         acc.conversationIDs.push(ConversationID);
-
-                        events.push({
+                        acc.events.push({
                             Action: 3, ID,
                             Message: {
                                 ID, ConversationID, IsRead: 0
@@ -467,35 +470,30 @@ angular.module('proton.message')
                     return acc;
                 }, { messageIDs: [], conversationIDs: [], events: [] });
 
-            if (messageIDs.length) {
-                // Generate conversation event
-                _.each(_.uniq(conversationIDs), (conversationID) => {
-                    const conversation = cache.getConversationCached(conversationID);
-                    const messages = cache.queryMessagesCached(conversationID);
+                if (messageIDs.length) {
+                    // Generate conversation event
+                    _.each(_.uniq(conversationIDs), (conversationID) => {
+                        const conversation = cache.getConversationCached(conversationID);
+                        const messages = cache.queryMessagesCached(conversationID);
 
-                    const filtered = _.filter(messages, ({ ID }) => _.contains(messageIDs, ID));
+                        const filtered = _.filter(messages, ({ ID }) => _.contains(messageIDs, ID));
 
-                    if (angular.isDefined(conversation)) {
-                        events.push({
-                            Action: 3,
-                            ID: conversation.ID,
-                            Conversation: {
+                        if (angular.isDefined(conversation)) {
+                            events.push({
+                                Action: 3,
                                 ID: conversation.ID,
-                                NumUnread: conversation.NumUnread + filtered.length
-                            }
-                        });
-                    }
-                });
-
-                // Send request
-                const promise = Message.unread({ IDs: messageIDs }).$promise;
-                cache.addToDispatcher(promise);
-
-                if (tools.cacheContext() === true) {
-                    return cache.events(events);
+                                Conversation: {
+                                    ID: conversation.ID,
+                                    NumUnread: conversation.NumUnread + filtered.length
+                                }
+                            });
+                        }
+                    });
                 }
 
-                promise.then(() => cache.events(events));
+                cache.events(events);
+            } else {
+                promise.then(() => eventManager.call());
                 networkActivityTracker.track(promise);
             }
         }
@@ -568,5 +566,4 @@ angular.module('proton.message')
             read, unread,
             destroy, discardMessage
         };
-
     });
