@@ -78,7 +78,7 @@
 	position: fixed;
 	will-change: transform;
 	left: 50%;
-	top: -50px;
+	transform: translateY(-100%);
 	margin-left: -($pm_loading / 2);
 	width: $pm_loading;
 	line-height: $pm_loading;
@@ -95,9 +95,8 @@
 		float: left;
 	}
 	&.show {
-		top: 35px;
-		opacity: 1;
-		transition: opacity .5s linear;
+        transform: translateY(35px);
+        opacity: 1;
 	}
 }
 
