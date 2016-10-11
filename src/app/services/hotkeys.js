@@ -42,7 +42,7 @@ angular.module('proton.hotkeys', [])
         return false;
     };
 
-    const openMarked = () => {
+    const openMarked = (event) => {
         $rootScope.$broadcast('openMarked');
 
         // This function is bind to the Enter key, we need to prevent the
