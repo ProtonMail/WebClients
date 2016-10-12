@@ -153,7 +153,9 @@ angular.module('proton.message')
                 .then(() => {
                     // Auto focus message list when we load the message, to allow keyboard srolling
                     scope.$applyAsync(() => {
-                        document.getElementById('pm_thread').focus();
+                        // If you switch to another conversation the container might not exist
+                        const $container = document.getElementById('pm_thread');
+                        $container && $container.focus();
                     });
                 });
             }

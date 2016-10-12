@@ -193,18 +193,23 @@ angular.module('proton.embedded', [])
         MAP_BLOBS[key] = MAP_BLOBS[key] || [];
 
         return (data, MIME) => {
-            // Turn the decrypted attachment data into a blob.
-            let blob = new Blob([data], { type: MIME });
-            // Generate the URL
-            let imageUrl = urlCreator().createObjectURL(blob);
-            // Store the generated URL
-            Blobs[cid] = { url: imageUrl, isContentLocation: typeof Headers['content-location'] !== 'undefined' && typeof Headers['content-id'] === 'undefined' };
-            // this is supposed to remove the blob so it
-            // can be garbage collected. we dont save it (for now)
-            blob = null;
-            imageUrl = null;
 
-            MAP_BLOBS[key].push(cid);
+            // If you switch to another conversation the MAP_BLOBS won't exist anymore
+            if (MAP_BLOBS[key]) {
+                // Turn the decrypted attachment data into a blob.
+                let blob = new Blob([data], { type: MIME });
+                // Generate the URL
+                let imageUrl = urlCreator().createObjectURL(blob);
+                // Store the generated URL
+                Blobs[cid] = { url: imageUrl, isContentLocation: typeof Headers['content-location'] !== 'undefined' && typeof Headers['content-id'] === 'undefined' };
+                // this is supposed to remove the blob so it
+                // can be garbage collected. we dont save it (for now)
+                blob = null;
+                imageUrl = null;
+
+                MAP_BLOBS[key].push(cid);
+            }
+
         };
     };
 
