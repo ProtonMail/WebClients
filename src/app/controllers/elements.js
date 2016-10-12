@@ -266,25 +266,21 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
     };
 
     $scope.conversationCount = function () {
-        let result;
-
         if (angular.isDefined($stateParams.filter) || $scope.mailbox === 'search') {
-            result = $rootScope.Total;
-        } else {
-            switch ($scope.mailbox) {
-                case 'drafts':
-                    result = cacheCounters.totalMessage(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
-                    break;
-                case 'label':
-                    result = cacheCounters.totalConversation($stateParams.label);
-                    break;
-                default:
-                    result = cacheCounters.totalConversation(CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox]);
-                    break;
-            }
+            return $rootScope.Total;
         }
 
-        return result;
+        let label = '';
+        if ($scope.mailbox === 'label') {
+            label = $stateParams.label;
+        } else {
+            label = CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
+        }
+
+        if (tools.typeList() === 'message') {
+            return cacheCounters.totalMessage(label);
+        }
+        return cacheCounters.totalConversation(label);
     };
 
     $scope.makeDropdownPages = function () {
