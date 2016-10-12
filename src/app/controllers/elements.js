@@ -266,21 +266,15 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
     };
 
     $scope.conversationCount = function () {
-        if (angular.isDefined($stateParams.filter) || $scope.mailbox === 'search') {
+        const context = tools.cacheContext();
+
+        if (!context) {
             return $rootScope.Total;
         }
 
-        let label = '';
-        if ($scope.mailbox === 'label') {
-            label = $stateParams.label;
-        } else {
-            label = CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
-        }
+        const label = ($scope.mailbox === 'label') ? $stateParams.label : CONSTANTS.MAILBOX_IDENTIFIERS[$scope.mailbox];
 
-        if (tools.typeList() === 'message') {
-            return cacheCounters.totalMessage(label);
-        }
-        return cacheCounters.totalConversation(label);
+        return (tools.typeList() === 'message') ? cacheCounters.totalMessage(label) : cacheCounters.totalConversation(label);
     };
 
     $scope.makeDropdownPages = function () {
