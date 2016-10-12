@@ -1235,16 +1235,18 @@ angular.module('proton.modals', [])
         templateUrl: 'templates/modals/domain/address.tpl.html',
         controller(params) {
             // Variables
-            this.domain = params.domain;
-            this.organizationPublicKey = params.organizationPublicKey;
-            this.step = params.step;
-            this.members = params.members;
-            this.member = params.members[0];
+            const { domain, organizationPublicKey, step, members = [] } = params;
+
+            this.domain = domain;
+            this.organizationPublicKey = organizationPublicKey;
+            this.step = step;
             this.address = '';
             this.password = '';
             this.size = 2048;
+            this.members = members;
+            this.member = members[0];
 
-            this.open = function (name) {
+            this.open = (name) => {
                 $rootScope.$broadcast(name, params.domain);
             };
 
@@ -1609,7 +1611,7 @@ angular.module('proton.modals', [])
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/generate.tpl.html',
-        controller(params) {
+        controller(params, $scope) {
             // Variables
             const promises = [];
             const QUEUED = 0;
@@ -1644,9 +1646,9 @@ angular.module('proton.modals', [])
                 // });
 
                 // if (dirtyAddresses.length === 0) {
-                //     params.cancel();
+                //     params.close(false);
                 // }
-                params.cancel();
+                params.close(false);
             });
 
             // Functions
@@ -1706,7 +1708,9 @@ angular.module('proton.modals', [])
                 params.close(false);
             };
 
-            this.$onDestroy = unsubscribe;
+            $scope.$on('$destroy', () => {
+                unsubscribe();
+            });
         }
     });
 })
