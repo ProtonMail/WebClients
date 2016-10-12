@@ -406,50 +406,33 @@ angular.module('proton.routes', [
         url: '/eo/:tag',
         resolve: {
             encryptedToken(Eo, $stateParams) {
-                return Eo.token($stateParams.tag);
+                // Can be null if the network is down
+                return Eo.token($stateParams.tag).then(({ data }) => (data || {}).Token);
             }
         },
         views: {
             content: {
                 templateUrl: 'templates/views/outside.unlock.tpl.html',
                 controller($scope, $state, $stateParams, pmcw, encryptedToken, networkActivityTracker, notify, secureSessionStorage) {
-                    $scope.params = {};
-                    $scope.params.MessagePassword = '';
+                    $scope.params = {
+                        MessagePassword: ''
+                    };
 
-                    if (encryptedToken.data.Error) {
-                        $scope.tokenError = true;
-                    } else {
-                        $scope.tokenError = false;
-                        /* eslint  no-param-reassign: "off" */
-                        encryptedToken = encryptedToken.data.Token;
-                    }
-
-                    $scope.trying = false;
-                    $scope.tryPass = '';
+                    $scope.tokenError = !encryptedToken;
 
                     $scope.unlock = function () {
 
-                        if ($scope.trying !== true) {
+                        const promise = pmcw
+                            .decryptMessage(encryptedToken, $scope.params.MessagePassword)
+                            .then((decryptedToken) => {
+                                secureSessionStorage.setItem('proton:decrypted_token', decryptedToken);
+                                secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
+                                $state.go('eo.message', { tag: $stateParams.tag });
+                            }, (err) => {
+                                notify({ message: err.message, classes: 'notification-danger' });
+                            });
 
-                            $scope.trying = true;
-
-                            clearTimeout($scope.tryPass);
-
-                            $scope.tryPass = setTimeout(() => {
-                                const promise = pmcw.decryptMessage(encryptedToken, $scope.params.MessagePassword);
-
-                                promise.then((decryptedToken) => {
-                                    secureSessionStorage.setItem('proton:decrypted_token', decryptedToken);
-                                    secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
-                                    $state.go('eo.message', { tag: $stateParams.tag });
-                                    $scope.trying = false;
-                                }, (err) => {
-                                    notify({ message: err.message, classes: 'notification-danger' });
-                                    $scope.trying = false;
-                                });
-                            }, 600);
-
-                        }
+                        networkActivityTracker.track(promise);
 
                     };
                 }
@@ -460,7 +443,7 @@ angular.module('proton.routes', [
     .state('eo.message', {
         url: '/eo/message/:tag',
         resolve: {
-            message($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
+            messageData($stateParams, $q, Eo, Message, pmcw, secureSessionStorage) {
                 const deferred = $q.defer();
                 const tokenId = $stateParams.tag;
                 const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
