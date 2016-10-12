@@ -1167,6 +1167,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                     if (keys[email] && keys[email].length > 0) {
                         // Encrypt content body in with the public key user
                         acc.push(insideUser(keys[email], email));
+                        return acc;
                     }
                     // Outside user
                     outsiders = true;
@@ -1210,7 +1211,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                     const outsiders = encryptingBody.outsiders; // Initialize to false a Boolean variable to know if there are outsiders email in recipients list
 
                     const promises = encryptingBody.promises;
-
 
                     // If there are some outsiders
                     if (outsiders === true && message.Password.length === 0) {
@@ -1275,7 +1275,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
 
             // When all promises are complete
             $q.all(promises).then(() => {
-
                 if (outsiders === true && message.Password.length === 0 && message.ExpirationTime) {
                     $log.error(message);
                     message.encrypting = false;
