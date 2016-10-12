@@ -3,5 +3,10 @@
 * Which threading mode are you using? conversation or message?
 * Which browser are you using?
 * Which OS are you using?
+* Which url ?
 * Can you reproduce the problem each time?
 * Describe the procedure to reproduce your problem
+
+### Expected Behavior:
+
+### Actual Behavior:
