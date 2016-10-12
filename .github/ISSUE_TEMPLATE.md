@@ -1,12 +1,16 @@
-* Do you have a free or paid account?
-* Which layout mode are you using? column or row?
-* Which threading mode are you using? conversation or message?
-* Which browser are you using?
-* Which OS are you using?
-* Which url ?
+* Desktop, tablet or mobile?
+* Which browser?
+* Which OS?
+* Which url?
+* Free or paid account?
+* Which layout mode? column or row?
+* Which threading mode? conversation or message?
 * Can you reproduce the problem each time?
-* Describe the procedure to reproduce your problem
 
-### Expected Behavior:
+### Description or steps to reproduce the problem
 
-### Actual Behavior:
+*
+
+### Expected Behavior
+
+### Actual Behavior
