@@ -76,7 +76,7 @@
         }
 
         pass = pass && simple.Operator   instanceof Object;
-        pass = pass && simple.Conditions instanceof Array;
+        pass = pass && Array.isArray(simple.Conditions);
         pass = pass && simple.Actions    instanceof Object;
 
         if (!pass) {
@@ -90,19 +90,15 @@
             throw { name: 'InvalidInput', message: 'Invalid simple operator' };
         }
 
-        for (var index in simple.Conditions) {
-            var condition = simple.Conditions[index];
-
+        simple.Conditions.forEach(function(condition) {
             pass = pass && condition.hasOwnProperty('Type');
             pass = pass && condition.Type.hasOwnProperty('label');
             pass = pass && condition.Type.hasOwnProperty('value');
-
             pass = pass && condition.hasOwnProperty('Comparator');
             pass = pass && condition.Comparator.hasOwnProperty('label');
             pass = pass && condition.Comparator.hasOwnProperty('value');
-
             pass = pass && condition.hasOwnProperty('Values');
-        }
+        });
 
         if (!pass) {
             throw { name: 'InvalidInput', message: 'Invalid simple conditions' };
@@ -110,11 +106,9 @@
 
         pass = pass && simple.Actions.hasOwnProperty('Labels');
 
-        for (index in simple.Actions.Labels) {
-            var label = simple.Actions.Labels[index];
-
+        simple.Actions.Labels.forEach(function (label) {
             pass = pass && label.hasOwnProperty('Name');
-        }
+        });
 
         pass = pass && simple.Actions.hasOwnProperty('Move');
 
@@ -139,9 +133,8 @@
         var tests = [];
         var thens = [];
 
-        for (var index in simple.Conditions)
-        {
-            condition = simple.Conditions[index];
+        simple.Conditions.forEach(function(condition) {
+
             var comparator = condition.Comparator.value;
             var test = null;
             var negate = false;
@@ -168,9 +161,8 @@
                     throw { name: 'InvalidInput', message: 'Unrecognized simple condition: ' + condition.Comparator.value};
             }
 
-            for (var v in condition.Values)
-            {
-                var value = condition.Values[v];
+            condition.Values.forEach(function(value, v) {
+
                 // Escape on Simple rep. "matches", "begins" and "ends" which maps to Tree "Matches"
                 switch (comparator)
                 {
@@ -186,7 +178,8 @@
                         condition.Values[v] = "".concat("*", value);
                         break;
                 }
-            }
+
+            });
 
             var match = MATCH_KEYS[comparator];
             var values = unique(condition.Values);
@@ -216,14 +209,14 @@
 
             if (negate) test = buildTestNegate(test);
             tests.push(test);
-        }
+
+        });
 
         // Labels:
-        for (index in simple.Actions.Labels) {
-            label = simple.Actions.Labels[index];
+        simple.Actions.Labels.forEach(function(label) {
             then = buildFileintoThen(label.Name);
             thens.push(then);
-        }
+        });
 
         // Move:
         if (simple.Actions.Move !== null) {
