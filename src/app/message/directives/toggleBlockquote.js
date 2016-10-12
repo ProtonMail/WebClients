@@ -2,13 +2,10 @@ angular.module('proton.message')
 .directive('toggleBlockquote', () => ({
     restrict: 'A',
     link(scope, element) {
-        const onClick = ({ target }) => {
-
-            if (target.tagName === 'BUTTON' && target.classList.contains('more')) {
+        const onClick = (event) => {
+            if (event.target.tagName === 'BUTTON' && event.target.classList.contains('more')) {
                 event.preventDefault();
-                target
-                    .classList
-                    .toggle('proton-message-blockquote-toggle');
+                event.target.classList.toggle('proton-message-blockquote-toggle');
             }
         };
 
