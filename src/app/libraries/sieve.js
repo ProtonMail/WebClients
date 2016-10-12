@@ -5,7 +5,7 @@
 
  var Sieve = (function() {
 
-    var DEBUG = false;
+    var DEBUG = true;
 
     var MAILBOX_IDENTIFIERS = {
         "inbox"  : '0',
