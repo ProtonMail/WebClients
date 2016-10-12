@@ -15,14 +15,14 @@ angular.module('proton.responsiveComposer', [])
 
         const width = window.innerWidth;
         const height = window.innerHeight;
-
-        $rootScope.small = height < 700 && height >= 600;
-        $rootScope.mini = height < 600;
+        const isSmall = (width <= 640 || height <= 500);
 
         // max
         scope
             .$applyAsync(() => {
-                const isSmall = (width <= 640 || height <= 500);
+                $rootScope.small = height < 700 && height >= 600;
+                $rootScope.mini = height < 600;
+
                 isSmall && scope.maximize(scope.message);
                 !isSmall && (authentication.user.ComposerMode === 0) && scope.normalize(scope.message);
             });
