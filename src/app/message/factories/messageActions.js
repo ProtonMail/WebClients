@@ -73,6 +73,7 @@ angular.module('proton.message')
                     list.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
                     break;
             }
+            return list;
         }
 
 
