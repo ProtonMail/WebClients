@@ -22,8 +22,8 @@ angular.module('proton.attachments')
                 // Bind custom className for outside
                 $state.is('eo.reply') && el[0].classList.add('state-eoReply');
 
-                const onClick = ({ target }) => {
-
+                const onClick = (e) => {
+                    const { target } = e;
                     // download attachment
                     if (target.nodeName === 'A') {
 
@@ -35,6 +35,8 @@ angular.module('proton.attachments')
                         // Cf Safari
                         if (target.href && target.href.search(/^data.*/) !== -1) {
                             alert('Your browser lacks features needed to download encrypted attachments directly. Please right-click on the attachment and select Save/Download As.');
+                            e.preventDefault();
+                            e.stopPropagation();
                             return false;
                         }
 
