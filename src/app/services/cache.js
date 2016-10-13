@@ -335,7 +335,7 @@ angular.module('proton.cache', [])
                     storeConversations([conversation]);
                     storeMessages(messages);
 
-                    return Promise.resolve(conversation);
+                    return Promise.resolve(angular.copy(conversation));
                 }
 
                 return Promise.reject(data.Error);
@@ -360,7 +360,7 @@ angular.module('proton.cache', [])
                 message.loaded = true;
                 storeMessages([message]);
 
-                return Promise.resolve(message);
+                return Promise.resolve(angular.copy(message));
             } else if (data.Error) {
                 return Promise.reject(data.Error);
             }
@@ -692,7 +692,7 @@ angular.module('proton.cache', [])
         const messages = api.queryMessagesCached(ID); // messages are ordered by -Time
 
         if (conversation.loaded === true && messages.length === conversation.NumMessages) {
-            return Promise.resolve(conversation);
+            return Promise.resolve(angular.copy(conversation));
         }
 
         return getConversation(ID);
