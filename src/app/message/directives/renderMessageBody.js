@@ -1,5 +1,5 @@
 angular.module('proton.message')
-    .directive('renderMessageBody', (networkActivityTracker, $sce) => {
+    .directive('renderMessageBody', (networkActivityTracker, $rootScope, $sce) => {
 
         /**
          * Dispatch an action to render the loader only if
@@ -39,7 +39,28 @@ angular.module('proton.message')
                     }
                 };
 
+                const onAnimationEnd = ({ animationName }) => {
+                    /**
+                     * Let's inform the application that the message is displayed
+                     * Dispatch the action after the $digest to ensure that the rendering is done
+                     * @param  {String} animationName
+                     * @return {void}
+                     */
+                    if (animationName === 'nodeInserted') {
+                        scope.$applyAsync(() => {
+                            $rootScope.$emit('message.open', {
+                                type: 'render',
+                                data: {
+                                    message: scope.message,
+                                    index: scope.index
+                                }
+                            });
+                        });
+                    }
+                };
+
                 el[0].addEventListener('animationstart', onAnimationStart, false);
+                el[0].addEventListener('animationend', onAnimationEnd, false);
 
                 // Update the body after every update of the decryptedBody
                 const unsubscribe = scope
@@ -53,6 +74,8 @@ angular.module('proton.message')
                 scope
                     .$on('$destroy', () => {
                         el[0].removeEventListener('animationstart', onAnimationStart, false);
+                        el[0].removeEventListener('animationend', onAnimationEnd, false);
+
                         unsubscribe();
                         // Close the loader
                         networkActivityTracker.dispatch('close');

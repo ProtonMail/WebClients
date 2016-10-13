@@ -11,33 +11,11 @@ angular.module('proton.message')
     displayContent,
     displayImages,
     displayEmbedded,
+    messageScroll,
     Message,
     tools,
     CONSTANTS
 ) => {
-
-    /**
-     * Scroll to this content message
-     */
-    function scroll(node, index) {
-        const $header = document.getElementById('conversationHeader');
-        const $thread = document.getElementById('pm_thread');
-        const headerOffset = $header ? ($header.getBoundingClientRect().top + $header.offsetHeight) : 0;
-        const amountScrolled = $thread ? $thread.scrollTop : 0;
-        const paddingTop = ~~$thread.style.paddingTop.replace('px', '');
-
-        let scrollTop = node ? (node.getBoundingClientRect().top + amountScrolled - headerOffset - paddingTop) : 0;
-
-        if (index === 0) {
-            // Do nothing
-        } else if (index === 1) {
-            scrollTop -= 15;
-        } else if (index > 1) {
-            scrollTop -= 68;
-        }
-
-        $($thread).animate({ scrollTop }, 200);
-    }
 
     function checkLabel({ LabelIDs = [] }, mailbox = '') {
         const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
@@ -88,15 +66,8 @@ angular.module('proton.message')
             const postMessageSupport = $.browser.msie !== true || $.browser.edge === true; // NOTE postMessage still broken on IE11
             initMessage();
 
-            unsubscribe.push($rootScope.$on('message.embedded.injected', (event, message, body) => {
-                if (scope.message.ID === message.ID) {
-                    scope.$applyAsync(() => {
-                        scope.body = body;
-                    });
-                }
-            }));
-
             unsubscribe.push($rootScope.$on('message.open', (e, { type, data }) => {
+
                 if (data.message.ID !== scope.message.ID) {
                     return;
                 }
@@ -104,7 +75,14 @@ angular.module('proton.message')
                 switch (type) {
                     case 'toggle':
                         openMessage(data);
+                        // Record the message to scroll to it when it's ready
+                        messageScroll.willScroll(data.message.ID, data.expand);
                         break;
+
+                    case 'embedded.injected':
+                        scope.$applyAsync(() => scope.body = data.body);
+                        break;
+
                     case 'save.success':
                         if ($state.includes('secured.drafts.**')) {
                             return $state.go('secured.drafts');
@@ -183,7 +161,16 @@ angular.module('proton.message')
                         scope.body = body;
                     }
 
-                    scroll(element[0], scope.index);
+                    // // Wait for the message view to be compiled
+                    // scope.$applyAsync(() => {
+                    //     $rootScope.$emit('message.open', {
+                    //         type: 'render',
+                    //         data: {
+                    //             message: scope.message,
+                    //             index: scope.index
+                    //         }
+                    //     });
+                    // });
                 })
                 .catch(() => {
                     scope.message.viewMode = 'plain';

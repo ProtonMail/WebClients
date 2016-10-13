@@ -9,11 +9,60 @@ angular.module('proton.conversation')
     conversationListeners,
     messageActions,
     authentication,
+    messageScroll,
     cache,
     CONSTANTS,
     tools,
     hotkeys
 ) => {
+
+    /**
+     * Find in the conversation the last message:scrollable
+     * @param  {Array}  list List of message
+     * @return {Object}
+     */
+    const getScrollableMessage = (list = []) => {
+        const config = _.chain(list)
+            .map((message, index) => ({ message, index }))
+            .filter(({ message }) => !message.isDraft())
+            .last()
+            .value();
+
+        if (!config) {
+            return {
+                index: list[list.length - 1],
+                message: _.last(list)
+            };
+        }
+
+        return config;
+    };
+
+    /**
+     * Scroll to a message
+     * If we can scroll we can reset the cache (expendable)
+     * @param  {Object} expendables Config scrollable message
+     * @param  {Object} data        Config current message
+     * @return {Object}
+     */
+    function scrollToItem(expendable, data) {
+
+        if (!messageScroll.hasPromise()) {
+            // Only scroll for the current message
+            if (expendable.message.ID === data.message.ID) {
+                messageScroll.to(expendable);
+                return;
+            }
+        }
+
+        // Scroll to the message, if we toggled one message
+        if (messageScroll.hasPromise()) {
+            messageScroll.to(data);
+            return;
+        }
+
+        return expendable;
+    }
 
     /**
      * Find the position of the scrollable item
@@ -74,7 +123,6 @@ angular.module('proton.conversation')
         },
         templateUrl: 'templates/partials/conversation.tpl.html',
         link(scope) {
-            let scrollPromise;
             let messagesCached = [];
             const unsubscribe = [];
 
@@ -99,6 +147,7 @@ angular.module('proton.conversation')
                 }
             }));
 
+            let expandableMessage;
 
             // We need to allow hotkeys for a message when you open the message
             unsubscribe.push($rootScope.$on('message.open', (event, { type, data }) => {
@@ -110,10 +159,16 @@ angular.module('proton.conversation')
                     hotkeys.unbind(['down', 'up']);
                     scope.markedMessage = undefined;
                 }
+
+                if (type === 'render') {
+                    // Create a cache
+                    expandableMessage = expandableMessage || getScrollableMessage(scope.messages);
+                    return (expandableMessage = scrollToItem(expandableMessage, data));
+
+                }
             }));
 
             scope.$on('$destroy', () => {
-                $timeout.cancel(scrollPromise);
                 unsubscribe.forEach((cb) => cb());
                 unsubscribe.length = 0;
                 unsubscribeActions();
@@ -198,7 +253,7 @@ angular.module('proton.conversation')
                     .$applyAsync(() => {
                         scope.markedMessage = _.last(scope.messages);
                         unsubscribeActions = conversationListeners(scope.markedMessage);
-                        scope.scrollToMessage(scope.markedMessage.ID);
+                        messageScroll.toID(scope.markedMessage.ID, scope.messages);
 
                         hotkeys.bind(['down', 'up']);
                     });
@@ -225,56 +280,59 @@ angular.module('proton.conversation')
              */
             function expandMessage(messages = []) {
                 let thisOne;
-                const type = tools.typeView();
 
-                if (type === 'message') { // If we open a conversation in the sent folder
-                    thisOne = _.last(messages);
-                } else if ($stateParams.messageID) {
-                    thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
-                } else if ($state.includes('secured.starred.**')) {
-                    // Select the last message starred
-                    thisOne = _.chain(messages)
-                        .filter((message) => {
-                            return message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1;
-                        })
-                        .last()
-                        .value();
-                } else if ($state.includes('secured.label.**')) {
-                    // Select the last message with this label
-                    thisOne = _.chain(messages)
-                    .filter((message) => {
-                        return message.LabelIDs.indexOf($stateParams.label) !== -1;
-                    })
-                        .last()
-                        .value();
-                } else {
-                    const latest = _.chain(messages)
-                        .filter(({ Type }) => Type !== CONSTANTS.DRAFT)
-                        .last()
-                        .value();
+                const filter = (cb) => _.chain(messages).filter(cb).last().value();
 
-                    // If the latest message is read, we open it
-                    if (latest && latest.IsRead === 1) {
-                        thisOne = latest;
-                    } else {
-                        // Else we open the first message unread beginning to the end list
-                        let loop = true;
-                        let index = messages.length - 1;
+                switch (true) {
+                    // If we open a conversation in the sent folder
+                    case tools.typeView() === 'message':
+                        thisOne = _.last(messages);
+                        break;
 
-                        while (loop === true && index > 0) {
-                            index--;
+                    case $stateParams.messageID:
+                        thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
+                        break;
 
-                            if (messages[index].IsRead === 1) { // Is read
-                                loop = false;
-                                index++;
+                    case $state.includes('secured.starred.**'):
+                        // Select the last message starred
+                        thisOne = filter(({ LabelIDs }) => LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1);
+                        break;
+
+                    case $state.includes('secured.label.**'):
+                        // Select the last message with this label
+                        thisOne = filter(({ LabelIDs }) => LabelIDs.indexOf($stateParams.label) !== -1);
+                        break;
+
+                    case $state.includes('secured.drafts.**'):
+                        thisOne = filter(({ Type }) => Type === CONSTANTS.DRAFT);
+                        break;
+
+                    default: {
+                        const latest = filter(({ Type }) => Type !== CONSTANTS.DRAFT);
+                        // If the latest message is read, we open it
+                        if (latest && latest.IsRead === 1) {
+                            thisOne = latest;
+                        } else {
+                            // Else we open the first message unread beginning to the end list
+                            let loop = true;
+                            let index = messages.length - 1;
+
+                            while (loop === true && index > 0) {
+                                index--;
+
+                                if (messages[index].IsRead === 1) { // Is read
+                                    loop = false;
+                                    index++;
+                                }
                             }
-                        }
 
-                        if (loop === true) { // No message read found
-                            index = 0;
-                        }
+                            if (loop === true) { // No message read found
+                                index = 0;
+                            }
 
-                        thisOne = messages[index];
+                            thisOne = messages[index];
+                        }
+                        break;
                     }
                 }
 
@@ -288,16 +346,21 @@ angular.module('proton.conversation')
              */
             function initialization() {
                 let messages = [];
-
                 messagesCached = cache.queryMessagesCached($stateParams.id);
                 scope.trashed = _.filter(messagesCached, (message) => { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; }).length > 0;
                 scope.nonTrashed = _.filter(messagesCached, (message) => { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
-                // scope.spammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === true; }).length > 0;
-                // scope.nonSpammed = _.filter(messagesCached, function(message) { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.spam) === false; }).length > 0;
+
                 messages = $filter('filterMessages')(messagesCached, scope.showTrashed, scope.showNonTrashed);
 
                 if (messages.length > 0) {
-                    scope.messages = expandMessage(cache.orderMessage(messages, false));
+                    // Reset status
+                    const list = _.map(cache.orderMessage(messages, false), (msg) => {
+                        delete msg.expand;
+                        delete msg.openMe;
+                        return msg;
+                    });
+
+                    scope.messages = expandMessage(list);
                     unsubscribeActions = conversationListeners(_.last(scope.messages));
 
                     if (authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
@@ -345,7 +408,6 @@ angular.module('proton.conversation')
 
                     for (let index = 0; index < toAdd.length; index++) {
                         const ref = toAdd[index];
-
                         // Insert new message at a specific index
                         scope.messages.splice(ref.index, 0, ref.message);
                     }
@@ -433,39 +495,6 @@ angular.module('proton.conversation')
                 const ids = [scope.conversation.ID];
 
                 actionConversation.labelConversation(ids, labels, alsoArchive);
-            };
-
-            /**
-             * Scroll to the message specified
-             * @param {String} ID
-             */
-            scope.scrollToMessage = function (ID) {
-                $timeout.cancel(scrollPromise);
-                const index = _.findIndex(scope.messages, { ID });
-                const id = '#message' + index;
-
-                scrollPromise = $timeout(() => {
-                    const element = angular.element(id);
-
-                    if (angular.isElement(element) && angular.isDefined(element.offset())) {
-                        const headerOffset = $('#conversationHeader').offset().top + $('#conversationHeader').outerHeight();
-                        const amountScrolled = $('#pm_thread').scrollTop();
-                        const paddingTop = parseInt($('#pm_thread').css('padding-top').replace('px', ''), 10);
-                        let value = element.offset().top + amountScrolled - headerOffset - paddingTop;
-
-                        if (index === 0) {
-                            // Do nothing
-                        } else if (index === 1) {
-                            value -= 15;
-                        } else if (index > 1) {
-                            value -= 68;
-                        }
-
-                        $('#pm_thread').animate({
-                            scrollTop: value
-                        }, 200);
-                    }
-                }, 100);
             };
 
             /**
