@@ -157,9 +157,8 @@ angular.module('proton.attachments')
          */
         const remove = (message, { ID } = {}) => {
             return $http
-                .put(url.get() + '/attachments/remove', {
-                    MessageID: message.ID,
-                    AttachmentID: ID
+                .delete(url.get() + '/attachments/' + ID, {
+                    MessageID: message.ID
                 })
                 .then(({ data = {} }) => {
                     if (data.Code !== 1000) {
