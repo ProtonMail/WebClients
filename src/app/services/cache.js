@@ -71,7 +71,7 @@ angular.module('proton.cache', [])
 
                 // Force update if it's a new message
                 if (isSend && msg.ID === message.ID) {
-                    return message;
+                    return angular.copy(message);
                 }
 
                 if (msg.ID === message.ID) {
@@ -81,7 +81,7 @@ angular.module('proton.cache', [])
                     return m;
                 }
 
-                return msg;
+                return angular.copy(msg);
             });
         } else {
             messagesCached.push(message);
