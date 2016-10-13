@@ -536,7 +536,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
 
             if ((message.ToList.length + message.CCList.length + message.BCCList.length) === 0) {
                 if (!$state.includes('secured.drafts.**')) {
-                    $scope.$applyAsync(() => $scope.focusTo(message));
+                    $scope.focusTo(message);
                 } else {
                     message.editor && message.editor.focus();
                 }
@@ -1541,11 +1541,11 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
      */
     $scope.focusTo = (message) => {
         const input = angular.element(`#uid${message.uid}`).find('.toRow').find('input');
-        message.autocompletesFocussed = true;
 
         $timeout(() => {
+            message.autocompletesFocussed = true;
             input.focus();
-        }, 100, false);
+        }, 100);
     };
 
     $scope.focusNextInput = (event) => {
