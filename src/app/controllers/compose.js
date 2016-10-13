@@ -1296,10 +1296,8 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 return Message.send(parameters).$promise;
             })
             .then((result = {}) => {
-
                 // Check if there is an error coming from the server, then reject the process
                 if (result.Error) {
-
                     let error;
                     // Internal recipient not found
                     if (result.Code === 15198) {
@@ -1311,8 +1309,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                         error = new Error(result.Error);
                     }
 
-                    deferred.reject(error);
-                    return $q.reject(error);
+                    return Promise.reject(error);
                 }
 
                 return result;
@@ -1324,8 +1321,8 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 const numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
                 const numUnread = angular.isDefined(conversation) ? conversation.NumUnread : 0;
 
-                result.Sent.Senders = [Sent.Sender]; // The back-end doesn't return Senders so need a trick
-                result.Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
+                Sent.Senders = [Sent.Sender]; // The back-end doesn't return Senders so need a trick
+                Sent.Recipients = _.uniq(message.ToList.concat(message.CCList).concat(message.BCCList)); // The back-end doesn't return Recipients
                 events.push({ Action: 3, ID: Sent.ID, Message: Sent }); // Generate event for this message
 
                 if (Parent) {
