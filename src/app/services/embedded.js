@@ -121,7 +121,7 @@ angular.module('proton.embedded', [])
             .forEach((cid) => {
                 const current = Blobs[cid];
                 const url = (current) ? current.url : '';
-                const selector = `img[src="${cid}"], img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"], img[data-src="cid:${cid}"]`;
+                const selector = `img[src="${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"], img[data-src="cid:${cid}"]`;
                 const nodes = [].slice.call(testDiv.querySelectorAll(selector));
 
                 if (nodes.length) {
