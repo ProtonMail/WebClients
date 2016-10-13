@@ -47,7 +47,6 @@ angular.module('proton.message')
         const condition = LabelIDs.indexOf(currentLocation) !== -1;
         const type = tools.typeView();
         const isSearch = $state.includes('secured.search.**');
-
         return type === 'conversation' || isSearch || condition;
     }
 
