@@ -106,7 +106,7 @@
     <div class="meta">
         <div class="row fromRow">
             <label translate translate-context="Title">From</label>
-            <select class="flex" ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0"  ng-change="changeFrom(message)"></select>
+            <select class="flex" ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0"  ng-change="changeFrom(message)" ng-mousedown="setFocusFrom($event)"></select>
             <button class="pm_button link" >
                 <i class="fa fa-angle-down"></i>
             </button>
