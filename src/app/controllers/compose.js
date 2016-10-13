@@ -1347,7 +1347,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                     }
                 });
 
-                cache.events(events); // Send events to the cache manager
+                cache.events(events, false, true); // Send events to the cache manager
                 notify({ message: gettextCatalog.getString('Message sent', null), classes: 'notification-success' }); // Notify the user
 
                 $scope.close(message, false, false); // Close the composer window
