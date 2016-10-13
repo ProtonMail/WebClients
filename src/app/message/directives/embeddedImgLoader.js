@@ -48,7 +48,10 @@ angular.module('proton.message')
                         }
 
                         if (images.length) {
-                            $rootScope.$emit('message.embedded.injected', message, body.innerHTML);
+                            $rootScope.$emit('message.open', {
+                                type: 'embedded.injected',
+                                data: { message, body: body.innerHTML }
+                            });
                         }
                     });
                 })
