@@ -58,8 +58,11 @@
      */
     function mergeObjects(object1, object2) {
         var merged = {};
-        for (var attrname in object1) { merged[attrname] = object1[attrname]; }
+        var attrname;
+
+        for (attrname in object1) { merged[attrname] = object1[attrname]; }
         for (attrname in object2) { merged[attrname] = object2[attrname]; }
+
         return merged;
     }
 
@@ -309,10 +312,9 @@
     {
         var conditions = [];
 
-        for (var index in array) {
-            var element = array[index];
-
+        array.forEach(function(element) {
             var negate = false;
+
             if (element.Type === "Not") {
                 negate = true;
                 element = element.Test;
@@ -321,8 +323,7 @@
             var type = null;
             var params = null;
 
-            switch (element.Type)
-            {
+            switch (element.Type) {
                 case "Exists":
                     if (element.Headers.indexOf("X-Attached") >= 0) {
                         type = "attachments";
@@ -364,7 +365,7 @@
 
             condition = buildSimpleCondition(type, comparator, params);
             conditions.push(condition);
-        }
+        });
 
         return conditions;
     }
@@ -375,72 +376,70 @@
         var labels = [];
         var labelindex = null;
 
-        for (var index in array) {
+        array.forEach(function(element, index) {
             var skip = false;
-            var element = array[index];
-
             var type = null;
             var params = null;
 
             switch (element.Type)
             {
                 case "Reject":
-                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Reject' };
+                throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Reject' };
 
                 case "Redirect":
-                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Redirect' };
+                throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Redirect' };
 
                 case "Keep":
-                    break;
+                break;
 
                 case "Discard":
-                    actions.Move = MAILBOX_IDENTIFIERS.trash;
-                    break;
+                actions.Move = MAILBOX_IDENTIFIERS.trash;
+                break;
 
                 case "FileInto":
-                    var name = element.Name;
+                var name = element.Name;
 
-                    switch (name) {
-                        case "inbox":
-                        case "drafts":
-                        case "sent":
-                        case "starred":
-                        case "archive":
-                        case "spam":
-                        case "trash":
-                            actions.Move = MAILBOX_IDENTIFIERS[name];
-                            break;
-
-                        default:
-                            label = {
-                                "Name": name
-                            };
-                            labels.push(label);
-                            if (labelindex === null) labelindex = index; // preserve the index of the first label action
-                            skip = true;
-                            break;
-                    }
-
+                switch (name) {
+                    case "inbox":
+                    case "drafts":
+                    case "sent":
+                    case "starred":
+                    case "archive":
+                    case "spam":
+                    case "trash":
+                    actions.Move = MAILBOX_IDENTIFIERS[name];
                     break;
+
+                    default:
+                    label = {
+                        "Name": name
+                    };
+                    labels.push(label);
+                    if (labelindex === null) labelindex = index; // preserve the index of the first label action
+                    skip = true;
+                    break;
+                }
+
+                break;
 
                 case "AddFlag":
-                    type = "mark";
+                type = "mark";
 
-                    var read = (element.Flags.indexOf("\\Seen") >= 0);
-                    var starred = (element.Flags.indexOf("\\Flagged") >= 0);
+                var read = (element.Flags.indexOf("\\Seen") >= 0);
+                var starred = (element.Flags.indexOf("\\Flagged") >= 0);
 
-                    actions.Mark = {
-                        "Read": read,
-                        "Starred": starred
-                    };
-                    break;
+                actions.Mark = {
+                    "Read": read,
+                    "Starred": starred
+                };
+                break;
 
                 default:
-                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: ' + element.Type };
+                throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: ' + element.Type };
             }
 
             if (skip) continue;
-        }
+        });
 
         // Append labels action
         actions.Labels = labels;
