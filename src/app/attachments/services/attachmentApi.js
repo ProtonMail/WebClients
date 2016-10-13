@@ -151,15 +151,13 @@ angular.module('proton.attachments')
 
         /**
          * Delete an attachment from the API
-         * @param  {Messag} message
+         * @param  {Message} message
          * @param  {Object} attachment
          * @return {Promise}
          */
-        const remove = (message, { ID } = {}) => {
+        const remove = (message, attachment) => {
             return $http
-                .delete(url.get() + '/attachments/' + ID, {
-                    MessageID: message.ID
-                })
+                .delete(url.get() + '/attachments/' + attachment.ID, { MessageID: message.ID })
                 .then(({ data = {} }) => {
                     if (data.Code !== 1000) {
                         const error = data.Error || 'Error during the remove request';
