@@ -381,64 +381,61 @@
             var type = null;
             var params = null;
 
-            switch (element.Type)
-            {
+            switch (element.Type) {
                 case "Reject":
-                throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Reject' };
+                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Reject' };
 
-                case "Redirect":
-                throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Redirect' };
+                    case "Redirect":
+                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: Redirect' };
 
-                case "Keep":
-                break;
+                    case "Keep":
+                    break;
 
                 case "Discard":
-                actions.Move = MAILBOX_IDENTIFIERS.trash;
-                break;
+                    actions.Move = MAILBOX_IDENTIFIERS.trash;
+                    break;
 
                 case "FileInto":
-                var name = element.Name;
+                    var name = element.Name;
 
-                switch (name) {
-                    case "inbox":
-                    case "drafts":
-                    case "sent":
-                    case "starred":
-                    case "archive":
-                    case "spam":
-                    case "trash":
-                    actions.Move = MAILBOX_IDENTIFIERS[name];
+                    switch (name) {
+                        case "inbox":
+                        case "drafts":
+                        case "sent":
+                        case "starred":
+                        case "archive":
+                        case "spam":
+                        case "trash":
+                            actions.Move = MAILBOX_IDENTIFIERS[name];
+                            break;
+
+                        default:
+                            label = {
+                                "Name": name
+                            };
+                            labels.push(label);
+                            if (labelindex === null) labelindex = index; // preserve the index of the first label action
+                            skip = true;
+                            break;
+                    }
+
                     break;
-
-                    default:
-                    label = {
-                        "Name": name
-                    };
-                    labels.push(label);
-                    if (labelindex === null) labelindex = index; // preserve the index of the first label action
-                    skip = true;
-                    break;
-                }
-
-                break;
 
                 case "AddFlag":
-                type = "mark";
+                    type = "mark";
 
-                var read = (element.Flags.indexOf("\\Seen") >= 0);
-                var starred = (element.Flags.indexOf("\\Flagged") >= 0);
+                    var read = (element.Flags.indexOf("\\Seen") >= 0);
+                    var starred = (element.Flags.indexOf("\\Flagged") >= 0);
 
-                actions.Mark = {
-                    "Read": read,
-                    "Starred": starred
-                };
-                break;
+                    actions.Mark = {
+                        "Read": read,
+                        "Starred": starred
+                    };
+                    break;
 
                 default:
-                throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: ' + element.Type };
+                    throw { name: 'UnsupportedRepresentation', message: 'Unsupported filter representation: ' + element.Type };
             }
-
-            if (skip) continue;
         });
 
         // Append labels action
@@ -458,7 +455,7 @@
         try {
             tree = toTree(modal);
         } catch (exception) {
-            if (DEBUG) console.log(exception.message);
+            if (DEBUG) console.error(exception);
             tree = [];
         }
 
@@ -473,7 +470,7 @@
         try {
             modal = fromTree(tree);
         } catch (exception) {
-            if (DEBUG) console.log(exception.message);
+            if (DEBUG) console.error(exception);
             modal = {};
         }
 
