@@ -69,4 +69,4 @@ Proton Technologies A.G. (Switzerland)
 
 Email: contact@protonmail.ch
 
-License: https://github.com/ProtonMail/WebClient/blob/master/license.md
+License: https://github.com/ProtonMail/WebClient/blob/public/license.md
