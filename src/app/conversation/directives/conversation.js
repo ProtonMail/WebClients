@@ -242,9 +242,9 @@ angular.module('proton.conversation')
 
             });
 
-            scope.$on('move', (event, name) => {
+            scope.$on('move', (event, mailbox) => {
                 const ids = scope.markedMessage ? [scope.markedMessage.ID] : scope.messages.map(({ ID }) => ID);
-                messageActions.moveMessage(ids, name);
+                $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
             });
 
             scope.$on('right', () => {
