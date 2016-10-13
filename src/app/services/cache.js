@@ -256,13 +256,12 @@ angular.module('proton.cache', [])
                     return Promise.resolve(api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc));
                 }
 
+                api.clearDispatcher();
                 return Promise.resolve(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
             }
 
-            return Promise.reject();
-
-            /* eslint no-unreachable: "off" */
             api.clearDispatcher();
+            return Promise.reject();
         });
 
         networkActivityTracker.track(promise);
@@ -660,7 +659,7 @@ angular.module('proton.cache', [])
      */
     api.queryMessagesCached = (ConversationID) => {
         const list = api.orderMessage(_.where(messagesCached, { ConversationID }));
-        return list.slice(); // Create a copy
+        return list.map((item) => angular.copy(item)); // Create a copy
     };
 
     /**
