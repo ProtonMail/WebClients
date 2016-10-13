@@ -252,6 +252,7 @@ angular.module('proton.cache', [])
                     cacheCounters.updateConversation(loc, data.Total, unread);
                     // Store conversations
                     storeConversations(data.Conversations);
+                    api.clearDispatcher();
                     // Return conversations ordered
                     return Promise.resolve(api.orderConversation(data.Conversations.slice(0, CONSTANTS.ELEMENTS_PER_PAGE), loc));
                 }
@@ -301,11 +302,13 @@ angular.module('proton.cache', [])
                 // Set total value in cache
                 cacheCounters.updateMessage(loc, result.Total);
                 // Return messages ordered
+                api.clearDispatcher();
                 return Promise.resolve(api.orderMessage(messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE)));
             }
-            return Promise.resolve(messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
 
             api.clearDispatcher();
+            return Promise.resolve(messages.slice(0, CONSTANTS.ELEMENTS_PER_PAGE));
+
         });
 
         networkActivityTracker.track(promise);
