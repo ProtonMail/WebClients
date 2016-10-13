@@ -238,8 +238,7 @@ angular.module('proton.attachments')
             const { id, message, packet } = data;
             const attachment = data.attachment || getAttachment(message, id);
 
-            attachmentApi
-                .remove(message, attachment)
+            attachmentApi.remove(message, attachment)
                 .then(() => {
 
                     const attConf = getConfigMapAttachment(id, attachment);
@@ -302,8 +301,7 @@ angular.module('proton.attachments')
             return AttachmentLoader
                 .load(file, message.From.Keys[0].PublicKey)
                 .then((packets) => {
-                    return attachmentApi
-                        .upload(packets, message, tempPacket, total)
+                    return attachmentApi.upload(packets, message, tempPacket, total)
                         .then(({ attachment, sessionKey, REQUEST_ID }) => {
                             message.uploading = 0;
                             // Extract content-id even if there are no headers
