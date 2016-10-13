@@ -533,8 +533,9 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
 
             // focus correct field
             const composer = angular.element('#uid' + message.uid);
+            const { ToList = [], CCList = [], BCCList = [] } = message;
 
-            if ((message.ToList.length + message.CCList.length + message.BCCList.length) === 0) {
+            if ([].concat(ToList).concat(CCList).concat(BCCList).length === 0) {
                 if (!$state.includes('secured.drafts.**')) {
                     $scope.focusTo(message);
                 } else {
@@ -1537,12 +1538,12 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
      * @param {Object} message
      */
     $scope.focusTo = (message) => {
-        const input = angular.element(`#uid${message.uid}`).find('.toRow').find('input');
+        const input = document.querySelector(`#uid${message.uid} .toRow input`);
 
         $timeout(() => {
             message.autocompletesFocussed = true;
-            input.focus();
-        }, 100);
+            input && input.focus();
+        }, 250, true);
     };
 
     $scope.focusNextInput = (event) => {
