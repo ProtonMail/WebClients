@@ -327,14 +327,15 @@ angular.module('proton.controllers.Auth', [
         angular.element('#pm_login').attr({ action: '/*' });
         clearErrors();
 
-        const username = $scope.username.toLowerCase();
-        const password = $scope.password; // Login password
+        const { username = '', password = '' } = $scope;
 
         // Check username and password
         if (!username || !password) {
             notify({ message: gettextCatalog.getString('Please enter your username and password', null, 'Error'), classes: 'notification-danger' });
             return;
         }
+
+        const usernameLowerCase = username.toLowerCase();
 
         // Custom validation
         try {
@@ -348,12 +349,12 @@ angular.module('proton.controllers.Auth', [
         }
 
         srp
-            .info($scope.username)
+            .info(usernameLowerCase)
             .then((resp) => {
                 $scope.initialInfoResponse = resp;
                 if (resp.data.TwoFactor === 0) {
                     // user does not have two factor enabled, we will proceed to the auth call
-                    login($scope.username, $scope.password, null, $scope.initialInfoResponse);
+                    login(usernameLowerCase, password, null, $scope.initialInfoResponse);
                 } else {
                     // user has two factor enabled, they need to enter a code first
                     $scope.twoFactor = 1;
