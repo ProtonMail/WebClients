@@ -315,9 +315,26 @@ angular.module('proton.conversation')
                             break;
                         }
 
-                        // Open the first non read message or the latest message !isDraft
-                        const index = _.findIndex(messages, ({ IsRead, Type }) => IsRead === 0 && Type !== CONSTANTS.DRAFT);
-                        thisOne = messages[index];
+                        const withoutDraft = messages.filter(({ Type }) => Type !== CONSTANTS.DRAFT);
+
+                        // Else we open the first message unread beginning to the end list
+                        let loop = true;
+                        let index = withoutDraft.length - 1;
+
+                        while (loop === true && index > 0) {
+                            index--;
+
+                            if (withoutDraft[index].IsRead === 1) { // Is read
+                                loop = false;
+                                index++;
+                            }
+                        }
+
+                        if (loop) { // No message read found
+                            index = 0;
+                        }
+
+                        thisOne = withoutDraft[index];
                         break;
                     }
                 }
