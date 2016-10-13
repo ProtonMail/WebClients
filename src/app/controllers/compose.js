@@ -818,6 +818,14 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         });
     };
 
+    /**
+     * For some reason IE focus is lost
+     * cause a rendering bug of the options widths
+     */
+    $scope.setFocusFrom = ({ target }) => {
+        target.focus();
+    };
+
     $scope.save = (message, notification, autosaving) => {
         const msg = new Message(message);
         return embedded
