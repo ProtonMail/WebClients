@@ -288,6 +288,7 @@ angular.module('proton.controllers.Outside', [
                         DataPacket: new Blob([packets.data])
                     });
                     message.NumAttachments = message.Attachments.length;
+                    $rootScope.$emit('attachmentAdded');
                 }, (error) => {
                     message.uploading = false;
                     $scope.resetFile();
