@@ -17,13 +17,13 @@
     <li role="presentation" ng-class="{'active': ('secured.appearance' | includedByState)}">
         <a class="pm_button" ui-sref="secured.appearance" translate-context="Title" translate-comment="appearance menu" translate>Appearance</a>
     </li>
-    <li role="presentation" ng-show="user.Role === 0 || user.Role === 2" ng-class="{'active': ('secured.members' | includedByState)}" ng-if="keyPhase > 3">
+    <li role="presentation" ng-show="user.Role === 0 || user.Role === 2" ng-class="{'active': ('secured.members' | includedByState)}" ng-if="keyPhase > 3" class="desktopOnly">
         <a class="pm_button" ui-sref="secured.members" translate-context="Title" translate-comment="members menu" translate>Members</a>
     </li>
-    <li role="presentation" ng-show="user.Role === 0 || user.Role === 2" ng-class="{'active': ('secured.domains' | includedByState)}">
+    <li role="presentation" ng-show="user.Role === 0 || user.Role === 2" ng-class="{'active': ('secured.domains' | includedByState)}" class="desktopOnly">
         <a class="pm_button" ui-sref="secured.domains" translate-context="Title" translate-comment="custom domain menu" translate>Domains</a>
     </li>
-    <li role="presentation" ng-class="{'active': ('secured.addresses' | includedByState)}">
+    <li role="presentation" ng-class="{'active': ('secured.addresses' | includedByState) , 'hidden': mobileMode}" class="desktopOnly">
         <a class="pm_button" ui-sref="secured.addresses" translate-context="Title" translate-comment="addresses menu" translate>Addresses</a>
     </li>
     <li role="presentation" ng-class="{'active': ('secured.payments' | includedByState)}">
