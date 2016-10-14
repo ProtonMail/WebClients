@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .directive('listAttachments', (attachmentModel, $state) => {
+    .directive('listAttachments', (attachmentModel, $state, $rootScope) => {
 
         const DECRYPTING_CLASSNAME = 'listAttachments-item-decrypt';
         const DOWNLOADED_CLASSNAME = 'listAttachments-item-download';
@@ -12,12 +12,12 @@ angular.module('proton.attachments')
             replace: true,
             templateUrl: 'templates/directives/attachments/listAttachments.tpl.html',
             link(scope, el) {
-
                 const $list = el[0].querySelector('.listAttachments-list');
                 const hide = () => !scope.model.Attachments.length && el[0].classList.add(HIDDEN_CLASSNAME);
+                const show = () => scope.model.Attachments.length && el[0].classList.remove(HIDDEN_CLASSNAME);
+                const unsubscribe = $rootScope.$on('attachmentAdded', show);
 
                 hide();
-
 
                 // Bind custom className for outside
                 $state.is('eo.reply') && el[0].classList.add('state-eoReply');
@@ -67,10 +67,10 @@ angular.module('proton.attachments')
 
                 $list.addEventListener('click', onClick, false);
 
-                scope
-                    .$on('$destroy', () => {
-                        $list.removeEventListener('click', onClick, false);
-                    });
+                scope.$on('$destroy', () => {
+                    $list.removeEventListener('click', onClick, false);
+                    unsubscribe();
+                });
             }
         };
     });
