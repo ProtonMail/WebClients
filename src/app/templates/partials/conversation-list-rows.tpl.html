@@ -28,7 +28,7 @@
             title="{{ contact.Address }}">{{ contact | contact: 'Name'  | unescape}}</span>
         </span>
         <div class="subject">
-            <h4>
+            <h4 ng-attr-title="{{ conversation.Subject | unescape }}">
                 <states-conversation conversation="conversation"></states-conversation>
                 <folders-element conversation="conversation"></folders-element>
                 <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
