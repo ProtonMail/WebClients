@@ -66,8 +66,9 @@
                     <span translate-context="Info" translate translate-comment="ask user to add domain before adding users">Please configure a custom domain before adding members to your organization.
                 </p>
                 <p>
-                    <button type="button" class="pm_button primary" ng-show="checkDomains()" ng-click="add()" translate-context="Action" translate>Add user</button>
-                    <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add custom domain</a>
+                    <button type="button" class="pm_button primary" ng-show="checkDomains()" ng-click="addMember()" translate-context="Action" translate>Add member</button>
+                    <button type="button" class="pm_button" ng-show="checkDomains()" ng-click="addAddress()" translate-context="Action" translate>Add address</button>
+                    <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate>Add domain</a>
                 </p>
                 <div class="pm_table">
 	                <table>
@@ -76,39 +77,45 @@
 			                    <th class="username" translate-context="Title" translate-comment="table heading" translate>Name</th>
 			                    <th class="role" translate-context="Title" translate-comment="table heading" translate>Role</th>
 			                    <th class="storage" translate-context="Title" translate-comment="table heading" translate>Private</th>
-			                    <th class="storage" translate-context="Title" translate-comment="table heading" translate>Space</th>
-			                    <th class="actions" translate-context="Title" translate-comment="table heading" translate>Actions</th>
+			                    <th class="storage" translate-context="Title" translate-comment="table heading" translate>Storage</th>
+			                    <th class="actions text-right" translate-context="Title" translate-comment="table heading" translate>Actions</th>
 			                </tr>
 			            </thead>
 			            <tbody>
 							<tr ng-repeat-start="member in members">
 			                    <td class="username">
+                                    <span class="pull-left">
+		                                <i class="fa fa-plus-square-o" ng-hide="member.toggle" ng-init="member.toggle = false" ng-click="member.toggle = !member.toggle"></i>
+		                                <i class="fa fa-minus-square-o" ng-show="member.toggle" ng-click="member.toggle = !member.toggle"></i>
+	                                </span>
+		                            &nbsp;
 			                        <span ng-bind="member.Name"></span>
 			                    </td>
 			                    <td class="role">
 	                                <span ng-show="member.Role === 2" translate>Admin</span>
-			                    	<span class="pm_select" ng-hide="member.Role === 2">
+	                                <span ng-show="member.Role === 1" translate>Member</span>
+<!-- 			                    	<span class="pm_select" ng-hide="member.Role === 2">
 										<select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
 				                        <i class="fa fa-angle-down"></i>
-				                    </span>
+				                    </span> -->
 			                    </td>
                                 <td>
 	                                <span ng-show="member.Private === 1">
-	                                    <i  class="fa fa-check"></i>
+	                                    <i class="fa fa-check"></i>
 	                                </span>
+                                    <button type="button" class="pm_button link" ng-click="makePrivate(member)" ng-show="member.Private === 0" translate-context="Action" translate>Privatize</button>
 			                    </td>
 			                    <td class="storage">
 	                                <span  translate-comment="space used out of total space allowed for a member" translate>{{ member.UsedSpace | humanSize }} of {{ member.MaxSpace | humanSize }} Used</span>
 	                            </td>
-			                    <td class="actions">
-                                    <button type="button" class="pm_button link" ng-init="member.toggle = false" ng-click="member.toggle = !member.toggle" translate-context="Action" translate>Addresses</button>
-                                    <button type="button" class="pm_button link" ng-click="edit(member)" translate-context="Action" translate>Manage</button>
-                                    <button type="button" class="pm_button link" ng-click="makePrivate(member)" ng-show="member.Private === 0" translate-context="Action" translate>Make Private</button>
-                                    <button type="button" class="pm_button link" ng-click="readMail(member)" ng-show="member.Private === 0" translate-context="Action" translate>Read Mail</button>
-	                                <button type="button" class="pm_button link" ng-click="remove(member)" translate-context="Action" translate>Delete</button>
+			                    <td class="actions text-right">
+                                    <button type="button" class="pm_button link" ng-click="editMember(member)" translate-context="Action" translate>Edit</button>
+                                    <button type="button" class="pm_button link" ng-click="login(member)" ng-show="member.Private === 0 && member.Keys.length > 0" translate-context="Action" translate>Login</button>
+                                    <button type="button" class="pm_button link" ng-show="member.Type === 1 && !member.Self" ng-click="remove(member)" translate-context="Action" translate>Delete</button>
+                                    <button type="button" class="pm_button link" ng-show="member.Type === 0 && !member.Self" ng-click="remove(member)" translate-context="Action" translate>Remove</button>
 								</td>
 			                </tr>
-                            <tr class="hasTable" ng-repeat-end ng-show="member.toggle === true">
+                            <tr class="hasTable" ng-repeat-end ng-show="member.toggle === true && member.Addresses.length > 0">
                                 <td colspan="5">
                                     <div class="pm_table">
                                         <table class="margin-top">
@@ -116,20 +123,23 @@
                                                 <tr>
                                                     <th>Address</th>
                                                     <th>Status</th>
-                                                    <th>Actions</th>
+                                                    <th class="text-right">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr ng-repeat="address in member.Addresses | orderBy: 'Send'" ng-hide="address.Status === 0">
+                                                <tr ng-repeat="address in member.Addresses | orderBy: ['!Status','Send']">
                                                     <td ng-bind="address.Email"></td>
                                                     <td>
-                                                        <span ng-show="address.Status === 1 && address.Receive === 1" class="pm_badge success">Enabled</span>
-                                                        <span ng-hide="address.Status === 1 && address.Receive === 1" class="pm_badge success">Disabled</span>
-                                                        <span ng-show="address.Send === 1" class="pm_badge primary">Default</span>
+                                                        <span class="pm_badge primary" ng-show="$first" translate translate-comment="address state badge">Default</span>
+                                                        <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge">Enabled</span>
+					                                    <span class="pm_badge error" ng-show="address.Status === 0"  translate translate-comment="address state badge">Disabled</span>
+					                                    <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate translate-comment="address state badge">Missing keys</span>
+					                                    <span class="pm_badge warning" ng-show="address.DomainID === null"  translate translate-comment="address state badge">Orphan</span>
                                                     </td>
-                                                    <td>
-                                                        <button type="button" class="pm_button link" ng-click="generate(address)" ng-show="address.HasKeys === 0 && address.Status === 1" translate-context="Action" translate>Generate missing keys</button>
-                                                        <button type="button" class="pm_button link" ng-click="unlinkAddress(member, address)" ng-hide="address.Send === 1" translate-context="Action" translate>Unlink</button>
+                                                    <td class="text-right">
+					                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type !== 1" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
+					                                    <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type !== 1" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
+					                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
                                                     </td>
                                                 </tr>
                                             </tbody>

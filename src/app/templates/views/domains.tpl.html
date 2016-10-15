@@ -54,7 +54,7 @@
                                     }">
                                         <i class="fa fa-warning" ng-show="(domain.VerifyState === 1)"></i> <span translate>Verification</span>
                                     </button>
-                                    <button type="button" class="progress pm_button" ng-click="addAddress(domain)" ng-disabled="domain.State === 0" ng-class="{'success': domain.State === 1 && domain.Addresses.length > 0}">
+                                    <button type="button" class="progress pm_button" ng-click="addAddresses(domain)" ng-disabled="domain.State === 0" ng-class="{'success': domain.State === 1 && domain.Addresses.length > 0}">
                                         <span ng-show="domain.Addresses.length > 0">{{ domain.Addresses.length }}</span> <span translate translate-context="Action">Addresses</span>
                                     </button>
                                     <button type="button" class="progress pm_button" ng-click="mx(domain)" ng-disabled="domain.State === 0" ng-class="{
@@ -138,7 +138,7 @@
                         <button type="button" class="pm_button primary" ng-click="addAddress(domain)" translate-context="Action" translate-comment="add address button on the domains page" translate>Add address</button>
                         <!-- <a ui-sref="secured.members" class="pm_button"  translate>Add User</a> -->
                     </p>
-                    <p class="alert alert-info">Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
+                    <p class="alert alert-info" ng-show="domain.Addresses.length > 0">Addresses must be disabled before they can be deleted. Addresses can only be deleted if all messages associated with that address are deleted.</p>
                     <div class="pm_table">
                         <table class="pm_form bordered" ng-show="domain.Addresses.length > 0">
                             <thead>
@@ -156,12 +156,14 @@
                                     </td>
                                     <td ng-bind="address.Email"></td>
                                     <td>
-                                        <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1"  translate>Enabled</span>
-                                        <span class="pm_badge error" ng-show="address.Status === 0"  translate>Disabled</span>
-                                        <span class="pm_badge warning" ng-show="address.HasKeys === 0"  translate>Missing keys</span>
+                                        <span class="pm_badge success" ng-show="address.Status === 1 && address.Receive === 1" translate translate-comment="address state badge">Enabled</span>
+                                        <span class="pm_badge error" ng-show="address.Status === 0" translate translate-comment="address state badge">Disabled</span>
+                                        <span class="pm_badge warning" ng-show="address.HasKeys === 0" translate translate-comment="address state badge">Missing keys</span>
                                     </td>
                                     <td class="text-right">
-                                        <a class="pm_button link" ui-sref="secured.addresses" translate-context="Action" translate>Manage</a>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type !== 1" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type !== 1" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
+                                        <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
                                     </td>
                                 </tr>
                             </tbody>

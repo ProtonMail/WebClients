@@ -18,7 +18,7 @@ angular.module('proton.models.members', ['proton.srp'])
          * @return {Promise}
          */
         authenticate(memberID, params) {
-            return srp.performSRPRequest("POST", '/members/' + memberID + '/auth', {}, params);
+            return srp.performSRPRequest('POST', '/members/' + memberID + '/auth', {}, params);
         },
         // GET
         query() {
@@ -78,9 +78,9 @@ angular.module('proton.models.members', ['proton.srp'])
          * @param {String} memberID
          * @return {Promise}
          */
-         privatize(memberID) {
-             return $http.put(url.get() + '/members/' + memberID + '/privatize');
-         },
+        privatize(memberID) {
+            return $http.put(url.get() + '/members/' + memberID + '/privatize');
+        },
 
         // DELETE
         /**

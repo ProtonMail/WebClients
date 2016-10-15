@@ -1,6 +1,7 @@
 angular.module('proton.controllers.Settings')
 
 .controller('MembersController', (
+    $controller,
     $rootScope,
     $scope,
     $state,
@@ -20,10 +21,10 @@ angular.module('proton.controllers.Settings')
     notify,
     organization,
     Organization,
-    organizationKeys,
-    storageModal,
-    generateModal
+    organizationKeys
 ) => {
+
+    $controller('AddressesController', { $scope });
     const MASTER = 2;
     const SUB = 1;
 
@@ -120,10 +121,10 @@ angular.module('proton.controllers.Settings')
 
         switch ($stateParams.action) {
             case 'new':
-                $scope.add();
+                $scope.addMember();
                 break;
             case 'edit':
-                $scope.edit(_.findWhere($scope.members, { ID: $stateParams.id }));
+                $scope.editMember(_.findWhere($scope.members, { ID: $stateParams.id }));
                 break;
             default:
                 break;
@@ -301,7 +302,7 @@ angular.module('proton.controllers.Settings')
      * Allow the current user to access to the mailbox of a specific member
      * @param {Object} member
      */
-    $scope.readMail = (member) => {
+    $scope.login = (member) => {
 
         function submit(currentPassword, twoFactorCode) {
 
@@ -360,7 +361,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Open a modal to create a new member
      */
-    $scope.add = () => {
+    $scope.addMember = () => {
         if ($scope.organization.MaxMembers - $scope.organization.UsedMembers < 1) {
             notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger' });
             return;
@@ -376,31 +377,32 @@ angular.module('proton.controllers.Settings')
             return;
         }
 
-        $scope.edit();
+        $scope.editMember();
     };
 
     /**
      * Display a modal to edit a member
      * @param {Object} member
      */
-    $scope.edit = (member) => {
+    $scope.editMember = (member) => {
         memberModal.activate({
             params: {
                 member,
                 organization: $scope.organization,
                 organizationPublicKey: $scope.organizationPublicKey,
                 domains: $scope.domains,
-                cancel(member) {
-                    if (angular.isDefined(member)) {
-                        const index = _.findIndex($scope.members, { ID: member.ID });
+                submit(member) {
+                    const index = _.findIndex($scope.members, { ID: member.ID });
 
-                        if (index === -1) {
-                            $scope.members.push(member);
-                        } else {
-                            _.extend($scope.members[index], member);
-                        }
+                    if (index === -1) {
+                        $scope.members.push(member);
+                    } else {
+                        _.extend($scope.members[index], member);
                     }
 
+                    memberModal.deactivate();
+                },
+                cancel() {
                     memberModal.deactivate();
                 }
             }

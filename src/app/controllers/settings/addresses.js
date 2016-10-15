@@ -6,6 +6,7 @@ angular.module('proton.controllers.Settings')
     $scope,
     gettextCatalog,
     Address,
+    addressModal,
     aliasModal,
     authentication,
     confirmModal,
@@ -14,6 +15,7 @@ angular.module('proton.controllers.Settings')
     Domain,
     eventManager,
     generateModal,
+    memberModal,
     Member,
     networkActivityTracker,
     notify,
@@ -56,29 +58,77 @@ angular.module('proton.controllers.Settings')
         }
     });
 
-    $scope.$on('createUser', () => {
-        notify({ message: gettextCatalog.getString('Address created', null, 'Info'), classes: 'notification-success' });
-    });
+    // $scope.$on('createUser', () => {
+    //     notify({ message: gettextCatalog.getString('Address created', null, 'Info'), classes: 'notification-success' });
+    // });
 
     /**
      * Return domain value for a specific address
      * @param {Object} address
      * @return {String} domain
      */
-    $scope.getDomain = function (address) {
+    $scope.getDomain = (address) => {
         const email = address.Email.split('@');
 
         return email[1];
     };
 
     /**
-     * Enable an address
+     * Delete address
      * @param {Object} address
+     * @param {Object} domain
      */
-    $scope.enable = function (address) {
+    $scope.deleteAddress = (address = {}, domain = {}) => {
+
+        confirmModal.activate({
+            params: {
+                title: gettextCatalog.getString('Delete address', null, 'Title'),
+                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
+                confirm() {
+                    networkActivityTracker.track(Address.delete(address.ID).then((result) => {
+                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
+                            notify({ message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success' });
+
+                            if (domain.Addresses) {
+                                const index = domain.Addresses.indexOf(address);
+                                if (index !== -1) {
+                                    domain.Addresses.splice(index, 1); // Remove address in domains UI
+                                }
+                            }
+
+                            if ($scope.disabledAddresses) {
+                                const index = $scope.disabledAddresses.indexOf(address);
+                                if (index !== -1) {
+                                    $scope.disabledAddresses.splice(index, 1); // Remove address in addresses UI
+                                }
+                            }
+
+                            eventManager.call(); // Call event log manager
+                            confirmModal.deactivate();
+                        } else if (angular.isDefined(result.data) && result.data.Error) {
+                            notify({ message: result.data.Error, classes: 'notification-danger' });
+                        } else {
+                            notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
+                        }
+                    }, () => {
+                        notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
+                    }));
+                },
+                cancel() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
+     * Enable an address
+     */
+    $scope.enableAddress = (address) => {
         networkActivityTracker.track(Address.enable(address.ID).then((result) => {
             if (angular.isDefined(result.data) && result.data.Code === 1000) {
                 eventManager.call();
+                address.Status = 1;
                 notify({ message: gettextCatalog.getString('Address enabled', null, 'Info'), classes: 'notification-success' });
             } else if (angular.isDefined(result.data) && result.data.Error) {
                 notify({ message: result.data.Error, classes: 'notification-danger' });
@@ -93,15 +143,16 @@ angular.module('proton.controllers.Settings')
     /**
      * Open a modal to disable an address
      */
-    $scope.disable = function (address) {
+    $scope.disableAddress = (address) => {
         confirmModal.activate({
             params: {
-                title: gettextCatalog.getString('Disable address', null),
-                message: gettextCatalog.getString('Are you sure you want to disable this address?', null, 'Title'),
+                title: gettextCatalog.getString('Disable address', null, 'Title'),
+                message: gettextCatalog.getString('Are you sure you want to disable this address?', null, 'Info'),
                 confirm() {
                     networkActivityTracker.track(Address.disable(address.ID).then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
                             eventManager.call();
+                            address.Status = 0;
                             notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
                             confirmModal.deactivate();
                         } else if (angular.isDefined(result.data) && result.data.Error) {
@@ -121,9 +172,49 @@ angular.module('proton.controllers.Settings')
     };
 
     /**
+     * Open modal to add a new address
+     */
+    $scope.addAddress = (domain = {}) => {
+
+        const memberParams = {
+            params: {
+                organization: $scope.organization,
+                organizationPublicKey: $scope.organizationPublicKey,
+                domains: [domain],
+                submit() {
+                    memberModal.deactivate();
+                    eventManager.call();
+                },
+                cancel() {
+                    memberModal.deactivate();
+                }
+            }
+        };
+
+        addressModal.activate({
+            params: {
+                domains: [domain],
+                members: $scope.members,
+                organizationPublicKey: $scope.organizationPublicKey,
+                addMember() {
+                    addressModal.deactivate();
+                    memberModal.activate(memberParams);
+                },
+                submit() {
+                    addressModal.deactivate();
+                    eventManager.call();
+                },
+                cancel() {
+                    addressModal.deactivate();
+                }
+            }
+        });
+    };
+
+    /**
      * Open a modal to edit an address
      */
-    $scope.identity = function (address) {
+    $scope.identity = (address) => {
         identityModal.activate({
             params: {
                 title: gettextCatalog.getString('Edit address', null, 'Title'),
@@ -159,43 +250,10 @@ angular.module('proton.controllers.Settings')
     };
 
     /**
-     * Delete address
-     * @param {Object} address
-     */
-    $scope.delete = function (address) {
-        const index = $scope.disabledAddresses.indexOf(address);
-
-        confirmModal.activate({
-            params: {
-                title: gettextCatalog.getString('Delete address', null, 'Title'),
-                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
-                confirm() {
-                    networkActivityTracker.track(Address.delete(address.ID).then((result) => {
-                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success' });
-                            $scope.disabledAddresses.splice(index, 1); // Remove address in UI
-                            confirmModal.deactivate();
-                        } else if (angular.isDefined(result.data) && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
-                        }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
-                    }));
-                },
-                cancel() {
-                    confirmModal.deactivate();
-                }
-            }
-        });
-    };
-
-    /**
      * Open modal to fix keys
      * @param {Object} address
      */
-    $scope.generate = function (address) {
+    $scope.generate = (address) => {
         const title = gettextCatalog.getString('Generate key pair', null, 'Title');
         const message = gettextCatalog.getString('Generate key pair', null, 'Info');
 
@@ -216,7 +274,7 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.add = function () {
+    $scope.addAlias = () => {
         networkActivityTracker.track(
             $q.all({
                 members: Member.query(),
@@ -240,7 +298,7 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.saveOrder = function (order) {
+    $scope.saveOrder = (order) => {
         networkActivityTracker.track(
             Setting.addressOrder({ Order: order })
             .then((result) => {

@@ -1,12 +1,14 @@
 angular.module('proton.controllers.Settings')
 
 .controller('DomainsController', (
+    $controller,
     $q,
     $rootScope,
     $scope,
     gettextCatalog,
     Address,
     addressModal,
+    addressesModal,
     authentication,
     confirmModal,
     CONSTANTS,
@@ -19,6 +21,7 @@ angular.module('proton.controllers.Settings')
     generateModal,
     Member,
     members,
+    memberModal,
     mxModal,
     networkActivityTracker,
     notify,
@@ -27,6 +30,9 @@ angular.module('proton.controllers.Settings')
     spfModal,
     verificationModal
 ) => {
+
+    $controller('AddressesController', { $scope });
+
     // Variables
     $scope.organizationPublicKey = organizationKeys.data.PublicKey;
     $scope.domains = domains.data.Domains;
@@ -45,7 +51,7 @@ angular.module('proton.controllers.Settings')
 
     $scope.$on('address', (event, domain) => {
         $scope.closeModals();
-        $scope.addAddress(domain);
+        $scope.addAddresses(domain);
     });
 
     $scope.$on('mx', (event, domain) => {
@@ -129,7 +135,7 @@ angular.module('proton.controllers.Settings')
      * @param {Object} domain
      * Docs: https://github.com/ProtonMail/Slim-API/blob/develop_domain/api-spec/pm_api_domains.md
      */
-    $scope.wizard = function (domain) {
+    $scope.wizard = (domain) => {
         // go through all steps and show the user the step they need to complete next. allow for back and next options.
         // if domain has a name, we can skip the first step
         /* steps:
@@ -146,7 +152,7 @@ angular.module('proton.controllers.Settings')
         } else if ((domain.VerifyState !== 2)) {
             $scope.verification(domain);
         } else if (domain.Addresses.length === 0) {
-            $scope.addAddress(domain);
+            $scope.addAddresses(domain);
         } else if (domain.MxState !== 3) {
             $scope.mx(domain);
         } else if (domain.SpfState !== 3) {
@@ -162,7 +168,7 @@ angular.module('proton.controllers.Settings')
      * Delete domain
      * @param {Object} domain
      */
-    $scope.deleteDomain = function (domain) {
+    $scope.deleteDomain = (domain) => {
         const index = $scope.domains.indexOf(domain);
 
         confirmModal.activate({
@@ -197,7 +203,7 @@ angular.module('proton.controllers.Settings')
      * @param {Object} address
      * @return {Boolean}
      */
-    $scope.owned = function (address) {
+    $scope.owned = (address) => {
         const found = _.findWhere(authentication.user.Addresses, { ID: address.ID });
 
         return angular.isDefined(found);
@@ -208,7 +214,7 @@ angular.module('proton.controllers.Settings')
      * @param {Object} address
      * @return {Boolean}
      */
-    $scope.privated = function (address) {
+    $scope.privated = (address) => {
         const member = _.findWhere($scope.members, { ID: address.MemberID });
 
         return member.Private === 1;
@@ -217,7 +223,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Open modal to generate key pair
      */
-    $scope.generate = function (address) {
+    $scope.generate = (address) => {
         generateModal.activate({
             params: {
                 title: gettextCatalog.getString('Generate key pair', null),
@@ -236,92 +242,9 @@ angular.module('proton.controllers.Settings')
     };
 
     /**
-     * Delete address
-     * @param {Object} address
-     * @param {Object} domain
-     */
-    $scope.deleteAddress = function (address, domain) {
-        const index = domain.Addresses.indexOf(address);
-
-        confirmModal.activate({
-            params: {
-                title: gettextCatalog.getString('Delete address', null, 'Title'),
-                message: gettextCatalog.getString('Are you sure you want to delete this address?', null, 'Info'),
-                confirm() {
-                    networkActivityTracker.track(Address.delete(address.ID).then((result) => {
-                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Address deleted', null, 'Info'), classes: 'notification-success' });
-                            domain.Addresses.splice(index, 1); // Remove address in interface
-                            eventManager.call(); // Call event log manager
-                            confirmModal.deactivate();
-                        } else if (angular.isDefined(result.data) && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
-                        }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Error during deletion', null, 'Error'), classes: 'notification-danger' });
-                    }));
-                },
-                cancel() {
-                    confirmModal.deactivate();
-                }
-            }
-        });
-    };
-
-    /**
-     * Enable an address
-     */
-    $scope.enableAddress = function (address) {
-        networkActivityTracker.track(Address.enable(address.ID).then((result) => {
-            if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                notify({ message: gettextCatalog.getString('Address enabled', null, 'Info'), classes: 'notification-success' });
-                address.Status = 1;
-            } else if (angular.isDefined(result.data) && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-            } else {
-                notify({ message: gettextCatalog.getString('Error during enable request', null, 'Error'), classes: 'notification-danger' });
-            }
-        }, () => {
-            notify({ message: gettextCatalog.getString('Error during enable request', null, 'Error'), classes: 'notification-danger' });
-        }));
-    };
-
-    /**
-     * Open a modal to disable an address
-     */
-    $scope.disableAddress = function (address) {
-        confirmModal.activate({
-            params: {
-                title: gettextCatalog.getString('Disable address', null, 'Title'),
-                message: gettextCatalog.getString('Are you sure you want to disable this address?', null, 'Info'),
-                confirm() {
-                    networkActivityTracker.track(Address.disable(address.ID).then((result) => {
-                        if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
-                            address.Status = 0;
-                            confirmModal.deactivate();
-                        } else if (angular.isDefined(result.data) && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Error during disable request', null, 'Error'), classes: 'notification-danger' });
-                        }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Error during disable request', null, 'Error'), classes: 'notification-danger' });
-                    }));
-                },
-                cancel() {
-                    confirmModal.deactivate();
-                }
-            }
-        });
-    };
-
-    /**
      * Open modal process to add a custom domain
      */
-    $scope.addDomain = function (domain) {
+    $scope.addDomain = (domain) => {
         domainModal.activate({
             params: {
                 step: 1,
@@ -359,7 +282,7 @@ angular.module('proton.controllers.Settings')
      * Refresh status for a domain
      * @param {Object} domain
      */
-    $scope.refreshStatus = function () {
+    $scope.refreshStatus = () => {
         networkActivityTracker.track(Domain.query().then((result) => {
             if (result.data && result.data.Code === 1000) {
                 $scope.domains = result.data.Domains;
@@ -371,7 +294,7 @@ angular.module('proton.controllers.Settings')
      * Open verification modal
      * @param {Object} domain
      */
-    $scope.verification = function (domain) {
+    $scope.verification = (domain) => {
         const index = $scope.domains.indexOf(domain);
 
         verificationModal.activate({
@@ -395,7 +318,7 @@ angular.module('proton.controllers.Settings')
                                     $scope.domains[index] = result.data.Domain;
                                     verificationModal.deactivate();
                                     // open the next step
-                                    $scope.addAddress(result.data.Domain);
+                                    $scope.addAddresses(result.data.Domain);
                                     break;
                                 default:
                                     break;
@@ -410,7 +333,7 @@ angular.module('proton.controllers.Settings')
                     }));
                 },
                 next() {
-                    $scope.addAddress(domain);
+                    $scope.addAddresses(domain);
                 },
                 close() {
                     verificationModal.deactivate();
@@ -422,19 +345,69 @@ angular.module('proton.controllers.Settings')
     /**
      * Open modal to add a new address
      */
-    $scope.addAddress = function (domain) {
-        addressModal.activate({
+    $scope.addAddresses = (domain = {}) => {
+
+        const memberParams = {
+            params: {
+                organization: $scope.organization,
+                organizationPublicKey: $scope.organizationPublicKey,
+                domains: [domain],
+                submit(member) {
+                    memberModal.deactivate();
+                    eventManager.call();
+
+                    $scope.members.push(member);
+                    const addresses = member.Addresses;
+                    for (let i = 0; i < addresses.length; i++) {
+                        addresses[i].MemberID = member.ID;
+                    }
+                    domain.Addresses = domain.Addresses.concat(addresses);
+
+                    $scope.addAddresses(domain);
+                },
+                cancel() {
+                    memberModal.deactivate();
+                    $scope.addAddresses(domain);
+                }
+            }
+        };
+
+        const addressParams = {
+            params: {
+                domains: [domain],
+                members: $scope.members,
+                organizationPublicKey: $scope.organizationPublicKey,
+                addMember() {
+                    addressModal.deactivate();
+                    memberModal.activate(memberParams);
+                },
+                submit(address) {
+                    addressModal.deactivate();
+                    eventManager.call();
+
+                    domain.Addresses.push(address);
+                    $scope.addAddresses(domain);
+                },
+                cancel() {
+                    addressModal.deactivate();
+                    $scope.addAddresses(domain);
+                }
+            }
+        };
+
+        addressesModal.activate({
             params: {
                 step: 3,
                 domain,
                 members: $scope.members,
-                organizationPublicKey: $scope.organizationPublicKey,
+                addressParams,
+                memberParams,
                 next() {
-                    addressModal.deactivate();
+                    addressesModal.deactivate();
                     $scope.mx(domain);
                 },
                 cancel() {
-                    addressModal.deactivate();
+                    addressesModal.deactivate();
                     eventManager.call();
                 }
             }
@@ -445,7 +418,7 @@ angular.module('proton.controllers.Settings')
      * Open MX modal
      * @param {Object} domain
      */
-    $scope.mx = function (domain) {
+    $scope.mx = (domain) => {
         mxModal.activate({
             params: {
                 domain,
@@ -453,7 +426,6 @@ angular.module('proton.controllers.Settings')
                 next() {
                     mxModal.deactivate();
                     $scope.spf(domain);
-
                 },
                 close() {
                     mxModal.deactivate();
@@ -467,7 +439,7 @@ angular.module('proton.controllers.Settings')
      * Open SPF modal
      * @param {Object} domain
      */
-    $scope.spf = function (domain) {
+    $scope.spf = (domain) => {
         spfModal.activate({
             params: {
                 domain,
@@ -488,7 +460,7 @@ angular.module('proton.controllers.Settings')
      * Open DKIM modal
      * @param {Object} domain
      */
-    $scope.dkim = function (domain) {
+    $scope.dkim = (domain) => {
         dkimModal.activate({
             params: {
                 domain,
@@ -509,7 +481,7 @@ angular.module('proton.controllers.Settings')
      * Open DMARC modal
      * @param {Object} domain
      */
-    $scope.dmarc = function (domain) {
+    $scope.dmarc = (domain) => {
         const index = $scope.domains.indexOf(domain);
 
         dmarcModal.activate({
@@ -542,14 +514,16 @@ angular.module('proton.controllers.Settings')
     /**
      * Close all verification modals
      */
-    $scope.closeModals = function () {
+    $scope.closeModals = () => {
         domainModal.deactivate();
         verificationModal.deactivate();
         dkimModal.deactivate();
         dmarcModal.deactivate();
         spfModal.deactivate();
         mxModal.deactivate();
+        addressesModal.deactivate();
         addressModal.deactivate();
+        memberModal.deactivate();
     };
 
     /**
@@ -557,7 +531,7 @@ angular.module('proton.controllers.Settings')
      * @param {String} memberId
      * @return {Object} member
      */
-    $scope.member = function (memberId) {
+    $scope.member = (memberId) => {
         const member = _.findWhere($scope.members, { ID: memberId });
 
         if (angular.isDefined(member)) {
