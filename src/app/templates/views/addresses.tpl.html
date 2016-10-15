@@ -9,8 +9,8 @@
                     <span translate-context="Title" translate translate-comment="page heading">Addresses</span>
                 </legend>
                 <div class="margin" ng-show="isAdmin === true">
-                    <a class="pm_button primary" ng-click="add()" translate-context="Action" translate-comment="addresses page" translate>Add ProtonMail address</a>
-                    <a ui-sref="secured.domains" class="pm_button" translate-context="Action" translate-comment="addresses page" translate>Add custom domain address</a>
+                    <a class="pm_button primary" ng-click="addAlias()" translate-context="Action" translate-comment="addresses page" translate>Add ProtonMail address</a>
+                    <button type="button" class="pm_button" ng-click="addAddress()" translate-context="Action" translate>Add custom domain address</button>
                 </div>
                 <p class="alert alert-info">
                     <span translate-context="Info" translate translate-comment="informs the user about permanance of custom addresses">Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted.</span> <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank" translate translate-context="Action">Learn more</a>.
@@ -27,12 +27,12 @@
                                     <i class="fa fa-ellipsis-v"></i> {{ address.Email }}
                                 </div>
                                 <div class="col-1-3">
-                                    <span class="pm_badge success"  translate>Enabled</span>
-                                    <span class="pm_badge primary" ng-show="$first"  translate>Default</span>
+                                    <span class="pm_badge success" translate>Enabled</span>
+                                    <span class="pm_badge primary" ng-show="$first" translate>Default</span>
                                 </div>
                                 <div class="col-1-3 text-right">
                                     <button class="pm_button link" ng-click="identity(address)" translate-context="Action" translate>Edit identity</button>
-                                    <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="disable(address)" translate-context="Action" translate>Disable</button>
+                                    <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
                                 </div>
                             </div>
                         </li>
@@ -53,10 +53,10 @@
                                 </div>
                                 <div class="col-1-3 text-right">
                                     <button type="button" class="pm_button link" ng-show="address.HasKeys === 0 && address.Status === 1" ng-click="generate(address)" translate-context="Action" translate>Generate missing keys</button>
-                                    <button class="pm_button link" ng-click="identity(address)" translate-context="Action" translate>Edit identity</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enable(address)" translate-context="Action" translate>Enable</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type === 3 && isAdmin === true" ng-click="disable(address)" translate-context="Action" translate>Disable</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3 && isAdmin === true" ng-click="delete(address)" translate-context="Action" translate>Delete</button>
+                                    <button class="pm_button link" ng-click="identity(address)" translate-context="Action" translate>Edit Identity</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type === 3 && isAdmin === true" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3 && isAdmin === true" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
                                 </div>
                             </div>
                         </li>

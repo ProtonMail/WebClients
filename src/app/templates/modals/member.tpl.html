@@ -16,7 +16,7 @@
                     <div class="col-1-3">
                         <input autofocus type="text" ng-model="ctrl.name" placeholder-translate="ex: Thomas Anderson">
                     </div>
-                    <div class="col-1-3" ng-hide="ctrl.isPrivate === true">
+                    <div class="col-1-3" ng-hide="ctrl.ID">
                         <label>
                             <input type="checkbox" ng-model="ctrl.private" />
                             <span translate translate-context="Action" translate-comment="Form checkbox option">Private</span>
@@ -24,9 +24,9 @@
                         </label>
                     </div>
                 </div>
-                <div class="pm_grid" ng-hide="ctrl.ID || ctrl.private === true">
+                <div class="pm_grid" ng-hide="ctrl.showKeys === false || ctrl.private === true">
                     <div class="col-1-3">
-                        <label translate translate-context="Title">Complexity</label>
+                        <label translate translate-context="Title">Key Strength</label>
                     </div>
                     <div class="col-1-3">
                         <label class="checkbox">
@@ -41,7 +41,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="pm_grid" ng-hide="ctrl.ID">
+                <div class="pm_grid" ng-hide="ctrl.ID && ctrl.showKeys === false">
                     <div class="col-1-3">
                         <label translate translate-context="Title">Password</label>
                     </div>
@@ -52,16 +52,19 @@
                         <input type="password" ng-model="ctrl.confirmPassword" placeholder-translate="Confirm Temporary Password" />
                     </div>
                 </div>
-                <div class="pm_grid" ng-hide="ctrl.ID">
+                <div class="pm_grid" ng-show="ctrl.showAddress">
                     <div class="col-1-3">
                         <label translate translate-context="Title">Address</label>
                     </div>
                     <div class="col-1-3">
                         <input type="text" ng-model="ctrl.address" placeholder-translate="Address" />
                     </div>
-                    <div class="col-1-3">
+                    <div class="col-1-3" ng-show="ctrl.domains.length === 1">
+                        <label>@{{ ctrl.domain.DomainName }}</label>
+                    </div>
+                    <div class="col-1-3" ng-show="ctrl.domains.length > 1">
                         <span class="pm_select">
-                            <select ng-model="ctrl.domain" ng-options="'@' + domain.DomainName for domain in ctrl.domains"></select>
+                            <select ng-model="ctrl.domain" ng-options="'@'+domain.DomainName for domain in ctrl.domains"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>
                     </div>
@@ -81,14 +84,19 @@
                         <label>{{ (ctrl.organization.MaxSpace - ctrl.organization.AssignedSpace) | humanSize }} <span translate>available</span></label>
                     </div>
                 </div>
-
+                <div ng-hide="ctrl.showKeys === false || ctrl.private === true">
+                    <div class="pm_grid alert alert-warning">
+                        <div class="col-1-1" translate>
+                        Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes depending on your device and key strength selection.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal-footer text-right">
             <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
             <button type="button" class="pm_button primary" ng-click="ctrl.submit()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Save</button>
         </div>
-
     </div>
     <div class="modal-overlay"></div>
 </div>
