@@ -84,13 +84,7 @@
                         <label>{{ (ctrl.organization.MaxSpace - ctrl.organization.AssignedSpace) | humanSize }} <span translate>available</span></label>
                     </div>
                 </div>
-                <div ng-hide="ctrl.showKeys === false || ctrl.private === true">
-                    <div class="pm_grid alert alert-warning">
-                        <div class="col-1-1" translate>
-                        Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes depending on your device and key strength selection.
-                        </div>
-                    </div>
-                </div>
+                <p ng-hide="ctrl.showKeys === false || ctrl.private === true" class="alert alert-warning" translate translate-context="Info">Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes depending on your device and key strength selection.</p>
             </div>
         </div>
         <div class="modal-footer text-right">

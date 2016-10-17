@@ -3,10 +3,11 @@
         <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" translate translate-context="Title">Create address</h4>
+                <h4 ng-show="ctrl.alias" class="modal-title" translate translate-context="Title">Create ProtonMail Address</h4>
+                <h4 ng-show="!ctrl.alias" class="modal-title" translate translate-context="Title">Create Address</h4>
             </div>
             <div class="modal-body pm_form">
-                <div ng-if="ctrl.keyPhase > 3">
+                <div ng-show="ctrl.showMember">
                     <label>Choose the member who will own this address:</label>
                     <div class="pm_grid">
                         <div class="col-1-2">
@@ -52,13 +53,8 @@
                         </span>
                     </div>
                 </div>
-                <div ng-show="ctrl.member.Private === 0 || ctrl.member.Self">
-                    <div class="pm_grid alert alert-warning">
-                        <div class="col-1-1" translate>
-                        Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes depending on your device and key strength selection.
-                        </div>
-                    </div>
-                </div>
+                <p ng-show="ctrl.alias" class="alert alert-info" translate translate-context="Info">ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not. <a href='https://protonmail.com/support/knowledge-base/aliases-within-protonmail/' target='_blank'>Learn more</a></p>
+                <p ng-show="ctrl.member.Private === 0 || ctrl.member.Self"class="alert alert-warning" translate translate-context="Info">Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes depending on your device and key strength selection.</p>
             </div>
         </div>
         <div class="modal-footer text-right">

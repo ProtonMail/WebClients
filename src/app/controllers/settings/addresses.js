@@ -7,7 +7,6 @@ angular.module('proton.controllers.Settings')
     gettextCatalog,
     Address,
     addressModal,
-    aliasModal,
     authentication,
     confirmModal,
     identityModal,
@@ -174,13 +173,22 @@ angular.module('proton.controllers.Settings')
     /**
      * Open modal to add a new address
      */
-    $scope.addAddress = (domain = {}) => {
+    $scope.addAddress = (domain, member) => {
+
+        let domains = $scope.domains;
+        if (domain) {
+            domains = [domain];
+        }
+        let members = $scope.members;
+        if (member) {
+            members = [member];
+        }
 
         const memberParams = {
             params: {
                 organization: $scope.organization,
                 organizationPublicKey: $scope.organizationPublicKey,
-                domains: [domain],
+                domains,
                 submit() {
                     memberModal.deactivate();
                     eventManager.call();
@@ -193,8 +201,8 @@ angular.module('proton.controllers.Settings')
 
         addressModal.activate({
             params: {
-                domains: [domain],
-                members: $scope.members,
+                domains,
+                members,
                 organizationPublicKey: $scope.organizationPublicKey,
                 addMember() {
                     addressModal.deactivate();
@@ -280,17 +288,27 @@ angular.module('proton.controllers.Settings')
                 members: Member.query(),
                 domains: Domain.available()
             })
-            .then((result) => {
-                aliasModal.activate({
+            .then(({ domains, members }) => {
+
+                const self = members.data.Members.filter((member) => member.Self)[0];
+                if (self.Type !== 0) {
+                    notify({ message: gettextCatalog.getString('Only users with existing ProtonMail addresses can add ProtonMail aliases', null, 'Error'), classes: 'notification-danger' });
+                    return;
+                }
+
+                const pmDomains = domains.data.Domains.map((domain) => ({ DomainName: domain }));
+
+                addressModal.activate({
                     params: {
-                        members: result.members.data.Members,
-                        domains: result.domains.data.Domains,
-                        add() {
+                        domains: pmDomains,
+                        members: [self],
+                        organizationPublicKey: $scope.organizationPublicKey,
+                        submit() {
+                            addressModal.deactivate();
                             eventManager.call();
-                            aliasModal.deactivate();
                         },
                         cancel() {
-                            aliasModal.deactivate();
+                            addressModal.deactivate();
                         }
                     }
                 });
