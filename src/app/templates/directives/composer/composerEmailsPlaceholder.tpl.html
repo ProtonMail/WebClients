@@ -1,0 +1,22 @@
+<div
+    class="row placeholder composer-emails-placeholder"
+    ng-show="emailsAreValid(message) === true && message.autocompletesFocussed === false">
+
+    <label
+        ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0"
+        translate
+        translate-context="Title">Recipients</label>
+    <div
+        style="pointer-events:none"
+        title="{{ recipients(message) }}"
+        ng-bind="recipients(message)"></div>
+    <button
+        class="pm_button link"
+        ng-click="toggleCcBcc(message)"
+        pt-tooltip-translate="CC BCC"
+        pt-placement="left"
+        pt-tooltip-translate-context="Action"
+        tabindex="-1">
+        <i class="fa fa-angle-down" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
+    </button>
+</div>

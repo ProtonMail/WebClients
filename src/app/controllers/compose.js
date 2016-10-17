@@ -181,11 +181,22 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         }
     }));
 
-    unsubscribe.push($rootScope.$on('editorLoaded', (event, element, editor, message) => {
-        if (message) {
-            message.editor = editor;
-            editor && listenEditor(message);
-            $scope.focusComposer(message);
+    unsubscribe.push($rootScope.$on('composer.update', ({ type, data }) => {
+        if (type === 'editor.loaded') {
+            const { message, editor } = data;
+            if (message) {
+                message.editor = editor;
+                editor && listenEditor(message);
+            }
+        }
+
+        if (type === 'editor.focus') {
+            const { message } = data;
+            $scope.$applyAsync(() => {
+                message.autocompletesFocussed = false;
+                message.attachmentsToggle = false;
+                message.ccbcc = false;
+            });
         }
     }));
 
@@ -196,22 +207,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
 
     unsubscribe.push($rootScope.$on('attachment.upload', (e, { type, data }) => {
         (type === 'remove.success') && recordMessage(data.message, false, true);
-    }));
-
-    unsubscribe.push($scope.$on('editorFocussed', (event, element) => {
-        const composer = $(element).parents('.composer');
-        const index = $('.composer').index(composer);
-        const message = $scope.messages[index];
-
-        if (angular.isDefined(message)) {
-            $scope.focusComposer(message);
-            $scope.$applyAsync(() => {
-                message.autocompletesFocussed = false;
-                message.attachmentsToggle = false;
-                message.ccbcc = false;
-            });
-        }
-
     }));
 
     unsubscribe.push($scope.$on('subjectFocussed', (event, message) => {
@@ -240,12 +235,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         }
 
         return limit;
-    }
-
-    function onOrientationChange() {
-        _.each($scope.messages, (message) => {
-            $scope.focusComposer(message);
-        });
     }
 
     function onDragOver() {
@@ -288,7 +277,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
     }
 
     $(window).on('resize', onResize);
-    $(window).on('orientationchange', onOrientationChange);
     // $(window).on('dragover', onDragOver);
     // $(window).on('dragstart', onDragStart);
     // $(window).on('dragend', onDragEnd);
@@ -479,81 +467,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 });
             });
     }
-
-    /**
-     * Insert / Update signature in the message body
-     * @param {Object} message
-     */
-    $scope.focusComposer = (message) => {
-
-        $scope.selected = message;
-        if (!message.focussed) {
-            // calculate z-index
-            const index = $scope.messages.indexOf(message);
-
-            if (tools.findBootstrapEnvironment() === 'xs') {
-
-                _.each($scope.messages, (element, iteratee) => {
-                    if (iteratee > index) {
-                        $(element).css('z-index', ($scope.messages.length + (iteratee - index)) * 100);
-                    } else {
-                        $(element).css('z-index', ($scope.messages.length) * 100);
-                    }
-                });
-
-                const bottom = $('.composer').eq($('.composer').length - 1);
-                const bottomTop = bottom.css('top');
-                const bottomZ = bottom.css('zIndex');
-                const clicked = $('.composer').eq(index);
-                const clickedTop = clicked.css('top');
-                let clickedZ = clicked.css('zIndex');
-
-                if (clickedZ === 'auto') {
-                    clickedZ = 100; // fix for mobile safari issue
-                }
-
-                // TODO: swap ???
-                bottom.css({
-                    top: clickedTop,
-                    zIndex: clickedZ
-                });
-                clicked.css({
-                    top: bottomTop,
-                    zIndex: bottomZ
-                });
-            } else {
-                _.each($scope.messages, (element, iteratee) => {
-                    if (iteratee > index) {
-                        element.zIndex = ($scope.messages.length - (iteratee - index)) * 100;
-                    } else {
-                        element.zIndex = ($scope.messages.length) * 100;
-                    }
-                });
-            }
-
-            // focus correct field
-            const composer = angular.element('#uid' + message.uid);
-            const { ToList = [], CCList = [], BCCList = [] } = message;
-
-            if ([].concat(ToList).concat(CCList).concat(BCCList).length === 0) {
-                if (!$state.includes('secured.drafts.**')) {
-                    $scope.focusTo(message);
-                } else {
-                    message.editor && message.editor.focus();
-                }
-            } else if (message.Subject.length === 0) {
-                $(composer).find('.subject').focus();
-            } else if (message.editor) {
-                message.editor.focus();
-            }
-
-            _.each($scope.messages, (m) => {
-                m.focussed = false;
-            });
-
-            message.focussed = true;
-        }
-    };
 
     /**
      * Watcher onInput to find and remove attachements if we remove an embedded
@@ -1389,11 +1302,10 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
      */
 
     $scope.focusFirstComposer = (message) => {
-        const messageFocussed = !!message.focussed;
-        const isFocusable = _.find($scope.messages, (x) => x.minimized === false);
-        if (messageFocussed && !angular.isUndefined(isFocusable)) {
-            $scope.focusComposer(isFocusable);
-        }
+        $rootScope.$emit('composer.update', {
+            type: 'focus.first',
+            data: { message }
+        });
     };
 
     $scope.minimize = (message) => {
@@ -1534,19 +1446,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
             .concat(CCList.map(formatAddresses(gettextCatalog.getString('CC', null, 'Title'))))
             .concat(BCCList.map(formatAddresses(gettextCatalog.getString('BCC', null, 'Title'))))
             .join(', ');
-    };
-
-    /**
-     * Display fields (To, Cc, Bcc) and focus the input in the To field.
-     * @param {Object} message
-     */
-    $scope.focusTo = (message) => {
-        const input = document.querySelector(`#uid${message.uid} .toRow input`);
-
-        $timeout(() => {
-            message.autocompletesFocussed = true;
-            input && input.focus();
-        }, 250, true);
     };
 
     $scope.focusNextInput = (event) => {

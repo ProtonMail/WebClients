@@ -73,21 +73,161 @@ angular.module('proton.composer')
                 });
         }
 
+        /**
+         * Find the current composer to focus by its target
+         * @param  {Node} node   Container of all the composer
+         * @param  {Node} target
+         * @return {Object}        {composer: <Node>, index: <Number>}
+         */
+        function findFocusedComposer(node, target) {
+            const $list = [].slice.call(node.querySelectorAll('.composer'));
+            return $list
+                .reduce((acc, node, index) => {
+                    return node.contains(target) ? { composer: node, index } : acc;
+                }, { composer: null, index: -1 });
+        }
+
+        /**
+         * Find the message attach to the composer
+         * @param  {Array}  list     List of message
+         * @param  {Node} composer
+         * @return {Ressource}
+         */
+        function findMessagePerComposer(list = [], composer = null) {
+            return (composer && _.findWhere(list, { uid: +composer.id.slice(3) }));
+        }
+
+        /**
+         * Custom focus to the composer depending of the source from the click event
+         *     - Fix issue with the templating (Todo refacto HTML composer to improve KISS)
+         *     - Allow the user to focus as fast we can, onLoad we add a delay after $compile to ensure the focus
+         * @param  {Angular.element} el             Composer
+         * @param  {scope} scope
+         * @param  {Squire} editor
+         * @return {void}
+         */
+        function customFocus(el, scope, editor) {
+            // Add a delay to ensure that the dom is ready onLoad
+            const id = setTimeout(() => {
+                clearTimeout(id);
+
+                const { ToList = [], CCList = [], BCCList = [], IsEncrypted } = scope.selected;
+
+                if (![].concat(ToList).concat(CCList).concat(BCCList).length && !IsEncrypted) {
+
+                    const input = el.find('.toRow').find('input').eq(0);
+                    if (input.get(0)) {
+                        return scope.$applyAsync(() => {
+                            scope.selected.autocompletesFocussed = true;
+                            _rAF(() => input.focus());
+                        });
+                    }
+                }
+
+                if (!scope.selected.Subject.length) {
+                    return el.find('.subject').focus();
+                }
+
+                _rAF(() => editor.focus());
+            }, 300);
+        }
+
         return {
             link(scope, el) {
 
+                /**
+                 * Find an focus the current composer
+                 * @param  {Node} target Current source (clicked)
+                 * @param  {Squire} editor Editor
+                 * @return {void}
+                 */
+                const focusComposer = (target, editor, isFocusEditor) => {
+
+                    const { index, composer } = findFocusedComposer(el[0], target);
+                    const message = findMessagePerComposer(scope.messages, composer);
+                    const length = scope.messages.length;
+
+                    if (message.focussed) {
+                        return;
+                    }
+
+                    _.each(scope.messages, (msg, iteratee) => {
+                        msg.focussed = false;
+                        if (iteratee > index) {
+                            msg.zIndex = (length - (iteratee - index)) * 100;
+                        } else {
+                            msg.zIndex = length * 100;
+                        }
+                    });
+
+                    message.focussed = true;
+                    message.editor = message.editor || editor;
+
+                    scope.selected = message;
+                    scope.selected.autocompletesFocussed = false;
+
+                    // It's coming from squire so let's focus it
+                    if (isFocusEditor) {
+                        return editor.focus();
+                    }
+
+                    customFocus(angular.element(composer), scope, editor || message.editor);
+                };
+
+                const onClick = ({ target }) => scope.$applyAsync(() => focusComposer(target));
+
+                const onOrientationChange = () => {
+                    scope.$applyAsync(() => {
+                        scope.messages.length && focusComposer(el[0].querySelector('.composer'));
+                    });
+                };
+
+                el.on('click', onClick);
+                window.addEventListener('orientationchange', onOrientationChange, false);
+
                 const unsubscribe = $rootScope
-                    .$on('composer.update', (e, { data }) => {
-                        // Need to perform the rendering after the $digest to match each new composer
-                        scope
-                            .$applyAsync(() => {
-                                const $list = [].slice.call(el[0].querySelectorAll('.composer-container'));
-                                _rAF(() => render($list, data));
-                            });
+                    .$on('composer.update', (e, { type, data }) => {
+
+                        switch (type) {
+
+                            case 'focus.first':
+                                scope.$applyAsync(() => {
+                                    scope.messages.length && focusComposer(el[0].querySelector('.composer'));
+                                });
+                                break;
+
+                            case 'editor.loaded':
+                            case 'editor.focus': {
+                                const { message, editor, element } = data;
+
+                                if (message.focussed) {
+                                    scope.$applyAsync(() => message.autocompletesFocussed = false);
+                                    break;
+                                }
+
+                                scope
+                                    .$applyAsync(() => {
+                                        focusComposer(element[0], editor, type === 'editor.focus');
+                                    });
+                                break;
+                            }
+
+                            default:
+                                // Need to perform the rendering after the $digest to match each new composer
+                                scope
+                                    .$applyAsync(() => {
+                                        const $list = [].slice.call(el[0].querySelectorAll('.composer-container'));
+                                        _rAF(() => render($list, data));
+                                    });
+                        }
 
                     });
 
-                scope.$on('$destroy', () => unsubscribe());
+                scope.$on('$destroy', () => {
+                    window.removeEventListener('orientationchange', onOrientationChange, false);
+                    el.off('click', onClick);
+                    unsubscribe();
+                });
             }
         };
 

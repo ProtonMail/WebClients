@@ -1,0 +1,49 @@
+<header responsive-composer="message">
+    <span ng-click="normalize(message);" class="subject" ng-bind="subject(message)"></span>
+    <span class="actions text-right">
+        <a
+            ng-show="!!!message.minimized"
+            class="pm_button link minimize-button hidden-xs composer-action-minimize"
+            ng-click="minimize(message)"
+            pt-tooltip-translate-context="Action"
+            pt-tooltip-translate="Minimize"
+            pt-placement="top">
+            <i class="fa fa-minus"></i>
+        </a>
+        <a
+            ng-show="!!message.minimized"
+            class="pm_button link expand-button hidden-xs composer-action-expand"
+            ng-click="unminimize(message)"
+            pt-tooltip-translate-context="Action"
+            pt-tooltip-translate="Expand"
+            pt-placement="top">
+            <i class="fa fa-minus"></i>
+        </a>
+        <a
+            ng-show="!!!message.maximized"
+            class="pm_button link maximize-button hidden-xs hidden-sm composer-action-maximize"
+            ng-click="normalize(message);maximize(message)"
+            pt-tooltip-translate-context="Action"
+            pt-tooltip-translate="Fullscreen"
+            pt-placement="top">
+            <i class="fa fa-expand"></i>
+        </a>
+        <a
+            ng-show="!!message.maximized"
+            class="pm_button link maximize-button hidden-xs composer-action-maximize"
+            ng-click="normalize(message)"
+            pt-tooltip-translate-context="Action"
+            pt-tooltip-translate="Exit fullscreen"
+            pt-placement="top">
+            <i class="fa fa-compress"></i>
+        </a>
+        <a
+            class="pm_button link close-button composer-action-close"
+            ng-click="openCloseModal(message)"
+            pt-tooltip-translate-context="Action"
+            pt-tooltip-translate="Close"
+            pt-placement="top">
+            <i class="fa fa-times"></i>
+        </a>
+    </span>
+</header>
