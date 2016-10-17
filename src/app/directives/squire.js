@@ -335,7 +335,13 @@ angular.module('proton.squire', [
 
                 editor.addEventListener('focus', () => {
                     element.addClass('focus').triggerHandler('focus');
-                    $rootScope.$broadcast('editorFocussed', element, editor);
+                    $rootScope.$emit('composer.update', {
+                        type: 'editor.focus',
+                        data: {
+                            element, editor,
+                            message: scope.message
+                        }
+                    });
                 });
 
                 editor.addEventListener('purify', (event) => {
@@ -400,7 +406,13 @@ angular.module('proton.squire', [
 
                 editor.addEventListener('drop', handleDrop, false);
 
-                $rootScope.$emit('editorLoaded', element, editor, scope.message);
+                $rootScope.$emit('composer.update', {
+                    type: 'editor.loaded',
+                    data: {
+                        element, editor,
+                        message: scope.message
+                    }
+                });
             }
 
             iframe = element.find('iframe.squireIframe');

@@ -1,25 +1,6 @@
 <div class="composer animate composer-container">
 
-    <header responsive-composer="message">
-        <span ng-click="normalize(message);" class="subject" ng-bind="subject(message)"></span>
-        <span class="actions text-right">
-            <a ng-show="!!!message.minimized" class="pm_button link minimize-button hidden-xs" ng-click="minimize(message)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Minimize" pt-placement="top">
-                <i class="fa fa-minus"></i>
-            </a>
-            <a ng-show="!!message.minimized" class="pm_button link expand-button hidden-xs" ng-click="unminimize(message)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Expand" pt-placement="top">
-                <i class="fa fa-minus"></i>
-            </a>
-            <a ng-show="!!!message.maximized" class="pm_button link maximize-button hidden-xs hidden-sm" ng-click="normalize(message);maximize(message)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Fullscreen" pt-placement="top">
-                <i class="fa fa-expand"></i>
-            </a>
-            <a ng-show="!!message.maximized" class="pm_button link maximize-button hidden-xs" ng-click="normalize(message)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Exit fullscreen" pt-placement="top">
-                <i class="fa fa-compress"></i>
-            </a>
-            <a class="pm_button link close-button" ng-click="openCloseModal(message)" pt-tooltip-translate-context="Action" pt-tooltip-translate="Close" pt-placement="top">
-                <i class="fa fa-times"></i>
-            </a>
-        </span>
-    </header>
+    <composer-header></composer-header>
 
     <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'encrypt' }">
         <div ng-form="encryptForm" class="pm_form pm_grid">
@@ -113,27 +94,7 @@
             <span class="overlay" ng-click="disabledNotify()" ng-show="message.Attachments.length > 0" translate=""></span>
         </div>
 
-        <div
-            class="row placeholder"
-            ng-click="focusTo(message)"
-            ng-right-click="focusTo(message)"
-            ng-show="emailsAreValid(message) === true && message.autocompletesFocussed === false">
-
-            <label
-                ng-hide="message.ToList.length > 0 || message.CCList.length > 0 || message.BCCList.length > 0"
-                translate
-                translate-context="Title">Recipients</label>
-            <div title="{{ recipients(message) }}" ng-bind="recipients(message)"></div>
-            <button
-                class="pm_button link"
-                ng-click="toggleCcBcc(message)"
-                pt-tooltip-translate="CC BCC"
-                pt-placement="left"
-                pt-tooltip-translate-context="Action"
-                tabindex="-1">
-                <i class="fa fa-angle-down" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
-            </button>
-        </div>
+        <composer-emails-placeholder></composer-emails-placeholder>
 
         <div
             class="row toRow"
