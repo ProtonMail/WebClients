@@ -206,6 +206,14 @@ angular.module('proton.authentication', [
                         return deferred.promise;
                     };
 
+                    // All keys are decrypted and stored
+                    _.each(user.Keys, (key, index) => {
+                        const address = { ID: CONSTANTS.MAIN_KEY };
+                        const promise = decryptKey({ key, password: api.getPassword(), address, index })
+
+                        promises.push(promise);
+                    });
+
                     // All private keys are decrypted and stored in a `keys` array
                     _.each(user.Addresses, (address) => {
                         if (address.Keys.length > 0) {

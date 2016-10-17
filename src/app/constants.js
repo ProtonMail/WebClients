@@ -6,6 +6,7 @@ angular.module('proton.constants', [])
 // Constants definition
 //
 .constant('CONSTANTS', {
+    MAIN_KEY: '0',
     TIMEOUT: 30 * 1000, // timeout in milliseconds
     BASE_SIZE: 1024, // define the base used for byte
     PM_SIGNATURE: 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.',
