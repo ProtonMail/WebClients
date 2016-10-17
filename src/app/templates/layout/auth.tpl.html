@@ -1,10 +1,8 @@
 <ng-include src="'templates/partials/header-auth-simple.tpl.html'" ng-if="isLoggedIn"></ng-include>
 <ng-include src="'templates/partials/header-no-auth.tpl.html'" ng-if="!isLoggedIn"></ng-include>
 
-<div class="container-fluid">
-
+<div id="mainContainer" class="container-fluid">
     <div class="row">
         <div ui-view="panel"></div>
     </div>
-
 </div>
