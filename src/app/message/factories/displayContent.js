@@ -12,7 +12,7 @@ angular.module('proton.message')
             return { body, type };
         }
 
-        function parse(decrytedBody) {
+        function parse(decryptedBody) {
             const deferred = $q.defer();
             const mailparser = new MailParser({ defaultCharset: 'UTF-8' });
 
@@ -36,7 +36,7 @@ angular.module('proton.message')
                 deferred.resolve({ type, body });
             });
 
-            mailparser.write(decrytedBody);
+            mailparser.write(decryptedBody);
             mailparser.end();
 
             return deferred.promise;
