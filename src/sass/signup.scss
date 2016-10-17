@@ -1,4 +1,7 @@
 #signup {
+    #mainContainer {
+        margin-top:3rem;
+    }
     iframe#pm_captcha {
         outline: none;
         border: none;
@@ -126,8 +129,8 @@
 
 body.mobileMode {
     &#signup {
-        .container-fluid .row > div > p {
-            display: none;
+        #mainContainer {
+            margin-top:0;
         }
         .wrapper {
             padding: 0;
