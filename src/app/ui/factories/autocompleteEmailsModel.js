@@ -40,6 +40,18 @@ angular.module('proton.ui')
         };
 
         /**
+         * Filter the autocomplete list output
+         * @param  {Array}   list
+         * @param  {String}  value          Default value if there is no autocomplete
+         * @param  {Boolean} strictEquality Return exact match
+         * @return {Array}
+         */
+        const filterList = (list = [], value, strictEquality = false) => {
+            const col = list.length ? list : [{ label: value, value }];
+            return strictEquality ? _.where(col, { value }) : col;
+        };
+
+        /**
          * Filter emails from our contacts to find by
          *     - Matching name
          *     - Emails starting with
@@ -47,9 +59,10 @@ angular.module('proton.ui')
          * List contains available emails or the new one
          * hasAutocompletion if data are coming from us
          * @param  {String} value
+         * @param  {Boolean} strictEquality  Filter the collection via ===
          * @return {Object} {list:Array, show:Boolean}
          */
-        const filterContact = (val = '') => {
+        const filterContact = (val = '', strictEquality = false) => {
 
             const value = relaceTagAutocomplete(val.toLowerCase().trim());
             const collection = _.chain(authentication.user.Contacts)
@@ -62,10 +75,8 @@ angular.module('proton.ui')
                 .first(10)
                 .value();
 
-            const list = collection.length ? collection : [{ label: value, value }];
-
             return {
-                list,
+                list: filterList(collection, value, strictEquality),
                 hasAutocompletion: !!collection.length
             };
         };
@@ -111,7 +122,6 @@ angular.module('proton.ui')
              * @return {Number}
              */
             const add = ({ label, value } = {}) => {
-
                 const data = formatNewEmail(label, value);
 
                 // If the mail is not already inside the collection, add it
