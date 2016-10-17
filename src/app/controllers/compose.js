@@ -159,7 +159,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         }
     }));
 
-    unsubscribe.push($rootScope.$on('sendMessage', (event, element, msg) => {
+    unsubscribe.push($rootScope.$on('sendMessage', (e, element, msg) => {
         if (element) {
             const composer = $(element).parents('.composer');
             const index = $('.composer').index(composer);
@@ -171,7 +171,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         msg && $scope.send(msg);
     }));
 
-    unsubscribe.push($scope.$on('closeMessage', (event, element) => {
+    unsubscribe.push($scope.$on('closeMessage', (e, element) => {
         const composer = $(element).parents('.composer');
         const index = $('.composer').index(composer);
         const message = $scope.messages[index];
@@ -181,7 +181,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         }
     }));
 
-    unsubscribe.push($rootScope.$on('composer.update', ({ type, data }) => {
+    unsubscribe.push($rootScope.$on('composer.update', (e, { type, data }) => {
         if (type === 'editor.loaded') {
             const { message, editor } = data;
             if (message) {
@@ -549,10 +549,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         message.ccbcc = !message.ccbcc;
         message.autocompletesFocussed = true;
         message.attachmentsToggle = false;
-    };
-
-    $scope.hideFields = (message) => {
-        message.ccbcc = false;
     };
 
     $scope.togglePanel = (message, panelName) => {
