@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-.directive('autocompleteEmails', (autocompleteEmailsModel) => {
+.directive('autocompleteEmails', (autocompleteEmailsModel, regexEmail) => {
 
     const TAB_KEY = 9;
     const BACKSPACE_KEY = 8;
@@ -148,7 +148,8 @@ angular.module('proton.ui')
                     const { value, clear } = getFormValue(e.target);
 
                     if (value) {
-                        model.add(model.filterContact(value).list[0] || {});
+                        const config = regexEmail.test(value) ? model.filterContact(value, true).list[0] : { label: value, value };
+                        model.add(config);
                         clear();
                         syncModel();
                     }
