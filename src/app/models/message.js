@@ -350,9 +350,9 @@ angular.module('proton.models.message', ['proton.constants'])
                     try {
                         this.decryptBody()
                         .then((result) => {
-                            this.setDecryptedBody(result);
+                            this.setDecryptedBody(result.data);
                             this.failedDecryption = false;
-                            deferred.resolve(result);
+                            deferred.resolve(result.data);
                         }, (err) => {
                             this.setDecryptedBody(this.Body, false);
                             this.failedDecryption = true;

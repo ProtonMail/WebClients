@@ -88,7 +88,7 @@ angular.module('proton.core')
                 promises = inputKeys.map(({PrivateKey, ID, Token}) => {
                     // Decrypt private key with organization key and token
                     return organizationKey
-                    .then((key) => pmcw.decryptMessage(Token, key))
+                    .then((key) => pmcw.decryptMessage(Token, key).data)
                     .then((token) => pmcw.decryptPrivateKey(PrivateKey, token))
                     .then((pkg) => ({ ID, pkg }));
                 });

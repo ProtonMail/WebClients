@@ -424,7 +424,7 @@ angular.module('proton.routes', [
                         const promise = pmcw
                             .decryptMessage(encryptedToken, $scope.params.MessagePassword)
                             .then((decryptedToken) => {
-                                secureSessionStorage.setItem('proton:decrypted_token', decryptedToken);
+                                secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                 secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
                                 $state.go('eo.message', { tag: $stateParams.tag });
                             }, (err) => {
@@ -454,12 +454,12 @@ angular.module('proton.routes', [
                     const promises = [];
 
                     promises.push(pmcw.decryptMessageRSA(message.Body, password, message.Time).then((body) => {
-                        message.DecryptedBody = body;
+                        message.DecryptedBody = body.data;
                     }));
 
                     _.each(message.Replies, (reply) => {
                         promises.push(pmcw.decryptMessageRSA(reply.Body, password, reply.Time).then((body) => {
-                            reply.DecryptedBody = body;
+                            reply.DecryptedBody = body.data;
                         }));
                     });
 
@@ -497,7 +497,7 @@ angular.module('proton.routes', [
                     .then((body) => {
                         const attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
 
-                        message.DecryptedBody = body;
+                        message.DecryptedBody = body.data;
                         message.Attachments = attachments;
                         message.NumAttachments = attachments.length;
                         deferred.resolve(new Message(message));

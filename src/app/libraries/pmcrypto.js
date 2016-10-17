@@ -12,7 +12,7 @@ if (typeof module !== 'undefined' && module.exports) {
     /* jshint ignore:end */
     openpgp = require('./openpgp.min.js');
     openpgp.config.integrity_protect = true;
-    openpgp.config.useNative = true;
+    openpgp.config.use_native = true;
 }
 else {
     // Browser
@@ -58,14 +58,13 @@ var pmcrypto = (function() {
     }
 
     // Backwards-compatible decrypt RSA message function
-    function decryptMessageRSA(encMessage, prKey, messageTime) {
-
+    function decryptMessageRSA(encMessage, privKey, messageTime, pubKeys) {
         return new Promise(function(resolve, reject) {
 
             if (encMessage === undefined || encMessage === '') {
                 return reject(new Error('Missing encrypted message'));
             }
-            if (prKey === undefined || prKey === '') {
+            if (privKey === undefined || privKey === '') {
                 return reject(new Error('Missing private key'));
             }
             if (messageTime === undefined || messageTime === '') {
@@ -76,10 +75,10 @@ var pmcrypto = (function() {
             var oldEncRandomKey = getEncRandomKeyFromEmailPM(encMessage);
 
             // OpenPGP
-            if (oldEncMessage === '' || oldEncRandomKey === '') return resolve(decryptMessage(encMessage, prKey));
+            if (oldEncMessage === '' || oldEncRandomKey === '') return resolve(decryptMessage(encMessage, privKey, false, null, pubKeys));
 
             // Old message encryption format
-            resolve(decryptMessage(oldEncRandomKey, prKey)
+            resolve(decryptMessage(oldEncRandomKey, privKey, false)
                 .then(decode_utf8_base64)
                 .then(function(randomKey) {
 
@@ -87,15 +86,15 @@ var pmcrypto = (function() {
                         return Promise.reject(new Error('Random key is empty'));
                     }
 
-                    oldEncMessage = pmcrypto.decode_utf8_base64(oldEncMessage);
+                    oldEncMessage = pmcrypto.decode_utf8_base64({message:oldEncMessage});
 
                     var decryptedMessage;
                     try {
                         randomKey = pmcrypto.binaryStringToArray(randomKey);
                         oldEncMessage = pmcrypto.binaryStringToArray(oldEncMessage);
                         // cutoff time for enabling multilanguage support
-                        if (messageTime > 1399086120) // parseInt($('#messageTime').val())
-                            decryptedMessage = decode_utf8_base64(pmcrypto.arrayToBinaryString(openpgp.crypto.cfb.decrypt("aes256", randomKey, oldEncMessage, true)));
+                        if (messageTime > 1399086120)
+                            decryptedMessage = decode_utf8_base64({message:pmcrypto.arrayToBinaryString(openpgp.crypto.cfb.decrypt("aes256", randomKey, oldEncMessage, true))});
                         else
                             decryptedMessage = pmcrypto.arrayToBinaryString(openpgp.crypto.cfb.decrypt("aes256", randomKey, oldEncMessage, true));
                     } catch (err) {
@@ -128,7 +127,14 @@ var pmcrypto = (function() {
     }
 
     function decode_utf8_base64(data) {
-        if (data !== undefined) return decode_utf8(decode_base64(data));
+        if (data !== undefined) {
+            if (data.message !== undefined) {
+                return decode_utf8(decode_base64(data.message));
+            }
+            else {
+                return decode_utf8(decode_base64(data));   
+            }
+        }
     }
 
     function generateKeysRSA(user, password, numBits) {
@@ -139,11 +145,16 @@ var pmcrypto = (function() {
             return Promise.reject('Missing private key passcode');
         }
 
-        return openpgp.generateKeyPair({
+        var user = {
+            name: user,
+            email: user
+        };
+        var keys = openpgp.generateKey({
             numBits: numBits,
-            userId: user,
+            userIds: [user],
             passphrase: password
         });
+        return keys;
     }
 
     function generateKeyAES() {
@@ -172,8 +183,8 @@ var pmcrypto = (function() {
         return _keys.keys;
     }
 
-    function encryptMessage(message, pubKeys, passwords, params) {
-
+    //privKeys is optional - will also sign the message
+    function encryptMessage(message, pubKeys, passwords, privKeys) {
         return new Promise(function(resolve, reject) {
             if (message === undefined) {
                 return reject(new Error('Missing data'));
@@ -182,29 +193,76 @@ var pmcrypto = (function() {
                 return reject(new Error('Missing key'));
             }
 
-            var keys;
+            var options = {
+                data: message,
+                armor: true
+            };
+
             if (pubKeys && pubKeys.length) {
                 keys = getKeys(pubKeys);
                 if (keys instanceof Error) return reject(keys);
+                options.publicKeys = keys;
+            }
+            if (passwords){
+                if (!passwords instanceof Array){
+                    passwords = [passwords];
+                }
+                options.passwords = passwords;
+            } 
+            if (privKeys){
+                options.privateKeys = privKeys[0];
             }
 
-            resolve(openpgp.encryptMessage(keys, message, passwords, params));
+            openpgp.encrypt(options).then(function(ciphertext){
+                resolve(ciphertext.data);
+            });
+
         });
     }
 
-    function encryptFile(data, pubKeys, passwords, filename) {
+    //when attachment signing is implemented, use the privKeys parameter
+    function encryptFile(data, pubKeys, passwords, filename, privKeys) {
+        return new Promise(function(resolve, reject){
+            if (data === undefined) {
+                return reject(new Error('Missing data'));
+            }
+            if (pubKeys === undefined && passwords === undefined) {
+                return reject(new Error('Missing key'));
+            }
 
-        var params = {
-            packets: true,
-            filename: filename
-        };
+            var keys;
 
-        return encryptMessage(data, pubKeys, passwords, params);
+            var options = {
+                filename: filename,
+                data: data,
+                armor: false
+            };
+            if (pubKeys && pubKeys.length) {
+                keys = getKeys(pubKeys);
+                if (keys instanceof Error) return reject(keys);
+                options.publicKeys = keys;
+            }
+            if (passwords){
+                if (!passwords instanceof Array){
+                    passwords = [passwords];
+                }
+                options.passwords = passwords
+            }
+
+            if (privKeys){
+                options.privateKeys = privKeys[0];
+            }
+
+            openpgp.encrypt(options).then(function(ciphertext){
+                resolve(splitFile(ciphertext.message));
+
+            });
+
+        });
+
     }
 
     function encryptSessionKey(sessionKey, algo, pubKeys, passwords) {
-
-        // console.log(pubKeys, passwords);
 
         return new Promise(function(resolve, reject) {
             if (sessionKey === undefined) {
@@ -226,20 +284,39 @@ var pmcrypto = (function() {
                 if (keys instanceof Error) return reject(keys);
             }
 
-            resolve(openpgp.encryptSessionKey(sessionKey, algo, keys, passwords));
+            var options = {
+                data: sessionKey,
+                algorithm: algo,
+            };
+
+            if (pubKeys && pubKeys.length) {
+                keys = getKeys(pubKeys);
+                if (keys instanceof Error) return reject(keys);
+                options.publicKeys = keys;
+            }
+            if (passwords){
+                if (!passwords instanceof Array){
+                    passwords = [passwords];
+                }
+                options.passwords = passwords
+            }
+            openpgp.encryptSessionKey(options).then(function(result){
+                resolve(result.message.packets.write());
+            });
         });
     }
 
-    function decryptMessage(encMessage, key, binary, sessionKeyAlgorithm) {
+    //public keys optional, for verifying signature
+    // returns an object { message, signature }
+    function decryptMessage(encMessage, privKey, binary, sessionKeyAlgorithm, publicKeys) {
 
         return new Promise(function(resolve, reject) {
             if (encMessage === undefined || encMessage === '') {
                 return reject(new Error('Missing encrypted message'));
             }
-            if (key === undefined || key === '') {
-                return reject(new Error('Missing key'));
+            if (privKey === undefined || privKey === '') {
+                return reject(new Error('Missing private key'));
             }
-
             var _encMessage;
             if (Uint8Array.prototype.isPrototypeOf(encMessage)) {
                 _encMessage = openpgp.message.read(encMessage);
@@ -247,7 +324,7 @@ var pmcrypto = (function() {
                 _encMessage = openpgp.message.readArmored(encMessage.trim());
             }
 
-            if ( Array.isArray( key ) ) {
+            if ( Array.isArray(privKey) ) {
                 // Pick correct key
                 if ( key.length  == 0 ) {
                     return reject(new Error('Empty key array'));
@@ -258,10 +335,11 @@ var pmcrypto = (function() {
                     return reject(new Error('Nothing to decrypt'));
                 }
                 var privateKeyPacket = null;
-                for( var i = 0; i<key.length; i++ ) {
-                    privateKeyPacket = key[i].getKeyPacket(encryptionKeyIds);
+                for( var i = 0; i<privKey.length; i++ ) {
+                    privateKeyPacket = privKey[i].getKeyPacket(encryptionKeyIds);
                     if ( privateKeyPacket !== null ) {
-                        key = key[i];
+                        privKey = privKey[i];
+                        isKey = true;
                         break;
                     }
                 }
@@ -269,14 +347,62 @@ var pmcrypto = (function() {
                     return reject(new Error('No appropriate private key found.'));
                 }
             }
+            var options = {
+                message: _encMessage,
+            }
 
-            var params = {
-                binary: binary,
-                sessionKeyAlgorithm: sessionKeyAlgorithm
-            };
+            if (publicKeys){
+                publicKeys = getKeys(publicKeys);
+                if (publicKeys instanceof Error) return reject(publicKeys);
+                options.publicKeys = publicKeys;
+            }
+
+
+           if (Uint8Array.prototype.isPrototypeOf(privKey)) {
+                options.sessionKey = {data: privKey, algorithm: sessionKeyAlgorithm};
+            } else if (typeof privKey === 'string' || privKey instanceof String){
+                options.password = privKey;
+            } else {
+                options.privateKey = privKey;
+            }
+
+            if (binary){
+                options.format = 'binary';
+            }
+
+            var sig;
+
 
             try {
-                resolve(openpgp.decryptMessage(key, _encMessage, params));
+                openpgp.decrypt(options).then(function(decrypted){
+                    //for now, log signature info in console - later integrate with front end
+                    if (binary){
+                        if (decrypted.signatures == null || decrypted.signatures[0] == null){
+                            console.log("No attachment signature present");
+                            sig = 0;
+                        } else if (decrypted.signatures[0].valid == true){
+                            console.log("Verified attachment signature");
+                            sig = 1;
+                        } else {
+                            console.log("Attachment signature could not be verified");
+                            sig = 2;
+                        }
+                        resolve({ data: decrypted.data, filename: decrypted.filename, signature: sig });
+                    } else {
+                        if (decrypted.signatures == null || decrypted.signatures[0] == null){
+                            console.log("No message signature present");
+                            sig = 0;
+                        } else if (decrypted.signatures[0].valid == true){
+                            console.log("Verified message signature");
+                            sig = 1;
+                        } else {
+                            console.log("Message signature could not be verified");
+                            sig = 2;
+                        }
+                        resolve({ data:decrypted.data, signature: sig});
+                    }
+
+                 });
             } catch (err) {
                 if (err.message == 'CFB decrypt: invalid key') {
                     return reject(err.message); //Bad password, reject without Error object
@@ -303,6 +429,7 @@ var pmcrypto = (function() {
                 _encMessage = openpgp.message.readArmored(encMessage.trim());
             }
 
+
             if ( Array.isArray( key ) ) {
                 // Pick correct key
                 if ( key.length  == 0 ) {
@@ -327,17 +454,27 @@ var pmcrypto = (function() {
             }
 
             try {
-                resolve(openpgp.decryptSessionKey(key, _encMessage).then(function(data) {
-                    if (data.key===undefined) {
+                var options = {
+                    message: _encMessage,
+                };
+
+                if (typeof key === 'string' || key instanceof String){
+                    options.password = key;
+                } else {
+                    options.privateKey = key;
+                }
+
+                openpgp.decryptSessionKey(options).then(function(result) {
+                    var key = result.data
+                    if (key===undefined) {
                         // unencrypted attachment?
                         throw new Error('Undefined session key');
-                    }
-                    else if (data.key.length !== 32) {
+                    } else if (key.length !== 32) {
                         throw new Error('Invalid session key length');
                     } else {
-                        return data;
+                        resolve({key: key, algo: result.algorithm});
                     }
-                }));
+                });
             } catch (err) {
                 if (err.message == 'CFB decrypt: invalid key') {
                     return reject(err.message); //Bad password, reject without Error object
@@ -347,7 +484,7 @@ var pmcrypto = (function() {
         });
     }
 
-    function encryptPrivateKey(prKey, prKeyPassCode) {
+    function encryptPrivateKey(privKey, privKeyPassCode) {
 
         return new Promise(function(resolve, reject) {
 
@@ -355,11 +492,11 @@ var pmcrypto = (function() {
                 return reject(new Error('Missing private key passcode'));
             }
 
-            if( !openpgp.key.Key.prototype.isPrototypeOf(prKey) ) {
+            if( !openpgp.key.Key.prototype.isPrototypeOf(privKey) ) {
                 return reject(new Error('Not a Key object'));
             }
 
-            if( !prKey.isPrivate() ) {
+            if( !privKey.isPrivate() ) {
                 return reject(new Error('Not a private key'));
             }
 
@@ -367,26 +504,26 @@ var pmcrypto = (function() {
                 return reject(new Error('Missing primary key or subkey'));
             }
 
-            prKey.primaryKey.encrypt(prKeyPassCode);
-            prKey.subKeys[0].subKey.encrypt(prKeyPassCode);
-            resolve(prKey.armor());
+            privKey.primaryKey.encrypt(privKeyPassCode);
+            privKey.subKeys[0].subKey.encrypt(privKeyPassCode);
+            resolve(privKey.armor());
         });
     }
 
-    function decryptPrivateKey(prKey, prKeyPassCode) {
+    function decryptPrivateKey(privKey, privKeyPassCode) {
 
         return new Promise(function(resolve, reject) {
-            if (prKey === undefined || prKey === '') {
+            if (privKey === undefined || privKey === '') {
                 return reject(new Error('Missing private key'));
             }
-            if (prKeyPassCode === undefined || prKeyPassCode === '') {
+            if (privKeyPassCode === undefined || privKeyPassCode === '') {
                 return reject(new Error('Missing private key passcode'));
             }
 
-            var keys = getKeys(prKey);
+            var keys = getKeys(privKey);
             if (keys instanceof Error) return reject(keys);
 
-            if (keys[0].decrypt(prKeyPassCode)) {
+            if (keys[0].decrypt(privKeyPassCode)) {
                 resolve(keys[0]);
             } else reject('Private key decryption failed'); // Do NOT make this an Error object
         });
@@ -398,16 +535,15 @@ var pmcrypto = (function() {
         return hashed;
     }
 
-    function splitFile( encMessage ) {
+    function signMessage(plaintext){
+        var options = {}
+
+    }
+
+
+    function splitFile(msg) {
 
         return new Promise(function(resolve, reject) {
-
-            var msg;
-            if (Uint8Array.prototype.isPrototypeOf(encMessage)) {
-                msg = openpgp.message.read(encMessage);
-            } else {
-                msg = openpgp.message.readArmored(encMessage.trim());
-            }
 
             var keyFilter = function(packet) {
                 return packet.tag != openpgp.enums.packet.symmetricallyEncrypted && packet.tag != openpgp.enums.packet.symEncryptedIntegrityProtected;
@@ -431,11 +567,11 @@ var pmcrypto = (function() {
         });
     }
 
-    function keyInfo( prKey ) {
+    function keyInfo( privKey ) {
 
         return new Promise(function(resolve, reject) {
 
-            var keys = getKeys(prKey);
+            var keys = getKeys(privKey);
             if (keys instanceof Error) return reject(keys);
 
             var obj = {
@@ -446,7 +582,7 @@ var pmcrypto = (function() {
                 created: keys[0].primaryKey.created
             };
 
-            encryptMessage("test message", prKey).then(
+            encryptMessage("test message", privKey).then(
                 function() {
                     resolve(obj);
                 },
@@ -484,6 +620,9 @@ var pmcrypto = (function() {
 
         // AES session key generation
         generateKeyAES: generateKeyAES,
+
+        // Get keys
+        getKeys: getKeys,
 
         // Encrypted attachments syntactic sugar
         encryptFile: encryptFile,
