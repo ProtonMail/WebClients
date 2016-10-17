@@ -68,7 +68,7 @@ angular.module('proton.squire', [
             scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
 
             scope.$on('$destroy', () => {
-                if (angular.isDefined(editor)) {
+                if (editor) {
                     ['dragleave', 'dragenter', 'drop']
                         .forEach((key) => editor.removeEventListener(key, draggableCallback(key, scope.message, typeContent)));
 
@@ -339,7 +339,8 @@ angular.module('proton.squire', [
                         type: 'editor.focus',
                         data: {
                             element, editor,
-                            message: scope.message
+                            message: scope.message,
+                            isMessage: isMessage()
                         }
                     });
                 });
@@ -410,7 +411,8 @@ angular.module('proton.squire', [
                     type: 'editor.loaded',
                     data: {
                         element, editor,
-                        message: scope.message
+                        message: scope.message,
+                        isMessage: isMessage()
                     }
                 });
             }

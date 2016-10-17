@@ -191,8 +191,8 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         }
 
         if (type === 'editor.focus') {
-            const { message } = data;
-            $scope.$applyAsync(() => {
+            const { message, isMessage } = data;
+            isMessage && $scope.$applyAsync(() => {
                 message.autocompletesFocussed = false;
                 message.attachmentsToggle = false;
                 message.ccbcc = false;
