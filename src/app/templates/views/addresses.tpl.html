@@ -9,8 +9,8 @@
                     <span translate-context="Title" translate translate-comment="page heading">Addresses</span>
                 </legend>
                 <div class="margin" ng-show="isAdmin === true">
-                    <a class="pm_button primary" ng-click="addAlias()" translate-context="Action" translate-comment="addresses page" translate>Add ProtonMail address</a>
-                    <button type="button" class="pm_button" ng-click="addAddress()" translate-context="Action" translate>Add custom domain address</button>
+                    <button class="pm_button primary" ng-click="addAlias()" translate-context="Action" translate-comment="addresses page" translate>Add ProtonMail address</button>
+                    <a ui-sref="secured.domains" type="button" class="pm_button" translate-context="Action" translate>Add custom domain address</a>
                 </div>
                 <p class="alert alert-info">
                     <span translate-context="Info" translate translate-comment="informs the user about permanance of custom addresses">Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted.</span> <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank" translate translate-context="Action">Learn more</a>.
