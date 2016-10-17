@@ -1648,7 +1648,7 @@ angular.module('proton.modals', [])
                 // if (dirtyAddresses.length === 0) {
                 //     params.close(false);
                 // }
-                params.close(false);
+                // params.close(false);
             });
 
             // Functions
