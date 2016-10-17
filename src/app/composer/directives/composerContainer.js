@@ -198,7 +198,13 @@ angular.module('proton.composer')
 
                             case 'editor.loaded':
                             case 'editor.focus': {
-                                const { message, editor, element } = data;
+
+                                const { message, editor, element, isMessage } = data;
+
+                                // If it's not an editor from the composer but signature etc.
+                                if (!isMessage) {
+                                    break;
+                                }
 
                                 if (message.focussed) {
                                     scope.$applyAsync(() => message.autocompletesFocussed = false);
