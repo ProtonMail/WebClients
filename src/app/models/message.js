@@ -228,10 +228,12 @@ angular.module('proton.models.message', ['proton.constants'])
             return (this.saving === true && this.autosaving === false) || this.sending || this.encrypting || this.askEmbedding;
         },
 
-        encryptBody(key) {
+        encryptBody(pubKey) {
             const deferred = $q.defer();
+            const privKey = authentication.getPrivateKeys(this.From.ID);
+
             pmcw
-                .encryptMessage(this.getDecryptedBody(), key)
+                .encryptMessage(this.getDecryptedBody(), pubKey, [], privKey)
                 .then(deferred.resolve)
                 .catch((error) => {
                     error.message = gettextCatalog.getString('Error encrypting message');
@@ -247,20 +249,29 @@ angular.module('proton.models.message', ['proton.constants'])
          */
         decryptBody() {
             const deferred = $q.defer();
-            const keys = authentication.getPrivateKeys(this.AddressID);
+            const privKey = authentication.getPrivateKeys(this.AddressID);
+            var pubKeys = null;
+            const sender = [this.Sender.Address];
 
             this.decrypting = true;
 
-            pmcw
-                .decryptMessageRSA(this.Body, keys, this.Time)
+            this.getPublicKeys(sender)
                 .then((result) => {
-                    this.decrypting = false;
-                    deferred.resolve(result);
-                })
-                .catch((error) => {
-                    this.decrypting = false;
-                    deferred.reject(error);
+                    if (result.data && result.data.Code === 1000) {
+                        pubKeys = result.data[sender]
+                    }
+                pmcw
+                    .decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
+                    .then((result) => {
+                        this.decrypting = false;
+                        deferred.resolve(result);
+                    })
+                    .catch((error) => {
+                        this.decrypting = false;
+                        deferred.reject(error);
+                    });
                 });
+
             return deferred.promise;
         },
 
@@ -351,6 +362,7 @@ angular.module('proton.models.message', ['proton.constants'])
                         this.decryptBody()
                         .then((result) => {
                             this.setDecryptedBody(result.data);
+                            this.Signature = result.signature
                             this.failedDecryption = false;
                             deferred.resolve(result.data);
                         }, (err) => {
