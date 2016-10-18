@@ -44,13 +44,12 @@ angular.module('proton.attachments')
          * @return {Promise}
          */
         const decrypt = (attachment, pubKey, { key, algo } = {}) => {
-
             // create new Uint8Array to store decryted attachment
             let at = new Uint8Array(attachment);
 
         // decrypt the att
             return pmcw
-                .decryptMessage(at, key, true, algo, pubKeys)
+                .decryptMessage(at, key, true, algo, pubKey)
                 .then(({ data }) => (at = null, data))
                 .catch((err) => ($log.error(err), err));
         };
@@ -131,17 +130,18 @@ angular.module('proton.attachments')
 
             const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
             const key = getSessionKey(message, attachment, keyPackets);
-            var pubKeys = null
             const sender = [message.Sender.Address];
+
+            var pubKeys = null
 
             message.getPublicKeys(sender)
             .then((result) => {
-                if (result.data && result.data.Code === 1000) {
+                if (result.data && result.data[sender] != null) {
                     pubKeys = result.data[sender]
                 }
             });
             return Promise.all([request, key])
-                .then(([{ data, pubKeys }, key]) => decrypt(data, key))
+                .then(([{ data }, key]) => decrypt(data, pubKeys, key))
                 .then((data) => (cache.put(getCacheKey(attachment), data), data))
                 .catch((err) => {
                     console.log(err);
