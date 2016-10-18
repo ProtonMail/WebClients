@@ -124,6 +124,9 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             }, 200);
         }
 
+        // Clear auth data
+        authentication.logout(false, authentication.isLoggedIn());
+
         // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
         const captchaReceiveMessage = function (event) {
             if (typeof event.origin === 'undefined' && typeof event.originalEvent.origin === 'undefined') {
