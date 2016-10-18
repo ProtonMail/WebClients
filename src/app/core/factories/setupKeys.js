@@ -24,7 +24,7 @@ angular.module('proton.core')
                 .then((pass) => {
                     const keyPromises = _.map(addresses, ({ Email, ID } = {}) => {
                         return pmcw
-                            .generateKeysRSA(`<${Email}>`, pass, numBits)
+                            .generateKeysRSA(`${Email}`, pass, numBits)
                             .then(({ privateKeyArmored }) => ({
                                 AddressID: ID,
                                 PrivateKey: privateKeyArmored
@@ -40,7 +40,7 @@ angular.module('proton.core')
 
             const promises = _.map(addresses, ({ Email, ID } = {}) => {
                 return pmcw
-                    .generateKeysRSA(`<${Email}>`, mailboxPassword, numBits)
+                    .generateKeysRSA(`${Email}`, mailboxPassword, numBits)
                     .then(({ privateKeyArmored }) => ({
                         AddressID: ID,
                         PrivateKey: privateKeyArmored
