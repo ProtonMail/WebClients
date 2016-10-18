@@ -185,6 +185,7 @@ angular.module('proton', [
     $state,
     $timeout,
     $window,
+    logoutManager, // Keep the logoutManager here to lunch it
     authentication,
     networkActivityTracker,
     CONSTANTS,

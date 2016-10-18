@@ -54,11 +54,6 @@ angular.module('proton.routes', [
                 controller: 'LoginController',
                 templateUrl: 'templates/views/unlock.tpl.html'
             }
-        },
-        onEnter($rootScope, $state, authentication) {
-            if (!$rootScope.isLoggedIn) {
-                authentication.logout(true);
-            }
         }
     })
 
@@ -68,11 +63,6 @@ angular.module('proton.routes', [
             'panel@login': {
                 controller: 'SetupController',
                 templateUrl: 'templates/views/setup.tpl.html'
-            }
-        },
-        onEnter($rootScope, $state, authentication) {
-            if (!$rootScope.isLoggedIn) {
-                authentication.logout(true);
             }
         },
         resolve: {
