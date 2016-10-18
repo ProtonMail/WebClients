@@ -62,7 +62,6 @@ angular.module('proton.message')
         },
         link(scope, element) {
             const unsubscribe = [];
-            const postMessageSupport = $.browser.msie !== true || $.browser.edge === true; // NOTE postMessage still broken on IE11
             initMessage();
 
             unsubscribe.push($rootScope.$on('message.open', (e, { type, data }) => {
@@ -258,26 +257,22 @@ angular.module('proton.message')
              * Print current message
              */
             scope.print = () => {
-                if (postMessageSupport) {
-                    const tab = $state.href('printer', { messageID: scope.message.ID }, { absolute: true });
-                    const url = window.location.href;
-                    const arr = url.split('/');
-                    const targetOrigin = arr[0] + '//' + arr[2];
-                    const sendMessage = (event) => {
-                        if (event.data === scope.message.ID) {
-                            const message = scope.message;
-                            const bodyDecrypted = element[0].querySelector('.bodyDecrypted');
+                const tab = $state.href('printer', { messageID: scope.message.ID }, { absolute: true });
+                const url = window.location.href;
+                const arr = url.split('/');
+                const targetOrigin = arr[0] + '//' + arr[2];
+                const sendMessage = (event) => {
+                    if (event.data === scope.message.ID) {
+                        const message = scope.message;
+                        const bodyDecrypted = element[0].querySelector('.bodyDecrypted');
 
-                            message.content = bodyDecrypted.innerHTML;
-                            event.source.postMessage(JSON.stringify(scope.message), targetOrigin);
-                            window.removeEventListener('message', sendMessage, false);
-                        }
-                    };
-                    window.addEventListener('message', sendMessage, false);
-                    window.open(tab, '_blank');
-                } else {
-                    window.print();
-                }
+                        message.content = bodyDecrypted.innerHTML;
+                        event.source.postMessage(JSON.stringify(scope.message), targetOrigin);
+                        window.removeEventListener('message', sendMessage, false);
+                    }
+                };
+                window.addEventListener('message', sendMessage, false);
+                window.open(tab, '_blank');
             };
 
             /**
