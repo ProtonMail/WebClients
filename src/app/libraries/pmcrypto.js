@@ -132,7 +132,7 @@ var pmcrypto = (function() {
                 return decode_utf8(decode_base64(data.message));
             }
             else {
-                return decode_utf8(decode_base64(data));   
+                return decode_utf8(decode_base64(data));
             }
         }
     }
