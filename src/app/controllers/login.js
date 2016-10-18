@@ -241,8 +241,8 @@ angular.module('proton.controllers.Auth', [
                             $state.go('login.setup');
                         })
                         .catch((error) => {
-                            authentication.logout(true);
                             notify({ message: error.message, classes: 'notification-danger' });
+                            $state.go('login');
                         });
                     } else if (result.data && result.data.AccessToken) {
 

@@ -781,15 +781,4 @@ angular.module('proton.authentication', [
 
         return deferred.promise;
     };
-
-    /**
-     * Logout current session
-     */
-    $rootScope.logout = function () {
-        eventManager.stop();
-        cache.reset();
-        cacheCounters.reset();
-        // Prevent autologin if we try to logout from the state: unlock
-        $state.go('login', { creds: undefined });
-    };
 });

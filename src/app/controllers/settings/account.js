@@ -5,6 +5,7 @@ angular.module('proton.controllers.Settings')
     $rootScope,
     $scope,
     $timeout,
+    $state,
     CONSTANTS,
     gettextCatalog,
     $q,
@@ -361,7 +362,7 @@ angular.module('proton.controllers.Settings')
                             .then((result) => {
                                 if (result.data && result.data.Code === 1000) {
                                     deleteAccountModal.deactivate();
-                                    $rootScope.logout();
+                                    $state.go('login');
                                 } else if (result.data && result.data.Error) {
                                     notify({ message: result.data.Error, classes: 'notification-danger' });
                                 }

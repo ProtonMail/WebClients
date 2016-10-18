@@ -581,7 +581,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             return Promise.reject({ message: 'Something went wrong during address creation' });
         })
         .catch((error) => {
-            authentication.logout(true);
+            $state.go('login');
             notify({ message: error.message, classes: 'notification-danger' });
             return Promise.reject();
         });
