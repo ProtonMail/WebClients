@@ -208,7 +208,7 @@ var pmcrypto = (function() {
                     passwords = [passwords];
                 }
                 options.passwords = passwords;
-            } 
+            }
             if (privKeys){
                 options.privateKeys = privKeys[0];
             }
@@ -309,7 +309,6 @@ var pmcrypto = (function() {
     //public keys optional, for verifying signature
     // returns an object { message, signature }
     function decryptMessage(encMessage, privKey, binary, sessionKeyAlgorithm, publicKeys) {
-
         return new Promise(function(resolve, reject) {
             if (encMessage === undefined || encMessage === '') {
                 return reject(new Error('Missing encrypted message'));
