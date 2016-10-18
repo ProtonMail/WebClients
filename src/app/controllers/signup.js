@@ -530,7 +530,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     };
 
     $scope.doLogUserIn = function (response) {
-        if (response.data.Code && response.data.Code === 1000) {
+        if (response.data && response.data.Code === 1000) {
             $scope.logUserIn = true;
             return authentication.loginWithCredentials({
                 Username: $scope.account.Username,
@@ -547,7 +547,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             });
         }
 
-        Promise.reject(response.data.Error);
+        return Promise.reject(response.data.Error);
     };
 
     $scope.doAccountSetup = function () {
