@@ -131,7 +131,7 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                                 let decryptPromise;
                                 if (subuser) {
                                     decryptPromise = organizationKeyPromise
-                                    .then((orgKey) => pmcw.decryptMessage(key.Token, orgKey))
+                                    .then((orgKey) => pmcw.decryptMessage(key.Token, orgKey).data)
                                     .then((token) => pmcw.decryptPrivateKey(key.PrivateKey, token));
                                 }
                                 else {

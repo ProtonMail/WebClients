@@ -151,7 +151,7 @@ angular.module('proton.authentication', [
                     };
 
                     const decryptToken = function (token) {
-                        return pmcw.decryptMessage(token, organizationKey);
+                        return pmcw.decryptMessage(token, organizationKey).data;
                     };
 
                     const decryptKey = ({ key, password, address, index }) => {
