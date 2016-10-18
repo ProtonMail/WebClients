@@ -46,8 +46,7 @@ angular.module('proton.attachments')
         const decrypt = (attachment, pubKey, { key, algo } = {}) => {
             // create new Uint8Array to store decryted attachment
             let at = new Uint8Array(attachment);
-
-        // decrypt the att
+            // decrypt the att
             return pmcw
                 .decryptMessage(at, key, true, algo, pubKey)
                 .then(({ data }) => (at = null, data))
