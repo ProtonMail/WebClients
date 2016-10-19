@@ -101,6 +101,8 @@
                 <i class="fa fa-chevron-right"></i>
             </a>
         </span>
-        <paginator ng-hide="idDefined() && user.ViewLayout === 1" page="page" total-items="conversationCount()" items-per-page="elementPerPage" change="selectPage" />
+        <paginator
+            ng-hide="idDefined() && user.ViewLayout === 1"
+            total-items="conversationCount()"></paginator>
     </div>
 </nav>

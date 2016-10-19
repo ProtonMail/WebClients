@@ -27,6 +27,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
     AttachmentLoader,
     notify,
     embedded,
+    paginationModel,
     tools
 ) => {
     let unbindWatcherElements;
@@ -44,7 +45,6 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
         $scope.conversationsPerPage = authentication.user.NumMessagePerPage;
         $scope.labels = authentication.user.Labels;
         $scope.messageButtons = authentication.user.MessageButtons;
-        $scope.elementPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
         $scope.selectedFilter = $stateParams.filter;
         $scope.selectedOrder = $stateParams.sort || '-date';
         $scope.page = parseInt($stateParams.page || 1, 10);
@@ -203,10 +203,10 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
                     $scope.$applyAsync(() => {
                         $scope.markedElement = $scope.conversations[index - 1];
                     });
-                    scrollToConversationPos();
-                } else {
-                    goToPage($scope.page - 1);
+                    return scrollToConversationPos();
                 }
+
+                goToPage('previous');
             }
         }, false));
 
@@ -218,10 +218,10 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
                     $scope.$applyAsync(() => {
                         $scope.markedElement = $scope.conversations[index + 1];
                     });
-                    scrollToConversationPos();
-                } else {
-                    goToPage($scope.page + 1);
+                    return scrollToConversationPos();
                 }
+
+                goToPage('next');
             }
         }, false));
 
@@ -260,10 +260,6 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
 
         $rootScope.$broadcast('updatePageName');
     }
-
-    $scope.selectPage = function (page) {
-        goToPage(page);
-    };
 
     $scope.conversationCount = function () {
         const context = tools.cacheContext();
@@ -758,18 +754,11 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
      * Switch to an other page
      * @param {Integer} page
      */
-    function goToPage(page) {
-        const route = 'secured.' + $scope.mailbox;
-
+    function goToPage(type = 'to') {
         $scope.unselectAllElements();
-        $scope.page = page;
-
-        if (page > 0 && $scope.conversationCount() > ((page - 1) * $scope.conversationsPerPage)) {
-            $state.go(route, _.extend({}, $state.params, {
-                page: (page === 1) ? undefined : page,
-                id: undefined
-            }));
-        }
+        paginationModel.setMaxPage($scope.conversationCount());
+        $scope.page = $stateParams.page || 1;
+        paginationModel[type]();
     }
 
 
