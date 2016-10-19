@@ -18,7 +18,7 @@
                             <button class="pm_button pull-left" ng-click="clearLogs()" translate-context="Action" translate>Wipe</button>
                             <button class="pm_button pull-left" ng-click="downloadLogs()" translate-context="Action" translate>Download</button>
                             <span ng-show="(logCount > logItemsPerPage)">
-                                <paginator page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs" />
+                                <paginator-scope page="currentLogPage" total-items="logCount" items-per-page="logItemsPerPage" change="loadLogs" />
                             </span>
                         </div>
                         <div class="pm_buttons pull-left">
