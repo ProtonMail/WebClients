@@ -2,6 +2,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
 .controller('SignupController', (
     $http,
+    $exceptionHandler,
     $location,
     $log,
     $q,
@@ -31,7 +32,6 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     User
 ) => {
     let childWindow;
-
     function initialization() {
 
         $scope.keyPhase = CONSTANTS.KEY_PHASE;
@@ -237,23 +237,17 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         .then($scope.doGetUserInfo)
         .then($scope.finishRedirect)
         .catch((err) => {
-
-            $log.error(err);
-
             let msg = err;
 
             if (typeof msg !== 'string') {
                 msg = gettextCatalog.getString('Something went wrong', null, 'Error');
             }
 
-            notify({
-                classes: 'notification-danger',
-                message: msg
-            });
+            notify({ classes: 'notification-danger', message: msg });
             $scope.signupError = true;
+            $exceptionHandler(err);
         });
     };
-
     $scope.checking = function () {
 
         if ($scope.account.notificationEmail) {
