@@ -5,7 +5,7 @@
             <nav id="pm_toolbar" class="pm_toolbar">
                 <div class="pull-right">
                     <span class="pull-right" ng-show="contacts.length > 0">
-                        <paginator page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
+                        <paginator-scope page="currentPage" total-items="totalItems" items-per-page="numPerPage" change="selectPage" />
                     </span>
                     <a class="pm_button deleteAll" ng-click="deleteAllContacts()">
                         <i class="fa fa-ban"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Delete all</span>
