@@ -192,7 +192,14 @@ angular.module('proton.composer')
 
                             case 'focus.first':
                                 scope.$applyAsync(() => {
-                                    scope.messages.length && focusComposer(el[0].querySelector('.composer'));
+                                    if (scope.messages.length) {
+                                        /*
+                                            Can come from a deffered promise and before the actual new composer
+                                            is rendered if you click compose too fast
+                                         */
+                                        const composer = el[0].querySelector('.composer');
+                                        composer && focusComposer(composer);
+                                    }
                                 });
                                 break;
 
