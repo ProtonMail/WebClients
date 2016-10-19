@@ -91,19 +91,7 @@
     </div>
 
     <div class="footer">
-        <div class="wrap">
-            <div class="link" ng-show="user.Role === 0 || user.Role === 2">
-                <a ui-sref="secured.dashboard">
-                    <span translate translate-context="Action">Upgrade storage</span>
-                </a>
-            </div>
-            <div class="storage text-center">
-                <strong title="Storage" ng-bind="storageString()"></strong>
-            </div>
-            <div class="bar">
-                <em ng-style="storageStyle()"></em>
-            </div>
-        </div>
+        <storage-progress class="wrap"></storage-progress>
         <a href="https://protonmail.com/blog/protonmail-v3-5-release-notes/" target="_blank" class="version" title="{{ dateVersion }}" target="_blank">v{{ appVersion }}</a>
     </div>
 

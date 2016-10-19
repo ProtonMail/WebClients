@@ -1,0 +1,13 @@
+<div class="storageProgress-container">
+    <div class="link" ng-if="organization.PlanName !== 'visionary'">
+        <a ui-sref="secured.dashboard">
+            <span translate translate-context="Action">Upgrade storage</span>
+        </a>
+    </div>
+    <div class="storage text-center">
+        <strong title="Storage">{{ storageValue() }}</strong>
+    </div>
+    <div class="bar">
+        <em ng-style="storageStyle()"></em>
+    </div>
+</div>
