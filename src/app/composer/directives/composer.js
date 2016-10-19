@@ -70,7 +70,11 @@ angular.module('proton.composer')
             replace: true,
             templateUrl: 'templates/directives/composer/composer.tpl.html',
             link(scope, el) {
-                const onDragEnter = () => addDragenterClassName(el[0]);
+                const onDragEnter = ({ originalEvent }) => {
+                    if (attachmentFileFormat.isUploadAbleType(originalEvent)) {
+                        addDragenterClassName(el[0]);
+                    }
+                };
                 const onDragLeave = _.debounce(({ target }) => {
                     target.classList.contains('composer-dropzone') && addDragleaveClassName(el[0]);
                 }, 16);
