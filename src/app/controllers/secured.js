@@ -37,18 +37,6 @@ angular.module('proton.controllers.Secured', [])
     $scope.organization = organization;
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
-    $scope.settingsRoutes = [
-        { value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard', null, 'Title') },
-        { value: 'secured.account', label: gettextCatalog.getString('Account', null, 'Title') },
-        { value: 'secured.labels', label: gettextCatalog.getString('Labels', null, 'Title') },
-        { value: 'secured.security', label: gettextCatalog.getString('Security', null, 'Title') },
-        { value: 'secured.dashboard', label: gettextCatalog.getString('Dashboard', null, 'Title') },
-        { value: 'secured.appearance', label: gettextCatalog.getString('Appearance', null, 'Title') },
-        { value: 'secured.domains', label: gettextCatalog.getString('Domains', null, 'Title') },
-        { value: 'secured.members', label: gettextCatalog.getString('Users', null, 'Title') },
-        { value: 'secured.payments', label: gettextCatalog.getString('Payments', null, 'Title') },
-        { value: 'secured.filters', label: gettextCatalog.getString('Filters', null, 'Title') }
-    ];
 
     // Set language used for the application
     gettextCatalog.setCurrentLanguage(authentication.user.Language);
@@ -229,18 +217,6 @@ angular.module('proton.controllers.Secured', [])
     $scope.goTo = function (route) {
         if (angular.isDefined(route)) {
             $state.go(route);
-        }
-    };
-
-    /**
-     * Initialize select
-     */
-    $scope.initSettingRoute = function () {
-        const current = $state.$current.name;
-        const route = _.findWhere($scope.settingsRoutes, { value: current });
-
-        if (angular.isDefined(route)) {
-            $scope.currentSettingRoute = route;
         }
     };
 
