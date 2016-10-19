@@ -147,7 +147,7 @@ angular.module('proton.composer')
                     const message = findMessagePerComposer(scope.messages, composer);
                     const length = scope.messages.length;
 
-                    if (message.focussed) {
+                    if (!length || message.focussed) {
                         return;
                     }
 
