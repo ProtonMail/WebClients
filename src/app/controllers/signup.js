@@ -2,7 +2,6 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
 .controller('SignupController', (
     $http,
-    $exceptionHandler,
     $location,
     $log,
     $q,
@@ -245,7 +244,6 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
             notify({ classes: 'notification-danger', message: msg });
             $scope.signupError = true;
-            $exceptionHandler(err);
         });
     };
     $scope.checking = function () {
