@@ -235,6 +235,7 @@ angular.module('proton.conversation')
                     $rootScope.$emit('message.open', {
                         type: 'toggle',
                         data: {
+                            action: 'openMarked',
                             message: scope.markedMessage
                         }
                     });
@@ -356,6 +357,7 @@ angular.module('proton.conversation')
                 messages = $filter('filterMessages')(messagesCached, scope.showTrashed, scope.showNonTrashed);
 
                 if (messages.length > 0) {
+
                     // Reset status
                     const list = _.map(cache.orderMessage(messages, false), (msg) => {
                         delete msg.expand;

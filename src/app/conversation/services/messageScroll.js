@@ -10,6 +10,7 @@ angular.module('proton.conversation')
          * @return {void}
          */
         function scroll(index, nodeMessage) {
+
             const $header = document.getElementById('conversationHeader');
             const $thread = document.getElementById('pm_thread');
 
@@ -17,7 +18,6 @@ angular.module('proton.conversation')
             if (index === 0) {
                 return $($thread).animate({ scrollTop: 0 }, 200);
             }
-
 
             const node = nodeMessage || document.getElementById(`message${index}`);
 
@@ -46,7 +46,7 @@ angular.module('proton.conversation')
          * @param  {Message} options.message
          * @return {Object}
          */
-        const to = ({ index, message }) => {
+        const to = ({ index, message, node }) => {
 
             // Should we have a promise of scroll ?
             if (config.ID) {
@@ -54,7 +54,7 @@ angular.module('proton.conversation')
                 return (config = {});
             }
 
-            scroll(index);
+            scroll(index, node);
         };
 
         /**

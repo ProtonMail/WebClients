@@ -73,6 +73,15 @@ angular.module('proton.message')
                 switch (type) {
                     case 'toggle':
                         openMessage(data);
+
+                        // Coming from hotkeys
+                        if (data.action) {
+                            return messageScroll.to({
+                                index: scope.index,
+                                message: scope.message,
+                                node: element[0]
+                            });
+                        }
                         // Record the message to scroll to it when it's ready
                         messageScroll.willScroll(data.message.ID, data.expand);
                         break;
