@@ -438,13 +438,13 @@ angular.module('proton.authentication', [
                         ClientID: CONFIG.clientID,
                         ClientSecret: CONFIG.clientSecret
                     },
-                    creds
+                    creds,
+                    initialInfoResponse
                 ).then((resp) => {
                     deferred.resolve(resp);
                     // Upgrade users to the newest auth version
                     if (resp.authVersion < passwords.currentAuthVersion) {
-                        srp
-                            .getPasswordParams(creds.Password)
+                        srp.getPasswordParams(creds.Password)
                             .then((data) => {
                                 const headers = {
                                     Authorization: `Bearer ${resp.data.ResetToken}`,
