@@ -33,4 +33,4 @@ angular.module('proton.filters')
 
             return fillContact(Name, Address) || `${Name} <${Address}>`;
         };
-    })
+    });
