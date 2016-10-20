@@ -246,12 +246,12 @@ var pmcrypto = (function() {
             if ( Array.isArray( key ) ) {
                 // Pick correct key
                 if ( key.length  == 0 ) {
-                    reject(new Error('Empty key array'));
+                    return reject(new Error('Empty key array'));
                 }
 
                 var encryptionKeyIds = _encMessage.getEncryptionKeyIds();
                 if (!encryptionKeyIds.length) {
-                    reject(new Error('Nothing to decrypt'));
+                    return reject(new Error('Nothing to decrypt'));
                 }
                 var privateKeyPacket = null;
                 for( var i = 0; i<key.length; i++ ) {
@@ -262,7 +262,7 @@ var pmcrypto = (function() {
                     }
                 }
                 if ( privateKeyPacket == null ) {
-                    reject(new Error('No appropriate private key found.'));
+                    return reject(new Error('No appropriate private key found.'));
                 }
             }
 
@@ -347,8 +347,7 @@ var pmcrypto = (function() {
 
         return new Promise(function(resolve, reject) {
 
-            if ( Object.prototype.toString.call(prKeyPassCode) != '[object String]' 
-                || prKeyPassCode === '' ) {
+            if ( Object.prototype.toString.call(prKeyPassCode) != '[object String]' || prKeyPassCode === '' ) {
                 return reject(new Error('Missing private key passcode'));
             }
 
@@ -360,9 +359,7 @@ var pmcrypto = (function() {
                 return reject(new Error('Not a private key'));
             }
 
-            if( prKey.primaryKey === null 
-                || prKey.subKeys === null 
-                || prKey.subKeys.length === 0 ) {
+            if( prKey.primaryKey === null || prKey.subKeys === null || prKey.subKeys.length === 0 ) {
                 return reject(new Error('Missing primary key or subkey'));
             }
 
