@@ -5,7 +5,7 @@ angular.module('proton.filters')
 
         const getContactFromUser = (nameContact, Address) => {
             const { Name = '', Email } = getContact(Address);
-            if (angular.isString(Name) && Name !== Email) {
+            if (Name && Name !== Email) {
                 return Name;
             }
             return nameContact || Address;
