@@ -1,12 +1,13 @@
 .proton-embedded {
 	max-width: 100%;
 	position: relative;
+	display: block;
 
-	/* ALT with CSS for broken/not loaded state*/
-
-  	position: relative;
-  	display: block;
-  	margin: 10px 0px 30px;
+	&:before {
+		display:block;
+	  	position: relative;
+		height:45px;
+	}
 
 	&:after {
 	  content: " " attr(alt);
