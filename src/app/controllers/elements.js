@@ -816,7 +816,13 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
         $scope.markedElement = element;
 
         if (sameView) {
-            $rootScope.$emit('message.open', { type: 'toggle', data: { message: element } });
+            $rootScope.$emit('message.open', {
+                type: 'toggle',
+                data: {
+                    message: element,
+                    action: 'openElement'
+                }
+            });
         } else {
             $state.go(route + '.element', params);
         }
