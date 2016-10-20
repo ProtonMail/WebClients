@@ -466,12 +466,9 @@ angular.module('proton.embedded', [])
          * @return {String} cid
          */
         generateCid(input, email) {
-            const hash = tools.hash(input).toString();
-            const encoded = window.btoa(hash);
+            const hash = tools.hash(input).toString(16);
             const domain = email.split('@')[1];
-            const cid = `${encoded}@${domain}`;
-
-            return cid;
+            return `${hash}@${domain}`;
         }
     };
 
