@@ -150,7 +150,7 @@ angular.module('proton.core')
                     authentication.savePassword(passwordComputed);
                 })
                 .catch((error) => {
-                    return Promise.reject(error.error_description || error);
+                    return Promise.reject(error);
                 }));
         };
     });

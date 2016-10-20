@@ -345,8 +345,8 @@ angular.module('proton.controllers.Auth', [
             return;
         }
 
-        srp
-            .info($scope.username)
+        networkActivityTracker.track(
+            srp.info(usernameLowerCase)
             .then((resp) => {
                 $scope.initialInfoResponse = resp;
                 if (resp.data.TwoFactor === 0) {
@@ -358,8 +358,9 @@ angular.module('proton.controllers.Auth', [
                     $timeout(selectTwoFactor, 100, false);
                 }
             }, (error) => {
-                console.log(error);
-            });
+                return Promise.reject(error);
+            })
+        );
     };
 
     $scope.enterTwoFactor = function () {

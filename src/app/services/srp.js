@@ -1,7 +1,6 @@
 angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
 .factory('srp', (
     $http,
-    $q,
     CONFIG,
     webcrypto,
     passwords,
@@ -159,14 +158,14 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
         }
 
         if (authVersion < 3 && !angular.isDefined(creds.Username)) {
-            return $q.reject({
+            return Promise.reject({
                 error_description: 'An unexpected error has occurred. Please log out and log back in to fix it.'
             });
         }
 
         if (authVersion === 2 && passwords.cleanUserName(creds.Username) !== passwords.cleanUserName(infoResp.data.UserName) ||
             authVersion <= 1 && creds.Username.toLowerCase() !== infoResp.data.UserName.toLowerCase()) {
-            return $q.reject({
+            return Promise.reject({
                 error_description: 'Please login with your ProtonMail username. You will be able to use your email for future logins.'
             });
         }
@@ -186,7 +185,7 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
             );
 
             if (proofs.Type !== 'Success') {
-                return $q.reject({
+                return Promise.reject({
                     error_description: proofs.Description
                 });
             }
@@ -207,26 +206,26 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
 
             return $http(httpReq);
         }, (err) => {
-            return $q.reject({
+            return Promise.reject({
                 error_description: err.message
             });
         }).then(
             (resp) => {
                 if (resp.data.Code !== 1000) {
-                    return $q.reject({
+                    return Promise.reject({
                         error_description: resp.data.Error,
                         usedFallback: useFallback
                     });
                 } else if (pmcrypto.encode_base64(pmcrypto.arrayToBinaryString(proofs.ExpectedServerProof)) === resp.data.ServerProof) {
-                    return $q.resolve(_.extend(resp, { authVersion }));
+                    return Promise.resolve(_.extend(resp, { authVersion }));
                 } else {
-                    return $q.reject({
+                    return Promise.reject({
                         error_description: 'Invalid server authentication'
                     });
                 }
             },
             (error) => {
-                return $q.reject(error);
+                return Promise.reject(error);
             }
         );
     }
@@ -234,7 +233,7 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
     function randomVerifier(password) {
         return $http.get(url.get() + '/auth/modulus').then((resp) => {
             if (resp.data.Code !== 1000) {
-                return $q.reject({
+                return Promise.reject({
                     error_description: resp.data.Error
                 });
             }
@@ -257,6 +256,7 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
     }
 
     function authInfo(Username) {
+        console.trace();
         return $http
             .post(url.get() + '/auth/info', {
                 Username,
@@ -265,7 +265,7 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
             })
             .then((resp) => {
                 if (resp.data.Code !== 1000) {
-                    return $q.reject({
+                    return Promise.reject({
                         error_description: resp.data.Error
                     });
                 }
@@ -294,13 +294,13 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
             if (err.usedFallback === true && passwords.cleanUserName(creds.Username) !== creds.Username.toLowerCase()) {
                 return tryRequest(method, endpoint, req, creds, headers, 1);
             }
-            return $q.reject(err);
+            return Promise.reject(err);
         });
         ret = ret.catch((err) => {
             if (err.usedFallback === true) {
                 return tryRequest(method, endpoint, req, creds, headers, 0);
             }
-            return $q.reject(err);
+            return Promise.reject(err);
         });
         return ret;
     }
