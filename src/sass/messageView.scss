@@ -65,6 +65,10 @@
         margin: 10px;
         box-sizing: border-box;
         clear: both;
+
+        &.errorDecryption [class*="message-actionBtn-"] { display: none }
+        &.errorDecryption .pm_trigger { border-left: 0 }
+
         & > div.summary,
         & > div.details {
             float: left;

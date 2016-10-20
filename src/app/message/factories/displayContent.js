@@ -1,9 +1,9 @@
 angular.module('proton.message')
     .factory('displayContent', ($rootScope, $q, $filter, prepareContent) => {
+
         function decrypt(message) {
             message.decrypting = true;
-            return message
-                .clearTextBody()
+            return message.clearTextBody()
                 .then((body) => (message.decrypting = false, body));
         }
 
@@ -66,18 +66,16 @@ angular.module('proton.message')
         }
 
         return (message, body) => {
+
             if (body) {
                 read(message);
                 return $q.when(withType(body, message));
             }
 
             return decrypt(message)
-                .then((body) => { return (message.IsEncrypted === 8) ? parse(body) : withType(body, message); })
+                .then((body) => ((message.IsEncrypted === 8) ? parse(body) : withType(body, message)))
                 .then((content) => clean(content))
                 .then((content) => prepare(content, message))
-                .then((content) => {
-                    read(message);
-                    return content;
-                });
+                .then((content) => (read(message), content));
         };
     });

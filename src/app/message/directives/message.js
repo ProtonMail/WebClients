@@ -162,24 +162,13 @@ angular.module('proton.message')
                 promise.then(({ type, body }) => {
                     scope.message.expand = true;
                     scope.message.isPlain = (type === 'plain');
-
                     if (type && body) {
                         scope.message.viewMode = 'html';
                         scope.body = body;
                     }
-
-                    // // Wait for the message view to be compiled
-                    // scope.$applyAsync(() => {
-                    //     $rootScope.$emit('message.open', {
-                    //         type: 'render',
-                    //         data: {
-                    //             message: scope.message,
-                    //             index: scope.index
-                    //         }
-                    //     });
-                    // });
                 })
                 .catch(() => {
+                    scope.message.expand = true;
                     scope.message.viewMode = 'plain';
                 });
             }
