@@ -379,40 +379,28 @@ angular.module('proton.controllers.Settings')
                 title,
                 message,
                 confirm() {
-                    const unsubscribe = function () {
-                        const deferred = $q.defer();
-
-                        Payment.delete()
+                    const unsubscribe = () => {
+                        return Payment.delete()
                         .then((result) => {
-                            if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                                deferred.resolve();
-                            } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                                deferred.reject(new Error(result.data.Error));
-                            } else {
-                                deferred.reject(new Error(gettextCatalog.getString('Error processing payment.', null, 'Error')));
+                            if (result.data && result.data.Code === 1000) {
+                                return Promise.resolve();
+                            } else if (result.data && result.data.Error) {
+                                return Promise.reject(result.data.Error);
                             }
+                            return Promise.reject(gettextCatalog.getString('Error processing payment.', null, 'Error'));
                         },
-                            () => {
-                                deferred.reject();
-                            }
-                        );
-
-                        return deferred.promise;
+                        (error) => {
+                            Promise.reject(error);
+                        });
                     };
 
-                    const finish = function () {
+                    const finish = () => {
                         $scope.refresh();
                         confirmModal.deactivate();
                         notify({ message: gettextCatalog.getString('You have successfully unsubscribed', null), classes: 'notification-success' });
                     };
 
-                    networkActivityTracker.track(
-                        unsubscribe()
-                        .then(finish)
-                        .catch(() => {
-                            // notify({message: error.message, classes: 'notification-danger'});
-                        })
-                    );
+                    networkActivityTracker.track(unsubscribe().then(finish));
                 },
                 cancel() {
                     confirmModal.deactivate();

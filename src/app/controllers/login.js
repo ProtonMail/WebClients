@@ -261,9 +261,7 @@ angular.module('proton.controllers.Auth', [
                     } else if (result.data && result.data.Code === 5003) {
                         // Nothing
                     } else if (result.data && result.data.Error) {
-
-                        // TODO: This might be buggy
-                        const error = (angular.isDefined(result.data.ErrorDescription) && result.data.ErrorDescription.length) ? result.data.ErrorDescription : result.data.Error;
+                        const error = (result.data.ErrorDescription) ? result.data.ErrorDescription : result.data.Error;
 
                         notify({ message: error, classes: 'notification-danger' });
                     } else {
