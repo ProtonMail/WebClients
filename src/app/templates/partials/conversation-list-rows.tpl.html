@@ -7,9 +7,11 @@
         active: active(conversation),
         marked: conversation.ID === markedElement.ID,
         hasLabels: (conversation.LabelIDs | labels).length > 0,
-        read: conversation.NumUnread === 0 || conversation.IsRead === 1
+        read: conversation.NumUnread === 0 || conversation.IsRead === 1,
+        hasAttachments: (conversation.NumAttachments > 0),
+        expiring: (conversation.ExpirationTime > 0)
     }" ng-click="click($event, conversation)">
-        <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
+        <span class="expiration"><i class="fa fa-clock-o"></i></span>
         <pt-select-conversation data-index="{{ $index }}"></pt-select-conversation>
         <pt-star
             data-model="conversation"
@@ -29,7 +31,7 @@
         </span>
         <div class="subject">
             <h4 ng-attr-title="{{ conversation.Subject | unescape }}">
-                <states-conversation conversation="conversation"></states-conversation>
+                <states-conversation></states-conversation>
                 <folders-element conversation="conversation"></folders-element>
                 <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 {{ conversation.Subject  | unescape }}
@@ -37,7 +39,7 @@
             <labels-element element="conversation"></labels-element>
         </div>
         <span class="size">{{ size(conversation)| bytes }}</span>
-        <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
+        <i class="fa fa-paperclip conversation-icon-attachment"></i>
         <em class="time">{{ time(conversation) | readableTime }}</em>
     </div>
 </div>

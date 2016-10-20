@@ -15,20 +15,18 @@
             expiring: (conversation.ExpirationTime > 0)
         }"
         ng-click="click($event, conversation)">
-        <span class="expiration" ng-show="conversation.ExpirationTime > 0"><i class="fa fa-clock-o"></i></span>
+        <span class="expiration"><i class="fa fa-clock-o"></i></span>
 
-        <pt-select-conversation
-            data-index="{{ $index }}"
-            data-model="conversation"></pt-select-conversation>
+        <pt-select-conversation data-index="{{ $index }}"></pt-select-conversation>
         <div class="row top">
             <h4 class="subject">
-                <states-conversation conversation="conversation"></states-conversation>
+                <states-conversation></states-conversation>
                 <folders-element conversation="conversation"></folders-element>
                 <span ng-show="conversation.NumMessages > 1">({{ conversation.NumMessages }})</span>
                 {{ conversation.Subject | unescape }}
             </h4>
             <span class="meta">
-                <i class="fa fa-paperclip" ng-class="{ 'show': conversation.NumAttachments > 0 }"></i>
+                <i class="fa fa-paperclip conversation-icon-attachment"></i>
                 <pt-star
                   data-model="conversation"
                   class="singleStar"></pt-star>

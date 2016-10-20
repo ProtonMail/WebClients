@@ -3,7 +3,6 @@ angular.module('proton.conversation')
     return {
         restrict: 'E',
         replace: true,
-        scope: { conversation: '=' },
         template: `
             <i class="fa" ng-class="{
                 'fa-mail-reply': conversation.IsReplied,
