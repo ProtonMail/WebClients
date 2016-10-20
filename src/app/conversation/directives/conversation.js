@@ -290,7 +290,7 @@ angular.module('proton.conversation')
                         thisOne = _.last(messages);
                         break;
 
-                    case $stateParams.messageID:
+                    case !!$stateParams.messageID:
                         thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
                         break;
 
@@ -316,31 +316,38 @@ angular.module('proton.conversation')
                             break;
                         }
 
-                        const withoutDraft = messages.filter(({ Type }) => Type !== CONSTANTS.DRAFT);
+                        /**
+                         * Filter the list of message to find the first readable message
+                         * - iterate backwards
+                         * - check if the previous item is read
+                         * - if the previous isRead === 1, break the iteration
+                         * @return {Ressoure}
+                         */
+                        const getMessage = () => {
+                            const withoutDraft = messages.filter(({ Type }) => Type !== CONSTANTS.DRAFT);
 
-                        // Else we open the first message unread beginning to the end list
-                        let loop = true;
-                        let index = withoutDraft.length - 1;
+                            // Else we open the first message unread beginning to the end list
+                            let index = withoutDraft.length;
+                            let contains = false;
 
-                        while (loop === true && index > 0) {
-                            index--;
-
-                            if (withoutDraft[index].IsRead === 1) { // Is read
-                                loop = false;
-                                index++;
+                            while (--index > 0) {
+                                if (withoutDraft[index - 1].IsRead === 1) { // Is read
+                                    contains = true;
+                                    break;
+                                }
                             }
-                        }
 
-                        if (loop) { // No message read found
-                            index = 0;
-                        }
+                            const position = contains ? index : 0;
+                            // A conversation can contains only one draft
+                            return withoutDraft.length ? withoutDraft[position] : messages[0];
+                        };
 
-                        thisOne = withoutDraft[index];
+                        thisOne = getMessage();
                         break;
                     }
                 }
 
-                thisOne.openMe = true;
+                messages.length && (thisOne.openMe = true);
 
                 return messages;
             }
