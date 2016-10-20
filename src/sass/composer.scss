@@ -44,6 +44,11 @@
           line-height: $composerRowHeight;
         }
 
+        .composer-meta:not(.composer-toggle-ccbcc) .ccRow,
+        .composer-meta:not(.composer-toggle-ccbcc) .bccRow {display: none}
+        .ccRow .composerInputMeta-overlay-button,
+        .bccRow .composerInputMeta-overlay-button { display: none }
+
         .row{
           display: -webkit-flex; /* ipad */
           display: flex;

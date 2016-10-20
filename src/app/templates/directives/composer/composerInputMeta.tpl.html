@@ -1,0 +1,30 @@
+<div class="composerInputMeta-container" ng-class="{'composerInputMeta-recipients': containsRecipient(), 'composerInputMeta-overlay-hidden': message.autocompletesFocussed || containsInvalid(message) }">
+
+    <div class="composerInputMeta-overlay">
+        <label
+            class="composerInputMeta-overlay-label"
+            translate
+            translate-context="Title">Recipients</label>
+        <div class="composerInputMeta-overlay-list">{{ message | recipients }}</div>
+    </div>
+
+    <label
+        to="composerAutocompleteTo"
+        class="composerInputMeta-label"
+        translate
+        translate-context="Title">To</label>
+    <autocomplete-emails
+        class="composerInputMeta-autocomplete"
+        data-name="composerAutocompleteTo"
+        data-emails="message.ToList"></autocomplete-emails>
+
+    <button
+        class="pm_button link composerInputMeta-overlay-button"
+        ng-class="{'fa-rotate-180': message.ccbcc}"
+        tabindex="-1"
+        pt-tooltip-translate="CC BCC"
+        pt-placement="left"
+        pt-tooltip-translate-context="Action">
+        <i class="fa fa-angle-down"></i>
+    </button>
+</div>

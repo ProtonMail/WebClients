@@ -84,7 +84,7 @@
     </div>
 
 
-    <div class="meta">
+    <div class="meta composer-meta" ng-class="{'composer-toggle-ccbcc': message.ccbcc}">
         <div class="row fromRow">
             <label translate translate-context="Title">From</label>
             <select class="flex" ng-model="message.From" ng-options="address.Email for address in addresses | filter: {Status: 1, Receive: 1} | orderBy: 'Send'" ng-disabled="message.Attachments.length > 0"  ng-change="changeFrom(message)" ng-mousedown="setFocusFrom($event)"></select>
@@ -94,40 +94,25 @@
             <span class="overlay" ng-click="disabledNotify()" ng-show="message.Attachments.length > 0" translate=""></span>
         </div>
 
-        <composer-emails-placeholder></composer-emails-placeholder>
+        <composer-input-meta
+            data-model="message"
+            data-label="To"
+            data-key="ToList"
+            class="row toRow"></composer-input-meta>
 
-        <div
-            class="row toRow"
-            ng-show="emailsAreValid(message) === false || message.autocompletesFocussed === true">
-            <label
-                ng-click="focusNextInput($event)"
-                translate
-                translate-context="Title">To</label>
-            <autocomplete-emails data-emails="message.ToList"></autocomplete-emails>
+        <composer-input-meta
+            data-model="message"
+            data-label="CC"
+            data-key="CCList"
+            class="row ccRow"></composer-input-meta>
 
-            <button
-                class="pm_button link"
-                tabindex="-1"
-                ng-click="toggleCcBcc(message)"
-                pt-tooltip-translate="CC BCC"
-                pt-placement="left"
-                pt-tooltip-translate-context="Action">
-                <i class="fa fa-angle-down" ng-class="{'fa-rotate-180': message.ccbcc === true}"></i>
-            </button>
-        </div>
-        <div class="row" ng-show="message.ccbcc === true && (emailsAreValid(message) === false || message.autocompletesFocussed === true)">
-            <label ng-click="focusNextInput($event)" translate translate-context="Title">CC</label>
-            <autocomplete-emails data-emails="message.CCList"></autocomplete-emails>
-        </div>
-        <div class="row" ng-show="message.ccbcc === true && (emailsAreValid(message) === false || message.autocompletesFocussed === true)">
-            <label ng-click="focusNextInput($event)" translate translate-context="Title">BCC</label>
-            <autocomplete-emails data-emails="message.BCCList"></autocomplete-emails>
-        </div>
+        <composer-input-meta
+            data-model="message"
+            data-label="BCC"
+            data-key="BCCList"
+            class="row bccRow"></composer-input-meta>
 
-        <div class="row subjectRow">
-
-            <input type="text" title="Subject" class="flex subject" placeholder-translate="Subject" ng-focus="onFocusSubject(message)" ng-model="message.Subject" ng-model-options="{updateOn: 'blur'}" ng-keydown="$event.which === 9 && focusEditor(message, $event)" ng-change="saveLater(message)" required />
-        </div>
+        <composer-subject class="row subjectRow"></composer-subject>
     </div>
     <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
         <div class="composeEditor fill">

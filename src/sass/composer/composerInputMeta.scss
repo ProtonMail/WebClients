@@ -1,0 +1,39 @@
+.composerInputMeta-container {
+    position: relative;
+    max-height: 32px;
+    overflow: hidden
+}
+
+
+.composerInputMeta-overlay {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    background: white;
+    color: #333;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.composerInputMeta-overlay-label {color: #ccc }
+.composerInputMeta-overlay-list {
+    padding-right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.composerInputMeta-container .composerInputMeta-overlay-button {z-index: 2}
+
+.composerInputMeta-recipients .composerInputMeta-overlay-label {display: none}
+.composerInputMeta-overlay-hidden .composerInputMeta-overlay {
+    visibility: hidden;
+    pointer-events: none
+}
+.composerInputMeta-container.composerInputMeta-overlay-hidden {
+    max-height: 100%;
+    overflow: inherit;
+}

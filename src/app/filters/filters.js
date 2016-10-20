@@ -1,4 +1,4 @@
-angular.module('proton.filters', [])
+angular.module('proton.filters')
 
 .filter('delay', (gettextCatalog) => {
     return function (input) {
@@ -246,34 +246,6 @@ angular.module('proton.filters', [])
             cmps.push(hours + ' hours');
         }
         return cmps.join(' and ');
-    };
-})
-
-.filter('contact', (gettextCatalog, authentication) => {
-    return (contact, parameter) => {
-        const same = contact.Address === contact.Name;
-        const alone = angular.isUndefined(contact.Name) || contact.Name.length === 0;
-        const found = _.findWhere(authentication.user.Contacts, { Email: contact.Address });
-
-        if (parameter === 'Address') {
-            return '<' + contact.Address + '>';
-        } else if (parameter === 'Name') {
-            if (angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0 && found.Name !== found.Email) {
-                return found.Name;
-            } else if (angular.isDefined(contact.Name) && contact.Name.length > 0) {
-                return contact.Name;
-            }
-
-            return contact.Address;
-        }
-
-        if (same || alone) {
-            return contact.Address;
-        } else if (angular.isDefined(found) && angular.isString(found.Name) && found.Name.length > 0) {
-            return found.Name + ' <' + contact.Address + '>';
-        }
-
-        return contact.Name + ' <' + contact.Address + '>';
     };
 })
 
