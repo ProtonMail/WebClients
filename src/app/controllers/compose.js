@@ -209,13 +209,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         (type === 'remove.success') && recordMessage(data.message, false, true);
     }));
 
-    unsubscribe.push($scope.$on('subjectFocussed', (event, message) => {
-        const current = _.findWhere($scope.messages, { uid: message.uid });
-        current.autocompletesFocussed = false;
-        current.ccbcc = false;
-        current.attachmentsToggle = false;
-    }));
-
     const onResize = _.debounce(() => {
         $rootScope.$emit('composer.update', {
             type: 'refresh',
@@ -368,10 +361,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
 
     $scope.slideDown = (message) => {
         message.attachmentsToggle = !message.attachmentsToggle;
-    };
-
-    $scope.onFocusSubject = (message) => {
-        $rootScope.$broadcast('subjectFocussed', message);
     };
 
     $scope.isEmbedded = (attachment) => {
@@ -544,12 +533,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         message.editor.addEventListener('dragover', onDragOver);
 
     }
-
-    $scope.toggleCcBcc = (message) => {
-        message.ccbcc = !message.ccbcc;
-        message.autocompletesFocussed = true;
-        message.attachmentsToggle = false;
-    };
 
     $scope.togglePanel = (message, panelName) => {
         if (message.displayPanel === true) {
@@ -1220,9 +1203,8 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                     } else {
                         error = new Error(result.Error);
                     }
-
-                    deferred.reject(error);
-                    return $q.reject(error);
+                    error.code = result.Code;
+                    return Promise.reject(error);
                 }
 
                 return result;
@@ -1275,7 +1257,11 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 setStateSending(false);
                 message.encrypting = false;
                 dispatchMessageAction(message);
-                error.message = 'Sending failed, please try again';
+
+                if (error.code !== 15198) {
+                    error.message = 'Sending failed, please try again';
+                }
+
                 deferred.reject(error);
 
             });
@@ -1431,6 +1417,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
      * @return {String}
      */
     $scope.recipients = ({ ToList = [], CCList = [], BCCList = [] }) => {
+        console.trace('fer')
         const formatAddresses = (key) => (contact, index) => {
             const name = $filter('contact')(contact, 'Name');
 
@@ -1442,34 +1429,5 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
             .concat(CCList.map(formatAddresses(gettextCatalog.getString('CC', null, 'Title'))))
             .concat(BCCList.map(formatAddresses(gettextCatalog.getString('BCC', null, 'Title'))))
             .join(', ');
-    };
-
-    $scope.focusNextInput = (event) => {
-        angular
-            .element(event.target)
-            .parent()
-            .find('input')
-            .eq(0)
-            .focus();
-    };
-
-    /**
-     * Give the focus inside the content editor
-     * @param {Object} message
-     * @param {Object} event
-     */
-    $scope.focusEditor = (message, event) => {
-        event.preventDefault();
-        message.editor.focus();
-    };
-
-    /**
-     * Return if emails value has correct format
-     * @param {Object} message
-     * @return {Boolean}
-     */
-    $scope.emailsAreValid = (message) => {
-        const emails = message.ToList.concat(message.CCList).concat(message.BCCList);
-        return _.where(emails, { invalid: true }).length === 0;
     };
 });

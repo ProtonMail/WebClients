@@ -132,8 +132,39 @@ angular.module('proton.composer')
             }, 300);
         }
 
+        function renderFocusedComposer(scope, node) {
+            return (target, editor, keepState) => {
+                const { index, composer } = findFocusedComposer(node, target);
+                const message = findMessagePerComposer(scope.messages, composer);
+                const length = scope.messages.length;
+
+                if (!length || message.focussed) {
+                    return;
+                }
+
+                _.each(scope.messages, (msg, iteratee) => {
+                    msg.focussed = false;
+                    if (iteratee > index) {
+                        msg.zIndex = (length - (iteratee - index)) * 100;
+                    } else {
+                        msg.zIndex = length * 100;
+                    }
+                });
+
+                message.focussed = true;
+                message.editor = message.editor || editor;
+
+                scope.selected = message;
+                !keepState && (scope.selected.autocompletesFocussed = false);
+
+                return { composer, message };
+            };
+        }
+
         return {
             link(scope, el) {
+
+                const focusedMessage = renderFocusedComposer(scope, el[0]);
 
                 /**
                  * Find an focus the current composer
@@ -143,28 +174,7 @@ angular.module('proton.composer')
                  */
                 const focusComposer = (target, editor, isFocusEditor) => {
 
-                    const { index, composer } = findFocusedComposer(el[0], target);
-                    const message = findMessagePerComposer(scope.messages, composer);
-                    const length = scope.messages.length;
-
-                    if (!length || message.focussed) {
-                        return;
-                    }
-
-                    _.each(scope.messages, (msg, iteratee) => {
-                        msg.focussed = false;
-                        if (iteratee > index) {
-                            msg.zIndex = (length - (iteratee - index)) * 100;
-                        } else {
-                            msg.zIndex = length * 100;
-                        }
-                    });
-
-                    message.focussed = true;
-                    message.editor = message.editor || editor;
-
-                    scope.selected = message;
-                    scope.selected.autocompletesFocussed = false;
+                    const { composer, message } = focusedMessage(target, editor);
 
                     // It's coming from squire so let's focus it
                     if (isFocusEditor) {
@@ -174,7 +184,7 @@ angular.module('proton.composer')
                     customFocus(angular.element(composer), scope, editor || message.editor);
                 };
 
-                const onClick = ({ target }) => scope.$applyAsync(() => focusComposer(target));
+                const onClick = ({ target }) => scope.$applyAsync(() => focusedMessage(target, null, true));
 
                 const onOrientationChange = () => {
                     scope.$applyAsync(() => {
