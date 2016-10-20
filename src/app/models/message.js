@@ -355,12 +355,16 @@ angular.module('proton.models.message', ['proton.constants'])
                             this.failedDecryption = false;
                             deferred.resolve(result);
                         }, (err) => {
-                            this.DecryptedBody = this.Body;
+                            this.setDecryptedBody(this.Body, false);
                             this.failedDecryption = true;
+
+                            // We need to display the encrypted body to the user if it fails
+                            this.MIMEType = 'text/plain';
                             deferred.reject(err);
                         });
                     } catch (err) {
-                        this.DecryptedBody = this.Body;
+                        this.setDecryptedBody(this.Body, false);
+                        this.MIMEType = 'text/plain';
                         this.failedDecryption = true;
                         deferred.reject(err);
                     }
@@ -369,7 +373,7 @@ angular.module('proton.models.message', ['proton.constants'])
                     deferred.resolve(this.getDecryptedBody());
                 }
             } else {
-                this.DecryptedBody = this.Body;
+                this.setDecryptedBody(this.Body, false);
                 deferred.resolve(this.getDecryptedBody());
             }
 

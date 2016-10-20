@@ -2,6 +2,7 @@
     'last': last,
     'open': message.expand,
     'closed': !message.expand,
+    'errorDecryption': message.failedDecryption,
     'marked': message.ID === marked.ID,
     'read': message.IsRead === 1,
     'unread': message.IsRead === 0,
@@ -136,7 +137,7 @@
                 </span>
                 <span class="pm_buttons">
                     <a
-                        href="#"
+                        class="message-actionBtn-reply"
                         data-action-message="::message"
                         data-action-message-type="reply"
                         pt-tooltip-translate="Reply"
@@ -145,6 +146,7 @@
                         <i class="fa fa-mail-reply"></i>
                     </a>
                     <a
+                        class="message-actionBtn-replyall"
                         data-action-message="::message"
                         data-action-message-type="replyall"
                         pt-tooltip-translate="Reply all" pt-tooltip-translate-context="Action">
@@ -152,6 +154,7 @@
                     </a>
 
                     <a
+                        class="message-actionBtn-forward"
                         data-action-message="::message"
                         data-action-message-type="forward"
                         pt-tooltip-translate="Forward" pt-tooltip-translate-context="Action">
@@ -239,6 +242,11 @@
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
         <p class="alert alert-danger" ng-if="message.SpamScore === 100" translate translate-context="Info">This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!</p>
         <p class="alert alert-danger" ng-if="message.SpamScore === 101" translate translate-context="Info">This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!</p>
+        <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
+            <span class="pull-left fa fa-exclamation-triangle"></span>
+            <strong translate translate-context="Error">Decryption error</strong>
+            <div translate translate-context="Error">Decryption of this message's encryption content failed.</div>
+        </div>
         <div
             class="bodyDecrypted email"
             ng-class="{'plain': message.isPlain}"
@@ -246,11 +254,6 @@
             ng-if="message.viewMode === 'html'"
             toggle-blockquote
             mail-to scroll="true" ></div>
-        <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
-            <span class="pull-left fa fa-exclamation-triangle"></span>
-            <strong translate translate-context="Error">Decryption error</strong>
-            <div translate translate-context="Error">Decryption of this message's encryption content failed.</div>
-        </div>
         <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
     </div>
 
