@@ -994,60 +994,29 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         $rootScope.$emit('actionMessage', message);
     }
 
-    /**
-     * Generate a sessionKey for attachements if they don't have one
-     * @param  {Message} message
-     * @return {Promise}
-     */
-    function getSessionKey(message) {
-        const keys = authentication.getPrivateKeys(message.AddressID);
-        const promises = _.chain(message.Attachments)
-            .filter((attachment) => !attachment.sessionKey)
-            .map((attachment) => {
-                // decode key packets
-                const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-                return pmcw
-                    .decryptSessionKey(keyPackets, keys)
-                    .then((sessionKey) => (attachment.sessionKey = sessionKey, attachment))
-                    .catch($log.error);
-            })
-            .value();
-
-        return $q.all(promises);
-    }
-
     function encryptUserBody(message, deferred, Packages) {
         const insideUser = (key, Address) => {
-            return message
-                .encryptBody(key)
-                .then((Body) => {
-                    return getSessionKey(message)
-                        .then(() => message.encryptPackets(key))
-                        .then((KeyPackets) => (Packages.push({ Address, Type: 1, Body, KeyPackets }), Body));
-                }, deferred.reject);
+            return Promise
+                .all([message.encryptBody(key), message.encryptPackets(key)])
+                .then(([Body, KeyPackets]) => (Packages.push({ Address, Type: 1, Body, KeyPackets }), Body))
+                .catch(deferred.reject);
         };
 
         const outsideUser = (Token, Address) => {
-            return pmcw
-                .encryptMessage(Token, [], message.Password)
-                .then((EncToken) => {
-                    // return getSessionKey(message)
-                    //     .then(pmcw.encryptMessage(message.getDecryptedBody(), [], message.Password))
-                    return pmcw
-                        .encryptMessage(message.getDecryptedBody(), [], message.Password)
-                        .then((Body) => {
-                            return message
-                                .encryptPackets('', message.Password)
-                                .then((KeyPackets) => {
-                                    return Packages
-                                        .push({
-                                            Type: 2,
-                                            PasswordHint: message.PasswordHint,
-                                            Address, Token, Body, KeyPackets, EncToken
-                                        });
-                                });
-                        });
 
+            return Promise
+                .all([
+                    pmcw.encryptMessage(Token, [], message.Password),
+                    pmcw.encryptMessage(message.getDecryptedBody(), [], message.Password),
+                    message.encryptPackets('', message.Password)
+                ])
+                .then(([EncToken, Body, KeyPackets]) => {
+                    return Packages
+                        .push({
+                            Type: 2,
+                            PasswordHint: message.PasswordHint,
+                            Address, Token, Body, KeyPackets, EncToken
+                        });
                 })
                 .catch((error) => {
                     message.encrypting = false;
