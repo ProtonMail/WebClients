@@ -1415,7 +1415,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
      * @return {String}
      */
     $scope.recipients = ({ ToList = [], CCList = [], BCCList = [] }) => {
-        console.trace('fer')
         const formatAddresses = (key) => (contact, index) => {
             const name = $filter('contact')(contact, 'Name');
 
