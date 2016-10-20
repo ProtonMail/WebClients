@@ -58,13 +58,6 @@ angular.module('proton.core')
             scope.page = $stateParams.page || 1;
             scope.generateClassNames = buildClassNames(scope);
 
-            /**
-             * Find the current total of item displayable
-             * @todo  RFR we need a consistant way to get the total (cf bidouille buildPages :/)
-             * @return {Number}
-             */
-            const getTotal = () => scope.totalItems || $rootScope.Total;
-
             const $next = el[0].querySelector('.paginator-btn-next');
             const $previous = el[0].querySelector('.paginator-btn-previous');
             const $dropdown = el[0].querySelector('.paginator-dropdown-list');
@@ -84,15 +77,16 @@ angular.module('proton.core')
             $previous.addEventListener('click', onPrevious, false);
             $dropdown.addEventListener('click', onSelect, false);
 
-            scope.$watch('totalItems', () => {
-                paginationModel.setMaxPage(scope.totalItems);
-                scope.pages = buildPages(getTotal());
+            const unsubscribe = $rootScope.$watch('Total', (val, previous) => {
+                paginationModel.setMaxPage(val);
+                scope.pages = buildPages(val);
             });
 
             scope.$on('$destroy', () => {
                 $next.removeEventListener('click', onNext);
                 $previous.removeEventListener('click', onPrevious);
                 $dropdown.removeEventListener('click', onSelect, false);
+                unsubscribe();
             });
         }
     };
