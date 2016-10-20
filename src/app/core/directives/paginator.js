@@ -77,7 +77,7 @@ angular.module('proton.core')
             $previous.addEventListener('click', onPrevious, false);
             $dropdown.addEventListener('click', onSelect, false);
 
-            const unsubscribe = $rootScope.$watch('Total', (val, previous) => {
+            const unsubscribe = $rootScope.$watch('Total', (val) => {
                 paginationModel.setMaxPage(val);
                 scope.pages = buildPages(val);
             });
