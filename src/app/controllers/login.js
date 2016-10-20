@@ -113,7 +113,6 @@ angular.module('proton.controllers.Auth', [
     }
 
     function autoLogin() {
-
         $scope.creds = tempStorage.getItem('creds');
 
         if ($state.is('login.unlock')) {
@@ -137,8 +136,7 @@ angular.module('proton.controllers.Auth', [
                 return;
             }
 
-            srp
-                .info($scope.creds.username)
+            srp.info($scope.creds.username)
                 .then((resp) => {
                     if (resp.data.TwoFactor === 0) {
                         // user does not have two factor enabled, we will proceed to the auth call
