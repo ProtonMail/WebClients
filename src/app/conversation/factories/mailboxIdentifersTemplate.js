@@ -34,13 +34,13 @@ angular.module('proton.conversation')
      */
         const getTemplateLabels = (labels) => {
             return Object
-        .keys(MAP_LABELS)
-        .reduce((acc, key) => {
-            if (contains(key, labels)) {
-                return acc + icon(MAP_LABELS[key]);
-            }
-            return acc;
-        }, '');
+                .keys(MAP_LABELS)
+                .reduce((acc, key) => {
+                    if (contains(key, labels)) {
+                        return acc + icon(MAP_LABELS[key]);
+                    }
+                    return acc;
+                }, '');
         };
 
     /**

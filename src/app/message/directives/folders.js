@@ -43,7 +43,7 @@ angular.module('proton.message')
                 Array.isArray(LabelIDs) && (template += getTemplateLabels(LabelIDs));
                 angular.isNumber(Type) && (template += getTemplateType(Type));
 
-        // Compile the template to bind the tooltip etc.
+                // Compile the template to bind the tooltip etc.
                 el.empty().append($compile(template)(scope));
             };
 
