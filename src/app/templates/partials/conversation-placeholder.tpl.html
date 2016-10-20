@@ -9,7 +9,7 @@
 	            </div>
 	            <span class="total">{{ ::user.MaxSpace | humanSize }}</span>
             </div>
-            <span><strong>{{ ::storagePourcentage() }}% </strong translate>Storage space used.</span>
+            <span><strong>{{ ::user.UsedSpace | percentage:user.MaxSpace }}% </strong translate>Storage space used.</span>
         </div>
     </section>
     <section ng-if="isFree === false">
