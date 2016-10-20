@@ -138,21 +138,24 @@ angular.module('proton.conversation')
                     Conversation.archive(ids); // Send request to archive conversations
                 }
             };
-            const toApplyConversation = _.chain(labels)
-                .filter((label) => { return label.Selected === true; })
-                .map((label) => { return label.ID; })
-                .value() || [];
 
-            const toRemoveConversation = _.chain(labels)
-                .filter((label) => { return label.Selected === false; })
-                .map((label) => { return label.ID; })
-                .value() || [];
+            const getLabelsId = (list = [], cb = angular.noop) => {
+                return _.chain(list)
+                   .filter(cb)
+                   .map(({ ID }) => ID)
+                   .value() || [];
+            };
+
+            const toApplyLabels = getLabelsId(labels, ({ Selected }) => Selected === true);
+            const toRemoveLabels = getLabelsId(labels, ({ Selected }) => Selected === false);
+            const toApply = [].concat(toApplyLabels);
+            const toRemove = [].concat(toRemoveLabels);
 
             if (alsoArchive === true) {
-                toApplyConversation.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
 
                 if (tools.currentMailbox() !== 'label') {
-                    toRemoveConversation.push(current);
+                    toRemove.push(current);
                 }
             }
 
@@ -162,38 +165,24 @@ angular.module('proton.conversation')
 
                 if (angular.isArray(messages) && messages.length > 0) {
                     messages.forEach((message) => {
-                        const toApplyMessage = _.chain(labels)
-                            .filter((label) => {
-                                return label.Selected === true;
-                            })
-                            .map((label) => {
-                                return label.ID;
-                            })
-                            .value() || [];
 
-                        const toRemoveMessage = _.chain(labels)
-                            .filter((label) => {
-                                return label.Selected === false;
-                            })
-                            .map((label) => {
-                                return label.ID;
-                            })
-                            .value() || [];
+                        const toApply = [].concat(toApplyLabels);
+                        const toRemove = [].concat(toRemoveLabels);
 
                         message.LabelIDs = message.LabelIDs || [];
 
                         if (alsoArchive === true) {
-                            toApplyMessage.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                            toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
 
                             if (tools.currentMailbox() !== 'label') {
-                                toRemoveMessage.push(current);
+                                toRemove.push(current);
                             }
                         }
 
                         events.push({ Action: 3, ID: message.ID, Message: {
                             ID: message.ID,
-                            LabelIDsAdded: toApplyMessage,
-                            LabelIDsRemoved: toRemoveMessage
+                            LabelIDsAdded: toApply,
+                            LabelIDsRemoved: toRemove
                         } });
                     });
                 }
@@ -202,17 +191,18 @@ angular.module('proton.conversation')
                     events.push({ Action: 3, ID: conversationID, Conversation: {
                         ID: conversationID,
                         Selected: false,
-                        LabelIDsAdded: toApplyConversation,
-                        LabelIDsRemoved: toRemoveConversation
+                        LabelIDsAdded: toApply,
+                        LabelIDsRemoved: toRemove
                     } });
                 }
             });
 
-            _.each(toApplyConversation, (labelID) => {
+
+            _.each(toApply, (labelID) => {
                 promises.push(Conversation.labels(labelID, ADD, ids));
             });
 
-            _.each(toRemoveConversation, (labelID) => {
+            _.each(toRemove, (labelID) => {
                 promises.push(Conversation.labels(labelID, REMOVE, ids));
             });
 

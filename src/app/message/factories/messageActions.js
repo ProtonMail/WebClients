@@ -54,22 +54,17 @@ angular.module('proton.message')
             const list = [CONSTANTS.MAILBOX_IDENTIFIERS[mailbox]];
             switch (Type) {
                 // This message is a draft, if you move it to trash and back to inbox, it will go to draft instead
-                case 1: {
-                    const index = list.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
-
-                    list.splice(index, 1);
+                case CONSTANTS.DRAFT: {
                     list.push(CONSTANTS.MAILBOX_IDENTIFIERS.drafts);
                     break;
                 }
                 // This message is sent, if you move it to trash and back, it will go back to sent
-                case 2: {
-                    const pos = list.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.inbox);
-                    list.splice(pos, 1);
+                case CONSTANTS.SENT: {
                     list.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
                     break;
                 }
                 // Type 3 is inbox and sent, (a message sent to yourself), if you move it from trash to inbox, it will acquire both the inbox and sent labels ( 0 and 2 ).
-                case 3:
+                case CONSTANTS.INBOX_AND_SENT:
                     list.push(CONSTANTS.MAILBOX_IDENTIFIERS.sent);
                     break;
             }
@@ -80,28 +75,18 @@ angular.module('proton.message')
         // Message actions
         function move(ids, mailbox) {
             const context = tools.cacheContext();
-            const toInbox = mailbox === 'inbox';
             const toTrash = mailbox === 'trash';
-            const remove = [
-                CONSTANTS.MAILBOX_IDENTIFIERS.starred,
-                CONSTANTS.MAILBOX_IDENTIFIERS.drafts,
-                CONSTANTS.MAILBOX_IDENTIFIERS.sent
-            ];
-
             const events = _.chain(ids)
                 .map((id) => {
                     const message = cache.getMessageCached(id);
                     let labelIDs = message.LabelIDs || [];
-                    const labelIDsAdded = [];
-                    const labelIDsRemoved = _.reject(message.LabelIDs, (labelID) => {
-                        const index = remove.indexOf(labelID);
-                        return (index !== -1 && remove[index] === labelID) || labelID.length > 2;
-                    });
-
-
-                    if (toInbox === true) {
-                        labelIDsAdded.push(...updateLabelsAdded(message.Type, mailbox));
-                    }
+                    const labelIDsAdded = updateLabelsAdded(message.Type, mailbox);
+                    const labelIDsRemoved = message.LabelIDs.filter((labelID) => [
+                        CONSTANTS.MAILBOX_IDENTIFIERS.inbox,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.trash,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.spam,
+                        CONSTANTS.MAILBOX_IDENTIFIERS.archive
+                    ].indexOf(labelID) > -1);
 
                     if (Array.isArray(labelIDsRemoved)) {
                         labelIDs = _.difference(labelIDs, labelIDsRemoved);
@@ -124,10 +109,7 @@ angular.module('proton.message')
                     };
 
                 })
-                .reduce((acc, event) => {
-                    acc[event.ID] = event;
-                    return acc;
-                }, {})
+                .reduce((acc, event) => (acc[event.ID] = event, acc), {})
                 .reduce((acc, event, i, eventList) => {
 
                     const conversation = cache.getConversationCached(event.Message.ConversationID);
@@ -136,23 +118,18 @@ angular.module('proton.message')
                     acc.push(event);
 
                     if (conversation && Array.isArray(messages)) {
-
-                        const labelIDs = _.reduce(messages, (acc, { ID, LabelIDs = [] }) => {
-                            const found = _.find(eventList, ({ Message = {} }) => ID === Message.ID);
-
-                            if (found) {
-                                return acc.concat(found.Message.LabelIDs);
-                            }
-
-                            return acc.concat(LabelIDs);
-                        }, []);
+                        const labelIDs = _.chain(messages)
+                            .map(({ ID, LabelIDs }) => (eventList[ID] ? eventList[ID].Message.LabelIDs : LabelIDs))
+                            .flatten()
+                            .uniq()
+                            .value();
 
                         acc.push({
                             Action: 3,
                             ID: conversation.ID,
                             Conversation: {
                                 ID: conversation.ID,
-                                LabelIDs: _.uniq(labelIDs)
+                                LabelIDs: labelIDs
                             }
                         });
                     }
@@ -250,17 +227,17 @@ angular.module('proton.message')
                 });
             };
 
+            const filterLabelsID = (list = [], cb = angular.noop) => {
+                return _.chain(labels)
+                    .filter(cb)
+                    .map(({ ID }) => ID)
+                    .value();
+            };
+
             _.each(messages, (message) => {
-                const toApply = _.map(_.filter(labels, (label) => {
-                    return label.Selected === true && angular.isArray(message.LabelIDs) && message.LabelIDs.indexOf(label.ID) === -1;
-                }), (label) => {
-                    return label.ID;
-                }) || [];
-                const toRemove = _.map(_.filter(labels, (label) => {
-                    return label.Selected === false && angular.isArray(message.LabelIDs) && message.LabelIDs.indexOf(label.ID) !== -1;
-                }), (label) => {
-                    return label.ID;
-                }) || [];
+
+                const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected === true && (message.LabelIDs || []).indexOf(ID) === -1);
+                const toRemove = filterLabelsID(labels, ({ ID, Selected }) => Selected === false && (message.LabelIDs || []).indexOf(ID) !== -1);
 
                 if (alsoArchive === true) {
                     toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
