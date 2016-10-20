@@ -15,6 +15,7 @@ angular.module('proton.models.message', ['proton.constants'])
     $filter,
     gettextCatalog,
     authentication,
+    AttachmentLoader,
     CONFIG,
     CONSTANTS,
     networkActivityTracker,
@@ -260,31 +261,25 @@ angular.module('proton.models.message', ['proton.constants'])
         },
 
         encryptPackets(keys = '', passwords = '') {
-            const deferred = $q.defer();
-            const packets = [];
             const keysPackets = keys !== '' ? keys : [];
             const passwordsPackets = passwords !== '' ? passwords : [];
 
-            this.Attachments.forEach((element = {}) => {
-                const { sessionKey = {}, AttachmentID, ID } = element;
-                const { key, algo } = sessionKey;
+            const promises = this.Attachments
+                .map((attachment) => {
+                    return AttachmentLoader.getSessionKey(this, attachment)
+                        .then(({ sessionKey = {}, AttachmentID, ID } = {}) => {
+                            // Update the ref
+                            attachment.sessionKey = sessionKey;
+                            const { key, algo } = sessionKey;
+                            return pmcw.encryptSessionKey(key, algo, keysPackets, passwordsPackets)
+                                .then((keyPacket) => ({
+                                    ID: AttachmentID || ID,
+                                    KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
+                                }));
+                        });
+                });
 
-                if (key) {
-                    const defferedAction = pmcw
-                        .encryptSessionKey(key, algo, keysPackets, passwordsPackets)
-                        .then((keyPacket) => ({
-                            ID: AttachmentID || ID,
-                            KeyPackets: pmcw.encode_base64(pmcw.arrayToBinaryString(keyPacket))
-                        }));
-
-                    packets.push(defferedAction);
-                }
-
-            });
-
-            $q.all(packets).then(deferred.resolve);
-
-            return deferred.promise;
+            return Promise.all(promises);
         },
 
         clearPackets() {

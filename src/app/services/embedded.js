@@ -230,7 +230,9 @@ angular.module('proton.embedded', [])
      * @param  {String} options.ID  Message.ID
      * @return {Array}
      */
-    const findInlineAttachements = ({ ID, Attachments = [] } = {}) => {
+    const findInlineAttachements = (message = {}) => {
+        const { ID, Attachments = [] } = message;
+
         return Object
             .keys(CIDList[ID] || {})
             .reduce((acc, cid) => {

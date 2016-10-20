@@ -98,23 +98,20 @@ angular.module('proton.attachments')
          * if there is no sessionKey:
          *     - Loading a draft with attachments,
          *     - Reply with embedded
-         *  It creates the sessionKey and bind it to the attachment
          * @param  {Message} message
          * @param  {Object} attachment
-         * @param  {Array} keyPackets
-         * @return {Promise}
+         * @return {Promise}   With the attachment containing the sessionKey (no-sideeffects)
          */
-        const getSessionKey = (message, attachment, keyPackets) => {
+        const getSessionKey = (message, attachment) => {
+
             if (attachment.sessionKey) {
-                return Promise.resolve(attachment.sessionKey);
+                return Promise.resolve(attachment);
             }
 
+            const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
             return pmcw
                 .decryptSessionKey(keyPackets, getPrivateKeys(message))
-                .then((sessionKey) => {
-                    attachment.sessionKey = sessionKey;
-                    return sessionKey;
-                });
+                .then((sessionKey) => angular.extend({}, attachment, { sessionKey }));
         };
 
         /**
@@ -130,11 +127,10 @@ angular.module('proton.attachments')
             }
 
             const request = getRequest(attachment);
-            const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-            const key = getSessionKey(message, attachment, keyPackets);
+            const key = getSessionKey(message, attachment);
 
             return Promise.all([request, key])
-                .then(([{ data }, key]) => decrypt(data, key))
+                .then(([{ data }, { sessionKey }]) => decrypt(data, sessionKey))
                 .then((data) => (cache.put(getCacheKey(attachment), data), data))
                 .catch((err) => {
                     console.log(err);
@@ -170,5 +166,5 @@ angular.module('proton.attachments')
 
         const flushCache = () => cache.removeAll();
 
-        return { get, load, flushCache, generateDownload };
+        return { get, load, flushCache, generateDownload, getSessionKey };
     });
