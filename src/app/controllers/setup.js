@@ -28,6 +28,8 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
     tools,
     user
 ) => {
+    let passwordCopy;
+
     function initialization() {
 
         $scope.keyPhase = CONSTANTS.KEY_PHASE;
@@ -67,6 +69,10 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
     }
 
     $scope.submit = () => {
+
+        // Save password in separate variable to prevent extensions/etc
+        // from modifying it during setup process
+        passwordCopy = $scope.password;
 
         return networkActivityTracker.track(
             setupAddress()
@@ -112,7 +118,7 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
         $log.debug('generateKeys');
         $scope.genKeys = true;
 
-        return setupKeys.generate(user.Addresses, $scope.password);
+        return setupKeys.generate(user.Addresses, passwordCopy);
     }
 
     function installKeys(data = {}) {
@@ -122,7 +128,7 @@ angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
         $scope.creating = true;
         $scope.setupAccount = true;
 
-        return setupKeys.setup(data, $scope.password)
+        return setupKeys.setup(data, passwordCopy)
         .then(() => {
             authentication.savePassword(data.mailboxPassword);
 

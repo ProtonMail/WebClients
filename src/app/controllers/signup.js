@@ -31,6 +31,8 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     User
 ) => {
     let childWindow;
+    let loginPasswordCopy;
+    let mailboxPasswordCopy;
     function initialization() {
 
         $scope.keyPhase = CONSTANTS.KEY_PHASE;
@@ -271,6 +273,11 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     function saveContinue() {
         $scope.filling = false;
 
+        // Save passwords in separate variables to prevent extensions/etc
+        // from modifying them during setup process
+        loginPasswordCopy = $scope.account.loginPassword;
+        mailboxPasswordCopy = $scope.account.mailboxPassword;
+
         networkActivityTracker.track(
             $scope.checkAvailability(false)
             .then(generateNewKeys)
@@ -362,18 +369,13 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     };
 
     function generateNewKeys() {
-        let mbpw;
 
         $scope.genNewKeys = true;
 
-        if ($scope.account.mailboxPasswordConfirm !== undefined) {
-            mbpw = $scope.account.mailboxPasswordConfirm;
-        } else if ($scope.account.mailboxPassword !== undefined) {
-            mbpw = $scope.account.mailboxPassword;
-        }
+        let mbpw = mailboxPasswordCopy;
 
         if ($scope.keyPhase > 2) {
-            mbpw = $scope.account.loginPassword;
+            mbpw = loginPasswordCopy;
         }
 
         $log.debug('generateKeys');
@@ -521,7 +523,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             params.TokenType = 'email';
         }
 
-        return User.create(params, $scope.account.loginPassword);
+        return User.create(params, loginPasswordCopy);
     };
 
     $scope.doLogUserIn = function (response) {
@@ -529,7 +531,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             $scope.logUserIn = true;
             return authentication.loginWithCredentials({
                 Username: $scope.account.Username,
-                Password: $scope.account.loginPassword
+                Password: loginPasswordCopy
             })
             .then(({ data }) => {
                 authentication.receivedCredentials(data);
@@ -559,7 +561,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                 // Replace 0 with correct address ID
                 $scope.setupPayload.keys[0].AddressID = result.data.Address.ID;
 
-                return setupKeys.setup($scope.setupPayload, $scope.account.loginPassword)
+                return setupKeys.setup($scope.setupPayload, loginPasswordCopy)
                 .then(() => {
                     authentication.savePassword($scope.setupPayload.mailboxPassword);
 
