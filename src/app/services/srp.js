@@ -240,7 +240,7 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
 
             const modulus = pmcrypto.binaryStringToArray(pmcrypto.decode_base64(openpgp.cleartext.readArmored(resp.data.Modulus).getText()));
             const salt = pmcrypto.arrayToBinaryString(webcrypto.getRandomValues(new Uint8Array(10)));
-            return passwords.hashPassword(passwords.currentAuthVersion, pmcrypto.encode_utf8(password), salt, undefined, modulus).then((hashedPassword) => {
+            return passwords.hashPassword(passwords.currentAuthVersion, password, salt, undefined, modulus).then((hashedPassword) => {
                 const verifier = generateVerifier(2048, hashedPassword, modulus);
 
                 return {
