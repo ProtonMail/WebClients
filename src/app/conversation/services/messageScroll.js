@@ -1,8 +1,6 @@
 angular.module('proton.conversation')
     .factory('messageScroll', () => {
 
-        let config = {};
-
         /**
          * Scroll to a custom message inside a conversation
          * @param  {Integer} index       Message Position
@@ -43,30 +41,12 @@ angular.module('proton.conversation')
         /**
          * Scroll to a message based on its config and its position inside a list
          * @param  {Integer} options.index
-         * @param  {Message} options.message
+         * @param  {Node} options.node (no-required)
          * @return {Object}
          */
-        const to = ({ index, message, node }) => {
-
-            // Should we have a promise of scroll ?
-            if (config.ID) {
-                (config.isScrollable && message.ID === config.ID) && scroll(index);
-                return (config = {});
-            }
-
+        const to = ({ index, node }) => {
             scroll(index, node);
         };
 
-        /**
-         * When you toggle a message, if you open this message
-         * save its config to be able to scroll to this message when
-         * its body will be loaded
-         * @param  {String}  ID           MessageID
-         * @param  {Boolean} isScrollable
-         * @return {Object}
-         */
-        const willScroll = (ID, isScrollable) => config = { ID, isScrollable };
-        const hasPromise = () => !!config.ID;
-
-        return { to, toID, willScroll, hasPromise };
+        return { to, toID };
     });
