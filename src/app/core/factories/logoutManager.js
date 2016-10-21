@@ -2,8 +2,9 @@ angular.module('proton.core')
 .factory('logoutManager', ($rootScope, authentication, eventManager, cache, cacheCounters) => {
     $rootScope.$on('$stateChangeSuccess', (e, state) => {
         const currentState = state.name;
+        const specialStates = ['login.setup'];
 
-        if (currentState.indexOf('secured') === -1) {
+        if (currentState.indexOf('secured') === -1 && specialStates.indexOf(currentState) === -1) {
             // Stop event manager request
             eventManager.stop();
             // Clear cache
