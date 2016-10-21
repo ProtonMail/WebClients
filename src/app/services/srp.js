@@ -256,7 +256,6 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
     }
 
     function authInfo(Username) {
-        console.trace();
         return $http
             .post(url.get() + '/auth/info', {
                 Username,
