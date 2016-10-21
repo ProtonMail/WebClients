@@ -17,51 +17,79 @@ angular.module('proton.conversation')
 ) => {
 
     /**
-     * Find in the conversation the last message:scrollable
+     * Find in the message to scroll and expand
      * @param  {Array}  list List of message
      * @return {Object}
      */
-    const getScrollableMessage = (list = []) => {
-        const config = _.chain(list)
-            .map((message, index) => ({ message, index }))
-            .filter(({ message }) => !message.isDraft())
-            .last()
-            .value();
+    function findExpendableMessage(messages = []) {
+        let thisOne;
 
-        if (!config) {
-            return {
-                index: list[list.length - 1],
-                message: _.last(list)
-            };
-        }
+        const filter = (cb) => _.chain(messages).filter(cb).last().value();
 
-        return config;
-    };
+        switch (true) {
+            // If we open a conversation in the sent folder
+            case tools.typeView() === 'message':
+                thisOne = _.last(messages);
+                break;
 
-    /**
-     * Scroll to a message
-     * If we can scroll we can reset the cache (expendable)
-     * @param  {Object} expendables Config scrollable message
-     * @param  {Object} data        Config current message
-     * @return {Object}
-     */
-    function scrollToItem(expendable, data) {
+            case !!$stateParams.messageID:
+                thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
+                break;
 
-        if (!messageScroll.hasPromise()) {
-            // Only scroll for the current message
-            if (expendable.message.ID === data.message.ID) {
-                messageScroll.to(expendable);
-                return;
+            case $state.includes('secured.starred.**'):
+                // Select the last message starred
+                thisOne = filter(({ LabelIDs }) => LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1);
+                break;
+
+            case $state.includes('secured.label.**'):
+                // Select the last message with this label
+                thisOne = filter(({ LabelIDs }) => LabelIDs.indexOf($stateParams.label) !== -1);
+                break;
+
+            case $state.includes('secured.drafts.**'):
+                thisOne = filter(({ Type }) => Type === CONSTANTS.DRAFT);
+                break;
+
+            default: {
+                const latest = filter(({ Type }) => Type !== CONSTANTS.DRAFT);
+
+                if (latest && latest.IsRead === 1) {
+                    thisOne = latest;
+                    break;
+                }
+
+                /**
+                 * Filter the list of message to find the first readable message
+                 * - iterate backwards
+                 * - check if the previous item is read
+                 * - if the previous isRead === 1, break the iteration
+                 * @return {Ressoure}
+                 */
+                const getMessage = () => {
+                    const withoutDraft = messages.filter(({ Type }) => Type !== CONSTANTS.DRAFT);
+
+                    // Else we open the first message unread beginning to the end list
+                    let index = withoutDraft.length;
+                    let contains = false;
+
+                    while (--index > 0) {
+                        if (withoutDraft[index - 1].IsRead === 1) { // Is read
+                            contains = true;
+                            break;
+                        }
+                    }
+
+                    const position = contains ? index : 0;
+                    // A conversation can contains only one draft
+                    return withoutDraft.length ? withoutDraft[position] : messages[0];
+                };
+
+                thisOne = getMessage();
+                break;
             }
         }
 
-        // Scroll to the message, if we toggled one message
-        if (messageScroll.hasPromise()) {
-            messageScroll.to(data);
-            return;
-        }
-
-        return expendable;
+        return thisOne;
     }
 
     /**
@@ -147,8 +175,6 @@ angular.module('proton.conversation')
                 }
             }));
 
-            let expandableMessage;
-
             // We need to allow hotkeys for a message when you open the message
             unsubscribe.push($rootScope.$on('message.open', (event, { type, data }) => {
                 if (type === 'toggle') {
@@ -161,10 +187,7 @@ angular.module('proton.conversation')
                 }
 
                 if (type === 'render') {
-                    // Create a cache
-                    expandableMessage = expandableMessage || getScrollableMessage(scope.messages);
-                    return (expandableMessage = scrollToItem(expandableMessage, data));
-
+                    return messageScroll.to(data);
                 }
             }));
 
@@ -280,75 +303,9 @@ angular.module('proton.conversation')
              * @return {Array} messages
              */
             function expandMessage(messages = []) {
-                let thisOne;
 
-                const filter = (cb) => _.chain(messages).filter(cb).last().value();
-
-                switch (true) {
-                    // If we open a conversation in the sent folder
-                    case tools.typeView() === 'message':
-                        thisOne = _.last(messages);
-                        break;
-
-                    case !!$stateParams.messageID:
-                        thisOne = _.findWhere(messages, { ID: $stateParams.messageID });
-                        break;
-
-                    case $state.includes('secured.starred.**'):
-                        // Select the last message starred
-                        thisOne = filter(({ LabelIDs }) => LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.starred) !== -1);
-                        break;
-
-                    case $state.includes('secured.label.**'):
-                        // Select the last message with this label
-                        thisOne = filter(({ LabelIDs }) => LabelIDs.indexOf($stateParams.label) !== -1);
-                        break;
-
-                    case $state.includes('secured.drafts.**'):
-                        thisOne = filter(({ Type }) => Type === CONSTANTS.DRAFT);
-                        break;
-
-                    default: {
-                        const latest = filter(({ Type }) => Type !== CONSTANTS.DRAFT);
-
-                        if (latest && latest.IsRead === 1) {
-                            thisOne = latest;
-                            break;
-                        }
-
-                        /**
-                         * Filter the list of message to find the first readable message
-                         * - iterate backwards
-                         * - check if the previous item is read
-                         * - if the previous isRead === 1, break the iteration
-                         * @return {Ressoure}
-                         */
-                        const getMessage = () => {
-                            const withoutDraft = messages.filter(({ Type }) => Type !== CONSTANTS.DRAFT);
-
-                            // Else we open the first message unread beginning to the end list
-                            let index = withoutDraft.length;
-                            let contains = false;
-
-                            while (--index > 0) {
-                                if (withoutDraft[index - 1].IsRead === 1) { // Is read
-                                    contains = true;
-                                    break;
-                                }
-                            }
-
-                            const position = contains ? index : 0;
-                            // A conversation can contains only one draft
-                            return withoutDraft.length ? withoutDraft[position] : messages[0];
-                        };
-
-                        thisOne = getMessage();
-                        break;
-                    }
-                }
-
-                messages.length && (thisOne.openMe = true);
-
+                const message = findExpendableMessage(messages);
+                messages.length && (message.openMe = true);
                 return messages;
             }
 
