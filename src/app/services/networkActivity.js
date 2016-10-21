@@ -1,5 +1,5 @@
 angular.module('proton.networkActivity', ['proton.errorReporter'])
-.factory('networkActivityTracker', ($log, errorReporter, $rootScope, notify) => {
+.factory('networkActivityTracker', ($log, errorReporter, $rootScope, notify, dedentTpl) => {
 
     let promises = [];
     const DURATION = 10000; // 10 seconds
@@ -26,6 +26,23 @@ angular.module('proton.networkActivity', ['proton.errorReporter'])
      * User to display the loading state
      */
     const loading = () => !_.isEmpty(promises);
+
+    /**
+     * Format error message displayed with more informations
+     *     - message: main message
+     *     - Code: code coming from the API
+     *     - Original: original message (ex: from composer)
+     * @param  {Error} error
+     * @return {Error}
+     */
+    const formatError = (error) => {
+        const msg = dedentTpl`
+            >>> ${error.message}
+            Code: ${error.code}
+            Original: ${error.originalMessage}
+        `;
+        return (error.message = msg, error);
+    };
 
     /**
      * Track promise to catch event around
@@ -60,7 +77,7 @@ angular.module('proton.networkActivity', ['proton.errorReporter'])
                     message = 'An error has occurred. Please try again.';
                 }
 
-                $log.error(error);
+                $log.error(formatError(error));
 
                 notifyAlert(message);
 

@@ -1160,16 +1160,9 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
             .then((result = {}) => {
                 // Check if there is an error coming from the server, then reject the process
                 if (result.Error) {
-                    let error;
-                    // Internal recipient not found
-                    if (result.Code === 15198) {
-                        const { ErrorDescription } = result;
-                        const msg = ErrorDescription ? `${result.Error}: ${ErrorDescription}` : result.Error;
-
-                        error = new Error(msg);
-                    } else {
-                        error = new Error(result.Error);
-                    }
+                    const { ErrorDescription } = result;
+                    const msg = ErrorDescription ? `${result.Error}: ${ErrorDescription}` : result.Error;
+                    const error = new Error(msg);
                     error.code = result.Code;
                     return Promise.reject(error);
                 }
@@ -1225,7 +1218,9 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 message.encrypting = false;
                 dispatchMessageAction(message);
 
+                // Internal recipient not found
                 if (error.code !== 15198) {
+                    error.originalMessage = error.message;
                     error.message = 'Sending failed, please try again';
                 }
 
@@ -1386,7 +1381,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
     $scope.recipients = ({ ToList = [], CCList = [], BCCList = [] }) => {
         const formatAddresses = (key) => (contact, index) => {
             const name = $filter('contact')(contact, 'Name');
-
             return (index === 0) ? `${key}: ${name}` : name;
         };
 
