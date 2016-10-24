@@ -31,13 +31,8 @@ angular.module('proton.controllers.Settings')
     function passwordModal(submit) {
         loginPasswordModal.activate({
             params: {
-<<<<<<< 48c382b8945e685be2777f582a95f450ffb96bb6
                 submit,
                 cancel: () => {
-=======
-                submit: submit,
-                cancel: function() {
->>>>>>> login as sub user working
                     loginPasswordModal.deactivate();
                 },
                 hasTwoFactor: authentication.user.TwoFactor
