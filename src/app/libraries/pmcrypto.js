@@ -373,7 +373,6 @@ const pmcrypto = (function pmcrypto() {
                         }
                         resolve({ data: decrypted.data, filename: decrypted.filename, signature: sig });
                     } else {
-                        console.log(decrypted.signatures);
                         if (decrypted.signatures == null || decrypted.signatures[0] == null) {
                             console.log('No message signature present or no public keys provided');
                             sig = 0;
