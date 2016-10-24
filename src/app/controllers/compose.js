@@ -1161,12 +1161,12 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 return Message.send(parameters).$promise;
             })
             .then((result = {}) => {
+                const { Error, ErrorDescription, Code } = result;
                 // Check if there is an error coming from the server, then reject the process
-                if (result.Error) {
-                    const { ErrorDescription } = result;
-                    const msg = ErrorDescription ? `${result.Error}: ${ErrorDescription}` : result.Error;
+                if (Error) {
+                    const msg = ErrorDescription ? `${Error}: ${ErrorDescription}` : Error;
                     const error = new Error(msg);
-                    error.code = result.Code;
+                    error.code = Code;
                     return Promise.reject(error);
                 }
 
@@ -1228,7 +1228,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 }
 
                 deferred.reject(error);
-
             });
         })
         .catch((error) => {
