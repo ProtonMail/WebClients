@@ -127,18 +127,17 @@ angular.module('proton.attachments')
 
             const request = getRequest(attachment);
 
-            const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-            const key = getSessionKey(message, attachment, keyPackets);
-            const sender = [message.Sender.Address];
+            const key = getSessionKey(message, attachment);
 
-            var pubKeys = null
+            const pubKeys = null;
 
-            message.getPublicKeys(sender)
-            .then((result) => {
-                if (result.data && result.data[sender] != null) {
-                    pubKeys = result.data[sender]
-                }
-            });
+            // const sender = [message.Sender.Address];
+            // message.getPublicKeys(sender)
+            // .then((result) => {
+            //     if (result.data && result.data[sender] != null) {
+            //         pubKeys = result.data[sender];
+            //     }
+            // });
             return Promise.all([request, key])
                 .then(([{ data }, key]) => decrypt(data, pubKeys, key))
                 .then((data) => (cache.put(getCacheKey(attachment), data), data))
