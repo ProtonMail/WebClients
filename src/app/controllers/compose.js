@@ -1161,10 +1161,10 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 return Message.send(parameters).$promise;
             })
             .then((result = {}) => {
-                const { Error, ErrorDescription, Code } = result;
+                const { ErrorDescription, Code } = result;
                 // Check if there is an error coming from the server, then reject the process
-                if (Error) {
-                    const msg = ErrorDescription ? `${Error}: ${ErrorDescription}` : Error;
+                if (result.Error) {
+                    const msg = ErrorDescription ? `${result.Error}: ${ErrorDescription}` : result.Error;
                     const error = new Error(msg);
                     error.code = Code;
                     return Promise.reject(error);
