@@ -13,7 +13,7 @@ angular.module('proton.composer')
         function customFocus(el, scope, editor) {
 
             // We already inside the composer with a focused node, do nothing
-            if (el[0].contains(document.activeElement) && el[0] !== document.activeElement) {
+            if (!el[0] || (el[0].contains(document.activeElement) && el[0] !== document.activeElement)) {
                 return;
             }
 
