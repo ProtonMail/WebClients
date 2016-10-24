@@ -12,7 +12,7 @@
         data-index="{{$index}}"
         ng-class="{
         'minimized': message.minimized,
-        'blur': message !== selected,
+        'blur': message.ID !== selected.ID,
         'maximized': message.maximized,
         'normalized': !message.maximized && !message.minimized,
         'expandRecipients': message.ccbcc === true,

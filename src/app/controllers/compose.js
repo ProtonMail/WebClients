@@ -450,7 +450,10 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 $scope.isOver = false;
 
                 recordMessage(message, false, false).then(() => { // message, notification, autosaving
-                    $rootScope.$emit('composer.update', { type: 'loaded', data: { size } });
+                    $rootScope.$emit('composer.update', {
+                        type: 'loaded',
+                        data: { size, message }
+                    });
                 }, (error) => {
                     $log.error(error);
                 });
@@ -1323,12 +1326,13 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
             // Hide all the tooltip
             $('.tooltip').not(this).hide();
 
-            // Message closed and focussed?
-            $scope.focusFirstComposer(message);
-
-            $rootScope.$emit('composer.update', { type: 'close', data: {
-                size: $scope.messages.length
-            } });
+            $rootScope.$emit('composer.update', {
+                type: 'close',
+                data: {
+                    size: $scope.messages.length,
+                    message
+                }
+            });
         };
 
         if (discard === true) {
