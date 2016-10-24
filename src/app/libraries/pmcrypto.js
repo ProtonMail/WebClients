@@ -362,7 +362,7 @@ const pmcrypto = (function pmcrypto() {
                     // for now, log signature info in console - later integrate with front end
                     if (binary) {
                         if (decrypted.signatures == null || decrypted.signatures[0] == null) {
-                            console.log('No attachment signature present');
+                            console.log('No attachment signature present or no public keys provided');
                             sig = 0;
                         } else if (decrypted.signatures[0].valid) {
                             console.log('Verified attachment signature');
@@ -373,8 +373,9 @@ const pmcrypto = (function pmcrypto() {
                         }
                         resolve({ data: decrypted.data, filename: decrypted.filename, signature: sig });
                     } else {
+                        console.log(decrypted.signatures);
                         if (decrypted.signatures == null || decrypted.signatures[0] == null) {
-                            console.log('No message signature present');
+                            console.log('No message signature present or no public keys provided');
                             sig = 0;
                         } else if (decrypted.signatures[0].valid) {
                             console.log('Verified message signature');
