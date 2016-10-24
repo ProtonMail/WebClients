@@ -361,7 +361,7 @@ angular.module('proton.models.message', ['proton.constants'])
                         this.decryptBody()
                         .then((result) => {
                             this.setDecryptedBody(result.data);
-                            this.Signature = result.signature
+                            this.Signature = result.signature;
                             this.failedDecryption = false;
                             deferred.resolve(result.data);
                         }, (err) => {
