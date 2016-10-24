@@ -250,7 +250,7 @@ angular.module('proton.models.message', ['proton.constants'])
         decryptBody() {
             const deferred = $q.defer();
             const privKey = authentication.getPrivateKeys(this.AddressID);
-            var pubKeys = null;
+            let pubKeys = null;
             const sender = [this.Sender.Address];
 
             this.decrypting = true;
@@ -258,10 +258,9 @@ angular.module('proton.models.message', ['proton.constants'])
             this.getPublicKeys(sender)
                 .then((result) => {
                     if (result.data && result.data.Code === 1000) {
-                        pubKeys = result.data[sender]
+                        pubKeys = result.data[sender];
                     }
-                pmcw
-                    .decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
+                    pmcw.decryptMessageRSA(this.Body, privKey, this.Time, pubKeys)
                     .then((result) => {
                         this.decrypting = false;
                         deferred.resolve(result);
