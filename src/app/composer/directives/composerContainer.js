@@ -43,7 +43,6 @@ angular.module('proton.composer')
                             scope.$applyAsync(() => focusMessage(data));
                             break;
 
-                        case 'loaded':
                         case 'close':
                             openClose(type, data);
                             break;
@@ -91,4 +90,3 @@ angular.module('proton.composer')
         };
 
     });
-
