@@ -59,7 +59,6 @@ angular.module('proton.attachments')
             const upload = _.findWhere(pendingUpload, { id, messageID });
             upload.request.abort();
             pendingUpload = pendingUpload.filter((up) => up.id !== id);
-            dispatch('cancel', { id, messageID });
         }
 
         /**
@@ -88,6 +87,24 @@ angular.module('proton.attachments')
             xhr.upload.onprogress = (event) => {
                 const progress = (event.loaded / event.total) * 99;
                 dispatcher(progress, true);
+            };
+
+            xhr.onabort = function onabort() {
+                // remove the current request as it's resolved
+                pendingUpload = _.reject(pendingUpload, {
+                    id: REQUEST_ID,
+                    messageID: message.ID
+                });
+
+                message.uploading = _.where(pendingUpload, { messageID: message.ID }).length;
+
+                dispatch('cancel', {
+                    id: REQUEST_ID,
+                    messageID: message.ID,
+                    message
+                });
+
+                deferred.resolve({ id: REQUEST_ID, isAborted: true });
             };
 
             xhr.onload = function onload() {
