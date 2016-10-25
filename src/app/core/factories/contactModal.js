@@ -25,4 +25,4 @@ angular.module('proton.core')
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/contact.tpl.html'
     });
-})
+});
