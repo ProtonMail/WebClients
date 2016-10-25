@@ -57,7 +57,6 @@ angular.module('proton', [
     'proton.cache',
     'proton.errorReporter',
     'proton.event',
-    'proton.modals',
     'proton.networkActivity',
     'proton.pmcw',
     'proton.tools',

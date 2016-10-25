@@ -1,6 +1,4 @@
-angular.module('proton.controllers.Contacts', [
-    'proton.modals'
-])
+angular.module('proton.controllers.Contacts', [])
 
 .controller('ContactsController', (
     $filter,

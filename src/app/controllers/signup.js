@@ -33,6 +33,8 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     let childWindow;
     let loginPasswordCopy;
     let mailboxPasswordCopy;
+    const currentYear = new Date().getFullYear();
+
     function initialization() {
 
         $scope.keyPhase = CONSTANTS.KEY_PHASE;
@@ -58,6 +60,16 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         $scope.paypalNetworkError = false;
         $scope.card.country = _.findWhere(tools.countries, { priority: 1 });
         $scope.method = 'card';
+        $scope.months = [];
+        $scope.years = [];
+
+        for (let i = 1; i <= 12; i++) {
+            $scope.months.push(i);
+        }
+
+        for (let i = 0; i < 12; i++) {
+            $scope.years.push(currentYear + i);
+        }
 
         $scope.signup = {
             verificationSent: false,
