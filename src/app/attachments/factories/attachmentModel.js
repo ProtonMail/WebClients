@@ -46,6 +46,9 @@ angular.module('proton.attachments')
                     case 'close':
                         attachmentApi.killUpload(data);
                         break;
+                    case 'cancel':
+                        dispatchMessageAction(data.message);
+                        break;
                     case 'remove':
                         remove(data);
                         break;
@@ -94,7 +97,7 @@ angular.module('proton.attachments')
         function create(file, message, insert = true, cid = '') {
             const action = insert && 'inline';
             return upload([{ file, isEmbedded: insert }], message, action, false, cid)
-                .then(([ upload ]) => upload)
+                .then(([ upload ]) => (message.uploading = 0, upload))
                 .catch((err) => {
                     $log.error(err);
                     throw err;
@@ -121,6 +124,7 @@ angular.module('proton.attachments')
             const queue = queueMessage[messageID];
             upload(queue.files, message, action)
                 .then(() => {
+                    message.uploading = 0;
                     delete queueMessage[messageID];
                 });
         }
@@ -150,6 +154,7 @@ angular.module('proton.attachments')
 
             return Promise
                 .all(promises)
+                .then((upload) => upload.filter(Boolean)) // will be undefined for aborted request
                 .then((upload) => {
                     message.uploading = 0;
                     dispatchMessageAction(message);
@@ -173,7 +178,10 @@ angular.module('proton.attachments')
                     deferred.resolve();
                     return upload;
                 })
-                .catch(deferred.reject);
+                .catch((err) => {
+                    dispatchMessageAction(message);
+                    deferred.reject(err);
+                });
         }
 
         /**
@@ -301,8 +309,12 @@ angular.module('proton.attachments')
                 .load(file, message.From.Keys[0].PublicKey)
                 .then((packets) => {
                     return attachmentApi.upload(packets, message, tempPacket, total)
-                        .then(({ attachment, sessionKey, REQUEST_ID }) => {
-                            message.uploading = 0;
+                        .then(({ attachment, sessionKey, REQUEST_ID, isAborted }) => {
+
+                            if (isAborted) {
+                                return;
+                            }
+
                             // Extract content-id even if there are no headers
                             const contentId = (attachment.Headers || {})['content-id'] || '';
                             const cid = contentId.replace(/[<>]+/g, '');
