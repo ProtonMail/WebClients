@@ -106,16 +106,16 @@
                             </div>
                             <div class="pm_grid margin">
                                 <div class="col-1-3">
-                                    <div class="input-icon">
-                                        <i class="fa fa-calendar"></i>
-                                        <input type="text" maxlength="2" autocomplete="off" ng-model="ctrl.month" placeholder-translate="MM" pt-tooltip-translate="Month" required />
-                                    </div>
+                                    <span class="pm_select">
+                                        <select ng-model="ctrl.month" ng-options="month for month in ctrl.months" pt-tooltip-translate="Month"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
                                 </div>
                                 <div class="col-1-3">
-                                    <div class="input-icon">
-                                        <i class="fa fa-calendar"></i>
-                                        <input type="text" maxlength="4" autocomplete="off" ng-model="ctrl.year" placeholder-translate="YY" pt-tooltip-translate="Year" required />
-                                    </div>
+                                    <span class="pm_select">
+                                        <select ng-model="ctrl.year" ng-options="year for year in ctrl.years" pt-tooltip-translate="Year"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
                                 </div>
                                 <div class="col-1-3">
                                     <div class="input-icon">

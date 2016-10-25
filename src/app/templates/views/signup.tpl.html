@@ -184,16 +184,16 @@
                 </div>
                 <div class="pm_grid no-margin">
                     <div class="col-1-3">
-                        <div class="input-icon">
-                            <i class="fa fa-calendar"></i>
-                            <input type="text" ng-model="card.month" placeholder-translate="MM" pt-tooltip-translate="Month" maxlength="2" required />
-                        </div>
+                        <span class="pm_select">
+                            <select ng-model="card.month" ng-options="month for month in months" pt-tooltip-translate="Month" ng-init="card.month = months[0]"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
                     </div>
                     <div class="col-1-3">
-                        <div class="input-icon">
-                            <i class="fa fa-calendar"></i>
-                            <input type="text" ng-model="card.year" placeholder-translate="YY" pt-tooltip-translate="Year" maxlength="4" required />
-                        </div>
+                        <span class="pm_select">
+                            <select ng-model="card.year" ng-options="year for year in years" pt-tooltip-translate="Year" ng-init="card.year = years[0]"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
                     </div>
                     <div class="col-1-3">
                         <div class="input-icon">
