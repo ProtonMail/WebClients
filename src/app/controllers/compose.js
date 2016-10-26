@@ -414,8 +414,8 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         }
 
         message.attachmentsToggle = (message.Attachments.length - message.NumEmbedded) > 0 && (message.Attachments.length > message.NumEmbedded);
-        message.ccbcc = !!message.CCList.length || !!message.BCCList.length;
-        message.autocompletesFocussed = message.ccbcc;
+        message.ccbcc = false;
+        message.autocompletesFocussed = false;
 
         // Mark message as read
         if (message.IsRead === 0) {
