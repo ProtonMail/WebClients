@@ -170,7 +170,7 @@ const pmcrypto = (function pmcrypto() {
     }
 
     // privKeys is optional - will also sign the message
-    function encryptMessage(message = '', pubKeys = [], passwords = [], privKeys = []) {
+    function encryptMessage(message = '', pubKeys = '', passwords = [], privKeys = []) {
         return new Promise((resolve, reject) => {
             if (message === undefined) {
                 return reject(new Error('Missing data'));
@@ -452,12 +452,11 @@ const pmcrypto = (function pmcrypto() {
                     const data = result.data;
                     if (data === undefined) {
                         // unencrypted attachment?
-                        throw new Error('Undefined session key');
-                    } else if (key.length !== 32) {
-                        throw new Error('Invalid session key length');
-                    } else {
-                        resolve({ key: data, algo: result.algorithm });
+                        return reject(new Error('Undefined session key'));
+                    } else if (data.length !== 32) {
+                        return reject(new Error('Invalid session key length'));
                     }
+                    resolve({ key: data, algo: result.algorithm });
                 });
             } catch (err) {
                 if (err.message === 'CFB decrypt: invalid key') {
