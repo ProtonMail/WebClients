@@ -22,12 +22,18 @@ angular.module('proton.composer')
                 }
             }, 150);
 
+            const onBlur = () => {
+                scope.saveLater(scope.message);
+            };
+
             $input.addEventListener('focus', onFocus, true);
             $input.addEventListener('keydown', onKeydown, false);
+            $input.addEventListener('blur', onBlur, false);
 
             scope.$on('$destroy', () => {
                 $input.removeEventListener('focus', onFocus, true);
                 $input.removeEventListener('keydown', onKeydown, false);
+                $input.removeEventListener('blur', onBlur, false);
             });
         }
     }));
