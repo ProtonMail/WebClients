@@ -20,7 +20,7 @@ angular.module('proton.toggle', [])
             }
 
             function onClick() {
-                scope.$apply(() => {
+                scope.$applyAsync(() => {
                     scope.status = !scope.status;
                     if (scope.name) {
                         $rootScope.$emit(scope.name, scope.status);
