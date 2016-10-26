@@ -120,7 +120,7 @@ angular.module('proton.controllers.Sidebar', ['proton.constants'])
      * @param {String} route
      */
     $scope.goTo = function (route) {
-        const sameRoute = $state.$current.name === route;
+        const sameRoute = $state.$current.name === route && !$stateParams.filter;
         const firstPage = $stateParams.page === 1 || angular.isUndefined($stateParams.page);
         const params = { page: null, filter: null, sort: null };
 
