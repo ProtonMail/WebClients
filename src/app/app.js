@@ -24,7 +24,6 @@ angular.module('proton', [
 
     // Models
     'proton.models.addresses',
-    'proton.models.bug',
     'proton.models.contact',
     'proton.models.conversations',
     'proton.models.domains',
@@ -45,6 +44,7 @@ angular.module('proton', [
     'proton.models.setting',
     'proton.models.user',
     'proton.models',
+    'proton.bugReport',
 
     // Config
     'proton.config',

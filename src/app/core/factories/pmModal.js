@@ -33,6 +33,7 @@ angular.module('proton.core')
                 if (!element) {
                     attach(html, locals);
                 }
+
                 $('#body').append('<div class="modal-backdrop fade in"></div>');
                 $rootScope.modalOpen = true;
                 setTimeout(() => {
