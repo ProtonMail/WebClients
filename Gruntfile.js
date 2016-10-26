@@ -252,7 +252,7 @@ module.exports = function(grunt) {
         sass: {
             build: {
                 options: {
-                    includePaths: "<%= vendor_files.sass_include_dirs %>"
+                    loadPath: "<%= vendor_files.sass_include_dirs %>"
                 },
                 files: {
                     "<%= build_dir %>/assets/application.css": "<%= app_files.sass %>"

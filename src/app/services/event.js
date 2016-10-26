@@ -22,10 +22,19 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
         notify,
         pmcw
     ) => {
-
         const DELETE = 0;
         const CREATE = 1;
         const UPDATE = 2;
+        /**
+         * Clean contact datas
+         * @param  {Object} contact
+         * @return {Object}
+         */
+        function cleanContact(contact = {}) {
+            contact.Name = DOMPurify.sanitize(contact.Name);
+            contact.Email = DOMPurify.sanitize(contact.Email);
+            return contact;
+        }
         const eventModel = {
             get() {
                 if (this.ID) {
@@ -61,29 +70,28 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                     });
                 }
             },
-            manageContacts(contacts) {
-                if (angular.isDefined(contacts)) {
-                    _.each(contacts, (contact) => {
-                        const index = _.findIndex(authentication.user.Contacts, { ID: contact.ID });
+            manageContacts(contacts = []) {
+                contacts.forEach((contact) => {
+                    const contactCleaned = cleanContact(contact.Contact);
+                    const index = _.findIndex(authentication.user.Contacts, { ID: contact.ID });
 
-                        if (contact.Action === DELETE) {
-                            if (index !== -1) {
-                                authentication.user.Contacts.splice(index, 1);
-                                $rootScope.$broadcast('deleteContact', contact.ID);
-                            }
-                        } else if (contact.Action === CREATE) {
-                            if (index === -1) {
-                                authentication.user.Contacts.push(contact.Contact);
-                                $rootScope.$broadcast('createContact', contact.ID, contact.Contact);
-                            }
-                        } else if (contact.Action === UPDATE) {
-                            if (index !== -1) {
-                                authentication.user.Contacts[index] = contact.Contact;
-                                $rootScope.$broadcast('updateContact', contact.ID, contact.Contact);
-                            }
+                    if (contact.Action === DELETE) {
+                        if (index !== -1) {
+                            authentication.user.Contacts.splice(index, 1);
+                            $rootScope.$broadcast('deleteContact', contact.ID);
                         }
-                    });
-                }
+                    } else if (contact.Action === CREATE) {
+                        if (index === -1) {
+                            authentication.user.Contacts.push(contactCleaned);
+                            $rootScope.$broadcast('createContact', contact.ID, contactCleaned);
+                        }
+                    } else if (contact.Action === UPDATE) {
+                        if (index !== -1) {
+                            authentication.user.Contacts[index] = contactCleaned;
+                            $rootScope.$broadcast('updateContact', contact.ID, contactCleaned);
+                        }
+                    }
+                });
             },
             manageUser(user) {
                 if (angular.isDefined(user)) {
