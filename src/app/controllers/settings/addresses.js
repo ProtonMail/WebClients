@@ -302,7 +302,7 @@ angular.module('proton.controllers.Settings')
                     params: {
                         domains: pmDomains,
                         members: [self],
-                        organizationPublicKey: $scope.organizationPublicKey,
+                        organizationKey: {}, // Aliases not for sub-users
                         submit() {
                             addressModal.deactivate();
                             eventManager.call();
