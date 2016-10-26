@@ -294,7 +294,7 @@ angular.module('proton.conversation')
                 const name = $state.$current.name;
                 const route = name.replace('.element', '');
 
-                $state.go(route, { id: '' });
+                $state.go(route, { id: '' }, { reload: true });
             }
 
             /**
