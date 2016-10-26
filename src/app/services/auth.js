@@ -33,6 +33,18 @@ angular.module('proton.authentication', [
     srp
 ) => {
     let keys = {}; // Store decrypted keys
+    /**
+     * Clean contact datas received from the BE
+     * @param  {Array} contacts
+     * @return {Array}
+     */
+    function cleanContacts(contacts = []) {
+        return contacts.map((contact) => {
+            contact.Name = DOMPurify.sanitize(contact.Name);
+            contact.Email = DOMPurify.sanitize(contact.Email);
+            return contact;
+        });
+    }
     const auth = {
         headersSet: false,
         // These headers are used just once for the /cookies route, then we forget them and use cookies and x-pm-session header instead.
@@ -114,8 +126,7 @@ angular.module('proton.authentication', [
                 })
                 .then(({ contacts, labels, organizationKey }) => {
                     if (contacts.data && contacts.data.Code === 1000 && labels.data && labels.data.Code === 1000) {
-
-                        user.Contacts = contacts.data.Contacts;
+                        user.Contacts = cleanContacts(contacts.data.Contacts);
                         user.Labels = labels.data.Labels;
 
                         return { user, organizationKey };
