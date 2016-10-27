@@ -1,0 +1,28 @@
+<div class="pm_table addressKeysView-container">
+    <table class="bordered absorbing">
+        <thead>
+            <tr>
+                <th translate-context="Title" translate-comment="table heading" translate>Email</th>
+                <th class="finger-print absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Fingerprint</th>
+                <th class="key-size absorbing-column-half" translate-context="Title" translate-comment="table heading" translate>Key size</th>
+                <th class="actions text-center" translate-context="Title" translate-comment="table heading" translate>Download</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="key in keys track by key.addressID">
+                <td>
+                    <span><strong>{{ key.email }}</strong></span>
+                </td>
+                <td>
+                    <code>{{ key.fingerprint }}</code>
+                </td>
+                <td translate translate-comment="keys page to show the key size for an address">
+                    {{ key.bitSize }} Bit <i class="fa fa-info-circle cursor-pointer" pt-tooltip="The ability to change key strength will be coming in a future ProtonMail release"></i>
+                </td>
+                <td class="text-center">
+                    <button class="pm_button link" ng-click="download(key.publicKey, key.email, 'public')" ng-hide="isSafari" translate-context="Action" translate>Public key</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

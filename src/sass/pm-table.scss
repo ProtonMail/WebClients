@@ -53,6 +53,18 @@
         &.bordered {
             border: 1px solid $border;
         }
+        &.absorbing {
+            table-layout: auto;
+            th, td {
+                white-space: nowrap;
+            }
+            th.absorbing-column {
+                width: 100%;
+            }
+            th.absorbing-column-half {
+                width: 50%;
+            }
+        }
         &.plain {
             th, td {
                 line-height: initial;

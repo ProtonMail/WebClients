@@ -712,7 +712,7 @@ angular.module('proton.routes', [
             access(user, $q) {
                 const deferred = $q.defer();
 
-                if (user.Role === 2) {
+                if (user.Role === 0 || user.Role === 2) {
                     deferred.resolve();
                 } else {
                     deferred.reject();
@@ -723,8 +723,7 @@ angular.module('proton.routes', [
         },
         views: {
             'content@secured': {
-                templateUrl: 'templates/views/keys.tpl.html',
-                controller: 'KeysController'
+                templateUrl: 'templates/views/keys.tpl.html'
             }
         }
     })
