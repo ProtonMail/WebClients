@@ -215,15 +215,19 @@ module.exports = function(grunt) {
             },
             build_external: {
                 files: [{
-                    src: ["<%= external_files.openpgp %>"],
+                    src: ["<%= external_files.openpgp %>", "<%= external_files.manifest %>"],
                     dest: "./<%= build_dir %>/",
+                    expand: true,
+                    flatten: true,
                     nonull: true
                 }]
             },
             compile_external: {
                 files: [{
-                    src: ["<%= external_files.openpgp %>"],
+                    src: ["<%= external_files.openpgp %>", "<%= external_files.manifest %>"],
                     dest: "./<%= compile_dir %>/",
+                    expand: true,
+                    flatten: true,
                     nonull: true
                 }]
             },
