@@ -139,7 +139,7 @@ angular.module('proton.controllers.Sidebar', ['proton.constants'])
      * @param {Object} label
      */
     $scope.goToLabel = function (label) {
-        const params = { page: undefined, filter: undefined, sort: undefined, label: label.ID };
+        const params = { page: null, filter: null, sort: null, label: label.ID };
 
         $state.go('secured.label', params);
     };
