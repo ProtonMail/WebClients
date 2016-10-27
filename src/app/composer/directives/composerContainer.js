@@ -49,9 +49,7 @@ angular.module('proton.composer')
 
                         case 'editor.loaded':
                         case 'editor.focus': {
-
                             const { message, editor, isMessage } = data;
-
                             // If it's not an editor from the composer but signature etc.
                             if (!isMessage) {
                                 break;
@@ -61,15 +59,19 @@ angular.module('proton.composer')
                                 scope.$applyAsync(() => message.autocompletesFocussed = false);
                                 break;
                             }
-
-                            scope
-                                .$applyAsync(() => {
-                                    const { index, composer } = composerRender.findComposer(el[0], message);
-                                    focusMessage(angular.extend({}, data, {
-                                        composer, index, keepState: false,
-                                        focusEditor: type === 'editor.focus'
-                                    }), editor);
+                            scope.$applyAsync(() => {
+                                const { index, composer } = composerRender.findComposer(el[0], message);
+                                const state = angular.extend({}, data, {
+                                    composer, index,
+                                    keepState: false,
+                                    focusEditor: (type === 'editor.focus'),
+                                    size: scope.messages.length
                                 });
+                                focusMessage(state, editor);
+
+                                // Only re-render when we load a new composer
+                                (type === 'editor.loaded') && renderList(state);
+                            });
                             break;
                         }
 
