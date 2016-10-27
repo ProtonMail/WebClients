@@ -21,7 +21,8 @@ module.exports = {
     sass: ["src/sass/APP_PROTON.scss"]
   },
   external_files: {
-    openpgp: ["openpgp.worker.min.js", "openpgp.min.js", "manifest.json"]
+    openpgp: ["vendor/openpgp/dist/openpgp.worker.min.js", "vendor/openpgp/dist/openpgp.min.js"],
+    manifest: ["manifest.json"]
   },
   test_files: {
     js: [
@@ -64,7 +65,8 @@ module.exports = {
       "vendor/angular-gettext/dist/angular-gettext.js",
       "vendor/awesomplete/awesomplete.js",
       "vendor/angular-ui-indeterminate/dist/indeterminate.js",
-      "vendor/bcryptjs/dist/bcrypt.js"
+      "vendor/bcryptjs/dist/bcrypt.js",
+      "vendor/openpgp/dist/openpgp.js"
     ],
     bootstrap_components: [
       "affix",
