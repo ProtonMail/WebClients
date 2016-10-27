@@ -755,7 +755,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
      * @param {Integer} page
      */
     function goToPage(type = 'to') {
-        $scope.unselectAllElements();
+        $stateParams.page && $scope.unselectAllElements();
         paginationModel.setMaxPage($scope.conversationCount());
         $scope.page = $stateParams.page || 1;
         paginationModel[type]();
