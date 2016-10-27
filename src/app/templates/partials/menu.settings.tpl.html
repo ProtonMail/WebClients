@@ -29,4 +29,7 @@
     <li role="presentation" ng-class="{'active': ('secured.payments' | includedByState)}">
         <a class="pm_button" ui-sref="secured.payments" translate-context="Title" translate-comment="payments menu" translate>Payments</a>
     </li>
+    <li role="presentation" ng-show="user.Role === 0 || user.Role === 2" ng-class="{'active': ('secured.keys' | includedByState)}">
+        <a class="pm_button" ui-sref="secured.keys" translate-context="Title" translate-comment="keys menu" translate>Keys</a>
+    </li>
 </ul>

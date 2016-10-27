@@ -65,6 +65,7 @@ angular.module('proton', [
     'proton.service.message',
 
     // Directives
+    'proton.address',
     'proton.message',
     'proton.conversation',
     'proton.card',
