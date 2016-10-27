@@ -25,8 +25,7 @@ angular.module('proton.core')
             }
 
             try {
-                const url = $injector.get('url');
-                const $http = $injector.get('$http');
+                const Bug = $injector.get('Bug');
                 const tools = $injector.get('tools');
                 const $state = $injector.get('$state');
                 const crashData = {
@@ -38,8 +37,7 @@ angular.module('proton.core')
                     ClientVersion: CONFIG.app_version,
                     Debug: { state: $state.$current.name, error: debug }
                 };
-                $http.post(url.get() + '/bugs/crash', crashData)
-                    .catch(angular.noop);
+                Bug.crash(crashData).catch(angular.noop);
             } catch (e) {
                 // Do nothing
                 console.error(e);
