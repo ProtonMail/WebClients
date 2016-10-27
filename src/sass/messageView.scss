@@ -8,8 +8,13 @@
         color: $yellow;
     }
     header {
+
+        display:-webkit-flex;
         display: flex;
+
+        -webkit-flex-direction:column;
         flex-direction: column;
+
         /*
         Supercalifragilisticexpialidocious h1
 		avoid child shrink which is accomplished here by min-content
@@ -117,6 +122,7 @@
                             text-align: left;
                         }
                         em {
+                            display:-webkit-flex;
                             display: flex;
                             position: absolute;
                             bottom:5px;

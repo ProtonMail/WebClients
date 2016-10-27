@@ -1,6 +1,12 @@
 @mixin fillHeight() {
-    display: flex;
+
+    display:-webkit-flex;
+    display:flex;
+
+    -webkit-flex-direction:column;
     flex-direction: column;
+
+    -webkit-flex:1;
     flex:1;
     /*
     Allow scroll inside Flex box
@@ -13,5 +19,6 @@
 }
 
 @mixin filledWidth() {
+    display:-webkit-flex;
     display: flex;
 }

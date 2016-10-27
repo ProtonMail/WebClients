@@ -19,7 +19,9 @@ body {
         height: 100%;
         overflow: hidden;
         display: flex;
+        display: -webkit-flex;
         flex-direction: column;
+        -webkit-flex-direction:column;
         &.latest {
             overflow-y: scroll;
             overflow-x: hidden;
@@ -35,7 +37,9 @@ body {
     #pm_thread {
         overflow-y: auto;
         overflow-x: hidden;
+        -webkit-flex:1;
         flex:1;
+
         &:focus {
             /* hotkey remove browser focus styling */
             outline: none;
