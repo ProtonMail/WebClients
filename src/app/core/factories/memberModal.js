@@ -1,5 +1,20 @@
 angular.module('proton.core')
-.factory('memberModal', (pmModal, CONSTANTS, gettextCatalog, Member, $q, networkActivityTracker, notify, pmcw, MemberKey, authentication, Address) => {
+.factory('memberModal', (
+    pmModal,
+    CONSTANTS,
+    eventManager,
+    gettextCatalog,
+    Member,
+    $q,
+    networkActivityTracker,
+    notify,
+    pmcw,
+    MemberKey,
+    authentication,
+    Address,
+    setupKeys
+    ) => {
+
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/member.tpl.html',
@@ -12,7 +27,7 @@ angular.module('proton.core')
             this.step = 'member';
             this.size = 2048;
             this.organization = params.organization;
-            this.organizationPublicKey = params.organizationPublicKey;
+            this.organizationKey = params.organizationKey;
             this.domains = params.domains;
             this.domain = params.domains[0];
             this.name = '';
@@ -25,57 +40,87 @@ angular.module('proton.core')
                 { label: 'GB', value: base * base * base }
             ];
             this.unit = this.units[0];
-            this.private = true;
+
+            this.isPrivate = false;
+            this.private = false;
+            this.showAddress = true;
+            this.showKeys = true;
 
             // Edit mode
             if (params.member) {
+                this.oldMember = _.extend({}, params.member);
+
                 this.ID = params.member.ID;
                 this.name = params.member.Name;
                 this.private = Boolean(params.member.Private);
                 this.isPrivate = Boolean(params.member.Private);
                 this.quota = params.member.MaxSpace / this.unit.value;
+
+                this.showAddress = params.member.Addresses.length === 0 && params.member.Type === 1;
+                this.showKeys = params.member.Keys.length === 0 && !this.isPrivate;
+            }
+
+            if (this.quota === 0) {
+                const freeSpace = this.organization.MaxSpace - this.organization.AssignedSpace;
+                this.quota = Math.min(freeSpace, this.units[1].value) / this.unit.value;
+            }
+
+            if (this.quota % base === 0) {
+                this.unit = this.units[1];
+                this.quota = this.quota / base;
             }
 
             // Functions
-            this.submit = function () {
+            this.submit = () => {
                 let mainPromise;
-                let address;
+                let addresses = [];
                 let notificationMessage;
-                let member = {
-                    Name: this.name,
-                    Private: this.private ? 1 : 0,
-                    MaxSpace: this.quota * this.unit.value
-                };
+                let member = {};
+                if (params.member) {
+                    _.extend(member, params.member);
+                }
+                member.Name = this.name;
+                member.Private = this.private ? 1 : 0;
+                member.MaxSpace = this.quota * this.unit.value;
 
-                const check = function () {
+                const check = () => {
                     const deferred = $q.defer();
                     let error;
 
                     if (this.name.length === 0) {
-                        error = gettextCatalog.getString('Invalid Name', null, 'Error');
+                        error = gettextCatalog.getString('Invalid name', null, 'Error');
                         deferred.reject(error);
-                    } else if (!member.ID && this.temporaryPassword !== this.confirmPassword) {
-                        error = gettextCatalog.getString('Invalid Password', null, 'Error');
+                    } else if ((!member.ID || (!member.Private && params.member.Keys.length === 0)) && this.temporaryPassword !== this.confirmPassword) {
+                        error = gettextCatalog.getString('Invalid password', null, 'Error');
                         deferred.reject(error);
-                    } else if (!member.ID && this.address.length === 0) {
-                        error = gettextCatalog.getString('Invalid Address', null, 'Error');
+                    } else if ((!member.ID || (params.member.Addresses.length === 0 && params.member.Type === 1)) && this.address.length === 0) {
+                        error = gettextCatalog.getString('Invalid address', null, 'Error');
                         deferred.reject(error);
                     } else if (this.quota * this.unit.value > (this.organization.MaxSpace - this.organization.UsedSpace)) {
-                        error = gettextCatalog.getString('Invalid Quota', null, 'Error');
+                        error = gettextCatalog.getString('Invalid storage quota', null, 'Error');
+                        deferred.reject(error);
+                    } else if (!member.ID && !member.Private && !this.organizationKey) {
+                        error = gettextCatalog.getString('Cannot decrypt organization key', null, 'Error');
                         deferred.reject(error);
                     } else {
                         deferred.resolve();
                     }
 
                     return deferred.promise;
-                }.bind(this);
+                };
 
-                const updateName = function () {
+                const updateName = () => {
+
+                    if (this.oldMember && this.oldMember.Name === this.name) {
+                        return $q.resolve();
+                    }
+
                     const deferred = $q.defer();
 
                     Member.name(member.ID, this.name)
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
+                            member.Name = this.name;
                             deferred.resolve();
                         } else if (result.data && result.data.Error) {
                             deferred.reject(result.data.Error);
@@ -85,14 +130,20 @@ angular.module('proton.core')
                     });
 
                     return deferred.promise;
-                }.bind(this);
+                };
 
-                const updateQuota = function () {
+                const updateQuota = () => {
+
+                    if (this.oldMember && this.oldMember.MaxSpace === (this.quota * this.unit.value)) {
+                        return $q.resolve();
+                    }
+
                     const deferred = $q.defer();
 
                     Member.quota(member.ID, this.quota * this.unit.value)
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
+                            member.MaxSpace = this.quota * this.unit.value;
                             deferred.resolve();
                         } else if (result.data && result.data.Error) {
                             deferred.reject(result.data.Error);
@@ -102,34 +153,39 @@ angular.module('proton.core')
                     });
 
                     return deferred.promise;
-                }.bind(this);
+                };
 
-                const updatePrivate = function () {
+                // const updatePrivate = () => {
+
+                //     if (this.oldMember && Boolean(this.oldMember.Private) === this.private) {
+                //         return $q.resolve();
+                //     }
+
+                //     const deferred = $q.defer();
+
+                //     if (this.private) {
+                //         Member.privatize(member.ID)
+                //         .then((result) => {
+                //             if (result.data && result.data.Code === 1000) {
+                //                 member.Private = 1;
+                //                 deferred.resolve();
+                //             } else if (result.data && result.data.Error) {
+                //                 deferred.reject(result.data.Error);
+                //             } else {
+                //                 deferred.reject('Request error');
+                //             }
+                //         });
+                //     } else {
+                //         deferred.resolve();
+                //     }
+
+                //     return deferred.promise;
+                // };
+
+                const memberRequest = () => {
                     const deferred = $q.defer();
 
-                    if (this.private) {
-                        Member.private(member.ID, this.quota * this.unit.value)
-                        .then((result) => {
-                            if (result.data && result.data.Code === 1000) {
-                                deferred.resolve();
-                            } else if (result.data && result.data.Error) {
-                                deferred.reject(result.data.Error);
-                            } else {
-                                deferred.reject('Request error');
-                            }
-                        });
-                    } else {
-                        deferred.resolve();
-                    }
-
-                    return deferred.promise;
-                }.bind(this);
-
-                const memberRequest = function () {
-                    const deferred = $q.defer();
-                    const request = member.ID ? Member.update(member) : Member.create(member);
-
-                    request.then((result) => {
+                    Member.create(member, this.temporaryPassword).then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             member = result.data.Member;
                             deferred.resolve();
@@ -143,13 +199,19 @@ angular.module('proton.core')
                     return deferred.promise;
                 };
 
-                const addressRequest = function () {
+                const addressRequest = () => {
                     const deferred = $q.defer();
+
+                    if (params.member && (params.member.Addresses.length > 0 && params.member.Type === 1)) {
+                        return Promise.resolve();
+                    }
 
                     Address.create({ Local: this.address, Domain: this.domain.DomainName, MemberID: member.ID })
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            address = result.data.Address;
+                            const address = result.data.Address;
+                            member.Addresses.push(address);
+                            addresses.push(address);
                             deferred.resolve();
                         } else if (result.data && result.data.Error) {
                             deferred.reject(result.data.Error);
@@ -159,56 +221,40 @@ angular.module('proton.core')
                     });
 
                     return deferred.promise;
-                }.bind(this);
+                };
 
-                const generateKey = function () {
-                    const password = this.temporaryPassword;
-                    const numBits = this.size;
-                    const randomString = authentication.randomString(24);
-                    const organizationKey = this.organizationPublicKey;
+                const generateKey = () => {
 
-                    return pmcw.generateKeysRSA(address.Email, password, numBits)
+                    if (member.Private || (params.member && params.member.Keys.length > 0)) {
+                        return Promise.resolve();
+                    }
+
+                    if (addresses.length === 0) {
+                        addresses = params.member.Addresses;
+                    }
+
+                    return setupKeys.generate(addresses, this.temporaryPassword, this.size);
+                };
+
+                const keyRequest = (result) => {
+
+                    if (member.Private || (params.member && params.member.Keys.length > 0)) {
+                        return Promise.resolve();
+                    }
+
+                    return setupKeys.memberSetup(result, this.temporaryPassword, member.ID, this.organizationKey)
                     .then((result) => {
-                        const userKey = result.privateKeyArmored;
-
-                        return pmcw.decryptPrivateKey(userKey, password)
-                        .then((result) => {
-                            return pmcw.encryptPrivateKey(result, randomString)
-                            .then((memberKey) => {
-                                return pmcw.encryptMessage(randomString, organizationKey)
-                                .then((token) => {
-                                    return Promise.resolve({
-                                        userKey,
-                                        memberKey,
-                                        token
-                                    });
-                                });
-                            });
-                        });
-                    });
-                }.bind(this);
-
-                const keyRequest = function (result) {
-                    return MemberKey.create({
-                        AddressID: address.ID,
-                        UserKey: result.userKey,
-                        MemberKey: result.memberKey,
-                        Token: result.token
-                    })
-                    .then(({ data = {} }) => {
-                        if (data.Code === 1000) {
-                            return Promise.resolve();
-                        }
-                        return Promise.reject(data.Error || 'Request error');
+                        member = result;
                     });
                 };
 
-                const finish = function () {
+                const finish = () => {
                     notify({ message: notificationMessage, classes: 'notification-success' });
-                    params.cancel(member);
+                    params.submit(member);
                 };
 
-                const error = function (error) {
+                const error = (error) => {
+                    eventManager.call();
                     notify({ message: error, classes: 'notification-danger' });
                 };
 
@@ -217,35 +263,26 @@ angular.module('proton.core')
                     notificationMessage = gettextCatalog.getString('Member updated', null, 'Notification');
                     mainPromise = check()
                     .then(updateName)
-                    .then(updateQuota)
-                    .then(updatePrivate)
-                    .then(finish)
-                    .catch(error);
+                    .then(updateQuota);
+//                    .then(updatePrivate);
                 } else {
-                    member.Password = this.temporaryPassword;
                     notificationMessage = gettextCatalog.getString('Member created', null, 'Notification');
 
-                    if (member.Private === 0) {
-                        mainPromise = check()
-                        .then(memberRequest)
-                        .then(addressRequest)
-                        .then(generateKey)
-                        .then(keyRequest)
-                        .then(finish)
-                        .catch(error);
-                    } else {
-                        mainPromise = check()
-                        .then(memberRequest)
-                        .then(addressRequest)
-                        .then(finish)
-                        .catch(error);
-                    }
+                    mainPromise = check().then(memberRequest);
                 }
 
-                networkActivityTracker.track(mainPromise);
-            }.bind(this);
+                mainPromise = mainPromise
+                .then(addressRequest)
+                .then(generateKey)
+                .then(keyRequest)
+                .then(finish)
+                .catch(error);
 
-            this.cancel = function () {
+
+                networkActivityTracker.track(mainPromise);
+            };
+
+            this.cancel = () => {
                 params.cancel();
             };
         }
