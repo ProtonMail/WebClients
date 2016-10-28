@@ -65,7 +65,7 @@ $modalMargin: 2rem;
         pointer-events: none;
     }
     .modal-dialog {
-        position: absolute;
+        position: relative;
         z-index: 2;
         background: $white;
         left: 50%;
