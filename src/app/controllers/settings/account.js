@@ -360,11 +360,12 @@ angular.module('proton.controllers.Settings')
                         if (data.Code === 1000) {
                             User.delete({ Password: password })
                             .then((result) => {
-                                if (result.data && result.data.Code === 1000) {
+                                const { data = {} } = result;
+                                if (data.Code === 1000) {
                                     deleteAccountModal.deactivate();
                                     $state.go('login');
-                                } else if (result.data && result.data.Error) {
-                                    notify({ message: result.data.Error, classes: 'notification-danger' });
+                                } else if (data.Error) {
+                                    throw data.Error;
                                 }
                             });
                         }
