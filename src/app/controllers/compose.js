@@ -1145,7 +1145,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         })
         .then((emails) => encryptBodyFromEmails(message, emails, parameters, deferred))
         .then(({ promises = [], outsiders }) => {
-
             // When all promises are complete
             $q.all(promises).then(() => {
                 if (outsiders === true && message.Password.length === 0 && message.ExpirationTime) {
@@ -1160,20 +1159,19 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 dispatchMessageAction(message);
                 return Message.send(parameters).$promise;
             })
-            .then((result = {}) => {
-                const { ErrorDescription, Code } = result;
+            .then((data = {}) => {
+                const { ErrorDescription, Code } = data;
                 // Check if there is an error coming from the server, then reject the process
-                if (result.Error) {
-                    const msg = ErrorDescription ? `${result.Error}: ${ErrorDescription}` : result.Error;
+                if (data.Error) {
+                    const msg = ErrorDescription ? `${data.Error}: ${ErrorDescription}` : data.Error;
                     const error = new Error(msg);
                     error.code = Code;
                     return Promise.reject(error);
                 }
-
-                return result;
+                return data;
             })
-            .then((result = {}) => {
-                const { Parent, Sent = {} } = result;
+            .then((data = {}) => {
+                const { Parent, Sent = {} } = data;
                 const events = [];
                 const conversation = cache.getConversationCached(Sent.ConversationID);
                 const numMessages = angular.isDefined(conversation) ? conversation.NumMessages : 1;
@@ -1214,19 +1212,12 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                         }
                     });
                 }, 500, false);
-                deferred.resolve(result); // Resolve finally the promise
+                deferred.resolve(data); // Resolve finally the promise
             })
             .catch((error) => {
                 setStateSending(false);
                 message.encrypting = false;
                 dispatchMessageAction(message);
-
-                // Internal recipient not found
-                if (error.code !== 15198) {
-                    error.originalMessage = error.message;
-                    error.message = 'Sending failed, please try again';
-                }
-
                 deferred.reject(error);
             });
         })
