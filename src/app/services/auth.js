@@ -15,6 +15,7 @@ angular.module('proton.authentication', [
     $state,
     $timeout,
     $injector,
+    $exceptionHandler,
     CONFIG,
     CONSTANTS,
     Contact,
@@ -22,6 +23,7 @@ angular.module('proton.authentication', [
     errorReporter,
     generateModal,
     gettextCatalog,
+    Key,
     Label,
     networkActivityTracker,
     notify,
@@ -136,34 +138,8 @@ angular.module('proton.authentication', [
                     return Promise.reject({ message: 'Error during label / contact request' });
                 })
                 .then(({ user, organizationKey }) => {
-                    const promises = [];
-                    const dirtyAddresses = [];
-                    const privateUser = user.Private === 1;
-                    const keyInfo = (key) => {
-                        return pmcw.keyInfo(key.PrivateKey).then((info) => {
-                            key.created = info.created; // Creation date
-                            key.bitSize = info.bitSize; // We don't use this data currently
-                            key.fingerprint = info.fingerprint; // Fingerprint
-                        });
-                    };
 
-                    const storeKey = ({ key, keyPromise, address, index }) => {
-                        return keyPromise.then((pkg) => {
-                            key.decrypted = true; // We mark this key as decrypted
-                            api.storeKey(address.ID, key.ID, pkg); // We store the package to the current service
-                            return keyInfo(key);
-                        }, () => {
-                            key.decrypted = false; // This key is not decrypted
-                            // If the primary (first) key for address does not decrypt, display error.
-                            if (index === 0) {
-                                address.disabled = true; // This address cannot be used
-                                notify({ message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger' });
-                            }
-                            return keyInfo(key);
-                        });
-                    };
-
-                    const generateKeys = () => {
+                    const generateKeys = (addresses) => {
                         const deferred = $q.defer();
 
                         generateModal.activate({
@@ -171,7 +147,7 @@ angular.module('proton.authentication', [
                                 title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
                                 message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', null, 'Info'),
                                 password: api.getPassword(),
-                                addresses: dirtyAddresses,
+                                addresses,
                                 close(success) {
                                     if (success) {
                                         // FIXME this doesn't decrypt or store keys!!!
@@ -184,7 +160,6 @@ angular.module('proton.authentication', [
                                     }
 
                                     generateModal.deactivate();
-
                                 }
                             }
                         });
@@ -192,39 +167,28 @@ angular.module('proton.authentication', [
                         return deferred.promise;
                     };
 
-                    // All keys are decrypted and stored
-                    const dummyAddress = { ID: CONSTANTS.MAIN_KEY };
-                    _.each(user.Keys, (key, index) => {
-                        promises.push(storeKey({ key, keyPromise: pmcw.decryptPrivateKey(key.PrivateKey, api.getPassword()), address: dummyAddress, index }));
-                    });
+                    const storeKeys = (keys) => {
+                        _.each(keys, ({ address, key, pkg }) => {
+                            api.storeKey(address.ID, key.ID, pkg);
+                        });
+                    };
 
-                    // All private keys are decrypted and stored in a `keys` array
-                    _.each(user.Addresses, (address) => {
-                        if (address.Keys.length > 0) {
-                            let index = 0;
-                            _.each(address.Keys, (key) => {
-                                if (subuser === true) {
-                                    promises.push(storeKey({ key, keyPromise: setupKeys.decryptMemberKey(key, organizationKey), address, index }));
-                                } else {
-                                    promises.push(storeKey({ key, keyPromise: pmcw.decryptPrivateKey(key.PrivateKey, api.getPassword()), address, index }));
-                                }
-                                index++;
-                            });
-                        } else if (address.Status === 1 && privateUser === true) {
-                            dirtyAddresses.push(address);
+                    return setupKeys.decryptUser(user, organizationKey, api.getPassword())
+                    .then(({ keys, dirtyAddresses }) => {
+                        if (dirtyAddresses.length && generateModal.active() === false) {
+                            return generateKeys(dirtyAddresses)
+                            .then(() => {}, () => storeKeys(keys));
                         }
-                    });
-
-                    if (dirtyAddresses.length > 0) {
-                        promises.push(generateKeys());
-                    }
-
-                    return $q.all(promises).then(() => user, () => user);
+                        storeKeys(keys);
+                    })
+                    .then(() => user)
+                    .catch(
+                        (error) => {
+                            return $exceptionHandler(error)
+                            .then(() => Promise.reject(error));
+                        }
+                    );
                 });
-            })
-            .catch((err) => {
-                api.logout(true);
-                return Promise.reject(err);
             }));
         }
     };
@@ -621,7 +585,17 @@ angular.module('proton.authentication', [
 
                     return user;
                 },
-                errorReporter.catcher('Please try again later')
+                (error) => {
+                    $state.go('support.message', {
+                        data: {
+                            title: 'Problem loading your account',
+                            content: 'ProtonMail encountered a problem loading your account. Please try again later',
+                            type: 'alert-danger'
+                        }
+                    });
+                    return Promise.reject(error);
+                }
+                //errorReporter.catcher('Please try again later')
             );
         },
 
