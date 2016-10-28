@@ -111,8 +111,8 @@
 			                    <td class="actions text-right">
                                     <button type="button" class="pm_button link" ng-click="editMember(member)" translate-context="Action" translate>Edit</button>
                                     <button type="button" class="pm_button link" ng-click="login(member)" ng-show="member.Private === 0 && member.Keys.length > 0" translate-context="Action" translate>Login</button>
-                                    <button type="button" class="pm_button link" ng-show="member.Type === 1 && !member.Self" ng-click="remove(member)" translate-context="Action" translate>Delete</button>
-                                    <button type="button" class="pm_button link" ng-show="member.Type === 0 && !member.Self" ng-click="remove(member)" translate-context="Action" translate>Remove</button>
+                                    <button type="button" class="pm_button link" ng-show="member.Type === 1 && !member.Self" ng-click="removeMember(member)" translate-context="Action" translate>Delete</button>
+                                    <button type="button" class="pm_button link" ng-show="member.Type === 0 && !member.Self" ng-click="removeMember(member)" translate-context="Action" translate>Remove</button>
 								</td>
 			                </tr>
                             <tr class="hasTable" ng-repeat-end ng-show="member.toggle === true && member.Addresses.length > 0">

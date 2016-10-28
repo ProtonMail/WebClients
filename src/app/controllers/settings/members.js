@@ -21,10 +21,12 @@ angular.module('proton.controllers.Settings')
     notify,
     organization,
     Organization,
-    organizationKeys
+    organizationKeys,
+    pmcw
 ) => {
 
-    $controller('AddressesController', { $scope });
+    $controller('AddressesController', { $scope, authentication, domains, members, organization, organizationKeys, pmcw });
+
     const MASTER = 2;
     const SUB = 1;
 
@@ -45,79 +47,7 @@ angular.module('proton.controllers.Settings')
         { label: gettextCatalog.getString('Member', null), value: SUB }
     ];
 
-    // Listeners
-    $scope.$on('deleteDomain', (event, domainId) => {
-        const index = _.findIndex($scope.domains, { ID: domainId });
-
-        if (index !== -1) {
-            $scope.domains.splice(index, 1);
-        }
-    });
-
-    $scope.$on('createDomain', (event, domainId, domain) => {
-        const index = _.findIndex($scope.domains, { ID: domainId });
-
-        if (index === -1) {
-            $scope.domains.push(domain);
-        } else {
-            _.extend($scope.domains[index], domain);
-        }
-    });
-
-    $scope.$on('updateDomain', (event, domainId, domain) => {
-        const index = _.findIndex($scope.domains, { ID: domainId });
-
-        if (index === -1) {
-            $scope.domains.push(domain);
-        } else {
-            _.extend($scope.domains[index], domain);
-        }
-    });
-
-    $rootScope.$on('deleteMember', (event, memberId) => {
-        const index = _.findIndex($scope.members, { ID: memberId });
-
-        if (index !== -1) {
-            $scope.members.splice(index, 1);
-        }
-    });
-
-    $rootScope.$on('createMember', (event, memberId, member) => {
-        const index = _.findIndex($scope.members, { ID: memberId });
-
-        if (index === -1) {
-            $scope.members.push(member);
-        } else {
-            _.extend($scope.members[index], member);
-        }
-    });
-
-    $rootScope.$on('updateMember', (event, memberId, member) => {
-        const index = _.findIndex($scope.members, { ID: memberId });
-        if (index === -1) {
-            $scope.members.push(member);
-        } else {
-            _.extend($scope.members[index], member);
-        }
-    });
-
     $scope.initialization = () => {
-        if (members.data && members.data.Code === 1000) {
-            $scope.members = members.data.Members;
-        }
-
-        if (domains.data && domains.data.Code === 1000) {
-            $scope.domains = domains.data.Domains;
-        }
-
-        if (organization.data && organization.data.Code === 1000) {
-            $scope.organization = organization.data.Organization;
-        }
-
-        if (organizationKeys.data && organizationKeys.data.Code === 1000) {
-            $scope.organizationPublicKey = organizationKeys.data.PublicKey;
-            $scope.organizationPrivateKey = organizationKeys.data.PrivateKey;
-        }
 
         switch ($stateParams.action) {
             case 'new':
@@ -362,18 +292,7 @@ angular.module('proton.controllers.Settings')
      * Open a modal to create a new member
      */
     $scope.addMember = () => {
-        if ($scope.organization.MaxMembers - $scope.organization.UsedMembers < 1) {
-            notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger' });
-            return;
-        }
-
-        if ($scope.organization.MaxAddresss - $scope.organization.UsedAddresses < 1) {
-            notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger' });
-            return;
-        }
-
-        if ($scope.organization.MaxSpace - $scope.organization.UsedSpace < 1) {
-            notify({ message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members', null, 'Error'), classes: 'notification-danger' });
+        if (!$scope.canAddMember()) {
             return;
         }
 
@@ -389,7 +308,7 @@ angular.module('proton.controllers.Settings')
             params: {
                 member,
                 organization: $scope.organization,
-                organizationPublicKey: $scope.organizationPublicKey,
+                organizationKey: $scope.organizationKey,
                 domains: $scope.domains,
                 submit(member) {
                     const index = _.findIndex($scope.members, { ID: member.ID });
@@ -413,7 +332,7 @@ angular.module('proton.controllers.Settings')
      * Remove member
      * @param {Object} member
      */
-    $scope.remove = (member) => {
+    $scope.removeMember = (member) => {
         const title = gettextCatalog.getString('Remove member', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to remove this member?', null, 'Info');
         const index = $scope.members.indexOf(member);

@@ -5,6 +5,7 @@ angular.module('proton.controllers.Settings')
     $q,
     $rootScope,
     $scope,
+    $state,
     gettextCatalog,
     Address,
     addressModal,
@@ -26,17 +27,14 @@ angular.module('proton.controllers.Settings')
     networkActivityTracker,
     notify,
     Organization,
+    organization,
     organizationKeys,
+    pmcw,
     spfModal,
     verificationModal
 ) => {
 
-    $controller('AddressesController', { $scope });
-
-    // Variables
-    $scope.organizationPublicKey = organizationKeys.data.PublicKey;
-    $scope.domains = domains.data.Domains;
-    $scope.members = members.data.Members;
+    $controller('AddressesController', { $scope, authentication, domains, members, organization, organizationKeys, pmcw });
 
     // Listeners
     $scope.$on('domain', (event, domain) => {
@@ -72,62 +70,6 @@ angular.module('proton.controllers.Settings')
     $scope.$on('dmarc', (event, domain) => {
         $scope.closeModals();
         $scope.dmarc(domain);
-    });
-
-    $scope.$on('deleteDomain', (event, domainId) => {
-        const index = _.findIndex($scope.domains, { ID: domainId });
-
-        if (index !== -1) {
-            $scope.domains.splice(index, 1);
-        }
-    });
-
-    $scope.$on('createDomain', (event, domainId, domain) => {
-        const index = _.findIndex($scope.domains, { ID: domainId });
-
-        if (index === -1) {
-            $scope.domains.push(domain);
-        } else {
-            _.extend($scope.domains[index], domain);
-        }
-    });
-
-    $scope.$on('updateDomain', (event, domainId, domain) => {
-        const index = _.findIndex($scope.domains, { ID: domainId });
-
-        if (index === -1) {
-            $scope.domains.push(domain);
-        } else {
-            _.extend($scope.domains[index], domain);
-        }
-    });
-
-    $rootScope.$on('deleteMember', (event, memberId) => {
-        const index = _.findIndex($scope.members, { ID: memberId });
-
-        if (index !== -1) {
-            $scope.members.splice(index, 1);
-        }
-    });
-
-    $rootScope.$on('createMember', (event, memberId, member) => {
-        const index = _.findIndex($scope.members, { ID: memberId });
-
-        if (index === -1) {
-            $scope.members.push(member);
-        } else {
-            _.extend($scope.members[index], member);
-        }
-    });
-
-    $rootScope.$on('updateMember', (event, memberId, member) => {
-        const index = _.findIndex($scope.members, { ID: memberId });
-
-        if (index === -1) {
-            $scope.members.push(member);
-        } else {
-            _.extend($scope.members[index], member);
-        }
     });
 
     /**

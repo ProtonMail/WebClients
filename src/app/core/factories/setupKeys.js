@@ -50,12 +50,12 @@ angular.module('proton.core')
             return $q.all(promises);
         }
 
-        function decryptMemberKey(key = {}, organizationKey = {}) {
+        function decryptMemberKey(key = {}, signingKey = {}) {
 
-            return pmcw.decryptMessage(key.Token, organizationKey, false, null, organizationKey.toPublic().armor())
+            return pmcw.decryptMessage(key.Token || key.Activation, signingKey, false, null, signingKey.toPublic().armor())
             .then(({ data, signature }) => {
                 if (signature !== 1) {
-                    return $q.reject({ message: 'Organization signature verification failed' });
+                    return $q.reject({ message: 'Signature verification failed' });
                 }
 
                 return pmcw.decryptPrivateKey(key.PrivateKey, data);
@@ -103,7 +103,7 @@ angular.module('proton.core')
             })
             .then((result) => {
                 memberKey = result;
-                return pmcw.encryptMessage(randomString, organizationKey.toPublic().armor(), [], organizationKey);
+                return pmcw.encryptMessage(randomString, organizationKey.toPublic().armor(), [], [organizationKey]);
             })
             .then((token) => {
                 return {
@@ -194,6 +194,7 @@ angular.module('proton.core')
         }
 
         return {
+            decryptMemberKey,
             generate,
             generateAddresses,
             key,
