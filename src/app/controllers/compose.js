@@ -1133,7 +1133,11 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                     message.encrypting = false;
                     setStateSending(false);
                     dispatchMessageAction(message);
-                    return deferred.reject(new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.'));
+
+                    // Reject the error => to see the notification, and break the sending process
+                    const error = new Error('Expiring emails to non-ProtonMail recipients require a message password to be set. For more information, <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">click here</a>.');
+                    deferred.reject(error);
+                    throw error;
                 }
 
                 message.encrypting = false;
