@@ -37,11 +37,13 @@ angular.module('proton.core')
                     ClientVersion: CONFIG.app_version,
                     Debug: { state: $state.$current.name, error: debug }
                 };
-                Bug.crash(crashData).catch(angular.noop);
+                return Bug.crash(crashData).catch(angular.noop);
             } catch (e) {
                 // Do nothing
                 console.error(e);
             }
         }
+
+        return Promise.resolve();
     };
 });

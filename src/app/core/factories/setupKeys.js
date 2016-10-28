@@ -6,6 +6,7 @@ angular.module('proton.core')
         gettextCatalog,
         Key,
         MemberKey,
+        notify,
         passwords,
         pmcw,
         webcrypto
@@ -51,13 +52,11 @@ angular.module('proton.core')
         }
 
         function decryptMemberKey(key = {}, signingKey = {}) {
-
             return pmcw.decryptMessage(key.Token || key.Activation, signingKey, false, null, signingKey.toPublic().armor())
             .then(({ data, signature }) => {
                 if (signature !== 1) {
                     return $q.reject({ message: 'Signature verification failed' });
                 }
-
                 return pmcw.decryptPrivateKey(key.PrivateKey, data);
             });
         }
@@ -185,12 +184,114 @@ angular.module('proton.core')
                 const payload = _.extend(org, {
                     MemberID: member.ID,
                     Activation: user.Token,
-                    UserKey: user.UserKey
+                    UserKey: user.MemberKey
                 });
 
                 return MemberKey.create(payload);
             })
             .then(errorHandler);
+        }
+
+        function decryptUser(user = {}, organizationKey = {}, mailboxPassword) {
+
+            const privateUser = user.Private === 1;
+            const subuser = angular.isDefined(user.OrganizationPrivateKey);
+
+            const keyInfo = (key) => {
+                return pmcw.keyInfo(key.PrivateKey).then((info) => {
+                    key.created = info.created; // Creation date
+                    key.bitSize = info.bitSize; // We don't use this data currently
+                    key.fingerprint = info.fingerprint; // Fingerprint
+                });
+            };
+
+            const activateKey = (key, pkg) => {
+                return pmcw.encryptPrivateKey(pkg, mailboxPassword)
+                .then((PrivateKey) => Key.activate(key.ID, { PrivateKey }))
+                .then(() => pkg);
+            };
+
+            const storeKey = ({ key, pkg, address }) => {
+                key.decrypted = true; // We mark this key as decrypted
+                keyInfo(key);
+                return { address, key, pkg };
+            };
+
+            const skipKey = ({ key, address, index }) => {
+                key.decrypted = false; // This key is not decrypted
+                keyInfo(key);
+                // If the primary (first) key for address does not decrypt, display error.
+                if (index === 0) {
+                    address.disabled = true; // This address cannot be used
+                    notify({ message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger' });
+                }
+                return { address, key, pkg: null };
+            };
+
+            const promises = [];
+
+            // All user key are decrypted and stored
+            const address = { ID: CONSTANTS.MAIN_KEY };
+            _.each(user.Keys, (key, index) => {
+                if (subuser === true) {
+                    promises.push(
+                        decryptMemberKey(key, organizationKey)
+                        .then((pkg) => storeKey({ key, pkg, address }))
+                        );
+                } else {
+                    promises.push(
+                        pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword)
+                        .then(
+                            (pkg) => storeKey({ key, pkg, address }),
+                            () => skipKey({ key, address, index })
+                            )
+                        );
+                }
+            });
+
+            return $q.all(promises).then((primaryKeys) => {
+
+                const promises = [];
+                const dirtyAddresses = [];
+
+                // All address keys are decrypted and stored
+                _.each(user.Addresses, (address) => {
+                    if (address.Keys.length > 0) {
+                        let index = 0;
+                        _.each(address.Keys, (key) => {
+                            if (subuser === true) {
+                                promises.push(
+                                    decryptMemberKey(key, organizationKey)
+                                    .then((pkg) => storeKey({ key, pkg, address }))
+                                    );
+                            } else if (key.Activation) {
+                                promises.push(
+                                    decryptMemberKey(key, primaryKeys[0].pkg)
+                                    .then((pkg) => activateKey(key, pkg))
+                                    .then((pkg) => storeKey({ key, pkg, address }))
+                                    );
+                            } else {
+                                promises.push(
+                                    pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword)
+                                    .then(
+                                        (pkg) => storeKey({ key, pkg, address }),
+                                        () => skipKey({ key, address, index })
+                                        )
+                                    );
+                            }
+                            index++;
+                        });
+                    } else if (address.Status === 1 && privateUser === true) {
+                        dirtyAddresses.push(address);
+                    }
+                });
+
+                return $q.all(promises)
+                .then((addressKeys) => {
+                    const keys = primaryKeys.concat(addressKeys).filter(({ key }) => key.decrypted);
+                    return { keys, dirtyAddresses };
+                });
+            });
         }
 
         return {
@@ -201,7 +302,8 @@ angular.module('proton.core')
             memberSetup,
             memberKey,
             setup,
-            reset
+            reset,
+            decryptUser
         };
     }
 );
