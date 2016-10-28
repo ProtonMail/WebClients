@@ -524,12 +524,17 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
          * so we will set the listener after a delay.
          * Then the message will be saved every 3s.
          */
-        message.defferredSaveLater = $timeout(() => {
-            message.editor.addEventListener('input', _.debounce(() => {
-                $scope.saveLater(message);
-            }, CONSTANTS.SAVE_TIMEOUT_TIME));
-        }, CONSTANTS.SAVE_TIMEOUT_TIME, false);
+        let isEditorFocused = false;
 
+        message.editor.addEventListener('input', _.throttle(() => {
+            isEditorFocused && $scope.saveLater(message);
+        }, CONSTANTS.SAVE_THROTTLE_TIME));
+
+        message.editor.addEventListener('blur', () => {
+            isEditorFocused = false;
+            $scope.saveLater(message);
+        });
+        message.editor.addEventListener('focus', () => isEditorFocused = true);
         message.editor.addEventListener('dragstart', onDragStart);
         message.editor.addEventListener('dragend', onDragEnd);
         message.editor.addEventListener('dragenter', onDragEnter);
@@ -1276,6 +1281,8 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
     $scope.openCloseModal = (message) => {
 
         if (message.editor) {
+            message.editor.removeEventListener('blur');
+            message.editor.removeEventListener('focus');
             message.editor.removeEventListener('input');
             message.editor.removeEventListener('DOMNodeRemoved');
             message.editor.removeEventListener('dragenter', onDragEnter);
