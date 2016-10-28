@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="pm_button error pull-right" ng-click="ctrl.submit()" translate translate-context="Action">Delete</button>
+            <button type="button" class="pm_button error pull-right" ng-disabled="networkActivity.loading()" ng-click="ctrl.submit()" translate translate-context="Action">Delete</button>
             <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
         </div>
     </div>

@@ -344,7 +344,7 @@ angular.module('proton.controllers.Settings')
         deleteAccountModal.activate({
             params: {
                 submit(password, feedback) {
-                    Bug.report({
+                    const params = {
                         OS: '--',
                         OSVersion: '--',
                         Browser: '--',
@@ -356,9 +356,11 @@ angular.module('proton.controllers.Settings')
                         Username: '--',
                         Email: '--',
                         Description: feedback
-                    }).then((data) => {
+                    };
+                    const promise = Bug.report(params)
+                    .then((data) => {
                         if (data.Code === 1000) {
-                            User.delete({ Password: password })
+                            return User.delete({ Password: password })
                             .then((result) => {
                                 const { data = {} } = result;
                                 if (data.Code === 1000) {
@@ -370,9 +372,8 @@ angular.module('proton.controllers.Settings')
                             });
                         }
                     })
-                    .catch((error) => {
-                        notify({ message: error, classes: 'notification-danger' });
-                    });
+                    .catch((error) => Promise.reject(error));
+                    networkActivityTracker.track(promise);
                 },
                 cancel() {
                     deleteAccountModal.deactivate();
