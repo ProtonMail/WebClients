@@ -367,9 +367,10 @@ angular.module('proton.controllers.Settings')
                                     notify({ message: result.data.Error, classes: 'notification-danger' });
                                 }
                             });
-                        } else if (data.Error) {
-                            notify({ message: data.Error, classes: 'notification-danger' });
                         }
+                    })
+                    .catch((error) => {
+                        notify({ message: error, classes: 'notification-danger' });
                     });
                 },
                 cancel() {
