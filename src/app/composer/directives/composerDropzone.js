@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .directive('composerDropzone', ($rootScope, attachmentFileFormat, notify, gettextCatalog, CONSTANTS) => {
+    .directive('composerDropzone', ($rootScope, attachmentFileFormat, attachmentModel, notify, gettextCatalog, CONSTANTS) => {
 
         Dropzone.autoDiscover = false;
 
@@ -76,6 +76,18 @@ angular.module('proton.composer')
         }
 
         /**
+         * Check if we can upload the queue
+         * @param  {Message} message      current message
+         * @param  {Array}  list         Current queue
+         * @param  {Integer} options.size Current size of the queue if there already one pending
+         * @return {Boolean}
+         */
+        const canUploadList = (message, list = [], { size = 0 } = {}) => {
+            const listSize = [].slice.call(list).reduce((acc, file) => acc + file.size, 0);
+            return (message.attachmentsSize() + size + listSize) <= ATTACHMENT_MAX_SIZE;
+        };
+
+        /**
          * Dispatch action for the model
          * @param  {Message} message
          * @param  {Array}  queue
@@ -111,6 +123,19 @@ angular.module('proton.composer')
 
                 // Get list of added files
                 this.on('addedfiles', (list) => {
+
+                    if (!canUploadList(message, list, attachmentModel.getCurrentQueue(message))) {
+                        this.removeAllFiles();
+                        let id;
+
+                        // Prevent freeze from the API
+                        return (id = setTimeout(() => {
+                            notifyError(dropMessages[ATTACHMENT_SIZE_LIMIT]);
+                            dispatchAction(message, { size: 0, files: [] });
+                            clearTimeout(id);
+                        }, 100));
+                    }
+
                     // Create a queue of attachments and bind the dropzone as context
                     const queue = [].slice.call(list)
                         .reduce(buildQueue(message, this), {
@@ -119,7 +144,6 @@ angular.module('proton.composer')
                         });
                     this.removeAllFiles();
                     queue.hasEmbedded = queue.files.some(({ isEmbedded }) => isEmbedded);
-
                     dispatchAction(message, queue);
                 });
             }
