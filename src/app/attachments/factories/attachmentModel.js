@@ -73,6 +73,10 @@ angular.module('proton.attachments')
          * @return {void}
          */
         function buildQueue({ messageID, message, queue }) {
+            if (!queue.files.length) {
+                return;
+            }
+
             queueMessage[messageID] = queue;
 
             if (!queue.hasEmbedded) {
@@ -323,7 +327,6 @@ angular.module('proton.attachments')
                         .catch((err) => {
                             $log.error(err);
                             notifyError('Error during file upload');
-                            throw err;
                         });
                 })
                 .catch((err) => {
@@ -352,7 +355,9 @@ angular.module('proton.attachments')
                 .then(AttachmentLoader.generateDownload);
         };
 
+        const getCurrentQueue = ({ ID }) => queueMessage[ID];
 
-        return { create, download };
+
+        return { create, download, getCurrentQueue };
 
     });
