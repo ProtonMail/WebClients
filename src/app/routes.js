@@ -693,6 +693,32 @@ angular.module('proton.routes', [
 
     .state('secured.addresses', {
         url: '/addresses',
+        resolve: {
+            members(user, Member, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Member.query());
+                }
+                return { data: {} };
+            },
+            domains(user, Domain, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Domain.query());
+                }
+                return { data: {} };
+            },
+            organization(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.get());
+                }
+                return { data: {} };
+            },
+            organizationKeys(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.getKeys());
+                }
+                return { data: {} };
+            }
+        },
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/addresses.tpl.html',
@@ -794,7 +820,7 @@ angular.module('proton.routes', [
             access(user, $q, CONSTANTS) {
                 const deferred = $q.defer();
 
-                if (user.Role === 2 && CONSTANTS.KEY_PHASE > 3) {
+                if (CONSTANTS.KEY_PHASE > 3) {
                     deferred.resolve();
                 } else {
                     deferred.reject();
@@ -802,17 +828,29 @@ angular.module('proton.routes', [
 
                 return deferred.promise;
             },
-            members(access, Member, networkActivityTracker) {
-                return networkActivityTracker.track(Member.query());
+            members(user, Member, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Member.query());
+                }
+                return { data: {} };
             },
-            domains(access, Domain, networkActivityTracker) {
-                return networkActivityTracker.track(Domain.query());
+            domains(user, Domain, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Domain.query());
+                }
+                return { data: {} };
             },
-            organization(access, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+            organization(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.get());
+                }
+                return { data: {} };
             },
-            organizationKeys(access, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.getKeys());
+            organizationKeys(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.getKeys());
+                }
+                return { data: {} };
             }
         },
         views: {

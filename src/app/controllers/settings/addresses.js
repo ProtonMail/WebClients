@@ -4,10 +4,12 @@ angular.module('proton.controllers.Settings')
     $q,
     $rootScope,
     $scope,
+    $state,
     gettextCatalog,
     Address,
     addressModal,
     authentication,
+    domains,
     confirmModal,
     identityModal,
     CONSTANTS,
@@ -15,14 +17,148 @@ angular.module('proton.controllers.Settings')
     eventManager,
     generateModal,
     memberModal,
+    members,
     Member,
     networkActivityTracker,
     notify,
+    organization,
+    organizationKeys,
+    pmcw,
     Setting
 ) => {
+
     $scope.activeAddresses = _.where(authentication.user.Addresses, { Status: 1, Receive: 1 });
     $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
     $scope.itemMoved = false;
+    $scope.keyStatus = 1;
+
+    if (members.data && members.data.Code === 1000) {
+        $scope.members = members.data.Members;
+    }
+
+    if (domains.data && domains.data.Code === 1000) {
+        $scope.domains = domains.data.Domains;
+    }
+
+    if (organization.data && organization.data.Code === 1000) {
+        $scope.organization = organization.data.Organization;
+    }
+
+    if (organizationKeys.data && organizationKeys.data.Code === 1000) {
+
+        if (organizationKeys.data.Activation) {
+            $scope.keyStatus = 0;
+        } else {
+            pmcw.decryptPrivateKey(organizationKeys.data.PrivateKey, authentication.getPassword())
+            .then((key) => {
+                $scope.organizationKey = key;
+            }, (error) => {
+                $scope.keyStatus = 0;
+                console.error(error);
+            });
+        }
+    }
+
+    $scope.getSelf = () => {
+        if ($scope.members) {
+            return $scope.members.filter((member) => member.Self)[0];
+        }
+    };
+
+    $scope.canAddAddress = () => {
+        if ($scope.organization.MaxAddresses - $scope.organization.UsedAddresses < 1) {
+            notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new address', null, 'Error'), classes: 'notification-danger' });
+            return 0;
+        }
+
+        return 1;
+    };
+
+    $scope.canAddMember = () => {
+
+        if ($scope.organization.MaxMembers === 1 && CONSTANTS.KEY_PHASE > 3) {
+            $state.go('secured.members');
+            return 0;
+        }
+
+        if ($scope.organization.MaxMembers - $scope.organization.UsedMembers < 1) {
+            notify({ message: gettextCatalog.getString('You have used all members in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger' });
+            return 0;
+        }
+
+        if ($scope.organization.MaxAddresses - $scope.organization.UsedAddresses < 1) {
+            notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new member', null, 'Error'), classes: 'notification-danger' });
+            return 0;
+        }
+
+        if ($scope.organization.MaxSpace - $scope.organization.UsedSpace < 1) {
+            notify({ message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members', null, 'Error'), classes: 'notification-danger' });
+            return 0;
+        }
+
+        return 1;
+    };
+
+    // Listeners
+    $scope.$on('deleteDomain', (event, domainId) => {
+        const index = _.findIndex($scope.domains, { ID: domainId });
+
+        if (index !== -1) {
+            $scope.domains.splice(index, 1);
+        }
+    });
+
+    $scope.$on('createDomain', (event, domainId, domain) => {
+        const index = _.findIndex($scope.domains, { ID: domainId });
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            _.extend($scope.domains[index], domain);
+        }
+    });
+
+    $scope.$on('updateDomain', (event, domainId, domain) => {
+        const index = _.findIndex($scope.domains, { ID: domainId });
+
+        if (index === -1) {
+            $scope.domains.push(domain);
+        } else {
+            _.extend($scope.domains[index], domain);
+        }
+    });
+
+    $scope.$on('deleteMember', (event, memberId) => {
+        const index = _.findIndex($scope.members, { ID: memberId });
+
+        if (index !== -1) {
+            $scope.members.splice(index, 1);
+        }
+    });
+
+    $scope.$on('createMember', (event, memberId, member) => {
+        const index = _.findIndex($scope.members, { ID: memberId });
+
+        if (index === -1) {
+            $scope.members.push(member);
+        } else {
+            _.extend($scope.members[index], member);
+        }
+    });
+
+    $scope.$on('updateMember', (event, memberId, member) => {
+        const index = _.findIndex($scope.members, { ID: memberId });
+
+        if (index === -1) {
+            $scope.members.push(member);
+        } else {
+            _.extend($scope.members[index], member);
+        }
+    });
+
+    $scope.$on('organizationChange', (event, organization) => {
+        $scope.organization = organization;
+    });
 
     // Drag and Drop configuration
     $scope.aliasDragControlListeners = {
@@ -171,9 +307,11 @@ angular.module('proton.controllers.Settings')
     };
 
     /**
-     * Open modal to add a new address
+     * Open modal to add a new address, used by domains and members controllers
      */
     $scope.addAddress = (domain, member) => {
+
+        let showMember = true;
 
         let domains = $scope.domains;
         if (domain) {
@@ -182,12 +320,30 @@ angular.module('proton.controllers.Settings')
         let members = $scope.members;
         if (member) {
             members = [member];
+
+            // Do not show Add Member button if specific member requested
+            showMember = false;
+        }
+
+        if (!domains || domains.length === 0) {
+            $state.go('secured.domains');
+            return;
+        }
+
+        if ($scope.keyStatus !== 1 && CONSTANTS.KEY_PHASE > 3) {
+            notify({ message: gettextCatalog.getString('Cannot decrypt master organization key', null, 'Error'), classes: 'notification-danger' });
+            $state.go('secured.members');
+            return;
+        }
+
+        if (!$scope.canAddAddress()) {
+            return;
         }
 
         const memberParams = {
             params: {
                 organization: $scope.organization,
-                organizationPublicKey: $scope.organizationPublicKey,
+                organizationKey: $scope.organizationKey,
                 domains,
                 submit() {
                     memberModal.deactivate();
@@ -203,8 +359,14 @@ angular.module('proton.controllers.Settings')
             params: {
                 domains,
                 members,
-                organizationPublicKey: $scope.organizationPublicKey,
+                organizationKey: $scope.organizationKey,
+                showMember,
                 addMember() {
+
+                    if (!$scope.canAddMember()) {
+                        return;
+                    }
+
                     addressModal.deactivate();
                     memberModal.activate(memberParams);
                 },
@@ -283,20 +445,23 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.addAlias = () => {
+
+        const self = $scope.getSelf();
+        if (self.Type !== 0) {
+            notify({ message: gettextCatalog.getString('Only users with existing ProtonMail addresses can add ProtonMail aliases', null, 'Error'), classes: 'notification-danger' });
+            return;
+        }
+
+        if (!$scope.canAddAddress()) {
+            return;
+        }
+
         networkActivityTracker.track(
-            $q.all({
-                members: Member.query(),
-                domains: Domain.available()
-            })
-            .then(({ domains, members }) => {
 
-                const self = members.data.Members.filter((member) => member.Self)[0];
-                if (self.Type !== 0) {
-                    notify({ message: gettextCatalog.getString('Only users with existing ProtonMail addresses can add ProtonMail aliases', null, 'Error'), classes: 'notification-danger' });
-                    return;
-                }
+            Domain.available()
+            .then((availableDomains) => {
 
-                const pmDomains = domains.data.Domains.map((domain) => ({ DomainName: domain }));
+                const pmDomains = availableDomains.data.Domains.map((domain) => ({ DomainName: domain }));
 
                 addressModal.activate({
                     params: {
