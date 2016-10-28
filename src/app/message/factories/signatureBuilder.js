@@ -124,6 +124,7 @@ angular.module('proton.message')
             if (dom && userSignature) {
                 const item = dom.querySelector('.' + CLASSNAME_SIGNATURE_USER);
                 const isEmptyUser = isEmptyUserSignature(userSignature.innerHTML);
+                const isProtonEmpty = !authentication.user.PMSignature;
 
                 // If a user deletes all the content we need to append the signature
                 if (!item) {
@@ -133,6 +134,7 @@ angular.module('proton.message')
 
                 // Hide empty one as we don't need to display and edit and extra line inside signature
                 item.classList[isEmptyUser ? 'add' : 'remove'](CLASSNAME_SIGNATURE_EMPTY);
+                item.parentElement.classList[(isEmptyUser && isProtonEmpty) ? 'add' : 'remove'](CLASSNAME_SIGNATURE_EMPTY);
 
                 item.innerHTML = userSignature.innerHTML;
             }
