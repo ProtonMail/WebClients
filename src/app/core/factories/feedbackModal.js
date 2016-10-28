@@ -24,20 +24,16 @@ angular.module('proton.core')
 
                 const feedbackPromise = Bug.report(data);
 
-                feedbackPromise.then(
-                    (data) => {
-                        if (data.Code === 1000) {
-                            notify({ message: 'Thanks for your feedback!', classes: 'notification-success' });
-                            params.close();
-                        } else if (angular.isDefined(data.Error)) {
-                            notify({ message: data.Error, classes: 'notification-danger' });
-                        }
-                    },
-                    (error) => {
-                        error.message = 'Error during the sending feedback';
+                feedbackPromise
+                .then((data) => {
+                    if (data.Code === 1000) {
+                        notify({ message: 'Thanks for your feedback!', classes: 'notification-success' });
                         params.close();
                     }
-                );
+                })
+                .catch((error) => {
+                    notify({ message: error, classes: 'notification-danger' });
+                });
             };
 
             this.close = function () {
