@@ -517,6 +517,10 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
             }
         }
 
+        if ($state.params.id && authentication.user.ViewLayout === CONSTANTS.ROW_MODE) {
+            elements = _.where($scope.conversations, { ID: $state.params.id });
+        }
+
         return elements;
     };
 
@@ -524,8 +528,9 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
      * Return [IDs]
      * @return {Array}
      */
-    $scope.idsSelected = function () {
-        return _.map($scope.elementsSelected(), (conversation) => { return conversation.ID; });
+    $scope.idsSelected = () => {
+        const elementsSelected = $scope.elementsSelected();
+        return elementsSelected.map(({ ID }) => ID);
     };
 
     /**
