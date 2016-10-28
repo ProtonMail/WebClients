@@ -6,6 +6,25 @@ angular.module('proton.ui')
     const COMMA_KEY = 188;
 
     /**
+     * Get the selected input value configuration
+     * @param  {Object} model Factory autocompleteEmailsModel
+     * @param  {String} value Input value
+     * @return {Object}       {label, value}
+     */
+    const getConfigEmailInput = (model, value = '') => {
+
+        if (regexEmail.test(value)) {
+            const config = model.filterContact(value, true).list[0];
+            // Can be undefined if there is no match
+            if (config) {
+                return config;
+            }
+        }
+
+        return { label: value, value };
+    };
+
+    /**
      * Get the form value (the input value) onSubmit
      * @param  {Node} target
      * @return {String}
@@ -99,6 +118,11 @@ angular.module('proton.ui')
             const { list, hasAutocompletion } = model.filterContact(target.value);
 
             hasAutocompletion && (awesomplete.list = list);
+
+            // Unselect the autocomplete suggestion if the input value is a valid email
+            if (target.value.indexOf('@')) {
+                regexEmail.test(target.value) && awesomplete.goto(-1);
+            }
         };
 
         const onClick = ({ target }) => {
@@ -135,10 +159,10 @@ angular.module('proton.ui')
             const { value, clear } = getFormValue(e.target);
 
             if (value) {
-                const config = regexEmail.test(value) ? model.filterContact(value, true).list[0] : { label: value, value };
-                model.add(config);
+                model.add(getConfigEmailInput(model, value));
                 clear();
                 syncModel();
+                awesomplete.close();
             }
         };
 
@@ -148,6 +172,7 @@ angular.module('proton.ui')
 
             switch (e.keyCode) {
                 case TAB_KEY:
+
                     // When the autocomplete is opened
                     if (awesomplete.opened) {
                         e.preventDefault();
