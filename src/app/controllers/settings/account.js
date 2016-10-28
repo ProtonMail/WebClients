@@ -356,8 +356,8 @@ angular.module('proton.controllers.Settings')
                         Username: '--',
                         Email: '--',
                         Description: feedback
-                    }).then((result) => {
-                        if (result.data && result.data.Code === 1000) {
+                    }).then((data) => {
+                        if (data.Code === 1000) {
                             User.delete({ Password: password })
                             .then((result) => {
                                 if (result.data && result.data.Code === 1000) {
@@ -367,8 +367,8 @@ angular.module('proton.controllers.Settings')
                                     notify({ message: result.data.Error, classes: 'notification-danger' });
                                 }
                             });
-                        } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
+                        } else if (data.Error) {
+                            notify({ message: data.Error, classes: 'notification-danger' });
                         }
                     });
                 },
