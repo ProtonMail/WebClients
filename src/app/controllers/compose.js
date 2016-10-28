@@ -29,7 +29,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
 
     const unsubscribe = [];
 
-    $scope.addresses = authentication.user.Addresses;
     $scope.messages = [];
     $scope.isOver = false;
     $scope.queuedSave = false;
@@ -354,10 +353,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 return message;
             });
     }
-
-    $scope.disabledNotify = () => {
-        notify({ message: 'Attachments and inline images must be removed first before changing sender', classes: 'notification-danger' });
-    };
 
     $scope.slideDown = (message) => {
         message.attachmentsToggle = !message.attachmentsToggle;
@@ -706,25 +701,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         }, 500, false);
 
         return deferred.promise;
-    };
-
-    /**
-     * Call when the user change the FROM
-     * @param {Resource} message - Message to save
-     */
-    $scope.changeFrom = (message) => {
-        message.AddressID = message.From.ID;
-        message.editor && message.editor.fireEvent('refresh', {
-            action: 'message.changeFrom'
-        });
-    };
-
-    /**
-     * For some reason IE focus is lost
-     * cause a rendering bug of the options widths
-     */
-    $scope.setFocusFrom = ({ target }) => {
-        target.focus();
     };
 
     $scope.save = (message, notification, autosaving) => {
@@ -1372,23 +1348,5 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 }
             }
         });
-    };
-
-    /**
-     * Transform the recipients list to a string
-     * @param {Object} message
-     * @return {String}
-     */
-    $scope.recipients = ({ ToList = [], CCList = [], BCCList = [] }) => {
-        const formatAddresses = (key) => (contact, index) => {
-            const name = $filter('contact')(contact, 'Name');
-            return (index === 0) ? `${key}: ${name}` : name;
-        };
-
-        return []
-            .concat(ToList.map(formatAddresses(gettextCatalog.getString('To', null, 'Title'))))
-            .concat(CCList.map(formatAddresses(gettextCatalog.getString('CC', null, 'Title'))))
-            .concat(BCCList.map(formatAddresses(gettextCatalog.getString('BCC', null, 'Title'))))
-            .join(', ');
     };
 });
