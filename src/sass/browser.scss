@@ -9,6 +9,10 @@
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
     }
+    body #pm_thread {
+        /* allow text selection with scroll*/
+        overflow-y: scroll;
+    }
     #pm_composer .composer {
         border: 1px solid $border;
     }
