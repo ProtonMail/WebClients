@@ -45,7 +45,8 @@ angular.module('proton.constants', [])
     UPLOAD_GRADIENT_DARK: '147, 145, 209', // dark rgb color for upload progress bar
     UPLOAD_GRADIENT_LIGHT: '255, 255, 255', // light rgb color for upload progress bar
     ENC_OUT_ENC_REPLY: 6, // encrypted for outside
-    SAVE_TIMEOUT_TIME: 3000, // 2 seconds
+    SAVE_TIMEOUT_TIME: 3000, // 3 seconds
+    SAVE_THROTTLE_TIME: 10000, // 10 seconds
     MAX_EXPIRATION_TIME: 672, // hours
     ELEMENTS_PER_PAGE: 50,
     LOGIN_PW_MAX_LEN: 500,
