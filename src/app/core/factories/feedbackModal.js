@@ -6,7 +6,7 @@ angular.module('proton.core')
         controller(params) {
             this.fdbckTxt = '';
 
-            this.submit = function () {
+            this.submit = () => {
                 const description = this.fdbckTxt;
                 const data = {
                     OS: '--',
@@ -36,7 +36,7 @@ angular.module('proton.core')
                 });
             };
 
-            this.close = function () {
+            this.close = () => {
                 params.close();
             };
         }
