@@ -1,6 +1,6 @@
 var _ = require('lodash');
 var util = require('util');
-var appVersion = '3.5.8';
+var appVersion = '3.5.9';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
@@ -14,6 +14,7 @@ var API_TARGETS = {
     local: 'https://protonmail.dev/api',
     build: '/api'
 };
+var hash = Date.now();
 
 module.exports = function(grunt) {
     var serveStatic = require('serve-static');
@@ -371,14 +372,17 @@ module.exports = function(grunt) {
 
         cacheBust: {
             options: {
+                assets: ['assets/app.css', 'assets/app.js', 'openpgp.min.js', 'openpgp.worker.min.js'],
                 deleteOriginals: true,
-                baseDir: '<%= compile_dir %>/'
+                baseDir: '<%= compile_dir %>/',
+                hash: hash
             },
-            assets: {
-                options: {
-                    assets: ['assets/app.css', 'assets/app.js']
-                },
-                src: ['<%= compile_dir %>/app.html']
+            taskName: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= compile_dir %>/',
+                    src: ['app.html', 'assets/app.' + hash + '.js', 'openpgp.min.' + hash + '.js', 'openpgp.worker.min.' + hash + '.js']
+                }]
             }
         },
 
