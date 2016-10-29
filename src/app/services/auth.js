@@ -21,7 +21,6 @@ angular.module('proton.authentication', [
     Contact,
     Domain,
     errorReporter,
-    generateModal,
     gettextCatalog,
     Key,
     Label,
@@ -72,8 +71,6 @@ angular.module('proton.authentication', [
 
         fetchUserInfo() {
 
-            const self = this;
-
             return networkActivityTracker.track(User.get()
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
@@ -84,9 +81,6 @@ angular.module('proton.authentication', [
                 return Promise.reject({ message: 'Error during user request' });
             })
             .then((user) => {
-
-                // Set preliminary user object
-                api.setUser(user);
 
                 // Redirect to setup if necessary
                 if (user.Keys.length === 0) {
@@ -144,31 +138,6 @@ angular.module('proton.authentication', [
                 })
                 .then(({ user, organizationKey }) => {
 
-                    const generateKeys = (addresses) => {
-                        const deferred = $q.defer();
-
-                        generateModal.activate({
-                            params: {
-                                title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
-                                message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', null, 'Info'),
-                                password: api.getPassword(),
-                                addresses,
-                                close(success) {
-                                    if (success) {
-                                        // Rerun the whole function to pick up the new keys
-                                        deferred.resolve(self.fetchUserInfo());
-                                    } else {
-                                        deferred.reject();
-                                    }
-
-                                    generateModal.deactivate();
-                                }
-                            }
-                        });
-
-                        return deferred.promise;
-                    };
-
                     const storeKeys = (keys) => {
                         api.clearKeys();
                         _.each(keys, ({ address, key, pkg }) => {
@@ -177,11 +146,7 @@ angular.module('proton.authentication', [
                     };
 
                     return setupKeys.decryptUser(user, organizationKey, api.getPassword())
-                    .then(({ keys, dirtyAddresses }) => {
-                        if (dirtyAddresses.length && generateModal.active() === false) {
-                            return generateKeys(dirtyAddresses)
-                            .catch(() => storeKeys(keys));
-                        }
+                    .then(({ keys }) => {
                         storeKeys(keys);
                         return user;
                     })
@@ -590,7 +555,8 @@ angular.module('proton.authentication', [
                     }
 
                     $rootScope.isLoggedIn = true;
-                    this.setUser(user);
+                    this.user = user;
+                    $rootScope.user = user;
 
                     return user;
                 },
@@ -606,11 +572,6 @@ angular.module('proton.authentication', [
                 }
                 //errorReporter.catcher('Please try again later')
             );
-        },
-
-        setUser(user) {
-            this.user = user;
-            $rootScope.user = user;
         },
 
         params(params) {

@@ -19,7 +19,6 @@ angular.module('proton.controllers.Settings')
     domainModal,
     domains,
     eventManager,
-    generateModal,
     Member,
     members,
     memberModal,
@@ -160,27 +159,6 @@ angular.module('proton.controllers.Settings')
         const member = _.findWhere($scope.members, { ID: address.MemberID });
 
         return member.Private === 1;
-    };
-
-    /**
-     * Open modal to generate key pair
-     */
-    $scope.generate = (address) => {
-        generateModal.activate({
-            params: {
-                title: gettextCatalog.getString('Generate key pair', null),
-                message: '', // TODO need text
-                addresses: [address],
-                password: authentication.getPassword(),
-                close(success) {
-                    if (success) {
-                        eventManager.call();
-                    }
-
-                    generateModal.deactivate();
-                }
-            }
-        });
     };
 
     /**

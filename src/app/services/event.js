@@ -1,6 +1,7 @@
 angular.module('proton.event', ['proton.constants', 'proton.storage'])
     .service('eventManager', (
         $cookies,
+        $exceptionHandler,
         $location,
         $log,
         $q,
@@ -185,7 +186,13 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                         }
                         storeKeys(keys);
                     })
-                    .then(mergeUser, () => {});
+                    .then(mergeUser)
+                    .catch(
+                        (error) => {
+                            return $exceptionHandler(error)
+                            .then(() => Promise.reject(error));
+                        }
+                    );
                 }
                 return Promise.resolve();
             },

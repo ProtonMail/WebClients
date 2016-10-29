@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('generateModal', (pmModal, networkActivityTracker, Key, pmcw, notify, $q, $rootScope) => {
+.factory('generateModal', (pmModal, authentication, networkActivityTracker, Key, pmcw, notify, $q) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/generate.tpl.html',
@@ -24,27 +24,22 @@ angular.module('proton.core')
             _.each(this.addresses, (address) => { address.state = QUEUED; });
 
             // Listeners
-            // FIXME
-            // This is broken because authentication depends on generateModal and we can't have circular dependencies
-            // It is also bad logic, because which dirty addresses could change and this does not address that
-            // Better to just close the modal
-            const unsubscribe = $rootScope.$on('updateUser', () => {
-                // var dirtyAddresses = [];
+            $scope.$on('updateUser', () => {
+                const dirtyAddresses = [];
 
-                // _.each(authentication.user.Addresses, function(address) {
-                //     if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
-                //         dirtyAddresses.push(address);
-                //     }
-                // });
+                _.each(authentication.user.Addresses, (address) => {
+                    if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
+                        dirtyAddresses.push(address);
+                    }
+                });
 
-                // if (dirtyAddresses.length === 0) {
-                //     params.close(false);
-                // }
-                // params.close(false);
+                if (dirtyAddresses.length === 0) {
+                    params.close(false);
+                }
             });
 
             // Functions
-            this.submit = function () {
+            this.submit = () => {
                 const numBits = this.size;
 
                 this.process = true;
@@ -96,13 +91,9 @@ angular.module('proton.core')
                 });
             };
 
-            this.cancel = function () {
+            this.cancel = () => {
                 params.close(false);
             };
-
-            $scope.$on('$destroy', () => {
-                unsubscribe();
-            });
         }
     });
 });

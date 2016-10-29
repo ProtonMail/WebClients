@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <div ng-show="ctrl.member.Private === 0 || ctrl.member.Self">
+                <div ng-show="ctrl.member.Private === 0">
                     <label>Choose key strength:</label>
                     <div class="pm_grid">
                         <div class="col-1-2">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <p ng-show="ctrl.alias" class="alert alert-info" translate translate-context="Info">ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not. <a href='https://protonmail.com/support/knowledge-base/aliases-within-protonmail/' target='_blank'>Learn more</a></p>
-                <p ng-show="ctrl.member.Private === 0 || ctrl.member.Self"class="alert alert-warning" translate translate-context="Info">Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes depending on your device and key strength selection.</p>
+                <p ng-show="ctrl.member.Private === 0" class="alert alert-warning" translate translate-context="Info">Clicking <strong>Save</strong> will generate encryption keys and may freeze ProtonMail for several minutes depending on your device and key strength selection.</p>
             </div>
         </div>
         <div class="modal-footer text-right">
