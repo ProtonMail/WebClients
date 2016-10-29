@@ -72,6 +72,8 @@ angular.module('proton.authentication', [
 
         fetchUserInfo() {
 
+            const self = this;
+
             return networkActivityTracker.track(User.get()
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
@@ -82,6 +84,9 @@ angular.module('proton.authentication', [
                 return Promise.reject({ message: 'Error during user request' });
             })
             .then((user) => {
+
+                // Set preliminary user object
+                api.setUser(user);
 
                 // Redirect to setup if necessary
                 if (user.Keys.length === 0) {
@@ -150,11 +155,8 @@ angular.module('proton.authentication', [
                                 addresses,
                                 close(success) {
                                     if (success) {
-                                        // FIXME this doesn't decrypt or store keys!!!
-                                        // Can't call the event service because it might not be started
-                                        // Stupid fix
-                                        location.reload();
-                                        deferred.resolve();
+                                        // Rerun the whole function to pick up the new keys
+                                        deferred.resolve(self.fetchUserInfo());
                                     } else {
                                         deferred.reject();
                                     }
@@ -178,11 +180,11 @@ angular.module('proton.authentication', [
                     .then(({ keys, dirtyAddresses }) => {
                         if (dirtyAddresses.length && generateModal.active() === false) {
                             return generateKeys(dirtyAddresses)
-                            .then(() => {}, () => storeKeys(keys));
+                            .catch(() => storeKeys(keys));
                         }
                         storeKeys(keys);
+                        return user;
                     })
-                    .then(() => user)
                     .catch(
                         (error) => {
                             return $exceptionHandler(error)
@@ -588,8 +590,7 @@ angular.module('proton.authentication', [
                     }
 
                     $rootScope.isLoggedIn = true;
-                    $rootScope.user = user;
-                    this.user = user;
+                    this.setUser(user);
 
                     return user;
                 },
@@ -605,6 +606,11 @@ angular.module('proton.authentication', [
                 }
                 //errorReporter.catcher('Please try again later')
             );
+        },
+
+        setUser(user) {
+            this.user = user;
+            $rootScope.user = user;
         },
 
         params(params) {
