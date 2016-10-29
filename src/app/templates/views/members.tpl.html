@@ -3,7 +3,14 @@
     <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
 
     <div class="settings">
-        <div class="row">
+        <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
+        <div class="row" ng-show="isFree === true">
+            <section class="setting pm_form full">
+                <legend translate translate-context="Title">Members</legend>
+                <p class="alert alert-info">Create and administer sub-accounts and assign them email addresses on your custom domain. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Business</a>.</p>
+            </section>
+        </div>
+        <div class="row" id="settingsOrganization" ng-show="isAdmin === true">
             <section class="setting pm_form full">
                 <legend translate-context="Title" translate>Organization</legend>
                 <div class="pm_grid">
@@ -59,7 +66,7 @@
             </section>
         </div>
 
-        <div class="row">
+        <div class="row" id="settingsMembers" ng-show="isAdmin === true">
             <section class="setting pm_form full">
                 <legend translate-context="Title" translate>Members</legend>
                 <p class="alert alert-info" ng-hide="checkDomains()">

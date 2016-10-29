@@ -265,11 +265,11 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                 if (angular.isDefined(members)) {
                     _.each(members, (member) => {
                         if (member.Action === DELETE) {
-                            $rootScope.$emit('deleteMember', member.ID);
+                            $rootScope.$broadcast('deleteMember', member.ID);
                         } else if (member.Action === CREATE) {
-                            $rootScope.$emit('createMember', member.ID, member.Member);
+                            $rootScope.$broadcast('createMember', member.ID, member.Member);
                         } else if (member.Action === UPDATE) {
-                            $rootScope.$emit('updateMember', member.ID, member.Member);
+                            $rootScope.$broadcast('updateMember', member.ID, member.Member);
                         }
                     });
                 }

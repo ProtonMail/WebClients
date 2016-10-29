@@ -5,16 +5,17 @@
         <div class="row" id="settingsAddresses">
             <section class="setting full pm_form">
                 <legend>
-                    <span class="pull-right small" ng-show="organization.PlanName !== 'free'">{{ organization.UsedAddresses }} / <span  translate-comment="addresses page. how many addresses are in use" translate>{{ organization.MaxAddresses }} addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" translate-context="Action" translate-comment="link to dashboard page" translate>Upgrade your plan</a></span>
+                    <span class="pull-right small" ng-show="isAdmin === true">{{ organization.UsedAddresses }} / {{ organization.MaxAddresses }} <span translate-comment="how many addresses are in use" translate>addresses used.</span> <a ui-sref="secured.dashboard({scroll: true})" translate-context="Action" translate-comment="link to dashboard page" translate>Upgrade your plan</a></span>
                     <span translate-context="Title" translate translate-comment="page heading">Addresses</span>
                 </legend>
                 <div class="margin" ng-show="isAdmin === true">
                     <button class="pm_button primary" ng-click="addAlias()" translate-context="Action" translate-comment="addresses page" translate>Add ProtonMail address</button>
                     <button class="pm_button" ng-click="addAddress(false,getSelf())" translate-context="Action" translate-comment="addresses page" translate>Add custom domain address</button>
                 </div>
-                <p class="alert alert-info">
+                <p class="alert alert-info" ng-show="isAdmin === true">
                     <span translate-context="Info" translate translate-comment="informs the user about permanance of custom addresses">Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted.</span> <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank" translate translate-context="Action">Learn more</a>.
                 </p>
+                <p class="alert alert-info" ng-show="isFree === true">Add additional email addresses to your account such as username2@protonmail.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
                 <label>
                     <span class="help-block pull-right small"><small><i class="fa fa-info-circle"></i> <span translate-context="Info" translate>You can drag and drop addresses to order them.</span></small></span>
                     <strong translate-context="Title" translate-comment="heading for active addresses listing" translate>Active addresses</strong>
@@ -62,7 +63,6 @@
                         </li>
                     </ul>
                 </div>
-                <p class="alert alert-info" ng-show="isFree === true">Add additional email addresses to your account such as username2@protonmail.com. To enable this feature, <a ui-sref="secured.dashboard({scroll: true})">upgrade to ProtonMail Plus</a>.</p>
             </section>
         </div>
     </div>
