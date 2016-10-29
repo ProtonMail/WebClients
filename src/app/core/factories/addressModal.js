@@ -32,7 +32,6 @@ angular.module('proton.core')
             this.submit = () => {
 
                 const member = this.member;
-                const mailboxPassword = authentication.getPassword();
 
                 if (this.member.Private === 0 && !this.organizationKey) {
                     notify({ message: gettextCatalog.getString('Cannot decrypt organization key', null, 'Error'), classes: 'notification-danger' });
@@ -47,14 +46,11 @@ angular.module('proton.core')
                             const numBits = this.size;
 
                             const generate = () => {
-                                return setupKeys.generateAddresses([address], mailboxPassword, numBits);
+                                return setupKeys.generateAddresses([address], 'temp', numBits);
                             };
 
                             const keyRequest = ([key]) => {
-                                if (this.member.Private === 0) {
-                                    return setupKeys.memberKey(mailboxPassword, key, member, organizationKey);
-                                }
-                                return setupKeys.key(key);
+                                return setupKeys.memberKey('temp', key, member, organizationKey);
                             };
 
                             const finish = () => {
@@ -62,7 +58,7 @@ angular.module('proton.core')
                                 params.submit(address);
                             };
 
-                            if (this.member.Private === 0 || this.member.Self) {
+                            if (this.member.Private === 0) {
                                 return generate()
                                     .then(keyRequest)
                                     .then(finish);

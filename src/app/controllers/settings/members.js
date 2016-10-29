@@ -95,28 +95,28 @@ angular.module('proton.controllers.Settings')
      * @param {Object} member
      */
     $scope.changeRole = (member) => {
-        const params = { Role: member.selectRole.value };
+        // const params = { Role: member.selectRole.value };
 
-        // THIS IS WRONG
-        if (true) {
-            throw new Error('this is wrong!');
-        }
+        // // THIS IS WRONG
+        // if (true) {
+        //     throw new Error('this is wrong!');
+        // }
 
-        if (member.selectRole.value === MASTER) {
-            params.PrivateKey = $scope.organizationPrivateKey;
-        }
+        // if (member.selectRole.value === MASTER) {
+        //     params.PrivateKey = $scope.organizationPrivateKey;
+        // }
 
-        Member.role(member.ID, params).then((result) => { // TODO check request
-            if (result.data && result.data.Code === 1000) {
-                notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
-            } else if (result.data && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-            } else {
-                notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
-            }
-        }, () => {
-            notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
-        });
+        // Member.role(member.ID, params).then((result) => { // TODO check request
+        //     if (result.data && result.data.Code === 1000) {
+        //         notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
+        //     } else if (result.data && result.data.Error) {
+        //         notify({ message: result.data.Error, classes: 'notification-danger' });
+        //     } else {
+        //         notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+        //     }
+        // }, () => {
+        //     notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+        // });
     };
 
     /**
@@ -136,62 +136,6 @@ angular.module('proton.controllers.Settings')
         }, () => {
             notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
         });
-    };
-
-    /**
-     * Unlink address
-     * @param {Object} member
-     * @param {Object} address
-     */
-    $scope.unlinkAddress = (member, address) => {
-        // const title = gettextCatalog.getString('Unlink address', null, 'Title');
-        // const message = gettextCatalog.getString('Are you sure you want to unlink this address?', null, 'Info');
-
-        // confirmModal.activate({
-        //     params: {
-        //         title,
-        //         message,
-        //         confirm() {
-        //             Address.disable(address.ID).then((result) => {
-        //                 if (result.data && result.data) {
-        //                     address.Status = 0;
-        //                     confirmModal.deactivate();
-        //                     notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
-        //                 }
-        //             });
-        //         },
-        //         cancel() {
-        //             confirmModal.deactivate();
-        //         }
-        //     }
-        // });
-    };
-
-    /**
-     * Open modal to fix keys
-     * @param {Object} address
-     */
-    $scope.generate = (address) => {
-
-        // Broken and should not be necessary initially
-        // const title = gettextCatalog.getString('Generate key pair', null, 'Title');
-        // const message = gettextCatalog.getString('Generate key pair', null, 'Info');
-
-        // generateModal.activate({
-        //     params: {
-        //         title,
-        //         message,
-        //         addresses: [address],
-        //         password: authentication.getPassword(),
-        //         close(success) {
-        //             if (success) {
-        //                 eventManager.call();
-        //             }
-
-        //             generateModal.deactivate();
-        //         }
-        //     }
-        // });
     };
 
     /**
