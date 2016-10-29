@@ -303,10 +303,9 @@ angular.module('proton.controllers.Settings')
                 },
                 submit(address) {
                     addressModal.deactivate();
-                    eventManager.call();
-
                     domain.Addresses.push(address);
                     $scope.addAddresses(domain);
+                    eventManager.call();
                 },
                 cancel() {
                     addressModal.deactivate();
