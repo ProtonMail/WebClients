@@ -743,19 +743,6 @@ angular.module('proton.routes', [
 
     .state('secured.keys', {
         url: '/keys',
-        resolve: {
-            access(user, $q) {
-                const deferred = $q.defer();
-
-                if (user.Role === 0 || user.Role === 2) {
-                    deferred.resolve();
-                } else {
-                    deferred.reject();
-                }
-
-                return deferred.promise;
-            }
-        },
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/keys.tpl.html'
