@@ -315,6 +315,8 @@ angular.module('proton.controllers.Settings')
 
                     if (index === -1) {
                         $scope.members.push(member);
+                        $scope.organization.UsedMembers++;
+                        $scope.organization.UsedAddresses++;
                     } else {
                         _.extend($scope.members[index], member);
                     }
@@ -344,8 +346,15 @@ angular.module('proton.controllers.Settings')
                 confirm() {
                     networkActivityTracker.track(Member.delete(member.ID).then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
+
+                            // Local changes
                             $scope.members.splice(index, 1); // Remove member in the members list
                             $scope.organization.UsedMembers--;
+                            $scope.organization.UsedAddresses -= member.Addresses.filter((address) => address.Type !== 0).length;
+
+                            // Event loop
+                            eventManager.call();
+
                             confirmModal.deactivate(); // Close the modal
                             notify({ message: gettextCatalog.getString('Member removed', null), classes: 'notification-success' }); // Display notification
                         } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
