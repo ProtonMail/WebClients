@@ -168,6 +168,7 @@ angular.module('proton.authentication', [
                     };
 
                     const storeKeys = (keys) => {
+                        api.clearKeys();
                         _.each(keys, ({ address, key, pkg }) => {
                             api.storeKey(address.ID, key.ID, pkg);
                         });
@@ -317,6 +318,13 @@ angular.module('proton.authentication', [
             pkg.ID = keyID; // Add the keyID inside the package
             keys[addressID] = keys[addressID] || []; // Initialize array for the address
             keys[addressID].push(pkg); // Add key package
+        },
+
+        /**
+         * Clear stored keys
+         */
+        clearKeys() {
+            keys = {};
         },
 
         getRefreshCookie() {

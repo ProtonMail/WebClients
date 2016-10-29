@@ -137,6 +137,7 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                     };
 
                     const storeKeys = (keys) => {
+                        authentication.clearKeys();
                         _.each(keys, ({ address, key, pkg }) => {
                             authentication.storeKey(address.ID, key.ID, pkg);
                         });
