@@ -88,9 +88,9 @@
         </div>
         <div class="row pm_grid">
             <section class="setting pm_form col-1-2">
-                <form method="post" novalidate ng-submit="saveTheme(themeForm)" name="themeForm" class="bottomRow">
+                <form method="post" novalidate ng-submit="themeForm.$valid && saveTheme(themeForm)" name="themeForm" class="bottomRow">
                     <legend translate-context="Title" translate>Custom theme</legend>
-                    <div class="margin" ng-class="{'has-error': themeForm.cssTheme.$touched && themeForm.cssTheme.$error.required}">
+                    <div class="margin" ng-class="{'has-error': (themeForm.cssTheme.$touched || themeForm.$submitted) && themeForm.cssTheme.$error.required}">
                         <p class="alert alert-info" translate-context="Info" translate>Custom themes from third-parties can potentially betray your privacy. Only use themes from trusted sources.</p>
                         <textarea class="code" placeholder-translate="Paste your CSS code here (limited to 200,000 characters)" id="cssTheme" name="cssTheme" ng-model="appearance.cssTheme" maxlength="200000"></textarea>
                     </div>

@@ -8,7 +8,7 @@
                 <legend translate-context="Title" translate>Organization</legend>
                 <div class="pm_grid">
 	            	<div class="col-1-2">
-		            	<form method="post" name="form_organization" ng-submit="saveOrganizationName()" novalidate="">
+		            	<form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
 	            			<div class="col-1-2">
 	            				<label for="orgName" translate-context="Title" translate>Organization name</label>
 	            			</div>
