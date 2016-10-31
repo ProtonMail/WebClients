@@ -521,9 +521,9 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
          */
         let isEditorFocused = false;
 
-        message.editor.addEventListener('input', _.throttle(() => {
+        message.editor.addEventListener('input', _.debounce(() => {
             isEditorFocused && $scope.saveLater(message);
-        }, CONSTANTS.SAVE_THROTTLE_TIME));
+        }, CONSTANTS.SAVE_TIMEOUT_TIME));
 
         message.editor.addEventListener('blur', () => {
             isEditorFocused = false;
@@ -534,7 +534,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         message.editor.addEventListener('dragend', onDragEnd);
         message.editor.addEventListener('dragenter', onDragEnter);
         message.editor.addEventListener('dragover', onDragOver);
-
     }
 
     $scope.togglePanel = (message, panelName) => {
