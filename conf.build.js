@@ -83,7 +83,7 @@ module.exports = {
       "vendor/pikaday/css/pikaday.css",
       "vendor/dropzone/dist/dropzone.css",
       "vendor/smooth-scrollbar/dist/smooth-scrollbar.css",
-      "vendor/awesomplete/awesomplete.css",
+      "vendor/awesomplete/awesomplete.css"
     ],
 
     sass_include_dirs: [

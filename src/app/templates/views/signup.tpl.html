@@ -165,41 +165,53 @@
             <div class="col-1-4 bold" translate translate-context="Title">Credit Card</div>
             <div class="col-3-4">
                 <div class="pm_grid">
-                    <input type="text" autofocus ng-model="card.fullname" placeholder-translate="Name on card" required />
+                    <label for="fullname" translate>Name on card</label>
+                    <div class="input-icon">
+                        <i class="fa fa-user"></i>
+                        <input type="text" autofocus id="fullname" ng-model="card.fullname" placeholder="Thomas Anderson" required />
+                    </div>
                 </div>
                 <div class="pm_grid">
-                    <div class="col-2-3">
+                    <label for="cardnumber" translate>Card Number</label>
+                    <div class="input-icon">
+                        <card-icon number="card.number"></card-icon>
+                        <input type="text" id="cardnumber" ng-model="card.number" placeholder="0000 0000 0000 0000" maxlength="20" required />
+                    </div>
+                </div>
+                <div class="pm_grid">
+                    <div class="col-1-3">
+                        <label translate>Expiry Date</label>
                         <span class="pm_select">
-                            <select ng-model="card.country" ng-options="country.label for country in tools.countries | orderBy: 'priority'"></select>
+                            <select ng-model="card.month" ng-options="month for month in months" ng-init="card.month = months[0]"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>
                     </div>
                     <div class="col-1-3">
-                        <input type="text" minlength="3" maxlength="9" ng-model="card.zip"  placeholder-translate="ZIP code" required />
+                        <label>&nbsp;</label>
+                        <span class="pm_select">
+                            <select ng-model="card.year" ng-options="year for year in years" ng-init="card.year = years[0]"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
                     </div>
-                </div>
-                <div class="pm_grid input-icon">
-                    <card-icon number="card.number"></card-icon>
-                    <input type="text" ng-model="card.number" placeholder-translate="Card number" maxlength="20" required />
+                    <div class="col-1-3">
+                        <label for="cvc">Security Code</label>
+                        <div class="input-icon right">
+                            <i class="fa fa-question-circle" cvc-tooltip></i>
+                            <input type="text" id="cvc" ng-model="card.cvc" maxlength="4" required />
+                        </div>
+                    </div>
                 </div>
                 <div class="pm_grid no-margin">
                     <div class="col-1-3">
+                        <label for="zip" translate>ZIP/Postal Code</label>
+                        <input type="text" minlength="3" maxlength="9" id="zip" ng-model="card.zip" required />
+                    </div>
+                    <div class="col-2-3">
+                        <label for="country" translate>Country</label>
                         <span class="pm_select">
-                            <select ng-model="card.month" ng-options="month for month in months" pt-tooltip-translate="Month" ng-init="card.month = months[0]"></select>
+                            <select id="country" ng-model="card.country" ng-options="country.label for country in tools.countries | orderBy: 'priority'"></select>
                             <i class="fa fa-angle-down"></i>
                         </span>
-                    </div>
-                    <div class="col-1-3">
-                        <span class="pm_select">
-                            <select ng-model="card.year" ng-options="year for year in years" pt-tooltip-translate="Year" ng-init="card.year = years[0]"></select>
-                            <i class="fa fa-angle-down"></i>
-                        </span>
-                    </div>
-                    <div class="col-1-3">
-                        <div class="input-icon">
-                            <i class="fa fa-lock"></i>
-                            <input type="text" ng-model="card.cvc" placeholder-translate="CVC" pt-tooltip-translate="Card validation code" maxlength="4" required />
-                        </div>
                     </div>
                 </div>
                 <p ng-show="::paypalSupport"><a href="#" ng-click="choosePaypal()" translate translate-context="Link">Pay with PayPal</a></p>
@@ -225,7 +237,7 @@
             <div class="text-center">
                 <p class="alert alert-info" ng-show="errorPay">Would you like to create a free ProtonMail account instead? <a href="#" ng-click="payment = false;humanityTest = true;">Yes</a> <a href="https://protonmail.com/signup">No</a></p>
                 <p>
-                    <button ng-hide="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Submit</button>
+                    <button ng-hide="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action"><i class="fa fa-lock"></i> Submit</button>
                     <button ng-show="errorPay" class="pm_button primary large" type="submit" ng-disabled="networkActivity.loading()" translate translate-context="Action">Retry</button>
                 </p>
                 <p><button class="pm_button link" type="button" ng-click="errorPay = true" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button></p>
