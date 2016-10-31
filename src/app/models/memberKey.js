@@ -17,9 +17,9 @@ angular.module('proton.models.memberKeys', ['proton.srp'])
          * @param {Object} Obj
          * @return {Promise}
          */
-        setup: function(params = {}, password = '') {
-            return srp.randomVerifier(password).then(function(pass_params) {
-                return $http.post(url.get() + '/memberkeys/setup', _.extend(params,pass_params));
+        setup(params = {}, password = '') {
+            return srp.randomVerifier(password).then((passParams) => {
+                return $http.post(url.get() + '/memberkeys/setup', _.extend(params, passParams));
             });
         },
         /**

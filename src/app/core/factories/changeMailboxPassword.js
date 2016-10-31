@@ -83,19 +83,18 @@ angular.module('proton.core')
             let promises = [];
             if (user.OrganizationPrivateKey) {
                 // Sub-user
-                let organizationKey = pmcw.decryptPrivateKey(user.OrganizationPrivateKey, oldMailPwd);
+                const organizationKey = pmcw.decryptPrivateKey(user.OrganizationPrivateKey, oldMailPwd);
 
-                promises = inputKeys.map(({PrivateKey, ID, Token}) => {
+                promises = inputKeys.map(({ PrivateKey, ID, Token }) => {
                     // Decrypt private key with organization key and token
                     return organizationKey
                     .then((key) => pmcw.decryptMessage(Token, key).data)
                     .then((token) => pmcw.decryptPrivateKey(PrivateKey, token))
                     .then((pkg) => ({ ID, pkg }));
                 });
-            }
-            else {
+            } else {
                 // Not sub-user
-                promises = inputKeys.map(({PrivateKey, ID}) => {
+                promises = inputKeys.map(({ PrivateKey, ID }) => {
                     // Decrypt private key with the old mailbox password
                     return pmcw.decryptPrivateKey(PrivateKey, oldMailPwd)
                     .then((pkg) => ({ ID, pkg }));

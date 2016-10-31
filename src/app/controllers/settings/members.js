@@ -94,30 +94,30 @@ angular.module('proton.controllers.Settings')
      * Inform the back-end to change member role
      * @param {Object} member
      */
-    $scope.changeRole = (member) => {
-        // const params = { Role: member.selectRole.value };
+    // $scope.changeRole = (member) => {
+    //     const params = { Role: member.selectRole.value };
 
-        // // THIS IS WRONG
-        // if (true) {
-        //     throw new Error('this is wrong!');
-        // }
+    //     // THIS IS WRONG
+    //     if (true) {
+    //         throw new Error('this is wrong!');
+    //     }
 
-        // if (member.selectRole.value === MASTER) {
-        //     params.PrivateKey = $scope.organizationPrivateKey;
-        // }
+    //     if (member.selectRole.value === MASTER) {
+    //         params.PrivateKey = $scope.organizationPrivateKey;
+    //     }
 
-        // Member.role(member.ID, params).then((result) => { // TODO check request
-        //     if (result.data && result.data.Code === 1000) {
-        //         notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
-        //     } else if (result.data && result.data.Error) {
-        //         notify({ message: result.data.Error, classes: 'notification-danger' });
-        //     } else {
-        //         notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
-        //     }
-        // }, () => {
-        //     notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
-        // });
-    };
+    //     Member.role(member.ID, params).then((result) => { // TODO check request
+    //         if (result.data && result.data.Code === 1000) {
+    //             notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
+    //         } else if (result.data && result.data.Error) {
+    //             notify({ message: result.data.Error, classes: 'notification-danger' });
+    //         } else {
+    //             notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+    //         }
+    //     }, () => {
+    //         notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+    //     });
+    // };
 
     /**
      * Save the organization name
