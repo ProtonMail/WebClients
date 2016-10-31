@@ -115,6 +115,7 @@ angular.module('proton.controllers.Settings')
                     authentication.user.NotificationEmail = $scope.notificationEmail;
                     authentication.user.PasswordReset = $scope.passwordReset;
                     form.$setUntouched();
+                    form.$setPristine();
                     notify({
                         message: gettextCatalog.getString('Notification email saved', null),
                         classes: 'notification-success'
@@ -157,6 +158,7 @@ angular.module('proton.controllers.Settings')
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
                     form.$setUntouched();
+                    form.$setPristine();
                     authentication.user.PasswordMode = 2;
                     notify({ message: gettextCatalog.getString('Login password updated', null), classes: 'notification-success' });
                 })
@@ -186,6 +188,7 @@ angular.module('proton.controllers.Settings')
                 $scope.newMailboxPassword = '';
                 $scope.confirmMailboxPassword = '';
                 form.$setUntouched();
+                form.$setPristine();
                 authentication.user.PasswordMode = 2;
                 notify({ message: gettextCatalog.getString('Mailbox password updated', null), classes: 'notification-success' });
             })
@@ -214,6 +217,7 @@ angular.module('proton.controllers.Settings')
                 $scope.newPassword = '';
                 $scope.confirmPassword = '';
                 form.$setUntouched();
+                form.$setPristine();
                 authentication.user.PasswordMode = 1;
                 notify({ message: gettextCatalog.getString('Password updated', null), classes: 'notification-success' });
             })
