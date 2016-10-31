@@ -15,41 +15,80 @@
                 <legend translate-context="Title" translate>Organization</legend>
                 <div class="pm_grid">
 	            	<div class="col-1-2">
-		            	<form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
-	            			<div class="col-1-2">
-	            				<label for="orgName" translate-context="Title" translate>Organization name</label>
-	            			</div>
-	            			<div class="col-1-2">
-	            				<div class="clearfix">
-		            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="Organization name" ng-minlength="0" ng-maxlength="100" required="" />
-	            				</div>
-			            		<p class="text-right clearfix">
-				            		<button class="pm_button primary" type="submit" translate-context="Action" translate>Save</button>
+	            		<div class="clearfix">
+			            	<form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
+		            			<div class="col-3-8">
+		            				<label for="orgName" translate-context="Title" translate>Organization name:</label>
+		            			</div>
+		            			<div class="col-5-8">
+		            				<div class="clearfix">
+			            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="Organization name" ng-maxlength="100" required="" />
+			                            <div ng-messages="organizationForm.name.$error" class="text-red" ng-if="organizationForm.name.$touched || organizationForm.$submitted">
+			                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+			                                <p ng-message="maxlength" translate-context="Error" translate>Name exceeds maximum length</p>
+			                            </div>
+		            				</div>
+				            		<p class="text-right clearfix">
+					            		<button class="pm_button primary" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
+				            		</p>
+		            			</div>
+		            		</form>
+	            		</div>
+	            		<div class="clearfix">
+			                <form method="post" ng-submit="recoveryForm.$valid && saveRecoveryPassword(recoveryForm)" name="recoveryForm" novalidate>
+			                    <div class="clearfix">
+			                        <div class="col-1-2">
+			                            <label for="newRecoveryPassword" translate-context="Title" translate>Recovery password</label>
+			                        </div>
+			                        <div class="col-1-2">
+			                            <input type="password" id="newRecoveryPassword" name="newRecoveryPassword" ng-model="newRecoveryPassword" placeholder-translate="New recovery password" required>
+			                            <div ng-messages="recoveryForm.newRecoveryPassword.$error" class="text-red" ng-if="recoveryForm.newRecoveryPassword.$touched || recoveryForm.$submitted">
+			                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="clearfix">
+			                        <div class="col-1-2">
+			                            <label for="confirmRecoveryPassword" Title translate>Confirm recovery Password</label>
+			                        </div>
+			                        <div class="col-1-2">
+			                            <input type="password" id="confirmRecoveryPassword" name="confirmRecoveryPassword" ng-model="confirmRecoveryPassword" placeholder-translate="Confirm new recovery Password" class="margin" required compare-to="newRecoveryPassword">
+			                            <div ng-messages="recoveryForm.confirmRecoveryPassword.$error" class="text-red" ng-if="recoveryForm.confirmRecoveryPassword.$touched || recoveryForm.$submitted">
+			                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+			                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
+			                            </div>
+			                        </div>
+			                    </div>
+			            		<p class="clearfix">
+	                                <a href="https://protonmail.com/support/knowledge-base/organization-recovery-password/" target="_blank pull-left" class="pm_button link pull-left" translate-context="Action" translate-comment="link to learn more about changing your recovery password" translate>How does this work?</a>
+				            		<button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
 			            		</p>
-	            			</div>
-	            		</form>
+			                </form>
+	            		</div>
 	            	</div>
 	            	<div class="col-1-2">
-	            		<div class="pm_table">
-		                    <table class="plain" id="usersTable">
-		                        <tbody>
-			                        <tr>
-			                            <td translate-context="Title" translate>Organization storage:</td>
-			                            <td>
-			                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
-			                            </td>
-			                            <td class="text-right">
-			                                <span>
-			                                    <a ui-sref="secured.dashboard" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
-			                                </span>
-			                            </td>
-			                        </tr>
-			                    </tbody>
-		                    </table>
+	            		<div class="clearfix">
+		            		<div class="pm_table">
+			                    <table class="plain" id="usersTable">
+			                        <tbody>
+				                        <tr>
+				                            <td translate-context="Title" translate>Organization storage:</td>
+				                            <td>
+				                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
+				                            </td>
+				                            <td class="text-right">
+				                                <span>
+				                                    <a ui-sref="secured.dashboard" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+				                                </span>
+				                            </td>
+				                        </tr>
+				                    </tbody>
+			                    </table>
+		                    </div>
+		                    <p>
+			                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create sub-accounts which are used by other members of your organization.</span></small>
+		                    </p>
 	                    </div>
-	                    <p>
-		                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create sub-accounts which are used by other members of your organization.</span></small>
-	                    </p>
 	            	</div>
 	            </div>
             </section>

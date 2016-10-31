@@ -29,7 +29,7 @@ angular.module('proton.models.organization', ['proton.srp'])
             });
         },
         /**
-         *
+         * Get organization keys
          */
         getKeys() {
             return $http.get(url.get() + '/organizations/keys');
@@ -52,6 +52,18 @@ angular.module('proton.models.organization', ['proton.srp'])
          */
         payment(Obj) {
             return $http.put(url.get() + '/organizations/payment', Obj);
+        },
+        /**
+         * Get organization keys
+         */
+        getBackupKeys() {
+            return $http.get(url.get() + '/organizations/keys/backup');
+        },
+        /**
+         * Get organization keys
+         */
+        updateBackupKeys(Obj, creds) {
+            return srp.performSRPRequest('PUT', '/organizations/keys/backup', Obj, creds);
         }
     };
 });

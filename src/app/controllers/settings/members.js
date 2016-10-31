@@ -22,6 +22,7 @@ angular.module('proton.controllers.Settings')
     organization,
     Organization,
     organizationKeys,
+    passwords,
     pmcw
 ) => {
 
@@ -49,6 +50,8 @@ angular.module('proton.controllers.Settings')
 
     $scope.initialization = () => {
 
+        $scope.newRecoveryPassword = '';
+        $scope.confirmRecoveryPassword = '';
         switch ($stateParams.action) {
             case 'new':
                 $scope.addMember();
@@ -131,11 +134,56 @@ angular.module('proton.controllers.Settings')
                 notify({ message: result.data.Error, classes: 'notification-danger' });
 
             } else {
-                notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+                notify({ message: gettextCatalog.getString('Error updating organization name', null, 'Error'), classes: 'notification-danger' });
             }
         }, () => {
-            notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+            notify({ message: gettextCatalog.getString('Error updating organization name', null, 'Error'), classes: 'notification-danger' });
         });
+    };
+
+    /**
+     * Set organization recovery password
+     */
+    $scope.saveRecoveryPassword = (form) => {
+        const newPassword = $scope.newRecoveryPassword;
+
+        function submit(currentPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
+
+            const creds = {
+                Password: currentPassword,
+                TwoFactorCode: twoFactorCode
+            };
+
+            const keySalt = passwords.generateKeySalt();
+
+            passwords.computeKeyPassword(newPassword, keySalt)
+            .then((keyPassword) => pmcw.encryptPrivateKey($scope.organizationKey, keyPassword))
+            .then((PrivateKey) => Organization.updateBackupKeys({ PrivateKey, KeySalt: keySalt }, creds))
+            .then((result) => {
+                if (result.data && result.data.Code === 1000) {
+                    return result.data;
+                } else if (result.data && result.data.Error) {
+                    return Promise.reject({ message: result.data.Error });
+                }
+                return Promise.reject({ message: gettextCatalog.getString('Error updating organization recovery password', null, 'Error') });
+            }, () => {
+                return Promise.reject({ message: gettextCatalog.getString('Error updating organization recovery password', null, 'Error') });
+            })
+            .then(() => {
+                // Cleanup
+                $scope.newRecoveryPassword = '';
+                $scope.confirmRecoveryPassword = '';
+                form.$setUntouched();
+                form.$setPristine();
+                notify({ message: gettextCatalog.getString('Organization recovery password updated', null), classes: 'notification-success' });
+            })
+            .catch((error) => {
+                notify({ message: error.message, classes: 'notification-danger' });
+            });
+        }
+
+        passwordModal(submit);
     };
 
     /**
