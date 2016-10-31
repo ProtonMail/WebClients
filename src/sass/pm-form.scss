@@ -127,15 +127,25 @@
     // wrapper for placing icons inside inputs
     .input-icon {
         position: relative;
-        input {
+        &.right {
+            input[type="text"] {
+                padding-left: 20px;
+            }
+            .fa {
+                left: auto;
+                right: 1px;
+            }
+        }
+        input[type="text"] {
             position: relative;
+            padding-left: 2rem;
         }
         .fa {
             position: absolute;
-            right: 1px;
+            left: 1px;
             top: 1px;
             bottom: 1px;
-            text-align: right;
+            text-align: left;
             display: block;
             line-height: 32px;
             height: 32px;

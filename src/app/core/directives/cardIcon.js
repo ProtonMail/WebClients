@@ -1,5 +1,4 @@
-angular.module('proton.card', [])
-
+angular.module('proton.core')
 .directive('cardIcon', (Payment) => {
     return {
         restrict: 'E',
