@@ -13,7 +13,7 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
     // Browser
     openpgp.config.integrity_protect = true;
-    openpgp.initWorker('openpgp.worker.min.js');
+    openpgp.initWorker({ path: 'openpgp.worker.min.js' });
 }
 
 openpgp.config.integrity_protect = true;
