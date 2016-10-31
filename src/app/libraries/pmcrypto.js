@@ -135,6 +135,10 @@ var pmcrypto = (function() {
 
         numBits = (typeof numBits !== 'undefined') ? numBits : 2048;
 
+        if (password.length === 0) {
+            return Promise.reject('Missing private key passcode');
+        }
+
         return openpgp.generateKeyPair({
             numBits: numBits,
             userId: user,
