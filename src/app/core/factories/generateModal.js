@@ -50,7 +50,7 @@ angular.module('proton.core')
                 this.process = true;
                 _.each(this.addresses, (address) => {
                     address.state = GENERATING;
-                    promises.push(pmcw.generateKeysRSA(address.Email, this.password, numBits)
+                    promises.push(pmcw.generateKeysRSA('<' + address.Email + '>', this.password, numBits)
                     .then((result) => {
                         const privateKeyArmored = result.privateKeyArmored;
 
