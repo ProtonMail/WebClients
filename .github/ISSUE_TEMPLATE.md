@@ -1,16 +1,18 @@
-* Desktop, tablet or mobile?
-* Which browser?
-* Which OS?
+* Which browser? Chrome / Firefox / Safari / Opera
+* Which OS? Windows / Mac OS / Linux / iOS / Android
+* Which layout mode? Column mode / Row mode
+* Which threading mode? Conversation mode / Message mode
+* Can you reproduce the problem each time? Yes / No
 * Which url?
-* Free or paid account?
-* Which layout mode? column or row?
-* Which threading mode? conversation or message?
-* Can you reproduce the problem each time?
 
-### Description or steps to reproduce the problem
+### What steps will reproduce the problem?
 
-*
+* 1)
+* 2)
+* 3)
 
-### Expected Behavior
+### What is the expected result?
 
-### Actual Behavior
+### What happens instead?
+
+### Please provide any additional information below. Attach a screenshot if possible.
