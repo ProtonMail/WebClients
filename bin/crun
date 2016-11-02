@@ -37,7 +37,7 @@ if [ "$NO_DOCKER_RM" ]; then
 fi
 
 set -x
-docker run -v $REPO_ROOT:$CONTAINER_HOME -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock \
+docker run -v $REPO_ROOT:$CONTAINER_HOME \
   -e HOME=$CONTAINER_HOME -w $CONTAINER_HOME \
   -e PATH="./node_modules/.bin/:./node_modules/grunt-cli/bin/:$STANDARD_PATH" \
   $DOCKER_OPTS $SPECIAL_OPTS -ti --sig-proxy=true "$image" "$@"
