@@ -164,12 +164,11 @@
 			                        <span ng-bind="member.Name"></span>
 			                    </td>
 			                    <td class="role">
-	                                <span ng-show="member.Role === 2" translate>Admin</span>
-	                                <span ng-show="member.Role === 1" translate>Member</span>
-<!-- 			                    	<span class="pm_select" ng-hide="member.Role === 2">
+	                                <span ng-show="member.Self" translate>Admin</span>
+			                    	<span class="pm_select" ng-hide="member.Self">
 										<select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
 				                        <i class="fa fa-angle-down"></i>
-				                    </span> -->
+				                    </span>
 			                    </td>
                                 <td>
 	                                <span ng-show="member.Private === 1">

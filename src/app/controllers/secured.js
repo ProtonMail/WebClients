@@ -24,7 +24,7 @@ angular.module('proton.controllers.Secured', [])
     organization,
     Organization,
     Payment,
-    pmcw,
+    setupKeys,
     tools
 ) => {
     const dirtyAddresses = [];
@@ -75,17 +75,15 @@ angular.module('proton.controllers.Secured', [])
             const deferred = $q.defer();
             const mailboxPassword = authentication.getPassword();
 
-            pmcw.generateKeysRSA('pm_org_admin', mailboxPassword)
+            setupKeys.generateOrganization(mailboxPassword)
             .then((response) => {
                 const privateKey = response.privateKeyArmored;
 
                 deferred.resolve({
-                    DisplayName: gettextCatalog.getString('My organization', null, 'Title'),
-                    PrivateKey: privateKey,
-                    BackupPrivateKey: privateKey
+                    PrivateKey: privateKey
                 });
             }, () => {
-                deferred.reject(new Error('Error during the generation of new keys for pm_org_admin'));
+                deferred.reject(new Error('Error during the generation of new organization keys'));
             });
 
             return deferred.promise;

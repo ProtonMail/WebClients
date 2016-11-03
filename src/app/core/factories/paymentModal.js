@@ -10,7 +10,7 @@ angular.module('proton.core')
     $q,
     Payment,
     authentication,
-    pmcw,
+    setupKeys,
     tools,
     CONSTANTS
 ) => {
@@ -68,12 +68,12 @@ angular.module('proton.core')
              */
             function organizationKey() {
                 if (params.create === true) {
-                    return pmcw.generateKeysRSA('pm_org_admin', authentication.getPassword())
+                    return setupKeys.generateOrganization(authentication.getPassword())
                     .then((response) => {
                         const privateKey = response.privateKeyArmored;
-                        return Promise.resolve({ PrivateKey: privateKey });
+                        return { PrivateKey: privateKey };
                     }, () => {
-                        return Promise.reject('Error during the generation of new keys for pm_org_admin');
+                        return Promise.reject(new Error('Error during the generation of new organization keys'));
                     });
                 }
                 return Promise.resolve();

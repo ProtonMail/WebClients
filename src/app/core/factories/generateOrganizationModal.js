@@ -1,98 +1,104 @@
 angular.module('proton.core')
-.factory('generateOrganizationModal', (pmModal, authentication, networkActivityTracker, Key, pmcw, notify, $q) => {
+.factory('generateOrganizationModal', (pmModal, authentication, networkActivityTracker, Organization, pmcw, passwords, setupKeys, loginPasswordModal, notify, gettextCatalog) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/generateOrganization.tpl.html',
-        controller(params, $scope) {
-            // Variables
-            const promises = [];
-            const QUEUED = 0;
-            const GENERATING = 1;
-            const DONE = 2;
-            const SAVED = 3;
-            const ERROR = 4;
+        controller(params) {
 
             // Parameters
             this.size = 2048;
-            this.process = false;
-            this.title = params.title;
-            this.addresses = params.addresses;
-            this.message = params.message;
-            // Kill this for now
-            this.askPassword = 0; //= params.password.length === 0;
-            this.password = params.password;
-            _.each(this.addresses, (address) => { address.state = QUEUED; });
-
-            // Listeners
-            $scope.$on('updateUser', () => {
-                const dirtyAddresses = [];
-
-                _.each(authentication.user.Addresses, (address) => {
-                    if (address.Keys.length === 0 && address.Status === 1 && authentication.user.Private === 1) {
-                        dirtyAddresses.push(address);
-                    }
-                });
-
-                if (dirtyAddresses.length === 0) {
-                    params.close(false);
-                }
-            });
+            this.newRecoveryPassword = '';
+            this.confirmRecoveryPassword = '';
+            this.otherAdmins = params.otherAdmins;
 
             // Functions
             this.submit = () => {
+
                 const numBits = this.size;
+                const password = this.newRecoveryPassword;
 
-                this.process = true;
-                _.each(this.addresses, (address) => {
-                    address.state = GENERATING;
-                    promises.push(pmcw.generateKeysRSA(address.Email, this.password, numBits)
-                    .then((result) => {
-                        const privateKeyArmored = result.privateKeyArmored;
+                let decryptedKey;
 
-                        address.state = DONE;
+                const payload = { Tokens: [] };
 
-                        return Key.create({
-                            AddressID: address.ID,
-                            PrivateKey: privateKeyArmored
-                        }).then((result) => {
-                            if (result.data && result.data.Code === 1000) {
-                                address.state = SAVED;
-                                address.Keys = address.Keys || [];
-                                address.Keys.push(result.data.Key);
-                                notify({ message: 'Key created', classes: 'notification-success' });
-                                return $q.resolve();
-                            } else if (result.data && result.data.Error) {
-                                address.state = ERROR;
-                                notify({ message: result.data.Error, classes: 'notification-danger' });
+                return networkActivityTracker.track(setupKeys.generateOrganization(authentication.getPassword(), numBits)
+                .then(({ privateKeyArmored }) => {
+                    payload.PrivateKey = privateKeyArmored;
+                    return privateKeyArmored;
+                })
+                .then((armored) => pmcw.decryptPrivateKey(armored, authentication.getPassword()))
+                .then((pkg) => {
+                    decryptedKey = pkg;
 
-                                return $q.reject();
-                            }
-                            address.state = ERROR;
-                            notify({ message: 'Error during create key request', classes: 'notification-danger' });
+                    const promises = [];
 
-                            return $q.reject();
-                        }, () => {
-                            address.state = ERROR;
-                            notify({ message: 'Error during the create key request', classes: 'notification-danger' });
+                    // Backup key
+                    payload.BackupKeySalt = passwords.generateKeySalt();
+                    promises.push(passwords.computeKeyPassword(password, payload.BackupKeySalt)
+                        .then((keyPassword) => pmcw.encryptPrivateKey(pkg, keyPassword))
+                        .then((armored) => {
+                            payload.BackupPrivateKey = armored;
+                        }));
 
-                            return $q.reject();
+                    // Member tokens
+                    _.each(params.nonPrivate, (member) => {
+
+                        let memberKeys = member.Keys.slice();
+
+                        _.each(member.Addresses, (address) => {
+                            memberKeys = memberKeys.concat(address.Keys);
                         });
-                    }, (error) => {
-                        address.state = ERROR;
-                        notify({ message: error, classes: 'notification-danger' });
 
-                        return $q.reject();
-                    }));
-                });
+                        _.each(memberKeys, (key) => {
+                            promises.push(setupKeys.decryptMemberToken(key, params.existingKey)
+                                .then(({ decryptedToken }) => pmcw.encryptMessage(decryptedToken, pkg.toPublic().armor(), [], [pkg]))
+                                .then((Token) => {
+                                    payload.Tokens.push({ ID: key.ID, Token });
+                                }));
+                        });
+                    });
 
-                $q.all(promises)
-                .finally(() => {
-                    params.close(true, this.addresses, this.password);
-                });
+                    return Promise.all(promises).then(() => payload);
+                })
+                .then((payload) => new Promise((resolve, reject) => {
+                    loginPasswordModal.activate({
+                        params: {
+                            submit(currentPassword, twoFactorCode) {
+                                loginPasswordModal.deactivate();
+
+                                const creds = {
+                                    Password: currentPassword,
+                                    TwoFactorCode: twoFactorCode
+                                };
+
+                                return Organization.replaceKeys(payload, creds)
+                                .then(({ data }) => {
+                                    if (data && data.Code === 1000) {
+                                        notify({ message: gettextCatalog.getString('Organization keys change successful', null, 'Error'), classes: 'notification-success' });
+                                        return resolve(params.submit(decryptedKey));
+                                    } else if (data && data.Error) {
+                                        return reject(new Error(data.Error));
+                                    }
+                                    reject(new Error(gettextCatalog.getString('Error changing organization keys', null, 'Error')));
+                                });
+                            },
+                            cancel() {
+                                loginPasswordModal.deactivate();
+                                reject();
+                            },
+                            hasTwoFactor: authentication.user.TwoFactor
+                        }
+                    });
+                }))
+                .catch((error) => {
+                    if (error && error.message) {
+                        notify({ message: error.message, classes: 'notification-danger' });
+                    }
+                }));
             };
 
             this.cancel = () => {
-                params.close(false);
+                params.cancel();
             };
         }
     });

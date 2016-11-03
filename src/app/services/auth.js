@@ -100,14 +100,13 @@ angular.module('proton.authentication', [
                 // Hacky fix for missing organizations
                 const fixOrganization = () => {
                     if (user.Role === 0 && user.Subscribed === 1) {
-                        return pmcw.generateKeysRSA('pm_org_admin', api.getPassword())
+                        return setupKeys.generateOrganization(api.getPassword())
                         .then((response) => {
                             const privateKey = response.privateKeyArmored;
 
                             return {
                                 DisplayName: 'My Organization',
-                                PrivateKey: privateKey,
-                                BackupPrivateKey: privateKey
+                                PrivateKey: privateKey
                             };
                         })
                         .then((params) => {

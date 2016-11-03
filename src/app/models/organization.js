@@ -48,6 +48,12 @@ angular.module('proton.models.organization', ['proton.srp'])
             return $http.put(url.get() + '/organizations/keys/activate', Obj);
         },
         /**
+         * Replace private key for the organization
+         */
+        replaceKeys(Obj, creds) {
+            return srp.performSRPRequest('PUT', '/organizations/keys', Obj, creds);
+        },
+        /**
          * Get organization keys
          */
         updateBackupKeys(Obj, creds) {
