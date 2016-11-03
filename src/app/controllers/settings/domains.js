@@ -8,6 +8,7 @@ angular.module('proton.controllers.Settings')
     $state,
     gettextCatalog,
     Address,
+    activateOrganizationModal,
     addressModal,
     addressesModal,
     authentication,
@@ -19,6 +20,7 @@ angular.module('proton.controllers.Settings')
     domainModal,
     domains,
     eventManager,
+    generateOrganizationModal,
     Member,
     members,
     memberModal,
@@ -266,6 +268,12 @@ angular.module('proton.controllers.Settings')
      * Open modal to add a new address
      */
     $scope.addAddresses = (domain = {}) => {
+
+        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+            notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
+            $state.go('secured.members');
+            return;
+        }
 
         const memberParams = {
             params: {

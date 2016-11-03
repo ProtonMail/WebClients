@@ -8,10 +8,13 @@ angular.module('proton.controllers.Settings')
     $stateParams,
     $timeout,
     Address,
+    activateOrganizationModal,
     authentication,
     confirmModal,
+    CONSTANTS,
     domains,
     eventManager,
+    generateOrganizationModal,
     gettextCatalog,
     loginPasswordModal,
     Member,
@@ -142,7 +145,7 @@ angular.module('proton.controllers.Settings')
     };
 
     /**
-     * Set organization recovery password
+     * Set organization key recovery password
      */
     $scope.saveRecoveryPassword = (form) => {
         const newPassword = $scope.newRecoveryPassword;
@@ -166,9 +169,9 @@ angular.module('proton.controllers.Settings')
                 } else if (result.data && result.data.Error) {
                     return Promise.reject({ message: result.data.Error });
                 }
-                return Promise.reject({ message: gettextCatalog.getString('Error updating organization recovery password', null, 'Error') });
+                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
             }, () => {
-                return Promise.reject({ message: gettextCatalog.getString('Error updating organization recovery password', null, 'Error') });
+                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
             })
             .then(() => {
                 // Cleanup
@@ -176,7 +179,7 @@ angular.module('proton.controllers.Settings')
                 $scope.confirmRecoveryPassword = '';
                 form.$setUntouched();
                 form.$setPristine();
-                notify({ message: gettextCatalog.getString('Organization recovery password updated', null), classes: 'notification-success' });
+                notify({ message: gettextCatalog.getString('Organization key recovery password updated', null), classes: 'notification-success' });
             })
             .catch((error) => {
                 notify({ message: error.message, classes: 'notification-danger' });
@@ -225,6 +228,12 @@ angular.module('proton.controllers.Settings')
      * @param {Object} member
      */
     $scope.login = (member) => {
+
+        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+            notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
+            $state.go('secured.members');
+            return;
+        }
 
         function submit(currentPassword, twoFactorCode) {
 
