@@ -804,12 +804,13 @@ angular.module('proton.routes', [
             id: null
         },
         resolve: {
-            access(user, $q, CONSTANTS) {
+            access(user, $q, $state, CONSTANTS) {
                 const deferred = $q.defer();
 
-                if (CONSTANTS.KEY_PHASE > 3) {
+                if (CONSTANTS.KEY_PHASE > 3 && user.Role !== 1) {
                     deferred.resolve();
                 } else {
+                    $state.go('secured.addresses');
                     deferred.reject();
                 }
 
@@ -851,6 +852,12 @@ angular.module('proton.routes', [
     .state('secured.domains', {
         url: '/domains',
         resolve: {
+            access(user, $state) {
+                if (user.Role === 1) {
+                    $state.go('secured.addresses');
+                    return Promise.reject();
+                }
+            },
             members(user, Member, networkActivityTracker) {
                 if (user.Role === 2) {
                     return networkActivityTracker.track(Member.query());

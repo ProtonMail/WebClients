@@ -100,30 +100,45 @@ angular.module('proton.controllers.Settings')
      * Inform the back-end to change member role
      * @param {Object} member
      */
-    // $scope.changeRole = (member) => {
-    //     const params = { Role: member.selectRole.value };
+    $scope.changeRole = (member) => {
+        const payload = { Role: member.selectRole.value };
 
-    //     // THIS IS WRONG
-    //     if (true) {
-    //         throw new Error('this is wrong!');
-    //     }
+        let message;
+        if (member.selectRole.value === MASTER) {
+            message = gettextCatalog.getString('You must provide this member with the backup organization key password for full activation of administrator privileges.', null, 'Info');
+        } else {
+            message = gettextCatalog.getString('By demoting this member you agree to assume any outstanding organization-related obligations the member may have.', null, 'Info');
+        }
 
-    //     if (member.selectRole.value === MASTER) {
-    //         params.PrivateKey = $scope.organizationPrivateKey;
-    //     }
+        const params = {
+            title: gettextCatalog.getString('Change Role', null, 'Error'),
+            message,
+            confirm() {
+                networkActivityTracker.track(
+                    Member.role(member.ID, payload).then(({ data }) => { // TODO check request
+                        if (data && data.Code === 1000) {
+                            notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
 
-    //     Member.role(member.ID, params).then((result) => { // TODO check request
-    //         if (result.data && result.data.Code === 1000) {
-    //             notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
-    //         } else if (result.data && result.data.Error) {
-    //             notify({ message: result.data.Error, classes: 'notification-danger' });
-    //         } else {
-    //             notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
-    //         }
-    //     }, () => {
-    //         notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
-    //     });
-    // };
+                            member.Role = payload.Role;
+
+                            confirmModal.deactivate();
+                        } else if (data && data.Error) {
+                            notify({ message: data.Error, classes: 'notification-danger' });
+                        } else {
+                            notify({ message: gettextCatalog.getString('Error updating role', null, 'Error'), classes: 'notification-danger' });
+                        }
+                    }, () => {
+                        notify({ message: gettextCatalog.getString('Error updating role', null, 'Error'), classes: 'notification-danger' });
+                    })
+                );
+            },
+            cancel() {
+                confirmModal.deactivate();
+            }
+        };
+
+        confirmModal.activate({ params });
+    };
 
     /**
      * Save the organization name
