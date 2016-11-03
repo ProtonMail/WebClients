@@ -19,6 +19,7 @@ angular.module('proton.core')
         let element = null;
         let html;
         let scope;
+        let unsubscribeLogoutListener;
 
         if (config.template) {
             html = $q.when(config.template);
@@ -41,6 +42,10 @@ angular.module('proton.core')
                     window.scrollTo(0, 0);
                     Mousetrap.bind('escape', () => deactivate());
                 }, 100);
+
+                unsubscribeLogoutListener = $rootScope.$on('logout', () => {
+                    deactivate();
+                });
             });
         }
 
@@ -74,6 +79,9 @@ angular.module('proton.core')
             if (!element) {
                 return $q.when();
             }
+
+            unsubscribeLogoutListener();
+
             return $animate.leave(element).then(() => {
                 Mousetrap.unbind('escape');
                 scope.$destroy();
