@@ -83,7 +83,7 @@
                     ng-if="allowEmbedded"
                     ng-click="popoverHide($event, 'insertImage')"
                     action-message-type="addEmbedded" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert File</button>
-                <input type="file" style="display: none;" />
+                <input type="file" style="display: none;" accept="image/*" class="squire-addFile">
                 <button class="btn primary" ng-if="allowDataUri" ng-click="insertDataUri($event)" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert File</button>
                 <button class="btn primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert URL</button>
             </div>

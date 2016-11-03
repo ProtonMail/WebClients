@@ -1,6 +1,4 @@
-angular.module('proton.squire', [
-    'proton.tooltip'
-])
+angular.module('proton.squire', ['proton.tooltip'])
 .directive('squire', (tools, $rootScope, $timeout, authentication, embedded, CONSTANTS, signatureBuilder, attachmentFileFormat) => {
 
     const isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
@@ -59,6 +57,7 @@ angular.module('proton.squire', [
              */
             const isMessage = () => typeContent === 'message';
 
+            const $addFileInput = element[0].querySelector('.squire-addFile');
 
             let editor = scope.editor = null;
             let iframe;
@@ -66,15 +65,6 @@ angular.module('proton.squire', [
             let isLoaded = false;
 
             scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
-
-            scope.$on('$destroy', () => {
-                if (editor) {
-                    ['dragleave', 'dragenter', 'drop']
-                        .forEach((key) => editor.removeEventListener(key, draggableCallback(key, scope.message, typeContent)));
-
-                    editor.destroy();
-                }
-            });
 
             const DOC = document.createElement('DIV');
 
@@ -192,22 +182,16 @@ angular.module('proton.squire', [
                 }
             }
 
-            scope.insertDataUri = ($event) => {
-                const input = element[0].querySelector('input[type=file]');
+            const onChangeFile = (e) => {
+                const file = e.target.files[0];
+                insertImage(file, e);
 
-                input.onchange = () => {
-                    const file = input.files[0];
-
-                    insertImage(file, $event);
-                };
-
-                if (input && document.createEvent) {
-                    const evt = document.createEvent('MouseEvents');
-
-                    evt.initEvent('click', true, false);
-                    input.dispatchEvent(evt);
-                }
+                // Reset input value to trigger the change event if you select the same file again
+                _rAF(() => e.target.value = null);
             };
+            $addFileInput.addEventListener('change', onChangeFile, false);
+
+            scope.insertDataUri = () => $addFileInput.click();
 
             function updateStylesToMatch(doc) {
                 const head = doc.head || doc.getElementsByTagName('head')[0];
@@ -236,8 +220,6 @@ angular.module('proton.squire', [
                 updateStylesToMatch(iframeDoc);
                 // ngModel.$setPristine();
                 editor = new Squire(iframeDoc);
-
-
                 ['dragleave', 'dragenter', 'drop']
                     .forEach((key) => editor.addEventListener(key, draggableCallback(key, scope.message, typeContent)));
 
@@ -525,6 +507,18 @@ angular.module('proton.squire', [
 
                 editor.focus();
             };
+
+
+            scope.$on('$destroy', () => {
+                $addFileInput.removeEventListener('change', onChangeFile);
+                if (editor) {
+                    ['dragleave', 'dragenter', 'drop']
+                        .forEach((key) => editor.removeEventListener(key, draggableCallback(key, scope.message, typeContent)));
+
+                    editor.destroy();
+                }
+            });
+
         }
     };
 });
