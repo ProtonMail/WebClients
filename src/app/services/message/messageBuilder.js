@@ -1,5 +1,5 @@
 angular.module('proton.service.message', [])
-    .factory('messageBuilder', (gettextCatalog, tools, authentication, Message, $filter, signatureBuilder, CONSTANTS) => {
+    .factory('messageBuilder', (gettextCatalog, prepareContent, tools, authentication, Message, $filter, signatureBuilder, CONSTANTS) => {
 
         const RE_PREFIX = gettextCatalog.getString('Re:', null);
         const FW_PREFIX = gettextCatalog.getString('Fw:', null);
@@ -8,6 +8,17 @@ angular.module('proton.service.message', [])
             const hasPrefix = subject.toLowerCase().indexOf(prefix.toLowerCase()) === 0;
 
             return hasPrefix ? subject : `${prefix} ${subject}`;
+        }
+
+        /**
+         * Filter the body of the message before creating it
+         * Allows us to clean it
+         * @param  {String} input
+         * @param  {Message} message
+         * @return {String}
+         */
+        function prepareBody(input, message) {
+            return prepareContent(input, message, ['*']);
         }
 
         /**
@@ -24,7 +35,7 @@ angular.module('proton.service.message', [])
          * @param  {String} options.Subject from the current message
          * @param  {String} options.ToList  from the current message
          */
-        function nouveau(newMsg, { Subject = '', ToList = [], CCList = [], BCCList = [], DecryptedBody = '' } = {}) {
+        function newCopy(newMsg, { Subject = '', ToList = [], CCList = [], BCCList = [], DecryptedBody = '' } = {}) {
             newMsg.Subject = Subject;
             newMsg.ToList = ToList;
             newMsg.CCList = CCList;
@@ -107,7 +118,7 @@ angular.module('proton.service.message', [])
         function builder(action, currentMsg = {}, newMsg = {}) {
             const addresses = _.chain(authentication.user.Addresses).where({ Status: 1, Receive: 1 }).sortBy('Send').value();
 
-            (action === 'new') && nouveau(newMsg, currentMsg);
+            (action === 'new') && newCopy(newMsg, currentMsg);
             (action === 'reply') && reply(newMsg, currentMsg);
             (action === 'replyall') && replyAll(newMsg, currentMsg);
             (action === 'forward') && forward(newMsg, currentMsg);
@@ -138,7 +149,7 @@ angular.module('proton.service.message', [])
                     'From: ' + currentMsg.Sender.Address + '<br>',
                     'To: ' + tools.contactsToString(currentMsg.ToList) + '<br>',
                     (cc.length ? cc + '<br>' : '') + '<br>',
-                    (currentMsg.getDecryptedBody()),
+                    (prepareBody(currentMsg.getDecryptedBody(), currentMsg)),
                     '</blockquote><br>'
                 ].join(''));
             }

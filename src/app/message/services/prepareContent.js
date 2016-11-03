@@ -8,9 +8,23 @@ angular.module('proton.message')
         'transformBlockquotes'
     ].map((name) => ({ name, action: $injector.get(name) }));
 
+    /**
+     * Get the list of transoformation to perform
+     *     => Blacklist everything via *
+     * @param  {Array}  blacklist
+     * @return {Array}
+     */
+    const getTransformers = (blacklist = []) => {
+        if (blacklist.indexOf('*') > -1) {
+            return [];
+        }
+        return filters.filter(({ name }) => blacklist.indexOf(name) === -1);
+    };
+
     return (content, message, blacklist = []) => {
+
         const div = document.createElement('div');
-        const transformers = filters.filter(({ name }) => blacklist.indexOf(name) === -1);
+        const transformers = getTransformers(blacklist);
 
         if (blacklist.indexOf('transformRemote') > -1) {
             div.innerHTML = content;
