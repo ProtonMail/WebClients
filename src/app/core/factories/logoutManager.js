@@ -12,6 +12,8 @@ angular.module('proton.core')
             cacheCounters.reset();
             // We automatically logout the user when he comes to login page and is already logged in
             authentication.isLoggedIn() && authentication.logout();
+            // Dispatch an event to notify everybody that the user is no longer logged in
+            $rootScope.$emit('logout');
         }
     });
     return {};
