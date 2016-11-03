@@ -3,8 +3,22 @@ angular.module('proton.attachments')
 
         const embedded = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 
+        const isIE = () => $.browser.msie && $.browser.versionNumber === 11;
         const isEmbedded = (key) => _.contains(embedded, key);
         const getEmbedded = () => embedded;
+
+        /**
+         * Filter the type of MIMEType uploadable
+         * @param  {String} type
+         * @return {Boolean}      True if we can upload the item
+         */
+        const isUploadMIMEType = (type) => {
+            // Prehistory, with IE you can be Files or Text.
+            if (isIE()) {
+                return type !== 'Text';
+            }
+            return type !== 'text/html' && type !== 'text/plain' && type !== 'text/uri-list';
+        };
 
         /**
          * Check if the content is uploadable or not
@@ -15,8 +29,15 @@ angular.module('proton.attachments')
          * @return {Boolean}
          */
         const isUploadAbleType = ({ dataTransfer }) => {
-            return [...(dataTransfer.types || [])]
-                .every((type) => type !== 'text/html' && type !== 'text/plain' && type !== 'text/uri-list');
+
+            const list = [...(dataTransfer.types || [])];
+
+            // Can be a drag and drop of an image inside the composer
+            if (isIE() && !list.length) {
+                return false;
+            }
+
+            return [...(dataTransfer.types || [])].every(isUploadMIMEType);
         };
 
         return { isEmbedded, getEmbedded, isUploadAbleType };

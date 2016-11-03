@@ -221,6 +221,7 @@ angular.module('proton.tools', ['proton.constants'])
         return html.replace(/<style[\s\S]*?\/style>/ig, ' '); // For squire
     };
 
+    /* eslint  no-useless-escape: "off" */
     // convert html to plaintext
     tools.plaintext = function (input) {
         const html = input
