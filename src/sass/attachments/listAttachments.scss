@@ -3,7 +3,11 @@
 .listAttachments-container {padding: 0 10px}
 .state-eoReply.listAttachments-container {padding: 0 35px}
 
-.listAttachments-item * {pointer-events: none}
+.listAttachments-item {
+    padding-left: 3rem;
+    padding-right: .5rem;
+    * { pointer-events: none }
+}
 
 [class*="listAttachments-icon"] {
     color: $gray;
@@ -54,8 +58,7 @@
         margin: 0 10px 10px 0;
         color: $gray;
         background: #fff;
-        padding-left: 3rem;
-        padding-right: .5rem;
+        padding:0px;
         position: relative;
         height: 40px;
         line-height: 40px;
@@ -67,12 +70,12 @@
             content:"";
             position: absolute;
             z-index: 1;
-            left: 0;
+            left: 2.5rem;
             top: 0;
             bottom: 0;
             height: 40px;
-            width: 2.5rem;
             border-right: 1px solid $border;
+            pointer-events: none;
         }
 
         &.remove {
