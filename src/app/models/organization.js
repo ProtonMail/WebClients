@@ -34,30 +34,18 @@ angular.module('proton.models.organization', ['proton.srp'])
         getKeys() {
             return $http.get(url.get() + '/organizations/keys');
         },
-        // PUT
-        /**
-         * Update group in a way that doesn't require a payment (name, billing cycle, tokens).
-         */
-        update(Obj) {
-            return $http.put(url.get() + '/organizations', Obj);
-        },
-        /**
-         * Update private key for the organization
-         */
-        private(Obj, creds) {
-            return srp.performSRPRequest('PUT', '/organizations/keys/private', Obj, creds);
-        },
-        /**
-         * Update group in a way that requires a payment.
-         */
-        payment(Obj) {
-            return $http.put(url.get() + '/organizations/payment', Obj);
-        },
         /**
          * Get organization keys
          */
         getBackupKeys() {
             return $http.get(url.get() + '/organizations/keys/backup');
+        },
+        // PUT
+        /**
+         * Update private key for the organization
+         */
+        activateKeys(Obj) {
+            return $http.put(url.get() + '/organizations/keys/activate', Obj);
         },
         /**
          * Get organization keys

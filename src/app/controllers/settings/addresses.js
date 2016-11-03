@@ -7,6 +7,7 @@ angular.module('proton.controllers.Settings')
     $state,
     gettextCatalog,
     Address,
+    activateOrganizationModal,
     addressModal,
     authentication,
     domains,
@@ -16,6 +17,7 @@ angular.module('proton.controllers.Settings')
     Domain,
     eventManager,
     generateModal,
+    generateOrganizationModal,
     memberModal,
     members,
     Member,
@@ -23,39 +25,52 @@ angular.module('proton.controllers.Settings')
     notify,
     organization,
     organizationKeys,
+    Organization,
+    passwords,
     pmcw,
     Setting
 ) => {
 
-    $scope.activeAddresses = _.where(authentication.user.Addresses, { Status: 1, Receive: 1 });
-    $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
-    $scope.itemMoved = false;
-    $scope.keyStatus = 1;
+    function addressesInit() {
+        $scope.activeAddresses = _.where(authentication.user.Addresses, { Status: 1, Receive: 1 });
+        $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
+        $scope.itemMoved = false;
+        $scope.keyStatus = 0;
 
-    if (members.data && members.data.Code === 1000) {
-        $scope.members = members.data.Members;
-    }
+        if (members.data && members.data.Code === 1000) {
+            $scope.members = members.data.Members;
+        }
 
-    if (domains.data && domains.data.Code === 1000) {
-        $scope.domains = domains.data.Domains;
-    }
+        if (domains.data && domains.data.Code === 1000) {
+            $scope.domains = domains.data.Domains;
+        }
 
-    if (organization.data && organization.data.Code === 1000) {
-        $scope.organization = organization.data.Organization;
-    }
+        if (organization.data && organization.data.Code === 1000) {
+            $scope.organization = organization.data.Organization;
+        }
 
-    if (organizationKeys.data && organizationKeys.data.Code === 1000) {
+        if (organizationKeys.data && organizationKeys.data.Code === 1000) {
 
-        if (organizationKeys.data.Activation) {
-            $scope.keyStatus = 0;
-        } else {
-            pmcw.decryptPrivateKey(organizationKeys.data.PrivateKey, authentication.getPassword())
-            .then((key) => {
-                $scope.organizationKey = key;
-            }, (error) => {
-                $scope.keyStatus = 0;
-                console.error(error);
+            pmcw.keyInfo(organizationKeys.data.PublicKey)
+            .then((obj) => {
+                $scope.organizationKeyInfo = obj;
             });
+
+            if (!organizationKeys.data.PrivateKey) {
+                $scope.keyStatus = 1;
+            } else {
+                pmcw.decryptPrivateKey(organizationKeys.data.PrivateKey, authentication.getPassword())
+                .then((key) => {
+                    $scope.organizationKey = key;
+                }, (error) => {
+                    $scope.keyStatus = 2;
+                    console.error(error);
+                });
+            }
+        }
+
+        if (CONSTANTS.KEY_PHASE > 3 && $scope.keyStatus > 0) {
+            $scope.activateOrganizationKeys();
         }
     }
 
@@ -69,6 +84,12 @@ angular.module('proton.controllers.Settings')
         if ($scope.organization.MaxAddresses - $scope.organization.UsedAddresses < 1) {
             notify({ message: gettextCatalog.getString('You have used all addresses in your plan. Please upgrade your plan to add a new address', null, 'Error'), classes: 'notification-danger' });
             return 0;
+        }
+
+        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+            notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
+            $state.go('secured.members');
+            return;
         }
 
         return 1;
@@ -94,6 +115,12 @@ angular.module('proton.controllers.Settings')
         if ($scope.organization.MaxSpace - $scope.organization.UsedSpace < 1) {
             notify({ message: gettextCatalog.getString('All storage space has been allocated. Please reduce storage allocated to other members', null, 'Error'), classes: 'notification-danger' });
             return 0;
+        }
+
+        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+            notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
+            $state.go('secured.members');
+            return;
         }
 
         return 1;
@@ -330,12 +357,6 @@ angular.module('proton.controllers.Settings')
             return;
         }
 
-        if ($scope.keyStatus !== 1 && CONSTANTS.KEY_PHASE > 3) {
-            notify({ message: gettextCatalog.getString('Cannot decrypt master organization key', null, 'Error'), classes: 'notification-danger' });
-            $state.go('secured.members');
-            return;
-        }
-
         if (!$scope.canAddAddress()) {
             return;
         }
@@ -495,4 +516,119 @@ angular.module('proton.controllers.Settings')
             })
         );
     };
+
+    $scope.activateOrganizationKeys = () => {
+
+        let params;
+        let successMessage;
+        let errorMessage;
+        if ($scope.keyStatus === 1) {
+            params = {
+                title: gettextCatalog.getString('Key Activation', null, 'Title'),
+                prompt: gettextCatalog.getString('Enter password:', null, 'Title'),
+                message: gettextCatalog.getString('You must activate your organization private key with the backup organization key password provided to you by your organization administrator.', null, 'Info'),
+                alert: gettextCatalog.getString('Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.', null, 'Info'),
+                alertClass: 'alert alert-warning'
+            };
+            successMessage = gettextCatalog.getString('Organization keys activated', null, 'Info');
+            errorMessage = gettextCatalog.getString('Error activating organization keys', null, 'Error');
+        } else if ($scope.keyStatus === 2) {
+            params = {
+                title: gettextCatalog.getString('Key Activation', null, 'Title'),
+                prompt: gettextCatalog.getString('Enter backup key password:', null, 'Title'),
+                message: gettextCatalog.getString('You have lost access to your organization private key. Please enter the backup organization key password to reactivate it, or click Reset to generate new keys.', null, 'Info'),
+                alert: gettextCatalog.getString('Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.', null, 'Info'),
+                reset() {
+                    activateOrganizationModal.deactivate();
+                    $scope.changeOrganizationKeys();
+                }
+            };
+            successMessage = gettextCatalog.getString('Organization keys restored', null, 'Info');
+            errorMessage = gettextCatalog.getString('Error restoring organization keys', null, 'Error');
+        } else {
+            notify({ message: gettextCatalog.getString('Organization keys already active', null, 'Error'), classes: 'notification-success' });
+            return;
+        }
+
+        _.extend(params, {
+            submit(passcode) {
+
+                networkActivityTracker.track(Organization.getBackupKeys()
+                .then((result) => {
+                    if (result.data && result.data.Code === 1000) {
+                        return result.data;
+                    } else if (result.data && result.data.Error) {
+                        return Promise.reject(result.data.Error);
+                    }
+                    return Promise.reject(new Error(gettextCatalog.getString('Error retrieving backup organization keys', null, 'Error')));
+                })
+                .then(({ PrivateKey, KeySalt }) => {
+                    return passwords.computeKeyPassword(passcode, KeySalt)
+                    .then((keyPassword) => pmcw.decryptPrivateKey(PrivateKey, keyPassword));
+                })
+                .then(
+                    (pkg) => {
+                        return pmcw.encryptPrivateKey(pkg, authentication.getPassword())
+                        .then((PrivateKey) => Organization.activateKeys({ PrivateKey }))
+                        .then((result) => {
+                            if (result.data && result.data.Code === 1000) {
+                                $scope.keyStatus = 0;
+                                $scope.organizationKey = pkg;
+
+                                notify({ message: successMessage, classes: 'notification-success' });
+
+                                activateOrganizationModal.deactivate();
+                                eventManager.call();
+                            } else if (result.data && result.data.Error) {
+                                return Promise.reject(new Error(result.data.Error));
+                            }
+                            return Promise.reject(new Error(errorMessage));
+                        });
+                    },
+                    () => Promise.reject(new Error(gettextCatalog.getString('Passcode incorrect. Please try again', null, 'Error')))
+                )
+                .catch((error) => {
+                    notify({ message: error.message, classes: 'notification-danger' });
+                }));
+            },
+            cancel() {
+                activateOrganizationModal.deactivate();
+            }
+        });
+
+        activateOrganizationModal.activate({ params });
+    };
+
+    /**
+     * Change organization keys
+     */
+    $scope.changeOrganizationKeys = () => {
+        generateOrganizationModal.activate({
+            params: {
+                title: gettextCatalog.getString('Key Activation', null, 'Title'),
+                prompt: gettextCatalog.getString('Enter backup key passcode:', null, 'Title'),
+                message: gettextCatalog.getString('You have lost access to your organization private key. Please enter the backup organization key passcode to reactivate it, or click Reset to generate new keys.', null, 'Info'),
+                alert: gettextCatalog.getString('Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.', null, 'Info'),
+                submit(passcode) {
+
+                    Organization.getBackupKeys()
+                    .then((result) => {
+                        console.log(result);
+                    });
+
+                    activateOrganizationModal.deactivate();
+                    eventManager.call();
+                },
+                cancel() {
+                    activateOrganizationModal.deactivate();
+                },
+                reset() {
+                    activateOrganizationModal.deactivate();
+                    $scope.resetOrganizationKeys();
+                }
+            }
+        });
+    };
+
+    addressesInit();
 });
