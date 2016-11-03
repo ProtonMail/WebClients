@@ -565,5 +565,14 @@ body.mobileMode {
 
 
 .proton-message-blockquote-toggle ~ * {display: none}
-.print .proton-message-blockquote-toggle ~ * {display: block}
-/*blockquote:not(.proton-message-blockquote-toggle) > .proton-message-blockquote-toggle {display: block}*/
+.print .proton-message-blockquote-toggle {
+    display: none;
+    ~ * {
+        display: block
+    }
+}
+
+.print .protonmail_quote {
+    /* 72 DPI will let us margin 2 blockquote */
+    min-width:595px;
+}
