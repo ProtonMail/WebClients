@@ -2,6 +2,7 @@ angular.module('proton.controllers.Settings')
 
 .controller('PaymentsController', (
     $scope,
+    $state,
     gettextCatalog,
     $q,
     authentication,
@@ -13,6 +14,7 @@ angular.module('proton.controllers.Settings')
     methods,
     notify,
     networkActivityTracker,
+    organizationInvoices,
     Payment
 ) => {
     $scope.methods = methods.data.PaymentMethods;
@@ -20,11 +22,26 @@ angular.module('proton.controllers.Settings')
     $scope.invoices = invoices.data.Invoices;
     $scope.total = invoices.data.Total;
     $scope.delinquent = authentication.user.Delinquent >= 3;
+    $scope.invoiceOwner = 0;
+    $scope.role = authentication.user.Role;
 
     $scope.$on('updateUser', () => {
         $scope.subscribed = authentication.user.Subscribed === 1;
         $scope.delinquent = authentication.user.Delinquent >= 3;
+
+        if (authentication.user.Role !== $scope.role) {
+            $state.go('secured.payments');
+        }
     });
+
+    $scope.changeInvoices = (owner) => {
+        if (owner === 0) {
+            $scope.invoices = invoices.data.Invoices;
+        } else if (owner === 1) {
+            $scope.invoices = organizationInvoices.data.Invoices;
+        }
+        $scope.invoiceOwner = owner;
+    };
 
     $scope.refresh = function () {
         networkActivityTracker.track(Payment.methods()

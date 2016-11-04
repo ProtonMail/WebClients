@@ -733,7 +733,13 @@ angular.module('proton.routes', [
         },
         resolve: {
             invoices(Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.invoices());
+                return networkActivityTracker.track(Payment.invoices({ Owner: 0 }));
+            },
+            organizationInvoices(user, Payment, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Payment.invoices({ Owner: 1 }));
+                }
+                return {};
             },
             methods(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
