@@ -33,6 +33,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     let childWindow;
     let loginPasswordCopy;
     let mailboxPasswordCopy;
+    const currentYear = new Date().getFullYear();
 
     function initialization() {
 
@@ -40,19 +41,11 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
         // Variables
         $scope.card = {};
-        $scope.donationCard = {};
-        $scope.donationCurrencies = [
-            { label: 'USD', value: 'USD' },
-            { label: 'EUR', value: 'EUR' },
-            { label: 'CHF', value: 'CHF' }
-        ];
-        $scope.donationAmount = 25;
-        $scope.donationCurrency = $scope.donationCurrencies[1];
+        $scope.tools = tools;
         $scope.compatibility = tools.isCompatible();
         $scope.showFeatures = false;
         $scope.filling = true;
         $scope.payment = false;
-        $scope.donation = false;
         $scope.creating = false;
         $scope.genNewKeys = false;
         $scope.createUser = false;
@@ -62,12 +55,21 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         $scope.getUserInfo = false;
         $scope.finishCreation = false;
         $scope.verifyCode = false;
-        $scope.donationCode = false;
         $scope.errorPay = false;
         $scope.approvalURL = false;
         $scope.paypalNetworkError = false;
-        $scope.displayDonateLater = false;
+        $scope.card.country = _.findWhere(tools.countries, { priority: 1 });
         $scope.method = 'card';
+        $scope.months = [];
+        $scope.years = [];
+
+        for (let i = 1; i <= 12; i++) {
+            $scope.months.push(i);
+        }
+
+        for (let i = 0; i < 12; i++) {
+            $scope.years.push(currentYear + i);
+        }
 
         $scope.signup = {
             verificationSent: false,
@@ -239,17 +241,22 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     };
 
     $scope.createAccount = function () {
-        $scope.humanityTest = false;
+
         $scope.creating = true;
 
-        doCreateUser()
-        .then(doLogUserIn)
-        .then(doAccountSetup)
-        .then(doGetUserInfo)
-        .then(finishRedirect)
+        $scope.doCreateUser()
+        .then($scope.doLogUserIn)
+        .then($scope.doAccountSetup)
+        .then($scope.doGetUserInfo)
+        .then($scope.finishRedirect)
         .catch((err) => {
-            const message = (typeof err === 'string') ? err : gettextCatalog.getString('Something went wrong', null, 'Error');
-            notify({ classes: 'notification-danger', message });
+            let msg = err;
+
+            if (typeof msg !== 'string') {
+                msg = gettextCatalog.getString('Something went wrong', null, 'Error');
+            }
+
+            notify({ classes: 'notification-danger', message: msg });
             $scope.signupError = true;
         });
     };
@@ -295,46 +302,12 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                     } else if (plans.length > 0) {
                         $scope.payment = true;
                     } else {
-                        $scope.donation = true;
+                        $scope.humanityTest = true;
                     }
                 }, 2000);
             })
         );
     }
-
-    /**
-     * Donate to ProtonMail
-     */
-    $scope.donate = () => {
-        const { number, month, year, fullname, cvc, zip } = $scope.donationCard;
-        const country = $scope.donationCard.country.value;
-        const amount = $scope.donationAmount * 100; // Don't be afraid
-        const currency = $scope.donationCurrency.value;
-        const method = {
-            Type: 'card',
-            Details: {
-                Number: number,
-                ExpMonth: month,
-                ExpYear: (year.length === 2) ? '20' + year : year,
-                CVC: cvc,
-                Name: fullname,
-                Country: country,
-                ZIP: zip
-            }
-        };
-        const params = {
-            Username: $scope.account.Username,
-            Amount: amount,
-            Currency: currency,
-            Payment: method
-        };
-        verify(params);
-    };
-
-    $scope.dontWantToSupportOnlinePrivacy = () => {
-        $scope.donation = false;
-        $scope.humanityTest = true;
-    };
 
     $scope.finishLoginReset = function () {
         $log.debug('finishLoginReset');
@@ -458,22 +431,25 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         });
     };
 
-    function verify(params) {
+    function verify(method) {
         $scope.errorPay = false;
 
         networkActivityTracker.track(
-            Payment.verify(params)
+            Payment.verify({
+                Username: $scope.account.Username,
+                Amount: $scope.plan.Amount,
+                Currency: $scope.plan.Currency,
+                Payment: method
+            })
             .then((result) => {
-                const { data = {} } = result;
-                if (data.Code === 1000) {
-                    $scope.verifyCode = data.VerifyCode;
+                if (result.data && result.data.Code === 1000) {
+                    $scope.verifyCode = result.data.VerifyCode;
                     $scope.payment = false;
-                    $scope.donation = false;
                     $rootScope.tempPlan = $scope.plan; // We need to subcribe this user later
-                    $rootScope.tempMethod = params.Method; // We save this payment method to save it later
+                    $rootScope.tempMethod = method; // We save this payment method to save it later
                     $scope.createAccount();
-                } else if (data.Error) {
-                    notify({ message: data.Error, classes: 'notification-danger' }); // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
+                } else if (result.data && result.data.Error) {
+                    notify({ message: result.data.Error, classes: 'notification-danger' }); // We were unable to successfully charge your card. Please try a different card or contact your bank for assistance.
                     $scope.errorPay = true;
                 } else {
                     $scope.errorPay = true;
@@ -502,13 +478,8 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         }
 
         const method = { Type: 'paypal', Details: paypalObject };
-        const params = {
-            Username: $scope.account.Username,
-            Amount: $scope.plan.Amount,
-            Currency: $scope.plan.Currency,
-            Payment: method
-        };
-        verify(params);
+
+        verify(method);
         childWindow.close();
         window.removeEventListener('message', receivePaypalMessage, false);
     }
@@ -532,24 +503,20 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                 ZIP: $scope.card.zip
             }
         };
-        const params = {
-            Username: $scope.account.Username,
-            Amount: $scope.plan.Amount,
-            Currency: $scope.plan.Currency,
-            Payment: method
-        };
-        verify(params);
+
+        verify(method);
     };
 
-    function doCreateUser() {
+    $scope.doCreateUser = function () {
+
+        $scope.createUser = true;
+
         const params = {
             Username: $scope.account.Username,
             Email: $scope.account.notificationEmail,
             News: !!($scope.account.optIn),
             Referrer: $location.search().ref
         };
-
-        $scope.createUser = true;
 
         if (angular.isDefined($rootScope.inviteToken)) {
             params.Token = $rootScope.inviteToken;
@@ -566,15 +533,12 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         } else if ($scope.signup.verificationSent !== false) {
             params.Token = $scope.account.codeVerification;
             params.TokenType = 'email';
-        } else if ($scope.donationCode) {
-            params.Token = $scope.donationCode;
-            params.TokenType = 'donation';
         }
 
         return User.create(params, loginPasswordCopy);
     }
 
-    function doLogUserIn(response) {
+    $scope.doLogUserIn = function (response) {
         if (response.data && response.data.Code === 1000) {
             $scope.logUserIn = true;
             return authentication.loginWithCredentials({
@@ -595,7 +559,9 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         return Promise.reject(response.data.Error);
     }
 
-    function doAccountSetup() {
+    $scope.doAccountSetup = function () {
+        $log.debug('doAccountSetup');
+
         $scope.setupAccount = true;
 
         return Address.setup({
@@ -627,12 +593,14 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         });
     }
 
-    function doGetUserInfo() {
+    $scope.doGetUserInfo = function () {
+        $log.debug('getUserInfo');
         $scope.getUserInfo = true;
         return authentication.fetchUserInfo();
     }
 
-    function finishRedirect() {
+    $scope.finishRedirect = function () {
+        $log.debug('finishRedirect');
         $scope.finishCreation = true;
 
         if (CONSTANTS.WIZARD_ENABLED === true) {

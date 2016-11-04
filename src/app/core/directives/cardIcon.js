@@ -18,47 +18,50 @@ angular.module('proton.core')
 
             scope.$watch('number', (newValue) => {
                 scope.class = card;
+
                 // New value defined?
                 if (angular.isDefined(newValue)) {
-                    const type = Payment.cardType(newValue);
-                    switch (type) {
-                        case 'visa':
-                            scope.class = visa;
-                            break;
-                        case 'visaelectron':
-                            scope.class = card;
-                            break;
-                        case 'mastercard':
-                            scope.class = mastercard;
-                            break;
-                        case 'maestro':
-                            scope.class = card;
-                            break;
-                        case 'forbrugsforeningen':
-                            scope.class = card;
-                            break;
-                        case 'dankort':
-                            scope.class = card;
-                            break;
-                        case 'amex':
-                            scope.class = americanExpress;
-                            break;
-                        case 'discover':
-                            scope.class = discover;
-                            break;
-                        case 'dinersclub':
-                            scope.class = dinersClub;
-                            break;
-                        case 'jcb':
-                            scope.class = jcb;
-                            break;
-                        case 'unionpay':
-                            scope.class = card;
-                            break;
-                        default:
-                            scope.class = card;
-                            break;
-                    }
+                    Payment.cardType(newValue)
+                    .then((type) => {
+                        switch (type) {
+                            case 'visa':
+                                scope.class = visa;
+                                break;
+                            case 'visaelectron':
+                                scope.class = card;
+                                break;
+                            case 'mastercard':
+                                scope.class = mastercard;
+                                break;
+                            case 'maestro':
+                                scope.class = card;
+                                break;
+                            case 'forbrugsforeningen':
+                                scope.class = card;
+                                break;
+                            case 'dankort':
+                                scope.class = card;
+                                break;
+                            case 'amex':
+                                scope.class = americanExpress;
+                                break;
+                            case 'discover':
+                                scope.class = discover;
+                                break;
+                            case 'dinersclub':
+                                scope.class = dinersClub;
+                                break;
+                            case 'jcb':
+                                scope.class = jcb;
+                                break;
+                            case 'unionpay':
+                                scope.class = card;
+                                break;
+                            default:
+                                scope.class = card;
+                                break;
+                        }
+                    });
                 }
             });
         }
