@@ -14,7 +14,7 @@
             <p class="alert alert-info" translate-context="Info" translate>Take back your privacy! Setting up your secure email account takes less than 2 minutes.</p>
 
             <div ng-if="chooseDomain">
-                <label for="Username">
+                <label class="titleLabel" for="Username">
                     <em class="num">1</em>
                     <span translate translate-context="Title">Email Address</span>
                 </label>
@@ -30,7 +30,7 @@
             </div>
 
             <div ng-if="keyPhase < 3">
-                <label for="password">
+                <label class="titleLabel" for="password">
                     <em class="num" ng-if="chooseDomain">2</em>
                     <span translate translate-context="Title">Mailbox Password</span>
                 </label>
@@ -48,7 +48,7 @@
             </div>
 
             <div ng-if="keyPhase > 2">
-                <label for="password">
+                <label class="titleLabel" for="password">
                     <em class="num" ng-if="chooseDomain">2</em>
                     <span translate translate-context="Title">Password</span>
                 </label>
