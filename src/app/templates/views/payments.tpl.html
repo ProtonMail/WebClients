@@ -41,9 +41,18 @@
                 <legend translate-context="Title" translate>Invoices</legend>
                 <div class="margin">
                     <button type="button" class="pm_button" ng-click="customize()" translate-context="Action" translate>Customize</button>
+                    <span class="pm_buttons pull-right" ng-show="user.Role === 2">
+                        <a href="#" ng-class="{ 'active': invoiceOwner === 0 }" ng-click="changeInvoices(0)">
+                            User
+                        </a>
+                        <a href="#" ng-class="{ 'active': invoiceOwner === 1 }" ng-click="changeInvoices(1)">
+                            Organization
+                        </a>
+                    </span>
                 </div>
-                <p class="alert alert-danger" ng-show="delinquent === true" translate-context="Info" translate>Your account currently has an overdue invoice. Please pay all unpaid invoices.</p>
-                <p class="alert alert-info" ng-show="invoices.length === 0" translate-context="Info" translate>You have no invoices.</p>
+                <p class="alert alert-danger" ng-show="delinquent === true && user.Role === 0" translate-context="Info" translate>Your account currently has an overdue invoice. Please pay all unpaid invoices.</p>
+                <p class="alert alert-danger" ng-show="delinquent === true && user.Role > 0" translate-context="Info" translate>Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.</p>
+                <p class="alert alert-info" ng-show="invoices.length === 0" translate-context="Info" translate>No invoices found.</p>
 
                 <div class="pm_table">
                     <table ng-show="invoices.length > 0" id="invoicesTable">
