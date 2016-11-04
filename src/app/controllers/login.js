@@ -318,7 +318,7 @@ angular.module('proton.controllers.Auth', [
         });
     };
 
-    $scope.enterLoginPassword = function () {
+    $scope.enterLoginPassword = () => {
         angular.element('input').blur();
         angular.element('#pm_login').attr({ action: '/*' });
         clearErrors();
@@ -326,39 +326,41 @@ angular.module('proton.controllers.Auth', [
         const username = $scope.username.toLowerCase();
         const password = $scope.password; // Login password
 
-        // Check username and password
-        if (!username || !password) {
-            notify({ message: gettextCatalog.getString('Please enter your username and password', null, 'Error'), classes: 'notification-danger' });
-            return;
-        }
-
-        // Custom validation
         try {
-            if (pmcw.encode_utf8(password).length > CONSTANTS.LOGIN_PW_MAX_LEN) {
-                notify({ message: gettextCatalog.getString('Passwords are limited to ' + CONSTANTS.LOGIN_PW_MAX_LEN + ' characters', null, 'Error'), classes: 'notification-danger' });
-                return;
+            if (!username || !password) {
+                throw new Error(gettextCatalog.getString('Please enter your username and password', null, 'Error'));
             }
-        } catch (err) {
-            notify({ message: err.message, classes: 'notification-danger' });
-            return;
-        }
 
-        networkActivityTracker.track(
-            srp.info(usernameLowerCase)
-            .then((resp) => {
-                $scope.initialInfoResponse = resp;
-                if (resp.data.TwoFactor === 0) {
-                    // user does not have two factor enabled, we will proceed to the auth call
-                    login($scope.username, $scope.password, null, $scope.initialInfoResponse);
-                } else {
-                    // user has two factor enabled, they need to enter a code first
-                    $scope.twoFactor = 1;
-                    $timeout(selectTwoFactor, 100, false);
-                }
-            }, (error) => {
-                return Promise.reject(error);
-            })
-        );
+            const usernameLowerCase = username.toLowerCase();
+            const passwordEncoded = pmcw.encode_utf8(password);
+
+            if (!passwordEncoded) {
+                throw new Error(gettextCatalog.getString('Your password is missing'));
+            }
+
+            if (passwordEncoded.length > CONSTANTS.LOGIN_PW_MAX_LEN) {
+                throw new Error(gettextCatalog.getString('Passwords are limited to ' + CONSTANTS.LOGIN_PW_MAX_LEN + ' characters', null, 'Error'));
+            }
+
+            networkActivityTracker.track(
+                srp.info(usernameLowerCase).then((resp) => {
+                    $scope.initialInfoResponse = resp;
+                    if (resp.data.TwoFactor === 0) {
+                        // user does not have two factor enabled, we will proceed to the auth call
+                        login(usernameLowerCase, password, null, $scope.initialInfoResponse);
+                    } else {
+                        // user has two factor enabled, they need to enter a code first
+                        $scope.twoFactor = 1;
+                        $timeout(selectTwoFactor, 100, false);
+                    }
+                }, (error) => {
+                    return Promise.reject(error);
+                })
+            );
+        } catch (error) {
+            const { message } = error;
+            notify({ message, classes: 'notification-danger' });
+        }
     };
 
     $scope.enterTwoFactor = function () {
