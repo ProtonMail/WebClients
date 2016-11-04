@@ -251,44 +251,25 @@ angular.module('proton.models.payments', [])
             });
         },
         cardType(number) {
-            const deferred = $q.defer();
-
-            deferred.resolve($.payment.cardType(number));
-
-            return deferred.promise;
+            return $.payment.cardType(number);
         },
         validateCardNumber(number) {
-            const deferred = $q.defer();
-
             if ($.payment.validateCardNumber(number) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('Card number invalid', null, 'Error')));
-            } else {
-                deferred.resolve();
+                return Promise.reject(new Error(gettextCatalog.getString('Card number invalid', null, 'Error')));
             }
-
-            return deferred.promise;
+            return Promise.resolve();
         },
         validateCardExpiry(month, year) {
-            const deferred = $q.defer();
-
             if ($.payment.validateCardExpiry(month, year) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('Expiration date invalid', null, 'Error')));
-            } else {
-                deferred.resolve();
+                return Promise.reject(new Error(gettextCatalog.getString('Expiration date invalid', null, 'Error')));
             }
-
-            return deferred.promise;
+            return Promise.resolve();
         },
         validateCardCVC(cvc) {
-            const deferred = $q.defer();
-
             if ($.payment.validateCardCVC(cvc) === false) {
-                deferred.reject(new Error(gettextCatalog.getString('CVC invalid', null, 'Error')));
-            } else {
-                deferred.resolve();
+                return Promise.reject(new Error(gettextCatalog.getString('CVC invalid', null, 'Error')));
             }
-
-            return deferred.promise;
+            return Promise.resolve();
         }
     };
 });
