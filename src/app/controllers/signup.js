@@ -536,7 +536,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         }
 
         return User.create(params, loginPasswordCopy);
-    }
+    };
 
     $scope.doLogUserIn = function (response) {
         if (response.data && response.data.Code === 1000) {
@@ -557,7 +557,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         }
 
         return Promise.reject(response.data.Error);
-    }
+    };
 
     $scope.doAccountSetup = function () {
         $log.debug('doAccountSetup');
@@ -591,13 +591,13 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             notify({ message: error.message, classes: 'notification-danger' });
             return Promise.reject();
         });
-    }
+    };
 
     $scope.doGetUserInfo = function () {
         $log.debug('getUserInfo');
         $scope.getUserInfo = true;
         return authentication.fetchUserInfo();
-    }
+    };
 
     $scope.finishRedirect = function () {
         $log.debug('finishRedirect');
@@ -612,7 +612,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         } else {
             $state.go('secured.dashboard');
         }
-    }
+    };
 
     initialization();
 });
