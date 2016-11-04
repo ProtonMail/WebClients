@@ -572,7 +572,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         }
 
         return User.create(params, loginPasswordCopy);
-    };
+    }
 
     function doLogUserIn(response) {
         if (response.data && response.data.Code === 1000) {
@@ -593,7 +593,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         }
 
         return Promise.reject(response.data.Error);
-    };
+    }
 
     function doAccountSetup() {
         $scope.setupAccount = true;
@@ -625,12 +625,12 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             notify({ message: error.message, classes: 'notification-danger' });
             return Promise.reject();
         });
-    };
+    }
 
     function doGetUserInfo() {
         $scope.getUserInfo = true;
         return authentication.fetchUserInfo();
-    };
+    }
 
     function finishRedirect() {
         $scope.finishCreation = true;
@@ -644,7 +644,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         } else {
             $state.go('secured.dashboard');
         }
-    };
+    }
 
     initialization();
 });
