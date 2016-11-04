@@ -52,7 +52,7 @@ angular.module('proton.controllers.Secured', [])
     }
 
     // if the user subscribed to a plan during the signup process
-    if ($rootScope.tempPlan && ['plus', 'visionary'].indexOf($rootScope.tempPlan.Name) !== -1 && $rootScope.tempPlan.Amount === authentication.user.Credit) {
+    if ($rootScope.tempPlan && $rootScope.tempPlan.Amount === authentication.user.Credit) {
         const subscribe = function () {
             const deferred = $q.defer();
 
@@ -119,7 +119,7 @@ angular.module('proton.controllers.Secured', [])
         });
     }
 
-    // We save the payment method used during the subscription or donation
+    // We save the payment method used during the subscription
     if ($rootScope.tempMethod && $rootScope.tempMethod.Type === 'card') {
         Payment.updateMethod($rootScope.tempMethod)
         .then((result) => {
