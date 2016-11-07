@@ -197,37 +197,41 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     };
 
     $scope.sendVerificationCode = function () {
-        User.code({
-            Username: $scope.account.Username,
-            Type: 'email',
-            Destination: {
-                Address: $scope.account.emailVerification
-            }
-        }).then((result) => {
-            if (result.data && result.data.Code === 1000) {
-                $scope.signup.verificationSent = true;
-            } else if (result.data && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-            }
-        });
+        networkActivityTracker.track(
+            User.code({
+                Username: $scope.account.Username,
+                Type: 'email',
+                Destination: {
+                    Address: $scope.account.emailVerification
+                }
+            }).then((result) => {
+                if (result.data && result.data.Code === 1000) {
+                    $scope.signup.verificationSent = true;
+                } else if (result.data && result.data.Error) {
+                    notify({ message: result.data.Error, classes: 'notification-danger' });
+                }
+            })
+        );
     };
 
     $scope.sendSmsVerificationCode = function () {
         $scope.smsSending = true;
-        User.code({
-            Username: $scope.account.Username,
-            Type: 'sms',
-            Destination: {
-                Phone: $scope.account.smsVerification
-            }
-        }).then((result) => {
-            $scope.smsSending = false;
-            if (result.data && result.data.Code === 1000) {
-                $scope.signup.smsVerificationSent = true;
-            } else if (result.data && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-            }
-        });
+        networkActivityTracker.track(
+            User.code({
+                Username: $scope.account.Username,
+                Type: 'sms',
+                Destination: {
+                    Phone: $scope.account.smsVerification
+                }
+            }).then((result) => {
+                $scope.smsSending = false;
+                if (result.data && result.data.Code === 1000) {
+                    $scope.signup.smsVerificationSent = true;
+                } else if (result.data && result.data.Error) {
+                    notify({ message: result.data.Error, classes: 'notification-danger' });
+                }
+            })
+        );
     };
 
     // ---------------------------------------------------
