@@ -246,22 +246,22 @@
     </form>
 </div>
 
-<div class="pm_panel wide" ng-show="humanityTest && !creating">
+<div class="pm_panel wide" ng-if="humanityTest" ng-init="initHumanityTest()">
     <div ng-show="!preInvited" class="wrapper" id="verification-panel">
         <label for="password">
             <em class="num">5</em><span translate translate-context="Title" translate-comment="Antispam section of account creation">Are you human?</span>
         </label>
-        <p class="help spacing">To help fight spammers, please verify you are human.</p>
-        <div ng-show="showEmail">
-            <label>
-                <input type="radio" ng-model="verificator" value="email" />
-                <span translate translate-context="Title">Email</span>
-            </label>
-        </div>
+        <p class="help spacing" translate>To help fight spammers, please verify you are human.</p>
         <div ng-show="showCaptcha">
             <label ng-click="setIframeSrc()">
                 <input type="radio" ng-model="verificator" value="recaptcha" />
                 <span>reCAPTCHA</span>
+            </label>
+        </div>
+        <div ng-show="showEmail">
+            <label>
+                <input type="radio" ng-model="verificator" value="email" />
+                <span translate translate-context="Title">Email</span>
             </label>
         </div>
         <div ng-show="showSms">
