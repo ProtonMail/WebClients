@@ -1233,6 +1233,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         message.minimized = true;
         message.previousMaximized = message.maximized;
         message.maximized = false;
+        message.ccbcc = false;
         $rootScope.maximizedComposer = false;
         // Hide all the tooltip
         $('.tooltip').not(this).hide();
