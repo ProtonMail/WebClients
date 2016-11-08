@@ -183,6 +183,17 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         };
     }
 
+    $scope.initHumanityTest = () => {
+        if ($scope.showCaptcha) {
+            $scope.verificator = 'recaptcha';
+            $scope.setIframeSrc();
+        } else if ($scope.showEmail) {
+            $scope.verificator = 'email';
+        } else if ($scope.showSms) {
+            $scope.verificator = 'sms';
+        }
+    };
+
     $scope.setIframeSrc = function () {
         const iframe = document.getElementById('pm_captcha');
         iframe.onload = window.captchaSendMessage;
