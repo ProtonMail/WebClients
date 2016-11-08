@@ -256,7 +256,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     };
 
     $scope.createAccount = function () {
-
+        $scope.humanityTest = false;
         $scope.creating = true;
 
         $scope.doCreateUser()
