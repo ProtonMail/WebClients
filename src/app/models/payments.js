@@ -112,7 +112,7 @@ angular.module('proton.models.payments', [])
                     });
 
                     if (CONSTANTS.KEY_PHASE <= 3) {
-                        json.Plans = json.Plans.filter(({ Name }) => Name !== 'business');
+                        json.Plans = json.Plans.filter(({ Name }) => Name !== 'business' && Name !== 'vpnbasic' && Name !== 'vpnplus');
                     }
 
                     json.Plans.forEach((plan) => {
@@ -144,6 +144,14 @@ angular.module('proton.models.payments', [])
                                 plan.sending = gettextCatalog.getString('Unlimited sending', null);
                                 plan.labels = gettextCatalog.getString('Unlimited labels', null);
                                 plan.support = gettextCatalog.getString('Priority support', null);
+                                break;
+                            case 'vpnbasic':
+                            case 'vpnplus':
+                                plan.editable = false;
+                                plan.display = false;
+                                plan.sending = '150 ' + gettextCatalog.getString('Messages per day', null);
+                                plan.labels = '20 ' + gettextCatalog.getString('Labels', null);
+                                plan.support = gettextCatalog.getString('Support', null);
                                 break;
                             default:
                                 break;
