@@ -2,6 +2,7 @@ $pad: 20px;
 
 .pm_grid {
 	margin: 0 0 $pad 0;
+
 	.col-1-8,
 	.col-2-8,
 	.col-3-8,
@@ -148,23 +149,26 @@ $pad: 20px;
 		}
 	}
 
+	&.flex {
+		display: flex;
+		-webkit-flex-direction:column;
+		flex-direction: column;
+
+		&.shrink {
+			-webkit-flex-direction:row;
+			flex-direction:row;
+		}
+
+		[class*='col-'] {
+			flex:1;
+			width: auto
+		}
+	}
+
 }
 
 body.mobileMode {
 	.pm_grid {
-		&.flex {
-		 	display: flex;
-			flex-direction: column;
-			&.shrink {
-			 	flex-direction:row;
-			}
-
-			[class*='col-'] {
-			 	flex:1;
-				width: auto
-			}
-		}
-
 		&:not(.flex) [class*='col-'] {
 			float: left;
 			width: 100% !important;
