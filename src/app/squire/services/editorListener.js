@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication) => {
+    .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication, editorDropzone) => {
 
         const isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
 
@@ -79,7 +79,15 @@ angular.module('proton.squire')
             // For a type !== message vodoo magic "realtime"
             const timeout = (typeContent === 'message') ? TIMEOUTAPP : 32;
 
+
             return (updateModel, editor) => {
+
+                let unsubscribe = angular.noop;
+
+                // Custom dropzone to insert content into the editor if it's not a composer
+                if (!isMessage(typeContent)) {
+                    unsubscribe = editorDropzone(el, scope.message, editor);
+                }
 
                 ['dragleave', 'dragenter', 'drop']
                     .forEach((key) => editor.addEventListener(key, draggableCallback(key, scope.message, typeContent)));
@@ -155,12 +163,13 @@ angular.module('proton.squire')
 
                 // Unsubscribe
                 return () => {
-                    editor.addEventListener('drop', onDrop);
-                    editor.addEventListener('input', onInput);
-                    editor.addEventListener('refresh', onRefresh);
-                    editor.addEventListener('focus', onFocus);
-                    editor.addEventListener('blur', onBlur);
-                    editor.addEventListener('mscontrolselect', onMsctrlSelect);
+                    unsubscribe();
+                    editor.removeEventListener('drop', onDrop);
+                    editor.removeEventListener('input', onInput);
+                    editor.removeEventListener('refresh', onRefresh);
+                    editor.removeEventListener('focus', onFocus);
+                    editor.removeEventListener('blur', onBlur);
+                    editor.removeEventListener('mscontrolselect', onMsctrlSelect);
                 };
             };
 

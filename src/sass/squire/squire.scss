@@ -1,0 +1,28 @@
+.squire-container { position: relative }
+.squire-container:not(.editorDropzone-enter) .squire-dropzone {display: none}
+
+.editorDropzone-enter, .editorDropzone-mask {box-sizing: border-box;}
+
+.editorDropzone-mask::before {
+    content: '';
+    position: absolute;
+    top: 32px;  /* toolbar */
+    width: 100%;
+    height: calc(100% - 32px);
+    z-index: 1000
+}
+
+.squire-dropzone {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: calc(100% - 2em);
+    width: calc(100% - 2em);
+    background: white;
+    z-index: 1001;
+    border: 1rem solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
