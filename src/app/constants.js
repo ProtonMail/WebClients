@@ -71,5 +71,11 @@ angular.module('proton.constants', [])
         CLOSE_TAG_AUTOCOMPLETE: '›',
         OPEN_TAG_AUTOCOMPLETE_RAW: '<',
         CLOSE_TAG_AUTOCOMPLETE_RAW: '>'
+    },
+    DEFAULT_SQUIRE_VALUE: {
+        LINK: '',
+        IMAGE: '',
+        HEADER_CLASS: 'h4',
+        IFRAMECLASSNAME: 'angular-squire-iframe'
     }
 });

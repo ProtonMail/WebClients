@@ -252,10 +252,9 @@
         }
 
 
-        .squire-toolbar {
-            border-width: 1px 1px 0 1px;
-            box-sizing: border-box;
-        }
+        .squireToolbar-container { border-width: 1px 1px 0 1px }
+        [class*="squireToolbar-action-"] { padding: 0 }
+
         .pm_sort ul li {
             .label {
                 white-space: nowrap;

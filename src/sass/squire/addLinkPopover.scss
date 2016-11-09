@@ -1,0 +1,6 @@
+.addLinkPopover-hidden {display: none; pointer-events: none}
+
+.addLinkPopover-container:not(.addLinkPopover-editable) .addLinkPopover-btn-remove,
+.addLinkPopover-container:not(.addLinkPopover-editable) .addLinkPopover-btn-edit {display: none}
+
+.addLinkPopover-editable .addLinkPopover-btn-new { display: none }
