@@ -3,6 +3,8 @@ angular.module('proton.message')
         return (message = {}, decryptedBody = '') => {
             message.showImages = true;
 
-            return prepareContent(decryptedBody, message, ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']);
+            return prepareContent(decryptedBody, message, {
+                blacklist: ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']
+            });
         };
     });

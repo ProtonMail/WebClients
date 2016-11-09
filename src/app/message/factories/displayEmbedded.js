@@ -1,8 +1,11 @@
 angular.module('proton.message')
     .factory('displayEmbedded', (prepareContent) => {
-        return (message = {}, decryptedBody = '') => {
+        return (message = {}, decryptedBody = '', action) => {
             message.showEmbedded = true;
 
-            return prepareContent(decryptedBody, message, ['transformLinks', 'transformRemote', 'transformWelcome', 'transformBlockquotes']);
+            return prepareContent(decryptedBody, message, {
+                blacklist: ['transformLinks', 'transformRemote', 'transformWelcome', 'transformBlockquotes'],
+                action
+            });
         };
     });
