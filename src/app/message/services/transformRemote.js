@@ -1,7 +1,7 @@
 angular.module('proton.message')
 .factory('transformRemote', ($state, authentication, CONSTANTS) => {
 
-    const REGEXP_IS_BREAK = new RegExp('(<svg|xlink:href|srcset|src=(?!"blob:|"cid:|"data:)|background=|poster=)', 'g');
+    const REGEXP_IS_BREAK = new RegExp('(<svg|xlink:href|srcset|src=|background=|poster=)', 'g');
     const REGEXP_IS_FIX = new RegExp('(proton-url|proton-xlink:href|proton-srcset|proton-src|proton-svg|proton-background|proton-poster)', 'g');
     const REGEXP_IS_URL = new RegExp(/url\(/ig);
 
