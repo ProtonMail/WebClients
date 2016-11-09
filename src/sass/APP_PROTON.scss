@@ -21,7 +21,7 @@
 @import "main.scss";
 @import "login.scss";
 @import "composer.scss";
-@import "squire-toolbar.scss";
+@import "squire/squire-toolbar.scss";
 @import "contacts.scss";
 @import "settings.scss";
 @import "setup.scss";
@@ -66,7 +66,7 @@
 @import "address/addressKeysView.scss";
 @import "squire/addLinkPopover.scss";
 @import "squire/addFilePopover.scss";
-
+@import "squire/squire.scss";
 @import "layout/conversation-layout.scss";
 @import "layout/conversations-columns.scss";
 @import "layout/conversations-rows.scss";
