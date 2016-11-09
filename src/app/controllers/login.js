@@ -31,7 +31,7 @@ angular.module('proton.controllers.Auth', [
     $rootScope.pageName = 'Login';
     $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
     $scope.twoFactor = 0;
-
+    $scope.showOld = window.location.hostname !== 'old.protonmail.com';
 
     // FIXME: this part seems useless or bad coded
     // if ($rootScope.isLoggedIn && $rootScope.isLocked === false && $rootScope.user === undefined) {
