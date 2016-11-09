@@ -86,6 +86,12 @@ angular.module('proton.message')
                         break;
 
                     case 'embedded.injected':
+
+                        if (data.action === 'user.inject') {
+                            console.log(data)
+                            debugger;
+                        }
+
                         scope.$applyAsync(() => scope.body = data.body);
                         break;
 
@@ -282,7 +288,7 @@ angular.module('proton.message')
              * Load embedded content from attachments
              */
             scope.displayEmbedded = () => {
-                scope.body = displayEmbedded(scope.message, scope.body);
+                scope.body = displayEmbedded(scope.message, scope.body, 'user.inject');
             };
 
             /**

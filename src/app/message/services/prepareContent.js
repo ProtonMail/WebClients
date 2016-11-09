@@ -21,7 +21,7 @@ angular.module('proton.message')
         return filters.filter(({ name }) => blacklist.indexOf(name) === -1);
     };
 
-    return (content, message, blacklist = []) => {
+    return (content, message, { blacklist = [], action } = {}) => {
 
         const div = document.createElement('div');
         const transformers = getTransformers(blacklist);
@@ -34,7 +34,7 @@ angular.module('proton.message')
 
         const body = transformers.reduceRight((html, transformer) => transformer.action(html, message), div);
 
-        transformAttachement(body, message);
+        transformAttachement(body, message, action);
 
         return body.innerHTML;
     };

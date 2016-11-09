@@ -237,7 +237,9 @@ angular.module('proton.controllers.Outside', [
 
     $scope.toggleImages = function () {
         $scope.message.showImages = !$scope.message.showImages;
-        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']));
+        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, {
+            blacklist: ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']
+        }));
     };
 
 
@@ -247,7 +249,9 @@ angular.module('proton.controllers.Outside', [
         embedded
             .parser(message)
             .then((content) => {
-                const body = prepareContent(content, message, ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']);
+                const body = prepareContent(content, message, {
+                    blacklist: ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']
+                });
                 message.setDecryptedBody(body);
                 $scope.message = message;
             });

@@ -18,7 +18,9 @@ angular.module('proton.service.message', [])
          * @return {String}
          */
         function prepareBody(input, message) {
-            return prepareContent(input, message, ['*']);
+            return prepareContent(input, message, {
+                blacklist: ['*']
+            });
         }
 
         /**
