@@ -1258,7 +1258,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         $rootScope.maximizedComposer = false;
     };
 
-    $scope.openCloseModal = (message) => {
+    $scope.openCloseModal = (message, discard = false) => {
 
         if (message.editor) {
             message.editor.removeEventListener('blur');
@@ -1272,7 +1272,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         }
 
         delete message.editor;
-        $scope.close(message, false, true);
+        $scope.close(message, discard, true);
     };
 
 
@@ -1343,7 +1343,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                 title,
                 message: question,
                 confirm() {
-                    $scope.close(message, true, false);
+                    $scope.openCloseModal(message, true);
                     notify({ message: gettextCatalog.getString('Message discarded', null), classes: 'notification-success' });
                     confirmModal.deactivate();
                 },
