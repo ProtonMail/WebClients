@@ -1,95 +1,18 @@
 <div class='angular-squire fill'>
     <div class='editor-container fill'>
-        <ul class="squire-toolbar menu">
-            <li class="bold">
-                <a href="#" pt-tooltip-translate-context="Action" pt-tooltip-translate="Bold" ng-click="action('bold')">
-                    <i class="fa fa-bold"></i>
-                </a>
-            </li>
-            <li class="italic">
-                <a href="#" pt-tooltip-translate-context="Action" pt-tooltip-translate="Italic" ng-click="action('italic')">
-                    <i class="fa fa-italic"></i>
-                </a>
-            </li>
-            <li class="underline">
-                <a href="#" pt-tooltip-translate-context="Action" pt-tooltip-translate="Underline" ng-click="action('underline')">
-                    <i class="fa fa-underline"></i>
-                </a>
-            </li>
-            <li class="separator"></li>
-            <li class="ulist">
-                <a href="#" pt-tooltip-translate-context="Action" pt-tooltip-translate="Unordered list" ng-click="action('makeUnorderedList')">
-                    <i class="fa fa-list-ul"></i>
-                </a>
-            </li>
-            <li class="olist">
-                <a href="#" pt-tooltip-translate-context="Action" pt-tooltip-translate="Ordered list" ng-click="action('makeOrderedList')">
-                    <i class="fa fa-list-ol"></i>
-                </a>
-            </li>
-            <li class="separator"></li>
-            <li class="aleft">
-                <a href="#" pt-tooltip-translate-context="Action" pt-tooltip-translate="Align left" ng-click="action('alignLeft')">
-                    <i class="fa fa-align-left"></i>
-                </a>
-            </li>
-            <li class="acenter">
-                <a href="#" pt-tooltip-translate-context="Action" pt-tooltip-translate="Align center" ng-click="action('alignCenter')">
-                    <i class="fa fa-align-center"></i>
-                </a>
-            </li>
-            <li class="aright">
-                <a href="#" pt-tooltip-translate-context="Action" pt-tooltip-translate="Align right" ng-click="action('alignRight')">
-                    <i class="fa fa-align-right"></i>
-                </a>
-            </li>
-            <li class="separator"></li>
-            <li class="link">
-                <a href="#" pt-tooltip-translate-context="Action" pt-tooltip-translate="Insert link" ng-click="popoverShow($event, 'makeLink')">
-                    <i class="fa fa-link"></i>
-                </a>
-            </li>
-            <li class="image">
-                <a href="#" ng-disabled="isPlain()" pt-tooltip-translate-context="Action" pt-tooltip-translate="Insert image" ng-click="popoverShow($event, 'insertImage')">
-                    <i class="fa fa-image"></i>
-                </a>
-            </li>
-            <li class="separator"></li>
-             <li class="removeAllFormatting">
-                <a href="#"  pt-tooltip-translate-context="Action" pt-tooltip-translate="Clear All Formatting" ng-click="action('removeAllFormatting')">
-                    <i class="fa fa-eraser"></i>
-                </a>
-            </li>
-        </ul>
-        <div class="squire-popover makeLink" style="display: none;">
-            <div class="arrow"></div>
-            <div class="content">
-                <div class="panel">
-                    <input type="text" autocomplete="off" placeholder-translate="Link URL" ng-model="data.link" ng-keydown="popoverHide($event, 'makeLink')" />
-                </div>
-                <button ng-show="canRemoveLink()" ng-click="popoverHide($event, 'removeLink')" translate-context="Action" translate>Remove link</button>
-                <button ng-show="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')" translate-context="Action" translate>Update link</button>
-                <button class="btn primary" ng-hide="canRemoveLink()" ng-class="{disabled: !canAddLink()}" ng-click="popoverHide($event, 'makeLink')" translate>Insert link</button>
-            </div>
-        </div>
-        <div class="squire-popover insertImage" style="display: none;">
-            <div class="arrow"></div>
-            <div class="content">
-                <div class="panel">
-                    <input type="text" autocomplete="off" placeholder-translate="URL to image" ng-model="data.image" ng-keydown="popoverHide($event, 'insertImage')" />
-                </div>
+        <squire-toolbar class="squire-toolbar"></squire-toolbar>
+        <add-link-popover class="squire-popover"></add-link-popover>
+        <add-file-popover class="squire-popover"></add-file-popover>
 
-                <button class="btn primary" action-message="::message"
-                    ng-if="allowEmbedded"
-                    ng-click="popoverHide($event, 'insertImage')"
-                    action-message-type="addEmbedded" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert File</button>
-                <input type="file" style="display: none;" accept="image/*" class="squire-addFile">
-                <button class="btn primary" ng-if="allowDataUri" ng-click="insertDataUri($event)" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert File</button>
-                <button class="btn primary" ng-click="popoverHide($event, 'insertImage')" ng-class="{disabled: !canAddImage()}" translate-context="Action" translate>Insert URL</button>
-            </div>
-        </div>
         <div class='angular-squire-wrapper fill'>
-            <iframe frameborder='0' border='0' marginwidth='0' marginheight='0' src='about:blank' sandbox="allow-same-origin allow-scripts allow-popups" class="squireIframe"></iframe>
+            <iframe
+                frameborder="0"
+                border="0"
+                marginwidth="0"
+                marginheight="0"
+                src="about:blank"
+                sandbox="allow-same-origin allow-scripts allow-popups"
+                class="squireIframe"></iframe>
         </div>
     </div>
     <ng-transclude></ng-transclude>

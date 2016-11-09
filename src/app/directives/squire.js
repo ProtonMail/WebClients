@@ -1,37 +1,14 @@
-angular.module('proton.squire', ['proton.tooltip'])
-.directive('squire', (tools, $rootScope, $timeout, authentication, embedded, CONSTANTS, signatureBuilder, attachmentFileFormat) => {
-
-    const isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
-    const IFRAME_CLASS = 'angular-squire-iframe';
-    const IMAGE_DEFAULT = '';
-    const LINK_DEFAULT = '';
-    const HEADER_CLASS = 'h4';
+angular.module('proton.squire')
+.directive('squire', (squireEditor, embedded, editorListener, $rootScope) => {
 
     /**
-     * Generate an event listener based on the eventName
-     * Debounce some events are thez are triggered too many times
-     * Dispatch an event editor.draggable
-     * @param  {String} type void
-     * @return {Function}      EventListener Callback
+     * Check if this squire instance is for a message or not
+     * Ex: you can work with a string intead of the message model
+     *   => signature
+     * @return {Boolean}
      */
-    const draggableCallback = (type, message, typeContent) => {
+    const isMessage = (typeContent) => typeContent === 'message';
 
-        if (typeContent !== 'message') {
-            return angular.noop;
-        }
-
-        const isEnd = type === 'dragleave' || type === 'drop';
-        const cb = (event) => {
-            $rootScope.$emit('editor.draggable', {
-                type,
-                data: {
-                    messageID: message.ID,
-                    message, event
-                }
-            });
-        };
-        return isEnd ? _.debounce(cb, 500) : cb;
-    };
     return {
         scope: {
             message: '=', // body
@@ -42,482 +19,76 @@ angular.module('proton.squire', ['proton.tooltip'])
         replace: true,
         transclude: true,
         templateUrl: 'templates/directives/squire.tpl.html',
-        link(scope, element, { typeContent = 'message' }) {
+        link(scope, el, { typeContent = 'message' }) {
 
-            // Delay before updating the model as the process is slow
-            const TIMEOUTAPP = 300;
-            // For a type !== message vodoo magic "realtime"
-            const timeout = (typeContent === 'message') ? TIMEOUTAPP : 32;
-
-            /**
-             * Check if this squire instance is for a message or not
-             * Ex: you can work with a string intead of the message model
-             *   => signature
-             * @return {Boolean}
-             */
-            const isMessage = () => typeContent === 'message';
-
-            const $addFileInput = element[0].querySelector('.squire-addFile');
-
-            let editor = scope.editor = null;
-            let iframe;
-            let menubar;
-            let isLoaded = false;
-
-            scope.data = { link: LINK_DEFAULT, image: IMAGE_DEFAULT };
-
-            const DOC = document.createElement('DIV');
+            scope.data = {};
+            const listen = editorListener(scope, el, typeContent);
 
             function updateModel(val, dispatchAction = false) {
 
-                const value = DOMPurify.sanitize(val);
-                DOC.innerHTML = value;
-                scope
-                    .$applyAsync(() => {
+                const value = DOMPurify.sanitize(val || '');
+                scope.$applyAsync(() => {
 
-                        const isEmpty = !DOC.textContent.trim().length;
-                        element[`${isEmpty ? 'remove' : 'add'}Class`]('squire-has-value');
+                    const isEmpty = !value.trim().length;
+                    el[`${isEmpty ? 'remove' : 'add'}Class`]('squire-has-value');
 
-                        if (isMessage()) {
-                            // Replace the embedded images with CID to keep the model updated
-                            return embedded
-                                .parser(scope.message, 'cid', value)
-                                .then((body) => {
-                                    scope.message.setDecryptedBody(body);
+                    if (isMessage(typeContent)) {
+                        // Replace the embedded images with CID to keep the model updated
+                        return embedded
+                            .parser(scope.message, 'cid', value)
+                            .then((body) => {
+                                scope.message.setDecryptedBody(body);
 
-                                    // Dispatch an event to update the message
-                                    dispatchAction && $rootScope.$emit('message.updated', {
-                                        message: scope.message
-                                    });
+                                // Dispatch an event to update the message
+                                dispatchAction && $rootScope.$emit('message.updated', {
+                                    message: scope.message
                                 });
-                        }
-
-                        // We can work onto a string too
-                        scope.value = value;
-
-                    });
-            }
-
-            function getLinkAtCursor() {
-                if (!editor) {
-                    return LINK_DEFAULT;
-                }
-                return angular.element(editor.getSelection().commonAncestorContainer).closest('a').attr('href');
-            }
-
-            function handleDrop(e) {
-                // Do not prevent the drop of text
-                attachmentFileFormat.isUploadAbleType(e) && e.preventDefault();
-                const file = e.dataTransfer.files[0];
-                if (file && /image/.test(file.type || '')) {
-                    insertImage(file, e);
-                }
-            }
-
-            scope.canRemoveLink = function () {
-                const href = getLinkAtCursor();
-
-                return href && href !== LINK_DEFAULT;
-            };
-
-            scope.canAddLink = function () {
-                return scope.data.link && scope.data.link !== LINK_DEFAULT;
-            };
-
-            scope.canAddImage = function () {
-                return scope.data.image && scope.data.image !== IMAGE_DEFAULT;
-            };
-
-            scope.popoverHide = function (event, name) {
-                const hide = function () {
-                    element.find('.squire-popover.' + name).hide();
-
-                    if (name) {
-                        return scope.action(name);
-                    }
-                };
-
-                if (event.keyCode) {
-                    if (event.keyCode === 13) {
-                        return hide();
-                    }
-                } else {
-                    return hide();
-                }
-            };
-
-            scope.popoverShow = function (e, name) {
-                if (element.find('.squire-popover.' + name).is(':visible')) {
-                    element.find('.squire-popover.' + name).hide();
-                } else {
-                    element.find('.squire-popover').hide();
-
-                    if (/>A\b/.test(editor.getPath()) || editor.hasFormat('A')) {
-                        scope.data.link = getLinkAtCursor();
-                    } else {
-                        scope.data.link = LINK_DEFAULT;
+                            });
                     }
 
-                    element.find('.squire-popover.' + name).show();
-                    element.find('.squire-popover.' + name).find('input').focus().end();
-                }
-            };
+                    // We can work onto a string too
+                    scope.value = value;
 
-            /**
-             * Insert data-uri image from File
-             * @param {File} file
-             */
-            function insertImage(file, evt) {
-                const reader = new FileReader();
-
-                reader.addEventListener('load', () => {
-                    const dataURI = reader.result;
-
-                    editor.insertImage(dataURI, { class: 'proton-embedded', alt: file.name });
-                    scope.popoverHide(evt, 'insertImage');
-                }, false);
-
-                if (file && file.type.match('image.*')) {
-                    reader.readAsDataURL(file);
-                }
+                });
             }
 
-            const onChangeFile = (e) => {
-                const file = e.target.files[0];
-                insertImage(file, e);
+            squireEditor.create(el.find('iframe.squireIframe'), scope.message)
+                .then(onLoadEditor);
 
-                // Reset input value to trigger the change event if you select the same file again
-                _rAF(() => e.target.value = null);
-            };
-            $addFileInput.addEventListener('change', onChangeFile, false);
+            function onLoadEditor(editor) {
 
-            scope.insertDataUri = () => $addFileInput.click();
+                let unsubscribe = angular.noop;
 
-            function updateStylesToMatch(doc) {
-                const head = doc.head || doc.getElementsByTagName('head')[0];
-                const style = doc.createElement('style');
-
-                const css = "html{height:100%} body {height:100%; box-sizing:border-box; padding: 1rem 10px 1rem 10px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; line-height: 1.65em; color: #222; } blockquote { padding: 0 0 0 1rem; margin: 0; border-left: 4px solid #e5e5e5; } blockquote blockquote blockquote { padding-left: 0; margin-left: 0; border: none; } .proton-embedded{ max-width:100%; height:auto; } .protonmail_signature_block-empty {display: none}";
-
-                style.setAttribute('type', 'text/css');
-                style.setAttribute('rel', 'stylesheet');
-                if (style.styleSheet) {
-                    style.styleSheet.cssText = css;
-                } else {
-                    style.appendChild(doc.createTextNode(css));
-                }
-                head.appendChild(style);
-
-                doc.childNodes[0].className = IFRAME_CLASS + ' ';
-                if (scope.editorClass) {
-                    return doc.childNodes[0].className += scope.editorClass;
-                }
-            }
-
-            function iframeLoaded() {
-                const iframeDoc = iframe[0].contentWindow.document;
-
-                updateStylesToMatch(iframeDoc);
-                // ngModel.$setPristine();
-                editor = new Squire(iframeDoc);
-                ['dragleave', 'dragenter', 'drop']
-                    .forEach((key) => editor.addEventListener(key, draggableCallback(key, scope.message, typeContent)));
-
-
-                if (isMessage()) {
+                if (isMessage(typeContent)) {
                     // On load we parse the body of the message in order to load its embedded images
                     embedded
                         .parser(scope.message)
-                        .then((body) => (editor.setHTML(body), isLoaded = true));
+                        .then((body) => editor.setHTML(body))
+                        .then(() => unsubscribe = listen(updateModel, editor));
                 } else {
                     editor.setHTML(scope.value || '');
 
                     // defer loading to prevent input event refresh (takes some time to perform the setHTML)
                     const id = setTimeout(() => {
-                        isLoaded = true;
+                        unsubscribe = listen(updateModel, editor);
                         clearTimeout(id);
                     }, 100);
                 }
 
-
-                editor.addEventListener('pathChange', _.throttle(() => {
-                    const p = editor.getPath();
-                    const node = element[0].querySelector('.add-link');
-
-                    if (node) {
-                        if (/>A\b/.test(p) || editor.hasFormat('A')) {
-                            node.classList.add('active');
-                        } else {
-                            node.classList.remove('active');
-                        }
-                    }
-
-                    if (p !== '(selection)') {
-
-                        /**
-                         * Find and filter selections to toogle the current action (toolbar)
-                         * Ex: isBold etc.
-                         */
-                        const classNames = _
-                            .chain(p.split('BODY')[1].split('>'))
-                            .filter((i) => i && !/IMG.proton-embedded|.proton-embedded|DIV.image.loading/i.test(i))
-                            .reduce((acc, path) => acc.concat(path.split('.')), [])
-                            .filter((i) => i && !/div|html|body|span/i.test(i))
-                            .reduce((acc, key) => {
-                                if (HEADER_CLASS === key) {
-                                    return `${acc} size`;
-                                }
-                                return `${acc} ${key.trim()}`;
-                            }, '')
-                            .value()
-                            .toLowerCase()
-                            .trim();
-
-                        menubar[0].className = `squire-toolbar ${classNames}`;
-                    }
-
-                }), 500);
-
-                // Only update the model every 300ms or at least 2 times before saving a draft
-                editor.addEventListener('input', _.throttle(() => {
-                    isLoaded && updateModel(editor.getHTML());
-                }, timeout));
-
-                editor.addEventListener('refresh', ({ Body = '', action = '', data } = {}) => {
-
-                    if (action === 'attachment.remove') {
-                        embedded.removeEmbedded(scope.message, data, editor.getHTML());
-                    }
-
-                    if (action === 'attachment.embedded') {
-                        return editor
-                            .insertImage(data.url, {
-                                'data-embedded-img': data.cid,
-                                class: 'proton-embedded'
-                            });
-                    }
-
-                    if (action === 'message.changeFrom') {
-                        const html = signatureBuilder.update(scope.message, editor.getHTML());
-                        editor.setHTML(html);
-                        return updateModel(html, true);
-                    }
-
-                    if (isMessage()) {
-                        // Replace the embedded images with CID to keep the model updated
-                        return embedded
-                            .parser(scope.message)
-                            .then((body) => (editor.setHTML(body), body))
-                            .then(updateModel);
-                    }
-
-                    editor.setHTML(Body);
-                    updateModel(Body);
-                });
-
-                editor.addEventListener('focus', () => {
-                    element.addClass('focus').triggerHandler('focus');
-                    $rootScope.$emit('composer.update', {
-                        type: 'editor.focus',
-                        data: {
-                            element, editor,
-                            message: scope.message,
-                            isMessage: isMessage()
-                        }
-                    });
-                });
-
-                editor.addEventListener('purify', (event) => {
-                    // triggered by Squire at paste event, before all dom injection
-                    event.string = DOMPurify.sanitize(event.string);
-                    return event;
-
-                });
-
-                editor.addEventListener('blur', () => {
-                    element.removeClass('focus').triggerHandler('blur');
-                });
-
-                editor.addEventListener('mscontrolselect', (event) => {
-                    event.preventDefault();
-                });
-
-
-                editor.alignRight = function () {
-                    return editor.setTextAlignment('right');
-                };
-
-                editor.alignCenter = function () {
-                    return editor.setTextAlignment('center');
-                };
-
-                editor.alignLeft = function () {
-                    return editor.setTextAlignment('left');
-                };
-
-                editor.alignJustify = function () {
-                    return editor.setTextAlignment('justify');
-                };
-
-                editor.makeHeading = function () {
-                    editor.setFontSize('2em');
-
-                    return editor.bold();
-                };
-
-                if (isMac === true) {
-                    editor.setKeyHandler('meta-enter', (self, event) => {
-                        if (authentication.user.Hotkeys === 1) {
-                            event.preventDefault();
-                            $rootScope.$broadcast('sendMessage', element);
-                        }
-                    });
-                } else {
-                    editor.setKeyHandler('ctrl-enter', (self, event) => {
-                        if (authentication.user.Hotkeys === 1) {
-                            event.preventDefault();
-                            $rootScope.$broadcast('sendMessage', element);
-                        }
-                    });
-                }
-
-                editor.setKeyHandler('escape', () => {
-                    if (authentication.user.Hotkeys === 1) {
-                        $rootScope.$broadcast('closeMessage', element);
-                    }
-                });
-
-                editor.addEventListener('drop', handleDrop, false);
-
                 $rootScope.$emit('composer.update', {
                     type: 'editor.loaded',
                     data: {
-                        element, editor,
+                        element: el, editor,
                         message: scope.message,
-                        isMessage: isMessage()
+                        isMessage: isMessage(typeContent)
                     }
                 });
-            }
 
-            iframe = element.find('iframe.squireIframe');
-
-            /* eslint no-mixed-operators: "off" */
-            const iframeDoc = iframe.contentDocument || iframe.contentWindow && iframe.contentWindow.document;
-            menubar = element.find('.squire-toolbar');
-
-            // Check if browser is Webkit (Safari/Chrome) or Opera
-            if (
-                (jQuery.browser && (jQuery.browser.webkit || jQuery.browser.opera || jQuery.browser.chrome)) ||
-                ($('body').hasClass('ua-safari') || $('body').hasClass('ua-opera') || $('body').hasClass('ua-chrome'))
-            ) {
-                // Start timer when loaded.
-                $(iframe).load(() => {
-                    iframeLoaded();
-                });
-
-                // Safari and Opera need a kick-start.
-                const source = $(iframe).attr('src');
-
-                $(iframe).attr('src', '');
-                $(iframe).attr('src', source);
-            } else if (iframeDoc && iframeDoc.readyState === 'complete') {
-                iframeLoaded();
-            } else {
-                $(iframe).load(() => {
-                    iframeLoaded();
-                });
-            }
-
-
-            Squire.prototype.testPresenceinSelection = function (name, action, format, validation) {
-                const p = this.getPath();
-                const test = validation.test(p) | this.hasFormat(format);
-                return name === action && test;
-            };
-
-            scope.action = function (action) {
-                if (!editor) {
-                    return;
-                }
-
-                const test = {
-                    value: action,
-                    testBold: editor.testPresenceinSelection('bold', action, 'B', />B\b/),
-                    testItalic: editor.testPresenceinSelection('italic', action, 'I', />I\b/),
-                    testUnderline: editor.testPresenceinSelection('underline', action, 'U', />U\b/),
-                    testOrderedList: editor.testPresenceinSelection('makeOrderedList', action, 'OL', />OL\b/),
-                    testUnorderedList: editor.testPresenceinSelection('makeUnorderedList', action, 'UL', />UL\b/),
-                    testLink: editor.testPresenceinSelection('removeLink', action, 'A', />A\b/),
-                    testQuote: editor.testPresenceinSelection('increaseQuoteLevel', action, 'blockquote', />blockquote\b/),
-                    isNotValue(a) {
-                        return a === action && this.value !== '';
-                    }
-                };
-
-                if (test.testBold || test.testItalic || test.testUnderline || test.testOrderedList || test.testUnorderedList || test.testQuote || test.testLink) {
-                    if (test.testBold) {
-                        editor.removeBold();
-                    }
-                    if (test.testItalic) {
-                        editor.removeItalic();
-                    }
-                    if (test.testUnderline) {
-                        editor.removeUnderline();
-                    }
-                    if (test.testOrderedList) {
-                        editor.removeList();
-                    }
-                    if (test.testUnorderedList) {
-                        editor.removeList();
-                    }
-                    if (test.testQuote) {
-                        editor.decreaseQuoteLevel();
-                    }
-                    if (test.testLink) {
-                        editor.removeLink();
-                    }
-                } else if (action === 'makeLink') {
-                    if (scope.canAddLink()) {
-                        const node = angular.element(editor.getSelection().commonAncestorContainer).closest('a')[0];
-
-                        if (node) {
-                            const range = iframe[0].contentWindow.document.createRange();
-                            range.selectNodeContents(node);
-                            const selection = iframe[0].contentWindow.getSelection();
-                            selection.removeAllRanges();
-                            selection.addRange(range);
-                        }
-
-                        editor.makeLink(scope.data.link, {
-                            target: '_blank',
-                            title: scope.data.link,
-                            rel: 'nofollow'
-                        });
-
-                        scope.data.link = LINK_DEFAULT;
-                    }
-                } else if (action === 'insertImage') {
-                    if (scope.data.image.length > 0) {
-                        editor.insertImage(scope.data.image, { class: 'proton-embedded' });
-                        scope.data.image = '';
-                    }
-                } else {
-                    editor[action]();
-                }
-
-                editor.focus();
-            };
-
-
-            scope.$on('$destroy', () => {
-                $addFileInput.removeEventListener('change', onChangeFile);
-                if (editor) {
-                    ['dragleave', 'dragenter', 'drop']
-                        .forEach((key) => editor.removeEventListener(key, draggableCallback(key, scope.message, typeContent)));
-
+                scope.$on('$destroy', () => {
+                    unsubscribe();
                     editor.destroy();
-                }
-            });
+                });
+            }
 
         }
     };

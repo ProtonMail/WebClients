@@ -109,6 +109,7 @@
           display: -webkit-flex;
 
           max-height: 100%; /* scroll issue with attachments */
+          width: 100%; /* scroll issue with attachments */
 
           -webkit-flex-direction: column;
           flex-direction: column;

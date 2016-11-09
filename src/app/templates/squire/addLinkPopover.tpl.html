@@ -1,0 +1,34 @@
+<form
+    novalidate
+    squire-popover
+    name="addLinkPopover"
+    class="makeLink addLinkPopover-container addLinkPopover-hidden">
+    <div class="arrow"></div>
+    <div class="content">
+        <div class="panel">
+            <input
+                type="url"
+                name="url"
+                autocomplete="off"
+                placeholder-translate="Link URL"
+                ng-model="data.link">
+        </div>
+        <button
+            class="addLinkPopover-btn-remove"
+            name="remove"
+            type="reset"
+            translate-context="Action"
+            translate>Remove link</button>
+
+        <button
+            class="addLinkPopover-btn-edit"
+            name="update"
+            translate-context="Action"
+            translate>Update link</button>
+        <button
+            class="addLinkPopover-btn-new"
+            class="btn primary"
+            name="add"
+            translate>Insert link</button>
+    </div>
+</form>
