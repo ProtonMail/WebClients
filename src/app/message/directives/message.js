@@ -50,6 +50,19 @@ angular.module('proton.message')
         return type === 'conversation' || isSearch || condition;
     }
 
+    function injectInlineEmbedded(el, { map }) {
+        const keys = ['data-embedded-img', 'src'];
+        const node = el[0];
+        const selector = Object.keys(map)
+            .map((cid) => `[${keys[0]}="${cid}"], [${keys[1]}="${cid}"]`)
+            .join(',');
+        const $list = [].slice.call(node.querySelectorAll(selector));
+        debugger;
+        $list.forEach((node) => {
+            node.src = map[node.getAttribute(keys[0]) || node.getAttribute(keys[1])];
+        });
+    }
+
     return {
         restrict: 'E',
         replace: true,
@@ -86,10 +99,9 @@ angular.module('proton.message')
                         break;
 
                     case 'embedded.injected':
-
+                        console.log(data)
                         if (data.action === 'user.inject') {
-                            console.log(data)
-                            debugger;
+                            return injectInlineEmbedded(element, data);
                         }
 
                         scope.$applyAsync(() => scope.body = data.body);
@@ -288,7 +300,7 @@ angular.module('proton.message')
              * Load embedded content from attachments
              */
             scope.displayEmbedded = () => {
-                scope.body = displayEmbedded(scope.message, scope.body, 'user.inject');
+                displayEmbedded(scope.message, scope.body, 'user.inject');
             };
 
             /**
