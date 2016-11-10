@@ -11,8 +11,10 @@ angular.module('proton.message')
         const user = authentication.user || { ShowImages: 0 };
         const showImages = message.showImages || user.ShowImages || (CONSTANTS.WHITELIST.indexOf(message.Sender.Address) !== -1 && !message.IsEncrypted) || $state.is('printer');
 
+        console.log('>>> Should we show images ?');
         if (content.search(REGEXP_IS_BREAK) !== -1 || content.search(REGEXP_IS_FIX) !== -1) {
             message.showImages = showImages;
+            console.log('Should we show images ?', showImages);
             if (showImages) {
                 return content.replace(REGEXP_IS_FIX, (match, $1) => $1.substring(7));
             }
