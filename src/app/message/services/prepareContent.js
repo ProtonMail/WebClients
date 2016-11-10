@@ -21,18 +21,28 @@ angular.module('proton.message')
         return filters.filter(({ name }) => blacklist.indexOf(name) === -1);
     };
 
-    return (content, message, { blacklist = [], action } = {}) => {
-
+    function parseRemote(content, message, { isBlacklisted = false, action }) {
         const div = document.createElement('div');
-        const transformers = getTransformers(blacklist);
 
-        if (blacklist.indexOf('transformRemote') > -1) {
+        if (isBlacklisted) {
             div.innerHTML = content;
-        } else {
-            div.innerHTML = transformRemote(content, message);
+            return div;
         }
 
-        const body = transformers.reduceRight((html, transformer) => transformer.action(html, message), div);
+        return transformRemote(div, message, {
+            action, content
+        });
+    }
+
+    return (content, message, { blacklist = [], action } = {}) => {
+
+        const transformers = getTransformers(blacklist);
+        const div = parseRemote(content, message, {
+            action,
+            isBlacklisted: blacklist.indexOf('transformRemote') > -1,
+        });
+
+        const body = transformers.reduceRight((html, transformer) => transformer.action(html, message, action), div);
 
         transformAttachement(body, message, action);
 
