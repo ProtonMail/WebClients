@@ -227,7 +227,7 @@
     <display-content-btn data-action="remote"></display-content-btn>
     <display-content-btn data-action="embedded"></display-content-btn>
 
-    <div class="frame" ng-show="message.expand" data-embedded-img-loader>
+    <div class="frame" ng-show="message.expand" data-embedded-img-loader data-inject-message-media>
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
         <p class="alert alert-danger" ng-if="message.SpamScore === 100" translate translate-context="Info">This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!</p>
         <p class="alert alert-danger" ng-if="message.SpamScore === 101" translate translate-context="Info">This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!</p>
