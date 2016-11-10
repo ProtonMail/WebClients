@@ -3,6 +3,7 @@ angular.module('proton.message')
 
     const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map((name) => `proton-${name}`);
     const REGEXP_IS_BREAK = new RegExp('(<svg|xlink:href|srcset|src=|background=|poster=)', 'g');
+    const REGEXP_IS_NOT_EMBEDDED_ONLY = new RegExp('src=(?!"blob:|"cid:|"data:)', 'g');
     const REGEXP_IS_FIX = new RegExp(`(${ATTRIBUTES.join('|')})`, 'g');
     const REGEXP_IS_URL = new RegExp(/url\(/ig);
 
@@ -57,8 +58,15 @@ angular.module('proton.message')
             }
         }
 
-        if (content.search(REGEXP_IS_BREAK) !== -1 || content.search(REGEXP_IS_FIX) !== -1) {
-            message.showImages = showImages;
+        if (REGEXP_IS_BREAK.test(content) || REGEXP_IS_FIX.test(content)) {
+
+            /**
+             * We bind the value only if the dom does not only contains embedded images
+             */
+            if (REGEXP_IS_NOT_EMBEDDED_ONLY.test(content)) {
+                message.showImages = showImages;
+            }
+
             if (showImages) {
                 html.innerHTML = content.replace(REGEXP_IS_FIX, (match, $1) => $1.substring(7));
                 return html;
