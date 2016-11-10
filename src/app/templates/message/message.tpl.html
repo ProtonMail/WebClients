@@ -224,7 +224,10 @@
         <time time-refreshed="{{ message.ExpirationTime }}"></time>
     </div>
 
-    <div ng-show="message.showImages === false && message.expand" class="showImages" ng-click="displayImages()">
+    <display-content-btn data-action="remote"></display-content-btn>
+    <display-content-btn data-action="embedded"></display-content-btn>
+
+    <!-- <div ng-show="message.showImages === false && message.expand" class="showImages" ng-click="displayImages()">
         <a href="#">
             <i class="fa fa-photo"></i>
             <span translate translate-context="Action">Load remote content</span>
@@ -236,7 +239,7 @@
             <i class="fa fa-photo"></i>
             <span translate translate-context="Action">Load embedded images</span>
         </a>
-    </div>
+    </div> -->
 
     <div class="frame" ng-show="message.expand" data-embedded-img-loader>
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
