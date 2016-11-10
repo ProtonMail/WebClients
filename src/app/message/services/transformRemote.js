@@ -1,7 +1,6 @@
 angular.module('proton.message')
 .factory('transformRemote', ($state, $rootScope, authentication, CONSTANTS) => {
 
-    const escape = (list) => list.map((name) => `proton-${name}`);
     const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map((name) => `proton-${name}`);
 
     const REGEXP_FIXER = (() => {
@@ -13,10 +12,6 @@ angular.module('proton.message')
         }).join('|');
         return new RegExp(`(${str})`, 'g');
     })();
-    const REGEXP_IS_BREAK = new RegExp('(<svg|xlink:href|srcset|src=|background=|poster=)', 'g');
-    const REGEXP_IS_NOT_EMBEDDED_ONLY = new RegExp('src=(?!"blob:|"cid:|"data:)', 'g');
-    const REGEXP_IS_FIX = new RegExp(`(${ATTRIBUTES.join('|')})`, 'g');
-    const REGEXP_IS_URL = new RegExp(/url\(/ig);
 
     function prepareInjection(html) {
         const selector = ATTRIBUTES.map((attr) => {
@@ -55,7 +50,10 @@ angular.module('proton.message')
         const showImages = message.showImages || user.ShowImages || (CONSTANTS.WHITELIST.indexOf(message.Sender.Address) !== -1 && !message.IsEncrypted) || $state.is('printer');
         const content = html.innerHTML;
 
-        message.showImages = showImages;
+        // Bind the boolean only if there are somthing
+        if (REGEXP_FIXER.test(content)) {
+            message.showImages = showImages;
+        }
 
         if (showImages) {
             html.innerHTML = content.replace(REGEXP_FIXER, (match, $1) => $1.substring(7));
