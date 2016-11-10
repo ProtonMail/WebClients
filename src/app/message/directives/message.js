@@ -62,6 +62,26 @@ angular.module('proton.message')
         });
     }
 
+    function injectInlineRemote(el, { list }) {
+        const node = el[0];
+        const mapSelectors = list.reduce((acc, map) => {
+            return Object.keys(map)
+                .reduce((acc, key) => {
+                    acc[key] = (acc[key] || []).concat(`[${key}="${map[key]}"]`);
+                    return acc;
+                }, acc);
+        }, {});
+
+        Object.keys(mapSelectors)
+            .forEach((selector) => {
+                const attr = selector.substring(7);
+                const $list = [].slice.call(node.querySelectorAll(mapSelectors[selector].join(', ')));
+                $list.forEach((node) => {
+                    node.setAttribute(attr, node.getAttribute(selector));
+                });
+            });
+    }
+
     return {
         restrict: 'E',
         replace: true,
@@ -100,6 +120,13 @@ angular.module('proton.message')
                     case 'injectContent':
                         (data.action === 'remote') && displayImages(scope.message, scope.body, 'user.inject');
                         (data.action === 'embedded') && displayEmbedded(scope.message, scope.body, 'user.inject');
+                        break;
+
+                    case 'remote.injected':
+                        console.log(data)
+                        if (data.action === 'user.inject') {
+                            return injectInlineRemote(element, data);
+                        }
                         break;
 
                     case 'embedded.injected':
@@ -293,20 +320,6 @@ angular.module('proton.message')
                 };
                 window.addEventListener('message', sendMessage, false);
                 window.open(tab, '_blank');
-            };
-
-            /**
-             * Get the decrypted content and fix images inside
-             */
-            scope.displayImages = () => {
-                scope.body = displayImages(scope.message, scope.body);
-            };
-
-            /**
-             * Load embedded content from attachments
-             */
-            scope.displayEmbedded = () => {
-                displayEmbedded(scope.message, scope.body, 'user.inject');
             };
 
             /**

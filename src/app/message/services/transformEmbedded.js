@@ -17,7 +17,6 @@ angular.module('proton.message')
                 image.classList.add(EMBEDDED_CLASSNAME);
             }
 
-                console.log('>>> Should we display embedded', show, message.showEmbedded)
             // check if the attachment exist before processing
             if (attachment && Object.keys(attachment).length > 0) {
                 if (show) {
