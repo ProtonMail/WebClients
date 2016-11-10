@@ -50,38 +50,6 @@ angular.module('proton.message')
         return type === 'conversation' || isSearch || condition;
     }
 
-    function injectInlineEmbedded(el, { map }) {
-        const node = el[0];
-        const selector = Object.keys(map)
-            .map((cid) => `[proton-src="${cid}"]`)
-            .join(',');
-        const $list = [].slice.call(node.querySelectorAll(selector));
-        debugger;
-        $list.forEach((node) => {
-            node.src = map[node.getAttribute('proton-src')];
-        });
-    }
-
-    function injectInlineRemote(el, { list }) {
-        const node = el[0];
-        const mapSelectors = list.reduce((acc, map) => {
-            return Object.keys(map)
-                .reduce((acc, key) => {
-                    acc[key] = (acc[key] || []).concat(`[${key}="${map[key]}"]`);
-                    return acc;
-                }, acc);
-        }, {});
-
-        Object.keys(mapSelectors)
-            .forEach((selector) => {
-                const attr = selector.substring(7);
-                const $list = [].slice.call(node.querySelectorAll(mapSelectors[selector].join(', ')));
-                $list.forEach((node) => {
-                    node.setAttribute(attr, node.getAttribute(selector));
-                });
-            });
-    }
-
     return {
         restrict: 'E',
         replace: true,
@@ -122,17 +90,10 @@ angular.module('proton.message')
                         (data.action === 'embedded') && displayEmbedded(scope.message, scope.body, 'user.inject');
                         break;
 
-                    case 'remote.injected':
-                        console.log(data)
-                        if (data.action === 'user.inject') {
-                            return injectInlineRemote(element, data);
-                        }
-                        break;
-
                     case 'embedded.injected':
-                        console.log(data)
                         if (data.action === 'user.inject') {
-                            return injectInlineEmbedded(element, data);
+                            // Custom refresh via injectMessageMedia
+                            return;
                         }
 
                         scope.$applyAsync(() => scope.body = data.body);
