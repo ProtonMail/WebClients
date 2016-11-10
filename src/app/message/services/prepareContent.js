@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('prepareContent', ($injector, transformAttachement, transformRemote) => {
+.factory('prepareContent', ($injector, transformAttachement, transformRemote, transformEscape) => {
     const filters = [
         'transformBase',
         'transformLinks',
@@ -29,7 +29,7 @@ angular.module('proton.message')
             return div;
         }
 
-        return transformRemote(div, message, {
+        return transformEscape(div, message, {
             action, content
         });
     }
@@ -46,6 +46,6 @@ angular.module('proton.message')
 
         transformAttachement(body, message, action);
 
-        return body.innerHTML;
+        return transformRemote(body, message, { action }).innerHTML;
     };
 });
