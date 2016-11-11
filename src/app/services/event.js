@@ -377,6 +377,7 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                     this.manageID(data.EventID);
                     return this.manageUser(data.User);
                 }
+                return Promise.resolve();
             },
             milliseconds: CONSTANTS.INTERVAL_EVENT_TIMER,
             reset: () => {
