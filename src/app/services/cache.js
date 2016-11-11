@@ -30,7 +30,7 @@ angular.module('proton.cache', [])
     * Save conversations in conversationsCached and add loc in attribute
     * @param {Array} conversations
     */
-    const storeConversations = function (conversations) {
+    const storeConversations = (conversations) => {
         _.each(conversations, (conversation) => {
             updateConversation(conversation);
         });
@@ -40,7 +40,7 @@ angular.module('proton.cache', [])
      * Save messages in cache
      * @param {Array} messages
      */
-    const storeMessages = function (messages) {
+    const storeMessages = (messages) => {
         _.chain(messages)
             .map((message) => new Message(message))
             .each(updateMessage);
@@ -52,7 +52,7 @@ angular.module('proton.cache', [])
      * @param {String} loc
      * @param {Integer} time
      */
-    const storeTime = function (conversationId, loc, time) {
+    const storeTime = (conversationId, loc, time) => {
         timeCached[conversationId] = timeCached[conversationId] || {};
         timeCached[conversationId][loc] = time;
     };
@@ -133,7 +133,7 @@ angular.module('proton.cache', [])
      * @param {String} type = conversation or message
      * @return {Object}
      */
-    const vector = function (element, unread, type) {
+    const vector = (element, unread, type) => {
         const result = {};
         let condition = true;
         const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, (label) => { return label.ID; }) || []);
@@ -218,7 +218,7 @@ angular.module('proton.cache', [])
      * @param {Object} request
      * @return {String} loc
      */
-    const getLocation = function (request) {
+    const getLocation = (request) => {
         return request.Label;
     };
 
@@ -375,14 +375,14 @@ angular.module('proton.cache', [])
      * Add action promise to the dispatcher
      * @param {Promise} action
      */
-    api.addToDispatcher = function (action) {
+    api.addToDispatcher = (action) => {
         dispatcher.push(action);
     };
 
     /**
      * Clear the dispatcher
      */
-    api.clearDispatcher = function () {
+    api.clearDispatcher = () => {
         dispatcher = [];
     };
 
@@ -390,7 +390,7 @@ angular.module('proton.cache', [])
      * Return the promises state of the dispatcher
      * @return {Promise}
      */
-    api.getDispatcher = function () {
+    api.getDispatcher = () => {
         return $q.all(dispatcher);
     };
 
@@ -445,7 +445,7 @@ angular.module('proton.cache', [])
      * @param {Array} messages
      * @return {Array} don't miss this array is reversed
      */
-    api.orderMessage = function (messages = [], doReverse = true) {
+    api.orderMessage = (messages = [], doReverse = true) => {
         const list = messages
             .sort((a, b) => {
                 if (a.Time < b.Time) {
@@ -509,7 +509,7 @@ angular.module('proton.cache', [])
      * Return time for a specific conversation and location
      * @return {Integer}
      */
-    api.getTime = function (conversationId, loc) {
+    api.getTime = (conversationId, loc) => {
         if (angular.isDefined(timeCached[conversationId]) && angular.isNumber(timeCached[conversationId][loc])) {
             return timeCached[conversationId][loc];
         }
@@ -528,11 +528,11 @@ angular.module('proton.cache', [])
      * @param {Boolean} firstLoad
      * @return {Promise}
      */
-    api.queryMessages = function (request, firstLoad = false) {
+    api.queryMessages = (request, firstLoad = false) => {
         const deferred = $q.defer();
         const loc = getLocation(request);
         const context = tools.cacheContext();
-        const callApi = function () {
+        const callApi = () => {
             deferred.resolve(queryMessages(request));
         };
 
@@ -593,11 +593,11 @@ angular.module('proton.cache', [])
      * @param {Boolean} firstLoad
      * @return {Promise}
      */
-    api.queryConversations = function (request, firstLoad = false) {
+    api.queryConversations = (request, firstLoad = false) => {
         const deferred = $q.defer();
         const loc = getLocation(request);
         const context = tools.cacheContext();
-        const callApi = function () {
+        const callApi = () => {
             // Need data from the server
             deferred.resolve(queryConversations(request));
         };
@@ -668,7 +668,7 @@ angular.module('proton.cache', [])
      * @param {String} conversationId
      * @return {Object}
      */
-    api.getConversationCached = function (conversationId) {
+    api.getConversationCached = (conversationId) => {
         const result = _.findWhere(conversationsCached, { ID: conversationId });
 
         return angular.copy(result);
@@ -679,7 +679,7 @@ angular.module('proton.cache', [])
      * @param {String} messageId
      * @return {Object}
      */
-    api.getMessageCached = function (messageId) {
+    api.getMessageCached = (messageId) => {
         return angular.copy(_.findWhere(messagesCached, { ID: messageId }));
     };
 
@@ -724,7 +724,7 @@ angular.module('proton.cache', [])
     * @param {Object} event
     * @return {Promise}
     */
-    api.delete = function (event) {
+    api.delete = (event) => {
         // Delete message
         messagesCached = messagesCached.filter(({ ID }) => ID !== event.ID);
 
@@ -739,7 +739,7 @@ angular.module('proton.cache', [])
     * @param {Object} event
     * @return {Promise}
     */
-    api.createMessage = function (event) {
+    api.createMessage = (event) => {
         // Insert the new message in the cache
         updateMessage(event.Message);
         return Promise.resolve();
@@ -750,7 +750,7 @@ angular.module('proton.cache', [])
      * @param {Object} event
      * @return {Promise}
      */
-    api.createConversation = function (event) {
+    api.createConversation = (event) => {
         const deferred = $q.defer();
 
         // Insert the new conversation in the cache without download
@@ -765,7 +765,7 @@ angular.module('proton.cache', [])
      * @param {Object}
      * @return {Promise}
      */
-    api.updateDraftConversation = function (event) {
+    api.updateDraftConversation = (event) => {
         const deferred = $q.defer();
 
         // Insert the new conversation in the cache without download
@@ -807,7 +807,7 @@ angular.module('proton.cache', [])
     /**
      * Update a conversation
      */
-    api.updateFlagConversation = function (event) {
+    api.updateFlagConversation = (event) => {
         const deferred = $q.defer();
         const current = _.find(conversationsCached, { ID: event.ID });
 
@@ -832,7 +832,7 @@ angular.module('proton.cache', [])
     * @param {Boolean} fromBackend - indicate if the events come from the back-end
     * @return {Promise}
     */
-    api.events = function (events, fromBackend, isSend) {
+    api.events = (events, fromBackend, isSend) => {
         const deferred = $q.defer();
         const promises = [];
         const messageIDs = [];
@@ -911,7 +911,7 @@ angular.module('proton.cache', [])
     /**
      * Reset cache and hash then preload inbox and sent
      */
-    api.reset = function () {
+    api.reset = () => {
         conversationsCached = [];
         messagesCached = [];
     };
@@ -948,7 +948,8 @@ angular.module('proton.cache', [])
         const elementsCached = (type === 'conversation') ? conversationsCached : messagesCached;
         const loc = tools.currentLocation();
         const callApi = () => {
-            const request = { Label: loc };
+            const Label = loc;
+            const request = { Label };
             const promise = (type === 'conversation') ? queryConversations(request) : queryMessages(request);
 
             return promise.then((elements = []) => {
@@ -981,20 +982,7 @@ angular.module('proton.cache', [])
 .service('cacheCounters', (Message, CONSTANTS, Conversation, $q, $rootScope, authentication) => {
     const api = {};
     let counters = {};
-    // {
-    //     loc: {
-    //         message: {
-    //             total: value,
-    //             unread: value
-    //         },
-    //         conversation: {
-    //             total: value,
-    //             unread: value
-    //         }
-    //     }
-    // }
-    const exist = function (loc) {
-
+    const exist = (loc) => {
         if (angular.isUndefined(counters[loc])) {
             counters[loc] = {
                 message: {
@@ -1014,7 +1002,7 @@ angular.module('proton.cache', [])
     * Find the total and unread items per message and conversation
     * @return {Promise}
     */
-    api.query = function () {
+    api.query = () => {
         const deferred = $q.defer();
         const idsLabel = _.map(authentication.user.Labels, ({ ID }) => ID) || [];
         const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(idsLabel);
@@ -1052,7 +1040,7 @@ angular.module('proton.cache', [])
      * Add a new location
      * @param {String} loc
      */
-    api.add = function (loc) {
+    api.add = (loc) => {
         exist(loc);
     };
 
@@ -1062,7 +1050,7 @@ angular.module('proton.cache', [])
     * @param {Integer} total
     * @param {Integer} unread
     */
-    api.updateMessage = function (loc, total, unread) {
+    api.updateMessage = (loc, total, unread) => {
         exist(loc);
 
         if (angular.isDefined(total)) {
@@ -1080,7 +1068,7 @@ angular.module('proton.cache', [])
      * @param {Integer} total
      * @param {Integer} unread
      */
-    api.updateConversation = function (loc, total, unread) {
+    api.updateConversation = (loc, total, unread) => {
         exist(loc);
 
         if (angular.isDefined(total)) {
@@ -1096,7 +1084,7 @@ angular.module('proton.cache', [])
     * Get the total of messages for a specific loc
     * @param {String} loc
     */
-    api.totalMessage = function (loc) {
+    api.totalMessage = (loc) => {
         return counters[loc] && counters[loc].message && counters[loc].message.total;
     };
 
@@ -1104,7 +1092,7 @@ angular.module('proton.cache', [])
     * Get the total of conversation for a specific loc
     * @param {String} loc
     */
-    api.totalConversation = function (loc) {
+    api.totalConversation = (loc) => {
         return counters[loc] && counters[loc].conversation && counters[loc].conversation.total;
     };
 
@@ -1112,7 +1100,7 @@ angular.module('proton.cache', [])
     * Get the number of unread messages for the specific loc
     * @param {String} loc
     */
-    api.unreadMessage = function (loc) {
+    api.unreadMessage = (loc) => {
         return counters[loc] && counters[loc].message && counters[loc].message.unread;
     };
 
@@ -1120,11 +1108,11 @@ angular.module('proton.cache', [])
     * Get the number of unread conversation for the specific loc
     * @param {String} loc
     */
-    api.unreadConversation = function (loc) {
+    api.unreadConversation = (loc) => {
         return counters[loc] && counters[loc].conversation && counters[loc].conversation.unread;
     };
 
-    api.reset = function () {
+    api.reset = () => {
         counters = {};
     };
 
