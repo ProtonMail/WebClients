@@ -94,7 +94,7 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                 });
             },
             manageUser(user) {
-                if (angular.isDefined(user)) {
+                if (user) {
                     const mailboxPassword = authentication.getPassword();
                     const promises = [];
                     const dirtyAddresses = [];
@@ -158,7 +158,7 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                         });
                     }
 
-                    $q.all(promises).finally(() => {
+                    return $q.all(promises).finally(() => {
                         // Merge user parameters
                         _.each(Object.keys(user), (key) => {
                             if (key === 'Addresses') {
@@ -187,10 +187,11 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                                 authentication.user[key] = user[key];
                             }
                         });
-
                         angular.extend($rootScope.user, authentication.user);
                         $rootScope.$broadcast('updateUser');
                     });
+                } else {
+                    return Promise.resolve();
                 }
             },
             manageMessageCounts(counts) {
@@ -340,9 +341,10 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                 }
             },
             manage(data) {
+                this.manageNotices(data.Notices);
                 // Check if eventID is sent
                 if (data.Error) {
-                    Events.getLatestID()
+                    return Events.getLatestID()
                     .then((result) => {
                         eventModel.manageID(result.data.EventID);
                     });
@@ -352,7 +354,7 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                     cacheCounters.reset();
                     cache.callRefresh();
                     cacheCounters.query();
-                    authentication.fetchUserInfo()
+                    return authentication.fetchUserInfo()
                     .then(() => {
                         $rootScope.$broadcast('updateUser');
                         $rootScope.$broadcast('updateContacts');
@@ -360,10 +362,10 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                     });
                 } else if (data.Reload === 1) {
                     $window.location.reload();
+                    return Promise.resolve();
                 } else if (this.isDifferent(data.EventID)) {
                     this.manageLabels(data.Labels);
                     this.manageContacts(data.Contacts);
-                    this.manageUser(data.User);
                     this.manageThreadings(data.Messages, data.Conversations);
                     this.manageDesktopNotifications(data.Messages);
                     this.manageMessageCounts(data.MessageCounts);
@@ -374,9 +376,8 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                     this.manageOrganization(data.Organization);
                     this.manageFilters(data.Filters);
                     this.manageID(data.EventID);
+                    return this.manageUser(data.User);
                 }
-
-                this.manageNotices(data.Notices);
             },
             milliseconds: CONSTANTS.INTERVAL_EVENT_TIMER,
             reset: () => {
@@ -422,10 +423,13 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                 }
             },
             call() {
-                return eventModel.get()
-                .then((result) => {
+                return eventModel.get().then((result) => {
                     if (result.data && result.data.Code === 1000) {
-                        eventModel.manage(result.data);
+                        return eventModel.manage(result.data);
+                    } else if (result.data && result.data.Error) {
+                        return Promise.reject(result.data.Error);
+                    } else {
+                        return Promise.reject('Error event manager');
                     }
                 });
             },

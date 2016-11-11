@@ -188,12 +188,11 @@ angular.module('proton.controllers.Settings')
         }, 1000);
     };
 
-    $scope.refresh = function () {
+    $scope.refresh = () => {
         networkActivityTracker.track(
             $q.all({
                 subscription: Payment.subscription(),
-                methods: Payment.methods(),
-                event: eventManager.call()
+                methods: Payment.methods()
             })
             .then((result) => {
                 $scope.initialization(result.subscription.data.Subscription, undefined, undefined, result.methods.data.PaymentMethods);
@@ -367,6 +366,20 @@ angular.module('proton.controllers.Settings')
         }
     };
 
+    function unsubscribe() {
+        return Payment.delete().then((result) => {
+            if (result.data && result.data.Code === 1000) {
+                return eventManager.call();
+            } else if (result.data && result.data.Error) {
+                return Promise.reject(result.data.Error);
+            }
+            return Promise.reject(gettextCatalog.getString('Error processing payment.', null, 'Error'));
+        },
+        (error) => {
+            Promise.reject(error);
+        });
+    }
+
     /**
      * Open a modal to confirm to switch to the free plan
      */
@@ -379,28 +392,13 @@ angular.module('proton.controllers.Settings')
                 title,
                 message,
                 confirm() {
-                    const unsubscribe = () => {
-                        return Payment.delete()
-                        .then((result) => {
-                            if (result.data && result.data.Code === 1000) {
-                                return Promise.resolve();
-                            } else if (result.data && result.data.Error) {
-                                return Promise.reject(result.data.Error);
-                            }
-                            return Promise.reject(gettextCatalog.getString('Error processing payment.', null, 'Error'));
-                        },
-                        (error) => {
-                            Promise.reject(error);
-                        });
-                    };
-
-                    const finish = () => {
+                    const promise = unsubscribe().then(() => {
                         $scope.refresh();
                         confirmModal.deactivate();
                         notify({ message: gettextCatalog.getString('You have successfully unsubscribed', null), classes: 'notification-success' });
-                    };
+                    });
 
-                    networkActivityTracker.track(unsubscribe().then(finish));
+                    networkActivityTracker.track(promise);
                 },
                 cancel() {
                     confirmModal.deactivate();
