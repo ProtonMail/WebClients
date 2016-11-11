@@ -94,9 +94,8 @@ angular.module('proton.core')
                     }, () => {
                         return Promise.reject('Error during the generation of new keys for pm_org_admin');
                     });
-                } else {
-                    return Promise.resolve();
                 }
+                return Promise.resolve();
             }
             /**
              * Create an organization
@@ -109,15 +108,13 @@ angular.module('proton.core')
                             return Promise.resolve(result);
                         } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
                             return Promise.reject(result.data.Error);
-                        } else {
-                            return Promise.reject(gettextCatalog.getString('Error during organization request', null, 'Error'));
                         }
+                        return Promise.reject(gettextCatalog.getString('Error during organization request', null, 'Error'));
                     }, () => {
                         return Promise.reject(gettextCatalog.getString('Error during organization request', null, 'Error'));
                     });
-                } else {
-                    return Promise.resolve();
                 }
+                return Promise.resolve();
             }
 
             function validateCardNumber() {
@@ -166,9 +163,8 @@ angular.module('proton.core')
                     });
                 } else if (self.valid.AmountDue > 0) {
                     return Promise.resolve(self.method.ID);
-                } else {
-                    return Promise.resolve();
                 }
+                return Promise.resolve();
             }
 
             function subscribe(methodID) {
@@ -183,9 +179,8 @@ angular.module('proton.core')
                         return Promise.resolve(result.data);
                     } else if (result.data && result.data.Error) {
                         return Promise.reject(result.data.Error);
-                    } else {
-                        return Promise.reject('Error subscribing');
                     }
+                    return Promise.reject('Error subscribing');
                 });
             }
 
@@ -204,14 +199,9 @@ angular.module('proton.core')
                         return Promise.resolve();
                     } else if (result.data && result.data.Error) {
                         return Promise.reject(result.data.Error);
-                    } else {
-                        return Promise.reject('Error connecting to PayPal.');
                     }
+                    return Promise.reject('Error connecting to PayPal.');
                 });
-            }
-
-            function callEventManager() {
-                return eventManager.call();
             }
 
             function finish() {
@@ -221,7 +211,7 @@ angular.module('proton.core')
 
             self.label = (method) => ('•••• •••• •••• ' + method.Details.Last4);
 
-            self.submit = function () {
+            self.submit = () => {
                 // Change process status true to disable input fields
                 self.step = 'process';
 
@@ -238,9 +228,9 @@ angular.module('proton.core')
                     notify({ message: error, classes: 'notification-danger' });
                     self.step = 'payment';
                 });
-            }
+            };
 
-            self.count = function (type) {
+            self.count = (type) => {
                 let count = 0;
                 const plans = [];
 
@@ -255,11 +245,11 @@ angular.module('proton.core')
                 return count;
             };
 
-            self.switch = function (cycle, currency) {
+            self.switch = (cycle, currency) => {
                 params.switch(cycle, currency);
             };
 
-            self.apply = function () {
+            self.apply = () => {
                 Payment.valid({
                     Currency: self.valid.Currency,
                     Cycle: self.valid.Cycle,
@@ -277,9 +267,9 @@ angular.module('proton.core')
                         self.valid = result.data;
                     }
                 });
-            }
+            };
 
-            self.changeChoice = function () {
+            self.changeChoice = () => {
                 if (self.choice.value === 'paypal') {
                     if (self.valid.Cycle === 12) {
                         self.initPaypal();
@@ -289,7 +279,7 @@ angular.module('proton.core')
                 }
             };
 
-            self.initPaypal = function () {
+            self.initPaypal = () => {
                 self.paypalNetworkError = false;
 
                 Payment.paypal({
@@ -306,17 +296,17 @@ angular.module('proton.core')
                         notify({ message: result.data.Error, classes: 'notification-danger' });
                     }
                 });
-            }
+            };
 
             /**
              * Open Paypal website in a new tab
              */
-            self.openPaypalTab = function () {
+            self.openPaypalTab = () => {
                 self.childWindow = window.open(self.approvalURL, 'PayPal');
                 window.addEventListener('message', self.receivePaypalMessage, false);
             };
 
-            self.receivePaypalMessage = function (event) {
+            self.receivePaypalMessage = (event) => {
                 const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
                 if (origin !== 'https://secure.protonmail.com') {
@@ -349,12 +339,12 @@ angular.module('proton.core')
 
                 self.childWindow.close();
                 window.removeEventListener('message', self.receivePaypalMessage, false);
-            }
+            };
 
             /**
              * Close payment modal
              */
-            self.cancel = function () {
+            self.cancel = () => {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }
