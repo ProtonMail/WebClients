@@ -187,23 +187,22 @@ angular.module('proton.models.payments', [])
                         return json || {};
                     }
                 });
-            } else {
-                return Promise.resolve({
-                    data: {
-                        Code: 1000,
-                        Subscription: {
-                            Name: 'free',
-                            Title: 'ProtonMail Free',
-                            MaxDomains: 0,
-                            MaxAddresses: 1,
-                            MaxSpace: 5368709120, // 500 MB
-                            MaxMembers: 1,
-                            Cycle: 12,
-                            Currency: authentication.user.Currency
-                        }
-                    }
-                });
             }
+            return Promise.resolve({
+                data: {
+                    Code: 1000,
+                    Subscription: {
+                        Name: 'free',
+                        Title: 'ProtonMail Free',
+                        MaxDomains: 0,
+                        MaxAddresses: 1,
+                        MaxSpace: 5368709120, // 500 MB
+                        MaxMembers: 1,
+                        Cycle: 12,
+                        Currency: authentication.user.Currency
+                    }
+                }
+            });
         },
         /**
          * Validate a subscription
