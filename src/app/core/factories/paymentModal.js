@@ -4,6 +4,7 @@ angular.module('proton.core')
     pmModal,
     Organization,
     gettextCatalog,
+    eventManager,
     $log,
     $window,
     $q,
@@ -18,200 +19,181 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/payment/modal.tpl.html',
         controller(params) {
             // Variables
-            this.choices = [];
-            this.paypalNetworkError = false;
-            this.paypalAccessError = false;
-            this.displayCoupon = false;
-            this.step = 'payment';
-            this.methods = [];
-            this.number = '';
-            this.fullname = '';
-            this.months = [];
+            const self = this;
+            self.choices = [];
+            self.paypalNetworkError = false;
+            self.paypalAccessError = false;
+            self.displayCoupon = false;
+            self.step = 'payment';
+            self.methods = [];
+            self.number = '';
+            self.fullname = '';
+            self.months = [];
 
             for (let i = 1; i <= 12; i++) {
-                this.months.push(i);
+                self.months.push(i);
             }
 
-            this.month = this.months[0];
-            this.years = [];
+            self.month = self.months[0];
+            self.years = [];
 
             for (let i = 0; i < 12; i++) {
-                this.years.push(new Date().getFullYear() + i);
+                self.years.push(new Date().getFullYear() + i);
             }
 
-            this.year = this.years[0];
-            this.cvc = '';
-            this.zip = '';
-            this.create = params.create;
-            this.valid = params.valid;
-            this.base = CONSTANTS.BASE_SIZE;
-            this.coupon = '';
-            this.childWindow = null;
-            this.countries = tools.countries;
-            this.status = params.status;
-            this.country = _.findWhere(this.countries, { value: 'US' });
-            this.plans = _.chain(params.plans)
+            self.year = self.years[0];
+            self.cvc = '';
+            self.zip = '';
+            self.create = params.create;
+            self.valid = params.valid;
+            self.base = CONSTANTS.BASE_SIZE;
+            self.coupon = '';
+            self.childWindow = null;
+            self.countries = tools.countries;
+            self.status = params.status;
+            self.country = _.findWhere(self.countries, { value: 'US' });
+            self.plans = _.chain(params.plans)
                 .filter((plan) => { return params.planIDs.indexOf(plan.ID) !== -1; })
                 .uniq()
                 .value();
-            this.organizationName = gettextCatalog.getString('My organization', null, 'Title'); // TODO set this value for the business plan
+            self.organizationName = gettextCatalog.getString('My organization', null, 'Title'); // TODO set self value for the business plan
 
             // Functions
-            const initialization = function () {
+            function initialization() {
                 if (params.methods.length > 0) {
-                    this.methods = params.methods;
-                    this.method = this.methods[0];
+                    self.methods = params.methods;
+                    self.method = self.methods[0];
                 }
 
                 if (params.status.Stripe === true) {
-                    this.choices.push({ value: 'card', label: gettextCatalog.getString('Credit card', null) });
+                    self.choices.push({ value: 'card', label: gettextCatalog.getString('Credit card', null) });
                 }
 
                 if (params.status.Paypal === true && ($.browser.msie !== true || $.browser.edge === true)) { // IE11 doesn't support PayPal
-                    this.choices.push({ value: 'paypal', label: 'PayPal' });
+                    self.choices.push({ value: 'paypal', label: 'PayPal' });
                 }
 
-                this.choices.push({ value: 'bitcoin', label: 'Bitcoin' });
-                this.choice = this.choices[0];
+                self.choices.push({ value: 'bitcoin', label: 'Bitcoin' });
+                self.choice = self.choices[0];
 
                 if (angular.isDefined(params.choice)) {
-                    this.choice = _.findWhere(this.choices, { value: params.choice });
-                    this.changeChoice();
+                    self.choice = _.findWhere(self.choices, { value: params.choice });
+                    self.changeChoice();
                 }
-            }.bind(this);
+            }
 
             /**
              * Generate key for the organization
              */
-            const organizationKey = function () {
-                const deferred = $q.defer();
-
+            function organizationKey() {
                 if (params.create === true) {
-
-                    pmcw.generateKeysRSA('pm_org_admin', authentication.getPassword())
+                    return pmcw.generateKeysRSA('pm_org_admin', authentication.getPassword())
                     .then((response) => {
                         const privateKey = response.privateKeyArmored;
-                        deferred.resolve({
-                            PrivateKey: privateKey
-                        });
+                        return Promise.resolve({ PrivateKey: privateKey });
                     }, () => {
-                        deferred.reject(new Error('Error during the generation of new keys for pm_org_admin'));
+                        return Promise.reject('Error during the generation of new keys for pm_org_admin');
                     });
                 } else {
-                    deferred.resolve();
+                    return Promise.resolve();
                 }
-
-                return deferred.promise;
-            };
+            }
             /**
              * Create an organization
              */
-            const createOrganization = function (parameters) {
-                const deferred = $q.defer();
-
+            function createOrganization(parameters) {
                 if (params.create === true) {
-                    Organization.create(parameters)
+                    return Organization.create(parameters)
                     .then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
-                            deferred.resolve(result);
+                            return Promise.resolve(result);
                         } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
-                            deferred.reject(new Error(result.data.Error));
+                            return Promise.reject(result.data.Error);
                         } else {
-                            deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
+                            return Promise.reject(gettextCatalog.getString('Error during organization request', null, 'Error'));
                         }
                     }, () => {
-                        deferred.reject(new Error(gettextCatalog.getString('Error during organization request', null, 'Error')));
+                        return Promise.reject(gettextCatalog.getString('Error during organization request', null, 'Error'));
                     });
                 } else {
-                    deferred.resolve();
+                    return Promise.resolve();
                 }
+            }
 
-                return deferred.promise;
-            };
-
-            const validateCardNumber = function () {
-                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
-                    return Payment.validateCardNumber(this.number);
-                }
-
-                return Promise.resolve();
-            }.bind(this);
-
-            const validateCardExpiry = function () {
-                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
-                    return Payment.validateCardExpiry(this.month, this.year);
+            function validateCardNumber() {
+                if (self.methods.length === 0 && self.valid.AmountDue > 0) {
+                    return Payment.validateCardNumber(self.number);
                 }
                 return Promise.resolve();
-            }.bind(this);
+            }
 
-            const validateCardCVC = function () {
-                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
-                    return Payment.validateCardCVC(this.cvc);
+            function validateCardExpiry() {
+                if (self.methods.length === 0 && self.valid.AmountDue > 0) {
+                    return Payment.validateCardExpiry(self.month, self.year);
                 }
                 return Promise.resolve();
-            }.bind(this);
+            }
 
-            const method = function () {
-                const deferred = $q.defer();
+            function validateCardCVC() {
+                if (self.methods.length === 0 && self.valid.AmountDue > 0) {
+                    return Payment.validateCardCVC(self.cvc);
+                }
+                return Promise.resolve();
+            }
 
-                if (this.methods.length === 0 && this.valid.AmountDue > 0) {
-                    const year = (this.year.length === 2) ? '20' + this.year : this.year;
+            function method() {
+                if (self.methods.length === 0 && self.valid.AmountDue > 0) {
+                    const year = (self.year.length === 2) ? '20' + self.year : self.year;
 
                     // Add payment method
-                    Payment.updateMethod({
+                    return Payment.updateMethod({
                         Type: 'card',
                         Details: {
-                            Number: this.number,
-                            ExpMonth: this.month,
+                            Number: self.number,
+                            ExpMonth: self.month,
                             ExpYear: year,
-                            CVC: this.cvc,
-                            Name: this.fullname,
-                            Country: this.country.value,
-                            ZIP: this.zip
+                            CVC: self.cvc,
+                            Name: self.fullname,
+                            Country: self.country.value,
+                            ZIP: self.zip
                         }
                     }).then((result) => {
                         if (result.data && result.data.Code === 1000) {
-                            deferred.resolve(result.data.PaymentMethod.ID);
+                            return Promise.resolve(result.data.PaymentMethod.ID);
                         } else if (result.data && result.data.Error) {
-                            deferred.reject(new Error(result.data.Error));
+                            return Promise.reject(result.data.Error);
                         }
                     });
-                } else if (this.valid.AmountDue > 0) {
-                    deferred.resolve(this.method.ID);
+                } else if (self.valid.AmountDue > 0) {
+                    return Promise.resolve(self.method.ID);
                 } else {
-                    deferred.resolve();
+                    return Promise.resolve();
                 }
+            }
 
-                return deferred.promise;
-            }.bind(this);
-
-            const subscribe = function (methodID) {
-                const deferred = $q.defer();
-
-                Payment.subscribe({
-                    Amount: this.valid.AmountDue,
-                    Currency: this.valid.Currency,
+            function subscribe(methodID) {
+                return Payment.subscribe({
+                    Amount: self.valid.AmountDue,
+                    Currency: self.valid.Currency,
                     PaymentMethodID: methodID,
-                    CouponCode: this.coupon,
+                    CouponCode: self.coupon,
                     PlanIDs: params.planIDs
                 }).then((result) => {
                     if (result.data && result.data.Code === 1000) {
-                        deferred.resolve();
+                        return Promise.resolve(result.data);
                     } else if (result.data && result.data.Error) {
-                        deferred.reject(new Error(result.data.Error));
+                        return Promise.reject(result.data.Error);
+                    } else {
+                        return Promise.reject('Error subscribing');
                     }
                 });
+            }
 
-                return deferred.promise;
-            }.bind(this);
-
-            const chargePaypal = function (paypalObject) {
-                const deferred = $q.defer();
-
-                Payment.subscribe({
-                    Amount: this.valid.AmountDue,
+            function chargePaypal(paypalObject) {
+                return Payment.subscribe({
+                    Amount: self.valid.AmountDue,
                     Currency: params.valid.Currency,
-                    CouponCode: this.coupon,
+                    CouponCode: self.coupon,
                     PlanIDs: params.planIDs,
                     Payment: {
                         Type: 'paypal',
@@ -219,29 +201,29 @@ angular.module('proton.core')
                     }
                 }).then((result) => {
                     if (result.data && result.data.Code === 1000) {
-                        deferred.resolve();
+                        return Promise.resolve();
                     } else if (result.data && result.data.Error) {
-                        deferred.reject(new Error(result.data.Error));
+                        return Promise.reject(result.data.Error);
                     } else {
-                        deferred.reject(new Error('Error connecting to PayPal.'));
+                        return Promise.reject('Error connecting to PayPal.');
                     }
                 });
+            }
 
-                return deferred.promise;
-            }.bind(this);
+            function callEventManager() {
+                return eventManager.call();
+            }
 
-            const finish = function () {
-                this.step = 'thanks';
+            function finish() {
+                self.step = 'thanks';
                 params.change();
-            }.bind(this);
+            }
 
-            this.label = function (method) {
-                return '•••• •••• •••• ' + method.Details.Last4;
-            };
+            self.label = (method) => ('•••• •••• •••• ' + method.Details.Last4);
 
-            this.submit = function () {
+            self.submit = function () {
                 // Change process status true to disable input fields
-                this.step = 'process';
+                self.step = 'process';
 
                 validateCardNumber()
                 .then(validateCardExpiry)
@@ -250,14 +232,15 @@ angular.module('proton.core')
                 .then(subscribe)
                 .then(organizationKey)
                 .then(createOrganization)
+                .then(eventManager.call)
                 .then(finish)
                 .catch((error) => {
                     notify({ message: error, classes: 'notification-danger' });
-                    this.step = 'payment';
+                    self.step = 'payment';
                 });
-            }.bind(this);
+            }
 
-            this.count = function (type) {
+            self.count = function (type) {
                 let count = 0;
                 const plans = [];
 
@@ -272,68 +255,68 @@ angular.module('proton.core')
                 return count;
             };
 
-            this.switch = function (cycle, currency) {
+            self.switch = function (cycle, currency) {
                 params.switch(cycle, currency);
             };
 
-            this.apply = function () {
+            self.apply = function () {
                 Payment.valid({
-                    Currency: this.valid.Currency,
-                    Cycle: this.valid.Cycle,
-                    CouponCode: this.coupon,
+                    Currency: self.valid.Currency,
+                    Cycle: self.valid.Cycle,
+                    CouponCode: self.coupon,
                     PlanIDs: params.planIDs
                 })
                 .then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.CouponDiscount === 0) {
                             notify({ message: gettextCatalog.getString('Invalid coupon', null, 'Error'), classes: 'notification-danger' });
-                            this.coupon = '';
+                            self.coupon = '';
                         } else {
                             notify({ message: gettextCatalog.getString('Coupon accepted', null, 'Info'), classes: 'notification-success' });
                         }
-                        this.valid = result.data;
+                        self.valid = result.data;
                     }
                 });
-            }.bind(this);
+            }
 
-            this.changeChoice = function () {
-                if (this.choice.value === 'paypal') {
-                    if (this.valid.Cycle === 12) {
-                        this.initPaypal();
-                    } else if (this.valid.Cycle === 1) {
-                        this.paypalAccessError = 1; // We only accept PayPal for annual subscriptions, click here to switch to an annual subscription. [Change Subscription]
+            self.changeChoice = function () {
+                if (self.choice.value === 'paypal') {
+                    if (self.valid.Cycle === 12) {
+                        self.initPaypal();
+                    } else if (self.valid.Cycle === 1) {
+                        self.paypalAccessError = 1; // We only accept PayPal for annual subscriptions, click here to switch to an annual subscription. [Change Subscription]
                     }
                 }
             };
 
-            this.initPaypal = function () {
-                this.paypalNetworkError = false;
+            self.initPaypal = function () {
+                self.paypalNetworkError = false;
 
                 Payment.paypal({
-                    Amount: this.valid.AmountDue,
-                    Currency: this.valid.Currency
+                    Amount: self.valid.AmountDue,
+                    Currency: self.valid.Currency
                 }).then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         if (result.data.ApprovalURL) {
-                            this.approvalURL = result.data.ApprovalURL;
+                            self.approvalURL = result.data.ApprovalURL;
                         }
                     } else if (result.data.Code === 22802) {
-                        this.paypalNetworkError = true;
+                        self.paypalNetworkError = true;
                     } else if (result.data && result.data.Error) {
                         notify({ message: result.data.Error, classes: 'notification-danger' });
                     }
                 });
-            }.bind(this);
+            }
 
             /**
              * Open Paypal website in a new tab
              */
-            this.openPaypalTab = function () {
-                this.childWindow = window.open(this.approvalURL, 'PayPal');
-                window.addEventListener('message', this.receivePaypalMessage, false);
+            self.openPaypalTab = function () {
+                self.childWindow = window.open(self.approvalURL, 'PayPal');
+                window.addEventListener('message', self.receivePaypalMessage, false);
             };
 
-            this.receivePaypalMessage = function (event) {
+            self.receivePaypalMessage = function (event) {
                 const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
 
                 if (origin !== 'https://secure.protonmail.com') {
@@ -352,25 +335,26 @@ angular.module('proton.core')
                     delete paypalObject.paymentID;
                 }
 
-                this.step = 'process';
+                self.step = 'process';
 
                 chargePaypal(paypalObject)
                 .then(organizationKey)
                 .then(createOrganization)
+                .then(eventManager.call)
                 .then(finish)
                 .catch((error) => {
                     notify({ message: error, classes: 'notification-danger' });
-                    this.step = 'payment';
+                    self.step = 'payment';
                 });
 
-                this.childWindow.close();
-                window.removeEventListener('message', this.receivePaypalMessage, false);
-            }.bind(this);
+                self.childWindow.close();
+                window.removeEventListener('message', self.receivePaypalMessage, false);
+            }
 
             /**
              * Close payment modal
              */
-            this.cancel = function () {
+            self.cancel = function () {
                 if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
                     params.cancel();
                 }

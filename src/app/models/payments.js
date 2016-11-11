@@ -173,18 +173,25 @@ angular.module('proton.models.payments', [])
         * @return {Promise}
         */
         subscription() {
-            return $http.get(url.get() + '/payments/subscription', {
-                transformResponse(datas) {
-                    const json = angular.fromJson(datas);
+            if (authentication.user.Subscribed) {
+                return $http.get(url.get() + '/payments/subscription', {
+                    transformResponse(datas) {
+                        const json = angular.fromJson(datas);
 
-                    if (json && json.Code === 1000) {
-                        const { Name, Title } = _.findWhere(json.Subscription.Plans, { Type: 1 }) || {};
-                        json.Subscription.Name = Name;
-                        json.Subscription.Title = Title;
+                        if (json && json.Code === 1000) {
+                            const { Name, Title } = _.findWhere(json.Subscription.Plans, { Type: 1 }) || {};
+                            json.Subscription.Name = Name;
+                            json.Subscription.Title = Title;
+                        }
+
+                        return json || {};
                     }
-                    if (json && json.Code === 22110) {
-                        json.Code = 1000;
-                        json.Subscription = {
+                });
+            } else {
+                return Promise.resolve({
+                    data: {
+                        Code: 1000,
+                        Subscription: {
                             Name: 'free',
                             Title: 'ProtonMail Free',
                             MaxDomains: 0,
@@ -193,12 +200,10 @@ angular.module('proton.models.payments', [])
                             MaxMembers: 1,
                             Cycle: 12,
                             Currency: authentication.user.Currency
-                        };
+                        }
                     }
-
-                    return json || {};
-                }
-            });
+                });
+            }
         },
         /**
          * Validate a subscription
