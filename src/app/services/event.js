@@ -190,9 +190,8 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                         angular.extend($rootScope.user, authentication.user);
                         $rootScope.$broadcast('updateUser');
                     });
-                } else {
-                    return Promise.resolve();
                 }
+                return Promise.resolve();
             },
             manageMessageCounts(counts) {
                 if (angular.isDefined(counts)) {
@@ -428,9 +427,8 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                         return eventModel.manage(result.data);
                     } else if (result.data && result.data.Error) {
                         return Promise.reject(result.data.Error);
-                    } else {
-                        return Promise.reject('Error event manager');
                     }
+                    return Promise.reject('Error event manager');
                 });
             },
             stop() {
