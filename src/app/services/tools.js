@@ -414,10 +414,10 @@ angular.module('proton.tools', ['proton.constants'])
      * Check if the request is in a cache context
      * @return {Boolean}
      */
-    tools.cacheContext = function () {
+    tools.cacheContext = () => {
         const filterDefined = angular.isDefined($stateParams.filter);
         const sortDefined = angular.isDefined($stateParams.sort);
-        const isSearch = $state.is('secured.search.**');
+        const isSearch = $state.includes('secured.search.**');
 
         return !isSearch && !sortDefined && !filterDefined;
     };
