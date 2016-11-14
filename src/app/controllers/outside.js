@@ -73,7 +73,7 @@ angular.module('proton.controllers.Outside', [
         }, 500);
     }
 
-    $scope.initialization = function () {
+    $scope.initialization = () => {
         if ($state.is('eo.reply')) {
             message.showImages = true;
             message.showEmbedded = true;
@@ -118,7 +118,7 @@ angular.module('proton.controllers.Outside', [
     /**
      * Determine if the message is expire
      */
-    $scope.isExpired = function () {
+    $scope.isExpired = () => {
         if (angular.isDefined($scope.message)) {
             return $scope.message.ExpirationTime < moment().unix();
         }
@@ -129,14 +129,14 @@ angular.module('proton.controllers.Outside', [
     /**
      * Simulate click event on the input file
      */
-    $scope.selectFile = function () {
+    $scope.selectFile = () => {
         $('#inputFile').click();
     };
 
     /**
      * Reset input file
      */
-    $scope.resetFile = function () {
+    $scope.resetFile = () => {
         const element = $('#inputFile');
 
         element.wrap('<form>').closest('form').get(0).reset();
@@ -145,7 +145,7 @@ angular.module('proton.controllers.Outside', [
     /**
      * Send message
      */
-    $scope.send = function () {
+    $scope.send = () => {
         const deferred = $q.defer();
         const { Replies = [] } = $scope.message;
 
@@ -234,11 +234,11 @@ angular.module('proton.controllers.Outside', [
         return networkActivityTracker.track(deferred.promise);
     };
 
-    $scope.cancel = function () {
+    $scope.cancel = () => {
         $state.go('eo.message', { tag: $stateParams.tag });
     };
 
-    $scope.reply = function () {
+    $scope.reply = () => {
         $state.go('eo.reply', { tag: $stateParams.tag });
     };
 
