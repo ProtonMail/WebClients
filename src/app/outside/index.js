@@ -1,1 +1,2 @@
-angular.module('proton.outside', []);
+angular.module('proton.outside', [])
+    .run((attachmentModelOutside) => attachmentModelOutside.load());

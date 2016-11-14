@@ -1,6 +1,7 @@
 angular.module('proton.outside')
     .factory('attachmentModelOutside', ($log, $q, attachmentApi, AttachmentLoader, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
 
+        const EVENT_NAME = 'attachment.upload.outside';
         const queueMessage = {};
         let MAP_ATTACHMENTS = {};
         const notifyError = (message) => notify({ message, classes: 'notification-danger' });
@@ -41,7 +42,10 @@ angular.module('proton.outside')
         };
 
         $rootScope
-            .$on('attachment.upload.outside', (e, { type, data }) => {
+            .$on(EVENT_NAME, (e, { type, data }) => {
+
+                console.trace(type, data)
+
                 switch (type) {
                     case 'close':
                         attachmentApi.killUpload(data);
@@ -80,7 +84,7 @@ angular.module('proton.outside')
             queueMessage[messageID] = queue;
 
             if (!queue.hasEmbedded) {
-                $rootScope.$emit('attachment.upload', {
+                $rootScope.$emit(EVENT_NAME, {
                     type: 'upload',
                     data: {
                         messageID, message,
@@ -174,7 +178,7 @@ angular.module('proton.outside')
                     message.addAttachments(upload.map(({ attachment }) => attachment));
                     updateMapAttachments(upload);
 
-                    triggerEvent && $rootScope.$emit('attachment.upload', {
+                    triggerEvent && $rootScope.$emit(EVENT_NAME, {
                         type: 'upload.success',
                         data: { upload, message, messageID: message.ID }
                     });
@@ -257,10 +261,10 @@ angular.module('proton.outside')
 
                     if (packet.Inline === 1) {
                         // Attachment removed, may remove embedded ref from the editor too
-                        $rootScope.$emit('attachment.upload', { type: 'remove.embedded', data: state });
+                        $rootScope.$emit(EVENT_NAME, { type: 'remove.embedded', data: state });
                     }
                     message.removeAttachment(attachment);
-                    $rootScope.$emit('attachment.upload', { type: 'remove.success', data: state });
+                    $rootScope.$emit(EVENT_NAME, { type: 'remove.success', data: state });
                     cleanMap(state);
                 });
         }
@@ -358,6 +362,6 @@ angular.module('proton.outside')
         const getCurrentQueue = ({ ID }) => queueMessage[ID];
 
 
-        return { create, download, getCurrentQueue };
+        return { create, download, getCurrentQueue, load: angular.noop };
 
     });
