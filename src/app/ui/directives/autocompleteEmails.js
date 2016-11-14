@@ -173,8 +173,8 @@ angular.module('proton.ui')
             switch (e.keyCode) {
                 case TAB_KEY:
 
-                    // When the autocomplete is opened
-                    if (awesomplete.opened) {
+                    // When the autocomplete is opened and selected
+                    if (awesomplete.opened && awesomplete.selected) {
                         e.preventDefault();
                         awesomplete.select();
                         return _rAF(() => awesomplete.input.focus());
