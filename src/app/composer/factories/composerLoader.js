@@ -49,6 +49,8 @@ angular.module('proton.composer')
                     return;
                 }
 
+                const length = scope.messages.length;
+
                 _.each(scope.messages, (msg, iteratee) => {
                     msg.focussed = false;
                     if (iteratee > index) {
