@@ -16,6 +16,7 @@ angular.module('proton.outside')
          * @return {Function}       (<event>, <data:Object>) callback from $rootScope
          */
         const onAction = (scope, el) => (e, { type, data }) => {
+            debugger
             switch (type) {
                 case 'dragenter':
                     if (attachmentFileFormat.isUploadAbleType(data.event)) {
