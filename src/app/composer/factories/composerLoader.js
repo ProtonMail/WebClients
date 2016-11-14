@@ -49,12 +49,14 @@ angular.module('proton.composer')
                     return;
                 }
 
+                const messagesLength = scope.messages.length;
+
                 _.each(scope.messages, (msg, iteratee) => {
                     msg.focussed = false;
                     if (iteratee > index) {
-                        msg.zIndex = (length - (iteratee - index)) * 100;
+                        msg.zIndex = (messagesLength - (iteratee - index)) * 100;
                     } else {
-                        msg.zIndex = length * 100;
+                        msg.zIndex = messagesLength * 100;
                     }
                 });
                 message.focussed = true;
