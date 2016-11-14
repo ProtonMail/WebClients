@@ -26,115 +26,39 @@ angular.module('proton.controllers.Settings')
     $scope.disabledText = gettextCatalog.getString('Disable', null, 'Action');
     $scope.haveLogs = false;
 
-    $scope.showSharedSecret = function () {
-        const randomBytes = window.crypto.getRandomValues(new Uint8Array(20));
-        const sharedSecret = base32.encode(randomBytes);
-        let identifier = authentication.user.Name + '@protonmail';
-        const primaryAddress = _.find(authentication.user.Addresses, () => true);
-        if (primaryAddress) {
-            identifier = primaryAddress.Email;
-        }
-
-        const qrURI = 'otpauth://totp/' + identifier + '?secret=' + sharedSecret + '&issuer=protonmail&algorithm=SHA1&digits=6&period=30';
-
-        sharedSecretModal.activate({
+    function recoveryCodes(codes) {
+        recoveryCodeModal.activate({
             params: {
-                sharedSecret,
-                qrURI,
-                next() {
-                    sharedSecretModal.deactivate();
-                    $scope.confirm2FAEnable(sharedSecret, qrURI);
-                },
-                cancel() {
-                    sharedSecretModal.deactivate();
+                recoveryCodes: codes,
+                close() {
+                    recoveryCodeModal.deactivate();
                 }
             }
         });
-    };
+    }
 
-    $scope.confirm2FAEnable = function (sharedSecret, qrURI) {
+    function confirm2FAEnable(sharedSecret, qrURI) {
         function submit(loginPassword, twoFactorCode) {
-            loginPasswordModal.deactivate();
             networkActivityTracker.track(
-                Setting.enableTwoFactor(
-                    { TwoFactorSharedSecret: sharedSecret },
-                    { TwoFactorCode: twoFactorCode, Password: loginPassword }
-                )
+                Setting.enableTwoFactor({ TwoFactorSharedSecret: sharedSecret }, { TwoFactorCode: twoFactorCode, Password: loginPassword })
                 .then((result) => {
                     if (result.data && result.data.Code === 1000) {
-                        const recoveryCodes = result.data.TwoFactorRecoveryCodes;
+                        const codes = result.data.TwoFactorRecoveryCodes;
                         $scope.twoFactor = 1;
                         authentication.user.TwoFactor = 1;
-                        $scope.recoveryCodes(recoveryCodes);
+                        recoveryCodes(codes);
                     } else if (result.data && result.data.Error) {
-                        notify({ message: result.data.Error, classes: 'notification-danger' });
-                        sharedSecretModal.activate({
-                            params: {
-                                sharedSecret,
-                                qrURI,
-                                next() {
-                                    sharedSecretModal.deactivate();
-                                    // open the next step
-                                    $scope.confirm2FAEnable(sharedSecret, qrURI);
-                                },
-                                cancel() {
-                                    sharedSecretModal.deactivate();
-                                }
-                            }
-                        });
+                        $scope.showSharedSecret(sharedSecret, qrURI);
+                        return Promise.reject(result.data.Error);
                     }
                 })
             );
         }
-        $scope.checkCredentials2FA(submit);
-    };
+        checkCredentials2FA(submit);
+    }
 
-    $scope.recoveryCodes = function (recoveryCodes) {
-        const title = gettextCatalog.getString('Two-factor authentication enabled', null, 'Title');
-        const message = gettextCatalog.getString('Keep these recovery codes in a safe place. If you lose your two factor enabled device, these one-time use codes can be used in the listed order to log in to your account.', null, 'Info');
-        recoveryCodeModal.activate({
-            params: {
-                title,
-                message,
-                recoveryCodes,
-                download() {
-                    const blob = new Blob([recoveryCodes.join('\r\n')], { type: 'text/plain;charset=utf-8;' });
-                    window.saveAs(blob, 'protonmail_recovery_codes.txt');
-                },
-                done() {
-                    recoveryCodeModal.deactivate();
-                },
-                cancel() {
-                    recoveryCodeModal.deactivate();
-                }
-            }
-
-        });
-
-    };
-
-    $scope.disableTwoFactor = function () {
-        const titleConfirm = gettextCatalog.getString('Disable Two-Factor Authentication', null, 'Title');
-        const message = gettextCatalog.getString('Are you sure you want to disable two-factor authentication?', null, 'Info');
-        // const title_twofactor = gettextCatalog.getString('Confirm Disable Two-Factor Authentication');
-        confirmModal.activate({
-            params: {
-                title: titleConfirm,
-                message,
-                confirm() {
-                    confirmModal.deactivate();
-                    $scope.confirm2FADisable();
-                },
-                cancel() {
-                    confirmModal.deactivate();
-                }
-            }
-        });
-    };
-
-    $scope.confirm2FADisable = function () {
+    function confirm2FADisable() {
         function submit(loginPassword, twoFactorCode) {
-            loginPasswordModal.deactivate();
             networkActivityTracker.track(
                 Setting.disableTwoFactor({ TwoFactorCode: twoFactorCode, Password: loginPassword })
                 .then((result) => {
@@ -143,32 +67,68 @@ angular.module('proton.controllers.Settings')
                         authentication.user.TwoFactor = 0;
                         notify({ message: gettextCatalog.getString('Two-factor authentication disabled', null), classes: 'notification-success' });
                     } else if (result.data && result.data.Error) {
-                        notify({ message: result.data.Error, classes: 'notification-danger' });
-                        $scope.disableTwoFactor();
+                        return Promise.reject(result.data.Error);
                     }
                 })
             );
         }
-        $scope.checkCredentials2FA(submit);
-    };
+        checkCredentials2FA(submit);
+    }
 
-    $scope.checkCredentials2FA = function (submit) {
+    function checkCredentials2FA(submit) {
         loginPasswordModal.activate({
             params: {
-                submit,
+                hasTwoFactor: 1,
+                submit(loginPassword, twoFactorCode) {
+                    loginPasswordModal.deactivate();
+                    submit(loginPassword, twoFactorCode);
+                },
                 cancel() {
                     loginPasswordModal.deactivate();
+                }
+            }
+        });
+    }
+
+    $scope.showSharedSecret = (sharedSecret, qrURI) => {
+        sharedSecretModal.activate({
+            params: {
+                sharedSecret,
+                qrURI,
+                next(sharedSecret, qrURI) {
+                    sharedSecretModal.deactivate();
+                    confirm2FAEnable(sharedSecret, qrURI);
                 },
-                hasTwoFactor: 1
+                cancel() {
+                    sharedSecretModal.deactivate();
+                }
             }
         });
     };
 
-    $scope.loadLogs = function (page) {
+    $scope.disableTwoFactor = () => {
+        const title = gettextCatalog.getString('Disable Two-Factor Authentication', null, 'Title');
+        const message = gettextCatalog.getString('Are you sure you want to disable two-factor authentication?', null, 'Info');
+        confirmModal.activate({
+            params: {
+                title,
+                message,
+                confirm() {
+                    confirmModal.deactivate();
+                    confirm2FADisable();
+                },
+                cancel() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
+    $scope.loadLogs = (page) => {
         $scope.currentLogPage = page;
     };
 
-    $scope.initLogs = function () {
+    $scope.initLogs = () => {
         networkActivityTracker.track(
             Logs.getLogs().then(
                 (response) => {
@@ -185,7 +145,7 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.clearLogs = function () {
+    $scope.clearLogs = () => {
         const title = gettextCatalog.getString('Clear', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to clear all your logs?', null, 'Info');
 
@@ -213,7 +173,7 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.downloadLogs = function () {
+    $scope.downloadLogs = () => {
         const logsArray = [['Event', 'Time', 'IP']];
         const csvRows = [];
         const filename = 'logs.csv';
@@ -232,7 +192,7 @@ angular.module('proton.controllers.Settings')
         window.saveAs(blob, filename);
     };
 
-    $scope.setLogging = function (value) {
+    $scope.setLogging = (value) => {
         if (value === 0) {
             confirmModal.activate({
                 params: {
@@ -273,28 +233,5 @@ angular.module('proton.controllers.Settings')
                 })
             );
         }
-    };
-
-    $scope.exportPublicKey = function () {
-        const pbk = authentication.user.PublicKey;
-        const blob = new Blob([pbk], { type: 'data:text/plain;charset=utf-8;' });
-        const filename = 'protonmail_public_' + authentication.user.Name + '.txt';
-
-        try {
-            window.saveAs(blob, filename);
-        } catch (e) {
-            $log.error(e);
-        } finally {
-            $log.debug('saveAs');
-        }
-    };
-
-    // NOT USED
-    $scope.exportEncPrivateKey = function () {
-        const pbk = authentication.user.EncPrivateKey;
-        const blob = new Blob([pbk], { type: 'data:text/plain;charset=utf-8;' });
-        const filename = 'protonmail_private_' + authentication.user.Name + '.txt';
-
-        window.saveAs(blob, filename);
     };
 });

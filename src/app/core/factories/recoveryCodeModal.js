@@ -4,26 +4,18 @@ angular.module('proton.core')
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/twofactor/recoveryCode.tpl.html',
         controller(params) {
-            this.title = params.title;
-            this.message = params.message;
             this.recoveryCodesFirstHalf = params.recoveryCodes.slice(0, 8);
             this.recoveryCodesSecondHalf = params.recoveryCodes.slice(8, 16);
-            this.done = () => {
-                if (angular.isDefined(params.done) && angular.isFunction(params.done)) {
-                    params.done();
-                }
-            };
             this.download = () => {
-                if (angular.isDefined(params.download) && angular.isFunction(params.download)) {
-                    params.download();
-                }
+                const blob = new Blob([params.recoveryCodes.join('\r\n')], { type: 'text/plain;charset=utf-8;' });
+                window.saveAs(blob, 'protonmail_recovery_codes.txt');
+            };
+            this.done = () => {
+                params.close();
             };
             this.cancel = () => {
-                if (angular.isDefined(params.cancel) && angular.isFunction(params.cancel)) {
-                    params.cancel();
-                }
+                params.close();
             };
-
         }
     });
 });
