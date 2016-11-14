@@ -10,6 +10,7 @@ angular.module('proton.constants', [])
     BASE_SIZE: 1024, // define the base used for byte
     PM_SIGNATURE: 'Sent with <a href="https://protonmail.com" target="_blank">ProtonMail</a> Secure Email.',
     KEY_PHASE: 3,
+    MAX_OUTSIDE_REPLY: 4,
     MAILBOX_PASSWORD_KEY: 'proton:mailbox_pwd',
     OAUTH_KEY: 'proton:oauth',
     WHITELIST: ['notify@protonmail.com'],

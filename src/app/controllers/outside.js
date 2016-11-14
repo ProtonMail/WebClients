@@ -142,12 +142,17 @@ angular.module('proton.controllers.Outside', [
         element.wrap('<form>').closest('form').get(0).reset();
         element.unwrap();
     };
-
     /**
      * Send message
      */
     $scope.send = function () {
         const deferred = $q.defer();
+        const { Replies = [] } = $scope.message;
+
+        if (Replies.length >= CONSTANTS.MAX_OUTSIDE_REPLY) {
+            const message = gettextCatalog.getString("ProtonMail's Encrypted Outside feature only allows replying 5 times. <a href=\"https://protonmail.com/signup\" target=\"_blank\">You can sign up for ProtonMail for seamless and unlimited end-to-end encryption</a>.", null, 'Notification');
+            notify({ message });
+        }
 
         embedded
         .parser($scope.message, 'cid')
