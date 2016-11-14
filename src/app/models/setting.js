@@ -79,14 +79,12 @@ angular.module('proton.models.setting', ['proton.srp'])
             return $http.put(url.get() + '/settings/alsoarchive', params);
         },
         enableTwoFactor(params, creds) {
-            return srp
-                .performSRPRequest('POST', '/settings/2fa', params, creds)
-                .catch((error = {}) => Promise.reject(error.error_description || error));
+            return srp.performSRPRequest('POST', '/settings/2fa', params, creds)
+            .catch((error = {}) => Promise.reject(error.error_description || error));
         },
         disableTwoFactor(creds = {}) {
-            return srp
-                .performSRPRequest('PUT', '/settings/2fa', {}, creds)
-                .catch((error = {}) => Promise.reject(error.error_description || error));
+            return srp.performSRPRequest('PUT', '/settings/2fa', {}, creds)
+            .catch((error = {}) => Promise.reject(error.error_description || error));
         }
     };
 

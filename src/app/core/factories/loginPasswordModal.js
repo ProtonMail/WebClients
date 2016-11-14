@@ -7,20 +7,17 @@ angular.module('proton.core')
             this.loginPassword = '';
             this.twoFactorCode = '';
             this.hasTwoFactor = params.hasTwoFactor;
+
             $timeout(() => {
                 $('#loginPassword').focus();
             });
 
             this.submit = function () {
-                if (params.submit) {
-                    params.submit(this.loginPassword, this.twoFactorCode);
-                }
+                params.submit(this.loginPassword, this.twoFactorCode);
             }.bind(this);
 
             this.cancel = () => {
-                if (params.cancel) {
-                    params.cancel();
-                }
+                params.cancel();
             };
         }
     });

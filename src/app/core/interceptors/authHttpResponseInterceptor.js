@@ -90,6 +90,7 @@ angular.module('proton.core')
                 // Open the open to enter login password because this request require lock scope
                 loginPasswordModal.activate({
                     params: {
+                        hasTwoFactor: authentication.user.TwoFactor,
                         submit(loginPassword, twoFactorCode) {
                             // Send request to unlock the current session for administrator privileges
                             User.unlock({ Password: loginPassword, TwoFactorCode: twoFactorCode })
@@ -104,8 +105,7 @@ angular.module('proton.core')
                         cancel() {
                             loginPasswordModal.deactivate();
                             deferred.reject();
-                        },
-                        hasTwoFactor: authentication.user.TwoFactor
+                        }
                     }
                 });
 
