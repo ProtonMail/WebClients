@@ -1,5 +1,6 @@
 angular.module('proton.outside')
     .directive('composerOutside', ($rootScope, attachmentFileFormat) => {
+
         const CLASS_DRAGGABLE = 'composer-draggable';
         const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
 
@@ -16,7 +17,7 @@ angular.module('proton.outside')
          * @return {Function}       (<event>, <data:Object>) callback from $rootScope
          */
         const onAction = (scope, el) => (e, { type, data }) => {
-            debugger
+
             switch (type) {
                 case 'dragenter':
                     if (attachmentFileFormat.isUploadAbleType(data.event)) {
@@ -73,7 +74,7 @@ angular.module('proton.outside')
                 el.on('dragleave', onDragLeave);
 
                 const unsubscribeEditor = $rootScope.$on('editor.draggable', onAction(scope, el[0]));
-                const unsubscribeAtt = $rootScope.$on('attachment.upload', onAction(scope, el[0]));
+                const unsubscribeAtt = $rootScope.$on('attachment.upload.outside', onAction(scope, el[0]));
 
                 scope.$on('$destroy', () => {
                     el.off('dragenter', onDragEnter);
