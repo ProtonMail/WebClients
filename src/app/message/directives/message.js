@@ -85,11 +85,6 @@ angular.module('proton.message')
 
                         break;
 
-                    case 'injectContent':
-                        (data.action === 'remote') && displayImages(scope.message, scope.body, 'user.inject');
-                        (data.action === 'embedded') && displayEmbedded(scope.message, scope.body, 'user.inject');
-                        break;
-
                     case 'embedded.injected':
                         if (data.action === 'user.inject') {
                             // Custom refresh via injectMessageMedia

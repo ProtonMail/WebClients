@@ -236,29 +236,6 @@ angular.module('proton.controllers.Outside', [
         $state.go('eo.reply', { tag: $stateParams.tag });
     };
 
-    $scope.toggleImages = function () {
-        $scope.message.showImages = !$scope.message.showImages;
-        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, {
-            blacklist: ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']
-        }));
-    };
-
-
-    $scope.displayEmbedded = function () {
-        message = $scope.message;
-        message.showEmbedded = true;
-        embedded
-            .parser(message)
-            .then((content) => {
-                const body = prepareContent(content, message, {
-                    blacklist: ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']
-                });
-                message.setDecryptedBody(body);
-                $scope.message = message;
-            });
-    };
-
-
     function addAttachment(file) {
         let totalSize = message.attachmentsSize();
         const sizeLimit = CONSTANTS.ATTACHMENT_SIZE_LIMIT;
