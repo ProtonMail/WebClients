@@ -23,12 +23,43 @@ body#eo-reply {
 		margin: 0;
 	}
 
+    .composer-outside-container {position: relative;}
+
     .composer-askEmbedding {display: none !important}
     .composer-dropzone {display: none !important}
     .composer-dropzone * {pointer-events: none}
-    .composer-draggable .composer-dropzone,
-    .composer-draggable .composer-dropzone * {display: block !important}
-    .composer-draggable-editor .composer-askEmbedding {display: flex !important}
+    .composer-draggable:not(.composer-draggable-editor) .composer-dropzone {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: white;
+        z-index: 10;
+        display: flex !important;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .composer-draggable:not(.composer-draggable-editor) .composer-dropzone * { display: block !important}
+    .composer-draggable-editor .composer-askEmbedding {display: flex !important;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .composerAskEmbdded-details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 
     .composer-outside-editor iframe {
         width: 100%;
