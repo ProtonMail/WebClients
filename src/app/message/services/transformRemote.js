@@ -13,13 +13,27 @@ angular.module('proton.message')
         return new RegExp(`(${str})`, 'g');
     })();
 
+    /**
+     * Find inside the current parser DOM every content escaped
+     * and build a list of Object <attribute>:<value> but don't parse them if
+     * it is an embedded content.
+     * As we have many differents attributes we create a list
+     * @param  {Node} html parser
+     * @return {Array}
+     */
     function prepareInjection(html) {
+        // Query selector
         const selector = ATTRIBUTES.map((attr) => {
             const [ key ] = attr.split(':');
             return `[${key}]`;
         })
         .join(', ');
 
+        /**
+         * Create a map of every proton-x attribute and its value
+         * @param  {Node} node Current element
+         * @return {Object}
+         */
         const mapAttributes = (node) => {
             return _.chain(node.attributes)
                 .filter((attr) => ATTRIBUTES.indexOf(attr.name) !== -1)
@@ -28,6 +42,8 @@ angular.module('proton.message')
         };
 
         const $list = [].slice.call(html.querySelectorAll(selector));
+
+        // Create a list containing a map of every attributes (proton-x) per node
         const attributes = $list.reduce((acc, node) => {
             if (node.hasAttribute('proton-src')) {
                 const src = node.getAttribute('proton-src');
@@ -50,13 +66,16 @@ angular.module('proton.message')
         const showImages = message.showImages || user.ShowImages || (CONSTANTS.WHITELIST.indexOf(message.Sender.Address) !== -1 && !message.IsEncrypted) || $state.is('printer');
         const content = html.innerHTML;
 
-        // Bind the boolean only if there are somthing
+        // Bind the boolean only if there are something
         if (REGEXP_FIXER.test(content)) {
             message.showImages = showImages;
         }
 
         if (showImages) {
+
             html.innerHTML = content.replace(REGEXP_FIXER, (match, $1) => $1.substring(7));
+
+            // If load:manual we use a custom directive to inject the content
             if (action === 'user.inject') {
                 const list = prepareInjection(html, content, action);
 

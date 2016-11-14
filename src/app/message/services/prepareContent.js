@@ -21,7 +21,7 @@ angular.module('proton.message')
         return filters.filter(({ name }) => blacklist.indexOf(name) === -1);
     };
 
-    function parseRemote(content, message, { isBlacklisted = false, action }) {
+    function createParser(content, message, { isBlacklisted = false, action }) {
         const div = document.createElement('div');
 
         if (isBlacklisted) {
@@ -29,6 +29,7 @@ angular.module('proton.message')
             return div;
         }
 
+        // Escape All the things !
         return transformEscape(div, message, {
             action, content
         });
@@ -37,14 +38,16 @@ angular.module('proton.message')
     return (content, message, { blacklist = [], action } = {}) => {
 
         const transformers = getTransformers(blacklist);
-        const div = parseRemote(content, message, {
+        const div = createParser(content, message, {
             action,
-            isBlacklisted: blacklist.indexOf('transformRemote') > -1,
+            isBlacklisted: _.contains(blacklist, 'transformRemote')
         });
 
         const body = transformers.reduceRight((html, transformer) => transformer.action(html, message, action), div);
 
-        transformAttachement(body, message, action);
+        if (!_.contains(blacklist, 'transformAttachement')) {
+            transformAttachement(body, message, action);
+        }
 
         return transformRemote(body, message, { action }).innerHTML;
     };

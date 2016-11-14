@@ -34,7 +34,7 @@ angular.module('proton.controllers.Outside', [
     const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
     const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
     const tokenId = $stateParams.tag;
-    let message = messageData;
+    const message = messageData;
 
     function clean(body) {
         let content = angular.copy(body);
@@ -89,6 +89,7 @@ angular.module('proton.controllers.Outside', [
 
         embedded.parser(message).then((result) => {
             message.setDecryptedBody(result);
+            message.expand = true;
             $scope.message = message;
             $scope.body = message.getDecryptedBody();
             watchInput();

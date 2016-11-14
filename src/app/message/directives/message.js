@@ -86,12 +86,9 @@ angular.module('proton.message')
                         break;
 
                     case 'embedded.injected':
-                        if (data.action === 'user.inject') {
-                            // Custom refresh via injectMessageMedia
-                            return;
+                        if (!data.action) {
+                            scope.$applyAsync(() => scope.body = data.body);
                         }
-
-                        scope.$applyAsync(() => scope.body = data.body);
                         break;
 
                     case 'save.success':
@@ -167,8 +164,6 @@ angular.module('proton.message')
                     scope.message.isPlain = (type === 'plain');
                     if (type && body) {
                         scope.message.viewMode = 'html';
-                        debugger;
-
                         scope.body = body;
                     }
                 })
