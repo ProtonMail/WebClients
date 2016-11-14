@@ -20,18 +20,12 @@
             </li>
         </ul>
     </div>
-    <div id="message-body">
-        <squire ng-if="message" data-message="message"></squire>
-        <pre class="email" ng-show="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
-        <div class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
-            <span class="pull-left fa fa-exclamation-triangle"></span>
-            <strong translate-context="Error" translate>Decryption error</strong>
-            <div translate-context="Error" translate>Decryption of this message's encryption content failed.</div>
-        </div>
-    </div>
-
+    <composer-outside ng-if="message"><composer-outside>
+    <p class="alert alert-danger clearfix" role="alert" ng-if="message.failedDecryption">
+        <strong translate-context="Error" translate>Decryption error</strong><br />
+        <span translate-context="Error" translate>Decryption of this message's encryption content failed.</span>
+    </p>
     <list-attachments data-model="message"></list-attachments>
-
     <footer class="text-right">
         <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="cancel()" translate-context="Action" translate>Cancel</button>
         <button class="pm_button" ng-disabled="networkActivity.loading()" ng-click="selectFile()" pt-tooltip-translate="Attachments"><i class="fa fa-paperclip"></i></button>
