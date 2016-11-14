@@ -2,6 +2,7 @@ angular.module('proton.message')
     .directive('embeddedImgLoader', ($rootScope, $log, embedded) => {
 
         const buildMapCid = (map = {}, img, src) => (map[img.getAttribute('data-embedded-img')] = src, map);
+
         const getPromiseImg = (img, src) => {
             const image = new Image();
             return new Promise((resolve, reject) => {
@@ -36,20 +37,6 @@ angular.module('proton.message')
                     }
                     return acc;
                 }, { map: {}, list: [] });
-                // .reduce((acc, img) => {
-                //     const src = embedded.getUrl(img);
-                //     if (src) {
-                //         const image = new Image();
-                //         acc.push(new Promise((resolve, reject) => {
-                //             image.src = src;
-                //             image.onload = () => resolve({ img, src });
-                //             image.onerror = (error) => reject({ error, src });
-                //         }));
-                //     }
-                //     return acc;
-                // }, []);
-
-                // debugger
 
             Promise
                 .all(list)
