@@ -40,25 +40,22 @@
                 </span>
             </li>
         </ul>
-        <p class="display-image text-center pm_button" ng-show="message.showImages === false" id="showImages">
-            <a href="#" ng-click="toggleImages()">
-                <i class="fa fa-photo"></i> <span translate-context="Action" translate translate-comment="show images in an email button">Load remote content</span>
-            </a>
-        </p>
-        <p ng-show="message.showEmbedded === false" class="display-embedded text-center pm_button" ng-click="displayEmbedded()">
-            <a href="#">
-                <i class="fa fa-photo"></i>
-                <span translate translate-context="Action">Load embedded images</span>
-            </a>
-        </p>
 
-        <display-content-btn data-action="remote"></display-content-btn>
-        <display-content-btn data-action="embedded"></display-content-btn>
+        <display-content-btn
+            data-action="remote"
+            class="display-image text-center pm_button"
+            id="showImages"></display-content-btn>
+        <display-content-btn data-action="embedded" class="display-embedded text-center pm_button"></display-content-btn>
 
     </div>
     <div id="outsideMessage">
         <div id="message-body" data-embedded-img-loader data-inject-message-media>
-            <div class="email bodyDecrypted" ng-bind-html="message.getDecryptedBody(true)" toggle-blockquote mail-to scroll="false"></div>
+            <div
+                class="bodyDecrypted email"
+                render-message-body
+                ng-if="body"
+                toggle-blockquote
+                mail-to scroll="false"></div>
         </div>
     </div>
     <list-attachments data-model="message"></list-attachments>
