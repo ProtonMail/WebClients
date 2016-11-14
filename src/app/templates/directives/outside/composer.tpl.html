@@ -1,0 +1,7 @@
+<div class="composer-outside-container">
+    <div class="composeEditor fill">
+        <composer-ask-embedded class="askEmbedding composer-askEmbedding" ng-show="!preventDropbox"></composer-ask-embedded>
+        <div class="dropzone composer-dropzone fill" composer-dropzone id="dropzone_message{{::message.ID}}" ng-show="message.focussed && !preventDropbox"></div>
+        <squire data-message="message" allow-embedded="true" class="composer-editor"></squire>
+    </div>
+</div>
