@@ -8,7 +8,7 @@ angular.module('proton.core')
             const sharedSecret = base32.encode(randomBytes);
             const primaryAddress = _.find(authentication.user.Addresses, () => true);
             const identifier = (primaryAddress) ? primaryAddress.Email : authentication.user.Name + '@protonmail';
-            const qrURI = 'otpauth://totp/' + identifier + '?secret=' + sharedSecret + '&issuer=protonmail&algorithm=SHA1&digits=6&period=30';
+            const qrURI = 'otpauth://totp/' + identifier + '?secret=' + sharedSecret + '&issuer=ProtonMail&algorithm=SHA1&digits=6&period=30';
 
             this.sharedSecret = params.sharedSecret || sharedSecret;
             this.qrURI = params.qrURI || qrURI;
