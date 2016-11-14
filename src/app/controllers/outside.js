@@ -90,6 +90,9 @@ angular.module('proton.controllers.Outside', [
         embedded.parser(message).then((result) => {
             message.setDecryptedBody(result);
             message.expand = true;
+            message.From = {
+                Keys: [{ PublicKey: message.publicKey }]
+            };
             $scope.message = message;
             $scope.body = message.getDecryptedBody();
             watchInput();
