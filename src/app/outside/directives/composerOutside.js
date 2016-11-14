@@ -26,7 +26,7 @@ angular.module('proton.outside')
                     break;
                 case 'drop':
                     // Same event as the one coming from squire
-                    if (e.name === 'attachment.upload' && data.queue.files.length && data.queue.hasEmbedded) {
+                    if (e.name === 'attachment.upload.outside' && data.queue.files.length && data.queue.hasEmbedded) {
                         return addDragenterClassName(el, CLASS_DRAGGABLE_EDITOR);
                     }
                     addDragleaveClassName(el);
