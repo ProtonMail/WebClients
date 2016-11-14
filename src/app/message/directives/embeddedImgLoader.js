@@ -58,7 +58,8 @@ angular.module('proton.message')
                             $rootScope.$emit('message.open', {
                                 type: 'embedded.injected',
                                 data: {
-                                    action, map, message,
+                                    action,
+                                    map, message,
                                     body: body.innerHTML
                                 }
                             });

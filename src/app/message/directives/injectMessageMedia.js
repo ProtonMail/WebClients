@@ -28,17 +28,15 @@ angular.module('proton.message')
      * @param  {Array}  accumulator
      * @return {Array}
      */
-    function reducerLoader($list, config = {} , accumulator = []) {
-        const { attribute, selector } = config;
+    function reducerLoader($list, config = {}, accumulator = []) {
+        const { attribute, selector, setLoader = true } = config;
+
+        setLoader && $list.forEach(wrapImage);
+
         return $list.reduce((acc, node) => {
 
-            const resolver = { node, attribute, selector };
-
-            // Attach the loader
-            wrapImage(node);
-
             const promise = new Promise((resolve) => {
-
+                const resolver = { node, attribute, selector };
                 // Set a custom attribute with a custom value
                 node.setAttribute(attribute, config.getValue(node));
 
@@ -51,7 +49,7 @@ angular.module('proton.message')
                     console.error(`Could not load ${node.getAttribute(selector)}`);
                     resolve(resolver);
                 };
-            })
+            });
 
             acc.push(promise);
             return acc;
@@ -64,16 +62,22 @@ angular.module('proton.message')
      * @param  {Object} options.map Map {<cid:String>: <url:String>}
      * @return {void}
      */
-    function injectInlineEmbedded(el, { map }) {
+    function injectInlineEmbedded(el, { map, action }) {
         const node = el[0];
         const selector = Object.keys(map)
             .map((cid) => `[proton-src="${cid}"]`)
             .join(',');
-        const $list = [].slice.call(node.querySelectorAll(selector));
+        const $list = [].slice.call(node.querySelectorAll(selector || '[proton-src^="cid:"]'));
+
+        // Set the loader before we decrypt then load the image (better ux)
+        if (action === 'user.inject.load') {
+            return $list.forEach(wrapImage);
+        }
 
         const promises = reducerLoader($list, {
             selector: 'proton-src',
             attribute: 'src',
+            setLoader: false,
             map,
             getValue(node) {
                 return this.map[node.getAttribute('proton-src')];
@@ -133,7 +137,6 @@ angular.module('proton.message')
                         break;
                     }
 
-
                     case 'remote.injected':
                         if (data.action === 'user.inject') {
                             return injectInlineRemote(el, data);
@@ -141,6 +144,9 @@ angular.module('proton.message')
                         break;
 
                     case 'embedded.injected':
+                        if (data.action === 'user.inject.load') {
+                            return injectInlineEmbedded(el, data);
+                        }
                         if (data.action === 'user.inject') {
                             return injectInlineEmbedded(el, data);
                         }

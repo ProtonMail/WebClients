@@ -23,7 +23,6 @@ angular.module('proton.message')
                         action
                     }
                 });
-                console.log(getClassName(action));
                 el[0].classList.remove(getClassName(action));
             };
 

@@ -152,11 +152,10 @@ body#eo-reply {
 	}
 	.display-image,
 	.display-embedded {
-	    display: inline-block;
 	    margin: 0px 0px -1rem 10px;
 	    line-height: 35px;
 	    height: auto;
-	    width: initial;
+	    width: auto;
 	    background: #fff;
 	    box-sizing: initial;
 	    text-transform: uppercase;
@@ -170,19 +169,13 @@ body#eo-reply {
 	        -ms-transition: padding .1s ease;
 	         -o-transition: padding .1s ease;
 	            transition: padding .1s ease;
-		a {
-			color: $primary;
-            display: block;
-            width: 100%;
-			text-decoration: none;
-            text-decoration: none;
-	        background-color: #fff !important;
-		}
-		a:hover, a:focus {
+		text-decoration: none;
+        color: $primary;
+        &:focus {
+            background: #fff;
+        }
+        &:hover {
 			text-decoration: underline;
-		}
-	    &:hover {
-	        background: #fff;
 	    }
 	}
 	.message-metadata {
