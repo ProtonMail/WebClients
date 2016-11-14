@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('prepareContent', ($injector, transformAttachement, transformRemote) => {
+.factory('prepareContent', ($injector, transformAttachement, transformRemote, transformEscape) => {
     const filters = [
         'transformBase',
         'transformLinks',
@@ -21,21 +21,34 @@ angular.module('proton.message')
         return filters.filter(({ name }) => blacklist.indexOf(name) === -1);
     };
 
-    return (content, message, blacklist = []) => {
-
+    function createParser(content, message, { isBlacklisted = false, action }) {
         const div = document.createElement('div');
-        const transformers = getTransformers(blacklist);
 
-        if (blacklist.indexOf('transformRemote') > -1) {
+        if (isBlacklisted) {
             div.innerHTML = content;
-        } else {
-            div.innerHTML = transformRemote(content, message);
+            return div;
         }
 
-        const body = transformers.reduceRight((html, transformer) => transformer.action(html, message), div);
+        // Escape All the things !
+        return transformEscape(div, message, {
+            action, content
+        });
+    }
 
-        transformAttachement(body, message);
+    return (content, message, { blacklist = [], action } = {}) => {
 
-        return body.innerHTML;
+        const transformers = getTransformers(blacklist);
+        const div = createParser(content, message, {
+            action,
+            isBlacklisted: _.contains(blacklist, 'transformRemote')
+        });
+
+        const body = transformers.reduceRight((html, transformer) => transformer.action(html, message, action), div);
+
+        if (!_.contains(blacklist, 'transformAttachement')) {
+            transformAttachement(body, message, action);
+        }
+
+        return transformRemote(body, message, { action }).innerHTML;
     };
 });

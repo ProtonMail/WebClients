@@ -34,7 +34,7 @@ angular.module('proton.controllers.Outside', [
     const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
     const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
     const tokenId = $stateParams.tag;
-    let message = messageData;
+    const message = messageData;
 
     function clean(body) {
         let content = angular.copy(body);
@@ -89,7 +89,9 @@ angular.module('proton.controllers.Outside', [
 
         embedded.parser(message).then((result) => {
             message.setDecryptedBody(result);
+            message.expand = true;
             $scope.message = message;
+            $scope.body = message.getDecryptedBody();
             watchInput();
         });
 
@@ -234,25 +236,6 @@ angular.module('proton.controllers.Outside', [
     $scope.reply = function () {
         $state.go('eo.reply', { tag: $stateParams.tag });
     };
-
-    $scope.toggleImages = function () {
-        $scope.message.showImages = !$scope.message.showImages;
-        $scope.message.setDecryptedBody(prepareContent($scope.message.getDecryptedBody(), $scope.message, ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']));
-    };
-
-
-    $scope.displayEmbedded = function () {
-        message = $scope.message;
-        message.showEmbedded = true;
-        embedded
-            .parser(message)
-            .then((content) => {
-                const body = prepareContent(content, message, ['transformLinks', 'transformEmbedded', 'transformWelcome', 'transformBlockquotes']);
-                message.setDecryptedBody(body);
-                $scope.message = message;
-            });
-    };
-
 
     function addAttachment(file) {
         let totalSize = message.attachmentsSize();

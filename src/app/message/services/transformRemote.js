@@ -1,25 +1,92 @@
 angular.module('proton.message')
-.factory('transformRemote', ($state, authentication, CONSTANTS) => {
+.factory('transformRemote', ($state, $rootScope, authentication, CONSTANTS) => {
 
-    const REGEXP_IS_BREAK = new RegExp('(<svg|xlink:href|srcset|src=(?!"blob:|"cid:|"data:)|background=|poster=)', 'g');
-    const REGEXP_IS_FIX = new RegExp('(proton-url|proton-xlink:href|proton-srcset|proton-src|proton-svg|proton-background|proton-poster)', 'g');
-    const REGEXP_IS_URL = new RegExp(/url\(/ig);
+    const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map((name) => `proton-${name}`);
 
-    const replace = (regex, content) => content.replace(regex, (match) => 'proton-' + match);
+    const REGEXP_FIXER = (() => {
+        const str = ATTRIBUTES.map((key) => {
+            if (key === 'proton-src') {
+                return `${key}=(?!"cid)`;
+            }
+            return key;
+        }).join('|');
+        return new RegExp(`(${str})`, 'g');
+    })();
 
-    return (content, message) => {
+    /**
+     * Find inside the current parser DOM every content escaped
+     * and build a list of Object <attribute>:<value> but don't parse them if
+     * it is an embedded content.
+     * As we have many differents attributes we create a list
+     * @param  {Node} html parser
+     * @return {Array}
+     */
+    function prepareInjection(html) {
+        // Query selector
+        const selector = ATTRIBUTES.map((attr) => {
+            const [ key ] = attr.split(':');
+            return `[${key}]`;
+        })
+        .join(', ');
+
+        /**
+         * Create a map of every proton-x attribute and its value
+         * @param  {Node} node Current element
+         * @return {Object}
+         */
+        const mapAttributes = (node) => {
+            return _.chain(node.attributes)
+                .filter((attr) => ATTRIBUTES.indexOf(attr.name) !== -1)
+                .reduce((acc, attr) => (acc[`${attr.name}`] = attr.value, acc), {})
+                .value();
+        };
+
+        const $list = [].slice.call(html.querySelectorAll(selector));
+
+        // Create a list containing a map of every attributes (proton-x) per node
+        const attributes = $list.reduce((acc, node) => {
+            if (node.hasAttribute('proton-src')) {
+                const src = node.getAttribute('proton-src');
+
+                // We don't want to unescape attachments as we are going to proces them later
+                if (src.indexOf('cid:') !== -1) {
+                    return acc;
+                }
+            }
+            acc.push(mapAttributes(node));
+            return acc;
+        }, []);
+
+        return attributes;
+    }
+
+    return (html, message, { action }) => {
+
         const user = authentication.user || { ShowImages: 0 };
         const showImages = message.showImages || user.ShowImages || (CONSTANTS.WHITELIST.indexOf(message.Sender.Address) !== -1 && !message.IsEncrypted) || $state.is('printer');
+        const content = html.innerHTML;
 
-        if (content.search(REGEXP_IS_BREAK) !== -1 || content.search(REGEXP_IS_FIX) !== -1) {
+        // Bind the boolean only if there are something
+        if (REGEXP_FIXER.test(content)) {
             message.showImages = showImages;
-            if (showImages) {
-                return content.replace(REGEXP_IS_FIX, (match, $1) => $1.substring(7));
-            }
-
-            return replace(REGEXP_IS_URL, replace(REGEXP_IS_BREAK, content));
         }
 
-        return content;
+        if (showImages) {
+
+            html.innerHTML = content.replace(REGEXP_FIXER, (match, $1) => $1.substring(7));
+
+            // If load:manual we use a custom directive to inject the content
+            if (action === 'user.inject') {
+                const list = prepareInjection(html, content, action);
+
+                if (list.length) {
+                    $rootScope.$emit('message.open', {
+                        type: 'remote.injected',
+                        data: { action, list, message }
+                    });
+                }
+            }
+        }
+        return html;
     };
 });

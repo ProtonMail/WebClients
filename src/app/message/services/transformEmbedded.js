@@ -5,12 +5,12 @@ angular.module('proton.message')
 
     return (html, message) => {
 
-        const images = [].slice.call(html.querySelectorAll('img[src]'));
+        const images = [].slice.call(html.querySelectorAll('img[proton-src]'));
         const user = authentication.user || { ShowEmbedded: 0 };
         const show = message.showEmbedded === true || user.ShowEmbedded === 1;
 
         images.forEach((image) => {
-            const src = image.getAttribute('src');
+            const src = image.getAttribute('proton-src');
             const attachment = embedded.getAttachment(message, src);
 
             if (!image.classList.contains(EMBEDDED_CLASSNAME)) {

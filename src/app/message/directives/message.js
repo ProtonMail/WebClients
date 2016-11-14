@@ -86,7 +86,9 @@ angular.module('proton.message')
                         break;
 
                     case 'embedded.injected':
-                        scope.$applyAsync(() => scope.body = data.body);
+                        if (!data.action) {
+                            scope.$applyAsync(() => scope.body = data.body);
+                        }
                         break;
 
                     case 'save.success':
@@ -269,20 +271,6 @@ angular.module('proton.message')
                 };
                 window.addEventListener('message', sendMessage, false);
                 window.open(tab, '_blank');
-            };
-
-            /**
-             * Get the decrypted content and fix images inside
-             */
-            scope.displayImages = () => {
-                scope.body = displayImages(scope.message, scope.body);
-            };
-
-            /**
-             * Load embedded content from attachments
-             */
-            scope.displayEmbedded = () => {
-                scope.body = displayEmbedded(scope.message, scope.body);
             };
 
             /**

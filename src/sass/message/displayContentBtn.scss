@@ -1,0 +1,20 @@
+.displayContentBtn-container {
+    display: none;
+    width: 100%;
+    height: 2rem;
+    border: 0;
+    border-top: 1px solid $border;
+    background: $read;
+    font-size: .9em;
+    cursor: pointer;
+    vertical-align: middle;
+    text-decoration: underline;
+    color: blue;
+}
+
+.displayContentBtn-label { margin-left: .5em }
+
+.displayContentBtn-container.displayContentBtn-show {
+    &.displayContentBtn-type-embedded[data-action="embedded"],
+    &.displayContentBtn-type-remote[data-action="remote"] { display: inline-block }
+}

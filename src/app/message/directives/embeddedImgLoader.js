@@ -1,12 +1,23 @@
 angular.module('proton.message')
     .directive('embeddedImgLoader', ($rootScope, $log, embedded) => {
 
+        const buildMapCid = (map = {}, img, src) => (map[img.getAttribute('data-embedded-img')] = src, map);
+
+        const getPromiseImg = (img, src) => {
+            const image = new Image();
+            return new Promise((resolve, reject) => {
+                image.src = src;
+                image.onload = () => resolve({ img, src });
+                image.onerror = (error) => reject({ error, src });
+            });
+        };
+
         /**
          * Remove the loader and display embedded images
          * @param  {Node} body Container body mail
          * @return {void}
          */
-        const bindImagesUrl = (body, message) => {
+        const bindImagesUrl = ({ body, message, action }) => {
             const $list = body ? body.querySelectorAll('[data-embedded-img]') : [];
 
             /**
@@ -16,23 +27,19 @@ angular.module('proton.message')
              * Prevent Uncaught (in promise) TypeError: Illegal invocation
              * @type {Array}
              */
-            const promises = [].slice.call($list)
+            const { map, list } = [].slice.call($list)
                 .filter((img) => img.src.indexOf('cid:') === -1)
                 .reduce((acc, img) => {
                     const src = embedded.getUrl(img);
                     if (src) {
-                        const image = new Image();
-                        acc.push(new Promise((resolve, reject) => {
-                            image.src = src;
-                            image.onload = () => resolve({ img, src });
-                            image.onerror = (error) => reject({ error, src });
-                        }));
+                        buildMapCid(acc.map, img, src);
+                        acc.list.push(getPromiseImg(img, src));
                     }
                     return acc;
-                }, []);
+                }, { map: {}, list: [] });
 
             Promise
-                .all(promises)
+                .all(list)
                 .then((images) => {
                     _rAF(() => {
                         images.forEach(({ img, src }) => {
@@ -50,7 +57,11 @@ angular.module('proton.message')
                         if (images.length) {
                             $rootScope.$emit('message.open', {
                                 type: 'embedded.injected',
-                                data: { message, body: body.innerHTML }
+                                data: {
+                                    action,
+                                    map, message,
+                                    body: body.innerHTML
+                                }
                             });
                         }
                     });
@@ -61,12 +72,11 @@ angular.module('proton.message')
         return {
             link(scope) {
                 const unsubscribe = $rootScope
-                    .$on('message.embedded.loaded', (event, message, body) => {
-                        // Need to build images after the $digest as we need the decrypted body to be already compiled
-                        scope
-                            .$applyAsync(() => {
-                                bindImagesUrl(body, message);
-                            });
+                    .$on('message.embedded', (e, { type, data }) => {
+                        if (type === 'loaded') {
+                            // Need to build images after the $digest as we need the decrypted body to be already compiled
+                            scope.$applyAsync(() => bindImagesUrl(data));
+                        }
                     });
 
                 scope.$on('$destroy', () => unsubscribe());
