@@ -66,17 +66,29 @@ angular.module('proton.squire')
 
         const listenerAttachment = (editor, action) => {
             const key = ['attachment.upload', action].filter(Boolean).join('.');
+
             return $rootScope.$on(key, (e, { type, data }) => {
-                if (type === 'upload.success') {
-                    _.chain(data.upload)
-                        .filter(({ attachment = {} }) => attachment.Headers['content-disposition'] === 'inline')
-                        .each(({ cid, url }) => {
-                            // If we close the composer the editor won't exist anymore but maybe we were uploading an attchement
-                            editor.fireEvent('refresh', {
-                                action: 'attachment.embedded',
-                                data: { url, cid }
+
+                switch (type) {
+
+                    case 'upload.success':
+                        _.chain(data.upload)
+                            .filter(({ attachment = {} }) => attachment.Headers['content-disposition'] === 'inline')
+                            .each(({ cid, url }) => {
+                                // If we close the composer the editor won't exist anymore but maybe we were uploading an attchement
+                                editor.fireEvent('refresh', {
+                                    action: 'attachment.embedded',
+                                    data: { url, cid }
+                                });
                             });
+                        break;
+
+                    case 'remove.embedded':
+                        editor.fireEvent('refresh', {
+                            action: 'attachment.remove',
+                            data: data.attachment.Headers
                         });
+                        break;
                 }
             });
         };

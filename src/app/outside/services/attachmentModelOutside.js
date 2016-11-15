@@ -101,22 +101,16 @@ angular.module('proton.outside')
          */
         function remove(data) {
             const { id, message, packet, attachment } = data;
-            // const attachment = data.attachment || getAttachment(message, id);
+            const attConf = getConfigMapAttachment(id, attachment);
+            const state = angular.extend({}, attConf || data, { message, attachment, id });
 
-            // attachmentEoApi.remove(message, attachment)
-            //     .then(() => {
-
-            //         const attConf = getConfigMapAttachment(id, attachment);
-            //         const state = angular.extend({}, attConf || data, { message, attachment, id });
-
-                    if (packet.Inline === 1) {
-                        // Attachment removed, may remove embedded ref from the editor too
-                        dispatch('remove.embedded', data)
-                    }
-                    message.removeAttachment(attachment);
-                    dispatch('remove.success', data);
-                //     cleanMap(state);
-                // });
+            if (packet.Inline === 1) {
+                // Attachment removed, may remove embedded ref from the editor too
+                dispatch('remove.embedded', state);
+            }
+            message.removeAttachment(attachment);
+            dispatch('remove.success', state);
+            cleanMap(state);
         }
 
         /**
@@ -134,7 +128,7 @@ angular.module('proton.outside')
                         attachment,
                         message,
                         packet: {
-                            Inline: +MAP_ATTACHMENTS[attachment.ID].isEmbedded
+                            Inline: +isEmbedded(attachment)
                         }
                     });
                 });

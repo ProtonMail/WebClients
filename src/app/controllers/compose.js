@@ -455,65 +455,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
             });
     }
 
-    /**
-     * Watcher onInput to find and remove attachements if we remove an embedded
-     * image from the input
-     * @return {Function} Taking message as param
-     */
-    function removerEmbeddedWatcher() {
-        let latestCids = [];
-
-        return (message) => {
-            const input = message.editor.getHTML() || '';
-
-            // Extract CID per embedded image
-            const cids = (input.match(/(rel=("([^"]|"")*"))|(data-embedded-img=("([^"]|"")*"))/g) || [])
-                .map((value) => value.split(/rel="|data-embedded-img="/)[1].slice(0, -1));
-
-            // If we add or remove an embedded image, the diff is true
-            if (cids.length < latestCids.length) {
-                // Find attachements not in da input
-                const AttToRemove = message
-                    .Attachments
-                    .filter(({ uploading, Headers = {} }) => {
-
-                        // If the file is uploading it means: its first time
-                        if (uploading) {
-                            return false;
-                        }
-
-                        const cid = Headers['content-id'];
-                        if (cid) {
-                            return cids.indexOf(cid.replace(/[<>]+/g, '')) === -1;
-                        }
-
-                        return false;
-
-                    });
-
-                $rootScope.$emit('attachment.upload', {
-                    type: 'remove.all',
-                    data: {
-                        message,
-                        list: AttToRemove
-                    }
-                });
-            }
-
-            latestCids = cids;
-        };
-    }
-
     function listenEditor(message) {
-
-        // const watcherEmbedded = removerEmbeddedWatcher();
-
-        // // Check if we need to remove embedded after a delay
-        // message.editor.addEventListener('input', _.throttle(() => {
-        //     watcherEmbedded(message);
-        // }, 300));
-
-
         /**
          * There is an input triggered on load (thx to the signature ?)
          * so we will set the listener after a delay.

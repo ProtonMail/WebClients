@@ -91,11 +91,7 @@ angular.module('proton.squire')
         const insertImage = (message, value, file) => {
             const { editor } = editorModel.find(message);
             const addImage = (value, alt = '') => {
-                value && editor.insertImage(value, {
-                    'data-attachment-id': file.ID,
-                    class: 'proton-embedded',
-                    alt
-                });
+                value && editor.insertImage(value, {class: 'proton-embedded', alt });
             };
 
             if (file) {
