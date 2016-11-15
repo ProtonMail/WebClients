@@ -43,6 +43,12 @@ angular.module('proton.composer')
                             scope.$applyAsync(() => focusMessage(data));
                             break;
 
+                        case 'focus.first': {
+                            const notMinimized = _.findWhere(scope.messages, { minimized: false });
+                            notMinimized && openClose(type, { message: notMinimized });
+                            break;
+                        }
+
                         case 'close':
                             openClose(type, data);
                             break;
@@ -74,7 +80,6 @@ angular.module('proton.composer')
                             });
                             break;
                         }
-
                         default:
                             // Need to perform the rendering after the $digest to match each new composer
                             scope.$applyAsync(() => renderList(data));
