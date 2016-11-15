@@ -71,16 +71,16 @@ angular.module('proton.controllers.Auth', [
      * Focus the password field
      */
     function selectPassword() {
-        const input = angular.element('#password');
+        const input = document.getElementById('password');
         input.focus();
         input.select();
     }
 
-    const selectTwoFactor = function () {
-        const input = angular.element('#twoFactorCode');
+    function selectTwoFactor() {
+        const input = document.getElementById('twoFactorCode');
         input.focus();
         input.select();
-    };
+    }
 
     /**
     * Detect the #help parameter inside the URL and display the help modal
