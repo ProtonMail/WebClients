@@ -36,23 +36,6 @@ angular.module('proton.outside')
                     break;
                 case 'upload.success':
                     _rAF(() => addDragleaveClassName(el));
-                    scope.message.editor && _.chain(data.upload)
-                        .filter(({ attachment = {} }) => attachment.Headers['content-disposition'] === 'inline')
-                        .each(({ cid, url }) => {
-                            // If we close the composer the editor won't exist anymore but maybe we were uploading an attchement
-                            scope.message.editor.fireEvent('refresh', {
-                                action: 'attachment.embedded',
-                                data: { url, cid }
-                            });
-
-                        });
-                    break;
-
-                case 'remove.embedded':
-                    scope.message.editor.fireEvent('refresh', {
-                        action: 'attachment.remove',
-                        data: data.attachment.Headers
-                    });
                     break;
             }
         };
