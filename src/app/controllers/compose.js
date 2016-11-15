@@ -506,12 +506,12 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
 
     function listenEditor(message) {
 
-        const watcherEmbedded = removerEmbeddedWatcher();
+        // const watcherEmbedded = removerEmbeddedWatcher();
 
-        // Check if we need to remove embedded after a delay
-        message.editor.addEventListener('input', _.throttle(() => {
-            watcherEmbedded(message);
-        }, 300));
+        // // Check if we need to remove embedded after a delay
+        // message.editor.addEventListener('input', _.throttle(() => {
+        //     watcherEmbedded(message);
+        // }, 300));
 
 
         /**
