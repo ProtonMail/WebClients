@@ -49,7 +49,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
         $scope.selectedOrder = $stateParams.sort || '-date';
         $scope.page = parseInt($stateParams.page || 1, 10);
         $scope.startWatchingEvent();
-        $scope.refreshConversations().then(() => {
+        $scope.refreshElements().then(() => {
             $timeout(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
         }, (error) => {
@@ -128,7 +128,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
         });
 
         $scope.$on('refreshElements', () => {
-            $scope.refreshConversations();
+            $scope.refreshElements();
         });
 
         $scope.$on('openMarked', onElement(() => {
@@ -335,7 +335,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
         return params;
     };
 
-    $scope.refreshConversations = function () {
+    $scope.refreshElements = () => {
         const deferred = $q.defer();
         const request = $scope.getConversationsParameters($scope.mailbox);
         const context = tools.cacheContext();
