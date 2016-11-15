@@ -177,6 +177,8 @@ angular.module('proton.controllers.Outside', [
                     const promises = attachments.map((attachment) => {
                         const cid = embedded.getCid(attachment.Headers);
 
+                        debugger
+
                         if (cid) {
                             return embedded.getBlob(cid).then((blob) => {
                                 return Promise.resolve({
