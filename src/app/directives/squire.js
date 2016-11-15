@@ -19,10 +19,10 @@ angular.module('proton.squire')
         replace: true,
         transclude: true,
         templateUrl: 'templates/directives/squire.tpl.html',
-        link(scope, el, { typeContent = 'message' }) {
+        link(scope, el, { typeContent = 'message', action = '' }) {
 
             scope.data = {};
-            const listen = editorListener(scope, el, typeContent);
+            const listen = editorListener(scope, el, { typeContent, action });
 
             function updateModel(val, dispatchAction = false) {
 

@@ -42,6 +42,8 @@ angular.module('proton.attachments')
 
         $rootScope
             .$on('attachment.upload', (e, { type, data }) => {
+
+                console.trace(type, data);
                 switch (type) {
                     case 'close':
                         attachmentApi.killUpload(data);

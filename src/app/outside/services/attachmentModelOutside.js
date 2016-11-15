@@ -39,8 +39,18 @@ angular.module('proton.outside')
                 }
             });
 
-        function buildQueue({ queue }) {
+        function buildQueue({ queue, message }) {
             QUEUE.push(queue);
+
+            if (!queue.hasEmbedded) {
+                $rootScope.$emit(EVENT_NAME, {
+                    type: 'upload',
+                    data: {
+                        message,
+                        action: 'attachment'
+                    }
+                });
+            }
         }
 
         const packetToAttachment = (list = []) => {
@@ -64,7 +74,6 @@ angular.module('proton.outside')
                 isEmbedded && squireExecAction.insertImage(message, '', file);
             });
 
-            // if (action === 'attachment') {
                 Promise.all(promise)
                     .then(packetToAttachment)
                     .then((attachments) => {
@@ -75,29 +84,7 @@ angular.module('proton.outside')
                         console.log(attachments);
                     });
 
-            // }
-            // AttachmentLoader.load(file, publicKey).then((packets) => {
-            //     message.uploading = false;
-            //     $scope.resetFile();
 
-            //     // The id is for the front only and the BE ignores it
-            //     message.Attachments.push({
-            //         ID: `att_${Math.random().toString(32).slice(0, 12)}_${Date.now()}`,
-            //         Name: file.name,
-            //         Size: file.size,
-            //         Filename: packets.Filename,
-            //         MIMEType: packets.MIMEType,
-            //         KeyPackets: new Blob([packets.keys]),
-            //         DataPacket: new Blob([packets.data])
-            //     });
-            //     message.NumAttachments = message.Attachments.length;
-            //     $rootScope.$emit('attachmentAdded');
-            // }, (error) => {
-            //     message.uploading = false;
-            //     $scope.resetFile();
-            //     notify({ message: 'Error ', classes: 'notification-danger' });
-            //     $log.error(error);
-            // });
         }
 
 

@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication, editorDropzone) => {
+    .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication, editorDropzone, removeInlineWatcher) => {
 
         const isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
 
@@ -64,6 +64,56 @@ angular.module('proton.squire')
             return isEnd ? _.debounce(cb, 500) : cb;
         };
 
+        // /**
+        //  * Watcher onInput to find and remove attachements if we remove an embedded
+        //  * image from the input
+        //  * @return {Function} Taking message as param
+        //  */
+        // function removerEmbeddedWatcher(action) {
+        //     let latestCids = [];
+        //     const key = ['attachment.upload', action].filter(Boolean).join('.');
+
+        //     return (message, editor) => {
+        //         const input = editor.getHTML() || '';
+
+        //         // Extract CID per embedded image
+        //         const cids = (input.match(/(rel=("([^"]|"")*"))|(data-embedded-img=("([^"]|"")*"))/g) || [])
+        //             .map((value) => value.split(/rel="|data-embedded-img="/)[1].slice(0, -1));
+
+        //         // If we add or remove an embedded image, the diff is true
+        //         if (cids.length < latestCids.length) {
+        //             // Find attachements not in da input
+        //             const AttToRemove = message
+        //                 .Attachments
+        //                 .filter(({ uploading, Headers = {} }) => {
+
+        //                     // If the file is uploading it means: its first time
+        //                     if (uploading) {
+        //                         return false;
+        //                     }
+
+        //                     const cid = Headers['content-id'];
+        //                     if (cid) {
+        //                         return cids.indexOf(cid.replace(/[<>]+/g, '')) === -1;
+        //                     }
+
+        //                     return false;
+
+        //                 });
+
+        //         }
+        //         $rootScope.$emit(key, {
+        //             type: 'remove.all',
+        //             data: {
+        //                 message,
+        //                 list: AttToRemove
+        //             }
+        //         });
+
+        //         latestCids = cids;
+        //     };
+        // }
+
         /**
          * Bind events to the current editor based on
          *     - Current state
@@ -74,7 +124,7 @@ angular.module('proton.squire')
          * @param  {String} typeContent
          * @return {Function}             Bind events
          */
-        return (scope, el, typeContent) => {
+        return (scope, el, { typeContent, action }) => {
 
             // For a type !== message vodoo magic "realtime"
             const timeout = (typeContent === 'message') ? TIMEOUTAPP : 32;
@@ -83,10 +133,19 @@ angular.module('proton.squire')
             return (updateModel, editor) => {
 
                 let unsubscribe = angular.noop;
+                let onRemoveEmbedded = angular.noop;
 
                 // Custom dropzone to insert content into the editor if it's not a composer
                 if (!isMessage(typeContent)) {
                     unsubscribe = editorDropzone(el, scope.message, editor);
+                }
+
+                // Watcher to detect when the user remove an embedded image
+                if (isMessage(typeContent)) {
+                    const watcherEmbedded = removeInlineWatcher(action);
+                    onRemoveEmbedded = _.throttle(() => watcherEmbedded(scope.message, editor), 300);
+                    // Check if we need to remove embedded after a delay
+                    editor.addEventListener('input', onRemoveEmbedded);
                 }
 
                 ['dragleave', 'dragenter', 'drop']
@@ -170,6 +229,7 @@ angular.module('proton.squire')
                     editor.removeEventListener('focus', onFocus);
                     editor.removeEventListener('blur', onBlur);
                     editor.removeEventListener('mscontrolselect', onMsctrlSelect);
+                    editor.removeEventListener('input', onRemoveEmbedded);
                 };
             };
 
