@@ -350,8 +350,16 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
 
         promise.then((elements) => {
             const page = $stateParams.page || 0;
-
-            $scope.conversations = elements;
+            const selectedMap = $scope.conversations.reduce((map, element) => {
+                if (element.Selected) {
+                    map[element.ID] = element;
+                }
+                return map;
+            }, {});
+            $scope.conversations = elements.map((element) => {
+                element.Selected = typeof selectedMap[element.ID] !== 'undefined';
+                return element;
+            });
             $scope.watchElements();
             $scope.firstLoad = false;
 
@@ -528,10 +536,10 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
      * Return [IDs]
      * @return {Array}
      */
-    $scope.idsSelected = () => {
+    function idsSelected() {
         const elementsSelected = $scope.elementsSelected();
         return elementsSelected.map(({ ID }) => ID);
-    };
+    }
 
     /**
      * Go to the next conversation
@@ -568,7 +576,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
      */
     $scope.read = function () {
         const type = tools.typeList();
-        const ids = $scope.idsSelected();
+        const ids = idsSelected();
 
         if (type === 'conversation') {
             actionConversation.readConversation(ids);
@@ -582,7 +590,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
      */
     $scope.unread = function () {
         const type = tools.typeList();
-        const ids = $scope.idsSelected();
+        const ids = idsSelected();
 
         if (type === 'conversation') {
             actionConversation.unreadConversation(ids);
@@ -608,7 +616,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
                 message,
                 confirm() {
                     const type = tools.typeList();
-                    const ids = $scope.idsSelected();
+                    const ids = idsSelected();
 
                     if (type === 'conversation') {
                         actionConversation.deleteConversation(ids);
@@ -643,7 +651,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
     $scope.move = function (mailbox) {
         const type = tools.typeList();
 
-        const ids = $scope.idsSelected();
+        const ids = idsSelected();
         if (ids.length === 0) {
             return;
         }
@@ -666,7 +674,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
      */
     $scope.saveLabels = function (labels, alsoArchive) {
         const type = tools.typeList();
-        const ids = $scope.idsSelected();
+        const ids = idsSelected();
 
         if (type === 'conversation') {
             actionConversation.labelConversation(ids, labels, alsoArchive);
