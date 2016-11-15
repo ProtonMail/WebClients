@@ -99,7 +99,7 @@ angular.module('proton.squire')
             };
 
             if (file) {
-                insertFile(file).then((body) => addImage(body, file.name));
+                insertFile(file).then((body) => addImage(body, file.name || file.Name));
             } else {
                 addImage(value);
             }
