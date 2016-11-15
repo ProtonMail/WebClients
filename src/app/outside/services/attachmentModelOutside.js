@@ -1,10 +1,9 @@
 angular.module('proton.outside')
-    .factory('attachmentModelOutside', ($log, $q, attachmentApi, AttachmentLoader, $rootScope, embedded, notify, networkActivityTracker, squireExecAction) => {
+    .factory('attachmentModelOutside', ($log, $q, attachmentApi, AttachmentLoader, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
 
         const EVENT_NAME = 'attachment.upload.outside';
         const QUEUE = [];
-        const MAP_ATTACHMENTS = {};
-
+        let MAP_ATTACHMENTS = {};
         const notifyError = (message) => notify({ message, classes: 'notification-danger' });
 
         const dispatch = (type, data) => $rootScope.$emit(EVENT_NAME, { type, data });
@@ -68,41 +67,27 @@ angular.module('proton.outside')
         function convertQueue({ message, action }) {
             const publicKey = message.publicKey;
 
-            const { promise, map } = QUEUE.reduce((acc, { files }) => acc.concat(files), [])
-                .reduce((acc, cfg) => {
-                    acc.promise.push(AttachmentLoader.load(cfg.file, publicKey));
-                    acc.map[cfg.file.name] = cfg;
-                    return acc;
-                }, { promise: [], map: {} });
+            const files = QUEUE.reduce((acc, { files }) => acc.concat(files), []);
 
-            Promise.all(promise)
-                .then(packetToAttachment)
-                .then((list) => (message.addAttachments(list), list))
-                .then((attachments) => {
-                    $rootScope.$emit('attachmentAdded');
-                    dispatchMessageAction(message);
-                    return attachments;
-                })
-                .then((attachments) => {
-                    attachments.forEach((att) => {
-                        const config = map[att.Name] || {};
-                        if (config.isEmbedded) {
-                            const file = config.file;
-                            file.ID = att.ID;
-                            squireExecAction.insertImage(message, '', file);
-                        }
+            if (action === 'attachment') {
+                const promise = files.map(({ file }) => AttachmentLoader.load(file, publicKey));
+                Promise.all(promise)
+                    .then(packetToAttachment)
+                    .then((list) => (message.addAttachments(list), list))
+                    .then(() => {
+                        $rootScope.$emit('attachmentAdded');
+                        dispatchMessageAction(message);
+                        QUEUE.length = 0;
                     });
-                })
-                .then(() => {
-                    message.Attachments.forEach((att) => {
-                        const config = map[att.Name] || {};
-                        MAP_ATTACHMENTS[att.ID] = {
-                            file: config.file || att,
-                            isEmbedded: !!config.isEmbedded
-                        };
+            } else {
+
+                upload(files, message, action)
+                    .then(() => {
+                        message.uploading = 0;
+                        QUEUE.length = 0;
                     });
-                    QUEUE.length = 0;
-                });
+            }
+
         }
 
         /**
@@ -152,6 +137,193 @@ angular.module('proton.outside')
                             Inline: +MAP_ATTACHMENTS[attachment.ID].isEmbedded
                         }
                     });
+                });
+        }
+
+
+
+
+
+
+
+
+        /**
+         * Create a map [<REQUEST>] = <upload>
+         * So we can have every informations for a request such as attachment etc.
+         * Usefull for removing attachment as it can send us:
+         *     - REQUEST_ID for new composer with new attachments
+         *     - ATTACHEMENT_ID for a composer (ex:reply) with attachments
+         * @param  {Array} uploads
+         * @return {void}
+         */
+        const updateMapAttachments = (uploads = []) => {
+            MAP_ATTACHMENTS = uploads
+                .reduce((acc, att) => (acc[att.REQUEST_ID] = att, acc), MAP_ATTACHMENTS);
+        };
+
+        /**
+         * Get an attachment for a message by its ID
+         *     => IT CAN BE A REQUEST_ID cf composerAttachment component
+         * @param  {Message} message
+         * @param  {String} id      REQUEST_ID || AttachmentID
+         * @return {Object}         Attachment
+         */
+        const getAttachment = (message, id) => {
+            // This is a requestID
+            if (MAP_ATTACHMENTS[id]) {
+                return MAP_ATTACHMENTS[id].attachment;
+            }
+            return _.findWhere(message.Attachments, { ID: id });
+        };
+
+        /**
+         * Upload a list of attachments [...File]
+         * @param  {Array}  queue   List of File
+         * @param  {Object} message
+         * @param  {String} action  attachment|inline (type of attachment) (default: attachment)
+         * @param  {Boolean} triggerEvent Dispatch an event to refresh the view (default: true)
+         * @param  {String} cid Content ID
+         * @return {Promise}
+         */
+        function upload(queue = [], message = {}, action = 'attachment', triggerEvent = true, cid = '') {
+            const deferred = $q.defer();
+            const promises = _.map(queue, ({ file, isEmbedded }, i, list) => {
+                // required for BE to get a cid-header
+                file.inline = +(isEmbedded && action === 'inline');
+                return addAttachment(file, message, isEmbedded, list.length, cid);
+            });
+
+            message.uploading = promises.length;
+            dispatchMessageAction(message);
+
+            composerRequestModel.save(message, deferred);
+            networkActivityTracker.track(deferred.promise);
+
+            return Promise
+                .all(promises)
+                .then((upload) => upload.filter(Boolean)) // will be undefined for aborted request
+                .then((upload) => {
+                    message.uploading = 0;
+                    dispatchMessageAction(message);
+
+                    // Create embedded and replace theses files from the upload list
+                    const embeddedMap = addEmbedded(upload, message);
+                    return _.map(upload, (config) => {
+                        return embeddedMap[config.attachment.ID] || config;
+                    });
+                })
+                .then((upload) => {
+
+                    message.addAttachments(upload.map(({ attachment }) => attachment));
+                    updateMapAttachments(upload);
+
+                    triggerEvent && dispatch('upload.success', { upload, message, messageID: message.ID });
+
+                    deferred.resolve();
+                    return upload;
+                })
+                .catch((err) => {
+                    dispatchMessageAction(message);
+                    deferred.reject(err);
+                });
+        }
+
+        /**
+         * Check if an attachment is Embedded
+         * @param  {Object}  options.Headers
+         * @return {Boolean}
+         */
+        function isEmbedded({ Headers = {} }) {
+            return Headers['content-disposition'] === 'inline';
+        }
+
+        /**
+         * Filter a list of uploaded attachments to create embedded
+         * @param {Array}  list    List of uploaded attachments
+         * @param {Object} message
+         * @return {Object}         Map[<attachmentID>] = config
+         */
+        function addEmbedded(list = [], message = {}) {
+            return _.chain(list)
+                .filter(({ attachment = {} }) => isEmbedded(attachment))
+                .filter(({ cid }) => cid)
+                .map(({ packets, attachment, sessionKey, cid, REQUEST_ID }) => {
+                    const { url } = embedded.addEmbedded(message, cid, packets.Preview, attachment.MIMEType);
+                    return { packets, sessionKey, attachment, cid, url, REQUEST_ID };
+                })
+                .reduce((acc, o) => (acc[o.attachment.ID] = o, acc), {})
+                .value();
+        }
+
+        /**
+         * Get a config for an attachment if available
+         * It cames from its REQUEST_ID or if not we can try to find it
+         * via its ATTACHMENT_ID.
+         * If not it MUST return undefined
+         * @param  {String} id         REQUEST_ID (can be ATTACHMENT_ID)
+         * @param  {Object} attachment
+         * @return {Object}            Undefined if no configuration is available
+         */
+        function getConfigMapAttachment(id, attachment) {
+            if (MAP_ATTACHMENTS[id]) {
+                return MAP_ATTACHMENTS[id];
+            }
+
+            return _.filter(MAP_ATTACHMENTS, (config) => config.attachment.ID === attachment.ID)[0];
+        }
+
+        function cleanMap({ REQUEST_ID }) {
+            delete MAP_ATTACHMENTS[REQUEST_ID];
+        }
+
+        /**
+         * Add a new attachment, upload it to the server
+         * @param {File} file
+         * @param {Message} message
+         * @param {Boolean} insert Embedded or not
+         * @param {Number} total Total of attachments
+         * @param {String} cid Content ID
+         */
+        function addAttachment(file, message, insert = true, total = 1, cid = '') {
+            const tempPacket = {
+                filename: file.name,
+                uploading: true,
+                Size: file.size,
+                ContentID: cid,
+                Inline: file.inline || 0
+            };
+
+            // force update the embedded counter
+            if (tempPacket.Inline) {
+                message.NumEmbedded++;
+            }
+
+            message.attachmentsToggle = true;
+
+            return AttachmentLoader
+                .load(file, message.From.Keys[0].PublicKey)
+                .then((packets) => {
+                    return attachmentApi.upload(packets, message, tempPacket, total)
+                        .then(({ attachment, sessionKey, REQUEST_ID, isAborted }) => {
+
+                            if (isAborted) {
+                                return;
+                            }
+
+                            // Extract content-id even if there are no headers
+                            const contentId = (attachment.Headers || {})['content-id'] || '';
+                            const cid = contentId.replace(/[<>]+/g, '');
+                            return { attachment, sessionKey, packets, cid, REQUEST_ID };
+                        })
+                        .catch((err) => {
+                            $log.error(err);
+                            notifyError('Error during file upload');
+                        });
+                })
+                .catch((err) => {
+                    $log.error(err);
+                    notifyError('Error encrypting attachment');
+                    throw err;
                 });
         }
 

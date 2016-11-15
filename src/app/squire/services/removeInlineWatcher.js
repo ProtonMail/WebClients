@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .factory('removeInlineWatcher', (editorModel, $rootScope) => {
+    .factory('removeInlineWatcher', ($state, $rootScope) => {
 
         const getAttachmentIDs = (input, message, { dispatch, latest }) => {
             // Extract CID per embedded image
@@ -70,7 +70,7 @@ angular.module('proton.squire')
                 const input = editor.getHTML() || '';
 
                 getAttachmentIDs(input, message, { dispatch, latest });
-                getCIDs(input, message, { dispatch, latest });
+                !$state.is('eo.reply') && getCIDs(input, message, { dispatch, latest });
 
             };
         }

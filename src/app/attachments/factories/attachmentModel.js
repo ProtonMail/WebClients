@@ -3,7 +3,9 @@ angular.module('proton.attachments')
 
         const queueMessage = {};
         let MAP_ATTACHMENTS = {};
+        const EVENT_NAME = 'attachment.upload';
         const notifyError = (message) => notify({ message, classes: 'notification-danger' });
+        const dispatch = (type, data) => $rootScope.$emit(EVENT_NAME, { type, data });
 
         /**
          * Dispatch an event for the sending button
@@ -41,7 +43,7 @@ angular.module('proton.attachments')
         };
 
         $rootScope
-            .$on('attachment.upload', (e, { type, data }) => {
+            .$on(EVENT_NAME, (e, { type, data }) => {
 
                 console.trace(type, data);
                 switch (type) {
@@ -82,12 +84,9 @@ angular.module('proton.attachments')
             queueMessage[messageID] = queue;
 
             if (!queue.hasEmbedded) {
-                $rootScope.$emit('attachment.upload', {
-                    type: 'upload',
-                    data: {
-                        messageID, message,
-                        action: 'attachment'
-                    }
+                dispatch('upload', {
+                    messageID, message,
+                    action: 'attachment'
                 });
             }
         }
@@ -176,10 +175,7 @@ angular.module('proton.attachments')
                     message.addAttachments(upload.map(({ attachment }) => attachment));
                     updateMapAttachments(upload);
 
-                    triggerEvent && $rootScope.$emit('attachment.upload', {
-                        type: 'upload.success',
-                        data: { upload, message, messageID: message.ID }
-                    });
+                    triggerEvent && dispatch('upload.success', { upload, message, messageID: message.ID });
 
                     deferred.resolve();
                     return upload;
@@ -259,10 +255,10 @@ angular.module('proton.attachments')
 
                     if (packet.Inline === 1) {
                         // Attachment removed, may remove embedded ref from the editor too
-                        $rootScope.$emit('attachment.upload', { type: 'remove.embedded', data: state });
+                        dispatch('remove.embedded', state);
                     }
                     message.removeAttachment(attachment);
-                    $rootScope.$emit('attachment.upload', { type: 'remove.success', data: state });
+                    dispatch('remove.success', state);
                     cleanMap(state);
                 });
         }
