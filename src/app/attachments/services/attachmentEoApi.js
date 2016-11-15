@@ -83,7 +83,7 @@ angular.module('proton.attachments')
 
         const upload = (packets, message, tempPacket, total) => {
             const attachment = {
-                ID: "XXX!",
+                ID: btoa(`${packets.Filename}${Date.now()}`),
                 Name: packets.Filename,
                 Size: packets.FileSize,
                 MIMEType: packets.MIMEType,
