@@ -157,84 +157,73 @@ angular.module('proton.controllers.Outside', [
             notify({ message });
         }
 
-        embedded
-        .parser($scope.message, 'cid')
-        .then((result) => {
-            const bodyPromise = pmcw.encryptMessage(result, $scope.message.publicKey);
-            const replyBodyPromise = pmcw.encryptMessage(result, [], password);
-
-            $q.all({
-                Body: bodyPromise,
-                ReplyBody: replyBodyPromise
+        embedded.parser($scope.message, 'cid')
+            .then((result) => {
+                const bodyPromise = pmcw.encryptMessage(result, $scope.message.publicKey);
+                const replyBodyPromise = pmcw.encryptMessage(result, [], password);
+                return $q.all({ Body: bodyPromise, ReplyBody: replyBodyPromise });
             })
-            .then(
-                (result) => {
-                    const Filename = [];
-                    const MIMEType = [];
-                    const KeyPackets = [];
-                    const DataPacket = [];
-                    const attachments = $scope.message.Attachments || [];
-                    const promises = attachments.map((attachment) => {
-                        const cid = embedded.getCid(attachment.Headers);
+            .then(({ Body, ReplyBody }) => {
 
-                        debugger
-
-                        if (cid) {
-                            return embedded.getBlob(cid).then((blob) => {
-                                return Promise.resolve({
-                                    Filename: attachment.Name,
-                                    DataPacket: blob,
-                                    MIMEType: attachment.MIMEType,
-                                    KeyPackets: new Blob([attachment.KeyPackets]),
-                                    Headers: attachment.Headers
-                                });
-                            });
-                        }
-
-                        return Promise.resolve({
-                            Filename: attachment.Filename,
-                            DataPacket: attachment.DataPacket,
-                            MIMEType: attachment.MIMEType,
-                            KeyPackets: attachment.KeyPackets
-                        });
+                const attachments = $scope.message.Attachments || [];
+                const promises = attachments.map((attachment) => {
+                    const cid = embedded.getCid(attachment.Headers);
+                    if (cid) {
+                        return embedded.getBlob(cid)
+                            .then((blob) => ({
+                                CID: cid,
+                                Filename: attachment.Name,
+                                DataPacket: blob,
+                                MIMEType: attachment.MIMEType,
+                                KeyPackets: new Blob([attachment.KeyPackets]),
+                                Headers: attachment.Headers
+                            }));
+                    }
+                    return Promise.resolve({
+                        Filename: attachment.Filename,
+                        DataPacket: attachment.DataPacket,
+                        MIMEType: attachment.MIMEType,
+                        KeyPackets: attachment.KeyPackets
                     });
+                });
 
-                    Promise.all(promises)
+                Promise.all(promises)
                     .then((attachments) => {
-                        attachments.forEach((attachment) => {
-                            Filename.push(attachment.Filename);
-                            DataPacket.push(attachment.DataPacket);
-                            MIMEType.push(attachment.MIMEType);
-                            KeyPackets.push(attachment.KeyPackets);
-                        });
-
+                        return attachments.reduce((acc, { Filename, DataPacket, MIMEType, KeyPackets, CID = '' }) => {
+                            acc.Filename.push(Filename);
+                            acc.DataPacket.push(DataPacket);
+                            acc.MIMEType.push(MIMEType);
+                            acc.KeyPackets.push(KeyPackets);
+                            acc.ContentID.push(CID);
+                            return acc;
+                        }, { Filename: [], DataPacket: [], MIMEType: [], KeyPackets: [], ContentID: [] });
+                    })
+                    .then(({ Filename, MIMEType, KeyPackets, ContentID, DataPacket }) => {
                         Eo.reply(decryptedToken, tokenId, {
-                            Body: result.Body,
-                            ReplyBody: result.ReplyBody,
+                            Body, ReplyBody,
                             'Filename[]': Filename,
                             'MIMEType[]': MIMEType,
                             'KeyPackets[]': KeyPackets,
+                            'ContentID[]': ContentID,
                             'DataPacket[]': DataPacket
                         })
-                        .then(
-                            (result) => {
-                                $state.go('eo.message', { tag: $stateParams.tag });
-                                notify({ message: gettextCatalog.getString('Message sent', null), classes: 'notification-success' });
-                                deferred.resolve(result);
-                            },
-                            (error) => {
-                                error.message = gettextCatalog.getString('Error during the reply process', null, 'Error');
-                                deferred.reject(error);
-                            }
-                        );
+                        .then((result) => {
+                            $state.go('eo.message', { tag: $stateParams.tag });
+                            notify({ message: gettextCatalog.getString('Message sent', null), classes: 'notification-success' });
+                            deferred.resolve(result);
+                        })
+                        .catch((error) => {
+                            console.error(error);
+                            error.message = gettextCatalog.getString('Error during the reply process', null, 'Error');
+                            deferred.reject(error);
+                        });
                     });
-                },
-                (error) => {
-                    error.message = gettextCatalog.getString('Error during the encryption', null, 'Error');
-                    deferred.reject(error);
-                }
-            );
-        });
+            })
+            .catch((error) => {
+                console.error(error);
+                error.message = gettextCatalog.getString('Error during the encryption', null, 'Error');
+                deferred.reject(error);
+            });
 
         return networkActivityTracker.track(deferred.promise);
     };
