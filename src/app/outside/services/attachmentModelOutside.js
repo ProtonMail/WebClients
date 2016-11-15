@@ -1,5 +1,5 @@
 angular.module('proton.outside')
-    .factory('attachmentModelOutside', ($log, $q, attachmentApi, AttachmentLoader, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
+    .factory('attachmentModelOutside', ($log, $q, attachmentEoApi, AttachmentLoader, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
 
         const EVENT_NAME = 'attachment.upload.outside';
         const QUEUE = [];
@@ -21,7 +21,7 @@ angular.module('proton.outside')
 
                 switch (type) {
                     // case 'close':
-                    //     attachmentApi.killUpload(data);
+                    //     attachmentEoApi.killUpload(data);
                     //     break;
                     // case 'cancel':
                     //     dispatchMessageAction(data.message);
@@ -103,7 +103,7 @@ angular.module('proton.outside')
             const { id, message, packet, attachment } = data;
             // const attachment = data.attachment || getAttachment(message, id);
 
-            // attachmentApi.remove(message, attachment)
+            // attachmentEoApi.remove(message, attachment)
             //     .then(() => {
 
             //         const attConf = getConfigMapAttachment(id, attachment);
@@ -293,27 +293,26 @@ angular.module('proton.outside')
                 Inline: file.inline || 0
             };
 
+            debugger
+
             // force update the embedded counter
             if (tempPacket.Inline) {
                 message.NumEmbedded++;
             }
 
             message.attachmentsToggle = true;
+            const publicKey = message.publicKey;
 
             return AttachmentLoader
-                .load(file, message.From.Keys[0].PublicKey)
+                .load(file, publicKey)
                 .then((packets) => {
-                    return attachmentApi.upload(packets, message, tempPacket, total)
-                        .then(({ attachment, sessionKey, REQUEST_ID, isAborted }) => {
-
-                            if (isAborted) {
-                                return;
-                            }
-
+                    debugger;
+                    return attachmentEoApi.upload(packets, message, tempPacket, total)
+                        .then((attachment) => {
                             // Extract content-id even if there are no headers
                             const contentId = (attachment.Headers || {})['content-id'] || '';
                             const cid = contentId.replace(/[<>]+/g, '');
-                            return { attachment, sessionKey, packets, cid, REQUEST_ID };
+                            return { attachment, packets, cid };
                         })
                         .catch((err) => {
                             $log.error(err);
