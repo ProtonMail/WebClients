@@ -293,8 +293,6 @@ angular.module('proton.outside')
                 Inline: file.inline || 0
             };
 
-            debugger
-
             // force update the embedded counter
             if (tempPacket.Inline) {
                 message.NumEmbedded++;
@@ -306,7 +304,6 @@ angular.module('proton.outside')
             return AttachmentLoader
                 .load(file, publicKey)
                 .then((packets) => {
-                    debugger;
                     return attachmentEoApi.upload(packets, message, tempPacket, total)
                         .then((attachment) => {
                             // Extract content-id even if there are no headers

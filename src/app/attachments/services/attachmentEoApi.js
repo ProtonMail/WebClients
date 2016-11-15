@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .factory('attachmentEoApi', ($http, url, $q, $rootScope, authentication, notify, pmcw, CONFIG, CONSTANTS, secureSessionStorage, gettextCatalog, $log) => {
+    .factory('attachmentEoApi', ($http, url, $q, $rootScope, authentication, notify, pmcw, CONFIG, CONSTANTS, secureSessionStorage, gettextCatalog, $log, embedded) => {
 
         let pendingUpload = [];
         const notifyError = (message) => notify({ message, classes: 'notification-danger' });
@@ -90,7 +90,7 @@ angular.module('proton.attachments')
                 KeyPackets: btoa(String.fromCharCode.apply(null, packets.keys)),
                 Headers: {
                   'content-disposition': packets.Inline ? "inline" : "",
-                  "content-id": "XXX"
+                  "content-id": embedded.generateCid(`${packets.Filename}${packets.FileSize}`, message.SenderAddress)
                 }
             }
             return Promise.resolve(attachment);
