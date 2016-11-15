@@ -64,6 +64,23 @@ angular.module('proton.squire')
             return isEnd ? _.debounce(cb, 500) : cb;
         };
 
+        const listenerAttachment = (editor, action) => {
+            const key = ['attachment.upload', action].filter(Boolean).join('.');
+            return $rootScope.$on(key, (e, { type, data }) => {
+                if (type === 'upload.success') {
+                    _.chain(data.upload)
+                        .filter(({ attachment = {} }) => attachment.Headers['content-disposition'] === 'inline')
+                        .each(({ cid, url }) => {
+                            // If we close the composer the editor won't exist anymore but maybe we were uploading an attchement
+                            editor.fireEvent('refresh', {
+                                action: 'attachment.embedded',
+                                data: { url, cid }
+                            });
+                        });
+                }
+            });
+        };
+
         /**
          * Bind events to the current editor based on
          *     - Current state
@@ -84,6 +101,7 @@ angular.module('proton.squire')
 
                 let unsubscribe = angular.noop;
                 let onRemoveEmbedded = angular.noop;
+                let unsubscribeAtt = angular.noop;
 
                 // Custom dropzone to insert content into the editor if it's not a composer
                 if (!isMessage(typeContent)) {
@@ -93,12 +111,8 @@ angular.module('proton.squire')
                 // Watcher to detect when the user remove an embedded image
                 if (isMessage(typeContent)) {
                     const watcherEmbedded = removeInlineWatcher(action);
-                    onRemoveEmbedded = _.throttle((...arg) => {
-                        console.log(arg)
-                        watcherEmbedded(scope.message, editor) ;
-
-                    }, 300);
-                    console.log('Bind');
+                    onRemoveEmbedded = _.throttle(() => watcherEmbedded(scope.message, editor), 300);
+                    unsubscribeAtt = listenerAttachment(editor, action);
                     // Check if we need to remove embedded after a delay
                     editor.addEventListener('input', onRemoveEmbedded);
                 }
@@ -178,6 +192,7 @@ angular.module('proton.squire')
                 // Unsubscribe
                 return () => {
                     unsubscribe();
+                    unsubscribeAtt();
                     editor.removeEventListener('drop', onDrop);
                     editor.removeEventListener('input', onInput);
                     editor.removeEventListener('refresh', onRefresh);
