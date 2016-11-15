@@ -527,7 +527,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
 
         message.editor.addEventListener('blur', () => {
             isEditorFocused = false;
-            $scope.saveLater(message);
         });
         message.editor.addEventListener('focus', () => isEditorFocused = true);
         message.editor.addEventListener('dragstart', onDragStart);
