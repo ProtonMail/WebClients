@@ -1,5 +1,4 @@
-angular.module('proton.compareTo', [])
-
+angular.module('proton.core')
 .directive('compareTo', () => {
     return {
         require: 'ngModel',
@@ -8,7 +7,7 @@ angular.module('proton.compareTo', [])
         },
         link(scope, element, attributes, ngModel) {
 
-            ngModel.$validators.compareTo = function (modelValue) {
+            ngModel.$validators.compareTo = (modelValue) => {
                 return modelValue === scope.otherModelValue;
             };
 
