@@ -215,6 +215,7 @@
                             <label for="newPassword" translate-context="Title" translate>New password</label>
                         </div>
                         <div class="col-5-8">
+                            <p class="alert alert-info" ng-show="displayPasswordInfo" translate-context="Info" translate>Set a new login password and select "Save"</p>
                             <input type="password" id="newPassword" name="newPassword" ng-model="newPassword" placeholder-translate="New password" required>
                             <div ng-messages="passwordForm.newPassword.$error">
                                 <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
