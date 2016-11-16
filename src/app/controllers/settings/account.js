@@ -31,6 +31,7 @@ angular.module('proton.controllers.Settings')
 ) => {
 
     const unsubscribe = [];
+    $scope.displayPasswordInfo = false;
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.displayName = authentication.user.DisplayName;
     $scope.PMSignature = Boolean(authentication.user.PMSignature);
@@ -60,9 +61,8 @@ angular.module('proton.controllers.Settings')
     }
 
     $scope.setPasswordMode = (mode = 0) => {
-        const message = gettextCatalog.getString('TODO', null);
+        $scope.displayPasswordInfo = true;
         $scope.passwordMode = mode;
-        notify({ message });
     };
 
     // Listeners
