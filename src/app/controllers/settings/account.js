@@ -157,6 +157,7 @@ angular.module('proton.controllers.Settings')
                 Setting
                 .password({ Password, TwoFactorCode }, newLoginPwd)
                 .then(() => {
+                    $scope.displayPasswordInfo = false;
                     $scope.newLoginPassword = '';
                     $scope.confirmLoginPassword = '';
                     form.$setUntouched();
@@ -216,12 +217,14 @@ angular.module('proton.controllers.Settings')
                     onePassword: true
                 })
             .then(() => {
+                const message = ($scope.displayPasswordInfo) ? gettextCatalog.getString('You have successfully setup One-Password Mode', null) : gettextCatalog.getString('Password updated', null);
+                $scope.displayPasswordInfo = false;
                 $scope.newPassword = '';
                 $scope.confirmPassword = '';
                 form.$setUntouched();
                 form.$setPristine();
                 authentication.user.PasswordMode = 1;
-                notify({ message: gettextCatalog.getString('Password updated', null), classes: 'notification-success' });
+                notify({ message, classes: 'notification-success' });
             })
             .catch(() => {
                 // Nothing
