@@ -68,7 +68,6 @@ angular.module('proton', [
     'proton.address',
     'proton.message',
     'proton.conversation',
-    'proton.compareTo',
     'proton.star',
     'proton.drag',
     'proton.dropdown',

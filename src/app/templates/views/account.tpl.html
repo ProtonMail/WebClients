@@ -137,8 +137,8 @@
                         </div>
                         <div class="col-5-8">
                             <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder-translate="New login password" required>
-                            <div ng-messages="loginForm.newLoginPassword.$error" class="text-red" ng-if="loginForm.newLoginPassword.$touched || loginForm.$submitted">
-                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+                            <div ng-messages="loginForm.newLoginPassword.$error">
+                                <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
                         </div>
                     </div>
@@ -148,9 +148,9 @@
                         </div>
                         <div class="col-5-8">
                             <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder-translate="Confirm new login password" required class="margin" compare-to="newLoginPassword">
-                            <div ng-messages="loginForm.confirmLoginPassword.$error" class="text-red" ng-if="loginForm.confirmLoginPassword.$touched || loginForm.$submitted">
-                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
+                            <div ng-messages="loginForm.confirmLoginPassword.$error">
+                                <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
+                                <p class="text-red" ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
                             </div>
                         </div>
                     </div>
@@ -158,14 +158,7 @@
                         <div class="col-3-8">&nbsp;</div>
                         <div class="col-5-8">
                             <button class="pm_button primary" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
-                        </div>
-                    </div>
-                    <div class="clearfix" ng-if="keyPhase > 2">
-                        <div class="col-3-8">&nbsp;</div>
-                        <div class="col-5-8">
-                            <p>
-                                <a href="#" ng-click="setPasswordMode(1)" class="pm_button link pull-left" translate-context="Action" translate-comment="switch to one-password mode" translate>Switch to one-password mode</a>
-                            </p>
+                            <button type="button" ng-if="keyPhase > 2" ng-click="setPasswordMode(1)" class="pm_button" translate-context="Action" translate-comment="switch to one-password mode" translate>Switch to one-password mode</button>
                         </div>
                     </div>
                 </form>
@@ -180,8 +173,8 @@
                         </div>
                         <div class="col-5-8">
                             <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder-translate="New mailbox password" required>
-                            <div ng-messages="mailboxForm.newMailboxPassword.$error" class="text-red" ng-if="mailboxForm.newMailboxPassword.$touched || mailboxForm.$submitted">
-                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+                            <div ng-messages="mailboxForm.newMailboxPassword.$error">
+                                <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
                         </div>
                     </div>
@@ -191,9 +184,9 @@
                         </div>
                         <div class="col-5-8">
                             <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder-translate="Confirm new mailbox password" class="margin" required compare-to="newMailboxPassword">
-                            <div ng-messages="mailboxForm.confirmMailboxPassword.$error" class="text-red" ng-if="mailboxForm.confirmMailboxPassword.$touched || mailboxForm.$submitted">
-                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
+                            <div ng-messages="mailboxForm.confirmMailboxPassword.$error">
+                                <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
+                                <p class="text-red" ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
                             </div>
                         </div>
                     </div>
@@ -223,8 +216,8 @@
                         </div>
                         <div class="col-5-8">
                             <input type="password" id="newPassword" name="newPassword" ng-model="newPassword" placeholder-translate="New password" required>
-                            <div ng-messages="passwordForm.newPassword.$error" class="text-red" ng-if="passwordForm.newPassword.$touched || passwordForm.$submitted">
-                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+                            <div ng-messages="passwordForm.newPassword.$error">
+                                <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
                         </div>
                     </div>
@@ -234,9 +227,9 @@
                         </div>
                         <div class="col-5-8">
                             <input type="password" id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" placeholder-translate="Confirm new password" class="margin" required compare-to="newPassword">
-                            <div ng-messages="passwordForm.confirmPassword.$error" class="text-red" ng-if="passwordForm.confirmPassword.$touched || passwordForm.$submitted">
-                                <p ng-message="required"  translate-context="Error" translate>Field required</p>
-                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
+                            <div ng-messages="passwordForm.confirmPassword.$error">
+                                <p class="text-red" ng-message="required"  translate-context="Error" translate>Field required</p>
+                                <p class="text-red" ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
                             </div>
                         </div>
                     </div>
@@ -244,14 +237,7 @@
                         <div class="col-3-8">&nbsp;</div>
                         <div class="col-5-8">
                             <button class="pm_button primary" ng-disabled="networkActivity.loading()" type="submit" translate translate-context="Action">Save</button>
-                        </div>
-                    </div>
-                    <div class="clearfix">
-                        <div class="col-3-8">&nbsp;</div>
-                        <div class="col-5-8">
-                            <p>
-                                <a href="#" ng-click="setPasswordMode(2)" class="pm_button link pull-left" translate-context="Action" translate-comment="switch to two-password mode" translate>Switch to two-password mode</a>
-                            </p>
+                            <button type="button" ng-click="setPasswordMode(2)" class="pm_button" translate-context="Action" translate-comment="switch to two-password mode" translate>Switch to two-password mode</button>
                         </div>
                     </div>
                     <div class="clearfix">
