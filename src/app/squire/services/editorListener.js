@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication, editorDropzone, removeInlineWatcher) => {
+    .factory('editorListener', (signatureBuilder, embedded, attachmentFileFormat, squireExecAction, $rootScope, authentication, editorDropzone, removeInlineWatcher, $state, CONSTANTS) => {
 
         const isMac = navigator.userAgent.indexOf('Mac OS X') !== -1;
 
@@ -15,16 +15,31 @@ angular.module('proton.squire')
         const isMessage = (typeContent) => typeContent === 'message';
 
         /**
+         * Check if the current action is comming from the current editing message
+         * Both ID are undefined on outside
+         * @param  {String} options.ID
+         * @param  {Object} options.message
+         * @param  {String} messageID
+         * @return {Boolean}
+         */
+        const isSameMessage = ({ ID }, { message = {}, messageID }) => {
+            return ID === message.ID || ID === messageID;
+        };
+
+        /**
          * Attach some hotkeus for the editor
          * @param  {Squire} editor
          * @param  {jQLite} element
          * @return {void}
          */
-        const bindHotKeys = (editor, element) => {
+        const bindHotKeys = (editor, element, scope) => {
 
             editor.setKeyHandler('escape', () => {
                 if (authentication.user.Hotkeys === 1) {
-                    $rootScope.$broadcast('closeMessage', element);
+                    $rootScope.$emit('composer.update', {
+                        type: 'close.message',
+                        data: { message: scope.message }
+                    });
                 }
             });
 
@@ -32,7 +47,10 @@ angular.module('proton.squire')
             editor.setKeyHandler(sendKey, (self, event) => {
                 if (authentication.user.Hotkeys === 1) {
                     event.preventDefault();
-                    $rootScope.$broadcast('sendMessage', element);
+                    $rootScope.$emit('composer.update', {
+                        type: 'send.message',
+                        data: { message: scope.message }
+                    });
                 }
             });
 
@@ -71,10 +89,14 @@ angular.module('proton.squire')
          * @param  {String} action
          * @return {Function}        Unsubscribe
          */
-        const listenerAttachment = (editor, action) => {
+        const listenerAttachment = (editor, action, message) => {
             const key = ['attachment.upload', action].filter(Boolean).join('.');
 
             return $rootScope.$on(key, (e, { type, data }) => {
+
+                if (!isSameMessage(message, data)) {
+                    return;
+                }
 
                 switch (type) {
 
@@ -100,6 +122,28 @@ angular.module('proton.squire')
             });
         };
 
+        const listenerSaveMessage = (editor, scope) => {
+            let isEditorFocused = false;
+            const onFocus = () => isEditorFocused = true;
+            const onBlur = () => isEditorFocused = false;
+            const onInput = _.debounce(() => {
+                isEditorFocused && $rootScope.$emit('squire.editor', {
+                    type: 'input',
+                    data: { message: scope.message }
+                });
+            }, CONSTANTS.SAVE_TIMEOUT_TIME);
+
+            editor.addEventListener('input', onInput);
+            editor.addEventListener('blur', onBlur);
+            editor.addEventListener('focus', onFocus);
+
+            return () => {
+                editor.removeEventListener('input', onInput);
+                editor.removeEventListener('blur', onBlur);
+                editor.removeEventListener('focus', onFocus);
+            };
+        };
+
         /**
          * Bind events to the current editor based on
          *     - Current state
@@ -120,6 +164,7 @@ angular.module('proton.squire')
                 let unsubscribe = angular.noop;
                 let onRemoveEmbedded = angular.noop;
                 let unsubscribeAtt = angular.noop;
+                let unsubscribeEditor = angular.noop;
 
                 // Custom dropzone to insert content into the editor if it's not a composer
                 if (!isMessage(typeContent)) {
@@ -130,9 +175,13 @@ angular.module('proton.squire')
                 if (isMessage(typeContent)) {
                     const watcherEmbedded = removeInlineWatcher(action);
                     onRemoveEmbedded = _.throttle(() => watcherEmbedded(scope.message, editor), 300);
-                    unsubscribeAtt = listenerAttachment(editor, action);
+                    unsubscribeAtt = listenerAttachment(editor, action, scope.message);
                     // Check if we need to remove embedded after a delay
                     editor.addEventListener('input', onRemoveEmbedded);
+
+                    if (!$state.is('eo.reply')) {
+                        unsubscribeEditor = listenerSaveMessage(editor, scope);
+                    }
                 }
 
                 ['dragleave', 'dragenter', 'drop']
@@ -196,7 +245,7 @@ angular.module('proton.squire')
                     }
                 };
 
-                bindHotKeys(editor, el);
+                bindHotKeys(editor, el, scope);
 
                 editor.addEventListener('drop', onDrop);
                 editor.addEventListener('input', onInput);
@@ -209,6 +258,7 @@ angular.module('proton.squire')
                 return () => {
                     unsubscribe();
                     unsubscribeAtt();
+                    unsubscribeEditor();
                     editor.removeEventListener('drop', onDrop);
                     editor.removeEventListener('input', onInput);
                     editor.removeEventListener('refresh', onRefresh);

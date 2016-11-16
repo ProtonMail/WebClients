@@ -30,14 +30,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
     const unsubscribe = [];
 
     $scope.messages = [];
-    $scope.isOver = false;
-    $scope.queuedSave = false;
-    $scope.preventDropbox = false;
-    $scope.maxExpiration = CONSTANTS.MAX_EXPIRATION_TIME;
     $scope.uid = 1;
-    $scope.isAppleDevice = navigator.userAgent.match(/(iPod|iPhone|iPad)/); // Determine if user navigated from Apple device
-    $scope.oldProperties = ['Subject', 'ToList', 'CCList', 'BCCList', 'Body', 'PasswordHint', 'IsEncrypted', 'Attachments', 'ExpirationTime'];
-    $scope.numTags = [];
     $scope.weekOptions = [
         { label: '0', value: 0 },
         { label: '1', value: 1 },
@@ -158,50 +151,38 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         }
     }));
 
-    unsubscribe.push($rootScope.$on('sendMessage', (e, element, msg) => {
-        if (element) {
-            const composer = $(element).parents('.composer');
-            const index = $('.composer').index(composer);
-            const message = $scope.messages[index];
-
-            message && $scope.send(message);
-        }
-
-        msg && $scope.send(msg);
-    }));
-
-    unsubscribe.push($scope.$on('closeMessage', (e, element) => {
-        const composer = $(element).parents('.composer');
-        const index = $('.composer').index(composer);
-        const message = $scope.messages[index];
-
-        if (angular.isDefined(message)) {
-            $scope.close(message, false, false);
-        }
-    }));
-
     unsubscribe.push($rootScope.$on('composer.update', (e, { type, data }) => {
-        if (type === 'editor.loaded') {
-            const { message, editor } = data;
-            if (message) {
-                message.editor = editor;
-                editor && listenEditor(message);
-            }
-        }
+        switch (type) {
 
-        if (type === 'editor.focus') {
-            const { message, isMessage } = data;
-            isMessage && $scope.$applyAsync(() => {
-                message.autocompletesFocussed = false;
-                message.attachmentsToggle = false;
-                message.ccbcc = false;
-            });
+            case 'editor.focus': {
+                const { message, isMessage } = data;
+                isMessage && $scope.$applyAsync(() => {
+                    message.autocompletesFocussed = false;
+                    message.attachmentsToggle = false;
+                    message.ccbcc = false;
+                });
+                break;
+            }
+
+            case 'send.message': {
+                $scope.send(data.message);
+                break;
+            }
+
+            case 'close.message': {
+                $scope.close(data.message, false, false);
+                break;
+            }
         }
     }));
 
     unsubscribe.push($rootScope.$on('message.updated', (e, { message }) => {
         // save when DOM is updated
         recordMessage(message, false, true);
+    }));
+
+    unsubscribe.push($rootScope.$on('squire.editor', (e, { type, data }) => {
+        (type === 'input') && $scope.saveLater(data.message);
     }));
 
     unsubscribe.push($rootScope.$on('attachment.upload', (e, { type, data }) => {
@@ -229,57 +210,11 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         return limit;
     }
 
-    function onDragOver() {
-
-
-        /*
-            event.preventDefault();
-            if we disable the default behavior then
-            the text can't be draged inside the iframe.
-        */
-
-        $interval.cancel($scope.intervalComposer);
-        $interval.cancel($scope.intervalDropzone);
-
-        $scope.intervalComposer = $interval(() => {
-            $scope.isOver = false;
-            $interval.cancel($scope.intervalComposer);
-        }, 100);
-
-        if ($scope.isOver === false) {
-            $scope.isOver = true;
-        }
-    }
-
-    function onDragEnter() {
-        /* /!\ force digest over state change */
-        $scope.$applyAsync(() => {
-            $scope.isOver = true;
-        });
-    }
-
-    function onDragStart() {
-        $scope.preventDropbox = true;
-    }
-
-    function onDragEnd(event) {
-        event.preventDefault();
-        $scope.preventDropbox = false;
-        $scope.isOver = false;
-    }
-
     $(window).on('resize', onResize);
-    // $(window).on('dragover', onDragOver);
-    // $(window).on('dragstart', onDragStart);
-    // $(window).on('dragend', onDragEnd);
-    // $(window).on('mouseover', onMouseOver);
 
     $scope.$on('$destroy', () => {
         $(window).off('resize', onResize);
-        $(window).off('dragover', onDragOver);
-        // $(window).off('mouseover', onMouseOver);
-        $interval.cancel($scope.intervalComposer);
-        $interval.cancel($scope.intervalDropzone);
+
         window.onbeforeunload = undefined;
 
         unsubscribe.forEach((cb) => cb());
@@ -442,7 +377,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         $scope
             .$applyAsync(() => {
                 const size = $scope.messages.unshift(message);
-                $scope.isOver = false;
 
                 recordMessage(message, false, false).then(() => { // message, notification, autosaving
                     $rootScope.$emit('composer.update', {
@@ -453,28 +387,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
                     $log.error(error);
                 });
             });
-    }
-
-    function listenEditor(message) {
-        /**
-         * There is an input triggered on load (thx to the signature ?)
-         * so we will set the listener after a delay.
-         * Then the message will be saved every 3s.
-         */
-        let isEditorFocused = false;
-
-        message.editor.addEventListener('input', _.debounce(() => {
-            isEditorFocused && $scope.saveLater(message);
-        }, CONSTANTS.SAVE_TIMEOUT_TIME));
-
-        message.editor.addEventListener('blur', () => {
-            isEditorFocused = false;
-        });
-        message.editor.addEventListener('focus', () => isEditorFocused = true);
-        message.editor.addEventListener('dragstart', onDragStart);
-        message.editor.addEventListener('dragend', onDragEnd);
-        message.editor.addEventListener('dragenter', onDragEnter);
-        message.editor.addEventListener('dragover', onDragOver);
     }
 
     $scope.togglePanel = (message, panelName) => {
@@ -1200,19 +1112,6 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
     };
 
     $scope.openCloseModal = (message, discard = false) => {
-
-        if (message.editor) {
-            message.editor.removeEventListener('blur');
-            message.editor.removeEventListener('focus');
-            message.editor.removeEventListener('input');
-            message.editor.removeEventListener('DOMNodeRemoved');
-            message.editor.removeEventListener('dragenter', onDragEnter);
-            message.editor.removeEventListener('dragover', onDragOver);
-            message.editor.removeEventListener('dragstart', onDragStart);
-            message.editor.removeEventListener('dragend', onDragEnd);
-        }
-
-        delete message.editor;
         $scope.close(message, discard, true);
     };
 
