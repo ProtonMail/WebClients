@@ -212,8 +212,9 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        &:not(.ng-invalid.ng-touched) + [ng-message] { display: none; }
-        &.ng-invalid.ng-touched { border-color: $red; }
+        & + [ng-messages] { display: none }
+        &.ng-invalid.ng-touched + [ng-messages] { display: block }
+        &.ng-invalid.ng-touched { border-color: $red }
         &.inline {
             display: inline-block;
             width: 8rem;
