@@ -59,8 +59,10 @@ angular.module('proton.controllers.Settings')
         });
     }
 
-    $scope.setPasswordMode = function (mode = 0) {
+    $scope.setPasswordMode = (mode = 0) => {
+        const message = gettextCatalog.getString('TODO', null);
         $scope.passwordMode = mode;
+        notify({ message });
     };
 
     // Listeners
