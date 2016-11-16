@@ -102,8 +102,10 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
             notify({ message });
         }
 
+                debugger;
         embedded.parser($scope.message, 'cid')
             .then((result) => {
+                debugger;
                 const bodyPromise = pmcw.encryptMessage(result, $scope.message.publicKey);
                 const replyBodyPromise = pmcw.encryptMessage(result, [], password);
                 return $q.all({ Body: bodyPromise, ReplyBody: replyBodyPromise });
