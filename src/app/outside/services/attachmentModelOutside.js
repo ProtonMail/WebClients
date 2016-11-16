@@ -1,5 +1,5 @@
 angular.module('proton.outside')
-    .factory('attachmentModelOutside', ($log, $q, attachmentEoApi, AttachmentLoader, $rootScope, embedded, notify, networkActivityTracker, composerRequestModel) => {
+    .factory('attachmentModelOutside', ($log, attachmentEoApi, AttachmentLoader, $rootScope, embedded, notify) => {
 
         const EVENT_NAME = 'attachment.upload.outside';
         const QUEUE = [];
@@ -20,15 +20,6 @@ angular.module('proton.outside')
                 console.trace(type, data)
 
                 switch (type) {
-                    // case 'close':
-                    //     attachmentEoApi.killUpload(data);
-                    //     break;
-                    // case 'cancel':
-                    //     dispatchMessageAction(data.message);
-                    //     break;
-                    // case 'remove':
-                    //     remove(data);
-                    //     break;
                     case 'remove.all':
                         removeAll(data);
                         break;
@@ -71,7 +62,7 @@ angular.module('proton.outside')
 
             if (action === 'attachment') {
                 const promise = files.map(({ file }) => AttachmentLoader.load(file, publicKey));
-                Promise.all(promise)
+                return Promise.all(promise)
                     .then(packetToAttachment)
                     .then((list) => (message.addAttachments(list), list))
                     .then(() => {
@@ -79,15 +70,13 @@ angular.module('proton.outside')
                         dispatchMessageAction(message);
                         QUEUE.length = 0;
                     });
-            } else {
-
-                upload(files, message, action)
-                    .then(() => {
-                        message.uploading = 0;
-                        QUEUE.length = 0;
-                    });
             }
 
+            upload(files, message, action)
+                .then(() => {
+                    message.uploading = 0;
+                    QUEUE.length = 0;
+                });
         }
 
         /**
@@ -134,13 +123,6 @@ angular.module('proton.outside')
                 });
         }
 
-
-
-
-
-
-
-
         /**
          * Create a map [<REQUEST>] = <upload>
          * So we can have every informations for a request such as attachment etc.
@@ -156,21 +138,6 @@ angular.module('proton.outside')
         };
 
         /**
-         * Get an attachment for a message by its ID
-         *     => IT CAN BE A REQUEST_ID cf composerAttachment component
-         * @param  {Message} message
-         * @param  {String} id      REQUEST_ID || AttachmentID
-         * @return {Object}         Attachment
-         */
-        const getAttachment = (message, id) => {
-            // This is a requestID
-            if (MAP_ATTACHMENTS[id]) {
-                return MAP_ATTACHMENTS[id].attachment;
-            }
-            return _.findWhere(message.Attachments, { ID: id });
-        };
-
-        /**
          * Upload a list of attachments [...File]
          * @param  {Array}  queue   List of File
          * @param  {Object} message
@@ -180,7 +147,6 @@ angular.module('proton.outside')
          * @return {Promise}
          */
         function upload(queue = [], message = {}, action = 'attachment', triggerEvent = true, cid = '') {
-            const deferred = $q.defer();
             const promises = _.map(queue, ({ file, isEmbedded }, i, list) => {
                 // required for BE to get a cid-header
                 file.inline = +(isEmbedded && action === 'inline');
@@ -189,9 +155,6 @@ angular.module('proton.outside')
 
             message.uploading = promises.length;
             dispatchMessageAction(message);
-
-            composerRequestModel.save(message, deferred);
-            networkActivityTracker.track(deferred.promise);
 
             return Promise
                 .all(promises)
@@ -213,12 +176,10 @@ angular.module('proton.outside')
 
                     triggerEvent && dispatch('upload.success', { upload, message, messageID: message.ID });
 
-                    deferred.resolve();
                     return upload;
                 })
                 .catch((err) => {
                     dispatchMessageAction(message);
-                    deferred.reject(err);
                 });
         }
 
