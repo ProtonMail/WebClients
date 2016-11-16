@@ -209,6 +209,7 @@
 
             <section class="pm_form col-1-2" ng-show="passwordMode === 1 && keyPhase > 1">
                 <legend translate-context="Title" translate translate-comment="form heading for changing single password">Password</legend>
+                <p class="alert alert-info" ng-show="displayPasswordInfo" translate-context="Info" translate>Set a new login password and select "Save".</p>
                 <form method="post" ng-submit="passwordForm.$valid && savePassword(passwordForm)" name="passwordForm" novalidate>
                     <div class="clearfix">
                         <div class="col-3-8">
