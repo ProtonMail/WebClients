@@ -251,7 +251,8 @@
         <label for="password">
             <em class="num">5</em><span translate translate-context="Title" translate-comment="Antispam section of account creation">Are you human?</span>
         </label>
-        <p class="help spacing" translate>To fight spam, please verify you are human.</p>
+        <p class="help" translate-context="Info" translate>To fight spam, please verify you are human.</p>
+        <p class="help" ng-hide="verificator === 'recaptcha'" translate-context="Info" translate>We do not permanently save your email or phone number, it is deleted after verification.</p>
         <div ng-show="showCaptcha">
             <label ng-click="setIframeSrc()">
                 <input type="radio" ng-model="verificator" value="recaptcha" />
