@@ -16,9 +16,6 @@ angular.module('proton.outside')
 
         $rootScope
             .$on(EVENT_NAME, (e, { type, data }) => {
-
-                console.trace(type, data)
-
                 switch (type) {
                     case 'remove.all':
                         removeAll(data);
@@ -178,9 +175,7 @@ angular.module('proton.outside')
 
                     return upload;
                 })
-                .catch((err) => {
-                    dispatchMessageAction(message);
-                });
+                .catch(() => dispatchMessageAction(message));
         }
 
         /**
