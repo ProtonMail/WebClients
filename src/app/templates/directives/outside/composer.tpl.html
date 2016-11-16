@@ -2,13 +2,12 @@
     <div class="composeEditor fill">
         <composer-ask-embedded
             class="askEmbedding composer-askEmbedding"
-            data-action="outside"
-            ng-show="!preventDropbox"></composer-ask-embedded>
+            data-action="outside"></composer-ask-embedded>
         <div
             class="dropzone composer-dropzone fill"
             data-composer-dropzone
             data-action="outside"
-            ng-show="message.focussed && !preventDropbox"></div>
+            ng-show="message.focussed"></div>
         <squire
             data-action="outside"
             data-message="message"

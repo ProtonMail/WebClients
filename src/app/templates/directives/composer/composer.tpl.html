@@ -167,15 +167,13 @@
     </div>
     <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
         <div class="composeEditor fill">
-            <composer-ask-embedded
-                class="askEmbedding composer-askEmbedding"
-                ng-show="!preventDropbox"></composer-ask-embedded>
+            <composer-ask-embedded class="askEmbedding composer-askEmbedding"></composer-ask-embedded>
 
             <div
                 class="dropzone composer-dropzone fill"
                 composer-dropzone
                 id="dropzone_message{{::message.ID}}"
-                ng-show="message.focussed && !preventDropbox"></div>
+                ng-show="message.focussed"></div>
 
             <squire
                 data-message="message"
