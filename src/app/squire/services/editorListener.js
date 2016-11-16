@@ -64,6 +64,13 @@ angular.module('proton.squire')
             return isEnd ? _.debounce(cb, 500) : cb;
         };
 
+        /**
+         * Listener for attachments inside the composer
+         *     - Detect how and when we need to add or remove them
+         * @param  {Squire} editor
+         * @param  {String} action
+         * @return {Function}        Unsubscribe
+         */
         const listenerAttachment = (editor, action) => {
             const key = ['attachment.upload', action].filter(Boolean).join('.');
 
@@ -108,7 +115,6 @@ angular.module('proton.squire')
             // For a type !== message vodoo magic "realtime"
             const timeout = (typeContent === 'message') ? TIMEOUTAPP : 32;
 
-
             return (updateModel, editor) => {
 
                 let unsubscribe = angular.noop;
@@ -145,11 +151,10 @@ angular.module('proton.squire')
                     }
 
                     if (action === 'attachment.embedded') {
-                        return editor
-                            .insertImage(data.url, {
-                                'data-embedded-img': data.cid,
-                                class: 'proton-embedded'
-                            });
+                        return editor.insertImage(data.url, {
+                            'data-embedded-img': data.cid,
+                            class: 'proton-embedded'
+                        });
                     }
 
                     if (action === 'message.changeFrom') {
@@ -160,8 +165,7 @@ angular.module('proton.squire')
 
                     if (isMessage(typeContent)) {
                         // Replace the embedded images with CID to keep the model updated
-                        return embedded
-                            .parser(scope.message)
+                        return embedded.parser(scope.message)
                             .then((body) => (editor.setHTML(body), body))
                             .then(updateModel);
                     }

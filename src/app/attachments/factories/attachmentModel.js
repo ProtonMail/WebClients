@@ -44,8 +44,6 @@ angular.module('proton.attachments')
 
         $rootScope
             .$on(EVENT_NAME, (e, { type, data }) => {
-
-                console.trace(type, data);
                 switch (type) {
                     case 'close':
                         attachmentApi.killUpload(data);
