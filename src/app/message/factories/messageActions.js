@@ -193,13 +193,11 @@ angular.module('proton.message')
          */
         function addLabel(messages, labels, alsoArchive) {
             const context = tools.cacheContext();
-            const promises = [];
-            const events = [];
             const current = tools.currentLocation();
             const currentMailbox = tools.currentMailbox();
             const ids = _.map(messages, ({ ID }) => ID);
 
-            const process = () => {
+            const process = (events) => {
                 cache.events(events).then(() => {
                     const getLabelsIDS = ({ ConversationID }) => {
                         return _.chain(cache.queryMessagesCached(ConversationID) || [])
@@ -239,7 +237,11 @@ angular.module('proton.message')
                     .value();
             };
 
-            _.each(messages, (message) => {
+            const mapPromisesLabels = (list = [], Action) => {
+                return _.map(list, (id) => new Message().updateLabels(id, Action, ids));
+            };
+
+            const { events, promises } = _.reduce(messages, (acc, message) => {
 
                 const msgLabels = (message.LabelIDs || []).filter((v) => isNaN(+v));
                 const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected && !_.contains(msgLabels, ID));
@@ -253,33 +255,33 @@ angular.module('proton.message')
                     }
                 }
 
-                const element = {
+                acc.events.push({
+                    Action: 3,
                     ID: message.ID,
-                    ConversationID: message.ConversationID,
-                    Selected: false,
-                    LabelIDsAdded: toApply,
-                    LabelIDsRemoved: toRemove
-                };
-
-                events.push({ Action: 3, ID: element.ID, Message: element });
-
-                _.each(toApply, (labelID) => {
-                    promises.push(new Message().updateLabels(labelID, ADD_ID, ids));
+                    Message: {
+                        ID: message.ID,
+                        ConversationID: message.ConversationID,
+                        Selected: false,
+                        LabelIDsAdded: toApply,
+                        LabelIDsRemoved: toRemove
+                    }
                 });
 
-                _.each(toRemove, (labelID) => {
-                    promises.push(new Message().updateLabels(labelID, REMOVE_ID, ids));
-                });
-            });
+                acc.promises = acc.promises
+                    .concat(mapPromisesLabels(toApply, ADD_ID))
+                    .concat(mapPromisesLabels(toRemove, REMOVE_ID));
+
+                return acc;
+            }, { events: [], promises: [] });
 
             const promise = $q.all(promises);
             cache.addToDispatcher(promise);
 
             if (context === true) {
-                return process();
+                return process(events);
             }
 
-            promise.then(() => process());
+            promise.then(() => process(events));
             networkActivityTracker.track(promise);
         }
 
