@@ -41,6 +41,14 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
         // Variables
         $scope.card = {};
+        $scope.donationCard = {};
+        $scope.donationCurrencies = [
+            { label: 'USD', value: 'USD' },
+            { label: 'EUR', value: 'EUR' },
+            { label: 'CHF', value: 'CHF' }
+        ];
+        $scope.donationAmount = 5;
+        $scope.donationCurrency = $scope.donationCurrencies[1];
         $scope.tools = tools;
         $scope.compatibility = tools.isCompatible();
         $scope.showFeatures = false;
@@ -135,7 +143,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         authentication.logout(false, authentication.isLoggedIn());
 
         // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
-        const captchaReceiveMessage = function (event) {
+        const captchaReceiveMessage = (event) => {
             if (typeof event.origin === 'undefined' && typeof event.originalEvent.origin === 'undefined') {
                 return;
             }
@@ -171,7 +179,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         };
 
         // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
-        window.captchaSendMessage = function () {
+        window.captchaSendMessage = () => {
             const iframe = document.getElementById('pm_captcha');
             iframe.contentWindow.postMessage(message, 'https://secure.protonmail.com');
         };
@@ -188,20 +196,20 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         }
     };
 
-    $scope.setIframeSrc = function () {
+    $scope.setIframeSrc = () => {
         const iframe = document.getElementById('pm_captcha');
         iframe.onload = window.captchaSendMessage;
         iframe.src = 'https://secure.protonmail.com/recaptcha.html';
     };
 
-    $scope.notificationEmailValidation = function () {
+    $scope.notificationEmailValidation = () => {
         if ($scope.account.notificationEmail.length > 0) {
             return !tools.validEmail($scope.account.notificationEmail);
         }
         return true;
     };
 
-    $scope.sendVerificationCode = function () {
+    $scope.sendVerificationCode = () => {
         networkActivityTracker.track(
             User.code({
                 Username: $scope.account.Username,
@@ -219,7 +227,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         );
     };
 
-    $scope.sendSmsVerificationCode = function () {
+    $scope.sendSmsVerificationCode = () => {
         $scope.smsSending = true;
         networkActivityTracker.track(
             User.code({
@@ -245,11 +253,11 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     // ---------------------------------------------------
     // ---------------------------------------------------
 
-    $scope.start = function () {
+    $scope.start = () => {
         $state.go('subscription');
     };
 
-    $scope.createAccount = function () {
+    $scope.createAccount = () => {
         $scope.humanityTest = false;
         $scope.creating = true;
 
@@ -269,7 +277,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             $scope.signupError = true;
         });
     };
-    $scope.checking = function () {
+    $scope.checking = () => {
 
         if ($scope.account.notificationEmail) {
             saveContinue();
@@ -318,7 +326,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         );
     }
 
-    $scope.finishLoginReset = function () {
+    $scope.finishLoginReset = () => {
         $log.debug('finishLoginReset');
     };
 
@@ -409,11 +417,11 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         });
     }
 
-    $scope.chooseCard = function () {
+    $scope.chooseCard = () => {
         $scope.method = 'card';
     };
 
-    $scope.choosePaypal = function () {
+    $scope.choosePaypal = () => {
         $scope.method = 'paypal';
 
         if ($scope.approvalURL === false) {
@@ -421,7 +429,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         }
     };
 
-    $scope.initPaypal = function () {
+    $scope.initPaypal = () => {
         $scope.paypalNetworkError = false;
 
         Payment.paypal({
@@ -493,12 +501,12 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         window.removeEventListener('message', receivePaypalMessage, false);
     }
 
-    $scope.openPaypalTab = function () {
+    $scope.openPaypalTab = () => {
         childWindow = window.open($scope.approvalURL, 'PayPal');
         window.addEventListener('message', receivePaypalMessage, false);
     };
 
-    $scope.pay = function () {
+    $scope.pay = () => {
         const year = ($scope.card.year.length === 2) ? '20' + $scope.card.year : $scope.card.year;
         const method = {
             Type: 'card',
@@ -516,7 +524,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         verify(method);
     };
 
-    $scope.doCreateUser = function () {
+    $scope.doCreateUser = () => {
 
         $scope.createUser = true;
 
@@ -547,7 +555,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         return User.create(params, loginPasswordCopy);
     };
 
-    $scope.doLogUserIn = function (response) {
+    $scope.doLogUserIn = (response) => {
         if (response.data && response.data.Code === 1000) {
             $scope.logUserIn = true;
             return authentication.loginWithCredentials({
@@ -568,7 +576,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         return Promise.reject(response.data.Error);
     };
 
-    $scope.doAccountSetup = function () {
+    $scope.doAccountSetup = () => {
         $log.debug('doAccountSetup');
 
         $scope.setupAccount = true;
@@ -602,13 +610,13 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         });
     };
 
-    $scope.doGetUserInfo = function () {
+    $scope.doGetUserInfo = () => {
         $log.debug('getUserInfo');
         $scope.getUserInfo = true;
         return authentication.fetchUserInfo();
     };
 
-    $scope.finishRedirect = function () {
+    $scope.finishRedirect = () => {
         $log.debug('finishRedirect');
         $scope.finishCreation = true;
 
