@@ -478,12 +478,12 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     }
 
     $scope.selectAmount = (amount) => {
-        $scope.donationDetails.otherAmount = undefined;
+        $scope.donationDetails.otherAmount = null;
         $scope.donationDetails.amount = amount;
     };
 
-    $scope.onChangeOtherAmount = () => {
-        $scope.donationDetails.amount = undefined;
+    $scope.onFocusOtherAmount = () => {
+        $scope.donationDetails.amount = null;
     };
 
     $scope.donate = () => {

@@ -112,20 +112,20 @@ angular.module('proton.core')
                 return deferred.promise;
             }.bind(this);
 
-            this.label = function (method) {
+            this.label = (method) => {
                 return '•••• •••• •••• ' + method.Details.Last4;
             };
 
             this.selectAmount = (amount) => {
-                this.otherAmount = undefined;
+                this.otherAmount = null;
                 this.amount = amount;
             };
 
-            this.onChangeOtherAmount = () => {
-                this.amount = undefined;
+            this.onFocusOtherAmount = () => {
+                this.amount = null;
             };
 
-            this.donate = function () {
+            this.donate = () => {
                 let promise;
 
                 if (this.methods.length > 0) {

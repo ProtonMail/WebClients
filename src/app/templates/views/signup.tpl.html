@@ -287,7 +287,7 @@
             <iframe id="pm_captcha" sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
 
-        <form ng-show="verificator === 'donation'" ng-submit="donate()" name="donationForm" class="pm_form spacing-top" novalidate>
+        <form ng-show="verificator === 'donation'" ng-submit="donationForm.$valid && donate()" name="donationForm" class="pm_form spacing-top" novalidate>
             <p class="alert alert-info" translate-context="Info" translate>Donations are added as credit to your ProtonMail account and can be used to purchase account upgrades.</p>
             <label for="otherAmount" translate translate-context="Title">Amount</label>
             <div class="pm_grid">
@@ -309,7 +309,7 @@
                     <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 100 }" ng-click="selectAmount(100)">100</button>
                 </div>
                 <div class="col-1-2">
-                    <input type="number" min="2" id="otherAmount" name="otherAmount" ng-model="donationDetails.otherAmount" ng-change="onChangeOtherAmount()" placeholder-translate="Other" />
+                    <input type="number" min="2" id="otherAmount" name="otherAmount" ng-model="donationDetails.otherAmount" ng-focus="onFocusOtherAmount()" placeholder-translate="Other" />
                 </div>
                 <div class="col-1-4">
                     <span class="pm_select">
@@ -317,6 +317,10 @@
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>
+            </div>
+            <div ng-messages="donationForm.otherAmount.$error">
+                <p ng-message="number" class="text-red" translate-context="Error" translate>Invalid number</p>
+                <p ng-message="min" class="text-red" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
             </div>
             <card-view card="donationCard"></card-view>
             <p class="text-center spacing-top">
