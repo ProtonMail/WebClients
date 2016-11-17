@@ -135,9 +135,6 @@ angular.module('proton.controllers.Secured', [])
     // Initialize counters for conversation (total and unread)
     cacheCounters.query();
 
-    // Listeners
-    $scope.$on('updatePageName', () => $scope.updatePageName());
-
     $scope.$on('updateUser', () => {
         $scope.$applyAsync(() => {
             $scope.user = authentication.user;
@@ -220,109 +217,5 @@ angular.module('proton.controllers.Secured', [])
         }
     };
 
-    function getFirstSortedAddresses() {
-        return _.chain(authentication.user.Addresses)
-            .where({ Status: 1, Receive: 1 })
-            .sortBy('Send')
-            .first()
-            .value() || {};
-    }
 
-    /**
-     * Update the browser title to display the current mailbox and
-     * the number of unread messages in this folder
-     */
-    $scope.updatePageName = function () {
-        let value;
-        let name;
-        let unread = '';
-        const state = tools.currentMailbox();
-        const { Email = '' } = getFirstSortedAddresses();
-
-        switch (state) {
-            case 'drafts':
-                value = cacheCounters.unreadMessage(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
-                break;
-            case 'label':
-                value = cacheCounters.unreadConversation($state.params.label);
-                break;
-            default:
-                value = cacheCounters.unreadConversation(CONSTANTS.MAILBOX_IDENTIFIERS[state]);
-                break;
-        }
-
-        if (angular.isDefined(value) && value > 0) {
-            unread = '(' + value + ') ';
-        }
-
-        switch (state) {
-            case 'inbox':
-                name = unread + gettextCatalog.getString('Inbox', null, 'Title');
-                break;
-            case 'drafts':
-                name = unread + gettextCatalog.getString('Drafts', null, 'Title');
-                break;
-            case 'sent':
-                name = unread + gettextCatalog.getString('Sent', null, 'Title');
-                break;
-            case 'starred':
-                name = unread + gettextCatalog.getString('Starred', null, 'Title');
-                break;
-            case 'archive':
-                name = unread + gettextCatalog.getString('Archive', null, 'Title');
-                break;
-            case 'spam':
-                name = unread + gettextCatalog.getString('Spam', null, 'Title');
-                break;
-            case 'trash':
-                name = unread + gettextCatalog.getString('Trash', null, 'Title');
-                break;
-            case 'label': {
-                const label = _.findWhere(authentication.user.Labels, { ID: $state.params.label });
-
-                if (angular.isDefined(label)) {
-                    name = label.Name;
-                } else {
-                    name = gettextCatalog.getString('Label', null, 'Title');
-                }
-                break;
-            }
-            case 'contacts':
-                name = gettextCatalog.getString('Contacts', null, 'Title');
-                break;
-            case 'dashboard':
-                name = gettextCatalog.getString('Dashboard', null, 'Title');
-                break;
-            case 'account':
-                name = gettextCatalog.getString('Account', null, 'Title');
-                break;
-            case 'labels':
-                name = gettextCatalog.getString('Labels', null, 'Title');
-                break;
-            case 'security':
-                name = gettextCatalog.getString('Security', null, 'Title');
-                break;
-            case 'appearance':
-                name = gettextCatalog.getString('Appearance', null, 'Title');
-                break;
-            case 'domains':
-                name = gettextCatalog.getString('Domains', null, 'Title');
-                break;
-            case 'users':
-                name = gettextCatalog.getString('Users', null, 'Title');
-                break;
-            case 'invoices':
-                name = gettextCatalog.getString('Invoices', null, 'Title');
-                break;
-            default:
-                name = '';
-                break;
-        }
-
-        if (name.length > 0) {
-            name += ' | ';
-        }
-
-        $rootScope.pageName = name + Email;
-    };
 });

@@ -24,7 +24,6 @@ angular.module('proton.controllers.Contacts', [])
     // Variables
     let lastChecked = null;
 
-    $rootScope.pageName = 'Contacts';
     $scope.currentPage = 1;
     $scope.params = { searchContactInput: '' };
     $scope.editing = false;

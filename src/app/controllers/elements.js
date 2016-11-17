@@ -258,7 +258,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
             $rootScope.scrollPosition = null;
         }
 
-        $rootScope.$broadcast('updatePageName');
+        $rootScope.$emit('updatePageName');
     }
 
     $scope.conversationCount = function () {
