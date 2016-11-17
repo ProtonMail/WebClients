@@ -81,18 +81,12 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
         // direct comes from the resolve in route, sometimes
         if (direct) {
+            const { VerifyMethods = [] } = direct;
             // determine what activation methods to show
-            if (direct.VerifyMethods) {
-                if (direct.VerifyMethods.indexOf('email') !== -1) {
-                    $scope.showEmail = true;
-                }
-                if (direct.VerifyMethods.indexOf('recaptcha') !== -1) {
-                    $scope.showCaptcha = true;
-                }
-                if (direct.VerifyMethods.indexOf('sms') !== -1) {
-                    $scope.showSms = true;
-                }
-            }
+            $scope.showEmail = VerifyMethods.indexOf('email') !== -1;
+            $scope.showCaptcha = VerifyMethods.indexOf('recaptcha') !== -1;
+            $scope.showSms = VerifyMethods.indexOf('sms') !== -1;
+            $scope.showDonation = true; // VerifyMethods.indexOf('donation') !== -1;
         }
 
         if (plans.length > 0) {
