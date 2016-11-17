@@ -18,6 +18,8 @@ angular.module('proton.core')
 
                 toggler.addEventListener('click', toggleType);
                 elem.wrap('<div class="pm_toggle_password"/>').after(toggler);
+
+                scope.$on('$destroy', () => { toggler.removeEventListener('click', toggleType); });
             }
         }
     };
