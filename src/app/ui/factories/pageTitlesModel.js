@@ -20,6 +20,10 @@ angular.module('proton.ui')
             domains: gettextCatalog.getString('Domains', null, 'Title'),
             users: gettextCatalog.getString('Users', null, 'Title'),
             invoices: gettextCatalog.getString('Invoices', null, 'Title'),
+            filters: gettextCatalog.getString('Filters', null, 'Title'),
+            keys: gettextCatalog.getString('Keys', null, 'Title'),
+            payments: gettextCatalog.getString('Payment methods', null, 'Title'),
+            addresses: gettextCatalog.getString('Addresses', null, 'Title'),
             login: gettextCatalog.getString('Login', null, 'Title')
         };
 
@@ -90,7 +94,7 @@ angular.module('proton.ui')
          * @return {String}
          */
         const find = ({ name } = {}) => {
-            const mailbox = tools.currentMailbox() || '';
+            const mailbox = tools.currentMailbox() || tools.filteredState();
 
             if (/login|reset-password/.test(mailbox || name)) {
                 return formatTitle(MAP.login);
