@@ -116,6 +116,15 @@ angular.module('proton.core')
                 return '•••• •••• •••• ' + method.Details.Last4;
             };
 
+            this.selectAmount = (amount) => {
+                this.otherAmount = undefined;
+                this.amount = amount;
+            };
+
+            this.onChangeOtherAmount = () => {
+                this.amount = undefined;
+            };
+
             this.donate = function () {
                 let promise;
 
