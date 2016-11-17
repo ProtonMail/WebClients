@@ -7,16 +7,8 @@ angular.module('proton.core')
         scope: { card: '=' },
         link(scope) {
             const currentYear = new Date().getFullYear();
-            const months = [];
-            const years = [];
-
-            for (let i = 1; i <= 12; i++) {
-                months.push(i);
-            }
-
-            for (let i = 0; i < 12; i++) {
-                years.push(currentYear + i);
-            }
+            const months = _.range(1, 13);
+            const years = _.range(currentYear, currentYear + 12);
 
             scope.months = months;
             scope.years = years;
