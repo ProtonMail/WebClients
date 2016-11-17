@@ -288,7 +288,19 @@
         </div>
 
         <div ng-show="verificator === 'donation'" class="pm_form spacing-top">
-            <card-view card="donation"></card-view>
+            <div class="pm_grid">
+                <label for="amount" translate translate-context="Title">Amount</label>
+                <div class="col-2-3">
+                    <input type="number" id="amount" ng-model="donationAmount" placeholder-translate="Amount" required />
+                </div>
+                <div class="col-1-3">
+                    <span class="pm_select">
+                        <select ng-model="donationCurrency" ng-options="currency.label for currency in donationCurrencies"></select>
+                        <i class="fa fa-angle-down"></i>
+                    </span>
+                </div>
+            </div>
+            <card-view card="donationCard"></card-view>
         </div>
 
         <p class="text-center">
