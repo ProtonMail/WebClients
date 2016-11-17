@@ -38,14 +38,14 @@
                         </span>
                     </div>
                 </div>
-                <div ng-show="ctrl.methods.length > 0">
+                <div ng-if="ctrl.methods.length > 0">
                     <label for="paymentMethod" class="margin" translate-context="Title">Select payment method:</label>
                     <span class="pm_select">
                         <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>
-                <div ng-hide="ctrl.methods.length > 0">
+                <div ng-if="ctrl.methods.length === 0">
                     <div class="margin">
                         <label for="fullname" translate>Name on card</label>
                         <div class="input-icon">
