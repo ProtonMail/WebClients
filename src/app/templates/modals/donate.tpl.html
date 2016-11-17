@@ -39,8 +39,8 @@
                     </div>
                 </div>
                 <div ng-messages="donateForm.otherAmount.$error">
-                    <p ng-message="number" class="text-red" translate-context="Error" translate>Invalid number</p>
-                    <p ng-message="min" class="text-red" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
+                    <p ng-message="number" class="alert alert-danger" translate-context="Error" translate>Invalid number</p>
+                    <p ng-message="min" class="alert alert-danger" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
                 </div>
                 <div ng-if="ctrl.methods.length > 0">
                     <label for="paymentMethod" class="margin" translate-context="Title">Select payment method:</label>

@@ -319,8 +319,8 @@
                 </div>
             </div>
             <div ng-messages="donationForm.otherAmount.$error">
-                <p ng-message="number" class="text-red" translate-context="Error" translate>Invalid number</p>
-                <p ng-message="min" class="text-red" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
+                <p ng-message="number" class="alert alert-danger" translate-context="Error" translate>Invalid number</p>
+                <p ng-message="min" class="alert alert-danger" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
             </div>
             <card-view card="donationCard"></card-view>
             <p class="text-center spacing-top">
