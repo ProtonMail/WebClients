@@ -196,6 +196,7 @@ angular.module('proton.message')
             const promises = [];
             const events = [];
             const current = tools.currentLocation();
+            const currentMailbox = tools.currentMailbox();
             const ids = _.map(messages, ({ ID }) => ID);
 
             const process = () => {
@@ -228,7 +229,7 @@ angular.module('proton.message')
             };
 
             const filterLabelsID = (list = [], cb = angular.noop) => {
-                return _.chain(labels)
+                return _.chain(list)
                     .filter(cb)
                     .map(({ ID }) => ID)
                     .value();
@@ -236,13 +237,14 @@ angular.module('proton.message')
 
             _.each(messages, (message) => {
 
-                const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected === true && (message.LabelIDs || []).indexOf(ID) === -1);
-                const toRemove = filterLabelsID(labels, ({ ID, Selected }) => Selected === false && (message.LabelIDs || []).indexOf(ID) !== -1);
+                const msgLabels = (message.LabelIDs || []).filter((v) => isNaN(+v));
+                const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected && !_.contains(msgLabels, ID));
+                const toRemove = filterLabelsID(labels, ({ ID, Selected }) => !Selected && _.contains(msgLabels, ID));
 
                 if (alsoArchive === true) {
                     toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
 
-                    if (tools.currentMailbox() !== 'label') {
+                    if (currentMailbox !== 'label' && currentMailbox !== 'starred') {
                         toRemove.push(current);
                     }
                 }
