@@ -287,9 +287,9 @@
             <iframe id="pm_captcha" sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
 
-        <div ng-show="verificator === 'donation'" class="pm_form spacing-top spacing-bottom">
+        <form ng-show="verificator === 'donation'" ng-submit="donate()" name="donationForm" class="pm_form spacing-top" novalidate>
             <p class="alert alert-info" translate-context="Info" translate>Donations are added as credit to your ProtonMail account and can be used to purchase account upgrades.</p>
-            <label for="amount" translate translate-context="Title">Amount</label>
+            <label for="otherAmount" translate translate-context="Title">Amount</label>
             <div class="pm_grid">
                 <div class="col-1-4">
                     <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 5 }" ng-click="selectAmount(5)">5</button>
@@ -306,10 +306,10 @@
             </div>
             <div class="pm_grid">
                 <div class="col-1-4">
-                    <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 100 }" ng-click="donationDetails.amount = 100">100</button>
+                    <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 100 }" ng-click="selectAmount(100)">100</button>
                 </div>
                 <div class="col-1-2">
-                    <input type="number" id="amount" ng-model="donationDetails.otherAmount" ng-change="onChangeOtherAmount()" placeholder-translate="Other" required />
+                    <input type="number" min="2" id="otherAmount" name="otherAmount" ng-model="donationDetails.otherAmount" ng-change="onChangeOtherAmount()" placeholder-translate="Other" />
                 </div>
                 <div class="col-1-4">
                     <span class="pm_select">
@@ -319,11 +319,13 @@
                 </div>
             </div>
             <card-view card="donationCard"></card-view>
-        </div>
+            <p class="text-center spacing-top">
+                <button type="submit" class="pm_button primary large" ng-disabled="networkActivity.loading()" translate translate-context="Action">Complete setup</button>
+            </p>
+        </form>
 
-        <p class="text-center">
-            <button ng-show="verificator === 'donation'" type="button" class="pm_button primary large" ng-click="donate()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Complete setup</button>
-            <button ng-hide="verificator === 'donation'" type="button" class="pm_button primary large" ng-click="createAccount()" ng-disabled="account.codeVerification === '' && account.captcha_token === false && account.smsCodeVerification === ''" translate translate-context="Action">Complete setup</button>
+        <p class="text-center" ng-hide="verificator === 'donation'">
+            <button type="button" class="pm_button primary large" ng-click="createAccount()" ng-disabled="account.codeVerification === '' && account.captcha_token === false && account.smsCodeVerification === ''" translate translate-context="Action">Complete setup</button>
         </p>
     </div>
 </div>

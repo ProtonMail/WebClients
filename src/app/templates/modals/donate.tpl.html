@@ -29,7 +29,7 @@
                         <button type="button" class="pm_button fullwidth" ng-class="{success: ctrl.amount === 250}" ng-click="ctrl.selectAmount(250)">250</button>
                     </div>
                     <div class="col-1-4">
-                        <input type="text" ng-model="ctrl.otherAmount" ng-change="ctrl.onChangeOtherAmount()" placeholder-translate="Other" required />
+                        <input type="text" min="2" ng-model="ctrl.otherAmount" ng-change="ctrl.onChangeOtherAmount()" placeholder-translate="Other" />
                     </div>
                     <div class="col-1-4">
                         <span class="pm_select">
@@ -38,14 +38,14 @@
                         </span>
                     </div>
                 </div>
-                <div ng-show="ctrl.methods.length > 0">
+                <div ng-if="ctrl.methods.length > 0">
                     <label for="paymentMethod" class="margin" translate-context="Title">Select payment method:</label>
                     <span class="pm_select">
                         <select id="paymentMethod" ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
                         <i class="fa fa-angle-down"></i>
                     </span>
                 </div>
-                <div ng-hide="ctrl.methods.length > 0">
+                <div ng-if="ctrl.methods.length === 0">
                     <div class="margin">
                         <label for="fullname" translate>Name on card</label>
                         <div class="input-icon">
