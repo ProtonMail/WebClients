@@ -22,6 +22,13 @@ angular.module('proton.models.payments', [])
 
     return {
         /**
+        * Credit account
+        * @param {Object} Obj
+        */
+        credit(Obj) {
+            return $http.post(url.get() + '/payments/credit', Obj);
+        },
+        /**
         * Donate for perks. Does not require authentication.
         * @param {Object} Obj
         */
