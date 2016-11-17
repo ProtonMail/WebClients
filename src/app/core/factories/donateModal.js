@@ -65,7 +65,7 @@ angular.module('proton.core')
 
                 this.process = true;
 
-                return Payment.donate({
+                return Payment.credit({
                     Amount: amount * 100, // Don't be afraid
                     Currency: this.currency.value,
                     Payment: {
@@ -87,7 +87,7 @@ angular.module('proton.core')
                 const amount = this.otherAmount || this.amount;
                 this.process = true;
 
-                return Payment.donate({
+                return Payment.credit({
                     Amount: amount * 100, // Don't be afraid
                     Currency: this.currency.value,
                     PaymentMethodID: this.method.ID
