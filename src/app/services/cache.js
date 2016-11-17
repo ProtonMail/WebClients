@@ -906,7 +906,6 @@ angular.module('proton.cache', [])
     api.callRefresh = (messageIDs = [], conversationIDs = []) => {
         $rootScope.$broadcast('refreshElements');
         $rootScope.$emit('updatePageName');
-        console.trace('Call refresh')
         $rootScope.$emit('refreshConversation', conversationIDs);
         $rootScope.$emit('message.refresh', messageIDs);
     };
