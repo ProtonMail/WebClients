@@ -239,7 +239,6 @@
         </div>
 
         <div ng-show="verificator === 'email'" class="pm_form spacing-top spacing-bottom">
-            <h3 translate-context="Title" translate>Email verification</h3>
             <div class="pm_grid" ng-show="signup.verificationSent !== true">
                 <div class="col-2-3">
                     <input type="text" ng-model="account.emailVerification" placeholder-translate="Email verification" />
@@ -261,7 +260,6 @@
         </div>
 
         <div ng-if="verificator === 'sms'" id="smsVerification" class="pm_form spacing-top">
-            <h3 translate-context="Title" translate>SMS verification</h3>
             <div class="pm_grid" ng-show="signup.smsVerificationSent !== true">
                 <div class="col-2-3">
                     <input type="text" phone class="phoneCountryCode" ng-model="account.smsVerification" />
@@ -285,13 +283,11 @@
         </div>
 
         <div ng-show="verificator === 'recaptcha'" id="recaptchaFrame" class="spacing-top">
-            <h3 translate-context="Title" translate>reCAPTCHA verification</h3>
             <span class="loading"  translate>Loading...</span>
             <iframe id="pm_captcha" sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
 
-        <div ng-show="verificator === 'donation'">
-            <h3 translate-context="Title" translate>Donation</h3>
+        <div ng-show="verificator === 'donation'" class="pm_form spacing-top">
             <card-view card="donation"></card-view>
         </div>
 
