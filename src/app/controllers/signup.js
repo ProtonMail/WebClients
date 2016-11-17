@@ -477,10 +477,19 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         );
     }
 
+    $scope.selectAmount = (amount) => {
+        $scope.donationDetails.otherAmount = undefined;
+        $scope.donationDetails.amount = amount;
+    };
+
+    $scope.onChangeOtherAmount = () => {
+        $scope.donationDetails.amount = undefined;
+    };
+
     $scope.donate = () => {
         const { number, month, year, fullname, cvc, zip } = $scope.donationCard;
         const country = $scope.donationCard.country.value;
-        const amount = $scope.donationDetails.amount * 100; // Don't be afraid
+        const amount = ($scope.donationDetails.otherAmount || $scope.donationDetails.amount) * 100; // Don't be afraid
         const currency = $scope.donationDetails.currency.value;
         const method = {
             Type: 'card',
