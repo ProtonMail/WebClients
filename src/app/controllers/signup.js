@@ -448,14 +448,14 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         });
     };
 
-    function verify(method) {
+    function verify(method, amount, currency) {
         $scope.errorPay = false;
 
         networkActivityTracker.track(
             Payment.verify({
                 Username: $scope.account.Username,
-                Amount: $scope.plan.Amount,
-                Currency: $scope.plan.Currency,
+                Amount: amount,
+                Currency: currency,
                 Payment: method
             })
             .then((result) => {
@@ -473,6 +473,29 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
                 }
             })
         );
+    }
+
+    /**
+     * Donate to ProtonMail
+     */
+    function donate() {
+        const { number, month, year, fullname, cvc, zip } = $scope.donationCard;
+        const country = $scope.donationCard.country.value;
+        const amount = $scope.donationAmount * 100; // Don't be afraid
+        const currency = $scope.donationCurrency.value;
+        const method = {
+            Type: 'card',
+            Details: {
+                Number: number,
+                ExpMonth: month,
+                ExpYear: (year.length === 2) ? '20' + year : year,
+                CVC: cvc,
+                Name: fullname,
+                Country: country,
+                ZIP: zip
+            }
+        };
+        verify(method, amount, currency);
     }
 
     function receivePaypalMessage(event) {
@@ -496,7 +519,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
         const method = { Type: 'paypal', Details: paypalObject };
 
-        verify(method);
+        verify(method, $scope.plan.Amount, $scope.plan.Currency);
         childWindow.close();
         window.removeEventListener('message', receivePaypalMessage, false);
     }
@@ -521,7 +544,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             }
         };
 
-        verify(method);
+        verify(method, $scope.plan.Amount, $scope.plan.Currency);
     };
 
     $scope.doCreateUser = () => {
