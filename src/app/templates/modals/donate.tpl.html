@@ -9,27 +9,27 @@
                 <p ng-bind="ctrl.text"></p>
                 <div class="pm_grid margin">
                     <div class="col-1-4">
-                        <button type="button" class="pm_button" ng-class="{ success: ctrl.amount === 5 }" style="width: 100%" ng-click="ctrl.amount = 5">5</button>
+                        <button type="button" class="pm_button" ng-class="{ success: ctrl.amount === 5 }" style="width: 100%" ng-click="ctrl.selectAmount(5)">5</button>
                     </div>
                     <div class="col-1-4">
-                        <button type="button" class="pm_button" ng-class="{ success: ctrl.amount === 10 }" style="width: 100%" ng-click="ctrl.amount = 10">10</button>
+                        <button type="button" class="pm_button" ng-class="{ success: ctrl.amount === 10 }" style="width: 100%" ng-click="ctrl.selectAmount(10)">10</button>
                     </div>
                     <div class="col-1-4">
-                        <button type="button" class="pm_button" ng-class="{ success: ctrl.amount === 25 }" style="width: 100%" ng-click="ctrl.amount = 25">25</button>
+                        <button type="button" class="pm_button" ng-class="{ success: ctrl.amount === 25 }" style="width: 100%" ng-click="ctrl.selectAmount(25)">25</button>
                     </div>
                     <div class="col-1-4">
-                        <button type="button" class="pm_button" ng-class="{ success: ctrl.amount === 50 }" style="width: 100%" ng-click="ctrl.amount = 50">50</button>
+                        <button type="button" class="pm_button" ng-class="{ success: ctrl.amount === 50 }" style="width: 100%" ng-click="ctrl.selectAmount(50)">50</button>
                     </div>
                 </div>
                 <div class="pm_grid margin">
                     <div class="col-1-4">
-                        <button type="button" class="pm_button" ng-class="{success: ctrl.amount === 100}" style="width: 100%" ng-click="ctrl.amount = 100">100</button>
+                        <button type="button" class="pm_button" ng-class="{success: ctrl.amount === 100}" style="width: 100%" ng-click="ctrl.selectAmount(100)">100</button>
                     </div>
                     <div class="col-1-4">
-                        <button type="button" class="pm_button" ng-class="{success: ctrl.amount === 250}" style="width: 100%" ng-click="ctrl.amount = 250">250</button>
+                        <button type="button" class="pm_button" ng-class="{success: ctrl.amount === 250}" style="width: 100%" ng-click="ctrl.selectAmount(250)">250</button>
                     </div>
                     <div class="col-1-4">
-                        <input type="text" ng-model="ctrl.otherAmount" ng-change="ctrl.amount = 0;" placeholder-translate="Other" required />
+                        <input type="text" ng-model="ctrl.otherAmount" ng-change="ctrl.onChangeOtherAmount()" placeholder-translate="Other" required />
                     </div>
                     <div class="col-1-4">
                         <span class="pm_select">
