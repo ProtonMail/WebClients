@@ -11,7 +11,7 @@
     <form method="post" ng-submit="accountForm.$valid && checking(accountForm)" name="accountForm" role="form" novalidate class="pm_form">
         <div class="wrapper margin">
             <p class="alert alert-info" translate-context="Info" translate>Take back your privacy! Creating your secure email account takes less than 2 minutes.</p>
-            <label for="Username">
+            <label class="titleLabel" for="Username">
                 <em class="num">1</em>
                 <span translate translate-context="Title">Username and domain</span>
             </label>
@@ -30,7 +30,7 @@
             <p class="alert alert-success" ng-show="goodUsername" translate-context="Info" translate>Email available</p>
 
             <div ng-if="keyPhase < 3">
-                <label for="password">
+                <label class="titleLabel" for="password">
                     <em class="num">2</em>
                     <span translate translate-context="Title">Login password</span>
                 </label>
@@ -44,7 +44,7 @@
                     <p ng-show="$parent.account.loginPassword !== $parent.account.loginPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
                 </div>
 
-                <label for="MBpassword">
+                <label class="titleLabel" for="MBpassword">
                     <em class="num">3</em>
                     <span translate translate-context="Title">Mailbox password</span>
                 </label>
@@ -62,7 +62,7 @@
             </div>
 
             <div ng-if="keyPhase > 2">
-                <label for="password">
+                <label class="titleLabel" for="password">
                     <em class="num">2</em>
                     <span translate translate-context="Title">Password</span>
                 </label>
@@ -79,7 +79,7 @@
                 <p class="alert alert-info" translate-context="Info" translate>If you lose your password, you will not be able to read your emails.</p>
             </div>
 
-            <label for="notificationEmail">
+            <label class="titleLabel" for="notificationEmail">
                 <em class="num" ng-if="keyPhase < 3">4</em>
                 <em class="num" ng-if="keyPhase > 2">3</em>
                 <span translate translate-context="Title">Recovery email</span>
@@ -199,13 +199,13 @@
 
 <div class="pm_panel wide" ng-if="humanityTest" ng-init="initHumanityTest()">
     <div ng-show="!preInvited" class="wrapper" id="verification-panel">
-        <label for="password">
+        <label class="titleLabel" for="password">
             <em class="num">5</em><span translate translate-context="Title" translate-comment="Antispam section of account creation">Are you human?</span>
         </label>
         <p class="help" translate-context="Info" translate>To fight spam, please verify you are human.</p>
         <p class="help" ng-hide="verificator === 'email' || verificator === 'sms'" translate-context="Info" translate>We do not permanently save your email or phone number, it is deleted after verification.</p>
         <div ng-show="showCaptcha">
-            <label ng-click="setIframeSrc()">
+            <label class="titleLabel" ng-click="setIframeSrc()">
                 <input type="radio" ng-model="verificator" value="recaptcha" />
                 <span>reCAPTCHA</span>
             </label>
