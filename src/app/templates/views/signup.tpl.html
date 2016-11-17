@@ -259,7 +259,7 @@
             </div>
         </div>
 
-        <div ng-if="verificator === 'sms'" id="smsVerification" class="pm_form spacing-top">
+        <div ng-if="verificator === 'sms'" id="smsVerification" class="pm_form spacing-top spacing-bottom">
             <div class="pm_grid" ng-show="signup.smsVerificationSent !== true">
                 <div class="col-2-3">
                     <input type="text" phone class="phoneCountryCode" ng-model="account.smsVerification" />
@@ -287,7 +287,7 @@
             <iframe id="pm_captcha" sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
 
-        <div ng-show="verificator === 'donation'" class="pm_form spacing-top">
+        <div ng-show="verificator === 'donation'" class="pm_form spacing-top spacing-bottom">
             <div class="pm_grid">
                 <label for="amount" translate translate-context="Title">Amount</label>
                 <div class="col-2-3">
