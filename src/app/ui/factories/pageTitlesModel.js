@@ -46,6 +46,17 @@ angular.module('proton.ui')
         };
 
         /**
+         * Get computed key name for the cache based on the mode
+         * @return {String}
+         */
+        const getCounterKey = () => {
+            if (tools.typeList() === 'message') {
+                return 'unreadMessage';
+            }
+            return 'unreadConversation';
+        };
+
+        /**
          * Count the number of message unread we have
          * @return {Number}
          */
@@ -56,9 +67,10 @@ angular.module('proton.ui')
                 return cacheCounters.unreadMessage(MAILBOX_IDENTIFIERS[mailbox]);
             }
             if (mailbox === 'label') {
-                return cacheCounters.unreadConversation($state.params.label);
+                return cacheCounters[getCounterKey()]($state.params.label);
             }
-            return cacheCounters.unreadConversation(MAILBOX_IDENTIFIERS[mailbox]);
+
+            return cacheCounters[getCounterKey()](MAILBOX_IDENTIFIERS[mailbox]);
         };
 
         /**
