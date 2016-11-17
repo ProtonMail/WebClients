@@ -304,7 +304,8 @@
         </div>
 
         <p class="text-center">
-            <button type="button" class="pm_button primary large" ng-click="createAccount()" ng-disabled="account.codeVerification === '' && account.captcha_token === false && account.smsCodeVerification === ''" translate translate-context="Action">Complete setup</button>
+            <button ng-show="verificator === 'donation'" type="button" class="pm_button primary large" ng-click="donate()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Donate</button>
+            <button ng-hide="verificator === 'donation'" type="button" class="pm_button primary large" ng-click="createAccount()" ng-disabled="account.codeVerification === '' && account.captcha_token === false && account.smsCodeVerification === ''" translate translate-context="Action">Complete setup</button>
         </p>
     </div>
 </div>

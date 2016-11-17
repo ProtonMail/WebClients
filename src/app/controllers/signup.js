@@ -475,10 +475,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         );
     }
 
-    /**
-     * Donate to ProtonMail
-     */
-    function donate() {
+    $scope.donate = () => {
         const { number, month, year, fullname, cvc, zip } = $scope.donationCard;
         const country = $scope.donationCard.country.value;
         const amount = $scope.donationAmount * 100; // Don't be afraid
@@ -496,7 +493,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             }
         };
         verify(method, amount, currency);
-    }
+    };
 
     function receivePaypalMessage(event) {
         const origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
