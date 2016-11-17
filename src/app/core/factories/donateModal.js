@@ -7,7 +7,7 @@ angular.module('proton.core')
             // Variables
             this.process = false;
             this.text = params.message || 'Donate to ProtonMail';
-            this.amount = params.amount || 25;
+            this.amount = 25;
             this.methods = [];
             this.months = [];
 
@@ -61,11 +61,12 @@ angular.module('proton.core')
 
             const donatation = function () {
                 const year = (this.year.length === 2) ? '20' + this.year : this.year;
+                const amount = this.otherAmount || this.amount;
 
                 this.process = true;
 
                 return Payment.donate({
-                    Amount: this.amount * 100, // Don't be afraid
+                    Amount: amount * 100, // Don't be afraid
                     Currency: this.currency.value,
                     Payment: {
                         Type: 'card',
@@ -83,10 +84,11 @@ angular.module('proton.core')
             }.bind(this);
 
             const donatationWithMethod = function () {
+                const amount = this.otherAmount || this.amount;
                 this.process = true;
 
                 return Payment.donate({
-                    Amount: this.amount * 100, // Don't be afraid
+                    Amount: amount * 100, // Don't be afraid
                     Currency: this.currency.value,
                     PaymentMethodID: this.method.ID
                 });
