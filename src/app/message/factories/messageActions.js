@@ -201,24 +201,28 @@ angular.module('proton.message')
 
             const process = () => {
                 cache.events(events).then(() => {
-                    const events2 = [];
+                    const getLabelsIDS = ({ ConversationID }) => {
+                        return _.chain(cache.queryMessagesCached(ConversationID) || [])
+                            .reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), [])
+                            .uniq()
+                            .value();
+                    };
 
-                    _.each(messages, (message) => {
-                        const conversationID = message.ConversationID;
-                        const conversation = cache.getConversationCached(conversationID);
-
-                        if (angular.isDefined(conversation)) { // In the draft folder, conversation can be undefined
-                            const messages = cache.queryMessagesCached(conversationID);
-                            let labelIDs = [];
-
-                            _.each(messages, (message) => {
-                                labelIDs = labelIDs.concat(message.LabelIDs);
-                            });
-
-                            conversation.LabelIDs = _.uniq(labelIDs);
-                            events2.push({ Action: 3, ID: conversation.ID, Conversation: conversation });
-                        }
-                    });
+                    const events2 = _.chain((messages))
+                        .map((message) => ({
+                            message,
+                            conversation: cache.getConversationCached(message.ConversationID)
+                        }))
+                        .filter(({ conversation }) => conversation)
+                        .map(({ message, conversation }) => {
+                            conversation.LabelIDs = getLabelsIDS(message);
+                            return {
+                                Action: 3,
+                                ID: conversation.ID,
+                                Conversation: conversation
+                            };
+                        })
+                        .value();
 
                     cache.events(events2);
 
