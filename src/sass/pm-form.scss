@@ -136,7 +136,9 @@
                 right: 1px;
             }
         }
-        input[type="text"] {
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"] {
             position: relative;
             padding-left: 2rem;
         }
