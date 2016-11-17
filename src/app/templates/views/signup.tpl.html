@@ -211,20 +211,20 @@
             </label>
         </div>
         <div ng-show="showEmail">
-            <label>
+            <label class="titleLabel" >
                 <input type="radio" ng-model="verificator" value="email" />
                 <span translate translate-context="Title">Email</span>
             </label>
         </div>
         <div ng-show="showSms">
             <span ng-show="!showCaptcha && !showEmail" class="pull-right">(<a href="#" ng-click="whySMS = !whySMS" translate>Why is this required?</a>)</span>
-            <label>
+            <label class="titleLabel" >
                 <input type="radio" ng-model="verificator" value="sms" />
                 <span translate translate-context="Title">SMS</span>
             </label>
         </div>
         <div ng-show="showDonation">
-            <label>
+            <label class="titleLabel">
                 <input type="radio" ng-model="verificator" value="donation" />
                 <span translate translate-context="Title">Donation</span>
             </label>
