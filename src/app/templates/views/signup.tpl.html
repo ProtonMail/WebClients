@@ -292,21 +292,21 @@
             <label for="amount" translate translate-context="Title">Amount</label>
             <div class="pm_grid">
                 <div class="col-1-4">
-                    <button type="button" class="pm_button" style="width: 100%" ng-class="{ success: donationDetails.amount === 5 }" ng-click="selectAmount(5)">5</button>
+                    <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 5 }" ng-click="selectAmount(5)">5</button>
                 </div>
                 <div class="col-1-4">
-                    <button type="button" class="pm_button" style="width: 100%" ng-class="{ success: donationDetails.amount === 10 }" ng-click="selectAmount(10)">10</button>
+                    <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 10 }" ng-click="selectAmount(10)">10</button>
                 </div>
                 <div class="col-1-4">
-                    <button type="button" class="pm_button" style="width: 100%" ng-class="{ success: donationDetails.amount === 25 }" ng-click="selectAmount(25)">25</button>
+                    <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 25 }" ng-click="selectAmount(25)">25</button>
                 </div>
                 <div class="col-1-4">
-                    <button type="button" class="pm_button" style="width: 100%" ng-class="{ success: donationDetails.amount === 50 }" ng-click="selectAmount(50)">50</button>
+                    <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 50 }" ng-click="selectAmount(50)">50</button>
                 </div>
             </div>
             <div class="pm_grid">
                 <div class="col-1-4">
-                    <button type="button" class="pm_button" style="width: 100%" ng-class="{ success: donationDetails.amount === 100 }" ng-click="donationDetails.amount = 100">100</button>
+                    <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 100 }" ng-click="donationDetails.amount = 100">100</button>
                 </div>
                 <div class="col-1-2">
                     <input type="number" id="amount" ng-model="donationDetails.otherAmount" ng-change="onChangeOtherAmount()" placeholder-translate="Other" required />
