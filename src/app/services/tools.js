@@ -385,8 +385,11 @@ angular.module('proton.tools', ['proton.constants'])
         return loc;
     };
 
+    const filteredState = () => $state.$current.name.replace('secured.', '').replace('.element', '');
+
+    tools.filteredState = filteredState;
     tools.currentMailbox = function () {
-        const mailbox = $state.$current.name.replace('secured.', '').replace('.element', '');
+        const mailbox = filteredState();
 
         if (_.contains(Object.keys(CONSTANTS.MAILBOX_IDENTIFIERS), mailbox)) {
             return mailbox;
