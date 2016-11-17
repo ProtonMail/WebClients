@@ -47,8 +47,10 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             { label: 'EUR', value: 'EUR' },
             { label: 'CHF', value: 'CHF' }
         ];
-        $scope.donationAmount = 5;
-        $scope.donationCurrency = $scope.donationCurrencies[1];
+        $scope.donationDetails = {
+            amount: 5,
+            currency: $scope.donationCurrencies[1]
+        };
         $scope.tools = tools;
         $scope.compatibility = tools.isCompatible();
         $scope.showFeatures = false;
@@ -478,8 +480,8 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     $scope.donate = () => {
         const { number, month, year, fullname, cvc, zip } = $scope.donationCard;
         const country = $scope.donationCard.country.value;
-        const amount = $scope.donationAmount * 100; // Don't be afraid
-        const currency = $scope.donationCurrency.value;
+        const amount = $scope.donationDetails.amount * 100; // Don't be afraid
+        const currency = $scope.donationDetails.currency.value;
         const method = {
             Type: 'card',
             Details: {
