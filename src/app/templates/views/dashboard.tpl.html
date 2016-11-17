@@ -50,10 +50,10 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr ng-show="user.Credit > 0">
+                                    <tr ng-show="user.Credit">
                                         <th translate-context="Title" translate>Credit</th>
                                         <td></td>
-                                        <td class="text-right actions">{{ user.Credit / 100 }}</td>
+                                        <td class="text-right actions">{{ user.Credit / 100 | currency: user.Currency }}</td>
                                     </tr>
                                 </table>
                             </div>
