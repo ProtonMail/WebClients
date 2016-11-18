@@ -8,7 +8,7 @@
                 </div>
                 <div class="modal-body pm_form">
                     <p>{{ ctrl.text }}</p>
-                    <card-view ng-if="ctrl.mode === 'edition'" card="ctrl.card"></card-view>
+                    <card-view ng-if="ctrl.mode === 'edition'" card="ctrl.card" form="cardForm"></card-view>
                     <card-panel ng-if="ctrl.mode === 'display'" ng-click="ctrl.edit()" card="ctrl.panel"><card-panel>
                 </div>
             </div>
