@@ -4,7 +4,10 @@ angular.module('proton.core')
         replace: true,
         restrict: 'E',
         templateUrl: 'templates/directives/core/cardView.tpl.html',
-        scope: { card: '=' },
+        scope: {
+            card: '=',
+            form: '='
+        },
         link(scope) {
             const currentYear = new Date().getFullYear();
             const months = _.range(1, 13);

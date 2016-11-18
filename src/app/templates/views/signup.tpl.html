@@ -160,11 +160,11 @@
             </ul>
         </div>
     </div>
-    <form method="post" ng-submit="pay()" role="form" novalidate class="pm_form">
+    <form method="post" ng-submit="pay()" name="payForm" role="form" novalidate class="pm_form">
         <div class="pm_grid" ng-show="method === 'card'">
             <div class="col-1-4 bold" translate translate-context="Title">Credit Card</div>
             <div class="col-3-4">
-                <card-view card="card"></card-view>
+                <card-view card="card" form="payForm"></card-view>
                 <p ng-show="::paypalSupport"><a href="#" ng-click="choosePaypal()" translate translate-context="Link">Pay with PayPal</a></p>
             </div>
         </div>
@@ -309,7 +309,7 @@
                     <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 100 }" ng-click="selectAmount(100)">100</button>
                 </div>
                 <div class="col-1-2">
-                    <input type="number" min="2" id="otherAmount" name="otherAmount" ng-model="donationDetails.otherAmount" ng-focus="onFocusOtherAmount()" placeholder-translate="Other" />
+                    <input type="number" min="2" max="99999999" id="otherAmount" name="otherAmount" ng-model="donationDetails.otherAmount" ng-focus="onFocusOtherAmount()" placeholder-translate="Other" />
                 </div>
                 <div class="col-1-4">
                     <span class="pm_select">
@@ -322,7 +322,7 @@
                 <p ng-message="number" class="alert alert-danger" translate-context="Error" translate>Invalid number</p>
                 <p ng-message="min" class="alert alert-danger" translate-context="Error" translate>Due to credit card processing fees, we cannot accept donations smaller than 2.</p>
             </div>
-            <card-view card="donationCard"></card-view>
+            <card-view card="donationCard" form="donationForm"></card-view>
             <p class="text-center spacing-top">
                 <button type="submit" class="pm_button primary large" ng-disabled="networkActivity.loading()" translate translate-context="Action">Complete setup</button>
             </p>
