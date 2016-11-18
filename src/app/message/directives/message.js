@@ -17,12 +17,6 @@ angular.module('proton.message')
     CONSTANTS
 ) => {
 
-    function checkLabel({ LabelIDs = [] }, mailbox = '') {
-        const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-
-        return LabelIDs.indexOf(labelID) !== -1;
-    }
-
     function getRecipients({ ToList = [], CCList = [], BCCList = [] } = {}) {
         return [].concat(ToList).concat(CCList).concat(BCCList);
     }
@@ -178,46 +172,6 @@ angular.module('proton.message')
             }
 
             scope.body = ''; // Here we put the content displayed inside the message content
-
-            /**
-             * Check if the current message is a sent
-             * @return {Boolean}
-             */
-            scope.isSent = () => {
-                return scope.message.Type === 2 || scope.message.Type === 3;
-            };
-
-            /**
-             * Check if the current message is archived
-             * @return {Boolean}
-             */
-            scope.isArchive = () => {
-                return checkLabel(scope.message, 'archive');
-            };
-
-            /**
-             * Check if the current message is a draft
-             * @return {Boolean}
-             */
-            scope.isDraft = () => {
-                return scope.message.Type === 1;
-            };
-
-            /**
-             * Check if the current message is in trash
-             * @return {Boolean}
-             */
-            scope.isTrash = () => {
-                return checkLabel(scope.message, 'trash');
-            };
-
-            /**
-             * Check if the current message is in spam
-             * @return {Boolean}
-             */
-            scope.isSpam = () => {
-                return checkLabel(scope.message, 'spam');
-            };
 
             /**
              * Get all recipients

@@ -1,0 +1,23 @@
+<div class="allMessageLabels-container labelz" ng-class="{
+    'allMessageLabels-archive': isArchive(),
+    'allMessageLabels-trash': isTrash(),
+    'allMessageLabels-spam': isSpam(),
+    'allMessageLabels-draft': message.Type === 1,
+    'allMessageLabels-sent': message.Type === 2 || message.Type === 3
+}">
+    <i
+        class="fa loc fa-archive allMessageLabels-type-archive"
+        pt-tooltip-translate="In archive"
+        pt-tooltip-translate-comment="message label"></i>
+    <i
+        class="fa loc fa-trash-o allMessageLabels-type-trash"
+         pt-tooltip-translate="In trash"
+        pt-tooltip-translate-comment="message label"></i>
+    <i
+        class="fa loc fa-ban allMessageLabels-type-spam"
+        pt-tooltip-translate="In spam"
+        pt-tooltip-translate-comment="message label"></i>
+    <i class="pm_tag allMessageLabels-type-draft" translate>Draft</i>
+    <i class="pm_tag allMessageLabels-type-sent" translate>Sent</i>
+    <labels-message></labels-message>
+</div>
