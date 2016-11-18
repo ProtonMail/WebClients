@@ -28,21 +28,21 @@ angular.module('proton.core')
             // Functions
             const validateCardNumber = () => {
                 if (self.mode === 'edition') {
-                    return Payment.validateCardNumber(self.number);
+                    return Payment.validateCardNumber(self.card.number);
                 }
                 return Promise.resolve();
             };
 
             const validateCardExpiry = () => {
                 if (self.mode === 'edition') {
-                    return Payment.validateCardExpiry(self.month, self.year);
+                    return Payment.validateCardExpiry(self.card.month, self.card.year);
                 }
                 return Promise.resolve();
             };
 
             const validateCardCVC = () => {
                 if (self.mode === 'edition') {
-                    return Payment.validateCardCVC(self.cvc);
+                    return Payment.validateCardCVC(self.card.cvc);
                 }
                 return Promise.resolve();
             };
@@ -51,18 +51,19 @@ angular.module('proton.core')
                 const deferred = $q.defer();
 
                 if (self.mode === 'edition') {
-                    const year = (self.year.length === 2) ? '20' + self.year : self.year;
+                    const { number, month, year, cvc, fullname, zip } = self.card;
+                    const country = self.card.country.value;
 
                     Payment.updateMethod({
                         Type: 'card',
                         Details: {
-                            Number: self.number,
-                            ExpMonth: self.month,
-                            ExpYear: year,
-                            CVC: self.cvc,
-                            Name: self.fullname,
-                            Country: self.country.value,
-                            ZIP: self.zip
+                            Number: number,
+                            ExpMonth: month,
+                            ExpYear: (year.length === 2) ? '20' + year : year,
+                            CVC: cvc,
+                            Name: fullname,
+                            Country: country,
+                            ZIP: zip
                         }
                     }).then((result) => {
                         if (result.data && result.data.Code === 1000) {
