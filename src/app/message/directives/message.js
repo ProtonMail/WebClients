@@ -226,17 +226,6 @@ angular.module('proton.message')
                 window.open(tab, '_blank');
             };
 
-            /**
-             * Open a new composer and pre-fill the to field
-             * @param  {Object} email - {Address, }
-             */
-            scope.sendMessageTo = (email = {}) => {
-                const message = new Message();
-
-                message.ToList = [email];
-                $rootScope.$emit('composer.new', { message, type: 'new' });
-            };
-
             // TODO need review with label dropdown
             scope.getMessage = () => {
                 return [scope.message];
@@ -251,18 +240,6 @@ angular.module('proton.message')
                 const messages = [scope.message];
 
                 $rootScope.$emit('messageActions', { action: 'label', data: { messages, labels, alsoArchive } });
-            };
-
-            /**
-             * Detach label to the current message
-             * @param {Object} label
-             */
-            scope.detachLabel = (label) => {
-                $rootScope.$emit('messageActions', { action: 'unlabel', data: {
-                    messageID: scope.message.ID,
-                    conversationID: scope.message.ConversationID,
-                    labelID: label.ID
-                } });
             };
 
             /**
