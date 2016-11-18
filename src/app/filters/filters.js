@@ -78,12 +78,9 @@ angular.module('proton.filters')
 })
 
 .filter('labels', (authentication, $rootScope) => {
-    let cache = null;
+    let cache = [];
     const updateCache = () => {
-        cache = _.chain(authentication.user.Labels)
-            .sortBy('Order')
-            .reduce((acc, label) => (acc[label.ID] = label, acc), {})
-            .value();
+        cache = _.sortBy(authentication.user.Labels, 'Order');
     };
 
     $rootScope.$on('deleteLabel', () => updateCache());
@@ -92,11 +89,8 @@ angular.module('proton.filters')
     $rootScope.$on('updateLabels', () => updateCache());
     return (labels = []) => {
         if (authentication.user) {
-            (!cache) && updateCache();
-            return _.reduce(labels, (acc, id) => {
-                cache[id] && acc.push(cache[id]);
-                return acc;
-            }, []);
+            (!cache.length) && updateCache();
+            return _.filter(cache, ({ ID }) => labels.some((id) => id === ID));
         }
 
         return [];

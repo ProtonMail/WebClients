@@ -71,6 +71,23 @@
         box-sizing: border-box;
         clear: both;
 
+
+        &:not(.details) {
+            .time-readable,
+            .recipients-details,
+            .contact-details-email,
+            .toggleDetails-label-hide,
+            .recipients-details-email { display: none !important }
+        }
+
+        &.details {
+            .time-machine,
+            .recipients-summary,
+            .message-summary-folder,
+            .toggleDetails-label-show,
+            .message-summary-labels { display: none !important }
+        }
+
         &.errorDecryption [class*="message-actionBtn-"] { display: none }
         &.errorDecryption .pm_trigger { border-left: 0 }
 
@@ -320,6 +337,11 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 line-height: 20px;
+
+                .recipients-summary-label + .recipients-summary-label::before {
+                        content: ', ';
+                }
+
                 strong {
                     display: inline-block;
                     color: $gray-medium;

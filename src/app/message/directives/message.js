@@ -13,12 +13,11 @@ angular.module('proton.message')
     displayEmbedded,
     messageScroll,
     Message,
-    tools,
-    CONSTANTS
+    tools
 ) => {
 
     function getRecipients({ ToList = [], CCList = [], BCCList = [] } = {}) {
-        return [].concat(ToList).concat(CCList).concat(BCCList);
+        return [].concat(ToList, CCList, BCCList);
     }
 
     /**

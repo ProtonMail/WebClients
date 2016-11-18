@@ -22,18 +22,18 @@
                     <span class="from" ng-if="message.expand"><span translate>From</span>:</span> <strong>{{ message.Sender | contact:'Name' }}</strong> <em>{{ message.Sender | contact:'Address' }} <a class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a></em>
                 </span>
             </div>
-            <div class="location" ng-hide="message.toggleDetails === true">
+            <div class="location message-summary-folder">
                 <folders-message message="message"></folders-message>
             </div>
         </div>
-        <div class="labels" ng-hide="message.toggleDetails === true">
+        <div class="labels message-summary-labels">
             <labels-element element="message"></labels-element>
         </div>
         <div class="time">
             <i class="fa fa-paperclip" ng-show="message.NumAttachments > 0"></i>
-            <span ng-show="message.toggleDetails === true">{{ message.Time | localReadableTime }}</span>
+            <span class="time-readable">{{ message.Time | localReadableTime }}</span>
             <time
-                ng-show="message.toggleDetails !== true"
+                class="time-machine"
                 time-refreshed="{{ message.Time }}"
                 time-filter="messageTime"
                 time-interval="30000"></time>
@@ -55,14 +55,15 @@
     </div>
 
     <div class="details" ng-if="message.expand">
-        <div class="recipients-summary" ng-hide="message.toggleDetails === true">
+        <div class="recipients-summary">
             <strong translate>To</strong>:
-            <span ng-repeat="email in recipients()" title="{{ email | contact:'Address' }}">
-                {{ email | contact: 'Name': true | nameRecipient }}<span ng-hide="$last">, </span>
-            </span>
+            <span
+                class="recipients-summary-label"
+                ng-repeat="email in recipients() track by email.Address"
+                title="{{ ::email | contact:'Address' }}" ng-bind="::email | contact: 'Name': true | nameRecipient"></span>
         </div>
 
-        <div class="recipients-details" ng-show="message.toggleDetails === true">
+        <div class="recipients-details">
             <div ng-if="message.ToList.length" class="toGroup">
                 <span class="from">
                     <span class="where" translate translate-context="Title">To</span>:
@@ -70,7 +71,7 @@
                 <ul>
                     <li class="contact" ng-repeat="email in message.ToList">
                         <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
-                        <em ng-show="message.toggleDetails === true">
+                        <em class="recipients-details-email">
                             {{ email | contact:'Address' }}
                             <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
                         </em>
@@ -84,7 +85,7 @@
                 <ul>
                    <li class="contact" ng-repeat="email in message.CCList">
                         <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
-                        <em ng-show="message.toggleDetails === true">
+                        <em class="contact-details-email">
                             {{ email | contact:'Address' }}
                             <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
                         </em>
@@ -98,7 +99,7 @@
                 <ul>
                    <li class="contact" ng-repeat="email in message.BCCList">
                         <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
-                        <em ng-show="message.toggleDetails === true">
+                        <em class="contact-details-email">
                             {{ email | contact:'Address' }}
                             <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
                         </em>
@@ -200,8 +201,8 @@
             </div>
 
             <a class="toggleDetails" ng-click="message.toggleDetails = !message.toggleDetails">
-                <span ng-show="message.toggleDetails !== true" translate translate-context="Action">Show details</span>
-                <span ng-show="message.toggleDetails === true" translate translate-context="Action">Hide details</span>
+                <span class="toggleDetails-label-show" translate translate-context="Action">Show details</span>
+                <span class="toggleDetails-label-hide" translate translate-context="Action">Hide details</span>
             </a>
 
         </div>
