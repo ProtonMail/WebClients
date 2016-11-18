@@ -171,6 +171,8 @@ angular.module('proton.message')
             // Remove one labelID
             labelIDs.splice(labelIDs.indexOf(labelID), 1);
 
+            debugger;
+
             events.push({
                 Action: 3,
                 ID: conversationID,
