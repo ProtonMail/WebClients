@@ -1,7 +1,20 @@
-<div>
-    <p>{{ card.fullname }}</p>
-    <p>{{ card.number }}</p>
-    <p>{{ card.month }} / {{ card.year }}</p>
-    <p>{{ card.cvc }}</p>
-    <p>{{ card.zip }} {{ card.country }}</p>
+<div class="cardPanel">
+    <div class="cardPanel-issuer">
+        <img class="cardPanel-issuer-visa" src="/assets/img/icons/cc_visa.svg">
+        <img class="cardPanel-issuer-mastercard" src="/assets/img/icons/cc_mastercard.svg">
+        <img class="cardPanel-issuer-amex" src="/assets/img/icons/cc_amex.svg">
+    </div>
+    <div class="cardPanel-number">{{ card.number }}</div>
+    <div class="cardPanel-country">
+      <label>zip - country </label>
+      <span>{{ card.zip }} - {{ card.country }}</span>
+    </div>
+    <div class="cardPanel-holder">
+      <label>Card holder </label>
+      <span>{{ card.fullname }}</span>
+    </div>
+    <div class="cardPanel-expires">
+      <label>Expires</label>
+      <span>{{ card.month }} / {{ card.year }}</span>
+    </div>
 </div>
