@@ -7,67 +7,14 @@
                     <h4 class="modal-title" translate translate-context="Title">Payment details</h4>
                 </div>
                 <div class="modal-body pm_form">
-                    <p>{{ ctrl.text }}</p>
-                    <div class="pm_grid">
-                        <div class="col-1-1">
-                            <div class="margin">
-                                <label for="fullname" translate>Name on card</label>
-                                <div class="input-icon">
-                                    <i class="fa fa-user"></i>
-                                    <input type="text" id="fullname" ng-model="ctrl.fullname" placeholder="Thomas Anderson" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" />
-                                </div>
-                            </div>
-                            <div class="margin">
-                                <label for="cardnumber" translate>Card Number</label>
-                                <div class="input-icon">
-                                    <card-icon number="ctrl.number"></card-icon>
-                                    <input type="text" maxlength="20" id="cardnumber" ng-model="ctrl.number" placeholder="0000 0000 0000 0000" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" required />
-                                </div>
-                            </div>
-                            <div class="pm_grid margin">
-                                <div class="col-1-3">
-                                    <label translate>Expiry Date</label>
-                                    <span class="pm_select">
-                                        <select ng-model="ctrl.month" ng-options="month for month in ctrl.months" ng-change="ctrl.cardChange = true"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                </div>
-                                <div class="col-1-3">
-                                    <label>&nbsp;</label>
-                                    <span class="pm_select">
-                                        <select ng-model="ctrl.year" ng-options="year for year in ctrl.years" ng-change="ctrl.cardChange = true"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                </div>
-                                <div class="col-1-3">
-                                    <label for="cvc">Security Code</label>
-                                    <div class="input-icon right">
-                                        <i class="fa fa-question-circle" cvc-tooltip></i>
-                                        <input type="text" maxlength="4" autocomplete="off" id="cvc" ng-model="ctrl.cvc" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" required />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pm_grid margin">
-                                <div class="col-1-3">
-                                    <label for="zip" translate>ZIP/Postal Code</label>
-                                    <input type="text" minlength="3" maxlength="9" id="zip" ng-model="ctrl.zip" ng-change="ctrl.cardChange = true" ng-model-options="{updateOn: 'blur'}" required />
-                                </div>
-                                <div class="col-2-3">
-                                    <label for="country" translate>Country</label>
-                                    <span class="pm_select">
-                                        <select id="country" ng-model="ctrl.country" ng-change="ctrl.cardChange = true" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                    <p class="alert">{{ ctrl.text }}</p>
+                    <card-view ng-if="ctrl.mode === 'edition'" card="ctrl.card" form="cardForm"></card-view>
+                    <card-panel ng-if="ctrl.mode === 'display'" ng-click="ctrl.edit()" card="ctrl.panel"><card-panel>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="ctrl.process === true" translate translate-context="Action">Cancel</button>
-                <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process  === true || ctrl.cardChange === false" translate translate-context="Action">Submit</button>
+                <button type="submit" class="pm_button primary pull-right" ng-disabled="ctrl.process  === true || ctrl.mode === 'display'" translate translate-context="Action">Submit</button>
             </div>
         </form>
     </div>

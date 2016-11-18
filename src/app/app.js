@@ -234,14 +234,6 @@ angular.module('proton', [
     moment.relativeTimeThreshold('s', 59); // s seconds least number of seconds to be considered a minute
     moment.relativeTimeThreshold('m', 59); // m minutes least number of minutes to be considered an hour
     moment.relativeTimeThreshold('h', 23); // h hours   least number of hours to be considered a day
-    // Manage page title
-    $rootScope.$watch('pageName', (newVal) => {
-        if (newVal) {
-            document.title = newVal + ' | ProtonMail';
-        } else {
-            document.title = 'ProtonMail';
-        }
-    });
 
     $rootScope.networkActivity = networkActivityTracker;
     $rootScope.toggleSidebar = false;
@@ -311,8 +303,6 @@ angular.module('proton', [
     });
 
     $rootScope.$on('$stateChangeSuccess', function (event, toState) {
-        // Change page name
-        $rootScope.$broadcast('updatePageName');
 
         // Hide all the tooltip
         $('.tooltip').not(this).hide();

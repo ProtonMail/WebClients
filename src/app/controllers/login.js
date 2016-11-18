@@ -28,7 +28,6 @@ angular.module('proton.controllers.Auth', [
     tools,
     Setting,
     srp) => {
-    $rootScope.pageName = 'Login';
     $scope.maxPW = CONSTANTS.LOGIN_PW_MAX_LEN;
     $scope.twoFactor = 0;
     $scope.showOld = window.location.hostname !== 'old.protonmail.com';

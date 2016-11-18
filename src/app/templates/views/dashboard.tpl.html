@@ -50,6 +50,11 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    <tr ng-show="user.Credit">
+                                        <th translate-context="Title" translate>Credit</th>
+                                        <td></td>
+                                        <td class="text-right actions">{{ user.Credit / 100 | currency: user.Currency }}</td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>
@@ -86,11 +91,6 @@
                                             <strong ng-show="subscription.Cycle === 12" translate-context="Title" translate>Annually</strong>
                                         </td>
                                         <td class="text-right actions">{{ subscription.Amount / 100 | currency: subscription.Currency }}</td>
-                                    </tr>
-                                    <tr ng-show="user.Credit > 0">
-                                        <th translate-context="Title" translate>Credit</th>
-                                        <td></td>
-                                        <td class="text-right actions">{{ user.Credit / 100 | currency: subscription.Currency }}</td>
                                     </tr>
                                     <tr>
                                         <th>

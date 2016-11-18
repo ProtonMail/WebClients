@@ -86,56 +86,7 @@
                             </span>
                         </div>
                         <div ng-show="ctrl.methods.length === 0">
-                            <div class="margin">
-                                <label for="fullname" translate>Name on card</label>
-                                <div class="input-icon">
-                                    <i class="fa fa-user"></i>
-                                    <input type="text" id="fullname" ng-model="ctrl.fullname" placeholder="Thomas Anderson" />
-                                </div>
-                            </div>
-                            <div class="margin">
-                                <label for="cardnumber" translate>Card Number</label>
-                                <div class="input-icon">
-                                    <card-icon number="ctrl.number"></card-icon>
-                                    <input type="text" maxlength="20" id="cardnumber" ng-model="ctrl.number" placeholder="0000 0000 0000 0000" required />
-                                </div>
-                            </div>
-                            <div class="pm_grid margin">
-                                <div class="col-1-3">
-                                    <label translate>Expiry Date</label>
-                                    <span class="pm_select">
-                                        <select ng-model="ctrl.month" ng-options="month for month in ctrl.months"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                </div>
-                                <div class="col-1-3">
-                                    <label>&nbsp;</label>
-                                    <span class="pm_select">
-                                        <select ng-model="ctrl.year" ng-options="year for year in ctrl.years"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                </div>
-                                <div class="col-1-3">
-                                    <label for="cvc">Security Code</label>
-                                    <div class="input-icon right">
-                                        <i class="fa fa-question-circle" cvc-tooltip></i>
-                                        <input type="text" maxlength="4" autocomplete="off" id="cvc" ng-model="ctrl.cvc" required />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pm_grid margin">
-                                <div class="col-1-3">
-                                    <label for="zip" translate>ZIP/Postal Code</label>
-                                    <input type="text" minlength="3" maxlength="9" id="zip" ng-model="ctrl.zip" required />
-                                </div>
-                                <div class="col-2-3">
-                                    <label for="country" translate>Country</label>
-                                    <span class="pm_select">
-                                        <select id="country" ng-model="ctrl.country" ng-options="country.label for country in ctrl.countries | orderBy: 'priority'"></select>
-                                        <i class="fa fa-angle-down"></i>
-                                    </span>
-                                </div>
-                            </div>
+                            <card-view card="ctrl.card"></card-view>
                         </div>
                     </div>
                     <div ng-show="ctrl.choice.value === 'paypal'">

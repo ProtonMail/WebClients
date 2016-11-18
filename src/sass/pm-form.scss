@@ -128,7 +128,8 @@
     .input-icon {
         position: relative;
         &.right {
-            input[type="text"] {
+            input[type="text"],
+            input[type="number"] {
                 padding-left: 20px;
             }
             .fa {
@@ -136,7 +137,9 @@
                 right: 1px;
             }
         }
-        input[type="text"] {
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"] {
             position: relative;
             padding-left: 2rem;
         }
@@ -156,8 +159,17 @@
         }
     }
 
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
     input[type="text"],
     input[type="number"],
+    input[type="tel"],
     input[type="password"],
     input[type="email"],
     input[type="search"],
@@ -167,6 +179,7 @@
 
     input[type="text"],
     input[type="number"],
+    input[type="tel"],
     input[type="password"],
     input[type="email"],
     input[type="search"] {
@@ -194,6 +207,7 @@
 
     input[type="text"],
     input[type="number"],
+    input[type="tel"],
     input[type="password"],
     input[type="email"],
     input[type="search"],
@@ -252,6 +266,7 @@
     }
     input[type="text"],
     input[type="number"],
+    input[type="tel"],
     input[type="password"],
     input[type="email"],
     input[type="search"],
