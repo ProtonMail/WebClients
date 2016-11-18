@@ -5,80 +5,64 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/card.tpl.html',
         controller(params) {
             // Variables
-            this.countries = tools.countries;
-            this.cardChange = false;
-            this.process = false;
-            this.months = [];
-            this.years = [];
-
-            for (let i = 1; i <= 12; i++) {
-                this.months.push(i);
-            }
-
-            this.month = this.months[0];
-
-            for (let i = 0; i < 12; i++) {
-                this.years.push(new Date().getFullYear() + i);
-            }
-
+            const self = this;
+            self.process = false;
             if (params.method) {
-                this.text = 'Update your credit card information.';
-                this.number = '•••• •••• •••• ' + params.method.Details.Last4;
-                this.fullname = params.method.Details.Name;
-                this.month = this.months[this.months.indexOf(parseInt(params.method.Details.ExpMonth, 10))];
-                this.year = this.years[this.years.indexOf(parseInt(params.method.Details.ExpYear, 10))];
-                this.cvc = '•••';
-                this.zip = params.method.Details.ZIP;
-                this.country = _.findWhere(this.countries, { value: params.method.Details.Country });
+                self.text = gettextCatalog.getString('Update your credit card information.', null);
+                self.mode = 'display';
+                self.panel = {
+                    fullname: params.method.Details.Name,
+                    number: '•••• •••• •••• ' + params.method.Details.Last4,
+                    month: params.method.Details.ExpMonth,
+                    year: params.method.Details.ExpYear,
+                    cvc: '•••',
+                    zip: params.method.Details.ZIP,
+                    country: params.method.Details.Country
+                };
             } else {
-                this.text = 'Add a credit card.';
-                this.number = '';
-                this.fullname = '';
-                this.month = this.months[0];
-                this.year = this.years[0];
-                this.cvc = '';
-                this.zip = '';
-                this.country = _.findWhere(this.countries, { value: 'US' });
+                self.text = gettextCatalog.getString('Add a credit card.', null);
+                self.mode = 'edition';
+                self.card = {};
             }
 
             // Functions
-            const validateCardNumber = function () {
-                if (this.cardChange === true) {
-                    return Payment.validateCardNumber(this.number);
+            const validateCardNumber = () => {
+                if (self.mode === 'edition') {
+                    return Payment.validateCardNumber(self.number);
                 }
                 return Promise.resolve();
-            }.bind(this);
+            };
 
-            const validateCardExpiry = function () {
-                if (this.cardChange === true) {
-                    return Payment.validateCardExpiry(this.month, this.year);
+            const validateCardExpiry = () => {
+                if (self.mode === 'edition') {
+                    return Payment.validateCardExpiry(self.month, self.year);
                 }
                 return Promise.resolve();
-            }.bind(this);
+            };
 
-            const validateCardCVC = function () {
-                if (this.cardChange === true) {
-                    return Payment.validateCardCVC(this.cvc);
+            const validateCardCVC = () => {
+                if (self.mode === 'edition') {
+                    return Payment.validateCardCVC(self.cvc);
                 }
                 return Promise.resolve();
-            }.bind(this);
+            };
 
-            const method = function () {
+            const method = () => {
                 const deferred = $q.defer();
 
-                if (this.cardChange === true) {
-                    const year = (this.year.length === 2) ? '20' + this.year : this.year;
+                if (self.mode === 'edition') {
+                    const year = (self.year.length === 2) ? '20' + self.year : self.year;
 
                     Payment.updateMethod({
                         Type: 'card',
                         Details: {
-                            Number: this.number,
-                            ExpMonth: this.month,
+                            Number: self.number,
+                            ExpMonth: self.month,
                             ExpYear: year,
-                            CVC: this.cvc,
-                            Name: this.fullname,
-                            Country: this.country.value,
-                            ZIP: this.zip
+                            CVC: self.cvc,
+                            Name: self.fullname,
+                            Country: self.country.value,
+                            ZIP: self.zip
                         }
                     }).then((result) => {
                         if (result.data && result.data.Code === 1000) {
@@ -92,14 +76,14 @@ angular.module('proton.core')
                 }
 
                 return deferred.promise;
-            }.bind(this);
+            };
 
-            const finish = function (method) {
+            const finish = (method) => {
                 params.close(method);
             };
 
-            this.submit = function () {
-                this.process = true;
+            self.submit = () => {
+                self.process = true;
 
                 networkActivityTracker.track(
                     validateCardNumber()
@@ -109,12 +93,12 @@ angular.module('proton.core')
                     .then(finish)
                     .catch((error) => {
                         notify({ message: error, classes: 'notification-danger' });
-                        this.process = false;
+                        self.process = false;
                     })
                 );
             };
 
-            this.cancel = function () {
+            self.cancel = () => {
                 params.close();
             };
         }
