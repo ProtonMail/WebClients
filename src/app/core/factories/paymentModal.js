@@ -119,44 +119,34 @@ angular.module('proton.core')
                 return Promise.resolve();
             }
 
-            function method() {
-                if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    const { number, month, year, cvc, fullname, zip } = self.card;
-                    const country = self.card.country.value;
-
-                    // Add payment method
-                    return Payment.updateMethod({
-                        Type: 'card',
-                        Details: {
-                            Number: number,
-                            ExpMonth: month,
-                            ExpYear: (year.length === 2) ? '20' + year : year,
-                            CVC: cvc,
-                            Name: fullname,
-                            Country: country,
-                            ZIP: zip
-                        }
-                    }).then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            return Promise.resolve(result.data.PaymentMethod.ID);
-                        } else if (result.data && result.data.Error) {
-                            return Promise.reject(result.data.Error);
-                        }
-                    });
-                } else if (self.valid.AmountDue > 0) {
-                    return Promise.resolve(self.method.ID);
-                }
-                return Promise.resolve();
-            }
-
-            function subscribe(methodID) {
-                return Payment.subscribe({
+            function subscribe() {
+                const parameters = {
                     Amount: self.valid.AmountDue,
                     Currency: self.valid.Currency,
-                    PaymentMethodID: methodID,
                     CouponCode: self.coupon,
                     PlanIDs: params.planIDs
-                }).then((result) => {
+                };
+                if (self.valid.AmountDue > 0) {
+                    if (self.methods.length) {
+                        parameters.PaymentMethodID = self.method.ID;
+                    } else {
+                        const { number, month, year, cvc, fullname, zip } = self.card;
+                        const country = self.card.country.value;
+                        parameters.Payment = {
+                            Type: 'card',
+                            Details: {
+                                Number: number,
+                                ExpMonth: month,
+                                ExpYear: (year.length === 2) ? '20' + year : year,
+                                CVC: cvc,
+                                Name: fullname,
+                                Country: country,
+                                ZIP: zip
+                            }
+                        };
+                    }
+                }
+                return Payment.subscribe(parameters).then((result) => {
                     if (result.data && result.data.Code === 1000) {
                         return Promise.resolve(result.data);
                     } else if (result.data && result.data.Error) {
@@ -200,7 +190,6 @@ angular.module('proton.core')
                 validateCardNumber()
                 .then(validateCardExpiry)
                 .then(validateCardCVC)
-                .then(method)
                 .then(subscribe)
                 .then(organizationKey)
                 .then(createOrganization)
