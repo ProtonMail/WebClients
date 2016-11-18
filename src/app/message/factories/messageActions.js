@@ -158,6 +158,13 @@ angular.module('proton.message')
             networkActivityTracker.track(promise);
         }
 
+        /**
+         * Detach a label from a message
+         * @param  {String} messageID
+         * @param  {String} conversationID
+         * @param  {String} labelID
+         * @return {void}
+         */
         function detachLabel(messageID, conversationID, labelID) {
             const events = [];
             const messages = cache.queryMessagesCached(conversationID);
@@ -165,20 +172,22 @@ angular.module('proton.message')
             // Generate event for the message
             events.push({ Action: 3, ID: messageID, Message: { ID: messageID, LabelIDsRemoved: [labelID] } });
 
-            // Generate event for the conversation
-            const labelIDs = [].concat(messages.map(({ LabelIDs = [] }) => LabelIDs));
-
-            // Remove one labelID
-            labelIDs.splice(labelIDs.indexOf(labelID), 1);
-
-            debugger;
+            const LabelIDs = _.chain(messages)
+                .reduce((acc, { ID, LabelIDs = [] }) => {
+                    if (ID === messageID) {
+                        return acc.concat(LabelIDs.filter((id) => id !== labelID));
+                    }
+                    return acc.concat(LabelIDs);
+                }, [])
+                .uniq()
+                .value();
 
             events.push({
                 Action: 3,
                 ID: conversationID,
                 Conversation: {
                     ID: conversationID,
-                    LabelIDs: _.uniq(labelIDs)
+                    LabelIDs
                 }
             });
 

@@ -1,0 +1,15 @@
+.allMessageLabels-container {
+    display: flex;
+    align-items: baseline;
+    padding: 10px 0 0;
+
+    &:not(.allMessageLabels-archive) .allMessageLabels-type-archive,
+    &:not(.allMessageLabels-trash) .allMessageLabels-type-trash,
+    &:not(.allMessageLabels-spam) .allMessageLabels-type-spam,
+    &:not(.allMessageLabels-draft) .allMessageLabels-type-draft,
+    &:not(.allMessageLabels-sent) .allMessageLabels-type-sent {
+        display: none
+    }
+}
+
+[class*="allMessageLabels-type"] { margin: 0 .5rem 7px 0 }
