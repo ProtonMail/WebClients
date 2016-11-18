@@ -21,37 +21,18 @@ angular.module('proton.core')
             // Variables
             const self = this;
             self.choices = [];
+            self.card = {};
             self.paypalNetworkError = false;
             self.paypalAccessError = false;
             self.displayCoupon = false;
             self.step = 'payment';
             self.methods = [];
-            self.number = '';
-            self.fullname = '';
-            self.months = [];
-
-            for (let i = 1; i <= 12; i++) {
-                self.months.push(i);
-            }
-
-            self.month = self.months[0];
-            self.years = [];
-
-            for (let i = 0; i < 12; i++) {
-                self.years.push(new Date().getFullYear() + i);
-            }
-
-            self.year = self.years[0];
-            self.cvc = '';
-            self.zip = '';
             self.create = params.create;
             self.valid = params.valid;
             self.base = CONSTANTS.BASE_SIZE;
             self.coupon = '';
             self.childWindow = null;
-            self.countries = tools.countries;
             self.status = params.status;
-            self.country = _.findWhere(self.countries, { value: 'US' });
             self.plans = _.chain(params.plans)
                 .filter((plan) => { return params.planIDs.indexOf(plan.ID) !== -1; })
                 .uniq()
@@ -119,40 +100,41 @@ angular.module('proton.core')
 
             function validateCardNumber() {
                 if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    return Payment.validateCardNumber(self.number);
+                    return Payment.validateCardNumber(self.card.number);
                 }
                 return Promise.resolve();
             }
 
             function validateCardExpiry() {
                 if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    return Payment.validateCardExpiry(self.month, self.year);
+                    return Payment.validateCardExpiry(self.card.month, self.card.year);
                 }
                 return Promise.resolve();
             }
 
             function validateCardCVC() {
                 if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    return Payment.validateCardCVC(self.cvc);
+                    return Payment.validateCardCVC(self.card.cvc);
                 }
                 return Promise.resolve();
             }
 
             function method() {
                 if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    const year = (self.year.length === 2) ? '20' + self.year : self.year;
+                    const { number, month, year, cvc, fullname, zip } = self.card;
+                    const country = self.card.country.value;
 
                     // Add payment method
                     return Payment.updateMethod({
                         Type: 'card',
                         Details: {
-                            Number: self.number,
-                            ExpMonth: self.month,
-                            ExpYear: year,
-                            CVC: self.cvc,
-                            Name: self.fullname,
-                            Country: self.country.value,
-                            ZIP: self.zip
+                            Number: number,
+                            ExpMonth: month,
+                            ExpYear: (year.length === 2) ? '20' + year : year,
+                            CVC: cvc,
+                            Name: fullname,
+                            Country: country,
+                            ZIP: zip
                         }
                     }).then((result) => {
                         if (result.data && result.data.Code === 1000) {
