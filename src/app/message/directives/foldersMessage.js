@@ -30,12 +30,8 @@ angular.module('proton.message')
     const { getTemplateLabels, getTemplateType } = mailboxIdentifersTemplate({ MAP_LABELS, MAP_TYPES });
 
     return {
-        restrict: 'E',
-        templateUrl: 'templates/directives/message/folders.tpl.html',
+        templateUrl: 'templates/message/foldersMessage.tpl.html',
         replace: true,
-        scope: {
-            message: '='
-        },
         link(scope, el) {
 
             const build = (event, { LabelIDs, Type }) => {
