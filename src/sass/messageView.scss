@@ -71,13 +71,19 @@
         box-sizing: border-box;
         clear: both;
 
+        &:not(.open) {
+            .message-frame,
+            .recipients-details-bccGroup,
+            .message-contact-sender,
+            .recipients-details-ccGroup { display: none !important }
+    ;
+            .summary { overflow: hidden }
+        }
 
         &:not(.details) {
             .time-readable,
             .recipients-details,
-            .contact-details-email,
-            .toggleDetails-label-hide,
-            .recipients-details-email { display: none !important }
+            .toggleDetails-label-hide { display: none !important }
         }
 
         &.details {
@@ -98,12 +104,7 @@
             clear: both;
             box-sizing: border-box;
         }
-        .contact {
-            a.compose {
-                cursor: pointer;
-                color: $primary;
-            }
-        }
+        .message-contact-sender { color: $primary }
         &.marked {
             .summary, .details {
                 box-shadow: inset 5px 0 0 $primary;
@@ -249,11 +250,6 @@
                     span {
                         color: $gray-medium;
                     }
-                    em {
-                        a {
-                            display: none;
-                        }
-                    }
                 }
             }
             .location {
@@ -297,39 +293,6 @@
                 font-size: .9em;
                 line-height: 20px;
                 width: 100%;
-                .from {
-                    padding-right: .5rem;
-                }
-                .where,
-                .from {
-                    font-weight: normal;
-                    display: inline-block;
-                    float: left;
-                    color: $gray-medium;
-                }
-                .contact {
-                    strong {
-                        font-weight: normal;
-                    }
-                    em {
-                        font-style: italic;
-                        color: $gray-medium;
-                    }
-                }
-                ul {
-                    display: inline-block;
-                    margin: 0;
-                    padding: 0;
-                    list-style-type: none;
-                    line-height: 20px;
-                    li {
-                        display: block;
-                        margin: 0;
-                        padding: 0;
-                        list-style-type: none;
-                        line-height: 20px;
-                    }
-                }
             }
             .recipients-summary {
                 display: block;
@@ -408,9 +371,6 @@
             .plain {
                 white-space: pre-wrap;
             }
-        }
-        &.closed .summary {
-            overflow: hidden;
         }
 
         .bodyDecrypted {
