@@ -166,7 +166,7 @@ angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
         if (authVersion === 2 && passwords.cleanUserName(creds.Username) !== passwords.cleanUserName(infoResp.data.UserName) ||
             authVersion <= 1 && creds.Username.toLowerCase() !== infoResp.data.UserName.toLowerCase()) {
             return Promise.reject({
-                error_description: 'Please login with your ProtonMail username. You will be able to use your email for future logins.'
+                error_description: 'Please login with just your ProtonMail username (without @protonmail.com or @protonmail.ch).'
             });
         }
 
