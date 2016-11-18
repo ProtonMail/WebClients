@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.directive('togglePassword', ($compile, gettextCatalog) => {
+.directive('togglePassword', (gettextCatalog) => {
     return {
         restrict: 'A',
         link(scope, elem) {
@@ -18,7 +18,6 @@ angular.module('proton.core')
 
                 toggler.addEventListener('click', toggleType);
                 elem.wrap('<div class="pm_toggle_password"/>').after(toggler);
-                elem.attr('type', 'password');
 
                 scope.$on('$destroy', () => { toggler.removeEventListener('click', toggleType); });
             }
