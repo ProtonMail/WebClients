@@ -104,7 +104,7 @@ angular.module('proton.filters')
         const currentLabels = _.map(authentication.user.Labels, (label) => {
             return label.ID;
         });
-        console.trace('LOL')
+        console.trace('LOL');
 
         _.each(labels, (label) => {
             let value = label;
