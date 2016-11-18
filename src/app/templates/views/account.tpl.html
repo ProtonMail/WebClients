@@ -139,7 +139,7 @@
                             <label for="newLoginPassword" translate-context="Title" translate translate-comment="form heading for new login password">New login password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder-translate="New login password" required>
+                            <input type="password" data-toggle-password id="newLoginPassword" name="newLoginPassword" ng-model="newLoginPassword" placeholder-translate="New login password" required>
                             <div ng-messages="loginForm.newLoginPassword.$error">
                                 <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
@@ -150,7 +150,7 @@
                             <label translate-context="Title" translate translate-comment="form label / heading for confirming new login password">Confirm new login password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder-translate="Confirm new login password" required class="margin" compare-to="newLoginPassword">
+                            <input type="password" data-toggle-password name="confirmLoginPassword" ng-model="confirmLoginPassword" placeholder-translate="Confirm new login password" required class="margin" compare-to="newLoginPassword">
                             <div ng-messages="loginForm.confirmLoginPassword.$error">
                                 <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
                                 <p class="text-red" ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
@@ -175,7 +175,7 @@
                             <label for="newMailboxPassword" translate-context="Title" translate>New mailbox password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder-translate="New mailbox password" required>
+                            <input type="password" data-toggle-password id="newMailboxPassword" name="newMailboxPassword" ng-model="newMailboxPassword" placeholder-translate="New mailbox password" required>
                             <div ng-messages="mailboxForm.newMailboxPassword.$error">
                                 <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
@@ -186,7 +186,7 @@
                             <label for="confirmMailboxPassword" Title translate>Confirm new mailbox password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder-translate="Confirm new mailbox password" class="margin" required compare-to="newMailboxPassword">
+                            <input type="password" data-toggle-password id="confirmMailboxPassword" name="confirmMailboxPassword" ng-model="confirmMailboxPassword" placeholder-translate="Confirm new mailbox password" class="margin" required compare-to="newMailboxPassword">
                             <div ng-messages="mailboxForm.confirmMailboxPassword.$error">
                                 <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
                                 <p class="text-red" ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
@@ -219,7 +219,7 @@
                             <label for="newPassword" translate-context="Title" translate>New password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" id="newPassword" name="newPassword" ng-model="newPassword" placeholder-translate="New password" required>
+                            <input type="password" data-toggle-password id="newPassword" name="newPassword" ng-model="newPassword" placeholder-translate="New password" required />
                             <div ng-messages="passwordForm.newPassword.$error">
                                 <p class="text-red" ng-message="required" translate-context="Error" translate>Field required</p>
                             </div>
@@ -230,7 +230,7 @@
                             <label for="confirmPassword" Title translate>Confirm new password</label>
                         </div>
                         <div class="col-5-8">
-                            <input type="password" id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" placeholder-translate="Confirm new password" class="margin" required compare-to="newPassword">
+                            <input type="password" data-toggle-password id="confirmPassword" name="confirmPassword" ng-model="confirmPassword" placeholder-translate="Confirm new password" class="margin" compare-to="newPassword" required />
                             <div ng-messages="passwordForm.confirmPassword.$error">
                                 <p class="text-red" ng-message="required"  translate-context="Error" translate>Field required</p>
                                 <p class="text-red" ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>

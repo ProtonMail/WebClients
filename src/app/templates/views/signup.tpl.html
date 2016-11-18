@@ -35,11 +35,11 @@
                     <span translate translate-context="Title">Login password</span>
                 </label>
                 <p class="help" translate-context="Info" translate>This is used to login to our servers.</p>
-                <input id="password" name="password" ng-model="$parent.account.loginPassword" type="password" class="form-control margin" placeholder-translate="Choose a login password" maxlength="{{ maxPW }}" required />
+                <input type="password" data-toggle-password id="password" name="password" ng-model="$parent.account.loginPassword" class="form-control margin" placeholder-translate="Choose a login password" maxlength="{{ maxPW }}" required />
                 <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.password.$touched">
                     <p ng-show="$parent.accountForm.$submitted && $parent.accountForm.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Login password is required.</p>
                 </div>
-                <input id="passwordc" name="passwordc" ng-model="$parent.account.loginPasswordConfirm" type="password" class="form-control" placeholder-translate="Confirm login password" required compare-to="$parent.account.loginPassword">
+                <input type="password" data-toggle-password id="passwordc" name="passwordc" ng-model="$parent.account.loginPasswordConfirm" class="form-control" placeholder-translate="Confirm login password" required compare-to="$parent.account.loginPassword">
                 <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.passwordc.$touched">
                     <p ng-show="$parent.account.loginPassword !== $parent.account.loginPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
                 </div>
@@ -50,11 +50,11 @@
                 </label>
                 <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
             your messages. Do not lose this password--we cannot recover it.</p>
-                <input id="MBpassword" name="MBpassword" ng-model="$parent.account.mailboxPassword" type="password" class="form-control margin" placeholder-translate="Choose a mailbox password" required />
+                <input type="password" data-toggle-password id="MBpassword" name="MBpassword" ng-model="$parent.account.mailboxPassword" class="form-control margin" placeholder-translate="Choose a mailbox password" required />
                 <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.MBpassword.$touched">
                     <p ng-show="$parent.accountForm.$submitted && $parent.accountForm.MBpassword.$error.required" class="alert alert-danger" translate-context="Error" translate>Mailbox password is required.</p>
                 </div>
-                <input id="MBpasswordc" name="MBpasswordc" ng-model="$parent.account.mailboxPasswordConfirm" type="password" class="form-control" ng-class="{disabled: networkActivity.loading()}" placeholder-translate="Confirm mailbox password" required compare-to="$parent.account.mailboxPassword">
+                <input type="password" data-toggle-password id="MBpasswordc" name="MBpasswordc" ng-model="$parent.account.mailboxPasswordConfirm" class="form-control" ng-class="{disabled: networkActivity.loading()}" placeholder-translate="Confirm mailbox password" required compare-to="$parent.account.mailboxPassword">
                 <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.MBpasswordc.$touched">
                     <p ng-show="$parent.account.mailboxPassword !== $parent.account.mailboxPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
                 </div>
@@ -68,11 +68,11 @@
                 </label>
                 <p class="help" translate-context="Info" translate>This is used to encrypt and decrypt
             your messages. Do not lose this password, we cannot recover it.</p>
-                <input id="password" name="password" ng-model="$parent.account.loginPassword" type="password" class="form-control margin" placeholder-translate="Choose a password" maxlength="{{ maxPW }}" required />
+                <input type="password" data-toggle-password id="password" name="password" ng-model="$parent.account.loginPassword" class="form-control margin" placeholder-translate="Choose a password" maxlength="{{ maxPW }}" required />
                 <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.password.$touched">
                     <p ng-show="$parent.accountForm.$submitted && $parent.accountForm.password.$error.required" class="alert alert-danger" translate-context="Error" translate>Password is required.</p>
                 </div>
-                <input id="passwordc" name="passwordc" ng-model="$parent.account.loginPasswordConfirm" type="password" class="form-control" placeholder-translate="Confirm password" required compare-to="$parent.account.loginPassword">
+                <input type="password" data-toggle-password id="passwordc" name="passwordc" ng-model="$parent.account.loginPasswordConfirm" class="form-control" placeholder-translate="Confirm password" required compare-to="$parent.account.loginPassword">
                 <div ng-show="$parent.accountForm.$submitted || $parent.accountForm.passwordc.$touched">
                     <p ng-show="$parent.account.loginPassword !== $parent.account.loginPasswordConfirm" class="alert alert-danger" translate-context="Error" translate>Passwords do not match.</p>
                 </div>
