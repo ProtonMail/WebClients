@@ -7,6 +7,7 @@ angular.module('proton.core')
             // Variables
             const self = this;
             self.process = false;
+            self.card = {};
             if (params.method) {
                 self.text = gettextCatalog.getString('Update your credit card information.', null);
                 self.mode = 'display';
@@ -22,7 +23,6 @@ angular.module('proton.core')
             } else {
                 self.text = gettextCatalog.getString('Add a credit card.', null);
                 self.mode = 'edition';
-                self.card = {};
             }
 
             // Functions
@@ -81,6 +81,11 @@ angular.module('proton.core')
 
             const finish = (method) => {
                 params.close(method);
+            };
+
+            self.edit = () => {
+                self.card.fullname = self.panel.fullname;
+                self.mode = 'edition';
             };
 
             self.submit = () => {
