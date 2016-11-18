@@ -128,7 +128,8 @@
     .input-icon {
         position: relative;
         &.right {
-            input[type="text"] {
+            input[type="text"],
+            input[type="number"] {
                 padding-left: 20px;
             }
             .fa {
