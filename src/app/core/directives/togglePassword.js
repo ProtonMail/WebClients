@@ -2,25 +2,23 @@ angular.module('proton.core')
 .directive('togglePassword', (gettextCatalog) => {
     return {
         restrict: 'A',
-        link(scope, elem) {
-            if (!$.browser.msie) {
-                const show = gettextCatalog.getString('Show', null, 'Action');
-                const hide = gettextCatalog.getString('Hide', null, 'Action');
-
-                const toggler = document.createElement('a');
-                toggler.innerHTML = show;
-
-                const toggleType = () => {
-                    const type = (elem.attr('type') === 'text' ? 'password' : 'text');
-                    elem.attr('type', type);
-                    toggler.innerHTML = (type === 'password') ? show : hide;
+        compile(element) {
+            const isIE = $.browser.msie;
+            if (!isIE) {
+                const anchor = document.createElement('a');
+                element.wrap('<div class="pm_toggle_password"/>').after(anchor);
+                return (scope, el) => {
+                    const show = gettextCatalog.getString('Show', null, 'Action');
+                    const hide = gettextCatalog.getString('Hide', null, 'Action');
+                    anchor.innerHTML = show;
+                    const onClick = () => {
+                        const type = (el[0].getAttribute('type') === 'text') ? 'password' : 'text';
+                        el[0].setAttribute('type', type);
+                        anchor.innerHTML = (type === 'password') ? show : hide;
+                    };
+                    anchor.addEventListener('click', onClick);
+                    scope.$on('$destroy', () => anchor.removeEventListener('click', onClick));
                 };
-
-                toggler.addEventListener('click', toggleType);
-                elem.wrap('<div class="pm_toggle_password"/>').after(toggler);
-                elem.attr('type', 'password');
-
-                scope.$on('$destroy', () => { toggler.removeEventListener('click', toggleType); });
             }
         }
     };
