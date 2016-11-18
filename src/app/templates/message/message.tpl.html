@@ -1,7 +1,6 @@
 <article class="message" ng-class="{
     'last': last,
     'open': message.expand,
-    'closed': !message.expand,
     'errorDecryption': message.failedDecryption,
     'marked': message.ID === marked.ID,
     'read': message.IsRead === 1,
@@ -19,7 +18,7 @@
                 <i class="history fa fa-reply-all" ng-if="message.IsRepliedAll === 1"></i>
                 <i class="history fa fa-mail-forward" ng-if="message.IsForwarded === 1"></i>
                 <span class="contact">
-                    <span class="from" ng-if="message.expand"><span translate>From</span>:</span> <strong>{{ message.Sender | contact:'Name' }}</strong> <em>{{ message.Sender | contact:'Address' }} <a class="fa fa-pencil compose" ng-click="$event.stopPropagation();sendMessageTo(message.Sender)" pt-tooltip-translate="Compose to"></a></em>
+                    <span class="from" ng-if="message.expand"><span translate>From</span>:</span> <strong>{{ message.Sender | contact:'Name' }}</strong> <em>{{ message.Sender | contact:'Address' }}<message-compose-to class="message-contact-sender" data-key="Sender"></message-compose-to></em>
                 </span>
             </div>
             <div class="location message-summary-folder">
@@ -64,48 +63,23 @@
         </div>
 
         <div class="recipients-details">
-            <div ng-if="message.ToList.length" class="toGroup">
-                <span class="from">
-                    <span class="where" translate translate-context="Title">To</span>:
-                </span>
-                <ul>
-                    <li class="contact" ng-repeat="email in message.ToList">
-                        <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
-                        <em class="recipients-details-email">
-                            {{ email | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
-                        </em>
-                    </li>
-                </ul>
-            </div>
-            <div ng-if="message.CCList.length" class="ccGroup" ng-show="message.expand === true">
-                <span class="from">
-                    <span class="where" translate translate-context="Title">CC</span>:
-                </span>
-                <ul>
-                   <li class="contact" ng-repeat="email in message.CCList">
-                        <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
-                        <em class="contact-details-email">
-                            {{ email | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
-                        </em>
-                    </li>
-                </ul>
-            </div>
-            <div ng-if="message.BCCList.length && senderIsMe(message)" class="bccGroup" ng-show="message.expand === true">
-                <span class="from">
-                    <span class="where" translate translate-context="Title">BCC</span>:
-                </span>
-                <ul>
-                   <li class="contact" ng-repeat="email in message.BCCList">
-                        <strong title="{{ email | contact:'Address' }}">{{ email | contact:'Name' }}</strong>
-                        <em class="contact-details-email">
-                            {{ email | contact:'Address' }}
-                            <a class="fa fa-pencil compose" ng-click="sendMessageTo(email)" pt-tooltip-translate="Compose to"></a>
-                        </em>
-                    </li>
-                </ul>
-            </div>
+            <message-contacts
+                class="recipients-details-toGroup"
+                ng-if="message.ToList.length"
+                data-model="message.ToList"
+                data-list="To"></message-contacts>
+
+            <message-contacts
+                class="recipients-details-ccGroup"
+                ng-if="message.CCList.length"
+                data-model="message.CCList"
+                data-list="CC"></message-contacts>
+
+            <message-contacts
+                class="recipients-details-bccGroup"
+                ng-if="message.BCCList.length && senderIsMe(message)"
+                data-model="message.BCCList"
+                data-list="BCC"></message-contacts>
         </div>
 
         <all-message-labels ng-if="message.toggleDetails"></all-message-labels>
@@ -217,7 +191,7 @@
     <display-content-btn data-action="remote"></display-content-btn>
     <display-content-btn data-action="embedded"></display-content-btn>
 
-    <div class="frame" ng-show="message.expand" data-embedded-img-loader data-inject-message-media>
+    <div class="frame message-frame" data-embedded-img-loader data-inject-message-media>
         <loader-tag ng-if="message.decrypting === true"></loader-tag>
         <p class="alert alert-danger" ng-if="message.SpamScore === 100" translate translate-context="Info">This email seems to be from a ProtonMail address but came from outside our system and failed our authentication requirements. It may be spoofed or improperly forwarded!</p>
         <p class="alert alert-danger" ng-if="message.SpamScore === 101" translate translate-context="Info">This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!</p>
