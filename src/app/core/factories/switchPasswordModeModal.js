@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('switchPasswordModeModal', (authentication, gettextCatalog) => {
+.factory('switchPasswordModeModal', (authentication, pmModal) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/switchPasswordMode.tpl.html',
