@@ -1,7 +1,7 @@
 .labelsElement-hidden {display: none !important}
 
 .labelsElement-label::before {color: attr(data-color)}
-.labelsElement-label {border: 2px solid currentColor}
+.labelsElement-label {border: 2px solid currentColor !important}
 
 .labelsElement-label:not(:first-of-type) {
   max-width: .5rem;

@@ -1,0 +1,9 @@
+<div class="labelsMessage-container pm_labels">
+    <div
+        ng-repeat="label in message.LabelIDs | labels track by label.ID"
+        class="labelsMessage-label pm_label"
+        ng-style="{color: label.Color}">
+        <span class="labelsMessage-name">{{ ::label.Name }}</span>
+        <button class="labelsMessage-btn-remove fa fa-times" data-label-id="{{::label.ID}}"></button>
+    </div>
+</div>
