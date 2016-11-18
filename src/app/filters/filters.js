@@ -77,23 +77,29 @@ angular.module('proton.filters')
     };
 })
 
-.filter('labels', (authentication) => {
+.filter('labels', (authentication, $rootScope) => {
+    let cache = null;
+    const updateCache = () => {
+        cache = _.chain(authentication.user.Labels)
+            .sortBy('Order')
+            .reduce((acc, label) => (acc[label.ID] = label, acc), {})
+            .value();
+    };
+
+    $rootScope.$on('deleteLabel', () => updateCache());
+    $rootScope.$on('createLabel', () => updateCache());
+    $rootScope.$on('updateLabel', () => updateCache());
+    $rootScope.$on('updateLabels', () => updateCache());
     return (labels = []) => {
-        const labelsFiltered = [];
-
         if (authentication.user) {
-            const userLabels = _.sortBy(authentication.user.Labels, 'Order');
-
-            for (let i = 0; i < userLabels.length; i++) {
-                const labelObject = userLabels[i];
-
-                if (labels.indexOf(labelObject.ID) !== -1) {
-                    labelsFiltered.push(labelObject);
-                }
-            }
+            (!cache) && updateCache();
+            return _.reduce(labels, (acc, id) => {
+                cache[id] && acc.push(cache[id]);
+                return acc;
+            }, []);
         }
 
-        return labelsFiltered;
+        return [];
     };
 })
 
@@ -104,6 +110,7 @@ angular.module('proton.filters')
         const currentLabels = _.map(authentication.user.Labels, (label) => {
             return label.ID;
         });
+        console.trace('LOL')
 
         _.each(labels, (label) => {
             let value = label;

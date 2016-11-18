@@ -113,12 +113,13 @@
             <i class="fa loc fa-ban" ng-if="isSpam()" pt-tooltip-translate="In spam" pt-tooltip-translate-comment="message label"></i>
             <i class="pm_tag" ng-if="isDraft()" translate>Draft</i>
             <i class="pm_tag" ng-if="isSent()" translate>Sent</i>
-            <span class="pm_labels">
+            <labels-message></labels-message>
+       <!--      <span class="pm_labels">
                 <label ng-repeat="label in message.LabelIDs | labels" class="pm_label" ng-style="{border: '2px solid ' + label.Color, color: label.Color}">
                     <span ng-bind="label.Name"></span>
-                    <!-- <a href="#" ng-click="detachLabel(label)" class="close">&times;</a> -->
+                    <a href="#" ng-click="detachLabel(label)" class="close">&times;</a>
                 </label>
-            </span>
+            </span> -->
         </div>
 
         <div class="action-row">
