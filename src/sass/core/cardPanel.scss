@@ -95,14 +95,13 @@ cardPanel
   .cardPanel-expires
    {
     position: absolute;
-    top: 80px;
+    top: 10px;
     left: 19px;
     text-transform: capitalize;
   }
 
   .cardPanel-country {
       font-size: .7rem;
-      display: none
   }
 
   .cardPanel-holder,
