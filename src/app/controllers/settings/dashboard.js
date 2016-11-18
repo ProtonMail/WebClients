@@ -350,7 +350,6 @@ angular.module('proton.controllers.Settings')
                     if (result.data && result.data.Code === 1000) {
                         donateModal.activate({
                             params: {
-                                amount: 25,
                                 methods: result.data.PaymentMethods,
                                 close() {
                                     // Close donate modal

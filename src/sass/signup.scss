@@ -6,7 +6,6 @@
         outline: none;
         border: none;
         width: 100%;
-        margin-top: 1rem;
         position: relative;
         left: -8px;
         height: 120px;
@@ -35,7 +34,7 @@
             position: absolute;
             left: 0;
             right: 0;
-            top: 6rem;
+            top: 4rem;
             text-align: center;
             z-index: 1;
             display: block;
@@ -79,52 +78,55 @@
         padding: 0 65px;
         position: relative;
         text-align: initial;
-        .usernameWrap {
-            strong {
-                float: left;
-                line-height: 2rem;
-            }
-            input {
-                width: 11rem;
-                display: inline-block;
-                float: left;
-            }
-            em {
-                font-style: normal;
-                width: 2rem;
-                text-align: center;
-                line-height: 2rem;
-                float: left;
-            }
+    }
+
+    .usernameWrap {
+        strong {
+            float: left;
+            line-height: 2rem;
         }
-        label {
-            font-weight: 700;
-            text-align: left;
-            position: relative;
-            margin: 2rem 0 -1rem 0;
-            &.optIn {
-                font-weight: normal;
-            }
-            em.num {
-                position: absolute;
-                width: 2rem;
-                left: -65px;
-                font-weight: 700;
-                border-radius: 2rem;
-                background-color: $light;
-                text-align: center;
-                line-height: 2rem;
-                display: block;
-                height: 2rem;
-                font-style: normal;
-            }
-            span {
-                color: $text;
-                font-weight: 700;
-                font-size: 1.1rem;
-            }
+        input {
+            width: 11rem;
+            display: inline-block;
+            float: left;
+        }
+        em {
+            font-style: normal;
+            width: 2rem;
+            text-align: center;
+            line-height: 2rem;
+            float: left;
         }
     }
+
+    .titleLabel {
+        font-weight: 700;
+        text-align: left;
+        position: relative;
+        margin: 2rem 0 -1rem 0;
+        &.optIn {
+            font-weight: normal;
+        }
+        em.num {
+            position: absolute;
+            width: 2rem;
+            left: -65px;
+            font-weight: 700;
+            border-radius: 2rem;
+            background-color: $light;
+            text-align: center;
+            line-height: 2rem;
+            display: block;
+            height: 2rem;
+            font-style: normal;
+        }
+        span {
+            color: $text;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+    }
+
 }
 
 body.mobileMode {

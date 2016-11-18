@@ -52,7 +52,7 @@ angular.module('proton.controllers.Secured', [])
     }
 
     // if the user subscribed to a plan during the signup process
-    if ($rootScope.tempPlan && $rootScope.tempPlan.Amount === authentication.user.Credit) {
+    if ($rootScope.tempPlan && ['plus', 'visionary'].indexOf($rootScope.tempPlan.Name) !== -1 && $rootScope.tempPlan.Amount === authentication.user.Credit) {
         const subscribe = function () {
             const deferred = $q.defer();
 
