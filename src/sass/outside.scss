@@ -120,6 +120,10 @@ body#eo-reply {
 		font-size: .9em;
 		margin: 0;
 	}
+
+    [id="expirationMessage"] .expirationMessage-expiration {
+        font-weight: bold
+    }
 	#outsideMessageWrap {
 		padding: 0;
 		background-color: #fff;
