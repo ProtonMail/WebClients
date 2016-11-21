@@ -19,6 +19,7 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
     pmcw,
     networkActivityTracker,
     secureSessionStorage,
+    AttachmentLoader
 ) => {
 
     /**
@@ -135,17 +136,27 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
                     const cid = embedded.getCid(attachment.Headers);
 
                     debugger;
+
                     if (cid) {
-                        return embedded.getBlob(cid)
-                            .then((blob) => ({
-                                CID: cid,
-                                Filename: attachment.Name,
-                                DataPacket: blob,
-                                MIMEType: attachment.MIMEType,
-                                KeyPackets: b64toBlob(attachment.KeyPackets),
-                                // KeyPackets: new Blob([attachment.KeyPackets]),
-                                Headers: attachment.Headers
-                            }));
+                        return AttachmentLoader.get(attachment, message).then((buffer) => ({
+                            CID: cid,
+                            Filename: attachment.Name,
+                            DataPacket: new Blob([buffer], { type: 'application/octet-stream' }),
+                            MIMEType: attachment.MIMEType,
+                            KeyPackets: b64toBlob(attachment.KeyPackets),
+                            // KeyPackets: new Blob([attachment.KeyPackets]),
+                            Headers: attachment.Headers
+                        }));
+                        // return embedded.getBlob(cid)
+                        //     .then((blob) => ({
+                        //         CID: cid,
+                        //         Filename: attachment.Name,
+                        //         DataPacket: blob,
+                        //         MIMEType: attachment.MIMEType,
+                        //         KeyPackets: b64toBlob(attachment.KeyPackets),
+                        //         // KeyPackets: new Blob([attachment.KeyPackets]),
+                        //         Headers: attachment.Headers
+                        //     }));
                     }
                     return Promise.resolve({
                         Filename: attachment.Filename,
