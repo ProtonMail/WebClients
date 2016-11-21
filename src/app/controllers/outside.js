@@ -20,6 +20,25 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
     networkActivityTracker,
     secureSessionStorage,
 ) => {
+
+    /**
+     * @link {http://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript}
+     */
+    function b64toBlob(b64Data = '', type = '', sliceSize = 512) {
+
+        const byteCharacters = atob(b64Data);
+        const size = byteCharacters.length;
+        const byteArrays = [];
+
+        for (let offset = 0; offset < size; offset += sliceSize) {
+            const slice = byteCharacters.slice(offset, offset + sliceSize);
+            const byteNumbers = _.map(new Array(slice.length), (e, i) => slice.charCodeAt(i));
+            byteArrays.push(new Uint8Array(byteNumbers));
+        }
+
+        return new Blob(byteArrays, { type });
+    }
+
     // Variables
     const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
     const password = pmcw.decode_utf8_base64(secureSessionStorage.getItem('proton:encrypted_password'));
@@ -102,7 +121,6 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
             notify({ message });
         }
 
-                debugger;
         embedded.parser($scope.message, 'cid')
             .then((result) => {
                 debugger;
@@ -115,6 +133,8 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
                 const attachments = $scope.message.Attachments || [];
                 const promises = attachments.map((attachment) => {
                     const cid = embedded.getCid(attachment.Headers);
+
+                    debugger;
                     if (cid) {
                         return embedded.getBlob(cid)
                             .then((blob) => ({
@@ -122,7 +142,8 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
                                 Filename: attachment.Name,
                                 DataPacket: blob,
                                 MIMEType: attachment.MIMEType,
-                                KeyPackets: new Blob([attachment.KeyPackets]),
+                                KeyPackets: b64toBlob(attachment.KeyPackets),
+                                // KeyPackets: new Blob([attachment.KeyPackets]),
                                 Headers: attachment.Headers
                             }));
                     }

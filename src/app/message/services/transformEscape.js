@@ -8,10 +8,8 @@ angular.module('proton.message')
     const replace = (regex, input) => input.replace(regex, (match) => `proton-${match}`);
 
     return (html, message, { content = '' }) => {
-        debugger
         const input = content.replace(REGEXP_IS_PROTON, '');
         html.innerHTML = replace(REGEXP_IS_URL, replace(REGEXP_IS_BREAK, input));
-        debugger
         return html;
     };
 });
