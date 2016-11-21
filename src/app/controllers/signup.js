@@ -93,10 +93,10 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         if (direct) {
             const { VerifyMethods = [] } = direct;
             // determine what activation methods to show
-            $scope.showEmail = VerifyMethods.indexOf('email') !== -1;
-            $scope.showCaptcha = VerifyMethods.indexOf('recaptcha') !== -1;
-            $scope.showSms = VerifyMethods.indexOf('sms') !== -1;
-            $scope.showDonation = true; // VerifyMethods.indexOf('donation') !== -1;
+            $scope.showEmail = _.contains(VerifyMethods, 'email');
+            $scope.showCaptcha = _.contains(VerifyMethods, 'recaptcha');
+            $scope.showSms = _.contains(VerifyMethods, 'sms');
+            $scope.showPayment = _.contains(VerifyMethods, 'payment');
         }
 
         if (plans.length > 0) {
@@ -318,7 +318,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
                     if ($rootScope.preInvited) {
                         $scope.createAccount();
-                    } else if (plans.length > 0) {
+                    } else if (plans.length > 0 && $scope.showPayment) {
                         $scope.payment = true;
                     } else {
                         $scope.humanityTest = true;
