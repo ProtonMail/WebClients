@@ -64,6 +64,7 @@ angular.module('proton.cache', [])
     function updateMessage(currentMsg, isSend) {
         const current = _.findWhere(messagesCached, { ID: currentMsg.ID });
         const message = new Message(currentMsg);
+
         if (angular.isDefined(current)) {
             manageCounters(current, message, 'message');
             messagesCached = _.map(messagesCached, (msg) => {
@@ -85,7 +86,6 @@ angular.module('proton.cache', [])
         } else {
             messagesCached.push(message);
         }
-
         manageTimes(message.ConversationID);
 
         $rootScope.$emit('labelsElement.' + message.ID, message);
