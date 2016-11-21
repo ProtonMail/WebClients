@@ -80,8 +80,8 @@ angular.module('proton.ui')
          * @return {String}
          */
         const formatNumber = (n, mailbox) => {
-            if (_.contains(DISPLAY_NUMBER, mailbox)) {
-                return `(${n || 0})`;
+            if (_.contains(DISPLAY_NUMBER, mailbox) && n) {
+                return `(${n})`;
             }
             return '';
         };
