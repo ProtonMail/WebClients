@@ -1,12 +1,13 @@
 <div id="outsideMessageWrap">
     <div ng-if="true" id="expirationMessage">
         <span  translate>Expiring in</span>
-        <strong
-            time-refreshed="{{ message.ExpirationTime }}"
+        <time
+            time-refreshed="{{ ::message.ExpirationTime }}"
+            class="expirationMessage-expiration"
             time-filter="delay"
             time-interval="1000">
             <i class="fa fa-spin fa-circle-o-notch"></i>
-        </strong>.
+        </time>.
     </div>
     <div class="message-head">
         <a ng-click="reply()" class="pm_button pull-right">
