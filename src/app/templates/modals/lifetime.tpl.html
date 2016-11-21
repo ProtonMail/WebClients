@@ -11,7 +11,15 @@
                         <p class="alert alert-info">Bla Bla Bla</p>
                     </div>
                     <div class="col-1-2">
-                        <card-view card="ctrl.card"></card-view>
+                        <span class="pm_select">
+                            <select ng-model="ctrl.currency" ng-options="currency.label for currency in ctrl.currencies"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                        <span class="pm_select" ng-if="ctrl.methods.length">
+                            <select ng-model="ctrl.method" ng-options="ctrl.label(method) for method in ctrl.methods"></select>
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                        <card-view ng-if="!ctrl.methods.length" card="ctrl.card"></card-view>
                     </div>
                 </div>
             </div>

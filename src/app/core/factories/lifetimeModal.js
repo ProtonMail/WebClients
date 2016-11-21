@@ -12,6 +12,9 @@ angular.module('proton.core')
                 const { data } = result;
                 if (data.Code === 1000) {
                     self.methods = data.PaymentMethods;
+                    if (self.methods.length) {
+                        self.method = self.methods[0];
+                    }
                 }
             });
             self.submit = () => {
@@ -28,6 +31,9 @@ angular.module('proton.core')
             };
             self.cancel = () => {
                 params.close();
+            };
+            self.label = (method) => {
+                return '•••• •••• •••• ' + method.Details.Last4;
             };
             function getParameters() {
                 const currency = self.currency.value;
