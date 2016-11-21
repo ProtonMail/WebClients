@@ -64,7 +64,6 @@ angular.module('proton.cache', [])
     function updateMessage(currentMsg, isSend) {
         const current = _.findWhere(messagesCached, { ID: currentMsg.ID });
         const message = new Message(currentMsg);
-
         if (angular.isDefined(current)) {
             manageCounters(current, message, 'message');
             messagesCached = _.map(messagesCached, (msg) => {
@@ -929,13 +928,10 @@ angular.module('proton.cache', [])
         const now = moment().unix();
         const { list, removeList } = messagesCached
             .reduce((acc, message = {}) => {
-                const { ExpirationTime, ID } = message;
+                const { ExpirationTime } = message;
                 const test = !(ExpirationTime !== 0 && ExpirationTime < now);
-                if (test) {
-                    acc.list.push(message);
-                } else {
-                    acc.removeList.push(ID);
-                }
+                const key = test ? 'list' : 'removeList';
+                acc[key].push(message);
                 return acc;
             }, { list: [], removeList: [] });
 
