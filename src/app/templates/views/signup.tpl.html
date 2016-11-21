@@ -290,7 +290,7 @@
         <form ng-show="verificator === 'donation'" ng-submit="donationForm.$valid && donate()" name="donationForm" class="pm_form spacing-top" novalidate>
             <p class="alert alert-info" translate-context="Info" translate>Donations are added as credit to your ProtonMail account and can be used to purchase account upgrades.</p>
             <label for="otherAmount" translate translate-context="Title">Amount</label>
-            <div class="pm_grid">
+            <div class="pm_grid flex flex-row">
                 <div class="col-1-4">
                     <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 5 }" ng-click="selectAmount(5)">5</button>
                 </div>
@@ -304,11 +304,11 @@
                     <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 50 }" ng-click="selectAmount(50)">50</button>
                 </div>
             </div>
-            <div class="pm_grid">
+            <div class="pm_grid flex flex-row">
                 <div class="col-1-4">
                     <button type="button" class="pm_button fullwidth" ng-class="{ success: donationDetails.amount === 100 }" ng-click="selectAmount(100)">100</button>
                 </div>
-                <div class="col-1-2">
+                <div class="col-1-2 double">
                     <input type="number" min="2" max="99999999" id="otherAmount" name="otherAmount" ng-model="donationDetails.otherAmount" ng-focus="onFocusOtherAmount()" placeholder-translate="Other" />
                 </div>
                 <div class="col-1-4">
