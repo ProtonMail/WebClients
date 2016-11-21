@@ -6,9 +6,11 @@ angular.module('proton.core')
             otherModelValue: '=compareTo'
         },
         link(scope, element, attributes, ngModel) {
-
             ngModel.$validators.compareTo = (modelValue) => {
-                return modelValue === scope.otherModelValue;
+                if (scope.otherModelValue) {
+                    return modelValue === scope.otherModelValue;
+                }
+                return true;
             };
 
             scope.$watch('otherModelValue', () => {

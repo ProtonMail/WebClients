@@ -6,7 +6,8 @@ angular.module('proton.core')
             const isIE = $.browser.msie;
             if (!isIE) {
                 const anchor = document.createElement('a');
-                element.wrap('<div class="pm_toggle_password"/>').after(anchor);
+                const container = element[0].parentElement;
+                container.appendChild(anchor);
                 return (scope, el) => {
                     const show = gettextCatalog.getString('Show', null, 'Action');
                     const hide = gettextCatalog.getString('Hide', null, 'Action');
