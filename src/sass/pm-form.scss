@@ -159,14 +159,6 @@
         }
     }
 
-    input[type="number"]::-webkit-outer-spin-button,
-    input[type="number"]::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-    }
-    input[type="number"] {
-        -moz-appearance: textfield;
-    }
-
     input[type="text"],
     input[type="number"],
     input[type="tel"],
@@ -281,6 +273,18 @@
             margin-bottom: 10px;
         }
     }
+
+    /* reset arrow on number input */
+    
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+
     textarea {
         min-height: 6rem;
         box-shadow: inset 0 2px 4px rgba(0,0,0,.15);

@@ -2,7 +2,7 @@
 	.pm_form {
 		.alert {
 			padding-right: 55px; // space for trash icon
-			
+
 			.if {
 				display: inline-block;
 				line-height: 34px;
@@ -54,6 +54,14 @@
 					line-height: 1rem
 				}
 			}
+
 		}
+
+		.labelsGrid {
+			.pm-flex-content-vertical-center{
+				height: 3rem;
+			}
+		}
+
 	}
 }

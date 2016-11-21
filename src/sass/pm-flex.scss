@@ -1,0 +1,20 @@
+/* Flex Content */
+
+.pm-flex-content,
+.pm-flex-content-vertical-center {
+    @include flexColumn();
+}
+
+.pm-flex-content-vertical-center {
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.pm-flex-content-autoWidth {
+    -webkit-align-self: flex-start;
+    align-self: flex-start
+}
+.pm-flex-content-fillHeight {
+    -webkit-flex:1;
+    flex:1
+}

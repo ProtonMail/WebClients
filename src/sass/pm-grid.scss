@@ -138,37 +138,38 @@ $pad: 20px;
 		width: 100%;
 	}
 
-	[class^="col-"].verticalAlign{
-		display:flex;
-		flex-direction: column;
-		justify-content: center;
-		height: 3rem;
-
-		.autoWidth {
-			align-self: flex-start;
-		}
-	}
-
 	&.flex {
 		display: flex;
 		-webkit-flex-direction:column;
 		flex-direction: column;
 
-		&.shrink {
+		&.flex-mobileShrink,
+		&.flex-row {
 			-webkit-flex-direction:row;
 			flex-direction:row;
 		}
 
 		[class*='col-'] {
 			flex:1;
-			width: auto
+			width: auto;
 		}
+
+		[class*='col-']:first-child:nth-last-child(3),
+		[class*='col-']:first-child:nth-last-child(3) ~ [class*='col-'] {
+			&.double {
+				flex: 2.3;
+			}
+		}
+
 	}
 
 }
 
 body.mobileMode {
 	.pm_grid {
+		&.flex:not(.flex-mobileShrink) {
+			flex-direction: column;
+		}
 		&:not(.flex) [class*='col-'] {
 			float: left;
 			width: 100% !important;
