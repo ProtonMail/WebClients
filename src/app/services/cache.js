@@ -704,19 +704,25 @@ angular.module('proton.cache', [])
     * @return {Promise}
     */
     api.getMessage = (ID = '') => {
-        const deferred = $q.defer();
         const message = _.findWhere(messagesCached, { ID });
+        const { Body } = message;
 
-        if (angular.isDefined(message) && angular.isDefined(message.Body)) {
-            deferred.resolve(angular.copy(message));
-        } else {
-            getMessage(ID)
-            .then((message) => {
-                deferred.resolve(angular.copy(message));
-            });
-        }
+        return new Promise((resolve, reject) => {
+            if (Body) {
+                resolve(angular.copy(message));
+            } else {
+                resolve(api.queryMessage(ID));
+            }
+        });
+    };
 
-        return deferred.promise;
+    /**
+     * Call the BE to get the message from a specific id
+     * @param {String} messageId
+     * @return {Promise}
+     */
+    api.queryMessage = (messageId) => {
+        return getMessage(messageId).then((message) => angular.copy(message));
     };
 
     /**

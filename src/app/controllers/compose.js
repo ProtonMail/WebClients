@@ -150,7 +150,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         const limitReached = checkComposerNumber();
 
         if (!found && !limitReached) {
-            cache.getMessage(ID)
+            cache.queryMessage(ID)
             .then((message) => {
                 message.clearTextBody()
                 .then(() => initMessage(message));
