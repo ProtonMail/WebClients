@@ -13,6 +13,7 @@ angular.module('proton.controllers.Settings')
     cardModal,
     confirmModal,
     donateModal,
+    lifetimeModal,
     networkActivityTracker,
     notify,
     Organization,
@@ -517,6 +518,16 @@ angular.module('proton.controllers.Settings')
                 }
             }));
         }
+    };
+
+    $scope.displayLifetime = () => {
+        lifetimeModal.activate({
+            params: {
+                close() {
+                    lifetimeModal.deactivate();
+                }
+            }
+        });
     };
 
     /**
