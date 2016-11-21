@@ -709,7 +709,7 @@ angular.module('proton.cache', [])
         const message = _.findWhere(messagesCached, { ID });
         const { Body } = message;
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             if (Body) {
                 resolve(angular.copy(message));
             } else {
