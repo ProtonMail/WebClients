@@ -1,4 +1,4 @@
-@mixin fillHeight() {
+@mixin flexColumn() {
 
     display:-webkit-flex;
     display:flex;
@@ -18,7 +18,7 @@
     min-height: 0px; // allow scroll for childs
 }
 
-@mixin filledWidth() {
+@mixin flexRow() {
     display:-webkit-flex;
     display: flex;
 }
