@@ -42,7 +42,7 @@
                 <input type="text" id="cvc" name="cvc" ng-model="card.cvc" maxlength="4" card-cvc required />
                 <div ng-messages="form.cvc.$error">
                     <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
-                    <p ng-message="cardCvc" class="text-red" translate-context="Error" translate>Field required</p>
+                    <p ng-message="cardCvc" class="text-red" translate-context="Error" translate>Invalid CVC</p>
                 </div>
             </div>
         </div>
