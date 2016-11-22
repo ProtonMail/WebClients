@@ -4,6 +4,7 @@ angular.module('proton.core')
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/lifetime.tpl.html',
         controller(params) {
+            console.log(params);
             const self = this;
             self.card = {};
             self.currencies = [{ label: 'USD', value: 'USD' }, { label: 'EUR', value: 'EUR' }, { label: 'CHF', value: 'CHF' }];

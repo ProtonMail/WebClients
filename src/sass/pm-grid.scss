@@ -57,6 +57,10 @@ $pad: 20px;
 		}
 	}
 
+	&.no-margin {
+		margin: 0;
+	}
+
 	&.no-padding {
 		padding: 0;
 		[class*='col-'] {
@@ -149,13 +153,13 @@ $pad: 20px;
 			flex-direction:row;
 		}
 
-		[class*='col-'] {
+		> [class*='col-'] {
 			flex:1;
 			width: auto;
 		}
 
-		[class*='col-']:first-child:nth-last-child(3),
-		[class*='col-']:first-child:nth-last-child(3) ~ [class*='col-'] {
+		> [class*='col-']:first-child:nth-last-child(3),
+		> [class*='col-']:first-child:nth-last-child(3) ~ [class*='col-'] {
 			&.double {
 				flex: 2.3;
 			}
