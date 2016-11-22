@@ -93,21 +93,21 @@
             data-model="message"
             data-label="To"
             data-key="ToList"
-            class="row toRow"></composer-input-meta>
+            class="row toRow composer-field-ToList"></composer-input-meta>
 
         <composer-input-meta
             data-model="message"
             data-label="CC"
             data-key="CCList"
-            class="row ccRow"></composer-input-meta>
+            class="row ccRow composer-field-CCList"></composer-input-meta>
 
         <composer-input-meta
             data-model="message"
             data-label="BCC"
             data-key="BCCList"
-            class="row bccRow"></composer-input-meta>
+            class="row bccRow composer-field-BCCList"></composer-input-meta>
 
-        <composer-subject class="row subjectRow"></composer-subject>
+        <composer-subject class="row subjectRow composer-field-Subject"></composer-subject>
     </div>
     <section class="flex" ng-if="!message.minimized" ng-form="composeForm{{$index}}">
         <div class="composeEditor fill">
