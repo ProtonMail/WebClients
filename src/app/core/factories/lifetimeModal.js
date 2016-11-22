@@ -27,7 +27,8 @@ angular.module('proton.core')
                         return Promise.reject(data.Error);
                     }
                     return Promise.resolve(result);
-                });
+                })
+                .then(() => params.close());
                 networkActivityTracker.track(promise);
             };
             self.cancel = () => {
@@ -55,7 +56,7 @@ angular.module('proton.core')
                         };
                         break;
                     case 'card':
-                        parameters.PaymentMethodID = this.method.id;
+                        parameters.PaymentMethodID = self.method.id;
                         break;
                     case 'paypal':
                         parameters.Payment = {
