@@ -1,5 +1,11 @@
 module.exports = () => {
 
+    const SELECTOR_MAP = {
+        CCList: '.composer-field-CCList',
+        BCCList: '.composer-field-CCList',
+        buttonCCBCC: '.composerInputMeta-overlay-button'
+    };
+
     const open = () => {
         return element(by.css('.compose.pm_button')).click();
     };
@@ -54,7 +60,15 @@ module.exports = () => {
 
         const send = () => browser.executeScript(`$('.btnSendMessage-btn-action').click()`);
 
-        return { content, fillInput, send, isOpened };
+
+        const openCCBCC = () => browser.executeScript(`$('${SELECTOR_MAP.buttonCCBCC}').eq(0).click();`);
+
+        const isVisible = (key) => {
+            const selector = SELECTOR_MAP[key];
+            return browser.executeScript(`return $('${selector}').is(':visible')`);
+        };
+
+        return { content, fillInput, send, isOpened, isVisible, openCCBCC };
     };
 
     return { open, isOpened, compose };
