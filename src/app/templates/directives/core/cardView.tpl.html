@@ -13,9 +13,10 @@
         <label for="cardnumber" translate translate-context="Label">Card Number</label>
         <div class="input-icon">
             <card-icon number="card.number"></card-icon>
-            <input type="number" id="cardnumber" name="cardnumber" ng-model="card.number" placeholder="0000 0000 0000 0000" maxlength="20" required />
+            <input type="text" id="cardnumber" name="cardnumber" ng-model="card.number" placeholder="0000 0000 0000 0000" card-number maxlength="20" required />
             <div ng-messages="form.cardnumber.$error">
                 <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
+                <p ng-message="cardNumber" class="text-red" translate-context="Error" translate>Invalid card number</p>
             </div>
         </div>
     </div>
@@ -38,10 +39,10 @@
             <label for="cvc" translate translate-context="Label">Security Code</label>
             <div class="input-icon right">
                 <i class="fa fa-question-circle" cvc-tooltip></i>
-                <input type="number" id="cvc" name="cvc" ng-model="card.cvc" maxlength="4" required />
+                <input type="text" id="cvc" name="cvc" ng-model="card.cvc" maxlength="4" card-cvc required />
                 <div ng-messages="form.cvc.$error">
-                    <p ng-message="number" class="text-red" translate-context="Error" translate>Invalid number</p>
                     <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
+                    <p ng-message="cardCvc" class="text-red" translate-context="Error" translate>Field required</p>
                 </div>
             </div>
         </div>

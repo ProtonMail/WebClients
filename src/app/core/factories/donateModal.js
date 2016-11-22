@@ -21,19 +21,7 @@ angular.module('proton.core')
             }
 
             // Functions
-            const validateCardNumber = () => {
-                return Payment.validateCardNumber(self.card.number);
-            };
-
-            const validateCardExpiry = () => {
-                return Payment.validateCardExpiry(self.card.month, self.card.year);
-            };
-
-            const validateCardCVC = () => {
-                return Payment.validateCardCVC(self.card.cvc);
-            };
-
-            const donatation = () => {
+            const donation = () => {
                 const amount = self.otherAmount || self.amount;
                 const { number, month, year, cvc, fullname, zip } = self.card;
                 const country = self.card.country.value;
@@ -59,7 +47,7 @@ angular.module('proton.core')
                 });
             };
 
-            const donatationWithMethod = () => {
+            const donationWithMethod = () => {
                 const amount = self.otherAmount || self.amount;
                 self.process = true;
 
@@ -105,16 +93,13 @@ angular.module('proton.core')
                 let promise;
 
                 if (self.methods.length > 0) {
-                    promise = donatationWithMethod()
+                    promise = donationWithMethod()
                     .then(finish)
                     .catch((error) => {
                         notify({ message: error, classes: 'notification-danger' });
                     });
                 } else {
-                    promise = validateCardNumber()
-                    .then(validateCardExpiry)
-                    .then(validateCardCVC)
-                    .then(donatation)
+                    promise = donation()
                     .then(finish)
                     .catch((error) => {
                         notify({ message: error, classes: 'notification-danger' });

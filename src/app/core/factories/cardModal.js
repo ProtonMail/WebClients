@@ -26,27 +26,6 @@ angular.module('proton.core')
             }
 
             // Functions
-            const validateCardNumber = () => {
-                if (self.mode === 'edition') {
-                    return Payment.validateCardNumber(self.card.number);
-                }
-                return Promise.resolve();
-            };
-
-            const validateCardExpiry = () => {
-                if (self.mode === 'edition') {
-                    return Payment.validateCardExpiry(self.card.month, self.card.year);
-                }
-                return Promise.resolve();
-            };
-
-            const validateCardCVC = () => {
-                if (self.mode === 'edition') {
-                    return Payment.validateCardCVC(self.card.cvc);
-                }
-                return Promise.resolve();
-            };
-
             const method = () => {
                 const deferred = $q.defer();
 
@@ -92,10 +71,7 @@ angular.module('proton.core')
                 self.process = true;
 
                 networkActivityTracker.track(
-                    validateCardNumber()
-                    .then(validateCardExpiry)
-                    .then(validateCardCVC)
-                    .then(method)
+                    method()
                     .then(finish)
                     .catch((error) => {
                         notify({ message: error, classes: 'notification-danger' });

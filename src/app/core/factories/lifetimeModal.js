@@ -7,6 +7,7 @@ angular.module('proton.core')
             const self = this;
             self.amount = 1337;
             self.card = {};
+            self.paypalObject = {};
             self.currencies = [{ label: 'USD', value: 'USD' }, { label: 'EUR', value: 'EUR' }, { label: 'CHF', value: 'CHF' }];
             self.currency = _.findWhere(self.currencies, { value: authentication.user.Currency });
             Payment.methods().then((result) => {
@@ -20,13 +21,12 @@ angular.module('proton.core')
             });
             self.submit = () => {
                 const promise = Payment.credit(getParameters())
-                .then((result) => {
-                    const { data } = result;
-                    if (data.Code === 1000) {
-                        // Success
-                    } else if (data.Error) {
+                .then((result = {}) => {
+                    const { data = {} } = result;
+                    if (data.Error) {
                         return Promise.reject(data.Error);
                     }
+                    return Promise.resolve(result);
                 });
                 networkActivityTracker.track(promise);
             };
@@ -39,23 +39,32 @@ angular.module('proton.core')
                     Amount: self.amount * 100,
                     Currency: currency
                 };
-                if (self.methods.length) {
-                    parameters.PaymentMethodID = '';
-                } else {
-                    const { number, month, year, cvc, fullname, zip } = self.card;
-                    const country = self.card.country.value;
-                    parameters.Payment = {
-                        Type: 'card',
-                        Details: {
-                            Number: number,
-                            ExpMonth: month,
-                            ExpYear: year,
-                            CVC: cvc,
-                            Name: fullname,
-                            Country: country,
-                            ZIP: zip
-                        }
-                    };
+                switch (self.method.type) {
+                    case 'new_card':
+                        parameters.Payment = {
+                            Type: 'card',
+                            Details: {
+                                Number: self.card.number,
+                                ExpMonth: self.card.month,
+                                ExpYear: (self.card.year.length === 2) ? '20' + self.card.year : self.card.year,
+                                CVC: self.card.cvc,
+                                Name: self.card.fullname,
+                                Country: self.card.country.value,
+                                ZIP: self.card.zip
+                            }
+                        };
+                        break;
+                    case 'card':
+                        parameters.PaymentMethodID = this.method.id;
+                        break;
+                    case 'paypal':
+                        parameters.Payment = {
+                            Type: 'paypal',
+                            Details: self.paypalObject
+                        };
+                        break;
+                    default:
+                        break;
                 }
                 return parameters;
             }
