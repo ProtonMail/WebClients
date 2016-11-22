@@ -221,7 +221,7 @@
     <div ng-if="message.ExpirationTime > 0" class="expiration" ng-if="message.expand">
         <i class="fa fa-clock-o"></i>
         <span translate>This message will expire in</span>
-        <time time-refreshed="{{ message.ExpirationTime }}"></time>
+        <time time-refreshed="{{ ::message.ExpirationTime }}"></time>
     </div>
 
     <display-content-btn data-action="remote"></display-content-btn>
