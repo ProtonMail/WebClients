@@ -42,29 +42,28 @@ angular.module('proton.attachments')
             return _.findWhere(message.Attachments, { ID: id });
         };
 
-        $rootScope
-            .$on(EVENT_NAME, (e, { type, data }) => {
-                switch (type) {
-                    case 'close':
-                        attachmentApi.killUpload(data);
-                        break;
-                    case 'cancel':
-                        dispatchMessageAction(data.message);
-                        break;
-                    case 'remove':
-                        remove(data);
-                        break;
-                    case 'remove.all':
-                        removeAll(data);
-                        break;
-                    case 'drop':
-                        buildQueue(data);
-                        break;
-                    case 'upload':
-                        uploadQueue(data);
-                        break;
-                }
-            });
+        $rootScope.$on(EVENT_NAME, (e, { type, data }) => {
+            switch (type) {
+                case 'close':
+                    attachmentApi.killUpload(data);
+                    break;
+                case 'cancel':
+                    dispatchMessageAction(data.message);
+                    break;
+                case 'remove':
+                    remove(data);
+                    break;
+                case 'remove.all':
+                    removeAll(data);
+                    break;
+                case 'drop':
+                    buildQueue(data);
+                    break;
+                case 'upload':
+                    uploadQueue(data);
+                    break;
+            }
+        });
 
         /**
          * Create a queue of files for one message
@@ -155,8 +154,7 @@ angular.module('proton.attachments')
             composerRequestModel.save(message, deferred);
             networkActivityTracker.track(deferred.promise);
 
-            return Promise
-                .all(promises)
+            return Promise.all(promises)
                 .then((upload) => upload.filter(Boolean)) // will be undefined for aborted request
                 .then((upload) => {
                     message.uploading = 0;
@@ -268,17 +266,16 @@ angular.module('proton.attachments')
          * @return {void}
          */
         function removeAll({ message, list }) {
-            list
-                .forEach((attachment) => {
-                    remove({
-                        id: attachment.ID,
-                        attachment,
-                        message,
-                        packet: {
-                            Inline: +isEmbedded(attachment)
-                        }
-                    });
+            list.forEach((attachment) => {
+                remove({
+                    id: attachment.ID,
+                    attachment,
+                    message,
+                    packet: {
+                        Inline: +isEmbedded(attachment)
+                    }
                 });
+            });
         }
 
         /**
@@ -305,8 +302,7 @@ angular.module('proton.attachments')
 
             message.attachmentsToggle = true;
 
-            return AttachmentLoader
-                .load(file, message.From.Keys[0].PublicKey)
+            return AttachmentLoader.load(file, message.From.Keys[0].PublicKey)
                 .then((packets) => {
                     return attachmentApi.upload(packets, message, tempPacket, total)
                         .then(({ attachment, sessionKey, REQUEST_ID, isAborted }) => {
@@ -340,8 +336,7 @@ angular.module('proton.attachments')
          * @return {Promise}
          */
         const download = (attachment, message, href) => {
-            return AttachmentLoader
-                .get(attachment, message)
+            return AttachmentLoader.get(attachment, message)
                 .then((buffer) => ({
                     data: buffer,
                     Name: attachment.Name,

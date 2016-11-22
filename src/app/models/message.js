@@ -135,6 +135,10 @@ angular.module('proton.models.message', ['proton.constants'])
             return (this.Attachments || []).reduce((acc, { Size = 0 } = {}) => acc + (+Size), 0);
         },
 
+        getAttachment(ID) {
+            return _.findWhere(this.Attachments || [], { ID });
+        },
+
         countEmbedded() {
             return this.Attachments
                 .filter(({ Headers = {} }) => Headers['content-disposition'] === 'inline')
