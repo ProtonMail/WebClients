@@ -1,5 +1,5 @@
 angular.module('proton.outside')
-    .factory('attachmentModelOutside', ($log, attachmentEoApi, AttachmentLoader, $rootScope, embedded, notify) => {
+    .factory('attachmentModelOutside', ($log, AttachmentLoader, $rootScope, embedded, notify) => {
 
         const EVENT_NAME = 'attachment.upload.outside';
         const QUEUE = [];
@@ -29,18 +29,18 @@ angular.module('proton.outside')
         const dispatchMessageAction = (message) => $rootScope.$emit('actionMessage', message);
 
         $rootScope.$on(EVENT_NAME, (e, { type, data }) => {
-                switch (type) {
-                    case 'remove.all':
-                        removeAll(data);
-                        break;
-                    case 'drop':
-                        buildQueue(data);
-                        break;
-                    case 'upload':
-                        convertQueue(data);
-                        break;
-                }
-            });
+            switch (type) {
+                case 'remove.all':
+                    removeAll(data);
+                    break;
+                case 'drop':
+                    buildQueue(data);
+                    break;
+                case 'upload':
+                    convertQueue(data);
+                    break;
+            }
+        });
 
         function buildQueue({ queue, message }) {
             QUEUE.push(queue);
@@ -233,6 +233,56 @@ angular.module('proton.outside')
             delete MAP_ATTACHMENTS[REQUEST_ID];
         }
 
-        return { load: angular.noop };
+        /**
+         * Encrypt every attachments for a message
+         * @param  {Array}  options.Attachments
+         * @param  {String} options.publicKey
+         * @return {Promise}
+         */
+        function encrypt({ Attachments = [], publicKey }) {
+
+            /**
+             * A blob is ~ a File so we only need to bind two custom attributes
+             * @param  {Blob} blob
+             * @param  {String} name
+             * @return {File}
+             */
+            const toFile = (blob, name) => {
+                blob.inline = 1;
+                blob.name = name;
+                return blob;
+            };
+
+            const promises = Attachments.map((attachment) => {
+                const cid = embedded.getCid(attachment.Headers);
+
+                // ex signature else package is already encrypted
+                if (cid && !attachment.DataPacket) {
+                    return embedded.getBlob(cid)
+                        .then((blob) => AttachmentLoader.load(toFile(blob, attachment.Name), publicKey))
+                        .then((packet) => ({
+                            CID: cid,
+                            Filename: attachment.Name,
+                            MIMEType: attachment.MIMEType,
+                            Headers: attachment.Headers,
+                            KeyPackets: new Blob([packet.keys]),
+                            DataPacket: new Blob([packet.data])
+                        }));
+                }
+
+                return Promise.resolve({
+                    CID: cid,
+                    Filename: attachment.Filename,
+                    DataPacket: attachment.DataPacket,
+                    MIMEType: attachment.MIMEType,
+                    KeyPackets: attachment.KeyPackets,
+                    Headers: attachment.Headers
+                });
+            });
+
+            return Promise.all(promises);
+        }
+
+        return { load: angular.noop, encrypt };
 
     });
