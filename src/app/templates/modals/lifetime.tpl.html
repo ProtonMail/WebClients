@@ -5,8 +5,8 @@
             <div class="modal-body pm_form">
                 <div class="pm_grid no-margin flex flex-row pm-flex-content">
                     <div class="col-1-2 sideText pm-flex-content-vertical-center">
-                        <h3 translate translate-context="Title"><i>Black</i> Friday</h3>
-                        <p translate translate-context="Info">Get your <strong>lifetime</strong> ProtonMail encrypted email <br />for {{ ::ctrl.amount | currency: ctrl.currency.value }}</p>
+                        <h3><i>Black</i> Friday</h3>
+                        <p>Get your <strong>lifetime</strong> ProtonMail encrypted email <br />for {{ ctrl.amount | currency: ctrl.currency.value }}</p>
                     </div>
                     <div class="col-1-2 sideForm">
                         <div class="sideForm-content">
@@ -40,7 +40,7 @@
                         <!-- payment methods --->
                         <div class="sideForm-content paymentMethods">
                             <card-view ng-if="ctrl.method.type === 'new_card'" card="ctrl.card"></card-view>
-                            <paypal-view ng-if="ctrl.method.type === 'paypal'" amount="ctrl.amount" currency="ctrl.currency.value"></paypal-view>
+                            <paypal-view ng-if="ctrl.method.type === 'paypal'" amount="ctrl.amount" currency="ctrl.currency.value" paypal="ctrl.paypalObject"></paypal-view>
                         </div>
                         <div class="sideForm-footer">
                             <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>

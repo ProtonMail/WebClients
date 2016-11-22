@@ -6,16 +6,15 @@ angular.module('proton.core')
         templateUrl: 'templates/directives/core/paypalView.tpl.html',
         scope: {
             amount: '=',
-            currency: '='
+            currency: '=',
+            paypal: '='
         },
         link(scope) {
             let childWindow;
             scope.initPaypal = () => {
-                console.log('initialization', scope.amount, scope.currency);
                 scope.paypalNetworkError = false;
-                Payment.paypal({ Amount: scope.amount, Currency: scope.currency })
+                Payment.paypal({ Amount: scope.amount * 100, Currency: scope.currency })
                 .then((result = {}) => {
-                    console.log(result);
                     const { data = {} } = result;
                     if (data.Code === 1000) {
                         if (data.ApprovalURL) {
@@ -53,6 +52,7 @@ angular.module('proton.core')
 
                 childWindow.close();
                 window.removeEventListener('message', receivePaypalMessage, false);
+                scope.paypal = paypalObject;
             }
             scope.initPaypal();
         }
