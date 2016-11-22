@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('lifetimeModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication) => {
+.factory('lifetimeModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication, notify) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/lifetime.tpl.html',
@@ -28,7 +28,10 @@ angular.module('proton.core')
                     }
                     return Promise.resolve(result);
                 })
-                .then(() => params.close());
+                .then(() => {
+                    notify({ message: gettextCatalog.getString('Thank you', null), classes: 'notification-danger' });
+                    params.close();
+                });
                 networkActivityTracker.track(promise);
             };
             self.cancel = () => {
