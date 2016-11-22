@@ -6,8 +6,7 @@ module.exports = (editor, message, { identifier }) => {
         it('should open a the composer', () => {
             editor.open();
             browser.sleep(500);
-            editor
-                .isOpened()
+            editor.isOpened()
                 .then((test) => {
                     borodin = editor.compose();
                     expect(test).toEqual(true);
@@ -15,49 +14,26 @@ module.exports = (editor, message, { identifier }) => {
         });
 
         it('should create a new message', () => {
-            borodin
-                .content(message.body)
+            borodin.content(message.body)
                 .then((text) => {
                     expect(text).toEqual(message.body);
                 });
         });
 
-        it('should display CC and BCC fields', () => {
-            borodin.openCCBCC()
-                .then(() => {
-                    borodin.isVisible('CCList')
-                        .then((test) => {
-                            expect(test).toEqual(true);
-                        });
-
-                    borodin.isVisible('BCCList')
-                        .then((test) => {
-                            expect(test).toEqual(true);
-                        });
-                    browser.sleep(2000);
+        it('should not display CC and BCC fields', () => {
+            borodin.isVisible('CCList')
+                .then((test) => {
+                    expect(test).toEqual(false);
                 });
 
+            borodin.isVisible('BCCList')
+                .then((test) => {
+                    expect(test).toEqual(false);
+                });
         });
 
         it('should add a recepient', () => {
-            borodin
-                .fillInput('ToList', message.ToList)
-                .then((text) => {
-                    expect(text).toEqual('');
-                });
-        });
-
-        it('should add a recepient CC', () => {
-            borodin
-                .fillInput('CCList', message.CCList)
-                .then((text) => {
-                    expect(text).toEqual('');
-                });
-        });
-
-        it('should add a recepient BCC', () => {
-            borodin
-                .fillInput('BCCList', message.BCCList)
+            borodin.fillInput('ToList', message.ToList)
                 .then((text) => {
                     expect(text).toEqual('');
                 });
@@ -71,9 +47,22 @@ module.exports = (editor, message, { identifier }) => {
                 });
         });
 
+
+        it('should add a file link', () => {
+            const { openForm, bindLink, submit, matchIframe } = borodin.addFilePopover();
+            openForm()
+                .then(bindLink(message.linkImage))
+                .then(submit())
+                .then(() => browser.sleep(1000))
+                .then(matchIframe(message.linkImage))
+                .then((img) => {
+                    expect(img).not.toEqual(null);
+                });
+        });
+
+
         it('should send the message', () => {
-            borodin
-                .send()
+            borodin.send()
                 .then(() => browser.sleep(5000))
                 .then(() => {
                     borodin.isOpened()

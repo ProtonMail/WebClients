@@ -3,7 +3,11 @@ module.exports = () => {
     const SELECTOR_MAP = {
         CCList: '.composer-field-CCList',
         BCCList: '.composer-field-CCList',
-        buttonCCBCC: '.composerInputMeta-overlay-button'
+        buttonCCBCC: '.composerInputMeta-overlay-button',
+        toolbarBtnImage: '.squireToolbar-action-image',
+        popoverFileInput: 'input[type="url"]',
+        formAddFilePopover: '.addFilePopover-container',
+        btnAddFilePopover: '.addFilePopover-btn-url'
     };
 
     const open = () => {
@@ -68,7 +72,36 @@ module.exports = () => {
             return browser.executeScript(`return $('${selector}').is(':visible')`);
         };
 
-        return { content, fillInput, send, isOpened, isVisible, openCCBCC };
+        const addFilePopover = () => {
+            return {
+                openForm() {
+                    return browser.executeScript(`$('${SELECTOR_MAP.toolbarBtnImage}').click();`);
+                },
+                bindLink(link) {
+                    return browser.executeScript(`
+                        const $input = $('${SELECTOR_MAP.formAddFilePopover}').find('${SELECTOR_MAP.popoverFileInput}');
+                        $input.val('${link}');
+                        $input.triggerHandler('input');
+                    `);
+                },
+                submit() {
+                    return browser.executeScript(`$('${SELECTOR_MAP.formAddFilePopover}').find('${SELECTOR_MAP.btnAddFilePopover}').click();`)
+                },
+                matchIframe(value) {
+                    return browser.executeScript(`
+                        const img = $(document.body.querySelector('.composer'))
+                            .find('.angular-squire-wrapper')
+                            .find('iframe')[0]
+                            .contentDocument
+                            .body
+                            .querySelector('img[src="${value}"]');
+                        return img;
+                    `);
+                }
+            }
+        };
+
+        return { content, fillInput, send, isOpened, isVisible, openCCBCC, addFilePopover };
     };
 
     return { open, isOpened, compose };

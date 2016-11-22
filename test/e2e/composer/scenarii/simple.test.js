@@ -1,4 +1,4 @@
-module.exports = (editor, message) => {
+module.exports = (editor, message, { identifier }) => {
     describe('Composer simple message', () => {
 
         let borodin;
@@ -43,10 +43,10 @@ module.exports = (editor, message) => {
         });
 
         it('should add a subject', () => {
-            borodin
-                .fillInput('Subject', message.Subject)
+            const subject = `${message.Subject} - test:${identifier}`;
+            borodin.fillInput('Subject', `${message.Subject} - test:${identifier}`)
                 .then((text) => {
-                    expect(text).toEqual(message.Subject);
+                    expect(text).toEqual(subject);
                 });
         });
 
