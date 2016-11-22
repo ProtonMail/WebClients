@@ -1,5 +1,5 @@
 <div id="lifetime" class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
-    <form class="modal-dialog" ng-submit="ctrl.submit()" novalidate>
+    <form class="modal-dialog" name="lifetimeForm" ng-submit="ctrl.submit()" novalidate>
         <button type="button" ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-body pm_form">
@@ -39,7 +39,7 @@
                         </div>
                         <!-- payment methods --->
                         <div class="sideForm-content paymentMethods">
-                            <card-view ng-if="ctrl.method.type === 'new_card'" card="ctrl.card"></card-view>
+                            <card-view ng-if="ctrl.method.type === 'new_card'" card="ctrl.card" form="lifetimeForm"></card-view>
                             <paypal-view ng-if="ctrl.method.type === 'paypal'" amount="ctrl.amount" currency="ctrl.currency.value" paypal="ctrl.paypalObject"></paypal-view>
                         </div>
                         <div class="sideForm-footer">
