@@ -22,21 +22,42 @@ module.exports = (editor, message) => {
                 });
         });
 
-        it('should not display CC and BCC fields', () => {
-            borodin.isVisible('CCList')
-                .then((test) => {
-                    expect(test).toEqual(false);
+        it('should display CC and BCC fields', () => {
+            borodin.openCCBCC()
+                .then(() => {
+                    borodin.isVisible('CCList')
+                        .then((test) => {
+                            expect(test).toEqual(true);
+                        });
+
+                    borodin.isVisible('BCCList')
+                        .then((test) => {
+                            expect(test).toEqual(true);
+                        });
+                    browser.sleep(2000);
                 });
 
-            borodin.isVisible('BCCList')
-                .then((test) => {
-                    expect(test).toEqual(false);
-                });
         });
 
         it('should add a recepient', () => {
             borodin
                 .fillInput('ToList', message.ToList)
+                .then((text) => {
+                    expect(text).toEqual('');
+                });
+        });
+
+        it('should add a recepient CC', () => {
+            borodin
+                .fillInput('CCList', message.CCList)
+                .then((text) => {
+                    expect(text).toEqual('');
+                });
+        });
+
+        it('should add a recepient BCC', () => {
+            borodin
+                .fillInput('BCCList', message.BCCList)
                 .then((text) => {
                     expect(text).toEqual('');
                 });
@@ -49,7 +70,6 @@ module.exports = (editor, message) => {
                     expect(text).toEqual(message.Subject);
                 });
         });
-
 
         it('should send the message', () => {
             borodin
