@@ -1,21 +1,21 @@
 angular.module('proton.core')
-.factory('lifetimeModal', (pmModal, Payment, networkActivityTracker, authentication) => {
+.factory('lifetimeModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/lifetime.tpl.html',
         controller(params) {
-            console.log(params);
             const self = this;
+            self.amount = 1337;
             self.card = {};
             self.currencies = [{ label: 'USD', value: 'USD' }, { label: 'EUR', value: 'EUR' }, { label: 'CHF', value: 'CHF' }];
             self.currency = _.findWhere(self.currencies, { value: authentication.user.Currency });
             Payment.methods().then((result) => {
                 const { data } = result;
                 if (data.Code === 1000) {
-                    self.methods = data.PaymentMethods;
-                    if (self.methods.length) {
-                        self.method = self.methods[0];
-                    }
+                    self.methods = data.PaymentMethods.map((method) => ({ label: '•••• ' + method.Details.Last4, type: 'card', id: method.ID }));
+                    self.methods.push({ label: gettextCatalog.getString('New card', null), type: 'new_card' });
+                    self.methods.push({ label: 'Paypal', type: 'paypal' });
+                    self.method = self.methods[0];
                 }
             });
             self.submit = () => {
@@ -33,13 +33,10 @@ angular.module('proton.core')
             self.cancel = () => {
                 params.close();
             };
-            self.label = (method) => {
-                return '•••• •••• •••• ' + method.Details.Last4;
-            };
             function getParameters() {
                 const currency = self.currency.value;
                 const parameters = {
-                    Amount: 1337,
+                    Amount: self.amount * 100,
                     Currency: currency
                 };
                 if (self.methods.length) {
