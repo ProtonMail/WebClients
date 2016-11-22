@@ -50,6 +50,15 @@ angular.module('proton.attachments')
                     // Remove attachment
                     if (target.nodeName === 'BUTTON') {
                         const ID = target.getAttribute('data-attachment-id');
+
+                        $state.is('eo.reply') && $rootScope.$emit('attachment.upload.outside', {
+                            type: 'remove',
+                            data: {
+                                id: target.getAttribute('data-attachment-id'),
+                                message: scope.model
+                            }
+                        });
+
                         scope
                             .$applyAsync(() => {
                                 const attachment = _.findWhere(scope.model.Attachments, { ID });

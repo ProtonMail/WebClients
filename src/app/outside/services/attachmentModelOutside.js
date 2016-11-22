@@ -3,24 +3,8 @@ angular.module('proton.outside')
 
         const EVENT_NAME = 'attachment.upload.outside';
         const QUEUE = [];
-        let MAP_ATTACHMENTS = {};
         const notifyError = (message) => notify({ message, classes: 'notification-danger' });
-
         const dispatch = (type, data) => $rootScope.$emit(EVENT_NAME, { type, data });
-
-        /**
-         * Create a map [<REQUEST>] = <upload>
-         * So we can have every informations for a request such as attachment etc.
-         * Usefull for removing attachment as it can send us:
-         *     - REQUEST_ID for new composer with new attachments
-         *     - ATTACHEMENT_ID for a composer (ex:reply) with attachments
-         * @param  {Array} uploads
-         * @return {void}
-         */
-        const updateMapAttachments = (uploads = []) => {
-            MAP_ATTACHMENTS = uploads
-                .reduce((acc, att) => (acc[att.REQUEST_ID] = att, acc), MAP_ATTACHMENTS);
-        };
 
         /**
          * Dispatch an event for the sending button
@@ -33,6 +17,9 @@ angular.module('proton.outside')
                 case 'remove.all':
                     removeAll(data);
                     break;
+                case 'remove':
+                    remove(data);
+                    break;
                 case 'drop':
                     buildQueue(data);
                     break;
@@ -42,23 +29,33 @@ angular.module('proton.outside')
             }
         });
 
+        /**
+         * Create a queue before encrypting each files
+         * @param  {Object} options.queue   Queue config
+         * @param  {Message} options.message
+         * @return {void}
+         */
         function buildQueue({ queue, message }) {
             QUEUE.push(queue);
 
             if (!queue.hasEmbedded) {
-                dispatch('upload', {
-                    message,
-                    action: 'attachment'
-                });
+                dispatch('upload', { message, action: 'attachment' });
             }
         }
 
+        /**
+         * Build Headers for an attachment
+         * @param  {String} options.Filename
+         * @param  {Number} options.FileSize
+         * @param  {Number} options.Inline
+         * @param  {Message} message
+         * @return {Object}
+         */
         function buildHeaders({ Filename, FileSize, Inline }, message) {
 
             if (!Inline) {
                 return {};
             }
-
             const cid = embedded.generateCid(`${Filename}${FileSize}`, message.SenderAddress);
             return {
                 'content-disposition': 'inline',
@@ -66,6 +63,12 @@ angular.module('proton.outside')
             };
         }
 
+        /**
+         * Build a list of attachments from a packets (encrypted files) list coming
+         * from AttachmentLoader
+         * @param  {Message} message
+         * @return {Function}          With one parameter, the list of packets
+         */
         const packetToAttachment = (message) => (list = []) => {
             return list.map((packet) => ({
                 ID: `att_${Math.random().toString(32).slice(0, 12)}_${Date.now()}`,
@@ -80,6 +83,12 @@ angular.module('proton.outside')
             }));
         };
 
+        /**
+         * Add attachments as embedded or attachment, we encrypt them
+         * @param  {Message} options.message
+         * @param  {String} options.action  attachment||inline
+         * @return {Promise}
+         */
         function convertQueue({ message, action }) {
             const publicKey = message.publicKey;
             const files = QUEUE.reduce((acc, { files }) => acc.concat(files), []);
@@ -99,8 +108,15 @@ angular.module('proton.outside')
             uploadInline(files, message, action);
         }
 
+        /**
+         * Add embedded image to the attachments. Encrypt everything
+         * @param  {Array} files   List of file to encrypt
+         * @param  {Message} message
+         * @return {Promise}
+         */
         function uploadInline(files, message) {
             const publicKey = message.publicKey;
+
             const promise = files.map(({ file, isEmbedded }) => {
                 file.inline = +isEmbedded;
                 return AttachmentLoader.load(file, publicKey);
@@ -120,6 +136,7 @@ angular.module('proton.outside')
                     });
                 })
                 .then((list) => {
+                    // Format them to match component's configuration
                     const upload = _.map(list, (attachment) => ({
                         attachment,
                         cid: (attachment.Headers || {})['content-id'] || '',
@@ -139,28 +156,27 @@ angular.module('proton.outside')
                 });
         }
 
-
         /**
-         * Remove an attachment based on it's configuration
-         * It's coming from the composerAttachments component.
-         * For new attchment it sends us a REQUEST_ID because it's a list of packets not attachments.
-         * If you remove the embedded from the editor (SUPPR), you will have the attachment's ID,
-         * and for a new one you need its REQUEST_ID (the front use packages).
-         * @param  {Object} data
-         * @return {void}
+         * Remove an attachment from a message
+         *     - When you remove an attachment via BACK_KEY inside the editor,
+         *     this remove is called via removeAll with the attchement as we have them
+         *     - When you remove an attachment by clicking inside the list behind the reply you
+         *     only have the ID
+         * @param  {String} options.id         Id of the attachment
+         * @param  {Message} options.message
+         * @param  {Object} options.attachment Attachment (can be undefined)
+         * @return {Void}
          */
-        function remove(data) {
-            const { id, message, packet, attachment } = data;
-            const attConf = getConfigMapAttachment(id, attachment);
-            const state = angular.extend({}, attConf || data, { message, attachment, id });
+        function remove({ id, message, attachment }) {
+            const att = attachment || message.getAttachment(id);
+            const state = { message, attachment: att, id };
 
-            if (packet.Inline === 1) {
+            if (+isEmbedded(att)) {
                 // Attachment removed, may remove embedded ref from the editor too
                 dispatch('remove.embedded', state);
             }
             message.removeAttachment(attachment);
             dispatch('remove.success', state);
-            cleanMap(state);
         }
 
         /**
@@ -170,18 +186,12 @@ angular.module('proton.outside')
          * @return {void}
          */
         function removeAll({ message, list }) {
-            list
-                .forEach((attachment) => {
-
-                    remove({
-                        id: attachment.ID,
-                        attachment,
-                        message,
-                        packet: {
-                            Inline: +isEmbedded(attachment)
-                        }
-                    });
+            list.forEach((attachment) => {
+                remove({
+                    id: attachment.ID,
+                    attachment, message
                 });
+            });
         }
 
         /**
@@ -210,27 +220,6 @@ angular.module('proton.outside')
                 })
                 .reduce((acc, att) => (acc[att.ID] = att, acc), {})
                 .value();
-        }
-
-        /**
-         * Get a config for an attachment if available
-         * It cames from its REQUEST_ID or if not we can try to find it
-         * via its ATTACHMENT_ID.
-         * If not it MUST return undefined
-         * @param  {String} id         REQUEST_ID (can be ATTACHMENT_ID)
-         * @param  {Object} attachment
-         * @return {Object}            Undefined if no configuration is available
-         */
-        function getConfigMapAttachment(id, attachment) {
-            if (MAP_ATTACHMENTS[id]) {
-                return MAP_ATTACHMENTS[id];
-            }
-
-            return _.filter(MAP_ATTACHMENTS, (config) => config.attachment.ID === attachment.ID)[0];
-        }
-
-        function cleanMap({ REQUEST_ID }) {
-            delete MAP_ATTACHMENTS[REQUEST_ID];
         }
 
         /**
