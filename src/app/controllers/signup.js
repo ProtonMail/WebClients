@@ -56,6 +56,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         $scope.showFeatures = false;
         $scope.filling = true;
         $scope.payment = false;
+        $scope.humanityTest = false;
         $scope.creating = false;
         $scope.genNewKeys = false;
         $scope.createUser = false;
@@ -318,8 +319,14 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
                     if ($rootScope.preInvited) {
                         $scope.createAccount();
-                    } else if (plans.length > 0 && $scope.showPayment) {
-                        $scope.payment = true;
+                    } else if (plans.length > 0) {
+                        if ($scope.showPayment) {
+                            $scope.payment = true;
+                        } else {
+                            $scope.humanityTest = true;
+                            const message = gettextCatalog.getString("It currently isn't possible to subscribe to a Paid ProtonMail plan.", null);
+                            notify(message);
+                        }
                     } else {
                         $scope.humanityTest = true;
                     }
