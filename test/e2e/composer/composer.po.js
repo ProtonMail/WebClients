@@ -101,6 +101,41 @@ module.exports = () => {
             }
         };
 
+        const autocomplete = (key) => {
+            const container = SELECTOR_MAP[key];
+
+            return {
+                inputValue() {
+                    return browser.executeScript(`
+                        const $form = $('${container}').find('form.composerInputMeta-autocomplete');
+                        return $form.find('input').val();
+                    `);
+                },
+                countLabels() {
+                    return browser.executeScript(`
+                        const $form = $('${container}').find('form.composerInputMeta-autocomplete');
+                        return $form.find('.autocompleteEmails-item').length;
+                    `);
+                },
+                getLabels(index = 0) {
+                    return browser.executeScript(`
+                        const $form = $('${container}').find('form.composerInputMeta-autocomplete');
+                        return $form.find('.autocompleteEmails-item').get(${index});
+                    `);
+                },
+                removeLabel(index = 0) {
+                    return browser.executeScript(`
+                        $('${container}')
+                            .find('form.composerInputMeta-autocomplete')
+                            .find('.autocompleteEmails-item')
+                            .eq(${index})
+                            .find('.autocompleteEmails-btn-remove')
+                            .click();
+                    `);
+                }
+            }
+        }
+
         return { content, fillInput, send, isOpened, isVisible, openCCBCC, addFilePopover };
     };
 
