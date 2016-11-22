@@ -57,8 +57,7 @@ angular.module('proton.attachments')
         const encrypt = (attachment, pubKeys, { name, type, size, inline } = {}) => {
 
             const at = new Uint8Array(attachment);
-            return pmcw
-                .encryptFile(at, pubKeys, [], name)
+            return pmcw.encryptFile(at, pubKeys, [], name)
                 .then((packets) => angular.extend({}, packets, {
                     Filename: name,
                     MIMEType: type,

@@ -1,44 +1,23 @@
 angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants', 'proton.storage'])
 .controller('OutsideController', (
     $interval,
-    $q,
     $rootScope,
     $scope,
     $state,
-    $sce,
     $stateParams,
     gettextCatalog,
     CONSTANTS,
     Eo,
     embedded,
     Message,
-    authentication,
     prepareContent,
     messageData,
     notify,
     pmcw,
     networkActivityTracker,
     secureSessionStorage,
-    AttachmentLoader
+    attachmentModelOutside
 ) => {
-
-    /**
-     * @link {http://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript}
-     */
-    function b64toBlob(b64Data = '', type = '', sliceSize = 512) {
-
-        const byteCharacters = atob(b64Data);
-        const size = byteCharacters.length;
-        const byteArrays = [];
-
-        for (let offset = 0; offset < size; offset += sliceSize) {
-            const slice = byteCharacters.slice(offset, offset + sliceSize);
-            const byteNumbers = _.map(new Array(slice.length), (e, i) => slice.charCodeAt(i));
-            byteArrays.push(new Uint8Array(byteNumbers));
-        }
-
-        return new Blob(byteArrays, { type });
-    }
 
     // Variables
     const decryptedToken = secureSessionStorage.getItem('proton:decrypted_token');
@@ -114,7 +93,6 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
      * Send message
      */
     $scope.send = () => {
-        const deferred = $q.defer();
         const { Replies = [] } = $scope.message;
 
         if (Replies.length >= CONSTANTS.MAX_OUTSIDE_REPLY) {
@@ -122,84 +100,11 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
             notify({ message });
         }
 
-        embedded.parser($scope.message, 'cid')
-            .then((result) => {
-                const bodyPromise = pmcw.encryptMessage(result, $scope.message.publicKey);
-                const replyBodyPromise = pmcw.encryptMessage(result, [], password);
-                return $q.all({ Body: bodyPromise, ReplyBody: replyBodyPromise });
-            })
-            .then(({ Body, ReplyBody }) => {
-
-                const attachments = $scope.message.Attachments || [];
-                const promises = attachments.map((attachment) => {
-                    const cid = embedded.getCid(attachment.Headers);
-
-                    debugger;
-
-                    if (cid && !attachment.DataPacket) {
-                    //     return AttachmentLoader.get(attachment, message).then((buffer) => ({
-                    //         CID: cid,
-                    //         Filename: attachment.Name,
-                    //         DataPacket: new Blob([buffer], { type: 'application/octet-stream' }),
-                    //         MIMEType: attachment.MIMEType,
-                    //         KeyPackets: b64toBlob(attachment.KeyPackets),
-                    //         // KeyPackets: new Blob([attachment.KeyPackets]),
-                    //         Headers: attachment.Headers
-                    //     }));
-                    //
-                        attachment.Headers['content-id'] = cid.replace(/[<>]+/g, '');
-                        const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
-
-                        return embedded.getBlob(cid)
-                            .then((blob) => {
-                                const toFile = (blob, name) => {
-                                    blob.inline = 1;
-                                    blob.name = name;
-                                    return blob;
-                                };
-                                return AttachmentLoader.load(toFile(blob, attachment.Name), message.publicKey)
-                                    .then((packet) => ({
-                                        CID: cid.replace(/[<>]+/g, ''),
-                                        Filename: attachment.Name,
-                                        MIMEType: attachment.MIMEType,
-                                        Headers: attachment.Headers,
-                                        KeyPackets: new Blob([packet.keys]),
-                                        DataPacket: new Blob([packet.data])
-                                    }));
-                                // pmcw.encryptFile(keyPackets, message.publicKey, [], attachment.Name)
-                                //     .then((packet) => ({
-                                //         CID: cid.replace(/[<>]+/g, ''),
-                                //         Filename: attachment.Name,
-                                //         MIMEType: attachment.MIMEType,
-                                //         Headers: attachment.Headers,
-                                //         KeyPackets: new Blob([packet.keys]),
-                                //         DataPacket: new Blob([packet.data])
-                                //     }));
-
-                                // return {
-                                //     CID: cid.replace(/[<>]+/g, ''),
-                                //     Filename: attachment.Name,
-                                //     DataPacket: blob,
-                                //     MIMEType: attachment.MIMEType,
-                                //     // KeyPackets: attachment.KeyPackets || ,
-                                //     // KeyPackets: new Blob([attachment.KeyPackets]),
-                                //     KeyPackets: new Blob([keyPackets]),
-                                //     // KeyPackets: b64toBlob(attachment.KeyPackets),
-                                //     Headers: attachment.Headers
-                                // };
-                            });
-                    }
-                    return Promise.resolve({
-                        CID: cid.replace(/[<>]+/g, ''),
-                        Filename: attachment.Filename,
-                        DataPacket: attachment.DataPacket,
-                        MIMEType: attachment.MIMEType,
-                        KeyPackets: attachment.KeyPackets,
-                        Headers: attachment.Headers
-                    });
-                });
-
-                Promise.all(promises)
+        const process = embedded.parser($scope.message, 'cid')
+            .then((result) => Promise.all([
+                pmcw.encryptMessage(result, $scope.message.publicKey),
+                pmcw.encryptMessage(result, [], password),
+                attachmentModelOutside.encrypt($scope.message)
                     .then((attachments) => {
                         return attachments.reduce((acc, { Filename, DataPacket, MIMEType, KeyPackets, CID = '' }) => {
                             acc.Filename.push(Filename);
@@ -210,32 +115,30 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
                             return acc;
                         }, { Filename: [], DataPacket: [], MIMEType: [], KeyPackets: [], ContentID: [] });
                     })
-                    .then(({ Filename, MIMEType, KeyPackets, ContentID, DataPacket }) => {
-                        Eo.reply(decryptedToken, tokenId, {
-                            Body, ReplyBody,
-                            'Filename[]': Filename,
-                            'MIMEType[]': MIMEType,
-                            'KeyPackets[]': KeyPackets,
-                            'ContentID[]': ContentID,
-                            'DataPacket[]': DataPacket
-                        })
-                        .then((result) => {
-                            $state.go('eo.message', { tag: $stateParams.tag });
-                            notify({ message: gettextCatalog.getString('Message sent', null), classes: 'notification-success' });
-                            deferred.resolve(result);
-                        })
-                        .catch((error) => {
-                            notify({ message: gettextCatalog.getString('Error during the reply process', null, 'Error'), classes: 'notification-danger' });
-                            deferred.reject(error);
-                        });
-                    });
-            })
-            .catch((error) => {
+            ]))
+            .then(([ Body, ReplyBody, Packages ]) => {
+                return Eo.reply(decryptedToken, tokenId, {
+                    Body, ReplyBody,
+                    'Filename[]': Packages.Filename,
+                    'MIMEType[]': Packages.MIMEType,
+                    'KeyPackets[]': Packages.KeyPackets,
+                    'ContentID[]': Packages.ContentID,
+                    'DataPacket[]': Packages.DataPacket
+                })
+                .then((result) => {
+                    $state.go('eo.message', { tag: $stateParams.tag });
+                    notify({ message: gettextCatalog.getString('Message sent', null), classes: 'notification-success' });
+                    return result;
+                })
+                .catch((err) => {
+                    notify({ message: gettextCatalog.getString('Error during the reply process', null, 'Error'), classes: 'notification-danger' });
+                    throw err;
+                });
+            }).catch((error) => {
                 error.message = gettextCatalog.getString('Error during the encryption', null, 'Error');
-                deferred.reject(error);
             });
 
-        return networkActivityTracker.track(deferred.promise);
+        return networkActivityTracker.track(process);
     };
 
     $scope.cancel = () => {
