@@ -17,7 +17,7 @@ angular.module('proton.message')
             const id = setTimeout(() => {
                 $(loader).contents().unwrap();
                 clearTimeout(id);
-            }, 300);
+            }, 100);
         }
     };
 

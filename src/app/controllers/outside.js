@@ -36,7 +36,6 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
         if ($state.is('eo.reply')) {
             content = '<br /><br /><blockquote>' + content + '</blockquote>';
         }
-
         return prepareContent(content, message);
     }
 
