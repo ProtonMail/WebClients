@@ -266,14 +266,15 @@ angular.module('proton.embedded', [])
         const user = authentication.user || { ShowEmbedded: 0 };
         const show = message.showEmbedded === true || user.ShowEmbedded === 1;
 
+        console.trace('CALL')
+
         // For a draft if we close it before the end of the attachement upload, there are no keyPackets
         const promise = _.chain(list)
             .filter(({ attachment }) => attachment.KeyPackets)
             .filter(({ cid }) => !Blobs[cid] && show)
             .map(({ cid, attachment }) => {
                 const storeAttachement = store(message, cid);
-                return AttachmentLoader
-                    .get(attachment, message)
+                return AttachmentLoader.get(attachment, message)
                     .then((buffer) => storeAttachement(buffer, attachment.MIMEType));
             })
             .value();

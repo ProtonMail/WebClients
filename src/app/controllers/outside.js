@@ -149,18 +149,45 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
                     //
                         attachment.Headers['content-id'] = cid.replace(/[<>]+/g, '');
                         const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+
                         return embedded.getBlob(cid)
-                            .then((blob) => ({
-                                CID: cid.replace(/[<>]+/g, ''),
-                                Filename: attachment.Name,
-                                DataPacket: blob,
-                                MIMEType: attachment.MIMEType,
-                                // KeyPackets: attachment.KeyPackets || ,
-                                // KeyPackets: new Blob([attachment.KeyPackets]),
-                                KeyPackets: new Blob([keyPackets]),
-                                // KeyPackets: b64toBlob(attachment.KeyPackets),
-                                Headers: attachment.Headers
-                            }));
+                            .then((blob) => {
+                                const toFile = (blob, name) => {
+                                    blob.inline = 1;
+                                    blob.name = name;
+                                    return blob;
+                                };
+                                return AttachmentLoader.load(toFile(blob, attachment.Name), message.publicKey)
+                                    .then((packet) => ({
+                                        CID: cid.replace(/[<>]+/g, ''),
+                                        Filename: attachment.Name,
+                                        MIMEType: attachment.MIMEType,
+                                        Headers: attachment.Headers,
+                                        KeyPackets: new Blob([packet.keys]),
+                                        DataPacket: new Blob([packet.data])
+                                    }));
+                                // pmcw.encryptFile(keyPackets, message.publicKey, [], attachment.Name)
+                                //     .then((packet) => ({
+                                //         CID: cid.replace(/[<>]+/g, ''),
+                                //         Filename: attachment.Name,
+                                //         MIMEType: attachment.MIMEType,
+                                //         Headers: attachment.Headers,
+                                //         KeyPackets: new Blob([packet.keys]),
+                                //         DataPacket: new Blob([packet.data])
+                                //     }));
+
+                                // return {
+                                //     CID: cid.replace(/[<>]+/g, ''),
+                                //     Filename: attachment.Name,
+                                //     DataPacket: blob,
+                                //     MIMEType: attachment.MIMEType,
+                                //     // KeyPackets: attachment.KeyPackets || ,
+                                //     // KeyPackets: new Blob([attachment.KeyPackets]),
+                                //     KeyPackets: new Blob([keyPackets]),
+                                //     // KeyPackets: b64toBlob(attachment.KeyPackets),
+                                //     Headers: attachment.Headers
+                                // };
+                            });
                     }
                     return Promise.resolve({
                         CID: cid.replace(/[<>]+/g, ''),
