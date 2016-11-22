@@ -95,7 +95,7 @@ angular.module('proton.core')
             });
         }
 
-        function sendNewKeys({ keys = [], currentPassword = '', twoFactorCode = '', keySalt = '', organizationKey = 0, newLoginPassword = '' }) {
+        function sendNewKeys({ keys = [], keySalt = '', organizationKey = 0, newLoginPassword = '' }) {
             const keysFiltered = keys.filter((key) => key !== 0);
             const payload = {
                 KeySalt: keySalt,
@@ -110,15 +110,10 @@ angular.module('proton.core')
                 payload.OrganizationKey = organizationKey;
             }
 
-            return Key.private(payload, { Password: currentPassword, TwoFactorCode: twoFactorCode }, newLoginPassword);
+            return Key.private(payload, newLoginPassword);
         }
 
-        return ({
-                currentPassword = '',
-                newPassword = '',
-                twoFactorCode = '',
-                onePassword = false
-            }) => {
+        return ({ newPassword = '', onePassword = false }) => {
             const oldMailPwd = authentication.getPassword();
             const keySalt = (CONSTANTS.KEY_PHASE > 1) ? passwords.generateKeySalt() : null;
             const newLoginPassword = onePassword ? newPassword : '';
@@ -140,8 +135,6 @@ angular.module('proton.core')
                 .then(([organizationKey, ...keys]) => sendNewKeys(
                     {
                         keys,
-                        currentPassword,
-                        twoFactorCode,
                         keySalt,
                         organizationKey,
                         newLoginPassword

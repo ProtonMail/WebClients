@@ -21,12 +21,17 @@ angular.module('proton.models.user', ['proton.srp'])
         direct() {
             return $http.get(url.get() + '/users/direct');
         },
-
-        unlock(params) {
-            return srp.performSRPRequest('PUT', '/users/unlock', {}, params);
+        lock() {
+            return $http.put(url.get() + '/users/lock');
         },
-        delete(params) {
-            return srp.performSRPRequest('PUT', '/users/delete', {}, params);
+        unlock(creds = {}) {
+            return srp.performSRPRequest('PUT', '/users/unlock', {}, creds);
+        },
+        password(creds = {}) {
+            return srp.performSRPRequest('PUT', '/users/password', {}, creds);
+        },
+        delete(creds = {}) {
+            return srp.performSRPRequest('PUT', '/users/delete', {}, creds);
         }
     };
 });
