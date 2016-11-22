@@ -124,7 +124,6 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
 
         embedded.parser($scope.message, 'cid')
             .then((result) => {
-                debugger;
                 const bodyPromise = pmcw.encryptMessage(result, $scope.message.publicKey);
                 const replyBodyPromise = pmcw.encryptMessage(result, [], password);
                 return $q.all({ Body: bodyPromise, ReplyBody: replyBodyPromise });
@@ -137,32 +136,39 @@ angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants
 
                     debugger;
 
-                    if (cid) {
-                        return AttachmentLoader.get(attachment, message).then((buffer) => ({
-                            CID: cid,
-                            Filename: attachment.Name,
-                            DataPacket: new Blob([buffer], { type: 'application/octet-stream' }),
-                            MIMEType: attachment.MIMEType,
-                            KeyPackets: b64toBlob(attachment.KeyPackets),
-                            // KeyPackets: new Blob([attachment.KeyPackets]),
-                            Headers: attachment.Headers
-                        }));
-                        // return embedded.getBlob(cid)
-                        //     .then((blob) => ({
-                        //         CID: cid,
-                        //         Filename: attachment.Name,
-                        //         DataPacket: blob,
-                        //         MIMEType: attachment.MIMEType,
-                        //         KeyPackets: b64toBlob(attachment.KeyPackets),
-                        //         // KeyPackets: new Blob([attachment.KeyPackets]),
-                        //         Headers: attachment.Headers
-                        //     }));
+                    if (cid && !attachment.DataPacket) {
+                    //     return AttachmentLoader.get(attachment, message).then((buffer) => ({
+                    //         CID: cid,
+                    //         Filename: attachment.Name,
+                    //         DataPacket: new Blob([buffer], { type: 'application/octet-stream' }),
+                    //         MIMEType: attachment.MIMEType,
+                    //         KeyPackets: b64toBlob(attachment.KeyPackets),
+                    //         // KeyPackets: new Blob([attachment.KeyPackets]),
+                    //         Headers: attachment.Headers
+                    //     }));
+                    //
+                        attachment.Headers['content-id'] = cid.replace(/[<>]+/g, '');
+                        const keyPackets = pmcw.binaryStringToArray(pmcw.decode_base64(attachment.KeyPackets));
+                        return embedded.getBlob(cid)
+                            .then((blob) => ({
+                                CID: cid.replace(/[<>]+/g, ''),
+                                Filename: attachment.Name,
+                                DataPacket: blob,
+                                MIMEType: attachment.MIMEType,
+                                // KeyPackets: attachment.KeyPackets || ,
+                                // KeyPackets: new Blob([attachment.KeyPackets]),
+                                KeyPackets: new Blob([keyPackets]),
+                                // KeyPackets: b64toBlob(attachment.KeyPackets),
+                                Headers: attachment.Headers
+                            }));
                     }
                     return Promise.resolve({
+                        CID: cid.replace(/[<>]+/g, ''),
                         Filename: attachment.Filename,
                         DataPacket: attachment.DataPacket,
                         MIMEType: attachment.MIMEType,
-                        KeyPackets: attachment.KeyPackets
+                        KeyPackets: attachment.KeyPackets,
+                        Headers: attachment.Headers
                     });
                 });
 
