@@ -145,7 +145,7 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.changePassword = (type, phase) => {
+    $scope.changePassword = (type = '', phase = 0) => {
         function submit(currentPassword, twoFactorCode) {
             const promise = User.password({ Password: currentPassword, TwoFactorCode: twoFactorCode })
             .then((result) => {
