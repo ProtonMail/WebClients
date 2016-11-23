@@ -4,11 +4,24 @@ module.exports = () => {
         ToList: '.composer-field-ToList',
         CCList: '.composer-field-CCList',
         BCCList: '.composer-field-CCList',
+        draft: '.composer-btn-save',
+        close: '.composer-action-close',
         buttonCCBCC: '.composerInputMeta-overlay-button'
     };
 
     const open = () => {
         return element(by.css('.compose.pm_button')).click();
+    };
+
+    const close = () => {
+        return browser.executeScript(`
+            $('${SELECTOR_MAP.close}').click();
+        `);
+    };
+    const saveDraft = () => {
+        return browser.executeScript(`
+            $('${SELECTOR_MAP.draft}').click();
+        `);
     };
 
     const isOpened = () => browser
@@ -71,6 +84,7 @@ module.exports = () => {
 
         return {
             content, fillInput, send, isOpened, isVisible, openCCBCC,
+            close, saveDraft,
             addLinkPopover: require('./tools/addLinkPopover.po'),
             addFilePopover: require('./tools/addFilePopover.po'),
             autocomplete: require('./tools/autocomplete.po'),
