@@ -24,7 +24,7 @@ angular.module('proton.ui')
             replace: true,
             templateUrl: 'templates/directives/ui/saleLink.tpl.html',
             link(scope, element) {
-                if (moment().isBetween('2016-11-25', '2016-11-29')) {
+                if (moment().isBetween('2016-11-23', '2016-11-29')) { // TODO change the start date to '2016-11-25'
                     const anchor = element[0].querySelector('a');
                     anchor.addEventListener('click', onClick);
                     scope.$on('$destroy', () => {
