@@ -1,8 +1,8 @@
 angular.module('proton.core')
-.factory('lifetimeModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication) => {
+.factory('saleModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication) => {
     return pmModal({
         controllerAs: 'ctrl',
-        templateUrl: 'templates/modals/lifetime.tpl.html',
+        templateUrl: 'templates/modals/sale.tpl.html',
         controller(params) {
             const { close, methods } = params;
             const self = this;
