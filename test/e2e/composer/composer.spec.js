@@ -2,6 +2,8 @@ const composer = require('./composer.po');
 const simple = require('./scenarii/simple.test');
 const simpleCCBCC = require('./scenarii/simpleCCBCC.test');
 const addFileLink = require('./scenarii/addFileLink.test');
+const addLink = require('./scenarii/addLink.test');
+const autocomplete = require('./scenarii/autocomplete.test');
 
 const message = {
     Subject: 'E2E: Ha que coucou',
@@ -17,5 +19,7 @@ describe('composer tests', () => {
     simple(editor, message, { identifier: 'simple' });
     simpleCCBCC(editor, message, { identifier: 'simpleCCBCC' });
     addFileLink(editor, message, { identifier: 'addFileLink' });
+    addLink(editor, message, { identifier: 'addLink' });
+    autocomplete(editor, message, { identifier: 'autocomplete' });
 
 });
