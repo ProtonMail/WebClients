@@ -1,4 +1,4 @@
-module.exports = (editor, message, { identifier }) => {
+module.exports = ({ editor, message, identifier }) => {
     describe('Composer simple message', () => {
 
         let borodin;

@@ -1,5 +1,5 @@
 const composer = require('./composer.po');
-const simple = require('./scenarii/simple.test');
+const mainSuite = require('./scenarii/FLOW.test');
 const simpleCCBCC = require('./scenarii/simpleCCBCC.test');
 const addFileLink = require('./scenarii/addFileLink.test');
 const addLink = require('./scenarii/addLink.test');
@@ -21,14 +21,16 @@ const message = {
     }
 };
 
+const noop = function() {};
+
 describe('composer tests', () => {
     const editor = composer();
-    simple(editor, message, { identifier: 'simple' });
-    simpleCCBCC(editor, message, { identifier: 'simpleCCBCC' });
-    addFileLink(editor, message, { identifier: 'addFileLink' });
-    addLink(editor, message, { identifier: 'addLink' });
-    autocomplete(editor, message, { identifier: 'autocomplete' });
-    encryption(editor, message, { identifier: 'encryption' });
-    expiration(editor, message, { identifier: 'expiration' });
+    mainSuite(noop, { editor, message, identifier: 'simple' });
+    simpleCCBCC({ editor, message, identifier: 'simpleCCBCC' });
+    autocomplete({ editor, message, identifier: 'simpleCCBCC' });
+    mainSuite(addFileLink, { editor, message, identifier: 'addFileLink' });
+    mainSuite(addLink, { editor, message, identifier: 'addLink' });
+    mainSuite(encryption, { editor, message, identifier: 'encryption' });
+    mainSuite(expiration, { editor, message, identifier: 'expiration' });
 
 });
