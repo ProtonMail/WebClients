@@ -33,4 +33,14 @@ describe('composer tests', () => {
     mainSuite(encryption, { editor, message, identifier: 'encryption' });
     mainSuite(expiration, { editor, message, identifier: 'expiration' });
 
+    function complexSuite(data) {
+        addFileLink(data);
+        addLink(data);
+        encryption(data);
+        expiration(data);
+    }
+    mainSuite(complexSuite, {
+        editor, message,
+        identifier: 'expiration.encryption.link.file'
+    });
 });
