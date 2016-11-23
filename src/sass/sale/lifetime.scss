@@ -39,7 +39,7 @@
     .sideText {
         position: relative;
         padding: 20px 40px;
-        font-size: 1.05rem;
+        min-height: 420px;
 
         &:after {
             content:'';

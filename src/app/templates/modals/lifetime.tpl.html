@@ -8,8 +8,8 @@
                         <h3><i>Black</i> Friday</h3>
                         <p>Get your <strong>lifetime</strong> ProtonMail encrypted email <br />for {{ ctrl.amount | currency: ctrl.currency.value }}</p>
                     </div>
-                    <div class="col-1-2 sideForm">
-                        <div class="sideForm-content">
+                    <div class="col-1-2 sideForm pm-flex-content">
+                        <div class="sideForm-content pm-flex-content-fillHeight">
                             <h2 translate translate-context="Title">Order now!</h2>
                             <div class="pm_grid margin flex flex-row pm-flex-content grid-divider">
                                 <div class="col-1-2 pm-flex-content-vertical-center">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <!-- payment methods --->
-                        <div class="sideForm-content paymentMethods">
+                        <div class="sideForm-content paymentMethods" ng-hide="ctrl.method.type === 'card'">
                             <card-view ng-if="ctrl.method.type === 'new_card'" card="ctrl.card" form="lifetimeForm"></card-view>
                             <paypal-view ng-if="ctrl.method.type === 'paypal'" amount="ctrl.amount" currency="ctrl.currency.value" paypal="ctrl.paypalObject"></paypal-view>
                         </div>
