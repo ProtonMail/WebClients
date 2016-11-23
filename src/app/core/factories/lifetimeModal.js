@@ -1,11 +1,13 @@
 angular.module('proton.core')
-.factory('lifetimeModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication, notify) => {
+.factory('lifetimeModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/lifetime.tpl.html',
         controller(params) {
+            const { close } = params;
             const self = this;
             self.amount = 1337;
+            self.mode = 'pay';
             self.card = {};
             self.paypalObject = {};
             self.currencies = [{ label: 'USD', value: 'USD' }, { label: 'EUR', value: 'EUR' }, { label: 'CHF', value: 'CHF' }];
@@ -29,13 +31,12 @@ angular.module('proton.core')
                     return Promise.resolve(result);
                 })
                 .then(() => {
-                    notify({ message: gettextCatalog.getString('Thank you', null), classes: 'notification-danger' });
-                    params.close();
+                    self.mode = 'thanks';
                 });
                 networkActivityTracker.track(promise);
             };
             self.cancel = () => {
-                params.close();
+                close();
             };
             function getParameters() {
                 const currency = self.currency.value;
