@@ -1,6 +1,9 @@
 const notifs = require('../../../e2e.utils/notifications');
 
-module.exports = (customSuite, { message, editor, identifier }) => {
+module.exports = (customSuite, { message, editor, identifier }, options = {}) => {
+
+    const { send = true,  subject = true } = options;
+
     describe('Composer simple message', () => {
 
         let borodin;
@@ -41,31 +44,36 @@ module.exports = (customSuite, { message, editor, identifier }) => {
                 });
         });
 
-        it('should add a subject', () => {
-            const subject = `${message.Subject} - test:${identifier}`;
-            borodin.fillInput('Subject', `${message.Subject} - test:${identifier}`)
-                .then((text) => {
-                    expect(text).toEqual(subject);
-                });
-        });
+
+        if (subject) {
+            it('should add a subject', () => {
+                const subject = `${message.Subject} - test:${identifier}`;
+                borodin.fillInput('Subject', `${message.Subject} - test:${identifier}`)
+                    .then((text) => {
+                        expect(text).toEqual(subject);
+                    });
+            });
+        }
 
         customSuite({ message, editor, identifier, borodin });
 
-        it('should send the message', () => {
-            borodin.send()
-                .then(() => browser.sleep(5000))
-                .then(() => borodin.isOpened())
-                .then((editor) => {
-                    expect(editor).toEqual(false);
-                });
-        });
+        if (send) {
+            it('should send the message', () => {
+                borodin.send()
+                    .then(() => browser.sleep(5000))
+                    .then(() => borodin.isOpened())
+                    .then((editor) => {
+                        expect(editor).toEqual(false);
+                    });
+            });
 
-        it('should display a notfication', () => {
-            notifs.message()
-                .then((msg) => {
-                    expect(msg).toEqual('Message sent');
-                });
-        });
+            it('should display a notfication', () => {
+                notifs.message()
+                    .then((msg) => {
+                        expect(msg).toEqual('Message sent');
+                    });
+            });
+        }
     });
 
 };
