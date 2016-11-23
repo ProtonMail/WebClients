@@ -60,7 +60,7 @@
             top:0px;
             width: 100%;
             height: 100%;
-            background-image:url('https://images.unsplash.com/photo-1475739455072-ecf876006273?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=b7263ac6ea70978a9f6ffda040945f4a');
+            background-image:url('/assets/img/sale/black_friday.jpeg');
             background-size: cover;
             background-position: center left;
         }
@@ -147,5 +147,26 @@
     .modal-overlay {
         background: rgba(0,0,0,0.6)
     }
+}
 
+#life-time-banner {
+    width: 100%;
+    height: 80px;
+    background: #000;
+    border:0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: inset 100px 100px rgba(0,0,0,0.3);
+    background-image:url('/assets/img/sale/black_friday.jpeg');
+    background-size: cover;
+    background-position: center left;
+
+    u {
+        text-decoration: none;
+        border-bottom: 2px solid rgba(147, 151, 205, 1);
+    }
+
+    &:hover {
+        box-shadow: inset 100px 100px rgba(147, 151, 205, .7);
+    }
 }
