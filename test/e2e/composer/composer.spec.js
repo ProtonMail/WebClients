@@ -2,6 +2,7 @@ const composer = require('./composer.po');
 const mainSuite = require('./scenarii/FLOW.test');
 const simpleCCBCC = require('./scenarii/simpleCCBCC.test');
 const noSubject = require('./scenarii/noSubject.test');
+const saveDraft = require('./scenarii/saveDraft.test');
 const addFileLink = require('./scenarii/addFileLink.test');
 const addLink = require('./scenarii/addLink.test');
 const autocomplete = require('./scenarii/autocomplete.test');
@@ -38,6 +39,10 @@ describe('composer tests', () => {
     mainSuite(addLink, { editor, message, identifier: 'addLink' });
     mainSuite(encryption, { editor, message, identifier: 'encryption' });
     mainSuite(expiration, { editor, message, identifier: 'expiration' });
+
+    mainSuite(saveDraft, { editor, message, identifier: 'saveDraft' }, {
+        send: false
+    });
 
     function complexSuite(data) {
         addFileLink(data);
