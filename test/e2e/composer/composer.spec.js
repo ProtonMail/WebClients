@@ -4,6 +4,7 @@ const simpleCCBCC = require('./scenarii/simpleCCBCC.test');
 const addFileLink = require('./scenarii/addFileLink.test');
 const addLink = require('./scenarii/addLink.test');
 const autocomplete = require('./scenarii/autocomplete.test');
+const encryption = require('./scenarii/encryption.test');
 
 const message = {
     Subject: 'E2E: Ha que coucou',
@@ -21,5 +22,6 @@ describe('composer tests', () => {
     addFileLink(editor, message, { identifier: 'addFileLink' });
     addLink(editor, message, { identifier: 'addLink' });
     autocomplete(editor, message, { identifier: 'autocomplete' });
+    encryption(editor, message, { identifier: 'encryption' });
 
 });

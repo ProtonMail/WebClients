@@ -2,7 +2,7 @@
 
     <composer-header></composer-header>
 
-    <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'encrypt' }">
+    <div class="options composer-options-encryption" ng-class="{ 'show': message.displayPanel && message.panelName == 'encrypt' }">
         <div ng-form="encryptForm" class="pm_form pm_grid">
             <div>
                 <h3 translate translate-context="Title">Encrypt for non-ProtonMail users</h3>
@@ -17,7 +17,14 @@
                 </div>
                 <div class="col-2-3">
                     <input style="display: none;" type="password" name="foilautofill"/>
-                    <input type="password" autocomplete="off" name="outsidePw" ng-model="params.password" placeholder-translate="Password" required="" />
+                    <input
+                        type="password"
+                        autocomplete="off"
+                        name="outsidePw"
+                        ng-model="params.password"
+                        placeholder-translate="Password"
+                        class="composer-options-input"
+                        required>
                 </div>
             </div>
             <div ng-class="{'has-error': encryptForm.outsidePwConfirm.$touched && encryptForm.outsidePwConfirm.$error.required}" class="clearfix">
@@ -26,7 +33,14 @@
                 </div>
                 <div class="col-2-3">
                     <input style="display: none;" type="password" name="foilautofill"/>
-                    <input type="password" autocomplete="off" name="outsidePwConfirm" ng-model="params.confirm" placeholder-translate="Confirm password" required="" />
+                    <input
+                        type="password"
+                        autocomplete="off"
+                        name="outsidePwConfirm"
+                        ng-model="params.confirm"
+                        placeholder-translate="Confirm password"
+                        class="composer-options-input"
+                        required>
                 </div>
             </div>
             <div class="clearfix">
@@ -36,7 +50,13 @@
                     </label>
                 </div>
                 <div class="col-2-3">
-                    <input type="text" autocomplete="off" name="outsidePwHint" ng-model="params.hint" placeholder-translate="Hint" />
+                    <input
+                        type="text"
+                        class="composer-options-input"
+                        autocomplete="off"
+                        name="outsidePwHint"
+                        ng-model="params.hint"
+                        placeholder-translate="Hint">
                 </div>
             </div>
             <div class="clear">
@@ -45,13 +65,24 @@
                 </p>
             </div>
             <footer class="text-right">
-                <button type="button" class="pm_button pull-left mobileFull" ng-click="clearEncrypt(message, params, encryptForm);" translate translate-context="Action">Cancel</button>
-                <button type="submit" class="pm_button primary mobileFull" ng-click="setEncrypt(message, params)" ng-disabled="encryptForm.$invalid" translate translate-context="Action">Set</button>
+                <button
+                    type="button"
+                    class="pm_button pull-left mobileFull composer-options-btn-cancel"
+                    ng-click="clearEncrypt(message, params, encryptForm);"
+                    translate
+                    translate-context="Action">Cancel</button>
+                <button
+                    type="submit"
+                    class="pm_button primary mobileFull composer-options-btn-submit"
+                    ng-click="setEncrypt(message, params)"
+                    ng-disabled="encryptForm.$invalid"
+                    translate
+                    translate-context="Action">Set</button>
             </footer>
         </div>
     </div>
 
-    <div class="options" ng-class="{ 'show': message.displayPanel && message.panelName == 'expiration' }">
+    <div class="options composer-options-expiration" ng-class="{ 'show': message.displayPanel && message.panelName == 'expiration' }">
         <div>
             <h3 translate translate-context="Title">Expiration time</h3>
             <a href="https://protonmail.com/support/knowledge-base/expiration/" target="_blank">
@@ -78,8 +109,18 @@
             <span translate>Hours</span>
         </div>
         <footer class="text-right">
-            <button type="button" class="pm_button pull-left mobileFull" ng-click="clearExpiration(message)" translate translate-context="Action">Cancel</button>
-            <button type="button" class="pm_button primary mobileFull" ng-click="closePanel(message)" translate translate-context="Action">Set</button>
+            <button
+                type="button"
+                class="pm_button pull-left mobileFull composer-options-btn-cancel"
+                ng-click="clearExpiration(message)"
+                translate
+                translate-context="Action">Cancel</button>
+            <button
+                type="button"
+                class="pm_button primary mobileFull composer-options-btn-submit"
+                ng-click="closePanel(message)"
+                translate
+                translate-context="Action">Set</button>
         </footer>
     </div>
 
@@ -132,7 +173,8 @@
     <composer-attachments data-model="message"></composer-attachments>
 
     <footer ng-hide="message.minimized" ng-class="{ 'disabled': message.displayPanel }">
-        <button class="pm_button"
+
+        <button class="pm_button composer-btn-attachment"
             action-message="::message"
             action-message-type="addFile"
             ng-disabled="message.disableOthers() || message !== selected"
@@ -144,46 +186,61 @@
             pt-placement="top">
             <i class="fa fa-paperclip"></i>
         </button>
+
         <button
-        class="pm_button"
-        ng-class="{
-            'active': message.displayPanel && message.panelName == 'encrypt',
-            'primary': message.IsEncrypted === 1
-        }"
-        ng-disabled="message.disableOthers() || message !== selected"
-        pt-placement="top"
-        pt-tooltip-context="Action"
-        pt-tooltip-translate="Encryption"
-        ng-click="togglePanel(message, 'encrypt')">
+            class="pm_button composer-btn-encryption"
+            ng-class="{
+                'active': message.displayPanel && message.panelName == 'encrypt',
+                'primary': message.IsEncrypted === 1
+            }"
+            ng-disabled="message.disableOthers() || message !== selected"
+            pt-placement="top"
+            pt-tooltip-context="Action"
+            pt-tooltip-translate="Encryption"
+            ng-click="togglePanel(message, 'encrypt')">
             <i class="fa fa-lock"></i>
             <span ng-show="!!message.maximized" translate translate-context="Title">Encryption</span>
         </button>
+
         <button
-        class="pm_button"
-        ng-class="{
-            'active': message.displayPanel && message.panelName == 'expiration',
-            'primary': message.ExpirationTime > 0
-        }"
-        ng-disabled="message.disableOthers() || message !== selected"
-        pt-placement="top"
-        pt-tooltip-translate="Expiration time"
-        pt-tooltip-translate-context="Action"
-        ng-click="togglePanel(message, 'expiration')">
+            class="pm_button composer-btn-expiration"
+            ng-class="{
+                'active': message.displayPanel && message.panelName == 'expiration',
+                'primary': message.ExpirationTime > 0
+            }"
+            ng-disabled="message.disableOthers() || message !== selected"
+            pt-placement="top"
+            pt-tooltip-translate="Expiration time"
+            pt-tooltip-translate-context="Action"
+            ng-click="togglePanel(message, 'expiration')">
             <i class="fa fa-clock-o"></i>
             <span ng-show="!!message.maximized" translate translate-context="Action">Expiration</span>
         </button>
         <span class="text-muted saveAt" ng-show="message.Time" translate>Saved at {{ message.Time | date : "shortTime" }}</span>
         <div class="pull-right">
-            <button class="pm_button" ng-disabled="message.disableDiscard()" ng-click="discard(message)" pt-tooltip-translate="Delete draft" pt-placement="top" pt-tooltip-context="Action">
+
+            <button
+                class="pm_button composer-btn-discard"
+                ng-disabled="message.disableDiscard()"
+                ng-click="discard(message)"
+                pt-tooltip-translate="Delete draft"
+                pt-placement="top"
+                pt-tooltip-context="Action">
                 <i class="fa fa-trash-o"></i>
                 <span ng-show="!!message.maximized" translate translate-context="Action">Discard</span>
             </button>
-            <button class="pm_button" ng-disabled="message.disableSave() || message !== selected" ng-click="save(message, true, false)" pt-tooltip-translate="Save" pt-placement="top" pt-tooltip-translate-context="Action">
+
+            <button
+                class="pm_button composer-btn-save"
+                ng-disabled="message.disableSave() || message !== selected" ng-click="save(message, true, false)"
+                pt-tooltip-translate="Save"
+                pt-placement="top"
+                pt-tooltip-translate-context="Action">
                 <i class="fa fa-floppy-o"></i>
                 <span ng-show="message.maximized === true" translate translate-context="Action">Save</span>
             </button>
             <btn-send-message
-                class="pm_button primary mobileFull"
+                class="pm_button primary mobileFull composer-btn-send"
                 data-message="message"></btn-send-message>
         </div>
     </footer>

@@ -7,6 +7,14 @@ module.exports = () => {
         buttonCCBCC: '.composerInputMeta-overlay-button'
     };
 
+    const getNotification = () => {
+        return browser.executeScript(`
+            return $('.proton-notification-template')
+                .find('span')
+                .html();
+        `);
+    };
+
     const open = () => {
         return element(by.css('.compose.pm_button')).click();
     };
@@ -73,9 +81,10 @@ module.exports = () => {
             content, fillInput, send, isOpened, isVisible, openCCBCC,
             addLinkPopover: require('./tools/addLinkPopover.po'),
             addFilePopover: require('./tools/addFilePopover.po'),
-            autocomplete: require('./tools/autocomplete.po')
+            autocomplete: require('./tools/autocomplete.po'),
+            encryption: require('./tools/encryption.po')
         };
     };
 
-    return { open, isOpened, compose };
+    return { open, isOpened, compose, getNotification };
 };
