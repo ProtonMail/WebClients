@@ -14,14 +14,7 @@
         </fieldset>
     </form>
     <ul class="navigation">
-        <li>
-            <a href="#" ng-click="displaySaleModal()">
-                <span>
-                    <i class="fa fa-gift"></i>
-                </span>
-                <strong translate translate-context="Action">Sale</strong>
-            </a>
-        </li>
+        <sale-link></sale-link>
         <li ui-sref-active="active" ng-if="isFree === true">
             <a ui-sref="secured.dashboard({scroll: true})">
                 <span>
