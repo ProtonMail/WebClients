@@ -176,6 +176,7 @@
                                     </span>
                                     <span ng-hide="plan.Name === 'plus' || plan.Name === 'business'">{{ plan.MaxDomains }}</span>
                                     <span translate translate-n="plan.MaxDomains" translate-plural="Custom domains">Custom domain</span>
+                                    <i class="fa fa-info-circle" pt-tooltip-translate="Allows you to host emails for your own domain(s) at ProtonMail, e.g. <u>john@smith.com</u>" pt-tooltip-translate-context="Info" pt-html="true"></i>
                                     <strong class="cost pull-right" ng-show="selects[plan.Name].domain.index * addons[plan.Cycle].domain.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects[plan.Name].domain.index * addons[plan.Cycle].domain.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                     <span class="clear"></span>
                                 </li>
@@ -187,6 +188,7 @@
                                     </span>
                                     <span ng-hide="plan.Name === 'plus' || plan.Name === 'business'">{{ plan.MaxAddresses }}</span>
                                     <span translate translate-n="plan.MaxAddresses" translate-plural="Addresses">Address</span>
+                                    <i class="fa fa-info-circle" pt-tooltip-translate="Add additional addresses to your account like <u>username2@protonmail.com</u>" pt-tooltip-translate-context="Info" pt-html="true"></i>
                                     <strong class="cost pull-right" ng-show="selects[plan.Name].address.index * addons[plan.Cycle].address.Amount && (plan.Name === 'plus' || plan.Name === 'business')">+{{ selects[plan.Name].address.index * addons[plan.Cycle].address.Amount / 100 / plan.Cycle | fixed: 2 | currency: plan.Currency }}</strong>
                                     <span class="clear"></span>
                                 </li>
@@ -197,6 +199,11 @@
                                 <li>
                                     <i class="fa fa-check"></i>
                                     <span ng-bind="plan.labels"></span>
+                                </li>
+                                <li ng-class="{disabled: plan.MaxDomains === 0}" class="tall">
+                                    <i class="fa fa-times" ng-show="plan.MaxDomains === 0"></i>
+                                    <i class="fa fa-check" ng-show="plan.MaxDomains > 0"></i>
+                                    <span>Custom Email Filters</span>
                                 </li>
                                 <li>
                                     <i class="fa fa-check"></i>

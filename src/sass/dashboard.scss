@@ -94,7 +94,7 @@
                             color: $gray-medium;
                             text-decoration: line-through;
                         }
-                        .fa {
+                        .fa:not(.fa-info-circle) {
                             display: inline-block;width: 1.25rem;
                         }
                         .pm_select.inline {
