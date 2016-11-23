@@ -521,13 +521,23 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.displayLifetime = () => {
-        lifetimeModal.activate({
-            params: {
-                close() {
-                    lifetimeModal.deactivate();
-                }
+        const promise = Payment.methods()
+        .then((result = {}) => {
+            const { data = {} } = result;
+            if (data.Code === 1000) {
+                lifetimeModal.activate({
+                    params: {
+                        methods: data.PaymentMethods,
+                        close() {
+                            lifetimeModal.deactivate();
+                        }
+                    }
+                });
+            } else if (data.Error) {
+                return Promise.reject(data.Error);
             }
         });
+        networkActivityTracker.track(promise);
     };
 
     /**
