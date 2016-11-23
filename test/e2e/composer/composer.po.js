@@ -1,6 +1,7 @@
 module.exports = () => {
 
     const SELECTOR_MAP = {
+        ToList: '.composer-field-ToList',
         CCList: '.composer-field-CCList',
         BCCList: '.composer-field-CCList',
         buttonCCBCC: '.composerInputMeta-overlay-button',
@@ -111,16 +112,38 @@ module.exports = () => {
                         return $form.find('input').val();
                     `);
                 },
+                listIsVisible() {
+                    return browser.executeScript(`
+                        const $form = $('${container}').find('form.composerInputMeta-autocomplete');
+
+                        $form.find('input').click();
+
+                        return $form.find('input + ul').is(':visible');
+                    `);
+                },
                 countLabels() {
                     return browser.executeScript(`
                         const $form = $('${container}').find('form.composerInputMeta-autocomplete');
                         return $form.find('.autocompleteEmails-item').length;
                     `);
                 },
+                isInvalidLabel(index = 0) {
+                    return browser.executeScript(`
+                        return $('${container}')
+                            .find('form.composerInputMeta-autocomplete')
+                            .find('.autocompleteEmails-item')
+                            .eq(${index})
+                            .hasClass('autocompleteEmails-item-invalid');
+                    `);
+                },
                 getLabels(index = 0) {
                     return browser.executeScript(`
-                        const $form = $('${container}').find('form.composerInputMeta-autocomplete');
-                        return $form.find('.autocompleteEmails-item').get(${index});
+                        return $('${container}')
+                            .find('form.composerInputMeta-autocomplete')
+                            .find('.autocompleteEmails-item')
+                            .eq(${index})
+                            .find('.autocompleteEmails-btn-remove')
+                            .attr('data-address');
                     `);
                 },
                 removeLabel(index = 0) {
@@ -133,10 +156,10 @@ module.exports = () => {
                             .click();
                     `);
                 }
-            }
-        }
+            };
+        };
 
-        return { content, fillInput, send, isOpened, isVisible, openCCBCC, addFilePopover };
+        return { content, fillInput, send, isOpened, isVisible, openCCBCC, addFilePopover, autocomplete };
     };
 
     return { open, isOpened, compose };

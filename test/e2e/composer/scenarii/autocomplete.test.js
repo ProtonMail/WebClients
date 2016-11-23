@@ -32,31 +32,126 @@ module.exports = (editor, message, { identifier }) => {
                 });
         });
 
-        it('should add a recepient', () => {
+        describe('ToList field', () => {
+            let autocomplete;
+
+            describe('Valid email', () => {
+                it('should not contains any labels', () => {
+                    autocomplete = borodin.autocomplete('ToList');
+                    autocomplete.countLabels()
+                        .then((counter) => {
+                            expect(counter).toBe(0);
+                        });
+                })
+
+                it('should add a recepient en set the input value empty', () => {
+                    borodin.fillInput('ToList', message.ToList)
+                        .then((text) => {
+                            expect(text).toEqual('');
+                        });
+                })
+
+                it('should not be invalid', () => {
+                    autocomplete.isInvalidLabel()
+                        .then((test) => {
+                            expect(test).toEqual(false);
+                        });
+                })
+
+                it('should contains 1 labels', () => {
+                    autocomplete.countLabels()
+                        .then((counter) => {
+                            expect(counter).toBe(1);
+                        });
+                })
+
+                it('should find the added value to the label', () => {
+                    autocomplete.getLabels()
+                        .then((value) => {
+                            expect(value).toBe(message.ToList);
+                        });
+                })
+
+                it('should remove the label', () => {
+                    autocomplete.removeLabel()
+                        .then(() => autocomplete.countLabels())
+                        .then((counter) => {
+                            expect(counter).toBe(0);
+                        });
+                })
+            })
+
+            describe('Invalid email', () => {
+
+                const email = 'jeanne mange des anes';
+
+                it('should not contains any labels', () => {
+                    autocomplete = borodin.autocomplete('ToList');
+                    autocomplete.countLabels()
+                        .then((counter) => {
+                            expect(counter).toBe(0);
+                        });
+                })
+
+                it('should add a recepient en set the input value empty', () => {
+                    borodin.fillInput('ToList', email)
+                        .then((text) => {
+                            expect(text).toEqual('');
+                        });
+                })
+
+                it('should be invalid', () => {
+                    autocomplete.isInvalidLabel()
+                        .then((test) => {
+                            expect(test).toEqual(true);
+                        });
+                })
+
+                it('should contains 1 labels', () => {
+                    autocomplete.countLabels()
+                        .then((counter) => {
+                            expect(counter).toBe(1);
+                        });
+                })
+
+                it('should find the added value to the label', () => {
+                    autocomplete.getLabels()
+                        .then((value) => {
+                            expect(value).toBe(email);
+                        });
+                })
+
+                it('should remove the label', () => {
+                    autocomplete.removeLabel()
+                        .then(() => autocomplete.countLabels())
+                        .then((counter) => {
+                            expect(counter).toBe(0);
+                        });
+                })
+            });
+
+            it('should display the autocomplete', () => {
+                autocomplete.listIsVisible()
+                    .then((test) => {
+                        expect(test).toEqual(true);
+                        browser.sleep(500);
+                    });
+            })
+
+        })
+
+        it('should add the recepient', () => {
             borodin.fillInput('ToList', message.ToList)
                 .then((text) => {
                     expect(text).toEqual('');
                 });
-        });
+        })
 
         it('should add a subject', () => {
             const subject = `${message.Subject} - test:${identifier}`;
             borodin.fillInput('Subject', `${message.Subject} - test:${identifier}`)
                 .then((text) => {
                     expect(text).toEqual(subject);
-                });
-        });
-
-
-        it('should add a file link', () => {
-            const { openForm, bindLink, submit, matchIframe } = borodin.addFilePopover();
-            openForm()
-                .then(bindLink(message.linkImage))
-                .then(submit())
-                .then(() => browser.sleep(1000))
-                .then(matchIframe(message.linkImage))
-                .then((img) => {
-                    expect(img).not.toEqual(null);
                 });
         });
 
