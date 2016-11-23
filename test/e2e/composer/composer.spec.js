@@ -5,6 +5,7 @@ const addFileLink = require('./scenarii/addFileLink.test');
 const addLink = require('./scenarii/addLink.test');
 const autocomplete = require('./scenarii/autocomplete.test');
 const encryption = require('./scenarii/encryption.test');
+const expiration = require('./scenarii/expiration.test');
 
 const message = {
     Subject: 'E2E: Ha que coucou',
@@ -12,7 +13,12 @@ const message = {
     CCList: 'qatest123+roberto@protonmail.com',
     BCCList: 'qatest123+monique@protonmail.com',
     body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos aperiam debitis, ipsam numquam eius unde cupiditate atque enim, deleniti amet, quidem itaque. Voluptatum quisquam voluptates neque, numquam molestiae! Molestiae, aliquam?',
-    linkImage: 'https://i.imgur.com/WScAnHr.jpg'
+    linkImage: 'https://i.imgur.com/WScAnHr.jpg',
+    expiration: {
+        hours: 5,
+        days: 3,
+        weeks: 1
+    }
 };
 
 describe('composer tests', () => {
@@ -23,5 +29,6 @@ describe('composer tests', () => {
     addLink(editor, message, { identifier: 'addLink' });
     autocomplete(editor, message, { identifier: 'autocomplete' });
     encryption(editor, message, { identifier: 'encryption' });
+    expiration(editor, message, { identifier: 'expiration' });
 
 });

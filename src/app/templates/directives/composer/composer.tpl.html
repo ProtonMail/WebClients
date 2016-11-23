@@ -93,17 +93,32 @@
         <p class="alert alert-info" translate>This message will expire in</p>
         <div class="pm_form alert text-center" ng-init="initExpiration(message, params)">
             <span class="pm_select">
-                <select ng-model="params.expirationWeeks" ng-change="setExpiration(message, params)" ng-options="option.label for option in weekOptions"></select>
+                <select
+                    name="weeks"
+                    class="composer-options-select-week"
+                    ng-model="params.expirationWeeks"
+                    ng-change="setExpiration(message, params)"
+                    ng-options="option.label for option in weekOptions"></select>
                 <i class="fa fa-angle-down"></i>
             </span>
             <span translate>Weeks</span>
             <span class="pm_select">
-                <select ng-model="params.expirationDays" ng-change="setExpiration(message, params)" ng-options="option.label for option in dayOptions"></select>
+                <select
+                    name="days"
+                    class="composer-options-select-day"
+                    ng-model="params.expirationDays"
+                    ng-change="setExpiration(message, params)"
+                    ng-options="option.label for option in dayOptions"></select>
                 <i class="fa fa-angle-down"></i>
             </span>
             <span translate>Days</span>
             <span class="pm_select">
-                <select ng-model="params.expirationHours" ng-change="setExpiration(message, params)" ng-options="option.label for option in hourOptions"></select>
+                <select
+                    name="hours"
+                    class="composer-options-select-hour"
+                    ng-model="params.expirationHours"
+                    ng-change="setExpiration(message, params)"
+                    ng-options="option.label for option in hourOptions"></select>
                 <i class="fa fa-angle-down"></i>
             </span>
             <span translate>Hours</span>
