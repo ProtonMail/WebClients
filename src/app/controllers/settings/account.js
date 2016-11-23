@@ -53,7 +53,7 @@ angular.module('proton.controllers.Settings')
 
     // Listeners
     unsubscribe.push($rootScope.$on('changePMSignature', changePMSignature));
-    unsubscribe.puhs($rootScope.$on('updateUser', updateUser));
+    unsubscribe.push($rootScope.$on('updateUser', updateUser));
     $scope.$on('$destroy', () => {
         unsubscribe.forEach((cb) => cb());
         unsubscribe.length = 0;
