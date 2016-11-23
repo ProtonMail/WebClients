@@ -47,12 +47,13 @@ module.exports = (editor, message, { identifier }) => {
                 });
         });
 
-        describe('Add an image', () => {
+
+        describe('Add a link', () => {
 
             let popover;
 
             it('should display the popover', () => {
-                popover = borodin.addFilePopover();
+                popover = borodin.addLinkPopover();
                 popover.openForm()
                     .then(() => popover.isVisible())
                     .then((test) => {
@@ -70,13 +71,14 @@ module.exports = (editor, message, { identifier }) => {
                     });
             });
 
-            it('should add an image', () => {
+            it('should add a link', () => {
                 popover.matchIframe(message.linkImage)
                     .then((test) => {
                         expect(test).toEqual(true);
                     });
             });
         });
+
 
         it('should send the message', () => {
             borodin.send()
