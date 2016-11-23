@@ -1,54 +1,19 @@
 const modal = require('../../../e2e.utils/modal');
 const notifs = require('../../../e2e.utils/notifications');
 
-module.exports = ({ editor, message, identifier }) => {
-    describe('Composer simple message', () => {
+module.exports = ({ editor, message }) => {
+    describe('No subject', () => {
 
         let borodin;
 
-        it('should open a the composer', () => {
-            editor.open();
-            browser.sleep(500);
-            editor.isOpened()
-                .then((test) => {
-                    borodin = editor.compose();
-                    expect(test).toEqual(true);
-                });
-        });
-
         it('should not display a modal', () => {
+            borodin = editor.compose();
+
             modal.isVisible()
                 .then((visible) => {
                     expect(visible).toEqual(false);
                 });
         })
-
-        it('should create a new message', () => {
-            borodin
-                .content(message.body)
-                .then((text) => {
-                    expect(text).toEqual(message.body);
-                });
-        });
-
-        it('should not display CC and BCC fields', () => {
-            borodin.isVisible('CCList')
-                .then((test) => {
-                    expect(test).toEqual(false);
-                });
-
-            borodin.isVisible('BCCList')
-                .then((test) => {
-                    expect(test).toEqual(false);
-                });
-        });
-
-        it('should add a recepient', () => {
-            borodin.fillInput('ToList', message.ToList)
-                .then((text) => {
-                    expect(text).toEqual('');
-                });
-        });
 
 
         it('should send the message and display a modal', () => {

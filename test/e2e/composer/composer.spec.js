@@ -29,7 +29,10 @@ describe('composer tests', () => {
 
     mainSuite(noop, { editor, message, identifier: 'simple' });
     simpleCCBCC({ editor, message, identifier: 'simpleCCBCC' });
-    noSubject({ editor, message, identifier: 'noSubject' });
+    mainSuite(noSubject, { editor, message, identifier: 'noSubject' }, {
+        send: false,
+        subject: false
+    });
     autocomplete({ editor, message, identifier: 'simpleCCBCC' });
     mainSuite(addFileLink, { editor, message, identifier: 'addFileLink' });
     mainSuite(addLink, { editor, message, identifier: 'addLink' });
