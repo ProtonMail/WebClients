@@ -82,7 +82,8 @@ module.exports = () => {
             addLinkPopover: require('./tools/addLinkPopover.po'),
             addFilePopover: require('./tools/addFilePopover.po'),
             autocomplete: require('./tools/autocomplete.po'),
-            encryption: require('./tools/encryption.po')
+            encryption: require('./tools/encryption.po'),
+            expiration: require('./tools/expiration.po')
         };
     };
 
