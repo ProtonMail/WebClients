@@ -4,11 +4,7 @@ module.exports = () => {
         ToList: '.composer-field-ToList',
         CCList: '.composer-field-CCList',
         BCCList: '.composer-field-CCList',
-        buttonCCBCC: '.composerInputMeta-overlay-button',
-        toolbarBtnImage: '.squireToolbar-action-image',
-        popoverFileInput: 'input[type="url"]',
-        formAddFilePopover: '.addFilePopover-container',
-        btnAddFilePopover: '.addFilePopover-btn-url'
+        buttonCCBCC: '.composerInputMeta-overlay-button'
     };
 
     const open = () => {
@@ -73,93 +69,12 @@ module.exports = () => {
             return browser.executeScript(`return $('${selector}').is(':visible')`);
         };
 
-        const addFilePopover = () => {
-            return {
-                openForm() {
-                    return browser.executeScript(`$('${SELECTOR_MAP.toolbarBtnImage}').click();`);
-                },
-                bindLink(link) {
-                    return browser.executeScript(`
-                        const $input = $('${SELECTOR_MAP.formAddFilePopover}').find('${SELECTOR_MAP.popoverFileInput}');
-                        $input.val('${link}');
-                        $input.triggerHandler('input');
-                    `);
-                },
-                submit() {
-                    return browser.executeScript(`$('${SELECTOR_MAP.formAddFilePopover}').find('${SELECTOR_MAP.btnAddFilePopover}').click();`)
-                },
-                matchIframe(value) {
-                    return browser.executeScript(`
-                        const img = $(document.body.querySelector('.composer'))
-                            .find('.angular-squire-wrapper')
-                            .find('iframe')[0]
-                            .contentDocument
-                            .body
-                            .querySelector('img[src="${value}"]');
-                        return img;
-                    `);
-                }
-            }
+        return {
+            content, fillInput, send, isOpened, isVisible, openCCBCC,
+            addLinkPopover: require('./tools/addLinkPopover.po'),
+            addFilePopover: require('./tools/addFilePopover.po'),
+            autocomplete: require('./tools/autocomplete.po')
         };
-
-        const autocomplete = (key) => {
-            const container = SELECTOR_MAP[key];
-
-            return {
-                inputValue() {
-                    return browser.executeScript(`
-                        const $form = $('${container}').find('form.composerInputMeta-autocomplete');
-                        return $form.find('input').val();
-                    `);
-                },
-                listIsVisible() {
-                    return browser.executeScript(`
-                        const $form = $('${container}').find('form.composerInputMeta-autocomplete');
-
-                        $form.find('input').click();
-
-                        return $form.find('input + ul').is(':visible');
-                    `);
-                },
-                countLabels() {
-                    return browser.executeScript(`
-                        const $form = $('${container}').find('form.composerInputMeta-autocomplete');
-                        return $form.find('.autocompleteEmails-item').length;
-                    `);
-                },
-                isInvalidLabel(index = 0) {
-                    return browser.executeScript(`
-                        return $('${container}')
-                            .find('form.composerInputMeta-autocomplete')
-                            .find('.autocompleteEmails-item')
-                            .eq(${index})
-                            .hasClass('autocompleteEmails-item-invalid');
-                    `);
-                },
-                getLabels(index = 0) {
-                    return browser.executeScript(`
-                        return $('${container}')
-                            .find('form.composerInputMeta-autocomplete')
-                            .find('.autocompleteEmails-item')
-                            .eq(${index})
-                            .find('.autocompleteEmails-btn-remove')
-                            .attr('data-address');
-                    `);
-                },
-                removeLabel(index = 0) {
-                    return browser.executeScript(`
-                        $('${container}')
-                            .find('form.composerInputMeta-autocomplete')
-                            .find('.autocompleteEmails-item')
-                            .eq(${index})
-                            .find('.autocompleteEmails-btn-remove')
-                            .click();
-                    `);
-                }
-            };
-        };
-
-        return { content, fillInput, send, isOpened, isVisible, openCCBCC, addFilePopover, autocomplete };
     };
 
     return { open, isOpened, compose };
