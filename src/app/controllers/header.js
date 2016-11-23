@@ -10,6 +10,9 @@ angular.module('proton.controllers.Header', [])
     $document,
     gettextCatalog,
     authentication,
+    networkActivityTracker,
+    Payment,
+    saleModal,
     CONFIG,
     CONSTANTS
 ) => {
@@ -168,6 +171,26 @@ angular.module('proton.controllers.Header', [])
 
         $scope.ctrl.address = $scope.addresses[0];
     });
+
+    $scope.displaySaleModal = () => {
+        const promise = Payment.methods()
+        .then((result = {}) => {
+            const { data = {} } = result;
+            if (data.Code === 1000) {
+                saleModal.activate({
+                    params: {
+                        methods: data.PaymentMethods,
+                        close() {
+                            saleModal.deactivate();
+                        }
+                    }
+                });
+            } else if (data.Error) {
+                return Promise.reject(data.Error);
+            }
+        });
+        networkActivityTracker.track(promise);
+    };
 
     $scope.initialization = function () {
         addFolders();
