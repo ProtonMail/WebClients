@@ -22,11 +22,6 @@ describe('Login tests', function() {
         loginPage.openBug();
     });
 
-    it('should go to v2 page', function() {
-        loginPage.v2();
-        expect(browser.getCurrentUrl()).toEqual('https://v2.protonmail.com/login');
-    });
-
     it('should go to signup page', function() {
         loginPage.signup();
     });
