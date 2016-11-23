@@ -57,14 +57,14 @@
                                     </tr>
                                 </table>
                                 <div class="text-center">
-                                    <button ng-click="displayLifetime()" class="pm_button primary" translate-context="Action" translate>Sale</button>
+                                    <button id="life-time-banner" ng-click="displayLifetime()" class="pm_button primary" translate-context="Action" translate><i>Black</i> Friday <u>sale</u></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-1-2" ng-hide="subscription.Name === 'free'">
+                    <div class="col-1-2 pm-flex-content" ng-hide="subscription.Name === 'free'">
                         <legend translate-context="Title" translate>My subscription</legend>
-                        <div class="well">
+                        <div class="well pm-flex-content-fillHeight">
                             <div class="pm_table">
                                 <table class="plain">
                                     <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
