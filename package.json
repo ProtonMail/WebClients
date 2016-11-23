@@ -47,6 +47,7 @@
   "scripts": {
     "postinstall": "bower install",
     "start": "grunt watch --api=dev",
-    "lint": "eslint $(find src/app -type f -name '*.js')  --quiet"
+    "lint": "eslint $(find src/app -type f -name '*.js')  --quiet",
+    "e2e": "protractor protractor_conf.js"
   }
 }

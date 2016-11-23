@@ -19,9 +19,7 @@ exports.config = {
   // This can be changed via the command line as:
   //   --params.login.user "Joe"
   params: {
-    login: 'qatest1234',
-    password1: 'qatest1234',
-    password2: 'qatest1234',
+    login: 'qatest123',
     sleep: 2000,
     contact: {
       create: {
@@ -58,6 +56,7 @@ exports.config = {
     'test/e2e/stars/stars.spec.js',
     'test/e2e/contact/contact.spec.js',
     'test/e2e/bugreport/bugreport.spec.js',
+    'test/e2e/composer/composer.spec.js',
     'test/e2e/logout/logout.spec.js',
   ],
   files: [
@@ -76,5 +75,6 @@ exports.config = {
     unlock: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/unlock.spec.js'],
     bugreport: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/bugReport/bugreport.spec.js'],
     stars: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/stars/stars.spec.js'],
+    composer: ['test/e2e/login/straightLogin.spec.js','test/e2e/unlock/straightUnlock.spec.js','test/e2e/composer/composer.spec.js'],
   }
 };
