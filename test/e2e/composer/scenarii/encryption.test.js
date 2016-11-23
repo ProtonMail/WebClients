@@ -1,3 +1,5 @@
+const notifs = require('../../../e2e.utils/notifications');
+
 module.exports = ({ editor, message }) => {
     describe('Encrypt the message', () => {
 
@@ -86,7 +88,7 @@ module.exports = ({ editor, message }) => {
             it('should submit the form', () => {
                 encryption.submit()
                     .then(() => browser.sleep(500))
-                    .then(() => editor.getNotification())
+                    .then(() => notifs.message())
                     .then((value) => {
                         expect(value).toEqual('Message passwords do not match.');
 
@@ -197,7 +199,7 @@ module.exports = ({ editor, message }) => {
             it('should submit the form without errors', () => {
                 encryption.submit()
                     .then(() => browser.sleep(500))
-                    .then(() => editor.getNotification())
+                    .then(() => notifs.message())
                     .then((value) => {
                         expect(value).not.toEqual('Message passwords do not match.');
 

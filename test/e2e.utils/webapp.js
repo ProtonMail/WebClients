@@ -7,8 +7,6 @@ const openLabel = (name) => {
     `);
 };
 
-
-
 module.exports = {
     openLabel
 };
