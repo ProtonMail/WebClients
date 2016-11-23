@@ -7,14 +7,6 @@ module.exports = () => {
         buttonCCBCC: '.composerInputMeta-overlay-button'
     };
 
-    const getNotification = () => {
-        return browser.executeScript(`
-            return $('.proton-notification-template')
-                .find('span')
-                .html();
-        `);
-    };
-
     const open = () => {
         return element(by.css('.compose.pm_button')).click();
     };
@@ -87,5 +79,5 @@ module.exports = () => {
         };
     };
 
-    return { open, isOpened, compose, getNotification };
+    return { open, isOpened, compose };
 };
