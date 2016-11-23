@@ -16,6 +16,10 @@ angular.module('proton.core')
             self.methods.push({ label: gettextCatalog.getString('New card', null), type: 'new_card' });
             self.methods.push({ label: 'Paypal', type: 'paypal' });
             self.method = self.methods[0];
+            self.paypalCallback = (paypalObject) => {
+                self.paypalObject = paypalObject;
+                self.submit();
+            };
             self.submit = () => {
                 const promise = Payment.credit(getParameters())
                 .then((result = {}) => {

@@ -40,7 +40,7 @@
                         <!-- payment methods --->
                         <div class="sideForm-content paymentMethods" ng-hide="ctrl.method.type === 'card'">
                             <card-view ng-if="ctrl.method.type === 'new_card'" card="ctrl.card" form="saleForm"></card-view>
-                            <paypal-view ng-if="ctrl.method.type === 'paypal'" amount="ctrl.amount" currency="ctrl.currency.value" paypal="ctrl.paypalObject"></paypal-view>
+                            <paypal-view ng-if="ctrl.method.type === 'paypal'" amount="ctrl.amount" currency="ctrl.currency.value" callback="ctrl.paypalCallback"></paypal-view>
                         </div>
                         <div class="sideForm-footer">
                             <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>

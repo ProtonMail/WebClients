@@ -7,7 +7,7 @@ angular.module('proton.core')
         scope: {
             amount: '=',
             currency: '=',
-            paypal: '='
+            paypalCallback: '=callback'
         },
         link(scope) {
             let childWindow;
@@ -52,7 +52,7 @@ angular.module('proton.core')
 
                 childWindow.close();
                 window.removeEventListener('message', receivePaypalMessage, false);
-                scope.paypal = paypalObject;
+                scope.paypalCallback(paypalObject);
             }
             scope.initPaypal();
         }
