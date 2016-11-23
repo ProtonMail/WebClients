@@ -4,7 +4,7 @@ angular.module('proton.core')
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/lifetime.tpl.html',
         controller(params) {
-            const { close } = params;
+            const { close, methods } = params;
             const self = this;
             self.amount = 1337;
             self.mode = 'pay';
@@ -12,15 +12,10 @@ angular.module('proton.core')
             self.paypalObject = {};
             self.currencies = [{ label: 'USD', value: 'USD' }, { label: 'EUR', value: 'EUR' }, { label: 'CHF', value: 'CHF' }];
             self.currency = _.findWhere(self.currencies, { value: authentication.user.Currency });
-            Payment.methods().then((result) => {
-                const { data } = result;
-                if (data.Code === 1000) {
-                    self.methods = data.PaymentMethods.map((method) => ({ label: '•••• ' + method.Details.Last4, type: 'card', id: method.ID }));
-                    self.methods.push({ label: gettextCatalog.getString('New card', null), type: 'new_card' });
-                    self.methods.push({ label: 'Paypal', type: 'paypal' });
-                    self.method = self.methods[0];
-                }
-            });
+            self.methods = methods.map((method) => ({ label: '•••• ' + method.Details.Last4, type: 'card', id: method.ID }));
+            self.methods.push({ label: gettextCatalog.getString('New card', null), type: 'new_card' });
+            self.methods.push({ label: 'Paypal', type: 'paypal' });
+            self.method = self.methods[0];
             self.submit = () => {
                 const promise = Payment.credit(getParameters())
                 .then((result = {}) => {
