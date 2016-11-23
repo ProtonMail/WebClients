@@ -1,6 +1,7 @@
 const composer = require('./composer.po');
 const mainSuite = require('./scenarii/FLOW.test');
 const simpleCCBCC = require('./scenarii/simpleCCBCC.test');
+const noSubject = require('./scenarii/noSubject.test');
 const addFileLink = require('./scenarii/addFileLink.test');
 const addLink = require('./scenarii/addLink.test');
 const autocomplete = require('./scenarii/autocomplete.test');
@@ -25,8 +26,10 @@ const noop = function() {};
 
 describe('composer tests', () => {
     const editor = composer();
+
     mainSuite(noop, { editor, message, identifier: 'simple' });
     simpleCCBCC({ editor, message, identifier: 'simpleCCBCC' });
+    noSubject({ editor, message, identifier: 'noSubject' });
     autocomplete({ editor, message, identifier: 'simpleCCBCC' });
     mainSuite(addFileLink, { editor, message, identifier: 'addFileLink' });
     mainSuite(addLink, { editor, message, identifier: 'addLink' });
