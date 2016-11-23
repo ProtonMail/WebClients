@@ -29,7 +29,7 @@ angular.module('proton.controllers.Settings')
     tools,
     User
 ) => {
-
+    let promisePasswordModal;
     const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.displayName = authentication.user.DisplayName;
@@ -145,6 +145,22 @@ angular.module('proton.controllers.Settings')
         );
     };
 
+    function initAutoClose() {
+        const tenMinutes = 10 * 60 * 1000;
+        $timeout.cancel(promisePasswordModal);
+        promisePasswordModal = $timeout(() => {
+            if (changePasswordModal.active()) {
+                const message = gettextCatalog.getString('', null);
+                changePasswordModal.deactivate();
+                notify({ message, classes: 'notification-danger' });
+            }
+        }, tenMinutes);
+    }
+
+    function cancelAutoClose() {
+        $timeout.cancel(promisePasswordModal);
+    }
+
     $scope.changePassword = (type = '', phase = 0) => {
         function submit(currentPassword, twoFactorCode) {
             const promise = User.password({ Password: currentPassword, TwoFactorCode: twoFactorCode })
@@ -157,6 +173,7 @@ angular.module('proton.controllers.Settings')
             })
             .then(() => {
                 loginPasswordModal.deactivate();
+                initAutoClose();
                 changePasswordModal.activate({
                     params: {
                         phase,
@@ -165,6 +182,8 @@ angular.module('proton.controllers.Settings')
                             changePasswordModal.deactivate();
                             if (phase === 1) {
                                 $scope.changePassword('mailbox', 2);
+                            } else {
+                                cancelAutoClose();
                             }
                         }
                     }
