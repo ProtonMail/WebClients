@@ -94,8 +94,13 @@
 
         p {
             line-height: 1.6rem;
-            strong {
+            u {
+                text-decoration: none;
                 border-bottom:2px solid #9397cd;
+                font-weight: bold;
+            }
+            strong {
+                color: #5fdefb;
             }
         }
 
@@ -179,6 +184,9 @@
         p {
             max-width: 320px;
             margin: 0px auto;
+            strong {
+                color: #5fdefb;
+            }
         }
 
         &:after {
@@ -214,7 +222,7 @@
             color:#9397cd;
             font-size: 1.2rem;
             cursor: pointer;
-            
+
             &:hover {
                 background: #9397cd;
                 color: #FFF;
