@@ -3,7 +3,7 @@
         <button type="button" ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-body pm_form">
-                <div class="pm_grid no-margin flex flex-row pm-flex-content">
+                <div class="pm_grid no-margin flex flex-row pm-flex-content" ng-show="ctrl.mode === 'pay'">
                     <div class="col-1-2 sideText pm-flex-content-vertical-center">
                         <h3><i>Black</i> Friday</h3>
                         <p>Get your <strong>lifetime</strong> ProtonMail encrypted email <br />for {{ ctrl.amount | currency: ctrl.currency.value }}</p>
@@ -47,6 +47,10 @@
                             <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate translate-context="Action">Submit</button>
                         </div>
                     </div>
+                </div>
+                <div ng-show="ctrl.mode === 'thanks'">
+                    <p class="alert alert-info" translate>Thanks</p>
+                    <button type="button" class="pm_button" ng-click="ctrl.cancel()">Close</button>
                 </div>
             </div>
         </div>
