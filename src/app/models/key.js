@@ -59,9 +59,9 @@ angular.module('proton.models.keys', ['proton.srp'])
         private(params = {}, newPassword = '') {
             if (newPassword.length) {
                 return srp.getPasswordParams(newPassword, params)
-                .then((authParams) => srp.performSRPRequest('PUT', '/keys/private', authParams));
+                .then((authParams) => $http.put(url.get() + '/keys/private', authParams));
             }
-            return srp.performSRPRequest('PUT', '/keys/private', params);
+            return $http.put(url.get() + '/keys/private', params);
         },
         /**
          * Delete key
