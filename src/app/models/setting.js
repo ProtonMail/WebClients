@@ -3,7 +3,7 @@ angular.module('proton.models.setting', ['proton.srp'])
     const Setting = {
         password(newPassword = '') {
             return srp.getPasswordParams(newPassword)
-            .then((data) => srp.performSRPRequest('PUT', '/settings/password', data))
+            .then((data) => $http.put(url.get() + '/settings/password', data))
             .catch((error = {}) => Promise.reject(error.error_description || error));
         },
         passwordReset(params, creds) {
