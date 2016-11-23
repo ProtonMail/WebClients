@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('changePasswordModal', (authentication, changeMailboxPassword, networkActivityTracker, pmModal, Setting, User) => {
+.factory('changePasswordModal', ($timeout, authentication, changeMailboxPassword, networkActivityTracker, pmModal, Setting, User) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/changePassword.tpl.html',
@@ -25,6 +25,7 @@ angular.module('proton.core')
                 const promise = User.lock().then(() => close());
                 networkActivityTracker.track(promise);
             };
+            $timeout(() => document.getElementById('newPassword').focus());
         }
     });
 });
