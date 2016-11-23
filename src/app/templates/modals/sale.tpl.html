@@ -1,8 +1,8 @@
 <div id="sale" class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
     <form class="modal-dialog" name="saleForm" ng-submit="ctrl.submit()" novalidate>
-        <button type="button" ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
         <div class="modal-content">
             <div class="modal-body pm_form">
+                <button type="button" ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
                 <div class="pm_grid no-margin flex flex-row pm-flex-content" ng-show="ctrl.mode === 'pay'">
                     <div class="col-1-2 sideText pm-flex-content-vertical-center">
                         <h3><i>Black</i> Friday</h3>
@@ -48,9 +48,14 @@
                         </div>
                     </div>
                 </div>
-                <div ng-show="ctrl.mode === 'thanks'">
-                    <p class="alert alert-info" translate>Thanks</p>
-                    <button type="button" class="pm_button" ng-click="ctrl.cancel()">Close</button>
+                <div ng-show="ctrl.mode === 'thanks'" class="sale-thanks pm-flex-content text-center" ng-show="ctrl.mode === 'pay'">
+                    <div class="pm-flex-content pm-flex-content-vertical-center">
+                        <img src="/assets/img/logo/logo.svg" class="proton-logo"/>
+                        <h1 translate translate-context="Title">Thank you</h1>
+                        <p translate translate-context="Info"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae consequat nisi, lacinia egestas leo.
+                            Nunc et est in dui consectetur convallis quis dapibus nisi. Phasellus non elit risus. </p>
+                        <a ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="thanks-close">Back to ProtonMail</a>
+                    </div>
                 </div>
             </div>
         </div>
