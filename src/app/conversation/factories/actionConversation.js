@@ -127,6 +127,8 @@ angular.module('proton.conversation')
          */
         labelConversation(ids, labels, alsoArchive) {
             const context = tools.cacheContext();
+            const currentMailbox = tools.currentMailbox();
+            const isStateAllowedRemove = currentMailbox !== 'label' && currentMailbox !== 'starred';
             const REMOVE = 0;
             const ADD = 1;
             const promises = [];
@@ -155,7 +157,7 @@ angular.module('proton.conversation')
             if (alsoArchive === true) {
                 toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
 
-                if (tools.currentMailbox() !== 'label') {
+                if (isStateAllowedRemove) {
                     toRemove.push(current);
                 }
             }
@@ -164,8 +166,8 @@ angular.module('proton.conversation')
                 const conversation = cache.getConversationCached(conversationID);
                 const messages = cache.queryMessagesCached(conversationID);
 
-                if (angular.isArray(messages) && messages.length > 0) {
-                    messages.forEach((message) => {
+                if (Array.isArray(messages) && messages.length > 0) {
+                    _.each(messages, (message) => {
 
                         const toApply = [].concat(toApplyLabels);
                         const toRemove = [].concat(toRemoveLabels);
@@ -175,7 +177,7 @@ angular.module('proton.conversation')
                         if (alsoArchive === true) {
                             toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
 
-                            if (tools.currentMailbox() !== 'label') {
+                            if (isStateAllowedRemove) {
                                 toRemove.push(current);
                             }
                         }
@@ -241,7 +243,7 @@ angular.module('proton.conversation')
 
                 // Generate message changes with event
                 if (messages.length > 0) {
-                    messages.forEach((message) => {
+                    _.each(messages, (message) => {
                         events.push({ ID: message.ID, Action: 3, Message: {
                             ID: message.ID,
                             LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
