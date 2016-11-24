@@ -7,7 +7,7 @@ var LoginPage = function() {
     var openHelp = element(by.css('[ng-click="displayHelpModal()"]'));
 
     // Report bug modal
-    var openBug = element(by.css('[ng-click="openReportModal()"]'));
+    var openBug = element(by.css('.newBugReport-container'));
 
     // Trouble link
     var v2 = element(by.css('[href="https://v2.protonmail.com/login"]'));

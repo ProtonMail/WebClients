@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .directive('composerSubject', () => ({
+    .directive('composerSubject', (editorModel) => ({
         replace: true,
         templateUrl: 'templates/directives/composer/composerSubject.tpl.html',
         link(scope, el) {
@@ -15,10 +15,11 @@ angular.module('proton.composer')
             };
 
             const onKeydown = _.throttle((e) => {
+                const { editor } = editorModel.find(scope.message);
                 // TAB
-                if (e.which === 9 && scope.message.editor) {
+                if (e.which === 9 && editor) {
                     e.preventDefault();
-                    scope.message.editor.focus();
+                    editor.focus();
                 }
             }, 150);
 

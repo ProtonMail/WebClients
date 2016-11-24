@@ -7,7 +7,6 @@ describe('Login tests', function() {
         browser.ignoreSynchronization = true;
         browser.get('http://localhost:8080/login');
         browser.waitForAngular();
-        browser.sleep(1000);
     });
     it('should log in', function() {
         loginPage.login(browser.params.login, browser.params.password1);

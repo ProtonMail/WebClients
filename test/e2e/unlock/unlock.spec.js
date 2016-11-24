@@ -5,9 +5,6 @@ describe('Unlock tests', function() {
 
     browser.ignoreSynchronization = true;
 
-    beforeEach(function() {
-        browser.sleep(browser.params.sleep);
-    });
 
     it('should unlock', function() {
         expect(unlockPage.password).toBeDefined();

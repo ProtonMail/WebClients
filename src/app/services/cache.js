@@ -86,7 +86,6 @@ angular.module('proton.cache', [])
         } else {
             messagesCached.push(message);
         }
-
         manageTimes(message.ConversationID);
 
         $rootScope.$emit('labelsElement.' + message.ID, message);
@@ -101,7 +100,7 @@ angular.module('proton.cache', [])
     function updateConversation(conversation) {
         const current = _.findWhere(conversationsCached, { ID: conversation.ID });
 
-        if (angular.isDefined(current)) {
+        if (current) {
             let labelIDs = conversation.LabelIDs || current.LabelIDs || [];
 
             if (angular.isArray(conversation.LabelIDsRemoved)) {
@@ -133,7 +132,7 @@ angular.module('proton.cache', [])
      * @param {String} type = conversation or message
      * @return {Object}
      */
-    const vector = (element, unread, type) => {
+    function vector(element, unread, type) {
         const result = {};
         let condition = true;
         const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, (label) => { return label.ID; }) || []);
@@ -155,7 +154,7 @@ angular.module('proton.cache', [])
         });
 
         return result;
-    };
+    }
 
     /**
      * Update time for conversation
@@ -671,9 +670,8 @@ angular.module('proton.cache', [])
      * @return {Object}
      */
     api.getConversationCached = (conversationId) => {
-        const result = _.findWhere(conversationsCached, { ID: conversationId });
-
-        return angular.copy(result);
+        const conversation = _.findWhere(conversationsCached, { ID: conversationId });
+        return angular.copy(conversation);
     };
 
     /**
@@ -706,11 +704,10 @@ angular.module('proton.cache', [])
     * @return {Promise}
     */
     api.getMessage = (ID = '') => {
-        const message = _.findWhere(messagesCached, { ID });
-        const { Body } = message;
+        const message = _.findWhere(messagesCached, { ID }) || {};
 
         return new Promise((resolve) => {
-            if (Body) {
+            if (message.Body) {
                 resolve(angular.copy(message));
             } else {
                 resolve(api.queryMessage(ID));
@@ -816,22 +813,18 @@ angular.module('proton.cache', [])
      * Update a conversation
      */
     api.updateFlagConversation = (event) => {
-        const deferred = $q.defer();
-        const current = _.find(conversationsCached, { ID: event.ID });
+        const current = _.findWhere(conversationsCached, { ID: event.ID });
 
-        if (angular.isDefined(current) && current.loaded === true) {
+        if (current && current.loaded === true) {
             updateConversation(event.Conversation);
-            deferred.resolve();
-        } else {
-            getConversation(event.ID).then((conversation) => {
-                conversation.LabelIDsAdded = event.Conversation.LabelIDsAdded;
-                conversation.LabelIDsRemoved = event.Conversation.LabelIDsRemoved;
-                updateConversation(conversation);
-                deferred.resolve();
-            });
+            return Promise.resolve();
         }
-
-        return deferred.promise;
+        return getConversation(event.ID).then((conversation) => {
+            conversation.LabelIDsAdded = event.Conversation.LabelIDsAdded;
+            conversation.LabelIDsRemoved = event.Conversation.LabelIDsRemoved;
+            updateConversation(conversation);
+            return Promise.resolve();
+        });
     };
 
     /**
@@ -931,13 +924,10 @@ angular.module('proton.cache', [])
         const now = moment().unix();
         const { list, removeList } = messagesCached
             .reduce((acc, message = {}) => {
-                const { ExpirationTime, ID } = message;
+                const { ExpirationTime } = message;
                 const test = !(ExpirationTime !== 0 && ExpirationTime < now);
-                if (test) {
-                    acc.list.push(message);
-                } else {
-                    acc.removeList.push(ID);
-                }
+                const key = test ? 'list' : 'removeList';
+                acc[key].push(message);
                 return acc;
             }, { list: [], removeList: [] });
 

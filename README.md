@@ -50,6 +50,11 @@ cf [Selenium Docker](https://github.com/SeleniumHQ/docker-selenium)
 
 
 Run tests:
+```shell
+$ npm run e2e -- --params.password1 "XXX" --params.password2 "XXX"
+```
+> default account is qatest123, you can change that using `--params.login "xxxx"`
+
 
 ```shell
 $ protractor protractor_conf.js
