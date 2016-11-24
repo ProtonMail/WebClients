@@ -100,7 +100,7 @@ angular.module('proton.cache', [])
     function updateConversation(conversation) {
         const current = _.findWhere(conversationsCached, { ID: conversation.ID });
 
-        if (angular.isDefined(current)) {
+        if (current) {
             let labelIDs = conversation.LabelIDs || current.LabelIDs || [];
 
             if (angular.isArray(conversation.LabelIDsRemoved)) {
@@ -114,6 +114,7 @@ angular.module('proton.cache', [])
             }
 
             conversation.LabelIDs = labelIDs;
+            conversation.NumUnread = current.NumUnread;
             manageCounters(current, conversation, 'conversation');
             _.extend(current, conversation);
         } else {
@@ -132,7 +133,7 @@ angular.module('proton.cache', [])
      * @param {String} type = conversation or message
      * @return {Object}
      */
-    const vector = (element, unread, type) => {
+    function vector(element, unread, type) {
         const result = {};
         let condition = true;
         const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, (label) => { return label.ID; }) || []);
@@ -154,7 +155,7 @@ angular.module('proton.cache', [])
         });
 
         return result;
-    };
+    }
 
     /**
      * Update time for conversation
@@ -670,9 +671,8 @@ angular.module('proton.cache', [])
      * @return {Object}
      */
     api.getConversationCached = (conversationId) => {
-        const result = _.findWhere(conversationsCached, { ID: conversationId });
-
-        return angular.copy(result);
+        const conversation = _.findWhere(conversationsCached, { ID: conversationId });
+        return angular.copy(conversation);
     };
 
     /**
