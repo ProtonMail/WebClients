@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .directive('saleLink', (networkActivityTracker, Payment, saleModal) => {
+    .directive('saleLink', ($interval, networkActivityTracker, Payment, saleModal) => {
         function onClick() {
             const promise = Payment.methods()
             .then((result = {}) => {
@@ -19,20 +19,23 @@ angular.module('proton.ui')
             });
             networkActivityTracker.track(promise);
         }
+        function repeat(element) {
+            element[0].style.display = (moment().isBetween('2016-11-25', '2016-11-29')) ? 'block' : 'none';
+        }
         return {
             restrict: 'E',
             replace: true,
             templateUrl: 'templates/directives/ui/saleLink.tpl.html',
             link(scope, element) {
-                if (moment().isBetween('2016-11-23', '2016-11-29')) { // TODO change the start date to '2016-11-25'
-                    const anchor = element[0].querySelector('a');
-                    anchor.addEventListener('click', onClick);
-                    scope.$on('$destroy', () => {
-                        anchor.removeEventListener('click', onClick);
-                    });
-                } else {
-                    element.hide();
-                }
+                const anchor = element[0].querySelector('a');
+                const oneMinute = 1000 * 60;
+                const promise = $interval(() => repeat(element), oneMinute);
+                anchor.addEventListener('click', onClick);
+                repeat(element);
+                scope.$on('$destroy', () => {
+                    anchor.removeEventListener('click', onClick);
+                    $interval.cancel(promise);
+                });
             }
         };
     });
