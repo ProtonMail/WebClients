@@ -8,7 +8,6 @@ angular.module('proton.core')
             const self = this;
             self.amount = 1337;
             self.mode = 'pay';
-            self.mode = 'thanks';
             self.card = {};
             self.paypalObject = {};
             self.currencies = [{ label: 'USD', value: 'USD' }, { label: 'EUR', value: 'EUR' }, { label: 'CHF', value: 'CHF' }];
