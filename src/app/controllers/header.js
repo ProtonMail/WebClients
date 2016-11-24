@@ -10,6 +10,8 @@ angular.module('proton.controllers.Header', [])
     $document,
     gettextCatalog,
     authentication,
+    networkActivityTracker,
+    Payment,
     CONFIG,
     CONSTANTS
 ) => {

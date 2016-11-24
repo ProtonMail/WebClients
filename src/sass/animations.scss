@@ -182,3 +182,19 @@ Inpiration from 'esjay'
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
 }
+
+
+.pulsor {
+    -webkit-animation: pusate 2s infinite alternate;
+    -moz-animation: pusate 2s infinite alternate;
+    -animation: pusate 2s infinite alternate;
+}
+@-webkit-keyframes pusate {
+    to { color:#FFF; }
+}
+@-moz-keyframes pusate {
+    to { color:#FFF; }
+}
+@keyframes pusate {
+    to { color:#FFF; }
+}

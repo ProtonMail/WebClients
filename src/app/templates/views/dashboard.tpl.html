@@ -59,9 +59,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-1-2" ng-hide="subscription.Name === 'free'">
+                    <div class="col-1-2 pm-flex-content" ng-hide="subscription.Name === 'free'">
                         <legend translate-context="Title" translate>My subscription</legend>
-                        <div class="well">
+                        <div class="well pm-flex-content-fillHeight">
                             <div class="pm_table">
                                 <table class="plain">
                                     <tr ng-repeat="plan in subscription.Plans | filter: {Type: 1}">
@@ -108,9 +108,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-1-2 donate" ng-show="subscription.Name === 'free'">
+                    <div class="col-1-2 donate pm-flex-content" ng-show="subscription.Name === 'free'">
                         <legend translate translate-context="Title">Donate</legend>
-                        <div class="well text-center">
+                        <div class="well pm-flex-content-fillHeight text-center">
                             <p  translate>Upgrading to a paid account is the best way to support ProtonMail, but you can also donate any amount.</p>
                             <p><strong  translate>Your donation helps us support more users and continue to develop ProtonMail as free and open source software.</strong></p>
                             <p>

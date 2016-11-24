@@ -5,6 +5,10 @@
     @include flexColumn();
 }
 
+.pm-flex-content-row {
+    @include flexRow();
+}
+
 .pm-flex-content-vertical-center {
     -webkit-justify-content: center;
     justify-content: center;

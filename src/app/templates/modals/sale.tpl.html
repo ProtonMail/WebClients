@@ -1,0 +1,67 @@
+<div id="sale" class="pm_modal {{ctrl.class}}" role="dialog" style="display: block;">
+    <form class="modal-dialog" name="saleForm" ng-submit="ctrl.submit()" novalidate>
+        <div class="modal-content">
+            <div class="modal-body pm_form">
+                <button type="button" ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+                <div class="pm_grid no-margin flex flex-row" ng-show="ctrl.mode === 'pay'">
+                    <div class="col-1-2 sideText">
+                        <h3>Black Friday <br />Cyber Monday <br />Special</h3>
+                        <p>Exclusively from <strong class="visionary">Nov. 25-28</strong>, we are offering ProtonMail Lifetime Accounts</p>
+                        <p>Get a lifetime subscription for a <a href="#" class="visionary">ProtonMail Visionary</a> account (usually  {{ 288 | currency: ctrl.currency.value }}/year) for {{ ctrl.amount | currency: ctrl.currency.value }} </p>
+                        <p>Visionary accounts get all features, maximum storage, and premium accounts for other privacy services we add later (calendar, file storage, etc), and <a href="https://protonmail.com/blog/black-friday" target="_blank" class='more'>more</a>. This is a great way to support ProtonMail - all proceeds from this sale will be used to fund our 2017 server upgrades.</p>
+                        <p>ProtonMail lifetime accounts have only been offered once before in 2014 and all 150 accounts offered were sold out. <strong>This time, only 50 lifetime accounts are available</strong>. </p>
+
+                    </div>
+                    <div class="col-1-2 sideForm pm-flex-content">
+                        <div class="sideForm-content pm-flex-content-fillHeight">
+                            <h2 translate translate-context="Title">Get 1 of 50 ProtonMail Lifetime Accounts for {{ ctrl.amount | currency: ctrl.currency.value }}</h2>
+                            <div class="pm_grid margin flex flex-row pm-flex-content grid-divider">
+                                <div class="col-1-2 pm-flex-content-vertical-center">
+                                    <span translate translate-context="Title">Currency</span>
+                                </div>
+                                <div class="col-1-2 pm-flex-content-row">
+                                    <span class="pm_select pm-flex-content-vertical-center">
+                                        <select ng-model="ctrl.currency" ng-options="currency.label for currency in ctrl.currencies"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="pm_grid margin flex flex-row pm-flex-content">
+                                <div class="col-1-2 pm-flex-content-vertical-center">
+                                    <label for="paymentMethod" translate translate-context="Title" translate-comment="form label">Payment method</label>
+                                </div>
+                                <div class="col-1-2 pm-flex-content-vertical-center">
+                                    <span class="pm_select">
+                                        <select id="paymentMethod" ng-model="ctrl.method" ng-options="method.label for method in ctrl.methods"></select>
+                                        <i class="fa fa-angle-down"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- payment methods --->
+                        <div class="sideForm-content paymentMethods" ng-hide="ctrl.method.type === 'card'">
+                            <card-view ng-if="ctrl.method.type === 'new_card'" card="ctrl.card" form="saleForm"></card-view>
+                            <paypal-view ng-if="ctrl.method.type === 'paypal'" amount="ctrl.amount" currency="ctrl.currency.value" callback="ctrl.paypalCallback"></paypal-view>
+                        </div>
+                        <div class="sideForm-footer">
+                            <button type="button" class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+                            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate translate-context="Action">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="ctrl.mode === 'thanks'" class="sale-thanks pm-flex-content text-center" ng-show="ctrl.mode === 'pay'">
+                    <div class="pm-flex-content pm-flex-content-vertical-center">
+                        <h1 translate translate-context="Title">Thank You!</h1>
+                        <p translate translate-context="Info">Your support makes it possible for ProtonMail to grow and continue carrying out our mission of protecting privacy online. On December 1st, we will send an email with instructions on how to upgrade your account to a <strong>Lifetime Account</strong>. If you have any questions, you can email us at contact@protonmail.ch. <br />Thank you again for your support!</p>
+                        <ul class="share-btn">
+                            <li><a class="pm-flex-content" twitter-link data-text="I have just purchased a @ProtonMail Lifetime Account" data-url="https://protonmail.com/blog/black-friday" data-via="ProtonMail"><i class="fa fa-twitter pm-flex-content-vertical-center"></i><span>Share on twitter</span></a></li>
+                            <li><a class="pm-flex-content" target="_blank" href="https://www.facebook.com/protonmail/"><i class="fa fa-facebook pm-flex-content-vertical-center"></i><span>Share on facebook</span></a></li>
+                        </ul>
+                        <a class="close-thanks" ng-click="ctrl.cancel()">close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>
