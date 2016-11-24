@@ -1112,7 +1112,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
     };
 
     $scope.openCloseModal = (message, discard = false) => {
-        $scope.close(message, discard, true);
+        $scope.close(message, discard, !discard);
     };
 
 
