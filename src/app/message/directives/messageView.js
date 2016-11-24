@@ -22,13 +22,14 @@ angular.module('proton.message')
             let unsubscribeActions = angular.noop;
             let unsubscribe = angular.noop;
 
-            cache
-                .getMessage(messageID)
+            cache.getMessage(messageID)
                 .then((message) => {
-                    message.openMe = true;
-                    scope.message = message;
-                    unsubscribeActions = conversationListeners(scope.message);
-                    unsubscribe = $rootScope.$on('message.expiration', () => back());
+                    scope.$applyAsync(() => {
+                        message.openMe = true;
+                        scope.message = message;
+                        unsubscribeActions = conversationListeners(scope.message);
+                        unsubscribe = $rootScope.$on('message.expiration', () => back());
+                    });
 
                     hotkeys.unbind(['down', 'up']);
                 });
