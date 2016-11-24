@@ -3,22 +3,23 @@
         <div class="modal-content">
             <div class="modal-body pm_form">
                 <button type="button" ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
-                <div class="pm_grid no-margin flex flex-row pm-flex-content" ng-show="ctrl.mode === 'pay'">
-                    <div class="col-1-2 sideText pm-flex-content-vertical-center">
-                        <h3><i>Black</i> Friday</h3>
-                        <p>Get your <u>lifetime</u> ProtonMail <br /><strong>visionary</strong> encrypted email for {{ ctrl.amount | currency: ctrl.currency.value }}</p>
+                <div class="pm_grid no-margin flex flex-row" ng-show="ctrl.mode === 'pay'">
+                    <div class="col-1-2 sideText">
+                        <h3>Black Friday <br />Cyber Monday <br />Special</h3>
+                        <p>Exclusively from <strong class="visionary">Nov. 25-28</strong>, we are offering ProtonMail Lifetime Accounts</p>
+                        <p>Get a lifetime subscription for a <a href="#" class="visionary">ProtonMail Visionary</a> account (usually 288€/year) for 1337€ </p>
+                        <p>Visionary accounts get all features, maximum storage, and premium accounts for other privacy services we add later (calendar, file storage, etc), and <a href="https://protonmail.com/blog/black-friday" target="_blank" class='more'>more</a>. This is a great way to support ProtonMail - all proceeds from this sale will be used to fund our 2017 server upgrades.</p>
+                        <p>ProtonMail lifetime accounts have only been offered once before in 2014 and all 150 accounts offered were sold out. <strong>This time, only 50 lifetime accounts are available</strong>. </p>
+
                     </div>
                     <div class="col-1-2 sideForm pm-flex-content">
                         <div class="sideForm-content pm-flex-content-fillHeight">
-                            <h2 translate translate-context="Title">Order now!</h2>
+                            <h2 translate translate-context="Title">Get 1 of 50 ProtonMail Lifetime Accounts for {{ ctrl.amount | currency: ctrl.currency.value }}</h2>
                             <div class="pm_grid margin flex flex-row pm-flex-content grid-divider">
                                 <div class="col-1-2 pm-flex-content-vertical-center">
-                                    <span translate translate-context="Title">Amount</span>
+                                    <span translate translate-context="Title">Currency</span>
                                 </div>
                                 <div class="col-1-2 pm-flex-content-row">
-                                    <span class="pm-flex-content-vertical-center">
-                                        <strong class="price_tag">{{ ::ctrl.amount }}</strong>
-                                    </span>
                                     <span class="pm_select pm-flex-content-vertical-center">
                                         <select ng-model="ctrl.currency" ng-options="currency.label for currency in ctrl.currencies"></select>
                                         <i class="fa fa-angle-down"></i>
@@ -52,8 +53,8 @@
                     <div class="pm-flex-content pm-flex-content-vertical-center">
                         <img src="/assets/img/logo/logo.svg" class="proton-logo"/>
                         <h1 translate translate-context="Title">Thank You!</h1>
-                        <p translate translate-context="Info">Your support makes it possible for ProtonMail to grow and continue carrying out our mission of protecting privacy online. On December 1st, we will send an email with instructions on how to upgrade your account to a <strong>Lifetime Account</strong>. If you have any questions, you can email us at contact@protonmail.ch. Thank you again for your support!</p>
-                        <a ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="thanks-close">Back to ProtonMail</a>
+                        <p translate translate-context="Info">Your support makes it possible for ProtonMail to grow and continue carrying out our mission of protecting privacy online. On December 1st, we will send an email with instructions on how to upgrade your account to a <strong>Lifetime Account</strong>. If you have any questions, you can email us at contact@protonmail.ch. <br />Thank you again for your support!</p>
+
                     </div>
                 </div>
             </div>
