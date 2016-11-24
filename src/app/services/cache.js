@@ -703,11 +703,10 @@ angular.module('proton.cache', [])
     * @return {Promise}
     */
     api.getMessage = (ID = '') => {
-        const message = _.findWhere(messagesCached, { ID });
-        const { Body } = message;
+        const message = _.findWhere(messagesCached, { ID }) || {};
 
         return new Promise((resolve) => {
-            if (Body) {
+            if (message.Body) {
                 resolve(angular.copy(message));
             } else {
                 resolve(api.queryMessage(ID));
