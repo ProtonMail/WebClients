@@ -120,7 +120,7 @@ angular.module('proton.ui')
             hasAutocompletion && (awesomplete.list = list);
 
             // Unselect the autocomplete suggestion if the input value is a valid email
-            if (target.value.indexOf('@')) {
+            if ((target.value || '').indexOf('@')) {
                 regexEmail.test(target.value) && awesomplete.goto(-1);
             }
         };

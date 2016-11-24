@@ -1,5 +1,5 @@
-angular.module('proton.composer')
-    .directive('composer', ($rootScope, embedded, attachmentFileFormat) => {
+angular.module('proton.outside')
+    .directive('composerOutside', ($rootScope, attachmentFileFormat) => {
 
         const CLASS_DRAGGABLE = 'composer-draggable';
         const CLASS_DRAGGABLE_EDITOR = 'composer-draggable-editor';
@@ -10,10 +10,6 @@ angular.module('proton.composer')
             el.classList.remove(CLASS_DRAGGABLE_EDITOR);
         };
 
-        const isMessage = ({ ID }, { message = {}, messageID }) => {
-            return ID === messageID || ID === message.ID;
-        };
-
         /**
          * Parse actions for the message and trigger some actions
          * @param  {$scope} scope
@@ -21,10 +17,6 @@ angular.module('proton.composer')
          * @return {Function}       (<event>, <data:Object>) callback from $rootScope
          */
         const onAction = (scope, el) => (e, { type, data }) => {
-
-            if (!isMessage(scope.message, data)) {
-                return;
-            }
 
             switch (type) {
                 case 'dragenter':
@@ -34,7 +26,7 @@ angular.module('proton.composer')
                     break;
                 case 'drop':
                     // Same event as the one coming from squire
-                    if (e.name === 'attachment.upload' && data.queue.files.length && data.queue.hasEmbedded) {
+                    if (e.name === 'attachment.upload.outside' && data.queue.files.length && data.queue.hasEmbedded) {
                         return addDragenterClassName(el, CLASS_DRAGGABLE_EDITOR);
                     }
                     addDragleaveClassName(el);
@@ -48,27 +40,10 @@ angular.module('proton.composer')
             }
         };
 
-
         return {
             replace: true,
-            templateUrl: 'templates/directives/composer/composer.tpl.html',
+            templateUrl: 'templates/directives/outside/composer.tpl.html',
             link(scope, el) {
-
-                const onClick = ({ target }) => {
-
-                    if (!/composerHeader-btn/.test(target.classList.toString())) {
-                        $rootScope.$emit('composer.update', {
-                            type: 'focus.click',
-                            data: {
-                                message: scope.message,
-                                composer: el,
-                                index: +el[0].getAttribute('data-index')
-                            }
-                        });
-                    }
-
-                };
-
                 const onDragEnter = ({ originalEvent }) => {
                     if (attachmentFileFormat.isUploadAbleType(originalEvent)) {
                         addDragenterClassName(el[0]);
@@ -80,22 +55,16 @@ angular.module('proton.composer')
 
                 el.on('dragenter', onDragEnter);
                 el.on('dragleave', onDragLeave);
-                el.on('click', onClick);
 
                 const unsubscribeEditor = $rootScope.$on('editor.draggable', onAction(scope, el[0]));
-                const unsubscribeAtt = $rootScope.$on('attachment.upload', onAction(scope, el[0]));
+                const unsubscribeAtt = $rootScope.$on('attachment.upload.outside', onAction(scope, el[0]));
 
-                scope
-                    .$on('$destroy', () => {
-                        el.off('dragenter', onDragEnter);
-                        el.off('dragleave', onDragLeave);
-                        el.off('click', onClick);
-
-                        unsubscribeEditor();
-                        unsubscribeAtt();
-                        scope.selected = undefined;
-                    });
+                scope.$on('$destroy', () => {
+                    el.off('dragenter', onDragEnter);
+                    el.off('dragleave', onDragLeave);
+                    unsubscribeEditor();
+                    unsubscribeAtt();
+                });
             }
         };
     });
-

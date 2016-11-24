@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .directive('composerSelectFrom', (notify, authentication) => {
+    .directive('composerSelectFrom', (notify, authentication, editorModel) => {
 
         const isIE = $.browser.msie && $.browser.versionNumber === 11;
         const listAddress = () => {
@@ -32,9 +32,8 @@ angular.module('proton.composer')
                 const onChange = () => {
                     scope.$applyAsync(() => {
                         scope.message.AddressID = scope.message.From.ID;
-                        scope.message.editor && scope.message.editor.fireEvent('refresh', {
-                            action: 'message.changeFrom'
-                        });
+                        const { editor } = editorModel.find(scope.message);
+                        editor.fireEvent('refresh', { action: 'message.changeFrom' });
                     });
                 };
 

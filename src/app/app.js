@@ -14,6 +14,7 @@ angular.module('proton', [
     // Constant
     'proton.constants',
     'proton.core',
+    'proton.outside',
 
     // templates
     'templates-app',
