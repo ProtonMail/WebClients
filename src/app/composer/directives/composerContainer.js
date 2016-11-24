@@ -27,7 +27,9 @@ angular.module('proton.composer')
                                 keepState: false
                             });
                             focusMessage(state);
-                            renderList(state);
+
+                            // Add a delay to ensure the previous composer is removed on close
+                            const id = setTimeout(() => (renderList(state), clearTimeout(id)), 160);
                         }
                     });
                 };
@@ -36,7 +38,6 @@ angular.module('proton.composer')
                 window.addEventListener('orientationchange', onOrientationChange, false);
 
                 const unsubscribe = $rootScope.$on('composer.update', (e, { type, data }) => {
-
                     switch (type) {
 
                         case 'focus.click':
