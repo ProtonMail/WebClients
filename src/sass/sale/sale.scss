@@ -126,16 +126,6 @@
             z-index: 2;
         }
 
-        .proton-logo {
-            position: absolute;
-            z-index: -1;
-            top: -104vh;
-            left: 0;
-            width: 900vh;
-            opacity: .08;
-            transform: rotate(-12deg);
-        }
-
         h1 {
             display: inline-block;
             margin: 20px auto;
@@ -154,6 +144,23 @@
 
             strong {
                 color: #5fdefb;
+            }
+
+
+        }
+
+
+        .share-btn {
+            text-align: center;
+            li {
+                display: inline-block;
+                a {
+                    background: #9397cd;
+                    padding:10px 20px;
+                    i {
+                        display: inline-block;
+                    }
+                }
             }
         }
 
@@ -181,21 +188,6 @@
             background-position: center left;
         }
 
-        .thanks-close {
-            display: inline-block;
-            margin: 30px auto;
-            padding:20px 30px;
-            border-radius: 60px;
-            background: #FFF;
-            color:#9397cd;
-            font-size: 1.2rem;
-            cursor: pointer;
-
-            &:hover {
-                background: #9397cd;
-                color: #FFF;
-            }
-        }
 
     }
 
