@@ -159,7 +159,7 @@
 
                 a {
                     position: relative;
-                    padding: 10px 0px 10px 50px;
+                    padding: 10px 0px 10px 55px;
                     background: #9397cd;
                     color:#FFF;
                     text-transform: uppercase;
@@ -179,6 +179,14 @@
                     }
                 }
             }
+        }
+
+        a.close-thanks {
+            padding:20px;
+            margin: 20px auto;
+            width: 200px;
+            background: #9397cd;
+            cursor: pointer;
         }
 
         &:after {
