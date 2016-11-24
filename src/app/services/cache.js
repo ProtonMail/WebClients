@@ -813,22 +813,18 @@ angular.module('proton.cache', [])
      * Update a conversation
      */
     api.updateFlagConversation = (event) => {
-        const deferred = $q.defer();
-        const current = _.find(conversationsCached, { ID: event.ID });
+        const current = _.findWhere(conversationsCached, { ID: event.ID });
 
-        if (angular.isDefined(current) && current.loaded === true) {
+        if (current && current.loaded === true) {
             updateConversation(event.Conversation);
-            deferred.resolve();
-        } else {
-            getConversation(event.ID).then((conversation) => {
-                conversation.LabelIDsAdded = event.Conversation.LabelIDsAdded;
-                conversation.LabelIDsRemoved = event.Conversation.LabelIDsRemoved;
-                updateConversation(conversation);
-                deferred.resolve();
-            });
+            return Promise.resolve();
         }
-
-        return deferred.promise;
+        return getConversation(event.ID).then((conversation) => {
+            conversation.LabelIDsAdded = event.Conversation.LabelIDsAdded;
+            conversation.LabelIDsRemoved = event.Conversation.LabelIDsRemoved;
+            updateConversation(conversation);
+            return Promise.resolve();
+        });
     };
 
     /**
