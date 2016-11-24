@@ -151,14 +151,31 @@
 
 
         .share-btn {
+            margin-top: 30px;
             text-align: center;
             li {
                 display: inline-block;
+                margin:0px 10px 20px 0px;
+
                 a {
+                    position: relative;
+                    padding: 10px 0px 10px 50px;
                     background: #9397cd;
-                    padding:10px 20px;
+                    color:#FFF;
+                    text-transform: uppercase;
+                    text-decoration: none;
                     i {
-                        display: inline-block;
+                        position: absolute;
+                        left:0;
+                        top:0;
+                        padding: 0px 10px;
+                        width: 40px;
+                        height: 100%;
+                        font-size:1.1rem;
+                        background: rgba(0,0,0,0.2);
+                    }
+                    span {
+                        padding:10px 20px;
                     }
                 }
             }
