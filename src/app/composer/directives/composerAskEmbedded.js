@@ -1,18 +1,20 @@
 angular.module('proton.composer')
     .directive('composerAskEmbedded', ($rootScope) => {
 
-        const dispatch = (data) => $rootScope.$emit('attachment.upload', { type: 'upload', data });
 
         const buildTitle = (node, pending) => node.textContent = `${pending} images detected`;
 
         return {
             replace: true,
             templateUrl: 'templates/directives/composer/composerAskEmbedded.tpl.html',
-            link(scope, el) {
+            link(scope, el, { action = '' }) {
+
+                const key = ['attachment.upload', action].filter(Boolean).join('.');
+                const dispatch = (data) => $rootScope.$emit(key, { type: 'upload', data });
 
                 const $title = el[0].querySelector('.composerAskEmbdded-title');
 
-                const unsubscribe = $rootScope.$on('attachment.upload', (e, { type, data }) => {
+                const unsubscribe = $rootScope.$on(key, (e, { type, data }) => {
                     if (type === 'drop') {
                         // Compute how many upload do we have and render it
                         buildTitle($title, data.queue.files.length);

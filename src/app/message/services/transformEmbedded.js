@@ -1,5 +1,5 @@
 angular.module('proton.message')
-.factory('transformEmbedded', (authentication, embedded) => {
+.factory('transformEmbedded', (authentication, embedded, $state) => {
     const EMBEDDED_CLASSNAME = 'proton-embedded';
     const wrapImage = (img) => angular.element(img).wrap('<div class="image loading"></div>');
 
@@ -8,6 +8,7 @@ angular.module('proton.message')
         const images = [].slice.call(html.querySelectorAll('img[proton-src]'));
         const user = authentication.user || { ShowEmbedded: 0 };
         const show = message.showEmbedded === true || user.ShowEmbedded === 1;
+        const isEoReply = $state.is('eo.reply');
 
         images.forEach((image) => {
             const src = image.getAttribute('proton-src');
@@ -21,8 +22,13 @@ angular.module('proton.message')
             if (attachment && Object.keys(attachment).length > 0) {
                 if (show) {
                     image.setAttribute('data-embedded-img', src);
-                    !image.parentElement.classList.contains('loading') && wrapImage(image);
-                    image.removeAttribute('src');
+
+                    // We don't need to add it outside
+                    if (!isEoReply) {
+                        !image.parentElement.classList.contains('loading') && wrapImage(image);
+                        image.removeAttribute('src');
+                    }
+
                 } else {
                     message.showEmbedded = false;
                     image.setAttribute('alt', attachment.Name);

@@ -27,12 +27,38 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 65px;
-    display: flex;
-    justify-content: space-between;
+    width: 80px;
+    display: inline-block;
     background: transparent;
     border: 0;
     font-size: .8rem;
     line-height: 1.1rem;
     cursor: pointer;
 }
+
+
+.composer-askEmbedding {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100;
+    background: #F5F5F5;
+    color: #505061;
+    text-align: center;
+}
+
+.composer-askEmbedding::after {
+    content: "\f03e";
+    font-family: FontAwesome;
+    left:-5px;
+    position:absolute;
+    top:0;
+    z-index: 0;
+    font-size: 15rem;
+    transform: rotate(10deg);
+    opacity: 0.1
+ }

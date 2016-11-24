@@ -7,7 +7,6 @@ describe('Login tests', function() {
         browser.ignoreSynchronization = true;
         browser.get('http://localhost:8080/login');
         browser.waitForAngular();
-        browser.sleep(1000);
     });
 
     it('should go to login', function() {
@@ -20,11 +19,6 @@ describe('Login tests', function() {
 
     it('should open the bug modal', function() {
         loginPage.openBug();
-    });
-
-    it('should go to v2 page', function() {
-        loginPage.v2();
-        expect(browser.getCurrentUrl()).toEqual('https://v2.protonmail.com/login');
     });
 
     it('should go to signup page', function() {

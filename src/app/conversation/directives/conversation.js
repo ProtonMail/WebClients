@@ -171,8 +171,11 @@ angular.module('proton.conversation')
             // Listeners
             unsubscribe.push($rootScope.$on('refreshConversation', (event, conversationIDs) => {
                 if (conversationIDs.indexOf(scope.conversation.ID) > -1) {
-                    scope.refreshConversation();
+                    refreshConversation();
                 }
+            }));
+            unsubscribe.push($rootScope.$on('message.expiration', () => {
+                scope.$applyAsync(() => refreshConversation());
             }));
 
             // We need to allow hotkeys for a message when you open the message
@@ -315,8 +318,8 @@ angular.module('proton.conversation')
             function initialization() {
                 let messages = [];
                 messagesCached = cache.queryMessagesCached($stateParams.id);
-                scope.trashed = _.filter(messagesCached, (message) => { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === true; }).length > 0;
-                scope.nonTrashed = _.filter(messagesCached, (message) => { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash) === false; }).length > 0;
+                scope.trashed = _.some(messagesCached, ({ LabelIDs }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
+                scope.nonTrashed = _.some(messagesCached, ({ LabelIDs }) => !_.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
 
                 messages = $filter('filterMessages')(messagesCached, scope.showTrashed, scope.showNonTrashed);
 
@@ -343,7 +346,7 @@ angular.module('proton.conversation')
             /**
              * Refresh the current conversation with the latest change reported by the event log manager
              */
-            scope.refreshConversation = () => {
+            function refreshConversation() {
 
                 const conversation = cache.getConversationCached($stateParams.id);
                 const messages = cache.queryMessagesCached($stateParams.id);
@@ -353,12 +356,12 @@ angular.module('proton.conversation')
                 scope.trashed = messagesCached.some(({ LabelIDs = [] }) => _.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
                 scope.nonTrashed = messagesCached.some(({ LabelIDs = [] }) => !_.contains(LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
 
-                if (conversation) {
-                    if (conversation.LabelIDs.indexOf(loc) !== -1 || $state.includes('secured.search.**')) {
-                        _.extend(scope.conversation, conversation);
-                    } else {
-                        return back();
-                    }
+                if (!conversation) {
+                    return back();
+                }
+
+                if (conversation.LabelIDs.indexOf(loc) !== -1 || $state.includes('secured.search.**')) {
+                    _.extend(scope.conversation, conversation);
                 } else {
                     return back();
                 }
@@ -394,19 +397,18 @@ angular.module('proton.conversation')
                 } else {
                     back();
                 }
-            };
+            }
 
             scope.toggleOption = function (option) {
                 scope[option] = !scope[option];
-                scope.refreshConversation();
+                refreshConversation();
             };
 
             /**
              * @return {Boolean}
              */
             scope.showNotifier = function (folder) {
-                const filtered = _.filter(messagesCached, (message) => { return _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]); });
-
+                const filtered = _.filter(messagesCached, (message) => _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS[folder]));
                 return filtered.length < messagesCached.length && filtered.length > 0;
             };
 
