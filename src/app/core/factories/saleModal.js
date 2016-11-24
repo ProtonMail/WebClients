@@ -6,7 +6,7 @@ angular.module('proton.core')
         controller(params) {
             const { close, methods } = params;
             const self = this;
-            self.amount = 1337;
+            self.amount = 3;
             self.mode = 'pay';
             self.card = {};
             self.paypalObject = {};
