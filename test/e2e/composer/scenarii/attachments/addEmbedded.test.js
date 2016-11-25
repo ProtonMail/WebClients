@@ -65,4 +65,14 @@ module.exports = ({ editor }) => () => {
             .then(assert(2));
     });
 
+    it('should bind 1 into the counter', () => {
+        listAttachments.getCounter()
+            .then(assert(1));
+    });
+
+    it('should bind 1 into the counter for embedded', () => {
+        listAttachments.getCounter('embedded')
+            .then(assert(1));
+    });
+
 };
