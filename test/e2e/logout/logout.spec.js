@@ -1,15 +1,15 @@
-var LogoutPage = require('./logout.po.js');
+const logout = require('./logout.po');
 
-describe('Logout tests', function() {
-    var logoutPage = new LogoutPage();
+describe('Logout tests', () => {
     browser.ignoreSynchronization = true;
 
-    beforeEach(function() {
-        browser.sleep(browser.params.sleep);
-    });
 
-    it('should logout', function() {
-        logoutPage.logout();
-        expect(browser.getCurrentUrl()).toContain('/login');
+    it('should logout', () => {
+
+        logout()
+            .then(() => browser.sleep(1000))
+            .then(() => {
+                expect(browser.getCurrentUrl()).toContain('/login');
+            });
     });
 });

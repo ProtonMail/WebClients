@@ -1,5 +1,5 @@
 angular.module('proton.composer')
-    .factory('composerLoader', () => {
+    .factory('composerLoader', (editorModel, $rootScope) => {
 
         /**
          * Custom focus to the composer depending of the source from the click event
@@ -10,7 +10,7 @@ angular.module('proton.composer')
          * @param  {Squire} editor
          * @return {void}
          */
-        function customFocus(el, scope, editor) {
+        function customFocus(el, scope, message) {
 
             // We already inside the composer with a focused node, do nothing
             if (!el[0] || (el[0].contains(document.activeElement) && el[0] !== document.activeElement)) {
@@ -37,20 +37,36 @@ angular.module('proton.composer')
                     return el.find('.subject').focus();
                 }
 
-                _rAF(() => editor.focus());
+
+                const { editor } = editorModel.find(message);
+
+                if (editor) {
+                    return _rAF(() => editor.focus());
+                }
+
+                // If the iframe is not loaded yet wait for it then remove the listener
+                const unsubscribe = $rootScope.$on('composer.update', (e, { type, data }) => {
+                    if (type !== 'editor.loaded') {
+                        return;
+                    }
+
+                    if (message.ID === data.message.ID) {
+                        data.editor.focus();
+                        unsubscribe();
+                    }
+                });
             }, 300);
         }
 
         function focusMessage(scope) {
 
-            return ({ composer, index, message, focusEditor, keepState = true }, editor) => {
+            return ({ composer, index, message, focusEditor, keepState = true }) => {
 
                 if (message.focussed) {
                     return;
                 }
 
                 const messagesLength = scope.messages.length;
-
                 _.each(scope.messages, (msg, iteratee) => {
                     msg.focussed = false;
                     if (iteratee > index) {
@@ -61,15 +77,15 @@ angular.module('proton.composer')
                 });
                 message.focussed = true;
 
-                message.editor = message.editor || editor;
                 scope.selected = message;
                 !keepState && (scope.selected.autocompletesFocussed = false);
 
                 if (focusEditor) {
+                    const { editor } = editorModel.find(message);
                     return editor.focus();
                 }
 
-                !keepState && customFocus(composer, scope, editor || message.editor);
+                !keepState && customFocus(composer, scope, message);
             };
         }
 

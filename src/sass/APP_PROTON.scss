@@ -74,6 +74,7 @@
 @import "layout/conversations-columns.scss";
 @import "layout/conversations-rows.scss";
 @import "layout/conversations-mobile.scss";
+@import "outside/composer.scss";
 
 @import "print.scss";
 
@@ -101,6 +102,9 @@
 @import "theme-jason.scss";
 @import "short.scss";
 @import "shadow.scss";
+
+// Sale events style
+@import "sale/index.scss";
 
 
 // Responsive Overrides

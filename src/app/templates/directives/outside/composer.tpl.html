@@ -1,0 +1,17 @@
+<div class="composer-outside-container">
+    <div class="composeEditor fill">
+        <composer-ask-embedded
+            class="askEmbedding composer-askEmbedding"
+            data-action="outside"></composer-ask-embedded>
+        <div
+            class="dropzone composer-dropzone fill"
+            data-composer-dropzone
+            data-action="outside"
+            ng-show="message.focussed"></div>
+        <squire
+            data-action="outside"
+            data-message="message"
+            allow-embedded="true"
+            class="composer-editor composer-outside-editor"></squire>
+    </div>
+</div>

@@ -98,27 +98,6 @@ angular.module('proton.core')
                 return Promise.resolve();
             }
 
-            function validateCardNumber() {
-                if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    return Payment.validateCardNumber(self.card.number);
-                }
-                return Promise.resolve();
-            }
-
-            function validateCardExpiry() {
-                if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    return Payment.validateCardExpiry(self.card.month, self.card.year);
-                }
-                return Promise.resolve();
-            }
-
-            function validateCardCVC() {
-                if (self.methods.length === 0 && self.valid.AmountDue > 0) {
-                    return Payment.validateCardCVC(self.card.cvc);
-                }
-                return Promise.resolve();
-            }
-
             function method() {
                 if (self.methods.length === 0 && self.valid.AmountDue > 0) {
                     const { number, month, year, cvc, fullname, zip } = self.card;
@@ -197,10 +176,7 @@ angular.module('proton.core')
                 // Change process status true to disable input fields
                 self.step = 'process';
 
-                validateCardNumber()
-                .then(validateCardExpiry)
-                .then(validateCardCVC)
-                .then(method)
+                method()
                 .then(subscribe)
                 .then(organizationKey)
                 .then(createOrganization)

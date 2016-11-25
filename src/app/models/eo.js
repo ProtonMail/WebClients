@@ -1,73 +1,75 @@
 angular.module('proton.models.eo', [])
+.factory('Eo', ($http, url, CONFIG) => {
 
-.factory('Eo', ($http, $q, url, CONFIG) => {
-    return {
-        token(tokenID) {
-            return $http.get(url.get() + '/eo/token/' + encodeURIComponent(tokenID), {
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8',
-                    Accept: 'application/vnd.protonmail.v1+json'
-                }
-            });
-        },
-        message(Authorization, token) {
-            return $http.get(url.get() + '/eo/message', {
-                headers: {
-                    Authorization,
-                    'x-eo-uid': token
-                }
-            });
-        },
-        attachment(Authorization, token, attachmentID) {
-            return $http.get(url.get() + '/eo/attachment/' + attachmentID, {
-                responseType: 'arraybuffer',
-                headers: {
-                    Authorization,
-                    'x-eo-uid': token
-                }
-            });
-        },
-        reply(decryptedToken, token, data) {
-            const deferred = $q.defer();
-            const fd = new FormData();
-            const xhr = new XMLHttpRequest();
+    /**
+     * Parse the JSON coming from the XHR request
+     * @param  {XMLHttpRequest} xhr
+     * @return {Object}
+     */
+    const parseJSON = (xhr) => {
+        const response = (json, isInvalid = false) => ({ json, isInvalid });
+        try {
+            return response(JSON.parse(xhr.responseText));
+        } catch (e) {
+            return response({
+                Error: `JSON parsing error: ${xhr.responseText}`
+            }, true);
+        }
+    };
 
-            Object.keys(data || {}).forEach((key) => {
-                if (angular.isArray(data[key])) {
-                    _.each(data[key], (v) => {
-                        fd.append(key, v);
-                    });
-                } else {
-                    fd.append(key + '', data[key]);
-                }
-            });
+    const token = (tokenID) => {
+        return $http.get(url.get() + '/eo/token/' + encodeURIComponent(tokenID), {
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+                Accept: 'application/vnd.protonmail.v1+json'
+            }
+        });
+    };
 
+    const message = (Authorization, token) => {
+        return $http.get(url.get() + '/eo/message', {
+            headers: {
+                Authorization,
+                'x-eo-uid': token
+            }
+        });
+    };
+
+    const attachment = (Authorization, token, attachmentID) => {
+        return $http.get(url.get() + '/eo/attachment/' + attachmentID, {
+            responseType: 'arraybuffer',
+            headers: {
+                Authorization,
+                'x-eo-uid': token
+            }
+        });
+    };
+
+    const reply = (decryptedToken, token, data) => {
+        const fd = new FormData();
+        const xhr = new XMLHttpRequest();
+
+        Object.keys(data || {}).forEach((key) => {
+            if (Array.isArray(data[key])) {
+                _.each(data[key], (v) => fd.append(key, v));
+            } else {
+                fd.append(key + '', data[key]);
+            }
+        });
+
+        return new Promise((resolve, reject) => {
             xhr.onload = function onload() {
-                let response;
-                let validJSON;
-                const statusCode = this.status;
+                const { json, isInvalid } = parseJSON(xhr);
 
-                try {
-                    response = JSON.parse(this.responseText);
-                    validJSON = true;
-                } catch (error) {
-                    response = {
-                        Error: 'JSON parsing error: ' + this.responseText
-                    };
-                    validJSON = false;
+                if (xhr.status !== 200) {
+                    return reject(new Error('Unable to send the message'));
                 }
 
-                if (statusCode !== 200) {
-                    deferred.reject('Unable to send the message');
-                } else if (response.Error !== undefined) {
-                    if (validJSON) {
-                        deferred.reject(response.Error);
-                    } else {
-                        deferred.reject('Unable to send the message.');
-                    }
-                } else {
-                    deferred.resolve('Message send');
+                if (json.Error) {
+                    const msgError = !isInvalid ? json.Error : 'Unable to send the message.';
+                    return reject(new Error(msgError));
                 }
+                resolve('Message send');
             };
 
             xhr.open('post', url.get() + '/eo/reply', true);
@@ -78,8 +80,8 @@ angular.module('proton.models.eo', [])
             xhr.setRequestHeader('Authorization', decryptedToken);
             xhr.setRequestHeader('x-eo-uid', token);
             xhr.send(fd);
-
-            return deferred.promise;
-        }
+        });
     };
+
+    return { token, message, attachment, reply };
 });

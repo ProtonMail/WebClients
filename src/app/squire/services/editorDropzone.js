@@ -1,5 +1,5 @@
 angular.module('proton.squire')
-    .factory('editorDropzone', ($rootScope, gettextCatalog, squireExecAction) => {
+    .factory('editorDropzone', ($rootScope, gettextCatalog, attachmentFileFormat, squireExecAction) => {
 
         const CLASS_DRAGGABLE = 'editorDropzone-enter';
         const CLASS_DRAGGABLE_MASK = 'editorDropzone-mask';
@@ -55,9 +55,9 @@ angular.module('proton.squire')
             /**
              * Display dropzone to the user
              */
-            const onDragEnter = () => {
+            const onDragEnter = (e) => {
                 removeClass(CLASS_DRAGGABLE_MASK);
-                addClass(CLASS_DRAGGABLE);
+                attachmentFileFormat.isUploadAbleType(e) && addClass(CLASS_DRAGGABLE);
             };
 
             node.on('click', onClick);

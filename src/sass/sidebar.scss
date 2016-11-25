@@ -306,7 +306,8 @@ body.mobileMode {
                 margin: 0;
                 padding: 0;
                 li {
-                    button {
+                    button,
+                    a {
                         color: #fff;
                         text-decoration: none;
                         line-height: 3rem;
@@ -322,9 +323,8 @@ body.mobileMode {
                         appearance: none;
                         width: 100%;
                         text-align: left;
-                        .fa {
+                        i {
                             width: 1.5rem;
-                            color: rgba(255,255,255,.35);
                             height: 3rem;
                             line-height: 3rem;
                             display: inline-block;
@@ -351,6 +351,8 @@ body.mobileMode {
                             padding-left: 1rem;
                         }
                     }
+
+                    button > i { color: rgba(255,255,255,.35) }
                 }
             }
         }

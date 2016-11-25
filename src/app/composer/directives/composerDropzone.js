@@ -88,27 +88,11 @@ angular.module('proton.composer')
         };
 
         /**
-         * Dispatch action for the model
-         * @param  {Message} message
-         * @param  {Array}  queue
-         */
-        const dispatchAction = (message, queue = []) => {
-            $rootScope.$emit('attachment.upload', {
-                type: 'drop',
-                data: {
-                    messageID: message.ID,
-                    message, queue
-                }
-            });
-        };
-
-
-        /**
          * Generate the configuration for a dropzone
          * @param  {Message} message
          * @return {Object}
          */
-        const getConfig = (message) => ({
+        const getConfig = (message, dispatchAction) => ({
             addRemoveLinks: false,
             dictDefaultMessage,
             url: '/file/post',
@@ -150,8 +134,25 @@ angular.module('proton.composer')
         });
 
         return {
-            link(scope, el) {
-                const dropzone = new Dropzone(el[0], getConfig(scope.message));
+            link(scope, el, { action = '' }) {
+
+                const key = ['attachment.upload', action].filter(Boolean).join('.');
+
+                /**
+                 * Dispatch action for the model
+                 * @param  {Message} message
+                 * @param  {Array}  queue
+                 */
+                const dispatchAction = (message, queue = []) => {
+                    $rootScope.$emit(key, {
+                        type: 'drop',
+                        data: {
+                            messageID: message.ID,
+                            message, queue
+                        }
+                    });
+                };
+                const dropzone = new Dropzone(el[0], getConfig(scope.message, dispatchAction));
 
                 // Adding a message from the toolbar
                 const unsubscribe = $rootScope

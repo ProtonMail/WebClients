@@ -14,6 +14,7 @@ angular.module('proton', [
     // Constant
     'proton.constants',
     'proton.core',
+    'proton.outside',
 
     // templates
     'templates-app',
@@ -171,7 +172,7 @@ angular.module('proton', [
 
 .run((CONFIG, gettextCatalog) => {
     const locale = window.navigator.userLanguage || window.navigator.language;
-
+    gettextCatalog.debugPrefix = '';
     gettextCatalog.setCurrentLanguage('en_US');
     gettextCatalog.debug = CONFIG.debug || false;
     moment.locale(locale);

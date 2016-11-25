@@ -46,7 +46,12 @@ angular.module('proton.composer')
 
                 el[0].textContent = getLabel(scope.model);
 
-                const onClick = () => $rootScope.$emit('sendMessage', undefined, scope.model);
+                const onClick = () => {
+                    $rootScope.$emit('composer.update', {
+                        type: 'send.message',
+                        data: { message: scope.model }
+                    });
+                };
 
                 const unsubscribe = $rootScope
                     .$on('actionMessage', (e, message) => {

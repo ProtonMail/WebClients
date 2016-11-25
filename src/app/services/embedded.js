@@ -272,8 +272,7 @@ angular.module('proton.embedded', [])
             .filter(({ cid }) => !Blobs[cid] && show)
             .map(({ cid, attachment }) => {
                 const storeAttachement = store(message, cid);
-                return AttachmentLoader
-                    .get(attachment, message)
+                return AttachmentLoader.get(attachment, message)
                     .then((buffer) => storeAttachement(buffer, attachment.MIMEType));
             })
             .value();

@@ -221,7 +221,7 @@
     <div ng-if="message.ExpirationTime > 0" class="expiration" ng-if="message.expand">
         <i class="fa fa-clock-o"></i>
         <span translate>This message will expire in</span>
-        <time time-refreshed="{{ message.ExpirationTime }}"></time>
+        <time time-refreshed="{{ ::message.ExpirationTime }}"></time>
     </div>
 
     <display-content-btn data-action="remote"></display-content-btn>
@@ -240,10 +240,10 @@
             class="bodyDecrypted email"
             ng-class="{'plain': message.isPlain}"
             render-message-body
-            ng-if="message.viewMode === 'html'"
+            ng-if="message.viewMode === 'html' && !message.failedDecryption"
             toggle-blockquote
             mail-to scroll="true" ></div>
-        <pre class="email" ng-if="message.viewMode === 'plain'" ng-bind="message.plainText()"></pre>
+        <pre class="email" ng-if="message.viewMode === 'plain' || message.failedDecryption" ng-bind="message.plainText()"></pre>
     </div>
 
     <list-attachments ng-if="message.expand && message.Attachments.length" data-model="message"></list-attachments>

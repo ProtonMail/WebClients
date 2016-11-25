@@ -85,6 +85,13 @@ header#pm_header-desktop {
 				text-decoration: none;
 				box-shadow: none;
 				height: 60px;
+
+				&.sale-link {
+					& > span {
+						font-size: 1.6rem;
+					}
+				}
+
 				& > span {
 					display: block;
 					height: 20px;
