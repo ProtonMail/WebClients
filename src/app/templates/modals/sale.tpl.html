@@ -5,7 +5,7 @@
                 <button type="button" ng-click="ctrl.cancel()" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
                 <div class="pm_grid no-margin flex flex-row" ng-show="ctrl.mode === 'pay'">
                     <div class="col-1-2 sideText">
-                        <h3>Black Friday <br />Cyber Monday <br />Special</h3>
+                        <h3>Cyber Days<br />Special</h3>
                         <p>Exclusively from <strong class="visionary">Nov. 25-28</strong>, we are offering <strong>ProtonMail Lifetime Accounts</strong></p>
                         <p>Get a lifetime subscription for a <a href="https://protonmail.com/support/knowledge-base/paid-plans/" target="_blank" class="visionary">ProtonMail Visionary</a> account (usually  {{ 288 | currency: ctrl.currency.value }}/year) for {{ ctrl.amount | currency: ctrl.currency.value }} </p>
                         <p>Visionary accounts get all features, maximum storage, and premium accounts for other privacy services we add later (calendar, file storage, etc), and <a href="https://protonmail.com/blog/black-friday" target="_blank" class='more'>more</a>. This is a great way to support ProtonMail - <strong>all proceeds from this sale will be used to fund our 2017 server upgrades</strong>.</p>
@@ -57,7 +57,6 @@
                             <li><a class="pm-flex-content" twitter-link data-text="I have just purchased a @ProtonMail Lifetime Account!" data-url="https://protonmail.com/blog/black-friday" data-via="ProtonMail"><i class="fa fa-twitter pm-flex-content-vertical-center"></i><span>Share on twitter</span></a></li>
                             <li><a class="pm-flex-content" target="_blank" href="https://www.facebook.com/protonmail/"><i class="fa fa-facebook pm-flex-content-vertical-center"></i><span>Share on facebook</span></a></li>
                         </ul>
-                        <a class="close-thanks" ng-click="ctrl.cancel()">close</a>
                     </div>
                 </div>
             </div>
