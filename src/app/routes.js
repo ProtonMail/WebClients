@@ -192,23 +192,19 @@ angular.module('proton.routes', [
         url: '/reset-theme',
         resolve: {
             reset(networkActivityTracker, Setting, notify, eventManager, gettextCatalog) {
-                networkActivityTracker.track(
-                    Setting.theme({ Theme: '' })
-                    .then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            notify({ message: gettextCatalog.getString('Theme reset! Redirecting...', null), classes: 'notification-success' });
-                            eventManager.call().then(() => {
-                                Promise.resolve();
-                            });
-                        } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                            Promise.reject();
-                        } else {
-                            notify({ message: gettextCatalog.getString('Unable to reset theme', null, 'Error'), classes: 'notification-danger' });
-                            Promise.reject();
-                        }
-                    })
-                );
+                const promise = Setting.theme({ Theme: '' })
+                .then((result = {}) => {
+                    const { data } = result;
+                    if (data.Code === 1000) {
+                        notify({ message: gettextCatalog.getString('Theme reset! Redirecting...', null), classes: 'notification-success' });
+                        return eventManager.call();
+                    } else if (data.Error) {
+                        return Promise.reject(data.Error);
+                    }
+                    const errorMessage = gettextCatalog.getString('Unable to reset theme', null, 'Error');
+                    return Promise.reject(errorMessage);
+                });
+                networkActivityTracker.track(promise);
             }
         },
         onEnter($state) {
