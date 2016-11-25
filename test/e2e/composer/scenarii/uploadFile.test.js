@@ -48,7 +48,7 @@ module.exports = ({ editor }) => {
         describe('Add an attachment', simpleFile({ editor }));
         describe('Add an embedded', addEmbedded({ editor }));
         describe('Remove attachments (simple)', removeAttachmentsSimple({ editor }));
-        describe('Multiples attachments', multipleAttachments({ editor }));
+        // describe('Multiples attachments', multipleAttachments({ editor }));
 
 
     });

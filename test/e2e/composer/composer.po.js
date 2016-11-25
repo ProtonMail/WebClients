@@ -13,11 +13,12 @@ module.exports = () => {
         buttonCCBCC: '.composerInputMeta-overlay-button'
     };
 
+    const MEDIA_DIRECTORY = path.resolve(__dirname, '../../');
     const FILES = [
-        path.relative('../../media/baby-1.jpg'),
-        path.relative('../../media/baby-2.jpg'),
-        path.relative('../../media/test.txt')
-    ];
+        'media/baby-1.jpg',
+        'media/baby-2.jpg',
+        'media/test.txt'
+    ].map((name) => path.join(MEDIA_DIRECTORY, name));
 
     const open = () => {
         return element(by.css('.compose.pm_button')).click();
@@ -46,8 +47,7 @@ module.exports = () => {
         });
 
     const upload = (quantity = 1) => {
-        // const file = '/home/dhoko/Téléchargements/debug/ZpXFzpO.jpg';
-        dropFile.dropMedia(FILES.slice(0, quantity), by.css('.composer'), 'image/jpeg');
+        dropFile.dropMedia(FILES.slice(0, quantity), by.css('.composer'));
     };
 
     const compose = () => {
