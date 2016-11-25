@@ -13,6 +13,12 @@ module.exports = () => {
         buttonCCBCC: '.composerInputMeta-overlay-button'
     };
 
+    const FILES = [
+        path.relative('../../media/baby-1.jpg'),
+        path.relative('../../media/baby-2.jpg'),
+        path.relative('../../media/test.txt')
+    ];
+
     const open = () => {
         return element(by.css('.compose.pm_button')).click();
     };
@@ -39,14 +45,9 @@ module.exports = () => {
             return document.body.querySelector('.composer') !== null;
         });
 
-    const upload = () => {
-        const file = '/home/dhoko/Téléchargements/debug/ZpXFzpO.jpg';
-        // const file = '/home/dhoko/Téléchargements/debug/anne-frank.epub';
-        // element(by.css('.composer input[type="file"]')).sendKeys(file);
-        // element(by.css('.composer .addFilePopover-container')).submit();
-        //
-        //
-        dropFile.dropMedia([file], by.css('.composer'), 'image/jpeg');
+    const upload = (quantity = 1) => {
+        // const file = '/home/dhoko/Téléchargements/debug/ZpXFzpO.jpg';
+        dropFile.dropMedia(FILES.slice(0, quantity), by.css('.composer'), 'image/jpeg');
     };
 
     const compose = () => {
