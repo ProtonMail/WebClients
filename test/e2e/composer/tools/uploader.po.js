@@ -120,7 +120,7 @@ module.exports = () => {
                     .find('${SELECTOR.list.container}')
                     .find('${SELECTOR.list.item}')
                     .find('${SELECTOR.list.remove}')
-                    .get(${i})
+                    .eq(${i})
                     .click();
             `);
         };
