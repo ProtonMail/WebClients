@@ -56,4 +56,14 @@ module.exports = ({ editor }) => () => {
             .then(assert(1));
     });
 
+    it('should bind 1 into the counter', () => {
+        listAttachments.getCounter()
+            .then(assert(1));
+    });
+
+    it('should not bind a counter for embedded', () => {
+        listAttachments.getCounter('embedded')
+            .then(assert(-1));
+    });
+
 };

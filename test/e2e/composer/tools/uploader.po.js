@@ -11,7 +11,11 @@ module.exports = () => {
             container: '.composerAttachments-container',
             item: '.composerAttachments-loader',
             remove: '.progressLoader-btn-remove',
-            toggle: '.composerAttachments-action'
+            toggle: '.composerAttachments-action',
+            counter: {
+                embedded: '.composerAttachments-counter-embedded',
+                attachments: '.composerAttachments-counter-attachments'
+            }
         }
     };
 
@@ -134,10 +138,34 @@ module.exports = () => {
             `);
         };
 
+        /**
+         * Return the counter value if the counter is visible
+         * else returns -1
+         * @param  {String} key attachments|embedded
+         * @return {Number}
+         */
+        const getCounter = (key = 'attachments') => {
+            const counter = SELECTOR.list.counter[key];
+            return browser.executeScript(`
+
+                const $counter = $(document.body.querySelector('.composer'))
+                    .find('${SELECTOR.list.container}')
+                    .find('${counter}');
+
+                if (!$counter.is(':visible')) {
+                    return -1;
+                }
+
+                return +$counter
+                    .text()
+                    .match(/[0-9]./)[0];
+            `);
+        };
+
         return {
             isVisible, isVisibleItems, isOpened,
             remove, toggle,
-            countItems
+            countItems, getCounter
         };
     };
 
