@@ -12,6 +12,7 @@ module.exports = () => {
             item: '.composerAttachments-loader',
             remove: '.progressLoader-btn-remove',
             toggle: '.composerAttachments-action',
+            title: '.composerAskEmbdded-title',
             counter: {
                 embedded: '.composerAttachments-counter-embedded',
                 attachments: '.composerAttachments-counter-attachments'
@@ -74,10 +75,27 @@ module.exports = () => {
             `);
         };
 
+        const countDroppedFiles = () => {
+            return browser.executeScript(`
+
+                const $counter = $(document.body.querySelector('.composer'))
+                    .find('${SELECTOR.list.title}');
+
+                if (!$counter.is(':visible')) {
+                    return -1;
+                }
+
+                return +$counter
+                    .text()
+                    .match(/[0-9]./)[0];
+            `);
+        };
+
+
         return {
             isVisible, isVisibleAsk,
             attachment, embedded, cancel,
-            matchIframe
+            matchIframe, countDroppedFiles
         };
 
     };
