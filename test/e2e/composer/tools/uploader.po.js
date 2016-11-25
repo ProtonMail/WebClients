@@ -1,6 +1,7 @@
 module.exports = () => {
 
     const SELECTOR = {
+        button: '.composer-btn-attachment',
         dropzone: '.composer-dropzone',
         container: '.composer-askEmbedding',
         btnAttachment: '.composerAskEmbdded-btn-attachment',
@@ -56,9 +57,23 @@ module.exports = () => {
             `);
         };
 
+        const matchIframe = () => {
+            return browser.executeScript(`
+                return $(document.body.querySelector('.composer'))
+                    .find('.angular-squire-wrapper')
+                    .find('iframe')[0]
+                    .contentDocument
+                    .body
+                    .querySelector(':not(.protonmail_signature_block-user)')
+                    .querySelectorAll('img.proton-embedded')
+                    .length;
+            `);
+        };
+
         return {
             isVisible, isVisibleAsk,
-            attachment, embedded, cancel
+            attachment, embedded, cancel,
+            matchIframe
         };
 
     };
@@ -77,7 +92,7 @@ module.exports = () => {
             return browser.executeScript(`
                 return !$(document.body.querySelector('.composer'))
                     .find('${SELECTOR.list.container}')
-                    .hasClass('.composerAttachments-close');
+                    .hasClass('composerAttachments-close');
             `);
         };
 
@@ -90,12 +105,22 @@ module.exports = () => {
             `);
         };
 
-        const remove = () => {
+        const countItems = () => {
+            return browser.executeScript(`
+                return $(document.body.querySelector('.composer'))
+                    .find('${SELECTOR.list.container}')
+                    .find('${SELECTOR.list.item}')
+                    .length;
+            `);
+        };
+
+        const remove = (i = 0) => {
             return browser.executeScript(`
                 return $(document.body.querySelector('.composer'))
                     .find('${SELECTOR.list.container}')
                     .find('${SELECTOR.list.item}')
                     .find('${SELECTOR.list.remove}')
+                    .get(${i})
                     .click();
             `);
         };
@@ -104,7 +129,6 @@ module.exports = () => {
             return browser.executeScript(`
                 return $(document.body.querySelector('.composer'))
                     .find('${SELECTOR.list.container}')
-                    .find('${SELECTOR.list.item}')
                     .find('${SELECTOR.list.toggle}')
                     .click();
             `);
@@ -112,10 +136,19 @@ module.exports = () => {
 
         return {
             isVisible, isVisibleItems, isOpened,
-            remove, toggle
+            remove, toggle,
+            countItems
         };
     };
 
-    return { dropzone, attachmentsList };
+    const isBtnActive = () => {
+        return browser.executeScript(`
+            return $(document.body.querySelector('.composer'))
+                .find('${SELECTOR.button}')
+                .hasClass('.primary');
+        `);
+    };
+
+    return { dropzone, attachmentsList, isBtnActive };
 
 };

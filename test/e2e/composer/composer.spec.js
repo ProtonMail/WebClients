@@ -27,42 +27,42 @@ const message = {
 
 const noop = function() {};
 
-describe('composer tests', () => {
-    const editor = composer();
 
-    // mainSuite(noop, { editor, message, identifier: 'simple' });
-    // simpleCCBCC({ editor, message, identifier: 'simpleCCBCC' });
-    // mainSuite(noSubject, { editor, message, identifier: 'noSubject' }, {
-    //     send: false,
-    //     subject: false
-    // });
-    // autocomplete({ editor, message, identifier: 'simpleCCBCC' });
-    // mainSuite(addFileLink, { editor, message, identifier: 'addFileLink' });
-    // mainSuite(addLink, { editor, message, identifier: 'addLink' });
-    // mainSuite(encryption, { editor, message, identifier: 'encryption' });
-    // mainSuite(expiration, { editor, message, identifier: 'expiration' });
+const editor = composer();
 
-    // mainSuite(saveDraft, { editor, message, identifier: 'saveDraft' }, {
-    //     send: false
-    // });
+// mainSuite(noop, { editor, message, identifier: 'simple' });
+// simpleCCBCC({ editor, message, identifier: 'simpleCCBCC' });
+// mainSuite(noSubject, { editor, message, identifier: 'noSubject' }, {
+//     send: false,
+//     subject: false
+// });
+// autocomplete({ editor, message, identifier: 'simpleCCBCC' });
+// mainSuite(addFileLink, { editor, message, identifier: 'addFileLink' });
+// mainSuite(addLink, { editor, message, identifier: 'addLink' });
+// mainSuite(encryption, { editor, message, identifier: 'encryption' });
+// mainSuite(expiration, { editor, message, identifier: 'expiration' });
 
-    // function complexSuite(data) {
-    //     addFileLink(data);
-    //     addLink(data);
-    //     encryption(data);
-    //     expiration(data);
-    // }
-    // mainSuite(complexSuite, {
-    //     editor, message,
-    //     identifier: 'expiration.encryption.link.file'
-    // });
+// mainSuite(saveDraft, { editor, message, identifier: 'saveDraft' }, {
+//     send: false
+// });
 
-    // mainSuite(discardDraft, { editor, message, identifier: 'discardDraft' }, {
-    //     send: false
-    // });
+// function complexSuite(data) {
+//     addFileLink(data);
+//     addLink(data);
+//     encryption(data);
+//     expiration(data);
+// }
+// mainSuite(complexSuite, {
+//     editor, message,
+//     identifier: 'expiration.encryption.link.file'
+// });
 
-    mainSuite(uploadFile, { editor, message, identifier: 'uploadFile' }, {
-        send: false
-    });
+// mainSuite(discardDraft, { editor, message, identifier: 'discardDraft' }, {
+//     send: false
+// });
 
+mainSuite(uploadFile, { editor, message, identifier: 'uploadFile' }, {
+    send: false
 });
+
+
