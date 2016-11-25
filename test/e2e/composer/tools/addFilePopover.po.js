@@ -4,7 +4,8 @@ module.exports = () => {
         toolbarBtn: '.squireToolbar-action-image',
         popoverInput: 'input[type="url"]',
         formAddPopover: '.addFilePopover-container',
-        btnAddPopover: '.addFilePopover-btn-url'
+        btnAddPopover: '.addFilePopover-btn-url',
+        btnAddEmbedded: '.addFilePopover-btn-embedded '
     };
 
     const isVisible = () => {
@@ -29,6 +30,13 @@ module.exports = () => {
         return browser.executeScript(`$('${SELECTOR.formAddPopover}').find('${SELECTOR.btnAddPopover}').click();`)
     };
 
+    const upload = () => {
+        const file = '/home/dhoko/Téléchargements/debug/ZpXFzpO.jpg';
+
+        element(by.css('.composer .addFilePopover-input-file')).sendKeys(file);
+        return browser.executeScript(`$('${SELECTOR.formAddPopover}').find('${SELECTOR.btnAddEmbedded}').click();`)
+    };
+
     const matchIframe = (value) => {
         return browser.executeScript(`
             const img = $(document.body.querySelector('.composer'))
@@ -46,6 +54,7 @@ module.exports = () => {
         openForm,
         bindLink,
         submit,
+        upload,
         isVisible,
         matchIframe
     };
