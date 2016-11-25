@@ -58,7 +58,7 @@
         <div class="col-1-2">
             <label for="country" translate translate-context="Label">Country</label>
             <span class="pm_select">
-                <select id="country" ng-model="card.country" ng-options="country.label for country in countries | orderBy: 'priority'"></select>
+                <select id="country" ng-model="card.country" ng-options="country.label disable when country.disabled for country in countries"></select>
                 <i class="fa fa-angle-down"></i>
             </span>
         </div>
