@@ -10,6 +10,7 @@
         <strong>{{ user.Addresses[0].Email }}</strong>
     </span>
     <ul class="menu">
+        <sale-link></sale-link>
         <li ng-class="{ active: ('secured.inbox.**' | includedByState) }">
             <button title="Inbox" ng-click="goTo('secured.inbox')">
                 <i class="fa fa-inbox"></i>

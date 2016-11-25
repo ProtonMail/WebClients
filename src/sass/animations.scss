@@ -187,14 +187,17 @@ Inpiration from 'esjay'
 .pulsor {
     -webkit-animation: pusate 2s infinite alternate;
     -moz-animation: pusate 2s infinite alternate;
-    -animation: pusate 2s infinite alternate;
+    -animation: pusate 2s infinite alternate
 }
 @-webkit-keyframes pusate {
-    to { color:#FFF; }
+    from { color:#FFF; }
+    to { color: #5fdefb; }
 }
 @-moz-keyframes pusate {
-    to { color:#FFF; }
+    from { color:#FFF; }
+    to { color: #5fdefb; }
 }
 @keyframes pusate {
-    to { color:#FFF; }
+    from { color:#FFF; }
+    to { color: #5fdefb; }
 }
