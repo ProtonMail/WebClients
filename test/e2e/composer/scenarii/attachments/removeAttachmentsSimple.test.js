@@ -29,7 +29,7 @@ module.exports = ({ editor }) => () => {
 
     it('should remove one item', () => {
         listAttachments.remove()
-            .then(() => browser.sleep(300))
+            .then(() => browser.sleep(1000))
             .then(() => listAttachments.countItems())
             .then(assert(0))
             .then(() => browser.sleep(1000));
