@@ -200,7 +200,7 @@
                                     <i class="fa fa-check"></i>
                                     <span ng-bind="plan.labels"></span>
                                 </li>
-                                <li ng-class="{disabled: plan.MaxDomains === 0}" class="tall">
+                                <li ng-class="{disabled: plan.Name === 'free'}" class="tall">
                                     <i class="fa fa-times" ng-show="plan.MaxDomains === 0"></i>
                                     <i class="fa fa-check" ng-show="plan.MaxDomains > 0"></i>
                                     <span>Custom Email Filters</span>
