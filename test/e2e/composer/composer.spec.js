@@ -3,6 +3,7 @@ const mainSuite = require('./scenarii/FLOW.test');
 const simpleCCBCC = require('./scenarii/simpleCCBCC.test');
 const noSubject = require('./scenarii/noSubject.test');
 const saveDraft = require('./scenarii/saveDraft.test');
+const discardDraft = require('./scenarii/discardDraft.test');
 const addFileLink = require('./scenarii/addFileLink.test');
 const addLink = require('./scenarii/addLink.test');
 const autocomplete = require('./scenarii/autocomplete.test');
@@ -54,4 +55,9 @@ describe('composer tests', () => {
         editor, message,
         identifier: 'expiration.encryption.link.file'
     });
+
+    mainSuite(discardDraft, { editor, message, identifier: 'discardDraft' }, {
+        send: false
+    });
+
 });

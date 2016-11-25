@@ -6,6 +6,7 @@ module.exports = () => {
         BCCList: '.composer-field-CCList',
         draft: '.composer-btn-save',
         close: '.composer-action-close',
+        discard: '.composer-btn-discard',
         buttonCCBCC: '.composerInputMeta-overlay-button'
     };
 
@@ -21,6 +22,12 @@ module.exports = () => {
     const saveDraft = () => {
         return browser.executeScript(`
             $('${SELECTOR_MAP.draft}').click();
+        `);
+    };
+
+    const discardDraft = () => {
+        return browser.executeScript(`
+            $('${SELECTOR_MAP.discard}').click();
         `);
     };
 
@@ -84,7 +91,7 @@ module.exports = () => {
 
         return {
             content, fillInput, send, isOpened, isVisible, openCCBCC,
-            close, saveDraft,
+            close, saveDraft, discardDraft,
             addLinkPopover: require('./tools/addLinkPopover.po'),
             addFilePopover: require('./tools/addFilePopover.po'),
             autocomplete: require('./tools/autocomplete.po'),
