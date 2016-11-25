@@ -9,6 +9,7 @@ const addLink = require('./scenarii/addLink.test');
 const autocomplete = require('./scenarii/autocomplete.test');
 const encryption = require('./scenarii/encryption.test');
 const expiration = require('./scenarii/expiration.test');
+const uploadFile = require('./scenarii/uploadFile.test');
 
 const message = {
     Subject: 'E2E: Ha que coucou',
@@ -29,34 +30,38 @@ const noop = function() {};
 describe('composer tests', () => {
     const editor = composer();
 
-    mainSuite(noop, { editor, message, identifier: 'simple' });
-    simpleCCBCC({ editor, message, identifier: 'simpleCCBCC' });
-    mainSuite(noSubject, { editor, message, identifier: 'noSubject' }, {
-        send: false,
-        subject: false
-    });
-    autocomplete({ editor, message, identifier: 'simpleCCBCC' });
-    mainSuite(addFileLink, { editor, message, identifier: 'addFileLink' });
-    mainSuite(addLink, { editor, message, identifier: 'addLink' });
-    mainSuite(encryption, { editor, message, identifier: 'encryption' });
-    mainSuite(expiration, { editor, message, identifier: 'expiration' });
+    // mainSuite(noop, { editor, message, identifier: 'simple' });
+    // simpleCCBCC({ editor, message, identifier: 'simpleCCBCC' });
+    // mainSuite(noSubject, { editor, message, identifier: 'noSubject' }, {
+    //     send: false,
+    //     subject: false
+    // });
+    // autocomplete({ editor, message, identifier: 'simpleCCBCC' });
+    // mainSuite(addFileLink, { editor, message, identifier: 'addFileLink' });
+    // mainSuite(addLink, { editor, message, identifier: 'addLink' });
+    // mainSuite(encryption, { editor, message, identifier: 'encryption' });
+    // mainSuite(expiration, { editor, message, identifier: 'expiration' });
 
-    mainSuite(saveDraft, { editor, message, identifier: 'saveDraft' }, {
-        send: false
-    });
+    // mainSuite(saveDraft, { editor, message, identifier: 'saveDraft' }, {
+    //     send: false
+    // });
 
-    function complexSuite(data) {
-        addFileLink(data);
-        addLink(data);
-        encryption(data);
-        expiration(data);
-    }
-    mainSuite(complexSuite, {
-        editor, message,
-        identifier: 'expiration.encryption.link.file'
-    });
+    // function complexSuite(data) {
+    //     addFileLink(data);
+    //     addLink(data);
+    //     encryption(data);
+    //     expiration(data);
+    // }
+    // mainSuite(complexSuite, {
+    //     editor, message,
+    //     identifier: 'expiration.encryption.link.file'
+    // });
 
-    mainSuite(discardDraft, { editor, message, identifier: 'discardDraft' }, {
+    // mainSuite(discardDraft, { editor, message, identifier: 'discardDraft' }, {
+    //     send: false
+    // });
+
+    mainSuite(uploadFile, { editor, message, identifier: 'uploadFile' }, {
         send: false
     });
 

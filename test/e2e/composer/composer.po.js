@@ -1,3 +1,6 @@
+const path = require('path');
+const dropFile = require('../../e2e.utils/dropFile');
+
 module.exports = () => {
 
     const SELECTOR_MAP = {
@@ -35,6 +38,16 @@ module.exports = () => {
         .executeScript(() => {
             return document.body.querySelector('.composer') !== null;
         });
+
+    const upload = () => {
+        const file = '/home/dhoko/Téléchargements/debug/ZpXFzpO.jpg';
+        // const file = '/home/dhoko/Téléchargements/debug/anne-frank.epub';
+        // element(by.css('.composer input[type="file"]')).sendKeys(file);
+        // element(by.css('.composer .addFilePopover-container')).submit();
+        //
+        //
+        dropFile.dropMedia([file], by.css('.composer'), 'image/jpeg');
+    };
 
     const compose = () => {
 
@@ -91,12 +104,14 @@ module.exports = () => {
 
         return {
             content, fillInput, send, isOpened, isVisible, openCCBCC,
-            close, saveDraft, discardDraft,
+            close, saveDraft, discardDraft, upload,
             addLinkPopover: require('./tools/addLinkPopover.po'),
             addFilePopover: require('./tools/addFilePopover.po'),
             autocomplete: require('./tools/autocomplete.po'),
             encryption: require('./tools/encryption.po'),
-            expiration: require('./tools/expiration.po')
+            expiration: require('./tools/expiration.po'),
+            uploader: require('./tools/uploader.po'),
+
         };
     };
 
