@@ -11,7 +11,6 @@ angular.module('proton.tooltip', [])
                 element.tooltip({
                     trigger: 'hover', // The default value for trigger is 'hover focus'
                     container: 'body',
-                    html: attrs.ptHtml || false,
                     placement: attrs.ptPlacement || 'top',
                     html: attrs.ptHtml || false
                 });
