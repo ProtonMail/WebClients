@@ -20,8 +20,7 @@ angular.module('proton.ui')
             networkActivityTracker.track(promise);
         }
         function repeat(element) {
-            // element[0].style.display = (moment().isBetween('2016-11-24', '2016-11-29')) ? 'block' : 'none';
-            element[0].style.display = 'none';
+            element[0].style.display = (moment().isBetween('2016-11-25', '2016-11-29')) ? 'block' : 'none';
         }
         return {
             restrict: 'E',
