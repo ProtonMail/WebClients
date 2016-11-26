@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('saleModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication) => {
+.factory('saleModal', (pmModal, Payment, gettextCatalog, networkActivityTracker, authentication, eventManager) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/sale.tpl.html',
@@ -7,7 +7,8 @@ angular.module('proton.core')
             const { close, methods } = params;
             const self = this;
             self.amount = 1337;
-            self.mode = 'pay';
+            const alreadyPay = authentication.user.Credit >= (self.amount * 100);
+            self.mode = (alreadyPay) ? 'thanks' : 'pay';
             self.card = {};
             self.paypalObject = {};
             self.currencies = [{ label: 'USD', value: 'USD' }, { label: 'EUR', value: 'EUR' }, { label: 'CHF', value: 'CHF' }];
@@ -29,6 +30,7 @@ angular.module('proton.core')
                     }
                     return Promise.resolve(result);
                 })
+                .then(() => eventManager.call())
                 .then(() => {
                     self.mode = 'thanks';
                 });
