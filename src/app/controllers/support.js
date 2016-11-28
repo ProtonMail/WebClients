@@ -17,21 +17,6 @@ angular.module('proton.controllers.Support', [
     Key,
     networkActivityTracker
 ) => {
-    $scope.keyPhase = CONSTANTS.KEY_PHASE;
-
-    $scope.states = {
-        RECOVERY: 1,
-        CODE: 2,
-        DANGER: 3,
-        PASSWORD: 4,
-        GENERATE: 5,
-        INSTALL: 6
-    };
-
-    $scope.tools = tools;
-    $scope.params = {};
-    $scope.params.recoveryEmail = '';
-    $scope.params.username = '';
 
     function resetState() {
         $scope.params.resetToken = '';
@@ -41,6 +26,23 @@ angular.module('proton.controllers.Support', [
 
         $scope.resetState = $scope.states.RECOVERY;
     }
+
+    $scope.keyPhase = CONSTANTS.KEY_PHASE;
+
+    $scope.states = {
+        RECOVERY: 1,
+        CODE: 2,
+        CHECKING: 3,
+        DANGER: 4,
+        PASSWORD: 5,
+        GENERATE: 6,
+        INSTALL: 7
+    };
+
+    $scope.tools = tools;
+    $scope.params = {};
+    $scope.params.recoveryEmail = '';
+    $scope.params.username = '';
 
     let passwordMode = 0;
 
@@ -89,6 +91,8 @@ angular.module('proton.controllers.Support', [
      * @param form {Form}
      */
     $scope.validateToken = function () {
+
+        $scope.resetState = $scope.states.CHECKING;
 
         $scope.tokenParams = {
             Username: $scope.params.username,
@@ -203,4 +207,16 @@ angular.module('proton.controllers.Support', [
             });
         }));
     };
+
+    // Can't user $stateParams because support is a single controller
+    // This should be refactored into the support message controller and the reset controller
+    // after mailbox password reset is fully deprecated
+    if ($state.is('support.reset-password') && $state.params.username && $state.params.token) {
+        $scope.resetState = $scope.states.CHECKING;
+
+        $scope.params.username = $state.params.username;
+        $scope.params.resetToken = $state.params.token;
+
+        $scope.validateToken();
+    }
 });

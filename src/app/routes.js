@@ -368,7 +368,11 @@ angular.module('proton.routes', [
 
     // Reset Login Password
     .state('support.reset-password', {
-        url: '/reset-login-password',
+        url: '/reset-login-password?username&token',
+        params: {
+            username: null,
+            token: null
+        },
         views: {
             'panel@support': {
                 templateUrl: 'templates/views/reset-login-password.tpl.html'
