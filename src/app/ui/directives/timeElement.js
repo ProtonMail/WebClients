@@ -8,10 +8,10 @@ angular.module('proton.ui')
         link(scope, element) {
             const { ID, Time } = scope.model;
             const minute = 60 * 1000;
-            const promise = $interval(() => setTime(), minute);
+            const promise = $interval(() => displayTime(), minute, false);
             scope.$on('$destroy', () => $interval.cancel(promise));
-            setTime();
-            function setTime() {
+            displayTime();
+            function displayTime() {
                 element[0].innerHTML = getTime();
             }
             function getTime() {
@@ -19,10 +19,8 @@ angular.module('proton.ui')
                 const loc = tools.currentLocation();
                 const time = (type === 'conversation') ? cache.getTime(ID, loc) : Time;
                 const m = moment.unix(time);
-                if (m.isSame(moment(), 'day')) {
-                    return m.format('LT');
-                }
-                return m.format('ll');
+                const format = (m.isSame(moment(), 'day')) ? 'LT' : 'll';
+                return m.format(format);
             }
         }
     };
