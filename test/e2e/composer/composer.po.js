@@ -68,6 +68,19 @@ module.exports = () => {
     };
     const compose = () => {
 
+        const removeEmbedded = (i = 0) => {
+            return browser.executeScript(`
+
+                const $img = $(document.body.querySelector('.composer'))
+                    .find('.angular-squire-wrapper')
+                    .find('iframe')[0]
+                    .contentDocument
+                    .body
+                    .querySelectorAll('img.proton-embedded')[${i}];
+
+                return $($img).remove();
+            `);
+        };
 
         const content = (txt) => {
 
@@ -121,7 +134,7 @@ module.exports = () => {
         };
 
         return {
-            config,
+            config, removeEmbedded,
             content, fillInput, send, isOpened, isVisible, openCCBCC,
             close, saveDraft, discardDraft, upload,
             addLinkPopover: require('./tools/addLinkPopover.po'),

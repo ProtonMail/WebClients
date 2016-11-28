@@ -3,6 +3,7 @@ const simpleFile = require('./attachments/simpleFile.test');
 const addEmbedded = require('./attachments/addEmbedded.test');
 const removeAttachmentsSimple = require('./attachments/removeAttachmentsSimple.test');
 const multipleAttachments = require('./attachments/multipleAttachments.test');
+const removeFromEmbedded = require('./attachments/removeFromEmbedded.test');
 
 module.exports = ({ editor }) => {
     describe('Attachments', () => {
@@ -49,7 +50,7 @@ module.exports = ({ editor }) => {
         describe('Add an embedded', addEmbedded({ editor }));
         describe('Remove attachments (simple)', removeAttachmentsSimple({ editor }));
         describe('Multiples attachments', multipleAttachments({ editor }));
-        // describe('Remove an embedded image', removeFromEmbedded({ editor }));
+        describe('Remove an embedded image', removeFromEmbedded({ editor }));
 
     });
 

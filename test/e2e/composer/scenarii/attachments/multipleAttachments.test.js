@@ -39,7 +39,7 @@ module.exports = ({ editor }) => () => {
             .then(assert(2));
     });
 
-    it('should contains 2 images inside to the editor', () => {
+    it('should contains 2 images inside the editor', () => {
         browser.sleep(1000)
             .then(() => dropzone.matchIframe())
             .then(assert(2));
