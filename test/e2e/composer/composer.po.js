@@ -1,5 +1,5 @@
 const path = require('path');
-const dropFile = require('../../e2e.utils/dropFile');
+const dropFile = require('../../e2e.utils/dropFile')();
 
 module.exports = () => {
 
@@ -15,10 +15,10 @@ module.exports = () => {
 
     const MEDIA_DIRECTORY = path.resolve(__dirname, '../../');
     const FILES = [
-        'media/baby-1.jpg',
-        'media/baby-2.jpg',
-        'media/test.txt'
-    ].map((name) => path.join(MEDIA_DIRECTORY, name));
+        { file: 'media/baby-1.jpg', type: 'image/jpeg' },
+        { file: 'media/baby-2.jpg', type: 'image/jpeg' },
+        { file: 'media/test.txt', type: 'text/plain' }
+    ].map(({ file, type }) => ({ file: path.join(MEDIA_DIRECTORY, file), type }));
 
     const open = () => {
         return element(by.css('.compose.pm_button')).click();
