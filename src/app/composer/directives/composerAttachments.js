@@ -77,7 +77,7 @@ angular.module('proton.composer')
          */
         const onAction = (scope, actionsPanel) => (e, { type, data }) => {
 
-            const { status, packet, id, progress, messageID, REQUEST_ID } = data;
+            const { status, packet, id, messageID, REQUEST_ID, isStart } = data;
 
             if (!isMessage(scope.message, data)) {
                 return;
@@ -109,7 +109,7 @@ angular.module('proton.composer')
                     break;
 
                 case 'uploading':
-                    if (status && !progress) {
+                    if (status && isStart) {
                         scope
                             .$applyAsync(() => {
                                 scope.list.push({ id, packet, messageID, message: scope.message });

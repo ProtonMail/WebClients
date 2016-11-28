@@ -2,7 +2,7 @@
 
     <ng-include src="'templates/partials/no-results.tpl.html'"></ng-include>
 
-    <div ng-repeat="conversation in conversations track by conversation.ID" class="conversation" ng-class="{
+    <div ng-repeat="conversation in conversations track by conversation.ID" elements-container class="conversation" ng-class="{
         selected: conversation.Selected,
         active: active(conversation),
         marked: conversation.ID === markedElement.ID,
@@ -40,6 +40,6 @@
         </div>
         <span class="size">{{ size(conversation)| bytes }}</span>
         <i class="fa fa-paperclip conversation-icon-attachment"></i>
-        <em class="time">{{ time(conversation) | readableTime }}</em>
+        <time-element></time-element>
     </div>
 </div>

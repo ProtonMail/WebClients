@@ -69,7 +69,6 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         $scope.errorPay = false;
         $scope.approvalURL = false;
         $scope.paypalNetworkError = false;
-        $scope.card.country = _.findWhere(tools.countries, { priority: 1 });
         $scope.method = 'card';
         $scope.months = [];
         $scope.years = [];

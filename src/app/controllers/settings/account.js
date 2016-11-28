@@ -120,7 +120,6 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveDailyNotifications = () => {
-
         networkActivityTracker.track(
           Setting.notify({ Notify: $scope.dailyNotifications })
           .then((result) => {
@@ -224,7 +223,7 @@ angular.module('proton.controllers.Settings')
         $scope.PMSignature = Boolean(authentication.user.PMSignature);
         $scope.notificationEmail = authentication.user.NotificationEmail;
         $scope.passwordReset = Boolean(authentication.user.PasswordReset);
-        $scope.dailyNotifications = Boolean(authentication.user.Notify);
+        $scope.dailyNotifications = authentication.user.Notify;
         $scope.desktopNotificationsStatus = desktopNotifications.status();
         $scope.autosaveContacts = Boolean(authentication.user.AutoSaveContacts);
         $scope.images = authentication.user.ShowImages;
