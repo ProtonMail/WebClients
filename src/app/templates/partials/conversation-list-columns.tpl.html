@@ -5,6 +5,7 @@
     <div
         ng-repeat="conversation in conversations track by conversation.ID"
         class="conversation"
+        elements-container
         ng-class="{
             selected: conversation.Selected,
             active: active(conversation),
@@ -30,7 +31,7 @@
                 <pt-star
                     data-model="conversation"
                     class="singleStar"></pt-star>
-                <em class="time">{{ time(conversation) | readableTime }}</em>
+                <time-element></time-element>
             </span>
         </div>
         <div class="row bottom">

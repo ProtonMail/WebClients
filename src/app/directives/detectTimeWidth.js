@@ -17,7 +17,7 @@ angular.module('proton.detectTimeWidth', [])
           const width = Math.ceil($div.offsetWidth);
 
           if (width > 0) {
-              const style = '<style>.conversation .row .meta em.time { width: ' + (width + 5) + 'px !important; } .conversation .row .meta { width: ' + (width + 55) + 'px !important;} .conversation .row h4 { width: calc(100% - ' + (width + 80) + 'px) !important; }</style>';
+              const style = '<style>.conversation .row .meta time.time { width: ' + (width + 5) + 'px !important; } .conversation .row .meta { width: ' + (width + 55) + 'px !important;} .conversation .row h4 { width: calc(100% - ' + (width + 80) + 'px) !important; }</style>';
 
               document.body.insertAdjacentHTML('beforeEnd', style);
           }
