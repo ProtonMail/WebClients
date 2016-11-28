@@ -7,7 +7,7 @@ module.exports = ({ editor }) => () => {
     it('should contains two items', () => {
         borodin = editor.compose();
         const uploader = borodin.uploader();
-        dropzone = uploader.dropzone();
+        dropzone = uploader.dropzone(editor);
         listAttachments = uploader.attachmentsList();
 
         listAttachments.countItems()

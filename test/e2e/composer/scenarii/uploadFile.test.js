@@ -12,7 +12,7 @@ module.exports = ({ editor }) => {
         it('should not set the attachment button as active', () => {
             borodin = editor.compose();
             const uploader = borodin.uploader();
-            dropzone = uploader.dropzone();
+            dropzone = uploader.dropzone(editor);
             listAttachments = uploader.attachmentsList();
 
             uploader.isBtnActive()
@@ -49,6 +49,7 @@ module.exports = ({ editor }) => {
         describe('Add an embedded', addEmbedded({ editor }));
         describe('Remove attachments (simple)', removeAttachmentsSimple({ editor }));
         describe('Multiples attachments', multipleAttachments({ editor }));
+        // describe('Remove an embedded image', removeFromEmbedded({ editor }));
 
     });
 

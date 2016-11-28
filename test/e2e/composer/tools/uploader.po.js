@@ -20,7 +20,7 @@ module.exports = () => {
         }
     };
 
-    const dropzone = () => {
+    const dropzone = ({ config }) => {
 
         const isVisible = () => {
             return browser.executeScript(`
@@ -63,15 +63,19 @@ module.exports = () => {
         };
 
         const matchIframe = () => {
+            const { hasSignature = false } = config;
             return browser.executeScript(`
-                return $(document.body.querySelector('.composer'))
+
+                const delta = +${+hasSignature};
+                const n = $(document.body.querySelector('.composer'))
                     .find('.angular-squire-wrapper')
                     .find('iframe')[0]
                     .contentDocument
                     .body
-                    .querySelector(':not(.protonmail_signature_block-user)')
                     .querySelectorAll('img.proton-embedded')
                     .length;
+
+                return n - delta;
             `);
         };
 

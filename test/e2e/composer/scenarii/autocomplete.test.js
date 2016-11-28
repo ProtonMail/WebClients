@@ -99,7 +99,7 @@ module.exports = ({ editor, message, identifier }) => {
                     autocomplete.removeLabel()
                         .then(() => autocomplete.countLabels())
                         .then(assert(0));
-                })
+                });
             });
 
             it('should display the autocomplete', () => {
@@ -108,14 +108,14 @@ module.exports = ({ editor, message, identifier }) => {
                         expect(test).toEqual(true);
                         browser.sleep(500);
                     });
-            })
+            });
 
-        })
+        });
 
         it('should add the recepient', () => {
             borodin.fillInput('ToList', message.ToList)
                 .then(assert(''));
-        })
+        });
 
         it('should add a subject', () => {
             const subject = `${message.Subject} - test:${identifier}`;

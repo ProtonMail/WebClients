@@ -50,7 +50,24 @@ module.exports = () => {
         dropFile.dropMedia(FILES.slice(0, quantity), by.css('.composer'));
     };
 
+    const config = {
+        hasSignature: false
+    };
+
+    const checkSignature = () => {
+        return browser.executeScript(`
+            return !!$(document.body.querySelector('.composer'))
+                .find('.angular-squire-wrapper')
+                .find('iframe')[0]
+                .contentDocument
+                .body
+                .querySelectorAll('img.proton-embedded')
+                .length;
+        `)
+        .then((test) => (config.hasSignature = test));
+    };
     const compose = () => {
+
 
         const content = (txt) => {
 
@@ -104,6 +121,7 @@ module.exports = () => {
         };
 
         return {
+            config,
             content, fillInput, send, isOpened, isVisible, openCCBCC,
             close, saveDraft, discardDraft, upload,
             addLinkPopover: require('./tools/addLinkPopover.po'),
@@ -116,5 +134,5 @@ module.exports = () => {
         };
     };
 
-    return { open, isOpened, compose };
+    return { open, isOpened, compose, checkSignature, config };
 };
