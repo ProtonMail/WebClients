@@ -87,6 +87,7 @@ angular.module('proton.cache', [])
             messagesCached.push(message);
         }
         manageTimes(message.ConversationID);
+
         $rootScope.$emit('labelsElement.' + message.ID, message);
         $rootScope.$emit('foldersMessage.' + message.ID, message);
         $rootScope.$emit('foldersElement.' + message.ID, message);
@@ -160,16 +161,19 @@ angular.module('proton.cache', [])
      * @param {String} conversationID
      */
     function manageTimes(conversationID) {
-        if (conversationID) {
+        if (angular.isDefined(conversationID)) {
             const conversation = api.getConversationCached(conversationID);
             const messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
 
-            if (conversation && angular.isArray(conversation.LabelIDs) && messages.length > 0) {
+            if (angular.isDefined(conversation) && angular.isArray(conversation.LabelIDs) && messages.length > 0) {
                 conversation.LabelIDs.forEach((labelID) => {
                     // Get the most recent message for a specific label
-                    const message = _.chain(messages).filter(({ LabelIDs = [] }) => LabelIDs.indexOf(labelID) > -1).first().value();
+                    const message = _.chain(messages)
+                        .filter(({ LabelIDs }) => angular.isArray(LabelIDs) && LabelIDs.indexOf(labelID) !== -1)
+                        .first()
+                        .value();
 
-                    if (message && message.Time) {
+                    if (angular.isDefined(message) && angular.isDefined(message.Time)) {
                         storeTime(conversationID, labelID, message.Time);
                     }
                 });
@@ -599,14 +603,17 @@ angular.module('proton.cache', [])
 
         // In cache context?
         if (context && !firstLoad) {
-            let total;
-            let number;
             const page = request.Page || 0;
             const start = page * CONSTANTS.ELEMENTS_PER_PAGE;
             const end = start + CONSTANTS.ELEMENTS_PER_PAGE;
+            let total;
+            let number;
             const mailbox = tools.currentMailbox();
-            const conversations = _.filter(conversationsCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(loc) > -1);
-            const conversationsOrdered = api.orderConversation(conversations, loc);
+            let conversations = _.filter(conversationsCached, (conversation) => {
+                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1 && angular.isDefined(api.getTime(conversation.ID, loc));
+            });
+
+            conversations = api.orderConversation(conversations, loc);
 
             switch (mailbox) {
                 case 'label':
@@ -628,11 +635,11 @@ angular.module('proton.cache', [])
                     number = CONSTANTS.ELEMENTS_PER_PAGE;
                 }
 
-                const conversationsSliced = conversationsOrdered.slice(start, end);
+                conversations = conversations.slice(start, end);
 
                 // Supposed total equal to the total cache?
-                if (conversationsSliced.length === number) {
-                    deferred.resolve(conversationsSliced);
+                if (conversations.length === number) {
+                    deferred.resolve(conversations);
                 } else {
                     callApi();
                 }
