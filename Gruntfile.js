@@ -14,7 +14,6 @@ var API_TARGETS = {
     local: 'https://protonmail.dev/api',
     build: '/api'
 };
-var hash = Date.now();
 
 module.exports = function(grunt) {
     var serveStatic = require('serve-static');
@@ -359,30 +358,30 @@ module.exports = function(grunt) {
             },
 
             compile: {
-                dir: "<%= compile_dir %>",
+                dir: '<%= compile_dir %>',
                 src: [
-                    "<%= compile_dir %>/openpgp.min.js",
-                    "<%= compile_dir %>/pmcrypto.js",
-                    "<%= compile_dir %>/assets/app.js",
-                    "<%= compile_dir %>/assets/app.css"
+                    '<%= compile_dir %>/openpgp.min.js',
+                    '<%= compile_dir %>/pmcrypto.js',
+                    '<%= compile_dir %>/assets/app.js',
+                    '<%= compile_dir %>/assets/app.css'
                 ],
                 deployment: true
             }
         },
 
-        cacheBust: {
-            options: {
-                assets: ['assets/app.css', 'assets/app.js', 'openpgp.min.js', 'openpgp.worker.min.js'],
-                deleteOriginals: true,
-                baseDir: '<%= compile_dir %>/',
-                hash: hash
-            },
-            taskName: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= compile_dir %>/',
-                    src: ['app.html', 'assets/app.' + hash + '.js', 'openpgp.min.' + hash + '.js', 'openpgp.worker.min.' + hash + '.js']
-                }]
+        cachebreaker: {
+            dev: {
+                options: {
+                    match: [
+                        '/assets/app.css',
+                        '/assets/app.js',
+                        '/openpgp.min.js',
+                        '/openpgp.worker.min.js'
+                    ]
+                },
+                files: {
+                    src: ['<%= compile_dir %>/app.html']
+                }
             }
         },
 
@@ -534,7 +533,7 @@ module.exports = function(grunt) {
         'uglify', // minify JS
         'copy:compile_external', // copy openpgp
         'index:compile', // index CSS and JS
-        'cacheBust', // bust CSS and JS
+        'cachebreaker', // Append a timestamp to JS and CSS files which are both located in 'app.html'
         'shell:push', // push code to deploy branch
         'wait:push'
     ]);
