@@ -178,7 +178,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
 
     unsubscribe.push($rootScope.$on('message.updated', (e, { message }) => {
         // save when DOM is updated
-        recordMessage(message, false, true);
+        recordMessage(message, { autosaving: true });
     }));
 
     unsubscribe.push($rootScope.$on('squire.editor', (e, { type, data }) => {
@@ -186,7 +186,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
     }));
 
     unsubscribe.push($rootScope.$on('attachment.upload', (e, { type, data }) => {
-        (type === 'remove.success') && recordMessage(data.message, false, true);
+        (type === 'remove.success') && recordMessage(data.message, { autosaving: true });
     }));
 
     const onResize = _.debounce(() => {
@@ -378,7 +378,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
             .$applyAsync(() => {
                 const size = $scope.messages.unshift(message);
 
-                recordMessage(message, false, false).then(() => { // message, notification, autosaving
+                recordMessage(message).then(() => { // message, notification, autosaving
                     $rootScope.$emit('composer.update', {
                         type: 'loaded',
                         data: { size, message }
@@ -500,7 +500,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
      * Delay the saving
      * @param {Object} message
      */
-    $scope.saveLater = (message) => !message.sending && recordMessage(message, false, true);
+    $scope.saveLater = (message) => !message.sending && recordMessage(message, { autosaving: true, loader: false });
 
     $scope.validate = (message) => {
         const deferred = $q.defer();
@@ -555,13 +555,12 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         return deferred.promise;
     };
 
-    $scope.save = (message, notification, autosaving) => {
+    $scope.save = (message, notification = false, autosaving = false) => {
         const msg = new Message(message);
-        return embedded
-            .parser(msg, 'cid')
+        return embedded.parser(msg, 'cid')
             .then((result) => {
                 msg.Body = result;
-                return recordMessage(msg, notification, autosaving);
+                return recordMessage(msg, { notification, autosaving });
             });
     };
 
@@ -606,7 +605,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
      * @param {Boolean} notification - Add a notification when the saving is complete
      * @param {Boolean} autosaving
      */
-    function recordMessage(message, notification, autosaving) {
+    function recordMessage(message, { notification = false, autosaving = false, loader = true } = {}) {
         // Variables
         const CREATE = 1;
         const UPDATE = 2;
@@ -617,7 +616,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         };
 
         message.saving = true;
-        message.autosaving = autosaving || false;
+        message.autosaving = autosaving;
         dispatchMessageAction(message);
 
         if (angular.isUndefined(parameters.Message.Subject)) {
@@ -759,7 +758,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
             deferred.reject(error);
         });
 
-        if (autosaving === false) {
+        if (autosaving === false || loader) {
             networkActivityTracker.track(deferred.promise);
         }
 
@@ -967,7 +966,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         $scope.validate(message)
         .then(() => checkSubject(message))
         .then(() => extractDataURI(message))
-        .then(() => recordMessage(message, false, false))
+        .then(() => recordMessage(message))
         .then((messageSaved) => (message.ID = messageSaved.ID, message))
         .then(() => {
             message.encrypting = true;
@@ -1163,7 +1162,7 @@ angular.module('proton.controllers.Compose', ['proton.constants'])
         $timeout.cancel(message.defferredSaveLater);
 
         if (save === true) {
-            recordMessage(message, false, true).then(process);
+            recordMessage(message, { autosaving: true }).then(process);
         } else {
             process();
         }
