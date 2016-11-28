@@ -415,26 +415,6 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
         return false;
     };
 
-    /**
-     * Manage time displaying
-     * @param {Object} conversation or message
-     * @return {Integer}
-     */
-    $scope.time = ({ ID, Time }) => {
-        const type = tools.typeList();
-        let time;
-
-        if (type === 'conversation') {
-            const loc = tools.currentLocation();
-
-            time = cache.getTime(ID, loc);
-        } else if (type === 'message') {
-            time = Time;
-        }
-
-        return time;
-    };
-
     $scope.size = function (element) {
         if (angular.isDefined(element.TotalSize)) {
             return element.TotalSize;
