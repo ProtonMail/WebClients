@@ -6,11 +6,11 @@ angular.module('proton.attachments')
 
         const dispatch = (type, data) => $rootScope.$emit('attachment.upload', { type, data });
 
-        const dispatchUpload = (REQUEST_ID, { ID }, packet) => (progress, status) => {
+        const dispatchUpload = (REQUEST_ID, { ID }, packet) => (progress, status, isStart = false) => {
             dispatch('uploading', {
                 id: REQUEST_ID,
                 messageID: ID,
-                status, progress, packet
+                status, progress, packet, isStart
             });
         };
 
@@ -82,7 +82,7 @@ angular.module('proton.attachments')
                 request: xhr
             });
 
-            dispatcher(0, true);
+            dispatcher(1, true, true);
 
             xhr.upload.onprogress = (event) => {
                 const progress = (event.loaded / event.total) * 99;
@@ -141,8 +141,7 @@ angular.module('proton.attachments')
                     return deferred.reject(json);
                 }
 
-                pmcw
-                    .decryptSessionKey(packets.keys, keys)
+                pmcw.decryptSessionKey(packets.keys, keys)
                     .then((sessionKey) => ({
                         REQUEST_ID,
                         sessionKey,
@@ -173,8 +172,7 @@ angular.module('proton.attachments')
          * @return {Promise}
          */
         const remove = (message, attachment) => {
-            return $http
-                .delete(url.get() + '/attachments/' + attachment.ID, { MessageID: message.ID })
+            return $http.delete(url.get() + '/attachments/' + attachment.ID, { MessageID: message.ID })
                 .then(({ data = {} }) => {
                     if (data.Code !== 1000) {
                         const error = data.Error || 'Error during the remove request';
