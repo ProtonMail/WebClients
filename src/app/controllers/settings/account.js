@@ -32,6 +32,18 @@ angular.module('proton.controllers.Settings')
     let promisePasswordModal;
     const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
+    $scope.displayName = authentication.user.DisplayName;
+    $scope.PMSignature = Boolean(authentication.user.PMSignature);
+    $scope.notificationEmail = authentication.user.NotificationEmail;
+    $scope.passwordReset = !!authentication.user.PasswordReset;
+    $scope.dailyNotifications = authentication.user.Notify;
+    $scope.desktopNotificationsStatus = desktopNotifications.status();
+    $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
+    $scope.images = authentication.user.ShowImages;
+    $scope.embedded = authentication.user.ShowEmbedded;
+    $scope.hotkeys = authentication.user.Hotkeys;
+    $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
+    $scope.passwordMode = authentication.user.PasswordMode;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
     updateUser();
 
@@ -120,7 +132,6 @@ angular.module('proton.controllers.Settings')
     };
 
     $scope.saveDailyNotifications = () => {
-
         networkActivityTracker.track(
           Setting.notify({ Notify: $scope.dailyNotifications })
           .then((result) => {
