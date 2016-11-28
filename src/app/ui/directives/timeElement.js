@@ -8,12 +8,12 @@ angular.module('proton.ui')
         link(scope, element) {
             const { ID, Time } = scope.model;
             const minute = 60 * 1000;
-            const promise = $interval(() => {
+            const promise = $interval(() => setTime(), minute);
+            scope.$on('$destroy', () => $interval.cancel(promise));
+            setTime();
+            function setTime() {
                 element[0].innerHTML = getTime();
-            }, minute);
-            scope.$on('$destroy', () => {
-                $interval.cancel(promise);
-            });
+            }
             function getTime() {
                 const type = tools.typeList();
                 const loc = tools.currentLocation();
