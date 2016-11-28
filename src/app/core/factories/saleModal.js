@@ -9,8 +9,6 @@ angular.module('proton.core')
             self.amount = 1337;
             const alreadyPay = authentication.user.Credit >= (self.amount * 100);
             self.mode = (alreadyPay) ? 'thanks' : 'pay';
-            self.isSoldOut = true;
-            self.class = (self.isSoldOut) ? 'soldout' : '';
             self.card = {};
             self.paypalObject = {};
             self.currencies = [{ label: 'USD', value: 'USD' }, { label: 'EUR', value: 'EUR' }, { label: 'CHF', value: 'CHF' }];
@@ -19,7 +17,6 @@ angular.module('proton.core')
             self.methods.push({ label: gettextCatalog.getString('New card', null), type: 'new_card' });
             self.methods.push({ label: 'Paypal', type: 'paypal' });
             self.method = self.methods[0];
-
             self.paypalCallback = (paypalObject) => {
                 self.paypalObject = paypalObject;
                 self.submit();

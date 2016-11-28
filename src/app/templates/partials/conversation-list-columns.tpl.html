@@ -31,7 +31,7 @@
                 <pt-star
                     data-model="conversation"
                     class="singleStar"></pt-star>
-                <time-element data-model="conversation"></time-element>
+                <em class="time">{{ time(conversation) | readableTime }}</em>
             </span>
         </div>
         <div class="row bottom">

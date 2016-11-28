@@ -40,6 +40,6 @@
         </div>
         <span class="size">{{ size(conversation)| bytes }}</span>
         <i class="fa fa-paperclip conversation-icon-attachment"></i>
-        <time-element data-model="conversation"></time-element>
+        <em class="time">{{ time(conversation) | readableTime }}</em>
     </div>
 </div>
