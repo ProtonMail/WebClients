@@ -37,7 +37,7 @@ angular.module('proton.controllers.Settings')
     $scope.PMSignature = Boolean(authentication.user.PMSignature);
     $scope.notificationEmail = authentication.user.NotificationEmail;
     $scope.passwordReset = !!authentication.user.PasswordReset;
-    $scope.dailyNotifications = !!authentication.user.Notify;
+    $scope.dailyNotifications = authentication.user.Notify;
     $scope.desktopNotificationsStatus = desktopNotifications.status();
     $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
     $scope.images = authentication.user.ShowImages;
@@ -132,8 +132,7 @@ angular.module('proton.controllers.Settings')
         passwordModal(submit);
     };
 
-    $scope.saveDailyNotifications = function () {
-
+    $scope.saveDailyNotifications = () => {
         networkActivityTracker.track(
           Setting.notify({ Notify: $scope.dailyNotifications })
           .then((result) => {
