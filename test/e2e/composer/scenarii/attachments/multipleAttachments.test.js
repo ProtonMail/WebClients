@@ -4,16 +4,12 @@ module.exports = ({ editor }) => () => {
 
     let borodin, dropzone, listAttachments;
 
-    it('should not contains an image inside the editor', () => {
+    it('should display the askEmbedded screen', () => {
         borodin = editor.compose();
         const uploader = borodin.uploader();
-        dropzone = uploader.dropzone();
+        dropzone = uploader.dropzone(editor);
         listAttachments = uploader.attachmentsList();
-        dropzone.matchIframe()
-            .then(assert(0));
-    });
 
-    it('should display the askEmbedded screen', () => {
         borodin.upload(3);
         browser.sleep(500)
             .then(() => dropzone.countDroppedFiles())
@@ -40,6 +36,12 @@ module.exports = ({ editor }) => () => {
 
     it('should count 2 embedded', () => {
         listAttachments.getCounter('embedded')
+            .then(assert(2));
+    });
+
+    it('should contains 2 images inside to the editor', () => {
+        browser.sleep(1000)
+            .then(() => dropzone.matchIframe())
             .then(assert(2));
     });
 

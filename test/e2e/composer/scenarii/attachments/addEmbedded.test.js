@@ -7,7 +7,7 @@ module.exports = ({ editor }) => () => {
     it('should not contains an image inside the editor', () => {
         borodin = editor.compose();
         const uploader = borodin.uploader();
-        dropzone = uploader.dropzone();
+        dropzone = uploader.dropzone(editor);
         listAttachments = uploader.attachmentsList();
         dropzone.matchIframe()
             .then(assert(0));

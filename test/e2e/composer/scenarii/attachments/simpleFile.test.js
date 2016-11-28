@@ -7,7 +7,7 @@ module.exports = ({ editor }) => () => {
     it('should display the list', () => {
         borodin = editor.compose();
         const uploader = borodin.uploader();
-        dropzone = uploader.dropzone();
+        dropzone = uploader.dropzone(editor);
         listAttachments = uploader.attachmentsList();
 
         borodin.upload();
