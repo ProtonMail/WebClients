@@ -2,7 +2,7 @@
 
     <ng-include src="'templates/partials/no-results.tpl.html'"></ng-include>
 
-    <div ng-repeat="conversation in conversations track by conversation.ID" class="conversation" ng-class="{
+    <div ng-repeat="conversation in conversations track by conversation.ID" elements-container class="conversation" ng-class="{
         selected: conversation.Selected,
         active: active(conversation),
         marked: conversation.ID === markedElement.ID,
