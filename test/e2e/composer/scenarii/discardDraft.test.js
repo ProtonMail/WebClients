@@ -1,5 +1,6 @@
 const modal = require('../../../e2e.utils/modal');
 const notifs = require('../../../e2e.utils/notifications');
+const { isTrue, isFalse, assert } = require('../../../e2e.utils/assertions');
 
 module.exports = ({ editor }) => {
     describe('Discard a draft', () => {
@@ -10,52 +11,40 @@ module.exports = ({ editor }) => {
             borodin = editor.compose();
 
             modal.isVisible()
-                .then((visible) => {
-                    expect(visible).toEqual(false);
-                });
+                .then(isFalse);
         });
 
         it('should discard the draft and display the modal', () => {
             borodin.discardDraft()
                 .then(() => browser.sleep(500))
                 .then(() => modal.isVisible())
-                .then((visible) => {
-                    expect(visible).toEqual(true);
-                });
+                .then(isTrue);
         });
 
 
         it('should close the modal', () => {
             modal.cancel()
                 .then(() => modal.isVisible())
-                .then((visible) => {
-                    expect(visible).toEqual(false);
-                });
+                .then(isFalse);
         });
 
         it('should discard the draft and display the modal 2', () => {
             borodin.discardDraft()
                 .then(() => browser.sleep(500))
                 .then(() => modal.read())
-                .then((text) => {
-                    expect(text).toEqual('Permanently delete this draft?');
-                });
+                .then(assert('Permanently delete this draft?'));
         });
 
         it('should close the composer on confirm', () => {
             modal.confirm()
                 .then(() => browser.sleep(5000))
                 .then(() => borodin.isOpened())
-                .then((editor) => {
-                    expect(editor).toEqual(false);
-                });
+                .then(isFalse);
         });
 
         it('should display a notfication', () => {
             notifs.message()
-                .then((msg) => {
-                    expect(msg).toEqual('Message discarded');
-                });
+                .then(assert('Message discarded'));
         });
 
     });

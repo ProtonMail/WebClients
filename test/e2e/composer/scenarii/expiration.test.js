@@ -1,3 +1,5 @@
+const { isTrue, isFalse } = require('../../../e2e.utils/assertions');
+
 module.exports = ({ editor, message }) => {
     describe('Set an expiration time to the message', () => {
 
@@ -8,24 +10,18 @@ module.exports = ({ editor, message }) => {
             expiration = borodin.expiration();
 
             expiration.isActive()
-                .then((test) => {
-                    expect(test).toEqual(false);
-                });
+                .then(isFalse);
         });
 
         it('should not display the form', () => {
             expiration.isVisible()
-                .then((test) => {
-                    expect(test).toEqual(false);
-                });
+                .then(isFalse);
         });
 
         it('should open the form', () => {
             expiration.open()
                 .then(() => expiration.isVisible())
-                .then((test) => {
-                    expect(test).toEqual(true);
-                });
+                .then(isTrue);
         });
 
         it('should set some value', () => {
@@ -47,33 +43,25 @@ module.exports = ({ editor, message }) => {
             expiration.submit()
                 .then(() => browser.sleep(500))
                 .then(() => expiration.isVisible())
-                .then((test) => {
-                    expect(test).toEqual(false);
-                });
+                .then(isFalse);
         });
 
 
         it('should mark the composer button as active', () => {
             expiration.isActive()
-                .then((test) => {
-                    expect(test).toEqual(true);
-                });
+                .then(isTrue);
         });
 
         it('should open the form', () => {
             expiration.open()
                 .then(() => expiration.isVisible())
-                .then((test) => {
-                    expect(test).toEqual(true);
-                });
+                .then(isTrue);
         });
 
         it('should close the form', () => {
             expiration.cancel()
                 .then(() => expiration.isVisible())
-                .then((test) => {
-                    expect(test).toEqual(false);
-                });
+                .then(isFalse);
         });
 
 

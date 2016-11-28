@@ -19,37 +19,36 @@ module.exports = ({ editor }) => {
                 .then(isFalse);
         });
 
-        // it('should not display the dropzone', () => {
-        //     dropzone.isVisible()
-        //         .then(isFalse);
-        // });
+        it('should not display the dropzone', () => {
+            dropzone.isVisible()
+                .then(isFalse);
+        });
 
-        // it('should not display the askEmbedded zone', () => {
-        //     dropzone.isVisibleAsk()
-        //         .then(isFalse);
-        // });
+        it('should not display the askEmbedded zone', () => {
+            dropzone.isVisibleAsk()
+                .then(isFalse);
+        });
 
-        // it('should display the askEmbedded', () => {
-        //     borodin.upload();
-        //     browser.sleep(500);
+        it('should display the askEmbedded', () => {
+            borodin.upload();
+            browser.sleep(500);
 
-        //     dropzone.isVisibleAsk()
-        //         .then(isTrue);
-        // });
+            dropzone.isVisibleAsk()
+                .then(isTrue);
+        });
 
-        // it('should hide on close', () => {
-        //     dropzone.cancel()
-        //         .then(() => dropzone.isVisibleAsk())
-        //         .then(isFalse)
-        //         .then(() => dropzone.isVisible())
-        //         .then(isFalse);
-        // });
+        it('should hide on close', () => {
+            dropzone.cancel()
+                .then(() => dropzone.isVisibleAsk())
+                .then(isFalse)
+                .then(() => dropzone.isVisible())
+                .then(isFalse);
+        });
 
-        // describe('Add an attachment', simpleFile({ editor }));
-        // describe('Add an embedded', addEmbedded({ editor }));
-        // describe('Remove attachments (simple)', removeAttachmentsSimple({ editor }));
+        describe('Add an attachment', simpleFile({ editor }));
+        describe('Add an embedded', addEmbedded({ editor }));
+        describe('Remove attachments (simple)', removeAttachmentsSimple({ editor }));
         describe('Multiples attachments', multipleAttachments({ editor }));
-
 
     });
 

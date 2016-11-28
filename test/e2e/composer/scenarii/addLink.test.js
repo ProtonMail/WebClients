@@ -1,3 +1,5 @@
+const { isTrue, isFalse } = require('../../../e2e.utils/assertions');
+
 module.exports = ({ editor, message }) => {
 
     describe('Add a link', () => {
@@ -17,18 +19,14 @@ module.exports = ({ editor, message }) => {
         it('should close the popover on submit', () => {
             popover.bindLink(message.linkImage)
                 .then(() => popover.submit())
+                .then(() => browser.sleep(300))
                 .then(() => popover.isVisible())
-                .then((test) => {
-                    browser.sleep(300);
-                    expect(test).toEqual(false);
-                });
+                .then(isFalse);
         });
 
         it('should add a link', () => {
             popover.matchIframe(message.linkImage)
-                .then((test) => {
-                    expect(test).toEqual(true);
-                });
+                .then(isTrue);
         });
     });
 
