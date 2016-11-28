@@ -10,7 +10,7 @@ angular.module('proton.controllers.Settings')
     gettextCatalog,
     $q,
     authentication,
-    changeMailboxPassword,
+    changePasswordModal,
     Bug,
     confirmModal,
     deleteAccountModal,
@@ -29,56 +29,43 @@ angular.module('proton.controllers.Settings')
     tools,
     User
 ) => {
-
+    let promisePasswordModal;
     const unsubscribe = [];
-    $scope.displayPasswordInfo = false;
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
-    $scope.displayName = authentication.user.DisplayName;
-    $scope.PMSignature = Boolean(authentication.user.PMSignature);
-    $scope.notificationEmail = authentication.user.NotificationEmail;
-    $scope.passwordReset = !!authentication.user.PasswordReset;
-    $scope.dailyNotifications = authentication.user.Notify;
-    $scope.desktopNotificationsStatus = desktopNotifications.status();
-    $scope.autosaveContacts = !!authentication.user.AutoSaveContacts;
-    $scope.images = authentication.user.ShowImages;
-    $scope.embedded = authentication.user.ShowEmbedded;
-    $scope.hotkeys = authentication.user.Hotkeys;
-    $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
-    $scope.passwordMode = authentication.user.PasswordMode;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
-    $scope.twoFactor = authentication.user.TwoFactor;
+    updateUser();
 
     function passwordModal(submit) {
         loginPasswordModal.activate({
             params: {
                 submit,
+                hasTwoFactor: authentication.user.TwoFactor,
                 cancel() {
                     loginPasswordModal.deactivate();
-                },
-                hasTwoFactor: authentication.user.TwoFactor
+                }
             }
         });
     }
 
     $scope.setPasswordMode = (mode = 0) => {
-        $scope.displayPasswordInfo = true;
         $scope.passwordMode = mode;
     };
 
     // Listeners
     unsubscribe.push($rootScope.$on('changePMSignature', changePMSignature));
+    unsubscribe.push($rootScope.$on('updateUser', updateUser));
     $scope.$on('$destroy', () => {
         unsubscribe.forEach((cb) => cb());
         unsubscribe.length = 0;
     });
 
-    $scope.enableDesktopNotifications = function () {
+    $scope.enableDesktopNotifications = () => {
         desktopNotifications.request(() => {
             $scope.desktopNotificationsStatus = desktopNotifications.status();
         });
     };
 
-    $scope.testDesktopNotification = function () {
+    $scope.testDesktopNotification = () => {
         desktopNotifications.create(gettextCatalog.getString('You have a new email', null, 'Info'), {
             body: 'Quarterly Operations Update - Q1 2016 ',
             icon: '/assets/img/notification-badge.gif',
@@ -88,7 +75,7 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.saveNotification = function (form) {
+    $scope.saveNotification = (form) => {
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
 
@@ -146,94 +133,58 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.saveLoginPassword = function (form) {
-        const newLoginPwd = $scope.newLoginPassword;
+    function initAutoClose() {
+        const tenMinutes = 10 * 60 * 1000;
+        $timeout.cancel(promisePasswordModal);
+        promisePasswordModal = $timeout(() => {
+            if (changePasswordModal.active()) {
+                const message = gettextCatalog.getString('', null);
+                changePasswordModal.deactivate();
+                notify({ message, classes: 'notification-danger' });
+            }
+        }, tenMinutes);
+    }
 
-        function submit(Password, TwoFactorCode) {
-            loginPasswordModal.deactivate();
+    function cancelAutoClose() {
+        $timeout.cancel(promisePasswordModal);
+    }
 
-            networkActivityTracker.track(
-                Setting
-                .password({ Password, TwoFactorCode }, newLoginPwd)
-                .then(() => {
-                    $scope.displayPasswordInfo = false;
-                    $scope.newLoginPassword = '';
-                    $scope.confirmLoginPassword = '';
-                    form.$setUntouched();
-                    form.$setPristine();
-                    authentication.user.PasswordMode = 2;
-                    notify({ message: gettextCatalog.getString('Login password updated', null), classes: 'notification-success' });
-                })
-            )
-            .catch(() => {
-                // Nothing
-            });
-        }
-
-        passwordModal(submit);
-    };
-
-    $scope.saveMailboxPassword = function (form) {
-        const newPassword = $scope.newMailboxPassword;
-
+    $scope.changePassword = (type = '', phase = 0) => {
         function submit(currentPassword, twoFactorCode) {
-            loginPasswordModal.deactivate();
-
-            changeMailboxPassword(
-                {
-                    currentPassword,
-                    newPassword,
-                    twoFactorCode,
-                    onePassword: false
-                })
-            .then(() => {
-                $scope.newMailboxPassword = '';
-                $scope.confirmMailboxPassword = '';
-                form.$setUntouched();
-                form.$setPristine();
-                authentication.user.PasswordMode = 2;
-                notify({ message: gettextCatalog.getString('Mailbox password updated', null), classes: 'notification-success' });
+            const promise = User.password({ Password: currentPassword, TwoFactorCode: twoFactorCode })
+            .then((result) => {
+                const { data } = result;
+                if (data.Error) {
+                    return Promise.reject(data.Error);
+                }
+                return Promise.resolve(result);
             })
-            .catch(() => {
-                // Nothing
+            .then(() => {
+                loginPasswordModal.deactivate();
+                initAutoClose();
+                changePasswordModal.activate({
+                    params: {
+                        phase,
+                        type,
+                        close() {
+                            changePasswordModal.deactivate();
+                            if (phase === 1) {
+                                $scope.changePassword('mailbox', 2);
+                            } else {
+                                cancelAutoClose();
+                            }
+                        }
+                    }
+                });
             });
+            networkActivityTracker.track(promise);
         }
-
-        passwordModal(submit);
+        if (phase !== 2) {
+            passwordModal(submit);
+        }
     };
 
-    $scope.savePassword = function (form) {
-        const newPassword = $scope.newPassword;
-
-        function submit(currentPassword, twoFactorCode) {
-            loginPasswordModal.deactivate();
-
-            changeMailboxPassword(
-                {
-                    currentPassword,
-                    newPassword,
-                    twoFactorCode,
-                    onePassword: true
-                })
-            .then(() => {
-                const message = ($scope.displayPasswordInfo) ? gettextCatalog.getString('You have successfully setup One-Password Mode', null) : gettextCatalog.getString('Password updated', null);
-                $scope.displayPasswordInfo = false;
-                $scope.newPassword = '';
-                $scope.confirmPassword = '';
-                form.$setUntouched();
-                form.$setPristine();
-                authentication.user.PasswordMode = 1;
-                notify({ message, classes: 'notification-success' });
-            })
-            .catch(() => {
-                // Nothing
-            });
-        }
-
-        passwordModal(submit);
-    };
-
-    $scope.saveIdentity = function () {
+    $scope.saveIdentity = () => {
         const deferred = $q.defer();
         const displayName = $scope.displayName;
         let signature = $scope.signature;
@@ -267,6 +218,20 @@ angular.module('proton.controllers.Settings')
         return networkActivityTracker.track(deferred.promise);
     };
 
+    function updateUser() {
+        $scope.displayName = authentication.user.DisplayName;
+        $scope.PMSignature = Boolean(authentication.user.PMSignature);
+        $scope.notificationEmail = authentication.user.NotificationEmail;
+        $scope.passwordReset = Boolean(authentication.user.PasswordReset);
+        $scope.dailyNotifications = authentication.user.Notify;
+        $scope.desktopNotificationsStatus = desktopNotifications.status();
+        $scope.autosaveContacts = Boolean(authentication.user.AutoSaveContacts);
+        $scope.images = authentication.user.ShowImages;
+        $scope.embedded = authentication.user.ShowEmbedded;
+        $scope.hotkeys = authentication.user.Hotkeys;
+        $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
+        $scope.passwordMode = authentication.user.PasswordMode;
+    }
 
     function changePMSignature(event, status) {
         const PMSignature = (status) ? 1 : 0;
@@ -287,7 +252,7 @@ angular.module('proton.controllers.Settings')
         return promise;
     }
 
-    $scope.saveAutosaveContacts = function () {
+    $scope.saveAutosaveContacts = () => {
         networkActivityTracker.track(
             Setting.autosave({ AutoSaveContacts: $scope.autosaveContacts })
             .then(() => {
@@ -297,7 +262,7 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.saveImages = function () {
+    $scope.saveImages = () => {
         networkActivityTracker.track(
             Setting.setShowImages({ ShowImages: $scope.images })
             .then(() => {
@@ -307,7 +272,7 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.saveEmbedded = function () {
+    $scope.saveEmbedded = () => {
         networkActivityTracker.track(
             Setting.setShowEmbedded({ ShowEmbedded: $scope.embedded })
             .then(() => {
@@ -317,7 +282,7 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.openHotkeyModal = function () {
+    $scope.openHotkeyModal = () => {
         hotkeyModal.activate({
             params: {
                 close() {
@@ -327,7 +292,7 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.saveHotkeys = function () {
+    $scope.saveHotkeys = () => {
         networkActivityTracker.track(
             Setting.setHotkeys({ Hotkeys: $scope.hotkeys })
             .then((result) => {
@@ -348,7 +313,7 @@ angular.module('proton.controllers.Settings')
         );
     };
 
-    $scope.deleteAccount = function () {
+    $scope.deleteAccount = () => {
         deleteAccountModal.activate({
             params: {
                 submit(password, feedback) {

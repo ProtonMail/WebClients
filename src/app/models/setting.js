@@ -1,11 +1,10 @@
 angular.module('proton.models.setting', ['proton.srp'])
 .factory('Setting', ($http, url, srp) => {
     const Setting = {
-        password(creds = {}, newPassword = '') {
-            return srp
-                .getPasswordParams(newPassword)
-                .then((data) => srp.performSRPRequest('PUT', '/settings/password', data, creds))
-                .catch((error = {}) => Promise.reject(error.error_description || error));
+        password(newPassword = '') {
+            return srp.getPasswordParams(newPassword)
+            .then((data) => $http.put(url.get() + '/settings/password', data))
+            .catch((error = {}) => Promise.reject(error.error_description || error));
         },
         passwordReset(params, creds) {
             return srp

@@ -16,9 +16,8 @@ angular.module('proton.models.keys', ['proton.srp'])
          */
         setup(params = {}, newPassword = '') {
             if (newPassword.length) {
-                return srp
-                    .getPasswordParams(newPassword, params)
-                    .then((data) => $http.post(url.get() + '/keys/setup', data));
+                return srp.getPasswordParams(newPassword, params)
+                .then((authParams) => $http.post(url.get() + '/keys/setup', authParams));
             }
 
             return $http.post(url.get() + '/keys/setup', params);
@@ -30,9 +29,8 @@ angular.module('proton.models.keys', ['proton.srp'])
          */
         reset(params = {}, newPassword = '') {
             if (newPassword.length) {
-                return srp
-                .getPasswordParams(newPassword, params)
-                .then((data) => $http.post(url.get() + '/keys/reset', data));
+                return srp.getPasswordParams(newPassword, params)
+                .then((authParams) => $http.post(url.get() + '/keys/reset', authParams));
             }
             return $http.post(url.get() + '/keys/reset', params);
         },
@@ -58,14 +56,12 @@ angular.module('proton.models.keys', ['proton.srp'])
          * @param {Object} params
          * @return {Promise}
          */
-        private(params = {}, creds = {}, newPassword = '') {
+        private(params = {}, newPassword = '') {
             if (newPassword.length) {
-                return srp
-                    .getPasswordParams(newPassword, params)
-                    .then((authParams) => srp.performSRPRequest('PUT', '/keys/private', authParams, creds));
+                return srp.getPasswordParams(newPassword, params)
+                .then((authParams) => $http.put(url.get() + '/keys/private', authParams));
             }
-
-            return srp.performSRPRequest('PUT', '/keys/private', params, creds);
+            return $http.put(url.get() + '/keys/private', params);
         },
         /**
          * Delete key

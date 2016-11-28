@@ -4,19 +4,18 @@ angular.module('proton.core')
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/loginPassword.tpl.html',
         controller(params) {
-            this.loginPassword = '';
-            this.twoFactorCode = '';
-            this.hasTwoFactor = params.hasTwoFactor;
+            const self = this;
+            self.loginPassword = '';
+            self.twoFactorCode = '';
+            self.hasTwoFactor = params.hasTwoFactor;
 
-            $timeout(() => {
-                $('#loginPassword').focus();
-            });
+            $timeout(() => document.getElementById('loginPassword').focus());
 
-            this.submit = function () {
-                params.submit(this.loginPassword, this.twoFactorCode);
-            }.bind(this);
+            self.submit = () => {
+                params.submit(self.loginPassword, self.twoFactorCode);
+            };
 
-            this.cancel = () => {
+            self.cancel = () => {
                 params.cancel();
             };
         }
