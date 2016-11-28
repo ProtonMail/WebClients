@@ -4,6 +4,7 @@ const addEmbedded = require('./attachments/addEmbedded.test');
 const removeAttachmentsSimple = require('./attachments/removeAttachmentsSimple.test');
 const multipleAttachments = require('./attachments/multipleAttachments.test');
 const removeFromEmbedded = require('./attachments/removeFromEmbedded.test');
+const changeSignatureAttachment = require('./attachments/changeSignatureAttachment.test');
 
 module.exports = ({ editor }) => {
     describe('Attachments', () => {
@@ -51,6 +52,7 @@ module.exports = ({ editor }) => {
         describe('Remove attachments (simple)', removeAttachmentsSimple({ editor }));
         describe('Multiples attachments', multipleAttachments({ editor }));
         describe('Remove an embedded image', removeFromEmbedded({ editor }));
+        describe('Change the signature', changeSignatureAttachment({ editor }));
 
     });
 
