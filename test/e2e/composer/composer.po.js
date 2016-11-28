@@ -7,6 +7,7 @@ module.exports = () => {
         ToList: '.composer-field-ToList',
         CCList: '.composer-field-CCList',
         BCCList: '.composer-field-CCList',
+        From: '.composer-field-From',
         draft: '.composer-btn-save',
         close: '.composer-action-close',
         discard: '.composer-btn-discard',
@@ -133,8 +134,22 @@ module.exports = () => {
             return browser.executeScript(`return $('${selector}').is(':visible')`);
         };
 
+        const changeSignature = (index = 0) => {
+            return browser.executeScript(`
+                const $form = $(document.body.querySelector('.composer'))
+                    .find('${SELECTOR_MAP.From}');
+
+                const $select = $form.find('select');
+                $select.find('option').get(${index});
+                $select.selected = true;
+                $select.get(0).selectedIndex = ${index};
+                $select.change();
+            `);
+        };
+
+
         return {
-            config, removeEmbedded,
+            config, removeEmbedded, changeSignature,
             content, fillInput, send, isOpened, isVisible, openCCBCC,
             close, saveDraft, discardDraft, upload,
             addLinkPopover: require('./tools/addLinkPopover.po'),
