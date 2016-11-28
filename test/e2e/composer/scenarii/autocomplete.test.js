@@ -1,35 +1,29 @@
+const { isTrue, isFalse, assert } = require('../../../e2e.utils/assertions');
+
 module.exports = ({ editor, message, identifier }) => {
     describe('Composer simple message', () => {
 
         let borodin;
 
         it('should open a the composer', () => {
-            editor.open();
-            browser.sleep(500);
-            editor.isOpened()
-                .then((test) => {
-                    borodin = editor.compose();
-                    expect(test).toEqual(true);
-                });
+            editor.open()
+                .then(() => browser.sleep(1000))
+                .then(() => editor.isOpened())
+                .then((test) => (borodin = editor.compose(), test))
+                .then(isTrue);
         });
 
         it('should create a new message', () => {
             borodin.content(message.body)
-                .then((text) => {
-                    expect(text).toEqual(message.body);
-                });
+                .then(assert(message.body));
         });
 
         it('should not display CC and BCC fields', () => {
             borodin.isVisible('CCList')
-                .then((test) => {
-                    expect(test).toEqual(false);
-                });
+                .then(isFalse);
 
             borodin.isVisible('BCCList')
-                .then((test) => {
-                    expect(test).toEqual(false);
-                });
+                .then(isFalse);
         });
 
         describe('ToList field', () => {
@@ -39,38 +33,28 @@ module.exports = ({ editor, message, identifier }) => {
                 it('should not contains any labels', () => {
                     autocomplete = borodin.autocomplete('ToList');
                     autocomplete.countLabels()
-                        .then((counter) => {
-                            expect(counter).toBe(0);
-                        });
-                })
+                        .then(assert(0));
+                });
 
                 it('should add a recepient en set the input value empty', () => {
                     borodin.fillInput('ToList', message.ToList)
-                        .then((text) => {
-                            expect(text).toEqual('');
-                        });
-                })
+                        .then(assert(''));
+                });
 
                 it('should not be invalid', () => {
                     autocomplete.isInvalidLabel()
-                        .then((test) => {
-                            expect(test).toEqual(false);
-                        });
-                })
+                        .then(isFalse);
+                });
 
                 it('should contains 1 labels', () => {
                     autocomplete.countLabels()
-                        .then((counter) => {
-                            expect(counter).toBe(1);
-                        });
-                })
+                        .then(assert(1));
+                });
 
                 it('should find the added value to the label', () => {
                     autocomplete.getLabels()
-                        .then((value) => {
-                            expect(value).toBe(message.ToList);
-                        });
-                })
+                        .then(assert(message.ToList));
+                });
 
                 it('should remove the label', () => {
                     autocomplete.removeLabel()
@@ -78,8 +62,8 @@ module.exports = ({ editor, message, identifier }) => {
                         .then((counter) => {
                             expect(counter).toBe(0);
                         });
-                })
-            })
+                });
+            });
 
             describe('Invalid email', () => {
 
@@ -88,45 +72,33 @@ module.exports = ({ editor, message, identifier }) => {
                 it('should not contains any labels', () => {
                     autocomplete = borodin.autocomplete('ToList');
                     autocomplete.countLabels()
-                        .then((counter) => {
-                            expect(counter).toBe(0);
-                        });
-                })
+                        .then(assert(0));
+                });
 
                 it('should add a recepient en set the input value empty', () => {
                     borodin.fillInput('ToList', email)
-                        .then((text) => {
-                            expect(text).toEqual('');
-                        });
-                })
+                        .then(assert(''));
+                });
 
                 it('should be invalid', () => {
                     autocomplete.isInvalidLabel()
-                        .then((test) => {
-                            expect(test).toEqual(true);
-                        });
-                })
+                        .then(isTrue);
+                });
 
                 it('should contains 1 labels', () => {
                     autocomplete.countLabels()
-                        .then((counter) => {
-                            expect(counter).toBe(1);
-                        });
-                })
+                        .then(assert(1));
+                });
 
                 it('should find the added value to the label', () => {
                     autocomplete.getLabels()
-                        .then((value) => {
-                            expect(value).toBe(email);
-                        });
-                })
+                        .then(assert(email));
+                });
 
                 it('should remove the label', () => {
                     autocomplete.removeLabel()
                         .then(() => autocomplete.countLabels())
-                        .then((counter) => {
-                            expect(counter).toBe(0);
-                        });
+                        .then(assert(0));
                 })
             });
 
@@ -142,29 +114,26 @@ module.exports = ({ editor, message, identifier }) => {
 
         it('should add the recepient', () => {
             borodin.fillInput('ToList', message.ToList)
-                .then((text) => {
-                    expect(text).toEqual('');
-                });
+                .then(assert(''));
         })
 
         it('should add a subject', () => {
             const subject = `${message.Subject} - test:${identifier}`;
             borodin.fillInput('Subject', `${message.Subject} - test:${identifier}`)
-                .then((text) => {
-                    expect(text).toEqual(subject);
-                });
+                .then(assert(subject));
         });
 
 
         it('should send the message', () => {
             borodin.send()
                 .then(() => browser.sleep(5000))
-                .then(() => {
-                    borodin.isOpened()
-                        .then((editor) => {
-                            expect(editor).toEqual(false);
-                        });
-                });
+                .then(() => borodin.isOpened())
+                .then(isFalse);
+        });
+
+        it('should display a notfication', () => {
+            notifs.message()
+                .then(assert('Message sent'));
         });
     });
 
