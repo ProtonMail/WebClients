@@ -3,7 +3,7 @@ angular.module('proton.core')
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/changePassword.tpl.html',
-        controller(params) {
+        controller(params, $scope) {
             const self = this;
             const { type = '', phase = 0, close } = params;
             const promises = {
@@ -17,7 +17,6 @@ angular.module('proton.core')
             self.confirmPassword = '';
             self.submit = () => {
                 const promise = promises[type]()
-                .then(() => ((phase === 1) ? Promise.resolve() : User.lock()), () => User.lock())
                 .then(() => eventManager.call())
                 .then(() => {
                     const message = gettextCatalog.getString('Password updated', null);
@@ -27,10 +26,14 @@ angular.module('proton.core')
                 networkActivityTracker.track(promise);
             };
             self.cancel = () => {
-                const promise = User.lock().then(() => close());
-                networkActivityTracker.track(promise);
+                close();
             };
             $timeout(() => document.getElementById('newPassword').focus());
+            $scope.$on('$destroy', () => {
+                if (phase !== 1) {
+                    User.lock();
+                }
+            });
         }
     });
 });
