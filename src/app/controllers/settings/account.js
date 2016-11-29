@@ -162,6 +162,22 @@ angular.module('proton.controllers.Settings')
     }
 
     $scope.changePassword = (type = '', phase = 0) => {
+        function modal(type = '', phase = 0) {
+            changePasswordModal.activate({
+                params: {
+                    phase,
+                    type,
+                    close() {
+                        changePasswordModal.deactivate();
+                        if (phase === 1) {
+                            modal('mailbox', phase);
+                        } else {
+                            cancelAutoClose();
+                        }
+                    }
+                }
+            });
+        }
         function submit(currentPassword, twoFactorCode) {
             const promise = User.password({ Password: currentPassword, TwoFactorCode: twoFactorCode })
             .then((result) => {
@@ -174,20 +190,7 @@ angular.module('proton.controllers.Settings')
             .then(() => {
                 loginPasswordModal.deactivate();
                 initAutoClose();
-                changePasswordModal.activate({
-                    params: {
-                        phase,
-                        type,
-                        close() {
-                            changePasswordModal.deactivate();
-                            if (phase === 1) {
-                                $scope.changePassword('mailbox', 2);
-                            } else {
-                                cancelAutoClose();
-                            }
-                        }
-                    }
-                });
+                modal();
             });
             networkActivityTracker.track(promise);
         }
