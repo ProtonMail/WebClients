@@ -150,15 +150,18 @@ angular.module('proton.controllers.Settings')
     }
 
     $scope.changePassword = (type = '', phase = 0) => {
-        function modal(type = '', phase = 0) {
+        const parameters = { type, phase };
+        function modal() {
             changePasswordModal.activate({
                 params: {
-                    phase,
-                    type,
+                    phase: parameters.phase,
+                    type: parameters.type,
                     close() {
                         changePasswordModal.deactivate();
-                        if (phase === 1) {
-                            modal('mailbox', phase);
+                        if (parameters.phase === 1) {
+                            parameters.phase = 2;
+                            parameters.type = 'mailbox';
+                            modal();
                         } else {
                             cancelAutoClose();
                         }
@@ -182,9 +185,7 @@ angular.module('proton.controllers.Settings')
             });
             networkActivityTracker.track(promise);
         }
-        if (phase !== 2) {
-            passwordModal(submit);
-        }
+        passwordModal(submit);
     };
 
     $scope.saveIdentity = () => {
