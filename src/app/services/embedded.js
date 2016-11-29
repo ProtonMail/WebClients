@@ -1,18 +1,12 @@
 angular.module('proton.embedded', [])
-.factory('embedded', (
+.factory('embedded', (embeddedFinder, embeddedStore,
     $log,
     $q,
-    $state,
-    $stateParams,
-    $rootScope,
     authentication,
-    Eo,
     notify,
     tools,
-    secureSessionStorage,
     networkActivityTracker,
-    AttachmentLoader,
-    attachmentFileFormat) => {
+    AttachmentLoader) => {
 
     // Loop through attachments and create an array of
     // CIDs for any embedded image attachments
@@ -23,15 +17,15 @@ angular.module('proton.embedded', [])
     const REGEXP_IS_INLINE = /^inline/i;
     const REGEXP_CID_START = /^cid:/g;
     const EMBEDDED_CLASSNAME = 'proton-embedded';
-    const PREFIX_DRAFT = 'draft_';
+    // const PREFIX_DRAFT = 'draft_';
     const DIV = document.createElement('DIV');
-    const urlCreator = () => window.URL || window.webkitURL;
+    // const urlCreator = () => window.URL || window.webkitURL;
 
-    function isEmbedded({ Headers = {}, MIMEType = '' }) {
-        const disposition = Headers['content-disposition'];
+    // function isEmbedded({ Headers = {}, MIMEType = '' }) {
+    //     const disposition = Headers['content-disposition'];
 
-        return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition) && attachmentFileFormat.isEmbedded(MIMEType);
-    }
+    //     return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition) && attachmentFileFormat.isEmbedded(MIMEType);
+    // }
 
     /**
      * Removes enclosing quotes ("", '', &lt;&gt;) from a string
@@ -88,21 +82,21 @@ angular.module('proton.embedded', [])
         }
     };
 
-    /**
-     * When we close the composer we need to deallocate Blobs used by this composer
-     * @param  {String} 'composer.close'     EventName
-     * @param  {Object} e                    Event from Angular
-     * @return {String} opt.ID               ID of a message/conversation
-     * @return {String} opt.ConversationID   ID of a message
-     */
-    $rootScope.$on('composer.close', (e, { ID, ConversationID }) => {
-        const key = `${PREFIX_DRAFT}${ConversationID || ID}`;
+    // *
+    //  * When we close the composer we need to deallocate Blobs used by this composer
+    //  * @param  {String} 'composer.close'     EventName
+    //  * @param  {Object} e                    Event from Angular
+    //  * @return {String} opt.ID               ID of a message/conversation
+    //  * @return {String} opt.ConversationID   ID of a message
 
-        // Clean these blobs !
-        if (MAP_BLOBS[key]) {
-            deallocateList(key);
-        }
-    });
+    // $rootScope.$on('composer.close', (e, { ID, ConversationID }) => {
+    //     const key = `${PREFIX_DRAFT}${ConversationID || ID}`;
+
+    //     // Clean these blobs !
+    //     if (MAP_BLOBS[key]) {
+    //         deallocateList(key);
+    //     }
+    // });
 
     /**
      * Parse the content to inject the generated blob src
@@ -136,123 +130,123 @@ angular.module('proton.embedded', [])
         return testDiv.innerHTML.replace(/data-src/g, 'src');
     };
 
-    /**
-     * @return {Boolean}
-     */
-    const xray = (message) => {
-        const attachs = message.Attachments || [];
-        message.NumEmbedded = 0;
+    // /**
+    //  * @return {Boolean}
+    //  */
+    // const xray = (message) => {
+    //     const attachs = message.Attachments || [];
+    //     message.NumEmbedded = 0;
 
-        /* initiate a CID list */
-        const MAP = CIDList[message.ID] = {};
-        // Check if we have attachments
-        if (attachs.length) {
-            // Build a list of cids
-            attachs.forEach((attachment) => {
-                // BE require an inline content-disposition!
-                if (isEmbedded(attachment)) {
-                    const { Headers = {}, Name = '' } = attachment;
-                    let cid;
+    //     /* initiate a CID list */
+    //     const MAP = CIDList[message.ID] = {};
+    //     // Check if we have attachments
+    //     if (attachs.length) {
+    //         // Build a list of cids
+    //         attachs.forEach((attachment) => {
+    //             // BE require an inline content-disposition!
+    //             if (isEmbedded(attachment)) {
+    //                 const { Headers = {}, Name = '' } = attachment;
+    //                 let cid;
 
-                    if (Headers['content-id']) {
-                        // remove the < >.
-                        // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
-                        cid = trimQuotes(Headers['content-id']);
-                    } else if (Headers['content-location']) {
-                        // We can find an image without cid so base64 the location
-                        cid = trimQuotes(Headers['content-location']);
-                    }
+    //                 if (Headers['content-id']) {
+    //                     // remove the < >.
+    //                     // e.g content-id: "<ii_io4oiedu2_154a668c35c08c
+    //                     cid = trimQuotes(Headers['content-id']);
+    //                 } else if (Headers['content-location']) {
+    //                     // We can find an image without cid so base64 the location
+    //                     cid = trimQuotes(Headers['content-location']);
+    //                 }
 
-                    Headers.embedded = 1;
-                    counterState.add(message);
-                    MAP[cid] = { Headers, Name };
-                }
-            });
+    //                 Headers.embedded = 1;
+    //                 counterState.add(message);
+    //                 MAP[cid] = { Headers, Name };
+    //             }
+    //         });
 
-            return Object.keys(MAP).length > 0;
-        }
+    //         return Object.keys(MAP).length > 0;
+    //     }
 
-        return false;
-    };
+    //     return false;
+    // };
 
-    function getHashKey(msg) {
-        const isDraft = msg.isDraft ? msg.isDraft() : false;
-        const prefix = isDraft ? PREFIX_DRAFT : '';
-        return `${prefix}${msg.ConversationID || msg.ID}`.trim();
-    }
+    // function getHashKey(msg) {
+    //     const isDraft = msg.isDraft ? msg.isDraft() : false;
+    //     const prefix = isDraft ? PREFIX_DRAFT : '';
+    //     return `${prefix}${msg.ConversationID || msg.ID}`.trim();
+    // }
 
-    // Use the Blobs array to store CIDs url reference
-    // once the attachment has been decrypted
-    // so we can re-use the blob instead of decrypting
-    // this should be rewritted a bit to work with
-    // the service store
-    const store = (message = { isDraft: angular.noop }, cid = '') => {
-        const Attachments = CIDList[message.ID] || {};
-        const { Headers = {} } = Attachments[cid] || {};
-        const key = getHashKey(message);
-        MAP_BLOBS[key] = MAP_BLOBS[key] || [];
+    // // Use the Blobs array to store CIDs url reference
+    // // once the attachment has been decrypted
+    // // so we can re-use the blob instead of decrypting
+    // // this should be rewritted a bit to work with
+    // // the service store
+    // const store = (message = { isDraft: angular.noop }, cid = '') => {
+    //     const Attachments = CIDList[message.ID] || {};
+    //     const { Headers = {} } = Attachments[cid] || {};
+    //     const key = getHashKey(message);
+    //     MAP_BLOBS[key] = MAP_BLOBS[key] || [];
 
-        return (data, MIME) => {
+    //     return (data, MIME) => {
 
-            // If you switch to another conversation the MAP_BLOBS won't exist anymore
-            if (MAP_BLOBS[key]) {
-                // Turn the decrypted attachment data into a blob.
-                let blob = new Blob([data], { type: MIME });
-                // Generate the URL
-                let imageUrl = urlCreator().createObjectURL(blob);
-                // Store the generated URL
-                Blobs[cid] = { url: imageUrl, isContentLocation: typeof Headers['content-location'] !== 'undefined' && typeof Headers['content-id'] === 'undefined' };
-                // this is supposed to remove the blob so it
-                // can be garbage collected. we dont save it (for now)
-                blob = null;
-                imageUrl = null;
+    //         // If you switch to another conversation the MAP_BLOBS won't exist anymore
+    //         if (MAP_BLOBS[key]) {
+    //             // Turn the decrypted attachment data into a blob.
+    //             let blob = new Blob([data], { type: MIME });
+    //             // Generate the URL
+    //             let imageUrl = urlCreator().createObjectURL(blob);
+    //             // Store the generated URL
+    //             Blobs[cid] = { url: imageUrl, isContentLocation: typeof Headers['content-location'] !== 'undefined' && typeof Headers['content-id'] === 'undefined' };
+    //             // this is supposed to remove the blob so it
+    //             // can be garbage collected. we dont save it (for now)
+    //             blob = null;
+    //             imageUrl = null;
 
-                MAP_BLOBS[key].push(cid);
-            }
+    //             MAP_BLOBS[key].push(cid);
+    //         }
 
-        };
-    };
+    //     };
+    // };
 
-    const extractAttachementName = (Headers = {}) => {
-        if (Headers['content-disposition'] !== 'inline') {
-            const splits = Headers['content-disposition'].split('filename=');
+    // const extractAttachementName = (Headers = {}) => {
+    //     if (Headers['content-disposition'] !== 'inline') {
+    //         const splits = Headers['content-disposition'].split('filename=');
 
-            if (splits.length > 0 && splits[1]) {
-                return splits[1].replace(/"/g, '');
-            }
-        }
+    //         if (splits.length > 0 && splits[1]) {
+    //             return splits[1].replace(/"/g, '');
+    //         }
+    //     }
 
-        return '';
-    };
+    //     return '';
+    // };
 
     /**
      * Find all attachements to inline
      * @param  {String} options.ID  Message.ID
      * @return {Array}
      */
-    const findInlineAttachements = (message = {}) => {
-        const { ID, Attachments = [] } = message;
+    // const findInlineAttachements = (message = {}) => {
+    //     const { ID, Attachments = [] } = message;
 
-        return Object
-            .keys(CIDList[ID] || {})
-            .reduce((acc, cid) => {
-                // Extract current attachement content-id
-                const contentId = CIDList[ID][cid].Headers['content-id'];
-                const contentName = extractAttachementName(CIDList[ID][cid].Headers);
+    //     return Object
+    //         .keys(CIDList[ID] || {})
+    //         .reduce((acc, cid) => {
+    //             // Extract current attachement content-id
+    //             const contentId = CIDList[ID][cid].Headers['content-id'];
+    //             const contentName = extractAttachementName(CIDList[ID][cid].Headers);
 
-                // Find the matching attachement
-                const attachment = Attachments
-                    .filter(({ Headers = {}, Name = '' } = {}) => {
-                        if (Headers['content-location']) {
-                            return Name === contentName;
-                        }
-                        return Headers['content-id'] === contentId;
-                    })[0];
+    //             // Find the matching attachement
+    //             const attachment = Attachments
+    //                 .filter(({ Headers = {}, Name = '' } = {}) => {
+    //                     if (Headers['content-location']) {
+    //                         return Name === contentName;
+    //                     }
+    //                     return Headers['content-id'] === contentId;
+    //                 })[0];
 
-                attachment && acc.push({ cid, attachment });
-                return acc;
-            }, []);
-    };
+    //             attachment && acc.push({ cid, attachment });
+    //             return acc;
+    //         }, []);
+    // };
 
 
     /**
@@ -299,13 +293,13 @@ angular.module('proton.embedded', [])
     // once we navigate away from a conversation
     // eg. this can be triggered from the conversations controller
 
-    function deallocate(message = {}) {
-        const key = getHashKey(message);
-        Object
-            .keys(MAP_BLOBS)
-            .filter((k) => k !== key && k.indexOf(PREFIX_DRAFT) !== 0) // Do nothing for draft and itself
-            .forEach(deallocateList);
-    }
+    // function deallocate(message = {}) {
+    //     const key = getHashKey(message);
+    //     Object
+    //         .keys(MAP_BLOBS)
+    //         .filter((k) => k !== key && k.indexOf(PREFIX_DRAFT) !== 0) // Do nothing for draft and itself
+    //         .forEach(deallocateList);
+    // }
 
     /**
      * The URL.revokeObjectURL() static method releases an existing object URL
@@ -315,20 +309,20 @@ angular.module('proton.embedded', [])
      * any longer.
      * @param {key}  key     Key of the message/conversation
      */
-    function deallocateList(key) {
-        const list = MAP_BLOBS[key] || [];
-        _(list).each((cid) => {
-            if (Blobs[cid]) {
-                urlCreator().revokeObjectURL(Blobs[cid].url);
-                // Remove the Blob ref from our store
-                delete Blobs[cid];
-            }
-        });
-        delete MAP_BLOBS[key];
-    }
+    // function deallocateList(key) {
+    //     const list = MAP_BLOBS[key] || [];
+    //     _(list).each((cid) => {
+    //         if (Blobs[cid]) {
+    //             urlCreator().revokeObjectURL(Blobs[cid].url);
+    //             // Remove the Blob ref from our store
+    //             delete Blobs[cid];
+    //         }
+    //     });
+    //     delete MAP_BLOBS[key];
+    // }
 
     const embedded = {
-        isEmbedded,
+        isEmbedded: embeddedFinder.isEmbedded,
 
         /**
          * Parse a message in order to
@@ -341,34 +335,22 @@ angular.module('proton.embedded', [])
          * @return {Promise}
          */
         parser(message, direction = 'blob', text = '') {
-            CIDList = {};
+            embeddedStore.cid.init();
 
-            const deferred = $q.defer();
             const content = text || message.getDecryptedBody();
             console.log('MONIQUE')
-            if (xray(message, content)) {
-                // Check if the content has cid attachments
-                if (Object.keys(CIDList).length > 0) {
-                    // Decrypt, then return the parsed content
-                    decrypt(message, content)
-                    .then(() => parse(message, direction, content))
-                    .then((content) => {
-                        deferred.resolve(content);
-                    })
-                    .catch((error) => {
-                        $log.error(error);
-                        deferred.reject(error);
-                    });
 
-                } else {
-                    // Resolve the decrypted body
-                    deferred.resolve(content);
-                }
-            } else {
-                deferred.resolve(content);
+            if (!embeddedFinder.find(message) || Object.keys(CIDList).length > 0) {
+                return Promise.resolve(content);
             }
 
-            return deferred.promise;
+            return decrypt(message, content)
+                .then(() => parse(message, direction, content))
+                .catch((error) => {
+                    $log.error(error);
+                    throw error;
+                });
+
 
         },
         getCid(headers) {
@@ -391,7 +373,7 @@ angular.module('proton.embedded', [])
             return deferred.promise;
         },
         addEmbedded(message, cid, data, MIME) {
-            store(message, cid)(data, MIME);
+            embeddedStore.store(message, cid)(data, MIME);
             return Blobs[cid];
         },
         removeEmbedded(message, Headers, content = '') {
@@ -422,7 +404,7 @@ angular.module('proton.embedded', [])
 
             return message.getDecryptedBody();
         },
-        deallocator: deallocate,
+        deallocator: embeddedStore.deallocate,
 
         /**
          * Get the url for an embedded image
