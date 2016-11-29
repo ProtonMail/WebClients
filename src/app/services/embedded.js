@@ -345,7 +345,7 @@ angular.module('proton.embedded', [])
 
             const deferred = $q.defer();
             const content = text || message.getDecryptedBody();
-
+            console.log('MONIQUE')
             if (xray(message, content)) {
                 // Check if the content has cid attachments
                 if (Object.keys(CIDList).length > 0) {
