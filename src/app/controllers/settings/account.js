@@ -138,11 +138,11 @@ angular.module('proton.controllers.Settings')
         $timeout.cancel(promisePasswordModal);
         promisePasswordModal = $timeout(() => {
             if (changePasswordModal.active()) {
-                const message = gettextCatalog.getString('', null);
+                const message = gettextCatalog.getString('Operation timed out for security reasons, please try again', null);
                 changePasswordModal.deactivate();
                 notify({ message, classes: 'notification-danger' });
             }
-        }, tenMinutes);
+        }, tenMinutes, false);
     }
 
     function cancelAutoClose() {
