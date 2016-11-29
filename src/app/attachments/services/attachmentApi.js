@@ -89,6 +89,26 @@ angular.module('proton.attachments')
                 dispatcher(progress, true);
             };
 
+            xhr.onerror = function onerror() {
+
+                // remove the current request as it's resolved
+                pendingUpload = _.reject(pendingUpload, {
+                    id: REQUEST_ID,
+                    messageID: message.ID
+                });
+
+                message.uploading = _.where(pendingUpload, { messageID: message.ID }).length;
+
+                dispatch('error', {
+                    id: REQUEST_ID,
+                    messageID: message.ID,
+                    message
+                });
+
+                deferred.resolve({ id: REQUEST_ID, isError: true });
+
+            };
+
             xhr.onabort = function onabort() {
                 // remove the current request as it's resolved
                 pendingUpload = _.reject(pendingUpload, {
@@ -108,19 +128,6 @@ angular.module('proton.attachments')
             };
 
             xhr.onload = function onload() {
-                dispatcher(100, false);
-                dispatch('uploaded.success', {
-                    id: REQUEST_ID,
-                    messageID: message.ID,
-                    packet: tempPacket,
-                    total
-                });
-
-                // remove the current request as it's resolved
-                pendingUpload = _.reject(pendingUpload, {
-                    id: REQUEST_ID,
-                    messageID: message.ID
-                });
 
                 const { json, isInvalid } = parseJSON(xhr);
 
@@ -140,6 +147,20 @@ angular.module('proton.attachments')
                     notifyError(msgError);
                     return deferred.reject(json);
                 }
+
+                dispatcher(100, false);
+                dispatch('uploaded.success', {
+                    id: REQUEST_ID,
+                    messageID: message.ID,
+                    packet: tempPacket,
+                    total
+                });
+
+                // remove the current request as it's resolved
+                pendingUpload = _.reject(pendingUpload, {
+                    id: REQUEST_ID,
+                    messageID: message.ID
+                });
 
                 pmcw.decryptSessionKey(packets.keys, keys)
                     .then((sessionKey) => ({
