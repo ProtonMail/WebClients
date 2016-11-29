@@ -43,6 +43,7 @@ angular.module('proton.attachments')
         };
 
         $rootScope.$on(EVENT_NAME, (e, { type, data }) => {
+            console.trace({ type, data });
             switch (type) {
                 case 'close':
                     attachmentApi.killUpload(data);
@@ -171,7 +172,9 @@ angular.module('proton.attachments')
                     message.addAttachments(upload.map(({ attachment }) => attachment));
                     updateMapAttachments(upload);
 
-                    triggerEvent && dispatch('upload.success', { upload, message, messageID: message.ID });
+                    if (triggerEvent && upload.length) {
+                        dispatch('upload.success', { upload, message, messageID: message.ID });
+                    }
 
                     deferred.resolve();
                     return upload;
@@ -305,10 +308,10 @@ angular.module('proton.attachments')
             return AttachmentLoader.load(file, message.From.Keys[0].PublicKey, authentication.getPrivateKeys(message.From.ID))
                 .then((packets) => {
                     return attachmentApi.upload(packets, message, tempPacket, total)
-                        .then(({ attachment, sessionKey, REQUEST_ID, isAborted }) => {
+                        .then(({ attachment, sessionKey, REQUEST_ID, isAborted, isError }) => {
 
-                            if (isAborted) {
-                                return;
+                            if (isAborted || isError) {
+                                throw new Error('Request error');
                             }
 
                             // Extract content-id even if there are no headers
