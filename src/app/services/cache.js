@@ -40,11 +40,11 @@ angular.module('proton.cache', [])
      * Save messages in cache
      * @param {Array} messages
      */
-    const storeMessages = (messages) => {
+    function storeMessages(messages) {
         _.chain(messages)
             .map((message) => new Message(message))
             .each(updateMessage);
-    };
+    }
 
     /**
      * Store time for conversation per location
@@ -65,7 +65,7 @@ angular.module('proton.cache', [])
         const current = _.findWhere(messagesCached, { ID: currentMsg.ID });
         const message = new Message(currentMsg);
 
-        if (angular.isDefined(current)) {
+        if (current) {
             manageCounters(current, message, 'message');
             messagesCached = _.map(messagesCached, (msg) => {
 
@@ -188,6 +188,7 @@ angular.module('proton.cache', [])
      * @param {String} type - 'message' or 'conversation'
      */
     function manageCounters(oldElement, newElement, type) {
+        console.trace();
         const oldUnreadVector = vector(oldElement, true, type);
         const newUnreadVector = vector(newElement, true, type);
         const newTotalVector = vector(newElement, false, type);
@@ -833,13 +834,13 @@ angular.module('proton.cache', [])
     * @param {Boolean} fromBackend - indicate if the events come from the back-end
     * @return {Promise}
     */
-    api.events = (events, fromBackend, isSend) => {
+    api.events = (events = [], fromBackend = false, isSend) => {
         const deferred = $q.defer();
         const promises = [];
         const messageIDs = [];
         const conversationIDs = [];
 
-        if (fromBackend === true) {
+        if (fromBackend) {
             console.log('events from the back-end', events);
         } else {
             console.log('events from the front-end', events);
@@ -850,7 +851,7 @@ angular.module('proton.cache', [])
                 promises.push(api.delete(event));
                 messageIDs.push(event.ID);
                 conversationIDs.push(event.ID);
-            } else if (angular.isDefined(event.Message)) { // Manage message action
+            } else if (event.Message) { // Manage message action
                 event.Message.ID = event.ID;
                 messageIDs.push(event.ID);
 
@@ -867,7 +868,7 @@ angular.module('proton.cache', [])
                     default:
                         break;
                 }
-            } else if (angular.isDefined(event.Conversation)) { // Manage conversation action
+            } else if (event.Conversation) { // Manage conversation action
                 event.Conversation.ID = event.ID;
                 conversationIDs.push(event.ID);
 
