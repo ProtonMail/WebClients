@@ -173,7 +173,7 @@ angular.module('proton.controllers.Settings')
                         if (parameters.phase === 1) {
                             parameters.phase = 2;
                             parameters.type = 'mailbox';
-                            modal();
+                            setTimeout(() => modal(), 100); // timeout required to live with Angular
                         } else {
                             cancelAutoClose();
                         }

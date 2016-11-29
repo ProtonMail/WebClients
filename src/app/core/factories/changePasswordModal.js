@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('changePasswordModal', ($timeout, authentication, changeMailboxPassword, eventManager, gettextCatalog, networkActivityTracker, notify, pmModal, Setting, User) => {
+.factory('changePasswordModal', (authentication, changeMailboxPassword, eventManager, gettextCatalog, networkActivityTracker, notify, pmModal, Setting, User) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/changePassword.tpl.html',
@@ -28,7 +28,7 @@ angular.module('proton.core')
             self.cancel = () => {
                 close();
             };
-            $timeout(() => document.getElementById('newPassword').focus());
+            setTimeout(() => document.getElementById('newPassword').focus(), 0);
             $scope.$on('$destroy', () => {
                 if (phase !== 1) {
                     User.lock();
