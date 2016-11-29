@@ -106,7 +106,7 @@ angular.module('proton.controllers.Settings')
         }
     });
 
-    $scope.addCustomFilter = function () {
+    $scope.addCustomFilter = () => {
         const activeCustomFilters = _.where($scope.customFilters, { Status: 1 });
 
         if ($scope.isFree === true && activeCustomFilters.length === 1) {
@@ -123,7 +123,7 @@ angular.module('proton.controllers.Settings')
         }
     };
 
-    $scope.clearCustomFilters = function () {
+    $scope.clearCustomFilters = () => {
         const title = gettextCatalog.getString('Clear All', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to clear all custom filters?', null, 'Info');
 
@@ -152,7 +152,7 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.editCustomFilter = function (filter) {
+    $scope.editCustomFilter = (filter) => {
         filterModal.activate({
             params: {
                 mode: (filter.Simple && Object.keys(filter.Simple).length) ? 'simple' : 'complex',
@@ -164,7 +164,7 @@ angular.module('proton.controllers.Settings')
         });
     };
 
-    $scope.deleteCustomFilter = function (filter) {
+    $scope.deleteCustomFilter = (filter) => {
         const title = gettextCatalog.getString('Delete Filter', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to delete this filter?', null, 'Info');
 
@@ -236,11 +236,9 @@ angular.module('proton.controllers.Settings')
      * @param {Integer} folder
      * @return {Boolean}
      */
-    $scope.empty = function (folder) {
+    $scope.empty = (folder) => {
         let filters = $filter('filter')($scope.spamFilters, { Location: folder });
-
-        filters = $filter('filter')(filters, $scope.searchSpamFilter);
-
+        filters = $filter('spam')(filters, $scope.searchSpamFilter);
         return filters.length === 0;
     };
 
@@ -248,7 +246,7 @@ angular.module('proton.controllers.Settings')
      * Open a modal to a spam filter to a specific location
      * @param {Integer} folder
      */
-    $scope.addSpamFilter = function (folder) {
+    $scope.addSpamFilter = (folder) => {
         filterAddressModal.activate({
             params: {
                 location: folder,
@@ -268,7 +266,7 @@ angular.module('proton.controllers.Settings')
      * Delete a specific spam filter
      * @param {Object} filter
      */
-    $scope.deleteSpamFilter = function (filter) {
+    $scope.deleteSpamFilter = (filter) => {
         const IDs = [];
 
         // Hide all the tooltip
@@ -295,7 +293,7 @@ angular.module('proton.controllers.Settings')
      * @param {Object} filter
      * @param {Integer} folder
      */
-    $scope.switchSpamFilter = function (filter, folder) {
+    $scope.switchSpamFilter = (filter, folder) => {
         const clone = angular.copy(filter);
 
         // Hide all the tooltip
