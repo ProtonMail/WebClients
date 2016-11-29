@@ -17,21 +17,6 @@ angular.module('proton.controllers.Support', [
     Key,
     networkActivityTracker
 ) => {
-    $scope.keyPhase = CONSTANTS.KEY_PHASE;
-
-    $scope.states = {
-        RECOVERY: 1,
-        CODE: 2,
-        DANGER: 3,
-        PASSWORD: 4,
-        GENERATE: 5,
-        INSTALL: 6
-    };
-
-    $scope.tools = tools;
-    $scope.params = {};
-    $scope.params.recoveryEmail = '';
-    $scope.params.username = '';
 
     function resetState() {
         $scope.params.resetToken = '';
@@ -42,6 +27,23 @@ angular.module('proton.controllers.Support', [
         $scope.resetState = $scope.states.RECOVERY;
     }
 
+    $scope.keyPhase = CONSTANTS.KEY_PHASE;
+
+    $scope.states = {
+        RECOVERY: 1,
+        CODE: 2,
+        CHECKING: 3,
+        DANGER: 4,
+        PASSWORD: 5,
+        GENERATE: 6,
+        INSTALL: 7
+    };
+
+    $scope.tools = tools;
+    $scope.params = {};
+    $scope.params.recoveryEmail = '';
+    $scope.params.username = '';
+
     let passwordMode = 0;
 
     resetState();
@@ -51,15 +53,15 @@ angular.module('proton.controllers.Support', [
     $scope.logUserIn = false;
     $scope.finishInstall = false;
 
-    $scope.getMessageTitle = function () {
+    $scope.getMessageTitle = () => {
         return $state.params.data.title || '';
     };
 
-    $scope.getMessageContent = function () {
+    $scope.getMessageContent = () => {
         return $state.params.data.content || '';
     };
 
-    $scope.getMessageType = function () {
+    $scope.getMessageType = () => {
         return $state.params.data.type || '';
     };
 
@@ -67,7 +69,7 @@ angular.module('proton.controllers.Support', [
      * Request a token to reset login pass. Some validation first.
      * Shows errors otherwise sets a flag to show a different form
      */
-    $scope.resetLostPassword = function () {
+    $scope.resetLostPassword = () => {
         $scope.params.username = $scope.params.username;
         networkActivityTracker.track(
             Reset.requestResetToken({
@@ -88,7 +90,9 @@ angular.module('proton.controllers.Support', [
      * Validates the token and shows the last form
      * @param form {Form}
      */
-    $scope.validateToken = function () {
+    $scope.validateToken = () => {
+
+        $scope.resetState = $scope.states.CHECKING;
 
         $scope.tokenParams = {
             Username: $scope.params.username,
@@ -123,7 +127,7 @@ angular.module('proton.controllers.Support', [
         });
     };
 
-    $scope.confirmReset = function () {
+    $scope.confirmReset = () => {
         $scope.resetState = $scope.states.PASSWORD;
     };
 
@@ -188,7 +192,7 @@ angular.module('proton.controllers.Support', [
      * Saves new login pass. Shows success page.
      * @param form {Form}
      */
-    $scope.resetPassword = function () {
+    $scope.resetPassword = () => {
 
         networkActivityTracker.track(
         doReset()
@@ -203,4 +207,16 @@ angular.module('proton.controllers.Support', [
             });
         }));
     };
+
+    // Can't user $stateParams because support is a single controller
+    // This should be refactored into the support message controller and the reset controller
+    // after mailbox password reset is fully deprecated
+    if ($state.is('support.reset-password') && $state.params.username && $state.params.token) {
+        $scope.resetState = $scope.states.CHECKING;
+
+        $scope.params.username = $state.params.username;
+        $scope.params.resetToken = $state.params.token;
+
+        $scope.validateToken();
+    }
 });
