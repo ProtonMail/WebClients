@@ -1,8 +1,29 @@
 angular.module('proton.attachments')
-    .factory('embeddedStore', () => {
+    .factory('embeddedStore', ($rootScope) => {
+
         const Blobs = {};
         const MAP_BLOBS = {};
         let CIDList = {};
+
+        const PREFIX_DRAFT = 'draft_';
+        const urlCreator = () => window.URL || window.webkitURL;
+
+
+        /**
+         * When we close the composer we need to deallocate Blobs used by this composer
+         * @param  {String} 'composer.close'     EventName
+         * @param  {Object} e                    Event from Angular
+         * @return {String} opt.ID               ID of a message/conversation
+         * @return {String} opt.ConversationID   ID of a message
+         */
+        $rootScope.$on('composer.close', (e, { ID, ConversationID }) => {
+            const key = `${PREFIX_DRAFT}${ConversationID || ID}`;
+
+            // Clean these blobs !
+            if (MAP_BLOBS[key]) {
+                deallocateList(key);
+            }
+        });
 
         function getHashKey(msg) {
             const isDraft = msg.isDraft ? msg.isDraft() : false;
@@ -20,7 +41,7 @@ angular.module('proton.attachments')
          */
         function deallocateList(key) {
             const list = MAP_BLOBS[key] || [];
-            each(list, (cid) => {
+            _.each(list, (cid) => {
                 if (Blobs[cid]) {
                     urlCreator().revokeObjectURL(Blobs[cid].url);
                     // Remove the Blob ref from our store
@@ -86,5 +107,40 @@ angular.module('proton.attachments')
             };
         };
 
-        return { store };
+        const readCID = (Headers = {}) => {
+            if (Headers['content-id']) {
+                return trimQuotes(Headers['content-id']);
+            }
+
+            // We can find an image without cid so base64 the location
+            if (Headers['content-location']) {
+                return trimQuotes(Headers['content-location']);
+            }
+
+            return '';
+        };
+
+        const getMessageCIDs = ({ ID }) => CIDList[ID] || {};
+        const containsMessageCIDs = ({ ID }) => !!Object.keys(CIDList[ID] || {}).length;
+        const addMessageCID = (message, { Headers = {}, Name = '' }) => {
+
+            (!CIDList[message.ID]) && (CIDList[message.ID] = {});
+            !message.NumEmbedded && (message.NumEmbedded = 0);
+
+            const cid = readCID(Headers);
+            Headers.embedded = 1;
+            message.NumEmbedded++;
+            CIDList[message.ID][cid] = { Headers, Name };
+        };
+
+        return {
+            store,
+            deallocate,
+            cid: {
+                init: () => (CIDList = {}),
+                contains: containsMessageCIDs,
+                add: addMessageCID,
+                get: getMessageCIDs
+            }
+        };
     });
