@@ -17,7 +17,7 @@ angular.module('proton.core')
             self.confirmPassword = '';
             self.submit = () => {
                 const promise = promises[type]()
-                .then(() => ((phase === 1) ? Promise.resolve() : User.lock()))
+                .then(() => ((phase === 1) ? Promise.resolve() : User.lock()), () => User.lock())
                 .then(() => eventManager.call())
                 .then(() => {
                     const message = gettextCatalog.getString('Password updated', null);
