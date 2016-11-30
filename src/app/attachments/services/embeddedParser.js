@@ -1,8 +1,7 @@
 angular.module('proton.attachments')
-    .factory('embeddedParser', (embeddedStore, embeddedFinder, AttachmentLoader, attachmentFileFormat, authentication) => {
+    .factory('embeddedParser', (embeddedStore, embeddedFinder, embeddedUtils, AttachmentLoader, attachmentFileFormat, authentication) => {
 
         const DIV = document.createElement('DIV');
-        const REGEXP_IS_INLINE = /^inline/i;
         const EMBEDDED_CLASSNAME = 'proton-embedded';
 
         /**
@@ -97,7 +96,6 @@ angular.module('proton.attachments')
                         .then((buffer) => storeAttachement(buffer, attachment.MIMEType));
                 })
                 .value();
-
 
 
             if (!promise.length) {

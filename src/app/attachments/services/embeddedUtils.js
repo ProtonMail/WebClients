@@ -4,7 +4,6 @@ angular.module('proton.attachments')
         const DIV = document.createElement('DIV');
         const REGEXP_IS_INLINE = /^inline/i;
         const REGEXP_CID_START = /^cid:/g;
-        const EMBEDDED_CLASSNAME = 'proton-embedded';
 
         /**
          * Flush the container HTML and return the container
@@ -42,7 +41,7 @@ angular.module('proton.attachments')
 
         const isInline = (Headers = {}) => {
             const value = Headers['content-disposition'] || '';
-            return REGEXP_IS_INLINE.test(value)
+            return REGEXP_IS_INLINE.test(value);
         };
 
         function isEmbedded({ Headers = {}, MIMEType = '' }) {
