@@ -78,42 +78,33 @@ angular.module('proton.controllers.Settings')
     $scope.saveNotification = (form) => {
         function submit(currentPassword, twoFactorCode) {
             loginPasswordModal.deactivate();
-
-            const credentials = {
-                Password: currentPassword,
-                TwoFactorCode: twoFactorCode
-            };
-
-            networkActivityTracker.track(
-                $q.when()
-                .then(() => {
-                    if ($scope.notificationEmail !== authentication.user.NotificationEmail) {
-                        return Setting.noticeEmail({
-                            NotificationEmail: $scope.notificationEmail
-                        }, credentials);
-                    }
-                })
-                .then(() => {
-                    if ($scope.passwordReset !== authentication.user.PasswordReset) {
-                        return Setting.passwordReset({
-                            PasswordReset: $scope.passwordReset ? 1 : 0
-                        }, credentials);
-                    }
-                })
-                .then(() => {
-                    authentication.user.NotificationEmail = $scope.notificationEmail;
-                    authentication.user.PasswordReset = $scope.passwordReset;
-                    form.$setUntouched();
-                    form.$setPristine();
-                    notify({
-                        message: gettextCatalog.getString('Notification email saved', null),
-                        classes: 'notification-success'
-                    });
-                })
-            )
-            .catch((error) => {
-                notify({ message: error, classes: 'notification-danger' });
+            const credentials = { Password: currentPassword, TwoFactorCode: twoFactorCode };
+            const promise = Setting.noticeEmail({ NotificationEmail: $scope.notificationEmail }, credentials)
+            .then(() => {
+                authentication.user.NotificationEmail = $scope.notificationEmail;
+                form.$setUntouched();
+                form.$setPristine();
+                notify({
+                    message: gettextCatalog.getString('Notification email saved', null),
+                    classes: 'notification-success'
+                });
             });
+            networkActivityTracker.track(promise);
+        }
+
+        passwordModal(submit);
+    };
+
+    $scope.savePasswordReset = () => {
+        function submit(currentPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
+            const credentials = { Password: currentPassword, TwoFactorCode: twoFactorCode };
+            const promise = Setting.passwordReset({ PasswordReset: $scope.passwordReset }, credentials)
+            .then(() => {
+                authentication.user.PasswordReset = $scope.passwordReset;
+                notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
+            });
+            networkActivityTracker.track(promise);
         }
 
         passwordModal(submit);
@@ -226,7 +217,7 @@ angular.module('proton.controllers.Settings')
         $scope.displayName = authentication.user.DisplayName;
         $scope.PMSignature = Boolean(authentication.user.PMSignature);
         $scope.notificationEmail = authentication.user.NotificationEmail;
-        $scope.passwordReset = Boolean(authentication.user.PasswordReset);
+        $scope.passwordReset = authentication.user.PasswordReset;
         $scope.dailyNotifications = authentication.user.Notify;
         $scope.desktopNotificationsStatus = desktopNotifications.status();
         $scope.autosaveContacts = authentication.user.AutoSaveContacts;
