@@ -4,6 +4,7 @@ angular.module('proton.attachments')
         const embedded = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 
         const isIE = () => $.browser.msie && $.browser.versionNumber === 11;
+        const isSafari = () => $.browser.safari;
         const isEmbedded = (key) => _.contains(embedded, key);
         const getEmbedded = () => embedded;
 
@@ -37,7 +38,11 @@ angular.module('proton.attachments')
                 return false;
             }
 
-            return [...(dataTransfer.types || [])].every(isUploadMIMEType);
+            if (isSafari()) {
+                return list.some((type) => type === 'Files');
+            }
+
+            return list.every(isUploadMIMEType);
         };
 
         return { isEmbedded, getEmbedded, isUploadAbleType };
