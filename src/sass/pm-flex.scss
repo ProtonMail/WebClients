@@ -5,8 +5,12 @@
     @include flexColumn();
 }
 
+
 .pm-flex-content-row {
     @include flexRow();
+    &.alignItemsCenter {
+        align-items: center;
+    }
 }
 
 .pm-flex-content-vertical-center {
