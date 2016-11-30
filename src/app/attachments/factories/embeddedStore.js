@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .factory('embeddedStore', ($rootScope) => {
+    .factory('embeddedStore', ($rootScope, embeddedUtils) => {
 
         const Blobs = {};
         const MAP_BLOBS = {};
@@ -61,8 +61,7 @@ angular.module('proton.attachments')
          */
         function deallocate(message = {}) {
             const key = getHashKey(message);
-            Object
-                .keys(MAP_BLOBS)
+            Object.keys(MAP_BLOBS)
                 .filter((k) => k !== key && k.indexOf(PREFIX_DRAFT) !== 0) // Do nothing for draft and itself
                 .forEach(deallocateList);
         }
@@ -107,38 +106,47 @@ angular.module('proton.attachments')
             };
         };
 
-        const readCID = (Headers = {}) => {
-            if (Headers['content-id']) {
-                return trimQuotes(Headers['content-id']);
-            }
-
-            // We can find an image without cid so base64 the location
-            if (Headers['content-location']) {
-                return trimQuotes(Headers['content-location']);
-            }
-
-            return '';
-        };
+        const getBlob = (cid) => (Blobs[cid] || {});
+        const hasBlob = (cid) => !!Blobs[cid];
 
         const getMessageCIDs = ({ ID }) => CIDList[ID] || {};
-        const containsMessageCIDs = ({ ID }) => !!Object.keys(CIDList[ID] || {}).length;
+        const containsMessageCIDs = ({ ID }) => Object.keys(CIDList[ID] || {}).length > 0;
         const addMessageCID = (message, { Headers = {}, Name = '' }) => {
 
             (!CIDList[message.ID]) && (CIDList[message.ID] = {});
             !message.NumEmbedded && (message.NumEmbedded = 0);
 
-            const cid = readCID(Headers);
+            const cid = embeddedUtils.readCID(Headers);
             Headers.embedded = 1;
             message.NumEmbedded++;
             CIDList[message.ID][cid] = { Headers, Name };
         };
 
+        /**
+         * Check if the cid exist for a specific message
+         * @param {Resource} message
+         * @param {String} cid
+         * @return {Boolean}
+         */
+        const existMessageCID = (message, cid) => {
+            return !!getMessageCIDs(message)[cid];
+        };
+
+        const getBlobValue = (cid) => {
+            const { url } = getBlob(cid);
+            return embeddedUtils.getBlobFromURL(url);
+        };
+
         return {
             store,
             deallocate,
+            getBlob,
+            hasBlob,
+            getBlobValue,
             cid: {
                 init: () => (CIDList = {}),
                 contains: containsMessageCIDs,
+                exist: existMessageCID,
                 add: addMessageCID,
                 get: getMessageCIDs
             }

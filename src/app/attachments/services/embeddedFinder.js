@@ -1,13 +1,5 @@
 angular.module('proton.attachments')
-    .factory('embeddedFinder', (embeddedStore, attachmentFileFormat) => {
-
-        const REGEXP_IS_INLINE = /^inline/i;
-
-        function isEmbedded({ Headers = {}, MIMEType = '' }) {
-            const disposition = Headers['content-disposition'];
-
-            return typeof disposition !== 'undefined' && REGEXP_IS_INLINE.test(disposition) && attachmentFileFormat.isEmbedded(MIMEType);
-        }
+    .factory('embeddedFinder', (embeddedStore, embeddedUtils) => {
 
         const find = (message) => {
             const list = message.getAttachments();
@@ -17,7 +9,7 @@ angular.module('proton.attachments')
             }
 
             _.each(list, (attachment) => {
-                if (isEmbedded(attachment)) {
+                if (embeddedUtils.isEmbedded(attachment)) {
                     embeddedStore.cid.add(message, attachment);
                 }
             });
@@ -25,18 +17,11 @@ angular.module('proton.attachments')
             return embeddedStore.cid.contains(message);
         };
 
-        const extractAttachementName = (Headers = {}) => {
-            if (Headers['content-disposition'] !== 'inline') {
-                const [, name ] = Headers['content-disposition'].split('filename=');
-
-                if (name) {
-                    return name.replace(/"/g, '');
-                }
-            }
-
-            return '';
-        };
-
+        /**
+         * Find all attachements inline
+         * @param  {Message}
+         * @return {Array}
+         */
         const listInlineAttachments = (message) => {
             const list = message.getAttachments();
             const MAP_CID = embeddedStore.cid.get(message);
@@ -45,7 +30,7 @@ angular.module('proton.attachments')
                 .reduce((acc, cid) => {
                     // Extract current attachement content-id
                     const contentId = MAP_CID[cid].Headers['content-id'];
-                    const contentName = extractAttachementName(MAP_CID[cid].Headers);
+                    const contentName = embeddedUtils.getAttachementName(MAP_CID[cid].Headers);
 
                     // Find the matching attachement
                     const attachment = list.filter(({ Headers = {}, Name = '' } = {}) => {
