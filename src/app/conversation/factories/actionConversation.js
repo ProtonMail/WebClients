@@ -61,7 +61,7 @@ angular.module('proton.conversation')
 
                     const element = {
                         ID: conversationID,
-                        NumUnread: conversation.NumUnread,
+                        NumUnread: (toTrash) ? 0 : conversation.NumUnread,
                         Selected: false,
                         LabelIDsRemoved: labelIDsRemoved, // Remove current location
                         LabelIDsAdded: labelIDsAdded // Add new location
