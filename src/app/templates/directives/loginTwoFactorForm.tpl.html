@@ -19,7 +19,7 @@
     <input autofocus maxlength="{{ ::maxPW }}" autocapitalize="off" autocorrect="off" type="text" ng-model="twoFactorCode" tabindex="2" id="twoFactorCode" name="twoFactorCode" class="margin" required="" placeholder-translate="Two-factor passcode" />
 
     <div class="clearfix">
-        <a class="pm_button link pull-left" ng-click="getLoginHelp()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
+        <a class="pm_button link pull-left" ng-click="displayHelpModal()" translate-context="Action" translate-comment="link for login help" translate>Need help?</a>
         <button id="login_btn" type="submit" tabindex="3" class="pm_button primary pull-right" ng-class="{disabled: networkActivity.loading()}" translate-context="Action" translate>Login</button>
     </div>
 
