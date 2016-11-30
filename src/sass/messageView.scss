@@ -265,6 +265,9 @@
                     display: inline-block;
                     text-align: right;
                     width: 1rem;
+                    &.pgp {
+                        color: $pgp;
+                    }
                 }
             }
             .labels {

@@ -40,11 +40,11 @@ angular.module('proton.cache', [])
      * Save messages in cache
      * @param {Array} messages
      */
-    const storeMessages = (messages) => {
+    function storeMessages(messages) {
         _.chain(messages)
             .map((message) => new Message(message))
             .each(updateMessage);
-    };
+    }
 
     /**
      * Store time for conversation per location
@@ -65,8 +65,7 @@ angular.module('proton.cache', [])
         const current = _.findWhere(messagesCached, { ID: currentMsg.ID });
         const message = new Message(currentMsg);
 
-        if (angular.isDefined(current)) {
-            manageCounters(current, message, 'message');
+        if (current) {
             messagesCached = _.map(messagesCached, (msg) => {
 
                 // Force update if it's a new message
@@ -114,7 +113,6 @@ angular.module('proton.cache', [])
             }
 
             conversation.LabelIDs = labelIDs;
-            manageCounters(current, conversation, 'conversation');
             _.extend(current, conversation);
         } else {
             conversationsCached.push(conversation);
@@ -246,9 +244,10 @@ angular.module('proton.cache', [])
 
                 // Only for cache context
                 if (context) {
-                    const unread = (data.Total === 0) ? 0 : data.Unread;
                     // Set total value in cache
-                    cacheCounters.updateConversation(loc, data.Total, unread);
+                    const total = data.Total;
+                    const unread = (data.Total === 0) ? 0 : data.Unread;
+                    cacheCounters.updateConversation(loc, total, unread);
                     // Store conversations
                     storeConversations(data.Conversations);
                     api.clearDispatcher();
@@ -827,22 +826,67 @@ angular.module('proton.cache', [])
         });
     };
 
+    function getLabelsId(oldElement = {}, newElement = {}) {
+        let labelIDs = newElement.LabelIDs || oldElement.LabelIDs || [];
+
+        if (angular.isArray(newElement.LabelIDsRemoved)) {
+            labelIDs = _.difference(labelIDs, newElement.LabelIDsRemoved);
+        }
+
+        if (angular.isArray(newElement.LabelIDsAdded)) {
+            labelIDs = _.uniq(labelIDs.concat(newElement.LabelIDsAdded));
+        }
+
+        return labelIDs;
+    }
+
+    /**
+     * Set new counters value from FE events
+     * @param  {Array} events
+     */
+    function handleCounters(events = []) {
+        _.chain(events)
+         .filter((event) => event.Message)
+         .map((event) => event.Message)
+         .each((newMessage) => {
+             const oldMessage = _.findWhere(messagesCached, { ID: newMessage.ID });
+             if (oldMessage) {
+                 newMessage.LabelIDs = getLabelsId(oldMessage, newMessage);
+                 manageCounters(oldMessage, newMessage, 'message');
+             }
+         });
+        _.chain(events)
+         .filter((event) => event.Conversation)
+         .map((event) => event.Conversation)
+         .each((newConversation) => {
+             const oldConversation = _.findWhere(conversationsCached, { ID: newConversation.ID });
+             if (oldConversation) {
+                 newConversation.LabelIDs = getLabelsId(oldConversation, newConversation);
+                 manageCounters(oldConversation, newConversation, 'conversation');
+             }
+         });
+    }
+
     /**
     * Manage the cache when a new event comes
     * @param {Array} events - Object managing interaction with messages and conversations stored
     * @param {Boolean} fromBackend - indicate if the events come from the back-end
     * @return {Promise}
     */
-    api.events = (events, fromBackend, isSend) => {
+    api.events = (events = [], fromBackend = false, isSend) => {
         const deferred = $q.defer();
         const promises = [];
         const messageIDs = [];
         const conversationIDs = [];
 
-        if (fromBackend === true) {
+        if (fromBackend) {
             console.log('events from the back-end', events);
         } else {
             console.log('events from the front-end', events);
+        }
+
+        if (!fromBackend) {
+            handleCounters(events);
         }
 
         events.forEach((event) => {
@@ -850,7 +894,7 @@ angular.module('proton.cache', [])
                 promises.push(api.delete(event));
                 messageIDs.push(event.ID);
                 conversationIDs.push(event.ID);
-            } else if (angular.isDefined(event.Message)) { // Manage message action
+            } else if (event.Message) { // Manage message action
                 event.Message.ID = event.ID;
                 messageIDs.push(event.ID);
 
@@ -867,7 +911,7 @@ angular.module('proton.cache', [])
                     default:
                         break;
                 }
-            } else if (angular.isDefined(event.Conversation)) { // Manage conversation action
+            } else if (event.Conversation) { // Manage conversation action
                 event.Conversation.ID = event.ID;
                 conversationIDs.push(event.ID);
 
@@ -1001,16 +1045,14 @@ angular.module('proton.cache', [])
     * @return {Promise}
     */
     api.query = () => {
-        const deferred = $q.defer();
         const idsLabel = _.map(authentication.user.Labels, ({ ID }) => ID) || [];
         const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(idsLabel);
 
-        $q.all({
+        return $q.all({
             message: Message.count().$promise,
             conversation: Conversation.count()
         })
         .then(({ message = {}, conversation = {} } = {}) => {
-
             // Initialize locations
             locs.forEach(exist);
 
@@ -1027,18 +1069,15 @@ angular.module('proton.cache', [])
                     counters[LabelID].conversation.total = Total;
                     counters[LabelID].conversation.unread = Unread;
                 });
-
-            deferred.resolve();
-        }, deferred.reject);
-
-        return deferred.promise;
+            return Promise.resolve();
+        }, Promise.reject);
     };
 
     /**
      * Add a new location
      * @param {String} loc
      */
-    api.add = (loc) => {
+    api.add = (loc = '') => {
         exist(loc);
     };
 
@@ -1048,13 +1087,11 @@ angular.module('proton.cache', [])
     * @param {Integer} total
     * @param {Integer} unread
     */
-    api.updateMessage = (loc, total, unread) => {
+    api.updateMessage = (loc = '', total, unread) => {
         exist(loc);
-
         if (angular.isDefined(total)) {
             counters[loc].message.total = total;
         }
-
         if (angular.isDefined(unread)) {
             counters[loc].message.unread = unread;
         }
@@ -1066,13 +1103,11 @@ angular.module('proton.cache', [])
      * @param {Integer} total
      * @param {Integer} unread
      */
-    api.updateConversation = (loc, total, unread) => {
+    api.updateConversation = (loc = '', total, unread) => {
         exist(loc);
-
         if (angular.isDefined(total)) {
             counters[loc].conversation.total = total;
         }
-
         if (angular.isDefined(unread)) {
             counters[loc].conversation.unread = unread;
         }
@@ -1082,7 +1117,7 @@ angular.module('proton.cache', [])
     * Get the total of messages for a specific loc
     * @param {String} loc
     */
-    api.totalMessage = (loc) => {
+    api.totalMessage = (loc = '') => {
         return counters[loc] && counters[loc].message && counters[loc].message.total;
     };
 
@@ -1090,7 +1125,7 @@ angular.module('proton.cache', [])
     * Get the total of conversation for a specific loc
     * @param {String} loc
     */
-    api.totalConversation = (loc) => {
+    api.totalConversation = (loc = '') => {
         return counters[loc] && counters[loc].conversation && counters[loc].conversation.total;
     };
 
@@ -1098,7 +1133,7 @@ angular.module('proton.cache', [])
     * Get the number of unread messages for the specific loc
     * @param {String} loc
     */
-    api.unreadMessage = (loc) => {
+    api.unreadMessage = (loc = '') => {
         return counters[loc] && counters[loc].message && counters[loc].message.unread;
     };
 
@@ -1106,7 +1141,7 @@ angular.module('proton.cache', [])
     * Get the number of unread conversation for the specific loc
     * @param {String} loc
     */
-    api.unreadConversation = (loc) => {
+    api.unreadConversation = (loc = '') => {
         return counters[loc] && counters[loc].conversation && counters[loc].conversation.unread;
     };
 
