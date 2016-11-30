@@ -15,7 +15,7 @@
         -webkit-flex-direction:column;
         flex-direction: column;
 
-        -webkit-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden; /* fix safari issue on containsMessage not diplayed properly */
 
         /*
         Supercalifragilisticexpialidocious h1
