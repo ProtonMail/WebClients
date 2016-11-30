@@ -156,38 +156,6 @@ input:-moz-ui-invalid {
 
 // Safari
 .ua-safari {
-
-    .labelDropdown .wrapper li input {
-        height: initial;
-        top: 11px;
-    }
-
-    .conversation .pm_labels label {
-        &:first-child,
-        &:hover {
-            position: relative;
-            top: -4px;
-        }
-        &.single {
-            top: -1px !important;
-        }
-    }
-    #conversation-view .summary .pm_labels label{
-        &:first-child {
-            position: relative;
-            top: -6px;
-        }
-    }
-    #conversation-view .message > div.summary .labels .pm_labels label:hover {
-        top: -6px;
-    }
-    #conversation-view .message > div.summary .labels .pm_labels label.more {
-        top: -7px;
-    }
-    #conversation-list-columns,
-    #conversation-list-rows {
-        .pm_labels label.more {
-            top: -7px;
-        }
-    }
+    #conversation-list-rows .conversation .subject .pm_labels,
+    #conversation-view .message > div.summary .labels .pm_labels { top: 0 }
 }

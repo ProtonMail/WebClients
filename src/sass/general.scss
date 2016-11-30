@@ -23,6 +23,9 @@ html.protonmail {
 			.mobileOnly {
 				display: block;
 			}
+			.mobile-display-column {
+				@include flexColumn();
+			}
 			&.locked {
 				overflow: initial !important;
 			}
