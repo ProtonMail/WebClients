@@ -6,7 +6,7 @@ angular.module('proton.routes', [
 ])
 
 .config(($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) => {
-    const conversationParameters = function () {
+    const conversationParameters = () => {
         const parameters = [
             'email',
             'address',
@@ -410,7 +410,7 @@ angular.module('proton.routes', [
 
                     $scope.tokenError = !encryptedToken;
 
-                    $scope.unlock = function () {
+                    $scope.unlock = () => {
 
                         const promise = pmcw
                             .decryptMessage(encryptedToken, $scope.params.MessagePassword)
@@ -505,7 +505,7 @@ angular.module('proton.routes', [
             }
         },
         onEnter(gettextCatalog) {
-            window.onbeforeunload = function () {
+            window.onbeforeunload = () => {
                 return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
         },
@@ -539,7 +539,7 @@ angular.module('proton.routes', [
 
                 return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
             },
-            subscription(Payment) {
+            subscription(user, Payment) {
                 return Payment.subscription()
                 .then((result = {}) => {
                     const { data = {} } = result;
