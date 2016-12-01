@@ -539,6 +539,16 @@ angular.module('proton.routes', [
 
                 return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
             },
+            subscription(Payment) {
+                return Payment.subscription()
+                .then((result = {}) => {
+                    const { data = {} } = result;
+                    if (data.Code === 1000) {
+                        return Promise.resolve(data.Subscription);
+                    }
+                    return Promise.reject();
+                });
+            },
             organization($q, user, Organization) {
                 const deferred = $q.defer();
 
@@ -752,9 +762,6 @@ angular.module('proton.routes', [
             // Return monthly plans
             monthly(subscription, user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.plans(subscription.data.Subscription.Currency, 1));
-            },
-            subscription(user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.subscription());
             },
             methods(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
