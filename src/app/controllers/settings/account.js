@@ -147,9 +147,9 @@ angular.module('proton.controllers.Settings')
                 params: {
                     phase: parameters.phase,
                     type: parameters.type,
-                    close() {
+                    close(next) {
                         changePasswordModal.deactivate();
-                        if (parameters.phase === 1) {
+                        if (next) {
                             parameters.phase = 2;
                             parameters.type = 'mailbox';
                             setTimeout(() => modal(), 100); // timeout required to live with Angular
