@@ -788,12 +788,12 @@ angular.module('proton.routes', [
                 return deferred.promise;
             },
             // Return yearly plans
-            yearly(user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.plans(user.Currency, 12));
+            yearly(subscription, user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.plans(subscription.Currency, 12));
             },
             // Return monthly plans
-            monthly(user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.plans(user.Currency, 1));
+            monthly(subscription, user, Payment, networkActivityTracker) {
+                return networkActivityTracker.track(Payment.plans(subscription.Currency, 1));
             },
             methods(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
