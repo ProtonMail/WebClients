@@ -22,7 +22,6 @@ angular.module('proton.controllers.Settings')
     monthly,
     pmcw,
     status,
-    subscription,
     supportModal,
     CONSTANTS,
     tools,
@@ -125,7 +124,7 @@ angular.module('proton.controllers.Settings')
      * @param {Object} yearly
      * @param {Array} methods
      */
-    $scope.initialization = function (subscription, monthly, yearly, methods) {
+    $scope.initialization = (subscription, monthly, yearly, methods) => {
         if (angular.isDefined(subscription)) {
             _.extend($scope.subscription, subscription);
             $scope.configuration.cycle = subscription.Cycle;
@@ -182,7 +181,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Scroll to the plans section
      */
-    $scope.scrollToPlans = function () {
+    $scope.scrollToPlans = () => {
         $('.settings').animate({
             scrollTop: $('#plans').offset().top
         }, 1000);
@@ -204,7 +203,7 @@ angular.module('proton.controllers.Settings')
     * Returns a string for the storage bar
     * @return {String} "12.5"
     */
-    $scope.percentage = function () {
+    $scope.percentage = () => {
         // return Math.round(100 * $scope.organization.UsedSpace / $scope.organization.MaxSpace);
     };
 
@@ -212,7 +211,7 @@ angular.module('proton.controllers.Settings')
      * Count the number of type in the current subscription
      * @param {String} type
      */
-    $scope.count = function (type) {
+    $scope.count = (type) => {
         let count = 0;
 
         if ($scope.subscription.Plans) {
@@ -228,7 +227,7 @@ angular.module('proton.controllers.Settings')
      * Calculate price for a specific type in the current subscription
      * @param {String} name
      */
-    $scope.price = function (name) {
+    $scope.price = (name) => {
         let price = 0;
 
         if ($scope.subscription.Plans) {
@@ -245,7 +244,7 @@ angular.module('proton.controllers.Settings')
     * @param {String} name
     * @param {Integer} cycle
     */
-    $scope.total = function ({ Name }, Cycle) {
+    $scope.total = ({ Name }, Cycle) => {
         let total = 0;
 
         // Base price for this plan
@@ -269,7 +268,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Change current currency
      */
-    $scope.changeCurrency = function (currency) {
+    $scope.changeCurrency = (currency) => {
         const deferred = $q.defer();
 
         if ($scope.configuration.Currency === currency) {
@@ -294,7 +293,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Change current cycle
      */
-    $scope.changeCycle = function (cycle) {
+    $scope.changeCycle = (cycle) => {
         $scope.configuration.cycle = cycle;
     };
 
@@ -303,7 +302,7 @@ angular.module('proton.controllers.Settings')
      * @param {Object} plan
      * @return {string} text
      */
-    $scope.text = function (plan) {
+    $scope.text = (plan) => {
         let text;
 
         if (plan.Name === 'free') {
@@ -342,7 +341,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Open donate modal
      */
-    $scope.donate = function () {
+    $scope.donate = () => {
         if (status.data.Stripe === true) {
             networkActivityTracker.track(
                 Payment.methods()
@@ -382,7 +381,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Open a modal to confirm to switch to the free plan
      */
-    $scope.free = function () {
+    $scope.free = () => {
         const title = gettextCatalog.getString('Confirm downgrade', null, 'Title');
         const message = gettextCatalog.getString('This will downgrade your account to a free account.<br /><br />Active aliases and custom domain addresses will be disabled automatically.<br /><br />ProtonMail is free software that is supported by donations and paid accounts. Please consider <a href="https://protonmail.com/donate" target="_blank">making a donation</a> so we can continue to offer the service for free.', null, 'Info');
 
@@ -409,7 +408,7 @@ angular.module('proton.controllers.Settings')
     /**
     * Open modal to display information about how contact the support team to setup the enterprise plan
     */
-    $scope.enterprise = function () {
+    $scope.enterprise = () => {
         supportModal.activate({
             params: {
                 cancel() {
@@ -423,7 +422,7 @@ angular.module('proton.controllers.Settings')
     * Open modal to pay the plan configured
     * @param {Object} plan
     */
-    $scope.choose = function (plan, choice) {
+    $scope.choose = (plan, choice) => {
         if (plan.Name === 'free') {
             $scope.free();
         } else {
@@ -522,7 +521,7 @@ angular.module('proton.controllers.Settings')
     /**
     * Initialize select with the correct quantity object
     */
-    $scope.initQuantity = function (element) {
+    $scope.initQuantity = (element) => {
         const option = _.findWhere($scope.options, { value: element.quantity });
 
         if (angular.isDefined(option)) {
@@ -531,5 +530,5 @@ angular.module('proton.controllers.Settings')
     };
 
     // Call initialization
-    $scope.initialization(subscription.data.Subscription, monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
+    $scope.initialization($scope.subscription, monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
 });
