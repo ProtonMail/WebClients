@@ -11,9 +11,7 @@ module.exports = ({ message, editor }) => {
             popover = borodin.addFilePopover();
             popover.openForm()
                 .then(() => popover.isVisible())
-                .then((test) => {
-                    expect(test).toEqual(true);
-                });
+                .then(isTrue);
         });
 
         it('should close the popover on submit', () => {
