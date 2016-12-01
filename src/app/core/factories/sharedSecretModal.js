@@ -6,7 +6,7 @@ angular.module('proton.core')
         controller(params) {
             const randomBytes = webcrypto.getRandomValues(new Uint8Array(20));
             const sharedSecret = base32.encode(randomBytes);
-            const primaryAddress = _.find(authentication.user.Addresses, () => true);
+            const primaryAddress = _.find(authentication.user.Addresses, ({ Keys }) => Keys);
             const identifier = (primaryAddress) ? primaryAddress.Email : authentication.user.Name + '@protonmail';
             const qrURI = 'otpauth://totp/' + identifier + '?secret=' + sharedSecret + '&issuer=ProtonMail&algorithm=SHA1&digits=6&period=30';
 
