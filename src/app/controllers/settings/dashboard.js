@@ -18,6 +18,7 @@ angular.module('proton.controllers.Settings')
     Organization,
     Payment,
     paymentModal,
+    subscription,
     methods,
     monthly,
     pmcw,
@@ -530,5 +531,5 @@ angular.module('proton.controllers.Settings')
     };
 
     // Call initialization
-    $scope.initialization($scope.subscription, monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
+    $scope.initialization(subscription, monthly.data.Plans, yearly.data.Plans, methods.data.PaymentMethods);
 });
