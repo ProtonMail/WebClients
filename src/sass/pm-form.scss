@@ -287,7 +287,7 @@
     /* 2FA input style */
     input[type="text"].TwoFA-input {
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         letter-spacing: 2px;
 
         @mixin resetTwoFA-input() {
@@ -297,7 +297,7 @@
 
         &::-webkit-input-placeholder {
             @include resetTwoFA-input()
-            line-height: 24px;
+            line-height: 24px; /* safari */
         }
         &:-moz-placeholder {
             /* Firefox 18- */
@@ -308,6 +308,11 @@
             @include resetTwoFA-input()
         }
         &:-ms-input-placeholder {
+            /*IE*/
+            @include resetTwoFA-input()
+        }
+        &::-ms-input-placeholder {
+            /* Edge */
             @include resetTwoFA-input()
         }
 	}
