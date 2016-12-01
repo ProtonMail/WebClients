@@ -15,7 +15,7 @@
         <input autofocus autocapitalize="off" autocorrect="off" class="margin focus" type="password" id="password" name="MailboxPassword" ng-model="mailboxPassword" placeholder-translate="Mailbox password" />
 
         <div class="clearfix">
-            <a href="" ng-click="reset()" class="login-support pm_button link pull-left" translate-context="Action" translate translate-comment="link to reset mailbox">Forgot password?</a>
+            <button ng-click="reset()" class="login-support pm_button link pull-left" translate-context="Action" translate translate-comment="link to reset mailbox">Forgot password?</button>
             <button id="unlock_btn" class="pm_button primary pull-right" type="submit" ng-class="{disabled: networkActivity.loading()}" translate-context="Action" translate>Unlock</button>
         </div>
 
