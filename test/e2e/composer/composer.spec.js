@@ -10,6 +10,7 @@ const autocomplete = require('./scenarii/autocomplete.test');
 const encryption = require('./scenarii/encryption.test');
 const expiration = require('./scenarii/expiration.test');
 const uploadFile = require('./scenarii/uploadFile.test');
+const changeSignature = require('./scenarii/changeSignature.test');
 
 const message = {
     Subject: 'E2E: Ha que coucou',
@@ -46,6 +47,8 @@ mainSuite(saveDraft, { editor, message, identifier: 'saveDraft' }, {
     send: false
 });
 
+mainSuite(changeSignature, { editor, message, identifier: 'changeSignature' });
+
 function complexSuite(data) {
     addFileLink(data);
     addLink(data);
@@ -61,6 +64,4 @@ mainSuite(discardDraft, { editor, message, identifier: 'discardDraft' }, {
     send: false
 });
 
-mainSuite(uploadFile, { editor, message, identifier: 'uploadFile' }, {
-    send: true
-});
+mainSuite(uploadFile, { editor, message, identifier: 'uploadFile' });

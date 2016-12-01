@@ -25,7 +25,7 @@ module.exports = ({ editor }) => () => {
     });
 
     it('should allow us to change the from', () => {
-        borodin.changeSignature(1).change()
+        borodin.changeSignature(1).click()
             .then(() => browser.sleep(1000))
             .then(() => notifs.message('danger'))
             .then(assert(null));
