@@ -135,16 +135,30 @@ module.exports = () => {
         };
 
         const changeSignature = (index = 0) => {
-            return browser.executeScript(`
-                const $form = $(document.body.querySelector('.composer'))
-                    .find('${SELECTOR_MAP.From}');
+            const click = () => {
+                return browser.executeScript(`
+                    const $form = $(document.body.querySelector('.composer'))
+                        .find('${SELECTOR_MAP.From}');
 
-                const $select = $form.find('select');
-                $select.find('option').get(${index});
-                $select.selected = true;
-                $select.get(0).selectedIndex = ${index};
-                $select.change();
-            `);
+                    const $select = $form.find('select');
+                    $select.click();
+                `);
+            };
+
+            const change = () => {
+                return browser.executeScript(`
+                    const $form = $(document.body.querySelector('.composer'))
+                        .find('${SELECTOR_MAP.From}');
+
+                    const $select = $form.find('select');
+                    $select.find('option').get(${index});
+                    $select.selected = true;
+                    $select.get(0).selectedIndex = ${index};
+                    $select.change();
+                `);
+            };
+
+            return { click, change };
         };
 
 
