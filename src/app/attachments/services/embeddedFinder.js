@@ -3,6 +3,7 @@ angular.module('proton.attachments')
 
         const find = (message) => {
             const list = message.getAttachments();
+            message.NumEmbedded = 0;
 
             if (!list.length) {
                 return false;
