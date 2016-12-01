@@ -11,7 +11,7 @@ module.exports = ({ editor }) => () => {
         dropzone = uploader.dropzone(editor);
         listAttachments = uploader.attachmentsList();
 
-        borodin.changeSignature(1)
+        borodin.changeSignature(1).click()
             .then(() => browser.sleep(1000))
             .then(() => notifs.message('danger'))
             .then(assert('Attachments and inline images must be removed first before changing sender'));
@@ -25,10 +25,10 @@ module.exports = ({ editor }) => () => {
     });
 
     it('should allow us to change the from', () => {
-        borodin.changeSignature(1)
+        borodin.changeSignature(1).change()
             .then(() => browser.sleep(1000))
             .then(() => notifs.message('danger'))
-            .then(assert(void 0));
+            .then(assert(null));
     });
 
 };

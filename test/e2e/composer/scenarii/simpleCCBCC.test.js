@@ -1,3 +1,4 @@
+const notifs = require('../../../e2e.utils/notifications');
 const { isTrue, isFalse, assert } = require('../../../e2e.utils/assertions');
 
 module.exports = ({ editor, message, identifier }) => {
