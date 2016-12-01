@@ -1,5 +1,5 @@
 angular.module('proton.attachments')
-    .factory('embeddedParser', (embeddedStore, embeddedFinder, embeddedUtils, AttachmentLoader, attachmentFileFormat, authentication) => {
+    .factory('embeddedParser', (embeddedStore, embeddedFinder, embeddedUtils, AttachmentLoader, attachmentFileFormat, authentication, $state) => {
 
         const DIV = document.createElement('DIV');
         const EMBEDDED_CLASSNAME = 'proton-embedded';
@@ -85,11 +85,12 @@ angular.module('proton.attachments')
             const list = embeddedFinder.listInlineAttachments(message);
             const user = authentication.user || { ShowEmbedded: 0 };
             const show = message.showEmbedded === true || user.ShowEmbedded === 1;
+            const isDraft = $state.includes('secured.drafts.**') || message.isDraft();
 
             // For a draft if we close it before the end of the attachement upload, there are no keyPackets
             const promise = _.chain(list)
                 .filter(({ attachment }) => attachment.KeyPackets)
-                .filter(({ cid }) => !embeddedStore.hasBlob(cid) && show)
+                .filter(({ cid }) => !embeddedStore.hasBlob(cid) && (show || isDraft))
                 .map(({ cid, attachment }) => {
                     const storeAttachement = embeddedStore.store(message, cid);
                     return AttachmentLoader.get(attachment, message)
