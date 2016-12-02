@@ -36,12 +36,12 @@ angular.module('proton.networkActivity', ['proton.errorReporter'])
      * @return {Error}
      */
     const formatError = (error) => {
-        const msg = dedentTpl`
+        return dedentTpl`
             >>> ${error.message}
             Code: ${error.code}
-            Original: ${error.originalMessage}
+            Original: ${error.originalMessage},
+            Stack: ${error.stack}
         `;
-        return (error.message = msg, error);
     };
 
     /**
@@ -103,7 +103,7 @@ angular.module('proton.networkActivity', ['proton.errorReporter'])
 
     const clear = () => {
         errorReporter.clear();
-        promises = [];
+        promises.length = 0;
         return promises;
     };
 
