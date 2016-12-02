@@ -460,7 +460,7 @@ module.exports = function(grunt) {
                     }
 
                     commands.push('cd dist');
-                    commands.push('git ls-files --deleted -z | xargs -0 git rm');
+                    commands.push('(git ls-files --deleted -z  || echo:) | xargs -0 git rm');
                     commands.push('git add --all');
                     commands.push('git commit -m "New Release"');
                     commands.push('git push origin ' + option);

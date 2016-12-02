@@ -202,6 +202,7 @@ angular.module('proton.models.payments', [])
                         Name: 'free',
                         Title: 'ProtonMail Free',
                         MaxDomains: 0,
+                        CouponCode: null,
                         MaxAddresses: 1,
                         MaxSpace: 5368709120, // 500 MB
                         MaxMembers: 1,

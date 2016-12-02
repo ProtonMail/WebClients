@@ -25,6 +25,7 @@ angular.module('proton.controllers.Secured', [])
     Organization,
     Payment,
     pmcw,
+    subscription,
     tools
 ) => {
     const dirtyAddresses = [];
@@ -35,6 +36,7 @@ angular.module('proton.controllers.Secured', [])
     $scope.isFree = authentication.user.Role === CONSTANTS.FREE_USER;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
     $scope.organization = organization;
+    $scope.subscription = subscription;
     $rootScope.isLoggedIn = true; // Shouldn't be there
     $rootScope.isLocked = false; // Shouldn't be there
 

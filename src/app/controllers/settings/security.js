@@ -4,6 +4,7 @@ angular.module('proton.controllers.Settings')
     $log,
     $rootScope,
     $scope,
+    twoFAIntroModal,
     gettextCatalog,
     authentication,
     confirmModal,
@@ -48,7 +49,7 @@ angular.module('proton.controllers.Settings')
                         authentication.user.TwoFactor = 1;
                         recoveryCodes(codes);
                     } else if (result.data && result.data.Error) {
-                        $scope.showSharedSecret(sharedSecret, qrURI);
+                        showSharedSecret(sharedSecret, qrURI);
                         return Promise.reject(result.data.Error);
                     }
                 })
@@ -90,7 +91,7 @@ angular.module('proton.controllers.Settings')
         });
     }
 
-    $scope.showSharedSecret = (sharedSecret, qrURI) => {
+    function showSharedSecret(sharedSecret, qrURI) {
         sharedSecretModal.activate({
             params: {
                 sharedSecret,
@@ -101,6 +102,20 @@ angular.module('proton.controllers.Settings')
                 },
                 cancel() {
                     sharedSecretModal.deactivate();
+                }
+            }
+        });
+    }
+
+    $scope.enableTwoFactor = () => {
+        twoFAIntroModal.activate({
+            params: {
+                next() {
+                    showSharedSecret();
+                    twoFAIntroModal.deactivate();
+                },
+                cancel() {
+                    twoFAIntroModal.deactivate();
                 }
             }
         });

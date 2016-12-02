@@ -41,6 +41,11 @@ angular.module('proton.core')
 
             // Functions
             function initialization() {
+                if (params.subscription.CouponCode) {
+                    self.displayCoupon = true;
+                    self.coupon = params.subscription.CouponCode;
+                }
+
                 if (params.methods.length > 0) {
                     self.methods = params.methods;
                     self.method = self.methods[0];

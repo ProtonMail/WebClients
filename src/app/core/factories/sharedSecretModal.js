@@ -1,12 +1,12 @@
 angular.module('proton.core')
-.factory('sharedSecretModal', (authentication, pmModal, $timeout) => {
+.factory('sharedSecretModal', (authentication, pmModal, $timeout, webcrypto) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/twofactor/sharedSecret.tpl.html',
         controller(params) {
-            const randomBytes = window.crypto.getRandomValues(new Uint8Array(20));
+            const randomBytes = webcrypto.getRandomValues(new Uint8Array(20));
             const sharedSecret = base32.encode(randomBytes);
-            const primaryAddress = _.find(authentication.user.Addresses, () => true);
+            const primaryAddress = _.find(authentication.user.Addresses, ({ Keys }) => Keys);
             const identifier = (primaryAddress) ? primaryAddress.Email : authentication.user.Name + '@protonmail';
             const qrURI = 'otpauth://totp/' + identifier + '?secret=' + sharedSecret + '&issuer=ProtonMail&algorithm=SHA1&digits=6&period=30';
 

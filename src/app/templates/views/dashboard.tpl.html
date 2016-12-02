@@ -52,8 +52,17 @@
                                     </tr>
                                     <tr ng-show="user.Credit">
                                         <th translate-context="Title" translate>Credit</th>
-                                        <td></td>
-                                        <td class="text-right actions">{{ user.Credit / 100 | currency: user.Currency }}</td>
+                                        <td>
+                                            <strong>{{ user.Credit / 100 | currency: user.Currency }}</strong>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr ng-show="subscription.CouponCode">
+                                        <th translate-context="Title" translate>Coupon</th>
+                                        <td>
+                                            <strong>{{ subscription.CouponCode }}</strong>
+                                        </td>
+                                        <td>&nbsp;</td>
                                     </tr>
                                 </table>
                             </div>

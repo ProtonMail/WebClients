@@ -6,7 +6,7 @@ angular.module('proton.routes', [
 ])
 
 .config(($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) => {
-    const conversationParameters = function () {
+    const conversationParameters = () => {
         const parameters = [
             'email',
             'address',
@@ -410,7 +410,7 @@ angular.module('proton.routes', [
 
                     $scope.tokenError = !encryptedToken;
 
-                    $scope.unlock = function () {
+                    $scope.unlock = () => {
 
                         const promise = pmcw
                             .decryptMessage(encryptedToken, $scope.params.MessagePassword)
@@ -505,7 +505,7 @@ angular.module('proton.routes', [
             }
         },
         onEnter(gettextCatalog) {
-            window.onbeforeunload = function () {
+            window.onbeforeunload = () => {
                 return gettextCatalog.getString('By leaving now, you will lose what you have written in this email. You can save a draft if you want to come back to it later on.', null);
             };
         },
@@ -538,6 +538,16 @@ angular.module('proton.routes', [
                 }
 
                 return authentication.fetchUserInfo(); // TODO need to rework this just for the locked page
+            },
+            subscription(user, Payment) {
+                return Payment.subscription()
+                .then((result = {}) => {
+                    const { data = {} } = result;
+                    if (data.Code === 1000) {
+                        return Promise.resolve(data.Subscription);
+                    }
+                    return Promise.reject();
+                });
             },
             organization($q, user, Organization) {
                 const deferred = $q.defer();
@@ -747,14 +757,11 @@ angular.module('proton.routes', [
             },
             // Return yearly plans
             yearly(subscription, user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.plans(subscription.data.Subscription.Currency, 12));
+                return networkActivityTracker.track(Payment.plans(subscription.Currency, 12));
             },
             // Return monthly plans
             monthly(subscription, user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.plans(subscription.data.Subscription.Currency, 1));
-            },
-            subscription(user, Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.subscription());
+                return networkActivityTracker.track(Payment.plans(subscription.Currency, 1));
             },
             methods(user, Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
