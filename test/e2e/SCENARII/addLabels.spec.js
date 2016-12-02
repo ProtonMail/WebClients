@@ -10,6 +10,7 @@ module.exports = ({
     shouldArchivedDefault = true,
     countAlreadySelected = 0
 } = {}) => {
+
     describe('Add a label', () => {
 
         it('should not display the ', () => {
