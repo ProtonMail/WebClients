@@ -36,24 +36,54 @@ module.exports = function editLabel() {
         `);
     };
 
-    const edit = (index = 0, checked = true) => {
+    const select = (indexes) => {
         return browser.executeScript(`
+            const indexes = [${indexes}];
             const $checkbox = ${$container}
                 .find('${SELECTOR.item}')
                 .find('${SELECTOR.checkbox}')
-                .eq(${index});
+                .filter((i) => indexes.indexOf(i) !== -1);
 
-            $checkbox[0].checked = ${checked};
-            $checkbox.triggerHandler('change');
+            $checkbox.click();
         `);
     };
 
-    const archive = (checked = true) => {
+    const unselect = (indexes = []) => {
+        return browser.executeScript(`
+            const indexes = [${indexes}];
+            const $checkbox = ${$container}
+                .find('${SELECTOR.item}')
+                .find('${SELECTOR.checkbox}')
+                .filter((i) => indexes.indexOf(i) !== -1);
+
+            $checkbox.click();
+        `);
+    };
+
+    const countSeleted = () => {
+        return browser.executeScript(`
+            return ${$container}
+                .find('${SELECTOR.item}')
+                .find('${SELECTOR.checkbox}:checked')
+                .length;
+        `);
+    };
+
+    const archive = () => {
         return browser.executeScript(`
             const $checkbox = ${$container}
                 .find('${SELECTOR.archive}');
-            $checkbox[0].checked = ${checked};
-            $checkbox.triggerHandler('change');
+            $checkbox.click();
+            return $checkbox[0].checked;
+        `);
+    };
+
+
+    const isArchived = () => {
+        return browser.executeScript(`
+            const $checkbox = ${$container}
+                .find('${SELECTOR.archive}');
+            return $checkbox[0].checked;
         `);
     };
 
@@ -65,5 +95,13 @@ module.exports = function editLabel() {
         `);
     };
 
-    return { openDropdown, isOpen, countLabels, edit, archive, submit };
+    return {
+        openDropdown,
+        isOpen,
+        countLabels,
+        isArchived,
+        select, unselect, countSeleted,
+        archive,
+        submit
+    };
 };
