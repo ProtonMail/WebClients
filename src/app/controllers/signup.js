@@ -544,17 +544,18 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
     };
 
     $scope.pay = () => {
-        const year = ($scope.card.year.length === 2) ? '20' + $scope.card.year : $scope.card.year;
+        const { number, month, year, fullname, cvc, zip } = $scope.card;
+        const country = $scope.card.country.value;
         const method = {
             Type: 'card',
             Details: {
-                Number: $scope.card.number,
-                ExpMonth: $scope.card.month,
-                ExpYear: year,
-                CVC: $scope.card.cvc,
-                Name: $scope.card.fullname,
-                Country: $scope.card.country.value,
-                ZIP: $scope.card.zip
+                Number: number,
+                ExpMonth: month,
+                ExpYear: (year.length === 2) ? '20' + year : year,
+                CVC: cvc,
+                Name: fullname,
+                Country: country,
+                ZIP: zip
             }
         };
 
