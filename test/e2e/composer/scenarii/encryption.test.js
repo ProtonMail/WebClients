@@ -1,4 +1,5 @@
 const notifs = require('../../../e2e.utils/notifications');
+const { isTrue, isFalse } = require('../../../e2e.utils/assertions');
 
 module.exports = ({ editor, message }) => {
     describe('Encrypt the message', () => {
@@ -12,47 +13,35 @@ module.exports = ({ editor, message }) => {
                 encryption = borodin.encryption();
 
                 encryption.isActive()
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
             it('should not display the form', () => {
                 encryption.isVisible()
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
 
             it('should open the form', () => {
                 encryption.open()
                     .then(() => encryption.isVisible())
-                    .then((test) => {
-                        expect(test).toEqual(true);
-                    });
+                    .then(isTrue);
             });
 
             it('should disabled the encryption submit button', () => {
                 encryption.isDisabledSubmit()
-                    .then((test) => {
-                        expect(test).toEqual(true);
-                    });
+                    .then(isTrue);
             });
 
             it('should fill the password', () => {
                 encryption.fillInput('password', 'monique')
                     .then(() => encryption.isInvalidInput('password'))
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
             it('should disabled the encryption submit button', () => {
                 encryption.isDisabledSubmit()
-                    .then((test) => {
-                        expect(test).toEqual(true);
-                    });
+                    .then(isTrue);
             });
 
 
@@ -80,9 +69,7 @@ module.exports = ({ editor, message }) => {
 
             it('should not disabled the encryption submit button', () => {
                 encryption.isDisabledSubmit()
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
             it('should submit the form', () => {
@@ -93,25 +80,19 @@ module.exports = ({ editor, message }) => {
                         expect(value).toEqual('Message passwords do not match.');
 
                         encryption.isVisible()
-                            .then((test) => {
-                                expect(test).toEqual(true);
-                            });
+                            .then(isTrue);
                     });
             });
 
             it('should not mark the composer button as active', () => {
                 encryption.isActive()
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
             it('should close the panel', () => {
                 encryption.cancel()
                     .then(() => encryption.isVisible())
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
         });
 
@@ -121,47 +102,35 @@ module.exports = ({ editor, message }) => {
                 encryption = borodin.encryption();
                 browser.sleep(6000)
                     .then(() => encryption.isActive())
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
             it('should not display the form', () => {
                 encryption.isVisible()
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
 
             it('should open the form', () => {
                 encryption.open()
                     .then(() => encryption.isVisible())
-                    .then((test) => {
-                        expect(test).toEqual(true);
-                    });
+                    .then(isTrue);
             });
 
             it('should disabled the encryption submit button', () => {
                 encryption.isDisabledSubmit()
-                    .then((test) => {
-                        expect(test).toEqual(true);
-                    });
+                    .then(isTrue);
             });
 
             it('should fill the password', () => {
                 encryption.fillInput('password', 'monique')
                     .then(() => encryption.isInvalidInput('password'))
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
             it('should disabled the encryption submit button', () => {
                 encryption.isDisabledSubmit()
-                    .then((test) => {
-                        expect(test).toEqual(true);
-                    });
+                    .then(isTrue);
             });
 
 
@@ -184,16 +153,12 @@ module.exports = ({ editor, message }) => {
             it('should fill the confirm password (success)', () => {
                 encryption.fillInput('confirm', 'monique')
                     .then(() => encryption.isInvalidInput('confirm'))
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
             it('should not disabled the encryption submit button', () => {
                 encryption.isDisabledSubmit()
-                    .then((test) => {
-                        expect(test).toEqual(false);
-                    });
+                    .then(isFalse);
             });
 
             it('should submit the form without errors', () => {
@@ -204,17 +169,13 @@ module.exports = ({ editor, message }) => {
                         expect(value).not.toEqual('Message passwords do not match.');
 
                         encryption.isVisible()
-                            .then((test) => {
-                                expect(test).toEqual(false);
-                            });
+                            .then(isFalse);
                     });
             });
 
             it('should mark the composer button as active', () => {
                 encryption.isActive()
-                    .then((test) => {
-                        expect(test).toEqual(true);
-                    });
+                    .then(isTrue);
             });
         });
 
