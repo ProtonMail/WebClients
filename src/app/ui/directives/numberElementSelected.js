@@ -3,7 +3,7 @@ angular.module('proton.ui')
     return {
         scope: { number: '=' },
         replace: true,
-        template: '<h2 ng-bind="text()"></h2>',
+        template: '<h2 ng-bind="text()" class="numberElementSelected-title"></h2>',
         link(scope) {
             scope.text = () => {
                 const { number } = scope;
