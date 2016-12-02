@@ -1,5 +1,5 @@
 angular.module('proton.ui')
-    .factory('autocompleteEmailsModel', (authentication, regexEmail, $filter, CONSTANTS) => {
+    .factory('autocompleteEmailsModel', (authentication, regexEmail, checkTypoEmails, $filter, CONSTANTS) => {
 
         const {
             OPEN_TAG_AUTOCOMPLETE,
@@ -127,7 +127,7 @@ angular.module('proton.ui')
                 // If the mail is not already inside the collection, add it
                 if (!list.some(({ Address }) => Address === data.Address)) {
                     list.push(angular.extend({}, data, {
-                        invalid: !regexEmail.test(data.Address)
+                        invalid: !regexEmail.test(data.Address) || checkTypoEmails(data.Address)
                     }));
                 }
             };
