@@ -28,6 +28,34 @@ describe('Test conversations', () => {
             .then(greaterThan(0));
     });
 
+    describe('Toggle label conversation', () => {
+
+        const INDEX = 2;
+
+        it('should contains only e2e', () => {
+            column.labels.getByConversation(INDEX)
+                .then(assert(['e2e']));
+        });
+
+        it('should select a conversation', () => {
+            column.select(INDEX)
+                .then(isTrue);
+        });
+
+        it('should display the placeholder', () => {
+            column.placeholder.isVisible()
+                .then(isTrue);
+        });
+
+        it('should have 1 conversation selected', () => {
+            column.placeholder.countSeleted()
+                .then(assert(1));
+        });
+
+        addLabelsSpecs({ selected: [1], archive: false });
+
+    });
+
 
     describe('Toggle label conversation', () => {
 
