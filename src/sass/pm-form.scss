@@ -275,7 +275,7 @@
     }
 
     /* reset arrow on number input */
-    
+
     input[type="number"]::-webkit-outer-spin-button,
     input[type="number"]::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -283,7 +283,6 @@
     input[type="number"] {
         -moz-appearance: textfield;
     }
-
 
     textarea {
         min-height: 6rem;
