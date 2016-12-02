@@ -36,6 +36,11 @@ angular.module('proton.networkActivity', ['proton.errorReporter'])
      * @return {Error}
      */
     const formatError = (error) => {
+
+        if (!error.originalMessage) {
+            return error;
+        }
+
         return dedentTpl`
             >>> ${error.message}
             Code: ${error.code}
