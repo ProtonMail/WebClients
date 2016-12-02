@@ -1,4 +1,5 @@
 const { isTrue, isFalse, assert } = require('../../e2e.utils/assertions');
+const notifs = require('../../e2e.utils/notifications');
 const dropdownLabel = require('../../e2e.utils/labels/dropdownLabel')();
 
 
@@ -62,6 +63,12 @@ module.exports = ({
                 .then(() => browser.sleep(300))
                 .then(() => dropdownLabel.isOpen())
                 .then(isFalse);
+        });
+
+        it('should display a notfication', () => {
+            browser.sleep(2000)
+            notifs.message()
+                .then(assert('Labels Saved'));
         });
 
     });
