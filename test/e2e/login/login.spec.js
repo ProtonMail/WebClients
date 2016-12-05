@@ -219,7 +219,7 @@ describe('login an user', () => {
                 loginPage.fill('password', browser.params.password1);
             });
 
-            it('should display a notification:danger', () => {
+            it('should redirect us', () => {
                 loginPage.submit()
                     .then(() => {
                         return browser.wait(() => {
@@ -231,7 +231,7 @@ describe('login an user', () => {
                     .then(isTrue);
             });
 
-            it('should display a notification:danger', () => {
+            it('should redirect us', () => {
                 loginPage.clickSubmit()
                     .then(() => {
                         return browser.wait(() => {
@@ -246,7 +246,5 @@ describe('login an user', () => {
         });
 
     });
-
-
 
 });
