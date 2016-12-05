@@ -13,18 +13,11 @@ angular.module('proton.message')
     displayEmbedded,
     messageScroll,
     Message,
-    tools,
-    CONSTANTS
+    tools
 ) => {
 
-    function checkLabel({ LabelIDs = [] }, mailbox = '') {
-        const labelID = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
-
-        return LabelIDs.indexOf(labelID) !== -1;
-    }
-
     function getRecipients({ ToList = [], CCList = [], BCCList = [] } = {}) {
-        return [].concat(ToList).concat(CCList).concat(BCCList);
+        return [].concat(ToList, CCList, BCCList);
     }
 
     /**
@@ -180,46 +173,6 @@ angular.module('proton.message')
             scope.body = ''; // Here we put the content displayed inside the message content
 
             /**
-             * Check if the current message is a sent
-             * @return {Boolean}
-             */
-            scope.isSent = () => {
-                return scope.message.Type === 2 || scope.message.Type === 3;
-            };
-
-            /**
-             * Check if the current message is archived
-             * @return {Boolean}
-             */
-            scope.isArchive = () => {
-                return checkLabel(scope.message, 'archive');
-            };
-
-            /**
-             * Check if the current message is a draft
-             * @return {Boolean}
-             */
-            scope.isDraft = () => {
-                return scope.message.Type === 1;
-            };
-
-            /**
-             * Check if the current message is in trash
-             * @return {Boolean}
-             */
-            scope.isTrash = () => {
-                return checkLabel(scope.message, 'trash');
-            };
-
-            /**
-             * Check if the current message is in spam
-             * @return {Boolean}
-             */
-            scope.isSpam = () => {
-                return checkLabel(scope.message, 'spam');
-            };
-
-            /**
              * Get all recipients
              * @return {Array} recipients
              */
@@ -273,17 +226,6 @@ angular.module('proton.message')
                 window.open(tab, '_blank');
             };
 
-            /**
-             * Open a new composer and pre-fill the to field
-             * @param  {Object} email - {Address, }
-             */
-            scope.sendMessageTo = (email = {}) => {
-                const message = new Message();
-
-                message.ToList = [email];
-                $rootScope.$emit('composer.new', { message, type: 'new' });
-            };
-
             // TODO need review with label dropdown
             scope.getMessage = () => {
                 return [scope.message];
@@ -298,18 +240,6 @@ angular.module('proton.message')
                 const messages = [scope.message];
 
                 $rootScope.$emit('messageActions', { action: 'label', data: { messages, labels, alsoArchive } });
-            };
-
-            /**
-             * Detach label to the current message
-             * @param {Object} label
-             */
-            scope.detachLabel = (label) => {
-                $rootScope.$emit('messageActions', { action: 'unlabel', data: {
-                    messageID: scope.message.ID,
-                    conversationID: scope.message.ConversationID,
-                    labelID: label.ID
-                } });
             };
 
             /**

@@ -1,0 +1,43 @@
+.labelsMessage-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    max-width: 88%;
+}
+.labelsMessage-container,
+.labelsMessage-container * {box-sizing: border-box}
+
+.labelsMessage-label {
+    display: flex;
+    align-items: center;
+    margin-right: .5em;
+    margin-top: .2em;
+    border-radius: 3px;
+    max-width: 8rem;
+    box-sizing: border-box;
+    border: 2px solid currentColor;
+    -webkit-transition: max-width .25s ease;
+    -moz-transition: max-width .25s ease;
+    -ms-transition: max-width .25s ease;
+    -o-transition: max-width .25s ease;
+    transition: max-width .25s ease
+}
+
+.labelsMessage-label:last-of-type {margin-right: 0}
+
+.labelsMessage-name {
+    padding: 0 0 0 .4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.labelsMessage-hidden-btn .labelsMessage-name { padding: 0 .4rem }
+
+.labelsMessage-btn-remove {
+    background: transparent;
+    border: 0;
+    color: currentColor
+}
+
+.labelsMessage-btn-remove:focus { outline: 1px solid grey }
+.labelsMessage-btn-remove:active { color: $primary }

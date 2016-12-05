@@ -119,8 +119,10 @@ angular.module('proton.message')
 
                     if (conversation && Array.isArray(messages)) {
                         const labelIDs = _.chain(messages)
-                            .map(({ ID, LabelIDs }) => (eventList[ID] ? eventList[ID].Message.LabelIDs : LabelIDs))
-                            .flatten()
+                            .reduce((acc, { ID, LabelIDs }) => {
+                                const list = eventList[ID] ? eventList[ID].Message.LabelIDs : LabelIDs;
+                                return acc.concat(list);
+                            }, [])
                             .uniq()
                             .value();
 
@@ -156,6 +158,13 @@ angular.module('proton.message')
             networkActivityTracker.track(promise);
         }
 
+        /**
+         * Detach a label from a message
+         * @param  {String} messageID
+         * @param  {String} conversationID
+         * @param  {String} labelID
+         * @return {void}
+         */
         function detachLabel(messageID, conversationID, labelID) {
             const events = [];
             const messages = cache.queryMessagesCached(conversationID);
@@ -163,18 +172,22 @@ angular.module('proton.message')
             // Generate event for the message
             events.push({ Action: 3, ID: messageID, Message: { ID: messageID, LabelIDsRemoved: [labelID] } });
 
-            // Generate event for the conversation
-            const labelIDs = [].concat(messages.map(({ LabelIDs = [] }) => LabelIDs));
-
-            // Remove one labelID
-            labelIDs.splice(labelIDs.indexOf(labelID), 1);
+            const LabelIDs = _.chain(messages)
+                .reduce((acc, { ID, LabelIDs = [] }) => {
+                    if (ID === messageID) {
+                        return acc.concat(LabelIDs.filter((id) => id !== labelID));
+                    }
+                    return acc.concat(LabelIDs);
+                }, [])
+                .uniq()
+                .value();
 
             events.push({
                 Action: 3,
                 ID: conversationID,
                 Conversation: {
                     ID: conversationID,
-                    LabelIDs: _.uniq(labelIDs)
+                    LabelIDs
                 }
             });
 
@@ -193,13 +206,11 @@ angular.module('proton.message')
          */
         function addLabel(messages, labels, alsoArchive) {
             const context = tools.cacheContext();
-            const promises = [];
-            const events = [];
             const current = tools.currentLocation();
             const currentMailbox = tools.currentMailbox();
             const ids = _.map(messages, ({ ID }) => ID);
 
-            const process = () => {
+            const process = (events) => {
                 cache.events(events).then(() => {
                     const getLabelsIDS = ({ ConversationID }) => {
                         return _.chain(cache.queryMessagesCached(ConversationID) || [])
@@ -239,7 +250,11 @@ angular.module('proton.message')
                     .value();
             };
 
-            _.each(messages, (message) => {
+            const mapPromisesLabels = (list = [], Action) => {
+                return _.map(list, (id) => new Message().updateLabels(id, Action, ids));
+            };
+
+            const { events, promises } = _.reduce(messages, (acc, message) => {
 
                 const msgLabels = (message.LabelIDs || []).filter((v) => isNaN(+v));
                 const toApply = filterLabelsID(labels, ({ ID, Selected }) => Selected && !_.contains(msgLabels, ID));
@@ -253,33 +268,33 @@ angular.module('proton.message')
                     }
                 }
 
-                const element = {
+                acc.events.push({
+                    Action: 3,
                     ID: message.ID,
-                    ConversationID: message.ConversationID,
-                    Selected: false,
-                    LabelIDsAdded: toApply,
-                    LabelIDsRemoved: toRemove
-                };
-
-                events.push({ Action: 3, ID: element.ID, Message: element });
-
-                _.each(toApply, (labelID) => {
-                    promises.push(new Message().updateLabels(labelID, ADD_ID, ids));
+                    Message: {
+                        ID: message.ID,
+                        ConversationID: message.ConversationID,
+                        Selected: false,
+                        LabelIDsAdded: toApply,
+                        LabelIDsRemoved: toRemove
+                    }
                 });
 
-                _.each(toRemove, (labelID) => {
-                    promises.push(new Message().updateLabels(labelID, REMOVE_ID, ids));
-                });
-            });
+                acc.promises = acc.promises
+                    .concat(mapPromisesLabels(toApply, ADD_ID))
+                    .concat(mapPromisesLabels(toRemove, REMOVE_ID));
+
+                return acc;
+            }, { events: [], promises: [] });
 
             const promise = $q.all(promises);
             cache.addToDispatcher(promise);
 
             if (context === true) {
-                return process();
+                return process(events);
             }
 
-            promise.then(() => process());
+            promise.then(() => process(events));
             networkActivityTracker.track(promise);
         }
 
@@ -392,37 +407,40 @@ angular.module('proton.message')
                     return acc;
                 }, { messageIDs: [], conversationIDs: [], events: [] });
 
-            if (messageIDs.length) {
-                // Generate conversation event
-                _.each(_.uniq(conversationIDs), (conversationID) => {
-                    const conversation = cache.getConversationCached(conversationID);
-                    const messages = cache.queryMessagesCached(conversationID);
+            if (!messageIDs.length) {
+                return;
+            }
+
+            // Generate conversation event
+            _.chain(conversationIDs)
+                .uniq()
+                .map((id) => cache.getConversationCached(id))
+                .filter(Boolean)
+                .each((conversation) => {
+                    const messages = cache.queryMessagesCached(conversation.ID);
                     const filtered = _.filter(messages, ({ ID }) => _.contains(messageIDs, ID));
 
-                    if (angular.isDefined(conversation)) {
-                        events.push({
-                            Action: 3,
+                    events.push({
+                        Action: 3,
+                        ID: conversation.ID,
+                        Conversation: {
                             ID: conversation.ID,
-                            Conversation: {
-                                ID: conversation.ID,
-                                NumUnread: conversation.NumUnread - filtered.length
-                            }
-                        });
-                    }
+                            NumUnread: conversation.NumUnread - filtered.length
+                        }
+                    });
                 });
 
-                // Send request
-                const promise = Message.read({ IDs: messageIDs }).$promise;
-                cache.addToDispatcher(promise);
+            // Send request
+            const promise = Message.read({ IDs: messageIDs }).$promise;
+            cache.addToDispatcher(promise);
 
-                if (tools.cacheContext() === true) {
-                    // Send cache events
-                    return cache.events(events);
-                }
+            if (tools.cacheContext() === true) {
                 // Send cache events
-                promise.then(() => cache.events(events));
-                networkActivityTracker.track(promise);
+                return cache.events(events);
             }
+            // Send cache events
+            promise.then(() => cache.events(events));
+            networkActivityTracker.track(promise);
         }
 
         /**
@@ -435,10 +453,20 @@ angular.module('proton.message')
 
             cache.addToDispatcher(promise);
 
-            if (context) {
-                const { messageIDs, conversationIDs, events } = _
+            if (!context) {
+                promise.then(() => eventManager.call());
+                return networkActivityTracker.track(promise);
+            }
+
+            const { messageIDs, conversationIDs, events } = _
                 .reduce(ids, (acc, ID) => {
-                    const { IsRead, ConversationID } = cache.getMessageCached(ID);
+
+                    if (!cache.getMessageCached(ID)) {
+                        console.log(ID, cache);
+                        debugger;
+                    }
+
+                    const { IsRead, ConversationID } = cache.getMessageCached(ID) || {};
 
                     if (IsRead === 1) {
                         acc.conversationIDs.push(ConversationID);
@@ -454,32 +482,28 @@ angular.module('proton.message')
                     return acc;
                 }, { messageIDs: [], conversationIDs: [], events: [] });
 
-                if (messageIDs.length) {
-                    // Generate conversation event
-                    _.each(_.uniq(conversationIDs), (conversationID) => {
-                        const conversation = cache.getConversationCached(conversationID);
-                        const messages = cache.queryMessagesCached(conversationID);
-
+            if (messageIDs.length) {
+                // Generate conversation event
+                _.chain(conversationIDs)
+                    .uniq()
+                    .map((id) => cache.getConversationCached(id))
+                    .filter(Boolean)
+                    .each((conversation) => {
+                        const messages = cache.queryMessagesCached(conversation.ID);
                         const filtered = _.filter(messages, ({ ID }) => _.contains(messageIDs, ID));
 
-                        if (angular.isDefined(conversation)) {
-                            events.push({
-                                Action: 3,
+                        events.push({
+                            Action: 3,
+                            ID: conversation.ID,
+                            Conversation: {
                                 ID: conversation.ID,
-                                Conversation: {
-                                    ID: conversation.ID,
-                                    NumUnread: conversation.NumUnread + filtered.length
-                                }
-                            });
-                        }
+                                NumUnread: conversation.NumUnread + filtered.length
+                            }
+                        });
                     });
-                }
-
-                cache.events(events);
-            } else {
-                promise.then(() => eventManager.call());
-                networkActivityTracker.track(promise);
             }
+
+            cache.events(events);
         }
 
         /**
@@ -500,20 +524,18 @@ angular.module('proton.message')
                         events.push({ Action: 0, ID: conversation.ID });
                     } else if (conversation.NumMessages > 1) {
                         const messages = cache.queryMessagesCached(conversation.ID);
-                        let labelIDs = [];
-
-                        _.each(messages, (message) => {
-                            if (message.ID !== id) {
-                                labelIDs = labelIDs.concat(message.LabelIDs);
-                            }
-                        });
+                        const labelIDs = _.chain(messages)
+                            .filter(({ ID }) => ID !== id)
+                            .reduce((acc, { LabelIDs = [] }) => acc.concat(LabelIDs), [])
+                            .uniq()
+                            .value();
 
                         events.push({
                             Action: 3,
                             ID: conversation.ID,
                             Conversation: {
                                 ID: conversation.ID,
-                                LabelIDs: _.uniq(labelIDs), // Forge LabelIDs
+                                LabelIDs: labelIDs, // Forge LabelIDs
                                 NumMessages: conversation.NumMessages - 1 // Decrease the number of message
                             }
                         });
