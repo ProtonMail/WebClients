@@ -9,4 +9,13 @@ const message = (type = '') => {
     `);
 };
 
-module.exports = { find, message };
+const isOpened = (type = '') => {
+
+    const className = type ? `.notification-${type}` : '';
+    return browser.executeScript(`
+        return $('.proton-notification-template${className}')
+            .get(0) !== null;
+    `);
+};
+
+module.exports = { find, message, isOpened };
