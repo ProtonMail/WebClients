@@ -1,6 +1,6 @@
 @media (max-width: 1100px) {
     header#pm_header-desktop ul.navigation > li > a {
-        width: 90px;
+        width: 100px;
     }
     form.searchForm {
         width: calc(100% - 650px);
@@ -28,7 +28,6 @@
 
 @media (max-width: 1000px) {
     header#pm_header-desktop ul.navigation > li > a {
-        width: 80px;
         strong {
             font-size: .9em;
         }
@@ -65,7 +64,7 @@
 
 @media (max-width: 900px) {
     header#pm_header-desktop ul.navigation > li > a {
-        width: 70px;
+        width: 80px;
     }
     form.searchForm {
         width: calc(100% - 550px);
