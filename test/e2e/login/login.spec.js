@@ -90,7 +90,7 @@ describe('login an user', () => {
 
         describe('Nothing', () => {
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via event display a notification:danger', () => {
                 loginPage.submit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -98,7 +98,7 @@ describe('login an user', () => {
                     .then(assertUrl('/login'));
             });
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via click button display a notification:danger', () => {
                 loginPage.clickSubmit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -115,7 +115,7 @@ describe('login an user', () => {
                 loginPage.fill('password', '');
             });
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via event display a notification:danger', () => {
                 loginPage.submit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -123,7 +123,7 @@ describe('login an user', () => {
                     .then(assertUrl('/login'));
             });
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via click button display a notification:danger', () => {
                 loginPage.clickSubmit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -140,7 +140,7 @@ describe('login an user', () => {
                 loginPage.fill('password', browser.params.password1);
             });
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via event display a notification:danger', () => {
                 loginPage.submit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -148,7 +148,7 @@ describe('login an user', () => {
                     .then(assertUrl('/login'));
             });
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via click button display a notification:danger', () => {
                 loginPage.clickSubmit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -165,7 +165,7 @@ describe('login an user', () => {
                 loginPage.fill('password', browser.params.password1);
             });
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via event display a notification:danger', () => {
                 loginPage.submit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -173,7 +173,7 @@ describe('login an user', () => {
                     .then(assertUrl('/login'));
             });
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via click button display a notification:danger', () => {
                 loginPage.clickSubmit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -190,7 +190,7 @@ describe('login an user', () => {
                 loginPage.fill('password', 123);
             });
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via event display a notification:danger', () => {
                 loginPage.submit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -198,7 +198,7 @@ describe('login an user', () => {
                     .then(assertUrl('/login'));
             });
 
-            it('should display a notification:danger', () => {
+            it('should submit the form via click button display a notification:danger', () => {
                 loginPage.clickSubmit()
                     .then(() => browser.sleep(5000))
                     .then(() => notif.message('danger'))
@@ -219,7 +219,7 @@ describe('login an user', () => {
                 loginPage.fill('password', browser.params.password1);
             });
 
-            it('should redirect us', () => {
+            it('should submit the form via event then redirect us', () => {
                 loginPage.submit()
                     .then(() => {
                         return browser.wait(() => {
@@ -231,7 +231,7 @@ describe('login an user', () => {
                     .then(isTrue);
             });
 
-            it('should redirect us', () => {
+            it('should submit the form via click button then redirect us', () => {
                 loginPage.clickSubmit()
                     .then(() => {
                         return browser.wait(() => {
