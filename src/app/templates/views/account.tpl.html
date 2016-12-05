@@ -75,20 +75,30 @@
                         </div>
                     </div>
                     <div class="clearfix">
-                        <div class="col-3-8">
-                            <label translate-context="Title" translate translate-comment="form label for enabling/disabling recovery email">Allow password recovery</label>
-                        </div>
-                        <div class="col-5-8">
-                            <toggle status="passwordReset"></toggle>
-                        </div>
-                    </div>
-                    <div class="clearfix">
                         <div class="col-3-8">&nbsp;</div>
                         <div class="col-5-8">
                             <button class="pm_button primary" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
                         </div>
                     </div>
                 </form>
+
+                <div class="clearfix">
+                    <div class="col-3-8">
+                        <label translate-context="Title" translate translate-comment="form label for enabling/disabling recovery email">Allow password recovery</label>
+                    </div>
+                    <div class="col-5-8">
+                        <div class="col-1-2">
+                            <label>
+                                <input type="radio" ng-model="passwordReset" ng-value="1" ng-change="savePasswordReset()" /> <span translate-context="Action" translate>Enabled</span>
+                            </label>
+                        </div>
+                        <div class="col-1-2">
+                            <label>
+                                <input type="radio" ng-model="passwordReset" ng-value="0" ng-change="savePasswordReset()" /> <span translate-context="Action" translate>Disabled</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="clearfix">&nbsp;</div>
                 <div class="clearfix">
@@ -137,8 +147,8 @@
                     <button type="button" class="pm_button" ng-click="changePassword('login', 0)" translate-context="Action" translate>Change login password</button>
                 </p>
                 <p>
-                    <button type="button" ng-if="keyPhase > 2" ng-click="changePassword('password', 0)" class="pm_button link" translate-context="Action" translate>Switch to one-password mode</button>
-                    <a href="https://protonmail.com/support/knowledge-base/two-password/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
+                    <button type="button" ng-if="keyPhase > 2" ng-click="changePassword('password', 0)" class="pm_button" translate-context="Action" translate>Switch to one-password mode</button>
+                    <a href="https://protonmail.com/support/knowledge-base/single-password/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
                 </p>
             </section>
 
@@ -155,7 +165,7 @@
                     <button type="button" class="pm_button" ng-click="changePassword('password', 0)" translate-context="Action" translate>Change password</button>
                 </p>
                 <p>
-                    <button type="button" ng-click="changePassword('login', 1)" class="pm_button link" translate-context="Action" translate-comment="switch to two-password mode" translate>Use two-password mode</button>
+                    <button type="button" ng-click="changePassword('login', 1)" class="pm_button" translate-context="Action" translate-comment="switch to two-password mode" translate>Switch to two-password mode</button>
                     <a href="https://protonmail.com/support/knowledge-base/single-password/" target="_blank" class="pm_button link" translate-context="Link" translate>Learn more</a>
                 </p>
             </section>

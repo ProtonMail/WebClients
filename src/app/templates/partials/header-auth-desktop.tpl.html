@@ -1,9 +1,5 @@
 <header id="pm_header-desktop" class="pm_opensans" ng-controller="HeaderController">
-    <a href="#" class="logo" ui-sref="secured.inbox">
-        <img src="assets/img/logo/logo.svg" height="30" alt="ProtonMail" ng-if="isFree === true || organization.PlanName === 'free'" />
-        <img src="assets/img/logo/logo-plus.svg" height="30" alt="ProtonMail" ng-if="isFree === false && organization.PlanName === 'plus'" />
-        <img src="assets/img/logo/logo-visionary.svg" height="30" alt="ProtonMail" ng-if="isFree === false && organization.PlanName === 'visionary'" />
-    </a>
+    <protonmail-logo></protonmail-logo>
     <ng-include src="'templates/partials/searchForm.tpl.html'" ng-if="!('secured.contacts' | includedByState)"></ng-include>
     <form method="post" class="searchForm"class="searchForm" ng-submit="searchContacts()" ng-if="'secured.contacts' | includedByState">
         <fieldset>
@@ -14,7 +10,6 @@
         </fieldset>
     </form>
     <ul class="navigation">
-        <sale-link></sale-link>
         <li ui-sref-active="active" ng-if="isFree === true">
             <a ui-sref="secured.dashboard({scroll: true})">
                 <span>
@@ -78,7 +73,7 @@
                     <span translate translate-context="Action">Help &amp; answers</span>
                 </a>
                 <a ui-sref="login" class="pm_button primary text-center" translate translate-context="Action">Logout</a>
-                <a href="https://protonmail.com/blog/protonmail-v3-5-release-notes/" target="_blank" class="version text-center" title="{{ dateVersion }}" target="_blank">
+                <a href="https://protonmail.com/blog/protonmail-v3-6-release-notes/" target="_blank" class="version text-center" title="{{ dateVersion }}" target="_blank">
                     <small>ProtonMail {{ appVersion }}</small>
                 </a>
             </span>

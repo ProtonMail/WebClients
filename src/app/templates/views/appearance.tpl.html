@@ -7,7 +7,7 @@
                 <p class="alert alert-info"><span translate-context="Info" translate>This sets the default composer size. Two sizes are available, a smaller popup composer, and a bigger full screen composer.</span> <a href="https://protonmail.com/support/knowledge-base/composer/" target="_blank" translate-context="Action" translate-comment="learn more link" translate>Learn more</a></p>
                 <div class="radio col-1-2">
                     <label>
-                        <input type="radio" ng-model="appearance.ComposerMode" value="0" ng-change="saveComposerMode(composerMode)" />
+                        <input type="radio" ng-model="appearance.ComposerMode" ng-value="0" ng-change="saveComposerMode(composerMode)" />
                         <span  translate tranlate-comment="form option">Popup</span>
                         <br />
                         <img src="assets/img/settings/pop.gif"  alt="Popup" />
@@ -15,7 +15,7 @@
                 </div>
                 <div class="radio col-1-2">
                     <label>
-                        <input type="radio" ng-model="appearance.ComposerMode" value="1" ng-change="saveComposerMode(composerMode)" />
+                        <input type="radio" ng-model="appearance.ComposerMode" ng-value="1" ng-change="saveComposerMode(composerMode)" />
                         <span  translate translate-comment="form option">Maximized</span>
                         <br />
                         <img src="assets/img/settings/max.gif" alt="Maximized" />

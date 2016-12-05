@@ -1,7 +1,8 @@
 const modal = require('../../../e2e.utils/modal');
 const notifs = require('../../../e2e.utils/notifications');
+const { isTrue, isFalse, assert } = require('../../../e2e.utils/assertions');
 
-module.exports = ({ editor, message }) => {
+module.exports = ({ editor }) => {
     describe('No subject', () => {
 
         let borodin;
@@ -10,52 +11,40 @@ module.exports = ({ editor, message }) => {
             borodin = editor.compose();
 
             modal.isVisible()
-                .then((visible) => {
-                    expect(visible).toEqual(false);
-                });
-        })
+                .then(isFalse);
+        });
 
 
         it('should send the message and display a modal', () => {
             borodin.send()
                 .then(() => browser.sleep(1000))
                 .then(() => modal.isVisible())
-                .then((visible) => {
-                    expect(visible).toEqual(true);
-                });
+                .then(isTrue);
         });
 
         it('should close the modal', () => {
             modal.cancel()
                 .then(() => modal.isVisible())
-                .then((visible) => {
-                    expect(visible).toEqual(false);
-                });
+                .then(isFalse);
         });
 
         it('should send the message and display a modal', () => {
             borodin.send()
                 .then(() => browser.sleep(1000))
                 .then(() => modal.read())
-                .then((text) => {
-                    expect(text).toEqual('No subject, send anyway?');
-                });
+                .then(assert('No subject, send anyway?'));
         });
 
         it('should send the message on confirm', () => {
             modal.confirm()
                 .then(() => browser.sleep(5000))
                 .then(() => borodin.isOpened())
-                .then((editor) => {
-                    expect(editor).toEqual(false);
-                });
+                .then(isFalse);
         });
 
         it('should display a notfication', () => {
             notifs.message()
-                .then((msg) => {
-                    expect(msg).toEqual('Message sent');
-                });
+                .then(assert('Message sent'));
         });
     });
 

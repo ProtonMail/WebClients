@@ -61,7 +61,7 @@ angular.module('proton.conversation')
 
                     const element = {
                         ID: conversationID,
-                        NumUnread: conversation.NumUnread,
+                        NumUnread: (toTrash) ? 0 : conversation.NumUnread,
                         Selected: false,
                         LabelIDsRemoved: labelIDsRemoved, // Remove current location
                         LabelIDsAdded: labelIDsAdded // Add new location
@@ -162,44 +162,51 @@ angular.module('proton.conversation')
                 }
             }
 
-            ids.forEach((conversationID) => {
-                const conversation = cache.getConversationCached(conversationID);
-                const messages = cache.queryMessagesCached(conversationID);
+            _.chain(ids)
+                .map((id) => cache.getConversationCached(id))
+                .filter(Boolean)
+                .each((conversation) => {
+                    const messages = cache.queryMessagesCached(conversation.ID);
 
-                if (Array.isArray(messages) && messages.length > 0) {
-                    _.each(messages, (message) => {
+                    if (messages.length) {
+                        _.each(messages, (message) => {
 
-                        const toApply = [].concat(toApplyLabels);
-                        const toRemove = [].concat(toRemoveLabels);
+                            const toApply = [].concat(toApplyLabels);
+                            const toRemove = [].concat(toRemoveLabels);
 
-                        message.LabelIDs = message.LabelIDs || [];
+                            message.LabelIDs = message.LabelIDs || [];
 
-                        if (alsoArchive === true) {
-                            toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
+                            if (alsoArchive === true) {
+                                toApply.push(CONSTANTS.MAILBOX_IDENTIFIERS.archive);
 
-                            if (isStateAllowedRemove) {
-                                toRemove.push(current);
+                                if (isStateAllowedRemove) {
+                                    toRemove.push(current);
+                                }
                             }
-                        }
 
-                        events.push({ Action: 3, ID: message.ID, Message: {
-                            ID: message.ID,
+                            events.push({
+                                Action: 3,
+                                ID: message.ID,
+                                Message: {
+                                    ID: message.ID,
+                                    LabelIDsAdded: toApply,
+                                    LabelIDsRemoved: toRemove
+                                }
+                            });
+                        });
+                    }
+
+                    events.push({
+                        Action: 3,
+                        ID: conversation.ID,
+                        Conversation: {
+                            ID: conversation.ID,
+                            Selected: false,
                             LabelIDsAdded: toApply,
                             LabelIDsRemoved: toRemove
-                        } });
+                        }
                     });
-                }
-
-                if (angular.isDefined(conversation)) {
-                    events.push({ Action: 3, ID: conversationID, Conversation: {
-                        ID: conversationID,
-                        Selected: false,
-                        LabelIDsAdded: toApply,
-                        LabelIDsRemoved: toRemove
-                    } });
-                }
-            });
-
+                });
 
             _.each(toApply, (labelID) => {
                 promises.push(Conversation.labels(labelID, ADD, ids));
@@ -244,10 +251,14 @@ angular.module('proton.conversation')
                 // Generate message changes with event
                 if (messages.length > 0) {
                     _.each(messages, (message) => {
-                        events.push({ ID: message.ID, Action: 3, Message: {
+                        events.push({
                             ID: message.ID,
-                            LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
-                        } });
+                            Action: 3,
+                            Message: {
+                                ID: message.ID,
+                                LabelIDsAdded: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
+                            }
+                        });
                     });
                 }
 
@@ -282,11 +293,15 @@ angular.module('proton.conversation')
 
                 // Generate message changes with event
                 if (messages.length > 0) {
-                    messages.forEach((message) => {
-                        events.push({ ID: message.ID, Action: 3, Message: {
+                    _.each(messages, (message) => {
+                        events.push({
                             ID: message.ID,
-                            LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
-                        } });
+                            Action: 3,
+                            Message: {
+                                ID: message.ID,
+                                LabelIDsRemoved: [CONSTANTS.MAILBOX_IDENTIFIERS.starred]
+                            }
+                        });
                     });
                 }
 
@@ -322,11 +337,15 @@ angular.module('proton.conversation')
                     element.NumUnread = 0;
 
                     if (messages.length > 0) {
-                        messages.forEach((message) => {
-                            events.push({ Action: 3, ID: message.ID, Message: {
+                        _.each(messages, (message) => {
+                            events.push({
+                                Action: 3,
                                 ID: message.ID,
-                                IsRead: 1
-                            } });
+                                Message: {
+                                    ID: message.ID,
+                                    IsRead: 1
+                                }
+                            });
                         });
                     }
 
@@ -360,12 +379,16 @@ angular.module('proton.conversation')
                     element.NumUnread = conversation.NumUnread + 1;
 
                     if (messages.length > 0) {
-                        const last = _.chain(messages).sortBy((message) => { return message.Time; }).last().value();
+                        const last = _.chain(messages).sortBy(({ Time }) => Time).last().value();
 
-                        events.push({ Action: 3, ID: last.ID, Message: {
+                        events.push({
+                            Action: 3,
                             ID: last.ID,
-                            IsRead: 0
-                        } });
+                            Message: {
+                                ID: last.ID,
+                                IsRead: 0
+                            }
+                        });
                     }
 
                     events.push({ Action: 3, ID: element.ID, Conversation: element });
@@ -396,7 +419,7 @@ angular.module('proton.conversation')
 
                     $rootScope.$broadcast('deleteConversation', conversationID); // Close composer
 
-                    messages.forEach((message) => {
+                    _.each(messages, (message) => {
                         if (message.LabelIDs.indexOf(CONSTANTS.MAILBOX_IDENTIFIERS.trash)) {
                             events.push({ Action: 0, ID: message.ID });
                         }

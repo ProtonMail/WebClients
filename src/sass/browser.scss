@@ -20,6 +20,7 @@
 
 .ua-edge {}
 
+
 // All iOS devices
 .ua-ios {
     #pm_captcha {
@@ -156,38 +157,42 @@ input:-moz-ui-invalid {
 
 // Safari
 .ua-safari {
+    #conversation-list-rows .conversation .subject .pm_labels,
+    #conversation-view .message > div.summary .labels .pm_labels { top: 0 }
+}
 
-    .labelDropdown .wrapper li input {
-        height: initial;
-        top: 11px;
-    }
+/* 2FA inputs*/
+/* only apply to tested browser cause placeholder styling is tricky*/
 
-    .conversation .pm_labels label {
-        &:first-child,
-        &:hover {
-            position: relative;
-            top: -4px;
+.ua-ie,
+.ua-safari,
+.ua-chrome,
+.ua-firefox {
+    .pm_form input[type="text"].TwoFA-input {
+
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+
+        @mixin resetTwoFA-input() {
+            font-size: 14px;
+            letter-spacing: 0px;
         }
-        &.single {
-            top: -1px !important;
+
+        &::-webkit-input-placeholder {
+            @include resetTwoFA-input()
+            line-height: 24px; /* safari */
         }
-    }
-    #conversation-view .summary .pm_labels label{
-        &:first-child {
-            position: relative;
-            top: -6px;
+        &:-moz-placeholder {
+            /* Firefox 18- */
+            @include resetTwoFA-input()
         }
-    }
-    #conversation-view .message > div.summary .labels .pm_labels label:hover {
-        top: -6px;
-    }
-    #conversation-view .message > div.summary .labels .pm_labels label.more {
-        top: -7px;
-    }
-    #conversation-list-columns,
-    #conversation-list-rows {
-        .pm_labels label.more {
-            top: -7px;
+        &::-moz-placeholder {
+            /* Firefox 19+ */
+            @include resetTwoFA-input()
+        }
+        &:-ms-input-placeholder {
+            /*IE*/
+            @include resetTwoFA-input()
         }
     }
 }

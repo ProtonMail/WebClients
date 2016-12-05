@@ -1,39 +1,33 @@
+const notifs = require('../../../e2e.utils/notifications');
+const { isTrue, isFalse, assert } = require('../../../e2e.utils/assertions');
+
 module.exports = ({ editor, message, identifier }) => {
     describe('Composer simple message', () => {
 
         let borodin;
 
         it('should open a the composer', () => {
-            editor.open();
-            browser.sleep(500);
-            editor
-                .isOpened()
-                .then((test) => {
-                    borodin = editor.compose();
-                    expect(test).toEqual(true);
-                });
+            editor.open()
+                .then(() => browser.sleep(1000))
+                .then(() => editor.isOpened())
+                .then((test) => (borodin = editor.compose(), test))
+                .then(isTrue);
         });
 
         it('should create a new message', () => {
             borodin
                 .content(message.body)
-                .then((text) => {
-                    expect(text).toEqual(message.body);
-                });
+                .then(assert(message.body));
         });
 
         it('should display CC and BCC fields', () => {
             borodin.openCCBCC()
                 .then(() => {
                     borodin.isVisible('CCList')
-                        .then((test) => {
-                            expect(test).toEqual(true);
-                        });
+                        .then(isTrue);
 
                     borodin.isVisible('BCCList')
-                        .then((test) => {
-                            expect(test).toEqual(true);
-                        });
+                        .then(isTrue);
                     browser.sleep(2000);
                 });
 
@@ -42,45 +36,37 @@ module.exports = ({ editor, message, identifier }) => {
         it('should add a recepient', () => {
             borodin
                 .fillInput('ToList', message.ToList)
-                .then((text) => {
-                    expect(text).toEqual('');
-                });
+                .then(assert(''));
         });
 
         it('should add a recepient CC', () => {
             borodin
                 .fillInput('CCList', message.CCList)
-                .then((text) => {
-                    expect(text).toEqual('');
-                });
+                .then(assert(''));
         });
 
         it('should add a recepient BCC', () => {
             borodin
                 .fillInput('BCCList', message.BCCList)
-                .then((text) => {
-                    expect(text).toEqual('');
-                });
+                .then(assert(''));
         });
 
         it('should add a subject', () => {
             const subject = `${message.Subject} - test:${identifier}`;
             borodin.fillInput('Subject', `${message.Subject} - test:${identifier}`)
-                .then((text) => {
-                    expect(text).toEqual(subject);
-                });
+                .then(assert(subject));
         });
 
         it('should send the message', () => {
-            borodin
-                .send()
+            borodin.send()
                 .then(() => browser.sleep(5000))
-                .then(() => {
-                    borodin.isOpened()
-                        .then((editor) => {
-                            expect(editor).toEqual(false);
-                        });
-                });
+                .then(() => borodin.isOpened())
+                .then(isFalse);
+        });
+
+        it('should display a notfication', () => {
+            notifs.message()
+                .then(assert('Message sent'));
         });
     });
 

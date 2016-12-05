@@ -1,0 +1,24 @@
+<div class="pm_modal small very-important {{ctrl.class}}" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" translate-comment="Title" translate>Set Up Two Factor Authentication</h4>
+            </div>
+            <div class="modal-body pm_form">
+                <div class="alert alert-info">
+                    <p translate-comment="Info" translate>This wizard will enable Two Factor Authentication (2FA) on your ProtonMail account. 2FA will make your ProtonMail account more secure so we recommend enabling it. </p>
+                    <p class="bold" translate-comment="Info" translate>If you have never used 2FA before, we strongly recommend you reading our 2FA Guide first.</p>
+                </div>
+                <p class="text-center">
+                    <a href="https://protonmail.com/support/knowledge-base/two-factor-authentication/" target="_blank" class="pm_button large" translate-context="Link" translate>Read 2FA Guide</a>
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="pm_button" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button tabindex="1" type="button" class="pm_button primary pull-right" ng-click="ctrl.next()" translate translate-context="Action">Next</button>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+</div>

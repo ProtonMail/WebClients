@@ -1,0 +1,10 @@
+<div class="messageContacts-container">
+    <span class="messageContacts-where"></span>
+    <ul class="messageContacts-list">
+       <li class="messageContacts-list-item" ng-repeat="email in model track by $id(email)">
+            <span title="{{ ::email | contact:'Address' }}">{{ ::email | contact:'Name' }}</span>
+            <em class="messageContacts-email">{{ ::email | contact:'Address' }}<message-compose-to class="messageContacts-btn-compose"></message-compose-to>
+            </em>
+        </li>
+    </ul>
+</div>

@@ -1,13 +1,25 @@
+const path = require('path');
+const dropFile = require('../../e2e.utils/dropFile')();
+
 module.exports = () => {
 
     const SELECTOR_MAP = {
         ToList: '.composer-field-ToList',
         CCList: '.composer-field-CCList',
         BCCList: '.composer-field-CCList',
+        From: '.composer-field-From',
         draft: '.composer-btn-save',
         close: '.composer-action-close',
+        discard: '.composer-btn-discard',
         buttonCCBCC: '.composerInputMeta-overlay-button'
     };
+
+    const MEDIA_DIRECTORY = path.resolve(__dirname, '../../');
+    const FILES = [
+        { file: 'media/baby-1.jpg', type: 'image/jpeg' },
+        { file: 'media/baby-2.jpg', type: 'image/jpeg' },
+        { file: 'media/test.txt', type: 'text/plain' }
+    ].map(({ file, type }) => ({ file: path.join(MEDIA_DIRECTORY, file), type }));
 
     const open = () => {
         return element(by.css('.compose.pm_button')).click();
@@ -24,12 +36,52 @@ module.exports = () => {
         `);
     };
 
+    const discardDraft = () => {
+        return browser.executeScript(`
+            $('${SELECTOR_MAP.discard}').click();
+        `);
+    };
+
     const isOpened = () => browser
         .executeScript(() => {
             return document.body.querySelector('.composer') !== null;
         });
 
+    const upload = (quantity = 1) => {
+        dropFile.dropMedia(FILES.slice(0, quantity), by.css('.composer'));
+    };
+
+    const config = {
+        hasSignature: false
+    };
+
+    const checkSignature = () => {
+        return browser.executeScript(`
+            return !!$(document.body.querySelector('.composer'))
+                .find('.angular-squire-wrapper')
+                .find('iframe')[0]
+                .contentDocument
+                .body
+                .querySelectorAll('img.proton-embedded')
+                .length;
+        `)
+        .then((test) => (config.hasSignature = test));
+    };
     const compose = () => {
+
+        const removeEmbedded = (i = 0) => {
+            return browser.executeScript(`
+
+                const $img = $(document.body.querySelector('.composer'))
+                    .find('.angular-squire-wrapper')
+                    .find('iframe')[0]
+                    .contentDocument
+                    .body
+                    .querySelectorAll('img.proton-embedded')[${i}];
+
+                return $($img).remove();
+            `);
+        };
 
         const content = (txt) => {
 
@@ -82,16 +134,47 @@ module.exports = () => {
             return browser.executeScript(`return $('${selector}').is(':visible')`);
         };
 
+        const changeSignature = (index = 0) => {
+            const click = () => {
+                return browser.executeScript(`
+                    const $form = $(document.body.querySelector('.composer'))
+                        .find('${SELECTOR_MAP.From}');
+
+                    const $select = $form.find('select');
+                    $select.click();
+                `);
+            };
+
+            const change = () => {
+                return browser.executeScript(`
+                    const $form = $(document.body.querySelector('.composer'))
+                        .find('${SELECTOR_MAP.From}');
+
+                    const $select = $form.find('select');
+                    $select.find('option').get(${index});
+                    $select.selected = true;
+                    $select.get(0).selectedIndex = ${index};
+                    $select.change();
+                `);
+            };
+
+            return { click, change };
+        };
+
+
         return {
+            config, removeEmbedded, changeSignature,
             content, fillInput, send, isOpened, isVisible, openCCBCC,
-            close, saveDraft,
+            close, saveDraft, discardDraft, upload,
             addLinkPopover: require('./tools/addLinkPopover.po'),
             addFilePopover: require('./tools/addFilePopover.po'),
             autocomplete: require('./tools/autocomplete.po'),
             encryption: require('./tools/encryption.po'),
-            expiration: require('./tools/expiration.po')
+            expiration: require('./tools/expiration.po'),
+            uploader: require('./tools/uploader.po'),
+
         };
     };
 
-    return { open, isOpened, compose };
+    return { open, isOpened, compose, checkSignature, config };
 };
