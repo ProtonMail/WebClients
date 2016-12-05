@@ -5,15 +5,16 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/deleteAccount.tpl.html',
         controller(params) {
             // Variables
-            this.feedback = '';
-            this.password = '';
+            const self = this;
+            self.feedback = '';
+            self.password = '';
 
             // Functions
-            this.submit = function () {
-                params.submit(this.password, this.feedback);
-            }.bind(this);
+            self.submit = () => {
+                params.submit(self.password, self.feedback);
+            };
 
-            this.cancel = function () {
+            self.cancel = () => {
                 params.cancel();
             };
         }
