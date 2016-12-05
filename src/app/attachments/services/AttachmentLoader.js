@@ -43,21 +43,21 @@ angular.module('proton.attachments')
          * @param  {String} options.algo
          * @return {Promise}
          */
-        const decrypt = (attachment, { key, algo } = {}) => {
-
+        const decrypt = (attachment, pubKey, { key, algo } = {}) => {
             // create new Uint8Array to store decryted attachment
             let at = new Uint8Array(attachment);
             // decrypt the att
             return pmcw
-                .decryptMessage(at, key, true, algo)
+                .decryptMessage(at, key, true, algo, pubKey)
                 .then(({ data }) => (at = null, data))
                 .catch((err) => ($log.error(err), err));
         };
 
-        const encrypt = (attachment, pubKeys, { name, type, size, inline } = {}) => {
+        const encrypt = (attachment, pubKeys, privKey, { name, type, size, inline } = {}) => {
 
             const at = new Uint8Array(attachment);
-            return pmcw.encryptFile(at, pubKeys, [], name)
+
+            return pmcw.encryptFile(at, pubKeys, [], name, privKey)
                 .then((packets) => angular.extend({}, packets, {
                     Filename: name,
                     MIMEType: type,
@@ -72,7 +72,7 @@ angular.module('proton.attachments')
         };
 
         // read the file locally, and encrypt it. return the encrypted file.
-        function load(file, pubKeys) {
+        function load(file, pubKeys, privKey) {
 
             const deferred = $q.defer();
             const reader = new FileReader();
@@ -82,7 +82,7 @@ angular.module('proton.attachments')
             }
 
             reader.onloadend = () => {
-                encrypt(reader.result, pubKeys, file)
+                encrypt(reader.result, pubKeys, privKey, file)
                     .then(deferred.resolve)
                     .catch(() => deferred.reject('Failed to encrypt attachment. Please try again.'));
             };
@@ -126,10 +126,20 @@ angular.module('proton.attachments')
             }
 
             const request = getRequest(attachment);
+
             const key = getSessionKey(message, attachment);
 
+            const pubKeys = null;
+
+            // const sender = [message.Sender.Address];
+            // message.getPublicKeys(sender)
+            // .then((result) => {
+            //     if (result.data && result.data[sender] != null) {
+            //         pubKeys = result.data[sender];
+            //     }
+            // });
             return Promise.all([request, key])
-                .then(([{ data }, { sessionKey }]) => decrypt(data, sessionKey))
+                .then(([{ data }, { sessionKey }]) => decrypt(data, pubKeys, sessionKey))
                 .then((data) => (cache.put(getCacheKey(attachment), data), data))
                 .catch((err) => {
                     console.log(err);

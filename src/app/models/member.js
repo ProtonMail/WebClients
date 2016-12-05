@@ -18,7 +18,7 @@ angular.module('proton.models.members', ['proton.srp'])
          * @return {Promise}
          */
         authenticate(memberID, params) {
-            return $http.post(url.get() + '/members/' + memberID + '/auth', params);
+            return srp.performSRPRequest('POST', '/members/' + memberID + '/auth', {}, params);
         },
         // GET
         query() {
@@ -31,12 +31,6 @@ angular.module('proton.models.members', ['proton.srp'])
             return $http.get(url.get() + '/members/' + memberID);
         },
         // PUT
-        /**
-         * Re-assign user's email address, change the order in which member's addresses are listed, change login pw, change mailbox pw, change keys.
-         */
-        update(member) {
-            return $http.put(url.get() + '/members/' + member.ID, member);
-        },
         /**
          * Update member name
          * @param {String} memberID
@@ -84,9 +78,10 @@ angular.module('proton.models.members', ['proton.srp'])
          * @param {String} memberID
          * @return {Promise}
          */
-        private(memberID) {
-            return $http.put(url.get() + '/members/' + memberID + '/private');
+        privatize(memberID) {
+            return $http.put(url.get() + '/members/' + memberID + '/privatize');
         },
+
         // DELETE
         /**
          * Nuke the member. Protect against nuking the group owner.

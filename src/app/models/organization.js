@@ -29,29 +29,35 @@ angular.module('proton.models.organization', ['proton.srp'])
             });
         },
         /**
-         *
+         * Get organization keys
          */
         getKeys() {
             return $http.get(url.get() + '/organizations/keys');
         },
-        // PUT
         /**
-         * Update group in a way that doesn't require a payment (name, billing cycle, tokens).
+         * Get organization keys
          */
-        update(Obj) {
-            return $http.put(url.get() + '/organizations', Obj);
+        getBackupKeys() {
+            return $http.get(url.get() + '/organizations/keys/backup');
         },
+        // PUT
         /**
          * Update private key for the organization
          */
-        private(Obj, creds) {
-            return srp.performSRPRequest('PUT', '/organizations/keys/private', Obj, creds);
+        activateKeys(Obj) {
+            return $http.put(url.get() + '/organizations/keys/activate', Obj);
         },
         /**
-         * Update group in a way that requires a payment.
+         * Replace private key for the organization
          */
-        payment(Obj) {
-            return $http.put(url.get() + '/organizations/payment', Obj);
+        replaceKeys(Obj, creds) {
+            return srp.performSRPRequest('PUT', '/organizations/keys', Obj, creds);
+        },
+        /**
+         * Get organization keys
+         */
+        updateBackupKeys(Obj, creds) {
+            return srp.performSRPRequest('PUT', '/organizations/keys/backup', Obj, creds);
         }
     };
 });

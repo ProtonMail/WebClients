@@ -15,13 +15,14 @@ angular.module('proton.authentication', [
     $state,
     $timeout,
     $injector,
+    $exceptionHandler,
     CONFIG,
     CONSTANTS,
     Contact,
     Domain,
     errorReporter,
-    generateModal,
     gettextCatalog,
+    Key,
     Label,
     networkActivityTracker,
     notify,
@@ -30,7 +31,8 @@ angular.module('proton.authentication', [
     url,
     User,
     passwords,
-    srp
+    srp,
+    setupKeys
 ) => {
     let keys = {}; // Store decrypted keys
     /**
@@ -75,9 +77,8 @@ angular.module('proton.authentication', [
                     return result.data.User;
                 } else if (angular.isDefined(result.data) && result.data.Error) {
                     return Promise.reject({ message: result.data.Error });
-                } else {
-                    return Promise.reject({ message: 'Error during user request' });
                 }
+                return Promise.reject({ message: 'Error during user request' });
             })
             .then((user) => {
 
@@ -89,33 +90,30 @@ angular.module('proton.authentication', [
 
                 const subuser = angular.isDefined(user.OrganizationPrivateKey);
                 // Required for subuser
-                const decryptOrganization = function () {
+                const decryptOrganization = () => {
                     if (subuser === true) {
                         return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
-                    } else {
-                        return Promise.resolve();
                     }
+                    return Promise.resolve();
                 };
 
                 // Hacky fix for missing organizations
-                const fixOrganization = function () {
+                const fixOrganization = () => {
                     if (user.Role === 0 && user.Subscribed === 1) {
-                        return pmcw.generateKeysRSA('pm_org_admin', api.getPassword())
+                        return setupKeys.generateOrganization(api.getPassword())
                         .then((response) => {
                             const privateKey = response.privateKeyArmored;
 
                             return {
                                 DisplayName: 'My Organization',
-                                PrivateKey: privateKey,
-                                BackupPrivateKey: privateKey
+                                PrivateKey: privateKey
                             };
                         })
                         .then((params) => {
                             return $http.post(url.get() + '/organizations', params);
                         });
-                    } else {
-                        return Promise.resolve();
                     }
+                    return Promise.resolve();
                 };
 
                 return $q.all({
@@ -134,105 +132,30 @@ angular.module('proton.authentication', [
                         return Promise.reject({ message: contacts.data.Error });
                     } else if (labels.data && labels.data.Error) {
                         return Promise.reject({ message: labels.data.Error });
-                    } else {
-                        return Promise.reject({ message: 'Error during label / contact request' });
                     }
+                    return Promise.reject({ message: 'Error during label / contact request' });
                 })
                 .then(({ user, organizationKey }) => {
-                    const promises = [];
-                    const dirtyAddresses = [];
-                    const privateUser = user.Private === 1;
-                    const keyInfo = function (key) {
-                        return pmcw.keyInfo(key.PrivateKey).then((info) => {
-                            key.created = info.created; // Creation date
-                            key.bitSize = info.bitSize; // We don't use this data currently
-                            key.fingerprint = info.fingerprint; // Fingerprint
+
+                    const storeKeys = (keys) => {
+                        api.clearKeys();
+                        _.each(keys, ({ address, key, pkg }) => {
+                            api.storeKey(address.ID, key.ID, pkg);
                         });
                     };
 
-                    const decryptToken = function (token) {
-                        return pmcw.decryptMessage(token, result.organizationKey);
-                    };
-
-                    const decryptKey = ({ key, password, address, index }) => {
-                        return pmcw.decryptPrivateKey(key.PrivateKey, password).then((pkg) => { // Decrypt private key with the password
-                            key.decrypted = true; // We mark this key as decrypted
-                            api.storeKey(address.ID, key.ID, pkg); // We store the package to the current service
-                            return keyInfo(key);
-                        }, (error) => {
-                            key.decrypted = false; // This key is not decrypted
-                            // If the primary (first) key for address does not decrypt, display error.
-                            if (index === 0) {
-                                address.disabled = true; // This address cannot be used
-                                notify({ message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger' });
-                            }
-                            return keyInfo(key);
-                        });
-                    };
-
-                    const generateKeys = function () {
-                        const deferred = $q.defer();
-
-                        generateModal.activate({
-                            params: {
-                                title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
-                                message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', null, 'Info'),
-                                password: api.getPassword(),
-                                addresses: dirtyAddresses,
-                                close(success, addresses) {
-                                    if (success) {
-                                        // FIXME this doesn't decrypt or store keys!!!
-                                        // Can't call the event service because it might not be started
-                                        // Stupid fix
-                                        location.reload();
-                                        user.Addresses.forEach((address) => {
-                                            const found = _.findWhere(addresses, { ID: address.ID });
-
-                                            if (angular.isDefined(found)) {
-                                                address = found;
-                                            }
-                                        });
-                                        deferred.resolve();
-                                    } else {
-                                        deferred.reject();
-                                    }
-
-                                    generateModal.deactivate();
-
-                                }
-                            }
-                        });
-
-                        return deferred.promise;
-                    };
-
-                    // All private keys are decrypted and stored in a `keys` array
-                    _.each(user.Addresses, (address) => {
-                        if (address.Keys.length > 0) {
-                            let index = 0;
-                            _.each(address.Keys, (key) => {
-                                if (subuser === true) {
-                                    promises.push(decryptToken(key.Token, result.organizationKey).then((token) => { return decryptKey(key, token); }));
-                                } else {
-                                    promises.push(decryptKey({ key, password: api.getPassword(), address, index }));
-                                }
-                                index++;
-                            });
-                        } else if (address.Status === 1 && privateUser === true) {
-                            dirtyAddresses.push(address);
+                    return setupKeys.decryptUser(user, organizationKey, api.getPassword())
+                    .then(({ keys }) => {
+                        storeKeys(keys);
+                        return user;
+                    })
+                    .catch(
+                        (error) => {
+                            return $exceptionHandler(error)
+                            .then(() => Promise.reject(error));
                         }
-                    });
-
-                    if (dirtyAddresses.length > 0) {
-                        promises.push(generateKeys());
-                    }
-
-                    return $q.all(promises).then(() => user, () => user);
+                    );
                 });
-            })
-            .catch((err) => {
-                api.logout(true);
-                return Promise.reject(err);
             }));
         }
     };
@@ -281,6 +204,15 @@ angular.module('proton.authentication', [
             }
         },
 
+        savePassword(pwd) {
+            // Never save mailbox password changes if sub user
+            if (this.user && this.user.OrganizationPrivateKey) {
+                return;
+            }
+
+            // Save password in session storage
+            secureSessionStorage.setItem(CONSTANTS.MAILBOX_PASSWORD_KEY, pmcw.encode_utf8_base64(pwd));
+        },
 
         /**
          * Return the mailbox password stored in the session storage
@@ -311,15 +243,14 @@ angular.module('proton.authentication', [
                 }
 
                 return result;
-            } else {
-                return this.semiRandomString(length);
             }
+            return this.semiRandomString(length);
         },
 
         semiRandomString(size) {
-            let string = '',
-                i = 0,
-                chars = '0123456789ABCDEF';
+            let string = '';
+            let i = 0;
+            const chars = '0123456789ABCDEF';
 
             while (i++ < size) {
                 string += chars[Math.floor(Math.random() * 16)];
@@ -355,6 +286,13 @@ angular.module('proton.authentication', [
             keys[addressID].push(pkg); // Add key package
         },
 
+        /**
+         * Clear stored keys
+         */
+        clearKeys() {
+            keys = {};
+        },
+
         getRefreshCookie() {
             $log.debug('getRefreshCookie');
             return $http.post(url.get() + '/auth/refresh', {}).then(
@@ -367,8 +305,7 @@ angular.module('proton.authentication', [
                         secureSessionStorage.setItem(CONSTANTS.OAUTH_KEY + ':SessionToken', pmcw.encode_base64(response.data.SessionToken));
                         $log.debug('after', $http.defaults.headers.common['x-pm-session']);
                         $rootScope.doRefresh = true;
-                    }
-                    else {
+                    } else {
                         return $q.reject(response.data.Error);
                     }
                 },
@@ -512,9 +449,8 @@ angular.module('proton.authentication', [
         state() {
             if (this.isLoggedIn()) {
                 return this.isLocked() ? 'login.unlock' : null;
-            } else {
-                return 'login';
             }
+            return 'login';
         },
 
         // Redirect to a new authentication state, if required
@@ -530,21 +466,20 @@ angular.module('proton.authentication', [
          * Removes all connection data
          * @param {Boolean} redirect - Redirect at the end the user to the login page
          */
-        logout(redirect, call_api) {
-            call_api = angular.isDefined(call_api) ? call_api : true;
+        logout(redirect, callApi = true) {
             const sessionToken = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':SessionToken');
             const uid = secureSessionStorage.getItem(CONSTANTS.OAUTH_KEY + ':Uid');
-            const process = function () {
+            const process = () => {
                 this.clearData();
 
                 if (redirect === true) {
                     $state.go('login');
                 }
-            }.bind(this);
+            };
 
             $rootScope.loggingOut = true;
 
-            if (call_api && (angular.isDefined(sessionToken) || angular.isDefined(uid))) {
+            if (callApi && (angular.isDefined(sessionToken) || angular.isDefined(uid))) {
                 $http.delete(url.get() + '/auth').then(process, process);
             } else {
                 process();
@@ -593,15 +528,13 @@ angular.module('proton.authentication', [
                         });
                         req.resolve(200);
                     },
-                    (rejection) => {
-                        // console.log(rejection);
+                    () => {
                         req.reject({
                             message: 'Wrong decryption password.'
                         });
                     }
                 );
-            }
-            else {
+            } else {
                 req.reject({
                     message: 'Password is required.'
                 });
@@ -621,12 +554,22 @@ angular.module('proton.authentication', [
                     }
 
                     $rootScope.isLoggedIn = true;
-                    $rootScope.user = user;
                     this.user = user;
+                    $rootScope.user = user;
 
                     return user;
                 },
-                errorReporter.catcher('Please try again later')
+                (error) => {
+                    $state.go('support.message', {
+                        data: {
+                            title: 'Problem loading your account',
+                            content: 'ProtonMail encountered a problem loading your account. Please try again later',
+                            type: 'alert-danger'
+                        }
+                    });
+                    return Promise.reject(error);
+                }
+                //errorReporter.catcher('Please try again later')
             );
         },
 

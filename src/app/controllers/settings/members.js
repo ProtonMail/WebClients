@@ -1,16 +1,22 @@
 angular.module('proton.controllers.Settings')
 
 .controller('MembersController', (
+    $controller,
     $rootScope,
     $scope,
     $state,
     $stateParams,
+    $timeout,
     Address,
+    activateOrganizationModal,
     authentication,
     confirmModal,
+    CONSTANTS,
     domains,
     eventManager,
+    generateOrganizationModal,
     gettextCatalog,
+    loginPasswordModal,
     Member,
     memberModal,
     members,
@@ -19,97 +25,42 @@ angular.module('proton.controllers.Settings')
     organization,
     Organization,
     organizationKeys,
-    storageModal,
-    generateModal
+    passwords,
+    pmcw
 ) => {
+
+    $controller('AddressesController', { $scope, authentication, domains, members, organization, organizationKeys, pmcw });
+
     const MASTER = 2;
     const SUB = 1;
 
+    function passwordModal(submit) {
+        loginPasswordModal.activate({
+            params: {
+                submit,
+                cancel: () => {
+                    loginPasswordModal.deactivate();
+                },
+                hasTwoFactor: authentication.user.TwoFactor
+            }
+        });
+    }
+
     $scope.roles = [
-        { label: gettextCatalog.getString('Master', null), value: MASTER },
-        { label: gettextCatalog.getString('Sub', null), value: SUB }
+        { label: gettextCatalog.getString('Admin', null), value: MASTER },
+        { label: gettextCatalog.getString('Member', null), value: SUB }
     ];
 
-    // Listeners
-    $scope.$on('deleteDomain', (event, domainId) => {
-        const index = _.findIndex($scope.domains, { ID: domainId });
+    $scope.initialization = () => {
 
-        if (index !== -1) {
-            $scope.domains.splice(index, 1);
-        }
-    });
-
-    $scope.$on('createDomain', (event, domainId, domain) => {
-        const index = _.findIndex($scope.domains, { ID: domainId });
-
-        if (index === -1) {
-            $scope.domains.push(domain);
-        } else {
-            _.extend($scope.domains[index], domain);
-        }
-    });
-
-    $scope.$on('updateDomain', (event, domainId, domain) => {
-        const index = _.findIndex($scope.domains, { ID: domainId });
-
-        if (index === -1) {
-            $scope.domains.push(domain);
-        } else {
-            _.extend($scope.domains[index], domain);
-        }
-    });
-
-    $rootScope.$on('deleteMember', (event, memberId) => {
-        const index = _.findIndex($scope.members, { ID: memberId });
-
-        if (index !== -1) {
-            $scope.members.splice(index, 1);
-        }
-    });
-
-    $rootScope.$on('createMember', (event, memberId, member) => {
-        const index = _.findIndex($scope.members, { ID: memberId });
-
-        if (index === -1) {
-            $scope.members.push(member);
-        } else {
-            _.extend($scope.members[index], member);
-        }
-    });
-
-    $rootScope.$on('updateMember', (event, memberId, member) => {
-        const index = _.findIndex($scope.members, { ID: memberId });
-        if (index === -1) {
-            $scope.members.push(member);
-        } else {
-            _.extend($scope.members[index], member);
-        }
-    });
-
-    $scope.initialization = function () {
-        if (members.data && members.data.Code === 1000) {
-            $scope.members = members.data.Members;
-        }
-
-        if (domains.data && domains.data.Code === 1000) {
-            $scope.domains = domains.data.Domains;
-        }
-
-        if (organization.data && organization.data.Code === 1000) {
-            $scope.organization = organization.data.Organization;
-        }
-
-        if (organizationKeys.data && organizationKeys.data.Code === 1000) {
-            $scope.organizationPublicKey = organizationKeys.data.PublicKey;
-            $scope.organizationPrivateKey = organizationKeys.data.PrivateKey;
-        }
-
+        $scope.newRecoveryPassword = '';
+        $scope.confirmRecoveryPassword = '';
         switch ($stateParams.action) {
             case 'new':
-                $scope.add();
+                $scope.addMember();
                 break;
             case 'edit':
-                $scope.edit(_.findWhere($scope.members, { ID: $stateParams.id }));
+                $scope.editMember(_.findWhere($scope.members, { ID: $stateParams.id }));
                 break;
             default:
                 break;
@@ -120,7 +71,7 @@ angular.module('proton.controllers.Settings')
      * We check if domains are verified
      * @return {Boolean}
      */
-    $scope.checkDomains = function () {
+    $scope.checkDomains = () => {
         let verified = false;
 
         if (angular.isArray($scope.domains)) {
@@ -137,7 +88,7 @@ angular.module('proton.controllers.Settings')
     /**
      * Initialize select value with role user
      */
-    $scope.initRole = function (member) {
+    $scope.initRole = (member) => {
         const role = _.findWhere($scope.roles, { value: member.Role });
 
         if (angular.isDefined(role)) {
@@ -149,30 +100,50 @@ angular.module('proton.controllers.Settings')
      * Inform the back-end to change member role
      * @param {Object} member
      */
-    $scope.changeRole = function (member) {
-        const params = { Role: member.selectRole.value };
+    $scope.changeRole = (member) => {
+        const payload = { Role: member.selectRole.value };
 
+        let message;
         if (member.selectRole.value === MASTER) {
-            params.PrivateKey = $scope.organizationPrivateKey;
+            message = gettextCatalog.getString('You must provide this member with the backup organization key password for full activation of administrator privileges.', null, 'Info');
+        } else {
+            message = gettextCatalog.getString('By demoting this member you agree to assume any outstanding organization-related obligations the member may have.', null, 'Info');
         }
 
-        Member.role(member.ID, params).then((result) => { // TODO check request
-            if (result.data && result.data.Code === 1000) {
-                notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
-            } else if (result.data && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-            } else {
-                notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+        const params = {
+            title: gettextCatalog.getString('Change Role', null, 'Error'),
+            message,
+            confirm() {
+                networkActivityTracker.track(
+                    Member.role(member.ID, payload).then(({ data }) => { // TODO check request
+                        if (data && data.Code === 1000) {
+                            notify({ message: gettextCatalog.getString('Role updated', null), classes: 'notification-success' });
+
+                            member.Role = payload.Role;
+
+                            confirmModal.deactivate();
+                        } else if (data && data.Error) {
+                            notify({ message: data.Error, classes: 'notification-danger' });
+                        } else {
+                            notify({ message: gettextCatalog.getString('Error updating role', null, 'Error'), classes: 'notification-danger' });
+                        }
+                    }, () => {
+                        notify({ message: gettextCatalog.getString('Error updating role', null, 'Error'), classes: 'notification-danger' });
+                    })
+                );
+            },
+            cancel() {
+                confirmModal.deactivate();
             }
-        }, () => {
-            notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
-        });
+        };
+
+        confirmModal.activate({ params });
     };
 
     /**
      * Save the organization name
      */
-    $scope.saveOrganizationName = function () {
+    $scope.saveOrganizationName = () => {
         Organization.update({ DisplayName: $scope.organization.DisplayName })
         .then((result) => {
             if (result.data && result.data.Code === 1000) {
@@ -181,76 +152,66 @@ angular.module('proton.controllers.Settings')
                 notify({ message: result.data.Error, classes: 'notification-danger' });
 
             } else {
-                notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+                notify({ message: gettextCatalog.getString('Error updating organization name', null, 'Error'), classes: 'notification-danger' });
             }
         }, () => {
-            notify({ message: gettextCatalog.getString('Error during updating', null, 'Error'), classes: 'notification-danger' });
+            notify({ message: gettextCatalog.getString('Error updating organization name', null, 'Error'), classes: 'notification-danger' });
         });
     };
 
     /**
-     * Unlink address
-     * @param {Object} member
-     * @param {Object} address
+     * Set organization key recovery password
      */
-    $scope.unlinkAddress = function (member, address) {
-        const title = gettextCatalog.getString('Unlink address', null, 'Title');
-        const message = gettextCatalog.getString('Are you sure you want to unlink this address?', null, 'Info');
+    $scope.saveRecoveryPassword = (form) => {
+        const newPassword = $scope.newRecoveryPassword;
 
-        confirmModal.activate({
-            params: {
-                title,
-                message,
-                confirm() {
-                    Address.disable(address.ID).then((result) => {
-                        if (result.data && result.data) {
-                            address.Status = 0;
-                            confirmModal.deactivate();
-                            notify({ message: gettextCatalog.getString('Address disabled', null, 'Info'), classes: 'notification-success' });
-                        }
-                    });
-                },
-                cancel() {
-                    confirmModal.deactivate();
+        function submit(currentPassword, twoFactorCode) {
+            loginPasswordModal.deactivate();
+
+            const creds = {
+                Password: currentPassword,
+                TwoFactorCode: twoFactorCode
+            };
+
+            const keySalt = passwords.generateKeySalt();
+
+            passwords.computeKeyPassword(newPassword, keySalt)
+            .then((keyPassword) => pmcw.encryptPrivateKey($scope.organizationKey, keyPassword))
+            .then((PrivateKey) => Organization.updateBackupKeys({ PrivateKey, KeySalt: keySalt }, creds))
+            .then((result) => {
+                if (result.data && result.data.Code === 1000) {
+                    return result.data;
+                } else if (result.data && result.data.Error) {
+                    return Promise.reject({ message: result.data.Error });
                 }
-            }
-        });
-    };
+                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
+            }, () => {
+                return Promise.reject({ message: gettextCatalog.getString('Error updating organization key recovery password', null, 'Error') });
+            })
+            .then(() => {
+                // Cleanup
+                $scope.newRecoveryPassword = '';
+                $scope.confirmRecoveryPassword = '';
+                form.$setUntouched();
+                form.$setPristine();
+                notify({ message: gettextCatalog.getString('Organization key recovery password updated', null), classes: 'notification-success' });
+            })
+            .catch((error) => {
+                notify({ message: error.message, classes: 'notification-danger' });
+            });
+        }
 
-    /**
-     * Open modal to fix keys
-     * @param {Object} address
-     */
-    $scope.generate = function (address) {
-        const title = gettextCatalog.getString('Generate key pair', null, 'Title');
-        const message = gettextCatalog.getString('Generate key pair', null, 'Info');
-
-        generateModal.activate({
-            params: {
-                title,
-                message,
-                addresses: [address],
-                password: authentication.getPassword(),
-                close(success) {
-                    if (success) {
-                        eventManager.call();
-                    }
-
-                    generateModal.deactivate();
-                }
-            }
-        });
+        passwordModal(submit);
     };
 
     /**
      * Switch a specific member to private
      * @param {Object} member
      */
-    $scope.makePrivate = function (member) {
-        const title = gettextCatalog.getString('Make Private', null);
-        const message = gettextCatalog.getString('TODO', null);
+    $scope.makePrivate = (member) => {
+        const title = gettextCatalog.getString('Privatize Member', null);
+        const message = gettextCatalog.getString("Organization administrators will no longer be able to log in and control the member's account after privatization. This change is PERMANENT.", null);
         const success = gettextCatalog.getString('Status Updated', null);
-        const mailboxPassword = authentication.getPassword();
 
         confirmModal.activate({
             params: {
@@ -258,7 +219,7 @@ angular.module('proton.controllers.Settings')
                 message,
                 confirm() {
                     networkActivityTracker.track(
-                        Member.private(member.ID, { Password: mailboxPassword })
+                        Member.privatize(member.ID)
                         .then((result) => {
                             if (result.data && result.data.Code === 1000) {
                                 member.Private = 1;
@@ -281,59 +242,104 @@ angular.module('proton.controllers.Settings')
      * Allow the current user to access to the mailbox of a specific member
      * @param {Object} member
      */
-    $scope.readMail = function (member) {
-        const mailboxPassword = authentication.getPassword();
+    $scope.login = (member) => {
 
-        Member.authenticate(member.ID, { Password: mailboxPassword })
-        .then((result) => {
-            if (result.data && result.data.Code === 1000) {
-                const sessionToken = result.data.SessionToken;
-                const url = window.location.href;
-                const arr = url.split('/');
-                const domain = arr[0] + '//' + arr[2];
-                const tab = $state.href('login', { sub: true }, { absolute: true });
-                const send = function (event) {
-                    if (event.origin !== domain) { return; }
-                    if (event.data === 'ready') {
-                        // Send the session token and the organization owner’s mailbox password to the target URI
-                        event.source.postMessage({ SessionToken: sessionToken, MailboxPassword: mailboxPassword }, domain);
-                        window.removeEventListener('message', send);
-                    }
-                };
-                // Listen message from the future child
-                window.addEventListener('message', send, false);
-                // Open new tab
-                window.open(tab, '_blank');
-            } else if (result.data && result.data.Error) {
-                notify({ message: result.data.Error, classes: 'notification-danger' });
-            }
-        });
+        if ($scope.keyStatus > 0 && CONSTANTS.KEY_PHASE > 3) {
+            notify({ message: gettextCatalog.getString('Administrator privileges must be activated', null, 'Error'), classes: 'notification-danger' });
+            $state.go('secured.members');
+            return;
+        }
 
+        function submit(currentPassword, twoFactorCode) {
+
+            loginPasswordModal.deactivate();
+
+            const mailboxPassword = authentication.getPassword();
+
+            const arr = window.location.href.split('/');
+            const domain = arr[0] + '//' + arr[2];
+            const tab = $state.href('login.sub', { sub: true }, { absolute: true });
+
+            let ready = false;
+            const receive = (event) => {
+                if (event.origin !== domain) { return; }
+                if (event.data === 'ready') {
+                    ready = true;
+                    window.removeEventListener('message', receive);
+                }
+            };
+
+            // Listen message from the future child
+            window.addEventListener('message', receive, false);
+
+            // Open new tab
+            const child = window.open(tab, '_blank');
+
+            networkActivityTracker.track(
+                Member.authenticate(member.ID, { Password: currentPassword, TwoFactorCode: twoFactorCode })
+                .then((result) => {
+                    const sessionToken = result.data.SessionToken;
+
+                    const cb = () => {
+                        if (ready) {
+                            // Send the session token and the organization owner’s mailbox password to the target URI
+                            child.postMessage({ SessionToken: sessionToken, MailboxPassword: mailboxPassword }, domain);
+                        } else {
+                            $timeout(cb, 500, false);
+                        }
+                    };
+
+                    cb();
+                },
+                (error) => {
+                    child.close();
+                    notify({ message: error.error_description, classes: 'notification-danger' });
+                })
+            )
+            .catch(() => {
+                // Nothing
+            });
+        }
+
+        passwordModal(submit);
     };
 
     /**
      * Open a modal to create a new member
      */
-    $scope.add = function () {
-        $scope.edit();
+    $scope.addMember = () => {
+        if (!$scope.canAddMember()) {
+            return;
+        }
+
+        $scope.editMember();
     };
 
     /**
      * Display a modal to edit a member
      * @param {Object} member
      */
-    $scope.edit = function (member) {
+    $scope.editMember = (member) => {
         memberModal.activate({
             params: {
                 member,
                 organization: $scope.organization,
-                organizationPublicKey: $scope.organizationPublicKey,
+                organizationKey: $scope.organizationKey,
                 domains: $scope.domains,
-                cancel(member) {
-                    if (angular.isDefined(member)) {
+                submit(member) {
+                    const index = _.findIndex($scope.members, { ID: member.ID });
+
+                    if (index === -1) {
                         $scope.members.push(member);
+                        $scope.organization.UsedMembers++;
+                        $scope.organization.UsedAddresses++;
+                    } else {
+                        _.extend($scope.members[index], member);
                     }
 
+                    memberModal.deactivate();
+                },
+                cancel() {
                     memberModal.deactivate();
                 }
             }
@@ -344,7 +350,7 @@ angular.module('proton.controllers.Settings')
      * Remove member
      * @param {Object} member
      */
-    $scope.remove = function (member) {
+    $scope.removeMember = (member) => {
         const title = gettextCatalog.getString('Remove member', null, 'Title');
         const message = gettextCatalog.getString('Are you sure you want to remove this member?', null, 'Info');
         const index = $scope.members.indexOf(member);
@@ -356,7 +362,15 @@ angular.module('proton.controllers.Settings')
                 confirm() {
                     networkActivityTracker.track(Member.delete(member.ID).then((result) => {
                         if (angular.isDefined(result.data) && result.data.Code === 1000) {
+
+                            // Local changes
                             $scope.members.splice(index, 1); // Remove member in the members list
+                            $scope.organization.UsedMembers--;
+                            $scope.organization.UsedAddresses -= member.Addresses.filter((address) => address.Type !== 0).length;
+
+                            // Event loop
+                            eventManager.call();
+
                             confirmModal.deactivate(); // Close the modal
                             notify({ message: gettextCatalog.getString('Member removed', null), classes: 'notification-success' }); // Display notification
                         } else if (angular.isDefined(result.data) && angular.isDefined(result.data.Error)) {
@@ -370,37 +384,6 @@ angular.module('proton.controllers.Settings')
                 },
                 cancel() {
                     confirmModal.deactivate();
-                }
-            }
-        });
-    };
-
-    /**
-     * Open modal to manage member's storage
-     * @param {Object} member
-     */
-    $scope.manageStorage = function (member) {
-        storageModal.activate({
-            params: {
-                member,
-                organization: $scope.organization,
-                submit(space) {
-                    networkActivityTracker.track(Member.quota(member.ID, space).then((result) => {
-                        if (result.data && result.data.Code === 1000) {
-                            eventManager.call();
-                            storageModal.deactivate();
-                            notify({ message: gettextCatalog.getString('Quota updated', null), classes: 'notification-success' });
-                        } else if (result.data && result.data.Error) {
-                            notify({ message: result.data.Error, classes: 'notification-danger' });
-                        } else {
-                            notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
-                        }
-                    }, () => {
-                        notify({ message: gettextCatalog.getString('Unable to save your changes, please try again.', null, 'Error'), classes: 'notification-danger' });
-                    }));
-                },
-                cancel() {
-                    storageModal.deactivate();
                 }
             }
         });

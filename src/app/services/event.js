@@ -1,6 +1,7 @@
 angular.module('proton.event', ['proton.constants', 'proton.storage'])
     .service('eventManager', (
         $cookies,
+        $exceptionHandler,
         $location,
         $log,
         $q,
@@ -20,7 +21,8 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
         gettextCatalog,
         Label,
         notify,
-        pmcw
+        pmcw,
+        setupKeys
     ) => {
         const DELETE = 0;
         const CREATE = 1;
@@ -96,69 +98,53 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
             manageUser(user) {
                 if (user) {
                     const mailboxPassword = authentication.getPassword();
-                    const promises = [];
-                    const dirtyAddresses = [];
-                    const privateUser = user.Private === 1;
-                    const keyInfo = (key) => {
-                        return pmcw.keyInfo(key.PrivateKey)
-                        .then((info) => {
-                            key.created = info.created; // Creation date
-                            key.bitSize = info.bitSize; // We don't use this data currently
-                            key.fingerprint = info.fingerprint; // Fingerprint
-
-                            return $q.resolve(key);
-                        });
-                    };
 
                     if (user.Role === 0) {
                         // Necessary because there is no deletion event for organizations
                         $rootScope.$broadcast('organizationChange', { PlanName: 'free' });
                     }
 
-                    _.each(user.Addresses, (address) => {
-                        if (address.Keys.length === 0 && address.Status === 1 && privateUser === true) {
-                            dirtyAddresses.push(address);
-                        } else {
-                            _.each(address.Keys, (key, index) => {
-                                promises.push(pmcw.decryptPrivateKey(key.PrivateKey, mailboxPassword).then((pkg) => { // Decrypt private key with the mailbox password
-                                    key.decrypted = true; // We mark this key as decrypted
-                                    authentication.storeKey(address.ID, key.ID, pkg); // We store the package to the current service
+                    const subuser = angular.isDefined(user.OrganizationPrivateKey);
+                    // Required for subuser
+                    let organizationKeyPromise = Promise.resolve();
+                    if (subuser) {
+                        organizationKeyPromise = pmcw.decryptPrivateKey(user.OrganizationPrivateKey, mailboxPassword);
+                    }
 
-                                    return keyInfo(key);
-                                }, () => {
-                                    key.decrypted = false; // This key is not decrypted
-                                    // If the primary (first) key for address does not decrypt, display error.
-                                    if (index === 0) {
-                                        address.disabled = true; // This address cannot be used
-                                        notify({ message: 'Primary key for address ' + address.Email + ' cannot be decrypted. You will not be able to read or write any email from this address', classes: 'notification-danger' });
-                                    }
+                    const generateKeys = (addresses) => {
+                        const deferred = $q.defer();
 
-                                    return keyInfo(key);
-                                }));
-                            });
-                        }
-                    });
-
-                    if (dirtyAddresses.length > 0 && generateModal.active() === false) {
                         generateModal.activate({
                             params: {
                                 title: gettextCatalog.getString('Setting up your Addresses', null, 'Title'),
                                 message: gettextCatalog.getString('Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them. Simply select your preferred encryption strength and click "Generate Keys".', null, 'Info'),
-                                addresses: dirtyAddresses,
-                                password: authentication.getPassword(),
+                                password: mailboxPassword,
+                                addresses,
                                 close(success) {
                                     if (success) {
                                         /* eslint no-use-before-define: "off" */
                                         api.call();
+                                        deferred.resolve();
+                                    } else {
+                                        deferred.reject();
                                     }
 
                                     generateModal.deactivate();
                                 }
                             }
                         });
-                    }
 
-                    return $q.all(promises).finally(() => {
+                        return deferred.promise;
+                    };
+
+                    const storeKeys = (keys) => {
+                        authentication.clearKeys();
+                        _.each(keys, ({ address, key, pkg }) => {
+                            authentication.storeKey(address.ID, key.ID, pkg);
+                        });
+                    };
+
+                    const mergeUser = () => {
                         // Merge user parameters
                         _.each(Object.keys(user), (key) => {
                             if (key === 'Addresses') {
@@ -189,7 +175,24 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                         });
                         angular.extend($rootScope.user, authentication.user);
                         $rootScope.$broadcast('updateUser');
-                    });
+                    };
+
+                    return organizationKeyPromise
+                    .then((organizationKey) => setupKeys.decryptUser(user, organizationKey, mailboxPassword))
+                    .then(({ keys, dirtyAddresses }) => {
+                        if (dirtyAddresses.length && generateModal.active() === false) {
+                            return generateKeys(dirtyAddresses)
+                            .then(() => Promise.reject(), () => storeKeys(keys));
+                        }
+                        storeKeys(keys);
+                    })
+                    .then(mergeUser)
+                    .catch(
+                        (error) => {
+                            return $exceptionHandler(error)
+                            .then(() => Promise.reject(error));
+                        }
+                    );
                 }
                 return Promise.resolve();
             },
@@ -270,11 +273,11 @@ angular.module('proton.event', ['proton.constants', 'proton.storage'])
                 if (angular.isDefined(members)) {
                     _.each(members, (member) => {
                         if (member.Action === DELETE) {
-                            $rootScope.$emit('deleteMember', member.ID);
+                            $rootScope.$broadcast('deleteMember', member.ID);
                         } else if (member.Action === CREATE) {
-                            $rootScope.$emit('createMember', member.ID, member.Member);
+                            $rootScope.$broadcast('createMember', member.ID, member.Member);
                         } else if (member.Action === UPDATE) {
-                            $rootScope.$emit('updateMember', member.ID, member.Member);
+                            $rootScope.$broadcast('updateMember', member.ID, member.Member);
                         }
                     });
                 }

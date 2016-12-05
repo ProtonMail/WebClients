@@ -1,0 +1,28 @@
+<div class="pm_modal small {{ctrl.class}}" role="dialog" style="display: block;">
+    <form method="post" class="modal-dialog" ng-submit="activationModalForm.$valid && ctrl.submit()" name="activationModalForm" novalidate>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{ ctrl.title }}</h4>
+            </div>
+            <div class="modal-body pm_form">
+                <div class="{{ ctrl.messageClass }}" ng-show="ctrl.message.length">{{ ctrl.message }}</div>
+                <p>{{ ctrl.prompt }}</p>
+                <input type="password" autofocus ng-model="ctrl.inputCode" id="inputCode" placeholder-translate="Password" name="inputCode" required/>
+                <div ng-messages="activationModalForm.inputCode.$error" class="text-red" ng-show="activationModalForm.inputCode.$touched || activationModalForm.$submitted">
+                    <p ng-message="required" translate-context="Error" translate>Field required</p>
+                </div>
+                <div ng-hide="(activationModalForm.inputCode.$touched || activationModalForm.$submitted) && !activationModalForm.$valid">
+                    <p>&nbsp;</p>
+                </div>
+                <div class="{{ ctrl.alertClass }}" ng-show="ctrl.alert.length">{{ ctrl.alert }}</div>
+            </div>
+        </div>
+        <div class="modal-footer text-right">
+            <button type="button" class="pm_button pull-left" ng-click="ctrl.cancel()" translate translate-context="Action">Cancel</button>
+            <button type="button" class="pm_button" ng-click="ctrl.reset()" ng-show="ctrl.showReset" translate translate-context="Action">Reset Keys</button>
+            <button type="submit" class="pm_button primary" translate translate-context="Action">Submit</button>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

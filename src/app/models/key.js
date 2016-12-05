@@ -43,13 +43,13 @@ angular.module('proton.models.keys', ['proton.srp'])
             return $http.post(url.get() + '/keys/order', params);
         },
         /**
-         * Update entire key, including public key
+         * Activate key
          * @param {String} keyID
          * @param {Object} params
          * @return {Promise}
          */
-        update(keyID, params = {}) {
-            return $http.put(url.get() + '/keys/' + keyID, params);
+        activate(keyID, params = {}) {
+            return $http.put(url.get() + '/keys/' + keyID + '/activate', params);
         },
         /**
          * Update private key only, use for password updates

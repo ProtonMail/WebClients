@@ -116,6 +116,7 @@ module.exports = function(grunt) {
                         'src/app/**/*.js',
                         'src/app/**/**/*.js',
                         '!src/app/libraries/**/*.js',
+                        'src/app/libraries/pmcrypto.js', // Do babel on pmcrypto
                         '!src/app/templates/templates-app.js'
                     ],
                     dest: "<%= build_dir %>",
@@ -129,6 +130,7 @@ module.exports = function(grunt) {
                     src: [
                         '<%= build_dir %>/src/app/**/*.js',
                         '!<%= build_dir %>/src/app/libraries/**/*.js',
+                        '<%= build_dir %>/src/app/libraries/pmcrypto.js', // Do babel on pmcrypto
                         '!<%= build_dir %>/src/app/templates/templates-app.js'
                     ],
                     dest: ".",
@@ -215,15 +217,19 @@ module.exports = function(grunt) {
             },
             build_external: {
                 files: [{
-                    src: ["<%= external_files.openpgp %>"],
+                    src: ["<%= external_files.openpgp %>", "<%= external_files.manifest %>"],
                     dest: "./<%= build_dir %>/",
+                    expand: true,
+                    flatten: true,
                     nonull: true
                 }]
             },
             compile_external: {
                 files: [{
-                    src: ["<%= external_files.openpgp %>"],
+                    src: ["<%= external_files.openpgp %>", "<%= external_files.manifest %>"],
                     dest: "./<%= compile_dir %>/",
+                    expand: true,
+                    flatten: true,
                     nonull: true
                 }]
             },
@@ -347,7 +353,6 @@ module.exports = function(grunt) {
                 dir: '<%= build_dir %>',
                 src: [
                     '<%= build_dir %>/openpgp.min.js',
-                    '<%= build_dir %>/pmcrypto.js',
                     '<%= build_dir %>/src/**/index.js',
                     '<%= build_dir %>/src/**/*.js',
                     '<%= vendor_files.included_js %>',
@@ -360,10 +365,9 @@ module.exports = function(grunt) {
             compile: {
                 dir: '<%= compile_dir %>',
                 src: [
-                    '<%= compile_dir %>/openpgp.min.js',
-                    '<%= compile_dir %>/pmcrypto.js',
-                    '<%= compile_dir %>/assets/app.js',
-                    '<%= compile_dir %>/assets/app.css'
+                    "<%= compile_dir %>/openpgp.min.js",
+                    "<%= compile_dir %>/assets/app.js",
+                    "<%= compile_dir %>/assets/app.css"
                 ],
                 deployment: true
             }

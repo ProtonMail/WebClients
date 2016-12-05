@@ -21,7 +21,8 @@ module.exports = {
     sass: ["src/sass/APP_PROTON.scss"]
   },
   external_files: {
-    openpgp: ["openpgp.worker.min.js", "openpgp.min.js", "manifest.json"]
+    openpgp: ["vendor/openpgp/dist/openpgp.worker.min.js", "vendor/openpgp/dist/openpgp.min.js"],
+    manifest: ["manifest.json"]
   },
   test_files: {
     js: [

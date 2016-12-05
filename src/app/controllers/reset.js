@@ -70,7 +70,7 @@ angular.module('proton.controllers.Reset', [
         return passwords.computeKeyPassword(mbpw, keySalt)
             .then((newMailboxPwd) => {
                 _.each($scope.addresses, (address) => {
-                    const userID = '<' + address.Email + '>';
+                    const userID = address.Email;
                     promises.push(
                         pmcw.generateKeysRSA(userID, newMailboxPwd).then(
                             (response) => {

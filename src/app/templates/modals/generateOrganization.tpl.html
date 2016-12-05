@@ -1,0 +1,56 @@
+<div class="pm_modal important {{ctrl.class}}" role="dialog" style="display: block;">
+    <form method="post" class="modal-dialog" ng-submit="generateOrganizationForm.$valid && ctrl.submit()" name="generateOrganizationForm" novalidate>
+        <button type="button" ng-click="ctrl.cancel()" aria-hidden="true" title-translate="Close" title-translate-context="Action" class="fa fa-times close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" translate translate-context="Title">Change Organization Keys</h4>
+            </div>
+            <div class="modal-body pm_form">
+                <div class="pm_grid">
+                    <div class="col-1-2 text-center">
+                        <label class="checkbox">
+                            <input type="radio" ng-model="ctrl.size" value="2048" />
+                            <strong translate translate-context="Title" translate-comment="form option heading">High security</strong> (2048-bit)
+                        </label>
+                    </div>
+                    <div class="col-1-2 text-center">
+                        <label class="checkbox">
+                            <input type="radio" ng-model="ctrl.size" value="4096" />
+                            <strong translate translate-context="Title" translate-comment="form option heading">Highest security</strong> (4096-bit)
+                        </label>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-1-2">
+                            <label for="newRecoveryPassword" translate-context="Title" translate>Key recovery password</label>
+                        </div>
+                        <div class="col-1-2">
+                            <input type="password" id="newRecoveryPassword" name="newRecoveryPassword" ng-model="ctrl.newRecoveryPassword" placeholder-translate="New recovery password" required>
+                            <div ng-messages="generateOrganizationForm.newRecoveryPassword.$error" class="text-red" ng-if="generateOrganizationForm.newRecoveryPassword.$touched || generateOrganizationForm.$submitted">
+                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-1-2">
+                            <label for="confirmRecoveryPassword" Title translate>Confirm recovery Password</label>
+                        </div>
+                        <div class="col-1-2">
+                            <input type="password" id="confirmRecoveryPassword" name="confirmRecoveryPassword" ng-model="ctrl.confirmRecoveryPassword" placeholder-translate="Confirm new recovery password" class="margin" required compare-to="ctrl.newRecoveryPassword">
+                            <div ng-messages="generateOrganizationForm.confirmRecoveryPassword.$error" class="text-red" ng-if="generateOrganizationForm.confirmRecoveryPassword.$touched || generateOrganizationForm.$submitted">
+                                <p ng-message="required" translate-context="Error" translate>Field required</p>
+                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="alert alert-warning" ng-show="ctrl.otherAdmins" translate translate-context="Info">Other administrators exist in your organization. You must communicate the new key recovery password to them in order for them to reactivate their full administrator privileges.</p>
+                <p class="alert alert-info" ng-show="ctrl.size === '4096'" translate translate-context="Info">Generating 4096-bit encryption keys may crash or freeze your browser. 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="pm_button" ng-click="ctrl.cancel()" ng-disabled="networkActivity.loading()" translate translate-context="Action">Cancel</button>
+            <button type="submit" class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" translate translate-context="Action">Generate Keys</button>
+        </div>
+    </form>
+    <div class="modal-overlay"></div>
+</div>

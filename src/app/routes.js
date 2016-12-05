@@ -34,8 +34,7 @@ angular.module('proton.routes', [
     // LOGIN ROUTES
     // ------------
     .state('login', {
-        params: { sub: null },
-        url: '/login?sub',
+        url: '/login',
         views: {
             'main@': {
                 templateUrl: 'templates/layout/login.tpl.html'
@@ -90,6 +89,20 @@ angular.module('proton.routes', [
                     return data.User;
                 });
             }
+        }
+    })
+
+    .state('login.sub', {
+        url: '/sub',
+        views: {
+            'panel@login': {
+                controller: 'LoginController',
+                templateUrl: 'templates/views/unlock.tpl.html'
+            }
+        },
+        onEnter: ($rootScope) => {
+            $rootScope.isLoggedIn = true;
+            $rootScope.domoArigato = true;
         }
     })
 
@@ -415,7 +428,7 @@ angular.module('proton.routes', [
                         const promise = pmcw
                             .decryptMessage(encryptedToken, $scope.params.MessagePassword)
                             .then((decryptedToken) => {
-                                secureSessionStorage.setItem('proton:decrypted_token', decryptedToken);
+                                secureSessionStorage.setItem('proton:decrypted_token', decryptedToken.data);
                                 secureSessionStorage.setItem('proton:encrypted_password', pmcw.encode_utf8_base64($scope.params.MessagePassword));
                                 $state.go('eo.message', { tag: $stateParams.tag });
                             }, (err) => {
@@ -445,12 +458,12 @@ angular.module('proton.routes', [
                     const promises = [];
 
                     promises.push(pmcw.decryptMessageRSA(message.Body, password, message.Time).then((body) => {
-                        message.DecryptedBody = body;
+                        message.DecryptedBody = body.data;
                     }));
 
                     _.each(message.Replies, (reply) => {
                         promises.push(pmcw.decryptMessageRSA(reply.Body, password, reply.Time).then((body) => {
-                            reply.DecryptedBody = body;
+                            reply.DecryptedBody = body.data;
                         }));
                     });
 
@@ -488,7 +501,7 @@ angular.module('proton.routes', [
                     .then((body) => {
                         const attachments = _.filter(message.Attachments, (attachment) => { return attachment.Headers && (attachment.Headers['content-id'] || attachment.Headers['content-location']); });
 
-                        message.DecryptedBody = body;
+                        message.DecryptedBody = body.data;
                         message.Attachments = attachments;
                         message.NumAttachments = attachments.length;
                         deferred.resolve(new Message(message));
@@ -690,6 +703,32 @@ angular.module('proton.routes', [
 
     .state('secured.addresses', {
         url: '/addresses',
+        resolve: {
+            members(user, Member, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Member.query());
+                }
+                return { data: {} };
+            },
+            domains(user, Domain, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Domain.query());
+                }
+                return { data: {} };
+            },
+            organization(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.get());
+                }
+                return { data: {} };
+            },
+            organizationKeys(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.getKeys());
+                }
+                return { data: {} };
+            }
+        },
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/addresses.tpl.html',
@@ -708,7 +747,13 @@ angular.module('proton.routes', [
         },
         resolve: {
             invoices(Payment, networkActivityTracker) {
-                return networkActivityTracker.track(Payment.invoices());
+                return networkActivityTracker.track(Payment.invoices({ Owner: 0 }));
+            },
+            organizationInvoices(user, Payment, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Payment.invoices({ Owner: 1 }));
+                }
+                return {};
             },
             methods(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.methods());
@@ -718,19 +763,6 @@ angular.module('proton.routes', [
 
     .state('secured.keys', {
         url: '/keys',
-        resolve: {
-            access(user, $q) {
-                const deferred = $q.defer();
-
-                if (user.Role === 0 || user.Role === 2) {
-                    deferred.resolve();
-                } else {
-                    deferred.reject();
-                }
-
-                return deferred.promise;
-            }
-        },
         views: {
             'content@secured': {
                 templateUrl: 'templates/views/keys.tpl.html'
@@ -785,28 +817,41 @@ angular.module('proton.routes', [
             id: null
         },
         resolve: {
-            access(user, $q, CONSTANTS) {
+            access(user, $q, $state, CONSTANTS) {
                 const deferred = $q.defer();
 
-                if (user.Role === 2 && CONSTANTS.KEY_PHASE > 3) {
+                if (CONSTANTS.KEY_PHASE > 3 && user.Role !== 1) {
                     deferred.resolve();
                 } else {
+                    $state.go('secured.addresses');
                     deferred.reject();
                 }
 
                 return deferred.promise;
             },
-            members(access, Member, networkActivityTracker) {
-                return networkActivityTracker.track(Member.query());
+            members(user, Member, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Member.query());
+                }
+                return { data: {} };
             },
-            domains(access, Domain, networkActivityTracker) {
-                return networkActivityTracker.track(Domain.query());
+            domains(user, Domain, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Domain.query());
+                }
+                return { data: {} };
             },
-            organization(access, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.get());
+            organization(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.get());
+                }
+                return { data: {} };
             },
-            organizationKeys(access, Organization, networkActivityTracker) {
-                return networkActivityTracker.track(Organization.getKeys());
+            organizationKeys(user, Organization, networkActivityTracker) {
+                if (user.Role === 2) {
+                    return networkActivityTracker.track(Organization.getKeys());
+                }
+                return { data: {} };
             }
         },
         views: {
@@ -820,6 +865,12 @@ angular.module('proton.routes', [
     .state('secured.domains', {
         url: '/domains',
         resolve: {
+            access(user, $state) {
+                if (user.Role === 1) {
+                    $state.go('secured.addresses');
+                    return Promise.reject();
+                }
+            },
             members(user, Member, networkActivityTracker) {
                 if (user.Role === 2) {
                     return networkActivityTracker.track(Member.query());
