@@ -15,7 +15,12 @@ module.exports = ({ editor }) => () => {
 
         dropzone.attachment()
             .then(() => browser.sleep(1000))
-            .then(() => listAttachments.isVisible())
+            .then(() => {
+                return browser.wait(() => {
+                    return listAttachments.isVisible()
+                        .then((test) => test === true);
+                }, 10000);
+            })
             .then(isTrue);
     });
 

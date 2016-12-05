@@ -31,7 +31,7 @@ const noop = function() {};
 
 const editor = composer();
 
-mainSuite(noop, { editor, message, identifier: 'simple' });
+mainSuite(noop, { editor, message, identifier: 'simple'});
 simpleCCBCC({ editor, message, identifier: 'simpleCCBCC' });
 mainSuite(noSubject, { editor, message, identifier: 'noSubject' }, {
     send: false,

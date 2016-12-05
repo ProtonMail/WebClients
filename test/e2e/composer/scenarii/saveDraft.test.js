@@ -16,13 +16,22 @@ module.exports = ({ editor }) => {
         });
 
         it('should display a notfication', () => {
-            notifs.message()
+            browser.wait(() => {
+                return notifs.isOpened()
+                    .then((test) => test === true)
+            }, 10000)
+                .then(() => browser.sleep(5000))
+                .then(() => notifs.message())
                 .then(assert('Message saved'));
         });
 
         it('should close the draft', () => {
             borodin.close()
-                .then(() => browser.sleep(1000))
+                .then(() => browser.sleep(5000))
+                .then(() => browser.wait(() => {
+                    return editor.isOpened()
+                        .then((test) => test === false);
+                }, 10000))
                 .then(() => editor.isOpened())
                 .then(isFalse);
         });
