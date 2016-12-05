@@ -1,48 +1,84 @@
-var LoginPage = function() {
-    var username = element(by.model('username'));
-    var password = element(by.model('password'));
-    var loginButton = element(by.id('login_btn'));
+module.exports = () => {
 
-    // Help modal
-    var openHelp = element(by.css('[ng-click="displayHelpModal()"]'));
-
-    // Report bug modal
-    var openBug = element(by.css('.newBugReport-container'));
-
-    // Trouble link
-    var v2 = element(by.css('[href="https://v2.protonmail.com/login"]'));
-
-    // Signup link
-    var signup = element(by.css('a.signUp'));
-
-    // Back link
-    var back = element(by.css('[href="https://protonmail.com"]'));
-
-    this.login = function(log, pass) {
-        username.sendKeys(log);
-        password.sendKeys(pass);
-        return loginButton.click();
+    const SELECTOR = {
+        form: '.loginForm-containter',
+        error: '[id="error521"]',
+        username: '.loginForm-input-username',
+        password: '.loginForm-input-password',
+        anchorHelp: '.loginForm-btn-help',
+        buttonSubmit: '.loginForm-btn-submit',
+        buttonModal: '.newBugReport-container',
+        anchorOld: '.login-btn-oldversion',
+        anchorSignup: '.headerNoAuth-btn-signup',
+        anchorLogout: '.headerNoAuth-btn-logout',
+        anchorBack: '.headerNoAuth-btn-back',
     };
 
-    this.openHelp = function() {
-        openHelp.click();
+    const fill = (type, value) => {
+        return browser.executeScript(`
+            const $input = $(document.querySelector('${SELECTOR.form}'))
+            .find('${SELECTOR[type]}');
+
+            $input.val('${value}');
+            $input.triggerHandler('input');
+            $input.blur();
+        `);
     };
 
-    this.openBug = function() {
-        openBug.click();
+    const submit = () => {
+        return browser.executeScript(`
+            $(document.querySelector('${SELECTOR.form}'))
+            .submit();
+        `);
     };
 
-    this.v2 = function() {
-        v2.click();
+    const clickSubmit = () => {
+        return browser.executeScript(`
+            $(document.querySelector('${SELECTOR.form}'))
+            .find('${SELECTOR.buttonSubmit}')
+            .click();
+        `);
     };
 
-    this.signup = function() {
-        signup.click();
+    const openHelp = () => {
+        return browser.executeScript(`
+            $(document.querySelector('${SELECTOR.form}'))
+            .find('${SELECTOR.anchorHelp}')
+            .click();
+        `);
     };
 
-    this.back = function() {
-        back.click();
+    const openModal = () => {
+        return browser.executeScript(`
+            $('${SELECTOR.buttonModal}')
+            .click();
+        `);
     };
+
+    const signup = () => {
+        return browser.executeScript(`
+            $(document.querySelector('${SELECTOR.anchorSignup}'))
+            .click();
+        `);
+    };
+
+    const oldVersion = () => {
+        return browser.executeScript(`
+            $(document.querySelector('${SELECTOR.anchorOld}'))
+            .click();
+        `);
+    };
+
+    const back = () => {
+        return browser.executeScript(`
+            document.querySelector('${SELECTOR.anchorBack}')
+                .click();
+        `);
+    };
+
+    return {
+        fill, submit, back, signup, oldVersion,
+        clickSubmit, openModal, openHelp
+    };
+
 };
-
-module.exports = LoginPage;

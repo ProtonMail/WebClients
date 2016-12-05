@@ -32,11 +32,18 @@ const read = () => {
     `);
 };
 
+const title = () => {
+    return browser.executeScript(`
+        return $('.modal-title').text();
+    `);
+};
+
 module.exports = {
     buttons,
     message,
     isVisible,
     cancel,
     confirm,
-    read
+    read,
+    title
 };
