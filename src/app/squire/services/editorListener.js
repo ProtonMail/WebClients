@@ -103,11 +103,11 @@ angular.module('proton.squire')
                     case 'upload.success':
                         _.chain(data.upload)
                             .filter(({ attachment = {} }) => attachment.Headers['content-disposition'] === 'inline')
-                            .each(({ cid, url }) => {
+                            .each(({ cid, url, attachment }) => {
                                 // If we close the composer the editor won't exist anymore but maybe we were uploading an attchement
                                 editor.fireEvent('refresh', {
                                     action: 'attachment.embedded',
-                                    data: { url, cid }
+                                    data: { url, cid, attachment }
                                 });
                             });
                         break;
@@ -202,7 +202,8 @@ angular.module('proton.squire')
                     if (action === 'attachment.embedded') {
                         return editor.insertImage(data.url, {
                             'data-embedded-img': data.cid,
-                            class: 'proton-embedded'
+                            class: 'proton-embedded',
+                            alt: data.attachment.Name
                         });
                     }
 
