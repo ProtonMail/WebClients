@@ -311,39 +311,7 @@ angular.module('proton.controllers.Settings')
     $scope.deleteAccount = () => {
         deleteAccountModal.activate({
             params: {
-                submit(password, feedback) {
-                    const params = {
-                        OS: '--',
-                        OSVersion: '--',
-                        Browser: '--',
-                        BrowserVersion: '--',
-                        BrowserExtensions: '--',
-                        Client: '--',
-                        ClientVersion: '--',
-                        Title: '[DELETION FEEDBACK]',
-                        Username: '--',
-                        Email: '--',
-                        Description: feedback
-                    };
-                    const promise = Bug.report(params)
-                    .then((data) => {
-                        if (data.Code === 1000) {
-                            return User.delete({ Password: password })
-                            .then((result) => {
-                                const { data = {} } = result;
-                                if (data.Code === 1000) {
-                                    deleteAccountModal.deactivate();
-                                    $state.go('login');
-                                } else if (data.Error) {
-                                    throw data.Error;
-                                }
-                            });
-                        }
-                    })
-                    .catch((error) => Promise.reject(error));
-                    networkActivityTracker.track(promise);
-                },
-                cancel() {
+                close() {
                     deleteAccountModal.deactivate();
                 }
             }

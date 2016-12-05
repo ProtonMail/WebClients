@@ -1,21 +1,44 @@
 angular.module('proton.core')
-.factory('deleteAccountModal', (pmModal) => {
+.factory('deleteAccountModal', (pmModal, Bug, User, networkActivityTracker, authentication, $state) => {
+    function analyse(data = {}) {
+        if (data.Code === 1000) {
+            return Promise.resolve();
+        } else if (data.Error) {
+            return Promise.reject(data.Error);
+        }
+        return Promise.reject('Error');
+    }
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/deleteAccount.tpl.html',
         controller(params) {
-            // Variables
             const self = this;
             self.feedback = '';
             self.password = '';
-
-            // Functions
             self.submit = () => {
-                params.submit(self.password, self.feedback);
+                const username = authentication.user.Name;
+                const params = {
+                    OS: '--',
+                    OSVersion: '--',
+                    Browser: '--',
+                    BrowserVersion: '--',
+                    BrowserExtensions: '--',
+                    Client: '--',
+                    ClientVersion: '--',
+                    Title: `[DELETION FEEDBACK] ${username}`,
+                    Username: username,
+                    Email: '--',
+                    Description: self.feedback
+                };
+                const promise = Bug.report(params)
+                .then((data) => analyse(data))
+                .then(() => User.delete({ Password: self.password }))
+                .then((data) => analyse(data))
+                .then(() => $state.go('login'));
+                networkActivityTracker.track(promise);
             };
-
             self.cancel = () => {
-                params.cancel();
+                params.close();
             };
         }
     });
