@@ -30,6 +30,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
     paginationModel,
     tools
 ) => {
+    const unsubscribes = [];
     let unbindWatcherElements;
     $scope.firstLoad = true; // Variable used to determine if it's the first load to force the cache to call back-end result
 
@@ -123,9 +124,9 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
             }
         };
 
-        const unsubscribe = $rootScope.$on('conversation.close', () => {
+        unsubscribes.push($rootScope.$on('conversation.close', () => {
             isOpened = false;
-        });
+        }));
 
         $scope.$on('refreshElements', () => {
             $scope.refreshElements();
@@ -235,7 +236,7 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
 
         $scope.$on('$destroy', () => {
             $scope.stopWatchingEvent();
-            unsubscribe();
+            unsubscribes.forEach((callback) => callback());
         });
     };
 
@@ -527,11 +528,12 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
     $scope.nextElement = () => {
         const current = $state.$current.name;
         const elementID = $state.params.id;
-        const type = tools.typeList();
-
-        cache.more(elementID, 'next', type)
+        const elementTime = $scope.markedElement.Time;
+        const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+        cache.more(elementID, elementTime, 'next')
         .then((element) => {
-            $state.go(current, { id: element.ID });
+            const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
+            $state.go(current, { id });
             $scope.markedElement = element;
         });
     };
@@ -542,11 +544,12 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
     $scope.previousElement = () => {
         const current = $state.$current.name;
         const elementID = $state.params.id;
-        const type = tools.typeList();
-
-        cache.more(elementID, 'previous', type)
+        const elementTime = $scope.markedElement.Time;
+        const conversationMode = authentication.user.ViewMode === CONSTANTS.CONVERSATION_VIEW_MODE;
+        cache.more(elementID, elementTime, 'previous')
         .then((element) => {
-            $state.go(current, { id: element.ID });
+            const id = (conversationMode) ? (element.ConversationID || element.ID) : element.ID;
+            $state.go(current, { id });
             $scope.markedElement = element;
         });
     };
