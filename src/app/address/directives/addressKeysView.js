@@ -1,5 +1,5 @@
 angular.module('proton.address')
-    .directive('addressKeysView', ($rootScope, authentication, gettextCatalog, notify) => ({
+    .directive('addressKeysView', ($rootScope, authentication, gettextCatalog, notify, Key, keyPasswordModal, pmcw, networkActivityTracker, eventManager) => ({
         replace: true,
         restrict: 'E',
         templateUrl: 'templates/address/addressKeysView.tpl.html',
@@ -8,21 +8,18 @@ angular.module('proton.address')
             const unsubscribe = $rootScope.$on('updateUser', () => {
                 populateKeys();
             });
+            scope.addresses = [];
             function populateKeys() {
-                const addresses = _.sortBy(authentication.user.Addresses, 'Send');
-
-                scope.keys = [];
-                addresses.forEach((address) => {
-                    if (address.Keys.length) {
-                        const first = address.Keys[0];
-                        scope.keys.push({
-                            addressID: address.ID,
-                            email: address.Email,
-                            fingerprint: first.fingerprint,
-                            created: first.created,
-                            bitSize: first.bitSize,
-                            publicKey: first.PublicKey
-                        });
+                authentication.user.Addresses.forEach(({ Keys = [], ID = '', Email = '', Send }) => {
+                    if (Keys.length) {
+                        const { fingerprint, created, bitSize, PublicKey } = Keys[0];
+                        const index = _.findIndex(scope.addresses, { addressID: ID });
+                        const address = { send: Send, addressID: ID, email: Email, fingerprint, created, bitSize, publicKey: PublicKey, keys: Keys };
+                        if (index > -1) {
+                            angular.extend(scope.addresses[index], address);
+                        } else {
+                            scope.addresses.push(address);
+                        }
                     }
                 });
             }
@@ -46,6 +43,48 @@ angular.module('proton.address')
                         console.error(error);
                     }
                 }
+            };
+            /**
+             * Reactivate key
+             * @param {String} key
+             */
+            scope.reactivate = (key) => {
+                Key.salts()
+                .then(({ data = {} }) => {
+                    const keySalt = _.findWhere(data.KeySalts, { ID: key.ID }) || {};
+                    const salt = keySalt.KeySalt;
+                    const privateKey = key.PrivateKey;
+                    const params = {
+                        salt,
+                        privateKey,
+                        submit(decryptedKey) {
+                            keyPasswordModal.deactivate();
+                            const promise = pmcw.encryptPrivateKey(decryptedKey, authentication.getPassword())
+                            .then((PrivateKey) => Key.reactivate(key.ID, { PrivateKey }))
+                            .then(({ data }) => {
+                                if (data.Code === 1000) {
+                                    key.decrypted = true;
+                                    notify({ message: gettextCatalog.getString('Key reactivated', null), classes: 'notification-success' });
+                                    eventManager.call();
+                                } else if (data.Error) {
+                                    return Promise.reject(data.Error);
+                                } else {
+                                    return Promise.reject(gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'));
+                                }
+                            }, () => {
+                                return Promise.reject(gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'));
+                            });
+                            networkActivityTracker.track(promise);
+                        },
+                        cancel() {
+                            keyPasswordModal.deactivate();
+                        }
+                    };
+
+                    keyPasswordModal.activate({ params });
+                }, () => {
+                    // Nothing
+                });
             };
             scope.$on('$destroy', () => {
                 unsubscribe();
