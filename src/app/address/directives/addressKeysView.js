@@ -10,19 +10,18 @@ angular.module('proton.address')
             });
             function populateKeys() {
                 const addresses = _.sortBy(authentication.user.Addresses, 'Send');
-
                 scope.addresses = [];
-                addresses.forEach((address) => {
-                    if (address.Keys.length) {
-                        const first = address.Keys[0];
+                addresses.forEach(({ Keys = [], ID = '', Email = '' }) => {
+                    if (Keys.length) {
+                        const { fingerprint, created, bitSize, PublicKey } = Keys[0];
                         scope.addresses.push({
-                            addressID: address.ID,
-                            email: address.Email,
-                            fingerprint: first.fingerprint,
-                            created: first.created,
-                            bitSize: first.bitSize,
-                            publicKey: first.PublicKey,
-                            keys: address.Keys
+                            addressID: ID,
+                            email: Email,
+                            fingerprint,
+                            created,
+                            bitSize,
+                            publicKey: PublicKey,
+                            keys: Keys
                         });
                     }
                 });
