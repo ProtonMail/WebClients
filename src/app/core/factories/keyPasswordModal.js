@@ -1,5 +1,5 @@
 angular.module('proton.core')
-.factory('keyPasswordModal', ($timeout, pmModal, pmcw, notify, gettextCatalog, passwords) => {
+.factory('keyPasswordModal', (pmModal, pmcw, notify, gettextCatalog, passwords) => {
     return pmModal({
         controllerAs: 'ctrl',
         templateUrl: 'templates/modals/keyPassword.tpl.html',
@@ -8,10 +8,9 @@ angular.module('proton.core')
             self.password = '';
             const privateKey = params.privateKey;
 
-            $timeout(() => document.getElementById('password').focus());
+            setTimeout(() => document.getElementById('password').focus(), 100);
 
             self.submit = () => {
-
                 passwords.computeKeyPassword(self.password, params.salt)
                 .then((keyPassword) => pmcw.decryptPrivateKey(privateKey, keyPassword))
                 .then((decryptedKey) => {
