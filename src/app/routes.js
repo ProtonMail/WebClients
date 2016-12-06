@@ -625,18 +625,13 @@ angular.module('proton.routes', [
     .state('secured.contacts', {
         url: '/contacts',
         resolve: {
-            delinquent($q, $state, gettextCatalog, user, notify, authentication) {
-                const deferred = $q.defer();
-
-                if (authentication.user.Delinquent < 3) {
-                    deferred.resolve();
-                } else {
-                    notify({ message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger' });
+            delinquent($state, gettextCatalog, user, notify, authentication) {
+                if (authentication.user.Delinquent >= 3) {
+                    const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info');
+                    notify({ message, classes: 'notification-danger' });
                     $state.go('secured.payments');
-                    deferred.reject();
                 }
-
-                return deferred.promise;
+                return Promise.resolve();
             }
         },
         views: {
@@ -912,18 +907,13 @@ angular.module('proton.routes', [
             url: '/' + box + '?' + conversationParameters(),
             views: list,
             resolve: {
-                delinquent($q, $state, gettextCatalog, user, notify, authentication) {
-                    const deferred = $q.defer();
-
-                    if (authentication.user.Delinquent < 3) {
-                        deferred.resolve();
-                    } else {
-                        notify({ message: gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info'), classes: 'notification-danger' });
+                delinquent($state, gettextCatalog, user, notify, authentication) {
+                    if (authentication.user.Delinquent >= 3) {
+                        const message = gettextCatalog.getString('Your account currently has an overdue invoice. Please pay all unpaid invoices.', null, 'Info');
+                        notify({ message, classes: 'notification-danger' });
                         $state.go('secured.payments');
-                        deferred.reject();
                     }
-
-                    return deferred.promise;
+                    return Promise.resolve();
                 }
             },
             onExit($rootScope) {
