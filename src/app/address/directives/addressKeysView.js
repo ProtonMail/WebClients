@@ -8,21 +8,18 @@ angular.module('proton.address')
             const unsubscribe = $rootScope.$on('updateUser', () => {
                 populateKeys();
             });
+            scope.addresses = [];
             function populateKeys() {
-                const addresses = _.sortBy(authentication.user.Addresses, 'Send');
-                scope.addresses = [];
-                addresses.forEach(({ Keys = [], ID = '', Email = '' }) => {
+                authentication.user.Addresses.forEach(({ Keys = [], ID = '', Email = '', Send }) => {
                     if (Keys.length) {
                         const { fingerprint, created, bitSize, PublicKey } = Keys[0];
-                        scope.addresses.push({
-                            addressID: ID,
-                            email: Email,
-                            fingerprint,
-                            created,
-                            bitSize,
-                            publicKey: PublicKey,
-                            keys: Keys
-                        });
+                        const index = _.findIndex(scope.addresses, { addressID: ID });
+                        const address = { send: Send, addressID: ID, email: Email, fingerprint, created, bitSize, publicKey: PublicKey, keys: Keys };
+                        if (index > -1) {
+                            scope.addresses[index] = angular.extend(scope.addresses[index], address);
+                        } else {
+                            scope.addresses.push(address);
+                        }
                     }
                 });
             }
