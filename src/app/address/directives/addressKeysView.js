@@ -16,7 +16,7 @@ angular.module('proton.address')
                         const index = _.findIndex(scope.addresses, { addressID: ID });
                         const address = { send: Send, addressID: ID, email: Email, fingerprint, created, bitSize, publicKey: PublicKey, keys: Keys };
                         if (index > -1) {
-                            scope.addresses[index] = angular.extend(scope.addresses[index], address);
+                            angular.extend(scope.addresses[index], address);
                         } else {
                             scope.addresses.push(address);
                         }
