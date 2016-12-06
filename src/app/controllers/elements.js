@@ -262,6 +262,16 @@ angular.module('proton.controllers.Conversations', ['proton.constants'])
         $rootScope.$emit('updatePageName');
     }
 
+    $scope.showNextPrev = () => {
+        const specialBoxes = ['drafts', 'search', 'sent'];
+        const box = tools.currentMailbox();
+        const elementID = $state.params.id;
+        const rowMode = authentication.user.ViewLayout === CONSTANTS.ROW_MODE;
+        const context = tools.cacheContext();
+        const notSpecial = specialBoxes.indexOf(box) === -1;
+        return elementID && rowMode && context && notSpecial;
+    };
+
     $scope.conversationCount = function () {
         const context = tools.cacheContext();
 
