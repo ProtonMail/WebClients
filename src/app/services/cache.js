@@ -513,13 +513,8 @@ angular.module('proton.cache', [])
         if (angular.isDefined(timeCached[conversationId]) && angular.isNumber(timeCached[conversationId][loc])) {
             return timeCached[conversationId][loc];
         }
-
-        const conversation = api.getConversationCached(conversationId);
-        if (angular.isDefined(conversation)) {
-            return conversation.Time;
-        }
-
-        return '';
+        const { Time = '' } = api.getConversationCached(conversationId);
+        return Time;
     };
 
     /**
@@ -982,21 +977,33 @@ angular.module('proton.cache', [])
     /**
      * Return previous ID of message specified
      * @param {String} elementID - can be a message ID or a conversation ID
+     * @param {Integer} elementTime - UNIX timestamp of the current element
      * @param {String} action - 'next' or 'previous'
      * @param {String} type - 'conversation' or 'message'
      * @return {Promise}
      */
-    api.more = (elementID, action, type) => {
+    api.more = (elementID, elementTime, action) => {
+        const type = tools.typeList();
         const elementsCached = (type === 'conversation') ? conversationsCached : messagesCached;
         const loc = tools.currentLocation();
         const callApi = () => {
             const Label = loc;
             const request = { Label };
+
+            if (action === 'next') {
+                request.BeginID = elementID;
+                request.Begin = elementTime;
+            } else if (action === 'previous') {
+                request.EndID = elementID;
+                request.End = elementTime;
+            }
+
             const promise = (type === 'conversation') ? queryConversations(request) : queryMessages(request);
 
             return promise.then((elements = []) => {
                 if (elements.length) {
-                    return Promise.resolve(elements[0]);
+                    const index = (action === 'next') ? (elements.length - 1) : 0;
+                    return Promise.resolve(elements[index]);
                 }
 
                 return Promise.reject();
@@ -1005,9 +1012,10 @@ angular.module('proton.cache', [])
 
         const elements = elementsCached.filter(({ LabelIDs = [] }) => LabelIDs.indexOf(loc) > -1);
         const elementsOrdered = api.orderElements(elements, type, true, loc);
-        const currentIndex = _.findIndex(elementsOrdered, { ID: elementID });
+        const currentElement = _.findWhere(elementsOrdered, { ID: elementID });
 
-        if (currentIndex > -1) {
+        if (currentElement) {
+            const currentIndex = _.findIndex(elementsOrdered, { ID: elementID });
             if (action === 'previous' && elementsOrdered[currentIndex + 1]) {
                 return Promise.resolve(elementsOrdered[currentIndex + 1]);
             } else if (action === 'next' && elementsOrdered[currentIndex - 1]) {
