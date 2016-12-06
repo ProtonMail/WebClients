@@ -9,6 +9,7 @@ angular.module('proton.controllers.Support', [
     $log,
     authentication,
     CONSTANTS,
+    tempStorage,
     User,
     tools,
     notify,
@@ -181,11 +182,15 @@ angular.module('proton.controllers.Support', [
     }
 
     function finishRedirect(authResponse) {
-
         $log.debug('finishRedirect');
         $scope.finishInstall = true;
-
-        $state.go('login.unlock', { creds: $scope.params, authResponse });
+        const creds = {
+            username: $scope.params.username,
+            password: $scope.params.password,
+            authResponse
+        };
+        tempStorage.setItem('creds', creds);
+        $state.go('login.unlock');
     }
 
     /**
