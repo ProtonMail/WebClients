@@ -70,6 +70,21 @@ angular.module('proton.models.keys', ['proton.srp'])
          */
         delete(keyID) {
             return $http.delete(url.get() + '/keys/' + keyID);
+        },
+        /**
+         * Get salts
+         * @return {Promise}
+         */
+        salts() {
+            return $http.get(url.get() + '/keys/salts');
+        },
+        /**
+         * Delete key
+         * @param {String} keyID
+         * @return {Promise}
+         */
+        reactivate(keyID, params) {
+            return $http.put(url.get() + '/keys/' + keyID, params);
         }
     };
 });

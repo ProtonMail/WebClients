@@ -1,5 +1,5 @@
 angular.module('proton.address')
-    .directive('addressKeysView', ($rootScope, authentication, gettextCatalog, notify) => ({
+    .directive('addressKeysView', ($rootScope, authentication, gettextCatalog, notify, Key, keyPasswordModal, pmcw, networkActivityTracker) => ({
         replace: true,
         restrict: 'E',
         templateUrl: 'templates/address/addressKeysView.tpl.html',
@@ -11,17 +11,18 @@ angular.module('proton.address')
             function populateKeys() {
                 const addresses = _.sortBy(authentication.user.Addresses, 'Send');
 
-                scope.keys = [];
+                scope.addresses = [];
                 addresses.forEach((address) => {
                     if (address.Keys.length) {
                         const first = address.Keys[0];
-                        scope.keys.push({
+                        scope.addresses.push({
                             addressID: address.ID,
                             email: address.Email,
                             fingerprint: first.fingerprint,
                             created: first.created,
                             bitSize: first.bitSize,
-                            publicKey: first.PublicKey
+                            publicKey: first.PublicKey,
+                            keys: address.Keys
                         });
                     }
                 });
@@ -46,6 +47,45 @@ angular.module('proton.address')
                         console.error(error);
                     }
                 }
+            };
+            /**
+             * Reactivate key
+             * @param {String} key
+             */
+            scope.reactivate = (key) => {
+                Key.salts()
+                .then(({ data }) => {
+
+                    const params = {
+                        salt: _.findWhere(data.KeySalts, { ID: key.ID }).KeySalt,
+                        privateKey: key.PrivateKey,
+                        submit(decryptedKey) {
+                            keyPasswordModal.deactivate();
+
+                            networkActivityTracker.track(pmcw.encryptPrivateKey(decryptedKey, authentication.getPassword())
+                            .then((PrivateKey) => Key.reactivate(key.ID, { PrivateKey }))
+                            .then(({ data }) => {
+                                if (data && data.Code === 1000) {
+                                    key.decrypted = true;
+                                    notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
+                                } else if (data && data.Error) {
+                                    notify({ message: data.Error, classes: 'notification-danger' });
+                                } else {
+                                    notify({ message: gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'), classes: 'notification-danger' });
+                                }
+                            }, () => {
+                                notify({ message: gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'), classes: 'notification-danger' });
+                            }));
+                        },
+                        cancel() {
+                            keyPasswordModal.deactivate();
+                        }
+                    };
+
+                    keyPasswordModal.activate({ params });
+                }, () => {
+                    // Nothing
+                });
             };
             scope.$on('$destroy', () => {
                 unsubscribe();
