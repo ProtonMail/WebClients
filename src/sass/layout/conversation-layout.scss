@@ -5,6 +5,7 @@
 // REGULAR
 body {
     #conversation-list-columns {
+        box-sizing: border-box;
         width: 500px;
         width: 40%;
         float: left;
@@ -12,6 +13,7 @@ body {
         overflow-y: scroll;
         overflow-x: hidden;
         position: relative;
+        border-right:1px solid $border;
     }
     #conversation-view,
     #pm_view {
@@ -22,6 +24,7 @@ body {
         display: -webkit-flex;
         flex-direction: column;
         -webkit-flex-direction:column;
+
         &.latest {
             overflow-y: scroll;
             overflow-x: hidden;
