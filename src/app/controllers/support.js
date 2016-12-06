@@ -72,19 +72,15 @@ angular.module('proton.controllers.Support', [
      */
     $scope.resetLostPassword = () => {
         $scope.params.username = $scope.params.username;
-        networkActivityTracker.track(
-            Reset.requestResetToken({
-                Username: $scope.params.username,
-                NotificationEmail: $scope.params.recoveryEmail
-            })
-            .then((result) => {
-                if (result.data && result.data.Code === 1000) {
-                    $scope.resetState = $scope.states.CODE;
-                } else if (result.data && result.data.Error) {
-                    notify({ message: result.data.Error, classes: 'notification-danger' });
-                }
-            })
-        );
+        const promise = Reset.requestResetToken({ Username: $scope.params.username, NotificationEmail: $scope.params.recoveryEmail })
+        .then(({ data = {} }) => {
+            if (data.Code === 1000) {
+                $scope.resetState = $scope.states.CODE;
+            } else if (data.Error) {
+                return Promise.reject(data.Error);
+            }
+        });
+        networkActivityTracker.track(promise);
     };
 
     /**
