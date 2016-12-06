@@ -54,29 +54,31 @@ angular.module('proton.address')
              */
             scope.reactivate = (key) => {
                 Key.salts()
-                .then(({ data }) => {
-
+                .then(({ data = {} }) => {
+                    const keySalt = _.findWhere(data.KeySalts, { ID: key.ID }) || {};
+                    const salt = keySalt.KeySalt;
+                    const privateKey = key.PrivateKey;
                     const params = {
-                        salt: _.findWhere(data.KeySalts, { ID: key.ID }).KeySalt,
-                        privateKey: key.PrivateKey,
+                        salt,
+                        privateKey,
                         submit(decryptedKey) {
                             keyPasswordModal.deactivate();
-
-                            networkActivityTracker.track(pmcw.encryptPrivateKey(decryptedKey, authentication.getPassword())
+                            const promise = pmcw.encryptPrivateKey(decryptedKey, authentication.getPassword())
                             .then((PrivateKey) => Key.reactivate(key.ID, { PrivateKey }))
                             .then(({ data }) => {
-                                if (data && data.Code === 1000) {
+                                if (data.Code === 1000) {
                                     key.decrypted = true;
                                     notify({ message: gettextCatalog.getString('Key reactivated', null), classes: 'notification-success' });
                                     eventManager.call();
-                                } else if (data && data.Error) {
-                                    notify({ message: data.Error, classes: 'notification-danger' });
+                                } else if (data.Error) {
+                                    return Promise.reject(data.Error);
                                 } else {
-                                    notify({ message: gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'), classes: 'notification-danger' });
+                                    return Promise.reject(gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'));
                                 }
                             }, () => {
-                                notify({ message: gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'), classes: 'notification-danger' });
-                            }));
+                                return Promise.reject(gettextCatalog.getString('Error reactivating key. Please try again', null, 'Error'));
+                            });
+                            networkActivityTracker.track(promise);
                         },
                         cancel() {
                             keyPasswordModal.deactivate();
