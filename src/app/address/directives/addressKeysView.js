@@ -1,5 +1,5 @@
 angular.module('proton.address')
-    .directive('addressKeysView', ($rootScope, authentication, gettextCatalog, notify, Key, keyPasswordModal, pmcw, networkActivityTracker) => ({
+    .directive('addressKeysView', ($rootScope, authentication, gettextCatalog, notify, Key, keyPasswordModal, pmcw, networkActivityTracker, eventManager) => ({
         replace: true,
         restrict: 'E',
         templateUrl: 'templates/address/addressKeysView.tpl.html',
@@ -67,7 +67,8 @@ angular.module('proton.address')
                             .then(({ data }) => {
                                 if (data && data.Code === 1000) {
                                     key.decrypted = true;
-                                    notify({ message: gettextCatalog.getString('Preference saved', null), classes: 'notification-success' });
+                                    notify({ message: gettextCatalog.getString('Key reactivated', null), classes: 'notification-success' });
+                                    eventManager.call();
                                 } else if (data && data.Error) {
                                     notify({ message: data.Error, classes: 'notification-danger' });
                                 } else {
