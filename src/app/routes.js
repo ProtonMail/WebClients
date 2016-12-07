@@ -586,6 +586,36 @@ angular.module('proton.routes', [
             authentication.redirectIfNecessary();
         }
     })
+    .state('pgp', {
+        url: '/pgp',
+        views: {
+            'main@': {
+                templateUrl: 'templates/views/pgp.tpl.html',
+                controller($scope, $rootScope) {
+                    $rootScope.isBlank = true;
+                    $scope.loading = true;
+
+                    function viewPgp(event) {
+                        $scope.$applyAsync(() => {
+                            $scope.content = event.data;
+                            $scope.loading = false;
+                        });
+
+                        window.removeEventListener('message', viewPgp, false);
+                    }
+
+                    if (window.opener) {
+                        const url = window.location.href;
+                        const arr = url.split('/');
+                        const targetOrigin = arr[0] + '//' + arr[2];
+
+                        window.addEventListener('message', viewPgp, false);
+                        window.opener.postMessage('sendPgp', targetOrigin);
+                    }
+                }
+            }
+        }
+    })
 
     .state('printer', {
         params: { messageID: null },
@@ -601,7 +631,7 @@ angular.module('proton.routes', [
         views: {
             'main@': {
                 templateUrl: 'templates/views/message.print.tpl.html',
-                controller($scope, $state, $rootScope, $sce, $timeout, messageID) {
+                controller($scope, $rootScope, $sce, messageID) {
                     $rootScope.isBlank = true;
                     $scope.loading = true;
 
@@ -624,10 +654,8 @@ angular.module('proton.routes', [
                                 $scope.loading = false;
                             });
 
-                            window.removeEventListener('message', this);
-                            $timeout(() => {
-                                window.print();
-                            }, 2000, false);
+                            window.removeEventListener('message', printMessage, false);
+                            setTimeout(() => window.print(), 2000, false);
                         }
                     }
                 }
