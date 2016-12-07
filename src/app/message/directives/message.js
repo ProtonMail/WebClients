@@ -191,17 +191,20 @@ angular.module('proton.message')
             /**
              * Display PGP
              */
-            scope.viewPgp = function () {
-                let content = scope.message.Header + '\n\r' + scope.message.Body;
-                const filename = 'pgp.txt';
-
-                if (navigator.msSaveBlob) { // IE 10+
-                    content = content.replace(/\n/g, '\r\n');
-                    const blob = new Blob([content], { type: 'data:text/plain;base64;' });
-                    navigator.msSaveBlob(blob, filename);
-                } else {
-                    window.open('data:text/plain;base64,' + btoa(content), '_blank');
+            scope.viewPgp = () => {
+                const content = scope.message.Header + '\n\r' + scope.message.Body;
+                const tab = $state.href('pgp', {}, { absolute: true });
+                const url = window.location.href;
+                const arr = url.split('/');
+                const targetOrigin = arr[0] + '//' + arr[2];
+                function sendPgp(event) {
+                    if (event.data === 'sendPgp') {
+                        event.source.postMessage(content, targetOrigin);
+                        window.removeEventListener('message', sendPgp, false);
+                    }
                 }
+                window.addEventListener('message', sendPgp, false);
+                window.open(tab, '_blank');
             };
 
             /**

@@ -281,6 +281,7 @@ angular.module('proton', [
         const isOutside = (toState.name.includes('eo'));
         const isReset = (toState.name.includes('reset'));
         const isPrinter = (toState.name === 'printer');
+        const isPgp = (toState.name === 'pgp');
 
         if (isUnlock && $rootScope.isLoggedIn) {
             $log.debug('appjs:(isUnlock && $rootScope.isLoggedIn)');
@@ -291,9 +292,9 @@ angular.module('proton', [
             event.preventDefault();
             $state.go('secured.inbox');
             return;
-        } else if (isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter) {
+        } else if (isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter || isPgp) {
             // if on the login, support, account, or signup pages dont require authentication
-            $log.debug('appjs:(isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter)');
+            $log.debug('appjs:(isLogin || isSub || isSupport || isAccount || isSignup || isOutside || isUpgrade || isReset || isPrinter || isPgp)');
             return; // no need to redirect
         }
 
