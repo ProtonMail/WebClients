@@ -13,6 +13,8 @@ angular.module('proton.controllers.Support', [
     User,
     tools,
     notify,
+    gettextCatalog,
+    confirmModal,
     Reset,
     setupKeys,
     Key,
@@ -66,11 +68,29 @@ angular.module('proton.controllers.Support', [
         return $state.params.data.type || '';
     };
 
+    $scope.confirmResetLostPassword = () => {
+        const title = gettextCatalog.getString('Confirm Reset Password', null, 'Title');
+        const message = gettextCatalog.getString('Resetting your password means you will no longer be able to read your old emails. If you have questions, please write contact@protonmail.ch. Are you sure you want to reset your password?', null, 'Title');
+        confirmModal.activate({
+            params: {
+                title,
+                message,
+                confirm() {
+                    confirmModal.deactivate();
+                    resetLostPassword();
+                },
+                cancel() {
+                    confirmModal.deactivate();
+                }
+            }
+        });
+    };
+
     /**
      * Request a token to reset login pass. Some validation first.
      * Shows errors otherwise sets a flag to show a different form
      */
-    $scope.resetLostPassword = () => {
+    function resetLostPassword() {
         $scope.params.username = $scope.params.username;
         const promise = Reset.requestResetToken({ Username: $scope.params.username, NotificationEmail: $scope.params.recoveryEmail })
         .then(({ data = {} }) => {
@@ -81,7 +101,7 @@ angular.module('proton.controllers.Support', [
             }
         });
         networkActivityTracker.track(promise);
-    };
+    }
 
     /**
      * Validates the token and shows the last form
