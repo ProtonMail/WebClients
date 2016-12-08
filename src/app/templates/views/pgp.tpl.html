@@ -1,8 +1,8 @@
-<div id="pm-pgp" class="pm-flex-content-vertical-center">
-    <loader-tag ng-if="loading"></loader-tag>
-    <p>
+<div id="pm-pgp">
+    <loader-tag class="pm-flex-content-vertical-center" ng-if="content"></loader-tag>
+    <p class="text-right">
         <button ng-if="content && !isSafari" type="button" ng-click="download()" class="pm_button" translate translate-context="Action">Download</button>
         <button ng-if="content" type="button" ng-click="print()" class="pm_button" translate translate-context="Action">Print</button>
     </p>
-    <pre class="pm-pgp-header" ng-if="!loading" ng-bind="content"></pre>
+    <pre  ng-if="!loading" ng-bind="content"></pre>
 </div>
