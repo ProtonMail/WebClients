@@ -12,7 +12,7 @@
             <tr ng-repeat-start="address in addresses | orderBy: 'send' track by address.addressID">
                 <td>
                     <span class="pull-left">
-                        <i class="fa" ng-class="{ 'fa-plus-square-o': !address.toggle, 'fa-minus-square-o': address.toggle }" ng-init="address.toggle = false" ng-click="address.toggle = !address.toggle"></i>
+                        <toggle-expand data-model="address.toggle"></toggle-expand>
                     </span>
                     &nbsp;
                     <span><strong>{{ address.email }}</strong></span>
