@@ -599,24 +599,35 @@ angular.module('proton.routes', [
         views: {
             'main@': {
                 templateUrl: 'templates/views/pgp.tpl.html',
-                controller($scope, $rootScope, messageID) {
+                controller($scope, $rootScope, messageID, gettextCatalog, notify) {
+                    $scope.isSafari = jQuery.browser.name === 'safari'; // Download doesn't work with Safari browser
                     $rootScope.isBlank = true;
-                    $scope.loading = true;
 
                     function viewPgp(event) {
                         $scope.$applyAsync(() => {
                             $scope.content = event.data;
-                            $scope.loading = false;
                         });
-
                         window.removeEventListener('message', viewPgp, false);
                     }
+
+                    $scope.download = () => {
+                        const blob = new Blob([$scope.content], { type: 'data:text/plain;charset=utf-8;' });
+                        const filename = 'pgp.txt';
+                        try {
+                            window.saveAs(blob, filename);
+                        } catch (error) {
+                            console.error(error);
+                        }
+                    };
+
+                    $scope.print = () => {
+                        window.print();
+                    };
 
                     if (window.opener) {
                         const url = window.location.href;
                         const arr = url.split('/');
                         const targetOrigin = arr[0] + '//' + arr[2];
-
                         window.addEventListener('message', viewPgp, false);
                         window.opener.postMessage(messageID, targetOrigin);
                     }
