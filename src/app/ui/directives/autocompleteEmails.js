@@ -143,8 +143,8 @@ angular.module('proton.ui')
              */
             if (target.nodeName === 'INPUT' && !target.value) {
                 awesomplete.minChars = 0;
-                const { list } = model.filterContact(target.value);
-                awesomplete.list = list;
+                const { list, hasAutocompletion } = model.filterContact(target.value);
+                hasAutocompletion && (awesomplete.list = list);
             }
         };
 
