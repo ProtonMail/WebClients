@@ -1,7 +1,13 @@
 #pm-pgp {
     position: absolute;
-    width: 100%;
+    box-sizing: border-box;
     height: 100%;
-    
-    .pm-pgp-header { margin: 20px }
+    width: 100%;
+    padding:20px;
+
+    .pm-pgp-main-loader {
+        > .loader { margin: 0px auto }
+    }
+
+    > section.pm-pgp-headers > header  > button { margin-left:10px }
 }
