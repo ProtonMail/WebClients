@@ -1,8 +1,14 @@
-<div id="pm-pgp">
-    <loader-tag class="pm-flex-content-vertical-center" ng-if="content"></loader-tag>
-    <p class="text-right">
-        <button ng-if="content && !isSafari" type="button" ng-click="download()" class="pm_button" translate translate-context="Action">Download</button>
-        <button ng-if="content" type="button" ng-click="print()" class="pm_button" translate translate-context="Action">Print</button>
-    </p>
-    <pre  ng-if="!loading" ng-bind="content"></pre>
+<div id="pm-pgp" class="pm-flex-content">
+    <div class="pm-pgp-main-loader pm-flex-content-vertical-center" ng-if="!content">
+        <loader-tag></loader-tag>
+        <h1 class="text-center" translate translate-context="Title">Loading message headers...</h1>
+    </div>
+    <section class="pm-pgp-headers" ng-if="content">
+        <header class="pm-flex-content-row">
+            <h1 class="pm-flex-content-fillWidth" translate translate-context="Title">Message headers</h1>
+            <button ng-if="!isSafari" type="button" ng-click="download()" class="pm_button" translate translate-context="Action">Download</button>
+            <button type="button" ng-click="print()" class="pm_button" translate translate-context="Action">Print</button>
+        </header>
+        <pre ng-bind="content"></pre>
+    </section>
 </div>
