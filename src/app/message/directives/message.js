@@ -192,7 +192,7 @@ angular.module('proton.message')
              * Display PGP
              */
             scope.viewPgp = () => {
-                const tab = $state.href('pgp', {}, { absolute: true });
+                const tab = $state.href('pgp', { messageID: scope.message.ID }, { absolute: true });
                 const url = window.location.href;
                 const arr = url.split('/');
                 const targetOrigin = arr[0] + '//' + arr[2];
