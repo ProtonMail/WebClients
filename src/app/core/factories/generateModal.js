@@ -20,7 +20,7 @@ angular.module('proton.core')
             self.addresses = params.addresses;
             self.message = params.message;
             // Kill this for now
-            self.askPassword = 0; //= params.password.length === 0;
+            self.askPassword = false; // = params.password.length === 0;
             self.password = params.password;
             _.each(self.addresses, (address) => { address.state = QUEUED; });
 
@@ -46,7 +46,7 @@ angular.module('proton.core')
                 self.process = true;
                 _.each(self.addresses, (address) => {
                     address.state = GENERATING;
-                    promises.push(pmcw.generateKeysRSA('<' + address.Email + '>', self.password, numBits)
+                    promises.push(pmcw.generateKeysRSA(address.Email, self.password, numBits)
                     .then((result) => {
                         const privateKeyArmored = result.privateKeyArmored;
 
