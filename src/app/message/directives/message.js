@@ -192,13 +192,13 @@ angular.module('proton.message')
              * Display PGP
              */
             scope.viewPgp = () => {
-                const content = scope.message.Header + '\n\r' + scope.message.Body;
                 const tab = $state.href('pgp', {}, { absolute: true });
                 const url = window.location.href;
                 const arr = url.split('/');
                 const targetOrigin = arr[0] + '//' + arr[2];
                 function sendPgp(event) {
-                    if (event.data === 'sendPgp') {
+                    if (event.data === scope.message.ID) {
+                        const content = scope.message.Header + '\n\r' + scope.message.Body;
                         event.source.postMessage(content, targetOrigin);
                         window.removeEventListener('message', sendPgp, false);
                     }

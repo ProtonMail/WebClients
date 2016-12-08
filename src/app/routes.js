@@ -587,11 +587,19 @@ angular.module('proton.routes', [
         }
     })
     .state('pgp', {
-        url: '/pgp',
+        url: '/pgp/:messageID',
+        resolve: {
+            messageID($stateParams) {
+                if ($stateParams.messageID) {
+                    return Promise.resolve($stateParams.messageID);
+                }
+                return Promise.reject();
+            }
+        },
         views: {
             'main@': {
                 templateUrl: 'templates/views/pgp.tpl.html',
-                controller($scope, $rootScope) {
+                controller($scope, $rootScope, messageID) {
                     $rootScope.isBlank = true;
                     $scope.loading = true;
 
@@ -610,7 +618,7 @@ angular.module('proton.routes', [
                         const targetOrigin = arr[0] + '//' + arr[2];
 
                         window.addEventListener('message', viewPgp, false);
-                        window.opener.postMessage('sendPgp', targetOrigin);
+                        window.opener.postMessage(messageID, targetOrigin);
                     }
                 }
             }
