@@ -24,7 +24,7 @@ angular.module('proton.core')
         };
         element.popover(options);
         scope.$on('$destroy', () => {
-            element.popover('destroy');
+            element.popover('destroy'); // it doesn't work, Bootstrap problem?
         });
     }
 }));
