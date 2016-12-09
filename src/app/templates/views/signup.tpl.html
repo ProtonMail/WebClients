@@ -18,17 +18,19 @@
             <div class="usernameWrap">
                 <p class="help" translate-context="Info" translate>This will be your new ProtonMail email address.</p>
                 <strong ng-show="readOnlyUsername" ng-bind="account.Username"></strong>
-                <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder-translate="Choose username" required id="Username" class="dead" ng-change="checkAvailability(true)" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" ng-class="{'success':goodUsername,'error':badUsername}" />
+                <input ng-hide="readOnlyUsername" type="text" ng-model="account.Username" name="Username" autofocus placeholder-translate="Choose username" unique-username valid-username required id="Username" class="dead" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" ng-class="{'success':goodUsername,'error':badUsername}" />
                 <em class="usernameDomain">@</em>
                 <span class="pm_select inline bigger">
                     <select class="selectDomain" ng-model="account.domain" ng-options="domain.label for domain in domains"></select>
                     <i class="fa fa-angle-down"></i>
                 </span>
-                <em class="fa fa-spin fa-spinner" ng-show="checkingUsername"></em>
             </div>
-            <p class="alert alert-danger" ng-show="badUsername" ng-bind="badUsernameMessage"></p>
-            <p class="alert alert-success" ng-show="goodUsername" translate-context="Info" translate>Email available</p>
-
+            <p ng-show="accountForm.$pending.unique" class="alert alert-info" translate translate-context="Info">Checking username</p>
+            <div ng-messages="accountForm.Username.$error" ng-show="accountForm.Username.$touched || accountForm.$submitted">
+                <p ng-message="required" class="alert alert-danger" translate translate-context="Error">Username required</p>
+                <p ng-message="unique" class="alert alert-danger" translate translate-context="Error">Username already taken</p>
+                <p ng-message="valid" class="alert alert-danger" translate translate-context="Error">Username invalid</p>
+            </div>
             <div ng-if="keyPhase < 3">
                 <label class="titleLabel" for="password">
                     <em class="num">2</em>
