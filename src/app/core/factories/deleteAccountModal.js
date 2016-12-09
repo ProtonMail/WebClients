@@ -40,10 +40,10 @@ angular.module('proton.core')
                     Email: '--',
                     Description: self.feedback
                 };
-                const promise = report(params, self.isAdmin)
-                .then((data) => analyse(data, self.isAdmin))
-                .then(() => User.delete({ Password: self.password }))
+                const promise = User.delete({ Password: self.password })
                 .then(({ data = {} }) => analyse(data))
+                .then(() => report(params, self.isAdmin))
+                .then((data) => analyse(data, self.isAdmin))
                 .then(() => $state.go('login'));
                 networkActivityTracker.track(promise);
             };
