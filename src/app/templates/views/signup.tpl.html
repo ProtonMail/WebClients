@@ -25,6 +25,7 @@
                     <i class="fa fa-angle-down"></i>
                 </span>
             </div>
+            <p ng-show="accountForm.Username.$valid" class="alert alert-success" translate translate-context="Info">Username available</p>
             <p ng-show="accountForm.$pending.unique" class="alert alert-info" translate translate-context="Info">Checking username</p>
             <div ng-messages="accountForm.Username.$error">
                 <p ng-message="required" class="alert alert-danger" ng-if="accountForm.Username.$dirty" translate translate-context="Error">Username required</p>
