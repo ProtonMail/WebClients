@@ -91,14 +91,11 @@
 					text-overflow: ellipsis;
 				}
 			}
-			input {
+			input[type="checkbox"] {
 				position: absolute;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				line-height: 35px;
-				height: 35px;
-				margin: 0;
+				right:0;
+				margin: 10px 0px;
+				cursor: pointer;
 			}
 			.fa {
 				margin-right: 10px;
@@ -121,8 +118,7 @@
 				padding: 0 15px;
 				border: 1px solid $border;
 				margin-bottom: 5px;
-				input {
-					right: 0;
+				input[type="checkbox"] {
 					height: initial !important;
 					width: initial !important;
 					margin: 10px;
