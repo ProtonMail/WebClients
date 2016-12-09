@@ -26,8 +26,8 @@
                 </span>
             </div>
             <p ng-show="accountForm.$pending.unique" class="alert alert-info" translate translate-context="Info">Checking username</p>
-            <div ng-messages="accountForm.Username.$error" ng-show="accountForm.Username.$touched || accountForm.$submitted">
-                <p ng-message="required" class="alert alert-danger" translate translate-context="Error">Username required</p>
+            <div ng-messages="accountForm.Username.$error">
+                <p ng-message="required" class="alert alert-danger" ng-if="accountForm.Username.$dirty" translate translate-context="Error">Username required</p>
                 <p ng-message="unique" class="alert alert-danger" translate translate-context="Error">Username already taken</p>
                 <p ng-message="valid" class="alert alert-danger" translate translate-context="Error">Username invalid</p>
             </div>
