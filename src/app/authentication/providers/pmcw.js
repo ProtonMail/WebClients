@@ -1,6 +1,4 @@
-angular.module('proton.pmcw', [])
-
-// Proton Mail Crypto Wrapper
+angular.module('proton.authentication')
 .provider('pmcw', function pmcwProvider() {
     pmcrypto.checkMailboxPassword = function (prKey, prKeyPassCode, accessToken) {
 

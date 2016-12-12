@@ -1,10 +1,5 @@
-angular.module('proton.passwords', [])
-.factory('passwords', (
-    $q,
-    gettextCatalog,
-    webcrypto
-) => {
-
+angular.module('proton.authentication')
+.factory('passwords', ($q, gettextCatalog, webcrypto) => {
 
     function bcrypt(str, salt) {
         const deferred = $q.defer();

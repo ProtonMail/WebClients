@@ -59,7 +59,6 @@ angular.module('proton', [
     'proton.errorReporter',
     'proton.event',
     'proton.networkActivity',
-    'proton.pmcw',
     'proton.tools',
     'proton.desktopNotifications',
     'proton.embedded',
@@ -80,8 +79,6 @@ angular.module('proton', [
     'proton.labelHeight',
     'proton.labels',
     'proton.loaderTag',
-    'proton.login',
-    'proton.loginTwoFactor',
     'proton.locationTag',
     'proton.phone',
     'proton.responsiveComposer',
@@ -100,7 +97,6 @@ angular.module('proton', [
     'proton.filters',
 
     // Controllers
-    'proton.controllers.Auth',
     'proton.controllers.Contacts',
     'proton.controllers.Header',
     'proton.controllers.Conversations',

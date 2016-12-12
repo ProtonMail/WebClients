@@ -1,4 +1,4 @@
-angular.module('proton.webcrypto', [])
+angular.module('proton.authentication')
 .factory('webcrypto', () => {
     if (window.crypto && window.crypto.getRandomValues) {
         return window.crypto;

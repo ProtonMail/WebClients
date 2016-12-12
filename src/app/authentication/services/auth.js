@@ -1,11 +1,4 @@
-angular.module('proton.authentication', [
-    'proton.pmcw',
-    'proton.models',
-    'proton.storage',
-    'proton.passwords',
-    'proton.srp'
-])
-
+angular.module('proton.authentication')
 .factory('authentication', (
     $http,
     $location,
