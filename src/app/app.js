@@ -59,10 +59,10 @@ angular.module('proton', [
     'proton.event',
     'proton.embedded',
     // Directives
+    'proton.elements',
     'proton.address',
     'proton.message',
     'proton.conversation',
-    'proton.star',
     'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
