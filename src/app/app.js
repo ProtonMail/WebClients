@@ -90,7 +90,6 @@ angular.module('proton', [
 
     // Controllers
     'proton.controllers.Contacts',
-    'proton.controllers.Conversations',
     'proton.controllers.Compose',
     'proton.controllers.Outside',
     'proton.controllers.Settings'
