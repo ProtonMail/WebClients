@@ -84,7 +84,11 @@ angular.module('proton.outside')
         };
 
         /**
-         * Add attachments as embedded or attachment, we encrypt them
+         * Add attachments as embedded or attachment, we encrypt them. Triggered by the askAttachment message onDrop.
+         * Actions
+         *     - inline
+         *     - attachment
+         *     - cancel
          * @param  {Message} options.message
          * @param  {String} options.action  attachment||inline
          * @return {Promise}
@@ -92,6 +96,10 @@ angular.module('proton.outside')
         function convertQueue({ message, action }) {
             const publicKey = message.publicKey;
             const files = QUEUE.reduce((acc, { files }) => acc.concat(files), []);
+
+            if (action === 'cancel') {
+                return (QUEUE.length = 0);
+            }
 
             if (action === 'attachment') {
                 const promise = files.map(({ file }) => AttachmentLoader.load(file, publicKey));
