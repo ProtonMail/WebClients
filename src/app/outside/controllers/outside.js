@@ -1,4 +1,4 @@
-angular.module('proton.controllers.Outside', ['proton.routes', 'proton.constants', 'proton.utils'])
+angular.module('proton.outside')
 .controller('OutsideController', (
     $interval,
     $rootScope,
