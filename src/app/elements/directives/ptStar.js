@@ -31,7 +31,7 @@ angular.module('proton.elements')
             model: '='
         },
         replace: true,
-        templateUrl: 'templates/directives/star.tpl.html',
+        templateUrl: 'templates/elements/ptStar.tpl.html',
         link(scope, el, attr) {
 
             const customType = attr.ptStarType || tools.typeList();

@@ -1,4 +1,4 @@
-<div id="conversation-list-rows" pt-select-multiple-conversations>
+<div id="conversation-list-rows" data-pt-select-multiple-elements>
 
     <ng-include src="'templates/partials/no-results.tpl.html'"></ng-include>
 
@@ -12,7 +12,7 @@
         expiring: (conversation.ExpirationTime > 0)
     }" ng-click="click($event, conversation)">
         <span class="expiration"><i class="fa fa-clock-o"></i></span>
-        <pt-select-conversation data-index="{{ $index }}"></pt-select-conversation>
+        <pt-select-element data-index="{{ $index }}"></pt-select-element>
         <pt-star
             data-model="conversation"
             class="singleStar"></pt-star>

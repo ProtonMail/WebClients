@@ -83,7 +83,6 @@ angular.module('proton', [
     'proton.translate',
     'proton.wizard',
     'proton.rightClick',
-    'proton.selectConversation',
     'proton.detectTimeWidth',
 
     // Filters
