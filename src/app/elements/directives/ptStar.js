@@ -1,4 +1,4 @@
-angular.module('proton.star', [])
+angular.module('proton.elements')
 .directive('ptStar', ($rootScope, CONSTANTS, gettextCatalog, tools, actionConversation) => {
 
     /**
