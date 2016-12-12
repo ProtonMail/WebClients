@@ -54,6 +54,9 @@ angular.module('proton.models.addresses', [])
          */
         delete(addressID) {
             return $http.delete(url.get() + '/addresses/' + addressID);
+        },
+        order(params) {
+            return $http.post(url.get() + '/addresses/order', params);
         }
     };
 });

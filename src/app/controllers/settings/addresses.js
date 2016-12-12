@@ -25,8 +25,7 @@ angular.module('proton.controllers.Settings')
     notify,
     organization,
     organizationKeys,
-    pmcw,
-    Setting
+    pmcw
 ) => {
 
     function addressesInit() {
@@ -510,7 +509,7 @@ angular.module('proton.controllers.Settings')
 
     $scope.saveOrder = (order) => {
         networkActivityTracker.track(
-            Setting.addressOrder({ Order: order })
+            Address.order({ Order: order })
             .then((result) => {
                 if (result.data && result.data.Code === 1000) {
                     notify({ message: gettextCatalog.getString('Order saved', null, 'Info'), classes: 'notification-success' });
