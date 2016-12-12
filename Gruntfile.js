@@ -4,7 +4,6 @@ var appVersion = '3.6.3';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
-
 var clientSecret = '00a11965ac0b47782ec7359c5af4dd79';
 var BROWSERS = ['PhantomJS', 'Chrome', 'Firefox', 'Safari'];
 var API_TARGETS = {
@@ -15,8 +14,6 @@ var API_TARGETS = {
     local: 'https://protonmail.dev/api',
     build: '/api'
 };
-
-var hash = Date.now();
 
 module.exports = function(grunt) {
     var serveStatic = require('serve-static');
@@ -376,35 +373,24 @@ module.exports = function(grunt) {
             }
         },
 
-        cacheBust: {
-            options: {
-                assets: ['assets/app.css', 'assets/app.js', 'openpgp.min.js', 'openpgp.worker.min.js'],
-                deleteOriginals: true,
-                baseDir: '<%= compile_dir %>/',
-                hash: hash
-            },
-            taskName: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= compile_dir %>/',
-                    src: ['app.html', 'assets/app.' + hash + '.js', 'openpgp.min.' + hash + '.js', 'openpgp.worker.min.' + hash + '.js']
-                }]
-            }
-        },
-
-
         cachebreaker: {
             dev: {
                 options: {
-                    match: [
-                        '/assets/app.css',
-                        '/assets/app.js',
-                        '/openpgp.min.js',
-                        '/openpgp.worker.min.js'
-                    ]
+                    match: [{
+                        'assets/app.css': '<%= compile_dir %>/assets/app.css',
+                        'assets/app.js': '<%= compile_dir %>/assets/app.js',
+                        'openpgp.min.js': '<%= build_dir %>/openpgp.min.js', // 'build' is correct here
+                        'openpgp.worker.min.js': '<%= build_dir %>/openpgp.worker.min.js' // 'build' is correct here
+                    }],
+                    replacement: 'md5'
                 },
-                files: {
-                    src: ['<%= compile_dir %>/app.html']
+                files: { // This breaks if the 'cwd' option is used. I don't know why.
+                    src: [
+                        '<%= compile_dir %>/app.html',
+                        '<%= compile_dir %>/assets/app.js',
+                        '<%= compile_dir %>/openpgp.min.js',
+                        '<%= compile_dir %>/openpgp.worker.min.js'
+                    ]
                 }
             }
         },
@@ -557,8 +543,7 @@ module.exports = function(grunt) {
         'uglify', // minify JS
         'copy:compile_external', // copy openpgp
         'index:compile', // index CSS and JS
-        'cacheBust',
-        // 'cachebreaker', // Append a timestamp to JS and CSS files which are both located in 'app.html'
+        'cachebreaker', // Append an MD5 hash of file contents to JS and CSS references
         'shell:push', // push code to deploy branch
         'wait:push'
     ]);
