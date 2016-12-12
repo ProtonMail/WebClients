@@ -24,7 +24,7 @@ angular.module('proton.composer')
             }, 150);
 
             const onBlur = () => {
-                scope.saveLater(scope.message);
+                scope.$applyAsync(() => scope.saveLater(scope.message));
             };
 
             $input.addEventListener('focus', onFocus, true);
