@@ -572,11 +572,4 @@ angular.module('proton.authentication')
     };
 
     return api;
-})
-// Global functions
-.run(($rootScope, authentication) => {
-    authentication.detectAuthenticationState();
-    $rootScope.isLoggedIn = authentication.isLoggedIn();
-    $rootScope.isLocked = authentication.isLocked();
-    $rootScope.isSecure = authentication.isSecured();
 });

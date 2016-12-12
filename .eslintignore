@@ -1,7 +1,7 @@
 src/app/libraries/*
 src/app/translations.js
 src/app/controllers/contacts.js
-src/app/services/srp.js
-src/app/services/auth.js
+src/app/authentication/services/srp.js
+src/app/authentication/services/auth.js
 src/app/config.js
 src/app/services/storage.js
