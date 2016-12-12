@@ -1,1 +1,1 @@
-angular.module('proton.elements', []);
+angular.module('proton.elements', ['proton.constants']);

@@ -1,5 +1,4 @@
-angular.module('proton.controllers.Conversations', ['proton.constants'])
-
+angular.module('proton.elements')
 .controller('ElementsController', (
     $q,
     $log,

@@ -1,4 +1,4 @@
-angular.module('proton.conversation')
+angular.module('proton.elements')
 .directive('foldersElement', ($rootScope, $state, CONSTANTS, gettextCatalog, $compile, mailboxIdentifersTemplate) => {
     const allowedStates = ['secured.sent.**', 'secured.drafts.**', 'secured.search.**', 'secured.starred.**', 'secured.label.**'];
     const isAllowedState = () => allowedStates.some((key) => $state.includes(key));
@@ -32,7 +32,7 @@ angular.module('proton.conversation')
     const { getTemplateLabels } = mailboxIdentifersTemplate({ MAP_LABELS });
 
     return {
-        templateUrl: 'templates/directives/conversation/folders.tpl.html',
+        templateUrl: 'templates/elements/foldersElement.tpl.html',
         replace: true,
         scope: {
             conversation: '='
