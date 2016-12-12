@@ -1,12 +1,5 @@
-angular.module('proton.srp', ['proton.webcrypto', 'proton.passwords'])
-.factory('srp', (
-    $http,
-    CONFIG,
-    webcrypto,
-    passwords,
-    url
-) => {
-
+angular.module('proton.authentication')
+.factory('srp', ($http, CONFIG, webcrypto, passwords, url) => {
 
     /**
      * [generateProofs description]

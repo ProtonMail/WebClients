@@ -1,4 +1,4 @@
-angular.module("proton.storage", ["proton.webcrypto"])
+angular.module("proton.storage", [])
 
 .factory("secureSessionStorage", function(CONSTANTS, webcrypto) {
     // Partially inspired by http://www.thomasfrank.se/sessionvars.html
