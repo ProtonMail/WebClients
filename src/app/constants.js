@@ -28,7 +28,6 @@ angular.module('proton.constants', [])
     PAID_ADMIN: 2,
     ROW_MODE: 1,
     COLUMN_MODE: 0,
-    MAX_VERSION: 4,
     ATTACHMENT_SIZE_LIMIT: 25, // MB
     ATTACHMENT_NUMBER_LIMIT: 100,
     MAX_TITLE_LENGTH: 255,
