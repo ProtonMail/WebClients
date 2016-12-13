@@ -11,4 +11,4 @@ angular.module('proton.utils')
 
             return Math.round(input * factor) / factor;
         };
-    })
+    });
