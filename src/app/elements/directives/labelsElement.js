@@ -14,7 +14,7 @@ angular.module('proton.elements')
 
     return {
         restrict: 'E',
-        templateUrl: 'templates/element/labelsElement.tpl.html',
+        templateUrl: 'templates/elements/labelsElement.tpl.html',
         replace: true,
         scope: {
             element: '='
