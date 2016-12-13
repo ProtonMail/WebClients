@@ -9,6 +9,7 @@ angular.module('proton.authentication')
     $http,
     $location,
     CONSTANTS,
+    upgradePassword,
     CONFIG,
     gettextCatalog,
     authentication,
@@ -278,6 +279,7 @@ angular.module('proton.authentication')
                 $rootScope.isLoggedIn = authentication.isLoggedIn();
                 $rootScope.isLocked = authentication.isLocked();
                 $rootScope.isSecure = authentication.isSecured();
+                upgradePassword.send();
 
                 $state.go('secured.inbox');
             });

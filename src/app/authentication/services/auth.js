@@ -15,6 +15,7 @@ angular.module('proton.authentication')
     Domain,
     errorReporter,
     gettextCatalog,
+    upgradePassword,
     Key,
     Label,
     networkActivityTracker,
@@ -385,15 +386,11 @@ angular.module('proton.authentication')
                     deferred.resolve(resp);
                     // Upgrade users to the newest auth version
                     if (resp.authVersion < passwords.currentAuthVersion) {
-                        srp.getPasswordParams(creds.Password)
-                            .then((data) => {
-                                const headers = {
-                                    Authorization: `Bearer ${resp.data.ResetToken}`,
-                                    'x-pm-uid': resp.data.Uid
-                                };
-                                return srp.performSRPRequest('PUT', '/settings/password/upgrade', data, creds, undefined, headers);
-                            });
+                        srp.getPasswordParams(creds.Password).then((data) => {
+                            upgradePassword.store(data);
+                        });
                     }
+
                     // this is a trick! we dont know if we should go to unlock or step2 because we dont have user's data yet. so we redirect to the login page (current page), and this is determined in the resolve: promise on that state in the route. this is because we dont want to do another fetch info here.
                 }, (error) => {
                     // TODO: This is almost certainly broken, not sure it needs to work though?
