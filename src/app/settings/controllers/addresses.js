@@ -28,6 +28,7 @@ angular.module('proton.settings')
 ) => {
 
     function addressesInit() {
+        $scope.isSubUser = authentication.user.subuser;
         $scope.activeAddresses = _.where(authentication.user.Addresses, { Status: 1, Receive: 1 });
         $scope.disabledAddresses = _.difference(authentication.user.Addresses, $scope.activeAddresses);
         $scope.itemMoved = false;

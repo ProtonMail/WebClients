@@ -44,6 +44,7 @@ angular.module('proton.settings')
     $scope.signature = tools.replaceLineBreaks(authentication.user.Signature);
     $scope.passwordMode = authentication.user.PasswordMode;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
+    $scope.isSubUser = authentication.user.subuser;
     updateUser();
 
     function passwordModal(submit) {
