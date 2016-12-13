@@ -88,10 +88,10 @@ angular.module('proton.authentication', [
                     return Promise.resolve(user);
                 }
 
-                const subuser = angular.isDefined(user.OrganizationPrivateKey);
+                user.subuser = angular.isDefined(user.OrganizationPrivateKey);
                 // Required for subuser
                 const decryptOrganization = () => {
-                    if (subuser === true) {
+                    if (user.subuser) {
                         return pmcw.decryptPrivateKey(user.OrganizationPrivateKey, api.getPassword());
                     }
                     return Promise.resolve();
