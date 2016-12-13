@@ -15,6 +15,7 @@ angular.module('proton', [
     'proton.constants',
     'proton.core',
     'proton.outside',
+    'proton.utils',
 
     // templates
     'templates-app',
@@ -56,14 +57,8 @@ angular.module('proton', [
     'proton.attachments',
     'proton.authentication',
     'proton.cache',
-    'proton.errorReporter',
     'proton.event',
-    'proton.networkActivity',
-    'proton.tools',
-    'proton.desktopNotifications',
     'proton.embedded',
-    'proton.service.message',
-
     // Directives
     'proton.address',
     'proton.message',
@@ -72,7 +67,6 @@ angular.module('proton', [
     'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
-    'proton.hotkeys',
     'proton.enter',
     'proton.height',
     'proton.heightOutside',

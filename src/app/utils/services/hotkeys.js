@@ -1,4 +1,4 @@
-angular.module('proton.hotkeys', [])
+angular.module('proton.utils')
 .factory('hotkeys', (hotkeyModal, $rootScope, $state, authentication, CONSTANTS, Message) => {
     const composer = () => {
         const type = 'new';

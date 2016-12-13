@@ -1,4 +1,4 @@
-angular.module('proton.desktopNotifications', [])
+angular.module('proton.utils')
 .factory('desktopNotifications', () => {
     const notification = {
         status() {

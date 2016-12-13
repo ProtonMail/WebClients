@@ -1,4 +1,4 @@
-angular.module('proton.tempStorage', [])
+angular.module('proton.utils')
 .factory('tempStorage', ($timeout) => {
     // This is a very simple storage object wrapper which unlinks the reference to the data after retrieval
     // or a timeout, whichever happens first. It is designed to help ensure proper garbage collection of sensitive data.

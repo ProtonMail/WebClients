@@ -1,4 +1,4 @@
-angular.module('proton.tools', ['proton.constants'])
+angular.module('proton.utils')
 .factory('tools', ($log, $state, $stateParams, $filter, authentication, $compile, $templateCache, $rootScope, $q, CONSTANTS) => {
     const tools = {};
 

@@ -1,4 +1,4 @@
-angular.module('proton.networkActivity', ['proton.errorReporter'])
+angular.module('proton.utils')
 .factory('networkActivityTracker', ($log, errorReporter, $rootScope, notify, dedentTpl) => {
 
     let promises = [];
