@@ -13,6 +13,9 @@ angular.module('proton.models.setting', [])
                     throw error.error_description || error;
                 });
         },
+        passwordUpgrade(params, creds) {
+            return srp.performSRPRequest('PUT', '/settings/password/upgrade', params, creds);
+        },
         noticeEmail(params, creds) {
             return srp
                 .performSRPRequest('PUT', '/settings/noticeemail', params, creds)
