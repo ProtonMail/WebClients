@@ -516,6 +516,7 @@ angular.module('proton.authentication')
                             AccessToken: token,
                             RefreshToken, Uid, ExpiresIn, EventID
                         });
+                        upgradePassword.send();
                         req.resolve(200);
                     },
                     () => {
