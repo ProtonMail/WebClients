@@ -73,8 +73,6 @@ const pmcrypto = (function pmcrypto() {
                 .then(binaryStringToArray)
                 .then((randomKey) => {
 
-                    console.log(randomKey);
-
                     if (randomKey.length === 0) {
                         return Promise.reject(new Error('Random key is empty'));
                     }
