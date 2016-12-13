@@ -1,5 +1,4 @@
-angular.module('proton.controllers.Upgrade', [])
-
+angular.module('proton.core')
 .controller('UpgradeController', ($scope) => {
 
     $scope.prngCompatible = function () {

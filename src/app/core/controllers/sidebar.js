@@ -1,5 +1,4 @@
-angular.module('proton.controllers.Sidebar', ['proton.constants'])
-
+angular.module('proton.core')
 .controller('SidebarController', (
     $http,
     $log,

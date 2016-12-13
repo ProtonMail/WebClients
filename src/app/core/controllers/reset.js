@@ -1,4 +1,4 @@
-angular.module('proton.controllers.Reset', ['proton.utils'])
+angular.module('proton.core')
 .controller('ResetController', (
     $scope,
     $rootScope,
