@@ -1,4 +1,4 @@
-angular.module('proton.service.message', [])
+angular.module('proton.message')
     .factory('messageBuilder', (gettextCatalog, prepareContent, tools, authentication, Message, $filter, signatureBuilder, CONSTANTS) => {
 
         const RE_PREFIX = gettextCatalog.getString('Re:', null);

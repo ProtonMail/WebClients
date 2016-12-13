@@ -148,18 +148,6 @@ angular.module('proton.filters')
     };
 })
 
-.filter('messageTime', () => {
-    return function (time) {
-        const m = moment.unix(time);
-
-        if (m.isSame(moment(), 'day')) {
-            return m.format('LT') + ' (' + m.fromNow() + ')';
-        }
-
-        return m.format('L') + ' (' + m.fromNow() + ')';
-    };
-})
-
 
 // Jan 17, 2016
 .filter('readableTime', () => {
@@ -299,25 +287,7 @@ angular.module('proton.filters')
     };
 })
 
-.filter('filterMessages', ($state, $rootScope, CONSTANTS) => {
-    return (messages, showTrashed, showNonTrashed) => {
-        if (!$state.includes('secured.search.**') && !$state.includes('secured.label.**') && !$state.includes('secured.starred.**')) {
-            const nonTrashed = messages.filter((message) => !_.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
-            if ($state.includes('secured.trash.**') === true) {
-                const trashed = messages.filter((message) => _.contains(message.LabelIDs, CONSTANTS.MAILBOX_IDENTIFIERS.trash));
-                if (showNonTrashed === false) {
-                    return trashed;
-                }
-            } else if (nonTrashed.length > 0) {
-                if (showTrashed === false) {
-                    return nonTrashed;
-                }
-            }
-        }
 
-        return messages;
-    };
-})
 
 .filter('range', () => {
     return function (val, range) {
