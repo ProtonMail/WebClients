@@ -1,4 +1,4 @@
-angular.module('proton.event', ['proton.constants', 'proton.storage'])
+angular.module('proton.event', ['proton.constants', 'proton.utils'])
     .service('eventManager', (
         $cookies,
         $exceptionHandler,

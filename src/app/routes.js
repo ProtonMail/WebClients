@@ -2,7 +2,7 @@ angular.module('proton.routes', [
     'ui.router',
     'proton.authentication',
     'proton.constants',
-    'proton.storage'
+    'proton.utils'
 ])
 
 .config(($stateProvider, $urlRouterProvider, $locationProvider, CONSTANTS) => {

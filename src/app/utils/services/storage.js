@@ -1,6 +1,5 @@
-angular.module("proton.storage", [])
-
-.factory("secureSessionStorage", function(CONSTANTS, webcrypto) {
+angular.module('proton.utils')
+.factory('secureSessionStorage', (CONSTANTS, webcrypto) => {
     // Partially inspired by http://www.thomasfrank.se/sessionvars.html
 
     // This service implements essentially the sessionStorage API. However,
@@ -151,7 +150,7 @@ angular.module("proton.storage", [])
     } else if (window.attachEvent) {
         window.attachEvent('onunload', flush);
     } else {
-        throw new Exception('No method for adding event listeners!');
+        throw new Error('No method for adding event listeners!');
     }
 
     return api;
