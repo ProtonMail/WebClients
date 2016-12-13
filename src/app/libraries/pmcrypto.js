@@ -69,28 +69,28 @@ const pmcrypto = (function pmcrypto() {
 
             // Old message encryption format
             resolve(decryptMessage(oldEncRandomKey, privKey, false)
-                .then(decode_utf8_base64)
-                .then(pmcrypto.binaryStringToArray)
+                .then(({ data }) => decode_utf8_base64(data))
+                .then(binaryStringToArray)
                 .then((randomKey) => {
 
                     if (randomKey.length === 0) {
                         return Promise.reject(new Error('Random key is empty'));
                     }
 
-                    oldEncMessage = pmcrypto.binaryStringToArray(pmcrypto.decode_utf8_base64({ message: oldEncMessage }));
+                    oldEncMessage = binaryStringToArray(decode_utf8_base64(oldEncMessage));
 
-                    let decryptedMessage;
+                    let data;
                     try {
                         // cutoff time for enabling multilanguage support
                         if (messageTime > 1399086120) {
-                            decryptedMessage = decode_utf8_base64({ message: pmcrypto.arrayToBinaryString(openpgp.crypto.cfb.decrypt('aes256', randomKey, oldEncMessage, true)) });
+                            data = decode_utf8_base64(arrayToBinaryString(openpgp.crypto.cfb.decrypt('aes256', randomKey, oldEncMessage, true)));
                         } else {
-                            decryptedMessage = pmcrypto.arrayToBinaryString(openpgp.crypto.cfb.decrypt('aes256', randomKey, oldEncMessage, true));
+                            data = arrayToBinaryString(openpgp.crypto.cfb.decrypt('aes256', randomKey, oldEncMessage, true));
                         }
                     } catch (err) {
                         return Promise.reject(err);
                     }
-                    return decryptedMessage;
+                    return { data, signature: 0 };
                 }));
         });
     }
@@ -117,12 +117,7 @@ const pmcrypto = (function pmcrypto() {
     }
 
     function decode_utf8_base64(data) {
-        if (data !== undefined) {
-            if (data.message !== undefined) {
-                return decode_utf8(decode_base64(data.message));
-            }
-            return decode_utf8(decode_base64(data));
-        }
+        if (data !== undefined) return decode_utf8(decode_base64(data));
     }
 
     function generateKeysRSA(email = '', passphrase = '', numBits = 2048) {
