@@ -1,7 +1,4 @@
-angular.module('proton.controllers.Support', [
-    'proton.models'
-])
-
+angular.module('proton.core')
 .controller('SupportController', (
     $rootScope,
     $scope,

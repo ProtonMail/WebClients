@@ -1,5 +1,4 @@
-angular.module('proton.controllers.Header', [])
-
+angular.module('proton.core')
 .controller('HeaderController', (
     $location,
     $log,

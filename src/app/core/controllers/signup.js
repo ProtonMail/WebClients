@@ -1,4 +1,4 @@
-angular.module('proton.controllers.Signup', ['proton.utils'])
+angular.module('proton.core')
 .controller('SignupController', (
     $http,
     $location,
