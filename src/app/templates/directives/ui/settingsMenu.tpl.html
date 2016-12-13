@@ -17,7 +17,7 @@
     <li role="presentation" ng-class="{'active': ('secured.appearance' | includedByState)}">
         <a class="pm_button" ui-sref="secured.appearance" translate-context="Title" translate-comment="appearance menu" translate>Appearance</a>
     </li>
-    <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.members' | includedByState)}" ng-if="keyPhase > 3" class="desktopOnly">
+    <li role="presentation" ng-if="!isSubUser && keyPhase > 3" ng-class="{'active': ('secured.members' | includedByState)}" class="desktopOnly">
         <a class="pm_button" ui-sref="secured.members" translate-context="Title" translate-comment="members menu" translate>Members</a>
     </li>
     <li role="presentation" ng-if="!isSubUser" ng-class="{'active': ('secured.domains' | includedByState)}" class="desktopOnly">
