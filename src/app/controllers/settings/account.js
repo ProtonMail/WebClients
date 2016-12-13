@@ -33,6 +33,7 @@ angular.module('proton.controllers.Settings')
     const unsubscribe = [];
     $scope.signatureContent = CONSTANTS.PM_SIGNATURE;
     $scope.keyPhase = CONSTANTS.KEY_PHASE;
+    $scope.isSubUser = authentication.user.subuser;
     updateUser();
 
     function passwordModal(submit) {

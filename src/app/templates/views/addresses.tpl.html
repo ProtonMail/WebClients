@@ -1,5 +1,5 @@
 <div id="pm_settings">
-    <ng-include src="'templates/partials/menu.settings.tpl.html'"></ng-include>
+    <settings-menu></settings-menu>
     <div class="settings">
         <p class="alert alert-info" ng-if="mobileMode" translate-context="Info" translate-comment="responsiveness info" translate>This page is only available on larger resolution devices. If you are on a  phone, try landscape mode, or visit on a computer instead.</p>
         <div class="row" id="settingsAddresses">
@@ -11,8 +11,8 @@
                     <span translate-context="Title" translate translate-comment="page heading">Addresses</span>
                 </legend>
                 <div class="margin" ng-show="isAdmin === true">
-                    <button class="pm_button primary" ng-click="addAlias()" translate-context="Action" translate-comment="addresses page" translate>Add ProtonMail address</button>
-                    <button class="pm_button" ng-click="addAddress(false,getSelf())" translate-context="Action" translate-comment="addresses page" translate>Add custom domain address</button>
+                    <button ng-hide="isSubUser" class="pm_button primary" ng-click="addAlias()" translate-context="Action" translate-comment="addresses page" translate>Add ProtonMail address</button>
+                    <button ng-hide="isSubUser" class="pm_button" ng-click="addAddress(false,getSelf())" translate-context="Action" translate-comment="addresses page" translate>Add custom domain address</button>
                 </div>
                 <p class="alert alert-info" ng-show="isAdmin === true">
                     <span translate-context="Info" translate translate-comment="informs the user about permanance of custom addresses">Non-original <strong>@protonmail</strong> addresses can never be deleted (only disabled). This means that once you create an address it will always count towards your address limit. Custom domain addresses must be disabled before they can be deleted. Custom domain addresses can only be deleted if all messages associated with that address are deleted.</span> <a href="https://protonmail.com/support/knowledge-base/aliases-within-protonmail/" target="_blank" translate translate-context="Action">Learn more</a>.
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="col-1-3 text-right">
                                     <button class="pm_button link" ng-click="identity(address)" translate-context="Action" translate>Edit identity</button>
-                                    <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
+                                    <button class="pm_button link" ng-show="(address.Type === 2 || address.Type === 3) && isAdmin && !isSubUser" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
                                 </div>
                             </div>
                         </li>
@@ -57,9 +57,9 @@
                                 <div class="col-1-3 text-right">
                                     <button type="button" class="pm_button link" ng-show="address.HasKeys === 0 && address.Status === 1" ng-click="generate(address)" translate-context="Action" translate>Generate missing keys</button>
                                     <button class="pm_button link" ng-click="identity(address)" translate-context="Action" translate>Edit Identity</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3) && isAdmin === true" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type === 3 && isAdmin === true" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
-                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3 && isAdmin === true" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && (address.Type === 2 || address.Type === 3) && isAdmin && !isSubUser" ng-click="enableAddress(address)" translate-context="Action" translate>Enable</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 1 && address.Type === 3 && isAdmin && !isSubUser" ng-click="disableAddress(address)" translate-context="Action" translate>Disable</button>
+                                    <button type="button" class="pm_button link" ng-show="address.Status === 0 && address.Type === 3 && isAdmin && !isSubUser" ng-click="deleteAddress(address)" translate-context="Action" translate>Delete</button>
                                 </div>
                             </div>
                         </li>
