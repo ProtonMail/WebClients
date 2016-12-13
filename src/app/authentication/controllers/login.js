@@ -1,12 +1,4 @@
-angular.module('proton.controllers.Auth', [
-    'proton.authentication',
-    'proton.pmcw',
-    'proton.constants',
-    'proton.models.setting',
-    'proton.srp',
-    'proton.tempStorage'
-])
-
+angular.module('proton.authentication')
 .controller('LoginController', (
     $rootScope,
     $state,

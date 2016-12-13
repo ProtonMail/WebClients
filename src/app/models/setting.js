@@ -1,4 +1,4 @@
-angular.module('proton.models.setting', ['proton.srp'])
+angular.module('proton.models.setting', [])
 .factory('Setting', ($http, url, srp) => {
     const Setting = {
         password(newPassword = '') {

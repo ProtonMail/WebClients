@@ -1,11 +1,4 @@
-angular.module('proton.authentication', [
-    'proton.pmcw',
-    'proton.models',
-    'proton.storage',
-    'proton.passwords',
-    'proton.srp'
-])
-
+angular.module('proton.authentication')
 .factory('authentication', (
     $http,
     $location,
@@ -579,11 +572,4 @@ angular.module('proton.authentication', [
     };
 
     return api;
-})
-// Global functions
-.run(($rootScope, authentication) => {
-    authentication.detectAuthenticationState();
-    $rootScope.isLoggedIn = authentication.isLoggedIn();
-    $rootScope.isLocked = authentication.isLocked();
-    $rootScope.isSecure = authentication.isSecured();
 });
