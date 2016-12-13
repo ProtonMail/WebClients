@@ -789,6 +789,13 @@ angular.module('proton.routes', [
             }
         },
         resolve: {
+            access(user, $state) {
+                if (user.subuser) {
+                    $state.go('secured.account');
+                    return Promise.reject();
+                }
+                return Promise.resolve();
+            },
             invoices(Payment, networkActivityTracker) {
                 return networkActivityTracker.track(Payment.invoices({ Owner: 0 }));
             },
@@ -819,16 +826,12 @@ angular.module('proton.routes', [
             scroll: null
         },
         resolve: {
-            access(user, $q) {
-                const deferred = $q.defer();
-
-                if (user.Role === 0 || user.Role === 2) {
-                    deferred.resolve();
-                } else {
-                    deferred.reject();
+            access(user, $state) {
+                if (user.subuser) {
+                    $state.go('secured.account');
+                    return Promise.reject()
                 }
-
-                return deferred.promise;
+                return Promise.resolve();
             },
             // Return yearly plans
             yearly(subscription, user, Payment, networkActivityTracker) {
@@ -860,17 +863,12 @@ angular.module('proton.routes', [
             id: null
         },
         resolve: {
-            access(user, $q, $state, CONSTANTS) {
-                const deferred = $q.defer();
-
-                if (CONSTANTS.KEY_PHASE > 3 && user.Role !== 1) {
-                    deferred.resolve();
-                } else {
-                    $state.go('secured.addresses');
-                    deferred.reject();
+            access(user, CONSTANTS, $state) {
+                if (CONSTANTS.KEY_PHASE > 3 && !user.subuser) {
+                    return Promise.resolve();
                 }
-
-                return deferred.promise;
+                $state.go('secured.addresses');
+                return Promise.reject();
             },
             members(user, Member, networkActivityTracker) {
                 if (user.Role === 2) {
@@ -909,10 +907,11 @@ angular.module('proton.routes', [
         url: '/domains',
         resolve: {
             access(user, $state) {
-                if (user.Role === 1) {
+                if (user.Role === 1 || user.subuser) {
                     $state.go('secured.addresses');
                     return Promise.reject();
                 }
+                return Promise.resolve();
             },
             members(user, Member, networkActivityTracker) {
                 if (user.Role === 2) {
