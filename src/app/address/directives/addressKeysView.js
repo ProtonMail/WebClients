@@ -8,6 +8,7 @@ angular.module('proton.address')
             const unsubscribe = $rootScope.$on('updateUser', () => {
                 populateKeys();
             });
+            scope.isSubUser = authentication.user.subuser;
             scope.addresses = [];
             function populateKeys() {
                 authentication.user.Addresses.forEach(({ Keys = [], ID = '', Email = '', Send }) => {
