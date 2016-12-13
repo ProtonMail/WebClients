@@ -15,6 +15,7 @@ angular.module('proton', [
     'proton.constants',
     'proton.core',
     'proton.outside',
+    'proton.utils',
 
     // templates
     'templates-app',
@@ -62,8 +63,6 @@ angular.module('proton', [
     'proton.tools',
     'proton.desktopNotifications',
     'proton.embedded',
-    'proton.service.message',
-
     // Directives
     'proton.address',
     'proton.message',
