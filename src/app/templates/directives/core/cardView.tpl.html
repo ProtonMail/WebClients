@@ -38,7 +38,7 @@
         <div class="col-1-3">
             <label for="cvc" translate translate-context="Label">Security Code</label>
             <div class="input-icon right">
-                <i class="fa fa-question-circle" cvc-tooltip></i>
+                <i class="fa fa-question-circle" data-cvc-tooltip></i>
                 <input type="text" id="cvc" name="cvc" ng-model="card.cvc" maxlength="4" card-cvc required />
                 <div ng-messages="form.cvc.$error">
                     <p ng-message="required" class="text-red" translate-context="Error" translate>Field required</p>
