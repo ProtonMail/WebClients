@@ -59,10 +59,10 @@ angular.module('proton', [
     'proton.event',
     'proton.embedded',
     // Directives
+    'proton.elements',
     'proton.address',
     'proton.message',
     'proton.conversation',
-    'proton.star',
     'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
@@ -83,7 +83,6 @@ angular.module('proton', [
     'proton.translate',
     'proton.wizard',
     'proton.rightClick',
-    'proton.selectConversation',
     'proton.detectTimeWidth',
 
     // Filters
@@ -91,9 +90,7 @@ angular.module('proton', [
 
     // Controllers
     'proton.controllers.Contacts',
-    'proton.controllers.Conversations',
     'proton.controllers.Compose',
-    'proton.controllers.Outside',
     'proton.controllers.Settings'
 ])
 

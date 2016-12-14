@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.elements')
 .directive('elementView', (tools) => ({
     restrict: 'E',
     template: `

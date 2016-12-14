@@ -1,4 +1,4 @@
-angular.module('proton.star', [])
+angular.module('proton.elements')
 .directive('ptStar', ($rootScope, CONSTANTS, gettextCatalog, tools, actionConversation) => {
 
     /**
@@ -31,7 +31,7 @@ angular.module('proton.star', [])
             model: '='
         },
         replace: true,
-        templateUrl: 'templates/directives/star.tpl.html',
+        templateUrl: 'templates/elements/ptStar.tpl.html',
         link(scope, el, attr) {
 
             const customType = attr.ptStarType || tools.typeList();

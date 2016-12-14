@@ -1,4 +1,4 @@
-angular.module('proton.conversation')
+angular.module('proton.elements')
 .directive('labelsElement', ($rootScope, $filter, $state) => {
     const toLabels = $filter('labels');
     const HIDE_CLASSNAME = 'labelsElement-hidden';
@@ -14,7 +14,7 @@ angular.module('proton.conversation')
 
     return {
         restrict: 'E',
-        templateUrl: 'templates/directives/conversation/labels.tpl.html',
+        templateUrl: 'templates/elements/labelsElement.tpl.html',
         replace: true,
         scope: {
             element: '='

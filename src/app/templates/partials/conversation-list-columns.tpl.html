@@ -1,4 +1,4 @@
-<div id="conversation-list-columns" ng-if="user.ViewLayout === 0" pt-select-multiple-conversations>
+<div id="conversation-list-columns" ng-if="user.ViewLayout === 0" data-pt-select-multiple-elements>
 
     <ng-include src="'templates/partials/no-results.tpl.html'"></ng-include>
 
@@ -18,7 +18,7 @@
         ng-click="click($event, conversation)">
         <span class="expiration"><i class="fa fa-clock-o"></i></span>
 
-        <pt-select-conversation data-index="{{ $index }}"></pt-select-conversation>
+        <pt-select-element data-index="{{ $index }}"></pt-select-element>
         <div class="row top">
             <h4 class="subject" ng-attr-title="{{ conversation.Subject | unescape }}">
                 <states-conversation></states-conversation>
