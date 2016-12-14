@@ -1,5 +1,4 @@
-angular.module('proton.controllers.Setup', ['proton.tools', 'proton.storage'])
-
+angular.module('proton.controllers.Setup', ['proton.utils'])
 .controller('SetupController', (
     $http,
     $location,

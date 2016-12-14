@@ -15,6 +15,7 @@ angular.module('proton', [
     'proton.constants',
     'proton.core',
     'proton.outside',
+    'proton.utils',
 
     // templates
     'templates-app',
@@ -56,15 +57,8 @@ angular.module('proton', [
     'proton.attachments',
     'proton.authentication',
     'proton.cache',
-    'proton.errorReporter',
     'proton.event',
-    'proton.networkActivity',
-    'proton.pmcw',
-    'proton.tools',
-    'proton.desktopNotifications',
     'proton.embedded',
-    'proton.service.message',
-
     // Directives
     'proton.address',
     'proton.message',
@@ -73,15 +67,12 @@ angular.module('proton', [
     'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
-    'proton.hotkeys',
     'proton.enter',
     'proton.height',
     'proton.heightOutside',
     'proton.labelHeight',
     'proton.labels',
     'proton.loaderTag',
-    'proton.login',
-    'proton.loginTwoFactor',
     'proton.locationTag',
     'proton.phone',
     'proton.responsiveComposer',
@@ -100,7 +91,6 @@ angular.module('proton', [
     'proton.filters',
 
     // Controllers
-    'proton.controllers.Auth',
     'proton.controllers.Contacts',
     'proton.controllers.Header',
     'proton.controllers.Conversations',
@@ -224,9 +214,6 @@ angular.module('proton', [
     // $rootScope.updateMessage = false;
     $rootScope.showSidebar = false;
     $rootScope.themeJason = false;
-    $rootScope.isLoggedIn = authentication.isLoggedIn();
-    $rootScope.isLocked = authentication.isLocked();
-    $rootScope.isSecure = authentication.isSecured();
 
     // SVG Polyfill for Edge
     window.svg4everybody();

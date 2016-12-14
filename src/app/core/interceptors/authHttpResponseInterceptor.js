@@ -41,7 +41,7 @@ angular.module('proton.core')
                     // site offline
                     $injector.get('notify')({
                         classes: 'notification-info',
-                        message: 'The ProtonMail API is offline: ' + response.data.ErrorDescription
+                        message: 'The ProtonMail API is offline: ' + response.data.Error
                     });
                 }
             }

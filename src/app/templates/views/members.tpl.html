@@ -157,8 +157,7 @@
 							<tr ng-repeat-start="member in members">
 			                    <td class="username">
                                     <span class="pull-left">
-		                                <i class="fa fa-plus-square-o" ng-hide="member.toggle" ng-init="member.toggle = false" ng-click="member.toggle = !member.toggle"></i>
-		                                <i class="fa fa-minus-square-o" ng-show="member.toggle" ng-click="member.toggle = !member.toggle"></i>
+                                        <toggle-expand data-model="member.toggle"></toggle-expand>
 	                                </span>
 		                            &nbsp;
 			                        <span ng-bind="member.Name"></span>

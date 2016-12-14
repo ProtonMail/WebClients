@@ -1,4 +1,4 @@
-angular.module('proton.models.setting', ['proton.srp'])
+angular.module('proton.models.setting', [])
 .factory('Setting', ($http, url, srp) => {
     const Setting = {
         password(newPassword = '') {
@@ -28,9 +28,6 @@ angular.module('proton.models.setting', ['proton.srp'])
         },
         display(params) {
             return $http.put(url.get() + '/settings/display', params);
-        },
-        addressOrder(params) {
-            return $http.put(url.get() + '/settings/addressorder', params);
         },
         theme(params) {
             return $http.put(url.get() + '/settings/theme', params);

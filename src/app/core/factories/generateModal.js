@@ -5,6 +5,7 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/generate.tpl.html',
         controller(params, $scope) {
             // Variables
+            const self = this;
             const promises = [];
             const QUEUED = 0;
             const GENERATING = 1;
@@ -13,15 +14,15 @@ angular.module('proton.core')
             const ERROR = 4;
 
             // Parameters
-            this.size = 2048;
-            this.process = false;
-            this.title = params.title;
-            this.addresses = params.addresses;
-            this.message = params.message;
+            self.size = 2048;
+            self.process = false;
+            self.title = params.title;
+            self.addresses = params.addresses;
+            self.message = params.message;
             // Kill this for now
-            this.askPassword = 0; //= params.password.length === 0;
-            this.password = params.password;
-            _.each(this.addresses, (address) => { address.state = QUEUED; });
+            self.askPassword = false; // = params.password.length === 0;
+            self.password = params.password;
+            _.each(self.addresses, (address) => { address.state = QUEUED; });
 
             // Listeners
             $scope.$on('updateUser', () => {
@@ -39,13 +40,13 @@ angular.module('proton.core')
             });
 
             // Functions
-            this.submit = () => {
-                const numBits = this.size;
+            self.submit = () => {
+                const numBits = self.size;
 
-                this.process = true;
-                _.each(this.addresses, (address) => {
+                self.process = true;
+                _.each(self.addresses, (address) => {
                     address.state = GENERATING;
-                    promises.push(pmcw.generateKeysRSA('<' + address.Email + '>', this.password, numBits)
+                    promises.push(pmcw.generateKeysRSA(address.Email, self.password, numBits)
                     .then((result) => {
                         const privateKeyArmored = result.privateKeyArmored;
 
@@ -87,11 +88,11 @@ angular.module('proton.core')
 
                 $q.all(promises)
                 .finally(() => {
-                    params.close(true, this.addresses, this.password);
+                    params.close(true, self.addresses, self.password);
                 });
             };
 
-            this.cancel = () => {
+            self.cancel = () => {
                 params.close(false);
             };
         }

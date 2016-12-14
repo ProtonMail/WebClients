@@ -1,5 +1,4 @@
-angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
-
+angular.module('proton.controllers.Signup', ['proton.utils'])
 .controller('SignupController', (
     $http,
     $location,
@@ -133,12 +132,9 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
             $scope.readOnlyUsername = false;
         }
 
-        $scope.URLparams = $location.search();
-        if ($scope.URLparams.u !== undefined) {
-            $scope.account.Username = $scope.URLparams.u;
-            $timeout(() => {
-                $scope.checkAvailability(true);
-            }, 200);
+        const URLparams = $location.search();
+        if (URLparams.u) {
+            $scope.account.Username = URLparams.u;
         }
 
         // Clear auth data
@@ -310,8 +306,7 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
         mailboxPasswordCopy = $scope.account.mailboxPassword;
 
         networkActivityTracker.track(
-            $scope.checkAvailability(false)
-            .then(generateNewKeys)
+            generateNewKeys()
             .then(() => {
                 $timeout(() => {
                     $scope.genNewKeys = false;
@@ -336,73 +331,6 @@ angular.module('proton.controllers.Signup', ['proton.tools', 'proton.storage'])
 
     $scope.finishLoginReset = () => {
         $log.debug('finishLoginReset');
-    };
-
-    /**
-     * @param {Boolean} manual - it means the fucntion was called outside of the automated chained functions. it will be set to true if triggered manually
-     */
-    $scope.checkAvailability = (manual) => {
-        const deferred = $q.defer();
-
-        // reset
-        $scope.goodUsername = false;
-        $scope.badUsername = false;
-        $scope.badUsernameMessage = '';
-        $scope.checkingUsername = true;
-
-        // user came from pre-invite so we can not check if it exists
-        if ($rootScope.allowedNewAccount === true && manual !== true) {
-            $scope.checkingUsername = false;
-            deferred.resolve(200);
-        } else if ($scope.account.Username) {
-            const patt = new RegExp(/^[A-Za-z0-9]+(?:[_.-][A-Za-z0-9]+)*$/);
-
-            if (patt.test($scope.account.Username)) {
-                User.available($scope.account.Username)
-                .then((result) => {
-                    if (result.data && result.data.Error) {
-                        $scope.badUsername = true;
-                        $scope.checkingUsername = false;
-                        $scope.badUsernameMessage = result.data.Error;
-                        $('#Username').focus();
-                        deferred.reject(result.data.Error);
-                    } else if (result.data && result.data.Code === 1000) {
-                        if (result.data.Available === 0) {
-                            if (manual === true) {
-                                $scope.badUsername = true;
-                                $scope.badUsernameMessage = gettextCatalog.getString('Username already taken', null, 'Error');
-                                $scope.checkingUsername = false;
-                                $('#Username').focus();
-                                deferred.resolve(200);
-                            } else {
-                                $('#Username').focus();
-                                deferred.reject(gettextCatalog.getString('Username already taken', null, 'Error'));
-                            }
-                        } else if (manual === true) {
-                            $scope.goodUsername = true;
-                            $scope.checkingUsername = false;
-                            deferred.resolve(200);
-                        } else {
-                            $scope.checkingUsername = false;
-                            deferred.resolve(200);
-                        }
-
-                    }
-                });
-            } else {
-                $scope.badUsername = true;
-                $scope.checkingUsername = false;
-                $scope.badUsernameMessage = gettextCatalog.getString('Username invalid', null, 'Error');
-                $('#Username').focus();
-                deferred.resolve(200);
-            }
-        } else {
-            $scope.checkingUsername = false;
-            deferred.resolve(200);
-        }
-
-
-        return deferred.promise;
     };
 
     function generateNewKeys() {

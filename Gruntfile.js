@@ -1,6 +1,6 @@
 var _ = require('lodash');
 var util = require('util');
-var appVersion = '3.6.2';
+var appVersion = '3.6.4';
 var apiVersion = '1';
 var dateVersion = new Date().toDateString();
 var clientID = 'Angular';
@@ -376,15 +376,21 @@ module.exports = function(grunt) {
         cachebreaker: {
             dev: {
                 options: {
-                    match: [
-                        '/assets/app.css',
-                        '/assets/app.js',
-                        '/openpgp.min.js',
-                        '/openpgp.worker.min.js'
-                    ]
+                    match: [{
+                        'assets/app.css': '<%= compile_dir %>/assets/app.css',
+                        'assets/app.js': '<%= compile_dir %>/assets/app.js',
+                        'openpgp.min.js': '<%= build_dir %>/openpgp.min.js', // 'build' is correct here
+                        'openpgp.worker.min.js': '<%= build_dir %>/openpgp.worker.min.js' // 'build' is correct here
+                    }],
+                    replacement: 'md5'
                 },
-                files: {
-                    src: ['<%= compile_dir %>/app.html']
+                files: { // This breaks if the 'cwd' option is used. I don't know why.
+                    src: [
+                        '<%= compile_dir %>/app.html',
+                        '<%= compile_dir %>/assets/app.js',
+                        '<%= compile_dir %>/openpgp.min.js',
+                        '<%= compile_dir %>/openpgp.worker.min.js'
+                    ]
                 }
             }
         },
@@ -537,7 +543,7 @@ module.exports = function(grunt) {
         'uglify', // minify JS
         'copy:compile_external', // copy openpgp
         'index:compile', // index CSS and JS
-        'cachebreaker', // Append a timestamp to JS and CSS files which are both located in 'app.html'
+        'cachebreaker', // Append an MD5 hash of file contents to JS and CSS references
         'shell:push', // push code to deploy branch
         'wait:push'
     ]);

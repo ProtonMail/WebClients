@@ -1,4 +1,4 @@
-angular.module('proton.models.user', ['proton.srp'])
+angular.module('proton.models.user', [])
 .factory('User', ($http, url, srp) => {
     return {
         create(params, password) {
