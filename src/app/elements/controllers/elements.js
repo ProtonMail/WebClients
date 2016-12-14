@@ -303,7 +303,7 @@ angular.module('proton.elements')
         return ddp2;
     };
 
-    $scope.getConversationsParameters = function (mailbox) {
+    function getConversationsParameters(mailbox) {
         const params = {};
 
         params.Page = ($stateParams.page || 1) - 1;
@@ -343,11 +343,11 @@ angular.module('proton.elements')
         _.pick(params, _.identity);
 
         return params;
-    };
+    }
 
     $scope.refreshElements = () => {
         const deferred = $q.defer();
-        const request = $scope.getConversationsParameters($scope.mailbox);
+        const request = getConversationsParameters($scope.mailbox);
         const context = tools.cacheContext();
         const type = tools.typeList();
         let promise;
