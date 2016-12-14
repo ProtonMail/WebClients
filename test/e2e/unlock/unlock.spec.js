@@ -45,7 +45,7 @@ describe('unlock the mailbox', () => {
 
         it('should display the modal report a bug', () => {
             modal.title()
-                .then(assert('Report bug'));
+                .then(assert('Report Bug'));
         });
 
         it('should close the modal', () => {
