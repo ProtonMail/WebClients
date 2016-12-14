@@ -1,4 +1,11 @@
-<form method="post" id="pm_login" class="pm_panel pm_form alt" novalidate role="form" autocomplete="on" ng-submit="unlock()">
+<form
+    method="post"
+    id="pm_login"
+    class="pm_panel pm_form alt"
+    novalidate
+    role="form"
+    autocomplete="on"
+    ng-submit="unlock($event)">
 
     <div ng-hide="domoArigato">
 
@@ -12,18 +19,43 @@
 
         <div class="alert alert-danger" id="error521" ng-if="error">{{ error.message }}</div>
 
-        <input autofocus autocapitalize="off" autocorrect="off" class="margin focus" type="password" id="password" name="MailboxPassword" ng-model="mailboxPassword" placeholder-translate="Mailbox password" />
+        <input
+            autofocus
+            autocapitalize="off"
+            autocorrect="off"
+            class="margin focus unlock-input-password"
+            type="password"
+            id="password"
+            name="MailboxPassword"
+            ng-model="mailboxPassword"
+            placeholder-translate="Mailbox password">
 
         <div class="clearfix">
-            <a ng-click="reset()" class="login-support pm_button link pull-left" translate-context="Action" translate translate-comment="link to reset mailbox">Forgot password?</a>
-            <button id="unlock_btn" class="pm_button primary pull-right" type="submit" ng-class="{disabled: networkActivity.loading()}" translate-context="Action" translate>Unlock</button>
+            <button
+                type="button"
+                ng-click="reset()"
+                class="login-support pm_button link pull-left unlock-btn-forgot"
+                translate-context="Action"
+                translate
+                translate-comment="link to reset mailbox">Forgot password?</button>
+            <button
+                id="unlock_btn"
+                class="pm_button primary pull-right"
+                type="submit"
+                ng-class="{disabled: networkActivity.loading()}"
+                translate-context="Action"
+                translate>Unlock</button>
         </div>
 
     </div>
 
-    <div ng-show="domoArigato"  class="text-center">
-        <img src="/assets/img/logo.png" height="20" alt="ProtonMail" class="logo" />
-        <img src="/assets/img/decrypt.gif" class="loader">
+    <div ng-show="domoArigato"  class="text-center unlock-loader-container">
+        <img
+            src="/assets/img/logo.png"
+            height="20"
+            alt="ProtonMail"
+            class="logo unlock-loader-logo">
+        <img src="/assets/img/decrypt.gif" class="loader unlock-loader-item">
         <p><span translate>Decrypting</span>...</p>
     </div>
 </form>

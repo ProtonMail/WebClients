@@ -1,22 +1,22 @@
-var LoginPage = require('./login.po.js');
+const loginPage = require('./login.po')();
+const { isTrue } = require('../../e2e.utils/assertions');
 
-describe('Login tests', function() {
-    var loginPage = new LoginPage();
+describe('Login tests', () => {
 
-    beforeEach(function() {
+    it('should log in', () => {
         browser.ignoreSynchronization = true;
         browser.get('http://localhost:8080/login');
         browser.waitForAngular();
-    });
-    it('should log in', function() {
-        loginPage.login(browser.params.login, browser.params.password1);
-        browser.wait(function() {
-            return browser.getCurrentUrl().then(function(url) {
+
+        loginPage.fill('username', browser.params.login);
+        loginPage.fill('password', browser.params.password1);
+        loginPage.submit();
+
+        browser.wait(() => {
+            return browser.getCurrentUrl().then((url) => {
                 return url.indexOf('/login/unlock') !== -1;
             });
         }, 10000)
-        .then(function(result) {
-            expect(result).toBe(true);
-        });
+        .then(isTrue);
     });
 });

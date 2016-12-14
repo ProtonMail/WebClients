@@ -357,7 +357,9 @@ angular.module('proton.authentication')
         login($scope.username, $scope.password, $scope.twoFactorCode, $scope.initialInfoResponse);
     };
 
-    $scope.unlock = function () {
+    $scope.unlock = function (e) {
+
+        e.preventDefault();
         // Blur unlock password field
         angular.element('[type=password]').blur();
         // Make local so extensions (or Angular) can't mess with it by clearing the form too early
