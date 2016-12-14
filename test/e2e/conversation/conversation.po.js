@@ -8,7 +8,8 @@ module.exports = () => {
         checkbox: '.ptSelectConversation-input',
         placeholder: {
             container: '#pm_placeholder',
-            title: '.numberElementSelected-title'
+            title: '.numberElementSelected-title',
+            btnUnselect: '.conversationPlaceholder-btn-unselect'
         }
     };
 
@@ -61,7 +62,15 @@ module.exports = () => {
             `);
         };
 
-        return { isVisible, countSeleted };
+        const unselect = () => {
+            return browser.executeScript(`
+                return ${$container}
+                    .find('${SELECTOR.placeholder.btnUnselect}')
+                    .click();
+            `);
+        };
+
+        return { isVisible, countSeleted, unselect };
     }
 
     function load({ column = true } = {}) {
@@ -84,9 +93,18 @@ module.exports = () => {
             `);
         };
 
+        const countSeleted = () => {
+            return browser.executeScript(`
+                return ${scope()}
+                    .find('${SELECTOR.checkbox}')
+                    .filter(':checked')
+                    .length;
+            `);
+        };
+
 
         return {
-            count, select,
+            count, select, countSeleted,
             labels: labels(scope),
             placeholder: placeholder()
         };

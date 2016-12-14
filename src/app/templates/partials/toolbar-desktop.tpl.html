@@ -8,7 +8,9 @@
         <input
             type="checkbox"
             name="selectAll"
-            ng-checked="allSelected()" data-pt-select-all-elements
+            ng-checked="allSelected()"
+            data-pt-select-all-elements
+            class="toolBar-select-all"
             ng-disabled="!conversations.length"
             pt-tooltip-translate="Select all messages"
             pt-tooltip-translate-context="Action">
