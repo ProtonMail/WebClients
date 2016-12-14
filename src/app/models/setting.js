@@ -13,8 +13,8 @@ angular.module('proton.models.setting', [])
                     throw error.error_description || error;
                 });
         },
-        passwordUpgrade(params, creds) {
-            return srp.performSRPRequest('PUT', '/settings/password/upgrade', params, creds);
+        passwordUpgrade(params) {
+            return $http.put(url.get() + '/settings/password/upgrade', params);
         },
         noticeEmail(params, creds) {
             return srp
