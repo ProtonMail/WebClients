@@ -2,9 +2,8 @@ angular.module('proton.models.user', [])
 .factory('User', ($http, url, srp) => {
     return {
         create(params, password) {
-            return srp
-                .getPasswordParams(password, params)
-                .then((data) => $http.post(url.get() + '/users', data));
+            return srp.getPasswordParams(password, params)
+            .then((data) => $http.post(url.get() + '/users', data));
         },
         code(params) {
             return $http.post(url.get() + '/users/code', params);

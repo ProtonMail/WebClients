@@ -22,9 +22,11 @@ angular.module('proton.core')
         templateUrl: 'templates/modals/deleteAccount.tpl.html',
         controller(params) {
             const self = this;
+            self.hasTwoFactor = authentication.user.TwoFactor;
             self.isAdmin = authentication.user.Role === CONSTANTS.PAID_ADMIN;
             self.feedback = '';
             self.password = '';
+            self.twoFactor = '';
             self.submit = () => {
                 const username = authentication.user.Name;
                 const params = {
@@ -40,7 +42,7 @@ angular.module('proton.core')
                     Email: '--',
                     Description: self.feedback
                 };
-                const promise = User.delete({ Password: self.password })
+                const promise = User.delete({ Password: self.password, TwoFactorCode: self.twoFactor })
                 .then(({ data = {} }) => analyse(data))
                 .then(() => report(params, self.isAdmin))
                 .then((data) => analyse(data, self.isAdmin))

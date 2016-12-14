@@ -19,6 +19,10 @@
                     <label translate translate-context="Title">Enter your login password to confirm your identity:</label>
                     <input type="password" ng-model="ctrl.password" placeholder-translate="Login password"/>
                 </div>
+                <div class="margin" ng-if="ctrl.hasTwoFactor">
+                    <label translate translate-context="Title">Enter two-factor passcode:</label>
+                    <input type="text" class="TwoFA-input" ng-model="ctrl.twoFactor" placeholder-translate="Two-factor passcode"/>
+                </div>
             </div>
         </div>
         <div class="modal-footer">
