@@ -828,7 +828,7 @@ angular.module('proton.routes', [
             access(user, $state) {
                 if (user.subuser) {
                     $state.go('secured.account');
-                    return Promise.reject()
+                    return Promise.reject();
                 }
                 return Promise.resolve();
             },
