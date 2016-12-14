@@ -56,7 +56,6 @@ angular.module('proton', [
     // Services
     'proton.attachments',
     'proton.authentication',
-    'proton.cache',
     'proton.event',
     'proton.embedded',
     // Directives
@@ -92,18 +91,10 @@ angular.module('proton', [
 
     // Controllers
     'proton.controllers.Contacts',
-    'proton.controllers.Header',
     'proton.controllers.Conversations',
     'proton.controllers.Compose',
     'proton.controllers.Outside',
-    'proton.controllers.Reset',
-    'proton.controllers.Secured',
-    'proton.controllers.Settings',
-    'proton.controllers.Sidebar',
-    'proton.controllers.Setup',
-    'proton.controllers.Signup',
-    'proton.controllers.Support',
-    'proton.controllers.Upgrade'
+    'proton.controllers.Settings'
 ])
 
 /**
@@ -138,24 +129,6 @@ angular.module('proton', [
         }, 1000);
     }
 })
-
-// Set base url from grunt config
-.provider('url', function urlProvider() {
-    let base;
-
-    this.setBaseUrl = function (newUrl) {
-        base = newUrl;
-    };
-
-    this.$get = function () {
-        return {
-            get() {
-                return base;
-            }
-        };
-    };
-})
-
 .config((urlProvider, CONFIG) => {
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
