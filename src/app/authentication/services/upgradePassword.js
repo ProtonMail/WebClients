@@ -3,17 +3,18 @@ angular.module('proton.authentication')
     const key = 'auth';
     /**
      * Store standard Auth object
+     * @param {Object} value - Auth object
      */
     function store(value) {
-        const lifetime = 10 * 60 * 1000;
+        const lifetime = 10 * 60 * 1000; // 10 minutes
         tempStorage.setItem(key, value, lifetime);
     }
     /**
      * Send upgrade credentials
+     * @return {Promise}
      */
     function send() {
         const Auth = tempStorage.getItem(key);
-
         if (Auth) {
             tempStorage.removeItem(key);
             return Setting.passwordUpgrade({ Auth });
