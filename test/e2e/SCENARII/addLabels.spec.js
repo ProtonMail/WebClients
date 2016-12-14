@@ -4,6 +4,7 @@ const dropdownLabel = require('../../e2e.utils/labels/dropdownLabel')();
 
 
 module.exports = ({
+    title = 'Add a label',
     archive = true,
     selected = [],
     unselected = [],
@@ -12,7 +13,7 @@ module.exports = ({
     countAlreadySelected = 0
 } = {}) => {
 
-    describe('Add a label', () => {
+    describe(title, () => {
 
         it('should not display the ', () => {
             dropdownLabel.isOpen()
