@@ -79,9 +79,7 @@ angular.module('proton.conversation')
 
             acc.push({
                 Action: 3, ID,
-                Conversation: {
-                    ID, NumUnread: conversation.NumUnread + 1
-                }
+                Conversation: { ID, NumUnread: conversation.NumUnread + 1 }
             });
             return acc;
         }, []);
@@ -304,6 +302,7 @@ angular.module('proton.conversation')
         cache.addToDispatcher(promise);
 
         if (!tools.cacheContext()) {
+            console.trace('Move lol');
             promise
                 .then(() => eventManager.call())
                 .then(() => displaySuccess());
@@ -376,8 +375,10 @@ angular.module('proton.conversation')
                     LabelIDsAdded: labelIDsAdded // Add new location
                 }
             });
+            return acc;
         }, []);
-
+        debugger;
+        console.trace('Events move conversation', events);
         cache.events(events);
         displaySuccess();
     }
