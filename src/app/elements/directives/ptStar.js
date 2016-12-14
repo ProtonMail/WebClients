@@ -18,7 +18,7 @@ angular.module('proton.elements')
         const todoAction = isStarred(item) ? 'unstar' : 'star';
 
         if (type === 'conversation') {
-            actionConversation[todoAction + 'Conversation'](item.ID);
+            actionConversation[todoAction](item.ID);
         }
 
         if (type === 'message') {

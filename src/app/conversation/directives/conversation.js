@@ -426,17 +426,14 @@ angular.module('proton.conversation')
             scope.read = function () {
                 const ids = [scope.conversation.ID];
 
-                actionConversation.readConversation(ids);
+                actionConversation.read(ids);
             };
 
             /**
              * Mark current conversation as unread
              */
             scope.unread = function () {
-                const ids = [scope.conversation.ID];
-
-                actionConversation.unreadConversation(ids);
-
+                actionConversation.unread([scope.conversation.ID]);
                 back();
             };
 
@@ -444,18 +441,14 @@ angular.module('proton.conversation')
              * Delete current conversation
              */
             scope.delete = function () {
-                const ids = [scope.conversation.ID];
-
-                actionConversation.deleteConversation(ids);
+                actionConversation.remove([scope.conversation.ID]);
             };
 
             /**
              * Move current conversation to a specific location
              */
             scope.move = function (mailbox) {
-                const ids = [scope.conversation.ID];
-
-                actionConversation.moveConversation(ids, mailbox);
+                actionConversation.move([scope.conversation.ID], mailbox);
             };
 
             /**
@@ -463,9 +456,7 @@ angular.module('proton.conversation')
              * @return {Promise}
              */
             scope.saveLabels = function (labels, alsoArchive) {
-                const ids = [scope.conversation.ID];
-
-                actionConversation.labelConversation(ids, labels, alsoArchive);
+                actionConversation.label([scope.conversation.ID], labels, alsoArchive);
             };
 
             /**
@@ -483,14 +474,14 @@ angular.module('proton.conversation')
              * Star the current conversation
              */
             scope.star = function () {
-                actionConversation.starConversation(scope.conversation.ID);
+                actionConversation.star(scope.conversation.ID);
             };
 
             /**
              * Unstar the current conversation
              */
             scope.unstar = function () {
-                actionConversation.unstarConversation(scope.conversation.ID);
+                actionConversation.unstar(scope.conversation.ID);
             };
 
             /**
