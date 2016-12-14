@@ -16,7 +16,7 @@ angular.module('proton.labels', ['ui.indeterminate'])
 ) => {
     return {
         restrict: 'E',
-        templateUrl: 'templates/directives/labels.tpl.html',
+        templateUrl: 'templates/directives/dropdownLabels.tpl.html',
         replace: true,
         scope: {
             getMessages: '=messages',
