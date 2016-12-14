@@ -6,12 +6,12 @@
             <span><strong>{{ ::user.UsedSpace | percentage:user.MaxSpace }}%</strong> Storage space used.</span>
         </div>
     </section>
-    <section ng-if="isFree === false || true">
-        <a href="https://protonmail.com/blog/yahoo-us-intelligence/" target="_blank">
-            <img src="/assets/img/welcome/shop.jpg" />
-        </a> 
+    <section ng-if="isFree === false">
+        <a href="https://protonmail.com/blog/best-secure-email-app/" target="_blank" title-translate="Learn More">
+            <img src="/assets/img/welcome/mobile.jpg" />
+        </a>
     </section>
-    <section ng-if="isFree === true || false">
+    <section ng-if="isFree === true">
         <a ui-sref="secured.dashboard({scroll: true})" class="text-center latest-upgrade">
             <img src="/assets/img/latest/privacy.jpg" />
             <button type="button" class="pm_button primary" translate translate-context="Action">Upgrade account</button>
@@ -20,8 +20,8 @@
     <div class="pm_grid no-padding flex flex-row">
         <div class="col-1-2">
             <section>
-                <a href="https://protonmail.com/blog/yahoo-us-intelligence/" target="_blank">
-                    <img src="/assets/img/welcome/yahoo.jpg" />
+                <a href="https://shop.protonmail.com" target="_blank">
+                    <img src="/assets/img/welcome/shop.png" />
                 </a>
             </section>
         </div>
