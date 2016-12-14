@@ -1,4 +1,4 @@
-angular.module('proton.models.reset', ['proton.srp'])
+angular.module('proton.models.reset', [])
 
 .factory('Reset', ($http, url, srp) => {
     return {

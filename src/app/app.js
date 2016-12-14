@@ -15,6 +15,7 @@ angular.module('proton', [
     'proton.constants',
     'proton.core',
     'proton.outside',
+    'proton.utils',
 
     // templates
     'templates-app',
@@ -55,33 +56,22 @@ angular.module('proton', [
     // Services
     'proton.attachments',
     'proton.authentication',
-    'proton.cache',
-    'proton.errorReporter',
     'proton.event',
-    'proton.networkActivity',
-    'proton.pmcw',
-    'proton.tools',
-    'proton.desktopNotifications',
     'proton.embedded',
-    'proton.service.message',
-
     // Directives
+    'proton.elements',
     'proton.address',
     'proton.message',
     'proton.conversation',
-    'proton.star',
     'proton.drag',
     'proton.dropdown',
     'proton.dropzone',
-    'proton.hotkeys',
     'proton.enter',
     'proton.height',
     'proton.heightOutside',
     'proton.labelHeight',
     'proton.labels',
     'proton.loaderTag',
-    'proton.login',
-    'proton.loginTwoFactor',
     'proton.locationTag',
     'proton.phone',
     'proton.responsiveComposer',
@@ -93,27 +83,15 @@ angular.module('proton', [
     'proton.translate',
     'proton.wizard',
     'proton.rightClick',
-    'proton.selectConversation',
     'proton.detectTimeWidth',
 
     // Filters
     'proton.filters',
 
     // Controllers
-    'proton.controllers.Auth',
     'proton.controllers.Contacts',
-    'proton.controllers.Header',
-    'proton.controllers.Conversations',
     'proton.controllers.Compose',
-    'proton.controllers.Outside',
-    'proton.controllers.Reset',
-    'proton.controllers.Secured',
-    'proton.controllers.Settings',
-    'proton.controllers.Sidebar',
-    'proton.controllers.Setup',
-    'proton.controllers.Signup',
-    'proton.controllers.Support',
-    'proton.controllers.Upgrade'
+    'proton.controllers.Settings'
 ])
 
 /**
@@ -148,24 +126,6 @@ angular.module('proton', [
         }, 1000);
     }
 })
-
-// Set base url from grunt config
-.provider('url', function urlProvider() {
-    let base;
-
-    this.setBaseUrl = function (newUrl) {
-        base = newUrl;
-    };
-
-    this.$get = function () {
-        return {
-            get() {
-                return base;
-            }
-        };
-    };
-})
-
 .config((urlProvider, CONFIG) => {
     urlProvider.setBaseUrl(CONFIG.apiUrl);
 })
@@ -224,9 +184,6 @@ angular.module('proton', [
     // $rootScope.updateMessage = false;
     $rootScope.showSidebar = false;
     $rootScope.themeJason = false;
-    $rootScope.isLoggedIn = authentication.isLoggedIn();
-    $rootScope.isLocked = authentication.isLocked();
-    $rootScope.isSecure = authentication.isSecured();
 
     // SVG Polyfill for Edge
     window.svg4everybody();

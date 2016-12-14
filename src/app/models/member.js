@@ -1,4 +1,4 @@
-angular.module('proton.models.members', ['proton.srp'])
+angular.module('proton.models.members', [])
 
 .factory('Member', ($http, $q, url, srp) => {
     return {
