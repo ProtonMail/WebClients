@@ -571,7 +571,7 @@ angular.module('proton.elements')
         const ids = idsSelected();
 
         if (type === 'conversation') {
-            actionConversation.readConversation(ids);
+            actionConversation.read(ids);
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', { action: 'read', data: { ids } });
         }
@@ -585,7 +585,7 @@ angular.module('proton.elements')
         const ids = idsSelected();
 
         if (type === 'conversation') {
-            actionConversation.unreadConversation(ids);
+            actionConversation.unread(ids);
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', { action: 'unread', data: { ids } });
         }
@@ -611,7 +611,7 @@ angular.module('proton.elements')
                     const ids = idsSelected();
 
                     if (type === 'conversation') {
-                        actionConversation.deleteConversation(ids);
+                        actionConversation.remove(ids);
                     } else if (type === 'message') {
                         $rootScope.$emit('messageActions', { action: 'delete', data: { ids } });
                     }
@@ -650,7 +650,7 @@ angular.module('proton.elements')
 
         $rootScope.numberElementChecked = 0;
         if (type === 'conversation') {
-            actionConversation.moveConversation(ids, mailbox);
+            actionConversation.move(ids, mailbox);
         } else if (type === 'message') {
             $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
         }
@@ -669,7 +669,7 @@ angular.module('proton.elements')
         const ids = idsSelected();
 
         if (type === 'conversation') {
-            actionConversation.labelConversation(ids, labels, alsoArchive);
+            actionConversation.label(ids, labels, alsoArchive);
         } else if (type === 'message') {
             const messages = $scope.elementsSelected();
 
