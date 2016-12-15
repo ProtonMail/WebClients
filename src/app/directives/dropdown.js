@@ -29,7 +29,7 @@ angular.module('proton.dropdown', [])
                 hideDropdown();
             } else {
                 // Close all dropdowns
-                $rootScope.$broadcast('closeDropdown');
+                $rootScope.$emit('closeDropdown');
                 // Open only this one
                 showDropdown();
             }
@@ -40,13 +40,14 @@ angular.module('proton.dropdown', [])
         // Listeners
         element.on('click', click);
 
-        scope.$on('closeDropdown', () => {
+        const unsubscribe = $rootScope.$on('closeDropdown', () => {
             hideDropdown();
         });
 
         scope.$on('$destroy', () => {
             element.off('click', click);
             hideDropdown();
+            unsubscribe();
         });
     };
 })

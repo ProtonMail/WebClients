@@ -1,5 +1,5 @@
 <div class="labelDropdown">
-    <form role="menu" ng-submit="save()" ng-click="$event.stopPropagation()">
+    <form novalidate role="menu" ng-submit="save()" ng-click="$event.stopPropagation()" class="pm_form">
         <p ng-show="labels.length === 0" class="alert alert-info" translate translate-context="Info">No labels</p>
         <div ng-show="labels.length > 1" class="margin labelSearch">
             <i class="fa fa-search"></i>
@@ -21,7 +21,7 @@
                 </li>
             </ul>
         </div>
-        <form novalidate ng-submit="create()" ng-show="displayField === true" class="pm_form">
+        <form novalidate ng-submit="create()" ng-show="displayField" class="pm_form">
             <div class="pm_grid no-padding">
                 <div class="col-2-3">
                     <input type="text" placeholder-translate="Name" ng-model="labelName" />
@@ -49,10 +49,10 @@
                 <i class="fa fa-plus"></i>
             </button>
             <button
-                ng-show="labels.length > 0"
-                tabindex="1"
                 type="submit"
                 class="pm_button primary pull-right dropdownLabels-btn-save"
+                ng-show="labels.length > 0"
+                tabindex="1"
                 ng-disabled="networkActivity.loading()"
                 translate-context="Action"
                 translate>Apply</button>
