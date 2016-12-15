@@ -1,4 +1,4 @@
-angular.module('proton.contact')
+angular.module('proton.contactCurrent')
 .controller('ContactsController', (
     $filter,
     $log,

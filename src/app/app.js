@@ -65,7 +65,8 @@ angular.module('proton', [
     'proton.conversation',
     'proton.squire',
     'proton.wizard',
-    'proton.contact',
+    'proton.contactCurrent',
+    'proton.formUtils',
 
     // Controllers
     'proton.controllers.Settings'
