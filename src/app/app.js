@@ -273,7 +273,6 @@ angular.module('proton', [
         $rootScope.toState = toState.name.replace('.', '-');
 
         $('#loading_pm, #pm_slow, #pm_slow2').remove();
-
         $timeout(() => {
             $rootScope.showSidebar = false;
         }, 30);

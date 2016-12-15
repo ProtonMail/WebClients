@@ -349,7 +349,7 @@ angular.module('proton.elements')
         const context = tools.cacheContext();
         const type = tools.typeList();
         let promise;
-        debugger;
+
         if (type === 'message') {
             promise = cache.queryMessages(request, $scope.firstLoad);
         } else if (type === 'conversation') {

@@ -9,6 +9,15 @@ const message = (type = '') => {
     `);
 };
 
+const containsMessage = (message, type = '') => {
+    const className = type ? `.notification-${type}` : '';
+    return browser.executeScript(`
+        return [].slice.call($('.proton-notification-template${className}'))
+            .map((node) => node.querySelector('span').innerHTML)
+            .indexOf('${message}') > -1;
+    `);
+};
+
 const isOpened = (type = '') => {
 
     const className = type ? `.notification-${type}` : '';
@@ -18,4 +27,4 @@ const isOpened = (type = '') => {
     `);
 };
 
-module.exports = { find, message, isOpened };
+module.exports = { find, message, isOpened, containsMessage };
