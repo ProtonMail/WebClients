@@ -24,9 +24,7 @@ angular.module('proton.message')
      * Back to element list
      */
     function back() {
-        const name = $state.$current.name;
-        const route = name.replace('.element', '');
-
+        const route = $state.$current.name.replace('.element', '');
         $state.go(route, { id: null });
     }
 

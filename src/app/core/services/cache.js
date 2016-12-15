@@ -816,7 +816,6 @@ angular.module('proton.core')
     * @return {Promise}
     */
     api.events = (events = [], fromBackend = false, isSend) => {
-        const deferred = $q.defer();
         const promises = [];
         const messageIDs = [];
         const conversationIDs = [];
@@ -873,14 +872,8 @@ angular.module('proton.core')
             }
         });
 
-        $q.all(promises).then(() => {
-            api.callRefresh(messageIDs, conversationIDs);
-            deferred.resolve();
-        }, () => {
-            deferred.reject();
-        });
-
-        return deferred.promise;
+        return Promise.all(promises)
+            .then(() => api.callRefresh(messageIDs, conversationIDs));
     };
 
     /**
@@ -889,7 +882,7 @@ angular.module('proton.core')
      * Second with the query call
      */
     api.callRefresh = (messageIDs = [], conversationIDs = []) => {
-        $rootScope.$broadcast('refreshElements');
+        $rootScope.$emit('refreshElements');
         $rootScope.$emit('updatePageName');
         $rootScope.$emit('refreshConversation', conversationIDs);
         $rootScope.$emit('message.refresh', messageIDs);
