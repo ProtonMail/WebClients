@@ -1,6 +1,7 @@
 const { isTrue, isFalse, assert, greaterThan } = require('../../e2e.utils/assertions');
 const webapp = require('../../e2e.utils/webapp');
 const toolbar = require('../../e2e.utils/toolbar');
+const notifs = require('../../e2e.utils/notifications');
 const addLabelsSpecs = require('../SCENARII/addLabels.spec');
 const utils = require('./conversation.po')();
 
@@ -118,6 +119,161 @@ describe('Test conversations', () => {
                 .then(assert(0))
                 .then(() => column.countSeleted())
                 .then(assert(0));
+        });
+
+    });
+
+    describe('Mark as read', () => {
+
+        describe('every messages', () => {
+
+            it('should mark all as read', () => {
+                toolbar.selectAll()
+                    .then(() => browser.sleep(1000))
+                    .then(() => column.count())
+                    .then((total) => {
+                        toolbar.read()
+                            .then(() => browser.sleep(1000))
+                            .then(() => column.countRead())
+                            .then(assert(total));
+                    });
+            });
+
+            it('should mark all as unread', () => {
+                toolbar.read(false)
+                    .then(() => browser.sleep(100))
+                    .then(() => column.countRead())
+                    .then(assert(0));
+            });
+
+        });
+
+        describe('One message', () => {
+
+            it('should mark the conversation as read', () => {
+                toolbar.selectAll()
+                    .then(() => column.select(3))
+                    .then(() => toolbar.read())
+                    .then(() => browser.sleep(100))
+                    .then(() => column.isRead(3))
+                    .then(isTrue);
+            });
+
+            it('should mark the conversation as unread', () => {
+                toolbar.read(false)
+                    .then(() => browser.sleep(100))
+                    .then(() => column.isRead(3))
+                    .then(isFalse);
+            });
+
+        });
+    });
+
+    describe('Move to', () => {
+
+
+        it('should move them all to archive', () => {
+            toolbar.selectAll()
+                .then(() => toolbar.moveTo('archive'))
+                .then(() => browser.sleep(1000))
+                .then(() => column.count())
+                .then((total) => {
+                    column.countFlag('archive')
+                        .then(assert(total));
+                });
+        });
+
+        it('should display a notfication', () => {
+            browser.wait(() => {
+                return notifs.isOpened()
+                    .then((test) => test === true);
+            }, 2000)
+                .then(() => notifs.containsMessage('Conversations moved to Archive'))
+                .then(isTrue);
+        });
+
+        it('should have unselect all', () => {
+            column.countSeleted()
+                .then(assert(0));
+        });
+
+        describe('to inbox', () => {
+
+            it('should move them all to inbox', () => {
+                toolbar.selectAll()
+                    .then(() => toolbar.moveTo('inbox'))
+                    .then(() => browser.sleep(1000))
+                    .then(() => column.count())
+                    .then((total) => {
+                        column.countFlag('inbox')
+                            .then(assert(total));
+                    });
+            });
+
+            it('should display a notfication', () => {
+                notifs.containsMessage('Conversations moved to Inbox')
+                    .then(isTrue);
+            });
+
+            it('should have unselect all', () => {
+                column.countSeleted()
+                    .then(assert(0));
+            });
+        });
+
+        describe('trash', () => {
+
+            it('should not is masked as trashed', () => {
+                column.isFlag(3, 'trash')
+                    .then(isFalse);
+            });
+
+            it('should unselect the conversation', () => {
+                column.select(3)
+                    .then(() => toolbar.moveTo('trash'))
+                    .then(() => browser.sleep(1000))
+                    .then(() => column.countSeleted())
+                    .then(assert(0));
+            });
+
+            it('should display a notfication', () => {
+                notifs.containsMessage('Conversation moved to Trash')
+                    .then(isTrue);
+            });
+
+            it('should be masked as trashed', () => {
+                column.isFlag(3, 'trash')
+                    .then(isTrue);
+            });
+        });
+
+        describe('spam', () => {
+
+            it('should not is masked as trashed', () => {
+                column.isFlag(5, 'spam')
+                    .then(isFalse);
+            });
+
+            it('should unselect the conversation', () => {
+                column.select(5)
+                    .then(() => toolbar.moveTo('spam'))
+                    .then(() => browser.sleep(1000))
+                    .then(() => column.countSeleted())
+                    .then(assert(0));
+            });
+
+            it('should display a notfication', () => {
+                notifs.containsMessage('Conversation moved to Spam')
+                    .then(isTrue);
+
+            });
+
+            it('should mask as trashed', () => {
+                column.isFlag(5, 'spam')
+                    .then(isTrue);
+
+                browser.sleep(2000);
+            });
         });
 
     });

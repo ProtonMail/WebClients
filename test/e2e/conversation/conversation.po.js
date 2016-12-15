@@ -6,10 +6,17 @@ module.exports = () => {
         conversation: '.conversation',
         labels: '.labelsElement-label',
         checkbox: '.ptSelectConversation-input',
+        read: '.read',
         placeholder: {
             container: '#pm_placeholder',
             title: '.numberElementSelected-title',
             btnUnselect: '.conversationPlaceholder-btn-unselect'
+        },
+        flags: {
+            trash: '.fa-trash-o',
+            inbox: '.fa-inbox',
+            archive: '.fa-archive',
+            spam: '.fa-ban'
         }
     };
 
@@ -93,6 +100,19 @@ module.exports = () => {
             `);
         };
 
+        const countRead = () => {
+            return browser.executeScript(`
+                return ${scope()}.filter('${SELECTOR.read}').length;
+            `);
+        };
+
+        const countFlag = (name = 'trash') => {
+            const selector = SELECTOR.flags[name];
+            return browser.executeScript(`
+                return ${scope()}.find('${selector}').length;
+            `);
+        };
+
         const countSeleted = () => {
             return browser.executeScript(`
                 return ${scope()}
@@ -102,9 +122,26 @@ module.exports = () => {
             `);
         };
 
+        const isRead = (index = 0) => {
+            return browser.executeScript(`
+                return ${scope(index)}
+                    .hasClass('${SELECTOR.read}'.replace('.', ''));
+            `);
+        };
+
+        const isFlag = (index = 0, name = 'trash') => {
+            const selector = SELECTOR.flags[name];
+            return browser.executeScript(`
+                return !!${scope(index)}
+                    .find('${selector}')
+                    .length;
+            `);
+        };
 
         return {
-            count, select, countSeleted,
+            count, select,
+            countSeleted, countRead, countFlag,
+            isRead, isFlag,
             labels: labels(scope),
             placeholder: placeholder()
         };

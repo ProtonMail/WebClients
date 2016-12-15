@@ -1,0 +1,13 @@
+.readUnread-container {display: flex !important }
+.readUnread-container-ur { flex-direction: row-reverse }
+.readUnread-container.disabled [class*="readUnread-btn"] {
+    pointer-events: none;
+    box-shadow: none;
+    color: $border;
+    box-shadow: inset 0 0 50rem 0 lighten($read, 4%);
+}
+
+.readUnread-container-ur {
+    .readUnread-btn-read { border-left: 1px solid $border !important }
+    .readUnread-btn-unread { border-left: 0 }
+}
