@@ -1,5 +1,4 @@
-angular.module('proton.phone', [])
-
+angular.module('proton.formUtils')
 .directive('phone', ($timeout) => {
     return {
         restrict: 'A',

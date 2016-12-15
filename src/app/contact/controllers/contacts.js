@@ -1,5 +1,4 @@
-angular.module('proton.controllers.Contacts', [])
-
+angular.module('proton.contact')
 .controller('ContactsController', (
     $filter,
     $log,
@@ -18,9 +17,7 @@ angular.module('proton.controllers.Contacts', [])
     gettextCatalog,
     Message,
     networkActivityTracker,
-    notify,
-    tools
-) => {
+    notify) => {
     // Variables
     let lastChecked = null;
 

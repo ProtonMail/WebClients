@@ -1,4 +1,4 @@
-angular.module('proton.detectTimeWidth', [])
+angular.module('proton.utils')
   .directive('detectTimeWith', ($filter) => {
 
     /**

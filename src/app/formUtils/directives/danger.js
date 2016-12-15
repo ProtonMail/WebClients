@@ -1,4 +1,4 @@
-angular.module('proton.ui')
+angular.module('proton.formUtils')
 .directive('danger', () => {
     function isDanger(value) {
         return value === 'DANGER';

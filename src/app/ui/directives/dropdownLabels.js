@@ -1,5 +1,4 @@
-angular.module('proton.labels', ['ui.indeterminate'])
-
+angular.module('proton.ui')
 .directive('dropdownLabels', (
     $filter,
     $q,

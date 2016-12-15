@@ -1,4 +1,4 @@
-angular.module('proton.core')
+angular.module('proton.formUtils')
 .directive('togglePassword', (gettextCatalog) => {
     return {
         restrict: 'A',

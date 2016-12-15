@@ -1,4 +1,4 @@
-angular.module('proton.ui')
+angular.module('proton.formUtils')
 .directive('uniqueUsername', (User) => {
     function isUsernameAvailable(username) {
         return User.available(username)
