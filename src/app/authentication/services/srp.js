@@ -150,10 +150,10 @@ angular.module('proton.authentication')
             authVersion = fallbackAuthVersion;
         }
 
-        if (authVersion < 3 && !angular.isDefined(creds.Username)) {
-            return Promise.reject({
-                error_description: 'An unexpected error has occurred. Please log out and log back in to fix it.'
-            });
+        if (authVersion < 3) {
+            creds.Username = infoResp.data.Username;
+            // See https://github.com/ProtonMail/Angular/issues/4332
+            // return Promise.reject({ error_description: 'An unexpected error has occurred. Please log out and log back in to fix it.' });
         }
 
         if (authVersion === 2 && passwords.cleanUsername(creds.Username) !== passwords.cleanUsername(infoResp.data.Username) ||
