@@ -105,9 +105,10 @@
                                 </td>
                             </tr>
                             <tr ng-if="domain.State === 0">
-                                <td colspan="3">
+                                <td colspan="2">
                                     <p class="alert alert-warning">Setup Error: Please run the <a class="pm_button link" href="#" ng-click="wizard(domain)"><i class="fa fa-magic"></i> Setup Wizard</a> to correct configuration errors.</p>
                                 </td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -151,7 +152,7 @@
                             <tbody>
                                 <tr ng-repeat="address in domain.Addresses | orderBy: 'Send'" ng-class="{'disabled': address.Status === 0}">
                                     <td ng-if="keyPhase > 3">
-                                        <a ui-sref="secured.members({action: 'edit', id: address.MemberID})" ng-bind="member(address.MemberID).Name"></a>
+                                        <a ui-sref="secured.members({action: 'edit', id: address.MemberID})" ng-bind="member(address.MemberID).Name" class="text-purple"></a>
                                     </td>
                                     <td ng-bind="address.Email"></td>
                                     <td>
