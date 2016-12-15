@@ -199,6 +199,13 @@ const pmcrypto = (function pmcrypto() {
 
             openpgp.encrypt(options).then((ciphertext) => {
                 resolve(ciphertext.data);
+            }).catch(function(err) {
+                if (privKeys) {
+                    options.privateKeys = [];
+                }
+                openpgp.encrypt(options).then((ciphertext) => {
+                    resolve(ciphertext.data);
+                });
             });
         });
     }
@@ -240,6 +247,13 @@ const pmcrypto = (function pmcrypto() {
 
             openpgp.encrypt(options).then((ciphertext) => {
                 resolve(splitFile(ciphertext.message));
+            }).catch(function(err) {
+                if (privKeys) {
+                    options.privateKeys = [];
+                }
+                openpgp.encrypt(options).then((ciphertext) => {
+                    resolve(ciphertext.data);
+                });
             });
         });
 
