@@ -113,7 +113,7 @@ angular.module('proton.conversation')
                 Conversation: { ID, NumUnread: 0 }
             });
             return acc;
-        });
+        }, []);
 
         cache.events(events);
     }
@@ -176,9 +176,9 @@ angular.module('proton.conversation')
             acc.push({
                 ID, Action: 3,
                 Message: { ID, LabelIDsAdded }
-            });
+            }, []);
             return acc;
-        });
+        }, []);
 
         events.push({
             ID, Action: 3,
@@ -228,7 +228,7 @@ angular.module('proton.conversation')
         const events = _.chain(ids)
             .map((id) => cache.getConversationCached(id))
             .filter(Boolean)
-            .reduce((acc, ID) => {
+            .reduce((acc, { ID }) => {
                 const messages = cache.queryMessagesCached(ID);
 
                 _.each(messages, (message) => {

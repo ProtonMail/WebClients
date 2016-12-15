@@ -294,10 +294,8 @@ angular.module('proton.conversation')
              * Back to the parent state
              */
             function back() {
-                const name = $state.$current.name;
-                const route = name.replace('.element', '');
-
-                $state.go(route, { id: '' }, { reload: true });
+                const route = $state.$current.name.replace('.element', '');
+                $state.go(route, { id: null });
             }
 
             /**

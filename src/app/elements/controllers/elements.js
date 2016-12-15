@@ -125,9 +125,9 @@ angular.module('proton.elements')
             isOpened = false;
         }));
 
-        $scope.$on('refreshElements', () => {
+        unsubscribes.push($rootScope.$on('refreshElements', () => {
             $scope.refreshElements();
-        });
+        }));
 
         $scope.$on('openMarked', onElement(() => {
             openElement($scope.markedElement);
