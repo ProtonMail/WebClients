@@ -15,6 +15,25 @@
                 <legend translate-context="Title" translate>Organization</legend>
                 <div class="pm_grid">
 	            	<div class="col-1-2">
+                        <div class="clearfix">
+		            		<div class="pm_table">
+			                    <table class="plain absorbing" id="usersTable">
+			                        <tbody>
+				                        <tr>
+				                            <td translate-context="Title" translate>Organization storage:</td>
+				                            <td>
+				                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
+				                            </td>
+				                            <td class="text-right">
+				                                <span>
+				                                    <a ui-sref="secured.dashboard" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
+				                                </span>
+				                            </td>
+				                        </tr>
+				                    </tbody>
+			                    </table>
+		                    </div>
+	                    </div>
 	            		<div class="clearfix">
 			            	<form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
 		            			<div class="col-1-2">
@@ -34,30 +53,28 @@
 		            			</div>
 		            		</form>
 	            		</div>
-                        <div class="clearfix">
-		            		<div class="pm_table">
-			                    <table class="plain" id="usersTable">
-			                        <tbody>
-				                        <tr>
-				                            <td translate-context="Title" translate>Organization storage:</td>
-				                            <td>
-				                                <strong>{{ organization.MaxSpace | humanSize }}</strong>
-				                            </td>
-				                            <td class="text-right">
-				                                <span>
-				                                    <a ui-sref="secured.dashboard" translate-context="Action" translate-comment="link to dashboard" translate>Upgrade</a>
-				                                </span>
-				                            </td>
-				                        </tr>
-				                    </tbody>
-			                    </table>
-		                    </div>
-		                    <p>
-			                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create sub-accounts which are used by other members of your organization.</span></small>
-		                    </p>
-	                    </div>
 	            	</div>
 	            	<div class="col-1-2">
+                        <div class="pm_table">
+						    <table class="bordered absorbing">
+						        <thead>
+						            <tr>
+						                <th translate-context="Title" translate-comment="table heading" translate>Organization Key Fingerprint</th>
+						                <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
+						            </tr>
+						        </thead>
+						        <tbody>
+						            <tr>
+						                <td>
+						                    <code>{{ organizationKeyInfo.fingerprint }}</code>
+						                </td>
+						                <td translate translate-comment="members page to show the key size">
+						                    {{ organizationKeyInfo.bitSize }} Bit
+						                </td>
+						            </tr>
+						        </tbody>
+						    </table>
+						</div>
                         <div class="clearfix" ng-show="keyStatus === 0">
                             <form method="post" ng-submit="saveRecoveryForm.$valid && saveRecoveryPassword(saveRecoveryForm)" name="saveRecoveryForm" novalidate>
                                 <div class="clearfix">
@@ -100,26 +117,6 @@
                                 <button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Restore Keys</button>
                             </p>
                         </div>
-                        <div class="pm_table">
-						    <table class="bordered absorbing">
-						        <thead>
-						            <tr>
-						                <th translate-context="Title" translate-comment="table heading" translate>Organization Key Fingerprint</th>
-						                <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
-						            </tr>
-						        </thead>
-						        <tbody>
-						            <tr>
-						                <td>
-						                    <code>{{ organizationKeyInfo.fingerprint }}</code>
-						                </td>
-						                <td translate translate-comment="members page to show the key size">
-						                    {{ organizationKeyInfo.bitSize }} Bit
-						                </td>
-						            </tr>
-						        </tbody>
-						    </table>
-						</div>
 	            	</div>
 	            </div>
             </section>
