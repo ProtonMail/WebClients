@@ -27,11 +27,11 @@ angular.module('proton.labels', ['ui.indeterminate'])
             const dropdown = angular.element(element).closest('.pm_buttons').find('.open-label');
 
             // Functions
-            const onClick = function () {
+            const onClick = () => {
                 scope.open();
             };
 
-            const scrollDown = function () {
+            const scrollDown = () => {
                 const list = angular.element(element).find('.list-group').first();
 
                 list.scrollTop = list.scrollHeight;
@@ -44,7 +44,7 @@ angular.module('proton.labels', ['ui.indeterminate'])
                 dropdown.unbind('click', onClick);
             });
 
-            scope.open = function () {
+            scope.open = () => {
                 if (angular.isFunction(scope.getMessages) && angular.isFunction(scope.saveLabels)) {
                     const messages = scope.getMessages();
 
@@ -74,11 +74,11 @@ angular.module('proton.labels', ['ui.indeterminate'])
                 }
             };
 
-            scope.color = function ({ Color } = {}) {
+            scope.color = ({ Color } = {}) => {
                 return Color ? { color: Color } : {};
             };
 
-            scope.save = function () {
+            scope.save = () => {
                 $rootScope.numberElementChecked = 0;
                 $rootScope.showWelcome = true;
                 scope.saveLabels(scope.labels, scope.alsoArchive);
@@ -86,7 +86,7 @@ angular.module('proton.labels', ['ui.indeterminate'])
                 notify({ message: gettextCatalog.getString('Labels Saved', null), classes: 'notification-success' });
             };
 
-            scope.changeAlsoArchive = function () {
+            scope.changeAlsoArchive = () => {
                 const archive = scope.alsoArchive ? 1 : 0;
 
                 Setting.alsoArchive({ AlsoArchive: archive })
@@ -97,7 +97,7 @@ angular.module('proton.labels', ['ui.indeterminate'])
                 });
             };
 
-            scope.moveTo = function (label) {
+            scope.moveTo = (label) => {
                 // Select just one
                 label.Selected = true;
                 // Save
@@ -108,15 +108,15 @@ angular.module('proton.labels', ['ui.indeterminate'])
                 notify({ message: gettextCatalog.getString('Label Saved', null), classes: 'notification-success' });
             };
 
-            scope.close = function () {
+            scope.close = () => {
                 $rootScope.$broadcast('closeDropdown');
             };
 
-            scope.labelsSelected = function () {
+            scope.labelsSelected = () => {
                 return _.where(scope.labels, { Selected: true });
             };
 
-            scope.toggle = function () {
+            scope.toggle = () => {
                 scope.displayField = !scope.displayField;
 
                 if (scope.displayField === true) {
@@ -126,7 +126,7 @@ angular.module('proton.labels', ['ui.indeterminate'])
                 }
             };
 
-            scope.create = function () {
+            scope.create = () => {
                 const name = scope.labelName;
                 const colors = tools.colors();
                 const index = _.random(0, colors.length - 1);
