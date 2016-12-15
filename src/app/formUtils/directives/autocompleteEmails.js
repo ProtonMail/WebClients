@@ -252,7 +252,7 @@ angular.module('proton.formUtils')
             emails: '='
         },
         replace: true,
-        templateUrl: 'templates/directives/ui/autocomplete.tpl.html',
+        templateUrl: 'templates/formUtils/autocompleteEmails.tpl.html',
         compile
     };
 });
