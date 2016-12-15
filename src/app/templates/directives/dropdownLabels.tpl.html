@@ -1,5 +1,5 @@
 <div class="labelDropdown">
-    <div role="menu" ng-click="$event.stopPropagation()">
+    <form role="menu" ng-submit="save()" ng-click="$event.stopPropagation()">
         <p ng-show="labels.length === 0" class="alert alert-info" translate translate-context="Info">No labels</p>
         <div ng-show="labels.length > 1" class="margin labelSearch">
             <i class="fa fa-search"></i>
@@ -42,6 +42,7 @@
         <div class="clearfix"></div>
         <div>
             <button
+                type="button"
                 class="createLabel pull-left pm_button dropdownLabels-btn-add"
                 ng-click="toggle()"
                 pt-tooltip-translate="Add new label" pt-tooltip-translate-context="Action">
@@ -50,12 +51,11 @@
             <button
                 ng-show="labels.length > 0"
                 tabindex="1"
-                type="button"
+                type="submit"
                 class="pm_button primary pull-right dropdownLabels-btn-save"
-                ng-click="save()"
                 ng-disabled="networkActivity.loading()"
                 translate-context="Action"
                 translate>Apply</button>
         </div>
-    </div>
+    </form>
 </div>
