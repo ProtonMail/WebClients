@@ -29,6 +29,7 @@ angular.module('proton.controllers.Contacts', [])
     $scope.editing = false;
     $scope.numPerPage = CONSTANTS.ELEMENTS_PER_PAGE;
     $scope.sortBy = 'Name';
+    $scope.isSafari = jQuery.browser.name === 'safari';
 
     // Listeners
     $scope.$on('deleteContact', (event, ID) => {
@@ -427,44 +428,40 @@ angular.module('proton.controllers.Contacts', [])
     };
 
     $scope.downloadContacts = function () {
-        if (tools.getBrowser() === 'Safari') {
-            $scope.openSafariWarning();
-        } else {
-            const contactsArray = [['Name', 'Email']];
-            const csvRows = [];
-            const filename = 'contacts.csv';
+        const contactsArray = [['Name', 'Email']];
+        const csvRows = [];
+        const filename = 'contacts.csv';
 
-            const escape_for_csv = function (str) {
+        const escape_for_csv = function (str) {
 
-                let escape = false;
-                if (str.indexOf(',') !== -1 || str.indexOf('\n') !== -1) {
-                    escape = true;
-                }
-                if (str.indexOf('"') !== -1) {
-                    str = str.replace(/"/g, '""');
-                    escape = true;
-                }
-
-                if (escape) {
-                    str = '"' + str + '"';
-                }
-
-                return str;
-            };
-
-            _.forEach(authentication.user.Contacts, (contact) => {
-                contactsArray.push([escape_for_csv(contact.Name), escape_for_csv(contact.Email)]);
-            });
-
-            for (let i = 0, l = contactsArray.length; i < l; ++i) {
-                csvRows.push(contactsArray[i].join(','));
+            let escape = false;
+            if (str.indexOf(',') !== -1 || str.indexOf('\n') !== -1) {
+                escape = true;
+            }
+            if (str.indexOf('"') !== -1) {
+                str = str.replace(/"/g, '""');
+                escape = true;
             }
 
-            const csvString = csvRows.join('\n');
-            const blob = new Blob([csvString], { type: 'data:attachment/csv;' });
+            if (escape) {
+                str = '"' + str + '"';
+            }
 
-            saveAs(blob, filename);
+            return str;
+        };
+
+        _.forEach(authentication.user.Contacts, (contact) => {
+            contactsArray.push([escape_for_csv(contact.Name), escape_for_csv(contact.Email)]);
+        });
+
+        for (let i = 0, l = contactsArray.length; i < l; ++i) {
+            csvRows.push(contactsArray[i].join(','));
         }
+
+        const csvString = csvRows.join('\n');
+        const blob = new Blob([csvString], { type: 'data:attachment/csv;' });
+
+        saveAs(blob, filename);
     };
 
     $scope.initialization();

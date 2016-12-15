@@ -10,7 +10,7 @@
                     <a class="pm_button deleteAll" ng-click="deleteAllContacts()">
                         <i class="fa fa-ban"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Delete all</span>
                     </a>
-                    <a class="pm_button" ng-click="downloadContacts()">
+                    <a class="pm_button" ng-click="downloadContacts()" ng-hide="isSafari">
                         <i class="fa fa-download"></i> <span translate-context="Action" translate-comment="contacts toolbar menu option" translate>Download</span>
                     </a>
                     <a class="pm_button" ng-click="uploadContacts()">
