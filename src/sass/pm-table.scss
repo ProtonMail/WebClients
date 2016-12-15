@@ -158,6 +158,14 @@
         td {
             border-bottom: 1px solid $border;
             color: $gray;
+            .pm_select {
+                &.table_select {
+                    select {
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
         }
         tr {
             &.hasTable{
