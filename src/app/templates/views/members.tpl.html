@@ -17,10 +17,10 @@
 	            	<div class="col-1-2">
 	            		<div class="clearfix">
 			            	<form method="post" name="organizationForm" ng-submit="organizationForm.$valid && saveOrganizationName()" novalidate="">
-		            			<div class="col-3-8">
+		            			<div class="col-1-2">
 		            				<label for="orgName" translate-context="Title" translate>Organization name</label>
 		            			</div>
-		            			<div class="col-5-8">
+		            			<div class="col-1-2">
 		            				<div class="clearfix">
 			            				<input id="orgName" name="name" type="text" class="margin" ng-model="organization.DisplayName" placeholder-translate="Organization name" ng-maxlength="100" required="" />
 			                            <div ng-messages="organizationForm.name.$error" class="text-red" ng-if="organizationForm.name.$touched || organizationForm.$submitted">
@@ -34,71 +34,7 @@
 		            			</div>
 		            		</form>
 	            		</div>
-						<div class="pm_table">
-						    <table class="bordered absorbing">
-						        <thead>
-						            <tr>
-						                <th translate-context="Title" translate-comment="table heading" translate>Organization Key Fingerprint</th>
-						                <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
-						            </tr>
-						        </thead>
-						        <tbody>
-						            <tr>
-						                <td>
-						                    <code>{{ organizationKeyInfo.fingerprint }}</code>
-						                </td>
-						                <td translate translate-comment="members page to show the key size">
-						                    {{ organizationKeyInfo.bitSize }} Bit
-						                </td>
-						            </tr>
-						        </tbody>
-						    </table>
-						</div>
-	            		<div class="clearfix" ng-show="keyStatus === 0">
-			                <form method="post" ng-submit="saveRecoveryForm.$valid && saveRecoveryPassword(saveRecoveryForm)" name="saveRecoveryForm" novalidate>
-			                    <div class="clearfix">
-			                        <div class="col-1-2">
-			                            <label for="newRecoveryPassword" translate-context="Title" translate>Key recovery password</label>
-			                        </div>
-			                        <div class="col-1-2">
-			                            <input type="password" id="newRecoveryPassword" name="newRecoveryPassword" ng-model="newRecoveryPassword" placeholder-translate="New recovery password" required>
-			                            <div ng-messages="saveRecoveryForm.newRecoveryPassword.$error" class="text-red" ng-if="saveRecoveryForm.newRecoveryPassword.$touched || saveRecoveryForm.$submitted">
-			                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-			                            </div>
-			                        </div>
-			                    </div>
-			                    <div class="clearfix">
-			                        <div class="col-1-2">
-			                            <label for="confirmRecoveryPassword" Title translate>Confirm recovery Password</label>
-			                        </div>
-			                        <div class="col-1-2">
-			                            <input type="password" id="confirmRecoveryPassword" name="confirmRecoveryPassword" ng-model="confirmRecoveryPassword" placeholder-translate="Confirm new recovery password" class="margin" required compare-to="newRecoveryPassword">
-			                            <div ng-messages="saveRecoveryForm.confirmRecoveryPassword.$error" class="text-red" ng-if="saveRecoveryForm.confirmRecoveryPassword.$touched || saveRecoveryForm.$submitted">
-			                                <p ng-message="required" translate-context="Error" translate>Field required</p>
-			                                <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
-			                            </div>
-			                        </div>
-			                    </div>
-			            		<p class="clearfix">
-				            		<button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change Keys</button>
-				            		<button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
-			            		</p>
-			                </form>
-	            		</div>
-	            		<div class="clearfix" ng-show="keyStatus === 1">
-    		                <p class="alert alert-warning" translate translate-context="Info">You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
-							<button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Activate Keys</button>
-	            		</div>
-	            		<div class="clearfix" ng-show="keyStatus === 2">
-    		                <p class="alert alert-danger" translate translate-context="Info">You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
-		            		<p class="clearfix">
-			            		<button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Reset Keys</button>
-			            		<button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Restore Keys</button>
-		            		</p>
-	            		</div>
-	            	</div>
-	            	<div class="col-1-2">
-	            		<div class="clearfix">
+                        <div class="clearfix">
 		            		<div class="pm_table">
 			                    <table class="plain" id="usersTable">
 			                        <tbody>
@@ -120,6 +56,70 @@
 			                    <small><i class="fa fa-info-circle text-purple"></i> <span translate-context="Info" translate>ProtonMail business accounts can create sub-accounts which are used by other members of your organization.</span></small>
 		                    </p>
 	                    </div>
+	            	</div>
+	            	<div class="col-1-2">
+                        <div class="clearfix" ng-show="keyStatus === 0">
+                            <form method="post" ng-submit="saveRecoveryForm.$valid && saveRecoveryPassword(saveRecoveryForm)" name="saveRecoveryForm" novalidate>
+                                <div class="clearfix">
+                                    <div class="col-1-2">
+                                        <label for="newRecoveryPassword" translate-context="Title" translate>Key recovery password</label>
+                                    </div>
+                                    <div class="col-1-2">
+                                        <input type="password" id="newRecoveryPassword" name="newRecoveryPassword" ng-model="newRecoveryPassword" placeholder-translate="New recovery password" required>
+                                        <div ng-messages="saveRecoveryForm.newRecoveryPassword.$error" class="text-red" ng-if="saveRecoveryForm.newRecoveryPassword.$touched || saveRecoveryForm.$submitted">
+                                            <p ng-message="required" translate-context="Error" translate>Field required</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <div class="col-1-2">
+                                        <label for="confirmRecoveryPassword" Title translate>Confirm recovery Password</label>
+                                    </div>
+                                    <div class="col-1-2">
+                                        <input type="password" id="confirmRecoveryPassword" name="confirmRecoveryPassword" ng-model="confirmRecoveryPassword" placeholder-translate="Confirm new recovery password" class="margin" required compare-to="newRecoveryPassword">
+                                        <div ng-messages="saveRecoveryForm.confirmRecoveryPassword.$error" class="text-red" ng-if="saveRecoveryForm.confirmRecoveryPassword.$touched || saveRecoveryForm.$submitted">
+                                            <p ng-message="required" translate-context="Error" translate>Field required</p>
+                                            <p ng-message="compareTo" translate-context="Error" translate>Passwords do not match</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="clearfix">
+                                    <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Change Keys</button>
+                                    <button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" type="submit" translate-context="Action" translate>Save</button>
+                                </p>
+                            </form>
+                        </div>
+                        <div class="clearfix" ng-show="keyStatus === 1">
+                            <p class="alert alert-warning" translate translate-context="Info">You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
+                            <button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Activate Keys</button>
+                        </div>
+                        <div class="clearfix" ng-show="keyStatus === 2">
+                            <p class="alert alert-danger" translate translate-context="Info">You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.</p>
+                            <p class="clearfix">
+                                <button class="pm_button pull-left" ng-disabled="networkActivity.loading()" ng-click="changeOrganizationKeys()" type="button" translate-context="Action" translate>Reset Keys</button>
+                                <button class="pm_button primary pull-right" ng-disabled="networkActivity.loading()" ng-click="activateOrganizationKeys()" type="button" translate-context="Action" translate>Restore Keys</button>
+                            </p>
+                        </div>
+                        <div class="pm_table">
+						    <table class="bordered absorbing">
+						        <thead>
+						            <tr>
+						                <th translate-context="Title" translate-comment="table heading" translate>Organization Key Fingerprint</th>
+						                <th translate-context="Title" translate-comment="table heading" translate>Key size</th>
+						            </tr>
+						        </thead>
+						        <tbody>
+						            <tr>
+						                <td>
+						                    <code>{{ organizationKeyInfo.fingerprint }}</code>
+						                </td>
+						                <td translate translate-comment="members page to show the key size">
+						                    {{ organizationKeyInfo.bitSize }} Bit
+						                </td>
+						            </tr>
+						        </tbody>
+						    </table>
+						</div>
 	            	</div>
 	            </div>
             </section>
