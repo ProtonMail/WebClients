@@ -19,7 +19,8 @@ module.exports = ({ editor }) => () => {
         dropzone.embedded()
             .then(() => browser.sleep(1000))
             .then(() => listAttachments.isVisible())
-            .then(isTrue);
+            .then(isTrue)
+            .then(() => browser.sleep(2000));
     });
 
     it('should not display the dropzone', () => {
