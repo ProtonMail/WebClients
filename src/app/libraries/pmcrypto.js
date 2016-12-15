@@ -252,7 +252,7 @@ const pmcrypto = (function pmcrypto() {
                     options.privateKeys = [];
                 }
                 openpgp.encrypt(options).then((ciphertext) => {
-                    resolve(ciphertext.data);
+                    resolve(splitFile(ciphertext.message));
                 });
             });
         });
