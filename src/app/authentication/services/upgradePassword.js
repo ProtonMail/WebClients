@@ -17,9 +17,9 @@ angular.module('proton.authentication')
         const Auth = tempStorage.getItem(key);
         if (Auth) {
             tempStorage.removeItem(key);
-            return Setting.passwordUpgrade({ Auth });
+            return Setting.passwordUpgrade(Auth);
         }
-        return Promise.resolve()
+        return Promise.resolve();
     }
     return { store, send };
 });
