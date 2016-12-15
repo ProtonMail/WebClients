@@ -101,12 +101,12 @@ angular.module('proton.core')
         if (current) {
             let labelIDs = conversation.LabelIDs || current.LabelIDs || [];
 
-            if (angular.isArray(conversation.LabelIDsRemoved)) {
+            if (Array.isArray(conversation.LabelIDsRemoved)) {
                 labelIDs = _.difference(labelIDs, conversation.LabelIDsRemoved);
                 delete conversation.LabelIDsRemoved;
             }
 
-            if (angular.isArray(conversation.LabelIDsAdded)) {
+            if (Array.isArray(conversation.LabelIDsAdded)) {
                 labelIDs = _.uniq(labelIDs.concat(conversation.LabelIDsAdded));
                 delete conversation.LabelIDsAdded;
             }
@@ -132,7 +132,7 @@ angular.module('proton.core')
     function vector(element, unread, type) {
         const result = {};
         let condition = true;
-        const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, (label) => { return label.ID; }) || []);
+        const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
 
         if (unread === true) {
             if (type === 'message') {
@@ -158,23 +158,24 @@ angular.module('proton.core')
      * @param {String} conversationID
      */
     function manageTimes(conversationID) {
-        if (angular.isDefined(conversationID)) {
-            const conversation = api.getConversationCached(conversationID);
-            const messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
 
-            if (angular.isDefined(conversation) && angular.isArray(conversation.LabelIDs) && messages.length > 0) {
-                conversation.LabelIDs.forEach((labelID) => {
-                    // Get the most recent message for a specific label
-                    const message = _.chain(messages)
-                        .filter(({ LabelIDs }) => angular.isArray(LabelIDs) && LabelIDs.indexOf(labelID) !== -1)
-                        .first()
-                        .value();
+        if (!conversationID) {
+            return;
+        }
 
-                    if (angular.isDefined(message) && angular.isDefined(message.Time)) {
-                        storeTime(conversationID, labelID, message.Time);
-                    }
-                });
-            }
+        const { LabelIDs = [] } = api.getConversationCached(conversationID) || {};
+        const messages = api.queryMessagesCached(conversationID); // messages are ordered by -Time
+
+        if (messages.length) {
+            LabelIDs.forEach((labelID) => {
+                // Get the most recent message for a specific label
+                const { Time } = _.chain(messages)
+                    .filter(({ LabelIDs }) => Array.isArray(LabelIDs) && LabelIDs.indexOf(labelID) !== -1)
+                    .first()
+                    .value() || {};
+
+                Time && storeTime(conversationID, labelID, Time);
+            });
         }
     }
 
@@ -189,7 +190,7 @@ angular.module('proton.core')
         const newUnreadVector = vector(newElement, true, type);
         const newTotalVector = vector(newElement, false, type);
         const oldTotalVector = vector(oldElement, false, type);
-        const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, (label) => { return label.ID; }) || []);
+        const locs = ['0', '1', '2', '3', '4', '6', '10'].concat(_.map(authentication.user.Labels, ({ ID }) => ID) || []);
 
         _.each(locs, (loc) => {
             const deltaUnread = newUnreadVector[loc] - oldUnreadVector[loc];
@@ -214,9 +215,7 @@ angular.module('proton.core')
      * @param {Object} request
      * @return {String} loc
      */
-    const getLocation = (request) => {
-        return request.Label;
-    };
+    const getLocation = ({ Label } = {}) => Label;
 
     /**
      * Call API to get the list of conversations
@@ -397,9 +396,9 @@ angular.module('proton.core')
         const loc = CONSTANTS.MAILBOX_IDENTIFIERS[mailbox];
 
         for (let index = conversationsCached.length - 1; index >= 0; index--) {
-            const conversation = conversationsCached[index];
+            const { LabelIDs = [] } = conversationsCached[index] || {};
 
-            if (angular.isDefined(conversation) && angular.isArray(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1) {
+            if (LabelIDs.indexOf(loc) !== -1) {
                 conversationsCached.splice(index, 1);
             }
         }
@@ -509,11 +508,10 @@ angular.module('proton.core')
      * @return {Integer}
      */
     api.getTime = (conversationId, loc) => {
-        if (angular.isDefined(timeCached[conversationId]) && angular.isNumber(timeCached[conversationId][loc])) {
+        if (timeCached[conversationId] && angular.isNumber(timeCached[conversationId][loc])) {
             return timeCached[conversationId][loc];
         }
-        const { Time = '' } = api.getConversationCached(conversationId);
-        return Time;
+        return (api.getConversationCached(conversationId) || {}).Time || '';
     };
 
     /**
@@ -526,9 +524,7 @@ angular.module('proton.core')
         const deferred = $q.defer();
         const loc = getLocation(request);
         const context = tools.cacheContext();
-        const callApi = () => {
-            deferred.resolve(queryMessages(request));
-        };
+        const callApi = () => deferred.resolve(queryMessages(request));
 
         if (context && !firstLoad) {
             const page = request.Page || 0;
@@ -537,9 +533,7 @@ angular.module('proton.core')
             let total;
             let number;
             const mailbox = tools.currentMailbox();
-            let messages = _.filter(messagesCached, (message) => {
-                return angular.isDefined(message.LabelIDs) && message.LabelIDs.indexOf(loc) !== -1;
-            });
+            let messages = _.filter(messagesCached, ({ LabelIDs = [] }) => LabelIDs.indexOf(loc) !== -1);
 
             messages = api.orderMessage(messages);
 
@@ -591,10 +585,8 @@ angular.module('proton.core')
         const deferred = $q.defer();
         const loc = getLocation(request);
         const context = tools.cacheContext();
-        const callApi = () => {
-            // Need data from the server
-            deferred.resolve(queryConversations(request));
-        };
+        // Need data from the server
+        const callApi = () => deferred.resolve(queryConversations(request));
 
         // In cache context?
         if (context && !firstLoad) {
@@ -604,8 +596,8 @@ angular.module('proton.core')
             let total;
             let number;
             const mailbox = tools.currentMailbox();
-            let conversations = _.filter(conversationsCached, (conversation) => {
-                return angular.isDefined(conversation.LabelIDs) && conversation.LabelIDs.indexOf(loc) !== -1 && angular.isDefined(api.getTime(conversation.ID, loc));
+            let conversations = _.filter(conversationsCached, ({ LabelIDs = [], ID }) => {
+                return LabelIDs.indexOf(loc) !== -1 && api.getTime(ID, loc);
             });
 
             conversations = api.orderConversation(conversations, loc);
@@ -662,19 +654,14 @@ angular.module('proton.core')
      * @param {String} conversationId
      * @return {Object}
      */
-    api.getConversationCached = (conversationId) => {
-        const conversation = _.findWhere(conversationsCached, { ID: conversationId });
-        return angular.copy(conversation);
-    };
+    api.getConversationCached = (ID) => angular.copy(_.findWhere(conversationsCached, { ID }));
 
     /**
      * Return message cached
      * @param {String} messageId
      * @return {Object}
      */
-    api.getMessageCached = (messageId) => {
-        return angular.copy(_.findWhere(messagesCached, { ID: messageId }));
-    };
+    api.getMessageCached = (ID) => angular.copy(_.findWhere(messagesCached, { ID }));
 
     /**
      * @param {String} conversationID
@@ -737,41 +724,21 @@ angular.module('proton.core')
     * @param {Object} event
     * @return {Promise}
     */
-    api.createMessage = (event) => {
-        // Insert the new message in the cache
-        updateMessage(event.Message);
-        return Promise.resolve();
-    };
+    api.createMessage = (event) => (updateMessage(event.Message), Promise.resolve());
 
     /**
      * Add a new conversation in the cache
      * @param {Object} event
      * @return {Promise}
      */
-    api.createConversation = (event) => {
-        const deferred = $q.defer();
-
-        // Insert the new conversation in the cache without download
-        updateConversation(event.Conversation);
-        deferred.resolve();
-
-        return deferred.promise;
-    };
+    api.createConversation = (event) => (updateConversation(event.Conversation), Promise.resolve());
 
     /**
      * Update draft conversation
      * @param {Object}
      * @return {Promise}
      */
-    api.updateDraftConversation = (event) => {
-        const deferred = $q.defer();
-
-        // Insert the new conversation in the cache without download
-        updateConversation(event.Conversation);
-        deferred.resolve();
-
-        return deferred.promise;
-    };
+    api.updateDraftConversation = (event) => (updateConversation(event.Conversation), Promise.resolve());
 
     /**
     * Update message attached to the id specified
@@ -789,12 +756,12 @@ angular.module('proton.core')
         const message = _.extend(new Message(current), event.Message);
 
         // Manage labels
-        if (angular.isDefined(event.Message.LabelIDsRemoved)) {
+        if (Array.isArray(event.Message.LabelIDsRemoved)) {
             message.LabelIDs = _.difference(message.LabelIDs, event.Message.LabelIDsRemoved);
             delete message.LabelIDsRemoved;
         }
 
-        if (angular.isDefined(event.Message.LabelIDsAdded)) {
+        if (Array.isArray(event.Message.LabelIDsAdded)) {
             message.LabelIDs = _.uniq(message.LabelIDs.concat(event.Message.LabelIDsAdded));
             delete message.LabelIDsAdded;
         }
@@ -823,11 +790,11 @@ angular.module('proton.core')
     function getLabelsId(oldElement = {}, newElement = {}) {
         let labelIDs = newElement.LabelIDs || oldElement.LabelIDs || [];
 
-        if (angular.isArray(newElement.LabelIDsRemoved)) {
+        if (Array.isArray(newElement.LabelIDsRemoved)) {
             labelIDs = _.difference(labelIDs, newElement.LabelIDsRemoved);
         }
 
-        if (angular.isArray(newElement.LabelIDsAdded)) {
+        if (Array.isArray(newElement.LabelIDsAdded)) {
             labelIDs = _.uniq(labelIDs.concat(newElement.LabelIDsAdded));
         }
 
@@ -951,8 +918,8 @@ angular.module('proton.core')
      * Reset cache and hash then preload inbox and sent
      */
     api.reset = () => {
-        conversationsCached = [];
-        messagesCached = [];
+        conversationsCached.length = 0;
+        messagesCached.length = 0;
     };
 
     /**
