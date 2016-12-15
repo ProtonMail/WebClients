@@ -200,27 +200,22 @@ angular.module('proton.core')
                 };
 
                 const addressRequest = () => {
-                    const deferred = $q.defer();
-
-                    if (params.member && (params.member.Addresses.length > 0 && params.member.Type === 1)) {
+                    if (params.member && (params.member.Addresses.length && params.member.Type === 1)) {
                         return Promise.resolve();
                     }
 
-                    Address.create({ Local: this.address, Domain: this.domain.DomainName, MemberID: member.ID })
+                    return Address.create({ Local: this.address, Domain: this.domain.DomainName, MemberID: member.ID })
                     .then((result) => {
                         if (result.data && result.data.Code === 1000) {
                             const address = result.data.Address;
                             member.Addresses.push(address);
                             addresses.push(address);
-                            deferred.resolve();
+                            return Promise.resolve();
                         } else if (result.data && result.data.Error) {
-                            deferred.reject(result.data.Error);
-                        } else {
-                            deferred.reject('Request error');
+                            return Promise.reject(result.data.Error);
                         }
+                        return Promise.reject('Request error');
                     });
-
-                    return deferred.promise;
                 };
 
                 const generateKey = () => {
