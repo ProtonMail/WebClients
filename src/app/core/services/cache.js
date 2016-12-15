@@ -521,10 +521,8 @@ angular.module('proton.core')
      * @return {Promise}
      */
     api.queryMessages = (request, firstLoad = false) => {
-        const deferred = $q.defer();
         const loc = getLocation(request);
         const context = tools.cacheContext();
-        const callApi = () => deferred.resolve(queryMessages(request));
 
         if (context && !firstLoad) {
             const page = request.Page || 0;
@@ -561,18 +559,12 @@ angular.module('proton.core')
 
                 // Supposed total equal to the total cache?
                 if (messages.length === number) {
-                    deferred.resolve(messages);
-                } else {
-                    callApi();
+                    return Promise.resolve(messages);
                 }
-            } else {
-                callApi();
             }
-        } else {
-            callApi();
         }
 
-        return deferred.promise;
+        return queryMessages(request);
     };
 
     /**
@@ -582,11 +574,9 @@ angular.module('proton.core')
      * @return {Promise}
      */
     api.queryConversations = (request, firstLoad = false) => {
-        const deferred = $q.defer();
         const loc = getLocation(request);
         const context = tools.cacheContext();
         // Need data from the server
-        const callApi = () => deferred.resolve(queryConversations(request));
 
         // In cache context?
         if (context && !firstLoad) {
@@ -623,21 +613,14 @@ angular.module('proton.core')
                 }
 
                 conversations = conversations.slice(start, end);
-
                 // Supposed total equal to the total cache?
                 if (conversations.length === number) {
-                    deferred.resolve(conversations);
-                } else {
-                    callApi();
+                    return Promise.resolve(conversations);
                 }
-            } else {
-                callApi();
             }
-        } else {
-            callApi();
         }
 
-        return deferred.promise;
+        return queryConversations(request);
     };
 
     /**

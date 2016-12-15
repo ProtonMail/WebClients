@@ -50,11 +50,9 @@ angular.module('proton.elements')
         $scope.page = parseInt($stateParams.page || 1, 10);
         $scope.startWatchingEvent();
         $scope.refreshElements().then(() => {
-            $timeout(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
+            $scope.$applyAsync(actionsDelayed); // If we don't use the timeout, messages seems not available (to unselect for example)
             // I consider this trick like a bug in the angular application
-        }, (error) => {
-            $log.error(error);
-        });
+        }, $log.error);
     }
 
     $scope.watchElements = function () {
@@ -351,7 +349,7 @@ angular.module('proton.elements')
         const context = tools.cacheContext();
         const type = tools.typeList();
         let promise;
-
+        debugger;
         if (type === 'message') {
             promise = cache.queryMessages(request, $scope.firstLoad);
         } else if (type === 'conversation') {
