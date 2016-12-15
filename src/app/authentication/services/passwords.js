@@ -13,7 +13,7 @@ angular.module('proton.authentication')
         return deferred.promise;
     }
 
-    function cleanUserName(name) {
+    function cleanUsername(name) {
         return name.replace(/\.|-|_/g, '').toLowerCase();
     }
 
@@ -60,7 +60,7 @@ angular.module('proton.authentication')
         },
 
         2(password, userName, modulus) {
-            return hashPasswordVersion[1](password, cleanUserName(userName), modulus);
+            return hashPasswordVersion[1](password, cleanUsername(userName), modulus);
         },
 
         1(password, userName, modulus) {
@@ -87,7 +87,7 @@ angular.module('proton.authentication')
 
     const api = {
         currentAuthVersion: 4,
-        cleanUserName,
+        cleanUsername,
         expandHash,
         hashPassword(version, password, salt, userName, modulus) {
             switch (version) {
