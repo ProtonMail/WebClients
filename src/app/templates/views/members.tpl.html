@@ -161,7 +161,7 @@
 			                    </td>
 			                    <td class="role">
 	                                <span ng-show="member.Self" translate>Admin</span>
-			                    	<span class="pm_select" ng-hide="member.Self">
+			                    	<span class="pm_select table_select" ng-hide="member.Self">
 										<select ng-model="member.selectRole" ng-init="initRole(member)" ng-options="role.label for role in roles" ng-change="changeRole(member)"></select>
 				                        <i class="fa fa-angle-down"></i>
 				                    </span>
