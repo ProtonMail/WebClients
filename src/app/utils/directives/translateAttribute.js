@@ -1,5 +1,9 @@
-// Adapted from https://github.com/rubenv/angular-gettext/blob/master/src/directive.js
+angular.module('proton.utils')
+.directive('placeholderTranslate', generateDirective('placeholder'))
+.directive('titleTranslate', generateDirective('title'))
+.directive('ptTooltipTranslate', generateDirective('pt-tooltip'));
 
+// Adapted from https://github.com/rubenv/angular-gettext/blob/master/src/directive.js
 function generateDirective(attrName) {
 
     function normalizeAttributeName(attributeName) {
@@ -114,7 +118,3 @@ function generateDirective(attrName) {
     };
 }
 
-angular.module('proton.translate', [])
-.directive('placeholderTranslate', generateDirective('placeholder'))
-.directive('titleTranslate', generateDirective('title'))
-.directive('ptTooltipTranslate', generateDirective('pt-tooltip'));

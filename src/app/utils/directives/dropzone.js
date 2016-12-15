@@ -1,15 +1,4 @@
-/**
- *
- * Usage:
- *
- * <div ng-app="app" ng-controller="SomeCtrl">
- *   <button dropzone="dropzoneConfig">
- *     Drag and drop files here or click to upload
- *   </button>
- * </div>
- */
-
-angular.module('proton.dropzone', [])
+angular.module('proton.utils')
     .directive('dropzone', () => {
         return {
             scope: {

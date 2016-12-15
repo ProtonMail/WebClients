@@ -1,4 +1,4 @@
-angular.module('proton.time', [])
+angular.module('proton.utils')
 .directive('timeRefreshed', ($filter) => {
 
     const getDate = (time = 0) => {
