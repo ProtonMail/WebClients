@@ -109,7 +109,7 @@ angular.module('proton.labels', ['ui.indeterminate'])
             };
 
             scope.close = () => {
-                $rootScope.$broadcast('closeDropdown');
+                $rootScope.$emit('closeDropdown');
             };
 
             scope.labelsSelected = () => {
