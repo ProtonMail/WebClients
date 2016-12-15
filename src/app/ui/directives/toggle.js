@@ -1,4 +1,4 @@
-angular.module('proton.toggle', [])
+angular.module('proton.ui')
 .directive('toggle', (gettextCatalog, $rootScope) => {
     return {
         restrict: 'E',

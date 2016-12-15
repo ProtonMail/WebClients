@@ -1,5 +1,4 @@
-angular.module('proton.tooltip', [])
-
+angular.module('proton.ui')
 .directive('ptTooltip', ($rootScope) => {
     return {
         link(scope, element, attrs) {

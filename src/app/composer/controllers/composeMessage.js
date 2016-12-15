@@ -1,4 +1,4 @@
-angular.module('proton.controllers.Compose', ['proton.constants'])
+angular.module('proton.composer')
 .controller('ComposeMessageController', (
     $filter,
     $interval,

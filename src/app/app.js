@@ -63,22 +63,11 @@ angular.module('proton', [
     'proton.address',
     'proton.message',
     'proton.conversation',
-    'proton.drag',
-    'proton.dropzone',
-    'proton.phone',
-    'proton.responsiveComposer',
-    'proton.sidebarHeight',
     'proton.squire',
-    'proton.time',
-    'proton.toggle',
-    'proton.tooltip',
-    'proton.translate',
     'proton.wizard',
-    'proton.rightClick',
     'proton.contact',
 
     // Controllers
-    'proton.controllers.Compose',
     'proton.controllers.Settings'
 ])
 

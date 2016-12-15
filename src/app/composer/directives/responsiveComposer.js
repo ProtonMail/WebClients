@@ -1,4 +1,4 @@
-angular.module('proton.responsiveComposer', [])
+angular.module('proton.composer')
 .directive('responsiveComposer', ($rootScope, authentication) => {
 
     /**
