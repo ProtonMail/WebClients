@@ -302,7 +302,6 @@ angular.module('proton.conversation')
         cache.addToDispatcher(promise);
 
         if (!tools.cacheContext()) {
-            console.trace('Move lol');
             promise
                 .then(() => eventManager.call())
                 .then(() => displaySuccess());
@@ -327,7 +326,6 @@ angular.module('proton.conversation')
                 });
 
                 if (mailbox === 'inbox') {
-
                     /**
                      * Types definition
                      *   - 1: a draft
@@ -377,8 +375,7 @@ angular.module('proton.conversation')
             });
             return acc;
         }, []);
-        debugger;
-        console.trace('Events move conversation', events);
+
         cache.events(events);
         displaySuccess();
     }

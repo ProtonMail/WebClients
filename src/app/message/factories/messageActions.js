@@ -75,7 +75,6 @@ angular.module('proton.message')
         // Message actions
         function move({ ids, mailbox }) {
             const toTrash = mailbox === 'trash';
-            debugger;
             const events = _.chain(ids)
                 .map((id) => {
                     const message = cache.getMessageCached(id);
@@ -140,7 +139,6 @@ angular.module('proton.message')
 
                 }, [])
                 .value();
-            debugger;
 
              // Send request
             const promise = Message[mailbox]({ IDs: ids }).$promise;
@@ -148,7 +146,7 @@ angular.module('proton.message')
 
             const message = gettextCatalog.getPlural(ids.length, 'Message moved to', 'Messages moved to', null);
             const notification = `${message} ${getFolderNameTranslated(mailbox)}`;
-            console.trace('Events move message', events);
+
             if (tools.cacheContext()) {
                 cache.events(events);
                 return notifySuccess(notification);

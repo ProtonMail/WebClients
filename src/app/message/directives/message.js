@@ -263,7 +263,6 @@ angular.module('proton.message')
              */
             scope.move = (mailbox) => {
                 const ids = [scope.message.ID];
-                debugger;
                 $rootScope.$emit('messageActions', { action: 'move', data: { ids, mailbox } });
             };
 
