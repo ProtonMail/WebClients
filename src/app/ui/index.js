@@ -1,1 +1,1 @@
-angular.module('proton.ui', []);
+angular.module('proton.ui', ['ui.indeterminate']);

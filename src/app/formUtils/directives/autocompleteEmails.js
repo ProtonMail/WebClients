@@ -1,4 +1,4 @@
-angular.module('proton.ui')
+angular.module('proton.formUtils')
 .directive('autocompleteEmails', (autocompleteEmailsModel, regexEmail) => {
 
     const TAB_KEY = 9;

@@ -1,4 +1,4 @@
-angular.module('proton.ui')
+angular.module('proton.formUtils')
     .factory('autocompleteEmailsModel', (authentication, regexEmail, checkTypoEmails, $filter, CONSTANTS) => {
 
         const {
